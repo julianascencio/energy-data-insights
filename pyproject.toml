@@ -1,0 +1,64 @@
+[project]
+name = "energy-data-insights"
+version = "0.1.0"
+description = "Reusable energy data retrieval, scientific methods, and country analyses"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pandas-stubs>=2.2,<3",
+    "pytest>=8.3,<10",
+    "pytest-cov>=6,<8",
+    "ruff>=0.14,<1",
+    "ty>=0.0.1,<1",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["Data-retrieval", "methods", "Analysis"]
+
+[tool.uv.sources]
+energy-data-retrieval = { workspace = true }
+energy-methods = { workspace = true }
+energy-analysis = { workspace = true }
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["Data-retrieval/src", "methods/src", "Analysis/src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "NPY", "RUF"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ty.environment]
+python-version = "3.12"
+extra-paths = ["Data-retrieval/src", "methods/src", "Analysis/src"]
+
+[tool.ty.src]
+include = ["Data-retrieval", "methods", "Analysis", "scripts", "benchmarks"]
+exclude = ["**/dist/**", "**/build/**"]
+
+[tool.ty.terminal]
+error-on-warning = true
+
+[tool.pytest.ini_options]
+testpaths = ["Data-retrieval/tests", "methods/tests", "Analysis/tests", "tests"]
+addopts = "--strict-config --strict-markers --import-mode=importlib -ra"
+filterwarnings = ["error"]
+markers = [
+    "integration: tests spanning packages with local files and no live provider calls",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["energy_data_retrieval", "energy_methods", "energy_analysis"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true

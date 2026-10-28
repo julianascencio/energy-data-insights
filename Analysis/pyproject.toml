@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "energy-analysis"
+version = "0.1.0"
+description = "Country-specific reproducible renewable-energy analyses"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "energy-methods",
+  "energy-data-retrieval",
+  "numpy>=2.2,<2.4",
+  "pandas>=2.2,<3",
+  "pyarrow>=19,<25",
+]
+
+[project.scripts]
+energy-chile = "energy_analysis.chile_fleet.cli:main"
+
+[tool.uv.sources]
+energy-methods = { workspace = true }
+energy-data-retrieval = { workspace = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/energy_analysis"]
