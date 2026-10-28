@@ -1,0 +1,42 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python and tools
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.ty_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.egg-info/
+dist/
+build/
+
+# Acquired data, model outputs and reproducible local runs
+/data/
+/artifacts/
+/runs/
+/outputs/
+*.parquet
+*.zip
+*.gz
+*.xlsx
+*.joblib
+*.pkl
+*.pickle
+*.log
+*.partial
+*.building
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/

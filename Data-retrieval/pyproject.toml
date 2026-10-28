@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "energy-data-retrieval"
+version = "0.1.0"
+description = "Auditable, bounded retrieval of public energy and weather data"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "httpx>=0.28,<1",
+  "numpy>=2.2,<2.4",
+  "pandas>=2.2,<3",
+  "pyarrow>=19,<25",
+]
+
+[project.optional-dependencies]
+era5-native = ["icechunk>=1.1,<2", "xarray>=2025.1,<2027", "zarr>=3,<4"]
+
+[project.scripts]
+energy-retrieve = "energy_data_retrieval.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/energy_data_retrieval"]

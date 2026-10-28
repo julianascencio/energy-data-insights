@@ -1,0 +1,24 @@
+# Replace these paths with normalized retrieval outputs and a trusted site registry.
+# Dates below are example study boundaries, not a verified storm timestamp.
+[chile_fleet]
+hourly_path = "../../.local/prepared"
+sites_path = "../../.local/sites.csv"
+output_path = "../../.local/chile-fleet-results"
+event_start = "2026-10-26T03:00:00Z"
+report_start = "2026-10-27T03:00:00Z"
+report_end = "2026-10-28T03:00:00Z"
+baseline_days = 90
+holdout_days = 14
+algorithm = "physics"
+reference = "final"
+minimum_training_hours = 48
+minimum_reference_coverage = 0.8
+relative_tolerance = 0.2
+fit_geometry = true
+lag_hours = [-2, -1, 0, 1, 2]
+model_threads = 1
+tdp = true
+tdp_minimum_useful_days = 15
+tdp_minimum_hours_per_day = 24
+tdp_minimum_bin_observations = 10
+hash_inputs = true
