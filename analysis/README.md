@@ -1,5 +1,11 @@
 # Applied analyses
 
+## Degradation mapping
+
+The [degradation mapping study](src/energy_analysis/degradation/README.md) retrieves
+ERA5/CRU inputs through `data-retrieval`, applies the models in `methods`, and
+generates geographic maps and reports. Use `energy-degradation-study --help`.
+
 ## Climate Change Yield Assessment
 
 The [applied CCYA example](examples/ccya/README.md) follows the Bolzano case-study

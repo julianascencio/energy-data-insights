@@ -1579,5 +1579,85 @@
     ],
     "note": "Official access description for the Bolzano plant production and meteorological database. Access is restricted. No original plant data were retrieved or redistributed by this example; the bundled generator creates synthetic inputs. This citation documents access limitations, not a data acquisition.",
     "verified_at": "2026-10-29"
+  },
+  {
+    "id": "faiman_2008_temperature",
+    "title": "Assessing the outdoor operating temperature of photovoltaic modules",
+    "authors": [
+      "Faiman, David"
+    ],
+    "year": 2008,
+    "doi": "10.1002/pip.813",
+    "url": "https://doi.org/10.1002/pip.813",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/degradation_weather.py"
+    ],
+    "note": "Faiman heat-loss temperature model. This implementation follows the 2019 global mapping paper's GHI approximation; it is not a plane-of-array irradiance model.",
+    "publication": "Progress in Photovoltaics: Research and Applications",
+    "volume": "16",
+    "issue": "4",
+    "pages": "307-315",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "huld_amillo_2015_performance",
+    "title": "Estimating PV Module Performance over Large Geographical Regions: The Role of Irradiance, Air Temperature, Wind Speed and Solar Spectrum",
+    "authors": [
+      "Huld, Thomas",
+      "Gracia Amillo, Ana M."
+    ],
+    "year": 2015,
+    "doi": "10.3390/en8065159",
+    "url": "https://doi.org/10.3390/en8065159",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/degradation_weather.py"
+    ],
+    "note": "Source cited by the 2019 mapping study for open-rack crystalline-silicon Faiman coefficients u0=26.9 and u1=6.2 and wind-height scaling exponent 0.2.",
+    "publication": "Energies",
+    "volume": "8",
+    "issue": "6",
+    "pages": "5159-5181",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "wald_2018_spectral",
+    "title": "A simple algorithm for the computation of the spectral distribution of the solar irradiance at surface",
+    "authors": [
+      "Wald, Lucien"
+    ],
+    "year": 2018,
+    "doi": null,
+    "url": "https://hal.science/hal-01693473",
+    "kind": "report",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/degradation_weather.py"
+    ],
+    "note": "UVA/UVB clearness-index regressions, as reproduced in the 2019 degradation mapping paper equations 5–8. The implementation clamps kt to 0.1–0.7 and documents missing/zero-TOA handling.",
+    "institution": "MINES ParisTech",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "kaaya_2020_thesis",
+    "title": "Photovoltaic Lifetime Forecast: Models for long-term photovoltaic degradation prediction and forecast",
+    "authors": [
+      "Kaaya, Ismail"
+    ],
+    "year": 2020,
+    "doi": null,
+    "url": "https://www.uma.es/media/tinyimages/file/Ismail__Thesis2.pdf",
+    "kind": "thesis",
+    "role": "implemented",
+    "used_by": [
+      "analysis/src/energy_analysis/degradation/pipeline.py",
+      "analysis/examples/degradation/kaaya_2019_scenario.json"
+    ],
+    "note": "Author-accessible verification of the 2019 Kaaya model coefficients: Table 4.3, printed p.45 / PDF p.55. Gran Canaria mono-Si calibration: Ah=4.91e7, Eh=0.74, n=1.90; Ap=71.83, Ep=0.45, x=0.63; Atm=2.04, Etm=0.43, theta=2.24. A_N=1 and the applied analysis aggregation/cycling conventions are explicit study choices, not newly fitted coefficients.",
+    "institution": "University of Málaga, School of Industrial Engineering",
+    "verified_at": "2026-10-29"
   }
 ]

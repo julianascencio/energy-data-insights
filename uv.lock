@@ -400,20 +400,24 @@ source = { editable = "analysis" }
 dependencies = [
     { name = "energy-data-retrieval" },
     { name = "energy-methods" },
+    { name = "httpx" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "pyarrow" },
+    { name = "xarray" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "energy-data-retrieval", editable = "data-retrieval" },
     { name = "energy-methods", editable = "methods" },
+    { name = "httpx", specifier = ">=0.28,<1" },
     { name = "matplotlib", specifier = ">=3.10,<4" },
     { name = "numpy", specifier = ">=2.2,<2.4" },
     { name = "pandas", specifier = ">=2.2,<3" },
     { name = "pyarrow", specifier = ">=19,<25" },
+    { name = "xarray", specifier = ">=2025.1,<2027" },
 ]
 
 [[package]]

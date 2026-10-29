@@ -631,3 +631,47 @@
   url = {https://www.eurac.edu/en/institutes-centers/institute-for-renewable-energy/tools-services/photovoltaiksysteme/solar-energy-production-data-from-the-pv-abd-plant},
   note = {Role: background. Official access description for the Bolzano plant production and meteorological database. Access is restricted. No original plant data were retrieved or redistributed by this example; the bundled generator creates synthetic inputs. This citation documents access limitations, not a data acquisition.}
 }
+
+@article{faiman_2008_temperature,
+  author = {Faiman, David},
+  title = {{Assessing the outdoor operating temperature of photovoltaic modules}},
+  year = {2008},
+  journal = {Progress in Photovoltaics: Research and Applications},
+  volume = {16},
+  number = {4},
+  pages = {307--315},
+  doi = {10.1002/pip.813},
+  url = {https://doi.org/10.1002/pip.813},
+  note = {Role: implemented. Faiman heat-loss temperature model. This implementation follows the 2019 global mapping paper's GHI approximation; it is not a plane-of-array irradiance model.}
+}
+
+@article{huld_amillo_2015_performance,
+  author = {Huld, Thomas and Gracia Amillo, Ana M.},
+  title = {{Estimating PV Module Performance over Large Geographical Regions: The Role of Irradiance, Air Temperature, Wind Speed and Solar Spectrum}},
+  year = {2015},
+  journal = {Energies},
+  volume = {8},
+  number = {6},
+  pages = {5159--5181},
+  doi = {10.3390/en8065159},
+  url = {https://doi.org/10.3390/en8065159},
+  note = {Role: implemented. Source cited by the 2019 mapping study for open-rack crystalline-silicon Faiman coefficients u0=26.9 and u1=6.2 and wind-height scaling exponent 0.2.}
+}
+
+@techreport{wald_2018_spectral,
+  author = {Wald, Lucien},
+  title = {{A simple algorithm for the computation of the spectral distribution of the solar irradiance at surface}},
+  year = {2018},
+  institution = {MINES ParisTech},
+  url = {https://hal.science/hal-01693473},
+  note = {Role: implemented. UVA/UVB clearness-index regressions, as reproduced in the 2019 degradation mapping paper equations 5–8. The implementation clamps kt to 0.1–0.7 and documents missing/zero-TOA handling.}
+}
+
+@phdthesis{kaaya_2020_thesis,
+  author = {Kaaya, Ismail},
+  title = {{Photovoltaic Lifetime Forecast: Models for long-term photovoltaic degradation prediction and forecast}},
+  year = {2020},
+  school = {University of Málaga, School of Industrial Engineering},
+  url = {https://www.uma.es/media/tinyimages/file/Ismail__Thesis2.pdf},
+  note = {Role: implemented. Author-accessible verification of the 2019 Kaaya model coefficients: Table 4.3, printed p.45 / PDF p.55. Gran Canaria mono-Si calibration: Ah=4.91e7, Eh=0.74, n=1.90; Ap=71.83, Ep=0.45, x=0.63; Atm=2.04, Etm=0.43, theta=2.24. A\_N=1 and the applied analysis aggregation/cycling conventions are explicit study choices, not newly fitted coefficients.}
+}

@@ -258,3 +258,6 @@ total rates in 0.2%/year bins and summarizes mapped mechanisms by KGPV zone.
 Run `energy-degradation --help`; see [inputs, scientific assumptions and the
 synthetic example](../docs/degradation.md). The thesis remains the primary
 citation alongside the Kaaya model and the 2019 degradation mapping paper.
+
+`energy_methods.degradation_weather` supplies the published GHI-Faiman temperature
+and Wald UVA/UVB transformations used by the [applied map analysis](../analysis/src/energy_analysis/degradation/README.md).

@@ -30,6 +30,7 @@ OPEN_METEO_HOSTS = frozenset(
     }
 )
 _VARIABLES = ("shortwave_radiation", "temperature_2m", "wind_speed_10m", "wind_gusts_10m")
+_DEGRADATION_VARIABLES = ("relative_humidity_2m", "terrestrial_radiation")
 
 
 class WeatherProduct(StrEnum):
@@ -72,6 +73,7 @@ class OpenMeteoClient:
     product: WeatherProduct = WeatherProduct.ERA5
     api_key: str | None = field(default=None, repr=False)
     chunk_days: int = 31
+    include_degradation: bool = False
 
     def __post_init__(self) -> None:
         if not 1 <= self.chunk_days <= 366:
@@ -101,7 +103,9 @@ class OpenMeteoClient:
             "longitude": str(site.longitude),
             "start_date": start.isoformat(),
             "end_date": (end + timedelta(days=1)).isoformat(),
-            "hourly": ",".join(_VARIABLES),
+            "hourly": ",".join(
+                _VARIABLES + (_DEGRADATION_VARIABLES if self.include_degradation else ())
+            ),
             "models": "era5" if self.product == WeatherProduct.ERA5 else "ecmwf_ifs",
             "timezone": "UTC",
             "timeformat": "unixtime",
@@ -116,7 +120,14 @@ class OpenMeteoClient:
             secrets={"apikey": self.api_key} if self.api_key else None,
         )
         payload = object_value(response.value)
-        frame = normalize_hourly(payload, site.site_id, start, end, product=self.product)
+        frame = normalize_hourly(
+            payload,
+            site.site_id,
+            start,
+            end,
+            product=self.product,
+            include_degradation=self.include_degradation,
+        )
         latitude, longitude = payload.get("latitude"), payload.get("longitude")
         if not isinstance(latitude, (int, float)) or not isinstance(longitude, (int, float)):
             raise RetrievalError("Weather response omits selected grid coordinates")
@@ -168,6 +179,7 @@ def normalize_hourly(
     end: date,
     *,
     product: WeatherProduct,
+    include_degradation: bool = False,
 ) -> pd.DataFrame:
     """Align GHI, temperature and wind to identical one-hour UTC intervals.
 
@@ -187,6 +199,8 @@ def normalize_hourly(
         "wind_speed_10m": {"m/s"},
         "wind_gusts_10m": {"m/s"},
     }
+    if include_degradation:
+        expected_units.update(relative_humidity_2m={"%"}, terrestrial_radiation={"W/m²", "W/m2"})
     for variable, allowed in expected_units.items():
         unit = units.get(variable)
         if not isinstance(unit, str) or unit not in allowed:
@@ -200,7 +214,7 @@ def normalize_hourly(
     if not np.all(np.diff(time_axis) == 3600):
         raise RetrievalError("Weather source has a duplicate, gap or nonhourly timestamp")
     values: dict[str, np.ndarray] = {}
-    for variable in _VARIABLES:
+    for variable in expected_units:
         raw = array_value(hourly.get(variable))
         if len(raw) != len(time_axis):
             raise RetrievalError("Weather value/time lengths differ")
@@ -225,6 +239,11 @@ def normalize_hourly(
             "gust_ms": values["wind_gusts_10m"][1:],
         }
     )
+    if include_degradation:
+        frame["relative_humidity_percent"] = (
+            values["relative_humidity_2m"][:-1] + values["relative_humidity_2m"][1:]
+        ) / 2
+        frame["toa_wm2"] = values["terrestrial_radiation"][1:]
     begin = pd.Timestamp(datetime.combine(start, datetime.min.time(), UTC))
     stop = pd.Timestamp(datetime.combine(end + timedelta(days=1), datetime.min.time(), UTC))
     frame = frame.loc[(frame["timestamp"] >= begin) & (frame["timestamp"] < stop)].reset_index(
@@ -245,6 +264,12 @@ def normalize_hourly(
             "preceding-hour maximum at end"
             if product == WeatherProduct.IFS
             else "instantaneous end sample"
+        ),
+        relative_humidity_alignment=(
+            "mean of instantaneous start/end samples" if include_degradation else "not requested"
+        ),
+        toa_alignment=(
+            "Open-Meteo calculated preceding-hour mean" if include_degradation else "not requested"
         ),
         station_observations=False,
         spatial_selection="nearest native grid cell; no elevation downscaling",

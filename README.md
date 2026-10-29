@@ -10,7 +10,7 @@ The first country workflow is Chile's solar fleet.
 | --- | --- | --- |
 | [data-retrieval](data-retrieval/) | Provider folders for CEN, BSRN, NOAA GHCNh, AEMET, DWD, SURFRAD, measured-station exports, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
 | [methods](methods/) | CCYA climate-change yield assessment, TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation, hourly operational screening, KGPV and degradation mapping | `energy_methods` |
-| [analysis](analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
+| [analysis](analysis/) | Real-data degradation maps and reports; Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
 These are independently installable Python packages in one uv workspace. Each
 has its own source, tests and packaging metadata; one lockfile keeps their
@@ -30,6 +30,22 @@ uv sync --locked --all-packages
 The optional native ERA5 source has additional dependencies; its package README
 documents installation. Ordinary tests and the synthetic demo require no API
 credentials and make no live provider requests.
+
+## Run the degradation map analysis
+
+The [applied degradation workflow](analysis/src/energy_analysis/degradation/README.md)
+connects the retrieval package to the methods model, with a bounded 2016–2018
+global sampling configuration and offline map reports:
+
+```bash
+uv run --no-sync energy-degradation-study all \
+  --config analysis/examples/degradation/global_2016_2018.toml \
+  --data-dir data/degradation-2016-2018 \
+  --output artifacts/degradation-2016-2018
+```
+
+This command retrieves real ERA5 weather and a CRU land mask. The 15° sample-grid
+scenario uses published coefficients with explicit aggregation assumptions.
 
 ## Run an end-to-end example
 

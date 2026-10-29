@@ -125,3 +125,34 @@ def test_native_optional_dependencies_fail_clearly(monkeypatch: pytest.MonkeyPat
     )
     with pytest.raises(ImportError, match="era5-native"):
         list(NativeERA5Client().iter_weather([Site("site", -34, -71)], DAY, DAY))
+
+
+def test_optional_degradation_fields_align_endpoints_and_radiation() -> None:
+    source = payload()
+    units = object_value(source["hourly_units"])
+    units.update(relative_humidity_2m="%", terrestrial_radiation="W/m²")
+    hourly = object_value(source["hourly"])
+    hourly["relative_humidity_2m"] = [None, *list(range(1, 25))]
+    hourly["terrestrial_radiation"] = list(range(25))
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        assert request.url.params["models"] == "era5"
+        assert "relative_humidity_2m" in request.url.params["hourly"]
+        assert "terrestrial_radiation" in request.url.params["hourly"]
+        return httpx.Response(200, json=source)
+
+    with HTTPClient(OPEN_METEO_HOSTS, transport=httpx.MockTransport(handler)) as http:
+        result = (
+            OpenMeteoClient(http, include_degradation=True)
+            .weather(Site("fixture", -34, -71), DAY, DAY)
+            .frame
+        )
+    assert pd.isna(result.relative_humidity_percent.iloc[0])
+    assert result.relative_humidity_percent.iloc[1] == 1.5
+    assert result.toa_wm2.iloc[0] == 1
+    assert result.toa_wm2.iloc[-1] == 24
+    units["relative_humidity_2m"] = "fraction"
+    with pytest.raises(RetrievalError, match="relative_humidity_2m"):
+        normalize_hourly(
+            source, "fixture", DAY, DAY, product=WeatherProduct.ERA5, include_degradation=True
+        )

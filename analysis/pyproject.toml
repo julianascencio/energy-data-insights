@@ -15,11 +15,14 @@ dependencies = [
   "pandas>=2.2,<3",
   "pyarrow>=19,<25",
   "matplotlib>=3.10,<4",
+  "xarray>=2025.1,<2027",
+  "httpx>=0.28,<1",
 ]
 
 [project.scripts]
 energy-ccya = "energy_analysis.ccya_case.cli:main"
 energy-chile = "energy_analysis.chile_fleet.cli:main"
+energy-degradation-study = "energy_analysis.degradation.cli:main"
 
 [tool.uv.sources]
 energy-methods = { workspace = true }
