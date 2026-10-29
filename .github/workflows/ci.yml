@@ -38,7 +38,7 @@ jobs:
           python-version: ${{ matrix.python }}
           enable-cache: true
       - name: Install locked workspace
-        run: uv sync --locked --all-packages --python ${{ matrix.python }}
+        run: uv sync --locked --all-packages --extra cds --python ${{ matrix.python }}
       - name: Check formatting
         run: uv run --no-sync ruff format --check .
       - name: Lint

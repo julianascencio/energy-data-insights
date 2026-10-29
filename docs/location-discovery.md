@@ -106,6 +106,7 @@ every date and grid cell.
 | GPCC Monthly v2025 | Global land; native cell mask unverified | Monthly precipitation; 1891 onward; 0.25°, 0.5°, 1°, 2.5°; `gpcc` command |
 | CRU TS v4.10 | Global land excluding Antarctica; native cell mask unverified | Ten monthly variables; 1901–2025; 0.5°; `cru-ts` command |
 | CMIP6 | Depends on the explicitly selected dataset and native grid | Requires model, experiment, ensemble member, table, variable, grid and resolved version |
+| CDS ERA5 hourly/monthly | Global documented coverage from 1940; availability not probed | Official CDS API, personal access token, accepted dataset terms and explicit area/variables; native files |
 
 Each row records supported source variables, normalized output variables,
 spatial/temporal descriptions, known coverage bounds, access requirements,
@@ -136,6 +137,10 @@ and the safe request record/hash. An all-missing sample and a provider failure
 remain distinguishable. A verified sample establishes evidence for that date
 only; it does not certify the full historical period. `--probe-date` cannot be
 combined with `--offline`.
+
+CDS is also listed without credential reads or job submission. Use `cds-era5`
+with an explicit north/west/south/east area, or `cds-retrieve` with a catalogue
+selection; see the [CDS guide](../data-retrieval/src/energy_data_retrieval/sources/cds/README.md).
 
 Native ERA5 and CMIP6 are not implicitly downloaded by this probe. Native ERA5
 requires its optional dependencies and pinned-snapshot retrieval. For CMIP6,

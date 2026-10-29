@@ -306,6 +306,52 @@ def grid_datasets(
                 }
             )
         )
+    for monthly in (False, True):
+        dataset = "reanalysis-era5-single-levels" + ("-monthly-means" if monthly else "")
+        rows.append(
+            _base(latitude, longitude)
+            | {
+                "source": "cds",
+                "dataset_id": dataset,
+                "title": "Copernicus CDS ERA5 single levels "
+                + ("monthly means" if monthly else "hourly"),
+                "data_kind": "reanalysis",
+                "spatial_resolution": "0.25 degrees for atmospheric reanalysis; variable dependent",
+                "temporal_resolution": "monthly" if monthly else "hourly source labels",
+                "supported_variables": [
+                    "2m_temperature",
+                    "surface_solar_radiation_downwards",
+                    "10m_u_component_of_wind",
+                    "10m_v_component_of_wind",
+                ],
+                "output_variables": [],
+                "coverage_start": "1940-01-01",
+                "access": {
+                    "route": "official CDS API and native download",
+                    "credential": "CDSAPI_KEY or ~/.cdsapirc; accepted dataset terms required",
+                    "optional_dependencies": ["energy-data-retrieval[cds]"],
+                },
+                "reference_ids": [
+                    _THESIS,
+                    "copernicus_cds_api",
+                    "hersbach_2020_era5",
+                    "era5_single_levels_monthly" if monthly else "era5_single_levels",
+                ],
+                "retrieval": {
+                    "command": "cds-era5",
+                    "parameters": {"monthly_means": monthly},
+                    "required_inputs": ["start", "end", "variables", "area", "output"],
+                    "site": location.copy(),
+                },
+                "notes": [
+                    *common_notes,
+                    "Native files retain units and time conventions; no normalized weather output.",
+                    "Select an explicit north/west/south/east area; no nearest cell is assumed.",
+                    "Latest availability and ERA5T revisions must be checked with CDS.",
+                    "Discovery and the Open-Meteo probe never read CDS credentials or submit jobs.",
+                ],
+            }
+        )
     if start is not None and end is not None:
         for row in rows:
             row.update(requested_start=start.isoformat(), requested_end=end.isoformat())
@@ -324,7 +370,7 @@ def grid_datasets(
                     if last_date is not None
                     else "within_documented_start_only"
                 )
-            if row["dataset_id"] == "open_meteo_era5":
+            if row["dataset_id"] == "open_meteo_era5" or row["source"] == "cds":
                 first = date(1940, 1, 1)
                 row["temporal_status"] = (
                     "outside_documented_coverage"

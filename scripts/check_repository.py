@@ -16,6 +16,10 @@ MAX_FILE_BYTES = 2_000_000
 GENERATED_SUFFIXES = {
     ".cdf",
     ".gz",
+    ".h5",
+    ".grib",
+    ".grb",
+    ".grb2",
     ".joblib",
     ".nc",
     ".nc4",
@@ -58,6 +62,8 @@ def main() -> int:
             continue
         if path.name.startswith(".env") and path.name != ".env.example":
             problems.append(f"{name}: local credentials file")
+        if path.name.startswith(".cdsapirc"):
+            problems.append(f"{name}: local CDS credentials file")
         if path.suffix.lower() in GENERATED_SUFFIXES:
             problems.append(f"{name}: generated/binary data belongs outside Git")
         if path.stat().st_size > MAX_FILE_BYTES:

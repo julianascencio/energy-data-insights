@@ -2134,6 +2134,30 @@
         "name": "University of Málaga, School of Industrial Engineering"
       },
       "thesis-type": "Doctoral dissertation"
+    },
+    {
+      "type": "software",
+      "title": "Climate Data Store: CDSAPI setup",
+      "authors": [
+        {
+          "name": "European Centre for Medium-Range Weather Forecasts (ECMWF)"
+        }
+      ],
+      "url": "https://cds.climate.copernicus.eu/how-to-api",
+      "notes": "Role: software. Official CDS API setup and access guidance. The connector uses optional cdsapi, personal access tokens and manually accepted dataset terms. Cite the selected dataset separately; native downloads are not normalized observations. SDK version and artifact/request hashes are recorded per acquisition."
+    },
+    {
+      "type": "data",
+      "title": "ERA5 monthly averaged data on single levels from 1940 to present",
+      "authors": [
+        {
+          "name": "Copernicus Climate Change Service (C3S) Climate Data Store (CDS)"
+        }
+      ],
+      "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means",
+      "notes": "Role: data. Official CDS catalogue publication date 18 April 2019 and dataset DOI verified. Monthly averaged reanalysis retains native units and accumulation semantics; it is not an hourly station observation. Record the actual retrieval date, selection and downloaded artifact hash because upstream ERA5T can be revised.",
+      "year": 2019,
+      "doi": "10.24381/cds.f17050d7"
     }
   ]
 }
