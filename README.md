@@ -4,6 +4,11 @@ Python tools for retrieving energy, weather and climate-model data, applying reu
 scientific methods, and running reproducible fleet performance studies.
 The first country workflow is Chile's solar fleet.
 
+**[Documentation](https://julianascencio.github.io/energy-data-insights/)** —
+installation, user guides, searchable API reference and executable example gallery.
+Built with Sphinx and the PyData theme; GitHub Actions validates every PR and
+deploys the site from `main`. See [building and deploying the documentation](docs/development.rst).
+
 ## Repository structure
 
 | Subproject | Contents | Python import |
