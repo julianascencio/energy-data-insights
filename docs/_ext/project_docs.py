@@ -1,0 +1,86 @@
+"""Build documentation from the repository's existing guides and public modules."""
+
+from __future__ import annotations
+
+import os
+import re
+from pathlib import Path
+from urllib.parse import urlsplit
+
+REPOSITORY = "https://github.com/julianascencio/energy-data-insights"
+
+
+def prepare_sources(root: Path) -> list[str]:
+    """Reuse the Markdown source of truth, translating its relative links for Sphinx."""
+    docs = root / "docs"
+    mapping = {path: docs / "_generated/guides" / path.name for path in docs.glob("*.md")}
+    mapping.update(
+        {
+            root / "data-retrieval/README.md": docs / "_generated/packages/retrieval.md",
+            root / "methods/README.md": docs / "_generated/packages/methods.md",
+            root / "analysis/README.md": docs / "_generated/packages/analysis.md",
+            root / "analysis/examples/ccya/README.md": docs / "_generated/studies/ccya.md",
+            root / "analysis/src/energy_analysis/degradation/README.md": (
+                docs / "_generated/studies/degradation.md"
+            ),
+            root / "data-retrieval/src/energy_data_retrieval/sources/cds/README.md": (
+                docs / "_generated/guides/cds.md"
+            ),
+            root / "CONTRIBUTING.md": docs / "_generated/contributing.md",
+        }
+    )
+    for source, target in mapping.items():
+
+        def replace_link(match: re.Match[str], source: Path = source, target: Path = target) -> str:
+            url = match.group(1)
+            parsed = urlsplit(url)
+            if parsed.scheme or parsed.netloc or not parsed.path:
+                return match.group(0)
+            resolved = (source.parent / parsed.path).resolve()
+            suffix = f"#{parsed.fragment}" if parsed.fragment else ""
+            if resolved in mapping:
+                destination = Path(os.path.relpath(mapping[resolved], target.parent)).as_posix()
+            else:
+                destination = f"{REPOSITORY}/blob/main/{resolved.relative_to(root).as_posix()}"
+            return f"]({destination}{suffix})"
+
+        lines = []
+        fence = ""
+        for line in source.read_text(encoding="utf-8").splitlines(keepends=True):
+            stripped = line.lstrip()
+            if stripped.startswith(("```", "~~~")):
+                marker = stripped[:3]
+                fence = "" if fence == marker else fence if fence else marker
+                lines.append(line)
+            else:
+                lines.append(line if fence else re.sub(r"\]\(([^\s)]+)\)", replace_link, line))
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text("".join(lines), encoding="utf-8")
+
+    for folder, package in (
+        ("data-retrieval", "energy_data_retrieval"),
+        ("methods", "energy_methods"),
+        ("analysis", "energy_analysis"),
+    ):
+        package_dir = root / folder / "src" / package
+        modules = []
+        for path in sorted(package_dir.rglob("*.py")):
+            if path.stem.startswith("_") or path.stem.endswith("cli"):
+                continue
+            module = ".".join(path.relative_to(package_dir.parent).with_suffix("").parts)
+            modules.append(module)
+            page = docs / "_generated/api" / f"{module}.rst"
+            page.parent.mkdir(parents=True, exist_ok=True)
+            page.write_text(
+                f"{module}\n{'=' * len(module)}\n\n"
+                f".. automodule:: {module}\n"
+                "   :members:\n   :undoc-members:\n   :show-inheritance:\n",
+                encoding="utf-8",
+            )
+        index = docs / "_generated/api" / f"{package}.rst"
+        index.write_text(
+            f"{package}\n{'=' * len(package)}\n\n"
+            ".. toctree::\n   :maxdepth: 1\n\n" + "".join(f"   {module}\n" for module in modules),
+            encoding="utf-8",
+        )
+    return [path.name for path in docs.glob("*.md")]

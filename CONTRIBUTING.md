@@ -1,5 +1,21 @@
 # Contributing
 
+The Sphinx site uses the PyData theme, API docstrings, existing Markdown guides
+and executable examples. To preview documentation locally:
+
+```bash
+uv sync --locked --all-packages --group docs
+uv run --no-sync sphinx-build -W --keep-going -b html docs docs/_build/html
+uv run --no-sync python scripts/check_docs_links.py docs/_build/html
+python -m http.server 8000 --directory docs/_build/html
+```
+
+See [documentation development](docs/development.rst) for the Pages workflow.
+Edit source guides and READMEs, never ignored `docs/_generated/` copies.
+Gallery examples must be deterministic, clearly label synthetic inputs and
+run without live provider access. Documentation dependencies are optional and
+are not installed into the three published packages.
+
 Use Python 3.12 or 3.13 and uv. From the repository root:
 
 ```bash

@@ -105,7 +105,7 @@ applies the degradation model once to the average of annual stresses;
 and generally differ. Both require complete support for every selected year.
 Arithmetic ambient RH, averaged daily extrema, cycle counting and A_N are explicit
 implementation/scenario choices; they do not establish equivalence to the original
-authors' effective-stress calibration. See [method equations and limitations](../../../../../docs/degradation.md).
+authors' effective-stress calibration. See [method equations and limitations](../../../../docs/degradation.md).
 
 ## Outputs
 
@@ -131,7 +131,7 @@ Julián Ascencio Vásquez's 2021 thesis is the primary scientific reference. Ind
 sources include Ascencio-Vásquez et al. (2019) for mapping, Kaaya et al. (2019) and
 Kaaya (2020) for calibration, Faiman (2008), Huld and Gracia Amillo (2015), and Wald
 (2018) for weather transformations. Metadata, DOIs and implementation roles are in
-[the shared reference catalogue](../../../../../docs/references.md), also included
+[the shared reference catalogue](../../../../docs/references.md), also included
 in each generated manifest and report.
 
 Credit Copernicus ERA5, Open-Meteo (CC BY 4.0), and CRU TS, Climatic Research Unit,
