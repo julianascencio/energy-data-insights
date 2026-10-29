@@ -1,0 +1,18 @@
+# Template: supply qualified local monthly files before running.
+# Paths are resolved relative to this TOML file. See README.md for the CSV schema.
+[ccya]
+title = "CCYA: plant observations and climate projections"
+data_kind = "observed_and_projected"
+measured_path = "inputs/plant-monthly.csv"
+measured_source = "REPLACE: plant, coordinates, period, DC capacity, QC and provenance"
+output_path = "../../../artifacts/ccya-real"
+degradation_rates = [0.0, 0.0025, 0.005, 0.01]
+report_years = [25, 50]
+plot_degradation_rate = 0.005
+
+[[scenarios]]
+id = "model-member-ssp245"
+label = "REPLACE: model / member / SSP2-4.5"
+historical_path = "inputs/model-historical-monthly.csv"
+projection_path = "inputs/model-ssp245-monthly.csv"
+source = "REPLACE: dataset/version, model/member, experiment, cell, calendar, units and preprocessing"

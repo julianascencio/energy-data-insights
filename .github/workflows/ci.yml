@@ -57,3 +57,5 @@ jobs:
         run: uv run --no-sync energy-chile demo --output artifacts/ci-demo --reports
       - name: Run synthetic CCYA example
         run: uv run --no-sync python methods/examples/ccya_synthetic.py
+      - name: Run applied CCYA study and report
+        run: uv run --no-sync energy-ccya demo --output artifacts/ci-ccya

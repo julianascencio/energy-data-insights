@@ -74,7 +74,7 @@ Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment 
 
 **Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed.
 
-**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -587,3 +587,19 @@ Polo, Jesus; Fernández-Peruchena, Carlos; Salamalikis, Vasileios; Mazorra-Aguia
 **Role:** background. Thesis reference [287], cited as background for site adaptation in section 7.5.1. CCYA implements the thesis simple monthly linear regression; it does not implement or reproduce the entire benchmark or all correction techniques in this paper. Metadata verified against publisher-deposited Crossref record.
 
 **Used by:** `methods/src/energy_methods/ccya.py`, `docs/ccya.md`.
+
+### hunter_2007_matplotlib
+
+Hunter, John D. (2007). **Matplotlib: A 2D Graphics Environment**. Computing in Science & Engineering, 9(3), 90-95. [DOI: 10.1109/MCSE.2007.55](https://doi.org/10.1109/MCSE.2007.55)
+
+**Role:** software. Matplotlib generates the CCYA analysis figures. Bibliographic details verified against the official Matplotlib citing page; the run manifest records the installed software version.
+
+**Used by:** `analysis/src/energy_analysis/ccya_case/reports/generator.py`.
+
+### eurac_abd_data_access
+
+Eurac Research (n.d.). **Solar energy production data from the PV-ABD plant**. [Source](https://www.eurac.edu/en/institutes-centers/institute-for-renewable-energy/tools-services/photovoltaiksysteme/solar-energy-production-data-from-the-pv-abd-plant)
+
+**Role:** background. Official access description for the Bolzano plant production and meteorological database. Access is restricted. No original plant data were retrieved or redistributed by this example; the bundled generator creates synthetic inputs. This citation documents access limitations, not a data acquisition.
+
+**Used by:** `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/reports/generator.py`.
