@@ -1900,6 +1900,72 @@
       ],
       "url": "https://docs.xarray.dev/en/stable/",
       "notes": "Role: software. Software used for labelled climate grids, CF NetCDF masking/scaling, explicit coordinate alignment, interpolation and NetCDF serialization. The algorithms and scientific threshold choices remain attributed to their individual method papers."
+    },
+    {
+      "type": "article",
+      "title": "Global Climate Data Processing and Mapping of Degradation Mechanisms and Degradation Rates of PV Modules",
+      "authors": [
+        {
+          "family-names": "Ascencio-Vásquez",
+          "given-names": "Julián"
+        },
+        {
+          "family-names": "Kaaya",
+          "given-names": "Ismail"
+        },
+        {
+          "family-names": "Brecl",
+          "given-names": "Kristijan"
+        },
+        {
+          "family-names": "Weiss",
+          "given-names": "Karl-Anders"
+        },
+        {
+          "family-names": "Topič",
+          "given-names": "Marko"
+        }
+      ],
+      "url": "https://www.mdpi.com/1996-1073/12/24/4749",
+      "notes": "Role: implemented. Source of climate-driven mechanism mapping and 0.2 percent/year categories, also presented in thesis Section 6.4. This implementation requires explicit module calibration and stress conventions. Mean daily extrema and arithmetic ambient humidity in the optional hourly processor are declared adaptations; the published global rasters and their calibration are not claimed reproduced.",
+      "year": 2019,
+      "doi": "10.3390/en12244749",
+      "journal": "Energies",
+      "volume": "12",
+      "issue": "24"
+    },
+    {
+      "type": "article",
+      "title": "Modeling Outdoor Service Lifetime Prediction of PV Modules: Effects of Combined Climatic Stressors on PV Module Power Degradation",
+      "authors": [
+        {
+          "family-names": "Kaaya",
+          "given-names": "Ismail"
+        },
+        {
+          "family-names": "Koehl",
+          "given-names": "Michael"
+        },
+        {
+          "family-names": "Mehilli",
+          "given-names": "Amantin Panos"
+        },
+        {
+          "family-names": "de Cardona Mariano",
+          "given-names": "Sidrach"
+        },
+        {
+          "family-names": "Weiss",
+          "given-names": "Karl Anders"
+        }
+      ],
+      "url": "https://doi.org/10.1109/JPHOTOV.2019.2916197",
+      "notes": "Role: implemented. Original hydrolysis, photodegradation, thermomechanical and multiplicative combined-rate equations (3)-(7), reproduced in thesis equations 3.14-3.17. Publication Boltzmann constant and normalization placement retained. Calibration and climatic aggregation must be supplied explicitly; no universal module coefficients, power-loss trajectory or service-lifetime predictor are implied.",
+      "year": 2019,
+      "doi": "10.1109/JPHOTOV.2019.2916197",
+      "journal": "IEEE Journal of Photovoltaics",
+      "volume": "9",
+      "issue": "4"
     }
   ]
 }
