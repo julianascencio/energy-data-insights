@@ -16,6 +16,7 @@ from typing import cast
 
 import pandas as pd
 
+from energy_data_retrieval.discovery_cli import add_discovery_parser, run_discovery_command
 from energy_data_retrieval.sources.bsrn import BSRN_HOSTS, BSRNClient
 from energy_data_retrieval.sources.cen import CENClient, aggregate_units, normalize_registry
 from energy_data_retrieval.sources.cen.client import CEN_HOSTS, REGISTRY_ENDPOINT
@@ -136,6 +137,7 @@ def _json_object(value: object) -> dict[str, JSONValue]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
+    add_discovery_parser(commands)
     add_station_parsers(commands)
     bsrn_search = commands.add_parser(
         "bsrn-search", help="Find candidate PANGAEA monthly BSRN dataset DOIs"
@@ -579,6 +581,12 @@ def _native(args: argparse.Namespace) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command == "discover":
+        try:
+            run_discovery_command(args)
+        except (ValueError, RetrievalError, OSError) as error:
+            parser.exit(2, f"Location discovery failed: {error}\n")
+        return 0
     if args.command in STATION_COMMANDS:
         try:
             run_station_command(args)

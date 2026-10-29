@@ -20,6 +20,24 @@ Dependencies flow from `analysis` to `methods` and `data-retrieval`. The methods
 package performs no provider retrieval. Source clients know their provider's
 payloads and clocks; they do not decide which sites underperform.
 
+### Location discovery
+
+`energy_data_retrieval.discovery` composes the existing station catalogues and
+grid products for a latitude/longitude query. The pure, vectorized spatial
+method remains inside the retrieval package, which stays independently
+installable without the scientific-model dependencies. Station adapters retain
+source identities, catalogue scope, native metadata and explicit failure states.
+Distance ranking handles the antimeridian and poles and never silently treats
+an unavailable catalogue as evidence that no stations exist.
+
+Grid discovery separates documented geographic coverage, source-catalogue
+evidence and an optional small data probe. CMIP6 plans retain their exact model,
+experiment, member, grid, version and native files; geographic coverage is not
+inferred from their presence in a catalogue. Discovery JSON snapshots include
+source request evidence, reference IDs and a content checksum. They inform a
+subsequent explicit retrieval and analysis selection. See
+[location discovery](location-discovery.md).
+
 ## Data contracts
 
 Generation and hourly weather use a typed, explicit tabular interchange schema.

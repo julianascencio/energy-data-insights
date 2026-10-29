@@ -64,6 +64,28 @@ names are listed in [.env.example](.env.example); credentials are never bundled.
 Use `energy-chile compare` when you already have frozen expected-generation
 columns: it performs fleet accounting without fitting or replacing those values.
 
+## Find weather data from latitude and longitude
+
+Use one geographic query to rank nearby BSRN, NOAA GHCNh, AEMET, DWD and
+SURFRAD stations and list the integrated gridded weather and climate products:
+
+```bash
+uv run energy-retrieve discover \
+  --latitude 28.4775 --longitude -16.3294 \
+  --radius-km 100 --limit 20 \
+  --output data/discovery/tenerife.json
+```
+
+The JSON contains station distances, source identities, catalogue scope,
+available coverage evidence, retrieval parameters and references. Missing
+credentials and provider failures are reported per source. Add
+`--probe-date 2025-01-01` to verify a small sample from the two Open-Meteo
+products and record the actual selected grid cells and missing-value counts.
+CMIP6 candidates retain explicit model/member/grid selection requirements.
+
+See [location discovery](docs/location-discovery.md) for the Python API,
+offline catalogue reuse, dataset statuses and scientific limits.
+
 ## Retrieve CMIP6 data
 
 CMIP6 has its own provider under

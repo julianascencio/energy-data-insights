@@ -583,7 +583,9 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
+      "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "docs/location-discovery.md"
     ],
     "note": "Scientific description of ERA5 reanalysis. Reanalysis is modelled weather and cannot be relabelled as a measured station. Cite the actual dataset and acquisition wrapper separately.",
     "verified_at": "2026-10-29",
@@ -605,7 +607,9 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
+      "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "docs/location-discovery.md"
     ],
     "note": "Single-level dataset citation as recommended by the Earthmover source catalogue. Record the actual retrieval date and selected data vintage; do not use the metadata-verification date as a data-access date.",
     "verified_at": "2026-10-29"
@@ -622,7 +626,9 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
+      "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "docs/location-discovery.md"
     ],
     "note": "Optional native ERA5 source. Cite Earthmover, the C3S single-level dataset, and underlying ERA5 research; acquisition must retain the pinned snapshot and actual access date. Catalogue metadata verification does not establish current snapshot coverage or a new data acquisition.",
     "verified_at": "2026-10-29"
@@ -639,7 +645,9 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/open_meteo"
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "docs/location-discovery.md"
     ],
     "note": "Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance.",
     "verified_at": "2026-10-29"
@@ -656,7 +664,9 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/open_meteo"
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "docs/location-discovery.md"
     ],
     "note": "Optional archive of numerical forecasts. The adapter explicitly selects ECMWF IFS; do not describe these records as ERA5 or observations. Record model, vintage and interval semantics from provenance.",
     "verified_at": "2026-10-29"
@@ -674,7 +684,9 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "data-retrieval/README.md"
+      "data-retrieval/README.md",
+      "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "docs/location-discovery.md"
     ],
     "note": "Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.",
     "verified_at": "2026-10-29"
@@ -1261,6 +1273,26 @@
       "data-retrieval/README.md"
     ],
     "note": "Public GML station/year daily text archive actually used by this provider. Cite the selected station, UTC days and acquisition date; preserve its native files, quality flags and hashes. CC0-1.0 with NOAA attribution and fair-use guidance. This is not a claim to retrieve the separately published NCEI NetCDF, QCRAD, or realtime products.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "bsrn_station_catalogue",
+    "title": "BSRN Stations: PANGAEA station event catalogue",
+    "authors": [
+      "PANGAEA",
+      "Alfred Wegener Institute"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://dataportals.pangaea.de/bsrn/stations",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/bsrn/stations.py",
+      "data-retrieval/src/energy_data_retrieval/station_discovery.py",
+      "docs/location-discovery.md"
+    ],
+    "note": "Official BSRN station inventory linked from the Alfred Wegener Institute station overview. Its bounded tab-delimited export preserves event codes, names, location, elevation, event dates, comments and source URIs. Event date extents do not establish monthly observation availability or continuous measurements; geographic proximity does not establish site representativeness. The selected catalogue and retrieval timestamp identify the acquisition vintage.",
     "verified_at": "2026-10-29"
   }
 ]
