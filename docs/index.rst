@@ -70,6 +70,10 @@ research scope, choose the sources and guide the implementation. Responsibility
 for review, testing and scientific validation remains with the developers and
 contributors.
 
+As the project evolves, errors or omissions may remain in the code or documentation.
+Please check assumptions and results for your intended use; corrections and issue
+reports are welcome.
+
 The primary scientific reference is Julián Andrés Ascencio Vásquez (2021),
 *Modelling and worldwide assessment of performance and aging of photovoltaic
 modules and systems*, University of Ljubljana.

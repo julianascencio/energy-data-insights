@@ -38,6 +38,10 @@ and connects it to the relevant methods. Method-specific documentation records
 implementation choices, adaptations and validation limits; responsibility for
 review, testing and scientific validation remains with the developers and contributors.
 
+As the project evolves, errors or omissions may remain in the code or documentation.
+Please check assumptions and results for your intended use; corrections and issue
+reports are welcome.
+
 ## Repository structure
 
 | Subproject | Contents | Python import |
