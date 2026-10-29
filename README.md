@@ -19,6 +19,14 @@ See [architecture and extension points](docs/architecture.md).
 
 ## Install
 
+Once the first releases are published, each subproject can be installed from
+public PyPI with `pip install energy-data-retrieval`, `pip install energy-methods`
+or `pip install energy-analysis`. Analysis also installs the other two packages.
+See [tag-based releases and publisher setup](docs/releases.md) for independent
+release tags, optional extras and the one-time PyPI setup.
+
+For development from source:
+
 Use Python 3.12 or 3.13 and uv 0.13.4 or later:
 
 ```bash
