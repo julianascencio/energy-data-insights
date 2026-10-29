@@ -11,7 +11,7 @@ From the repository root after `uv sync --all-packages --group dev`:
 
 ```bash
 # A complete deterministic smoke run. Every observation is explicitly synthetic.
-uv run energy-chile demo --output .local/chile-demo
+uv run energy-chile demo --output .local/chile-demo --reports
 
 # Fit the same synthetic study with the separate LightGBM algorithm.
 uv run energy-chile demo --output .local/chile-demo-lgbm --algorithm lightgbm
@@ -31,6 +31,9 @@ uv run energy-chile compare \
   --hourly .local/frozen-hourly.parquet --sites .local/sites.csv \
   --start 2026-10-27T03:00:00Z --end 2026-10-28T03:00:00Z \
   --reference expected_final_mwh --output .local/frozen-comparison
+
+# Render an existing result directory without fitting a model or changing inputs.
+uv run energy-chile report --run .local/frozen-comparison
 ```
 
 The example dates are explicit **study boundaries**, not independently verified storm
@@ -38,7 +41,7 @@ timestamps. Set them for your study. None of these commands claims to have fresh
 retrieved the entire Chile fleet: retrieval is a separate package with source-specific
 access and coverage limits.
 
-`prepare`, `run` and `compare` refuse to overwrite an existing output directory.
+`prepare`, `run`, `compare` and `report` refuse to overwrite an existing output directory.
 Successful runs atomically rename a temporary directory; interrupted runs cannot leave
 a misleading `complete=true` release at the requested destination.
 
@@ -148,11 +151,53 @@ The score `100 * (1 − WAPE)` is an energy-prediction score, not classification
 | `models/site-NNNNNN.json` | Stage boundaries, geometry, lag, accepted counts, DC qualification, band parameters and portable fitted state |
 | `tdp/site-NNNNNN-{avg,y2y,coverage}.parquet` | All-history profiles and qualification evidence |
 | `manifest.json` | Config, software versions, input/output hashes, site-to-file mapping, scope and limitations |
+| `reports/` | Optional fleet/site HTML, publication drafts, references and separate report manifest |
 
 The numbered file key is a safe filename, not a renamed plant identifier. The manifest
 maps every key back to its exact registry ID. No credentials or private request URLs
 are written to run provenance. Input hashes are on by default; `hash_inputs=false`
 records sizes only and explicitly weakens input reproducibility.
+
+## Analysis-specific report generation
+
+All Chile report generation code is in
+[`src/energy_analysis/chile_fleet/reports/`](src/energy_analysis/chile_fleet/reports/).
+The API and output contract are documented in that folder. Other analyses should
+own their own `reports/` package rather than adding country-specific rendering
+to `methods` or `Data-retrieval`.
+
+Use either `--reports` when running an analysis or the separate `report` command
+on a completed result directory. For example:
+
+```bash
+uv run energy-chile run --config Analysis/examples/chile_fleet.toml --reports
+uv run energy-chile report --run .local/frozen-comparison \
+  --title "Chile PV fleet: frozen-reference comparison"
+```
+
+By default the report destination is `<run>/reports`. `--output` selects a new
+destination when a separate report version is needed. An existing report folder
+is never silently replaced. Generating reports after a run leaves the original
+analysis manifest, fitted parameters and expected generation unchanged.
+
+The fleet page provides searchable, sortable comparisons and links to individual
+site pages. Coverage, comparison eligibility, matched observed/expected energy,
+chronological validation and hourly screening evidence are displayed separately.
+TDP evidence appears when the analysis produced it. Frozen-reference comparisons
+without saved hourly/model/TDP details show those limits explicitly. References
+include the thesis first and the works underlying the methods and data sources.
+
+The TOML setting `data_kind` accepts `"synthetic"`, `"observational"` or
+`"unspecified"` (default); it describes the supplied data, not model accuracy.
+The demo always sets `"synthetic"`, including when its config is loaded later.
+For synthetic frozen inputs use `compare --synthetic`; `report --synthetic` can
+also mark older results. The generated dashboard and publication drafts carry
+the synthetic label. A missing label does not establish field validation.
+
+Reports are self-contained offline HTML with no external chart library, CDN or
+analytics requests. Fleet hourly series are split into per-site pages and chart
+data are bounded. Website and LinkedIn outputs are **drafts**, with figures drawn
+from the saved fleet accounting; this command never publishes them.
 
 ## Sources and verification
 

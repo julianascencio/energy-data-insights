@@ -13,6 +13,7 @@ from .io import json_safe
 from .pipeline import run_fleet
 from .prepare import prepare_inputs
 from .reference import compare_references
+from .reports import generate_reports
 
 
 def parser() -> argparse.ArgumentParser:
@@ -25,9 +26,11 @@ def parser() -> argparse.ArgumentParser:
     prepare.add_argument("--output", required=True, type=Path)
     run = commands.add_parser("run", help="Run all supplied registry sites using a TOML config")
     run.add_argument("--config", required=True, type=Path)
+    run.add_argument("--reports", action="store_true", help="Build reports below the run output")
     demo = commands.add_parser("demo", help="Generate and analyze explicitly synthetic inputs")
     demo.add_argument("--output", required=True, type=Path)
     demo.add_argument("--algorithm", choices=("physics", "lightgbm"), default="physics")
+    demo.add_argument("--reports", action="store_true", help="Build reports below the run output")
     compare = commands.add_parser(
         "compare", help="Compare supplied frozen references without fitting"
     )
@@ -43,6 +46,19 @@ def parser() -> argparse.ArgumentParser:
     )
     compare.add_argument("--minimum-coverage", type=float, default=0.8)
     compare.add_argument("--tolerance", type=float, default=0.2)
+    compare.add_argument(
+        "--reports", action="store_true", help="Build reports below the run output"
+    )
+    compare.add_argument(
+        "--synthetic", action="store_true", help="Label comparison inputs synthetic"
+    )
+    report = commands.add_parser("report", help="Render a completed analysis without refitting")
+    report.add_argument(
+        "--run", required=True, type=Path, help="Completed run/comparison directory"
+    )
+    report.add_argument("--output", type=Path, help="Defaults to <run>/reports")
+    report.add_argument("--title", default="Chile PV fleet performance")
+    report.add_argument("--synthetic", action="store_true", default=None)
     return root
 
 
@@ -52,6 +68,12 @@ def main(argv: list[str] | None = None) -> int:
         if args.command == "prepare":
             result = prepare_inputs(args.generation, args.weather, args.sites, args.output)
             print(json.dumps({"complete": result["complete"], "output": str(args.output)}))
+            return 0
+        if args.command == "report":
+            result = generate_reports(
+                args.run, args.output, title=args.title, synthetic=args.synthetic
+            )
+            print(json.dumps(json_safe(result), indent=2, allow_nan=False))
             return 0
         if args.command == "compare":
             result = compare_references(
@@ -63,7 +85,10 @@ def main(argv: list[str] | None = None) -> int:
                 reference=args.reference,
                 minimum_reference_coverage=args.minimum_coverage,
                 relative_tolerance=args.tolerance,
+                data_kind="synthetic" if args.synthetic else "unspecified",
             )
+            if args.reports:
+                generate_reports(args.output, synthetic=True if args.synthetic else None)
             print(json.dumps(json_safe(result["summary"]), indent=2, allow_nan=False))
             return 0
         if args.command == "demo":
@@ -71,6 +96,8 @@ def main(argv: list[str] | None = None) -> int:
         else:
             config = load_config(args.config)
         result = run_fleet(config, progress=lambda message: print(message, file=sys.stderr))
+        if args.reports:
+            generate_reports(config.output_path)
         print(json.dumps(json_safe(result["summary"]), indent=2, allow_nan=False))
         return 0
     except (ValueError, OSError) as error:

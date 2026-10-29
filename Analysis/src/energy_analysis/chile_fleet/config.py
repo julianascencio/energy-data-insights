@@ -47,6 +47,7 @@ class FleetConfig:
     tdp_minimum_hours_per_day: int = 24
     tdp_minimum_bin_observations: int = 10
     hash_inputs: bool = True
+    data_kind: Literal["unspecified", "synthetic", "observational"] = "unspecified"
 
     def __post_init__(self) -> None:
         for name in ("event_start", "report_start", "report_end"):
@@ -84,6 +85,8 @@ class FleetConfig:
             raise ValueError("lag_hours must contain integer shifts")
         if self.report_start < self.training_start:
             raise ValueError("The report cannot precede the configured baseline window")
+        if self.data_kind not in {"unspecified", "synthetic", "observational"}:
+            raise ValueError("data_kind must be unspecified, synthetic or observational")
 
     @property
     def training_start(self) -> datetime:
@@ -139,6 +142,9 @@ def load_config(path: Path) -> FleetConfig:
 
     algorithm = values.get("algorithm", "physics")
     reference = values.get("reference", "final")
+    data_kind = values.get("data_kind", "unspecified")
+    if data_kind not in {"unspecified", "synthetic", "observational"}:
+        raise ValueError("data_kind must be unspecified, synthetic or observational")
     if algorithm not in {"physics", "lightgbm"} or reference not in {"final", "heldout"}:
         raise ValueError("Invalid algorithm or reference")
     lags = values.get("lag_hours", (-2, -1, 0, 1, 2))
@@ -166,4 +172,11 @@ def load_config(path: Path) -> FleetConfig:
         tdp_minimum_hours_per_day=integer("tdp_minimum_hours_per_day", 24),
         tdp_minimum_bin_observations=integer("tdp_minimum_bin_observations", 10),
         hash_inputs=boolean("hash_inputs", True),
+        data_kind=(
+            "synthetic"
+            if data_kind == "synthetic"
+            else "observational"
+            if data_kind == "observational"
+            else "unspecified"
+        ),
     )

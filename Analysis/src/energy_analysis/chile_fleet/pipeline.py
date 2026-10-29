@@ -410,6 +410,7 @@ def run_fleet(
         manifest: dict[str, object] = {
             "schema": "energy-data-insights-chile-fleet-run-v1",
             "complete": True,
+            "data_kind": config.data_kind,
             "configuration": asdict(config),
             "versions": versions,
             "inputs": {

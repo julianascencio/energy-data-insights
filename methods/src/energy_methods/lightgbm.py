@@ -3,6 +3,9 @@
 Irradiance is constrained increasing and temperature decreasing. Tree-based
 monotonicity is weaker than the analytic concavity of the physics model. Fit
 only the accepted training partition and evaluate later chronological data.
+
+Cite the main thesis, the PV application by Ascencio-Vasquez et al. (2020),
+and Ke et al. (2017); see REFERENCE_IDS and energy_methods.references.
 """
 
 from __future__ import annotations
@@ -14,6 +17,13 @@ from lightgbm import LGBMRegressor
 from numpy.typing import ArrayLike
 
 from energy_methods._arrays import BoolArray, FloatArray, aligned
+
+REFERENCE_IDS = (
+    "ascencio_vasquez_2021_thesis",
+    "ascencio_vasquez_2020_modelling",
+    "ke_2017_lightgbm",
+    "lightgbm_parameters",
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -48,6 +58,7 @@ class LightGBMModel:
         """Export LightGBM's text model rather than unsafe pickle objects."""
         return {
             "method": "monotone_lightgbm",
+            "reference_ids": list(REFERENCE_IDS),
             "config": asdict(self.config),
             "model_text": self.estimator.booster_.model_to_string(),
             "feature_order": ["poa_wm2", "temperature_c"],

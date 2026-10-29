@@ -3,6 +3,10 @@
 Nonnegative coefficients analytically enforce a nondecreasing, concave response
 to irradiance and a nonincreasing response to temperature on the declared domain.
 These are empirical response constraints, not identified module thermal physics.
+
+Cite the main thesis for scientific context, Stark-Parker for the BVLS
+solver and SciPy for its implementation; the transformed PV basis is this
+repository's parameterization. See energy_methods.references.
 """
 
 from __future__ import annotations
@@ -15,6 +19,8 @@ from numpy.typing import ArrayLike
 from scipy.optimize import lsq_linear
 
 from energy_methods._arrays import BoolArray, FloatArray, aligned, immutable
+
+REFERENCE_IDS = ("ascencio_vasquez_2021_thesis", "stark_parker_1995_bvls", "virtanen_2020_scipy")
 
 
 @dataclass(frozen=True, slots=True)
@@ -80,6 +86,7 @@ class PhysicsModel:
         """Portable fitted state; no opaque estimator or executable serialization."""
         return {
             "method": "shape_constrained_physical_response",
+            "reference_ids": list(REFERENCE_IDS),
             "config": asdict(self.config),
             "coefficients": self.coefficients.tolist(),
             "training_scale_mwh": self.training_scale_mwh,

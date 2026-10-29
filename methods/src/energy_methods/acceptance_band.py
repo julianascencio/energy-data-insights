@@ -4,6 +4,9 @@ This is a maintained reimplementation of the previous ASVA method, not original
 author software. The paper's inconsistent printed distance/roughness expressions
 are resolved explicitly in README.md. Fit receives training data only. Bounds
 depend on irradiance alone and never inspect the observations being evaluated.
+
+Main and method citations: ascencio_vasquez_2021_thesis and
+ascencio_vasquez_2020_modelling in energy_methods.references.
 """
 
 from __future__ import annotations
@@ -16,6 +19,8 @@ import numpy as np
 from numpy.typing import ArrayLike
 
 from energy_methods._arrays import BoolArray, FloatArray, IntArray, aligned, immutable, vector
+
+REFERENCE_IDS = ("ascencio_vasquez_2021_thesis", "ascencio_vasquez_2020_modelling")
 
 
 class BandFitUnavailable(ValueError):
@@ -82,6 +87,7 @@ class FittedAcceptanceBand:
         """Export portable coefficients with source and support provenance."""
         return {
             "method": "ascencio_vasquez_2020_two_stage_band",
+            "reference_ids": list(REFERENCE_IDS),
             "source_doi": "10.3390/en13092166",
             "config": asdict(self.config),
             "lower_coefficients": self.lower_coefficients.tolist(),

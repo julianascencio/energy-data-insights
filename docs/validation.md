@@ -1,4 +1,49 @@
-# Initial workspace validation
+# Validation record
+
+## Historical imports, analysis reports and citations — 29 October 2026
+
+Validated locally with Python 3.12.14, Ruff 0.17.3 and ty 0.0.94 using the
+updated lockfile. CI exercises the same required checks on Python 3.12/3.13.
+
+| Check | Result |
+| --- | --- |
+| Ruff formatting and lint | Passed |
+| ty, warnings treated as errors | Passed |
+| Complete pytest suite | 116 passed |
+| Retrieval / methods / analysis tests | 50 / 37 / 29 passed |
+| Citation catalogue and generated-export consistency | Passed; 26 entries |
+| CFF metadata | Validated against official CFF 1.2.0 schema |
+| BibTeX metadata | All 26 entries parsed successfully |
+| Three wheels and three source distributions | Built successfully |
+| Built-wheel import/report smoke check | Passed, including packaged reference JSON |
+| Physics and LightGBM examples with `--reports` | Both completed |
+| Offline desktop/mobile browser checks | Passed at 1440 × 1000 and 390 × 844 |
+| Browser search, group filter and numeric sorting | Passed |
+| Browser JavaScript errors / external HTTP requests / page overflow | None |
+| Repository hygiene and patch whitespace checks | Passed |
+
+Historical tests exercise alias resolution, a single site per physical unit,
+equal-duplicate removal, conflict rejection, incomplete unit rosters, explicit
+units, source precision/basis, DST gaps/folds, end-labelled wide-hour exports,
+bounded XLSX/ZIP handling and checkpoint/hash-verified downloads. A reviewer found
+and corrected a case where aliases could assign one physical unit to two sites;
+the regression test prevents duplicated site generation.
+
+Report tests check preservation of source inputs and frozen references,
+matched-energy accounting, unavailable evidence, escaping, safe filenames,
+source hash/summary verification, atomic failure cleanup, persistent synthetic
+labels and energy-conserving chart aggregation. The dashboard holds summary
+rows and links to separate site pages instead of embedding fleet-wide hourly
+history in a single HTML payload. Validation used a temporary headless Chromium
+browser; no browser package is added to the Python runtime dependencies.
+
+These results validate code and controlled fixtures. They do not establish live
+CEN/Qlik authorization, a fresh national history download, measured-station
+accuracy, or replay of the earlier archived production release. The two model
+examples and browser previews use explicitly synthetic data. The previous
+release's raw data, fitted coefficients and dashboard are not changed.
+
+## Initial workspace — 28 October 2026
 
 Validation performed on 28 October 2026, with Python 3.12.14 on Linux x86-64.
 The committed `uv.lock` records the complete dependency resolution.

@@ -1,5 +1,21 @@
 # Energy methods
 
+## Main reference and method attribution
+
+The main scientific reference is **Julián Andrés Ascencio Vásquez (2021),
+_Modelling and worldwide assessment of performance and aging of photovoltaic
+modules and systems_, University of Ljubljana**. The [full catalogue](../docs/references.md)
+contains the original method papers, data sources, software and standards;
+[references.bib](../references.bib) provides BibTeX. Each method exposes
+`REFERENCE_IDS`; portable fitted-state exports retain those IDs.
+
+Cite the thesis together with each method actually used. The published TDP and
+acceptance-band methods are adapted explicitly below. The shape-constrained PV
+basis is repository-specific and uses the Stark–Parker BVLS algorithm through
+SciPy. Operational screening is informed by IEC TS 63019 and does not establish
+IEC conformity, verified causes or certified availability.
+
+
 Country-neutral, typed Python methods for photovoltaic performance assessment.
 Install as `energy-methods` and import `energy_methods`. The workspace root
 documents installation and quality checks.

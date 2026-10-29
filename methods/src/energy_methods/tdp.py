@@ -3,6 +3,9 @@
 AVG pools original observations by month/hour across eligible year-months;
 Y2Y preserves year/month/hour. P90 is the empirical 90th percentile of hourly
 observations, not an annual-energy 90% exceedance estimate.
+
+The main scientific reference is ascencio_vasquez_2021_thesis; specific
+method attribution is ascencio_vasquez_2021_tdp in energy_methods.references.
 """
 
 from __future__ import annotations
@@ -14,6 +17,8 @@ import numpy as np
 import pandas as pd
 
 from energy_methods._arrays import FloatArray, IntArray, epoch_ns, utc_index
+
+REFERENCE_IDS = ("ascencio_vasquez_2021_thesis", "ascencio_vasquez_2021_tdp")
 
 
 @dataclass(frozen=True, slots=True)

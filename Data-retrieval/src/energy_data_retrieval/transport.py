@@ -238,6 +238,93 @@ class HTTPClient:
                 delay = max(delay, requested)
         return min(self.config.maximum_retry_seconds, max(0.0, delay))
 
+    def download_file(
+        self, endpoint: str, path: Path, *, expected_sha256: str | None = None
+    ) -> RequestRecord:
+        """Stream one public export to disk with verified whole-file restart semantics.
+
+        An interrupted transfer is retried from byte zero. HTTP ranges are not
+        assumed safe for changing archives. Reuse requires both an intact file
+        and its matching manifest. Credential-bearing and redirected URLs fail.
+        """
+        parsed = urlsplit(endpoint)
+        if (
+            parsed.scheme != "https"
+            or parsed.hostname not in self.allowed_hosts
+            or parsed.username is not None
+            or parsed.password is not None
+            or parsed.query
+            or parsed.fragment
+            or parsed.port not in (None, 443)
+        ):
+            raise ValueError("Endpoint must be a query-free HTTPS URL on an approved host")
+        if expected_sha256 is not None and not re.fullmatch("[a-fA-F0-9]{64}", expected_sha256):
+            raise ValueError("Expected SHA-256 must be a 64-character hexadecimal digest")
+        expected = expected_sha256.lower() if expected_sha256 else None
+        manifest = path.with_suffix(path.suffix + ".download.json")
+        if path.exists() or manifest.exists():
+            if not path.exists() or not manifest.exists():
+                raise ValueError("Incomplete download checkpoint; inspect it before retrying")
+            saved = json.loads(manifest.read_text())
+            with path.open("rb") as stream:
+                actual = hashlib.file_digest(stream, "sha256").hexdigest()
+            if (
+                saved["endpoint"] != endpoint
+                or saved["sha256"] != actual
+                or saved["size_bytes"] != path.stat().st_size
+                or path.stat().st_size > self.config.maximum_response_bytes
+                or (expected is not None and actual != expected)
+            ):
+                raise ValueError("Download checkpoint differs from its source or checksum")
+            return RequestRecord(
+                endpoint, {}, saved["retrieved_at_utc"], actual, path.stat().st_size, True
+            )
+        path.parent.mkdir(parents=True, exist_ok=True)
+        last_status: int | None = None
+        for attempt in range(self.config.attempts):
+            self._wait_for_slot()
+            response: httpx.Response | None = None
+            descriptor, name = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+            temporary = Path(name)
+            try:
+                with (
+                    os.fdopen(descriptor, "wb") as target,
+                    self._client.stream(
+                        "GET", endpoint, headers={"Accept": "application/octet-stream"}
+                    ) as response,
+                ):
+                    last_status = response.status_code
+                    if last_status == 200:
+                        digest = hashlib.sha256()
+                        size = 0
+                        for chunk in response.iter_bytes(chunk_size=64 * 1024):
+                            size += len(chunk)
+                            if size > self.config.maximum_response_bytes:
+                                raise RetrievalError("Export exceeded the configured byte limit")
+                            digest.update(chunk)
+                            target.write(chunk)
+                        if expected is not None and digest.hexdigest() != expected:
+                            raise RetrievalError("Downloaded export has an unexpected SHA-256")
+                        target.flush()
+                        os.fsync(target.fileno())
+                        record = RequestRecord(
+                            endpoint, {}, datetime.now(UTC).isoformat(), digest.hexdigest(), size
+                        )
+                    elif last_status not in _RETRY_STATUSES:
+                        break
+                if last_status == 200:
+                    temporary.replace(path)
+                    atomic_bytes(manifest, json.dumps(asdict(record), indent=2).encode())
+                    return record
+            except httpx.TransportError:
+                last_status = None
+            finally:
+                temporary.unlink(missing_ok=True)
+            if attempt + 1 < self.config.attempts:
+                self._sleep(self._retry_delay(response, attempt))
+        status = f"HTTP {last_status}" if last_status is not None else "transport failure"
+        raise RetrievalError(f"Export retrieval failed from {parsed.hostname}: {status}") from None
+
     def get_json(
         self,
         endpoint: str,

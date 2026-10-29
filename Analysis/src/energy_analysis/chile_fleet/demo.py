@@ -107,6 +107,7 @@ def create_demo(
         'hourly_path = "hourly.parquet"\n'
         'sites_path = "sites.csv"\n'
         'output_path = "results"\n'
+        'data_kind = "synthetic"\n'
         'event_start = "2026-10-26T03:00:00Z"\n'
         'report_start = "2026-10-26T03:00:00Z"\n'
         'report_end = "2026-10-28T03:00:00Z"\n'
@@ -125,4 +126,5 @@ def create_demo(
         algorithm=algorithm,
         fit_geometry=False,
         lag_hours=(0,),
+        data_kind="synthetic",
     )

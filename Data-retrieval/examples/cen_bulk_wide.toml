@@ -1,0 +1,20 @@
+# Illustrative worksheet/headers; configure from the selected official workbook.
+# Do not use this 24-hour layout for daily historical products or unresolved DST days.
+source = "cen-bulk"
+identity_column = "source_name"
+value_column = "generation"
+date_column = "date"
+date_format = "%Y-%m-%d"
+hour_columns = [
+  "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9", "H10", "H11", "H12",
+  "H13", "H14", "H15", "H16", "H17", "H18", "H19", "H20", "H21", "H22", "H23", "H24",
+]
+hour_origin = 1
+timezone = "America/Santiago"
+timestamp_label = "end"
+energy_unit = "MWh"
+# Only declare gross where the actual source documentation establishes it.
+measurement_basis = "gross"
+temporal_resolution = "hourly"
+sheet = "Hourly"
+skiprows = 0
