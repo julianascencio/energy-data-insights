@@ -68,13 +68,13 @@ archived production release or to have ingested all historical Chilean records.
 uv run energy-retrieve cen-history \
   --input inputs/generation-export.csv \
   --mapping inputs/verified-historical-units.csv \
-  --schema Data-retrieval/examples/cen_qlik.toml \
+  --schema data-retrieval/examples/cen_qlik.toml \
   --output data/history/qlik-hourly.parquet
 
 uv run energy-retrieve cen-history \
   --input inputs/historical-workbook.xlsx \
   --mapping inputs/verified-historical-units.csv \
-  --schema Data-retrieval/examples/cen_bulk_wide.toml \
+  --schema data-retrieval/examples/cen_bulk_wide.toml \
   --output data/history/bulk-hourly.parquet
 ```
 
@@ -219,7 +219,7 @@ the plant's conditions.
 uv run energy-retrieve station-import \
   --input inputs/station-hourly.csv \
   --mapping inputs/station-sites.csv \
-  --schema Data-retrieval/examples/station.toml \
+  --schema data-retrieval/examples/station.toml \
   --output data/station/weather.parquet
 ```
 
@@ -285,7 +285,7 @@ The canonical interval columns are `site_id` (string), `timestamp` (UTC-aware
 interval start), and `duration_hours`. Site generation adds `actual_mwh` and
 `generation_complete`; weather adds `ghi_wm2,temperature_c,wind_speed_ms,gust_ms`.
 Feed site-aggregated generation and matching weather into the
-`energy_analysis.chile_fleet` workflow in `Analysis/`.
+`energy_analysis.chile_fleet` workflow in `analysis/`.
 
 ## Source and method references
 

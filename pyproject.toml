@@ -18,7 +18,7 @@ dev = [
 package = false
 
 [tool.uv.workspace]
-members = ["Data-retrieval", "methods", "Analysis"]
+members = ["data-retrieval", "methods", "analysis"]
 
 [tool.uv.sources]
 energy-data-retrieval = { workspace = true }
@@ -28,7 +28,7 @@ energy-analysis = { workspace = true }
 [tool.ruff]
 target-version = "py312"
 line-length = 100
-src = ["Data-retrieval/src", "methods/src", "Analysis/src"]
+src = ["data-retrieval/src", "methods/src", "analysis/src"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "NPY", "RUF"]
@@ -38,17 +38,17 @@ docstring-code-format = true
 
 [tool.ty.environment]
 python-version = "3.12"
-extra-paths = ["Data-retrieval/src", "methods/src", "Analysis/src"]
+extra-paths = ["data-retrieval/src", "methods/src", "analysis/src"]
 
 [tool.ty.src]
-include = ["Data-retrieval", "methods", "Analysis", "scripts", "benchmarks"]
+include = ["data-retrieval", "methods", "analysis", "scripts", "benchmarks"]
 exclude = ["**/dist/**", "**/build/**"]
 
 [tool.ty.terminal]
 error-on-warning = true
 
 [tool.pytest.ini_options]
-testpaths = ["Data-retrieval/tests", "methods/tests", "Analysis/tests", "tests"]
+testpaths = ["data-retrieval/tests", "methods/tests", "analysis/tests", "tests"]
 addopts = "--strict-config --strict-markers --import-mode=importlib -ra"
 filterwarnings = ["error"]
 markers = [

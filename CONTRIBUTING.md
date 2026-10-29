@@ -19,8 +19,8 @@ NumPy is currently bounded below 2.4: the validated 2.3.5 line avoids a
 NumPy 2.5/pandas 2.3/pvlib import deprecation found by the strict test suite.
 Revisit that compatibility bound with the full scientific tests when upgrading.
 
-Keep provider logic in `Data-retrieval`, reusable numerical algorithms in
-`methods`, and study-specific orchestration in `Analysis`. Public APIs need
+Keep provider logic in `data-retrieval`, reusable numerical algorithms in
+`methods`, and study-specific orchestration in `analysis`. Public APIs need
 type annotations, units, timestamp semantics and explicit handling of missing
 values. Input validation should fail at the boundary with a useful message.
 Keep report generation in the respective analysis's `reports/` package; write

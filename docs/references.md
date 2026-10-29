@@ -73,7 +73,7 @@ Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment 
 
 **Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented.
 
-**Used by:** `README.md`, `methods/README.md`, `Analysis/README.md`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -193,7 +193,7 @@ International Electrotechnical Commission (2019). **IEC TS 63019:2019: Photovolt
 
 **Role:** standard. Information-model context only. The ten observable states and numeric thresholds are project screening rules, not normative IEC categories or a conformity claim. Causes remain unconfirmed and the workflow does not compute certified availability.
 
-**Used by:** `methods/src/energy_methods/status.py`, `Analysis/README.md`.
+**Used by:** `methods/src/energy_methods/status.py`, `analysis/README.md`.
 
 ### cen_generation_api
 
@@ -201,7 +201,7 @@ Coordinador Eléctrico Nacional (n.d.). **Generación real: API de datos abierto
 
 **Role:** data. Actual-generation API source. Use the exact request interval, access time, response provenance and effective unit roster recorded by the acquisition; catalogue inclusion is not evidence of live authorization or complete national coverage.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/cen`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cen`.
 
 ### cen_infotecnica_registry
 
@@ -209,7 +209,7 @@ Coordinador Eléctrico Nacional (n.d.). **Infotécnica: registro público de cen
 
 **Role:** data. Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/cen`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cen`.
 
 ### cen_historical_reports
 
@@ -217,7 +217,7 @@ Coordinador Eléctrico Nacional (n.d.). **Reportes y estadísticas: generación 
 
 **Role:** data. Provider catalogue for historical generation and Qlik exports. Every imported export requires its specific source URL/file, timestamp conventions and hash; this general catalogue does not certify the completeness of a supplied export.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/cen`, `Data-retrieval/README.md`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cen`, `data-retrieval/README.md`.
 
 ### cen_qlik_generation
 
@@ -225,7 +225,7 @@ Coordinador Eléctrico Nacional (n.d.). **Generación real descargable (Qlik)**.
 
 **Role:** data. Source interface for preserved generation exports. The adapter imports user-supplied CSV/XLSX/ZIP exports with an explicit contract; citation does not imply anonymous live access, successful authorization or an implemented Qlik session client.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/cen/history.py`, `Data-retrieval/README.md`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cen/history.py`, `data-retrieval/README.md`.
 
 ### hersbach_2020_era5
 
@@ -233,7 +233,7 @@ Hersbach, Hans; Bell, Bill; Berrisford, Paul; Hirahara, Shoji; Horányi, András
 
 **Role:** data. Scientific description of ERA5 reanalysis. Reanalysis is modelled weather and cannot be relabelled as a measured station. Cite the actual dataset and acquisition wrapper separately.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
 
 ### era5_single_levels
 
@@ -241,7 +241,7 @@ Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (2023). **ERA5 
 
 **Role:** data. Single-level dataset citation as recommended by the Earthmover source catalogue. Record the actual retrieval date and selected data vintage; do not use the metadata-verification date as a data-access date.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
 
 ### earthmover_icechunk_era5
 
@@ -249,7 +249,7 @@ Earthmover (n.d.). **Icechunk ERA5**. [Source](https://registry.opendata.aws/ear
 
 **Role:** data. Optional native ERA5 source. Cite Earthmover, the C3S single-level dataset, and underlying ERA5 research; acquisition must retain the pinned snapshot and actual access date. Catalogue metadata verification does not establish current snapshot coverage or a new data acquisition.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
 
 ### open_meteo_historical_weather
 
@@ -257,7 +257,7 @@ Open-Meteo (n.d.). **Historical Weather API**. [Source](https://open-meteo.com/e
 
 **Role:** data. Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/open_meteo`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`.
 
 ### open_meteo_historical_forecast
 
@@ -265,7 +265,7 @@ Open-Meteo (n.d.). **Historical Forecast API**. [Source](https://open-meteo.com/
 
 **Role:** data. Optional archive of numerical forecasts. The adapter explicitly selects ECMWF IFS; do not describe these records as ERA5 or observations. Record model, vintage and interval semantics from provenance.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/open_meteo`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`.
 
 ### open_meteo_variable_definitions
 
@@ -273,4 +273,4 @@ Open-Meteo (n.d.). **Weather Forecast API: hourly variable definitions**. [Sourc
 
 **Role:** data. Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.
 
-**Used by:** `Data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `Data-retrieval/README.md`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/README.md`.

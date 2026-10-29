@@ -307,7 +307,7 @@ wheels = [
 [[package]]
 name = "energy-analysis"
 version = "0.1.0"
-source = { editable = "Analysis" }
+source = { editable = "analysis" }
 dependencies = [
     { name = "energy-data-retrieval" },
     { name = "energy-methods" },
@@ -318,7 +318,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "energy-data-retrieval", editable = "Data-retrieval" },
+    { name = "energy-data-retrieval", editable = "data-retrieval" },
     { name = "energy-methods", editable = "methods" },
     { name = "numpy", specifier = ">=2.2,<2.4" },
     { name = "pandas", specifier = ">=2.2,<3" },
@@ -353,7 +353,7 @@ dev = [
 [[package]]
 name = "energy-data-retrieval"
 version = "0.1.0"
-source = { editable = "Data-retrieval" }
+source = { editable = "data-retrieval" }
 dependencies = [
     { name = "httpx" },
     { name = "numpy" },

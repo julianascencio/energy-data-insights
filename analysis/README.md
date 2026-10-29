@@ -24,7 +24,7 @@ uv run energy-chile prepare \
   --output .local/prepared
 
 # Run every registry record with the configured periods and model choice.
-uv run energy-chile run --config Analysis/examples/chile_fleet.toml
+uv run energy-chile run --config analysis/examples/chile_fleet.toml
 
 # Reuse supplied frozen expected values without retraining or modifying them.
 uv run energy-chile compare \
@@ -164,13 +164,13 @@ All Chile report generation code is in
 [`src/energy_analysis/chile_fleet/reports/`](src/energy_analysis/chile_fleet/reports/).
 The API and output contract are documented in that folder. Other analyses should
 own their own `reports/` package rather than adding country-specific rendering
-to `methods` or `Data-retrieval`.
+to `methods` or `data-retrieval`.
 
 Use either `--reports` when running an analysis or the separate `report` command
 on a completed result directory. For example:
 
 ```bash
-uv run energy-chile run --config Analysis/examples/chile_fleet.toml --reports
+uv run energy-chile run --config analysis/examples/chile_fleet.toml --reports
 uv run energy-chile report --run .local/frozen-comparison \
   --title "Chile PV fleet: frozen-reference comparison"
 ```

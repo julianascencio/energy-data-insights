@@ -1,8 +1,8 @@
 # Chile fleet reports
 
 Report generation belongs to its analysis:
-`Analysis/src/energy_analysis/chile_fleet/reports/`. Reusable numerical methods
-remain in `methods/`; data acquisition remains in `Data-retrieval/`.
+`analysis/src/energy_analysis/chile_fleet/reports/`. Reusable numerical methods
+remain in `methods/`; data acquisition remains in `data-retrieval/`.
 
 ## Generate from saved outputs
 
