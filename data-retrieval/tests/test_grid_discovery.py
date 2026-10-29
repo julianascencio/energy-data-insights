@@ -86,6 +86,8 @@ def test_default_candidates_are_json_safe_and_make_no_availability_claim(
         "open_meteo_ifs",
         "earthmover_era5",
         "cmip6",
+        "gpcc_monthly_v2025",
+        "cru_ts_v4_10",
     ]
     assert json.loads(json.dumps(rows, allow_nan=False)) == rows
     assert all(row["availability_status"] == "not_checked" for row in rows)
@@ -113,7 +115,7 @@ def test_invalid_coordinates_are_rejected(latitude: float, longitude: float) -> 
 def test_date_annotation_never_infers_snapshot_or_ifs_coverage() -> None:
     rows = grid_datasets(90, 180, start=date(1939, 12, 31), end=date(1940, 1, 1))
     assert rows[0]["temporal_status"] == "partly_outside_documented_coverage"
-    assert all(row["temporal_status"] == "not_checked" for row in rows[1:])
+    assert all(row["temporal_status"] == "not_checked" for row in rows[1:4])
     rows = grid_datasets(-90, -180, start=date(1939, 1, 1), end=date(1939, 12, 31))
     assert rows[0]["temporal_status"] == "outside_documented_coverage"
     assert rows[0]["availability_status"] == "not_checked"
@@ -289,3 +291,17 @@ def test_cmip6_plan_keeps_native_files_and_never_infers_point_coverage() -> None
     assert object_value(row["selection"])["start_year"] == 2005
     assert plan.sha256 == original
     json.dumps(rows, allow_nan=False)
+
+
+def test_gpcc_cru_candidates_have_monthly_semantics_and_explicit_time_coverage() -> None:
+    rows = {
+        str(row["source"]): row
+        for row in grid_datasets(28.37, -16.38, start=date(2025, 1, 1), end=date(2026, 1, 1))
+    }
+    assert rows["gpcc"]["temporal_resolution"] == "monthly"
+    assert rows["gpcc"]["temporal_status"] == "within_documented_start_only"
+    assert rows["cru_ts"]["temporal_status"] == "partly_outside_documented_coverage"
+    for source in ("gpcc", "cru_ts"):
+        assert rows[source]["geographic_status"] == "point_coverage_unverified"
+        assert rows[source]["availability_status"] == "not_checked"
+        assert rows[source]["cell_latitude"] is None

@@ -9,6 +9,9 @@ description = "Auditable, bounded retrieval of public energy and weather data"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+  "scipy>=1.15,<2",
+  "h5netcdf>=1.6,<2",
+  "xarray>=2025.1,<2027",
   "httpx>=0.28,<1",
   "numpy>=2.2,<2.4",
   "openpyxl>=3.1,<4",

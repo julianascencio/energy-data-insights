@@ -16,6 +16,8 @@ the provider's native files and metadata for subsequent climate analyses.
 | `sources/aemet` | Authenticated station inventory, historical daily climate and recent station observations from AEMET OpenData |
 | `sources/dwd` | DWD CDC hourly solar station catalogue and native radiation archives |
 | `sources/surfrad` | NOAA SURFRAD station catalogue and native daily radiation/weather observations |
+| `sources/gpcc` | GPCC Monthly v2025 pinned archive retrieval and normalized precipitation grids |
+| `sources/cru_ts` | CRU TS v4.10 ten-variable archive retrieval and monthly grid processing |
 | `sources/cmip6` | ESGF STAC discovery, versioned retrieval plans and verified native CMIP6 NetCDF downloads |
 
 All acquisition is explicit. Importing a module or running the tests makes no
@@ -32,7 +34,7 @@ uv run energy-retrieve discover \
 
 This searches the existing station providers and ranks their candidates by
 spherical distance, with a global result limit. It also lists Open-Meteo ERA5,
-archived IFS, pinned native ERA5 and CMIP6, distinguishing documented coverage
+archived IFS, pinned native ERA5, CMIP6, GPCC and CRU TS, distinguishing documented coverage
 from verified data. `--probe-date YYYY-MM-DD` optionally checks one day from
 both Open-Meteo products. `--grid-only` skips station catalogues; repeating
 `--station-source` selects particular station providers. AEMET uses the existing
@@ -768,3 +770,11 @@ data or credentials. Historical export and measured-station adapters use explici
 contracts and synthetic fixtures. Live source availability, a complete historical
 release, historical identity validity and metrological quality require separate
 evidence; offline tests do not establish them.
+
+## GPCC and CRU TS
+
+`energy-retrieve gpcc` and `energy-retrieve cru-ts` retrieve pinned monthly
+NetCDF archives and write normalized regional grids with download manifests.
+Each provider has its own `sources/gpcc` or `sources/cru_ts` package.
+See [data access, units, licenses, limits and examples](../docs/kgpv.md).
+Climatology, KGPV and general mapping calculations live in `methods`.

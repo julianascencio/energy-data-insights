@@ -49,7 +49,7 @@ def test_metadata_only_and_offline_modes_do_not_construct_http_clients(
     body = json.loads(capsys.readouterr().out)
     assert body["query"]["network_enabled"] is False
     assert body["stations"] == []
-    assert len(body["grid_datasets"]) == 4
+    assert len(body["grid_datasets"]) == 6
     assert all(row["availability_status"] == "not_checked" for row in body["grid_datasets"])
     if "--offline" in selection:
         assert body["source_status"][0]["status"] == "not_requested"
@@ -99,7 +99,7 @@ def test_output_path_saves_full_snapshot_and_prints_summary_without_overwrite(
     summary = json.loads(capsys.readouterr().out)
     body = json.loads(path.read_text())
     assert summary["output_path"] == str(path)
-    assert summary["stations"] == 0 and summary["grid_datasets"] == 4
+    assert summary["stations"] == 0 and summary["grid_datasets"] == 6
     assert body["query"]["latitude"] == 28.5
     assert len(body["discovery_sha256"]) == 64
     original = path.read_bytes()

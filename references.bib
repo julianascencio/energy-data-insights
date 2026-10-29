@@ -499,3 +499,64 @@
   url = {https://dataportals.pangaea.de/bsrn/stations},
   note = {Role: data. Official BSRN station inventory linked from the Alfred Wegener Institute station overview. Its bounded tab-delimited export preserves event codes, names, location, elevation, event dates, comments and source URIs. Event date extents do not establish monthly observation availability or continuous measurements; geographic proximity does not establish site representativeness. The selected catalogue and retrieval timestamp identify the acquisition vintage.}
 }
+
+@article{ascencio_vasquez_2019_kgpv,
+  author = {Ascencio-Vásquez, Julián and Brecl, Kristijan and Topič, Marko},
+  title = {{Methodology of Köppen-Geiger-Photovoltaic climate classification and implications to worldwide mapping of PV system performance}},
+  year = {2019},
+  journal = {Solar Energy},
+  volume = {191},
+  pages = {672--685},
+  doi = {10.1016/j.solener.2019.08.072},
+  url = {https://repozitorij.uni-lj.si/IzpisGradiva.php?id=112635&lang=eng},
+  note = {Role: implemented. Fig. A1 classification precedence and fixed irradiation thresholds; Table 4 merges 24 raw combinations into 12 zones. Verified against the open-access institutional full text. Uses updated GPCC/CRU releases and caller-selected baseline rather than reproducing the original 1990-2016 map. Exact 18 C is assigned tropical, irradiation upper edges are inclusive, and aridity reductions use a machine-roundoff tolerance; these numerical conventions are explicit. No PV yield simulation is claimed.}
+}
+
+@article{kottek_2006_kg,
+  author = {Kottek, Markus and Grieser, Jürgen and Beck, Christoph and Rudolf, Bruno and Rubel, Franz},
+  title = {{World Map of the Köppen-Geiger climate classification updated}},
+  year = {2006},
+  journal = {Meteorologische Zeitschrift},
+  volume = {15},
+  number = {3},
+  pages = {259--263},
+  doi = {10.1127/0941-2948/2006/0130},
+  url = {https://koeppen-geiger.vu-wien.ac.at/pdf/Paper_2006.pdf},
+  note = {Role: implemented. Eq. 2.1 seasonal dryness threshold uses at least two thirds of annual precipitation in winter or summer. The KGPV paper cites this work with year 2007, but the verified publication is 2006. KGPV Fig. A1 supplies the relabelling and polar/steppe equality rules.}
+}
+
+@misc{gpcc_monthly_v2025,
+  author = {Rustemeier, Elke and Finger, Peter and Schirmeister, Zora and Ziese, Markus},
+  title = {{GPCC Precipitation Analysis Monthly Version 2025}},
+  year = {2025},
+  institution = {Deutscher Wetterdienst, Global Precipitation Climatology Centre},
+  url = {https://opendata.dwd.de/climate_environment/GPCC/html/gpcc_precipitation_analysis_monthly_v2025_doi_download.html},
+  note = {Role: data. Four resolutions: 0.25, 0.5, 1.0 and 2.5 degrees. Cite the selected product DOI 10.5676/DWD\_GPCC/MONTHLY\_V2025\_025, \_050, \_100 or \_250 respectively; the request and retrieval manifest expose the exact DOI. Monthly totals; precip\_infill is opt-in. Five-year blocks through 2020, 2021-2024 block, monthly files from 2025. Retain native gauge/error fields in raw archives. Follow DWD terms of use.}
+}
+
+@article{harris_2020_cru_ts,
+  author = {Harris, Ian and Osborn, Timothy J. and Jones, Phil and Lister, David},
+  title = {{Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset}},
+  year = {2020},
+  journal = {Scientific Data},
+  volume = {7},
+  pages = {109},
+  doi = {10.1038/s41597-020-0453-3},
+  url = {https://doi.org/10.1038/s41597-020-0453-3},
+  note = {Role: data. Method reference requested by the CRU TS provider. Data version is cited separately; use of this adapter does not imply that any particular analysis consumed CRU data.}
+}
+
+@misc{cru_ts_410,
+  author = {Climatic Research Unit, University of East Anglia},
+  title = {{CRU-TS Version 4.10}},
+  year = {2026},
+  url = {https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/},
+  note = {Role: data. Pinned release cruts.2604091129.v4.10, monthly 1901-2025 at 0.5 degrees over land excluding Antarctica. No version DOI was provided on the verified release page. Provider asks users to prefer CEDA and use UEA if CEDA is unavailable or the release has not yet been published there. ODbL with Database Contents License, attribution and share-alike. TMP is monthly mean temperature; PRE is monthly total; PET remains mm/day.}
+}
+
+@misc{xarray_documentation,
+  author = {{Xarray developers}},
+  title = {{Xarray documentation: labelled arrays, CF decoding and interpolation}},
+  url = {https://docs.xarray.dev/en/stable/},
+  note = {Role: software. Software used for labelled climate grids, CF NetCDF masking/scaling, explicit coordinate alignment, interpolation and NetCDF serialization. The algorithms and scientific threshold choices remain attributed to their individual method papers.}
+}

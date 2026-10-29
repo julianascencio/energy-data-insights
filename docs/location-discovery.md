@@ -94,7 +94,7 @@ a suitable PV reference station. See the [BSRN guidance on station representativ
 
 ## Gridded dataset results
 
-The registry describes only the four already integrated offerings. It does not
+The registry describes only the six integrated offerings. It does not
 add a new data provider or claim that a catalogue entry proves usable data at
 every date and grid cell.
 
@@ -103,6 +103,8 @@ every date and grid cell.
 | Open-Meteo ERA5 | Documented global coverage | Explicit ERA5 hourly output, nearest cell, elevation adjustment disabled |
 | Open-Meteo archived IFS | Documented global model coverage | Explicit `ecmwf_ifs` archived forecast product; model vintage, start and resolution require product-specific evidence |
 | Earthmover native ERA5 | Documented global ERA5 grid | Uses the repository's pinned Icechunk snapshot; that snapshot's actual time bounds and cell data need inspection |
+| GPCC Monthly v2025 | Global land; native cell mask unverified | Monthly precipitation; 1891 onward; 0.25°, 0.5°, 1°, 2.5°; `gpcc` command |
+| CRU TS v4.10 | Global land excluding Antarctica; native cell mask unverified | Ten monthly variables; 1901–2025; 0.5°; `cru-ts` command |
 | CMIP6 | Depends on the explicitly selected dataset and native grid | Requires model, experiment, ensemble member, table, variable, grid and resolved version |
 
 Each row records supported source variables, normalized output variables,

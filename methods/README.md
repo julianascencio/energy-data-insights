@@ -233,3 +233,13 @@ closure, exact lag edges, band support, PR units/boundaries, all ten statuses,
 state precedence, timestamp-gap persistence, TDP pooling, missingness and zero
 retention, and LightGBM determinism/portable inference. Benchmark inputs are
 synthetic and labelled; its measured timing is machine-specific.
+
+## Climate classification and mapping
+
+`energy_methods.kgpv` implements the KGPV temperature/precipitation rules,
+fixed irradiation thresholds and published 24-to-12 zone merging.
+`energy_methods.climatology` builds monthly climatologies from bounded batches.
+`energy_methods.mapping` provides coordinate normalization, explicit regridding,
+cell areas, class summaries and bounded GeoJSON export.
+Run `energy-kgpv --help`; see [the complete workflow and assumptions](../docs/kgpv.md).
+The primary thesis citation and the specific 2019 KGPV paper are both retained.

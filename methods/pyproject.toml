@@ -5,6 +5,7 @@ description = "Country-neutral PV performance methods with explicit scientific a
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+  "xarray>=2025.1,<2027",
   "numpy>=2.2,<2.4",
   "pandas>=2.2,<3",
   "scipy>=1.15,<2",
@@ -19,3 +20,6 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/energy_methods"]
+
+[project.scripts]
+energy-kgpv = "energy_methods.kgpv_cli:main"

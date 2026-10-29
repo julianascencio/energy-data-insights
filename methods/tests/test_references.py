@@ -113,7 +113,18 @@ def test_method_paper_dois_remain_covered_by_catalogue() -> None:
 
 
 @pytest.mark.parametrize(
-    "module", ["tdp", "acceptance_band", "poa", "lightgbm", "physics", "status"]
+    "module",
+    [
+        "tdp",
+        "acceptance_band",
+        "poa",
+        "lightgbm",
+        "physics",
+        "status",
+        "kgpv",
+        "mapping",
+        "climatology",
+    ],
 )
 def test_method_reference_ids_resolve_and_include_primary_thesis(module: str) -> None:
     reference_ids = import_module(f"energy_methods.{module}").REFERENCE_IDS

@@ -228,3 +228,10 @@ Citation metadata is generated from one source and checked for drift:
 ```bash
 uv run --no-sync python scripts/check_citations.py
 ```
+
+## Climate grids and KGPV maps
+
+GPCC Monthly v2025 and CRU TS v4.10 retrieval/processing are available through
+`energy-retrieve gpcc` and `energy-retrieve cru-ts`. `energy-kgpv` builds the
+published 12-zone classification with explicit GHI input. Reusable climatology
+and mapping utilities are in `methods`. See the [workflow and scientific rules](docs/kgpv.md).
