@@ -233,7 +233,7 @@ Hersbach, Hans; Bell, Bill; Berrisford, Paul; Hirahara, Shoji; Horányi, András
 
 **Role:** data. Scientific description of ERA5 reanalysis. Reanalysis is modelled weather and cannot be relabelled as a measured station. Cite the actual dataset and acquisition wrapper separately.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
 
 ### era5_single_levels
 
@@ -241,7 +241,7 @@ Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (2023). **ERA5 
 
 **Role:** data. Single-level dataset citation as recommended by the Earthmover source catalogue. Record the actual retrieval date and selected data vintage; do not use the metadata-verification date as a data-access date.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
 
 ### earthmover_icechunk_era5
 
@@ -249,7 +249,7 @@ Earthmover (n.d.). **Icechunk ERA5**. [Source](https://registry.opendata.aws/ear
 
 **Role:** data. Optional native ERA5 source. Cite Earthmover, the C3S single-level dataset, and underlying ERA5 research; acquisition must retain the pinned snapshot and actual access date. Catalogue metadata verification does not establish current snapshot coverage or a new data acquisition.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
 
 ### open_meteo_historical_weather
 
@@ -257,7 +257,7 @@ Open-Meteo (n.d.). **Historical Weather API**. [Source](https://open-meteo.com/e
 
 **Role:** data. Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
 
 ### open_meteo_historical_forecast
 
@@ -265,7 +265,7 @@ Open-Meteo (n.d.). **Historical Forecast API**. [Source](https://open-meteo.com/
 
 **Role:** data. Optional archive of numerical forecasts. The adapter explicitly selects ECMWF IFS; do not describe these records as ERA5 or observations. Record model, vintage and interval semantics from provenance.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
 
 ### open_meteo_variable_definitions
 
@@ -273,7 +273,7 @@ Open-Meteo (n.d.). **Weather Forecast API: hourly variable definitions**. [Sourc
 
 **Role:** data. Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/README.md`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/README.md`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
 
 ### eyring_2016_cmip6
 
@@ -498,3 +498,11 @@ NOAA Global Monitoring Laboratory (n.d.). **NOAA GML SURFRAD daily radiation and
 **Role:** data. Public GML station/year daily text archive actually used by this provider. Cite the selected station, UTC days and acquisition date; preserve its native files, quality flags and hashes. CC0-1.0 with NOAA attribution and fair-use guidance. This is not a claim to retrieve the separately published NCEI NetCDF, QCRAD, or realtime products.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py`, `data-retrieval/README.md`.
+
+### bsrn_station_catalogue
+
+PANGAEA; Alfred Wegener Institute (n.d.). **BSRN Stations: PANGAEA station event catalogue**. [Source](https://dataportals.pangaea.de/bsrn/stations)
+
+**Role:** data. Official BSRN station inventory linked from the Alfred Wegener Institute station overview. Its bounded tab-delimited export preserves event codes, names, location, elevation, event dates, comments and source URIs. Event date extents do not establish monthly observation availability or continuous measurements; geographic proximity does not establish site representativeness. The selected catalogue and retrieval timestamp identify the acquisition vintage.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/bsrn/stations.py`, `data-retrieval/src/energy_data_retrieval/station_discovery.py`, `docs/location-discovery.md`.

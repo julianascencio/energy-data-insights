@@ -11,7 +11,7 @@ the provider's native files and metadata for subsequent climate analyses.
 | `sources/open_meteo` | Explicit ERA5 historical weather or archived ECMWF IFS forecasts |
 | `sources/earthmover_era5` | Native ERA5 tiles from a pinned public Icechunk snapshot; optional dependencies |
 | `sources/station` | Explicitly mapped measured hourly weather from preserved CSV/XLSX exports |
-| `sources/bsrn` | Public PANGAEA DOI discovery and BSRN monthly radiation observations with source metadata and qualifiers |
+| `sources/bsrn` | Official station catalogue, public PANGAEA DOI discovery and BSRN monthly radiation observations with source metadata and qualifiers |
 | `sources/noaa` | Current GHCNh station catalogue and native station/year weather observations from NOAA NCEI |
 | `sources/aemet` | Authenticated station inventory, historical daily climate and recent station observations from AEMET OpenData |
 | `sources/dwd` | DWD CDC hourly solar station catalogue and native radiation archives |
@@ -21,6 +21,33 @@ the provider's native files and metadata for subsequent climate analyses.
 All acquisition is explicit. Importing a module or running the tests makes no
 network requests. Test fixtures are synthetic and are not evidence of live API
 availability, authorization or complete Chilean generation coverage.
+
+## Discover sources at a location
+
+```bash
+uv run energy-retrieve discover \
+  --latitude 28.4775 --longitude -16.3294 --radius-km 100 --limit 20 \
+  --output data/discovery/tenerife.json
+```
+
+This searches the existing station providers and ranks their candidates by
+spherical distance, with a global result limit. It also lists Open-Meteo ERA5,
+archived IFS, pinned native ERA5 and CMIP6, distinguishing documented coverage
+from verified data. `--probe-date YYYY-MM-DD` optionally checks one day from
+both Open-Meteo products. `--grid-only` skips station catalogues; repeating
+`--station-source` selects particular station providers. AEMET uses the existing
+`AEMET_API_KEY` environment variable and reports missing credentials explicitly.
+
+`--catalogue SOURCE=PATH` reuses a verified station Parquet snapshot with its
+original source scope. Combine it with `--offline` to disable network access.
+`--cmip6-plan PATH` adds the exact selected datasets from an existing verified
+CMIP6 plan; coordinate coverage still requires native-grid inspection.
+
+The Python entry points are `energy_data_retrieval.discovery.find_sources`,
+`energy_data_retrieval.spatial.nearby_stations`, and
+`energy_data_retrieval.grid_discovery.grid_datasets`.
+See [the full discovery guide](../docs/location-discovery.md) for examples,
+result fields, provenance and availability limits.
 
 ## Install and use
 
