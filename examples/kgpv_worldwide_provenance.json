@@ -1,0 +1,82 @@
+{
+  "description": "Derived 5-degree illustration; not the published KGPV map or an official NOAA product",
+  "source": "NOAA PSL NCEP/NCAR Reanalysis 1",
+  "source_url": "https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html",
+  "data_policy_url": "https://psl.noaa.gov/data/help/",
+  "baseline_start_year": 1991,
+  "baseline_end_year": 2020,
+  "grid_degrees": 5,
+  "units": {
+    "t": "degC",
+    "p": "mm",
+    "annual_ghi": "kWh m-2"
+  },
+  "mean_month_days": [
+    31.0,
+    28.266666666666666,
+    31.0,
+    30.0,
+    31.0,
+    30.0,
+    31.0,
+    31.0,
+    30.0,
+    31.0,
+    30.0,
+    31.0
+  ],
+  "preprocessing": [
+    "Require valid_yr_count=30 for every source month; no missing-value filling.",
+    "Temperature: K minus 273.15. Precipitation: kg m-2 s-1 times mean month days times 86400.",
+    "Solar: clip [-0.1,0) W m-2 to zero; reject below -0.1; sum flux times mean month days times 24/1000.",
+    "Month lengths averaged over 1991-2020; February rate/leap-year covariance is unavailable.",
+    "Bilinearly interpolate continuous fields before classification; nearest-neighbour binary land mask.",
+    "Mask oceans and incomplete climate cells; blank CSV values mean missing, never zero.",
+    "Sample at 5-degree cell centres; no conservative area aggregation or coastal land-fraction weighting.",
+    "Round CSV values to six decimal places; retain source files and checksums to reproduce preparation."
+  ],
+  "negative_solar_source_values_clipped": 171,
+  "land_cells": 858,
+  "valid_land_cells": 858,
+  "fixture_sha256": "6fd8343cca4c970c52c0eae7701e6f1cae29efb36fc576fd709bd83bc8f5cb88",
+  "sources": [
+    {
+      "endpoint": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.derived/surface_gauss/air.2m.mon.ltm.1991-2020.nc",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-29T21:59:05.224906+00:00",
+      "sha256": "c86a3c575010ca2c9414b24022361c43be6966dcdc62c821c1918e9c44ca9be9",
+      "size_bytes": 964084,
+      "cache_hit": true
+    },
+    {
+      "endpoint": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.derived/surface_gauss/prate.sfc.mon.ltm.1991-2020.nc",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-29T21:59:05.395376+00:00",
+      "sha256": "35c390d9b82128925f960b8189992f3f617d131d8f4af4051dcd216d40825798",
+      "size_bytes": 1155046,
+      "cache_hit": true
+    },
+    {
+      "endpoint": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis.derived/surface_gauss/dswrf.sfc.mon.ltm.1991-2020.nc",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-29T21:59:05.568929+00:00",
+      "sha256": "5f9a176ba44d205541cb847d749fc7005cb594e8b4d35bf1aee67ac2e3c93be9",
+      "size_bytes": 1041949,
+      "cache_hit": true
+    },
+    {
+      "endpoint": "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis/surface_gauss/land.sfc.gauss.nc",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-29T21:59:05.806006+00:00",
+      "sha256": "7da97a6d508a499302002891bb11e7c284d99019698cb89de1b5f5da37df3ca3",
+      "size_bytes": 25213,
+      "cache_hit": true
+    }
+  ],
+  "software": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "xarray": "2026.9.0",
+    "scipy": "1.18.1"
+  }
+}

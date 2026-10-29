@@ -11,6 +11,75 @@ Brecl and Topič (2019), [open-access paper](https://repozitorij.uni-lj.si/Izpis
 Fig. A1, Section 3 and Table 4. See the [complete bibliography](references.md).
 This implementation produces climate zones, not simulated PV yields.
 
+## Worldwide worked example
+
+Open the [worldwide KGPV gallery example](https://julianascencio.github.io/energy-data-insights/auto_examples/plot_kgpv_worldwide.html)
+for an executed global land map, a twelve-zone legend, spherical-area shares,
+downloadable Python and optional NetCDF/GeoJSON export. It uses the repository's
+`map_kgpv`, `regrid`, `class_area_summary` and `write_geojson` functions.
+
+The gallery runs offline from the reviewed text fixtures
+`examples/kgpv_worldwide_inputs.csv` and `examples/kgpv_worldwide_provenance.json`.
+The CSV contains **real NOAA PSL NCEP/NCAR Reanalysis 1 climatologies for
+1991–2020**, sampled onto a **5° grid**; it is not synthetic climate data. This
+alternative-source illustration is **not a reproduction of the published KGPV
+map** or the GPCC/CRU workflow below. It retains the method's fixed irradiation
+thresholds and twelve-zone merges rather than fitting thresholds to this sample.
+
+| Input | NOAA field | Conversion before spatial interpolation |
+| --- | --- | --- |
+| Monthly 2 m air temperature | `air.2m.mon.ltm.1991-2020.nc`, `air` | Kelvin minus 273.15 → °C |
+| Monthly precipitation | `prate.sfc.mon.ltm.1991-2020.nc`, `prate` | kg/m²/s × mean month days × 86400 → mm |
+| Annual horizontal irradiation | `dswrf.sfc.mon.ltm.1991-2020.nc`, `dswrf` | Surface downward solar W/m² × mean month days × 24/1000, summed over twelve months → kWh/m²/year |
+| Land mask | `land.sfc.gauss.nc`, `land` | Nearest neighbour; 1 = land, 0 = ocean |
+
+Month lengths are averaged over Gregorian years 1991–2020 (February:
+28 + 8/30 days). Converting climatological rates with these lengths is an
+approximation: exact year-by-year totals would also require the unavailable
+February rate/leap-year covariance. All source months require
+`valid_yr_count == 30`. Missing data propagate to unclassified cells. Small
+negative solar fluxes in [-0.1, 0) W/m² are explicitly clipped to zero; more
+negative values fail. The manifest records the number clipped.
+
+Continuous fields are bilinearly sampled on cell centres at latitudes
+−87.5°…87.5° and longitudes −177.5°…177.5°, before classification. These centres
+lie inside the native Gaussian grid, so no extrapolation or cyclic seam filling
+is needed. This is point sampling, not conservative aggregation. Coastal land
+cells include their full grid-cell area; small islands and detailed boundaries
+are unresolved. The area chart excludes ocean and missing cells and does not
+weight all latitude/longitude pixels equally.
+
+To run the checked-in example from a fresh checkout:
+
+```bash
+uv sync --locked --all-packages --group docs
+cd examples
+uv run python plot_kgpv_worldwide.py
+```
+
+To regenerate its inputs, run from the repository root:
+
+```bash
+uv run python scripts/prepare_kgpv_worldwide.py
+```
+
+The preparation script uses the repository's bounded HTTP transport to fetch
+four public files (about 3.2 MB total), validates pinned byte counts and SHA-256
+hashes, checks the baseline and units, and rewrites the CSV and provenance JSON.
+Raw files and restart manifests remain under ignored
+`artifacts/kgpv-worldwide/raw/`; only the compact, attributed CSV fixture is
+committed. If the source bytes change, preparation fails until the change is
+reviewed. In environments that require a proxy, explicitly add
+`--use-environment-proxy` to use `HTTPS_PROXY`. No API account is required.
+
+Source data are provided by **NOAA PSL, Boulder, Colorado, USA**:
+[NCEP/NCAR Reanalysis 1](https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html).
+Cite **Kalnay et al. (1996), The NCEP/NCAR 40-Year Reanalysis Project**, alongside
+the thesis and KGPV paper. NOAA lists no usage restrictions for this dataset;
+its [data policy](https://psl.noaa.gov/data/help/) requests attribution. The NOAA
+source information is public domain; this derived fixture/map is not an official
+NOAA product and does not imply endorsement. See the [bibliography](references.md).
+
 ## Providers and version pins
 
 | Source | Pin and coverage | Retrieval | Processing |
