@@ -14,9 +14,11 @@ dependencies = [
   "numpy>=2.2,<2.4",
   "pandas>=2.2,<3",
   "pyarrow>=19,<25",
+  "matplotlib>=3.10,<4",
 ]
 
 [project.scripts]
+energy-ccya = "energy_analysis.ccya_case.cli:main"
 energy-chile = "energy_analysis.chile_fleet.cli:main"
 
 [tool.uv.sources]

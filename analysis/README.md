@@ -1,4 +1,22 @@
-# Country analyses
+# Applied analyses
+
+## Climate Change Yield Assessment
+
+The [applied CCYA example](examples/ccya/README.md) follows the Bolzano case-study
+design in the PhD thesis: seven climate paths, 50 operating years, four degradation
+rates, and 25/50-year yield comparisons. Its runnable demonstration uses explicitly
+synthetic data and includes a configuration for qualified plant/model CSVs.
+
+```bash
+uv sync --locked --all-packages
+uv run energy-ccya demo --output artifacts/ccya-demo
+```
+
+Open `artifacts/ccya-demo/results/reports/index.html` for the complete analysis,
+seven PNG/SVG figures, component comparisons, source references and provenance.
+Report generation belongs to `src/energy_analysis/ccya_case/reports/`.
+
+## Chile PV fleet
 
 `energy-analysis` assembles reusable retrieval and scientific methods into an auditable
 Chile PV fleet workflow. The package operates on the **entire registry supplied to a
