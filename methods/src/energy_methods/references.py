@@ -12,6 +12,7 @@ from collections.abc import Iterable
 from dataclasses import asdict, dataclass
 from importlib.resources import files
 from typing import cast
+from urllib.parse import quote
 
 PRIMARY_REFERENCE_ID = "ascencio_vasquez_2021_thesis"
 
@@ -110,7 +111,7 @@ def references_markdown(ids: Iterable[str] | None = None) -> str:
         if reference.institution:
             citation += f" {reference.institution}."
         locator = (
-            f"[DOI: {reference.doi}](https://doi.org/{reference.doi})"
+            f"[DOI: {reference.doi}](https://doi.org/{quote(reference.doi, safe='/')})"
             if reference.doi
             else f"[Source]({reference.url})"
         )

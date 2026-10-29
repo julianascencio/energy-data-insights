@@ -39,6 +39,11 @@ from energy_data_retrieval.sources.noaa import NOAA_HOSTS, STATIONS_ENDPOINT, NO
 from energy_data_retrieval.sources.open_meteo import OpenMeteoClient, Site, WeatherProduct
 from energy_data_retrieval.sources.open_meteo.client import OPEN_METEO_HOSTS
 from energy_data_retrieval.sources.station import StationSchema, import_station
+from energy_data_retrieval.station_cli import (
+    STATION_COMMANDS,
+    add_station_parsers,
+    run_station_command,
+)
 from energy_data_retrieval.storage import (
     Artifact,
     bounded_map,
@@ -131,6 +136,7 @@ def _json_object(value: object) -> dict[str, JSONValue]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
+    add_station_parsers(commands)
     bsrn_search = commands.add_parser(
         "bsrn-search", help="Find candidate PANGAEA monthly BSRN dataset DOIs"
     )
@@ -573,6 +579,12 @@ def _native(args: argparse.Namespace) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command in STATION_COMMANDS:
+        try:
+            run_station_command(args)
+        except (ValueError, RetrievalError, OSError) as error:
+            parser.exit(2, f"Station retrieval failed: {error}\n")
+        return 0
     if args.command in {"bsrn-search", "bsrn-dataset", "noaa-stations", "noaa-observations"}:
         try:
             _station_sources(args)

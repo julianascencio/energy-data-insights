@@ -69,15 +69,37 @@ codes. GHCNh is NOAA's current replacement for frozen ISD; no automatic legacy
 fallback is used. See the [NOAA source contract](../data-retrieval/README.md#noaa-ghcnh-weather-stations)
 and [official GHCNh documentation](https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/doc/ghcnh_DOCUMENTATION.pdf).
 
-Both clients use the shared bounded HTTP transport and require no new
-dependencies or credentials for the supported public data. Observation
-acquisitions save their original source artifacts and hashes alongside the
-normalized outputs; exact completed local snapshots are verified before reuse.
-Native station observations preserve their
-own scientific contract. Neither source automatically maps stations to plants,
-derives missing irradiance, applies a quality mask, fills gaps or produces the
-hourly fleet weather schema. Those decisions belong in an explicit subsequent
-analysis and retain the station dataset's attribution alongside the thesis.
+`energy_data_retrieval.sources.aemet` follows the current AEMET OpenData
+two-stage API: an authenticated product request returns approved temporary URLs
+for data and metadata. The key is sent as a private HTTP header, excluded from
+provenance and caches, and redacted from responses and logs. Daily climate
+records retain their date semantics; recent conventional observations have a
+separate rolling-window snapshot interface. Response metadata and canonical
+JSON payloads are preserved. Canonical JSON is not described as exact wire bytes.
+
+`energy_data_retrieval.sources.dwd` retrieves the hourly solar catalogue and
+complete station ZIP archives from DWD CDC. The archive, station history and
+parameter descriptions remain available. Native UTC minute offsets and WOZ
+(local true solar time) labels are preserved, as are hourly radiation totals in
+J/cm² and source quality levels. The reader does not infer interval boundaries
+or silently turn accumulated energy into irradiance.
+
+`energy_data_retrieval.sources.surfrad` retrieves NOAA's seven-station catalogue
+and native daily text exports. Original UTC interval-end labels remain intact;
+documented one-minute or historical three-minute intervals are recorded
+explicitly. Instrument temperatures, radiation units and quality flags retain
+their source meaning. Catalogue coordinates and source-file header coordinates
+are separate evidence. SURFRAD's participation in BSRN is identified in the
+provenance; combining the feeds requires an explicit overlap decision.
+
+All five clients use the shared bounded HTTP transport and existing dependencies.
+Only AEMET needs a credential for acquisition. Original source artifacts or
+explicitly canonical JSON snapshots and their hashes are saved alongside the
+normalized outputs; completed local snapshots verify before reuse. Native
+station observations preserve their own scientific contract. Mapping stations
+to plants, applying quality masks, filling gaps and producing the hourly fleet
+weather schema belong in an explicit subsequent analysis, retaining each
+station dataset's attribution alongside the thesis.
 
 ### CMIP6 native data contract
 

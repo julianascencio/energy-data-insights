@@ -93,7 +93,7 @@ Ascencio-Vásquez, Julián; Bevc, Jakob; Reba, Kristjan; Brecl, Kristijan; Janko
 
 ### erbs_1982_diffuse
 
-Erbs, D.G.; Klein, S.A.; Duffie, J.A. (1982). **Estimation of the diffuse radiation fraction for hourly, daily and monthly-average global radiation**. Solar Energy, 28(4), 293-302. [DOI: 10.1016/0038-092X(82)90302-4](https://doi.org/10.1016/0038-092X(82)90302-4)
+Erbs, D.G.; Klein, S.A.; Duffie, J.A. (1982). **Estimation of the diffuse radiation fraction for hourly, daily and monthly-average global radiation**. Solar Energy, 28(4), 293-302. [DOI: 10.1016/0038-092X(82)90302-4](https://doi.org/10.1016/0038-092X%2882%2990302-4)
 
 **Role:** implemented. Erbs decomposition through pvlib. Applying the hourly model at synthetic solar-position substeps is a declared integration approximation.
 
@@ -402,3 +402,99 @@ Knap, Wouter (2022). **Basic and other measurements of radiation at station Caba
 **Role:** data. Station-level publication series containing the monthly Cabauw dataset in the retrieval example. The collection is updated over time; its citation does not assert that the entire collection was downloaded. Identify the exact monthly DOI and acquisition snapshot used, and preserve their associated station and instrument metadata.
 
 **Used by:** `data-retrieval/README.md`.
+
+### aemet_opendata_specification
+
+Agencia Estatal de Meteorología (AEMET) (n.d.). **AEMET OpenData API specification, version 2.0**. [Source](https://opendata.aemet.es/AEMET_OpenData_specification.json)
+
+**Role:** data. Current official OpenAPI 3.0.1 document, service version 2.0. Defines header api_key authentication, daily-climate inventory and date-range endpoints, and recent conventional station observations described as the latest 12 hours. The recent endpoint does not accept a historical date range. Exact per-field units and observation periods are preserved from each retrieved metadata document.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemet/client.py`, `data-retrieval/README.md`.
+
+### aemet_opendata_access
+
+Agencia Estatal de Meteorología (AEMET) (n.d.). **AEMET OpenData: Frequently asked questions and two-stage data access**. [Source](https://opendata.aemet.es/centrodedescargas/faqs)
+
+**Role:** data. Official documentation of API estado responses and temporary datos/metadatos links, which expire after about five minutes. Field metadata contains source units, definitions, attribution and usage conditions. Canonical JSON snapshots retain data values and metadata; they do not claim to preserve exact HTTP encoding. Key expiry follows the newer published access notices rather than older FAQ PDF statements.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemet/client.py`, `data-retrieval/README.md`.
+
+### aemet_observation_guidance
+
+Agencia Estatal de Meteorología (AEMET) (n.d.). **Interpretación: Hoy y últimos días**. [Source](https://www.aemet.es/es/eltiempo/observacion/ultimosdatos/ayuda)
+
+**Role:** data. Official interpretation guidance distinguishing instantaneous temperature, wind averaging intervals, gusts and accumulated precipitation. The public website and API may display different units; this implementation checks returned API field metadata before assigning physical-unit columns. Native reporting dates and variable-specific aggregation periods are retained without inferring a uniform hourly observation contract.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemet/client.py`, `data-retrieval/README.md`.
+
+### aemet_opendata_key_policy
+
+Agencia Estatal de Meteorología (AEMET) (2026). **AEMET OpenData: API access and key-expiration notices**. [Source](https://opendata.aemet.es/centrodedescargas/novedades)
+
+**Role:** background. Current 2026 notices describe retirement of keys issued without expiration and three-month validity for newly issued keys. The source reads AEMET_API_KEY from the environment, sends it through the documented private HTTP header and excludes credentials from output, provenance and public caches.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemet/client.py`, `data-retrieval/README.md`.
+
+### dwd_2024_hourly_solar
+
+Deutscher Wetterdienst (2024). **Hourly station observations of solar incoming (total/diffuse) and longwave downward radiation for Germany**. [Source](https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/solar/)
+
+**Role:** data. DWD CDC dataset version v24.03; published 29 March 2024. Dataset identifier urn:x-wmo:md:de.dwd.cdc::obsgermany-climate-hourly-solar. CC BY 4.0. Native hourly radiation energy remains in J/cm², and acquisition hashes record the separately changing station-archive vintage.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/dwd/client.py`, `data-retrieval/README.md`.
+
+### dwd_hourly_solar_documentation
+
+Deutscher Wetterdienst (2024). **DWD CDC dataset description: Hourly station observations of solar incoming (total/diffuse) and longwave downward radiation for Germany**. [Source](https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/solar/DESCRIPTION_obsgermany_climate_hourly_solar_en.pdf)
+
+**Role:** data. Official version v24.03, published 29 March 2024 and last edited 6 May 2024. Defines native fields, hourly energy sums, missing sentinel -999, QN quality-procedure codes, true-solar-time labels, station metadata and CC BY 4.0. The adapter also verifies per-archive parameter metadata specifying UTC and WOZ; interval boundaries and irradiance flux are not inferred.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/dwd/client.py`, `data-retrieval/README.md`.
+
+### augustine_2000_surfrad
+
+Augustine, John A.; DeLuisi, John J.; Long, Charles N. (2000). **SURFRAD—A National Surface Radiation Budget Network for Atmospheric Research**. Bulletin of the American Meteorological Society, 81(10), 2341-2357. [DOI: 10.1175/1520-0477(2000)081<2341:sansrb>2.3.co;2](https://doi.org/10.1175/1520-0477%282000%29081%3C2341%3Asansrb%3E2.3.co%3B2)
+
+**Role:** data. Scientific network reference explicitly requested by NOAA in README_SURFRAD for publications using SURFRAD data. Author names and bibliographic fields verified against publisher-deposited Crossref metadata. Cite the actual station/day subset and access date as well. Page range follows Crossref and the NOAA README (2341–2357); the current AMS web display ends at 2358.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py`, `data-retrieval/README.md`.
+
+### augustine_2005_surfrad
+
+Augustine, John A.; Hodges, Gary B.; Cornwall, Christopher R.; Michalsky, Joseph J.; Medina, Carlos I. (2005). **An Update on SURFRAD—The GCOS Surface Radiation Budget Network for the Continental United States**. Journal of Atmospheric and Oceanic Technology, 22(10), 1460-1472. [DOI: 10.1175/jtech1806.1](https://doi.org/10.1175/jtech1806.1)
+
+**Role:** data. Scientific network reference explicitly requested by NOAA in README_SURFRAD for publications using SURFRAD data. Author names and bibliographic fields verified against publisher-deposited Crossref metadata. Cite the actual station/day subset and access date as well. Describes the seven-station network and its BSRN affiliation; this affiliation creates potential overlap between archive routes.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py`, `data-retrieval/README.md`.
+
+### noaa_surfrad_documentation
+
+NOAA Global Monitoring Laboratory (n.d.). **Description of SURFRAD Daily Data Files**. [Source](https://gml.noaa.gov/aftp/data/radiation/surfrad/bon/README_SURFRAD.txt)
+
+**Role:** data. Official 48-field native daily format, station filename aliases, UTC interval-end labels, three-minute averages before 1 January 2009 and one-minute averages thereafter. Defines missing sentinel -9999.9, native quality codes, physical units including UVB in mW/m² and instrument temperatures in Kelvin, and CC0-1.0 licensing. The provider preserves original flags and source values without additional filtering or correction.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py`, `data-retrieval/README.md`.
+
+### noaa_surfrad_stations
+
+NOAA Global Monitoring Laboratory (n.d.). **SURFRAD Site Information**. [Source](https://gml.noaa.gov/grad/surfrad/sitepage.html)
+
+**Role:** data. Official current station catalogue. The seven SURFRAD archive aliases are bon, tbl, dra, fpk, gwn, psu and sxf; Bondville has site code BND but file prefix bon. The separately linked ARM Southern Great Plains site is outside this provider. Current catalogue positions do not override historical file-header coordinates or elevations.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py`, `data-retrieval/README.md`.
+
+### noaa_surfrad_overview
+
+NOAA Global Monitoring Laboratory (n.d.). **SURFRAD Overview: Surface Radiation Budget Monitoring**. [Source](https://gml.noaa.gov/grad/surfrad/overview.html)
+
+**Role:** data. Official network scope, radiation and meteorological instrumentation, calibration context and BSRN participation. SURFRAD and BSRN archive acquisitions must not be treated as independent observations without checking station/time/variable/vintage overlap.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py`, `data-retrieval/README.md`.
+
+### noaa_surfrad_archive
+
+NOAA Global Monitoring Laboratory (n.d.). **NOAA GML SURFRAD daily radiation and meteorological observations**. [Source](https://gml.noaa.gov/aftp/data/radiation/surfrad/)
+
+**Role:** data. Public GML station/year daily text archive actually used by this provider. Cite the selected station, UTC days and acquisition date; preserve its native files, quality flags and hashes. CC0-1.0 with NOAA attribution and fair-use guidance. This is not a claim to retrieve the separately published NCEI NetCDF, QCRAD, or realtime products.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py`, `data-retrieval/README.md`.

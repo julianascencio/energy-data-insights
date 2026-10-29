@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 from pathlib import Path
 
 import httpx
@@ -81,6 +82,131 @@ def test_authentication_failure_is_not_retried_or_exposed() -> None:
     assert len(requests) == 1
     assert "synthetic-secret" not in str(caught.value)
     assert "user_key" not in str(caught.value)
+
+
+def test_header_authentication_bypasses_public_cache_and_redacts_echoes(
+    tmp_path: Path, caplog: pytest.LogCaptureFixture
+) -> None:
+    secret = "synthetic-aemet-header-secret"
+    calls = 0
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        assert str(request.url) == ENDPOINT
+        credential = request.headers.get("api_key")
+        if credential is None:
+            return httpx.Response(200, json={"access": "public"})
+        assert credential == secret
+        logging.getLogger("httpcore.http11").debug("Private header: %s", credential)
+        return httpx.Response(200, json={"echo": credential, "rows": [0, None]})
+
+    with (
+        caplog.at_level("DEBUG", logger="httpcore.http11"),
+        HTTPClient(
+            frozenset({HOST}),
+            transport=httpx.MockTransport(handler),
+            cache_directory=tmp_path,
+            config=HTTPConfig(minimum_interval_seconds=0),
+        ) as http,
+    ):
+        public = http.get_json(ENDPOINT)
+        cache = next(tmp_path.glob("*.json"))
+        original_cache = cache.read_bytes()
+        for _ in range(2):
+            result = http.get_json(ENDPOINT, secret_headers={"api_key": secret})
+            assert not result.record.cache_hit
+            assert result.record.parameters == {}
+            assert result.value == {"echo": "[REDACTED]", "rows": [0, None]}
+            assert secret not in repr(result)
+        assert http.get_json(ENDPOINT).value == public.value
+    assert calls == 3
+    assert cache.read_bytes() == original_cache
+    assert list(tmp_path.glob("*.json")) == [cache]
+    assert secret not in caplog.text
+    assert "[REDACTED]" in caplog.text
+
+
+@pytest.mark.parametrize(
+    "headers",
+    [
+        {"Host": "another.example"},
+        {"api_key": ""},
+        {"api_key": "synthetic\r\ninjected"},
+        {"api_key": "synthetic", "API_KEY": "ambiguous"},
+    ],
+)
+def test_unsafe_secret_headers_fail_before_network(headers: dict[str, str]) -> None:
+    def handler(_: httpx.Request) -> httpx.Response:
+        pytest.fail("Invalid credential headers must fail before a request")
+
+    with (
+        HTTPClient(frozenset({HOST}), transport=httpx.MockTransport(handler)) as http,
+        pytest.raises(ValueError, match=r"[Ss]ecret"),
+    ):
+        http.get_json(ENDPOINT, secret_headers=headers)
+
+
+@pytest.mark.parametrize("encoding", ["iso-8859-1", "iso-8859-15"])
+def test_declared_legacy_json_requires_opt_in_and_separate_cache(
+    tmp_path: Path, encoding: str
+) -> None:
+    payload = {"station": "Málaga", "unit": "°C"}
+    raw = json.dumps(payload, ensure_ascii=False).encode(encoding)
+    calls = 0
+
+    def handler(_: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        return httpx.Response(
+            200, content=raw, headers={"Content-Type": "application/json;charset=" + encoding}
+        )
+
+    with HTTPClient(
+        frozenset({HOST}),
+        transport=httpx.MockTransport(handler),
+        cache_directory=tmp_path,
+        config=HTTPConfig(minimum_interval_seconds=0),
+    ) as http:
+        with pytest.raises(RetrievalError, match="invalid JSON"):
+            http.get_json(ENDPOINT)
+        result = http.get_json(ENDPOINT, allow_legacy_charset=True)
+        assert result.value == payload
+        assert http.get_json(ENDPOINT, allow_legacy_charset=True).record.cache_hit
+        with pytest.raises(RetrievalError, match="invalid JSON"):
+            http.get_json(ENDPOINT)
+    assert calls == 3
+
+
+def test_valid_utf8_json_precedes_a_misleading_legacy_charset() -> None:
+    payload = {"station": "Málaga", "unit": "°C", "symbol": "€"}
+    raw = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    with HTTPClient(
+        frozenset({HOST}),
+        transport=httpx.MockTransport(
+            lambda _: httpx.Response(
+                200, content=raw, headers={"Content-Type": "application/json;charset=ISO-8859-15"}
+            )
+        ),
+    ) as http:
+        assert http.get_json(ENDPOINT, allow_legacy_charset=True).value == payload
+
+
+@pytest.mark.parametrize("charset", ["", ";charset=windows-1252", ";charset=unknown"])
+def test_legacy_json_without_an_approved_declaration_stays_invalid(charset: str) -> None:
+    raw = json.dumps({"name": "Málaga"}, ensure_ascii=False).encode("iso-8859-1")
+    with (
+        HTTPClient(
+            frozenset({HOST}),
+            transport=httpx.MockTransport(
+                lambda _: httpx.Response(
+                    200, content=raw, headers={"Content-Type": "application/json" + charset}
+                )
+            ),
+        ) as http,
+        pytest.raises(RetrievalError, match="invalid JSON"),
+    ):
+        http.get_json(ENDPOINT, allow_legacy_charset=True)
 
 
 @pytest.mark.parametrize(
