@@ -1,6 +1,23 @@
 # Energy Data Insights
 
-Python tools for retrieving energy, weather and climate-model data, applying reusable
+<p align="center">
+  <a href="https://asvaconsulting.com">
+    <img
+      src="https://asvaconsulting.com/wp-content/uploads/2022/05/ASVA-1-1-scaled.jpg"
+      alt="ASVA Consulting"
+      width="280"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <strong>Created by ASVA Consulting</strong><br>
+  <a href="https://asvaconsulting.com">asvaconsulting.com</a><br>
+  <a href="mailto:contacto@asvaconsulting.com">contacto@asvaconsulting.com</a>
+</p>
+
+Created by **ASVA Consulting**, Energy Data Insights provides Python tools for
+retrieving energy, weather and climate-model data, applying reusable
 scientific methods, and running reproducible fleet performance studies.
 The first country workflow is Chile's solar fleet.
 
@@ -296,3 +313,10 @@ combined rates from annual climate stresses and an explicit module calibration,
 following the thesis. It exports NetCDF/GeoJSON, 0.2%/year categories and optional
 area-weighted KGPV summaries. See the [scientific contract and runnable synthetic
 example](docs/degradation.md).
+
+## Creator and contact
+
+Energy Data Insights is created and maintained by **ASVA Consulting**.
+
+- Website: https://asvaconsulting.com
+- Contact: [contacto@asvaconsulting.com](mailto:contacto@asvaconsulting.com)

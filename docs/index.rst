@@ -1,10 +1,28 @@
 Energy Data Insights
 ====================
 
+.. raw:: html
+
+   <div style="text-align:center; margin: 1.5rem 0 2rem 0;">
+     <a href="https://asvaconsulting.com">
+       <img
+         src="https://asvaconsulting.com/wp-content/uploads/2022/05/ASVA-1-1-scaled.jpg"
+         alt="ASVA Consulting"
+         style="max-width:280px; width:100%; height:auto;"
+       >
+     </a>
+     <p style="margin-top:0.75rem;">
+       <strong>Created by ASVA Consulting</strong><br>
+       <a href="https://asvaconsulting.com">asvaconsulting.com</a><br>
+       <a href="mailto:contacto@asvaconsulting.com">contacto@asvaconsulting.com</a>
+     </p>
+   </div>
+
 **From source data to reproducible energy research.**
 
-Retrieve weather, climate and generation data. Apply transparent PV methods.
-Turn the results into repeatable studies and reports.
+Created by **ASVA Consulting**, Energy Data Insights provides Python tools to
+retrieve weather, climate and generation data, apply transparent PV methods,
+and turn the results into repeatable studies and reports.
 
 .. grid:: 1 1 3 3
    :gutter: 3
