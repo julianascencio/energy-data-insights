@@ -245,6 +245,67 @@ def test_metadata_prevents_treating_kmh_as_metres_per_second() -> None:
         normalize_recent(recent_rows(), meta, STATION)
 
 
+def test_live_daily_pressure_metadata_aliases_preserve_native_names_and_definitions() -> None:
+    meta = metadata()
+    assert isinstance(meta["campos"], list)
+    for item in meta["campos"]:
+        if isinstance(item, dict) and item["id"] in {"presMax", "presMin"}:
+            item["id"] = str(item["id"]).lower()
+    rows = daily_rows()
+    assert isinstance(rows[0], dict)
+    rows[0]["presMin"] = "995,2"
+    frame = normalize_daily(rows, meta, STATION, START, END)
+    assert frame.loc[0, "station_pressure_max_hpa"] == 1005.5
+    assert frame.loc[0, "station_pressure_min_hpa"] == 995.2
+    assert frame.loc[0, "source:presMax"] == "1005,5"
+    assert frame.loc[0, "source:presMin"] == "995,2"
+    assert "source:presmax" not in frame
+    assert frame.attrs["source_metadata"] == meta
+    assert json.loads(str(frame.loc[0, "source_record_json"]))["presMax"] == "1005,5"
+
+
+@pytest.mark.parametrize("conflicting_exact", [False, True])
+def test_pressure_metadata_aliases_do_not_hide_wrong_units_or_conflicts(
+    conflicting_exact: bool,
+) -> None:
+    meta = metadata()
+    assert isinstance(meta["campos"], list)
+    for item in meta["campos"]:
+        if isinstance(item, dict) and item["id"] == "presMax":
+            alias = dict(item, id="presmax", unidad="kPa")
+            if conflicting_exact:
+                meta["campos"].append(alias)
+            else:
+                item.update(alias)
+            break
+    message = "conflicting case aliases" if conflicting_exact else "hPa"
+    with pytest.raises(RetrievalError, match=message):
+        normalize_daily(daily_rows(), meta, STATION, START, END)
+
+
+def test_live_recent_compact_utc_offset_preserves_exact_labels_and_times() -> None:
+    rows = recent_rows()
+    for row in rows:
+        assert isinstance(row, dict)
+        row["fint"] = str(row["fint"]) + "+0000"
+    frame = normalize_recent(rows, metadata(), STATION)
+    assert frame["timestamp"].tolist() == [
+        pd.Timestamp("2026-01-01T01:10:00Z"),
+        pd.Timestamp("2026-01-01T02:00:00Z"),
+    ]
+    assert frame.loc[0, "source:fint"] == "2026-01-01T01:10:00+0000"
+    assert json.loads(str(frame.loc[0, "source_record_json"]))["fint"].endswith("+0000")
+
+
+@pytest.mark.parametrize("offset", ["+0100", "+01:00", "-0100"])
+def test_recent_non_utc_offsets_are_not_silently_reinterpreted(offset: str) -> None:
+    rows = recent_rows()
+    assert isinstance(rows[0], dict)
+    rows[0]["fint"] = str(rows[0]["fint"]) + offset
+    with pytest.raises(RetrievalError, match="UTC observation labels"):
+        normalize_recent(rows, metadata(), STATION)
+
+
 @pytest.mark.parametrize("problem", ["station", "date", "conflict", "nonnumeric", "nonfinite"])
 def test_daily_rejects_wrong_identity_dates_conflicts_and_unknown_numeric_codes(
     problem: str,

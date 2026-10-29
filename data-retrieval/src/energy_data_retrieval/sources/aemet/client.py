@@ -54,7 +54,10 @@ type Product = Literal["stations", "daily", "recent"]
 type BBox = tuple[float, float, float, float]
 _STATION = re.compile(r"[A-Z0-9]{3,6}")
 _NUMBER = re.compile(r"[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:[eE][+-]?\d+)?")
-_STAMP = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|\+00:00)?")
+_STAMP = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|\+00:?00)?")
+# The live daily product uses camel-case payload keys but lower-case metadata IDs.
+# Keep these verified aliases explicit; arbitrary fields are not case-folded.
+_METADATA_ALIASES = {"presMax": "presmax", "presMin": "presmin"}
 _DAILY_VARIABLES = {
     "tmed": ("temperature_mean_c", "degC"),
     "tmin": ("temperature_min_c", "degC"),
@@ -221,6 +224,15 @@ def _number(values: pd.Series, label: str, *, precipitation: bool = False) -> pd
 
 def _unit(fields: dict[str, dict[str, JSONValue]], name: str, expected: str) -> None:
     record = fields.get(name)
+    if name in _METADATA_ALIASES:
+        alias = fields.get(_METADATA_ALIASES[name])
+        if record is not None and alias is not None:
+            exact_definition = {key: value for key, value in record.items() if key != "id"}
+            alias_definition = {key: value for key, value in alias.items() if key != "id"}
+            if exact_definition != alias_definition:
+                raise RetrievalError(f"AEMET metadata has conflicting case aliases: {name}")
+        if record is None:
+            record = alias
     if record is None:
         raise RetrievalError(f"AEMET metadata omits the measured field {name}")
     declared = record.get("unidad")
