@@ -73,7 +73,7 @@ Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment 
 
 **Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented.
 
-**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -554,3 +554,19 @@ Xarray developers (n.d.). **Xarray documentation: labelled arrays, CF decoding a
 **Role:** software. Software used for labelled climate grids, CF NetCDF masking/scaling, explicit coordinate alignment, interpolation and NetCDF serialization. The algorithms and scientific threshold choices remain attributed to their individual method papers.
 
 **Used by:** `methods/src/energy_methods/mapping.py`, `data-retrieval/src/energy_data_retrieval/climate_grid.py`.
+
+### ascencio_vasquez_2019_degradation_mapping
+
+Ascencio-Vásquez, Julián; Kaaya, Ismail; Brecl, Kristijan; Weiss, Karl-Anders; Topič, Marko (2019). **Global Climate Data Processing and Mapping of Degradation Mechanisms and Degradation Rates of PV Modules**. Energies, 12(24), 4749. [DOI: 10.3390/en12244749](https://doi.org/10.3390/en12244749)
+
+**Role:** implemented. Source of climate-driven mechanism mapping and 0.2 percent/year categories, also presented in thesis Section 6.4. This implementation requires explicit module calibration and stress conventions. Mean daily extrema and arithmetic ambient humidity in the optional hourly processor are declared adaptations; the published global rasters and their calibration are not claimed reproduced.
+
+**Used by:** `methods/src/energy_methods/degradation.py`, `methods/src/energy_methods/degradation_mapping.py`, `docs/degradation.md`.
+
+### kaaya_2019_degradation
+
+Kaaya, Ismail; Koehl, Michael; Mehilli, Amantin Panos; de Cardona Mariano, Sidrach; Weiss, Karl Anders (2019). **Modeling Outdoor Service Lifetime Prediction of PV Modules: Effects of Combined Climatic Stressors on PV Module Power Degradation**. IEEE Journal of Photovoltaics, 9(4), 1105-1112. [DOI: 10.1109/JPHOTOV.2019.2916197](https://doi.org/10.1109/JPHOTOV.2019.2916197)
+
+**Role:** implemented. Original hydrolysis, photodegradation, thermomechanical and multiplicative combined-rate equations (3)-(7), reproduced in thesis equations 3.14-3.17. Publication Boltzmann constant and normalization placement retained. Calibration and climatic aggregation must be supplied explicitly; no universal module coefficients, power-loss trajectory or service-lifetime predictor are implied.
+
+**Used by:** `methods/src/energy_methods/degradation.py`, `methods/src/energy_methods/degradation_mapping.py`, `docs/degradation.md`.

@@ -9,7 +9,7 @@ The first country workflow is Chile's solar fleet.
 | Subproject | Contents | Python import |
 | --- | --- | --- |
 | [data-retrieval](data-retrieval/) | Provider folders for CEN, BSRN, NOAA GHCNh, AEMET, DWD, SURFRAD, measured-station exports, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
-| [methods](methods/) | TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation and hourly operational screening | `energy_methods` |
+| [methods](methods/) | TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation, hourly operational screening, KGPV and degradation mapping | `energy_methods` |
 | [analysis](analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
 These are independently installable Python packages in one uv workspace. Each
@@ -235,3 +235,11 @@ GPCC Monthly v2025 and CRU TS v4.10 retrieval/processing are available through
 `energy-retrieve gpcc` and `energy-retrieve cru-ts`. `energy-kgpv` builds the
 published 12-zone classification with explicit GHI input. Reusable climatology
 and mapping utilities are in `methods`. See the [workflow and scientific rules](docs/kgpv.md).
+
+## Map climate-driven PV degradation
+
+`energy-degradation` maps hydrolysis, photo-degradation, thermomechanical and
+combined rates from annual climate stresses and an explicit module calibration,
+following the thesis. It exports NetCDF/GeoJSON, 0.2%/year categories and optional
+area-weighted KGPV summaries. See the [scientific contract and runnable synthetic
+example](docs/degradation.md).

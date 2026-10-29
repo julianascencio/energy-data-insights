@@ -243,3 +243,13 @@ fixed irradiation thresholds and published 24-to-12 zone merging.
 cell areas, class summaries and bounded GeoJSON export.
 Run `energy-kgpv --help`; see [the complete workflow and assumptions](../docs/kgpv.md).
 The primary thesis citation and the specific 2019 KGPV paper are both retained.
+
+## Climate degradation mapping
+
+`energy_methods.degradation` implements the thesis's hydrolysis,
+photo-degradation, thermomechanical and combined-rate equations, with an explicit
+module calibration. `degradation_mapping` processes annual stresses, classifies
+total rates in 0.2%/year bins and summarizes mapped mechanisms by KGPV zone.
+Run `energy-degradation --help`; see [inputs, scientific assumptions and the
+synthetic example](../docs/degradation.md). The thesis remains the primary
+citation alongside the Kaaya model and the 2019 degradation mapping paper.

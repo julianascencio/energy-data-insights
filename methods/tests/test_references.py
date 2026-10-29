@@ -124,6 +124,8 @@ def test_method_paper_dois_remain_covered_by_catalogue() -> None:
         "kgpv",
         "mapping",
         "climatology",
+        "degradation",
+        "degradation_mapping",
     ],
 )
 def test_method_reference_ids_resolve_and_include_primary_thesis(module: str) -> None:
