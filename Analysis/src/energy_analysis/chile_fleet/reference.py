@@ -35,9 +35,12 @@ def compare_references(
     ] = "expected_mwh",
     minimum_reference_coverage: float = 0.8,
     relative_tolerance: float = 0.2,
+    data_kind: Literal["unspecified", "synthetic", "observational"] = "unspecified",
 ) -> dict[str, object]:
     """Use supplied expected values unchanged; never fit or fill a missing reference."""
     start, end = utc_datetime(start), utc_datetime(end)
+    if data_kind not in {"unspecified", "synthetic", "observational"}:
+        raise ValueError("data_kind must be unspecified, synthetic or observational")
     if start >= end:
         raise ValueError("Start must precede the exclusive end")
     if output_path.exists():
@@ -69,6 +72,7 @@ def compare_references(
         result: dict[str, object] = {
             "schema": "energy-data-insights-frozen-reference-comparison-v1",
             "complete": True,
+            "data_kind": data_kind,
             "model_retrained": False,
             "expected_values_modified": False,
             "start_inclusive": start,

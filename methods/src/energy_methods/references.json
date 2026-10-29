@@ -1,0 +1,682 @@
+[
+  {
+    "id": "ascencio_vasquez_2021_thesis",
+    "title": "Modelling and worldwide assessment of performance and aging of photovoltaic modules and systems",
+    "authors": [
+      "Ascencio Vásquez, Julián Andrés"
+    ],
+    "year": 2021,
+    "doi": null,
+    "url": "https://www.dlib.si/details/URN:NBN:SI:DOC-TMG3QFI9",
+    "kind": "thesis",
+    "role": "primary",
+    "used_by": [
+      "README.md",
+      "methods/README.md",
+      "Analysis/README.md"
+    ],
+    "note": "Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented.",
+    "verified_at": "2026-10-29",
+    "institution": "University of Ljubljana, Faculty of Electrical Engineering"
+  },
+  {
+    "id": "ascencio_vasquez_2021_tdp",
+    "title": "Typical Daily Profiles, a novel approach for photovoltaics performance assessment: Case study on large-scale systems in Chile",
+    "authors": [
+      "Ascencio-Vásquez, Julián",
+      "Osorio-Aravena, Juan Carlos",
+      "Brecl, Kristijan",
+      "Muñoz-Cerón, Emilio",
+      "Topič, Marko"
+    ],
+    "year": 2021,
+    "doi": "10.1016/j.solener.2021.07.007",
+    "url": "https://doi.org/10.1016/j.solener.2021.07.007",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/tdp.py"
+    ],
+    "note": "Source of the Typical Daily Profiles approach and original Chile fleet case study. Project qualification rules, missing-data handling, fixed-clock pooling and unavailable historical capacity gates are documented adaptations, not a claim of byte-identical author software.",
+    "verified_at": "2026-10-29",
+    "publication": "Solar Energy",
+    "volume": "225",
+    "issue": "",
+    "pages": "357-374"
+  },
+  {
+    "id": "ascencio_vasquez_2020_modelling",
+    "title": "Advanced PV Performance Modelling Based on Different Levels of Irradiance Data Accuracy",
+    "authors": [
+      "Ascencio-Vásquez, Julián",
+      "Bevc, Jakob",
+      "Reba, Kristjan",
+      "Brecl, Kristijan",
+      "Jankovec, Marko",
+      "Topič, Marko"
+    ],
+    "year": 2020,
+    "doi": "10.3390/en13092166",
+    "url": "https://www.mdpi.com/1996-1073/13/9/2166",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/acceptance_band.py",
+      "methods/src/energy_methods/lightgbm.py"
+    ],
+    "note": "Source of the two-stage irradiance/power acceptance band and low/medium/high irradiance evidence levels. The repository states its interpretation of inconsistent printed roughness/distance expressions. Chronological validation and monotonic LightGBM settings are project adaptations.",
+    "verified_at": "2026-10-29",
+    "publication": "Energies",
+    "volume": "13",
+    "issue": "9",
+    "pages": "2166"
+  },
+  {
+    "id": "erbs_1982_diffuse",
+    "title": "Estimation of the diffuse radiation fraction for hourly, daily and monthly-average global radiation",
+    "authors": [
+      "Erbs, D.G.",
+      "Klein, S.A.",
+      "Duffie, J.A."
+    ],
+    "year": 1982,
+    "doi": "10.1016/0038-092X(82)90302-4",
+    "url": "https://doi.org/10.1016/0038-092X(82)90302-4",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/poa.py"
+    ],
+    "note": "Erbs decomposition through pvlib. Applying the hourly model at synthetic solar-position substeps is a declared integration approximation.",
+    "verified_at": "2026-10-29",
+    "publication": "Solar Energy",
+    "volume": "28",
+    "issue": "4",
+    "pages": "293-302"
+  },
+  {
+    "id": "hay_davies_1980_transposition",
+    "title": "Calculations of the solar radiation incident on an inclined surface",
+    "authors": [
+      "Hay, J. E.",
+      "Davies, J. A."
+    ],
+    "year": 1980,
+    "doi": null,
+    "url": "https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.irradiance.haydavies.html",
+    "kind": "conference-paper",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/poa.py"
+    ],
+    "note": "Hay-Davies sky-diffuse transposition through pvlib. Metadata checked against pvlib documentation; no DOI is asserted. Ground reflection is handled separately by pvlib.",
+    "verified_at": "2026-10-29",
+    "publication": "Proceedings of the First Canadian Solar Radiation Data Workshop",
+    "pages": "59"
+  },
+  {
+    "id": "reda_andreas_2004_solar_position",
+    "title": "Solar position algorithm for solar radiation applications",
+    "authors": [
+      "Reda, Ibrahim",
+      "Andreas, Afshin"
+    ],
+    "year": 2004,
+    "doi": "10.1016/j.solener.2003.12.003",
+    "url": "https://doi.org/10.1016/j.solener.2003.12.003",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/poa.py"
+    ],
+    "note": "Solar position algorithm used through pvlib nrel_numpy. The twelve-substep integration and effective geometry selection are repository choices.",
+    "verified_at": "2026-10-29",
+    "publication": "Solar Energy",
+    "volume": "76",
+    "issue": "5",
+    "pages": "577-589"
+  },
+  {
+    "id": "spencer_1971_solar_fourier",
+    "title": "Fourier series representation of the position of the sun",
+    "authors": [
+      "Spencer, J. W."
+    ],
+    "year": 1971,
+    "doi": null,
+    "url": "https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.solarposition.equation_of_time_spencer71.html",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/poa.py"
+    ],
+    "note": "Source of the Spencer Fourier approximation used by pvlib get_extra_radiation (its default method). The solar-position calculation itself uses the separate Reda-Andreas algorithm. Metadata checked against pvlib; no DOI is asserted.",
+    "verified_at": "2026-10-29",
+    "publication": "Search",
+    "volume": "2",
+    "issue": "5",
+    "pages": "172"
+  },
+  {
+    "id": "anderson_mikofski_2020_backtracking",
+    "title": "Slope-Aware Backtracking for Single-Axis Trackers",
+    "authors": [
+      "Anderson, Kevin",
+      "Mikofski, Mark"
+    ],
+    "year": 2020,
+    "doi": "10.2172/1660126",
+    "url": "https://www.osti.gov/biblio/1660126",
+    "kind": "report",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/poa.py"
+    ],
+    "note": "Single-axis tracking/backtracking equations used through pvlib. The current geometry bank uses level cross-axis terrain; citing the general method does not assert surveyed slope or tracker configuration.",
+    "verified_at": "2026-10-29",
+    "publication": "NREL/TP-5K00-76626",
+    "institution": "National Renewable Energy Laboratory"
+  },
+  {
+    "id": "lorenzo_2011_backtracking",
+    "title": "Tracking and back-tracking",
+    "authors": [
+      "Lorenzo, E.",
+      "Narvarte, L.",
+      "Muñoz, J."
+    ],
+    "year": 2011,
+    "doi": "10.1002/pip.1085",
+    "url": "https://doi.org/10.1002/pip.1085",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/poa.py"
+    ],
+    "note": "Tracking/backtracking source cited by pvlib singleaxis, the implementation used by the geometry bank.",
+    "verified_at": "2026-10-29",
+    "publication": "Progress in Photovoltaics: Research and Applications",
+    "volume": "19",
+    "issue": "6",
+    "pages": "747-753"
+  },
+  {
+    "id": "anderson_2023_pvlib",
+    "title": "pvlib python: 2023 project update",
+    "authors": [
+      "Anderson, Kevin S.",
+      "Hansen, Clifford W.",
+      "Holmgren, William F.",
+      "Jensen, Adam R.",
+      "Mikofski, Mark A.",
+      "Driesse, Anton"
+    ],
+    "year": 2023,
+    "doi": "10.21105/joss.05994",
+    "url": "https://joss.theoj.org/papers/10.21105/joss.05994",
+    "kind": "article",
+    "role": "software",
+    "used_by": [
+      "methods/src/energy_methods/poa.py"
+    ],
+    "note": "Current project-level citation recommended by pvlib. Exact installed software versions are recorded in analysis manifests and the workspace lockfile.",
+    "verified_at": "2026-10-29",
+    "publication": "Journal of Open Source Software",
+    "volume": "8",
+    "issue": "92",
+    "pages": "5994"
+  },
+  {
+    "id": "pvlib_interval_transposition",
+    "title": "Modeling with interval averages",
+    "authors": [
+      "pvlib python contributors"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://pvlib-python.readthedocs.io/en/stable/gallery/irradiance-transposition/plot_interval_transposition_error.html",
+    "kind": "manual",
+    "role": "background",
+    "used_by": [
+      "methods/README.md"
+    ],
+    "note": "Documentation motivating explicit interval alignment. The repository cosine-disaggregation scheme is its own approximation; this example is not a validation of that scheme.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "ke_2017_lightgbm",
+    "title": "LightGBM: A Highly Efficient Gradient Boosting Decision Tree",
+    "authors": [
+      "Ke, Guolin",
+      "Meng, Qi",
+      "Finley, Thomas",
+      "Wang, Taifeng",
+      "Chen, Wei",
+      "Ma, Weidong",
+      "Ye, Qiwei",
+      "Liu, Tie-Yan"
+    ],
+    "year": 2017,
+    "doi": null,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2017/hash/6449f44a102fde848669bdd9eb6b76fa-Abstract.html",
+    "kind": "conference-paper",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/lightgbm.py"
+    ],
+    "note": "Original LightGBM algorithm reference. The optional model uses the LightGBM library; monotonic settings do not guarantee concavity or any minimum prediction score.",
+    "verified_at": "2026-10-29",
+    "publication": "Advances in Neural Information Processing Systems",
+    "volume": "30"
+  },
+  {
+    "id": "lightgbm_parameters",
+    "title": "LightGBM parameters",
+    "authors": [
+      "LightGBM contributors"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://lightgbm.readthedocs.io/en/stable/Parameters.html",
+    "kind": "manual",
+    "role": "software",
+    "used_by": [
+      "methods/src/energy_methods/lightgbm.py",
+      "methods/README.md"
+    ],
+    "note": "Reference for deterministic CPU execution, objective compatibility, bounded thread counts and feature monotonicity. Version-specific behavior is tied to the lockfile.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "stark_parker_1995_bvls",
+    "title": "Bounded-variable least-squares: an algorithm and applications",
+    "authors": [
+      "Stark, P. B.",
+      "Parker, R. L."
+    ],
+    "year": 1995,
+    "doi": null,
+    "url": "https://www.stat.berkeley.edu/~stark/Preprints/bvls.pdf",
+    "kind": "article",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/physics.py"
+    ],
+    "note": "Bounded-variable least-squares algorithm selected explicitly as scipy.optimize.lsq_linear(method=\"bvls\"). The nonnegative transformed PV basis and shape constraints are repository-specific. Author spelling verified against the author bibliography, correcting the typo in some SciPy documentation.",
+    "verified_at": "2026-10-29",
+    "publication": "Computational Statistics",
+    "volume": "10",
+    "pages": "129-141"
+  },
+  {
+    "id": "virtanen_2020_scipy",
+    "title": "SciPy 1.0: fundamental algorithms for scientific computing in Python",
+    "authors": [
+      "Virtanen, Pauli",
+      "Gommers, Ralf",
+      "Oliphant, Travis E.",
+      "Haberland, Matt",
+      "Reddy, Tyler",
+      "Cournapeau, David",
+      "Burovski, Evgeni",
+      "Peterson, Pearu",
+      "Weckesser, Warren",
+      "Bright, Jonathan",
+      "van der Walt, Stéfan J.",
+      "Brett, Matthew",
+      "Wilson, Joshua",
+      "Millman, K. Jarrod",
+      "Mayorov, Nikolay",
+      "Nelson, Andrew R. J.",
+      "Jones, Eric",
+      "Kern, Robert",
+      "Larson, Eric",
+      "Carey, C J",
+      "Polat, İlhan",
+      "Feng, Yu",
+      "Moore, Eric W.",
+      "VanderPlas, Jake",
+      "Laxalde, Denis",
+      "Perktold, Josef",
+      "Cimrman, Robert",
+      "Henriksen, Ian",
+      "Quintero, E. A.",
+      "Harris, Charles R.",
+      "Archibald, Anne M.",
+      "Ribeiro, Antônio H.",
+      "Pedregosa, Fabian",
+      "van Mulbregt, Paul",
+      "SciPy 1.0 Contributors",
+      "Vijaykumar, Aditya",
+      "Bardelli, Alessandro Pietro",
+      "Rothberg, Alex",
+      "Hilboll, Andreas",
+      "Kloeckner, Andreas",
+      "Scopatz, Anthony",
+      "Lee, Antony",
+      "Rokem, Ariel",
+      "Woods, C. Nathan",
+      "Fulton, Chad",
+      "Masson, Charles",
+      "Häggström, Christian",
+      "Fitzgerald, Clark",
+      "Nicholson, David A.",
+      "Hagen, David R.",
+      "Pasechnik, Dmitrii V.",
+      "Olivetti, Emanuele",
+      "Martin, Eric",
+      "Wieser, Eric",
+      "Silva, Fabrice",
+      "Lenders, Felix",
+      "Wilhelm, Florian",
+      "Young, G.",
+      "Price, Gavin A.",
+      "Ingold, Gert-Ludwig",
+      "Allen, Gregory E.",
+      "Lee, Gregory R.",
+      "Audren, Hervé",
+      "Probst, Irvin",
+      "Dietrich, Jörg P.",
+      "Silterra, Jacob",
+      "Webber, James T",
+      "Slavič, Janko",
+      "Nothman, Joel",
+      "Buchner, Johannes",
+      "Kulick, Johannes",
+      "Schönberger, Johannes L.",
+      "de Miranda Cardoso, José Vinícius",
+      "Reimer, Joscha",
+      "Harrington, Joseph",
+      "Rodríguez, Juan Luis Cano",
+      "Nunez-Iglesias, Juan",
+      "Kuczynski, Justin",
+      "Tritz, Kevin",
+      "Thoma, Martin",
+      "Newville, Matthew",
+      "Kümmerer, Matthias",
+      "Bolingbroke, Maximilian",
+      "Tartre, Michael",
+      "Pak, Mikhail",
+      "Smith, Nathaniel J.",
+      "Nowaczyk, Nikolai",
+      "Shebanov, Nikolay",
+      "Pavlyk, Oleksandr",
+      "Brodtkorb, Per A.",
+      "Lee, Perry",
+      "McGibbon, Robert T.",
+      "Feldbauer, Roman",
+      "Lewis, Sam",
+      "Tygier, Sam",
+      "Sievert, Scott",
+      "Vigna, Sebastiano",
+      "Peterson, Stefan",
+      "More, Surhud",
+      "Pudlik, Tadeusz",
+      "Oshima, Takuya",
+      "Pingel, Thomas J.",
+      "Robitaille, Thomas P.",
+      "Spura, Thomas",
+      "Jones, Thouis R.",
+      "Cera, Tim",
+      "Leslie, Tim",
+      "Zito, Tiziano",
+      "Krauss, Tom",
+      "Upadhyay, Utkarsh",
+      "Halchenko, Yaroslav O.",
+      "Vázquez-Baeza, Yoshiki"
+    ],
+    "year": 2020,
+    "doi": "10.1038/s41592-019-0686-2",
+    "url": "https://doi.org/10.1038/s41592-019-0686-2",
+    "kind": "article",
+    "role": "software",
+    "used_by": [
+      "methods/src/energy_methods/physics.py"
+    ],
+    "note": "SciPy provides the bounded least-squares numerical solver; see Stark and Parker for the chosen BVLS algorithm. This is not attribution of the repository-specific PV parameterization to SciPy.",
+    "verified_at": "2026-10-29",
+    "publication": "Nature Methods",
+    "volume": "17",
+    "issue": "3",
+    "pages": "261-272"
+  },
+  {
+    "id": "iec_2019_availability",
+    "title": "IEC TS 63019:2019: Photovoltaic power systems (PVPS) - Information model for availability",
+    "authors": [
+      "International Electrotechnical Commission"
+    ],
+    "year": 2019,
+    "doi": null,
+    "url": "https://webstore.iec.ch/en/publication/27253",
+    "kind": "standard",
+    "role": "standard",
+    "used_by": [
+      "methods/src/energy_methods/status.py",
+      "Analysis/README.md"
+    ],
+    "note": "Information-model context only. The ten observable states and numeric thresholds are project screening rules, not normative IEC categories or a conformity claim. Causes remain unconfirmed and the workflow does not compute certified availability.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "cen_generation_api",
+    "title": "Generación real: API de datos abiertos",
+    "authors": [
+      "Coordinador Eléctrico Nacional"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://sipub.api.coordinador.cl/generacion-real/v3/findByDate",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/cen"
+    ],
+    "note": "Actual-generation API source. Use the exact request interval, access time, response provenance and effective unit roster recorded by the acquisition; catalogue inclusion is not evidence of live authorization or complete national coverage.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "cen_infotecnica_registry",
+    "title": "Infotécnica: registro público de centrales",
+    "authors": [
+      "Coordinador Eléctrico Nacional"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://api-infotecnica.coordinador.cl/v1/centrales-sin-filtrar/extended/",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/cen"
+    ],
+    "note": "Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "cen_historical_reports",
+    "title": "Reportes y estadísticas: generación del Sistema Eléctrico Nacional",
+    "authors": [
+      "Coordinador Eléctrico Nacional"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.coordinador.cl/reportes-y-estadisticas/",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/cen",
+      "Data-retrieval/README.md"
+    ],
+    "note": "Provider catalogue for historical generation and Qlik exports. Every imported export requires its specific source URL/file, timestamp conventions and hash; this general catalogue does not certify the completeness of a supplied export.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "cen_qlik_generation",
+    "title": "Generación real descargable (Qlik)",
+    "authors": [
+      "Coordinador Eléctrico Nacional"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://qap-prd.coordinador.cl/ext/extensions/mashup_Generacion_Real_Descargable/mashup_Generacion_Real_Descargable.html",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/cen/history.py",
+      "Data-retrieval/README.md"
+    ],
+    "note": "Source interface for preserved generation exports. The adapter imports user-supplied CSV/XLSX/ZIP exports with an explicit contract; citation does not imply anonymous live access, successful authorization or an implemented Qlik session client.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "hersbach_2020_era5",
+    "title": "The ERA5 global reanalysis",
+    "authors": [
+      "Hersbach, Hans",
+      "Bell, Bill",
+      "Berrisford, Paul",
+      "Hirahara, Shoji",
+      "Horányi, András",
+      "Muñoz‐Sabater, Joaquín",
+      "Nicolas, Julien",
+      "Peubey, Carole",
+      "Radu, Raluca",
+      "Schepers, Dinand",
+      "Simmons, Adrian",
+      "Soci, Cornel",
+      "Abdalla, Saleh",
+      "Abellan, Xavier",
+      "Balsamo, Gianpaolo",
+      "Bechtold, Peter",
+      "Biavati, Gionata",
+      "Bidlot, Jean",
+      "Bonavita, Massimo",
+      "De Chiara, Giovanna",
+      "Dahlgren, Per",
+      "Dee, Dick",
+      "Diamantakis, Michail",
+      "Dragani, Rossana",
+      "Flemming, Johannes",
+      "Forbes, Richard",
+      "Fuentes, Manuel",
+      "Geer, Alan",
+      "Haimberger, Leo",
+      "Healy, Sean",
+      "Hogan, Robin J.",
+      "Hólm, Elías",
+      "Janisková, Marta",
+      "Keeley, Sarah",
+      "Laloyaux, Patrick",
+      "Lopez, Philippe",
+      "Lupu, Cristina",
+      "Radnoti, Gabor",
+      "de Rosnay, Patricia",
+      "Rozum, Iryna",
+      "Vamborg, Freja",
+      "Villaume, Sebastien",
+      "Thépaut, Jean‐Noël"
+    ],
+    "year": 2020,
+    "doi": "10.1002/qj.3803",
+    "url": "https://doi.org/10.1002/qj.3803",
+    "kind": "article",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+    ],
+    "note": "Scientific description of ERA5 reanalysis. Reanalysis is modelled weather and cannot be relabelled as a measured station. Cite the actual dataset and acquisition wrapper separately.",
+    "verified_at": "2026-10-29",
+    "publication": "Quarterly Journal of the Royal Meteorological Society",
+    "volume": "146",
+    "issue": "730",
+    "pages": "1999-2049"
+  },
+  {
+    "id": "era5_single_levels",
+    "title": "ERA5 hourly data on single levels from 1940 to present",
+    "authors": [
+      "Copernicus Climate Change Service (C3S) Climate Data Store (CDS)"
+    ],
+    "year": 2023,
+    "doi": "10.24381/cds.adbb2d47",
+    "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+    ],
+    "note": "Single-level dataset citation as recommended by the Earthmover source catalogue. Record the actual retrieval date and selected data vintage; do not use the metadata-verification date as a data-access date.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "earthmover_icechunk_era5",
+    "title": "Icechunk ERA5",
+    "authors": [
+      "Earthmover"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://registry.opendata.aws/earthmover-era5/",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+    ],
+    "note": "Optional native ERA5 source. Cite Earthmover, the C3S single-level dataset, and underlying ERA5 research; acquisition must retain the pinned snapshot and actual access date. Catalogue metadata verification does not establish current snapshot coverage or a new data acquisition.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "open_meteo_historical_weather",
+    "title": "Historical Weather API",
+    "authors": [
+      "Open-Meteo"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://open-meteo.com/en/docs/historical-weather-api",
+    "kind": "manual",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo"
+    ],
+    "note": "Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "open_meteo_historical_forecast",
+    "title": "Historical Forecast API",
+    "authors": [
+      "Open-Meteo"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://open-meteo.com/en/docs/historical-forecast-api",
+    "kind": "manual",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo"
+    ],
+    "note": "Optional archive of numerical forecasts. The adapter explicitly selects ECMWF IFS; do not describe these records as ERA5 or observations. Record model, vintage and interval semantics from provenance.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "open_meteo_variable_definitions",
+    "title": "Weather Forecast API: hourly variable definitions",
+    "authors": [
+      "Open-Meteo"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://open-meteo.com/en/docs",
+    "kind": "manual",
+    "role": "data",
+    "used_by": [
+      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "Data-retrieval/README.md"
+    ],
+    "note": "Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.",
+    "verified_at": "2026-10-29"
+  }
+]

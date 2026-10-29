@@ -1,0 +1,1106 @@
+{
+  "cff-version": "1.2.0",
+  "message": "Please cite Julián Andrés Ascencio Vásquez's doctoral thesis as the main scientific reference, the method and data references actually used, and the repository URL plus exact commit for software reproducibility.",
+  "title": "energy-data-insights",
+  "type": "software",
+  "authors": [
+    {
+      "name": "energy-data-insights contributors"
+    }
+  ],
+  "repository-code": "https://github.com/julianascencio/energy-data-insights",
+  "preferred-citation": {
+    "type": "thesis",
+    "title": "Modelling and worldwide assessment of performance and aging of photovoltaic modules and systems",
+    "authors": [
+      {
+        "family-names": "Ascencio Vásquez",
+        "given-names": "Julián Andrés"
+      }
+    ],
+    "url": "https://www.dlib.si/details/URN:NBN:SI:DOC-TMG3QFI9",
+    "notes": "Role: primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented.",
+    "year": 2021,
+    "institution": {
+      "name": "University of Ljubljana, Faculty of Electrical Engineering"
+    },
+    "thesis-type": "Doctoral dissertation"
+  },
+  "references": [
+    {
+      "type": "article",
+      "title": "Typical Daily Profiles, a novel approach for photovoltaics performance assessment: Case study on large-scale systems in Chile",
+      "authors": [
+        {
+          "family-names": "Ascencio-Vásquez",
+          "given-names": "Julián"
+        },
+        {
+          "family-names": "Osorio-Aravena",
+          "given-names": "Juan Carlos"
+        },
+        {
+          "family-names": "Brecl",
+          "given-names": "Kristijan"
+        },
+        {
+          "family-names": "Muñoz-Cerón",
+          "given-names": "Emilio"
+        },
+        {
+          "family-names": "Topič",
+          "given-names": "Marko"
+        }
+      ],
+      "url": "https://doi.org/10.1016/j.solener.2021.07.007",
+      "notes": "Role: implemented. Source of the Typical Daily Profiles approach and original Chile fleet case study. Project qualification rules, missing-data handling, fixed-clock pooling and unavailable historical capacity gates are documented adaptations, not a claim of byte-identical author software.",
+      "year": 2021,
+      "doi": "10.1016/j.solener.2021.07.007",
+      "journal": "Solar Energy",
+      "volume": "225"
+    },
+    {
+      "type": "article",
+      "title": "Advanced PV Performance Modelling Based on Different Levels of Irradiance Data Accuracy",
+      "authors": [
+        {
+          "family-names": "Ascencio-Vásquez",
+          "given-names": "Julián"
+        },
+        {
+          "family-names": "Bevc",
+          "given-names": "Jakob"
+        },
+        {
+          "family-names": "Reba",
+          "given-names": "Kristjan"
+        },
+        {
+          "family-names": "Brecl",
+          "given-names": "Kristijan"
+        },
+        {
+          "family-names": "Jankovec",
+          "given-names": "Marko"
+        },
+        {
+          "family-names": "Topič",
+          "given-names": "Marko"
+        }
+      ],
+      "url": "https://www.mdpi.com/1996-1073/13/9/2166",
+      "notes": "Role: implemented. Source of the two-stage irradiance/power acceptance band and low/medium/high irradiance evidence levels. The repository states its interpretation of inconsistent printed roughness/distance expressions. Chronological validation and monotonic LightGBM settings are project adaptations.",
+      "year": 2020,
+      "doi": "10.3390/en13092166",
+      "journal": "Energies",
+      "volume": "13",
+      "issue": "9"
+    },
+    {
+      "type": "article",
+      "title": "Estimation of the diffuse radiation fraction for hourly, daily and monthly-average global radiation",
+      "authors": [
+        {
+          "family-names": "Erbs",
+          "given-names": "D.G."
+        },
+        {
+          "family-names": "Klein",
+          "given-names": "S.A."
+        },
+        {
+          "family-names": "Duffie",
+          "given-names": "J.A."
+        }
+      ],
+      "url": "https://doi.org/10.1016/0038-092X(82)90302-4",
+      "notes": "Role: implemented. Erbs decomposition through pvlib. Applying the hourly model at synthetic solar-position substeps is a declared integration approximation.",
+      "year": 1982,
+      "doi": "10.1016/0038-092X(82)90302-4",
+      "journal": "Solar Energy",
+      "volume": "28",
+      "issue": "4"
+    },
+    {
+      "type": "conference-paper",
+      "title": "Calculations of the solar radiation incident on an inclined surface",
+      "authors": [
+        {
+          "family-names": "Hay",
+          "given-names": "J. E."
+        },
+        {
+          "family-names": "Davies",
+          "given-names": "J. A."
+        }
+      ],
+      "url": "https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.irradiance.haydavies.html",
+      "notes": "Role: implemented. Hay-Davies sky-diffuse transposition through pvlib. Metadata checked against pvlib documentation; no DOI is asserted. Ground reflection is handled separately by pvlib.",
+      "year": 1980,
+      "collection-title": "Proceedings of the First Canadian Solar Radiation Data Workshop"
+    },
+    {
+      "type": "article",
+      "title": "Solar position algorithm for solar radiation applications",
+      "authors": [
+        {
+          "family-names": "Reda",
+          "given-names": "Ibrahim"
+        },
+        {
+          "family-names": "Andreas",
+          "given-names": "Afshin"
+        }
+      ],
+      "url": "https://doi.org/10.1016/j.solener.2003.12.003",
+      "notes": "Role: implemented. Solar position algorithm used through pvlib nrel_numpy. The twelve-substep integration and effective geometry selection are repository choices.",
+      "year": 2004,
+      "doi": "10.1016/j.solener.2003.12.003",
+      "journal": "Solar Energy",
+      "volume": "76",
+      "issue": "5"
+    },
+    {
+      "type": "article",
+      "title": "Fourier series representation of the position of the sun",
+      "authors": [
+        {
+          "family-names": "Spencer",
+          "given-names": "J. W."
+        }
+      ],
+      "url": "https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.solarposition.equation_of_time_spencer71.html",
+      "notes": "Role: implemented. Source of the Spencer Fourier approximation used by pvlib get_extra_radiation (its default method). The solar-position calculation itself uses the separate Reda-Andreas algorithm. Metadata checked against pvlib; no DOI is asserted.",
+      "year": 1971,
+      "journal": "Search",
+      "volume": "2",
+      "issue": "5"
+    },
+    {
+      "type": "report",
+      "title": "Slope-Aware Backtracking for Single-Axis Trackers",
+      "authors": [
+        {
+          "family-names": "Anderson",
+          "given-names": "Kevin"
+        },
+        {
+          "family-names": "Mikofski",
+          "given-names": "Mark"
+        }
+      ],
+      "url": "https://www.osti.gov/biblio/1660126",
+      "notes": "Role: implemented. Single-axis tracking/backtracking equations used through pvlib. The current geometry bank uses level cross-axis terrain; citing the general method does not assert surveyed slope or tracker configuration.",
+      "year": 2020,
+      "doi": "10.2172/1660126",
+      "collection-title": "NREL/TP-5K00-76626",
+      "institution": {
+        "name": "National Renewable Energy Laboratory"
+      }
+    },
+    {
+      "type": "article",
+      "title": "Tracking and back-tracking",
+      "authors": [
+        {
+          "family-names": "Lorenzo",
+          "given-names": "E."
+        },
+        {
+          "family-names": "Narvarte",
+          "given-names": "L."
+        },
+        {
+          "family-names": "Muñoz",
+          "given-names": "J."
+        }
+      ],
+      "url": "https://doi.org/10.1002/pip.1085",
+      "notes": "Role: implemented. Tracking/backtracking source cited by pvlib singleaxis, the implementation used by the geometry bank.",
+      "year": 2011,
+      "doi": "10.1002/pip.1085",
+      "journal": "Progress in Photovoltaics: Research and Applications",
+      "volume": "19",
+      "issue": "6"
+    },
+    {
+      "type": "article",
+      "title": "pvlib python: 2023 project update",
+      "authors": [
+        {
+          "family-names": "Anderson",
+          "given-names": "Kevin S."
+        },
+        {
+          "family-names": "Hansen",
+          "given-names": "Clifford W."
+        },
+        {
+          "family-names": "Holmgren",
+          "given-names": "William F."
+        },
+        {
+          "family-names": "Jensen",
+          "given-names": "Adam R."
+        },
+        {
+          "family-names": "Mikofski",
+          "given-names": "Mark A."
+        },
+        {
+          "family-names": "Driesse",
+          "given-names": "Anton"
+        }
+      ],
+      "url": "https://joss.theoj.org/papers/10.21105/joss.05994",
+      "notes": "Role: software. Current project-level citation recommended by pvlib. Exact installed software versions are recorded in analysis manifests and the workspace lockfile.",
+      "year": 2023,
+      "doi": "10.21105/joss.05994",
+      "journal": "Journal of Open Source Software",
+      "volume": "8",
+      "issue": "92"
+    },
+    {
+      "type": "manual",
+      "title": "Modeling with interval averages",
+      "authors": [
+        {
+          "name": "pvlib python contributors"
+        }
+      ],
+      "url": "https://pvlib-python.readthedocs.io/en/stable/gallery/irradiance-transposition/plot_interval_transposition_error.html",
+      "notes": "Role: background. Documentation motivating explicit interval alignment. The repository cosine-disaggregation scheme is its own approximation; this example is not a validation of that scheme."
+    },
+    {
+      "type": "conference-paper",
+      "title": "LightGBM: A Highly Efficient Gradient Boosting Decision Tree",
+      "authors": [
+        {
+          "family-names": "Ke",
+          "given-names": "Guolin"
+        },
+        {
+          "family-names": "Meng",
+          "given-names": "Qi"
+        },
+        {
+          "family-names": "Finley",
+          "given-names": "Thomas"
+        },
+        {
+          "family-names": "Wang",
+          "given-names": "Taifeng"
+        },
+        {
+          "family-names": "Chen",
+          "given-names": "Wei"
+        },
+        {
+          "family-names": "Ma",
+          "given-names": "Weidong"
+        },
+        {
+          "family-names": "Ye",
+          "given-names": "Qiwei"
+        },
+        {
+          "family-names": "Liu",
+          "given-names": "Tie-Yan"
+        }
+      ],
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2017/hash/6449f44a102fde848669bdd9eb6b76fa-Abstract.html",
+      "notes": "Role: implemented. Original LightGBM algorithm reference. The optional model uses the LightGBM library; monotonic settings do not guarantee concavity or any minimum prediction score.",
+      "year": 2017,
+      "collection-title": "Advances in Neural Information Processing Systems",
+      "volume": "30"
+    },
+    {
+      "type": "manual",
+      "title": "LightGBM parameters",
+      "authors": [
+        {
+          "name": "LightGBM contributors"
+        }
+      ],
+      "url": "https://lightgbm.readthedocs.io/en/stable/Parameters.html",
+      "notes": "Role: software. Reference for deterministic CPU execution, objective compatibility, bounded thread counts and feature monotonicity. Version-specific behavior is tied to the lockfile."
+    },
+    {
+      "type": "article",
+      "title": "Bounded-variable least-squares: an algorithm and applications",
+      "authors": [
+        {
+          "family-names": "Stark",
+          "given-names": "P. B."
+        },
+        {
+          "family-names": "Parker",
+          "given-names": "R. L."
+        }
+      ],
+      "url": "https://www.stat.berkeley.edu/~stark/Preprints/bvls.pdf",
+      "notes": "Role: implemented. Bounded-variable least-squares algorithm selected explicitly as scipy.optimize.lsq_linear(method=\"bvls\"). The nonnegative transformed PV basis and shape constraints are repository-specific. Author spelling verified against the author bibliography, correcting the typo in some SciPy documentation.",
+      "year": 1995,
+      "journal": "Computational Statistics",
+      "volume": "10"
+    },
+    {
+      "type": "article",
+      "title": "SciPy 1.0: fundamental algorithms for scientific computing in Python",
+      "authors": [
+        {
+          "family-names": "Virtanen",
+          "given-names": "Pauli"
+        },
+        {
+          "family-names": "Gommers",
+          "given-names": "Ralf"
+        },
+        {
+          "family-names": "Oliphant",
+          "given-names": "Travis E."
+        },
+        {
+          "family-names": "Haberland",
+          "given-names": "Matt"
+        },
+        {
+          "family-names": "Reddy",
+          "given-names": "Tyler"
+        },
+        {
+          "family-names": "Cournapeau",
+          "given-names": "David"
+        },
+        {
+          "family-names": "Burovski",
+          "given-names": "Evgeni"
+        },
+        {
+          "family-names": "Peterson",
+          "given-names": "Pearu"
+        },
+        {
+          "family-names": "Weckesser",
+          "given-names": "Warren"
+        },
+        {
+          "family-names": "Bright",
+          "given-names": "Jonathan"
+        },
+        {
+          "family-names": "van der Walt",
+          "given-names": "Stéfan J."
+        },
+        {
+          "family-names": "Brett",
+          "given-names": "Matthew"
+        },
+        {
+          "family-names": "Wilson",
+          "given-names": "Joshua"
+        },
+        {
+          "family-names": "Millman",
+          "given-names": "K. Jarrod"
+        },
+        {
+          "family-names": "Mayorov",
+          "given-names": "Nikolay"
+        },
+        {
+          "family-names": "Nelson",
+          "given-names": "Andrew R. J."
+        },
+        {
+          "family-names": "Jones",
+          "given-names": "Eric"
+        },
+        {
+          "family-names": "Kern",
+          "given-names": "Robert"
+        },
+        {
+          "family-names": "Larson",
+          "given-names": "Eric"
+        },
+        {
+          "family-names": "Carey",
+          "given-names": "C J"
+        },
+        {
+          "family-names": "Polat",
+          "given-names": "İlhan"
+        },
+        {
+          "family-names": "Feng",
+          "given-names": "Yu"
+        },
+        {
+          "family-names": "Moore",
+          "given-names": "Eric W."
+        },
+        {
+          "family-names": "VanderPlas",
+          "given-names": "Jake"
+        },
+        {
+          "family-names": "Laxalde",
+          "given-names": "Denis"
+        },
+        {
+          "family-names": "Perktold",
+          "given-names": "Josef"
+        },
+        {
+          "family-names": "Cimrman",
+          "given-names": "Robert"
+        },
+        {
+          "family-names": "Henriksen",
+          "given-names": "Ian"
+        },
+        {
+          "family-names": "Quintero",
+          "given-names": "E. A."
+        },
+        {
+          "family-names": "Harris",
+          "given-names": "Charles R."
+        },
+        {
+          "family-names": "Archibald",
+          "given-names": "Anne M."
+        },
+        {
+          "family-names": "Ribeiro",
+          "given-names": "Antônio H."
+        },
+        {
+          "family-names": "Pedregosa",
+          "given-names": "Fabian"
+        },
+        {
+          "family-names": "van Mulbregt",
+          "given-names": "Paul"
+        },
+        {
+          "name": "SciPy 1.0 Contributors"
+        },
+        {
+          "family-names": "Vijaykumar",
+          "given-names": "Aditya"
+        },
+        {
+          "family-names": "Bardelli",
+          "given-names": "Alessandro Pietro"
+        },
+        {
+          "family-names": "Rothberg",
+          "given-names": "Alex"
+        },
+        {
+          "family-names": "Hilboll",
+          "given-names": "Andreas"
+        },
+        {
+          "family-names": "Kloeckner",
+          "given-names": "Andreas"
+        },
+        {
+          "family-names": "Scopatz",
+          "given-names": "Anthony"
+        },
+        {
+          "family-names": "Lee",
+          "given-names": "Antony"
+        },
+        {
+          "family-names": "Rokem",
+          "given-names": "Ariel"
+        },
+        {
+          "family-names": "Woods",
+          "given-names": "C. Nathan"
+        },
+        {
+          "family-names": "Fulton",
+          "given-names": "Chad"
+        },
+        {
+          "family-names": "Masson",
+          "given-names": "Charles"
+        },
+        {
+          "family-names": "Häggström",
+          "given-names": "Christian"
+        },
+        {
+          "family-names": "Fitzgerald",
+          "given-names": "Clark"
+        },
+        {
+          "family-names": "Nicholson",
+          "given-names": "David A."
+        },
+        {
+          "family-names": "Hagen",
+          "given-names": "David R."
+        },
+        {
+          "family-names": "Pasechnik",
+          "given-names": "Dmitrii V."
+        },
+        {
+          "family-names": "Olivetti",
+          "given-names": "Emanuele"
+        },
+        {
+          "family-names": "Martin",
+          "given-names": "Eric"
+        },
+        {
+          "family-names": "Wieser",
+          "given-names": "Eric"
+        },
+        {
+          "family-names": "Silva",
+          "given-names": "Fabrice"
+        },
+        {
+          "family-names": "Lenders",
+          "given-names": "Felix"
+        },
+        {
+          "family-names": "Wilhelm",
+          "given-names": "Florian"
+        },
+        {
+          "family-names": "Young",
+          "given-names": "G."
+        },
+        {
+          "family-names": "Price",
+          "given-names": "Gavin A."
+        },
+        {
+          "family-names": "Ingold",
+          "given-names": "Gert-Ludwig"
+        },
+        {
+          "family-names": "Allen",
+          "given-names": "Gregory E."
+        },
+        {
+          "family-names": "Lee",
+          "given-names": "Gregory R."
+        },
+        {
+          "family-names": "Audren",
+          "given-names": "Hervé"
+        },
+        {
+          "family-names": "Probst",
+          "given-names": "Irvin"
+        },
+        {
+          "family-names": "Dietrich",
+          "given-names": "Jörg P."
+        },
+        {
+          "family-names": "Silterra",
+          "given-names": "Jacob"
+        },
+        {
+          "family-names": "Webber",
+          "given-names": "James T"
+        },
+        {
+          "family-names": "Slavič",
+          "given-names": "Janko"
+        },
+        {
+          "family-names": "Nothman",
+          "given-names": "Joel"
+        },
+        {
+          "family-names": "Buchner",
+          "given-names": "Johannes"
+        },
+        {
+          "family-names": "Kulick",
+          "given-names": "Johannes"
+        },
+        {
+          "family-names": "Schönberger",
+          "given-names": "Johannes L."
+        },
+        {
+          "family-names": "de Miranda Cardoso",
+          "given-names": "José Vinícius"
+        },
+        {
+          "family-names": "Reimer",
+          "given-names": "Joscha"
+        },
+        {
+          "family-names": "Harrington",
+          "given-names": "Joseph"
+        },
+        {
+          "family-names": "Rodríguez",
+          "given-names": "Juan Luis Cano"
+        },
+        {
+          "family-names": "Nunez-Iglesias",
+          "given-names": "Juan"
+        },
+        {
+          "family-names": "Kuczynski",
+          "given-names": "Justin"
+        },
+        {
+          "family-names": "Tritz",
+          "given-names": "Kevin"
+        },
+        {
+          "family-names": "Thoma",
+          "given-names": "Martin"
+        },
+        {
+          "family-names": "Newville",
+          "given-names": "Matthew"
+        },
+        {
+          "family-names": "Kümmerer",
+          "given-names": "Matthias"
+        },
+        {
+          "family-names": "Bolingbroke",
+          "given-names": "Maximilian"
+        },
+        {
+          "family-names": "Tartre",
+          "given-names": "Michael"
+        },
+        {
+          "family-names": "Pak",
+          "given-names": "Mikhail"
+        },
+        {
+          "family-names": "Smith",
+          "given-names": "Nathaniel J."
+        },
+        {
+          "family-names": "Nowaczyk",
+          "given-names": "Nikolai"
+        },
+        {
+          "family-names": "Shebanov",
+          "given-names": "Nikolay"
+        },
+        {
+          "family-names": "Pavlyk",
+          "given-names": "Oleksandr"
+        },
+        {
+          "family-names": "Brodtkorb",
+          "given-names": "Per A."
+        },
+        {
+          "family-names": "Lee",
+          "given-names": "Perry"
+        },
+        {
+          "family-names": "McGibbon",
+          "given-names": "Robert T."
+        },
+        {
+          "family-names": "Feldbauer",
+          "given-names": "Roman"
+        },
+        {
+          "family-names": "Lewis",
+          "given-names": "Sam"
+        },
+        {
+          "family-names": "Tygier",
+          "given-names": "Sam"
+        },
+        {
+          "family-names": "Sievert",
+          "given-names": "Scott"
+        },
+        {
+          "family-names": "Vigna",
+          "given-names": "Sebastiano"
+        },
+        {
+          "family-names": "Peterson",
+          "given-names": "Stefan"
+        },
+        {
+          "family-names": "More",
+          "given-names": "Surhud"
+        },
+        {
+          "family-names": "Pudlik",
+          "given-names": "Tadeusz"
+        },
+        {
+          "family-names": "Oshima",
+          "given-names": "Takuya"
+        },
+        {
+          "family-names": "Pingel",
+          "given-names": "Thomas J."
+        },
+        {
+          "family-names": "Robitaille",
+          "given-names": "Thomas P."
+        },
+        {
+          "family-names": "Spura",
+          "given-names": "Thomas"
+        },
+        {
+          "family-names": "Jones",
+          "given-names": "Thouis R."
+        },
+        {
+          "family-names": "Cera",
+          "given-names": "Tim"
+        },
+        {
+          "family-names": "Leslie",
+          "given-names": "Tim"
+        },
+        {
+          "family-names": "Zito",
+          "given-names": "Tiziano"
+        },
+        {
+          "family-names": "Krauss",
+          "given-names": "Tom"
+        },
+        {
+          "family-names": "Upadhyay",
+          "given-names": "Utkarsh"
+        },
+        {
+          "family-names": "Halchenko",
+          "given-names": "Yaroslav O."
+        },
+        {
+          "family-names": "Vázquez-Baeza",
+          "given-names": "Yoshiki"
+        }
+      ],
+      "url": "https://doi.org/10.1038/s41592-019-0686-2",
+      "notes": "Role: software. SciPy provides the bounded least-squares numerical solver; see Stark and Parker for the chosen BVLS algorithm. This is not attribution of the repository-specific PV parameterization to SciPy.",
+      "year": 2020,
+      "doi": "10.1038/s41592-019-0686-2",
+      "journal": "Nature Methods",
+      "volume": "17",
+      "issue": "3"
+    },
+    {
+      "type": "standard",
+      "title": "IEC TS 63019:2019: Photovoltaic power systems (PVPS) - Information model for availability",
+      "authors": [
+        {
+          "name": "International Electrotechnical Commission"
+        }
+      ],
+      "url": "https://webstore.iec.ch/en/publication/27253",
+      "notes": "Role: standard. Information-model context only. The ten observable states and numeric thresholds are project screening rules, not normative IEC categories or a conformity claim. Causes remain unconfirmed and the workflow does not compute certified availability.",
+      "year": 2019
+    },
+    {
+      "type": "data",
+      "title": "Generación real: API de datos abiertos",
+      "authors": [
+        {
+          "name": "Coordinador Eléctrico Nacional"
+        }
+      ],
+      "url": "https://sipub.api.coordinador.cl/generacion-real/v3/findByDate",
+      "notes": "Role: data. Actual-generation API source. Use the exact request interval, access time, response provenance and effective unit roster recorded by the acquisition; catalogue inclusion is not evidence of live authorization or complete national coverage."
+    },
+    {
+      "type": "data",
+      "title": "Infotécnica: registro público de centrales",
+      "authors": [
+        {
+          "name": "Coordinador Eléctrico Nacional"
+        }
+      ],
+      "url": "https://api-infotecnica.coordinador.cl/v1/centrales-sin-filtrar/extended/",
+      "notes": "Role: data. Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity."
+    },
+    {
+      "type": "data",
+      "title": "Reportes y estadísticas: generación del Sistema Eléctrico Nacional",
+      "authors": [
+        {
+          "name": "Coordinador Eléctrico Nacional"
+        }
+      ],
+      "url": "https://www.coordinador.cl/reportes-y-estadisticas/",
+      "notes": "Role: data. Provider catalogue for historical generation and Qlik exports. Every imported export requires its specific source URL/file, timestamp conventions and hash; this general catalogue does not certify the completeness of a supplied export."
+    },
+    {
+      "type": "data",
+      "title": "Generación real descargable (Qlik)",
+      "authors": [
+        {
+          "name": "Coordinador Eléctrico Nacional"
+        }
+      ],
+      "url": "https://qap-prd.coordinador.cl/ext/extensions/mashup_Generacion_Real_Descargable/mashup_Generacion_Real_Descargable.html",
+      "notes": "Role: data. Source interface for preserved generation exports. The adapter imports user-supplied CSV/XLSX/ZIP exports with an explicit contract; citation does not imply anonymous live access, successful authorization or an implemented Qlik session client."
+    },
+    {
+      "type": "article",
+      "title": "The ERA5 global reanalysis",
+      "authors": [
+        {
+          "family-names": "Hersbach",
+          "given-names": "Hans"
+        },
+        {
+          "family-names": "Bell",
+          "given-names": "Bill"
+        },
+        {
+          "family-names": "Berrisford",
+          "given-names": "Paul"
+        },
+        {
+          "family-names": "Hirahara",
+          "given-names": "Shoji"
+        },
+        {
+          "family-names": "Horányi",
+          "given-names": "András"
+        },
+        {
+          "family-names": "Muñoz‐Sabater",
+          "given-names": "Joaquín"
+        },
+        {
+          "family-names": "Nicolas",
+          "given-names": "Julien"
+        },
+        {
+          "family-names": "Peubey",
+          "given-names": "Carole"
+        },
+        {
+          "family-names": "Radu",
+          "given-names": "Raluca"
+        },
+        {
+          "family-names": "Schepers",
+          "given-names": "Dinand"
+        },
+        {
+          "family-names": "Simmons",
+          "given-names": "Adrian"
+        },
+        {
+          "family-names": "Soci",
+          "given-names": "Cornel"
+        },
+        {
+          "family-names": "Abdalla",
+          "given-names": "Saleh"
+        },
+        {
+          "family-names": "Abellan",
+          "given-names": "Xavier"
+        },
+        {
+          "family-names": "Balsamo",
+          "given-names": "Gianpaolo"
+        },
+        {
+          "family-names": "Bechtold",
+          "given-names": "Peter"
+        },
+        {
+          "family-names": "Biavati",
+          "given-names": "Gionata"
+        },
+        {
+          "family-names": "Bidlot",
+          "given-names": "Jean"
+        },
+        {
+          "family-names": "Bonavita",
+          "given-names": "Massimo"
+        },
+        {
+          "family-names": "De Chiara",
+          "given-names": "Giovanna"
+        },
+        {
+          "family-names": "Dahlgren",
+          "given-names": "Per"
+        },
+        {
+          "family-names": "Dee",
+          "given-names": "Dick"
+        },
+        {
+          "family-names": "Diamantakis",
+          "given-names": "Michail"
+        },
+        {
+          "family-names": "Dragani",
+          "given-names": "Rossana"
+        },
+        {
+          "family-names": "Flemming",
+          "given-names": "Johannes"
+        },
+        {
+          "family-names": "Forbes",
+          "given-names": "Richard"
+        },
+        {
+          "family-names": "Fuentes",
+          "given-names": "Manuel"
+        },
+        {
+          "family-names": "Geer",
+          "given-names": "Alan"
+        },
+        {
+          "family-names": "Haimberger",
+          "given-names": "Leo"
+        },
+        {
+          "family-names": "Healy",
+          "given-names": "Sean"
+        },
+        {
+          "family-names": "Hogan",
+          "given-names": "Robin J."
+        },
+        {
+          "family-names": "Hólm",
+          "given-names": "Elías"
+        },
+        {
+          "family-names": "Janisková",
+          "given-names": "Marta"
+        },
+        {
+          "family-names": "Keeley",
+          "given-names": "Sarah"
+        },
+        {
+          "family-names": "Laloyaux",
+          "given-names": "Patrick"
+        },
+        {
+          "family-names": "Lopez",
+          "given-names": "Philippe"
+        },
+        {
+          "family-names": "Lupu",
+          "given-names": "Cristina"
+        },
+        {
+          "family-names": "Radnoti",
+          "given-names": "Gabor"
+        },
+        {
+          "family-names": "de Rosnay",
+          "given-names": "Patricia"
+        },
+        {
+          "family-names": "Rozum",
+          "given-names": "Iryna"
+        },
+        {
+          "family-names": "Vamborg",
+          "given-names": "Freja"
+        },
+        {
+          "family-names": "Villaume",
+          "given-names": "Sebastien"
+        },
+        {
+          "family-names": "Thépaut",
+          "given-names": "Jean‐Noël"
+        }
+      ],
+      "url": "https://doi.org/10.1002/qj.3803",
+      "notes": "Role: data. Scientific description of ERA5 reanalysis. Reanalysis is modelled weather and cannot be relabelled as a measured station. Cite the actual dataset and acquisition wrapper separately.",
+      "year": 2020,
+      "doi": "10.1002/qj.3803",
+      "journal": "Quarterly Journal of the Royal Meteorological Society",
+      "volume": "146",
+      "issue": "730"
+    },
+    {
+      "type": "data",
+      "title": "ERA5 hourly data on single levels from 1940 to present",
+      "authors": [
+        {
+          "name": "Copernicus Climate Change Service (C3S) Climate Data Store (CDS)"
+        }
+      ],
+      "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels",
+      "notes": "Role: data. Single-level dataset citation as recommended by the Earthmover source catalogue. Record the actual retrieval date and selected data vintage; do not use the metadata-verification date as a data-access date.",
+      "year": 2023,
+      "doi": "10.24381/cds.adbb2d47"
+    },
+    {
+      "type": "data",
+      "title": "Icechunk ERA5",
+      "authors": [
+        {
+          "name": "Earthmover"
+        }
+      ],
+      "url": "https://registry.opendata.aws/earthmover-era5/",
+      "notes": "Role: data. Optional native ERA5 source. Cite Earthmover, the C3S single-level dataset, and underlying ERA5 research; acquisition must retain the pinned snapshot and actual access date. Catalogue metadata verification does not establish current snapshot coverage or a new data acquisition."
+    },
+    {
+      "type": "manual",
+      "title": "Historical Weather API",
+      "authors": [
+        {
+          "name": "Open-Meteo"
+        }
+      ],
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "notes": "Role: data. Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance."
+    },
+    {
+      "type": "manual",
+      "title": "Historical Forecast API",
+      "authors": [
+        {
+          "name": "Open-Meteo"
+        }
+      ],
+      "url": "https://open-meteo.com/en/docs/historical-forecast-api",
+      "notes": "Role: data. Optional archive of numerical forecasts. The adapter explicitly selects ECMWF IFS; do not describe these records as ERA5 or observations. Record model, vintage and interval semantics from provenance."
+    },
+    {
+      "type": "manual",
+      "title": "Weather Forecast API: hourly variable definitions",
+      "authors": [
+        {
+          "name": "Open-Meteo"
+        }
+      ],
+      "url": "https://open-meteo.com/en/docs",
+      "notes": "Role: data. Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ."
+    }
+  ]
+}

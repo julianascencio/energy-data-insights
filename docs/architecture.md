@@ -69,8 +69,25 @@ energy and modeled weather alone cannot establish continuous hourly availability
    metadata mapping and study configuration.
 3. Reuse `energy_methods`; put country-specific assumptions in the country
    workflow, not in the shared algorithms.
+   Put report generation in that country's `reports/` subpackage and generated
+   artifacts under the corresponding run's `reports/` directory.
 4. Add fixtures for provider irregularities, calendar transitions, coverage and
    chronological evaluation. Keep live API calls out of ordinary CI.
+
+## Reports and research attribution
+
+Chile rendering lives in `energy_analysis.chile_fleet.reports`. It consumes the
+completed run or frozen-reference comparison contract. The report manifest
+records the inputs and output hashes separately from the original analysis;
+rendering does not fit a model or change predictions. Individual site pages keep
+the fleet landing page small, and publication drafts use the same qualified
+totals shown in the dashboard.
+
+The primary scientific citation is Julián Andrés Ascencio Vásquez's 2021 PhD
+thesis. `CITATION.cff`, `references.bib` and `docs/references.md` expose citation
+metadata for readers and tools. The `energy_methods.references` catalogue is
+also available to analysis reports. Method-specific citations credit the
+papers actually used and distinguish background context from implemented work.
 
 ## Tooling sources
 

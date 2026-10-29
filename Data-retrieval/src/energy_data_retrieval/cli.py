@@ -7,6 +7,7 @@ import hashlib
 import json
 import os
 import re
+import tomllib
 from collections.abc import Iterator, Sequence
 from dataclasses import asdict
 from datetime import UTC, date, datetime, timedelta
@@ -17,10 +18,16 @@ import pandas as pd
 
 from energy_data_retrieval.sources.cen import CENClient, aggregate_units, normalize_registry
 from energy_data_retrieval.sources.cen.client import CEN_HOSTS, REGISTRY_ENDPOINT
+from energy_data_retrieval.sources.cen.history import (
+    CEN_EXPORT_HOSTS,
+    HistorySchema,
+    import_history,
+)
 from energy_data_retrieval.sources.earthmover_era5 import NativeERA5Client
 from energy_data_retrieval.sources.earthmover_era5.client import PINNED_SNAPSHOT
 from energy_data_retrieval.sources.open_meteo import OpenMeteoClient, Site, WeatherProduct
 from energy_data_retrieval.sources.open_meteo.client import OPEN_METEO_HOSTS
+from energy_data_retrieval.sources.station import StationSchema, import_station
 from energy_data_retrieval.storage import (
     Artifact,
     bounded_map,
@@ -87,6 +94,24 @@ def _json_object(value: object) -> dict[str, JSONValue]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
+    for name, help_text in (
+        ("cen-history", "Import a preserved hourly CEN bulk/Qlik CSV or XLSX export"),
+        ("station-import", "Import explicitly mapped measured hourly station observations"),
+    ):
+        command = commands.add_parser(name, help=help_text)
+        command.add_argument("--input", type=Path, required=True)
+        command.add_argument("--mapping", type=Path, required=True)
+        command.add_argument(
+            "--schema", type=Path, required=True, help="Explicit source TOML contract"
+        )
+        command.add_argument("--zip-member")
+        command.add_argument("--output", type=Path, required=True)
+    download = commands.add_parser("cen-download", help="Download a known public CEN export URL")
+    download.add_argument("--url", required=True)
+    download.add_argument("--output", type=Path, required=True)
+    download.add_argument("--sha256", help="Optional independent expected source checksum")
+    download.add_argument("--maximum-bytes", type=int, default=512 * 1024 * 1024)
+    download.add_argument("--request-interval", type=float, default=0.25)
     registry = commands.add_parser("cen-registry", help="Retrieve public CEN plant metadata")
     registry.add_argument("--output", type=Path, required=True, help="New .parquet output path")
     generation = commands.add_parser("cen-generation", help="Retrieve CEN actual generation by day")
@@ -294,6 +319,38 @@ def _native(args: argparse.Namespace) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command in {"cen-history", "station-import"}:
+        with args.schema.open("rb") as stream:
+            settings = tomllib.load(stream)
+        if args.command == "cen-history":
+            record = import_history(
+                args.input,
+                args.mapping,
+                args.output,
+                HistorySchema(**settings),
+                member=args.zip_member,
+            )
+        else:
+            record = import_station(
+                args.input,
+                args.mapping,
+                args.output,
+                StationSchema(**settings),
+                member=args.zip_member,
+            )
+        _emit(record)
+        return 0
+    if args.command == "cen-download":
+        with HTTPClient(
+            CEN_EXPORT_HOSTS,
+            config=HTTPConfig(
+                maximum_response_bytes=args.maximum_bytes,
+                minimum_interval_seconds=args.request_interval,
+            ),
+        ) as http:
+            downloaded = http.download_file(args.url, args.output, expected_sha256=args.sha256)
+        print(json.dumps(asdict(downloaded), sort_keys=True))
+        return 0
     if args.command == "era5-native":
         _native(args)
         return 0

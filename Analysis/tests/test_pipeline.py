@@ -19,8 +19,10 @@ def test_full_synthetic_workflow_and_config_roundtrip(tmp_path: Path) -> None:
     config = create_demo(tmp_path / "demo")
     loaded = load_config(tmp_path / "demo/config.toml")
     assert loaded == config
+    assert loaded.data_kind == "synthetic"
     result = run_fleet(config)
     assert result["complete"] is True
+    assert result["data_kind"] == "synthetic"
     descriptors = result["outputs"]
     assert isinstance(descriptors, list)
     for descriptor in descriptors:

@@ -3,6 +3,9 @@
 Implements the recovered ASVA 2.0 decision order. Numerical thresholds are ASVA
 engineering rules, not IEC requirements. IEC TS 63019:2019 information categories
 must not be confused with confirmed plant availability or fault attribution.
+
+The main thesis and IEC standard are credited in energy_methods.references.
+The IEC citation is context and does not imply conformity.
 """
 
 from __future__ import annotations
@@ -15,6 +18,8 @@ import pandas as pd
 from numpy.typing import ArrayLike, NDArray
 
 from energy_methods._arrays import BoolArray, FloatArray, IntArray, aligned, epoch_ns, utc_index
+
+REFERENCE_IDS = ("ascencio_vasquez_2021_thesis", "iec_2019_availability")
 
 
 class OperatingState(IntEnum):

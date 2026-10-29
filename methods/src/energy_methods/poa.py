@@ -3,6 +3,11 @@
 Twelve solar-position substeps distribute hourly GHI proportional to positive
 cos(true zenith), conserving its mean. Erbs at these synthetic substeps is an
 explicit approximation; it does not reconstruct subhourly cloud variability.
+
+Citations are collected in energy_methods.references: the main thesis,
+Reda-Andreas solar position, Erbs, Hay-Davies, Spencer, tracker backtracking,
+and pvlib. Effective geometry search and interval disaggregation are project
+adaptations, not reconstructed as-built geometry.
 """
 
 from __future__ import annotations
@@ -17,6 +22,17 @@ import pvlib
 from numpy.typing import ArrayLike
 
 from energy_methods._arrays import FloatArray, aligned, epoch_ns, utc_index, vector
+
+REFERENCE_IDS = (
+    "ascencio_vasquez_2021_thesis",
+    "reda_andreas_2004_solar_position",
+    "erbs_1982_diffuse",
+    "hay_davies_1980_transposition",
+    "spencer_1971_solar_fourier",
+    "anderson_mikofski_2020_backtracking",
+    "lorenzo_2011_backtracking",
+    "anderson_2023_pvlib",
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -60,6 +76,7 @@ class EffectivePOAFit:
     def to_dict(self) -> dict[str, object]:
         """Small replay specification; arrays remain in the analysis table."""
         return {
+            "reference_ids": list(REFERENCE_IDS),
             "geometry": asdict(self.geometry),
             "lag_hours": self.lag_hours,
             "training_correlation": self.training_correlation,

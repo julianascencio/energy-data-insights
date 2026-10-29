@@ -8,9 +8,9 @@ The first country workflow is Chile's solar fleet.
 
 | Subproject | Contents | Python import |
 | --- | --- | --- |
-| [Data-retrieval](Data-retrieval/) | One folder per provider: CEN, Open-Meteo, and native ERA5 through Earthmover; bounded requests, normalization and provenance | `energy_data_retrieval` |
+| [Data-retrieval](Data-retrieval/) | Provider folders for CEN API and historical exports, measured weather stations, Open-Meteo and native ERA5 through Earthmover; bounded requests, normalization and provenance | `energy_data_retrieval` |
 | [methods](methods/) | TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation and hourly operational screening | `energy_methods` |
-| [Analysis](Analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation and site/fleet outputs | `energy_analysis` |
+| [Analysis](Analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
 These are independently installable Python packages in one uv workspace. Each
 has its own source, tests and packaging metadata; one lockfile keeps their
@@ -34,15 +34,16 @@ credentials and make no live provider requests.
 ## Run an end-to-end example
 
 ```bash
-uv run --no-sync energy-chile demo --output artifacts/demo
+uv run --no-sync energy-chile demo --output artifacts/demo --reports
 ```
 
 The demo creates **explicitly synthetic** hourly inputs and runs the full
 country workflow. It is a smoke test and usage example, not a report about real
-Chilean farms. To exercise the alternative model:
+Chilean farms. Open `artifacts/demo/results/reports/index.html` for the offline
+fleet dashboard and linked site reports. To exercise the alternative model:
 
 ```bash
-uv run --no-sync energy-chile demo --algorithm lightgbm --output artifacts/demo-lightgbm
+uv run --no-sync energy-chile demo --algorithm lightgbm --output artifacts/demo-lightgbm --reports
 ```
 
 For actual data, follow the [Chile workflow and schemas](Analysis/README.md).
@@ -62,6 +63,26 @@ are documented in [Data-retrieval](Data-retrieval/README.md). Environment-variab
 names are listed in [.env.example](.env.example); credentials are never bundled.
 Use `energy-chile compare` when you already have frozen expected-generation
 columns: it performs fleet accounting without fitting or replacing those values.
+
+## Generate reports for a saved analysis
+
+```bash
+uv run --no-sync energy-chile report --run artifacts/my-study
+```
+
+The report generator belongs to
+`Analysis/src/energy_analysis/chile_fleet/reports/`. Each completed analysis writes
+its own `reports/` output folder with a fleet dashboard, individual site pages,
+publication drafts, bibliography and a hash manifest. The report reads saved
+results without retraining or changing predictions. It works with `run` and
+frozen-reference `compare` results; unavailable model or hourly evidence is
+shown as unavailable. Add `--reports` to `run`, `demo` or `compare` to generate
+reports immediately after the analysis.
+
+Fleet pages link to separate site pages, keeping hourly history out of a giant
+single-page payload. Synthetic runs retain their synthetic label in the saved
+manifest and all generated narrative. Website and LinkedIn drafts are local
+outputs for review; generating them does not publish anything.
 
 ## Scientific workflow
 
@@ -97,6 +118,7 @@ uv run --no-sync ruff check .
 uv run --no-sync ty check
 uv run --no-sync pytest --cov --cov-report=term-missing
 uv run --no-sync python scripts/check_repository.py
+uv run --no-sync python scripts/check_citations.py
 uv build --all-packages
 ```
 
@@ -122,3 +144,25 @@ Provider access conditions and attribution still apply to retrieved data.
 The methods are country-neutral so additional countries can reuse the pipeline.
 
 See [contributing](CONTRIBUTING.md) for development and review conventions.
+
+## Cite this repository and its scientific foundations
+
+**Main scientific reference:** Julián Andrés Ascencio Vásquez (2021).
+_Modelling and worldwide assessment of performance and aging of photovoltaic
+modules and systems_. Doctoral dissertation, University of Ljubljana, Faculty
+of Electrical Engineering.
+[Permanent record: URN:NBN:SI:DOC-TMG3QFI9](https://www.dlib.si/details/URN:NBN:SI:DOC-TMG3QFI9).
+
+The root [CITATION.cff](CITATION.cff) sets the thesis as the preferred citation
+for GitHub's **Cite this repository** feature. Also cite the individual papers,
+software and datasets used in your analysis, plus this repository's URL and exact
+commit. The [reference catalogue](docs/references.md) maps every reference to
+its implementation, distinguishes background from implemented methods, and is
+also available as [BibTeX](references.bib). Generated reports use the same
+packaged catalogue and present the thesis first.
+
+Citation metadata is generated from one source and checked for drift:
+
+```bash
+uv run --no-sync python scripts/check_citations.py
+```

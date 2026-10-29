@@ -9,6 +9,7 @@ uv run --no-sync ruff check .
 uv run --no-sync ty check
 uv run --no-sync pytest
 uv run --no-sync python scripts/check_repository.py
+uv run --no-sync python scripts/check_citations.py
 uv build --all-packages
 ```
 
@@ -22,6 +23,15 @@ Keep provider logic in `Data-retrieval`, reusable numerical algorithms in
 `methods`, and study-specific orchestration in `Analysis`. Public APIs need
 type annotations, units, timestamp semantics and explicit handling of missing
 values. Input validation should fail at the boundary with a useful message.
+Keep report generation in the respective analysis's `reports/` package; write
+generated reports below that analysis run's output folder.
+
+Credit every paper and source introduced or discussed by a contribution. Add
+verified metadata to `methods/src/energy_methods/references.json`, connect
+method `REFERENCE_IDS`, then run `uv run python scripts/check_citations.py --write`.
+The PhD thesis remains the primary scientific citation. Identify background
+references and implementation adaptations explicitly. Citing the thesis does
+not replace attribution to individual method authors or data providers.
 
 Test scientific decisions with small independent calculations and edge cases:
 reported zeros, all-missing series, duplicate keys, DST, empty training sets,

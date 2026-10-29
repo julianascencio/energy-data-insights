@@ -47,9 +47,11 @@ jobs:
         run: uv run --no-sync ty check
       - name: Check repository hygiene
         run: uv run --no-sync python scripts/check_repository.py
+      - name: Check research citations
+        run: uv run --no-sync python scripts/check_citations.py
       - name: Test
         run: uv run --no-sync pytest --cov --cov-report=term-missing
       - name: Build all distributions
         run: uv build --all-packages --out-dir dist
       - name: Run reproducible synthetic example
-        run: uv run --no-sync energy-chile demo --output artifacts/ci-demo
+        run: uv run --no-sync energy-chile demo --output artifacts/ci-demo --reports

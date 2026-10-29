@@ -1,0 +1,14 @@
+# Illustrative headers only: inspect your preserved authorized Qlik CSV first.
+# This example does not imply that these are universal CEN/Qlik field names.
+source = "cen-qlik"
+identity_column = "source_name"
+value_column = "generation"
+timestamp_column = "timestamp"
+timezone = "America/Santiago"
+timestamp_label = "start"
+energy_unit = "MWh"
+measurement_basis = "unspecified"
+decimal_places = 2
+temporal_resolution = "hourly"
+delimiter = ","
+decimal_separator = "."
