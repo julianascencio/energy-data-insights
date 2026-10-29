@@ -16,7 +16,10 @@ from typing import cast
 
 from energy_data_retrieval.sources.cmip6 import CMIP6Plan
 from energy_data_retrieval.sources.cmip6.client import REFERENCE_IDS as CMIP6_REFERENCE_IDS
+from energy_data_retrieval.sources.cru_ts.client import REFERENCE_IDS as CRU_REFERENCE_IDS
+from energy_data_retrieval.sources.cru_ts.client import VARIABLES as CRU_VARIABLES
 from energy_data_retrieval.sources.earthmover_era5.client import PINNED_SNAPSHOT
+from energy_data_retrieval.sources.gpcc.client import REFERENCE_IDS as GPCC_REFERENCE_IDS
 from energy_data_retrieval.sources.open_meteo import OpenMeteoClient, Site, WeatherProduct
 from energy_data_retrieval.transport import HTTPClient, JSONValue, RetrievalError
 
@@ -236,10 +239,91 @@ def grid_datasets(
             ],
         }
     )
+    for source, dataset_id, title, first, last, climate_references, variables, outputs in (
+        (
+            "gpcc",
+            "gpcc_monthly_v2025",
+            "GPCC Monthly v2025",
+            "1891-01-01",
+            None,
+            GPCC_REFERENCE_IDS,
+            ["precip", "precip_infill"],
+            ["precipitation_mm"],
+        ),
+        (
+            "cru_ts",
+            "cru_ts_v4_10",
+            "CRU TS v4.10",
+            "1901-01-01",
+            "2025-12-31",
+            CRU_REFERENCE_IDS,
+            list(CRU_VARIABLES),
+            [value[0] for value in CRU_VARIABLES.values()],
+        ),
+    ):
+        rows.append(
+            _base(latitude, longitude)
+            | _json_object(
+                {
+                    "source": source,
+                    "dataset_id": dataset_id,
+                    "title": title,
+                    "data_kind": "gridded_station_analysis",
+                    "geographic_status": "point_coverage_unverified",
+                    "geographic_scope": "global land; native masks require inspection"
+                    if source == "gpcc"
+                    else "global land excluding Antarctica; native masks require inspection",
+                    "spatial_resolution": "0.25, 0.5, 1.0 or 2.5 degrees"
+                    if source == "gpcc"
+                    else "0.5 degrees",
+                    "temporal_resolution": "monthly",
+                    "supported_variables": variables,
+                    "output_variables": outputs,
+                    "coverage_start": first,
+                    "coverage_end": last,
+                    "access": {
+                        "route": "public HTTPS NetCDF gzip archives",
+                        "credential": None,
+                        "optional_dependencies": [],
+                    },
+                    "reference_ids": list(climate_references),
+                    "retrieval": {
+                        "command": "gpcc" if source == "gpcc" else "cru-ts",
+                        "parameters": {"resolution": 0.5}
+                        if source == "gpcc"
+                        else {"variable": "tmp"},
+                        "required_inputs": ["start-year", "end-year", "output"],
+                        "site": location.copy(),
+                    },
+                    "notes": [
+                        "Documented land coverage does not verify data in the requested cell.",
+                        "Whole archives are downloaded; processing selects a bbox of cell centres.",
+                        "Monthly climate inputs provide neither hourly weather nor irradiation.",
+                        "Latest GPCC months have a publication delay."
+                        if source == "gpcc"
+                        else "Use UEA only if CEDA access or the release at CEDA is unavailable.",
+                    ],
+                }
+            )
+        )
     if start is not None and end is not None:
         for row in rows:
             row.update(requested_start=start.isoformat(), requested_end=end.isoformat())
             row["temporal_status"] = "not_checked"
+            if row["source"] in {"gpcc", "cru_ts"}:
+                first_date = date.fromisoformat(str(row["coverage_start"]))
+                last_date = (
+                    date.fromisoformat(str(row["coverage_end"])) if row["coverage_end"] else None
+                )
+                row["temporal_status"] = (
+                    "outside_documented_coverage"
+                    if end < first_date or (last_date is not None and start > last_date)
+                    else "partly_outside_documented_coverage"
+                    if start < first_date or (last_date is not None and end > last_date)
+                    else "within_documented_coverage"
+                    if last_date is not None
+                    else "within_documented_start_only"
+                )
             if row["dataset_id"] == "open_meteo_era5":
                 first = date(1940, 1, 1)
                 row["temporal_status"] = (

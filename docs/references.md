@@ -74,7 +74,7 @@ Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment 
 
 **Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed.
 
-**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -507,6 +507,70 @@ PANGAEA; Alfred Wegener Institute (n.d.). **BSRN Stations: PANGAEA station event
 **Role:** data. Official BSRN station inventory linked from the Alfred Wegener Institute station overview. Its bounded tab-delimited export preserves event codes, names, location, elevation, event dates, comments and source URIs. Event date extents do not establish monthly observation availability or continuous measurements; geographic proximity does not establish site representativeness. The selected catalogue and retrieval timestamp identify the acquisition vintage.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/bsrn/stations.py`, `data-retrieval/src/energy_data_retrieval/station_discovery.py`, `docs/location-discovery.md`.
+
+### ascencio_vasquez_2019_kgpv
+
+Ascencio-Vásquez, Julián; Brecl, Kristijan; Topič, Marko (2019). **Methodology of Köppen-Geiger-Photovoltaic climate classification and implications to worldwide mapping of PV system performance**. Solar Energy, 191, 672-685. [DOI: 10.1016/j.solener.2019.08.072](https://doi.org/10.1016/j.solener.2019.08.072)
+
+**Role:** implemented. Fig. A1 classification precedence and fixed irradiation thresholds; Table 4 merges 24 raw combinations into 12 zones. Verified against the open-access institutional full text. Uses updated GPCC/CRU releases and caller-selected baseline rather than reproducing the original 1990-2016 map. Exact 18 C is assigned tropical, irradiation upper edges are inclusive, and aridity reductions use a machine-roundoff tolerance; these numerical conventions are explicit. No PV yield simulation is claimed.
+
+**Used by:** `methods/src/energy_methods/kgpv.py`, `methods/src/energy_methods/climatology.py`, `methods/src/energy_methods/mapping.py`, `docs/kgpv.md`.
+
+### kottek_2006_kg
+
+Kottek, Markus; Grieser, Jürgen; Beck, Christoph; Rudolf, Bruno; Rubel, Franz (2006). **World Map of the Köppen-Geiger climate classification updated**. Meteorologische Zeitschrift, 15(3), 259-263. [DOI: 10.1127/0941-2948/2006/0130](https://doi.org/10.1127/0941-2948/2006/0130)
+
+**Role:** implemented. Eq. 2.1 seasonal dryness threshold uses at least two thirds of annual precipitation in winter or summer. The KGPV paper cites this work with year 2007, but the verified publication is 2006. KGPV Fig. A1 supplies the relabelling and polar/steppe equality rules.
+
+**Used by:** `methods/src/energy_methods/kgpv.py`, `docs/kgpv.md`.
+
+### gpcc_monthly_v2025
+
+Rustemeier, Elke; Finger, Peter; Schirmeister, Zora; Ziese, Markus (2025). **GPCC Precipitation Analysis Monthly Version 2025**. Deutscher Wetterdienst, Global Precipitation Climatology Centre. [Source](https://opendata.dwd.de/climate_environment/GPCC/html/gpcc_precipitation_analysis_monthly_v2025_doi_download.html)
+
+**Role:** data. Four resolutions: 0.25, 0.5, 1.0 and 2.5 degrees. Cite the selected product DOI 10.5676/DWD_GPCC/MONTHLY_V2025_025, _050, _100 or _250 respectively; the request and retrieval manifest expose the exact DOI. Monthly totals; precip_infill is opt-in. Five-year blocks through 2020, 2021-2024 block, monthly files from 2025. Retain native gauge/error fields in raw archives. Follow DWD terms of use.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/gpcc/client.py`, `docs/kgpv.md`.
+
+### harris_2020_cru_ts
+
+Harris, Ian; Osborn, Timothy J.; Jones, Phil; Lister, David (2020). **Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset**. Scientific Data, 7, 109. [DOI: 10.1038/s41597-020-0453-3](https://doi.org/10.1038/s41597-020-0453-3)
+
+**Role:** data. Method reference requested by the CRU TS provider. Data version is cited separately; use of this adapter does not imply that any particular analysis consumed CRU data.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cru_ts/client.py`, `docs/kgpv.md`.
+
+### cru_ts_410
+
+Climatic Research Unit, University of East Anglia (2026). **CRU-TS Version 4.10**. [Source](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/)
+
+**Role:** data. Pinned release cruts.2604091129.v4.10, monthly 1901-2025 at 0.5 degrees over land excluding Antarctica. No version DOI was provided on the verified release page. Provider asks users to prefer CEDA and use UEA if CEDA is unavailable or the release has not yet been published there. ODbL with Database Contents License, attribution and share-alike. TMP is monthly mean temperature; PRE is monthly total; PET remains mm/day.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cru_ts/client.py`, `docs/kgpv.md`.
+
+### xarray_documentation
+
+Xarray developers (n.d.). **Xarray documentation: labelled arrays, CF decoding and interpolation**. [Source](https://docs.xarray.dev/en/stable/)
+
+**Role:** software. Software used for labelled climate grids, CF NetCDF masking/scaling, explicit coordinate alignment, interpolation and NetCDF serialization. The algorithms and scientific threshold choices remain attributed to their individual method papers.
+
+**Used by:** `methods/src/energy_methods/mapping.py`, `data-retrieval/src/energy_data_retrieval/climate_grid.py`.
+
+### ascencio_vasquez_2019_degradation_mapping
+
+Ascencio-Vásquez, Julián; Kaaya, Ismail; Brecl, Kristijan; Weiss, Karl-Anders; Topič, Marko (2019). **Global Climate Data Processing and Mapping of Degradation Mechanisms and Degradation Rates of PV Modules**. Energies, 12(24), 4749. [DOI: 10.3390/en12244749](https://doi.org/10.3390/en12244749)
+
+**Role:** implemented. Source of climate-driven mechanism mapping and 0.2 percent/year categories, also presented in thesis Section 6.4. This implementation requires explicit module calibration and stress conventions. Mean daily extrema and arithmetic ambient humidity in the optional hourly processor are declared adaptations; the published global rasters and their calibration are not claimed reproduced.
+
+**Used by:** `methods/src/energy_methods/degradation.py`, `methods/src/energy_methods/degradation_mapping.py`, `docs/degradation.md`.
+
+### kaaya_2019_degradation
+
+Kaaya, Ismail; Koehl, Michael; Mehilli, Amantin Panos; de Cardona Mariano, Sidrach; Weiss, Karl Anders (2019). **Modeling Outdoor Service Lifetime Prediction of PV Modules: Effects of Combined Climatic Stressors on PV Module Power Degradation**. IEEE Journal of Photovoltaics, 9(4), 1105-1112. [DOI: 10.1109/JPHOTOV.2019.2916197](https://doi.org/10.1109/JPHOTOV.2019.2916197)
+
+**Role:** implemented. Original hydrolysis, photodegradation, thermomechanical and multiplicative combined-rate equations (3)-(7), reproduced in thesis equations 3.14-3.17. Publication Boltzmann constant and normalization placement retained. Calibration and climatic aggregation must be supplied explicitly; no universal module coefficients, power-loss trajectory or service-lifetime predictor are implied.
+
+**Used by:** `methods/src/energy_methods/degradation.py`, `methods/src/energy_methods/degradation_mapping.py`, `docs/degradation.md`.
 
 ### skoplaki_palyvos_2009_temperature
 

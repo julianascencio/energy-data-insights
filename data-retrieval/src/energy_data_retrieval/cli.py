@@ -16,6 +16,11 @@ from typing import cast
 
 import pandas as pd
 
+from energy_data_retrieval.climate_cli import (
+    CLIMATE_COMMANDS,
+    add_climate_parsers,
+    run_climate_command,
+)
 from energy_data_retrieval.discovery_cli import add_discovery_parser, run_discovery_command
 from energy_data_retrieval.sources.bsrn import BSRN_HOSTS, BSRNClient
 from energy_data_retrieval.sources.cen import CENClient, aggregate_units, normalize_registry
@@ -139,6 +144,7 @@ def build_parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     add_discovery_parser(commands)
     add_station_parsers(commands)
+    add_climate_parsers(commands)
     bsrn_search = commands.add_parser(
         "bsrn-search", help="Find candidate PANGAEA monthly BSRN dataset DOIs"
     )
@@ -586,6 +592,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             run_discovery_command(args)
         except (ValueError, RetrievalError, OSError) as error:
             parser.exit(2, f"Location discovery failed: {error}\n")
+        return 0
+    if args.command in CLIMATE_COMMANDS:
+        try:
+            result = run_climate_command(args)
+        except (ValueError, RetrievalError, OSError, KeyError) as error:
+            parser.exit(2, f"Climate retrieval failed: {error}\n")
+        print(json.dumps(result, sort_keys=True, allow_nan=False))
         return 0
     if args.command in STATION_COMMANDS:
         try:
