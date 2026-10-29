@@ -13,7 +13,7 @@
     "used_by": [
       "README.md",
       "methods/README.md",
-      "Analysis/README.md"
+      "analysis/README.md"
     ],
     "note": "Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented.",
     "verified_at": "2026-10-29",
@@ -453,7 +453,7 @@
     "role": "standard",
     "used_by": [
       "methods/src/energy_methods/status.py",
-      "Analysis/README.md"
+      "analysis/README.md"
     ],
     "note": "Information-model context only. The ten observable states and numeric thresholds are project screening rules, not normative IEC categories or a conformity claim. Causes remain unconfirmed and the workflow does not compute certified availability.",
     "verified_at": "2026-10-29"
@@ -470,7 +470,7 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/cen"
+      "data-retrieval/src/energy_data_retrieval/sources/cen"
     ],
     "note": "Actual-generation API source. Use the exact request interval, access time, response provenance and effective unit roster recorded by the acquisition; catalogue inclusion is not evidence of live authorization or complete national coverage.",
     "verified_at": "2026-10-29"
@@ -487,7 +487,7 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/cen"
+      "data-retrieval/src/energy_data_retrieval/sources/cen"
     ],
     "note": "Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity.",
     "verified_at": "2026-10-29"
@@ -504,8 +504,8 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/cen",
-      "Data-retrieval/README.md"
+      "data-retrieval/src/energy_data_retrieval/sources/cen",
+      "data-retrieval/README.md"
     ],
     "note": "Provider catalogue for historical generation and Qlik exports. Every imported export requires its specific source URL/file, timestamp conventions and hash; this general catalogue does not certify the completeness of a supplied export.",
     "verified_at": "2026-10-29"
@@ -522,8 +522,8 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/cen/history.py",
-      "Data-retrieval/README.md"
+      "data-retrieval/src/energy_data_retrieval/sources/cen/history.py",
+      "data-retrieval/README.md"
     ],
     "note": "Source interface for preserved generation exports. The adapter imports user-supplied CSV/XLSX/ZIP exports with an explicit contract; citation does not imply anonymous live access, successful authorization or an implemented Qlik session client.",
     "verified_at": "2026-10-29"
@@ -582,8 +582,8 @@
     "kind": "article",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
     ],
     "note": "Scientific description of ERA5 reanalysis. Reanalysis is modelled weather and cannot be relabelled as a measured station. Cite the actual dataset and acquisition wrapper separately.",
     "verified_at": "2026-10-29",
@@ -604,8 +604,8 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
     ],
     "note": "Single-level dataset citation as recommended by the Earthmover source catalogue. Record the actual retrieval date and selected data vintage; do not use the metadata-verification date as a data-access date.",
     "verified_at": "2026-10-29"
@@ -622,7 +622,7 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5"
     ],
     "note": "Optional native ERA5 source. Cite Earthmover, the C3S single-level dataset, and underlying ERA5 research; acquisition must retain the pinned snapshot and actual access date. Catalogue metadata verification does not establish current snapshot coverage or a new data acquisition.",
     "verified_at": "2026-10-29"
@@ -639,7 +639,7 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo"
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo"
     ],
     "note": "Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance.",
     "verified_at": "2026-10-29"
@@ -656,7 +656,7 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo"
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo"
     ],
     "note": "Optional archive of numerical forecasts. The adapter explicitly selects ECMWF IFS; do not describe these records as ERA5 or observations. Record model, vintage and interval semantics from provenance.",
     "verified_at": "2026-10-29"
@@ -673,8 +673,8 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "Data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "Data-retrieval/README.md"
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "data-retrieval/README.md"
     ],
     "note": "Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.",
     "verified_at": "2026-10-29"

@@ -8,9 +8,9 @@ The first country workflow is Chile's solar fleet.
 
 | Subproject | Contents | Python import |
 | --- | --- | --- |
-| [Data-retrieval](Data-retrieval/) | Provider folders for CEN API and historical exports, measured weather stations, Open-Meteo and native ERA5 through Earthmover; bounded requests, normalization and provenance | `energy_data_retrieval` |
+| [data-retrieval](data-retrieval/) | Provider folders for CEN API and historical exports, measured weather stations, Open-Meteo and native ERA5 through Earthmover; bounded requests, normalization and provenance | `energy_data_retrieval` |
 | [methods](methods/) | TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation and hourly operational screening | `energy_methods` |
-| [Analysis](Analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
+| [analysis](analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
 These are independently installable Python packages in one uv workspace. Each
 has its own source, tests and packaging metadata; one lockfile keeps their
@@ -46,7 +46,7 @@ fleet dashboard and linked site reports. To exercise the alternative model:
 uv run --no-sync energy-chile demo --algorithm lightgbm --output artifacts/demo-lightgbm --reports
 ```
 
-For actual data, follow the [Chile workflow and schemas](Analysis/README.md).
+For actual data, follow the [Chile workflow and schemas](analysis/README.md).
 The `prepare` command joins normalized generation/weather records, and `run`
 uses a TOML study configuration with explicit paths and time boundaries:
 
@@ -54,12 +54,12 @@ uses a TOML study configuration with explicit paths and time boundaries:
 uv run --no-sync energy-retrieve --help
 uv run --no-sync energy-chile prepare --help
 uv run --no-sync energy-chile compare --help
-uv run --no-sync energy-chile run --config Analysis/examples/chile_fleet.toml
+uv run --no-sync energy-chile run --config analysis/examples/chile_fleet.toml
 ```
 
 The real-data example requires your own acquired input files. Source-specific
 retrieval commands, credentials, API access limitations and provider attribution
-are documented in [Data-retrieval](Data-retrieval/README.md). Environment-variable
+are documented in [data-retrieval](data-retrieval/README.md). Environment-variable
 names are listed in [.env.example](.env.example); credentials are never bundled.
 Use `energy-chile compare` when you already have frozen expected-generation
 columns: it performs fleet accounting without fitting or replacing those values.
@@ -71,7 +71,7 @@ uv run --no-sync energy-chile report --run artifacts/my-study
 ```
 
 The report generator belongs to
-`Analysis/src/energy_analysis/chile_fleet/reports/`. Each completed analysis writes
+`analysis/src/energy_analysis/chile_fleet/reports/`. Each completed analysis writes
 its own `reports/` output folder with a fleet dashboard, individual site pages,
 publication drafts, bibliography and a hash manifest. The report reads saved
 results without retraining or changing predictions. It works with `run` and
