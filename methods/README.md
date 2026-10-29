@@ -22,6 +22,10 @@ documents installation and quality checks.
 
 ## Scientific scope
 
+- Climate Change Yield Assessment (CCYA) follows thesis sections 7.5.1-7.5.3:
+  historical monthly calibration, future irradiance/temperature/degradation
+  components and annual/cumulative comparisons. The [CCYA guide](../docs/ccya.md)
+  maps equations and explicitly documents fitting and normalization choices.
 - Acceptance bands follow the two-stage bin/curve method in
   [Ascencio-Vásquez et al. (2020)](https://doi.org/10.3390/en13092166).
 - Typical Daily Profiles pool original hourly observations by calendar month and
@@ -52,6 +56,7 @@ zeros remain observations; missing values are never filled with zero.
 | `metrics` | `energy_metrics` | Matching nonnegative actual/expected pairs, including reported zeros. |
 | `status` | `classify_status` | Ten observable hourly states plus envelope, band disagreement, near-zero and persistence evidence. |
 | `tdp` | `analyze_tdp` | Country-neutral DataFrame interface; configurable fixed profile clock, default UTC. |
+| `ccya` | `fit_ccya`, `CCYAModel.project`, `fit_site_adaptation` | Monthly GHI in W/m², ambient °C, native-calendar days and measured DC yield in kWh/kWp; complete years and separate scenario/member projections. |
 
 Fitted bands and models expose `to_dict()` with portable numerical state. LightGBM
 exports its text booster representation, not a pickle. Physical models and tree

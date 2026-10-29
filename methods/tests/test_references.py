@@ -121,6 +121,7 @@ def test_method_paper_dois_remain_covered_by_catalogue() -> None:
         "lightgbm",
         "physics",
         "status",
+        "ccya",
         "kgpv",
         "mapping",
         "climatology",

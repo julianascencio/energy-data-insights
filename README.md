@@ -9,7 +9,7 @@ The first country workflow is Chile's solar fleet.
 | Subproject | Contents | Python import |
 | --- | --- | --- |
 | [data-retrieval](data-retrieval/) | Provider folders for CEN, BSRN, NOAA GHCNh, AEMET, DWD, SURFRAD, measured-station exports, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
-| [methods](methods/) | TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation, hourly operational screening, KGPV and degradation mapping | `energy_methods` |
+| [methods](methods/) | CCYA climate-change yield assessment, TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation, hourly operational screening, KGPV and degradation mapping | `energy_methods` |
 | [analysis](analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
 These are independently installable Python packages in one uv workspace. Each
@@ -85,6 +85,23 @@ CMIP6 candidates retain explicit model/member/grid selection requirements.
 
 See [location discovery](docs/location-discovery.md) for the Python API,
 offline catalogue reuse, dataset statuses and scientific limits.
+
+## Assess climate-change yield (CCYA)
+
+The [CCYA method](docs/ccya.md) implements the workflow in the cited PhD thesis,
+Chapter 7, sections 7.5.1-7.5.3. Calibrate historical monthly DC yield and weather
+against a climate model, then assess future irradiance, temperature and power
+degradation separately and together. Outputs include annual yields, 10-year
+rolling trends and cumulative gain/loss against historical P10/P50/P90 baselines.
+The guide documents the exact percentile convention and implementation choices.
+
+```bash
+uv run --no-sync python methods/examples/ccya_synthetic.py
+```
+
+This deterministic example uses synthetic data. Real runs require qualified
+monthly DC plant measurements and preprocessed climate-model data; the method
+does not reproduce the thesis's Bolzano results or automatically parse NetCDF.
 
 ## Retrieve CMIP6 data
 

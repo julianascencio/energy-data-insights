@@ -55,3 +55,5 @@ jobs:
         run: uv build --all-packages --out-dir dist
       - name: Run reproducible synthetic example
         run: uv run --no-sync energy-chile demo --output artifacts/ci-demo --reports
+      - name: Run synthetic CCYA example
+        run: uv run --no-sync python methods/examples/ccya_synthetic.py
