@@ -88,6 +88,19 @@ def test_warming_uses_adapted_temperature_without_double_counting_baseline() -> 
     assert_allclose(result.annual["irradiance_cumulative_gain_p50_pct"], 0, atol=1e-12)
 
 
+def test_seasonal_site_adaptation_residuals_do_not_create_spurious_climate_change() -> None:
+    measured, historical = calibration()
+    assert isinstance(measured.index, pd.PeriodIndex)
+    # These seasonal biases cannot be fitted exactly by a single affine map.
+    measured["temperature_c"] += np.where(measured.index.month == 1, 5, 0)
+    measured["ghi_wm2"] += np.where(measured.index.month == 7, 50, 0)
+    model = fit_ccya(measured, historical)
+    result = model.project(climate(2021), scenario="synthetic/unchanged-with-residuals")
+    assert_allclose(result.monthly["temperature_factor"], 1)
+    assert_allclose(result.monthly["combined_kwh_kwp"], measured["dc_yield_kwh_kwp"])
+    assert_allclose(result.annual["combined_cumulative_gain_p50_pct"], 0, atol=1e-12)
+
+
 def test_brightening_and_ross_heating_are_separate() -> None:
     measured, historical = calibration()
     model = fit_ccya(measured, historical)

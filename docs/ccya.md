@@ -108,7 +108,8 @@ the Ross temperature model instead.
 G_site[t] = a_G * G_model[t] + b_G
 T_site[t] = a_T * T_model[t] + b_T
 T_module[t] = T_site[t] + ross * G_site[t]
-T_reference[m] = mean(measured ambient T)[m] + ross * mean(measured GHI)[m]
+T_reference[m] = mean(a_T * historical model T + b_T)[m]
+                 + ross * mean(a_G * historical model GHI + b_G)[m]
 f_temperature[t] = 1 + gamma * (T_module[t] - T_reference[month(t)])
 f_power[t] = 1 - degradation_per_year * (age_at_start_years + operating_year[t] - 1)
 ```
@@ -117,7 +118,9 @@ The temperature multiplier is an incremental, first-order adaptation: the
 measured yield calibration already includes historical thermal losses. It is
 not an additional absolute STC loss, nor a claimed exact reproduction of the
 unpublished normalization behind Figure 7.17. Unchanged reference weather gives
-a multiplier of one. Monthly averages and GHI reproduce the chapter's coarse
+a multiplier of one. The historical reference uses the same fitted weather maps
+as the future projection: seasonal regression residuals must not masquerade as
+future temperature changes. Monthly averages and GHI reproduce the chapter's coarse
 approach; this is not an irradiance-weighted hourly module-temperature model.
 
 An existing plant's historical aging and operating losses remain embedded in

@@ -303,16 +303,17 @@ def fit_ccya(
     ghi_fit = fit_site_adaptation(climate["ghi_wm2"], observations["ghi_wm2"])
     temp_fit = fit_site_adaptation(climate["temperature_c"], observations["temperature_c"])
     model_groups = climate.groupby(index.month)
-    observed_groups = observations.groupby(index.month)
     ghi_centers = model_groups["ghi_wm2"].mean().to_numpy()
     if (ghi_centers <= 0).any():
         raise ValueError("Every calendar month needs a positive modelled GHI centroid")
     daily_yield = observations["dc_yield_kwh_kwp"] / observations["days"]
     yield_centers = daily_yield.groupby(index.month).mean().to_numpy()
-    reference_temperature = (
-        observed_groups["temperature_c"].mean().to_numpy()
-        + config.ross_c_m2_w * observed_groups["ghi_wm2"].mean().to_numpy()
-    )
+    # Normalize against the same fitted weather maps used in projection. Using
+    # measured centroids here would count seasonal OLS residual bias as future
+    # warming/cooling, even when the model's climate has not changed.
+    reference_temperature = temp_fit.predict(
+        model_groups["temperature_c"].mean().to_numpy()
+    ) + config.ross_c_m2_w * ghi_fit.predict(ghi_centers)
     annual_yields = observations["dc_yield_kwh_kwp"].groupby(index.year).sum().to_numpy()
     if (annual_yields <= 0).any():
         raise ValueError("Every measured annual yield must be positive for gain/loss comparisons")
