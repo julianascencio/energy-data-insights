@@ -33,6 +33,7 @@ downloaded it. Use the run's acquisition provenance for that determination.
 | Component | Attribution and implementation boundary |
 | --- | --- |
 | Typical Daily Profiles | Ascencio-Vásquez et al. (2021); project qualification/pooling rules. |
+| CCYA | Thesis (2021), sections 7.5.1-7.5.3; adaptations documented in docs/ccya.md. |
 | Acceptance bands | Ascencio-Vásquez et al. (2020); documented roughness/distance interpretation. |
 | Effective POA | Reda-Andreas, Erbs, Hay-Davies, Spencer and pvlib. |
 | Single-axis geometry | Anderson-Mikofski and Lorenzo et al. through pvlib; inferred geometry. |
@@ -71,9 +72,9 @@ No license is inferred from bibliographic metadata.
 
 Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment of performance and aging of photovoltaic modules and systems**. University of Ljubljana, Faculty of Electrical Engineering. [Source](https://www.dlib.si/details/URN:NBN:SI:DOC-TMG3QFI9)
 
-**Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented.
+**Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed.
 
-**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -506,3 +507,19 @@ PANGAEA; Alfred Wegener Institute (n.d.). **BSRN Stations: PANGAEA station event
 **Role:** data. Official BSRN station inventory linked from the Alfred Wegener Institute station overview. Its bounded tab-delimited export preserves event codes, names, location, elevation, event dates, comments and source URIs. Event date extents do not establish monthly observation availability or continuous measurements; geographic proximity does not establish site representativeness. The selected catalogue and retrieval timestamp identify the acquisition vintage.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/bsrn/stations.py`, `data-retrieval/src/energy_data_retrieval/station_discovery.py`, `docs/location-discovery.md`.
+
+### skoplaki_palyvos_2009_temperature
+
+Skoplaki, E.; Palyvos, J.A. (2009). **Operating temperature of photovoltaic modules: A survey of pertinent correlations**. Renewable Energy, 34(1), 23-29. [DOI: 10.1016/j.renene.2008.04.009](https://doi.org/10.1016/j.renene.2008.04.009)
+
+**Role:** implemented. Thesis reference [154] for module-temperature correlations, including the Ross relation in thesis equation 3.8. CCYA uses monthly site-adapted GHI and ambient temperature, with the thesis case-study Ross coefficient 0.03 degrees C m2/W. This is a coarse monthly thermal approximation, not hourly irradiance-weighted module temperature. Metadata verified against publisher-deposited Crossref record.
+
+**Used by:** `methods/src/energy_methods/ccya.py`, `docs/ccya.md`.
+
+### polo_2020_site_adaptation
+
+Polo, Jesus; Fernández-Peruchena, Carlos; Salamalikis, Vasileios; Mazorra-Aguiar, Luis; Turpin, Mathieu; Martín-Pomares, Luis; Kazantzidis, Andreas; Blanc, Philippe; Remund, Jan (2020). **Benchmarking on improvement and site-adaptation techniques for modeled solar radiation datasets**. Solar Energy, 201, 469-479. [DOI: 10.1016/j.solener.2020.03.040](https://doi.org/10.1016/j.solener.2020.03.040)
+
+**Role:** background. Thesis reference [287], cited as background for site adaptation in section 7.5.1. CCYA implements the thesis simple monthly linear regression; it does not implement or reproduce the entire benchmark or all correction techniques in this paper. Metadata verified against publisher-deposited Crossref record.
+
+**Used by:** `methods/src/energy_methods/ccya.py`, `docs/ccya.md`.
