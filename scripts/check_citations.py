@@ -47,6 +47,7 @@ downloaded it. Use the run's acquisition provenance for that determination.
 | Component | Attribution and implementation boundary |
 | --- | --- |
 | Typical Daily Profiles | Ascencio-Vásquez et al. (2021); project qualification/pooling rules. |
+| CCYA | Thesis (2021), sections 7.5.1-7.5.3; adaptations documented in docs/ccya.md. |
 | Acceptance bands | Ascencio-Vásquez et al. (2020); documented roughness/distance interpretation. |
 | Effective POA | Reda-Andreas, Erbs, Hay-Davies, Spencer and pvlib. |
 | Single-axis geometry | Anderson-Mikofski and Lorenzo et al. through pvlib; inferred geometry. |
