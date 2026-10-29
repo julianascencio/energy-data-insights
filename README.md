@@ -8,7 +8,7 @@ The first country workflow is Chile's solar fleet.
 
 | Subproject | Contents | Python import |
 | --- | --- | --- |
-| [data-retrieval](data-retrieval/) | Provider folders for CEN API and historical exports, measured weather stations, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
+| [data-retrieval](data-retrieval/) | Provider folders for CEN, BSRN radiation stations, NOAA GHCNh weather stations, measured-station exports, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
 | [methods](methods/) | TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation and hourly operational screening | `energy_methods` |
 | [analysis](analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
@@ -82,6 +82,27 @@ for historical and scenario selections, bounded downloads and restart behavior.
 Supported public endpoints need no account or additional package dependencies.
 Native units and calendars are preserved. Climate-model files require a separate,
 explicit analysis step before they can be used with the hourly fleet workflow.
+
+## Retrieve measured station data
+
+The `sources/bsrn/` provider discovers public PANGAEA dataset DOIs and retrieves
+one explicitly selected BSRN station/month. The `sources/noaa/` provider retrieves
+the current NOAA GHCNh station catalogue and native station/year observations:
+
+```bash
+uv run energy-retrieve bsrn-search --help
+uv run energy-retrieve bsrn-dataset --help
+uv run energy-retrieve noaa-stations --help
+uv run energy-retrieve noaa-observations --help
+```
+
+Both use public HTTP services without credentials or additional dependencies.
+See the [BSRN example](data-retrieval/README.md#bsrn-radiation-stations) and
+[NOAA example](data-retrieval/README.md#noaa-ghcnh-weather-stations). Retrieved
+observations retain their native UTC timestamps, missing and negative values,
+source metadata and quality annotations. Saved outputs preserve the source data
+and hashes for reproducible reuse. Station selection, scientific quality checks
+and any conversion to the hourly fleet schema remain explicit analysis steps.
 
 ## Generate reports for a saved analysis
 

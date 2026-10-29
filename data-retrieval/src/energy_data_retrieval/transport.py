@@ -138,6 +138,14 @@ class JSONResponse:
     record: RequestRecord
 
 
+@dataclass(frozen=True, slots=True)
+class TextResponse:
+    """Public UTF-8 response with a hash of its exact decoded HTTP entity bytes."""
+
+    value: str
+    record: RequestRecord
+
+
 def atomic_bytes(path: Path, data: bytes) -> None:
     """Replace one file atomically; failed writes never publish a partial file."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -357,6 +365,128 @@ class HTTPClient:
                 self._sleep(self._retry_delay(response, attempt))
         status = f"HTTP {last_status}" if last_status is not None else "transport failure"
         raise RetrievalError(f"Export retrieval failed from {parsed.hostname}: {status}") from None
+
+    def get_text(
+        self,
+        endpoint: str,
+        parameters: Mapping[str, str] | None = None,
+        *,
+        use_cache: bool = True,
+    ) -> TextResponse:
+        """Read a bounded public UTF-8 export, retaining tabs, line endings and units.
+
+        This method does not accept credentials. Public CSV, PSV and TSV endpoints
+        may use non-secret query parameters. Cache entries are separate from JSON
+        responses and are accepted only after source, size and hash verification.
+        """
+        parsed = urlsplit(endpoint)
+        if (
+            parsed.scheme != "https"
+            or parsed.hostname not in self.allowed_hosts
+            or parsed.username is not None
+            or parsed.password is not None
+            or parsed.query
+            or parsed.fragment
+            or parsed.port not in (None, 443)
+        ):
+            raise ValueError("Endpoint must be a query-free HTTPS URL on an approved host")
+        public = dict(parameters or {})
+        if any(name.lower() in _SECRET_NAMES for name in public):
+            raise ValueError("Text retrieval accepts public parameters only, never credentials")
+        cache_key = hashlib.sha256(
+            json.dumps(["text-utf8", endpoint, public], sort_keys=True).encode()
+        ).hexdigest()
+        cache = (
+            self.cache_directory / f"{cache_key}.text.json"
+            if use_cache and self.cache_directory is not None
+            else None
+        )
+        if cache is not None and cache.exists():
+            try:
+                # JSON escaping can expand one control byte to six bytes.
+                if cache.stat().st_size <= 6 * self.config.maximum_response_bytes + 65536:
+                    saved = object_value(_decode(cache.read_bytes()))
+                    value = saved["value"]
+                    metadata = object_value(saved["record"])
+                    captured = datetime.fromisoformat(str(metadata["retrieved_at_utc"]))
+                    if isinstance(value, str):
+                        raw = value.encode("utf-8")
+                        if (
+                            0
+                            <= (datetime.now(UTC) - captured).total_seconds()
+                            <= self.config.cache_ttl_seconds
+                            and metadata["endpoint"] == endpoint
+                            and metadata["parameters"] == public
+                            and len(raw) <= self.config.maximum_response_bytes
+                            and metadata["size_bytes"] == len(raw)
+                            and metadata["sha256"] == hashlib.sha256(raw).hexdigest()
+                        ):
+                            return TextResponse(
+                                value,
+                                RequestRecord(
+                                    endpoint,
+                                    public,
+                                    str(metadata["retrieved_at_utc"]),
+                                    str(metadata["sha256"]),
+                                    len(raw),
+                                    True,
+                                ),
+                            )
+            except (OSError, KeyError, TypeError, ValueError, RetrievalError):
+                pass
+        last_status: int | None = None
+        for attempt in range(self.config.attempts):
+            self._wait_for_slot()
+            response: httpx.Response | None = None
+            try:
+                with self._client.stream(
+                    "GET",
+                    endpoint,
+                    params=public,
+                    # Export endpoints choose their own attachment/media type.
+                    # PANGAEA rejects some specific text Accept combinations;
+                    # UTF-8 decoding and source schema validation remain strict.
+                    headers={"Accept": "*/*"},
+                ) as response:
+                    last_status = response.status_code
+                    if last_status == 200:
+                        chunks = bytearray()
+                        for chunk in response.iter_bytes(chunk_size=64 * 1024):
+                            if len(chunks) + len(chunk) > self.config.maximum_response_bytes:
+                                raise RetrievalError(
+                                    "Source response exceeded the configured byte limit"
+                                )
+                            chunks.extend(chunk)
+                        raw = bytes(chunks)
+                        try:
+                            value = raw.decode("utf-8")
+                        except UnicodeDecodeError:
+                            raise RetrievalError("Source returned invalid UTF-8 text") from None
+                        record = RequestRecord(
+                            endpoint,
+                            public,
+                            datetime.now(UTC).isoformat(),
+                            hashlib.sha256(raw).hexdigest(),
+                            len(raw),
+                        )
+                        if cache is not None:
+                            atomic_bytes(
+                                cache,
+                                json.dumps(
+                                    {"record": asdict(record), "value": value},
+                                    ensure_ascii=False,
+                                    allow_nan=False,
+                                ).encode("utf-8"),
+                            )
+                        return TextResponse(value, record)
+                    if last_status not in _RETRY_STATUSES:
+                        break
+            except httpx.TransportError:
+                last_status = None
+            if attempt + 1 < self.config.attempts:
+                self._sleep(self._retry_delay(response, attempt))
+        status = f"HTTP {last_status}" if last_status is not None else "transport failure"
+        raise RetrievalError(f"Retrieval failed from {parsed.hostname}: {status}") from None
 
     def get_json(
         self,

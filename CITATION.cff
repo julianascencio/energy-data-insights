@@ -1266,6 +1266,318 @@
       "url": "https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html",
       "notes": "Role: data. Document version 12 October 2022. Defines acknowledgement and data-citation requirements and directs users to the official per-model license inventory, which supersedes older file-header restrictions. Preserve source metadata and consult that inventory for data reuse; a catalogue-record license alone does not establish the license of the underlying model output or of this repository.",
       "year": 2022
+    },
+    {
+      "type": "article",
+      "title": "Baseline Surface Radiation Network (BSRN): structure and data description (1992–2017)",
+      "authors": [
+        {
+          "family-names": "Driemel",
+          "given-names": "Amelie"
+        },
+        {
+          "family-names": "Augustine",
+          "given-names": "John"
+        },
+        {
+          "family-names": "Behrens",
+          "given-names": "Klaus"
+        },
+        {
+          "family-names": "Colle",
+          "given-names": "Sergio"
+        },
+        {
+          "family-names": "Cox",
+          "given-names": "Christopher"
+        },
+        {
+          "family-names": "Cuevas-Agulló",
+          "given-names": "Emilio"
+        },
+        {
+          "family-names": "Denn",
+          "given-names": "Fred M."
+        },
+        {
+          "family-names": "Duprat",
+          "given-names": "Thierry"
+        },
+        {
+          "family-names": "Fukuda",
+          "given-names": "Masato"
+        },
+        {
+          "family-names": "Grobe",
+          "given-names": "Hannes"
+        },
+        {
+          "family-names": "Haeffelin",
+          "given-names": "Martial"
+        },
+        {
+          "family-names": "Hodges",
+          "given-names": "Gary"
+        },
+        {
+          "family-names": "Hyett",
+          "given-names": "Nicole"
+        },
+        {
+          "family-names": "Ijima",
+          "given-names": "Osamu"
+        },
+        {
+          "family-names": "Kallis",
+          "given-names": "Ain"
+        },
+        {
+          "family-names": "Knap",
+          "given-names": "Wouter"
+        },
+        {
+          "family-names": "Kustov",
+          "given-names": "Vasilii"
+        },
+        {
+          "family-names": "Long",
+          "given-names": "Charles N."
+        },
+        {
+          "family-names": "Longenecker",
+          "given-names": "David"
+        },
+        {
+          "family-names": "Lupi",
+          "given-names": "Angelo"
+        },
+        {
+          "family-names": "Maturilli",
+          "given-names": "Marion"
+        },
+        {
+          "family-names": "Mimouni",
+          "given-names": "Mohamed"
+        },
+        {
+          "family-names": "Ntsangwane",
+          "given-names": "Lucky"
+        },
+        {
+          "family-names": "Ogihara",
+          "given-names": "Hiroyuki"
+        },
+        {
+          "family-names": "Olano",
+          "given-names": "Xabier"
+        },
+        {
+          "family-names": "Olefs",
+          "given-names": "Marc"
+        },
+        {
+          "family-names": "Omori",
+          "given-names": "Masao"
+        },
+        {
+          "family-names": "Passamani",
+          "given-names": "Lance"
+        },
+        {
+          "family-names": "Pereira",
+          "given-names": "Enio Bueno"
+        },
+        {
+          "family-names": "Schmithüsen",
+          "given-names": "Holger"
+        },
+        {
+          "family-names": "Schumacher",
+          "given-names": "Stefanie"
+        },
+        {
+          "family-names": "Sieger",
+          "given-names": "Rainer"
+        },
+        {
+          "family-names": "Tamlyn",
+          "given-names": "Jonathan"
+        },
+        {
+          "family-names": "Vogt",
+          "given-names": "Roland"
+        },
+        {
+          "family-names": "Vuilleumier",
+          "given-names": "Laurent"
+        },
+        {
+          "family-names": "Xia",
+          "given-names": "Xiangao"
+        },
+        {
+          "family-names": "Ohmura",
+          "given-names": "Atsumu"
+        },
+        {
+          "family-names": "König-Langlo",
+          "given-names": "Gert"
+        }
+      ],
+      "url": "https://essd.copernicus.org/articles/10/1491/2018/",
+      "notes": "Role: data. Canonical scientific description of the BSRN radiation archive. The provider retrieves station observations through PANGAEA and preserves their published identity and provenance. Cite the actual station collection and monthly dataset DOIs in addition to this network paper. Archive checks do not establish that a downloaded value passed every subsequent scientific quality check or represents a particular PV site.",
+      "year": 2018,
+      "doi": "10.5194/essd-10-1491-2018",
+      "journal": "Earth System Science Data",
+      "volume": "10",
+      "issue": "3"
+    },
+    {
+      "type": "manual",
+      "title": "Baseline Surface Radiation Network: Data retrieval via PANGAEA",
+      "authors": [
+        {
+          "family-names": "World Radiation Monitoring Center",
+          "given-names": "Alfred Wegener Institute"
+        }
+      ],
+      "url": "https://bsrn.awi.de/data/data-retrieval-via-pangaea/",
+      "notes": "Role: data. Official source guidance for UTC timestamps, station/month datasets and logical records. The adapter targets basic radiation records; other record types require their own explicit contract. AWI states that resulting detailed BSRN quality-check flags are not archived. PANGAEA value annotations, when present, are preserved separately and do not establish completed scientific quality control. Preserve each dataset's citation, station metadata and BSRN data-release conditions."
+    },
+    {
+      "type": "manual",
+      "title": "PANGAEA Data Access and Reuse",
+      "authors": [
+        {
+          "name": "PANGAEA Data Publisher for Earth & Environmental Science"
+        }
+      ],
+      "url": "https://wiki.pangaea.de/wiki/Data_Access_and_Reuse",
+      "notes": "Role: data. Documents DOI-based programmatic access, tab-delimited exports, structured metadata and citation links. PANGAEA describes these as standard HTTP access rather than a separate proprietary data API. The adapter retains the original citation/license text and source hashes; a DOI identifies the selected dataset and does not imply unrestricted access or a license for all PANGAEA holdings."
+    },
+    {
+      "type": "data",
+      "title": "Global Historical Climatology Network-Hourly (GHCNh)",
+      "authors": [
+        {
+          "family-names": "Menne",
+          "given-names": "Matthew J."
+        },
+        {
+          "family-names": "Noone",
+          "given-names": "Simon"
+        },
+        {
+          "family-names": "Casey",
+          "given-names": "Nancy W."
+        },
+        {
+          "family-names": "Dunn",
+          "given-names": "Robert H."
+        },
+        {
+          "family-names": "McNeill",
+          "given-names": "Shelley"
+        },
+        {
+          "family-names": "Kantor",
+          "given-names": "Diana"
+        },
+        {
+          "family-names": "Thorne",
+          "given-names": "Peter W."
+        },
+        {
+          "family-names": "Orcutt",
+          "given-names": "Karen"
+        },
+        {
+          "family-names": "Cunningham",
+          "given-names": "Sam"
+        },
+        {
+          "family-names": "Risavi",
+          "given-names": "Nicholas"
+        }
+      ],
+      "url": "https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01688/html",
+      "notes": "Role: data. Official NOAA dataset citation, including all ten credited authors. Identify the actual station/year subset, product version and access date when citing an acquisition. The adapter retrieves GHCNh station reports and retains measurement, quality, source and report codes; the word hourly does not convert every reported value into a one-hour mean or supply missing irradiance observations.",
+      "year": 2023,
+      "doi": "10.25921/jp3d-3v19",
+      "institution": {
+        "name": "NOAA National Centers for Environmental Information"
+      }
+    },
+    {
+      "type": "manual",
+      "title": "Global Historical Climatology Network hourly (GHCNh): Documentation, version 1.1.0",
+      "authors": [
+        {
+          "name": "NOAA National Centers for Environmental Information"
+        }
+      ],
+      "url": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/doc/ghcnh_DOCUMENTATION.pdf",
+      "notes": "Role: data. Official documentation updated 10 March 2026. Defines native station/year PSV access, station identifiers, units and measurement/quality/report/source codes. GHCNh version 1.1.0 supersedes previous versions and replaces the legacy ISD product. Preserve source fields and actual report timestamps; transformations into analysis intervals require a separately stated aggregation policy.",
+      "year": 2026
+    },
+    {
+      "type": "manual",
+      "title": "Service Location Change for Integrated Surface Data (Global Hourly)",
+      "authors": [
+        {
+          "name": "NOAA National Centers for Environmental Information"
+        }
+      ],
+      "url": "https://www.nesdis.noaa.gov/news/service-location-change-integrated-surface-data-global-hourly",
+      "notes": "Role: background. Official notice dated 23 June 2026 explains why new acquisition uses GHCNh. It records that legacy ISD updates stopped after 24 August 2025 and announces retirement of NCEI's ISD FTP/HTTPS distribution, while legacy files remain available through NODD. This repository's NOAA provider does not implement a legacy ISD fallback.",
+      "year": 2026
+    },
+    {
+      "type": "manual",
+      "title": "PANGAEA Quality flag definitions",
+      "authors": [
+        {
+          "name": "PANGAEA Data Publisher for Earth & Environmental Science"
+        }
+      ],
+      "url": "https://wiki.pangaea.de/wiki/Quality_flag",
+      "notes": "Role: data. Defines numeric-value annotations for questionable, invalid, unknown, individually defined and inequality-qualified observations. The BSRN parser preserves the annotation and original field rather than silently treating an annotated value as unqualified. PANGAEA syntax alone does not certify detailed BSRN scientific quality control."
+    },
+    {
+      "type": "data",
+      "title": "Basic measurements of radiation at station Cabauw (2009-06)",
+      "authors": [
+        {
+          "family-names": "Knap",
+          "given-names": "Wouter"
+        }
+      ],
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.725795",
+      "notes": "Role: data. The explicit Cabauw June 2009 dataset used by the BSRN retrieval example. It is not a default station selection or an input to every analysis. Retain the retrieved dataset metadata, source hash and BSRN release conditions, and cite the associated station collection as well as this monthly dataset when using its measurements.",
+      "year": 2009,
+      "doi": "10.1594/PANGAEA.725795",
+      "collection-title": "PANGAEA",
+      "institution": {
+        "name": "Koninklijk Nederlands Meteorologisch Instituut, De Bilt"
+      }
+    },
+    {
+      "type": "data",
+      "title": "Basic and other measurements of radiation at station Cabauw (2005-02 et seq)",
+      "authors": [
+        {
+          "family-names": "Knap",
+          "given-names": "Wouter"
+        }
+      ],
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.940531",
+      "notes": "Role: data. Station-level publication series containing the monthly Cabauw dataset in the retrieval example. The collection is updated over time; its citation does not assert that the entire collection was downloaded. Identify the exact monthly DOI and acquisition snapshot used, and preserve their associated station and instrument metadata.",
+      "year": 2022,
+      "doi": "10.1594/PANGAEA.940531",
+      "collection-title": "PANGAEA",
+      "institution": {
+        "name": "Koninklijk Nederlands Meteorologisch Instituut, De Bilt"
+      }
     }
   ]
 }

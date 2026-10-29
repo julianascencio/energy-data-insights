@@ -41,6 +41,44 @@ outside the source tree or in ignored directories. Provenance records bind
 inputs and outputs using hashes and record the relevant configuration. API
 credentials are supplied locally, not stored in Git or output manifests.
 
+### Native station observation contracts
+
+`energy_data_retrieval.sources.bsrn` uses PANGAEA's documented DOI export
+interface for one explicitly selected BSRN station/month. Its separate discovery
+command returns DOI candidates through the current search endpoint used by
+PANGAEA's official client. That internal search interface has no stable public
+REST contract; DOI retrieval validates the actual dataset independently.
+The supported radiation records retain their original UTC minute labels,
+statistics, missing and negative values, raw columns and numeric qualifiers.
+Source text, JSON-LD metadata, citations and release conditions are saved with
+the output. Archive annotations do not establish completed BSRN scientific
+quality control. See the [BSRN source contract](../data-retrieval/README.md#bsrn-radiation-stations)
+and [official archive guidance](https://bsrn.awi.de/data/data-retrieval-via-pangaea/).
+
+`energy_data_retrieval.sources.noaa` retrieves the current GHCNh catalogue and
+explicit station/year files from NOAA NCEI over HTTPS. Country and geographic
+filters select station metadata; an observation request names an exact GHCNh
+station ID, preserving its case. Generated output directories are lowercase
+and distinguish IDs that differ only in case. Invalid catalogue coordinate pairs
+remain in the raw fields and are flagged unavailable in normalized coordinates;
+no coordinate swap or repair is inferred. Whole native annual PSV files are
+acquired under response and row limits, then filtered to the requested UTC dates.
+Measurements retain their
+native physical units, report timestamps and raw quality, source and measurement
+codes. GHCNh is NOAA's current replacement for frozen ISD; no automatic legacy
+fallback is used. See the [NOAA source contract](../data-retrieval/README.md#noaa-ghcnh-weather-stations)
+and [official GHCNh documentation](https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/doc/ghcnh_DOCUMENTATION.pdf).
+
+Both clients use the shared bounded HTTP transport and require no new
+dependencies or credentials for the supported public data. Observation
+acquisitions save their original source artifacts and hashes alongside the
+normalized outputs; exact completed local snapshots are verified before reuse.
+Native station observations preserve their
+own scientific contract. Neither source automatically maps stations to plants,
+derives missing irradiance, applies a quality mask, fills gaps or produces the
+hourly fleet weather schema. Those decisions belong in an explicit subsequent
+analysis and retain the station dataset's attribution alongside the thesis.
+
 ### CMIP6 native data contract
 
 `energy_data_retrieval.sources.cmip6` accesses the current public ESGF STAC API.

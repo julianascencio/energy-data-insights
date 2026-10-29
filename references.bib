@@ -311,3 +311,85 @@
   url = {https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html},
   note = {Role: data. Document version 12 October 2022. Defines acknowledgement and data-citation requirements and directs users to the official per-model license inventory, which supersedes older file-header restrictions. Preserve source metadata and consult that inventory for data reuse; a catalogue-record license alone does not establish the license of the underlying model output or of this repository.}
 }
+
+@article{driemel_2018_bsrn,
+  author = {Driemel, Amelie and Augustine, John and Behrens, Klaus and Colle, Sergio and Cox, Christopher and Cuevas-Agulló, Emilio and Denn, Fred M. and Duprat, Thierry and Fukuda, Masato and Grobe, Hannes and Haeffelin, Martial and Hodges, Gary and Hyett, Nicole and Ijima, Osamu and Kallis, Ain and Knap, Wouter and Kustov, Vasilii and Long, Charles N. and Longenecker, David and Lupi, Angelo and Maturilli, Marion and Mimouni, Mohamed and Ntsangwane, Lucky and Ogihara, Hiroyuki and Olano, Xabier and Olefs, Marc and Omori, Masao and Passamani, Lance and Pereira, Enio Bueno and Schmithüsen, Holger and Schumacher, Stefanie and Sieger, Rainer and Tamlyn, Jonathan and Vogt, Roland and Vuilleumier, Laurent and Xia, Xiangao and Ohmura, Atsumu and König-Langlo, Gert},
+  title = {{Baseline Surface Radiation Network (BSRN): structure and data description (1992–2017)}},
+  year = {2018},
+  journal = {Earth System Science Data},
+  volume = {10},
+  number = {3},
+  pages = {1491--1501},
+  doi = {10.5194/essd-10-1491-2018},
+  url = {https://essd.copernicus.org/articles/10/1491/2018/},
+  note = {Role: data. Canonical scientific description of the BSRN radiation archive. The provider retrieves station observations through PANGAEA and preserves their published identity and provenance. Cite the actual station collection and monthly dataset DOIs in addition to this network paper. Archive checks do not establish that a downloaded value passed every subsequent scientific quality check or represents a particular PV site.}
+}
+
+@misc{bsrn_pangaea_access,
+  author = {World Radiation Monitoring Center, Alfred Wegener Institute},
+  title = {{Baseline Surface Radiation Network: Data retrieval via PANGAEA}},
+  url = {https://bsrn.awi.de/data/data-retrieval-via-pangaea/},
+  note = {Role: data. Official source guidance for UTC timestamps, station/month datasets and logical records. The adapter targets basic radiation records; other record types require their own explicit contract. AWI states that resulting detailed BSRN quality-check flags are not archived. PANGAEA value annotations, when present, are preserved separately and do not establish completed scientific quality control. Preserve each dataset's citation, station metadata and BSRN data-release conditions.}
+}
+
+@misc{pangaea_data_access,
+  author = {{PANGAEA Data Publisher for Earth \& Environmental Science}},
+  title = {{PANGAEA Data Access and Reuse}},
+  url = {https://wiki.pangaea.de/wiki/Data_Access_and_Reuse},
+  note = {Role: data. Documents DOI-based programmatic access, tab-delimited exports, structured metadata and citation links. PANGAEA describes these as standard HTTP access rather than a separate proprietary data API. The adapter retains the original citation/license text and source hashes; a DOI identifies the selected dataset and does not imply unrestricted access or a license for all PANGAEA holdings.}
+}
+
+@misc{menne_2023_ghcnh,
+  author = {Menne, Matthew J. and Noone, Simon and Casey, Nancy W. and Dunn, Robert H. and McNeill, Shelley and Kantor, Diana and Thorne, Peter W. and Orcutt, Karen and Cunningham, Sam and Risavi, Nicholas},
+  title = {{Global Historical Climatology Network-Hourly (GHCNh)}},
+  year = {2023},
+  institution = {NOAA National Centers for Environmental Information},
+  doi = {10.25921/jp3d-3v19},
+  url = {https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01688/html},
+  note = {Role: data. Official NOAA dataset citation, including all ten credited authors. Identify the actual station/year subset, product version and access date when citing an acquisition. The adapter retrieves GHCNh station reports and retains measurement, quality, source and report codes; the word hourly does not convert every reported value into a one-hour mean or supply missing irradiance observations.}
+}
+
+@misc{noaa_ghcnh_documentation,
+  author = {{NOAA National Centers for Environmental Information}},
+  title = {{Global Historical Climatology Network hourly (GHCNh): Documentation, version 1.1.0}},
+  year = {2026},
+  url = {https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/doc/ghcnh_DOCUMENTATION.pdf},
+  note = {Role: data. Official documentation updated 10 March 2026. Defines native station/year PSV access, station identifiers, units and measurement/quality/report/source codes. GHCNh version 1.1.0 supersedes previous versions and replaces the legacy ISD product. Preserve source fields and actual report timestamps; transformations into analysis intervals require a separately stated aggregation policy.}
+}
+
+@misc{noaa_isd_service_transition,
+  author = {{NOAA National Centers for Environmental Information}},
+  title = {{Service Location Change for Integrated Surface Data (Global Hourly)}},
+  year = {2026},
+  url = {https://www.nesdis.noaa.gov/news/service-location-change-integrated-surface-data-global-hourly},
+  note = {Role: background. Official notice dated 23 June 2026 explains why new acquisition uses GHCNh. It records that legacy ISD updates stopped after 24 August 2025 and announces retirement of NCEI's ISD FTP/HTTPS distribution, while legacy files remain available through NODD. This repository's NOAA provider does not implement a legacy ISD fallback.}
+}
+
+@misc{pangaea_quality_flags,
+  author = {{PANGAEA Data Publisher for Earth \& Environmental Science}},
+  title = {{PANGAEA Quality flag definitions}},
+  url = {https://wiki.pangaea.de/wiki/Quality_flag},
+  note = {Role: data. Defines numeric-value annotations for questionable, invalid, unknown, individually defined and inequality-qualified observations. The BSRN parser preserves the annotation and original field rather than silently treating an annotated value as unqualified. PANGAEA syntax alone does not certify detailed BSRN scientific quality control.}
+}
+
+@misc{knap_2009_bsrn_cabauw,
+  author = {Knap, Wouter},
+  title = {{Basic measurements of radiation at station Cabauw (2009-06)}},
+  year = {2009},
+  howpublished = {PANGAEA},
+  institution = {Koninklijk Nederlands Meteorologisch Instituut, De Bilt},
+  doi = {10.1594/PANGAEA.725795},
+  url = {https://doi.pangaea.de/10.1594/PANGAEA.725795},
+  note = {Role: data. The explicit Cabauw June 2009 dataset used by the BSRN retrieval example. It is not a default station selection or an input to every analysis. Retain the retrieved dataset metadata, source hash and BSRN release conditions, and cite the associated station collection as well as this monthly dataset when using its measurements.}
+}
+
+@misc{knap_2022_bsrn_cabauw_collection,
+  author = {Knap, Wouter},
+  title = {{Basic and other measurements of radiation at station Cabauw (2005-02 et seq)}},
+  year = {2022},
+  howpublished = {PANGAEA},
+  institution = {Koninklijk Nederlands Meteorologisch Instituut, De Bilt},
+  doi = {10.1594/PANGAEA.940531},
+  url = {https://doi.pangaea.de/10.1594/PANGAEA.940531},
+  note = {Role: data. Station-level publication series containing the monthly Cabauw dataset in the retrieval example. The collection is updated over time; its citation does not assert that the entire collection was downloaded. Identify the exact monthly DOI and acquisition snapshot used, and preserve their associated station and instrument metadata.}
+}
