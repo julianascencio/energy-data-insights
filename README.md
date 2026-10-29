@@ -26,6 +26,22 @@ installation, user guides, searchable API reference and executable example galle
 Built with Sphinx and the PyData theme; GitHub Actions validates every PR and
 deploys the site from `main`. See [building and deploying the documentation](docs/development.rst).
 
+## AI-generated implementation and scientific sources
+
+Most of the code, documentation and examples in this repository are **AI-generated
+under developer direction**. The scientific methods are based on **real, specifically
+identified literature selected by the repository's developers**, who define the
+research scope, choose the sources and guide the implementation.
+
+The [reference catalogue](docs/references.md) identifies the original literature
+and connects it to the relevant methods. Method-specific documentation records
+implementation choices, adaptations and validation limits; responsibility for
+review, testing and scientific validation remains with the developers and contributors.
+
+As the project evolves, errors or omissions may remain in the code or documentation.
+Please check assumptions and results for your intended use; corrections and issue
+reports are welcome.
+
 ## Repository structure
 
 | Subproject | Contents | Python import |

@@ -47,7 +47,7 @@ and turn the results into repeatable studies and reports.
 
 Start with the :doc:`quickstart`, browse the :doc:`auto_examples/index`, or
 look up a function in the :doc:`api`. All gallery calculations run locally on
-explicitly synthetic inputs or offline request plans.
+clearly identified synthetic inputs, attributed data fixtures or offline request plans.
 
 .. toctree::
    :maxdepth: 2
@@ -62,6 +62,17 @@ explicitly synthetic inputs or offline request plans.
 
 Scientific foundations
 ----------------------
+
+Most of the code, documentation and examples in this repository are **AI-generated
+under developer direction**. The scientific methods are based on **real, specifically
+identified literature selected by the repository's developers**, who define the
+research scope, choose the sources and guide the implementation. Responsibility
+for review, testing and scientific validation remains with the developers and
+contributors.
+
+As the project evolves, errors or omissions may remain in the code or documentation.
+Please check assumptions and results for your intended use; corrections and issue
+reports are welcome.
 
 The primary scientific reference is Julián Andrés Ascencio Vásquez (2021),
 *Modelling and worldwide assessment of performance and aging of photovoltaic
