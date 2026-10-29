@@ -678,5 +678,151 @@
     ],
     "note": "Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.",
     "verified_at": "2026-10-29"
+  },
+  {
+    "id": "eyring_2016_cmip6",
+    "title": "Overview of the Coupled Model Intercomparison Project Phase 6 (CMIP6) experimental design and organization",
+    "authors": [
+      "Eyring, V.",
+      "Bony, S.",
+      "Meehl, G. A.",
+      "Senior, C. A.",
+      "Stevens, B.",
+      "Stouffer, R. J.",
+      "Taylor, K. E."
+    ],
+    "year": 2016,
+    "doi": "10.5194/gmd-9-1937-2016",
+    "url": "https://gmd.copernicus.org/articles/9/1937/2016/",
+    "kind": "article",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6",
+      "data-retrieval/README.md"
+    ],
+    "note": "Scientific design of the CMIP6 archive accessed by the retrieval provider. The repository retrieves published climate-model output; it does not implement or run the contributing climate models. Cite each selected model/experiment dataset and its version separately using the preserved provider citation links.",
+    "verified_at": "2026-10-29",
+    "publication": "Geoscientific Model Development",
+    "volume": "9",
+    "pages": "1937-1958"
+  },
+  {
+    "id": "oneill_2016_scenariomip",
+    "title": "The Scenario Model Intercomparison Project (ScenarioMIP) for CMIP6",
+    "authors": [
+      "O'Neill, B. C.",
+      "Tebaldi, C.",
+      "van Vuuren, D. P.",
+      "Eyring, V.",
+      "Friedlingstein, P.",
+      "Hurtt, G.",
+      "Knutti, R.",
+      "Kriegler, E.",
+      "Lamarque, J.-F.",
+      "Lowe, J.",
+      "Meehl, G. A.",
+      "Moss, R.",
+      "Riahi, K.",
+      "Sanderson, B. M."
+    ],
+    "year": 2016,
+    "doi": "10.5194/gmd-9-3461-2016",
+    "url": "https://gmd.copernicus.org/articles/9/3461/2016/",
+    "kind": "article",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6",
+      "data-retrieval/README.md"
+    ],
+    "note": "Scientific description of the SSP scenario experiments selectable by the CMIP6 retrieval provider. Scenario simulations are conditional climate projections, not observations or deterministic weather forecasts. Their availability and coverage are established by each saved catalogue result, not by this paper citation.",
+    "verified_at": "2026-10-29",
+    "publication": "Geoscientific Model Development",
+    "volume": "9",
+    "pages": "3461-3482"
+  },
+  {
+    "id": "esgf_stac_access",
+    "title": "ESGF PyClient documentation: STAC migration and data-access services",
+    "authors": [
+      "Earth System Grid Federation (ESGF) contributors"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://esgf-pyclient.readthedocs.io/en/latest/",
+    "kind": "manual",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6"
+    ],
+    "note": "Official access guidance identifies the east and west ESGF STAC discovery services and deprecates the legacy Solr search interface. This provider uses direct HTTP requests; this reference does not mean esgf-pyclient is a runtime dependency. Preserve the actual endpoint, search criteria, resolved dataset version, asset URLs and access time in acquisition provenance.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "intake_esgf_cmip6_catalogue_guidance",
+    "title": "intake-esgf documentation: CMIP6 catalogue migration guidance",
+    "authors": [
+      "ESGF2-US intake-esgf contributors"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://intake-esgf.readthedocs.io/en/latest/",
+    "kind": "manual",
+    "role": "background",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6"
+    ],
+    "note": "Upstream operational guidance documents CMIP6 republishing and inconsistent member identifiers in some STAC records. The retrieval implementation must preserve and validate identifiers instead of silently substituting another ensemble member. This reference is documentation, not a dependency or a claim of complete catalogue coverage.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "stac_file_info",
+    "title": "STAC File Info Extension Specification, version 2.1.0",
+    "authors": [
+      "STAC File Info extension contributors"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://github.com/stac-extensions/file/tree/v2.1.0",
+    "kind": "manual",
+    "role": "standard",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6"
+    ],
+    "note": "Defines byte sizes, relative local paths and hexadecimal multihash checksums carried by ESGF NetCDF assets. Checksums establish file integrity against the published asset metadata; they do not establish scientific accuracy or data completeness.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "cmip6_data_user_guide",
+    "title": "CMIP6 Guidance for Data Users",
+    "authors": [
+      "Program for Climate Model Diagnosis and Intercomparison (PCMDI)"
+    ],
+    "year": 2022,
+    "doi": null,
+    "url": "https://pcmdi.llnl.gov/CMIP6/Guide/dataUsers.html",
+    "kind": "manual",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6"
+    ],
+    "note": "Document version 19 October 2022. Source of the data-citation and provenance guidance: retain official model and institution names, experimental identifiers, dataset versions and the original citation/further-information links. A general CMIP6 paper citation does not replace dataset-specific author and DOI attribution. Use the current STAC access documentation for endpoints because this older guide includes legacy interfaces.",
+    "verified_at": "2026-10-29"
+  },
+  {
+    "id": "cmip6_terms_of_use",
+    "title": "CMIP6: Terms of Use, version 6.2",
+    "authors": [
+      "Program for Climate Model Diagnosis and Intercomparison (PCMDI)"
+    ],
+    "year": 2022,
+    "doi": null,
+    "url": "https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html",
+    "kind": "manual",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6"
+    ],
+    "note": "Document version 12 October 2022. Defines acknowledgement and data-citation requirements and directs users to the official per-model license inventory, which supersedes older file-header restrictions. Preserve source metadata and consult that inventory for data reuse; a catalogue-record license alone does not establish the license of the underlying model output or of this repository.",
+    "verified_at": "2026-10-29"
   }
 ]

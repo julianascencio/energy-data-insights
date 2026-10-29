@@ -3,7 +3,7 @@
 ## Three subprojects, one reproducible workspace
 
 The repository has three independently buildable Python distributions. They use
-the requested directory names and conventional import names:
+lowercase directory names and conventional import names:
 
 | Directory | Distribution | Python import | Responsibility |
 | --- | --- | --- | --- |
@@ -22,7 +22,7 @@ payloads and clocks; they do not decide which sites underperform.
 
 ## Data contracts
 
-The interchange is a typed, explicit tabular schema, not a provider's raw JSON.
+Generation and hourly weather use a typed, explicit tabular interchange schema.
 Hourly records identify a site and an offset-aware UTC timestamp. Energy is
 MWh per declared interval; irradiance is W/m², temperature °C and wind m/s.
 Coordinate units are decimal degrees. Capacity values are MW with DC and AC
@@ -40,6 +40,34 @@ Large raw responses, normalized Parquet, fitted models and report outputs live
 outside the source tree or in ignored directories. Provenance records bind
 inputs and outputs using hashes and record the relevant configuration. API
 credentials are supplied locally, not stored in Git or output manifests.
+
+### CMIP6 native data contract
+
+`energy_data_retrieval.sources.cmip6` accesses the current public ESGF STAC API.
+It uses the existing HTTP transport and introduces no additional dependencies.
+Discovery selects one model, experiment, member, CMOR table, variable and grid,
+then saves a bounded retrieval plan with resolved versions and the original
+catalogue records. East and west indices are selected explicitly; there is no
+automatic fallback or substitution of model, member or grid.
+
+File transfer consumes the saved plan, streams native NetCDF files under explicit
+size limits, and checks their published byte size and SHA-256 multihash. Local
+folders are lowercase and derived from dataset hashes; manifests retain the
+mapping to official identifiers, original filenames and source/citation URLs.
+Verified completed downloads can be reused; failed transfers restart from zero
+and conflicting outputs are not silently overwritten. See the
+[provider commands and limits](../data-retrieval/README.md#cmip6-climate-model-data).
+
+CMIP6 retains its own scientific data contract: native calendars, time bounds,
+cell methods, coordinates, units and model/experiment identity. Year filters
+select overlapping whole files; they do not crop data or certify temporal
+completeness. Spatial subsetting, regridding, bias adjustment and ensemble
+statistics belong in an explicit subsequent analysis. Climate projections cannot
+be inserted into the normalized hourly weather contract without that work.
+The [CMIP6 design](https://doi.org/10.5194/gmd-9-1937-2016) and
+[data-citation guidance](https://pcmdi.llnl.gov/CMIP6/Guide/dataUsers.html) are
+recorded in the shared reference catalogue; each acquisition also retains the
+actual dataset citation and license metadata.
 
 ## Scientific boundaries
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -198,3 +199,111 @@ def test_network_errors_have_finite_attempts_and_safe_messages() -> None:
         http.get_json(ENDPOINT, secrets={"user_key": "synthetic-secret"})
     assert attempts == 3 and sleeps == [1, 2]
     assert "synthetic-secret" not in str(caught.value)
+
+
+def test_download_checks_source_size_and_sha256_before_reuse(tmp_path: Path) -> None:
+    content = b"synthetic netcdf fixture"
+    calls = 0
+
+    def handler(_: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        return httpx.Response(200, content=content)
+
+    destination = tmp_path / "data.nc"
+    with HTTPClient(frozenset({HOST}), transport=httpx.MockTransport(handler)) as http:
+        digest = hashlib.sha256(content).hexdigest()
+        first = http.download_file(
+            ENDPOINT, destination, expected_sha256=digest, expected_size_bytes=len(content)
+        )
+        reused = http.download_file(
+            ENDPOINT, destination, expected_sha256=digest, expected_size_bytes=len(content)
+        )
+        assert first.sha256 == reused.sha256 == digest
+        assert not first.cache_hit and reused.cache_hit
+        assert calls == 1
+        with pytest.raises(ValueError, match="checkpoint"):
+            http.download_file(ENDPOINT, destination, expected_size_bytes=len(content) + 1)
+        assert calls == 1
+
+
+@pytest.mark.parametrize("expected", [3, 12])
+def test_incorrect_download_size_never_publishes_file(tmp_path: Path, expected: int) -> None:
+    destination = tmp_path / "data.nc"
+    with (
+        HTTPClient(
+            frozenset({HOST}),
+            transport=httpx.MockTransport(lambda _: httpx.Response(200, content=b"abcdef")),
+        ) as http,
+        pytest.raises(RetrievalError, match="byte size"),
+    ):
+        http.download_file(ENDPOINT, destination, expected_size_bytes=expected)
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_oversized_download_is_rejected_before_request(tmp_path: Path) -> None:
+    def unexpected_request(_: httpx.Request) -> httpx.Response:
+        pytest.fail("The source's declared size must be checked before making a request")
+
+    with (
+        HTTPClient(
+            frozenset({HOST}),
+            config=HTTPConfig(maximum_response_bytes=10),
+            transport=httpx.MockTransport(unexpected_request),
+        ) as http,
+        pytest.raises(ValueError, match="byte limit"),
+    ):
+        http.download_file(ENDPOINT, tmp_path / "data.nc", expected_size_bytes=11)
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_public_pagination_cursor_preserves_next_link_without_exposing_credentials(
+    tmp_path: Path,
+) -> None:
+    calls = 0
+    cursor = "public-dataset-cursor=="
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        assert request.url.params.get("token", cursor) == cursor
+        return httpx.Response(
+            200,
+            json={"next": f"{ENDPOINT}?token={cursor}&api_key=synthetic-private-key"},
+        )
+
+    with HTTPClient(
+        frozenset({HOST}),
+        transport=httpx.MockTransport(handler),
+        cache_directory=tmp_path,
+        config=HTTPConfig(minimum_interval_seconds=0),
+    ) as http:
+        ordinary = http.get_json(ENDPOINT)
+        first_page = http.get_json(ENDPOINT, public_pagination_token=True)
+        next_page = http.get_json(ENDPOINT, {"token": cursor}, public_pagination_token=True)
+        cached = http.get_json(ENDPOINT, public_pagination_token=True)
+    assert calls == 3  # A redacted cache entry cannot replace a public cursor response.
+    assert ordinary.value == {"next": f"{ENDPOINT}?token=[REDACTED]&api_key=[REDACTED]"}
+    assert (
+        first_page.value
+        == next_page.value
+        == cached.value
+        == {"next": f"{ENDPOINT}?token={cursor}&api_key=[REDACTED]"}
+    )
+    assert next_page.record.parameters == {"token": cursor}
+    assert cached.record.cache_hit
+
+
+def test_public_cursor_option_does_not_relax_authentication_parameters() -> None:
+    def forbidden(_: httpx.Request) -> httpx.Response:
+        pytest.fail("Credential mistakes must be rejected before a network request")
+
+    with HTTPClient(frozenset({HOST}), transport=httpx.MockTransport(forbidden)) as http:
+        with pytest.raises(ValueError, match="secrets"):
+            http.get_json(ENDPOINT, {"token": "secret"})
+        with pytest.raises(ValueError, match="secrets"):
+            http.get_json(ENDPOINT, {"api_key": "secret"}, public_pagination_token=True)
+        with pytest.raises(ValueError, match="authentication token"):
+            http.get_json(ENDPOINT, secrets={"token": "secret"}, public_pagination_token=True)
+        with pytest.raises(ValueError, match="bounded nonempty"):
+            http.get_json(ENDPOINT, {"token": ""}, public_pagination_token=True)
