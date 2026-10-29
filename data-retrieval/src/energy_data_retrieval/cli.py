@@ -16,6 +16,7 @@ from typing import cast
 
 import pandas as pd
 
+from energy_data_retrieval.cds_cli import CDS_COMMANDS, add_cds_parsers, run_cds_command
 from energy_data_retrieval.climate_cli import (
     CLIMATE_COMMANDS,
     add_climate_parsers,
@@ -145,6 +146,7 @@ def build_parser() -> argparse.ArgumentParser:
     add_discovery_parser(commands)
     add_station_parsers(commands)
     add_climate_parsers(commands)
+    add_cds_parsers(commands)
     bsrn_search = commands.add_parser(
         "bsrn-search", help="Find candidate PANGAEA monthly BSRN dataset DOIs"
     )
@@ -587,6 +589,13 @@ def _native(args: argparse.Namespace) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command in CDS_COMMANDS:
+        try:
+            result = run_cds_command(args)
+        except (ValueError, RetrievalError, OSError, ImportError) as error:
+            parser.exit(2, f"CDS retrieval failed: {error}\n")
+        print(json.dumps(result, sort_keys=True, allow_nan=False))
+        return 0
     if args.command == "discover":
         try:
             run_discovery_command(args)

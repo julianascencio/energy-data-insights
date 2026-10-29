@@ -88,6 +88,8 @@ def test_default_candidates_are_json_safe_and_make_no_availability_claim(
         "cmip6",
         "gpcc_monthly_v2025",
         "cru_ts_v4_10",
+        "reanalysis-era5-single-levels",
+        "reanalysis-era5-single-levels-monthly-means",
     ]
     assert json.loads(json.dumps(rows, allow_nan=False)) == rows
     assert all(row["availability_status"] == "not_checked" for row in rows)

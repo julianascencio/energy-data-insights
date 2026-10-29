@@ -234,7 +234,7 @@ Hersbach, Hans; Bell, Bill; Berrisford, Paul; Hirahara, Shoji; Horányi, András
 
 **Role:** data. Scientific description of ERA5 reanalysis. Reanalysis is modelled weather and cannot be relabelled as a measured station. Cite the actual dataset and acquisition wrapper separately.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`, `data-retrieval/src/energy_data_retrieval/sources/cds`.
 
 ### era5_single_levels
 
@@ -242,7 +242,7 @@ Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (2023). **ERA5 
 
 **Role:** data. Single-level dataset citation as recommended by the Earthmover source catalogue. Record the actual retrieval date and selected data vintage; do not use the metadata-verification date as a data-access date.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/sources/earthmover_era5`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`, `data-retrieval/src/energy_data_retrieval/sources/cds`.
 
 ### earthmover_icechunk_era5
 
@@ -635,3 +635,19 @@ Kaaya, Ismail (2020). **Photovoltaic Lifetime Forecast: Models for long-term pho
 **Role:** implemented. Author-accessible verification of the 2019 Kaaya model coefficients: Table 4.3, printed p.45 / PDF p.55. Gran Canaria mono-Si calibration: Ah=4.91e7, Eh=0.74, n=1.90; Ap=71.83, Ep=0.45, x=0.63; Atm=2.04, Etm=0.43, theta=2.24. A_N=1 and the applied analysis aggregation/cycling conventions are explicit study choices, not newly fitted coefficients.
 
 **Used by:** `analysis/src/energy_analysis/degradation/pipeline.py`, `analysis/examples/degradation/kaaya_2019_scenario.json`.
+
+### copernicus_cds_api
+
+European Centre for Medium-Range Weather Forecasts (ECMWF) (n.d.). **Climate Data Store: CDSAPI setup**. [Source](https://cds.climate.copernicus.eu/how-to-api)
+
+**Role:** software. Official CDS API setup and access guidance. The connector uses optional cdsapi, personal access tokens and manually accepted dataset terms. Cite the selected dataset separately; native downloads are not normalized observations. SDK version and artifact/request hashes are recorded per acquisition.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cds`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`.
+
+### era5_single_levels_monthly
+
+Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (2019). **ERA5 monthly averaged data on single levels from 1940 to present**. [DOI: 10.24381/cds.f17050d7](https://doi.org/10.24381/cds.f17050d7)
+
+**Role:** data. Official CDS catalogue publication date 18 April 2019 and dataset DOI verified. Monthly averaged reanalysis retains native units and accumulation semantics; it is not an hourly station observation. Record the actual retrieval date, selection and downloaded artifact hash because upstream ERA5T can be revised.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cds`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`.

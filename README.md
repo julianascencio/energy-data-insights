@@ -8,7 +8,7 @@ The first country workflow is Chile's solar fleet.
 
 | Subproject | Contents | Python import |
 | --- | --- | --- |
-| [data-retrieval](data-retrieval/) | Provider folders for CEN, BSRN, NOAA GHCNh, AEMET, DWD, SURFRAD, measured-station exports, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
+| [data-retrieval](data-retrieval/) | Provider folders for CEN, BSRN, NOAA GHCNh, AEMET, DWD, SURFRAD, measured-station exports, Open-Meteo, native ERA5, Copernicus CDS and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
 | [methods](methods/) | CCYA climate-change yield assessment, TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation, hourly operational screening, KGPV and degradation mapping | `energy_methods` |
 | [analysis](analysis/) | Real-data degradation maps and reports; Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
@@ -26,6 +26,13 @@ git clone https://github.com/julianascencio/energy-data-insights.git
 cd energy-data-insights
 uv sync --locked --all-packages
 ```
+
+Direct [Copernicus CDS API access](data-retrieval/src/energy_data_retrieval/sources/cds/README.md)
+is available with `uv sync --locked --all-packages --extra cds`. Use
+`energy-retrieve cds-retrieve` for catalogue selection JSON or `energy-retrieve cds-era5`
+for hourly/monthly ERA5 selections divided into monthly requests. Both offer offline
+`--plan-only`; downloads retain native files and require a CDS personal access token
+and accepted dataset terms.
 
 The optional native ERA5 source has additional dependencies; its package README
 documents installation. Ordinary tests and the synthetic demo require no API

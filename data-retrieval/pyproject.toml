@@ -21,6 +21,9 @@ dependencies = [
 
 [project.optional-dependencies]
 era5-native = ["icechunk>=1.1,<2", "xarray>=2025.1,<2027", "zarr>=3,<4"]
+cds = [
+    "cdsapi>=0.7.7,<1",
+]
 
 [project.scripts]
 energy-retrieve = "energy_data_retrieval.cli:main"

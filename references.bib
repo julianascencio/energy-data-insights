@@ -675,3 +675,19 @@
   url = {https://www.uma.es/media/tinyimages/file/Ismail__Thesis2.pdf},
   note = {Role: implemented. Author-accessible verification of the 2019 Kaaya model coefficients: Table 4.3, printed p.45 / PDF p.55. Gran Canaria mono-Si calibration: Ah=4.91e7, Eh=0.74, n=1.90; Ap=71.83, Ep=0.45, x=0.63; Atm=2.04, Etm=0.43, theta=2.24. A\_N=1 and the applied analysis aggregation/cycling conventions are explicit study choices, not newly fitted coefficients.}
 }
+
+@misc{copernicus_cds_api,
+  author = {{European Centre for Medium-Range Weather Forecasts (ECMWF)}},
+  title = {{Climate Data Store: CDSAPI setup}},
+  url = {https://cds.climate.copernicus.eu/how-to-api},
+  note = {Role: software. Official CDS API setup and access guidance. The connector uses optional cdsapi, personal access tokens and manually accepted dataset terms. Cite the selected dataset separately; native downloads are not normalized observations. SDK version and artifact/request hashes are recorded per acquisition.}
+}
+
+@misc{era5_single_levels_monthly,
+  author = {{Copernicus Climate Change Service (C3S) Climate Data Store (CDS)}},
+  title = {{ERA5 monthly averaged data on single levels from 1940 to present}},
+  year = {2019},
+  doi = {10.24381/cds.f17050d7},
+  url = {https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means},
+  note = {Role: data. Official CDS catalogue publication date 18 April 2019 and dataset DOI verified. Monthly averaged reanalysis retains native units and accumulation semantics; it is not an hourly station observation. Record the actual retrieval date, selection and downloaded artifact hash because upstream ERA5T can be revised.}
+}

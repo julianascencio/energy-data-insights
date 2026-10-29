@@ -10,6 +10,7 @@ the provider's native files and metadata for subsequent climate analyses.
 | `sources/cen` | Public registry, authenticated actual generation, public archive downloads and historical bulk/Qlik export import |
 | `sources/open_meteo` | Explicit ERA5 historical weather or archived ECMWF IFS forecasts |
 | `sources/earthmover_era5` | Native ERA5 tiles from a pinned public Icechunk snapshot; optional dependencies |
+| `sources/cds` | Direct Copernicus CDS API, native downloads and monthly ERA5 request planning; optional `cds` dependency |
 | `sources/station` | Explicitly mapped measured hourly weather from preserved CSV/XLSX exports |
 | `sources/bsrn` | Official station catalogue, public PANGAEA DOI discovery and BSRN monthly radiation observations with source metadata and qualifiers |
 | `sources/noaa` | Current GHCNh station catalogue and native station/year weather observations from NOAA NCEI |
@@ -34,7 +35,7 @@ uv run energy-retrieve discover \
 
 This searches the existing station providers and ranks their candidates by
 spherical distance, with a global result limit. It also lists Open-Meteo ERA5,
-archived IFS, pinned native ERA5, CMIP6, GPCC and CRU TS, distinguishing documented coverage
+archived IFS, pinned native ERA5, direct CDS ERA5 hourly/monthly, CMIP6, GPCC and CRU TS, distinguishing documented coverage
 from verified data. `--probe-date YYYY-MM-DD` optionally checks one day from
 both Open-Meteo products. `--grid-only` skips station catalogues; repeating
 `--station-source` selects particular station providers. AEMET uses the existing
@@ -216,6 +217,14 @@ the matching `customer-` host and keeps authenticated responses out of the publi
 cache. Confirm the provider's applicable usage terms before operational acquisition.
 
 ### Native ERA5 history
+
+For **direct Copernicus CDS API access**, see the
+[CDS source guide](src/energy_data_retrieval/sources/cds/README.md).
+Install `uv sync --locked --all-packages --extra cds`, then use `energy-retrieve
+cds-retrieve` with catalogue request JSON or `energy-retrieve cds-era5` for monthly
+request batches. Both support `--plan-only` without credentials or network access.
+Downloaded files retain native units, calendars and time labels. Credentials come
+from `CDSAPI_KEY` or `~/.cdsapirc`; dataset terms must be accepted in the CDS portal.
 
 The native adapter retains the source used for the earlier historical study. It
 pins snapshot `TZ2KX6A24CJ5DG17T7MG`; availability is checked against that snapshot,

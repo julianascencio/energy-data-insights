@@ -145,7 +145,7 @@ def test_partial_results_distinguish_missing_credentials_and_provider_failure(
     assert statuses["aemet"]["status"] == "credentials_required"
     assert statuses["dwd"]["status"] == "provider_error"
     assert statuses["aemet"]["search_status"] == statuses["dwd"]["search_status"] == "unavailable"
-    assert len(result.grids) == 6
+    assert len(result.grids) == 8
 
 
 def test_filtered_local_scope_remains_explicit_when_no_nearby_candidate_exists(
@@ -320,7 +320,7 @@ def test_explicit_grid_probe_is_routed_once_and_failure_keeps_other_candidates(
         http: HTTPClient, candidates: list[dict[str, JSONValue]], *, day: date
     ) -> list[dict[str, JSONValue]]:
         calls.append((http, day))
-        assert len(candidates) == 6
+        assert len(candidates) == 8
         return [
             row | {"availability_status": "provider_error"}
             if row["dataset_id"] == "open_meteo_era5"
@@ -335,6 +335,6 @@ def test_explicit_grid_probe_is_routed_once_and_failure_keeps_other_candidates(
         )
     assert calls == [(http, date(2025, 1, 1))]
     assert result.status == "partial"
-    assert len(result.grids) == 6
+    assert len(result.grids) == 8
     assert result.query["probe_date"] == "2025-01-01"
     assert result.query["network_enabled"] is True
