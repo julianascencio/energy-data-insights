@@ -23,6 +23,15 @@ from energy_data_retrieval.sources.cen.history import (
     HistorySchema,
     import_history,
 )
+from energy_data_retrieval.sources.cmip6 import (
+    CMIP6_DATA_HOSTS,
+    CMIP6_INDEX_HOSTS,
+    CMIP6Client,
+    CMIP6Query,
+    download_plan,
+    load_plan,
+    save_plan,
+)
 from energy_data_retrieval.sources.earthmover_era5 import NativeERA5Client
 from energy_data_retrieval.sources.earthmover_era5.client import PINNED_SNAPSHOT
 from energy_data_retrieval.sources.open_meteo import OpenMeteoClient, Site, WeatherProduct
@@ -40,6 +49,7 @@ from energy_data_retrieval.transport import (
     HTTPClient,
     HTTPConfig,
     JSONValue,
+    RetrievalError,
     array_value,
     atomic_bytes,
 )
@@ -50,6 +60,17 @@ def _iso_date(value: str) -> date:
         return date.fromisoformat(value)
     except ValueError:
         raise argparse.ArgumentTypeError("Use a date in YYYY-MM-DD form") from None
+
+
+def _hostname(value: str) -> str:
+    name = value.lower()
+    if len(name) > 253 or not re.fullmatch(
+        r"(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+"
+        r"[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?",
+        name,
+    ):
+        raise argparse.ArgumentTypeError("Use a complete DNS hostname without a URL, port or path")
+    return name
 
 
 def _days(start: date, end: date) -> Iterator[date]:
@@ -94,6 +115,48 @@ def _json_object(value: object) -> dict[str, JSONValue]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
+    cmip6_search = commands.add_parser(
+        "cmip6-search", help="Discover exact CMIP6 datasets and save a versioned download plan"
+    )
+    for option, destination in (
+        ("model", "source_id"),
+        ("experiment", "experiment_id"),
+        ("member", "member_id"),
+        ("table", "table_id"),
+        ("variable", "variable_id"),
+        ("grid", "grid_label"),
+    ):
+        cmip6_search.add_argument(f"--{option}", dest=destination, required=True)
+    cmip6_search.add_argument("--institution", dest="institution_id")
+    cmip6_search.add_argument("--activity", dest="activity_id")
+    cmip6_search.add_argument("--version", help="Exact dataset version; default resolves latest")
+    cmip6_search.add_argument(
+        "--start-year", type=int, help="Select whole files overlapping these years; does not crop"
+    )
+    cmip6_search.add_argument(
+        "--end-year", type=int, help="Inclusive final year for file selection"
+    )
+    cmip6_search.add_argument("--index", choices=("east", "west"), default="east")
+    cmip6_search.add_argument("--page-size", type=int, default=20)
+    cmip6_search.add_argument("--maximum-datasets", type=int, default=100)
+    cmip6_search.add_argument("--maximum-files", type=int, default=1000)
+    cmip6_search.add_argument("--output", type=Path, required=True, help="New JSON download plan")
+    cmip6_download = commands.add_parser(
+        "cmip6-download", help="Retrieve native CMIP6 NetCDF files from a saved, verified plan"
+    )
+    cmip6_download.add_argument("--plan", type=Path, required=True)
+    cmip6_download.add_argument("--output", type=Path, required=True)
+    cmip6_download.add_argument("--maximum-file-bytes", type=int, default=512 * 1024 * 1024)
+    cmip6_download.add_argument("--maximum-total-bytes", type=int, default=2 * 1024**3)
+    cmip6_download.add_argument(
+        "--allow-host",
+        action="append",
+        type=_hostname,
+        default=[],
+        help="Explicitly allow an additional verified public ESGF data hostname; repeat as needed",
+    )
+    for command in (cmip6_search, cmip6_download):
+        command.add_argument("--request-interval", type=float, default=0.25)
     for name, help_text in (
         ("cen-history", "Import a preserved hourly CEN bulk/Qlik CSV or XLSX export"),
         ("station-import", "Import explicitly mapped measured hourly station observations"),
@@ -147,6 +210,54 @@ def build_parser() -> argparse.ArgumentParser:
         command.add_argument("--cache-directory", type=Path)
         command.add_argument("--request-interval", type=float, default=0.25)
     return parser
+
+
+def _cmip6(args: argparse.Namespace) -> dict[str, object]:
+    if args.command == "cmip6-search":
+        if args.output.exists():
+            raise ValueError("Download plan already exists; choose a new output path")
+        query = CMIP6Query(
+            source_id=args.source_id,
+            experiment_id=args.experiment_id,
+            member_id=args.member_id,
+            table_id=args.table_id,
+            variable_id=args.variable_id,
+            grid_label=args.grid_label,
+            institution_id=args.institution_id,
+            activity_id=args.activity_id,
+            version=args.version,
+            start_year=args.start_year,
+            end_year=args.end_year,
+        )
+        with HTTPClient(
+            CMIP6_INDEX_HOSTS,
+            config=HTTPConfig(minimum_interval_seconds=args.request_interval),
+        ) as http:
+            plan = CMIP6Client(
+                http,
+                index=args.index,
+                page_size=args.page_size,
+                maximum_datasets=args.maximum_datasets,
+                maximum_files=args.maximum_files,
+            ).search(query)
+        save_plan(plan, args.output)
+        return {
+            "plan": str(args.output),
+            "index": plan.index,
+            "files": len(plan.files),
+            "total_size_bytes": plan.total_size_bytes,
+            "downloaded": False,
+            "selection": "whole native files; no spatial or temporal cropping",
+        }
+    plan = load_plan(args.plan)
+    with HTTPClient(
+        CMIP6_DATA_HOSTS | frozenset(args.allow_host),
+        config=HTTPConfig(
+            maximum_response_bytes=args.maximum_file_bytes,
+            minimum_interval_seconds=args.request_interval,
+        ),
+    ) as http:
+        return download_plan(plan, args.output, http, maximum_total_bytes=args.maximum_total_bytes)
 
 
 def _generation(args: argparse.Namespace, http: HTTPClient) -> None:
@@ -319,6 +430,13 @@ def _native(args: argparse.Namespace) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command in {"cmip6-search", "cmip6-download"}:
+        try:
+            result = _cmip6(args)
+        except (OSError, ValueError, RetrievalError) as error:
+            parser.exit(2, f"CMIP6 retrieval failed: {error}\n")
+        print(json.dumps(result, sort_keys=True, allow_nan=False))
+        return 0
     if args.command in {"cen-history", "station-import"}:
         with args.schema.open("rb") as stream:
             settings = tomllib.load(stream)

@@ -1,6 +1,6 @@
 # Energy Data Insights
 
-Python tools for retrieving energy and weather data, applying reusable
+Python tools for retrieving energy, weather and climate-model data, applying reusable
 scientific methods, and running reproducible fleet performance studies.
 The first country workflow is Chile's solar fleet.
 
@@ -8,13 +8,13 @@ The first country workflow is Chile's solar fleet.
 
 | Subproject | Contents | Python import |
 | --- | --- | --- |
-| [data-retrieval](data-retrieval/) | Provider folders for CEN API and historical exports, measured weather stations, Open-Meteo and native ERA5 through Earthmover; bounded requests, normalization and provenance | `energy_data_retrieval` |
+| [data-retrieval](data-retrieval/) | Provider folders for CEN API and historical exports, measured weather stations, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
 | [methods](methods/) | TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation and hourly operational screening | `energy_methods` |
 | [analysis](analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
 These are independently installable Python packages in one uv workspace. Each
 has its own source, tests and packaging metadata; one lockfile keeps their
-dependencies consistent. The directory names follow the requested organization.
+dependencies consistent. All folder names are lowercase.
 See [architecture and extension points](docs/architecture.md).
 
 ## Install
@@ -63,6 +63,25 @@ are documented in [data-retrieval](data-retrieval/README.md). Environment-variab
 names are listed in [.env.example](.env.example); credentials are never bundled.
 Use `energy-chile compare` when you already have frozen expected-generation
 columns: it performs fleet accounting without fitting or replacing those values.
+
+## Retrieve CMIP6 data
+
+CMIP6 has its own provider under
+`data-retrieval/src/energy_data_retrieval/sources/cmip6/`. Search the current ESGF
+STAC catalogue for an explicit model, experiment, member, table, variable and grid,
+save the resolved version in a retrieval plan, then download that plan's native
+NetCDF files with byte limits and SHA-256 verification:
+
+```bash
+uv run energy-retrieve cmip6-search --help
+uv run energy-retrieve cmip6-download --help
+```
+
+See the [CMIP6 examples and source contract](data-retrieval/README.md#cmip6-climate-model-data)
+for historical and scenario selections, bounded downloads and restart behavior.
+Supported public endpoints need no account or additional package dependencies.
+Native units and calendars are preserved. Climate-model files require a separate,
+explicit analysis step before they can be used with the hourly fleet workflow.
 
 ## Generate reports for a saved analysis
 

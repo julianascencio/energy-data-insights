@@ -14,8 +14,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MAX_FILE_BYTES = 2_000_000
 GENERATED_SUFFIXES = {
+    ".cdf",
     ".gz",
     ".joblib",
+    ".nc",
+    ".nc4",
     ".parquet",
     ".pickle",
     ".pkl",

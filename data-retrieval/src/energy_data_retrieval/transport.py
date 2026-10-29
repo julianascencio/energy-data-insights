@@ -36,23 +36,38 @@ _QUERY_SECRET = re.compile(
     r"([?&](?:user_key|token|api_key|apikey|access_token|authorization|password)=)[^&\s\"']+",
     re.IGNORECASE,
 )
+_QUERY_SECRET_WITH_PUBLIC_CURSOR = re.compile(
+    r"([?&](?:user_key|api_key|apikey|access_token|authorization|password)=)[^&\s\"']+",
+    re.IGNORECASE,
+)
 
 
-def _redact_text(text: str, secrets: tuple[str, ...]) -> str:
+def _redact_text(
+    text: str, secrets: tuple[str, ...], *, public_pagination_token: bool = False
+) -> str:
     for secret in secrets:
         for spelling in {secret, quote(secret, safe=""), quote_plus(secret, safe="")}:
             text = text.replace(spelling, "[REDACTED]")
-    return _QUERY_SECRET.sub(r"\1[REDACTED]", text)
+    pattern = _QUERY_SECRET_WITH_PUBLIC_CURSOR if public_pagination_token else _QUERY_SECRET
+    return pattern.sub(r"\1[REDACTED]", text)
 
 
-def _redact_value(value: JSONValue, secrets: tuple[str, ...]) -> JSONValue:
+def _redact_value(
+    value: JSONValue, secrets: tuple[str, ...], *, public_pagination_token: bool = False
+) -> JSONValue:
     if isinstance(value, str):
-        return _redact_text(value, secrets)
+        return _redact_text(value, secrets, public_pagination_token=public_pagination_token)
     if isinstance(value, list):
-        return [_redact_value(item, secrets) for item in value]
+        return [
+            _redact_value(item, secrets, public_pagination_token=public_pagination_token)
+            for item in value
+        ]
     if isinstance(value, dict):
         return {
-            _redact_text(key, secrets): _redact_value(item, secrets) for key, item in value.items()
+            _redact_text(
+                key, secrets, public_pagination_token=public_pagination_token
+            ): _redact_value(item, secrets, public_pagination_token=public_pagination_token)
+            for key, item in value.items()
         }
     return value
 
@@ -239,13 +254,19 @@ class HTTPClient:
         return min(self.config.maximum_retry_seconds, max(0.0, delay))
 
     def download_file(
-        self, endpoint: str, path: Path, *, expected_sha256: str | None = None
+        self,
+        endpoint: str,
+        path: Path,
+        *,
+        expected_sha256: str | None = None,
+        expected_size_bytes: int | None = None,
     ) -> RequestRecord:
         """Stream one public export to disk with verified whole-file restart semantics.
 
         An interrupted transfer is retried from byte zero. HTTP ranges are not
         assumed safe for changing archives. Reuse requires both an intact file
         and its matching manifest. Credential-bearing and redirected URLs fail.
+        A supplied source byte count is checked before publishing or reusing a file.
         """
         parsed = urlsplit(endpoint)
         if (
@@ -260,6 +281,11 @@ class HTTPClient:
             raise ValueError("Endpoint must be a query-free HTTPS URL on an approved host")
         if expected_sha256 is not None and not re.fullmatch("[a-fA-F0-9]{64}", expected_sha256):
             raise ValueError("Expected SHA-256 must be a 64-character hexadecimal digest")
+        if expected_size_bytes is not None:
+            if type(expected_size_bytes) is not int or expected_size_bytes < 0:
+                raise ValueError("Expected byte size must be a nonnegative integer")
+            if expected_size_bytes > self.config.maximum_response_bytes:
+                raise ValueError("Expected byte size exceeds the configured byte limit")
         expected = expected_sha256.lower() if expected_sha256 else None
         manifest = path.with_suffix(path.suffix + ".download.json")
         if path.exists() or manifest.exists():
@@ -274,6 +300,7 @@ class HTTPClient:
                 or saved["size_bytes"] != path.stat().st_size
                 or path.stat().st_size > self.config.maximum_response_bytes
                 or (expected is not None and actual != expected)
+                or (expected_size_bytes is not None and path.stat().st_size != expected_size_bytes)
             ):
                 raise ValueError("Download checkpoint differs from its source or checksum")
             return RequestRecord(
@@ -301,8 +328,14 @@ class HTTPClient:
                             size += len(chunk)
                             if size > self.config.maximum_response_bytes:
                                 raise RetrievalError("Export exceeded the configured byte limit")
+                            if expected_size_bytes is not None and size > expected_size_bytes:
+                                raise RetrievalError(
+                                    "Downloaded export exceeds its expected byte size"
+                                )
                             digest.update(chunk)
                             target.write(chunk)
+                        if expected_size_bytes is not None and size != expected_size_bytes:
+                            raise RetrievalError("Downloaded export has an unexpected byte size")
                         if expected is not None and digest.hexdigest() != expected:
                             raise RetrievalError("Downloaded export has an unexpected SHA-256")
                         target.flush()
@@ -332,8 +365,15 @@ class HTTPClient:
         *,
         secrets: Mapping[str, str] | None = None,
         use_cache: bool = True,
+        public_pagination_token: bool = False,
     ) -> JSONResponse:
-        """Fetch and validate JSON, preserving zero/null values and request provenance."""
+        """Fetch JSON, preserving zero/null values and non-secret request provenance.
+
+        ``public_pagination_token`` opts into a provider's non-authentication
+        ``token`` cursor, including next links on its first page. Other credential
+        names and explicit secrets remain redacted; authentication tokens cannot
+        use this option. The default treats all token parameters as secrets.
+        """
         parsed = urlsplit(endpoint)
         if (
             parsed.scheme != "https"
@@ -346,13 +386,30 @@ class HTTPClient:
         ):
             raise ValueError("Endpoint must be a query-free HTTPS URL on an approved host")
         public = dict(parameters or {})
-        if any(name.lower() in _SECRET_NAMES for name in public):
+        if any(
+            name.lower() in _SECRET_NAMES and not (public_pagination_token and name == "token")
+            for name in public
+        ):
             raise ValueError("Pass credential parameters through secrets, never parameters")
         private = dict(secrets or {})
+        if public_pagination_token:
+            if any(name.lower() == "token" for name in private):
+                raise ValueError(
+                    "An authentication token cannot also be a public pagination cursor"
+                )
+            cursor = public.get("token")
+            if cursor is not None and (
+                not isinstance(cursor, str)
+                or not 1 <= len(cursor) <= 8192
+                or any(ord(character) < 32 for character in cursor)
+            ):
+                raise ValueError("Public pagination token must be a bounded nonempty string")
         if any(not value for value in private.values()) or set(public) & set(private):
             raise ValueError("Secret parameters must be nonempty and separate")
         cache_key = hashlib.sha256(
-            json.dumps([endpoint, public], sort_keys=True, separators=(",", ":")).encode()
+            json.dumps(
+                [endpoint, public, public_pagination_token], sort_keys=True, separators=(",", ":")
+            ).encode()
         ).hexdigest()
         cache = (
             self.cache_directory / f"{cache_key}.json"
@@ -404,7 +461,11 @@ class HTTPClient:
                                 )
                             chunks.extend(chunk)
                         raw = bytes(chunks)
-                        value = _redact_value(_decode(raw), tuple(private.values()))
+                        value = _redact_value(
+                            _decode(raw),
+                            tuple(private.values()),
+                            public_pagination_token=public_pagination_token,
+                        )
                         # Canonical bytes identify the sanitized stored response.
                         body = json.dumps(value, separators=(",", ":"), allow_nan=False).encode()
                         record = RequestRecord(

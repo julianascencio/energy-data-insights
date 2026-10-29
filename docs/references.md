@@ -274,3 +274,59 @@ Open-Meteo (n.d.). **Weather Forecast API: hourly variable definitions**. [Sourc
 **Role:** data. Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/README.md`.
+
+### eyring_2016_cmip6
+
+Eyring, V.; Bony, S.; Meehl, G. A.; Senior, C. A.; Stevens, B.; Stouffer, R. J.; Taylor, K. E. (2016). **Overview of the Coupled Model Intercomparison Project Phase 6 (CMIP6) experimental design and organization**. Geoscientific Model Development, 9, 1937-1958. [DOI: 10.5194/gmd-9-1937-2016](https://doi.org/10.5194/gmd-9-1937-2016)
+
+**Role:** data. Scientific design of the CMIP6 archive accessed by the retrieval provider. The repository retrieves published climate-model output; it does not implement or run the contributing climate models. Cite each selected model/experiment dataset and its version separately using the preserved provider citation links.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cmip6`, `data-retrieval/README.md`.
+
+### oneill_2016_scenariomip
+
+O'Neill, B. C.; Tebaldi, C.; van Vuuren, D. P.; Eyring, V.; Friedlingstein, P.; Hurtt, G.; Knutti, R.; Kriegler, E.; Lamarque, J.-F.; Lowe, J.; Meehl, G. A.; Moss, R.; Riahi, K.; Sanderson, B. M. (2016). **The Scenario Model Intercomparison Project (ScenarioMIP) for CMIP6**. Geoscientific Model Development, 9, 3461-3482. [DOI: 10.5194/gmd-9-3461-2016](https://doi.org/10.5194/gmd-9-3461-2016)
+
+**Role:** data. Scientific description of the SSP scenario experiments selectable by the CMIP6 retrieval provider. Scenario simulations are conditional climate projections, not observations or deterministic weather forecasts. Their availability and coverage are established by each saved catalogue result, not by this paper citation.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cmip6`, `data-retrieval/README.md`.
+
+### esgf_stac_access
+
+Earth System Grid Federation (ESGF) contributors (n.d.). **ESGF PyClient documentation: STAC migration and data-access services**. [Source](https://esgf-pyclient.readthedocs.io/en/latest/)
+
+**Role:** data. Official access guidance identifies the east and west ESGF STAC discovery services and deprecates the legacy Solr search interface. This provider uses direct HTTP requests; this reference does not mean esgf-pyclient is a runtime dependency. Preserve the actual endpoint, search criteria, resolved dataset version, asset URLs and access time in acquisition provenance.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cmip6`.
+
+### intake_esgf_cmip6_catalogue_guidance
+
+ESGF2-US intake-esgf contributors (n.d.). **intake-esgf documentation: CMIP6 catalogue migration guidance**. [Source](https://intake-esgf.readthedocs.io/en/latest/)
+
+**Role:** background. Upstream operational guidance documents CMIP6 republishing and inconsistent member identifiers in some STAC records. The retrieval implementation must preserve and validate identifiers instead of silently substituting another ensemble member. This reference is documentation, not a dependency or a claim of complete catalogue coverage.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cmip6`.
+
+### stac_file_info
+
+STAC File Info extension contributors (n.d.). **STAC File Info Extension Specification, version 2.1.0**. [Source](https://github.com/stac-extensions/file/tree/v2.1.0)
+
+**Role:** standard. Defines byte sizes, relative local paths and hexadecimal multihash checksums carried by ESGF NetCDF assets. Checksums establish file integrity against the published asset metadata; they do not establish scientific accuracy or data completeness.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cmip6`.
+
+### cmip6_data_user_guide
+
+Program for Climate Model Diagnosis and Intercomparison (PCMDI) (2022). **CMIP6 Guidance for Data Users**. [Source](https://pcmdi.llnl.gov/CMIP6/Guide/dataUsers.html)
+
+**Role:** data. Document version 19 October 2022. Source of the data-citation and provenance guidance: retain official model and institution names, experimental identifiers, dataset versions and the original citation/further-information links. A general CMIP6 paper citation does not replace dataset-specific author and DOI attribution. Use the current STAC access documentation for endpoints because this older guide includes legacy interfaces.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cmip6`.
+
+### cmip6_terms_of_use
+
+Program for Climate Model Diagnosis and Intercomparison (PCMDI) (2022). **CMIP6: Terms of Use, version 6.2**. [Source](https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html)
+
+**Role:** data. Document version 12 October 2022. Defines acknowledgement and data-citation requirements and directs users to the official per-model license inventory, which supersedes older file-header restrictions. Preserve source metadata and consult that inventory for data reuse; a catalogue-record license alone does not establish the license of the underlying model output or of this repository.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cmip6`.

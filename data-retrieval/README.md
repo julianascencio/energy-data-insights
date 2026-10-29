@@ -1,8 +1,9 @@
 # Data retrieval
 
-Country-neutral acquisition infrastructure with one folder per source. The Chile
-adapter uses stable CEN identities. Weather adapters can be reused in another
-country with a different site registry.
+Country-neutral acquisition infrastructure with one lowercase folder per source.
+The Chile adapter uses stable CEN identities. Weather adapters can be reused in
+another country with a different site registry. Climate-model retrieval preserves
+the provider's native files and metadata for subsequent climate analyses.
 
 | Source folder | Implemented products |
 | --- | --- |
@@ -10,6 +11,7 @@ country with a different site registry.
 | `sources/open_meteo` | Explicit ERA5 historical weather or archived ECMWF IFS forecasts |
 | `sources/earthmover_era5` | Native ERA5 tiles from a pinned public Icechunk snapshot; optional dependencies |
 | `sources/station` | Explicitly mapped measured hourly weather from preserved CSV/XLSX exports |
+| `sources/cmip6` | ESGF STAC discovery, versioned retrieval plans and verified native CMIP6 NetCDF downloads |
 
 All acquisition is explicit. Importing a module or running the tests makes no
 network requests. Test fixtures are synthetic and are not evidence of live API
@@ -207,6 +209,113 @@ hour. No fallback to a different ERA5 vintage or forecast product is automatic.
 The Icechunk object's S3 transport is separate from the REST transport below;
 its optional native acquisition is covered by mocked tile tests, not live S3 tests.
 
+### CMIP6 climate-model data
+
+The CMIP6 provider uses the current public ESGF STAC API and the package's existing
+HTTP transport. It needs no additional package dependencies or account for the
+supported public endpoints. Discovery and file transfer are separate commands:
+first save a bounded retrieval plan, then download the files identified by that
+plan. The default discovery index is `https://discovery.east.esgf.io`; select
+`--index west` explicitly for `https://discovery.west.esgf.io`. The client does not
+switch indices automatically.
+
+Specify one exact model, experiment, ensemble member, CMOR table, variable and
+grid for each plan. Preserve their official spelling and case, such as
+`CanESM5`, `Amon` and `sfcWind`. This request selects monthly surface shortwave
+radiation for the SSP2-4.5 experiment:
+
+```bash
+uv run energy-retrieve cmip6-search \
+  --model CanESM5 --experiment ssp245 --member r1i1p1f1 \
+  --table Amon --variable rsds --grid gn \
+  --start-year 2030 --end-year 2050 \
+  --output data/cmip6/rsds-plan.json
+
+uv run energy-retrieve cmip6-download \
+  --plan data/cmip6/rsds-plan.json --output data/cmip6/rsds \
+  --maximum-file-bytes 536870912 --maximum-total-bytes 2147483648
+```
+
+The search downloads metadata only. Inspect the plan's resolved dataset version,
+file count, advertised sizes, URLs and citation information before transferring
+data. Add `--version 20190429` to request that specific catalogue version; without
+it the search resolves the latest available version and pins that result in the
+saved plan. Repeat discovery into a new plan when deliberately updating a study.
+
+Supply both `--start-year` and `--end-year`, or neither. A year range selects
+**whole native files that overlap those years**. It does not trim NetCDF content
+or establish complete coverage of every requested time step. On 29 October 2026,
+the public catalogue returned one `v20190429` file for the example above:
+`rsds_Amon_CanESM5_ssp245_r1i1p1f1_gn_201501-210012.nc`, advertised as 28,407,606
+bytes. Its entire 2015–2100 range is downloaded even though the selection is
+2030–2050. Availability depends on the selected index and current holdings.
+
+For a small fixed field, this selection was also verified against the catalogue
+on that date, with one advertised 51,899-byte file. Fixed fields do not take a
+year range:
+
+```bash
+uv run energy-retrieve cmip6-search \
+  --model CanESM5 --experiment historical --member r1i1p1f1 \
+  --table fx --variable areacella --grid gn --version 20190429 \
+  --output data/cmip6/areacella-plan.json
+
+uv run energy-retrieve cmip6-download \
+  --plan data/cmip6/areacella-plan.json --output data/cmip6/areacella \
+  --maximum-file-bytes 1048576 --maximum-total-bytes 1048576
+```
+
+`--page-size`, `--maximum-datasets` and `--maximum-files` bound discovery.
+Search reads fresh catalogue metadata; the saved plan provides the frozen
+snapshot for subsequent downloads. `--request-interval` controls spacing between
+requests. Downloads stream to disk, verify the
+advertised byte size and full SHA-256 multihash, and record acquisition provenance.
+Unsupported checksum algorithms fail explicitly. Existing downloads are reused
+only when their manifest, source identity, size and hash still agree; failed
+transfers restart from byte zero. Conflicting or incomplete local outputs are
+not overwritten. Downloads accept only approved HTTPS hosts. An additional
+provider hostname can be enabled with `--allow-host` after verifying its provenance.
+
+Generated directories use lowercase names derived from dataset hashes. Original
+provider filenames, official dataset identifiers, STAC metadata, citation links
+and license statements remain intact. The saved mapping connects each local
+file to its original model, experiment, member, table, variable, grid and version.
+
+Variables useful for energy studies include the following; definitions and units
+come from the [official CMIP6 Amon table](https://github.com/PCMDI/cmip6-cmor-tables/blob/main/Tables/CMIP6_Amon.json).
+
+| Variable | Quantity | Native unit |
+| --- | --- | --- |
+| `rsds` | Downward shortwave radiation at the surface | W m⁻² |
+| `tas` | Near-surface air temperature | K |
+| `sfcWind` | Near-surface wind speed | m s⁻¹ |
+| `uas`, `vas` | Eastward and northward near-surface wind components | m s⁻¹ |
+| `pr` | Precipitation flux | kg m⁻² s⁻¹ |
+
+The NetCDF calendar, time bounds, cell methods, grid and units remain authoritative.
+This provider downloads native climate simulations without spatial/date subsetting,
+regridding, bias adjustment, ensemble aggregation or conversion to hourly weather.
+Monthly radiation and non-Gregorian time axes therefore cannot be passed directly
+to the Chile hourly performance workflow. Keep climate projections distinct from
+measured weather and reanalysis.
+
+ESGF is migrating its catalogue, and upstream documentation identifies incorrect
+member identifiers in some republished CMIP6 records. The provider preserves
+and checks the requested identity; an empty result is not evidence that no such
+data exist anywhere in CMIP6. Consult the [current ESGF access guidance](https://esgf-pyclient.readthedocs.io/en/latest/)
+and [CMIP6 migration notes](https://intake-esgf.readthedocs.io/en/latest/).
+The legacy Solr API is deprecated.
+
+Cite [Eyring et al. (2016)](https://doi.org/10.5194/gmd-9-1937-2016) for CMIP6 and
+[O'Neill et al. (2016)](https://doi.org/10.5194/gmd-9-3461-2016) when using
+ScenarioMIP experiments. Also cite the actual model/experiment datasets and
+their versions using the preserved provider citation links. The
+[CMIP6 terms](https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html) direct users
+to the [per-model license inventory](https://wcrp-cmip.github.io/CMIP6_CVs/docs/CMIP6_source_id_licenses.html);
+a STAC catalogue-record license alone does not establish the underlying data
+license. These references are included in the repository's
+[thesis-first bibliography](../docs/references.md).
+
 ### Measured weather-station exports
 
 `station-import` uses actual station observations as a separate source. Its
@@ -281,11 +390,13 @@ with HTTPClient(OPEN_METEO_HOSTS) as transport:
         print(chunk.site.site_id, len(chunk.frame))
 ```
 
-The canonical interval columns are `site_id` (string), `timestamp` (UTC-aware
-interval start), and `duration_hours`. Site generation adds `actual_mwh` and
+For normalized hourly adapters, the canonical interval columns are `site_id`
+(string), `timestamp` (UTC-aware interval start), and `duration_hours`.
+Site generation adds `actual_mwh` and
 `generation_complete`; weather adds `ghi_wm2,temperature_c,wind_speed_ms,gust_ms`.
 Feed site-aggregated generation and matching weather into the
-`energy_analysis.chile_fleet` workflow in `analysis/`.
+`energy_analysis.chile_fleet` workflow in `analysis/`. CMIP6 downloads retain the
+separate native NetCDF contract described above.
 
 ## Source and method references
 
@@ -303,6 +414,8 @@ does not invent a citation or licence for an unnamed station.
 - [Open-Meteo hourly variable definitions](https://open-meteo.com/en/docs)
 - [Earthmover Icechunk ERA5 public catalogue and attribution](https://registry.opendata.aws/earthmover-era5/)
 - [ERA5 single levels, DOI 10.24381/cds.adbb2d47](https://doi.org/10.24381/cds.adbb2d47)
+- [CMIP6 data-user and citation guidance](https://pcmdi.llnl.gov/CMIP6/Guide/dataUsers.html)
+- [STAC File Info specification](https://github.com/stac-extensions/file/tree/v2.1.0)
 
 The existing API endpoint schemas and interval conventions are adapted from the
 prior Chile study's acquisition scripts, with explicit validation and no embedded
