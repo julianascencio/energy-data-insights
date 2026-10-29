@@ -9,8 +9,8 @@ description = "Country-specific reproducible renewable-energy analyses"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-  "energy-methods",
-  "energy-data-retrieval",
+  "energy-methods>=0.1.0,<1",
+  "energy-data-retrieval>=0.1.0,<1",
   "numpy>=2.2,<2.4",
   "pandas>=2.2,<3",
   "pyarrow>=19,<25",
@@ -30,3 +30,8 @@ energy-data-retrieval = { workspace = true }
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/energy_analysis"]
+
+[project.urls]
+Repository = "https://github.com/julianascencio/energy-data-insights"
+Documentation = "https://github.com/julianascencio/energy-data-insights/tree/main/analysis"
+Issues = "https://github.com/julianascencio/energy-data-insights/issues"

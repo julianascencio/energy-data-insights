@@ -5,6 +5,7 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
@@ -52,7 +53,11 @@ jobs:
       - name: Test
         run: uv run --no-sync pytest --cov --cov-report=term-missing
       - name: Build all distributions
-        run: uv build --all-packages --out-dir dist
+        run: uv build --no-sources --all-packages --out-dir dist
+      - name: Validate distribution metadata
+        run: uv run --no-sync twine check --strict dist/*
+      - name: Install and exercise built wheels outside the workspace
+        run: uv run --no-sync python scripts/check_wheels.py
       - name: Run reproducible synthetic example
         run: uv run --no-sync energy-chile demo --output artifacts/ci-demo --reports
       - name: Run synthetic CCYA example

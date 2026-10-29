@@ -7,10 +7,12 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    "packaging>=24,<27",
     "pandas-stubs>=2.2,<3",
     "pytest>=8.3,<10",
     "pytest-cov>=6,<8",
     "ruff>=0.14,<1",
+    "twine>=7,<8",
     "ty>=0.0.1,<1",
 ]
 
