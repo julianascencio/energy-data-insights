@@ -8,7 +8,7 @@ The first country workflow is Chile's solar fleet.
 
 | Subproject | Contents | Python import |
 | --- | --- | --- |
-| [data-retrieval](data-retrieval/) | Provider folders for CEN API and historical exports, measured weather stations, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
+| [data-retrieval](data-retrieval/) | Provider folders for CEN, BSRN, NOAA GHCNh, AEMET, DWD, SURFRAD, measured-station exports, Open-Meteo, native ERA5 and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
 | [methods](methods/) | TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation and hourly operational screening | `energy_methods` |
 | [analysis](analysis/) | Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
@@ -82,6 +82,27 @@ for historical and scenario selections, bounded downloads and restart behavior.
 Supported public endpoints need no account or additional package dependencies.
 Native units and calendars are preserved. Climate-model files require a separate,
 explicit analysis step before they can be used with the hourly fleet workflow.
+
+## Retrieve measured station data
+
+Each station provider has its own lowercase source folder and explicit commands:
+
+| Provider | Commands | Access and product |
+| --- | --- | --- |
+| [BSRN](data-retrieval/README.md#bsrn-radiation-stations) | `bsrn-search`, `bsrn-dataset` | Public PANGAEA DOIs; monthly minute radiation data |
+| [NOAA GHCNh](data-retrieval/README.md#noaa-ghcnh-weather-stations) | `noaa-stations`, `noaa-observations` | Public native station/year weather files |
+| [AEMET](data-retrieval/README.md#aemet-opendata-stations) | `aemet-stations`, `aemet-daily`, `aemet-recent` | API key; historical daily climate and a separate recent-observation snapshot |
+| [DWD CDC](data-retrieval/README.md#dwd-hourly-solar-stations) | `dwd-stations`, `dwd-solar` | Public hourly solar station archives |
+| [NOAA SURFRAD](data-retrieval/README.md#noaa-surfrad-radiation-stations) | `surfrad-stations`, `surfrad-observations` | Public daily radiation and weather files |
+
+Use `uv run energy-retrieve <command> --help` for options. These providers need
+no additional package dependencies. AEMET reads `AEMET_API_KEY` from your
+environment; the other four use public HTTPS routes without credentials.
+Retrieved observations retain their native clocks, units, missing values,
+source metadata and quality annotations. Saved source snapshots and hashes
+support reproducible reuse. Station selection, scientific quality checks and
+conversion to the hourly fleet schema remain explicit analysis steps. SURFRAD
+participates in BSRN; those feeds can contain overlapping observations.
 
 ## Generate reports for a saved analysis
 

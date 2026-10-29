@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import codecs
 import hashlib
 import json
 import logging
@@ -16,6 +17,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
+from email.message import Message
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import cast
@@ -138,6 +140,14 @@ class JSONResponse:
     record: RequestRecord
 
 
+@dataclass(frozen=True, slots=True)
+class TextResponse:
+    """Public UTF-8 response with a hash of its exact decoded HTTP entity bytes."""
+
+    value: str
+    record: RequestRecord
+
+
 def atomic_bytes(path: Path, data: bytes) -> None:
     """Replace one file atomically; failed writes never publish a partial file."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -169,18 +179,42 @@ def _reject_nonfinite(value: str) -> None:
     raise ValueError(f"Non-finite JSON number: {value}")
 
 
-def _decode(body: bytes) -> JSONValue:
+def _decode(body: bytes, *, legacy_encoding: str | None = None) -> JSONValue:
     try:
         return cast(JSONValue, json.loads(body, parse_constant=_reject_nonfinite))
-    except (ValueError, UnicodeDecodeError):
+    except UnicodeDecodeError:
+        if legacy_encoding is not None:
+            try:
+                return cast(
+                    JSONValue,
+                    json.loads(body.decode(legacy_encoding), parse_constant=_reject_nonfinite),
+                )
+            except ValueError:
+                pass
         raise RetrievalError("Source returned invalid JSON") from None
+    except ValueError:
+        raise RetrievalError("Source returned invalid JSON") from None
+
+
+def _legacy_json_encoding(content_type: str) -> str | None:
+    """Honor only explicitly declared Latin-1/Latin-9 for an opted-in source."""
+    message = Message()
+    message["Content-Type"] = content_type
+    charset = message.get_content_charset()
+    if charset is None:
+        return None
+    try:
+        encoding = codecs.lookup(charset).name
+    except LookupError:
+        return None
+    return encoding if encoding in {"iso8859-1", "iso8859-15"} else None
 
 
 class HTTPClient:
     """An HTTPS GET transport with a fixed host allowlist and no redirects.
 
-    Authentication must be passed separately through ``secrets``. Authenticated
-    responses are never read from or written to the public response cache.
+    Authentication must be passed separately through ``secrets`` or
+    ``secret_headers``. Authenticated responses never use the public cache.
     Supply an httpx transport for offline tests, rather than a preauthenticated
     client. This ensures authorization cannot silently bypass cache isolation.
     """
@@ -358,12 +392,136 @@ class HTTPClient:
         status = f"HTTP {last_status}" if last_status is not None else "transport failure"
         raise RetrievalError(f"Export retrieval failed from {parsed.hostname}: {status}") from None
 
+    def get_text(
+        self,
+        endpoint: str,
+        parameters: Mapping[str, str] | None = None,
+        *,
+        use_cache: bool = True,
+    ) -> TextResponse:
+        """Read a bounded public UTF-8 export, retaining tabs, line endings and units.
+
+        This method does not accept credentials. Public CSV, PSV and TSV endpoints
+        may use non-secret query parameters. Cache entries are separate from JSON
+        responses and are accepted only after source, size and hash verification.
+        """
+        parsed = urlsplit(endpoint)
+        if (
+            parsed.scheme != "https"
+            or parsed.hostname not in self.allowed_hosts
+            or parsed.username is not None
+            or parsed.password is not None
+            or parsed.query
+            or parsed.fragment
+            or parsed.port not in (None, 443)
+        ):
+            raise ValueError("Endpoint must be a query-free HTTPS URL on an approved host")
+        public = dict(parameters or {})
+        if any(name.lower() in _SECRET_NAMES for name in public):
+            raise ValueError("Text retrieval accepts public parameters only, never credentials")
+        cache_key = hashlib.sha256(
+            json.dumps(["text-utf8", endpoint, public], sort_keys=True).encode()
+        ).hexdigest()
+        cache = (
+            self.cache_directory / f"{cache_key}.text.json"
+            if use_cache and self.cache_directory is not None
+            else None
+        )
+        if cache is not None and cache.exists():
+            try:
+                # JSON escaping can expand one control byte to six bytes.
+                if cache.stat().st_size <= 6 * self.config.maximum_response_bytes + 65536:
+                    saved = object_value(_decode(cache.read_bytes()))
+                    value = saved["value"]
+                    metadata = object_value(saved["record"])
+                    captured = datetime.fromisoformat(str(metadata["retrieved_at_utc"]))
+                    if isinstance(value, str):
+                        raw = value.encode("utf-8")
+                        if (
+                            0
+                            <= (datetime.now(UTC) - captured).total_seconds()
+                            <= self.config.cache_ttl_seconds
+                            and metadata["endpoint"] == endpoint
+                            and metadata["parameters"] == public
+                            and len(raw) <= self.config.maximum_response_bytes
+                            and metadata["size_bytes"] == len(raw)
+                            and metadata["sha256"] == hashlib.sha256(raw).hexdigest()
+                        ):
+                            return TextResponse(
+                                value,
+                                RequestRecord(
+                                    endpoint,
+                                    public,
+                                    str(metadata["retrieved_at_utc"]),
+                                    str(metadata["sha256"]),
+                                    len(raw),
+                                    True,
+                                ),
+                            )
+            except (OSError, KeyError, TypeError, ValueError, RetrievalError):
+                pass
+        last_status: int | None = None
+        for attempt in range(self.config.attempts):
+            self._wait_for_slot()
+            response: httpx.Response | None = None
+            try:
+                with self._client.stream(
+                    "GET",
+                    endpoint,
+                    params=public,
+                    # Export endpoints choose their own attachment/media type.
+                    # PANGAEA rejects some specific text Accept combinations;
+                    # UTF-8 decoding and source schema validation remain strict.
+                    headers={"Accept": "*/*"},
+                ) as response:
+                    last_status = response.status_code
+                    if last_status == 200:
+                        chunks = bytearray()
+                        for chunk in response.iter_bytes(chunk_size=64 * 1024):
+                            if len(chunks) + len(chunk) > self.config.maximum_response_bytes:
+                                raise RetrievalError(
+                                    "Source response exceeded the configured byte limit"
+                                )
+                            chunks.extend(chunk)
+                        raw = bytes(chunks)
+                        try:
+                            value = raw.decode("utf-8")
+                        except UnicodeDecodeError:
+                            raise RetrievalError("Source returned invalid UTF-8 text") from None
+                        record = RequestRecord(
+                            endpoint,
+                            public,
+                            datetime.now(UTC).isoformat(),
+                            hashlib.sha256(raw).hexdigest(),
+                            len(raw),
+                        )
+                        if cache is not None:
+                            atomic_bytes(
+                                cache,
+                                json.dumps(
+                                    {"record": asdict(record), "value": value},
+                                    ensure_ascii=False,
+                                    allow_nan=False,
+                                ).encode("utf-8"),
+                            )
+                        return TextResponse(value, record)
+                    if last_status not in _RETRY_STATUSES:
+                        break
+            except httpx.TransportError:
+                last_status = None
+            if attempt + 1 < self.config.attempts:
+                self._sleep(self._retry_delay(response, attempt))
+        status = f"HTTP {last_status}" if last_status is not None else "transport failure"
+        raise RetrievalError(f"Retrieval failed from {parsed.hostname}: {status}") from None
+
     def get_json(
         self,
         endpoint: str,
         parameters: Mapping[str, str] | None = None,
         *,
         secrets: Mapping[str, str] | None = None,
+        secret_headers: Mapping[str, str] | None = None,
+        allow_legacy_charset: bool = False,
         use_cache: bool = True,
         public_pagination_token: bool = False,
     ) -> JSONResponse:
@@ -373,6 +531,9 @@ class HTTPClient:
         ``token`` cursor, including next links on its first page. Other credential
         names and explicit secrets remain redacted; authentication tokens cannot
         use this option. The default treats all token parameters as secrets.
+        Header credentials are never included in request provenance or cache keys.
+        ``allow_legacy_charset`` permits only a declared Latin-1/Latin-9 fallback
+        when Unicode JSON decoding fails; it never overrides valid Unicode JSON.
         """
         parsed = urlsplit(endpoint)
         if (
@@ -392,6 +553,23 @@ class HTTPClient:
         ):
             raise ValueError("Pass credential parameters through secrets, never parameters")
         private = dict(secrets or {})
+        private_headers = dict(secret_headers or {})
+        header_names = {name.lower() for name in private_headers}
+        if len(header_names) != len(private_headers) or not header_names <= _SECRET_NAMES | {
+            "x-api-key",
+            "x-auth-token",
+        }:
+            raise ValueError("secret_headers requires unique credential header names")
+        if any(
+            not value
+            or not value.isascii()
+            or any(ord(character) < 32 or ord(character) == 127 for character in value)
+            for value in private_headers.values()
+        ):
+            raise ValueError(
+                "Secret header values must be nonempty ASCII without control characters"
+            )
+        active_secrets = (*private.values(), *private_headers.values())
         if public_pagination_token:
             if any(name.lower() == "token" for name in private):
                 raise ValueError(
@@ -408,12 +586,14 @@ class HTTPClient:
             raise ValueError("Secret parameters must be nonempty and separate")
         cache_key = hashlib.sha256(
             json.dumps(
-                [endpoint, public, public_pagination_token], sort_keys=True, separators=(",", ":")
+                [endpoint, public, public_pagination_token, allow_legacy_charset],
+                sort_keys=True,
+                separators=(",", ":"),
             ).encode()
         ).hexdigest()
         cache = (
             self.cache_directory / f"{cache_key}.json"
-            if use_cache and not private and self.cache_directory is not None
+            if use_cache and not active_secrets and self.cache_directory is not None
             else None
         )
         if cache is not None and cache.exists():
@@ -448,8 +628,10 @@ class HTTPClient:
             response: httpx.Response | None = None
             try:
                 with (
-                    _secret_scope(tuple(private.values())),
-                    self._client.stream("GET", endpoint, params=public | private) as response,
+                    _secret_scope(active_secrets),
+                    self._client.stream(
+                        "GET", endpoint, params=public | private, headers=private_headers
+                    ) as response,
                 ):
                     last_status = response.status_code
                     if response.status_code == 200:
@@ -462,8 +644,15 @@ class HTTPClient:
                             chunks.extend(chunk)
                         raw = bytes(chunks)
                         value = _redact_value(
-                            _decode(raw),
-                            tuple(private.values()),
+                            _decode(
+                                raw,
+                                legacy_encoding=(
+                                    _legacy_json_encoding(response.headers.get("Content-Type", ""))
+                                    if allow_legacy_charset
+                                    else None
+                                ),
+                            ),
+                            active_secrets,
                             public_pagination_token=public_pagination_token,
                         )
                         # Canonical bytes identify the sanitized stored response.

@@ -311,3 +311,184 @@
   url = {https://pcmdi.llnl.gov/CMIP6/TermsOfUse/TermsOfUse6-2.html},
   note = {Role: data. Document version 12 October 2022. Defines acknowledgement and data-citation requirements and directs users to the official per-model license inventory, which supersedes older file-header restrictions. Preserve source metadata and consult that inventory for data reuse; a catalogue-record license alone does not establish the license of the underlying model output or of this repository.}
 }
+
+@article{driemel_2018_bsrn,
+  author = {Driemel, Amelie and Augustine, John and Behrens, Klaus and Colle, Sergio and Cox, Christopher and Cuevas-Agulló, Emilio and Denn, Fred M. and Duprat, Thierry and Fukuda, Masato and Grobe, Hannes and Haeffelin, Martial and Hodges, Gary and Hyett, Nicole and Ijima, Osamu and Kallis, Ain and Knap, Wouter and Kustov, Vasilii and Long, Charles N. and Longenecker, David and Lupi, Angelo and Maturilli, Marion and Mimouni, Mohamed and Ntsangwane, Lucky and Ogihara, Hiroyuki and Olano, Xabier and Olefs, Marc and Omori, Masao and Passamani, Lance and Pereira, Enio Bueno and Schmithüsen, Holger and Schumacher, Stefanie and Sieger, Rainer and Tamlyn, Jonathan and Vogt, Roland and Vuilleumier, Laurent and Xia, Xiangao and Ohmura, Atsumu and König-Langlo, Gert},
+  title = {{Baseline Surface Radiation Network (BSRN): structure and data description (1992–2017)}},
+  year = {2018},
+  journal = {Earth System Science Data},
+  volume = {10},
+  number = {3},
+  pages = {1491--1501},
+  doi = {10.5194/essd-10-1491-2018},
+  url = {https://essd.copernicus.org/articles/10/1491/2018/},
+  note = {Role: data. Canonical scientific description of the BSRN radiation archive. The provider retrieves station observations through PANGAEA and preserves their published identity and provenance. Cite the actual station collection and monthly dataset DOIs in addition to this network paper. Archive checks do not establish that a downloaded value passed every subsequent scientific quality check or represents a particular PV site.}
+}
+
+@misc{bsrn_pangaea_access,
+  author = {World Radiation Monitoring Center, Alfred Wegener Institute},
+  title = {{Baseline Surface Radiation Network: Data retrieval via PANGAEA}},
+  url = {https://bsrn.awi.de/data/data-retrieval-via-pangaea/},
+  note = {Role: data. Official source guidance for UTC timestamps, station/month datasets and logical records. The adapter targets basic radiation records; other record types require their own explicit contract. AWI states that resulting detailed BSRN quality-check flags are not archived. PANGAEA value annotations, when present, are preserved separately and do not establish completed scientific quality control. Preserve each dataset's citation, station metadata and BSRN data-release conditions.}
+}
+
+@misc{pangaea_data_access,
+  author = {{PANGAEA Data Publisher for Earth \& Environmental Science}},
+  title = {{PANGAEA Data Access and Reuse}},
+  url = {https://wiki.pangaea.de/wiki/Data_Access_and_Reuse},
+  note = {Role: data. Documents DOI-based programmatic access, tab-delimited exports, structured metadata and citation links. PANGAEA describes these as standard HTTP access rather than a separate proprietary data API. The adapter retains the original citation/license text and source hashes; a DOI identifies the selected dataset and does not imply unrestricted access or a license for all PANGAEA holdings.}
+}
+
+@misc{menne_2023_ghcnh,
+  author = {Menne, Matthew J. and Noone, Simon and Casey, Nancy W. and Dunn, Robert H. and McNeill, Shelley and Kantor, Diana and Thorne, Peter W. and Orcutt, Karen and Cunningham, Sam and Risavi, Nicholas},
+  title = {{Global Historical Climatology Network-Hourly (GHCNh)}},
+  year = {2023},
+  institution = {NOAA National Centers for Environmental Information},
+  doi = {10.25921/jp3d-3v19},
+  url = {https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C01688/html},
+  note = {Role: data. Official NOAA dataset citation, including all ten credited authors. Identify the actual station/year subset, product version and access date when citing an acquisition. The adapter retrieves GHCNh station reports and retains measurement, quality, source and report codes; the word hourly does not convert every reported value into a one-hour mean or supply missing irradiance observations.}
+}
+
+@misc{noaa_ghcnh_documentation,
+  author = {{NOAA National Centers for Environmental Information}},
+  title = {{Global Historical Climatology Network hourly (GHCNh): Documentation, version 1.1.0}},
+  year = {2026},
+  url = {https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/doc/ghcnh_DOCUMENTATION.pdf},
+  note = {Role: data. Official documentation updated 10 March 2026. Defines native station/year PSV access, station identifiers, units and measurement/quality/report/source codes. GHCNh version 1.1.0 supersedes previous versions and replaces the legacy ISD product. Preserve source fields and actual report timestamps; transformations into analysis intervals require a separately stated aggregation policy.}
+}
+
+@misc{noaa_isd_service_transition,
+  author = {{NOAA National Centers for Environmental Information}},
+  title = {{Service Location Change for Integrated Surface Data (Global Hourly)}},
+  year = {2026},
+  url = {https://www.nesdis.noaa.gov/news/service-location-change-integrated-surface-data-global-hourly},
+  note = {Role: background. Official notice dated 23 June 2026 explains why new acquisition uses GHCNh. It records that legacy ISD updates stopped after 24 August 2025 and announces retirement of NCEI's ISD FTP/HTTPS distribution, while legacy files remain available through NODD. This repository's NOAA provider does not implement a legacy ISD fallback.}
+}
+
+@misc{pangaea_quality_flags,
+  author = {{PANGAEA Data Publisher for Earth \& Environmental Science}},
+  title = {{PANGAEA Quality flag definitions}},
+  url = {https://wiki.pangaea.de/wiki/Quality_flag},
+  note = {Role: data. Defines numeric-value annotations for questionable, invalid, unknown, individually defined and inequality-qualified observations. The BSRN parser preserves the annotation and original field rather than silently treating an annotated value as unqualified. PANGAEA syntax alone does not certify detailed BSRN scientific quality control.}
+}
+
+@misc{knap_2009_bsrn_cabauw,
+  author = {Knap, Wouter},
+  title = {{Basic measurements of radiation at station Cabauw (2009-06)}},
+  year = {2009},
+  howpublished = {PANGAEA},
+  institution = {Koninklijk Nederlands Meteorologisch Instituut, De Bilt},
+  doi = {10.1594/PANGAEA.725795},
+  url = {https://doi.pangaea.de/10.1594/PANGAEA.725795},
+  note = {Role: data. The explicit Cabauw June 2009 dataset used by the BSRN retrieval example. It is not a default station selection or an input to every analysis. Retain the retrieved dataset metadata, source hash and BSRN release conditions, and cite the associated station collection as well as this monthly dataset when using its measurements.}
+}
+
+@misc{knap_2022_bsrn_cabauw_collection,
+  author = {Knap, Wouter},
+  title = {{Basic and other measurements of radiation at station Cabauw (2005-02 et seq)}},
+  year = {2022},
+  howpublished = {PANGAEA},
+  institution = {Koninklijk Nederlands Meteorologisch Instituut, De Bilt},
+  doi = {10.1594/PANGAEA.940531},
+  url = {https://doi.pangaea.de/10.1594/PANGAEA.940531},
+  note = {Role: data. Station-level publication series containing the monthly Cabauw dataset in the retrieval example. The collection is updated over time; its citation does not assert that the entire collection was downloaded. Identify the exact monthly DOI and acquisition snapshot used, and preserve their associated station and instrument metadata.}
+}
+
+@misc{aemet_opendata_specification,
+  author = {{Agencia Estatal de Meteorología (AEMET)}},
+  title = {{AEMET OpenData API specification, version 2.0}},
+  url = {https://opendata.aemet.es/AEMET_OpenData_specification.json},
+  note = {Role: data. Current official OpenAPI 3.0.1 document, service version 2.0. Defines header api\_key authentication, daily-climate inventory and date-range endpoints, and recent conventional station observations described as the latest 12 hours. The recent endpoint does not accept a historical date range. Exact per-field units and observation periods are preserved from each retrieved metadata document.}
+}
+
+@misc{aemet_opendata_access,
+  author = {{Agencia Estatal de Meteorología (AEMET)}},
+  title = {{AEMET OpenData: Frequently asked questions and two-stage data access}},
+  url = {https://opendata.aemet.es/centrodedescargas/faqs},
+  note = {Role: data. Official documentation of API estado responses and temporary datos/metadatos links, which expire after about five minutes. Field metadata contains source units, definitions, attribution and usage conditions. Canonical JSON snapshots retain data values and metadata; they do not claim to preserve exact HTTP encoding. Key expiry follows the newer published access notices rather than older FAQ PDF statements.}
+}
+
+@misc{aemet_observation_guidance,
+  author = {{Agencia Estatal de Meteorología (AEMET)}},
+  title = {{Interpretación: Hoy y últimos días}},
+  url = {https://www.aemet.es/es/eltiempo/observacion/ultimosdatos/ayuda},
+  note = {Role: data. Official interpretation guidance distinguishing instantaneous temperature, wind averaging intervals, gusts and accumulated precipitation. The public website and API may display different units; this implementation checks returned API field metadata before assigning physical-unit columns. Native reporting dates and variable-specific aggregation periods are retained without inferring a uniform hourly observation contract.}
+}
+
+@misc{aemet_opendata_key_policy,
+  author = {{Agencia Estatal de Meteorología (AEMET)}},
+  title = {{AEMET OpenData: API access and key-expiration notices}},
+  year = {2026},
+  url = {https://opendata.aemet.es/centrodedescargas/novedades},
+  note = {Role: background. Current 2026 notices describe retirement of keys issued without expiration and three-month validity for newly issued keys. The source reads AEMET\_API\_KEY from the environment, sends it through the documented private HTTP header and excludes credentials from output, provenance and public caches.}
+}
+
+@misc{dwd_2024_hourly_solar,
+  author = {{Deutscher Wetterdienst}},
+  title = {{Hourly station observations of solar incoming (total/diffuse) and longwave downward radiation for Germany}},
+  year = {2024},
+  url = {https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/solar/},
+  note = {Role: data. DWD CDC dataset version v24.03; published 29 March 2024. Dataset identifier urn:x-wmo:md:de.dwd.cdc::obsgermany-climate-hourly-solar. CC BY 4.0. Native hourly radiation energy remains in J/cm², and acquisition hashes record the separately changing station-archive vintage.}
+}
+
+@misc{dwd_hourly_solar_documentation,
+  author = {{Deutscher Wetterdienst}},
+  title = {{DWD CDC dataset description: Hourly station observations of solar incoming (total/diffuse) and longwave downward radiation for Germany}},
+  year = {2024},
+  url = {https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/solar/DESCRIPTION_obsgermany_climate_hourly_solar_en.pdf},
+  note = {Role: data. Official version v24.03, published 29 March 2024 and last edited 6 May 2024. Defines native fields, hourly energy sums, missing sentinel -999, QN quality-procedure codes, true-solar-time labels, station metadata and CC BY 4.0. The adapter also verifies per-archive parameter metadata specifying UTC and WOZ; interval boundaries and irradiance flux are not inferred.}
+}
+
+@article{augustine_2000_surfrad,
+  author = {Augustine, John A. and DeLuisi, John J. and Long, Charles N.},
+  title = {{SURFRAD—A National Surface Radiation Budget Network for Atmospheric Research}},
+  year = {2000},
+  journal = {Bulletin of the American Meteorological Society},
+  volume = {81},
+  number = {10},
+  pages = {2341--2357},
+  doi = {10.1175/1520-0477(2000)081<2341:sansrb>2.3.co;2},
+  url = {https://doi.org/10.1175/1520-0477%282000%29081%3C2341%3Asansrb%3E2.3.co%3B2},
+  note = {Role: data. Scientific network reference explicitly requested by NOAA in README\_SURFRAD for publications using SURFRAD data. Author names and bibliographic fields verified against publisher-deposited Crossref metadata. Cite the actual station/day subset and access date as well. Page range follows Crossref and the NOAA README (2341–2357); the current AMS web display ends at 2358.}
+}
+
+@article{augustine_2005_surfrad,
+  author = {Augustine, John A. and Hodges, Gary B. and Cornwall, Christopher R. and Michalsky, Joseph J. and Medina, Carlos I.},
+  title = {{An Update on SURFRAD—The GCOS Surface Radiation Budget Network for the Continental United States}},
+  year = {2005},
+  journal = {Journal of Atmospheric and Oceanic Technology},
+  volume = {22},
+  number = {10},
+  pages = {1460--1472},
+  doi = {10.1175/jtech1806.1},
+  url = {https://doi.org/10.1175/jtech1806.1},
+  note = {Role: data. Scientific network reference explicitly requested by NOAA in README\_SURFRAD for publications using SURFRAD data. Author names and bibliographic fields verified against publisher-deposited Crossref metadata. Cite the actual station/day subset and access date as well. Describes the seven-station network and its BSRN affiliation; this affiliation creates potential overlap between archive routes.}
+}
+
+@misc{noaa_surfrad_documentation,
+  author = {{NOAA Global Monitoring Laboratory}},
+  title = {{Description of SURFRAD Daily Data Files}},
+  url = {https://gml.noaa.gov/aftp/data/radiation/surfrad/bon/README_SURFRAD.txt},
+  note = {Role: data. Official 48-field native daily format, station filename aliases, UTC interval-end labels, three-minute averages before 1 January 2009 and one-minute averages thereafter. Defines missing sentinel -9999.9, native quality codes, physical units including UVB in mW/m² and instrument temperatures in Kelvin, and CC0-1.0 licensing. The provider preserves original flags and source values without additional filtering or correction.}
+}
+
+@misc{noaa_surfrad_stations,
+  author = {{NOAA Global Monitoring Laboratory}},
+  title = {{SURFRAD Site Information}},
+  url = {https://gml.noaa.gov/grad/surfrad/sitepage.html},
+  note = {Role: data. Official current station catalogue. The seven SURFRAD archive aliases are bon, tbl, dra, fpk, gwn, psu and sxf; Bondville has site code BND but file prefix bon. The separately linked ARM Southern Great Plains site is outside this provider. Current catalogue positions do not override historical file-header coordinates or elevations.}
+}
+
+@misc{noaa_surfrad_overview,
+  author = {{NOAA Global Monitoring Laboratory}},
+  title = {{SURFRAD Overview: Surface Radiation Budget Monitoring}},
+  url = {https://gml.noaa.gov/grad/surfrad/overview.html},
+  note = {Role: data. Official network scope, radiation and meteorological instrumentation, calibration context and BSRN participation. SURFRAD and BSRN archive acquisitions must not be treated as independent observations without checking station/time/variable/vintage overlap.}
+}
+
+@misc{noaa_surfrad_archive,
+  author = {{NOAA Global Monitoring Laboratory}},
+  title = {{NOAA GML SURFRAD daily radiation and meteorological observations}},
+  url = {https://gml.noaa.gov/aftp/data/radiation/surfrad/},
+  note = {Role: data. Public GML station/year daily text archive actually used by this provider. Cite the selected station, UTC days and acquisition date; preserve its native files, quality flags and hashes. CC0-1.0 with NOAA attribution and fair-use guidance. This is not a claim to retrieve the separately published NCEI NetCDF, QCRAD, or realtime products.}
+}

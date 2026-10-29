@@ -16,6 +16,7 @@ from typing import cast
 
 import pandas as pd
 
+from energy_data_retrieval.sources.bsrn import BSRN_HOSTS, BSRNClient
 from energy_data_retrieval.sources.cen import CENClient, aggregate_units, normalize_registry
 from energy_data_retrieval.sources.cen.client import CEN_HOSTS, REGISTRY_ENDPOINT
 from energy_data_retrieval.sources.cen.history import (
@@ -34,9 +35,15 @@ from energy_data_retrieval.sources.cmip6 import (
 )
 from energy_data_retrieval.sources.earthmover_era5 import NativeERA5Client
 from energy_data_retrieval.sources.earthmover_era5.client import PINNED_SNAPSHOT
+from energy_data_retrieval.sources.noaa import NOAA_HOSTS, STATIONS_ENDPOINT, NOAAClient
 from energy_data_retrieval.sources.open_meteo import OpenMeteoClient, Site, WeatherProduct
 from energy_data_retrieval.sources.open_meteo.client import OPEN_METEO_HOSTS
 from energy_data_retrieval.sources.station import StationSchema, import_station
+from energy_data_retrieval.station_cli import (
+    STATION_COMMANDS,
+    add_station_parsers,
+    run_station_command,
+)
 from energy_data_retrieval.storage import (
     Artifact,
     bounded_map,
@@ -71,6 +78,20 @@ def _hostname(value: str) -> str:
     ):
         raise argparse.ArgumentTypeError("Use a complete DNS hostname without a URL, port or path")
     return name
+
+
+def _ghcnh_station(value: str) -> str:
+    if not re.fullmatch(r"[A-Z]{2}[A-Z0-9][A-Za-z0-9_-]{8}", value):
+        raise argparse.ArgumentTypeError(
+            "Use the exact case-sensitive 11-character GHCNh station identifier"
+        )
+    return value
+
+
+def _country_code(value: str) -> str:
+    if not re.fullmatch(r"[A-Za-z]{2}", value):
+        raise argparse.ArgumentTypeError("Use a two-letter ISO country code, such as ES or CL")
+    return value.upper()
 
 
 def _days(start: date, end: date) -> Iterator[date]:
@@ -115,6 +136,45 @@ def _json_object(value: object) -> dict[str, JSONValue]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
+    add_station_parsers(commands)
+    bsrn_search = commands.add_parser(
+        "bsrn-search", help="Find candidate PANGAEA monthly BSRN dataset DOIs"
+    )
+    bsrn_search.add_argument("--maximum-results", type=int, default=100)
+    bsrn_search.add_argument("--page-size", type=int, default=20)
+    bsrn_dataset = commands.add_parser(
+        "bsrn-dataset", help="Retrieve one explicitly identified BSRN radiation dataset"
+    )
+    bsrn_dataset.add_argument("--doi", required=True)
+    bsrn_dataset.add_argument("--maximum-rows", type=int, default=50_000)
+    for command in (bsrn_search, bsrn_dataset):
+        command.add_argument("--station", required=True, help="Three-letter BSRN station code")
+        command.add_argument("--year", type=int, required=True)
+        command.add_argument("--month", type=int, required=True)
+    noaa_stations = commands.add_parser(
+        "noaa-stations", help="Retrieve and filter the current NOAA GHCNh station catalogue"
+    )
+    noaa_stations.add_argument("--country-code", type=_country_code)
+    noaa_stations.add_argument(
+        "--bbox", type=float, nargs=4, metavar=("WEST", "SOUTH", "EAST", "NORTH")
+    )
+    noaa_stations.add_argument("--maximum-stations", type=int, default=100_000)
+    noaa_observations = commands.add_parser(
+        "noaa-observations", help="Retrieve native NOAA GHCNh station observations by year"
+    )
+    noaa_observations.add_argument("--station", type=_ghcnh_station, required=True)
+    noaa_observations.add_argument("--start", type=_iso_date, required=True)
+    noaa_observations.add_argument("--end", type=_iso_date, required=True)
+    noaa_observations.add_argument("--maximum-years", type=int, default=100)
+    noaa_observations.add_argument("--maximum-rows", type=int, default=600_000)
+    for command in (bsrn_search, bsrn_dataset, noaa_stations, noaa_observations):
+        command.add_argument("--output", type=Path, required=True)
+        command.add_argument("--request-interval", type=float, default=0.25)
+        command.add_argument(
+            "--maximum-response-bytes",
+            type=int,
+            default=(128 if command in (noaa_stations, noaa_observations) else 64) * 1024**2,
+        )
     cmip6_search = commands.add_parser(
         "cmip6-search", help="Discover exact CMIP6 datasets and save a versioned download plan"
     )
@@ -210,6 +270,95 @@ def build_parser() -> argparse.ArgumentParser:
         command.add_argument("--cache-directory", type=Path)
         command.add_argument("--request-interval", type=float, default=0.25)
     return parser
+
+
+def _year_chunks(start: date, end: date, maximum_years: int) -> Iterator[tuple[date, date]]:
+    if start > end:
+        raise ValueError("--start must be on or before --end")
+    if not 1 <= maximum_years <= 1000 or end.year - start.year + 1 > maximum_years:
+        raise ValueError("Requested period exceeds --maximum-years (must be 1..1000)")
+    current = start
+    while current <= end:
+        stop = min(date(current.year, 12, 31), end)
+        yield current, stop
+        if stop == end:
+            break
+        current = stop + timedelta(days=1)
+
+
+def _station_sources(args: argparse.Namespace) -> None:
+    bsrn = args.command.startswith("bsrn-")
+    with HTTPClient(
+        BSRN_HOSTS if bsrn else NOAA_HOSTS,
+        config=HTTPConfig(
+            maximum_response_bytes=args.maximum_response_bytes,
+            minimum_interval_seconds=args.request_interval,
+        ),
+    ) as http:
+        if args.command == "bsrn-search":
+            if args.output.exists() or args.output.is_symlink():
+                raise ValueError("Search snapshot already exists; choose a new output path")
+            found = BSRNClient(http).search(
+                args.station,
+                args.year,
+                args.month,
+                maximum_results=args.maximum_results,
+                page_size=args.page_size,
+            )
+            atomic_bytes(
+                args.output,
+                json.dumps(found.as_dict(), ensure_ascii=False, indent=2, allow_nan=False).encode(),
+            )
+            print(
+                json.dumps({"output_path": str(args.output), "candidates": len(found.candidates)})
+            )
+        elif args.command == "bsrn-dataset":
+            _emit(
+                BSRNClient(http, maximum_rows=args.maximum_rows).retrieve(
+                    args.doi,
+                    station=args.station,
+                    year=args.year,
+                    month=args.month,
+                    output=args.output,
+                )
+            )
+        elif args.command == "noaa-stations":
+            request = _json_object(
+                {
+                    "source": "NOAA GHCNh station catalogue",
+                    "endpoint": STATIONS_ENDPOINT,
+                    "country_code_iso": args.country_code,
+                    "bbox_west_south_east_north": args.bbox,
+                }
+            )
+            previous = existing_artifact(args.output, fingerprint(request))
+            if previous is not None:
+                _emit(previous)
+                return
+            stations = NOAAClient(http, maximum_stations=args.maximum_stations).stations(
+                country_code=args.country_code,
+                bbox=tuple(args.bbox) if args.bbox is not None else None,
+            )
+            _emit(
+                write_parquet(
+                    stations.frame,
+                    args.output,
+                    request=request,
+                    provenance=_json_object(
+                        {"request": asdict(stations.request), "metadata": stations.frame.attrs}
+                    ),
+                )
+            )
+        else:
+            client = NOAAClient(
+                http, maximum_rows=args.maximum_rows, maximum_years=args.maximum_years
+            )
+            folder = (
+                args.station.lower() + "_" + hashlib.sha256(args.station.encode()).hexdigest()[:10]
+            )
+            for start, end in _year_chunks(args.start, args.end, args.maximum_years):
+                path = args.output / folder / f"observations_{start}_{end}.parquet"
+                _emit(client.retrieve(args.station, start, end, path))
 
 
 def _cmip6(args: argparse.Namespace) -> dict[str, object]:
@@ -430,6 +579,18 @@ def _native(args: argparse.Namespace) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command in STATION_COMMANDS:
+        try:
+            run_station_command(args)
+        except (ValueError, RetrievalError, OSError) as error:
+            parser.exit(2, f"Station retrieval failed: {error}\n")
+        return 0
+    if args.command in {"bsrn-search", "bsrn-dataset", "noaa-stations", "noaa-observations"}:
+        try:
+            _station_sources(args)
+        except (OSError, ValueError, RetrievalError) as error:
+            parser.exit(2, f"Station retrieval failed: {error}\n")
+        return 0
     if args.command in {"cmip6-search", "cmip6-download"}:
         try:
             result = _cmip6(args)
