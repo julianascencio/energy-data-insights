@@ -80,6 +80,13 @@ its [data policy](https://psl.noaa.gov/data/help/) requests attribution. The NOA
 source information is public domain; this derived fixture/map is not an official
 NOAA product and does not imply endorsement. See the [bibliography](references.md).
 
+## Canary Islands at native climate spacing
+
+The [Canary Islands guide](kgpv-canary.md) adds eight-island views, native
+GeoTIFF downloads and Tenerife close-ups using CanaryClim and Global Solar Atlas.
+It preserves approximately 5 m climate pixels with approximately 250 m solar
+support, and documents the mixed source periods and resolution limits.
+
 ## Providers and version pins
 
 | Source | Pin and coverage | Retrieval | Processing |

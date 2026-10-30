@@ -22,6 +22,7 @@ Data access and scientific methods
    _generated/guides/cds
    _generated/guides/ccya
    _generated/guides/kgpv
+   _generated/guides/kgpv-canary
    _generated/guides/soiling-snow
    _generated/guides/country-mapping
    _generated/guides/degradation
