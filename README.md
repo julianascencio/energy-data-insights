@@ -322,6 +322,13 @@ GPCC Monthly v2025 and CRU TS v4.10 retrieval/processing are available through
 published 12-zone classification with explicit GHI input. Reusable climatology
 and mapping utilities are in `methods`. See the [workflow and scientific rules](docs/kgpv.md).
 
+## Soiling and snow risk maps
+
+Map the thesis's soiling-rate and snow-shading indicators with five risk levels,
+complete-year validation and explicit units. The [scientific guide](docs/soiling-snow.md)
+and offline worldwide gallery use real NASA POWER/ERA5-Land inputs, document
+source substitutions and provide NetCDF/GeoJSON exports.
+
 ## Map climate-driven PV degradation
 
 `energy-degradation` maps hydrolysis, photo-degradation, thermomechanical and

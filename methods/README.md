@@ -249,6 +249,16 @@ cell areas, class summaries and bounded GeoJSON export.
 Run `energy-kgpv --help`; see [the complete workflow and assumptions](../docs/kgpv.md).
 The primary thesis citation and the specific 2019 KGPV paper are both retained.
 
+## Soiling and snow risk mapping
+
+`energy_methods.weather_risk` implements thesis Eqs. 3.2–3.4 and the five
+classes in Tables 6.6–6.7. `weather_risk_mapping` validates complete-year AOD550
+and physical ground snow-depth inputs and maps the resulting indicators.
+See [equations, units and conventions](../docs/soiling-snow.md) and the offline
+worldwide gallery example. Soiling rate is in %/day; snow energy loss is in %/year.
+These are empirical screening indicators, with explicit missingness and
+threshold boundaries, rather than independently validated site losses.
+
 ## Climate degradation mapping
 
 `energy_methods.degradation` implements the thesis's hydrolysis,

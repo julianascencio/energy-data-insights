@@ -65,5 +65,5 @@ sphinx_gallery_conf = {
     "within_subsection_order": "FileNameSortKey",
     "reference_url": {},
     "capture_repr": (),
-    "copyfile_regex": r"kgpv_worldwide_.*\.(csv|json)$",
+    "copyfile_regex": r"(?:kgpv_worldwide|weather_risk)_.*\.(csv|json)$",
 }

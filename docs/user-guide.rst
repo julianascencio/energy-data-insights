@@ -21,6 +21,7 @@ Data access and scientific methods
    _generated/guides/cds
    _generated/guides/ccya
    _generated/guides/kgpv
+   _generated/guides/soiling-snow
    _generated/guides/degradation
 
 Applied studies

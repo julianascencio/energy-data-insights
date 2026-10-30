@@ -19,3 +19,16 @@ defines source variables and access terms. The public endpoint is for
 non-commercial use and has request limits. Data attribution includes Open-Meteo
 (CC BY 4.0) and the underlying Copernicus ERA5 provider. Calculated TOA is an
 Open-Meteo solar-geometry product, not a separately retrieved ERA5 radiation field.
+
+## Physical ground snow depth
+
+`OpenMeteoSnowClient` in `open_meteo.snow` separately requests **ERA5-Land**
+hourly `snow_depth`, nearest cells, UTC and no elevation downscaling. It checks
+complete hourly timestamps and physical metre units, then converts to
+`snow_depth_cm`. Samples are instantaneous hourly depths, without the endpoint
+averaging used for other weather variables. Null values stay missing.
+
+This field is physical ground snow depth, distinct from native ERA5's
+water-equivalent `sd`. Open-Meteo warns that snow depth can be overestimated.
+Cite Open-Meteo and Muñoz-Sabater et al. (2021) for ERA5-Land; the request
+manifest records the selected model and source-cell coordinates.
