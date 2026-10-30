@@ -40,7 +40,7 @@ downloaded it. Use the run's acquisition provenance for that determination.
 | LightGBM | Ke et al. and LightGBM documentation; project chronology and monotonic settings. |
 | Physical response | Stark-Parker BVLS through SciPy; repository-specific PV basis. |
 | Operational screening | IEC TS 63019 context; no conformity or certified availability claim. |
-| Generation and weather | Selected CEN and weather sources identified by run provenance. |
+| Generation and weather | CEN, AEMO, EIA, REE, ENTSO-E and weather; see run provenance. |
 
 Subhourly irradiance redistribution and geometry/lag search are project choices.
 The shape-constrained physical basis is not attributed to the solver authors.
@@ -699,3 +699,99 @@ Muñoz-Sabater, Joaquín; Dutra, Emanuel; Agustí-Panareda, Anna; Albergel, Clé
 **Role:** data. Underlying ERA5-Land reanalysis for the example snow inputs, explicitly selected through Open-Meteo. The wrapper returns physical ground snow depth in metres; native ERA5 water-equivalent sd is not substituted. Credit Copernicus/ERA5-Land and the wrapper. Source snow biases remain; this is an alternative dataset to the thesis ERA5 inputs.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo/snow.py`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`.
+
+### aemo_dispatch_scada
+
+Australian Energy Market Operator (n.d.). **MMS Data Model: DISPATCH_UNIT_SCADA**. [Source](https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_123.htm)
+
+**Role:** data. Official schema for public DUID-level instantaneous SCADA MW at the start of each dispatch interval. SETTLEMENTDATE remains the published label; readings are not interval means or settlement energy. Scheduled, semi-scheduled and selected non-scheduled units are included where SCADA is available. Technology and generator/load class require a verified roster.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemo/client.py`, `examples/plot_generation_aemo.py`, `docs/generation-connectors.md`.
+
+### aemo_nemweb
+
+Australian Energy Market Operator (n.d.). **NEMWeb: public Dispatch SCADA archives**. [Source](https://nemweb.com.au/Reports/ARCHIVE/Dispatch_SCADA/)
+
+**Role:** data. Official daily archive listing. The connector discovers current or archived files and verifies bounded nested ZIP/CSV contents. The gallery retains 864 original rows from three DUIDs on 27 October 2026, with source URL, retrieval time, full-archive and subset hashes. Archive retention and publication coverage are finite.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemo/client.py`, `examples/plot_generation_aemo.py`, `docs/generation-connectors.md`.
+
+### aemo_market_time
+
+Australian Energy Market Operator (n.d.). **AEMO Markets Portal glossary: AEST and market time**. [Source](https://markets-portal-help.docs.public.aemo.com.au/Content/TOC_common-topics-DOnotChange/Glossary.htm)
+
+**Role:** data. Official market-time convention: fixed Australian Eastern Standard Time, UTC+10, without daylight-saving changes. The connector preserves the published dispatch label and converts that label to UTC.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemo/client.py`, `examples/plot_generation_aemo.py`, `docs/generation-connectors.md`.
+
+### eia_api_v2
+
+U.S. Energy Information Administration (n.d.). **EIA API Technical Documentation, API v2**. [Source](https://www.eia.gov/opendata/documentation.php)
+
+**Role:** data. Official API routes, data/facet parameters, registered-key access and maximum JSON page size. The connector uses stable sorting and bounded offset pagination for hourly fuel-type generation and monthly facility-fuel net generation. Credentialed routes were contract-tested without asserting authenticated live validation.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eia/client.py`, `examples/plot_generation_eia.py`, `docs/generation-connectors.md`.
+
+### eia_930
+
+U.S. Energy Information Administration (n.d.). **Hourly Electric Grid Monitor: data coverage, quality and time reporting**. [Source](https://www.eia.gov/electricity/930-content/about.html)
+
+**Role:** data. Official EIA-930 scope and hour-ending conventions. Hourly energy uses explicit UTC interval bounds; public balance-file hourly average MW is multiplied by one hour to obtain MWh. No imputed/adjusted values substitute for missing reported data. Regional aggregates overlap individual balancing authorities; distributed-generation coverage is incomplete.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eia/client.py`, `examples/plot_generation_eia.py`, `docs/generation-connectors.md`.
+
+### eia_930_source_codes
+
+U.S. Energy Information Administration (n.d.). **EIA-930 Reference Tables: energy source codes**. [Source](https://www.eia.gov/electricity/930-content/EIA930_Reference_Tables.xlsx)
+
+**Role:** data. Official code workbook used to verify fuel and storage/hybrid codes, including the expanded 2025 taxonomy. Unknown columns or unavailable requested fuels fail explicitly; aggregate/detail categories are not silently summed.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eia/client.py`, `examples/plot_generation_eia.py`, `docs/generation-connectors.md`.
+
+### eia_930_instructions
+
+U.S. Energy Information Administration (n.d.). **Form EIA-930 Instructions**. [Source](https://www.eia.gov/survey/form/eia_930/instructions.pdf)
+
+**Role:** data. Official reporting instructions for hourly integrated generation and the updated storage/hybrid energy-source categories. A schema/code reference, not independent evidence that all requested observations exist.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eia/client.py`, `examples/plot_generation_eia.py`, `docs/generation-connectors.md`.
+
+### ree_redata_api
+
+Red Eléctrica de España (n.d.). **REData API: request parameters, geographic scopes and JSON responses**. [Source](https://www.ree.es/en/datos/apidata)
+
+**Role:** data. Official public generation-structure endpoint and complete geographic filter contract. Dates are inclusive source calendar dates; returned UTC offsets and last-update metadata remain. The connector bounds calendar-year chunks and supports daily/monthly/yearly full-period generation.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ree/client.py`, `examples/plot_generation_ree.py`, `docs/generation-connectors.md`.
+
+### ree_generation_structure
+
+Red Eléctrica de España (n.d.). **Generation structure by technology**. [Source](https://www.ree.es/es/datos/generacion/estructura-generacion)
+
+**Role:** data. System-level generation by technology. API values are MWh even when the website scales charts to GWh; the scale was cross-checked against the official 2024 report (https://www.sistemaelectrico-ree.es/es/2024/informe-del-sistema-electrico/generacion/generacion-de-energia-electrica/generacion-total-de-energia-electrica). Totals remain separate to prevent double counting. The gallery preserves a complete June 2024 daily response, with checksums and update metadata. This product is not plant telemetry or total estimated self-consumption. Provider terms apply.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ree/client.py`, `examples/plot_generation_ree.py`, `docs/generation-connectors.md`.
+
+### entsoe_transparency_api
+
+European Network of Transmission System Operators for Electricity (n.d.). **ENTSO-E Transparency Platform REST API parameters**. [Source](https://transparencyplatform.zendesk.com/hc/en-us/articles/15696716612372-Request-Parameters)
+
+**Role:** data. Official actual-generation requests A75/A16 by production type and A73/A16 by published unit, EIC domains, UTC bounds and security token. Current production endpoint is https://web-api.tp.entsoe.eu/api. Credentials are environment-only and redacted. Authenticated live retrieval was not performed; no-data HTTP 200 acknowledgements and other responses follow the official Query-Response guidance.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py`, `examples/plot_generation_entsoe.py`, `docs/generation-connectors.md`.
+
+### entsoe_generation_data_descriptions
+
+European Network of Transmission System Operators for Electricity (n.d.). **ENTSO-E Transparency Platform Detailed Data Descriptions, version 2 release 5**. [Source](https://www.entsoe.eu/fileadmin/user_upload/_library/resources/Transparency/02_MoP%20Ref02%20-%20DDD_V2R5.pdf)
+
+**Role:** data. Official generation definitions, interval-average net power and publication scope. A73 does not enumerate every small plant; aggregate actual generation can contain submitted estimates. Generation and consumption remain separate flows; unit EICs, production type, document revisions and native intervals are preserved.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py`, `examples/plot_generation_entsoe.py`, `docs/generation-connectors.md`.
+
+### entsoe_curve_types
+
+European Network of Transmission System Operators for Electricity (n.d.). **CurveType A01 versus CurveType A03**. [Source](https://transparencyplatform.zendesk.com/hc/en-us/articles/30262342482961-CurveType-A01-vs-CurveType-A03)
+
+**Role:** data. Official fixed- and variable-block XML semantics. A03 is expanded within each Period at the published resolution, including explicit missing blocks; A01 absent positions remain missing. No value is carried across Period boundaries. Official public XML examples validate schema compatibility but are not claimed to be operational measurements.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py`, `examples/plot_generation_entsoe.py`, `docs/generation-connectors.md`.

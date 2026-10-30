@@ -4,10 +4,29 @@ from __future__ import annotations
 
 import os
 import re
+import shutil
 from pathlib import Path
 from urllib.parse import urlsplit
+from zipfile import ZIP_DEFLATED, ZipFile
 
 REPOSITORY = "https://github.com/julianascencio/energy-data-insights"
+
+
+def _generation_assets(root: Path) -> None:
+    """Copy small attributed samples and bundle runnable gallery downloads."""
+    examples = root / "examples"
+    gallery = root / "docs/auto_examples"
+    samples = sorted((examples / "data").glob("generation_*"))
+    if not samples:
+        return
+    destination = gallery / "data"
+    destination.mkdir(parents=True, exist_ok=True)
+    for sample in samples:
+        shutil.copyfile(sample, destination / sample.name)
+    scripts = sorted(examples.glob("plot_generation_*.py"))
+    with ZipFile(gallery / "generation_examples.zip", "w", compression=ZIP_DEFLATED) as bundle:
+        for path in [*scripts, *samples]:
+            bundle.write(path, arcname=path.relative_to(examples))
 
 
 def prepare_sources(root: Path) -> list[str]:
@@ -83,4 +102,5 @@ def prepare_sources(root: Path) -> list[str]:
             ".. toctree::\n   :maxdepth: 1\n\n" + "".join(f"   {module}\n" for module in modules),
             encoding="utf-8",
         )
+    _generation_assets(root)
     return [path.name for path in docs.glob("*.md")]
