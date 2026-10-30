@@ -324,6 +324,10 @@ and mapping utilities are in `methods`. See the [workflow and scientific rules](
 
 ## Soiling and snow risk maps
 
+Select one or several countries by name/code, acquire their Natural Earth
+shapefiles and use a configurable regional grid with contour clipping.
+See [country mapping and the real 0.5° example](docs/country-mapping.md).
+
 Map the thesis's soiling-rate and snow-shading indicators with five risk levels,
 complete-year validation and explicit units. The [scientific guide](docs/soiling-snow.md)
 and offline worldwide gallery use real NASA POWER/ERA5-Land inputs, document

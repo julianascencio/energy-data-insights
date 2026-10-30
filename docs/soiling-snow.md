@@ -138,6 +138,10 @@ utilities.
 
 ## Reproduce the real-data example
 
+For one country or several countries, use the [country mapping workflow](country-mapping.md).
+It adds detailed country shapefiles, configurable sampling resolution, clipped
+maps and an independently acquired Austria/Slovenia 0.5° example.
+
 The checked-in CSV contains **2023** annual inputs at **15° worldwide cell
 centres**, with a coarse land mask inherited from the reviewed NOAA KGPV
 fixture. It samples source cells rather than averaging all weather within

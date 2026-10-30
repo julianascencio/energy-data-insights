@@ -1,0 +1,3888 @@
+{
+  "description": "Real-data soiling/snow screening illustration; not the thesis rasters",
+  "region": "countries",
+  "year": 2023,
+  "grid_degrees": 0.5,
+  "selected_cells": 83,
+  "units": {
+    "aod550_mean": "1",
+    "snow_depth_sum": "cm h"
+  },
+  "fixture_sha256": "e5e949f4988d3e5ec0e69695771805bba5fbb60ed6f9aaf263bc517c40e627b8",
+  "countries": [
+    "AUT",
+    "SVN"
+  ],
+  "boundary_provenance": {
+    "source": "Natural Earth Admin 0 - Countries",
+    "scale": "10m",
+    "version": "5.1.1",
+    "license": "Public domain",
+    "terms_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "boundary_policy": "Natural Earth default de facto boundaries",
+    "request": {
+      "endpoint": "https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_countries.zip",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T06:51:02.750752+00:00",
+      "sha256": "ce1ac7036499a0edd641fbc093cd209a98f96a49d2eca8480aaacad35138a7f6",
+      "size_bytes": 4930492,
+      "cache_hit": true
+    },
+    "files_sha256": {
+      "ne_10m_admin_0_countries.VERSION.txt": "548358969090d629b41888f5fe664ac31b7203dfd849f7c1ef820ac055b62191",
+      "ne_10m_admin_0_countries.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "ne_10m_admin_0_countries.dbf": "c5dbd3dd5fd7e2ef49051fc88562c03819e8ea63a382642df6eadd1243bf4b49",
+      "ne_10m_admin_0_countries.prj": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+      "ne_10m_admin_0_countries.shp": "7ce119ef6342e43cff7c0c3004e0911ab7ec1988a14734372031d2012180e7bc",
+      "ne_10m_admin_0_countries.shx": "ca19ec112d054c77bc8f7ac00e3b110d5dff32cc9bcf4cd1b8b66bdd0f611d32"
+    },
+    "reference_ids": [
+      "natural_earth_countries"
+    ]
+  },
+  "requested_bounds": null,
+  "boundary_fixture_sha256": "f01f0d9019c03e72ce4d158b28cbbea37c836a495304457b98c7b29d8125c64b",
+  "preprocessing": [
+    "NASA POWER unadjusted AOD_55, explicit UTC daily dates, annual mean; no daily-curve averaging.",
+    "Open-Meteo explicit ERA5-Land physical snow depth in metres, converted to cm and summed hourly.",
+    "Complete UTC year per indicator and cell; no gap filling or partial-year annualization.",
+    "Nearest source samples at the requested grid centres; no area averaging or elevation downscaling.",
+    "Cells intersecting selected country polygons, including partial coastal cells.",
+    "Country grids reuse unique 1-degree NASA AOD samples; finer spacing adds no aerosol detail."
+  ],
+  "limitations": [
+    "One year is a worked example, not a long-term climatological risk assessment.",
+    "NASA POWER and ERA5-Land replace the thesis's ECMWF aerosol/ERA5 inputs explicitly.",
+    "Source resolutions, aerosol biases and snow-depth overestimation affect results.",
+    "No independent field validation, cleaning model, or structural snow-load estimate."
+  ],
+  "reference_ids": [
+    "ascencio_vasquez_2021_thesis",
+    "cordero_2018_soiling",
+    "ryberg_freeman_2017_snow",
+    "nasa_power_aerosols",
+    "open_meteo_historical_weather",
+    "munoz_sabater_2021_era5_land",
+    "natural_earth_countries"
+  ],
+  "requests": [
+    {
+      "site_id": "45.25_13.75",
+      "requested_latitude": 45.25,
+      "requested_longitude": 13.75,
+      "snow_cell_latitude": 45.300003,
+      "snow_cell_longitude": 13.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.226588+00:00",
+        "sha256": "eda53374d28b5b397ab1fa53798301c690dbecea35cadbb5d1f269f3d98f5fb9",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.25",
+          "longitude": "13.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:27.927593+00:00",
+        "sha256": "42fdf821f40f353f79e5866a7837943319a40a0754c7609bb2743beb03b1ba45",
+        "size_bytes": 131750,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.25_14.25",
+      "requested_latitude": 45.25,
+      "requested_longitude": 14.25,
+      "snow_cell_latitude": 45.300003,
+      "snow_cell_longitude": 14.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.022664+00:00",
+        "sha256": "dd2e8825874c5acafe3ba927248c2b561af3f585171768b8deb6b7b9b2a65dcd",
+        "size_bytes": 6284,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.25",
+          "longitude": "14.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:27.954526+00:00",
+        "sha256": "a49887143024a2138ac55e0fe6005707d356f63716b5e9a7503ba57450fedd0c",
+        "size_bytes": 140417,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.25_14.75",
+      "requested_latitude": 45.25,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 45.300003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.022664+00:00",
+        "sha256": "dd2e8825874c5acafe3ba927248c2b561af3f585171768b8deb6b7b9b2a65dcd",
+        "size_bytes": 6284,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.25",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:28.121058+00:00",
+        "sha256": "259ccb7118a40a66e8878ef933bdbfc484591bd712863b9e6953e488c2987bc3",
+        "size_bytes": 133316,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.25_15.25",
+      "requested_latitude": 45.25,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 45.300003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.207592+00:00",
+        "sha256": "3c6e5bedc7a6158fa3856b23971c6268aeeebc5fdefdc1a5123b98aa48b8c7a1",
+        "size_bytes": 6284,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.25",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:28.580295+00:00",
+        "sha256": "5d75682caf8d1ea88c4f67a30efc343f5e006b28a4ff48e99b17877824bfa480",
+        "size_bytes": 133004,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.75_13.25",
+      "requested_latitude": 45.75,
+      "requested_longitude": 13.25,
+      "snow_cell_latitude": 45.800003,
+      "snow_cell_longitude": 13.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.226588+00:00",
+        "sha256": "eda53374d28b5b397ab1fa53798301c690dbecea35cadbb5d1f269f3d98f5fb9",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.75",
+          "longitude": "13.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:29.080969+00:00",
+        "sha256": "aaebe64af9ed4248b549d804d6b78e73d35b424e4dae677eac84c3ab6a4729b7",
+        "size_bytes": 131658,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.75_13.75",
+      "requested_latitude": 45.75,
+      "requested_longitude": 13.75,
+      "snow_cell_latitude": 45.800003,
+      "snow_cell_longitude": 13.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.226588+00:00",
+        "sha256": "eda53374d28b5b397ab1fa53798301c690dbecea35cadbb5d1f269f3d98f5fb9",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.75",
+          "longitude": "13.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:29.577049+00:00",
+        "sha256": "8d70044a7419619be9b8792642ba401b35bbfc47ae8e48c3dbff18eeee6bcbc0",
+        "size_bytes": 132382,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.75_14.25",
+      "requested_latitude": 45.75,
+      "requested_longitude": 14.25,
+      "snow_cell_latitude": 45.800003,
+      "snow_cell_longitude": 14.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.022664+00:00",
+        "sha256": "dd2e8825874c5acafe3ba927248c2b561af3f585171768b8deb6b7b9b2a65dcd",
+        "size_bytes": 6284,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.75",
+          "longitude": "14.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:30.079897+00:00",
+        "sha256": "1c5e1e741f02b446f1fd999d5f1c3e33d96b529b532307e72a6fdd615bf7bd83",
+        "size_bytes": 133209,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.75_14.75",
+      "requested_latitude": 45.75,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 45.800003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.022664+00:00",
+        "sha256": "dd2e8825874c5acafe3ba927248c2b561af3f585171768b8deb6b7b9b2a65dcd",
+        "size_bytes": 6284,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.75",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:30.579212+00:00",
+        "sha256": "99af021e86c8c91ffb5b269abd21631f028989bea2166d09a80c9bb80016dae9",
+        "size_bytes": 133365,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.75_15.25",
+      "requested_latitude": 45.75,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 45.800003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.207592+00:00",
+        "sha256": "3c6e5bedc7a6158fa3856b23971c6268aeeebc5fdefdc1a5123b98aa48b8c7a1",
+        "size_bytes": 6284,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.75",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:31.079292+00:00",
+        "sha256": "e388391fb3e38c2252a3f75da39f9cc9c667274312bddefd8f08a85221bc68de",
+        "size_bytes": 133075,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "45.75_15.75",
+      "requested_latitude": 45.75,
+      "requested_longitude": 15.75,
+      "snow_cell_latitude": 45.800003,
+      "snow_cell_longitude": 15.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 45.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "45.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.207592+00:00",
+        "sha256": "3c6e5bedc7a6158fa3856b23971c6268aeeebc5fdefdc1a5123b98aa48b8c7a1",
+        "size_bytes": 6284,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "45.75",
+          "longitude": "15.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:31.579425+00:00",
+        "sha256": "1af0c1548fa804eed6fd2fd27da889b57a2d868c1cf024768f64b58143010ee5",
+        "size_bytes": 132786,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.25_13.25",
+      "requested_latitude": 46.25,
+      "requested_longitude": 13.25,
+      "snow_cell_latitude": 46.300003,
+      "snow_cell_longitude": 13.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.772281+00:00",
+        "sha256": "43244ebc46fd42e92a098cc8eba98873d55cf8dc00168cda115e2b21bd89e64d",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.25",
+          "longitude": "13.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:32.078393+00:00",
+        "sha256": "b450e87598705c77c70923a2080b45e793bbefcf43d7d4907c4356333855a21c",
+        "size_bytes": 133681,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.25_13.75",
+      "requested_latitude": 46.25,
+      "requested_longitude": 13.75,
+      "snow_cell_latitude": 46.300003,
+      "snow_cell_longitude": 13.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.772281+00:00",
+        "sha256": "43244ebc46fd42e92a098cc8eba98873d55cf8dc00168cda115e2b21bd89e64d",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.25",
+          "longitude": "13.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:32.580392+00:00",
+        "sha256": "ef78f7835efa3913d9467e12611fced153bf649904f13f8da5d1e5a2d4094655",
+        "size_bytes": 134397,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.25_14.25",
+      "requested_latitude": 46.25,
+      "requested_longitude": 14.25,
+      "snow_cell_latitude": 46.300003,
+      "snow_cell_longitude": 14.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:10.278715+00:00",
+        "sha256": "c35c11df01c1db8cb7f496f953417581a3c3ef3a5f586a7ad5edd7f1d831a77f",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.25",
+          "longitude": "14.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:33.076719+00:00",
+        "sha256": "f546be2cbf1b1c1fbb48485d1f448dc70f8464315d172020d063f8f5fdbcdb0e",
+        "size_bytes": 133708,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.25_14.75",
+      "requested_latitude": 46.25,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 46.300003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:10.278715+00:00",
+        "sha256": "c35c11df01c1db8cb7f496f953417581a3c3ef3a5f586a7ad5edd7f1d831a77f",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.25",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:33.578188+00:00",
+        "sha256": "878acc29fe854c71cd851bbd9ca785cc60b4dc3e0346ecbe40099eebb4cd651a",
+        "size_bytes": 133636,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.25_15.25",
+      "requested_latitude": 46.25,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 46.300003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:10.680189+00:00",
+        "sha256": "d566b515b0f8853c77a12bf5a799fc2a12448d4614e7147d12b76b64db5b4391",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.25",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:34.079425+00:00",
+        "sha256": "56092f72176e150ff0e1e9510625435ddb3ac0acb85053f29255eb7a299493c7",
+        "size_bytes": 133221,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.25_15.75",
+      "requested_latitude": 46.25,
+      "requested_longitude": 15.75,
+      "snow_cell_latitude": 46.300003,
+      "snow_cell_longitude": 15.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:10.680189+00:00",
+        "sha256": "d566b515b0f8853c77a12bf5a799fc2a12448d4614e7147d12b76b64db5b4391",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.25",
+          "longitude": "15.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:34.578741+00:00",
+        "sha256": "ad4570731acb4b5fe420d371f8f62acb262814b05e98f11ce0edeee93ecdcc86",
+        "size_bytes": 132872,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.25_16.25",
+      "requested_latitude": 46.25,
+      "requested_longitude": 16.25,
+      "snow_cell_latitude": 46.300003,
+      "snow_cell_longitude": 16.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:11.287462+00:00",
+        "sha256": "c34d00627535dde0bec4f5a0010609eeb825b3d14e39592e8d787ab7ca6e82d6",
+        "size_bytes": 6279,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.25",
+          "longitude": "16.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:35.082045+00:00",
+        "sha256": "c34f798418592833e77ec21300472c9588da296e31f61742233495631b6ad308",
+        "size_bytes": 132764,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_10.25",
+      "requested_latitude": 46.75,
+      "requested_longitude": 10.25,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 10.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 10.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "10.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:12.199368+00:00",
+        "sha256": "eb07f8a4a8ada03edf09c356d961fba1667ff4f1914bf008fc6fd28c81c14801",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "10.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:36.185318+00:00",
+        "sha256": "8dc4d645a9703cef8cf852ef25f6eea144030f51d605dc92bb27d91cf6d24ce5",
+        "size_bytes": 137009,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_10.75",
+      "requested_latitude": 46.75,
+      "requested_longitude": 10.75,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 10.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 10.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "10.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:12.199368+00:00",
+        "sha256": "eb07f8a4a8ada03edf09c356d961fba1667ff4f1914bf008fc6fd28c81c14801",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "10.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:36.592969+00:00",
+        "sha256": "1644ada67b9898481c9efd1d41f583fd551bc5d594e63e528e08815eb279f857",
+        "size_bytes": 149179,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_11.25",
+      "requested_latitude": 46.75,
+      "requested_longitude": 11.25,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 11.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 11.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "11.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:13.068146+00:00",
+        "sha256": "869f6cfd9c7821fd727ae7c99dec919b655c79ae067de1fdf1c2b0ad26a0235f",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "11.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:37.187293+00:00",
+        "sha256": "7b45995269a3d5cc41dfaa67415b7c52733e1a8aaf4f2485158f63076e292670",
+        "size_bytes": 136282,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_11.75",
+      "requested_latitude": 46.75,
+      "requested_longitude": 11.75,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 11.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 11.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "11.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:13.068146+00:00",
+        "sha256": "869f6cfd9c7821fd727ae7c99dec919b655c79ae067de1fdf1c2b0ad26a0235f",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "11.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:37.685758+00:00",
+        "sha256": "3d8fa94b1c106f55d149e1b79096a5df58c020124574d2efe5dbcef733c3392f",
+        "size_bytes": 136043,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_12.25",
+      "requested_latitude": 46.75,
+      "requested_longitude": 12.25,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 12.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 12.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "12.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:13.293933+00:00",
+        "sha256": "b8413cca211384bf62e7d15a5edbfa1308553e6c78e1622f37bb555e5305ddbc",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "12.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:38.184309+00:00",
+        "sha256": "846d647e3cb09e7a06d3b4b54551bf5ed7ba70735489a327557856b7d83ef2a2",
+        "size_bytes": 136194,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_12.75",
+      "requested_latitude": 46.75,
+      "requested_longitude": 12.75,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 12.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 12.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "12.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:13.293933+00:00",
+        "sha256": "b8413cca211384bf62e7d15a5edbfa1308553e6c78e1622f37bb555e5305ddbc",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "12.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:38.682255+00:00",
+        "sha256": "f3f9653b96fb26b532b570ae0888e654284b5f2ed299b143b4611835f7b6676e",
+        "size_bytes": 136119,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_13.25",
+      "requested_latitude": 46.75,
+      "requested_longitude": 13.25,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 13.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.772281+00:00",
+        "sha256": "43244ebc46fd42e92a098cc8eba98873d55cf8dc00168cda115e2b21bd89e64d",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "13.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:39.184512+00:00",
+        "sha256": "9660b4a1154abef683f7b93c3f4554b43089e06c7b3e11f1870aae264beedcb8",
+        "size_bytes": 135979,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_13.75",
+      "requested_latitude": 46.75,
+      "requested_longitude": 13.75,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 13.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:09.772281+00:00",
+        "sha256": "43244ebc46fd42e92a098cc8eba98873d55cf8dc00168cda115e2b21bd89e64d",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "13.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:39.688163+00:00",
+        "sha256": "57fd6fcbc8868e5bfca44be825ff7e33bfd9518ec19f0e320edc548567a66bc9",
+        "size_bytes": 135693,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_14.25",
+      "requested_latitude": 46.75,
+      "requested_longitude": 14.25,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 14.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:10.278715+00:00",
+        "sha256": "c35c11df01c1db8cb7f496f953417581a3c3ef3a5f586a7ad5edd7f1d831a77f",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "14.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:40.080386+00:00",
+        "sha256": "540ee75974099afad2a037a71fd9d135c7ea8364e391dff6f298b358c774887b",
+        "size_bytes": 134147,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_14.75",
+      "requested_latitude": 46.75,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:10.278715+00:00",
+        "sha256": "c35c11df01c1db8cb7f496f953417581a3c3ef3a5f586a7ad5edd7f1d831a77f",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:40.582634+00:00",
+        "sha256": "aa09842c99f28c2c45b3f751b1604c8edc30bef491b6ed5fa02d5b100e20334a",
+        "size_bytes": 134300,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_15.25",
+      "requested_latitude": 46.75,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:10.680189+00:00",
+        "sha256": "d566b515b0f8853c77a12bf5a799fc2a12448d4614e7147d12b76b64db5b4391",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:41.078024+00:00",
+        "sha256": "258368e49522b8ca3eaa597006c75706afdaa21b6e814403f6df18594b0d4013",
+        "size_bytes": 133549,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_15.75",
+      "requested_latitude": 46.75,
+      "requested_longitude": 15.75,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 15.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:10.680189+00:00",
+        "sha256": "d566b515b0f8853c77a12bf5a799fc2a12448d4614e7147d12b76b64db5b4391",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "15.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:41.579580+00:00",
+        "sha256": "bad80f786be02873b100e9217d5c2baa1574b60a04b0494c25cfee710e84fdad",
+        "size_bytes": 133008,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_16.25",
+      "requested_latitude": 46.75,
+      "requested_longitude": 16.25,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 16.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:11.287462+00:00",
+        "sha256": "c34d00627535dde0bec4f5a0010609eeb825b3d14e39592e8d787ab7ca6e82d6",
+        "size_bytes": 6279,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "16.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:42.081595+00:00",
+        "sha256": "e59823739599f2b6e3d78aa71cb88019577212b7465b5a792aacaaa1999dd73c",
+        "size_bytes": 132757,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_16.75",
+      "requested_latitude": 46.75,
+      "requested_longitude": 16.75,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 16.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:11.287462+00:00",
+        "sha256": "c34d00627535dde0bec4f5a0010609eeb825b3d14e39592e8d787ab7ca6e82d6",
+        "size_bytes": 6279,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "16.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:42.581867+00:00",
+        "sha256": "051a93f48ec0d9c658bfe671fa282aa622626c23f63a820d9f546760877b83ea",
+        "size_bytes": 132734,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "46.75_9.75",
+      "requested_latitude": 46.75,
+      "requested_longitude": 9.75,
+      "snow_cell_latitude": 46.800003,
+      "snow_cell_longitude": 9.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 46.5,
+      "aod_sample_longitude": 9.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "46.5",
+          "longitude": "9.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:12.067354+00:00",
+        "sha256": "dc3fc74aca6ad7292dfe81e12c0ff324e92fad46181ca41bc985acc27c174cef",
+        "size_bytes": 6287,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "46.75",
+          "longitude": "9.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:35.688189+00:00",
+        "sha256": "c1e0d2bdacf4ef37e7f88e73bd3ed72b6895f1c99b57569e8c0058f3e8e3d08b",
+        "size_bytes": 137079,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_10.25",
+      "requested_latitude": 47.25,
+      "requested_longitude": 10.25,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 10.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 10.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "10.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:14.447950+00:00",
+        "sha256": "0a038e8e68e7b1b0b7090e9b56d54fc54d7d2b9d5d3f2c19a681abf433bab2ec",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "10.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:43.689917+00:00",
+        "sha256": "1d816c940aa7088f1e47120d1c83bc92f613b9ec2eb8fcf3259226daf7c7185f",
+        "size_bytes": 136405,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_10.75",
+      "requested_latitude": 47.25,
+      "requested_longitude": 10.75,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 10.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 10.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "10.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:14.447950+00:00",
+        "sha256": "0a038e8e68e7b1b0b7090e9b56d54fc54d7d2b9d5d3f2c19a681abf433bab2ec",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "10.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:44.182481+00:00",
+        "sha256": "807bc5568cfc3b7058f2696f80fd2b726a12a1045ffc843a6c460299d5cb1c26",
+        "size_bytes": 136221,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_11.25",
+      "requested_latitude": 47.25,
+      "requested_longitude": 11.25,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 11.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 11.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "11.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:14.675070+00:00",
+        "sha256": "97a52ead67ec99d2568ade8598c7c99d3d6c8bb5966038747a90c3b0b2da84b8",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "11.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:44.687764+00:00",
+        "sha256": "2200f5b4f548d2a8cc6527c8254b3230b7b96f8494146cd7ad939785d32515bb",
+        "size_bytes": 135893,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_11.75",
+      "requested_latitude": 47.25,
+      "requested_longitude": 11.75,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 11.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 11.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "11.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:14.675070+00:00",
+        "sha256": "97a52ead67ec99d2568ade8598c7c99d3d6c8bb5966038747a90c3b0b2da84b8",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "11.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:45.186802+00:00",
+        "sha256": "2dd16a9c2cbe5c145f509b1c6f0f470d5e531a3aa890bca13dac821fe5459d6d",
+        "size_bytes": 136131,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_12.25",
+      "requested_latitude": 47.25,
+      "requested_longitude": 12.25,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 12.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 12.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "12.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:15.272912+00:00",
+        "sha256": "a666be0e40a22a4dc1340f6e2229cf5d13db33075febb0d6f82b3e00baac7ae4",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "12.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:45.690643+00:00",
+        "sha256": "0b6f90be5eca61d70f4e40330960386bf92f295190d357cf60ba9fcb9e61c624",
+        "size_bytes": 136468,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_12.75",
+      "requested_latitude": 47.25,
+      "requested_longitude": 12.75,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 12.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 12.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "12.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:15.272912+00:00",
+        "sha256": "a666be0e40a22a4dc1340f6e2229cf5d13db33075febb0d6f82b3e00baac7ae4",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "12.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:46.184028+00:00",
+        "sha256": "febeff017c6e4da4521f81bff6f3b6af327e614f8b4acbf8afda714fb558d273",
+        "size_bytes": 136107,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_13.25",
+      "requested_latitude": 47.25,
+      "requested_longitude": 13.25,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 13.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:15.678037+00:00",
+        "sha256": "73a17a34e864d23f3c565c963c6f40ade7975bb75b63ed1cc64c71c4cf3bba04",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "13.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:46.684649+00:00",
+        "sha256": "1069f744016cc5d0de042df953f19615daf003c71b9182313f4388d3b7bfca16",
+        "size_bytes": 136216,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_13.75",
+      "requested_latitude": 47.25,
+      "requested_longitude": 13.75,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 13.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:15.678037+00:00",
+        "sha256": "73a17a34e864d23f3c565c963c6f40ade7975bb75b63ed1cc64c71c4cf3bba04",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "13.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:47.185010+00:00",
+        "sha256": "b229bb56f61b1f57478012f9164bfc250850e6c0afc153282f8d70f0c65b3e60",
+        "size_bytes": 136492,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_14.25",
+      "requested_latitude": 47.25,
+      "requested_longitude": 14.25,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 14.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:16.272151+00:00",
+        "sha256": "0b73c422f0853846ad81c0b39df36fe0031d5a8fbd37b9b6548d63406234cebd",
+        "size_bytes": 6275,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "14.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:47.683951+00:00",
+        "sha256": "c438c6d205ca2595af752bd1c039db673a1291b4683b4823b7fe8030aca6f085",
+        "size_bytes": 135985,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_14.75",
+      "requested_latitude": 47.25,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:16.272151+00:00",
+        "sha256": "0b73c422f0853846ad81c0b39df36fe0031d5a8fbd37b9b6548d63406234cebd",
+        "size_bytes": 6275,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:48.191743+00:00",
+        "sha256": "3a36d3f4d5b3fc8386ad41462b933761b28e108de73282620dcd1e7050178d51",
+        "size_bytes": 135462,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_15.25",
+      "requested_latitude": 47.25,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:16.682857+00:00",
+        "sha256": "5c82f36452b3594fe6779649d51bc8d5579039fdc8f28a30e02be08610a56b7f",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:48.583056+00:00",
+        "sha256": "0cfabdf8f5ddbe2f2152dae82f3322eb04679c1b3585d5a0dc2463d14b806c79",
+        "size_bytes": 134520,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_15.75",
+      "requested_latitude": 47.25,
+      "requested_longitude": 15.75,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 15.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:16.682857+00:00",
+        "sha256": "5c82f36452b3594fe6779649d51bc8d5579039fdc8f28a30e02be08610a56b7f",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "15.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:49.077992+00:00",
+        "sha256": "f331e4421e1a0d87163d4c07caeb838c2f64a3869d790e92058a4c3de5299586",
+        "size_bytes": 133699,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_16.25",
+      "requested_latitude": 47.25,
+      "requested_longitude": 16.25,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 16.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:17.269087+00:00",
+        "sha256": "938e3836f10bfb739ec4759fca3a76438470ce6ebbf662ca47781da3f13e99dc",
+        "size_bytes": 6279,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "16.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:49.576767+00:00",
+        "sha256": "972e0134bbfec0bf9b910123fe3130af4934fbd8d4eb36ddc9439892b30c49a8",
+        "size_bytes": 133208,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_16.75",
+      "requested_latitude": 47.25,
+      "requested_longitude": 16.75,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 16.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:17.269087+00:00",
+        "sha256": "938e3836f10bfb739ec4759fca3a76438470ce6ebbf662ca47781da3f13e99dc",
+        "size_bytes": 6279,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "16.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:50.077813+00:00",
+        "sha256": "ef7c8c867662ac9fd98471b065eb63b319fd265f96bd60370716d0855534215b",
+        "size_bytes": 132477,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.25_9.75",
+      "requested_latitude": 47.25,
+      "requested_longitude": 9.75,
+      "snow_cell_latitude": 47.300003,
+      "snow_cell_longitude": 9.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 9.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "9.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:13.761470+00:00",
+        "sha256": "c8381236d55073927fd1891856538da2dcb50bdec85ec8abce410990a7074e7d",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.25",
+          "longitude": "9.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:43.181710+00:00",
+        "sha256": "4579f8a2be36a7586edc7df38dbeb213a3c88c99805909467fefcd5d9b99bb6b",
+        "size_bytes": 135809,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_10.25",
+      "requested_latitude": 47.75,
+      "requested_longitude": 10.25,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 10.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 10.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "10.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:14.447950+00:00",
+        "sha256": "0a038e8e68e7b1b0b7090e9b56d54fc54d7d2b9d5d3f2c19a681abf433bab2ec",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "10.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:51.084365+00:00",
+        "sha256": "58a84a32b2352432472ddf2faeccc25b60695335bc37e4c92ab6b6a10c40103b",
+        "size_bytes": 134005,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_10.75",
+      "requested_latitude": 47.75,
+      "requested_longitude": 10.75,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 10.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 10.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "10.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:14.447950+00:00",
+        "sha256": "0a038e8e68e7b1b0b7090e9b56d54fc54d7d2b9d5d3f2c19a681abf433bab2ec",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "10.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:51.577433+00:00",
+        "sha256": "a6806963be6e1043f280c0b40c98b7c131b165f8f34a8f18638c088383f1db39",
+        "size_bytes": 134317,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_11.25",
+      "requested_latitude": 47.75,
+      "requested_longitude": 11.25,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 11.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 11.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "11.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:14.675070+00:00",
+        "sha256": "97a52ead67ec99d2568ade8598c7c99d3d6c8bb5966038747a90c3b0b2da84b8",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "11.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:52.081587+00:00",
+        "sha256": "f5ab6fcb370d5fd5baf2251886e9214fe67c627eb11a8c6866fc05caf7047c59",
+        "size_bytes": 134479,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_11.75",
+      "requested_latitude": 47.75,
+      "requested_longitude": 11.75,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 11.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 11.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "11.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:14.675070+00:00",
+        "sha256": "97a52ead67ec99d2568ade8598c7c99d3d6c8bb5966038747a90c3b0b2da84b8",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "11.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:52.578475+00:00",
+        "sha256": "ed7f7c31b75cf6d3aab6031cfc5427a51b1d6e20d132fdd5ce671529a66efaaf",
+        "size_bytes": 134632,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_12.25",
+      "requested_latitude": 47.75,
+      "requested_longitude": 12.25,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 12.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 12.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "12.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:15.272912+00:00",
+        "sha256": "a666be0e40a22a4dc1340f6e2229cf5d13db33075febb0d6f82b3e00baac7ae4",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "12.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:53.082745+00:00",
+        "sha256": "8388d9792b6c7b308e0cfdabf3e68c87e6541d1ef15931cb865e63b8acafddf7",
+        "size_bytes": 134790,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_12.75",
+      "requested_latitude": 47.75,
+      "requested_longitude": 12.75,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 12.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 12.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "12.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:15.272912+00:00",
+        "sha256": "a666be0e40a22a4dc1340f6e2229cf5d13db33075febb0d6f82b3e00baac7ae4",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "12.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:53.688332+00:00",
+        "sha256": "424218ea0d8fcb288f04c892bbe3bf79f9914a7a7c77a7ab363348a5bf231173",
+        "size_bytes": 135047,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_13.25",
+      "requested_latitude": 47.75,
+      "requested_longitude": 13.25,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 13.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:15.678037+00:00",
+        "sha256": "73a17a34e864d23f3c565c963c6f40ade7975bb75b63ed1cc64c71c4cf3bba04",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "13.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:54.192214+00:00",
+        "sha256": "163defdd0211f50f79376b505564c11887e1dd8ae5fab10eb90e83db12ced9f0",
+        "size_bytes": 135491,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_13.75",
+      "requested_latitude": 47.75,
+      "requested_longitude": 13.75,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 13.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:15.678037+00:00",
+        "sha256": "73a17a34e864d23f3c565c963c6f40ade7975bb75b63ed1cc64c71c4cf3bba04",
+        "size_bytes": 6281,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "13.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:54.693365+00:00",
+        "sha256": "c71a4acf273add65bf3832bbfc54c8dc8a9516c503aa3717498566f962034759",
+        "size_bytes": 135431,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_14.25",
+      "requested_latitude": 47.75,
+      "requested_longitude": 14.25,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 14.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:16.272151+00:00",
+        "sha256": "0b73c422f0853846ad81c0b39df36fe0031d5a8fbd37b9b6548d63406234cebd",
+        "size_bytes": 6275,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "14.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:55.184507+00:00",
+        "sha256": "d67092849e8b6f220fac5f6decf65e12c25859d837b07c6aa38342780f508c7f",
+        "size_bytes": 135530,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_14.75",
+      "requested_latitude": 47.75,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:16.272151+00:00",
+        "sha256": "0b73c422f0853846ad81c0b39df36fe0031d5a8fbd37b9b6548d63406234cebd",
+        "size_bytes": 6275,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:55.684473+00:00",
+        "sha256": "c914f309a21ea4001a49590d508e288884689abfda3727969f92378557a40097",
+        "size_bytes": 135071,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_15.25",
+      "requested_latitude": 47.75,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:16.682857+00:00",
+        "sha256": "5c82f36452b3594fe6779649d51bc8d5579039fdc8f28a30e02be08610a56b7f",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:56.188096+00:00",
+        "sha256": "cc563e191b60e450cb8a73de07517b761707ffcf625d1ddadd6dce4c626dedae",
+        "size_bytes": 135223,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_15.75",
+      "requested_latitude": 47.75,
+      "requested_longitude": 15.75,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 15.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:16.682857+00:00",
+        "sha256": "5c82f36452b3594fe6779649d51bc8d5579039fdc8f28a30e02be08610a56b7f",
+        "size_bytes": 6274,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "15.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:56.577857+00:00",
+        "sha256": "5cc38d10ad52c7745c9a3ac34eb76c69418dd9fab5c9f6d221ffde4e7b6cc125",
+        "size_bytes": 134792,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_16.25",
+      "requested_latitude": 47.75,
+      "requested_longitude": 16.25,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 16.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:17.269087+00:00",
+        "sha256": "938e3836f10bfb739ec4759fca3a76438470ce6ebbf662ca47781da3f13e99dc",
+        "size_bytes": 6279,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "16.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:57.080152+00:00",
+        "sha256": "3a8c618829b9dae2abf87f12af7d94cffaa9051030d3622da9c1b06e64fa61e5",
+        "size_bytes": 133047,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_16.75",
+      "requested_latitude": 47.75,
+      "requested_longitude": 16.75,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 16.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:17.269087+00:00",
+        "sha256": "938e3836f10bfb739ec4759fca3a76438470ce6ebbf662ca47781da3f13e99dc",
+        "size_bytes": 6279,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "16.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:57.576518+00:00",
+        "sha256": "008fb08c83d84f3410739ebfd9fb62d17b9c768b2872582bc39b7dca9f557618",
+        "size_bytes": 132619,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_17.25",
+      "requested_latitude": 47.75,
+      "requested_longitude": 17.25,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 17.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 17.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "17.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:17.689492+00:00",
+        "sha256": "bc927be4a1fd6ac534089920f775ac7a274a8234b470057c10bbef4d089ab8c0",
+        "size_bytes": 6279,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "17.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:58.078478+00:00",
+        "sha256": "1b6d7badf18e76e69e20ec2ca42dd824f76847f009c991f35be7945cdececad9",
+        "size_bytes": 132368,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "47.75_9.75",
+      "requested_latitude": 47.75,
+      "requested_longitude": 9.75,
+      "snow_cell_latitude": 47.800003,
+      "snow_cell_longitude": 9.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 47.5,
+      "aod_sample_longitude": 9.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "47.5",
+          "longitude": "9.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:13.761470+00:00",
+        "sha256": "c8381236d55073927fd1891856538da2dcb50bdec85ec8abce410990a7074e7d",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "47.75",
+          "longitude": "9.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:50.590760+00:00",
+        "sha256": "61bce5ce0da8e2e23844036cee9b17b2b9804c58204832c99b491819bdad07ef",
+        "size_bytes": 133755,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_12.75",
+      "requested_latitude": 48.25,
+      "requested_longitude": 12.75,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 12.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 12.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "12.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:18.268587+00:00",
+        "sha256": "d87bf764a33ead6fccc0ef094e23d32af11722a90e2b669f83df234fc4f1b914",
+        "size_bytes": 6287,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "12.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:58.577198+00:00",
+        "sha256": "cfc80ad6cb551bc7ccbeed2cf3bb012ede5ce428fbf48103b6c12ae09b9b6722",
+        "size_bytes": 132867,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_13.25",
+      "requested_latitude": 48.25,
+      "requested_longitude": 13.25,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 13.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:18.967965+00:00",
+        "sha256": "35d04e22ab017aefb012bb66653c3482582cd2cccdfaeea8fbb338a32bee0d23",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "13.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:59.078073+00:00",
+        "sha256": "e5b6b2da3ae448b474babf73ca39487e527fd130e8c0d99f1f95de43352ac848",
+        "size_bytes": 133101,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_13.75",
+      "requested_latitude": 48.25,
+      "requested_longitude": 13.75,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 13.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:18.967965+00:00",
+        "sha256": "35d04e22ab017aefb012bb66653c3482582cd2cccdfaeea8fbb338a32bee0d23",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "13.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:59.578006+00:00",
+        "sha256": "aa1002cf77b6fbfabfac02276c3905b6144e4d868aa7993be368d0625a80c299",
+        "size_bytes": 132963,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_14.25",
+      "requested_latitude": 48.25,
+      "requested_longitude": 14.25,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 14.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:19.281186+00:00",
+        "sha256": "077052e28b8e2944d1885253ed531f740d81a2c33e400c85699522914a2a24e1",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "14.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:00.076109+00:00",
+        "sha256": "c414828fdb5d95e273c1e4678c851c1b8c0637591fc697d7e7d23b58c955bc62",
+        "size_bytes": 133213,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_14.75",
+      "requested_latitude": 48.25,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:19.281186+00:00",
+        "sha256": "077052e28b8e2944d1885253ed531f740d81a2c33e400c85699522914a2a24e1",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:00.581144+00:00",
+        "sha256": "f7feda008e4c2d6e00026eb597d82cccc9d311e5dc78f76b2dc843995e79e91f",
+        "size_bytes": 133483,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_15.25",
+      "requested_latitude": 48.25,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:19.777147+00:00",
+        "sha256": "d9faa8dcdd1a7e6b4614ff47866a6577db5cca9c4b819d879b15adc8281f4cb4",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:01.078723+00:00",
+        "sha256": "bf07ace38b10c2714b4122795eacdd6a6e66f7399caa8c8a6a74b0876f47ed7d",
+        "size_bytes": 133436,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_15.75",
+      "requested_latitude": 48.25,
+      "requested_longitude": 15.75,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 15.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:19.777147+00:00",
+        "sha256": "d9faa8dcdd1a7e6b4614ff47866a6577db5cca9c4b819d879b15adc8281f4cb4",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "15.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:01.581464+00:00",
+        "sha256": "87c64446af2fc5ce20130b4e27b2c11bdc7eb2ed0be481dd90bb5780b9f9eafd",
+        "size_bytes": 132522,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_16.25",
+      "requested_latitude": 48.25,
+      "requested_longitude": 16.25,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 16.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:20.170039+00:00",
+        "sha256": "b4fe165828f7793156886dd4a8948e1318a2754e19142a246c310e8e9cbe75b6",
+        "size_bytes": 6290,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "16.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:02.084816+00:00",
+        "sha256": "61caca1b4c1066b5808f0e21eec9ae3ee306931e3a7a06f3679999f83538e35f",
+        "size_bytes": 132565,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_16.75",
+      "requested_latitude": 48.25,
+      "requested_longitude": 16.75,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 16.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:20.170039+00:00",
+        "sha256": "b4fe165828f7793156886dd4a8948e1318a2754e19142a246c310e8e9cbe75b6",
+        "size_bytes": 6290,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "16.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:02.586011+00:00",
+        "sha256": "27609ae3293289dae0c023bdbf4dc76876ff98b096b993849a47e25d3fe06682",
+        "size_bytes": 132607,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.25_17.25",
+      "requested_latitude": 48.25,
+      "requested_longitude": 17.25,
+      "snow_cell_latitude": 48.300003,
+      "snow_cell_longitude": 17.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 17.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "17.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:20.667917+00:00",
+        "sha256": "f33f23ff31a759d0063fadea8f5730ff94f243c96eea5c3d7cbed3ac9867efc5",
+        "size_bytes": 6290,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.25",
+          "longitude": "17.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:03.075730+00:00",
+        "sha256": "afa1be31d42e89160b79d2fd9888a20097040e94f4279f8ac9aa10b9b685b78d",
+        "size_bytes": 132916,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.75_13.25",
+      "requested_latitude": 48.75,
+      "requested_longitude": 13.25,
+      "snow_cell_latitude": 48.800003,
+      "snow_cell_longitude": 13.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:18.967965+00:00",
+        "sha256": "35d04e22ab017aefb012bb66653c3482582cd2cccdfaeea8fbb338a32bee0d23",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.75",
+          "longitude": "13.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:03.578706+00:00",
+        "sha256": "56283a5d2f68b0bbc4613fe41a6e7346b931af4a1363d55e29a8c94494a9ebab",
+        "size_bytes": 133737,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.75_13.75",
+      "requested_latitude": 48.75,
+      "requested_longitude": 13.75,
+      "snow_cell_latitude": 48.800003,
+      "snow_cell_longitude": 13.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 13.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "13.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:18.967965+00:00",
+        "sha256": "35d04e22ab017aefb012bb66653c3482582cd2cccdfaeea8fbb338a32bee0d23",
+        "size_bytes": 6286,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.75",
+          "longitude": "13.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:04.076935+00:00",
+        "sha256": "54c2530ad6186da4a106723c3f08c9debbe44e2b13177ea7b6a2fcd366b50450",
+        "size_bytes": 134251,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.75_14.25",
+      "requested_latitude": 48.75,
+      "requested_longitude": 14.25,
+      "snow_cell_latitude": 48.800003,
+      "snow_cell_longitude": 14.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:19.281186+00:00",
+        "sha256": "077052e28b8e2944d1885253ed531f740d81a2c33e400c85699522914a2a24e1",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.75",
+          "longitude": "14.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:04.586340+00:00",
+        "sha256": "f38f95e853e183fc093f19efc5007a37b33b87f57cff1dcd59fd41e08663368f",
+        "size_bytes": 133720,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.75_14.75",
+      "requested_latitude": 48.75,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 48.800003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:19.281186+00:00",
+        "sha256": "077052e28b8e2944d1885253ed531f740d81a2c33e400c85699522914a2a24e1",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.75",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:05.079094+00:00",
+        "sha256": "34eb7aed93930832c29c183271cddf518e85ba71ddf5757e707a12471701c151",
+        "size_bytes": 133575,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.75_15.25",
+      "requested_latitude": 48.75,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 48.800003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:19.777147+00:00",
+        "sha256": "d9faa8dcdd1a7e6b4614ff47866a6577db5cca9c4b819d879b15adc8281f4cb4",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.75",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:05.576951+00:00",
+        "sha256": "bcc36a636f397144e7483d352cb4728f2e3e65a9464a739c995b9c9f45a872cb",
+        "size_bytes": 133520,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.75_15.75",
+      "requested_latitude": 48.75,
+      "requested_longitude": 15.75,
+      "snow_cell_latitude": 48.800003,
+      "snow_cell_longitude": 15.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:19.777147+00:00",
+        "sha256": "d9faa8dcdd1a7e6b4614ff47866a6577db5cca9c4b819d879b15adc8281f4cb4",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.75",
+          "longitude": "15.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:06.080435+00:00",
+        "sha256": "9fd41c4e568e5011b23ecc39b25844ba6a529a7f6ed601be24659b861a91515f",
+        "size_bytes": 132999,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.75_16.25",
+      "requested_latitude": 48.75,
+      "requested_longitude": 16.25,
+      "snow_cell_latitude": 48.800003,
+      "snow_cell_longitude": 16.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:20.170039+00:00",
+        "sha256": "b4fe165828f7793156886dd4a8948e1318a2754e19142a246c310e8e9cbe75b6",
+        "size_bytes": 6290,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.75",
+          "longitude": "16.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:06.578692+00:00",
+        "sha256": "f7c4550c579d8bc66edce8b21993e0d5e5c2547aab94454beecee143e6d8b6eb",
+        "size_bytes": 132623,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "48.75_16.75",
+      "requested_latitude": 48.75,
+      "requested_longitude": 16.75,
+      "snow_cell_latitude": 48.800003,
+      "snow_cell_longitude": 16.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 48.5,
+      "aod_sample_longitude": 16.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "48.5",
+          "longitude": "16.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:20.170039+00:00",
+        "sha256": "b4fe165828f7793156886dd4a8948e1318a2754e19142a246c310e8e9cbe75b6",
+        "size_bytes": 6290,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "48.75",
+          "longitude": "16.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:07.080145+00:00",
+        "sha256": "28f9efab4046765dea7dc0d8d14093b9fd1476964f313faca708d2e523694d2f",
+        "size_bytes": 132659,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "49.25_14.75",
+      "requested_latitude": 49.25,
+      "requested_longitude": 14.75,
+      "snow_cell_latitude": 49.300003,
+      "snow_cell_longitude": 14.800003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 49.5,
+      "aod_sample_longitude": 14.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "49.5",
+          "longitude": "14.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:21.261840+00:00",
+        "sha256": "9d104c112c19680b3ee7a66bbe4b5700895c4ab29bd5ba4717b88cbe842c9161",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "49.25",
+          "longitude": "14.75",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:07.582067+00:00",
+        "sha256": "737cc23fd8f67f0fce6334e1253118cb7090243e08c17947e5b5a9da60318d21",
+        "size_bytes": 133521,
+        "cache_hit": true
+      }
+    },
+    {
+      "site_id": "49.25_15.25",
+      "requested_latitude": 49.25,
+      "requested_longitude": 15.25,
+      "snow_cell_latitude": 49.300003,
+      "snow_cell_longitude": 15.300003,
+      "aod_source": "NASA POWER AOD_55; source products: ['SYN1DEG']",
+      "aod_sample_latitude": 49.5,
+      "aod_sample_longitude": 15.5,
+      "aod_request": {
+        "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+        "parameters": {
+          "parameters": "AOD_55",
+          "community": "RE",
+          "format": "JSON",
+          "latitude": "49.5",
+          "longitude": "15.5",
+          "start": "20230101",
+          "end": "20231231",
+          "time-standard": "UTC"
+        },
+        "retrieved_at_utc": "2026-10-30T06:51:21.762704+00:00",
+        "sha256": "4c78161b8dcae2b646dc50b02f3615e973ef0f7116b74b338ff6209fa82404eb",
+        "size_bytes": 6288,
+        "cache_hit": true
+      },
+      "snow_request": {
+        "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+        "parameters": {
+          "latitude": "49.25",
+          "longitude": "15.25",
+          "start_date": "2023-01-01",
+          "end_date": "2023-12-31",
+          "hourly": "snow_depth",
+          "models": "era5_land",
+          "timezone": "UTC",
+          "timeformat": "unixtime",
+          "cell_selection": "nearest",
+          "elevation": "nan"
+        },
+        "retrieved_at_utc": "2026-10-30T06:52:08.079408+00:00",
+        "sha256": "d61451c88e9d9105df188a5688d1c742b7cfc0a08e4a33d2c17ea3dcf6fc1e64",
+        "size_bytes": 133634,
+        "cache_hit": true
+      }
+    }
+  ]
+}

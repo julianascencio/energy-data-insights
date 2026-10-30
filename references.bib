@@ -753,3 +753,31 @@
   url = {https://essd.copernicus.org/articles/13/4349/2021/},
   note = {Role: data. Underlying ERA5-Land reanalysis for the example snow inputs, explicitly selected through Open-Meteo. The wrapper returns physical ground snow depth in metres; native ERA5 water-equivalent sd is not substituted. Credit Copernicus/ERA5-Land and the wrapper. Source snow biases remain; this is an alternative dataset to the thesis ERA5 inputs.}
 }
+
+@misc{natural_earth_countries,
+  author = {{Natural Earth contributors}},
+  title = {{Natural Earth: Admin 0 - Countries}},
+  url = {https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/},
+  note = {Role: data. Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.}
+}
+
+@misc{shapely_documentation,
+  author = {{Shapely contributors}},
+  title = {{Shapely documentation}},
+  url = {https://shapely.readthedocs.io/en/stable/},
+  note = {Role: software. Polygon topology, point/cell intersection masks, transformations and exact country-cell footprint clipping. Operations are planar longitude/latitude; country areas require geodesic or equal-area calculations. Invalid geometries and unsplit antimeridian rings are rejected explicitly.}
+}
+
+@misc{pyproj_documentation,
+  author = {{PyProj contributors}},
+  title = {{PyProj documentation: Transformer}},
+  url = {https://pyproj4.github.io/pyproj/stable/api/transformer.html},
+  note = {Role: software. Reads declared shapefile CRS and transforms selected boundaries to EPSG:4326 using always\_xy=True. Missing shapefile CRS requires explicit caller input; no coordinate system is guessed from coordinate magnitudes.}
+}
+
+@misc{pyshp_documentation,
+  author = {{PyShp contributors}},
+  title = {{PyShp: Python Shapefile Library}},
+  url = {https://github.com/GeospatialPython/pyshp},
+  note = {Role: software. Reads and writes ESRI shapefile geometry/attributes and companion files. Selected exports retain polygon holes and islands with ESRI ring orientation; the PRJ and CPG files declare WGS84 and UTF-8.}
+}
