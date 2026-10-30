@@ -1,0 +1,21 @@
+{
+  "provider": "rte",
+  "description": "Complete 96-record API response for France on civil date 2024-06-01. Quarter-hour forecast-only records are preserved in the capture; the parser selects actual half-hour records.",
+  "files": [
+    {
+      "file": "generation_rte.json",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-cons-def/records?where=date_heure+%3E%3D+date%272024-05-31T22%3A00%3A00%2B00%3A00%27+and+date_heure+%3C+date%272024-06-01T22%3A00%3A00%2B00%3A00%27&order_by=date_heure&limit=100&offset=0",
+      "endpoint": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/eco2mix-national-cons-def/records",
+      "parameters": {
+        "where": "date_heure >= date'2024-05-31T22:00:00+00:00' and date_heure < date'2024-06-01T22:00:00+00:00'",
+        "order_by": "date_heure",
+        "limit": "100",
+        "offset": "0"
+      },
+      "retrieved_at_utc": "2026-10-30T08:14:32.569581+00:00",
+      "sha256": "b4da230d5dc34ab9a9352e60ec39d142751c0924ab0a2fa5df5594461f7d6fb2",
+      "size_bytes": 83548
+    }
+  ],
+  "transformation": "None. Captured response bytes are retained exactly."
+}

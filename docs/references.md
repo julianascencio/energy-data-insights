@@ -40,7 +40,7 @@ downloaded it. Use the run's acquisition provenance for that determination.
 | LightGBM | Ke et al. and LightGBM documentation; project chronology and monotonic settings. |
 | Physical response | Stark-Parker BVLS through SciPy; repository-specific PV basis. |
 | Operational screening | IEC TS 63019 context; no conformity or certified availability claim. |
-| Generation and weather | CEN, AEMO, EIA, REE, ENTSO-E and weather; see run provenance. |
+| Generation and weather | Worldwide providers and measured PV; see run provenance. |
 
 Subhourly irradiance redistribution and geometry/lag search are project choices.
 The shape-constrained physical basis is not attributed to the solver authors.
@@ -827,6 +827,294 @@ PyShp contributors (n.d.). **PyShp: Python Shapefile Library**. [Source](https:/
 **Role:** software. Reads and writes ESRI shapefile geometry/attributes and companion files. Selected exports retain polygon holes and islands with ESRI ring orientation; the PRJ and CPG files declare WGS84 and UTF-8.
 
 **Used by:** `methods/src/energy_methods/country_boundaries.py`, `docs/country-mapping.md`.
+
+### ons_hourly_generation
+
+Operador Nacional do Sistema Elétrico (n.d.). **Geração por Usina em Base Horária**. [Source](https://dados.ons.org.br/dataset/geracao-usina-2)
+
+**Role:** data. Verified plant/group average MW (MWmed); Type III and MMGD estimate/forecast categories are excluded by default. Native labels and an explicit source-clock interpretation are retained. Public Parquet resources are discovered through the CKAN catalogue.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ons/client.py`, `data-retrieval/src/energy_data_retrieval/sources/ons/README.md`, `examples/connectors/plot_generation_ons.py`, `docs/worldwide-generation.md`.
+
+### ons_pv_curtailment
+
+Operador Nacional do Sistema Elétrico (n.d.). **Restrições de operação por constrained-off: usinas fotovoltaicas, detalhamento**. [Source](https://dados.ons.org.br/dataset/restricao_coff_fotovoltaica_detail)
+
+**Role:** data. Separate half-hour photovoltaic detail from April 2024. Verified output, estimated/reference values, irradiance flags and restrictions remain distinct; the adapter does not infer curtailment energy from an estimated/actual difference.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ons/client.py`, `data-retrieval/src/energy_data_retrieval/sources/ons/README.md`, `examples/connectors/plot_generation_ons.py`, `docs/worldwide-generation.md`.
+
+### ieso_generator_output
+
+Independent Electricity System Operator (n.d.). **Generator Output and Capability report: format and definitions**. [Source](https://reports-public.ieso.ca/docrefs/helpfile/GenOutputCapability_h4.pdf)
+
+**Role:** data. Ontario published generator output MW, hourly hour-ending labels in fixed Eastern Standard Time. Capability is not generation. The public recent XML archive is not a promise of complete historical or distributed-generation coverage.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ieso/client.py`, `data-retrieval/src/energy_data_retrieval/sources/ieso/README.md`, `examples/connectors/plot_generation_ieso.py`, `docs/worldwide-generation.md`.
+
+### ieso_report_directory
+
+Independent Electricity System Operator (n.d.). **IESO power data directory**. [Source](https://www.ieso.ca/en/power-data/data-directory)
+
+**Role:** data. Official report discovery and publication scope. Gallery observations are captured from native public generator-output XML and retain a source/selection/checksum manifest.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ieso/client.py`, `data-retrieval/src/energy_data_retrieval/sources/ieso/README.md`, `examples/connectors/plot_generation_ieso.py`, `docs/worldwide-generation.md`.
+
+### xm_simem_actual_generation
+
+XM (n.d.). **SIMEM: generación real horaria por recurso, dataset 055A4D**. [Source](https://www.simem.co/datadetail/055a4d5f-3616-45e3-9bcd-1d3e3a4a47bd)
+
+**Role:** data. Actual hourly generation-boundary records, distinct from estimated daily SCADA dataset E17D25. Native kWh is retained beside normalized MWh; an explicit settlement revision defaults to TXF without fallback. Source FechaHora is interpreted as Colombia UTC-05 without shifting its label.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/xm/client.py`, `data-retrieval/src/energy_data_retrieval/sources/xm/README.md`, `examples/connectors/plot_generation_xm.py`, `docs/worldwide-generation.md`.
+
+### xm_api_documentation
+
+XM analytics team (n.d.). **Official SIMEM API client and query semantics**. [Source](https://github.com/EquipoAnaliticaXM/API_XM/blob/master/pydataxm/pydatasimem.py)
+
+**Role:** data. Provider-maintained query documentation supports public dataset/date and settlement-version filtering. The adapter validates metadata, bounds request/row counts and preserves native resource/agent identifiers and revision.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/xm/client.py`, `data-retrieval/src/energy_data_retrieval/sources/xm/README.md`, `examples/connectors/plot_generation_xm.py`, `docs/worldwide-generation.md`.
+
+### aeso_historical_generation
+
+Alberta Electric System Operator (n.d.). **AESO historical generation data**. [Source](https://www.aeso.ca/market/market-and-system-reporting/data-requests/historical-generation-data/)
+
+**Role:** data. Public CSD Generation five-minute/hourly archive exports. Volume is interval-average MW, not MWh; explicit Date (MST) is fixed UTC-07 and Date (MPT) is retained. Local import follows user download/extraction, preserves the exact file hash and performs no historical API call.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aeso/client.py`, `data-retrieval/src/energy_data_retrieval/sources/aeso/README.md`, `examples/connectors/plot_generation_aeso.py`, `docs/worldwide-generation.md`.
+
+### aeso_current_generation_api
+
+Alberta Electric System Operator (n.d.). **Current Supply Demand API v1: generation by asset**. [Source](https://developer-apim.aeso.ca/api-details#api=currentsupplydemand-api-v1&operation=getCSDReportByAsset)
+
+**Role:** data. Current operational net_generation MW with explicit UTC timestamp, distinct capacity/reserve fields and an API-KEY header. Official documented schema was verified and mocked; no authenticated live response is claimed. Scope is published reporting assets over 5 MW.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aeso/client.py`, `data-retrieval/src/energy_data_retrieval/sources/aeso/README.md`, `examples/connectors/plot_generation_aeso.py`, `docs/worldwide-generation.md`.
+
+### adme_open_data
+
+Administración del Mercado Eléctrico (n.d.). **ADME datos abiertos**. [Source](https://www.adme.com.uy/datosabiertos.html)
+
+**Role:** data. Official Uruguayan market/open-data entry point. The implementation uses the available public native SCADA archive rather than the legacy CSV endpoint that returned PHP warnings during verification.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/adme/client.py`, `data-retrieval/src/energy_data_retrieval/sources/adme/README.md`, `examples/connectors/plot_generation_adme.py`, `docs/worldwide-generation.md`.
+
+### adme_scada_archive
+
+Administración del Mercado Eléctrico (n.d.). **ADME native plant SCADA SAS archive**. [Source](https://pronos.adme.com.uy/svg/pronos/cache_series_scada/)
+
+**Role:** data. Public archive discovery and bounded six-header-line SAS parsing. Actual GETOTMEDP.AV MW is distinguished from dispatch limits and forecasts, the declared sample period is retained, and missing sentinels remain missing. The source labels have no offset; the explicit default interpretation is America/Montevideo.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/adme/client.py`, `data-retrieval/src/energy_data_retrieval/sources/adme/README.md`, `examples/connectors/plot_generation_adme.py`, `docs/worldwide-generation.md`.
+
+### elexon_insights_api
+
+Elexon (n.d.). **Elexon Insights API documentation**. [Source](https://developer.data.elexon.co.uk/)
+
+**Role:** data. Public B1610 metered-volume acquisition with bounded response/pagination checks, UTC half-hour-end labels validated against Great Britain settlement dates and periods, and request provenance.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/elexon/client.py`, `data-retrieval/src/energy_data_retrieval/sources/elexon/README.md`, `examples/connectors/plot_generation_elexon.py`, `docs/worldwide-generation.md`.
+
+### elexon_b1610_metered_volumes
+
+Elexon (n.d.). **How to get more detailed metered volume data from Insights Solution**. [Source](https://www.elexon.co.uk/bsc/article/bsc-insight-how-to-get-more-detailed-metered-volume-data-from-our-insights-solution/)
+
+**Role:** data. BM-unit signed half-hour metered MWh. A BM unit is not automatically an individual PV plant, negative values can represent import, and published records can be revised.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/elexon/client.py`, `data-retrieval/src/energy_data_retrieval/sources/elexon/README.md`, `examples/connectors/plot_generation_elexon.py`, `docs/worldwide-generation.md`.
+
+### rte_eco2mix_consolidated
+
+Réseau de Transport d’Électricité (n.d.). **éCO2mix national: consolidated and definitive data**. [Source](https://odre.opendatasoft.com/explore/dataset/eco2mix-national-cons-def/)
+
+**Role:** data. National consolidated actual technology generation in MW at half-hour resolution. Quarter-hour rows containing forecasts only are excluded; missing values at actual half-hour labels remain missing. Pumping, totals and overlapping technology subcategories are kept outside the selected disjoint generation series.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/rte/client.py`, `data-retrieval/src/energy_data_retrieval/sources/rte/README.md`, `examples/connectors/plot_generation_rte.py`, `docs/worldwide-generation.md`.
+
+### rte_eco2mix_api
+
+Réseau de Transport d’Électricité (n.d.). **ODRÉ Explore API for consolidated éCO2mix national data**. [Source](https://odre.opendatasoft.com/explore/dataset/eco2mix-national-cons-def/api/)
+
+**Role:** data. Public offset-aware queries and explicit pagination with total-count, duplicate-page and row/request bounds. This connector does not claim the separate live or regional products.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/rte/client.py`, `data-retrieval/src/energy_data_retrieval/sources/rte/README.md`, `examples/connectors/plot_generation_rte.py`, `docs/worldwide-generation.md`.
+
+### caiso_todays_outlook_supply
+
+California Independent System Operator (n.d.). **CAISO Today’s Outlook: supply and fuel mix**. [Source](https://www.caiso.com/todays-outlook/supply)
+
+**Role:** data. Operational five-minute fuel-mix MW from public daily CSV files. Imports, storage and mixed Other supply (including proxy demand response) remain distinct flows. Source Pacific local labels on DST clock-change days may be ambiguous or nonexistent; the adapter fails rather than fabricate a UTC timeline. These data are not settlement meter records.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/caiso/client.py`, `data-retrieval/src/energy_data_retrieval/sources/caiso/README.md`, `examples/connectors/plot_generation_caiso.py`, `docs/worldwide-generation.md`.
+
+### smard_generation_user_guide
+
+Bundesnetzagentur (n.d.). **SMARD user guide: market data and electricity generation**. [Source](https://www.smard.de/resource/blob/205652/63fcff2c9813096fa2229d769da164ef/smard-user-guide-09-2021-data.pdf)
+
+**Role:** data. Verified public German solar, onshore-wind and offshore-wind generation series at quarter-hour resolution in MWh. Weekly data are located through source index JSON and filtered by German civil dates; no additional country or unverified technology identifiers are implied.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/smard/client.py`, `data-retrieval/src/energy_data_retrieval/sources/smard/README.md`, `examples/connectors/plot_generation_smard.py`, `docs/worldwide-generation.md`.
+
+### smard_data_use
+
+Bundesnetzagentur (n.d.). **SMARD data use**. [Source](https://www.smard.de/en/datennutzung)
+
+**Role:** data. Provider reuse and attribution guidance for SMARD public data. Gallery captures preserve original series responses, exact source requests and checksums; applicable source terms remain authoritative.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/smard/client.py`, `data-retrieval/src/energy_data_retrieval/sources/smard/README.md`, `examples/connectors/plot_generation_smard.py`, `docs/worldwide-generation.md`.
+
+### nz_emi_generation
+
+Electricity Authority New Zealand (n.d.). **Generation output: plant/connection metered generation**. [Source](https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-output/)
+
+**Role:** data. Metered injection in kWh by plant/connection and half-hour trading period. Pacific/Auckland civil days have 46, 48 or 50 intervals; the adapter validates the native trading-period layout and preserves source identities and missing values.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/emi/client.py`, `data-retrieval/src/energy_data_retrieval/sources/emi/README.md`, `examples/connectors/plot_generation_emi.py`, `docs/worldwide-generation.md`.
+
+### nz_emi_license
+
+Electricity Authority New Zealand (n.d.). **EMI legal information**. [Source](https://www.emi.ea.govt.nz/LegalInformation)
+
+**Role:** data. Provider reuse terms generally use Creative Commons Attribution 4.0 with stated exceptions. The gallery preserves attributed source selections and does not extend those terms to unrelated third-party data.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/emi/client.py`, `data-retrieval/src/energy_data_retrieval/sources/emi/README.md`, `examples/connectors/plot_generation_emi.py`, `docs/worldwide-generation.md`.
+
+### tepco_generation
+
+TEPCO Power Grid (n.d.). **Tokyo-area electricity supply and demand data**. [Source](https://www.tepco.co.jp/forecast/html/area_jukyu-j.html)
+
+**Role:** data. Monthly native CP932 CSV, current _03 schema from February 2024. The unit row specifies average MW or ten-thousand kW, which is converted explicitly. Half-hour technology generation is separate from demand, total, storage, imports and curtailment.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/tepco/client.py`, `data-retrieval/src/energy_data_retrieval/sources/tepco/README.md`, `examples/connectors/plot_generation_tepco.py`, `docs/worldwide-generation.md`.
+
+### tepco_generation_definitions
+
+TEPCO Power Grid (n.d.). **Tokyo-area supply/demand data definitions and use conditions**. [Source](https://www.tepco.co.jp/forecast/html/area_data-j.html)
+
+**Role:** data. Provider definitions, estimation/revision caveats and Tokyo-area scope. Source labels use Japan UTC+09. The gallery records the exact raw CP932 hash and its documented UTF-8 subset transformation.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/tepco/client.py`, `data-retrieval/src/energy_data_retrieval/sources/tepco/README.md`, `examples/connectors/plot_generation_tepco.py`, `docs/worldwide-generation.md`.
+
+### taipower_live_generation
+
+Taiwan Power Company (n.d.). **Taipower real-time generation by unit**. [Source](https://data.gov.tw/en/datasets/8931)
+
+**Role:** data. Public current MW snapshot, not a ten-minute average. Published assets, groups, subtotals and storage load are distinguished; aggregate and load rows are excluded by default. Source time is UTC+08.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/taipower/client.py`, `data-retrieval/src/energy_data_retrieval/sources/taipower/README.md`, `examples/connectors/plot_generation_taipower.py`, `docs/worldwide-generation.md`.
+
+### taipower_generation_history
+
+Taiwan Power Company (n.d.). **Taipower historical generating-unit power output**. [Source](https://data.gov.tw/en/datasets/37331)
+
+**Role:** data. Documents the separate delayed historical product. The implemented connector is bounded current-snapshot retrieval and does not claim automatic ingestion of the much larger historical download. Taiwan Open Government Data License terms apply to the provider dataset.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/taipower/client.py`, `data-retrieval/src/energy_data_retrieval/sources/taipower/README.md`, `examples/connectors/plot_generation_taipower.py`, `docs/worldwide-generation.md`.
+
+### kpx_regional_solar
+
+Korea Power Exchange (n.d.). **Korea Power Exchange: regional hourly solar generation**. [Source](https://www.data.go.kr/data/15103243/openapi.do)
+
+**Role:** data. Approved-key API for net market-traded regional solar energy in MWh. It does not cover all national rooftop PV; ESS operation can produce nighttime output. The endpoint and native schema were verified from official Swagger, with mocked retrieval tests and no authenticated live-data claim.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/kpx/client.py`, `data-retrieval/src/energy_data_retrieval/sources/kpx/README.md`, `examples/connectors/plot_generation_kpx.py`, `docs/worldwide-generation.md`.
+
+### kpx_trading_periods
+
+Korea Power Exchange (n.d.). **Korean electricity market trading-period definitions**. [Source](https://marketrule.kpx.or.kr/lmxsrv/law/joHistoryContent.do?DATE_END=20231230&DATE_START=20210501&SEQ=2&SEQ_CONTENTS=7335)
+
+**Role:** data. Native tradeNo values 01..24 are hour-ending market periods; 01 maps to 00:00–01:00 KST. The adapter retains interval boundaries and UTC+09 source semantics.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/kpx/client.py`, `data-retrieval/src/energy_data_retrieval/sources/kpx/README.md`, `examples/connectors/plot_generation_kpx.py`, `docs/worldwide-generation.md`.
+
+### kpx_data_guide
+
+Korea Power Exchange (n.d.). **KPX public data usage guide**. [Source](https://new.kpx.or.kr/boardDownload.es?bid=0045&list_no=71003&seq=2)
+
+**Role:** data. Provider field definitions, access requirements and product scope. The serviceKey is read from KPX_API_KEY, sent only as a secret parameter and excluded from caches, logs and provenance.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/kpx/client.py`, `data-retrieval/src/energy_data_retrieval/sources/kpx/README.md`, `examples/connectors/plot_generation_kpx.py`, `docs/worldwide-generation.md`.
+
+### eskom_hourly_renewables
+
+Eskom (n.d.). **Hourly renewable generation**. [Source](https://www.eskom.co.za/dataportal/renewables-performance/hourly-renewable-generation/)
+
+**Role:** data. Eskom-owned/contracted renewable wind, PV, CSP and other output, excluding embedded generation. Current exact Hourly_Generation CSV URLs are discovered through the public media catalogue because the chart page can retain a stale upload link.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eskom/client.py`, `data-retrieval/src/energy_data_retrieval/sources/eskom/README.md`, `examples/connectors/plot_generation_eskom.py`, `docs/worldwide-generation.md`.
+
+### eskom_generation_statistics
+
+Eskom (n.d.). **Weekly system status report: renewable generation contribution**. [Source](https://www.eskom.co.za/wp-content/uploads/2024/04/Weekly_System_Status_Report_2024_w16.pdf)
+
+**Role:** data. Supports the MW contribution convention used for Eskom renewable statistics. The hourly CSV uses hour-beginning labels in South African UTC+02; the adapter calls it reported hourly power without inferring a finer sampling definition or independently metered MWh.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eskom/client.py`, `data-retrieval/src/energy_data_retrieval/sources/eskom/README.md`, `examples/connectors/plot_generation_eskom.py`, `docs/worldwide-generation.md`.
+
+### pvdaq_public_archive
+
+U.S. Department of Energy, Open Energy Data Initiative (n.d.). **PVDAQ public photovoltaic performance data archive**. [Source](https://data.openei.org/submissions/4568)
+
+**Role:** data. Public anonymous OEDI daily PV system measurements and channel metadata. The adapter selects a bounded system/date range; it preserves native columns and requires explicit power units and source clock. Missing archive files fail instead of generating observations.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/pvdaq/client.py`, `data-retrieval/src/energy_data_retrieval/sources/pvdaq/README.md`, `examples/connectors/plot_generation_pvdaq.py`, `docs/worldwide-generation.md`.
+
+### pvdaq_data_dictionary
+
+Open Energy Data Initiative (n.d.). **PVDAQ data dictionary and public archive schema**. [Source](https://github.com/openEDI/documentation/blob/main/pvdaq.md)
+
+**Role:** data. Defines system/site metadata, measured_on and UTC fields, and channel units/scaling/aggregation. The real system 4 example uses metric315 AC power in W, scale1/offset0, and an explicit winter UTC-07 clock. Parquet channel metadata is kept alongside the captured native CSV.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/pvdaq/client.py`, `data-retrieval/src/energy_data_retrieval/sources/pvdaq/README.md`, `examples/connectors/plot_generation_pvdaq.py`, `docs/worldwide-generation.md`.
+
+### nist_pv_testbeds
+
+National Institute of Standards and Technology (n.d.). **NIST photovoltaic testbeds and data portal**. [Source](https://www.nist.gov/el/beed/heat-transfer-alternative-energy-systems/photovoltaic-testbeds)
+
+**Role:** data. Instrumented Ground, Roof and Canopy photovoltaic arrays in Gaithersburg. The connector imports user-downloaded native CSV/TOA5 exports; no portal-token handling or unattended bulk-download claim. No real NIST capture is bundled.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/nist/client.py`, `data-retrieval/src/energy_data_retrieval/sources/nist/README.md`, `examples/connectors/plot_generation_nist.py`, `docs/worldwide-generation.md`.
+
+### nist_pv_dictionary
+
+National Institute of Standards and Technology (n.d.). **NIST photovoltaic testbed and weather station data dictionary**. [Source](https://www.nist.gov/document/datadictionarysupplementalcontentpdf)
+
+**Role:** data. Native TIMESTAMP is local standard time. InvPAC_kW and PwrMtrP_kW are AC real-power kW channels; one-minute average suffixes and instantaneous channels remain distinct from accumulated kWh registers.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/nist/client.py`, `data-retrieval/src/energy_data_retrieval/sources/nist/README.md`, `examples/connectors/plot_generation_nist.py`, `docs/worldwide-generation.md`.
+
+### nist_pv_measurements_paper
+
+Boyd, Matthew (2017). **Performance Data from the NIST Photovoltaic Arrays and Weather Station**. Journal of Research of the National Institute of Standards and Technology, 122, 40. [DOI: 10.6028/jres.122.040](https://doi.org/10.6028/jres.122.040)
+
+**Role:** data. Verifies fixed Eastern Standard Time with no daylight saving, one-minute aggregate suffixes, one-second instantaneous channels and missing NAN readings. The importer preserves signed and missing observations and does not infer interval-edge alignment.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/nist/client.py`, `data-retrieval/src/energy_data_retrieval/sources/nist/README.md`, `examples/connectors/plot_generation_nist.py`, `docs/worldwide-generation.md`.
+
+### dkasc_download
+
+Desert Knowledge Australia (n.d.). **Desert Knowledge Australia Solar Centre data downloads**. [Source](https://dkasolarcentre.com.au/download?location=alice-springs)
+
+**Role:** data. Measured PV array exports are obtained through the provider form. The adapter imports a user-downloaded native CSV with exact selected columns/date format and records its hash; it does not submit personal details or accept provider terms for the user.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py`, `data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md`, `examples/connectors/plot_generation_dkasc.py`, `docs/worldwide-generation.md`.
+
+### dkasc_data_parameters
+
+Desert Knowledge Australia (n.d.). **DKASC glossary: measured solar generation data parameters**. [Source](https://dkasolarcentre.com.au/glossary)
+
+**Role:** data. Five-minute average AC power in kW is distinct from cumulative kWh registers. Total and phase channels remain separate. Alice Springs source labels are normalized using Australia/Darwin UTC+09:30 and retain native values.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py`, `data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md`, `examples/connectors/plot_generation_dkasc.py`, `docs/worldwide-generation.md`.
+
+### dkasc_data_terms
+
+Desert Knowledge Australia (n.d.). **DKASC data terms and conditions**. [Source](https://dkasolarcentre.com.au/download/terms-conditions)
+
+**Role:** data. Provider terms distinguish limited unaltered excerpts up to 5000 data cells with attribution/disclaimer from larger redistribution requiring permission. No DKASC observations are bundled; the gallery is an import workflow until a real export is supplied.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py`, `data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md`, `examples/connectors/plot_generation_dkasc.py`, `docs/worldwide-generation.md`.
 
 ### canaryclim_2025_data
 

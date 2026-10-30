@@ -2207,6 +2207,729 @@
     "verified_at": "2026-10-30"
   },
   {
+    "id": "ons_hourly_generation",
+    "title": "Geração por Usina em Base Horária",
+    "authors": [
+      "Operador Nacional do Sistema Elétrico"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://dados.ons.org.br/dataset/geracao-usina-2",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ons/README.md",
+      "examples/connectors/plot_generation_ons.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Verified plant/group average MW (MWmed); Type III and MMGD estimate/forecast categories are excluded by default. Native labels and an explicit source-clock interpretation are retained. Public Parquet resources are discovered through the CKAN catalogue.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "ons_pv_curtailment",
+    "title": "Restrições de operação por constrained-off: usinas fotovoltaicas, detalhamento",
+    "authors": [
+      "Operador Nacional do Sistema Elétrico"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://dados.ons.org.br/dataset/restricao_coff_fotovoltaica_detail",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ons/README.md",
+      "examples/connectors/plot_generation_ons.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Separate half-hour photovoltaic detail from April 2024. Verified output, estimated/reference values, irradiance flags and restrictions remain distinct; the adapter does not infer curtailment energy from an estimated/actual difference.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "ieso_generator_output",
+    "title": "Generator Output and Capability report: format and definitions",
+    "authors": [
+      "Independent Electricity System Operator"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://reports-public.ieso.ca/docrefs/helpfile/GenOutputCapability_h4.pdf",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/ieso/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ieso/README.md",
+      "examples/connectors/plot_generation_ieso.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Ontario published generator output MW, hourly hour-ending labels in fixed Eastern Standard Time. Capability is not generation. The public recent XML archive is not a promise of complete historical or distributed-generation coverage.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "ieso_report_directory",
+    "title": "IESO power data directory",
+    "authors": [
+      "Independent Electricity System Operator"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.ieso.ca/en/power-data/data-directory",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/ieso/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ieso/README.md",
+      "examples/connectors/plot_generation_ieso.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Official report discovery and publication scope. Gallery observations are captured from native public generator-output XML and retain a source/selection/checksum manifest.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "xm_simem_actual_generation",
+    "title": "SIMEM: generación real horaria por recurso, dataset 055A4D",
+    "authors": [
+      "XM"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.simem.co/datadetail/055a4d5f-3616-45e3-9bcd-1d3e3a4a47bd",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/xm/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/xm/README.md",
+      "examples/connectors/plot_generation_xm.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Actual hourly generation-boundary records, distinct from estimated daily SCADA dataset E17D25. Native kWh is retained beside normalized MWh; an explicit settlement revision defaults to TXF without fallback. Source FechaHora is interpreted as Colombia UTC-05 without shifting its label.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "xm_api_documentation",
+    "title": "Official SIMEM API client and query semantics",
+    "authors": [
+      "XM analytics team"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://github.com/EquipoAnaliticaXM/API_XM/blob/master/pydataxm/pydatasimem.py",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/xm/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/xm/README.md",
+      "examples/connectors/plot_generation_xm.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Provider-maintained query documentation supports public dataset/date and settlement-version filtering. The adapter validates metadata, bounds request/row counts and preserves native resource/agent identifiers and revision.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "aeso_historical_generation",
+    "title": "AESO historical generation data",
+    "authors": [
+      "Alberta Electric System Operator"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.aeso.ca/market/market-and-system-reporting/data-requests/historical-generation-data/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/aeso/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/aeso/README.md",
+      "examples/connectors/plot_generation_aeso.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Public CSD Generation five-minute/hourly archive exports. Volume is interval-average MW, not MWh; explicit Date (MST) is fixed UTC-07 and Date (MPT) is retained. Local import follows user download/extraction, preserves the exact file hash and performs no historical API call.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "aeso_current_generation_api",
+    "title": "Current Supply Demand API v1: generation by asset",
+    "authors": [
+      "Alberta Electric System Operator"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://developer-apim.aeso.ca/api-details#api=currentsupplydemand-api-v1&operation=getCSDReportByAsset",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/aeso/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/aeso/README.md",
+      "examples/connectors/plot_generation_aeso.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Current operational net_generation MW with explicit UTC timestamp, distinct capacity/reserve fields and an API-KEY header. Official documented schema was verified and mocked; no authenticated live response is claimed. Scope is published reporting assets over 5 MW.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "adme_open_data",
+    "title": "ADME datos abiertos",
+    "authors": [
+      "Administración del Mercado Eléctrico"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.adme.com.uy/datosabiertos.html",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/adme/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/adme/README.md",
+      "examples/connectors/plot_generation_adme.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Official Uruguayan market/open-data entry point. The implementation uses the available public native SCADA archive rather than the legacy CSV endpoint that returned PHP warnings during verification.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "adme_scada_archive",
+    "title": "ADME native plant SCADA SAS archive",
+    "authors": [
+      "Administración del Mercado Eléctrico"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://pronos.adme.com.uy/svg/pronos/cache_series_scada/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/adme/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/adme/README.md",
+      "examples/connectors/plot_generation_adme.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Public archive discovery and bounded six-header-line SAS parsing. Actual GETOTMEDP.AV MW is distinguished from dispatch limits and forecasts, the declared sample period is retained, and missing sentinels remain missing. The source labels have no offset; the explicit default interpretation is America/Montevideo.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "elexon_insights_api",
+    "title": "Elexon Insights API documentation",
+    "authors": [
+      "Elexon"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://developer.data.elexon.co.uk/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/elexon/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/elexon/README.md",
+      "examples/connectors/plot_generation_elexon.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Public B1610 metered-volume acquisition with bounded response/pagination checks, UTC half-hour-end labels validated against Great Britain settlement dates and periods, and request provenance.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "elexon_b1610_metered_volumes",
+    "title": "How to get more detailed metered volume data from Insights Solution",
+    "authors": [
+      "Elexon"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.elexon.co.uk/bsc/article/bsc-insight-how-to-get-more-detailed-metered-volume-data-from-our-insights-solution/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/elexon/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/elexon/README.md",
+      "examples/connectors/plot_generation_elexon.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "BM-unit signed half-hour metered MWh. A BM unit is not automatically an individual PV plant, negative values can represent import, and published records can be revised.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "rte_eco2mix_consolidated",
+    "title": "éCO2mix national: consolidated and definitive data",
+    "authors": [
+      "Réseau de Transport d’Électricité"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://odre.opendatasoft.com/explore/dataset/eco2mix-national-cons-def/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/rte/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/rte/README.md",
+      "examples/connectors/plot_generation_rte.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "National consolidated actual technology generation in MW at half-hour resolution. Quarter-hour rows containing forecasts only are excluded; missing values at actual half-hour labels remain missing. Pumping, totals and overlapping technology subcategories are kept outside the selected disjoint generation series.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "rte_eco2mix_api",
+    "title": "ODRÉ Explore API for consolidated éCO2mix national data",
+    "authors": [
+      "Réseau de Transport d’Électricité"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://odre.opendatasoft.com/explore/dataset/eco2mix-national-cons-def/api/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/rte/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/rte/README.md",
+      "examples/connectors/plot_generation_rte.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Public offset-aware queries and explicit pagination with total-count, duplicate-page and row/request bounds. This connector does not claim the separate live or regional products.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "caiso_todays_outlook_supply",
+    "title": "CAISO Today’s Outlook: supply and fuel mix",
+    "authors": [
+      "California Independent System Operator"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.caiso.com/todays-outlook/supply",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/caiso/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/caiso/README.md",
+      "examples/connectors/plot_generation_caiso.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Operational five-minute fuel-mix MW from public daily CSV files. Imports, storage and mixed Other supply (including proxy demand response) remain distinct flows. Source Pacific local labels on DST clock-change days may be ambiguous or nonexistent; the adapter fails rather than fabricate a UTC timeline. These data are not settlement meter records.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "smard_generation_user_guide",
+    "title": "SMARD user guide: market data and electricity generation",
+    "authors": [
+      "Bundesnetzagentur"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.smard.de/resource/blob/205652/63fcff2c9813096fa2229d769da164ef/smard-user-guide-09-2021-data.pdf",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/smard/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/smard/README.md",
+      "examples/connectors/plot_generation_smard.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Verified public German solar, onshore-wind and offshore-wind generation series at quarter-hour resolution in MWh. Weekly data are located through source index JSON and filtered by German civil dates; no additional country or unverified technology identifiers are implied.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "smard_data_use",
+    "title": "SMARD data use",
+    "authors": [
+      "Bundesnetzagentur"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.smard.de/en/datennutzung",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/smard/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/smard/README.md",
+      "examples/connectors/plot_generation_smard.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Provider reuse and attribution guidance for SMARD public data. Gallery captures preserve original series responses, exact source requests and checksums; applicable source terms remain authoritative.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "nz_emi_generation",
+    "title": "Generation output: plant/connection metered generation",
+    "authors": [
+      "Electricity Authority New Zealand"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-output/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/emi/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/emi/README.md",
+      "examples/connectors/plot_generation_emi.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Metered injection in kWh by plant/connection and half-hour trading period. Pacific/Auckland civil days have 46, 48 or 50 intervals; the adapter validates the native trading-period layout and preserves source identities and missing values.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "nz_emi_license",
+    "title": "EMI legal information",
+    "authors": [
+      "Electricity Authority New Zealand"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.emi.ea.govt.nz/LegalInformation",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/emi/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/emi/README.md",
+      "examples/connectors/plot_generation_emi.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Provider reuse terms generally use Creative Commons Attribution 4.0 with stated exceptions. The gallery preserves attributed source selections and does not extend those terms to unrelated third-party data.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "tepco_generation",
+    "title": "Tokyo-area electricity supply and demand data",
+    "authors": [
+      "TEPCO Power Grid"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.tepco.co.jp/forecast/html/area_jukyu-j.html",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/tepco/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/tepco/README.md",
+      "examples/connectors/plot_generation_tepco.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Monthly native CP932 CSV, current _03 schema from February 2024. The unit row specifies average MW or ten-thousand kW, which is converted explicitly. Half-hour technology generation is separate from demand, total, storage, imports and curtailment.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "tepco_generation_definitions",
+    "title": "Tokyo-area supply/demand data definitions and use conditions",
+    "authors": [
+      "TEPCO Power Grid"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.tepco.co.jp/forecast/html/area_data-j.html",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/tepco/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/tepco/README.md",
+      "examples/connectors/plot_generation_tepco.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Provider definitions, estimation/revision caveats and Tokyo-area scope. Source labels use Japan UTC+09. The gallery records the exact raw CP932 hash and its documented UTF-8 subset transformation.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "taipower_live_generation",
+    "title": "Taipower real-time generation by unit",
+    "authors": [
+      "Taiwan Power Company"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://data.gov.tw/en/datasets/8931",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/taipower/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/taipower/README.md",
+      "examples/connectors/plot_generation_taipower.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Public current MW snapshot, not a ten-minute average. Published assets, groups, subtotals and storage load are distinguished; aggregate and load rows are excluded by default. Source time is UTC+08.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "taipower_generation_history",
+    "title": "Taipower historical generating-unit power output",
+    "authors": [
+      "Taiwan Power Company"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://data.gov.tw/en/datasets/37331",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/taipower/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/taipower/README.md",
+      "examples/connectors/plot_generation_taipower.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Documents the separate delayed historical product. The implemented connector is bounded current-snapshot retrieval and does not claim automatic ingestion of the much larger historical download. Taiwan Open Government Data License terms apply to the provider dataset.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "kpx_regional_solar",
+    "title": "Korea Power Exchange: regional hourly solar generation",
+    "authors": [
+      "Korea Power Exchange"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.data.go.kr/data/15103243/openapi.do",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/README.md",
+      "examples/connectors/plot_generation_kpx.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Approved-key API for net market-traded regional solar energy in MWh. It does not cover all national rooftop PV; ESS operation can produce nighttime output. The endpoint and native schema were verified from official Swagger, with mocked retrieval tests and no authenticated live-data claim.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "kpx_trading_periods",
+    "title": "Korean electricity market trading-period definitions",
+    "authors": [
+      "Korea Power Exchange"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://marketrule.kpx.or.kr/lmxsrv/law/joHistoryContent.do?DATE_END=20231230&DATE_START=20210501&SEQ=2&SEQ_CONTENTS=7335",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/README.md",
+      "examples/connectors/plot_generation_kpx.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Native tradeNo values 01..24 are hour-ending market periods; 01 maps to 00:00–01:00 KST. The adapter retains interval boundaries and UTC+09 source semantics.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "kpx_data_guide",
+    "title": "KPX public data usage guide",
+    "authors": [
+      "Korea Power Exchange"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://new.kpx.or.kr/boardDownload.es?bid=0045&list_no=71003&seq=2",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/README.md",
+      "examples/connectors/plot_generation_kpx.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Provider field definitions, access requirements and product scope. The serviceKey is read from KPX_API_KEY, sent only as a secret parameter and excluded from caches, logs and provenance.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "eskom_hourly_renewables",
+    "title": "Hourly renewable generation",
+    "authors": [
+      "Eskom"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.eskom.co.za/dataportal/renewables-performance/hourly-renewable-generation/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/eskom/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/eskom/README.md",
+      "examples/connectors/plot_generation_eskom.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Eskom-owned/contracted renewable wind, PV, CSP and other output, excluding embedded generation. Current exact Hourly_Generation CSV URLs are discovered through the public media catalogue because the chart page can retain a stale upload link.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "eskom_generation_statistics",
+    "title": "Weekly system status report: renewable generation contribution",
+    "authors": [
+      "Eskom"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.eskom.co.za/wp-content/uploads/2024/04/Weekly_System_Status_Report_2024_w16.pdf",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/eskom/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/eskom/README.md",
+      "examples/connectors/plot_generation_eskom.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Supports the MW contribution convention used for Eskom renewable statistics. The hourly CSV uses hour-beginning labels in South African UTC+02; the adapter calls it reported hourly power without inferring a finer sampling definition or independently metered MWh.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "pvdaq_public_archive",
+    "title": "PVDAQ public photovoltaic performance data archive",
+    "authors": [
+      "U.S. Department of Energy, Open Energy Data Initiative"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://data.openei.org/submissions/4568",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/pvdaq/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/pvdaq/README.md",
+      "examples/connectors/plot_generation_pvdaq.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Public anonymous OEDI daily PV system measurements and channel metadata. The adapter selects a bounded system/date range; it preserves native columns and requires explicit power units and source clock. Missing archive files fail instead of generating observations.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "pvdaq_data_dictionary",
+    "title": "PVDAQ data dictionary and public archive schema",
+    "authors": [
+      "Open Energy Data Initiative"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://github.com/openEDI/documentation/blob/main/pvdaq.md",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/pvdaq/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/pvdaq/README.md",
+      "examples/connectors/plot_generation_pvdaq.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Defines system/site metadata, measured_on and UTC fields, and channel units/scaling/aggregation. The real system 4 example uses metric315 AC power in W, scale1/offset0, and an explicit winter UTC-07 clock. Parquet channel metadata is kept alongside the captured native CSV.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "nist_pv_testbeds",
+    "title": "NIST photovoltaic testbeds and data portal",
+    "authors": [
+      "National Institute of Standards and Technology"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.nist.gov/el/beed/heat-transfer-alternative-energy-systems/photovoltaic-testbeds",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/nist/README.md",
+      "examples/connectors/plot_generation_nist.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Instrumented Ground, Roof and Canopy photovoltaic arrays in Gaithersburg. The connector imports user-downloaded native CSV/TOA5 exports; no portal-token handling or unattended bulk-download claim. No real NIST capture is bundled.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "nist_pv_dictionary",
+    "title": "NIST photovoltaic testbed and weather station data dictionary",
+    "authors": [
+      "National Institute of Standards and Technology"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.nist.gov/document/datadictionarysupplementalcontentpdf",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/nist/README.md",
+      "examples/connectors/plot_generation_nist.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Native TIMESTAMP is local standard time. InvPAC_kW and PwrMtrP_kW are AC real-power kW channels; one-minute average suffixes and instantaneous channels remain distinct from accumulated kWh registers.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "nist_pv_measurements_paper",
+    "title": "Performance Data from the NIST Photovoltaic Arrays and Weather Station",
+    "authors": [
+      "Boyd, Matthew"
+    ],
+    "year": 2017,
+    "doi": "10.6028/jres.122.040",
+    "url": "https://doi.org/10.6028/jres.122.040",
+    "kind": "article",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/nist/README.md",
+      "examples/connectors/plot_generation_nist.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Verifies fixed Eastern Standard Time with no daylight saving, one-minute aggregate suffixes, one-second instantaneous channels and missing NAN readings. The importer preserves signed and missing observations and does not infer interval-edge alignment.",
+    "verified_at": "2026-10-30",
+    "publication": "Journal of Research of the National Institute of Standards and Technology",
+    "volume": "122",
+    "pages": "40"
+  },
+  {
+    "id": "dkasc_download",
+    "title": "Desert Knowledge Australia Solar Centre data downloads",
+    "authors": [
+      "Desert Knowledge Australia"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://dkasolarcentre.com.au/download?location=alice-springs",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md",
+      "examples/connectors/plot_generation_dkasc.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Measured PV array exports are obtained through the provider form. The adapter imports a user-downloaded native CSV with exact selected columns/date format and records its hash; it does not submit personal details or accept provider terms for the user.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "dkasc_data_parameters",
+    "title": "DKASC glossary: measured solar generation data parameters",
+    "authors": [
+      "Desert Knowledge Australia"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://dkasolarcentre.com.au/glossary",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md",
+      "examples/connectors/plot_generation_dkasc.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Five-minute average AC power in kW is distinct from cumulative kWh registers. Total and phase channels remain separate. Alice Springs source labels are normalized using Australia/Darwin UTC+09:30 and retain native values.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "dkasc_data_terms",
+    "title": "DKASC data terms and conditions",
+    "authors": [
+      "Desert Knowledge Australia"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://dkasolarcentre.com.au/download/terms-conditions",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md",
+      "examples/connectors/plot_generation_dkasc.py",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Provider terms distinguish limited unaltered excerpts up to 5000 data cells with attribution/disclaimer from larger redistribution requiring permission. No DKASC observations are bundled; the gallery is an import workflow until a real export is supplied.",
+    "verified_at": "2026-10-30"
+  },
+  {
     "id": "canaryclim_2025_data",
     "title": "CHELSACanaryClim-climatologies",
     "authors": [

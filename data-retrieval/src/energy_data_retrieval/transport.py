@@ -37,6 +37,8 @@ _SECRET_NAMES = frozenset(
         "authorization",
         "password",
         "securitytoken",
+        "servicekey",
+        "api-key",
     }
 )
 _RETRY_STATUSES = frozenset({408, 429, 500, 502, 503, 504})
@@ -44,11 +46,13 @@ _RETRY_STATUSES = frozenset({408, 429, 500, 502, 503, 504})
 
 _ACTIVE_SECRETS: ContextVar[tuple[str, ...]] = ContextVar("retrieval_secrets", default=())
 _QUERY_SECRET = re.compile(
-    r"([?&](?:user_key|token|api_key|apikey|access_token|authorization|password|securitytoken)=)[^&\s\"']+",
+    r"([?&](?:user_key|token|api_key|apikey|api-key|access_token|authorization|password|"
+    r"securitytoken|servicekey)=)[^&\s\"']+",
     re.IGNORECASE,
 )
 _QUERY_SECRET_WITH_PUBLIC_CURSOR = re.compile(
-    r"([?&](?:user_key|api_key|apikey|access_token|authorization|password|securitytoken)=)[^&\s\"']+",
+    r"([?&](?:user_key|api_key|apikey|api-key|access_token|authorization|password|"
+    r"securitytoken|servicekey)=)[^&\s\"']+",
     re.IGNORECASE,
 )
 

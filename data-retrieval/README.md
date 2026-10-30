@@ -12,6 +12,23 @@ the provider's native files and metadata for subsequent climate analyses.
 | `sources/eia` | EIA API v2 hourly system and monthly plant generation; public EIA-930 balance files without a key |
 | `sources/ree` | Public REData national/regional generation by technology, daily/monthly/yearly MWh |
 | `sources/entsoe` | Transparency Platform actual generation by production type or published unit, with UTC intervals |
+| `sources/ons` | Brazil ONS verified plant MW and separate PV constrained-off detail, from bounded public Parquet resources |
+| `sources/ieso` | Ontario unit-level hourly output and capability from official XML reports, with fixed EST labels |
+| `sources/aeso` | Alberta current asset net MW API and native historical CSD CSV import, with fixed-MST fields |
+| `sources/xm` | Colombia SIMEM hourly actual-generation dataset 055A4D, explicit settlement revision and native kWh retained |
+| `sources/adme` | Uruguay native plant SCADA SAS archives; actual MW separated from dispatch limits |
+| `sources/elexon` | Great Britain B1610 signed half-hour metered MWh by BM unit |
+| `sources/rte` | France consolidated national éCO2mix generation by technology, with checked public API pagination |
+| `sources/smard` | German solar/onshore/offshore generation MWh from public quarter-hour series |
+| `sources/caiso` | California operational five-minute fuel-mix MW, with separate flow labels and strict DST handling |
+| `sources/emi` | New Zealand plant/connection metered injection kWh, including 46/48/50-period source days |
+| `sources/taipower` | Taiwan current unit/asset MW snapshot, retaining aggregate and storage-load distinctions |
+| `sources/tepco` | Tokyo-area half-hour average MW from native CP932 monthly CSV exports |
+| `sources/kpx` | Korean regional market-traded solar MWh API with environment-only service key |
+| `sources/eskom` | South African Eskom-owned/contracted hourly renewable MW, with current-export discovery |
+| `sources/pvdaq` | Public OEDI daily measured PV channels with explicit units/clock and channel metadata |
+| `sources/nist` | NIST PV native CSV/TOA5 import, average/instantaneous kW and fixed-EST source time |
+| `sources/dkasc` | DKASC native PV array CSV import, five-minute average kW and exact field/date mapping |
 | `sources/open_meteo` | Explicit ERA5 historical weather or archived ECMWF IFS forecasts |
 | `sources/earthmover_era5` | Native ERA5 tiles from a pinned public Icechunk snapshot; optional dependencies |
 | `sources/cds` | Direct Copernicus CDS API, native downloads and monthly ERA5 request planning; optional `cds` dependency |
@@ -28,20 +45,28 @@ the provider's native files and metadata for subsequent climate analyses.
 | `sources/cmip6` | ESGF STAC discovery, versioned retrieval plans and verified native CMIP6 NetCDF downloads |
 
 All acquisition is explicit. Importing a module or running the tests makes no
-network requests. Contract tests use synthetic fixtures; the new generation
-gallery additionally replays attributed real AEMO, EIA and REE captures. Neither
+network requests. Contract tests use clearly identified parser fixtures; the
+generation gallery additionally replays attributed real provider captures. Neither
 kind of test establishes current API availability, authorization or complete
 generation coverage.
 
 ## Real generation from more electricity systems
 
-See the [generation connector guide](../docs/generation-connectors.md) for
+See the [original generation connector guide](../docs/generation-connectors.md) for
 source selection, API access, time/energy conventions, command-line usage and
-four worked gallery examples. The commands are `aemo-generation`,
+its four worked gallery examples. The commands are `aemo-generation`,
 `eia-generation`, `eia-plant-generation`, `ree-generation` and
 `entsoe-generation`. They save source-specific Parquet snapshots and provenance
 manifests. AEMO, REE and EIA's public CSV route need no key; EIA API v2 uses
 `EIA_API_KEY`, and ENTSO-E uses `ENTSOE_API_TOKEN`.
+
+The [worldwide generation guide](../docs/worldwide-generation.md) adds seventeen
+providers across the Americas, Europe, Asia, Oceania and Africa, with individual
+gallery pages and twenty additional commands. Most use public APIs or archives;
+AESO current data uses `AESO_API_KEY`, KPX uses an approved `KPX_API_KEY`, and NIST
+and DKASC import native portal exports. The guide distinguishes captured real
+observations from credentialed request plans and native-file import workflows.
+All snapshots retain provider units/scope and request or input-file provenance.
 
 ## Discover sources at a location
 

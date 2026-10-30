@@ -1,7 +1,8 @@
 # Real electricity generation connectors
 
-The retrieval package now connects to four additional official generation
-providers alongside Chile's CEN. Select the product by its physical scope and
+This guide covers AEMO, EIA, REE and ENTSO-E alongside Chile's CEN. The
+[worldwide generation catalogue](worldwide-generation.md) adds seventeen more
+providers and their gallery examples. Select a product by its physical scope and
 time convention before combining sources. These adapters retrieve observations;
 they do not simulate missing generation or infer a plant registry.
 
@@ -38,14 +39,14 @@ checksums under `examples/connectors/data/`. They are not synthetic measurements
 ENTSO-E example does not substitute invented measurements for a missing token:
 its default chart counts planned API calls and is labelled accordingly.
 
-The gallery page offers one ZIP containing all four scripts and their input
+The gallery page offers one ZIP containing these and the worldwide scripts with their input
 data. Extract it with the `data/` directory intact, install the workspace with
 `uv sync --locked --all-packages --group docs`, then run the examples. Ordinary
 documentation builds require no credentials and make no provider requests.
 
 ## Command-line acquisition
 
-All five commands write Parquet and a neighboring `.parquet.json` manifest.
+The five commands in this guide write Parquet and a neighboring `.parquet.json` manifest.
 The manifest records the exact public query, upstream request hashes and time,
 plus the output hash and source metadata. An existing matching output is reused
 after checksum validation. Choose a **new output path** to capture provider
