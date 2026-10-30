@@ -27,8 +27,21 @@ MathJax and Mermaid load from their standard CDNs to render equations and diagra
 Edit existing Markdown guides in ``docs/`` and the package READMEs directly.
 The build creates ignored copies under ``docs/_generated/``, rewrites their
 relative links, and generates API pages from public modules. Do not edit those
-copies. Add executable examples under ``examples/plot_*.py``; clearly label
-synthetic inputs, use deterministic seeds where needed, and avoid network calls.
+copies.
+
+Add executable examples as ``plot_*.py`` in the section that matches their purpose:
+
+* ``examples/methods/``: focused tutorials for reusable calculations.
+* ``examples/connectors/``: provider requests, parsing and data access.
+* ``examples/analysis/``: applied workflows combining inputs, methods and outputs.
+
+Each section has a ``README.rst`` introduction and a generated gallery page.
+The gallery and sidebar use the order Methods, Connectors, Analysis, configured
+in ``docs/conf.py``. Keep support files beside their example (generation samples
+live in ``examples/connectors/data/``), update download links and provenance paths,
+and verify the clean documentation build. Clearly label synthetic inputs, use
+deterministic seeds where needed, and avoid network calls during gallery builds.
+The documentation extension retains redirects for the original flat example URLs.
 
 GitHub Pages
 ------------

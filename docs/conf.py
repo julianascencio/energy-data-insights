@@ -18,6 +18,7 @@ release = tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]["versi
 version = release
 
 extensions = [
+    "project_docs",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
@@ -41,6 +42,7 @@ myst_heading_anchors = 4
 myst_fence_as_directive = ["mermaid"]
 
 html_theme = "pydata_sphinx_theme"
+templates_path = ["_templates"]
 html_title = project
 html_static_path = ["_static"]
 html_css_files = ["energy.css"]
@@ -62,6 +64,12 @@ sphinx_gallery_conf = {
     "download_all_examples": False,
     "remove_config_comments": True,
     "abort_on_example_error": True,
+    "subsection_order": [
+        "../examples/methods",
+        "../examples/connectors",
+        "../examples/analysis",
+    ],
+    "nested_sections": True,
     "within_subsection_order": "FileNameSortKey",
     "reference_url": {},
     "capture_repr": (),

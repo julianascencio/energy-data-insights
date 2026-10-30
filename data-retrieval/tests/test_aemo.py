@@ -187,7 +187,7 @@ def test_wrong_day_and_untrusted_urls_fail() -> None:
 
 
 def test_checked_in_real_sample_matches_manifest_and_all_three_units() -> None:
-    directory = Path(__file__).resolve().parents[2] / "examples" / "data"
+    directory = Path(__file__).resolve().parents[2] / "examples" / "connectors" / "data"
     manifest = json.loads((directory / "generation_aemo_manifest.json").read_text())
     data = (directory / "generation_aemo_scada.csv").read_bytes()
     assert hashlib.sha256(data).hexdigest() == manifest["subset_sha256"]

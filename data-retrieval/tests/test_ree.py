@@ -177,7 +177,7 @@ def test_does_not_accept_provider_ignoring_date_filter() -> None:
 
 
 def test_real_gallery_snapshot_hash_and_technology_totals() -> None:
-    root = Path(__file__).resolve().parents[2] / "examples/data"
+    root = Path(__file__).resolve().parents[2] / "examples/connectors/data"
     path = root / "generation_ree.json"
     manifest = json.loads((root / "generation_ree_provenance.json").read_text())
     assert hashlib.sha256(path.read_bytes()).hexdigest() == manifest["fixture_sha256"]

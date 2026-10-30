@@ -74,8 +74,8 @@ def test_source_baseline_units_month_order_and_coverage():
 
 
 def test_fixture_integrity_global_grid_ocean_mask_and_classifier():
-    path = ROOT / "examples/kgpv_worldwide_inputs.csv"
-    manifest = json.loads((ROOT / "examples/kgpv_worldwide_provenance.json").read_text())
+    path = ROOT / "examples/analysis/kgpv_worldwide_inputs.csv"
+    manifest = json.loads((ROOT / "examples/analysis/kgpv_worldwide_provenance.json").read_text())
     assert hashlib.sha256(path.read_bytes()).hexdigest() == manifest["fixture_sha256"]
     table = pd.read_csv(path).set_index(["lat", "lon"]).to_xarray()
     np.testing.assert_array_equal(table.lat, np.arange(-87.5, 90, 5))

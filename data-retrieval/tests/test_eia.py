@@ -24,7 +24,7 @@ from energy_data_retrieval.sources.eia import (
 from energy_data_retrieval.transport import HTTPClient, HTTPConfig, JSONValue, RetrievalError
 
 START = datetime(2024, 1, 1, tzinfo=UTC)
-DATA = Path(__file__).resolve().parents[2] / "examples" / "data"
+DATA = Path(__file__).resolve().parents[2] / "examples" / "connectors" / "data"
 
 
 def hourly(period: str = "2024-01-01T00", **updates: JSONValue) -> dict[str, JSONValue]:
