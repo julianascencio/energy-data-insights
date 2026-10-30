@@ -13,7 +13,7 @@ Download the :download:`inputs <country_risk_inputs.csv>`,
 :download:`provenance <country_risk_provenance.json>` and
 :download:`country contours <country_risk_boundaries.geojson>` alongside this
 script. The contours are an unsimplified subset of the retrieved shapefile.
-Run offline from the repository's ``examples`` directory. See
+Run offline from the repository's ``examples/analysis`` directory. See
 :doc:`the country mapping guide </_generated/guides/country-mapping>` for
 shapefile acquisition/export, country names/codes, grid spacing and map bounds.
 """

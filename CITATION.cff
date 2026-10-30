@@ -2168,7 +2168,7 @@
         }
       ],
       "url": "https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html",
-      "notes": "Role: data. Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/. The soiling/snow example reuses the reviewed KGPV fixture's coarse land mask."
+      "notes": "Role: data. Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/analysis/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/. The soiling/snow example reuses the reviewed KGPV fixture's coarse land mask."
     },
     {
       "type": "article",
@@ -2443,6 +2443,138 @@
       "doi": "10.5194/essd-13-4349-2021",
       "journal": "Earth System Science Data",
       "volume": "13"
+    },
+    {
+      "type": "web",
+      "title": "MMS Data Model: DISPATCH_UNIT_SCADA",
+      "authors": [
+        {
+          "name": "Australian Energy Market Operator"
+        }
+      ],
+      "url": "https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_123.htm",
+      "notes": "Role: data. Official schema for public DUID-level instantaneous SCADA MW at the start of each dispatch interval. SETTLEMENTDATE remains the published label; readings are not interval means or settlement energy. Scheduled, semi-scheduled and selected non-scheduled units are included where SCADA is available. Technology and generator/load class require a verified roster."
+    },
+    {
+      "type": "dataset",
+      "title": "NEMWeb: public Dispatch SCADA archives",
+      "authors": [
+        {
+          "name": "Australian Energy Market Operator"
+        }
+      ],
+      "url": "https://nemweb.com.au/Reports/ARCHIVE/Dispatch_SCADA/",
+      "notes": "Role: data. Official daily archive listing. The connector discovers current or archived files and verifies bounded nested ZIP/CSV contents. The gallery retains 864 original rows from three DUIDs on 27 October 2026, with source URL, retrieval time, full-archive and subset hashes. Archive retention and publication coverage are finite."
+    },
+    {
+      "type": "web",
+      "title": "AEMO Markets Portal glossary: AEST and market time",
+      "authors": [
+        {
+          "name": "Australian Energy Market Operator"
+        }
+      ],
+      "url": "https://markets-portal-help.docs.public.aemo.com.au/Content/TOC_common-topics-DOnotChange/Glossary.htm",
+      "notes": "Role: data. Official market-time convention: fixed Australian Eastern Standard Time, UTC+10, without daylight-saving changes. The connector preserves the published dispatch label and converts that label to UTC."
+    },
+    {
+      "type": "web",
+      "title": "EIA API Technical Documentation, API v2",
+      "authors": [
+        {
+          "name": "U.S. Energy Information Administration"
+        }
+      ],
+      "url": "https://www.eia.gov/opendata/documentation.php",
+      "notes": "Role: data. Official API routes, data/facet parameters, registered-key access and maximum JSON page size. The connector uses stable sorting and bounded offset pagination for hourly fuel-type generation and monthly facility-fuel net generation. Credentialed routes were contract-tested without asserting authenticated live validation."
+    },
+    {
+      "type": "web",
+      "title": "Hourly Electric Grid Monitor: data coverage, quality and time reporting",
+      "authors": [
+        {
+          "name": "U.S. Energy Information Administration"
+        }
+      ],
+      "url": "https://www.eia.gov/electricity/930-content/about.html",
+      "notes": "Role: data. Official EIA-930 scope and hour-ending conventions. Hourly energy uses explicit UTC interval bounds; public balance-file hourly average MW is multiplied by one hour to obtain MWh. No imputed/adjusted values substitute for missing reported data. Regional aggregates overlap individual balancing authorities; distributed-generation coverage is incomplete."
+    },
+    {
+      "type": "dataset",
+      "title": "EIA-930 Reference Tables: energy source codes",
+      "authors": [
+        {
+          "name": "U.S. Energy Information Administration"
+        }
+      ],
+      "url": "https://www.eia.gov/electricity/930-content/EIA930_Reference_Tables.xlsx",
+      "notes": "Role: data. Official code workbook used to verify fuel and storage/hybrid codes, including the expanded 2025 taxonomy. Unknown columns or unavailable requested fuels fail explicitly; aggregate/detail categories are not silently summed."
+    },
+    {
+      "type": "manual",
+      "title": "Form EIA-930 Instructions",
+      "authors": [
+        {
+          "name": "U.S. Energy Information Administration"
+        }
+      ],
+      "url": "https://www.eia.gov/survey/form/eia_930/instructions.pdf",
+      "notes": "Role: data. Official reporting instructions for hourly integrated generation and the updated storage/hybrid energy-source categories. A schema/code reference, not independent evidence that all requested observations exist."
+    },
+    {
+      "type": "web",
+      "title": "REData API: request parameters, geographic scopes and JSON responses",
+      "authors": [
+        {
+          "name": "Red Eléctrica de España"
+        }
+      ],
+      "url": "https://www.ree.es/en/datos/apidata",
+      "notes": "Role: data. Official public generation-structure endpoint and complete geographic filter contract. Dates are inclusive source calendar dates; returned UTC offsets and last-update metadata remain. The connector bounds calendar-year chunks and supports daily/monthly/yearly full-period generation."
+    },
+    {
+      "type": "dataset",
+      "title": "Generation structure by technology",
+      "authors": [
+        {
+          "name": "Red Eléctrica de España"
+        }
+      ],
+      "url": "https://www.ree.es/es/datos/generacion/estructura-generacion",
+      "notes": "Role: data. System-level generation by technology. API values are MWh even when the website scales charts to GWh; the scale was cross-checked against the official 2024 report (https://www.sistemaelectrico-ree.es/es/2024/informe-del-sistema-electrico/generacion/generacion-de-energia-electrica/generacion-total-de-energia-electrica). Totals remain separate to prevent double counting. The gallery preserves a complete June 2024 daily response, with checksums and update metadata. This product is not plant telemetry or total estimated self-consumption. Provider terms apply."
+    },
+    {
+      "type": "web",
+      "title": "ENTSO-E Transparency Platform REST API parameters",
+      "authors": [
+        {
+          "name": "European Network of Transmission System Operators for Electricity"
+        }
+      ],
+      "url": "https://transparencyplatform.zendesk.com/hc/en-us/articles/15696716612372-Request-Parameters",
+      "notes": "Role: data. Official actual-generation requests A75/A16 by production type and A73/A16 by published unit, EIC domains, UTC bounds and security token. Current production endpoint is https://web-api.tp.entsoe.eu/api. Credentials are environment-only and redacted. Authenticated live retrieval was not performed; no-data HTTP 200 acknowledgements and other responses follow the official Query-Response guidance."
+    },
+    {
+      "type": "manual",
+      "title": "ENTSO-E Transparency Platform Detailed Data Descriptions, version 2 release 5",
+      "authors": [
+        {
+          "name": "European Network of Transmission System Operators for Electricity"
+        }
+      ],
+      "url": "https://www.entsoe.eu/fileadmin/user_upload/_library/resources/Transparency/02_MoP%20Ref02%20-%20DDD_V2R5.pdf",
+      "notes": "Role: data. Official generation definitions, interval-average net power and publication scope. A73 does not enumerate every small plant; aggregate actual generation can contain submitted estimates. Generation and consumption remain separate flows; unit EICs, production type, document revisions and native intervals are preserved."
+    },
+    {
+      "type": "web",
+      "title": "CurveType A01 versus CurveType A03",
+      "authors": [
+        {
+          "name": "European Network of Transmission System Operators for Electricity"
+        }
+      ],
+      "url": "https://transparencyplatform.zendesk.com/hc/en-us/articles/30262342482961-CurveType-A01-vs-CurveType-A03",
+      "notes": "Role: data. Official fixed- and variable-block XML semantics. A03 is expanded within each Period at the published resolution, including explicit missing blocks; A01 absent positions remain missing. No value is carried across Period boundaries. Official public XML examples validate schema compatibility but are not claimed to be operational measurements."
     },
     {
       "type": "data",

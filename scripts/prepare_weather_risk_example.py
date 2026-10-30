@@ -56,7 +56,7 @@ def main() -> None:
         action="store_true",
         help="Also export selected country shapefile companions",
     )
-    parser.add_argument("--output", type=Path, default=Path("examples"))
+    parser.add_argument("--output", type=Path, default=Path("examples/analysis"))
     parser.add_argument("--cache", type=Path, default=Path("artifacts/weather-risk/http-cache"))
     parser.add_argument("--use-environment-proxy", action="store_true")
     args = parser.parse_args()
@@ -118,8 +118,10 @@ def main() -> None:
             "Cells intersecting selected country polygons, including partial coastal cells."
         )
     else:
-        mask_path = root / "examples/kgpv_worldwide_inputs.csv"
-        mask_manifest = json.loads((root / "examples/kgpv_worldwide_provenance.json").read_text())
+        mask_path = root / "examples/analysis/kgpv_worldwide_inputs.csv"
+        mask_manifest = json.loads(
+            (root / "examples/analysis/kgpv_worldwide_provenance.json").read_text()
+        )
         if hashlib.sha256(mask_path.read_bytes()).hexdigest() != mask_manifest["fixture_sha256"]:
             raise ValueError("The reviewed land-mask fixture checksum has changed")
         grid = pd.read_csv(mask_path)[["lat", "lon", "is_land"]]

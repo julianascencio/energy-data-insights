@@ -40,7 +40,7 @@ downloaded it. Use the run's acquisition provenance for that determination.
 | LightGBM | Ke et al. and LightGBM documentation; project chronology and monotonic settings. |
 | Physical response | Stark-Parker BVLS through SciPy; repository-specific PV basis. |
 | Operational screening | IEC TS 63019 context; no conformity or certified availability claim. |
-| Generation and weather | Selected CEN and weather sources identified by run provenance. |
+| Generation and weather | CEN, AEMO, EIA, REE, ENTSO-E and weather; see run provenance. |
 
 Subhourly irradiance redistribution and geometry/lag search are project choices.
 The shape-constrained physical basis is not attributed to the solver authors.
@@ -74,7 +74,7 @@ Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment 
 
 **Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed. Soiling and snow indicators follow Eqs. 3.2–3.4 (pp. 49–51) and Tables 6.6–6.7 (pp. 135–136), with explicit equality/low-domain conventions and alternative example data documented in docs/soiling-snow.md.
 
-**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`, `examples/plot_kgpv_worldwide.py`, `docs/kgpv.md`, `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/plot_soiling_snow_risk.py`, `examples/plot_country_risk.py`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`, `examples/analysis/plot_kgpv_worldwide.py`, `docs/kgpv.md`, `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/analysis/plot_soiling_snow_risk.py`, `examples/analysis/plot_country_risk.py`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -258,7 +258,7 @@ Open-Meteo (n.d.). **Historical Weather API**. [Source](https://open-meteo.com/e
 
 **Role:** data. Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance. The snow example separately selects ERA5-Land physical ground snow_depth, credits Open-Meteo (CC BY 4.0), and retains the provider warning about snow-depth overestimation.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`, `examples/plot_country_risk.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`, `scripts/prepare_weather_risk_example.py`, `examples/analysis/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`, `examples/analysis/plot_country_risk.py`.
 
 ### open_meteo_historical_forecast
 
@@ -514,7 +514,7 @@ Ascencio-Vásquez, Julián; Brecl, Kristijan; Topič, Marko (2019). **Methodolog
 
 **Role:** implemented. Fig. A1 classification precedence and fixed irradiation thresholds; Table 4 merges 24 raw combinations into 12 zones. Verified against the open-access institutional full text. Uses updated GPCC/CRU releases and caller-selected baseline rather than reproducing the original 1990-2016 map. Exact 18 C is assigned tropical, irradiation upper edges are inclusive, and aridity reductions use a machine-roundoff tolerance; these numerical conventions are explicit. No PV yield simulation is claimed.
 
-**Used by:** `methods/src/energy_methods/kgpv.py`, `methods/src/energy_methods/climatology.py`, `methods/src/energy_methods/mapping.py`, `docs/kgpv.md`, `examples/plot_kgpv_worldwide.py`.
+**Used by:** `methods/src/energy_methods/kgpv.py`, `methods/src/energy_methods/climatology.py`, `methods/src/energy_methods/mapping.py`, `docs/kgpv.md`, `examples/analysis/plot_kgpv_worldwide.py`.
 
 ### kottek_2006_kg
 
@@ -656,9 +656,9 @@ Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (2019). **ERA5 
 
 NOAA Physical Sciences Laboratory (n.d.). **NCEP-NCAR Reanalysis 1**. [Source](https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html)
 
-**Role:** data. Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/. The soiling/snow example reuses the reviewed KGPV fixture's coarse land mask.
+**Role:** data. Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/analysis/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/. The soiling/snow example reuses the reviewed KGPV fixture's coarse land mask.
 
-**Used by:** `examples/plot_kgpv_worldwide.py`, `scripts/prepare_kgpv_worldwide.py`, `docs/kgpv.md`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`.
+**Used by:** `examples/analysis/plot_kgpv_worldwide.py`, `scripts/prepare_kgpv_worldwide.py`, `docs/kgpv.md`, `scripts/prepare_weather_risk_example.py`, `examples/analysis/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`.
 
 ### kalnay_1996_ncep_ncar
 
@@ -666,7 +666,7 @@ Kalnay, E.; Kanamitsu, M.; Kistler, R.; Collins, W.; Deaven, D.; Gandin, L.; Ire
 
 **Role:** background. Methodological reference requested by NOAA PSL for NCEP/NCAR Reanalysis 1. Bibliographic metadata verified against NOAA NCEI study 10873 and the publisher; the separately identified PSL files, not the paleo study subset, supply this example.
 
-**Used by:** `examples/plot_kgpv_worldwide.py`, `scripts/prepare_kgpv_worldwide.py`, `docs/kgpv.md`.
+**Used by:** `examples/analysis/plot_kgpv_worldwide.py`, `scripts/prepare_kgpv_worldwide.py`, `docs/kgpv.md`.
 
 ### cordero_2018_soiling
 
@@ -674,7 +674,7 @@ Cordero, R. R.; Damiani, A.; Laroze, D.; MacDonell, S.; Jorquera, J.; Sepúlveda
 
 **Role:** implemented. Underlying annual-average AOD/soiling correlation from Chilean sites; implemented as the piecewise thesis Eq. 3.2, with explicit boundary conventions. This is a daily-rate indicator, not a cleaning-aware annual loss model or a globally validated dust-event model.
 
-**Used by:** `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/plot_soiling_snow_risk.py`.
+**Used by:** `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/analysis/plot_soiling_snow_risk.py`.
 
 ### ryberg_freeman_2017_snow
 
@@ -682,7 +682,7 @@ Ryberg, David Severin; Freeman, Janine (2017). **Integration, Validation, and Ap
 
 **Role:** background. Underlying snow-model report cited by the thesis. The repository implements the thesis's logarithmic annual snow-depth fit for fixed latitude-tilt modules, not the full SAM snow-coverage model. Centimetre units come from thesis Figure 3.4; low-domain and exact-boundary extensions are explicit.
 
-**Used by:** `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/plot_soiling_snow_risk.py`.
+**Used by:** `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/analysis/plot_soiling_snow_risk.py`.
 
 ### nasa_power_aerosols
 
@@ -690,7 +690,7 @@ NASA POWER Project (n.d.). **NASA POWER: Cloud and Aerosol Sources**. [Source](h
 
 **Role:** data. Source documentation for total dimensionless AOD at 550 nm from CERES SYN1deg/MATCH. The example explicitly requests unadjusted AOD_55 and UTC dates, averages daily values annually, and credits NASA POWER/CERES. This replaces the thesis ECMWF aerosol source; modelled AOD is not observed surface deposition.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/nasa_power`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`, `examples/plot_country_risk.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/nasa_power`, `scripts/prepare_weather_risk_example.py`, `examples/analysis/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`, `examples/analysis/plot_country_risk.py`.
 
 ### munoz_sabater_2021_era5_land
 
@@ -698,7 +698,103 @@ Muñoz-Sabater, Joaquín; Dutra, Emanuel; Agustí-Panareda, Anna; Albergel, Clé
 
 **Role:** data. Underlying ERA5-Land reanalysis for the example snow inputs, explicitly selected through Open-Meteo. The wrapper returns physical ground snow depth in metres; native ERA5 water-equivalent sd is not substituted. Credit Copernicus/ERA5-Land and the wrapper. Source snow biases remain; this is an alternative dataset to the thesis ERA5 inputs.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo/snow.py`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`, `examples/plot_country_risk.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo/snow.py`, `scripts/prepare_weather_risk_example.py`, `examples/analysis/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`, `examples/analysis/plot_country_risk.py`.
+
+### aemo_dispatch_scada
+
+Australian Energy Market Operator (n.d.). **MMS Data Model: DISPATCH_UNIT_SCADA**. [Source](https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_123.htm)
+
+**Role:** data. Official schema for public DUID-level instantaneous SCADA MW at the start of each dispatch interval. SETTLEMENTDATE remains the published label; readings are not interval means or settlement energy. Scheduled, semi-scheduled and selected non-scheduled units are included where SCADA is available. Technology and generator/load class require a verified roster.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemo/client.py`, `examples/connectors/plot_generation_aemo.py`, `docs/generation-connectors.md`.
+
+### aemo_nemweb
+
+Australian Energy Market Operator (n.d.). **NEMWeb: public Dispatch SCADA archives**. [Source](https://nemweb.com.au/Reports/ARCHIVE/Dispatch_SCADA/)
+
+**Role:** data. Official daily archive listing. The connector discovers current or archived files and verifies bounded nested ZIP/CSV contents. The gallery retains 864 original rows from three DUIDs on 27 October 2026, with source URL, retrieval time, full-archive and subset hashes. Archive retention and publication coverage are finite.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemo/client.py`, `examples/connectors/plot_generation_aemo.py`, `docs/generation-connectors.md`.
+
+### aemo_market_time
+
+Australian Energy Market Operator (n.d.). **AEMO Markets Portal glossary: AEST and market time**. [Source](https://markets-portal-help.docs.public.aemo.com.au/Content/TOC_common-topics-DOnotChange/Glossary.htm)
+
+**Role:** data. Official market-time convention: fixed Australian Eastern Standard Time, UTC+10, without daylight-saving changes. The connector preserves the published dispatch label and converts that label to UTC.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/aemo/client.py`, `examples/connectors/plot_generation_aemo.py`, `docs/generation-connectors.md`.
+
+### eia_api_v2
+
+U.S. Energy Information Administration (n.d.). **EIA API Technical Documentation, API v2**. [Source](https://www.eia.gov/opendata/documentation.php)
+
+**Role:** data. Official API routes, data/facet parameters, registered-key access and maximum JSON page size. The connector uses stable sorting and bounded offset pagination for hourly fuel-type generation and monthly facility-fuel net generation. Credentialed routes were contract-tested without asserting authenticated live validation.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eia/client.py`, `examples/connectors/plot_generation_eia.py`, `docs/generation-connectors.md`.
+
+### eia_930
+
+U.S. Energy Information Administration (n.d.). **Hourly Electric Grid Monitor: data coverage, quality and time reporting**. [Source](https://www.eia.gov/electricity/930-content/about.html)
+
+**Role:** data. Official EIA-930 scope and hour-ending conventions. Hourly energy uses explicit UTC interval bounds; public balance-file hourly average MW is multiplied by one hour to obtain MWh. No imputed/adjusted values substitute for missing reported data. Regional aggregates overlap individual balancing authorities; distributed-generation coverage is incomplete.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eia/client.py`, `examples/connectors/plot_generation_eia.py`, `docs/generation-connectors.md`.
+
+### eia_930_source_codes
+
+U.S. Energy Information Administration (n.d.). **EIA-930 Reference Tables: energy source codes**. [Source](https://www.eia.gov/electricity/930-content/EIA930_Reference_Tables.xlsx)
+
+**Role:** data. Official code workbook used to verify fuel and storage/hybrid codes, including the expanded 2025 taxonomy. Unknown columns or unavailable requested fuels fail explicitly; aggregate/detail categories are not silently summed.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eia/client.py`, `examples/connectors/plot_generation_eia.py`, `docs/generation-connectors.md`.
+
+### eia_930_instructions
+
+U.S. Energy Information Administration (n.d.). **Form EIA-930 Instructions**. [Source](https://www.eia.gov/survey/form/eia_930/instructions.pdf)
+
+**Role:** data. Official reporting instructions for hourly integrated generation and the updated storage/hybrid energy-source categories. A schema/code reference, not independent evidence that all requested observations exist.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/eia/client.py`, `examples/connectors/plot_generation_eia.py`, `docs/generation-connectors.md`.
+
+### ree_redata_api
+
+Red Eléctrica de España (n.d.). **REData API: request parameters, geographic scopes and JSON responses**. [Source](https://www.ree.es/en/datos/apidata)
+
+**Role:** data. Official public generation-structure endpoint and complete geographic filter contract. Dates are inclusive source calendar dates; returned UTC offsets and last-update metadata remain. The connector bounds calendar-year chunks and supports daily/monthly/yearly full-period generation.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ree/client.py`, `examples/connectors/plot_generation_ree.py`, `docs/generation-connectors.md`.
+
+### ree_generation_structure
+
+Red Eléctrica de España (n.d.). **Generation structure by technology**. [Source](https://www.ree.es/es/datos/generacion/estructura-generacion)
+
+**Role:** data. System-level generation by technology. API values are MWh even when the website scales charts to GWh; the scale was cross-checked against the official 2024 report (https://www.sistemaelectrico-ree.es/es/2024/informe-del-sistema-electrico/generacion/generacion-de-energia-electrica/generacion-total-de-energia-electrica). Totals remain separate to prevent double counting. The gallery preserves a complete June 2024 daily response, with checksums and update metadata. This product is not plant telemetry or total estimated self-consumption. Provider terms apply.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ree/client.py`, `examples/connectors/plot_generation_ree.py`, `docs/generation-connectors.md`.
+
+### entsoe_transparency_api
+
+European Network of Transmission System Operators for Electricity (n.d.). **ENTSO-E Transparency Platform REST API parameters**. [Source](https://transparencyplatform.zendesk.com/hc/en-us/articles/15696716612372-Request-Parameters)
+
+**Role:** data. Official actual-generation requests A75/A16 by production type and A73/A16 by published unit, EIC domains, UTC bounds and security token. Current production endpoint is https://web-api.tp.entsoe.eu/api. Credentials are environment-only and redacted. Authenticated live retrieval was not performed; no-data HTTP 200 acknowledgements and other responses follow the official Query-Response guidance.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py`, `examples/connectors/plot_generation_entsoe.py`, `docs/generation-connectors.md`.
+
+### entsoe_generation_data_descriptions
+
+European Network of Transmission System Operators for Electricity (n.d.). **ENTSO-E Transparency Platform Detailed Data Descriptions, version 2 release 5**. [Source](https://www.entsoe.eu/fileadmin/user_upload/_library/resources/Transparency/02_MoP%20Ref02%20-%20DDD_V2R5.pdf)
+
+**Role:** data. Official generation definitions, interval-average net power and publication scope. A73 does not enumerate every small plant; aggregate actual generation can contain submitted estimates. Generation and consumption remain separate flows; unit EICs, production type, document revisions and native intervals are preserved.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py`, `examples/connectors/plot_generation_entsoe.py`, `docs/generation-connectors.md`.
+
+### entsoe_curve_types
+
+European Network of Transmission System Operators for Electricity (n.d.). **CurveType A01 versus CurveType A03**. [Source](https://transparencyplatform.zendesk.com/hc/en-us/articles/30262342482961-CurveType-A01-vs-CurveType-A03)
+
+**Role:** data. Official fixed- and variable-block XML semantics. A03 is expanded within each Period at the published resolution, including explicit missing blocks; A01 absent positions remain missing. No value is carried across Period boundaries. Official public XML examples validate schema compatibility but are not claimed to be operational measurements.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py`, `examples/connectors/plot_generation_entsoe.py`, `docs/generation-connectors.md`.
 
 ### natural_earth_countries
 
@@ -706,7 +802,7 @@ Natural Earth contributors (n.d.). **Natural Earth: Admin 0 - Countries**. [Sour
 
 **Role:** data. Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.
 
-**Used by:** `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `docs/country-mapping.md`, `examples/plot_country_risk.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `scripts/prepare_weather_risk_example.py`.
+**Used by:** `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `docs/country-mapping.md`, `examples/analysis/plot_country_risk.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `scripts/prepare_weather_risk_example.py`.
 
 ### shapely_documentation
 
@@ -714,7 +810,7 @@ Shapely contributors (n.d.). **Shapely documentation**. [Source](https://shapely
 
 **Role:** software. Polygon topology, point/cell intersection masks, transformations and exact country-cell footprint clipping. Operations are planar longitude/latitude; country areas require geodesic or equal-area calculations. Invalid geometries and unsplit antimeridian rings are rejected explicitly.
 
-**Used by:** `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `docs/country-mapping.md`, `examples/plot_country_risk.py`.
+**Used by:** `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `docs/country-mapping.md`, `examples/analysis/plot_country_risk.py`.
 
 ### pyproj_documentation
 

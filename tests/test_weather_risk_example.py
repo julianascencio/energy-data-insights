@@ -14,8 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_real_fixture_coverage_provenance_and_ocean_mask():
-    path = ROOT / "examples/weather_risk_inputs.csv"
-    manifest = json.loads((ROOT / "examples/weather_risk_provenance.json").read_text())
+    path = ROOT / "examples/analysis/weather_risk_inputs.csv"
+    manifest = json.loads((ROOT / "examples/analysis/weather_risk_provenance.json").read_text())
     assert hashlib.sha256(path.read_bytes()).hexdigest() == manifest["fixture_sha256"]
     assert manifest["region"] == "world" and manifest["year"] == 2023
     assert len(manifest["requests"]) == manifest["land_cells"] == 102

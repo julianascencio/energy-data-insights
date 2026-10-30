@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_country_fixture_boundary_source_and_independent_missingness():
-    examples = ROOT / "examples"
+    examples = ROOT / "examples/analysis"
     manifest = json.loads((examples / "country_risk_provenance.json").read_text())
     for name, key in (
         ("inputs.csv", "fixture_sha256"),
@@ -74,7 +74,7 @@ def test_country_plan_and_site_limit_precede_weather_requests(monkeypatch, tmp_p
         "AUT",
         "SVN",
         "--boundaries",
-        str(ROOT / "examples/country_risk_boundaries.geojson"),
+        str(ROOT / "examples/analysis/country_risk_boundaries.geojson"),
         "--resolution",
         "0.5",
         "--output",

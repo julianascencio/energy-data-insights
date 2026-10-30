@@ -3,7 +3,7 @@
 Choose country names/codes, make a finer regional grid and clip its mapped
 values to real country contours. The helpers work with the repository's
 soiling/snow, KGPV, degradation and other rectilinear latitude/longitude maps.
-The [offline country gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/plot_country_risk.html)
+The [offline country gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_country_risk.html)
 demonstrates Austria plus Slovenia, followed by Slovenia alone, using real
 2023 inputs sampled at 0.5°.
 
@@ -165,7 +165,7 @@ all requested and selected coordinates, full-year counts, checksums and dates.
 One of the 83 snow samples is unavailable and remains missing. Very large
 modelled snow-depth sums in some Alpine cells warrant source-quality review;
 the repository retains them visibly instead of silently clipping the inputs.
-Copy `examples/plot_country_risk.py` alongside the country output files and run
+Copy `examples/analysis/plot_country_risk.py` alongside the country output files and run
 it there for the Austria/Slovenia example. For other countries, change the
 selectors and displayed extents in the example, or use the generic functions
 above.

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 from pathlib import Path
 
 import httpx
@@ -170,3 +171,59 @@ def test_text_transport_failure_has_bounded_attempts() -> None:
         http.get_text(ENDPOINT)
     assert calls == 2 and sleeps == [1]
     assert "internal" not in str(error.value)
+
+
+def test_authenticated_xml_redacts_token_and_never_reuses_public_cache(
+    tmp_path: Path, caplog: pytest.LogCaptureFixture
+) -> None:
+    token = "test-only-entsoe-credential"
+    calls = 0
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal calls
+        calls += 1
+        secret = request.url.params.get("securityToken")
+        assert calls == 1 or secret == token
+        return httpx.Response(200, text=f"<document><echo>{secret or 'public'}</echo></document>")
+
+    with (
+        HTTPClient(
+            frozenset({HOST}),
+            transport=httpx.MockTransport(handler),
+            cache_directory=tmp_path,
+            config=HTTPConfig(minimum_interval_seconds=0),
+        ) as http,
+        caplog.at_level(logging.INFO, logger="httpx"),
+    ):
+        public = http.get_text(ENDPOINT)
+        private = http.get_text(ENDPOINT, secrets={"securityToken": token})
+        again = http.get_text(ENDPOINT, secrets={"securityToken": token})
+    assert calls == 3 and public.value != private.value
+    assert private.value == again.value == "<document><echo>[REDACTED]</echo></document>"
+    assert private.record.parameters == {} and not private.record.cache_hit
+    assert private.record.sha256 == hashlib.sha256(private.value.encode()).hexdigest()
+    assert token not in caplog.text
+    assert len(list(tmp_path.iterdir())) == 1
+    assert token not in next(tmp_path.iterdir()).read_text()
+
+
+def test_xml_secret_parameters_cannot_be_passed_as_public() -> None:
+    with HTTPClient(frozenset({HOST})) as http:
+        with pytest.raises(ValueError, match="credentials"):
+            http.get_text(ENDPOINT, {"securityToken": "secret"})
+        with pytest.raises(ValueError, match="nonempty"):
+            http.get_text(ENDPOINT, secrets={"securityToken": ""})
+
+
+def test_authenticated_text_error_sanitizes_logs(caplog: pytest.LogCaptureFixture) -> None:
+    token = "test-only-token-never-expose"
+    with (
+        HTTPClient(
+            frozenset({HOST}),
+            transport=httpx.MockTransport(lambda _: httpx.Response(401, text=token)),
+        ) as http,
+        caplog.at_level(logging.INFO, logger="httpx"),
+        pytest.raises(RetrievalError, match="HTTP 401") as failure,
+    ):
+        http.get_text(ENDPOINT, secrets={"securityToken": token})
+    assert token not in str(failure.value) and token not in caplog.text

@@ -20,13 +20,13 @@
       "docs/ccya.md",
       "analysis/examples/ccya/README.md",
       "analysis/src/energy_analysis/ccya_case/pipeline.py",
-      "examples/plot_kgpv_worldwide.py",
+      "examples/analysis/plot_kgpv_worldwide.py",
       "docs/kgpv.md",
       "methods/src/energy_methods/weather_risk.py",
       "methods/src/energy_methods/weather_risk_mapping.py",
       "docs/soiling-snow.md",
-      "examples/plot_soiling_snow_risk.py",
-      "examples/plot_country_risk.py"
+      "examples/analysis/plot_soiling_snow_risk.py",
+      "examples/analysis/plot_country_risk.py"
     ],
     "note": "Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed. Soiling and snow indicators follow Eqs. 3.2–3.4 (pp. 49–51) and Tables 6.6–6.7 (pp. 135–136), with explicit equality/low-domain conventions and alternative example data documented in docs/soiling-snow.md.",
     "verified_at": "2026-10-30",
@@ -664,9 +664,9 @@
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
       "docs/location-discovery.md",
       "scripts/prepare_weather_risk_example.py",
-      "examples/plot_soiling_snow_risk.py",
+      "examples/analysis/plot_soiling_snow_risk.py",
       "docs/soiling-snow.md",
-      "examples/plot_country_risk.py"
+      "examples/analysis/plot_country_risk.py"
     ],
     "note": "Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance. The snow example separately selects ERA5-Land physical ground snow_depth, credits Open-Meteo (CC BY 4.0), and retains the provider warning about snow-depth overestimation.",
     "verified_at": "2026-10-30"
@@ -1332,7 +1332,7 @@
       "methods/src/energy_methods/climatology.py",
       "methods/src/energy_methods/mapping.py",
       "docs/kgpv.md",
-      "examples/plot_kgpv_worldwide.py"
+      "examples/analysis/plot_kgpv_worldwide.py"
     ],
     "note": "Fig. A1 classification precedence and fixed irradiation thresholds; Table 4 merges 24 raw combinations into 12 zones. Verified against the open-access institutional full text. Uses updated GPCC/CRU releases and caller-selected baseline rather than reproducing the original 1990-2016 map. Exact 18 C is assigned tropical, irradiation upper edges are inclusive, and aridity reductions use a machine-roundoff tolerance; these numerical conventions are explicit. No PV yield simulation is claimed.",
     "verified_at": "2026-10-29",
@@ -1722,14 +1722,14 @@
     "kind": "dataset",
     "role": "data",
     "used_by": [
-      "examples/plot_kgpv_worldwide.py",
+      "examples/analysis/plot_kgpv_worldwide.py",
       "scripts/prepare_kgpv_worldwide.py",
       "docs/kgpv.md",
       "scripts/prepare_weather_risk_example.py",
-      "examples/plot_soiling_snow_risk.py",
+      "examples/analysis/plot_soiling_snow_risk.py",
       "docs/soiling-snow.md"
     ],
-    "note": "Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/. The soiling/snow example reuses the reviewed KGPV fixture's coarse land mask.",
+    "note": "Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/analysis/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/. The soiling/snow example reuses the reviewed KGPV fixture's coarse land mask.",
     "verified_at": "2026-10-29"
   },
   {
@@ -1765,7 +1765,7 @@
     "kind": "article",
     "role": "background",
     "used_by": [
-      "examples/plot_kgpv_worldwide.py",
+      "examples/analysis/plot_kgpv_worldwide.py",
       "scripts/prepare_kgpv_worldwide.py",
       "docs/kgpv.md"
     ],
@@ -1802,7 +1802,7 @@
       "methods/src/energy_methods/weather_risk.py",
       "methods/src/energy_methods/weather_risk_mapping.py",
       "docs/soiling-snow.md",
-      "examples/plot_soiling_snow_risk.py"
+      "examples/analysis/plot_soiling_snow_risk.py"
     ],
     "note": "Underlying annual-average AOD/soiling correlation from Chilean sites; implemented as the piecewise thesis Eq. 3.2, with explicit boundary conventions. This is a daily-rate indicator, not a cleaning-aware annual loss model or a globally validated dust-event model.",
     "verified_at": "2026-10-30",
@@ -1826,7 +1826,7 @@
       "methods/src/energy_methods/weather_risk.py",
       "methods/src/energy_methods/weather_risk_mapping.py",
       "docs/soiling-snow.md",
-      "examples/plot_soiling_snow_risk.py"
+      "examples/analysis/plot_soiling_snow_risk.py"
     ],
     "note": "Underlying snow-model report cited by the thesis. The repository implements the thesis's logarithmic annual snow-depth fit for fixed latitude-tilt modules, not the full SAM snow-coverage model. Centimetre units come from thesis Figure 3.4; low-domain and exact-boundary extensions are explicit.",
     "verified_at": "2026-10-30",
@@ -1847,9 +1847,9 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/nasa_power",
       "scripts/prepare_weather_risk_example.py",
-      "examples/plot_soiling_snow_risk.py",
+      "examples/analysis/plot_soiling_snow_risk.py",
       "docs/soiling-snow.md",
-      "examples/plot_country_risk.py"
+      "examples/analysis/plot_country_risk.py"
     ],
     "note": "Source documentation for total dimensionless AOD at 550 nm from CERES SYN1deg/MATCH. The example explicitly requests unadjusted AOD_55 and UTC dates, averages daily values annually, and credits NASA POWER/CERES. This replaces the thesis ECMWF aerosol source; modelled AOD is not observed surface deposition.",
     "verified_at": "2026-10-30"
@@ -1884,15 +1884,243 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/open_meteo/snow.py",
       "scripts/prepare_weather_risk_example.py",
-      "examples/plot_soiling_snow_risk.py",
+      "examples/analysis/plot_soiling_snow_risk.py",
       "docs/soiling-snow.md",
-      "examples/plot_country_risk.py"
+      "examples/analysis/plot_country_risk.py"
     ],
     "note": "Underlying ERA5-Land reanalysis for the example snow inputs, explicitly selected through Open-Meteo. The wrapper returns physical ground snow depth in metres; native ERA5 water-equivalent sd is not substituted. Credit Copernicus/ERA5-Land and the wrapper. Source snow biases remain; this is an alternative dataset to the thesis ERA5 inputs.",
     "verified_at": "2026-10-30",
     "publication": "Earth System Science Data",
     "volume": "13",
     "pages": "4349-4383"
+  },
+  {
+    "id": "aemo_dispatch_scada",
+    "title": "MMS Data Model: DISPATCH_UNIT_SCADA",
+    "authors": [
+      "Australian Energy Market Operator"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_123.htm",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/aemo/client.py",
+      "examples/connectors/plot_generation_aemo.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official schema for public DUID-level instantaneous SCADA MW at the start of each dispatch interval. SETTLEMENTDATE remains the published label; readings are not interval means or settlement energy. Scheduled, semi-scheduled and selected non-scheduled units are included where SCADA is available. Technology and generator/load class require a verified roster.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "aemo_nemweb",
+    "title": "NEMWeb: public Dispatch SCADA archives",
+    "authors": [
+      "Australian Energy Market Operator"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://nemweb.com.au/Reports/ARCHIVE/Dispatch_SCADA/",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/aemo/client.py",
+      "examples/connectors/plot_generation_aemo.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official daily archive listing. The connector discovers current or archived files and verifies bounded nested ZIP/CSV contents. The gallery retains 864 original rows from three DUIDs on 27 October 2026, with source URL, retrieval time, full-archive and subset hashes. Archive retention and publication coverage are finite.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "aemo_market_time",
+    "title": "AEMO Markets Portal glossary: AEST and market time",
+    "authors": [
+      "Australian Energy Market Operator"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://markets-portal-help.docs.public.aemo.com.au/Content/TOC_common-topics-DOnotChange/Glossary.htm",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/aemo/client.py",
+      "examples/connectors/plot_generation_aemo.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official market-time convention: fixed Australian Eastern Standard Time, UTC+10, without daylight-saving changes. The connector preserves the published dispatch label and converts that label to UTC.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "eia_api_v2",
+    "title": "EIA API Technical Documentation, API v2",
+    "authors": [
+      "U.S. Energy Information Administration"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.eia.gov/opendata/documentation.php",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/eia/client.py",
+      "examples/connectors/plot_generation_eia.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official API routes, data/facet parameters, registered-key access and maximum JSON page size. The connector uses stable sorting and bounded offset pagination for hourly fuel-type generation and monthly facility-fuel net generation. Credentialed routes were contract-tested without asserting authenticated live validation.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "eia_930",
+    "title": "Hourly Electric Grid Monitor: data coverage, quality and time reporting",
+    "authors": [
+      "U.S. Energy Information Administration"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.eia.gov/electricity/930-content/about.html",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/eia/client.py",
+      "examples/connectors/plot_generation_eia.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official EIA-930 scope and hour-ending conventions. Hourly energy uses explicit UTC interval bounds; public balance-file hourly average MW is multiplied by one hour to obtain MWh. No imputed/adjusted values substitute for missing reported data. Regional aggregates overlap individual balancing authorities; distributed-generation coverage is incomplete.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "eia_930_source_codes",
+    "title": "EIA-930 Reference Tables: energy source codes",
+    "authors": [
+      "U.S. Energy Information Administration"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.eia.gov/electricity/930-content/EIA930_Reference_Tables.xlsx",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/eia/client.py",
+      "examples/connectors/plot_generation_eia.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official code workbook used to verify fuel and storage/hybrid codes, including the expanded 2025 taxonomy. Unknown columns or unavailable requested fuels fail explicitly; aggregate/detail categories are not silently summed.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "eia_930_instructions",
+    "title": "Form EIA-930 Instructions",
+    "authors": [
+      "U.S. Energy Information Administration"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.eia.gov/survey/form/eia_930/instructions.pdf",
+    "kind": "manual",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/eia/client.py",
+      "examples/connectors/plot_generation_eia.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official reporting instructions for hourly integrated generation and the updated storage/hybrid energy-source categories. A schema/code reference, not independent evidence that all requested observations exist.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "ree_redata_api",
+    "title": "REData API: request parameters, geographic scopes and JSON responses",
+    "authors": [
+      "Red Eléctrica de España"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.ree.es/en/datos/apidata",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/ree/client.py",
+      "examples/connectors/plot_generation_ree.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official public generation-structure endpoint and complete geographic filter contract. Dates are inclusive source calendar dates; returned UTC offsets and last-update metadata remain. The connector bounds calendar-year chunks and supports daily/monthly/yearly full-period generation.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "ree_generation_structure",
+    "title": "Generation structure by technology",
+    "authors": [
+      "Red Eléctrica de España"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.ree.es/es/datos/generacion/estructura-generacion",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/ree/client.py",
+      "examples/connectors/plot_generation_ree.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "System-level generation by technology. API values are MWh even when the website scales charts to GWh; the scale was cross-checked against the official 2024 report (https://www.sistemaelectrico-ree.es/es/2024/informe-del-sistema-electrico/generacion/generacion-de-energia-electrica/generacion-total-de-energia-electrica). Totals remain separate to prevent double counting. The gallery preserves a complete June 2024 daily response, with checksums and update metadata. This product is not plant telemetry or total estimated self-consumption. Provider terms apply.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "entsoe_transparency_api",
+    "title": "ENTSO-E Transparency Platform REST API parameters",
+    "authors": [
+      "European Network of Transmission System Operators for Electricity"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://transparencyplatform.zendesk.com/hc/en-us/articles/15696716612372-Request-Parameters",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py",
+      "examples/connectors/plot_generation_entsoe.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official actual-generation requests A75/A16 by production type and A73/A16 by published unit, EIC domains, UTC bounds and security token. Current production endpoint is https://web-api.tp.entsoe.eu/api. Credentials are environment-only and redacted. Authenticated live retrieval was not performed; no-data HTTP 200 acknowledgements and other responses follow the official Query-Response guidance.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "entsoe_generation_data_descriptions",
+    "title": "ENTSO-E Transparency Platform Detailed Data Descriptions, version 2 release 5",
+    "authors": [
+      "European Network of Transmission System Operators for Electricity"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.entsoe.eu/fileadmin/user_upload/_library/resources/Transparency/02_MoP%20Ref02%20-%20DDD_V2R5.pdf",
+    "kind": "manual",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py",
+      "examples/connectors/plot_generation_entsoe.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official generation definitions, interval-average net power and publication scope. A73 does not enumerate every small plant; aggregate actual generation can contain submitted estimates. Generation and consumption remain separate flows; unit EICs, production type, document revisions and native intervals are preserved.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "entsoe_curve_types",
+    "title": "CurveType A01 versus CurveType A03",
+    "authors": [
+      "European Network of Transmission System Operators for Electricity"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://transparencyplatform.zendesk.com/hc/en-us/articles/30262342482961-CurveType-A01-vs-CurveType-A03",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py",
+      "examples/connectors/plot_generation_entsoe.py",
+      "docs/generation-connectors.md"
+    ],
+    "note": "Official fixed- and variable-block XML semantics. A03 is expanded within each Period at the published resolution, including explicit missing blocks; A01 absent positions remain missing. No value is carried across Period boundaries. Official public XML examples validate schema compatibility but are not claimed to be operational measurements.",
+    "verified_at": "2026-10-30"
   },
   {
     "id": "natural_earth_countries",
@@ -1909,7 +2137,7 @@
       "methods/src/energy_methods/country_boundaries.py",
       "methods/src/energy_methods/country_mapping.py",
       "docs/country-mapping.md",
-      "examples/plot_country_risk.py",
+      "examples/analysis/plot_country_risk.py",
       "data-retrieval/src/energy_data_retrieval/sources/natural_earth",
       "scripts/prepare_weather_risk_example.py"
     ],
@@ -1931,7 +2159,7 @@
       "methods/src/energy_methods/country_boundaries.py",
       "methods/src/energy_methods/country_mapping.py",
       "docs/country-mapping.md",
-      "examples/plot_country_risk.py"
+      "examples/analysis/plot_country_risk.py"
     ],
     "note": "Polygon topology, point/cell intersection masks, transformations and exact country-cell footprint clipping. Operations are planar longitude/latitude; country areas require geodesic or equal-area calculations. Invalid geometries and unsplit antimeridian rings are rejected explicitly.",
     "verified_at": "2026-10-30"

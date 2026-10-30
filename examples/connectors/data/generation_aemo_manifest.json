@@ -1,0 +1,23 @@
+{
+  "source": "AEMO NEMWeb DISPATCH_UNIT_SCADA",
+  "source_url": "https://nemweb.com.au/Reports/ARCHIVE/Dispatch_SCADA/PUBLIC_DISPATCHSCADA_20261027.zip",
+  "retrieved_at_utc": "2026-10-30T06:48:25.179585+00:00",
+  "source_sha256": "be070a50b17e08bec192e10a31e7c0b2a32d63d67c7e0eea2ec982af1089a5a4",
+  "source_size_bytes": 1202369,
+  "source_archive_interval_members": 288,
+  "nem_day": "2026-10-27",
+  "duids": [
+    "BROKENH1",
+    "COLEASF1",
+    "NYNGAN1"
+  ],
+  "subset_rows": 864,
+  "subset_sha256": "36e2b08ce78d28001082f985513e08019ec8a9ed41a309a78dba62d451e2b5e8",
+  "subset_size_bytes": 71615,
+  "subset_transformation": "Read interval ZIPs in ascending filename order; keep the first I,DISPATCH,UNIT_SCADA header and every original D,DISPATCH,UNIT_SCADA line with a selected DUID. Preserve original line bytes, numeric strings and LASTCHANGED. No C report envelopes are included because this file is a multi-report subset. No measurements are generated or altered.",
+  "timestamp_convention": "SETTLEMENTDATE is the native dispatch label in fixed AEST (UTC+10), with no daylight saving. Labels range from 00:05 on the selected NEM day through 00:00 on the next day.",
+  "measurement_convention": "Instantaneous SCADA MW at the start of the dispatch interval, not average power or settlement energy.",
+  "documentation_url": "https://visualisations.aemo.com.au/aemo/nemweb/MMSDataModelReport/Electricity/MMS%20Data%20Model%20Report_files/MMS_123.htm",
+  "time_reference_url": "https://markets-portal-help.docs.public.aemo.com.au/Content/TOC_common-topics-DOnotChange/Glossary.htm",
+  "attribution": "Source: Australian Energy Market Operator (AEMO), NEMWeb. This repository does not alter the source data rights; consult AEMO terms before redistributing larger datasets."
+}

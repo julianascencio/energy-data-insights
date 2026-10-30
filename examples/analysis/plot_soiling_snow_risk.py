@@ -15,7 +15,7 @@ The example runs offline, without credentials or mapping downloads:
 .. code-block:: bash
 
    uv sync --locked --all-packages --group docs
-   cd examples
+   cd examples/analysis
    uv run python plot_soiling_snow_risk.py
 
 See :doc:`the scientific guide </_generated/guides/soiling-snow>` for equations,

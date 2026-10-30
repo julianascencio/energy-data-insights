@@ -1,0 +1,21 @@
+{
+  "source": "U.S. Energy Information Administration (EIA), Form EIA-930",
+  "dataset": "Six-month balance CSV, reported (not imputed or adjusted) generation",
+  "source_url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2024_Jan_Jun.csv",
+  "documentation_url": "https://www.eia.gov/electricity/930-content/about.html",
+  "retrieved_at_utc": "2026-10-30T06:49:58.362106+00:00",
+  "source_sha256": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+  "source_size_bytes": 41742812,
+  "sample_file": "generation_eia_ciso_2024.csv",
+  "sample_sha256": "933ca45cfe77a6ec99d655db2b06150987681d0062c9c725a53e12b120de06a8",
+  "sample_size_bytes": 35154,
+  "sample_rows": 168,
+  "selection": {
+    "Balancing Authority": "CISO",
+    "Data Date": "2024-06-20 through 2024-06-26 inclusive (BA local operating dates)"
+  },
+  "transformation": "Header and selected CSV lines retained byte-for-byte, in original order; all original columns retained. No values generated or interpolated.",
+  "timestamp_convention": "Native UTC Time at End of Hour. Normalize to aware UTC interval end; interval_start_utc is one hour earlier.",
+  "unit_note": "Native six-month headers label hourly average power as MW. These are hourly integrated/time-weighted values per EIA documentation; energy for one hour is value multiplied by 1 hour, numerically equal MWh. API fuel-type-data natively reports megawatthours.",
+  "reuse_url": "https://www.eia.gov/about/copyrights_reuse.php"
+}

@@ -23,6 +23,11 @@ from energy_data_retrieval.climate_cli import (
     run_climate_command,
 )
 from energy_data_retrieval.discovery_cli import add_discovery_parser, run_discovery_command
+from energy_data_retrieval.generation_cli import (
+    GENERATION_COMMANDS,
+    add_generation_parsers,
+    run_generation_command,
+)
 from energy_data_retrieval.sources.bsrn import BSRN_HOSTS, BSRNClient
 from energy_data_retrieval.sources.cen import CENClient, aggregate_units, normalize_registry
 from energy_data_retrieval.sources.cen.client import CEN_HOSTS, REGISTRY_ENDPOINT
@@ -144,6 +149,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     add_discovery_parser(commands)
+    add_generation_parsers(commands)
     add_station_parsers(commands)
     add_climate_parsers(commands)
     add_cds_parsers(commands)
@@ -589,6 +595,13 @@ def _native(args: argparse.Namespace) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command in GENERATION_COMMANDS:
+        try:
+            result = run_generation_command(args)
+        except (ValueError, RetrievalError, OSError) as error:
+            parser.exit(2, f"Generation retrieval failed: {error}\n")
+        print(json.dumps(result, sort_keys=True, allow_nan=False))
+        return 0
     if args.command in CDS_COMMANDS:
         try:
             result = run_cds_command(args)

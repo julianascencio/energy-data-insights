@@ -18,6 +18,7 @@ Data access and scientific methods
    :maxdepth: 1
 
    _generated/guides/location-discovery
+   _generated/guides/generation-connectors
    _generated/guides/cds
    _generated/guides/ccya
    _generated/guides/kgpv
