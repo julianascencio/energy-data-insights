@@ -1,5 +1,14 @@
 # Applied analyses
 
+## Canary Islands KGPV
+
+The [native-grid Canary Islands example](../docs/kgpv-canary.md) combines
+CHELSACanaryClim monthly climate and Global Solar Atlas annual GHI. It includes
+seven downloadable GeoTIFFs, eight-island panels and Tenerife close-ups.
+Climate pixels are about 5 m, while solar support remains about 250 m; the
+example explicitly records differing source periods and accuracy limits.
+Run `uv run python scripts/prepare_kgpv_canary.py --plan-only` before acquisition.
+
 ## Degradation mapping
 
 The [degradation mapping study](src/energy_analysis/degradation/README.md) retrieves

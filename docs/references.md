@@ -74,7 +74,7 @@ Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment 
 
 **Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed. Soiling and snow indicators follow Eqs. 3.2–3.4 (pp. 49–51) and Tables 6.6–6.7 (pp. 135–136), with explicit equality/low-domain conventions and alternative example data documented in docs/soiling-snow.md.
 
-**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`, `examples/analysis/plot_kgpv_worldwide.py`, `docs/kgpv.md`, `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/analysis/plot_soiling_snow_risk.py`, `examples/analysis/plot_country_risk.py`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`, `examples/analysis/plot_kgpv_worldwide.py`, `docs/kgpv.md`, `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/analysis/plot_soiling_snow_risk.py`, `examples/analysis/plot_country_risk.py`, `analysis/src/energy_analysis/canary_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_canary.py`, `docs/kgpv-canary.md`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -514,7 +514,7 @@ Ascencio-Vásquez, Julián; Brecl, Kristijan; Topič, Marko (2019). **Methodolog
 
 **Role:** implemented. Fig. A1 classification precedence and fixed irradiation thresholds; Table 4 merges 24 raw combinations into 12 zones. Verified against the open-access institutional full text. Uses updated GPCC/CRU releases and caller-selected baseline rather than reproducing the original 1990-2016 map. Exact 18 C is assigned tropical, irradiation upper edges are inclusive, and aridity reductions use a machine-roundoff tolerance; these numerical conventions are explicit. No PV yield simulation is claimed.
 
-**Used by:** `methods/src/energy_methods/kgpv.py`, `methods/src/energy_methods/climatology.py`, `methods/src/energy_methods/mapping.py`, `docs/kgpv.md`, `examples/analysis/plot_kgpv_worldwide.py`.
+**Used by:** `methods/src/energy_methods/kgpv.py`, `methods/src/energy_methods/climatology.py`, `methods/src/energy_methods/mapping.py`, `docs/kgpv.md`, `examples/analysis/plot_kgpv_worldwide.py`, `analysis/src/energy_analysis/canary_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_canary.py`, `docs/kgpv-canary.md`.
 
 ### kottek_2006_kg
 
@@ -1115,3 +1115,35 @@ Desert Knowledge Australia (n.d.). **DKASC data terms and conditions**. [Source]
 **Role:** data. Provider terms distinguish limited unaltered excerpts up to 5000 data cells with attribution/disclaimer from larger redistribution requiring permission. No DKASC observations are bundled; the gallery is an import workflow until a real export is supplied.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py`, `data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md`, `examples/connectors/plot_generation_dkasc.py`, `docs/worldwide-generation.md`.
+
+### canaryclim_2025_data
+
+Karger, D. N.; Collart, F.; Vanderpoorten, A.; Martin-Esquivel, J. L.; Naranjo-Cigala, A.; Mirolo, S.; Patiño, J. (2025). **CHELSACanaryClim-climatologies**. [DOI: 10.16904/envidat.692](https://doi.org/10.16904/envidat.692)
+
+**Role:** data. CC0 v1.0 COG release, monthly 1979–2013 temperature and precipitation. The acquired files have approximately 5 m pixel spacing; this is not validated 5 m climate accuracy. Encoded nodata is masked before scale/offset conversion. Source checksums, grid, dates and original license are retained in the Canary Islands example provenance.
+
+**Used by:** `analysis/src/energy_analysis/canary_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_canary.py`, `docs/kgpv-canary.md`, `data-retrieval/src/energy_data_retrieval/sources/canary_clim`.
+
+### patino_2023_canaryclim
+
+Patiño, J.; Collart, F.; Vanderpoorten, A.; Martin-Esquivel, J. L.; Naranjo-Cigala, A.; Mirolo, S.; Karger, D. N. (2023). **Spatial resolution impacts projected plant responses to climate change on topographically complex islands**. Diversity and Distributions, 29(10), 1245-1262. [DOI: 10.1111/ddi.13757](https://doi.org/10.1111/ddi.13757)
+
+**Role:** data. Scientific description and 100 m model-resolution benchmark for CanaryClim. Citation does not validate the current approximately 5 m COG spacing or this derived KGPV application at five metres.
+
+**Used by:** `analysis/src/energy_analysis/canary_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_canary.py`, `docs/kgpv-canary.md`, `data-retrieval/src/energy_data_retrieval/sources/canary_clim`.
+
+### global_solar_atlas_2019
+
+World Bank Group; ESMAP; Solargis (2019). **Global Solar Atlas 2.0: Spain solar resource GIS data**. [Source](https://globalsolaratlas.info/download/spain)
+
+**Role:** data. Pinned 2019 Spain archive, annual GHI at 9 arcseconds (nominally 250 m), 1994–2018 according to its XML metadata. Values are already annual kWh/m². Nearest-cell sampling adds no finer solar information. Developed and operated by Solargis s.r.o. on behalf of the World Bank Group using Solargis data with ESMAP funding. CC BY 4.0 with additional mediation/arbitration terms, preserved in the example manifest. Regional extraction and KGPV derivation are modifications; no provider endorsement is implied.
+
+**Used by:** `analysis/src/energy_analysis/canary_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_canary.py`, `docs/kgpv-canary.md`, `data-retrieval/src/energy_data_retrieval/sources/global_solar_atlas`.
+
+### rasterio_documentation
+
+Rasterio contributors (n.d.). **Rasterio documentation: windowed reading, writing and reprojection**. [Source](https://rasterio.readthedocs.io/en/stable/)
+
+**Role:** software. Bounded raster-window processing, nearest-neighbour GHI sampling and categorical overviews. Native climate pixel centres and missing values remain explicit; display reduction does not change downloadable native rasters.
+
+**Used by:** `analysis/src/energy_analysis/canary_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_canary.py`, `docs/kgpv-canary.md`, `analysis/src/energy_analysis/canary_kgpv/plotting.py`.

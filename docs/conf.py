@@ -73,5 +73,8 @@ sphinx_gallery_conf = {
     "within_subsection_order": "FileNameSortKey",
     "reference_url": {},
     "capture_repr": (),
-    "copyfile_regex": r"(?:kgpv_worldwide|weather_risk|country_risk)_.*\.(csv|json|geojson)$",
+    "copyfile_regex": (
+        r"(?:kgpv_worldwide|kgpv_canary|weather_risk|country_risk)_.*"
+        r"\.(csv|json|geojson|tif)$"
+    ),
 }

@@ -1,0 +1,609 @@
+{
+  "description": "Exploratory Canary Islands KGPV on native CanaryClim climate pixels",
+  "generated_at_utc": "2026-10-30T08:30:31.744349+00:00",
+  "climate_source": "CHELSACanaryClim-climatologies v1.0 (2025 COG release)",
+  "climate_baseline": [
+    1979,
+    2013
+  ],
+  "solar_source": "Global Solar Atlas 2.0 (2019 Spain archive)",
+  "solar_baseline": [
+    1994,
+    2018
+  ],
+  "baseline_policy": "Mixed periods; no claim of a common climatological baseline",
+  "native_climate_grid": {
+    "shape": [
+      38166,
+      103228
+    ],
+    "transform": [
+      4.684877106756975e-05,
+      0.0,
+      -18.1662705314303,
+      0.0,
+      -4.684877106756975e-05,
+      29.420634002022727,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "crs": "EPSG:4326",
+    "scale": 0.1,
+    "offset": 0.0,
+    "encoded_nodata": 65535.0
+  },
+  "native_solar_grid": {
+    "shape": [
+      6800,
+      9600
+    ],
+    "transform": [
+      0.0025,
+      0.0,
+      -19.0,
+      0.0,
+      -0.0025,
+      44.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "crs": "EPSG:4326",
+    "encoded_nodata": 1.1754943508222875e-38,
+    "sha256": "d0a2b827e1164c52b3a0e9e6036d8895586c0b6bf0b6680d009584460801d1eb",
+    "metadata_sha256": "ee303447487385408c5fa41c54d8f7f27b1aa5a1c908e6ff76aa105405fb7795"
+  },
+  "resolution_note": "Native climate COG spacing is 0.00004684877106756975 degrees (about 5.2 m north-south and 4.6 m east-west here). This is pixel spacing, not validated 5 m climate accuracy. The published model comparison used 100 m. Solar information remains 0.0025 degrees (9 arcseconds, nominally 250 m).",
+  "preprocessing": [
+    "Validate all 24 monthly COGs: CRS, grid, month, variable, unit, version and scale.",
+    "Mask encoded nodata, apply each band's scale/offset; convert K to Celsius.",
+    "Precipitation kg m-2 month-1 equals mm per climatological month.",
+    "GSA GHI is already annual irradiation in kWh m-2; do not multiply by 365 again.",
+    "Nearest GHI source cell at each native climate pixel; no coastal extrapolation.",
+    "Apply existing classify_kgpv with the fixed 2019 thresholds, in bounded tiles.",
+    "Retain January temperature's valid footprint in band 2; missing inputs give class 0.",
+    "The seven disjoint windows include La Graciosa/Chinijo and Lobos.",
+    "Nearest-class overviews are for display only; band 1 retains native results."
+  ],
+  "units": {
+    "temperature": "degC",
+    "precipitation": "mm month-1",
+    "annual_ghi": "kWh m-2"
+  },
+  "islands": {
+    "el_hierro": {
+      "name": "El Hierro",
+      "file": "kgpv_canary_el_hierro.tif",
+      "shape": [
+        5281,
+        6324
+      ],
+      "transform": [
+        4.684877106756975e-05,
+        0.0,
+        -18.1662705314303,
+        0.0,
+        -4.684877106756975e-05,
+        27.880012165465697,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        -18.18,
+        27.62,
+        -17.87,
+        27.88
+      ],
+      "source_land_pixels": 11206054,
+      "classified_pixels": 11206054,
+      "missing_land_pixels": 0,
+      "class_counts": {
+        "AH": 0,
+        "AK": 0,
+        "BH": 1068633,
+        "BK": 80936,
+        "CH": 4671965,
+        "CK": 0,
+        "DL": 0,
+        "DM": 53167,
+        "DH": 5331353,
+        "EL": 0,
+        "EM": 0,
+        "FL": 0
+      },
+      "sha256": "23e7800d4f68e361f507859490a1371568f72d7a8d39c5e9480a22e2243564d9",
+      "size_bytes": 143934
+    },
+    "la_palma": {
+      "name": "La Palma",
+      "file": "kgpv_canary_la_palma.tif",
+      "shape": [
+        9607,
+        5551
+      ],
+      "transform": [
+        4.684877106756975e-05,
+        0.0,
+        -17.96004224119086,
+        0.0,
+        -4.684877106756975e-05,
+        28.880046032674038,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        -17.96,
+        28.43,
+        -17.7,
+        28.88
+      ],
+      "source_land_pixels": 27975379,
+      "classified_pixels": 27975379,
+      "missing_land_pixels": 0,
+      "class_counts": {
+        "AH": 570911,
+        "AK": 0,
+        "BH": 64478,
+        "BK": 0,
+        "CH": 3166728,
+        "CK": 0,
+        "DL": 0,
+        "DM": 1042800,
+        "DH": 23130462,
+        "EL": 0,
+        "EM": 0,
+        "FL": 0
+      },
+      "sha256": "41a14cf65ffa49925cbe2369b1599666e0c3ea3c1db6d1018bdc7cca7dfc6bbf",
+      "size_bytes": 253247
+    },
+    "la_gomera": {
+      "name": "La Gomera",
+      "file": "kgpv_canary_la_gomera.tif",
+      "shape": [
+        5338,
+        6405
+      ],
+      "transform": [
+        4.684877106756975e-05,
+        0.0,
+        -17.370028818365885,
+        0.0,
+        -4.684877106756975e-05,
+        28.240044971119968,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        -17.37,
+        27.99,
+        -17.07,
+        28.24
+      ],
+      "source_land_pixels": 15417832,
+      "classified_pixels": 15417832,
+      "missing_land_pixels": 0,
+      "class_counts": {
+        "AH": 0,
+        "AK": 0,
+        "BH": 1657192,
+        "BK": 213,
+        "CH": 7719245,
+        "CK": 0,
+        "DL": 0,
+        "DM": 373767,
+        "DH": 5667415,
+        "EL": 0,
+        "EM": 0,
+        "FL": 0
+      },
+      "sha256": "f812d9479a5e9f0881a09f6b75f31c1c31657102264c780ac21334caace25a7b",
+      "size_bytes": 201408
+    },
+    "tenerife": {
+      "name": "Tenerife",
+      "file": "kgpv_canary_tenerife.tif",
+      "shape": [
+        14089,
+        17931
+      ],
+      "transform": [
+        4.684877106756975e-05,
+        0.0,
+        -16.94000394873666,
+        0.0,
+        -4.684877106756975e-05,
+        28.65001856673227,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        -16.94,
+        27.99,
+        -16.1,
+        28.65
+      ],
+      "source_land_pixels": 85378407,
+      "classified_pixels": 82288108,
+      "missing_land_pixels": 3090299,
+      "class_counts": {
+        "AH": 125869,
+        "AK": 0,
+        "BH": 13367566,
+        "BK": 0,
+        "CH": 26550728,
+        "CK": 994,
+        "DL": 0,
+        "DM": 1164137,
+        "DH": 40684645,
+        "EL": 0,
+        "EM": 0,
+        "FL": 394169
+      },
+      "sha256": "e567ceff8fb95632fa4d686dd822ff251cf3a6a41283dc1e3b69a21422eb9758",
+      "size_bytes": 702421
+    },
+    "gran_canaria": {
+      "name": "Gran Canaria",
+      "file": "kgpv_canary_gran_canaria.tif",
+      "shape": [
+        10033,
+        10887
+      ],
+      "transform": [
+        4.684877106756975e-05,
+        0.0,
+        -15.850020441078584,
+        0.0,
+        -4.684877106756975e-05,
+        28.190010483619805,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        -15.85,
+        27.72,
+        -15.34,
+        28.19
+      ],
+      "source_land_pixels": 65257789,
+      "classified_pixels": 62517835,
+      "missing_land_pixels": 2739954,
+      "class_counts": {
+        "AH": 211458,
+        "AK": 200929,
+        "BH": 21612492,
+        "BK": 2491868,
+        "CH": 18429863,
+        "CK": 1421016,
+        "DL": 0,
+        "DM": 36566,
+        "DH": 18113643,
+        "EL": 0,
+        "EM": 0,
+        "FL": 0
+      },
+      "sha256": "b16d8158b583df77910ca821abdbf39f507123dd15cf0dcc9014a56a987e6b3f",
+      "size_bytes": 608737
+    },
+    "fuerteventura": {
+      "name": "Fuerteventura and Lobos",
+      "file": "kgpv_canary_fuerteventura.tif",
+      "shape": [
+        16437,
+        16010
+      ],
+      "transform": [
+        4.684877106756975e-05,
+        0.0,
+        -14.540035104487199,
+        0.0,
+        -4.684877106756975e-05,
+        28.80002833169063,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        -14.54,
+        28.03,
+        -13.79,
+        28.8
+      ],
+      "source_land_pixels": 69616552,
+      "classified_pixels": 69616552,
+      "missing_land_pixels": 0,
+      "class_counts": {
+        "AH": 0,
+        "AK": 0,
+        "BH": 66773666,
+        "BK": 108445,
+        "CH": 2734441,
+        "CK": 0,
+        "DL": 0,
+        "DM": 0,
+        "DH": 0,
+        "EL": 0,
+        "EM": 0,
+        "FL": 0
+      },
+      "sha256": "5465bd204dd83f4c108b6146abf88a722aecbab1350a139bf33ccad998639a89",
+      "size_bytes": 452792
+    },
+    "lanzarote": {
+      "name": "Lanzarote and Chinijo",
+      "file": "kgpv_canary_lanzarote.tif",
+      "shape": [
+        12821,
+        12164
+      ],
+      "transform": [
+        4.684877106756975e-05,
+        0.0,
+        -13.900034042933129,
+        0.0,
+        -4.684877106756975e-05,
+        29.420634002022727,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "bounds": [
+        -13.9,
+        28.82,
+        -13.32,
+        29.43
+      ],
+      "source_land_pixels": 35715536,
+      "classified_pixels": 35712049,
+      "missing_land_pixels": 3487,
+      "class_counts": {
+        "AH": 0,
+        "AK": 0,
+        "BH": 34898358,
+        "BK": 0,
+        "CH": 813691,
+        "CK": 0,
+        "DL": 0,
+        "DM": 0,
+        "DH": 0,
+        "EL": 0,
+        "EM": 0,
+        "FL": 0
+      },
+      "sha256": "aa2d98a53bbc4d8b6bf396f687a79e056c2af7a41b3fa3fb34393791f80b25de",
+      "size_bytes": 291016
+    }
+  },
+  "sample_file": "kgpv_canary_samples.csv",
+  "sample_sha256": "488061d8e513bdc585ad7ad0d5fde04ad6fb2ac2052e48adbb0014106b01273e",
+  "sources": [
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_01_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:12:02.295989+00:00",
+      "sha256": "afa07f8ce4d72803061944419afdffd2256e6b876e26f82117597790e37d7073",
+      "size_bytes": 112741455,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_02_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:03.103256+00:00",
+      "sha256": "a88c856eb2ee33528eda04a4a156b45b3ac56ab9231816403e035597c3310653",
+      "size_bytes": 105759501,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_03_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:07.261147+00:00",
+      "sha256": "73465c3caa4142780780ae56fda7ab59377e6e7cd4dcb8dabc85b75ad9318ca4",
+      "size_bytes": 103985767,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_04_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:10.416988+00:00",
+      "sha256": "3fed93bad6e95f1de0da2de6ff77b2f608ff7c9f73a3f08aeaee09224c073a22",
+      "size_bytes": 80255458,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_05_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:11.837852+00:00",
+      "sha256": "d10093839c82f90c434cf92cafd6fbe2cabb12d9fb02a8943d4145506be9624d",
+      "size_bytes": 58844512,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_06_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:13.398474+00:00",
+      "sha256": "a7cd37596e10a3c49a97116eecfe051d6010e6607d8ce02b2c0f04ee8ba0e462",
+      "size_bytes": 45279320,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_07_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:15.284147+00:00",
+      "sha256": "6c6ea8f0f2a4d73cc43d1786cb5f68b781fda6c1a5e9626830ecc4849940c282",
+      "size_bytes": 38869322,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_08_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:19.723281+00:00",
+      "sha256": "3ebfb086e4b8c92ef998afe7b6285a40cfbdec5ffd6cc8fc43d7717b4306ba46",
+      "size_bytes": 41281125,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_09_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:24.534526+00:00",
+      "sha256": "7aa7babdb5bb04631ded161cfe6c866361e976a4d3420d2617c77ad20f288b21",
+      "size_bytes": 64420123,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_10_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:27.228558+00:00",
+      "sha256": "4a8a80072ebaba637573ab6ddeb0f6672368ff683ff818de1cac28bd616fea28",
+      "size_bytes": 97286888,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_11_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:33.865403+00:00",
+      "sha256": "241cc95b5b359988e3ee441502409a2aae3945f90d3db94eae4e53163cbbeca5",
+      "size_bytes": 113007421,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/pr/1979-2013/CHELSACanaryClim_pr_12_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:39.388579+00:00",
+      "sha256": "4b14bfc96b1bb6124b2dc4ea2bdbd8595568d3b3ddef867a022df76e15459e94",
+      "size_bytes": 125525895,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_01_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:09:08.298534+00:00",
+      "sha256": "39693b1c108e90a4f7a7b201056fd4739164374c2da19583c02ef039c119b796",
+      "size_bytes": 70546949,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_02_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:01.568739+00:00",
+      "sha256": "7aa171e8a9babe999af10ee8a5dafbbafdc52e6abe12145e678d0c608e3c381d",
+      "size_bytes": 70605747,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_03_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:03.923427+00:00",
+      "sha256": "65f870a3134165cf7c80213ecd418d5c571ff0370cc63b485384b3413494deda",
+      "size_bytes": 70435619,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_04_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:06.490360+00:00",
+      "sha256": "900394f9332221ed689b4fd11a0cd0050409c55b076170d76ae490b5fc3a2eac",
+      "size_bytes": 69543830,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_05_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:09.796714+00:00",
+      "sha256": "2b2315c3e331c90e6dc52bc999a048ada7c3e2bcd0bfd68252bbd2e663b7bf1c",
+      "size_bytes": 68902013,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_06_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:13.601732+00:00",
+      "sha256": "5a9d82cdf2e2b1c7474096a79c7845bd5f6db3a61518e92bbf3dafe290170e70",
+      "size_bytes": 68733183,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_07_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:16.665473+00:00",
+      "sha256": "f4c8b05bce59abbe3d6699cc0570bd15bba3df22655511359e7a8f8e061f93a2",
+      "size_bytes": 69030175,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_08_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:17.434754+00:00",
+      "sha256": "363ce98e51e218027c1f5c2e1e8f3cc26281b9ffca4ae1cfa34b444246d45d5c",
+      "size_bytes": 69413707,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_09_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:19.841884+00:00",
+      "sha256": "c345f0d6b39136d987798bc8d6e418dd4a5178370a3cb269a218fe4e7737924c",
+      "size_bytes": 69889893,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_10_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:23.241235+00:00",
+      "sha256": "e90c882069d997bfb40d0b0ec5d23298118434e1fbdb04b6c74626b24105afd8",
+      "size_bytes": 70234617,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_11_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:29.521367+00:00",
+      "sha256": "c5c4c82074e8efb5e2360f5e671f5e916738b25980230296f6b506c1620aa987",
+      "size_bytes": 70416336,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://os.zhdk.cloud.switch.ch/chelsa01/chelsa_canaryclim/canaries/climatologies/tas/1979-2013/CHELSACanaryClim_tas_12_1979-2013_V.1.0.tif",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:16:34.860954+00:00",
+      "sha256": "cba532bc151800dc22b239b5c5219e821358a78c1903b69d0b8a1951aabc517d",
+      "size_bytes": 70366482,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://api.globalsolaratlas.info/download/Spain/Spain_GISdata_LTAym_YearlyMonthlyTotals_GlobalSolarAtlas-v2_GEOTIFF.zip",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:21:20.304616+00:00",
+      "sha256": "32449665d93ce101ad22220a050ef23c6e03da47488e49f2b4db0e0b4b66f56c",
+      "size_bytes": 95749512,
+      "cache_hit": false
+    }
+  ],
+  "licenses": {
+    "climate": "CC0 1.0; https://doi.org/10.16904/envidat.692",
+    "solar": "Copyright: Solar resource data © 2019 Solargis. The data is published in Global Solar Atlas under a Creative Commons 4.0 Attribution International license, CC BY 4.0 with the following mandatory and binding addition: Any and all disputes arising under this License that cannot be settled amicably shall be submitted to mediation in accordance with the WIPO Mediation Rules 3 in effect at the time the work was published. If the request for mediation is not resolved within forty-five (45) days of the request, either You or the Licensor may, pursuant to a notice of arbitration communicated by reasonable means to the other party refer the dispute to final and binding arbitration to be conducted in accordance with UNCITRAL Arbitration Rules as then in force. The arbitral tribunal shall consist of a sole arbitrator and the language of the proceedings shall be English unless otherwise agreed. The place of arbitration shall be where the Licensor has its headquarters. The arbitral proceedings shall be conducted remotely (e.g., via telephone conference or written submissions) whenever practicable, or held at the World Bank headquarters in Washington DC.",
+    "solar_attribution": "Data obtained from the Global Solar Atlas 2.0, a free, web-based application developed and operated by Solargis s.r.o. on behalf of the World Bank Group, utilizing Solargis data, with funding provided by the Energy Sector Management Assistance Program (ESMAP). https://globalsolaratlas.info",
+    "source_terms": "https://globalsolaratlas.info/support/terms-of-use",
+    "changes": "Regional extraction, nearest-cell sampling and derived KGPV classification."
+  },
+  "reference_ids": [
+    "ascencio_vasquez_2021_thesis",
+    "ascencio_vasquez_2019_kgpv",
+    "canaryclim_2025_data",
+    "patino_2023_canaryclim",
+    "global_solar_atlas_2019",
+    "rasterio_documentation"
+  ],
+  "software": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "rasterio": "1.5.2",
+    "pyproj": "3.8.0"
+  }
+}

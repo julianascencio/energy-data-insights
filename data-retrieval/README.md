@@ -40,6 +40,8 @@ the provider's native files and metadata for subsequent climate analyses.
 | `sources/surfrad` | NOAA SURFRAD station catalogue and native daily radiation/weather observations |
 | `sources/gpcc` | GPCC Monthly v2025 pinned archive retrieval and normalized precipitation grids |
 | `sources/cru_ts` | CRU TS v4.10 ten-variable archive retrieval and monthly grid processing |
+| `sources/canary_clim` | Pinned monthly CanaryClim temperature/rainfall COGs for 1979–2013 |
+| `sources/global_solar_atlas` | Pinned 2019 Spain annual GHI archive, with source XML/PDF metadata |
 | `sources/cmip6` | ESGF STAC discovery, versioned retrieval plans and verified native CMIP6 NetCDF downloads |
 
 All acquisition is explicit. Importing a module or running the tests makes no
