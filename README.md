@@ -63,11 +63,22 @@ and the repository use the same three sections:
 | Section | Examples |
 | --- | --- |
 | [Methods](examples/methods/) | Climate-change yield assessment, typical daily profiles and KGPV classification |
-| [Connectors](examples/connectors/) | Worldwide generation providers, measured PV datasets and ERA5 weather request planning |
+| [Connectors](examples/connectors/) | Worldwide coverage map, generation providers, measured PV datasets, station catalogues and weather request planning |
 | [Analysis](examples/analysis/) | Worldwide KGPV climate zones and soiling/snow risk maps using attributed climate data |
 
 Every gallery example runs offline during the documentation build. Download links
 on the example pages include the supporting data and provenance where needed.
+
+Start with the **[worldwide connector coverage map](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)**
+and its [Python source](examples/connectors/plot_generation_coverage.py).
+Two reproducible figures introduce all 39 source modules: 22 generation providers,
+five station networks, ten weather/climate grid adapters, the local station-file
+importer and the Natural Earth basemap. Country shading identifies host countries
+for country/system products; regional and research-site markers retain their
+specific scope. The station map uses actual catalogue coordinates, which do not
+establish weather observations or current availability. See the
+[coverage guide](docs/worldwide-generation.md#worldwide-connector-coverage-map)
+for the interpretation, source catalogue and offline data files.
 
 ## Retrieve real electricity generation
 

@@ -1,0 +1,725 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-30",
+  "interpretation": "Inventory of implemented source modules, not a service-territory map or a measurement-availability test. Country shading identifies 13 host countries with country/system generation products; it does not assert complete national, plant, technology or distributed-generation coverage. Country codes follow the accompanying Natural Earth ADM0_A3 units. Regional-grid country codes identify host geography only: CanaryClim covers the Canary Islands, and the Global Solar Atlas connector retrieves only its pinned Spain annual-GHI archive. All schematic_region coordinates are illustrative country or regional locators, not provider offices, power-plant locations or coverage polygons. The PVDAQ marker is one archive example, the NIST marker is a published reference testbed and the DKASC marker is a rounded precinct locator. Global and land scope describes documented product domains only; native masks, cached catalogue bounding boxes, selected CMIP6 grids, dates and access conditions remain authoritative. The station importer has no external provider citation, and Natural Earth is geographic context rather than observed energy or weather data.",
+  "connectors": [
+    {
+      "id": "adme",
+      "label": "ADME · Uruguay",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Measured plant SCADA from the public native SAS archive in Uruguay. Explicit plant selections and the actual GETOTMEDP.AV power channel distinguish reported generation from limits and forecasts; a complete national plant inventory is not implied.",
+      "access": "public",
+      "country_codes": [
+        "URY"
+      ],
+      "locator": {
+        "longitude": -56.0,
+        "latitude": -33.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "adme_open_data",
+        "adme_scada_archive"
+      ],
+      "source_url": "https://www.adme.com.uy/datosabiertos.html"
+    },
+    {
+      "id": "aemet",
+      "label": "AEMET · Spain stations",
+      "category": "station_network",
+      "coverage_kind": "country_network",
+      "scope": "Spanish weather-station catalogue and supported observation products, including island stations where present. Station locations do not imply continuous national coverage. Fresh catalogue/data access requires an API key; local catalogue filters remain part of the extent.",
+      "access": "credential",
+      "country_codes": [
+        "ESP"
+      ],
+      "references": [
+        "aemet_opendata_specification",
+        "aemet_opendata_access",
+        "aemet_observation_guidance"
+      ],
+      "source_url": "https://opendata.aemet.es/AEMET_OpenData_specification.json"
+    },
+    {
+      "id": "aemo",
+      "label": "AEMO · Australia NEM",
+      "category": "generation",
+      "coverage_kind": "regional",
+      "scope": "DUID-level Dispatch SCADA for the National Electricity Market in Queensland, New South Wales including the ACT, Victoria, South Australia and Tasmania. Western Australia and the Northern Territory are outside the NEM. The point is a schematic eastern-Australia locator.",
+      "access": "public",
+      "country_codes": [
+        "AUS"
+      ],
+      "locator": {
+        "longitude": 146.0,
+        "latitude": -31.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "aemo_dispatch_scada",
+        "aemo_nemweb",
+        "aemo_market_time"
+      ],
+      "source_url": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/about-the-national-electricity-market-nem"
+    },
+    {
+      "id": "aeso",
+      "label": "AESO · Alberta",
+      "category": "generation",
+      "coverage_kind": "regional",
+      "scope": "Alberta current operational generation by reporting asset over 5 MW through a credentialed API, plus user-downloaded historical CSD generation exports. The point is a schematic province locator rather than a grid boundary.",
+      "access": "mixed",
+      "country_codes": [
+        "CAN"
+      ],
+      "locator": {
+        "longitude": -115.0,
+        "latitude": 54.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "aeso_historical_generation",
+        "aeso_current_generation_api"
+      ],
+      "source_url": "https://www.aeso.ca/market/market-and-system-reporting/data-requests/historical-generation-data/"
+    },
+    {
+      "id": "bsrn",
+      "label": "BSRN · radiation stations",
+      "category": "station_network",
+      "coverage_kind": "global_network",
+      "scope": "International surface-radiation station network with official PANGAEA station events and monthly data. Station and month availability are explicit, not continuous worldwide coverage; locally filtered catalogues do not establish the full network extent.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "bsrn_station_catalogue",
+        "bsrn_pangaea_access",
+        "driemel_2018_bsrn"
+      ],
+      "source_url": "https://dataportals.pangaea.de/bsrn/stations"
+    },
+    {
+      "id": "caiso",
+      "label": "CAISO · balancing area",
+      "category": "generation",
+      "coverage_kind": "regional",
+      "scope": "Operational five-minute fuel mix for the CAISO balancing area, which is not identical to California and includes a small part of Nevada. Imports, storage and mixed Other supply remain separate. The point is a schematic balancing-area locator.",
+      "access": "public",
+      "country_codes": [
+        "USA"
+      ],
+      "locator": {
+        "longitude": -120.0,
+        "latitude": 37.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "caiso_todays_outlook_supply"
+      ],
+      "source_url": "https://www.caiso.com/about/our-business/balancing-authority"
+    },
+    {
+      "id": "canary_clim",
+      "label": "CHELSACanaryClim · Canary Islands",
+      "category": "grid",
+      "coverage_kind": "regional_grid",
+      "scope": "Monthly temperature (tas) and precipitation (pr) climatologies for the Canary Islands, baseline 1979–2013, from the public v1.0 2025 COG release. Native masks define available land cells. Roughly 5 m pixel spacing does not establish climate accuracy at that scale; the published comparison evaluated 100 m fields.",
+      "access": "public",
+      "country_codes": [
+        "ESP"
+      ],
+      "references": [
+        "canaryclim_2025_data",
+        "patino_2023_canaryclim"
+      ],
+      "source_url": "https://www.envidat.ch/metadata/chelsacanaryclim-climatologies"
+    },
+    {
+      "id": "cds",
+      "label": "Copernicus CDS · ERA5",
+      "category": "grid",
+      "coverage_kind": "global_grid",
+      "scope": "Documented global ERA5 single-level hourly and monthly products with explicit request selections. Credentials and accepted dataset terms are required. Downloaded spatial subsets and other generic CDS catalogue requests retain their own declared extent and native semantics.",
+      "access": "credential",
+      "country_codes": [],
+      "references": [
+        "era5_single_levels",
+        "era5_single_levels_monthly",
+        "copernicus_cds_api"
+      ],
+      "source_url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels"
+    },
+    {
+      "id": "cen",
+      "label": "CEN · Chile",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Actual generation by operating unit, a public plant registry and explicit export imports for the Chilean interconnected system. The Chile country marker does not establish complete plant, distributed generation or isolated-system coverage.",
+      "access": "mixed",
+      "country_codes": [
+        "CHL"
+      ],
+      "locator": {
+        "longitude": -70.5,
+        "latitude": -29.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "cen_generation_api",
+        "cen_infotecnica_registry",
+        "cen_historical_reports",
+        "cen_qlik_generation"
+      ],
+      "source_url": "https://sipub.api.coordinador.cl/generacion-real/v3/findByDate"
+    },
+    {
+      "id": "chelsa",
+      "label": "CHELSA v2.1 · land climatology",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "Global land monthly temperature (tas) and precipitation (pr) climatologies, baseline 1981–2010, at 30 arcseconds (about 1 km). The connector downloads bounded native raster windows with source masks, ETags and crop-pixel hashes. Resampling onto a finer solar grid does not add climate detail or guarantee valid values at every location.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "source_url": "https://www.chelsa-climate.org/datasets/chelsa_climatologies"
+    },
+    {
+      "id": "cmip6",
+      "label": "CMIP6 · selected model grid",
+      "category": "grid",
+      "coverage_kind": "catalogue_grid",
+      "scope": "ESGF discovery and native files for an explicitly selected model, experiment, member, variable and grid. Geographic and time coverage depend on that selection and must be inspected; the connector makes no blanket global-coverage or point-availability claim.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "cmip6_data_user_guide",
+        "esgf_stac_access",
+        "eyring_2016_cmip6"
+      ],
+      "source_url": "https://pcmdi.llnl.gov/CMIP6/Guide/dataUsers.html"
+    },
+    {
+      "id": "cru_ts",
+      "label": "CRU TS · land climate",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "Monthly gridded climate over global land excluding Antarctica. Native masks require inspection; processing selects a bounding box of cell centres. Documented land scope is not continuous station coverage or guaranteed values in each cell.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "cru_ts_410",
+        "harris_2020_cru_ts"
+      ],
+      "source_url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/"
+    },
+    {
+      "id": "dkasc",
+      "label": "DKASC · Alice Springs",
+      "category": "generation",
+      "coverage_kind": "research_site",
+      "scope": "User-downloaded measured photovoltaic-array exports at the Desert Knowledge Australia Solar Centre in Alice Springs. The rounded locator represents the Desert Knowledge Precinct using its colocated solar-resource station, not an individual array or other Northern Territory monitoring sites.",
+      "access": "export",
+      "country_codes": [
+        "AUS"
+      ],
+      "locator": {
+        "longitude": 133.88,
+        "latitude": -23.76,
+        "meaning": "precinct_locator"
+      },
+      "references": [
+        "dkasc_download",
+        "dkasc_data_parameters",
+        "dkasc_data_terms"
+      ],
+      "source_url": "https://dkasolarcentre.com.au/download?location=alice-springs",
+      "locator_source": "https://nt-solar-resource.fulcrum3d.com/about"
+    },
+    {
+      "id": "dwd",
+      "label": "DWD CDC · Germany solar stations",
+      "category": "station_network",
+      "coverage_kind": "country_network",
+      "scope": "German DWD CDC hourly solar station catalogue and native archives. Published station dates do not prove continuous observations; requested station, variable and time availability must be checked, and cached catalogue bounding-box filters remain explicit.",
+      "access": "public",
+      "country_codes": [
+        "DEU"
+      ],
+      "references": [
+        "dwd_2024_hourly_solar",
+        "dwd_hourly_solar_documentation"
+      ],
+      "source_url": "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/solar/"
+    },
+    {
+      "id": "earthmover_era5",
+      "label": "Earthmover · native ERA5",
+      "category": "grid",
+      "coverage_kind": "global_grid",
+      "scope": "Documented global ERA5 grid accessed through a pinned public Icechunk snapshot. The actual snapshot coordinate axes, time coverage and requested-cell values require inspection; catalogue headline dates do not establish snapshot availability.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "earthmover_icechunk_era5",
+        "era5_single_levels",
+        "hersbach_2020_era5"
+      ],
+      "source_url": "https://registry.opendata.aws/earthmover-era5/"
+    },
+    {
+      "id": "eia",
+      "label": "EIA · United States",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Hourly EIA-930 generation by fuel for Lower 48 balancing authorities and regional aggregates, plus a separate monthly US plant/fuel product. Hourly coverage does not extend automatically to Alaska, Hawaii or all distributed generation.",
+      "access": "mixed",
+      "country_codes": [
+        "USA"
+      ],
+      "locator": {
+        "longitude": -100.0,
+        "latitude": 39.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "eia_api_v2",
+        "eia_930",
+        "eia_930_instructions"
+      ],
+      "source_url": "https://www.eia.gov/opendata/documentation.php"
+    },
+    {
+      "id": "elexon",
+      "label": "Elexon · Great Britain",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Half-hour B1610 metered volumes for Great Britain balancing-mechanism units. Northern Ireland is outside this product. A balancing-mechanism unit is not necessarily one power plant, and signed volumes can include import.",
+      "access": "public",
+      "country_codes": [
+        "GBR"
+      ],
+      "locator": {
+        "longitude": -2.5,
+        "latitude": 54.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "elexon_insights_api",
+        "elexon_b1610_metered_volumes"
+      ],
+      "source_url": "https://developer.data.elexon.co.uk/"
+    },
+    {
+      "id": "emi",
+      "label": "EMI · New Zealand",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Metered injection by New Zealand plant/connection and half-hour trading period. Published plant/connection records do not establish coverage of every generator or behind-the-meter photovoltaic system.",
+      "access": "public",
+      "country_codes": [
+        "NZL"
+      ],
+      "locator": {
+        "longitude": 175.5,
+        "latitude": -40.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "nz_emi_generation",
+        "nz_emi_license"
+      ],
+      "source_url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-output/"
+    },
+    {
+      "id": "entsoe",
+      "label": "ENTSO-E · selected EIC areas",
+      "category": "generation",
+      "coverage_kind": "selected_areas",
+      "scope": "Generation for an explicitly selected European EIC area and supported document type. Country, control-area and bidding-zone codes are not interchangeable. Availability depends on the selected area and request; the schematic European locator is not continent-wide coverage.",
+      "access": "credential",
+      "country_codes": [],
+      "locator": {
+        "longitude": 13.0,
+        "latitude": 52.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "entsoe_transparency_api",
+        "entsoe_generation_data_descriptions",
+        "entsoe_curve_types"
+      ],
+      "source_url": "https://transparencyplatform.zendesk.com/hc/en-us/articles/15696716612372-Request-Parameters"
+    },
+    {
+      "id": "eskom",
+      "label": "Eskom · South Africa",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Reported hourly Eskom-owned or contracted renewable generation in South Africa. Embedded generation is excluded; the implemented product is neither all national generation nor a complete register of renewable plants.",
+      "access": "public",
+      "country_codes": [
+        "ZAF"
+      ],
+      "locator": {
+        "longitude": 25.5,
+        "latitude": -29.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "eskom_hourly_renewables",
+        "eskom_generation_statistics"
+      ],
+      "source_url": "https://www.eskom.co.za/dataportal/renewables-performance/hourly-renewable-generation/"
+    },
+    {
+      "id": "global_solar_atlas",
+      "label": "Global Solar Atlas · Spain and Chile GHI",
+      "category": "grid",
+      "coverage_kind": "regional_grid",
+      "scope": "Annual GHI from the pinned 2019 Spain (1994–2018 baseline) and Chile (1999–2018 baseline) GIS archives, at 9 arcseconds (nominal 250 m). Spain includes the Canary Islands. Usable Chile GHI stops at 45°S despite the file rectangle extending to 46°S, leaving southern mainland Patagonia without values. This connector does not download arbitrary countries, the global catalogue or live solar-map data. Native masks and metadata define coverage.",
+      "access": "public",
+      "country_codes": [
+        "ESP",
+        "CHL"
+      ],
+      "references": [
+        "global_solar_atlas_2019",
+        "global_solar_atlas_chile_2019"
+      ],
+      "source_url": "https://globalsolaratlas.info/download/spain"
+    },
+    {
+      "id": "gpcc",
+      "label": "GPCC · land precipitation",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "Global land monthly precipitation analysis. Native missing-cell masks require inspection; whole archives are downloaded and processing selects a bounding box of cell centres. Land coverage does not guarantee observations or values at every requested location.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "gpcc_monthly_v2025"
+      ],
+      "source_url": "https://opendata.dwd.de/climate_environment/GPCC/html/gpcc_precipitation_analysis_monthly_v2025_doi_download.html"
+    },
+    {
+      "id": "ieso",
+      "label": "IESO · Ontario",
+      "category": "generation",
+      "coverage_kind": "regional",
+      "scope": "Published hourly Ontario generator output and capability reports. Capability remains separate from generation, and recent public reports do not guarantee complete history or distributed-generation coverage. The point is a schematic province locator.",
+      "access": "public",
+      "country_codes": [
+        "CAN"
+      ],
+      "locator": {
+        "longitude": -85.0,
+        "latitude": 50.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "ieso_generator_output",
+        "ieso_report_directory"
+      ],
+      "source_url": "https://reports-public.ieso.ca/docrefs/helpfile/GenOutputCapability_h4.pdf"
+    },
+    {
+      "id": "kpx",
+      "label": "KPX · South Korea",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Hourly regional net market-traded solar energy in South Korea. This approved-key product does not cover all national photovoltaic generation; energy-storage operation can produce nighttime values.",
+      "access": "credential",
+      "country_codes": [
+        "KOR"
+      ],
+      "locator": {
+        "longitude": 128.0,
+        "latitude": 36.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "kpx_regional_solar",
+        "kpx_trading_periods",
+        "kpx_data_guide"
+      ],
+      "source_url": "https://www.data.go.kr/data/15103243/openapi.do"
+    },
+    {
+      "id": "nasa_power",
+      "label": "NASA POWER · daily AOD",
+      "category": "grid",
+      "coverage_kind": "global_grid",
+      "scope": "Daily global model/satellite-derived aerosol optical depth at 550 nm, AOD_55, requested for a point from 2001 onward. This connector implements this aerosol variable only; it does not provide the whole NASA POWER catalogue or measured surface deposition.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "nasa_power_aerosols"
+      ],
+      "source_url": "https://power.larc.nasa.gov/docs/methodology/data/sources_clds_aerosols/"
+    },
+    {
+      "id": "natural_earth",
+      "label": "Natural Earth · map boundaries",
+      "category": "basemap",
+      "coverage_kind": "global_basemap",
+      "scope": "Global Admin 0 country/territory boundaries for geographic context, with source-specific administrative units and de facto boundary conventions. This connector supplies a basemap, not generation, weather observations or evidence of data availability.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "natural_earth_countries"
+      ],
+      "source_url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/"
+    },
+    {
+      "id": "nist",
+      "label": "NIST · Gaithersburg testbeds",
+      "category": "generation",
+      "coverage_kind": "research_site",
+      "scope": "User-downloaded exports from the NIST Ground, Roof and Canopy photovoltaic testbeds in Gaithersburg, Maryland. The locator uses the published Ground-array coordinate as a reference for this nearby testbed group; it is not US-wide coverage.",
+      "access": "export",
+      "country_codes": [
+        "USA"
+      ],
+      "locator": {
+        "longitude": -77.2141,
+        "latitude": 39.1319,
+        "meaning": "verified_site"
+      },
+      "references": [
+        "nist_pv_testbeds",
+        "nist_pv_dictionary",
+        "nist_pv_measurements_paper"
+      ],
+      "source_url": "https://www.nist.gov/el/beed/heat-transfer-alternative-energy-systems/photovoltaic-testbeds",
+      "locator_source": "https://nvlpubs.nist.gov/nistpubs/jres/122/jres.122.040.pdf"
+    },
+    {
+      "id": "noaa",
+      "label": "NOAA NCEI · GHCNh",
+      "category": "station_network",
+      "coverage_kind": "global_network",
+      "scope": "Global GHCNh weather-station inventory and station records. This is a sparse point network, not continuous global measurements; requested variables and dates require validation. Cached inventories retain any original bounding-box and country filters.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "noaa_ghcnh_documentation",
+        "menne_2023_ghcnh"
+      ],
+      "source_url": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/doc/ghcnh_DOCUMENTATION.pdf"
+    },
+    {
+      "id": "ons",
+      "label": "ONS · Brazil",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Verified hourly plant/group generation in Brazil, within the ONS interconnected-system reporting context. Type III and distributed-generation estimate/forecast categories are excluded by default. Photovoltaic constrained-off detail is a separate product.",
+      "access": "public",
+      "country_codes": [
+        "BRA"
+      ],
+      "locator": {
+        "longitude": -50.0,
+        "latitude": -15.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "ons_hourly_generation",
+        "ons_pv_curtailment"
+      ],
+      "source_url": "https://dados.ons.org.br/dataset/geracao-usina-2"
+    },
+    {
+      "id": "open_meteo",
+      "label": "Open-Meteo · ERA5 / IFS",
+      "category": "grid",
+      "coverage_kind": "global_grid",
+      "scope": "Documented global ERA5 and archived ECMWF IFS products, selected explicitly at a native grid cell. A separate snow adapter uses ERA5-Land over land. Product documentation does not verify values for a requested cell and date.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "open_meteo_historical_weather",
+        "open_meteo_historical_forecast",
+        "munoz_sabater_2021_era5_land"
+      ],
+      "source_url": "https://open-meteo.com/en/docs/historical-weather-api"
+    },
+    {
+      "id": "pvdaq",
+      "label": "PVDAQ · example system 4",
+      "category": "generation",
+      "coverage_kind": "research_site",
+      "scope": "Public archive of contributed measured photovoltaic systems, selected by system and date. The plotted coordinate is the official metadata location of example system 4 only; it is neither the archive extent nor coverage of every US or worldwide photovoltaic system.",
+      "access": "public",
+      "country_codes": [],
+      "locator": {
+        "longitude": -105.1774,
+        "latitude": 39.7406,
+        "meaning": "archive_example"
+      },
+      "references": [
+        "pvdaq_public_archive",
+        "pvdaq_data_dictionary"
+      ],
+      "source_url": "https://data.openei.org/submissions/4568",
+      "locator_source": "https://oedi-data-lake.s3.amazonaws.com/pvdaq/csv/system_metadata/4_system_metadata.json"
+    },
+    {
+      "id": "ree",
+      "label": "REE · Spain",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Generation by technology for explicitly selected national, electrical-system or autonomous-community geography. Peninsular, Canary Islands, Balearic Islands, Ceuta and Melilla selections remain distinct; country shading is an inventory of the implemented source.",
+      "access": "public",
+      "country_codes": [
+        "ESP"
+      ],
+      "locator": {
+        "longitude": -3.5,
+        "latitude": 40.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "ree_redata_api",
+        "ree_generation_structure"
+      ],
+      "source_url": "https://www.ree.es/en/datos/apidata"
+    },
+    {
+      "id": "rte",
+      "label": "RTE/ODRÉ · France",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Consolidated and definitive national éCO2mix technology generation at actual half-hour labels. This connector does not implement the separate live or regional products; the France inventory marker does not assert overseas-territory coverage.",
+      "access": "public",
+      "country_codes": [
+        "FRA"
+      ],
+      "locator": {
+        "longitude": 2.0,
+        "latitude": 47.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "rte_eco2mix_consolidated",
+        "rte_eco2mix_api"
+      ],
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/eco2mix-national-cons-def/"
+    },
+    {
+      "id": "smard",
+      "label": "SMARD · Germany",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "German quarter-hour solar, onshore-wind and offshore-wind generation series. Only these verified technology identifiers are implemented; neither other technologies nor additional countries are implied by the SMARD provider name.",
+      "access": "public",
+      "country_codes": [
+        "DEU"
+      ],
+      "locator": {
+        "longitude": 10.0,
+        "latitude": 51.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "smard_generation_user_guide",
+        "smard_data_use"
+      ],
+      "source_url": "https://www.smard.de/resource/blob/205652/63fcff2c9813096fa2229d769da164ef/smard-user-guide-09-2021-data.pdf"
+    },
+    {
+      "id": "station",
+      "label": "Local measured-station files",
+      "category": "local_import",
+      "coverage_kind": "user_defined",
+      "scope": "User-supplied CSV or XLSX measured-weather files with explicit station/site mapping, units, source clock and interval labels. Geographic coverage is determined entirely by the supplied station identities and files; there is no provider network or predefined extent.",
+      "access": "local",
+      "country_codes": [],
+      "references": [],
+      "source_url": "https://github.com/julianascencio/energy-data-insights/tree/main/data-retrieval/src/energy_data_retrieval/sources/station"
+    },
+    {
+      "id": "surfrad",
+      "label": "NOAA SURFRAD · seven US stations",
+      "category": "station_network",
+      "coverage_kind": "country_network",
+      "scope": "Seven supported US radiation-monitoring stations: Bondville, Table Mountain, Desert Rock, Fort Peck, Goodwin Creek, Penn State and Sioux Falls. These are discrete sites, not US-wide measurements; overlapping BSRN records are not automatically deduplicated.",
+      "access": "public",
+      "country_codes": [
+        "USA"
+      ],
+      "references": [
+        "noaa_surfrad_stations",
+        "noaa_surfrad_archive",
+        "noaa_surfrad_documentation"
+      ],
+      "source_url": "https://gml.noaa.gov/grad/surfrad/sitepage.html"
+    },
+    {
+      "id": "taipower",
+      "label": "Taipower · Taiwan",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Current published generation by unit or asset in Taiwan, with aggregate and storage-load rows excluded by default. This is a current power snapshot, not complete rooftop photovoltaic coverage or the separate historical archive.",
+      "access": "public",
+      "country_codes": [
+        "TWN"
+      ],
+      "locator": {
+        "longitude": 121.0,
+        "latitude": 23.8,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "taipower_live_generation",
+        "taipower_generation_history"
+      ],
+      "source_url": "https://data.gov.tw/en/datasets/8931"
+    },
+    {
+      "id": "tepco",
+      "label": "TEPCO · Tokyo area",
+      "category": "generation",
+      "coverage_kind": "regional",
+      "scope": "Half-hour technology generation from the Tokyo-area supply/demand product. Other Japanese utility areas are not implemented by this source. The point identifies the Tokyo area schematically, rather than a power station or service-territory polygon.",
+      "access": "public",
+      "country_codes": [
+        "JPN"
+      ],
+      "locator": {
+        "longitude": 139.7,
+        "latitude": 35.7,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "tepco_generation",
+        "tepco_generation_definitions"
+      ],
+      "source_url": "https://www.tepco.co.jp/forecast/html/area_jukyu-j.html"
+    },
+    {
+      "id": "xm",
+      "label": "XM/SIMEM · Colombia",
+      "category": "generation",
+      "coverage_kind": "country_system",
+      "scope": "Actual hourly resource/boundary generation in Colombia from SIMEM dataset 055A4D, with an explicit settlement revision. The interconnected-system reporting product is distinct from estimated daily SCADA and does not establish all-plant national coverage.",
+      "access": "public",
+      "country_codes": [
+        "COL"
+      ],
+      "locator": {
+        "longitude": -73.0,
+        "latitude": 4.0,
+        "meaning": "schematic_region"
+      },
+      "references": [
+        "xm_simem_actual_generation",
+        "xm_api_documentation"
+      ],
+      "source_url": "https://www.simem.co/datadetail/055a4d5f-3616-45e3-9bcd-1d3e3a4a47bd"
+    }
+  ]
+}
