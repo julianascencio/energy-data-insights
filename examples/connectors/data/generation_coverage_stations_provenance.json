@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "fixture": "generation_coverage_stations.csv",
+  "fixture_sha256": "4d64c321ae4c54a1afc6d3159c7e660fcb12bbc005579ee4c615872d2df6040d",
+  "fixture_bytes": 1219789,
+  "fixture_rows": 39010,
+  "columns": [
+    "provider",
+    "station_id",
+    "latitude",
+    "longitude"
+  ],
+  "coordinates": "Source latitude/longitude in decimal degrees",
+  "coordinate_serialization": "Round to at most six decimal places and remove trailing zeros; added decimals do not imply greater accuracy than the source catalogue",
+  "station_id_reading": "Read station_id as text to preserve DWD leading zeros",
+  "sort_order": [
+    "provider",
+    "station_id"
+  ],
+  "sampling_applied": false,
+  "date_country_or_bbox_filter_applied": false,
+  "cross_provider_deduplication_applied": false,
+  "interpretation": "Each row is a provider catalogue location, not a power-generation site, current observation guarantee or unique physical station. NOAA includes historical sites. BSRN and SURFRAD overlap; their identifiers are provider-specific and are retained separately. Catalogue coordinates do not reconstruct historical station moves.",
+  "excluded_connector": {
+    "provider": "aemet",
+    "reason": "Its station catalogue requires an API key; no credentials were requested"
+  },
+  "transformations": [
+    "Acquire the official public catalogue through each existing station connector",
+    "Use the connector's native station ID and coordinate normalization",
+    "Retain every finite coordinate within latitude [-90, 90] and longitude [-180, 180]",
+    "Preserve catalogue-only station IDs and document their retrieval limitation",
+    "Select provider, station_id, latitude and longitude; sort and serialize UTF-8 CSV"
+  ],
+  "catalogues": [
+    {
+      "provider": "bsrn",
+      "api": "energy_data_retrieval.sources.bsrn.stations.fetch_stations()",
+      "native_fields": [
+        "Event label",
+        "Latitude",
+        "Longitude"
+      ],
+      "scope": "Full PANGAEA BSRN station-event catalogue, including entries whose identifier the current observation retrieval API does not support; event dates do not establish continuous observation coverage",
+      "request": {
+        "endpoint": "https://dataportals.pangaea.de/bsrn/stations",
+        "parameters": {
+          "format": "textfile"
+        },
+        "retrieved_at_utc": "2026-10-30T09:11:14.534329+00:00",
+        "sha256": "c44bf9a327c79516673c66cf626dd5569a730b720afe9e446758a332e8d55677",
+        "size_bytes": 21204,
+        "cache_hit": false
+      },
+      "native_station_count": 79,
+      "native_count_scope": "Nonempty native CSV/TSV data records",
+      "normalized_station_count": 79,
+      "identical_native_rows_coalesced": 0,
+      "valid_coordinate_count": 79,
+      "invalid_coordinate_count": 0,
+      "dropped_station_ids": [],
+      "drop_reason": "Only missing, nonfinite or out-of-range source coordinates are excluded; latitude/longitude are never swapped or repaired",
+      "catalogue_only_station_ids": [
+        "e13"
+      ],
+      "catalogue_only_reason": "Retained as source catalogue locations, but the current BSRN observation API accepts only three-letter station identifiers",
+      "selected_normalized_fields": [
+        "station_id",
+        "latitude",
+        "longitude"
+      ],
+      "catalogue_attributes": {
+        "source": "BSRN PANGAEA station catalogue",
+        "endpoint": "https://dataportals.pangaea.de/bsrn/stations",
+        "source_rows": 79,
+        "invalid_coordinate_rows": 0,
+        "availability_inferred": false,
+        "event_dates_are_observation_coverage": false,
+        "catalogue_coordinates_are_historical_positions": false,
+        "reference_ids": [
+          "ascencio_vasquez_2021_thesis",
+          "driemel_2018_bsrn",
+          "bsrn_pangaea_access",
+          "pangaea_data_access",
+          "pangaea_quality_flags",
+          "bsrn_station_catalogue"
+        ]
+      },
+      "reference_ids": [
+        "ascencio_vasquez_2021_thesis",
+        "driemel_2018_bsrn",
+        "bsrn_pangaea_access",
+        "pangaea_data_access",
+        "pangaea_quality_flags",
+        "bsrn_station_catalogue"
+      ]
+    },
+    {
+      "provider": "dwd",
+      "api": "DWDClient.stations()",
+      "native_fields": [
+        "Stations_id",
+        "geoBreite",
+        "geoLaenge"
+      ],
+      "scope": "All stations in the DWD CDC hourly solar catalogue, not every DWD network; catalogue positions are recent metadata and do not describe all relocations",
+      "request": {
+        "endpoint": "https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/solar/ST_Stundenwerte_Beschreibung_Stationen.txt",
+        "parameters": {},
+        "retrieved_at_utc": "2026-10-30T09:11:15.465601+00:00",
+        "sha256": "fd633080957d63f496b99b643890d4c859ab9c19b71a4977ff6253d8811adb6d",
+        "size_bytes": 56323,
+        "cache_hit": false
+      },
+      "native_station_count": 56,
+      "native_count_scope": "Native fixed-width station data records",
+      "normalized_station_count": 56,
+      "identical_native_rows_coalesced": 0,
+      "valid_coordinate_count": 56,
+      "invalid_coordinate_count": 0,
+      "dropped_station_ids": [],
+      "drop_reason": "Only missing, nonfinite or out-of-range source coordinates are excluded; latitude/longitude are never swapped or repaired",
+      "catalogue_only_station_ids": [],
+      "catalogue_only_reason": null,
+      "selected_normalized_fields": [
+        "station_id",
+        "latitude",
+        "longitude"
+      ],
+      "catalogue_attributes": {
+        "source": "DWD CDC hourly solar station catalogue",
+        "encoding": "ISO-8859-1",
+        "source_rows": 56,
+        "catalogue_coordinates": "recent position; historical relocations are in each archive",
+        "bbox_west_south_east_north": null,
+        "reference_ids": [
+          "ascencio_vasquez_2021_thesis",
+          "dwd_2024_hourly_solar",
+          "dwd_hourly_solar_documentation"
+        ]
+      },
+      "reference_ids": [
+        "ascencio_vasquez_2021_thesis",
+        "dwd_2024_hourly_solar",
+        "dwd_hourly_solar_documentation"
+      ]
+    },
+    {
+      "provider": "noaa",
+      "api": "NOAAClient.stations()",
+      "native_fields": [
+        "GHCN_ID",
+        "LATITUDE",
+        "LONGITUDE"
+      ],
+      "scope": "Full historical GHCNh station catalogue, with no country, date or bounding-box filter; a location does not establish period or variable availability",
+      "request": {
+        "endpoint": "https://www.ncei.noaa.gov/oa/global-historical-climatology-network/hourly/doc/ghcnh-station-list.csv",
+        "parameters": {},
+        "retrieved_at_utc": "2026-10-30T09:11:15.869211+00:00",
+        "sha256": "812ea50bd5efd1b9cc09d5800c55825b3d43b3c5aa75ab17b2848f43b1bfaaef",
+        "size_bytes": 2203945,
+        "cache_hit": false
+      },
+      "native_station_count": 38870,
+      "native_count_scope": "Nonempty native CSV/TSV data records",
+      "normalized_station_count": 38870,
+      "identical_native_rows_coalesced": 0,
+      "valid_coordinate_count": 38868,
+      "invalid_coordinate_count": 2,
+      "dropped_station_ids": [
+        "RUU71-00102",
+        "RUU71-00113"
+      ],
+      "drop_reason": "Only missing, nonfinite or out-of-range source coordinates are excluded; latitude/longitude are never swapped or repaired",
+      "catalogue_only_station_ids": [],
+      "catalogue_only_reason": null,
+      "selected_normalized_fields": [
+        "station_id",
+        "latitude",
+        "longitude"
+      ],
+      "catalogue_attributes": {
+        "source": "NOAA NCEI GHCNh station catalogue",
+        "country_code_system": "ISO_CODE as supplied; GHCN FIPS prefix retained separately",
+        "country_code_filter": null,
+        "bbox_west_south_east_north": null,
+        "source_station_rows": 38870,
+        "source_rows_without_valid_coordinates": 2,
+        "availability_inferred": false,
+        "nearest_station_selected": false,
+        "reference_ids": [
+          "ascencio_vasquez_2021_thesis",
+          "menne_2023_ghcnh",
+          "noaa_ghcnh_documentation",
+          "noaa_isd_service_transition"
+        ]
+      },
+      "reference_ids": [
+        "ascencio_vasquez_2021_thesis",
+        "menne_2023_ghcnh",
+        "noaa_ghcnh_documentation",
+        "noaa_isd_service_transition"
+      ]
+    },
+    {
+      "provider": "surfrad",
+      "api": "SURFRADClient.stations()",
+      "native_fields": [
+        "Code",
+        "Latitude",
+        "Longitude"
+      ],
+      "scope": "All seven SURFRAD archive stations supported by this connector; the ARM SGP station linked from the source table belongs to a different provider",
+      "request": {
+        "endpoint": "https://gml.noaa.gov/grad/surfrad/sitepage.html",
+        "parameters": {},
+        "retrieved_at_utc": "2026-10-30T09:11:16.256017+00:00",
+        "sha256": "9c99d41ea173b84272f31d3dd14de46e13928b5fa3ad16481c22529bd1d3e2af",
+        "size_bytes": 29070,
+        "cache_hit": false
+      },
+      "native_station_count": 7,
+      "native_count_scope": "Supported SURFRAD network rows; the linked ARM SGP station and table footnote are outside this connector and excluded by its catalogue parser",
+      "normalized_station_count": 7,
+      "identical_native_rows_coalesced": 0,
+      "valid_coordinate_count": 7,
+      "invalid_coordinate_count": 0,
+      "dropped_station_ids": [],
+      "drop_reason": "Only missing, nonfinite or out-of-range source coordinates are excluded; latitude/longitude are never swapped or repaired",
+      "catalogue_only_station_ids": [],
+      "catalogue_only_reason": null,
+      "selected_normalized_fields": [
+        "station_id",
+        "latitude",
+        "longitude"
+      ],
+      "catalogue_attributes": {
+        "source": "NOAA GML SURFRAD station catalogue",
+        "endpoint": "https://gml.noaa.gov/grad/surfrad/sitepage.html",
+        "archive_station_codes": [
+          "bon",
+          "tbl",
+          "dra",
+          "fpk",
+          "gwn",
+          "psu",
+          "sxf"
+        ],
+        "catalogue_positions_are_observation_positions": false,
+        "availability_inferred": false,
+        "possible_network_overlap": "BSRN; compare station, time, variables and vintage before combining",
+        "cross_provider_deduplication_applied": false,
+        "reference_ids": [
+          "ascencio_vasquez_2021_thesis",
+          "augustine_2000_surfrad",
+          "augustine_2005_surfrad",
+          "noaa_surfrad_documentation",
+          "noaa_surfrad_stations",
+          "noaa_surfrad_overview",
+          "noaa_surfrad_archive"
+        ]
+      },
+      "reference_ids": [
+        "ascencio_vasquez_2021_thesis",
+        "augustine_2000_surfrad",
+        "augustine_2005_surfrad",
+        "noaa_surfrad_documentation",
+        "noaa_surfrad_stations",
+        "noaa_surfrad_overview",
+        "noaa_surfrad_archive"
+      ]
+    }
+  ],
+  "reference_ids": [
+    "ascencio_vasquez_2021_thesis",
+    "augustine_2000_surfrad",
+    "augustine_2005_surfrad",
+    "bsrn_pangaea_access",
+    "bsrn_station_catalogue",
+    "driemel_2018_bsrn",
+    "dwd_2024_hourly_solar",
+    "dwd_hourly_solar_documentation",
+    "menne_2023_ghcnh",
+    "noaa_ghcnh_documentation",
+    "noaa_isd_service_transition",
+    "noaa_surfrad_archive",
+    "noaa_surfrad_documentation",
+    "noaa_surfrad_overview",
+    "noaa_surfrad_stations",
+    "pangaea_data_access",
+    "pangaea_quality_flags"
+  ]
+}

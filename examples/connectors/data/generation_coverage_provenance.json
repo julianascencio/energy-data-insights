@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "source": "Natural Earth Admin 0 - Countries",
+  "version": "5.1.1",
+  "scale": "110m",
+  "scale_meaning": "1:110 million map scale, not metre accuracy",
+  "license": "Public domain",
+  "terms_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "boundary_policy": "Natural Earth default de facto boundaries",
+  "request": {
+    "endpoint": "https://naturalearth.s3.amazonaws.com/110m_cultural/ne_110m_admin_0_countries.zip",
+    "parameters": {},
+    "retrieved_at_utc": "2026-10-30T09:04:55.965426+00:00",
+    "sha256": "0f243aeac8ac6cf26f0417285b0bd33ac47f1b5bdb719fd3e0df37d03ea37110",
+    "size_bytes": 214976,
+    "cache_hit": true
+  },
+  "source_files_sha256": {
+    "ne_110m_admin_0_countries.VERSION.txt": "548358969090d629b41888f5fe664ac31b7203dfd849f7c1ef820ac055b62191",
+    "ne_110m_admin_0_countries.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+    "ne_110m_admin_0_countries.dbf": "1fee677cd4e03b367876e03861eb10197e4022a846bf92060e0313432863785b",
+    "ne_110m_admin_0_countries.prj": "3259f0e55290a82b1350646f604e8a7ee1e2136c0320a40fad838ab40819fff8",
+    "ne_110m_admin_0_countries.shp": "08e341606e8391e458c3f08deb312de664b56bfae376064c5aa0aee6681a5f55",
+    "ne_110m_admin_0_countries.shx": "8b0be2ad97dd484aee5c2ebc98697d5372e832b8ae58a35a661aeef6b985668d"
+  },
+  "fixture": "generation_coverage_world.geojson",
+  "fixture_sha256": "15a7455a79e04066b79aac6e480c059c999bb94ad0a3df7c7c6c650bc6cae0a9",
+  "fixture_bytes": 419392,
+  "source_feature_count": 177,
+  "retained_feature_count": 176,
+  "retained_properties": [
+    "ADM0_A3",
+    "ADMIN",
+    "ISO_A2",
+    "ISO_A3",
+    "ISO_A2_EH",
+    "ISO_A3_EH",
+    "NAME",
+    "NAME_LONG"
+  ],
+  "coordinate_reference_system": "EPSG:4326",
+  "excluded_features": [
+    {
+      "ADM0_A3": "ATA",
+      "ADMIN": "Antarctica",
+      "reason": "Its unsplit world-spanning ring fails the existing country-map antimeridian contract; the generation coverage view omits Antarctica"
+    }
+  ],
+  "transformations": [
+    "Read source WGS84 shapefile through the existing country-boundary loader",
+    "Exclude Antarctica; retain all other source polygon parts, holes and vertices",
+    "Retain only country identifiers, names and source ISO aliases",
+    "Serialize compact UTF-8 RFC 7946 GeoJSON without geometric simplification or repair"
+  ],
+  "interpretation": "Country polygons are a geographic backdrop, not electrical-system boundaries or evidence that a connector supplies every location in a shaded country",
+  "reference_ids": [
+    "natural_earth_countries"
+  ]
+}

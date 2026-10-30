@@ -26,6 +26,7 @@ from energy_methods.country_mapping import (
     clip_country_grid,
     country_grid,
     country_mask,
+    plot_country_boundaries,
     plot_country_map,
     write_country_geojson,
 )
@@ -205,4 +206,34 @@ def test_plot_leaves_country_holes_unpainted():
     assert (color(2.25, 2.25) > 240).all()  # Hole stays background, not raster/fill.
     assert color(0.75, 0.75).tolist() == [255, 0, 0]
     assert color(6.25, 1.25).tolist() == [255, 0, 0]  # Detached island is painted.
+    plt.close(fig)
+
+
+def test_categorical_country_plot_preserves_holes_islands_and_default_color():
+    fig, ax = plt.subplots(figsize=(10, 5), dpi=80)
+    plot_country_boundaries(
+        selection(), ax=ax, colors={"AAA": "#ff0000"}, facecolor="#00ff00", linewidth=0
+    )
+    ax.set(xlim=(-1, 11), ylim=(-1, 5))
+    fig.canvas.draw()
+    assert isinstance(fig.canvas, FigureCanvasAgg)
+    pixels = np.asarray(fig.canvas.buffer_rgba())
+
+    def color(x, y):
+        col, row = ax.transData.transform((x, y)).astype(int)
+        return pixels[pixels.shape[0] - 1 - row, col, :3].tolist()
+
+    assert color(2, 2) == [255, 255, 255]  # A hole must retain the background.
+    assert color(0.5, 0.5) == [255, 0, 0]
+    assert color(6.5, 1.5) == [255, 0, 0]  # Detached island keeps its country's category.
+    assert color(9, 2) == [0, 255, 0]  # Unlisted country gets the default face color.
+    assert color(5, 2) == [255, 255, 255]  # No fill is invented between countries.
+    plt.close(fig)
+
+
+def test_categorical_country_plot_rejects_unknown_highlights_before_drawing():
+    fig, ax = plt.subplots()
+    with pytest.raises(ValueError, match="Unknown selected country codes: XYZ"):
+        plot_country_boundaries(selection(), ax=ax, colors={"XYZ": "red"})
+    assert len(ax.patches) == 0
     plt.close(fig)

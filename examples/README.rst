@@ -4,6 +4,11 @@ Example gallery
 Browse examples by task: learn a method, work with a data provider, or follow an
 applied analysis. The same sections organize the repository's ``examples/`` folder.
 
+The :doc:`worldwide connector coverage map <connectors/plot_generation_coverage>`
+introduces all implemented generation, station, weather and climate sources.
+Run its downloadable Python code offline to reproduce the country/system
+inventory and the station-catalogue and grid-scope views.
+
 .. grid:: 1 1 3 3
    :gutter: 3
 
@@ -18,8 +23,8 @@ applied analysis. The same sections organize the repository's ``examples/`` fold
       :link: connectors/index
       :link-type: doc
 
-      Weather and worldwide generation: plant records, system totals and
-      measured PV research arrays.
+      Worldwide connector coverage, weather and generation: plant records,
+      system totals, station catalogues and measured PV research arrays.
 
    .. grid-item-card:: Analysis
       :link: analysis/index
