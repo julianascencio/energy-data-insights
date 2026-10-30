@@ -84,11 +84,11 @@ def test_catalogue_covers_every_source_once_with_existing_references():
     ids = [row["id"] for row in rows]
     source_root = ROOT / "data-retrieval/src/energy_data_retrieval/sources"
     implemented = {path.name for path in source_root.iterdir() if (path / "__init__.py").is_file()}
-    assert len(ids) == len(set(ids)) == 36
+    assert len(ids) == len(set(ids)) == 38
     assert set(ids) == implemented
     assert Counter(row["category"] for row in rows) == {
         "generation": 22,
-        "grid": 7,
+        "grid": 9,
         "station_network": 5,
         "local_import": 1,
         "basemap": 1,
@@ -134,6 +134,7 @@ def test_weather_scope_keeps_land_masks_model_selection_and_point_networks_disti
     rows = {row["id"]: row for row in _catalogue()["connectors"]}
     expected = {
         "global_grid": {"open_meteo", "earthmover_era5", "cds", "nasa_power"},
+        "regional_grid": {"canary_clim", "global_solar_atlas"},
         "land_grid": {"gpcc", "cru_ts"},
         "catalogue_grid": {"cmip6"},
         "global_network": {"noaa", "bsrn"},
@@ -150,7 +151,13 @@ def test_weather_scope_keeps_land_masks_model_selection_and_point_networks_disti
     assert rows["surfrad"]["country_codes"] == ["USA"]
     assert rows["aemet"]["access"] == rows["cds"]["access"] == "credential"
     for row in rows.values():
-        if row["category"] in {"grid", "local_import", "basemap"}:
+        if row["coverage_kind"] == "regional_grid":
+            # Host geography must not turn the Canary Islands product or the
+            # pinned Spain GHI archive into a global weather service.
+            assert row["category"] == "grid"
+            assert row["country_codes"] == ["ESP"]
+            assert row["access"] == "public"
+        elif row["category"] in {"grid", "local_import", "basemap"}:
             assert row["country_codes"] == []
         if row["category"] != "generation":
             # Global products and station networks are not represented by invented
@@ -304,8 +311,12 @@ def test_gallery_runs_offline_and_plots_the_reviewed_hosts_and_every_station(mon
     try:
         result = runpy.run_path(str(ROOT / "examples/connectors/plot_generation_coverage.py"))
         assert not attempts
+        assert len(result["catalogue"]["connectors"]) == 38
         assert result["generation_country_codes"] == set(COUNTRY_HOSTS.values())
         assert len(result["generation"]) == 22
+        assert {row[0] for row in result["grid_labels"]} == {
+            row["id"] for row in result["catalogue"]["connectors"] if row["category"] == "grid"
+        }
         rows = _station_rows()
         assert len(result["stations"]) == len(rows)
         assert set(

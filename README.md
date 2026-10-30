@@ -71,8 +71,8 @@ on the example pages include the supporting data and provenance where needed.
 
 Start with the **[worldwide connector coverage map](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)**
 and its [Python source](examples/connectors/plot_generation_coverage.py).
-Two reproducible figures introduce all 36 source modules: 22 generation providers,
-five station networks, seven weather/climate grid adapters, the local station-file
+Two reproducible figures introduce all 38 source modules: 22 generation providers,
+five station networks, nine weather/climate grid adapters, the local station-file
 importer and the Natural Earth basemap. Country shading identifies host countries
 for country/system products; regional and research-site markers retain their
 specific scope. The station map uses actual catalogue coordinates, which do not

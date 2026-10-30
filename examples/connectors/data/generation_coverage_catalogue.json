@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "as_of": "2026-10-30",
-  "interpretation": "Inventory of implemented source modules, not a service-territory map or a measurement-availability test. Country shading identifies 13 host countries with country/system generation products; it does not assert complete national, plant, technology or distributed-generation coverage. Country codes follow the accompanying Natural Earth ADM0_A3 units. All schematic_region coordinates are illustrative country or regional locators, not provider offices, power-plant locations or coverage polygons. The PVDAQ marker is one archive example, the NIST marker is a published reference testbed and the DKASC marker is a rounded precinct locator. Global and land scope describes documented product domains only; native masks, cached catalogue bounding boxes, selected CMIP6 grids, dates and access conditions remain authoritative. The station importer has no external provider citation, and Natural Earth is geographic context rather than observed energy or weather data.",
+  "interpretation": "Inventory of implemented source modules, not a service-territory map or a measurement-availability test. Country shading identifies 13 host countries with country/system generation products; it does not assert complete national, plant, technology or distributed-generation coverage. Country codes follow the accompanying Natural Earth ADM0_A3 units. Regional-grid country codes identify host geography only: CanaryClim covers the Canary Islands, and the Global Solar Atlas connector retrieves only its pinned Spain annual-GHI archive. All schematic_region coordinates are illustrative country or regional locators, not provider offices, power-plant locations or coverage polygons. The PVDAQ marker is one archive example, the NIST marker is a published reference testbed and the DKASC marker is a rounded precinct locator. Global and land scope describes documented product domains only; native masks, cached catalogue bounding boxes, selected CMIP6 grids, dates and access conditions remain authoritative. The station importer has no external provider citation, and Natural Earth is geographic context rather than observed energy or weather data.",
   "connectors": [
     {
       "id": "adme",
@@ -118,6 +118,22 @@
         "caiso_todays_outlook_supply"
       ],
       "source_url": "https://www.caiso.com/about/our-business/balancing-authority"
+    },
+    {
+      "id": "canary_clim",
+      "label": "CHELSACanaryClim · Canary Islands",
+      "category": "grid",
+      "coverage_kind": "regional_grid",
+      "scope": "Monthly temperature (tas) and precipitation (pr) climatologies for the Canary Islands, baseline 1979–2013, from the public v1.0 2025 COG release. Native masks define available land cells. Roughly 5 m pixel spacing does not establish climate accuracy at that scale; the published comparison evaluated 100 m fields.",
+      "access": "public",
+      "country_codes": [
+        "ESP"
+      ],
+      "references": [
+        "canaryclim_2025_data",
+        "patino_2023_canaryclim"
+      ],
+      "source_url": "https://www.envidat.ch/metadata/chelsacanaryclim-climatologies"
     },
     {
       "id": "cds",
@@ -344,6 +360,21 @@
         "eskom_generation_statistics"
       ],
       "source_url": "https://www.eskom.co.za/dataportal/renewables-performance/hourly-renewable-generation/"
+    },
+    {
+      "id": "global_solar_atlas",
+      "label": "Global Solar Atlas · Spain GHI",
+      "category": "grid",
+      "coverage_kind": "regional_grid",
+      "scope": "Only annual GHI from the pinned 2019 Spain GIS archive, including the Canary Islands, with a 1994–2018 baseline and 9-arcsecond (nominal 250 m) cells. This connector does not download arbitrary countries, the global catalogue or live solar-map data. Native raster masks and metadata define coverage.",
+      "access": "public",
+      "country_codes": [
+        "ESP"
+      ],
+      "references": [
+        "global_solar_atlas_2019"
+      ],
+      "source_url": "https://globalsolaratlas.info/download/spain"
     },
     {
       "id": "gpcc",

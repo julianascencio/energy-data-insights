@@ -15,15 +15,15 @@ plant-level observation.
 
 The **[worldwide connector coverage example](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)**
 adds two offline figures and their executable Python code to the Connectors
-gallery. Its reviewed inventory includes every implemented source module:
-22 generation providers, five station networks, seven weather/climate grid
+gallery. Its reviewed inventory includes all 38 implemented source modules:
+22 generation providers, five station networks, nine weather/climate grid
 adapters, the local station-file importer and Natural Earth.
 
 | View | What the map represents | Interpretation |
 | --- | --- | --- |
 | Generation sources | Country/system host countries, regional providers, selected ENTSO-E areas and PV research-site locators | Country shading identifies an implemented source in a country; it does not define its electrical footprint or establish complete national, plant or technology coverage. |
 | Station catalogues | Actual source coordinates from NOAA GHCNh, BSRN, DWD hourly solar and the seven supported SURFRAD stations | Locations include historical catalogue entries and do not establish available variables, dates or operational status. AEMET's credentialed Spanish catalogue is listed separately. |
-| Weather and climate scope | Documented global, land and explicitly selected model-grid products | A product's geographic domain does not prove that a particular coordinate/date has a valid value; native land masks, grid selection and access requirements still apply. |
+| Weather and climate scope | Documented global, land, regional and explicitly selected model-grid products | A product's geographic domain does not prove that a particular coordinate/date has a valid value; native land masks, grid selection and access requirements still apply. |
 
 Regional markers are schematic location aids, not provider offices, power plants
 or service-area polygons. AEMO represents the National Electricity Market,
@@ -32,6 +32,17 @@ Tokyo area. The ENTSO-E marker represents caller-selected transparency areas;
 it does not shade the European Union as a single coverage region. PVDAQ shows
 example system 4, NIST a reference testbed, and DKASC its Alice Springs precinct.
 These points do not indicate national PV monitoring coverage.
+
+The grid-scope panel also includes the two regional sources used by the
+[Canary Islands KGPV analysis](kgpv-canary.md). **CanaryClim** implements monthly
+temperature and precipitation climatologies for the Canary Islands, baseline
+1979–2013, from the v1.0 2025 COG release. The approximately 5 m file pixel
+spacing does not establish validated 5 m climate accuracy. **Global Solar Atlas**
+implements the pinned 2019 **Spain** annual-GHI archive, with the 1994–2018
+baseline and 9-arcsecond source grid (nominally 250 m); this adapter is not a
+general worldwide downloader or the current live solar-map service. Their
+Spain country codes provide geographic context only and do not add generation
+coverage or imply observations throughout Spain.
 
 The station figure uses **metadata rather than weather observations**. It keeps
 valid catalogue coordinates without selecting recent or active stations. BSRN

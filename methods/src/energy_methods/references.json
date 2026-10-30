@@ -31,7 +31,10 @@
       "docs/worldwide-generation.md",
       "scripts/prepare_connector_station_coverage.py",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
+      "examples/analysis/plot_kgpv_canary.py",
+      "docs/kgpv-canary.md"
     ],
     "note": "Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed. Soiling and snow indicators follow Eqs. 3.2–3.4 (pp. 49–51) and Tables 6.6–6.7 (pp. 135–136), with explicit equality/low-domain conventions and alternative example data documented in docs/soiling-snow.md.",
     "verified_at": "2026-10-30",
@@ -1472,7 +1475,10 @@
       "methods/src/energy_methods/climatology.py",
       "methods/src/energy_methods/mapping.py",
       "docs/kgpv.md",
-      "examples/analysis/plot_kgpv_worldwide.py"
+      "examples/analysis/plot_kgpv_worldwide.py",
+      "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
+      "examples/analysis/plot_kgpv_canary.py",
+      "docs/kgpv-canary.md"
     ],
     "note": "Fig. A1 classification precedence and fixed irradiation thresholds; Table 4 merges 24 raw combinations into 12 zones. Verified against the open-access institutional full text. Uses updated GPCC/CRU releases and caller-selected baseline rather than reproducing the original 1990-2016 map. Exact 18 C is assigned tropical, irradiation upper edges are inclusive, and aridity reductions use a machine-roundoff tolerance; these numerical conventions are explicit. No PV yield simulation is claimed.",
     "verified_at": "2026-10-29",
@@ -3193,6 +3199,113 @@
       "examples/connectors/data/generation_coverage_catalogue.json"
     ],
     "note": "Provider terms distinguish limited unaltered excerpts up to 5000 data cells with attribution/disclaimer from larger redistribution requiring permission. No DKASC observations are bundled; the gallery is an import workflow until a real export is supplied.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "canaryclim_2025_data",
+    "title": "CHELSACanaryClim-climatologies",
+    "authors": [
+      "Karger, D. N.",
+      "Collart, F.",
+      "Vanderpoorten, A.",
+      "Martin-Esquivel, J. L.",
+      "Naranjo-Cigala, A.",
+      "Mirolo, S.",
+      "Patiño, J."
+    ],
+    "year": 2025,
+    "doi": "10.16904/envidat.692",
+    "url": "https://www.envidat.ch/metadata/chelsacanaryclim-climatologies",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
+      "examples/analysis/plot_kgpv_canary.py",
+      "docs/kgpv-canary.md",
+      "data-retrieval/src/energy_data_retrieval/sources/canary_clim",
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "CC0 v1.0 COG release, monthly 1979–2013 temperature and precipitation. The acquired files have approximately 5 m pixel spacing; this is not validated 5 m climate accuracy. Encoded nodata is masked before scale/offset conversion. Source checksums, grid, dates and original license are retained in the Canary Islands example provenance.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "patino_2023_canaryclim",
+    "title": "Spatial resolution impacts projected plant responses to climate change on topographically complex islands",
+    "authors": [
+      "Patiño, J.",
+      "Collart, F.",
+      "Vanderpoorten, A.",
+      "Martin-Esquivel, J. L.",
+      "Naranjo-Cigala, A.",
+      "Mirolo, S.",
+      "Karger, D. N."
+    ],
+    "year": 2023,
+    "doi": "10.1111/ddi.13757",
+    "url": "https://doi.org/10.1111/ddi.13757",
+    "kind": "article",
+    "role": "data",
+    "used_by": [
+      "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
+      "examples/analysis/plot_kgpv_canary.py",
+      "docs/kgpv-canary.md",
+      "data-retrieval/src/energy_data_retrieval/sources/canary_clim",
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Scientific description and 100 m model-resolution benchmark for CanaryClim. Citation does not validate the current approximately 5 m COG spacing or this derived KGPV application at five metres.",
+    "publication": "Diversity and Distributions",
+    "volume": "29",
+    "issue": "10",
+    "pages": "1245-1262",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "global_solar_atlas_2019",
+    "title": "Global Solar Atlas 2.0: Spain solar resource GIS data",
+    "authors": [
+      "World Bank Group",
+      "ESMAP",
+      "Solargis"
+    ],
+    "year": 2019,
+    "doi": null,
+    "url": "https://globalsolaratlas.info/download/spain",
+    "kind": "data",
+    "role": "data",
+    "used_by": [
+      "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
+      "examples/analysis/plot_kgpv_canary.py",
+      "docs/kgpv-canary.md",
+      "data-retrieval/src/energy_data_retrieval/sources/global_solar_atlas",
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "docs/worldwide-generation.md"
+    ],
+    "note": "Pinned 2019 Spain archive, annual GHI at 9 arcseconds (nominally 250 m), 1994–2018 according to its XML metadata. Values are already annual kWh/m². Nearest-cell sampling adds no finer solar information. Developed and operated by Solargis s.r.o. on behalf of the World Bank Group using Solargis data with ESMAP funding. CC BY 4.0 with additional mediation/arbitration terms, preserved in the example manifest. Regional extraction and KGPV derivation are modifications; no provider endorsement is implied.",
+    "verified_at": "2026-10-30"
+  },
+  {
+    "id": "rasterio_documentation",
+    "title": "Rasterio documentation: windowed reading, writing and reprojection",
+    "authors": [
+      "Rasterio contributors"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://rasterio.readthedocs.io/en/stable/",
+    "kind": "manual",
+    "role": "software",
+    "used_by": [
+      "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
+      "examples/analysis/plot_kgpv_canary.py",
+      "docs/kgpv-canary.md",
+      "analysis/src/energy_analysis/canary_kgpv/plotting.py"
+    ],
+    "note": "Bounded raster-window processing, nearest-neighbour GHI sampling and categorical overviews. Native climate pixel centres and missing values remain explicit; display reduction does not change downloadable native rasters.",
     "verified_at": "2026-10-30"
   }
 ]

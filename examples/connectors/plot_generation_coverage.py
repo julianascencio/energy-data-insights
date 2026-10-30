@@ -1,7 +1,7 @@
 """Worldwide coverage of the repository's connectors
 ===================================================
 
-Locate **all 36 source modules**: 22 generation connectors, seven gridded
+Locate **all 38 source modules**: 22 generation connectors, nine gridded
 weather/climate sources, five station networks, a local station importer and
 the Natural Earth basemap. The first figure shows generation products; the
 second plots **39,010 provider/station catalogue rows** and explains the grid
@@ -327,6 +327,8 @@ plt.show()
 # a guarantee of a value at every location. Native masks and selected dates
 # remain authoritative. The current NASA POWER adapter retrieves daily AOD_55;
 # CMIP6 availability depends on the selected model, experiment and grid.
+# CanaryClim covers the Canary Islands; the Global Solar Atlas adapter imports
+# only its pinned Spain annual-GHI archive, not the provider's worldwide map.
 
 network_styles = {
     "noaa": (
@@ -408,7 +410,7 @@ ax_networks.text(
     color=TEXT_COLOR,
 )
 ax_grids.set_title(
-    "Gridded weather / climate · seven source modules",
+    "Gridded weather / climate · nine source modules",
     loc="left",
     fontsize=12,
     fontweight="bold",
@@ -423,9 +425,11 @@ grid_labels = [
     ("gpcc", "GPCC", "Land precipitation; native data mask applies"),
     ("cru_ts", "CRU TS", "Land climate excluding Antarctica; native mask"),
     ("cmip6", "CMIP6 / ESGF", "Selected model, experiment and grid availability"),
+    ("canary_clim", "CanaryClim", "Canary Islands; monthly climate, 1979-2013"),
+    ("global_solar_atlas", "Global Solar Atlas", "Spain archive only; annual GHI, 1994-2018"),
 ]
 for row, (_provider, label, scope) in enumerate(grid_labels):
-    y = 0.93 - row * 0.14
+    y = 0.94 - row * 0.11
     ax_grids.text(0, y, label, fontsize=10.5, weight="bold", color=TEXT_COLOR, va="top")
     ax_grids.text(0.29, y, scope, fontsize=9.5, color="#506b7d", va="top")
 fig_weather.suptitle(
@@ -440,7 +444,8 @@ fig_weather.suptitle(
 fig_weather.text(
     0.045,
     0.935,
-    "Four public station captures · AEMET listed separately · global / land / selected-model grids",
+    "Four public station captures · AEMET listed separately · "
+    "global / land / regional / model grids",
     fontsize=12,
     color="#506b7d",
 )
