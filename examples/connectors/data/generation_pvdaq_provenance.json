@@ -1,0 +1,18 @@
+{
+  "source_url": "https://oedi-data-lake.s3.amazonaws.com/pvdaq/csv/pvdata/system_id=4/year=2023/month=1/day=1/system_4__date_2023_01_01.csv",
+  "retrieved_at_utc": "2026-10-30T08:21:43.824652+00:00",
+  "sha256": "ab368ae7fb8f3b322774fddfe4459a8d647395af4e83ee2094c7b3a69d06431b",
+  "selection": "Complete original daily CSV, system 4, 2023-01-01; no values rescaled or imputed",
+  "system_id": 4,
+  "power_column": "ac_power__315",
+  "unit": "W",
+  "source_timezone": "-07:00",
+  "timezone_basis": "Explicit Mountain Standard Time for this winter date; does not assume a year-round/DST convention for all systems",
+  "channel_metadata_url": "https://oedi-data-lake.s3.amazonaws.com/pvdaq/parquet/metrics/metrics__system_4__part000.parquet",
+  "channel_metadata_original_sha256": "6e377cb9698d4967ba7c5307dc077b3a7348c0c8ff989686afee3b9ab5487c16",
+  "channel_metadata_json_sha256": "925765dcec82d68b0db3f13d6935074e2f7f785f717de0796b2c748b4212557b",
+  "channel_metadata_transformation": "Complete provider Parquet table exported as JSON records; NaN metadata becomes null",
+  "channel_units": "metric 315: raw_units=W, units=W, calc_scale=1, calc_offset=0, aggregation_type=avg",
+  "source_description": "PVDAQ public OEDI archive, measured PV system channels; small research array, not national generation",
+  "license_url": "https://data.openei.org/submissions/4568"
+}

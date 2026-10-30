@@ -18,7 +18,8 @@ applied analysis. The same sections organize the repository's ``examples/`` fold
       :link: connectors/index
       :link-type: doc
 
-      Provider workflows: ERA5, AEMO, U.S. EIA, Spain REE and Europe ENTSO-E.
+      Weather and worldwide generation: plant records, system totals and
+      measured PV research arrays.
 
    .. grid-item-card:: Analysis
       :link: analysis/index
@@ -28,16 +29,16 @@ applied analysis. The same sections organize the repository's ``examples/`` fold
       detailed maps for selected countries.
 
 Downloadable Python examples run during every documentation build without API
-credentials or live downloads. The AEMO, EIA and REE generation examples use
-attributed real public observations with source URLs and checksums. The ENTSO-E
-example shows an offline request plan and an explicit opt-in workflow for
-credentialed downloads. Other examples use clearly identified synthetic inputs,
+credentials or live downloads. Generation captures use attributed real public
+observations with source URLs and checksums. ENTSO-E and KPX show offline request
+plans; NIST and DKASC demonstrate native-export imports until a real file is
+supplied. Other examples use clearly identified synthetic inputs,
 NOAA climatology, NASA POWER or ERA5-Land data. Each example explains its units,
 scope and limitations; a source observation does not establish validated plant
 performance or complete national coverage.
 
 Download the :download:`generation examples and their data together
-<connectors/generation_examples.zip>` to run all four examples from an extracted folder.
+<connectors/generation_examples.zip>` to run the examples from an extracted folder.
 Install the repository's packages and docs dependencies first. See the
-:doc:`generation connector guide </_generated/guides/generation-connectors>`
+:doc:`worldwide generation guide </_generated/guides/worldwide-generation>`
 for command-line usage and access requirements.
