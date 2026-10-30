@@ -1,5 +1,12 @@
 # Data retrieval
 
+## PV climate classifications
+
+[Compare KGPV, JRC parametric climates, ML21 and PVCZ](../docs/climate-comparison.md).
+The implementation includes validated source readers, fixed PVCZ thresholds,
+frozen JSON cluster models, and offline global/Chile/Canary reference maps.
+Source periods, input units, published labels and documented refits stay explicit.
+
 Country-neutral acquisition infrastructure with one lowercase folder per source.
 The Chile adapter uses stable CEN identities. Weather adapters can be reused in
 another country with a different site registry. Climate-model retrieval preserves

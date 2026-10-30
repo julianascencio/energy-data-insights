@@ -1,0 +1,123 @@
+{
+  "format_version": 1,
+  "scheme": "jrc-parametric-refit",
+  "features": [
+    "annual_poa_kwh_m2",
+    "weighted_module_temperature_c"
+  ],
+  "offset": [
+    0.0,
+    0.0
+  ],
+  "scale": [
+    462.3154177402112,
+    12.810432154025484
+  ],
+  "weights": [
+    1.0,
+    1.0
+  ],
+  "centers": [
+    [
+      3.5937911362530954,
+      0.040563528576114116
+    ],
+    [
+      2.5620614656943834,
+      0.9655325630846647
+    ],
+    [
+      2.79898653177161,
+      1.772261555956246
+    ],
+    [
+      3.686527822026047,
+      1.856744904727924
+    ],
+    [
+      3.6060766893172693,
+      2.6451983054407497
+    ],
+    [
+      4.907541215020565,
+      1.8002707099375401
+    ],
+    [
+      4.679545021261412,
+      2.8377575283179786
+    ],
+    [
+      3.874622901659831,
+      3.440739163289074
+    ],
+    [
+      4.544584206737122,
+      3.6006915850219197
+    ],
+    [
+      5.319949837430491,
+      3.467148940030592
+    ]
+  ],
+  "lower": [
+    695.2991027847445,
+    -6.116437774222045
+  ],
+  "upper": [
+    2945.022099794009,
+    54.118708137814494
+  ],
+  "codes": [
+    "",
+    "JRC01",
+    "JRC02",
+    "JRC03",
+    "JRC04",
+    "JRC05",
+    "JRC06",
+    "JRC07",
+    "JRC08",
+    "JRC09",
+    "JRC10"
+  ],
+  "labels": [
+    "Unclassified",
+    "POA 1661 kWh/m\u00b2/year; module 0.5 \u00b0C",
+    "POA 1184 kWh/m\u00b2/year; module 12.4 \u00b0C",
+    "POA 1294 kWh/m\u00b2/year; module 22.7 \u00b0C",
+    "POA 1704 kWh/m\u00b2/year; module 23.8 \u00b0C",
+    "POA 1667 kWh/m\u00b2/year; module 33.9 \u00b0C",
+    "POA 2269 kWh/m\u00b2/year; module 23.1 \u00b0C",
+    "POA 2163 kWh/m\u00b2/year; module 36.4 \u00b0C",
+    "POA 1791 kWh/m\u00b2/year; module 44.1 \u00b0C",
+    "POA 2101 kWh/m\u00b2/year; module 46.1 \u00b0C",
+    "POA 2459 kWh/m\u00b2/year; module 44.4 \u00b0C"
+  ],
+  "provenance": {
+    "source": "JRC PVGIS ERA5 global means",
+    "period": "2005-2023",
+    "resolution": "0.1 degree native; 0.5 degree training",
+    "status": "documented refit"
+  },
+  "reference_ids": [
+    "ascencio_vasquez_2021_thesis",
+    "medina_2026_pv_climates"
+  ],
+  "settings": {
+    "software": {
+      "numpy": "2.3.5",
+      "scikit-learn": "1.9.1"
+    },
+    "random_seed": 10,
+    "n_init": 100,
+    "max_iter": 20,
+    "centroid_weighting": "cos(latitude)",
+    "selection_objective": "unweighted squared distance",
+    "objective": 8214.759046758802,
+    "training_rows": 57520,
+    "units": [
+      "kWh/m2/year POA",
+      "degC"
+    ]
+  }
+}

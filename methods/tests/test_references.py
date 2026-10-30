@@ -115,6 +115,10 @@ def test_method_paper_dois_remain_covered_by_catalogue() -> None:
 @pytest.mark.parametrize(
     "module",
     [
+        "climate_zones",
+        "jrc_climate",
+        "ml21",
+        "pvcz",
         "tdp",
         "acceptance_band",
         "poa",
