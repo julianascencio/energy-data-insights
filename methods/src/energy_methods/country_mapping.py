@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Literal
 
@@ -170,6 +171,44 @@ def _plot_path(geometry: Polygon | MultiPolygon) -> PlotPath:
             codes[0], codes[-1] = PlotPath.MOVETO, PlotPath.CLOSEPOLY
             paths.append(PlotPath(vertices, codes))
     return PlotPath.make_compound_path(*paths)
+
+
+def plot_country_boundaries(
+    selection: CountrySelection,
+    *,
+    ax: Axes,
+    colors: Mapping[str, str] | None = None,
+    facecolor: str = "#e6ecef",
+    edgecolor: str = "#ffffff",
+    linewidth: float = 0.4,
+    zorder: float = 1,
+) -> tuple[PathPatch, ...]:
+    """Draw categorical country polygons without inventing a numeric grid.
+
+    ``colors`` maps exact selected country codes to face colors; other countries
+    receive ``facecolor``. Holes and disconnected islands are preserved. Unknown
+    codes fail instead of silently missing a requested highlight. The caller
+    controls the longitude/latitude view bounds, labels and interpretation of
+    the colors; these polygons are administrative context, not service areas.
+    Returns one Matplotlib patch per country for further styling or export.
+    """
+    colors = colors or {}
+    if unknown := set(colors) - set(selection.codes):
+        raise ValueError(f"Unknown selected country codes: {', '.join(sorted(unknown))}")
+    if not np.isfinite(linewidth) or linewidth < 0 or not np.isfinite(zorder):
+        raise ValueError("Use a finite nonnegative linewidth and finite zorder")
+    patches = []
+    for country in selection.countries:
+        patch = PathPatch(
+            _plot_path(country.geometry),
+            facecolor=colors.get(country.code, facecolor),
+            edgecolor=edgecolor,
+            linewidth=linewidth,
+            zorder=zorder,
+        )
+        ax.add_patch(patch)
+        patches.append(patch)
+    return tuple(patches)
 
 
 def plot_country_map(

@@ -7,6 +7,12 @@ The [offline country gallery](https://julianascencio.github.io/energy-data-insig
 demonstrates Austria plus Slovenia, followed by Slovenia alone, using real
 2023 inputs sampled at 0.5°.
 
+For a categorical inventory, the
+[worldwide connector coverage example](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)
+uses the same country loader and the boundary-only plotting helper below.
+It shows implemented sources and real station-catalogue locations; its
+country colors describe source context rather than electrical service areas.
+
 ## Acquire the country shapefile
 
 The new source adapter downloads Natural Earth Admin 0 country boundaries,
@@ -42,7 +48,7 @@ with releases. To require the same archive, pass a saved `expected_sha256`.
 The adapter verifies cached downloads, bounds expanded size and reads only the
 expected flat archive members. Keep `.shp`, `.shx`, `.dbf`, `.prj` and `.cpg`
 together. Source archives and generated shapefiles belong under `artifacts/`;
-the offline gallery keeps only a small attributed GeoJSON subset.
+the offline gallery keeps small attributed GeoJSON fixtures.
 
 ## Select countries and create a grid
 
@@ -80,6 +86,60 @@ and must divide 180 (for example 1, 0.5, 0.25, 0.1). Allocation is capped at
 polygons, including partial coastal/border cells; their centres can be outside
 the country. This is an acquisition mask, not a land-fraction estimate.
 
+## Draw categorical country boundaries
+
+Use `plot_country_boundaries` for a country inventory or categorical background.
+It draws the actual polygon parts and holes directly, with one Matplotlib patch
+per selected country, and does not require a numeric weather grid. For example,
+run this from the repository root with the offline worldwide fixture:
+
+```python
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+
+from energy_methods.country_boundaries import load_country_boundaries
+from energy_methods.country_mapping import plot_country_boundaries
+
+boundaries = Path("examples/connectors/data/generation_coverage_world.geojson")
+iberia = load_country_boundaries(boundaries, ["ESP", "PRT"])
+fig, ax = plt.subplots(figsize=(7, 5))
+patches = plot_country_boundaries(
+    iberia,
+    ax=ax,
+    colors={"ESP": "#2f7d88"},
+    facecolor="#e6ecef",
+    edgecolor="#ffffff",
+    linewidth=0.4,
+    zorder=1,
+)
+ax.set(
+    xlim=(-12, 5),
+    ylim=(35, 45),
+    xlabel="Longitude",
+    ylabel="Latitude",
+    title="Selected countries: mainland view; Spain highlighted",
+)
+ax.set_aspect("equal", adjustable="box")
+plt.show()
+```
+
+`colors` uses exact codes from `selection.codes`; omitted codes receive
+`facecolor`, and unknown keys raise an error. This differs from the loader's
+name/ISO alias matching. The caller sets axis bounds, labels and the meaning of
+each color. The explicit mainland extent above leaves the source islands in
+the geometry while cropping the displayed view. Geographic axes are not an
+equal-area projection, and country colors alone establish no measurement or
+service coverage.
+
+The worldwide fixture preserves Natural Earth 5.1.1's original vertices at
+1:110 million scale for 176 features. Antarctica is explicitly excluded because
+its unsplit world-spanning ring violates the current antimeridian rule. Source
+version, public-domain terms, archive checksum, derived checksum and the
+exclusion are recorded in `generation_coverage_provenance.json`. Regenerate
+it explicitly with `scripts/prepare_connector_coverage.py`; gallery builds
+read the checked-in GeoJSON without a download.
+
 ## Mask, plot and export existing results
 
 The following assumes `risk` is a two-dimensional `xarray.DataArray` on regular
@@ -109,6 +169,7 @@ write_country_geojson(selected, iberia, Path("artifacts/risk.geojson"), nodata=0
 | `country_grid` | Builds a bounded grid and polygon-intersection mask |
 | `country_mask` | Boolean mask using cell `intersects` or `center` membership |
 | `clip_country_grid` | Masks raster values and trims only outer empty rows/columns |
+| `plot_country_boundaries` | Draws categorical country polygons, preserving holes and islands; exact code colors |
 | `plot_country_map` | Draws flat-shaded values clipped to the contours, with country borders |
 | `write_country_boundaries` | Exports selected contours as `.shp` plus companions or GeoJSON |
 | `write_country_geojson` | Exports actual country-cell polygon intersections |
