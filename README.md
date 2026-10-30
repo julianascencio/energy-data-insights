@@ -46,7 +46,7 @@ reports are welcome.
 
 | Subproject | Contents | Python import |
 | --- | --- | --- |
-| [data-retrieval](data-retrieval/) | Generation connectors for CEN, AEMO, U.S. EIA, Spain REE and Europe ENTSO-E; station, weather and climate sources; bounded requests and provenance | `energy_data_retrieval` |
+| [data-retrieval](data-retrieval/) | Worldwide power-system and measured PV generation connectors; station, weather and climate sources; bounded requests and provenance | `energy_data_retrieval` |
 | [methods](methods/) | CCYA climate-change yield assessment, TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation, hourly operational screening, KGPV and degradation mapping | `energy_methods` |
 | [analysis](analysis/) | Real-data degradation maps and reports; Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
@@ -63,7 +63,7 @@ and the repository use the same three sections:
 | Section | Examples |
 | --- | --- |
 | [Methods](examples/methods/) | Climate-change yield assessment, typical daily profiles and KGPV classification |
-| [Connectors](examples/connectors/) | ERA5 request planning and generation data from AEMO, U.S. EIA, Spain REE and Europe ENTSO-E |
+| [Connectors](examples/connectors/) | Worldwide generation providers, measured PV datasets and ERA5 weather request planning |
 | [Analysis](examples/analysis/) | Worldwide KGPV climate zones and soiling/snow risk maps using attributed climate data |
 
 Every gallery example runs offline during the documentation build. Download links
@@ -71,12 +71,17 @@ on the example pages include the supporting data and provenance where needed.
 
 ## Retrieve real electricity generation
 
-The [generation connector guide](docs/generation-connectors.md) covers
-Australian dispatch-unit SCADA, U.S. hourly system and monthly plant generation,
-Spain's generation mix, and European generation by technology/unit. Each source
-has a worked gallery example. AEMO, EIA's public files and REE include genuine
-offline data captures; ENTSO-E demonstrates request planning and token-based
-retrieval. Physical scope, MW/MWh and timestamp conventions remain explicit.
+The [worldwide generation catalogue](docs/worldwide-generation.md) adds ONS,
+IESO, AESO, XM/SIMEM, ADME, Elexon, RTE, SMARD, CAISO, EMI, Taipower, TEPCO, KPX,
+Eskom, PVDAQ, NIST and DKASC alongside CEN and the
+[AEMO, EIA, REE and ENTSO-E connectors](docs/generation-connectors.md).
+Each new source has a worked gallery example and Python/CLI workflow.
+
+Most examples include genuine attributed observations that run offline.
+Credentialed ENTSO-E/KPX examples default to request plans; NIST and DKASC import
+native exports downloaded through their provider portals. Scope, native units,
+time conventions and access limitations remain explicit. Source revisions and
+local input files are tracked through checksums and provenance manifests.
 
 ```bash
 uv run energy-retrieve ree-generation \

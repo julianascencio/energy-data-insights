@@ -72,6 +72,11 @@ from energy_data_retrieval.transport import (
     array_value,
     atomic_bytes,
 )
+from energy_data_retrieval.world_generation_cli import (
+    WORLD_GENERATION_COMMANDS,
+    add_world_generation_parsers,
+    run_world_generation_command,
+)
 
 
 def _iso_date(value: str) -> date:
@@ -150,6 +155,7 @@ def build_parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     add_discovery_parser(commands)
     add_generation_parsers(commands)
+    add_world_generation_parsers(commands)
     add_station_parsers(commands)
     add_climate_parsers(commands)
     add_cds_parsers(commands)
@@ -595,6 +601,13 @@ def _native(args: argparse.Namespace) -> None:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+    if args.command in WORLD_GENERATION_COMMANDS:
+        try:
+            result = run_world_generation_command(args)
+        except (ValueError, RetrievalError, OSError) as error:
+            parser.exit(2, f"Generation retrieval failed: {error}\n")
+        print(json.dumps(result, sort_keys=True, allow_nan=False))
+        return 0
     if args.command in GENERATION_COMMANDS:
         try:
             result = run_generation_command(args)

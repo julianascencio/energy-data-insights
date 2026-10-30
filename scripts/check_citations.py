@@ -54,7 +54,7 @@ downloaded it. Use the run's acquisition provenance for that determination.
 | LightGBM | Ke et al. and LightGBM documentation; project chronology and monotonic settings. |
 | Physical response | Stark-Parker BVLS through SciPy; repository-specific PV basis. |
 | Operational screening | IEC TS 63019 context; no conformity or certified availability claim. |
-| Generation and weather | CEN, AEMO, EIA, REE, ENTSO-E and weather; see run provenance. |
+| Generation and weather | Worldwide providers and measured PV; see run provenance. |
 
 Subhourly irradiance redistribution and geometry/lag search are project choices.
 The shape-constrained physical basis is not attributed to the solver authors.

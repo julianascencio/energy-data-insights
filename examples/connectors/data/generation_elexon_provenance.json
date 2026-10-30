@@ -1,0 +1,20 @@
+{
+  "provider": "elexon",
+  "description": "Complete native B1610 response for one BM unit, T_SUTBS-1, on UK settlement date 2026-10-01. Signed MWh, not a fuel-type or plant-size inference; no observations altered.",
+  "files": [
+    {
+      "file": "generation_elexon.json",
+      "source_url": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610/stream?from=2026-09-30T23%3A00Z&to=2026-10-01T22%3A30Z&bmUnit=T_SUTBS-1",
+      "endpoint": "https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610/stream",
+      "parameters": {
+        "from": "2026-09-30T23:00Z",
+        "to": "2026-10-01T22:30Z",
+        "bmUnit": "T_SUTBS-1"
+      },
+      "retrieved_at_utc": "2026-10-30T08:14:32.569242+00:00",
+      "sha256": "e77480da8746898f5576fc97ba53d0e3b29dc18c2e3972d552bb94c4b4b3f7bb",
+      "size_bytes": 11120
+    }
+  ],
+  "transformation": "None. Captured response bytes are retained exactly."
+}

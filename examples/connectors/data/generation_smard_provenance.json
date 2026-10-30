@@ -1,0 +1,34 @@
+{
+  "provider": "smard",
+  "description": "Three complete weekly quarter-hour chart responses for German solar, onshore wind and offshore wind, 2024-05-27 through 2024-06-02. Native values are MWh, already converted by SMARD from upstream MW.",
+  "files": [
+    {
+      "file": "generation_smard_solar.json",
+      "source_url": "https://www.smard.de/app/chart_data/4068/DE/4068_DE_quarterhour_1716760800000.json",
+      "endpoint": "https://www.smard.de/app/chart_data/4068/DE/4068_DE_quarterhour_1716760800000.json",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:14:32.724569+00:00",
+      "sha256": "22cefc8216b9996462c5a734d08d770ce0d082cf9516143023152faf1afb36b8",
+      "size_bytes": 15075
+    },
+    {
+      "file": "generation_smard_wind_onshore.json",
+      "source_url": "https://www.smard.de/app/chart_data/4067/DE/4067_DE_quarterhour_1716760800000.json",
+      "endpoint": "https://www.smard.de/app/chart_data/4067/DE/4067_DE_quarterhour_1716760800000.json",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:14:33.171115+00:00",
+      "sha256": "d3313d47566b261aeab3b0adbab0de573dd57e0c2d875a32ed9f107d10ddffce",
+      "size_bytes": 15678
+    },
+    {
+      "file": "generation_smard_wind_offshore.json",
+      "source_url": "https://www.smard.de/app/chart_data/1225/DE/1225_DE_quarterhour_1716760800000.json",
+      "endpoint": "https://www.smard.de/app/chart_data/1225/DE/1225_DE_quarterhour_1716760800000.json",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T08:14:33.295712+00:00",
+      "sha256": "11d60dca27e3651690030e47b28db711eb05eb752bdbfe8eb0352c4164c95e30",
+      "size_bytes": 15292
+    }
+  ],
+  "transformation": "None. Captured response bytes are retained exactly."
+}
