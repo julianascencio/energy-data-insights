@@ -679,6 +679,7 @@ dependencies = [
     { name = "openpyxl" },
     { name = "pandas" },
     { name = "pyarrow" },
+    { name = "rasterio" },
     { name = "scipy" },
     { name = "xarray" },
 ]
@@ -703,6 +704,7 @@ requires-dist = [
     { name = "openpyxl", specifier = ">=3.1,<4" },
     { name = "pandas", specifier = ">=2.2,<3" },
     { name = "pyarrow", specifier = ">=19,<25" },
+    { name = "rasterio", specifier = ">=1.4,<2" },
     { name = "scipy", specifier = ">=1.15,<2" },
     { name = "xarray", specifier = ">=2025.1,<2027" },
     { name = "xarray", marker = "extra == 'era5-native'", specifier = ">=2025.1,<2027" },

@@ -1,7 +1,7 @@
 """Worldwide coverage of the repository's connectors
 ===================================================
 
-Locate **all 38 source modules**: 22 generation connectors, nine gridded
+Locate **all 39 source modules**: 22 generation connectors, ten gridded
 weather/climate sources, five station networks, a local station importer and
 the Natural Earth basemap. The first figure shows generation products; the
 second plots **39,010 provider/station catalogue rows** and explains the grid
@@ -410,7 +410,7 @@ ax_networks.text(
     color=TEXT_COLOR,
 )
 ax_grids.set_title(
-    "Gridded weather / climate · nine source modules",
+    "Gridded weather / climate · ten source modules",
     loc="left",
     fontsize=12,
     fontweight="bold",
@@ -424,12 +424,13 @@ grid_labels = [
     ("nasa_power", "NASA POWER", "Global daily AOD_55; implemented aerosol product"),
     ("gpcc", "GPCC", "Land precipitation; native data mask applies"),
     ("cru_ts", "CRU TS", "Land climate excluding Antarctica; native mask"),
+    ("chelsa", "CHELSA v2.1", "Land monthly climate, 1981-2010; 30 arcseconds"),
     ("cmip6", "CMIP6 / ESGF", "Selected model, experiment and grid availability"),
     ("canary_clim", "CanaryClim", "Canary Islands; monthly climate, 1979-2013"),
-    ("global_solar_atlas", "Global Solar Atlas", "Spain archive only; annual GHI, 1994-2018"),
+    ("global_solar_atlas", "Global Solar Atlas", "Spain / Chile GHI; native masks and periods"),
 ]
 for row, (_provider, label, scope) in enumerate(grid_labels):
-    y = 0.94 - row * 0.11
+    y = 0.94 - row * 0.098
     ax_grids.text(0, y, label, fontsize=10.5, weight="bold", color=TEXT_COLOR, va="top")
     ax_grids.text(0.29, y, scope, fontsize=9.5, color="#506b7d", va="top")
 fig_weather.suptitle(

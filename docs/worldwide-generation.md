@@ -15,8 +15,8 @@ plant-level observation.
 
 The **[worldwide connector coverage example](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)**
 adds two offline figures and their executable Python code to the Connectors
-gallery. Its reviewed inventory includes all 38 implemented source modules:
-22 generation providers, five station networks, nine weather/climate grid
+gallery. Its reviewed inventory includes all 39 implemented source modules:
+22 generation providers, five station networks, ten weather/climate grid
 adapters, the local station-file importer and Natural Earth.
 
 | View | What the map represents | Interpretation |
@@ -38,11 +38,19 @@ The grid-scope panel also includes the two regional sources used by the
 temperature and precipitation climatologies for the Canary Islands, baseline
 1979–2013, from the v1.0 2025 COG release. The approximately 5 m file pixel
 spacing does not establish validated 5 m climate accuracy. **Global Solar Atlas**
-implements the pinned 2019 **Spain** annual-GHI archive, with the 1994–2018
-baseline and 9-arcsecond source grid (nominally 250 m); this adapter is not a
-general worldwide downloader or the current live solar-map service. Their
-Spain country codes provide geographic context only and do not add generation
-coverage or imply observations throughout Spain.
+implements the pinned 2019 annual-GHI archives for **Spain** (1994–2018) and
+**Chile** (1999–2018), at 9 arcseconds (nominally 250 m). Usable Chile GHI stops
+at 45°S despite the raster rectangle extending to 46°S, so southern mainland
+Patagonia remains unclassified. The adapter is not a general worldwide
+downloader or the current live solar-map service. Country codes provide
+geographic context only and do not add generation coverage or imply observations
+throughout Spain or Chile.
+
+**CHELSA v2.1** adds global land temperature and precipitation climatologies,
+baseline 1981–2010, through bounded native windows at 30 arcseconds (about 1 km).
+The [Chile KGPV analysis](kgpv-chile.md) uses these climate fields with Chile's
+solar archive; sampling them onto the finer solar grid does not add climate
+detail. Native masks and the distinct climate/solar periods remain explicit.
 
 The station figure uses **metadata rather than weather observations**. It keeps
 valid catalogue coordinates without selecting recent or active stations. BSRN

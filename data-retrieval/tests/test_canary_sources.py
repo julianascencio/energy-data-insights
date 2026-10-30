@@ -118,3 +118,63 @@ def test_gsa_archive_extracts_only_exact_members(tmp_path, monkeypatch):
     assert Path(str(path) + ".xml").is_file()
     assert record.sha256 == hashlib.sha256(raw).hexdigest()
     assert not (tmp_path / "unexpected").exists()
+
+
+def test_chile_redirect_cannot_fetch_spain_archive(tmp_path):
+    from energy_data_retrieval.sources.global_solar_atlas.client import CHILE_ARCHIVE_URL
+
+    seen = []
+
+    def respond(request):
+        seen.append(request)
+        return httpx.Response(
+            302,
+            headers={
+                "Location": f"https://worldbank-atlas.s3.us-east-1.amazonaws.com/download/Spain/{ARCHIVE_NAME}"
+            },
+        )
+
+    with (
+        HTTPClient(
+            allowed_hosts=GSA_HOSTS,
+            transport=SolarAtlasTransport(httpx.MockTransport(respond), country="Chile"),
+        ) as http,
+        pytest.raises(RetrievalError, match="redirect"),
+    ):
+        http.download_file(CHILE_ARCHIVE_URL, tmp_path / "chile.zip")
+    assert len(seen) == 1
+    with pytest.raises(ValueError, match="pinned"):
+        SolarAtlasTransport(httpx.MockTransport(respond), country="Other")
+
+
+def test_chile_archive_pin_and_canonical_redirect(tmp_path, monkeypatch):
+    import hashlib
+
+    from energy_data_retrieval.sources.global_solar_atlas import client as module
+
+    archive = tmp_path / "source.zip"
+    with ZipFile(archive, "w") as z:
+        for suffix in ("", ".xml", ".pdf"):
+            z.writestr(f"{module.CHILE_MEMBER_PREFIX}/GHI.tif{suffix}", b"Chile fixture")
+    raw = archive.read_bytes()
+    monkeypatch.setattr(module, "CHILE_ARCHIVE_BYTES", len(raw))
+    monkeypatch.setattr(module, "CHILE_ARCHIVE_SHA256", hashlib.sha256(raw).hexdigest())
+
+    def respond(request):
+        if str(request.url) == module.CHILE_ARCHIVE_URL:
+            return httpx.Response(
+                302,
+                headers={
+                    "Location": f"https://worldbank-atlas.s3.us-east-1.amazonaws.com/download/Chile/{module.CHILE_ARCHIVE_NAME}?X-Amz-Signature=temporary"
+                },
+            )
+        return httpx.Response(200, content=raw)
+
+    with HTTPClient(
+        allowed_hosts=GSA_HOSTS,
+        transport=SolarAtlasTransport(httpx.MockTransport(respond), country="Chile"),
+    ) as http:
+        path, record = GlobalSolarAtlasClient(http).download_chile_ghi(tmp_path / "out")
+    assert path.read_bytes() == b"Chile fixture"
+    assert record.endpoint == module.CHILE_ARCHIVE_URL
+    assert "X-Amz" not in path.with_name(module.CHILE_ARCHIVE_NAME + ".download.json").read_text()

@@ -1,0 +1,1579 @@
+{
+  "description": "Contiguous mainland Chile KGPV; native GSA lattice with explicit source gaps",
+  "generated_at_utc": "2026-10-30T18:29:52.789471+00:00",
+  "boundary_policy": "Largest connected Chile polygon by geodesic area; excludes all islands and Antarctica",
+  "climate_period": [
+    1981,
+    2010
+  ],
+  "solar_period": [
+    1999,
+    2018
+  ],
+  "baseline_policy": "Exploratory mixed historical periods, not a common-period climatology",
+  "resolution_note": "9-arcsecond output/GHI grid, nominal 250 m. Temperature and precipitation retain 30-arcsecond (about 1 km) source support, sampled by nearest cell. Pixel spacing does not establish KGPV accuracy. Natural Earth 10m denotes 1:10 million cartographic scale, not ten-metre contours.",
+  "missing_policy": "Class 0 if any required input is missing. GSA Chile ends at 45 S; all southern mainland beyond that latitude remains explicitly unclassified. Other coastal/mountain source gaps also remain unclassified.",
+  "units": {
+    "temperature": "degC",
+    "precipitation": "mm month-1",
+    "annual_ghi": "kWh m-2 year-1"
+  },
+  "preprocessing": [
+    "Crop native CHELSA cells using integral windows and HTTP ranges with If-Match.",
+    "Check strong source ETags and SHA-256 of decoded uint16 crop bytes (little endian).",
+    "Mask 65535 before scale/offset; K minus 273.15; rain kg/m2 equals mm.",
+    "GSA already supplies annual GHI kWh/m2. No multiplication by 365.",
+    "Snap the mainland bounding box to the GSA lattice, retaining its pixel centres.",
+    "Rasterize mainland at pixel centres; preserve polygon holes; nearest climate cells.",
+    "Apply classify_kgpv: fixed 2019 thresholds and Southern Hemisphere seasons.",
+    "Three bands: class ID, mainland mask, complete-input flag. No extrapolation.",
+    "Nearest-class overviews affect display only. Raw sources remain outside Git."
+  ],
+  "map": {
+    "file": "kgpv_chile_mainland.tif",
+    "sha256": "e943c5ab6f18f00913412d6ec922872df77a739b8ed75d658d9f8983d07dba8f",
+    "shape": [
+      14553,
+      3480
+    ],
+    "transform": [
+      0.0025,
+      0.0,
+      -75.7125,
+      0.0,
+      -0.0025,
+      -17.505,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "mainland_pixels": 10469236,
+    "classified_pixels": 7848061,
+    "missing_mainland_pixels": 2621175,
+    "class_counts": {
+      "unclassified": 2621175,
+      "AH": 0,
+      "AK": 0,
+      "BH": 181469,
+      "BK": 2275417,
+      "CH": 31863,
+      "CK": 339413,
+      "DL": 212402,
+      "DM": 1007773,
+      "DH": 2187863,
+      "EL": 4,
+      "EM": 112553,
+      "FL": 1499304
+    },
+    "area_km2": {
+      "unclassified": 132685.1589513194,
+      "AH": 0.0,
+      "AK": 0.0,
+      "BH": 12335.686279918824,
+      "BK": 160547.51775208284,
+      "CH": 2116.2236164413807,
+      "CK": 23300.43479889542,
+      "DL": 11900.034367664372,
+      "DM": 59059.65628612265,
+      "DH": 137951.73972333065,
+      "EL": 0.25508214836263654,
+      "EM": 7340.602616831362,
+      "FL": 101096.84752143288
+    },
+    "area_policy": "Sum of full WGS84 ellipsoidal pixel areas selected by polygon centres",
+    "contour_files_sha256": {
+      "kgpv_chile_mainland.cpg": "146d6789ffe033a5297c1ad046e6a62ee35319b86b021444f05b6ea2aa8a1f4a",
+      "kgpv_chile_mainland.dbf": "52b4a2e5b4142e33d905f7ba2575e82f620e39c4fdfc2e068de38d70c990693d",
+      "kgpv_chile_mainland.prj": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+      "kgpv_chile_mainland.shp": "338a98cea61711020d1d1aa8b186ad67438ac5089c3ebb335d4b2943ed0982aa",
+      "kgpv_chile_mainland.shx": "c8860f4fe58aaf75ad76cce7e14da5e2860cb896763b7647aff6fdaddba454b1"
+    },
+    "boundary_file": "kgpv_chile_mainland.geojson",
+    "boundary_sha256": "e3e5db27fe59e5a28cdefa9bb9081821737565874a3c346c4703141e84926bc3",
+    "sample_file": "kgpv_chile_samples.csv",
+    "sample_sha256": "2015478bbcd53b7aa9ac70f08a6393e5f5ae9bc9c91a33db39bdb3ba1e20620e"
+  },
+  "climate_subsets": [
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_01_1981-2010_V.2.1.tif",
+      "etag": "\"3b404cfa9cb9a6d247f3e876d618c33f-33\"",
+      "source_size_bytes": 346942826,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "555c2072aadc29331c2d3624faf3e522453ca48fbeb9adf1193e57098db09bfd",
+      "retrieved_at_utc": "2026-10-30T18:19:56.191003+00:00",
+      "transfer_bytes": 17825792,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "df3448ed53a50a7ae8f237b7d6a898f5d6f9f2a8c5c311d283e5150c9db7941b",
+      "size_bytes": 3717276
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_02_1981-2010_V.2.1.tif",
+      "etag": "\"12c8043bb8dfb5897d82d2f02fa8bbe3-32\"",
+      "source_size_bytes": 339601774,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "e3688e4c16ec2e663f3d68e2894039c692caf0c26f663e98786706d7e19c6e9b",
+      "retrieved_at_utc": "2026-10-30T18:19:56.302240+00:00",
+      "transfer_bytes": 19922944,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "2f61d8e7a4ec74b1eea129c615b6f99f0fb6c9f7070bba7874e65d9ef7891237",
+      "size_bytes": 3660242
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_03_1981-2010_V.2.1.tif",
+      "etag": "\"cdeae4aba67cb9b1ee1cc4f4de15250e-33\"",
+      "source_size_bytes": 354216394,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "01d255ec26fc6885cee6ae8bcbcaec9745a37547223545c4af6cbd6d50beb718",
+      "retrieved_at_utc": "2026-10-30T18:20:03.232379+00:00",
+      "transfer_bytes": 17825792,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "aefb3c11182f7b4e9cf7a659474bc4a86c8799e071af6bd6f703562156db33fe",
+      "size_bytes": 3742632
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_04_1981-2010_V.2.1.tif",
+      "etag": "\"9df3c322a1e22e2e8a865465b2552923-33\"",
+      "source_size_bytes": 355984276,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "c0dd3ef806d046a30700f5a834312fda3953ca73bb46486fdf72f71d2be72dd7",
+      "retrieved_at_utc": "2026-10-30T18:20:02.774151+00:00",
+      "transfer_bytes": 16777216,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "2da666e693cf42f2e2ad678b453bf6bb09a4a5b1f7f96411c990aed007daecfc",
+      "size_bytes": 3543654
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_05_1981-2010_V.2.1.tif",
+      "etag": "\"894b316e865134eaaf09f7cc19bde3aa-34\"",
+      "source_size_bytes": 365712838,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "32e7ea93c49db9af641084138ddc7494ae3c7cc6d6e521cdd79ad7893558fb3e",
+      "retrieved_at_utc": "2026-10-30T18:20:11.483984+00:00",
+      "transfer_bytes": 15728640,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "14098fb08647fc2334d744fd2face5837e435b622268ef7c5571d853651bce80",
+      "size_bytes": 3735432
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_06_1981-2010_V.2.1.tif",
+      "etag": "\"9ec438f1836663105c17f6124e625910-35\"",
+      "source_size_bytes": 372652111,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "2cc1f7b3d21d15d873cff01a1616dc273793a866347fb937e463cf9e67cd1de3",
+      "retrieved_at_utc": "2026-10-30T18:20:12.087815+00:00",
+      "transfer_bytes": 17825792,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "743a98833efbfa2b8cce221e4f357d8aa36d662136030035b2898aceae0d787f",
+      "size_bytes": 3780352
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_07_1981-2010_V.2.1.tif",
+      "etag": "\"b1ba47ea18ea857382fa3f3409827bb8-36\"",
+      "source_size_bytes": 384971425,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "6011b3c3501e08014e9cbf9ad29f5d8f45d8af3a401c597ee204c9dbaae0122b",
+      "retrieved_at_utc": "2026-10-30T18:20:19.830624+00:00",
+      "transfer_bytes": 14680064,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "7d9eac0e28b5922bb0fa535ba43a4109fc5e54f4a5b2603c7397234d2a1a1bb2",
+      "size_bytes": 3645964
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_08_1981-2010_V.2.1.tif",
+      "etag": "\"905ca66fc720b7041892baedc5562c5a-36\"",
+      "source_size_bytes": 384394279,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "130d5e9e19e2ed0b3b9a05486f508ec0a89bc1a72502b3900f15f01ca732bc0e",
+      "retrieved_at_utc": "2026-10-30T18:20:20.231557+00:00",
+      "transfer_bytes": 15728640,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "8ebb923ee16eb8f40eccc0df5a0a71aba2663ef6edd283f029ddeaef03fbff1a",
+      "size_bytes": 3503376
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_09_1981-2010_V.2.1.tif",
+      "etag": "\"e8697c4eaad6be6ef311b5348e4f1ad2-35\"",
+      "source_size_bytes": 375349612,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "cb1e0e7e81b93ba0640b58f4cdb114074f2c1f19acd1e748eff0f78d8fc24e12",
+      "retrieved_at_utc": "2026-10-30T18:20:28.825424+00:00",
+      "transfer_bytes": 16777216,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "f0e2bf741a6c025a28dae658f22304634d22f315de53a0e72345f5e279a1c922",
+      "size_bytes": 3308836
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_10_1981-2010_V.2.1.tif",
+      "etag": "\"c73c9055079e1dcc5a6def9133922fc5-35\"",
+      "source_size_bytes": 370435995,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "1ac483c42433970e6b0214f475b59b1f4dc56250f95b7129d4bce7ba1bd8a35f",
+      "retrieved_at_utc": "2026-10-30T18:20:28.604498+00:00",
+      "transfer_bytes": 15728640,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "82f87d56ec297a45024c5d7e0356e2ae46b83a5ddf3644c30ba9f0d14d9fbe15",
+      "size_bytes": 3374216
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_11_1981-2010_V.2.1.tif",
+      "etag": "\"2b4736cc948d33563bb15025b287677c-33\"",
+      "source_size_bytes": 354232642,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "27db12d3e048e4985938f32c08a17f8d31c178a13debc63b6f7c1f35f53b8c3a",
+      "retrieved_at_utc": "2026-10-30T18:20:36.501141+00:00",
+      "transfer_bytes": 16777216,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "07f18a4cfa5528bc45b1294be7ca6601c796797b77ab9341581836bd6437e49e",
+      "size_bytes": 3384718
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/pr/1981-2010/CHELSA_pr_12_1981-2010_V.2.1.tif",
+      "etag": "\"0d375f7cca9ac5492d7c59b37fccb37c-33\"",
+      "source_size_bytes": 349117178,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515001,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950003,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "kg m-2 month-1",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "efbb0ccc3adf44472d2a67675e5c1ea9d298fa4d2e7acbbace299ec3d4aef905",
+      "retrieved_at_utc": "2026-10-30T18:20:36.608810+00:00",
+      "transfer_bytes": 16777216,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "980786ed234718df330ffc625b5bc88f85c9fe2693542b79c9a68d8e84d2dfe6",
+      "size_bytes": 3568292
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_01_1981-2010_V.2.1.tif",
+      "etag": "\"6ffa315be924d742db8cb084d8964d4d-14\"",
+      "source_size_bytes": 149078236,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "bebe20a6d25c431e2f36837457db8f151f9d07271c05e6471551b2872c5149c7",
+      "retrieved_at_utc": "2026-10-30T18:19:04.852526+00:00",
+      "transfer_bytes": 12582912,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "b20c06f7f73a85e055064850741d03a46f901fd9274546cae9320ddf6a6b1c56",
+      "size_bytes": 2148140
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_02_1981-2010_V.2.1.tif",
+      "etag": "\"5e65e6497f56eabe101e17aea20d7978-14\"",
+      "source_size_bytes": 150503665,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "9001740bf21da804ee95a7f4c488f4bfc57a1d58b8ba64f69197b112bdb66b8f",
+      "retrieved_at_utc": "2026-10-30T18:19:04.830395+00:00",
+      "transfer_bytes": 12582912,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "6f1e9113c06d24dda2460ebfaff033a51a49c66c20aae4a4c7d690657091c8b9",
+      "size_bytes": 2115850
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_03_1981-2010_V.2.1.tif",
+      "etag": "\"d88ef57fde6d7653aae6385a06a877f1-14\"",
+      "source_size_bytes": 154000670,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "5a80b35614eae14fd7781cd47f1e5f5f588613f6f1a0af4a1ec0094cc26df785",
+      "retrieved_at_utc": "2026-10-30T18:19:13.235628+00:00",
+      "transfer_bytes": 13631488,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "f81d50e6fd65a04dd78e8012fd7dda648d862b63582e457778fa4fd4cda23a92",
+      "size_bytes": 2088620
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_04_1981-2010_V.2.1.tif",
+      "etag": "\"ca7f907b14512cd24b3c90f849ad5df0-15\"",
+      "source_size_bytes": 159029991,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "df527d0bf8de94ac80c5a44efabbc6624dfb178fbdcce055db52d417ed089cfe",
+      "retrieved_at_utc": "2026-10-30T18:19:13.158097+00:00",
+      "transfer_bytes": 13631488,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "9567435c71506084fe7d76fcf8692fd96a704903d145e2778e373089637c995c",
+      "size_bytes": 2066188
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_05_1981-2010_V.2.1.tif",
+      "etag": "\"1331aeea2e5ec9781e4752fe9856a659-15\"",
+      "source_size_bytes": 161560538,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "93639ec5446e7e03eef66ac16c5512c32d2f715c1434fb6ac339f1e3b0e6aab3",
+      "retrieved_at_utc": "2026-10-30T18:19:21.235613+00:00",
+      "transfer_bytes": 12582912,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "ba19cff9f9fbab1f8ff45330b488413cd42b0e24d0f7b7f7912510a9c77b9741",
+      "size_bytes": 2049994
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_06_1981-2010_V.2.1.tif",
+      "etag": "\"0fbc18699814a0c8e6ab83274a286637-15\"",
+      "source_size_bytes": 163737273,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "611cf2514fd15d71c894f2d02c9a3cc9651934074c3ba22235d8899955e37ada",
+      "retrieved_at_utc": "2026-10-30T18:19:21.617260+00:00",
+      "transfer_bytes": 13631488,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "27201945a7e452a8ffce310330487aad9f21c9d47e5b000748882f2bd262e51d",
+      "size_bytes": 2045462
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_07_1981-2010_V.2.1.tif",
+      "etag": "\"34e8b4d9893812d135d2f0132f940af6-15\"",
+      "source_size_bytes": 164914648,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "08c53d9da0daeca43dd16a0e401830370a306f4b0020317428a18e4841fe6ff1",
+      "retrieved_at_utc": "2026-10-30T18:19:29.402732+00:00",
+      "transfer_bytes": 12582912,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "c524c03efcd8af3e7cc471bfc28f6b8513b703fd341764f9f1b4a85f48225212",
+      "size_bytes": 2039638
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_08_1981-2010_V.2.1.tif",
+      "etag": "\"33aeff03412780cdfc101870a3fbbfe9-15\"",
+      "source_size_bytes": 163715514,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "acce7d56567b18f32067001c27d9ea9670fbd7a9e962774e39bacd56d0a04746",
+      "retrieved_at_utc": "2026-10-30T18:19:29.592784+00:00",
+      "transfer_bytes": 14680064,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "b92037ffc947939d21c398336c80ecec8fc8030407a60f749b67426fbbbe7721",
+      "size_bytes": 2070612
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_09_1981-2010_V.2.1.tif",
+      "etag": "\"79063f92ba270435487111c9dbd89239-15\"",
+      "source_size_bytes": 161167574,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "39329594532026c1c75300593d88a60849373efde2ba7be3b6dec404d256d641",
+      "retrieved_at_utc": "2026-10-30T18:19:37.711552+00:00",
+      "transfer_bytes": 12582912,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "8b98569c60db05d053f01d6b4c54d074ba4502e11bd1232d3165312bdba800f5",
+      "size_bytes": 2102598
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_10_1981-2010_V.2.1.tif",
+      "etag": "\"22e189db1f5473050683a69e6cb263ad-14\"",
+      "source_size_bytes": 155747156,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "172249c04b4a88416addedc649ba9cec2e68d10312f331809feed68f07ec5529",
+      "retrieved_at_utc": "2026-10-30T18:19:37.894407+00:00",
+      "transfer_bytes": 14680064,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "d6ef4db00d36597b15c29ae0333d6c0c5bb9aef7327e8ddb3e2511c870f32f0a",
+      "size_bytes": 2130302
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_11_1981-2010_V.2.1.tif",
+      "etag": "\"95bc664bb814fa8c7f99cb170c432efd-14\"",
+      "source_size_bytes": 149949132,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "14e13de4ea33284d5359c3faf4d427315eee31dbd7325dffbb171eb6030c37ea",
+      "retrieved_at_utc": "2026-10-30T18:19:46.350076+00:00",
+      "transfer_bytes": 15728640,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "862cc84792d1432a8cfbf68102dbfdef5cfe6a41ca66f460d52e3bbbe3a7c666",
+      "size_bytes": 2150370
+    },
+    {
+      "url": "https://os.unil.cloud.switch.ch/chelsa02/chelsa/global/climatologies/tas/1981-2010/CHELSA_tas_12_1981-2010_V.2.1.tif",
+      "etag": "\"01e67a4d061484057fed524f9d07a81b-14\"",
+      "source_size_bytes": 148298651,
+      "source_shape": [
+        20880,
+        43200
+      ],
+      "source_transform": [
+        0.0083333333,
+        0.0,
+        -180.00013888885002,
+        0.0,
+        -0.0083333333,
+        83.99986041515,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "requested_bounds": [
+        -76.0,
+        -54.0,
+        -66.5,
+        -17.4
+      ],
+      "shape": [
+        4393,
+        1141
+      ],
+      "transform": [
+        0.0083333333,
+        0.0,
+        -76.00013930485001,
+        0.0,
+        -0.0083333333,
+        -17.391805845950017,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 0.1,
+      "offset": 0.0,
+      "units": "K",
+      "baseline": [
+        1981,
+        2010
+      ],
+      "pixels_sha256": "ed66440c462b710c1e9e1a86f88df798a3a7d33f8559635be12d6d2a0fb655af",
+      "retrieved_at_utc": "2026-10-30T18:19:45.830912+00:00",
+      "transfer_bytes": 12582912,
+      "license": "CC0 1.0",
+      "reference_ids": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "sha256": "c8d6cb25f5b60572e2f0c25c1f9db8f9d063ba40f1d701681b46c2466ffb9630",
+      "size_bytes": 2152434
+    }
+  ],
+  "solar_grid": {
+    "shape": [
+      11600,
+      17600
+    ],
+    "transform": [
+      0.0025,
+      0.0,
+      -110.0,
+      0.0,
+      -0.0025,
+      -17.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "bounds": [
+      -110.0,
+      -46.0,
+      -66.0,
+      -17.0
+    ],
+    "valid_pixel_center_latitude_range": [
+      -44.99875,
+      -17.41125
+    ],
+    "crs": "EPSG:4326",
+    "nodata": 1.1754943508222875e-38,
+    "sha256": "7c98f99f99dddfe9d2d65f507f1874833a680462d014376273dddd2dfc2a47fd",
+    "metadata_sha256": "5d413a492d22379829e223843b0a13b16fa1d3742901c01125c1477ac6de00fc"
+  },
+  "solar_archive": {
+    "endpoint": "https://api.globalsolaratlas.info/download/Chile/Chile_GISdata_LTAym_YearlyMonthlyTotals_GlobalSolarAtlas-v2_GEOTIFF.zip",
+    "parameters": {},
+    "retrieved_at_utc": "2026-10-30T18:08:09.338452+00:00",
+    "sha256": "3b17db760a4668d2d9752833ae343d63d5993a30e60598effffaeb2558ff7e06",
+    "size_bytes": 145387267,
+    "cache_hit": false
+  },
+  "boundary_source": {
+    "source": "Natural Earth Admin 0 - Countries",
+    "scale": "10m",
+    "version": "5.1.1",
+    "license": "Public domain",
+    "terms_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "boundary_policy": "Natural Earth default de facto boundaries",
+    "request": {
+      "endpoint": "https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_countries.zip",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-30T18:08:13.851307+00:00",
+      "sha256": "ce1ac7036499a0edd641fbc093cd209a98f96a49d2eca8480aaacad35138a7f6",
+      "size_bytes": 4930492,
+      "cache_hit": true
+    },
+    "files_sha256": {
+      "ne_10m_admin_0_countries.VERSION.txt": "548358969090d629b41888f5fe664ac31b7203dfd849f7c1ef820ac055b62191",
+      "ne_10m_admin_0_countries.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "ne_10m_admin_0_countries.dbf": "c5dbd3dd5fd7e2ef49051fc88562c03819e8ea63a382642df6eadd1243bf4b49",
+      "ne_10m_admin_0_countries.prj": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+      "ne_10m_admin_0_countries.shp": "7ce119ef6342e43cff7c0c3004e0911ab7ec1988a14734372031d2012180e7bc",
+      "ne_10m_admin_0_countries.shx": "ca19ec112d054c77bc8f7ac00e3b110d5dff32cc9bcf4cd1b8b66bdd0f611d32"
+    },
+    "reference_ids": [
+      "natural_earth_countries"
+    ]
+  },
+  "licenses": {
+    "climate": "CC0 1.0; https://doi.org/10.16904/envidat.228",
+    "solar": "Copyright: Solar resource data \u00a9 2019 Solargis. The data is published in Global Solar Atlas under a Creative Commons 4.0 Attribution International license, CC BY 4.0 with the following mandatory and binding addition: Any and all disputes arising under this License that cannot be settled amicably shall be submitted to mediation in accordance with the WIPO Mediation Rules 3 in effect at the time the work was published. If the request for mediation is not resolved within forty-five (45) days of the request, either You or the Licensor may, pursuant to a notice of arbitration communicated by reasonable means to the other party refer the dispute to final and binding arbitration to be conducted in accordance with UNCITRAL Arbitration Rules as then in force. The arbitral tribunal shall consist of a sole arbitrator and the language of the proceedings shall be English unless otherwise agreed. The place of arbitration shall be where the Licensor has its headquarters. The arbitral proceedings shall be conducted remotely (e.g., via telephone conference or written submissions) whenever practicable, or held at the World Bank headquarters in Washington DC.",
+    "solar_attribution": "Data obtained from the Global Solar Atlas 2.0, a free, web-based application developed and operated by Solargis s.r.o. on behalf of the World Bank Group, utilizing Solargis data, with funding provided by the Energy Sector Management Assistance Program (ESMAP). https://globalsolaratlas.info",
+    "source_terms": "https://globalsolaratlas.info/support/terms-of-use",
+    "boundary": "Natural Earth public domain",
+    "changes": "Regional cropping, nearest climate-cell sampling and KGPV classification"
+  },
+  "reference_ids": [
+    "ascencio_vasquez_2021_thesis",
+    "ascencio_vasquez_2019_kgpv",
+    "chelsa_2021_climatologies",
+    "karger_2017_chelsa",
+    "global_solar_atlas_chile_2019",
+    "natural_earth_countries",
+    "rasterio_documentation"
+  ],
+  "software": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "rasterio": "1.5.2",
+    "pyproj": "3.8.0"
+  }
+}

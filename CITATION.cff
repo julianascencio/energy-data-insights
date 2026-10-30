@@ -3129,6 +3129,118 @@
       ],
       "url": "https://rasterio.readthedocs.io/en/stable/",
       "notes": "Role: software. Bounded raster-window processing, nearest-neighbour GHI sampling and categorical overviews. Native climate pixel centres and missing values remain explicit; display reduction does not change downloadable native rasters."
+    },
+    {
+      "type": "data",
+      "title": "Climatologies at high resolution for the earth’s land surface areas, Version 2.1",
+      "authors": [
+        {
+          "family-names": "Karger",
+          "given-names": "D. N."
+        },
+        {
+          "family-names": "Conrad",
+          "given-names": "O."
+        },
+        {
+          "family-names": "Böhner",
+          "given-names": "J."
+        },
+        {
+          "family-names": "Kawohl",
+          "given-names": "T."
+        },
+        {
+          "family-names": "Kreft",
+          "given-names": "H."
+        },
+        {
+          "family-names": "Soria-Auza",
+          "given-names": "R. W."
+        },
+        {
+          "family-names": "Zimmermann",
+          "given-names": "N. E."
+        },
+        {
+          "family-names": "Linder",
+          "given-names": "H. P."
+        },
+        {
+          "family-names": "Kessler",
+          "given-names": "M."
+        }
+      ],
+      "url": "https://www.chelsa-climate.org/datasets/chelsa_climatologies",
+      "notes": "Role: data. CC0 v2.1 climatologies, 1981–2010 monthly temperature and precipitation, 30 arcseconds. Regional windows retain source pixels, CF units, scale/offset and masks. Strong source ETags and crop-pixel SHA-256 pins are recorded; ETags are not SHA-256 hashes. Current files are served from the provider’s chelsa02 container on os.unil.cloud.switch.ch.",
+      "year": 2021,
+      "doi": "10.16904/envidat.228"
+    },
+    {
+      "type": "article",
+      "title": "Climatologies at high resolution for the earth’s land surface areas",
+      "authors": [
+        {
+          "family-names": "Karger",
+          "given-names": "D. N."
+        },
+        {
+          "family-names": "Conrad",
+          "given-names": "O."
+        },
+        {
+          "family-names": "Böhner",
+          "given-names": "J."
+        },
+        {
+          "family-names": "Kawohl",
+          "given-names": "T."
+        },
+        {
+          "family-names": "Kreft",
+          "given-names": "H."
+        },
+        {
+          "family-names": "Soria-Auza",
+          "given-names": "R. W."
+        },
+        {
+          "family-names": "Zimmermann",
+          "given-names": "N. E."
+        },
+        {
+          "family-names": "Linder",
+          "given-names": "H. P."
+        },
+        {
+          "family-names": "Kessler",
+          "given-names": "M."
+        }
+      ],
+      "url": "https://doi.org/10.1038/sdata.2017.122",
+      "notes": "Role: data. Scientific description of CHELSA; use the versioned dataset record for the exact v2.1 baseline, storage encoding and release. Does not independently validate the derived Chile KGPV classifications.",
+      "year": 2017,
+      "doi": "10.1038/sdata.2017.122",
+      "journal": "Scientific Data",
+      "volume": "4"
+    },
+    {
+      "type": "data",
+      "title": "Global Solar Atlas 2.0: Chile solar resource GIS data",
+      "authors": [
+        {
+          "name": "World Bank Group"
+        },
+        {
+          "name": "ESMAP"
+        },
+        {
+          "name": "Solargis"
+        }
+      ],
+      "url": "https://globalsolaratlas.info/download/chile",
+      "notes": "Role: data. Pinned 2019 Chile archive. XML identifies 1999–2018 annual GHI, kWh/m²; 9 arcseconds, nominal 250 m. Usable values stop at 45°S, though the file rectangle extends to 46°S; southern mainland Patagonia is unclassified. CC BY 4.0 plus additional mediation/arbitration terms retained in the provenance. World Bank/ESMAP/Solargis attribution; derived KGPV does not imply endorsement.",
+      "year": 2019
     }
   ]
 }

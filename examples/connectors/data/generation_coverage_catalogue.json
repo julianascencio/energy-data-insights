@@ -174,6 +174,20 @@
       "source_url": "https://sipub.api.coordinador.cl/generacion-real/v3/findByDate"
     },
     {
+      "id": "chelsa",
+      "label": "CHELSA v2.1 · land climatology",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "Global land monthly temperature (tas) and precipitation (pr) climatologies, baseline 1981–2010, at 30 arcseconds (about 1 km). The connector downloads bounded native raster windows with source masks, ETags and crop-pixel hashes. Resampling onto a finer solar grid does not add climate detail or guarantee valid values at every location.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "chelsa_2021_climatologies",
+        "karger_2017_chelsa"
+      ],
+      "source_url": "https://www.chelsa-climate.org/datasets/chelsa_climatologies"
+    },
+    {
       "id": "cmip6",
       "label": "CMIP6 · selected model grid",
       "category": "grid",
@@ -363,16 +377,18 @@
     },
     {
       "id": "global_solar_atlas",
-      "label": "Global Solar Atlas · Spain GHI",
+      "label": "Global Solar Atlas · Spain and Chile GHI",
       "category": "grid",
       "coverage_kind": "regional_grid",
-      "scope": "Only annual GHI from the pinned 2019 Spain GIS archive, including the Canary Islands, with a 1994–2018 baseline and 9-arcsecond (nominal 250 m) cells. This connector does not download arbitrary countries, the global catalogue or live solar-map data. Native raster masks and metadata define coverage.",
+      "scope": "Annual GHI from the pinned 2019 Spain (1994–2018 baseline) and Chile (1999–2018 baseline) GIS archives, at 9 arcseconds (nominal 250 m). Spain includes the Canary Islands. Usable Chile GHI stops at 45°S despite the file rectangle extending to 46°S, leaving southern mainland Patagonia without values. This connector does not download arbitrary countries, the global catalogue or live solar-map data. Native masks and metadata define coverage.",
       "access": "public",
       "country_codes": [
-        "ESP"
+        "ESP",
+        "CHL"
       ],
       "references": [
-        "global_solar_atlas_2019"
+        "global_solar_atlas_2019",
+        "global_solar_atlas_chile_2019"
       ],
       "source_url": "https://globalsolaratlas.info/download/spain"
     },
