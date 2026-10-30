@@ -72,9 +72,9 @@ No license is inferred from bibliographic metadata.
 
 Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment of performance and aging of photovoltaic modules and systems**. University of Ljubljana, Faculty of Electrical Engineering. [Source](https://www.dlib.si/details/URN:NBN:SI:DOC-TMG3QFI9)
 
-**Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed.
+**Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed. Soiling and snow indicators follow Eqs. 3.2–3.4 (pp. 49–51) and Tables 6.6–6.7 (pp. 135–136), with explicit equality/low-domain conventions and alternative example data documented in docs/soiling-snow.md.
 
-**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`, `examples/plot_kgpv_worldwide.py`, `docs/kgpv.md`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`, `examples/plot_kgpv_worldwide.py`, `docs/kgpv.md`, `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/plot_soiling_snow_risk.py`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -256,9 +256,9 @@ Earthmover (n.d.). **Icechunk ERA5**. [Source](https://registry.opendata.aws/ear
 
 Open-Meteo (n.d.). **Historical Weather API**. [Source](https://open-meteo.com/en/docs/historical-weather-api)
 
-**Role:** data. Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance.
+**Role:** data. Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance. The snow example separately selects ERA5-Land physical ground snow_depth, credits Open-Meteo (CC BY 4.0), and retains the provider warning about snow-depth overestimation.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo`, `data-retrieval/src/energy_data_retrieval/grid_discovery.py`, `docs/location-discovery.md`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`.
 
 ### open_meteo_historical_forecast
 
@@ -656,9 +656,9 @@ Copernicus Climate Change Service (C3S) Climate Data Store (CDS) (2019). **ERA5 
 
 NOAA Physical Sciences Laboratory (n.d.). **NCEP-NCAR Reanalysis 1**. [Source](https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html)
 
-**Role:** data. Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/.
+**Role:** data. Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/. The soiling/snow example reuses the reviewed KGPV fixture's coarse land mask.
 
-**Used by:** `examples/plot_kgpv_worldwide.py`, `scripts/prepare_kgpv_worldwide.py`, `docs/kgpv.md`.
+**Used by:** `examples/plot_kgpv_worldwide.py`, `scripts/prepare_kgpv_worldwide.py`, `docs/kgpv.md`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`.
 
 ### kalnay_1996_ncep_ncar
 
@@ -667,3 +667,35 @@ Kalnay, E.; Kanamitsu, M.; Kistler, R.; Collins, W.; Deaven, D.; Gandin, L.; Ire
 **Role:** background. Methodological reference requested by NOAA PSL for NCEP/NCAR Reanalysis 1. Bibliographic metadata verified against NOAA NCEI study 10873 and the publisher; the separately identified PSL files, not the paleo study subset, supply this example.
 
 **Used by:** `examples/plot_kgpv_worldwide.py`, `scripts/prepare_kgpv_worldwide.py`, `docs/kgpv.md`.
+
+### cordero_2018_soiling
+
+Cordero, R. R.; Damiani, A.; Laroze, D.; MacDonell, S.; Jorquera, J.; Sepúlveda, E.; Feron, S.; Llanillo, P.; Labbe, F.; Carrasco, J.; Ferrer, J.; Torres, G. (2018). **Effects of soiling on photovoltaic (PV) modules in the Atacama Desert**. Scientific Reports, 8, 13943. [DOI: 10.1038/s41598-018-32291-8](https://doi.org/10.1038/s41598-018-32291-8)
+
+**Role:** implemented. Underlying annual-average AOD/soiling correlation from Chilean sites; implemented as the piecewise thesis Eq. 3.2, with explicit boundary conventions. This is a daily-rate indicator, not a cleaning-aware annual loss model or a globally validated dust-event model.
+
+**Used by:** `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/plot_soiling_snow_risk.py`.
+
+### ryberg_freeman_2017_snow
+
+Ryberg, David Severin; Freeman, Janine (2017). **Integration, Validation, and Application of a PV Snow Coverage Model in SAM**. NREL/TP-6A20-68705. National Renewable Energy Laboratory. [DOI: 10.2172/1374128](https://doi.org/10.2172/1374128)
+
+**Role:** background. Underlying snow-model report cited by the thesis. The repository implements the thesis's logarithmic annual snow-depth fit for fixed latitude-tilt modules, not the full SAM snow-coverage model. Centimetre units come from thesis Figure 3.4; low-domain and exact-boundary extensions are explicit.
+
+**Used by:** `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/plot_soiling_snow_risk.py`.
+
+### nasa_power_aerosols
+
+NASA POWER Project (n.d.). **NASA POWER: Cloud and Aerosol Sources**. [Source](https://power.larc.nasa.gov/docs/methodology/data/sources_clds_aerosols/)
+
+**Role:** data. Source documentation for total dimensionless AOD at 550 nm from CERES SYN1deg/MATCH. The example explicitly requests unadjusted AOD_55 and UTC dates, averages daily values annually, and credits NASA POWER/CERES. This replaces the thesis ECMWF aerosol source; modelled AOD is not observed surface deposition.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/nasa_power`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`.
+
+### munoz_sabater_2021_era5_land
+
+Muñoz-Sabater, Joaquín; Dutra, Emanuel; Agustí-Panareda, Anna; Albergel, Clément; Arduini, Gabriele; Balsamo, Gianpaolo; Boussetta, Souhail; Choulga, Margarita; Harrigan, Shaun; Hersbach, Hans; Martens, Brecht; Miralles, Diego G.; Piles, María; Rodríguez-Fernández, Nemesio J.; Zsoter, Ervin; Buontempo, Carlo; Thépaut, Jean-Noël (2021). **ERA5-Land: a state-of-the-art global reanalysis dataset for land applications**. Earth System Science Data, 13, 4349-4383. [DOI: 10.5194/essd-13-4349-2021](https://doi.org/10.5194/essd-13-4349-2021)
+
+**Role:** data. Underlying ERA5-Land reanalysis for the example snow inputs, explicitly selected through Open-Meteo. The wrapper returns physical ground snow depth in metres; native ERA5 water-equivalent sd is not substituted. Credit Copernicus/ERA5-Land and the wrapper. Source snow biases remain; this is an alternative dataset to the thesis ERA5 inputs.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/open_meteo/snow.py`, `scripts/prepare_weather_risk_example.py`, `examples/plot_soiling_snow_risk.py`, `docs/soiling-snow.md`.
