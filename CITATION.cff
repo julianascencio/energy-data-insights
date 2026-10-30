@@ -2575,6 +2575,50 @@
       ],
       "url": "https://transparencyplatform.zendesk.com/hc/en-us/articles/30262342482961-CurveType-A01-vs-CurveType-A03",
       "notes": "Role: data. Official fixed- and variable-block XML semantics. A03 is expanded within each Period at the published resolution, including explicit missing blocks; A01 absent positions remain missing. No value is carried across Period boundaries. Official public XML examples validate schema compatibility but are not claimed to be operational measurements."
+    },
+    {
+      "type": "data",
+      "title": "Natural Earth: Admin 0 - Countries",
+      "authors": [
+        {
+          "name": "Natural Earth contributors"
+        }
+      ],
+      "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/",
+      "notes": "Role: data. Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail."
+    },
+    {
+      "type": "manual",
+      "title": "Shapely documentation",
+      "authors": [
+        {
+          "name": "Shapely contributors"
+        }
+      ],
+      "url": "https://shapely.readthedocs.io/en/stable/",
+      "notes": "Role: software. Polygon topology, point/cell intersection masks, transformations and exact country-cell footprint clipping. Operations are planar longitude/latitude; country areas require geodesic or equal-area calculations. Invalid geometries and unsplit antimeridian rings are rejected explicitly."
+    },
+    {
+      "type": "manual",
+      "title": "PyProj documentation: Transformer",
+      "authors": [
+        {
+          "name": "PyProj contributors"
+        }
+      ],
+      "url": "https://pyproj4.github.io/pyproj/stable/api/transformer.html",
+      "notes": "Role: software. Reads declared shapefile CRS and transforms selected boundaries to EPSG:4326 using always_xy=True. Missing shapefile CRS requires explicit caller input; no coordinate system is guessed from coordinate magnitudes."
+    },
+    {
+      "type": "manual",
+      "title": "PyShp: Python Shapefile Library",
+      "authors": [
+        {
+          "name": "PyShp contributors"
+        }
+      ],
+      "url": "https://github.com/GeospatialPython/pyshp",
+      "notes": "Role: software. Reads and writes ESRI shapefile geometry/attributes and companion files. Selected exports retain polygon holes and islands with ESRI ring orientation; the PRJ and CPG files declare WGS84 and UTF-8."
     }
   ]
 }

@@ -251,6 +251,11 @@ The primary thesis citation and the specific 2019 KGPV paper are both retained.
 
 ## Soiling and snow risk mapping
 
+`country_boundaries` selects and exports country shapefiles/GeoJSON;
+`country_mapping` builds finer regional grids, masks by polygons, plots clipped
+maps and exports clipped cells. These helpers also work with KGPV and degradation.
+See [country selection, CRS handling and examples](../docs/country-mapping.md).
+
 `energy_methods.weather_risk` implements thesis Eqs. 3.2–3.4 and the five
 classes in Tables 6.6–6.7. `weather_risk_mapping` validates complete-year AOD550
 and physical ground snow-depth inputs and maps the resulting indicators.

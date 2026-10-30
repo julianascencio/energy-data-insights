@@ -24,7 +24,8 @@ applied analysis. The same sections organize the repository's ``examples/`` fold
       :link: analysis/index
       :link-type: doc
 
-      Applied studies: worldwide KGPV climate zones and soiling/snow risk maps.
+      Applied studies: worldwide KGPV climate zones, soiling/snow risks and
+      detailed maps for selected countries.
 
 Downloadable Python examples run during every documentation build without API
 credentials or live downloads. The AEMO, EIA and REE generation examples use
