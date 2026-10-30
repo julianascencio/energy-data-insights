@@ -8,6 +8,10 @@ the provider's native files and metadata for subsequent climate analyses.
 | Source folder | Implemented products |
 | --- | --- |
 | `sources/cen` | Public registry, authenticated actual generation, public archive downloads and historical bulk/Qlik export import |
+| `sources/aemo` | Public NEMWeb current/daily archives of dispatch-unit SCADA MW, with exact DUIDs and NEM time |
+| `sources/eia` | EIA API v2 hourly system and monthly plant generation; public EIA-930 balance files without a key |
+| `sources/ree` | Public REData national/regional generation by technology, daily/monthly/yearly MWh |
+| `sources/entsoe` | Transparency Platform actual generation by production type or published unit, with UTC intervals |
 | `sources/open_meteo` | Explicit ERA5 historical weather or archived ECMWF IFS forecasts |
 | `sources/earthmover_era5` | Native ERA5 tiles from a pinned public Icechunk snapshot; optional dependencies |
 | `sources/cds` | Direct Copernicus CDS API, native downloads and monthly ERA5 request planning; optional `cds` dependency |
@@ -22,8 +26,20 @@ the provider's native files and metadata for subsequent climate analyses.
 | `sources/cmip6` | ESGF STAC discovery, versioned retrieval plans and verified native CMIP6 NetCDF downloads |
 
 All acquisition is explicit. Importing a module or running the tests makes no
-network requests. Test fixtures are synthetic and are not evidence of live API
-availability, authorization or complete Chilean generation coverage.
+network requests. Contract tests use synthetic fixtures; the new generation
+gallery additionally replays attributed real AEMO, EIA and REE captures. Neither
+kind of test establishes current API availability, authorization or complete
+generation coverage.
+
+## Real generation from more electricity systems
+
+See the [generation connector guide](../docs/generation-connectors.md) for
+source selection, API access, time/energy conventions, command-line usage and
+four worked gallery examples. The commands are `aemo-generation`,
+`eia-generation`, `eia-plant-generation`, `ree-generation` and
+`entsoe-generation`. They save source-specific Parquet snapshots and provenance
+manifests. AEMO, REE and EIA's public CSV route need no key; EIA API v2 uses
+`EIA_API_KEY`, and ENTSO-E uses `ENTSOE_API_TOKEN`.
 
 ## Discover sources at a location
 

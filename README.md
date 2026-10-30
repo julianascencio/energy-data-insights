@@ -46,7 +46,7 @@ reports are welcome.
 
 | Subproject | Contents | Python import |
 | --- | --- | --- |
-| [data-retrieval](data-retrieval/) | Provider folders for CEN, BSRN, NOAA GHCNh, AEMET, DWD, SURFRAD, measured-station exports, Open-Meteo, native ERA5, Copernicus CDS and CMIP6 through ESGF; bounded requests and provenance | `energy_data_retrieval` |
+| [data-retrieval](data-retrieval/) | Generation connectors for CEN, AEMO, U.S. EIA, Spain REE and Europe ENTSO-E; station, weather and climate sources; bounded requests and provenance | `energy_data_retrieval` |
 | [methods](methods/) | CCYA climate-change yield assessment, TDP, acceptance bands, PR filtering, effective POA and timing, constrained physics, LightGBM, evaluation, hourly operational screening, KGPV and degradation mapping | `energy_methods` |
 | [analysis](analysis/) | Real-data degradation maps and reports; Chile fleet configuration, input preparation, chronological fitting/evaluation, site/fleet outputs and analysis-specific reports | `energy_analysis` |
 
@@ -54,6 +54,21 @@ These are independently installable Python packages in one uv workspace. Each
 has its own source, tests and packaging metadata; one lockfile keeps their
 dependencies consistent. All folder names are lowercase.
 See [architecture and extension points](docs/architecture.md).
+
+## Retrieve real electricity generation
+
+The [generation connector guide](docs/generation-connectors.md) covers
+Australian dispatch-unit SCADA, U.S. hourly system and monthly plant generation,
+Spain's generation mix, and European generation by technology/unit. Each source
+has a worked gallery example. AEMO, EIA's public files and REE include genuine
+offline data captures; ENTSO-E demonstrates request planning and token-based
+retrieval. Physical scope, MW/MWh and timestamp conventions remain explicit.
+
+```bash
+uv run energy-retrieve ree-generation \
+  --start 2024-06-01 --end 2024-06-30 --system national \
+  --output data/ree_june_2024.parquet
+```
 
 ## Install
 

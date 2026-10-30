@@ -28,18 +28,27 @@ import httpx
 type JSONValue = bool | int | float | str | list[JSONValue] | dict[str, JSONValue] | None
 
 _SECRET_NAMES = frozenset(
-    {"user_key", "token", "api_key", "apikey", "access_token", "authorization", "password"}
+    {
+        "user_key",
+        "token",
+        "api_key",
+        "apikey",
+        "access_token",
+        "authorization",
+        "password",
+        "securitytoken",
+    }
 )
 _RETRY_STATUSES = frozenset({408, 429, 500, 502, 503, 504})
 
 
 _ACTIVE_SECRETS: ContextVar[tuple[str, ...]] = ContextVar("retrieval_secrets", default=())
 _QUERY_SECRET = re.compile(
-    r"([?&](?:user_key|token|api_key|apikey|access_token|authorization|password)=)[^&\s\"']+",
+    r"([?&](?:user_key|token|api_key|apikey|access_token|authorization|password|securitytoken)=)[^&\s\"']+",
     re.IGNORECASE,
 )
 _QUERY_SECRET_WITH_PUBLIC_CURSOR = re.compile(
-    r"([?&](?:user_key|api_key|apikey|access_token|authorization|password)=)[^&\s\"']+",
+    r"([?&](?:user_key|api_key|apikey|access_token|authorization|password|securitytoken)=)[^&\s\"']+",
     re.IGNORECASE,
 )
 
@@ -142,7 +151,7 @@ class JSONResponse:
 
 @dataclass(frozen=True, slots=True)
 class TextResponse:
-    """Public UTF-8 response with a hash of its exact decoded HTTP entity bytes."""
+    """UTF-8 response with a hash of its stored bytes after credential redaction."""
 
     value: str
     record: RequestRecord
@@ -397,13 +406,16 @@ class HTTPClient:
         endpoint: str,
         parameters: Mapping[str, str] | None = None,
         *,
+        secrets: Mapping[str, str] | None = None,
+        secret_headers: Mapping[str, str] | None = None,
         use_cache: bool = True,
     ) -> TextResponse:
-        """Read a bounded public UTF-8 export, retaining tabs, line endings and units.
+        """Read bounded UTF-8 text, retaining tabs, line endings and physical units.
 
-        This method does not accept credentials. Public CSV, PSV and TSV endpoints
-        may use non-secret query parameters. Cache entries are separate from JSON
-        responses and are accepted only after source, size and hash verification.
+        Credentials must use ``secrets`` or ``secret_headers``. Authenticated
+        responses bypass the public cache; logs, response text and provenance
+        redact credentials. Public CSV/PSV/TSV bytes remain unchanged. Cache
+        entries are accepted only after source, size and hash verification.
         """
         parsed = urlsplit(endpoint)
         if (
@@ -419,12 +431,34 @@ class HTTPClient:
         public = dict(parameters or {})
         if any(name.lower() in _SECRET_NAMES for name in public):
             raise ValueError("Text retrieval accepts public parameters only, never credentials")
+        private = dict(secrets or {})
+        private_headers = dict(secret_headers or {})
+        header_names = {name.lower() for name in private_headers}
+        if len(header_names) != len(private_headers) or not header_names <= _SECRET_NAMES | {
+            "x-api-key",
+            "x-auth-token",
+        }:
+            raise ValueError("secret_headers requires unique credential header names")
+        if any(
+            not value
+            or not value.isascii()
+            or any(ord(character) < 32 or ord(character) == 127 for character in value)
+            for value in private_headers.values()
+        ):
+            raise ValueError(
+                "Secret header values must be nonempty ASCII without control characters"
+            )
+        if any(not value for value in private.values()) or {name.lower() for name in public} & {
+            name.lower() for name in private
+        }:
+            raise ValueError("Secret parameters must be nonempty and separate")
+        active_secrets = (*private.values(), *private_headers.values())
         cache_key = hashlib.sha256(
             json.dumps(["text-utf8", endpoint, public], sort_keys=True).encode()
         ).hexdigest()
         cache = (
             self.cache_directory / f"{cache_key}.text.json"
-            if use_cache and self.cache_directory is not None
+            if use_cache and not active_secrets and self.cache_directory is not None
             else None
         )
         if cache is not None and cache.exists():
@@ -465,15 +499,16 @@ class HTTPClient:
             self._wait_for_slot()
             response: httpx.Response | None = None
             try:
-                with self._client.stream(
-                    "GET",
-                    endpoint,
-                    params=public,
-                    # Export endpoints choose their own attachment/media type.
-                    # PANGAEA rejects some specific text Accept combinations;
-                    # UTF-8 decoding and source schema validation remain strict.
-                    headers={"Accept": "*/*"},
-                ) as response:
+                with (
+                    _secret_scope(active_secrets),
+                    self._client.stream(
+                        "GET",
+                        endpoint,
+                        params=public | private,
+                        # PANGAEA rejects specific text Accept combinations.
+                        headers={"Accept": "*/*"} | private_headers,
+                    ) as response,
+                ):
                     last_status = response.status_code
                     if last_status == 200:
                         chunks = bytearray()
@@ -488,6 +523,9 @@ class HTTPClient:
                             value = raw.decode("utf-8")
                         except UnicodeDecodeError:
                             raise RetrievalError("Source returned invalid UTF-8 text") from None
+                        if active_secrets:
+                            value = _redact_text(value, active_secrets)
+                            raw = value.encode("utf-8")
                         record = RequestRecord(
                             endpoint,
                             public,

@@ -1,0 +1,28 @@
+{
+  "source": "Red Eléctrica de España (REData)",
+  "dataset": "Actual national generation by technology, daily energy",
+  "documentation_url": "https://www.ree.es/en/datos/apidata",
+  "widget_url": "https://www.ree.es/es/datos/generacion/estructura-generacion",
+  "request": {
+    "endpoint": "https://apidatos.ree.es/es/datos/generacion/estructura-generacion",
+    "parameters": {
+      "start_date": "2024-06-01T00:00",
+      "end_date": "2024-06-30T23:59",
+      "time_trunc": "day"
+    },
+    "retrieved_at_utc": "2026-10-30T06:52:43.015058+00:00",
+    "sha256": "1a48bbeba1091575b82ee020e19706c832ab3a98b9dc4e8542b606d324156523",
+    "size_bytes": 50340,
+    "cache_hit": false
+  },
+  "fixture_file": "generation_ree.json",
+  "fixture_sha256": "1a48bbeba1091575b82ee020e19706c832ab3a98b9dc4e8542b606d324156523",
+  "period_start": "2024-06-01",
+  "period_end": "2024-06-30",
+  "rows_excluding_total": 451,
+  "unit": "MWh",
+  "transformations": "Complete response preserved as compact JSON; no observation values changed. API totals retained in source and excluded by default by the parser. Plot divides MWh by 1000 to show GWh.",
+  "attribution": "Source: Red Eléctrica de España (REData). Source last-update fields remain in the fixture.",
+  "reuse_terms_url": "https://www.ree.es/es/aviso-legal",
+  "limitations": "System totals by technology, not plant telemetry; no total estimated self-consumption; source may revise past values. No renewable share or missing interval is imputed."
+}
