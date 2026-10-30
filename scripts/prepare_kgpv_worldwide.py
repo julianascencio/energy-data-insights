@@ -137,7 +137,7 @@ def prepare_inputs(raw_directory: Path) -> tuple[pd.DataFrame, int]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cache", type=Path, default=Path("artifacts/kgpv-worldwide/raw"))
-    parser.add_argument("--output", type=Path, default=Path("examples"))
+    parser.add_argument("--output", type=Path, default=Path("examples/analysis"))
     parser.add_argument(
         "--use-environment-proxy", action="store_true", help="Explicitly use HTTPS_PROXY, if set"
     )

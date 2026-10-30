@@ -13,13 +13,13 @@ This implementation produces climate zones, not simulated PV yields.
 
 ## Worldwide worked example
 
-Open the [worldwide KGPV gallery example](https://julianascencio.github.io/energy-data-insights/auto_examples/plot_kgpv_worldwide.html)
+Open the [worldwide KGPV gallery example](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_kgpv_worldwide.html)
 for an executed global land map, a twelve-zone legend, spherical-area shares,
 downloadable Python and optional NetCDF/GeoJSON export. It uses the repository's
 `map_kgpv`, `regrid`, `class_area_summary` and `write_geojson` functions.
 
 The gallery runs offline from the reviewed text fixtures
-`examples/kgpv_worldwide_inputs.csv` and `examples/kgpv_worldwide_provenance.json`.
+`examples/analysis/kgpv_worldwide_inputs.csv` and `examples/analysis/kgpv_worldwide_provenance.json`.
 The CSV contains **real NOAA PSL NCEP/NCAR Reanalysis 1 climatologies for
 1991–2020**, sampled onto a **5° grid**; it is not synthetic climate data. This
 alternative-source illustration is **not a reproduction of the published KGPV
@@ -53,7 +53,7 @@ To run the checked-in example from a fresh checkout:
 
 ```bash
 uv sync --locked --all-packages --group docs
-cd examples
+cd examples/analysis
 uv run python plot_kgpv_worldwide.py
 ```
 

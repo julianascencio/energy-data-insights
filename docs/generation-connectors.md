@@ -27,14 +27,14 @@ Provider references: [AEMO data dictionary](https://visualisations.aemo.com.au/a
 
 Each provider has an executable, step-by-step example with plots:
 
-- [AEMO: real dispatch-unit SCADA](../examples/plot_generation_aemo.py): 864 source observations, three DUIDs and 288 dispatch labels for 27 October 2026.
-- [EIA: real California generation](../examples/plot_generation_eia.py): 168 CISO operating hours from 20–26 June 2024, comparing reported solar and wind.
-- [REE: Spain's generation by technology](../examples/plot_generation_ree.py): the real daily generation mix for all 30 days of June 2024.
-- [ENTSO-E: European generation](../examples/plot_generation_entsoe.py): an offline request plan plus an explicit live-download path for actual Spanish wind/solar generation.
+- [AEMO: real dispatch-unit SCADA](../examples/connectors/plot_generation_aemo.py): 864 source observations, three DUIDs and 288 dispatch labels for 27 October 2026.
+- [EIA: real California generation](../examples/connectors/plot_generation_eia.py): 168 CISO operating hours from 20–26 June 2024, comparing reported solar and wind.
+- [REE: Spain's generation by technology](../examples/connectors/plot_generation_ree.py): the real daily generation mix for all 30 days of June 2024.
+- [ENTSO-E: European generation](../examples/connectors/plot_generation_entsoe.py): an offline request plan plus an explicit live-download path for actual Spanish wind/solar generation.
 
 The first three examples use small attributed captures from the official
 providers, with original source URLs, retrieval times, transformations and
-checksums under `examples/data/`. They are not synthetic measurements. The
+checksums under `examples/connectors/data/`. They are not synthetic measurements. The
 ENTSO-E example does not substitute invented measurements for a missing token:
 its default chart counts planned API calls and is labelled accordingly.
 

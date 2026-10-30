@@ -18,7 +18,7 @@ Run it with those files in the working directory; in a repository checkout:
 .. code-block:: bash
 
    uv sync --locked --all-packages --group docs
-   cd examples
+   cd examples/analysis
    uv run python plot_kgpv_worldwide.py
 
 The example makes no network requests and needs no credentials or mapping

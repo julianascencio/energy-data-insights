@@ -11,7 +11,8 @@ To retrieve and plot actual observations, first obtain API access through
 <https://transparencyplatform.zendesk.com/hc/en-us/articles/12845911031188-How-to-get-security-token>`_,
 set ``ENTSOE_API_TOKEN`` locally, and run::
 
-    ENERGY_DATA_INSIGHTS_LIVE=1 uv run --no-sync python examples/plot_generation_entsoe.py
+    ENERGY_DATA_INSIGHTS_LIVE=1 uv run --no-sync python \
+      examples/connectors/plot_generation_entsoe.py
 
 The endpoint returns interval-average net power in MW. Some aggregated values
 may be estimated by the reporting provider. Generation and consumption are

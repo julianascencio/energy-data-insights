@@ -96,7 +96,7 @@ and its checksum manifest. Pure `normalize_hourly_generation`,
 There is no assertion that missing intervals mean zero or that all generators
 in a geography are represented.
 
-The gallery example `examples/plot_generation_eia.py` parses 168 real CISO
+The gallery example `examples/connectors/plot_generation_eia.py` parses 168 real CISO
 operating hours from a byte-preserved public CSV excerpt. Its adjacent JSON
 manifest identifies the full source file and excerpt checksums. No credentials
 or network access are required to build the gallery. API tests use explicitly

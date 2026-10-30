@@ -55,6 +55,20 @@ has its own source, tests and packaging metadata; one lockfile keeps their
 dependencies consistent. All folder names are lowercase.
 See [architecture and extension points](docs/architecture.md).
 
+## Example gallery
+
+The [executable gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/index.html)
+and the repository use the same three sections:
+
+| Section | Examples |
+| --- | --- |
+| [Methods](examples/methods/) | Climate-change yield assessment, typical daily profiles and KGPV classification |
+| [Connectors](examples/connectors/) | ERA5 request planning and generation data from AEMO, U.S. EIA, Spain REE and Europe ENTSO-E |
+| [Analysis](examples/analysis/) | Worldwide KGPV climate zones and soiling/snow risk maps using attributed climate data |
+
+Every gallery example runs offline during the documentation build. Download links
+on the example pages include the supporting data and provenance where needed.
+
 ## Retrieve real electricity generation
 
 The [generation connector guide](docs/generation-connectors.md) covers

@@ -30,15 +30,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--year", type=int, default=2023)
     parser.add_argument("--region", choices=("world", "europe"), default="world")
-    parser.add_argument("--output", type=Path, default=Path("examples"))
+    parser.add_argument("--output", type=Path, default=Path("examples/analysis"))
     parser.add_argument("--cache", type=Path, default=Path("artifacts/weather-risk/http-cache"))
     parser.add_argument("--use-environment-proxy", action="store_true")
     args = parser.parse_args()
     if not 2001 <= args.year < datetime.now(UTC).year:
         raise ValueError("Choose a completed year from 2001 onward")
     root = Path(__file__).resolve().parents[1]
-    mask_path = root / "examples/kgpv_worldwide_inputs.csv"
-    mask_manifest = json.loads((root / "examples/kgpv_worldwide_provenance.json").read_text())
+    mask_path = root / "examples/analysis/kgpv_worldwide_inputs.csv"
+    mask_manifest = json.loads(
+        (root / "examples/analysis/kgpv_worldwide_provenance.json").read_text()
+    )
     if hashlib.sha256(mask_path.read_bytes()).hexdigest() != mask_manifest["fixture_sha256"]:
         raise ValueError("The reviewed land-mask fixture checksum has changed")
     grid = pd.read_csv(mask_path)[["lat", "lon", "is_land"]]

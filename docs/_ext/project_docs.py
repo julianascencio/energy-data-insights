@@ -5,17 +5,63 @@ from __future__ import annotations
 import os
 import re
 import shutil
+from collections.abc import Iterator
 from pathlib import Path
+from typing import TYPE_CHECKING
 from urllib.parse import urlsplit
 from zipfile import ZIP_DEFLATED, ZipFile
 
+if TYPE_CHECKING:
+    from sphinx.application import Sphinx
+
 REPOSITORY = "https://github.com/julianascencio/energy-data-insights"
+
+# Only the original flat gallery pages need redirects. New examples live solely
+# in their section, so future additions cannot accidentally claim a legacy URL.
+LEGACY_EXAMPLES = {
+    "methods": ("plot_ccya", "plot_daily_profiles", "plot_kgpv"),
+    "connectors": (
+        "plot_cds_plan",
+        "plot_generation_aemo",
+        "plot_generation_eia",
+        "plot_generation_entsoe",
+        "plot_generation_ree",
+    ),
+    "analysis": ("plot_kgpv_worldwide", "plot_soiling_snow_risk"),
+}
+
+
+def _legacy_gallery_pages(app: Sphinx) -> Iterator[tuple[str, dict[str, str], str]]:
+    """Keep published example links valid after moving them into sections."""
+    assert app.builder is not None
+    for section, names in LEGACY_EXAMPLES.items():
+        for name in names:
+            old_page = f"auto_examples/{name}"
+            new_page = f"auto_examples/{section}/{name}"
+            yield (
+                old_page,
+                {
+                    "section": section.title(),
+                    "redirect_url": app.builder.get_relative_uri(old_page, new_page),
+                    "canonical_url": (
+                        f"{app.config.html_baseurl.rstrip('/')}/"
+                        f"{app.builder.get_target_uri(new_page)}"
+                    ),
+                },
+                "gallery_redirect.html",
+            )
+
+
+def setup(app: Sphinx) -> dict[str, bool]:
+    """Add lightweight HTML redirects without duplicate gallery source pages."""
+    app.connect("html-collect-pages", _legacy_gallery_pages)
+    return {"parallel_read_safe": True, "parallel_write_safe": True}
 
 
 def _generation_assets(root: Path) -> None:
     """Copy small attributed samples and bundle runnable gallery downloads."""
-    examples = root / "examples"
-    gallery = root / "docs/auto_examples"
+    examples = root / "examples/connectors"
+    gallery = root / "docs/auto_examples/connectors"
     samples = sorted((examples / "data").glob("generation_*"))
     if not samples:
         return

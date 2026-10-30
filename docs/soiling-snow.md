@@ -4,7 +4,7 @@
 **Ascencio Vásquez (2021), thesis §§3.1.1–3.1.2 and §§6.5.2–6.5.3**.
 `energy_methods.weather_risk_mapping` applies them to labelled grids and assigns
 the five risk levels in Tables 6.6–6.7. The
-[worldwide gallery example](https://julianascencio.github.io/energy-data-insights/auto_examples/plot_soiling_snow_risk.html)
+[worldwide gallery example](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_soiling_snow_risk.html)
 uses real, attributed 2023 inputs and runs offline.
 
 These categories describe empirical soiling-rate and snow-shading indicators.
