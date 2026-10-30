@@ -80,6 +80,13 @@ its [data policy](https://psl.noaa.gov/data/help/) requests attribution. The NOA
 source information is public domain; this derived fixture/map is not an official
 NOAA product and does not imply endorsement. See the [bibliography](references.md).
 
+## Contiguous Chile on the native solar grid
+
+The [mainland Chile guide](kgpv-chile.md) adds nominal 250 m GHI-grid maps,
+regional zooms and downloadable GeoTIFF/contours. Climate support remains about
+1 km; the GSA archive ends at 45°S, so southern mainland stays unclassified.
+The source periods differ and no finer climate detail is invented.
+
 ## Canary Islands at native climate spacing
 
 The [Canary Islands guide](kgpv-canary.md) adds eight-island views, native

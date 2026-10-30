@@ -1,5 +1,13 @@
 # Applied analyses
 
+## Contiguous Chile KGPV
+
+The [mainland Chile example](../docs/kgpv-chile.md) combines CHELSA monthly
+climate (about 1 km) with Global Solar Atlas GHI on its native nominal 250 m
+grid. It includes regional zooms, GeoTIFF, GeoJSON/Shapefile contours and pinned
+reproduction inputs. GSA ends at 45°S; southern mainland is explicitly
+unclassified. Climate and solar periods differ and are recorded separately.
+
 ## Canary Islands KGPV
 
 The [native-grid Canary Islands example](../docs/kgpv-canary.md) combines
