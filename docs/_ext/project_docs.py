@@ -7,6 +7,7 @@ import re
 import shutil
 from collections.abc import Iterator
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from typing import TYPE_CHECKING
 from urllib.parse import urlsplit
 from zipfile import ZIP_DEFLATED, ZipFile
@@ -51,10 +52,44 @@ def _legacy_gallery_pages(app: Sphinx) -> Iterator[tuple[str, dict[str, str], st
                 "gallery_redirect.html",
             )
 
+    old_page = "auto_examples/connectors/plot_pv_catalogue"
+    new_page = "auto_examples/database/plot_pv_catalogue"
+    yield (
+        old_page,
+        {
+            "section": "Database",
+            "redirect_url": app.builder.get_relative_uri(old_page, new_page),
+            "canonical_url": (
+                f"{app.config.html_baseurl.rstrip('/')}/{app.builder.get_target_uri(new_page)}"
+            ),
+        },
+        "gallery_redirect.html",
+    )
+
+
+def _publish_pv_database(app: Sphinx, exception: Exception | None) -> None:
+    """Publish one validated Parquet snapshot and its matching browser projections."""
+    if exception is not None or app.builder is None or app.builder.format != "html":
+        return
+    from energy_analysis.pv_database import export_viewer_data
+    from energy_data_retrieval.pv_catalogue import build_parquet
+
+    root = Path(app.srcdir).parent
+    destination = Path(app.outdir) / "datasets/pv"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with TemporaryDirectory(dir=destination.parent) as temporary:
+        snapshot = Path(temporary) / "snapshot"
+        build_parquet(root / "catalogues/pv", snapshot)
+        export_viewer_data(snapshot)
+        # Only generated files are copied. Works for clean and incremental builds;
+        # canonical JSONL records and immutable user snapshots are never changed.
+        shutil.copytree(snapshot, destination, dirs_exist_ok=True)
+
 
 def setup(app: Sphinx) -> dict[str, bool]:
     """Add lightweight HTML redirects without duplicate gallery source pages."""
     app.connect("html-collect-pages", _legacy_gallery_pages)
+    app.connect("build-finished", _publish_pv_database)
     return {"parallel_read_safe": True, "parallel_write_safe": True}
 
 

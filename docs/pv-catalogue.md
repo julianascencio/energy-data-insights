@@ -12,6 +12,20 @@ United States EIA-860 inventory; global project coverage is still highly uneven.
 [expanded research prompt](../catalogues/pv/RESEARCH_PROMPT.md), and
 [launch research evidence](../catalogues/pv/research/launch_report.md).
 
+## Interactive viewer and runnable statistics
+
+Open the [interactive database viewer](https://julianascencio.github.io/energy-data-insights/database-viewer.html)
+or the [Database gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/database/index.html).
+Search and filter every published row, select columns, sort, inspect evidence,
+compare groups and export filtered CSVs. The viewer is regenerated from the exact
+published Parquet files on each documentation build. Browser JSON projections
+are derived assets; Parquet and canonical JSONL remain the data formats of record.
+
+Runnable offline examples cover table counts and sizes, all-column completeness,
+country coverage, equipment queries and separate AC/DC capacity summaries. The
+reusable `energy_analysis.pv_database` functions work on local Parquet snapshots.
+Unknown values remain null; reported partial sums are not total installed capacity.
+
 ## Download and storage choice
 
 The successful main documentation build publishes Parquet datasets:

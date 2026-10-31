@@ -61,13 +61,18 @@ See [architecture and extension points](docs/architecture.md).
 ## Example gallery
 
 The [executable gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/index.html)
-and the repository use the same three sections:
+and the repository use the same four sections:
 
 | Section | Examples |
 | --- | --- |
 | [Methods](examples/methods/) | Climate-change yield assessment, typical daily profiles and KGPV classification |
 | [Connectors](examples/connectors/) | Worldwide coverage map, generation providers, measured PV datasets, station catalogues and weather request planning |
 | [Analysis](examples/analysis/) | PV climate comparisons, site metadata lookup, degradation-rate maps, KGPV and soiling/snow risk maps |
+| [Database](examples/database/) | Interactive Parquet viewer, equipment queries, database statistics, metadata completeness and project coverage |
+
+Open the **[interactive PV database viewer](https://julianascencio.github.io/energy-data-insights/database-viewer.html)**
+to explore all five published tables, filter and compare records, inspect sources,
+and export results. Statistics and browser data refresh with each documentation build.
 
 Every gallery example runs offline during the documentation build. Download links
 on the example pages include the supporting data and provenance where needed.

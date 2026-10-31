@@ -35,10 +35,10 @@ jobs:
           enable-cache: true
       - name: Install locked documentation workspace
         run: uv sync --locked --all-packages --group imagery --group docs --python 3.13
-      - name: Build docs and execute offline gallery
+      - name: Test database viewer logic
+        run: node --test tests/js/test_database_viewer.mjs
+      - name: Build docs, execute offline gallery and publish database assets
         run: uv run --no-sync sphinx-build -W --keep-going -b html docs docs/_build/html
-      - name: Build downloadable PV catalogue snapshots
-        run: uv run --no-sync python -m energy_data_retrieval.pv_catalogue build --output docs/_build/html/datasets/pv
       - name: Check internal links and project-path assets
         run: uv run --no-sync python scripts/check_docs_links.py docs/_build/html
       - name: Upload Pages artifact

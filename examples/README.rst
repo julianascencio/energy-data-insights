@@ -2,14 +2,14 @@ Example gallery
 ===============
 
 Browse examples by task: learn a method, work with a data provider, or follow an
-applied analysis. The same sections organize the repository's ``examples/`` folder.
+applied analysis, or explore the database. The same sections organize the repository's ``examples/`` folder.
 
 The :doc:`worldwide connector coverage map <connectors/plot_generation_coverage>`
 introduces all implemented generation, station, weather and climate sources.
 Run its downloadable Python code offline to reproduce the country/system
 inventory and the station-catalogue and grid-scope views.
 
-.. grid:: 1 1 3 3
+.. grid:: 1 2 2 4
    :gutter: 3
 
    .. grid-item-card:: Methods
@@ -32,6 +32,13 @@ inventory and the station-catalogue and grid-scope views.
 
       Applied studies: worldwide KGPV climate zones, soiling/snow risks and
       detailed maps for selected countries.
+
+   .. grid-item-card:: Database
+      :link: database/index
+      :link-type: doc
+
+      Interactive Parquet-backed explorer, equipment and project queries,
+      database statistics, field completeness and country coverage.
 
 Downloadable Python examples run during every documentation build without API
 credentials or live downloads. Generation captures use attributed real public
