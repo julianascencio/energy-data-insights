@@ -1,0 +1,376 @@
+{
+  "source": "Earth Search ground image crop",
+  "url": "https://maxar-opendata.s3.amazonaws.com/events/WildFires-LosAngeles-Jan-2025/ard/11/031311103031/2025-01-08/104001009C64B300-visual.tif",
+  "retrieved_at": "2026-10-31T09:05:52.212393+00:00",
+  "saved_at": "2026-10-31T09:05:52.223696+00:00",
+  "sha256": "c91837481e4ff358b8141df52f73b284c4f84266f1be8193eff427b4256956e5",
+  "bytes": 662756,
+  "path": "examples/connectors/data/imagery_altadena_visual.tif",
+  "scene_id": "11/031311103031/104001009C64B300",
+  "asset_key": "visual",
+  "bbox_wgs84": [
+    -118.122,
+    34.21,
+    -118.1205,
+    34.2115
+  ],
+  "bounds": [
+    396638.7939453125,
+    3786007.9956054688,
+    396779.1748046875,
+    3786176.1474609375
+  ],
+  "crs": "EPSG:32611",
+  "transform": [
+    0.30517578125,
+    0.0,
+    396638.7939453125,
+    0.0,
+    -0.30517578125,
+    3786176.1474609375
+  ],
+  "shape": [
+    3,
+    551,
+    460
+  ],
+  "dtype": "uint8",
+  "nodata_values": [
+    null,
+    null,
+    null
+  ],
+  "scale_offset_applied": false,
+  "cloud_mask_applied": false,
+  "resampling": "none; native pixel-aligned window",
+  "asset": {
+    "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+    "title": "Visual Image",
+    "href": "https://maxar-opendata.s3.amazonaws.com/events/WildFires-LosAngeles-Jan-2025/ard/11/031311103031/2025-01-08/104001009C64B300-visual.tif",
+    "proj:bbox": [
+      394843.75,
+      3784843.75,
+      400156.25,
+      3790156.25
+    ],
+    "proj:shape": [
+      17408,
+      17408
+    ],
+    "proj:transform": [
+      0.30517578125,
+      0.0,
+      394843.75,
+      0.0,
+      -0.30517578125,
+      3790156.25,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "eo:bands": [
+      {
+        "name": "BAND_R",
+        "common_name": "red",
+        "description": "Red"
+      },
+      {
+        "name": "BAND_G",
+        "common_name": "green",
+        "description": "Green"
+      },
+      {
+        "name": "BAND_B",
+        "common_name": "blue",
+        "description": "Blue"
+      }
+    ],
+    "roles": [
+      "visual"
+    ]
+  },
+  "stac_item": {
+    "type": "Feature",
+    "stac_version": "1.0.0",
+    "stac_extensions": [
+      "https://stac-extensions.github.io/view/v1.0.0/schema.json",
+      "https://stac-extensions.github.io/projection/v1.0.0/schema.json",
+      "https://stac-extensions.github.io/eo/v1.0.0/schema.json",
+      "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+      "https://stac-extensions.github.io/grid/v1.0.0/schema.json"
+    ],
+    "id": "11/031311103031/104001009C64B300",
+    "properties": {
+      "datetime": "2025-01-08 18:41:38Z",
+      "platform": "WV03",
+      "gsd": 0.33,
+      "ard_metadata_version": "0.0.1",
+      "catalog_id": "104001009C64B300",
+      "utm_zone": 11,
+      "quadkey": "031311103031",
+      "view:off_nadir": 15.7,
+      "view:azimuth": 196.1,
+      "view:incidence_angle": 72.7,
+      "view:sun_azimuth": 159.0,
+      "view:sun_elevation": 30.9,
+      "proj:epsg": 32611,
+      "proj:geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              400156.25,
+              3784843.75
+            ],
+            [
+              394843.75,
+              3784843.75
+            ],
+            [
+              394843.75,
+              3787684.059225448
+            ],
+            [
+              400156.25,
+              3787627.2087123888
+            ],
+            [
+              400156.25,
+              3784843.75
+            ]
+          ]
+        ]
+      },
+      "grid:code": "MXRA-Z11-031311103031",
+      "proj:bbox": [
+        394843.75,
+        3784843.75,
+        400156.25,
+        3787684.059225448
+      ],
+      "tile:data_area": 14.9,
+      "tile:clouds_area": 0.5,
+      "tile:clouds_percent": 3,
+      "edi:open_data": {
+        "event": "WildFires-LosAngeles-Jan-2025",
+        "event_url": "https://maxar-opendata.s3.amazonaws.com/events/WildFires-LosAngeles-Jan-2025/collection.json",
+        "event_license": "CC-BY-NC-4.0",
+        "acquisition_license": "proprietary",
+        "item_url": "https://maxar-opendata.s3.amazonaws.com/events/WildFires-LosAngeles-Jan-2025/ard/11/031311103031/2025-01-08/104001009C64B300.json"
+      }
+    },
+    "bbox": [
+      -118.14168764406159,
+      34.19930614945414,
+      -118.08369073584,
+      34.22491556
+    ],
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -118.08369073584,
+            34.1998290174671
+          ],
+          [
+            -118.1413420952911,
+            34.19930614945414
+          ],
+          [
+            -118.14168764406159,
+            34.22491556
+          ],
+          [
+            -118.08401213367635,
+            34.22491556
+          ],
+          [
+            -118.08369073584,
+            34.1998290174671
+          ]
+        ]
+      ]
+    },
+    "links": [
+      {
+        "rel": "collection",
+        "href": "../../../acquisition_collections/104001009C64B300_collection.json",
+        "type": "application/json"
+      },
+      {
+        "rel": "parent",
+        "href": "../../../acquisition_collections/104001009C64B300_collection.json",
+        "type": "application/json"
+      },
+      {
+        "rel": "root",
+        "href": "../../../order_collections/6624789378770577538_root_collection.json",
+        "type": "application/json"
+      }
+    ],
+    "assets": {
+      "data-mask": {
+        "type": "application/geopackage+sqlite3",
+        "title": "Data Mask",
+        "href": "https://maxar-opendata.s3.amazonaws.com/events/WildFires-LosAngeles-Jan-2025/ard/11/031311103031/2025-01-08/104001009C64B300-data-mask.gpkg",
+        "roles": [
+          "data-mask"
+        ]
+      },
+      "ms_analytic": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "title": "Multispectral Image",
+        "href": "https://maxar-opendata.s3.amazonaws.com/events/WildFires-LosAngeles-Jan-2025/ard/11/031311103031/2025-01-08/104001009C64B300-ms.tif",
+        "proj:bbox": [
+          394843.75,
+          3784843.75,
+          400156.25,
+          3790156.25
+        ],
+        "proj:shape": [
+          4108,
+          4108
+        ],
+        "proj:transform": [
+          1.2932083739045765,
+          0.0,
+          394843.75,
+          0.0,
+          -1.2932083739045765,
+          3790156.25,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "eo:bands": [
+          {
+            "name": "BAND_C",
+            "common_name": "coastal",
+            "description": "Coastal Blue"
+          },
+          {
+            "name": "BAND_B",
+            "common_name": "blue",
+            "description": "Blue"
+          },
+          {
+            "name": "BAND_G",
+            "common_name": "green",
+            "description": "Green"
+          },
+          {
+            "name": "BAND_Y",
+            "common_name": "yellow",
+            "description": "Yellow"
+          },
+          {
+            "name": "BAND_R",
+            "common_name": "red",
+            "description": "Red"
+          },
+          {
+            "name": "BAND_RE",
+            "common_name": "rededge",
+            "description": "Red Edge 1"
+          },
+          {
+            "name": "BAND_N",
+            "common_name": "nir08",
+            "description": "Near Infrared 1"
+          },
+          {
+            "name": "BAND_N2",
+            "common_name": "nir09",
+            "description": "Near Infrared 2"
+          }
+        ],
+        "roles": [
+          "data"
+        ]
+      },
+      "pan_analytic": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "title": "Panchromatic Image",
+        "href": "https://maxar-opendata.s3.amazonaws.com/events/WildFires-LosAngeles-Jan-2025/ard/11/031311103031/2025-01-08/104001009C64B300-pan.tif",
+        "proj:bbox": [
+          394843.75,
+          3784843.75,
+          400156.25,
+          3790156.25
+        ],
+        "proj:shape": [
+          16432,
+          16432
+        ],
+        "proj:transform": [
+          0.32330209347614414,
+          0.0,
+          394843.75,
+          0.0,
+          -0.32330209347614414,
+          3790156.25,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "eo:bands": [
+          {
+            "name": "BAND_P",
+            "description": "Pan"
+          }
+        ],
+        "roles": [
+          "data"
+        ]
+      },
+      "visual": {
+        "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+        "title": "Visual Image",
+        "href": "https://maxar-opendata.s3.amazonaws.com/events/WildFires-LosAngeles-Jan-2025/ard/11/031311103031/2025-01-08/104001009C64B300-visual.tif",
+        "proj:bbox": [
+          394843.75,
+          3784843.75,
+          400156.25,
+          3790156.25
+        ],
+        "proj:shape": [
+          17408,
+          17408
+        ],
+        "proj:transform": [
+          0.30517578125,
+          0.0,
+          394843.75,
+          0.0,
+          -0.30517578125,
+          3790156.25,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "eo:bands": [
+          {
+            "name": "BAND_R",
+            "common_name": "red",
+            "description": "Red"
+          },
+          {
+            "name": "BAND_G",
+            "common_name": "green",
+            "description": "Green"
+          },
+          {
+            "name": "BAND_B",
+            "common_name": "blue",
+            "description": "Blue"
+          }
+        ],
+        "roles": [
+          "visual"
+        ]
+      }
+    },
+    "collection": "104001009C64B300"
+  }
+}

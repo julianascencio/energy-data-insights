@@ -1,6 +1,10 @@
 version = 1
 revision = 5
 requires-python = ">=3.12"
+resolution-markers = [
+    "python_full_version >= '3.13'",
+    "python_full_version < '3.13'",
+]
 
 [manifest]
 members = [
@@ -646,6 +650,9 @@ docs = [
     { name = "sphinx-gallery" },
     { name = "sphinxcontrib-mermaid" },
 ]
+imagery = [
+    { name = "orbital-pv", extra = ["ground"], marker = "python_full_version >= '3.13'" },
+]
 
 [package.metadata]
 
@@ -667,6 +674,7 @@ docs = [
     { name = "sphinx-gallery", specifier = ">=0.19,<0.20" },
     { name = "sphinxcontrib-mermaid", specifier = ">=1,<2" },
 ]
+imagery = [{ name = "orbital-pv", extras = ["ground"], marker = "python_full_version >= '3.13'", git = "https://github.com/julianascencio/orbital-pv.git?rev=498c47e182f9f0e1b0f0d40bc3125ef7c2110a05" }]
 
 [[package]]
 name = "energy-data-retrieval"
@@ -721,7 +729,8 @@ dependencies = [
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pandas" },
-    { name = "pvlib" },
+    { name = "pvlib", version = "0.15.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.13'" },
+    { name = "pvlib", version = "0.16.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.13'" },
     { name = "pyproj" },
     { name = "pyshp" },
     { name = "scikit-learn" },
@@ -1711,6 +1720,26 @@ wheels = [
 ]
 
 [[package]]
+name = "orbital-pv"
+version = "0.7.0"
+source = { git = "https://github.com/julianascencio/orbital-pv.git?rev=498c47e182f9f0e1b0f0d40bc3125ef7c2110a05#498c47e182f9f0e1b0f0d40bc3125ef7c2110a05" }
+dependencies = [
+    { name = "httpx" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "pvlib", version = "0.15.2", source = { registry = "https://pypi.org/simple" } },
+]
+
+[package.optional-dependencies]
+ground = [
+    { name = "pyproj" },
+    { name = "rasterio" },
+    { name = "scikit-learn" },
+    { name = "scipy" },
+    { name = "shapely" },
+]
+
+[[package]]
 name = "packaging"
 version = "26.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1866,8 +1895,31 @@ wheels = [
 
 [[package]]
 name = "pvlib"
+version = "0.15.2"
+source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version >= '3.13'",
+]
+dependencies = [
+    { name = "h5py" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "pytz" },
+    { name = "requests" },
+    { name = "scipy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5c/84/d756868b6e07fb456578d51a579523e333c3525db6143a985222eca905db/pvlib-0.15.2.tar.gz", hash = "sha256:cedec65f6536a21ea64351e651896e849ac95cb5423b5c196262958b40cfac15", size = 38703043, upload-time = "2026-06-16T20:26:33.338Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8c/fb/263271dac97e246c9640eedb52b36087445569268115ff8051dc1736e64b/pvlib-0.15.2-py3-none-any.whl", hash = "sha256:42035b063cc692bc3ece9480246297ccf211c835f1151faa752acac9584f6bb5", size = 19355575, upload-time = "2026-06-16T20:26:30.242Z" },
+]
+
+[[package]]
+name = "pvlib"
 version = "0.16.1"
 source = { registry = "https://pypi.org/simple" }
+resolution-markers = [
+    "python_full_version < '3.13'",
+]
 dependencies = [
     { name = "h5py" },
     { name = "numpy" },

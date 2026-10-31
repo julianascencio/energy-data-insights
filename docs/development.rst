@@ -14,7 +14,7 @@ Build the documentation
 
 .. code-block:: bash
 
-   uv sync --locked --all-packages --group docs
+   uv sync --locked --all-packages --group imagery --group docs --python 3.13
    uv run --no-sync sphinx-build -W --keep-going -b html docs docs/_build/html
    uv run --no-sync python scripts/check_docs_links.py docs/_build/html
    python -m http.server 8000 --directory docs/_build/html

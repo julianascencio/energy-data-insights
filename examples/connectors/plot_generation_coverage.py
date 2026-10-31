@@ -1,8 +1,8 @@
 """Worldwide coverage of the repository's connectors
 ===================================================
 
-Locate **all 47 source modules**: 22 generation connectors, 18 gridded
-weather/climate/terrain sources, five station networks, a local station importer and
+Locate **all 48 source modules**: 22 generation connectors, 19 gridded
+weather/climate/terrain/imagery sources, five station networks, a local station importer and
 the Natural Earth basemap. The first figure shows generation products; the
 second plots **39,010 provider/station catalogue rows** and explains the grid
 products. Both figures run **offline**, without credentials or new downloads.
@@ -410,7 +410,7 @@ ax_networks.text(
     color=TEXT_COLOR,
 )
 ax_grids.set_title(
-    "Weather / climate / terrain · 18 source modules",
+    "Weather / climate / terrain / imagery · 19 source modules",
     loc="left",
     fontsize=12,
     fontweight="bold",
@@ -433,6 +433,7 @@ grid_labels = [
     ("copernicus_dem", "Copernicus DEM", "GLO-30 Public DSM; missing tiles possible"),
     ("ign_terrain", "IGN MDT WCS", "Spain 5 m DTM; valid native mask applies"),
     ("usgs_3dep", "USGS 3DEP", "US 1 m lidar projects; incomplete coverage"),
+    ("orbitalpv_imagery", "Orbital PV imagery", "Sentinel-2 scenes; event-limited sub-metre Maxar"),
     ("cmip6", "CMIP6 / ESGF", "Selected model, experiment and grid availability"),
     ("canary_clim", "CanaryClim", "Canary Islands; monthly climate, 1979-2013"),
     ("global_solar_atlas", "Global Solar Atlas", "Spain / Chile GHI; native masks and periods"),
@@ -442,7 +443,7 @@ for row, (_provider, label, scope) in enumerate(grid_labels):
     ax_grids.text(0, y, label, fontsize=10.5, weight="bold", color=TEXT_COLOR, va="top")
     ax_grids.text(0.29, y, scope, fontsize=9.5, color="#506b7d", va="top")
 fig_weather.suptitle(
-    "Weather, climate and terrain coverage",
+    "Weather, climate, terrain and imagery coverage",
     x=0.045,
     y=0.975,
     ha="left",

@@ -605,6 +605,22 @@
       "source_url": "https://open-meteo.com/en/docs/historical-weather-api"
     },
     {
+      "id": "orbitalpv_imagery",
+      "label": "Orbital PV satellite imagery",
+      "category": "grid",
+      "coverage_kind": "catalogue_grid",
+      "scope": "Sentinel-2 Collection 1 scenes (10/20/60 m per band) and event-limited Maxar Open Data WorldView/GeoEye native imagery. Search footprints, dates, asset GSD, masks and rights determine availability; no global sub-metre coverage claim. Maxar event data are noncommercial.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "orbitalpv_imagery",
+        "earth_search_c1",
+        "sentinel2_imagery",
+        "maxar_open_data"
+      ],
+      "source_url": "https://github.com/julianascencio/orbital-pv"
+    },
+    {
       "id": "pvcz",
       "label": "PVCZ author stressor catalogue",
       "category": "grid",

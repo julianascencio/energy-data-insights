@@ -6,6 +6,9 @@ requires-python = ">=3.12"
 dependencies = []
 
 [dependency-groups]
+imagery = [
+  "orbital-pv[ground] @ git+https://github.com/julianascencio/orbital-pv.git@498c47e182f9f0e1b0f0d40bc3125ef7c2110a05 ; python_version >= '3.13'",
+]
 dev = [
     "packaging>=24,<27",
     "pandas-stubs>=2.2,<3",

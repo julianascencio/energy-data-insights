@@ -39,7 +39,7 @@ jobs:
           python-version: ${{ matrix.python }}
           enable-cache: true
       - name: Install locked workspace
-        run: uv sync --locked --all-packages --extra cds --python ${{ matrix.python }}
+        run: uv sync --locked --all-packages --extra cds --group imagery --python ${{ matrix.python }}
       - name: Check formatting
         run: uv run --no-sync ruff format --check .
       - name: Lint
@@ -58,6 +58,9 @@ jobs:
         run: uv run --no-sync twine check --strict dist/*
       - name: Install and exercise built wheels outside the workspace
         run: uv run --no-sync python scripts/check_wheels.py
+      - name: Install and exercise wheels with Orbital PV
+        if: matrix.python == '3.13'
+        run: uv run --no-sync python scripts/check_wheels.py --imagery
       - name: Run reproducible synthetic example
         run: uv run --no-sync energy-chile demo --output artifacts/ci-demo --reports
       - name: Run synthetic CCYA example
