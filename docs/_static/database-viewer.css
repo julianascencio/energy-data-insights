@@ -1,0 +1,38 @@
+#pv-database { --db-accent: #137a88; --db-border: var(--pst-color-border, #d9e2e6); }
+#pv-database [hidden] { display: none !important; }
+#pv-database .db-heading { border-top: 4px solid var(--db-accent); padding-top: 1rem; margin: 1.5rem 0; }
+#pv-database .db-eyebrow { font-size: .8rem; font-weight: 750; letter-spacing: .09em; color: var(--db-accent); }
+#pv-database .db-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); gap: .8rem; margin: 1rem 0; }
+#pv-database label { display: flex; flex-direction: column; gap: .3rem; font-size: .85rem; font-weight: 600; }
+#pv-database select, #pv-database input { min-width: 0; width: 100%; padding: .55rem; border: 1px solid var(--db-border); border-radius: 5px; background: var(--pst-color-background); color: var(--pst-color-text-base); }
+#pv-database button { border: 1px solid var(--db-border); border-radius: 5px; padding: .4rem .7rem; color: var(--pst-color-text-base); background: var(--pst-color-surface); cursor: pointer; }
+#pv-database button:hover:not(:disabled) { border-color: var(--db-accent); }
+#pv-database button:disabled { opacity: .45; cursor: default; }
+#pv-database :focus-visible { outline: 3px solid var(--db-accent); outline-offset: 2px; }
+#pv-database .db-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; margin: .75rem 0; font-size: .85rem; }
+#pv-database .db-muted { font-size: .8rem; color: var(--pst-color-text-muted); overflow-wrap: anywhere; }
+#pv-database .db-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); gap: .65rem; margin: 1rem 0; }
+#pv-database .db-stat { border: 1px solid var(--db-border); border-radius: 7px; padding: .8rem; }
+#pv-database .db-stat strong { display: block; font-size: 1.3rem; color: var(--db-accent); }
+#pv-database .db-stat span { font-size: .75rem; }
+#pv-database .db-panel { margin: 1.2rem 0; padding: 1rem; border: 1px solid var(--db-border); border-radius: 7px; }
+#pv-database .db-panel h2 { margin: 0; font-size: 1.2rem; }
+#pv-database .db-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .5rem; max-height: 360px; overflow-y: auto; }
+#pv-database .db-columns label { flex-direction: row; align-items: start; font-weight: 400; overflow-wrap: anywhere; }
+#pv-database .db-columns input { width: auto; margin-top: .2rem; }
+#pv-database .db-bar-row { display: grid; grid-template-columns: minmax(90px, 1fr) minmax(40px, 2fr) minmax(50px, 1fr); align-items: center; gap: .6rem; margin: .4rem 0; font-size: .8rem; }
+#pv-database .db-bar-label { overflow-wrap: anywhere; }
+#pv-database .db-bar-track { background: var(--pst-color-surface); border-radius: 3px; }
+#pv-database .db-bar { height: 14px; border-radius: 3px; background: var(--db-accent); }
+#pv-database .db-table-wrap { overflow: auto; max-height: 650px; }
+#pv-database table { width: 100%; font-size: .8rem; border-collapse: collapse; }
+#pv-database th, #pv-database td { padding: .6rem; text-align: left; border-bottom: 1px solid var(--db-border); min-width: 130px; max-width: 320px; overflow-wrap: anywhere; vertical-align: top; }
+#pv-database thead { position: sticky; top: 0; background: var(--pst-color-background); }
+#pv-database th button { border: 0; padding: 0; font-weight: 650; text-align: left; }
+#pv-database tbody tr:nth-child(even) { background: var(--pst-color-surface); }
+#pv-database caption { font-size: .8rem; }
+#pv-database dialog { width: min(1000px, 94vw); max-height: 85vh; background: var(--pst-color-background); color: var(--pst-color-text-base); border: 1px solid var(--db-border); border-radius: 8px; padding: 1.2rem; }
+#pv-database dialog::backdrop { background: #102e3e99; }
+#pv-database dialog td { max-width: 65vw; }
+#pv-database dialog pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 400px; font-size: .75rem; }
+@media (max-width: 600px) { #pv-database .db-controls { grid-template-columns: 1fr 1fr; } #pv-database .db-panel { padding: .65rem; } }

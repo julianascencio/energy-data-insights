@@ -34,14 +34,21 @@ Add executable examples as ``plot_*.py`` in the section that matches their purpo
 * ``examples/methods/``: focused tutorials for reusable calculations.
 * ``examples/connectors/``: provider requests, parsing and data access.
 * ``examples/analysis/``: applied workflows combining inputs, methods and outputs.
+* ``examples/database/``: Parquet queries, catalogue statistics and data coverage.
 
 Each section has a ``README.rst`` introduction and a generated gallery page.
-The gallery and sidebar use the order Methods, Connectors, Analysis, configured
+The gallery and sidebar use the order Methods, Connectors, Analysis, Database, configured
 in ``docs/conf.py``. Keep support files beside their example (generation samples
 live in ``examples/connectors/data/``), update download links and provenance paths,
 and verify the clean documentation build. Clearly label synthetic inputs, use
 deterministic seeds where needed, and avoid network calls during gallery builds.
 The documentation extension retains redirects for the original flat example URLs.
+
+The Database viewer uses local JavaScript and generated JSON projections of the
+published Parquet files. ``project_docs`` builds both together after a successful
+HTML build, including local builds. Do not edit or commit the derived datasets.
+Run ``node --test tests/js/test_database_viewer.mjs`` for browser calculation tests;
+Python parity and missing-data tests live in ``analysis/tests/test_pv_database.py``.
 
 GitHub Pages
 ------------

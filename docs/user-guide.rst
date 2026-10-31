@@ -17,6 +17,7 @@ Data access and scientific methods
 .. toctree::
    :maxdepth: 1
 
+   database-viewer
    _generated/guides/pv-catalogue
    _generated/guides/terrain
    _generated/guides/satellite-imagery

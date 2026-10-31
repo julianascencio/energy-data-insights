@@ -68,6 +68,7 @@ sphinx_gallery_conf = {
         "../examples/methods",
         "../examples/connectors",
         "../examples/analysis",
+        "../examples/database",
     ],
     "nested_sections": True,
     "within_subsection_order": "FileNameSortKey",

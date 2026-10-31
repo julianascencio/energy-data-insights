@@ -37,6 +37,16 @@ license notices and `manifest.json` with hashes, row counts and field completene
 Build outputs are immutable: use a fresh directory for each snapshot. The existing
 GitHub Pages workflow publishes these downloadable files on successful main builds.
 
+## Explore the database
+
+The [Database example gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/database/index.html)
+contains runnable queries and statistics. The
+[interactive viewer](https://julianascencio.github.io/energy-data-insights/database-viewer.html)
+loads all records from checksum-linked Parquet projections, with search, filters,
+column selection, grouped charts, provenance inspection and filtered CSV exports.
+Both update during each documentation build. The generated browser assets are
+not a second editable data store.
+
 ## Record and update contract
 
 - `record_id`: stable UUID5 from the entity identity, independent of ratings and dates.
