@@ -64,7 +64,7 @@ and the repository use the same three sections:
 | --- | --- |
 | [Methods](examples/methods/) | Climate-change yield assessment, typical daily profiles and KGPV classification |
 | [Connectors](examples/connectors/) | Worldwide coverage map, generation providers, measured PV datasets, station catalogues and weather request planning |
-| [Analysis](examples/analysis/) | Worldwide KGPV climate zones and soiling/snow risk maps using attributed climate data |
+| [Analysis](examples/analysis/) | PV climate comparisons, site metadata lookup, degradation-rate maps, KGPV and soiling/snow risk maps |
 
 Every gallery example runs offline during the documentation build. Download links
 on the example pages include the supporting data and provenance where needed.
@@ -367,6 +367,11 @@ KGPV. [Compare the methods](docs/climate-comparison.md) and run offline maps of
 the world, Chile and the Canary Islands. Published reference labels and new
 cluster fits are identified separately; coverage gaps remain visible.
 
+The [one-site tutorial](docs/site-climate.md) queries all four schemes for Rengo,
+Chile, retaining full native fields, nearest-source distances, periods, resolution
+and provenance. It explains how to use the results for benchmarking, yield
+modelling and reliability screening, and how to load full catalogues for another site.
+
 ## Climate grids and KGPV maps
 
 GPCC Monthly v2025 and CRU TS v4.10 retrieval/processing are available through
@@ -392,6 +397,11 @@ combined rates from annual climate stresses and an explicit module calibration,
 following the thesis. It exports NetCDF/GeoJSON, 0.2%/year categories and optional
 area-weighted KGPV summaries. See the [scientific contract and runnable synthetic
 example](docs/degradation.md).
+
+The [degradation-rate gallery](docs/degradation-gallery.md) recalculates the saved
+2016-2018 ERA5 scenario from annual stresses and shows four mechanism/combined-rate
+maps plus rate categories. It includes the full offline input bundle and keeps
+the 15-degree sampling, calibration assumptions and missing-data mask explicit.
 
 ## Creator and contact
 

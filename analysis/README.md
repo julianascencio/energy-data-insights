@@ -7,6 +7,10 @@ The implementation includes validated source readers, fixed PVCZ thresholds,
 frozen JSON cluster models, and offline global/Chile/Canary reference maps.
 Source periods, input units, published labels and documented refits stay explicit.
 
+The [site lookup tutorial](../docs/site-climate.md) combines four classifications,
+all native source fields, distances and provenance for one coordinate. Rengo's
+small full-field fixture is included; arbitrary sites can use full catalogues.
+
 ## Contiguous Chile KGPV
 
 The [mainland Chile example](../docs/kgpv-chile.md) combines CHELSA monthly
@@ -29,6 +33,10 @@ Run `uv run python scripts/prepare_kgpv_canary.py --plan-only` before acquisitio
 The [degradation mapping study](src/energy_analysis/degradation/README.md) retrieves
 ERA5/CRU inputs through `data-retrieval`, applies the models in `methods`, and
 generates geographic maps and reports. Use `energy-degradation-study --help`.
+
+The [gallery example](../docs/degradation-gallery.md) reruns the published
+2016-2018 study's annual stresses offline, checking each rate against the saved
+result and rendering mechanism and categorical maps.
 
 ## Climate Change Yield Assessment
 
