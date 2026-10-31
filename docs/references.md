@@ -1403,3 +1403,19 @@ oEnergy / PFV El Mirlo SpA (n.d.). **Parque Fotovoltaico El Mirlo**. [Source](ht
 **Role:** data. Developer project page confirms identity and Malloa location. Design power is not substituted for the dated CEN power field. No project-design module count is used in image detection.
 
 **Used by:** `docs/rengo-module-counting.md`, `examples/analysis/data/rengo_modules/rengo_study.json`.
+
+### sam_cec_pv_catalogue_2026
+
+National Laboratory of the Rockies (2026). **SAM CEC module and inverter libraries, pinned revision 784177b**. [Source](https://github.com/NatLabRockies/SAM/tree/784177b634fa1475fda6672b70595e087a238aea/deploy/libraries)
+
+**Role:** data. Pinned source snapshot with SHA-256 hashes and BSD notice in catalogues/pv. Fitted reference parameters, not proof of current availability/certification. Duplicate exact module names are quarantined.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/pv_catalogue/sam.py`, `docs/pv-catalogue.md`.
+
+### eia860_pv_catalogue_2025
+
+U.S. Energy Information Administration (2025). **Form EIA-860 detailed data: report year 2025**. [Source](https://www.eia.gov/electricity/data/eia860/)
+
+**Role:** data. Year denotes reporting period, not access year. Downloaded 31 October 2026. Plant and solar workbooks; only OP/PV generators. One row per plant; source fields and generator-level attributes preserved; source dates and capacities not promoted beyond their documented scope.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/pv_catalogue/eia860.py`, `docs/pv-catalogue.md`.

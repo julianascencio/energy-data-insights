@@ -1,0 +1,39 @@
+{
+  "as_of": "2026-10-31T19:08:44+00:00",
+  "schema_version": "1.0.0",
+  "counts": {
+    "modules": 21605,
+    "inverters": 2344,
+    "projects": 7320,
+    "trackers": 5,
+    "combiner_boxes": 3
+  },
+  "project_countries": [
+    "ARE",
+    "AUS",
+    "CHL",
+    "EGY",
+    "ESP",
+    "FRA",
+    "IND",
+    "MEX",
+    "MLI",
+    "USA",
+    "ZAF"
+  ],
+  "module_manufacturers": 282,
+  "inverter_manufacturers": 152,
+  "quarantined_rows": 72,
+  "quarantine_reasons": {
+    "duplicate_model_identity": 72
+  },
+  "source_count": 23,
+  "eia_operating_pv_plants": 7309,
+  "identity_reconciliations": [
+    {
+      "existing_name": "Topaz Solar Farms",
+      "eia_plant_code": "57695",
+      "reason": "Official name and San Luis Obispo location identify same plant; preserve existing record ID. BHE 550 unspecified MW and EIA 585.9 MWac have different/unresolved bases; both retained."
+    }
+  ]
+}

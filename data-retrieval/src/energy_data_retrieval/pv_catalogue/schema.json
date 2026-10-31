@@ -1,0 +1,679 @@
+{
+  "version": "1.0.0",
+  "entity_types": [
+    "modules",
+    "inverters",
+    "trackers",
+    "combiner_boxes",
+    "projects"
+  ],
+  "required": [
+    "record_id",
+    "entity_type",
+    "name",
+    "created_at",
+    "updated_at",
+    "last_verified_at",
+    "sources",
+    "field_sources_json",
+    "quality_status"
+  ],
+  "fields": {
+    "record_id": {
+      "type": "string",
+      "description": "record_id; unknown is null, never an inferred value."
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "entity_type; unknown is null, never an inferred value."
+    },
+    "name": {
+      "type": "string",
+      "description": "name; unknown is null, never an inferred value."
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "manufacturer; unknown is null, never an inferred value."
+    },
+    "model": {
+      "type": "string",
+      "description": "model; unknown is null, never an inferred value."
+    },
+    "variant": {
+      "type": "string",
+      "description": "variant; unknown is null, never an inferred value."
+    },
+    "country_code": {
+      "type": "string",
+      "description": "country_code; unknown is null, never an inferred value."
+    },
+    "region": {
+      "type": "string",
+      "description": "region; unknown is null, never an inferred value."
+    },
+    "locality": {
+      "type": "string",
+      "description": "locality; unknown is null, never an inferred value."
+    },
+    "status": {
+      "type": "string",
+      "description": "status; unknown is null, never an inferred value."
+    },
+    "technology": {
+      "type": "string",
+      "description": "technology; unknown is null, never an inferred value."
+    },
+    "market_scope": {
+      "type": "string",
+      "description": "market_scope; unknown is null, never an inferred value."
+    },
+    "product_url": {
+      "type": "string",
+      "description": "product_url; unknown is null, never an inferred value."
+    },
+    "datasheet_url": {
+      "type": "string",
+      "description": "datasheet_url; unknown is null, never an inferred value."
+    },
+    "source_release": {
+      "type": "string",
+      "description": "source_release; unknown is null, never an inferred value."
+    },
+    "source_date": {
+      "type": "string",
+      "description": "source_date; unknown is null, never an inferred value."
+    },
+    "location_accuracy": {
+      "type": "string",
+      "description": "location_accuracy; unknown is null, never an inferred value."
+    },
+    "commissioning_date": {
+      "type": "string",
+      "description": "commissioning_date; unknown is null, never an inferred value."
+    },
+    "decommissioning_date": {
+      "type": "string",
+      "description": "decommissioning_date; unknown is null, never an inferred value."
+    },
+    "mounting_type": {
+      "type": "string",
+      "description": "mounting_type; unknown is null, never an inferred value."
+    },
+    "tracker_type": {
+      "type": "string",
+      "description": "tracker_type; unknown is null, never an inferred value."
+    },
+    "module_orientation": {
+      "type": "string",
+      "description": "module_orientation; unknown is null, never an inferred value."
+    },
+    "drive_type": {
+      "type": "string",
+      "description": "drive_type; unknown is null, never an inferred value."
+    },
+    "power_supply": {
+      "type": "string",
+      "description": "power_supply; unknown is null, never an inferred value."
+    },
+    "cooling_method": {
+      "type": "string",
+      "description": "cooling_method; unknown is null, never an inferred value."
+    },
+    "insulation_method": {
+      "type": "string",
+      "description": "insulation_method; unknown is null, never an inferred value."
+    },
+    "ip_rating": {
+      "type": "string",
+      "description": "ip_rating; unknown is null, never an inferred value."
+    },
+    "enclosure_material": {
+      "type": "string",
+      "description": "enclosure_material; unknown is null, never an inferred value."
+    },
+    "surge_protection": {
+      "type": "string",
+      "description": "surge_protection; unknown is null, never an inferred value."
+    },
+    "connector_type": {
+      "type": "string",
+      "description": "connector_type; unknown is null, never an inferred value."
+    },
+    "grid_operator": {
+      "type": "string",
+      "description": "grid_operator; unknown is null, never an inferred value."
+    },
+    "substation": {
+      "type": "string",
+      "description": "substation; unknown is null, never an inferred value."
+    },
+    "currency": {
+      "type": "string",
+      "description": "currency; unknown is null, never an inferred value."
+    },
+    "capacity_basis": {
+      "type": "string",
+      "description": "capacity_basis; unknown is null, never an inferred value."
+    },
+    "quality_status": {
+      "type": "string",
+      "description": "quality_status; unknown is null, never an inferred value."
+    },
+    "notes": {
+      "type": "string",
+      "description": "notes; unknown is null, never an inferred value."
+    },
+    "created_at": {
+      "type": "timestamp",
+      "description": "UTC created_at. Creation is immutable; updates mean content changes; verification means source checked."
+    },
+    "updated_at": {
+      "type": "timestamp",
+      "description": "UTC updated_at. Creation is immutable; updates mean content changes; verification means source checked."
+    },
+    "last_verified_at": {
+      "type": "timestamp",
+      "description": "UTC last_verified_at. Creation is immutable; updates mean content changes; verification means source checked."
+    },
+    "aliases": {
+      "type": "list_string",
+      "description": "aliases; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "owners": {
+      "type": "list_string",
+      "description": "owners; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "developers": {
+      "type": "list_string",
+      "description": "developers; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "epc_contractors": {
+      "type": "list_string",
+      "description": "epc_contractors; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "operators": {
+      "type": "list_string",
+      "description": "operators; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "offtakers": {
+      "type": "list_string",
+      "description": "offtakers; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "certifications": {
+      "type": "list_string",
+      "description": "certifications; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "communication_protocols": {
+      "type": "list_string",
+      "description": "communication_protocols; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "module_record_ids": {
+      "type": "list_string",
+      "description": "module_record_ids; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "inverter_record_ids": {
+      "type": "list_string",
+      "description": "inverter_record_ids; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "tracker_record_ids": {
+      "type": "list_string",
+      "description": "tracker_record_ids; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "combiner_record_ids": {
+      "type": "list_string",
+      "description": "combiner_record_ids; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "sources": {
+      "type": "list_string",
+      "description": "sources; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "source_urls": {
+      "type": "list_string",
+      "description": "source_urls; ordered unique strings. Equipment IDs link to canonical records."
+    },
+    "field_sources_json": {
+      "type": "json",
+      "description": "field_sources_json: canonical JSON object (phases is a list); preserves nested/source-specific information."
+    },
+    "extensions_json": {
+      "type": "json",
+      "description": "extensions_json: canonical JSON object (phases is a list); preserves nested/source-specific information."
+    },
+    "phases_json": {
+      "type": "json",
+      "description": "phases_json: canonical JSON object (phases is a list); preserves nested/source-specific information."
+    },
+    "external_ids_json": {
+      "type": "json",
+      "description": "external_ids_json: canonical JSON object (phases is a list); preserves nested/source-specific information."
+    },
+    "bifacial": {
+      "type": "bool",
+      "description": "bifacial; null means unknown, not false."
+    },
+    "bipv": {
+      "type": "bool",
+      "description": "bipv; null means unknown, not false."
+    },
+    "hybrid": {
+      "type": "bool",
+      "description": "hybrid; null means unknown, not false."
+    },
+    "string_monitoring": {
+      "type": "bool",
+      "description": "string_monitoring; null means unknown, not false."
+    },
+    "dc_switch": {
+      "type": "bool",
+      "description": "dc_switch; null means unknown, not false."
+    },
+    "backtracking": {
+      "type": "bool",
+      "description": "backtracking; null means unknown, not false."
+    },
+    "pmax_stc_w": {
+      "type": "float",
+      "description": "pmax_stc_w; nameplate or reference rating as stated, not a simulation result.",
+      "unit": "W"
+    },
+    "ptc_w": {
+      "type": "float",
+      "description": "ptc_w; nameplate or reference rating as stated, not a simulation result.",
+      "unit": "W"
+    },
+    "pac_rated_w": {
+      "type": "float",
+      "description": "pac_rated_w; nameplate or reference rating as stated, not a simulation result.",
+      "unit": "W"
+    },
+    "pdc_rated_w": {
+      "type": "float",
+      "description": "pdc_rated_w; nameplate or reference rating as stated, not a simulation result.",
+      "unit": "W"
+    },
+    "startup_power_w": {
+      "type": "float",
+      "description": "startup_power_w; nameplate or reference rating as stated, not a simulation result.",
+      "unit": "W"
+    },
+    "standby_power_w": {
+      "type": "float",
+      "description": "standby_power_w; nameplate or reference rating as stated, not a simulation result.",
+      "unit": "W"
+    },
+    "voc_v": {
+      "type": "float",
+      "description": "voc_v; DC and AC ratings must not be interchanged.",
+      "unit": "V"
+    },
+    "vmp_v": {
+      "type": "float",
+      "description": "vmp_v; DC and AC ratings must not be interchanged.",
+      "unit": "V"
+    },
+    "system_voltage_max_v": {
+      "type": "float",
+      "description": "system_voltage_max_v; DC and AC ratings must not be interchanged.",
+      "unit": "V"
+    },
+    "vdc_rated_v": {
+      "type": "float",
+      "description": "vdc_rated_v; DC and AC ratings must not be interchanged.",
+      "unit": "V"
+    },
+    "vdc_max_v": {
+      "type": "float",
+      "description": "vdc_max_v; DC and AC ratings must not be interchanged.",
+      "unit": "V"
+    },
+    "mppt_min_v": {
+      "type": "float",
+      "description": "mppt_min_v; DC and AC ratings must not be interchanged.",
+      "unit": "V"
+    },
+    "mppt_max_v": {
+      "type": "float",
+      "description": "mppt_max_v; DC and AC ratings must not be interchanged.",
+      "unit": "V"
+    },
+    "vac_rated_v": {
+      "type": "float",
+      "description": "vac_rated_v; DC and AC ratings must not be interchanged.",
+      "unit": "V"
+    },
+    "isc_a": {
+      "type": "float",
+      "description": "isc_a; retain per-input versus aggregate context in extensions.",
+      "unit": "A"
+    },
+    "imp_a": {
+      "type": "float",
+      "description": "imp_a; retain per-input versus aggregate context in extensions.",
+      "unit": "A"
+    },
+    "idc_max_a": {
+      "type": "float",
+      "description": "idc_max_a; retain per-input versus aggregate context in extensions.",
+      "unit": "A"
+    },
+    "string_current_max_a": {
+      "type": "float",
+      "description": "string_current_max_a; retain per-input versus aggregate context in extensions.",
+      "unit": "A"
+    },
+    "output_current_max_a": {
+      "type": "float",
+      "description": "output_current_max_a; retain per-input versus aggregate context in extensions.",
+      "unit": "A"
+    },
+    "fuse_rating_max_a": {
+      "type": "float",
+      "description": "fuse_rating_max_a; retain per-input versus aggregate context in extensions.",
+      "unit": "A"
+    },
+    "efficiency_stc_pct": {
+      "type": "float",
+      "description": "efficiency_stc_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "efficiency_max_pct": {
+      "type": "float",
+      "description": "efficiency_max_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "efficiency_euro_pct": {
+      "type": "float",
+      "description": "efficiency_euro_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "bifaciality_pct": {
+      "type": "float",
+      "description": "bifaciality_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "power_tolerance_plus_pct": {
+      "type": "float",
+      "description": "power_tolerance_plus_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "annual_degradation_warranty_pct": {
+      "type": "float",
+      "description": "annual_degradation_warranty_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "first_year_degradation_warranty_pct": {
+      "type": "float",
+      "description": "first_year_degradation_warranty_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "slope_ns_max_pct": {
+      "type": "float",
+      "description": "slope_ns_max_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "slope_ew_max_pct": {
+      "type": "float",
+      "description": "slope_ew_max_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "gcr_min_pct": {
+      "type": "float",
+      "description": "gcr_min_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "gcr_max_pct": {
+      "type": "float",
+      "description": "gcr_max_pct; percentage 0\u2013100, not fraction.",
+      "unit": "%"
+    },
+    "gamma_pmax_pct_per_c": {
+      "type": "float",
+      "description": "gamma_pmax_pct_per_c; relative temperature coefficient.",
+      "unit": "%/degC"
+    },
+    "beta_voc_pct_per_c": {
+      "type": "float",
+      "description": "beta_voc_pct_per_c; relative temperature coefficient.",
+      "unit": "%/degC"
+    },
+    "alpha_isc_pct_per_c": {
+      "type": "float",
+      "description": "alpha_isc_pct_per_c; relative temperature coefficient.",
+      "unit": "%/degC"
+    },
+    "alpha_isc_a_per_c": {
+      "type": "float",
+      "description": "Absolute Isc temperature coefficient.",
+      "unit": "A/degC"
+    },
+    "beta_voc_v_per_c": {
+      "type": "float",
+      "description": "Absolute Voc temperature coefficient.",
+      "unit": "V/degC"
+    },
+    "noct_c": {
+      "type": "float",
+      "description": "noct_c; NOCT and NMOT are distinct; conditions belong in extensions.",
+      "unit": "degC"
+    },
+    "operating_temperature_min_c": {
+      "type": "float",
+      "description": "operating_temperature_min_c; NOCT and NMOT are distinct; conditions belong in extensions.",
+      "unit": "degC"
+    },
+    "operating_temperature_max_c": {
+      "type": "float",
+      "description": "operating_temperature_max_c; NOCT and NMOT are distinct; conditions belong in extensions.",
+      "unit": "degC"
+    },
+    "length_m": {
+      "type": "float",
+      "description": "length_m; orientation retained from OEM.",
+      "unit": "m"
+    },
+    "width_m": {
+      "type": "float",
+      "description": "width_m; orientation retained from OEM.",
+      "unit": "m"
+    },
+    "height_m": {
+      "type": "float",
+      "description": "height_m; orientation retained from OEM.",
+      "unit": "m"
+    },
+    "area_m2": {
+      "type": "float",
+      "description": "Reference area reported by source; do not assume aperture versus total.",
+      "unit": "m2"
+    },
+    "weight_kg": {
+      "type": "float",
+      "description": "Mass.",
+      "unit": "kg"
+    },
+    "cells_in_series": {
+      "type": "int",
+      "description": "cells_in_series; exact integer only. Approximate counts belong in extensions."
+    },
+    "cell_count": {
+      "type": "int",
+      "description": "cell_count; exact integer only. Approximate counts belong in extensions."
+    },
+    "mppt_count": {
+      "type": "int",
+      "description": "mppt_count; exact integer only. Approximate counts belong in extensions."
+    },
+    "strings_per_mppt": {
+      "type": "int",
+      "description": "strings_per_mppt; exact integer only. Approximate counts belong in extensions."
+    },
+    "input_count": {
+      "type": "int",
+      "description": "input_count; exact integer only. Approximate counts belong in extensions."
+    },
+    "output_count": {
+      "type": "int",
+      "description": "output_count; exact integer only. Approximate counts belong in extensions."
+    },
+    "module_count": {
+      "type": "int",
+      "description": "module_count; exact integer only. Approximate counts belong in extensions."
+    },
+    "inverter_count": {
+      "type": "int",
+      "description": "inverter_count; exact integer only. Approximate counts belong in extensions."
+    },
+    "tracker_count": {
+      "type": "int",
+      "description": "tracker_count; exact integer only. Approximate counts belong in extensions."
+    },
+    "commissioning_year": {
+      "type": "int",
+      "description": "commissioning_year; exact integer only. Approximate counts belong in extensions."
+    },
+    "product_warranty_years": {
+      "type": "float",
+      "description": "product_warranty_years; published standard warranty, regional options remain separate.",
+      "unit": "year"
+    },
+    "performance_warranty_years": {
+      "type": "float",
+      "description": "performance_warranty_years; published standard warranty, regional options remain separate.",
+      "unit": "year"
+    },
+    "structural_warranty_years": {
+      "type": "float",
+      "description": "structural_warranty_years; published standard warranty, regional options remain separate.",
+      "unit": "year"
+    },
+    "drive_warranty_years": {
+      "type": "float",
+      "description": "drive_warranty_years; published standard warranty, regional options remain separate.",
+      "unit": "year"
+    },
+    "tracking_min_deg": {
+      "type": "float",
+      "description": "tracking_min_deg; angles in degrees; WGS84 coordinates and north-clockwise azimuth.",
+      "unit": "degree"
+    },
+    "tracking_max_deg": {
+      "type": "float",
+      "description": "tracking_max_deg; angles in degrees; WGS84 coordinates and north-clockwise azimuth.",
+      "unit": "degree"
+    },
+    "tilt_deg": {
+      "type": "float",
+      "description": "tilt_deg; angles in degrees; WGS84 coordinates and north-clockwise azimuth.",
+      "unit": "degree"
+    },
+    "azimuth_deg": {
+      "type": "float",
+      "description": "azimuth_deg; angles in degrees; WGS84 coordinates and north-clockwise azimuth.",
+      "unit": "degree"
+    },
+    "latitude": {
+      "type": "float",
+      "description": "Source-reported decimal degrees; coordinate datum and positional accuracy must be preserved, not assumed to be surveyed.",
+      "unit": "degree"
+    },
+    "longitude": {
+      "type": "float",
+      "description": "Source-reported decimal degrees; coordinate datum and positional accuracy must be preserved, not assumed to be surveyed.",
+      "unit": "degree"
+    },
+    "wind_design_speed_m_s": {
+      "type": "float",
+      "description": "Rated wind speed; averaging interval, height and design code required in extensions.",
+      "unit": "m/s"
+    },
+    "capacity_dc_mw": {
+      "type": "float",
+      "description": "capacity_dc_mw; no guessed conversion between AC and DC.",
+      "unit": "MW"
+    },
+    "capacity_ac_mw": {
+      "type": "float",
+      "description": "capacity_ac_mw; no guessed conversion between AC and DC.",
+      "unit": "MW"
+    },
+    "capacity_unspecified_mw": {
+      "type": "float",
+      "description": "capacity_unspecified_mw; no guessed conversion between AC and DC.",
+      "unit": "MW"
+    },
+    "storage_power_mw": {
+      "type": "float",
+      "description": "storage_power_mw; no guessed conversion between AC and DC.",
+      "unit": "MW"
+    },
+    "storage_energy_mwh": {
+      "type": "float",
+      "description": "storage_energy_mwh; expected generation is not a measured production series.",
+      "unit": "MWh"
+    },
+    "expected_annual_generation_mwh": {
+      "type": "float",
+      "description": "expected_annual_generation_mwh; expected generation is not a measured production series.",
+      "unit": "MWh"
+    },
+    "land_area_ha": {
+      "type": "float",
+      "description": "Project site area.",
+      "unit": "ha"
+    },
+    "grid_voltage_kv": {
+      "type": "float",
+      "description": "Grid connection voltage.",
+      "unit": "kV"
+    },
+    "capex": {
+      "type": "float",
+      "description": "Published capital cost in currency column; basis/year in extensions."
+    },
+    "cec_a_ref_v": {
+      "type": "float",
+      "description": "cec_a_ref_v; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "cec_il_ref_a": {
+      "type": "float",
+      "description": "cec_il_ref_a; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "cec_io_ref_a": {
+      "type": "float",
+      "description": "cec_io_ref_a; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "cec_rs_ohm": {
+      "type": "float",
+      "description": "cec_rs_ohm; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "cec_rsh_ref_ohm": {
+      "type": "float",
+      "description": "cec_rsh_ref_ohm; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "cec_adjust_pct": {
+      "type": "float",
+      "description": "cec_adjust_pct; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "sandia_c0_per_w": {
+      "type": "float",
+      "description": "sandia_c0_per_w; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "sandia_c1_per_v": {
+      "type": "float",
+      "description": "sandia_c1_per_v; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "sandia_c2_per_v": {
+      "type": "float",
+      "description": "sandia_c2_per_v; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "sandia_c3_per_v": {
+      "type": "float",
+      "description": "sandia_c3_per_v; fitted SAM/CEC model parameter, not an OEM certified measurement."
+    },
+    "depth_m": {
+      "type": "float",
+      "unit": "m",
+      "description": "Enclosure depth as reported by OEM, distinct from height and width."
+    }
+  }
+}
