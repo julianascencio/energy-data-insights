@@ -1,5 +1,12 @@
 # Data retrieval
 
+## PV equipment and project catalogue
+
+[Five typed PV catalogues](../docs/pv-catalogue.md) cover modules, inverters, trackers,
+combiner boxes and projects, with stable IDs, field-level sources and UTC timestamps.
+Review JSONL in Git; build compressed Parquet using `energy_data_retrieval.pv_catalogue`.
+The initial source adapters support pinned SAM/CEC libraries and EIA-860 plant/solar workbooks.
+
 ## PV climate classifications
 
 [Compare KGPV, JRC parametric climates, ML21 and PVCZ](../docs/climate-comparison.md).
