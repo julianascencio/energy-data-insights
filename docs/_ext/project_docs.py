@@ -92,6 +92,32 @@ def _climate_assets(root: Path) -> None:
             bundle.write(path, arcname=path.name)
 
 
+def _site_and_degradation_assets(root: Path) -> None:
+    """Keep both new tutorials runnable after extracting their complete bundles."""
+    examples = root / "examples/analysis"
+    gallery = root / "docs/auto_examples/analysis"
+    gallery.mkdir(parents=True, exist_ok=True)
+    groups = {
+        "degradation_examples.zip": [
+            *sorted(examples.glob("degradation_*.csv")),
+            *sorted(examples.glob("degradation_*.json")),
+            examples / "climate_world_boundaries.geojson",
+            examples / "plot_degradation_rates.py",
+        ],
+        "site_climate_examples.zip": [
+            *sorted(examples.glob("site_climate_*.csv")),
+            examples / "site_climate_provenance.json",
+            examples / "climate_jrc_model.json",
+            examples / "climate_PVCZ_LICENSE.txt",
+            examples / "plot_site_climate_profile.py",
+        ],
+    }
+    for name, paths in groups.items():
+        with ZipFile(gallery / name, "w", compression=ZIP_DEFLATED) as bundle:
+            for path in paths:
+                bundle.write(path, arcname=path.name)
+
+
 def prepare_sources(root: Path) -> list[str]:
     """Reuse the Markdown source of truth, translating its relative links for Sphinx."""
     docs = root / "docs"
@@ -167,4 +193,5 @@ def prepare_sources(root: Path) -> list[str]:
         )
     _generation_assets(root)
     _climate_assets(root)
+    _site_and_degradation_assets(root)
     return [path.name for path in docs.glob("*.md")]

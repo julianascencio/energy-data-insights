@@ -1,0 +1,167 @@
+{
+  "format_version": 1,
+  "site": {
+    "name": "Rengo, Chile (illustrative site coordinate)",
+    "latitude": -34.406,
+    "longitude": -70.858
+  },
+  "sources": {
+    "jrc": {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/PVGIS/climatic-zones-pv/means-global.csv",
+      "sha256": "55aa6751bdf5e05351a65aad4271125caeac443b4d45287a129183249856f19a",
+      "size_bytes": 211755040,
+      "period": "2005-2023",
+      "resolution": "0.1 degree",
+      "licence": "European Commission reuse notice; attribution required",
+      "source": "JRC PVGIS/ERA5 climate catalogue",
+      "sample_support": {
+        "latitude": -34.406,
+        "longitude": -70.858,
+        "radius_km": 75.0
+      },
+      "selection": "Every native row within 75 km of the declared Rengo coordinate; all columns retained",
+      "original_rows": 1452132,
+      "retained_rows": 172,
+      "columns": [
+        "lat",
+        "lon",
+        "tilt",
+        "G",
+        "Tamb",
+        "Tmod",
+        "Tw",
+        "E",
+        "eff",
+        "suff"
+      ],
+      "sample_sha256": "707f92de6dc0a1bce8ee0b20d9adc70d45ae231b5b614ed2ee14d4149f33b0d8",
+      "reference_ids": [
+        "jrc_2025_climate_dataset",
+        "medina_2026_pv_climates"
+      ]
+    },
+    "ml21": {
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0960148125013473-mmc1.xlsx",
+      "sha256": "d8eb4c55df1e5e937f8460dada0fdb9f3b52dbc8cb79da14aa44319c1ab46891",
+      "size_bytes": 10777807,
+      "period": "Mixed source climatologies; see publication",
+      "resolution": "0.5 degree",
+      "licence": "Article CC BY; attributed supplementary-data extracts",
+      "source": "ML21 publisher supplementary workbook",
+      "sample_support": {
+        "latitude": -34.406,
+        "longitude": -70.858,
+        "radius_km": 75.0
+      },
+      "selection": "Every native row within 75 km of the declared Rengo coordinate; all columns retained",
+      "original_rows": 55418,
+      "retained_rows": 8,
+      "columns": [
+        "lat",
+        "lon",
+        "Tann",
+        "Tmax",
+        "Tmin",
+        "DTRann",
+        "Pann",
+        "Pmin",
+        "RHann",
+        "GHIann",
+        "GHImax",
+        "GHImin",
+        "UVann",
+        "WSann",
+        "Yf",
+        "ml21_zone",
+        "KGPV",
+        "kgpv_zone"
+      ],
+      "sample_sha256": "81941d33566c5cd7aeb4f4c8cb24b9fd10171edbab547e2b333ddd48c27064b1",
+      "reference_ids": [
+        "triana_2026_ml_climates"
+      ]
+    },
+    "pvcz": {
+      "url": "https://raw.githubusercontent.com/toddkarin/pvcz/aa89fab8d1d66f46f4ea8575e2452aa75a927535/pvcz/PVCZ-2019_ver0p2_world_PV_climate_stressors_and_zones.csv",
+      "sha256": "14e7e06010620f8054b3ba7ee49256bc4d26c017c51da2d188d9753cff7d9801",
+      "size_bytes": 48588578,
+      "period": "2010-2018",
+      "resolution": "0.25 degree; rounded coordinates",
+      "licence": "MIT",
+      "commit": "aa89fab8d1d66f46f4ea8575e2452aa75a927535",
+      "source": "PVCZ author stressor catalogue",
+      "sample_support": {
+        "latitude": -34.406,
+        "longitude": -70.858,
+        "radius_km": 75.0
+      },
+      "selection": "Every native row within 75 km of the declared Rengo coordinate; all columns retained",
+      "original_rows": 230742,
+      "retained_rows": 28,
+      "columns": [
+        "lat",
+        "lon",
+        "T_ambient_mean",
+        "T_ambient_min",
+        "T_ambient_max",
+        "T_equiv_rack_0p1eV",
+        "T_equiv_rack_0p3eV",
+        "T_equiv_rack_0p5eV",
+        "T_equiv_rack_0p7eV",
+        "T_equiv_rack_0p9eV",
+        "T_equiv_rack_1p1eV",
+        "T_equiv_rack_1p3eV",
+        "T_equiv_rack_1p5eV",
+        "T_equiv_rack_1p7eV",
+        "T_equiv_rack_1p9eV",
+        "T_equiv_rack_2p1eV",
+        "T_equiv_roof_0p1eV",
+        "T_equiv_roof_0p3eV",
+        "T_equiv_roof_0p5eV",
+        "T_equiv_roof_0p7eV",
+        "T_equiv_roof_0p9eV",
+        "T_equiv_roof_1p1eV",
+        "T_equiv_roof_1p3eV",
+        "T_equiv_roof_1p5eV",
+        "T_equiv_roof_1p7eV",
+        "T_equiv_roof_1p9eV",
+        "T_equiv_roof_2p1eV",
+        "T_velocity_rack",
+        "T_velocity_roof",
+        "specific_humidity_mean",
+        "specific_humidity_rms",
+        "GHI_mean",
+        "wind_speed_rms",
+        "wind_speed_max",
+        "ASCE 7-16 MRI 25-Year",
+        "KG_zone",
+        "KG_class_0",
+        "KG_class_1",
+        "KG_class_2",
+        "KG_class_02",
+        "T_equiv_rack_1p1eV_zone",
+        "T_equiv_roof_1p1eV_zone",
+        "specific_humidity_mean_zone",
+        "ASCE 7-16 MRI 25-Year_zone",
+        "KG_numeric_zone",
+        "pvcz",
+        "pvcz_labeled",
+        "wind_speed",
+        "wind_speed_zone"
+      ],
+      "sample_sha256": "eb36404e5b452f5ad2245e7e5345c416d665c55ce489816309f3bab42cc370f8",
+      "reference_ids": [
+        "karin_2019_pvcz",
+        "karin_pvcz_software"
+      ]
+    }
+  },
+  "files": {
+    "site_climate_jrc.csv": "707f92de6dc0a1bce8ee0b20d9adc70d45ae231b5b614ed2ee14d4149f33b0d8",
+    "site_climate_ml21.csv": "81941d33566c5cd7aeb4f4c8cb24b9fd10171edbab547e2b333ddd48c27064b1",
+    "site_climate_pvcz.csv": "eb36404e5b452f5ad2245e7e5345c416d665c55ce489816309f3bab42cc370f8",
+    "climate_jrc_model.json": "935eb1085466d5dd1a79fbe0c9b3577bbbbf871bf23d752ce983709f1b3fa59b",
+    "climate_PVCZ_LICENSE.txt": "e9aa38aa880a2851e6ff970155883b1c173698379946725ba8134c1ce43fa66b"
+  },
+  "purpose": "Offline site context, not a surveyed plant location or field validation"
+}
