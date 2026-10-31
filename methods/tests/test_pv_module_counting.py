@@ -70,6 +70,12 @@ def test_blank_unframed_and_low_resolution_are_unresolved_not_zero():
         assert result.estimated_modules is None
         assert result.to_frame().empty
     assert count_regular_pv_modules(plain).rejected_tables
+    narrow = blank.copy()
+    narrow[25:30, 25:34] = [0.2, 0.36, 0.44]
+    config = replace(ModuleCountingConfig(), minimum_table_pixels=25, minimum_table_aspect=1)
+    result = count_regular_pv_modules(narrow, config=config)
+    assert result.estimated_modules is None
+    assert result.rejected_tables[0]["reason"] == "unresolved_table_width"
 
 
 def test_limits_fail_explicitly_and_clipped_or_steep_tables_are_flagged():

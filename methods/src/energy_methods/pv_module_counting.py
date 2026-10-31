@@ -253,6 +253,8 @@ def count_regular_pv_modules(
             continue
         bounds = (xs.start, ys.start, xs.stop, ys.stop)
         try:
+            if xs.stop - xs.start < 10:
+                raise ValueError("unresolved_table_width")
             if (xs.stop - xs.start) / (ys.stop - ys.start) < cfg.minimum_table_aspect:
                 raise ValueError("unsupported_table_shape")
             if not (xs.start >= 5 and xs.stop + 6 < w and ys.start >= 5 and ys.stop + 8 < h):
