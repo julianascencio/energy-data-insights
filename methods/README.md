@@ -289,3 +289,6 @@ citation alongside the Kaaya model and the 2019 degradation mapping paper.
 
 `energy_methods.degradation_weather` supplies the published GHI-Faiman temperature
 and Wald UVA/UVB transformations used by the [applied map analysis](../analysis/src/energy_analysis/degradation/README.md).
+
+The [near-Rengo pilot](../docs/rengo-module-counting.md) extends module-candidate
+counting with orientation correction, autocorrelation and source-resolution checks.

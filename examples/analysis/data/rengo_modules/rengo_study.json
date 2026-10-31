@@ -1,0 +1,169 @@
+{
+  "site": {
+    "name": "PMGD PFV El Mirlo",
+    "registry_id": 2253,
+    "latitude": -34.450595,
+    "longitude": -70.862879,
+    "registry_maximum_power_mw": 6.235,
+    "distance_from_rengo_reference_km": 5.077703386711186,
+    "rengo_reference_wgs84": [
+      -70.858,
+      -34.405
+    ],
+    "rengo_reference_note": "Rounded city-centre reference; distance to registry point, not a surveyed site entrance.",
+    "commune": "Malloa, O\u2019Higgins, Chile",
+    "project_source": "https://mirlo.centralpmgd.cl/",
+    "project_source_note": "Developer confirms project identity and Malloa location; design power is different from the current registry field. No published design count is used by the detector."
+  },
+  "selection": {
+    "screened_ids": [
+      2154,
+      2130,
+      1680,
+      2271,
+      2253,
+      2084
+    ],
+    "criterion": "Inspect nearby CEN entries for visible individual frames, not just array footprint. El Mirlo selected as the clearest two-axis frame lattice in the screened imagery.",
+    "registry_snapshot": "../chile_modules/chile_registry.csv",
+    "registry_sha256": "178064613602bdc9ab68fc225707c1fa16c02924f3f6594f87002baafcb8b4f9"
+  },
+  "detail_capture": {
+    "filename": "el_mirlo.png",
+    "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export",
+    "request": {
+      "bbox": "-70.8627,-34.4523,-70.8603,-34.4507",
+      "bboxSR": 4326,
+      "imageSR": 4326,
+      "size": "900,600",
+      "format": "png",
+      "f": "image"
+    },
+    "retrieved_at_utc": "2026-10-31T17:41:34.107884+00:00",
+    "sha256": "1fbe02fb2632d7b91a73d2abe07f2d23f769380841ce3f5ccfeae4de0b58084c",
+    "bbox": [
+      -70.8627,
+      -34.4523,
+      -70.8603,
+      -34.4507
+    ],
+    "size": [
+      900,
+      600
+    ],
+    "delivered_sampling_m": [
+      0.24504835994727447,
+      0.29581484604192326
+    ],
+    "source_pixel_ratio": 1.2650564160751812,
+    "scope_pixel_polygon": [
+      [
+        150,
+        26
+      ],
+      [
+        762,
+        26
+      ],
+      [
+        762,
+        524
+      ],
+      [
+        150,
+        524
+      ],
+      [
+        150,
+        26
+      ]
+    ],
+    "scope_note": "Manual inspection block in the southern part of the plant; not a plant boundary or complete plant inventory."
+  },
+  "overview_capture": {
+    "filename": "el_mirlo_overview.png",
+    "name": "PMGD PFV EL MIRLO",
+    "id": 2253,
+    "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export",
+    "request": {
+      "bbox": "-70.86787860199736,-34.455595039564145,-70.85787860199737,-34.44559503956414",
+      "bboxSR": 4326,
+      "imageSR": 4326,
+      "size": "900,900",
+      "format": "png",
+      "f": "image"
+    },
+    "bbox": [
+      -70.86787860199736,
+      -34.455595039564145,
+      -70.85787860199737,
+      -34.44559503956414
+    ],
+    "retrieved_at_utc": "2026-10-31T17:30:57.187241+00:00",
+    "sha256": "1a52767591eb5f2e655c5158daeeeac8a9bdc1f7c48e7c18a173f6b7e45ae0cf"
+  },
+  "source_probe": {
+    "filename": "source_metadata.json",
+    "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/9/query",
+    "request": {
+      "geometry": "-70.8615,-34.4515",
+      "geometryType": "esriGeometryPoint",
+      "inSR": 4326,
+      "outFields": "*",
+      "returnGeometry": "false",
+      "f": "json"
+    },
+    "retrieved_at_utc": "2026-10-31T17:31:50.548371+00:00",
+    "sha256": "985c3d6e52dba7d17921e1b141e8519da972fa62567f4a82698f3aeae509bca2",
+    "bbox": [
+      -70.8627,
+      -34.4527,
+      -70.86030000000001,
+      -34.450300000000006
+    ],
+    "attributes": {
+      "OBJECTID": 1903264,
+      "SRC_DATE": 20240114,
+      "SRC_RES": 0.31,
+      "SRC_ACC": 5,
+      "SAMP_RES": 0.3,
+      "SRC_DESC": "WV03",
+      "MinMapLevel": 19,
+      "MaxMapLevel": 19,
+      "NICE_NAME": "Vivid Advanced",
+      "DrawOrder": 80,
+      "SRC_DATE2": 1705190400000,
+      "NICE_DESC": "Vantor",
+      "Shape_Length": 76555.71705088778,
+      "Shape_Area": 257705721.5,
+      "BlockName": "Vivid_Advanced_Rancagua_CL_24Q2",
+      "ReleaseName": "Maps 2024.R08"
+    },
+    "note": "Level-19 metadata queried at one point; does not guarantee uniform date/resolution across the scene. Delivered pixels are slightly finer than reported source sampling and do not add optical information."
+  },
+  "parameters": {
+    "minimum_chroma": 0.018,
+    "minimum_component_pixels": 300,
+    "minimum_aspect": 3.0,
+    "frame_prominence": 0.015,
+    "minimum_autocorrelation": 0.3,
+    "minimum_source_pitch": 3.0,
+    "maximum_pitch_pixels": 30,
+    "source_pixel_ratio": 1.2650564160751812,
+    "spacing_tolerance": 0.3,
+    "minimum_panel_fraction": 0.55,
+    "minimum_cell_contrast": 0.003
+  },
+  "baseline": "Original count_regular_pv_modules defaults, same image and scope.",
+  "annotation_fixture": "visual_annotations.json",
+  "whole_plant_image_count": null,
+  "attribution": "\u00a9 2026 Esri and its licensors. Esri, Vantor, Earthstar Geographics, GIS User Community. All rights reserved.",
+  "sha256": {
+    "source_metadata.json": "985c3d6e52dba7d17921e1b141e8519da972fa62567f4a82698f3aeae509bca2",
+    "el_mirlo_overview.png": "1a52767591eb5f2e655c5158daeeeac8a9bdc1f7c48e7c18a173f6b7e45ae0cf",
+    "el_mirlo.png": "1fbe02fb2632d7b91a73d2abe07f2d23f769380841ce3f5ccfeae4de0b58084c",
+    "visual_annotations.json": "171258373873692e86714fab9f56d2709588117f8ab3834859e26df9175e940e",
+    "initial_visual_annotations.json": "27a1742e53acfd19967589a1670d757b7f5cd22607910893150c09d20a99730f",
+    "README.txt": "94cd1fb2bbe7ad41a6ae3b6fa3488cd67994253e7aa93fa59e6d1b0545bdcaeb"
+  }
+}

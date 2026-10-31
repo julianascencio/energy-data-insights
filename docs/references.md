@@ -210,7 +210,7 @@ Coordinador Eléctrico Nacional (n.d.). **Infotécnica: registro público de cen
 
 **Role:** data. Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cen`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `docs/worldwide-generation.md`, `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cen`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `docs/worldwide-generation.md`, `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`, `docs/rengo-module-counting.md`, `examples/analysis/data/rengo_modules/rengo_study.json`.
 
 ### cen_historical_reports
 
@@ -1362,15 +1362,15 @@ SciPy contributors (n.d.). **SciPy signal.find_peaks reference**. [Source](https
 
 **Role:** implemented. Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy.
 
-**Used by:** `methods/src/energy_methods/pv_module_counting.py`, `docs/pv-module-counting.md`, `examples/analysis/plot_candelaria_module_counting.py`.
+**Used by:** `methods/src/energy_methods/pv_module_counting.py`, `docs/pv-module-counting.md`, `examples/analysis/plot_candelaria_module_counting.py`, `methods/src/energy_methods/pv_lattice_counting.py`.
 
 ### esri_world_imagery_static
 
 Esri (n.d.). **World Imagery static map exports and source metadata**. [Source](https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer)
 
-**Role:** data. Three attributed research-report static maps. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.
+**Role:** data. Attributed research-report static maps for the Chile audits and El Mirlo pilot. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.
 
-**Used by:** `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`.
+**Used by:** `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`, `docs/rengo-module-counting.md`, `examples/analysis/data/rengo_modules/rengo_study.json`.
 
 ### ceme1_engineering_inventory
 
@@ -1387,3 +1387,19 @@ Sunbelt (n.d.). **Planta de gas, Concón**. [Source](https://sunbelt.cl/proyecto
 **Role:** data. Installer confirms photovoltaic technology, PMGD use and 118 kWp DC. No verified module count supplied; photographs do not provide an unobscured complete inventory.
 
 **Used by:** `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`.
+
+### cardoso_2024_pv_modules
+
+Cardoso, Andressa; Jurado-Rodríguez, David; López, Alfonso; Ramos, M. Isabel; Jurado, Juan Manuel (2024). **Automated detection and tracking of photovoltaic modules from 3D remote sensing data**. Applied Energy, 367, 123242. [DOI: 10.1016/j.apenergy.2024.123242](https://doi.org/10.1016/j.apenergy.2024.123242)
+
+**Role:** background. Background on geometric individual-module detection from high-resolution UAV RGB/thermal and 3D data. The PCA/autocorrelation method here is a separate experimental implementation, not a reproduction; published accuracy does not transfer to the El Mirlo basemap pilot. No known-count gap filling is implemented.
+
+**Used by:** `methods/src/energy_methods/pv_lattice_counting.py`, `docs/rengo-module-counting.md`.
+
+### el_mirlo_project
+
+oEnergy / PFV El Mirlo SpA (n.d.). **Parque Fotovoltaico El Mirlo**. [Source](https://mirlo.centralpmgd.cl/)
+
+**Role:** data. Developer project page confirms identity and Malloa location. Design power is not substituted for the dated CEN power field. No project-design module count is used in image detection.
+
+**Used by:** `docs/rengo-module-counting.md`, `examples/analysis/data/rengo_modules/rengo_study.json`.
