@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "prepared_at_utc": "2026-10-31T12:21:51.711683+00:00",
+  "registry_fixture": "chile_registry.csv",
+  "registry_source": {
+    "url": "https://api-infotecnica.coordinador.cl/v1/centrales-sin-filtrar/extended/",
+    "retrieved_at_utc": "2026-10-31T12:14:21.911006+00:00",
+    "original_response_sha256": "ef8190d39e5e790b375842b66fa987ae1bab2a1674f29132a215e716d4d655c1",
+    "original_rows": 1384,
+    "projection_columns": [
+      "id",
+      "nombre",
+      "tipo_central_nombre",
+      "estado",
+      "potencia_maxima",
+      "latitud",
+      "longitud"
+    ]
+  },
+  "selection": "CEN Solares, EN_OPERACION, finite positive potencia_maxima; sort by potencia_maxima then id. No coordinate filtering; all ties retained. Extrema independently confirmed PV. Not a census of private/off-grid solar farms; power is not assumed MWp.",
+  "eligible_sites": 757,
+  "sites": {
+    "ceme1": {
+      "name": "CEME1",
+      "registry_id": 2010,
+      "registry_maximum_power_mw": 412.9326,
+      "dc_nameplate_mwp": 480.19,
+      "reported_inventory": {
+        "modules": 882720,
+        "basis": "Engineering report, section 3.2 / Table 3.1, pages 15–16; source inventory, not computer-vision output",
+        "url": "https://www.coordinador.cl/wp-content/uploads/2025/12/EE-EN-2024-0488-R1_Potencia_Maxima_PFV_CEME1.pdf",
+        "pdf_sha256": "6ad45bd5462b4bcd64a1d3eefe187a027e0d7d5ef20d80f55953235d39a31828",
+        "retrieved_at_utc": "2026-10-31T12:18:00.140020+00:00",
+        "strings": 29424,
+        "modules_per_string": 30,
+        "module_groups": [
+          {
+            "model": "JA Solar JAM72S30-540",
+            "modules": 178560,
+            "module_power_w": 540
+          },
+          {
+            "model": "JA Solar JAM72S30-545",
+            "modules": 704160,
+            "module_power_w": 545
+          }
+        ]
+      },
+      "documented_module_short_side_m": 1.134,
+      "module_dimension_source": "Engineering report Figure 3.4, p.16: 2278 x 1134 mm",
+      "counter_parameters": {},
+      "detail_capture": {
+        "filename": "chile_ceme1_detail.png",
+        "retrieved_at_utc": "2026-10-31T12:19:48.469426+00:00",
+        "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export",
+        "request": {
+          "bbox": "-69.603,-22.36,-69.597,-22.354",
+          "bboxSR": 4326,
+          "imageSR": 4326,
+          "size": "500,500",
+          "format": "png",
+          "f": "image"
+        },
+        "bbox_wgs84": [
+          -69.603,
+          -22.36,
+          -69.597,
+          -22.354
+        ],
+        "size": [
+          500,
+          500
+        ],
+        "scope": {
+          "type": "Feature",
+          "properties": {
+            "scope_basis": "OpenStreetMap way 1063236315, version 1, 2022-05-24; spatial scope, not surveyed as-built boundary"
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -69.60568,
+                  -22.3539374
+                ],
+                [
+                  -69.6057014,
+                  -22.3580651
+                ],
+                [
+                  -69.6037059,
+                  -22.358085
+                ],
+                [
+                  -69.602633,
+                  -22.3591367
+                ],
+                [
+                  -69.6026115,
+                  -22.3642962
+                ],
+                [
+                  -69.6001868,
+                  -22.3677886
+                ],
+                [
+                  -69.592741,
+                  -22.3678283
+                ],
+                [
+                  -69.5927196,
+                  -22.3710627
+                ],
+                [
+                  -69.5854025,
+                  -22.3742574
+                ],
+                [
+                  -69.5811968,
+                  -22.3742177
+                ],
+                [
+                  -69.5847588,
+                  -22.3540565
+                ],
+                [
+                  -69.60568,
+                  -22.3539374
+                ]
+              ]
+            ]
+          }
+        },
+        "service_sampling_m": 1.2,
+        "source_resolution_m": 0.34,
+        "point_metadata": {
+          "OBJECTID": 1779654,
+          "SRC_DATE": 20250828,
+          "SRC_RES": 0.34,
+          "SRC_ACC": 5,
+          "SAMP_RES": 1.2,
+          "SRC_DESC": "LG01",
+          "MinMapLevel": 12,
+          "MaxMapLevel": 17,
+          "NICE_NAME": "Vivid",
+          "DrawOrder": 80,
+          "SRC_DATE2": 1756339200000,
+          "NICE_DESC": "Vantor",
+          "Shape_Length": 161428.38339813263,
+          "Shape_Area": 558925388.5,
+          "BlockName": "Vivid_Standard_CL01_26Q1",
+          "ReleaseName": "Raster Basemaps 2026.R05"
+        },
+        "metadata_scope": "Provider metadata at the probe point, not guaranteed uniform over every pixel",
+        "metadata_request": {
+          "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/11/query",
+          "parameters": {
+            "geometry": "-69.6005,-22.356",
+            "geometryType": "esriGeometryPoint",
+            "inSR": 4326,
+            "outFields": "*",
+            "returnGeometry": "false",
+            "f": "json"
+          }
+        },
+        "attribution": "Map image © 2026 Esri and its licensors; source: Esri, Vantor, Earthstar Geographics, and the GIS User Community. All rights reserved.",
+        "terms": "https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm",
+        "product_kind": "static_rendered_basemap_not_analysis_ready_reflectance"
+      },
+      "overview_capture": {
+        "filename": "chile_ceme1_overview.png",
+        "retrieved_at_utc": "2026-10-31T12:19:54.591455+00:00",
+        "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export",
+        "request": {
+          "bbox": "-69.607,-22.376,-69.579,-22.352",
+          "bboxSR": 4326,
+          "imageSR": 4326,
+          "size": "1400,1200",
+          "format": "png",
+          "f": "image"
+        },
+        "bbox_wgs84": [
+          -69.607,
+          -22.376,
+          -69.579,
+          -22.352
+        ],
+        "size": [
+          1400,
+          1200
+        ],
+        "scope": {
+          "type": "Feature",
+          "properties": {
+            "scope_basis": "OpenStreetMap way 1063236315, version 1, 2022-05-24; spatial scope, not surveyed as-built boundary"
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -69.60568,
+                  -22.3539374
+                ],
+                [
+                  -69.6057014,
+                  -22.3580651
+                ],
+                [
+                  -69.6037059,
+                  -22.358085
+                ],
+                [
+                  -69.602633,
+                  -22.3591367
+                ],
+                [
+                  -69.6026115,
+                  -22.3642962
+                ],
+                [
+                  -69.6001868,
+                  -22.3677886
+                ],
+                [
+                  -69.592741,
+                  -22.3678283
+                ],
+                [
+                  -69.5927196,
+                  -22.3710627
+                ],
+                [
+                  -69.5854025,
+                  -22.3742574
+                ],
+                [
+                  -69.5811968,
+                  -22.3742177
+                ],
+                [
+                  -69.5847588,
+                  -22.3540565
+                ],
+                [
+                  -69.60568,
+                  -22.3539374
+                ]
+              ]
+            ]
+          }
+        },
+        "service_sampling_m": 1.2,
+        "source_resolution_m": 0.34,
+        "point_metadata": {
+          "OBJECTID": 1779654,
+          "SRC_DATE": 20250828,
+          "SRC_RES": 0.34,
+          "SRC_ACC": 5,
+          "SAMP_RES": 1.2,
+          "SRC_DESC": "LG01",
+          "MinMapLevel": 12,
+          "MaxMapLevel": 17,
+          "NICE_NAME": "Vivid",
+          "DrawOrder": 80,
+          "SRC_DATE2": 1756339200000,
+          "NICE_DESC": "Vantor",
+          "Shape_Length": 161428.38339813263,
+          "Shape_Area": 558925388.5,
+          "BlockName": "Vivid_Standard_CL01_26Q1",
+          "ReleaseName": "Raster Basemaps 2026.R05"
+        },
+        "metadata_scope": "Provider metadata at the probe point, not guaranteed uniform over every pixel",
+        "metadata_request": {
+          "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/11/query",
+          "parameters": {
+            "geometry": "-69.6005,-22.356",
+            "geometryType": "esriGeometryPoint",
+            "inSR": 4326,
+            "outFields": "*",
+            "returnGeometry": "false",
+            "f": "json"
+          }
+        },
+        "attribution": "Map image © 2026 Esri and its licensors; source: Esri, Vantor, Earthstar Geographics, and the GIS User Community. All rights reserved.",
+        "terms": "https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm",
+        "product_kind": "static_rendered_basemap_not_analysis_ready_reflectance"
+      },
+      "operator_url": "https://www.generadora.cl/instalaciones/centrales/nueva-renca/",
+      "osm_source": {
+        "url": "https://api.openstreetmap.org/api/0.6/way/1063236315/full.json",
+        "sha256": "58600b732423cd82ff7b10ecf3a6ce44b14ffffe3d79a5abd2e2ae5da1be040e",
+        "retrieved_at_utc": "2026-10-31T12:15:34.148712+00:00",
+        "attribution": "© OpenStreetMap contributors, ODbL-1.0"
+      },
+      "limitation": "Diagnostic detail viewport covers only part of the farm. Even a successful count here would not be a whole-plant count."
+    },
+    "concon": {
+      "name": "PMGD PFV Concón",
+      "registry_id": 2082,
+      "registry_maximum_power_mw": 0.1,
+      "dc_nameplate_mwp": 0.118,
+      "reported_inventory": {
+        "modules": null,
+        "basis": "No independently verified module inventory retrieved. Do not infer it by dividing capacity by an assumed module rating.",
+        "url": "https://sunbelt.cl/proyectos/planta-de-gas-concon/"
+      },
+      "documented_module_short_side_m": null,
+      "counter_parameters": {
+        "blue_excess": 0.025,
+        "maximum_slope": 0.3,
+        "minimum_brightness": 0.25,
+        "minimum_table_pixels": 100,
+        "column_prominence": 0.015,
+        "row_prominence": 0.01,
+        "minimum_table_aspect": 1.0
+      },
+      "detail_capture": {
+        "filename": "chile_concon.png",
+        "retrieved_at_utc": "2026-10-31T12:15:47.489640+00:00",
+        "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export",
+        "request": {
+          "bbox": "-71.489,-32.9303,-71.4865,-32.9281",
+          "bboxSR": 4326,
+          "imageSR": 4326,
+          "size": "1000,880",
+          "format": "png",
+          "f": "image"
+        },
+        "bbox_wgs84": [
+          -71.489,
+          -32.9303,
+          -71.4865,
+          -32.9281
+        ],
+        "size": [
+          1000,
+          880
+        ],
+        "scope": {
+          "type": "Feature",
+          "properties": {
+            "scope_basis": "Manual inspection AOI enclosing visible array-like structures; not an operator-validated whole-plant boundary"
+          },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  -71.488,
+                  -32.929075
+                ],
+                [
+                  -71.488,
+                  -32.9284125
+                ],
+                [
+                  -71.48855,
+                  -32.9284125
+                ],
+                [
+                  -71.48855,
+                  -32.929075
+                ],
+                [
+                  -71.488,
+                  -32.929075
+                ]
+              ]
+            ]
+          }
+        },
+        "service_sampling_m": 0.3,
+        "source_resolution_m": 0.34,
+        "point_metadata": {
+          "OBJECTID": 1409196,
+          "SRC_DATE": 20260702,
+          "SRC_RES": 0.34,
+          "SRC_ACC": 8.47,
+          "SAMP_RES": 0.3,
+          "SRC_DESC": "LG01",
+          "MinMapLevel": 12,
+          "MaxMapLevel": 19,
+          "NICE_NAME": "Vivid Mosaic Metro",
+          "DrawOrder": 80,
+          "SRC_DATE2": 1782950400000,
+          "NICE_DESC": "Vantor",
+          "Shape_Length": 73782.5132793071,
+          "Shape_Area": 218414560.5,
+          "BlockName": "Vivid_Mosaic_30_Valparaiso_CL_26Q3",
+          "ReleaseName": "Raster Basemaps 2026.R09"
+        },
+        "metadata_scope": "Provider metadata at the probe point, not guaranteed uniform over every pixel",
+        "metadata_request": {
+          "endpoint": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/9/query",
+          "parameters": {
+            "geometry": "-71.4883,-32.9287",
+            "geometryType": "esriGeometryPoint",
+            "inSR": 4326,
+            "outFields": "*",
+            "returnGeometry": "false",
+            "f": "json"
+          }
+        },
+        "attribution": "Map image © 2026 Esri and its licensors; source: Esri, Vantor, Earthstar Geographics, and the GIS User Community. All rights reserved.",
+        "terms": "https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm",
+        "product_kind": "static_rendered_basemap_not_analysis_ready_reflectance"
+      },
+      "identity_source": {
+        "url": "https://cartas.coordinador.cl/download_anexos/6823eb7535635710e101e8d7/0",
+        "sha256": "d802bd0a6da0c292d63fc2f301ded0fe517896a19e99ffeac79bd0e6b98f73b5",
+        "basis": "Commissioning form links PMGD Concón to Abastible, Sunbelt and the Concón gas-plant address. Personal contact fields are not republished."
+      },
+      "limitation": "The public image has strong glare and unresolved module frames. The rectangular AOI is an inspection scope, not proof of complete site coverage."
+    }
+  },
+  "sha256": {
+    "chile_concon_metadata.json": "7d0c05491d68f82505189f66340012081f55bd7ad1995753740060f5efeb1c3e",
+    "chile_concon.png": "ba5996f379aad79199cc0a9e5c29be5e5e6f108abf8a85e25423121990d23b6f",
+    "chile_registry.csv": "178064613602bdc9ab68fc225707c1fa16c02924f3f6594f87002baafcb8b4f9",
+    "chile_ceme1_overview.png": "ad56e3cb201a401aa379d2ff1fb9d873e656aae0f985c5465c0a79b76134aac2",
+    "chile_ceme1_detail.png": "73a17f035db68b02b292fd3385e8b7d428ad84001c2d94c61ba7de9d6b460a5d",
+    "chile_ceme1_metadata.json": "ffb1c5d8e093a8e87bfafb705a803aa1f87bfb8b73a158de170dc49e54451e7e"
+  }
+}

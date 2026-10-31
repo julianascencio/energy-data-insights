@@ -210,7 +210,7 @@ Coordinador Eléctrico Nacional (n.d.). **Infotécnica: registro público de cen
 
 **Role:** data. Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cen`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `docs/worldwide-generation.md`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/cen`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `docs/worldwide-generation.md`, `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`.
 
 ### cen_historical_reports
 
@@ -1363,3 +1363,27 @@ SciPy contributors (n.d.). **SciPy signal.find_peaks reference**. [Source](https
 **Role:** implemented. Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy.
 
 **Used by:** `methods/src/energy_methods/pv_module_counting.py`, `docs/pv-module-counting.md`, `examples/analysis/plot_candelaria_module_counting.py`.
+
+### esri_world_imagery_static
+
+Esri (n.d.). **World Imagery static map exports and source metadata**. [Source](https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer)
+
+**Role:** data. Three attributed research-report static maps. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.
+
+**Used by:** `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`.
+
+### ceme1_engineering_inventory
+
+Estudios Eléctricos (n.d.). **Parque Fotovoltaico CEME1: Informe de Potencia Máxima, EE-EN-2024-0488-R1**. [Source](https://www.coordinador.cl/wp-content/uploads/2025/12/EE-EN-2024-0488-R1_Potencia_Maxima_PFV_CEME1.pdf)
+
+**Role:** data. Section 3.2, Figure 3.4 and Table 3.1, pages 15–16. 882,720 modules and 480.19 MWDC. This is a reported inventory, never an automatic image count. Upload date is not asserted as report publication date.
+
+**Used by:** `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`.
+
+### sunbelt_concon_project
+
+Sunbelt (n.d.). **Planta de gas, Concón**. [Source](https://sunbelt.cl/proyectos/planta-de-gas-concon/)
+
+**Role:** data. Installer confirms photovoltaic technology, PMGD use and 118 kWp DC. No verified module count supplied; photographs do not provide an unobscured complete inventory.
+
+**Used by:** `docs/chile-module-counting.md`, `examples/analysis/plot_chile_largest_module_counting.py`, `examples/analysis/plot_chile_smallest_module_counting.py`.

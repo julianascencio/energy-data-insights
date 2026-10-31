@@ -1,5 +1,9 @@
 # Automatic module counting from aerial imagery
 
+The [Chile extension](chile-module-counting.md) tests transfer to CEME1 and Concón,
+with separate gallery examples. Neither Chile image establishes a full-site
+module count; the guide documents the resolution and glare limitations.
+
 [Open the annotated Icor counting example and complete download](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_candelaria_module_counting.html).
 
 The PNOA/IGN image from the [Candelaria example](satellite-imagery.md) resolves

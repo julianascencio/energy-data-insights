@@ -16,6 +16,10 @@ tutorial looks up all four classifications near Rengo, retains full source
 metadata, and explains uses for benchmarking, yield modelling and reliability
 screening. Both include complete downloads for offline execution.
 
+The Chile module-count audits compare CEME1 and the smallest positive operating
+solar entry in the dated CEN registry, Concón. They distinguish published
+inventories from unresolved image counts and include complete offline downloads.
+
 For longer studies with configurable inputs and reports, see the
 :doc:`CCYA case guide </_generated/studies/ccya>` and
 :doc:`degradation study guide </_generated/studies/degradation>`.
