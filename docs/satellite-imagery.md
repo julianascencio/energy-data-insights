@@ -138,6 +138,60 @@ common grid; the retrieval connector performs no such resampling.
 
 ## Use the imagery in a PV study
 
+### Worked site: a solar farm near Candelaria, Tenerife
+
+[Open the Icor farm example and download its complete offline bundle](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_candelaria_solar_farm.html).
+It locates **Planta Icor in Arico**, at **28.194341° N, 16.442229° W**, about
+**19.2 km south of Candelaria** in a straight line from a rounded town-centre
+reference. This is not a nearest-farm search or a site in Candelaria municipality.
+The Cabildo de Tenerife / ITER catalogue lists **2,000 kW**, without specifying
+AC or DC. The example preserves that original record and the complete catalogue.
+
+The tutorial overlays the OpenStreetMap photovoltaic plant polygon containing
+the official point (way 430266023). This spatial association is not a surveyed
+boundary or proof that the polygon covers the entire installation. It shows:
+
+- A Tenerife locator and the distance from Candelaria.
+- Real **10 m Sentinel-2 RGB and red reflectance**, acquired 4 August 2026,
+  with **20 m scene classification** summarized inside the mapped boundary.
+- A detailed **PNOA/IGN aerial orthophoto**, retrieved using Orbital PV's
+  `ground_research.PNOAConnector`. This is a rendered WMS view, not satellite
+  imagery or calibrated reflectance. Its capture date and native resolution
+  remain unknown in the saved response; a 768-pixel request proves neither.
+- Provider metadata, full STAC records, original checksums and source credits.
+
+Use the aerial view to inspect layout and surroundings, and SCL to screen the
+satellite sample locally. Different grids and unknown aerial dates prevent
+treating these images as a change-detection pair. Imagery alone does not measure
+generation, operating status, module health or degradation. Feed the verified
+coordinates into [PVGIS](pvgis.md), [terrain](terrain.md) and
+[climate metadata](site-climate.md) workflows; confirm the plant's DC capacity
+before using its catalogue power as a PVGIS peak-power input.
+
+Refresh the source inputs explicitly, with Python 3.13 and the imagery group
+installed. Use fresh external output and download directories:
+
+```bash
+uv run --no-sync python scripts/prepare_candelaria_imagery.py \
+  --output-directory /tmp/candelaria-inputs \
+  --download-directory /tmp/candelaria-downloads
+```
+
+The script uses the official catalogue, Orbital PV Sentinel-2, OpenStreetMap and
+PNOA connectors, and the Natural Earth connector. Optional `--osm-cache` and
+`--pnoa-cache` accept previously captured JSON/PNG files with matching `.meta.json`
+sidecars; checksums, query bounds and original retrieval dates are retained.
+The gallery and downloadable script read only committed inputs and need no
+credentials or network access. Natural Earth's `10m` means **1:10 million map
+scale**, not 10-metre coastal accuracy.
+
+Site sources: [Cabildo/ITER catalogue (CC BY)](https://datos.canarias.es/catalogos/general/dataset/infraestructuras-de-generacion-de-energia-en-tenerife),
+[OpenStreetMap contributors (ODbL)](https://www.openstreetmap.org/copyright),
+[PNOA/IGN services](https://pnoa.ign.es/web/portal/pnoa-imagen/visualizadores-y-servicios-web)
+and [Natural Earth (public domain)](https://www.naturalearthdata.com/about/terms-of-use/).
+
+### Combine imagery with independent measurements
+
 1. Keep the original TIFF, its checksum sidecar, full STAC metadata and the
    search scope. Record dates, CRS, pixel spacing, nodata, cloud state and rights.
 2. Overlay verified plant or roof polygons to inspect visible layout, access

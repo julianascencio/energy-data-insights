@@ -1,0 +1,26 @@
+{
+  "source": "OpenStreetMap / Overpass API",
+  "url": "https://overpass-api.de/api/interpreter",
+  "retrieved_at": "2026-10-30T10:24:37.152494+00:00",
+  "sha256": "b6f53ad9a49c9637346969b1d012902062e88b8f9c4e4b60dc849dbe2b8a8e1a",
+  "bytes": 42143,
+  "path": "examples/ground_imagery/_data/tenerife-osm.json",
+  "request": {
+    "endpoint": "https://overpass-api.de/api/interpreter",
+    "bbox": [
+      -16.447,
+      28.192,
+      -16.439,
+      28.198
+    ],
+    "sources": [
+      "solar"
+    ],
+    "query": "[out:json][timeout:25];\n(\n  nwr[\"generator:source\"=\"solar\"](28.192,-16.447,28.198,-16.439);\n  nwr[\"plant:source\"=\"solar\"](28.192,-16.447,28.198,-16.439);\n  nwr[\"power\"~\"^(generator|plant)$\"][\"power_source\"=\"solar\"](28.192,-16.447,28.198,-16.439);\n);\nout body geom;"
+  },
+  "license": "ODbL-1.0",
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "paper_doi": "10.1038/s41597-020-0469-8",
+  "parser_version": "1"
+}
