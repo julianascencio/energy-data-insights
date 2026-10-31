@@ -74,7 +74,7 @@ sphinx_gallery_conf = {
     "reference_url": {},
     "capture_repr": (),
     "copyfile_regex": (
-        r"(?:kgpv_worldwide|kgpv_canary|kgpv_chile|weather_risk|country_risk)_.*"
+        r"(?:climate|kgpv_worldwide|kgpv_canary|kgpv_chile|weather_risk|country_risk)_.*"
         r"\.(csv|json|geojson|tif|shp|shx|dbf|prj|cpg)$"
     ),
 }

@@ -74,7 +74,7 @@ Ascencio Vásquez, Julián Andrés (2021). **Modelling and worldwide assessment 
 
 **Role:** primary. Primary scientific reference for this repository. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed. Soiling and snow indicators follow Eqs. 3.2–3.4 (pp. 49–51) and Tables 6.6–6.7 (pp. 135–136), with explicit equality/low-domain conventions and alternative example data documented in docs/soiling-snow.md.
 
-**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`, `examples/analysis/plot_kgpv_worldwide.py`, `docs/kgpv.md`, `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/analysis/plot_soiling_snow_risk.py`, `examples/analysis/plot_country_risk.py`, `examples/connectors/plot_generation_coverage.py`, `docs/worldwide-generation.md`, `scripts/prepare_connector_station_coverage.py`, `examples/connectors/data/generation_coverage_stations.csv`, `examples/connectors/data/generation_coverage_stations_provenance.json`, `analysis/src/energy_analysis/canary_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_canary.py`, `docs/kgpv-canary.md`, `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_chile.py`, `docs/kgpv-chile.md`.
+**Used by:** `README.md`, `methods/README.md`, `analysis/README.md`, `methods/src/energy_methods/degradation.py`, `docs/degradation.md`, `methods/src/energy_methods/ccya.py`, `docs/ccya.md`, `analysis/examples/ccya/README.md`, `analysis/src/energy_analysis/ccya_case/pipeline.py`, `examples/analysis/plot_kgpv_worldwide.py`, `docs/kgpv.md`, `methods/src/energy_methods/weather_risk.py`, `methods/src/energy_methods/weather_risk_mapping.py`, `docs/soiling-snow.md`, `examples/analysis/plot_soiling_snow_risk.py`, `examples/analysis/plot_country_risk.py`, `examples/connectors/plot_generation_coverage.py`, `docs/worldwide-generation.md`, `scripts/prepare_connector_station_coverage.py`, `examples/connectors/data/generation_coverage_stations.csv`, `examples/connectors/data/generation_coverage_stations_provenance.json`, `analysis/src/energy_analysis/canary_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_canary.py`, `docs/kgpv-canary.md`, `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_chile.py`, `docs/kgpv-chile.md`, `methods/src/energy_methods/climate_zones.py`, `methods/src/energy_methods/jrc_climate.py`, `methods/src/energy_methods/ml21.py`, `methods/src/energy_methods/pvcz.py`, `docs/climate-comparison.md`.
 
 ### ascencio_vasquez_2021_tdp
 
@@ -1171,3 +1171,43 @@ World Bank Group; ESMAP; Solargis (2019). **Global Solar Atlas 2.0: Chile solar 
 **Role:** data. Pinned 2019 Chile archive. XML identifies 1999–2018 annual GHI, kWh/m²; 9 arcseconds, nominal 250 m. Usable values stop at 45°S, though the file rectangle extends to 46°S; southern mainland Patagonia is unclassified. CC BY 4.0 plus additional mediation/arbitration terms retained in the provenance. World Bank/ESMAP/Solargis attribution; derived KGPV does not imply endorsement.
 
 **Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_chile.py`, `docs/kgpv-chile.md`, `data-retrieval/src/energy_data_retrieval/sources/global_solar_atlas`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `docs/worldwide-generation.md`.
+
+### medina_2026_pv_climates
+
+Medina, Ismael; Martínez, Ana M.; Dunlop, Ewan (2026). **Parametric and distribution-based definition of climatic zones for photovoltaics**. Solar Energy, 306, 114295. [DOI: 10.1016/j.solener.2025.114295](https://doi.org/10.1016/j.solener.2025.114295)
+
+**Role:** implemented. Parametric two-feature workflow only; independent implementation using sklearn with documented convergence and empty-cluster adaptations. JRC labels are a saved refit, not a claim of identical published raster reconstruction. The distribution/optimal-transport method is not implemented. Online publication 2025; journal issue 2026.
+
+**Used by:** `methods/src/energy_methods/jrc_climate.py`, `docs/climate-comparison.md`.
+
+### jrc_2025_climate_dataset
+
+Medina, Ismael; Martinez, Ana (2025). **High-resolution global and European climatic dataset for the definition of climatic zones for Photovoltaics**. [DOI: 10.2905/JRC.R1B5FSR](https://doi.org/10.2905/JRC.R1B5FSR)
+
+**Role:** data. Global means at 0.1 degree for 2005-2023; G is annual in-plane irradiation and Tw is irradiance-weighted module temperature. E and eff are modeled PVGIS outputs. European Commission reuse notice applies; original download hash retained. Source description: https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/PVGIS/climatic-zones-pv/dataset_description.md.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/jrc_climate/client.py`, `examples/analysis/climate_provenance.json`.
+
+### triana_2026_ml_climates
+
+Triana de las Heras, Francisco Javier; Isabella, Olindo; Vogt, Malte Ruben (2026). **A machine learning approach to PV-climate classification**. Renewable Energy, 256, 123685. [DOI: 10.1016/j.renene.2025.123685](https://doi.org/10.1016/j.renene.2025.123685)
+
+**Role:** implemented. Original published labels imported from the 55,418-row supplementary workbook. New seven-feature regression-weighted fits have their own MLxx IDs and frozen training state; no exact reproduction of published centroids or performance improvement is claimed. Radiation statistics retain native workbook conventions. Article CC BY; online 2025, journal volume 2026.
+
+**Used by:** `methods/src/energy_methods/ml21.py`, `data-retrieval/src/energy_data_retrieval/sources/ml21/client.py`, `docs/climate-comparison.md`.
+
+### karin_2019_pvcz
+
+Karin, Todd; Jones, C. Birk; Jain, Anubhav (2019). **Photovoltaic Degradation Climate Zones**. IEEE Photovoltaic Specialists Conference. [Source](https://github.com/toddkarin/pvcz)
+
+**Role:** implemented. IEEE PVSC paper supplied in the author repository. Table I thermal/specific-humidity boundaries and Arrhenius equivalent temperature at 1.1 eV. Equality enters the warmer/wetter class; missing ID zero shifts upstream IDs by one. Stress classes do not predict a degradation rate or lifetime.
+
+**Used by:** `methods/src/energy_methods/pvcz.py`, `docs/climate-comparison.md`.
+
+### karin_pvcz_software
+
+Karin, Todd (2019). **Photovoltaic Climate Zones and Stressors (PVCZ)**. [Source](https://github.com/toddkarin/pvcz/tree/aa89fab8d1d66f46f4ea8575e2452aa75a927535)
+
+**Role:** software. Pinned public CSV from the MIT-licensed author repository, based on GLDAS 2010-2018 at 0.25 degree. Original labels retained despite rounded coordinates/stresses; no pickle loaded. MIT copyright and permission notice included with extracts.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/pvcz/client.py`, `examples/analysis/climate_PVCZ_LICENSE.txt`.

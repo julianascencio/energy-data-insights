@@ -75,6 +75,23 @@ def _generation_assets(root: Path) -> None:
             bundle.write(path, arcname=path.relative_to(examples))
 
 
+def _climate_assets(root: Path) -> None:
+    """Bundle source samples and existing regional context for offline execution."""
+    examples = root / "examples/analysis"
+    gallery = root / "docs/auto_examples/analysis"
+    gallery.mkdir(parents=True, exist_ok=True)
+    samples = [
+        *sorted(examples.glob("climate_*")),
+        *sorted(examples.glob("plot_climate_*.py")),
+        *sorted(examples.glob("kgpv_canary_*.tif")),
+        examples / "kgpv_canary_provenance.json",
+        examples / "kgpv_chile_mainland.geojson",
+    ]
+    with ZipFile(gallery / "climate_examples.zip", "w", compression=ZIP_DEFLATED) as bundle:
+        for path in samples:
+            bundle.write(path, arcname=path.name)
+
+
 def prepare_sources(root: Path) -> list[str]:
     """Reuse the Markdown source of truth, translating its relative links for Sphinx."""
     docs = root / "docs"
@@ -149,4 +166,5 @@ def prepare_sources(root: Path) -> list[str]:
             encoding="utf-8",
         )
     _generation_assets(root)
+    _climate_assets(root)
     return [path.name for path in docs.glob("*.md")]

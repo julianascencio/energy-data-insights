@@ -427,6 +427,20 @@
       "source_url": "https://reports-public.ieso.ca/docrefs/helpfile/GenOutputCapability_h4.pdf"
     },
     {
+      "id": "jrc_climate",
+      "label": "JRC PV climate means",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "Global PVGIS/ERA5 annual means, 2005-2023, native 0.1 degree land points. POA and module-temperature inputs for performance climates; modeled outputs, not measured plant data. Native coverage applies.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "jrc_2025_climate_dataset",
+        "medina_2026_pv_climates"
+      ],
+      "source_url": "https://data.jrc.ec.europa.eu/dataset/71142004-19c2-4827-bfa3-16d640528e5a"
+    },
+    {
       "id": "kpx",
       "label": "KPX · South Korea",
       "category": "generation",
@@ -447,6 +461,19 @@
         "kpx_data_guide"
       ],
       "source_url": "https://www.data.go.kr/data/15103243/openapi.do"
+    },
+    {
+      "id": "ml21",
+      "label": "ML21 author reference catalogue",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "Published workbook of 55,418 native 0.5 degree land points, climate features, specific yield, ML21 and KGPV labels. Mixed source climatologies and limited island support; not an hourly weather service.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "triana_2026_ml_climates"
+      ],
+      "source_url": "https://doi.org/10.1016/j.renene.2025.123685"
     },
     {
       "id": "nasa_power",
@@ -546,6 +573,20 @@
         "munoz_sabater_2021_era5_land"
       ],
       "source_url": "https://open-meteo.com/en/docs/historical-weather-api"
+    },
+    {
+      "id": "pvcz",
+      "label": "PVCZ author stressor catalogue",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "GLDAS 2010-2018 thermal and humidity stressors at native 0.25 degree land support. The pinned CSV has rounded, sometimes coincident coordinates; retain original labels and coverage gaps. No site degradation rate is inferred.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "karin_2019_pvcz",
+        "karin_pvcz_software"
+      ],
+      "source_url": "https://github.com/toddkarin/pvcz"
     },
     {
       "id": "pvdaq",

@@ -1,5 +1,12 @@
 # Applied analyses
 
+## PV climate classifications
+
+[Compare KGPV, JRC parametric climates, ML21 and PVCZ](../docs/climate-comparison.md).
+The implementation includes validated source readers, fixed PVCZ thresholds,
+frozen JSON cluster models, and offline global/Chile/Canary reference maps.
+Source periods, input units, published labels and documented refits stay explicit.
+
 ## Contiguous Chile KGPV
 
 The [mainland Chile example](../docs/kgpv-chile.md) combines CHELSA monthly

@@ -15,8 +15,8 @@ plant-level observation.
 
 The **[worldwide connector coverage example](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)**
 adds two offline figures and their executable Python code to the Connectors
-gallery. Its reviewed inventory includes all 39 implemented source modules:
-22 generation providers, five station networks, ten weather/climate grid
+gallery. Its reviewed inventory includes all 42 implemented source modules:
+22 generation providers, five station networks, 13 weather/climate grid
 adapters, the local station-file importer and Natural Earth.
 
 | View | What the map represents | Interpretation |

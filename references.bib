@@ -1188,3 +1188,53 @@
   url = {https://globalsolaratlas.info/download/chile},
   note = {Role: data. Pinned 2019 Chile archive. XML identifies 1999–2018 annual GHI, kWh/m²; 9 arcseconds, nominal 250 m. Usable values stop at 45°S, though the file rectangle extends to 46°S; southern mainland Patagonia is unclassified. CC BY 4.0 plus additional mediation/arbitration terms retained in the provenance. World Bank/ESMAP/Solargis attribution; derived KGPV does not imply endorsement.}
 }
+
+@article{medina_2026_pv_climates,
+  author = {Medina, Ismael and Martínez, Ana M. and Dunlop, Ewan},
+  title = {{Parametric and distribution-based definition of climatic zones for photovoltaics}},
+  year = {2026},
+  journal = {Solar Energy},
+  volume = {306},
+  pages = {114295},
+  doi = {10.1016/j.solener.2025.114295},
+  url = {https://publications.jrc.ec.europa.eu/repository/handle/JRC143819},
+  note = {Role: implemented. Parametric two-feature workflow only; independent implementation using sklearn with documented convergence and empty-cluster adaptations. JRC labels are a saved refit, not a claim of identical published raster reconstruction. The distribution/optimal-transport method is not implemented. Online publication 2025; journal issue 2026.}
+}
+
+@misc{jrc_2025_climate_dataset,
+  author = {Medina, Ismael and Martinez, Ana},
+  title = {{High-resolution global and European climatic dataset for the definition of climatic zones for Photovoltaics}},
+  year = {2025},
+  doi = {10.2905/JRC.R1B5FSR},
+  url = {https://data.jrc.ec.europa.eu/dataset/71142004-19c2-4827-bfa3-16d640528e5a},
+  note = {Role: data. Global means at 0.1 degree for 2005-2023; G is annual in-plane irradiation and Tw is irradiance-weighted module temperature. E and eff are modeled PVGIS outputs. European Commission reuse notice applies; original download hash retained. Source description: https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/PVGIS/climatic-zones-pv/dataset\_description.md.}
+}
+
+@article{triana_2026_ml_climates,
+  author = {Triana de las Heras, Francisco Javier and Isabella, Olindo and Vogt, Malte Ruben},
+  title = {{A machine learning approach to PV-climate classification}},
+  year = {2026},
+  journal = {Renewable Energy},
+  volume = {256},
+  pages = {123685},
+  doi = {10.1016/j.renene.2025.123685},
+  url = {https://doi.org/10.1016/j.renene.2025.123685},
+  note = {Role: implemented. Original published labels imported from the 55,418-row supplementary workbook. New seven-feature regression-weighted fits have their own MLxx IDs and frozen training state; no exact reproduction of published centroids or performance improvement is claimed. Radiation statistics retain native workbook conventions. Article CC BY; online 2025, journal volume 2026.}
+}
+
+@article{karin_2019_pvcz,
+  author = {Karin, Todd and Jones, C. Birk and Jain, Anubhav},
+  title = {{Photovoltaic Degradation Climate Zones}},
+  year = {2019},
+  journal = {IEEE Photovoltaic Specialists Conference},
+  url = {https://github.com/toddkarin/pvcz},
+  note = {Role: implemented. IEEE PVSC paper supplied in the author repository. Table I thermal/specific-humidity boundaries and Arrhenius equivalent temperature at 1.1 eV. Equality enters the warmer/wetter class; missing ID zero shifts upstream IDs by one. Stress classes do not predict a degradation rate or lifetime.}
+}
+
+@misc{karin_pvcz_software,
+  author = {Karin, Todd},
+  title = {{Photovoltaic Climate Zones and Stressors (PVCZ)}},
+  year = {2019},
+  url = {https://github.com/toddkarin/pvcz/tree/aa89fab8d1d66f46f4ea8575e2452aa75a927535},
+  note = {Role: software. Pinned public CSV from the MIT-licensed author repository, based on GLDAS 2010-2018 at 0.25 degree. Original labels retained despite rounded coordinates/stresses; no pickle loaded. MIT copyright and permission notice included with extracts.}
+}

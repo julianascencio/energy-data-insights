@@ -71,8 +71,8 @@ on the example pages include the supporting data and provenance where needed.
 
 Start with the **[worldwide connector coverage map](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)**
 and its [Python source](examples/connectors/plot_generation_coverage.py).
-Two reproducible figures introduce all 39 source modules: 22 generation providers,
-five station networks, ten weather/climate grid adapters, the local station-file
+Two reproducible figures introduce all 42 source modules: 22 generation providers,
+five station networks, 13 weather/climate grid adapters, the local station-file
 importer and the Natural Earth basemap. Country shading identifies host countries
 for country/system products; regional and research-site markers retain their
 specific scope. The station map uses actual catalogue coordinates, which do not
@@ -359,6 +359,13 @@ Citation metadata is generated from one source and checked for drift:
 ```bash
 uv run --no-sync python scripts/check_citations.py
 ```
+
+## PV climate classification comparison
+
+JRC performance climates, ML21 and PVCZ thermal/humidity zones now complement
+KGPV. [Compare the methods](docs/climate-comparison.md) and run offline maps of
+the world, Chile and the Canary Islands. Published reference labels and new
+cluster fits are identified separately; coverage gaps remain visible.
 
 ## Climate grids and KGPV maps
 

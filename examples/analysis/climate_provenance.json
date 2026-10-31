@@ -1,0 +1,87 @@
+{
+  "format_version": 1,
+  "prepared_at_utc": "2026-10-30T22:51:12.066257+00:00",
+  "comparison": "Native maps with different periods and source support; qualitative only.",
+  "sources": {
+    "jrc": {
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/PVGIS/climatic-zones-pv/means-global.csv",
+      "sha256": "55aa6751bdf5e05351a65aad4271125caeac443b4d45287a129183249856f19a",
+      "size_bytes": 211755040,
+      "period": "2005-2023",
+      "resolution": "0.1 degree",
+      "licence": "European Commission reuse notice; attribution required"
+    },
+    "ml21": {
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0960148125013473-mmc1.xlsx",
+      "sha256": "d8eb4c55df1e5e937f8460dada0fdb9f3b52dbc8cb79da14aa44319c1ab46891",
+      "size_bytes": 10777807,
+      "period": "Mixed source climatologies; see publication",
+      "resolution": "0.5 degree",
+      "licence": "Article CC BY; attributed supplementary-data extracts"
+    },
+    "pvcz": {
+      "url": "https://raw.githubusercontent.com/toddkarin/pvcz/aa89fab8d1d66f46f4ea8575e2452aa75a927535/pvcz/PVCZ-2019_ver0p2_world_PV_climate_stressors_and_zones.csv",
+      "sha256": "14e7e06010620f8054b3ba7ee49256bc4d26c017c51da2d188d9753cff7d9801",
+      "size_bytes": 48588578,
+      "period": "2010-2018",
+      "resolution": "0.25 degree; rounded coordinates",
+      "licence": "MIT",
+      "commit": "aa89fab8d1d66f46f4ea8575e2452aa75a927535"
+    }
+  },
+  "files": {
+    "climate_jrc_model.json": "935eb1085466d5dd1a79fbe0c9b3577bbbbf871bf23d752ce983709f1b3fa59b",
+    "climate_ml21_model.json": "562f2436d6ce6532e6ca7b0893b03c02a4f600ed7d1b350584065e8450aa7e7e",
+    "climate_jrc_world.csv": "d7b5fa8ef1ee6c64ec47f5a8672d332f86e1e709fa270140cb43eaa5193a393d",
+    "climate_jrc_chile.csv": "908f95e1d318f877d7a6cc0cef5552487a8aad31f204ff8b34ed51f0136089bc",
+    "climate_jrc_canary.csv": "2c3d33b37be7566023a5c111ed3c9f2ca98eaa2c3bd88452b5a23d3b7a556b3e",
+    "climate_ml21_world.csv": "ee721edc0ef786b0ca56171c4e9ae7c33723b09f4d2e49c3ecac5dfbc29c9985",
+    "climate_ml21_chile.csv": "db6ab3416b26a3f8e495bba859b82ac8b41e2f9aa166f75a1246f555e2144e09",
+    "climate_ml21_canary.csv": "1ee6a130657b56aae50ae48d7775edf94fdf85cbad2e7baa0dcedb43f6e8a8a5",
+    "climate_pvcz_world.csv": "aecc8508ad2ce02679c67b50f5c49591fbe675f0aeace4ed3f02c3f46f3234be",
+    "climate_pvcz_chile.csv": "1f88cd9d4663fabeebdcadcee571ea453b7dbd57a1f050037a43a2bee908a284",
+    "climate_pvcz_canary.csv": "3fa3e67b1b20991870b857e25958c97a552800fde74fdd7b3f8e40105a7aa425"
+  },
+  "metrics": {
+    "ml21_training_sites": 44818,
+    "ml21_holdout_sites": 10600,
+    "split": "5-degree blocks: (floor(lat/5)*73 + floor(lon/5)) modulo 5 == 0",
+    "holdout_adjusted_rand_vs_published_labels": 0.6857840776983635,
+    "holdout_within_class_yield_rmse_kwh_kwp": 124.28280334483982,
+    "interpretation": "Reference-label agreement and within-class target dispersion; not measured-yield prediction accuracy or an independent field validation."
+  },
+  "software": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1"
+  },
+  "counts": {
+    "jrc_world": 4649,
+    "jrc_chile": 5898,
+    "jrc_canary": 45,
+    "ml21_world": 4213,
+    "ml21_chile": 898,
+    "ml21_canary": 2,
+    "pvcz_world": 4590,
+    "pvcz_chile": 3375,
+    "pvcz_canary": 0
+  },
+  "context_files": {
+    "climate_world_boundaries.geojson": "15a7455a79e04066b79aac6e480c059c999bb94ad0a3df7c7c6c650bc6cae0a9",
+    "kgpv_chile_mainland.geojson": "e3e5db27fe59e5a28cdefa9bb9081821737565874a3c346c4703141e84926bc3",
+    "kgpv_canary_el_hierro.tif": "23e7800d4f68e361f507859490a1371568f72d7a8d39c5e9480a22e2243564d9",
+    "kgpv_canary_fuerteventura.tif": "5465bd204dd83f4c108b6146abf88a722aecbab1350a139bf33ccad998639a89",
+    "kgpv_canary_gran_canaria.tif": "b16d8158b583df77910ca821abdbf39f507123dd15cf0dcc9014a56a987e6b3f",
+    "kgpv_canary_la_gomera.tif": "f812d9479a5e9f0881a09f6b75f31c1c31657102264c780ac21334caace25a7b",
+    "kgpv_canary_la_palma.tif": "41a14cf65ffa49925cbe2369b1599666e0c3ea3c1db6d1018bdc7cca7dfc6bbf",
+    "kgpv_canary_lanzarote.tif": "aa2d98a53bbc4d8b6bf396f687a79e056c2af7a41b3fa3fb34393791f80b25de",
+    "kgpv_canary_tenerife.tif": "e567ceff8fb95632fa4d686dd822ff251cf3a6a41283dc1e3b69a21422eb9758"
+  },
+  "context_attribution": "Natural Earth public-domain outlines; Canary climate footprints from the existing KGPV study, see kgpv_canary_provenance.json and docs/kgpv-canary.md.",
+  "sampling": {
+    "world": "One actual native row nearest each 2-degree display-bin center; no averaging.",
+    "chile": "BBox [-76,-56,-66,-17]; JRC uses 0.2-degree bins; plot selects centers inside mainland contour.",
+    "canary": "BBox [-18.5,27.5,-13.4,29.6], excluding the African mainland corner; all native source rows."
+  }
+}
