@@ -1,0 +1,78 @@
+{
+  "retrieved_at_utc": "2026-10-31T19:08:49.555154+00:00",
+  "source": {
+    "id": "copernicus_dem",
+    "name": "Copernicus DEM GLO-30 Public (AWS)",
+    "surface": "DSM including buildings and vegetation",
+    "vertical_datum": "EGM2008",
+    "reference_ids": [
+      "copernicus_dem",
+      "copernicus_dem_aws"
+    ]
+  },
+  "request": {
+    "endpoint": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S35_00_W071_00_DEM/Copernicus_DSM_COG_10_S35_00_W071_00_DEM.tif",
+    "parameters": {},
+    "retrieved_at_utc": "2026-10-31T19:08:49.524518+00:00",
+    "sha256": "fe1be08d426a880525f929cd480e528f4e3a2ef49be942f739a7c30ded80a4d6",
+    "size_bytes": 42012198,
+    "cache_hit": false
+  },
+  "original_raster": {
+    "source": {
+      "id": "copernicus_dem",
+      "name": "Copernicus DEM GLO-30 Public (AWS)",
+      "surface": "DSM including buildings and vegetation",
+      "vertical_datum": "EGM2008",
+      "reference_ids": [
+        "copernicus_dem",
+        "copernicus_dem_aws"
+      ]
+    },
+    "crs": "EPSG:4326",
+    "shape": [
+      3600,
+      3600
+    ],
+    "bounds": [
+      -71.00013888888888,
+      -34.99986111111111,
+      -70.00013888888888,
+      -33.99986111111111
+    ],
+    "pixel_spacing": [
+      0.0002777777777777778,
+      0.0002777777777777778
+    ],
+    "horizontal_unit": "degree",
+    "nodata": null,
+    "scale": 1.0,
+    "offset": 0.0,
+    "elevation_unit": "m"
+  },
+  "requested_bounds_wgs84": [
+    -70.869,
+    -34.457,
+    -70.856,
+    -34.444
+  ],
+  "fixture": "el_mirlo_copernicus.tif",
+  "fixture_sha256": "f80305d058afe517f3b4bae855722ba5f2f5e158ea69e5fbf34a78dd6a8f300d",
+  "fixture_shape": [
+    48,
+    47
+  ],
+  "fixture_bounds_native": [
+    -70.86902777777777,
+    -34.45708333333333,
+    -70.85597222222222,
+    -34.443749999999994
+  ],
+  "finite_fraction": 1.0,
+  "elevation_range_m": [
+    271.8212890625,
+    441.7679138183594
+  ],
+  "notice": "produced using Copernicus WorldDEM-30 \u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+  "limitations": "GLO-30 is a DSM including vegetation/buildings, not surveyed bare-earth ground. Native sampling is about 30 m; display interpolation adds no terrain detail. Vertical reference remains EGM2008."
+}

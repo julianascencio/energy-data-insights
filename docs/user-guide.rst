@@ -23,6 +23,7 @@ Data access and scientific methods
    _generated/guides/pv-module-counting
    _generated/guides/chile-module-counting
    _generated/guides/rengo-module-counting
+   _generated/guides/pv-site-3d
    _generated/guides/pvgis
    _generated/guides/location-discovery
    _generated/guides/generation-connectors

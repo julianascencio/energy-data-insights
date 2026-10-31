@@ -292,3 +292,8 @@ and Wald UVA/UVB transformations used by the [applied map analysis](../analysis/
 
 The [near-Rengo pilot](../docs/rengo-module-counting.md) extends module-candidate
 counting with orientation correction, autocorrelation and source-resolution checks.
+
+`energy_methods.pv_site_3d` builds local metric terrain meshes and common table
+planes from geographic module footprints, declared elevation grids and explicit
+mounting parameters. See the [3D site method and other-site recipe](../docs/pv-site-3d.md).
+It preserves missingness and source datum; it does not recover depth from imagery.
