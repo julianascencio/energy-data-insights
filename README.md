@@ -422,3 +422,11 @@ The [automatic module-counting example](docs/pv-module-counting.md) adds an expe
 The [Chile module-count audits](docs/chile-module-counting.md) compare CEME1 and the smallest operating solar entry in a dated CEN registry snapshot, Concón. They distinguish published module inventories from unresolved image counts.
 The [El Mirlo pilot near Rengo](docs/rengo-module-counting.md) adds orientation-aware lattice counting, raw-pixel review views and a small, explicitly qualified visual-annotation comparison.
 Its [3D continuation](docs/pv-site-3d.md) combines those candidates with real elevation data and declared mounting scenarios, with an offline interactive viewer, OBJ/JSON exports and reusable methods for other sites.
+
+## Global PV equipment and projects
+
+The [PV catalogue](catalogues/pv/README.md) provides sourced OEM module, inverter,
+tracker and combiner metadata plus a growing project database. It uses reviewable
+JSONL and reproducible Parquet snapshots, with creation/update dates and field-level
+evidence. See the [research specification](catalogues/pv/RESEARCH_PROMPT.md) and
+[usage guide](docs/pv-catalogue.md).

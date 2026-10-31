@@ -4054,6 +4054,42 @@
     "verified_at": "2026-10-31"
   },
   {
+    "id": "sam_cec_pv_catalogue_2026",
+    "title": "SAM CEC module and inverter libraries, pinned revision 784177b",
+    "authors": [
+      "National Laboratory of the Rockies"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://github.com/NatLabRockies/SAM/tree/784177b634fa1475fda6672b70595e087a238aea/deploy/libraries",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/pv_catalogue/sam.py",
+      "docs/pv-catalogue.md"
+    ],
+    "note": "Pinned source snapshot with SHA-256 hashes and BSD notice in catalogues/pv. Fitted reference parameters, not proof of current availability/certification. Duplicate exact module names are quarantined.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "eia860_pv_catalogue_2025",
+    "title": "Form EIA-860 detailed data: report year 2025",
+    "authors": [
+      "U.S. Energy Information Administration"
+    ],
+    "year": 2025,
+    "doi": null,
+    "url": "https://www.eia.gov/electricity/data/eia860/",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/pv_catalogue/eia860.py",
+      "docs/pv-catalogue.md"
+    ],
+    "note": "Year denotes reporting period, not access year. Downloaded 31 October 2026. Plant and solar workbooks; only OP/PV generators. One row per plant; source fields and generator-level attributes preserved; source dates and capacities not promoted beyond their documented scope.",
+    "verified_at": "2026-10-31"
+  },
+  {
     "id": "proj_aeqd",
     "title": "Azimuthal Equidistant — PROJ documentation",
     "authors": [
