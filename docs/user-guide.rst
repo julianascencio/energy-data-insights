@@ -17,6 +17,7 @@ Data access and scientific methods
 .. toctree::
    :maxdepth: 1
 
+   _generated/guides/terrain
    _generated/guides/pvgis
    _generated/guides/location-discovery
    _generated/guides/generation-connectors

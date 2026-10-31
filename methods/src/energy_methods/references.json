@@ -3557,5 +3557,173 @@
     ],
     "note": "Version 6 OpenAPI contract reviewed 2026-10-31; 20 paths and 27 GET/POST operations. Native parameters, conventions and outputs retained. Active service development may change the contract. Software licensing does not by itself establish data reuse terms.",
     "verified_at": "2026-10-31"
+  },
+  {
+    "id": "nasa_srtmgl1",
+    "title": "SRTM 1 Arc-Second Global",
+    "authors": [
+      "USGS and NASA"
+    ],
+    "year": null,
+    "doi": "10.5066/F7PR7TFT",
+    "url": "https://doi.org/10.5066/F7PR7TFT",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/srtm/client.py",
+      "docs/terrain.md",
+      "examples/connectors/plot_terrain_sources.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "scripts/prepare_terrain_samples.py"
+    ],
+    "note": "Finest publicly distributed SRTM grid: 1 arcsecond, approximately 30 m; 60 N to 56 S; February 2000 radar acquisition; EGM96 orthometric heights. SRTMGL1 void-filled HGT posts are retained without vertical conversion.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "esa_srtm_mirror",
+    "title": "ESA SNAP SRTMGL1 auxiliary data mirror",
+    "authors": [
+      "European Space Agency"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://step.esa.int/auxdata/dem/SRTMGL1/",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/srtm/client.py",
+      "docs/terrain.md",
+      "examples/connectors/plot_terrain_sources.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "scripts/prepare_terrain_samples.py"
+    ],
+    "note": "Anonymous official ESA distribution of NASA SRTMGL1 HGT ZIP tiles. Downloaded N28W017 and validated one 3601 by 3601 big-endian int16 member; no SNAP ellipsoid correction applied.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "copernicus_dem",
+    "title": "Copernicus DEM: Global and European Digital Elevation Model",
+    "authors": [
+      "European Space Agency and European Union"
+    ],
+    "year": null,
+    "doi": "10.5270/ESA-c5d3d65",
+    "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/copernicus_dem/client.py",
+      "docs/terrain.md",
+      "examples/connectors/plot_terrain_sources.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "scripts/prepare_terrain_samples.py"
+    ],
+    "note": "GLO-30 DSM, primarily TanDEM-X acquisition 2011-2015 with other products for gap filling; EGM2008 heights. Licence attribution is retained in the sample manifest, gallery and guide. Public GLO-30 does not grant EEA-10 access.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "copernicus_dem_aws",
+    "title": "Copernicus DEM GLO-30 Public: AWS COG layout",
+    "authors": [
+      "Sinergise and AWS Open Data"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/copernicus_dem/client.py",
+      "docs/terrain.md",
+      "examples/connectors/plot_terrain_sources.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "scripts/prepare_terrain_samples.py"
+    ],
+    "note": "Public mirror has unavailable/restricted tiles and absent ocean tiles. COG removes duplicate southern/eastern posts, retains 3600 rows and latitude-dependent longitudinal spacing; 10 in the path means 1.0 arcsecond, not 10 m.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "ign_mdt",
+    "title": "CNIG digital terrain models from PNOA lidar",
+    "authors": [
+      "Instituto Geográfico Nacional de España"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://centrodedescargas.cnig.es/CentroDescargas/modelos-digitales-elevaciones",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/ign_terrain/client.py",
+      "docs/terrain.md",
+      "examples/connectors/plot_terrain_sources.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "scripts/prepare_terrain_samples.py"
+    ],
+    "note": "Bare-earth terrain products include 5 m, 2 m and 0.5 m coverages. This connector explicitly retrieves the 5 m WCS layer, not the finer standalone downloads. Spanish official height references vary between mainland and islands; confirm project metadata.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "ign_terrain_wcs",
+    "title": "IGN INSPIRE WCS terrain service",
+    "authors": [
+      "Instituto Geográfico Nacional de España"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://servicios.idee.es/wcs-inspire/mdt?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/ign_terrain/client.py",
+      "docs/terrain.md",
+      "examples/connectors/plot_terrain_sources.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "scripts/prepare_terrain_samples.py"
+    ],
+    "note": "WCS 2.0.1 numeric elevation, with live DescribeCoverage and native-aligned subsets of Elevacion4083_5 and Elevacion25830_5 supported. Live Canary TIFF is 5 m int16 with no nodata declared. DescribeCoverage has generic radiance units; original XML retained and elevations interpreted from official MDT documentation as metres.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "usgs_3dep",
+    "title": "3DEP elevation products and services",
+    "authors": [
+      "U.S. Geological Survey"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.usgs.gov/3d-elevation-program/about-3dep-products-services",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/usgs_3dep/client.py",
+      "docs/terrain.md",
+      "examples/connectors/plot_terrain_sources.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "scripts/prepare_terrain_samples.py"
+    ],
+    "note": "Project-based 1 m bare-earth DEMs derive from lidar; no complete national or global 1 m coverage implied. CONUS uses projected metre coordinates and NAVD88 heights. Separate seamless 1 m products are not selected by this connector.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "usgs_tnm_api",
+    "title": "The National Map GIS data downloads and API",
+    "authors": [
+      "U.S. Geological Survey"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.usgs.gov/the-national-map-data-delivery/gis-data-download",
+    "kind": "web",
+    "role": "data",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/sources/usgs_3dep/client.py",
+      "docs/terrain.md",
+      "examples/connectors/plot_terrain_sources.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "scripts/prepare_terrain_samples.py"
+    ],
+    "note": "TNM products API returns metadata, project extents and official GeoTIFF download URLs. Search pagination and byte budgets are bounded. A project bounding box is not a valid-data mask; overlapping tiles require explicit project selection.",
+    "verified_at": "2026-10-31"
   }
 ]

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "as_of": "2026-10-31",
-  "interpretation": "Inventory of implemented source modules, not a service-territory map or a measurement-availability test. Country shading identifies 13 host countries with country/system generation products; it does not assert complete national, plant, technology or distributed-generation coverage. Country codes follow the accompanying Natural Earth ADM0_A3 units. Regional-grid country codes identify host geography only: CanaryClim covers the Canary Islands, and the Global Solar Atlas connector retrieves only its pinned Spain annual-GHI archive. All schematic_region coordinates are illustrative country or regional locators, not provider offices, power-plant locations or coverage polygons. The PVDAQ marker is one archive example, the NIST marker is a published reference testbed and the DKASC marker is a rounded precinct locator. Global and land scope describes documented product domains only; native masks, cached catalogue bounding boxes, selected CMIP6 grids, dates and access conditions remain authoritative. The station importer has no external provider citation, and Natural Earth is geographic context rather than observed energy or weather data.",
+  "interpretation": "Inventory of implemented source modules, not a service-territory map or a measurement-availability test. Country shading identifies 13 host countries with country/system generation products; it does not assert complete national, plant, technology or distributed-generation coverage. Country codes follow the accompanying Natural Earth ADM0_A3 units. Regional-grid country codes identify host geography only: CanaryClim covers the Canary Islands, and the Global Solar Atlas connector retrieves only its pinned Spain annual-GHI archive. All schematic_region coordinates are illustrative country or regional locators, not provider offices, power-plant locations or coverage polygons. The PVDAQ marker is one archive example, the NIST marker is a published reference testbed and the DKASC marker is a rounded precinct locator. Global and land scope describes documented product domains only; native masks, cached catalogue bounding boxes, selected CMIP6 grids, dates and access conditions remain authoritative. The station importer has no external provider citation, and Natural Earth is geographic context rather than observed energy or weather data. Terrain grids preserve distinct product domains, native masks and vertical references; USGS 1 m is project coverage, not complete US coverage. IGN WCS is the 5 m product.",
   "connectors": [
     {
       "id": "adme",
@@ -201,6 +201,20 @@
         "eyring_2016_cmip6"
       ],
       "source_url": "https://pcmdi.llnl.gov/CMIP6/Guide/dataUsers.html"
+    },
+    {
+      "id": "copernicus_dem",
+      "label": "Copernicus DEM GLO-30",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "AWS GLO-30 Public DSM, approximately 30 m with latitude-dependent longitude spacing; land coverage has missing/restricted tiles; EGM2008 heights.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "copernicus_dem",
+        "copernicus_dem_aws"
+      ],
+      "source_url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html"
     },
     {
       "id": "cru_ts",
@@ -425,6 +439,22 @@
         "ieso_report_directory"
       ],
       "source_url": "https://reports-public.ieso.ca/docrefs/helpfile/GenOutputCapability_h4.pdf"
+    },
+    {
+      "id": "ign_terrain",
+      "label": "IGN Spain MDT WCS",
+      "category": "grid",
+      "coverage_kind": "regional_grid",
+      "scope": "Spanish native 5 m WCS DTM in mainland/Balearic and Canary grids. Grid extent does not imply valid terrain everywhere; finer standalone CNIG datasets are separate products.",
+      "access": "public",
+      "country_codes": [
+        "ESP"
+      ],
+      "references": [
+        "ign_mdt",
+        "ign_terrain_wcs"
+      ],
+      "source_url": "https://servicios.idee.es/wcs-inspire/mdt"
     },
     {
       "id": "jrc_climate",
@@ -686,6 +716,20 @@
       "source_url": "https://www.smard.de/resource/blob/205652/63fcff2c9813096fa2229d769da164ef/smard-user-guide-09-2021-data.pdf"
     },
     {
+      "id": "srtm",
+      "label": "SRTMGL1",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "1 arcsecond radar surface, approximately 30 m; land between 56 S and 60 N, subject to tile availability; EGM96 heights. ESA SNAP mirror, no polar or finer-grid fallback.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "nasa_srtmgl1",
+        "esa_srtm_mirror"
+      ],
+      "source_url": "https://step.esa.int/auxdata/dem/SRTMGL1/"
+    },
+    {
       "id": "station",
       "label": "Local measured-station files",
       "category": "local_import",
@@ -754,6 +798,22 @@
         "tepco_generation_definitions"
       ],
       "source_url": "https://www.tepco.co.jp/forecast/html/area_jukyu-j.html"
+    },
+    {
+      "id": "usgs_3dep",
+      "label": "USGS 3DEP 1 m",
+      "category": "grid",
+      "coverage_kind": "regional_grid",
+      "scope": "Available US project-based 1 m lidar DTM tiles. Catalogue bounding boxes may contain nodata; no nationwide or global coverage claim.",
+      "access": "public",
+      "country_codes": [
+        "USA"
+      ],
+      "references": [
+        "usgs_3dep",
+        "usgs_tnm_api"
+      ],
+      "source_url": "https://www.usgs.gov/3d-elevation-program/about-3dep-products-services"
     },
     {
       "id": "xm",
