@@ -258,6 +258,61 @@ def _rengo_module_assets(root: Path) -> None:
             )
 
 
+def _rengo_3d_assets(root: Path) -> None:
+    """Build an offline viewer and complete reproducibility bundle from pinned inputs."""
+    from tempfile import TemporaryDirectory
+
+    from energy_analysis.site_3d import export_site_scene
+    from energy_analysis.site_3d.rengo import build_rengo_scene
+
+    examples = root / "examples/analysis"
+    gallery = root / "docs/auto_examples/analysis"
+    study = build_rengo_scene(examples / "data/rengo_modules", examples / "data/rengo_3d")
+    for name in ("rengo_modules", "rengo_3d"):
+        shutil.copytree(examples / "data" / name, gallery / "data" / name, dirs_exist_ok=True)
+    with TemporaryDirectory() as temporary:
+        exports = export_site_scene(
+            study["scene"],
+            Path(temporary) / "results",
+            title="El Mirlo · southern inspection block",
+            provenance={
+                "terrain": study["terrain_source"],
+                "configuration": study["configuration"],
+                "counting": study["counting"]["manifest"],
+            },
+            attribution=study["terrain_source"]["notice"],
+            evidence_note=study["configuration"]["assumptions_note"],
+        )
+        shutil.copyfile(exports / "viewer.html", root / "docs/_static/rengo_site_3d.html")
+        with ZipFile(gallery / "rengo_site_3d.zip", "w", compression=ZIP_DEFLATED) as bundle:
+            bundle.write(examples / "plot_rengo_site_3d.py", arcname="plot_rengo_site_3d.py")
+            bundle.write(root / "docs/pv-site-3d.md", arcname="METHOD.md")
+            bundle.write(
+                root / "scripts/prepare_rengo_3d.py",
+                arcname="repository_scripts/prepare_rengo_3d.py",
+            )
+            for name in ("rengo_modules", "rengo_3d"):
+                for path in sorted((examples / "data" / name).iterdir()):
+                    bundle.write(path, arcname=f"data/{name}/{path.name}")
+            for path in sorted(exports.iterdir()):
+                bundle.write(path, arcname=f"results/{path.name}")
+            bundle.writestr(
+                "README.txt",
+                "El Mirlo 3D continuation — candidate surfaces and assumed mounting\n\n"
+                "Open results/viewer.html directly in a WebGL-capable browser.\n"
+                "Import results/site.obj with metre units and Z up; "
+                "retain site.mtl and scene.json.\n"
+                "For Python reproduction use https://github.com/julianascencio/energy-data-insights\n"
+                "From its root: uv sync --locked --all-packages\n"
+                "Then: uv run --no-sync python /path/to/extracted/plot_rengo_site_3d.py\n"
+                "Python 3.12/3.13; no live calls. Read METHOD.md and both data READMEs.\n"
+                "The recapture script under repository_scripts is a source copy to run from\n"
+                "the repository, not a standalone capture utility.\n"
+                "This is a partial block, not the whole plant, and not an as-built survey.\n"
+                "The source imagery's existing attribution/terms remain in data/rengo_modules.\n",
+            )
+
+
 def _climate_assets(root: Path) -> None:
     """Bundle source samples and existing regional context for offline execution."""
     examples = root / "examples/analysis"
@@ -382,6 +437,7 @@ def prepare_sources(root: Path) -> list[str]:
     _module_counting_assets(root)
     _chile_module_assets(root)
     _rengo_module_assets(root)
+    _rengo_3d_assets(root)
     _climate_assets(root)
     _site_and_degradation_assets(root)
     return [path.name for path in docs.glob("*.md")]

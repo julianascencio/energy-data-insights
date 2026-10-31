@@ -2,6 +2,9 @@
 
 [Open the annotated gallery and offline download](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_rengo_module_counting.html).
 
+Continue with the [3D scene and reusable method](pv-site-3d.md), which lifts the
+same candidates over real terrain using explicitly assumed table mounting planes.
+
 El Mirlo (CEN ID 2253) is approximately 5.1 km from the rounded Rengo centre
 (-70.858, -34.405), in Malloa. Six nearby operating registry entries were screened:
 Rengo Solar, Lo Miguel, Rinconada, Pueblo Hundido, El Mirlo and Rosario.

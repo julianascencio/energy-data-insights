@@ -21,6 +21,9 @@ of the 2,055 candidates has not been individually validated.
 Download :download:`the runnable example, images, annotations and audit exports
 <rengo_module_counting.zip>`. Read the :doc:`method and evidence limits
 <../../_generated/guides/rengo-module-counting>` before using the counts.
+
+Continue with :doc:`the reproducible 3D scene <plot_rengo_site_3d>` to combine
+these same candidates with real terrain and explicitly assumed mounting planes.
 """
 
 import json

@@ -268,3 +268,11 @@ coverage/tolerance boundaries, DST-aware keys, incomplete unit aggregates, prepa
 joins, withheld-model resource detection, configuration round trips, leakage protection,
 and complete synthetic workflow outputs. Synthetic smoke results verify implementation
 behavior; they are not field-validation scores for Chile's fleet.
+
+## Reproducible 3D PV scenes
+
+`energy_analysis.site_3d` connects module candidates or WGS84 GeoJSON footprints
+to elevation grids, static/interactive views and OBJ/JSON exports. The
+[El Mirlo continuation and other-site recipe](../docs/pv-site-3d.md) use real
+terrain and explicitly assumed mounting planes. The example retains the original
+counting scope and uncertainty; it is not a surveyed as-built model.

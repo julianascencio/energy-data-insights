@@ -1250,7 +1250,7 @@ European Space Agency and European Union (n.d.). **Copernicus DEM: Global and Eu
 
 **Role:** data. GLO-30 DSM, primarily TanDEM-X acquisition 2011-2015 with other products for gap filling; EGM2008 heights. Licence attribution is retained in the sample manifest, gallery and guide. Public GLO-30 does not grant EEA-10 access.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/copernicus_dem/client.py`, `docs/terrain.md`, `examples/connectors/plot_terrain_sources.py`, `examples/connectors/data/terrain_provenance.json`, `scripts/prepare_terrain_samples.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/copernicus_dem/client.py`, `docs/terrain.md`, `examples/connectors/plot_terrain_sources.py`, `examples/connectors/data/terrain_provenance.json`, `scripts/prepare_terrain_samples.py`, `methods/src/energy_methods/pv_site_3d.py`, `examples/analysis/plot_rengo_site_3d.py`, `examples/analysis/data/rengo_3d/terrain_provenance.json`, `docs/pv-site-3d.md`.
 
 ### copernicus_dem_aws
 
@@ -1258,7 +1258,7 @@ Sinergise and AWS Open Data (n.d.). **Copernicus DEM GLO-30 Public: AWS COG layo
 
 **Role:** data. Public mirror has unavailable/restricted tiles and absent ocean tiles. COG removes duplicate southern/eastern posts, retains 3600 rows and latitude-dependent longitudinal spacing; 10 in the path means 1.0 arcsecond, not 10 m.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/copernicus_dem/client.py`, `docs/terrain.md`, `examples/connectors/plot_terrain_sources.py`, `examples/connectors/data/terrain_provenance.json`, `scripts/prepare_terrain_samples.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/copernicus_dem/client.py`, `docs/terrain.md`, `examples/connectors/plot_terrain_sources.py`, `examples/connectors/data/terrain_provenance.json`, `scripts/prepare_terrain_samples.py`, `scripts/prepare_rengo_3d.py`, `docs/pv-site-3d.md`.
 
 ### ign_mdt
 
@@ -1403,3 +1403,27 @@ oEnergy / PFV El Mirlo SpA (n.d.). **Parque Fotovoltaico El Mirlo**. [Source](ht
 **Role:** data. Developer project page confirms identity and Malloa location. Design power is not substituted for the dated CEN power field. No project-design module count is used in image detection.
 
 **Used by:** `docs/rengo-module-counting.md`, `examples/analysis/data/rengo_modules/rengo_study.json`.
+
+### proj_aeqd
+
+PROJ contributors (n.d.). **Azimuthal Equidistant — PROJ documentation**. [Source](https://proj.org/en/stable/operations/projections/aeqd.html)
+
+**Role:** software. Local WGS84 azimuthal-equidistant projection for metre-based PV scenes. The local radius guard and table-plane lifting rule are repository choices, not a PROJ photogrammetry algorithm.
+
+**Used by:** `methods/src/energy_methods/pv_site_3d.py`, `docs/pv-site-3d.md`.
+
+### plotly_mesh3d
+
+Plotly Technologies Inc. (n.d.). **3D Mesh Plots in Python**. [Source](https://plotly.com/python/3d-mesh/)
+
+**Role:** software. Rendering indexed terrain and candidate module surfaces. Visual output does not validate geometry or recover depth.
+
+**Used by:** `analysis/src/energy_analysis/site_3d/reports.py`, `docs/pv-site-3d.md`.
+
+### plotly_html_export
+
+Plotly Technologies Inc. (n.d.). **Interactive HTML Export in Python**. [Source](https://plotly.com/python/interactive-html-export/)
+
+**Role:** software. Self-contained offline HTML export with embedded Plotly.js. No CDN or live map tiles are required.
+
+**Used by:** `analysis/src/energy_analysis/site_3d/reports.py`, `docs/pv-site-3d.md`.

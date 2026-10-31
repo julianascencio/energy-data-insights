@@ -147,7 +147,13 @@ def export_rengo_study(directory: str | Path, destination: str | Path) -> Path:
                 "type": "Feature",
                 "id": cell.id,
                 "geometry": {"type": "Polygon", "coordinates": [[*ring, ring[0]]]},
-                "properties": {"status": cell.status, "reasons": list(cell.reasons)},
+                "properties": {
+                    "table": cell.table,
+                    "row": cell.row,
+                    "column": cell.column,
+                    "status": cell.status,
+                    "reasons": list(cell.reasons),
+                },
             }
         )
     (destination / "lattice_candidates.geojson").write_text(
