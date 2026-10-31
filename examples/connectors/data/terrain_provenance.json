@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-31T08:14:59.914196+00:00",
+  "processing": "Native enclosing windows; metres decoded; missing values become NaN; no resampling or vertical conversion.",
+  "samples": [
+    {
+      "source": {
+        "id": "srtm",
+        "name": "SRTMGL1 (ESA SNAP mirror)",
+        "surface": "radar surface, with void filling",
+        "vertical_datum": "EGM96",
+        "reference_ids": [
+          "nasa_srtmgl1",
+          "esa_srtm_mirror"
+        ]
+      },
+      "place": "Tenerife, Spain",
+      "request": {
+        "endpoint": "https://step.esa.int/auxdata/dem/SRTMGL1/N28W017.SRTMGL1.hgt.zip",
+        "parameters": {},
+        "retrieved_at_utc": "2026-10-31T08:14:22.781606+00:00",
+        "sha256": "c73731fe3279f440321239491681bf56cc5e4e7fdeda1e2d922f415232ea6268",
+        "size_bytes": 3048349,
+        "cache_hit": false
+      },
+      "original_raster": {
+        "source": {
+          "id": "srtm",
+          "name": "SRTMGL1 (ESA SNAP mirror)",
+          "surface": "radar surface, with void filling",
+          "vertical_datum": "EGM96",
+          "reference_ids": [
+            "nasa_srtmgl1",
+            "esa_srtm_mirror"
+          ]
+        },
+        "crs": "EPSG:4326",
+        "shape": [
+          3601,
+          3601
+        ],
+        "bounds": [
+          -17.000138888888888,
+          27.99986111111111,
+          -15.999861111111109,
+          29.000138888888888
+        ],
+        "pixel_spacing": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "horizontal_unit": "degree",
+        "nodata": -32768.0,
+        "scale": 1.0,
+        "offset": 0.0,
+        "elevation_unit": "m"
+      },
+      "requested_bounds_wgs84": [
+        -16.655,
+        28.245,
+        -16.645,
+        28.255
+      ],
+      "fixture": "terrain_srtm.tif",
+      "fixture_sha256": "7d432d92df62a7832aeae2aebdaddcf3e6e8012ce7b351c1aaf8e803bf28b828",
+      "fixture_bytes": 2355,
+      "fixture_shape": [
+        37,
+        37
+      ],
+      "fixture_bounds_native": [
+        -16.65513888888889,
+        28.24486111111111,
+        -16.64486111111111,
+        28.255138888888887
+      ],
+      "valid_fraction": 1.0,
+      "extra": {}
+    },
+    {
+      "source": {
+        "id": "copernicus_dem",
+        "name": "Copernicus DEM GLO-30 Public (AWS)",
+        "surface": "DSM including buildings and vegetation",
+        "vertical_datum": "EGM2008",
+        "reference_ids": [
+          "copernicus_dem",
+          "copernicus_dem_aws"
+        ]
+      },
+      "place": "Tenerife, Spain",
+      "request": {
+        "endpoint": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_W017_00_DEM/Copernicus_DSM_COG_10_N28_00_W017_00_DEM.tif",
+        "parameters": {},
+        "retrieved_at_utc": "2026-10-31T08:14:28.834041+00:00",
+        "sha256": "80c5f2b4f202d87403251dfbcab241a66d7061e564242bda65d2577ab44b4e4b",
+        "size_bytes": 8892541,
+        "cache_hit": false
+      },
+      "original_raster": {
+        "source": {
+          "id": "copernicus_dem",
+          "name": "Copernicus DEM GLO-30 Public (AWS)",
+          "surface": "DSM including buildings and vegetation",
+          "vertical_datum": "EGM2008",
+          "reference_ids": [
+            "copernicus_dem",
+            "copernicus_dem_aws"
+          ]
+        },
+        "crs": "EPSG:4326",
+        "shape": [
+          3600,
+          3600
+        ],
+        "bounds": [
+          -17.000138888888888,
+          28.000138888888888,
+          -16.000138888888888,
+          29.000138888888888
+        ],
+        "pixel_spacing": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "horizontal_unit": "degree",
+        "nodata": null,
+        "scale": 1.0,
+        "offset": 0.0,
+        "elevation_unit": "m"
+      },
+      "requested_bounds_wgs84": [
+        -16.655,
+        28.245,
+        -16.645,
+        28.255
+      ],
+      "fixture": "terrain_copernicus_dem.tif",
+      "fixture_sha256": "d14093d72a55357a849b484bb4e04884bb6863ee1ccc0730681e8fadd5191fd2",
+      "fixture_bytes": 5201,
+      "fixture_shape": [
+        37,
+        37
+      ],
+      "fixture_bounds_native": [
+        -16.65513888888889,
+        28.24486111111111,
+        -16.64486111111111,
+        28.255138888888887
+      ],
+      "valid_fraction": 1.0,
+      "extra": {
+        "attribution": "produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved"
+      }
+    },
+    {
+      "source": {
+        "id": "ign_terrain",
+        "name": "IGN Spain MDT WCS (5 m)",
+        "surface": "bare-earth DTM",
+        "vertical_datum": "Spanish official orthometric heights; mainland/island height reference varies",
+        "reference_ids": [
+          "ign_mdt",
+          "ign_terrain_wcs"
+        ]
+      },
+      "place": "Tenerife, Spain",
+      "request": {
+        "endpoint": "https://servicios.idee.es/wcs-inspire/mdt",
+        "parameters": {
+          "method": "GET",
+          "query:SERVICE": "WCS",
+          "query:VERSION": "2.0.1",
+          "query:REQUEST": "GetCoverage",
+          "query:COVERAGEID": "Elevacion4083_5",
+          "query:FORMAT": "image/tiff",
+          "query:SUBSET": "[\"x(337632.5,338632.5)\", \"y(3125437.5,3126562.5)\"]"
+        },
+        "retrieved_at_utc": "2026-10-31T08:14:38.193818+00:00",
+        "sha256": "23772b0b3a27aceb3591b453a9ce0cf2542db0743e4c86b0c93876cbe1ea0276",
+        "size_bytes": 90556,
+        "cache_hit": false
+      },
+      "original_raster": {
+        "source": {
+          "id": "ign_terrain",
+          "name": "IGN Spain MDT WCS (5 m)",
+          "surface": "bare-earth DTM",
+          "vertical_datum": "Spanish official orthometric heights; mainland/island height reference varies",
+          "reference_ids": [
+            "ign_mdt",
+            "ign_terrain_wcs"
+          ]
+        },
+        "crs": "EPSG:4083",
+        "shape": [
+          225,
+          200
+        ],
+        "bounds": [
+          337632.5,
+          3125437.5,
+          338632.5,
+          3126562.5
+        ],
+        "pixel_spacing": [
+          5.0,
+          5.0
+        ],
+        "horizontal_unit": "metre",
+        "nodata": null,
+        "scale": 1.0,
+        "offset": 0.0,
+        "elevation_unit": "m"
+      },
+      "requested_bounds_wgs84": null,
+      "fixture": "terrain_ign_terrain.tif",
+      "fixture_sha256": "3a1c66f859f5fba01b675c81551727b404b2e4896cf677e020f868a7bb527504",
+      "fixture_bytes": 24941,
+      "fixture_shape": [
+        225,
+        200
+      ],
+      "fixture_bounds_native": [
+        337632.5,
+        3125437.5,
+        338632.5,
+        3126562.5
+      ],
+      "valid_fraction": 1.0,
+      "extra": {
+        "wcs_provenance": {
+          "request": {
+            "endpoint": "https://servicios.idee.es/wcs-inspire/mdt",
+            "parameters": {
+              "method": "GET",
+              "query:SERVICE": "WCS",
+              "query:VERSION": "2.0.1",
+              "query:REQUEST": "GetCoverage",
+              "query:COVERAGEID": "Elevacion4083_5",
+              "query:FORMAT": "image/tiff",
+              "query:SUBSET": "[\"x(337632.5,338632.5)\", \"y(3125437.5,3126562.5)\"]"
+            },
+            "retrieved_at_utc": "2026-10-31T08:14:38.193818+00:00",
+            "sha256": "23772b0b3a27aceb3591b453a9ce0cf2542db0743e4c86b0c93876cbe1ea0276",
+            "size_bytes": 90556,
+            "cache_hit": false
+          },
+          "description_request": {
+            "endpoint": "https://servicios.idee.es/wcs-inspire/mdt",
+            "parameters": {
+              "SERVICE": "WCS",
+              "VERSION": "2.0.1",
+              "REQUEST": "DescribeCoverage",
+              "COVERAGEID": "Elevacion4083_5"
+            },
+            "retrieved_at_utc": "2026-10-31T08:14:33.716728+00:00",
+            "sha256": "dfef22e30623ea98d0d17b15badb0695d1490aa5e3ef790fbf45d5463c735ce6",
+            "size_bytes": 2525,
+            "cache_hit": false
+          },
+          "source": {
+            "id": "ign_terrain",
+            "name": "IGN Spain MDT WCS (5 m)",
+            "surface": "bare-earth DTM",
+            "vertical_datum": "Spanish official orthometric heights; mainland/island height reference varies",
+            "reference_ids": [
+              "ign_mdt",
+              "ign_terrain_wcs"
+            ]
+          },
+          "description_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<wcs:CoverageDescriptions xmlns:wcs=\"http://www.opengis.net/wcs/2.0\" xmlns:ows=\"http://www.opengis.net/ows/2.0\" xmlns:ogc=\"http://www.opengis.net/ogc\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:gml=\"http://www.opengis.net/gml/3.2\" xmlns:gmlcov=\"http://www.opengis.net/gmlcov/1.0\" xmlns:swe=\"http://www.opengis.net/swe/2.0\" xsi:schemaLocation=\"http://www.opengis.net/wcs/2.0 http://schemas.opengis.net/wcs/2.0/wcsAll.xsd \">\n  <wcs:CoverageDescription gml:id=\"Elevacion4083_5\">\n    <gml:boundedBy>\n      <gml:Envelope srsName=\"http://www.opengis.net/def/crs/EPSG/0/4083\" axisLabels=\"x y\" uomLabels=\"m m\" srsDimension=\"2\">\n        <gml:lowerCorner>188197.5 3060497.5</gml:lowerCorner>\n        <gml:upperCorner>662002.5 3255102.5</gml:upperCorner>\n      </gml:Envelope>\n    </gml:boundedBy>\n    <wcs:CoverageId>Elevacion4083_5</wcs:CoverageId>\n    <gml:domainSet>\n      <gml:RectifiedGrid dimension=\"2\" gml:id=\"grid_Elevacion4083_5\">\n        <gml:limits>\n          <gml:GridEnvelope>\n            <gml:low>0 0</gml:low>\n            <gml:high>94760 38920</gml:high>\n          </gml:GridEnvelope>\n        </gml:limits>\n        <gml:axisLabels>x y</gml:axisLabels>\n        <gml:origin>\n          <gml:Point gml:id=\"grid_origin_Elevacion4083_5\" srsName=\"http://www.opengis.net/def/crs/EPSG/0/4083\">\n            <gml:pos>188200.000000 3255100.000000</gml:pos>\n          </gml:Point>\n        </gml:origin>\n        <gml:offsetVector srsName=\"http://www.opengis.net/def/crs/EPSG/0/4083\">5.000000 0</gml:offsetVector>\n        <gml:offsetVector srsName=\"http://www.opengis.net/def/crs/EPSG/0/4083\">0 -5.000000</gml:offsetVector>\n      </gml:RectifiedGrid>\n    </gml:domainSet>\n    <gmlcov:rangeType>\n      <swe:DataRecord>\n        <swe:field name=\"band\">\n          <swe:Quantity>\n            <swe:nilValues/>\n            <swe:uom code=\"W.m-2.Sr-1\"/>\n            <swe:constraint>\n              <swe:AllowedValues>\n                <swe:interval>-3.4028e+38 3.4028e+38</swe:interval>\n                <swe:significantFigures>12</swe:significantFigures>\n              </swe:AllowedValues>\n            </swe:constraint>\n          </swe:Quantity>\n        </swe:field>\n      </swe:DataRecord>\n    </gmlcov:rangeType>\n    <wcs:ServiceParameters>\n      <wcs:CoverageSubtype>RectifiedGridCoverage</wcs:CoverageSubtype>\n      <wcs:nativeFormat>COG</wcs:nativeFormat>\n    </wcs:ServiceParameters>\n  </wcs:CoverageDescription>\n</wcs:CoverageDescriptions>\n"
+        },
+        "requested_bounds_wgs84": [
+          -16.655,
+          28.245,
+          -16.645,
+          28.255
+        ],
+        "attribution": "Contains geographic information from IGN Spain, MDT WCS, CC BY 4.0."
+      }
+    },
+    {
+      "source": {
+        "id": "usgs_3dep",
+        "name": "USGS 3DEP project-based 1 m DEM",
+        "surface": "lidar-derived bare-earth DTM",
+        "vertical_datum": "NAVD88 in CONUS; verify project metadata elsewhere",
+        "reference_ids": [
+          "usgs_3dep",
+          "usgs_tnm_api"
+        ]
+      },
+      "place": "Colorado, USA",
+      "request": {
+        "endpoint": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_ArapahoRooseveltPikeNF_D23/TIFF/USGS_1M_13_x47y443_CO_ArapahoRooseveltPikeNF_D23.tif",
+        "parameters": {},
+        "retrieved_at_utc": "2026-10-31T08:14:59.871921+00:00",
+        "sha256": "09f5d6a83f98bc8e12c3d75de7b3d428428042c70c460c71f5fb2c902ece1c88",
+        "size_bytes": 10425274,
+        "cache_hit": false
+      },
+      "original_raster": {
+        "source": {
+          "id": "usgs_3dep",
+          "name": "USGS 3DEP project-based 1 m DEM",
+          "surface": "lidar-derived bare-earth DTM",
+          "vertical_datum": "NAVD88 in CONUS; verify project metadata elsewhere",
+          "reference_ids": [
+            "usgs_3dep",
+            "usgs_tnm_api"
+          ]
+        },
+        "crs": "EPSG:26913",
+        "shape": [
+          10012,
+          10012
+        ],
+        "bounds": [
+          469993.9999821812,
+          4419993.999955563,
+          480005.9999821812,
+          4430005.999955563
+        ],
+        "pixel_spacing": [
+          1.0,
+          1.0
+        ],
+        "horizontal_unit": "metre",
+        "nodata": -999999.0,
+        "scale": 1.0,
+        "offset": 0.0,
+        "elevation_unit": "m"
+      },
+      "requested_bounds_wgs84": [
+        -105.35,
+        39.996,
+        -105.347,
+        39.999
+      ],
+      "fixture": "terrain_usgs_3dep.tif",
+      "fixture_sha256": "c7cecf77874503f7ff207398bee267e8a5c3accd65bfeccff1a050434c5c7a7f",
+      "fixture_bytes": 188089,
+      "fixture_shape": [
+        335,
+        258
+      ],
+      "fixture_bounds_native": [
+        470121.9999821812,
+        4427369.999955563,
+        470379.9999821812,
+        4427704.999955563
+      ],
+      "valid_fraction": 1.0,
+      "extra": {
+        "product": {
+          "source_id": "69c20ed7b66b01d6ebf33c9a",
+          "title": "USGS 1 Meter 13 x47y443 CO_ArapahoRooseveltPikeNF_D23",
+          "download_url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_ArapahoRooseveltPikeNF_D23/TIFF/USGS_1M_13_x47y443_CO_ArapahoRooseveltPikeNF_D23.tif",
+          "size_bytes": 10425274,
+          "metadata": {
+            "title": "USGS 1 Meter 13 x47y443 CO_ArapahoRooseveltPikeNF_D23",
+            "moreInfo": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP) . The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in [...]",
+            "sourceId": "69c20ed7b66b01d6ebf33c9a",
+            "sourceName": "ScienceBase",
+            "sourceOriginId": null,
+            "sourceOriginName": "gda",
+            "metaUrl": "https://www.sciencebase.gov/catalog/item/69c20ed7b66b01d6ebf33c9a",
+            "vendorMetaUrl": "https://thor-f5.er.usgs.gov/ngtoc/metadata/waf/elevation/1_meter/geotiff/CO_ArapahoRooseveltPikeNF_D23/USGS_1M_13_x47y443_CO_ArapahoRooseveltPikeNF_D23.xml",
+            "publicationDate": "2026-03-20",
+            "lastUpdated": "2026-03-23T22:16:51.185-06:00",
+            "dateCreated": "2026-03-23T22:11:03.140-06:00",
+            "sizeInBytes": 10425274,
+            "extent": "10000 x 10000 meter",
+            "format": "GeoTIFF",
+            "downloadURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_ArapahoRooseveltPikeNF_D23/TIFF/USGS_1M_13_x47y443_CO_ArapahoRooseveltPikeNF_D23.tif",
+            "downloadURLRaster": null,
+            "previewGraphicURL": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_ArapahoRooseveltPikeNF_D23/browse/USGS_1M_13_x47y443_CO_ArapahoRooseveltPikeNF_D23.jpg",
+            "downloadLazURL": null,
+            "urls": {
+              "TIFF": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/1m/Projects/CO_ArapahoRooseveltPikeNF_D23/TIFF/USGS_1M_13_x47y443_CO_ArapahoRooseveltPikeNF_D23.tif"
+            },
+            "datasets": [],
+            "boundingBox": {
+              "minX": -105.35155443499997,
+              "maxX": -105.23406322399995,
+              "minY": 39.92957701500006,
+              "maxY": 40.019969985000046
+            },
+            "bestFitIndex": 0.0,
+            "body": "This is a tile of the standard one-meter resolution digital elevation model (DEM) produced through the 3D Elevation Program (3DEP) . The elevations in this DEM represent the topographic bare-earth surface. USGS standard one-meter DEMs are produced exclusively from high resolution light detection and ranging (lidar) source data of one-meter or higher resolution. One-meter DEM surfaces are seamless within collection projects, but, not necessarily seamless across projects. The spatial reference used for tiles of the one-meter DEM within the conterminous United States (CONUS) is Universal Transverse Mercator (UTM) in units of meters, and in conformance with the North American Datum of 1983 (NAD83). All bare earth elevation values are in meters and are referenced to the North American Vertical Datum of 1988 (NAVD88). Each tile is distributed in the UTM Zone in which it lies. If a tile crosses two UTM zones, it is delivered in both zones. The one-meter DEM is the highest resolution standard DEM offered in the 3DEP product suite. Other 3DEP products are nationally seamless DEMs in resolutions of 1/3, 1, and 2 arc seconds. These seamless DEMs were referred to as the National Elevation Dataset (NED) from about 2000 through 2015 at which time they became the seamless DEM layers under the 3DEP program and lost the NED branding. Other 3DEP products include five-meter DEMs in Alaska as well as various source datasets including the lidar point cloud and interferometric synthetic aperture radar (Ifsar) digital surface models and intensity images. All 3DEP products are public domain.",
+            "processingUrl": "processingUrl",
+            "modificationInfo": "2026-03-23"
+          }
+        },
+        "search_requests": [
+          {
+            "endpoint": "https://tnmaccess.nationalmap.gov/api/v1/products",
+            "parameters": {
+              "datasets": "Digital Elevation Model (DEM) 1 meter",
+              "bbox": "-105.35,39.996,-105.347,39.999",
+              "max": "100",
+              "offset": "0",
+              "prodFormats": "GeoTIFF"
+            },
+            "retrieved_at_utc": "2026-10-31T08:14:53.406243+00:00",
+            "sha256": "1a0d9eab5b66b01eff01314706c38b5171c1f1afd59eb088789c93f71cc05cb8",
+            "size_bytes": 11896,
+            "cache_hit": false
+          }
+        ],
+        "search_total": 3,
+        "attribution": "USGS 3DEP, public domain. Project metadata retained; not a global 1 m grid."
+      }
+    }
+  ]
+}

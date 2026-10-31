@@ -3364,6 +3364,96 @@
       ],
       "url": "https://photovoltaic-geographic-information-system.ec.europa.eu/api/v6/docs",
       "notes": "Role: data. Version 6 OpenAPI contract reviewed 2026-10-31; 20 paths and 27 GET/POST operations. Native parameters, conventions and outputs retained. Active service development may change the contract. Software licensing does not by itself establish data reuse terms."
+    },
+    {
+      "type": "dataset",
+      "title": "SRTM 1 Arc-Second Global",
+      "authors": [
+        {
+          "name": "USGS and NASA"
+        }
+      ],
+      "url": "https://doi.org/10.5066/F7PR7TFT",
+      "notes": "Role: data. Finest publicly distributed SRTM grid: 1 arcsecond, approximately 30 m; 60 N to 56 S; February 2000 radar acquisition; EGM96 orthometric heights. SRTMGL1 void-filled HGT posts are retained without vertical conversion.",
+      "doi": "10.5066/F7PR7TFT"
+    },
+    {
+      "type": "web",
+      "title": "ESA SNAP SRTMGL1 auxiliary data mirror",
+      "authors": [
+        {
+          "name": "European Space Agency"
+        }
+      ],
+      "url": "https://step.esa.int/auxdata/dem/SRTMGL1/",
+      "notes": "Role: data. Anonymous official ESA distribution of NASA SRTMGL1 HGT ZIP tiles. Downloaded N28W017 and validated one 3601 by 3601 big-endian int16 member; no SNAP ellipsoid correction applied."
+    },
+    {
+      "type": "dataset",
+      "title": "Copernicus DEM: Global and European Digital Elevation Model",
+      "authors": [
+        {
+          "name": "European Space Agency and European Union"
+        }
+      ],
+      "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "notes": "Role: data. GLO-30 DSM, primarily TanDEM-X acquisition 2011-2015 with other products for gap filling; EGM2008 heights. Licence attribution is retained in the sample manifest, gallery and guide. Public GLO-30 does not grant EEA-10 access.",
+      "doi": "10.5270/ESA-c5d3d65"
+    },
+    {
+      "type": "web",
+      "title": "Copernicus DEM GLO-30 Public: AWS COG layout",
+      "authors": [
+        {
+          "name": "Sinergise and AWS Open Data"
+        }
+      ],
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+      "notes": "Role: data. Public mirror has unavailable/restricted tiles and absent ocean tiles. COG removes duplicate southern/eastern posts, retains 3600 rows and latitude-dependent longitudinal spacing; 10 in the path means 1.0 arcsecond, not 10 m."
+    },
+    {
+      "type": "dataset",
+      "title": "CNIG digital terrain models from PNOA lidar",
+      "authors": [
+        {
+          "name": "Instituto Geográfico Nacional de España"
+        }
+      ],
+      "url": "https://centrodedescargas.cnig.es/CentroDescargas/modelos-digitales-elevaciones",
+      "notes": "Role: data. Bare-earth terrain products include 5 m, 2 m and 0.5 m coverages. This connector explicitly retrieves the 5 m WCS layer, not the finer standalone downloads. Spanish official height references vary between mainland and islands; confirm project metadata."
+    },
+    {
+      "type": "web",
+      "title": "IGN INSPIRE WCS terrain service",
+      "authors": [
+        {
+          "name": "Instituto Geográfico Nacional de España"
+        }
+      ],
+      "url": "https://servicios.idee.es/wcs-inspire/mdt?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities",
+      "notes": "Role: data. WCS 2.0.1 numeric elevation, with live DescribeCoverage and native-aligned subsets of Elevacion4083_5 and Elevacion25830_5 supported. Live Canary TIFF is 5 m int16 with no nodata declared. DescribeCoverage has generic radiance units; original XML retained and elevations interpreted from official MDT documentation as metres."
+    },
+    {
+      "type": "dataset",
+      "title": "3DEP elevation products and services",
+      "authors": [
+        {
+          "name": "U.S. Geological Survey"
+        }
+      ],
+      "url": "https://www.usgs.gov/3d-elevation-program/about-3dep-products-services",
+      "notes": "Role: data. Project-based 1 m bare-earth DEMs derive from lidar; no complete national or global 1 m coverage implied. CONUS uses projected metre coordinates and NAVD88 heights. Separate seamless 1 m products are not selected by this connector."
+    },
+    {
+      "type": "web",
+      "title": "The National Map GIS data downloads and API",
+      "authors": [
+        {
+          "name": "U.S. Geological Survey"
+        }
+      ],
+      "url": "https://www.usgs.gov/the-national-map-data-delivery/gis-data-download",
+      "notes": "Role: data. TNM products API returns metadata, project extents and official GeoTIFF download URLs. Search pagination and byte budgets are bounded. A project bounding box is not a valid-data mask; overlapping tiles require explicit project selection."
     }
   ]
 }

@@ -1252,3 +1252,61 @@
   url = {https://photovoltaic-geographic-information-system.ec.europa.eu/api/v6/docs},
   note = {Role: data. Version 6 OpenAPI contract reviewed 2026-10-31; 20 paths and 27 GET/POST operations. Native parameters, conventions and outputs retained. Active service development may change the contract. Software licensing does not by itself establish data reuse terms.}
 }
+
+@misc{nasa_srtmgl1,
+  author = {{USGS and NASA}},
+  title = {{SRTM 1 Arc-Second Global}},
+  doi = {10.5066/F7PR7TFT},
+  url = {https://doi.org/10.5066/F7PR7TFT},
+  note = {Role: data. Finest publicly distributed SRTM grid: 1 arcsecond, approximately 30 m; 60 N to 56 S; February 2000 radar acquisition; EGM96 orthometric heights. SRTMGL1 void-filled HGT posts are retained without vertical conversion.}
+}
+
+@misc{esa_srtm_mirror,
+  author = {{European Space Agency}},
+  title = {{ESA SNAP SRTMGL1 auxiliary data mirror}},
+  url = {https://step.esa.int/auxdata/dem/SRTMGL1/},
+  note = {Role: data. Anonymous official ESA distribution of NASA SRTMGL1 HGT ZIP tiles. Downloaded N28W017 and validated one 3601 by 3601 big-endian int16 member; no SNAP ellipsoid correction applied.}
+}
+
+@misc{copernicus_dem,
+  author = {{European Space Agency and European Union}},
+  title = {{Copernicus DEM: Global and European Digital Elevation Model}},
+  doi = {10.5270/ESA-c5d3d65},
+  url = {https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM},
+  note = {Role: data. GLO-30 DSM, primarily TanDEM-X acquisition 2011-2015 with other products for gap filling; EGM2008 heights. Licence attribution is retained in the sample manifest, gallery and guide. Public GLO-30 does not grant EEA-10 access.}
+}
+
+@misc{copernicus_dem_aws,
+  author = {{Sinergise and AWS Open Data}},
+  title = {{Copernicus DEM GLO-30 Public: AWS COG layout}},
+  url = {https://copernicus-dem-30m.s3.amazonaws.com/readme.html},
+  note = {Role: data. Public mirror has unavailable/restricted tiles and absent ocean tiles. COG removes duplicate southern/eastern posts, retains 3600 rows and latitude-dependent longitudinal spacing; 10 in the path means 1.0 arcsecond, not 10 m.}
+}
+
+@misc{ign_mdt,
+  author = {{Instituto Geográfico Nacional de España}},
+  title = {{CNIG digital terrain models from PNOA lidar}},
+  url = {https://centrodedescargas.cnig.es/CentroDescargas/modelos-digitales-elevaciones},
+  note = {Role: data. Bare-earth terrain products include 5 m, 2 m and 0.5 m coverages. This connector explicitly retrieves the 5 m WCS layer, not the finer standalone downloads. Spanish official height references vary between mainland and islands; confirm project metadata.}
+}
+
+@misc{ign_terrain_wcs,
+  author = {{Instituto Geográfico Nacional de España}},
+  title = {{IGN INSPIRE WCS terrain service}},
+  url = {https://servicios.idee.es/wcs-inspire/mdt?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCapabilities},
+  note = {Role: data. WCS 2.0.1 numeric elevation, with live DescribeCoverage and native-aligned subsets of Elevacion4083\_5 and Elevacion25830\_5 supported. Live Canary TIFF is 5 m int16 with no nodata declared. DescribeCoverage has generic radiance units; original XML retained and elevations interpreted from official MDT documentation as metres.}
+}
+
+@misc{usgs_3dep,
+  author = {{U.S. Geological Survey}},
+  title = {{3DEP elevation products and services}},
+  url = {https://www.usgs.gov/3d-elevation-program/about-3dep-products-services},
+  note = {Role: data. Project-based 1 m bare-earth DEMs derive from lidar; no complete national or global 1 m coverage implied. CONUS uses projected metre coordinates and NAVD88 heights. Separate seamless 1 m products are not selected by this connector.}
+}
+
+@misc{usgs_tnm_api,
+  author = {{U.S. Geological Survey}},
+  title = {{The National Map GIS data downloads and API}},
+  url = {https://www.usgs.gov/the-national-map-data-delivery/gis-data-download},
+  note = {Role: data. TNM products API returns metadata, project extents and official GeoTIFF download URLs. Search pagination and byte budgets are bounded. A project bounding box is not a valid-data mask; overlapping tiles require explicit project selection.}
+}

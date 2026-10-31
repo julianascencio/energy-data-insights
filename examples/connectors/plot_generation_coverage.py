@@ -1,8 +1,8 @@
 """Worldwide coverage of the repository's connectors
 ===================================================
 
-Locate **all 43 source modules**: 22 generation connectors, 14 gridded
-weather/climate sources, five station networks, a local station importer and
+Locate **all 47 source modules**: 22 generation connectors, 18 gridded
+weather/climate/terrain sources, five station networks, a local station importer and
 the Natural Earth basemap. The first figure shows generation products; the
 second plots **39,010 provider/station catalogue rows** and explains the grid
 products. Both figures run **offline**, without credentials or new downloads.
@@ -343,11 +343,11 @@ network_styles = {
     "dwd": ("#704fa2", "D", 18, 0.95, "DWD CDC", "Hourly solar catalogue in Germany"),
     "surfrad": ("#bc4051", "s", 27, 0.95, "NOAA SURFRAD", "Seven supported US archive stations"),
 }
-fig_weather = plt.figure(figsize=(15, 12.5), facecolor="white")
+fig_weather = plt.figure(figsize=(15, 14), facecolor="white")
 weather_layout = fig_weather.add_gridspec(
     2,
     2,
-    height_ratios=[2.0, 1.7],
+    height_ratios=[2.0, 2.4],
     left=0.045,
     right=0.975,
     bottom=0.10,
@@ -410,7 +410,7 @@ ax_networks.text(
     color=TEXT_COLOR,
 )
 ax_grids.set_title(
-    "Gridded weather / climate · 14 source modules",
+    "Weather / climate / terrain · 18 source modules",
     loc="left",
     fontsize=12,
     fontweight="bold",
@@ -429,6 +429,10 @@ grid_labels = [
     ("ml21", "ML21 catalogue", "Published climate labels/features; mixed periods"),
     ("pvcz", "PVCZ catalogue", "Land thermal/humidity stressors; 2010-2018"),
     ("pvgis", "JRC PVGIS", "Solar resource / PV models; query native coverage"),
+    ("srtm", "SRTMGL1", "Land 56 S to 60 N; 1 arcsecond (~30 m)"),
+    ("copernicus_dem", "Copernicus DEM", "GLO-30 Public DSM; missing tiles possible"),
+    ("ign_terrain", "IGN MDT WCS", "Spain 5 m DTM; valid native mask applies"),
+    ("usgs_3dep", "USGS 3DEP", "US 1 m lidar projects; incomplete coverage"),
     ("cmip6", "CMIP6 / ESGF", "Selected model, experiment and grid availability"),
     ("canary_clim", "CanaryClim", "Canary Islands; monthly climate, 1979-2013"),
     ("global_solar_atlas", "Global Solar Atlas", "Spain / Chile GHI; native masks and periods"),
@@ -438,7 +442,7 @@ for row, (_provider, label, scope) in enumerate(grid_labels):
     ax_grids.text(0, y, label, fontsize=10.5, weight="bold", color=TEXT_COLOR, va="top")
     ax_grids.text(0.29, y, scope, fontsize=9.5, color="#506b7d", va="top")
 fig_weather.suptitle(
-    "Weather and climate coverage",
+    "Weather, climate and terrain coverage",
     x=0.045,
     y=0.975,
     ha="left",

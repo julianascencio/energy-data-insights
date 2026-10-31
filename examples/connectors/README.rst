@@ -33,3 +33,7 @@ measured generation. Start with :doc:`all seven PVGIS 5 tools
 </auto_examples/connectors/plot_pvgis_v6>`. Both run offline from complete,
 checksum-verified public responses. Download the :download:`PVGIS examples bundle
 </auto_examples/connectors/pvgis_examples.zip>`.
+
+The terrain example compares real native SRTM, Copernicus, IGN and USGS crops,
+with explicit resolution, surface type and vertical reference. Its download
+bundle includes the four small GeoTIFFs and full request provenance.

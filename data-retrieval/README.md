@@ -846,3 +846,18 @@ NetCDF archives and write normalized regional grids with download manifests.
 Each provider has its own `sources/gpcc` or `sources/cru_ts` package.
 See [data access, units, licenses, limits and examples](../docs/kgpv.md).
 Climatology, KGPV and general mapping calculations live in `methods`.
+
+## Terrain elevation
+
+See the [terrain guide](../docs/terrain.md) for native-resolution downloads, metadata and site lookup.
+
+| Source folder | Client | Product |
+|---|---|---|
+| `sources/srtm` | `SRTMClient` | SRTMGL1 at 1 arcsecond (~30 m), finest public SRTM |
+| `sources/copernicus_dem` | `CopernicusDEMClient` | Public GLO-30 DSM COGs |
+| `sources/ign_terrain` | `IGNTerrainClient` | IGN Spain 5 m numeric WCS DTM |
+| `sources/usgs_3dep` | `USGS3DEPClient` | Available US project-based 1 m lidar DTM |
+
+All use bounded public HTTP, retain provenance and preserve native grids.
+`energy_data_retrieval.terrain` inspects metadata, reads local windows and
+samples sites while keeping missing values and vertical references explicit.

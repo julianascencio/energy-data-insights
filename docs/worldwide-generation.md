@@ -15,15 +15,15 @@ plant-level observation.
 
 The **[worldwide connector coverage example](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)**
 adds two offline figures and their executable Python code to the Connectors
-gallery. Its reviewed inventory includes all 43 implemented source modules:
-22 generation providers, five station networks, 13 weather/climate grid
+gallery. Its reviewed inventory includes all 47 implemented source modules:
+22 generation providers, five station networks, 18 weather/climate/terrain grid
 adapters, the local station-file importer and Natural Earth.
 
 | View | What the map represents | Interpretation |
 | --- | --- | --- |
 | Generation sources | Country/system host countries, regional providers, selected ENTSO-E areas and PV research-site locators | Country shading identifies an implemented source in a country; it does not define its electrical footprint or establish complete national, plant or technology coverage. |
 | Station catalogues | Actual source coordinates from NOAA GHCNh, BSRN, DWD hourly solar and the seven supported SURFRAD stations | Locations include historical catalogue entries and do not establish available variables, dates or operational status. AEMET's credentialed Spanish catalogue is listed separately. |
-| Weather and climate scope | Documented global, land, regional and explicitly selected model-grid products | A product's geographic domain does not prove that a particular coordinate/date has a valid value; native land masks, grid selection and access requirements still apply. |
+| Weather, climate and terrain scope | Documented global, land, regional and explicitly selected model-grid products | A product's geographic domain does not prove that a particular coordinate/date has a valid value; native land masks, grid selection and access requirements still apply. |
 
 Regional markers are schematic location aids, not provider offices, power plants
 or service-area polygons. AEMO represents the National Electricity Market,
