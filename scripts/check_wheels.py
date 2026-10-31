@@ -50,6 +50,14 @@ for name, expected_version in json.loads(sys.argv[1]).items():
                 result.check_returncode()
             print(f'{entry.name} --help: passed')
     print(f'{name} {expected_version}: installed wheel passed')
+
+if len(sys.argv) > 2:
+    import orbitalpv
+    from energy_data_retrieval.sources.orbitalpv_imagery import load_satellite_image
+    assert callable(orbitalpv.Sentinel2GroundConnector)
+    image = load_satellite_image(sys.argv[2])
+    assert image.data.count() > 0 and image.transform[0] < 0.35
+    print('Imagery extra: real native WorldView crop loaded from installed wheel')
 """
 
 
@@ -82,7 +90,14 @@ def main() -> None:
     parser.add_argument(
         "--package", help="Check just this project's wheel; resolve siblings on PyPI"
     )
+    parser.add_argument(
+        "--imagery",
+        action="store_true",
+        help="Also install and exercise the imagery extra (Python 3.13+)",
+    )
     args = parser.parse_args()
+    if args.imagery and sys.version_info < (3, 13):
+        parser.error("--imagery requires Python 3.13+")
     expected = expected_versions(args.package)
     wheels = sorted(args.dist.resolve().glob("*.whl"))
     validate_wheel_set(wheels, expected)
@@ -100,13 +115,26 @@ def main() -> None:
                 str(python),
                 "--default-index",
                 "https://pypi.org/simple",
-                *map(str, wheels),
+                *[
+                    str(wheel)
+                    + (
+                        "[imagery]"
+                        if args.imagery and wheel.name.startswith("energy_data_retrieval-")
+                        else ""
+                    )
+                    for wheel in wheels
+                ],
             ],
             check=True,
             cwd=temporary,
         )
+        extra = (
+            [str(ROOT / "examples/connectors/data/imagery_altadena_pan_analytic.tif")]
+            if args.imagery
+            else []
+        )
         subprocess.run(
-            [str(python), "-I", "-c", CHECK_INSTALLATION, json.dumps(expected)],
+            [str(python), "-I", "-c", CHECK_INSTALLATION, json.dumps(expected), *extra],
             check=True,
             cwd=temporary,
         )

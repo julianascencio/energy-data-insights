@@ -84,11 +84,11 @@ def test_catalogue_covers_every_source_once_with_existing_references():
     ids = [row["id"] for row in rows]
     source_root = ROOT / "data-retrieval/src/energy_data_retrieval/sources"
     implemented = {path.name for path in source_root.iterdir() if (path / "__init__.py").is_file()}
-    assert len(ids) == len(set(ids)) == 47
+    assert len(ids) == len(set(ids)) == 48
     assert set(ids) == implemented
     assert Counter(row["category"] for row in rows) == {
         "generation": 22,
-        "grid": 18,
+        "grid": 19,
         "station_network": 5,
         "local_import": 1,
         "basemap": 1,
@@ -146,7 +146,7 @@ def test_weather_scope_keeps_land_masks_model_selection_and_point_networks_disti
             "srtm",
             "copernicus_dem",
         },
-        "catalogue_grid": {"cmip6"},
+        "catalogue_grid": {"cmip6", "orbitalpv_imagery"},
         "global_network": {"noaa", "bsrn"},
         "country_network": {"aemet", "dwd", "surfrad"},
         "user_defined": {"station"},
@@ -323,7 +323,7 @@ def test_gallery_runs_offline_and_plots_the_reviewed_hosts_and_every_station(mon
     try:
         result = runpy.run_path(str(ROOT / "examples/connectors/plot_generation_coverage.py"))
         assert not attempts
-        assert len(result["catalogue"]["connectors"]) == 47
+        assert len(result["catalogue"]["connectors"]) == 48
         assert result["generation_country_codes"] == set(COUNTRY_HOSTS.values())
         assert len(result["generation"]) == 22
         assert {row[0] for row in result["grid_labels"]} == {

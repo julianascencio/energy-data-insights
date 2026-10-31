@@ -21,6 +21,9 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+imagery = [
+  "orbital-pv[ground] @ git+https://github.com/julianascencio/orbital-pv.git@498c47e182f9f0e1b0f0d40bc3125ef7c2110a05 ; python_version >= '3.13'",
+]
 era5-native = ["icechunk>=1.1,<2", "xarray>=2025.1,<2027", "zarr>=3,<4"]
 cds = [
     "cdsapi>=0.7.7,<1",
@@ -36,3 +39,6 @@ packages = ["src/energy_data_retrieval"]
 Repository = "https://github.com/julianascencio/energy-data-insights"
 Documentation = "https://julianascencio.github.io/energy-data-insights/"
 Issues = "https://github.com/julianascencio/energy-data-insights/issues"
+
+[tool.hatch.metadata]
+allow-direct-references = true

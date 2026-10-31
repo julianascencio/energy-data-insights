@@ -1291,3 +1291,35 @@ U.S. Geological Survey (n.d.). **The National Map GIS data downloads and API**. 
 **Role:** data. TNM products API returns metadata, project extents and official GeoTIFF download URLs. Search pagination and byte budgets are bounded. A project bounding box is not a valid-data mask; overlapping tiles require explicit project selection.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/usgs_3dep/client.py`, `docs/terrain.md`, `examples/connectors/plot_terrain_sources.py`, `examples/connectors/data/terrain_provenance.json`, `scripts/prepare_terrain_samples.py`.
+
+### orbitalpv_imagery
+
+Julián Ascencio Vásquez (n.d.). **Orbital PV: ground satellite imagery connectors and native raster persistence**. [Source](https://github.com/julianascencio/orbital-pv/tree/498c47e182f9f0e1b0f0d40bc3125ef7c2110a05)
+
+**Role:** implemented. Actual dependency, pinned to commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05. Uses Sentinel2GroundConnector, read_ground_image, GroundImage.save_geotiff and load_ground_image. Python 3.13+ optional extra; earlier PyPI 0.7.0 lacks these ground APIs.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.
+
+### earth_search_c1
+
+Element 84 (n.d.). **Earth Search: Sentinel-2 Collection 1 Level-2A STAC and cloud-optimized GeoTIFFs**. [Source](https://github.com/Element84/earth-search)
+
+**Role:** data. Public Earth Search v1, sentinel-2-c1-l2a. Asset-level GSD, projection, scale, offset and nodata retained; scene-wide cloud cover is not a local mask.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.
+
+### sentinel2_imagery
+
+European Space Agency; European Union (n.d.). **Copernicus Sentinel-2 mission and imagery documentation**. [Source](https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel2.html)
+
+**Role:** data. Native 10 m visible/NIR, 20 m and 60 m bands. Examples retain native grid and SCL quality classes; RGB display is not reflectance. Contains modified Copernicus Sentinel data (2026).
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.
+
+### maxar_open_data
+
+Maxar Technologies (n.d.). **Maxar / Vantor Open Data Program: event imagery and public STAC archive**. [Source](https://xpress-docs.maxar.com/OpenData/OpenData_intro.htm)
+
+**Role:** data. Event-limited disaster imagery, program/event CC BY-NC 4.0. Archive https://maxar-opendata.s3.amazonaws.com/events/catalog.json. Original acquisition collection proprietary declaration is also retained. Finest selection compares native GSD and asset grid, never a sharpened preview. Actual WorldView-3 sample has 0.33 m declared GSD; approximately 0.305 m visual display spacing is not new sensor detail.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.

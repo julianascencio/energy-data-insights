@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-31T09:05:52.224415+00:00",
+  "orbitalpv_commit": "498c47e182f9f0e1b0f0d40bc3125ef7c2110a05",
+  "processing": "Native enclosing pixel windows. No resampling, sharpening, reflectance conversion or cloud masking. TIFF sidecars preserve full STAC, masks, calibration and SHA-256.",
+  "samples": [
+    {
+      "fixture": "imagery_tenerife_visual.tif",
+      "place": "Icor area, Tenerife, Spain",
+      "resolution": {
+        "scene_id": "S2A_T28RCS_20260804T115232_L2A",
+        "asset_key": "visual",
+        "product_kind": "rendered_rgb",
+        "native_gsd_m": 10.0,
+        "grid_spacing_m": [
+          10.0,
+          10.0
+        ],
+        "detail_limit_m": 10.0,
+        "acquisition_utc": "2026-08-04T11:53:59.065000Z",
+        "platform": "sentinel-2a"
+      },
+      "shape": [
+        3,
+        69,
+        80
+      ],
+      "valid_fraction": 1.0,
+      "attribution": "Contains modified Copernicus Sentinel data (2026), processed by ESA; distributed by Element 84 Earth Search.",
+      "licence_url": "https://dataspace.copernicus.eu/terms-and-conditions"
+    },
+    {
+      "fixture": "imagery_tenerife_red.tif",
+      "place": "Icor area, Tenerife, Spain",
+      "resolution": {
+        "scene_id": "S2A_T28RCS_20260804T115232_L2A",
+        "asset_key": "red",
+        "product_kind": "spectral",
+        "native_gsd_m": 10.0,
+        "grid_spacing_m": [
+          10.0,
+          10.0
+        ],
+        "detail_limit_m": 10.0,
+        "acquisition_utc": "2026-08-04T11:53:59.065000Z",
+        "platform": "sentinel-2a"
+      },
+      "shape": [
+        1,
+        69,
+        80
+      ],
+      "valid_fraction": 1.0,
+      "attribution": "Contains modified Copernicus Sentinel data (2026), processed by ESA; distributed by Element 84 Earth Search.",
+      "licence_url": "https://dataspace.copernicus.eu/terms-and-conditions"
+    },
+    {
+      "fixture": "imagery_tenerife_scl.tif",
+      "place": "Icor area, Tenerife, Spain",
+      "resolution": {
+        "scene_id": "S2A_T28RCS_20260804T115232_L2A",
+        "asset_key": "scl",
+        "product_kind": "categorical",
+        "native_gsd_m": 20.0,
+        "grid_spacing_m": [
+          20.0,
+          20.0
+        ],
+        "detail_limit_m": 20.0,
+        "acquisition_utc": "2026-08-04T11:53:59.065000Z",
+        "platform": "sentinel-2a"
+      },
+      "shape": [
+        1,
+        35,
+        41
+      ],
+      "valid_fraction": 1.0,
+      "attribution": "Contains modified Copernicus Sentinel data (2026), processed by ESA; distributed by Element 84 Earth Search.",
+      "licence_url": "https://dataspace.copernicus.eu/terms-and-conditions"
+    },
+    {
+      "fixture": "imagery_altadena_pan_analytic.tif",
+      "place": "Altadena, California, USA",
+      "resolution": {
+        "scene_id": "11/031311103031/104001009C64B300",
+        "asset_key": "pan_analytic",
+        "product_kind": "panchromatic",
+        "native_gsd_m": 0.33,
+        "grid_spacing_m": [
+          0.32330209347614414,
+          0.32330209347614414
+        ],
+        "detail_limit_m": 0.33,
+        "acquisition_utc": "2025-01-08 18:41:38Z",
+        "platform": "WV03"
+      },
+      "shape": [
+        1,
+        521,
+        434
+      ],
+      "valid_fraction": 1.0,
+      "attribution": "\u00a9 Maxar/Vantor. Open Data Program, CC BY-NC 4.0. Cropped native pixels; no resampling.",
+      "licence_url": "https://creativecommons.org/licenses/by-nc/4.0/"
+    },
+    {
+      "fixture": "imagery_altadena_visual.tif",
+      "place": "Altadena, California, USA",
+      "resolution": {
+        "scene_id": "11/031311103031/104001009C64B300",
+        "asset_key": "visual",
+        "product_kind": "rendered_pansharpened_rgb",
+        "native_gsd_m": 0.33,
+        "grid_spacing_m": [
+          0.30517578125,
+          0.30517578125
+        ],
+        "detail_limit_m": 0.33,
+        "acquisition_utc": "2025-01-08 18:41:38Z",
+        "platform": "WV03"
+      },
+      "shape": [
+        3,
+        551,
+        460
+      ],
+      "valid_fraction": 1.0,
+      "attribution": "\u00a9 Maxar/Vantor. Open Data Program, CC BY-NC 4.0. Cropped native pixels; no resampling.",
+      "licence_url": "https://creativecommons.org/licenses/by-nc/4.0/"
+    }
+  ]
+}

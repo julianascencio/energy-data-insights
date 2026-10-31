@@ -103,6 +103,22 @@ def _terrain_assets(root: Path) -> None:
             bundle.write(path, arcname=path.relative_to(examples))
 
 
+def _imagery_assets(root: Path) -> None:
+    """Bundle native satellite crops, complete STAC receipts and offline usage."""
+    examples = root / "examples/connectors"
+    gallery = root / "docs/auto_examples/connectors"
+    destination = gallery / "data"
+    destination.mkdir(parents=True, exist_ok=True)
+    samples = sorted((examples / "data").glob("imagery_*"))
+    for sample in samples:
+        shutil.copyfile(sample, destination / sample.name)
+    with ZipFile(
+        gallery / "satellite_imagery_examples.zip", "w", compression=ZIP_DEFLATED
+    ) as bundle:
+        for path in [examples / "plot_satellite_imagery.py", *samples]:
+            bundle.write(path, arcname=path.relative_to(examples))
+
+
 def _climate_assets(root: Path) -> None:
     """Bundle source samples and existing regional context for offline execution."""
     examples = root / "examples/analysis"
@@ -222,6 +238,7 @@ def prepare_sources(root: Path) -> list[str]:
     _generation_assets(root)
     _pvgis_assets(root)
     _terrain_assets(root)
+    _imagery_assets(root)
     _climate_assets(root)
     _site_and_degradation_assets(root)
     return [path.name for path in docs.glob("*.md")]

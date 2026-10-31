@@ -3454,6 +3454,53 @@
       ],
       "url": "https://www.usgs.gov/the-national-map-data-delivery/gis-data-download",
       "notes": "Role: data. TNM products API returns metadata, project extents and official GeoTIFF download URLs. Search pagination and byte budgets are bounded. A project bounding box is not a valid-data mask; overlapping tiles require explicit project selection."
+    },
+    {
+      "type": "software",
+      "title": "Orbital PV: ground satellite imagery connectors and native raster persistence",
+      "authors": [
+        {
+          "name": "Julián Ascencio Vásquez"
+        }
+      ],
+      "url": "https://github.com/julianascencio/orbital-pv/tree/498c47e182f9f0e1b0f0d40bc3125ef7c2110a05",
+      "notes": "Role: implemented. Actual dependency, pinned to commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05. Uses Sentinel2GroundConnector, read_ground_image, GroundImage.save_geotiff and load_ground_image. Python 3.13+ optional extra; earlier PyPI 0.7.0 lacks these ground APIs."
+    },
+    {
+      "type": "web",
+      "title": "Earth Search: Sentinel-2 Collection 1 Level-2A STAC and cloud-optimized GeoTIFFs",
+      "authors": [
+        {
+          "name": "Element 84"
+        }
+      ],
+      "url": "https://github.com/Element84/earth-search",
+      "notes": "Role: data. Public Earth Search v1, sentinel-2-c1-l2a. Asset-level GSD, projection, scale, offset and nodata retained; scene-wide cloud cover is not a local mask."
+    },
+    {
+      "type": "dataset",
+      "title": "Copernicus Sentinel-2 mission and imagery documentation",
+      "authors": [
+        {
+          "name": "European Space Agency"
+        },
+        {
+          "name": "European Union"
+        }
+      ],
+      "url": "https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel2.html",
+      "notes": "Role: data. Native 10 m visible/NIR, 20 m and 60 m bands. Examples retain native grid and SCL quality classes; RGB display is not reflectance. Contains modified Copernicus Sentinel data (2026)."
+    },
+    {
+      "type": "dataset",
+      "title": "Maxar / Vantor Open Data Program: event imagery and public STAC archive",
+      "authors": [
+        {
+          "name": "Maxar Technologies"
+        }
+      ],
+      "url": "https://xpress-docs.maxar.com/OpenData/OpenData_intro.htm",
+      "notes": "Role: data. Event-limited disaster imagery, program/event CC BY-NC 4.0. Archive https://maxar-opendata.s3.amazonaws.com/events/catalog.json. Original acquisition collection proprietary declaration is also retained. Finest selection compares native GSD and asset grid, never a sharpened preview. Actual WorldView-3 sample has 0.33 m declared GSD; approximately 0.305 m visual display spacing is not new sensor detail."
     }
   ]
 }
