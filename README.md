@@ -419,3 +419,4 @@ with native-resolution maps and a one-site elevation/metadata example.
 Satellite imagery: [Orbital PV connector and native-resolution usage](docs/satellite-imagery.md), including 10 m Sentinel-2 and an attributed 0.33 m WorldView example.
 The [solar-farm example near Candelaria, Tenerife](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_candelaria_solar_farm.html) maps Planta Icor in Arico, with official site metadata, a plant boundary, Sentinel-2 and a separate detailed PNOA aerial view.
 The [automatic module-counting example](docs/pv-module-counting.md) adds an experimental count, per-module overlay and reviewable CSV/GeoJSON exports from that aerial image.
+The [Chile module-count audits](docs/chile-module-counting.md) compare CEME1 and the smallest operating solar entry in a dated CEN registry snapshot, Concón. They distinguish published module inventories from unresolved image counts.

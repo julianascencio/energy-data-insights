@@ -522,7 +522,10 @@
       "data-retrieval/src/energy_data_retrieval/sources/cen",
       "examples/connectors/plot_generation_coverage.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "docs/worldwide-generation.md",
+      "docs/chile-module-counting.md",
+      "examples/analysis/plot_chile_largest_module_counting.py",
+      "examples/analysis/plot_chile_smallest_module_counting.py"
     ],
     "note": "Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity.",
     "verified_at": "2026-10-29"
@@ -3936,6 +3939,63 @@
       "examples/analysis/plot_candelaria_module_counting.py"
     ],
     "note": "Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "esri_world_imagery_static",
+    "title": "World Imagery static map exports and source metadata",
+    "authors": [
+      "Esri"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "docs/chile-module-counting.md",
+      "examples/analysis/plot_chile_largest_module_counting.py",
+      "examples/analysis/plot_chile_smallest_module_counting.py"
+    ],
+    "note": "Three attributed research-report static maps. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "ceme1_engineering_inventory",
+    "title": "Parque Fotovoltaico CEME1: Informe de Potencia Máxima, EE-EN-2024-0488-R1",
+    "authors": [
+      "Estudios Eléctricos"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.coordinador.cl/wp-content/uploads/2025/12/EE-EN-2024-0488-R1_Potencia_Maxima_PFV_CEME1.pdf",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "docs/chile-module-counting.md",
+      "examples/analysis/plot_chile_largest_module_counting.py",
+      "examples/analysis/plot_chile_smallest_module_counting.py"
+    ],
+    "note": "Section 3.2, Figure 3.4 and Table 3.1, pages 15–16. 882,720 modules and 480.19 MWDC. This is a reported inventory, never an automatic image count. Upload date is not asserted as report publication date.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "sunbelt_concon_project",
+    "title": "Planta de gas, Concón",
+    "authors": [
+      "Sunbelt"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://sunbelt.cl/proyectos/planta-de-gas-concon/",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "docs/chile-module-counting.md",
+      "examples/analysis/plot_chile_largest_module_counting.py",
+      "examples/analysis/plot_chile_smallest_module_counting.py"
+    ],
+    "note": "Installer confirms photovoltaic technology, PMGD use and 118 kWp DC. No verified module count supplied; photographs do not provide an unobscured complete inventory.",
     "verified_at": "2026-10-31"
   }
 ]

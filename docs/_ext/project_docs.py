@@ -181,6 +181,47 @@ def _module_counting_assets(root: Path) -> None:
                 bundle.write(output, arcname=f"results/{output.name}")
 
 
+def _chile_module_assets(root: Path) -> None:
+    """Ship both offline Chile audits, exact inputs and explicit unresolved results."""
+    from tempfile import TemporaryDirectory
+
+    from energy_analysis.module_counting.chile import export_chile_audit
+
+    source = root / "examples/analysis/data/chile_modules"
+    gallery = root / "docs/auto_examples/analysis"
+    shutil.copytree(source, gallery / "data/chile_modules", dirs_exist_ok=True)
+    with TemporaryDirectory() as temporary:
+        exports = export_chile_audit(source, Path(temporary) / "results")
+        with ZipFile(
+            gallery / "chile_module_counting.zip", "w", compression=ZIP_DEFLATED
+        ) as bundle:
+            for name in (
+                "plot_chile_largest_module_counting.py",
+                "plot_chile_smallest_module_counting.py",
+            ):
+                bundle.write(root / "examples/analysis" / name, arcname=name)
+            for path in sorted(source.iterdir()):
+                bundle.write(path, arcname=f"data/chile_modules/{path.name}")
+            for path in sorted(exports.iterdir()):
+                bundle.write(path, arcname=f"results/{path.name}")
+            bundle.write(root / "docs/chile-module-counting.md", arcname="EVIDENCE.md")
+            bundle.writestr(
+                "README.txt",
+                "Chile module-count audits — CEME1 and Concón\n\n"
+                "Use https://github.com/julianascencio/energy-data-insights\n"
+                "From the repository root: uv sync --locked --all-packages\n"
+                "Then: uv run --no-sync python "
+                "/path/to/extracted/plot_chile_largest_module_counting.py\n"
+                "And: uv run --no-sync python "
+                "/path/to/extracted/plot_chile_smallest_module_counting.py\n"
+                "Python 3.12/3.13; both scripts run offline.\n"
+                "Read EVIDENCE.md and data/chile_modules/README.txt "
+                "for attribution and limitations.\n"
+                "The 882,720 reference is an engineering inventory, not an image count.\n"
+                "Both whole-plant image counts remain unresolved.\n",
+            )
+
+
 def _climate_assets(root: Path) -> None:
     """Bundle source samples and existing regional context for offline execution."""
     examples = root / "examples/analysis"
@@ -303,6 +344,7 @@ def prepare_sources(root: Path) -> list[str]:
     _imagery_assets(root)
     _candelaria_assets(root)
     _module_counting_assets(root)
+    _chile_module_assets(root)
     _climate_assets(root)
     _site_and_degradation_assets(root)
     return [path.name for path in docs.glob("*.md")]

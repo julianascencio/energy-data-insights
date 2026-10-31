@@ -20,6 +20,7 @@ Data access and scientific methods
    _generated/guides/terrain
    _generated/guides/satellite-imagery
    _generated/guides/pv-module-counting
+   _generated/guides/chile-module-counting
    _generated/guides/pvgis
    _generated/guides/location-discovery
    _generated/guides/generation-connectors
