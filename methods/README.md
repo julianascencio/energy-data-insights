@@ -7,6 +7,12 @@ The implementation includes validated source readers, fixed PVCZ thresholds,
 frozen JSON cluster models, and offline global/Chile/Canary reference maps.
 Source periods, input units, published labels and documented refits stay explicit.
 
+## Image-based module counting
+
+[Count regular module-grid candidates](../docs/pv-module-counting.md) from resolved
+RGB aerial imagery, with automatic table/frame detection, review flags and
+geographic exports. This experimental method does not establish an as-built inventory.
+
 ## Main reference and method attribution
 
 The main scientific reference is **Julián Andrés Ascencio Vásquez (2021),

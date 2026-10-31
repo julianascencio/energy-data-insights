@@ -3540,6 +3540,42 @@
       ],
       "url": "https://pnoa.ign.es/web/portal/pnoa-imagen/visualizadores-y-servicios-web",
       "notes": "Role: data. PNOA/IGN rendered aerial orthophoto via https://www.ign.es/wms-inspire/pnoa-ma, OI.OrthoimageCoverage, WMS 1.1.1. IGN attribution/licence terms apply. The Icor view is aerial, not satellite or calibrated reflectance; acquisition date and native GSD remain unknown. Render width does not establish native detail. Original query and SHA-256 retained."
+    },
+    {
+      "type": "article",
+      "title": "PV plant digital mapping for modules’ defects detection by unmanned aerial vehicles",
+      "authors": [
+        {
+          "family-names": "Grimaccia",
+          "given-names": "Francesco"
+        },
+        {
+          "family-names": "Leva",
+          "given-names": "Sonia"
+        },
+        {
+          "family-names": "Niccolai",
+          "given-names": "Alessandro"
+        }
+      ],
+      "url": "https://doi.org/10.1049/iet-rpg.2016.1041",
+      "notes": "Role: background. Background for colour-based PV module recognition and mapping from aerial imagery. The repository uses its own experimental RGB thresholding, morphology, robust table-edge fitting and brightness-profile grid counter; it does not reproduce the paper’s HSV/UAV workflow or its validation. Candidate counts require independent annotations or an as-built inventory.",
+      "year": 2017,
+      "doi": "10.1049/iet-rpg.2016.1041",
+      "journal": "IET Renewable Power Generation",
+      "volume": "11",
+      "issue": "10"
+    },
+    {
+      "type": "software",
+      "title": "SciPy signal.find_peaks reference",
+      "authors": [
+        {
+          "name": "SciPy contributors"
+        }
+      ],
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html",
+      "notes": "Role: implemented. Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy."
     }
   ]
 }

@@ -190,6 +190,12 @@ Site sources: [Cabildo/ITER catalogue (CC BY)](https://datos.canarias.es/catalog
 [PNOA/IGN services](https://pnoa.ign.es/web/portal/pnoa-imagen/visualizadores-y-servicios-web)
 and [Natural Earth (public domain)](https://www.naturalearthdata.com/about/terms-of-use/).
 
+The [automatic module-counting follow-up](pv-module-counting.md) uses the detailed
+PNOA image to detect seven tables and approximately 3,030 module candidates,
+with an annotated overlay, explicit review flags and CSV/GeoJSON exports.
+This is an experimental estimate within the mapped polygon, not a validated
+inventory of the entire installation.
+
 ### Combine imagery with independent measurements
 
 1. Keep the original TIFF, its checksum sidecar, full STAC metadata and the

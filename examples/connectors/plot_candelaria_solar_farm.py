@@ -18,6 +18,9 @@ Run with Python 3.13 and the optional ``imagery`` workspace group. Download
 See the :doc:`imagery guide <../../_generated/guides/satellite-imagery>` for
 installation and live connector usage. This gallery runs entirely offline.
 
+Continue with :doc:`automatic module counting <../analysis/plot_candelaria_module_counting>`
+for an annotated candidate count from the detailed aerial image.
+
 Credits: Cabildo de Tenerife / ITER (CC BY), OpenStreetMap contributors (ODbL),
 Copernicus Sentinel data (2026) / ESA / Element 84, PNOA/IGN and Natural Earth.
 """

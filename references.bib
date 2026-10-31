@@ -1359,3 +1359,23 @@
   url = {https://pnoa.ign.es/web/portal/pnoa-imagen/visualizadores-y-servicios-web},
   note = {Role: data. PNOA/IGN rendered aerial orthophoto via https://www.ign.es/wms-inspire/pnoa-ma, OI.OrthoimageCoverage, WMS 1.1.1. IGN attribution/licence terms apply. The Icor view is aerial, not satellite or calibrated reflectance; acquisition date and native GSD remain unknown. Render width does not establish native detail. Original query and SHA-256 retained.}
 }
+
+@article{grimaccia_2017_pv_mapping,
+  author = {Grimaccia, Francesco and Leva, Sonia and Niccolai, Alessandro},
+  title = {{PV plant digital mapping for modules’ defects detection by unmanned aerial vehicles}},
+  year = {2017},
+  journal = {IET Renewable Power Generation},
+  volume = {11},
+  number = {10},
+  pages = {1221--1228},
+  doi = {10.1049/iet-rpg.2016.1041},
+  url = {https://doi.org/10.1049/iet-rpg.2016.1041},
+  note = {Role: background. Background for colour-based PV module recognition and mapping from aerial imagery. The repository uses its own experimental RGB thresholding, morphology, robust table-edge fitting and brightness-profile grid counter; it does not reproduce the paper’s HSV/UAV workflow or its validation. Candidate counts require independent annotations or an as-built inventory.}
+}
+
+@misc{scipy_find_peaks,
+  author = {{SciPy contributors}},
+  title = {{SciPy signal.find\_peaks reference}},
+  url = {https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html},
+  note = {Role: implemented. Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy.}
+}
