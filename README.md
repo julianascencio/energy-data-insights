@@ -417,3 +417,4 @@ Terrain: [SRTM, Copernicus DEM, IGN and USGS connectors](docs/terrain.md),
 with native-resolution maps and a one-site elevation/metadata example.
 
 Satellite imagery: [Orbital PV connector and native-resolution usage](docs/satellite-imagery.md), including 10 m Sentinel-2 and an attributed 0.33 m WorldView example.
+The [solar-farm example near Candelaria, Tenerife](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_candelaria_solar_farm.html) maps Planta Icor in Arico, with official site metadata, a plant boundary, Sentinel-2 and a separate detailed PNOA aerial view.

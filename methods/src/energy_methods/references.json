@@ -2359,7 +2359,10 @@
       "docs/worldwide-generation.md",
       "scripts/prepare_connector_coverage.py",
       "examples/connectors/data/generation_coverage_world.geojson",
-      "examples/connectors/data/generation_coverage_provenance.json"
+      "examples/connectors/data/generation_coverage_provenance.json",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/data/candelaria_site.json",
+      "scripts/prepare_candelaria_imagery.py"
     ],
     "note": "Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. The worldwide connector coverage fixture retains 176 unchanged 1:110 million country geometries from the same version; Antarctica is explicitly excluded because its original unsplit world-spanning ring fails the country-map antimeridian contract. Its provenance records the source archive, derived GeoJSON checksum and exclusion. Country shapes supply geographic context rather than electrical service territories or evidence of observation availability. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.",
     "verified_at": "2026-10-30"
@@ -3742,7 +3745,10 @@
       "docs/satellite-imagery.md",
       "examples/connectors/plot_satellite_imagery.py",
       "examples/connectors/data/imagery_provenance.json",
-      "scripts/prepare_satellite_imagery_samples.py"
+      "scripts/prepare_satellite_imagery_samples.py",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/data/candelaria_site.json",
+      "scripts/prepare_candelaria_imagery.py"
     ],
     "note": "Actual dependency, pinned to commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05. Uses Sentinel2GroundConnector, read_ground_image, GroundImage.save_geotiff and load_ground_image. Python 3.13+ optional workspace dependency group; Git pin remains outside published package metadata. Earlier PyPI 0.7.0 lacks these ground APIs.",
     "verified_at": "2026-10-31"
@@ -3763,7 +3769,10 @@
       "docs/satellite-imagery.md",
       "examples/connectors/plot_satellite_imagery.py",
       "examples/connectors/data/imagery_provenance.json",
-      "scripts/prepare_satellite_imagery_samples.py"
+      "scripts/prepare_satellite_imagery_samples.py",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/data/candelaria_site.json",
+      "scripts/prepare_candelaria_imagery.py"
     ],
     "note": "Public Earth Search v1, sentinel-2-c1-l2a. Asset-level GSD, projection, scale, offset and nodata retained; scene-wide cloud cover is not a local mask.",
     "verified_at": "2026-10-31"
@@ -3785,7 +3794,10 @@
       "docs/satellite-imagery.md",
       "examples/connectors/plot_satellite_imagery.py",
       "examples/connectors/data/imagery_provenance.json",
-      "scripts/prepare_satellite_imagery_samples.py"
+      "scripts/prepare_satellite_imagery_samples.py",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/data/candelaria_site.json",
+      "scripts/prepare_candelaria_imagery.py"
     ],
     "note": "Native 10 m visible/NIR, 20 m and 60 m bands. Examples retain native grid and SCL quality classes; RGB display is not reflectance. Contains modified Copernicus Sentinel data (2026).",
     "verified_at": "2026-10-31"
@@ -3809,6 +3821,71 @@
       "scripts/prepare_satellite_imagery_samples.py"
     ],
     "note": "Event-limited disaster imagery, program/event CC BY-NC 4.0. Archive https://maxar-opendata.s3.amazonaws.com/events/catalog.json. Original acquisition collection proprietary declaration is also retained. Finest selection compares native GSD and asset grid, never a sharpened preview. Actual WorldView-3 sample has 0.33 m declared GSD; approximately 0.305 m visual display spacing is not new sensor detail.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "tenerife_iter_pv_catalogue",
+    "title": "Infraestructuras de generación de energía en Tenerife",
+    "authors": [
+      "Cabildo Insular de Tenerife",
+      "Instituto Tecnológico y de Energías Renovables"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://datos.canarias.es/catalogos/general/dataset/infraestructuras-de-generacion-de-energia-en-tenerife",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/data/candelaria_site.json",
+      "scripts/prepare_candelaria_imagery.py",
+      "docs/satellite-imagery.md",
+      "examples/connectors/data/candelaria_README.txt"
+    ],
+    "note": "CC BY. Official catalogue feature 6 identifies Planta Icor at longitude -16.442229, latitude 28.194341 with 2,000 kW listed power; AC/DC basis unspecified. Full canonical GeoJSON and request hash retained. OSM point-in-polygon association is not a surveyed boundary.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "osm_solar_footprints",
+    "title": "OpenStreetMap solar-energy features and copyright",
+    "authors": [
+      "OpenStreetMap contributors"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.openstreetmap.org/copyright",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/data/candelaria_site.json",
+      "scripts/prepare_candelaria_imagery.py",
+      "docs/satellite-imagery.md",
+      "examples/connectors/data/candelaria_README.txt"
+    ],
+    "note": "ODbL-1.0. Original query-bound Tenerife capture from Orbital PV commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05, examples/ground_imagery/_data/tenerife-osm.json, retrieved 2026-10-30; original sidecar and checksum retained. Way 430266023 contains the official Icor point. Mapping does not establish ownership, full installation extent or capacity.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "ign_pnoa_imagery",
+    "title": "PNOA Imagen: visualizadores y servicios web",
+    "authors": [
+      "Instituto Geográfico Nacional",
+      "Plan Nacional de Ortofotografía Aérea"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://pnoa.ign.es/web/portal/pnoa-imagen/visualizadores-y-servicios-web",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/data/candelaria_site.json",
+      "scripts/prepare_candelaria_imagery.py",
+      "docs/satellite-imagery.md",
+      "examples/connectors/data/candelaria_README.txt"
+    ],
+    "note": "PNOA/IGN rendered aerial orthophoto via https://www.ign.es/wms-inspire/pnoa-ma, OI.OrthoimageCoverage, WMS 1.1.1. IGN attribution/licence terms apply. The Icor view is aerial, not satellite or calibrated reflectance; acquisition date and native GSD remain unknown. Render width does not establish native detail. Original query and SHA-256 retained.",
     "verified_at": "2026-10-31"
   }
 ]

@@ -1,0 +1,56 @@
+{
+  "source": "Earth Search STAC snapshot",
+  "url": "https://earth-search.aws.element84.com/v1/search",
+  "retrieved_at": "2026-10-31T09:39:28.637353+00:00",
+  "sha256": "13dca5432e0fb007b64db47376504545f354affcc066cbecf71a85e314e8b10a",
+  "bytes": 29581,
+  "path": "../candelaria-research/captured/candelaria_scenes.json",
+  "request": {
+    "endpoint": "https://earth-search.aws.element84.com/v1",
+    "search": {
+      "collections": [
+        "sentinel-2-c1-l2a"
+      ],
+      "bbox": [
+        -16.4431,
+        28.1935,
+        -16.441,
+        28.1953
+      ],
+      "datetime": "2026-08-01T00:00:00+00:00/2026-08-06T00:00:00+00:00",
+      "limit": 10,
+      "query": {
+        "eo:cloud_cover": {
+          "lte": 10.0
+        }
+      },
+      "sortby": [
+        {
+          "field": "properties.eo:cloud_cover",
+          "direction": "asc"
+        }
+      ]
+    },
+    "max_items": 10
+  },
+  "pages": [
+    {
+      "source": "Earth Search STAC page",
+      "url": "https://earth-search.aws.element84.com/v1/search",
+      "retrieved_at": "2026-10-31T09:39:28.466086+00:00",
+      "sha256": "e6b8b008d0317eff4a0d7c8a507de910419aae73960de7e068c2a85d11d4c0c6",
+      "bytes": 18401,
+      "path": null
+    },
+    {
+      "source": "Earth Search STAC page",
+      "url": "https://earth-search.aws.element84.com/v1/search",
+      "retrieved_at": "2026-10-31T09:39:28.637144+00:00",
+      "sha256": "33142793e043895e51a6bad7ee625eb119d888bf85d8cb701b7c7565540cde9f",
+      "bytes": 273,
+      "path": null
+    }
+  ],
+  "documentation": "https://github.com/Element84/earth-search",
+  "attribution": "Contains Copernicus Sentinel data, processed by Element 84"
+}

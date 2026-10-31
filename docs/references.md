@@ -802,7 +802,7 @@ Natural Earth contributors (n.d.). **Natural Earth: Admin 0 - Countries**. [Sour
 
 **Role:** data. Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. The worldwide connector coverage fixture retains 176 unchanged 1:110 million country geometries from the same version; Antarctica is explicitly excluded because its original unsplit world-spanning ring fails the country-map antimeridian contract. Its provenance records the source archive, derived GeoJSON checksum and exclusion. Country shapes supply geographic context rather than electrical service territories or evidence of observation availability. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.
 
-**Used by:** `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `docs/country-mapping.md`, `examples/analysis/plot_country_risk.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `scripts/prepare_weather_risk_example.py`, `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_chile.py`, `docs/kgpv-chile.md`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `docs/worldwide-generation.md`, `scripts/prepare_connector_coverage.py`, `examples/connectors/data/generation_coverage_world.geojson`, `examples/connectors/data/generation_coverage_provenance.json`.
+**Used by:** `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `docs/country-mapping.md`, `examples/analysis/plot_country_risk.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `scripts/prepare_weather_risk_example.py`, `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `examples/analysis/plot_kgpv_chile.py`, `docs/kgpv-chile.md`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `docs/worldwide-generation.md`, `scripts/prepare_connector_coverage.py`, `examples/connectors/data/generation_coverage_world.geojson`, `examples/connectors/data/generation_coverage_provenance.json`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`.
 
 ### shapely_documentation
 
@@ -1298,7 +1298,7 @@ Julián Ascencio Vásquez (n.d.). **Orbital PV: ground satellite imagery connect
 
 **Role:** implemented. Actual dependency, pinned to commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05. Uses Sentinel2GroundConnector, read_ground_image, GroundImage.save_geotiff and load_ground_image. Python 3.13+ optional workspace dependency group; Git pin remains outside published package metadata. Earlier PyPI 0.7.0 lacks these ground APIs.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`.
 
 ### earth_search_c1
 
@@ -1306,7 +1306,7 @@ Element 84 (n.d.). **Earth Search: Sentinel-2 Collection 1 Level-2A STAC and clo
 
 **Role:** data. Public Earth Search v1, sentinel-2-c1-l2a. Asset-level GSD, projection, scale, offset and nodata retained; scene-wide cloud cover is not a local mask.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`.
 
 ### sentinel2_imagery
 
@@ -1314,7 +1314,7 @@ European Space Agency; European Union (n.d.). **Copernicus Sentinel-2 mission an
 
 **Role:** data. Native 10 m visible/NIR, 20 m and 60 m bands. Examples retain native grid and SCL quality classes; RGB display is not reflectance. Contains modified Copernicus Sentinel data (2026).
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`.
 
 ### maxar_open_data
 
@@ -1323,3 +1323,27 @@ Maxar Technologies (n.d.). **Maxar / Vantor Open Data Program: event imagery and
 **Role:** data. Event-limited disaster imagery, program/event CC BY-NC 4.0. Archive https://maxar-opendata.s3.amazonaws.com/events/catalog.json. Original acquisition collection proprietary declaration is also retained. Finest selection compares native GSD and asset grid, never a sharpened preview. Actual WorldView-3 sample has 0.33 m declared GSD; approximately 0.305 m visual display spacing is not new sensor detail.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.
+
+### tenerife_iter_pv_catalogue
+
+Cabildo Insular de Tenerife; Instituto Tecnológico y de Energías Renovables (n.d.). **Infraestructuras de generación de energía en Tenerife**. [Source](https://datos.canarias.es/catalogos/general/dataset/infraestructuras-de-generacion-de-energia-en-tenerife)
+
+**Role:** data. CC BY. Official catalogue feature 6 identifies Planta Icor at longitude -16.442229, latitude 28.194341 with 2,000 kW listed power; AC/DC basis unspecified. Full canonical GeoJSON and request hash retained. OSM point-in-polygon association is not a surveyed boundary.
+
+**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`.
+
+### osm_solar_footprints
+
+OpenStreetMap contributors (n.d.). **OpenStreetMap solar-energy features and copyright**. [Source](https://www.openstreetmap.org/copyright)
+
+**Role:** data. ODbL-1.0. Original query-bound Tenerife capture from Orbital PV commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05, examples/ground_imagery/_data/tenerife-osm.json, retrieved 2026-10-30; original sidecar and checksum retained. Way 430266023 contains the official Icor point. Mapping does not establish ownership, full installation extent or capacity.
+
+**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`.
+
+### ign_pnoa_imagery
+
+Instituto Geográfico Nacional; Plan Nacional de Ortofotografía Aérea (n.d.). **PNOA Imagen: visualizadores y servicios web**. [Source](https://pnoa.ign.es/web/portal/pnoa-imagen/visualizadores-y-servicios-web)
+
+**Role:** data. PNOA/IGN rendered aerial orthophoto via https://www.ign.es/wms-inspire/pnoa-ma, OI.OrthoimageCoverage, WMS 1.1.1. IGN attribution/licence terms apply. The Icor view is aerial, not satellite or calibrated reflectance; acquisition date and native GSD remain unknown. Render width does not establish native detail. Original query and SHA-256 retained.
+
+**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`.

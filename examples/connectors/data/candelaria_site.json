@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "prepared_at_utc": "2026-10-31T09:39:40.233246+00:00",
+  "orbitalpv_commit": "498c47e182f9f0e1b0f0d40bc3125ef7c2110a05",
+  "official_site": {
+    "type": "Feature",
+    "properties": {
+      "instalacion_id": 6,
+      "instalacion_nombre": "Planta Icor",
+      "instalacion_tipo": "Fotovoltaica",
+      "instalacion_potencia": 2000,
+      "instalacion_unidad_potencia": "kW",
+      "instalacion_latitud": 28.194341,
+      "instalacion_longitud": -16.442229
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -16.442229,
+        28.194341
+      ]
+    }
+  },
+  "catalogue_request": {
+    "endpoint": "https://datos.tenerife.es/ckan/dataset/fa991fa9-a113-452c-9f1b-331b1ffefbe1/resource/2782375b-f2c7-4a05-a685-4eee554a6b1b/download/plantas-fotovoltaicas-y-parques-eolicos.geojson",
+    "parameters": {},
+    "retrieved_at_utc": "2026-10-31T09:39:24.086257+00:00",
+    "sha256": "430954423811f8c90ff8b87f7d2854b087436db9564f7885915fc354a87813d6",
+    "size_bytes": 3912,
+    "cache_hit": false
+  },
+  "catalogue_license": "CC BY; Cabildo Insular de Tenerife / ITER",
+  "candelaria_reference_lonlat": [
+    -16.37,
+    28.355
+  ],
+  "distance_basis": "WGS84 ellipsoidal straight-line distance from rounded town centre; not a road distance or nearest-farm claim",
+  "distance_km": 19.163274289995943,
+  "footprint": {
+    "type": "Feature",
+    "properties": {
+      "osm_type": "way",
+      "osm_id": 430266023,
+      "original_tags": {
+        "landuse": "industrial",
+        "plant:method": "photovoltaic",
+        "plant:output:electricity": "yes",
+        "plant:source": "solar",
+        "power": "plant"
+      },
+      "join": "Unique OSM photovoltaic plant polygon containing the official catalogue point; spatial association, not a surveyed or operator-validated boundary"
+    },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            -16.4426681,
+            28.1941998
+          ],
+          [
+            -16.4423409,
+            28.1939422
+          ],
+          [
+            -16.4423348,
+            28.1938949
+          ],
+          [
+            -16.4420405,
+            28.193818
+          ],
+          [
+            -16.4417508,
+            28.1939031
+          ],
+          [
+            -16.4415067,
+            28.1939114
+          ],
+          [
+            -16.441437,
+            28.1939386
+          ],
+          [
+            -16.4420599,
+            28.1949226
+          ],
+          [
+            -16.4420787,
+            28.1949386
+          ],
+          [
+            -16.4421069,
+            28.1949522
+          ],
+          [
+            -16.4423208,
+            28.194964
+          ],
+          [
+            -16.4425964,
+            28.1949959
+          ],
+          [
+            -16.4425851,
+            28.1946153
+          ],
+          [
+            -16.442604,
+            28.194569
+          ],
+          [
+            -16.4426653,
+            28.1945515
+          ],
+          [
+            -16.4426681,
+            28.1941998
+          ]
+        ]
+      ]
+    }
+  },
+  "footprint_license": "ODbL-1.0; © OpenStreetMap contributors",
+  "satellite_samples": [
+    {
+      "fixture": "candelaria_visual.tif",
+      "resolution": {
+        "scene_id": "S2A_T28RCS_20260804T115232_L2A",
+        "asset_key": "visual",
+        "product_kind": "rendered_rgb",
+        "native_gsd_m": 10.0,
+        "grid_spacing_m": [
+          10.0,
+          10.0
+        ],
+        "detail_limit_m": 10.0,
+        "acquisition_utc": "2026-08-04T11:53:59.065000Z",
+        "platform": "sentinel-2a"
+      }
+    },
+    {
+      "fixture": "candelaria_red.tif",
+      "resolution": {
+        "scene_id": "S2A_T28RCS_20260804T115232_L2A",
+        "asset_key": "red",
+        "product_kind": "spectral",
+        "native_gsd_m": 10.0,
+        "grid_spacing_m": [
+          10.0,
+          10.0
+        ],
+        "detail_limit_m": 10.0,
+        "acquisition_utc": "2026-08-04T11:53:59.065000Z",
+        "platform": "sentinel-2a"
+      }
+    },
+    {
+      "fixture": "candelaria_scl.tif",
+      "resolution": {
+        "scene_id": "S2A_T28RCS_20260804T115232_L2A",
+        "asset_key": "scl",
+        "product_kind": "categorical",
+        "native_gsd_m": 20.0,
+        "grid_spacing_m": [
+          20.0,
+          20.0
+        ],
+        "detail_limit_m": 20.0,
+        "acquisition_utc": "2026-08-04T11:53:59.065000Z",
+        "platform": "sentinel-2a"
+      }
+    }
+  ],
+  "aerial_fixture": "candelaria_pnoa.png",
+  "aerial_attribution": "PNOA/IGN; aerial orthophotography, rendered WMS display; native resolution and capture date not established by this request",
+  "locator_source": {
+    "source": "Natural Earth Admin 0 - Countries",
+    "scale": "10m",
+    "version": "5.1.1",
+    "license": "Public domain",
+    "terms_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "boundary_policy": "Natural Earth default de facto boundaries",
+    "request": {
+      "endpoint": "https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_countries.zip",
+      "parameters": {},
+      "retrieved_at_utc": "2026-10-31T09:39:39.807496+00:00",
+      "sha256": "ce1ac7036499a0edd641fbc093cd209a98f96a49d2eca8480aaacad35138a7f6",
+      "size_bytes": 4930492,
+      "cache_hit": false
+    },
+    "files_sha256": {
+      "ne_10m_admin_0_countries.VERSION.txt": "548358969090d629b41888f5fe664ac31b7203dfd849f7c1ef820ac055b62191",
+      "ne_10m_admin_0_countries.cpg": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "ne_10m_admin_0_countries.dbf": "c5dbd3dd5fd7e2ef49051fc88562c03819e8ea63a382642df6eadd1243bf4b49",
+      "ne_10m_admin_0_countries.prj": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+      "ne_10m_admin_0_countries.shp": "7ce119ef6342e43cff7c0c3004e0911ab7ec1988a14734372031d2012180e7bc",
+      "ne_10m_admin_0_countries.shx": "ca19ec112d054c77bc8f7ac00e3b110d5dff32cc9bcf4cd1b8b66bdd0f611d32"
+    },
+    "reference_ids": [
+      "natural_earth_countries"
+    ]
+  },
+  "farm_bounds_wgs84": [
+    -16.4431,
+    28.1935,
+    -16.441,
+    28.1953
+  ],
+  "catalogue_fixture": "candelaria_catalogue.geojson",
+  "locator_fixture_sha256": "da596f590df96c605e5bb3c84f0fe2da7a416887b43e71c611b8294b46b9ec59"
+}
