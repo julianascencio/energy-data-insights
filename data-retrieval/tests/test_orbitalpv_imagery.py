@@ -198,7 +198,7 @@ def test_missing_or_incompatible_optional_dependency_has_actionable_error(monkey
         module._orbital()
     monkeypatch.setattr(module.sys, "version_info", (3, 13))
     monkeypatch.setattr(module.importlib, "import_module", lambda name: object())
-    with pytest.raises(ImportError, match="pinned imagery extra"):
+    with pytest.raises(ImportError, match="pinned Orbital PV source"):
         module._orbital()
 
 
@@ -221,13 +221,13 @@ def test_sentinel_search_delegates_to_installed_orbital_and_keeps_cap(monkeypatc
             },
         )
 
-    monkeypatch.setattr(
-        httpx.Client,
-        "request",
-        lambda self, method, url, **kwargs: respond(
-            httpx.Request(method, url, json=kwargs.get("json"), params=kwargs.get("params"))
-        ),
-    )
+    original_client = httpx.Client
+
+    def offline_client(**kwargs):
+        kwargs.update(trust_env=False, transport=httpx.MockTransport(respond))
+        return original_client(**kwargs)
+
+    monkeypatch.setattr(httpx, "Client", offline_client)
     with HTTPClient(IMAGERY_HOSTS) as http:
         result = OrbitalPVImageryClient(http).search_sentinel(
             BOUNDS, time_min="2025-01-08", time_max="2025-01-09", max_items=1

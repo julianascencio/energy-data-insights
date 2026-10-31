@@ -1296,7 +1296,7 @@ U.S. Geological Survey (n.d.). **The National Map GIS data downloads and API**. 
 
 Julián Ascencio Vásquez (n.d.). **Orbital PV: ground satellite imagery connectors and native raster persistence**. [Source](https://github.com/julianascencio/orbital-pv/tree/498c47e182f9f0e1b0f0d40bc3125ef7c2110a05)
 
-**Role:** implemented. Actual dependency, pinned to commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05. Uses Sentinel2GroundConnector, read_ground_image, GroundImage.save_geotiff and load_ground_image. Python 3.13+ optional extra; earlier PyPI 0.7.0 lacks these ground APIs.
+**Role:** implemented. Actual dependency, pinned to commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05. Uses Sentinel2GroundConnector, read_ground_image, GroundImage.save_geotiff and load_ground_image. Python 3.13+ optional workspace dependency group; Git pin remains outside published package metadata. Earlier PyPI 0.7.0 lacks these ground APIs.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py`, `docs/satellite-imagery.md`, `examples/connectors/plot_satellite_imagery.py`, `examples/connectors/data/imagery_provenance.json`, `scripts/prepare_satellite_imagery_samples.py`.
 

@@ -22,5 +22,5 @@ attribution and measured native spacing. A finer RGB display grid does not
 imply finer sensor detail. Valid pixels are not necessarily cloud/shadow free.
 
 Reproduce with scripts/prepare_satellite_imagery_samples.py using Python 3.13
-and energy-data-retrieval[imagery]. The example runs offline through the actual
+and the optional imagery workspace group (pinned Orbital PV alongside this package). The example runs offline through the actual
 Orbital PV verified loader. Its panchromatic percentile stretch is display-only.

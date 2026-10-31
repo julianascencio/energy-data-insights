@@ -13,6 +13,11 @@ such as NumPy and LightGBM supply their own platform-specific wheels.
 Versions are independent. A tag releases only its named package. The workspace
 root is not a distribution, and unscoped tags such as `v0.1.0` do not publish.
 
+The optional Orbital PV imagery integration is installed separately from its pinned
+Git source; its workspace dependency group is not part of published wheel metadata.
+See the [satellite installation guide](satellite-imagery.md). This keeps the
+release artifacts free of direct Git URL dependencies.
+
 ## One-time publisher setup
 
 The workflow uses [PyPI Trusted Publishing](https://docs.pypi.org/trusted-publishers/),

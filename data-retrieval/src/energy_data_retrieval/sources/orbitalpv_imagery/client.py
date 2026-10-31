@@ -33,18 +33,20 @@ REFERENCE_IDS = ("orbitalpv_imagery", "earth_search_c1", "sentinel2_imagery", "m
 def _orbital() -> Any:
     if sys.version_info < (3, 13):
         raise ImportError(
-            "Orbital PV imagery requires Python 3.13+ and energy-data-retrieval[imagery]"
+            "Orbital PV imagery requires Python 3.13+ and the imagery workspace dependency group"
         )
     try:
         module = importlib.import_module("orbitalpv")
     except ImportError as exc:
-        raise ImportError("Install energy-data-retrieval[imagery] with Python 3.13+") from exc
+        raise ImportError(
+            "Install the pinned Orbital PV integration with Python 3.13+ (see the satellite guide)"
+        ) from exc
     if not all(
         hasattr(module, name)
         for name in ("Sentinel2GroundConnector", "read_ground_image", "load_ground_image")
     ):
         raise ImportError(
-            "Install the pinned imagery extra; the older PyPI release lacks these APIs"
+            "Install the pinned Orbital PV source; the older PyPI release lacks these APIs"
         )
     return module
 

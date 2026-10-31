@@ -864,4 +864,4 @@ samples sites while keeping missing values and vertical references explicit.
 
 ## Native satellite imagery
 
-`sources/orbitalpv_imagery` reuses Orbital PV for Sentinel-2 discovery, native COG reading and verified offline GeoTIFFs. It adds bounded Maxar Open Data event discovery and native-resolution selection. Use Python 3.13 with the `imagery` extra. See the [satellite guide](../docs/satellite-imagery.md) for installation, complete site metadata, sub-metre usage, coverage and licence limits.
+`sources/orbitalpv_imagery` reuses Orbital PV for Sentinel-2 discovery, native COG reading and verified offline GeoTIFFs. It adds bounded Maxar Open Data event discovery and native-resolution selection. Use Python 3.13 with the `imagery` workspace dependency group (or install the pinned Orbital PV source alongside the package). See the [satellite guide](../docs/satellite-imagery.md) for installation, complete site metadata, sub-metre usage, coverage and licence limits.

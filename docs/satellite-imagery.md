@@ -11,16 +11,25 @@ or [download the complete offline bundle](https://julianascencio.github.io/energ
 ## Install
 
 ```bash
-uv sync --locked --all-packages --extra imagery --group docs --python 3.13
+uv sync --locked --all-packages --group imagery --group docs --python 3.13
 ```
 
-For an installed distribution, use `uv pip install 'energy-data-retrieval[imagery]'`
-under Python 3.13+. The optional dependency pins Orbital PV to commit
-`498c47e182f9f0e1b0f0d40bc3125ef7c2110a05`: the earlier PyPI 0.7.0 artifact does
-not contain these ground-imagery APIs. This Git dependency needs Git and GitHub
-access at installation. Core Energy Data Insights still supports Python 3.12;
-only the Orbital PV image operations require 3.13. Metadata inspection and Maxar
-catalogue search work without the optional dependency.
+For an installed distribution, install Orbital PV alongside the retrieval package:
+
+```bash
+uv pip install energy-data-retrieval \
+  'orbital-pv[ground] @ git+https://github.com/julianascencio/orbital-pv.git@498c47e182f9f0e1b0f0d40bc3125ef7c2110a05'
+```
+
+Use Python 3.13+. The optional **workspace dependency group** pins Orbital PV to
+that exact source commit: the earlier PyPI 0.7.0 artifact does not contain the
+ground-imagery APIs. Git and GitHub access are needed at installation. The Git
+pin stays outside published package metadata so the three distributions remain
+compatible with PyPI releases. Orbital PV is a separately installed integration,
+not an `energy-data-retrieval[imagery]` extra. Core Energy Data Insights still
+supports Python 3.12; image operations require 3.13. Metadata inspection and
+Maxar catalogue search work without Orbital PV. Once the upstream APIs are
+released on PyPI, the integration can move to a normal versioned optional extra.
 
 ## Which resolution is available?
 

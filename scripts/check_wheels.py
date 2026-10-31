@@ -31,6 +31,8 @@ for name, expected_version in json.loads(sys.argv[1]).items():
     assert module.__version__ == expected_version, module.__version__
     distribution = importlib.metadata.distribution(name)
     assert distribution.version == expected_version, distribution.version
+    assert not any(" @ " in requirement for requirement in distribution.requires or []), (
+        "Published package metadata must not contain direct URL dependencies", name)
     resources = importlib.resources.files(module)
     assert resources.joinpath('py.typed').is_file(), name
     if name == 'energy-data-retrieval':
@@ -57,7 +59,7 @@ if len(sys.argv) > 2:
     assert callable(orbitalpv.Sentinel2GroundConnector)
     image = load_satellite_image(sys.argv[2])
     assert image.data.count() > 0 and image.transform[0] < 0.35
-    print('Imagery extra: real native WorldView crop loaded from installed wheel')
+    print('Orbital PV integration: real native WorldView crop loaded from installed wheel')
 """
 
 
@@ -93,7 +95,7 @@ def main() -> None:
     parser.add_argument(
         "--imagery",
         action="store_true",
-        help="Also install and exercise the imagery extra (Python 3.13+)",
+        help="Also install pinned Orbital PV and exercise the imagery integration (Python 3.13+)",
     )
     args = parser.parse_args()
     if args.imagery and sys.version_info < (3, 13):
@@ -115,15 +117,14 @@ def main() -> None:
                 str(python),
                 "--default-index",
                 "https://pypi.org/simple",
-                *[
-                    str(wheel)
-                    + (
-                        "[imagery]"
-                        if args.imagery and wheel.name.startswith("energy_data_retrieval-")
-                        else ""
-                    )
-                    for wheel in wheels
-                ],
+                *map(str, wheels),
+                *(
+                    tomllib.loads((ROOT / "pyproject.toml").read_text())["dependency-groups"][
+                        "imagery"
+                    ]
+                    if args.imagery
+                    else []
+                ),
             ],
             check=True,
             cwd=temporary,

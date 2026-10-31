@@ -12,7 +12,7 @@ The highest-detail selection is scoped to this area, event and date range.
 No interpolation, sharpening or overview read creates finer native detail.
 The coloured display product and panchromatic analytical band are distinct.
 
-Install Python 3.13 and ``energy-data-retrieval[imagery]``; see the
+Install Python 3.13, this package and the pinned Orbital PV integration; see the
 `satellite imagery guide <https://julianascencio.github.io/energy-data-insights/_generated/guides/satellite-imagery.html>`_.
 Download :download:`the complete example and native crops <satellite_imagery_examples.zip>`.
 All execution here is offline; the explicit live capture script is

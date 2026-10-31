@@ -1,6 +1,6 @@
 """Explicit live capture of small native satellite windows; never run by CI.
 
-Requires Python 3.13 and the imagery extra. The output contains public provider
+Requires Python 3.13 and the imagery workspace group. The output contains public provider
 pixels with their own licences, separate from the code licence. Orbital PV
 performs all pixel reads and writes without resampling or sharpening.
 """

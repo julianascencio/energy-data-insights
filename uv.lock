@@ -650,6 +650,9 @@ docs = [
     { name = "sphinx-gallery" },
     { name = "sphinxcontrib-mermaid" },
 ]
+imagery = [
+    { name = "orbital-pv", extra = ["ground"], marker = "python_full_version >= '3.13'" },
+]
 
 [package.metadata]
 
@@ -671,6 +674,7 @@ docs = [
     { name = "sphinx-gallery", specifier = ">=0.19,<0.20" },
     { name = "sphinxcontrib-mermaid", specifier = ">=1,<2" },
 ]
+imagery = [{ name = "orbital-pv", extras = ["ground"], marker = "python_full_version >= '3.13'", git = "https://github.com/julianascencio/orbital-pv.git?rev=498c47e182f9f0e1b0f0d40bc3125ef7c2110a05" }]
 
 [[package]]
 name = "energy-data-retrieval"
@@ -697,9 +701,6 @@ era5-native = [
     { name = "xarray" },
     { name = "zarr" },
 ]
-imagery = [
-    { name = "orbital-pv", extra = ["ground"], marker = "python_full_version >= '3.13'" },
-]
 
 [package.metadata]
 requires-dist = [
@@ -709,7 +710,6 @@ requires-dist = [
     { name = "icechunk", marker = "extra == 'era5-native'", specifier = ">=1.1,<2" },
     { name = "numpy", specifier = ">=2.2,<2.4" },
     { name = "openpyxl", specifier = ">=3.1,<4" },
-    { name = "orbital-pv", extras = ["ground"], marker = "python_full_version >= '3.13' and extra == 'imagery'", git = "https://github.com/julianascencio/orbital-pv.git?rev=498c47e182f9f0e1b0f0d40bc3125ef7c2110a05" },
     { name = "pandas", specifier = ">=2.2,<3" },
     { name = "pyarrow", specifier = ">=19,<25" },
     { name = "rasterio", specifier = ">=1.4,<2" },
@@ -718,7 +718,7 @@ requires-dist = [
     { name = "xarray", marker = "extra == 'era5-native'", specifier = ">=2025.1,<2027" },
     { name = "zarr", marker = "extra == 'era5-native'", specifier = ">=3,<4" },
 ]
-provides-extras = ["imagery", "era5-native", "cds"]
+provides-extras = ["era5-native", "cds"]
 
 [[package]]
 name = "energy-methods"
