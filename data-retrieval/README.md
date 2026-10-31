@@ -14,6 +14,7 @@ the provider's native files and metadata for subsequent climate analyses.
 
 | Source folder | Implemented products |
 | --- | --- |
+| `sources/pvgis` | All seven PVGIS 5 tools and all 27 PVGIS 6 operations: solar resource, PV performance, TMY, terrain, coverage and metadata |
 | `sources/cen` | Public registry, authenticated actual generation, public archive downloads and historical bulk/Qlik export import |
 | `sources/aemo` | Public NEMWeb current/daily archives of dispatch-unit SCADA MW, with exact DUIDs and NEM time |
 | `sources/eia` | EIA API v2 hourly system and monthly plant generation; public EIA-930 balance files without a key |
@@ -56,6 +57,14 @@ network requests. Contract tests use clearly identified parser fixtures; the
 generation gallery additionally replays attributed real provider captures. Neither
 kind of test establishes current API availability, authorization or complete
 generation coverage.
+
+## PVGIS solar resource and PV estimates
+
+See the [complete PVGIS connector guide](../docs/pvgis.md) for both API versions,
+all endpoint mappings, native units, horizon uploads and runnable gallery examples.
+`PVGISClient` defaults to explicit version 5.3; `PVGIS6Client` uses the reviewed
+version 6 contract. No API key is required. These are modelled resource and PV
+outputs, not measured generation.
 
 ## Real generation from more electricity systems
 

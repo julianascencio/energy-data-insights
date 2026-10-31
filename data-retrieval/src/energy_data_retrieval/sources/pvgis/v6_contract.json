@@ -1,0 +1,1997 @@
+{
+  "source_url": "https://photovoltaic-geographic-information-system.ec.europa.eu/api/v6/openapi.json",
+  "source_sha256": "dcb3e479ffdf3157a9567a967fb39f09e6cf11a8f4a5d4b80cc702e4d2e2afb3",
+  "verified_at": "2026-10-31",
+  "version": "6",
+  "operations": {
+    "GET /coverage/map": {
+      "parameters": {},
+      "required": [],
+      "response_media_types": [
+        "text/html"
+      ]
+    },
+    "GET /coverage/layers": {
+      "parameters": {},
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /coverage/layers/{name}": {
+      "parameters": {
+        "name": "s0"
+      },
+      "required": [
+        "name"
+      ],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /coverage/location-within-selected-source": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "irradiance_source": "s3"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /coverage/available-sources-in-selected-location": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /performance/broadband": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "installation_height": "s4",
+        "surface_orientation": "s5",
+        "surface_tilt": "s6",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "linke_turbidity_factor_series": "s13",
+        "albedo": "s14",
+        "horizon_profile": "s15",
+        "shading_model": "s16",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s21",
+        "system_efficiency": "s22",
+        "power_model": "s23",
+        "peak-power": "s24",
+        "angle_output_units": "s25",
+        "analysis": "s26",
+        "statistics": "s27",
+        "groupby": "s28",
+        "csv": "s11",
+        "verbose": "s29",
+        "quiet": "s27",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "metadata": "s27",
+        "surface_position_optimisation_mode": "s31",
+        "surface_position_optimisation_method": "s32",
+        "sampling_method_shgo": "s33",
+        "number_of_sampling_points": "s34",
+        "iterations": "s35"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "POST /performance/broadband": {
+      "parameters": {
+        "longitude": "s36",
+        "latitude": "s37",
+        "installation_height": "s38",
+        "surface_orientation": "s39",
+        "surface_tilt": "s40",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "linke_turbidity_factor_series": "s41",
+        "albedo": "s14",
+        "horizon_profile": "s42",
+        "shading_model": "s16",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s43",
+        "system_efficiency": "s44",
+        "power_model": "s23",
+        "peak-power": "s20",
+        "angle_output_units": "s25",
+        "analysis": "s26",
+        "statistics": "s27",
+        "groupby": "s28",
+        "csv": "s11",
+        "verbose": "s29",
+        "quiet": "s27",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "metadata": "s27",
+        "surface_position_optimisation_mode": "s31",
+        "surface_position_optimisation_method": "s32",
+        "sampling_method_shgo": "s33",
+        "number_of_sampling_points": "s45",
+        "iterations": "s46"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "GET /performance/broadband-multiple-surfaces": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "installation_height": "s4",
+        "surface_orientation": "s47",
+        "surface_tilt": "s48",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "albedo": "s14",
+        "horizon_profile": "s15",
+        "shading_model": "s16",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s21",
+        "system_efficiency": "s22",
+        "power_model": "s23",
+        "peak-power": "s49",
+        "angle_output_units": "s25",
+        "analysis": "s26",
+        "statistics": "s27",
+        "groupby": "s28",
+        "show_individual_surfaces": "s27",
+        "csv": "s11",
+        "verbose": "s29",
+        "quiet": "s27",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "metadata": "s27"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "POST /performance/broadband-multiple-surfaces": {
+      "parameters": {
+        "longitude": "s36",
+        "latitude": "s37",
+        "installation_height": "s38",
+        "surface_orientation": "s47",
+        "surface_tilt": "s48",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "albedo": "s14",
+        "horizon_profile": "s42",
+        "shading_model": "s16",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s43",
+        "system_efficiency": "s44",
+        "power_model": "s23",
+        "peak-power": "s49",
+        "angle_output_units": "s25",
+        "analysis": "s26",
+        "statistics": "s27",
+        "groupby": "s28",
+        "show_individual_surfaces": "s27",
+        "csv": "s11",
+        "verbose": "s29",
+        "quiet": "s27",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "metadata": "s27"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /power/broadband": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "installation_height": "s4",
+        "surface_orientation": "s5",
+        "surface_tilt": "s6",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "linke_turbidity_factor_series": "s13",
+        "apply_atmospheric_refraction": "s50",
+        "refracted_solar_zenith": "s51",
+        "albedo": "s14",
+        "apply_reflectivity_factor": "s50",
+        "solar_position_model": "s52",
+        "solar_incidence_model": "s53",
+        "horizon_profile": "s15",
+        "shading_model": "s16",
+        "zero_negative_solar_incidence_angle": "s50",
+        "solar_time_model": "s54",
+        "solar_constant": "s55",
+        "perigee_offset": "s56",
+        "eccentricity_correction_factor": "s57",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s21",
+        "system_efficiency": "s22",
+        "power_model": "s23",
+        "peak-power": "s24",
+        "temperature_model": "s58",
+        "radiation_cutoff_threshold": "s59",
+        "efficiency": "s60",
+        "angle_output_units": "s25",
+        "statistics": "s27",
+        "groupby": "s28",
+        "csv": "s11",
+        "verbose": "s29",
+        "quiet": "s27",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "surface_position_optimisation_mode": "s31",
+        "surface_position_optimisation_method": "s32",
+        "sampling_method_shgo": "s33",
+        "number_of_sampling_points": "s34",
+        "iterations": "s35"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "POST /power/broadband": {
+      "parameters": {
+        "longitude": "s36",
+        "latitude": "s37",
+        "installation_height": "s38",
+        "surface_orientation": "s39",
+        "surface_tilt": "s40",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "linke_turbidity_factor_series": "s41",
+        "apply_atmospheric_refraction": "s50",
+        "refracted_solar_zenith": "s51",
+        "albedo": "s14",
+        "apply_reflectivity_factor": "s50",
+        "solar_position_model": "s52",
+        "solar_incidence_model": "s53",
+        "horizon_profile": "s42",
+        "shading_model": "s16",
+        "zero_negative_solar_incidence_angle": "s50",
+        "solar_time_model": "s54",
+        "solar_constant": "s55",
+        "perigee_offset": "s56",
+        "eccentricity_correction_factor": "s57",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s43",
+        "system_efficiency": "s44",
+        "power_model": "s23",
+        "peak-power": "s20",
+        "temperature_model": "s58",
+        "radiation_cutoff_threshold": "s61",
+        "efficiency": "s62",
+        "angle_output_units": "s25",
+        "statistics": "s27",
+        "groupby": "s28",
+        "csv": "s11",
+        "verbose": "s29",
+        "quiet": "s27",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "surface_position_optimisation_mode": "s31",
+        "surface_position_optimisation_method": "s32",
+        "sampling_method_shgo": "s33",
+        "number_of_sampling_points": "s45",
+        "iterations": "s46"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "GET /power/broadband-multiple-surfaces": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "installation_height": "s4",
+        "surface_orientation": "s47",
+        "surface_tilt": "s48",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "linke_turbidity_factor_series": "s13",
+        "apply_atmospheric_refraction": "s50",
+        "refracted_solar_zenith": "s51",
+        "albedo": "s14",
+        "apply_reflectivity_factor": "s50",
+        "solar_position_model": "s52",
+        "solar_incidence_model": "s53",
+        "horizon_profile": "s15",
+        "shading_model": "s16",
+        "zero_negative_solar_incidence_angle": "s50",
+        "solar_time_model": "s54",
+        "solar_constant": "s55",
+        "perigee_offset": "s56",
+        "eccentricity_correction_factor": "s57",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s21",
+        "system_efficiency": "s22",
+        "power_model": "s23",
+        "peak-power": "s49",
+        "temperature_model": "s58",
+        "efficiency": "s60",
+        "angle_output_units": "s25",
+        "statistics": "s27",
+        "groupby": "s28",
+        "show_individual_surfaces": "s27",
+        "csv": "s11",
+        "verbose": "s29",
+        "quiet": "s27",
+        "fingerprint": "s27",
+        "quick_response_code": "s30"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "POST /power/broadband-multiple-surfaces": {
+      "parameters": {
+        "longitude": "s36",
+        "latitude": "s37",
+        "installation_height": "s38",
+        "surface_orientation": "s47",
+        "surface_tilt": "s48",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "linke_turbidity_factor_series": "s41",
+        "apply_atmospheric_refraction": "s50",
+        "refracted_solar_zenith": "s51",
+        "albedo": "s14",
+        "apply_reflectivity_factor": "s50",
+        "solar_position_model": "s52",
+        "solar_incidence_model": "s53",
+        "horizon_profile": "s42",
+        "shading_model": "s16",
+        "zero_negative_solar_incidence_angle": "s50",
+        "solar_time_model": "s54",
+        "solar_constant": "s55",
+        "perigee_offset": "s56",
+        "eccentricity_correction_factor": "s57",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s43",
+        "system_efficiency": "s44",
+        "power_model": "s23",
+        "peak-power": "s49",
+        "temperature_model": "s58",
+        "efficiency": "s62",
+        "angle_output_units": "s25",
+        "statistics": "s27",
+        "groupby": "s28",
+        "show_individual_surfaces": "s27",
+        "csv": "s11",
+        "verbose": "s29",
+        "quiet": "s27",
+        "fingerprint": "s27",
+        "quick_response_code": "s30"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "GET /power/surface/optimisation": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "installation_height": "s4",
+        "surface_orientation": "s5",
+        "surface_tilt": "s6",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "linke_turbidity_factor_series": "s13",
+        "horizon_profile": "s15",
+        "shading_model": "s16",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s21",
+        "angle_output_units": "s25",
+        "csv": "s11",
+        "verbose": "s29",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "metadata": "s27",
+        "surface_position_optimisation_mode": "s63",
+        "surface_position_optimisation_method": "s32",
+        "sampling_method_shgo": "s33",
+        "number_of_sampling_points": "s34",
+        "iterations": "s35"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "POST /power/surface/optimisation": {
+      "parameters": {
+        "longitude": "s36",
+        "latitude": "s37",
+        "installation_height": "s38",
+        "surface_orientation": "s39",
+        "surface_tilt": "s40",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "linke_turbidity_factor_series": "s41",
+        "horizon_profile": "s42",
+        "shading_model": "s16",
+        "photovoltaic_module": "s17",
+        "photovoltaic_module_type": "s18",
+        "bifacialy_factor": "s19",
+        "module_height": "s20",
+        "module_length": "s43",
+        "angle_output_units": "s25",
+        "csv": "s11",
+        "verbose": "s29",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "metadata": "s27",
+        "surface_position_optimisation_mode": "s63",
+        "surface_position_optimisation_method": "s32",
+        "sampling_method_shgo": "s33",
+        "number_of_sampling_points": "s45",
+        "iterations": "s46"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "GET /reference/citation": {
+      "parameters": {},
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /reference/publications": {
+      "parameters": {},
+      "required": [],
+      "response_media_types": [
+        "application/x-bibtex"
+      ]
+    },
+    "GET /reference/conventions-in-pvgis": {
+      "parameters": {},
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /reference/license": {
+      "parameters": {},
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /solar-position/overview": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "surface_orientation": "s5",
+        "surface_tilt": "s6",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "apply_atmospheric_refraction": "s50",
+        "solar_position_models": "s64",
+        "solar_incidence_model": "s53",
+        "horizon_profile": "s15",
+        "shading_model": "s16",
+        "zero_negative_solar_incidence_angle": "s50",
+        "solar_time_model": "s54",
+        "perigee_offset": "s56",
+        "eccentricity_correction_factor": "s57",
+        "angle_output_units": "s25",
+        "csv": "s11",
+        "verbose": "s29",
+        "fingerprint": "s27",
+        "plot_solar_position_and_horizon": "s27"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "application/zip",
+        "text/csv"
+      ]
+    },
+    "POST /solar-position/overview": {
+      "parameters": {
+        "longitude": "s36",
+        "latitude": "s37",
+        "surface_orientation": "s39",
+        "surface_tilt": "s40",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "apply_atmospheric_refraction": "s50",
+        "solar_position_models": "s64",
+        "solar_incidence_model": "s53",
+        "horizon_profile": "s65",
+        "shading_model": "s16",
+        "zero_negative_solar_incidence_angle": "s50",
+        "solar_time_model": "s54",
+        "perigee_offset": "s56",
+        "eccentricity_correction_factor": "s57",
+        "angle_output_units": "s25",
+        "csv": "s11",
+        "verbose": "s29",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "plot_solar_position_and_horizon": "s27"
+      },
+      "required": [
+        "horizon_profile"
+      ],
+      "response_media_types": [
+        "application/json",
+        "application/zip",
+        "text/csv"
+      ]
+    },
+    "GET /features": {
+      "parameters": {},
+      "required": [],
+      "response_media_types": [
+        "application/json"
+      ]
+    },
+    "GET /topography/horizon-profile": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "horizon_profile": "s15",
+        "angle_output_units": "s25",
+        "csv": "s11",
+        "verbose": "s29",
+        "plot_horizon_profile": "s27"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "POST /topography/horizon-profile": {
+      "parameters": {
+        "longitude": "s36",
+        "latitude": "s37",
+        "horizon_profile": "s65",
+        "angle_output_units": "s25",
+        "csv": "s11",
+        "plot_horizon_profile": "s27"
+      },
+      "required": [
+        "horizon_profile"
+      ],
+      "response_media_types": [
+        "application/json",
+        "image/png",
+        "text/csv"
+      ]
+    },
+    "GET /topography/elevation": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "angle_output_units": "s25",
+        "csv": "s11"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "text/csv"
+      ]
+    },
+    "GET /meteorological/typical-meteorological-year": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "start_time": "s7",
+        "end_time": "s66",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "irradiance_source": "s3",
+        "weighting_scheme": "s67",
+        "finkelstein_schafer_method": "s68",
+        "plot_statistic": "s69",
+        "csv": "s11",
+        "epw": "s11",
+        "fingerprint": "s27",
+        "quick_response_code": "s30",
+        "metadata": "s27"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "text/csv",
+        "text/plain",
+        "application/zip",
+        "image/png"
+      ]
+    },
+    "GET /meteorological/degree-days": {
+      "parameters": {
+        "longitude": "s1",
+        "latitude": "s2",
+        "start_time": "s7",
+        "end_time": "s8",
+        "frequency": "s9",
+        "periods": "s10",
+        "timestamps": "s11",
+        "timezone": "s12",
+        "csv": "s11",
+        "verbose": "s29",
+        "fingerprint": "s27",
+        "metadata": "s27",
+        "mode": "s70",
+        "period": "s71",
+        "temperature_output_units": "s72",
+        "heating_threshold": "s73",
+        "cooling_threshold": "s74",
+        "heating_cutoff": "s75",
+        "cooling_cutoff": "s76"
+      },
+      "required": [],
+      "response_media_types": [
+        "application/json",
+        "text/csv"
+      ]
+    }
+  },
+  "schemas": {
+    "s0": {
+      "type": "string",
+      "enum": [
+        "sarah3_coverage_layer",
+        "era5landplus_coverage_layer"
+      ]
+    },
+    "s1": {
+      "type": "number",
+      "maximum": 180,
+      "minimum": -180,
+      "default": 8.628
+    },
+    "s2": {
+      "type": "number",
+      "maximum": 90,
+      "minimum": -90,
+      "default": 45.812
+    },
+    "s3": {
+      "type": "string",
+      "enum": [
+        "SARAH-3",
+        "ERA5",
+        "CLEAR-SKY [Hofierka et al. (2002)]"
+      ],
+      "default": "SARAH-3"
+    },
+    "s4": {
+      "type": "number",
+      "maximum": 1000,
+      "minimum": 0,
+      "default": 0
+    },
+    "s5": {
+      "type": "number",
+      "maximum": 360,
+      "minimum": 0,
+      "default": 180
+    },
+    "s6": {
+      "type": "number",
+      "maximum": 180,
+      "minimum": 0,
+      "default": 45
+    },
+    "s7": {
+      "default": "2014-01-01T00:00:00",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s8": {
+      "default": "2014-12-31T23:59:59",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s9": {
+      "type": "string",
+      "enum": [
+        "Yearly",
+        "Monthly",
+        "Weekly",
+        "Daily",
+        "Hourly",
+        "Minutely"
+      ],
+      "default": "Hourly"
+    },
+    "s10": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s11": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s12": {
+      "type": "string",
+      "enum": [
+        "Africa/Abidjan",
+        "Africa/Accra",
+        "Africa/Addis_Ababa",
+        "Africa/Algiers",
+        "Africa/Asmara",
+        "Africa/Asmera",
+        "Africa/Bamako",
+        "Africa/Bangui",
+        "Africa/Banjul",
+        "Africa/Bissau",
+        "Africa/Blantyre",
+        "Africa/Brazzaville",
+        "Africa/Bujumbura",
+        "Africa/Cairo",
+        "Africa/Casablanca",
+        "Africa/Ceuta",
+        "Africa/Conakry",
+        "Africa/Dakar",
+        "Africa/Dar_es_Salaam",
+        "Africa/Djibouti",
+        "Africa/Douala",
+        "Africa/El_Aaiun",
+        "Africa/Freetown",
+        "Africa/Gaborone",
+        "Africa/Harare",
+        "Africa/Johannesburg",
+        "Africa/Juba",
+        "Africa/Kampala",
+        "Africa/Khartoum",
+        "Africa/Kigali",
+        "Africa/Kinshasa",
+        "Africa/Lagos",
+        "Africa/Libreville",
+        "Africa/Lome",
+        "Africa/Luanda",
+        "Africa/Lubumbashi",
+        "Africa/Lusaka",
+        "Africa/Malabo",
+        "Africa/Maputo",
+        "Africa/Maseru",
+        "Africa/Mbabane",
+        "Africa/Mogadishu",
+        "Africa/Monrovia",
+        "Africa/Nairobi",
+        "Africa/Ndjamena",
+        "Africa/Niamey",
+        "Africa/Nouakchott",
+        "Africa/Ouagadougou",
+        "Africa/Porto-Novo",
+        "Africa/Sao_Tome",
+        "Africa/Timbuktu",
+        "Africa/Tripoli",
+        "Africa/Tunis",
+        "Africa/Windhoek",
+        "America/Adak",
+        "America/Anchorage",
+        "America/Anguilla",
+        "America/Antigua",
+        "America/Araguaina",
+        "America/Argentina/Buenos_Aires",
+        "America/Argentina/Catamarca",
+        "America/Argentina/ComodRivadavia",
+        "America/Argentina/Cordoba",
+        "America/Argentina/Jujuy",
+        "America/Argentina/La_Rioja",
+        "America/Argentina/Mendoza",
+        "America/Argentina/Rio_Gallegos",
+        "America/Argentina/Salta",
+        "America/Argentina/San_Juan",
+        "America/Argentina/San_Luis",
+        "America/Argentina/Tucuman",
+        "America/Argentina/Ushuaia",
+        "America/Aruba",
+        "America/Asuncion",
+        "America/Atikokan",
+        "America/Atka",
+        "America/Bahia",
+        "America/Bahia_Banderas",
+        "America/Barbados",
+        "America/Belem",
+        "America/Belize",
+        "America/Blanc-Sablon",
+        "America/Boa_Vista",
+        "America/Bogota",
+        "America/Boise",
+        "America/Buenos_Aires",
+        "America/Cambridge_Bay",
+        "America/Campo_Grande",
+        "America/Cancun",
+        "America/Caracas",
+        "America/Catamarca",
+        "America/Cayenne",
+        "America/Cayman",
+        "America/Chicago",
+        "America/Chihuahua",
+        "America/Ciudad_Juarez",
+        "America/Coral_Harbour",
+        "America/Cordoba",
+        "America/Costa_Rica",
+        "America/Coyhaique",
+        "America/Creston",
+        "America/Cuiaba",
+        "America/Curacao",
+        "America/Danmarkshavn",
+        "America/Dawson",
+        "America/Dawson_Creek",
+        "America/Denver",
+        "America/Detroit",
+        "America/Dominica",
+        "America/Edmonton",
+        "America/Eirunepe",
+        "America/El_Salvador",
+        "America/Ensenada",
+        "America/Fort_Nelson",
+        "America/Fort_Wayne",
+        "America/Fortaleza",
+        "America/Glace_Bay",
+        "America/Godthab",
+        "America/Goose_Bay",
+        "America/Grand_Turk",
+        "America/Grenada",
+        "America/Guadeloupe",
+        "America/Guatemala",
+        "America/Guayaquil",
+        "America/Guyana",
+        "America/Halifax",
+        "America/Havana",
+        "America/Hermosillo",
+        "America/Indiana/Indianapolis",
+        "America/Indiana/Knox",
+        "America/Indiana/Marengo",
+        "America/Indiana/Petersburg",
+        "America/Indiana/Tell_City",
+        "America/Indiana/Vevay",
+        "America/Indiana/Vincennes",
+        "America/Indiana/Winamac",
+        "America/Indianapolis",
+        "America/Inuvik",
+        "America/Iqaluit",
+        "America/Jamaica",
+        "America/Jujuy",
+        "America/Juneau",
+        "America/Kentucky/Louisville",
+        "America/Kentucky/Monticello",
+        "America/Knox_IN",
+        "America/Kralendijk",
+        "America/La_Paz",
+        "America/Lima",
+        "America/Los_Angeles",
+        "America/Louisville",
+        "America/Lower_Princes",
+        "America/Maceio",
+        "America/Managua",
+        "America/Manaus",
+        "America/Marigot",
+        "America/Martinique",
+        "America/Matamoros",
+        "America/Mazatlan",
+        "America/Mendoza",
+        "America/Menominee",
+        "America/Merida",
+        "America/Metlakatla",
+        "America/Mexico_City",
+        "America/Miquelon",
+        "America/Moncton",
+        "America/Monterrey",
+        "America/Montevideo",
+        "America/Montreal",
+        "America/Montserrat",
+        "America/Nassau",
+        "America/New_York",
+        "America/Nipigon",
+        "America/Nome",
+        "America/Noronha",
+        "America/North_Dakota/Beulah",
+        "America/North_Dakota/Center",
+        "America/North_Dakota/New_Salem",
+        "America/Nuuk",
+        "America/Ojinaga",
+        "America/Panama",
+        "America/Pangnirtung",
+        "America/Paramaribo",
+        "America/Phoenix",
+        "America/Port-au-Prince",
+        "America/Port_of_Spain",
+        "America/Porto_Acre",
+        "America/Porto_Velho",
+        "America/Puerto_Rico",
+        "America/Punta_Arenas",
+        "America/Rainy_River",
+        "America/Rankin_Inlet",
+        "America/Recife",
+        "America/Regina",
+        "America/Resolute",
+        "America/Rio_Branco",
+        "America/Rosario",
+        "America/Santa_Isabel",
+        "America/Santarem",
+        "America/Santiago",
+        "America/Santo_Domingo",
+        "America/Sao_Paulo",
+        "America/Scoresbysund",
+        "America/Shiprock",
+        "America/Sitka",
+        "America/St_Barthelemy",
+        "America/St_Johns",
+        "America/St_Kitts",
+        "America/St_Lucia",
+        "America/St_Thomas",
+        "America/St_Vincent",
+        "America/Swift_Current",
+        "America/Tegucigalpa",
+        "America/Thule",
+        "America/Thunder_Bay",
+        "America/Tijuana",
+        "America/Toronto",
+        "America/Tortola",
+        "America/Vancouver",
+        "America/Virgin",
+        "America/Whitehorse",
+        "America/Winnipeg",
+        "America/Yakutat",
+        "America/Yellowknife",
+        "Antarctica/Casey",
+        "Antarctica/Davis",
+        "Antarctica/DumontDUrville",
+        "Antarctica/Macquarie",
+        "Antarctica/Mawson",
+        "Antarctica/McMurdo",
+        "Antarctica/Palmer",
+        "Antarctica/Rothera",
+        "Antarctica/South_Pole",
+        "Antarctica/Syowa",
+        "Antarctica/Troll",
+        "Antarctica/Vostok",
+        "Arctic/Longyearbyen",
+        "Asia/Aden",
+        "Asia/Almaty",
+        "Asia/Amman",
+        "Asia/Anadyr",
+        "Asia/Aqtau",
+        "Asia/Aqtobe",
+        "Asia/Ashgabat",
+        "Asia/Ashkhabad",
+        "Asia/Atyrau",
+        "Asia/Baghdad",
+        "Asia/Bahrain",
+        "Asia/Baku",
+        "Asia/Bangkok",
+        "Asia/Barnaul",
+        "Asia/Beirut",
+        "Asia/Bishkek",
+        "Asia/Brunei",
+        "Asia/Calcutta",
+        "Asia/Chita",
+        "Asia/Choibalsan",
+        "Asia/Chongqing",
+        "Asia/Chungking",
+        "Asia/Colombo",
+        "Asia/Dacca",
+        "Asia/Damascus",
+        "Asia/Dhaka",
+        "Asia/Dili",
+        "Asia/Dubai",
+        "Asia/Dushanbe",
+        "Asia/Famagusta",
+        "Asia/Gaza",
+        "Asia/Harbin",
+        "Asia/Hebron",
+        "Asia/Ho_Chi_Minh",
+        "Asia/Hong_Kong",
+        "Asia/Hovd",
+        "Asia/Irkutsk",
+        "Asia/Istanbul",
+        "Asia/Jakarta",
+        "Asia/Jayapura",
+        "Asia/Jerusalem",
+        "Asia/Kabul",
+        "Asia/Kamchatka",
+        "Asia/Karachi",
+        "Asia/Kashgar",
+        "Asia/Kathmandu",
+        "Asia/Katmandu",
+        "Asia/Khandyga",
+        "Asia/Kolkata",
+        "Asia/Krasnoyarsk",
+        "Asia/Kuala_Lumpur",
+        "Asia/Kuching",
+        "Asia/Kuwait",
+        "Asia/Macao",
+        "Asia/Macau",
+        "Asia/Magadan",
+        "Asia/Makassar",
+        "Asia/Manila",
+        "Asia/Muscat",
+        "Asia/Nicosia",
+        "Asia/Novokuznetsk",
+        "Asia/Novosibirsk",
+        "Asia/Omsk",
+        "Asia/Oral",
+        "Asia/Phnom_Penh",
+        "Asia/Pontianak",
+        "Asia/Pyongyang",
+        "Asia/Qatar",
+        "Asia/Qostanay",
+        "Asia/Qyzylorda",
+        "Asia/Rangoon",
+        "Asia/Riyadh",
+        "Asia/Saigon",
+        "Asia/Sakhalin",
+        "Asia/Samarkand",
+        "Asia/Seoul",
+        "Asia/Shanghai",
+        "Asia/Singapore",
+        "Asia/Srednekolymsk",
+        "Asia/Taipei",
+        "Asia/Tashkent",
+        "Asia/Tbilisi",
+        "Asia/Tehran",
+        "Asia/Tel_Aviv",
+        "Asia/Thimbu",
+        "Asia/Thimphu",
+        "Asia/Tokyo",
+        "Asia/Tomsk",
+        "Asia/Ujung_Pandang",
+        "Asia/Ulaanbaatar",
+        "Asia/Ulan_Bator",
+        "Asia/Urumqi",
+        "Asia/Ust-Nera",
+        "Asia/Vientiane",
+        "Asia/Vladivostok",
+        "Asia/Yakutsk",
+        "Asia/Yangon",
+        "Asia/Yekaterinburg",
+        "Asia/Yerevan",
+        "Atlantic/Azores",
+        "Atlantic/Bermuda",
+        "Atlantic/Canary",
+        "Atlantic/Cape_Verde",
+        "Atlantic/Faeroe",
+        "Atlantic/Faroe",
+        "Atlantic/Jan_Mayen",
+        "Atlantic/Madeira",
+        "Atlantic/Reykjavik",
+        "Atlantic/South_Georgia",
+        "Atlantic/St_Helena",
+        "Atlantic/Stanley",
+        "Australia/ACT",
+        "Australia/Adelaide",
+        "Australia/Brisbane",
+        "Australia/Broken_Hill",
+        "Australia/Canberra",
+        "Australia/Currie",
+        "Australia/Darwin",
+        "Australia/Eucla",
+        "Australia/Hobart",
+        "Australia/LHI",
+        "Australia/Lindeman",
+        "Australia/Lord_Howe",
+        "Australia/Melbourne",
+        "Australia/NSW",
+        "Australia/North",
+        "Australia/Perth",
+        "Australia/Queensland",
+        "Australia/South",
+        "Australia/Sydney",
+        "Australia/Tasmania",
+        "Australia/Victoria",
+        "Australia/West",
+        "Australia/Yancowinna",
+        "Brazil/Acre",
+        "Brazil/DeNoronha",
+        "Brazil/East",
+        "Brazil/West",
+        "CET",
+        "CST6CDT",
+        "Canada/Atlantic",
+        "Canada/Central",
+        "Canada/Eastern",
+        "Canada/Mountain",
+        "Canada/Newfoundland",
+        "Canada/Pacific",
+        "Canada/Saskatchewan",
+        "Canada/Yukon",
+        "Chile/Continental",
+        "Chile/EasterIsland",
+        "Cuba",
+        "EET",
+        "EST",
+        "EST5EDT",
+        "Egypt",
+        "Eire",
+        "Etc/GMT",
+        "Etc/GMT+0",
+        "Etc/GMT+1",
+        "Etc/GMT+10",
+        "Etc/GMT+11",
+        "Etc/GMT+12",
+        "Etc/GMT+2",
+        "Etc/GMT+3",
+        "Etc/GMT+4",
+        "Etc/GMT+5",
+        "Etc/GMT+6",
+        "Etc/GMT+7",
+        "Etc/GMT+8",
+        "Etc/GMT+9",
+        "Etc/GMT-0",
+        "Etc/GMT-1",
+        "Etc/GMT-10",
+        "Etc/GMT-11",
+        "Etc/GMT-12",
+        "Etc/GMT-13",
+        "Etc/GMT-14",
+        "Etc/GMT-2",
+        "Etc/GMT-3",
+        "Etc/GMT-4",
+        "Etc/GMT-5",
+        "Etc/GMT-6",
+        "Etc/GMT-7",
+        "Etc/GMT-8",
+        "Etc/GMT-9",
+        "Etc/GMT0",
+        "Etc/Greenwich",
+        "Etc/UCT",
+        "Etc/UTC",
+        "Etc/Universal",
+        "Etc/Zulu",
+        "Europe/Amsterdam",
+        "Europe/Andorra",
+        "Europe/Astrakhan",
+        "Europe/Athens",
+        "Europe/Belfast",
+        "Europe/Belgrade",
+        "Europe/Berlin",
+        "Europe/Bratislava",
+        "Europe/Brussels",
+        "Europe/Bucharest",
+        "Europe/Budapest",
+        "Europe/Busingen",
+        "Europe/Chisinau",
+        "Europe/Copenhagen",
+        "Europe/Dublin",
+        "Europe/Gibraltar",
+        "Europe/Guernsey",
+        "Europe/Helsinki",
+        "Europe/Isle_of_Man",
+        "Europe/Istanbul",
+        "Europe/Jersey",
+        "Europe/Kaliningrad",
+        "Europe/Kiev",
+        "Europe/Kirov",
+        "Europe/Kyiv",
+        "Europe/Lisbon",
+        "Europe/Ljubljana",
+        "Europe/London",
+        "Europe/Luxembourg",
+        "Europe/Madrid",
+        "Europe/Malta",
+        "Europe/Mariehamn",
+        "Europe/Minsk",
+        "Europe/Monaco",
+        "Europe/Moscow",
+        "Europe/Nicosia",
+        "Europe/Oslo",
+        "Europe/Paris",
+        "Europe/Podgorica",
+        "Europe/Prague",
+        "Europe/Riga",
+        "Europe/Rome",
+        "Europe/Samara",
+        "Europe/San_Marino",
+        "Europe/Sarajevo",
+        "Europe/Saratov",
+        "Europe/Simferopol",
+        "Europe/Skopje",
+        "Europe/Sofia",
+        "Europe/Stockholm",
+        "Europe/Tallinn",
+        "Europe/Tirane",
+        "Europe/Tiraspol",
+        "Europe/Ulyanovsk",
+        "Europe/Uzhgorod",
+        "Europe/Vaduz",
+        "Europe/Vatican",
+        "Europe/Vienna",
+        "Europe/Vilnius",
+        "Europe/Volgograd",
+        "Europe/Warsaw",
+        "Europe/Zagreb",
+        "Europe/Zaporozhye",
+        "Europe/Zurich",
+        "Factory",
+        "GB",
+        "GB-Eire",
+        "GMT",
+        "GMT+0",
+        "GMT-0",
+        "GMT0",
+        "Greenwich",
+        "HST",
+        "Hongkong",
+        "Iceland",
+        "Indian/Antananarivo",
+        "Indian/Chagos",
+        "Indian/Christmas",
+        "Indian/Cocos",
+        "Indian/Comoro",
+        "Indian/Kerguelen",
+        "Indian/Mahe",
+        "Indian/Maldives",
+        "Indian/Mauritius",
+        "Indian/Mayotte",
+        "Indian/Reunion",
+        "Iran",
+        "Israel",
+        "Jamaica",
+        "Japan",
+        "Kwajalein",
+        "Libya",
+        "MET",
+        "MST",
+        "MST7MDT",
+        "Mexico/BajaNorte",
+        "Mexico/BajaSur",
+        "Mexico/General",
+        "NZ",
+        "NZ-CHAT",
+        "Navajo",
+        "PRC",
+        "PST8PDT",
+        "Pacific/Apia",
+        "Pacific/Auckland",
+        "Pacific/Bougainville",
+        "Pacific/Chatham",
+        "Pacific/Chuuk",
+        "Pacific/Easter",
+        "Pacific/Efate",
+        "Pacific/Enderbury",
+        "Pacific/Fakaofo",
+        "Pacific/Fiji",
+        "Pacific/Funafuti",
+        "Pacific/Galapagos",
+        "Pacific/Gambier",
+        "Pacific/Guadalcanal",
+        "Pacific/Guam",
+        "Pacific/Honolulu",
+        "Pacific/Johnston",
+        "Pacific/Kanton",
+        "Pacific/Kiritimati",
+        "Pacific/Kosrae",
+        "Pacific/Kwajalein",
+        "Pacific/Majuro",
+        "Pacific/Marquesas",
+        "Pacific/Midway",
+        "Pacific/Nauru",
+        "Pacific/Niue",
+        "Pacific/Norfolk",
+        "Pacific/Noumea",
+        "Pacific/Pago_Pago",
+        "Pacific/Palau",
+        "Pacific/Pitcairn",
+        "Pacific/Pohnpei",
+        "Pacific/Ponape",
+        "Pacific/Port_Moresby",
+        "Pacific/Rarotonga",
+        "Pacific/Saipan",
+        "Pacific/Samoa",
+        "Pacific/Tahiti",
+        "Pacific/Tarawa",
+        "Pacific/Tongatapu",
+        "Pacific/Truk",
+        "Pacific/Wake",
+        "Pacific/Wallis",
+        "Pacific/Yap",
+        "Poland",
+        "Portugal",
+        "ROC",
+        "ROK",
+        "Singapore",
+        "Turkey",
+        "UCT",
+        "US/Alaska",
+        "US/Aleutian",
+        "US/Arizona",
+        "US/Central",
+        "US/East-Indiana",
+        "US/Eastern",
+        "US/Hawaii",
+        "US/Indiana-Starke",
+        "US/Michigan",
+        "US/Mountain",
+        "US/Pacific",
+        "US/Samoa",
+        "UTC",
+        "Universal",
+        "W-SU",
+        "WET",
+        "Zulu",
+        "localtime"
+      ],
+      "default": "UTC"
+    },
+    "s13": {
+      "type": "number",
+      "maximum": 8,
+      "minimum": 0,
+      "default": 2
+    },
+    "s14": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "default": 0.2
+    },
+    "s15": {
+      "default": "PVGIS",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s16": {
+      "type": "string",
+      "enum": [
+        "all",
+        "PVGIS",
+        "pvlib"
+      ],
+      "default": "PVGIS"
+    },
+    "s17": {
+      "type": "string",
+      "enum": [
+        "cSi:Free standing 2025",
+        "cSi:Integrated 2025",
+        "cSi:Free standing",
+        "cSi:Integrated",
+        "CIS:Free standing",
+        "CIS:Integrated",
+        "CdTe:Free standing",
+        "CdTe:Integrated"
+      ],
+      "default": "cSi:Free standing 2025"
+    },
+    "s18": {
+      "type": "string",
+      "enum": [
+        "Mono-Facial",
+        "Bi-Facial"
+      ],
+      "default": "Mono-Facial"
+    },
+    "s19": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "default": 0.7
+    },
+    "s20": {
+      "type": "number",
+      "minimum": 0.0,
+      "default": 1
+    },
+    "s21": {
+      "type": "number",
+      "minimum": 1,
+      "default": 2
+    },
+    "s22": {
+      "type": "number",
+      "maximum": 1,
+      "minimum": 0,
+      "default": 0.86
+    },
+    "s23": {
+      "type": "string",
+      "enum": [
+        "None",
+        "IV",
+        "Huld 2011"
+      ],
+      "default": "Huld 2011"
+    },
+    "s24": {
+      "type": "number",
+      "minimum": 0,
+      "default": 1
+    },
+    "s25": {
+      "type": "string",
+      "enum": [
+        "Radians",
+        "Degrees"
+      ],
+      "default": "Radians"
+    },
+    "s26": {
+      "type": "string",
+      "enum": [
+        "Minimal",
+        "Simple",
+        "Advanced",
+        "Extended",
+        "None"
+      ],
+      "default": "Simple"
+    },
+    "s27": {
+      "type": "boolean",
+      "default": false
+    },
+    "s28": {
+      "type": "string",
+      "enum": [
+        "Yearly",
+        "Seasonal",
+        "Monthly",
+        "Weekly",
+        "Daily",
+        "Hourly",
+        "Minutely",
+        "None"
+      ],
+      "default": "None"
+    },
+    "s29": {
+      "type": "integer",
+      "default": 0
+    },
+    "s30": {
+      "type": "string",
+      "enum": [
+        "Base64",
+        "Image",
+        "None"
+      ],
+      "default": "None"
+    },
+    "s31": {
+      "type": "string",
+      "enum": [
+        "Orientation",
+        "Tilt",
+        "Orientation & Tilt",
+        "None"
+      ],
+      "default": "None"
+    },
+    "s32": {
+      "type": "string",
+      "enum": [
+        "Brute",
+        "SHGO",
+        "CG",
+        "Powell",
+        "Nelder-Mead",
+        "BFGS",
+        "L-BFGS-B",
+        "DIRECT"
+      ],
+      "default": "L-BFGS-B"
+    },
+    "s33": {
+      "type": "string",
+      "enum": [
+        "halton",
+        "sobol",
+        "simplicial"
+      ],
+      "default": "sobol"
+    },
+    "s34": {
+      "type": "integer",
+      "maximum": 2000,
+      "minimum": 15,
+      "default": 100
+    },
+    "s35": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 20
+    },
+    "s36": {
+      "type": "number",
+      "maximum": 180.0,
+      "minimum": -180.0,
+      "default": 8.628
+    },
+    "s37": {
+      "type": "number",
+      "maximum": 90.0,
+      "minimum": -90.0,
+      "default": 45.812
+    },
+    "s38": {
+      "type": "number",
+      "maximum": 1000.0,
+      "minimum": 0.0,
+      "default": 0
+    },
+    "s39": {
+      "type": "number",
+      "maximum": 360.0,
+      "minimum": 0.0,
+      "default": 180
+    },
+    "s40": {
+      "type": "number",
+      "maximum": 180.0,
+      "minimum": 0.0,
+      "default": 45
+    },
+    "s41": {
+      "type": "number",
+      "maximum": 8.0,
+      "minimum": 0.0,
+      "default": 2
+    },
+    "s42": {
+      "anyOf": [
+        {
+          "type": "string",
+          "contentMediaType": "application/octet-stream"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s43": {
+      "type": "number",
+      "minimum": 1.0,
+      "default": 2
+    },
+    "s44": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "default": 0.86
+    },
+    "s45": {
+      "type": "integer",
+      "maximum": 2000.0,
+      "minimum": 15.0,
+      "default": 100
+    },
+    "s46": {
+      "type": "integer",
+      "minimum": 1.0,
+      "default": 20
+    },
+    "s47": {
+      "type": "array",
+      "default": [
+        180.0
+      ],
+      "items": {
+        "type": "number"
+      }
+    },
+    "s48": {
+      "type": "array",
+      "default": [
+        45.0
+      ],
+      "items": {
+        "type": "number"
+      }
+    },
+    "s49": {
+      "type": "array",
+      "default": [
+        1.0
+      ],
+      "items": {
+        "type": "number"
+      }
+    },
+    "s50": {
+      "type": "boolean",
+      "default": true
+    },
+    "s51": {
+      "type": "number",
+      "default": 90.833
+    },
+    "s52": {
+      "type": "string",
+      "enum": [
+        "all",
+        "NOAA",
+        "Hofierka",
+        "Jenco",
+        "pvlib",
+        "pysolar",
+        "Skyfield",
+        "suncalc"
+      ],
+      "default": "NOAA"
+    },
+    "s53": {
+      "type": "string",
+      "enum": [
+        "all",
+        "Hofierka",
+        "Jenco",
+        "Iqbal",
+        "PVGIS",
+        "pvlib"
+      ],
+      "default": "Iqbal"
+    },
+    "s54": {
+      "type": "string",
+      "enum": [
+        "all",
+        "Milne1921",
+        "NOAA",
+        "PVGIS",
+        "pvlib",
+        "Skyfield"
+      ],
+      "default": "Milne1921"
+    },
+    "s55": {
+      "type": "number",
+      "default": 1360.8
+    },
+    "s56": {
+      "type": "number",
+      "default": 0.048869
+    },
+    "s57": {
+      "type": "number",
+      "default": 0.03344
+    },
+    "s58": {
+      "type": "string",
+      "enum": [
+        "None",
+        "Faiman"
+      ],
+      "default": "Faiman"
+    },
+    "s59": {
+      "type": "number",
+      "minimum": 0,
+      "default": 0
+    },
+    "s60": {
+      "anyOf": [
+        {
+          "type": "number",
+          "maximum": 1,
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s61": {
+      "type": "number",
+      "minimum": 0.0,
+      "default": 0
+    },
+    "s62": {
+      "anyOf": [
+        {
+          "type": "number",
+          "maximum": 1.0,
+          "minimum": 0.0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s63": {
+      "type": "string",
+      "enum": [
+        "Orientation",
+        "Tilt",
+        "Orientation & Tilt"
+      ],
+      "default": "Tilt"
+    },
+    "s64": {
+      "type": "array",
+      "default": [
+        "NOAA"
+      ],
+      "items": {
+        "type": "string",
+        "enum": [
+          "all",
+          "NOAA",
+          "Hofierka",
+          "Jenco",
+          "pvlib",
+          "pysolar",
+          "Skyfield",
+          "suncalc"
+        ]
+      }
+    },
+    "s65": {
+      "type": "string",
+      "contentMediaType": "application/octet-stream"
+    },
+    "s66": {
+      "default": "2024-12-31T23:59:59",
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s67": {
+      "type": "string",
+      "enum": [
+        "ISO-TMY",
+        "Sandia",
+        "NSRDB-TMY",
+        "AshraeIwec2001",
+        "Lund1995Pissimanis1988",
+        "Petrakis1996",
+        "AlAzri2016",
+        "Kalogirou2003",
+        "Zang2016",
+        "Skeiker20042009",
+        "Sawaqed2005",
+        "Jiang2010",
+        "Lu2004",
+        "Siurna1984",
+        "Yang2011Yang2007",
+        "Meyer2009",
+        "Xu2012",
+        "Cma2005",
+        "Petrakis1998",
+        "Pusat2015",
+        "PVGIS-legacy-ISO",
+        "PVGIS-legacy-PV"
+      ],
+      "default": "ISO-TMY"
+    },
+    "s68": {
+      "type": "string",
+      "enum": [
+        "ISO-15927-4-ECDF",
+        "PVGIS-legacy-sorted"
+      ],
+      "default": "ISO-15927-4-ECDF"
+    },
+    "s69": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "all",
+              "tmy",
+              "ranked",
+              "weighted",
+              "finkelsteinschafer",
+              "daily_statistics",
+              "yearly_ecdf",
+              "long_term_ecdf"
+            ]
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "s70": {
+      "type": "string",
+      "enum": [
+        "heating",
+        "cooling",
+        "all"
+      ],
+      "default": "all"
+    },
+    "s71": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly"
+      ],
+      "default": "monthly"
+    },
+    "s72": {
+      "type": "string",
+      "enum": [
+        "Celsius",
+        "Fahrenheit",
+        "Kelvin"
+      ],
+      "default": "Celsius"
+    },
+    "s73": {
+      "type": "number",
+      "default": 15.0
+    },
+    "s74": {
+      "type": "number",
+      "default": 24.0
+    },
+    "s75": {
+      "type": "number",
+      "default": 18.0
+    },
+    "s76": {
+      "type": "number",
+      "default": 21.0
+    }
+  }
+}

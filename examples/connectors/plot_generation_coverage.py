@@ -1,7 +1,7 @@
 """Worldwide coverage of the repository's connectors
 ===================================================
 
-Locate **all 42 source modules**: 22 generation connectors, 13 gridded
+Locate **all 43 source modules**: 22 generation connectors, 14 gridded
 weather/climate sources, five station networks, a local station importer and
 the Natural Earth basemap. The first figure shows generation products; the
 second plots **39,010 provider/station catalogue rows** and explains the grid
@@ -410,7 +410,7 @@ ax_networks.text(
     color=TEXT_COLOR,
 )
 ax_grids.set_title(
-    "Gridded weather / climate · 13 source modules",
+    "Gridded weather / climate · 14 source modules",
     loc="left",
     fontsize=12,
     fontweight="bold",
@@ -428,12 +428,13 @@ grid_labels = [
     ("jrc_climate", "JRC PV climates", "Land POA/module-temperature means; 2005-2023"),
     ("ml21", "ML21 catalogue", "Published climate labels/features; mixed periods"),
     ("pvcz", "PVCZ catalogue", "Land thermal/humidity stressors; 2010-2018"),
+    ("pvgis", "JRC PVGIS", "Solar resource / PV models; query native coverage"),
     ("cmip6", "CMIP6 / ESGF", "Selected model, experiment and grid availability"),
     ("canary_clim", "CanaryClim", "Canary Islands; monthly climate, 1979-2013"),
     ("global_solar_atlas", "Global Solar Atlas", "Spain / Chile GHI; native masks and periods"),
 ]
 for row, (_provider, label, scope) in enumerate(grid_labels):
-    y = 0.94 - row * 0.075
+    y = 0.94 - row * (0.90 / (len(grid_labels) - 1))
     ax_grids.text(0, y, label, fontsize=10.5, weight="bold", color=TEXT_COLOR, va="top")
     ax_grids.text(0.29, y, scope, fontsize=9.5, color="#506b7d", va="top")
 fig_weather.suptitle(

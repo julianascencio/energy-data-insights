@@ -75,6 +75,20 @@ def _generation_assets(root: Path) -> None:
             bundle.write(path, arcname=path.relative_to(examples))
 
 
+def _pvgis_assets(root: Path) -> None:
+    """Bundle complete PVGIS captures with their provenance and runnable examples."""
+    examples = root / "examples/connectors"
+    gallery = root / "docs/auto_examples/connectors"
+    destination = gallery / "data"
+    destination.mkdir(parents=True, exist_ok=True)
+    samples = sorted((examples / "data").glob("pvgis_*.json"))
+    for sample in samples:
+        shutil.copyfile(sample, destination / sample.name)
+    with ZipFile(gallery / "pvgis_examples.zip", "w", compression=ZIP_DEFLATED) as bundle:
+        for path in [*sorted(examples.glob("plot_pvgis_*.py")), *samples]:
+            bundle.write(path, arcname=path.relative_to(examples))
+
+
 def _climate_assets(root: Path) -> None:
     """Bundle source samples and existing regional context for offline execution."""
     examples = root / "examples/analysis"
@@ -192,6 +206,7 @@ def prepare_sources(root: Path) -> list[str]:
             encoding="utf-8",
         )
     _generation_assets(root)
+    _pvgis_assets(root)
     _climate_assets(root)
     _site_and_degradation_assets(root)
     return [path.name for path in docs.glob("*.md")]

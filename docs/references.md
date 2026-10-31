@@ -1211,3 +1211,19 @@ Karin, Todd (2019). **Photovoltaic Climate Zones and Stressors (PVCZ)**. [Source
 **Role:** software. Pinned public CSV from the MIT-licensed author repository, based on GLDAS 2010-2018 at 0.25 degree. Original labels retained despite rounded coordinates/stresses; no pickle loaded. MIT copyright and permission notice included with extracts.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/pvcz/client.py`, `examples/analysis/climate_PVCZ_LICENSE.txt`.
+
+### pvgis_5_api
+
+European Commission Joint Research Centre (n.d.). **PVGIS 5 API non-interactive service**. [Source](https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/api-non-interactive-service_en)
+
+**Role:** data. Seven public calculation/data tools; v5.3 and explicit v5.2 routing. Provider model and data reuse conditions apply. No field-measurement or accuracy claim.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/pvgis`, `docs/pvgis.md`.
+
+### pvgis_6_api
+
+European Commission Joint Research Centre (n.d.). **PVGIS 6 Web API**. [Source](https://photovoltaic-geographic-information-system.ec.europa.eu/api/v6/docs)
+
+**Role:** data. Version 6 OpenAPI contract reviewed 2026-10-31; 20 paths and 27 GET/POST operations. Native parameters, conventions and outputs retained. Active service development may change the contract. Software licensing does not by itself establish data reuse terms.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/pvgis`, `docs/pvgis.md`.

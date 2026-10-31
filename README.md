@@ -26,6 +26,9 @@ installation, user guides, searchable API reference and executable example galle
 Built with Sphinx and the PyData theme; GitHub Actions validates every PR and
 deploys the site from `main`. See [building and deploying the documentation](docs/development.rst).
 
+[PVGIS connector](docs/pvgis.md): all PVGIS 5 and 6 endpoints, including weather,
+PV output, TMY, terrain, coverage and metadata, with offline gallery examples.
+
 ## AI-generated implementation and scientific sources
 
 Most of the code, documentation and examples in this repository are **AI-generated

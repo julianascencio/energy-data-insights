@@ -20,7 +20,7 @@ from datetime import UTC, datetime
 from email.message import Message
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-from typing import cast
+from typing import Literal, cast
 from urllib.parse import quote, quote_plus, urlsplit
 
 import httpx
@@ -161,6 +161,16 @@ class TextResponse:
     record: RequestRecord
 
 
+@dataclass(frozen=True, slots=True)
+class BytesResponse:
+    """Exact public response bytes, media type and provider request identifier."""
+
+    value: bytes
+    record: RequestRecord
+    content_type: str
+    request_id: str | None
+
+
 def atomic_bytes(path: Path, data: bytes) -> None:
     """Replace one file atomically; failed writes never publish a partial file."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -224,7 +234,7 @@ def _legacy_json_encoding(content_type: str) -> str | None:
 
 
 class HTTPClient:
-    """An HTTPS GET transport with a fixed host allowlist and no redirects.
+    """Bounded HTTPS retrieval with a fixed host allowlist and no redirects.
 
     Authentication must be passed separately through ``secrets`` or
     ``secret_headers``. Authenticated responses never use the public cache.
@@ -299,6 +309,105 @@ class HTTPClient:
             if math.isfinite(requested):
                 delay = max(delay, requested)
         return min(self.config.maximum_retry_seconds, max(0.0, delay))
+
+    def request_bytes(
+        self,
+        endpoint: str,
+        parameters: Mapping[str, str | list[str]] | None = None,
+        *,
+        method: Literal["GET", "POST"] = "GET",
+        form: Mapping[str, str | list[str]] | None = None,
+        files: Mapping[str, tuple[str, bytes, str]] | None = None,
+    ) -> BytesResponse:
+        """Retrieve public binary/text data or submit an idempotent calculation.
+
+        POST is for read-only provider calculations, never state changes. Public
+        fields only; no authentication and no cache. List-valued query/form
+        fields retain repeated keys. Uploads and responses obey the configured
+        byte limit. Provenance includes method, form values and upload hashes.
+        Redirects are refused; retries include 529 (PVGIS computation overload).
+        """
+        parsed = urlsplit(endpoint)
+        if (
+            parsed.scheme != "https"
+            or parsed.hostname not in self.allowed_hosts
+            or parsed.username is not None
+            or parsed.password is not None
+            or parsed.query
+            or parsed.fragment
+            or parsed.port not in (None, 443)
+        ):
+            raise ValueError("Endpoint must be a query-free HTTPS URL on an approved host")
+        if method not in {"GET", "POST"} or (method == "GET" and (form or files)):
+            raise ValueError("Use GET without a body or POST for a read-only calculation")
+        query, fields, uploads = dict(parameters or {}), dict(form or {}), dict(files or {})
+        for group in (query, fields, uploads):
+            if any(name.lower() in _SECRET_NAMES for name in group):
+                raise ValueError("Binary retrieval accepts public parameters only")
+        provenance = {"method": method}
+        for prefix, group in (("query", query), ("form", fields)):
+            for name, value in group.items():
+                values = value if isinstance(value, list) else [value]
+                if not values or not all(isinstance(item, str) for item in values):
+                    raise ValueError("Public query/form values must be strings or nonempty lists")
+                provenance[f"{prefix}:{name}"] = (
+                    json.dumps(value) if isinstance(value, list) else value
+                )
+        upload_size = 0
+        for name, (filename, body, media_type) in uploads.items():
+            if not filename or not media_type or not isinstance(body, bytes):
+                raise ValueError("Uploads require a filename, bytes and media type")
+            upload_size += len(body)
+            provenance[f"file:{name}:sha256"] = hashlib.sha256(body).hexdigest()
+            provenance[f"file:{name}:size_bytes"] = str(len(body))
+        if upload_size > self.config.maximum_response_bytes:
+            raise ValueError("Upload exceeds the configured byte limit")
+        last_status: int | None = None
+        request_id: str | None = None
+        for attempt in range(self.config.attempts):
+            self._wait_for_slot()
+            response: httpx.Response | None = None
+            try:
+                with self._client.stream(
+                    method,
+                    endpoint,
+                    params=query,
+                    data=fields or None,
+                    files=uploads or None,
+                    headers={"Accept": "*/*"},
+                ) as response:
+                    last_status = response.status_code
+                    request_id = response.headers.get("X-Request-ID")
+                    if last_status == 200:
+                        body = bytearray()
+                        for chunk in response.iter_bytes(chunk_size=64 * 1024):
+                            if len(body) + len(chunk) > self.config.maximum_response_bytes:
+                                raise RetrievalError(
+                                    "Source response exceeded the configured byte limit"
+                                )
+                            body.extend(chunk)
+                        raw = bytes(body)
+                        record = RequestRecord(
+                            endpoint,
+                            provenance,
+                            datetime.now(UTC).isoformat(),
+                            hashlib.sha256(raw).hexdigest(),
+                            len(raw),
+                        )
+                        return BytesResponse(
+                            raw, record, response.headers.get("Content-Type", ""), request_id
+                        )
+                    if last_status not in _RETRY_STATUSES | {529}:
+                        break
+            except httpx.TransportError:
+                last_status = None
+            if attempt + 1 < self.config.attempts:
+                self._sleep(self._retry_delay(response, attempt))
+        status = f"HTTP {last_status}" if last_status is not None else "transport failure"
+        identifier = f"; request_id={request_id[:128]}" if request_id else ""
+        raise RetrievalError(
+            f"Retrieval failed from {parsed.hostname}: {status}{identifier}"
+        ) from None
 
     def download_file(
         self,
