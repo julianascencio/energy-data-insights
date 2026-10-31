@@ -133,6 +133,54 @@ def _candelaria_assets(root: Path) -> None:
             bundle.write(path, arcname=path.relative_to(examples))
 
 
+def _module_counting_assets(root: Path) -> None:
+    """Bundle the runnable counting example, exact imagery and computed review exports."""
+    import json
+    from tempfile import TemporaryDirectory
+
+    from energy_analysis.module_counting import count_rendered_site
+    from energy_analysis.module_counting.reports import export_counting_study
+
+    examples = root / "examples"
+    source = examples / "connectors/data"
+    gallery = root / "docs/auto_examples/analysis"
+    destination = gallery / "data"
+    destination.mkdir(parents=True, exist_ok=True)
+    samples = sorted(source.glob("candelaria_*"))
+    for sample in samples:
+        shutil.copyfile(sample, destination / sample.name)
+    site = json.loads((source / "candelaria_site.json").read_text())
+    study = count_rendered_site(source / "candelaria_pnoa.png", site["footprint"])
+    with TemporaryDirectory() as temporary:
+        exports = export_counting_study(study, Path(temporary) / "results")
+        with ZipFile(
+            gallery / "candelaria_module_counting.zip", "w", compression=ZIP_DEFLATED
+        ) as bundle:
+            script = examples / "analysis/plot_candelaria_module_counting.py"
+            bundle.write(script, arcname=script.name)
+            original = examples / "connectors/plot_candelaria_solar_farm.py"
+            bundle.write(original, arcname=original.name)
+            bundle.writestr(
+                "README.txt",
+                "Automatic PV module counting — Planta Icor\n\n"
+                "Use the current energy-data-insights workspace:\n"
+                "https://github.com/julianascencio/energy-data-insights\n"
+                "From its root: uv sync --locked --all-packages\n"
+                "Then: uv run --no-sync python "
+                "/path/to/extracted/plot_candelaria_module_counting.py\n\n"
+                "The counting example supports Python 3.12/3.13 and runs offline.\n"
+                "results/ contains candidate CSV, GeoJSON and provenance JSON.\n"
+                "Counts are experimental; review flags and exclusions are not ground truth.\n"
+                "data/candelaria_README.txt preserves all source credits and licences.\n"
+                "The included earlier plot_candelaria_solar_farm.py imagery tutorial needs\n"
+                "Python 3.13 and the optional imagery workspace group.\n",
+            )
+            for sample in samples:
+                bundle.write(sample, arcname=f"data/{sample.name}")
+            for output in sorted(exports.iterdir()):
+                bundle.write(output, arcname=f"results/{output.name}")
+
+
 def _climate_assets(root: Path) -> None:
     """Bundle source samples and existing regional context for offline execution."""
     examples = root / "examples/analysis"
@@ -254,6 +302,7 @@ def prepare_sources(root: Path) -> list[str]:
     _terrain_assets(root)
     _imagery_assets(root)
     _candelaria_assets(root)
+    _module_counting_assets(root)
     _climate_assets(root)
     _site_and_degradation_assets(root)
     return [path.name for path in docs.glob("*.md")]

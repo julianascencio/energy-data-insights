@@ -1330,7 +1330,7 @@ Cabildo Insular de Tenerife; Instituto Tecnológico y de Energías Renovables (n
 
 **Role:** data. CC BY. Official catalogue feature 6 identifies Planta Icor at longitude -16.442229, latitude 28.194341 with 2,000 kW listed power; AC/DC basis unspecified. Full canonical GeoJSON and request hash retained. OSM point-in-polygon association is not a surveyed boundary.
 
-**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`.
+**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`, `docs/pv-module-counting.md`, `examples/analysis/plot_candelaria_module_counting.py`.
 
 ### osm_solar_footprints
 
@@ -1338,7 +1338,7 @@ OpenStreetMap contributors (n.d.). **OpenStreetMap solar-energy features and cop
 
 **Role:** data. ODbL-1.0. Original query-bound Tenerife capture from Orbital PV commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05, examples/ground_imagery/_data/tenerife-osm.json, retrieved 2026-10-30; original sidecar and checksum retained. Way 430266023 contains the official Icor point. Mapping does not establish ownership, full installation extent or capacity.
 
-**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`.
+**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`, `docs/pv-module-counting.md`, `examples/analysis/plot_candelaria_module_counting.py`.
 
 ### ign_pnoa_imagery
 
@@ -1346,4 +1346,20 @@ Instituto Geográfico Nacional; Plan Nacional de Ortofotografía Aérea (n.d.). 
 
 **Role:** data. PNOA/IGN rendered aerial orthophoto via https://www.ign.es/wms-inspire/pnoa-ma, OI.OrthoimageCoverage, WMS 1.1.1. IGN attribution/licence terms apply. The Icor view is aerial, not satellite or calibrated reflectance; acquisition date and native GSD remain unknown. Render width does not establish native detail. Original query and SHA-256 retained.
 
-**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`.
+**Used by:** `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/data/candelaria_site.json`, `scripts/prepare_candelaria_imagery.py`, `docs/satellite-imagery.md`, `examples/connectors/data/candelaria_README.txt`, `docs/pv-module-counting.md`, `examples/analysis/plot_candelaria_module_counting.py`.
+
+### grimaccia_2017_pv_mapping
+
+Grimaccia, Francesco; Leva, Sonia; Niccolai, Alessandro (2017). **PV plant digital mapping for modules’ defects detection by unmanned aerial vehicles**. IET Renewable Power Generation, 11(10), 1221-1228. [DOI: 10.1049/iet-rpg.2016.1041](https://doi.org/10.1049/iet-rpg.2016.1041)
+
+**Role:** background. Background for colour-based PV module recognition and mapping from aerial imagery. The repository uses its own experimental RGB thresholding, morphology, robust table-edge fitting and brightness-profile grid counter; it does not reproduce the paper’s HSV/UAV workflow or its validation. Candidate counts require independent annotations or an as-built inventory.
+
+**Used by:** `methods/src/energy_methods/pv_module_counting.py`, `docs/pv-module-counting.md`, `examples/analysis/plot_candelaria_module_counting.py`.
+
+### scipy_find_peaks
+
+SciPy contributors (n.d.). **SciPy signal.find_peaks reference**. [Source](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html)
+
+**Role:** implemented. Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy.
+
+**Used by:** `methods/src/energy_methods/pv_module_counting.py`, `docs/pv-module-counting.md`, `examples/analysis/plot_candelaria_module_counting.py`.

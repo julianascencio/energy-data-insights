@@ -3840,7 +3840,9 @@
       "examples/connectors/data/candelaria_site.json",
       "scripts/prepare_candelaria_imagery.py",
       "docs/satellite-imagery.md",
-      "examples/connectors/data/candelaria_README.txt"
+      "examples/connectors/data/candelaria_README.txt",
+      "docs/pv-module-counting.md",
+      "examples/analysis/plot_candelaria_module_counting.py"
     ],
     "note": "CC BY. Official catalogue feature 6 identifies Planta Icor at longitude -16.442229, latitude 28.194341 with 2,000 kW listed power; AC/DC basis unspecified. Full canonical GeoJSON and request hash retained. OSM point-in-polygon association is not a surveyed boundary.",
     "verified_at": "2026-10-31"
@@ -3861,7 +3863,9 @@
       "examples/connectors/data/candelaria_site.json",
       "scripts/prepare_candelaria_imagery.py",
       "docs/satellite-imagery.md",
-      "examples/connectors/data/candelaria_README.txt"
+      "examples/connectors/data/candelaria_README.txt",
+      "docs/pv-module-counting.md",
+      "examples/analysis/plot_candelaria_module_counting.py"
     ],
     "note": "ODbL-1.0. Original query-bound Tenerife capture from Orbital PV commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05, examples/ground_imagery/_data/tenerife-osm.json, retrieved 2026-10-30; original sidecar and checksum retained. Way 430266023 contains the official Icor point. Mapping does not establish ownership, full installation extent or capacity.",
     "verified_at": "2026-10-31"
@@ -3883,9 +3887,55 @@
       "examples/connectors/data/candelaria_site.json",
       "scripts/prepare_candelaria_imagery.py",
       "docs/satellite-imagery.md",
-      "examples/connectors/data/candelaria_README.txt"
+      "examples/connectors/data/candelaria_README.txt",
+      "docs/pv-module-counting.md",
+      "examples/analysis/plot_candelaria_module_counting.py"
     ],
     "note": "PNOA/IGN rendered aerial orthophoto via https://www.ign.es/wms-inspire/pnoa-ma, OI.OrthoimageCoverage, WMS 1.1.1. IGN attribution/licence terms apply. The Icor view is aerial, not satellite or calibrated reflectance; acquisition date and native GSD remain unknown. Render width does not establish native detail. Original query and SHA-256 retained.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "grimaccia_2017_pv_mapping",
+    "title": "PV plant digital mapping for modules’ defects detection by unmanned aerial vehicles",
+    "authors": [
+      "Grimaccia, Francesco",
+      "Leva, Sonia",
+      "Niccolai, Alessandro"
+    ],
+    "year": 2017,
+    "doi": "10.1049/iet-rpg.2016.1041",
+    "url": "https://doi.org/10.1049/iet-rpg.2016.1041",
+    "kind": "article",
+    "role": "background",
+    "used_by": [
+      "methods/src/energy_methods/pv_module_counting.py",
+      "docs/pv-module-counting.md",
+      "examples/analysis/plot_candelaria_module_counting.py"
+    ],
+    "note": "Background for colour-based PV module recognition and mapping from aerial imagery. The repository uses its own experimental RGB thresholding, morphology, robust table-edge fitting and brightness-profile grid counter; it does not reproduce the paper’s HSV/UAV workflow or its validation. Candidate counts require independent annotations or an as-built inventory.",
+    "verified_at": "2026-10-31",
+    "publication": "IET Renewable Power Generation",
+    "volume": "11",
+    "issue": "10",
+    "pages": "1221-1228"
+  },
+  {
+    "id": "scipy_find_peaks",
+    "title": "SciPy signal.find_peaks reference",
+    "authors": [
+      "SciPy contributors"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html",
+    "kind": "software",
+    "role": "implemented",
+    "used_by": [
+      "methods/src/energy_methods/pv_module_counting.py",
+      "docs/pv-module-counting.md",
+      "examples/analysis/plot_candelaria_module_counting.py"
+    ],
+    "note": "Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy.",
     "verified_at": "2026-10-31"
   }
 ]
