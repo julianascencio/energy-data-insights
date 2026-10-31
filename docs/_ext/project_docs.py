@@ -222,6 +222,42 @@ def _chile_module_assets(root: Path) -> None:
             )
 
 
+def _rengo_module_assets(root: Path) -> None:
+    """Bundle the near-Rengo pilot and its complete, scoped visual audit."""
+    from tempfile import TemporaryDirectory
+
+    from energy_analysis.module_counting.rengo import export_rengo_study
+
+    source = root / "examples/analysis/data/rengo_modules"
+    gallery = root / "docs/auto_examples/analysis"
+    shutil.copytree(source, gallery / "data/rengo_modules", dirs_exist_ok=True)
+    with TemporaryDirectory() as temporary:
+        exports = export_rengo_study(source, Path(temporary) / "results")
+        with ZipFile(
+            gallery / "rengo_module_counting.zip", "w", compression=ZIP_DEFLATED
+        ) as bundle:
+            script = root / "examples/analysis/plot_rengo_module_counting.py"
+            bundle.write(script, arcname=script.name)
+            bundle.write(root / "docs/rengo-module-counting.md", arcname="EVIDENCE.md")
+            for path in sorted(source.iterdir()):
+                bundle.write(path, arcname=f"data/rengo_modules/{path.name}")
+            for path in sorted(exports.iterdir()):
+                bundle.write(path, arcname=f"results/{path.name}")
+            bundle.writestr(
+                "README.txt",
+                "El Mirlo near Rengo — experimental module candidates\n\n"
+                "Use https://github.com/julianascencio/energy-data-insights\n"
+                "From its root: uv sync --locked --all-packages\n"
+                "Then: uv run --no-sync python "
+                "/path/to/extracted/plot_rengo_module_counting.py\n"
+                "Python 3.12/3.13; no network calls are required.\n"
+                "Read EVIDENCE.md and data/rengo_modules/README.txt.\n"
+                "Both initial and corrected AI visual annotations are included.\n"
+                "The small same-image audit is not independent ground truth.\n"
+                "The count covers a partial block, not the whole plant.\n",
+            )
+
+
 def _climate_assets(root: Path) -> None:
     """Bundle source samples and existing regional context for offline execution."""
     examples = root / "examples/analysis"
@@ -345,6 +381,7 @@ def prepare_sources(root: Path) -> list[str]:
     _candelaria_assets(root)
     _module_counting_assets(root)
     _chile_module_assets(root)
+    _rengo_module_assets(root)
     _climate_assets(root)
     _site_and_degradation_assets(root)
     return [path.name for path in docs.glob("*.md")]

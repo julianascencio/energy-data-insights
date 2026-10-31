@@ -1384,7 +1384,7 @@
   author = {{Esri}},
   title = {{World Imagery static map exports and source metadata}},
   url = {https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer},
-  note = {Role: data. Three attributed research-report static maps. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.}
+  note = {Role: data. Attributed research-report static maps for the Chile audits and El Mirlo pilot. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.}
 }
 
 @misc{ceme1_engineering_inventory,
@@ -1399,4 +1399,23 @@
   title = {{Planta de gas, Concón}},
   url = {https://sunbelt.cl/proyectos/planta-de-gas-concon/},
   note = {Role: data. Installer confirms photovoltaic technology, PMGD use and 118 kWp DC. No verified module count supplied; photographs do not provide an unobscured complete inventory.}
+}
+
+@article{cardoso_2024_pv_modules,
+  author = {Cardoso, Andressa and Jurado-Rodríguez, David and López, Alfonso and Ramos, M. Isabel and Jurado, Juan Manuel},
+  title = {{Automated detection and tracking of photovoltaic modules from 3D remote sensing data}},
+  year = {2024},
+  journal = {Applied Energy},
+  volume = {367},
+  pages = {123242},
+  doi = {10.1016/j.apenergy.2024.123242},
+  url = {https://alfonsolrz.github.io/files/publications/journal/2024-automated-detection-tracking-photovoltaic-modules-3d.pdf},
+  note = {Role: background. Background on geometric individual-module detection from high-resolution UAV RGB/thermal and 3D data. The PCA/autocorrelation method here is a separate experimental implementation, not a reproduction; published accuracy does not transfer to the El Mirlo basemap pilot. No known-count gap filling is implemented.}
+}
+
+@misc{el_mirlo_project,
+  author = {{oEnergy / PFV El Mirlo SpA}},
+  title = {{Parque Fotovoltaico El Mirlo}},
+  url = {https://mirlo.centralpmgd.cl/},
+  note = {Role: data. Developer project page confirms identity and Malloa location. Design power is not substituted for the dated CEN power field. No project-design module count is used in image detection.}
 }

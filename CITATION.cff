@@ -3586,7 +3586,7 @@
         }
       ],
       "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
-      "notes": "Role: data. Three attributed research-report static maps. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted."
+      "notes": "Role: data. Attributed research-report static maps for the Chile audits and El Mirlo pilot. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted."
     },
     {
       "type": "dataset",
@@ -3609,6 +3609,49 @@
       ],
       "url": "https://sunbelt.cl/proyectos/planta-de-gas-concon/",
       "notes": "Role: data. Installer confirms photovoltaic technology, PMGD use and 118 kWp DC. No verified module count supplied; photographs do not provide an unobscured complete inventory."
+    },
+    {
+      "type": "article",
+      "title": "Automated detection and tracking of photovoltaic modules from 3D remote sensing data",
+      "authors": [
+        {
+          "family-names": "Cardoso",
+          "given-names": "Andressa"
+        },
+        {
+          "family-names": "Jurado-Rodríguez",
+          "given-names": "David"
+        },
+        {
+          "family-names": "López",
+          "given-names": "Alfonso"
+        },
+        {
+          "family-names": "Ramos",
+          "given-names": "M. Isabel"
+        },
+        {
+          "family-names": "Jurado",
+          "given-names": "Juan Manuel"
+        }
+      ],
+      "url": "https://alfonsolrz.github.io/files/publications/journal/2024-automated-detection-tracking-photovoltaic-modules-3d.pdf",
+      "notes": "Role: background. Background on geometric individual-module detection from high-resolution UAV RGB/thermal and 3D data. The PCA/autocorrelation method here is a separate experimental implementation, not a reproduction; published accuracy does not transfer to the El Mirlo basemap pilot. No known-count gap filling is implemented.",
+      "year": 2024,
+      "doi": "10.1016/j.apenergy.2024.123242",
+      "journal": "Applied Energy",
+      "volume": "367"
+    },
+    {
+      "type": "dataset",
+      "title": "Parque Fotovoltaico El Mirlo",
+      "authors": [
+        {
+          "name": "oEnergy / PFV El Mirlo SpA"
+        }
+      ],
+      "url": "https://mirlo.centralpmgd.cl/",
+      "notes": "Role: data. Developer project page confirms identity and Malloa location. Design power is not substituted for the dated CEN power field. No project-design module count is used in image detection."
     }
   ]
 }

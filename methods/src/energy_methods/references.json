@@ -525,7 +525,9 @@
       "docs/worldwide-generation.md",
       "docs/chile-module-counting.md",
       "examples/analysis/plot_chile_largest_module_counting.py",
-      "examples/analysis/plot_chile_smallest_module_counting.py"
+      "examples/analysis/plot_chile_smallest_module_counting.py",
+      "docs/rengo-module-counting.md",
+      "examples/analysis/data/rengo_modules/rengo_study.json"
     ],
     "note": "Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity.",
     "verified_at": "2026-10-29"
@@ -3936,7 +3938,8 @@
     "used_by": [
       "methods/src/energy_methods/pv_module_counting.py",
       "docs/pv-module-counting.md",
-      "examples/analysis/plot_candelaria_module_counting.py"
+      "examples/analysis/plot_candelaria_module_counting.py",
+      "methods/src/energy_methods/pv_lattice_counting.py"
     ],
     "note": "Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy.",
     "verified_at": "2026-10-31"
@@ -3955,9 +3958,11 @@
     "used_by": [
       "docs/chile-module-counting.md",
       "examples/analysis/plot_chile_largest_module_counting.py",
-      "examples/analysis/plot_chile_smallest_module_counting.py"
+      "examples/analysis/plot_chile_smallest_module_counting.py",
+      "docs/rengo-module-counting.md",
+      "examples/analysis/data/rengo_modules/rengo_study.json"
     ],
-    "note": "Three attributed research-report static maps. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.",
+    "note": "Attributed research-report static maps for the Chile audits and El Mirlo pilot. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.",
     "verified_at": "2026-10-31"
   },
   {
@@ -3996,6 +4001,50 @@
       "examples/analysis/plot_chile_smallest_module_counting.py"
     ],
     "note": "Installer confirms photovoltaic technology, PMGD use and 118 kWp DC. No verified module count supplied; photographs do not provide an unobscured complete inventory.",
+    "verified_at": "2026-10-31"
+  },
+  {
+    "id": "cardoso_2024_pv_modules",
+    "title": "Automated detection and tracking of photovoltaic modules from 3D remote sensing data",
+    "authors": [
+      "Cardoso, Andressa",
+      "Jurado-Rodríguez, David",
+      "López, Alfonso",
+      "Ramos, M. Isabel",
+      "Jurado, Juan Manuel"
+    ],
+    "year": 2024,
+    "doi": "10.1016/j.apenergy.2024.123242",
+    "url": "https://alfonsolrz.github.io/files/publications/journal/2024-automated-detection-tracking-photovoltaic-modules-3d.pdf",
+    "kind": "article",
+    "role": "background",
+    "used_by": [
+      "methods/src/energy_methods/pv_lattice_counting.py",
+      "docs/rengo-module-counting.md"
+    ],
+    "note": "Background on geometric individual-module detection from high-resolution UAV RGB/thermal and 3D data. The PCA/autocorrelation method here is a separate experimental implementation, not a reproduction; published accuracy does not transfer to the El Mirlo basemap pilot. No known-count gap filling is implemented.",
+    "verified_at": "2026-10-31",
+    "publication": "Applied Energy",
+    "volume": "367",
+    "issue": "",
+    "pages": "123242"
+  },
+  {
+    "id": "el_mirlo_project",
+    "title": "Parque Fotovoltaico El Mirlo",
+    "authors": [
+      "oEnergy / PFV El Mirlo SpA"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://mirlo.centralpmgd.cl/",
+    "kind": "dataset",
+    "role": "data",
+    "used_by": [
+      "docs/rengo-module-counting.md",
+      "examples/analysis/data/rengo_modules/rengo_study.json"
+    ],
+    "note": "Developer project page confirms identity and Malloa location. Design power is not substituted for the dated CEN power field. No project-design module count is used in image detection.",
     "verified_at": "2026-10-31"
   }
 ]
