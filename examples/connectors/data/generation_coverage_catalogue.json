@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-30",
+  "as_of": "2026-10-31",
   "interpretation": "Inventory of implemented source modules, not a service-territory map or a measurement-availability test. Country shading identifies 13 host countries with country/system generation products; it does not assert complete national, plant, technology or distributed-generation coverage. Country codes follow the accompanying Natural Earth ADM0_A3 units. Regional-grid country codes identify host geography only: CanaryClim covers the Canary Islands, and the Global Solar Atlas connector retrieves only its pinned Spain annual-GHI archive. All schematic_region coordinates are illustrative country or regional locators, not provider offices, power-plant locations or coverage polygons. The PVDAQ marker is one archive example, the NIST marker is a published reference testbed and the DKASC marker is a rounded precinct locator. Global and land scope describes documented product domains only; native masks, cached catalogue bounding boxes, selected CMIP6 grids, dates and access conditions remain authoritative. The station importer has no external provider citation, and Natural Earth is geographic context rather than observed energy or weather data.",
   "connectors": [
     {
@@ -607,6 +607,20 @@
       ],
       "source_url": "https://data.openei.org/submissions/4568",
       "locator_source": "https://oedi-data-lake.s3.amazonaws.com/pvdaq/csv/system_metadata/4_system_metadata.json"
+    },
+    {
+      "id": "pvgis",
+      "label": "JRC PVGIS",
+      "category": "grid",
+      "coverage_kind": "land_grid",
+      "scope": "Solar resource, meteorology and modelled PV output. Version 6 documents global land plus 25 km offshore for 2014-2025; individual source masks and version 5 coverage differ. Use the coverage endpoints to check a coordinate. These are model estimates, not measured generation.",
+      "access": "public",
+      "country_codes": [],
+      "references": [
+        "pvgis_5_api",
+        "pvgis_6_api"
+      ],
+      "source_url": "https://photovoltaic-geographic-information-system.ec.europa.eu/api/v6/docs"
     },
     {
       "id": "ree",

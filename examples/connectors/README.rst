@@ -26,3 +26,10 @@ Download the :download:`generation examples with their data
 See the :doc:`worldwide provider catalogue </_generated/guides/worldwide-generation>`
 and :doc:`original generation guide </_generated/guides/generation-connectors>`
 for Python/CLI usage, provider access and coverage limits.
+
+PVGIS examples cover modelled solar resource and PV performance, distinct from
+measured generation. Start with :doc:`all seven PVGIS 5 tools
+</auto_examples/connectors/plot_pvgis_legacy>` and :doc:`PVGIS 6 terrain and PV output
+</auto_examples/connectors/plot_pvgis_v6>`. Both run offline from complete,
+checksum-verified public responses. Download the :download:`PVGIS examples bundle
+</auto_examples/connectors/pvgis_examples.zip>`.

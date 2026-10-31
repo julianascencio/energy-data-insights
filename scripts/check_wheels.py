@@ -33,6 +33,10 @@ for name, expected_version in json.loads(sys.argv[1]).items():
     assert distribution.version == expected_version, distribution.version
     resources = importlib.resources.files(module)
     assert resources.joinpath('py.typed').is_file(), name
+    if name == 'energy-data-retrieval':
+        from energy_data_retrieval.sources.pvgis import endpoints, describe_endpoint
+        assert len(endpoints('6')) == 27
+        assert 'latitude' in describe_endpoint('/power/broadband')['parameters']
     if name == 'energy-methods':
         json.loads(resources.joinpath('references.json').read_text())
     for entry in distribution.entry_points:
