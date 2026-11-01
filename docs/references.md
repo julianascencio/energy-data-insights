@@ -1683,3 +1683,91 @@ Electricity Authority New Zealand (n.d.). **Eye on electricity: Battery performa
 **Role:** data. Operating grid batteries listed: Rotohiko 35 MW / 35 MWh, Ruakākā 100 MW / 200 MWh and Glenbrook-Ohurua 100 MW / 200 MWh. Factual metadata only; no open data license asserted.
 
 **Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_eia860_2025_bess
+
+U.S. Energy Information Administration (n.d.). **Form EIA-860 detailed data, report year 2025: battery storage**. [Source](https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip)
+
+**Role:** data. Operating battery units aggregated by Plant Code. Nameplate power AC; stored energy nameplate; December 31 reporting-year status per archive instructions. Electrochemical capacitors excluded.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_repd_2026_q2_bess
+
+Department for Energy Security and Net Zero (2026). **Renewable Energy Planning Database, July 2026 (Q2) battery records**. [Source](https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv)
+
+**Role:** data. CP1252 CSV; operational Battery records only. Planning records require phase and alias reconciliation; MWh unreported; native applicant/operator and projected coordinates retained without role or datum inference.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_neoen_blyth_2025
+
+Neoen (2025). **Blyth Battery is now operating**. [Source](https://blythbattery.com.au/2025/04/10/blyth-battery-is-now-operating/)
+
+**Role:** data. 238.5 MW / 477 MWh operating; South Australia; release date not asserted as COD.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_neoen_western_downs_2025
+
+Neoen (2025). **Multiple milestones reached on Western Downs Battery**. [Source](https://westerndownsgreenpowerhub.com.au/2025/12/15/multiple-milestones-reached-on-western-downs-battery/)
+
+**Role:** data. Stages 1 and 2 operating at combined 540 MW / 1080 MWh. Stage 3 is 305 MW / 1220 MWh under construction, expected summer 2027/28 and excluded from current totals.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_amea_abydos_2025
+
+AMEA Power (2025). **Successful commissioning of Egypt battery energy storage system**. [Source](https://www.ameapower.com/amea-power-successfully-commissions-landmark-battery-energy-storage-system-in-egypt-following-successful-financial-close/)
+
+**Role:** data. 300 MWh BESS at 500 MW solar plant in Aswan; commissioning complete ahead of scheduled COD; exact commercial operation unconfirmed.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_ifc_abydos_bess
+
+International Finance Corporation (2025). **Abydos I BESS investment disclosure 50576**. [Source](https://disclosures.ifc.org/project-detail/SII/50576/abydos-i-bess)
+
+**Role:** data. Named Abydos I BESS: 300 MWh integrated with existing 500 MWac PV in Aswan. The November 2024 commissioning date refers to solar, not BESS.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_acwa_riverside_cod
+
+ACWA Power, issuer announcement via Euroland IR (n.d.). **Riverside BESS full commercial-operation notice**. [Source](https://ksatools.eurolandir.com/tools/Pressreleases/GetPressRelease/?ID=7901635&companycode=sa-acwa&lang=en-GB&v=ticker)
+
+**Role:** data. Company received notice on 11 February 2026 that full COD had been achieved. 334 MW / 501 MWh Plant 2, 200 MW PV Plant 1, Tashkent region. Notice receipt is not necessarily the exact COD.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_esb_aghada_2024
+
+ESB (2024). **Aghada second battery facility opens**. [Source](https://esb.ie/news---insights/press-releases/article/2024/11/15/esb-officially-opens-its-latest-battery-storage-project-in-co-cork-as-part-of--300m-investment)
+
+**Role:** data. Second Aghada battery 150 MW / 300 MWh, following first 19 MW / 38 MWh in 2022. Poolbeg 75 MW /150 MWh. Aghada combined arithmetic total is 169 MW /338 MWh; no duplicate phase rows.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_esb_poolbeg
+
+ESB (n.d.). **Poolbeg Energy Hub**. [Source](https://esb.ie/what-we-do/generation-and-trading/poolbeg-energy-hub)
+
+**Role:** data. 75 MW /150 MWh operational since late November 2023. Owner reports coordinates 53.340380,-6.189385. February 2024 opening is not COD.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_met_dunamenti_2025
+
+MET Group (2025). **Dunamenti battery energy storage facility enters operation**. [Source](https://met.com/en/media/press-releases/met-group-inaugurates-hungary-s-largest-battery-energy-storage-facility/)
+
+**Role:** data. New facility 40 MW /80 MWh enters operation in Szazhalombatta. Huawei equipment, Forest-Vill main contractor. Separate 2022 Tesla demonstrator 4 MW /8 MWh excluded from new-facility ratings.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_baltic_storage_platform
+
+Baltic Storage Platform (n.d.). **Kiisa and Arukula battery parks**. [Source](https://balticstorageplatform.ee/)
+
+**Role:** data. Two independent 100 MW /200 MWh parks. Kiisa operating for grid services Q4 2025. Arukula construction completed in 2026; both regulate grid frequency. No exact COD inferred. Joint venture Evecon, Corsica Sole and Mirova.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.

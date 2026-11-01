@@ -75,9 +75,14 @@ print(
 # Plot project counts and paired ratings. Never use the PV or whole-site grid
 # connection capacity in place of missing battery MW. Colour separates source
 # status, and open conflict records are omitted from the capacity scatter.
-fig, axes = plt.subplots(1, 2, figsize=(13, 7), layout="constrained")
+fig, axes = plt.subplots(1, 2, figsize=(13, 9), layout="constrained")
 projects["country_code"].value_counts().sort_values().plot.barh(ax=axes[0], color="#167d9a")
-axes[0].set(xlabel="Project records", ylabel="Country", title="Initial catalogue coverage")
+axes[0].set(
+    xscale="log",
+    xlabel="Project / plant records (log scale)",
+    ylabel="Country",
+    title="Catalogue coverage; not market share",
+)
 paired = projects.loc[
     projects["quality_status"].eq("source_backed")
     & projects["power_capacity_mw"].gt(0)

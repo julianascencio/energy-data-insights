@@ -1,6 +1,6 @@
 # BESS data dictionary
 
-Schema version **1.0.0**; 60 typed nullable columns. Unknown is null.
+Schema version **1.1.0**; 60 typed nullable columns. Unknown is null.
 
 | Column | Type | Unit | Meaning |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@ Schema version **1.0.0**; 60 typed nullable columns. Unknown is null.
 | `capacity_scope` | string | — | Exact project, phases or expansion represented by the numeric capacities. Prevents project/phase double counting. |
 | `status` | string | — | Last source-supported status, not a live operational assessment. Allowed: `announced`, `permitted`, `under_construction`, `commissioning`, `operational`, `partially_operational`, `suspended`, `retired`, `cancelled`, `unknown`. |
 | `status_as_of` | string | — | Date supporting status; for undated live project pages, date accessed. Does not imply COD. |
-| `status_date_basis` | string | — | Whether status_as_of is a dated publication or access to an undated project page. Allowed: `publication_date`, `accessed_undated_page`. |
+| `status_date_basis` | string | — | Whether status_as_of is a publication date, source reporting-period end, or access date for an undated project page. Allowed: `publication_date`, `accessed_undated_page`, `reporting_period_end`. |
 | `power_basis` | string | — | Electrical basis for reported battery power. Unspecified is never silently converted to AC. Allowed: `ac`, `dc`, `unspecified`. |
 | `energy_basis` | string | — | Reported energy basis. Nominal, usable and unspecified are not interchangeable. Allowed: `nominal`, `usable`, `unspecified`. |
 | `connection_type` | string | — | Explicit grid or microgrid connection; null if not sourced. Allowed: `grid_connected`, `off_grid`, `microgrid`. |

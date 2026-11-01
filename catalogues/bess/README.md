@@ -1,14 +1,15 @@
 # Worldwide BESS projects
 
-The first BESS section contains **37 named battery energy storage projects across
-22 countries**, supported by **30 primary sources**. This is a curated starting
-catalogue, not an exhaustive global inventory. It includes electrochemical
+The BESS section contains **1,113 project and plant records across
+27 countries**, supported by **41 primary sources**. It combines curated
+commercial projects with reviewed U.S. and UK inventory subsets, not an
+exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
 storage. BESS equipment catalogues can follow in a later schema version.
 
 ## Storage and usage
 
-- Reviewable UTF-8 JSONL under `records/projects/<country>.jsonl` is canonical.
+- Reviewable UTF-8 JSONL under `records/projects/<country>[_<region>].jsonl` is canonical.
 - `sources.json` registers the publisher, URL, retrieval date, publication date
   where known, access method, evidence notes and source-license qualification.
 - The packaged [schema](../../data-retrieval/src/energy_data_retrieval/bess_catalogue/schema.json)
@@ -55,7 +56,8 @@ all metadata, source links and dates; export filtered CSV, record JSON or Parque
 
 ## Meaning of a row
 
-One row represents a named project with an explicit `capacity_scope`. Separate
+One row represents a named project or a registry-defined plant with an explicit
+`capacity_scope`. EIA plant IDs are not always whole commercial projects. Separate
 named facilities have separate IDs. A multistage project can retain phases in
 `phases_json`; its total must not appear alongside overlapping phase rows.
 Collie includes Stages 1 and 2 once. The original and Two Yllikkälä facilities
@@ -75,20 +77,22 @@ energy, efficiency, degradation and dispatch limits need additional evidence.
 `created_at` records first insertion; `updated_at` records substantive edits;
 `last_verified_at` means access to source evidence, not live operation. The
 source's `access_method` distinguishes an opened page from an indexed excerpt.
-`status_as_of` and `status_date_basis` distinguish dated announcements from
-access to undated pages. An inauguration or publication date is not automatically
+`status_as_of` and `status_date_basis` distinguish publication dates, reporting
+period ends (`reporting_period_end`) and access to undated pages. EIA status is
+as reported at year-end 2025, not at its 2026 retrieval date. An inauguration or publication date is not automatically
 COD. Planned dates do not promote a project to operational.
 
 Every populated factual field has explicit source IDs in `field_sources_json`.
 Country codes and status labels are normalized from source descriptions; capacity
 scope and unspecified rating bases are editorial interpretations of that evidence.
-The initial records are AI-assisted transcriptions of primary-source facts and
-need ongoing review. Numeric precision does not imply independent verification.
+Curated records are AI-assisted factual transcriptions; inventory records use
+tested adapters and a reviewed exclusion ledger. Both need ongoing review. Numeric precision does not imply independent verification.
 
 Conflicts are retained in `conflicts_json` with both source observations and a
-`needs_review` flag. This batch preserves conflicting Coya/Tamaya power ratings
-and Jurong Island energy ratings. It does not select a universal engineering
-rating from a marketing announcement. See [research notes](research/launch_report.md).
+`needs_review` flag. The catalogue preserves conflicting Coya/Tamaya/Salisbury power ratings,
+Jurong Island energy ratings and Edwards & Sanborn registry-scope differences. It does not select a universal engineering
+rating from a marketing announcement. See [latest research notes](research/2026-11-01_expansion.md) and the
+[original launch audit](research/launch_report.md).
 
 ## Contribution contract
 
@@ -110,3 +114,37 @@ rating from a marketing announcement. See [research notes](research/launch_repor
 No blanket open-data license is asserted for third-party material. These files
 contain small factual transcriptions and attribution; source terms still apply.
 No new scheduled job is configured by this contribution.
+
+## National inventory staging
+
+Schema 1.1.0 adds the `reporting_period_end` status-date basis without changing
+its 60 columns. Source files stay outside Git; their checksums, dates and
+interpretation are registered in `sources.json`.
+
+```bash
+uv run python scripts/stage_bess_inventory.py eia860 /path/to/eia8602025.zip \
+  --source-id eia860_2025_bess --output artifacts/eia-bess-candidates.jsonl
+uv run python scripts/stage_bess_inventory.py repd /path/to/REPD_Publication_Q2_2026.csv \
+  --source-id repd_2026_q2_bess --output artifacts/repd-bess-candidates.jsonl
+```
+
+These commands validate the pinned input and write a new candidate file; they
+never overwrite the catalogue. Candidates can overlap one another or a curated
+project. Reconcile them using the [review ledger](research/2026-11-01_inventory_review.json)
+before accepting rows. Preserve existing creation times and UUIDs.
+
+- EIA: select OP / BA / Batteries, exclude electrochemical capacitors, and
+  aggregate by plant ID. Other battery units stay nested outside the totals.
+  MW is nameplate AC and MWh is nominal. Missing components make a total unknown.
+  Generator operating dates do not become whole-project CODs. No PV MW is added.
+- REPD: stage Battery / Operational entries after whitespace normalization.
+  Only reviewed records are published. The applicant/operator field stays in
+  native metadata; it is not proof of ownership. Unreported MWh stays null.
+  Native projected coordinates are not treated as latitude/longitude.
+- This batch withholds nearby UK records and unresolved phase entries. Proximity
+  is a review trigger, not proof of duplication. The ledger explains every
+  omission and the two matches to existing operating UK projects.
+
+The EIA source is U.S. government public-domain data. REPD attribution:
+**Contains public sector information licensed under the Open Government Licence
+v3.0.** Other primary-source material retains its own terms.
