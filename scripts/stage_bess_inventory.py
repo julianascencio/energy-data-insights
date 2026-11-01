@@ -11,14 +11,18 @@ import json
 from pathlib import Path
 
 from energy_data_retrieval.bess_catalogue.catalogue import validate_record
-from energy_data_retrieval.bess_catalogue.inventories import parse_eia860_archive, parse_repd_csv
+from energy_data_retrieval.bess_catalogue.inventories import (
+    parse_eia860_archive,
+    parse_inventory_workbook,
+    parse_repd_csv,
+)
 from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
 from energy_data_retrieval.pv_catalogue.sam import verify_sha256
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("provider", choices=["eia860", "repd"])
+    parser.add_argument("provider", choices=["eia860", "repd", "aemo", "cne"])
     parser.add_argument("input", type=Path)
     parser.add_argument("--source-id", required=True)
     parser.add_argument("--root", type=Path, default=Path("catalogues/bess"))
@@ -31,8 +35,12 @@ def main() -> None:
     common = {"source_id": args.source_id, "retrieved_at": source["retrieved_at"]}
     if args.provider == "eia860":
         rows = parse_eia860_archive(content, year=source["report_year"], **common)
-    else:
+    elif args.provider == "repd":
         rows = parse_repd_csv(content, published_date=source["published_date"], **common)
+    else:
+        rows = parse_inventory_workbook(
+            content, provider=args.provider, published_date=source["published_date"], **common
+        )
     for row in rows:
         validate_record(row, sources)
     args.output.parent.mkdir(parents=True, exist_ok=True)

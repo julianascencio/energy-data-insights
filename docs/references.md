@@ -1771,3 +1771,107 @@ Baltic Storage Platform (n.d.). **Kiisa and Arukula battery parks**. [Source](ht
 **Role:** data. Two independent 100 MW /200 MWh parks. Kiisa operating for grid services Q4 2025. Arukula construction completed in 2026; both regulate grid frequency. No exact COD inferred. Joint venture Evecon, Corsica Sole and Mirova.
 
 **Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### bess_aemo_nem_oct2026_bess
+
+Australian Energy Market Operator (2026). **NEM Generation Information, October 2026: battery unit inventory**. [Source](https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_cne_oct2026_bess
+
+Comisión Nacional de Energía de Chile (2026). **Tablas de declaración en construcción, octubre 2026: BESS**. [Source](https://www.cne.cl/wp-content/uploads/2026/10/Tablas-Declaracion-Construccion-octubre-2026.xlsx)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_cne_resolution_603_2026
+
+Comisión Nacional de Energía de Chile (2026). **Resolución Exenta 603/2026: actualización de instalaciones en construcción**. [Source](https://www.cne.cl/wp-content/uploads/2026/10/Resolucion-Exenta-603-2026.pdf)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_sec_mreh_project
+
+State Electricity Commission of Victoria (n.d.). **Melbourne Renewable Energy Hub**. [Source](https://www.secvictoria.com.au/investments/melbourne-renewable-energy-hub)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_edify_riverina_projects
+
+Edify Energy (n.d.). **Riverina and Darlington Point Energy Storage Systems**. [Source](https://edifyenergy.com/project/riverina-darlington-point/)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_libelula_loros_2026
+
+ENGIE Chile (2026). **Entrada en operación de BESS Libélula y BESS Los Loros**. [Source](https://www.engie.cl/impulsamos-la-transicion-energetica-con-la-entrada-en-operacion-de-dos-nuevos-parques-de-almacenamiento/)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_tocopilla_cod_2026
+
+ENGIE Chile (2026). **Entrada en operación comercial de BESS Tocopilla**. [Source](https://www.engie.cl/obtuvimos-la-entrada-en-operacion-comercial-de-bess-tocopilla/)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_lile_cod_2026
+
+ENGIE Chile (2026). **Reconversión del Complejo Energético Mejillones: BESS Lile**. [Source](https://www.engie.cl/concluimos-la-primera-etapa-de-la-reconversion-del-complejo-energetico-mejillones/)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_colbun_q3_2026_bess
+
+Colbún (2026). **Resultados del tercer trimestre de 2026: avance BESS**. [Source](https://www.colbun.cl/corporativo/sala-de-prensa/noticias-y-comunicados/detalle/2026/10/28/colbun-informa-ebitda-de-us196-6-millones-durante-el-tercer-trimestre-de-2026)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_colbun_celda_project
+
+Colbún (n.d.). **Proyecto Sistema de Baterías Celda Solar**. [Source](https://www.colbun.cl/nuestras-energias/proyectos-de-energia-renovable/proyectos-de-almacenamiento/celda-solar)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_colbun_das_ii_project
+
+Colbún (n.d.). **BESS Diego de Almagro Sur II**. [Source](https://www.colbun.cl/nuestras-energias/proyectos-de-energia-renovable/proyectos-de-almacenamiento/bess-ii-das)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_vilvoorde_project
+
+ENGIE Belgium (n.d.). **BESS Battery Park Vilvoorde**. [Source](https://corporate.engie.be/en/energy/batteries/bess-battery-park-vilvoorde)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_vilvoorde_cod_2025
+
+ENGIE Belgium (2025). **Batterijpark van ENGIE in Vilvoorde volledig operationeel**. [Source](https://corporate.engie.be/nl/pers/batterijpark-van-engie-in-vilvoorde-volledig-operationeel)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
