@@ -1,0 +1,135 @@
+{
+  "started_at": "2026-11-01T10:54:24+00:00",
+  "generated_at": "2026-11-01T11:08:07.960357+00:00",
+  "baseline_head": "57e381547668a90e6f6d4698a05154edc579c442",
+  "new": [
+    {
+      "record_id": "9b8d3320-01aa-5c15-ba07-1c26af9ef309",
+      "name": "NEA Kolda BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "2cd7b480-43c0-59b5-8378-ca86908e3fc9",
+      "name": "Paleisheuwel BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "59f43f8b-9237-5930-ac19-1a0523396856",
+      "name": "Elandskop BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "9f12b1c3-7efd-5f2e-8a35-ece88f69cd1c",
+      "name": "Melkhout BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "a1d7fd0c-6cce-5714-bbef-e535b353d1fc",
+      "name": "Pongola BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "bed2ba2b-b505-56c9-93c5-0f642aec76d9",
+      "name": "Skaapvlei BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "df199617-9076-53fb-a350-daeb2c7d8019",
+      "name": "Graafwater BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "061aa522-756a-5552-bbf1-37b86404987c",
+      "name": "Obelisk BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "4bb9978b-c50d-58ef-9e5c-cb8722646f24",
+      "name": "Benban Nefertiti BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "cc4efaca-9737-5b04-bb8b-a98ad54ff25a",
+      "name": "Dandara phase 1 BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "faf9b2b3-4f24-5a61-bee7-276a2dbeb224",
+      "name": "Energy Valley BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "3b16a69d-61a3-5989-8216-398ed21870b9",
+      "name": "Lithops BESS",
+      "quality_status": "source_backed"
+    },
+    {
+      "record_id": "b5611d33-f23b-54b7-845d-077e1d58bc83",
+      "name": "Omburu BESS",
+      "quality_status": "needs_review"
+    }
+  ],
+  "enriched": [
+    {
+      "record_id": "9bfbc81a-4352-52a2-b097-2c1ff4fe9c34",
+      "name": "Abydos I BESS",
+      "fields": [
+        "extensions_json",
+        "region"
+      ]
+    },
+    {
+      "record_id": "ff601fd6-9d0a-5ba3-9ce3-d2eba1f01ff4",
+      "name": "Hex BESS",
+      "fields": [
+        "connection_type",
+        "extensions_json",
+        "operators"
+      ]
+    }
+  ],
+  "candidates_reviewed": 31,
+  "accepted_new": 13,
+  "accepted_enriched": 2,
+  "accepted_with_rating_quarantine": [
+    "Omburu BESS"
+  ],
+  "held": {
+    "ZAF": [
+      "Rietfontein",
+      "Witzenberg",
+      "Ashton",
+      "Cuprum",
+      "Kiwano"
+    ],
+    "PHL": [
+      "Alaminos",
+      "Masinloc",
+      "Lamao phases 1 and 2",
+      "Bataan",
+      "San Manuel phases 1 and 2",
+      "Magat",
+      "Concepcion phases 1 and 2",
+      "Gamu phases 1 and 2",
+      "Lumban phases 1 and 2"
+    ],
+    "EGY": [
+      "Zafarana Horus",
+      "Abydos for Renewable Energy (600 MWh)"
+    ]
+  },
+  "rejected": 0,
+  "validation_completed_at": "2026-11-01T11:15:18.537749+00:00",
+  "elapsed_minutes_through_validation": 20.9,
+  "validation": {
+    "full_suite_passed": 1437,
+    "full_suite_skipped": 5,
+    "focused_passed": 36,
+    "strict_docs": "passed",
+    "parquet": "rebuilt",
+    "offline_example": "passed",
+    "lint_format_types": "passed",
+    "record_preservation": "passed",
+    "source_byte_checksums": "passed where bytes downloaded"
+  }
+}

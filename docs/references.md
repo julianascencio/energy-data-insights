@@ -1955,3 +1955,131 @@ RWE (2026). **Hamm and Neurath battery storage**. [Source](https://www.rwe.com/e
 **Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### afdb_eskom_appraisal_2021
+
+African Development Bank (2021). **Eskom Distributed Battery Energy Storage Project appraisal report**. [Source](https://www.afdb.org/sites/default/files/documents/projects-and-operations/south_africa_-_eskom_distributed_battery_energy_storage_project_-_appraisal_report.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### afdb_eskom_ipr_20260521
+
+African Development Bank (2026). **Eskom Distributed Battery Energy Storage Program IPR March 2026**. [Source](https://www.afdb.org/sites/default/files/documents/projects-and-operations/p-za-fa0-006.doc.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### wsp_eskom_portfolio
+
+WSP (2026). **Helping to shape South Africa’s energy transition**. [Source](https://www.wsp.com/en-za/projects/battery-energy-storage-solutions-across-several-eskom-distribution-sites)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nampower_projects_2026
+
+NamPower (2026). **Generation projects: Omburu and Lithops BESS**. [Source](https://www.nampower.com.na/Projects)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nampower_omburu_factsheet
+
+NamPower (2026). **Omburu BESS project fact sheet**. [Source](https://www.nampower.com.na/Media/Document/979f6783-27cf-46af-bfe2-c476d8fd645d.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nampower_lithops_202609
+
+NamPower (2026). **Lithops BESS project fact sheet September 2026**. [Source](https://www.nampower.com.na/Media/Document/41c24ee5-90fa-412c-a87f-aee748e0348f.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### axian_kolda_close_20260331
+
+AXIAN Energy (2026). **Closing financier de la centrale NEA Kolda au Sénégal**. [Source](https://mediaroom.axian-group.com/presse/document/communique_de_presse_closing_inancier-nea-olda.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_egypt
+
+Scatec (2026). **Egypt operating and backlog portfolio**. [Source](https://www.scatec.com/en/project/egypt/)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_obelisk
+
+Scatec (2026). **Commercial operations reached for final phase of Obelisk**. [Source](https://www.scatec.com/en/commercial-operations-reached-for-the-final-phase-of-the-obelisk-project-in-egypt/)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_dandara
+
+Scatec (2026). **Financing secured for first phase of Dandara**. [Source](https://www.scatec.com/en/scatec-secures-financing-for-the-first-phase-of-the-dandara-solar-and-bess-project-in-egypt/)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_valley
+
+Scatec (2026). **Shadwan construction and Energy Valley financing**. [Source](https://www.scatec.com/en/scatec-starts-construction-of-the-900-mw-shadwan-wind-project-in-egypt/)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ebrd_nefertiti
+
+European Bank for Reconstruction and Development (2026). **AMEA Nefertiti Battery Energy Storage, project 56522**. [Source](https://www.ebrd.com/home/work-with-us/projects/psd/56522.html)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ifc_abydos_finance
+
+International Finance Corporation (2025). **IFC and AMEA Power launch first Egyptian battery storage**. [Source](https://www.ifc.org/en/pressroom/2025/ifc-and-amea-power-launch-egypt-s-first-battery-energy-storage-system-to-boost-ene)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ebrd_valley
+
+European Bank for Reconstruction and Development (2026). **Energy Valley, project 57439**. [Source](https://www.ebrd.com/home/work-with-us/projects/psd/57439.html)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### eib_dandara
+
+European Investment Bank (2026). **Financing Dandara solar and battery project in Egypt**. [Source](https://www.eib.org/de/press/all/2026-363-eib-provides-up-to-usd90-million-for-one-of-the-largest-solar-and-battery-projects-in-egypt-and-africa)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ebrd_obelisk
+
+European Bank for Reconstruction and Development (2025). **Scatec Solar PV and Battery Energy Storage System, project 55308**. [Source](https://www.ebrd.com/home/work-with-us/projects/psd/55308.html)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
