@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import io
 from collections import defaultdict
+from datetime import date, datetime
 from typing import Any
 from zipfile import ZipFile
 
@@ -18,6 +19,226 @@ from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
 from energy_data_retrieval.pv_catalogue.eia860 import _clean, _number
 
 from .catalogue import ADMIN, stable_id
+
+AEMO_EXISTING = {"In Service", "In Commissioning", "Announced Withdrawal"}
+AEMO_REGIONS = {
+    "NSW1": "New South Wales / Australian Capital Territory",
+    "QLD1": "Queensland",
+    "SA1": "South Australia",
+    "TAS1": "Tasmania",
+    "VIC1": "Victoria",
+}
+
+
+def _native(value: Any) -> Any:
+    value = _clean(value)
+    return value.isoformat() if isinstance(value, (datetime, date)) else value
+
+
+def parse_aemo_frame(
+    frame: pd.DataFrame, *, source_id: str, retrieved_at: str, published_date: str
+) -> list[dict[str, Any]]:
+    """Stage existing NEM battery units grouped by survey site, not whole hubs.
+
+    Sum unit aggregate AC nameplates, never multiply by unit count or substitute
+    the shared site's dispatch limit. Other battery phases remain nested outside
+    totals. Full-commercial-use dates stay native, including past target dates.
+    Separate survey sites can be components of one commercial project.
+    """
+    required = {
+        "AEMO Survey ID",
+        "Site Name",
+        "Site Owner",
+        "Region",
+        "Gen Info Unit ID",
+        "Technology Type",
+        "Technology Detail",
+        "Commitment Status",
+        "Agg Nameplate Capacity (MW AC)",
+        "Agg Nameplate Storage Capacity (MWh)",
+    }
+    if not required <= set(frame):
+        raise ValueError("AEMO columns changed; review adapter")
+    groups: dict[int, list[dict[str, Any]]] = defaultdict(list)
+    seen = set()
+    for original in frame.to_dict(orient="records"):
+        g = {str(k): _native(v) for k, v in original.items()}
+        if g["Technology Type"] != "Battery Storage":
+            continue
+        site, unit = int(g["AEMO Survey ID"]), int(g["Gen Info Unit ID"])
+        if unit in seen:
+            raise ValueError("Duplicate AEMO battery unit ID")
+        seen.add(unit)
+        groups[site].append(g)
+    result = []
+    for site, all_units in sorted(groups.items()):
+        units = [g for g in all_units if g["Commitment Status"] in AEMO_EXISTING]
+        if not units:
+            continue
+        for key in ["Site Name", "Region", "Site Owner"]:
+            if len({g[key] for g in all_units}) != 1:
+                raise ValueError(f"Inconsistent AEMO site metadata: {site} / {key}")
+        first = units[0]
+        if first["Region"] not in AEMO_REGIONS:
+            raise ValueError("Unrecognized AEMO region")
+        operating = any(g["Commitment Status"] != "In Commissioning" for g in units)
+        status = "commissioning"
+        if operating:
+            status = (
+                "operational"
+                if all(
+                    g["Commitment Status"] in {"In Service", "Announced Withdrawal"}
+                    for g in all_units
+                )
+                else "partially_operational"
+            )
+        row = {
+            "record_id": stable_id("AUS", "AEMO survey site", str(site)),
+            "name": first["Site Name"],
+            "country_code": "AUS",
+            "region": AEMO_REGIONS[first["Region"]],
+            "owners": [first["Site Owner"]] if first["Site Owner"] else None,
+            "status": status,
+            "status_as_of": published_date,
+            "status_date_basis": "publication_date",
+            "capacity_scope": (
+                "Sum of AEMO battery unit nameplates at this survey site with status "
+                "In Service, In Commissioning or Announced Withdrawal only; "
+                "other battery phases and all generation technologies excluded"
+            ),
+            "power_capacity_mw": _sum_complete(units, "Agg Nameplate Capacity (MW AC)"),
+            "power_basis": "ac",
+            "energy_capacity_mwh": _sum_complete(units, "Agg Nameplate Storage Capacity (MWh)"),
+            "energy_basis": "nominal",
+            "external_ids_json": canonical_json({"aemo_survey_id": str(site)}),
+            "phases_json": canonical_json(
+                [
+                    {
+                        "unit_id": str(int(g["Gen Info Unit ID"])),
+                        "included_in_capacity": g["Commitment Status"] in AEMO_EXISTING,
+                        "aemo_unit": {k: v for k, v in g.items() if v is not None},
+                    }
+                    for g in sorted(all_units, key=lambda g: g["Gen Info Unit ID"])
+                ]
+            ),
+            "notes": (
+                "NEM survey snapshot, not live availability or all Australia. "
+                "NSW1 includes ACT; market region is not a precise location. "
+                "Shared site capacity and unit dates are not battery ratings or project COD. "
+                "Review commercial-project overlaps before publishing."
+            ),
+        }
+        if all(g["Technology Detail"] == "Lithium-ion" for g in units):
+            row["chemistry"] = "lithium-ion"
+        result.append(_finish(row, source_id, retrieved_at))
+    return result
+
+
+def parse_cne_frame(
+    frame: pd.DataFrame, *, source_id: str, retrieved_at: str, published_date: str
+) -> list[dict[str, Any]]:
+    """Stage Chile's BESS construction declarations, retaining administrative scope.
+
+    Forecast interconnection months do not become exact CODs. Hybrid PMGD net
+    power is kept native because its battery-only scope is ambiguous. Associated
+    generation and additional injection are never substituted for battery power.
+    """
+    required = {
+        "Proyecto",
+        "Propietario",
+        "Resolución Original DeC - CNE",
+        "Ubicación",
+        "Tipo de Tecnología",
+        "Potencia Neta [MW]",
+        "Capacidad de Almacenamiento [MWh]",
+        "Fecha Estimada de Interconexión",
+        "Nota",
+    }
+    if not required <= set(frame):
+        raise ValueError("CNE columns changed; review adapter")
+    result, seen = [], set()
+    for original in frame.to_dict(orient="records"):
+        r = {str(k): _native(v) for k, v in original.items() if not str(k).startswith("Unnamed:")}
+        name = r["Proyecto"]
+        if name is None:
+            continue
+        if name.casefold() in seen:
+            raise ValueError("Duplicate CNE project name")
+        seen.add(name.casefold())
+        technology = r["Tipo de Tecnología"]
+        if technology not in {"BESS", "PMGD Fotovoltaico + BESS"}:
+            raise ValueError("Unrecognized CNE BESS technology")
+        note = r.pop("Nota") or ""
+        milestone_warning = "incumplimiento" in note.lower()
+        native = {k: v for k, v in r.items() if v is not None}
+        native["milestone_noncompliance_reported"] = milestone_warning
+        native["technical_conditions_note_present"] = "SCR" in note
+        native["source_note_present"] = bool(note)
+        native["interconnection_date_precision"] = "month; workbook day is not asserted"
+        row = {
+            "record_id": stable_id("CHL", "CNE BESS declaration", name),
+            "name": name if "BESS" in name.upper() else f"{name} — BESS component",
+            "country_code": "CHL",
+            "region": r["Ubicación"],
+            "owners": [r["Propietario"]] if r["Propietario"] else None,
+            "status": "under_construction",
+            "status_as_of": published_date,
+            "status_date_basis": "publication_date",
+            "capacity_scope": (
+                "Battery component in CNE BESS construction-declaration sheet; "
+                "associated generating plant and additional grid injection excluded"
+            ),
+            "power_capacity_mw": _number(r["Potencia Neta [MW]"]) if technology == "BESS" else None,
+            "power_basis": "unspecified",
+            "energy_capacity_mwh": _number(r["Capacidad de Almacenamiento [MWh]"]),
+            "energy_basis": "unspecified",
+            "extensions_json": canonical_json({"cne": native}),
+            "notes": (
+                "Status denotes CNE's administrative construction declaration, not observed "
+                "physical progress. Interconnection forecasts do not establish operation. "
+                + (
+                    "CNE reports missed schedule milestones; recheck continuation. "
+                    if milestone_warning
+                    else ""
+                )
+                + (
+                    "Hybrid net MW retained only in native metadata. "
+                    if technology != "BESS"
+                    else ""
+                )
+                + "Native associated-plant and injection MW are distinct from storage ratings."
+            ),
+        }
+        finished = _finish(row, source_id, retrieved_at)
+        if milestone_warning or technology != "BESS":
+            finished["quality_status"] = "needs_review"
+        result.append(finished)
+    return result
+
+
+def parse_inventory_workbook(
+    content: bytes, *, provider: str, source_id: str, retrieved_at: str, published_date: str
+) -> list[dict[str, Any]]:
+    """Read the explicit AEMO or CNE sheet with a bounded compressed/unpacked size."""
+    if provider not in {"aemo", "cne"}:
+        raise ValueError("Unsupported inventory workbook provider")
+    if len(content) > 25_000_000:
+        raise ValueError("Inventory workbook exceeds size limit")
+    with ZipFile(io.BytesIO(content)) as archive:
+        if sum(member.file_size for member in archive.infolist()) > 100_000_000:
+            raise ValueError("Expanded inventory workbook exceeds size limit")
+    sheet, header, adapter = (
+        ("Generator Information", 3, parse_aemo_frame)
+        if provider == "aemo"
+        else ("BESS", 2, parse_cne_frame)
+    )
+    return adapter(
+        pd.read_excel(io.BytesIO(content), sheet_name=sheet, header=header),
+        source_id=source_id,
+        retrieved_at=retrieved_at,
+        published_date=published_date,
+    )
+
 
 CHEMISTRIES = {
     "LIB": "lithium-ion",

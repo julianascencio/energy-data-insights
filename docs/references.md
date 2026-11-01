@@ -1772,6 +1772,358 @@ Baltic Storage Platform (n.d.). **Kiisa and Arukula battery parks**. [Source](ht
 
 **Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
 
+### bess_aemo_nem_oct2026_bess
+
+Australian Energy Market Operator (2026). **NEM Generation Information, October 2026: battery unit inventory**. [Source](https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_cne_oct2026_bess
+
+Comisión Nacional de Energía de Chile (2026). **Tablas de declaración en construcción, octubre 2026: BESS**. [Source](https://www.cne.cl/wp-content/uploads/2026/10/Tablas-Declaracion-Construccion-octubre-2026.xlsx)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_cne_resolution_603_2026
+
+Comisión Nacional de Energía de Chile (2026). **Resolución Exenta 603/2026: actualización de instalaciones en construcción**. [Source](https://www.cne.cl/wp-content/uploads/2026/10/Resolucion-Exenta-603-2026.pdf)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_sec_mreh_project
+
+State Electricity Commission of Victoria (n.d.). **Melbourne Renewable Energy Hub**. [Source](https://www.secvictoria.com.au/investments/melbourne-renewable-energy-hub)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_edify_riverina_projects
+
+Edify Energy (n.d.). **Riverina and Darlington Point Energy Storage Systems**. [Source](https://edifyenergy.com/project/riverina-darlington-point/)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_libelula_loros_2026
+
+ENGIE Chile (2026). **Entrada en operación de BESS Libélula y BESS Los Loros**. [Source](https://www.engie.cl/impulsamos-la-transicion-energetica-con-la-entrada-en-operacion-de-dos-nuevos-parques-de-almacenamiento/)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_tocopilla_cod_2026
+
+ENGIE Chile (2026). **Entrada en operación comercial de BESS Tocopilla**. [Source](https://www.engie.cl/obtuvimos-la-entrada-en-operacion-comercial-de-bess-tocopilla/)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_lile_cod_2026
+
+ENGIE Chile (2026). **Reconversión del Complejo Energético Mejillones: BESS Lile**. [Source](https://www.engie.cl/concluimos-la-primera-etapa-de-la-reconversion-del-complejo-energetico-mejillones/)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_colbun_q3_2026_bess
+
+Colbún (2026). **Resultados del tercer trimestre de 2026: avance BESS**. [Source](https://www.colbun.cl/corporativo/sala-de-prensa/noticias-y-comunicados/detalle/2026/10/28/colbun-informa-ebitda-de-us196-6-millones-durante-el-tercer-trimestre-de-2026)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_colbun_celda_project
+
+Colbún (n.d.). **Proyecto Sistema de Baterías Celda Solar**. [Source](https://www.colbun.cl/nuestras-energias/proyectos-de-energia-renovable/proyectos-de-almacenamiento/celda-solar)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_colbun_das_ii_project
+
+Colbún (n.d.). **BESS Diego de Almagro Sur II**. [Source](https://www.colbun.cl/nuestras-energias/proyectos-de-energia-renovable/proyectos-de-almacenamiento/bess-ii-das)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_vilvoorde_project
+
+ENGIE Belgium (n.d.). **BESS Battery Park Vilvoorde**. [Source](https://corporate.engie.be/en/energy/batteries/bess-battery-park-vilvoorde)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### bess_engie_vilvoorde_cod_2025
+
+ENGIE Belgium (2025). **Batterijpark van ENGIE in Vilvoorde volledig operationeel**. [Source](https://corporate.engie.be/nl/pers/batterijpark-van-engie-in-vilvoorde-volledig-operationeel)
+
+**Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
+
+**Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### rwe_moerdijk_fid_2026
+
+RWE (2026). **Moerdijk 400 MW final investment decision**. [Source](https://www.rwe.com/en/press/rwe-generation/2026-09-21-rwe-to-build-400-mw-battery-to-ease-grid-congestion-in-noord-brabant/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_eemshaven_page
+
+RWE (2026). **Eemshaven battery storage**. [Source](https://benelux.rwe.com/en/locations-and-projects/eemshaven-battery-storage/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_moerdijk_cod_2025
+
+RWE (2025). **Moerdijk inertia battery commercial operation**. [Source](https://benelux.rwe.com/en/press/2025-06-16-rwes-innovative-battery-storage-in-moerdijk-achieves-commercial-operation/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_hambach_2026
+
+RWE (2026). **Large-scale storage at Hambach mine**. [Source](https://www.rwe.com/en/press/rwe-generation/2026-07-28-rwe-to-build-large-scale-storage-at-hambach-mine/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_bvb_2026
+
+RWE (2026). **SIGNAL IDUNA PARK battery commissioned**. [Source](https://www.rwe.com/en/press/rwe-ag/2026-10-26-rwe-and-bvb-have-commissioned-a-battery-storage-system-at-signal-iduna-park/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_gundremmingen_2025
+
+RWE (2025). **Gundremmingen groundbreaking**. [Source](https://www.rwe.com/en/press/rwe-generation/2025-10-29-rwe-is-constructing-germanys-largest-battery-storage-facility-in-gundremmingen/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_lingen_werne_2023
+
+RWE (2023). **Lingen and Werne installation complete**. [Source](https://www.rwe.com/en/press/rwe-generation/2023-01-09-rwe-completes-megabattery-in-lingen-and-werne/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_lingen_werne_page
+
+RWE (2026). **Megabatterie plus Wasserkraft**. [Source](https://www.rwe.com/der-konzern/laender-und-standorte/megabatterie-plus-wasserkraft/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_lingen_dralon_2026
+
+RWE (2026). **Lingen 400 MW investment decision**. [Source](https://www.rwe.com/en/investor-relations/financial-calendar-and-publications/news-and-ad-hoc-announcements/news/news-2026-01-29/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_hamm_neurath_page_2026
+
+RWE (2026). **Hamm and Neurath battery storage**. [Source](https://www.rwe.com/en/the-group/countries-and-locations/220-mw-battery-storage-system-in-germany/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### afdb_eskom_appraisal_2021
+
+African Development Bank (2021). **Eskom Distributed Battery Energy Storage Project appraisal report**. [Source](https://www.afdb.org/sites/default/files/documents/projects-and-operations/south_africa_-_eskom_distributed_battery_energy_storage_project_-_appraisal_report.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### afdb_eskom_ipr_20260521
+
+African Development Bank (2026). **Eskom Distributed Battery Energy Storage Program IPR March 2026**. [Source](https://www.afdb.org/sites/default/files/documents/projects-and-operations/p-za-fa0-006.doc.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### wsp_eskom_portfolio
+
+WSP (2026). **Helping to shape South Africa’s energy transition**. [Source](https://www.wsp.com/en-za/projects/battery-energy-storage-solutions-across-several-eskom-distribution-sites)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nampower_projects_2026
+
+NamPower (2026). **Generation projects: Omburu and Lithops BESS**. [Source](https://www.nampower.com.na/Projects)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nampower_omburu_factsheet
+
+NamPower (2026). **Omburu BESS project fact sheet**. [Source](https://www.nampower.com.na/Media/Document/979f6783-27cf-46af-bfe2-c476d8fd645d.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nampower_lithops_202609
+
+NamPower (2026). **Lithops BESS project fact sheet September 2026**. [Source](https://www.nampower.com.na/Media/Document/41c24ee5-90fa-412c-a87f-aee748e0348f.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### axian_kolda_close_20260331
+
+AXIAN Energy (2026). **Closing financier de la centrale NEA Kolda au Sénégal**. [Source](https://mediaroom.axian-group.com/presse/document/communique_de_presse_closing_inancier-nea-olda.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_egypt
+
+Scatec (2026). **Egypt operating and backlog portfolio**. [Source](https://www.scatec.com/en/project/egypt/)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_obelisk
+
+Scatec (2026). **Commercial operations reached for final phase of Obelisk**. [Source](https://www.scatec.com/en/commercial-operations-reached-for-the-final-phase-of-the-obelisk-project-in-egypt/)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_dandara
+
+Scatec (2026). **Financing secured for first phase of Dandara**. [Source](https://www.scatec.com/en/scatec-secures-financing-for-the-first-phase-of-the-dandara-solar-and-bess-project-in-egypt/)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_valley
+
+Scatec (2026). **Shadwan construction and Energy Valley financing**. [Source](https://www.scatec.com/en/scatec-starts-construction-of-the-900-mw-shadwan-wind-project-in-egypt/)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ebrd_nefertiti
+
+European Bank for Reconstruction and Development (2026). **AMEA Nefertiti Battery Energy Storage, project 56522**. [Source](https://www.ebrd.com/home/work-with-us/projects/psd/56522.html)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ifc_abydos_finance
+
+International Finance Corporation (2025). **IFC and AMEA Power launch first Egyptian battery storage**. [Source](https://www.ifc.org/en/pressroom/2025/ifc-and-amea-power-launch-egypt-s-first-battery-energy-storage-system-to-boost-ene)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ebrd_valley
+
+European Bank for Reconstruction and Development (2026). **Energy Valley, project 57439**. [Source](https://www.ebrd.com/home/work-with-us/projects/psd/57439.html)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### eib_dandara
+
+European Investment Bank (2026). **Financing Dandara solar and battery project in Egypt**. [Source](https://www.eib.org/de/press/all/2026-363-eib-provides-up-to-usd90-million-for-one-of-the-largest-solar-and-battery-projects-in-egypt-and-africa)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ebrd_obelisk
+
+European Bank for Reconstruction and Development (2025). **Scatec Solar PV and Battery Energy Storage System, project 55308**. [Source](https://www.ebrd.com/home/work-with-us/projects/psd/55308.html)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_a_2026_2014
+
+Agencia Estatal Boletín Oficial del Estado (2026). **BOE-A-2026-2014**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-2014)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_a_2026_2133
+
+Agencia Estatal Boletín Oficial del Estado (2026). **BOE-A-2026-2133**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-2133)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_a_2025_18285
+
+Agencia Estatal Boletín Oficial del Estado (2025). **BOE-A-2025-18285**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-18285)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_b_2026_35371
+
+Agencia Estatal Boletín Oficial del Estado (2026). **BOE-B-2026-35371**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-35371)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_b_2026_35372
+
+Agencia Estatal Boletín Oficial del Estado (2026). **BOE-B-2026-35372**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-35372)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
 ### byd_bcu20_hvs_20250328
 
 BYD (2026). **Battery-Box Premium HVS BCU2.0 datasheet**. [Source](https://bydbatterybox.com/uploads/downloads/BCU2.0_BBOX_HVS_Datasheet_EN_V1.0_250328-67ee42d4ced21.pdf)

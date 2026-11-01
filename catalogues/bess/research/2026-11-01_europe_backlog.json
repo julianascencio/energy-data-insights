@@ -1,0 +1,44 @@
+[
+  {
+    "source_url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+    "country": "DEU",
+    "version": "2026-11-01; 26.2",
+    "licence": "Datenlizenz Deutschland Namensnennung 2.0 as linked by official download page",
+    "estimated_yield": "High, not quantified without battery-only inventory inspection",
+    "fields": [
+      "registry IDs",
+      "power",
+      "location",
+      "status",
+      "storage technology"
+    ],
+    "last_attempt": "2026-11-01",
+    "result": "Official index accessible; 3,189,712 KB ZIP; bounded HTTP range probe returned 503. No records accepted.",
+    "cursor": null,
+    "next_action": "Retry official archive with backoff; inspect export dictionary and battery category before building streaming XML parser. Exclude personal operators.",
+    "retry_condition": "Official archive responds successfully; do not infer access from index."
+  },
+  {
+    "source_url": "https://www.rwe.com/en/our-energy/discover-renewables/battery-storage/",
+    "country": "DEU/NLD",
+    "version": "accessed 2026-11-01",
+    "licence": "Factual transcription only; no bulk reuse licence asserted",
+    "estimated_yield": "Selected 13 project identities reviewed",
+    "last_attempt": "2026-11-01",
+    "result": "11 new projects and two existing rows enriched",
+    "cursor": "Selected Hambach/Dortmund/Gundremmingen/Lingen/Werne/Eemshaven/Moerdijk pages processed",
+    "next_action": "Herdecke stages and Hamm expansion need explicit phase review before acceptance",
+    "retry_condition": "New phase-specific evidence or refreshed owner update"
+  },
+  {
+    "source_url": "https://dyness.com/Public/Uploads/uploadfile/files/20241016/DynessTowerdatasheetENY.pdf",
+    "country": null,
+    "version": "V1.0-20240112",
+    "licence": "Manufacturer copyright; factual transcription only",
+    "estimated_yield": "5 Tower models; not Tower Pro",
+    "last_attempt": "2026-11-01",
+    "result": "Held five candidates: English and Spanish cycle-test DOD differs; manual operating-voltage definition differs. Not added.",
+    "next_action": "Resolve revision applicability before accepting T7/T10/T14/T17/T21; do not mix with accepted Tower Pro.",
+    "retry_condition": "Version applicability established"
+  }
+]

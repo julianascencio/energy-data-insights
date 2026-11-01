@@ -137,7 +137,11 @@ def test_frozen_report_preserves_summary_sources_and_safely_escapes_labels(tmp_p
     assert "&lt;img" in document
     assert "site-search" in document and "group-filter" in document
     assert "<script src=" not in document
-    assert len(document) < 150_000
+    # Bound the report UI independently of the deliberately complete, growing bibliography.
+    before_references, marker, remainder = document.partition('<ol class="references">')
+    references_html, closing, after_references = remainder.partition("</ol>")
+    assert marker and closing and references_html
+    assert len(before_references + after_references) < 150_000
     assert all(path.name.startswith("site-") for path in (output / "sites").iterdir())
     first_site = (output / "sites/site-000000.html").read_text()
     assert "No saved hourly operating screens" in first_site

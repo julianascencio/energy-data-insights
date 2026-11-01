@@ -3,7 +3,7 @@ Worldwide BESS project database
 
 Search battery energy storage projects, filter country/status/chemistry, compare
 reported MW and MWh, inspect field-level sources and export selected rows.
-This catalogue covers 1,113 project and plant records in 27 countries.
+This catalogue covers 1,266 project and plant records in 30 countries.
 U.S. and UK inventory subsets dominate the coverage; counts are not a census
 or a ranking of the world's installed capacity.
 

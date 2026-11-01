@@ -1,8 +1,8 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,113 project and plant records across
-27 countries**, supported by **41 primary sources**. It combines curated
-commercial projects with reviewed U.S. and UK inventory subsets, not an
+The BESS section contains **1,266 project and plant records across
+30 countries**, supported by **85 primary sources**. It combines curated
+commercial projects with reviewed U.S., UK, Australian and Chilean inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
 storage. BESS equipment catalogues can follow in a later schema version.
@@ -91,7 +91,7 @@ tested adapters and a reviewed exclusion ledger. Both need ongoing review. Numer
 Conflicts are retained in `conflicts_json` with both source observations and a
 `needs_review` flag. The catalogue preserves conflicting Coya/Tamaya/Salisbury power ratings,
 Jurong Island energy ratings and Edwards & Sanborn registry-scope differences. It does not select a universal engineering
-rating from a marketing announcement. See [latest research notes](research/2026-11-01_expansion.md) and the
+rating from a marketing announcement. See [latest research notes](research/2026-11-01_australia_chile.md) and the
 [original launch audit](research/launch_report.md).
 
 ## Contribution contract
@@ -113,7 +113,7 @@ rating from a marketing announcement. See [latest research notes](research/2026-
 
 No blanket open-data license is asserted for third-party material. These files
 contain small factual transcriptions and attribution; source terms still apply.
-No new scheduled job is configured by this contribution.
+The hourly research process follows the [research workflow](RESEARCH_WORKFLOW.md); scheduling is managed separately from repository CI.
 
 ## National inventory staging
 
@@ -141,6 +141,15 @@ before accepting rows. Preserve existing creation times and UUIDs.
   Only reviewed records are published. The applicant/operator field stays in
   native metadata; it is not proof of ownership. Unreported MWh stays null.
   Native projected coordinates are not treated as latitude/longitude.
+- AEMO: sum existing/commissioning battery unit aggregate AC nameplates at each
+  survey site. Other phases stay nested outside totals; site connection limits
+  are not battery MW. Consolidate survey sites belonging to one commercial
+  project, as for MREH. NEM coverage excludes Western Australia and NT.
+- CNE: stage administrative BESS construction declarations. Keep associated
+  generation and additional grid injection separate from battery ratings;
+  hybrid net MW stays native. Forecast interconnection months never imply COD.
+  See the [Australia/Chile ledger](research/2026-11-01_australia_chile_review.json)
+  for accepted rows, five existing-project matches, and three withheld entries.
 - This batch withholds nearby UK records and unresolved phase entries. Proximity
   is a review trigger, not proof of duplication. The ledger explains every
   omission and the two matches to existing operating UK projects.

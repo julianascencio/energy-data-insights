@@ -1,19 +1,149 @@
 """Synthetic inventory fixtures test filtering and aggregation, not real projects."""
 
 import io
+import json
 from zipfile import ZipFile
 
 import pandas as pd
 import pytest
 
 from energy_data_retrieval.bess_catalogue.inventories import (
+    parse_aemo_frame,
+    parse_cne_frame,
     parse_eia860_archive,
     parse_eia860_frames,
+    parse_inventory_workbook,
     parse_repd_csv,
     parse_repd_frame,
 )
 
 ARGS = {"source_id": "synthetic", "retrieved_at": "2026-11-01T00:00:00Z"}
+PUBLISHED = {**ARGS, "published_date": "2026-10-30"}
+
+
+def aemo_frame():
+    base = {
+        "AEMO Survey ID": 1,
+        "Site Name": "Synthetic mixed site",
+        "Site Owner": "Test",
+        "Region": "NSW1",
+        "Technology Type": "Battery Storage",
+        "Technology Detail": "Lithium-ion",
+        "Commitment Status": "In Service",
+        "Max Site Capacity (AC)": 999,
+        "Unit Count": 100,
+        "Full Commercial Use Date": pd.Timestamp("2025-01-01"),
+    }
+    return pd.DataFrame(
+        [
+            {
+                **base,
+                "Gen Info Unit ID": 101,
+                "Agg Nameplate Capacity (MW AC)": 10,
+                "Agg Nameplate Storage Capacity (MWh)": 20,
+            },
+            {
+                **base,
+                "Gen Info Unit ID": 102,
+                "Agg Nameplate Capacity (MW AC)": 0,
+                "Agg Nameplate Storage Capacity (MWh)": 30,
+            },
+            {
+                **base,
+                "Gen Info Unit ID": 103,
+                "Agg Nameplate Capacity (MW AC)": 900,
+                "Agg Nameplate Storage Capacity (MWh)": 900,
+                "Commitment Status": "Committed",
+            },
+            {
+                **base,
+                "Gen Info Unit ID": 104,
+                "Agg Nameplate Capacity (MW AC)": 999,
+                "Technology Type": "Solar",
+            },
+        ]
+    )
+
+
+def test_aemo_uses_unit_aggregate_not_shared_site_or_unit_multiplier():
+    (row,) = parse_aemo_frame(aemo_frame(), **PUBLISHED)
+    assert (row["power_capacity_mw"], row["energy_capacity_mwh"]) == (10, 50)
+    assert row["power_basis"] == "ac" and row["energy_basis"] == "nominal"
+    assert row["status"] == "partially_operational"
+    assert "commercial_operation_date" not in row
+    assert "grid_connection_capacity_mw" not in row
+    phases = json.loads(row["phases_json"])
+    assert [p["included_in_capacity"] for p in phases] == [True, True, False]
+    assert phases[0]["aemo_unit"]["Full Commercial Use Date"].startswith("2025-01-01")
+
+
+def test_aemo_missing_total_and_past_forecast_do_not_change_status():
+    f = aemo_frame()
+    f.loc[0, "Agg Nameplate Storage Capacity (MWh)"] = float("nan")
+    f.loc[:1, "Commitment Status"] = "In Commissioning"
+    (row,) = parse_aemo_frame(f, **PUBLISHED)
+    assert "energy_capacity_mwh" not in row
+    assert row["status"] == "commissioning"
+    with pytest.raises(ValueError, match="Duplicate AEMO"):
+        parse_aemo_frame(pd.concat([f, f.iloc[:1]]), **PUBLISHED)
+    f.loc[1, "Site Owner"] = "Different owner"
+    with pytest.raises(ValueError, match="Inconsistent AEMO"):
+        parse_aemo_frame(f, **PUBLISHED)
+
+
+def cne_frame():
+    return pd.DataFrame(
+        [
+            {
+                "Proyecto": "Synthetic solar",
+                "Propietario": "Test",
+                "Ubicación": "Test region",
+                "Resolución Original DeC - CNE": "1/2026",
+                "Tipo de Tecnología": "PMGD Fotovoltaico + BESS",
+                "Potencia Neta [MW]": 999,
+                "Capacidad de Almacenamiento [MWh]": 0,
+                "Potencia Neta Central [MW]": 900,
+                "Inyección Adicional BESS [MW]": 800,
+                "Fecha Estimada de Interconexión": pd.Timestamp("2025-01-01"),
+                "Nota": "Synthetic incumplimiento notice",
+            }
+        ]
+    )
+
+
+def test_cne_hybrid_scope_and_administrative_status_keep_forecasts_native():
+    (row,) = parse_cne_frame(cne_frame(), **PUBLISHED)
+    assert row["energy_capacity_mwh"] == 0
+    assert "power_capacity_mw" not in row
+    assert "grid_connection_capacity_mw" not in row
+    assert "expected_operation_date" not in row
+    assert row["status"] == "under_construction"
+    assert row["quality_status"] == "needs_review"
+    native = json.loads(row["extensions_json"])["cne"]
+    assert native["milestone_noncompliance_reported"]
+    assert native["Potencia Neta [MW]"] == 999
+    assert "Nota" not in native
+    f = cne_frame()
+    f.loc[0, "Tipo de Tecnología"] = "BESS"
+    assert parse_cne_frame(f, **PUBLISHED)[0]["power_capacity_mw"] == 999
+    with pytest.raises(ValueError, match="Duplicate CNE"):
+        parse_cne_frame(pd.concat([f, f]), **PUBLISHED)
+
+
+@pytest.mark.parametrize(
+    "provider,sheet,header,fixture",
+    [
+        ("aemo", "Generator Information", 3, aemo_frame),
+        ("cne", "BESS", 2, cne_frame),
+    ],
+)
+def test_workbook_sheet_header_and_schema_drift(provider, sheet, header, fixture):
+    content = io.BytesIO()
+    fixture().to_excel(content, sheet_name=sheet, startrow=header, index=False)
+    assert len(parse_inventory_workbook(content.getvalue(), provider=provider, **PUBLISHED)) == 1
+    adapter = parse_aemo_frame if provider == "aemo" else parse_cne_frame
+    with pytest.raises(ValueError, match="columns changed"):
+        adapter(pd.DataFrame(), **PUBLISHED)
 
 
 def frames():
@@ -213,3 +343,33 @@ def test_reviewed_batch_does_not_publish_overlapping_inventory_rows():
     assert edwards.get("power_capacity_mw") is None
     assert edwards["energy_capacity_mwh"] == 3287
     assert len(json.loads(edwards["extensions_json"])["eia_2025_scope_review"]["plant_codes"]) == 13
+
+
+def test_australia_chile_ledger_preserves_scope_and_withheld_records():
+    """Registry-to-project crosswalks must prevent republishing overlapping phases."""
+    from pathlib import Path
+
+    from energy_data_retrieval.bess_catalogue import load_records
+
+    root = Path(__file__).resolve().parents[2] / "catalogues/bess"
+    rows = {r["record_id"]: r for r in load_records(root)}
+    audit = json.loads((root / "research/2026-11-01_australia_chile_review.json").read_text())
+    for mapping in audit["aemo_crosswalk"]:
+        row = rows[mapping["record_id"]]
+        if mapping["action"] == "consolidated_into_mreh":
+            assert mapping["survey_id"] in json.loads(row["extensions_json"])["aemo_survey_ids"]
+            assert row["power_capacity_mw"] == 600
+            assert len(json.loads(row["phases_json"])) == 3
+        else:
+            assert json.loads(row["external_ids_json"])["aemo_survey_id"] == mapping["survey_id"]
+    for held in audit["withheld"]:
+        assert held["candidate_record_id"] not in rows
+    for accepted in audit["cne_accepted"]:
+        assert accepted["record_id"] in rows
+    hornsdale = next(r for r in rows.values() if r["name"] == "Hornsdale Power Reserve")
+    assert (hornsdale["power_capacity_mw"], hornsdale["energy_capacity_mwh"]) == (150, 193.5)
+    assert hornsdale["quality_status"] == "needs_review"
+    das = next(r for r in rows.values() if r["name"] == "BESS Diego de Almagro Sur II")
+    assert das["status"] == "commissioning"
+    assert "commercial_operation_date" not in das
+    assert "battery_manufacturers" not in das  # Supplier role is not manufacturer evidence.
