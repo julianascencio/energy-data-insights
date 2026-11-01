@@ -1,0 +1,678 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-01T11:32:26.334031+00:00",
+  "ranking_file": "20261101T0856_top10_markets.json",
+  "selection_note": "Completed prior highest-value South West REPD partition; tested Japan FIT open-licensed registry before canonical ingestion; extracted multi-model KSI, Valmont and SAJ tables. Top-ten national gaps remain explicit; no new US ingestion.",
+  "next_highest_value_source": "UK REPD West Midlands / Operational / Ground, after conditional freshness check and full-identity screening. Japan: reconcile the existing 62 Tottori FIT candidates with named plants using permitted independent sources before downloading another prefecture.",
+  "sources": [
+    {
+      "id": "uk_repd",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Q2 2026; July 2026 extract; published 2026-08-03",
+      "licence_assessment": "OGL v3; official catalogue declaration checked; attribution retained",
+      "access_assessment": "CSV downloaded, sha256 84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+      "estimated_useful_yield": {
+        "remaining_source_pv_rows": 6563,
+        "note": "Unreviewed applications across all statuses/mounting types, not independent accepted projects."
+      },
+      "fields_offered": [
+        "registry ID",
+        "technology",
+        "status/date",
+        "capacity (basis unspecified)",
+        "region/county",
+        "grid X/Y",
+        "site area",
+        "planning references"
+      ],
+      "last_attempt": "2026-11-01T11:26:08.969307+00:00",
+      "result": "Cumulative 897 candidates processed: 475 accepted, 422 held. This iteration completes all 392 South West operational ground PV rows: 210 accepted, 182 held.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Process West Midlands / Operational / Ground after freshness check; use planning/owner evidence for held plant-scope questions.",
+      "priority": 1,
+      "processed_cursor": {
+        "completed_partitions": [
+          "East Midlands/Operational/Ground",
+          "South East/Operational/Ground",
+          "Eastern/Operational/Ground",
+          "South West/Operational/Ground"
+        ],
+        "candidate_rows_processed": 897,
+        "accepted_ids_ledgers": [
+          "20261101T0856_repd_review.json",
+          "20261101T0928_repd_review.json",
+          "20261101T1106_repd_review.json"
+        ],
+        "next_partition": "West Midlands/Operational/Ground"
+      }
+    },
+    {
+      "id": "aemo_generation",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "version_or_date": "2026-10-30",
+      "licence_assessment": "AEMO general permission for use with accurate attribution; https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions ; third-party/confidential exclusions must be checked in workbook.",
+      "access_assessment": "Fresh normal official XLSX request again returned HTTP 403; no bypass attempted.",
+      "estimated_useful_yield": {
+        "planning_range": [
+          50,
+          200
+        ],
+        "unit": "projects",
+        "confidence": "unverified until workbook sample; not accepted rows"
+      },
+      "fields_offered": [
+        "technology",
+        "station/unit identities",
+        "capacity",
+        "status",
+        "commissioning forecasts",
+        "region"
+      ],
+      "last_attempt": "2026-11-01T09:28:46.726688+00:00",
+      "result": "No workbook downloaded or accepted. October 30 publication still identified; no row candidate count claimed.",
+      "retry_condition": "Normal public download succeeds; do not bypass HTTP access restrictions.",
+      "next_action": "Retry normal public workbook access; inspect explanatory sheets, explicit PV classification, units versus stations; reconcile New England Solar before ingest.",
+      "priority": 2,
+      "processed_cursor": null
+    },
+    {
+      "id": "germany_mastr",
+      "country": "DEU",
+      "entity": "projects",
+      "source_url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Monitoringberichte/Marktstammdatenregister/start.html",
+      "version_or_date": "Release 26.2.198 public 2026-10-29; export revision not downloaded",
+      "licence_assessment": "Datenlizenz Deutschland Namensnennung 2.0 stated by BNetzA for CSV/XML unless marked otherwise",
+      "access_assessment": "Public export instructions specify download portal and limits; dynamic names intended to prevent automated retrieval. No export fetched.",
+      "estimated_useful_yield": {
+        "planning_range": [
+          50,
+          200
+        ],
+        "unit": "reviewed utility projects",
+        "confidence": "planning only; unit-to-project aggregation required"
+      },
+      "fields_offered": [
+        "unit IDs",
+        "technology",
+        "capacity",
+        "dates",
+        "location",
+        "solar park names"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank fourth; zero catalogue projects. Official release notes report location attribute changes and export-schema updates.",
+      "retry_condition": "Permitted export method and current schema verified; no circumvention of dynamic download restrictions.",
+      "next_action": "Read current production export documentation and permitted download path, acquire normal public export if allowed, reconcile units/parks and omit personal operator details.",
+      "priority": 3,
+      "processed_cursor": null
+    },
+    {
+      "id": "china_nea",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://www.nea.gov.cn/20260923/aaadb598d4cc4c0a92585bfd26c8728e/c.html",
+      "version_or_date": "2026-08 new registration batch, notice 2026-09-23",
+      "licence_assessment": "Bulk reuse not assessed; public access alone is not a licence",
+      "access_assessment": "Official Chinese-language notice identified; attachment not downloaded",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "project names",
+        "centralized PV classification",
+        "province",
+        "registry information"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank first; zero catalogue projects. Notice distinguishes centralized PV from commercial distributed PV, wind and biomass.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Inspect centralized-PV attachment sample and terms; registration is not operating status. Start one monthly/provincial partition.",
+      "priority": 4,
+      "processed_cursor": null
+    },
+    {
+      "id": "india_cea",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://cea.nic.in/renewable-project-monitoring/?lang=en",
+      "version_or_date": "Linked plant-wise PDF contains 2019-era data (MNRE reports through October/December 2019); not a 2026 inventory.",
+      "licence_assessment": "CEA Copyright policy - Moderate explicitly requires prior permission by email before reproduction. No contacting people authorized; no bulk reuse permission claimed.",
+      "access_assessment": "17 MB plant PDF and official copyright policy downloaded. Website footer computes yesterday and is not report revision evidence.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "plant-wise installed capacity",
+        "state",
+        "technology"
+      ],
+      "last_attempt": "2026-11-01T09:46:14.172006+00:00",
+      "result": "0 accepted; sampled first eight pages show stale generic Solar data, insufficient explicit PV/current status. Bulk reuse requires permission.",
+      "retry_condition": "An independently open-licensed official PV inventory or documented permission already obtained by repository owner; do not email or bypass.",
+      "next_action": "Seek a state regulator/system-operator open inventory; inspect current September 2026 CEA report only under permitted reuse, distinguish totals from plant list.",
+      "priority": 5,
+      "processed_cursor": null,
+      "evidence": {
+        "plant_pdf": {
+          "url": "https://cea.nic.in/api/dashboardReports/view-pdf/en/ef25a344-efe2-4f99-802e-a94ee1429045",
+          "retrieved_at": "2026-11-01T09:29:50.137469+00:00",
+          "status": 200,
+          "sha256": "562061f71c98016722b46b12a8456b56348042ed3deb37cd50dfd13bbb770ec6",
+          "bytes": 17273164
+        },
+        "copyright_policy": {
+          "url": "https://cea.nic.in/api/websitepolicy/pdf/view/en/2",
+          "retrieved_at": "2026-11-01T09:32:18.896977+00:00",
+          "status": 200,
+          "sha256": "6eebe2eeb17c3a2762955ef4aead29f431cc96fcbd136c3f29cd5b62b74fefee",
+          "bytes": 118988
+        }
+      }
+    },
+    {
+      "id": "japan_fit",
+      "country": "JPN",
+      "entity": "projects",
+      "source_url": "https://www.fit-portal.go.jp/PublicInfo",
+      "version_or_date": "Snapshot 2026-09-30; portal notice 2026-10-14; paper filings through 2026-06-30",
+      "licence_assessment": "FIT terms permit Government of Japan Standard Terms v2.0 / CC BY 4.0 with attribution and modification notice; third-party exclusions apply. Notice committed; private details not exported.",
+      "access_assessment": "Portal, terms and Tottori XLSX downloaded normally; exact SHA256 in source register.",
+      "estimated_useful_yield": {
+        "review_candidates": 62,
+        "accepted": 0,
+        "basis": "Tottori generation output >=1000 kW and source solar classification; positive solar-cell output retained."
+      },
+      "fields_offered": [
+        "facility ID",
+        "technology",
+        "capacity",
+        "prefecture",
+        "certification status"
+      ],
+      "last_attempt": "2026-11-01T11:26:08.969307+00:00",
+      "result": "1685 facilities / 1623 solar rows inspected; 62 >=1 MW candidates staged, all held for named-project/plant-boundary reconciliation. Tested offline extractor delivered; no canonical Japan projects.",
+      "retry_condition": "Recheck monthly revision and terms; reconcile existing Tottori candidates before accepting or expanding scope.",
+      "next_action": "Resolve named-project crosswalk and nearby/phase identities for 62 Tottori candidates using permitted planning/owner evidence. Ichigo site prohibits unauthorized redistribution/commercial use, so do not bulk ingest that portfolio.",
+      "priority": 2,
+      "processed_cursor": {
+        "prefecture": "鳥取県",
+        "snapshot": "2026-09-30",
+        "minimum_kw": 1000,
+        "candidate_count": 62,
+        "accepted_count": 0,
+        "review_file": "20261101T1106_japan_fit_review.json",
+        "next_partition": "Tottori named-project crosswalk; no additional prefecture selected"
+      }
+    },
+    {
+      "id": "brazil_siga",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.aneel.gov.br/pt_BR/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/11ec447d-698d-4ab8-977f-b424d5deee6a",
+      "version_or_date": "Current SIGA CSV; data dictionary updated 2026-06-12",
+      "licence_assessment": "ODbL declared; no silent relicensing. Attribution/share-alike and database separation not yet resolved.",
+      "access_assessment": "Official Portuguese catalogue reviewed; bulk bytes not fetched",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "CEG ID",
+        "UFV classification",
+        "capacity",
+        "municipality",
+        "status"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank sixth; zero catalogue projects. Licence integration unresolved, not an assertion that ODbL forbids use.",
+      "retry_condition": "ODbL obligations and source-specific distribution reviewed before bulk acceptance.",
+      "next_action": "Design compliant source-specific distribution/attribution; then inspect UFV batch and reconcile plant/phases.",
+      "priority": 7,
+      "processed_cursor": null
+    },
+    {
+      "id": "spain_registry",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://www.miteco.gob.es/es/energia/servicios/registros.html",
+      "version_or_date": "Current public registry portal; extract revision unknown",
+      "licence_assessment": "Reuse/export terms not assessed",
+      "access_assessment": "Official Spanish registry directory found",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "administrative ID",
+        "power",
+        "installation status"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank seventh; one catalogue project. Registration service does not itself establish a bulk export.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Locate public electricity production extract and technology coding; separate PV from solar thermal and historic registration regimes.",
+      "priority": 8,
+      "processed_cursor": null
+    },
+    {
+      "id": "pakistan_nepra",
+      "country": "PAK",
+      "entity": "projects",
+      "source_url": "https://nepra.org.pk/licensing/Generation%20IPPs%20RE%202006.php",
+      "version_or_date": "Licence and modification notices through 2026",
+      "licence_assessment": "Bulk reuse not assessed; individual factual licence extraction possible after review",
+      "access_assessment": "Official public licence index identified",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "licence IDs",
+        "project",
+        "capacity",
+        "technology",
+        "location",
+        "licensee"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank eighth (preliminary estimate); zero catalogue projects. Licences are not proof of operation.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Inspect solar licence schedules, preserve AC/DC and scope; reconcile amendments before counting projects.",
+      "priority": 9,
+      "processed_cursor": null
+    },
+    {
+      "id": "italy_gse",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://www.gse.it/dati-e-scenari/atlaimpianti",
+      "version_or_date": "Map landing page unavailable; user guide version 1.0 dated 2017-02-27",
+      "licence_assessment": "Current export/reuse licence not verified",
+      "access_assessment": "Landing web retrieval HTTP 403; public GSE guide describes individual record downloads",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "location",
+        "plant type",
+        "incentive scheme"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank tenth; zero catalogue projects. No bulk API or current dataset confirmed.",
+      "retry_condition": "Public dataset/export and terms available; no access bypass.",
+      "next_action": "Find current permitted GSE open-data export and licence; do not treat 2017 guide as fresh inventory.",
+      "priority": 10,
+      "processed_cursor": null
+    },
+    {
+      "id": "usa_eia",
+      "country": "USA",
+      "entity": "projects",
+      "source_url": "https://www.eia.gov/electricity/data/eia860/",
+      "version_or_date": "2025 annual extract already imported",
+      "licence_assessment": "US government public domain; acknowledge EIA",
+      "access_assessment": "Existing checksum-pinned source/adapter",
+      "estimated_useful_yield": {
+        "already_accepted_plant_ids": 7309
+      },
+      "fields_offered": [
+        "plant/generator IDs",
+        "AC/DC",
+        "dates",
+        "coordinates"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank second; US coverage already dominates. No repeat ingestion this run.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Prefer non-US gap closure; revisit only for new official revision or substantive field enrichment.",
+      "priority": 20,
+      "processed_cursor": null
+    },
+    {
+      "id": "france_odre",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/",
+      "version_or_date": "Snapshot 2026-08-31; modified 2026-10-13; API processed 2026-10-20",
+      "licence_assessment": "Licence Ouverte v2.0 verified in metadata and full Etalab licence; attribution/date notice committed; privacy/aggregate restrictions respected.",
+      "access_assessment": "Official JSON exports and glossary/EIC-change note downloaded with checksums. 95,302 individual PV identity rows screened.",
+      "estimated_useful_yield": {
+        "unprocessed_scope": "PV below 10 MW and held >=10 MW plant sections",
+        "note": "Not accepted project counts; separate scope review required."
+      },
+      "fields_offered": [
+        "installation identifiers",
+        "technology",
+        "capacity",
+        "region",
+        "generation"
+      ],
+      "last_attempt": "2026-11-01T09:46:14.172006+00:00",
+      "result": "409 >=10 MW PHOTV candidates processed: 48 accepted projects, 361 withheld for aggregation/privacy/phase/identity/technology review. French catalogue now 49 projects.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Refresh metadata/checksums; reconcile named multi-unit parks and Cestas from owner/connection evidence before summing phases. Then deliberately extend adapter scope to a reviewed 5–10 MW partition; current adapter refuses it.",
+      "priority": 6,
+      "processed_cursor": {
+        "completed_partitions": [
+          "PHOTV / puismaxinstallee >=10000 kW / snapshot 2026-08-31"
+        ],
+        "candidate_rows_processed": 409,
+        "accepted_ids_ledger": "20261101T0928_odre_review.json",
+        "identity_screen_rows": 95302,
+        "next_partition": "held >=10 MW project-scope crosswalks; then 5–10 MW after explicit adapter/scope review"
+      }
+    },
+    {
+      "id": "kaco_nx3",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=10182&t=f&token=86c73412ff27b4d7e45b87989d6d86d2ce7990c2",
+      "version_or_date": "EN 500xxxx-04-230309 and EN 500xxxx-03-230310",
+      "licence_assessment": "Individual factual specs; publisher rights retained; full documents outside Git",
+      "access_assessment": "Two public datasheets downloaded and visually inspected",
+      "estimated_useful_yield": {
+        "models_in_completed_batch": 6
+      },
+      "fields_offered": [
+        "active W",
+        "apparent VA",
+        "MPPT conditions",
+        "per-input current",
+        "efficiency",
+        "mechanical",
+        "environment",
+        "protections"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Six exact models accepted; no configurable voltage-variant inflation. Manufacturer already represented.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Completed 3/5/8/10/15/20 NX3 M2 tables; next seek independent combiner/tracker OEM multi-model datasheet, not another thin sibling.",
+      "priority": 12,
+      "processed_cursor": {
+        "models_completed": [
+          "3.0",
+          "5.0",
+          "8.0",
+          "10.0",
+          "15.0",
+          "20.0"
+        ],
+        "family": "blueplanet NX3 M2"
+      }
+    },
+    {
+      "id": "nesf_owner_reconciliation",
+      "country": "GBR",
+      "entity": "project_enrichment",
+      "source_url": "https://www.nextenergysolarfund.com/portfolio/solar-assets/",
+      "version_or_date": "Undated current portfolio page",
+      "licence_assessment": "Individual facts only; bulk reuse not established",
+      "access_assessment": "Public primary-source text available",
+      "estimated_useful_yield": {
+        "planning_range": [
+          10,
+          30
+        ],
+        "unit": "potential matches",
+        "confidence": "identity/date/basis review required"
+      },
+      "fields_offered": [
+        "portfolio membership",
+        "capacity",
+        "operational-date label",
+        "county"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Shacks Barn, Wellingborough and Sywell show potential differences from registry capacities or milestone dates. No silent overwrite or automatic owner assignment.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Resolve identity and capacity basis using asset reports/planning IDs; page operational-date labels may differ from registry milestones. Keep conflicts in review.",
+      "priority": 3,
+      "processed_cursor": null
+    },
+    {
+      "id": "weidmuller_utility_dc_2026",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://assets.dam.weidmueller.com/assets/api/082dec60-f005-4649-859d-1f6f021039a7/Original/MB_PV_Utility_EN_WEB.pdf",
+      "version_or_date": "40-page downloaded revision; PDF metadata 2026-07-20; p7 ordering tables",
+      "licence_assessment": "No open bulk licence; selected factual specs individually reviewed. Publisher rights retained; full documents and images outside Git.",
+      "access_assessment": "Brochure and 26 article PDFs downloaded; one selected article PDF returned 404.",
+      "estimated_useful_yield": {
+        "completed_candidates": 37,
+        "new_accepted": 23,
+        "enriched": 2,
+        "held": 12
+      },
+      "fields_offered": [
+        "order ID / GTIN",
+        "model",
+        "voltage",
+        "inputs",
+        "current scope",
+        "weight",
+        "dimensions",
+        "temperature",
+        "IP rating",
+        "monitoring",
+        "standards",
+        "warranty",
+        "discontinued status"
+      ],
+      "last_attempt": "2026-11-01T09:46:14.172006+00:00",
+      "result": "Three complete ordering tables reconciled against article PDFs. 23 new models and six missing fields on two existing records accepted; disputed specifications retained in field review.",
+      "retry_condition": "Revised OEM datasheet or explicit article/model crosswalk resolves held IDs/footnotes; recheck hashes.",
+      "next_action": "Resolve TAPX/TAPA aliases and enclosure/temperature/condition discrepancies. Prioritize independent tracker manufacturer batch next, not configurable count inflation.",
+      "priority": 12,
+      "processed_cursor": {
+        "tables_completed": [
+          "standard DC",
+          "floating DC",
+          "high-power DC"
+        ],
+        "candidate_articles": 37,
+        "review_file": "20261101T0928_equipment_review.json"
+      }
+    },
+    {
+      "id": "deger_tracker_tables",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.degerenergie.de/wp-content/uploads/2025/12/DEGER-D100-DEGER-D80_EN_2025.pdf",
+      "version_or_date": "Current D80 page links 2025 datasheet, superseding 2022 search result.",
+      "licence_assessment": "Publisher copyright; 2025-04-01 GTC reviewed, reserve document rights; no document redistribution or bulk licence assumed.",
+      "access_assessment": "Current and old public PDFs returned HTTP 403 to normal download; web PDF reader rejected 22.95 MB current document as too large. No access bypass.",
+      "estimated_useful_yield": {
+        "models_in_named_table": 2,
+        "note": "Additional D60H and S-series tables are discovery candidates; not accepted records."
+      },
+      "fields_offered": [
+        "tracker axes",
+        "module area bounds",
+        "geometry",
+        "drive/controls",
+        "wind conditions",
+        "energy consumption"
+      ],
+      "last_attempt": "2026-11-01T09:48:31.529729+00:00",
+      "result": "Two named tracker candidates remain blocked, zero accepted and zero technical specifications extracted.",
+      "retry_condition": "Normal official PDF access succeeds or manufacturer publishes an accessible equivalent; do not bypass access controls.",
+      "next_action": "Retrieve current 2025 D80/D100 table through permitted access, verify individual conditions and existing identities; if unavailable, choose another independent OEM table.",
+      "priority": 3,
+      "processed_cursor": null
+    },
+    {
+      "id": "ksi_trackers",
+      "country": null,
+      "entity": "equipment",
+      "publisher": "KSI Solar",
+      "source_url": "https://www.ksi.solar/product/solar-tracker",
+      "version_or_date": "See immutable source register: KSI undated/2026 filenames, Valmont April 2022, SAJ upload 2025-06-11",
+      "licence_assessment": "Individual factual specification extraction; document rights retained, no open bulk licence claimed. No documents/artwork redistributed.",
+      "access_assessment": "Public OEM datasheets downloaded and model tables visually checked",
+      "estimated_useful_yield": {
+        "accepted_this_iteration": 6,
+        "remaining_selected_batch": 0
+      },
+      "fields_offered": [
+        "electrical or mechanical specifications",
+        "environmental limits",
+        "configuration conditions",
+        "warranty conditions",
+        "control/communication"
+      ],
+      "last_attempt": "2026-11-01T11:26:08.969307+00:00",
+      "result": "Accepted 6 named models with substantive technical metadata. Disputed/ambiguous fields held separately.",
+      "retry_condition": "New revision or independent clarification of listed conflicts",
+      "next_action": "Reconcile source-specific field issues; do not manufacture configuration siblings or reingest identical sheets.",
+      "priority": 8,
+      "processed_cursor": {
+        "models": [
+          "LUMA",
+          "LUMA AGRI",
+          "VEON",
+          "VEON-TX",
+          "DUALIX-6",
+          "DUALIX-13"
+        ],
+        "review_file": "20261101T1106_equipment_review.json"
+      }
+    },
+    {
+      "id": "valmont_convert",
+      "country": null,
+      "entity": "equipment",
+      "publisher": "Valmont Solar",
+      "source_url": "https://www.valmontsolar.com/products-and-services/solar-tracker",
+      "version_or_date": "See immutable source register: KSI undated/2026 filenames, Valmont April 2022, SAJ upload 2025-06-11",
+      "licence_assessment": "Individual factual specification extraction; document rights retained, no open bulk licence claimed. No documents/artwork redistributed.",
+      "access_assessment": "Public OEM datasheets downloaded and model tables visually checked",
+      "estimated_useful_yield": {
+        "accepted_this_iteration": 2,
+        "remaining_selected_batch": 0
+      },
+      "fields_offered": [
+        "electrical or mechanical specifications",
+        "environmental limits",
+        "configuration conditions",
+        "warranty conditions",
+        "control/communication"
+      ],
+      "last_attempt": "2026-11-01T11:26:08.969307+00:00",
+      "result": "Accepted 2 named models with substantive technical metadata. Disputed/ambiguous fields held separately.",
+      "retry_condition": "New revision or independent clarification of listed conflicts",
+      "next_action": "Reconcile source-specific field issues; do not manufacture configuration siblings or reingest identical sheets.",
+      "priority": 8,
+      "processed_cursor": {
+        "models": [
+          "Convert-1P",
+          "Convert-2P"
+        ],
+        "review_file": "20261101T1106_equipment_review.json"
+      }
+    },
+    {
+      "id": "saj_r6_spain",
+      "country": null,
+      "entity": "equipment",
+      "publisher": "Guangzhou Sanjing Electric Co Ltd",
+      "source_url": "https://sp.saj-electric.com/es-es/services-support-download?page=2&product_model=R6_Series&product_type=On-grid+Inverter&type=Datasheet",
+      "version_or_date": "See immutable source register: KSI undated/2026 filenames, Valmont April 2022, SAJ upload 2025-06-11",
+      "licence_assessment": "Individual factual specification extraction; document rights retained, no open bulk licence claimed. No documents/artwork redistributed.",
+      "access_assessment": "Public OEM datasheets downloaded and model tables visually checked",
+      "estimated_useful_yield": {
+        "accepted_this_iteration": 15,
+        "remaining_selected_batch": 0
+      },
+      "fields_offered": [
+        "electrical or mechanical specifications",
+        "environmental limits",
+        "configuration conditions",
+        "warranty conditions",
+        "control/communication"
+      ],
+      "last_attempt": "2026-11-01T11:26:08.969307+00:00",
+      "result": "Accepted 15 named models with substantive technical metadata. Disputed/ambiguous fields held separately.",
+      "retry_condition": "New revision or independent clarification of listed conflicts",
+      "next_action": "Reconcile source-specific field issues; do not manufacture configuration siblings or reingest identical sheets.",
+      "priority": 8,
+      "processed_cursor": {
+        "models": [
+          "R6-10K-T2",
+          "R6-36K-T3-32",
+          "R6-25K-T3-32",
+          "R6-12K-T2",
+          "R6-3K-T2",
+          "R6-5K-T2",
+          "R6-4K-T2",
+          "R6-33K-T3-32",
+          "R6-6K-T2",
+          "R6-8K-T2",
+          "R6-50K-T4-32",
+          "R6-30K-T3-32",
+          "R6-15K-T2",
+          "R6-36K-T4-32",
+          "R6-40K-T4-32"
+        ],
+        "review_file": "20261101T1106_equipment_review.json"
+      }
+    },
+    {
+      "id": "fronius_tauro_pdf_1106",
+      "country": null,
+      "entity": "inverters",
+      "source_url": "https://www.fronius.com/~/downloads/Solar%20Energy/Datasheets/SE_DS_Fronius_Tauro_P_EN_US.pdf",
+      "title": "Fronius Tauro public PDF",
+      "version_or_date": null,
+      "licence_assessment": "No document obtained; reuse assessment deferred",
+      "access_assessment": {
+        "status": 404,
+        "sha256": null
+      },
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "model specifications"
+      ],
+      "last_attempt": "2026-11-01T11:06:46.515961+00:00",
+      "result": "HTTP 404 before extraction; switched to SAJ tables, zero accepted",
+      "retry_condition": "Current public source and permitted reuse verified; no access-control bypass or contacting people",
+      "next_action": "Locate current OEM download URL and version; inspect multiple model columns and terms before extraction.",
+      "processed_cursor": null,
+      "priority": 9
+    },
+    {
+      "id": "tottori_historical_table",
+      "country": "JPN",
+      "entity": "projects",
+      "source_url": "https://odp-pref-tottori.tori-info.co.jp/dataset/1472/resource/8584/content.html",
+      "title": "Tottori historical renewable facilities",
+      "version_or_date": null,
+      "licence_assessment": "Licence not established from resource; parent catalogue returned HTTP 200 soft Not Found",
+      "access_assessment": {
+        "status": 200,
+        "sha256": "ec240993ce15c4288c17310697e5037d4881417df841a62a6a07c68b27258bbc"
+      },
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "project identity discovery"
+      ],
+      "last_attempt": "2026-11-01T11:13:19.055751+00:00",
+      "result": "Historical 2014/2015 mixed-technology table; discovery only, zero accepted",
+      "retry_condition": "Current public source and permitted reuse verified; no access-control bypass or contacting people",
+      "next_action": "Find current licensed catalogue metadata and explicit PV/plant-boundary evidence before using historical rows.",
+      "processed_cursor": null,
+      "priority": 9
+    },
+    {
+      "id": "ichigo_named_portfolio",
+      "country": "JPN",
+      "entity": "projects",
+      "source_url": "https://www.ichigo.gr.jp/terms/",
+      "title": "Ichigo portfolio terms",
+      "version_or_date": null,
+      "licence_assessment": "Copyright reserved; observed terms prohibit unauthorized redistribution/commercial reuse; no permission presumed",
+      "access_assessment": {
+        "status": 200,
+        "sha256": "49995d31c7ec796615373482a1c9f5ebdb62458b34507e350ab026e9c7df7697"
+      },
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "project identity discovery"
+      ],
+      "last_attempt": "2026-11-01T11:24:14.243958+00:00",
+      "result": "Portfolio discovered as possible naming crosswalk; terms checked, no bulk extraction or contact",
+      "retry_condition": "Current public source and permitted reuse verified; no access-control bypass or contacting people",
+      "next_action": "Use an independently permitted named-project/planning source to resolve Tottori candidates; revisit only if permission/terms change.",
+      "processed_cursor": null,
+      "priority": 9
+    }
+  ]
+}

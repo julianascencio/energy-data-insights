@@ -157,6 +157,18 @@ Schema version: 1.0.0. All fields are nullable except the required record/proven
 ## Source column crosswalk
 
 SAM CEC mappings are executable in `pv_catalogue/sam.py`; EIA mappings are in `pv_catalogue/eia860.py`.
+Reviewed DESNZ REPD mappings are in `pv_catalogue/repd.py`:
+
+| REPD column | Canonical destination | Qualification |
+| --- | --- | --- |
+| Ref ID | `external_ids_json.repd_ref_id` | Stable project identity only after review of application/phase scope |
+| Installed Capacity (MWelec) | `capacity_unspecified_mw` | AC/DC basis not inferred |
+| Solar Site Area (sqm) | `land_area_ha` | Divide source square metres by 10,000; missing stays missing |
+| Region / County | `region` / `locality` | Source administrative location |
+| Country | `country_code=GBR`; native country in extensions | England/Wales/Scotland/Northern Ireland map to ISO GBR |
+| Operational | `extensions_json.repd.operational_milestone_date` | Registry milestone, not independently verified commissioning |
+| X-coordinate / Y-coordinate | `extensions_json.repd` | Native grid only; datum/accuracy not asserted |
+| Operator (or Applicant) | omitted | Ambiguous role and possible personal information; no owner inference |
 
 | Source | Native column | Canonical column |
 | --- | --- | --- |
@@ -173,3 +185,54 @@ SAM CEC mappings are executable in `pv_catalogue/sam.py`; EIA mappings are in `p
 | EIA plant | all nonempty plant attributes | extensions_json.eia_plant |
 
 Do not equate series-connected cells with physical half-cell count. No automatic unit guesses or phase-to-project date promotion.
+
+## ODRE reviewed PV register crosswalk (2026-08-31 snapshot)
+
+The source-specific adapter requires pinned cohort and complete individual-PV
+identity exports, plus a reviewed EIC ledger. EIC is a network installation ID;
+possible sections and aggregates are held, never assumed to be separate plants.
+
+| Native field | Catalogue treatment |
+| --- | --- |
+| `codeeicresourceobject` | Stable project identity seed and `external_ids_json.odre_eic`; exact row locator |
+| `nominstallation` | Published installation name; anonymous entries excluded |
+| `codetechnologie=PHOTV` | Explicit photovoltaic technology; generic solar insufficient |
+| `puismaxinstallee` | Active installed kW / 1,000 → `capacity_unspecified_mw`; no AC/DC inference |
+| `puismaxrac` | Maximum grid-injection kW in `extensions_json.odre`; not plant AC capacity |
+| `datemiseenservice` | `commissioning_date`, registry industrial-service date |
+| `dateraccordement` | Connection date in extensions; not substituted for commissioning |
+| `regime=En service` | `operational_registry_snapshot` as of source snapshot date |
+| `gestionnaire`, `postesource` | `grid_operator`, `substation` code when present; no owner assignment |
+| `tensionraccordement` | Explicit numeric kV only → `grid_voltage_kv`; HTA/BT remain raw labels |
+| Commune/region/implantation codes | Qualified administrative geography in extensions; no centroid coordinates |
+| `nbgroupes` | Raw group count in extensions; not assumed exact inverter count |
+| Rolling injected/produced energy | Measured kWh in extensions; period end installation-specific, not expected generation |
+
+The API schema and attached glossary disagree on whether produced energy includes
+self-consumption, and on implantation-code geography. Both definition conflicts
+remain documented; no canonical generated-energy total or precise location is
+asserted from those fields. All accepted field evidence resolves to the exact EIC
+object in the pinned export, with glossary/schema/licence hashes registered.
+
+### Japan FIT review-only mapping
+
+The offline `japan_fit.stage_fit_review` adapter exports held research candidates,
+not canonical projects. The two workbook sheets join by FIT facility ID; a parcel
+row is never counted as another project. Names, contacts and address strings are
+omitted from review output. Exact normalized parcel equality only flags related
+registration IDs for review; it does not merge plants.
+
+| FIT source field | Review field | Interpretation |
+| --- | --- | --- |
+| 設備ID | `fit_facility_id` | Registration identity; not a demonstrated plant boundary |
+| 発電設備区分 | `source_technology` | Exact solar label plus positive solar-cell output supports PV |
+| 発電出力（kW） | `registered_generation_output_kw_basis_unspecified` | Registered kW; no AC/DC inference |
+| 太陽電池の合計出力（kW） | `solar_cell_total_output_kw` | Separate published solar-cell output |
+| 新規認定日 | `new_certification_date` | Certification, not commissioning |
+| 運転開始予定日 | `planned_operation_date` | Forecast, including future dates |
+| 運転開始報告年月 | `reported_operation_month` | Month precision retained; no invented day or current status |
+
+The staged Tottori cohort is at least 1 MW registered generation output. Its
+September 2026 snapshot includes a June 2026 paper-filing lag. A named-project
+crosswalk, phase/parcel reconciliation and field-specific evidence are still
+required before canonical acceptance. No canonical schema columns were added.

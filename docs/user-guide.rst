@@ -19,7 +19,9 @@ Data access and scientific methods
 
    database-viewer
    bess-database-viewer
+   bess-oem-database-viewer
    _generated/guides/bess-catalogue
+   _generated/guides/bess-oem-catalogue
    _generated/guides/pv-catalogue
    _generated/guides/terrain
    _generated/guides/satellite-imagery

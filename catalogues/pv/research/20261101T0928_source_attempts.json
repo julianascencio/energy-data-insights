@@ -1,0 +1,86 @@
+{
+  "scope": "20261101T0928",
+  "aemo": {
+    "url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+    "retrieved_at": "2026-11-01T09:28:46.726688+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "cea": {
+    "plant_pdf": {
+      "url": "https://cea.nic.in/api/dashboardReports/view-pdf/en/ef25a344-efe2-4f99-802e-a94ee1429045",
+      "retrieved_at": "2026-11-01T09:29:50.137469+00:00",
+      "status": 200,
+      "sha256": "562061f71c98016722b46b12a8456b56348042ed3deb37cd50dfd13bbb770ec6",
+      "bytes": 17273164
+    },
+    "copyright_policy": {
+      "url": "https://cea.nic.in/api/websitepolicy/pdf/view/en/2",
+      "retrieved_at": "2026-11-01T09:32:18.896977+00:00",
+      "status": 200,
+      "sha256": "6eebe2eeb17c3a2762955ef4aead29f431cc96fcbd136c3f29cd5b62b74fefee",
+      "bytes": 118988
+    },
+    "result": "No acceptance. First 8 PDF pages show 2019-era plant data; generic Solar not sufficient PV evidence. Copyright policy requires prior emailed permission; no contact made."
+  },
+  "odre": {
+    "cohort": {
+      "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%22PHOTV%22+AND+puismaxinstallee+%3E%3D+10000&order_by=codeeicresourceobject",
+      "retrieved_at": "2026-11-01T09:29:50.139720+00:00",
+      "status": 200,
+      "sha256": "49e71ba2051d5a7391c0cbe92b275987888ca35f6c0b51b4e0fa9452ae2c7752",
+      "bytes": 610976
+    },
+    "identity_export": {
+      "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%22PHOTV%22+AND+nbinstallations%3D1&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee&order_by=codeeicresourceobject",
+      "retrieved_at": "2026-11-01T09:32:18.896099+00:00",
+      "status": 200,
+      "sha256": "befb954d1d5f77cf7b4cde15a322955c565de325fc9a1d147d6665d9d06cd928",
+      "bytes": 17196776
+    },
+    "accepted": 48,
+    "held": 361,
+    "eic_change_note_check": "No accepted EIC intersects the published 79-code-change note."
+  },
+  "weidmuller": {
+    "brochure": {
+      "url": "https://assets.dam.weidmueller.com/assets/api/082dec60-f005-4649-859d-1f6f021039a7/Original/MB_PV_Utility_EN_WEB.pdf",
+      "retrieved_at": "2026-11-01T09:29:23.107730+00:00",
+      "status": 200,
+      "sha256": "dd77c26845b3fab99c19e2f05d64220163fe5e195904a4fd326f22e8a852650f",
+      "bytes": 8202307
+    },
+    "ordering_articles": 37,
+    "individual_pdf_downloads": 26,
+    "individual_pdf_404": [
+      "8000057085"
+    ],
+    "accepted_new": 23,
+    "enriched": 2,
+    "held_articles": 12,
+    "field_review_items": 29
+  },
+  "deger": {
+    "source_url": "https://www.degerenergie.de/wp-content/uploads/2025/12/DEGER-D100-DEGER-D80_EN_2025.pdf",
+    "discovery_page": "https://www.degerenergie.de/deger-d80/",
+    "terms_url": "https://www.degerenergie.de/wp-content/uploads/2025/09/General-Terms-and-Conditions-for-Deliveries-and-Services-GTC_01.04.2025.pdf",
+    "attempted_at": "2026-11-01T09:48:31.529729+00:00",
+    "result": "Normal official PDF requests returned HTTP 403; web reader rejected content length. Zero technical rows extracted, no bypass.",
+    "named_candidates": 2,
+    "accepted": 0
+  },
+  "repd": {
+    "conditional_verification": {
+      "url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
+      "verified_at": "2026-11-01T09:51:00.334925+00:00",
+      "http_status": 304,
+      "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+      "http_etag": "\"6a6cbdc0-4da09d\"",
+      "http_last_modified": "Fri, 31 Jul 2026 15:22:40 GMT",
+      "bytes_downloaded_at": "2026-11-01T08:58:58.744989+00:00"
+    },
+    "candidates": 169,
+    "accepted": 76,
+    "held": 93,
+    "full_pv_identity_rows_screened": 7460
+  }
+}

@@ -1,0 +1,120 @@
+[
+  {
+    "model": "LUMA",
+    "field": "maximum_capacity_kwp",
+    "assertions": [
+      {
+        "upper_bound": 35,
+        "source_id": "luma_pdf_20261101T1106",
+        "locator": "page 2 Performance"
+      },
+      {
+        "value": 60,
+        "source_id": "ksi_html_20261101T1106",
+        "locator": "comparison max tracker capacity row"
+      }
+    ],
+    "disposition": "withheld"
+  },
+  {
+    "model": "VEON",
+    "field": "motor_voltage_v",
+    "assertions": [
+      {
+        "value": 24,
+        "source_id": "veon_pdf_20261101T1106",
+        "locator": "page 2 Performance"
+      },
+      {
+        "value": 48,
+        "source_id": "ksi_html_20261101T1106",
+        "locator": "comparison operating voltage row"
+      }
+    ],
+    "disposition": "withheld, revision/configuration reconciliation required"
+  },
+  {
+    "model": "VEON-TX",
+    "field": "motor_voltage_v",
+    "assertions": [
+      {
+        "value": 24,
+        "source_id": "veon_tx_pdf_20261101T1106",
+        "locator": "page 2 Performance"
+      },
+      {
+        "value": 48,
+        "source_id": "ksi_html_20261101T1106",
+        "locator": "comparison operating voltage row"
+      }
+    ],
+    "disposition": "withheld, revision/configuration reconciliation required"
+  },
+  {
+    "model": "DUALIX-6",
+    "field": "gross_surface_area_m2",
+    "assertions": [
+      {
+        "upper_bound": 65,
+        "source_id": "dualix_6_pdf_20261101T1106"
+      },
+      {
+        "range": [
+          46,
+          60
+        ],
+        "source_id": "ksi_html_20261101T1106"
+      }
+    ],
+    "disposition": "withheld; configuration limits differ"
+  },
+  {
+    "model": "Convert-1P",
+    "field": "certifications",
+    "source_id": "valmont1p_pdf_20261101T1106",
+    "issue": "UL 3707 appears in OEM qualification list. Retained only as qualified printed claim in extensions; no independent certificate verified."
+  },
+  {
+    "model": "Convert-2P",
+    "field": "wind_and_snow_loads",
+    "source_id": "valmont2p_pdf_20261101T1106",
+    "locator": "PDF page 2 Electronic Specifications, Wind and Snow Loads row",
+    "issue": "Row instead contains wired RS485/wireless LoRa communication text. No wind/snow numerical rating or LoRa parameter accepted from mislabeled row."
+  },
+  {
+    "model": "Convert-2P",
+    "field": "certifications",
+    "source_id": "valmont2p_pdf_20261101T1106",
+    "issue": "UL 3707 appears in OEM qualification list. Retained only as qualified printed claim in extensions; no independent certificate verified."
+  },
+  {
+    "scope": "saj_t2",
+    "models": 8,
+    "field": "humidity",
+    "source_id": "saj_t2_pdf_20261101T1106",
+    "locator": "page 2 General Parameters",
+    "issue": "Spanish condition reads 0–100% sin consideración; likely translation error but not silently corrected to non-condensing. Humidity condition withheld."
+  },
+  {
+    "scope": "saj_t34",
+    "models": 7,
+    "field": "humidity",
+    "source_id": "saj_t34_pdf_20261101T1106",
+    "locator": "page 2 General Parameters",
+    "issue": "Spanish condition reads 0–100% sin consideración; likely translation error but not silently corrected to non-condensing. Humidity condition withheld."
+  },
+  {
+    "scope": "saj_t2",
+    "field": "certifications",
+    "source_id": "saj_t2_pdf_20261101T1106",
+    "locator": "PDF page 2 applicable standards",
+    "issue": "Printed CEI O-021 is ambiguous; kept only as an explicitly ambiguous raw claim, not silently normalized to a certificate."
+  },
+  {
+    "scope": "saj_t34",
+    "field": "certifications",
+    "source_id": "saj_t34_pdf_20261101T1106",
+    "locator": "PDF page 2 applicable standards",
+    "issue": "Printed CEI O-021 is ambiguous; kept only as an explicitly ambiguous raw claim, not silently normalized to a certificate."
+  }
+]

@@ -109,6 +109,73 @@ entry, hash and access time. `write_records` is a full-snapshot, single-writer
 operation, not a multi-user database transaction. Work in an isolated branch;
 push without force and rebase/revalidate if another writer advances it.
 
+## Reviewed registry batches
+
+The REPD adapter requires a checksum-pinned extract and an explicit reviewed-ID
+ledger. It screens identities against the full solar extract, including revised
+and non-operating applications. Nearby sites, aliases, reapplications and phases
+are flagged for review, never automatically merged or counted as separate plants.
+
+```bash
+uv run python scripts/stage_pv_repd.py \
+  --input /path/to/REPD_Publication_Q2_2026.csv \
+  --review catalogues/pv/research/20261101T0856_repd_review.json \
+  --output /tmp/reviewed-repd.jsonl
+```
+
+Then use the existing `upsert` command and validate. Staging is offline, refuses
+changed source bytes and existing name/ID conflicts, and creates a new output
+file. Read the ledger and [research backlog](research/source_backlog.json) before
+selecting another partition. Recheck the official publication for revisions;
+never reuse a prior source ID for new bytes. The accepted REPD records preserve
+native planning references, grid coordinates and milestone dates. They do not
+infer owner/operator roles, AC/DC basis, WGS84 coordinates or live operation.
+Private applicant fields and addresses are omitted. Required DESNZ attribution
+is included in `licenses/` and travels with generated snapshots.
+
+The ODRE adapter similarly requires a pinned >=10 MW cohort and a complete
+individual-PV identity export. It screens all names, shared >=1 MW administrative
+communes, phase markers, anonymized entries and prior catalogue aliases. These
+are conservative review flags, not automatic merges or proof of plant boundaries.
+
+```bash
+uv run python scripts/stage_pv_odre.py \
+  --input /path/to/france_large.json \
+  --identities /path/to/france_identities.json \
+  --review catalogues/pv/research/20261101T0928_odre_review.json \
+  --output /tmp/reviewed-odre.jsonl
+```
+
+Then use `upsert` and validate. The reviewed ledger is specific to the pinned
+2026-08-31 snapshot. Required ODRE attribution travels with snapshots. The adapter
+preserves unspecified AC/DC basis and registry dates; administrative geography and
+rolling measured energy retain their source limitations in extensions.
+
+### Japan FIT review staging
+
+The Japan FIT prefectural workbook adapter stages **review candidates only**.
+Facility registrations and parcel-sheet rows are not automatically separate plants.
+It checks pinned bytes, Japanese headers, IDs, dates and capacities; retains month
+precision; and flags shared parcels without exporting personal names, business
+addresses, phone numbers or parcel addresses. Positive solar-cell output supports
+PV classification. Certification and planned operation never become operating
+status. The portal warns that paper filings lag its snapshot.
+
+```bash
+uv run python scripts/stage_pv_japan_fit.py \
+  --input /path/to/tottori.xlsx \
+  --sha256 ac10084eda5f0d1ee6f54c56ac25d7a0f2dbe0f4c3ef7113016111861c730749 \
+  --source-id japan_fit_tottori_20261101T1106 \
+  --snapshot-date 2026-09-30 --prefecture 鳥取県 \
+  --output /tmp/tottori-review.json
+```
+
+The command deliberately cannot ingest canonical records. Review named-project
+crosswalks, nearby parcels, phases and existing identities first, then use the
+catalogue's existing upsert API with independently accepted records. Recheck the
+portal's snapshot, terms and download link before selecting another prefecture.
+The [FIT attribution notice](licenses/JAPAN-FIT-NOTICE.md) documents reuse terms.
+
 ## Schema evolution and scaling
 
 The packaged `schema.json` is authoritative. Reuse a matching canonical column;

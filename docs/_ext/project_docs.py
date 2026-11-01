@@ -108,7 +108,25 @@ def setup(app: Sphinx) -> dict[str, bool]:
     app.connect("html-collect-pages", _legacy_gallery_pages)
     app.connect("build-finished", _publish_pv_database)
     app.connect("build-finished", _publish_bess_database)
+    app.connect("build-finished", _publish_bess_oem_database)
     return {"parallel_read_safe": True, "parallel_write_safe": True}
+
+
+def _publish_bess_oem_database(app: Sphinx, exception: Exception | None) -> None:
+    """Publish product configurations separately from installed project capacity."""
+    if exception is not None or app.builder is None or app.builder.format != "html":
+        return
+    from energy_analysis.pv_database import export_viewer_data
+    from energy_data_retrieval.bess_oem_catalogue import build_parquet
+
+    root = Path(app.srcdir).parent
+    destination = Path(app.outdir) / "datasets/bess_oem"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with TemporaryDirectory(dir=destination.parent) as temporary:
+        snapshot = Path(temporary) / "snapshot"
+        build_parquet(root / "catalogues/bess_oem", snapshot)
+        export_viewer_data(snapshot)
+        shutil.copytree(snapshot, destination, dirs_exist_ok=True)
 
 
 def _generation_assets(root: Path) -> None:
@@ -496,4 +514,5 @@ def prepare_sources(root: Path) -> list[str]:
     # Sphinx-Gallery hashes the script, not its catalogue inputs. This small
     # data-driven example must rerun when records, sources or the schema change.
     (docs / "auto_examples/database/plot_bess_projects.py.md5").unlink(missing_ok=True)
+    (docs / "auto_examples/database/plot_bess_oem_catalogue.py.md5").unlink(missing_ok=True)
     return [path.name for path in docs.glob("*.md")]
