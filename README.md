@@ -458,8 +458,8 @@ uv run python -m energy_data_retrieval.bess_catalogue build --output artifacts/b
 
 ## Global BESS OEM products
 
-The [BESS OEM catalogue](catalogues/bess_oem/README.md) adds 90 model/configuration
-and family records from 28 suppliers, with 53 primary sources and 73 typed metadata
+The [BESS OEM catalogue](catalogues/bess_oem/README.md) adds 109 model/configuration
+and family records from 29 suppliers, with 61 primary sources and 73 typed metadata
 columns. It follows the PV module database format with sharded JSONL, source lists,
 per-field evidence, timestamps and reproducible Parquet exports. Active MW, apparent
 MVA, nominal/usable MWh, regional variants and preliminary documents remain distinct.

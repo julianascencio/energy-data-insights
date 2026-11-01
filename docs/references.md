@@ -1795,3 +1795,67 @@ Dyness (2025). **Tower Pro datasheet EN 20250626**. [Source](https://dyness.com/
 **Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
 
 **Used by:** `catalogues/bess_oem/sources.json`.
+
+### sungrow_sbr_es_v13
+
+Sungrow (2022). **SBR battery datasheet (Spanish)**. [Source](https://spa.sungrowpower.com/upload/file/20220627/ES%20DS%20SBR096%20SBR128%20SBR160%20SBR192%20SBR224%20SBR256%20Datasheet.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json. Year is printed copyright year, not asserted publication date.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sungrow_sbh_es_v3_1
+
+Sungrow (2023). **SBH battery datasheet (Spanish)**. [Source](https://spa.sungrowpower.com/upload/file/20240308/ES_DS_SBH100_150_200_250_300_350_400_Ficha_T%C3%A9cnica.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json. Year is printed copyright year, not asserted publication date.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_solva_dc208_20260917
+
+Freedom Won (2026). **SOLVA DC208 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-DC208-Spec-Sheet-170926.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_solva_ac261_20260917
+
+Freedom Won (2026). **SOLVA AC261 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-AC261-Spec-Sheet-170926.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_solva_dc261_20260917
+
+Freedom Won (2026). **SOLVA DC261 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-DC261-Spec-Sheet-170926.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_solva_rt261_20260917
+
+Freedom Won (2026). **SOLVA RT261 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-RT261-Spec-Sheet-170926.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_solva_ac418_20260917
+
+Freedom Won (2026). **SOLVA AC418 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-AC418-Spec-Sheet-170926.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_solva_dc418_20260917
+
+Freedom Won (2026). **SOLVA DC418 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-DC418-Spec-Sheet-170926.pdf)
+
+**Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
