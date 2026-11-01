@@ -32,3 +32,9 @@ chemistry, status dates and source conflicts are visible independently.
 
 See the :doc:`database guide </_generated/guides/pv-catalogue>` for provenance,
 column definitions, snapshot downloads and update rules.
+
+.. button-ref:: /bess-oem-database-viewer
+   :color: primary
+   :outline:
+
+   Explore BESS OEM products
