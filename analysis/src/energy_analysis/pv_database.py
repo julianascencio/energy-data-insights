@@ -94,7 +94,7 @@ def _json_value(value: Any) -> Any:
 
 
 def export_viewer_data(snapshot: Path) -> dict[str, Any]:
-    """Export lossless browser projections of the five published Parquet files.
+    """Export lossless browser projections of every table in a catalogue snapshot.
 
     JSON is a derived delivery format, not an independently maintained database.
     All rows and populated fields are retained; omitted all-null columns are

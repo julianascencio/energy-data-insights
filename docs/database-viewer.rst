@@ -1,6 +1,8 @@
 Interactive PV database
 =======================
 
+For batteries, open the :doc:`worldwide BESS projects viewer <bess-database-viewer>`.
+
 Explore the published Parquet snapshot: all records, metadata, evidence and dates.
 The browser loads one table at a time using a JSON projection generated directly
 from the downloadable Parquet file; no external service or API key is required.

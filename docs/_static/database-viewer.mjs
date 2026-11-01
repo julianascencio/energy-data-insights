@@ -1,6 +1,7 @@
 import {display, filterRows, sortRows, statistics, groupRows, toCsv} from "./database-core.mjs";
 
-const root = document.getElementById("pv-database");
+const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
+const isBess = root.dataset.database === "bess";
 const el = (id) => document.getElementById(`db-${id}`);
 const make = (tag, text, className) => {
   const element = document.createElement(tag);
@@ -12,7 +13,7 @@ const number = (n) => n == null ? "Unknown" : n.toLocaleString(undefined, {maxim
 const base = new URL(root.dataset.base, document.baseURI);
 let index, rows = [], filtered = [], visible = [], page = 0, sortKey = "name", descending = false;
 let tableName = "", token = 0, currentRecord;
-const categories = ["manufacturer", "country_code", "technology", "status", "quality_status", "market_scope", "bifacial"];
+const categories = ["manufacturer", "country_code", "technology", "status", "quality_status", "market_scope", "bifacial", "chemistry", "configuration", "power_basis", "energy_basis"];
 
 function options(element, entries, selected) {
   element.replaceChildren(...entries.map(([value, label]) => {
@@ -67,7 +68,7 @@ async function loadTable() {
     const metrics = Object.entries(index.fields).filter(([key, meta]) =>
       ["float", "int"].includes(meta.type) && populated.has(key)).map(([key]) => [key, fieldLabel(key)]);
     options(el("metric"), [["", "No numeric field"], ...metrics],
-      entity === "projects" ? "capacity_dc_mw" : entity === "modules" ? "pmax_stc_w" : metrics[0]?.[0]);
+      entity === "projects" ? (isBess ? "energy_capacity_mwh" : "capacity_dc_mw") : entity === "modules" ? "pmax_stc_w" : metrics[0]?.[0]);
     el("parquet").href = new URL(info.parquet, base).href;
     el("version").textContent = `Schema ${index.schema_version} · ${number(info.rows)} records · ${Object.keys(index.fields).length} columns`;
     el("provenance").textContent = `Parquet SHA-256: ${info.parquet_sha256}. Browser projection checksum verified; all records included.`;
@@ -78,7 +79,7 @@ async function loadTable() {
   } catch (error) { if (request === token) failure(error); }
 }
 function defaultColumns() {
-  const specific = tableName === "projects" ? ["country_code", "status", "capacity_ac_mw", "capacity_dc_mw"] :
+  const specific = tableName === "projects" ? (isBess ? ["country_code", "status", "status_as_of", "power_capacity_mw", "energy_capacity_mwh", "chemistry"] : ["country_code", "status", "capacity_ac_mw", "capacity_dc_mw"]) :
     ["manufacturer", "model", el("metric").value];
   visible = [...new Set(["name", ...specific, "quality_status", "updated_at", "source_urls"])].filter((key) => key in index.fields);
 }

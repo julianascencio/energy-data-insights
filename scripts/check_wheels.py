@@ -36,6 +36,9 @@ for name, expected_version in json.loads(sys.argv[1]).items():
     resources = importlib.resources.files(module)
     assert resources.joinpath('py.typed').is_file(), name
     if name == 'energy-data-retrieval':
+        from energy_data_retrieval.bess_catalogue import SCHEMA, stable_id
+        assert SCHEMA['fields']['energy_capacity_mwh']['unit'] == 'MWh'
+        assert stable_id('AUS', 'Synthetic locality', 'Synthetic test battery')
         from energy_data_retrieval.sources.pvgis import endpoints, describe_endpoint
         assert len(endpoints('6')) == 27
         assert 'latitude' in describe_endpoint('/power/broadband')['parameters']
