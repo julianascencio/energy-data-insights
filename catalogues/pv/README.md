@@ -109,6 +109,30 @@ entry, hash and access time. `write_records` is a full-snapshot, single-writer
 operation, not a multi-user database transaction. Work in an isolated branch;
 push without force and rebase/revalidate if another writer advances it.
 
+## Reviewed registry batches
+
+The REPD adapter requires a checksum-pinned extract and an explicit reviewed-ID
+ledger. It screens identities against the full solar extract, including revised
+and non-operating applications. Nearby sites, aliases, reapplications and phases
+are flagged for review, never automatically merged or counted as separate plants.
+
+```bash
+uv run python scripts/stage_pv_repd.py \
+  --input /path/to/REPD_Publication_Q2_2026.csv \
+  --review catalogues/pv/research/20261101T0856_repd_review.json \
+  --output /tmp/reviewed-repd.jsonl
+```
+
+Then use the existing `upsert` command and validate. Staging is offline, refuses
+changed source bytes and existing name/ID conflicts, and creates a new output
+file. Read the ledger and [research backlog](research/source_backlog.json) before
+selecting another partition. Recheck the official publication for revisions;
+never reuse a prior source ID for new bytes. The accepted REPD records preserve
+native planning references, grid coordinates and milestone dates. They do not
+infer owner/operator roles, AC/DC basis, WGS84 coordinates or live operation.
+Private applicant fields and addresses are omitted. Required DESNZ attribution
+is included in `licenses/` and travels with generated snapshots.
+
 ## Schema evolution and scaling
 
 The packaged `schema.json` is authoritative. Reuse a matching canonical column;

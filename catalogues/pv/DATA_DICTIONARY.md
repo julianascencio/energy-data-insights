@@ -157,6 +157,18 @@ Schema version: 1.0.0. All fields are nullable except the required record/proven
 ## Source column crosswalk
 
 SAM CEC mappings are executable in `pv_catalogue/sam.py`; EIA mappings are in `pv_catalogue/eia860.py`.
+Reviewed DESNZ REPD mappings are in `pv_catalogue/repd.py`:
+
+| REPD column | Canonical destination | Qualification |
+| --- | --- | --- |
+| Ref ID | `external_ids_json.repd_ref_id` | Stable project identity only after review of application/phase scope |
+| Installed Capacity (MWelec) | `capacity_unspecified_mw` | AC/DC basis not inferred |
+| Solar Site Area (sqm) | `land_area_ha` | Divide source square metres by 10,000; missing stays missing |
+| Region / County | `region` / `locality` | Source administrative location |
+| Country | `country_code=GBR`; native country in extensions | England/Wales/Scotland/Northern Ireland map to ISO GBR |
+| Operational | `extensions_json.repd.operational_milestone_date` | Registry milestone, not independently verified commissioning |
+| X-coordinate / Y-coordinate | `extensions_json.repd` | Native grid only; datum/accuracy not asserted |
+| Operator (or Applicant) | omitted | Ambiguous role and possible personal information; no owner inference |
 
 | Source | Native column | Canonical column |
 | --- | --- | --- |

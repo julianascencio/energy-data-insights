@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-01T09:13:29.908550+00:00",
+  "ranking_file": "20261101T0856_top10_markets.json",
+  "selection_note": "UK was selected for downloadable explicit-PV data with clear reuse terms and reusable extraction. Top-ten countries remain priority queue; no claim this run filled those gaps. Numeric yield ranges are planning estimates, never accepted counts.",
+  "next_highest_value_source": "UK REPD Eastern/Operational/Ground while normal AEMO access is blocked; retry AEMO next for top-ten diversity.",
+  "sources": [
+    {
+      "id": "uk_repd",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Q2 2026; July 2026 extract; published 2026-08-03",
+      "licence_assessment": "OGL v3; official catalogue declaration checked; attribution retained",
+      "access_assessment": "CSV downloaded, sha256 84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+      "estimated_useful_yield": {
+        "remaining_source_pv_rows": 7124,
+        "note": "Remaining rows are unreviewed applications, NOT independent projects or expected acceptance."
+      },
+      "fields_offered": [
+        "registry ID",
+        "technology",
+        "status/date",
+        "capacity (basis unspecified)",
+        "region/county",
+        "grid X/Y",
+        "site area",
+        "planning references"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "336 candidates in East Midlands and South East operational ground cohorts; 189 accepted, 147 withheld. Reusable checksum-pinned adapter tested.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Process Eastern operational ground cohort; reconcile withheld cohorts with planning/owner crosswalks, never auto-merge.",
+      "priority": 1,
+      "processed_cursor": {
+        "completed_partitions": [
+          "East Midlands/Operational/Ground",
+          "South East/Operational/Ground"
+        ],
+        "candidate_rows_processed": 336,
+        "accepted_ids_ledger": "20261101T0856_repd_review.json",
+        "next_partition": "Eastern/Operational/Ground"
+      }
+    },
+    {
+      "id": "aemo_generation",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "version_or_date": "2026-10-30",
+      "licence_assessment": "AEMO general permission for use with accurate attribution; https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions ; third-party/confidential exclusions must be checked in workbook.",
+      "access_assessment": "Official publication and permission pages verified in web text; direct page and XLSX download HTTP 403",
+      "estimated_useful_yield": {
+        "planning_range": [
+          50,
+          200
+        ],
+        "unit": "projects",
+        "confidence": "unverified until workbook sample; not accepted rows"
+      },
+      "fields_offered": [
+        "technology",
+        "station/unit identities",
+        "capacity",
+        "status",
+        "commissioning forecasts",
+        "region"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "No workbook bytes obtained; no candidate rows accepted. Australia is ranked ninth and has only one catalogue project.",
+      "retry_condition": "Normal public download succeeds; do not bypass HTTP access restrictions.",
+      "next_action": "Retry normal public workbook access; inspect explanatory sheets, explicit PV classification, units versus stations; reconcile New England Solar before ingest.",
+      "priority": 2,
+      "processed_cursor": null
+    },
+    {
+      "id": "germany_mastr",
+      "country": "DEU",
+      "entity": "projects",
+      "source_url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Monitoringberichte/Marktstammdatenregister/start.html",
+      "version_or_date": "Release 26.2.198 public 2026-10-29; export revision not downloaded",
+      "licence_assessment": "Datenlizenz Deutschland Namensnennung 2.0 stated by BNetzA for CSV/XML unless marked otherwise",
+      "access_assessment": "Public export instructions specify download portal and limits; dynamic names intended to prevent automated retrieval. No export fetched.",
+      "estimated_useful_yield": {
+        "planning_range": [
+          50,
+          200
+        ],
+        "unit": "reviewed utility projects",
+        "confidence": "planning only; unit-to-project aggregation required"
+      },
+      "fields_offered": [
+        "unit IDs",
+        "technology",
+        "capacity",
+        "dates",
+        "location",
+        "solar park names"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank fourth; zero catalogue projects. Official release notes report location attribute changes and export-schema updates.",
+      "retry_condition": "Permitted export method and current schema verified; no circumvention of dynamic download restrictions.",
+      "next_action": "Read current production export documentation and permitted download path, acquire normal public export if allowed, reconcile units/parks and omit personal operator details.",
+      "priority": 3,
+      "processed_cursor": null
+    },
+    {
+      "id": "china_nea",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://www.nea.gov.cn/20260923/aaadb598d4cc4c0a92585bfd26c8728e/c.html",
+      "version_or_date": "2026-08 new registration batch, notice 2026-09-23",
+      "licence_assessment": "Bulk reuse not assessed; public access alone is not a licence",
+      "access_assessment": "Official Chinese-language notice identified; attachment not downloaded",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "project names",
+        "centralized PV classification",
+        "province",
+        "registry information"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank first; zero catalogue projects. Notice distinguishes centralized PV from commercial distributed PV, wind and biomass.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Inspect centralized-PV attachment sample and terms; registration is not operating status. Start one monthly/provincial partition.",
+      "priority": 4,
+      "processed_cursor": null
+    },
+    {
+      "id": "india_cea",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://cea.nic.in/renewable-project-monitoring/?lang=en",
+      "version_or_date": "Plant-wise RE report listed; revision to verify",
+      "licence_assessment": "Reuse terms not assessed",
+      "access_assessment": "Official CEA portal identified; plant-wise PDF advertised at 16.47 MB",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "plant-wise installed capacity",
+        "state",
+        "technology"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank third; one catalogue project. Multi-plant source discovered, not extracted.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Download plant-wise RE report, verify date/licence and separate PV from generic solar/CSP and park aggregates.",
+      "priority": 5,
+      "processed_cursor": null
+    },
+    {
+      "id": "japan_fit",
+      "country": "JPN",
+      "entity": "projects",
+      "source_url": "https://www.fit-portal.go.jp/PublicInfo",
+      "version_or_date": "September 2026 public notice; refresh page version/case before download",
+      "licence_assessment": "Reuse conditions and personal-data exclusions need assessment",
+      "access_assessment": "Official Japanese portal describes monthly prefectural files and delayed paper updates",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "facility ID",
+        "technology",
+        "capacity",
+        "prefecture",
+        "certification status"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank fifth; zero catalogue projects. Certified facilities are not necessarily commissioned.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Inspect one prefecture with utility PV, review terms, remove natural-person fields and distinguish certification from operation.",
+      "priority": 6,
+      "processed_cursor": null
+    },
+    {
+      "id": "brazil_siga",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.aneel.gov.br/pt_BR/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/11ec447d-698d-4ab8-977f-b424d5deee6a",
+      "version_or_date": "Current SIGA CSV; data dictionary updated 2026-06-12",
+      "licence_assessment": "ODbL declared; no silent relicensing. Attribution/share-alike and database separation not yet resolved.",
+      "access_assessment": "Official Portuguese catalogue reviewed; bulk bytes not fetched",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "CEG ID",
+        "UFV classification",
+        "capacity",
+        "municipality",
+        "status"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank sixth; zero catalogue projects. Licence integration unresolved, not an assertion that ODbL forbids use.",
+      "retry_condition": "ODbL obligations and source-specific distribution reviewed before bulk acceptance.",
+      "next_action": "Design compliant source-specific distribution/attribution; then inspect UFV batch and reconcile plant/phases.",
+      "priority": 7,
+      "processed_cursor": null
+    },
+    {
+      "id": "spain_registry",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://www.miteco.gob.es/es/energia/servicios/registros.html",
+      "version_or_date": "Current public registry portal; extract revision unknown",
+      "licence_assessment": "Reuse/export terms not assessed",
+      "access_assessment": "Official Spanish registry directory found",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "administrative ID",
+        "power",
+        "installation status"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank seventh; one catalogue project. Registration service does not itself establish a bulk export.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Locate public electricity production extract and technology coding; separate PV from solar thermal and historic registration regimes.",
+      "priority": 8,
+      "processed_cursor": null
+    },
+    {
+      "id": "pakistan_nepra",
+      "country": "PAK",
+      "entity": "projects",
+      "source_url": "https://nepra.org.pk/licensing/Generation%20IPPs%20RE%202006.php",
+      "version_or_date": "Licence and modification notices through 2026",
+      "licence_assessment": "Bulk reuse not assessed; individual factual licence extraction possible after review",
+      "access_assessment": "Official public licence index identified",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "licence IDs",
+        "project",
+        "capacity",
+        "technology",
+        "location",
+        "licensee"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank eighth (preliminary estimate); zero catalogue projects. Licences are not proof of operation.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Inspect solar licence schedules, preserve AC/DC and scope; reconcile amendments before counting projects.",
+      "priority": 9,
+      "processed_cursor": null
+    },
+    {
+      "id": "italy_gse",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://www.gse.it/dati-e-scenari/atlaimpianti",
+      "version_or_date": "Map landing page unavailable; user guide version 1.0 dated 2017-02-27",
+      "licence_assessment": "Current export/reuse licence not verified",
+      "access_assessment": "Landing web retrieval HTTP 403; public GSE guide describes individual record downloads",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "location",
+        "plant type",
+        "incentive scheme"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank tenth; zero catalogue projects. No bulk API or current dataset confirmed.",
+      "retry_condition": "Public dataset/export and terms available; no access bypass.",
+      "next_action": "Find current permitted GSE open-data export and licence; do not treat 2017 guide as fresh inventory.",
+      "priority": 10,
+      "processed_cursor": null
+    },
+    {
+      "id": "usa_eia",
+      "country": "USA",
+      "entity": "projects",
+      "source_url": "https://www.eia.gov/electricity/data/eia860/",
+      "version_or_date": "2025 annual extract already imported",
+      "licence_assessment": "US government public domain; acknowledge EIA",
+      "access_assessment": "Existing checksum-pinned source/adapter",
+      "estimated_useful_yield": {
+        "already_accepted_plant_ids": 7309
+      },
+      "fields_offered": [
+        "plant/generator IDs",
+        "AC/DC",
+        "dates",
+        "coordinates"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Rank second; US coverage already dominates. No repeat ingestion this run.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Prefer non-US gap closure; revisit only for new official revision or substantive field enrichment.",
+      "priority": 20,
+      "processed_cursor": null
+    },
+    {
+      "id": "france_odre",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/",
+      "version_or_date": "2026-08-31 advertised revision",
+      "licence_assessment": "Licence Ouverte v2.0 (Etalab) advertised; field/privacy exceptions still to inspect",
+      "access_assessment": "French official dataset discovered; no row sample downloaded",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "installation identifiers",
+        "technology",
+        "capacity",
+        "region",
+        "generation"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Useful non-top-ten alternative under this dated ranking; aggregate records require filtering.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Inspect API/schema and sample technology values, isolate individual explicitly photovoltaic installations, reconcile Cestas.",
+      "priority": 4,
+      "processed_cursor": null
+    },
+    {
+      "id": "kaco_nx3",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=10182&t=f&token=86c73412ff27b4d7e45b87989d6d86d2ce7990c2",
+      "version_or_date": "EN 500xxxx-04-230309 and EN 500xxxx-03-230310",
+      "licence_assessment": "Individual factual specs; publisher rights retained; full documents outside Git",
+      "access_assessment": "Two public datasheets downloaded and visually inspected",
+      "estimated_useful_yield": {
+        "models_in_completed_batch": 6
+      },
+      "fields_offered": [
+        "active W",
+        "apparent VA",
+        "MPPT conditions",
+        "per-input current",
+        "efficiency",
+        "mechanical",
+        "environment",
+        "protections"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Six exact models accepted; no configurable voltage-variant inflation. Manufacturer already represented.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Completed 3/5/8/10/15/20 NX3 M2 tables; next seek independent combiner/tracker OEM multi-model datasheet, not another thin sibling.",
+      "priority": 12,
+      "processed_cursor": {
+        "models_completed": [
+          "3.0",
+          "5.0",
+          "8.0",
+          "10.0",
+          "15.0",
+          "20.0"
+        ],
+        "family": "blueplanet NX3 M2"
+      }
+    },
+    {
+      "id": "nesf_owner_reconciliation",
+      "country": "GBR",
+      "entity": "project_enrichment",
+      "source_url": "https://www.nextenergysolarfund.com/portfolio/solar-assets/",
+      "version_or_date": "Undated current portfolio page",
+      "licence_assessment": "Individual facts only; bulk reuse not established",
+      "access_assessment": "Public primary-source text available",
+      "estimated_useful_yield": {
+        "planning_range": [
+          10,
+          30
+        ],
+        "unit": "potential matches",
+        "confidence": "identity/date/basis review required"
+      },
+      "fields_offered": [
+        "portfolio membership",
+        "capacity",
+        "operational-date label",
+        "county"
+      ],
+      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
+      "result": "Shacks Barn, Wellingborough and Sywell show potential differences from registry capacities or milestone dates. No silent overwrite or automatic owner assignment.",
+      "retry_condition": "Recheck source revision/access/terms before resuming.",
+      "next_action": "Resolve identity and capacity basis using asset reports/planning IDs; page operational-date labels may differ from registry milestones. Keep conflicts in review.",
+      "priority": 3,
+      "processed_cursor": null
+    }
+  ]
+}

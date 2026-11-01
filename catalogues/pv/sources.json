@@ -871,5 +871,91 @@
     "access": "Public official page; no forms submitted or account/payment used. Direct HTTP 403; public retrieved web text verified, no byte checksum asserted.",
     "limitations": "Source check is not a current physical plant inspection or product certification.",
     "published_at": "2024-02-07"
+  },
+  "repd_q2_2026": {
+    "url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
+    "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+    "retrieved_at": "2026-11-01T08:58:58.744989+00:00",
+    "publisher": "Department for Energy Security and Net Zero (DESNZ)",
+    "title": "Renewable Energy Planning Database (REPD), July 2026 / Q2 2026",
+    "published_at": "2026-08-03",
+    "revision": "Q2 2026; publication attachment July 2026; reference quarter ends 2026-06-30",
+    "license": "UK Open Government Licence v3.0",
+    "license_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DESNZ, Renewable Energy Planning Database, July 2026.",
+    "license_evidence": {
+      "url": "https://ckan.publishing.service.gov.uk/dataset/repd",
+      "sha256": "f52b8f8809aec0b8971db7090834607f1d86afbed4e05e6572aa818cb5743b5c",
+      "retrieved_at": "2026-11-01T08:58:57.377178+00:00"
+    },
+    "publication_evidence": {
+      "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "sha256": "3dd8c3b08b322a73101e4116a459a1e0f5653757324bc1f1e78e69a2c6baf28f",
+      "retrieved_at": "2026-11-01T08:58:57.304373+00:00"
+    },
+    "locator": "CSV Ref ID; per-record extensions.repd.csv_row is logical CSV record including header as row 1; native column crosswalk in repd.py",
+    "access": "Public CSV downloaded without login or forms; raw bytes retained outside Git. Licence declaration verified on official data.gov.uk catalogue; direct National Archives web retrieval returned 403.",
+    "limitations": "Planning applications are not automatically separate physical plants. Only reviewed operational ground-mounted photovoltaic entries accepted. MWelec remains AC/DC-unspecified. Operator (or Applicant) is not owner evidence. Native X/Y grid preserved without invented WGS84 conversion. Status snapshot is historical, not current inspection. Population threshold was 1 MW before 2021 and 150 kW subsequently; not a complete UK PV census.",
+    "http_etag": "\"6a6cbdc0-4da09d\"",
+    "http_last_modified": "Fri, 31 Jul 2026 15:22:40 GMT"
+  },
+  "iea_pvps_snapshot2026_ranking": {
+    "url": "https://iea-pvps.org/wp-content/uploads/2026/05/Snapshot-2026-FS.pdf",
+    "sha256": "275ee117c4c2b3b03874264e84226520164bee46f35568e7ef9e01ee667596e9",
+    "retrieved_at": "2026-11-01T08:58:59.286765+00:00",
+    "publisher": "IEA PVPS",
+    "title": "Snapshot 2026 fact sheet: Top 10 Countries in 2025, cumulative capacity",
+    "published_at": "2026-05-10",
+    "license": "Publisher retains document rights; limited factual ranking extracted for research prioritization; no PDF redistribution.",
+    "locator": "PDF page 3, bottom-right cumulative capacity table, visually checked",
+    "revision": "Snapshot 2026 fact sheet; running header says A Snapshot of Global PV Markets 2025",
+    "access": "Public PDF downloaded and hashed; no account or payment",
+    "limitations": "Dated end-2025 market estimates, not repository project totals. EU aggregate excluded from country ranking. China and Pakistan marked preliminary and above official reporting."
+  },
+  "kaco_nx3_35_20261101": {
+    "url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=10180&t=f&token=43bc8986c3d5f6361a1adeb3065115a257de460f",
+    "sha256": "58f9de46e614335d5ea9cfca14689ce110001f9a2c16f5348b7b92ab1afa6d31",
+    "retrieved_at": "2026-11-01T09:01:04.230460+00:00",
+    "publisher": "KACO new energy GmbH",
+    "title": "blueplanet 3.0 + 5.0 NX3 M2",
+    "revision": "EN 500xxxx-03-230310",
+    "locator": "PDF page 2: separate 3.0 and 5.0 NX3 M2 columns; page 1 protection/DC switch",
+    "license": "Publisher retains document rights; individually extracted factual specifications only; no document redistribution or bulk reuse licence asserted.",
+    "access": "Public OEM PDF, downloaded and SHA-256 checked; table pages visually inspected. No login or forms.",
+    "limitations": "Historical document revision, not proof of current product availability or certification. Keep per-MPPT asymmetry, upper bounds and active/apparent power separate; no invented regional variants or warranty."
+  },
+  "kaco_nx3_820_20261101": {
+    "url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=10182&t=f&token=86c73412ff27b4d7e45b87989d6d86d2ce7990c2",
+    "sha256": "c717fdfc174e1e922cf6a6c4f9c3bb02bdbec8af9218a0fced4f3f2fb8af24a3",
+    "retrieved_at": "2026-11-01T09:03:25.215477+00:00",
+    "publisher": "KACO new energy GmbH",
+    "title": "blueplanet 8.0\u201320.0 NX3 M2",
+    "revision": "EN 500xxxx-04-230309",
+    "locator": "PDF page 2: 8.0 and 10.0 columns; page 3: 15.0 and 20.0 columns; page 1 protection",
+    "license": "Publisher retains document rights; individually extracted factual specifications only; no document redistribution or bulk reuse licence asserted.",
+    "access": "Public OEM PDF, downloaded and SHA-256 checked; table pages visually inspected. No login or forms.",
+    "limitations": "Historical document revision, not proof of current product availability or certification. Keep per-MPPT asymmetry, upper bounds and active/apparent power separate; no invented regional variants or warranty."
+  },
+  "sungrow_sg350hx_v19_20261101": {
+    "url": "https://uk.sungrowpower.com/upload/file/20230829/EN_DS_SG350HX_Datasheet.pdf",
+    "sha256": "972d8a47aefb76754e3a538a5cc6231c59ef3d401c4b4dd22899af3f918743e1",
+    "retrieved_at": "2026-11-01T09:01:05.643054+00:00",
+    "publisher": "Sungrow Power Supply Co., Ltd.",
+    "title": "SG350HX Multi-MPPT String Inverter for 1500 Vdc System",
+    "revision": "Version 19; copyright 2023",
+    "locator": "PDF page 2: Output (AC), Protection, General Data/DC connection and Compliance rows, visually checked",
+    "license": "Publisher retains document rights; individually extracted factual specifications only; no document redistribution or bulk reuse licence asserted.",
+    "access": "Public OEM PDF downloaded and hashed; no login or form",
+    "limitations": "Enrich existing version 19 / 12-MPPT record only. Do not copy to SG350HX-US or optional MPPT configurations. kVA stays apparent power; manufacturer compliance list is a claim, not independent recertification."
+  },
+  "nesf_portfolio_review_20261101": {
+    "url": "https://www.nextenergysolarfund.com/portfolio/solar-assets/",
+    "publisher": "NextEnergy Solar Fund",
+    "title": "Our Solar Assets / Asset Map",
+    "retrieved_at": "2026-11-01T09:14:35.082875+00:00",
+    "locator": "Shacks Barn, Wellingborough and Sywell cards: county, capacity and Operational Date label",
+    "license": "Limited individual factual comparison; publisher rights retained; no full page redistribution or bulk reuse licence asserted",
+    "access": "Public web text retrieved; original response bytes not downloaded, no checksum asserted. No restricted sales-process microsite entered.",
+    "limitations": "Potential identity/capacity-basis/milestone differences under review; no accepted ownership or commissioning claims. Undated page is not a current operating inspection."
   }
 }
