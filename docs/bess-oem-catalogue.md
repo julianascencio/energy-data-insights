@@ -1,6 +1,6 @@
 # Global BESS OEM product database
 
-The initial research database contains **75 records from 27 suppliers and 50 primary
+The expanded research database contains **90 records from 28 suppliers and 53 primary
 sources**, with 73 typed metadata fields. This extends the PV equipment database
 pattern to complete BESS products, cabinets and explicitly labelled product families.
 
@@ -36,7 +36,7 @@ uv run python examples/database/plot_bess_oem_catalogue.py
 | Performance | RTE with qualifier/boundary/conditions, documented lifecycle and warranty conditions |
 | Evidence | Source-ID/URL lists, field-source crosswalks, UTC dates, compliance claims, conflicts and extensions |
 
-62 rows describe configurations; 13 explicitly describe configurable families. Family
+77 rows describe configurations; 13 explicitly describe configurable families. Family
 ranges are nested and are not turned into fictional model combinations. The collection
 includes supplier/integrator brands; cell manufacturer is populated only with direct
 product evidence. The separate BESS project table is not joined to products by guessing.

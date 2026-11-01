@@ -1771,3 +1771,27 @@ Baltic Storage Platform (n.d.). **Kiisa and Arukula battery parks**. [Source](ht
 **Role:** data. Two independent 100 MW /200 MWh parks. Kiisa operating for grid services Q4 2025. Arukula construction completed in 2026; both regulate grid frequency. No exact COD inferred. Joint venture Evecon, Corsica Sole and Mirova.
 
 **Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_expansion.md`.
+
+### byd_bcu20_hvs_20250328
+
+BYD (2026). **Battery-Box Premium HVS BCU2.0 datasheet**. [Source](https://bydbatterybox.com/uploads/downloads/BCU2.0_BBOX_HVS_Datasheet_EN_V1.0_250328-67ee42d4ced21.pdf)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### byd_bcu20_hvm_20250328
+
+BYD (2026). **Battery-Box Premium HVM BCU2.0 datasheet**. [Source](https://bydbatterybox.com/uploads/downloads/BCU2.0_BBOX_HVM_Datasheet_EN_V1.0_250328-67ee3a426f6ce.pdf)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### dyness_tower_pro_20250626
+
+Dyness (2025). **Tower Pro datasheet EN 20250626**. [Source](https://dyness.com/Public/Uploads/uploadfile/files/20250729/TowerProDatasheetEN20250626.pdf)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
