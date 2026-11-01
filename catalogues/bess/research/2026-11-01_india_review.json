@@ -1,0 +1,157 @@
+{
+  "timestamp": "2026-11-01T21:21:07.868437+00:00",
+  "source_id": "pib_india_bess_20260630",
+  "inventory_rows_reviewed": 18,
+  "inventory_new": 8,
+  "inventory_existing_match": 1,
+  "inventory_held": 9,
+  "new_ids": [
+    "0a29034d-5e69-57d4-bdb1-51cfbabff958",
+    "0be043c9-0528-51bb-b77c-82fdb8bfb658",
+    "1ddcda45-ef9a-5e5c-92bf-99714918e55f",
+    "237d9bc1-de68-50a3-8388-2c5847086e3f",
+    "2fc5b3e5-75a8-5d23-853e-f939f8ea6b97",
+    "3699087c-e506-5427-bcf8-c5aab2bf3118",
+    "5ed15e62-0bc2-58a9-8a40-30d6bd0aafd1",
+    "7c46be92-35d3-518f-a8eb-fb598cb68f26",
+    "8724faa4-548f-5eb3-a622-2a56ec00f248"
+  ],
+  "enriched_ids": [
+    "1f35ccc4-c662-5c77-8706-ba9a699fbe9b"
+  ],
+  "rating_quarantine_ids": [
+    "3699087c-e506-5427-bcf8-c5aab2bf3118"
+  ],
+  "rows": [
+    {
+      "source_row": 1,
+      "record_id": "5ed15e62-0bc2-58a9-8a40-30d6bd0aafd1",
+      "decision": "accepted",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 2,
+      "record_id": "0be043c9-0528-51bb-b77c-82fdb8bfb658",
+      "decision": "accepted",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 3,
+      "record_id": "3699087c-e506-5427-bcf8-c5aab2bf3118",
+      "decision": "accepted",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 4,
+      "record_id": "7c46be92-35d3-518f-a8eb-fb598cb68f26",
+      "decision": "accepted",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 5,
+      "record_id": "1f35ccc4-c662-5c77-8706-ba9a699fbe9b",
+      "decision": "enriched_existing",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 6,
+      "record_id": "0a29034d-5e69-57d4-bdb1-51cfbabff958",
+      "decision": "accepted",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 7,
+      "record_id": null,
+      "decision": "held",
+      "reason": "Tender package lacks exact site/operator identity"
+    },
+    {
+      "source_row": 8,
+      "record_id": null,
+      "decision": "held",
+      "reason": "Description 25 MW/100 MWh conflicts with columns 23 MW/92 MWh; site unresolved"
+    },
+    {
+      "source_row": 9,
+      "record_id": null,
+      "decision": "held",
+      "reason": "Unnamed Delhi tender asset; do not assume Kilokari without identity evidence"
+    },
+    {
+      "source_row": 10,
+      "record_id": "8724faa4-548f-5eb3-a622-2a56ec00f248",
+      "decision": "accepted",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 11,
+      "record_id": null,
+      "decision": "held",
+      "reason": "Kajra description 45.4 MW / minimum 254 MWh conflicts with 70.5 MW/282 MWh columns"
+    },
+    {
+      "source_row": 12,
+      "record_id": "2fc5b3e5-75a8-5d23-853e-f939f8ea6b97",
+      "decision": "accepted",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 13,
+      "record_id": null,
+      "decision": "held",
+      "reason": "LFP or LTO unresolved and rail aggregation boundary unclear"
+    },
+    {
+      "source_row": 14,
+      "record_id": "237d9bc1-de68-50a3-8388-2c5847086e3f",
+      "decision": "accepted",
+      "reason": "Reviewed explicit site/scope; source dates retained"
+    },
+    {
+      "source_row": 15,
+      "record_id": null,
+      "decision": "held",
+      "reason": "Juniper merchant portfolio/site boundary unresolved"
+    },
+    {
+      "source_row": 16,
+      "record_id": null,
+      "decision": "held",
+      "reason": "ACME merchant portfolio/site boundary unresolved"
+    },
+    {
+      "source_row": 17,
+      "record_id": null,
+      "decision": "held",
+      "reason": "Adani merchant portfolio/site boundary unresolved"
+    },
+    {
+      "source_row": 18,
+      "record_id": null,
+      "decision": "held",
+      "reason": "Pace Digitek multi-site pilot aggregate; 300/600 description vs 220/440 installed columns"
+    }
+  ],
+  "additional_candidates": [
+    {
+      "name": "Nandyal",
+      "decision": "accepted",
+      "reason": "Independent PIB release; historical announced status only"
+    },
+    {
+      "name": "Taru / Phyang Leh",
+      "decision": "held",
+      "reason": "Restricted SECI source and location/phase revision requires reconciliation"
+    },
+    {
+      "name": "NETRA AC microgrid 1 MWh Li-NMC",
+      "decision": "held",
+      "reason": "Distinct candidate; exact battery power and operating status not independently resolved"
+    }
+  ],
+  "total_candidates": 21,
+  "new": 9,
+  "enriched": 1,
+  "held": 11,
+  "rejected": 0
+}

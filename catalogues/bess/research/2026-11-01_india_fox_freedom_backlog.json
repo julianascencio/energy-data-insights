@@ -1,0 +1,221 @@
+[
+  {
+    "rank": 1,
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291650&lang=2&reg=48",
+    "country_entity": "India Ministry of Power / PIB",
+    "version": "Published 2026-07-30, installed inventory at 2026-06-30",
+    "retrieved_at": "2026-11-01T21:28:44.675194+00:00",
+    "access_licence": "PIB permits accurate attributed reuse without prior permission except third-party material; https://www.pib.gov.in/ContentPage.aspx?lang=2&menuid=102&reg=48",
+    "estimated_useful_yield": "18 inventory candidates: 8 new, 1 existing matched/enriched, 9 held; future partition unquantified",
+    "offered_fields": [
+      "site",
+      "state",
+      "battery MW/MWh",
+      "hybrid scope",
+      "chemistry",
+      "dated operating status"
+    ],
+    "attempt_result": "Offline adapter stages all rows, checks MW/MWh totals, duplicate desktop/mobile copies and drift. Manually reconciled 18 rows; all processed once.",
+    "processed_partition_cursor": "Table II rows 1-18; see india_review.json",
+    "retry_condition": "New named inventory revision or independent primary site/phase evidence",
+    "next_action": "Prioritize Kajra rating reconciliation and named site partitions of Juniper/ACME/Adani/Pace; retain portfolio aggregates outside canonical records. Recheck dates and rights before proceeding.",
+    "downloaded_bytes": [
+      {
+        "filename": "pib_inventory.html",
+        "sha256": "f938ba74db2d47fc08da53c29f5cdb3e21a7c45882c7834c455068504d0099e1",
+        "bytes": 306841
+      },
+      {
+        "filename": "pib_policy.html",
+        "sha256": "0a1f0c6c23cea0dc0fb9270cecba6863fb73f65f16de17bcdac37a748fcc3f57",
+        "bytes": 167514
+      }
+    ]
+  },
+  {
+    "rank": 2,
+    "url": "https://www.wrpc.gov.in/allfile/120620251627179859584_A.pdf",
+    "country_entity": "India WRPC Rajnandgaon",
+    "version": "Filename dated 2025-06-12; item 9.4",
+    "retrieved_at": "2026-11-01T21:28:44.675194+00:00",
+    "access_licence": "Public PDF downloaded; source reuse policy and document meeting/agenda scope not yet established",
+    "estimated_useful_yield": "1 existing project potential COD enrichment",
+    "offered_fields": [
+      "commercial-operation date",
+      "grid voltage"
+    ],
+    "attempt_result": "Found item 9.4 referring to COD 2024-02-01; no canonical import because terms and document scope review incomplete.",
+    "processed_partition_cursor": "Item 9.4 candidate only",
+    "retry_condition": "Compatible rights and minutes-versus-agenda/date verification",
+    "next_action": "Verify printed meeting date and decision context; then compare against existing undated SECI status and PIB inauguration.",
+    "downloaded_bytes": [
+      {
+        "filename": "wrpc.pdf",
+        "sha256": "40bcd5bac9544a9a62324fa673d9f786057068891412fc44266f12d09edc3625",
+        "bytes": 19887554
+      }
+    ]
+  },
+  {
+    "rank": 3,
+    "url": "https://www.freedomwon.co.za/fw_downloads/",
+    "country_entity": "South Africa Freedom Won",
+    "version": "Printed ENVA5 2026-05-26; ENVA16 2026-06-05; ENVA60HV 2026-09-16; COREVA5 2026-09-18",
+    "retrieved_at": "2026-11-01T21:28:44.675194+00:00",
+    "access_licence": "Copyright retained; bounded factual extraction, no PDF/prose redistribution; exact model-specific source register",
+    "estimated_useful_yield": "4 new exact models + 4 existing SOLVA warranty enrichments accepted; 2 other SOLVA warranty candidates held",
+    "offered_fields": [
+      "energy",
+      "charge/discharge limits",
+      "temperature",
+      "voltage",
+      "dimensions",
+      "communications",
+      "safety claim status",
+      "warranty retention/cycles/conditions"
+    ],
+    "attempt_result": "Resolves four candidates deferred in Spain/GoodWe log; all four datasheets and two scoped warranties reviewed. ENVA60HV 90% vs 100% DOD cycle-definition conflict retained.",
+    "processed_partition_cursor": "ENVA5/16/60HV12module and COREVA exact model; SOLVAAC261/DC261/AC418/DC418 warranty only",
+    "retry_condition": "New printed revision or model-specific guarantee for DC208/RT261",
+    "next_action": "Check DC208 and RT261 specific warranty coverage; do not propagate generic SOLVA terms. Current selected tables exhausted. Next unprocessed product partition: Encore Home 3K/5K/8K/10K bidirectional inverter specification sheets and the separately listed Freedom Won EMS sheet. Review exact model identity and schema fit before importing; listing-level potential yield 4 plus 1, specifications not yet reviewed.",
+    "downloaded_bytes": [
+      {
+        "filename": "fw_enva5.pdf",
+        "sha256": "eadcb7e3c102eb03c41d495f3f7beaf44cbaa4ecf238ca0287679d755eea93c6",
+        "bytes": 155841
+      },
+      {
+        "filename": "fw_enva16.pdf",
+        "sha256": "91a7139689abac18c7ea6d4d4fba286195f0aab8521d4023c10bcec928a54eb9",
+        "bytes": 155697
+      },
+      {
+        "filename": "fw_enva60.pdf",
+        "sha256": "dbfa91e4df88ce652b8e92d30b58d99a73b1ac6c09a257a5231929aabc3a7274",
+        "bytes": 128726
+      },
+      {
+        "filename": "fw_coreva.pdf",
+        "sha256": "845bd91ee2dd7c52de34f3dcec8967f742703a910a9a6100c44767d187ebb479",
+        "bytes": 295249
+      },
+      {
+        "filename": "fw_enva_guarantee.pdf",
+        "sha256": "de8e87d9bf3aba9ff4dd95624496f7673f0eb84fcda261d7fe449a79ab5f3687",
+        "bytes": 275293
+      },
+      {
+        "filename": "fw_coreva_solva_guarantee.pdf",
+        "sha256": "c75e5ee487722ae1a922a870b2af31e105991e3c4c4943b500e42bbaaf017b9d",
+        "bytes": 167696
+      }
+    ]
+  },
+  {
+    "rank": 4,
+    "url": "https://www.fox-ess.com/download/datasheets-8",
+    "country_entity": "Fox ESS equipment",
+    "version": "EQ3300 V1.2 2025-04-16; EQ4800 V1.3 2026-05-26",
+    "retrieved_at": "2026-11-01T21:28:44.675194+00:00",
+    "access_licence": "Copyright retained; download page/footer/privacy inspected, no blanket open bulk licence. Bounded factual table extraction without documents/images/prose redistribution.",
+    "estimated_useful_yield": "13 exact configurations accepted; selected tables exhausted",
+    "offered_fields": [
+      "energy",
+      "nominal/min/max voltage",
+      "current/peak duration",
+      "module counts",
+      "dimensions",
+      "weight",
+      "RTE boundary",
+      "temperatures",
+      "safety claims"
+    ],
+    "attempt_result": "Two datasheets visually reviewed by exact column and footnote. No inferred active power or cell supplier.",
+    "processed_partition_cursor": "EQ3300 L2-L6; EQ4800 L2-L9",
+    "retry_condition": "New exact model/revision; no marketing-only renames",
+    "next_action": "Next review model-specific manuals/warranties and smaller regional PCS makers; reconcile manual scope before changing datasheet altitude.",
+    "downloaded_bytes": [
+      {
+        "filename": "fox_eq3300.pdf",
+        "sha256": "71f4fea4d17da3bff72c40457caac2926b5b9add899b48901689a6fecc868e2b",
+        "bytes": 519402
+      },
+      {
+        "filename": "fox_eq4800.pdf",
+        "sha256": "1354c7fdd0d91141c0cf2c5ffcd8da2dea978261ad60b652a023e7f7d59a0cdb",
+        "bytes": 152323
+      },
+      {
+        "filename": "fox_downloads.html",
+        "sha256": "4b4680b70acdbb7101e7649b9f88bbd34e5ece238f2b891a3275fe0e84673a7e",
+        "bytes": 234114
+      },
+      {
+        "filename": "fox_privacy.html",
+        "sha256": "07231306ede216258527a59e0756c77c4db35aa7bd45f23ba4b627b505273163",
+        "bytes": 108284
+      }
+    ]
+  },
+  {
+    "rank": 5,
+    "url": "https://cea.nic.in/reports/dashboardView?headingId=107&lang=en&subHeadingId=1003&subSubHeadingId=10046&title=Status+of+BESS+Projects",
+    "country_entity": "India CEA",
+    "version": "Status at 2026-09-30; API PDF ee2904d3-d9c7-4d08-af70-aec6cd4c0a17",
+    "retrieved_at": "2026-11-01T21:28:44.675194+00:00",
+    "access_licence": "CEA copyright policy requires prior permission; document attributes third-party IESA. https://cea.nic.in/api/websitepolicy/pdf/view/en/2",
+    "estimated_useful_yield": "0 named site rows in downloaded aggregate; project counts are not importable candidates",
+    "offered_fields": [
+      "aggregate status counts",
+      "aggregate MW/MWh",
+      "procurement classifications"
+    ],
+    "attempt_result": "Downloaded 2-page aggregate and policy; no data imported. Under-construction label includes signed PPA/BESPA and tender category may include BESS/PSP uncertainty. Switched to reusable PIB inventory.",
+    "processed_partition_cursor": "Whole 2-page September PDF inspected",
+    "retry_condition": "New named dataset with compatible licence or independently reusable government evidence",
+    "next_action": "Prefer named Ministry of Power parliamentary annexures; do not contact publisher or bypass terms.",
+    "downloaded_bytes": [
+      {
+        "filename": "cea_sep2026.pdf",
+        "sha256": "86c70213a1bb5c6f6652aa1aaaef3fd13fad85b2295f4996377b502c61542066",
+        "bytes": 74231
+      },
+      {
+        "filename": "cea_copyright.pdf",
+        "sha256": "6eebe2eeb17c3a2762955ef4aead29f431cc96fcbd136c3f29cd5b62b74fefee",
+        "bytes": 118988
+      },
+      {
+        "filename": "cea_terms.pdf",
+        "sha256": "ea854e07c27845cbd636aba7780fe700881d4b7233bdc37b4f1cc56d98d4bcb5",
+        "bytes": 65982
+      }
+    ]
+  },
+  {
+    "rank": 6,
+    "url": "https://seci.co.in/own-projects",
+    "country_entity": "India SECI owner portfolio",
+    "version": "Undated, retrieved 2026-11-01",
+    "retrieved_at": "2026-11-01T21:28:44.675194+00:00",
+    "access_licence": "https://www.seci.co.in/website-policy restricts copying/distribution and linking without permission; not imported",
+    "estimated_useful_yield": "4 BESS identities reviewed, overlapping PIB; three resolved independently, Taru/Phyang held",
+    "offered_fields": [
+      "owner",
+      "site",
+      "rating",
+      "status"
+    ],
+    "attempt_result": "Independent PIB sources used for Rajnandgaon, Kavaratti and Nandyal; no owner-page-only 600MW/construction claims imported.",
+    "processed_partition_cursor": "Rajnandgaon, Kavaratti, Nandyal, Taru/Phyang; non-battery PV entries excluded before candidacy",
+    "retry_condition": "Independent reusable primary evidence and phase/location reconciliation",
+    "next_action": "Seek MNRE/PIB/Ladakh authority releases for Taru/Phyang; current name/location/rating revisions unresolved.",
+    "downloaded_bytes": [
+      {
+        "filename": "seci.html",
+        "sha256": "b651435cf3d8e4307e84c3b0584a974a53bbe77b93d5f54fd200688c4351e104",
+        "bytes": 109120
+      }
+    ]
+  }
+]

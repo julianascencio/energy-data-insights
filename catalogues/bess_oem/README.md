@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 1 November 2026 expanded research snapshot contains **121 records from 30 product
-suppliers, backed by 63 primary sources**: 108 documented configurations and 13
+The 1 November 2026 expanded research snapshot contains **138 records from 31 product
+suppliers, backed by 71 primary sources**: 125 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, and non-lithium storage technologies. This is a
 researched starting inventory, not a complete list of suppliers or market-share ranking.
@@ -11,7 +11,7 @@ OEM model/configuration, expandable typed columns, source lists, field-level
 provenance and UTC creation/update/verification dates. BESS products have their
 own schema because active power, apparent power, stored energy, PCS integration
 and performance boundaries cannot be represented safely by PV module fields.
-The existing [BESS projects](../bess/README.md) catalogue is unchanged.
+Project installations remain in the separate [BESS projects](../bess/README.md) catalogue.
 
 ## Use
 
@@ -94,3 +94,5 @@ isolated PR. Never overwrite another writer's branch or remove retained records.
 
 Source terms apply separately from the repository's software license. Only factual
 metadata and attribution are stored; no OEM datasheets, images or logos are bundled.
+
+Latest iteration: [India, Fox ESS and Freedom Won research](../bess/research/2026-11-01_india_fox_freedom_report.md), including the candidate ledger, source access decisions and dated market-priority metric.

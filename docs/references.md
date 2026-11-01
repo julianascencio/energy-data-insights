@@ -2227,3 +2227,123 @@ GoodWe (2025). **Lynx F G2 datasheet, 2025-01-24 EN V2.1**. [Source](https://en.
 **Role:** data_source. Exact configuration evidence and byte hash in BESS OEM source register.
 
 **Used by:** `catalogues/bess_oem/sources.json`.
+
+### fox_eq3300_20250416
+
+Fox ESS (2025). **Fox ESS EQ3300 high voltage storage battery datasheet**. [Source](https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/EN-EQ3300-Datasheet-V1.2-20250416.pdf)
+
+**Role:** data. Primary BESS factual evidence; V1.2 | 2025/04/16. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fox_eq4800_20260526
+
+Fox ESS (2026). **Fox ESS EQ4800 high voltage storage battery datasheet**. [Source](https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260605/ENEQ4800DatasheetV1.320260526.pdf)
+
+**Role:** data. Primary BESS factual evidence; V1.3 | 2026/05/26. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_coreva5_20260918
+
+Freedom Won (Pty) Ltd (2026). **Freedom Won COREVA 5 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-COREVA-5-Spec-Sheet.pdf)
+
+**Role:** data. Primary BESS factual evidence; 18-Sept-26. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_enva16_20260605
+
+Freedom Won (Pty) Ltd (2026). **Freedom Won ENVA 16 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-ENVA-16-Spec-Sheet-280826.pdf)
+
+**Role:** data. Primary BESS factual evidence; 05-June-2026. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_enva5_20260526
+
+Freedom Won (Pty) Ltd (2026). **Freedom Won ENVA 5 specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-ENVA-5-Spec-Sheet-260526.pdf)
+
+**Role:** data. Primary BESS factual evidence; 26-May-2026. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_enva60hv_20260916
+
+Freedom Won (Pty) Ltd (2026). **Freedom Won ENVA 60HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-ENVA-60-HV-Spec-Sheet-180926.pdf)
+
+**Role:** data. Primary BESS factual evidence; 16-Sept-2026. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_enva_guarantee_202608
+
+Freedom Won (Pty) Ltd (n.d.). **ENVA Range Battery Guarantee**. [Source](https://www.freedomwon.co.za/wp-content/uploads/ENVA-Guarantee.pdf)
+
+**Role:** data. Primary BESS factual evidence; Original release August 2026. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_solva_coreva_guarantee_v2
+
+Freedom Won (Pty) Ltd (n.d.). **COREVA 5 and SOLVA Range Product Guarantee**. [Source](https://www.freedomwon.co.za/wp-content/uploads/COREVA-and-SOLVA-warranty-05082026-1.pdf)
+
+**Role:** data. Primary BESS factual evidence; FW-COREVA5-SOLVA-GTY-001; Version 2; original release July 2026. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### iea_battery_storage_system_role_20260529
+
+International Energy Agency (2026). **Battery storage is scaling up and taking on a larger system role**. [Source](https://www.iea.org/commentaries/battery-storage-is-scaling-up-and-taking-on-a-larger-system-role)
+
+**Role:** background. CC BY 4.0; 2025 annual stationary battery power additions, not operating energy capacity. Country figures and regional aggregates remain separate.
+
+**Used by:** `catalogues/bess/research/2026-11-01_india_fox_freedom_markets.json`.
+
+### pib_india_bess_20260630
+
+Ministry of Power, Government of India / Press Information Bureau (2026). **Assessment of National Power Grid**. [Source](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291650&lang=2&reg=48)
+
+**Role:** data. Primary BESS factual evidence; PIB release 2291650; 2026-07-30. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pib_kavaratti_20240104
+
+Ministry of New and Renewable Energy, Government of India / Press Information Bureau (2024). **Kavaratti first on-grid solar power plant with BESS**. [Source](https://www.pib.gov.in/PressReleasePage.aspx?PRID=1993036&lang=2&reg=48)
+
+**Role:** data. Primary BESS factual evidence; PIB release 1993036; 2024-01-04. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pib_modhera_20230801
+
+Ministry of New and Renewable Energy, Government of India / Press Information Bureau (2023). **Modhera solar village and battery storage parliamentary reply**. [Source](https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1944691&lang=2&reg=48)
+
+**Role:** data. Primary BESS factual evidence; PIB release 1944691; 2023-08-01. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pib_nandyal_20251115
+
+Ministry of New and Renewable Energy, Government of India / Press Information Bureau (2025). **SECI and Andhra Pradesh finalise 1200 MWh BESS and 50 MW hybrid project**. [Source](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2190326&lang=2&reg=48)
+
+**Role:** data. Primary BESS factual evidence; PIB release 2190326; 2025-11-15. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pib_netra_20251111
+
+Ministry of Power, Government of India / Press Information Bureau (2025). **India first MWh-scale vanadium flow battery inaugurated at NTPC NETRA**. [Source](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2188916&lang=2&reg=48)
+
+**Role:** data. Primary BESS factual evidence; PIB release 2188916; 2025-11-11. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pib_rajnandgaon_20240224
+
+Ministry of New and Renewable Energy, Government of India / Press Information Bureau (2024). **SECI unveils solar-battery project in Chhattisgarh**. [Source](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2008681&lang=2&reg=48)
+
+**Role:** data. Primary BESS factual evidence; PIB release 2008681; 2024-02-24. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
+
+**Used by:** `catalogues/bess/sources.json`.

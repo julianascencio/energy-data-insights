@@ -1,11 +1,11 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,266 project and plant records across
-30 countries**, supported by **85 primary sources**. It combines curated
+The BESS section contains **1,275 project and plant records across
+30 countries**, supported by **91 primary sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian and Chilean inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
-storage. BESS equipment catalogues can follow in a later schema version.
+storage. Exact equipment is maintained separately in the [BESS OEM catalogue](../bess_oem/README.md).
 
 ## Storage and usage
 
@@ -91,7 +91,7 @@ tested adapters and a reviewed exclusion ledger. Both need ongoing review. Numer
 Conflicts are retained in `conflicts_json` with both source observations and a
 `needs_review` flag. The catalogue preserves conflicting Coya/Tamaya/Salisbury power ratings,
 Jurong Island energy ratings and Edwards & Sanborn registry-scope differences. It does not select a universal engineering
-rating from a marketing announcement. See [latest research notes](research/2026-11-01_australia_chile.md) and the
+rating from a marketing announcement. See [latest research notes](research/2026-11-01_india_fox_freedom_report.md) and the
 [original launch audit](research/launch_report.md).
 
 ## Contribution contract
@@ -157,3 +157,5 @@ before accepting rows. Preserve existing creation times and UUIDs.
 The EIA source is U.S. government public-domain data. REPD attribution:
 **Contains public sector information licensed under the Open Government Licence
 v3.0.** Other primary-source material retains its own terms.
+
+Latest iteration: [India, Fox ESS and Freedom Won research](research/2026-11-01_india_fox_freedom_report.md), including the candidate ledger, source access decisions and dated market-priority metric.
