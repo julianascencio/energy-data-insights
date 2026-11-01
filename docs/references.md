@@ -1859,3 +1859,19 @@ Freedom Won (2026). **SOLVA DC418 specification sheet**. [Source](https://www.fr
 **Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess_oem/sources.json.
 
 **Used by:** `catalogues/bess_oem/sources.json`.
+
+### goodwe_lynx_f_20230105
+
+GoodWe (2023). **Lynx Home F datasheet, 2023-01-05 EN V2.1**. [Source](https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_Lynx%20Home%20F%20Series%20%28HV%29_Datasheet-EN.pdf)
+
+**Role:** data_source. Exact configuration evidence and byte hash in BESS OEM source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### goodwe_lynx_g2_20250124
+
+GoodWe (2025). **Lynx F G2 datasheet, 2025-01-24 EN V2.1**. [Source](https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_Lynx-F-G2_Datasheet-EN.pdf)
+
+**Role:** data_source. Exact configuration evidence and byte hash in BESS OEM source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
