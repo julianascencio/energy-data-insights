@@ -454,3 +454,23 @@ catalogue is not a current operating-capacity census.
 uv run python -m energy_data_retrieval.bess_catalogue validate
 uv run python -m energy_data_retrieval.bess_catalogue build --output artifacts/bess-v1
 ```
+
+
+## Global BESS OEM products
+
+The [BESS OEM catalogue](catalogues/bess_oem/README.md) adds 75 model/configuration
+and family records from 27 suppliers, with 50 primary sources and 73 typed metadata
+columns. It follows the PV module database format with sharded JSONL, source lists,
+per-field evidence, timestamps and reproducible Parquet exports. Active MW, apparent
+MVA, nominal/usable MWh, regional variants and preliminary documents remain distinct.
+
+Use the [OEM viewer](https://julianascencio.github.io/energy-data-insights/bess-oem-database-viewer.html)
+and [runnable gallery example](examples/database/plot_bess_oem_catalogue.py).
+Read the [research findings and gaps](catalogues/bess_oem/research/2026-11-01_report.md)
+before comparing products. OEM catalogue coverage is not market share or independent
+performance certification.
+
+```bash
+uv run python -m energy_data_retrieval.bess_oem_catalogue validate
+uv run python -m energy_data_retrieval.bess_oem_catalogue build --output artifacts/bess-oem-v1
+```

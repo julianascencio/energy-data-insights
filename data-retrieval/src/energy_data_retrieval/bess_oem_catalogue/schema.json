@@ -1,0 +1,423 @@
+{
+  "version": "1.0.0",
+  "entity_types": [
+    "systems"
+  ],
+  "required": [
+    "record_id",
+    "entity_type",
+    "name",
+    "manufacturer",
+    "model",
+    "variant",
+    "record_scope",
+    "capacity_scope",
+    "product_status",
+    "created_at",
+    "updated_at",
+    "last_verified_at",
+    "sources",
+    "field_sources_json",
+    "quality_status"
+  ],
+  "fields": {
+    "record_id": {
+      "type": "string",
+      "description": "Stable UUID5 from manufacturer, exact model and variant; retain ID through renames."
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "BESS OEM product/configuration table.",
+      "enum": [
+        "systems"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Display label; manufacturer, model and variant."
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "Product brand or system supplier as cited; does not imply cell manufacture."
+    },
+    "model": {
+      "type": "string",
+      "description": "Exact source product name or model code, preserving case and punctuation."
+    },
+    "variant": {
+      "type": "string",
+      "description": "Explicit region, revision, configuration or rating distinguishing this row."
+    },
+    "product_family": {
+      "type": "string",
+      "description": "Source-reported family when an exact model code is available."
+    },
+    "capacity_scope": {
+      "type": "string",
+      "description": "Physical unit described: cabinet, enclosure, string or configured system; not project capacity."
+    },
+    "market_scope": {
+      "type": "string",
+      "description": "Explicit region/market for this variant; unknown is null."
+    },
+    "chemistry": {
+      "type": "string",
+      "description": "Source-reported battery chemistry; not inferred from supplier."
+    },
+    "cell_manufacturer": {
+      "type": "string",
+      "description": "Named cell OEM only when explicitly sourced for this product."
+    },
+    "cell_model": {
+      "type": "string",
+      "description": "Exact cell model when sourced."
+    },
+    "cooling": {
+      "type": "string",
+      "description": "Source-reported thermal management."
+    },
+    "form_factor": {
+      "type": "string",
+      "description": "Source enclosure or assembly format; e.g. 20-foot container."
+    },
+    "document_revision": {
+      "type": "string",
+      "description": "Revision/date printed on the principal specification; not the retrieval date."
+    },
+    "power_conditions": {
+      "type": "string",
+      "description": "Source test/temperature conditions and derating for power."
+    },
+    "energy_conditions": {
+      "type": "string",
+      "description": "Energy measurement conditions, including BOL/FAT when stated."
+    },
+    "efficiency_conditions": {
+      "type": "string",
+      "description": "RTE test conditions and exclusions; do not assume auxiliaries included."
+    },
+    "cycle_life_conditions": {
+      "type": "string",
+      "description": "Cycle-life test conditions and end-of-life threshold; not a warranty."
+    },
+    "warranty_conditions": {
+      "type": "string",
+      "description": "Contractual conditions; design life is not warranty."
+    },
+    "derating_notes": {
+      "type": "string",
+      "description": "Ambient temperature, altitude and other source-reported derating conditions."
+    },
+    "ingress_protection": {
+      "type": "string",
+      "description": "Scope-specific enclosure IP rating; not pack IP substituted for enclosure."
+    },
+    "fire_protection": {
+      "type": "string",
+      "description": "Source-described safety equipment; not independent safety verification."
+    },
+    "pcs_model": {
+      "type": "string",
+      "description": "Explicit integrated PCS model."
+    },
+    "ems": {
+      "type": "string",
+      "description": "Source-reported energy management platform."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Editorial interpretation, uncertainty, exclusions and limitations."
+    },
+    "record_scope": {
+      "type": "string",
+      "description": "A documented configuration or configurable product family; never a fabricated option combination.",
+      "enum": [
+        "configuration",
+        "family"
+      ]
+    },
+    "market_segment": {
+      "type": "string",
+      "description": "Source-supported application segment.",
+      "enum": [
+        "utility",
+        "commercial_industrial",
+        "residential",
+        "multiple"
+      ]
+    },
+    "architecture": {
+      "type": "string",
+      "description": "Product boundary; PCS integration only when explicitly stated.",
+      "enum": [
+        "ac_integrated",
+        "dc_block",
+        "battery_cabinet",
+        "flow_system",
+        "unspecified"
+      ]
+    },
+    "product_status": {
+      "type": "string",
+      "description": "Document classification, not confirmation of current commercial availability.",
+      "enum": [
+        "documented",
+        "preliminary",
+        "historical_document"
+      ]
+    },
+    "quality_status": {
+      "type": "string",
+      "description": "Evidence status; manufacturer claims are not independently validated performance.",
+      "enum": [
+        "source_backed",
+        "needs_review"
+      ]
+    },
+    "power_basis": {
+      "type": "string",
+      "description": "Electrical boundary for power_capacity_mw.",
+      "enum": [
+        "ac",
+        "dc",
+        "unspecified"
+      ]
+    },
+    "power_rating_kind": {
+      "type": "string",
+      "description": "Whether the power value is rated, maximum or unspecified.",
+      "enum": [
+        "rated",
+        "maximum",
+        "unspecified"
+      ]
+    },
+    "energy_basis": {
+      "type": "string",
+      "description": "Meaning of energy_capacity_mwh; unknown basis must be explicit.",
+      "enum": [
+        "nominal",
+        "usable",
+        "peak",
+        "unspecified"
+      ]
+    },
+    "energy_boundary": {
+      "type": "string",
+      "description": "Electrical boundary for the energy rating.",
+      "enum": [
+        "ac",
+        "dc",
+        "unspecified"
+      ]
+    },
+    "efficiency_boundary": {
+      "type": "string",
+      "description": "Boundary for the manufacturer-reported RTE.",
+      "enum": [
+        "ac_ac",
+        "dc_dc",
+        "system_unspecified",
+        "unspecified"
+      ]
+    },
+    "efficiency_qualifier": {
+      "type": "string",
+      "description": "Qualifier attached to the RTE; preserve upper/lower bounds.",
+      "enum": [
+        "reported",
+        "maximum",
+        "minimum",
+        "approximate"
+      ]
+    },
+    "energy_capacity_mwh": {
+      "type": "float",
+      "description": "Documented single-configuration energy; family ranges belong in extensions.",
+      "minimum": 0,
+      "unit": "MWh"
+    },
+    "power_capacity_mw": {
+      "type": "float",
+      "description": "Reported active power only; never apparent power or an E/P-derived estimate.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "apparent_power_mva": {
+      "type": "float",
+      "description": "Reported apparent AC power, separate from active MW.",
+      "minimum": 0,
+      "unit": "MVA"
+    },
+    "duration_hours": {
+      "type": "float",
+      "description": "Source-reported duration, never inferred from mixed-basis E/P.",
+      "minimum": 0,
+      "unit": "h"
+    },
+    "cell_capacity_ah": {
+      "type": "float",
+      "description": "Source cell capacity.",
+      "minimum": 0,
+      "unit": "Ah"
+    },
+    "dc_voltage_nominal_v": {
+      "type": "float",
+      "description": "Nominal battery DC voltage.",
+      "minimum": 0,
+      "unit": "V"
+    },
+    "dc_voltage_min_v": {
+      "type": "float",
+      "description": "Minimum operating DC voltage.",
+      "minimum": 0,
+      "unit": "V"
+    },
+    "dc_voltage_max_v": {
+      "type": "float",
+      "description": "Maximum operating DC voltage.",
+      "minimum": 0,
+      "unit": "V"
+    },
+    "ac_voltage_v": {
+      "type": "float",
+      "description": "Single reported nominal AC voltage; alternatives remain in extensions.",
+      "minimum": 0,
+      "unit": "V"
+    },
+    "round_trip_efficiency_pct": {
+      "type": "float",
+      "description": "Manufacturer-reported RTE; boundary, qualifier and conditions are mandatory.",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "%"
+    },
+    "depth_of_discharge_pct": {
+      "type": "float",
+      "description": "Source-supported depth of discharge.",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "%"
+    },
+    "cycle_life": {
+      "type": "float",
+      "description": "Source-reported cycle life; requires test conditions.",
+      "minimum": 0,
+      "unit": "cycles"
+    },
+    "design_life_years": {
+      "type": "float",
+      "description": "Source-reported design life; does not imply warranty.",
+      "minimum": 0,
+      "unit": "years"
+    },
+    "warranty_years": {
+      "type": "float",
+      "description": "Warranty term only when explicitly stated with conditions.",
+      "minimum": 0,
+      "unit": "years"
+    },
+    "width_m": {
+      "type": "float",
+      "description": "Unit width as defined in the cited document.",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "depth_m": {
+      "type": "float",
+      "description": "Unit depth as defined in the cited document.",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "height_m": {
+      "type": "float",
+      "description": "Unit height as defined in the cited document.",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "weight_kg": {
+      "type": "float",
+      "description": "Unqualified/rated unit mass; maximum mass uses weight_max_kg.",
+      "minimum": 0,
+      "unit": "kg"
+    },
+    "weight_max_kg": {
+      "type": "float",
+      "description": "Documented upper mass bound; strict/approximate qualifier retained in extensions.",
+      "minimum": 0,
+      "unit": "kg"
+    },
+    "altitude_max_m": {
+      "type": "float",
+      "description": "Reported altitude limit; derating conditions must remain attached.",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "operating_temperature_min_c": {
+      "type": "float",
+      "description": "Minimum ambient operating temperature; not internal cell temperature.",
+      "unit": "degC"
+    },
+    "operating_temperature_max_c": {
+      "type": "float",
+      "description": "Maximum ambient operating temperature; preserve derating.",
+      "unit": "degC"
+    },
+    "pcs_included": {
+      "type": "bool",
+      "description": "Integrated PCS explicitly present or excluded."
+    },
+    "grid_forming": {
+      "type": "bool",
+      "description": "Manufacturer explicitly states grid-forming capability."
+    },
+    "black_start": {
+      "type": "bool",
+      "description": "Manufacturer explicitly states black-start capability."
+    },
+    "communication_protocols": {
+      "type": "list_string",
+      "description": "Source-listed protocols; interfaces are separate."
+    },
+    "communication_interfaces": {
+      "type": "list_string",
+      "description": "Physical/network interfaces."
+    },
+    "sources": {
+      "type": "list_string",
+      "description": "Registered exact source IDs."
+    },
+    "source_urls": {
+      "type": "list_string",
+      "description": "Derived sorted unique source URLs; never manually inferred."
+    },
+    "field_sources_json": {
+      "type": "json",
+      "description": "Per-field source-ID lists; wildcard attribution is forbidden."
+    },
+    "compliance_claims_json": {
+      "type": "json",
+      "description": "Manufacturer claims with status/scope; test methods such as UL 9540A are not product certifications."
+    },
+    "extensions_json": {
+      "type": "json",
+      "description": "Namespaced optional specifications, bounds and configuration ranges."
+    },
+    "conflicts_json": {
+      "type": "json",
+      "description": "Conflicting source assertions with evidence; requires needs_review."
+    },
+    "created_at": {
+      "type": "timestamp",
+      "description": "UTC date of database record creation, not product launch."
+    },
+    "updated_at": {
+      "type": "timestamp",
+      "description": "UTC date of last substantive record change."
+    },
+    "last_verified_at": {
+      "type": "timestamp",
+      "description": "UTC source-check date; not physical validation or proof of availability."
+    }
+  }
+}

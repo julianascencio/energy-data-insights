@@ -7,7 +7,8 @@ This catalogue covers 1,113 project and plant records in 27 countries.
 U.S. and UK inventory subsets dominate the coverage; counts are not a census
 or a ranking of the world's installed capacity.
 
-Return to the :doc:`PV database <database-viewer>` or
+Browse the :doc:`BESS OEM products <bess-oem-database-viewer>`,
+:doc:`PV database <database-viewer>` or
 :doc:`Database gallery <auto_examples/database/index>`.
 
 .. raw:: html
