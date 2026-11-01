@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-01T11:32:26.334031+00:00",
+  "updated_at": "2026-11-01T21:36:17.390561+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "Completed prior highest-value South West REPD partition; tested Japan FIT open-licensed registry before canonical ingestion; extracted multi-model KSI, Valmont and SAJ tables. Top-ten national gaps remain explicit; no new US ingestion.",
-  "next_highest_value_source": "UK REPD West Midlands / Operational / Ground, after conditional freshness check and full-identity screening. Japan: reconcile the existing 62 Tottori FIT candidates with named plants using permitted independent sources before downloading another prefecture.",
+  "next_highest_value_source": "UK REPD North West + Yorkshire and Humber operational ground PV, followed by permitted reconciliation of Tottori Japan FIT candidates.",
   "sources": [
     {
       "id": "uk_repd",
@@ -14,7 +14,7 @@
       "licence_assessment": "OGL v3; official catalogue declaration checked; attribution retained",
       "access_assessment": "CSV downloaded, sha256 84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "estimated_useful_yield": {
-        "remaining_source_pv_rows": 6563,
+        "remaining_source_pv_rows": 6366,
         "note": "Unreviewed applications across all statuses/mounting types, not independent accepted projects."
       },
       "fields_offered": [
@@ -27,25 +27,28 @@
         "site area",
         "planning references"
       ],
-      "last_attempt": "2026-11-01T11:26:08.969307+00:00",
-      "result": "Cumulative 897 candidates processed: 475 accepted, 422 held. This iteration completes all 392 South West operational ground PV rows: 210 accepted, 182 held.",
+      "last_attempt": "2026-11-01T21:36:17.390561+00:00",
+      "result": "Cumulative 1094 applications reviewed: 578 accepted and 516 held. Latest West Midlands/Wales: 197 reviewed, 103 accepted, 94 held.",
       "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Process West Midlands / Operational / Ground after freshness check; use planning/owner evidence for held plant-scope questions.",
+      "next_action": "Process North West and Yorkshire and Humber operational ground PV after freshness check; resolve held identities separately.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
           "East Midlands/Operational/Ground",
           "South East/Operational/Ground",
           "Eastern/Operational/Ground",
-          "South West/Operational/Ground"
+          "South West/Operational/Ground",
+          "West Midlands/Operational/Ground",
+          "Wales/Operational/Ground"
         ],
-        "candidate_rows_processed": 897,
+        "candidate_rows_processed": 1094,
         "accepted_ids_ledgers": [
           "20261101T0856_repd_review.json",
           "20261101T0928_repd_review.json",
-          "20261101T1106_repd_review.json"
+          "20261101T1106_repd_review.json",
+          "20261101T2134_repd_review.json"
         ],
-        "next_partition": "West Midlands/Operational/Ground"
+        "next_partition": "North West + Yorkshire and Humber/Operational/Ground"
       }
     },
     {
@@ -673,6 +676,38 @@
       "next_action": "Use an independently permitted named-project/planning source to resolve Tottori candidates; revisit only if permission/terms change.",
       "processed_cursor": null,
       "priority": 9
+    },
+    {
+      "id": "phoenix_batch_20261101T2134",
+      "country": null,
+      "entity": "combiner_boxes",
+      "source_url": "https://www.phoenixcontact.com/en-us/products/string-combiner-box-scb-sol-sc-16st-p-1-xf-12331-1694150",
+      "version_or_date": "Undated current OEM pages",
+      "licence_assessment": "Individual factual extraction; no open bulk reuse licence or document redistribution",
+      "access_assessment": "Three pages downloaded normally; checksums in source register",
+      "estimated_useful_yield": {
+        "processed": 3,
+        "new": 2,
+        "enriched": 1
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "control",
+        "standards claims"
+      ],
+      "last_attempt": "2026-11-01T21:36:17.390561+00:00",
+      "result": "Two exact models accepted, existing 1694150 gains three fields; current switching duty and temperature derating remain qualified",
+      "retry_condition": "New version or independent clarification",
+      "next_action": "Review distinct Phoenix model families with full tables; do not invent configurable fuse variants",
+      "processed_cursor": {
+        "articles": [
+          "1694150",
+          "1694155",
+          "1154891"
+        ]
+      }
     }
   ]
 }
