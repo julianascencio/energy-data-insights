@@ -17,6 +17,8 @@ or a live availability feed. Do not interpret record counts as installed capacit
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
 4. Stage national inventory candidates with `scripts/stage_bess_inventory.py`.
+   For the reviewed PIB Indian Table-II format, use `scripts/stage_bess_pib.py`
+   on downloaded HTML; it stages candidates only and does not import identities.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
