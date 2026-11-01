@@ -81,3 +81,45 @@ count. Use the current schemas, adapters, source register and tests in this repo
   added/enriched/quarantined record counts, new countries/OEMs, checks and concrete
   blockers. If no substantive change, briefly say so and preserve useful blocked-source
   evidence without inventing progress.
+
+## Research depth update — 1 November 2026
+
+This section supersedes earlier effort and region-priority language. All evidence,
+identity, licensing, concurrency and review requirements above remain binding.
+
+- Plan approximately 30–35 productive minutes for discovery, extraction and
+  reconciliation, reserving 10–15 minutes for validation/publication within the
+  45-minute bound. Do not stop after one or two easy rows or idle to fill time.
+  Finish early only for exhausted selected batches, concrete blockers or execution
+  budget, recording the reason and actual elapsed effort.
+- Work toward 50–200 verified new/enriched projects from suitable registries, or
+  10–30 exact equipment models with substantive OEM tables. These are planning
+  objectives, never quotas. Explain lower yields with candidate/rejection/access
+  evidence; no thin rows, fabricated variants or timestamp-only changes.
+- Each iteration covers three workstreams: scalable official project inventories;
+  multi-model OEM equipment including underserved trackers/combiners; and enrichment
+  of existing identities. Prefer useful missing fields over sparse additions.
+- Begin with coverage/completeness and recent logs. Rank sources by expected
+  verified yield, field coverage, reuse clarity and extraction effort. Attempt a
+  promising multi-record source before isolated releases. Search local languages
+  and several independent publishers. A blocked source triggers another candidate.
+- Maintain a dated top-ten-country ranking with a named PV metric and compare it
+  with repository coverage. Work through the persistent source/country queue.
+  UTC-hour modulo-six rotation is secondary diversity priority. Avoid repeated
+  US-heavy bulk ingestion when defensible non-US opportunities exist.
+- Inspect source terms, version, explicit PV classification and representative
+  rows before bulk work. Build reusable source-specific adapters where worthwhile,
+  with parser/identity tests. Reconcile phases, IDs and natural identities against
+  the full incoming source and existing catalogue. Never fuzzy-merge automatically.
+- Maintain `research/source_backlog.json`: exact URL, country/entity, version/date,
+  licence/access assessment, estimated yield (clearly labelled estimate), fields,
+  last attempt/result/retry condition/next action, processed partitions/cursors.
+  Refresh source metadata/checksum before resuming. Raw documents remain outside Git.
+- If ingestion is blocked, a tested reusable adapter is substantive progress, but
+  candidate rows must never be reported as accepted records. No parallel subagents
+  unless separately authorized. Preserve the existing external schedule.
+- Report additions by entity, enriched records AND fields, quarantined/rejected
+  candidates, countries/OEMs, current totals, processed batches, checks and blockers.
+  Dated logs include elapsed time, candidate-to-accepted counts, yield explanation
+  and the next highest-value source/partition. Keep user updates short and recurring
+  PRs open; recheck main/open PRs/heads immediately before publication.
