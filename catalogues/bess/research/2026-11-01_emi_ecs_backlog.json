@@ -1,0 +1,94 @@
+[
+  {
+    "rank": 1,
+    "url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing",
+    "country_entity": "New Zealand Electricity Authority",
+    "version": "20260702_DispatchedGenerationPlant.csv",
+    "retrieved_at": "2026-11-01T21:53:21.926033+00:00",
+    "access_licence": "CC BY 4.0 default; third-party submissions/images excluded; EA copyright policy inspected",
+    "estimated_useful_yield": 5,
+    "offered_fields": [
+      "operator",
+      "POC",
+      "unit",
+      "nameplate MW",
+      "reported commission/decommission dates",
+      "effective periods"
+    ],
+    "attempt_result": "Five BAT candidates: one new retired asset, three existing enriched, Huntly held",
+    "processed_partition_cursor": "All BAT rows GLB0,HLY11,RHO0,RUK0,SWN1",
+    "retry_condition": "New inventory revision or separate lifecycle evidence",
+    "next_action": "Get Genesis FY27 Q1 primary report to separate Huntly stage 1 operation from stage 2 FID; then inspect proposed-generation portfolio. Effective intervals are not COD.",
+    "sha256": "0a1d0c2b64755bb6e87cfbcbacde6119a7df3e4e3d323eaaaa71ab874c3654ba"
+  },
+  {
+    "rank": 2,
+    "url": "https://www.fox-ess.com/download/upfiles/EN-ECS2900-Datasheet-V3.7-20250401.pdf",
+    "country_entity": "Fox ESS ECS2900",
+    "version": "English V3.7 2025-04-01",
+    "retrieved_at": "2026-11-01T21:53:21.926033+00:00",
+    "access_licence": "Bounded factual extraction; copyright retained, no source redistribution",
+    "estimated_useful_yield": 6,
+    "offered_fields": [
+      "energy",
+      "voltage",
+      "current",
+      "module counts",
+      "RTE",
+      "cycle conditions",
+      "environment",
+      "dimensions",
+      "standards claims"
+    ],
+    "attempt_result": "Six new exact configurations; table exhausted",
+    "processed_partition_cursor": "H2-H7, page2 and footnotes1-2",
+    "retry_condition": "New explicit revision or guarantee",
+    "next_action": "Obtain model-specific warranty; never assign EQ/ECS or older regional ratings across families.",
+    "sha256": "ba1097d5a99dbdb0deb21bdb46dac54612285ba406dd7e94a1def3d9d1bbd7fc"
+  },
+  {
+    "rank": 3,
+    "url": "https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/EN-ECS4300H-Datasheet-V1.8-20250401.pdf",
+    "country_entity": "Fox ESS ECS4300H",
+    "version": "English V1.8 2025-04-01",
+    "retrieved_at": "2026-11-01T21:53:21.926033+00:00",
+    "access_licence": "Bounded factual extraction; copyright retained, no source redistribution",
+    "estimated_useful_yield": 6,
+    "offered_fields": [
+      "energy",
+      "voltage",
+      "current",
+      "module counts",
+      "RTE",
+      "cycle conditions",
+      "environment",
+      "dimensions",
+      "standards claims"
+    ],
+    "attempt_result": "Six new exact configurations; table exhausted",
+    "processed_partition_cursor": "H2-H7, page2 and footnotes1-2",
+    "retry_condition": "New explicit revision or guarantee",
+    "next_action": "Assess remaining ECS4800 table next, checking natural model identities before accepting.",
+    "sha256": "aab054bde2f0243d5dab9943090e0bcc106016da8cc8eb1fc4f960cb05d24156"
+  },
+  {
+    "rank": 4,
+    "url": "https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-Encore-Single-Phase-Range-Overview-Sheet-3.pdf",
+    "country_entity": "South Africa Freedom Won Encore",
+    "version": "Undated range overview; date not inferred from filename",
+    "retrieved_at": "2026-11-01T21:53:21.926033+00:00",
+    "access_licence": "Copyright; bounded inspection, no PDF redistribution",
+    "estimated_useful_yield": 4,
+    "offered_fields": [
+      "PV input",
+      "apparent AC power",
+      "battery interface",
+      "grid conditions"
+    ],
+    "attempt_result": "Four PCS candidates held; battery-system schema lacks explicit PCS product-level representation; do not label inverter apparent output as battery active power",
+    "processed_partition_cursor": "Encore3K/5K/8K/10K overview inspected",
+    "retry_condition": "Exact SKU/revision and reviewed PCS product-level schema mapping",
+    "next_action": "Review individual model sheets and decide explicit PCS representation before ingestion.",
+    "sha256": "7cac6bf9b24d6194be8f161bb992e351bee690c284c4022f95f7004eb4a83ef5"
+  }
+]

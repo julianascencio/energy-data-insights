@@ -2347,3 +2347,59 @@ Ministry of New and Renewable Energy, Government of India / Press Information Bu
 **Role:** data. Primary BESS factual evidence; PIB release 2008681; 2024-02-24. Exact locators, downloaded-byte SHA-256 and reuse assessment are retained in the source register. No source documents redistributed.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### ea_nz_fleet_20260702
+
+Electricity Authority, New Zealand (2026). **Dispatched generation plant, 2 July 2026**. [Source](https://emidatasets.blob.core.windows.net/publicdata/Datasets/Wholesale/Generation/GenerationFleet/Existing/20260702_DispatchedGenerationPlant.csv)
+
+**Role:** data. BESS factual observations; exact revision, source hash, locators and conditions in source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### fox_ecs2900_20250401
+
+Fox ESS (2025). **ECS2900 high voltage storage battery datasheet**. [Source](https://www.fox-ess.com/download/upfiles/EN-ECS2900-Datasheet-V3.7-20250401.pdf)
+
+**Role:** data. BESS factual observations; exact revision, source hash, locators and conditions in source registry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fox_ecs4300h_20250401
+
+Fox ESS (2025). **ECS4300H high voltage storage battery datasheet**. [Source](https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/EN-ECS4300H-Datasheet-V1.8-20250401.pdf)
+
+**Role:** data. BESS factual observations; exact revision, source hash, locators and conditions in source registry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fox_ecs4800_20250401
+
+Fox ESS (2025). **ECS4800 battery datasheet**. [Source](https://vn.fox-ess.com/download/upfiles/EN-ECS4800-Datasheet-V2.0-20250401.pdf)
+
+**Role:** data. Exact revision, hash and field evidence in BESS source registry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fox_ecs2800_20230707
+
+Fox ESS (2023). **ECS2800 battery datasheet**. [Source](https://es.fox-ess.com/wp-content/uploads/2023/01/ES-ECS2800-Datasheet-V1.4-7.7.pdf)
+
+**Role:** data. Exact revision, hash and field evidence in BESS source registry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### genesis_fy27q1_20261022
+
+Genesis Energy / NZX (2026). **Genesis FY27 Q1 performance report**. [Source](https://announcements.nzx.com/attachment/479717.pdf)
+
+**Role:** data. Exact revision, hash and field evidence in BESS source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### genesis_huntly_fid_20260420
+
+Genesis Energy / NZX (2026). **Genesis reaches FID on Second Stage Huntly BESS**. [Source](https://www.nzx.com/announcements/471153)
+
+**Role:** data. Exact revision, hash and field evidence in BESS source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
