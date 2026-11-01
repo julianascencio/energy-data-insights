@@ -1,0 +1,116 @@
+{
+  "new_projects": 53,
+  "new_inverters": 12,
+  "enriched_records": 2,
+  "substantive_fields_added": 10,
+  "fields_by_record": {
+    "aa0f8a4c-03d9-5609-826d-c1487291c59f": [
+      "drive_type",
+      "power_supply",
+      "operating_temperature_min_c",
+      "operating_temperature_max_c",
+      "slope_ns_max_pct",
+      "structural_warranty_years",
+      "drive_warranty_years",
+      "certifications",
+      "extensions_json"
+    ],
+    "12314887-beae-5744-8cfa-5a488cecee27": [
+      "module_orientation"
+    ]
+  },
+  "editorial_corrections": 1,
+  "project_candidates": 132,
+  "held_projects": 78,
+  "rejected_projects": 1,
+  "held_equipment_models": 3,
+  "held_equipment_field_questions": 3,
+  "counts": {
+    "projects": 8015,
+    "modules": 21605,
+    "inverters": 2377,
+    "trackers": 15,
+    "combiner_boxes": 33
+  },
+  "source_count": 149,
+  "new_countries": [],
+  "new_oem_groups": [],
+  "new_manufacturer_labels": [
+    "SMA Solar Technology AG"
+  ],
+  "country_counts": {
+    "ARE": 1,
+    "AUS": 1,
+    "AZE": 1,
+    "CAN": 1,
+    "CHL": 1,
+    "COL": 1,
+    "DOM": 1,
+    "EGY": 1,
+    "ESP": 1,
+    "FRA": 49,
+    "GBR": 631,
+    "GRC": 1,
+    "IND": 1,
+    "KEN": 1,
+    "MEX": 2,
+    "MLI": 1,
+    "MOZ": 1,
+    "NLD": 1,
+    "NZL": 1,
+    "PER": 1,
+    "PRT": 1,
+    "SEN": 2,
+    "SLV": 2,
+    "TON": 1,
+    "USA": 7309,
+    "ZAF": 1
+  },
+  "started_at": "2026-11-01T21:52:00Z",
+  "implementation_completed_at": "2026-11-01T21:58:48.072496+00:00",
+  "base_commit": "0cbb82447d898951c5744d8b7c880b473307267c",
+  "unchanged_existing_records": 31978,
+  "ranking_file": "20261101T0856_top10_markets.json",
+  "top10_current_counts": {
+    "CHN": 0,
+    "USA": 7309,
+    "IND": 1,
+    "DEU": 0,
+    "JPN": 0,
+    "BRA": 0,
+    "ESP": 1,
+    "PAK": 0,
+    "AUS": 1,
+    "ITA": 0
+  },
+  "all_records": 32045,
+  "finished_research_at": "2026-11-01T22:01:29.524170+00:00",
+  "elapsed_minutes_before_publication": 11.05,
+  "source_batches": [
+    "REPD six remaining named-region operational ground PV partitions plus sole missing-region aggregate, 132 candidates",
+    "Fronius EN_V06 July 2026, 8 exact models",
+    "SMA Spanish August 2023 datasheet, 4 exact models",
+    "Soltec SFOne dual-row v11 and SF7 public page, existing model enrichment"
+  ],
+  "validation": {
+    "focused_tests": "79 passed",
+    "full_tests": "1514 passed, 5 skipped in 41.89s; one missing cdsapi and four optional imagery tests",
+    "ruff": "passed",
+    "format": "512 files passed",
+    "ty": "passed",
+    "catalogue": "passed",
+    "snapshot": "five typed ZSTD tables; hashes/counts/compression and UTC timestamp types verified",
+    "offline_example": "passed",
+    "repository": "passed",
+    "citations": "passed"
+  },
+  "yield_note": "All 132 candidates in the six remaining selected operational-ground partitions reviewed; all 12 models in the two accepted inverter tables extracted. Selected batches exhausted; no idle time to reach a duration. Additional FIMER source held for terms and German automated access requires credentials. No minimum acceptance quota.",
+  "research_prepublication_at": "2026-11-01T22:03:02.739320+00:00",
+  "publication_reconciliation": {
+    "main": "f627ff077833f1cd1ca4d35dc660001d27857e5a",
+    "full_tests": "1520 passed, 5 skipped in 40.32s",
+    "format": "517 files passed",
+    "other_checks": "catalogue, Ruff, ty (explicit project environment), repository, citations and fresh Parquet passed",
+    "additional_records": 0
+  }
+}

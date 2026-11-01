@@ -1,0 +1,64 @@
+{
+  "accepted_inverter_models": [
+    "Verto 15.0",
+    "Verto 17.5",
+    "Verto 20.0",
+    "Verto 25.0 400",
+    "Verto 25.0",
+    "Verto 27.0",
+    "Verto 30.0",
+    "Verto 33.3",
+    "STP 12-50",
+    "STP 15-50",
+    "STP 20-50",
+    "STP 25-50"
+  ],
+  "identity_review": "No exact or punctuation/case-normalized incoming model matches existing inverter models/aliases. Fronius 25.0 400 is a distinct 3-MPPT/35.2 kg design from 25.0 4-MPPT/41.75 kg. SMA STP xx-50 differs from existing STP xx-US-50; no US voltage variants merged. SMA Solar Technology AG is a new regional manufacturer label in existing SMA group, not a newly discovered OEM.",
+  "resolved_notes": [
+    {
+      "record_id": "aa0f8a4c-03d9-5609-826d-c1487291c59f",
+      "old_note": "Product family record. Exact configuration ratings pending datasheet.",
+      "new_note": "Dual-row product family enriched from v11 commercial datasheet; project-specific final documentation controls. Optional features, approximate dimensions and bounds remain qualified in extensions.",
+      "source_id": "soltec_sfone_dual_v11_20261101T2153"
+    }
+  ],
+  "held_field_questions": [
+    {
+      "source_id": "fronius_verto_v06_20261101T2153",
+      "field": "pdc_rated_w",
+      "reason": "13000 Wpeak max usable DC output has ambiguous scope and is not rated power"
+    },
+    {
+      "source_id": "fronius_verto_v06_20261101T2153",
+      "model": "Verto 25.0 400",
+      "field": "vac_rated_v",
+      "reason": "Current subtable versus grid-connection cell differ in voltage coverage; leave nominal voltage absent"
+    },
+    {
+      "source_id": "soltec_sfone_dual_v11_20261101T2153",
+      "field": "gcr_min_pct/gcr_max_pct",
+      "reason": "Typical/configurable percentage and native radius label; not a fixed geometric rating"
+    }
+  ],
+  "blocked_sources": [
+    {
+      "url": "https://www.fimer.com/sites/default/files/FIMER_PVS-10-12.5-15-TL-ES-RevA.pdf",
+      "sha256": "c9d13ad37977f784a3aa7c002b4fb6fe4cab74b96a3762389df32580514d647c",
+      "revision": "09.03.2021 Rev A",
+      "candidate_models": 3,
+      "accepted": 0,
+      "reason": "Footer explicitly requires prior written consent for use of content; no permission obtained or contact attempted"
+    },
+    {
+      "url": "https://www.fronius.com/~/downloads/Solar%20Energy/Datasheets/SE_Product_Documents_Datasheet_Fronius_Verto_EN_EN-English.pdf",
+      "result": "HTTP 404; replaced by accessible current EN_V06 source"
+    },
+    {
+      "urls": [
+        "https://soltec.com/uploads/2024/01/Datasheet-SF7_v12.pdf",
+        "https://soltec.com/uploads/2023/07/Datasheet-SF7_v12-1.pdf"
+      ],
+      "result": "HTTP 404; current product page links v14. Did not apply new numeric limits to old v12 configuration."
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-01T21:36:17.390561+00:00",
+  "updated_at": "2026-11-01T22:01:29.524170+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Completed prior highest-value South West REPD partition; tested Japan FIT open-licensed registry before canonical ingestion; extracted multi-model KSI, Valmont and SAJ tables. Top-ten national gaps remain explicit; no new US ingestion.",
-  "next_highest_value_source": "UK REPD North West + Yorkshire and Humber operational ground PV, followed by permitted reconciliation of Tottori Japan FIT candidates.",
+  "selection_note": "Completed remaining UK operational-ground partitions, extracted 12 distinct non-CEC European inverter models and enriched two trackers. Rechecked German official export/API access; next scalable priority shifts to France and top-ten country gaps.",
+  "next_highest_value_source": "France ODRE reviewed 5–10 MW PHOTV partition after explicit adapter-scope extension and identity review; Germany permitted filtered CSV export pilot (no API credential available).",
   "sources": [
     {
       "id": "uk_repd",
@@ -14,7 +14,7 @@
       "licence_assessment": "OGL v3; official catalogue declaration checked; attribution retained",
       "access_assessment": "CSV downloaded, sha256 84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "estimated_useful_yield": {
-        "remaining_source_pv_rows": 6366,
+        "remaining_source_pv_rows": 6234,
         "note": "Unreviewed applications across all statuses/mounting types, not independent accepted projects."
       },
       "fields_offered": [
@@ -27,10 +27,10 @@
         "site area",
         "planning references"
       ],
-      "last_attempt": "2026-11-01T21:36:17.390561+00:00",
-      "result": "Cumulative 1094 applications reviewed: 578 accepted and 516 held. Latest West Midlands/Wales: 197 reviewed, 103 accepted, 94 held.",
+      "last_attempt": "2026-11-01T22:01:29.524170+00:00",
+      "result": "All 1226 operational ground PV applications reviewed: 631 accepted, 594 held and 1 store aggregate rejected. Latest: 132 reviewed, 53 accepted, 78 held and 1 aggregate rejected.",
       "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Process North West and Yorkshire and Humber operational ground PV after freshness check; resolve held identities separately.",
+      "next_action": "Operational-ground regions now exhausted; revisit held identities with planning crosswalks or a new source revision. Prefer a non-UK country before new rooftop scope.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
@@ -39,16 +39,24 @@
           "Eastern/Operational/Ground",
           "South West/Operational/Ground",
           "West Midlands/Operational/Ground",
-          "Wales/Operational/Ground"
+          "Wales/Operational/Ground",
+          "North West/Operational/Ground",
+          "Yorkshire and Humber/Operational/Ground",
+          "North East/Operational/Ground",
+          "Scotland/Operational/Ground",
+          "Northern Ireland/Operational/Ground",
+          "London/Operational/Ground",
+          "UNSPECIFIED/Operational/Ground (one 169-store aggregate rejected)"
         ],
-        "candidate_rows_processed": 1094,
+        "candidate_rows_processed": 1226,
         "accepted_ids_ledgers": [
           "20261101T0856_repd_review.json",
           "20261101T0928_repd_review.json",
           "20261101T1106_repd_review.json",
-          "20261101T2134_repd_review.json"
+          "20261101T2134_repd_review.json",
+          "20261101T2153_repd_review.json"
         ],
-        "next_partition": "North West + Yorkshire and Humber/Operational/Ground"
+        "next_partition": "held identity resolution or later source revision; no unprocessed operational-ground region"
       }
     },
     {
@@ -87,9 +95,9 @@
       "country": "DEU",
       "entity": "projects",
       "source_url": "https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Monitoringberichte/Marktstammdatenregister/start.html",
-      "version_or_date": "Release 26.2.198 public 2026-10-29; export revision not downloaded",
+      "version_or_date": "Production API documentation 26.2.189; official access pages checked 2026-11-01",
       "licence_assessment": "Datenlizenz Deutschland Namensnennung 2.0 stated by BNetzA for CSV/XML unless marked otherwise",
-      "access_assessment": "Public export instructions specify download portal and limits; dynamic names intended to prevent automated retrieval. No export fetched.",
+      "access_assessment": "Public documentation downloaded. Filtered public CSV exports support up to 25000 rows; automated web service requires a registered technical user key and market-actor assignment. No key available; no registration/contact/bypass attempted.",
       "estimated_useful_yield": {
         "planning_range": [
           50,
@@ -106,12 +114,45 @@
         "location",
         "solar park names"
       ],
-      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
-      "result": "Rank fourth; zero catalogue projects. Official release notes report location attribute changes and export-schema updates.",
-      "retry_condition": "Permitted export method and current schema verified; no circumvention of dynamic download restrictions.",
-      "next_action": "Read current production export documentation and permitted download path, acquire normal public export if allowed, reconcile units/parks and omit personal operator details.",
+      "last_attempt": "2026-11-01T22:01:29.524170+00:00",
+      "result": "No plant rows accepted. Authentication requirement now verified, rather than treating the API as anonymous. Public filtered-export route remains a next actionable pilot.",
+      "retry_condition": "Permitted public filtered CSV available or authorised technical-user key provided; do not create accounts or bypass download controls.",
+      "next_action": "Obtain a permitted public filtered CSV for a bounded utility-scale solar cohort through the documented export UI; review park/unit identities and omit personal details. Alternatively use an already-provisioned authorised web-service key.",
       "priority": 3,
-      "processed_cursor": null
+      "processed_cursor": null,
+      "evidence": {
+        "mastr.html": {
+          "url": "https://www.marktstammdatenregister.de/mastrhilfe/subpages/datenexport.html",
+          "status": 200,
+          "retrieved_at": "2026-11-01T21:53:51.999403+00:00",
+          "sha256": "5d50edc9c14929ddcac529711f170d51464451dd5a6cb56efd88090b1f877067",
+          "bytes": 17949,
+          "headers": {
+            "content-type": "text/html",
+            "last-modified": "Tue, 22 Sep 2026 10:50:42 GMT",
+            "accept-ranges": "bytes",
+            "etag": "\"06d6736804add1:0\"",
+            "content-security-policy": "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.viind.io assets.viind.com; img-src 'self' *.marktstammdatenregister.de i.ytimg.com data: *.viind.io; connect-src 'self' *.viind.io assets.viind.com cdn.jsdelivr.net wss://*.viind.io; font-src 'self'; object-src 'self'; base-uri 'none'; media-src 'self' *.marktstammdatenregister.de; style-src 'self' 'unsafe-inline' assets.viind.com; frame-src 'self' www.youtube-nocookie.com *.viind.io; default-src 'self';",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "SAMEORIGIN",
+            "x-xss-protection": "1; mode=block",
+            "date": "Sun, 01 Nov 2026 21:53:51 GMT",
+            "content-length": "17949",
+            "strict-transport-security": "max-age=31536000",
+            "set-cookie": "TS01ab9d9f=0112c685d14390927b261814fd5a8f8fc9f52381a2258fba07bc42cd3889bdabec18b9e153e0bedbf84ceb21b2d520dd31c6427cf7; Path=/; Domain=.www.marktstammdatenregister.de; Secure; HttpOnly",
+            "x-envoy-upstream-service-time": "679",
+            "server": "envoy",
+            "connection": "close"
+          }
+        },
+        "mastr_webdienst.html": {
+          "url": "https://www.marktstammdatenregister.de/mastrhilfe/subpages/webdienst.html",
+          "status": 200,
+          "retrieved_at": "2026-11-01T21:56:27.457093+00:00",
+          "sha256": "959ed51246d1461edf6abbc4b0ae2dc57b09f1b240388c964cbff05f0d1fe850",
+          "bytes": 35831
+        }
+      }
     },
     {
       "id": "china_nea",
@@ -342,8 +383,8 @@
       "last_attempt": "2026-11-01T09:46:14.172006+00:00",
       "result": "409 >=10 MW PHOTV candidates processed: 48 accepted projects, 361 withheld for aggregation/privacy/phase/identity/technology review. French catalogue now 49 projects.",
       "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Refresh metadata/checksums; reconcile named multi-unit parks and Cestas from owner/connection evidence before summing phases. Then deliberately extend adapter scope to a reviewed 5–10 MW partition; current adapter refuses it.",
-      "priority": 6,
+      "next_action": "Explicitly extend tested adapter to reviewed 5–10 MW PHOTV cohort after freshness/licence refresh; retain complete national identity screening and phase/aggregate privacy holds. Existing >=10 MW partition already exhausted.",
+      "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
           "PHOTV / puismaxinstallee >=10000 kW / snapshot 2026-08-31"
@@ -706,6 +747,150 @@
           "1694150",
           "1694155",
           "1154891"
+        ]
+      }
+    },
+    {
+      "id": "fronius_verto_v06_20261101T2153",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.fronius.com/~/downloads/Solar%20Energy/Datasheets/SE_DS_Fronius_Verto_EN.pdf",
+      "version_or_date": "EN_V06 July 2026",
+      "licence_assessment": "Copyright retained; factual metadata only, no full-source redistribution or open bulk licence asserted",
+      "access_assessment": "Normal HTTP 200 download, raw outside Git",
+      "source_sha256": "a9b1782e87f5cb96e8222404c1de47044138e4aa062ad94b0684ee9dffd66a1c",
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "efficiency",
+        "interfaces",
+        "standards"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 8,
+        "accepted": 8
+      },
+      "last_attempt": "2026-11-01T22:01:29.524170+00:00",
+      "result": {
+        "reviewed": 8,
+        "accepted": 8
+      },
+      "retry_condition": "New permitted source/revision or clarification resolves held issue",
+      "next_action": "Resolve 13000 Wpeak DC scope and Verto 25.0 400 voltage-table discrepancy; do not invent hardware variants",
+      "processed_cursor": {
+        "models": [
+          "Verto 15.0",
+          "Verto 17.5",
+          "Verto 20.0",
+          "Verto 25.0 400",
+          "Verto 25.0",
+          "Verto 27.0",
+          "Verto 30.0",
+          "Verto 33.3"
+        ]
+      }
+    },
+    {
+      "id": "sma_tripower_x_20261101T2153",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://files.sma.de/downloads/STPxx-50-DS-es-21.pdf",
+      "version_or_date": "08/2023, STPxx-50-DS-es-21",
+      "licence_assessment": "Copyright retained; factual metadata only, no full-source redistribution or open bulk licence asserted",
+      "access_assessment": "Normal HTTP 200 download, raw outside Git",
+      "source_sha256": "79095517f5b19b8f72f09c4e7cd78548ddcee83d0c68b6714eceb8320619ac3c",
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "warranty",
+        "interfaces"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 4
+      },
+      "last_attempt": "2026-11-01T22:01:29.524170+00:00",
+      "result": {
+        "reviewed": 4,
+        "accepted": 4
+      },
+      "retry_condition": "New permitted source/revision or clarification resolves held issue",
+      "next_action": "Find a later official revision for the same exact model and resolve forthcoming software flags before changing historical values",
+      "processed_cursor": {
+        "models": [
+          "STP 12-50",
+          "STP 15-50",
+          "STP 20-50",
+          "STP 25-50"
+        ]
+      }
+    },
+    {
+      "id": "soltec_tracker_enrichment_20261101T2153",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://soltec.com/wp-content/uploads/2026/06/datasheet-sfone-dual-row-ver11-eng.pdf",
+      "version_or_date": "SFONE.06-07-2026 ver.11",
+      "licence_assessment": "Copyright retained; factual metadata only, no full-source redistribution or open bulk licence asserted",
+      "access_assessment": "Normal HTTP 200 download, raw outside Git",
+      "source_sha256": "96a504a9db01b392e998b842c5b7ec36f220cb6c73370fedc2e568a1d2207618",
+      "fields_offered": [
+        "drive",
+        "power supply",
+        "environmental",
+        "warranty",
+        "qualified dimensions"
+      ],
+      "estimated_useful_yield": {
+        "enriched": 2,
+        "substantive_fields": 10
+      },
+      "last_attempt": "2026-11-01T22:01:29.524170+00:00",
+      "result": {
+        "enriched": 2,
+        "substantive_fields": 10
+      },
+      "retry_condition": "New permitted source/revision or clarification resolves held issue",
+      "next_action": "Compare SF7 v14 to existing v12 as explicit revision review; do not silently overwrite old configuration",
+      "processed_cursor": {
+        "models": [
+          "SFOne dual-row",
+          "SF7 orientation"
+        ]
+      }
+    },
+    {
+      "id": "fimer_pvs_terms_20261101T2153",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.fimer.com/sites/default/files/FIMER_PVS-10-12.5-15-TL-ES-RevA.pdf",
+      "version_or_date": "09.03.2021 Rev A",
+      "licence_assessment": "FIMER footer expressly requires prior written consent for content use; no acceptance",
+      "access_assessment": "Normal HTTP 200 download, raw outside Git",
+      "source_sha256": "c9d13ad37977f784a3aa7c002b4fb6fe4cab74b96a3762389df32580514d647c",
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental"
+      ],
+      "estimated_useful_yield": {
+        "candidate_models": 3,
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-01T22:01:29.524170+00:00",
+      "result": {
+        "candidate_models": 3,
+        "accepted": 0
+      },
+      "retry_condition": "New permitted source/revision or clarification resolves held issue",
+      "next_action": "Seek separately permitted OEM facts or existing written permission; no contacting people authorised",
+      "processed_cursor": {
+        "models": [
+          "PVS-10-TL",
+          "PVS-12.5-TL",
+          "PVS-15-TL"
         ]
       }
     }

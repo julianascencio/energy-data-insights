@@ -2226,5 +2226,90 @@
     "access": "Normal public PDF download; raw bytes outside Git",
     "revision": "2025-06-17 filename, page 1 Version 22, page 2 Version 23",
     "limitations": "Not promoted into existing version 19 configuration. No accepted record from this source."
+  },
+  "repd_q2_2026_20261101T2153": {
+    "url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
+    "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+    "retrieved_at": "2026-11-01T21:53:48.493806+00:00",
+    "publisher": "Department for Energy Security and Net Zero (DESNZ)",
+    "title": "Renewable Energy Planning Database (REPD), July 2026 / Q2 2026",
+    "published_at": "2026-08-03",
+    "revision": "Q2 2026; publication attachment July 2026; reference quarter ends 2026-06-30",
+    "license": "UK Open Government Licence v3.0",
+    "license_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: DESNZ, Renewable Energy Planning Database, July 2026.",
+    "license_evidence": {
+      "url": "https://ckan.publishing.service.gov.uk/dataset/repd",
+      "sha256": "f52b8f8809aec0b8971db7090834607f1d86afbed4e05e6572aa818cb5743b5c",
+      "retrieved_at": "2026-11-01T08:58:57.377178+00:00"
+    },
+    "publication_evidence": {
+      "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "sha256": "3dd8c3b08b322a73101e4116a459a1e0f5653757324bc1f1e78e69a2c6baf28f",
+      "retrieved_at": "2026-11-01T08:58:57.304373+00:00"
+    },
+    "locator": "CSV Ref ID; per-record extensions.repd.csv_row is logical CSV record including header as row 1; native column crosswalk in repd.py",
+    "access": "Public CSV downloaded without login or forms; raw bytes retained outside Git. Licence declaration verified on official data.gov.uk catalogue; direct National Archives web retrieval returned 403.",
+    "limitations": "Planning applications are not automatically separate physical plants. Only reviewed operational ground-mounted photovoltaic entries accepted. MWelec remains AC/DC-unspecified. Operator (or Applicant) is not owner evidence. Native X/Y grid preserved without invented WGS84 conversion. Status snapshot is historical, not current inspection. Population threshold was 1 MW before 2021 and 150 kW subsequently; not a complete UK PV census.",
+    "http_etag": "\"6a6cbdc0-4da09d\"",
+    "http_last_modified": "Fri, 31 Jul 2026 15:22:40 GMT",
+    "status": 200,
+    "bytes": 5087389
+  },
+  "fronius_verto_v06_20261101T2153": {
+    "url": "https://www.fronius.com/~/downloads/Solar%20Energy/Datasheets/SE_DS_Fronius_Verto_EN.pdf",
+    "status": 200,
+    "retrieved_at": "2026-11-01T21:53:57.785046+00:00",
+    "sha256": "a9b1782e87f5cb96e8222404c1de47044138e4aa062ad94b0684ee9dffd66a1c",
+    "bytes": 2453643,
+    "publisher": "Fronius International GmbH",
+    "title": "Fronius Verto technical datasheet",
+    "locator": "PDF pp.4-5 for 15.0/17.5/20.0/25.0 400; pp.6-7 for 25.0/27.0/30.0/33.3. Exact model column; input/output, general, efficiency, protection and interfaces rows. Revision p.8.",
+    "license": "Copyright retained by publisher. Individually extracted factual metadata only; no source document, artwork, photograph or prose redistributed. No open bulk-reuse licence asserted.",
+    "access": "Normal public download; no login, registration, contact form or payment. Source bytes outside Git.",
+    "limitations": "OEM assertions, not independent certification or current availability. Explicit options, bounds and test conditions retained.",
+    "revision": "EN_V06 Jul 2026"
+  },
+  "sma_tripower_x_202308_20261101T2153": {
+    "url": "https://files.sma.de/downloads/STPxx-50-DS-es-21.pdf",
+    "status": 200,
+    "retrieved_at": "2026-11-01T21:53:47.825692+00:00",
+    "sha256": "79095517f5b19b8f72f09c4e7cd78548ddcee83d0c68b6714eceb8320619ac3c",
+    "bytes": 1582769,
+    "publisher": "SMA Solar Technology AG",
+    "title": "Sunny Tripower X 12 / 15 / 20 / 25, Spanish datasheet",
+    "locator": "PDF p.3 technical table, exact commercial-model column and footnotes 1–4; p.4 publisher.",
+    "license": "Copyright retained by publisher. Individually extracted factual metadata only; no source document, artwork, photograph or prose redistributed. No open bulk-reuse licence asserted.",
+    "access": "Normal public download; no login, registration, contact form or payment. Source bytes outside Git.",
+    "limitations": "OEM assertions, not independent certification or current availability. Explicit options, bounds and test conditions retained.",
+    "revision": "STPxx-50-DS-es-21; version 08/2023"
+  },
+  "soltec_sfone_dual_v11_20261101T2153": {
+    "url": "https://soltec.com/wp-content/uploads/2026/06/datasheet-sfone-dual-row-ver11-eng.pdf",
+    "status": 200,
+    "retrieved_at": "2026-11-01T21:56:46.641813+00:00",
+    "sha256": "96a504a9db01b392e998b842c5b7ec36f220cb6c73370fedc2e568a1d2207618",
+    "bytes": 1833764,
+    "publisher": "Soltec",
+    "title": "SFOne dual-row technical datasheet v11",
+    "locator": "PDF p.2 Main Features, Warranty, certifications and approximate dimensions; p.1 revision and commercial/project-specific limitations.",
+    "license": "Copyright retained by publisher. Individually extracted factual metadata only; no source document, artwork, photograph or prose redistributed. No open bulk-reuse licence asserted.",
+    "access": "Normal public download; no login, registration, contact form or payment. Source bytes outside Git.",
+    "limitations": "OEM assertions, not independent certification or current availability. Explicit options, bounds and test conditions retained.",
+    "revision": "SFONE.06-07-2026 ver.11; date string preserved as printed"
+  },
+  "soltec_sf7_page_20261101T2153": {
+    "url": "https://soltec.com/en/products/sf7/",
+    "status": 200,
+    "retrieved_at": "2026-11-01T21:56:21.952453+00:00",
+    "sha256": "53a93792f751768c00d6ded036bb00b48af976a70e8b57520710a31bdd0cc874",
+    "bytes": 98687,
+    "publisher": "Soltec",
+    "title": "SF7 two-module-vertical solar tracker",
+    "locator": "Product description and Technical architecture: two modules vertical / 2P. No v14 numeric ratings applied to existing v12 configuration.",
+    "license": "Copyright retained by publisher. Individually extracted factual metadata only; no source document, artwork, photograph or prose redistributed. No open bulk-reuse licence asserted.",
+    "access": "Normal public download; no login, registration, contact form or payment. Source bytes outside Git.",
+    "limitations": "OEM assertions, not independent certification or current availability. Explicit options, bounds and test conditions retained.",
+    "revision": "Undated public product page"
   }
 }
