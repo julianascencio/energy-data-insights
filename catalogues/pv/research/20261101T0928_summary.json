@@ -1,0 +1,118 @@
+{
+  "started_at": "2026-11-01T09:28:04Z",
+  "accepted_at": "2026-11-01T09:42:31.798165+00:00",
+  "added": {
+    "projects": 124,
+    "combiner_boxes": 23,
+    "modules": 0,
+    "inverters": 0,
+    "trackers": 0
+  },
+  "enriched": [
+    {
+      "record_id": "dfd09acf-74ac-5ff1-b64c-a1088cb8cd0d",
+      "model": "PV 216S0F3CXXV0O0TXPX15PWW",
+      "fields_added": {
+        "certifications": [
+          "EN 61439-2:2011",
+          "IEC 61439-2 ed 3.0"
+        ],
+        "connector_type": "DC output: M10 bolt and nut connection",
+        "datasheet_url": "https://datasheet.weidmueller.com/pdf/en/8000078118/scope/2/"
+      }
+    },
+    {
+      "record_id": "ea32be45-72a6-51d6-9567-a31aa46e2cff",
+      "model": "PV 206S0F3CXXV0O0TXPX15LWW",
+      "fields_added": {
+        "certifications": [
+          "EN 61439-2:2011",
+          "IEC 61439-2 ed 3.0"
+        ],
+        "connector_type": "DC output: M12 bolt and nut connection",
+        "datasheet_url": "https://datasheet.weidmueller.com/pdf/en/8000081269/scope/2/"
+      }
+    }
+  ],
+  "quarantined_projects": 454,
+  "quarantined_equipment": 12,
+  "rejected": 0,
+  "new_countries": [],
+  "new_manufacturers": [],
+  "counts": {
+    "projects": 7649,
+    "modules": 21605,
+    "inverters": 2350,
+    "combiner_boxes": 31,
+    "trackers": 7
+  },
+  "countries": 26,
+  "sources": 115,
+  "unchanged_existing": 31493,
+  "field_population_new_equipment": {
+    "manufacturer": 23,
+    "model": 23,
+    "name": 23,
+    "external_ids_json": 23,
+    "datasheet_url": 23,
+    "height_m": 15,
+    "width_m": 15,
+    "depth_m": 15,
+    "weight_kg": 23,
+    "vdc_rated_v": 23,
+    "input_count": 23,
+    "ip_rating": 23,
+    "product_warranty_years": 23,
+    "operating_temperature_min_c": 22,
+    "operating_temperature_max_c": 21,
+    "connector_type": 23,
+    "certifications": 23,
+    "dc_switch": 23,
+    "surge_protection": 23,
+    "mounting_type": 17,
+    "string_monitoring": 23,
+    "extensions_json": 23,
+    "fuse_rating_max_a": 1,
+    "status": 6,
+    "isc_a": 5
+  },
+  "equipment_field_review_items": 29,
+  "enriched_substantive_fields": 6,
+  "enriched_technical_fields": 4,
+  "enriched_datasheet_links": 2,
+  "project_batches": {
+    "FRA_ODRE": 48,
+    "GBR_REPD_Eastern": 76
+  },
+  "research_completed_at": "2026-11-01T09:52:50.250025+00:00",
+  "publication_prepared_at": "2026-11-01T09:57:05.386642+00:00",
+  "elapsed_minutes_at_preparation": 29.02,
+  "research_elapsed_minutes": 24.77,
+  "effort_note": "Three complete source batches processed; further DEGER candidate attempted and blocked. Research, extraction, reconciliation and implementation took approximately 25 minutes; later validation/publication used the remaining window. No idle duration padding.",
+  "validation": {
+    "catalogue_records": 31642,
+    "focused_tests_passed": 63,
+    "full_suite_tests_passed": 1471,
+    "python": "3.13.16",
+    "ruff_check": "passed",
+    "ruff_format_files": 482,
+    "ty": "passed",
+    "repository_hygiene": "passed",
+    "citation_check": "passed",
+    "strict_sphinx": "passed",
+    "docs_link_pages": 376,
+    "parquet_tables_zstd_checksum_verified": 5,
+    "offline_pv_example": "passed",
+    "registry_reproduction": {
+      "ODRE": 48,
+      "REPD": 76
+    },
+    "wheel_and_sdist_builds": 6,
+    "twine_strict": "passed",
+    "installed_wheel_smoke_packages": 3
+  },
+  "current_total_records": 31642,
+  "new_total_records": 147,
+  "quarantined_total_records": 466,
+  "rejected_total_records": 0
+}

@@ -185,3 +185,31 @@ Reviewed DESNZ REPD mappings are in `pv_catalogue/repd.py`:
 | EIA plant | all nonempty plant attributes | extensions_json.eia_plant |
 
 Do not equate series-connected cells with physical half-cell count. No automatic unit guesses or phase-to-project date promotion.
+
+## ODRE reviewed PV register crosswalk (2026-08-31 snapshot)
+
+The source-specific adapter requires pinned cohort and complete individual-PV
+identity exports, plus a reviewed EIC ledger. EIC is a network installation ID;
+possible sections and aggregates are held, never assumed to be separate plants.
+
+| Native field | Catalogue treatment |
+| --- | --- |
+| `codeeicresourceobject` | Stable project identity seed and `external_ids_json.odre_eic`; exact row locator |
+| `nominstallation` | Published installation name; anonymous entries excluded |
+| `codetechnologie=PHOTV` | Explicit photovoltaic technology; generic solar insufficient |
+| `puismaxinstallee` | Active installed kW / 1,000 → `capacity_unspecified_mw`; no AC/DC inference |
+| `puismaxrac` | Maximum grid-injection kW in `extensions_json.odre`; not plant AC capacity |
+| `datemiseenservice` | `commissioning_date`, registry industrial-service date |
+| `dateraccordement` | Connection date in extensions; not substituted for commissioning |
+| `regime=En service` | `operational_registry_snapshot` as of source snapshot date |
+| `gestionnaire`, `postesource` | `grid_operator`, `substation` code when present; no owner assignment |
+| `tensionraccordement` | Explicit numeric kV only → `grid_voltage_kv`; HTA/BT remain raw labels |
+| Commune/region/implantation codes | Qualified administrative geography in extensions; no centroid coordinates |
+| `nbgroupes` | Raw group count in extensions; not assumed exact inverter count |
+| Rolling injected/produced energy | Measured kWh in extensions; period end installation-specific, not expected generation |
+
+The API schema and attached glossary disagree on whether produced energy includes
+self-consumption, and on implantation-code geography. Both definition conflicts
+remain documented; no canonical generated-energy total or precise location is
+asserted from those fields. All accepted field evidence resolves to the exact EIC
+object in the pinned export, with glossary/schema/licence hashes registered.

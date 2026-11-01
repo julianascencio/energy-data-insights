@@ -133,6 +133,24 @@ infer owner/operator roles, AC/DC basis, WGS84 coordinates or live operation.
 Private applicant fields and addresses are omitted. Required DESNZ attribution
 is included in `licenses/` and travels with generated snapshots.
 
+The ODRE adapter similarly requires a pinned >=10 MW cohort and a complete
+individual-PV identity export. It screens all names, shared >=1 MW administrative
+communes, phase markers, anonymized entries and prior catalogue aliases. These
+are conservative review flags, not automatic merges or proof of plant boundaries.
+
+```bash
+uv run python scripts/stage_pv_odre.py \
+  --input /path/to/france_large.json \
+  --identities /path/to/france_identities.json \
+  --review catalogues/pv/research/20261101T0928_odre_review.json \
+  --output /tmp/reviewed-odre.jsonl
+```
+
+Then use `upsert` and validate. The reviewed ledger is specific to the pinned
+2026-08-31 snapshot. Required ODRE attribution travels with snapshots. The adapter
+preserves unspecified AC/DC basis and registry dates; administrative geography and
+rolling measured energy retain their source limitations in extensions.
+
 ## Schema evolution and scaling
 
 The packaged `schema.json` is authoritative. Reuse a matching canonical column;
