@@ -1,0 +1,104 @@
+[
+  {
+    "rank": 1,
+    "url": "https://www.boe.es/diario_boe/",
+    "country_entity": "Spain project authorisations",
+    "version": "2026-11-01 access; decisions 2025-05-09/2025-08-07; notices through 2026-10-29",
+    "access_licence": "BOE general reuse terms effective 2024-06-28; commercial/non-commercial factual extraction with attribution; no private landowner rows reused",
+    "estimated_useful_yield": "High; next partition count unverified",
+    "offered_fields": [
+      "legal entity",
+      "permit status",
+      "battery energy",
+      "grid",
+      "containers",
+      "technology"
+    ],
+    "attempt_result": "Three historical design records accepted with needs_review; five exact notices processed",
+    "processed_partition_cursor": [
+      "BOE-A-2026-2014",
+      "BOE-A-2026-2133",
+      "BOE-A-2025-18285",
+      "BOE-B-2026-35371",
+      "BOE-B-2026-35372"
+    ],
+    "retry_condition": "Recheck revisions and rights before next partition",
+    "next_action": "Find subsequent battery-specific amendments and exploitation authorisations; then Campo Arañuelo I/II and Revilla."
+  },
+  {
+    "rank": 2,
+    "url": "https://www.iberdrolaespana.com/sostenibilidad/almacenamiento-energia/baterias-almacenamiento",
+    "country_entity": "Spain owner portfolio",
+    "version": "Undated page accessed 2026-11-01; January/May 2026 releases cross-checked",
+    "access_licence": "https://www.iberdrolaespana.com/informacion-legal restricts redistribution and technical linking; no canonical fields imported",
+    "estimated_useful_yield": "13 named identities reviewed",
+    "offered_fields": [
+      "power",
+      "status",
+      "solar relation",
+      "supplier",
+      "grid"
+    ],
+    "attempt_result": "Three independently sourced BOE identities; ten remaining candidates held, including one existing-record enrichment",
+    "processed_partition_cursor": [
+      "Revilla-Vallejera",
+      "Campo Arañuelo I",
+      "Campo Arañuelo II",
+      "Arañuelo III (existing; enrichment deferred)",
+      "Puertollano",
+      "Valdecañas",
+      "Santiago Jares",
+      "Valcarlos",
+      "Abadiño",
+      "Elgea-Urkilla"
+    ],
+    "retry_condition": "Independent reusable primary sources or compatible reuse basis",
+    "next_action": "Use BOE and other primary evidence; reconcile Olmedilla geographic discrepancy, hybrid hydro classification and installed-vs-nominal rating differences."
+  },
+  {
+    "rank": 3,
+    "url": "https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_Lynx-F-G2_Datasheet-EN.pdf",
+    "country_entity": "GoodWe equipment",
+    "version": "EN V2.1 2025-01-24 and original F EN V2.1 2023-01-05",
+    "access_licence": "Copyright; bounded factual model specifications only, no source PDF redistribution; homepage and imprint inspected",
+    "estimated_useful_yield": "12 accepted; selected tables exhausted",
+    "offered_fields": [
+      "energy basis",
+      "rated DC power",
+      "voltage",
+      "current",
+      "module count",
+      "dimensions",
+      "conditions",
+      "standards claims"
+    ],
+    "attempt_result": "12 exact configurations accepted; original F and G2 kept distinct; unversioned website IP claims not substituted",
+    "processed_partition_cursor": "All 4 F and 8 G2 model columns",
+    "retry_condition": "New dated model/revision evidence",
+    "next_action": "Evaluate latest F Plus+ separately; do not duplicate exact F model identities merely because marketing family changes."
+  },
+  {
+    "rank": 4,
+    "url": "https://www.freedomwon.co.za/fw_downloads/",
+    "country_entity": "Freedom Won equipment",
+    "version": "ENVA 5 26-May-2026; ENVA 16 printed 05-June-2026 despite filename 280826; ENVA 60HV printed16-Sept-2026 despite filename180926; COREVA18-Sept-2026",
+    "access_licence": "Copyright; search-service primary PDF text readable; no original-byte download attempted this pass",
+    "estimated_useful_yield": "Four exact candidates reviewed; deferred",
+    "offered_fields": [
+      "charge/discharge current bounds",
+      "energy",
+      "fire protection",
+      "temperature",
+      "cycle conditions"
+    ],
+    "attempt_result": "Not accepted this pass: additional revision and current/power qualification review retained for next dedicated batch",
+    "processed_partition_cursor": [
+      "ENVA 5",
+      "ENVA 16",
+      "ENVA 60HV 12-module",
+      "COR-5000-HVXA-14971164"
+    ],
+    "retry_condition": "Resolve printed revision/filename differences and independently check table alignment",
+    "next_action": "Use printed revisions; preserve IEC62619 in-progress claims; never promote maximum discharge power to continuous output."
+  }
+]

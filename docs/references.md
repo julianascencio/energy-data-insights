@@ -2083,3 +2083,43 @@ European Bank for Reconstruction and Development (2025). **Scatec Solar PV and B
 **Role:** data_source. Factual BESS evidence; revision, access terms, field locators and available hashes: catalogues/bess/sources.json.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### boe_a_2026_2014
+
+Agencia Estatal Boletín Oficial del Estado (2026). **BOE-A-2026-2014**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-2014)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_a_2026_2133
+
+Agencia Estatal Boletín Oficial del Estado (2026). **BOE-A-2026-2133**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-2133)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_a_2025_18285
+
+Agencia Estatal Boletín Oficial del Estado (2025). **BOE-A-2025-18285**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-18285)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_b_2026_35371
+
+Agencia Estatal Boletín Oficial del Estado (2026). **BOE-B-2026-35371**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-35371)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### boe_b_2026_35372
+
+Agencia Estatal Boletín Oficial del Estado (2026). **BOE-B-2026-35372**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-35372)
+
+**Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
+
+**Used by:** `catalogues/bess/sources.json`.
