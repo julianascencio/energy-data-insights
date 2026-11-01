@@ -151,6 +151,31 @@ Then use `upsert` and validate. The reviewed ledger is specific to the pinned
 preserves unspecified AC/DC basis and registry dates; administrative geography and
 rolling measured energy retain their source limitations in extensions.
 
+### Japan FIT review staging
+
+The Japan FIT prefectural workbook adapter stages **review candidates only**.
+Facility registrations and parcel-sheet rows are not automatically separate plants.
+It checks pinned bytes, Japanese headers, IDs, dates and capacities; retains month
+precision; and flags shared parcels without exporting personal names, business
+addresses, phone numbers or parcel addresses. Positive solar-cell output supports
+PV classification. Certification and planned operation never become operating
+status. The portal warns that paper filings lag its snapshot.
+
+```bash
+uv run python scripts/stage_pv_japan_fit.py \
+  --input /path/to/tottori.xlsx \
+  --sha256 ac10084eda5f0d1ee6f54c56ac25d7a0f2dbe0f4c3ef7113016111861c730749 \
+  --source-id japan_fit_tottori_20261101T1106 \
+  --snapshot-date 2026-09-30 --prefecture 鳥取県 \
+  --output /tmp/tottori-review.json
+```
+
+The command deliberately cannot ingest canonical records. Review named-project
+crosswalks, nearby parcels, phases and existing identities first, then use the
+catalogue's existing upsert API with independently accepted records. Recheck the
+portal's snapshot, terms and download link before selecting another prefecture.
+The [FIT attribution notice](licenses/JAPAN-FIT-NOTICE.md) documents reuse terms.
+
 ## Schema evolution and scaling
 
 The packaged `schema.json` is authoritative. Reuse a matching canonical column;

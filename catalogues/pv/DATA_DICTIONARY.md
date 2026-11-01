@@ -213,3 +213,26 @@ self-consumption, and on implantation-code geography. Both definition conflicts
 remain documented; no canonical generated-energy total or precise location is
 asserted from those fields. All accepted field evidence resolves to the exact EIC
 object in the pinned export, with glossary/schema/licence hashes registered.
+
+### Japan FIT review-only mapping
+
+The offline `japan_fit.stage_fit_review` adapter exports held research candidates,
+not canonical projects. The two workbook sheets join by FIT facility ID; a parcel
+row is never counted as another project. Names, contacts and address strings are
+omitted from review output. Exact normalized parcel equality only flags related
+registration IDs for review; it does not merge plants.
+
+| FIT source field | Review field | Interpretation |
+| --- | --- | --- |
+| 設備ID | `fit_facility_id` | Registration identity; not a demonstrated plant boundary |
+| 発電設備区分 | `source_technology` | Exact solar label plus positive solar-cell output supports PV |
+| 発電出力（kW） | `registered_generation_output_kw_basis_unspecified` | Registered kW; no AC/DC inference |
+| 太陽電池の合計出力（kW） | `solar_cell_total_output_kw` | Separate published solar-cell output |
+| 新規認定日 | `new_certification_date` | Certification, not commissioning |
+| 運転開始予定日 | `planned_operation_date` | Forecast, including future dates |
+| 運転開始報告年月 | `reported_operation_month` | Month precision retained; no invented day or current status |
+
+The staged Tottori cohort is at least 1 MW registered generation output. Its
+September 2026 snapshot includes a June 2026 paper-filing lag. A named-project
+crosswalk, phase/parcel reconciliation and field-specific evidence are still
+required before canonical acceptance. No canonical schema columns were added.
