@@ -1,0 +1,343 @@
+{
+  "version": "1.0.0",
+  "entity_types": [
+    "projects"
+  ],
+  "required": [
+    "record_id",
+    "entity_type",
+    "name",
+    "country_code",
+    "capacity_scope",
+    "status",
+    "status_as_of",
+    "status_date_basis",
+    "created_at",
+    "updated_at",
+    "last_verified_at",
+    "sources",
+    "field_sources_json",
+    "quality_status"
+  ],
+  "fields": {
+    "record_id": {
+      "type": "string",
+      "description": "Stable UUID chosen from original country, locality and name; never changed by a rename or capacity update."
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "Catalogue entity; projects only in version 1.",
+      "enum": [
+        "projects"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Named battery project, not the entire solar or wind facility."
+    },
+    "country_code": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-3 country code."
+    },
+    "region": {
+      "type": "string",
+      "description": "Source-reported administrative region."
+    },
+    "locality": {
+      "type": "string",
+      "description": "Source-reported locality; not a geocoded coordinate."
+    },
+    "location_accuracy": {
+      "type": "string",
+      "description": "Accuracy and basis of source-reported coordinates."
+    },
+    "capacity_scope": {
+      "type": "string",
+      "description": "Exact project, phases or expansion represented by the numeric capacities. Prevents project/phase double counting."
+    },
+    "status": {
+      "type": "string",
+      "description": "Last source-supported status, not a live operational assessment.",
+      "enum": [
+        "announced",
+        "permitted",
+        "under_construction",
+        "commissioning",
+        "operational",
+        "partially_operational",
+        "suspended",
+        "retired",
+        "cancelled",
+        "unknown"
+      ]
+    },
+    "status_as_of": {
+      "type": "string",
+      "description": "Date supporting status; for undated live project pages, date accessed. Does not imply COD.",
+      "format": "date"
+    },
+    "status_date_basis": {
+      "type": "string",
+      "description": "Whether status_as_of is a dated publication or access to an undated project page.",
+      "enum": [
+        "publication_date",
+        "accessed_undated_page"
+      ]
+    },
+    "power_basis": {
+      "type": "string",
+      "description": "Electrical basis for reported battery power. Unspecified is never silently converted to AC.",
+      "enum": [
+        "ac",
+        "dc",
+        "unspecified"
+      ]
+    },
+    "energy_basis": {
+      "type": "string",
+      "description": "Reported energy basis. Nominal, usable and unspecified are not interchangeable.",
+      "enum": [
+        "nominal",
+        "usable",
+        "unspecified"
+      ]
+    },
+    "connection_type": {
+      "type": "string",
+      "description": "Explicit grid or microgrid connection; null if not sourced.",
+      "enum": [
+        "grid_connected",
+        "off_grid",
+        "microgrid"
+      ]
+    },
+    "configuration": {
+      "type": "string",
+      "description": "Standalone, co-located generation or microgrid when supported.",
+      "enum": [
+        "standalone",
+        "co_located_solar",
+        "co_located_wind",
+        "co_located_hybrid",
+        "microgrid"
+      ]
+    },
+    "chemistry": {
+      "type": "string",
+      "description": "Battery chemistry only where explicitly reported; flow batteries are included."
+    },
+    "commercial_operation_date": {
+      "type": "string",
+      "description": "Confirmed commercial operation date, if known to the day; never an inauguration date by default.",
+      "format": "date"
+    },
+    "expected_operation_date": {
+      "type": "string",
+      "description": "Source-stated planned operation date, if known to the day; never automatically promotes project status.",
+      "format": "date"
+    },
+    "grid_operator": {
+      "type": "string",
+      "description": "Named system or network operator."
+    },
+    "substation": {
+      "type": "string",
+      "description": "Named connection substation."
+    },
+    "battery_model": {
+      "type": "string",
+      "description": "Reported battery product/model."
+    },
+    "pcs_model": {
+      "type": "string",
+      "description": "Reported power conversion system model."
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 currency for capex."
+    },
+    "capex_scope": {
+      "type": "string",
+      "description": "What the reported capital expenditure includes."
+    },
+    "quality_status": {
+      "type": "string",
+      "description": "Source-backed research record or unresolved field conflict.",
+      "enum": [
+        "source_backed",
+        "needs_review"
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "description": "Editorial limitations, exclusions and interpretation notes."
+    },
+    "aliases": {
+      "type": "list_string",
+      "description": "Other names for this same project."
+    },
+    "owners": {
+      "type": "list_string",
+      "description": "Reported project owners; ownership shares belong in extensions."
+    },
+    "developers": {
+      "type": "list_string",
+      "description": "Reported project developers."
+    },
+    "operators": {
+      "type": "list_string",
+      "description": "Reported operating entities."
+    },
+    "epc_contractors": {
+      "type": "list_string",
+      "description": "Reported engineering, procurement and construction contractors."
+    },
+    "integrators": {
+      "type": "list_string",
+      "description": "Reported BESS integration suppliers."
+    },
+    "battery_manufacturers": {
+      "type": "list_string",
+      "description": "Reported cell or battery suppliers, without inferring from integrator."
+    },
+    "pcs_manufacturers": {
+      "type": "list_string",
+      "description": "Reported power conversion suppliers."
+    },
+    "applications": {
+      "type": "list_string",
+      "description": "Reported grid services or use cases."
+    },
+    "sources": {
+      "type": "list_string",
+      "description": "Source registry IDs used by this record."
+    },
+    "source_urls": {
+      "type": "list_string",
+      "description": "Derived sorted unique URLs from sources.json."
+    },
+    "power_capacity_mw": {
+      "type": "float",
+      "description": "Reported BESS power only; excludes PV power and site interconnection rating.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "energy_capacity_mwh": {
+      "type": "float",
+      "description": "Reported battery stored-energy capacity for capacity_scope.",
+      "minimum": 0,
+      "unit": "MWh"
+    },
+    "duration_hours": {
+      "type": "float",
+      "description": "Source-reported discharge duration; not calculated from mixed-basis ratings.",
+      "minimum": 0,
+      "unit": "h"
+    },
+    "charging_power_mw": {
+      "type": "float",
+      "description": "Separately reported charging rating.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "grid_connection_capacity_mw": {
+      "type": "float",
+      "description": "Whole-site grid connection limit, distinct from BESS power.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "co_located_solar_mw": {
+      "type": "float",
+      "description": "Reported co-located PV capacity; basis described in extensions/notes.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "co_located_wind_mw": {
+      "type": "float",
+      "description": "Reported co-located wind capacity.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "round_trip_efficiency_pct": {
+      "type": "float",
+      "description": "Source-reported round-trip efficiency; boundary and conditions in extensions.",
+      "minimum": 0,
+      "unit": "%",
+      "maximum": 100
+    },
+    "grid_voltage_kv": {
+      "type": "float",
+      "description": "Reported grid connection voltage.",
+      "minimum": 0,
+      "unit": "kV"
+    },
+    "capex": {
+      "type": "float",
+      "description": "Capital expenditure in currency; scope must be documented.",
+      "minimum": 0
+    },
+    "design_life_years": {
+      "type": "float",
+      "description": "Source-reported design/operating life, not inferred warranty.",
+      "minimum": 0,
+      "unit": "years"
+    },
+    "latitude": {
+      "type": "float",
+      "description": "Source-reported WGS84 latitude; no city-centroid substitutes.",
+      "unit": "degrees",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "longitude": {
+      "type": "float",
+      "description": "Source-reported WGS84 longitude; no city-centroid substitutes.",
+      "unit": "degrees",
+      "minimum": -180,
+      "maximum": 180
+    },
+    "commercial_operation_year": {
+      "type": "int",
+      "description": "Actual COD year when exact date is not available.",
+      "minimum": 1900,
+      "maximum": 2200
+    },
+    "container_count": {
+      "type": "int",
+      "description": "Reported count of battery containers, not cells or racks.",
+      "minimum": 0
+    },
+    "field_sources_json": {
+      "type": "json",
+      "description": "JSON object mapping each populated factual field to source IDs; no wildcard evidence."
+    },
+    "phases_json": {
+      "type": "json",
+      "description": "JSON list of documented phase metadata; phases are not also separate rows for this same scope."
+    },
+    "external_ids_json": {
+      "type": "json",
+      "description": "JSON object of namespaced registry IDs for cross-source deduplication."
+    },
+    "extensions_json": {
+      "type": "json",
+      "description": "JSON object of additional namespaced metadata that has not been standardized."
+    },
+    "conflicts_json": {
+      "type": "json",
+      "description": "JSON object of conflicting source observations with source IDs; requires needs_review."
+    },
+    "created_at": {
+      "type": "timestamp",
+      "description": "UTC date/time this record was first added."
+    },
+    "updated_at": {
+      "type": "timestamp",
+      "description": "UTC date/time of the latest substantive edit."
+    },
+    "last_verified_at": {
+      "type": "timestamp",
+      "description": "UTC source-access time; not proof of current operational availability."
+    }
+  }
+}

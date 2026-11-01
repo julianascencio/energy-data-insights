@@ -18,6 +18,8 @@ Data access and scientific methods
    :maxdepth: 1
 
    database-viewer
+   bess-database-viewer
+   _generated/guides/bess-catalogue
    _generated/guides/pv-catalogue
    _generated/guides/terrain
    _generated/guides/satellite-imagery

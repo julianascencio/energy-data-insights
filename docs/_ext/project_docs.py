@@ -86,10 +86,28 @@ def _publish_pv_database(app: Sphinx, exception: Exception | None) -> None:
         shutil.copytree(snapshot, destination, dirs_exist_ok=True)
 
 
+def _publish_bess_database(app: Sphinx, exception: Exception | None) -> None:
+    """Publish the independent BESS schema through the shared database viewer."""
+    if exception is not None or app.builder is None or app.builder.format != "html":
+        return
+    from energy_analysis.pv_database import export_viewer_data
+    from energy_data_retrieval.bess_catalogue import build_parquet
+
+    root = Path(app.srcdir).parent
+    destination = Path(app.outdir) / "datasets/bess"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with TemporaryDirectory(dir=destination.parent) as temporary:
+        snapshot = Path(temporary) / "snapshot"
+        build_parquet(root / "catalogues/bess", snapshot)
+        export_viewer_data(snapshot)
+        shutil.copytree(snapshot, destination, dirs_exist_ok=True)
+
+
 def setup(app: Sphinx) -> dict[str, bool]:
     """Add lightweight HTML redirects without duplicate gallery source pages."""
     app.connect("html-collect-pages", _legacy_gallery_pages)
     app.connect("build-finished", _publish_pv_database)
+    app.connect("build-finished", _publish_bess_database)
     return {"parallel_read_safe": True, "parallel_write_safe": True}
 
 

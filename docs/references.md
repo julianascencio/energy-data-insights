@@ -1443,3 +1443,243 @@ Plotly Technologies Inc. (n.d.). **Interactive HTML Export in Python**. [Source]
 **Role:** software. Self-contained offline HTML export with embedded Plotly.js. No CDN or live map tiles are required.
 
 **Used by:** `analysis/src/energy_analysis/site_3d/reports.py`, `docs/pv-site-3d.md`.
+
+### bess_neoen_au_2024
+
+Neoen (2024). **Collie Battery Stage 1 begins operating and delivering grid reliability services**. [Source](https://neoen.com/en/news/2024/neoens-collie-battery-stage-1-begins-operating-and-delivering-grid-reliability-services-in-western-australia/)
+
+**Role:** data. Lists operating Hornsdale at 150 MW / 193.5 MWh and Victorian Big Battery at 300 MW / 450 MWh. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_nzea_collie
+
+Net Zero Economy Authority (n.d.). **Neoen Collie Battery**. [Source](https://www.nzea.gov.au/neoen-collie-battery)
+
+**Role:** data. Two operating stages: 219 MW / 877 MWh from October 2024, and 341 MW / 1363 MWh from July 2025. Total computed as the sum of these non-overlapping stages. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_engie_hazelwood
+
+ENGIE Australia (n.d.). **Hazelwood Battery**. [Source](https://engie.com.au/about-us/our-generation-activities/battery-storage/hazelwood-battery)
+
+**Role:** data. Original HBESS operational from 2023, 150 MW / 150 MWh; separate HBESS2 expansion of 150 MW / 600 MWh under construction. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_mortenson_edwards
+
+Mortenson (n.d.). **Edwards & Sanborn Solar + Storage Project Complete**. [Source](https://www.mortenson.com/news-insights/edwards-sanborn-solar-storage-completion)
+
+**Role:** data. Completed project: 3287 MWh BESS, 1300 MW site interconnection and 875 MWdc solar. Interconnection is not BESS output; no battery MW inferred. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_aecon_oneida
+
+Aecon (2025). **Oneida Energy Storage Project Commences Commercial Operations**. [Source](https://www.aecon.com/press-room/news/2025/05/07/oneida-commences-commercial-operations)
+
+**Role:** data. 250 MW / 1000 MWh at Haldimand County; lithium-ion units; Northland oversees operations. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_engie_coya_2024
+
+ENGIE Chile (2024). **Inicia su operación comercial el sistema de almacenamiento más grande de América Latina**. [Source](https://www.engie.cl/inicia-su-operacion-comercial-el-sistema-de-almacenamiento-mas-grande-de-america-latina/)
+
+**Role:** data. Coya at María Elena: 139 MW / 638 MWh, lithium batteries; operation authorized by CEN. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_engie_storage
+
+ENGIE Chile (n.d.). **Almacenamiento BESS**. [Source](https://www.engie.digital/almacenamiento-bess/)
+
+**Role:** data. Operating Tamaya: 68 MW / 418 MWh, Tocopilla, 2025. Coya listed at 139 MW / 638 MWh. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_engie_financial_2025
+
+ENGIE Chile / Comisión para el Mercado Financiero (n.d.). **ENGIE Energia Chile financial disclosure, 2025**. [Source](https://www.cmfchile.cl/institucional/inc/inf_financiera/ifrs/safec_ifrs_verarchivo.php?auth=YTkzMzg5N2Q1NzVhYjg0YmQxNGVkZDQ1ZDY1YjU5MmI%3D&send=aTLbRr%2F7WtG0t9iSEYFzO7yoE2%2FVR6LkV0F57PF3dpY8m4jmpYcoaGZpfwneYsXRwIlXZjuYRoRicccbOcDrZ0gHG6YUSV2RxGE71hXYJrKSw7IXoi1yVuWH7hiH5GAZhoC6eH+HvxGZ7yP10tgDpCUpJvbQPBAl2L8V56+AXzTHOAQ%3D)
+
+**Role:** data. Financial report lists Coya at 140.97 MW and Tamaya at 76 MW. Basis discrepancy with public project descriptions is unresolved. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_isa_registro
+
+ISA Energia Brasil (2025). **ISA Energia Brasil receives MME, EPE and ONS at its battery storage facility**. [Source](https://www.isaenergiabrasil.com.br/centro-de-midia/noticias/isa-energia-brasil-recebe-mme-epe-e-ons-para-visita-ao-primeiro-sistema-de-armazenamento-de-energia-em-larga-escala-da-transmissao-nacional/)
+
+**Role:** data. Registro substation battery system: 30 MW / 60 MWh and two-hour peak support. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_sse_ferrybridge
+
+SSE (2026). **Ferrybridge Battery Storage System enters full operation**. [Source](https://www.sse.com/news-and-views/2026/03/sse-s-ferrybridge-battery-storage-system-enters-full-operation/)
+
+**Role:** data. Ferrybridge 150/300 operating; Salisbury 50/100 operating; Monk Fryston 320/640 and Fiddlers Ferry 150/300 under construction. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_iberdrola_aranuelo
+
+Iberdrola (2021). **Iberdrola commissions Arañuelo III, the first photovoltaic plant in Spain with a storage battery**. [Source](https://www.iberdrola.com/press-room/news/detail/aranuelo-iii-first-photovoltaic-plant-spain-storage-battery)
+
+**Role:** data. 3 MW / 9 MWh battery with Arañuelo III solar plant; commissioned announcement. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_galp_alcoutim
+
+Galp (2024). **Galp and Powin to build large-scale energy storage system in Portugal**. [Source](https://www.galp.com/corp/en/media/press-releases/press-release/id/1515/galp-and-powin-to-build-large-scale-energy-storage-system-in-portugal)
+
+**Role:** data. 5 MW / 20 MWh BESS near Alcoutim, integrated by Powin with solar. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_galp_alcoutim_2025
+
+Galp (2025). **Galp instala 74 MW de baterias para armazenar energia solar em Portugal e Espanha**. [Source](https://www.galp.com/corp/Portals/0/Comunicados_Media/2025/07-Jul/Galp-instala-74-MW-de-baterias-para-armazenar-energia-solar-em-Portugal-e-Espanha.pdf)
+
+**Role:** data. Original Alcoutim 5 MW / 20 MWh system operating since early 2025; additional four-system 60.5 MW / 120.4 MWh expansion distinct. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_total_dunkirk
+
+TotalEnergies (2021). **TotalEnergies Launches the Largest Battery-Based Energy Storage Site in France**. [Source](https://totalenergies.com/newsroom/totalenergies-launches-largest-battery-based-energy-storage-site-france/?lang=eng)
+
+**Role:** data. Completed Dunkirk facility: 61 MW and 61 MWh; Saft containers. Initial 25 MW unit included, not additive. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_rwe_hamm_neurath
+
+RWE (2025). **220 megawatts of power to stabilise the grid: RWE commissions Hamm and Neurath battery storage systems**. [Source](https://www.rwe.com/en/press/rwe-generation/2025-02-14-220-megawatts-of-power-to-stabilise-the-grid-new-battery-storage-systems/)
+
+**Role:** data. Separate sites: Hamm 140 MW / 151 MWh and Neurath 80 MW / 84 MWh; exclude 220 MW portfolio total. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_neoen_storen
+
+Neoen (2024). **Sveriges största batteri tas i bruk**. [Source](https://sweden.neoen.com/sv/okategoriserad/2024/sveriges-storsta-batteri-tas-i-bruk/)
+
+**Role:** data. Storen in Ragunda: 52 MW / 52 MWh; inaugurated and operating. Isbillen is a different project. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_neoen_yllikkala
+
+Neoen (2025). **Neoen ottaa käyttöön toisen suuren akkuvarastonsa Suomessa**. [Source](https://finland.neoen.com/fi/okategoriserad/2025/neoen-ottaa-kayttoon-toisen-suuren-akkuvarastonsa-suomessa/)
+
+**Role:** data. Two distinct installations ~100 metres apart: original 30 MW / 30 MWh; new Two project 56.4 MW / 112.9 MWh, Nidec and Destia. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_energy_cells
+
+Energy Cells (n.d.). **About the project: Lithuanian battery parks**. [Source](https://energy-cells.eu/about-project/)
+
+**Role:** data. Four separate 50 MW / 50 MWh parks at Vilnius, Šiauliai, Alytus, Utena; operational reserve service in 2023; Siemens Energy/Fluence consortium. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_giga_buffalo
+
+GIGA Storage (n.d.). **Buffalo NL**. [Source](https://giga-storage.com/en/projects/buffalo/)
+
+**Role:** data. Lelystad: 25 MW / 48 MWh, lithium LFP, supplier Wärtsilä, delivered 2022; connected to Windnet smart grid. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_eskom_hex
+
+Eskom (2023). **Eskom unveils a first of its kind largest battery storage project in the African continent**. [Source](https://www.eskom.co.za/eskom-unveils-a-first-of-its-kind-largest-battery-storage-project-in-the-african-continent/)
+
+**Role:** data. Hex opened in Worcester; 100 MWh storage. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_eskom_rollout
+
+Eskom (n.d.). **Battery Energy Storage System - Distribution**. [Source](https://www.eskom.co.za/distribution/battery-energy-storage-system/)
+
+**Role:** data. Site-level table lists Hex at 20 MW / 100 MWh. Rollout totals are not separate projects. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_seci_rajnandgaon
+
+Solar Energy Corporation of India (n.d.). **Own projects: commissioned Rajnandgaon solar and BESS**. [Source](https://seci.co.in/own-projects)
+
+**Role:** data. Commissioned Rajnandgaon: 40 MW / 120 MWh lithium-ion storage paired with 100 MW solar PV. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_dicp_dalian
+
+Dalian Institute of Chemical Physics, Chinese Academy of Sciences (2022). **百兆瓦级大连液流电池储能调峰电站并网发电**. [Source](https://dicp.cas.cn/xwdt/kyjz/202210/t20221031_6541871.html)
+
+**Role:** data. Grid-connected first phase: 100 MW / 400 MWh vanadium flow battery. Planned 200 MW / 800 MWh total is excluded. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_sembcorp_ess
+
+Sembcorp (n.d.). **Energy Storage Systems**. [Source](https://www.sembcorp.com/en/driving-energy-transition/our-businesses/renewable-energy/energy-storage-systems/)
+
+**Role:** data. Current owner page reports operating Jurong Island ESS with 326 MWh; no battery MW stated. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_ema_sembcorp_2023
+
+Energy Market Authority (2023). **Southeast Asia’s largest energy storage system officially opens**. [Source](https://www.ema.gov.sg/news-events/news/media-releases/2023/southeast-asias-largest-energy-storage-system-officially-opens)
+
+**Role:** data. Jurong Island Banyan and Sakra project: 285 MWh at opening, operations began December 2022. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_sumitomo_hayakita
+
+Sumitomo Electric (2026). **Sumitomo Electric’s Vanadium Redox Flow Battery Selected by Hokkaido Electric Power Network for the Third Time**. [Source](https://sumitomoelectric.com/press/2026/04/prs015)
+
+**Role:** data. Original 15 MW / 60 MWh demonstration battery remains commercially operational; separate 17/51 project and future 11/33 project excluded. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_fluence_kabankalan
+
+Fluence (2022). **SMCGPH and Fluence’s First Battery Project of 470 MW Portfolio Begins Commercial Operation in the Philippines**. [Source](https://blog.fluenceenergy.com/smcgph-and-fluences-first-battery-energy-storage-project-of-470-mw-portfolio-begins-commercial-operation-in-the-philippines)
+
+**Role:** data. Kabankalan 20 MW / 20 MWh enters commercial operation; not the complete 470 MW portfolio. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_huawei_redsea
+
+Huawei (n.d.). **City of Tomorrow: Huawei FusionSolar contributes to the first city powered by clean energy**. [Source](https://digitalpower.huawei.com/en/cases/fusionsolar/first-fity-powered-by-clean-energy)
+
+**Role:** data. Red Sea hotels and airport operating; project package includes 400 MW PV and 1.3 GWh ESS. No BESS power rating stated. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_nrec_bisha
+
+NR Electric (n.d.). **Saudi Arabia achieves black start of 500MW energy storage station for the first time**. [Source](https://www.nrec.com/en/index.php/about/newsInfo/203.html)
+
+**Role:** data. Black-start test dated February 9, 2026 for 500 MW / 2 GWh Bisha project; NR supplies AC-side PCS/PMS/EMS. Commercial status not established by this test. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
+
+### bess_ea_nz_batteries
+
+Electricity Authority New Zealand (n.d.). **Eye on electricity: Battery performance in New Zealand**. [Source](https://www.ea.govt.nz/news/eye-on-electricity/eye-on-electricity-battery-performance-in-new-zealand/)
+
+**Role:** data. Operating grid batteries listed: Rotohiko 35 MW / 35 MWh, Ruakākā 100 MW / 200 MWh and Glenbrook-Ohurua 100 MW / 200 MWh. Factual metadata only; no open data license asserted.
+
+**Used by:** `catalogues/bess/sources.json`, `docs/bess-catalogue.md`, `examples/database/plot_bess_projects.py`.
