@@ -1,0 +1,174 @@
+{
+  "reviewed_at": "2026-11-01T22:52:26.291048+00:00",
+  "project_inventory_rows": 164,
+  "battery_candidates": 9,
+  "inventory_existing": 2,
+  "inventory_held": 6,
+  "inventory_resolved_via_owner": 1,
+  "owner_additional_stage": 1,
+  "new_projects": 2,
+  "enriched_projects": 0,
+  "new_equipment": 12,
+  "enriched_equipment": 0,
+  "equipment_candidates": 16,
+  "equipment_held": 4,
+  "new_quarantines": 0,
+  "rejected": 0,
+  "ledger": [
+    {
+      "candidate": {
+        "Developer": "Contact Energy",
+        "Project": "Glenbrook Battery",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "100",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2026",
+        "Status": "Committed",
+        "Grid connected?": "Y",
+        "Island": "North Island"
+      },
+      "decision": "existing",
+      "reason": "Already represented by Glenbrook-Ohurua/Ruakaka; do not regress lifecycle to old proposal."
+    },
+    {
+      "candidate": {
+        "Developer": "Contact Energy",
+        "Project": "Stratford Battery",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "100",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2028",
+        "Status": "Actively pursued",
+        "Grid connected?": "Y",
+        "Island": "North Island"
+      },
+      "decision": "held",
+      "reason": "September 2024 historical proposal; needs current owner evidence and reviewed physical identity."
+    },
+    {
+      "candidate": {
+        "Developer": "Genesis Energy",
+        "Project": "Huntly battery (Stage 1)",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "100",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2026",
+        "Status": "Other",
+        "Grid connected?": "Y",
+        "Island": "North Island"
+      },
+      "decision": "accepted_via_newer_owner",
+      "reason": "Separate stage 1 operating table, October 2026; no registry-unit assignment inferred."
+    },
+    {
+      "candidate": {
+        "Developer": "Genesis Energy",
+        "Project": "Huntly battery (Stage 2+)",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "300",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2029",
+        "Status": "Other",
+        "Grid connected?": "Y",
+        "Island": "North Island"
+      },
+      "decision": "held",
+      "reason": "300 MW umbrella does not equal the newly accepted 100 MW Stage 2; no aggregate row."
+    },
+    {
+      "candidate": {
+        "Developer": "Meridian Energy",
+        "Project": "Ruakaka battery",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "100",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2024",
+        "Status": "Committed",
+        "Grid connected?": "Y",
+        "Island": "North Island"
+      },
+      "decision": "existing",
+      "reason": "Already represented by Glenbrook-Ohurua/Ruakaka; do not regress lifecycle to old proposal."
+    },
+    {
+      "candidate": {
+        "Developer": "Meridian Energy",
+        "Project": "Manawatū battery",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "100",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2027",
+        "Status": "Actively pursued",
+        "Grid connected?": "Y",
+        "Island": "North Island"
+      },
+      "decision": "held",
+      "reason": "September 2024 historical proposal; needs current owner evidence and reviewed physical identity."
+    },
+    {
+      "candidate": {
+        "Developer": "NZ Clean Energy",
+        "Project": "Bunnythorpe BESS",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "250",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2028",
+        "Status": "Other",
+        "Grid connected?": "Y",
+        "Island": "North Island"
+      },
+      "decision": "held",
+      "reason": "September 2024 historical proposal; needs current owner evidence and reviewed physical identity."
+    },
+    {
+      "candidate": {
+        "Developer": "NZ Clean Energy",
+        "Project": "Glenbrook BESS",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "350",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2028",
+        "Status": "Other",
+        "Grid connected?": "Y",
+        "Island": "North Island"
+      },
+      "decision": "held",
+      "reason": "September 2024 historical proposal; needs current owner evidence and reviewed physical identity."
+    },
+    {
+      "candidate": {
+        "Developer": "WEL Networks",
+        "Project": "Huntly battery",
+        "Fuel": "Electrical energy",
+        "Technology": "Chemical battery energy storage system",
+        "Megawatts": "35",
+        "Capacity factor": "-",
+        "Approx annual gigawatt-hours": "-",
+        "Earliest commissioning year": "2023",
+        "Status": "Committed",
+        "Grid connected?": "N",
+        "Island": "North Island"
+      },
+      "decision": "held",
+      "reason": "WEL 35 MW may be Rotohiko; do not confuse with Genesis stages or auto-merge."
+    }
+  ],
+  "previous_hold_resolution": "EMI HLY11 lifecycle question resolved for named Huntly Stage 1 by owner evidence; unit-to-phase assignment remains unasserted.",
+  "equipment_scope": "ECS4800-H2-H7 English Apr 2025; ECS2800-H2-H7 Spanish Jul 2023. Four Encore candidates remain held for explicit PCS mapping; individual manual includes UK 3.6K variant, so do not assume four-family overview exhausts SKU identities."
+}
