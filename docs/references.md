@@ -1875,3 +1875,83 @@ ENGIE Belgium (2025). **Batterijpark van ENGIE in Vilvoorde volledig operationee
 **Role:** data. Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.
 
 **Used by:** `catalogues/bess/sources.json`, `catalogues/bess/research/2026-11-01_australia_chile.md`.
+
+### rwe_moerdijk_fid_2026
+
+RWE (2026). **Moerdijk 400 MW final investment decision**. [Source](https://www.rwe.com/en/press/rwe-generation/2026-09-21-rwe-to-build-400-mw-battery-to-ease-grid-congestion-in-noord-brabant/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_eemshaven_page
+
+RWE (2026). **Eemshaven battery storage**. [Source](https://benelux.rwe.com/en/locations-and-projects/eemshaven-battery-storage/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_moerdijk_cod_2025
+
+RWE (2025). **Moerdijk inertia battery commercial operation**. [Source](https://benelux.rwe.com/en/press/2025-06-16-rwes-innovative-battery-storage-in-moerdijk-achieves-commercial-operation/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_hambach_2026
+
+RWE (2026). **Large-scale storage at Hambach mine**. [Source](https://www.rwe.com/en/press/rwe-generation/2026-07-28-rwe-to-build-large-scale-storage-at-hambach-mine/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_bvb_2026
+
+RWE (2026). **SIGNAL IDUNA PARK battery commissioned**. [Source](https://www.rwe.com/en/press/rwe-ag/2026-10-26-rwe-and-bvb-have-commissioned-a-battery-storage-system-at-signal-iduna-park/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_gundremmingen_2025
+
+RWE (2025). **Gundremmingen groundbreaking**. [Source](https://www.rwe.com/en/press/rwe-generation/2025-10-29-rwe-is-constructing-germanys-largest-battery-storage-facility-in-gundremmingen/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_lingen_werne_2023
+
+RWE (2023). **Lingen and Werne installation complete**. [Source](https://www.rwe.com/en/press/rwe-generation/2023-01-09-rwe-completes-megabattery-in-lingen-and-werne/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_lingen_werne_page
+
+RWE (2026). **Megabatterie plus Wasserkraft**. [Source](https://www.rwe.com/der-konzern/laender-und-standorte/megabatterie-plus-wasserkraft/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_lingen_dralon_2026
+
+RWE (2026). **Lingen 400 MW investment decision**. [Source](https://www.rwe.com/en/investor-relations/financial-calendar-and-publications/news-and-ad-hoc-announcements/news/news-2026-01-29/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rwe_hamm_neurath_page_2026
+
+RWE (2026). **Hamm and Neurath battery storage**. [Source](https://www.rwe.com/en/the-group/countries-and-locations/220-mw-battery-storage-system-in-germany/)
+
+**Role:** data_source. Primary-source factual catalogue evidence; source conditions and locators retained in catalogue source registry.
+
+**Used by:** `catalogues/bess/sources.json`.
