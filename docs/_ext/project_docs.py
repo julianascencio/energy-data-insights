@@ -493,4 +493,7 @@ def prepare_sources(root: Path) -> list[str]:
     _rengo_3d_assets(root)
     _climate_assets(root)
     _site_and_degradation_assets(root)
+    # Sphinx-Gallery hashes the script, not its catalogue inputs. This small
+    # data-driven example must rerun when records, sources or the schema change.
+    (docs / "auto_examples/database/plot_bess_projects.py.md5").unlink(missing_ok=True)
     return [path.name for path in docs.glob("*.md")]

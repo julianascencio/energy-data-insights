@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "entity_types": [
     "projects"
   ],
@@ -78,10 +78,11 @@
     },
     "status_date_basis": {
       "type": "string",
-      "description": "Whether status_as_of is a dated publication or access to an undated project page.",
+      "description": "Whether status_as_of is a publication date, source reporting-period end, or access date for an undated project page.",
       "enum": [
         "publication_date",
-        "accessed_undated_page"
+        "accessed_undated_page",
+        "reporting_period_end"
       ]
     },
     "power_basis": {

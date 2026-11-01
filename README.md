@@ -438,16 +438,17 @@ evidence. See the [research specification](catalogues/pv/RESEARCH_PROMPT.md) and
 
 ## Worldwide BESS projects database
 
-The [BESS catalogue](catalogues/bess/README.md) starts with **37 battery projects
-in 22 countries**, supported by 30 primary sources. Its 60-field schema keeps
+The [BESS catalogue](catalogues/bess/README.md) contains **1,113 battery project and plant records
+in 27 countries**, supported by 41 primary sources. Its 60-field schema keeps
 battery MW, stored MWh, rating basis, chemistry, dated status, ownership/suppliers,
 phase scope and field-level provenance separate. Unknown values remain null.
 
 Use the [BESS project viewer](https://julianascencio.github.io/energy-data-insights/bess-database-viewer.html)
 and [runnable database example](examples/database/plot_bess_projects.py).
 Git stores reviewable JSONL; the documentation build exports typed Parquet with
-Zstandard compression and matching browser data. This is an initial global
-research catalogue, not exhaustive coverage or a current operating-capacity census.
+Zstandard compression and matching browser data. It combines curated projects
+with reviewed U.S. and UK inventory subsets. Coverage is incomplete, and the
+catalogue is not a current operating-capacity census.
 
 ```bash
 uv run python -m energy_data_retrieval.bess_catalogue validate
