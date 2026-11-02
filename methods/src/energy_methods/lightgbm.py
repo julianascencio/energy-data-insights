@@ -4,8 +4,9 @@ Irradiance is constrained increasing and temperature decreasing. Tree-based
 monotonicity is weaker than the analytic concavity of the physics model. Fit
 only the accepted training partition and evaluate later chronological data.
 
-Cite the main thesis, the PV application by Ascencio-Vasquez et al. (2020),
-and Ke et al. (2017); see REFERENCE_IDS and energy_methods.references.
+Cite Ke et al. (2017) for LightGBM and Ascencio-Vásquez et al. (2020) for the
+PV application. The thesis provides related project context; see REFERENCE_IDS
+and energy_methods.references.
 """
 
 from __future__ import annotations

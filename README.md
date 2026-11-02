@@ -21,6 +21,12 @@ retrieving energy, weather and climate-model data, applying reusable
 scientific methods, and running reproducible fleet performance studies.
 The first country workflow is Chile's solar fleet.
 
+The project was inspired by Julián Andrés Ascencio Vásquez's 2021 doctoral
+thesis, and its first studies and methods build on that research. It has since
+expanded with new methods, connectors, databases and applications beyond the
+thesis. Each component documents its own scientific sources, implementation
+choices and validation limits.
+
 **[Documentation](https://julianascencio.github.io/energy-data-insights/)** —
 installation, user guides, searchable API reference and executable example gallery.
 Built with Sphinx and the PyData theme; GitHub Actions validates every PR and
@@ -348,19 +354,28 @@ See [contributing](CONTRIBUTING.md) for development and review conventions.
 
 ## Cite this repository and its scientific foundations
 
-**Main scientific reference:** Julián Andrés Ascencio Vásquez (2021).
+**Project inspiration and foundation for the early work:** Julián Andrés
+Ascencio Vásquez (2021).
 _Modelling and worldwide assessment of performance and aging of photovoltaic
 modules and systems_. Doctoral dissertation, University of Ljubljana, Faculty
 of Electrical Engineering.
 [Permanent record: URN:NBN:SI:DOC-TMG3QFI9](https://www.dlib.si/details/URN:NBN:SI:DOC-TMG3QFI9).
 
-The root [CITATION.cff](CITATION.cff) sets the thesis as the preferred citation
-for GitHub's **Cite this repository** feature. Also cite the individual papers,
-software and datasets used in your analysis, plus this repository's URL and exact
-commit. The [reference catalogue](docs/references.md) maps every reference to
-its implementation, distinguishes background from implemented methods, and is
-also available as [BibTeX](references.bib). Generated reports use the same
-packaged catalogue and present the thesis first.
+The root [CITATION.cff](CITATION.cff) describes the software for GitHub's
+**Cite this repository** feature. Cite the repository URL and exact commit,
+plus the individual papers, software and datasets used in your analysis.
+Cite the thesis when using methods or studies derived from it; later additions
+have their own sources and are not all thesis-derived.
+
+The [reference catalogue](docs/references.md) connects sources to their
+implementations, distinguishes background from implemented methods, and is also
+available as [BibTeX](references.bib). Generated reports use the same packaged
+catalogue, with the thesis listed first as project context. Catalogue inclusion
+does not establish that an individual analysis used every listed source.
+
+Method names are descriptive, such as **acceptance band**, **typical daily
+profiles** and **climate-change yield assessment**. Author names belong in
+citations and attribution, rather than prefixes added to these method names.
 
 Citation metadata is generated from one source and checked for drift:
 

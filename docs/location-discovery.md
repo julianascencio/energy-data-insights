@@ -207,8 +207,9 @@ scope, safe request records, distance assumptions and references. Its
 is added, using Python's `json.dumps(..., sort_keys=True, allow_nan=False)`.
 Missing values are serialized as JSON nulls.
 
-The preferred scientific citation remains Julián Andrés Ascencio Vásquez's
-doctoral thesis. Provider references accompany the discovery evidence. The
+The project originated in work inspired by Julián Andrés Ascencio Vásquez's
+doctoral thesis; location discovery is a later extension. Cite the provider
+references that accompany the discovery evidence and the repository revision. The
 complete bibliography is in [references](references.md). Discovery does not
 change observations, infer station-to-plant mappings, apply quality filtering,
 resample data, or merge modeled and measured values.

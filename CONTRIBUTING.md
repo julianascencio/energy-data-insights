@@ -45,9 +45,15 @@ generated reports below that analysis run's output folder.
 Credit every paper and source introduced or discussed by a contribution. Add
 verified metadata to `methods/src/energy_methods/references.json`, connect
 method `REFERENCE_IDS`, then run `uv run python scripts/check_citations.py --write`.
-The PhD thesis remains the primary scientific citation. Identify background
-references and implementation adaptations explicitly. Citing the thesis does
-not replace attribution to individual method authors or data providers.
+The PhD thesis inspired the project and underpins its early work; later
+contributions may introduce independent methods, sources and applications.
+Identify each contribution's actual scientific basis, background references and
+implementation adaptations. Cite the thesis where the work derives from it,
+alongside the relevant method authors and data providers.
+
+Use descriptive method names in prose, headings and labels: for example,
+"acceptance band", not an author-prefixed name. Preserve author names in formal
+citations and attribution, and retain stable bibliographic identifiers.
 
 Test scientific decisions with small independent calculations and edge cases:
 reported zeros, all-missing series, duplicate keys, DST, empty training sets,

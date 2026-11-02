@@ -23,18 +23,23 @@ from energy_methods.references import (
 )
 
 
-def test_preferred_citation_is_verified_thesis_with_no_fabricated_doi() -> None:
+def test_software_citation_retains_verified_thesis_as_foundation() -> None:
     thesis = REFERENCES[0]
     assert thesis.id == PRIMARY_REFERENCE_ID
     assert thesis.authors == ("Ascencio Vásquez, Julián Andrés",)
     assert thesis.year == 2021
     assert thesis.doi is None
     assert thesis.institution == "University of Ljubljana, Faculty of Electrical Engineering"
-    preferred = citation_cff()["preferred-citation"]
-    assert isinstance(preferred, dict)
-    assert preferred["type"] == "thesis"
-    assert "doi" not in preferred
-    assert preferred["authors"] == [
+    assert thesis.role == "foundational"
+    cff = citation_cff()
+    assert cff["type"] == "software"
+    assert "preferred-citation" not in cff
+    references = cff["references"]
+    assert isinstance(references, list)
+    assert len(references) == len(REFERENCES)
+    assert references[0]["type"] == "thesis"
+    assert "doi" not in references[0]
+    assert references[0]["authors"] == [
         {"family-names": "Ascencio Vásquez", "given-names": "Julián Andrés"}
     ]
 
@@ -70,7 +75,7 @@ def test_catalogue_is_packaged_unique_and_maps_to_real_repository_components() -
         if reference.doi:
             assert re.fullmatch(r"10\.\d{4,9}/\S+", reference.doi)
     assert {reference.role for reference in REFERENCES} >= {
-        "primary",
+        "foundational",
         "implemented",
         "software",
         "standard",
