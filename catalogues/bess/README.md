@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,312 project and plant records across
-31 countries**, supported by **139 primary sources**. It combines curated
+The BESS section contains **1,322 project and plant records across
+32 countries**, supported by **152 primary sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian and Chilean inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -164,4 +164,6 @@ Previous pass: [Victron/SMA equipment and Scatec projects](research/2026-11-02_v
 
 Previous pass: [GIGA portfolio and Quattro/MultiPlus-II models](research/2026-11-02_giga_quattro_report.md), including capacity conflicts and exact electrical variants.
 
-Latest pass: [Regional Victron specifications and Singapore reconciliation](research/2026-11-02_regional_victron_singapore_report.md).
+Previous pass: [Regional Victron specifications and Singapore reconciliation](research/2026-11-02_regional_victron_singapore_report.md).
+
+Latest pass: [Asian projects, Deye and Hubble equipment](../bess/research/2026-11-02_asia_deye_hubble_report.md).
