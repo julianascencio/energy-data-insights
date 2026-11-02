@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,341 project and plant records across
-34 countries**, supported by **170 primary sources**. It combines curated
+The BESS section contains **1,352 project and plant records across
+34 countries**, supported by **188 primary sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian and Chilean inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -171,3 +171,23 @@ Previous pass: [Asian projects, Deye and Hubble equipment](../bess/research/2026
 Previous pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
 
 Latest pass: [Irish project reconciliation and GoodWe exact models](../bess/research/2026-11-02_ireland_goodwe_report.md).
+
+## NEMSA application staging
+
+The offline NEMSA adapter stages one publicly indexed Nigerian mini-grid inspection
+application for manual review. These applicant declarations are not certificates
+or evidence of commercial operation. It allowlists site/battery fields, excludes
+personal contact and owner-name fields, and preserves conflicting units verbatim.
+It never repairs capacities, assigns canonical identities or imports records.
+
+```bash
+uv run python scripts/stage_bess_nemsa.py /path/to/application.html \
+  --source-url https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1511981/ \
+  --output artifacts/nemsa-candidate.jsonl
+```
+
+Review the exact entry ID, community, battery table and any earlier applications
+before using the established upsert API. A second inspection application is not
+a second asset. Public accessibility is not a bulk-reuse licence; inspect source
+terms before retrieval. See the [NEMSA/Freedom Won review](research/2026-11-02_nemsa_freedom_report.md)
+for accepted records, conflicts and the next source partition.

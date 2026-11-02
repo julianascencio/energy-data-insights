@@ -3483,3 +3483,211 @@ Renewvia Solar Africa (n.d.). **Renewvia Solar Africa: technical excellence**. [
 **Role:** data. Technical Excellence paragraph: Kalobeyei Settlement 541 kWp and 1.1 MWh; SHA256 ffd0070f63deb3adf37d9e0eac849ac111fbc4d4d88810c88b9c2b637b3ab75e
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### home2_20261102_1500
+
+Freedom Won (2026). **LiTE 2 Home 52V Model A range overview**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-2-HOME-52V-A-Range-Overview-Sheet-1.pdf)
+
+**Role:** data. Page 1, four named columns; energy/current/power/voltage/dimensions rows and notes 1–5; primary search-service text; original-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### business2hv_20261102_1500
+
+Freedom Won (2026). **LiTE 2 Business HV range overview**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-2-BUSINESS-HV-Range-Overview-Sheet-1.pdf)
+
+**Role:** data. Page 1, Business 40/32 HV and 60/48 HV columns, specification rows and notes 1–6; primary search-service text; original-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### homehv_20261102_1500
+
+Freedom Won (2025). **LiTE Home HV range overview**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-HOME-HV-Range-Overview-Spec-Sheet-3-1.pdf)
+
+**Role:** data. Page 1, Home 15/12 HV, 20/16 HV and 30/24 HV columns; specification rows and notes 1–6; primary search-service text; original-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### etower2_20261102_1500
+
+Freedom Won (2026). **eTower 2 configuration overview**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-eTower-2-Overview-Sheet-2.pdf)
+
+**Role:** data. Pages 1–2, 1 x eTower 2 column and shared notes; pages 3–4 are incomplete duplicate templates and not used; primary search-service text; original-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### 1463636_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Fadama Bauna North (entry 1463636)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1463636/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 68c5df49748e3f13302539d0631df5bff0d13a79f3e7a3cf2b8072b232c8e1dd
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1479030_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Kalong (entry 1479030)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1479030/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 1492728556db25369684e86d2b206fbf614343d31da3acdb25863c16704002d2
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1511981_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Ibaragun (entry 1511981)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1511981/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 be27244a75faa6458303942b5566da20d45df6c71dd687f750c9ae398565924f
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1446317_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Mebiowa Okposi (entry 1446317)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1446317/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 f38b1e7b8bdee994f477bb5f59a58ad01cd75a991e7f61c8e1c24ff089b34606
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1442720_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Mebiowa Okposi (earlier entry 1442720)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1442720/)
+
+**Role:** data. Community/coordinates/owner identifying same site; malformed total storage field; SHA256 c5bf7ec4375e4ab6587e5aa6d68f3c006d65a5d3b90c189a9ff200aa4eda6ea7
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1462965_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Eriwe (entry 1462965)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1462965/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 73f8e7b7e3480c1bd418bb7197bceea0d460f61482ba7e917798887b57d3f5c9
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1466822_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Fagbo (entry 1466822)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1466822/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 11c2c6e015942d746712beafc12e4736b24f6d142ae23a42cd4df212b2c78c5a
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1462943_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Gurin (entry 1462943)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1462943/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 3632cb0059aabf43baff8268cdb3551fbda8d0c5d4c830a857f690d7d1b694da
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1445190_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Emereoke (entry 1445190)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1445190/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 47fd61ce839d0f4a9684e2ad5ff11e24029ed01fd0d24d59889eca71c8da5ad4
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1542697_20261102_1500
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Gamakai (entry 1542697)**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1542697/)
+
+**Role:** data. Community/site, total storage, storage technology, owner and date rows; battery manufacturer/model and Total C10 capacity tables; SHA256 b77da98e846db0068b88a6fe741b09d4bce079ed10f4a206a37165210b50df33
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### index_20261102_1600
+
+Victron Energy B.V. (n.d.). **MultiPlus new-style product index**. [Source](https://www.victronenergy.com/inverters-chargers/multi-500-va)
+
+**Role:** data. Exact named model columns, 230 V and 120 V variants; introduction distinguishes earlier Compact range; SHA256 5f031c6fc2eef43e4f8ee49868988796b15ec29e17173c54545b198d393aaefc
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### multi_20261102_1600
+
+Victron Energy B.V. (n.d.). **MultiPlus inverter/charger 500 VA–2000 VA, 12/24/48 V–230 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-500VA-2000VA-EN.pdf)
+
+**Role:** data. PDF page 2: five power columns, each containing three explicitly named DC-voltage models; row labels and footnotes 1–7. Page 1 product scope. Visually checked raster PDF.; SHA256 698a88ac643d2989d48c71cac6058c35f64c703f21fe1d58f4f67b7f379976e3
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### multi120_20261102_1600
+
+Victron Energy B.V. (n.d.). **MultiPlus 12 V 500–1200 VA 120 Vac manual**. [Source](https://www.victronenergy.com/media/pg/MultiPlus_12V_500-1200VA_120Vac/en/technical-data.html)
+
+**Role:** data. Section 7.1 three exact model columns, rating rows/footnotes; section 7.2 VE.Bus port; publication date blank; SHA256 1b770d098a664aa04c69644fa1780935091e172dc4da07e830ced8d8dfeedee7
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### multi2000_20261102_1600
+
+Victron Energy B.V. (n.d.). **MultiPlus 2 kVA 230 V manual**. [Source](https://www.victronenergy.com/media/pg/MultiPlus_2kVA_230V/en/technical-data-2kva.html)
+
+**Role:** data. Section 8, three model columns and footnotes; idle/search consumption, enclosure and automotive-standard differences retained; SHA256 d07d134b63367c7fb7c775e22533dd904cf0f59d202c8c0a729a3585406dedc4
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### uyo_20261102_1600
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: University of Uyo, entry 1542032**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1542032/)
+
+**Role:** data. Site identity, owner, storage/PV summary and battery manufacturer/model/voltage tables; application 2025-11-14; SHA256 11c9a879e42bbf15e29bc16665756fddd121914259186cc8b789930d911320f9
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### toto_20261102_1600
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA inspection application: Toto, entry 1467329**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1467329/)
+
+**Role:** data. Site identity, owner, storage/PV summary and five battery-bank rows; application 2023-03-27; SHA256 809176afc9e192383b870d4f6f88d31530ebde3b9ed83eec534e6f6d37e3842e
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### totoowner_20261102_1600
+
+PowerGen Renewable Energy (2025). **Toto interconnected solar hybrid mini-grid commissioned**. [Source](https://powergen-renewable-energy.com/press-release-nigerias-first-interconnected-hybrid-solar-mini-grid-plant-commissioned-in-toto-community-nasarawa-state/)
+
+**Role:** data. Title and opening three paragraphs; website labels post July 12 2025, not accepted as exact commissioning date; primary indexed text; original-byte checksum unavailable
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1463636_20261102_1600
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA battery electrical table: Fadama Bauna North**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1463636/)
+
+**Role:** data. Battery table: cell voltage, battery voltage, charge voltage, Series | Parallel; application identity unchanged; SHA256 d24b5f57f25e8687662a9226563ac0b2973baff6218ed1673d62da5d20f3852d
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1462965_20261102_1600
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA battery electrical table: Eriwe**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1462965/)
+
+**Role:** data. Battery table: cell voltage, battery voltage, charge voltage, Series | Parallel; application identity unchanged; SHA256 3c27dcecc4d8fdd610d27ec08c6c91b8b1bb54fa233e373f2572d873efa74c45
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### 1511981_20261102_1600
+
+Nigerian Electricity Management Services Agency (applicant declaration) (n.d.). **NEMSA battery electrical table: Ibaragun**. [Source](https://nemsa.gov.ng/admin-request-for-inspection-rea-solar-mini-grid/entry/1511981/)
+
+**Role:** data. Battery table: cell voltage, battery voltage, charge voltage, Series | Parallel; application identity unchanged; SHA256 e3ba93550bcde5d32b24fc0b66dd0a4b2e3a93432170de991001c1d0ecf10d2e
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cei2025_20261102_1600
+
+CEI Africa (2025). **Renewvia Kakuma/Kalobeyei expansion financing: cei2025**. [Source](https://cei-africa.com/news/cei-africa-provides-usd-4-475-million-to-renewvia-to-expand-solar-power-for-refugees-and-host-communities-in-kakuma-and-kalobeyei/)
+
+**Role:** data. Opening financing and existing-plant/expansion paragraphs; SHA256 cc055d2607429c796106dbf5b12c89658490abfddf706ca393d2e18b393e33e9
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cei2023_20261102_1600
+
+Renewvia Energy (CEI Africa announcement) (2023). **Renewvia Kakuma/Kalobeyei expansion financing: cei2023**. [Source](https://www.renewvia.com/post/cei-africa-awards-a-total-of-usd-7-3m-in-rbf-grants-to-3-kenyan-gmg-developers)
+
+**Role:** data. Renewvia grant and planned 2.4 MW / 6 MWh paragraphs; release date May 31, site posting July 12; SHA256 14c53a8b2edaabcfacf56871fc38f858f0224d7a6fc676c2d84f94c5f56f4b43
+
+**Used by:** `catalogues/bess/sources.json`.
