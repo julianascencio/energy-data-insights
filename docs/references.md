@@ -4035,3 +4035,107 @@ RTE (2026). **Stocker l’électricité renouvelable : expérimentation Ringo à
 **Role:** data. Bellac: territoire favorable; expérimentation industrielle; 12 containers and Saft assembly in Bordeaux; SHA256 cf7d7fa67c85678339187de7188ec5b21e68c20bbe613b8e42500be6f25c920d
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### odre_partition_4_20261102
+
+RTE, Enedis, EDF SEI, ELD (2026). **National battery installation register, offset 400**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=400)
+
+**Role:** data. API results; exact EIC and source row in review ledger; SHA256 ff72cb71ea1364777e38a03a97f21c6da1bf09be12b082e9cd20204356c58d5b
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### odre_partition_5_20261102
+
+RTE, Enedis, EDF SEI, ELD (2026). **National battery installation register, offset 500**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=500)
+
+**Role:** data. API results; exact EIC and source row in review ledger; SHA256 120f173110ca8b23467b74d31a8df9c07c21651f7d86868b86a91d16864d1821
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rolls_lfp_g24_40lfp_20261102
+
+Rolls Battery (2026). **G24-40LFP exact LFP specification**. [Source](https://rollsbattery.com/battery/g24-40lfp/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 4cd270ecd15d53afba7c52f13e4c3c06ac9059bb2f73befdafc5cf81040d8538
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_r24_50lfp_20261102
+
+Rolls Battery (2026). **R24-50LFP exact LFP specification**. [Source](https://rollsbattery.com/battery/r24-50lfp/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 3916e7477b273ed5c959978a8a319b45e830991345af986e759f577dfda1cfa6
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_r48_90lfp_20261102
+
+Rolls Battery (2026). **R48-90LFP exact LFP specification**. [Source](https://rollsbattery.com/battery/r48-90lfp/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 7aa7a9a4257d60ca1fbccfe60d52223fd2c54ced91fff5aa1b93f1fbb578b467
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_vb12_100lfp_20261102
+
+Rolls Battery (2026). **VB12-100LFP exact LFP specification**. [Source](https://rollsbattery.com/battery/vb12-100lfp/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 7849c4a16374fc15748df4f31bcade6600a3cacdea0d14b9e7d4b0d72c9a495f
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_s48_100lfp_stack_lv_he_20261102
+
+Rolls Battery (2026). **S48-100LFP STACK-LV HE exact LFP specification**. [Source](https://rollsbattery.com/battery/s48-100lfp-stack-lv-he/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 c6dc1ae4af9e4cd002163c08c7069b4f6e3a653038ccf5f066a450e9198cf3b5
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_s48_100lfp_ess_he_20261102
+
+Rolls Battery (2026). **S48-100LFP ESS HE exact LFP specification**. [Source](https://rollsbattery.com/battery/s48-100lfp-ess-he/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 721cbb8847f649c00e759464bb337c0fc3780301dc7e8c71f6803851f5714ff5
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_s48_100lfp_stack_lv_e_20261102
+
+Rolls Battery (2026). **S48-100LFP STACK-LV E exact LFP specification**. [Source](https://rollsbattery.com/battery/s48-100lfp-stack-lv-e/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 08596e7d7c64420a6e0af14e64550234a47a45c190f43de496bdfbc4f30a3e57
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_s48_100lfp_ess_e_20261102
+
+Rolls Battery (2026). **S48-100LFP ESS E exact LFP specification**. [Source](https://rollsbattery.com/battery/s48-100lfp-ess-e/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 ddc9395b4483f5b91b58ae6a9dcd1e548fa44817900786ca5a238200c803171e
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_s24_100lfp_20261102
+
+Rolls Battery (2026). **S24-100LFP exact LFP specification**. [Source](https://rollsbattery.com/battery/s24-100lfp/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 8ab6e1bd4fd5395028d80b9b82dc3d9738771e3d35a3140ef75ce5e4de8dc2fb
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_s12_100lfp_20261102
+
+Rolls Battery (2026). **S12-100LFP exact LFP specification**. [Source](https://rollsbattery.com/battery/s12-100lfp/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 7a2e4465f851ebb0c1682427b3f5487b518af1bd79daff353135be192013e209
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_lfp_r24_100lfp_20261102
+
+Rolls Battery (2026). **R24-100LFP exact LFP specification**. [Source](https://rollsbattery.com/battery/r24-100lfp/)
+
+**Role:** data. Exact model heading; Capacity, Charge/Discharge, Specifications tables; explicit row labels; SHA256 556c197f1dcb2efb1dde3e42eb874adb3aec0b20b46dbdf362d7d84528f9a5db
+
+**Used by:** `catalogues/bess_oem/sources.json`.

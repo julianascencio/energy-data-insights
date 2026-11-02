@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,550 project and plant records across
-34 countries**, supported by **197 primary sources**. It combines curated
+The BESS section contains **1,635 project and plant records across
+34 countries**, supported by **199 primary sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -208,3 +208,5 @@ This offline command stages observations; it does not accept candidates or merge
 identities. Download bytes separately after checking current terms and revision.
 
 Latest iteration: [second French partition and Rolls components](research/2026-11-02_odre_partition2.md), including Bellac enrichment and the next reviewed-source queue.
+
+Latest pass: [French partition 400–599 and Rolls LFP review](../bess/research/2026-11-02_odre_partition3.md).

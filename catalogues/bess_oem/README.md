@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **413 records from 39 product
-suppliers, backed by 169 primary sources**: 400 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **424 records from 39 product
+suppliers, backed by 180 primary sources**: 411 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -210,3 +210,5 @@ units and test conditions. Reconcile candidates against canonical records before
 using the existing upsert API; inspect charging-unit anomalies explicitly.
 
 Latest iteration: [second French partition and Rolls components](../bess/research/2026-11-02_odre_partition2.md), including Bellac enrichment and the next reviewed-source queue.
+
+Latest pass: [French partition 400–599 and Rolls LFP review](../bess/research/2026-11-02_odre_partition3.md).
