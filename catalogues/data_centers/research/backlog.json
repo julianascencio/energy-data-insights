@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-02T23:20:42.675074Z",
+  "completed_offsets": {
+    "nextdc_dc_rows": 28,
+    "odata_map_entries": 12,
+    "google_2026_q2_campus_rows": 35,
+    "amd_comparison_columns": 4,
+    "eaton_exact_skus": 4,
+    "vertiv_sl70643_models": 2
+  },
+  "next_batches": [
+    {
+      "rank": 1,
+      "source": "Teraco technical sheets + NEXTDC excluded/edge details",
+      "urls": [
+        "https://www.teraco.co.za/data-centre-locations/",
+        "https://www.nextdc.com/data-centres"
+      ],
+      "offset": 0,
+      "scope": "8 Teraco facility sheets; NEXTDC KL1, PH1, NE1, TK1, TK2, AK1; issuer certification lookups",
+      "questions": [
+        "Verify units of Teraco IT Load cards; reconcile white-space vs technical area",
+        "Resolve NEXTDC M2 15000 vs 25000 m2 and phased operational vs ultimate IT capacities",
+        "Source utility/regulator grid MW and volts separately from IT"
+      ]
+    },
+    {
+      "rank": 2,
+      "source": "ODATA country technical sheets",
+      "urls": [
+        "https://odatadc.com/localidades/",
+        "https://odatadc.com/brazil-data-centers/"
+      ],
+      "offset": 0,
+      "scope": "All 12 already-identified campuses; discover current Chile/Colombia/Mexico country routes",
+      "questions": [
+        "Map 22 stated centers to 12 campus identities without creating duplicates",
+        "Individual phase/building names, IT MW, cooling rating conditions and commissioning dates"
+      ]
+    },
+    {
+      "rank": 3,
+      "source": "Underrepresented operators and official permits",
+      "urls": [
+        "https://www.africadatacentres.com/"
+      ],
+      "offset": 0,
+      "scope": "Kenya, Nigeria, Ghana and Uruguay/Paraguay operator portfolios; discover primary URLs before ingest",
+      "questions": [
+        "Named facilities and dated status",
+        "Open regulator/environmental source inventories and reuse conditions"
+      ]
+    },
+    {
+      "rank": 4,
+      "source": "North America/Europe structured official portfolios",
+      "urls": [
+        "https://www.digitalrealty.com/data-centers",
+        "https://airtrunk.com/locations/"
+      ],
+      "offset": 0,
+      "scope": "Review site portfolio licence and facility-vs-campus IDs before full bounded batch",
+      "questions": [
+        "Do not use SEC market totals as facilities",
+        "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
+      ]
+    },
+    {
+      "rank": 5,
+      "source": "OEM electrical and thermal specifications",
+      "urls": [
+        "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
+        "https://www.vertiv.com/"
+      ],
+      "offset": 0,
+      "scope": "Enrich 4 Eaton exact UPS runtime/load/voltage/efficiency tables; XDU thermal conditions; exact rack PDU, chiller, CRAH, transformer, switchgear, generator models",
+      "questions": [
+        "Explicit rating configurations only; no cross-product Cartesian synthesis",
+        "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
+        "Reference existing BESS battery models rather than duplicating them"
+      ]
+    },
+    {
+      "rank": 6,
+      "source": "Compute racks and cooling supplier diversity",
+      "urls": [
+        "https://www.supermicro.com/",
+        "https://www.dell.com/",
+        "https://www.lenovo.com/",
+        "https://www.coolitsystems.com/"
+      ],
+      "offset": 0,
+      "scope": "Exact integrated compute rack and direct-to-chip/immersion model tables; Asian and regional OEMs",
+      "questions": [
+        "Rack input vs server vs accelerator limit",
+        "Measured performance workload/precision/test conditions, temperatures and flow"
+      ]
+    },
+    {
+      "rank": 7,
+      "source": "Google PUE continuation",
+      "url": "https://www.datacenters.google/efficiency/",
+      "offset": 35,
+      "scope": "Q2 2026 fully processed; check for Q3/Q4 updates, then enrich all 35 campus identities with individual phase evidence",
+      "questions": [
+        "Retain separate campus and building boundaries",
+        "Do not overwrite earlier measured periods or infer IT MW from PUE"
+      ]
+    }
+  ],
+  "holds": [
+    {
+      "source": "NTT DATA portfolio",
+      "reason": "Explicit automation/republication restrictions; permission required before future bulk capture/import",
+      "reviewed_pages": 72
+    },
+    {
+      "source": "PeeringDB bulk facility API",
+      "reason": "AUP redistribution restrictions; no import"
+    },
+    {
+      "source": "OpenStreetMap Overpass",
+      "reason": "502 and timeout; accessible ODbL source but no successful capture; any future import needs attribution/share-alike compliance"
+    },
+    {
+      "source": "Digital Realty 2025 10-K schedule III",
+      "reason": "Market aggregates, not facility identities"
+    }
+  ],
+  "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open."
+}
