@@ -3243,3 +3243,91 @@ Kirby Group (n.d.). **Poolbeg BESS, Ireland**. [Source](https://www.kirbygroup.c
 **Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### solis_small_20261102_1052
+
+Ginlong Technologies Co., Ltd. (Solis) (n.d.). **S6-EH3P(3-10)K-H datasheet**. [Source](https://www.solisinverters.com/dataFile/8e6306a8c52d48a8b03beddfcd4194b7)
+
+**Role:** data. Primary factual evidence; Page 1 exact model list; page 2 model columns, merged cells and footnote 1, visually checked. Copyright retained. Footer and linked privacy policy inspected; no open bulk-reuse licence found. Selected factual specifications/observations only with attribution; no document, artwork, table layout or webpage redistribution.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### solis_mid_20261102_1052
+
+Ginlong Technologies Co., Ltd. (Solis) (n.d.). **S6-EH3P(15-20)K-H datasheet**. [Source](https://www.solisinverters.com/dataFile/2c9fafbf8b1daf73018b27b597ec026f)
+
+**Role:** data. Primary factual evidence; Page 2, 15K and 20K columns, shared rows, switching-time footnote 1, visually checked. Copyright retained. Footer and linked privacy policy inspected; no open bulk-reuse licence found. Selected factual specifications/observations only with attribution; no document, artwork, table layout or webpage redistribution.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### solis_20261102_1052
+
+Ginlong Technologies Co., Ltd. (Solis) (n.d.). **S6-EH3P(29.9-50)K-H datasheet**. [Source](https://www.solisinverters.com/dataFile/46be66dec2cf403daecbb90a4174c457)
+
+**Role:** data. Primary factual evidence; Page 2 exact model columns and merged MPPT cells; footnote 1; visually checked. Copyright retained. Footer and linked privacy policy inspected; no open bulk-reuse licence found. Selected factual specifications/observations only with attribution; no document, artwork, table layout or webpage redistribution.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### collins_20261102_1052
+
+Collins Building & Civil Engineering Ltd (n.d.). **Kelwin Tarbert Substation**. [Source](https://collinsbce.ie/kelwin-tarbert-substation/)
+
+**Role:** data. Primary factual evidence; Heading and Scope of Works: 26 MW / 26.6 MWh; civil works; adjacency to 110 kV substation. Copyright retained. Footer and linked privacy policy inspected; no open bulk-reuse licence found. Selected factual specifications/observations only with attribution; no document, artwork, table layout or webpage redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gsc_acq_20261102_1052
+
+Gore Street Capital (2026). **Two Initial Acquisitions in the Republic of Ireland for Fund III: GS EU**. [Source](https://www.gorestreetcap.com/blog/gs-eu-completes-first-acquisition/)
+
+**Role:** data. Primary factual evidence; Transaction Information: capacities, ownership, readiness, grid/land/planning and forecast quarters. Copyright retained. Footer and linked privacy policy inspected; no open bulk-reuse licence found. Selected factual specifications/observations only with attribution; no document, artwork, table layout or webpage redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gsc_japan_20261102_1052
+
+Gore Street Capital (2025). **Initial Acquisition for Japan’s First Energy Storage Fund**. [Source](https://www.gorestreetcap.com/blog/initial-acquisition-for-japans-first-energy-storage-fund/)
+
+**Role:** data. Primary factual evidence; Opening location/capacity/subsidy paragraphs and CIO quotation on auction participation. Copyright retained. Footer and linked privacy policy inspected; no open bulk-reuse licence found. Selected factual specifications/observations only with attribution; no document, artwork, table layout or webpage redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bess_solis_research_discovery_0_20261102
+
+Department of the Environment, Climate and Communications / Houses of the Oireachtas (2025). **Total Electricity storage capacity - January 2025**. [Source](https://data.oireachtas.ie/ie/oireachtas/debateRecord/dail/2025-03-19/supportingDoc/2025-03-19_pq170-19-03-25_en.pdf)
+
+**Role:** data. Discovery/reuse assessment, not admitted technical evidence. Both pages inspected; mixed pumped hydro excluded. No ingestion. Network sources explicitly credited.
+
+**Used by:** `catalogues/bess/research/2026-11-02_solis_ireland_japan_backlog.json`.
+
+### bess_solis_research_discovery_1_20261102
+
+SMA Altenso GmbH (n.d.). **References**. [Source](https://www.sma-altenso.com/references/)
+
+**Role:** data. Discovery/reuse assessment, not admitted technical evidence. Lumcloon representative inspected; mismatch with owner held.
+
+**Used by:** `catalogues/bess/research/2026-11-02_solis_ireland_japan_backlog.json`.
+
+### bess_solis_research_discovery_2_20261102
+
+Gore Street Capital (n.d.). **Investment portfolio**. [Source](https://www.gorestreetcap.com/investment-portfolio/)
+
+**Role:** data. Discovery/reuse assessment, not admitted technical evidence. 32 cards screened; Kasama detail accepted from acquisition release; Susono/Naie/Yufu remain discovery.
+
+**Used by:** `catalogues/bess/research/2026-11-02_solis_ireland_japan_backlog.json`.
+
+### bess_solis_research_discovery_6_20261102
+
+Energy Storage Ireland (2025). **Energy Storage Ireland Pipeline Survey 2025**. [Source](https://www.energystorageireland.com/wp-content/uploads/2025/06/ESI_Pipeline_Survey_Results_2025_For_Publication.pdf)
+
+**Role:** data. Discovery/reuse assessment, not admitted technical evidence. 12-page publication inspected; individual pipeline details removed; no inferred155 records.
+
+**Used by:** `catalogues/bess/research/2026-11-02_solis_ireland_japan_backlog.json`.
+
+### bess_solis_research_discovery_7_20261102
+
+RWE Renewables Ireland (n.d.). **Lisdrumdoagh Battery Storage Facility**. [Source](https://ie.rwe.com/projects-and-locations/battery-storage-lisdrumdoagh/)
+
+**Role:** data. Discovery/reuse assessment, not admitted technical evidence. Lisdrumdoagh and Stephenstown owner pages inspected; reproduction restriction found afterward; no records accepted.
+
+**Used by:** `catalogues/bess/research/2026-11-02_solis_ireland_japan_backlog.json`.
