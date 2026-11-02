@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T20:10:00+00:00",
+  "updated_at": "2026-11-02T21:09:58.509878+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "333project enrichments from327ARA observations and30exact corporate labels;27KSTAR inverter models and9BENY combiners; Clenergy rights hold and ECB/AEMO access limits.",
-  "next_highest_value_source": "ODRE Hauts-de-France PHOTV1–5MW exact-EIC crosswalk; GoodWe independent30–50kW datasheet with revision comparison",
+  "next_highest_value_source": "ODRE Normandie PHOTV1–5MW exact-EIC enrichment; Horay current Solar Lite/BC sheets with exact hardware identities; independent combiner OEM",
   "sources": [
     {
       "id": "uk_repd",
@@ -3463,6 +3463,194 @@
       "processed_cursor": {
         "labels_reviewed": 48,
         "exhausted": true
+      }
+    },
+    {
+      "id": "odre_hdf_2100",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Hauts-de-France%27",
+      "version_or_date": "2026-08-31",
+      "licence_assessment": "Licence Ouverte v2.0; attribution retained",
+      "access_assessment": "Ordinary public source access; exact checksums/errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected accepted cohorts exhausted; blocked/next cohorts have unknown verified yield"
+      },
+      "fields_offered": [
+        "grid",
+        "commissioning",
+        "historical operator evidence"
+      ],
+      "last_attempt": "2026-11-02T21:09:58.509878+00:00",
+      "result": "37observations:4accepted/16fields;33held",
+      "retry_condition": "New revision or independent evidence resolving access/rights/identity/field holds",
+      "next_action": "Normandie1–5MW; independent identity evidence for held rows",
+      "processed_cursor": {
+        "region": "Hauts-de-France",
+        "range_mw": "1–5",
+        "exhausted": true
+      }
+    },
+    {
+      "id": "gem_operator_2100",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026",
+      "licence_assessment": "Existing CC BY attribution and lineage exclusions",
+      "access_assessment": "Ordinary public source access; exact checksums/errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected accepted cohorts exhausted; blocked/next cohorts have unknown verified yield"
+      },
+      "fields_offered": [
+        "grid",
+        "commissioning",
+        "historical operator evidence"
+      ],
+      "last_attempt": "2026-11-02T21:09:58.509878+00:00",
+      "result": "64corporate labels;192complete locations/384historical operator/evidence fields",
+      "retry_condition": "New revision or independent evidence resolving access/rights/identity/field holds",
+      "next_action": "Next reviewed corporate cohort; no private persons or parent consolidation",
+      "processed_cursor": {
+        "labels": 64,
+        "exhausted": true
+      }
+    },
+    {
+      "id": "goodwe_2100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_SDT-G3-30-50kW_Datasheet-EN.pdf",
+      "version_or_date": "20251216ENV2.0 and20250522ENV2.1",
+      "licence_assessment": "OEM rights retained; limited factual extraction; no full documents/tables in Git",
+      "access_assessment": "Ordinary public source access; exact checksums/errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected accepted cohorts exhausted; blocked/next cohorts have unknown verified yield"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "warranty"
+      ],
+      "last_attempt": "2026-11-02T21:09:58.509878+00:00",
+      "result": "12exact models accepted;8disputed/ambiguous canonical field groups held",
+      "retry_condition": "New revision or independent evidence resolving access/rights/identity/field holds",
+      "next_action": "MS G4 or independent OEM after revision/identity review",
+      "processed_cursor": {
+        "tables": 2,
+        "columns": 12,
+        "exhausted": true
+      }
+    },
+    {
+      "id": "horay_2100",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://www.horaysolar.com/Datasheet/",
+      "version_or_date": "HS182-TC-2026-A1;HS210-HJ-D-2026-A0",
+      "licence_assessment": "OEM copyright retained; selected facts only, no open bulk grant",
+      "access_assessment": "Ordinary public source access; exact checksums/errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected accepted cohorts exhausted; blocked/next cohorts have unknown verified yield"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "warranty"
+      ],
+      "last_attempt": "2026-11-02T21:09:58.509878+00:00",
+      "result": "12exact modules accepted from2tables;one new OEM. Older HJT URL404; current index link succeeded",
+      "retry_condition": "New revision or independent evidence resolving access/rights/identity/field holds",
+      "next_action": "Solar Lite/BC sheets; review exact identifiers and conditions, avoid unnamed frame variants",
+      "processed_cursor": {
+        "tables": 2,
+        "columns": 12,
+        "exhausted": true
+      }
+    },
+    {
+      "id": "geya_2100",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.geya.net/wp-content/uploads/2025/01/GEYA-SOLAR-PRODUCT-CATALOG.pdf",
+      "version_or_date": "Not accessible",
+      "licence_assessment": "Access blocks prevent document/terms verification",
+      "access_assessment": "Ordinary public source access; exact checksums/errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected accepted cohorts exhausted; blocked/next cohorts have unknown verified yield"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "warranty"
+      ],
+      "last_attempt": "2026-11-02T21:09:58.509878+00:00",
+      "result": "Catalogue/index/privacy and6model endpoints:200captcha HTML or403;zero accepted",
+      "retry_condition": "New revision or independent evidence resolving access/rights/identity/field holds",
+      "next_action": "Retry ordinary public release after challenge removed, no bypass",
+      "processed_cursor": {
+        "discovery_models": [
+          2,
+          4,
+          6,
+          8,
+          12,
+          16
+        ],
+        "exhausted": false
+      }
+    },
+    {
+      "id": "chint_2100",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://discover.chintglobal.com/view/330030740/1/",
+      "version_or_date": "Not accessible",
+      "licence_assessment": "502before rights/document inspection",
+      "access_assessment": "Ordinary public source access; exact checksums/errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected accepted cohorts exhausted; blocked/next cohorts have unknown verified yield"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "warranty"
+      ],
+      "last_attempt": "2026-11-02T21:09:58.509878+00:00",
+      "result": "Zero accepted;transient502",
+      "retry_condition": "New revision or independent evidence resolving access/rights/identity/field holds",
+      "next_action": "Retry official downloadable catalogue;no licence assumption",
+      "processed_cursor": {
+        "exhausted": false
+      }
+    },
+    {
+      "id": "dmegc_2100",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://www.dmegcsolar.com/download/index",
+      "version_or_date": "Current landing",
+      "licence_assessment": "No ingestion pending canonical identity/rights review",
+      "access_assessment": "Ordinary public source access; exact checksums/errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected accepted cohorts exhausted; blocked/next cohorts have unknown verified yield"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "warranty"
+      ],
+      "last_attempt": "2026-11-02T21:09:58.509878+00:00",
+      "result": "Existing CEC wildcard families create exact-suffix overlap risk; no expansion",
+      "retry_condition": "New revision or independent evidence resolving access/rights/identity/field holds",
+      "next_action": "Review family-to-exact identity and rights before extracting a model cohort",
+      "processed_cursor": {
+        "exhausted": false
       }
     }
   ]
