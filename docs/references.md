@@ -4351,3 +4351,19 @@ Eskom (2024). **Eskom Integrated Report 2024**. [Source](https://documents1.worl
 **Role:** data. PDF page 83 / printed page 81, Other projects: BESS, package 2 and package 3 rows; SHA256 675003b367f89908f9713786e0acfb85f9b46776b53e66fd7b39e603cf05606a
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### victron_ng_followup_25_20261102
+
+Victron Energy (2026). **Lithium NG 25.6 V manual: technical data**. [Source](https://www.victronenergy.com/media/pg/Lithium_NG_battery_25%2C6_V/en/technical-data.html)
+
+**Role:** data. Section 8.1 exact model columns; charge/float voltage rows; current, energy, dimensions and operating-condition rows for new NG models; SHA256 6a87910fa430b8c5f27782829f95ee598bad76bdd880671fe17802547c5aae64
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_ng_followup_51_20261102
+
+Victron Energy (2026). **Lithium NG 51.2 V manual: technical data**. [Source](https://www.victronenergy.com/media/pg/Lithium_NG_battery_51%2C2_V/en/technical-data.html)
+
+**Role:** data. Section 8.1 exact model columns; charge/float voltage rows; current, energy, dimensions and operating-condition rows for new NG models; SHA256 c9958d54499a3eb90e35ea50bbf622b37ac2f9da58d4c7774393848603aba1b8
+
+**Used by:** `catalogues/bess_oem/sources.json`.
