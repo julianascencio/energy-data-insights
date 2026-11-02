@@ -2611,3 +2611,35 @@ Neoen (2023). **Neoen launches construction of Storen Power Reserve**. [Source](
 **Role:** data. Primary factual evidence; source register records table/paragraph locator, terms and original-byte checksum. Undated page year is retrieval-year grouping.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### dyness_residential_es_20240829
+
+Dyness (2024). **Residential product brochure, Spanish**. [Source](https://es.dyness.com/Public/Uploads/uploadfile/files/20250227/DynessResidentialProductBrochureES.pdf)
+
+**Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### dyness_powerbox_g2_au_20241011
+
+Dyness (2024). **Powerbox G2 technical specifications, Australian publisher download**. [Source](https://au.dyness.com/Public/Uploads/uploadfile/files/20250704/5.DynessPowerboxG2datasheetEN.pdf)
+
+**Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ignitis_kelme_nts_2026
+
+Ignitis Renewables (2026). **Kelmė Battery Energy Storage System non-technical summary**. [Source](https://ignitisrenewables.com/wp-content/uploads/2024/02/EN-Kelme_BESS_NTS_report.pdf)
+
+**Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ignitis_mazeikiai_nts_2026
+
+Ignitis Renewables (2026). **Mažeikiai Battery Energy Storage System non-technical summary**. [Source](https://ignitisrenewables.com/wp-content/uploads/2024/01/EN-Mazeikiai_BESS_NTS_report.pdf)
+
+**Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
+
+**Used by:** `catalogues/bess/sources.json`.
