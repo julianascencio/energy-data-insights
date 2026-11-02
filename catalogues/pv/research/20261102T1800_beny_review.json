@@ -1,0 +1,100 @@
+{
+  "source_id": "beny_combiner_catalogue_202207_20261102T1800",
+  "tables_reviewed": 10,
+  "accepted": [
+    {
+      "record_id": "8aa10aa7-0349-5450-93c3-542071364e76",
+      "model": "BHS-1/1",
+      "pdf_page": 19,
+      "table_side": "left",
+      "result": "accepted"
+    },
+    {
+      "record_id": "440f8126-0976-55b3-906b-2c01f43626db",
+      "model": "BHS-2/1",
+      "pdf_page": 19,
+      "table_side": "right",
+      "result": "accepted"
+    },
+    {
+      "record_id": "a07e9095-4810-5c2d-aa9a-2950f3233bf7",
+      "model": "BHS-2/2",
+      "pdf_page": 20,
+      "table_side": "left",
+      "result": "accepted"
+    },
+    {
+      "record_id": "7f4fda62-9271-5c5e-a64a-6812fbb70248",
+      "model": "BHS-3/1",
+      "pdf_page": 20,
+      "table_side": "right",
+      "result": "accepted"
+    },
+    {
+      "record_id": "1300c07d-ec47-5238-8712-4bd12692d9a8",
+      "model": "BHS-4/1",
+      "pdf_page": 21,
+      "table_side": "left",
+      "result": "accepted"
+    },
+    {
+      "record_id": "a7d2bc64-102c-5e69-8624-4069e7730e35",
+      "model": "BHS-4/2",
+      "pdf_page": 21,
+      "table_side": "right",
+      "result": "accepted"
+    },
+    {
+      "record_id": "e986340b-e2fa-5361-a5a4-76c34fba2f9c",
+      "model": "BHS-5/1",
+      "pdf_page": 22,
+      "table_side": "left",
+      "result": "accepted"
+    },
+    {
+      "record_id": "8ce70a45-7409-565f-9ab3-f013c587f248",
+      "model": "BHS-5/2",
+      "pdf_page": 22,
+      "table_side": "right",
+      "result": "accepted"
+    },
+    {
+      "record_id": "a66ae5c2-bdab-5eab-b787-595819d36dd2",
+      "model": "BHS-6/2",
+      "pdf_page": 23,
+      "table_side": "left",
+      "result": "accepted"
+    }
+  ],
+  "held_fields": [
+    {
+      "model": "BHS-2/2",
+      "field": "output_current_max_a",
+      "reason": "Native maximum output32A does not state aggregate vs each output; retained qualified in extensions."
+    },
+    {
+      "model": "BHS-4/2",
+      "field": "output_current_max_a",
+      "reason": "Native maximum output32A does not state aggregate vs each output; retained qualified in extensions."
+    },
+    {
+      "model": "BHS-5/2",
+      "field": "output_current_max_a",
+      "reason": "Native maximum output32A does not state aggregate vs each output; retained qualified in extensions."
+    },
+    {
+      "model": "BHS-6/2",
+      "field": "output_current_max_a",
+      "reason": "Native maximum output32A does not state aggregate vs each output; retained qualified in extensions."
+    }
+  ],
+  "held_model": [
+    {
+      "pdf_page": 23,
+      "table_side": "right",
+      "result": "hold",
+      "reason": "Table BHS-1M600V vs illustration BHS-1/1M600V. Independent exact model sheet needed."
+    }
+  ],
+  "remaining_partitions": "PDF24\u201327 string boxes and larger-current box tables; full-name/current-voltage/variant review first. AC-only boxes out of PV DC-combiner scope."
+}

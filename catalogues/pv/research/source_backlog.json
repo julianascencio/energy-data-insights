@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T17:07:42.486636+00:00",
+  "updated_at": "2026-11-02T18:11:10.548509+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Occitanie exact-EIC engineering enrichment,32-label GEM operator cohort, and ten exact KSTAR models from five current C&I tables. No US bulk ingestion; selected partitions exhausted.",
-  "next_highest_value_source": "ODRE Auvergne-Rhône-Alpes PHOTV 1–5MW exact existing EIC crosswalk; KSTAR2026 Residential EN V2 exact model tables, then reviewed Chinese operator cohort. Preserve separate MaStR AC task.",
+  "selection_note": "333project enrichments from327ARA observations and30exact corporate labels;27KSTAR inverter models and9BENY combiners; Clenergy rights hold and ECB/AEMO access limits.",
+  "next_highest_value_source": "ODRE Bourgogne-Franche-Comté1–5MW unique-EIC enrichment; BENY cataloguePDF24–27; KSTAR page14 independent sheet reconciliation; preserve separate MaStRAC work.",
   "sources": [
     {
       "id": "uk_repd",
@@ -2975,6 +2975,202 @@
           74,
           75
         ]
+      }
+    },
+    {
+      "id": "odre_ara_exact_eic_1800",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Auvergne-Rh%C3%B4ne-Alpes%27",
+      "version_or_date": "2026-08-31; fresh metadata checked2November2026",
+      "licence_assessment": "Licence Ouverte2.0; existing ODRE_NOTICE retained",
+      "access_assessment": "Normal JSON export;327 explicitPHOTV1–5MW rows",
+      "estimated_useful_yield": {
+        "reviewed": 327,
+        "accepted": 77,
+        "fields": 308
+      },
+      "fields_offered": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "crosswalk evidence"
+      ],
+      "last_attempt": "2026-11-02T18:11:10.548509+00:00",
+      "result": {
+        "accepted": 77,
+        "nonunique_or_absent_canonical_eic": 147,
+        "confidential_or_anonymous": 69,
+        "non_single_phase_or_existing_extensions_review": 34
+      },
+      "retry_condition": "New revision, restored official access or independently resolved held facts/identities",
+      "next_action": "Bourgogne-Franche-Comté1–5MW exact unique canonical EIC crosswalk",
+      "processed_cursor": {
+        "region": "Auvergne-Rhône-Alpes",
+        "minimum_kw": 1000,
+        "maximum_kw_exclusive": 5000,
+        "exhausted": true,
+        "ledger": "20261102T1800_odre_review.json"
+      }
+    },
+    {
+      "id": "gem_operator_cohort_1800",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026 pinned workbook; fresh original-byte checksum reproduced",
+      "licence_assessment": "Existing GEMCCBY4.0 and source exclusions retained",
+      "access_assessment": "Fresh download; every native phase dictionary compared",
+      "estimated_useful_yield": {
+        "corporate_labels_reviewed": 30,
+        "accepted_complete_locations": 256,
+        "fields": 512
+      },
+      "fields_offered": [
+        "historical operators",
+        "all-phase agreement evidence"
+      ],
+      "last_attempt": "2026-11-02T18:11:10.548509+00:00",
+      "result": "All selected complete locations agree on one exact reviewed corporate label; no parent-company mapping",
+      "retry_condition": "New revision, restored official access or independently resolved held facts/identities",
+      "next_action": "Next China Energy Construction Guangxi, Wuling Power, Guangzhou Development and Yunnan Energy Investment exact corporate cohort",
+      "processed_cursor": {
+        "exhausted": true,
+        "ledger": "20261102T1800_operator_review.json"
+      }
+    },
+    {
+      "id": "kstar_residential_1800",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.kstarnewenergy.com/DOWNLOADS/2026%20KSTAR%20Residential%20Brochure_EN_V2.pdf",
+      "version_or_date": "2026ResidentialENV2",
+      "licence_assessment": "Individually reviewed factual values only; no open bulk grant; source PDF/prose/images not redistributed",
+      "access_assessment": "OEM PDF and support page accessible; seven exact on-grid tables visually reviewed",
+      "estimated_useful_yield": {
+        "accepted_models": 27,
+        "held_fields": 21,
+        "deferred_table_models": 5
+      },
+      "fields_offered": [
+        "AC/DC electrical",
+        "MPPT",
+        "mechanical",
+        "thermal",
+        "environment",
+        "communications",
+        "regional and option qualifiers"
+      ],
+      "last_attempt": "2026-11-02T18:11:10.548509+00:00",
+      "result": "27exact models accepted;5-model page14deferred for mislabeled MPPT rows; hybrid bundles not staged",
+      "retry_condition": "New revision, restored official access or independently resolved held facts/identities",
+      "next_action": "Review independent BluE5–12KT-M1 model sheets to resolve page14 labels; then independently reconcile hybrid configurations",
+      "processed_cursor": {
+        "pages_exhausted": [
+          9,
+          10,
+          11,
+          12,
+          13,
+          15,
+          16
+        ],
+        "ledger": "20261102T1800_equipment_review.json"
+      }
+    },
+    {
+      "id": "beny_combiner_1800",
+      "country": "CHN",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.beny.com/wp-content/uploads/2021/09/Solar-DC-AC-Box-BENY-Electric-202207-2.pdf",
+      "version_or_date": "URL revision202207-2; historical catalogue",
+      "licence_assessment": "Limited individually reviewed factual specifications; no open bulk grant; only source URL and facts committed",
+      "access_assessment": "45page raster catalogue accessible; five spreads visually reviewed, OCR used only as aid",
+      "estimated_useful_yield": {
+        "tables_reviewed": 10,
+        "accepted_models": 9,
+        "whole_model_holds": 1,
+        "field_holds": 4
+      },
+      "fields_offered": [
+        "input/output counts",
+        "voltage",
+        "enclosure",
+        "dimensions",
+        "temperature",
+        "components",
+        "qualified current assertions"
+      ],
+      "last_attempt": "2026-11-02T18:11:10.548509+00:00",
+      "result": "Nine named platforms; changeable fuse/input current remains qualified.600V model table/caption names disagree. Two-output current scope remains unresolved",
+      "retry_condition": "New revision, restored official access or independently resolved held facts/identities",
+      "next_action": "Review PDF24–27 next; preserve exact family/model/configuration identity and avoid variant products",
+      "processed_cursor": {
+        "pdf_pages": [
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "selected_partition_exhausted": true,
+        "ledger": "20261102T1800_beny_review.json"
+      }
+    },
+    {
+      "id": "clenergy_d2p120_1800",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.clenergy.com/download/eztracker-d2p120",
+      "version_or_date": "Current portal download dated2026-06-02; regional PDF URL2024-08",
+      "licence_assessment": "Terms allow personal/noncommercial documents and restrict republishing; rights hold",
+      "access_assessment": "Old global PDF404; current native linked download404; independently linked Spanish OEM PDF accessible",
+      "estimated_useful_yield": {
+        "reviewed_platforms": 1,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "structure",
+        "drive",
+        "tracking",
+        "environment",
+        "warranty"
+      ],
+      "last_attempt": "2026-11-02T18:11:10.548509+00:00",
+      "result": "Tracker remains review-only due to restrictive terms and revision/current-global crosswalk; no facts ingested",
+      "retry_condition": "New revision, restored official access or independently resolved held facts/identities",
+      "next_action": "Resolve reusable factual-data permission/revision using authoritative public clarification; no contact initiated",
+      "processed_cursor": {
+        "terms_url": "https://www.clenergy.com/terms",
+        "platform": "ezTrackerD2P120",
+        "held": true
+      }
+    },
+    {
+      "id": "ecb_aemo_access_1800",
+      "country": "NAM/AUS",
+      "entity": "projects",
+      "source_url": "https://www.ecb.org.na/licensing/",
+      "version_or_date": "ECBFebruary2026 inventory lead; AEMO30October2026 generation workbook lead",
+      "licence_assessment": "Terms not verifiable; no bulk rights assumed",
+      "access_assessment": "ECB503; AEMO403. Search independently identifies multi-record primary inventories; web open also fails",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "licence IDs",
+        "capacity",
+        "technology",
+        "status",
+        "COD",
+        "grid"
+      ],
+      "last_attempt": "2026-11-02T18:11:10.548509+00:00",
+      "result": "No candidate rows accepted; raw regulator inventory unavailable for byte verification",
+      "retry_condition": "New revision, restored official access or independently resolved held facts/identities",
+      "next_action": "Retry ordinary official downloads when service restored, then sample PV classification, terms and plant/phase identity before bulk extraction",
+      "processed_cursor": {
+        "download_ledger": "20261102T1800_alternatives.json"
       }
     }
   ]
