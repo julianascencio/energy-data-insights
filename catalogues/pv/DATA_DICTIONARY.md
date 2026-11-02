@@ -268,3 +268,32 @@ table 690 V maximum remain unresolved; no canonical maximum is selected. The
 working-temperature table omits a unit, so its native interval is retained without
 assuming Celsius. Named configurable platforms do not expand into material/voltage
 permutation records. Historical source availability is not current model availability.
+
+### REPD construction lifecycle scope
+
+`reviewed_repd_records` defaults to the existing operational ground-mounted scope.
+Construction or pre-construction requires explicit `reviewed_status="Under Construction"` or `"Awaiting Construction"` in the reviewed
+ledger/API call; `stage_pv_repd.py` passes that value and rejects other unreviewed
+lifecycle scopes. Stable IDs remain based on Ref ID, so lifecycle changes do not
+create another project. Existing populated statuses cannot be overwritten by upsert.
+
+| Source value | Canonical/research mapping | Boundary |
+| --- | --- | --- |
+| Under Construction status | `under_construction_registry_snapshot` | Historical quarter status, not current progress or operation |
+| Under Construction date | `extensions.repd.construction_start_milestone_date` | Registry milestone, not commissioning/forecast completion |
+| Operational date in a construction row | Held as contradictory | No silent downgrade or milestone choice |
+| Blank construction date | null evidence value | No fabricated day or construction year |
+| Installed Capacity (MWelec) | `capacity_unspecified_mw` | No AC/DC inference |
+| Native grid X/Y | Source-qualified extensions only | No canonical WGS84 coordinates derived |
+
+The full source identity screen still applies across all solar applications.
+Cross-catalogue name/alias and conservative geometry screens hold possible matches;
+they never merge projects automatically. Applicant/contact/address fields remain
+omitted. A reviewed ledger is required before upsert; candidates are not accepted.
+
+Awaiting-construction scope maps to `awaiting_construction_registry_snapshot` and
+rejects populated construction or operational milestones. An explicit
+`held_fields_by_ref_id` ledger may withhold `land_area_ha` while retaining the native
+source assertion and review note. Other fields/unknown Ref IDs are rejected, so a
+field hold cannot drop identity or silently override scope. Whitestones Ref17707
+uses this mechanism for the unresolved registry-versus-owner area discrepancy.

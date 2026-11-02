@@ -260,3 +260,15 @@ structure changes. Contact fields, noncorporate headings and external links are
 omitted. Same-company licences remain separate observations. Raw HTML and full
 staging output stay outside Git; the dated review commits counts and native licence
 identifiers only. No current operation, ownership, AC/DC or plant boundary is inferred.
+
+## Reviewed UK construction entries
+
+REPD now supports an explicitly reviewed ground-mounted construction cohort. The
+existing operational default remains unchanged. For a construction ledger, set
+`"reviewed_status": "Under Construction"` or `"Awaiting Construction"` alongside the pinned source checksum,
+snapshot date and individually accepted Ref IDs, then use the existing offline
+`stage_pv_repd.py` and upsert commands. The adapter keeps construction milestones
+separate from commissioning/operation, rejects contradictory operational dates and
+unreviewed lifecycle scopes, and preserves stable identities. A planning application
+is not automatically a new plant: cross-source duplicates and phase/site boundaries
+remain review requirements. See the dictionary and dated review for held candidates.

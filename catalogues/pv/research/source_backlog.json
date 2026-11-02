@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T22:38:37.762424+00:00",
+  "updated_at": "2026-11-02T23:34:59.813889+00:00",
   "ranking_file": "20261102T2200_top10_coverage.json",
-  "selection_note": "207 existing projects enriched /468 fields;16 exact GoodWe inverters and3 Suntree AC PV combiners; selected101-observation registry,81-label cohort,3 inverter tables and remaining22 scanned catalogue pages exhausted.",
-  "next_highest_value_source": "ODRE Pays de la Loire PHOTV1–5MW exact-EIC enrichment; GoodWe XS G3 official multi-model sheets after identity/revision checks. Suntree48-page historic catalogue exhausted; move to independent OEM rather than repeated variants.",
+  "selection_note": "Six new reviewed UK ground-PV projects;63 French exact-EIC enrichments/252 fields;13 exact GoodWe/Ginlong inverters; reusable explicit REPD lifecycle/field-hold mapping. 1382 unique registry observations reviewed,1313 held; no tail-operator batch repeated.",
+  "next_highest_value_source": "ODRE Occitanie PHOTV5–20MW exact-EIC enrichment after fresh metadata/identity check; UK held Ref6071 Porth Wen versus North Anglesey identity crosswalk; AEMO October2026 workbook only after ordinary access/rights recovery.",
   "sources": [
     {
       "id": "uk_repd",
@@ -4026,6 +4026,245 @@
       "processed_cursor": {
         "landing_checked": true,
         "archive_downloaded": false,
+        "accepted": 0
+      }
+    },
+    {
+      "id": "odre_pays_2300",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/",
+      "version_or_date": "31August2026;fresh metadata unchanged",
+      "licence_assessment": "Licence Ouvertev2.0; existing attribution retained",
+      "access_assessment": "Exact downloaded hashes/retrieval/errors in dated ledgers; raw documents/full staging outside Git",
+      "estimated_useful_yield": {
+        "selected_cohort_result": "Broadened the1–5MW pilot to1–20MW;170 final unique observations,63 exact single-phase enrichments/252 fields,107 held. No new French projects or AC/DC inference.",
+        "remaining_verified_yield": "unknown after exhausted partition or unresolved rights/access/identity scope"
+      },
+      "fields_offered": [
+        "grid operator",
+        "substation",
+        "industrial-service date",
+        "evidence"
+      ],
+      "last_attempt": "2026-11-02T23:34:59.813889+00:00",
+      "result": "Broadened the1–5MW pilot to1–20MW;170 final unique observations,63 exact single-phase enrichments/252 fields,107 held. No new French projects or AC/DC inference.",
+      "retry_condition": "Refresh revision/access/source-specific terms; resolve documented identity or field scope before acceptance",
+      "next_action": "Occitanie5–20MW, refresh snapshot/metadata/national identities before exact-EIC enrichment",
+      "processed_cursor": {
+        "region": "Pays de la Loire",
+        "capacity_kw": [
+          1000,
+          20000
+        ],
+        "observations": 170,
+        "accepted_enrichments": 63,
+        "held": 107,
+        "exhausted": true
+      }
+    },
+    {
+      "id": "repd_construction_2300",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Q2 2026/July extract; published3Aug2026,latest current landing",
+      "licence_assessment": "OGLv3.0 verified via official catalogue; retained notice",
+      "access_assessment": "Exact downloaded hashes/retrieval/errors in dated ledgers; raw documents/full staging outside Git",
+      "estimated_useful_yield": {
+        "selected_cohort_result": "All148 under-construction ground observations reviewed;1 accepted/147 held. Full7460-PV identity screen and canonical ID/name/alias, conservative5km/provisional-grid/token screens; no fuzzy merge.",
+        "remaining_verified_yield": "unknown after exhausted partition or unresolved rights/access/identity scope"
+      },
+      "fields_offered": [
+        "historical status",
+        "native grid",
+        "planning refs",
+        "capacity basis unspecified",
+        "area",
+        "milestones"
+      ],
+      "last_attempt": "2026-11-02T23:34:59.813889+00:00",
+      "result": "All148 under-construction ground observations reviewed;1 accepted/147 held. Full7460-PV identity screen and canonical ID/name/alias, conservative5km/provisional-grid/token screens; no fuzzy merge.",
+      "retry_condition": "Refresh revision/access/source-specific terms; resolve documented identity or field scope before acceptance",
+      "next_action": "Resolve held exact planning/site identities; Ref6071 Porth Wen versus canonical North Anglesey first, using owner/planning evidence rather than proximity alone",
+      "processed_cursor": {
+        "observations": 148,
+        "new_projects": 1,
+        "held": 147,
+        "exhausted": true,
+        "review": "20261102T2300_repd_review.json"
+      }
+    },
+    {
+      "id": "repd_awaiting_2300",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Same pinned Q2 2026 source",
+      "licence_assessment": "OGLv3.0; facts/IDs only, contacts/private held names omitted",
+      "access_assessment": "Exact downloaded hashes/retrieval/errors in dated ledgers; raw documents/full staging outside Git",
+      "estimated_useful_yield": {
+        "selected_cohort_result": "All1064 awaiting-construction ground observations reviewed;5 accepted/1059 held. Initial116-row East Midlands pilot is included, not counted again. Holds partitioned into12 region JSONL ledgers.",
+        "remaining_verified_yield": "unknown after exhausted partition or unresolved rights/access/identity scope"
+      },
+      "fields_offered": [
+        "historical pre-construction status",
+        "planning refs",
+        "native grid",
+        "capacity",
+        "area"
+      ],
+      "last_attempt": "2026-11-02T23:34:59.813889+00:00",
+      "result": "All1064 awaiting-construction ground observations reviewed;5 accepted/1059 held. Initial116-row East Midlands pilot is included, not counted again. Holds partitioned into12 region JSONL ledgers.",
+      "retry_condition": "Refresh revision/access/source-specific terms; resolve documented identity or field scope before acceptance",
+      "next_action": "Reconcile held cross-source identities or recheck on new quarterly extract; do not re-add planning variations as plants",
+      "processed_cursor": {
+        "observations": 1064,
+        "new_projects": 5,
+        "held": 1059,
+        "exhausted": true,
+        "review": "20261102T2300_repd_awaiting_review.json"
+      }
+    },
+    {
+      "id": "goodwe_solis_2300",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://en.goodwe.com/xs-g3",
+      "version_or_date": "XS20250703ENEMEAV1.1;SolisMini GlobalFlyerV3.8 exactday unknown",
+      "licence_assessment": "OEM copyright retained; limited individually reviewed facts only",
+      "access_assessment": "Exact downloaded hashes/retrieval/errors in dated ledgers; raw documents/full staging outside Git",
+      "estimated_useful_yield": {
+        "selected_cohort_result": "Two exact-model tables/13 columns accepted:6 GoodWe XS G3 and7 Ginlong/Solis Mini-M. Six generic-versus-table boost/max-power field cases held; no warranty or independent certification inference.",
+        "remaining_verified_yield": "unknown after exhausted partition or unresolved rights/access/identity scope"
+      },
+      "fields_offered": [
+        "electrical",
+        "efficiency",
+        "mechanical",
+        "environmental",
+        "controls/communications"
+      ],
+      "last_attempt": "2026-11-02T23:34:59.813889+00:00",
+      "result": "Two exact-model tables/13 columns accepted:6 GoodWe XS G3 and7 Ginlong/Solis Mini-M. Six generic-versus-table boost/max-power field cases held; no warranty or independent certification inference.",
+      "retry_condition": "Refresh revision/access/source-specific terms; resolve documented identity or field scope before acceptance",
+      "next_action": "Inspect a distinct independent OEM multi-model table, or actual Solis S6-GR3P3–10K02-NV-ND sheet after exact identity/revision review; do not follow misleading slug names",
+      "processed_cursor": {
+        "tables": 2,
+        "columns": 13,
+        "exhausted": true,
+        "review": "20261102T2300_equipment_review.json"
+      }
+    },
+    {
+      "id": "locogen_whitestones_2300",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://locogen.com/whitestones-solar-project/",
+      "version_or_date": "Project page undated; owner news4Aug2025",
+      "licence_assessment": "Publisher rights retained, limited factual one-project extraction; no full pages/prose/images",
+      "access_assessment": "Exact downloaded hashes/retrieval/errors in dated ledgers; raw documents/full staging outside Git",
+      "estimated_useful_yield": {
+        "selected_cohort_result": "9.9MW confirmed. Expected~11GWh/year, circa20000–21000 panels, approx33acres, historical Locogen owner and2027forecast retained with qualifications. Registry15100m² versus owner area remains unresolved; canonical area withheld.",
+        "remaining_verified_yield": "unknown after exhausted partition or unresolved rights/access/identity scope"
+      },
+      "fields_offered": [
+        "historical owner claim",
+        "approx expected generation",
+        "approx panel range",
+        "area scope",
+        "forecast"
+      ],
+      "last_attempt": "2026-11-02T23:34:59.813889+00:00",
+      "result": "9.9MW confirmed. Expected~11GWh/year, circa20000–21000 panels, approx33acres, historical Locogen owner and2027forecast retained with qualifications. Registry15100m² versus owner area remains unresolved; canonical area withheld.",
+      "retry_condition": "Refresh revision/access/source-specific terms; resolve documented identity or field scope before acceptance",
+      "next_action": "Inspect primary approved layout/site boundary forAPP/2025/0338 before assigning land_area_ha; no area winner or forecast commissioning date",
+      "processed_cursor": {
+        "repd_ref": "17707",
+        "area_held": true,
+        "review": "20261102T2300_area_review.json"
+      }
+    },
+    {
+      "id": "ideematec_2300",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.ideematec.com/products-services/solar-trackers/ltec-agri-pv",
+      "version_or_date": "Current linkedJune2026 Agri brochure;1P exact unchanged bytes",
+      "licence_assessment": "OEM rights retained; no canonical ingestion from brochure",
+      "access_assessment": "Exact downloaded hashes/retrieval/errors in dated ledgers; raw documents/full staging outside Git",
+      "estimated_useful_yield": {
+        "selected_cohort_result": "1P download matches registered checksum, no timestamp churn. Agri-2P brochure: farming mode up to70degrees, unit length up to135m and configurable row/height; insufficient distinct engineering depth/identity crosswalk, deferred. No thin configuration row.",
+        "remaining_verified_yield": "unknown after exhausted partition or unresolved rights/access/identity scope"
+      },
+      "fields_offered": [
+        "agrivoltaic management mode",
+        "configurable geometry",
+        "controls"
+      ],
+      "last_attempt": "2026-11-02T23:34:59.813889+00:00",
+      "result": "1P download matches registered checksum, no timestamp churn. Agri-2P brochure: farming mode up to70degrees, unit length up to135m and configurable row/height; insufficient distinct engineering depth/identity crosswalk, deferred. No thin configuration row.",
+      "retry_condition": "Refresh revision/access/source-specific terms; resolve documented identity or field scope before acceptance",
+      "next_action": "Obtain an exact Agri engineering specification and relationship to existing2P family before acceptance; farming tilt is not a normal tracking range",
+      "processed_cursor": {
+        "one_p_unchanged": true,
+        "agri_brochure_pages": 4,
+        "new_records": 0
+      }
+    },
+    {
+      "id": "phoenix_2300",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.phoenixcontact.com/en-au/products/string-combiner-box-scb-cbl-dti-grsf-scb-16st-1500v-1853931",
+      "version_or_date": "Fresh product1853931 page",
+      "licence_assessment": "OEM notice retained; technical-document terms not completed; zero ingestion",
+      "access_assessment": "Exact downloaded hashes/retrieval/errors in dated ledgers; raw documents/full staging outside Git",
+      "estimated_useful_yield": {
+        "selected_cohort_result": "Public page200, technical notes refer to Downloads; PDF control has no statichref, dynamic downloads widget includes login/extra terms metadata. No bypass/login/contact.35kg commercial fact alone insufficient for new useful row.",
+        "remaining_verified_yield": "unknown after exhausted partition or unresolved rights/access/identity scope"
+      },
+      "fields_offered": [
+        "exact box electrical",
+        "mechanical",
+        "environmental"
+      ],
+      "last_attempt": "2026-11-02T23:34:59.813889+00:00",
+      "result": "Public page200, technical notes refer to Downloads; PDF control has no statichref, dynamic downloads widget includes login/extra terms metadata. No bypass/login/contact.35kg commercial fact alone insufficient for new useful row.",
+      "retry_condition": "Refresh revision/access/source-specific terms; resolve documented identity or field scope before acceptance",
+      "next_action": "Follow an ordinary public technical-document route with terms visible; do not infer1500V/16strings from model name",
+      "processed_cursor": {
+        "page_checked": true,
+        "technical_document_downloaded": false,
+        "accepted": 0
+      }
+    },
+    {
+      "id": "aemo_2300",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "version_or_date": "Official indexed page30Oct2026 October generation-information release",
+      "licence_assessment": "Access403 prevents current document/rights inspection; no grant assumed",
+      "access_assessment": "Exact downloaded hashes/retrieval/errors in dated ledgers; raw documents/full staging outside Git",
+      "estimated_useful_yield": {
+        "selected_cohort_result": "Fresh ordinary public request403. Official search-visible landing identifies30Oct2026 October NEM workbook, replacing stale guessed April/July opportunities. Zero accepted rows; no access bypass or alternate infrastructure host.",
+        "remaining_verified_yield": "unknown after exhausted partition or unresolved rights/access/identity scope"
+      },
+      "fields_offered": [
+        "unit/site IDs",
+        "PV technology",
+        "owner",
+        "status",
+        "capacity"
+      ],
+      "last_attempt": "2026-11-02T23:34:59.813889+00:00",
+      "result": "Fresh ordinary public request403. Official search-visible landing identifies30Oct2026 October NEM workbook, replacing stale guessed April/July opportunities. Zero accepted rows; no access bypass or alternate infrastructure host.",
+      "retry_condition": "Refresh revision/access/source-specific terms; resolve documented identity or field scope before acceptance",
+      "next_action": "Retry ordinary official October2026 linked workbook when service permits; inspect licence/technology/sample and reconcile DUID/unit-to-plant identities before bulk staging",
+      "processed_cursor": {
+        "landing_status": 403,
+        "latest_indexed_release": "2026-10-30",
         "accepted": 0
       }
     }

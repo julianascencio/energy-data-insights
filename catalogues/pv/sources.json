@@ -3420,5 +3420,122 @@
     "license": "OEM copyright retained; limited reviewed factual metadata only; no full document/table/prose/artwork/OCR redistributed.",
     "access_notes": "Public current OEM download index verified in same session; checksum-pinned cached bytes from22:03 download; no form/login. Historical publication date not specified; PDF metadata not substituted.",
     "limitations": "Configurable historical catalogue platforms. Maximum input AC voltage690V in model tables differs from generic p40 code-key650V option. Conflict retained; no arbitrary voltage choice. Working-temperature unit not printed, no Celsius field inferred. No present availability or certification assertion."
+  },
+  "odre_pays_loire_1_20mw_20261102T2300": {
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C20000%20AND%20region%3D%27Pays%20de%20la%20Loire%27",
+    "sha256": "6899055d10009500809b825ed56b10e2fab74c667d8d3db4750051870c9e0749",
+    "bytes": 251955,
+    "retrieved_at": "2026-11-02T23:04:35.485519+00:00",
+    "publisher": "RTE / ODRE; Enedis and network operators",
+    "title": "National production registry: Pays de la Loire PHOTV1–20MW,31August2026 snapshot",
+    "source_date": "2026-08-31",
+    "license": "Licence Ouverte v2.0; retain ODRE_NOTICE.md attribution",
+    "locator": "Exact codeeicresourceobject in pinned JSON export, native grid/service field names",
+    "limitations": "Only unique complete single-phase EIC crosswalks enriched; registry industrial-service/grid snapshot, no new plant identity, present operation/owner or AC/DC inference."
+  },
+  "repd_q2_2026_construction_20261102T2300": {
+    "url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
+    "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+    "bytes": 5087389,
+    "retrieved_at": "2026-11-02T23:00:11.631022+00:00",
+    "publisher": "Department for Energy Security and Net Zero; compiled by Barbour ABI",
+    "title": "REPD July2026/Q2: reviewed under-construction ground photovoltaic applications",
+    "published_at": "2026-08-03",
+    "revision": "Q2 2026; reference snapshot2026-06-30",
+    "license": "UK Open Government Licence v3.0",
+    "license_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "attribution": "Contains public sector information licensed under OGLv3.0. Source: DESNZ Renewable Energy Planning Database July2026. Existing DESNZ-REPD-attribution.txt retained.",
+    "license_evidence": {
+      "url": "https://ckan.publishing.service.gov.uk/dataset/repd",
+      "sha256": "a5571bbf16431986c0696801f850edded7da7a10a74fb96b988f5882df465466",
+      "bytes": 11838,
+      "retrieved_at": "2026-11-02T22:59:44.218755+00:00"
+    },
+    "publication_evidence": {
+      "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "sha256": "3895b114e932b9d8377cedef06bb001613ecb6e34117844c3b5fafd6870f08c4",
+      "bytes": 106028,
+      "retrieved_at": "2026-11-02T22:59:44.485506+00:00"
+    },
+    "locator": "CSV Ref ID, logical CSV row including header, exact native column names; per-record extensions.repd",
+    "limitations": "Explicitly reviewed construction scope only. Planning applications are not automatically distinct physical plants. Historical construction status/milestones, not current operation or commissioning. MWelec remains AC/DC unspecified. No applicant/owner inference or canonical WGS84 coordinates."
+  },
+  "goodwe_xs_g3_20261102T2300": {
+    "url": "https://en.goodwe.com/Ftp/Downloads/Datasheet/EMEA/GW_XS-G3_Datasheet_EMEA-EN.pdf",
+    "sha256": "80c2947616d21236223e0803ee082fc050ff9754d19c918a7f6b221287ff720c",
+    "bytes": 402616,
+    "retrieved_at": "2026-11-02T22:59:43.896202+00:00",
+    "publisher": "GoodWe Technologies Co Ltd",
+    "title": "XS G3 EMEA exact0.7–3kW inverter models",
+    "version": "20250703-EN-EMEA-V1.1",
+    "locator": "PDF p1 full exact model identifiers / named series; PDF p2 exact model column and input/output/efficiency/protection/general rows, footnotes. Merged cells visually checked.",
+    "license": "OEM copyright retained. Limited individually reviewed factual metadata only; no open bulk licence asserted. Full documents/tables/prose/artwork/OCR not redistributed.",
+    "access_notes": "Public OEM-index-linked PDF. GoodWe footer/imprint and Ginlong/Solis copyright inspected; no login/form. Actual source bytes retained outside Git.",
+    "limitations": "Warranty absent, remains null. Certificate/grid compatibility are OEM claims, not independent certificate verification. Bounds/options and source wording retained. GoodWe generic110% boost hero conflicts with100% exact table maxima; no canonical maximum/boost assumption. Solis requested URL slug names another series but returned page and linked PDF explicitly identify Mini-M; only actual PDF models accepted.",
+    "source_date": "2025-07-03"
+  },
+  "solis_s6_mini_20261102T2300": {
+    "url": "https://www.solisinverters.com/uploads/file/S6-GR1P(0,7-3,6)K-Global-Flyer-V3,8.pdf",
+    "sha256": "6f8fb462ba70f2c56363321cb9c7015939df807e6c50c77d725c7af64617de03",
+    "bytes": 285735,
+    "retrieved_at": "2026-11-02T23:01:32.309586+00:00",
+    "publisher": "Ginlong Technologies Co Ltd",
+    "title": "Solis S6-GR1P(0.7–3.6)K-M exact Mini inverter models",
+    "version": "Global Flyer V3.8; date not specified",
+    "locator": "PDF p1 full exact model identifiers / named series; PDF p2 exact model column and input/output/efficiency/protection/general rows, footnotes. Merged cells visually checked.",
+    "license": "OEM copyright retained. Limited individually reviewed factual metadata only; no open bulk licence asserted. Full documents/tables/prose/artwork/OCR not redistributed.",
+    "access_notes": "Public OEM-index-linked PDF. GoodWe footer/imprint and Ginlong/Solis copyright inspected; no login/form. Actual source bytes retained outside Git.",
+    "limitations": "Warranty absent, remains null. Certificate/grid compatibility are OEM claims, not independent certificate verification. Bounds/options and source wording retained. GoodWe generic110% boost hero conflicts with100% exact table maxima; no canonical maximum/boost assumption. Solis requested URL slug names another series but returned page and linked PDF explicitly identify Mini-M; only actual PDF models accepted."
+  },
+  "repd_q2_2026_awaiting_20261102T2300": {
+    "url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
+    "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+    "bytes": 5087389,
+    "retrieved_at": "2026-11-02T23:00:11.631022+00:00",
+    "publisher": "Department for Energy Security and Net Zero; compiled by Barbour ABI",
+    "title": "REPD July2026/Q2: reviewed awaiting-construction ground photovoltaic applications",
+    "published_at": "2026-08-03",
+    "revision": "Q2 2026; reference snapshot2026-06-30",
+    "license": "UK Open Government Licence v3.0",
+    "license_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "attribution": "Contains public sector information licensed under OGLv3.0. Source: DESNZ Renewable Energy Planning Database July2026. Existing DESNZ-REPD-attribution.txt retained.",
+    "license_evidence": {
+      "url": "https://ckan.publishing.service.gov.uk/dataset/repd",
+      "sha256": "a5571bbf16431986c0696801f850edded7da7a10a74fb96b988f5882df465466",
+      "bytes": 11838,
+      "retrieved_at": "2026-11-02T22:59:44.218755+00:00"
+    },
+    "publication_evidence": {
+      "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "sha256": "3895b114e932b9d8377cedef06bb001613ecb6e34117844c3b5fafd6870f08c4",
+      "bytes": 106028,
+      "retrieved_at": "2026-11-02T22:59:44.485506+00:00"
+    },
+    "locator": "CSV Ref ID, logical CSV row including header, exact native column names; per-record extensions.repd",
+    "limitations": "Individually reviewed Awaiting Construction scope only, historical quarter status not current progress/consent/operation. Planning applications are not automatically plants; MWelec remains AC/DC unspecified. Applicant/owner roles not inferred. Native grid X/Y only, no canonical WGS84 positions."
+  },
+  "locogen_whitestones_project_20261102T2300": {
+    "url": "https://locogen.com/whitestones-solar-project/",
+    "sha256": "2a650c5ed5b4779a7755378bde9a61dc8fdad2e2a1feb0d8ac0b5e78ea8c28ee",
+    "bytes": 164499,
+    "retrieved_at": "2026-11-02T23:24:11.974482+00:00",
+    "publisher": "Locogen",
+    "title": "Whitestones solar project:9.9MW proposed PV development",
+    "license": "Publisher copyright retained; limited individually reviewed factual project metadata only, no open bulk grant, full pages/prose/images not redistributed.",
+    "locator": "Project summary bullet list; news ownership and9.9MW paragraph and2027energisation forecast",
+    "limitations": "Design/expected claims and historical owner statement, not surveyed site area, exact installed counts, measured output, current ownership verification or actual commissioning. Project source area approximately33acres differs in scale/scope from registry15100m²; canonical area withheld.",
+    "date_note": "No explicit publication date located; do not infer a date from the URL or footer."
+  },
+  "locogen_whitestones_news_20261102T2300": {
+    "url": "https://locogen.com/planning-permission-granted-for-whitestones-solar-project/",
+    "sha256": "453ebdf20c303a2e6c64faf4a2377dd180bb9bd7182dabe20a528ee1d09ee4b7",
+    "bytes": 225450,
+    "retrieved_at": "2026-11-02T23:24:11.996287+00:00",
+    "publisher": "Locogen",
+    "title": "Green light for solar project in Aberdeenshire",
+    "license": "Publisher copyright retained; limited individually reviewed factual project metadata only, no open bulk grant, full pages/prose/images not redistributed.",
+    "locator": "Project summary bullet list; news ownership and9.9MW paragraph and2027energisation forecast",
+    "limitations": "Design/expected claims and historical owner statement, not surveyed site area, exact installed counts, measured output, current ownership verification or actual commissioning. Project source area approximately33acres differs in scale/scope from registry15100m²; canonical area withheld.",
+    "source_date": "2025-08-04"
   }
 }
