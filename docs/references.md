@@ -2483,3 +2483,179 @@ Saft (2026). **Saft and Genesis enter next phase of Huntly BESS with 200 MWh ext
 **Role:** data. Primary-authored factual evidence; access limitations and locators in source register.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### dyness_tower_20240112
+
+Dyness (2024). **Tower technical specifications**. [Source](https://es.dyness.com/Public/Uploads/uploadfile/files/20250102/DynessTowerdatasheetchangguibanEN-104.pdf)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### dyness_stack100_manual_20250307
+
+Dyness Digital Energy Technology Co., Ltd. (2025). **STACK100 User Manual**. [Source](https://es.dyness.com/Public/Uploads/uploadfile/files/20250828/UMWL0G0004238STACK100UserManualENV29.pdf)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### dyness_stack100_sheet_20260520
+
+Dyness (2026). **STACK100 specifications, EU**. [Source](https://es.dyness.com/Public/Uploads/uploadfile/files/20260709/DynessSTACK100DatasheetenEU20260520-938.pdf)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### neoen_akkula_20251230
+
+Neoen (2025). **Neoen launches Finland’s first 4-hour battery in Rauma, Southwest Finland**. [Source](https://neoen.com/en/news/2025/neoen-launches-finlands-first-4-hour-battery-in-rauma-southwest-finland/)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### neoen_isbillen_site
+
+Neoen (2026). **Isbillen Power Reserve**. [Source](https://sweden.neoen.com/sv/projekt/isbillen-power-reserve/)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### neoen_isbillen_20240131
+
+Neoen (2024). **Neoen launches construction of Isbillen Power Reserve, the largest battery in Sweden**. [Source](https://neoen.com/en/news/2024/neoen-launches-construction-of-isbillen-power-reserve-the-largest-battery-in-sweden/)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ignitis_battery_portfolio_20261102
+
+Ignitis Renewables (2026). **Battery energy storage system portfolio**. [Source](https://ignitisrenewables.com/flexibility-technologies/)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ignitis_renewables_annual_2025
+
+Ignitis Renewables (2025). **Ignitis Renewables Annual Report 2025**. [Source](https://ignitisrenewables.com/wp-content/uploads/2026/04/Annual-report_Ignitis-renewables_2025_ENG-2.pdf)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ignitis_tume_20260721
+
+Ignitis Renewables (2026). **Ignitis Renewables to develop 107 MW Tume battery energy storage system in Latvia**. [Source](https://ignitisrenewables.com/ignitis-renewables-to-develop-107-mw-tume-battery-energy-storage-system-in-latvia/)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ignitis_kruonis_20260513
+
+Ignitis Gamyba (2026). **Kruonio teritorijoje energiją kaups ne tik baseinas, bet ir kaupikliai**. [Source](https://ignitisgamyba.lt/apie-mus/naujienos/kruonio-teritorijoje-energija-kaups-ne-tik-baseinas-bet-ir-kaupikliai/4858)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ignitis_bess_construction_2025
+
+Ignitis Renewables (2025). **Ignitis Group starts building battery energy storage parks in Lithuania**. [Source](https://ignitisrenewables.com/https-ignitisrenewables-com-ignitis-group-starts-building-battery-energy-storage-parks-in-lithuania/)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### neoen_storen_site
+
+Neoen (2026). **Storen Power Reserve**. [Source](https://sweden.neoen.com/sv/projekt/storen-power-reserve/)
+
+**Role:** data. Primary factual evidence; version, table/paragraph locator, source terms and byte availability in catalogue source register. Undated-page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ast_bess_opening_20251023
+
+AS Augstsprieguma tīkls (AST) (2025). **AST Battery Energy Storage Systems in Rēzekne and Tume will start providing balancing reserves**. [Source](https://ast.lv/en/events/ast-battery-energy-storage-systems-rezekne-and-tume-will-start-providing-balancing-reserves)
+
+**Role:** data. Primary factual evidence; source register records table/paragraph locator, terms and original-byte checksum. Undated page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ast_electricity_review_2025
+
+AS Augstsprieguma tīkls (AST) (2025). **Latvian electricity market review, year 2025**. [Source](https://ast.lv/en/electricity-market-review?month=13&year=2025)
+
+**Role:** data. Primary factual evidence; source register records table/paragraph locator, terms and original-byte checksum. Undated page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ast_battery_portfolio
+
+AS Augstsprieguma tīkls (AST) (2026). **Batteries — AST synchronisation projects**. [Source](https://ast.lv/en/projects/batteries)
+
+**Role:** data. Primary factual evidence; source register records table/paragraph locator, terms and original-byte checksum. Undated page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### neoen_storen_ntp_20230110
+
+Neoen (2023). **Neoen launches construction of Storen Power Reserve**. [Source](https://neoen.com/app/uploads/2023/01/2023-01-10_MR_Neoen_Startofconstruction_StorenPowerReserve.pdf)
+
+**Role:** data. Primary factual evidence; source register records table/paragraph locator, terms and original-byte checksum. Undated page year is retrieval-year grouping.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### dyness_residential_es_20240829
+
+Dyness (2024). **Residential product brochure, Spanish**. [Source](https://es.dyness.com/Public/Uploads/uploadfile/files/20250227/DynessResidentialProductBrochureES.pdf)
+
+**Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### dyness_powerbox_g2_au_20241011
+
+Dyness (2024). **Powerbox G2 technical specifications, Australian publisher download**. [Source](https://au.dyness.com/Public/Uploads/uploadfile/files/20250704/5.DynessPowerboxG2datasheetEN.pdf)
+
+**Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ignitis_kelme_nts_2026
+
+Ignitis Renewables (2026). **Kelmė Battery Energy Storage System non-technical summary**. [Source](https://ignitisrenewables.com/wp-content/uploads/2024/02/EN-Kelme_BESS_NTS_report.pdf)
+
+**Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ignitis_mazeikiai_nts_2026
+
+Ignitis Renewables (2026). **Mažeikiai Battery Energy Storage System non-technical summary**. [Source](https://ignitisrenewables.com/wp-content/uploads/2024/01/EN-Mazeikiai_BESS_NTS_report.pdf)
+
+**Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### solax_hv_s25_s36_manual_es_v00
+
+SolaX Power Network Technology (Zhejiang) Co., Ltd. (2026). **T-BAT-SYS-HV-S25 / S36 user manual, Spanish**. [Source](https://es.solaxpower.com/uploads/file/t-bat-sys-hv-s2.53.6-user-manaul-es.pdf)
+
+**Role:** data. Primary factual evidence. Exact revision, locator, terms and checksum in source register; undated manual grouped by retrieval year.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### juniper_fdre_portfolio_20261016
+
+Juniper Green Energy Limited (2026). **FDRE and BESS project portfolio**. [Source](https://www.junipergreenenergy.com/fdre/)
+
+**Role:** data. Primary factual evidence. Exact revision, locator, terms and checksum in source register; undated manual grouped by retrieval year.
+
+**Used by:** `catalogues/bess/sources.json`.
