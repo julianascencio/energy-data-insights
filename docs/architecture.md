@@ -189,8 +189,9 @@ rendering does not fit a model or change predictions. Individual site pages keep
 the fleet landing page small, and publication drafts use the same qualified
 totals shown in the dashboard.
 
-The primary scientific citation is Julián Andrés Ascencio Vásquez's 2021 PhD
-thesis. `CITATION.cff`, `references.bib` and `docs/references.md` expose citation
+Julián Andrés Ascencio Vásquez's 2021 PhD thesis inspired the project and its
+early studies. Later components extend beyond that work and document their own
+scientific sources. `CITATION.cff`, `references.bib` and `docs/references.md` expose citation
 metadata for readers and tools. The `energy_methods.references` catalogue is
 also available to analysis reports. Method-specific citations credit the
 papers actually used and distinguish background context from implemented work.

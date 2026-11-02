@@ -91,7 +91,8 @@ def _references() -> str:
         )
     return (
         '<section class="panel" id="references"><h2>References &amp; attribution</h2>'
-        '<p class="muted">The doctoral thesis is the primary scholarly reference. The catalogue '
+        '<p class="muted">The doctoral thesis inspired the project and its early studies. '
+        "Later additions have their own sources. The catalogue "
         "also records methods, data, software, standards and background literature; inclusion "
         "does not establish that every optional method or provider was used in this run.</p>"
         '<details><summary>Open the full citation catalogue</summary><ol class="references">'
@@ -692,7 +693,8 @@ def publication_drafts(
         "The report generator does not fit models, change expected generation, retrieve new "
         "measurements or publish this draft. See index.html, the site pages and manifest.json "
         "for the evidence and file hashes.\n\n"
-        f"## Primary scholarly reference\n\n{thesis}\n\n"
+        f"## Project inspiration and early foundations\n\n{thesis}\n\n"
+        "Later additions have their own sources; cite the methods and data actually used.\n\n"
         "The complete method, dataset, software and standards catalogue is in references.md "
         "and references.bib. Background and optional items are explicitly identified.\n"
     )
@@ -708,7 +710,7 @@ def publication_drafts(
         "validation, site-level differences and traceable references. Missing observations "
         "are not zero production, and an energy gap is not a confirmed fault "
         "or recoverable loss.\n\n"
-        f"Primary reference: {thesis}\n\n"
+        f"Project inspiration and early foundations: {thesis}\n\n"
         "Review the report and source provenance before publication. "
         "This text has not been posted.\n"
     )

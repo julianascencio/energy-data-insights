@@ -67,8 +67,9 @@ together to preserve links between the dashboard, site pages and downloads.
   of labels, and source-manifest paths cannot escape the analysis directory.
 - Publication text remains a draft. Generation does not publish or send anything.
 
-The main scholarly citation is Julián Andrés Ascencio Vásquez's 2021 doctoral
+The project's early studies were inspired by Julián Andrés Ascencio Vásquez's 2021 doctoral
 dissertation, *Modelling and worldwide assessment of performance and aging of
-photovoltaic modules and systems*, University of Ljubljana. The complete catalogue
+photovoltaic modules and systems*, University of Ljubljana. Later additions have
+their own sources; cite the methods and data actually used. The complete catalogue
 is taken from `energy_methods.references`; background and optional sources retain
 their explicit roles so citation does not imply implementation or data use.

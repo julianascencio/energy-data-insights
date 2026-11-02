@@ -24,6 +24,11 @@ Created by **ASVA Consulting**, Energy Data Insights provides Python tools to
 retrieve weather, climate and generation data, apply transparent PV methods,
 and turn the results into repeatable studies and reports.
 
+The project was inspired by a doctoral thesis, with the first studies and
+methods based on that research. It has since grown to include new methods,
+connectors, databases and applications beyond the thesis, each with its own
+sources and documented implementation choices.
+
 .. grid:: 1 1 3 3
    :gutter: 3
 
@@ -74,15 +79,18 @@ As the project evolves, errors or omissions may remain in the code or documentat
 Please check assumptions and results for your intended use; corrections and issue
 reports are welcome.
 
-The primary scientific reference is Julián Andrés Ascencio Vásquez (2021),
+The project's original inspiration is Julián Andrés Ascencio Vásquez (2021),
 *Modelling and worldwide assessment of performance and aging of photovoltaic
 modules and systems*, University of Ljubljana.
 `Read the thesis record <https://www.dlib.si/details/URN:NBN:SI:DOC-TMG3QFI9>`_.
 
 The :doc:`reference catalogue <_generated/guides/references>` connects the thesis,
 individual papers, software and datasets to their implementations. Cite the
-references actually used, along with the repository revision. Method adaptations,
-calibration requirements and limits are documented explicitly.
+references actually used, along with the repository revision, and cite the
+thesis for work derived from it. Later additions have their own scientific
+foundations. Method adaptations, calibration requirements and limits are
+documented explicitly. Methods use descriptive names such as **acceptance band**;
+author names are retained in citations and attribution.
 
 .. note::
 

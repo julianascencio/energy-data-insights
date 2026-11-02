@@ -13,8 +13,9 @@ validation against measured PV performance.
 | ML21 | Seven temperature, GHI and UV statistics, weighted by their fitted relationship to specific yield | Original 21-class labels plus a separately identified `fit_ml21` workflow |
 | PVCZ | Arrhenius-equivalent module temperature at 1.1 eV and mean **specific** humidity in g/kg | `equivalent_temperature`, fixed `classify_pvcz`, published 50-class catalogue |
 
-The thesis remains the repository's primary scientific citation. Cite the
-individual method and dataset authors too; see the [reference catalogue](references.md).
+The thesis inspired the project's initial climate work. JRC, ML21 and PVCZ are
+later additions with their own method and dataset sources. Cite the references
+for the schemes actually used; see the [reference catalogue](references.md).
 
 ## Published maps and new fits
 

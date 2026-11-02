@@ -156,7 +156,7 @@ or mounting claims are not invented from a name or location.
    The selected lag is applied to POA and ambient temperature; original GHI and solar
    elevation remain available for the operational screen. `fit_geometry=false` fixes
    the first metadata/default geometry and a zero lag; it does not verify that geometry.
-4. The Ascencio-Vásquez acceptance band is fitted only on eligible training data.
+4. The acceptance band is fitted only on eligible training data.
    Qualified-DC estimated PR is then gated to the inclusive interval `[0.5, 1.0]`.
    Missing qualified DC skips that PR gate with explicit provenance. Unsupported band
    fitting withholds the model; it never silently removes the filter to force a fit.
@@ -241,7 +241,9 @@ site pages. Coverage, comparison eligibility, matched observed/expected energy,
 chronological validation and hourly screening evidence are displayed separately.
 TDP evidence appears when the analysis produced it. Frozen-reference comparisons
 without saved hourly/model/TDP details show those limits explicitly. References
-include the thesis first and the works underlying the methods and data sources.
+include the thesis first as project context and the works underlying the methods
+and data sources. The thesis inspired the early studies; later analyses may use
+independent methods and sources, which should be cited for the work actually used.
 
 The TOML setting `data_kind` accepts `"synthetic"`, `"observational"` or
 `"unspecified"` (default); it describes the supplied data, not model accuracy.

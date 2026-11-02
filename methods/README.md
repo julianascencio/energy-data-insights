@@ -13,16 +13,20 @@ Source periods, input units, published labels and documented refits stay explici
 RGB aerial imagery, with automatic table/frame detection, review flags and
 geographic exports. This experimental method does not establish an as-built inventory.
 
-## Main reference and method attribution
+## Project origins and method attribution
 
-The main scientific reference is **Julián Andrés Ascencio Vásquez (2021),
+The project was inspired by **Julián Andrés Ascencio Vásquez (2021),
 _Modelling and worldwide assessment of performance and aging of photovoltaic
-modules and systems_, University of Ljubljana**. The [full catalogue](../docs/references.md)
+modules and systems_, University of Ljubljana**. The early methods build on
+that research; subsequent additions also draw on other literature and new
+project developments. The [full catalogue](../docs/references.md)
 contains the original method papers, data sources, software and standards;
 [references.bib](../references.bib) provides BibTeX. Each method exposes
 `REFERENCE_IDS`; portable fitted-state exports retain those IDs.
 
-Cite the thesis together with each method actually used. The published TDP and
+Cite the sources for each method actually used, including the thesis for work
+derived from it. Use descriptive method names such as **acceptance band** and
+**typical daily profiles**, with author names in citations. The published TDP and
 acceptance-band methods are adapted explicitly below. The shape-constrained PV
 basis is repository-specific and uses the Stark–Parker BVLS algorithm through
 SciPy. Operational screening is informed by IEC TS 63019 and does not establish
@@ -260,7 +264,7 @@ fixed irradiation thresholds and published 24-to-12 zone merging.
 `energy_methods.mapping` provides coordinate normalization, explicit regridding,
 cell areas, class summaries and bounded GeoJSON export.
 Run `energy-kgpv --help`; see [the complete workflow and assumptions](../docs/kgpv.md).
-The primary thesis citation and the specific 2019 KGPV paper are both retained.
+The thesis citation and the specific 2019 KGPV paper are both retained.
 
 ## Soiling and snow risk mapping
 
@@ -284,8 +288,8 @@ photo-degradation, thermomechanical and combined-rate equations, with an explici
 module calibration. `degradation_mapping` processes annual stresses, classifies
 total rates in 0.2%/year bins and summarizes mapped mechanisms by KGPV zone.
 Run `energy-degradation --help`; see [inputs, scientific assumptions and the
-synthetic example](../docs/degradation.md). The thesis remains the primary
-citation alongside the Kaaya model and the 2019 degradation mapping paper.
+synthetic example](../docs/degradation.md). This method follows the thesis,
+the Kaaya model and the 2019 degradation mapping paper, all of which are cited.
 
 `energy_methods.degradation_weather` supplies the published GHI-Faiman temperature
 and Wald UVA/UVB transformations used by the [applied map analysis](../analysis/src/energy_analysis/degradation/README.md).

@@ -1,8 +1,9 @@
 """One citation catalogue for the repository and generated analysis reports.
 
-The thesis is the primary scientific reference. A catalogue entry records where
-a work is used; its presence alone does not mean a particular run used its data
-or algorithm. Sources marked as background are not implementations.
+The thesis inspired the project and its early work. Later additions have their
+own sources. A catalogue entry records where a work is used; its presence alone
+does not mean a particular run used its data or algorithm. Sources marked as
+background are not implementations.
 """
 
 from __future__ import annotations
@@ -14,6 +15,8 @@ from importlib.resources import files
 from typing import cast
 from urllib.parse import quote
 
+# Retain the public identifier and catalogue order for existing report consumers.
+# The thesis provides project context, not a claim of lineage for every method.
 PRIMARY_REFERENCE_ID = "ascencio_vasquez_2021_thesis"
 
 
@@ -77,7 +80,7 @@ REFERENCES = _load()
 
 
 def get_references(ids: Iterable[str] | None = None) -> tuple[Reference, ...]:
-    """Select known IDs in catalogue order, always including the thesis first.
+    """Select known IDs, retaining the thesis first as project context.
 
     Unknown IDs fail instead of silently losing attribution. The full catalogue
     includes optional-source and background entries; consult ``role`` and
@@ -202,19 +205,19 @@ def _cff_reference(reference: Reference) -> dict[str, object]:
 
 
 def citation_cff() -> dict[str, object]:
-    """Build CFF 1.2.0 metadata with the thesis as GitHub's preferred citation."""
-    thesis = REFERENCES[0]
+    """Build software citation metadata with all scientific sources retained."""
     return {
         "cff-version": "1.2.0",
         "message": (
-            "Please cite Julián Andrés Ascencio Vásquez's doctoral thesis as the main "
-            "scientific reference, the method and data references actually used, and "
-            "the repository URL plus exact commit for software reproducibility."
+            "Please cite this software using the repository URL and exact commit, "
+            "plus the method, software and data references actually used. Cite "
+            "Julián Andrés Ascencio Vásquez's doctoral thesis for work derived from it; "
+            "it inspired the project and its early studies, while later additions "
+            "have their own scientific sources."
         ),
         "title": "energy-data-insights",
         "type": "software",
         "authors": [{"name": "energy-data-insights contributors"}],
         "repository-code": "https://github.com/julianascencio/energy-data-insights",
-        "preferred-citation": _cff_reference(thesis),
-        "references": [_cff_reference(reference) for reference in REFERENCES[1:]],
+        "references": [_cff_reference(reference) for reference in REFERENCES],
     }

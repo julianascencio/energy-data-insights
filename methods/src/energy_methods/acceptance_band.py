@@ -5,7 +5,7 @@ author software. The paper's inconsistent printed distance/roughness expressions
 are resolved explicitly in README.md. Fit receives training data only. Bounds
 depend on irradiance alone and never inspect the observations being evaluated.
 
-Main and method citations: ascencio_vasquez_2021_thesis and
+Scientific sources: ascencio_vasquez_2021_thesis and
 ascencio_vasquez_2020_modelling in energy_methods.references.
 """
 

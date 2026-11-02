@@ -14,15 +14,22 @@ from energy_methods.references import citation_cff, references_bibtex, reference
 
 INTRO = """# Scientific references and attribution
 
-## Main scientific reference
+## Project inspiration and early foundations
+
+Energy Data Insights was inspired by the following doctoral thesis, and its
+first studies and methods build on that research. The repository has since
+expanded with new methods, connectors, databases and applications beyond the
+thesis. Each component's sources and implementation boundaries are identified
+separately.
 
 **Julián Andrés Ascencio Vásquez (2021). _Modelling and worldwide assessment
 of performance and aging of photovoltaic modules and systems_. Doctoral
 dissertation, University of Ljubljana, Faculty of Electrical Engineering.**
 [Permanent national-library record](https://www.dlib.si/details/URN:NBN:SI:DOC-TMG3QFI9).
 
-The thesis is the preferred citation in the root `CITATION.cff` and appears
-first in analysis report bibliographies. Its institutional catalogue identifier
+The root `CITATION.cff` describes the software; the thesis is retained among its
+references and appears first in analysis report bibliographies as project
+context. Its institutional catalogue identifier
 is **COBISS 77808131**. The university records the defense on **21 September 2021**:
 [LPVO thesis catalogue](https://lpvo.fe.uni-lj.si/en/education/final-theses/completed/)
 and [defense announcement](https://lpvo.fe.uni-lj.si/en/2021/).
@@ -31,11 +38,16 @@ Marko Topič is the advisor, not a thesis coauthor. No thesis DOI is asserted.
 
 ## How to cite work using this repository
 
-1. Cite the thesis as the main scientific reference.
+1. Cite the repository URL and exact Git commit for the software used.
 2. Cite the individual algorithm papers, software and data sources actually used
-   by your analysis. A primary thesis citation does not replace their attribution.
-3. Cite the repository URL and exact Git commit, and retain the input hashes,
+   by your analysis, including the thesis for methods or studies derived from it.
+   Later additions have their own sources; a thesis citation does not replace them.
+3. Retain the input hashes,
    parameters, software versions and source-access timestamps in your manifest.
+
+Use descriptive method names such as **acceptance band** and **typical daily
+profiles** in prose, headings and labels. Preserve author names in citations and
+attribution, rather than adding them as method-name prefixes.
 
 The catalogue is scoped to the methods, sources and documentation used or
 discussed in this repository. It is not the thesis's complete bibliography.
