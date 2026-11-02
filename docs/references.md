@@ -2403,3 +2403,35 @@ Genesis Energy / NZX (2026). **Genesis reaches FID on Second Stage Huntly BESS**
 **Role:** data. Exact revision, hash and field evidence in BESS source registry.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### freedom_lite2_hv_202506
+
+Freedom Won (2025). **LiTE 2 Commercial HV range specifications**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-2-COMMERCIAL-HV-Range-Overview-Sheet.pdf)
+
+**Role:** data. Primary-source factual observations; source registry records access and checksum limitations.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedom_lite2_hvp_202506
+
+Freedom Won (2025). **LiTE 2 Commercial HV+ range specifications**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-2-COMMERCIAL-HV-Range-Overview-Sheet-2.pdf)
+
+**Role:** data. Primary-source factual observations; source registry records access and checksum limitations.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### edc_annual2025
+
+Energy Development Corporation (2025). **EDC 2025 Annual Report**. [Source](https://www.energy.com.ph/wp-content/uploads/2026/04/2026-ASM-Annual-Report-2025.pdf)
+
+**Role:** data. Primary-source factual observations; source registry records access and checksum limitations.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ngcp_as_202603
+
+National Grid Corporation of the Philippines (2026). **Existing ancillary services providers as of March2026**. [Source](https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf)
+
+**Role:** data. Primary-source factual observations; source registry records access and checksum limitations.
+
+**Used by:** `catalogues/bess/sources.json`.
