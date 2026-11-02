@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T18:11:10.548509+00:00",
+  "updated_at": "2026-11-02T19:11:52.235564+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "333project enrichments from327ARA observations and30exact corporate labels;27KSTAR inverter models and9BENY combiners; Clenergy rights hold and ECB/AEMO access limits.",
-  "next_highest_value_source": "ODRE Bourgogne-Franche-Comté1–5MW unique-EIC enrichment; BENY cataloguePDF24–27; KSTAR page14 independent sheet reconciliation; preserve separate MaStRAC work.",
+  "next_highest_value_source": "ODRE GrandEst PHOTV1–5MW unique single-phase EIC enrichment; independent exact combiner variant sheets; KSTAR revision reconciliation",
   "sources": [
     {
       "id": "uk_repd",
@@ -3171,6 +3171,154 @@
       "next_action": "Retry ordinary official downloads when service restored, then sample PV classification, terms and plant/phase identity before bulk extraction",
       "processed_cursor": {
         "download_ledger": "20261102T1800_alternatives.json"
+      }
+    },
+    {
+      "id": "odre_bfc_1900",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Bourgogne-Franche-Comt%C3%A9%27",
+      "version_or_date": "31August2026",
+      "licence_assessment": "Licence Ouverte2.0; ODRE notice retained",
+      "access_assessment": "Ordinary official download; original-byte checksum recorded",
+      "estimated_useful_yield": {
+        "assessment": "Selected cohort exhausted; held rows are not accepted"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environment",
+        "grid",
+        "historical operator evidence"
+      ],
+      "last_attempt": "2026-11-02T19:11:52.235564+00:00",
+      "result": "78observations:14exact single-phase crosswalks accepted/56fields;64held",
+      "retry_condition": "New source revision or independent evidence resolving held identities/fields",
+      "next_action": "Next GrandEst exact unique EIC crosswalk; retain multi-phase/anonymous holds",
+      "processed_cursor": {
+        "region": "Bourgogne-Franche-Comté",
+        "exhausted": true,
+        "ledger": "20261102T1900_odre_review.json"
+      }
+    },
+    {
+      "id": "odre_na_1910",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Nouvelle-Aquitaine%27",
+      "version_or_date": "31August2026",
+      "licence_assessment": "Licence Ouverte2.0; ODRE notice retained",
+      "access_assessment": "Ordinary official download; original-byte checksum recorded",
+      "estimated_useful_yield": {
+        "assessment": "Selected cohort exhausted; held rows are not accepted"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environment",
+        "grid",
+        "historical operator evidence"
+      ],
+      "last_attempt": "2026-11-02T19:11:52.235564+00:00",
+      "result": "432observations:0accepted;167prior-extension/phase cases,189missing/nonunique IDs,76anonymous held",
+      "retry_condition": "New source revision or independent evidence resolving held identities/fields",
+      "next_action": "Do not repeat this cohort absent independent phase evidence",
+      "processed_cursor": {
+        "region": "Nouvelle-Aquitaine",
+        "exhausted": true,
+        "ledger": "20261102T1910_odre_review.json"
+      }
+    },
+    {
+      "id": "gem_operator_1900",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026 pinned workbook",
+      "licence_assessment": "GEMCCBY4.0; existing lineage exclusions retained",
+      "access_assessment": "Ordinary official download; original-byte checksum recorded",
+      "estimated_useful_yield": {
+        "assessment": "Selected cohort exhausted; held rows are not accepted"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environment",
+        "grid",
+        "historical operator evidence"
+      ],
+      "last_attempt": "2026-11-02T19:11:52.235564+00:00",
+      "result": "54exact corporate labels;246complete locations/492fields; all native phases match",
+      "retry_condition": "New source revision or independent evidence resolving held identities/fields",
+      "next_action": "Next exact corporate cohort; no individual/private labels or parent-company collapse",
+      "processed_cursor": {
+        "exhausted": true,
+        "ledger": "20261102T1900_operator_review.json"
+      }
+    },
+    {
+      "id": "kstar_manual_1900",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://es.kstarnewenergy.com/DOWNLOADS/User%20Manual_BluE-%283-25%29KT-M1_EN_V1.0.pdf",
+      "version_or_date": "UndatedENV1.0",
+      "licence_assessment": "Limited individually reviewed factual values only; no open bulk grant",
+      "access_assessment": "Ordinary official download; original-byte checksum recorded",
+      "estimated_useful_yield": {
+        "assessment": "Selected cohort exhausted; held rows are not accepted"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environment",
+        "grid",
+        "historical operator evidence"
+      ],
+      "last_attempt": "2026-11-02T19:11:52.235564+00:00",
+      "result": "15model columns:7new exact models;8existing columns held for revision differences",
+      "retry_condition": "New source revision or independent evidence resolving held identities/fields",
+      "next_action": "Resolve620V/650V and180V/250V revision differences before existing-model enrichment",
+      "processed_cursor": {
+        "pages": [
+          25,
+          26,
+          27
+        ],
+        "exhausted": true,
+        "ledger": "20261102T1900_manual_review.json"
+      }
+    },
+    {
+      "id": "beny_remaining_1900",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.beny.com/wp-content/uploads/2021/09/Solar-DC-AC-Box-BENY-Electric-202207-2.pdf",
+      "version_or_date": "Historical URL202207-2",
+      "licence_assessment": "OEM rights retained; no document republication",
+      "access_assessment": "Ordinary official download; original-byte checksum recorded",
+      "estimated_useful_yield": {
+        "assessment": "Selected cohort exhausted; held rows are not accepted"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environment",
+        "grid",
+        "historical operator evidence"
+      ],
+      "last_attempt": "2026-11-02T19:11:52.235564+00:00",
+      "result": "7tables held; reused names/contradictory hardware, no canonical additions",
+      "retry_condition": "New source revision or independent evidence resolving held identities/fields",
+      "next_action": "Independent exact variant sheets or new OEM catalogue; avoid unnamed configurable variants",
+      "processed_cursor": {
+        "pages": [
+          24,
+          25,
+          26,
+          27
+        ],
+        "exhausted": true,
+        "ledger": "20261102T1900_equipment_review.json"
       }
     }
   ]

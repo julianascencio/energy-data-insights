@@ -1,0 +1,146 @@
+{
+  "source_id": "kstar_res_en_v2_2026_20261102T1800",
+  "accepted_models": [
+    "BluE-5KT-M1",
+    "BluE-6KT-M1",
+    "BluE-8KT-M1",
+    "BluE-10KT-M1",
+    "BluE-12KT-M1"
+  ],
+  "accepted_count": 5,
+  "decision": "Prior whole-table hold narrowed explicitly to disputed fields after visual row-by-row review; no disputed value selected. Independent product page lacks directly extractable PDF links; full MPPT reconciliation remains deferred.",
+  "held_fields": [
+    {
+      "model": "BluE-5KT-M1",
+      "field": "mppt_count",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-5KT-M1",
+      "field": "strings_per_mppt",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-5KT-M1",
+      "field": "mppt_min_v/mppt_max_v",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-5KT-M1",
+      "field": "surge_protection",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-6KT-M1",
+      "field": "mppt_count",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-6KT-M1",
+      "field": "strings_per_mppt",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-6KT-M1",
+      "field": "mppt_min_v/mppt_max_v",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-6KT-M1",
+      "field": "surge_protection",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-8KT-M1",
+      "field": "mppt_count",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-8KT-M1",
+      "field": "strings_per_mppt",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-8KT-M1",
+      "field": "mppt_min_v/mppt_max_v",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-8KT-M1",
+      "field": "surge_protection",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-10KT-M1",
+      "field": "mppt_count",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-10KT-M1",
+      "field": "strings_per_mppt",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-10KT-M1",
+      "field": "mppt_min_v/mppt_max_v",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-10KT-M1",
+      "field": "surge_protection",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-12KT-M1",
+      "field": "mppt_count",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-12KT-M1",
+      "field": "strings_per_mppt",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-12KT-M1",
+      "field": "mppt_min_v/mppt_max_v",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    },
+    {
+      "model": "BluE-12KT-M1",
+      "field": "surge_protection",
+      "reason": "Unresolved row-label/units or SPD hero/table contradiction; omitted, no reinterpretation."
+    }
+  ],
+  "beny": {
+    "source_sha256": "d7c3689543ac781b855980b3a5f8551e7fe8f8c01f9892e74ecfed398804b638",
+    "pdf_pages_reviewed": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "candidate_tables": 7,
+    "accepted": 0,
+    "holds": [
+      {
+        "page": 24,
+        "tables": 2,
+        "reason": "Both tables use BHS-2M600V but differ in output counts; caption uses other model spellings. Exact purchasable identity unresolved."
+      },
+      {
+        "pages": [
+          25,
+          26
+        ],
+        "tables": 4,
+        "reason": "BHS-1/1 and BHS-2/2 names repeat prior accepted platforms with different dimensions, SPD and component arrangements. Hardware variant IDs absent; do not duplicate/overwrite."
+      },
+      {
+        "page": 27,
+        "tables": 1,
+        "reason": "DC+AC assembly repeats BHS-1/1 name; missing unique variant identifier. Hold complete model."
+      }
+    ]
+  },
+  "next": "Independent KSTAR BluE(3\u201325)KT-M1 manual tables and exact BENY variant datasheets; do not auto-correct table labels."
+}
