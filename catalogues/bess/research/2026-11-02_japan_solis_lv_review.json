@@ -1,0 +1,192 @@
+{
+  "started_at": "2026-11-02T11:49:39Z",
+  "base_head": "6faabe0f00d0532f35bffc8c91d0522d7b5da0ed",
+  "accepted": {
+    "bess": [
+      {
+        "id": "9f478127-fbe9-50da-bf47-9cc23cb5a710",
+        "name": "Fukushima Nihonmatsu BESS",
+        "sources": [
+          "itochu_20261102_1150"
+        ]
+      },
+      {
+        "id": "0d86f988-258d-5d4e-beff-42b5d322eecb",
+        "name": "Fukuoka Akasaka BESS",
+        "sources": [
+          "itochu_20261102_1150"
+        ]
+      },
+      {
+        "id": "b6350fd6-f5ea-5b8d-a754-57acc4233a60",
+        "name": "Mie Nishitoyohama BESS",
+        "sources": [
+          "itochu_20261102_1150"
+        ]
+      },
+      {
+        "id": "e877b541-97db-540b-91d1-9ac1254b3081",
+        "name": "Hokkaido Eniwa BESS",
+        "sources": [
+          "itochu_20261102_1150"
+        ]
+      },
+      {
+        "id": "77774eeb-a8d8-59d8-8edc-d6bcf46bd7b3",
+        "name": "Miyagi Shiroishi Libra BESS",
+        "sources": [
+          "itochu_20261102_1150"
+        ]
+      },
+      {
+        "id": "e8dfb846-6f15-5bf2-a0ae-4ca86e1c7e83",
+        "name": "Aomori Shinjo BESS",
+        "sources": [
+          "itochu_20261102_1150"
+        ]
+      },
+      {
+        "id": "28b86661-fb04-5233-b8e9-346efaaa2e4f",
+        "name": "Miyagi Shiroishi Obara BESS",
+        "sources": [
+          "shiroishi_20261102_1150"
+        ]
+      },
+      {
+        "id": "5ed96e3f-bda8-575f-9f80-030fe10fcfd0",
+        "name": "Fukuoka Chikuzen 67 MW BESS",
+        "sources": [
+          "chikuzen_20261102_1150"
+        ]
+      }
+    ],
+    "bess_oem": [
+      {
+        "id": "b3ff17a8-cc44-593b-ba67-4d3ccdef93ec",
+        "name": "Solis S6-EH1P3K-L-EU",
+        "sources": [
+          "eu_20261102_1150"
+        ]
+      },
+      {
+        "id": "6700095d-bc59-53cd-a7cf-5935d26cb159",
+        "name": "Solis S6-EH1P3.6K-L-EU",
+        "sources": [
+          "eu_20261102_1150"
+        ]
+      },
+      {
+        "id": "4f641631-1f54-5f65-8e09-c58b3c18b709",
+        "name": "Solis S6-EH1P4.6K-L-EU",
+        "sources": [
+          "eu_20261102_1150"
+        ]
+      },
+      {
+        "id": "0a39fcdc-055a-5928-8a0d-3eee055d1cc3",
+        "name": "Solis S6-EH1P5K-L-EU",
+        "sources": [
+          "eu_20261102_1150"
+        ]
+      },
+      {
+        "id": "e1a9374c-9a07-5702-bc62-07b2297538d8",
+        "name": "Solis S6-EH1P6K-L-EU",
+        "sources": [
+          "eu_20261102_1150"
+        ]
+      },
+      {
+        "id": "19c2e0cc-b8de-51e2-85a0-4f25cad14c32",
+        "name": "Solis S6-EH1P3K-L-PRO",
+        "sources": [
+          "pro_20261102_1150"
+        ]
+      },
+      {
+        "id": "87f6a0d1-3f33-50ec-b28f-9136a95740e7",
+        "name": "Solis S6-EH1P3.6K-L-PRO",
+        "sources": [
+          "pro_20261102_1150"
+        ]
+      },
+      {
+        "id": "fd1aef57-0d7e-5190-97e7-fd5ffa1e583b",
+        "name": "Solis S6-EH1P5K-L-PRO",
+        "sources": [
+          "pro_20261102_1150"
+        ]
+      },
+      {
+        "id": "de20fe51-aa6a-5142-ab4e-044e207938be",
+        "name": "Solis S6-EH1P6K-L-PRO",
+        "sources": [
+          "pro_20261102_1150"
+        ]
+      }
+    ]
+  },
+  "new_projects": 8,
+  "new_models": 9,
+  "existing_records_enriched": 0,
+  "whole_records_rejected": 0,
+  "quarantined_fields": 0,
+  "withheld_fields": [
+    "EU datasheet dimension axis normalization: literal tuple retained in extensions"
+  ],
+  "held_candidates": [
+    "Susono: portfolio incorrectly labels Tokyo; await exact site primary evidence",
+    "Naie: seek project-specific location and ownership evidence",
+    "Yufu: avoid conflation with ORIX 70 MW site"
+  ],
+  "identity_decisions": [
+    "Libra 45 MW Shiroishi at Fukuoka Nagafukuro differs from 20 MW Obara site and owner",
+    "Libra 40 MW Akasaka differs from separate 67 MW Chikuzen joint venture",
+    "No new project matches existing Minami-Hayakita or Kasama; all incoming names/addresses distinct"
+  ],
+  "exclusions": [
+    "174 MW consortium aggregate not a ninth project",
+    "JPY30 billion is portfolio cost, never allocated as project capex"
+  ],
+  "source_bytes": {
+    "eu": {
+      "url": "https://www.ginlong.com/uploads/file/Datasheet_S6-EH1P%283-6%29K-L-EU_ESP.pdf",
+      "status": 200,
+      "sha256": "416a828c6fbee566ed4e4cc79257df5205bc1f2c22dc124a9230aef886170bd1",
+      "retrieved_at": "2026-11-02T11:51:09.053971+00:00"
+    },
+    "pro": {
+      "url": "https://www.solisinverters.au/uploads/files/202407/Solis%20datasheet_S6-EH1P%283-6%29K-L-PRO_AUS_V1.7_202407.pdf",
+      "status": 200,
+      "sha256": "5b7b9bee9090b70f9d32236c1b6cc0ac36b603ccd2cbe67fbbffa81e7414088d",
+      "retrieved_at": "2026-11-02T11:51:17.279248+00:00"
+    },
+    "portfolio": {
+      "url": "https://www.gorestreetcap.com/investment-portfolio/",
+      "status": 200,
+      "sha256": "9f5b38f46b32f80e8ed97a83c877ac8c5b3e3f89391ca82f53e69579f4690c34",
+      "retrieved_at": "2026-11-02T11:51:26.545974+00:00"
+    },
+    "itochu": {
+      "url": "https://www.itochu-bluestorage.com/common/file/20260403.pdf",
+      "status": 200,
+      "sha256": "d5f57d368b2f3074d9505490edbdaec305a248ca1426a90a3217f9ab16298927",
+      "retrieved_at": "2026-11-02T11:51:30.855053+00:00"
+    },
+    "shiroishi": {
+      "url": "https://www.itochu-bluestorage.com/common/file/20260828.pdf",
+      "status": 200,
+      "sha256": "8b8f7aa736ff9518d029310c68123f764534193df414dbc48c2739dfa7c7e8eb",
+      "retrieved_at": "2026-11-02T11:52:13.306537+00:00"
+    },
+    "chikuzen": {
+      "url": "https://www.itochu-bluestorage.com/common/file/20260601.pdf",
+      "status": 200,
+      "sha256": "310d6edbb6d826794f27ce10a1aa74ee0ac0d48ed580d0df09ac334d13122d0e",
+      "retrieved_at": "2026-11-02T11:52:16.830890+00:00"
+    }
+  },
+  "initial_pr": 68,
+  "publication_base_main": "213b573e74fa2bf7072ff5d3b9b367f55fadea24",
+  "workflow_note": "PR68 merged externally during validation; branch fast-forwarded to current main; publish to fresh PR."
+}
