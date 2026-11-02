@@ -1,0 +1,89 @@
+"""
+Data centers: geography, capacity completeness, cooling and equipment
+=====================================================================
+
+Rebuild the two connected JSONL catalogues into immutable Parquet. Four views
+show coverage and missingness without treating campuses as additional buildings,
+converting grid MW into IT MW, or equating accelerator limits with server input.
+See the :doc:`interactive viewer </data-center-database-viewer>` for field evidence.
+"""
+
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+from energy_data_retrieval.data_center_catalogue import (
+    build_parquet,
+    capacity_summary,
+    load_records,
+)
+
+ROOT = next(
+    p for p in (Path.cwd(), *Path.cwd().parents) if (p / "catalogues/data_centers").is_dir()
+)
+with TemporaryDirectory() as folder:
+    snapshot = Path(folder) / "data-centers"
+    manifest = build_parquet(ROOT / "catalogues/data_centers", snapshot)
+    projects = pd.read_parquet(snapshot / "projects.parquet")
+    equipment = pd.read_parquet(snapshot / "equipment.parquet")
+
+print("Input fingerprint:", manifest["input_sha256"])
+print("Project scopes:", projects.record_scope.value_counts().to_dict())
+print("Capacity summaries keep rating bases separate:")
+rows = load_records(ROOT / "catalogues/data_centers")
+for field in ("it_capacity_mw", "grid_capacity_mw", "facility_capacity_mw"):
+    print(field, capacity_summary(rows, field))
+
+# %%
+# Geographic coverage: campus and facility counts remain visually distinct.
+fig, axes = plt.subplots(2, 2, figsize=(15, 11), layout="constrained")
+coverage = projects.groupby(["country_code", "record_scope"]).size().unstack(fill_value=0)
+coverage.plot.barh(stacked=True, ax=axes[0, 0], color=["#a5c8d4", "#167d9a"])
+axes[0, 0].set(
+    xlabel="Catalogue records; not market share",
+    ylabel="Country",
+    title="Geographic coverage by scope",
+)
+
+# %%
+# Count reported capacities; null is not zero, and the three MW boundaries differ.
+fields = ["it_capacity_mw", "grid_capacity_mw", "facility_capacity_mw"]
+completeness = pd.DataFrame(
+    {"Reported": projects[fields].notna().sum(), "Unknown": projects[fields].isna().sum()}
+)
+completeness.index = ["IT", "Grid", "Facility"]
+completeness.plot.barh(stacked=True, ax=axes[0, 1], color=["#167d9a", "#dedede"])
+axes[0, 1].set(
+    xlabel="Records (all scopes)",
+    ylabel="Capacity boundary",
+    title="Capacity completeness; no inferred values",
+)
+
+# %%
+# Cooling descriptions preserve technologies; missing values remain an explicit group.
+cooling = projects.cooling_technology.fillna("Unknown").value_counts().sort_values()
+cooling.plot.barh(ax=axes[1, 0], color="#3d9c87")
+axes[1, 0].set(
+    xlabel="Records",
+    ylabel="Reported description",
+    title="Cooling coverage; no deployment inference",
+)
+
+# %%
+# Like-for-like comparison: accelerator limits in W only. Do not include server kW.
+gpus = equipment.loc[
+    equipment.equipment_category.eq("gpu_accelerator") & equipment.accelerator_power_w.notna()
+].sort_values("accelerator_power_w")
+axes[1, 1].barh(gpus["name"], gpus.accelerator_power_w, color="#b58a45")
+axes[1, 1].set(
+    xlabel="Published maximum accelerator power (W)",
+    title="Exact GPU variants; configurable limits, not measured draw",
+)
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("server"), ["name", "input_power_kw", "power_conditions"]
+    ].to_string(index=False)
+)
+plt.show()

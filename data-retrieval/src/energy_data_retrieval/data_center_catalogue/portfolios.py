@@ -112,3 +112,90 @@ def parse_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
         "candidates": candidates,
         "review_required": True,
     }
+
+
+class _PueTables(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.heading = False
+        self.cell = False
+        self.text: list[str] = []
+        self.year: int | None = None
+        self.quarter: int | None = None
+        self.row: list[str] = []
+        self.table: list[list[str]] | None = None
+        self.tables: list[tuple[int | None, int | None, list[list[str]]]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "h2":
+            self.heading, self.text = True, []
+        elif tag == "table":
+            self.table = []
+        elif tag == "tr" and self.table is not None:
+            self.row = []
+        elif tag in {"td", "th"} and self.table is not None:
+            self.cell, self.text = True, []
+
+    def handle_data(self, data: str) -> None:
+        if self.heading or self.cell:
+            self.text.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        text = " ".join(" ".join(self.text).split())
+        if tag == "h2":
+            self.heading = False
+            if match := re.fullmatch(r"(\d{4}) PUE Yearly Report", text):
+                self.year, self.quarter = int(match[1]), None
+            elif match := re.fullmatch(r"Quarter 0?([1-4])", text):
+                self.quarter = int(match[1])
+        elif tag in {"td", "th"} and self.cell:
+            self.cell = False
+            self.row.append(text)
+        elif tag == "tr" and self.table is not None:
+            self.table.append(self.row)
+        elif tag == "table" and self.table is not None:
+            self.tables.append((self.year, self.quarter, self.table))
+            self.table = None
+
+
+def parse_google_pue(content: bytes, *, year: int, quarter: int) -> dict[str, Any]:
+    """Stage one explicitly selected complete campus table, preserving precision.
+
+    Empty TTM cells stay null. Fleet-wide numbers never become campus records.
+    No IT capacity, commissioning date or individual building identity is inferred.
+    """
+    if quarter not in {1, 2, 3, 4}:
+        raise ValueError("Quarter must be 1..4")
+    parser = _PueTables()
+    parser.feed(content.decode("utf-8-sig"))
+    selected = [rows for y, q, rows in parser.tables if (y, q) == (year, quarter)]
+    if len(selected) != 1:
+        raise ValueError("Expected exactly one selected Google PUE table")
+    table = selected[0]
+    header = ["Campuses", "Quarterly PUE", "Trailing twelve-month (TTM) PUE"]
+    if len(table) < 4 or table[2] != header or table[1][0] != "Fleet":
+        raise ValueError("Changed Google PUE table headers")
+    candidates = []
+    for cells in table[3:]:
+        if len(cells) != 3 or not cells[0] or not cells[1]:
+            raise ValueError("Incomplete Google PUE campus row")
+        for value in cells[1:]:
+            if value and (not re.fullmatch(r"\d+(?:\.\d+)?", value) or float(value) < 1):
+                raise ValueError("Invalid measured PUE")
+        candidates.append(
+            {
+                "campus": cells[0],
+                "quarterly_pue_text": cells[1],
+                "ttm_pue_text": cells[2] or None,
+                "locator": f"{year} / Quarter {quarter:02d} / Campuses / {cells[0]}",
+            }
+        )
+    if len({r["campus"] for r in candidates}) != len(candidates):
+        raise ValueError("Duplicate campus row")
+    return {
+        "year": year,
+        "quarter": quarter,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }

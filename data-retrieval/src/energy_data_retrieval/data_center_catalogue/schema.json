@@ -671,6 +671,12 @@
     "liquid_cooling_ready": {
       "type": "bool",
       "description": "Explicit technical readiness; not verified installed GPUs or deployed liquid cooling."
+    },
+    "technical_area_m2": {
+      "type": "float",
+      "minimum": 0,
+      "unit": "m2",
+      "description": "Operator-reported technical space; not assumed identical to building or data-hall area."
     }
   }
 }

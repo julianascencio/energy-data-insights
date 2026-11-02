@@ -489,3 +489,19 @@ performance certification.
 uv run python -m energy_data_retrieval.bess_oem_catalogue validate
 uv run python -m energy_data_retrieval.bess_oem_catalogue build --output artifacts/bess-oem-v1
 ```
+
+## Global Data Center Database
+
+The [Data Center catalogue](catalogues/data_centers/README.md) adds two connected
+JSONL/Parquet tables: **93 project records in 17 countries** (45 facilities and
+48 campus aggregates) and **21 exact OEM models/configurations from four suppliers**.
+IT, grid and facility capacities, rating bases, dated efficiency measurements and
+source evidence remain separate. Unresolved values stay null; campus totals do
+not inflate facility capacity summaries. No existing PV/BESS API is replaced.
+
+Explore [Data Center Projects](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
+and [Data Center Equipment](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment),
+the [usage guide](docs/data-center-catalogue.md),
+[runnable examples](examples/database/plot_data_center_catalogue.py), and
+[research backlog](catalogues/data_centers/research/backlog.json).
+Viewer links become public after merge and documentation deployment.

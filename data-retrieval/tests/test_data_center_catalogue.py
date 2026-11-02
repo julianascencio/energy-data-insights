@@ -177,3 +177,39 @@ def test_offline_inventory_parsers_preserve_uncertainty_and_allowlist_fields():
         parse_portfolio(b"<html></html>", source_url="https://odatadc.com/localidades/")
     with pytest.raises(ValueError, match="Unsupported"):
         parse_portfolio(b"", source_url="https://example.com")
+
+
+def test_pue_table_selection_preserves_period_precision_and_empty_ttm():
+    from energy_data_retrieval.data_center_catalogue.portfolios import parse_google_pue
+
+    content = (FIXTURES / "google-pue.html").read_bytes()
+    data = parse_google_pue(content, year=2026, quarter=2)
+    assert len(data["candidates"]) == 2
+    assert data["candidates"][0]["quarterly_pue_text"] == "1.10"
+    assert data["candidates"][0]["ttm_pue_text"] is None
+    with pytest.raises(ValueError, match="exactly one"):
+        parse_google_pue(content, year=2026, quarter=1)
+    with pytest.raises(ValueError, match="Invalid measured"):
+        parse_google_pue(content.replace(b"1.10", b"0.9"), year=2026, quarter=2)
+
+
+@pytest.mark.parametrize(
+    "field,value,error",
+    [
+        ("estimates_json", {"it_capacity_mw": {"value": 1}}, "method and uncertainty"),
+        ("certifications_json", {"tier": {"certificate": "Tier IV"}}, "issuer, scope, date"),
+        ("renewable_supply_json", {"renewable": "100%"}, "Separate physical"),
+    ],
+)
+def test_unbounded_estimates_certificates_and_supply_claims_fail(catalogue, field, value, error):
+    rows, sources = catalogue
+    row = copy.deepcopy(next(r for r in rows if r["entity_type"] == "projects"))
+    row[field] = json.dumps(value)
+    fs = json.loads(row["field_sources_json"])
+    fs[field] = row["sources"]
+    row["field_sources_json"] = json.dumps(fs)
+    evidence = json.loads(row["evidence_json"])
+    evidence[field] = {"locator": "synthetic invalid claim", "confidence": "low"}
+    row["evidence_json"] = json.dumps(evidence)
+    with pytest.raises(ValueError, match=error):
+        validate_record(row, sources)

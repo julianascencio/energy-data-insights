@@ -4439,3 +4439,387 @@ Asian Development Bank (2026). **ADB Uzbekistan IATI activities**. [Source](http
 **Role:** data. Activity IDs 57212-001-LN4380, 58338-001-LN4611, 58094-001-LN4661, 54056-003-GRNT4678; title, description, implementing entity, status/date fields; SHA256 34410bad5c2dd8c4ce96c60900618b1eeee6909887355c6a1fbc03b532954c43
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### dc_nextdc_20261102
+
+NEXTDC (n.d.). **Data Centres: complete displayed portfolio**. [Source](https://www.nextdc.com/data-centres)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_s1_sydney_20261102
+
+NEXTDC (n.d.). **NEXTDC S1 facility specifications**. [Source](https://www.nextdc.com/data-centres/sydney-data-centres/s1-sydney)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_s2_sydney_20261102
+
+NEXTDC (n.d.). **NEXTDC S2 facility specifications**. [Source](https://www.nextdc.com/data-centres/sydney-data-centres/s2-sydney)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_s3_sydney_20261102
+
+NEXTDC (n.d.). **NEXTDC S3 facility specifications**. [Source](https://www.nextdc.com/data-centres/sydney-data-centres/s3-sydney)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_s4_sydney_20261102
+
+NEXTDC (n.d.). **NEXTDC S4 facility specifications**. [Source](https://www.nextdc.com/data-centres/sydney-data-centres/s4-sydney)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_s5_sydney_20261102
+
+NEXTDC (n.d.). **NEXTDC S5 facility specifications**. [Source](https://www.nextdc.com/data-centres/sydney-data-centres/s5-sydney)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_s6_sydney_20261102
+
+NEXTDC (n.d.). **NEXTDC S6 facility specifications**. [Source](https://www.nextdc.com/data-centres/sydney-data-centres/s6-sydney)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_s7_sydney_20261102
+
+NEXTDC (n.d.). **NEXTDC S7 facility specifications**. [Source](https://www.nextdc.com/data-centres/sydney-data-centres/s7-sydney)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_m1_melbourne_20261102
+
+NEXTDC (n.d.). **NEXTDC M1 facility specifications**. [Source](https://www.nextdc.com/data-centres/melbourne-data-centres/m1-melbourne)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_m2_melbourne_20261102
+
+NEXTDC (n.d.). **NEXTDC M2 facility specifications**. [Source](https://www.nextdc.com/data-centres/melbourne-data-centres/m2-melbourne)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_m3_melbourne_20261102
+
+NEXTDC (n.d.). **NEXTDC M3 facility specifications**. [Source](https://www.nextdc.com/data-centres/melbourne-data-centres/m3-melbourne)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_ge1_geelong_20261102
+
+NEXTDC (n.d.). **NEXTDC GE1 facility specifications**. [Source](https://www.nextdc.com/data-centres/geelong-data-centres/ge1-geelong)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_m4_melbourne_20261102
+
+NEXTDC (n.d.). **NEXTDC M4 facility specifications**. [Source](https://www.nextdc.com/data-centres/melbourne-data-centres/m4-melbourne)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_b1_brisbane_20261102
+
+NEXTDC (n.d.). **NEXTDC B1 facility specifications**. [Source](https://www.nextdc.com/data-centres/brisbane-data-centres/b1-brisbane)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_b2_brisbane_20261102
+
+NEXTDC (n.d.). **NEXTDC B2 facility specifications**. [Source](https://www.nextdc.com/data-centres/brisbane-data-centres/b2-brisbane)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_gc1_gold_coast_20261102
+
+NEXTDC (n.d.). **NEXTDC GC1 facility specifications**. [Source](https://www.nextdc.com/data-centres/gold-coast-data-centres/gc1-gold-coast)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_p1_perth_20261102
+
+NEXTDC (n.d.). **NEXTDC P1 facility specifications**. [Source](https://www.nextdc.com/data-centres/perth-data-centres/p1-perth)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_p2_perth_20261102
+
+NEXTDC (n.d.). **NEXTDC P2 facility specifications**. [Source](https://www.nextdc.com/data-centres/perth-data-centres/p2-perth)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_a1_adelaide_20261102
+
+NEXTDC (n.d.). **NEXTDC A1 facility specifications**. [Source](https://www.nextdc.com/data-centres/adelaide-data-centre/a1-adelaide)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_c1_canberra_20261102
+
+NEXTDC (n.d.). **NEXTDC C1 facility specifications**. [Source](https://www.nextdc.com/data-centres/canberra-data-centres/c1-canberra)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_d1_darwin_20261102
+
+NEXTDC (n.d.). **NEXTDC D1 facility specifications**. [Source](https://www.nextdc.com/data-centres/darwin-data-centres/d1-darwin)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_d2_darwin_20261102
+
+NEXTDC (n.d.). **NEXTDC D2 facility specifications**. [Source](https://www.nextdc.com/data-centres/darwin-data-centres/d2-darwin)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_sc1_sunshine_coast_20261102
+
+NEXTDC (n.d.). **NEXTDC SC1 facility specifications**. [Source](https://www.nextdc.com/data-centres/sunshine-coast-data-centres/sc1-sunshine-coast)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nextdc_sc2_sunshine_coast_20261102
+
+NEXTDC (n.d.). **NEXTDC SC2 facility specifications**. [Source](https://www.nextdc.com/data-centres/sunshine-coast-data-centres/sc2-sunshine-coast)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_odata_pt_20261102
+
+ODATA (n.d.). **Complete public location-map inventory**. [Source](https://odatadc.com/localidades/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_odata_brazil_20261102
+
+ODATA (n.d.). **Brazil named campus overview and technology**. [Source](https://odatadc.com/localidades-brasil/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_teraco_jb1_20261102
+
+Teraco (n.d.). **Johannesburg Isando and Bredell named facilities**. [Source](https://www.teraco.co.za/data-centre-locations/johannesburg/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_teraco_ct2_20261102
+
+Teraco (n.d.). **Cape Town CT1 and CT2 facilities**. [Source](https://www.teraco.co.za/data-centre-locations/cape-town/?tab=brackenfell-ct2)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_teraco_db1_20261102
+
+Teraco (n.d.). **Durban DB1 facility**. [Source](https://www.teraco.co.za/data-centre-locations/durban/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_gdh_dubai_20261102
+
+Gulf Data Hub (n.d.). **Dubai named facilities and lifecycle**. [Source](https://www.gulfdatahub.ae/dubai)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_gdh_abu_dhabi_20261102
+
+Gulf Data Hub (n.d.). **Abu Dhabi ICAD and KIZAD facilities**. [Source](https://www.gulfdatahub.ae/abuDhabi)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_khazna_auh6_20261102
+
+Khazna (2024). **AUH6 launch and physical solar supply**. [Source](https://khaznadatacenters.com/press-release/khazna-data-centers-fuels-uaes-digital-future-with-the-launch-of-hyperscale-ai-ready-data-center-in-masdar-city/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_google_efficiency_20261102
+
+Google (n.d.). **Power usage effectiveness: 2026 Q2 complete campus table**. [Source](https://www.datacenters.google/efficiency/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_google_fredericia_20261102
+
+Google (n.d.). **Fredericia location**. [Source](https://www.datacenters.google/locations/fredericia-denmark/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_google_hamina_20261102
+
+Google (n.d.). **Hamina location: cooling and heat recovery**. [Source](https://www.datacenters.google/locations/hamina-finland/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nvidia_h100_20261102
+
+NVIDIA (n.d.). **H100 official specifications**. [Source](https://www.nvidia.com/en-us/data-center/h100/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nvidia_h200_20261102
+
+NVIDIA (n.d.). **H200 official specifications**. [Source](https://www.nvidia.com/en-us/data-center/h200/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nvidia_a100_20261102
+
+NVIDIA (n.d.). **A100 official specifications**. [Source](https://www.nvidia.com/en-us/data-center/a100/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nvidia_l4_20261102
+
+NVIDIA (n.d.). **L4 official specifications**. [Source](https://www.nvidia.com/en-us/data-center/l4/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nvidia_l40s_20261102
+
+NVIDIA (n.d.). **L40S official specifications**. [Source](https://www.nvidia.com/en-us/data-center/l40s/)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nvidia_dgx_h100_20261102
+
+NVIDIA (n.d.). **DGX H100 user guide hardware specifications**. [Source](https://docs.nvidia.com/dgx/dgxh100-user-guide/introduction-to-dgxh100.html)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_nvidia_dgx_b200_20261102
+
+NVIDIA (n.d.). **DGX B200 user guide hardware specifications**. [Source](https://docs.nvidia.com/dgx/dgxb200-user-guide/introduction-to-dgxb200.html)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_amd_compare_20261102
+
+AMD (n.d.). **ROCm MI300/MI350 architecture comparison**. [Source](https://rocm.docs.amd.com/projects/ai-ecosystem/en/latest/optimization/workload-optimization.html)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_eaton_1000_20261102
+
+Eaton (n.d.). **9PX1000IRT2U exact SKU specifications**. [Source](https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_eaton_1500_20261102
+
+Eaton (n.d.). **9PX1500IRT2U exact SKU specifications**. [Source](https://www.eaton.com/gb/en-gb/skuPage.9PX1500IRT2U.html)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_eaton_2200_20261102
+
+Eaton (n.d.). **9PX2200IRT2U exact SKU specifications**. [Source](https://www.eaton.com/gb/en-gb/skuPage.9PX2200IRT2U.html)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_eaton_3000_20261102
+
+Eaton (n.d.). **9PX3000IRT2U exact SKU specifications**. [Source](https://www.eaton.com/gb/en-gb/skuPage.9PX3000IRT2U.html)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.
+
+### dc_vertiv_xdu_20261102
+
+Vertiv (2021). **Liebert XDU450/1350 guide specifications**. [Source](https://www.vertiv.com/48edce/globalassets/products/thermal-management/high-density-solutions/liebert-xdu-4501350-row-based-coolant-distribution-unit-guide-specifications-sl--70643.pdf)
+
+**Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
+
+**Used by:** `catalogues/data_centers/sources.json`.

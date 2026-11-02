@@ -153,6 +153,41 @@ def validate_record(row: dict[str, Any], sources: dict[str, Any]) -> None:
     for key in conflicts:
         if key not in SCHEMA["fields"] or row.get(key) is not None:
             raise ValueError("Unresolved conflicting fields must be null")
+    for observations in conflicts.values():
+        if not isinstance(observations, list) or len(observations) < 2:
+            raise ValueError("Conflicts require both dated observations")
+        for observation in observations:
+            if not isinstance(observation, dict) or "value" not in observation:
+                raise ValueError("Invalid conflicting observation")
+            refs = observation.get("sources")
+            if not isinstance(refs, list) or not refs or not set(refs) <= set(row["sources"]):
+                raise ValueError("Conflict sources must be registered on the record")
+            _timestamp(observation.get("observed_at", ""))
+    for estimate in _json(row.get("estimates_json") or "{}").values():
+        if (
+            not isinstance(estimate, dict)
+            or not estimate.get("method")
+            or not estimate.get("uncertainty")
+        ):
+            raise ValueError("Estimates require method and uncertainty")
+    for certificate in _json(row.get("certifications_json") or "{}").values():
+        if (
+            not isinstance(certificate, dict)
+            or not all(
+                certificate.get(k) for k in ("issuer", "certificate", "scope", "date", "source_id")
+            )
+            or certificate["source_id"] not in row["sources"]
+        ):
+            raise ValueError("Certificates require issuer, scope, date and registered source")
+        date.fromisoformat(certificate["date"])
+    renewable = _json(row.get("renewable_supply_json") or "{}")
+    if renewable:
+        groups = {"physical_generation", "contractual_procurement", "environmental_claims"}
+        if set(renewable) != groups or any(not isinstance(renewable[k], list) for k in groups):
+            raise ValueError("Separate physical, contractual and environmental supply claims")
+        for item in (item for group in renewable.values() for item in group):
+            if not isinstance(item, dict) or item.get("source_id") not in row["sources"]:
+                raise ValueError("Renewable supply observations need registered sources")
     for quantity, conditions in (
         *((k, (k.removesuffix("_mw") + "_basis",)) for k in CAPACITIES),
         ("accelerator_power_w", ("power_rating_kind", "power_conditions")),
@@ -345,6 +380,7 @@ def upsert_records(
                             "sources": old["sources"],
                             "evidence": old_evidence.get(key),
                             "observed_at": old["last_verified_at"],
+                            "boundary": old["capacity_scope"],
                         }
                     ],
                 )
@@ -353,6 +389,7 @@ def upsert_records(
                     "sources": new["sources"],
                     "evidence": new_evidence.get(key),
                     "observed_at": now,
+                    "boundary": new["capacity_scope"],
                 }
                 if not any(
                     o["value"] == value and o["sources"] == new["sources"] for o in observations
