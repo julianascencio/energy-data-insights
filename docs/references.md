@@ -2939,3 +2939,187 @@ Sembcorp Industries (2025). **Sembcorp Unveils Landmark Clean Energy Initiatives
 **Role:** data. Scaling up Singapore’s largest utility-scale energy storage system, paragraphs1–3
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### deye_bosgpro_eu_20260414
+
+Deye ESS (2026). **BOS-G Pro Series EU brochure**. [Source](https://deyeess.com/wp-content/uploads/2025/12/Deye-BOS-G-Pro-Series_Brochure_EU_20260414V1.0.pdf)
+
+**Role:** data. Page 2 exact configuration columns and footnotes; page 3 component tables
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### deye_bosgpro_page_20261102
+
+Deye ESS (2026). **BOS-G Pro product specifications**. [Source](https://deyeess.com/product/bos-g-pro/)
+
+**Role:** data. Specifications: exact four-model energy and DC-power entries
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_am4_20261102
+
+Hubble Energy (2026). **AM-4 technical datasheet**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_9419257cb76d42a8be8cc973f4392b7e.pdf)
+
+**Role:** data. Page 2 Technical Data and current footnote; page 1 revision
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_blade_20261102
+
+Hubble Energy (2026). **BLADE technical datasheet**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_f9bb221cac594943a759bab118a36261.pdf)
+
+**Role:** data. Page 2 Technical Data and current footnote; page 1 revision
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_am5_20261102
+
+Hubble Energy (2026). **AM5+ technical datasheet**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_d644c03ebbf54a7d8856a155276b2802.pdf)
+
+**Role:** data. Page 2 Technical Data and current footnote; page 1 revision
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_am5_page_20261102
+
+Hubble Energy (2026). **AM5+ product page**. [Source](https://www.hubbleenergy.com/am-5plus)
+
+**Role:** data. Technical specifications and feature list; discrepancies against versioned brochure
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_am10_20261102
+
+Hubble Energy (2026). **AM10+ technical datasheet**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_be08c357eb3a4fd982d87af81a5b00a9.pdf)
+
+**Role:** data. Page 2 Technical Data and current footnote; page 1 revision
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_am10_page_20261102
+
+Hubble Energy (2026). **AM10+ product page**. [Source](https://www.hubbleenergy.com/am-10plus)
+
+**Role:** data. Technical specifications and feature list; discrepancies against versioned brochure
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_am16_20261102
+
+Hubble Energy (2026). **AM16+ technical datasheet**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_f0d72a5160fe4266a92b55def8477e52.pdf)
+
+**Role:** data. Page 2 Technical Data and current footnote; page 1 revision
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_am16_page_20261102
+
+Hubble Energy (2026). **AM16+ product page**. [Source](https://www.hubbleenergy.com/am-16plus)
+
+**Role:** data. Technical specifications and feature list; discrepancies against versioned brochure
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sembcorp_assets_20260630
+
+Sembcorp Industries (2026). **Energy and Water Assets as at June 30, 2026**. [Source](https://www.sembcorp.com/media/rwwnawta/2q2026-energy-and-water-assets.pdf)
+
+**Role:** data. Page 1 named company rows; page 2 scope footnotes
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sembcorp_nusantara_20250120
+
+Sembcorp Industries (2025). **Nusantara Sembcorp Solar Energi launch**. [Source](https://www.sembcorp.com/id/en/news-and-insights/news/2025/sembcorp-and-pln-nusantara-power-launches-first-utility-scale-integrated-solar-and-energy-storage-project-in-indonesia/)
+
+**Role:** data. First two paragraphs; JV entities and battery/solar capacities
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sembcorp_indonesia_portfolio_20261102
+
+Sembcorp Industries (2026). **Indonesia utility-scale projects**. [Source](https://www.sembcorp.com/id/en/our-solutions-in-indonesia/renewable-energy/utility-scale/)
+
+**Role:** data. Nusantara and Morowali sections; PPA and development scope
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pln_nusantara_flagship_20261102
+
+PLN Nusantara Power (2026). **Green flagship projects: IKN Nusantara SPP**. [Source](https://www.plnnusantarapower.co.id/about-us/achievements/green-flagship-projects)
+
+**Role:** data. IKN Nusantara SPP capacity, location, connection and status bullets
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sesna_morowali_20260406
+
+SESNA (2026). **SESMO commences solar construction with BNI financing**. [Source](https://sesna.id/media/news/detail/sesmo-commences-262-mwp-solar-construction-with-bni-financing)
+
+**Role:** data. Opening paragraphs, project scope, capex and syndicated lender
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sesna_morowali_20260211
+
+SESNA (2026). **SESMO secures financial close**. [Source](https://sesna.id/media/news/detail/sesmo-secures-financial-close-for-262-mwp-captive-solar-pv-project-in-morowali-with-pt-smi-as-strategic-financier)
+
+**Role:** data. Financial-close date, sponsors, PT SMI and early-2027 target
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### china_power_wuling_20230714
+
+China Power International Development (2026). **Wuling projects connected and put into production in first half**. [Source](https://www.chinapower.hk/sc/media/news-p230714.php)
+
+**Role:** data. Storage paragraph naming Shujiatang and Qidong Baidishi; 100 MW / 200 MWh each
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sembcorp_china_storage_20261102
+
+Sembcorp Industries (2026). **China energy storage systems**. [Source](https://www.sembcorp.com/cn/our-solutions-in-china/renewables/energy-storage-systems/)
+
+**Role:** data. Qidong June 2023 commissioning and Nanjing 0.4 MW / 0.4 MWh immersion-cooled demonstration
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sembcorp_seci_award_20241218
+
+Sembcorp Industries (2024). **First solar-energy storage hybrid project award in India**. [Source](https://links.sgx.com/1.0.0/corporate-announcements/WSZ9V90R6M77WRIL/828228_SEMBCORP%20AWARDED%20SECI%20SOLAR-BESS%20PROJECT.pdf)
+
+**Role:** data. Page 1 paragraphs 1-2; battery scope and conditional PPA
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sembcorp_sjvn_award_20250529
+
+Sembcorp Industries (2025). **Second solar-energy storage hybrid project award in India**. [Source](https://www.sembcorpindia.com/public/admin/upload/announcements_pdf/290525.pdf)
+
+**Role:** data. Page 1 paragraphs 1-2; battery scope and conditional PPA
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### alinta_wagerup_operating_20261027
+
+Alinta Energy (2026). **Wagerup Battery is now operational**. [Source](https://www.alintaenergy.com.au/about-us/news-hub/wagerup-battery-now-operational)
+
+**Role:** data. Opening paragraphs; 100 MW / 200 MWh and September commercial operation
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### alinta_reeves_delivery_20260915
+
+Alinta Energy (2026). **First batteries arrive at Reeves Plains**. [Source](https://www.alintaenergy.com.au/about-us/news-hub/reeves-plains-first-battery-delivery)
+
+**Role:** data. Opening and delivery paragraphs; battery and inverter suppliers/counts
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### alinta_reeves_phases_20261102
+
+Alinta Energy (2026). **Reeves Plains project status**. [Source](https://www.reevesplainsenergyhub.com.au/project)
+
+**Role:** data. Current status section: stage 1 construction, stage 2 feasibility
+
+**Used by:** `catalogues/bess/sources.json`.

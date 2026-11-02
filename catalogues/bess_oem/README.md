@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **281 records from 35 product
-suppliers, backed by 97 primary sources**: 268 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **292 records from 37 product
+suppliers, backed by 107 primary sources**: 279 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -158,4 +158,25 @@ This adapter checks model grouping and column order, separates W from VA, and
 retains individual charger currents. It rejects changed units, incomplete groups
 and unsupported regional voltage tables. It stages candidates for review only.
 
-Latest pass: [Regional Victron specifications and Singapore reconciliation](../bess/research/2026-11-02_regional_victron_singapore_report.md).
+Previous pass: [Regional Victron specifications and Singapore reconciliation](../bess/research/2026-11-02_regional_victron_singapore_report.md).
+
+Latest pass: [Asian projects, Deye and Hubble equipment](../bess/research/2026-11-02_asia_deye_hubble_report.md).
+
+## Offline Deye Pro staging
+
+The four exact BOS-G-Pro EU columns in the 20260414 V1.0 brochure can be staged
+for review without importing them:
+
+```bash
+pdftotext -layout /outside-git/deye-pro.pdf /outside-git/deye-pro.txt
+uv run python scripts/stage_bess_deye.py \
+  --document /outside-git/deye-pro.pdf --text /outside-git/deye-pro.txt \
+  --output artifacts/deye-pro-candidates.json
+```
+
+The adapter rejects missing/reordered model columns, duplicate rows, unit changes,
+and missing energy test conditions. It preserves printed power independently from
+energy: the G60 power observation requires review against the conflicting webpage.
+It does not stage the separately restricted BOS-G manual, infer variants, or accept
+records automatically. Source rights, document version and identity remain review
+steps; PDF and extracted text hashes are emitted with the candidate ledger.
