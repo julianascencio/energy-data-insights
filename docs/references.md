@@ -2899,3 +2899,43 @@ GIGA Storage (2025). **GIGA Storage leopard close**. [Source](https://giga-stora
 **Role:** data. Opening paragraphs: June 2025 construction, 300 MW/1200 MWh, financing and expected H2 2027 operation.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### victron_q120_20261102
+
+Victron Energy (2026). **Datasheet Quattro 3 10kVA 120V EN **. [Source](https://www.victronenergy.com/upload/documents/Datasheet-Quattro-3-10kVA-120V-EN-.pdf)
+
+**Role:** data. Page 2, exact model column and inverter/charger/enclosure rows; footnotes. Page 1 topology.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_q277_20261102
+
+Victron Energy (2026). **Datasheet Quattro 15kVA 277V EN**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-Quattro-15kVA-277V-EN.pdf)
+
+**Role:** data. Page 2, exact model column and inverter/charger/enclosure rows; footnotes. Page 1 topology.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_qii_20261102
+
+Victron Energy (2026). **Datasheet Quattro II inverter charger EN **. [Source](https://www.victronenergy.com/upload/documents/Datasheet-Quattro-II-inverter-charger-EN-.pdf)
+
+**Role:** data. Page 2, exact model column and inverter/charger/enclosure rows; footnotes. Page 1 topology.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_m2_20261102
+
+Victron Energy (2026). **Datasheet MultiPlus II 2x120V EN **. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-2x120V-EN-.pdf)
+
+**Role:** data. Page 2, exact model column and inverter/charger/enclosure rows; footnotes. Page 1 topology.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sembcorp_stacking_20251027
+
+Sembcorp Industries (2025). **Sembcorp Unveils Landmark Clean Energy Initiatives on Jurong Island**. [Source](https://www.sembcorp.com/sg/news-and-insights/news/2025/sembcorp-unveils-landmark-clean-energy-initiatives-on-jurong-island/)
+
+**Role:** data. Scaling up Singapore’s largest utility-scale energy storage system, paragraphs1–3
+
+**Used by:** `catalogues/bess/sources.json`.

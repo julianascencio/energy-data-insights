@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **270 records from 35 product
-suppliers, backed by 93 primary sources**: 257 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **281 records from 35 product
+suppliers, backed by 97 primary sources**: 268 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -143,7 +143,7 @@ revisions, identities and conflicts still require review before the normal upser
 The separate standard-model and SMA tables were manually reviewed, not parsed by
 this adapter. No source PDF is bundled.
 
-Latest pass: [GIGA portfolio and Quattro/MultiPlus-II models](../bess/research/2026-11-02_giga_quattro_report.md), including capacity conflicts and exact electrical variants.
+Previous pass: [GIGA portfolio and Quattro/MultiPlus-II models](../bess/research/2026-11-02_giga_quattro_report.md), including capacity conflicts and exact electrical variants.
 
 For the nine exact Quattro 230 V codes printed in five grouped columns:
 
@@ -157,3 +157,5 @@ uv run python scripts/stage_bess_victron.py --layout quattro-230v \
 This adapter checks model grouping and column order, separates W from VA, and
 retains individual charger currents. It rejects changed units, incomplete groups
 and unsupported regional voltage tables. It stages candidates for review only.
+
+Latest pass: [Regional Victron specifications and Singapore reconciliation](../bess/research/2026-11-02_regional_victron_singapore_report.md).
