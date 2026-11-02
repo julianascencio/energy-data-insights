@@ -3123,3 +3123,43 @@ Alinta Energy (2026). **Reeves Plains project status**. [Source](https://www.ree
 **Role:** data. Current status section: stage 1 construction, stage 2 feasibility
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### hubble_rack_20261102
+
+Hubble Energy (2026). **100Ah HV racks**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_e102201ab7a64a688e17913192f0e6b1.pdf)
+
+**Role:** data. Primary factual evidence; source documents retained outside Git.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_stack_20261102
+
+Hubble Energy (2026). **HV100Ah stackable solution**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_a5c2c6f1e2ee4552827cc8a85d25658e.pdf)
+
+**Role:** data. Primary factual evidence; source documents retained outside Git.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_hv280_20261102
+
+Hubble Energy (2026). **HV 768-215**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_c2d30c81cde34e46af7c354ea2887432.pdf)
+
+**Role:** data. Primary factual evidence; source documents retained outside Git.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### hubble_hv314_20261102
+
+Hubble Energy (2026). **HV 768-241**. [Source](https://www.hubbleenergy.com/_files/ugd/49fdd5_a7f038e207194340806ff66eda7a9137.pdf)
+
+**Role:** data. Primary factual evidence; source documents retained outside Git.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### wartsila_zenobe_20261102
+
+Wärtsilä (2026). **Zenobē reference portfolio**. [Source](https://www.wartsila.com/energy/learn-more/references/ipps/zenobe)
+
+**Role:** data. Primary factual evidence; source documents retained outside Git.
+
+**Used by:** `catalogues/bess/sources.json`.

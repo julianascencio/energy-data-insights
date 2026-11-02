@@ -439,7 +439,7 @@ evidence. See the [research specification](catalogues/pv/RESEARCH_PROMPT.md) and
 ## Worldwide BESS projects database
 
 The [BESS catalogue](catalogues/bess/README.md) contains **1,322 battery project and plant records
-in 32 countries**, supported by 152 primary sources. Its 60-field schema keeps
+in 32 countries**, supported by 153 primary sources. Its 60-field schema keeps
 battery MW, stored MWh, rating basis, chemistry, dated status, ownership/suppliers,
 phase scope and field-level provenance separate. Unknown values remain null.
 
@@ -458,8 +458,8 @@ uv run python -m energy_data_retrieval.bess_catalogue build --output artifacts/b
 
 ## Global BESS OEM products
 
-The [BESS OEM catalogue](catalogues/bess_oem/README.md) adds 292 model/configuration
-and family records from 37 suppliers, with 107 primary sources and 73 typed metadata
+The [BESS OEM catalogue](catalogues/bess_oem/README.md) adds 305 model/configuration
+and family records from 37 suppliers, with 111 primary sources and 73 typed metadata
 columns. It follows the PV module database format with sharded JSONL, source lists,
 per-field evidence, timestamps and reproducible Parquet exports. Active MW, apparent
 MVA, nominal/usable MWh, regional variants and preliminary documents remain distinct.
