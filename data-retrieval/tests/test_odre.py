@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from typing import Any
 
 import pytest
 
@@ -173,3 +174,47 @@ def test_null_aggregate_eics_keep_distinct_review_locators():
 def test_installation_count_requires_positive_integer(count):
     with pytest.raises(ValueError, match="installation count"):
         read([native(nbinstallations=count)])
+
+
+@pytest.mark.parametrize(
+    "capacity,allowed", [(4999, False), (5000, True), (9999, True), (10000, False)]
+)
+def test_reviewed_capacity_partition_boundaries(capacity, allowed):
+    row = native(puismaxinstallee=capacity)
+    args: dict[str, Any] = dict(
+        reviewed_ids={row["codeeicresourceobject"]},
+        existing=[],
+        source_id="test",
+        retrieved_at="2026-11-02T00:00:00Z",
+        snapshot_date="2026-08-31",
+        minimum_kw=5000,
+        maximum_kw=10000,
+    )
+    if allowed:
+        assert (
+            reviewed_odre_records([row], [row], **args)[0]["capacity_unspecified_mw"]
+            == capacity / 1000
+        )
+    else:
+        with pytest.raises(ValueError, match="identity"):
+            reviewed_odre_records([row], [row], **args)
+
+
+@pytest.mark.parametrize(
+    "low,high", [(True, None), (999, None), (5000, 5000), (5000, 4999), (5000, float("nan"))]
+)
+def test_capacity_partition_invalid_bounds(low, high):
+    with pytest.raises(ValueError):
+        screen_odre_identities([], [], existing=[], minimum_kw=low, maximum_kw=high)
+
+
+def test_lower_partition_keeps_national_identity_and_privacy_guards():
+    row = native(puismaxinstallee=6000)
+    other = native("17W000000043384E", nominstallation="Another park", puismaxinstallee=1000)
+    risks = screen_odre_identities(
+        [row], [row, other], existing=[], minimum_kw=5000, maximum_kw=10000
+    )
+    assert "shared_commune_requires_project_scope_review" in risks[row["codeeicresourceobject"]]
+    row["nbinstallations"] = 2
+    risks = screen_odre_identities([row], [], existing=[], minimum_kw=5000, maximum_kw=10000)
+    assert "aggregate_not_single_project" in risks[row["codeeicresourceobject"]]

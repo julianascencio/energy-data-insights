@@ -52,6 +52,8 @@ def main() -> None:
         source_id=review["source_id"],
         retrieved_at=source["retrieved_at"],
         snapshot_date=review["snapshot_date"],
+        minimum_kw=review.get("minimum_kw", 10000),
+        maximum_kw=review.get("maximum_kw"),
     )
     with args.output.open("x", encoding="utf-8") as stream:
         for row in incoming:

@@ -110,3 +110,13 @@ New metadata should reuse one of the 148 canonical columns. Use a namespaced
 extension for unclassified metadata, then promote it through a versioned schema
 change when a stable definition is established. Code, schema and records are
 validated in CI; Pages exports the validated Parquet snapshot after merge.
+
+### Bounded ODRE batches
+
+The offline ODRE staging ledger supports an inclusive `minimum_kw` and exclusive
+`maximum_kw`. Omitting both retains the original >=10 MW scope. The minimum must
+be at least 1000 kW; invalid or reversed bounds fail closed. The complete national
+individual-PV identity export is still mandatory, including names below the selected
+capacity band. Neither capacity selection nor a reviewed ID overrides aggregate,
+phase, privacy, existing-identity or shared-commune holds. See the reviewed
+`catalogues/pv/research/20261102T0000_odre_review.json` 5–10 MW batch.

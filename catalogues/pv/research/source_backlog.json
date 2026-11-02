@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-01T22:01:29.524170+00:00",
+  "updated_at": "2026-11-02T00:06:40.630775+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "Completed remaining UK operational-ground partitions, extracted 12 distinct non-CEC European inverter models and enriched two trackers. Rechecked German official export/API access; next scalable priority shifts to France and top-ten country gaps.",
-  "next_highest_value_source": "France ODRE reviewed 5–10 MW PHOTV partition after explicit adapter-scope extension and identity review; Germany permitted filtered CSV export pilot (no API credential available).",
+  "next_highest_value_source": "Fronius Tauro ECO six exact P/D models; France held boundary crosswalks then explicitly reviewed 1–5 MW cohort",
   "sources": [
     {
       "id": "uk_repd",
@@ -380,19 +380,21 @@
         "region",
         "generation"
       ],
-      "last_attempt": "2026-11-01T09:46:14.172006+00:00",
-      "result": "409 >=10 MW PHOTV candidates processed: 48 accepted projects, 361 withheld for aggregation/privacy/phase/identity/technology review. French catalogue now 49 projects.",
+      "last_attempt": "2026-11-02T00:04:26.492228+00:00",
+      "result": "540 PHOTV records in 5–10 MW band reviewed; 92 accepted, 448 held. Full national 95302-row identity screen unchanged. France now 141 projects.",
       "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Explicitly extend tested adapter to reviewed 5–10 MW PHOTV cohort after freshness/licence refresh; retain complete national identity screening and phase/aggregate privacy holds. Existing >=10 MW partition already exhausted.",
+      "next_action": "Reconcile the named TIPER/PSA/STVA/coded-section holds with owner or planning evidence; alternatively explicitly review 1–5 MW bounded cohort. Do not reprocess completed >=5 MW bands.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
-          "PHOTV / puismaxinstallee >=10000 kW / snapshot 2026-08-31"
+          "PHOTV / puismaxinstallee >=10000 kW / snapshot 2026-08-31",
+          "PHOTV / 5000 <= puismaxinstallee <10000 kW / snapshot 2026-08-31"
         ],
         "candidate_rows_processed": 409,
         "accepted_ids_ledger": "20261101T0928_odre_review.json",
         "identity_screen_rows": 95302,
-        "next_partition": "held >=10 MW project-scope crosswalks; then 5–10 MW after explicit adapter/scope review"
+        "next_partition": "held plant-boundary crosswalks, then 1–5 MW only after scope review",
+        "latest_ledger": "20261102T0000_odre_review.json"
       }
     },
     {
@@ -893,6 +895,69 @@
           "PVS-15-TL"
         ]
       }
+    },
+    {
+      "id": "sungrow_rt_es_2021",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://spa.sungrowpower.com/upload/file/20211230/ES%20DS%20SG5.0_6.0_7.0_8.0_10_12_15_17_20RT%20Ficha%20T%C3%A9cnica.pdf",
+      "version_or_date": "Spanish v1.1.3, copyright 2021",
+      "licence_assessment": "Selected factual specifications only; publisher copyright retained; raw PDF outside Git",
+      "access_assessment": "Normal public OEM PDF download succeeded; two specification tables visually checked",
+      "estimated_useful_yield": {
+        "reviewed": 9,
+        "accepted": 9
+      },
+      "fields_offered": [
+        "electrical",
+        "MPPT",
+        "mechanical",
+        "environmental",
+        "interfaces",
+        "protection",
+        "regional limits"
+      ],
+      "last_attempt": "2026-11-02T00:04:26.492228+00:00",
+      "result": "Nine exact RT models absent from existing catalogue accepted. No P2 or regional variant multiplication.",
+      "retry_condition": "New revision or explicit unresolved field evidence",
+      "next_action": "Review 2025 RT/P2 manual as a separate hardware/revision cohort; no automatic overwrite of 2021 model evidence.",
+      "processed_cursor": {
+        "completed_models": [
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT"
+        ]
+      }
+    },
+    {
+      "id": "fronius_tauro_eco",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.fronius.com/es-es/spain/energia-solar/instaladores-y-socios/datos-tecnicos/todos-los-productos/inversor/fronius-tauro-eco/tauro-eco-100-3-p",
+      "version_or_date": "Undated live product page accessed 2026-11-02",
+      "licence_assessment": "Individual facts candidate; full reuse terms not assessed",
+      "access_assessment": "Public page read with technical tables and P/D links",
+      "estimated_useful_yield": {
+        "planning_models": 6,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "communications"
+      ],
+      "last_attempt": "2026-11-02T00:04:26.492228+00:00",
+      "result": "No existing Tauro model to enrich. Six linked exact P/D models identified; only 100-3-P page inspected, none accepted.",
+      "retry_condition": "All exact P/D product pages or revisioned datasheet reviewed with terms and footnotes",
+      "next_action": "Review complete six-model OEM table and regional hardware boundaries before accepting; do not transfer P ratings to D.",
+      "processed_cursor": null
     }
   ]
 }

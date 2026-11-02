@@ -2311,5 +2311,57 @@
     "access": "Normal public download; no login, registration, contact form or payment. Source bytes outside Git.",
     "limitations": "OEM assertions, not independent certification or current availability. Explicit options, bounds and test conditions retained.",
     "revision": "Undated public product page"
+  },
+  "odre_5to10mw_20261102T0000": {
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%22PHOTV%22+AND+puismaxinstallee+%3E%3D5000+AND+puismaxinstallee+%3C10000&order_by=codeeicresourceobject",
+    "retrieved_at": "2026-11-02T00:00:36.526767+00:00",
+    "status": 200,
+    "sha256": "ec1edd72baedba5056e6425e8718a0bd59282fd43ee16e451a6567b57e7fbfaa",
+    "bytes": 805157,
+    "publisher": "RTE, Enedis, EDF SEI, ELD / Open Data Réseaux Énergies",
+    "title": "Registre national des installations de production et de stockage d'électricité (au 31/08/2026)",
+    "license": "Licence Ouverte / Open Licence v2.0 (Etalab, April 2017); attribution of producer and source update date required; commercial reuse allowed, no endorsement implied.",
+    "license_url": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
+    "snapshot_date": "2026-08-31",
+    "source_updated_at": "2026-10-13T19:24:24Z",
+    "version": "ODRE V1, snapshot 2026-08-31; API processed 2026-10-20T09:59:20Z",
+    "locator": "JSON object selected by codeeicresourceobject (EIC); native field names and exact EIC locator retained in extensions.odre",
+    "access": "Public PHOTV 5000 <= installed kW <10000 export; full national identity screen. No personal details exported.",
+    "related_evidence": {
+      "metadata": {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+        "status": 200,
+        "sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+        "bytes": 56139,
+        "retrieved_at": "2026-11-02T00:00:35.481993+00:00"
+      },
+      "identities": {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%22PHOTV%22+AND+nbinstallations%3D1&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee&order_by=codeeicresourceobject",
+        "status": 200,
+        "sha256": "befb954d1d5f77cf7b4cde15a322955c565de325fc9a1d147d6665d9d06cd928",
+        "bytes": 17196776,
+        "retrieved_at": "2026-11-02T00:00:45.347753+00:00"
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
+        "status": 200,
+        "sha256": "df600a2fd08b887716612ac57fffbbe10c9e678961064c72214cebb89c90cbb6",
+        "bytes": 237693,
+        "retrieved_at": "2026-11-02T00:00:49.364667+00:00"
+      }
+    },
+    "limitations": "Installation identifiers may represent plant sections. Three aggregates, unnamed/private rows, repeated names, shared >=1 MW administrative communes and phase markers are held, never fuzzy-merged. No coordinates, owner, plant AC/DC split or current operating claim inferred. Metadata/glossary disagree on implantation geography and produced-energy self-consumption definition; raw values remain qualified and unresolved."
+  },
+  "sungrow_rt_es_2021_20261102T0000": {
+    "url": "https://spa.sungrowpower.com/upload/file/20211230/ES%20DS%20SG5.0_6.0_7.0_8.0_10_12_15_17_20RT%20Ficha%20T%C3%A9cnica.pdf",
+    "sha256": "cc75b1fa4fef69600aeca1ef21c9ad9d6e3961fa97df4131949aa0e00cb8556a",
+    "bytes": 635727,
+    "retrieved_at": "2026-11-02T00:01:20.346896+00:00",
+    "publisher": "Sungrow Power Supply Co., Ltd.",
+    "title": "SG5.0/6.0/7.0/8.0/10/12RT and SG15/17/20RT Spanish datasheet",
+    "version": "Version 1.1.3; copyright 2021; exact issue date not printed",
+    "license": "Publisher copyright retained. Individually extracted factual specifications only; no open bulk reuse licence asserted. Full document remains outside Git.",
+    "locator": "PDF pages 2 and 4, exact model column, row and footnotes",
+    "access": "Public OEM download; historical revision, not proof of current regional availability."
   }
 }
