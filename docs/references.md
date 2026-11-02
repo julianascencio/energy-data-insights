@@ -3691,3 +3691,187 @@ Renewvia Energy (CEI Africa announcement) (2023). **Renewvia Kakuma/Kalobeyei ex
 **Role:** data. Renewvia grant and planned 2.4 MW / 6 MWh paragraphs; release date May 31, site posting July 12; SHA256 14c53a8b2edaabcfacf56871fc38f858f0224d7a6fc676c2d84f94c5f56f4b43
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### odre_glossary_20261102
+
+RTE / ODRÉ (2026). **National register field glossary**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/attachments/11_glossaire_gpc_registre_des_installations_vrte_docx)
+
+**Role:** data. Field definitions: EIC, location, commissioning, power, stored and annual energy; aggregate policy; SHA256 e73caf2ea0be886efb7dda2734b0e4ce4112c1577b9c0558ccec9d7a967d9f0e
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### odre_battery_ge1mw_1_20260831
+
+RTE, Enedis, EDF SEI, ELD (2026). **National electricity installation register: odre_battery_ge1mw_1**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=100)
+
+**Role:** data. API results; exact row EIC identified in each record external_ids_json and review ledger; SHA256 2934179cadc60f6c7ca23d57479ff72aac36e720aa86ed9e9d8596cb221caa40
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### odre_battery_ge1mw_0_20260831
+
+RTE, Enedis, EDF SEI, ELD (2026). **National electricity installation register: odre_battery_ge1mw_0**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=0)
+
+**Role:** data. API results; exact row EIC identified in each record external_ids_json and review ledger; SHA256 daad0c57f835e1a36d22394ae113589b4378cf8a5e6dc31e4440f71c481519fb
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### odre_rte_20260831
+
+RTE, Enedis, EDF SEI, ELD (2026). **National electricity installation register: odre_rte**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+gestionnaire%3D%27RTE%27&order_by=codeeicresourceobject&limit=100)
+
+**Role:** data. API results; exact row EIC identified in each record external_ids_json and review ledger; SHA256 01f61b90ae310ee022acc9d973fa07c261c9d6a37fb0e607a1fabbe21a3ca15f
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gopa_lithops_20261102
+
+GOPA (2026). **Lithops battery: owner engineer technical requirements**. [Source](https://www.gopa.eu/en/projects/flagship/namibia-lithops-battery-storage/)
+
+**Role:** data. Challenge, project facts and impact-in-numbers sections; SHA256 6355711f4f5b2ee8bc38c50a2dfe4c2d76458f3c7c9722c320829bfeebd58925
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rolls_6_cs_21p_20261102
+
+Rolls Battery (2024). **6 CS 21P flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/6-cs-21p/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 6c55d6514e1a1d4cffa9c1387658ef1bea97dd2998665d9650bb09895599bdb1
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s6_l16_20261102
+
+Rolls Battery (2024). **S6 L16 flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s6-l16/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 cdcbe9a8d9029c32ab6a6d5761897c34bc42d957e326c68788559f6418a1f525
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_6_cs_17p_20261102
+
+Rolls Battery (2024). **6 CS 17P flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/6-cs-17p/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 2d02fcc3e8c1b134c0bb69d02e7bed657a08935231cd0d4f02bbd9d7578ca56b
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s6_l16_hc_20261102
+
+Rolls Battery (2024). **S6 L16-HC flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s6-l16-hc/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 3ae92253087af17ce8b6184e34e827f53f42052eb7d5b19df796fd6746865f65
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s6_gc2_20261102
+
+Rolls Battery (2024). **S6 GC2 flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s6-gc2/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 4b82b2d4f523ed6bb83b96c35645e6fca4000633dd338be519c4a3e694c2f2c9
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_catalogue_20261102
+
+Rolls Battery (2026). **Rolls Battery catalogue renewable-energy model classifications**. [Source](https://rollsbattery.com/catalog/)
+
+**Role:** data. data-battery_slug/model/applications attributes for 16 selected exact models; no sizing-calculator combinations; SHA256 90d62332a150a399d7ad9d84b026dcb317e4c144f3d98612811287256132a499
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s12_185_20261102
+
+Rolls Battery (2024). **S12 185 flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s12-185/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 eb3138a0c41247b64228ee6534b084175b131c40f1a1d690df2b76c28a26b912
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s6_305_20261102
+
+Rolls Battery (2024). **S6-305 flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s6-305/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 a9f7ca525a3ce704c21efe8bfe4a3924beb5cfda92be5d656f70c3922182095b
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_6_cs_25p_20261102
+
+Rolls Battery (2024). **6 CS 25P flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/6-cs-25p/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 32fbaeebcf860927f0683d4471e530160e59e5ea05e330cb4395b27f6e79c82b
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s6_l16_ex_20261102
+
+Rolls Battery (2024). **S6 L16-EX flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s6-l16-ex/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 b4f4be2bc2be1c769f84acc755e757e69727d9cc200d0459454e896efd234362
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s6_145_20261102
+
+Rolls Battery (2019). **S6 145 flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s6-145/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 4efc59fed3755933eb4f04db0aadfcf897c6f230c04ed712a8548a04921002a9
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s12_27_20261102
+
+Rolls Battery (2024). **S12 27 flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s12-27/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 c361222ef25f50382dd5f7cdc8849be7cd9854c49b6845f4addab7c2ee05f24e
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s12_24_20261102
+
+Rolls Battery (2024). **S12 24 flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s12-24/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 e27a448dde7d4e2c377dd68fc5194ced666297ee40653d0dc9634ab00e5e6859
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_12_cs_11p_20261102
+
+Rolls Battery (2024). **12 CS 11P flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/12-cs-11p/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 e0c0d19956d8d4b3565bbb987a1b794b453162f6e8ea155c3b2e52c9beb324de
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s12_31_20261102
+
+Rolls Battery (2024). **S12 31 flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s12-31/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 3f14d9b3bd6473ff81868bff6981bcdf69bfc5863f9a214e330bc2ca5fbad955
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_4_cs_17p_20261102
+
+Rolls Battery (2024). **4 CS 17P flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/4-cs-17p/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 9c6c6f50ac06036fff22cb8ed07f7fa5f1edfbd69c4d573f3f41773085675db3
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s6_gc2_hc_20261102
+
+Rolls Battery (2024). **S6 GC2-HC flooded deep-cycle battery specifications**. [Source](https://rollsbattery.com/battery/s6-gc2-hc/)
+
+**Role:** data. Exact model heading; Series/Volts/Cells, Charge | Discharge, Hour Rate, Specifications, materials and printed revision; SHA256 2936664db113e9e90e2f0920c8535a00f892262a2fd048e15b74a8b14745dcb7
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### odre_eic_renaming_202601
+
+RTE / ODRÉ (2026). **Modification de 79 codes EIC en W dans le registre national des installations de production et de stockage**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/attachments/note_d_information_concernant_les_modifications_de_79_codes_eic_v2_pdf)
+
+**Role:** data. Page 1: BARBAS01, previous EIC 17W000001600745Y, 2026 EIC 17W000001637626Q; SHA256 9010abd65fdad62f9d9607ab47a8a17d231c7ef48f97f406b4e8aea15655ab99
+
+**Used by:** `catalogues/bess/sources.json`.

@@ -1,0 +1,311 @@
+[
+  {
+    "priority": 1,
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+    "entity": "ODRÉ individual battery installations >=1 MW",
+    "country": "FRA",
+    "version": "31 August 2026; processed 20 October 2026",
+    "retrieved_at": "2026-11-02T17:11:55.099307+00:00",
+    "access_license": "Etalab Open Licence v2.0; attribution RTE, Enedis, EDF SEI, ELD",
+    "estimated_useful_yield": "50–150 next reviewed partition; not guaranteed",
+    "offered_fields": "EIC, status, MW, kWh storage, industrial-service date, connection power/voltage/substation, department/region/commune",
+    "attempt_result": "798 battery-only rows identity screened; first 200 + complete 22 RTE rows = 220 unique detailed candidates; 113 accepted, 107 held",
+    "processed_partition": "offsets 0/100 detailed; RTE partition all 22; offsets 200–797 downloaded for identity-screen only",
+    "retry_condition": "Recheck metadata title/data_processed and terms before resuming; use EIC ledger against canonical dataset",
+    "next_action": "Review next offset 200–399; exclude already accepted RTE EICs; investigate same-commune site/phase identities before adding",
+    "freshness_check": {
+      "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+      "retrieved_at": "2026-11-02T17:09:56.978459+00:00",
+      "sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+      "unchanged": {
+        "title": true,
+        "data_processed": true,
+        "modified": true,
+        "records_count": true,
+        "license": true
+      },
+      "data_processed": "2026-10-20T09:59:20+00:00"
+    },
+    "downloaded_partitions": [
+      {
+        "partition": 0,
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=0",
+        "sha256": "daad0c57f835e1a36d22394ae113589b4378cf8a5e6dc31e4440f71c481519fb",
+        "retrieved_at": "2026-11-02T16:57:42.442850+00:00"
+      },
+      {
+        "partition": 1,
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=100",
+        "sha256": "2934179cadc60f6c7ca23d57479ff72aac36e720aa86ed9e9d8596cb221caa40",
+        "retrieved_at": "2026-11-02T16:57:48.655634+00:00"
+      },
+      {
+        "partition": 2,
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=200",
+        "sha256": "853f52eda60b0cf0120acfcdb54d5cefd238c964b6850002db98f5ea603c00a8",
+        "retrieved_at": "2026-11-02T16:57:54.990215+00:00"
+      },
+      {
+        "partition": 3,
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=300",
+        "sha256": "2dbfc34884bbbe0f85aa7158fd3e5772eee9873f8ba43b00a7e9f8e967154e93",
+        "retrieved_at": "2026-11-02T16:58:01.346841+00:00"
+      },
+      {
+        "partition": 4,
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=400",
+        "sha256": "ff72cb71ea1364777e38a03a97f21c6da1bf09be12b082e9cd20204356c58d5b",
+        "retrieved_at": "2026-11-02T16:58:06.878535+00:00"
+      },
+      {
+        "partition": 5,
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=500",
+        "sha256": "120f173110ca8b23467b74d31a8df9c07c21651f7d86868b86a91d16864d1821",
+        "retrieved_at": "2026-11-02T17:01:19.563483+00:00"
+      },
+      {
+        "partition": 6,
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=600",
+        "sha256": "a606938e5ba3d6b491ef0a10ea470b4d99be583fa2d3c44f6b2725542b4c8213",
+        "retrieved_at": "2026-11-02T17:01:25.749642+00:00"
+      },
+      {
+        "partition": 7,
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=700",
+        "sha256": "6f2c68e18f2ac1411687d9d29a4678380ab47118cdae085bd1e8de5a265bd89b",
+        "retrieved_at": "2026-11-02T17:01:31.303609+00:00"
+      }
+    ],
+    "order_by": "codeeicresourceobject",
+    "review_ledger": "2026-11-02_odre_rolls_review.json"
+  },
+  {
+    "priority": 2,
+    "url": "https://rollsbattery.com/catalog/",
+    "entity": "Rolls remaining stationary flooded configurations",
+    "country": "CAN/OEM",
+    "version": "Current index; individual pages revised 2019 or 2024",
+    "retrieved_at": "2026-11-02T17:11:55.099307+00:00",
+    "access_license": "Copyright retained. OEM marketing page encourages linking current specifications, not blanket bulk reuse. Bounded factual review; no document redistribution.",
+    "estimated_useful_yield": "10–16 next independent exact models",
+    "offered_fields": "Voltage/cells, rate-dependent Ah/current, charge conditions, construction, dimensions, sample mass",
+    "attempt_result": "16 exact renewable-energy-listed monobloc pages fully staged and accepted; one charging-unit field quarantined",
+    "processed_partition": "S12 24/27/31/185; S6 GC2/GC2-HC/145/305/L16-EX/L16/L16-HC; 12CS11P; 4CS17P; 6CS17P/21P/25P",
+    "retry_condition": "New pages individually reviewed for stationary application, identity and terms",
+    "next_action": "Review 2 V cells and 8 V configurations; distinguish FS rebrands and do not expand series variants without explicit configuration evidence",
+    "terms_url": "https://rollsbattery.com/marketing/",
+    "pages": [
+      {
+        "slug": "s12-24",
+        "model": "S12 24",
+        "url": "https://rollsbattery.com/battery/s12-24/",
+        "application": "marine, renewable_energy",
+        "sha256": "e27a448dde7d4e2c377dd68fc5194ced666297ee40653d0dc9634ab00e5e6859",
+        "retrieved_at": "2026-11-02T16:55:40.049610+00:00"
+      },
+      {
+        "slug": "s12-27",
+        "model": "S12 27",
+        "url": "https://rollsbattery.com/battery/s12-27/",
+        "application": "marine, renewable_energy",
+        "sha256": "c361222ef25f50382dd5f7cdc8849be7cd9854c49b6845f4addab7c2ee05f24e",
+        "retrieved_at": "2026-11-02T16:55:47.150683+00:00"
+      },
+      {
+        "slug": "s12-31",
+        "model": "S12 31",
+        "url": "https://rollsbattery.com/battery/s12-31/",
+        "application": "marine, renewable_energy",
+        "sha256": "3f14d9b3bd6473ff81868bff6981bcdf69bfc5863f9a214e330bc2ca5fbad955",
+        "retrieved_at": "2026-11-02T16:55:54.938005+00:00"
+      },
+      {
+        "slug": "s12-185",
+        "model": "S12 185",
+        "url": "https://rollsbattery.com/battery/s12-185/",
+        "application": "marine, renewable_energy",
+        "sha256": "eb3138a0c41247b64228ee6534b084175b131c40f1a1d690df2b76c28a26b912",
+        "retrieved_at": "2026-11-02T16:56:02.434043+00:00"
+      },
+      {
+        "slug": "s6-gc2",
+        "model": "S6 GC2",
+        "url": "https://rollsbattery.com/battery/s6-gc2/",
+        "application": "marine, renewable_energy",
+        "sha256": "4b82b2d4f523ed6bb83b96c35645e6fca4000633dd338be519c4a3e694c2f2c9",
+        "retrieved_at": "2026-11-02T16:56:09.485757+00:00"
+      },
+      {
+        "slug": "s6-gc2-hc",
+        "model": "S6 GC2-HC",
+        "url": "https://rollsbattery.com/battery/s6-gc2-hc/",
+        "application": "marine, renewable_energy",
+        "sha256": "2936664db113e9e90e2f0920c8535a00f892262a2fd048e15b74a8b14745dcb7",
+        "retrieved_at": "2026-11-02T16:56:17.513732+00:00"
+      },
+      {
+        "slug": "s6-145",
+        "model": "S6 145",
+        "url": "https://rollsbattery.com/battery/s6-145/",
+        "application": "marine, renewable_energy",
+        "sha256": "4efc59fed3755933eb4f04db0aadfcf897c6f230c04ed712a8548a04921002a9",
+        "retrieved_at": "2026-11-02T16:56:25.849732+00:00"
+      },
+      {
+        "slug": "12-cs-11p",
+        "model": "12 CS 11P",
+        "url": "https://rollsbattery.com/battery/12-cs-11p/",
+        "application": "marine, renewable_energy",
+        "sha256": "e0c0d19956d8d4b3565bbb987a1b794b453162f6e8ea155c3b2e52c9beb324de",
+        "retrieved_at": "2026-11-02T16:56:32.969600+00:00"
+      },
+      {
+        "slug": "s6-305",
+        "model": "S6-305",
+        "url": "https://rollsbattery.com/battery/s6-305/",
+        "application": "marine, renewable_energy",
+        "sha256": "a9f7ca525a3ce704c21efe8bfe4a3924beb5cfda92be5d656f70c3922182095b",
+        "retrieved_at": "2026-11-02T16:56:42.853602+00:00"
+      },
+      {
+        "slug": "s6-l16-ex",
+        "model": "S6 L16-EX",
+        "url": "https://rollsbattery.com/battery/s6-l16-ex/",
+        "application": "marine, renewable_energy",
+        "sha256": "b4f4be2bc2be1c769f84acc755e757e69727d9cc200d0459454e896efd234362",
+        "retrieved_at": "2026-11-02T16:56:49.037832+00:00"
+      },
+      {
+        "slug": "s6-l16",
+        "model": "S6 L16",
+        "url": "https://rollsbattery.com/battery/s6-l16/",
+        "application": "marine, renewable_energy",
+        "sha256": "cdcbe9a8d9029c32ab6a6d5761897c34bc42d957e326c68788559f6418a1f525",
+        "retrieved_at": "2026-11-02T16:56:54.248261+00:00"
+      },
+      {
+        "slug": "s6-l16-hc",
+        "model": "S6 L16-HC",
+        "url": "https://rollsbattery.com/battery/s6-l16-hc/",
+        "application": "marine, renewable_energy",
+        "sha256": "3ae92253087af17ce8b6184e34e827f53f42052eb7d5b19df796fd6746865f65",
+        "retrieved_at": "2026-11-02T16:57:01.565314+00:00"
+      },
+      {
+        "slug": "4-cs-17p",
+        "model": "4 CS 17P",
+        "url": "https://rollsbattery.com/battery/4-cs-17p/",
+        "application": "marine, renewable_energy",
+        "sha256": "9c6c6f50ac06036fff22cb8ed07f7fa5f1edfbd69c4d573f3f41773085675db3",
+        "retrieved_at": "2026-11-02T16:57:14.026625+00:00"
+      },
+      {
+        "slug": "6-cs-17p",
+        "model": "6 CS 17P",
+        "url": "https://rollsbattery.com/battery/6-cs-17p/",
+        "application": "marine, renewable_energy",
+        "sha256": "2d02fcc3e8c1b134c0bb69d02e7bed657a08935231cd0d4f02bbd9d7578ca56b",
+        "retrieved_at": "2026-11-02T16:57:21.445627+00:00"
+      },
+      {
+        "slug": "6-cs-21p",
+        "model": "6 CS 21P",
+        "url": "https://rollsbattery.com/battery/6-cs-21p/",
+        "application": "marine, renewable_energy",
+        "sha256": "6c55d6514e1a1d4cffa9c1387658ef1bea97dd2998665d9650bb09895599bdb1",
+        "retrieved_at": "2026-11-02T16:57:29.589701+00:00"
+      },
+      {
+        "slug": "6-cs-25p",
+        "model": "6 CS 25P",
+        "url": "https://rollsbattery.com/battery/6-cs-25p/",
+        "application": "marine, renewable_energy",
+        "sha256": "32fbaeebcf860927f0683d4471e530160e59e5ea05e330cb4395b27f6e79c82b",
+        "retrieved_at": "2026-11-02T16:57:36.393425+00:00"
+      }
+    ]
+  },
+  {
+    "priority": 3,
+    "url": "https://www.gopa.eu/en/projects/flagship/namibia-lithops-battery-storage/",
+    "entity": "Lithops existing project",
+    "country": "NAM",
+    "version": "Undated project page; 2026–2031 service period",
+    "retrieved_at": "2026-11-02T17:11:55.099307+00:00",
+    "access_license": "Copyright retained; bounded factual observations, no open bulk licence asserted",
+    "estimated_useful_yield": 1,
+    "offered_fields": "220kV, duration, availability/RTE procurement requirements, owner-engineer role, planning horizons",
+    "attempt_result": "Existing identity enriched; owner 19-year/November 2028 vs engineer 15-year/Q3 2028 observations retained as conflict",
+    "processed_partition": "All project facts and challenge sections",
+    "retry_condition": "Updated owner tender/construction documentation",
+    "next_action": "Resolve lifecycle/schedule basis; obtain actual award/construction/commissioning evidence without promoting status from engineering contract",
+    "sha256": "6355711f4f5b2ee8bc38c50a2dfe4c2d76458f3c7c9722c320829bfeebd58925"
+  },
+  {
+    "priority": 4,
+    "url": "https://www.eia.meft.gov.na/web/projects/5425",
+    "entity": "Namibia ECC Lithops",
+    "country": "NAM",
+    "version": "Current indexed registry record",
+    "retrieved_at": "2026-11-02T17:11:55.099307+00:00",
+    "access_license": "Government public registry; reuse assessment incomplete",
+    "estimated_useful_yield": 1,
+    "offered_fields": "Environmental approval and site scope",
+    "attempt_result": "Direct fetch returned HTTP 503; no accepted fields",
+    "processed_partition": "Indexed discovery only",
+    "retry_condition": "Ordinary public access returns successfully; no bypass",
+    "next_action": "Revisit registry and official NamPower documents"
+  },
+  {
+    "priority": 5,
+    "url": "https://ngen-group.eu/projects?category=battery-energy-storage",
+    "entity": "NGEN owner portfolio",
+    "country": "SVN/HRV/AUT/POL",
+    "version": "Current portfolio; Talum 3 targets 2026 Q4",
+    "retrieved_at": "2026-11-02T17:11:55.099307+00:00",
+    "access_license": "Terms §4 limit to personal/internal business; no bulk redistribution licence",
+    "estimated_useful_yield": 12,
+    "offered_fields": "Site, rating, timeline and Tesla model",
+    "attempt_result": "12 project leads screened; no bulk ingestion. Jesenice 12/24 header vs 12.6/22.2 body conflict; Talum3 future plan not operation",
+    "processed_partition": "Jesenice, Talum1/2/3, Šibenik1/2, Arnoldstein1/2, Vistula, Wagenham, Niklasdorf, Fürstenfeld",
+    "retry_condition": "Independent permissive regulator/operator evidence or clarified terms",
+    "next_action": "Find national connection or licensing registry for these sites",
+    "terms_url": "https://ngen-group.eu/terms-conditions"
+  },
+  {
+    "priority": 6,
+    "url": "https://www.metlen.com/news/company-news/metlen-expands-its-portfolio-in-italy-with-strategic-investments-in-storage-projects/",
+    "entity": "METLEN Italy portfolio",
+    "country": "ITA",
+    "version": "13 February 2025; Erchie commissioning release 25 September 2026",
+    "retrieved_at": "2026-11-02T17:11:55.099307+00:00",
+    "access_license": "Restrictive website reuse terms; counterparty Dolomiti also reserves reproduction rights",
+    "estimated_useful_yield": 4,
+    "offered_fields": "Battery capacity, operational/under construction distinction, tolling contract",
+    "attempt_result": "Four project leads held, not ingested. San Severo 2023 permit 25MW/33MWh differs portfolio 25MW/3h; no scope reconciliation",
+    "processed_partition": "Erchie, San Severo, Brindisi, Cheremule",
+    "retry_condition": "Government/registry evidence matching phase and revision",
+    "next_action": "Reconcile San Severo permit and seek official registry on all four",
+    "corroboration_urls": [
+      "https://www.gazzettaufficiale.it/eli/id/2023/10/03/TX23ADE9554/p2",
+      "https://www.metlen.com/news/company-news/metlen-and-dolomiti-energia-inaugurate-the-erchie-bess-in-apulia/",
+      "https://www.gruppodolomitienergia.it/it/footer/copyright-e-note-legali.html"
+    ]
+  },
+  {
+    "priority": 7,
+    "url": "https://www.enersys.com/495eba/globalassets/documents/product-documentation/powersafe/sbs/emea/Batteries_PowerSafe_SBS_en-sbs-rs.pdf",
+    "entity": "EnerSys PowerSafe SBS exact table",
+    "country": "Global/OEM",
+    "version": "EMEA-EN-RS-PS-SBS-0223; 2023",
+    "retrieved_at": "2026-11-02T17:11:55.099307+00:00",
+    "access_license": "Website restricts personal noncommercial use; no open bulk licence established",
+    "estimated_useful_yield": 19,
+    "offered_fields": "Voltage/Ah, dimensions/mass, terminals and charge data",
+    "attempt_result": "19 model columns identified; representative rows examined; no bulk extraction or accepted records",
+    "processed_partition": "Table/sample and website terms",
+    "retry_condition": "Permissive source or clarified reuse authority",
+    "next_action": "Use alternative OEM tables with suitable terms; do not repeatedly refetch unchanged restricted source",
+    "terms_url": "https://www.enersys.com/en/footer-pages/website-terms-of-use-global/"
+  }
+]
