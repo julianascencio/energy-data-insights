@@ -1,0 +1,50 @@
+{
+  "attempted_at": "2026-11-02T08:30:37.614304+00:00",
+  "sources": [
+    {
+      "publisher": "Central Electricity Authority India",
+      "url": "https://cea.nic.in/rpm/plant-wise-details-of-renewable-energy-projects/?lang=en",
+      "result": "Web redirect to loginPage with captcha; direct HTTP404. No login or form submission. Public older November2023 PDF path HTTP404; current divisionPage506 returned502 in web retrieval.",
+      "licence_assessment": "No source file obtained; no bulk reuse assertion",
+      "revision": "Not established; cached search references historical2023 plant-wise report and newer divisional reports",
+      "accepted": 0,
+      "next_action": "Find a permitted state SLDC or regulator inventory with explicitPV; do not treat genericSolar as PV or cached index as downloaded evidence"
+    },
+    {
+      "publisher": "LONGi",
+      "url": "https://eu.longi.com/longi-solar-panels-datasheets/lr7-72hvd-650-660",
+      "terms_url": "https://www.longi.com/eu/legal/",
+      "result": "Web table reviewed; direct403. Website terms restrict publication/copying/information-retrieval storage without permission. Three named models blocked; no extracted datasheet rows accepted. Cross-revision efficiency/fuse differences also unresolved.",
+      "revision": "Undated live product table; older indexedPDF labelledDraft",
+      "candidate_models": 3,
+      "accepted": 0,
+      "next_action": "Use a permitted exact-revision OEM source only; no permission solicitation/contact"
+    },
+    {
+      "publisher": "GEWISS",
+      "url": "https://www.gewiss.com/ww/en/products/product.1000001.1000072.GWD9907",
+      "terms_url": "https://www.gewiss.com/ww/en/about-gewiss/legal",
+      "download_url": "https://www.gewiss.com/content/dam/gwdam/FILE/ZMN/75033035.pdf",
+      "metadata": {
+        "url": "https://www.gewiss.com/ww/en/products/product.1000001.1000072.GWD9907",
+        "retrieved_at": "2026-11-02T08:21:45.117197+00:00",
+        "sha256": "ba09afdb9080834594bc5c1a6c2359e4a6a253b6d976e4b1213e280cebb5408a",
+        "bytes": 182164,
+        "final_url": "https://www.gewiss.com/ww/en/products/product.1000001.1000072.GWD9907"
+      },
+      "result": "One exact board page reviewed. Linked guide is generic40CDK enclosure, not exact board crosswalk; do not transfer IP/dimensions. Legal page personal consultation restriction; zeroaccepted.",
+      "licence_assessment": "Restricted site reuse; no permission established",
+      "accepted": 0,
+      "next_action": "Choose independently permitted OEM source; do not fabricate board configuration from generic enclosure"
+    },
+    {
+      "publisher": "BENY",
+      "url": "https://www.beny.com/product-item/600v-1000v-dc-combiner-box-4-in-2-out-bhs-4-2/",
+      "download_url": "https://www.beny.com/wp-content/uploads/2021/09/Solar-DC-AC-Box-BENY-Electric-202207-2.pdf",
+      "result": "One dual-voltage board table reviewed; linked14MB catalogue exceeds web text limit and direct download403. 6/6 page web timeout. No attempts to bypass. Switched to four ungated exact Weidmüller datasheets.",
+      "licence_assessment": "Copyright retained; no open bulk licence asserted; no records accepted",
+      "accepted": 0,
+      "next_action": "Retry only public accessible exact revision download; reconcile dual-voltage model configurations and current-per-output semantics before accepting"
+    }
+  ]
+}
