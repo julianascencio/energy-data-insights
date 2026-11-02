@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T12:12:28.893565+00:00",
+  "updated_at": "2026-11-02T13:06:58.669651+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Complete remaining GEM partitions14–16;18 exactINVT models;two qualified Soltigua tracker platforms;182 complete-phase ownership enrichments. KenyaEPRA andNERSA primary inventories assessed; no aggregate press counts accepted.",
-  "next_highest_value_source": "GEM reviewed recovery exhausted. Retry BrazilANEEL SIGA resource11ec447d-698d-4ab8-977f-b424d5deee6a UFV sample after service recovery; resolveODbL distribution andCEG/GEMcrosswalk before bulkacceptance. Equipment: Schletter English1PV7/2PV2 published sheets, then INVT50–70 table.",
+  "selection_note": "Four complete INVT exact-model tables (33 accepted); 12 reviewed unanimous corporate ownership cohorts (199 enriched); ANEEL, AEMO, CEN inventories and Schletter/SolarSteel source rights reviewed.",
+  "next_highest_value_source": "Project: permitted German MaStR public filtered CSV, bounded utility-PV cohort and project/unit reconciliation. Equipment: public exact-model PV combiner tables from Weidmüller or Phoenix Contact; Schletter/SolarSteel held for reuse terms.",
   "sources": [
     {
       "id": "uk_repd",
@@ -2256,6 +2256,201 @@
         "accepted": 0,
         "facility_rows_reviewed": 0
       }
+    },
+    {
+      "id": "aneel_1257",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.aneel.gov.br/api/3/action/datastore_search?resource_id=11ec447d-698d-4ab8-977f-b424d5deee6a&limit=5&filters=%7B%22SigTipoGeracao%22%3A%22UFV%22%7D",
+      "version_or_date": "Current public page accessed 2026-11-02; exact document dates in source register where accepted",
+      "licence_assessment": "503 on bounded UFV sample; no rows downloaded. ODbL distribution unresolved.",
+      "access_assessment": {
+        "url": "https://dadosabertos.aneel.gov.br/api/3/action/datastore_search?resource_id=11ec447d-698d-4ab8-977f-b424d5deee6a&limit=5&filters=%7B%22SigTipoGeracao%22%3A%22UFV%22%7D",
+        "error": "HTTP Error 503: Service Unavailable"
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "note": "Accepted equipment columns only; blocked inventories are not accepted candidates."
+      },
+      "fields_offered": [
+        "identity",
+        "project or platform metadata subject to scope review"
+      ],
+      "last_attempt": "2026-11-02T13:06:58.669651+00:00",
+      "result": "503 on bounded UFV sample; no rows downloaded. ODbL distribution unresolved.",
+      "retry_condition": "Retry after service recovery; source-specific ODbL distribution and CEG/site-phase crosswalk first.",
+      "next_action": "Retry after service recovery; source-specific ODbL distribution and CEG/site-phase crosswalk first.",
+      "processed_cursor": null
+    },
+    {
+      "id": "aemo_1257",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "version_or_date": "Current public page accessed 2026-11-02; exact document dates in source register where accepted",
+      "licence_assessment": "403 on normal October workbook download; no bytes or rows accepted.",
+      "access_assessment": {
+        "url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+        "error": "HTTP Error 403: Forbidden"
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "note": "Accepted equipment columns only; blocked inventories are not accepted candidates."
+      },
+      "fields_offered": [
+        "identity",
+        "project or platform metadata subject to scope review"
+      ],
+      "last_attempt": "2026-11-02T13:06:58.669651+00:00",
+      "result": "403 on normal October workbook download; no bytes or rows accepted.",
+      "retry_condition": "Normal download recovery; inspect PV classification and unit/station scope.",
+      "next_action": "Normal download recovery; inspect PV classification and unit/station scope.",
+      "processed_cursor": null
+    },
+    {
+      "id": "cen_1257",
+      "country": "CHL",
+      "entity": "projects",
+      "source_url": "https://api-infotecnica.coordinador.cl/v1/centrales/?limit=5",
+      "version_or_date": "Current public page accessed 2026-11-02; exact document dates in source register where accepted",
+      "licence_assessment": "Bounded request ignored limit and returned 1219 entries, 756 generic Solares. No canonical candidates accepted; generic solar does not establish PV. Terms prohibit unauthorized bulk extraction and commercial redistribution. Stopped further extraction.",
+      "access_assessment": {
+        "url": "https://api-infotecnica.coordinador.cl/v1/centrales/?limit=5",
+        "sha256": "33ef0cca4ad2643418b8789451e6801ebf730085a0f3df3e3327ec02b608be11",
+        "bytes": 632357,
+        "retrieved_at": "2026-11-02T12:59:26.677056+00:00",
+        "status": 200
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "note": "Accepted equipment columns only; blocked inventories are not accepted candidates."
+      },
+      "fields_offered": [
+        "identity",
+        "project or platform metadata subject to scope review"
+      ],
+      "last_attempt": "2026-11-02T13:06:58.669651+00:00",
+      "result": "Bounded request ignored limit and returned 1219 entries, 756 generic Solares. No canonical candidates accepted; generic solar does not establish PV. Terms prohibit unauthorized bulk extraction and commercial redistribution. Stopped further extraction.",
+      "retry_condition": "Need explicit applicable API reuse authorization, positive PV classification and site/phase reconciliation; do not resume merely because endpoint responds.",
+      "next_action": "Need explicit applicable API reuse authorization, positive PV classification and site/phase reconciliation; do not resume merely because endpoint responds.",
+      "processed_cursor": null
+    },
+    {
+      "id": "schletter_1257",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.schletter-group.com/download-center/category/tracking-systems/",
+      "version_or_date": "Current public page accessed 2026-11-02; exact document dates in source register where accepted",
+      "licence_assessment": "Two published English sheet paths discovered; no technical rows accepted. Legal notice requires written approval beyond normal site use.",
+      "access_assessment": {
+        "url": "https://www.schletter-group.com/download-center/category/tracking-systems/",
+        "sha256": "7ace2bcc8bba26e2c08a427ee2157c86d28cb0c0dff2622acb7c01ac7034d0ba",
+        "bytes": 481535,
+        "retrieved_at": "2026-11-02T12:59:17.725248+00:00",
+        "status": 200
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "note": "Accepted equipment columns only; blocked inventories are not accepted candidates."
+      },
+      "fields_offered": [
+        "identity",
+        "project or platform metadata subject to scope review"
+      ],
+      "last_attempt": "2026-11-02T13:06:58.669651+00:00",
+      "result": "Two published English sheet paths discovered; no technical rows accepted. Legal notice requires written approval beyond normal site use.",
+      "retry_condition": "Reuse basis or alternate authorized exact evidence required; no contact/form submitted.",
+      "next_action": "Reuse basis or alternate authorized exact evidence required; no contact/form submitted.",
+      "processed_cursor": null
+    },
+    {
+      "id": "solarsteel_1257",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.gsolarsteel.com/products/1p-solar-trackers/",
+      "version_or_date": "Current public page accessed 2026-11-02; exact document dates in source register where accepted",
+      "licence_assessment": "Current 1P R6 and 2P exact public sheets located/downloaded; two platforms held on terms restricting content to personal/private use and prohibiting inclusion on other websites. No extracted technical table ingested.",
+      "access_assessment": {
+        "url": "https://www.gsolarsteel.com/products/1p-solar-trackers/",
+        "sha256": "134cc66d5265fe9013376964298df8d6deb86e5bd20f3d78b6019dc1dd82b282",
+        "bytes": 182041,
+        "retrieved_at": "2026-11-02T13:03:27.782487+00:00",
+        "status": 200
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "note": "Accepted equipment columns only; blocked inventories are not accepted candidates."
+      },
+      "fields_offered": [
+        "identity",
+        "project or platform metadata subject to scope review"
+      ],
+      "last_attempt": "2026-11-02T13:06:58.669651+00:00",
+      "result": "Current 1P R6 and 2P exact public sheets located/downloaded; two platforms held on terms restricting content to personal/private use and prohibiting inclusion on other websites. No extracted technical table ingested.",
+      "retry_condition": "Suitable reuse authorization or other permitted primary evidence before extraction.",
+      "next_action": "Suitable reuse authorization or other permitted primary evidence before extraction.",
+      "processed_cursor": null
+    },
+    {
+      "id": "invt_1257",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.invt-solar.com/downloads.html",
+      "version_or_date": "Current public page accessed 2026-11-02; exact document dates in source register where accepted",
+      "licence_assessment": "Four complete OEM tables 33 exact columns accepted; prior 18 models unchanged. Selected factual metadata, copyright retained; not an open bulk licence.",
+      "access_assessment": {
+        "url": "https://www.invt-solar.com/downloads.html",
+        "status": 200,
+        "sha256": "fbce53afc4989d82ce305b00ce60e6272d5cab51c52456ebb4646bc2c39c6efb",
+        "bytes": 105572,
+        "retrieved_at": "2026-11-02T12:59:16.059932+00:00"
+      },
+      "estimated_useful_yield": {
+        "accepted": 33,
+        "note": "Accepted equipment columns only; blocked inventories are not accepted candidates."
+      },
+      "fields_offered": [
+        "identity",
+        "model-specific technical metadata"
+      ],
+      "last_attempt": "2026-11-02T13:06:58.669651+00:00",
+      "result": "Four complete OEM tables 33 exact columns accepted; prior 18 models unchanged. Selected factual metadata, copyright retained; not an open bulk licence.",
+      "retry_condition": "Selected tables exhausted. Next independent combiner OEM with exact model table and source rights review.",
+      "next_action": "Selected tables exhausted. Next independent combiner OEM with exact model table and source rights review.",
+      "processed_cursor": {
+        "processed_tables": 4,
+        "accepted_models": 33
+      }
+    },
+    {
+      "id": "taiwan_module_register_20261102T1257",
+      "country": "TWN",
+      "entity": "modules",
+      "source_url": "https://data.gov.tw/dataset/16424",
+      "version_or_date": "Official metadata updated2025-08-26; linked file listing1050421 may be historical2016; underlying snapshot not verified",
+      "licence_assessment": "Official indexed dataset metadata declares Government Data Open Licence Taiwan v1.0; exact file notice/attribution and licence text need review before ingestion. No licence inferred for third-party mirrors.",
+      "access_assessment": "Official search metadata readable; direct normal dataset GET403. Energy Administration page also403 through web retrieval. No current file bytes/download checksum.",
+      "estimated_useful_yield": {
+        "planning_range": [
+          10,
+          30
+        ],
+        "unit": "exact models or enriched models",
+        "confidence": "planning only; no raw candidates counted"
+      },
+      "fields_offered": [
+        "brand",
+        "exact model",
+        "dimensions",
+        "rated output",
+        "expiry date",
+        "performance/safety verification standards and bodies"
+      ],
+      "last_attempt": "2026-11-02T13:16:56.648703+00:00",
+      "result": "Promising additional official module source outside CEC/SAM; no records accepted. Expiry and historical revision require explicit handling, not current-certification claims.",
+      "retry_condition": "Normal public file access, exact byte/version/licence review and OEM/alias reconciliation",
+      "next_action": "Follow official linked CSV when service recovers; verify actual snapshot date and power-bin model identities; retain registration expiry and avoid range expansion.",
+      "processed_cursor": null
     }
   ]
 }
