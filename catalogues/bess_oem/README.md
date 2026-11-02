@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **292 records from 37 product
-suppliers, backed by 107 primary sources**: 279 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **305 records from 37 product
+suppliers, backed by 111 primary sources**: 292 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -160,7 +160,7 @@ and unsupported regional voltage tables. It stages candidates for review only.
 
 Previous pass: [Regional Victron specifications and Singapore reconciliation](../bess/research/2026-11-02_regional_victron_singapore_report.md).
 
-Latest pass: [Asian projects, Deye and Hubble equipment](../bess/research/2026-11-02_asia_deye_hubble_report.md).
+Previous pass: [Asian projects, Deye and Hubble equipment](../bess/research/2026-11-02_asia_deye_hubble_report.md).
 
 ## Offline Deye Pro staging
 
@@ -180,3 +180,5 @@ energy: the G60 power observation requires review against the conflicting webpag
 It does not stage the separately restricted BOS-G manual, infer variants, or accept
 records automatically. Source rights, document version and identity remain review
 steps; PDF and extracted text hashes are emitted with the candidate ledger.
+
+Latest pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
