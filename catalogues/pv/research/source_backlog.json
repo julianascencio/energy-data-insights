@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T04:07:44.704015+00:00",
+  "updated_at": "2026-11-02T07:06:47.194560+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "Processed eight complete French 1–5 MW regions (755 rows), all six Tauro ECO model pages and eleven Solis models, and full New Zealand dispatched-fleet PV subset (14 rows). Independent Brazil CCEE aggregates and KACO/Arctech enrichment access/terms assessed. No US expansion.",
-  "next_highest_value_source": "GEM recovery batch06 (50–5f), 3552 previously reviewed projects; batch05 now included in PR59, do not duplicate.",
+  "next_highest_value_source": "GEM batch10 (90–9f),3424 reviewed projects; do not duplicate batch09 in PR61. SOFAR next physical page29 utility inverter table; IDEEMATEC wind/interface discrepancies remain review-only.",
   "sources": [
     {
       "id": "uk_repd",
@@ -1155,9 +1155,9 @@
       "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
       "version_or_date": "February 2026",
       "licence_assessment": "Existing CC BY attribution; complete locations with TZ/WKSL withheld",
-      "access_assessment": "Pinned workbook downloaded again and checksum verified",
+      "access_assessment": "Cached pinned workbook checksum verified; provider commit history rechecked; no new download claimed",
       "estimated_useful_yield": {
-        "next_reviewed_partition": 3552
+        "next_reviewed_partition": 3598
       },
       "fields_offered": [
         "phase identities",
@@ -1166,21 +1166,22 @@
         "location",
         "ownership"
       ],
-      "last_attempt": "2026-11-02T04:07:44.704015+00:00",
-      "result": "3488 batch05 records added through upsert with zero conflicts; batches01–04 preserved",
+      "last_attempt": "2026-11-02T04:21:54.635749+00:00",
+      "result": "3552 batch06 records added with zero conflicts; all baseline records preserved",
       "retry_condition": "Recheck main, open PRs and source revision before next partition",
-      "next_action": "Export batch06 only after complete accepted-ID digest matches; do not duplicate batch05",
+      "next_action": "Recheck main and open PRs, then export batch07 after complete accepted-ID digest matches",
       "processed_cursor": {
         "already_merged_batches": [
           1,
           2,
-          3
-        ],
-        "pr59_batches": [
+          3,
           4,
           5
         ],
-        "next_batch": 6
+        "prepared_batches": [
+          6
+        ],
+        "next_batch": 7
       }
     },
     {
@@ -1216,6 +1217,225 @@
         ],
         "specification_page": 2
       }
+    },
+    {
+      "id": "gem_recovery_batch07_20261102T0503",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February 2026",
+      "licence_assessment": "Existing CC BY attribution and TZ/WKSL exclusions retained",
+      "access_assessment": "Fresh pinned workbook download, SHA256 verified",
+      "estimated_useful_yield": {
+        "next_partition_reviewed": 3551
+      },
+      "fields_offered": [
+        "phase identities",
+        "capacity and rating",
+        "dated lifecycle",
+        "location",
+        "ownership"
+      ],
+      "last_attempt": "2026-11-02T05:09:36.343053+00:00",
+      "result": "3598 batch07 projects ingested with no conflicts; 95 existing projects enriched from explicit unanimous 100% phase-owner assertions",
+      "retry_condition": "Source revision/main or open PR changes require reconciliation",
+      "next_action": "Check PR61 and then select batch08; do not duplicate batch07",
+      "processed_cursor": {
+        "pr61_batches": [
+          6,
+          7
+        ],
+        "next_batch": 8,
+        "ownership_mapping": "20261102T0503_ownership_review.json"
+      }
+    },
+    {
+      "id": "sofar_catalogue_202601_v74",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.sofarsolar.com/upload/file/20260202/1770025908261035040.pdf",
+      "version_or_date": "EN-EU V7.4, 2026-01-26",
+      "licence_assessment": "Publisher copyright retained; factual records only, no catalogue/artwork redistributed",
+      "access_assessment": "Ungated OEM PDF downloaded and three exact-model tables rendered/visually inspected",
+      "estimated_useful_yield": {
+        "reviewed": 21,
+        "accepted": 21
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "efficiency",
+        "thermal",
+        "environmental",
+        "protection",
+        "interfaces",
+        "OEM standards claims"
+      ],
+      "last_attempt": "2026-11-02T07:06:47.194560+00:00",
+      "result": "52 exact models accepted cumulatively:21 single-phase,18 smaller three-phase,13 25–125kW named models. Qualified ratings retained.",
+      "retry_condition": "New revision or unresolved field evidence",
+      "next_action": "Review physical page29 utility PV table; do not ingest following storage-only PCS tables into PV catalogue.",
+      "processed_cursor": {
+        "completed_physical_pages": [
+          9,
+          11,
+          13,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27
+        ],
+        "completed_models": 52,
+        "next_physical_pages": [
+          29
+        ]
+      }
+    },
+    {
+      "id": "gem_batch08_20261102T0603",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February 2026",
+      "licence_assessment": "Existing CC BY attribution retained; restricted TZ/WKSL locations excluded",
+      "access_assessment": "Fresh checksum-pinned download and complete accepted-ID digest verified",
+      "estimated_useful_yield": {
+        "next_reviewed_partition": 3550
+      },
+      "fields_offered": [
+        "phase identities",
+        "rated capacity",
+        "location",
+        "dated lifecycle",
+        "ownership"
+      ],
+      "last_attempt": "2026-11-02T06:10:15.440231+00:00",
+      "result": "3551 batch08 projects ingested and100 existing projects enriched with explicit phase-owner evidence; zero conflicts",
+      "retry_condition": "Refresh revision/open PR/main before next export",
+      "next_action": "Select batch09 only after full accepted-ID digest passes; no duplicate publication of batch08",
+      "processed_cursor": {
+        "pr61_batches": [
+          6,
+          7,
+          8
+        ],
+        "next_batch": 9,
+        "ownership_review": "20261102T0603_ownership_review.json"
+      }
+    },
+    {
+      "id": "gave_sp_catalogue_review_20261102T0603",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.gave.com/Cat%C3%A1logos/CA029/099CA01550.04ES.pdf",
+      "version_or_date": "Filename099CA01550.04ES; publication date not established",
+      "licence_assessment": "Publisher copyright retained; no document redistribution or bulk reuse licence assumed",
+      "access_assessment": "Public multi-product catalogue downloaded; SP table inspected alongside exact product page",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exact model references",
+        "input counts",
+        "fuses",
+        "disconnectors",
+        "SPD",
+        "mechanical enclosure"
+      ],
+      "last_attempt": "2026-11-02T06:10:15.440231+00:00",
+      "result": "Prior SP091516D15 hold remains: catalogue/title/table15A versus product description20A. No new accepted Gave records; existing8-string record not duplicated.",
+      "retry_condition": "Exact revision evidence resolves conflicting description; no contacts/forms authorized",
+      "next_action": "Keep fuse conflict in review; inspect a different ungated OEM catalogue when seeking new combiners",
+      "processed_cursor": {
+        "catalogue_physical_page": 75,
+        "held_model": "SP091516D15",
+        "review": "20261102T0603_combiner_review.json"
+      }
+    },
+    {
+      "id": "gem_batch09_20261102T0655",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February2026",
+      "licence_assessment": "Existing CC BY attribution and TZ/WKSL exclusions retained",
+      "access_assessment": "Fresh pinned bytes and full accepted-ID digest verified",
+      "estimated_useful_yield": {
+        "next_reviewed_partition": 3424
+      },
+      "fields_offered": [
+        "identity",
+        "capacity and rating",
+        "location",
+        "dated lifecycle",
+        "ownership"
+      ],
+      "last_attempt": "2026-11-02T07:06:47.194560+00:00",
+      "result": "3550 batch09 projects ingested;108 existing projects enriched from unanimous explicit corporate ownership phase evidence",
+      "retry_condition": "Recheck source/main/open PRs before next export",
+      "next_action": "Select batch10 only after full digest passes",
+      "processed_cursor": {
+        "pr61_batches": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "next_batch": 10,
+        "ownership_review": "20261102T0655_ownership_review.json"
+      }
+    },
+    {
+      "id": "ideematec_ltec_20261102T0655",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.ideematec.com/products-services/solar-trackers/ltec-2p",
+      "version_or_date": "2P JUNE2026 VS.2;1P undated, current linked file filename contains20260611",
+      "licence_assessment": "Copyright retained; selected factual metadata only, no source documents/artwork redistributed",
+      "access_assessment": "Legacy2024 URL404; current product-page links resolved two public OEM PDFs, downloaded and visually checked",
+      "estimated_useful_yield": {
+        "models_reviewed": 2,
+        "accepted_profiles": 2,
+        "held_wind_field_cases": 2
+      },
+      "fields_offered": [
+        "tracking range",
+        "slope",
+        "mechanical/configuration bounds",
+        "control",
+        "component warranty claims"
+      ],
+      "last_attempt": "2026-11-02T07:06:47.194560+00:00",
+      "result": "Two named configurable family profiles accepted; no scalar wind speed. 2P US-wired label preserved literally. Formal warranty/certificates not independently verified.",
+      "retry_condition": "Exact revision/condition evidence resolves wind discrepancies; no contacts/forms",
+      "next_action": "Resolve111m/s unit-equivalent discrepancy and57 versus72m/s conditions before assigning rated wind value",
+      "processed_cursor": {
+        "models": [
+          "Horizon L:TEC1P",
+          "Horizon L:TEC2P"
+        ],
+        "review": "20261102T0655_tracker_review.json"
+      }
+    },
+    {
+      "id": "solargik_versatrack_20261102T0655",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.solargik.com/versatrack/",
+      "version_or_date": "Indexed SpecSheet Ver3; current download inaccessible",
+      "licence_assessment": "No source document obtained; no bulk reuse rights presumed",
+      "access_assessment": "Product page download and indexed PDF paths return HTTP404, including www/non-www; no bypass",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "tracker mechanics",
+        "drive/control",
+        "wind/environmental conditions"
+      ],
+      "last_attempt": "2026-11-02T07:06:47.194560+00:00",
+      "result": "Zero accepted Solargik records. Switched to current linked IDEEMATEC datasheets.",
+      "retry_condition": "Restored public exact-version download with terms verified",
+      "next_action": "Revisit only when current OEM download works; do not import cached search snippets as specifications",
+      "processed_cursor": null
     }
   ]
 }
