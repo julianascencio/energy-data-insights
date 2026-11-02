@@ -9,6 +9,7 @@ from pathlib import Path
 
 from energy_data_retrieval.pv_catalogue.catalogue import canonical_json, load_records
 from energy_data_retrieval.pv_catalogue.gem import read_gem_workbook, stage_gem_projects
+from energy_data_retrieval.pv_catalogue.gem_batches import select_reviewed_gem_batch
 
 
 def main() -> None:
@@ -18,7 +19,11 @@ def main() -> None:
     parser.add_argument("--review", type=Path, required=True)
     parser.add_argument("--catalogue", type=Path, default=Path("catalogues/pv"))
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--batch", type=int, help="Export only this reviewed publication batch")
+    parser.add_argument("--summary", type=Path, help="Complete batch ledger; required with --batch")
     args = parser.parse_args()
+    if (args.batch is None) != (args.summary is None):
+        parser.error("--batch and --summary must be supplied together")
     review = json.loads(args.review.read_text())
     source = json.loads((args.catalogue / "sources.json").read_text())[review["source_id"]]
     if source["sha256"] != review["sha256"]:
@@ -36,6 +41,10 @@ def main() -> None:
     digest = hashlib.sha256("\n".join(sorted(r["record_id"] for r in rows)).encode()).hexdigest()
     if digest != review["accepted_ids_sha256"]:
         raise ValueError("Accepted identities changed; re-review overlaps before import")
+    if args.batch is not None:
+        rows = select_reviewed_gem_batch(
+            rows, review=review, summary=json.loads(args.summary.read_text()), batch=args.batch
+        )
     with args.output.open("x") as out:
         for row in rows:
             out.write(canonical_json(row) + "\n")

@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-11-02T03:05:24.153804+00:00",
+  "sources": [
+    {
+      "publisher": "Global Energy Monitor",
+      "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version": "February 2026",
+      "access_licence": "Official page rechecked; pinned provider workbook downloaded with matching registered SHA-256; existing CC BY notice and restricted-lineage exclusion retained",
+      "fields": [
+        "phase identities",
+        "technology",
+        "capacity rating",
+        "ownership",
+        "dated status"
+      ],
+      "estimated_useful_yield": {
+        "already_reviewed_full_set": 56605,
+        "selected_existing_batch": 3666,
+        "new_acceptances": 0
+      },
+      "result": "Full accepted-ID set reverified before batch04 selection; all 16 partition count/country ledgers checked. Selected 3666 records exactly equal current PR records.",
+      "retry_condition": "Changed source, main identities or reviewed partition ledger requires full reconciliation",
+      "next_action": "Use tested --batch 5 export for 40–4f only after current open-PR inventory; 3488 already-reviewed records, not new findings.",
+      "processed_cursor": {
+        "review": "20261102_gem_review.json",
+        "selected_batch": 4,
+        "prefixes": [
+          "30",
+          "3f"
+        ]
+      }
+    },
+    {
+      "publisher": "Weidmüller",
+      "url": "https://eshop.weidmueller.com/en/pv-224s0f3cxxv0o0txpx15pww/p/8000078882",
+      "related_url": "https://eshop.weidmueller.com/en/pv-224s0f3cxxv0o0txpx15pww/p/8000124311",
+      "version": null,
+      "access_licence": "Public product pages inspected; reuse assessment incomplete, no specifications accepted",
+      "fields": [
+        "model identity",
+        "electrical",
+        "mechanical",
+        "protection"
+      ],
+      "estimated_useful_yield": null,
+      "result": "Two article IDs share exact model PV 224S0F3CXXV0O0TXPX15PWW. Neither treated as a second configuration without reviewed revision/identity evidence.",
+      "retry_condition": "Permitted exact article datasheets and replacement/configuration crosswalk",
+      "next_action": "Compare the two article datasheets and revision metadata; do not create two canonical models just from article IDs.",
+      "processed_cursor": [
+        "8000078882",
+        "8000124311"
+      ]
+    },
+    {
+      "publisher": "PV Hardware",
+      "url": "https://pvhardware.com/en/downloads/solar-expert-axoneduo-infinity-datasheet/",
+      "version": null,
+      "access_licence": "Download requires personal/company/email form; no form submitted, no bypass, reuse not established",
+      "fields": [
+        "tracker specifications"
+      ],
+      "estimated_useful_yield": null,
+      "result": "Existing AxoneDuo Infinity record found. Gated current datasheet not obtained; legacy Axone Duo PDF not substituted for Infinity.",
+      "retry_condition": "Ungated permitted exact revision source",
+      "next_action": "Choose a different ungated OEM table or resolve exact current Infinity evidence without contacting people.",
+      "processed_cursor": {
+        "existing_record_id": "7e8d9133-31bf-5406-a180-c07f5ced0847"
+      }
+    }
+  ]
+}
