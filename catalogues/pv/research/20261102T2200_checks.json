@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-11-02T22:23:54.052732+00:00",
+  "elapsed_minutes_at_publication_preparation": 28.9,
+  "tests": {
+    "full_passed": 1661,
+    "optional_cdsapi_skipped": 1,
+    "focused_passed": 105,
+    "viewer_passed": 8,
+    "nepra_focused_included": 14
+  },
+  "passed": [
+    "schema/evidence catalogue validation",
+    "preservation and natural identities",
+    "Ruff lint/format",
+    "ty",
+    "repository hygiene",
+    "research citations",
+    "offline example via strict Sphinx gallery",
+    "strict Sphinx build",
+    "407 HTML pages local links/assets",
+    "five typed ZSTD table counts/checksums/compression",
+    "final input digest matches canonical data/sources and documentation PV manifest",
+    "all three distributions build and strict twine",
+    "installed wheels external environment",
+    "pinned actual NEPRA source replay; zero accepted",
+    "git diff --check"
+  ],
+  "limitations": [
+    "one optional cdsapi test skipped",
+    "remote CI separate from local checks",
+    "NEPRA copyright/site scopes unresolved, zero accepted",
+    "prior canonical holds preserved"
+  ]
+}

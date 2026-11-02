@@ -1,0 +1,163 @@
+{
+  "accepted": [
+    {
+      "model": "GW30K-SDT-C30",
+      "record_id": "46a051c5-36d1-52dc-8a00-41b0c3c245ea",
+      "source_id": "goodwe_sdt30_50_20251216_v20_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW30K-SDT-30",
+      "record_id": "b9d6d7ce-3bd7-58cb-87bb-aa8c9947b080",
+      "source_id": "goodwe_sdt30_50_20251216_v20_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW33K-SDT-C30",
+      "record_id": "3747d6fb-51ef-5cfa-8093-85254bc54a68",
+      "source_id": "goodwe_sdt30_50_20251216_v20_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW36K-SDT-C30",
+      "record_id": "df4513cf-5560-5a09-aab8-44ae51ca555a",
+      "source_id": "goodwe_sdt30_50_20251216_v20_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW40K-SDT-C30",
+      "record_id": "608888a2-7653-562f-b63c-2968cc05d7b3",
+      "source_id": "goodwe_sdt30_50_20251216_v20_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW40K-SDT-P30",
+      "record_id": "d0a1fd69-7748-5625-92bb-2d99ac3050fc",
+      "source_id": "goodwe_sdt30_50_20251216_v20_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW50K-SDT-C30",
+      "record_id": "a332b051-524c-56ab-a4a7-af45601d25b8",
+      "source_id": "goodwe_sdt30_50_20251216_v20_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW3K-DNS-G40",
+      "record_id": "c91eacfe-57dc-53e6-acee-bd20a5f6f116",
+      "source_id": "goodwe_dnsg4_20250522_v21_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW3.6K-DNS-G40",
+      "record_id": "4320ed4d-abe9-5647-8c83-23d3d1718b75",
+      "source_id": "goodwe_dnsg4_20250522_v21_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW4.2K-DNS-G40",
+      "record_id": "b67769ae-ceff-5efb-90c0-575cd001ab4e",
+      "source_id": "goodwe_dnsg4_20250522_v21_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW5K-DNS-G40",
+      "record_id": "ac147e4b-29c2-5ea3-96b0-c4c905c64fa7",
+      "source_id": "goodwe_dnsg4_20250522_v21_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "GW6K-DNS-G40",
+      "record_id": "1c3a288a-bacb-5552-be0a-33a7e44dd40e",
+      "source_id": "goodwe_dnsg4_20250522_v21_20261102T2100",
+      "result": "accepted"
+    }
+  ],
+  "columns_reviewed": 12,
+  "held_field_groups": [
+    {
+      "models": [
+        "GW33K-SDT-C30",
+        "GW36K-SDT-C30",
+        "GW40K-SDT-C30"
+      ],
+      "field": "surge_protection",
+      "reason": "Hero TypeII vs model table TypeIII standard/TypeII optional. Canonical field omitted; table-only claim qualified in extensions."
+    },
+    {
+      "models": [
+        "GW3K-DNS-G40",
+        "GW3.6K-DNS-G40",
+        "GW4.2K-DNS-G40",
+        "GW5K-DNS-G40",
+        "GW6K-DNS-G40"
+      ],
+      "field": "dc_switch",
+      "reason": "Integrated (PV II Optional) ambiguous; bool omitted, source wording in extensions."
+    }
+  ],
+  "geya_access": {
+    "geya.pdf": {
+      "url": "https://www.geya.net/wp-content/uploads/2025/01/GEYA-SOLAR-PRODUCT-CATALOG.pdf",
+      "sha256": "2bcb2d43c6a054461617e08a0c2719c77ed0f4f9267a2984ab7817d2b62d064e",
+      "bytes": 231,
+      "retrieved_at": "2026-11-02T21:03:38.589656+00:00",
+      "content_assessment": "HTTP200captcha redirect HTML; not a datasheet/product/terms response; no bypass or acceptance"
+    },
+    "geya-index.html": {
+      "url": "https://www.geya.net/product-category/solar-energy-equipments/pv-combiner-box/",
+      "sha256": "3c7ecf4844facb2ccf4b6c9c131eff9de3848de9b0590e8bdf5c2c922a1a8c8c",
+      "bytes": 229,
+      "retrieved_at": "2026-11-02T21:03:38.088347+00:00",
+      "content_assessment": "HTTP200captcha redirect HTML; not a datasheet/product/terms response; no bypass or acceptance"
+    },
+    "geya-privacy.html": {
+      "url": "https://www.geya.net/privacy-policy/",
+      "sha256": "c0e2008e1cf8e715466ac30e05ddc323f3bb4a20f8d16536a77b585a27fffa65",
+      "bytes": 183,
+      "retrieved_at": "2026-11-02T21:03:39.088464+00:00",
+      "content_assessment": "HTTP200captcha redirect HTML; not a datasheet/product/terms response; no bypass or acceptance"
+    },
+    "geya2.html": {
+      "url": "https://www.geya.net/product/gypv-2-1-dc-combiner-box/",
+      "error": "403 Client Error: Forbidden for url: https://www.geya.net/product/gypv-2-1-dc-combiner-box/"
+    },
+    "geya4.html": {
+      "url": "https://www.geya.net/product/gypv-4-1-dc-combiner-box/",
+      "sha256": "042e1310813244d59bd68c23a0d4347684973ad01ddc73c0a83d87ccf36cc345",
+      "bytes": 203,
+      "retrieved_at": "2026-11-02T21:03:41.547498+00:00",
+      "content_assessment": "HTTP200captcha redirect HTML; not a datasheet/product/terms response; no bypass or acceptance"
+    },
+    "geya6.html": {
+      "url": "https://www.geya.net/product/gypv-6-1-dc-combiner-box/",
+      "sha256": "b1e707413041ed34566275711838a04f10294f0fb2692853307b84595c2f9d78",
+      "bytes": 203,
+      "retrieved_at": "2026-11-02T21:03:40.540045+00:00",
+      "content_assessment": "HTTP200captcha redirect HTML; not a datasheet/product/terms response; no bypass or acceptance"
+    },
+    "geya8.html": {
+      "url": "https://www.geya.net/product/gypv-8-1-dc-combiner-box/",
+      "error": "403 Client Error: Forbidden for url: https://www.geya.net/product/gypv-8-1-dc-combiner-box/"
+    },
+    "geya12.html": {
+      "url": "https://www.geya.net/product/gypv-12-1-dc-combiner-box/",
+      "sha256": "e0b70d4fba2e1450dd8502bfd8a8ccf1e69d90b66e7cf86e6868b78a29b2ef44",
+      "bytes": 204,
+      "retrieved_at": "2026-11-02T21:03:41.040357+00:00",
+      "content_assessment": "HTTP200captcha redirect HTML; not a datasheet/product/terms response; no bypass or acceptance"
+    },
+    "geya16.html": {
+      "url": "https://www.geya.net/product/gypv-16-1-dc-combiner-box/",
+      "sha256": "987633bc9620eda1e1065c31b13d905e693cc0c42de5f85a8d0ae3fbad19017b",
+      "bytes": 204,
+      "retrieved_at": "2026-11-02T21:03:43.799950+00:00",
+      "content_assessment": "HTTP200captcha redirect HTML; not a datasheet/product/terms response; no bypass or acceptance"
+    }
+  },
+  "chint_access": {
+    "url": "https://discover.chintglobal.com/view/330030740/1/",
+    "error": "502 Server Error: Bad Gateway for url: https://discover.chintglobal.com/view/330030740/1/"
+  },
+  "identity_review": "All canonical/incoming normalized OEM-model identities compared, no matching candidates; existing GoodWe label reused. Exact named configurations only, no generated variants."
+}

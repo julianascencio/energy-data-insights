@@ -233,3 +233,30 @@ The checksum and accepted-identity digest must match. Updated source bytes or ne
 non-GEM catalogue identities require fresh review. The staging command emits the
 complete reviewed batch; apply only the intended UUID-prefix partition. All source
 terms and transformations are recorded in `licenses/GEM-CC-BY-4.0-NOTICE.md`.
+
+## NEPRA corporate directory: review-only staging
+
+`nepra.stage_nepra_review` parses a pinned official corporate distributed-generation
+HTML directory offline. It returns zero accepted canonical records. The mixed
+solar/thermal directory includes portfolios, licence transfers and unspecified
+gross capacity. Its copyright notice provides no open bulk-reuse grant. Establish
+reuse rights and reconcile licence/site boundaries before accepting any project.
+
+```python
+from pathlib import Path
+from energy_data_retrieval.pv_catalogue.nepra import stage_nepra_review
+
+review = stage_nepra_review(
+    Path("/path/to/pinned-nepra-directory.html").read_bytes(),
+    sha256="42bc4e2df46808689c81c37c8310c35b7d2972590212ea0391a6e6c575f53e3f",
+    source_url="https://nepra.org.pk/licensing/Generation%20Distributed%20Generation.php",
+)
+assert review["accepted_canonical_records"] == 0
+```
+
+The adapter retains native corporate licence/capacity spellings, qualifies explicit
+PV separately from generic solar, flags duplicate licences, and rejects unreviewed
+structure changes. Contact fields, noncorporate headings and external links are
+omitted. Same-company licences remain separate observations. Raw HTML and full
+staging output stay outside Git; the dated review commits counts and native licence
+identifiers only. No current operation, ownership, AC/DC or plant boundary is inferred.

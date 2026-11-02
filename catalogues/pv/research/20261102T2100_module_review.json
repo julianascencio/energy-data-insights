@@ -1,0 +1,97 @@
+{
+  "accepted": [
+    {
+      "model": "HS585TC-MHO",
+      "record_id": "a0301a41-3ad6-5809-95df-46b7cfc51eb9",
+      "source_id": "horay_ocean_2026a1_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS590TC-MHO",
+      "record_id": "d206517e-2356-50bc-b64c-bc0944b8a76a",
+      "source_id": "horay_ocean_2026a1_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS595TC-MHO",
+      "record_id": "9af1a989-b59c-5dd5-a8a1-e785783cc188",
+      "source_id": "horay_ocean_2026a1_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS600TC-MHO",
+      "record_id": "c4e396eb-859a-52d8-9497-45e172b9af2c",
+      "source_id": "horay_ocean_2026a1_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS605TC-MHO",
+      "record_id": "755e4ffc-e776-51f7-8d64-62d1451692ab",
+      "source_id": "horay_ocean_2026a1_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS710HJ-MHG-D",
+      "record_id": "f6983b01-6c68-5b90-81d1-36d674faa3ca",
+      "source_id": "horay_hjt_2026a0_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS715HJ-MHG-D",
+      "record_id": "4bc65c1f-8762-5381-8c60-b2847418f57c",
+      "source_id": "horay_hjt_2026a0_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS720HJ-MHG-D",
+      "record_id": "7f7c2a1f-84ed-599f-b84a-d5a8972f9604",
+      "source_id": "horay_hjt_2026a0_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS725HJ-MHG-D",
+      "record_id": "2893cd06-ef9f-5163-82dd-078a50c8043c",
+      "source_id": "horay_hjt_2026a0_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS730HJ-MHG-D",
+      "record_id": "cdc74187-1d4a-59b0-a631-dfb6bffd9be7",
+      "source_id": "horay_hjt_2026a0_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS735HJ-MHG-D",
+      "record_id": "351f4839-d46e-5b3f-9661-83219eaff3e4",
+      "source_id": "horay_hjt_2026a0_20261102T2100",
+      "result": "accepted"
+    },
+    {
+      "model": "HS740HJ-MHG-D",
+      "record_id": "141d265e-9f72-5140-9958-ed285510e38a",
+      "source_id": "horay_hjt_2026a0_20261102T2100",
+      "result": "accepted"
+    }
+  ],
+  "models_reviewed": 12,
+  "new_manufacturer": "Horay Solar Co Ltd",
+  "held_canonical_fields": [
+    "noct_c",
+    "ip_rating",
+    "annual_degradation_warranty_pct",
+    "first_year_degradation_warranty_pct"
+  ],
+  "field_scope": "NMOT, junction-box IP and secondary ratings retained with conditions; no conversion to NOCT or module IP; warranty curves not fitted",
+  "discovery_holds": [
+    {
+      "OEM": "DMEGC",
+      "reason": "SAM/CEC wildcard family rows need exact-suffix reconciliation; no automatic family expansion or duplicate exact models"
+    },
+    {
+      "OEM": "Horay",
+      "source": "older HJT580\u2013600W URL",
+      "reason": "404; current OEM download-index link used for separate710\u2013740W HJT models"
+    }
+  ],
+  "identity_review": "All canonical model strings and incoming models checked with normalized exact equality; no fuzzy matching, wildcard expansion or automatic manufacturer alias merge."
+}

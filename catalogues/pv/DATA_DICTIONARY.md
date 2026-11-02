@@ -236,3 +236,35 @@ The staged Tottori cohort is at least 1 MW registered generation output. Its
 September 2026 snapshot includes a June 2026 paper-filing lag. A named-project
 crosswalk, phase/parcel reconciliation and field-specific evidence are still
 required before canonical acceptance. No canonical schema columns were added.
+
+### Pakistan NEPRA corporate directory: review only
+
+`nepra.stage_nepra_review` emits research candidates, never canonical assets.
+
+| Native field | Review output | Limitation |
+| --- | --- | --- |
+| Corporate `h6` heading | `corporate_heading` | Legal-name marker required; not owner or project name |
+| Plant Detail / Plant Type | `native_fields`, `explicit_pv_description` | Generic Solar alone does not prove PV |
+| Gross Capacity | Native string | No AC/DC assignment or arithmetic from module counts |
+| Licence No. | Native string, duplicate flag | Licence is not a reconciled plant boundary |
+| Official licence/decision links | `documents` | Transfer decision is not current ownership evidence |
+
+Whitespace is normalized; source misspellings, units and malformed numbers are
+not repaired. Source checksum, official HTTPS host and structural checks are
+mandatory. Copyright/reuse and portfolio/site identity reviews remain outstanding;
+33 staged observations in the dated review represent zero accepted projects.
+
+### AC photovoltaic combiner platforms
+
+Suntree SHLX-AC4/1, AC6/1 and AC8/1 collect inverter AC outputs. Their
+`input_count` is the explicitly reported number of incoming AC circuits, not a
+DC module-string count. `vac_rated_v` uses the table's rated working voltage;
+maximum AC input voltage, input-current ratings, customizable surge values and
+material options stay source-qualified in extensions. No DC ratings, fuse
+configuration or DC-switch flag is inferred. Dimensions explicitly print mm
+and W×H×D; canonical width/height/length map to W/H/D. Enclosure IP65 and cable
+grade IP65/IP66 remain distinct. The generic model-key 650 V option and exact
+table 690 V maximum remain unresolved; no canonical maximum is selected. The
+working-temperature table omits a unit, so its native interval is retained without
+assuming Celsius. Named configurable platforms do not expand into material/voltage
+permutation records. Historical source availability is not current model availability.
