@@ -140,3 +140,10 @@ the 2026 C&I EN V2 brochure, retaining per-MPPT arrays, options and derating
 conditions. Eight contradictory/unclear equipment fields remain held. No new
 projects, countries or manufacturers are claimed. Current counts and field
 completeness are in the generated manifest; launch totals remain historical.
+
+The 18:00 review adds 333 existing-project enrichments (820 fields: 487 direct
+values and 333 source-qualified evidence objects), 27 exact KSTAR inverter
+models and nine BENY combiner platforms. Named configurable platforms remain
+one row, with changeable fuse/current options qualified. No new project or
+country is claimed. Conflicting specifications, uncertain identities and
+restrictive-reuse tracker evidence remain in the dated research review.
