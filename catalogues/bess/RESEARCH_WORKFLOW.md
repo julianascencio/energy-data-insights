@@ -19,6 +19,9 @@ or a live availability feed. Do not interpret record counts as installed capacit
 4. Stage national inventory candidates with `scripts/stage_bess_inventory.py`.
    For the reviewed PIB Indian Table-II format, use `scripts/stage_bess_pib.py`
    on downloaded HTML; it stages candidates only and does not import identities.
+   For public NEMSA mini-grid applications, `scripts/stage_bess_nemsa.py` stages
+   allowlisted site/battery observations without personal contacts or unit repairs;
+   an inspection request is not an operating certificate.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
