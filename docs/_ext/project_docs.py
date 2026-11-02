@@ -75,6 +75,12 @@ def _publish_pv_database(app: Sphinx, exception: Exception | None) -> None:
     from energy_data_retrieval.pv_catalogue import build_parquet
 
     root = Path(app.srcdir).parent
+    # Reuse the attributed Natural Earth 5.1.1 overview already in the gallery.
+    # Keep the viewer offline; no tile servers or country-centroid geocoding.
+    shutil.copyfile(
+        root / "examples/connectors/data/generation_coverage_world.geojson",
+        Path(app.outdir) / "_static/database-world.geojson",
+    )
     destination = Path(app.outdir) / "datasets/pv"
     destination.parent.mkdir(parents=True, exist_ok=True)
     with TemporaryDirectory(dir=destination.parent) as temporary:

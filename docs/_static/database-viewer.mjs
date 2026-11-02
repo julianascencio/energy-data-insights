@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, hasLocation} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isBess = root.dataset.database === "bess";
@@ -14,6 +14,7 @@ const number = (n) => n == null ? "Unknown" : n.toLocaleString(undefined, {maxim
 const base = new URL(root.dataset.base, document.baseURI);
 let index, rows = [], filtered = [], visible = [], page = 0, sortKey = "name", descending = false;
 let tableName = "", token = 0, currentRecord;
+let projectMap, mapModule, mapRequest = 0;
 const categories = ["manufacturer", "country_code", "technology", "status", "quality_status", "market_scope", "bifacial", "chemistry", "configuration", "power_basis", "energy_basis", "architecture", "market_segment", "record_scope", "product_status", "energy_boundary", "efficiency_boundary"];
 
 function options(element, entries, selected) {
@@ -69,12 +70,14 @@ async function loadTable() {
     const metrics = Object.entries(index.fields).filter(([key, meta]) =>
       ["float", "int"].includes(meta.type) && populated.has(key)).map(([key]) => [key, fieldLabel(key)]);
     options(el("metric"), [["", "No numeric field"], ...metrics],
-      entity === "projects" ? (isBess ? "energy_capacity_mwh" : "capacity_dc_mw") : isBessOem ? "energy_capacity_mwh" : entity === "modules" ? "pmax_stc_w" : metrics[0]?.[0]);
+      entity === "projects" ? (isBess ? "energy_capacity_mwh" : "capacity_ac_mw") : isBessOem ? "energy_capacity_mwh" : entity === "modules" ? "pmax_stc_w" : metrics[0]?.[0]);
     el("parquet").href = new URL(info.parquet, base).href;
     el("version").textContent = `Schema ${index.schema_version} · ${number(info.rows)} records · ${Object.keys(index.fields).length} columns`;
     el("provenance").textContent = `Parquet SHA-256: ${info.parquet_sha256}. Browser projection checksum verified; all records included.`;
-    resetFilters(); defaultColumns(); renderColumns(); render();
+    if (el("title")) el("title").textContent = entity === "projects" ? "PV project intelligence" : "PV equipment intelligence";
+    resetFilters(); defaultColumns(); renderColumns();
     el("workspace").hidden = false;
+    render();
     el("status").textContent = `Loaded ${number(rows.length)} ${entity.replaceAll("_", " ")} records.`;
     const url = new URL(location.href); url.searchParams.set("table", entity); history.replaceState(null, "", url);
   } catch (error) { if (request === token) failure(error); }
@@ -112,17 +115,50 @@ function render() {
   filtered = filterRows(rows, {search: el("search").value, field: el("filter-field").value,
     equals: el("filter-value").value, metric, min: el("min").value, max: el("max").value, missing: el("missing").value});
   const stats = statistics(filtered, metric);
-  const summary = [[number(filtered.length), `Matching / ${number(rows.length)} records`]];
-  if (metric) summary.push([number(stats.known), "Numeric values reported"], [number(stats.missing), "Numeric values unknown"],
-    [number(stats.mean), `Mean · ${fieldLabel(metric)}`], [number(stats.median), "Median"],
+  const projects = tableName === "projects" && !isBess && !isBessOem;
+  const summary = [[number(filtered.length), projects ? "Matching projects" : "Matching records", `of ${number(rows.length)} in catalogue`]];
+  if (projects) {
+    const totals = projectSummary(filtered);
+    summary.push([number(totals.ac.reportedSum), "Total AC capacity · MW", `${number(totals.ac.known)} reported · ${number(totals.ac.missing)} unknown`, "db-stat-ac"],
+      [number(totals.dc.reportedSum), "Total DC capacity · MW", `${number(totals.dc.known)} reported · ${number(totals.dc.missing)} unknown`],
+      [number(totals.countries), "Countries", "Reported country codes"],
+      [number(totals.located), "Mapped projects", `${number(filtered.length - totals.located)} without valid coordinates`],
+      [filtered.length ? `${Math.round(100 * totals.ac.known / filtered.length)}%` : "—", "AC data coverage", "Share with reported AC MW"]);
+  } else if (metric) summary.push([number(stats.known), "Values reported"], [number(stats.missing), "Values unknown"],
+    [number(stats.mean), "Mean", fieldLabel(metric)], [number(stats.median), "Median", fieldLabel(metric)],
     [`${number(stats.min)} – ${number(stats.max)}`, "Reported range"]);
-  el("stats").replaceChildren(...summary.map(([value, label]) => {
-    const card = make("div", undefined, "db-stat"); card.append(make("strong", value), make("span", label)); return card;
+  el("stats").replaceChildren(...summary.map(([value, label, detail, style]) => {
+    const card = make("div", undefined, `db-stat ${style || ""}`);
+    card.append(make("span", label, "db-stat-label"), make("strong", value));
+    if (detail) card.append(make("small", detail)); return card;
   }));
+  if (el("metric-summary")) el("metric-summary").textContent = metric ?
+    `${fieldLabel(metric)} · Mean ${number(stats.mean)} · Median ${number(stats.median)} · Range ${number(stats.min)}–${number(stats.max)} · ${number(stats.known)} reported / ${number(stats.missing)} unknown` : "Select a numeric field to inspect its statistics.";
   for (const key of ["min", "max", "missing"]) el(key).disabled = !metric;
   el("aggregation").querySelectorAll("option").forEach((option) => { option.disabled = option.value !== "count" && !metric; });
   if (!metric) el("aggregation").value = "count";
-  renderChart(); renderTable();
+  renderChart(); renderTable(); renderMap();
+}
+async function renderMap() {
+  if (!el("map-panel")) return;
+  const request = ++mapRequest, enabled = tableName === "projects";
+  el("map-panel").hidden = !enabled;
+  el("visuals").classList.toggle("db-with-map", enabled);
+  if (!enabled) return;
+  const count = filtered.filter(hasLocation).length;
+  el("map-caption").textContent = count ? `${number(count)} mapped · ${number(filtered.length - count)} without valid coordinates. All matching projects contribute; zoom or open a group to explore.` :
+    filtered.length ? "No matching projects have valid coordinates. They remain available in the table and capacity totals." : "No projects match these filters.";
+  el("map-fit").disabled = !count;
+  try {
+    mapModule ||= import("./database-map.mjs");
+    const {createProjectMap} = await mapModule;
+    if (request !== mapRequest || tableName !== "projects") return;
+    projectMap ||= createProjectMap(el("map"), showRecord);
+    projectMap.update(filtered);
+  } catch {
+    mapModule = null;
+    el("map-caption").textContent = "Map could not load. Project KPIs and the results table remain available. Reload the page to retry.";
+  }
 }
 function renderChart() {
   const field = el("group").value, metric = el("metric").value, aggregation = el("aggregation").value;
@@ -211,4 +247,5 @@ el("next").addEventListener("click", () => { page++; renderTable(); });
 el("export").addEventListener("click", () => download(toCsv(sortRows(filtered, sortKey, descending), visible), `${tableName}-filtered.csv`, "text/csv;charset=utf-8"));
 el("export-record").addEventListener("click", () => download(JSON.stringify(currentRecord, null, 2), `${tableName}-${currentRecord.record_id}.json`, "application/json"));
 el("close").addEventListener("click", () => el("detail").close());
+el("map-fit")?.addEventListener("click", () => projectMap?.fit());
 initialize();
