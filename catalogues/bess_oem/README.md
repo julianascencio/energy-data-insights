@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **397 records from 39 product
-suppliers, backed by 152 primary sources**: 384 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **413 records from 39 product
+suppliers, backed by 169 primary sources**: 400 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -208,3 +208,5 @@ uv run python scripts/stage_bess_rolls.py artifacts/research-inputs/rolls_s6-l16
 This offline parser requires the exact model identity and preserves revision,
 units and test conditions. Reconcile candidates against canonical records before
 using the existing upsert API; inspect charging-unit anomalies explicitly.
+
+Latest iteration: [second French partition and Rolls components](../bess/research/2026-11-02_odre_partition2.md), including Bellac enrichment and the next reviewed-source queue.

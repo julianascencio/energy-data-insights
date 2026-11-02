@@ -3875,3 +3875,163 @@ RTE / ODRÉ (2026). **Modification de 79 codes EIC en W dans le registre nationa
 **Role:** data. Page 1: BARBAS01, previous EIC 17W000001600745Y, 2026 EIC 17W000001637626Q; SHA256 9010abd65fdad62f9d9607ab47a8a17d231c7ef48f97f406b4e8aea15655ab99
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### odre_partition_2_20261102
+
+RTE, Enedis, EDF SEI, ELD (2026). **National battery installation register, offset 200**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=200)
+
+**Role:** data. API results; exact EIC and source row in review ledger; SHA256 853f52eda60b0cf0120acfcdb54d5cefd238c964b6850002db98f5ea603c00a8
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### odre_partition_3_20261102
+
+RTE, Enedis, EDF SEI, ELD (2026). **National battery installation register, offset 300**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=300)
+
+**Role:** data. API results; exact EIC and source row in review ledger; SHA256 2dbfc34884bbbe0f85aa7158fd3e5772eee9873f8ba43b00a7e9f8e967154e93
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rolls_index_partition2_20261102
+
+Rolls Battery (2026). **Rolls renewable-energy model index**. [Source](https://rollsbattery.com/catalog/)
+
+**Role:** data. Exact selected model data-battery_applications attributes; SHA256 d15eedd93a55f79534340b2e012030273bd9167ca03abd74069b4e7dfff02392
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_8_cs_17p_20261102
+
+Rolls Battery (2024). **8 CS 17P flooded battery specifications**. [Source](https://rollsbattery.com/battery/8-cs-17p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 c40f38a5004984a502118ed3f10e60d1abbd69a3f3e3e668aee6e52098f5308f
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_8_cs_25p_20261102
+
+Rolls Battery (2024). **8 CS 25P flooded battery specifications**. [Source](https://rollsbattery.com/battery/8-cs-25p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 f01d9deda9977109a3e016a838b960377a5284bc6813f3abb088627cb8f7c7f4
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_6_cs_27p_20261102
+
+Rolls Battery (2024). **6 CS 27P flooded battery specifications**. [Source](https://rollsbattery.com/battery/6-cs-27p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 2660558fadd757f9b4e7e6b6f7a030d8f289713381012e365e33fc600b8b5ac6
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_8_cs_27p_20261102
+
+Rolls Battery (2024). **8 CS 27P flooded battery specifications**. [Source](https://rollsbattery.com/battery/8-cs-27p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 1d46faa155a8971ed0ec359265d1f1a6651f8660af31e0a6141c545552862299
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s2_l16_ex_20261102
+
+Rolls Battery (2024). **S2 L16-EX flooded battery specifications**. [Source](https://rollsbattery.com/battery/s2-l16-ex/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 2640957a1011d68b272c9ae82e8c9e5880c47c94c2201972cde2a7babc327a4a
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_4_ks_21p_20261102
+
+Rolls Battery (2024). **4 KS 21P flooded battery specifications**. [Source](https://rollsbattery.com/battery/4-ks-21p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 c054e035681aca3453e972e8df429d19f46824c1803479ffe96bebb3bab540f6
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s2_l16_20261102
+
+Rolls Battery (2024). **S2 L16 flooded battery specifications**. [Source](https://rollsbattery.com/battery/s2-l16/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 29c2fd0b65c307fb7e69c4d86c4cc8053b446472de27e6bccfa4e2cca5430a3d
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s2_l16_hc_20261102
+
+Rolls Battery (2024). **S2 L16-HC flooded battery specifications**. [Source](https://rollsbattery.com/battery/s2-l16-hc/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 f76f78848eb9d6b6dfb21d751e7169ca6eb11402eeb264bfe36181915ec96ab8
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_4_ks_25p_20261102
+
+Rolls Battery (2024). **4 KS 25P flooded battery specifications**. [Source](https://rollsbattery.com/battery/4-ks-25p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 4ec1855cee0cbe819bf761bf9edfed98f6db38b2b9e0346d287ae2032a9ffabb
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_s2_l16_sc_20261102
+
+Rolls Battery (2024). **S2 L16-SC flooded battery specifications**. [Source](https://rollsbattery.com/battery/s2-l16-sc/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 d5df89c0e2914b66527e5dd7523649553b6468573850cb85b2aa6c393c24f5c8
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_4_ks_27p_20261102
+
+Rolls Battery (2024). **4 KS 27P flooded battery specifications**. [Source](https://rollsbattery.com/battery/4-ks-27p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 648b6a6db8b9b1e5fbc4c698a813049e1db4712c33f2f37a4646b37f1ec475ed
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_2_ks_33p_20261102
+
+Rolls Battery (2024). **2 KS 33P flooded battery specifications**. [Source](https://rollsbattery.com/battery/2-ks-33p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 10dd64a23dcfd3bcbfe0c6553d0fdce1970655f519bcf96760fe60d2597fc568
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_2_os_33p_20261102
+
+Rolls Battery (2024). **2 OS 33P flooded battery specifications**. [Source](https://rollsbattery.com/battery/2-os-33p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 3528847408bbeae9fb9897f59a96bd253afb053e2dd77708532bb8b53a6f2bc8
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_2_ys_27p_20261102
+
+Rolls Battery (2024). **2 YS 27P flooded battery specifications**. [Source](https://rollsbattery.com/battery/2-ys-27p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 a6c27fc280ffe1cd1151854b8d9e93879ba013fc9b82fe587bfa91bde0950793
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_2_ys_31p_20261102
+
+Rolls Battery (2024). **2 YS 31P flooded battery specifications**. [Source](https://rollsbattery.com/battery/2-ys-31p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 0de959f4cb61da75a6eda3563604d55f93699f1931895d9cea6df32030df022e
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_2_ys_62p_20261102
+
+Rolls Battery (2024). **2 YS 62P flooded battery specifications**. [Source](https://rollsbattery.com/battery/2-ys-62p/)
+
+**Role:** data. Exact model heading; charge/discharge, hour-rate and specifications tables; SHA256 a333d418383ce3ac9428a3b07a1ba0e960839ba7de569916f3867dd6f77f9e51
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rte_bellac_project_20261102
+
+RTE (2026). **Stocker l’électricité renouvelable : expérimentation Ringo à Bellac**. [Source](https://www.rte-france.com/projets/nos-projets/stocker-lelectricite-renouvelable-lexperimentation-ringo-bellac-haute-vienne)
+
+**Role:** data. Bellac: territoire favorable; expérimentation industrielle; 12 containers and Saft assembly in Bordeaux; SHA256 cf7d7fa67c85678339187de7188ec5b21e68c20bbe613b8e42500be6f25c920d
+
+**Used by:** `catalogues/bess/sources.json`.
