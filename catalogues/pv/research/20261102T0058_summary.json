@@ -1,0 +1,98 @@
+{
+  "started_at": "2026-11-02T00:57:15Z",
+  "prepared_at": "2026-11-02T01:12:34.966229+00:00",
+  "elapsed_minutes_before_publication": 21.03,
+  "new_records_by_entity": {
+    "projects": 190,
+    "inverters": 17
+  },
+  "enriched_records": 1,
+  "substantive_fields_added_to_existing": 2,
+  "enrichment_fields": [
+    "operators",
+    "external_ids_json"
+  ],
+  "quarantined_project_candidates": 578,
+  "rejected_project_candidates": 0,
+  "excluded_aggregate_observations": 16,
+  "unresolved_field_cases": 3,
+  "project_candidates_reviewed": 769,
+  "equipment_models_accepted": 17,
+  "equipment_enrichment_candidates_blocked": 6,
+  "new_countries": [],
+  "new_manufacturers": [],
+  "totals": {
+    "projects": 8297,
+    "modules": 21605,
+    "inverters": 2403,
+    "trackers": 15,
+    "combiner_boxes": 33
+  },
+  "countries": {
+    "ARE": 1,
+    "AUS": 1,
+    "AZE": 1,
+    "CAN": 1,
+    "CHL": 1,
+    "COL": 1,
+    "DOM": 1,
+    "EGY": 1,
+    "ESP": 1,
+    "FRA": 324,
+    "GBR": 631,
+    "GRC": 1,
+    "IND": 1,
+    "KEN": 1,
+    "MEX": 2,
+    "MLI": 1,
+    "MOZ": 1,
+    "NLD": 1,
+    "NZL": 8,
+    "PER": 1,
+    "PRT": 1,
+    "SEN": 2,
+    "SLV": 2,
+    "TON": 1,
+    "USA": 7309,
+    "ZAF": 1
+  },
+  "country_count": 26,
+  "sources": 160,
+  "preserved_existing_records": 32145,
+  "historical_launch_preserved": true,
+  "top10_metric_file": "20261101T0856_top10_markets.json",
+  "next_action": "France 1–5 MW Nouvelle-Aquitaine partition (432 observations, national screen preliminarily leaves 62; not accepted), alongside six held New Zealand shared-connection crosswalks. Prioritize a permitted top-ten-country source when available.",
+  "publication_preparation_completed_at": "2026-11-02T01:18:17.045366+00:00",
+  "validation": {
+    "full_pytest": {
+      "passed": 1534,
+      "skipped": 1,
+      "skip": "optional cdsapi dependency"
+    },
+    "final_focused_pytest": {
+      "passed": 63
+    },
+    "ruff": "passed",
+    "format": {
+      "passed_files": 518
+    },
+    "ty": "passed",
+    "catalogue_records_validated": 32353,
+    "repository_hygiene": "passed",
+    "citations": "passed",
+    "offline_example": "passed",
+    "odre_replay_records": 183,
+    "strict_sphinx_gallery": "passed",
+    "local_documentation_pages_checked": 387,
+    "snapshot": "five typed ZSTD tables: row counts, checksums, compression and attribution verified",
+    "diff_check": "passed",
+    "remote_ci": "not yet run on this commit"
+  },
+  "cumulative_pr_delta": {
+    "new_projects": 282,
+    "new_inverters": 26,
+    "enriched_projects": 1,
+    "quarantined_project_candidates": 1026
+  },
+  "early_completion_reason": "Selected eight complete ODRE regional partitions, full six-model Tauro batch, eleven-model Solis table and full New Zealand PV subset exhausted; both planning batch objectives met. Remaining source partitions and blocked alternatives are explicitly queued."
+}

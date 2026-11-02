@@ -97,14 +97,23 @@ def _date(value: str | None, snapshot: str) -> str | None:
 
 
 def screen_odre_identities(
-    rows: list[dict[str, Any]], identities: list[dict[str, Any]], *, existing: list[dict[str, Any]]
+    rows: list[dict[str, Any]],
+    identities: list[dict[str, Any]],
+    *,
+    existing: list[dict[str, Any]],
+    minimum_kw: float = 10000,
+    maximum_kw: float | None = None,
 ) -> dict[str, list[str]]:
-    """Screen a >=10 MW cohort against all individual PV names and >=1 MW communes.
+    """Screen a bounded cohort against national names and >=1 MW communes.
 
     A shared commune is a review flag, not proof of duplication. Sub-MW entries
     participate in exact-name screening but not the conservative commune screen.
     Registry administrative codes are not promoted to surveyed plant coordinates.
     """
+    if _number(minimum_kw) is None or minimum_kw < 1000:
+        raise ValueError("ODRE minimum capacity must be at least 1000 kW")
+    if maximum_kw is not None and (_number(maximum_kw) is None or maximum_kw <= minimum_kw):
+        raise ValueError("ODRE upper capacity must exceed minimum")
     names = Counter(normal_name(r["nominstallation"] or "") for r in identities)
     communes = Counter(
         r["codeinseecommuneimplantation"]
@@ -144,8 +153,13 @@ def screen_odre_identities(
             reasons.append("unit_phase_or_numbered_name")
         if "eolien" in normal_name(name):
             reasons.append("technology_name_conflict")
-        if row["regime"] != "En service" or (_number(row["puismaxinstallee"]) or 0) < 10000:
-            reasons.append("outside_operational_10mw_scope")
+        capacity = _number(row["puismaxinstallee"]) or 0
+        if (
+            row["regime"] != "En service"
+            or capacity < minimum_kw
+            or (maximum_kw is not None and capacity >= maximum_kw)
+        ):
+            reasons.append("outside_operational_capacity_scope")
         if (
             normal_name(name) in old_names
             or eic in old_eics
@@ -167,9 +181,13 @@ def reviewed_odre_records(
     source_id: str,
     retrieved_at: str,
     snapshot_date: str,
+    minimum_kw: float = 10000,
+    maximum_kw: float | None = None,
 ) -> list[dict[str, Any]]:
     """Stage the reviewed cohort, preserving capacity basis and registry semantics."""
-    risks = screen_odre_identities(rows, identities, existing=existing)
+    risks = screen_odre_identities(
+        rows, identities, existing=existing, minimum_kw=minimum_kw, maximum_kw=maximum_kw
+    )
     lookup = {r.get("_review_key", r["codeeicresourceobject"]): r for r in rows}
     if not reviewed_ids <= lookup.keys() or reviewed_ids & risks.keys():
         raise ValueError("Missing or unresolved ODRE identity review")

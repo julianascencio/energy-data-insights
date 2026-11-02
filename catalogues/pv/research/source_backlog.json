@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-01T22:01:29.524170+00:00",
+  "updated_at": "2026-11-02T01:12:34.966229+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Completed remaining UK operational-ground partitions, extracted 12 distinct non-CEC European inverter models and enriched two trackers. Rechecked German official export/API access; next scalable priority shifts to France and top-ten country gaps.",
-  "next_highest_value_source": "France ODRE reviewed 5–10 MW PHOTV partition after explicit adapter-scope extension and identity review; Germany permitted filtered CSV export pilot (no API credential available).",
+  "selection_note": "Processed eight complete French 1–5 MW regions (755 rows), all six Tauro ECO model pages and eleven Solis models, and full New Zealand dispatched-fleet PV subset (14 rows). Independent Brazil CCEE aggregates and KACO/Arctech enrichment access/terms assessed. No US expansion.",
+  "next_highest_value_source": "France 1–5 MW Nouvelle-Aquitaine partition (432 observations, national screen preliminarily leaves 62; not accepted), alongside six held New Zealand shared-connection crosswalks. Prioritize a permitted top-ten-country source when available.",
   "sources": [
     {
       "id": "uk_repd",
@@ -255,7 +255,7 @@
       "source_url": "https://dadosabertos.aneel.gov.br/pt_BR/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/11ec447d-698d-4ab8-977f-b424d5deee6a",
       "version_or_date": "Current SIGA CSV; data dictionary updated 2026-06-12",
       "licence_assessment": "ODbL declared; no silent relicensing. Attribution/share-alike and database separation not yet resolved.",
-      "access_assessment": "Official Portuguese catalogue reviewed; bulk bytes not fetched",
+      "access_assessment": "Fresh resource web index declares ODbL; normal direct metadata fetch returned HTTP 503. No bulk source bytes fetched.",
       "estimated_useful_yield": null,
       "fields_offered": [
         "CEG ID",
@@ -264,8 +264,8 @@
         "municipality",
         "status"
       ],
-      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
-      "result": "Rank sixth; zero catalogue projects. Licence integration unresolved, not an assertion that ODbL forbids use.",
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "No accepted records. ODbL distribution integration still unresolved; CCEE alternative assessed separately and found aggregate-only.",
       "retry_condition": "ODbL obligations and source-specific distribution reviewed before bulk acceptance.",
       "next_action": "Design compliant source-specific distribution/attribution; then inspect UFV batch and reconcile plant/phases.",
       "priority": 7,
@@ -370,8 +370,10 @@
       "licence_assessment": "Licence Ouverte v2.0 verified in metadata and full Etalab licence; attribution/date notice committed; privacy/aggregate restrictions respected.",
       "access_assessment": "Official JSON exports and glossary/EIC-change note downloaded with checksums. 95,302 individual PV identity rows screened.",
       "estimated_useful_yield": {
-        "unprocessed_scope": "PV below 10 MW and held >=10 MW plant sections",
-        "note": "Not accepted project counts; separate scope review required."
+        "remaining_1to5mw_observations": 1493,
+        "next_partition_observations": 432,
+        "next_partition_preliminary_unflagged": 62,
+        "accepted_next_partition": 0
       },
       "fields_offered": [
         "installation identifiers",
@@ -380,19 +382,46 @@
         "region",
         "generation"
       ],
-      "last_attempt": "2026-11-01T09:46:14.172006+00:00",
-      "result": "409 >=10 MW PHOTV candidates processed: 48 accepted projects, 361 withheld for aggregation/privacy/phase/identity/technology review. French catalogue now 49 projects.",
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "This iteration: 183 accepted / 572 held from 755 observations in eight complete 1–5 MW regions. France catalogue now 324. All >=5 MW partitions already processed.",
       "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Explicitly extend tested adapter to reviewed 5–10 MW PHOTV cohort after freshness/licence refresh; retain complete national identity screening and phase/aggregate privacy holds. Existing >=10 MW partition already exhausted.",
+      "next_action": "Recheck revision/checksums and review Nouvelle-Aquitaine 1–5 MW (432 candidates); 1493 observations across four regions remain outside this review.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
-          "PHOTV / puismaxinstallee >=10000 kW / snapshot 2026-08-31"
+          "PHOTV / puismaxinstallee >=10000 kW / snapshot 2026-08-31",
+          "PHOTV / 5000 <= puismaxinstallee <10000 kW / snapshot 2026-08-31"
         ],
         "candidate_rows_processed": 409,
         "accepted_ids_ledger": "20261101T0928_odre_review.json",
         "identity_screen_rows": 95302,
-        "next_partition": "held >=10 MW project-scope crosswalks; then 5–10 MW after explicit adapter/scope review"
+        "next_partition": "Nouvelle-Aquitaine / 1000 <= puismaxinstallee <5000 kW / freshness recheck required",
+        "latest_ledger": "20261102T0058_odre_review.json",
+        "cohort_1to5mw": {
+          "minimum_kw": 1000,
+          "maximum_kw": 5000,
+          "completed_regions": [
+            "Grand Est",
+            "Bourgogne-Franche-Comté",
+            "Centre-Val de Loire",
+            "Auvergne-Rhône-Alpes",
+            "Bretagne",
+            "Normandie",
+            "Hauts-de-France",
+            "Île-de-France"
+          ],
+          "candidate_rows_processed": 755,
+          "accepted": 183,
+          "held": 572,
+          "review_file": "20261102T0058_odre_review.json",
+          "remaining_regions": [
+            "Nouvelle-Aquitaine",
+            "Occitanie",
+            "Pays de la Loire",
+            "Provence-Alpes-Côte d’Azur"
+          ],
+          "remaining_rows": 1493
+        }
       }
     },
     {
@@ -893,6 +922,231 @@
           "PVS-15-TL"
         ]
       }
+    },
+    {
+      "id": "sungrow_rt_es_2021",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://spa.sungrowpower.com/upload/file/20211230/ES%20DS%20SG5.0_6.0_7.0_8.0_10_12_15_17_20RT%20Ficha%20T%C3%A9cnica.pdf",
+      "version_or_date": "Spanish v1.1.3, copyright 2021",
+      "licence_assessment": "Selected factual specifications only; publisher copyright retained; raw PDF outside Git",
+      "access_assessment": "Normal public OEM PDF download succeeded; two specification tables visually checked",
+      "estimated_useful_yield": {
+        "reviewed": 9,
+        "accepted": 9
+      },
+      "fields_offered": [
+        "electrical",
+        "MPPT",
+        "mechanical",
+        "environmental",
+        "interfaces",
+        "protection",
+        "regional limits"
+      ],
+      "last_attempt": "2026-11-02T00:04:26.492228+00:00",
+      "result": "Nine exact RT models absent from existing catalogue accepted. No P2 or regional variant multiplication.",
+      "retry_condition": "New revision or explicit unresolved field evidence",
+      "next_action": "Review 2025 RT/P2 manual as a separate hardware/revision cohort; no automatic overwrite of 2021 model evidence.",
+      "processed_cursor": {
+        "completed_models": [
+          "SG5.0RT",
+          "SG6.0RT",
+          "SG7.0RT",
+          "SG8.0RT",
+          "SG10RT",
+          "SG12RT",
+          "SG15RT",
+          "SG17RT",
+          "SG20RT"
+        ]
+      }
+    },
+    {
+      "id": "fronius_tauro_eco",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.fronius.com/es-es/spain/energia-solar/instaladores-y-socios/datos-tecnicos/todos-los-productos/inversor/fronius-tauro-eco/tauro-eco-100-3-p",
+      "version_or_date": "Undated live product page accessed 2026-11-02",
+      "licence_assessment": "Selected factual metadata only; copyright retained, no full documents or open bulk licence assertion",
+      "access_assessment": "Six exact P/D pages downloaded; 99 models omit referenced footnote text",
+      "estimated_useful_yield": {
+        "reviewed": 6,
+        "accepted": 6
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "communications"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "Six exact models accepted with detailed electrical/mechanical/environmental/port/connection evidence; two model-level field holds for omitted footnotes",
+      "retry_condition": "All exact P/D product pages or revisioned datasheet reviewed with terms and footnotes",
+      "next_action": "Resolve missing footnotes for 99-3-D/P from an exact revisioned OEM source; do not transfer sibling conditions",
+      "processed_cursor": {
+        "completed_models": [
+          "Tauro ECO 50-3-D",
+          "Tauro ECO 50-3-P",
+          "Tauro ECO 99-3-D",
+          "Tauro ECO 99-3-P",
+          "Tauro ECO 100-3-D",
+          "Tauro ECO 100-3-P"
+        ],
+        "field_review": "20261102T0058_equipment_review.json"
+      }
+    },
+    {
+      "id": "solis_s5_gr3p_es",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.solisinverters.com/uploads/file/S5-GR3P%283-20%29K-ES-Flyer-V2%2C0.pdf",
+      "version_or_date": "Spanish ES-Flyer V2.0, undated",
+      "licence_assessment": "Publisher copyright retained; factual technical extraction only, PDF outside Git",
+      "access_assessment": "OEM linked PDF downloaded and page 2 visually inspected",
+      "estimated_useful_yield": {
+        "reviewed": 11,
+        "accepted": 11
+      },
+      "fields_offered": [
+        "model-specific electrical",
+        "efficiency",
+        "mechanical",
+        "environmental",
+        "protection",
+        "connection"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "All eleven exact models accepted; existing Ginlong manufacturer reused. No S5-GR3P exact models in baseline.",
+      "retry_condition": "New OEM revision or missing field evidence",
+      "next_action": "Seek warranty or documented protocol evidence; do not turn regional aliases or optional AFCI into new models",
+      "processed_cursor": {
+        "completed_models": [
+          "S5-GR3P3K",
+          "S5-GR3P4K",
+          "S5-GR3P5K",
+          "S5-GR3P6K",
+          "S5-GR3P8K",
+          "S5-GR3P9K",
+          "S5-GR3P10K",
+          "S5-GR3P12K",
+          "S5-GR3P13K",
+          "S5-GR3P15K",
+          "S5-GR3P20K"
+        ]
+      }
+    },
+    {
+      "id": "nz_emi_dispatch",
+      "country": "NZL",
+      "entity": "projects",
+      "source_url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing/20260702_DispatchedGenerationPlant.csv",
+      "version_or_date": "2026-07-02",
+      "licence_assessment": "Electricity Authority CC BY 4.0; notice committed; no third-party exclusions marked in CSV",
+      "access_assessment": "Normal public CSV downloaded; 157 rows, 14 explicit PV",
+      "estimated_useful_yield": {
+        "reviewed": 14,
+        "new": 7,
+        "enriched": 1,
+        "held": 6
+      },
+      "fields_offered": [
+        "name",
+        "technology",
+        "operator",
+        "dispatch IDs",
+        "nameplate MW (AC/DC unspecified)",
+        "effective dates",
+        "reported commissioning date"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "Seven new projects, Kohirā enriched with operator/registry IDs, six shared-connection entries held. Kohirā commissioning date discrepancy remains unresolved.",
+      "retry_condition": "Fresh file or independent owner/system-operator site crosswalk",
+      "next_action": "Resolve EDG0331 (Omeheu/Rangitaiki), MTO0331 (Papareireiā/Ruawai), KOE1101 (Pukenui/Twin Rivers) using named project evidence; preserve effective versus physical dates",
+      "processed_cursor": {
+        "complete_file": true,
+        "review_file": "20261102T0058_nz_review.json"
+      }
+    },
+    {
+      "id": "brazil_ccee_pv_aggregates",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.ccee.org.br/dataset/fotovoltaica_gf_definida",
+      "version_or_date": "2026 CSVs updated 2026-10-01; January–August observations",
+      "licence_assessment": "CC BY 4.0 explicitly declared by CCEE catalogue",
+      "access_assessment": "GF_DEFINIDA and ACL CSVs downloaded: 8 monthly rows each, no plant identifiers",
+      "estimated_useful_yield": {
+        "source_observations": 16,
+        "accepted_projects": 0
+      },
+      "fields_offered": [
+        "aggregate generation",
+        "aggregate installed capacity",
+        "month"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "Both sources excluded for plant ingestion: national monthly aggregates, not projects. ACL installed-capacity cells empty.",
+      "retry_condition": "Plant/CEG-level dataset with explicit PV technology and licence",
+      "next_action": "Inspect CCEE individual generation/asset register schema before another bulk download; do not convert market totals into plants",
+      "processed_cursor": {
+        "datasets_reviewed": [
+          "FOTOVOLTAICA_GF_DEFINIDA_2026",
+          "FOTOVOLTAICA_ACL_2026"
+        ],
+        "all_16_observations_excluded": true
+      }
+    },
+    {
+      "id": "kaco_nx3_manual_review",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=19681&t=f&token=4bab567db5362edba01d53e1d416f24f6e7fe71a",
+      "version_or_date": "3015332-05-250731",
+      "licence_assessment": "Manual p2 requires written permission for publication in whole or part; no such permission established. No extracted bulk specifications committed.",
+      "access_assessment": "OEM PDF downloaded, technical pages 7–8 and legal page inspected",
+      "estimated_useful_yield": {
+        "existing_models_reviewed": 6,
+        "accepted_enrichments": 0
+      },
+      "fields_offered": [
+        "fault currents",
+        "communications",
+        "standby",
+        "environmental conditions"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "Potential efficiency/standby differences from existing older datasheets retained as a review task; no silent overwrite or unapproved manual redistribution",
+      "retry_condition": "Permitted exact-model technical source/permission already available; reconcile revision semantics",
+      "next_action": "Review exact NX3 revision and standby versus night-consumption definition against permitted sources; no contacting people",
+      "processed_cursor": {
+        "reviewed_models": [
+          "3.0 NX3 M2",
+          "5.0 NX3 M2",
+          "8.0 NX3 M2",
+          "10.0 NX3 M2",
+          "15.0 NX3 M2",
+          "20.0 NX3 M2"
+        ]
+      }
+    },
+    {
+      "id": "arctech_skyline_enrichment",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://en.arctechsolar.com/skyline-ii/",
+      "version_or_date": "Undated live page checked 2026-11-02",
+      "licence_assessment": "Terms restrict republishing and information-system reuse without permission",
+      "access_assessment": "S155 and D166 downloads both lead to required contact forms; no submission or bypass",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "configuration-specific tracker ratings (gated)"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "No new or enriched records; existing family record unchanged. All-Terrain values not transferred to generic SkyLine II.",
+      "retry_condition": "Permitted ungated OEM specification or existing permission",
+      "next_action": "Choose another tracker OEM multi-model source; do not repeatedly revisit these forms",
+      "processed_cursor": null
     }
   ]
 }

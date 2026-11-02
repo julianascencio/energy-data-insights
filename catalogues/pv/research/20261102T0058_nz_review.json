@@ -1,0 +1,159 @@
+{
+  "source_id": "nz_emi_fleet_20260702_20261102T0058",
+  "source_sha256": "0a1d0c2b64755bb6e87cfbcbacde6119a7df3e4e3d323eaaaa71ab874c3654ba",
+  "all_rows": 157,
+  "pv_candidates": 14,
+  "new": 7,
+  "enriched": 1,
+  "held": 6,
+  "records": [
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 22,
+      "plant_name": "Clandeboye Solar Farm",
+      "registry_key": "TMK0331:CLB0",
+      "outcome": "accepted new",
+      "record_id": "a19d54f7-1c9f-5182-8772-ae4e2af80faf",
+      "identity_review": "Unique exact PV name and dispatch connection within complete 157-row file; no existing NZ name/alias match. Source unit code ends in 0; no sum of unit rows."
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 29,
+      "plant_name": "Dannevirke Solar Farm",
+      "registry_key": "DVK0111:DVK0",
+      "outcome": "accepted new",
+      "record_id": "e87d6217-a980-59b0-9381-be4b009ed9ae",
+      "identity_review": "Unique exact PV name and dispatch connection within complete 157-row file; no existing NZ name/alias match. Source unit code ends in 0; no sum of unit rows."
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 64,
+      "plant_name": "Kohirā Solar Farm",
+      "registry_key": "KOE1101:KSF0",
+      "outcome": "enriched existing Kohirā",
+      "record_id": "84f5e92d-1097-5e54-bcef-279a861a65d6",
+      "fields_added": [
+        "operators",
+        "external_ids_json"
+      ],
+      "identity_review": "Existing Kohirā/Kaitaia identity and 24 MW AC match; no new plant created",
+      "held_fields": {
+        "commissioning_date": {
+          "registry_value": "25/10/2023",
+          "existing_review": "Existing November 2023 first-generation evidence and unresolved historical caption; date remains withheld"
+        }
+      }
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 65,
+      "plant_name": "Lauriston Solar Farm",
+      "registry_key": "ASB0661:LAU0",
+      "outcome": "accepted new",
+      "record_id": "fb8f90d4-8b4c-5ec8-8f08-c584f82942b6",
+      "identity_review": "Unique exact PV name and dispatch connection within complete 157-row file; no existing NZ name/alias match. Source unit code ends in 0; no sum of unit rows."
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 82,
+      "plant_name": "Omeheu Solar Farm",
+      "registry_key": "EDG0331:EDS0",
+      "outcome": "held",
+      "reason": "Shared dispatch connection across separately named PV entries; requires whole-site/phase crosswalk. No automatic merge.",
+      "fields_not_accepted": [
+        "all"
+      ]
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 83,
+      "plant_name": "Pāmu Rā ki Whitianga Solar Farm",
+      "registry_key": "KPU0661:WTA0",
+      "outcome": "accepted new",
+      "record_id": "aac3ea35-d1aa-5cd1-ae5a-831190479052",
+      "identity_review": "Unique exact PV name and dispatch connection within complete 157-row file; no existing NZ name/alias match. Source unit code ends in 0; no sum of unit rows."
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 86,
+      "plant_name": "Papareireiā",
+      "registry_key": "MTO0331:GDS0",
+      "outcome": "held",
+      "reason": "Shared dispatch connection across separately named PV entries; requires whole-site/phase crosswalk. No automatic merge.",
+      "fields_not_accepted": [
+        "all"
+      ]
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 98,
+      "plant_name": "Pukenui Solar Farm",
+      "registry_key": "KOE1101:PSF0",
+      "outcome": "held",
+      "reason": "Shared dispatch connection across separately named PV entries; requires whole-site/phase crosswalk. No automatic merge.",
+      "fields_not_accepted": [
+        "all"
+      ]
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 100,
+      "plant_name": "Rangitaiki Solar Farm",
+      "registry_key": "EDG0331:RGT0",
+      "outcome": "held",
+      "reason": "Shared dispatch connection across separately named PV entries; requires whole-site/phase crosswalk. No automatic merge.",
+      "fields_not_accepted": [
+        "all"
+      ]
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 112,
+      "plant_name": "Taiohi Solar Farm",
+      "registry_key": "HLY0331:TOH0",
+      "outcome": "accepted new",
+      "record_id": "2465761c-aa98-5118-b176-9187c4714bac",
+      "identity_review": "Unique exact PV name and dispatch connection within complete 157-row file; no existing NZ name/alias match. Source unit code ends in 0; no sum of unit rows."
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 127,
+      "plant_name": "Tauhei Solar Farm",
+      "registry_key": "WHU1101:TAH0",
+      "outcome": "accepted new",
+      "record_id": "75036b8d-18f1-5df5-baaa-53430e775657",
+      "identity_review": "Unique exact PV name and dispatch connection within complete 157-row file; no existing NZ name/alias match. Source unit code ends in 0; no sum of unit rows."
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 129,
+      "plant_name": "Te Herenga o Te Rā Solar Farm",
+      "registry_key": "WAI0331:HTR0",
+      "outcome": "accepted new",
+      "record_id": "6b3b61ca-5773-53cc-a81f-3869d961bca6",
+      "identity_review": "Unique exact PV name and dispatch connection within complete 157-row file; no existing NZ name/alias match. Source unit code ends in 0; no sum of unit rows."
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 134,
+      "plant_name": "Te Puna Mauri ō Omaru at Ruawai",
+      "registry_key": "MTO0331:RWI0",
+      "outcome": "held",
+      "reason": "Shared dispatch connection across separately named PV entries; requires whole-site/phase crosswalk. No automatic merge.",
+      "fields_not_accepted": [
+        "all"
+      ]
+    },
+    {
+      "source_id": "nz_emi_fleet_20260702_20261102T0058",
+      "csv_row": 142,
+      "plant_name": "Twin Rivers Solar Farm",
+      "registry_key": "KOE1101:TRS0",
+      "outcome": "held",
+      "reason": "Shared dispatch connection across separately named PV entries; requires whole-site/phase crosswalk. No automatic merge.",
+      "fields_not_accepted": [
+        "all"
+      ]
+    }
+  ]
+}

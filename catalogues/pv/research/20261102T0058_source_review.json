@@ -1,0 +1,140 @@
+{
+  "checked_at": "2026-11-02T01:12:34.966229+00:00",
+  "downloaded_source_metadata": {
+    "kaco-manual": {
+      "url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=19681&t=f&token=4bab567db5362edba01d53e1d416f24f6e7fe71a",
+      "status": 200,
+      "sha256": "cfc6e61813013cdace89a16196238b2151ba425333df4a97cb1c00c82834688d",
+      "bytes": 13261259,
+      "retrieved_at": "2026-11-02T01:03:38.528287+00:00"
+    },
+    "ccee-gf": {
+      "url": "https://pda-download.ccee.org.br/IFgwxb1pTMuQb3pF4dJStg/content",
+      "status": 200,
+      "sha256": "822a9258565091fd82c2e6bbbb8e956ec8a6dff725d8130b8a61397482de766c",
+      "bytes": 489,
+      "retrieved_at": "2026-11-02T01:03:38.877916+00:00"
+    },
+    "ccee-acl": {
+      "url": "https://pda-download.ccee.org.br/VHLBGXNETjSBHOAp9e1ylA/content",
+      "status": 200,
+      "sha256": "76210777b459a1fb4d40f61590d505e3c98c8ea1f537ec5d55fc6742dde3e8ea",
+      "bytes": 276,
+      "retrieved_at": "2026-11-02T01:03:38.667894+00:00"
+    },
+    "ccee-gf-meta": {
+      "url": "https://dadosabertos.ccee.org.br/dataset/fotovoltaica_gf_definida/resource/e0960fdd-d433-4079-ab9a-7b571b6bf659",
+      "status": 200,
+      "sha256": "86356f17a4b684e91a1c21bad5f16281fad90e37499eff69161bccd3fc1a53ff",
+      "bytes": 28167,
+      "retrieved_at": "2026-11-02T01:03:39.376581+00:00"
+    },
+    "ccee-acl-meta": {
+      "url": "https://dadosabertos.ccee.org.br/dataset/fotovoltaica_acl/resource/744a63f2-9fc5-48df-9880-67122ec2eb1f",
+      "status": 200,
+      "sha256": "dabf613af79e261dcf82a27fb9f7fcaacd66c9d64f877ceb799dabf455d28acc",
+      "bytes": 27692,
+      "retrieved_at": "2026-11-02T01:03:42.492920+00:00"
+    }
+  },
+  "blocked_or_excluded": [
+    {
+      "id": "brazil_ccee_pv_aggregates",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.ccee.org.br/dataset/fotovoltaica_gf_definida",
+      "version_or_date": "2026 CSVs updated 2026-10-01; January–August observations",
+      "licence_assessment": "CC BY 4.0 explicitly declared by CCEE catalogue",
+      "access_assessment": "GF_DEFINIDA and ACL CSVs downloaded: 8 monthly rows each, no plant identifiers",
+      "estimated_useful_yield": {
+        "source_observations": 16,
+        "accepted_projects": 0
+      },
+      "fields_offered": [
+        "aggregate generation",
+        "aggregate installed capacity",
+        "month"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "Both sources excluded for plant ingestion: national monthly aggregates, not projects. ACL installed-capacity cells empty.",
+      "retry_condition": "Plant/CEG-level dataset with explicit PV technology and licence",
+      "next_action": "Inspect CCEE individual generation/asset register schema before another bulk download; do not convert market totals into plants",
+      "processed_cursor": {
+        "datasets_reviewed": [
+          "FOTOVOLTAICA_GF_DEFINIDA_2026",
+          "FOTOVOLTAICA_ACL_2026"
+        ],
+        "all_16_observations_excluded": true
+      }
+    },
+    {
+      "id": "kaco_nx3_manual_review",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=19681&t=f&token=4bab567db5362edba01d53e1d416f24f6e7fe71a",
+      "version_or_date": "3015332-05-250731",
+      "licence_assessment": "Manual p2 requires written permission for publication in whole or part; no such permission established. No extracted bulk specifications committed.",
+      "access_assessment": "OEM PDF downloaded, technical pages 7–8 and legal page inspected",
+      "estimated_useful_yield": {
+        "existing_models_reviewed": 6,
+        "accepted_enrichments": 0
+      },
+      "fields_offered": [
+        "fault currents",
+        "communications",
+        "standby",
+        "environmental conditions"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "Potential efficiency/standby differences from existing older datasheets retained as a review task; no silent overwrite or unapproved manual redistribution",
+      "retry_condition": "Permitted exact-model technical source/permission already available; reconcile revision semantics",
+      "next_action": "Review exact NX3 revision and standby versus night-consumption definition against permitted sources; no contacting people",
+      "processed_cursor": {
+        "reviewed_models": [
+          "3.0 NX3 M2",
+          "5.0 NX3 M2",
+          "8.0 NX3 M2",
+          "10.0 NX3 M2",
+          "15.0 NX3 M2",
+          "20.0 NX3 M2"
+        ]
+      }
+    },
+    {
+      "id": "arctech_skyline_enrichment",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://en.arctechsolar.com/skyline-ii/",
+      "version_or_date": "Undated live page checked 2026-11-02",
+      "licence_assessment": "Terms restrict republishing and information-system reuse without permission",
+      "access_assessment": "S155 and D166 downloads both lead to required contact forms; no submission or bypass",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "configuration-specific tracker ratings (gated)"
+      ],
+      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
+      "result": "No new or enriched records; existing family record unchanged. All-Terrain values not transferred to generic SkyLine II.",
+      "retry_condition": "Permitted ungated OEM specification or existing permission",
+      "next_action": "Choose another tracker OEM multi-model source; do not repeatedly revisit these forms",
+      "processed_cursor": null
+    }
+  ],
+  "additional_web_checks": [
+    {
+      "url": "https://en.arctechsolar.com/skyline-ii-d166-data-sheet-form/",
+      "result": "contact form required"
+    },
+    {
+      "url": "https://en.arctechsolar.com/skyline-ii-s155-data-sheet-form/",
+      "result": "contact form required"
+    },
+    {
+      "url": "https://en.arctechsolar.com/terms-conditions/",
+      "result": "permission restriction assessed"
+    },
+    {
+      "url": "https://www.phoenixcontact.com/en-us/products/1694155",
+      "result": "web fetch unavailable; candidate already canonical, no duplicate added"
+    }
+  ]
+}
