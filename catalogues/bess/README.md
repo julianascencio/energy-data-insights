@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,297 project and plant records across
-31 countries**, supported by **115 primary sources**. It combines curated
+The BESS section contains **1,304 project and plant records across
+31 countries**, supported by **123 primary sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian and Chilean inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -158,4 +158,6 @@ The EIA source is U.S. government public-domain data. REPD attribution:
 **Contains public sector information licensed under the Open Government Licence
 v3.0.** Other primary-source material retains its own terms.
 
-Latest iteration: [India, Fox ESS and Freedom Won research](research/2026-11-01_india_fox_freedom_report.md), including the candidate ledger, source access decisions and dated market-priority metric.
+Earlier iteration: [India, Fox ESS and Freedom Won research](research/2026-11-01_india_fox_freedom_report.md), including the candidate ledger, source access decisions and dated market-priority metric.
+
+Latest pass: [Victron/SMA equipment and Scatec projects](research/2026-11-02_victron_scatec_report.md), including field conflicts and the next source queue.

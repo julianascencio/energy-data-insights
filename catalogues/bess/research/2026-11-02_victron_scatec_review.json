@@ -1,0 +1,569 @@
+{
+  "started_at": "2026-11-02T04:54:09+00:00",
+  "data_prepared_at": "2026-11-02T05:01:38+00:00",
+  "baseline_head": "65931a16f949d3e5db1c014d8330914a971f3d80",
+  "project_candidates": {
+    "scatec_named_battery_scopes": 10,
+    "accepted_new": 7,
+    "enriched": 1,
+    "existing_unchanged": 2,
+    "notes": "Egypt portfolio Obelisk, Dandara/Aluminium and Energy Valley reviewed; latter two unchanged. Seven South Africa/Philippines named scopes accepted. Eskom12sites reviewed separately:7existing,5held."
+  },
+  "projects_new": [
+    {
+      "record_id": "87c7d7ff-13e3-5104-80d8-95f7c7811185",
+      "name": "Kenhardt BESS",
+      "sources": [
+        "scatec_south_africa_20261102",
+        "scatec_kenhardt_cod_20231211"
+      ]
+    },
+    {
+      "record_id": "ef985309-033d-5341-9413-d274f07452c8",
+      "name": "Mogobe BESS",
+      "sources": [
+        "scatec_south_africa_20261102",
+        "scatec_mogobe_close_20241018"
+      ]
+    },
+    {
+      "record_id": "0fb4345b-073c-5f2a-96cc-c466a966d00c",
+      "name": "Haru BESS",
+      "sources": [
+        "scatec_south_africa_20261102",
+        "scatec_haru_award_20250530"
+      ]
+    },
+    {
+      "record_id": "8d81541e-dcf5-5d27-988a-a3d4a3b336f1",
+      "name": "Magat BESS",
+      "sources": [
+        "scatec_philippines_20261102",
+        "scatec_philippines_close_20260203",
+        "scatec_magat2_cod_20260515"
+      ]
+    },
+    {
+      "record_id": "a5985b95-a390-51d5-9650-82243694dd58",
+      "name": "Binga BESS",
+      "sources": [
+        "scatec_philippines_20261102",
+        "scatec_philippines_close_20260203"
+      ]
+    },
+    {
+      "record_id": "7bf39469-18fe-5fc5-af76-ab47203897ae",
+      "name": "Binga BESS 2",
+      "sources": [
+        "scatec_philippines_20261102",
+        "scatec_philippines_close_20260203"
+      ]
+    },
+    {
+      "record_id": "9ed14307-7e5b-5a7d-b1a5-77fa14c6e5aa",
+      "name": "Ambuklao BESS",
+      "sources": [
+        "scatec_philippines_20261102",
+        "scatec_philippines_close_20260203"
+      ]
+    }
+  ],
+  "projects_enriched": [
+    {
+      "record_id": "061aa522-756a-5552-bbf1-37b86404987c",
+      "name": "Obelisk BESS",
+      "fields": [
+        "extensions_json.scatec.financial_close_20250615"
+      ]
+    }
+  ],
+  "equipment_new": [
+    {
+      "record_id": "00b0eaaa-4a9f-5ff7-8476-9b6b431afc6f",
+      "model": "MultiPlus-II 12/3000/120-32",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102",
+        "victron_multiplus_ii_manual_es_20261102"
+      ],
+      "conflicts": {
+        "weight_kg": {
+          "observations": [
+            {
+              "source_id": "victron_multiplus_ii_230v_20261102",
+              "value": 19
+            },
+            {
+              "source_id": "victron_multiplus_ii_manual_es_20261102",
+              "value": 20
+            }
+          ],
+          "resolution": "Withheld; undated datasheet/manual editions disagree. Mass rounding may explain some differences, but no unqualified scalar selected."
+        }
+      }
+    },
+    {
+      "record_id": "b349dac8-7033-59d9-af65-360306184b4b",
+      "model": "MultiPlus-II 24/3000/70-32",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102"
+      ],
+      "conflicts": {}
+    },
+    {
+      "record_id": "13b7c98d-19e8-55b6-8288-05a4dab69b89",
+      "model": "MultiPlus-II 48/3000/35-32",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102"
+      ],
+      "conflicts": {}
+    },
+    {
+      "record_id": "845f2911-ba65-5e8b-93e4-e8a70887c3d6",
+      "model": "MultiPlus-II 12/5000/220-50",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102",
+        "victron_multiplus_ii_manual_es_20261102"
+      ],
+      "conflicts": {
+        "maximum_charge_current_a": {
+          "observations": [
+            {
+              "source_id": "victron_multiplus_ii_230v_20261102",
+              "value": 220
+            },
+            {
+              "source_id": "victron_multiplus_ii_manual_es_20261102",
+              "value": 50
+            }
+          ],
+          "resolution": "Withheld; undated datasheet/manual editions disagree. Mass rounding may explain some differences, but no unqualified scalar selected."
+        }
+      }
+    },
+    {
+      "record_id": "d41789d7-9747-58bb-afff-f3070608fbf2",
+      "model": "MultiPlus-II 24/5000/120-50",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102",
+        "victron_multiplus_ii_manual_es_20261102"
+      ],
+      "conflicts": {
+        "search_mode_w": {
+          "observations": [
+            {
+              "source_id": "victron_multiplus_ii_230v_20261102",
+              "value": 3
+            },
+            {
+              "source_id": "victron_multiplus_ii_manual_es_20261102",
+              "value": 4
+            }
+          ],
+          "resolution": "Withheld; undated datasheet/manual editions disagree. Mass rounding may explain some differences, but no unqualified scalar selected."
+        }
+      }
+    },
+    {
+      "record_id": "7e4e01d3-6c4c-5b70-a17e-f98e6fe34826",
+      "model": "MultiPlus-II 48/5000/70-50",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102",
+        "victron_multiplus_ii_manual_es_20261102"
+      ],
+      "conflicts": {
+        "search_mode_w": {
+          "observations": [
+            {
+              "source_id": "victron_multiplus_ii_230v_20261102",
+              "value": 2
+            },
+            {
+              "source_id": "victron_multiplus_ii_manual_es_20261102",
+              "value": 4
+            }
+          ],
+          "resolution": "Withheld; undated datasheet/manual editions disagree. Mass rounding may explain some differences, but no unqualified scalar selected."
+        }
+      }
+    },
+    {
+      "record_id": "4f7bba4a-6ec7-5e48-93e1-871ab68c6bc7",
+      "model": "MultiPlus-II 48/8000/110-100",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102",
+        "victron_multiplus_ii_manual_es_20261102"
+      ],
+      "conflicts": {
+        "weight_kg": {
+          "observations": [
+            {
+              "source_id": "victron_multiplus_ii_230v_20261102",
+              "value": 42
+            },
+            {
+              "source_id": "victron_multiplus_ii_manual_es_20261102",
+              "value": 41.2
+            }
+          ],
+          "resolution": "Withheld; undated datasheet/manual editions disagree. Mass rounding may explain some differences, but no unqualified scalar selected."
+        }
+      }
+    },
+    {
+      "record_id": "b94e9d35-23b3-5248-a1fc-730abdb79cfb",
+      "model": "MultiPlus-II 48/10000/140-100",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102",
+        "victron_multiplus_ii_manual_es_20261102"
+      ],
+      "conflicts": {
+        "maximum_conversion_efficiency_pct": {
+          "observations": [
+            {
+              "source_id": "victron_multiplus_ii_230v_20261102",
+              "value": 96
+            },
+            {
+              "source_id": "victron_multiplus_ii_manual_es_20261102",
+              "value": 95
+            }
+          ],
+          "resolution": "Withheld; undated datasheet/manual editions disagree. Mass rounding may explain some differences, but no unqualified scalar selected."
+        },
+        "weight_kg": {
+          "observations": [
+            {
+              "source_id": "victron_multiplus_ii_230v_20261102",
+              "value": 49
+            },
+            {
+              "source_id": "victron_multiplus_ii_manual_es_20261102",
+              "value": 48.8
+            }
+          ],
+          "resolution": "Withheld; undated datasheet/manual editions disagree. Mass rounding may explain some differences, but no unqualified scalar selected."
+        }
+      }
+    },
+    {
+      "record_id": "686b1f3f-94da-52e5-a21f-90dcf162b45a",
+      "model": "MultiPlus-II 48/15000/200-100",
+      "sources": [
+        "victron_multiplus_ii_230v_20261102",
+        "victron_multiplus_ii_manual_es_20261102"
+      ],
+      "conflicts": {
+        "maximum_conversion_efficiency_pct": {
+          "observations": [
+            {
+              "source_id": "victron_multiplus_ii_230v_20261102",
+              "value": 95
+            },
+            {
+              "source_id": "victron_multiplus_ii_manual_es_20261102",
+              "value": 96
+            }
+          ],
+          "resolution": "Withheld; undated datasheet/manual editions disagree. Mass rounding may explain some differences, but no unqualified scalar selected."
+        }
+      }
+    },
+    {
+      "record_id": "4cc9943a-3152-5269-98f2-224c7f5d9783",
+      "model": "MultiPlus-II 12/4k/160-32",
+      "sources": [
+        "victron_multiplus_ii_new_230v_20261102"
+      ],
+      "conflicts": {}
+    },
+    {
+      "record_id": "b4ebc731-bc1a-503b-b22b-afd5e453a820",
+      "model": "MultiPlus-II 48/4k5/55-32",
+      "sources": [
+        "victron_multiplus_ii_new_230v_20261102"
+      ],
+      "conflicts": {}
+    },
+    {
+      "record_id": "7e9f7786-24d6-5e65-a17f-5c4ba1fee06c",
+      "model": "MultiPlus-II 48/6k5/100-50",
+      "sources": [
+        "victron_multiplus_ii_new_230v_20261102"
+      ],
+      "conflicts": {}
+    },
+    {
+      "record_id": "360fd9a1-cb07-5a4e-82c5-87245215cbee",
+      "model": "MultiPlus-II 48/10k/150-100",
+      "sources": [
+        "victron_multiplus_ii_new_230v_20261102"
+      ],
+      "conflicts": {}
+    },
+    {
+      "record_id": "db3cf577-5028-5a68-9e0a-da00866ceaf2",
+      "model": "SI4.4M-13",
+      "sources": [
+        "sma_sunny_island_13_ds_es_31",
+        "sma_sunny_island_page_20261102"
+      ],
+      "conflicts": {}
+    },
+    {
+      "record_id": "b5c5556b-3530-593d-8f18-770600d11eaf",
+      "model": "SI6.0H-13",
+      "sources": [
+        "sma_sunny_island_13_ds_es_31"
+      ],
+      "conflicts": {}
+    },
+    {
+      "record_id": "8944403c-a7b0-51f0-bd90-d5169764e9cb",
+      "model": "SI8.0H-13",
+      "sources": [
+        "sma_sunny_island_13_ds_es_31"
+      ],
+      "conflicts": {}
+    }
+  ],
+  "quarantined_equipment_fields": 8,
+  "quarantined_whole_records": 0,
+  "rejected_whole_records": 0,
+  "held_project_candidates": [
+    "Rietfontein",
+    "Witzenberg",
+    "Ashton",
+    "Cuprum",
+    "Kiwano"
+  ],
+  "excluded_aggregate_rows": [
+    "Eskom phase1/phase2 totals",
+    "SNAP total battery fleet",
+    "SNAP Magat and Benguet hydro fleet",
+    "Scatec country totals"
+  ],
+  "preservation_audit": {
+    "unchanged_original_projects": 1296,
+    "enriched_original_projects": 1,
+    "unchanged_original_equipment": 239,
+    "created_at_preserved": true,
+    "new_project_equipment_assignments": 0,
+    "actual_changed_fields": [
+      "extensions_json",
+      "field_sources_json",
+      "last_verified_at",
+      "sources",
+      "updated_at"
+    ]
+  },
+  "totals": {
+    "projects": 1304,
+    "countries": 31,
+    "project_sources": 123,
+    "equipment": 255,
+    "suppliers": 35,
+    "equipment_sources": 91,
+    "configurations": 242
+  },
+  "source_metadata": [
+    {
+      "id": "victron_multiplus_ii_230v_20261102",
+      "url": "https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-inverter-charger-EN-.pdf",
+      "publisher": "Victron Energy",
+      "title": "MultiPlus-II Inverter/Charger 230 V",
+      "published_date": null,
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "PDF page 2, exact model column; inverter/charger/general/enclosure rows and footnotes 1–5; page 1 topology and external transfer switch qualification.",
+      "license": "OEM public datasheet; copyright retained. Legal notice and linked terms of sale inspected: https://www.victronenergy.com/p/legal-notice . No open bulk licence claimed; selected factual technical metadata only; PDF not redistributed.",
+      "access_method": "downloaded_document",
+      "sha256": "04ccf7512949073346821267a760dcfa30927b73e349b9f2b9f7d566bec943df"
+    },
+    {
+      "id": "victron_multiplus_ii_new_230v_20261102",
+      "url": "https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-inverter-charger-4k-4k5-6k5-10k-EN.pdf",
+      "publisher": "Victron Energy",
+      "title": "MultiPlus-II Inverter/Charger, new models, 230 V",
+      "published_date": null,
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "PDF page 2, four exact model columns and footnotes; page 1 ESS topology. Apparent-feed-in row prints kW, so not used as MVA.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "downloaded_document",
+      "sha256": "9667abd609f8d02c521e4f19a899071f8f358a72b912e0053f07ae367ac92397"
+    },
+    {
+      "id": "victron_multiplus_ii_manual_es_20261102",
+      "url": "https://www.victronenergy.com/media/pg/MultiPlus-II_230V/es/technical-specifications-mp-ii-230v.html",
+      "publisher": "Victron Energy",
+      "title": "MultiPlus-II 230V: 7. Especificaciones técnicas",
+      "published_date": null,
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Section 7, three model tables: mass, maximum efficiency, search-mode consumption and battery-charge-current rows. Column spans reviewed.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "downloaded_document",
+      "sha256": "ea060cd47c4400715631a038f672937668098b99bcb96895133c1715f757bc07"
+    },
+    {
+      "id": "sma_sunny_island_13_ds_es_31",
+      "url": "https://files.sma.de/downloads/SI44M-80H-13-DS-es-31.pdf",
+      "publisher": "SMA Solar Technology AG",
+      "title": "Sunny Island 4.4M / 6.0H / 8.0H datasheet",
+      "published_date": null,
+      "document_revision": "SI44M-80H-13-DS-es-31; specifications 12/2022",
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "PDF page 3, exact SI4.4M-13/SI6.0H-13/SI8.0H-13 columns, AC-1/AC-2/DC/general rows and footnotes 1–7.",
+      "license": "Copyright SMA; legal notice inspected at https://policy.sma.energy/nl/meta/juridische-informatie . Selected factual specifications and attribution only; no PDF, images or source prose redistributed; no open reuse licence claimed.",
+      "access_method": "downloaded_document",
+      "sha256": "5841dfaecd0fd16295ff447e52d954d38a595e587b36af579aac94d7d3651735"
+    },
+    {
+      "id": "sma_sunny_island_page_20261102",
+      "url": "https://www.sma.de/en/products/battery-inverters/sunny-island-44m-60h-80h",
+      "publisher": "SMA Solar Technology AG",
+      "title": "Sunny Island 4.4M / 6.0H / 8.0H",
+      "published_date": null,
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Product introduction: Sunny Island 4.4M version no longer produced.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "downloaded_document",
+      "sha256": "a429be6c65edf86dd71a5f1d915f7885cedca917f63e7bc1a960d3a6b6bc8c51"
+    },
+    {
+      "id": "scatec_south_africa_20261102",
+      "url": "https://www.scatec.com/en/project/south-africa/",
+      "publisher": "Scatec ASA",
+      "title": "South Africa",
+      "published_date": null,
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Assets table: Kenhardt operational 225 MW/1140 MWh; Mogobe construction 103/412; Haru backlog 123/492.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "web_primary_page_text",
+      "sha256": null,
+      "access_note": "Primary page read through web retrieval; no source bytes downloaded for this URL. Direct Mogobe and quarterly announcement download attempts returned403; remaining primary pages were read through web retrieval. No byte checksum asserted."
+    },
+    {
+      "id": "scatec_philippines_20261102",
+      "url": "https://www.scatec.com/en/project/philippines/",
+      "publisher": "Scatec ASA",
+      "title": "Philippines",
+      "published_date": null,
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Assets table: Magat operational 40 MW/40 MWh; Binga, Binga 2 and Ambuklao construction each 40/40; exclude hydro and solar rows.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "web_primary_page_text",
+      "sha256": null,
+      "access_note": "Primary page read through web retrieval; no source bytes downloaded for this URL. Direct Mogobe and quarterly announcement download attempts returned403; remaining primary pages were read through web retrieval. No byte checksum asserted."
+    },
+    {
+      "id": "scatec_kenhardt_cod_20231211",
+      "url": "https://www.scatec.com/en/energising-tomorrow-scatec-ignites-one-of-the-worlds-largest-hybrid-solar-and-battery-project-in-south-africa/",
+      "publisher": "Scatec ASA",
+      "title": "Energising tomorrow: Scatec ignites one of the world’s largest hybrid solar and battery project in South Africa",
+      "published_date": "2023-12-11",
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Opening paragraphs, equity paragraph and notes to editors: three-plant aggregate, 225 MW/1140 MWh, 456 battery units, 20-year PPA and hybrid capex.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "web_primary_page_text",
+      "sha256": null,
+      "access_note": "Primary page read through web retrieval; no source bytes downloaded for this URL. Direct Mogobe and quarterly announcement download attempts returned403; remaining primary pages were read through web retrieval. No byte checksum asserted."
+    },
+    {
+      "id": "scatec_mogobe_close_20241018",
+      "url": "https://www.scatec.com/en/scatec-reaches-financial-close-and-prepares-for-construction-start-for-battery-energy-storage-project-in-south-africa/",
+      "publisher": "Scatec ASA",
+      "title": "Scatec reaches financial close and prepares for construction start for battery energy storage project in South Africa",
+      "published_date": "2024-10-18",
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Opening, PPA, capex/debt, equity, service-role and Kathu-location paragraphs.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "web_primary_page_text",
+      "sha256": null,
+      "access_note": "Primary page read through web retrieval; no source bytes downloaded for this URL. Direct Mogobe and quarterly announcement download attempts returned403; remaining primary pages were read through web retrieval. No byte checksum asserted."
+    },
+    {
+      "id": "scatec_haru_award_20250530",
+      "url": "https://www.scatec.com/en/scatec-wins-battery-storage-project-in-south-africa/",
+      "publisher": "Scatec ASA",
+      "title": "Scatec wins battery storage project in South Africa",
+      "published_date": "2025-05-30",
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Opening award/capacity, 15-year contract, estimated capex, intended equity and Free State paragraphs.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "web_primary_page_text",
+      "sha256": null,
+      "access_note": "Primary page read through web retrieval; no source bytes downloaded for this URL. Direct Mogobe and quarterly announcement download attempts returned403; remaining primary pages were read through web retrieval. No byte checksum asserted."
+    },
+    {
+      "id": "scatec_philippines_close_20260203",
+      "url": "https://www.scatec.com/en/scatec-jv-reaches-financial-close-for-80-mw-bess-in-the-philippines-and-prepares-for-construction-start/",
+      "publisher": "Scatec ASA",
+      "title": "Scatec JV reaches financial close for 80 MW BESS in the Philippines and prepares for construction start",
+      "published_date": "2026-02-03",
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Opening three paragraphs and ownership/financing paragraph; Binga phases remain distinct.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "web_primary_page_text",
+      "sha256": null,
+      "access_note": "Primary page read through web retrieval; no source bytes downloaded for this URL. Direct Mogobe and quarterly announcement download attempts returned403; remaining primary pages were read through web retrieval. No byte checksum asserted."
+    },
+    {
+      "id": "scatec_magat2_cod_20260515",
+      "url": "https://www.scatec.com/en/scatec-jv-starts-commercial-operation-of-battery-system-in-the-philippines/",
+      "publisher": "Scatec ASA",
+      "title": "Scatec JV starts commercial operation of battery system in the Philippines",
+      "published_date": "2026-05-15",
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Opening two paragraphs, 40 MWh operating total and 50/50 JV/debt paragraphs. Phase1 24 MW; phase2 16 MW.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "web_primary_page_text",
+      "sha256": null,
+      "access_note": "Primary page read through web retrieval; no source bytes downloaded for this URL. Direct Mogobe and quarterly announcement download attempts returned403; remaining primary pages were read through web retrieval. No byte checksum asserted."
+    },
+    {
+      "id": "scatec_obelisk_close_20250615",
+      "url": "https://www.scatec.com/en/scatec-reaches-financial-close-for-the-1-1gw-solar-100mw-200mwh-bess-obelisk-project/",
+      "publisher": "Scatec ASA",
+      "title": "Scatec reaches financial close for the 1.1GW solar + 100MW/200MWh BESS Obelisk project",
+      "published_date": "2025-06-15",
+      "document_revision": null,
+      "retrieved_at": "2026-11-02T05:01:38+00:00",
+      "locator": "Financing paragraphs: whole hybrid USD590m estimated capex, USD479.1m project financing, USD120m equity bridge; sovereign PPA guarantee.",
+      "license": "Copyright publisher. Bounded factual research transcription with attribution; no open bulk-reuse licence claimed and no source document redistributed.",
+      "access_method": "web_primary_page_text",
+      "sha256": null,
+      "access_note": "Primary page read through web retrieval; no source bytes downloaded for this URL. Direct Mogobe and quarterly announcement download attempts returned403; remaining primary pages were read through web retrieval. No byte checksum asserted."
+    }
+  ],
+  "parser_validation": {
+    "synthetic_tests_passed": 10,
+    "real_document_candidates": 4,
+    "canonical_rating_matches": 4,
+    "automatic_identity_merges": 0
+  },
+  "validation_completed_at": "2026-11-02T05:14:09+00:00",
+  "elapsed_minutes_through_validation": 20.0,
+  "validation": {
+    "full_suite_passed": 1587,
+    "full_suite_skipped": 1,
+    "focused_tests_passed": 38,
+    "new_parser_tests_passed": 10,
+    "viewer_dom_tests_passed": 4,
+    "strict_docs": "passed; Python3.13 imagery/docs environment",
+    "local_link_pages_checked": 395,
+    "parquet": "both catalogues rebuilt twice identically",
+    "offline_examples": "both passed",
+    "lint_format_types": "passed",
+    "repository_citations": "passed",
+    "package_archives_checked": 6
+  }
+}

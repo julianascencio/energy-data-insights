@@ -1,9 +1,10 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **239 records from 33 product
-suppliers, backed by 86 primary sources**: 226 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **255 records from 35 product
+suppliers, backed by 91 primary sources**: 242 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
-a small residential sample, and non-lithium storage technologies. This is a
+a small residential sample, standalone battery inverter/chargers, and non-lithium
+storage technologies. This is a
 researched starting inventory, not a complete list of suppliers or market-share ranking.
 
 It follows the PV module catalogue pattern: one reviewable JSONL row per exact
@@ -95,7 +96,7 @@ isolated PR. Never overwrite another writer's branch or remove retained records.
 Source terms apply separately from the repository's software license. Only factual
 metadata and attribution are stored; no OEM datasheets, images or logos are bundled.
 
-Latest iteration: [Dyness, Nordic and Baltic research](../bess/research/2026-11-02_dyness_baltic_report.md), with model-level reconciliation, source backlog and current coverage.
+Earlier iteration: [Dyness, Nordic and Baltic research](../bess/research/2026-11-02_dyness_baltic_report.md), with model-level reconciliation, source backlog and current coverage.
 
 ## Offline STACK100 table staging
 
@@ -118,3 +119,26 @@ Review source terms, identities and all additional specifications before using t
 existing `upsert_records` API. The newer 2026 family sheet differs from the manual;
 it must not silently replace the older exact-configuration columns. Components
 S51100 and SBDU100 are separate product levels, not additional complete systems.
+
+Latest pass: [Victron/SMA equipment and Scatec projects](../bess/research/2026-11-02_victron_scatec_report.md), including field conflicts and the next source queue.
+
+## Offline Victron staging
+
+For the reviewed four-column MultiPlus-II **new-model 230 V** datasheet, stage
+selected continuous/peak power and charge-current facts without modifying records:
+
+```bash
+pdftotext -layout /path/to/Datasheet-MultiPlus-II-inverter-charger-4k-4k5-6k5-10k-EN.pdf /tmp/victron.txt
+uv run python scripts/stage_bess_victron.py \
+  --text /tmp/victron.txt \
+  --document /path/to/Datasheet-MultiPlus-II-inverter-charger-4k-4k5-6k5-10k-EN.pdf \
+  --output artifacts/victron-candidates.json
+```
+
+The adapter requires the four reviewed model columns in order, validates units
+and overload durations, and records the PDF/text hashes. The apparent-feed-in row
+uses kW despite its label, so it never fills apparent MVA. It does not decode nominal
+DC voltage from model names. Other specifications, shared cells, source terms,
+revisions, identities and conflicts still require review before the normal upsert.
+The separate standard-model and SMA tables were manually reviewed, not parsed by
+this adapter. No source PDF is bundled.

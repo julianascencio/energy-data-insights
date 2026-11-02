@@ -2659,3 +2659,107 @@ Juniper Green Energy Limited (2026). **FDRE and BESS project portfolio**. [Sourc
 **Role:** data. Primary factual evidence. Exact revision, locator, terms and checksum in source register; undated manual grouped by retrieval year.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### victron_multiplus_ii_230v_20261102
+
+Victron Energy (2026). **MultiPlus-II Inverter/Charger 230 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-inverter-charger-EN-.pdf)
+
+**Role:** data. PDF page 2, exact model column; inverter/charger/general/enclosure rows and footnotes 1–5; page 1 topology and external transfer switch qualification.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_multiplus_ii_new_230v_20261102
+
+Victron Energy (2026). **MultiPlus-II Inverter/Charger, new models, 230 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-inverter-charger-4k-4k5-6k5-10k-EN.pdf)
+
+**Role:** data. PDF page 2, four exact model columns and footnotes; page 1 ESS topology. Apparent-feed-in row prints kW, so not used as MVA.
+
+**Used by:** `catalogues/bess_oem/sources.json`, `data-retrieval/src/energy_data_retrieval/bess_oem_catalogue/victron.py`.
+
+### victron_multiplus_ii_manual_es_20261102
+
+Victron Energy (2026). **MultiPlus-II 230V: 7. Especificaciones técnicas**. [Source](https://www.victronenergy.com/media/pg/MultiPlus-II_230V/es/technical-specifications-mp-ii-230v.html)
+
+**Role:** data. Section 7, three model tables: mass, maximum efficiency, search-mode consumption and battery-charge-current rows. Column spans reviewed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sma_sunny_island_13_ds_es_31
+
+SMA Solar Technology AG (2022). **Sunny Island 4.4M / 6.0H / 8.0H datasheet**. [Source](https://files.sma.de/downloads/SI44M-80H-13-DS-es-31.pdf)
+
+**Role:** data. PDF page 3, exact SI4.4M-13/SI6.0H-13/SI8.0H-13 columns, AC-1/AC-2/DC/general rows and footnotes 1–7.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sma_sunny_island_page_20261102
+
+SMA Solar Technology AG (2026). **Sunny Island 4.4M / 6.0H / 8.0H**. [Source](https://www.sma.de/en/products/battery-inverters/sunny-island-44m-60h-80h)
+
+**Role:** data. Product introduction: Sunny Island 4.4M version no longer produced.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### scatec_south_africa_20261102
+
+Scatec ASA (2026). **South Africa**. [Source](https://www.scatec.com/en/project/south-africa/)
+
+**Role:** data. Assets table: Kenhardt operational 225 MW/1140 MWh; Mogobe construction 103/412; Haru backlog 123/492.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_philippines_20261102
+
+Scatec ASA (2026). **Philippines**. [Source](https://www.scatec.com/en/project/philippines/)
+
+**Role:** data. Assets table: Magat operational 40 MW/40 MWh; Binga, Binga 2 and Ambuklao construction each 40/40; exclude hydro and solar rows.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_kenhardt_cod_20231211
+
+Scatec ASA (2023). **Energising tomorrow: Scatec ignites one of the world’s largest hybrid solar and battery project in South Africa**. [Source](https://www.scatec.com/en/energising-tomorrow-scatec-ignites-one-of-the-worlds-largest-hybrid-solar-and-battery-project-in-south-africa/)
+
+**Role:** data. Opening paragraphs, equity paragraph and notes to editors: three-plant aggregate, 225 MW/1140 MWh, 456 battery units, 20-year PPA and hybrid capex.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_mogobe_close_20241018
+
+Scatec ASA (2024). **Scatec reaches financial close and prepares for construction start for battery energy storage project in South Africa**. [Source](https://www.scatec.com/en/scatec-reaches-financial-close-and-prepares-for-construction-start-for-battery-energy-storage-project-in-south-africa/)
+
+**Role:** data. Opening, PPA, capex/debt, equity, service-role and Kathu-location paragraphs.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_haru_award_20250530
+
+Scatec ASA (2025). **Scatec wins battery storage project in South Africa**. [Source](https://www.scatec.com/en/scatec-wins-battery-storage-project-in-south-africa/)
+
+**Role:** data. Opening award/capacity, 15-year contract, estimated capex, intended equity and Free State paragraphs.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_philippines_close_20260203
+
+Scatec ASA (2026). **Scatec JV reaches financial close for 80 MW BESS in the Philippines and prepares for construction start**. [Source](https://www.scatec.com/en/scatec-jv-reaches-financial-close-for-80-mw-bess-in-the-philippines-and-prepares-for-construction-start/)
+
+**Role:** data. Opening three paragraphs and ownership/financing paragraph; Binga phases remain distinct.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_magat2_cod_20260515
+
+Scatec ASA (2026). **Scatec JV starts commercial operation of battery system in the Philippines**. [Source](https://www.scatec.com/en/scatec-jv-starts-commercial-operation-of-battery-system-in-the-philippines/)
+
+**Role:** data. Opening two paragraphs, 40 MWh operating total and 50/50 JV/debt paragraphs. Phase1 24 MW; phase2 16 MW.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_obelisk_close_20250615
+
+Scatec ASA (2025). **Scatec reaches financial close for the 1.1GW solar + 100MW/200MWh BESS Obelisk project**. [Source](https://www.scatec.com/en/scatec-reaches-financial-close-for-the-1-1gw-solar-100mw-200mwh-bess-obelisk-project/)
+
+**Role:** data. Financing paragraphs: whole hybrid USD590m estimated capex, USD479.1m project financing, USD120m equity bridge; sovereign PPA guarantee.
+
+**Used by:** `catalogues/bess/sources.json`.
