@@ -1,0 +1,184 @@
+{
+  "reviewed_at": "2026-11-02T01:01:35.929586+00:00",
+  "baseline_commit": "2bcc53fc7210d3c95bbb012b693c8508e5e440ff",
+  "project_candidates": 7,
+  "new_projects": 2,
+  "enriched_projects": 2,
+  "held_projects": 3,
+  "equipment_candidates": 19,
+  "new_equipment": 12,
+  "enriched_equipment": 0,
+  "held_equipment": 7,
+  "rejected_records": 0,
+  "new_record_quarantines": 0,
+  "project_decisions": [
+    {
+      "name": "Orbec",
+      "decision": "accepted",
+      "reason": "Distinct contracted 41MW/92MWh site; 18 containers; announced, not operational"
+    },
+    {
+      "name": "Bois Paillet",
+      "decision": "accepted",
+      "reason": "Distinct contracted 14MW/30MWh site; six containers; no portfolio aggregate"
+    },
+    {
+      "name": "Huntly Stage 1",
+      "decision": "enriched",
+      "reason": "Saft model and 70-container count; generic lithium-ion only; owner operating status and ratings unchanged"
+    },
+    {
+      "name": "Huntly Stage 2",
+      "decision": "enriched",
+      "reason": "Saft model, generic lithium-ion and 2028 forecast; stage 1 container count not extrapolated"
+    },
+    {
+      "name": "Gurtnellen Axpo",
+      "decision": "held",
+      "reason": "Owner portfolio/release restrictive public-use terms; seek suitable alternative source"
+    },
+    {
+      "name": "Gurtnellen energieUri",
+      "decision": "held",
+      "reason": "Both owners restrict public use; 8.6MW older proposal versus8.4MW commissioning disclosure needs dated scope preservation"
+    },
+    {
+      "name": "Landskrona",
+      "decision": "held",
+      "reason": "Portfolio identified site; public-use terms restrict ingestion; seek grid operator or suitably licensed owner document"
+    }
+  ],
+  "equipment_decisions": [
+    {
+      "model": "Force-H3 2 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H3 3 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H3 4 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H3 5 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H3 6 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H3 7 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H2 2 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H2 3 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H2 4 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "Force-H2 5 modules",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "FH10050",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "FC1000",
+      "decision": "accepted",
+      "reason": "Explicit configuration or separately identifiable component in OEM-authored PDF"
+    },
+    {
+      "model": "US5000",
+      "decision": "held",
+      "reason": "Indexed table differs from empty live page; obtain current manual bytes"
+    },
+    {
+      "model": "Force-H1 336V74AH,20F1031002",
+      "decision": "held",
+      "reason": "Old sheet dimensions labelled cm despite mm-sized numbers; no silent unit correction"
+    },
+    {
+      "model": "Force-H2 384V37AH,20F1031002",
+      "decision": "held",
+      "reason": "Superseded physical configuration; not counted as new cosmetic revision"
+    },
+    {
+      "model": "FH3X-8K-HY-3P",
+      "decision": "held",
+      "reason": "No fabricated cross-product of battery count and PCS options; exact configuration sheet needed"
+    },
+    {
+      "model": "FH3X-10K-HY-3P",
+      "decision": "held",
+      "reason": "No fabricated cross-product of battery count and PCS options; exact configuration sheet needed"
+    },
+    {
+      "model": "FH3X-12K-HY-3P",
+      "decision": "held",
+      "reason": "Live/indexed mismatch and malformed environmental rows; exact configuration sheet needed"
+    },
+    {
+      "model": "FH3X-15K-HY-3P",
+      "decision": "held",
+      "reason": "Live/indexed mismatch and malformed environmental rows; exact configuration sheet needed"
+    }
+  ],
+  "quarantined_field_observations": [
+    {
+      "scope": "Force-H3 six strings",
+      "field": "storage_temperature",
+      "observations": [
+        {
+          "value_c": [
+            -20,
+            45
+          ],
+          "source": "pylon_h3_20250121",
+          "locator": "page2"
+        },
+        {
+          "value_c": [
+            -20,
+            60
+          ],
+          "source": "pylon_h3_manual_v11",
+          "locator": "printedpage9"
+        }
+      ],
+      "decision": "No canonical storage-temperature value selected; both editions retained in evidence note"
+    },
+    {
+      "scope": "Force-H2 older manual vs January2025 sheet",
+      "field": "revision-dependent specifications",
+      "observations": [
+        "Older PM0MFORCE325 V2.4 page6:42A absent,40A peak;117kg three-module;14.20kWh four-module;0–50C",
+        "EN-SD-250121:42A peak;117.5kg three-module;14.21kWh four-module;charge0–55C"
+      ],
+      "decision": "Do not mix editions. Only EN-SD-250121 numeric table accepted; older manual not used for chemistry or voltage limits"
+    }
+  ],
+  "inventory_screening": "DOE September2024 Luzon indicative BESS partition sampled; no bulk extraction due reuse conditions. Pumped hydro rows excluded at scope screen. ERC August2026 inventory returned403.",
+  "relationship_review": "No exact Intensium Flex energy variant assigned to French projects; source only names family. Pylontech module and controller levels explicitly distinguished from complete strings. No project assignment for Pylontech."
+}

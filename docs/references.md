@@ -2403,3 +2403,83 @@ Genesis Energy / NZX (2026). **Genesis reaches FID on Second Stage Huntly BESS**
 **Role:** data. Exact revision, hash and field evidence in BESS source registry.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### freedom_lite2_hv_202506
+
+Freedom Won (2025). **LiTE 2 Commercial HV range specifications**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-2-COMMERCIAL-HV-Range-Overview-Sheet.pdf)
+
+**Role:** data. Primary-source factual observations; source registry records access and checksum limitations.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedom_lite2_hvp_202506
+
+Freedom Won (2025). **LiTE 2 Commercial HV+ range specifications**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-2-COMMERCIAL-HV-Range-Overview-Sheet-2.pdf)
+
+**Role:** data. Primary-source factual observations; source registry records access and checksum limitations.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### edc_annual2025
+
+Energy Development Corporation (2025). **EDC 2025 Annual Report**. [Source](https://www.energy.com.ph/wp-content/uploads/2026/04/2026-ASM-Annual-Report-2025.pdf)
+
+**Role:** data. Primary-source factual observations; source registry records access and checksum limitations.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ngcp_as_202603
+
+National Grid Corporation of the Philippines (2026). **Existing ancillary services providers as of March2026**. [Source](https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf)
+
+**Role:** data. Primary-source factual observations; source registry records access and checksum limitations.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pylon_h3_20250121
+
+Pylon Technologies Co., Ltd. (2025). **Force-H3 high-voltage stackable battery specifications**. [Source](https://solar-distribution.baywa-re.de/out/media/07_Force_H3_EN-SD-250121-Force-H3-_ESS_Spec-Pylontech.pdf)
+
+**Role:** data. Primary-authored factual evidence; access limitations and locators in source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### pylon_h2_20250121
+
+Pylon Technologies Co., Ltd. (2025). **Force-H2 high-voltage stackable battery specifications**. [Source](https://solarshop.baywa-re.lv/en/documents/pylontech-residential-battery-solutions-11fh9637mza00001-11fh9637mza-00001-0/382/415.pdf)
+
+**Role:** data. Primary-authored factual evidence; access limitations and locators in source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### pylon_h3_manual_v11
+
+Pylon Technologies Co., Ltd. (n.d.). **Force-H3 Operation Manual**. [Source](https://pvundso.de/Doku/Pylontec/Pylontech_Force_H3_Battery_Operation_Manual_V1.1.pdf)
+
+**Role:** data. Undated OEM-authored manual V1.1, 5PMPA08-00250, obtained from public distributor mirror; access and byte hash in source registry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### saft_axpo_france_20261006
+
+Saft (2026). **Saft and Axpo to deliver two battery energy storage projects in France**. [Source](https://saft.com/en/media-resources/press-release/saft-and-axpo-deliver-two-battery-energy-storage-projects-france)
+
+**Role:** data. Primary-authored factual evidence; access limitations and locators in source register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### saft_huntly_20240919
+
+Saft (2024). **Saft utility-scale BESS will power Huntly Portfolio to drive New Zealand’s green energy transition**. [Source](https://saft.com/en/media-resources/press-releases/saft-utility-scale-bess-will-power-huntly-portfolio-drive-new-zealand)
+
+**Role:** data. Primary-authored factual evidence; access limitations and locators in source register.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### saft_huntly_20260428
+
+Saft (2026). **Saft and Genesis enter next phase of Huntly BESS with 200 MWh extension**. [Source](https://saft.com/en/media-resources/press-release/saft-and-genesis-enter-next-phase-huntly-bess-200-mwh-extension)
+
+**Role:** data. Primary-authored factual evidence; access limitations and locators in source register.
+
+**Used by:** `catalogues/bess/sources.json`.
