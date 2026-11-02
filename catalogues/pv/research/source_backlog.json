@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T22:18:00.839071+00:00",
+  "updated_at": "2026-11-02T22:38:37.762424+00:00",
   "ranking_file": "20261102T2200_top10_coverage.json",
-  "selection_note": "200 project enrichments / 402 fields; 16 exact modules; NEPRA review-only adapter, 33 staged / zero accepted.",
-  "next_highest_value_source": "ODRE Centre-Val de Loire PHOTV 1–5 MW exact-EIC enrichment; Suntree historical solar catalogue physical page 27 after current-source and identity checks.",
+  "selection_note": "207 existing projects enriched /468 fields;16 exact GoodWe inverters and3 Suntree AC PV combiners; selected101-observation registry,81-label cohort,3 inverter tables and remaining22 scanned catalogue pages exhausted.",
+  "next_highest_value_source": "ODRE Pays de la Loire PHOTV1–5MW exact-EIC enrichment; GoodWe XS G3 official multi-model sheets after identity/revision checks. Suntree48-page historic catalogue exhausted; move to independent OEM rather than repeated variants.",
   "sources": [
     {
       "id": "uk_repd",
@@ -3845,6 +3845,188 @@
         "explicit_pv": 27,
         "accepted_canonical": 0,
         "review": "20261102T2200_nepra_review.json"
+      }
+    },
+    {
+      "id": "odre_centre_2228",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/",
+      "version_or_date": "31August2026 snapshot; fresh same13October metadata",
+      "licence_assessment": "Licence Ouvertev2.0; existing attribution retained",
+      "access_assessment": "Exact source hashes/retrieval/errors in dated download ledgers; cached immutable source hashes explicitly retained where reused",
+      "estimated_useful_yield": {
+        "accepted_or_enriched_selected_cohort": 27,
+        "remaining_verified_yield": "unknown after selected cohort exhaustion/rights/concurrency holds"
+      },
+      "fields_offered": [
+        "grid operator",
+        "substation",
+        "registry industrial-service date",
+        "evidence"
+      ],
+      "last_attempt": "2026-11-02T22:38:37.762424+00:00",
+      "result": "101 observations reviewed;27 exact unique complete single-phase enrichments/108 fields;74 held. No new projects or fuzzy merges.",
+      "retry_condition": "Recheck source revision/access/terms; resolve identity, rights or concurrent AC-scope hold before acceptance",
+      "next_action": "Pays de la Loire same bounded partition; refresh metadata and identity export before acceptance",
+      "processed_cursor": {
+        "region": "Centre-Val de Loire",
+        "capacity_kw": [
+          1000,
+          5000
+        ],
+        "observations": 101,
+        "enriched": 27,
+        "held": 74,
+        "national_identities": 95302,
+        "exhausted": true
+      }
+    },
+    {
+      "id": "gem_operator_2228",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026 pinned source",
+      "licence_assessment": "Existing CC BY attribution/restricted-lineage exclusions retained",
+      "access_assessment": "Exact source hashes/retrieval/errors in dated download ledgers; cached immutable source hashes explicitly retained where reused",
+      "estimated_useful_yield": {
+        "accepted_or_enriched_selected_cohort": 180,
+        "remaining_verified_yield": "unknown after selected cohort exhaustion/rights/concurrency holds"
+      },
+      "fields_offered": [
+        "historical operator",
+        "complete phase evidence"
+      ],
+      "last_attempt": "2026-11-02T22:38:37.762424+00:00",
+      "result": "81 reviewed corporate labels;180 complete locations/360 fields. Source labels historical, no current-operator claim.",
+      "retry_condition": "Recheck source revision/access/terms; resolve identity, rights or concurrent AC-scope hold before acceptance",
+      "next_action": "Next reviewed exact corporate cohort; no individuals, multi-company split or parent collapse",
+      "processed_cursor": {
+        "labels": 81,
+        "locations": 180,
+        "exhausted": true,
+        "allowlist": "20261102T2228_operator_review.json"
+      }
+    },
+    {
+      "id": "goodwe_2228",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://en.goodwe.com/ms-g4",
+      "version_or_date": "MS20250804ENV2.1;HT20250828ENV2.1;SMT20250911ENEMEAV1.1",
+      "licence_assessment": "OEM copyright retained; limited individually reviewed facts only",
+      "access_assessment": "Exact source hashes/retrieval/errors in dated download ledgers; cached immutable source hashes explicitly retained where reused",
+      "estimated_useful_yield": {
+        "accepted_or_enriched_selected_cohort": 16,
+        "remaining_verified_yield": "unknown after selected cohort exhaustion/rights/concurrency holds"
+      },
+      "fields_offered": [
+        "input/output electrical",
+        "efficiency",
+        "mechanical",
+        "environmental",
+        "protections",
+        "communication"
+      ],
+      "last_attempt": "2026-11-02T22:38:37.762424+00:00",
+      "result": "16 exact models accepted from3 tables. Five rapid-shutdown field conflicts held; no current certificate/warranty assumption.",
+      "retry_condition": "Recheck source revision/access/terms; resolve identity, rights or concurrent AC-scope hold before acceptance",
+      "next_action": "XS G3 official exact-model table; compare existing XS canonical identities and regional revisions",
+      "processed_cursor": {
+        "tables": 3,
+        "columns": 16,
+        "exhausted": true,
+        "models": "20261102T2228_equipment_review.json"
+      }
+    },
+    {
+      "id": "suntree_2228",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.suntree-electric.com/uploads-suntree/1-m/pdf/solar-energy-combiner-box.pdf",
+      "version_or_date": "Undated historical48-page catalogue; no publication date inferred",
+      "licence_assessment": "OEM copyright retained; selected reviewed facts only",
+      "access_assessment": "Exact source hashes/retrieval/errors in dated download ledgers; cached immutable source hashes explicitly retained where reused",
+      "estimated_useful_yield": {
+        "accepted_or_enriched_selected_cohort": 3,
+        "remaining_verified_yield": "unknown after selected cohort exhaustion/rights/concurrency holds"
+      },
+      "fields_offered": [
+        "AC rated voltage",
+        "input counts/current",
+        "dimensions",
+        "protection",
+        "options"
+      ],
+      "last_attempt": "2026-11-02T22:38:37.762424+00:00",
+      "result": "Resumed physical27–48; six DC tables already canonical, three AC tables accepted. Three max-voltage conflicts and three missing-temperature units held; no whole-box option permutations.",
+      "retry_condition": "Recheck source revision/access/terms; resolve identity, rights or concurrent AC-scope hold before acceptance",
+      "next_action": "Different OEM catalogue; do not repeat this exhausted source without a substantive revision or conflict-resolution document",
+      "processed_cursor": {
+        "last_physical_page": 48,
+        "exhausted": true,
+        "accepted_models": [
+          "SHLX-AC4/1",
+          "SHLX-AC6/1",
+          "SHLX-AC8/1"
+        ]
+      }
+    },
+    {
+      "id": "aneel_siga_2228",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/11ec447d-698d-4ab8-977f-b424d5deee6a",
+      "version_or_date": "Official index monthly1Nov2026; daily2Nov2026",
+      "licence_assessment": "Official indexed resource explicitly ODbL; no silent relicensing into canonical catalogue",
+      "access_assessment": "Exact source hashes/retrieval/errors in dated download ledgers; cached immutable source hashes explicitly retained where reused",
+      "estimated_useful_yield": {
+        "accepted_or_enriched_selected_cohort": 0,
+        "remaining_verified_yield": "unknown after selected cohort exhaustion/rights/concurrency holds"
+      },
+      "fields_offered": [
+        "registry CEG",
+        "technology",
+        "lifecycle",
+        "capacity",
+        "location"
+      ],
+      "last_attempt": "2026-11-02T22:38:37.762424+00:00",
+      "result": "Fresh package API, resource page and dailyCSV all503. Official search-visible resource metadata is ODbL, not assumed permissive bulk facts. Zero rows ingested.",
+      "retry_condition": "Recheck source revision/access/terms; resolve identity, rights or concurrent AC-scope hold before acceptance",
+      "next_action": "Retry ordinary published resource after service recovery, assess ODbL obligations and catalogue compatibility before staging any rows",
+      "processed_cursor": {
+        "download_attempts": 3,
+        "status": 503,
+        "accepted": 0
+      }
+    },
+    {
+      "id": "mastr_freshness_2228",
+      "country": "DEU",
+      "entity": "projects",
+      "source_url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "version_or_date": "02Nov2026 archive26.2;3,190,648KB",
+      "licence_assessment": "Official current listing dl-de/by-2-0; attribution required",
+      "access_assessment": "Exact source hashes/retrieval/errors in dated download ledgers; cached immutable source hashes explicitly retained where reused",
+      "estimated_useful_yield": {
+        "accepted_or_enriched_selected_cohort": 0,
+        "remaining_verified_yield": "unknown after selected cohort exhaustion/rights/concurrency holds"
+      },
+      "fields_offered": [
+        "unit identities",
+        "assigned inverter capacity",
+        "grid/lifecycle"
+      ],
+      "last_attempt": "2026-11-02T22:38:37.762424+00:00",
+      "result": "Fresh official landing accessible and licence confirmed; separate AC task previously staged7157 proposed enrichments. No duplicate archive extraction or conflicting AC writes accepted in this iteration.",
+      "retry_condition": "Recheck source revision/access/terms; resolve identity, rights or concurrent AC-scope hold before acceptance",
+      "next_action": "Reconcile separately authorised AC-capacity work before independent MaStR writes; a public unit record is not automatically one plant",
+      "processed_cursor": {
+        "landing_checked": true,
+        "archive_downloaded": false,
+        "accepted": 0
       }
     }
   ]
