@@ -1,6 +1,6 @@
 # Global BESS OEM product database
 
-The expanded research database contains **455 records from 39 suppliers and 203 primary
+The expanded research database contains **465 records from 39 suppliers and 211 primary
 sources**, with 73 typed metadata fields. This extends the PV equipment database
 pattern to complete BESS products, cabinets and explicitly labelled product families.
 
