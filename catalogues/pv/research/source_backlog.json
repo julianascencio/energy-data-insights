@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T21:09:58.509878+00:00",
-  "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "333project enrichments from327ARA observations and30exact corporate labels;27KSTAR inverter models and9BENY combiners; Clenergy rights hold and ECB/AEMO access limits.",
-  "next_highest_value_source": "ODRE Normandie PHOTV1–5MW exact-EIC enrichment; Horay current Solar Lite/BC sheets with exact hardware identities; independent combiner OEM",
+  "updated_at": "2026-11-02T22:18:00.839071+00:00",
+  "ranking_file": "20261102T2200_top10_coverage.json",
+  "selection_note": "200 project enrichments / 402 fields; 16 exact modules; NEPRA review-only adapter, 33 staged / zero accepted.",
+  "next_highest_value_source": "ODRE Centre-Val de Loire PHOTV 1–5 MW exact-EIC enrichment; Suntree historical solar catalogue physical page 27 after current-source and identity checks.",
   "sources": [
     {
       "id": "uk_repd",
@@ -3651,6 +3651,200 @@
       "next_action": "Review family-to-exact identity and rights before extracting a model cohort",
       "processed_cursor": {
         "exhausted": false
+      }
+    },
+    {
+      "id": "odre_normandie_2200",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/",
+      "version_or_date": "31 August 2026 snapshot; 13 October metadata update",
+      "licence_assessment": "Licence Ouverte v2.0; retained notice",
+      "access_assessment": "Ordinary public access; checksums/retrieval/errors in dated download ledgers; raw bytes outside Git",
+      "estimated_useful_yield": {
+        "remaining_verified_yield": "unknown pending rights/identity and source review",
+        "selected_cohort_result": "31 reviewed; 1 exact-EIC enrichment / 4 fields; 30 held; no new projects. National 95,302 individual identities screened."
+      },
+      "fields_offered": [
+        "grid operator",
+        "substation",
+        "industrial-service date",
+        "evidence"
+      ],
+      "last_attempt": "2026-11-02T22:18:00.839071+00:00",
+      "result": "31 reviewed; 1 exact-EIC enrichment / 4 fields; 30 held; no new projects. National 95,302 individual identities screened.",
+      "retry_condition": "Refresh revision/access/terms; resolve documented identity/rights holds before acceptance",
+      "next_action": "Centre-Val de Loire same partition; do not add anonymous/phase duplicates",
+      "processed_cursor": {
+        "region": "Normandie",
+        "technology": "PHOTV",
+        "capacity_kw": [
+          1000,
+          5000
+        ],
+        "observations": 31,
+        "exhausted": true,
+        "national_identities": 95302
+      }
+    },
+    {
+      "id": "gem_operator_2200",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February 2026; refreshed pinned checksum",
+      "licence_assessment": "Existing CC BY attribution and restricted-lineage exclusions",
+      "access_assessment": "Ordinary public access; checksums/retrieval/errors in dated download ledgers; raw bytes outside Git",
+      "estimated_useful_yield": {
+        "remaining_verified_yield": "unknown pending rights/identity and source review",
+        "selected_cohort_result": "199 complete locations / 398 historical operator and evidence fields; all native phases equal fresh source."
+      },
+      "fields_offered": [
+        "historical operator",
+        "dated evidence"
+      ],
+      "last_attempt": "2026-11-02T22:18:00.839071+00:00",
+      "result": "199 complete locations / 398 historical operator and evidence fields; all native phases equal fresh source.",
+      "retry_condition": "Refresh revision/access/terms; resolve documented identity/rights holds before acceptance",
+      "next_action": "Next exact corporate cohort; no persons, multi-company aggregates, parent consolidation or present-day inference",
+      "processed_cursor": {
+        "labels": 66,
+        "locations": 199,
+        "allowlist": "20261102T2200_operator_review.json",
+        "exhausted": true
+      }
+    },
+    {
+      "id": "horay_2200",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://www.horaysolar.com/Datasheet/",
+      "version_or_date": "HL182-TC-2026-A1; HS192R-108BN-DB-2026-A1; HS210R-132BN-D-2026-A0",
+      "licence_assessment": "OEM copyright retained; selected facts only, no open bulk grant",
+      "access_assessment": "Ordinary public access; checksums/retrieval/errors in dated download ledgers; raw bytes outside Git",
+      "estimated_useful_yield": {
+        "remaining_verified_yield": "unknown pending rights/identity and source review",
+        "selected_cohort_result": "37 columns reviewed; 16 accepted; 7 identities / 14 observations held; 7 near-identical anti-dust variants deferred; one 404."
+      },
+      "fields_offered": [
+        "STC electrical",
+        "thermal",
+        "mechanical",
+        "operating limits",
+        "qualified NMOT/NOCT",
+        "warranty claims"
+      ],
+      "last_attempt": "2026-11-02T22:18:00.839071+00:00",
+      "result": "37 columns reviewed; 16 accepted; 7 identities / 14 observations held; 7 near-identical anti-dust variants deferred; one 404.",
+      "retry_condition": "Refresh revision/access/terms; resolve documented identity/rights holds before acceptance",
+      "next_action": "Resolve repeated HS640–670BN-MHB-D across 192R 144-cell frame sheets with authoritative revision/model crosswalk; never invent suffixes",
+      "processed_cursor": {
+        "accepted_tables": [
+          0,
+          1,
+          6
+        ],
+        "held_tables": [
+          3,
+          4
+        ],
+        "deferred_table": 5,
+        "models_accepted": 16
+      }
+    },
+    {
+      "id": "suntree_2200",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.suntree-electric.com/product-data-download",
+      "version_or_date": "Current index; historical scanned 48-page catalogue; manual unchanged",
+      "licence_assessment": "OEM rights retained; no new ingestion",
+      "access_assessment": "Ordinary public access; checksums/retrieval/errors in dated download ledgers; raw bytes outside Git",
+      "estimated_useful_yield": {
+        "remaining_verified_yield": "unknown pending rights/identity and source review",
+        "selected_cohort_result": "Current manual same registered checksum. Historical solar physical pages 1–14 inspected/OCR: system diagrams/marketing; 1500V catalogue component-specific. Zero new boxes."
+      },
+      "fields_offered": [
+        "exact configurations",
+        "electrical",
+        "mechanical",
+        "protection"
+      ],
+      "last_attempt": "2026-11-02T22:18:00.839071+00:00",
+      "result": "Current manual matches registered checksum. Historical solar physical pages 1–26 inspected/OCR, five exact technical tables visually checked: SHLX-PV1/1,2/1,4/1,4/2,6/2 already canonical. No new models or useful unconflicted fields accepted. Prior material/input holds remain; dimensional units unspecified. 1500V catalogue is component-specific.",
+      "retry_condition": "Refresh revision/access/terms; resolve documented identity/rights holds before acceptance",
+      "next_action": "Resume physical page 27; compare exact whole-box identities against canonical records, retain prior material/input conflicts and unspecified dimensional units.",
+      "processed_cursor": {
+        "manual_unchanged": true,
+        "physical_pages_reviewed": [
+          1,
+          26
+        ],
+        "next_physical_page": 27,
+        "pages_total": 48,
+        "existing_models": 13,
+        "models_compared": [
+          "SHLX-PV1/1",
+          "SHLX-PV2/1",
+          "SHLX-PV4/1",
+          "SHLX-PV4/2",
+          "SHLX-PV6/2"
+        ]
+      }
+    },
+    {
+      "id": "phoenix_2200",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.phoenixcontact.com/en-au/products/string-combiner-box-scb-cbl-dti-grsf-scb-16st-1500v-1853931",
+      "version_or_date": "Current public product page",
+      "licence_assessment": "No ingestion; technical-document rights review incomplete",
+      "access_assessment": "Ordinary public access; checksums/retrieval/errors in dated download ledgers; raw bytes outside Git",
+      "estimated_useful_yield": {
+        "remaining_verified_yield": "unknown pending rights/identity and source review",
+        "selected_cohort_result": "Correct 1853931 page reachable; technical values refer to downloads; guessed 1013747 URL 404. Zero thin rows."
+      },
+      "fields_offered": [
+        "complete box specifications"
+      ],
+      "last_attempt": "2026-11-02T22:18:00.839071+00:00",
+      "result": "Correct 1853931 page reachable; technical values refer to downloads; guessed 1013747 URL 404. Zero thin rows.",
+      "retry_condition": "Refresh revision/access/terms; resolve documented identity/rights holds before acceptance",
+      "next_action": "Download exact official technical document before value/identity review",
+      "processed_cursor": {
+        "product": "1853931",
+        "technical_downloads_reviewed": false
+      }
+    },
+    {
+      "id": "nepra_corporate_2200",
+      "country": "PAK",
+      "entity": "projects",
+      "source_url": "https://nepra.org.pk/licensing/Generation%20Distributed%20Generation.php",
+      "version_or_date": "Current directory, no explicit revision date",
+      "licence_assessment": "Footer Copyright 2023 All Rights Reserved; no open bulk grant found; zero canonical acceptance",
+      "access_assessment": "Ordinary public access; checksums/retrieval/errors in dated download ledgers; raw bytes outside Git",
+      "estimated_useful_yield": {
+        "remaining_verified_yield": "unknown pending rights/identity and source review",
+        "selected_cohort_result": "35 blocks parsed; 33 solar staged / 27 explicit PV / 6 generic Solar; 2 thermal excluded. Gross basis and licence/site scopes unreviewed; 14 focused tests."
+      },
+      "fields_offered": [
+        "corporate headings",
+        "native licence IDs",
+        "PV descriptions",
+        "native gross capacity",
+        "official decisions"
+      ],
+      "last_attempt": "2026-11-02T22:18:00.839071+00:00",
+      "result": "35 blocks parsed; 33 solar staged / 27 explicit PV / 6 generic Solar; 2 thermal excluded. Gross basis and licence/site scopes unreviewed; 14 focused tests.",
+      "retry_condition": "Refresh revision/access/terms; resolve documented identity/rights holds before acceptance",
+      "next_action": "Assess reuse rights, then exact licence/site/phase crosswalk starting SGC/174/2024–178/2024 using primary licence documents; licence is not current operation/ownership",
+      "processed_cursor": {
+        "blocks": 35,
+        "staged": 33,
+        "explicit_pv": 27,
+        "accepted_canonical": 0,
+        "review": "20261102T2200_nepra_review.json"
       }
     }
   ]

@@ -236,3 +236,20 @@ The staged Tottori cohort is at least 1 MW registered generation output. Its
 September 2026 snapshot includes a June 2026 paper-filing lag. A named-project
 crosswalk, phase/parcel reconciliation and field-specific evidence are still
 required before canonical acceptance. No canonical schema columns were added.
+
+### Pakistan NEPRA corporate directory: review only
+
+`nepra.stage_nepra_review` emits research candidates, never canonical assets.
+
+| Native field | Review output | Limitation |
+| --- | --- | --- |
+| Corporate `h6` heading | `corporate_heading` | Legal-name marker required; not owner or project name |
+| Plant Detail / Plant Type | `native_fields`, `explicit_pv_description` | Generic Solar alone does not prove PV |
+| Gross Capacity | Native string | No AC/DC assignment or arithmetic from module counts |
+| Licence No. | Native string, duplicate flag | Licence is not a reconciled plant boundary |
+| Official licence/decision links | `documents` | Transfer decision is not current ownership evidence |
+
+Whitespace is normalized; source misspellings, units and malformed numbers are
+not repaired. Source checksum, official HTTPS host and structural checks are
+mandatory. Copyright/reuse and portfolio/site identity reviews remain outstanding;
+33 staged observations in the dated review represent zero accepted projects.

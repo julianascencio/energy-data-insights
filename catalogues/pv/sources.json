@@ -3291,5 +3291,68 @@
     "license": "OEM copyright retained; individually reviewed factual technical metadata only. No open/bulk reuse grant asserted. No PDF, prose, artwork, curves or full table reproduction in Git.",
     "access_notes": "Ordinary public OEM datasheet and current download-index links, no registration/payment/forms. Landing footer and PDF notices inspected; originals outside Git.",
     "limitations": "Document year2026, exact publication day unknown. Warranty durations are datasheet claims subject to installation and warranty terms, not independent contract verification. NMOT is not NOCT. Junction-box IP68 is not whole-module rating. STC, NMOT and BNPI stay separate; no current production/certification inference."
+  },
+  "odre_normandie_20261102T2200": {
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Normandie%27",
+    "sha256": "d46ed09c484121fd25046082d6e42de607ed3856bd834ab50608352f41a11c6c",
+    "bytes": 45529,
+    "retrieved_at": "2026-11-02T21:57:50.120594+00:00",
+    "publisher": "RTE / ODRE; Enedis and network operators",
+    "title": "National production register: Normandie PHOTV1–5MW,31August2026 snapshot",
+    "license": "Licence Ouverte v2.0; retain catalogues/pv/licenses/ODRE_NOTICE.md",
+    "source_date": "2026-08-31",
+    "locator": "Exact codeeicresourceobject and native field names in JSON object",
+    "limitations": "Historical industrial-service/grid snapshot. Exact unique single-phase matches only; no new whole-project, ownership, operation-today or AC/DC inference."
+  },
+  "odre_individual_identities_20261102T2200": {
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?select=codeeicresourceobject,nominstallation,codeinseecommuneimplantation,codeinseecommune,puismaxinstallee&where=codetechnologie%3D%27PHOTV%27%20AND%20nbinstallations%3D1",
+    "sha256": "8e5e385bde15a557411f80993035e4fb87faafb99b08e6b526712dc50a4c1cda",
+    "bytes": 17196776,
+    "retrieved_at": "2026-11-02T21:58:54.301697+00:00",
+    "publisher": "RTE / ODRE; Enedis and network operators",
+    "title": "Complete individual-PV national identity extract,31August2026 snapshot",
+    "license": "Licence Ouverte v2.0; ODRE notice retained",
+    "source_date": "2026-08-31",
+    "locator": "Individual-PV export with95,302unique EICs; exact identifier/name/administrative-code/installed-kW fields",
+    "limitations": "Used for identity screening, not automatically accepted projects. Network installation identity is not necessarily whole-plant identity."
+  },
+  "horay_0_20261102T2200": {
+    "url": "https://www.horaysolar.com/pdf/SINGLE/Solar%20Lite/HL182-108TC-Lite-425~440W-1.6mm.pdf",
+    "sha256": "4d3e55252babcfed83b156e949540f2f48cbf02fde165f38f97d96f81139cc25",
+    "bytes": 1863085,
+    "retrieved_at": "2026-11-02T21:58:43.327161+00:00",
+    "publisher": "Horay Solar Co Ltd",
+    "title": "Lite425–440W thin-glass monofacial",
+    "version": "HL182-TC-2026-A1",
+    "locator": "PDF1technology and warranty badges;PDF2exact Module Type column and named electrical/mechanical/operating/temperature rows, footnotes",
+    "license": "OEM copyright retained; limited individually reviewed factual technical metadata only. No open/bulk grant asserted; no PDF, artwork, prose, curves or full-table reproduction in Git.",
+    "access_notes": "Public current OEM download-index link; footer and PDF notices inspected. No login/form. Original bytes and rendered/extracted material outside Git.",
+    "limitations": "Exact publication day unknown, document year2026 only. Warranty durations are conditional datasheet claims, not independently verified contractual coverage. NMOT/NOCT labels preserved; junction-box IP not whole-module IP. Rear gain is an illustrative OEM claim for stated reference model, not a universal yield parameter."
+  },
+  "horay_1_20261102T2200": {
+    "url": "https://www.horaysolar.com/pdf/DOUBLE/Solar%20BC/HS192R-108BN-DB-Nova-480-500W.pdf",
+    "sha256": "f54362623b1ceb6ed2adee86e40b691e4945699fe1a8debad10a25d06e3b3643",
+    "bytes": 927383,
+    "retrieved_at": "2026-11-02T21:58:43.896938+00:00",
+    "publisher": "Horay Solar Co Ltd",
+    "title": "Nova480–500W108-cell back-contact bifacial",
+    "version": "HS192R-108BN-DB-2026-A1",
+    "locator": "PDF1technology and warranty badges;PDF2exact Module Type column and named electrical/mechanical/operating/temperature rows, footnotes",
+    "license": "OEM copyright retained; limited individually reviewed factual technical metadata only. No open/bulk grant asserted; no PDF, artwork, prose, curves or full-table reproduction in Git.",
+    "access_notes": "Public current OEM download-index link; footer and PDF notices inspected. No login/form. Original bytes and rendered/extracted material outside Git.",
+    "limitations": "Exact publication day unknown, document year2026 only. Warranty durations are conditional datasheet claims, not independently verified contractual coverage. NMOT/NOCT labels preserved; junction-box IP not whole-module IP. Rear gain is an illustrative OEM claim for stated reference model, not a universal yield parameter."
+  },
+  "horay_6_20261102T2200": {
+    "url": "https://www.horaysolar.com/pdf/DOUBLE/Solar%20BC/HS210R-132BN-D-Nova-640-670W.pdf",
+    "sha256": "0234e511b1724b59295c6bd0c673831c8d32892bb38598d83ef9fb08faf3a6b0",
+    "bytes": 811756,
+    "retrieved_at": "2026-11-02T21:58:46.170868+00:00",
+    "publisher": "Horay Solar Co Ltd",
+    "title": "Nova640–670W132-cell back-contact bifacial",
+    "version": "HS210R-132BN-D-2026-A0",
+    "locator": "PDF1technology and warranty badges;PDF2exact Module Type column and named electrical/mechanical/operating/temperature rows, footnotes",
+    "license": "OEM copyright retained; limited individually reviewed factual technical metadata only. No open/bulk grant asserted; no PDF, artwork, prose, curves or full-table reproduction in Git.",
+    "access_notes": "Public current OEM download-index link; footer and PDF notices inspected. No login/form. Original bytes and rendered/extracted material outside Git.",
+    "limitations": "Exact publication day unknown, document year2026 only. Warranty durations are conditional datasheet claims, not independently verified contractual coverage. NMOT/NOCT labels preserved; junction-box IP not whole-module IP. Rear gain is an illustrative OEM claim for stated reference model, not a universal yield parameter."
   }
 }
