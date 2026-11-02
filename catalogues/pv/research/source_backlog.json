@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T04:07:44.704015+00:00",
+  "updated_at": "2026-11-02T05:09:36.343053+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "Processed eight complete French 1–5 MW regions (755 rows), all six Tauro ECO model pages and eleven Solis models, and full New Zealand dispatched-fleet PV subset (14 rows). Independent Brazil CCEE aggregates and KACO/Arctech enrichment access/terms assessed. No US expansion.",
-  "next_highest_value_source": "GEM recovery batch06 (50–5f), 3552 previously reviewed projects; batch05 now included in PR59, do not duplicate.",
+  "next_highest_value_source": "GEM recovery batch08 (70–7f), 3551 previously reviewed projects; batch07 now in PR61. SOFAR catalogue next: three-phase tables, physical pages17/19, after exact-model/CEC identity review.",
   "sources": [
     {
       "id": "uk_repd",
@@ -1155,9 +1155,9 @@
       "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
       "version_or_date": "February 2026",
       "licence_assessment": "Existing CC BY attribution; complete locations with TZ/WKSL withheld",
-      "access_assessment": "Pinned workbook downloaded again and checksum verified",
+      "access_assessment": "Cached pinned workbook checksum verified; provider commit history rechecked; no new download claimed",
       "estimated_useful_yield": {
-        "next_reviewed_partition": 3552
+        "next_reviewed_partition": 3598
       },
       "fields_offered": [
         "phase identities",
@@ -1166,21 +1166,22 @@
         "location",
         "ownership"
       ],
-      "last_attempt": "2026-11-02T04:07:44.704015+00:00",
-      "result": "3488 batch05 records added through upsert with zero conflicts; batches01–04 preserved",
+      "last_attempt": "2026-11-02T04:21:54.635749+00:00",
+      "result": "3552 batch06 records added with zero conflicts; all baseline records preserved",
       "retry_condition": "Recheck main, open PRs and source revision before next partition",
-      "next_action": "Export batch06 only after complete accepted-ID digest matches; do not duplicate batch05",
+      "next_action": "Recheck main and open PRs, then export batch07 after complete accepted-ID digest matches",
       "processed_cursor": {
         "already_merged_batches": [
           1,
           2,
-          3
-        ],
-        "pr59_batches": [
+          3,
           4,
           5
         ],
-        "next_batch": 6
+        "prepared_batches": [
+          6
+        ],
+        "next_batch": 7
       }
     },
     {
@@ -1215,6 +1216,81 @@
           "PVS-24MH"
         ],
         "specification_page": 2
+      }
+    },
+    {
+      "id": "gem_recovery_batch07_20261102T0503",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February 2026",
+      "licence_assessment": "Existing CC BY attribution and TZ/WKSL exclusions retained",
+      "access_assessment": "Fresh pinned workbook download, SHA256 verified",
+      "estimated_useful_yield": {
+        "next_partition_reviewed": 3551
+      },
+      "fields_offered": [
+        "phase identities",
+        "capacity and rating",
+        "dated lifecycle",
+        "location",
+        "ownership"
+      ],
+      "last_attempt": "2026-11-02T05:09:36.343053+00:00",
+      "result": "3598 batch07 projects ingested with no conflicts; 95 existing projects enriched from explicit unanimous 100% phase-owner assertions",
+      "retry_condition": "Source revision/main or open PR changes require reconciliation",
+      "next_action": "Check PR61 and then select batch08; do not duplicate batch07",
+      "processed_cursor": {
+        "pr61_batches": [
+          6,
+          7
+        ],
+        "next_batch": 8,
+        "ownership_mapping": "20261102T0503_ownership_review.json"
+      }
+    },
+    {
+      "id": "sofar_catalogue_202601_v74",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.sofarsolar.com/upload/file/20260202/1770025908261035040.pdf",
+      "version_or_date": "EN-EU V7.4, 2026-01-26",
+      "licence_assessment": "Publisher copyright retained; factual records only, no catalogue/artwork redistributed",
+      "access_assessment": "Ungated OEM PDF downloaded and three exact-model tables rendered/visually inspected",
+      "estimated_useful_yield": {
+        "reviewed": 21,
+        "accepted": 21
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "efficiency",
+        "thermal",
+        "environmental",
+        "protection",
+        "interfaces",
+        "OEM standards claims"
+      ],
+      "last_attempt": "2026-11-02T05:09:36.343053+00:00",
+      "result": "21 exact named models accepted under new SOFARSOLAR manufacturer; no CEC/OEM-name matches in baseline",
+      "retry_condition": "New revision or unresolved field evidence",
+      "next_action": "Review physical pages17/19 three-phase tables, checking regional suffixes and existing canonical identities before extraction",
+      "processed_cursor": {
+        "completed_physical_pages": [
+          9,
+          11,
+          13
+        ],
+        "completed_printed_pages": [
+          "03",
+          "05",
+          "07"
+        ],
+        "completed_models": 21,
+        "next_physical_pages": [
+          17,
+          19
+        ]
       }
     }
   ]
