@@ -1,0 +1,271 @@
+{
+  "started_at": "2026-11-02T09:48:10+00:00",
+  "research_review_at": "2026-11-02T10:00:48.376503+00:00",
+  "base_main": "4c5a23111e09f4b0b8abbe143432e5fac618226f",
+  "branch": "research/bess-database-20261102-0948",
+  "prior_bess_pr": {
+    "number": 65,
+    "state": "merged"
+  },
+  "open_prs_reviewed": [
+    {
+      "number": 47,
+      "scope": "GitHub workflows only"
+    },
+    {
+      "number": 48,
+      "scope": "docs workflow only"
+    },
+    {
+      "number": 49,
+      "scope": "docs workflow only"
+    }
+  ],
+  "accepted_equipment": [
+    {
+      "id": "4ac898d3-99e9-5906-9909-ce4237b09b26",
+      "model": "LX C101-10",
+      "variant": "20230711-EN-V2.1"
+    },
+    {
+      "id": "453f4d1e-f5ce-5c2a-83c4-8ea937df5609",
+      "model": "LX C120-10",
+      "variant": "20230711-EN-V2.1"
+    },
+    {
+      "id": "658230b2-161e-5a92-afdf-5a8a2bcf7438",
+      "model": "LX C138-10",
+      "variant": "20230711-EN-V2.1"
+    },
+    {
+      "id": "81fc48c0-676f-5e0f-b0dc-335f3a5cafa7",
+      "model": "LX C156-10",
+      "variant": "20230711-EN-V2.1"
+    },
+    {
+      "id": "ef4f6a37-1c72-5328-b21b-a8ec757d60ec",
+      "model": "GW50K07-BTC",
+      "variant": "20241122-EN-V2.1"
+    },
+    {
+      "id": "48327afb-2c9c-5c38-8027-7ee759c6d2bb",
+      "model": "GW50K06-BTC",
+      "variant": "20241122-EN-V2.1"
+    },
+    {
+      "id": "d6397efd-2ee1-5e6a-85d7-8ebf0b47aa2e",
+      "model": "GW100K07-BTC",
+      "variant": "20241122-EN-V2.1"
+    },
+    {
+      "id": "2da8b309-bc04-5443-af22-6a6e59a5ce2a",
+      "model": "GW100K06-BTC",
+      "variant": "20241122-EN-V2.1"
+    },
+    {
+      "id": "7701b094-9ee3-5458-9f57-576865aee7ef",
+      "model": "GW50K07-ETC",
+      "variant": "20260115-EN-EMEA-V1.1"
+    },
+    {
+      "id": "4aae1706-40d9-5715-aa4a-41fefb43078c",
+      "model": "GW100K07-ETC",
+      "variant": "20260115-EN-EMEA-V1.1"
+    }
+  ],
+  "accepted_projects": [
+    {
+      "id": "a4ff352d-10fd-5a71-a59f-16303b1469b0",
+      "name": "Kilathmoy BESS"
+    },
+    {
+      "id": "8a0e1a12-ae2e-5c23-9dbc-14e63b013836",
+      "name": "Kelwin-2 BESS"
+    },
+    {
+      "id": "7feb1185-30ce-56f3-a5ef-70289243882d",
+      "name": "Cushaling BESS"
+    }
+  ],
+  "enriched_projects": [
+    "b5a3f4d7-7a3f-5ac6-b272-8def8aab60c8"
+  ],
+  "counts": {
+    "equipment_candidates": 11,
+    "equipment_new": 10,
+    "equipment_enriched": 0,
+    "equipment_held": 1,
+    "equipment_rejected": 0,
+    "project_bess_candidates": 7,
+    "project_new": 3,
+    "project_enriched": 1,
+    "project_held": 2,
+    "project_unchanged": 1,
+    "non_battery_candidates_rejected": 2,
+    "mixed_technology_inventory_units_reviewed_separately": 23,
+    "mixed_inventory_units_imported": 0,
+    "new_field_conflicts_quarantined": 1
+  },
+  "equipment_hold": {
+    "model": "LX C9.2-10",
+    "reason": "Only module voltage/energy and assembly relationship in parent sheet; insufficient standalone module specification for a useful independent record."
+  },
+  "project_holds": [
+    {
+      "name": "Kylemore BESS",
+      "reason": "ESB-only owner inventory reuse restrictions; seek independent delivery evidence and reconcile Inchicore alias before admission."
+    },
+    {
+      "name": "South Wall BESS",
+      "reason": "ESB owner inventory reuse restrictions; independently verify operation and final delivered scope. Fluence 2021 contract is not evidence of operation."
+    }
+  ],
+  "project_unchanged": [
+    "Aghada BESS: existing aggregate and phase facts retained; no timestamp-only refresh"
+  ],
+  "non_battery_rejections": [
+    "Coleraine grid stability synchronous compensator",
+    "Glencloosagh synchronous compensator"
+  ],
+  "field_quarantine": {
+    "project": "Kelwin-2 BESS",
+    "field": "power_capacity_mw",
+    "values": [
+      26,
+      26.6
+    ],
+    "canonical": null,
+    "evidence": [
+      "kelwin_20261102",
+      "statkraft_response_20261102"
+    ],
+    "reason": "Different owner observations; no demonstrated basis/precision reconciliation. Retained in conflicts_json with needs_review."
+  },
+  "other_qualifications": {
+    "Kilathmoy": "Border description retained; county-specific assignment omitted. Later replacement proposal is not an operating expansion. January unveiling is not COD. LG Chem battery modules and Fluence integration roles distinguished.",
+    "Cushaling": "4 hours is explicitly reported, but no MW or MWh in selected owner/EPC sources. 33 kV internal MV versus 110 kV upstream substation preserved in extensions. 30-year life is project design, not battery warranty.",
+    "Poolbeg": "Same canonical ID, 75 MW / 150 MWh and creation time retained. EPC scope electrical/civil balance of plant. Kirby expressly excludes battery technology from its own supply scope.",
+    "Lynx C": "Height withheld: PDF text collapsed merged dimension cells and screenshot tool returned no usable image bytes. Width/depth are common to every column.",
+    "BTC_ETC": "Battery chemistry compatibility does not establish integrated cells. AC rated kW differs from DC battery-side maximum kW; kVA not converted. 97.2% battery-to-AC is one-way, not round-trip. 06 suffix has no automatic switching module."
+  },
+  "evidence": {
+    "goodwe_pdf_downloads": "All three returned HTTP 403 locally; exact primary PDFs readable via search service. Document dates/versions and page 2 model columns verified; SHA256 remains null for unavailable original bytes. No access controls bypassed.",
+    "statkraft_retention": "Raw HTML/text removed after storage restrictions were read; only source metadata, hashes of previously downloaded bytes, and bounded facts retained. Terms require source reference for information in publications; no bulk licence claimed.",
+    "powercomm": "Downloaded HTML SHA256 in source register; raw outside Git.",
+    "kirby": "Direct/open access 403; primary-domain indexed project-description text reviewed; no local raw/checksum claimed.",
+    "eirgrid": "23 mixed-technology providing-unit rows reviewed; no technology field or admissible bulk-reuse licence; no rows imported.",
+    "terms_urls": [
+      "https://www.eirgrid.ie/disclaimer",
+      "https://www.statkraft.ie/terms-of-use/",
+      "https://esb.ie/copyright",
+      "https://en.goodwe.com/imprint"
+    ]
+  },
+  "market_context": "Reopened IEA 29 May 2026 comparison. Reuse 2026-11-02_dyness_baltic_markets.json: comparable 2025 annual power additions only, not a global operational GWh ranking.",
+  "country_counts": {
+    "AUS": 56,
+    "BEL": 3,
+    "BRA": 1,
+    "CAN": 1,
+    "CHL": 80,
+    "CHN": 4,
+    "DEU": 11,
+    "EGY": 5,
+    "ESP": 4,
+    "EST": 2,
+    "FIN": 3,
+    "FRA": 3,
+    "GBR": 153,
+    "HUN": 1,
+    "IDN": 2,
+    "IND": 17,
+    "IRL": 5,
+    "JPN": 1,
+    "LTU": 8,
+    "LVA": 3,
+    "NAM": 2,
+    "NLD": 9,
+    "NZL": 6,
+    "PHL": 8,
+    "PRT": 1,
+    "SAU": 2,
+    "SEN": 1,
+    "SGP": 1,
+    "SWE": 2,
+    "USA": 919,
+    "UZB": 1,
+    "ZAF": 10
+  },
+  "data_audit": {
+    "bess": {
+      "new": 3,
+      "enriched": 1,
+      "removed": 0,
+      "total": 1325,
+      "changed_fields": {
+        "b5a3f4d7-7a3f-5ac6-b272-8def8aab60c8": [
+          "connection_type",
+          "epc_contractors",
+          "field_sources_json",
+          "grid_operator",
+          "grid_voltage_kv",
+          "last_verified_at",
+          "sources",
+          "substation",
+          "updated_at"
+        ]
+      }
+    },
+    "bess_oem": {
+      "new": 10,
+      "enriched": 0,
+      "removed": 0,
+      "total": 315,
+      "changed_fields": {}
+    }
+  },
+  "validation_completed_at": "2026-11-02T10:05:45.409053+00:00",
+  "elapsed_minutes_excluding_publication": 21.6,
+  "validation": {
+    "python": {
+      "passed": 1607,
+      "skipped": 1,
+      "skip_reason": "Optional cdsapi unavailable",
+      "base": "4c5a231; before viewer-only main advance"
+    },
+    "focused_bess_tests": 28,
+    "viewer_tests": 8,
+    "strict_docs": "passed",
+    "html_pages_link_checked": 397,
+    "validators": "both passed",
+    "ruff": "check and format passed",
+    "ty": "passed",
+    "citations": "passed",
+    "repository": "passed",
+    "offline_examples": 2,
+    "package_artifacts": 6,
+    "parquet": "Two independent builds per catalogue match"
+  },
+  "concurrency": {
+    "main": "7675a0a5e8069fa806de7a9f21923797e8323423",
+    "pr_67_head": "5f4172590fe0153ef4c8c2d624b280b727e64329",
+    "pr_67_paths_reviewed": 16,
+    "overlapping_paths": [],
+    "pr_67_workflows": "in_progress",
+    "process_list": "Unavailable; no assertion that no other process exists",
+    "pr_67_state": "merged",
+    "reconciliation": "Fast-forward main; no conflicting paths; data audit unchanged",
+    "revalidation": [
+      "8 viewer tests",
+      "Ruff check/format",
+      "ty",
+      "repository",
+      "citations",
+      "data audit",
+      "strict docs",
+      "397 HTML local links",
+      "published snapshot hash match"
+    ]
+  },
+  "final_validation_completed_at": "2026-11-02T10:09:45.108203+00:00"
+}
