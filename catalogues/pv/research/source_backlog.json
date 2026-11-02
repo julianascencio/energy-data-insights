@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T11:15:44.851789+00:00",
+  "updated_at": "2026-11-02T12:12:28.893565+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Complete GEM partition13,13 current Fox exact models and193 complete-phase corporate-owner enrichments. Solplanet11 candidates held on reuse terms; SAJ/Hypontech access failures; NZ157-row/14PV primary registry rechecked with identical checksum and no duplicate observation updates. India CEA multi-plant source and tracker sources attempted with explicit blockers.",
-  "next_highest_value_source": "Fresh source/head checks, then GEM partition14(d0–df),3551 reviewed projects; India CEA official multi-plant report after503 recovery; six New Zealand identity crosswalks.",
+  "selection_note": "Complete remaining GEM partitions14–16;18 exactINVT models;two qualified Soltigua tracker platforms;182 complete-phase ownership enrichments. KenyaEPRA andNERSA primary inventories assessed; no aggregate press counts accepted.",
+  "next_highest_value_source": "GEM reviewed recovery exhausted. Retry BrazilANEEL SIGA resource11ec447d-698d-4ab8-977f-b424d5deee6a UFV sample after service recovery; resolveODbL distribution andCEG/GEMcrosswalk before bulkacceptance. Equipment: Schletter English1PV7/2PV2 published sheets, then INVT50–70 table.",
   "sources": [
     {
       "id": "uk_repd",
@@ -2077,6 +2077,184 @@
       "processed_cursor": {
         "processed_rows": 0,
         "accepted": 0
+      }
+    },
+    {
+      "id": "gem_recovery_final_20261102T1200",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026",
+      "licence_assessment": "CCBY4; TZ/WKSL complete locations excluded",
+      "access_assessment": "Fresh workbookhash and full reviewed-set digest perpartition",
+      "estimated_useful_yield": {
+        "accepted": 10572,
+        "enriched": 182
+      },
+      "fields_offered": [
+        "identity",
+        "location",
+        "capacity/phase/lifecycle",
+        "owner/percentage/evidence"
+      ],
+      "last_attempt": "2026-11-02T12:12:28.893565+00:00",
+      "result": "Partitions14–16 exhausted; proposed total64902 projects/198countries. No current-operation claim.",
+      "retry_condition": "New sourceversion or resolving evidence; fresh access/terms check required",
+      "next_action": "Fresh official inventory/revision and field enrichment; no repeated recovery partitions",
+      "processed_cursor": {
+        "completed_batches": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "remaining_reviewed_projects": 0
+      }
+    },
+    {
+      "id": "invt_tables_20261102T1200",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.invt-solar.com/downloads.html",
+      "version_or_date": "Catalogue2024-09-18 entries; exactPDFs undated",
+      "licence_assessment": "OEM copyright retained; selectedfacts only, no openbulk grant",
+      "access_assessment": "Three publicPDFs downloaded/checksummed/rendered",
+      "estimated_useful_yield": {
+        "accepted": 18
+      },
+      "fields_offered": [
+        "electrical",
+        "efficiency",
+        "mechanical",
+        "thermal/environment",
+        "protections",
+        "interfaces"
+      ],
+      "last_attempt": "2026-11-02T12:12:28.893565+00:00",
+      "result": "18 exact models absent from existing catalogue; noPROsubstitution or invented warranty",
+      "retry_condition": "New sourceversion or resolving evidence; fresh access/terms check required",
+      "next_action": "Selected tables exhausted; next XG50–70 exactPDF",
+      "processed_cursor": {
+        "completed_tables": [
+          "XG3–15KTR-S",
+          "XG17–25KTR",
+          "XG30–40KTR"
+        ]
+      }
+    },
+    {
+      "id": "soltigua_trackers_20261102T1200",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.soltigua.com/download/",
+      "version_or_date": "PrintedDuetto2.1/XL1.0",
+      "licence_assessment": "OEM copyright retained; factualfields only; indicative productdisclaimer",
+      "access_assessment": "Public landingdata-downloadurl, normalGETPDF, noforms",
+      "estimated_useful_yield": {
+        "accepted_platforms": 2
+      },
+      "fields_offered": [
+        "architecture/drive",
+        "tracking",
+        "terrain/loads with conditions",
+        "control",
+        "materials",
+        "warrantyclaims"
+      ],
+      "last_attempt": "2026-11-02T12:12:28.893565+00:00",
+      "result": "Two distinct namedplatforms, conditional bounds;IECyear/power-count cases retained",
+      "retry_condition": "New sourceversion or resolving evidence; fresh access/terms check required",
+      "next_action": "Selected brochures exhausted; new exactOEM evidence to resolve holds",
+      "processed_cursor": {
+        "models": [
+          "iTracker DUETTO",
+          "iTracker XL"
+        ],
+        "held_field_cases": 2
+      }
+    },
+    {
+      "id": "source_followup_0_20261102T1200",
+      "country": "KEN",
+      "entity": "projects",
+      "source_url": "https://epra.go.ke/electricity-registers",
+      "version_or_date": "Current publiclisting checked",
+      "licence_assessment": "Reuse terms and actual facility-schema not established; no bulk acceptance.",
+      "access_assessment": "NormalGET503; web retrieval timed out. Zero rows downloaded/accepted; checksum null. No account/forms/bypass.",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "unreviewed_yield": null
+      },
+      "fields_offered": [
+        "facility identity and positivePV"
+      ],
+      "last_attempt": "2026-11-02T12:12:28.893565+00:00",
+      "result": "NormalGET503; web retrieval timed out. Zero rows downloaded/accepted; checksum null. No account/forms/bypass.",
+      "retry_condition": "Public facilityfile/access recovery or review of publishedPDF",
+      "next_action": "Retry public register after recovery; inspect generation facilityIDs/explicitPV/terms, omit contractor/technician personal registers.",
+      "processed_cursor": {
+        "accepted": 0,
+        "facility_rows_reviewed": 0
+      }
+    },
+    {
+      "id": "source_followup_1_20261102T1200",
+      "country": "ZAF",
+      "entity": "projects",
+      "source_url": "https://www.nersa.org.za/electricity/registration",
+      "version_or_date": "2026-01-30; financialQ3Oct–Dec2025",
+      "licence_assessment": "No affirmative bulk reuse grant verified; aggregate press statement not substituted for licensed named registry.",
+      "access_assessment": "NormalGET403. Web page yields application forms, not facility-level rows. January2026 summaryPDF downloaded; table1 technology/province aggregates and table2 provincial aggregates, not147 named project rows. 146PV is an aggregate count, not accepted candidates.",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "unreviewed_yield": null
+      },
+      "fields_offered": [
+        "facility identity and positivePV"
+      ],
+      "last_attempt": "2026-11-02T12:12:28.893565+00:00",
+      "result": "NormalGET403. Web page yields application forms, not facility-level rows. January2026 summaryPDF downloaded; table1 technology/province aggregates and table2 provincial aggregates, not147 named project rows. 146PV is an aggregate count, not accepted candidates.",
+      "retry_condition": "Public facilityfile/access recovery or review of publishedPDF",
+      "next_action": "Locate current public facility-level registrationfile, inspect rights/PV/ID/location/phase sample before crosswalk againstGEM; noaggregate rows accepted.",
+      "processed_cursor": {
+        "accepted": 0,
+        "facility_rows_reviewed": 0
+      }
+    },
+    {
+      "id": "source_followup_2_20261102T1200",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.schletter-group.com/download-center/category/tracking-systems/",
+      "version_or_date": "Current publiclisting checked",
+      "licence_assessment": "Exactsource rights unverified; no acceptance",
+      "access_assessment": "Current publicHTML inspected; embedded page data includes exactEnglish1PV7 and2PV2 product-sheet paths. PDF tables/rights not yet reviewed; no rows accepted and not described as gated.",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "unreviewed_yield": null
+      },
+      "fields_offered": [
+        "tracker exacttechnicalspecs"
+      ],
+      "last_attempt": "2026-11-02T12:12:28.893565+00:00",
+      "result": "Current publicHTML inspected; embedded page data includes exactEnglish1PV7 and2PV2 product-sheet paths. PDF tables/rights not yet reviewed; no rows accepted and not described as gated.",
+      "retry_condition": "Public facilityfile/access recovery or review of publishedPDF",
+      "next_action": "Follow published exactPDFs and legal notice; distinguish product platforms, optional configurations and project-specific limits.",
+      "processed_cursor": {
+        "accepted": 0,
+        "facility_rows_reviewed": 0
       }
     }
   ]
