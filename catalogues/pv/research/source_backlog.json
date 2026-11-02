@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T08:30:37.614304+00:00",
+  "updated_at": "2026-11-02T09:06:47.547688+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Run0816: complete GEM90–9f partition, ten SOFAR exact PV/hybrid models, four exact Weidmüller combiner orders,129 complete-phase corporate ownership enrichments. IndiaCEA, LONGi, GEWISS and BENY independent source access/terms/identity issues assessed; noUS expansion.",
-  "next_highest_value_source": "Recheck main/open PRs and GEM revision, then reviewed batch11 (a0–af),3561 projects. Equipment: current replacement PV Next order-number configurations, with exact datasheets and no automatic equivalence to discontinued models.",
+  "selection_note": "Fresh complete GEM batch11, two exact OEM multi-model tables (SolaX and GoodWe), and 138 complete-phase corporate-owner enrichments. NEPRA national registry sample inspected before any new bulk acceptance; six similar Atlas entries deferred pending schedule/host-site reconciliation.",
+  "next_highest_value_source": "Recheck main/open PRs/source freshness, then GEM batch12 (b0–bf), 3483 previously reviewed projects. Pakistan NEPRA: reconcile SGC/165/2022 and SGC/145–149/2020 against exact licence schedules and current canonical identities; establish reuse basis first.",
   "sources": [
     {
       "id": "uk_repd",
@@ -1571,6 +1571,129 @@
       "next_action": "Retry only public accessible exact revision download; reconcile dual-voltage model configurations and current-per-output semantics before accepting",
       "processed_cursor": {
         "review_file": "20261102T0816_source_review.json"
+      }
+    },
+    {
+      "id": "gem_batch11_20261102T0859",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February 2026",
+      "licence_assessment": "Existing CC BY4 attribution; complete TZ/WKSL locations excluded",
+      "access_assessment": "Fresh checksum-pinned bytes verified",
+      "estimated_useful_yield": {
+        "accepted": 3561
+      },
+      "fields_offered": [
+        "identity",
+        "electrical/capacity",
+        "dated evidence",
+        "ownership/phase reconciliation"
+      ],
+      "last_attempt": "2026-11-02T09:06:47.547688+00:00",
+      "result": "3561 new projects; 138 existing projects enriched from unanimous explicit 100% corporate ownership evidence",
+      "retry_condition": "Fresh revision or missing-field evidence; verify identity and terms before next partition",
+      "next_action": "Recheck main/open PRs/source freshness, then GEM batch12 (b0–bf), 3483 previously reviewed projects. Pakistan NEPRA: reconcile SGC/165/2022 and SGC/145–149/2020 against exact licence schedules and current canonical identities; establish reuse basis first.",
+      "processed_cursor": {
+        "completed_batch": 11,
+        "next_batch": 12,
+        "next_reviewed_projects": 3483
+      }
+    },
+    {
+      "id": "solax_mega_g2_20261102T0859",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.solaxpower.com/uploads/file/solax-x3-mega-g2-datasheet-en.pdf",
+      "version_or_date": "V3.3,650.00002.00; undated",
+      "licence_assessment": "OEM copyright retained; selected factual metadata only, no open bulk licence asserted or source documents/artwork redistributed",
+      "access_assessment": "Fresh checksum-pinned bytes verified",
+      "estimated_useful_yield": {
+        "accepted": 3
+      },
+      "fields_offered": [
+        "identity",
+        "electrical/capacity",
+        "dated evidence",
+        "mechanical/environmental"
+      ],
+      "last_attempt": "2026-11-02T09:06:47.547688+00:00",
+      "result": "Three exact models accepted. Cached V3.2 search text differs; current downloaded V3.3 apparent-power row retained. Active W null, voltage-qualified currents not flattened.",
+      "retry_condition": "Fresh revision or missing-field evidence; verify identity and terms before next partition",
+      "next_action": "Selected exact table exhausted; seek formal exact-model warranty/certificates or another OEM table, preserving regional/revision differences",
+      "processed_cursor": {
+        "accepted_models": [
+          "X3-MGA-40K-G2",
+          "X3-MGA-50K-G2",
+          "X3-MGA-60K-G2"
+        ],
+        "complete_table": true
+      }
+    },
+    {
+      "id": "goodwe_smt_g2_20261102T0859",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://en.goodwe.com/Skippower/downloadFileF?id=2657&mid=60",
+      "version_or_date": "20260512-EN-V2.1",
+      "licence_assessment": "OEM copyright retained; selected factual metadata only, no open bulk licence asserted or source documents/artwork redistributed",
+      "access_assessment": "Fresh checksum-pinned bytes verified",
+      "estimated_useful_yield": {
+        "accepted": 6
+      },
+      "fields_offered": [
+        "identity",
+        "electrical/capacity",
+        "dated evidence",
+        "mechanical/environmental"
+      ],
+      "last_attempt": "2026-11-02T09:06:47.547688+00:00",
+      "result": "Six exact non-US models accepted with Brazil/Chile/Sri Lanka footnotes, standby voltage limits and optional communications/protection conditions.",
+      "retry_condition": "Fresh revision or missing-field evidence; verify identity and terms before next partition",
+      "next_action": "Selected exact table exhausted; seek formal exact-model warranty/certificates or another OEM table, preserving regional/revision differences",
+      "processed_cursor": {
+        "accepted_models": [
+          "GW35K-SMT-L-G20",
+          "GW37.5K-SMT-L-G20",
+          "GW60K-SMT-G20",
+          "GW50K-SMT-L-G10",
+          "GW75K-SMT",
+          "GW80K-SMT"
+        ],
+        "complete_table": true
+      }
+    },
+    {
+      "id": "pakistan_nepra_registry_20261102T0859",
+      "country": "PAK",
+      "entity": "projects",
+      "source_url": "https://nepra.org.pk/licensing/Generation%20Distributed%20Generation.php",
+      "version_or_date": "Live undated listing checked 2026-11-02",
+      "licence_assessment": "Reuse basis not established; hold before bulk ingestion",
+      "access_assessment": "Web index read; direct HTTP403; source checksum null because no source bytes obtained",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "identity",
+        "electrical/capacity",
+        "dated evidence",
+        "ownership/phase reconciliation"
+      ],
+      "last_attempt": "2026-11-02T09:06:47.547688+00:00",
+      "result": "Six Atlas PV entries sampled; same road/site-name variants with different licence IDs require licence-schedule host-site reconciliation. Multi-site Foundation listings illustrate aggregate risk. No accepted project from this register. Direct403; normal web retrieval available; no bypass.",
+      "retry_condition": "Fresh revision or missing-field evidence; verify identity and terms before next partition",
+      "next_action": "Recheck main/open PRs/source freshness, then GEM batch12 (b0–bf), 3483 previously reviewed projects. Pakistan NEPRA: reconcile SGC/165/2022 and SGC/145–149/2020 against exact licence schedules and current canonical identities; establish reuse basis first.",
+      "processed_cursor": {
+        "reviewed_licence_ids": [
+          "SGC/165/2022",
+          "SGC/145/2020",
+          "SGC/146/2020",
+          "SGC/147/2020",
+          "SGC/148/2020",
+          "SGC/149/2020"
+        ],
+        "accepted": 0
       }
     }
   ]
