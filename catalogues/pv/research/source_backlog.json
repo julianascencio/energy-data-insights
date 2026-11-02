@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T16:12:00+00:00",
+  "updated_at": "2026-11-02T17:07:42.486636+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Official French exact-EIC enrichment plus complete-phase GEM operators and 12 OEM configuration tables. Selected partitions exhausted; no US bulk ingestion.",
-  "next_highest_value_source": "French ODRE Occitanie 1–5 MW exact existing EIC crosswalk; then next GEM corporate operator allowlist. MaStR AC work still unpublished in inspected open PRs: do not duplicate capacities.",
+  "selection_note": "Occitanie exact-EIC engineering enrichment,32-label GEM operator cohort, and ten exact KSTAR models from five current C&I tables. No US bulk ingestion; selected partitions exhausted.",
+  "next_highest_value_source": "ODRE Auvergne-Rhône-Alpes PHOTV 1–5MW exact existing EIC crosswalk; KSTAR2026 Residential EN V2 exact model tables, then reviewed Chinese operator cohort. Preserve separate MaStR AC task.",
   "sources": [
     {
       "id": "uk_repd",
@@ -2845,6 +2845,137 @@
       "retry_condition": "Normal file access plus explicit compatible derivative-database/attribution design",
       "next_action": "Retain rights/access hold; do not substitute third-party mirrors or infer AC from inspected capacity.",
       "processed_cursor": null
+    },
+    {
+      "id": "odre_occitanie_exact_eic_1700",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Occitanie%27",
+      "version_or_date": "31 August 2026 snapshot; metadata refreshed 2 November 2026",
+      "licence_assessment": "Licence Ouverte v2.0; retain ODRE_NOTICE.md; no personal/confidential data accepted",
+      "access_assessment": "Normal JSON export, 564 rows; metadata confirms PHOTV and dated snapshot; source bytes checksummed outside Git",
+      "estimated_useful_yield": {
+        "reviewed": 564,
+        "accepted_enrichments": 257,
+        "substantive_fields": 1025
+      },
+      "fields_offered": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "crosswalk evidence"
+      ],
+      "last_attempt": "2026-11-02T17:06:49.937698+00:00",
+      "result": {
+        "nonunique_or_absent_canonical_eic": 181,
+        "accepted": 257,
+        "confidential_or_anonymous": 118,
+        "non_single_phase_or_existing_extensions_review": 8
+      },
+      "retry_condition": "New snapshot or individually resolved held identity/phase cases",
+      "next_action": "Next Auvergne-Rhône-Alpes PHOTV 1–5MW exact-EIC enrichment; refresh source metadata, screen all canonical phase and top-level IDs",
+      "processed_cursor": {
+        "region": "Occitanie",
+        "minimum_kw": 1000,
+        "maximum_kw_exclusive": 5000,
+        "crosswalk_partition_exhausted": true,
+        "ledger": "20261102T1700_odre_review.json"
+      }
+    },
+    {
+      "id": "kstar_ci_1700",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.kstarnewenergy.com/DOWNLOADS/2026%20KSTAR%20C&I%20Brochure_EN_V2.pdf",
+      "version_or_date": "2026 C&I Brochure EN V2, title0327",
+      "licence_assessment": "Individually reviewed factual specifications only; no open bulk licence claimed; no documents, prose or artwork committed. Linked legal page is privacy policy, not reuse grant.",
+      "access_assessment": "Normal OEM PDF download, checksum registered; five tables visually and text reviewed",
+      "estimated_useful_yield": {
+        "exact_models_reviewed": 10,
+        "accepted": 10,
+        "held_fields": 8
+      },
+      "fields_offered": [
+        "active and apparent AC ratings",
+        "DC and MPPT ranges",
+        "MPPT currents and strings",
+        "dimensions",
+        "weight",
+        "environment",
+        "communications",
+        "qualified options"
+      ],
+      "last_attempt": "2026-11-02T17:06:49.937698+00:00",
+      "result": "All five C&I on-grid model tables exhausted. Existing KSTAR manufacturer label reused; no repeated language variants counted.",
+      "retry_condition": "Authoritative revision for eight held fields; new exact residential or utility table",
+      "next_action": "Review 2026 Residential Brochure EN V2; compare exact model labels and CEC regional configurations first",
+      "processed_cursor": {
+        "pdf_pages": [
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "exact_models": 10,
+        "ledger": "20261102T1700_equipment_review.json"
+      }
+    },
+    {
+      "id": "gem_operator_cohort_1700",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026 pinned source, fresh checksum reproduced",
+      "licence_assessment": "Existing GEM CC BY4.0 notice and source exclusions retained; only already accepted unrestricted locations",
+      "access_assessment": "Fresh full workbook matches registered hash; every native phase dictionary compared",
+      "estimated_useful_yield": {
+        "eligible_complete_locations": 176,
+        "accepted_enrichments": 176,
+        "fields": 352
+      },
+      "fields_offered": [
+        "historical operators",
+        "complete-phase evidence"
+      ],
+      "last_attempt": "2026-11-02T17:06:49.937698+00:00",
+      "result": "32 exact corporate labels reviewed;176 complete canonical projects enriched. No present-day operator or corporate parent inference.",
+      "retry_condition": "New revision or next reviewed corporate cohort",
+      "next_action": "Review next Chinese corporate cohort (Guizhou Energy Group and Huaneng Lancangjiang entities), preserving exact subsidiary names and all-phase agreement",
+      "processed_cursor": {
+        "ledger": "20261102T1700_operator_review.json",
+        "selected_cohort_exhausted": true
+      }
+    },
+    {
+      "id": "feeo_projoy_deye_cnc_1700",
+      "country": "GLOBAL",
+      "entity": "equipment",
+      "source_url": "https://www.feeo.com.cn/category/combiner-box.html",
+      "version_or_date": "Current pages checked2November2026; undated catalogue",
+      "licence_assessment": "No open bulk grant; review-only factual source assessment. No source documents or images committed.",
+      "access_assessment": "Projoy two product pages, Deye product/download/legal and alternate FEEO-hosted PDF returned403. FEEO normal native linked catalogue download succeeds. CNC result in download ledger. No access bypass.",
+      "estimated_useful_yield": {
+        "feeo_pages_reviewed": 6,
+        "feeo_catalogues_reviewed": 1,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "string configurations",
+        "voltage options",
+        "enclosure and protection"
+      ],
+      "last_attempt": "2026-11-02T17:06:49.937698+00:00",
+      "result": "Six FEEO linked pages reviewed incl images; generic shared images not model-specific engineering tables. FSCB6/2 prose reports2inputs, conflicting model identity; duplicated FSCB2/2 pages and generic DC platform held. Catalogue combines FSCB-PV/FSAB-PV generic configuration options with IP65, image claimsIP66, no exact SKU mapping. No configurable cartesian products synthesized.",
+      "retry_condition": "Exact OEM model-specific revision resolving counts, voltage configuration and enclosure protection",
+      "next_action": "Use separate OEM exact tables; do not reprocess unchanged shared FEEO images",
+      "processed_cursor": {
+        "six_pages_exhausted": true,
+        "catalogue_printed_pages": [
+          74,
+          75
+        ]
+      }
     }
   ]
 }
