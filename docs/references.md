@@ -3331,3 +3331,59 @@ RWE Renewables Ireland (n.d.). **Lisdrumdoagh Battery Storage Facility**. [Sourc
 **Role:** data. Discovery/reuse assessment, not admitted technical evidence. Lisdrumdoagh and Stephenstown owner pages inspected; reproduction restriction found afterward; no records accepted.
 
 **Used by:** `catalogues/bess/research/2026-11-02_solis_ireland_japan_backlog.json`.
+
+### eu_20261102_1150
+
+Ginlong Technologies (Solis) (n.d.). **S6-EH1P(3-6)K-L-EU Spanish datasheet**. [Source](https://www.ginlong.com/uploads/file/Datasheet_S6-EH1P%283-6%29K-L-EU_ESP.pdf)
+
+**Role:** data. PDF page 2, exact model/project columns and shared rows; page 1 context; visually checked; SHA256 416a828c6fbee566ed4e4cc79257df5205bc1f2c22dc124a9230aef886170bd1
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### pro_20261102_1150
+
+Ginlong Technologies (Solis) (n.d.). **S6-EH1P(3-6)K-L-PRO datasheet**. [Source](https://www.solisinverters.au/uploads/files/202407/Solis%20datasheet_S6-EH1P%283-6%29K-L-PRO_AUS_V1.7_202407.pdf)
+
+**Role:** data. PDF page 2, exact model/project columns and shared rows; page 1 context; visually checked; SHA256 5b7b9bee9090b70f9d32236c1b6cc0ac36b603ccd2cbe67fbbffa81e7414088d
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### itochu_20261102_1150
+
+IBeeT (2026). **IBeeT participation in six-site 174 MW battery consortium**. [Source](https://www.itochu-bluestorage.com/common/file/20260403.pdf)
+
+**Role:** data. PDF page 2, exact model/project columns and shared rows; page 1 context; visually checked; SHA256 d5f57d368b2f3074d9505490edbdaec305a248ca1426a90a3217f9ab16298927
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### shiroishi_20261102_1150
+
+IBeeT (2026). **Miyagi Shiroishi battery storage with Tokyu Land**. [Source](https://www.itochu-bluestorage.com/common/file/20260828.pdf)
+
+**Role:** data. PDF page 2, exact model/project columns and shared rows; page 1 context; visually checked; SHA256 8b8f7aa736ff9518d029310c68123f764534193df414dbc48c2739dfa7c7e8eb
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### chikuzen_20261102_1150
+
+ITOCHU Corporation (2026). **Joint battery storage business in Chikuzen**. [Source](https://www.itochu-bluestorage.com/common/file/20260601.pdf)
+
+**Role:** data. PDF page 2, exact model/project columns and shared rows; page 1 context; visually checked; SHA256 310d6edbb6d826794f27ce10a1aa74ee0ac0d48ed580d0df09ac334d13122d0e
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bess_blueterms_20261102
+
+ITOCHU (n.d.). **Bluestorage privacy policy**. [Source](https://www.itochu-bluestorage.com/policy/)
+
+**Role:** data. Access/discovery assessment only; no canonical technical data derived.
+
+**Used by:** `catalogues/bess/research/2026-11-02_japan_solis_lv_report.md`.
+
+### bess_japandiscovery_20261102
+
+BESS Net (n.d.). **Japanese battery project directory (discovery only)**. [Source](https://bess-net.jp/projects)
+
+**Role:** data. Access/discovery assessment only; no canonical technical data derived.
+
+**Used by:** `catalogues/bess/research/2026-11-02_japan_solis_lv_report.md`.
