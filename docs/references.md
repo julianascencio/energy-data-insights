@@ -3387,3 +3387,99 @@ BESS Net (n.d.). **Japanese battery project directory (discovery only)**. [Sourc
 **Role:** data. Access/discovery assessment only; no canonical technical data derived.
 
 **Used by:** `catalogues/bess/research/2026-11-02_japan_solis_lv_report.md`.
+
+### fwindex_20261102_1300
+
+Freedom Won (n.d.). **Freedom Won downloads: legacy product index**. [Source](https://www.freedomwon.co.za/fw_downloads/)
+
+**Role:** data. End-of-Life heading and LiTE Home/Business/Commercial and LiTE 2 Commercial HV/HV+ entries; primary search-service text; source-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### home_20261102_1300
+
+Freedom Won (2024). **LiTE Home 52V Model A range overview**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-HOME-52V-A-Range-Overview-Spec-Sheet.pdf)
+
+**Role:** data. Page 1: named model columns, specification rows, notes 1–5; primary search-service text; source-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### business_20261102_1300
+
+Freedom Won (2024). **LiTE Business 52V range overview**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-BUSINESS-52V-Range-Overview-Spec-Sheet-3.pdf)
+
+**Role:** data. Page 1: named model columns, specification rows, notes 1–5; primary search-service text; source-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### lv_20261102_1300
+
+Freedom Won (2025). **LiTE Commercial 52V range overview**. [Source](https://www.freedomwon.co.za/wp-content/uploads/LiTE-COMMERCIAL-52V-Range-Overview-Spec-Sheet-3.pdf)
+
+**Role:** data. Page 1: named model columns, specification rows and notes; primary search-service text; source-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore3_20261102_1300
+
+Freedom Won (2024). **Encore 3K specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-Single-Phase-3K.pdf)
+
+**Role:** data. Pages 1–2, single-model electrical/general tables and notes 1–5; primary search-service text; source-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore5_20261102_1300
+
+Freedom Won (2024). **Encore 5K specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-Single-Phase-5K.pdf)
+
+**Role:** data. Pages 1–2, single-model electrical/general tables and notes 1–5; primary search-service text; source-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore8_20261102_1300
+
+Freedom Won (2024). **Encore 8K specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-Single-Phase-8K.pdf)
+
+**Role:** data. Pages 1–2, single-model electrical/general tables and notes 1–5; primary search-service text; source-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore10_20261102_1300
+
+Freedom Won (2024). **Encore 10K specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-Single-Phase-10K.pdf)
+
+**Role:** data. Pages 1–2, single-model electrical/general tables and notes 1–5; primary search-service text; source-byte checksum unavailable
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### renewvia_20261102_1300
+
+Renewvia Energy Corporation (n.d.). **Operating mini-grid portfolio**. [Source](https://www.renewvia.com/minigrid-sites)
+
+**Role:** data. Named site headings and site paragraphs: Oloibiri, Akipelai, Ndeda, Kalobeyei Town and Settlement; SHA256 9ae3edc704dcba735b24b2d2d9082bb7d1149bcca8322c6fe192fb04a6c8b4f8
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### allon_20261102_1300
+
+Renewvia Energy Corporation (2020). **All On commitment and operating Akipelai/Oloibiri mini-grids**. [Source](https://www.renewvia.com/post/renewvia-receives-1-2-million-commitment-from-all-on-to-electrify-communities-in-the-niger-delta)
+
+**Role:** data. Release body dated June 2 2020; CMS date April 22 2021; first two systems and lithium-ion paragraph; SHA256 2bd629d30c2e0ee134aaab984de6ec3d4fdaf405ef1903f73d4c50a6847325c8
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### reads_20261102_1300
+
+UNITAR (2023). **A Roadmap for Energy Access in Displacement Settings: Kenya**. [Source](https://www.humanitarianenergy.org/assets/resources/Compressed_READS_Kenya.pdf)
+
+**Role:** data. Printed pages 89–91: Renewvia Kalobeyei project deep-dive; publication/copyright page 2; SHA256 831ccba3bb96d8c11fe13a79bb9932259a9974ab9ac90c64551dbdd2744db4c9
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### africa_20261102_1300
+
+Renewvia Solar Africa (n.d.). **Renewvia Solar Africa: technical excellence**. [Source](https://www.renewviaenergyafrica.com/)
+
+**Role:** data. Technical Excellence paragraph: Kalobeyei Settlement 541 kWp and 1.1 MWh; SHA256 ffd0070f63deb3adf37d9e0eac849ac111fbc4d4d88810c88b9c2b637b3ab75e
+
+**Used by:** `catalogues/bess/sources.json`.
