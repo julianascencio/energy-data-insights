@@ -3188,5 +3188,43 @@
     "license": "OEM rights retained; limited manually reviewed factual model specifications only; source PDF, prose and images not redistributed. No open bulk-reuse licence asserted.",
     "locator": "PDF25–27 / printed46–50, Specifications model columns",
     "limitations": "Undated manual differs from2026brochure on nominal/start voltage, weight and display. No current availability or independent certification claim. Existing canonical values not overwritten or mixed between revisions."
+  },
+  "odre_ge_20261102T2000": {
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Grand%20Est%27",
+    "publisher": "RTE / ODRE; Enedis and network operators",
+    "title": "National production registry: Grand Est 1–5 MW PV, 31 August 2026 snapshot",
+    "license": "Licence Ouverte / Open Licence v2.0; retain catalogues/pv/licenses/ODRE_NOTICE.md",
+    "retrieved_at": "2026-11-02T20:06:00+00:00",
+    "sha256": "a0d8c247c48dce8988bd1574a7eabf87eb7155b29eefccb96fbc81d2582258d7",
+    "source_date": "2026-08-31",
+    "locator": "JSON array; exact codeeicresourceobject and native column names",
+    "limitations": "Historical network-installation snapshot, not present-day operation. EIC is not automatically a whole project. Only exact unique single-phase crosswalks used; confidential names excluded. No AC/DC or geographic inference."
+  },
+  "goodwe_sdtg3_20260317_v21_20261102T2000": {
+    "url": "https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_SDT-G3_Datasheet-EN.pdf",
+    "sha256": "0cc34c8bb32dbe617b87eb9a125088f092ce8216e8a52256e5253b019376798f",
+    "retrieved_at": "2026-11-02T20:05:16.725257+00:00",
+    "bytes": 449877,
+    "publisher": "GoodWe Technologies Co Ltd",
+    "title": "SDT G3 4–30kW exact-model technical tables",
+    "version": "GoodWe-Single page-20260317-EN-V2.1",
+    "document_date": "2026-03-17",
+    "locator": "PDF pages2–4, exact model column and named technical row, footnotes1–3",
+    "license": "OEM copyright retained; limited individually reviewed factual engineering metadata only. No open/bulk reuse grant asserted. No source PDF, prose, artwork or full table reproduction in Git.",
+    "access_notes": "Public product-page download follows ordinary redirect; no registration/form; imprint and footer inspected. No personal-use-only restriction found on inspected imprint/product/PDF.",
+    "limitations": "Product page contains contradictory MPPT claims for GW25K-SDT-30; PDF source governs accepted model table, conflict preserved in review. Conditions/regional limits in extensions; no certification or availability inference."
+  },
+  "weid_8000124311_20261102T2000": {
+    "url": "https://datasheet.weidmueller.com/pdf/en/8000124311/scope/2/",
+    "sha256": "77dd4428a457cabf4f0f1cce15a77cc832528db02548f008f9ada2782085ab38",
+    "bytes": 532842,
+    "retrieved_at": "2026-11-02T20:02:05.313848+00:00",
+    "publisher": "Weidmüller",
+    "title": "PV224S0F3CXXV0O0TXPX15PWW /8000124311",
+    "version": "PDF creation stamp04.03.2026 07:06:16 MEZ",
+    "document_date": "2026-03-04",
+    "locator": "PDF1ordering;PDF2technical data;PDF3outputs/housing/guarantee",
+    "license": "OEM rights retained; limited individually reviewed factual metadata only. No open/bulk reuse or document redistribution.",
+    "limitations": "Empty fuse holders; selectable fuse list not installed current rating. Switching duty400A is not continuous output. DC outputs2 may mean polarity terminals, no canonical output circuit count."
   }
 }

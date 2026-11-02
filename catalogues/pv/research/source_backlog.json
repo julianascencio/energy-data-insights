@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T19:11:52.235564+00:00",
+  "updated_at": "2026-11-02T20:10:00+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "333project enrichments from327ARA observations and30exact corporate labels;27KSTAR inverter models and9BENY combiners; Clenergy rights hold and ECB/AEMO access limits.",
-  "next_highest_value_source": "ODRE GrandEst PHOTV1–5MW unique single-phase EIC enrichment; independent exact combiner variant sheets; KSTAR revision reconciliation",
+  "next_highest_value_source": "ODRE Hauts-de-France PHOTV1–5MW exact-EIC crosswalk; GoodWe independent30–50kW datasheet with revision comparison",
   "sources": [
     {
       "id": "uk_repd",
@@ -3319,6 +3319,150 @@
         ],
         "exhausted": true,
         "ledger": "20261102T1900_equipment_review.json"
+      }
+    },
+    {
+      "id": "odre_grand_est_2000",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Grand%20Est%27",
+      "version_or_date": "2026-08-31",
+      "licence_assessment": "Licence Ouverte v2.0; attributed notice retained",
+      "access_assessment": "Ordinary public access; checksums and errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected partition reviewed; accepted counts are observed, not forecasts"
+      },
+      "fields_offered": [
+        "grid/commissioning or historical operators"
+      ],
+      "last_attempt": "2026-11-02T20:07:58.099479+00:00",
+      "result": "112observations:18exact single-phase EIC matches/72fields;94held",
+      "retry_condition": "New revision or independently resolved rights/identity/field conflict",
+      "next_action": "Next: Hauts-de-France1–5MW; independent phase evidence needed for held identities",
+      "processed_cursor": {
+        "region": "Grand Est",
+        "range_mw": "1–5",
+        "exhausted": true
+      }
+    },
+    {
+      "id": "goodwe_sdtg3_2000",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_SDT-G3_Datasheet-EN.pdf",
+      "version_or_date": "20260317ENV2.1",
+      "licence_assessment": "OEM rights retained; limited independently selected facts; no document redistribution",
+      "access_assessment": "Ordinary public access; checksums and errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected partition reviewed; accepted counts are observed, not forecasts"
+      },
+      "fields_offered": [
+        "electrical/mechanical/environmental metadata"
+      ],
+      "last_attempt": "2026-11-02T20:07:58.099479+00:00",
+      "result": "19exact models accepted;oneMPPT count held due to web/PDF conflict",
+      "retry_condition": "New revision or independently resolved rights/identity/field conflict",
+      "next_action": "Next: independent SDTG3 30–50kW table; compare exact model revisions",
+      "processed_cursor": {
+        "pdf_pages": [
+          2,
+          3,
+          4
+        ],
+        "models_reviewed": 19,
+        "exhausted": true
+      }
+    },
+    {
+      "id": "solplanet_2000",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/solplanet-legal-disclaimer",
+      "version_or_date": "2025and2024sheets",
+      "licence_assessment": "Legal notice: personal information only; reuse not assumed",
+      "access_assessment": "Ordinary public access; checksums and errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected partition reviewed; accepted counts are observed, not forecasts"
+      },
+      "fields_offered": [
+        "electrical/mechanical/environmental metadata"
+      ],
+      "last_attempt": "2026-11-02T20:07:58.099479+00:00",
+      "result": "15model columns reviewed;zero accepted",
+      "retry_condition": "New revision or independently resolved rights/identity/field conflict",
+      "next_action": "Retry only on explicit reusable source/rights clarification; no contact sent",
+      "processed_cursor": {
+        "tables": 3,
+        "models_held": 15,
+        "exhausted": true
+      }
+    },
+    {
+      "id": "feeo_2000",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.feeo-solar.com/uploads/9088/files/Feeo-s-catalog.pdf",
+      "version_or_date": "undetermined",
+      "licence_assessment": "403before terms/document inspection",
+      "access_assessment": "Ordinary public access; checksums and errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected partition reviewed; accepted counts are observed, not forecasts"
+      },
+      "fields_offered": [
+        "electrical/mechanical/environmental metadata"
+      ],
+      "last_attempt": "2026-11-02T20:07:58.099479+00:00",
+      "result": "Access403;no accepted rows",
+      "retry_condition": "New revision or independently resolved rights/identity/field conflict",
+      "next_action": "Retry ordinary public OEM release; no bypass",
+      "processed_cursor": {
+        "exhausted": false
+      }
+    },
+    {
+      "id": "weid_2000",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://datasheet.weidmueller.com/pdf/en/8000124311/scope/2/",
+      "version_or_date": "2026-03-04creation",
+      "licence_assessment": "OEM rights retained;selected factual extract only",
+      "access_assessment": "Ordinary public access; checksums and errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected partition reviewed; accepted counts are observed, not forecasts"
+      },
+      "fields_offered": [
+        "electrical/mechanical/environmental metadata"
+      ],
+      "last_attempt": "2026-11-02T20:07:58.099479+00:00",
+      "result": "Oneexact24input portrait box accepted;32canonical Weidmuller identities checked",
+      "retry_condition": "New revision or independently resolved rights/identity/field conflict",
+      "next_action": "Next: independent combiner OEM with exact variant identifiers",
+      "processed_cursor": {
+        "order": "8000124311",
+        "exhausted": true
+      }
+    },
+    {
+      "id": "gem_operator_2000",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026",
+      "licence_assessment": "Existing CC BY attribution and lineage exclusions retained",
+      "access_assessment": "Ordinary public access; checksums and errors in dated download ledgers",
+      "estimated_useful_yield": {
+        "assessment": "Selected partition reviewed; accepted counts are observed, not forecasts"
+      },
+      "fields_offered": [
+        "grid/commissioning or historical operators"
+      ],
+      "last_attempt": "2026-11-02T20:07:58.099479+00:00",
+      "result": "183complete locations/366fields;fresh checksum and complete phase equality",
+      "retry_condition": "New revision or independently resolved rights/identity/field conflict",
+      "next_action": "Next: next independently reviewed corporate cohort; never private labels",
+      "processed_cursor": {
+        "labels_reviewed": 48,
+        "exhausted": true
       }
     }
   ]
