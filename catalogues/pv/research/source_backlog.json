@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T01:12:34.966229+00:00",
+  "updated_at": "2026-11-02T04:07:44.704015+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "Processed eight complete French 1–5 MW regions (755 rows), all six Tauro ECO model pages and eleven Solis models, and full New Zealand dispatched-fleet PV subset (14 rows). Independent Brazil CCEE aggregates and KACO/Arctech enrichment access/terms assessed. No US expansion.",
-  "next_highest_value_source": "France 1–5 MW Nouvelle-Aquitaine partition (432 observations, national screen preliminarily leaves 62; not accepted), alongside six held New Zealand shared-connection crosswalks. Prioritize a permitted top-ten-country source when available.",
+  "next_highest_value_source": "GEM recovery batch06 (50–5f), 3552 previously reviewed projects; batch05 now included in PR59, do not duplicate.",
   "sources": [
     {
       "id": "uk_repd",
@@ -1147,6 +1147,75 @@
       "retry_condition": "Permitted ungated OEM specification or existing permission",
       "next_action": "Choose another tracker OEM multi-model source; do not repeatedly revisit these forms",
       "processed_cursor": null
+    },
+    {
+      "id": "gem_recovery_publication_20261102T0400",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February 2026",
+      "licence_assessment": "Existing CC BY attribution; complete locations with TZ/WKSL withheld",
+      "access_assessment": "Pinned workbook downloaded again and checksum verified",
+      "estimated_useful_yield": {
+        "next_reviewed_partition": 3552
+      },
+      "fields_offered": [
+        "phase identities",
+        "capacities and ratings",
+        "dated lifecycle",
+        "location",
+        "ownership"
+      ],
+      "last_attempt": "2026-11-02T04:07:44.704015+00:00",
+      "result": "3488 batch05 records added through upsert with zero conflicts; batches01–04 preserved",
+      "retry_condition": "Recheck main, open PRs and source revision before next partition",
+      "next_action": "Export batch06 only after complete accepted-ID digest matches; do not duplicate batch05",
+      "processed_cursor": {
+        "already_merged_batches": [
+          1,
+          2,
+          3
+        ],
+        "pr59_batches": [
+          4,
+          5
+        ],
+        "next_batch": 6
+      }
+    },
+    {
+      "id": "sungrow_pvs_v26_20261102T0400",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://info-support.sungrowpower.com/application/pdf/2025/06/18/DS_20250614_PVS-16MH_18MH_20MH_24MH_Datasheet_V26_EN.pdf",
+      "version_or_date": "Specification table Version26; cover Version25",
+      "licence_assessment": "Copyright retained; factual metadata only; original PDF outside Git",
+      "access_assessment": "Ungated OEM PDF downloaded and table visually checked",
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 4,
+        "selected_batch_remaining": 0
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "monitoring",
+        "qualified optional accessories"
+      ],
+      "last_attempt": "2026-11-02T04:07:44.704015+00:00",
+      "result": "Four exact PVS-MH models added; no legacy revision blending",
+      "retry_condition": "Exact new revision or missing-field evidence",
+      "next_action": "Seek documented fuse/warranty/protocol information for exact revision without assuming legacy equivalence",
+      "processed_cursor": {
+        "models": [
+          "PVS-16MH",
+          "PVS-18MH",
+          "PVS-20MH",
+          "PVS-24MH"
+        ],
+        "specification_page": 2
+      }
     }
   ]
 }
