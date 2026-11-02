@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T14:46:52.798520+00:00",
+  "updated_at": "2026-11-02T16:12:00+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Extended open PV73: 208 complete-location ownership fills/416 fields, 11 named Suntree DC platforms with substantive conditional specifications. MaStR capacity work on separate branch intentionally not duplicated; Phoenix reuse hold and BENY403 triggered independent manual extraction.",
-  "next_highest_value_source": "Projects: reconcile separate MaStR AC task, then exact-ID non-capacity metadata from licensed2November2026 solar XML; do not re-add units as plants. CEA requires prior permission and serves historical2019 data despite current link; no further ingestion without suitable rights. Equipment: current exact1500V Suntree sheets at https://www.chinasuntree.com/dc-combiner-box/ after alias/configuration/date review.",
+  "selection_note": "Official French exact-EIC enrichment plus complete-phase GEM operators and 12 OEM configuration tables. Selected partitions exhausted; no US bulk ingestion.",
+  "next_highest_value_source": "French ODRE Occitanie 1–5 MW exact existing EIC crosswalk; then next GEM corporate operator allowlist. MaStR AC work still unpublished in inspected open PRs: do not duplicate capacities.",
   "sources": [
     {
       "id": "uk_repd",
@@ -382,10 +382,10 @@
         "region",
         "generation"
       ],
-      "last_attempt": "2026-11-02T01:12:34.966229+00:00",
-      "result": "This iteration: 183 accepted / 572 held from 755 observations in eight complete 1–5 MW regions. France catalogue now 324. All >=5 MW partitions already processed.",
+      "last_attempt": "2026-11-02T16:12:00+00:00",
+      "result": "This iteration: 183 accepted / 572 held from 755 observations in eight complete 1–5 MW regions. France catalogue now 324. All >=5 MW partitions already processed. Later 16:01 review: 432 Nouvelle-Aquitaine observations screened against current GEM recovery; 155 existing exact-EIC project enrichments, no new projects.",
       "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Recheck revision/checksums and review Nouvelle-Aquitaine 1–5 MW (432 candidates); 1493 observations across four regions remain outside this review.",
+      "next_action": "Continue Occitanie 1–5 MW exact existing EIC enrichment first. Resolve 277 Nouvelle-Aquitaine confidentiality/identity/scope holds separately; do not claim they are accepted new projects.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
@@ -421,6 +421,16 @@
             "Provence-Alpes-Côte d’Azur"
           ],
           "remaining_rows": 1493
+        },
+        "latest_exact_eic_enrichment": {
+          "region": "Nouvelle-Aquitaine",
+          "minimum_kw": 1000,
+          "maximum_kw_exclusive": 5000,
+          "reviewed": 432,
+          "accepted_enrichments": 155,
+          "held": 277,
+          "ledger": "20261102T1601_odre_review.json",
+          "scope": "Existing exact-ID crosswalk exhausted; new project identity acceptance remains unreviewed."
         }
       }
     },
@@ -2683,6 +2693,157 @@
       "result": "First response incomplete; one normal retry succeeded with full17273164 bytes and checksum. Summary/date sample and copyright policy reviewed; held on explicit prior-permission requirement. Zero facility candidates reviewed or accepted; no assumption that old Solar sections establish PV.",
       "retry_condition": "Applicable reuse permission plus historical snapshot/positivePV/plant-phase review; do not retry ingestion solely because download is accessible.",
       "next_action": "Rights hold; no contact sent. Use licensed MaStR metadata after reconciling separate AC task, or another permitted official inventory.",
+      "processed_cursor": null
+    },
+    {
+      "id": "odre_na_exact_eic_1601",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Nouvelle-Aquitaine%27",
+      "version_or_date": "31 August 2026; metadata refreshed 2 November 2026",
+      "licence_assessment": "Licence Ouverte v2.0; existing ODRE_NOTICE.md attribution retained; snapshot date and transformation qualified. No confidential names/person data imported.",
+      "access_assessment": "432 records downloaded normally; SHA256 7f907d38df0d97684e91fa00ef070aa8420d7eb0b9234f3130a32764ca682681",
+      "estimated_useful_yield": {
+        "reviewed": 432,
+        "accepted_enrichments": 155,
+        "substantive_fields_added": 620
+      },
+      "fields_offered": [
+        "EIC",
+        "grid_operator",
+        "substation",
+        "commissioning_date"
+      ],
+      "last_attempt": "2026-11-02T16:12:00+00:00",
+      "result": {
+        "accepted": 155,
+        "nonunique_or_absent_canonical_eic": 189,
+        "confidential_or_anonymous": 76,
+        "non_single_phase_or_existing_extensions_review": 12
+      },
+      "retry_condition": "New snapshot or explicit resolution of held single/whole-project identities",
+      "next_action": "Next: Occitanie 1–5 MW; exact unique existing EIC enrichment before new identities. Screen all canonical phases for reused IDs; preserve commissioning contradictions.",
+      "processed_cursor": {
+        "region": "Nouvelle-Aquitaine",
+        "minimum_kw": 1000,
+        "maximum_kw_exclusive": 5000,
+        "crosswalk_partition_exhausted": true,
+        "ledger": "20261102T1601_odre_review.json"
+      }
+    },
+    {
+      "id": "suntree_current_configurations_1601",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.chinasuntree.com/dc-combiner-box",
+      "version_or_date": "Undated current pages checked 2 November 2026",
+      "licence_assessment": "Selected factual component data only, no full documents/prose/artwork redistribution; OEM retains rights, no open bulk grant asserted.",
+      "access_assessment": "All 12 linked exact configuration pages downloaded/checksummed outside Git.",
+      "estimated_useful_yield": {
+        "reviewed_tables": 12,
+        "named_platforms": 6,
+        "new_platforms": 2,
+        "enriched_platforms": 4
+      },
+      "fields_offered": [
+        "voltage-labelled BOM",
+        "component models",
+        "poles",
+        "rated voltage/current ranges",
+        "component quantities",
+        "IP65"
+      ],
+      "last_attempt": "2026-11-02T16:12:00+00:00",
+      "result": "12 tables exhausted; two new named platforms, four historical platforms enriched with separate current-page assertions. No voltage-variant row inflation. Historical held fields remain unresolved.",
+      "retry_condition": "Changed page revision or additional named platforms",
+      "next_action": "Independent smaller OEM exact tracker/combiner sheets; resolve historical Suntree input-count/material holds only with authoritative revision evidence.",
+      "processed_cursor": {
+        "tables": 12,
+        "platforms": [
+          "SHLX-PV1/1",
+          "SHLX-PV2/1",
+          "SHLX-PV2/2",
+          "SHLX-PV4/1",
+          "SHLX-PV4/2",
+          "SHLX-PV10/1"
+        ]
+      }
+    },
+    {
+      "id": "gem_operator_cohort_1601",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February 2026 pinned workbook",
+      "licence_assessment": "Existing GEM CC-BY-4.0 notice; only already accepted unrestricted locations.",
+      "access_assessment": "Fresh bytes match pinned99f44fd1 SHA256. Full native phase dictionaries match, not just phase IDs.",
+      "estimated_useful_yield": {
+        "reviewed_eligible_complete_locations": 236,
+        "accepted_enrichments": 236,
+        "fields_added": 472
+      },
+      "fields_offered": [
+        "operator",
+        "historical complete-phase evidence"
+      ],
+      "last_attempt": "2026-11-02T16:12:00+00:00",
+      "result": "26 exact company labels exhausted among records with empty operator/extensions. No corporate consolidation or present-day claim.",
+      "retry_condition": "New source revision or next explicitly reviewed company allowlist",
+      "next_action": "Next corporate cohort: BayWa R.E., Opdenergy, Solarpack, Neoen, Acciona, Total Eren; complete-phase verification before upsert.",
+      "processed_cursor": {
+        "allowlist": [
+          "ABO Wind Renovables Colombia",
+          "ACWA Power",
+          "Benbros Solar",
+          "Bruc Iberia Energy Investment Partners",
+          "Codensa",
+          "Colgeólica",
+          "Cuatro Solar",
+          "ENGIE",
+          "Electryon Power Colombia",
+          "Elgin Energy",
+          "Energetix",
+          "Enerparc",
+          "Euder Energy",
+          "Fotowatio Renewable Ventures (FRV)",
+          "Green Yellow Energia De Colombia",
+          "Grenergy Colombia",
+          "Lightsource BP",
+          "Masdar Clean Energy",
+          "San Luis Park",
+          "Scatec",
+          "Solar Projects Developers",
+          "Solar Wind Baja",
+          "SolarGy",
+          "Solger",
+          "Verano Capital Colombia",
+          "X-Elio"
+        ],
+        "ledger": "20261102T1601_operator_review.json"
+      }
+    },
+    {
+      "id": "aneel_siga_1601",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel",
+      "version_or_date": "Official metadata updated 2 November 2026 07:48 BRT",
+      "licence_assessment": "Official ODbL declaration reconfirmed. Public derivative-database/share-alike plan remains unresolved; no bulk acceptance.",
+      "access_assessment": "Metadata readable via web; normal CSV attempt returned upstream timeout body, not data.",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "candidate_rows_reviewed": 0
+      },
+      "fields_offered": [
+        "CEG",
+        "plant type",
+        "granted and inspected power",
+        "status"
+      ],
+      "last_attempt": "2026-11-02T16:12:00+00:00",
+      "result": "No ANEEL facts accepted; independent French inventory used instead.",
+      "retry_condition": "Normal file access plus explicit compatible derivative-database/attribution design",
+      "next_action": "Retain rights/access hold; do not substitute third-party mirrors or infer AC from inspected capacity.",
       "processed_cursor": null
     }
   ]
