@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T04:21:54.635749+00:00",
+  "updated_at": "2026-11-02T05:09:36.343053+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Processed eight complete French 1\u20135 MW regions (755 rows), all six Tauro ECO model pages and eleven Solis models, and full New Zealand dispatched-fleet PV subset (14 rows). Independent Brazil CCEE aggregates and KACO/Arctech enrichment access/terms assessed. No US expansion.",
-  "next_highest_value_source": "GEM recovery batch07 (60\u20136f), 3598 previously reviewed projects; batches01\u201305 merged, batch06 prepared for separate PR. Recheck publication before writing.",
+  "selection_note": "Processed eight complete French 1–5 MW regions (755 rows), all six Tauro ECO model pages and eleven Solis models, and full New Zealand dispatched-fleet PV subset (14 rows). Independent Brazil CCEE aggregates and KACO/Arctech enrichment access/terms assessed. No US expansion.",
+  "next_highest_value_source": "GEM recovery batch08 (70–7f), 3551 previously reviewed projects; batch07 now in PR61. SOFAR catalogue next: three-phase tables, physical pages17/19, after exact-model/CEC identity review.",
   "sources": [
     {
       "id": "uk_repd",
@@ -239,7 +239,7 @@
       "next_action": "Resolve named-project crosswalk and nearby/phase identities for 62 Tottori candidates using permitted planning/owner evidence. Ichigo site prohibits unauthorized redistribution/commercial use, so do not bulk ingest that portfolio.",
       "priority": 2,
       "processed_cursor": {
-        "prefecture": "\u9ce5\u53d6\u770c",
+        "prefecture": "鳥取県",
         "snapshot": "2026-09-30",
         "minimum_kw": 1000,
         "candidate_count": 62,
@@ -383,9 +383,9 @@
         "generation"
       ],
       "last_attempt": "2026-11-02T01:12:34.966229+00:00",
-      "result": "This iteration: 183 accepted / 572 held from 755 observations in eight complete 1\u20135 MW regions. France catalogue now 324. All >=5 MW partitions already processed.",
+      "result": "This iteration: 183 accepted / 572 held from 755 observations in eight complete 1–5 MW regions. France catalogue now 324. All >=5 MW partitions already processed.",
       "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Recheck revision/checksums and review Nouvelle-Aquitaine 1\u20135 MW (432 candidates); 1493 observations across four regions remain outside this review.",
+      "next_action": "Recheck revision/checksums and review Nouvelle-Aquitaine 1–5 MW (432 candidates); 1493 observations across four regions remain outside this review.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
@@ -402,13 +402,13 @@
           "maximum_kw": 5000,
           "completed_regions": [
             "Grand Est",
-            "Bourgogne-Franche-Comt\u00e9",
+            "Bourgogne-Franche-Comté",
             "Centre-Val de Loire",
-            "Auvergne-Rh\u00f4ne-Alpes",
+            "Auvergne-Rhône-Alpes",
             "Bretagne",
             "Normandie",
             "Hauts-de-France",
-            "\u00cele-de-France"
+            "Île-de-France"
           ],
           "candidate_rows_processed": 755,
           "accepted": 183,
@@ -418,7 +418,7 @@
             "Nouvelle-Aquitaine",
             "Occitanie",
             "Pays de la Loire",
-            "Provence-Alpes-C\u00f4te d\u2019Azur"
+            "Provence-Alpes-Côte d’Azur"
           ],
           "remaining_rows": 1493
         }
@@ -1060,9 +1060,9 @@
         "reported commissioning date"
       ],
       "last_attempt": "2026-11-02T01:12:34.966229+00:00",
-      "result": "Seven new projects, Kohir\u0101 enriched with operator/registry IDs, six shared-connection entries held. Kohir\u0101 commissioning date discrepancy remains unresolved.",
+      "result": "Seven new projects, Kohirā enriched with operator/registry IDs, six shared-connection entries held. Kohirā commissioning date discrepancy remains unresolved.",
       "retry_condition": "Fresh file or independent owner/system-operator site crosswalk",
-      "next_action": "Resolve EDG0331 (Omeheu/Rangitaiki), MTO0331 (Papareirei\u0101/Ruawai), KOE1101 (Pukenui/Twin Rivers) using named project evidence; preserve effective versus physical dates",
+      "next_action": "Resolve EDG0331 (Omeheu/Rangitaiki), MTO0331 (Papareireiā/Ruawai), KOE1101 (Pukenui/Twin Rivers) using named project evidence; preserve effective versus physical dates",
       "processed_cursor": {
         "complete_file": true,
         "review_file": "20261102T0058_nz_review.json"
@@ -1073,7 +1073,7 @@
       "country": "BRA",
       "entity": "projects",
       "source_url": "https://dadosabertos.ccee.org.br/dataset/fotovoltaica_gf_definida",
-      "version_or_date": "2026 CSVs updated 2026-10-01; January\u2013August observations",
+      "version_or_date": "2026 CSVs updated 2026-10-01; January–August observations",
       "licence_assessment": "CC BY 4.0 explicitly declared by CCEE catalogue",
       "access_assessment": "GF_DEFINIDA and ACL CSVs downloaded: 8 monthly rows each, no plant identifiers",
       "estimated_useful_yield": {
@@ -1104,7 +1104,7 @@
       "source_url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=19681&t=f&token=4bab567db5362edba01d53e1d416f24f6e7fe71a",
       "version_or_date": "3015332-05-250731",
       "licence_assessment": "Manual p2 requires written permission for publication in whole or part; no such permission established. No extracted bulk specifications committed.",
-      "access_assessment": "OEM PDF downloaded, technical pages 7\u20138 and legal page inspected",
+      "access_assessment": "OEM PDF downloaded, technical pages 7–8 and legal page inspected",
       "estimated_useful_yield": {
         "existing_models_reviewed": 6,
         "accepted_enrichments": 0
@@ -1216,6 +1216,81 @@
           "PVS-24MH"
         ],
         "specification_page": 2
+      }
+    },
+    {
+      "id": "gem_recovery_batch07_20261102T0503",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February 2026",
+      "licence_assessment": "Existing CC BY attribution and TZ/WKSL exclusions retained",
+      "access_assessment": "Fresh pinned workbook download, SHA256 verified",
+      "estimated_useful_yield": {
+        "next_partition_reviewed": 3551
+      },
+      "fields_offered": [
+        "phase identities",
+        "capacity and rating",
+        "dated lifecycle",
+        "location",
+        "ownership"
+      ],
+      "last_attempt": "2026-11-02T05:09:36.343053+00:00",
+      "result": "3598 batch07 projects ingested with no conflicts; 95 existing projects enriched from explicit unanimous 100% phase-owner assertions",
+      "retry_condition": "Source revision/main or open PR changes require reconciliation",
+      "next_action": "Check PR61 and then select batch08; do not duplicate batch07",
+      "processed_cursor": {
+        "pr61_batches": [
+          6,
+          7
+        ],
+        "next_batch": 8,
+        "ownership_mapping": "20261102T0503_ownership_review.json"
+      }
+    },
+    {
+      "id": "sofar_catalogue_202601_v74",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.sofarsolar.com/upload/file/20260202/1770025908261035040.pdf",
+      "version_or_date": "EN-EU V7.4, 2026-01-26",
+      "licence_assessment": "Publisher copyright retained; factual records only, no catalogue/artwork redistributed",
+      "access_assessment": "Ungated OEM PDF downloaded and three exact-model tables rendered/visually inspected",
+      "estimated_useful_yield": {
+        "reviewed": 21,
+        "accepted": 21
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "efficiency",
+        "thermal",
+        "environmental",
+        "protection",
+        "interfaces",
+        "OEM standards claims"
+      ],
+      "last_attempt": "2026-11-02T05:09:36.343053+00:00",
+      "result": "21 exact named models accepted under new SOFARSOLAR manufacturer; no CEC/OEM-name matches in baseline",
+      "retry_condition": "New revision or unresolved field evidence",
+      "next_action": "Review physical pages17/19 three-phase tables, checking regional suffixes and existing canonical identities before extraction",
+      "processed_cursor": {
+        "completed_physical_pages": [
+          9,
+          11,
+          13
+        ],
+        "completed_printed_pages": [
+          "03",
+          "05",
+          "07"
+        ],
+        "completed_models": 21,
+        "next_physical_pages": [
+          17,
+          19
+        ]
       }
     }
   ]
