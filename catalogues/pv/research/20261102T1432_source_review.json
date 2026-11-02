@@ -1,0 +1,239 @@
+{
+  "sources_reviewed": [
+    {
+      "id": "mastr_1432_concurrency",
+      "country": "DEU",
+      "entity": "projects",
+      "source_url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "version_or_date": "2026-11-02 public export; archive revision 26.2",
+      "licence_assessment": "Official listing declares dl-de/by-2-0. Attribution and plant/unit boundaries required.",
+      "access_assessment": {
+        "url": "https://www.marktstammdatenregister.de/MaStR/Einheit/Einheiten/OeffentlicheEinheitenuebersicht",
+        "sha256": "b7bd8064b174e46d74b73edf03184b7a0ca876cc17acbfa7e927143c6520a447",
+        "bytes": 130746,
+        "retrieved_at": "2026-11-02T14:34:37.512864+00:00"
+      },
+      "estimated_useful_yield": {
+        "planning_range": [
+          50,
+          200
+        ],
+        "accepted_this_run": 0
+      },
+      "fields_offered": [
+        "registry identity",
+        "assigned inverter power",
+        "grid and lifecycle metadata"
+      ],
+      "last_attempt": "2026-11-02T14:43:12.055622+00:00",
+      "result": "Public export is about 3.2 GB. A separate AC-capacity checkout already contains solar extraction and 7157 proposed enrichments; those are not this run accepted additions. Filtered public overview HTML accessible, but no filtered facility CSV exported or candidate records counted. Avoided overlapping project capacity/identity work.",
+      "retry_condition": "AC task published/reconciled; review same fresh archive and source-specific exact-ID scope first",
+      "next_action": "Use separate AC work review results and resolve held IDs; next non-overlapping German unit-to-project partition only after checking its publication.",
+      "processed_cursor": {
+        "accepted_this_run": 0
+      }
+    },
+    {
+      "id": "suntree_1432",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.chinasuntree.com/product-data-download",
+      "version_or_date": "Undated manual; PDF creation metadata 2016-04-06, not publication date",
+      "licence_assessment": "Standard OEM copyright; selected individually reviewed factual metadata only. No document/prose/artwork redistribution or open bulk licence claimed.",
+      "access_assessment": {
+        "url": "https://www.chinasuntree.com/uploads-suntree/1-m/pdf/combiner-box-products-selection-manual.pdf",
+        "sha256": "254ac01bc53e0cdf7ade02ea3cc3f177f7886e6e7d3c8f44a672c415345055c6",
+        "bytes": 12765339,
+        "retrieved_at": "2026-11-02T14:34:59.114155+00:00"
+      },
+      "estimated_useful_yield": {
+        "reviewed_named_dc_platforms": 11,
+        "accepted": 11
+      },
+      "fields_offered": [
+        "DC ratings/options",
+        "I/O topology",
+        "SPD conditions",
+        "switch options",
+        "environment",
+        "mounting",
+        "material",
+        "native dimensions without explicit units"
+      ],
+      "last_attempt": "2026-11-02T14:43:12.055622+00:00",
+      "result": "11 named DC platforms accepted, without synthesized voltage/option permutations. 12 field disputes (5 input counts,7 materials) held; dimensions lack explicit units and stay native, not SI. All 43 pages scanned for scope; table pages visually checked, OCR not acceptance evidence.",
+      "retry_condition": "New revision or authoritative exact sheet resolving field holds",
+      "next_action": "DC manual partition exhausted; current exact 1500 V model tables from OEM public dc-combiner-box section, with alias/configuration/date review. Three AC platforms excluded from selected DC partition.",
+      "processed_cursor": {
+        "pdf_pages_reviewed_for_scope": 43,
+        "dc_table_pages": [
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27,
+          29,
+          31,
+          33,
+          35
+        ],
+        "dc_platforms_complete": true
+      }
+    },
+    {
+      "id": "phoenix_terms_1432",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.phoenixcontact.com/en-us/legal-information",
+      "version_or_date": "Terms of Use for Works October2020; current linked page",
+      "licence_assessment": "Linked terms sections3.3/3.5 limit purpose and transformation/excerpts; suitability for further public catalogue extraction unresolved. No additional technical rows accepted. Existing records not removed or silently reinterpreted.",
+      "access_assessment": "Official legal page and two-page linked terms readable through web tool; checksum null (no bytes downloaded).",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "exact_page_sample_reviewed": 1
+      },
+      "fields_offered": [
+        "exact model specifications"
+      ],
+      "last_attempt": "2026-11-02T14:43:12.055622+00:00",
+      "result": "1118971 exact table sample inspected; halted further extraction after terms review.",
+      "retry_condition": "Applicable reuse basis or alternate authorized primary source",
+      "next_action": "Retain hold; prioritize other OEM exact tables.",
+      "processed_cursor": null
+    },
+    {
+      "id": "beny_1432",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.beny.com/product-item/dcac-combiner-box-bhs-2-2b/",
+      "version_or_date": "Current URL checked2026-11-02",
+      "licence_assessment": "No source rights established; no extraction.",
+      "access_assessment": "Normal GET HTTP403; no response body or checksum retained.",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "DC/AC combiner configuration"
+      ],
+      "last_attempt": "2026-11-02T14:43:12.055622+00:00",
+      "result": "Blocked normal public download; no bypass attempted; switched to independent Suntree manual.",
+      "retry_condition": "Normal public access recovery and exact rights/configuration review",
+      "next_action": "Retry only on recovery; do not infer voltage option combinations.",
+      "processed_cursor": null
+    },
+    {
+      "id": "gem_ownership_1432",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026; fresh pinned source checksum reproduced",
+      "licence_assessment": "Retain existing GEM CC BY4.0 notice and original source exclusions. Enrich only existing unrestricted canonical locations.",
+      "access_assessment": {
+        "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+        "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+        "bytes": 16516689,
+        "retrieved_at": "2026-11-02T14:36:04.948919+00:00"
+      },
+      "estimated_useful_yield": {
+        "selected_complete_locations": 208,
+        "accepted": 208,
+        "substantive_fields": 416
+      },
+      "fields_offered": [
+        "owners",
+        "historical ownership evidence"
+      ],
+      "last_attempt": "2026-11-02T14:43:12.055622+00:00",
+      "result": "17 exact corporate mappings;208 complete locations across30 countries, all native phases identical to fresh bytes and unanimously explicit100% ownership. No current-ownership, parent-consolidation or phase-boundary claims.",
+      "retry_condition": "New corporate cohort or new source revision; preserve disagreements",
+      "next_action": "Selected17 mappings exhausted. Review next unmapped corporate cohort (e.g. Euder Energy SL, ABO Wind, Grenergy) against complete phase membership and existing owners/extensions before upsert.",
+      "processed_cursor": {
+        "ledger": "20261102T1432_ownership_review.json",
+        "complete": true
+      }
+    },
+    {
+      "id": "india_registry_followup_1432",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://mnre.gov.in/development-of-solar-parks-and-ultra-mega-solar-power-projects/",
+      "version_or_date": "Indexed status30June2023; extension September2025",
+      "licence_assessment": "No facility extract licence established; no ingestion.",
+      "access_assessment": "Official indexed text readable; direct web open had zero readable lines.",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "candidate_rows_reviewed": 0
+      },
+      "fields_offered": [
+        "solar park aggregate capacity and planning"
+      ],
+      "last_attempt": "2026-11-02T14:43:12.055622+00:00",
+      "result": "Scheme landingpage covers aggregates/parks, not unambiguous PV generating-project rows. No project accepted or capacity relabelled.",
+      "retry_condition": "Current facility-level official list with positive PV, project/park boundaries and reuse review",
+      "next_action": "Find CEA facility-level renewable generating-station inventory; compare against340 existing Indian projects before acceptance.",
+      "processed_cursor": null
+    },
+    {
+      "id": "cea_inventory_1432",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://cea.nic.in/api/dashboardReports/view-pdf/en/4bb67d95-8c2d-4f73-9063-93822f58dd54",
+      "version_or_date": "Current link serves1958-page historical inventory; summary refers to2019 installed capacities; PDF metadata20March2020, not publication date.",
+      "licence_assessment": "Current linked CEA Copyright policy – Moderate expressly requires prior permission by email before reuse. No permission sought; no facility table extraction/ingestion continued.",
+      "access_assessment": {
+        "landing": {
+          "url": "https://cea.nic.in/divisionPage/506?lang=en",
+          "sha256": "9e333ed3caccda3d166b1a6819d3da567152695b1bec56aca1bcb7e5f1af2413",
+          "bytes": 535777,
+          "retrieved_at": "2026-11-02T14:46:20.795306+00:00"
+        },
+        "policy": {
+          "url": "https://cea.nic.in/websitePolicy?lang=en",
+          "sha256": "0a1c50678f5bcc051660518947ebf0ab509a9402d37ee40df47bfe7513139816",
+          "bytes": 126685,
+          "retrieved_at": "2026-11-02T14:47:16.377196+00:00"
+        },
+        "terms": {
+          "url": "https://cea.nic.in/termsAndConditions?lang=en",
+          "sha256": "184c552a0f4bce5a361b68cff5f7d98684129a9195085d5b404118b61a6f49b5",
+          "bytes": 98475,
+          "retrieved_at": "2026-11-02T14:47:16.785809+00:00"
+        },
+        "pdf_result": "Normal GET incomplete response:412931 bytes of17273164 declared; incomplete bytes not accepted or assigned full checksum. Independent web retrieval inaccessible. Old WordPress report URL404.",
+        "pdf_retry": {
+          "url": "https://cea.nic.in/api/dashboardReports/view-pdf/en/4bb67d95-8c2d-4f73-9063-93822f58dd54",
+          "sha256": "562061f71c98016722b46b12a8456b56348042ed3deb37cd50dfd13bbb770ec6",
+          "bytes": 17273164,
+          "retrieved_at": "2026-11-02T14:49:02.763757+00:00"
+        },
+        "copyright_policy": {
+          "url": "https://cea.nic.in/api/websitepolicy/pdf/view/en/2",
+          "sha256": "6eebe2eeb17c3a2762955ef4aead29f431cc96fcbd136c3f29cd5b62b74fefee",
+          "bytes": 118988,
+          "retrieved_at": "2026-11-02T14:48:44.985868+00:00"
+        }
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "facility_candidates_reviewed": 0,
+        "planning_range": [
+          50,
+          200
+        ]
+      },
+      "fields_offered": [
+        "plant-level identities",
+        "installed renewable capacity; technology and basis unverified"
+      ],
+      "last_attempt": "2026-11-02T14:48:25.897983+00:00",
+      "result": "First response incomplete; one normal retry succeeded with full17273164 bytes and checksum. Summary/date sample and copyright policy reviewed; held on explicit prior-permission requirement. Zero facility candidates reviewed or accepted; no assumption that old Solar sections establish PV.",
+      "retry_condition": "Applicable reuse permission plus historical snapshot/positivePV/plant-phase review; do not retry ingestion solely because download is accessible.",
+      "next_action": "Rights hold; no contact sent. Use licensed MaStR metadata after reconciling separate AC task, or another permitted official inventory.",
+      "processed_cursor": null
+    }
+  ],
+  "secondary_rotation": "UTC14mod6=2 Europe; top-ten Germany checked, overlapping capacity task avoided. Global enrichment includes all six macroregions.",
+  "priority_order": "MaStR licensed exact-ID registry; exact combiner OEM tables/manual; complete-location historical ownership enrichment; source holds trigger independent alternatives."
+}
