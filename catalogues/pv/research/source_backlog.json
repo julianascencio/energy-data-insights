@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T09:06:47.547688+00:00",
+  "updated_at": "2026-11-02T10:03:19.991069+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Fresh complete GEM batch11, two exact OEM multi-model tables (SolaX and GoodWe), and 138 complete-phase corporate-owner enrichments. NEPRA national registry sample inspected before any new bulk acceptance; six similar Atlas entries deferred pending schedule/host-site reconciliation.",
-  "next_highest_value_source": "Recheck main/open PRs/source freshness, then GEM batch12 (b0–bf), 3483 previously reviewed projects. Pakistan NEPRA: reconcile SGC/165/2022 and SGC/145–149/2020 against exact licence schedules and current canonical identities; establish reuse basis first.",
+  "selection_note": "Complete GEM batch12, eight SolaX exact models, two switched MC4-Evo2 exact combiner orders, and 141 complete-phase corporate-owner enrichments. Brazil ANEEL SIGA official portal/schema/ODbL assessed; CSV and bounded public API503, zero data rows accepted.",
+  "next_highest_value_source": "Fresh source/main/PR checks, then GEM batch13(c0–cf),3439 reviewed projects. Retry ANEEL UFV sample after503 recovery and resolve ODbL handling plus CEG/GEM site-phase crosswalk.",
   "sources": [
     {
       "id": "uk_repd",
@@ -1694,6 +1694,128 @@
           "SGC/149/2020"
         ],
         "accepted": 0
+      }
+    },
+    {
+      "id": "gem_batch12_20261102T0955",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026",
+      "licence_assessment": "Existing CC BY4 attribution; restricted TZ/WKSL whole locations excluded",
+      "access_assessment": "Fresh checksum-pinned bytes, exact tables rendered",
+      "estimated_useful_yield": {
+        "accepted": 3483
+      },
+      "fields_offered": [
+        "identity",
+        "electrical/capacity",
+        "phase/lifecycle or model-specific specifications",
+        "environmental/mechanical",
+        "ownership/provenance"
+      ],
+      "last_attempt": "2026-11-02T10:03:19.991069+00:00",
+      "result": "3483 new projects;141 existing projects enriched with explicit unanimous100% corporate ownership.",
+      "retry_condition": "Fresh revision or missing-field evidence; for ANEEL service recovery and ODbL/identity reconciliation",
+      "next_action": "Fresh source/main/PR checks, then GEM batch13(c0–cf),3439 reviewed projects. Retry ANEEL UFV sample after503 recovery and resolve ODbL handling plus CEG/GEM site-phase crosswalk.",
+      "processed_cursor": {
+        "completed_batch": 12,
+        "next_batch": 13,
+        "next_reviewed_projects": 3439
+      }
+    },
+    {
+      "id": "solax_x3pro_v28_20261102T0955",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.solaxpower.com/uploads/file/solax-x3-pro-g2-datasheet-en.pdf",
+      "version_or_date": "V2.8,650.00004.00; undated",
+      "licence_assessment": "OEM copyright retained; selected factual fields only, no open bulk licence assertion or document/artwork redistribution",
+      "access_assessment": "Fresh checksum-pinned bytes, exact tables rendered",
+      "estimated_useful_yield": {
+        "accepted": 8
+      },
+      "fields_offered": [
+        "identity",
+        "electrical/capacity",
+        "phase/lifecycle or model-specific specifications",
+        "environmental/mechanical",
+        "ownership/provenance"
+      ],
+      "last_attempt": "2026-11-02T10:03:19.991069+00:00",
+      "result": "Eight models accepted; rendered merged cells control MPPT, efficiency, weight/cooling groups. AS4777.2 limits and optional future-AFCI note retained.",
+      "retry_condition": "Fresh revision or missing-field evidence; for ANEEL service recovery and ODbL/identity reconciliation",
+      "next_action": "Selected tables/orders exhausted; exact newer evidence needed to resolve voltage/future-AFCI limits without guessed values",
+      "processed_cursor": {
+        "complete_table": true,
+        "models": [
+          "X3-PRO-8K-G2",
+          "X3-PRO-10K-G2",
+          "X3-PRO-12K-G2",
+          "X3-PRO-15K-G2",
+          "X3-PRO-17K-G2",
+          "X3-PRO-20K-G2",
+          "X3-PRO-25K-G2",
+          "X3-PRO-30K-G2"
+        ]
+      }
+    },
+    {
+      "id": "weidmuller_sw_evo_20261102T0955",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://datasheet.weidmueller.com/pdf/en/2925850000/scope/2/",
+      "version_or_date": "PDF generation2026-02-28/2026-03-01",
+      "licence_assessment": "OEM copyright retained; selected factual fields only, no open bulk licence assertion or document/artwork redistribution",
+      "access_assessment": "Fresh checksum-pinned bytes, exact tables rendered",
+      "estimated_useful_yield": {
+        "accepted": 2
+      },
+      "fields_offered": [
+        "identity",
+        "electrical/capacity",
+        "phase/lifecycle or model-specific specifications",
+        "environmental/mechanical",
+        "ownership/provenance"
+      ],
+      "last_attempt": "2026-11-02T10:03:19.991069+00:00",
+      "result": "Two exact switched MC4-Evo2 configurations accepted; no automatic equivalence to prior no-switch CG products.2925860000 unqualified system voltage null:1100V cover versus1000V technical rows.2925850000 literal output wire5–10mm² retained.",
+      "retry_condition": "Fresh revision or missing-field evidence; for ANEEL service recovery and ODbL/identity reconciliation",
+      "next_action": "Selected tables/orders exhausted; exact newer evidence needed to resolve voltage/future-AFCI limits without guessed values",
+      "processed_cursor": {
+        "order_numbers": [
+          "2925850000",
+          "2925860000"
+        ],
+        "complete_selected_batch": true
+      }
+    },
+    {
+      "id": "brazil_aneel_siga_20261102T0955",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/11ec447d-698d-4ab8-977f-b424d5deee6a",
+      "version_or_date": "Portal data update2026-11-01",
+      "licence_assessment": "Official ODbL declaration; distribution obligations must be implemented before bulk reuse",
+      "access_assessment": "Normal public CSV and bounded API503; no bytes or checksum claimed",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "identity",
+        "electrical/capacity",
+        "phase/lifecycle or model-specific specifications",
+        "environmental/mechanical",
+        "ownership/provenance"
+      ],
+      "last_attempt": "2026-11-02T10:03:19.991069+00:00",
+      "result": "Official schema and ODbL declaration reviewed; zero source rows downloaded/accepted because CSV/API503.",
+      "retry_condition": "Fresh revision or missing-field evidence; for ANEEL service recovery and ODbL/identity reconciliation",
+      "next_action": "Fresh source/main/PR checks, then GEM batch13(c0–cf),3439 reviewed projects. Retry ANEEL UFV sample after503 recovery and resolve ODbL handling plus CEG/GEM site-phase crosswalk.",
+      "processed_cursor": {
+        "resource_id": "11ec447d-698d-4ab8-977f-b424d5deee6a",
+        "next_filter": "SigTipoGeracao=UFV",
+        "processed_rows": 0
       }
     }
   ]
