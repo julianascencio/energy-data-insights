@@ -1,0 +1,128 @@
+{
+  "source_id": "kstar_ci_en_v2_2026_20261102T1700",
+  "models_reviewed": 10,
+  "accepted": [
+    {
+      "model": "G30KT7",
+      "record_id": "ad519a3d-2856-5b23-aad9-e12c162afa91",
+      "pdf_page": 13,
+      "result": "accepted",
+      "populated_technical_fields": 19
+    },
+    {
+      "model": "G40KT7",
+      "record_id": "c6d72a21-4753-5be2-8ba0-992e70441caa",
+      "pdf_page": 13,
+      "result": "accepted",
+      "populated_technical_fields": 19
+    },
+    {
+      "model": "G50KT7",
+      "record_id": "bfbc3cdf-abbb-5d5b-9154-f71715bb03d6",
+      "pdf_page": 13,
+      "result": "accepted",
+      "populated_technical_fields": 19
+    },
+    {
+      "model": "KSG-30KT-M1",
+      "record_id": "bf00ee8f-e528-59a3-a791-800ebccc3718",
+      "pdf_page": 14,
+      "result": "accepted",
+      "populated_technical_fields": 21
+    },
+    {
+      "model": "KSG-40KT-M1",
+      "record_id": "5971f3df-b3b2-5ce5-86ed-589f711d20a7",
+      "pdf_page": 14,
+      "result": "accepted",
+      "populated_technical_fields": 21
+    },
+    {
+      "model": "G50KT",
+      "record_id": "e42b3f5b-a59b-5f6c-ac5d-63b7e10f20b5",
+      "pdf_page": 15,
+      "result": "accepted",
+      "populated_technical_fields": 20
+    },
+    {
+      "model": "G60KT",
+      "record_id": "a224feb7-8c55-5198-bc2a-799d4ad0b9b6",
+      "pdf_page": 15,
+      "result": "accepted",
+      "populated_technical_fields": 20
+    },
+    {
+      "model": "G80KT",
+      "record_id": "7aeb901b-5d72-53eb-8f0b-15801070a186",
+      "pdf_page": 15,
+      "result": "accepted",
+      "populated_technical_fields": 20
+    },
+    {
+      "model": "G125KT7",
+      "record_id": "7a2718c1-55d5-5c85-bc91-7366d4eb8fd7",
+      "pdf_page": 16,
+      "result": "accepted",
+      "populated_technical_fields": 21
+    },
+    {
+      "model": "G75KTL",
+      "record_id": "93f27e52-b034-51b2-8796-bedc7cf7db46",
+      "pdf_page": 17,
+      "result": "accepted",
+      "populated_technical_fields": 21
+    }
+  ],
+  "held_fields": [
+    {
+      "model": "G30KT7",
+      "field": "surge_protection",
+      "reason": "Hero claims Type II DC/AC; detailed table specifies Type III standard and Type II optional. Canonical field omitted; revision clarification required."
+    },
+    {
+      "model": "G40KT7",
+      "field": "surge_protection",
+      "reason": "Hero claims Type II DC/AC; detailed table specifies Type III standard and Type II optional. Canonical field omitted; revision clarification required."
+    },
+    {
+      "model": "G50KT7",
+      "field": "surge_protection",
+      "reason": "Hero claims Type II DC/AC; detailed table specifies Type III standard and Type II optional. Canonical field omitted; revision clarification required."
+    },
+    {
+      "model": "KSG-30KT-M1",
+      "field": "short_circuit_current_per_mppt_a",
+      "reported": 10,
+      "reason": "Table prints 10 A short-circuit current below 30 A input current. Also repeated on April2026 EN V2 sheet. No correction guessed."
+    },
+    {
+      "model": "KSG-40KT-M1",
+      "field": "short_circuit_current_per_mppt_a",
+      "reported": 10,
+      "reason": "Table prints 10 A short-circuit current below 30 A input current. Also repeated on April2026 EN V2 sheet. No correction guessed."
+    },
+    {
+      "model": "G50KT",
+      "field": "output_current_max_a",
+      "reported": 83.3,
+      "condition_as_printed": "@220V",
+      "reason": "Unresolved current/line-versus-phase voltage qualification; retain research evidence, no electrical consistency inference."
+    },
+    {
+      "model": "G60KT",
+      "field": "output_current_max_a",
+      "reported": 100,
+      "condition_as_printed": "@220V",
+      "reason": "Unresolved current/line-versus-phase voltage qualification; retain research evidence, no electrical consistency inference."
+    },
+    {
+      "model": "G80KT",
+      "field": "output_current_max_a",
+      "reported": 127.5,
+      "condition_as_printed": "@220V",
+      "reason": "Unresolved current/line-versus-phase voltage qualification; retain research evidence, no electrical consistency inference."
+    }
+  ],
+  "field_hold_count": 8,
+  "manufacturer_identity": "Reuse existing canonical CEC label, no new OEM counted; KSG and G model prefixes retained exactly, no invented variants."
+}

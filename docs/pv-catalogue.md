@@ -132,3 +132,11 @@ platforms and four platform enrichments; voltage-labelled component ranges remai
 qualified within each platform. Rebuild the catalogue for current totals.
 
 Details and exclusions: [dated research ledger](https://github.com/julianascencio/energy-data-insights/blob/research/pv-database-20261102T1601Z/catalogues/pv/research/20261102T1601_report.md).
+
+The 17:00 review enriches 257 existing French projects from the Occitanie
+1–5 MW PHOTV exact-EIC crosswalk and 176 complete GEM locations with historical
+operator evidence. It adds ten exact KSTAR inverter models from five tables in
+the 2026 C&I EN V2 brochure, retaining per-MPPT arrays, options and derating
+conditions. Eight contradictory/unclear equipment fields remain held. No new
+projects, countries or manufacturers are claimed. Current counts and field
+completeness are in the generated manifest; launch totals remain historical.
