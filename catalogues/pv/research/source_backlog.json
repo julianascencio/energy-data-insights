@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T05:09:36.343053+00:00",
+  "updated_at": "2026-11-02T06:10:15.440231+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
   "selection_note": "Processed eight complete French 1–5 MW regions (755 rows), all six Tauro ECO model pages and eleven Solis models, and full New Zealand dispatched-fleet PV subset (14 rows). Independent Brazil CCEE aggregates and KACO/Arctech enrichment access/terms assessed. No US expansion.",
-  "next_highest_value_source": "GEM recovery batch08 (70–7f), 3551 previously reviewed projects; batch07 now in PR61. SOFAR catalogue next: three-phase tables, physical pages17/19, after exact-model/CEC identity review.",
+  "next_highest_value_source": "GEM batch09 (80–8f), 3550 reviewed projects; do not duplicate batch08 in PR61. SOFAR next: physical pages23/25, 25–80kW tables, after exact-identity and revision review.",
   "sources": [
     {
       "id": "uk_repd",
@@ -1271,26 +1271,91 @@
         "interfaces",
         "OEM standards claims"
       ],
-      "last_attempt": "2026-11-02T05:09:36.343053+00:00",
-      "result": "21 exact named models accepted under new SOFARSOLAR manufacturer; no CEC/OEM-name matches in baseline",
+      "last_attempt": "2026-11-02T06:10:15.440231+00:00",
+      "result": "39 exact models accepted cumulatively:21 single-phase plus18 three-phase. Per-MPPT asymmetry, model-code versus active-power differences and efficiency bounds retained.",
       "retry_condition": "New revision or unresolved field evidence",
-      "next_action": "Review physical pages17/19 three-phase tables, checking regional suffixes and existing canonical identities before extraction",
+      "next_action": "Review physical pages23/25 (25–50KTLX-G3 and60–80KTLX-G3) after model/alias/regional suffix reconciliation.",
       "processed_cursor": {
         "completed_physical_pages": [
           9,
           11,
-          13
+          13,
+          17,
+          19,
+          21
         ],
         "completed_printed_pages": [
           "03",
           "05",
-          "07"
+          "07",
+          "11",
+          "13",
+          "15"
         ],
-        "completed_models": 21,
+        "completed_models": 39,
         "next_physical_pages": [
-          17,
-          19
+          23,
+          25
         ]
+      }
+    },
+    {
+      "id": "gem_batch08_20261102T0603",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February 2026",
+      "licence_assessment": "Existing CC BY attribution retained; restricted TZ/WKSL locations excluded",
+      "access_assessment": "Fresh checksum-pinned download and complete accepted-ID digest verified",
+      "estimated_useful_yield": {
+        "next_reviewed_partition": 3550
+      },
+      "fields_offered": [
+        "phase identities",
+        "rated capacity",
+        "location",
+        "dated lifecycle",
+        "ownership"
+      ],
+      "last_attempt": "2026-11-02T06:10:15.440231+00:00",
+      "result": "3551 batch08 projects ingested and100 existing projects enriched with explicit phase-owner evidence; zero conflicts",
+      "retry_condition": "Refresh revision/open PR/main before next export",
+      "next_action": "Select batch09 only after full accepted-ID digest passes; no duplicate publication of batch08",
+      "processed_cursor": {
+        "pr61_batches": [
+          6,
+          7,
+          8
+        ],
+        "next_batch": 9,
+        "ownership_review": "20261102T0603_ownership_review.json"
+      }
+    },
+    {
+      "id": "gave_sp_catalogue_review_20261102T0603",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.gave.com/Cat%C3%A1logos/CA029/099CA01550.04ES.pdf",
+      "version_or_date": "Filename099CA01550.04ES; publication date not established",
+      "licence_assessment": "Publisher copyright retained; no document redistribution or bulk reuse licence assumed",
+      "access_assessment": "Public multi-product catalogue downloaded; SP table inspected alongside exact product page",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exact model references",
+        "input counts",
+        "fuses",
+        "disconnectors",
+        "SPD",
+        "mechanical enclosure"
+      ],
+      "last_attempt": "2026-11-02T06:10:15.440231+00:00",
+      "result": "Prior SP091516D15 hold remains: catalogue/title/table15A versus product description20A. No new accepted Gave records; existing8-string record not duplicated.",
+      "retry_condition": "Exact revision evidence resolves conflicting description; no contacts/forms authorized",
+      "next_action": "Keep fuse conflict in review; inspect a different ungated OEM catalogue when seeking new combiners",
+      "processed_cursor": {
+        "catalogue_physical_page": 75,
+        "held_model": "SP091516D15",
+        "review": "20261102T0603_combiner_review.json"
       }
     }
   ]
