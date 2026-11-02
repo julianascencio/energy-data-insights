@@ -2659,3 +2659,283 @@ Juniper Green Energy Limited (2026). **FDRE and BESS project portfolio**. [Sourc
 **Role:** data. Primary factual evidence. Exact revision, locator, terms and checksum in source register; undated manual grouped by retrieval year.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### victron_multiplus_ii_230v_20261102
+
+Victron Energy (2026). **MultiPlus-II Inverter/Charger 230 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-inverter-charger-EN-.pdf)
+
+**Role:** data. PDF page 2, exact model column; inverter/charger/general/enclosure rows and footnotes 1–5; page 1 topology and external transfer switch qualification.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_multiplus_ii_new_230v_20261102
+
+Victron Energy (2026). **MultiPlus-II Inverter/Charger, new models, 230 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-inverter-charger-4k-4k5-6k5-10k-EN.pdf)
+
+**Role:** data. PDF page 2, four exact model columns and footnotes; page 1 ESS topology. Apparent-feed-in row prints kW, so not used as MVA.
+
+**Used by:** `catalogues/bess_oem/sources.json`, `data-retrieval/src/energy_data_retrieval/bess_oem_catalogue/victron.py`.
+
+### victron_multiplus_ii_manual_es_20261102
+
+Victron Energy (2026). **MultiPlus-II 230V: 7. Especificaciones técnicas**. [Source](https://www.victronenergy.com/media/pg/MultiPlus-II_230V/es/technical-specifications-mp-ii-230v.html)
+
+**Role:** data. Section 7, three model tables: mass, maximum efficiency, search-mode consumption and battery-charge-current rows. Column spans reviewed.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sma_sunny_island_13_ds_es_31
+
+SMA Solar Technology AG (2022). **Sunny Island 4.4M / 6.0H / 8.0H datasheet**. [Source](https://files.sma.de/downloads/SI44M-80H-13-DS-es-31.pdf)
+
+**Role:** data. PDF page 3, exact SI4.4M-13/SI6.0H-13/SI8.0H-13 columns, AC-1/AC-2/DC/general rows and footnotes 1–7.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sma_sunny_island_page_20261102
+
+SMA Solar Technology AG (2026). **Sunny Island 4.4M / 6.0H / 8.0H**. [Source](https://www.sma.de/en/products/battery-inverters/sunny-island-44m-60h-80h)
+
+**Role:** data. Product introduction: Sunny Island 4.4M version no longer produced.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### scatec_south_africa_20261102
+
+Scatec ASA (2026). **South Africa**. [Source](https://www.scatec.com/en/project/south-africa/)
+
+**Role:** data. Assets table: Kenhardt operational 225 MW/1140 MWh; Mogobe construction 103/412; Haru backlog 123/492.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_philippines_20261102
+
+Scatec ASA (2026). **Philippines**. [Source](https://www.scatec.com/en/project/philippines/)
+
+**Role:** data. Assets table: Magat operational 40 MW/40 MWh; Binga, Binga 2 and Ambuklao construction each 40/40; exclude hydro and solar rows.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_kenhardt_cod_20231211
+
+Scatec ASA (2023). **Energising tomorrow: Scatec ignites one of the world’s largest hybrid solar and battery project in South Africa**. [Source](https://www.scatec.com/en/energising-tomorrow-scatec-ignites-one-of-the-worlds-largest-hybrid-solar-and-battery-project-in-south-africa/)
+
+**Role:** data. Opening paragraphs, equity paragraph and notes to editors: three-plant aggregate, 225 MW/1140 MWh, 456 battery units, 20-year PPA and hybrid capex.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_mogobe_close_20241018
+
+Scatec ASA (2024). **Scatec reaches financial close and prepares for construction start for battery energy storage project in South Africa**. [Source](https://www.scatec.com/en/scatec-reaches-financial-close-and-prepares-for-construction-start-for-battery-energy-storage-project-in-south-africa/)
+
+**Role:** data. Opening, PPA, capex/debt, equity, service-role and Kathu-location paragraphs.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_haru_award_20250530
+
+Scatec ASA (2025). **Scatec wins battery storage project in South Africa**. [Source](https://www.scatec.com/en/scatec-wins-battery-storage-project-in-south-africa/)
+
+**Role:** data. Opening award/capacity, 15-year contract, estimated capex, intended equity and Free State paragraphs.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_philippines_close_20260203
+
+Scatec ASA (2026). **Scatec JV reaches financial close for 80 MW BESS in the Philippines and prepares for construction start**. [Source](https://www.scatec.com/en/scatec-jv-reaches-financial-close-for-80-mw-bess-in-the-philippines-and-prepares-for-construction-start/)
+
+**Role:** data. Opening three paragraphs and ownership/financing paragraph; Binga phases remain distinct.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_magat2_cod_20260515
+
+Scatec ASA (2026). **Scatec JV starts commercial operation of battery system in the Philippines**. [Source](https://www.scatec.com/en/scatec-jv-starts-commercial-operation-of-battery-system-in-the-philippines/)
+
+**Role:** data. Opening two paragraphs, 40 MWh operating total and 50/50 JV/debt paragraphs. Phase1 24 MW; phase2 16 MW.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_obelisk_close_20250615
+
+Scatec ASA (2025). **Scatec reaches financial close for the 1.1GW solar + 100MW/200MWh BESS Obelisk project**. [Source](https://www.scatec.com/en/scatec-reaches-financial-close-for-the-1-1gw-solar-100mw-200mwh-bess-obelisk-project/)
+
+**Role:** data. Financing paragraphs: whole hybrid USD590m estimated capex, USD479.1m project financing, USD120m equity bridge; sovereign PPA guarantee.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### victron_quattro_230v_20261102
+
+Victron Energy (2026). **Quattro Inverter/Charger 3kVA–15kVA 230 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-Quattro-3kVA-15kVA-EN-.pdf)
+
+**Role:** data. PDF page 2, five grouped columns containing nine exact codes; inverter, charger, enclosure and standards rows; footnotes 1–6.
+
+**Used by:** `catalogues/bess_oem/sources.json`, `data-retrieval/src/energy_data_retrieval/bess_oem_catalogue/victron.py`.
+
+### victron_multiplus_ii_120v_20261102
+
+Victron Energy (2026). **MultiPlus-II Inverter/Charger 120 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-120V-EN-.pdf)
+
+**Role:** data. PDF page 2, six exact model columns; inverter, charger, enclosure, listings and footnotes 1–7; 48/3000 dimensions use the UL1741-listed configuration.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### giga_portfolio_20261102
+
+GIGA Storage (2026). **GIGA Storage portfolio**. [Source](https://giga-storage.com/en/projects/)
+
+**Role:** data. PROJECTS cards: eight listed assets, Hippo in project navigation. Capacity summary differences retained.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_albatross_20261102
+
+GIGA Storage (2026). **GIGA Storage albatross**. [Source](https://giga-storage.com/en/projects/albatross/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_blue_marlin_20261102
+
+GIGA Storage (2026). **GIGA Storage blue marlin**. [Source](https://giga-storage.com/en/projects/blue-marlin/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_buffalo_20261102
+
+GIGA Storage (2026). **GIGA Storage buffalo**. [Source](https://giga-storage.com/en/projects/buffalo/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_giraffe_20261102
+
+GIGA Storage (2026). **GIGA Storage giraffe**. [Source](https://giga-storage.com/en/projects/giraffe/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_green_turtle_20261102
+
+GIGA Storage (2026). **GIGA Storage green turtle**. [Source](https://giga-storage.com/en/projects/green-turtle/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_hippo_nl_20261102
+
+GIGA Storage (2026). **GIGA Storage hippo nl**. [Source](https://giga-storage.com/en/projects/hippo-nl/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_leo_20261102
+
+GIGA Storage (2026). **GIGA Storage leo**. [Source](https://giga-storage.com/en/projects/leo/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_leopard_20261102
+
+GIGA Storage (2026). **GIGA Storage leopard**. [Source](https://giga-storage.com/en/projects/leopard/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_rhino_20261102
+
+GIGA Storage (2026). **GIGA Storage rhino**. [Source](https://giga-storage.com/en/projects/rhino/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_lion_nl_20261102
+
+GIGA Storage (2026). **GIGA Storage lion nl**. [Source](https://giga-storage.com/projecten/lion/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_lion_start_20261102
+
+GIGA Storage (2026). **GIGA Storage lion start**. [Source](https://giga-storage.com/eerste-paal-geslagen-voor-giga-lion-in-amsterdam/)
+
+**Role:** data. PROJECT GIGA LION; construction date, 10 MW/43 MWh, IJpolder 10 kV and contractor roles.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_albatross_close_20261102
+
+GIGA Storage (2026). **GIGA Storage albatross close**. [Source](https://giga-storage.com/en/giga-storage-bereikt-financial-close-voor-energieopslagproject-albatross-in-duitsland-en-bouwt-nu-aan-14-gw-in-drie-landen/)
+
+**Role:** data. Opening paragraphs, financing, grid agreement, CATL role and schedule; portfolio aggregate wording excluded.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_rhino_contract_20261102
+
+GIGA Storage (2026). **GIGA Storage rhino contract**. [Source](https://giga-storage.com/en/repowered-ondertekenen/)
+
+**Role:** data. Opening paragraphs: 12 MW/7.5 MWh, 2020 commissioning and prospective two-year Repowered contract.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_leopard_close_20261102
+
+GIGA Storage (2025). **GIGA Storage leopard close**. [Source](https://giga-storage.com/en/giga-storage-completes-%E2%82%AC300-million-financing-and-starts-construction-of-300mw-1200mwh-battery-storage-project-in-delfzijl/)
+
+**Role:** data. Opening paragraphs: June 2025 construction, 300 MW/1200 MWh, financing and expected H2 2027 operation.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### victron_q120_20261102
+
+Victron Energy (2026). **Datasheet Quattro 3 10kVA 120V EN **. [Source](https://www.victronenergy.com/upload/documents/Datasheet-Quattro-3-10kVA-120V-EN-.pdf)
+
+**Role:** data. Page 2, exact model column and inverter/charger/enclosure rows; footnotes. Page 1 topology.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_q277_20261102
+
+Victron Energy (2026). **Datasheet Quattro 15kVA 277V EN**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-Quattro-15kVA-277V-EN.pdf)
+
+**Role:** data. Page 2, exact model column and inverter/charger/enclosure rows; footnotes. Page 1 topology.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_qii_20261102
+
+Victron Energy (2026). **Datasheet Quattro II inverter charger EN **. [Source](https://www.victronenergy.com/upload/documents/Datasheet-Quattro-II-inverter-charger-EN-.pdf)
+
+**Role:** data. Page 2, exact model column and inverter/charger/enclosure rows; footnotes. Page 1 topology.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_m2_20261102
+
+Victron Energy (2026). **Datasheet MultiPlus II 2x120V EN **. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-2x120V-EN-.pdf)
+
+**Role:** data. Page 2, exact model column and inverter/charger/enclosure rows; footnotes. Page 1 topology.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sembcorp_stacking_20251027
+
+Sembcorp Industries (2025). **Sembcorp Unveils Landmark Clean Energy Initiatives on Jurong Island**. [Source](https://www.sembcorp.com/sg/news-and-insights/news/2025/sembcorp-unveils-landmark-clean-energy-initiatives-on-jurong-island/)
+
+**Role:** data. Scaling up Singapore’s largest utility-scale energy storage system, paragraphs1–3
+
+**Used by:** `catalogues/bess/sources.json`.
