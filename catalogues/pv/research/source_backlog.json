@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T07:06:47.194560+00:00",
+  "updated_at": "2026-11-02T08:30:37.614304+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Processed eight complete French 1–5 MW regions (755 rows), all six Tauro ECO model pages and eleven Solis models, and full New Zealand dispatched-fleet PV subset (14 rows). Independent Brazil CCEE aggregates and KACO/Arctech enrichment access/terms assessed. No US expansion.",
-  "next_highest_value_source": "GEM batch10 (90–9f),3424 reviewed projects; do not duplicate batch09 in PR61. SOFAR next physical page29 utility inverter table; IDEEMATEC wind/interface discrepancies remain review-only.",
+  "selection_note": "Run0816: complete GEM90–9f partition, ten SOFAR exact PV/hybrid models, four exact Weidmüller combiner orders,129 complete-phase corporate ownership enrichments. IndiaCEA, LONGi, GEWISS and BENY independent source access/terms/identity issues assessed; noUS expansion.",
+  "next_highest_value_source": "Recheck main/open PRs and GEM revision, then reviewed batch11 (a0–af),3561 projects. Equipment: current replacement PV Next order-number configurations, with exact datasheets and no automatic equivalence to discontinued models.",
   "sources": [
     {
       "id": "uk_repd",
@@ -183,17 +183,17 @@
       "source_url": "https://cea.nic.in/renewable-project-monitoring/?lang=en",
       "version_or_date": "Linked plant-wise PDF contains 2019-era data (MNRE reports through October/December 2019); not a 2026 inventory.",
       "licence_assessment": "CEA Copyright policy - Moderate explicitly requires prior permission by email before reproduction. No contacting people authorized; no bulk reuse permission claimed.",
-      "access_assessment": "17 MB plant PDF and official copyright policy downloaded. Website footer computes yesterday and is not report revision evidence.",
+      "access_assessment": "Web redirect to loginPage with captcha; direct HTTP404. No login or form submission. Public older November2023 PDF path HTTP404; current divisionPage506 returned502 in web retrieval.",
       "estimated_useful_yield": null,
       "fields_offered": [
         "plant-wise installed capacity",
         "state",
         "technology"
       ],
-      "last_attempt": "2026-11-01T09:46:14.172006+00:00",
-      "result": "0 accepted; sampled first eight pages show stale generic Solar data, insufficient explicit PV/current status. Bulk reuse requires permission.",
+      "last_attempt": "2026-11-02T08:30:37.614304+00:00",
+      "result": "Zeroaccepted; public plant-wise file not obtained",
       "retry_condition": "An independently open-licensed official PV inventory or documented permission already obtained by repository owner; do not email or bypass.",
-      "next_action": "Seek a state regulator/system-operator open inventory; inspect current September 2026 CEA report only under permitted reuse, distinguish totals from plant list.",
+      "next_action": "Find a permitted state SLDC or regulator inventory with explicitPV; do not treat genericSolar as PV or cached index as downloaded evidence",
       "priority": 5,
       "processed_cursor": null,
       "evidence": {
@@ -1271,10 +1271,10 @@
         "interfaces",
         "OEM standards claims"
       ],
-      "last_attempt": "2026-11-02T07:06:47.194560+00:00",
-      "result": "52 exact models accepted cumulatively:21 single-phase,18 smaller three-phase,13 25–125kW named models. Qualified ratings retained.",
+      "last_attempt": "2026-11-02T08:30:37.614304+00:00",
+      "result": "62 exact models cumulatively accepted:52 prior,3 utilityPV and7 PV-input hybrid models this run; qualified current/unit conflicts retained.",
       "retry_condition": "New revision or unresolved field evidence",
-      "next_action": "Review physical page29 utility PV table; do not ingest following storage-only PCS tables into PV catalogue.",
+      "next_action": "Selected utility/hybrid tables29/33 exhausted. Do not ingest storage-onlyPCS/battery tables. Seek another OEM/source or formal exact-model warranty evidence.",
       "processed_cursor": {
         "completed_physical_pages": [
           9,
@@ -1285,12 +1285,12 @@
           21,
           23,
           25,
-          27
+          27,
+          29,
+          33
         ],
-        "completed_models": 52,
-        "next_physical_pages": [
-          29
-        ]
+        "completed_models": 62,
+        "selected_batch_remaining": 0
       }
     },
     {
@@ -1436,6 +1436,142 @@
       "retry_condition": "Restored public exact-version download with terms verified",
       "next_action": "Revisit only when current OEM download works; do not import cached search snippets as specifications",
       "processed_cursor": null
+    },
+    {
+      "id": "gem_batch10_20261102T0816",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026",
+      "licence_assessment": "ExistingCCBY4 attribution; completeTZ/WKSL locations excluded",
+      "access_assessment": "Fresh pinned workbookSHA256 and complete reviewed-set accepted-ID digest verified",
+      "estimated_useful_yield": {
+        "next_reviewed_partition": 3561
+      },
+      "fields_offered": [
+        "identity",
+        "capacity and basis",
+        "location",
+        "dated lifecycle",
+        "ownership"
+      ],
+      "last_attempt": "2026-11-02T08:30:37.614304+00:00",
+      "result": "3424 batch10 additions;129 prior records enriched with unanimous explicit100% corporate phase ownership; no conflicts",
+      "retry_condition": "Recheck source/main/open PRs and digest before next export",
+      "next_action": "Select batch11; no repeat of90–9f",
+      "processed_cursor": {
+        "all_published_or_prepared_batches": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "next_batch": 11,
+        "ownership_review": "20261102T0816_ownership_review.json"
+      }
+    },
+    {
+      "id": "weidmuller_pvnext_20261102T0816",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://datasheet.weidmueller.com/pdf/en/2737620000/scope/2/",
+      "version_or_date": "Four exact PDFs generatedJan/Feb2026",
+      "licence_assessment": "Copyright retained; selectedfactualmetadata only, no full source/artwork redistribution or openbulklicence assertion",
+      "access_assessment": "Four exact-order publicPDFs downloaded/checksummed; technical pages rendered/visually checked",
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 4
+      },
+      "fields_offered": [
+        "electrical",
+        "MPP input/output topology",
+        "fuses",
+        "SPD conditions",
+        "mechanical",
+        "environmental",
+        "warranty claim",
+        "historical availability"
+      ],
+      "last_attempt": "2026-11-02T08:30:37.614304+00:00",
+      "result": "Four exactorders added; three discontinuation notices preserved. Four auxiliary-contact diameter field cases retained without selecting a scalar.",
+      "retry_condition": "Exactnewrevision or independently verified missingfield; no automatic successor merge",
+      "next_action": "Inspect current alternatives listed on historical sheets using their own orderingIDs and permitted datasheets",
+      "processed_cursor": {
+        "order_numbers": [
+          "2683230000",
+          "2683330000",
+          "2737620000",
+          "2683120000"
+        ],
+        "selected_batch_remaining": 0,
+        "review": "20261102T0816_combiner_review.json"
+      }
+    },
+    {
+      "id": "longi_blocked_20261102T0816",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://eu.longi.com/longi-solar-panels-datasheets/lr7-72hvd-650-660",
+      "version_or_date": "Undated live product table; older indexedPDF labelledDraft",
+      "licence_assessment": "Explicitrestrictivereuseterms; nopermission established",
+      "access_assessment": "Web table reviewed; direct403. Website terms restrict publication/copying/information-retrieval storage without permission. Three named models blocked; no extracted datasheet rows accepted. Cross-revision efficiency/fuse differences also unresolved.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exactmodel technicalmetadata (notaccepted)"
+      ],
+      "last_attempt": "2026-11-02T08:30:37.614304+00:00",
+      "result": "Zeroaccepted; see20261102T0816_source_review.json",
+      "retry_condition": "Permitted accessible exactrevision evidence",
+      "next_action": "Use a permitted exact-revision OEM source only; no permission solicitation/contact",
+      "processed_cursor": {
+        "review_file": "20261102T0816_source_review.json"
+      }
+    },
+    {
+      "id": "gewiss_blocked_20261102T0816",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.gewiss.com/ww/en/products/product.1000001.1000072.GWD9907",
+      "version_or_date": "Undatedliveproductpage",
+      "licence_assessment": "Restricted site reuse; no permission established",
+      "access_assessment": "One exact board page reviewed. Linked guide is generic40CDK enclosure, not exact board crosswalk; do not transfer IP/dimensions. Legal page personal consultation restriction; zeroaccepted.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exactmodel technicalmetadata (notaccepted)"
+      ],
+      "last_attempt": "2026-11-02T08:30:37.614304+00:00",
+      "result": "Zeroaccepted; see20261102T0816_source_review.json",
+      "retry_condition": "Permitted accessible exactrevision evidence",
+      "next_action": "Choose independently permitted OEM source; do not fabricate board configuration from generic enclosure",
+      "processed_cursor": {
+        "review_file": "20261102T0816_source_review.json"
+      }
+    },
+    {
+      "id": "beny_blocked_20261102T0816",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.beny.com/product-item/600v-1000v-dc-combiner-box-4-in-2-out-bhs-4-2/",
+      "version_or_date": "Undatedliveproductpage",
+      "licence_assessment": "Copyright retained; no open bulk licence asserted; no records accepted",
+      "access_assessment": "One dual-voltage board table reviewed; linked14MB catalogue exceeds web text limit and direct download403. 6/6 page web timeout. No attempts to bypass. Switched to four ungated exact Weidmüller datasheets.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exactmodel technicalmetadata (notaccepted)"
+      ],
+      "last_attempt": "2026-11-02T08:30:37.614304+00:00",
+      "result": "Zeroaccepted; see20261102T0816_source_review.json",
+      "retry_condition": "Permitted accessible exactrevision evidence",
+      "next_action": "Retry only public accessible exact revision download; reconcile dual-voltage model configurations and current-per-output semantics before accepting",
+      "processed_cursor": {
+        "review_file": "20261102T0816_source_review.json"
+      }
     }
   ]
 }
