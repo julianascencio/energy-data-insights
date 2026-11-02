@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
 The BESS section contains **1,707 project and plant records across
-34 countries**, supported by **202 primary sources**. It combines curated
+34 countries**, supported by **203 primary sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal

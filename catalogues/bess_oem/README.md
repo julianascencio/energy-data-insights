@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **439 records from 39 product
-suppliers, backed by 195 primary sources**: 426 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **455 records from 39 product
+suppliers, backed by 203 primary sources**: 442 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
