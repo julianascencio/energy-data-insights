@@ -22,6 +22,10 @@ or a live availability feed. Do not interpret record counts as installed capacit
    For public NEMSA mini-grid applications, `scripts/stage_bess_nemsa.py` stages
    allowlisted site/battery observations without personal contacts or unit repairs;
    an inspection request is not an operating certificate.
+   For the reviewed Victron 120 V and 2 kVA 230 V HTML manuals,
+   `scripts/stage_bess_victron_html.py` preserves exact model headers, explicit
+   merged-cell scope and separate W/VA rows. It stages facts only; compare
+   undated editions and retain conflicting auxiliary/standard observations.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.

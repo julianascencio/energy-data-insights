@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **363 records from 38 product
-suppliers, backed by 131 primary sources**: 350 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **381 records from 38 product
+suppliers, backed by 135 primary sources**: 368 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -184,3 +184,13 @@ steps; PDF and extracted text hashes are emitted with the candidate ledger.
 Previous pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
 
 Latest pass: [Irish project reconciliation and GoodWe exact models](../bess/research/2026-11-02_ireland_goodwe_report.md).
+
+## Reviewed MultiPlus HTML tables
+
+`python scripts/stage_bess_victron_html.py downloaded.html --source-url URL
+--output artifacts/victron-candidates.jsonl` stages the supported 120 V
+500–1200 VA and 230 V 2 kVA manual tables without network access. Exact model
+headers and explicit HTML column spans are required; W and VA remain separate.
+This complements the existing PDF-layout adapter in `stage_bess_victron.py`.
+Neither adapter imports records or reconciles conflicting document editions.
+See the [2 November review](../bess/research/2026-11-02_victron_nemsa_review.json).
