@@ -2643,3 +2643,19 @@ Ignitis Renewables (2026). **Mažeikiai Battery Energy Storage System non-techni
 **Role:** data. Primary factual metadata only; exact revision, locator, source terms and SHA-256 in source register.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### solax_hv_s25_s36_manual_es_v00
+
+SolaX Power Network Technology (Zhejiang) Co., Ltd. (2026). **T-BAT-SYS-HV-S25 / S36 user manual, Spanish**. [Source](https://es.solaxpower.com/uploads/file/t-bat-sys-hv-s2.53.6-user-manaul-es.pdf)
+
+**Role:** data. Primary factual evidence. Exact revision, locator, terms and checksum in source register; undated manual grouped by retrieval year.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### juniper_fdre_portfolio_20261016
+
+Juniper Green Energy Limited (2026). **FDRE and BESS project portfolio**. [Source](https://www.junipergreenenergy.com/fdre/)
+
+**Role:** data. Primary factual evidence. Exact revision, locator, terms and checksum in source register; undated manual grouped by retrieval year.
+
+**Used by:** `catalogues/bess/sources.json`.
