@@ -2363,5 +2363,173 @@
     "license": "Publisher copyright retained. Individually extracted factual specifications only; no open bulk reuse licence asserted. Full document remains outside Git.",
     "locator": "PDF pages 2 and 4, exact model column, row and footnotes",
     "access": "Public OEM download; historical revision, not proof of current regional availability."
+  },
+  "odre_1to5mw_20261102T0058": {
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%22PHOTV%22+AND+puismaxinstallee+%3E%3D1000+AND+puismaxinstallee+%3C5000&order_by=codeeicresourceobject",
+    "retrieved_at": "2026-11-02T00:58:14.020633+00:00",
+    "status": 200,
+    "sha256": "356b1140986095a083ba2c4e4144134c2632bc2ccd8aa419f971468619aa2551",
+    "bytes": 3333979,
+    "publisher": "RTE, Enedis, EDF SEI, ELD / Open Data Réseaux Énergies",
+    "title": "Registre national des installations de production et de stockage d'électricité (au 31/08/2026)",
+    "license": "Licence Ouverte / Open Licence v2.0 (Etalab, April 2017); attribution of producer and source update date required; commercial reuse allowed, no endorsement implied.",
+    "license_url": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
+    "snapshot_date": "2026-08-31",
+    "source_updated_at": "2026-10-13T19:24:24Z",
+    "version": "ODRE V1, snapshot 2026-08-31; API processed 2026-10-20T09:59:20Z",
+    "locator": "JSON object selected by codeeicresourceobject (EIC); native field names and exact EIC locator retained in extensions.odre",
+    "access": "Public PHOTV 1000 <= maximum installed kW <5000 extract; eight complete regions reviewed; all national individual PV identities screened.",
+    "related_evidence": {
+      "metadata": {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+        "status": 200,
+        "sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+        "bytes": 56139,
+        "retrieved_at": "2026-11-02T00:58:12.802128+00:00"
+      },
+      "identities": {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%22PHOTV%22+AND+nbinstallations%3D1&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee&order_by=codeeicresourceobject",
+        "status": 200,
+        "sha256": "befb954d1d5f77cf7b4cde15a322955c565de325fc9a1d147d6665d9d06cd928",
+        "bytes": 17196776,
+        "retrieved_at": "2026-11-02T00:58:21.381759+00:00"
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
+        "status": 200,
+        "sha256": "df600a2fd08b887716612ac57fffbbe10c9e678961064c72214cebb89c90cbb6",
+        "bytes": 237693,
+        "retrieved_at": "2026-11-02T00:58:19.385626+00:00"
+      }
+    },
+    "limitations": "Installation identifiers may represent plant sections. Three aggregates, unnamed/private rows, repeated names, shared >=1 MW administrative communes and phase markers are held, never fuzzy-merged. No coordinates, owner, plant AC/DC split or current operating claim inferred. Metadata/glossary disagree on implantation geography and produced-energy self-consumption definition; raw values remain qualified and unresolved."
+  },
+  "tauro-50-d_20261102T0058": {
+    "url": "https://www.fronius.com/es-es/spain/energia-solar/instaladores-y-socios/datos-tecnicos/todos-los-productos/inversor/fronius-tauro-eco/tauro-eco-50-3-d",
+    "status": 200,
+    "sha256": "4de8e3ca4ff6ccd7512b2054415be1cfaff188de25b732939e9134ba1e43f1f9",
+    "bytes": 323720,
+    "retrieved_at": "2026-11-02T00:58:19.577607+00:00",
+    "publisher": "Fronius International GmbH / Fronius Spain",
+    "title": "Tauro ECO 50-3-D technical specifications",
+    "version": "Undated live model page retrieved 2026-11-02; no revision number stated",
+    "license": "Publisher copyright retained. Selected factual technical metadata; no open bulk licence asserted. Raw page outside Git.",
+    "locator": "Exact model heading; technical table row labels and footnotes",
+    "access": "Public OEM model page; referenced footnotes missing on 99 models; affected fields withheld."
+  },
+  "tauro-50-p_20261102T0058": {
+    "url": "https://www.fronius.com/es-es/spain/energia-solar/instaladores-y-socios/datos-tecnicos/todos-los-productos/inversor/fronius-tauro-eco/tauro-eco-50-3-p",
+    "status": 200,
+    "sha256": "b2ec7dd54796dac8724114499313057ac0f82eab35f5675a1791718a8be35eff",
+    "bytes": 318865,
+    "retrieved_at": "2026-11-02T00:58:19.489078+00:00",
+    "publisher": "Fronius International GmbH / Fronius Spain",
+    "title": "Tauro ECO 50-3-P technical specifications",
+    "version": "Undated live model page retrieved 2026-11-02; no revision number stated",
+    "license": "Publisher copyright retained. Selected factual technical metadata; no open bulk licence asserted. Raw page outside Git.",
+    "locator": "Exact model heading; technical table row labels and footnotes",
+    "access": "Public OEM model page; referenced footnotes missing on 99 models; affected fields withheld."
+  },
+  "tauro-99-d_20261102T0058": {
+    "url": "https://www.fronius.com/es-es/spain/energia-solar/instaladores-y-socios/datos-tecnicos/todos-los-productos/inversor/fronius-tauro-eco/tauro-eco-99-3-d",
+    "status": 200,
+    "sha256": "edc080ad2f409a349d9c3b1e2eb11c90776e34d77cd4eb6fb89b94a3f6d44833",
+    "bytes": 232179,
+    "retrieved_at": "2026-11-02T00:58:22.148883+00:00",
+    "publisher": "Fronius International GmbH / Fronius Spain",
+    "title": "Tauro ECO 99-3-D technical specifications",
+    "version": "Undated live model page retrieved 2026-11-02; no revision number stated",
+    "license": "Publisher copyright retained. Selected factual technical metadata; no open bulk licence asserted. Raw page outside Git.",
+    "locator": "Exact model heading; technical table row labels and footnotes",
+    "access": "Public OEM model page; referenced footnotes missing on 99 models; affected fields withheld."
+  },
+  "tauro-99-p_20261102T0058": {
+    "url": "https://www.fronius.com/es-es/spain/energia-solar/instaladores-y-socios/datos-tecnicos/todos-los-productos/inversor/fronius-tauro-eco/tauro-eco-99-3-p",
+    "status": 200,
+    "sha256": "bc295b8856fa48d6d93aa3d60594a38eaf97a624e5ed4d766131e2547cc84196",
+    "bytes": 225434,
+    "retrieved_at": "2026-11-02T00:58:23.030014+00:00",
+    "publisher": "Fronius International GmbH / Fronius Spain",
+    "title": "Tauro ECO 99-3-P technical specifications",
+    "version": "Undated live model page retrieved 2026-11-02; no revision number stated",
+    "license": "Publisher copyright retained. Selected factual technical metadata; no open bulk licence asserted. Raw page outside Git.",
+    "locator": "Exact model heading; technical table row labels and footnotes",
+    "access": "Public OEM model page; referenced footnotes missing on 99 models; affected fields withheld."
+  },
+  "tauro-100-d_20261102T0058": {
+    "url": "https://www.fronius.com/es-es/spain/energia-solar/instaladores-y-socios/datos-tecnicos/todos-los-productos/inversor/fronius-tauro-eco/tauro-eco-100-3-d",
+    "status": 200,
+    "sha256": "50a2334b77933816f3947b521a6d735614ae0818368350fc28ba6c3a5967172c",
+    "bytes": 325855,
+    "retrieved_at": "2026-11-02T00:58:22.640439+00:00",
+    "publisher": "Fronius International GmbH / Fronius Spain",
+    "title": "Tauro ECO 100-3-D technical specifications",
+    "version": "Undated live model page retrieved 2026-11-02; no revision number stated",
+    "license": "Publisher copyright retained. Selected factual technical metadata; no open bulk licence asserted. Raw page outside Git.",
+    "locator": "Exact model heading; technical table row labels and footnotes",
+    "access": "Public OEM model page; referenced footnotes missing on 99 models; affected fields withheld."
+  },
+  "tauro-100-p_20261102T0058": {
+    "url": "https://www.fronius.com/es-es/spain/energia-solar/instaladores-y-socios/datos-tecnicos/todos-los-productos/inversor/fronius-tauro-eco/tauro-eco-100-3-p",
+    "status": 200,
+    "sha256": "4837002ac7af4a203d6ad3bc12951e119e2055ba440e16a50ccce98d463413d3",
+    "bytes": 317231,
+    "retrieved_at": "2026-11-02T00:58:22.654820+00:00",
+    "publisher": "Fronius International GmbH / Fronius Spain",
+    "title": "Tauro ECO 100-3-P technical specifications",
+    "version": "Undated live model page retrieved 2026-11-02; no revision number stated",
+    "license": "Publisher copyright retained. Selected factual technical metadata; no open bulk licence asserted. Raw page outside Git.",
+    "locator": "Exact model heading; technical table row labels and footnotes",
+    "access": "Public OEM model page; referenced footnotes missing on 99 models; affected fields withheld."
+  },
+  "solis_s5_gr3p_es_v20_20261102T0058": {
+    "url": "https://www.solisinverters.com/uploads/file/S5-GR3P%283-20%29K-ES-Flyer-V2%2C0.pdf",
+    "status": 200,
+    "sha256": "35c2c57952508ca3e70d5b62f6f1cff7a1b3df5a3718dd7556ecd990afda1e64",
+    "bytes": 305616,
+    "retrieved_at": "2026-11-02T01:05:03.644506+00:00",
+    "publisher": "Ginlong Technologies Co., Ltd. / Solis",
+    "title": "S5-GR3P(3-20)K Spanish datasheet",
+    "version": "ES-Flyer V2.0; publication date not stated",
+    "locator": "PDF page 1 exact model identifiers; page 2 technical table, exact model column and merged cells",
+    "license": "Publisher retains copyright; selected factual specifications only, not document redistribution or open-licence assertion.",
+    "access": "Public OEM PDF linked by Spanish product page; no form or registration",
+    "related_evidence": {
+      "url": "https://www.solisinverters.com/es/solarinverter5/3_20k_s5_es",
+      "sha256": "73f07e5ce0b270555943e76e0935c5e4c92feb984f2ec1bdb93b4e0018e53baa",
+      "bytes": 247926,
+      "status": 200,
+      "retrieved_at": "2026-11-02T01:04:54.580901+00:00"
+    }
+  },
+  "nz_emi_fleet_20260702_20261102T0058": {
+    "url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing/20260702_DispatchedGenerationPlant.csv",
+    "status": 200,
+    "sha256": "0a1d0c2b64755bb6e87cfbcbacde6119a7df3e4e3d323eaaaa71ab874c3654ba",
+    "bytes": 23991,
+    "retrieved_at": "2026-11-02T01:08:46.809398+00:00",
+    "publisher": "New Zealand Electricity Authority",
+    "title": "Existing dispatched generation plant, 20260702_DispatchedGenerationPlant.csv",
+    "version": "2026-07-02 file; effective-dated attributes, not real-time operating census",
+    "license": "CC BY 4.0, Electricity Authority on behalf of the Crown. Selected, normalized factual fields; attribution and modification notice in licenses/NZ-EA-NOTICE.md.",
+    "license_url": "https://www.ea.govt.nz/copyright-disclaimer-transparency/",
+    "locator": "CSV header plus PlantName/PointOfConnectionCode/UnitCode, row numbers recorded in dated review; 1-based including header",
+    "access": "Public direct CSV; best endeavours, periodically updated; no third-party exclusions marked in file",
+    "related_evidence": {
+      "nz-catalogue": {
+        "url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing",
+        "status": 200,
+        "sha256": "79be332c15f8788c7ba28f4b8af0b2ded2219fc1c3dbaeeac58214f6e3e4aebb",
+        "bytes": 20615,
+        "retrieved_at": "2026-11-02T01:10:57.639541+00:00"
+      },
+      "nz-licence": {
+        "url": "https://www.ea.govt.nz/copyright-disclaimer-transparency/",
+        "status": 200,
+        "sha256": "11accf7b3b77d183aaa3c0babfd27b6aa6475b6973a120c6585aa0d11202bfa5",
+        "bytes": 200742,
+        "retrieved_at": "2026-11-02T01:10:58.903959+00:00"
+      }
+    }
   }
 }
