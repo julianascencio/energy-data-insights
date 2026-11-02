@@ -203,3 +203,33 @@ The source registry and retained notices travel with exports. OEM documents are
 linked, not redistributed. No logos, product photographs or complete datasheets
 are copied. GEM's TZ-tagged CC BY-NC records and ODbL databases are not silently
 relicensed into this catalogue.
+
+## GEM global project batches
+
+The February 2026 GEM source is imported in 16 independent UUID-prefix batches.
+Each batch changes a disjoint set of canonical project shards, allowing independent
+review and merge. Counts are in `research/20261102_gem_summary.json`; they describe
+the prepared 16-batch union, not a claim that every batch is already merged.
+Rebuild the catalogue to count the records actually present in a checkout.
+
+The offline adapter groups native phase rows by **GEM location ID**. All native
+phase attributes survive in `phases_json`, including external IDs, ownership,
+research dates, lifecycle status, coordinate precision and storage/hydrogen flags.
+Source-reported anticipated start years never become actual commissioning dates.
+US projects require an EIA crosswalk and are held. Mixed/non-explicit PV, restricted
+source lineage, ambiguous names and matches within 2 km of existing projects are
+held without automatic merges. These conservative screens can exclude distinct
+neighboring plants and cannot guarantee that every remaining cross-source duplicate
+has been detected. Kosovo uses the explicitly user-assigned code XKX.
+
+```bash
+uv run python scripts/stage_pv_gem.py \
+  --input /path/to/Global-Solar-Power-Tracker-February-2026.xlsx \
+  --review catalogues/pv/research/20261102_gem_review.json \
+  --output /tmp/reproduced-gem.jsonl
+```
+
+The checksum and accepted-identity digest must match. Updated source bytes or new
+non-GEM catalogue identities require fresh review. The staging command emits the
+complete reviewed batch; apply only the intended UUID-prefix partition. All source
+terms and transformations are recorded in `licenses/GEM-CC-BY-4.0-NOTICE.md`.
