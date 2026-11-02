@@ -3,6 +3,32 @@ export const display = (value) => value == null ? "Unknown" :
   typeof value === "object" ? JSON.stringify(value) : String(value);
 export const numeric = (value) => typeof value === "number" && Number.isFinite(value);
 
+// Never coerce null/blank coordinates to zero or substitute country centroids.
+export function hasLocation(row) {
+  return numeric(row.latitude) && numeric(row.longitude) &&
+    Math.abs(row.latitude) <= 90 && Math.abs(row.longitude) <= 180;
+}
+
+export function projectSummary(rows) {
+  const ac = statistics(rows, "capacity_ac_mw"), dc = statistics(rows, "capacity_dc_mw");
+  return {ac, dc, located: rows.filter(hasLocation).length,
+    countries: new Set(rows.map((row) => row.country_code).filter((code) =>
+      typeof code === "string" && code.trim())).size};
+}
+
+// Group projected screen points, so every located project contributes without
+// creating tens of thousands of DOM markers. Recomputed at each zoom level.
+export function clusterLocations(points, cellSize = 40) {
+  const cells = new Map();
+  for (const {x, y, row} of points) {
+    const key = `${Math.floor(x / cellSize)},${Math.floor(y / cellSize)}`;
+    if (!cells.has(key)) cells.set(key, {x: 0, y: 0, rows: []});
+    const cell = cells.get(key); cell.x += x; cell.y += y; cell.rows.push(row);
+  }
+  return [...cells.values()].map((cell) => ({...cell,
+    x: cell.x / cell.rows.length, y: cell.y / cell.rows.length}));
+}
+
 export function filterRows(rows, {search = "", field = "", equals = "", metric = "", min = "", max = "", missing = "all"} = {}) {
   const query = search.trim().toLocaleLowerCase();
   return rows.filter((row) => {

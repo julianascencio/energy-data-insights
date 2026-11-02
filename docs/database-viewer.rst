@@ -9,37 +9,50 @@ from the downloadable Parquet file; no external service or API key is required.
 
 .. raw:: html
 
+   <link rel="stylesheet" href="_static/vendor/leaflet/leaflet.css">
    <link rel="stylesheet" href="_static/database-viewer.css">
    <div id="pv-database" data-base="datasets/pv/">
      <p id="db-status" role="status" aria-live="polite">Loading database catalogue…</p>
      <button id="db-retry" type="button" hidden>Retry loading</button>
      <noscript>Enable JavaScript to use the viewer. Parquet downloads and runnable Python examples are linked below.</noscript>
      <div id="db-workspace" hidden>
-       <div class="db-heading"><span class="db-eyebrow">ASVA · PV DATA EXPLORER</span><p id="db-version"></p></div>
-       <div class="db-controls">
+       <div class="db-heading"><div><span class="db-eyebrow">ASVA / ENERGY DATA INSIGHTS</span><h2 id="db-title">PV project intelligence</h2><p>Explore the global catalogue. Follow the evidence.</p></div><span class="db-snapshot-badge">Published snapshot</span></div>
+       <div id="db-stats" class="db-stats" aria-label="Filtered catalogue statistics" aria-live="polite"></div>
+       <p class="db-muted db-capacity-note">Totals follow all active filters, across every page. AC and DC are separate reported values. Unknown capacity is excluded; project phases and mixed operating statuses may overlap.</p>
+       <div class="db-controls db-primary-controls">
          <label>Table<select id="db-table"></select></label>
-         <label class="db-wide">Search all metadata<input id="db-search" type="search" placeholder="Manufacturer, model, country, source…"></label>
+         <label class="db-wide">Search all metadata<input id="db-search" type="search" placeholder="Search projects, countries, owners, sources…"></label>
+         <button id="db-reset" type="button">Reset filters</button>
+       </div>
+       <details class="db-panel db-filter-panel"><summary>Refine results <span>Category, capacity range &amp; data availability</span></summary><div class="db-controls">
          <label>Filter column<select id="db-filter-field"></select></label>
          <label>Exact value<select id="db-filter-value"></select></label>
          <label>Numeric field<select id="db-metric"></select></label>
          <label>Minimum<input id="db-min" type="number" step="any" placeholder="No minimum"></label>
          <label>Maximum<input id="db-max" type="number" step="any" placeholder="No maximum"></label>
          <label>Numeric availability<select id="db-missing"><option value="all">All records</option><option value="known">Reported only</option><option value="missing">Unknown only</option></select></label>
-       </div>
-       <div class="db-actions"><button id="db-reset" type="button">Reset filters</button><button id="db-export" type="button">Export filtered CSV</button><a id="db-parquet" href="datasets/pv/modules.parquet" download>Download full Parquet</a><a href="datasets/pv/manifest.json">Snapshot manifest</a><a href="datasets/pv/sources.json">Source registry</a><a href="datasets/pv/schema.json">Schema</a></div>
-       <p id="db-provenance" class="db-muted"></p>
-       <div id="db-stats" class="db-stats" aria-live="polite"></div>
-       <p class="db-muted">Counts describe this catalogue, not market share. Unknown values are excluded from numeric statistics. AC, DC and unspecified capacity are separate fields. Sums include reported values only; they do not resolve phase overlap or mixed operating status.</p>
-       <details class="db-panel"><summary>Choose visible columns and inspect the schema</summary><p>All schema columns are available, including fields with no reported values. Click a column heading to sort.</p><div class="db-actions"><button id="db-default-columns" type="button">Default columns</button><button id="db-all-columns" type="button">All columns</button></div><div id="db-columns" class="db-columns"></div></details>
-       <section class="db-panel" aria-labelledby="db-chart-title">
+       </div><p id="db-metric-summary" class="db-muted"></p></details>
+       <div id="db-visuals" class="db-visuals">
+       <section id="db-map-panel" class="db-panel db-map-panel" aria-labelledby="db-map-title" hidden>
+         <div class="db-panel-heading"><div><span class="db-eyebrow">GEOGRAPHIC COVERAGE</span><h2 id="db-map-title">Project locations</h2></div><button id="db-map-fit" type="button">Fit locations</button></div>
+         <p id="db-map-caption" class="db-muted" aria-live="polite"></p>
+         <div id="db-map" role="region" aria-label="Interactive project map. Use arrow keys to pan, plus and minus to zoom, or tab to project markers."></div>
+         <p class="db-muted db-map-note"><span class="db-map-legend"></span> Reported locations · Numbered markers group nearby projects. Overview boundaries; location accuracy is shown in project details. The map does not filter the table.</p>
+       </section>
+       <section class="db-panel db-chart-panel" aria-labelledby="db-chart-title">
+         <span class="db-eyebrow">CATALOGUE BREAKDOWN</span>
          <h2 id="db-chart-title">Compare groups</h2>
          <div class="db-controls"><label>Group by<select id="db-group"></select></label><label>Measure<select id="db-aggregation"><option value="count">Record count</option><option value="mean">Mean of numeric field</option><option value="sum">Sum of reported values</option></select></label></div>
          <p id="db-chart-caption"></p><div id="db-chart"></div>
        </section>
-       <section class="db-panel" aria-label="Filtered records">
+       </div>
+       <section class="db-panel db-records-panel" aria-label="Filtered records">
+         <div class="db-panel-heading"><h2>Explore records</h2><div class="db-actions"><button id="db-export" type="button">Export filtered CSV</button><a id="db-parquet" href="datasets/pv/modules.parquet" download>Full Parquet ↗</a></div></div>
+         <details class="db-column-panel"><summary>Visible columns &amp; schema</summary><p>All schema columns are available, including fields with no reported values. Click a column heading to sort.</p><div class="db-actions"><button id="db-default-columns" type="button">Default columns</button><button id="db-all-columns" type="button">All columns</button></div><div id="db-columns" class="db-columns"></div></details>
          <div class="db-actions"><button id="db-prev" type="button">Previous</button><span id="db-page" aria-live="polite"></span><button id="db-next" type="button">Next</button><label>Rows per page <select id="db-page-size"><option>25</option><option>50</option><option>100</option></select></label></div>
          <div class="db-table-wrap" tabindex="0" role="region" aria-label="Scrollable results"><table id="db-results"><caption>Filtered records — select Details for all fields and source evidence</caption><thead></thead><tbody></tbody></table></div>
        </section>
+       <details class="db-panel db-snapshot-panel"><summary>Snapshot &amp; provenance</summary><p id="db-version"></p><p id="db-provenance" class="db-muted"></p><div class="db-actions"><a href="datasets/pv/manifest.json">Snapshot manifest</a><a href="datasets/pv/sources.json">Source registry</a><a href="datasets/pv/schema.json">Schema</a></div><p class="db-muted">Counts describe this catalogue, not market share. Unknown values are excluded from numeric statistics. AC, DC and unspecified capacity remain separate.</p></details>
        <dialog id="db-detail" aria-labelledby="db-detail-title"><div class="db-actions"><h2 id="db-detail-title">Record details</h2><button id="db-close" type="button">Close</button><button id="db-export-record" type="button">Download record JSON</button></div><div id="db-detail-content"></div></dialog>
      </div>
    </div>
@@ -47,6 +60,26 @@ from the downloadable Parquet file; no external service or API key is required.
 
 Reproduce and extend
 --------------------
+
+The projects dashboard shows the sum of reported ``capacity_ac_mw`` for **all
+matching rows**, independently of the selected numeric field and table page.
+DC capacity is summed separately; neither DC nor unspecified capacity is used
+to fill missing AC. All-unknown capacity displays **Unknown**, while a reported
+zero remains zero. These are catalogue totals, not deduplicated operating fleet
+estimates: use the status filter and inspect project phases before analysis.
+
+The map uses only finite latitude/longitude pairs within geographic bounds;
+missing or invalid locations remain in the table and capacity totals. Markers
+group nearby projects at the current zoom, and each group provides paginated
+access to every project, including projects at identical coordinates. Search
+and filters update the map and KPIs together; map panning and table pagination
+do not change the totals. Equipment tables do not show a project map.
+
+Map navigation uses bundled Leaflet 1.9.4 and the repository's existing
+public-domain Natural Earth 5.1.1 country outlines (1:110m). No external tiles,
+geocoding, CDN requests or API keys are required. Boundaries are an overview;
+they do not establish site-level accuracy. The original source's
+``location_accuracy`` remains visible in each project's details.
 
 The :doc:`Database gallery <auto_examples/database/index>` contains runnable
 examples for database inventory, field completeness, country coverage, separate
