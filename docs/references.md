@@ -3163,3 +3163,83 @@ Wärtsilä (2026). **Zenobē reference portfolio**. [Source](https://www.wartsil
 **Role:** data. Primary factual evidence; source documents retained outside Git.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### lynx_20261102
+
+GoodWe (2023). **Lynx C Series datasheet**. [Source](https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_Lynx%20C%20Series_Datasheet-EN.pdf)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### btc_20261102
+
+GoodWe (2024). **BTC Series datasheet**. [Source](https://en.goodwe.com/Skippower/downloadFileF?id=683&mid=60)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### etc_20261102
+
+GoodWe (2026). **ETC Series EMEA datasheet**. [Source](https://emea.goodwe.com/Skippower/downloadFileF?id=847&mid=60)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### statkraft_20261102
+
+Statkraft (n.d.). **Grid Services and Batteries**. [Source](https://www.statkraft.ie/what-we-do/Grid-Services-and-Batteries/)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### kelwin_20261102
+
+Statkraft (2021). **Statkraft completes second Irish energy storage project**. [Source](https://www.statkraft.com/newsroom/news-and-stories/2021/statkraft-completes-second-irish-energy-storage-project/)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cushaling_20261102
+
+Statkraft (2026). **Statkraft officially opens Ireland’s first 4-hour duration BESS at Cushaling**. [Source](https://www.statkraft.ie/news/2026/statkraft-officially-opens-irelands-first-4hour-duration-battery-energy-storage-system-at-cushaling-co.-offaly)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### statkraft_kilathmoy_20261102
+
+Statkraft (2020). **Statkraft unveils Ireland’s first battery project**. [Source](https://www.statkraft.com/newsroom/news-and-stories/2020/statkraft-unveils-irelands-first-battery-project/)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### statkraft_response_20261102
+
+Statkraft (2021). **Statkraft batteries step up to stabilise the grid when needed the most**. [Source](https://www.statkraft.co.uk/newsroom/2021/statkraft-batteries-step-up-to-stabilise-the-grid-when-needed-the-most/)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### powercomm_20261102
+
+Powercomm Group (n.d.). **Cushaling BESS**. [Source](https://www.powercomm.ie/projects/cushaling-bess)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### kirby_20261102
+
+Kirby Group (n.d.). **Poolbeg BESS, Ireland**. [Source](https://www.kirbygroup.com/project/poolbeg-bess-ireland/)
+
+**Role:** data. Primary source; exact technical and rights qualifications are recorded in the corresponding catalogue source entry.
+
+**Used by:** `catalogues/bess/sources.json`.

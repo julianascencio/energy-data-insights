@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,322 project and plant records across
-32 countries**, supported by **153 primary sources**. It combines curated
+The BESS section contains **1,325 project and plant records across
+32 countries**, supported by **160 primary sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian and Chilean inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -168,4 +168,6 @@ Previous pass: [Regional Victron specifications and Singapore reconciliation](re
 
 Previous pass: [Asian projects, Deye and Hubble equipment](../bess/research/2026-11-02_asia_deye_hubble_report.md).
 
-Latest pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
+Previous pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
+
+Latest pass: [Irish project reconciliation and GoodWe exact models](../bess/research/2026-11-02_ireland_goodwe_report.md).

@@ -1,0 +1,183 @@
+[
+  {
+    "rank": 1,
+    "url": "https://www.energystorageireland.com/wp-content/uploads/2025/06/ESI_Pipeline_Survey_Results_2025_For_Publication.pdf",
+    "country_or_entity": "Ireland / Energy Storage Ireland",
+    "version": "2025 pipeline survey",
+    "assessed_at": "2026-11-02T10:00:48.376503+00:00",
+    "access_licence_assessment": "Official industry association PDF discovered; licensing, technology detail and revision freshness not yet assessed.",
+    "estimated_useful_yield": {
+      "range": [
+        10,
+        30
+      ],
+      "confidence": "Planning estimate only; contents not yet reviewed"
+    },
+    "offered_fields": [
+      "Project identities",
+      "Pipeline status",
+      "Power"
+    ],
+    "attempt_result": "Discovery only; not used for facts or records.",
+    "processed_partition": "None",
+    "retry_condition": "Accessible current revision with clear permissible reuse",
+    "next_action": "Inspect terms and representative table before any extraction; reconcile all five current Irish canonical records, Kylemore/Inchicore and phase boundaries."
+  },
+  {
+    "rank": 2,
+    "url": "https://www.statkraft.co.uk/newsroom/2021/statkraft-batteries-step-up-to-stabilise-the-grid-when-needed-the-most/",
+    "country_or_entity": "Ireland / Kelwin-2",
+    "version": "2021-05-04 displayed",
+    "assessed_at": "2026-11-02T10:00:48.376503+00:00",
+    "access_licence_assessment": "Referenced factual publication only; no stored page or bulk reuse.",
+    "estimated_useful_yield": 1,
+    "offered_fields": [
+      "Rated MW",
+      "Grid response",
+      "Operation date"
+    ],
+    "attempt_result": "26.6 MW rated conflicts with 26 MW announcement; canonical MW null.",
+    "processed_partition": "Entire event report reviewed",
+    "retry_condition": "Explicit technical rating basis/commissioning schedule",
+    "next_action": "Find a primary as-built rating and distinguish grid export, PCS nominal and battery DC power."
+  },
+  {
+    "rank": 3,
+    "url": "https://esb.ie/what-we-do/generation-and-trading/battery-storage",
+    "country_or_entity": "Ireland / ESB portfolio",
+    "version": "Undated current page",
+    "assessed_at": "2026-11-02T10:00:48.376503+00:00",
+    "access_licence_assessment": "Copyright policy prohibits public/commercial reuse without express authorization; no bulk extraction.",
+    "estimated_useful_yield": 2,
+    "offered_fields": [
+      "Names",
+      "MW",
+      "Operation year"
+    ],
+    "attempt_result": "Four named site sections reviewed: Aghada/Poolbeg existing; Kylemore/South Wall held. Poolbeg enriched independently from Kirby.",
+    "processed_partition": "All four site headings; aggregate five-battery/five-site wording not turned into extra rows",
+    "retry_condition": "Independent primary project delivery evidence or clear reuse authorization",
+    "next_action": "Resolve Kylemore/Inchicore identity and verify South Wall delivered energy/status with EPC/integrator evidence."
+  },
+  {
+    "rank": 4,
+    "url": "https://www.eirgrid.ie/sites/default/files/publications/EirGrid-DS3-System-Services-Regulated-Arrangements-Awarded-Contracts-Gate-13.pdf",
+    "country_or_entity": "Ireland / EirGrid DS3",
+    "version": "Gate 13, June 2025",
+    "assessed_at": "2026-11-02T10:00:48.376503+00:00",
+    "access_licence_assessment": "Public PDF, restrictive disclaimer, no bulk-reuse licence; no technology classification.",
+    "estimated_useful_yield": {
+      "bess_yield": null,
+      "mixed_rows": 23
+    },
+    "offered_fields": [
+      "Providing unit code",
+      "Counterparty",
+      "Contract service categories"
+    ],
+    "attempt_result": "Read sample and 23-unit list; no rows admitted. Contract volumes do not establish installed power/energy or operation.",
+    "processed_partition": "Gate 13; future-dated Gate 14/15 notices not treated as completed events",
+    "retry_condition": "Accessible source with permitted reuse plus explicit battery classification",
+    "next_action": "Use independent project sources; do not auto-import mixed DS3 units.",
+    "sha256": "396df6d610352d48dd15a2cf5de27099cbc0da3d19aabd7dc287a8571d373eba",
+    "retrieval_method": "Direct PDF download; bytes retained outside Git for review only."
+  },
+  {
+    "rank": 5,
+    "url": "https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_Lynx%20C%20Series_Datasheet-EN.pdf",
+    "country_or_entity": "GoodWe lynx",
+    "version": "20230711-EN-V2.1",
+    "assessed_at": "2026-11-02T10:00:48.376503+00:00",
+    "access_licence_assessment": "Copyright retained; bounded factual review; original-byte download 403, no open bulk licence claimed.",
+    "estimated_useful_yield": 0,
+    "offered_fields": [
+      "Exact electrical ratings",
+      "Voltage/current",
+      "Operating limits",
+      "Dimensions",
+      "Controls"
+    ],
+    "attempt_result": "All 4 exact model columns accepted; source bytes unavailable locally.",
+    "processed_partition": "Entire page 2 technical table",
+    "retry_condition": "New explicit revision, accessible original bytes, or unambiguous dimension table",
+    "next_action": "Obtain original OEM bytes without bypass; verify Lynx C height column spans. Do not re-add existing variants."
+  },
+  {
+    "rank": 6,
+    "url": "https://en.goodwe.com/Skippower/downloadFileF?id=683&mid=60",
+    "country_or_entity": "GoodWe btc",
+    "version": "20241122-EN-V2.1",
+    "assessed_at": "2026-11-02T10:00:48.376503+00:00",
+    "access_licence_assessment": "Copyright retained; bounded factual review; original-byte download 403, no open bulk licence claimed.",
+    "estimated_useful_yield": 0,
+    "offered_fields": [
+      "Exact electrical ratings",
+      "Voltage/current",
+      "Operating limits",
+      "Dimensions",
+      "Controls"
+    ],
+    "attempt_result": "All 4 exact model columns accepted; source bytes unavailable locally.",
+    "processed_partition": "Entire page 2 technical table",
+    "retry_condition": "New explicit revision, accessible original bytes, or unambiguous dimension table",
+    "next_action": "Obtain original OEM bytes without bypass; verify Lynx C height column spans. Do not re-add existing variants."
+  },
+  {
+    "rank": 6,
+    "url": "https://emea.goodwe.com/Skippower/downloadFileF?id=847&mid=60",
+    "country_or_entity": "GoodWe etc",
+    "version": "20260115-EN-EMEA-V1.1",
+    "assessed_at": "2026-11-02T10:00:48.376503+00:00",
+    "access_licence_assessment": "Copyright retained; bounded factual review; original-byte download 403, no open bulk licence claimed.",
+    "estimated_useful_yield": 0,
+    "offered_fields": [
+      "Exact electrical ratings",
+      "Voltage/current",
+      "Operating limits",
+      "Dimensions",
+      "Controls"
+    ],
+    "attempt_result": "All 2 exact model columns accepted; source bytes unavailable locally.",
+    "processed_partition": "Entire page 2 technical table",
+    "retry_condition": "New explicit revision, accessible original bytes, or unambiguous dimension table",
+    "next_action": "Obtain original OEM bytes without bypass; verify Lynx C height column spans. Do not re-add existing variants."
+  },
+  {
+    "rank": 7,
+    "url": "https://www.statkraft.ie/what-we-do/Grid-Services-and-Batteries/",
+    "country_or_entity": "Ireland / Statkraft",
+    "version": "Undated live portfolio",
+    "assessed_at": "2026-11-02T10:00:48.376503+00:00",
+    "access_licence_assessment": "Publication source-reference clause; no bulk licence; downloaded pages removed per storage restriction.",
+    "estimated_useful_yield": 0,
+    "offered_fields": [
+      "MW/MWh",
+      "Chemistry",
+      "Hybrid relationship",
+      "Operations"
+    ],
+    "attempt_result": "All three named batteries reconciled and accepted; two synchronous compensators rejected from BESS scope.",
+    "processed_partition": "Three BESS and two synchronous-compensator headings",
+    "retry_condition": "Substantive source change or primary as-built schedule",
+    "next_action": "Recheck Kilathmoy replacement/expansion through council primary records; retain original scope until lifecycle change is evidenced."
+  },
+  {
+    "rank": 8,
+    "url": "https://blog.fluenceenergy.com/esb-fluence-complete-deal-largest-energy-storage-portfolio-europe",
+    "country_or_entity": "Ireland / Fluence contracted ESB portfolio",
+    "version": "2021-09-30",
+    "assessed_at": "2026-11-02T10:04:49.554708+00:00",
+    "access_licence_assessment": "Public supplier press release; footer copyright retained; no open bulk licence asserted.",
+    "sha256": "5e83cdc8aa086888a095161a51fdfd958255411e6291a54dc4ff7b38644c0c62",
+    "estimated_useful_yield": 2,
+    "offered_fields": [
+      "Contracted project power and energy",
+      "Integrator",
+      "Planned duration"
+    ],
+    "attempt_result": "Reviewed as alternative to ESB portfolio. Historical contract cannot establish operating status or final as-built capacity; no source registration or canonical additions from this page.",
+    "processed_partition": "Four named sites in press release",
+    "retry_condition": "Independent completion evidence and Kylemore/Inchicore identity reconciliation",
+    "next_action": "Reconcile delivered South Wall and Inchicore/Kylemore scopes; preserve planned versus operational distinction."
+  }
+]

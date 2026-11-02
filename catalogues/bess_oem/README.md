@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **305 records from 37 product
-suppliers, backed by 111 primary sources**: 292 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **315 records from 37 product
+suppliers, backed by 114 primary sources**: 302 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -181,4 +181,6 @@ It does not stage the separately restricted BOS-G manual, infer variants, or acc
 records automatically. Source rights, document version and identity remain review
 steps; PDF and extracted text hashes are emitted with the candidate ledger.
 
-Latest pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
+Previous pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
+
+Latest pass: [Irish project reconciliation and GoodWe exact models](../bess/research/2026-11-02_ireland_goodwe_report.md).
