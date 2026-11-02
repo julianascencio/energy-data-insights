@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **381 records from 38 product
-suppliers, backed by 135 primary sources**: 368 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **413 records from 39 product
+suppliers, backed by 169 primary sources**: 400 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -183,7 +183,7 @@ steps; PDF and extracted text hashes are emitted with the candidate ledger.
 
 Previous pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
 
-Latest pass: [Irish project reconciliation and GoodWe exact models](../bess/research/2026-11-02_ireland_goodwe_report.md).
+Previous pass: [Irish project reconciliation and GoodWe exact models](../bess/research/2026-11-02_ireland_goodwe_report.md).
 
 ## Reviewed MultiPlus HTML tables
 
@@ -194,3 +194,19 @@ headers and explicit HTML column spans are required; W and VA remain separate.
 This complements the existing PDF-layout adapter in `stage_bess_victron.py`.
 Neither adapter imports records or reconciles conflicting document editions.
 See the [2 November review](../bess/research/2026-11-02_victron_nemsa_review.json).
+
+## Rolls flooded model staging
+
+The [ODRÉ/Rolls/Lithops review](../bess/research/2026-11-02_odre_rolls.md)
+adds 16 independently named stationary monobloc models. Rated Ah varies by
+specified discharge rate and is not battery energy or individual-cell capacity.
+
+```bash
+uv run python scripts/stage_bess_rolls.py artifacts/research-inputs/rolls_s6-l16-ex.html --source-url https://rollsbattery.com/battery/s6-l16-ex/ --model 'S6 L16-EX' --output artifacts/rolls-review.json
+```
+
+This offline parser requires the exact model identity and preserves revision,
+units and test conditions. Reconcile candidates against canonical records before
+using the existing upsert API; inspect charging-unit anomalies explicitly.
+
+Latest iteration: [second French partition and Rolls components](../bess/research/2026-11-02_odre_partition2.md), including Bellac enrichment and the next reviewed-source queue.

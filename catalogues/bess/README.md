@@ -1,8 +1,8 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,352 project and plant records across
-34 countries**, supported by **188 primary sources**. It combines curated
-commercial projects with reviewed U.S., UK, Australian and Chilean inventory subsets, not an
+The BESS section contains **1,550 project and plant records across
+34 countries**, supported by **197 primary sources**. It combines curated
+commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
 storage. Exact equipment is maintained separately in the [BESS OEM catalogue](../bess_oem/README.md).
@@ -91,7 +91,7 @@ tested adapters and a reviewed exclusion ledger. Both need ongoing review. Numer
 Conflicts are retained in `conflicts_json` with both source observations and a
 `needs_review` flag. The catalogue preserves conflicting Coya/Tamaya/Salisbury power ratings,
 Jurong Island energy ratings and Edwards & Sanborn registry-scope differences. It does not select a universal engineering
-rating from a marketing announcement. See [latest research notes](research/2026-11-01_india_fox_freedom_report.md) and the
+rating from a marketing announcement. See [latest research notes](research/2026-11-02_odre_rolls.md) and the
 [original launch audit](research/launch_report.md).
 
 ## Contribution contract
@@ -170,7 +170,7 @@ Previous pass: [Asian projects, Deye and Hubble equipment](../bess/research/2026
 
 Previous pass: [Hubble high-voltage configurations and Zenobē enrichment](../bess/research/2026-11-02_hubble_hv_zenobe_report.md).
 
-Latest pass: [Irish project reconciliation and GoodWe exact models](../bess/research/2026-11-02_ireland_goodwe_report.md).
+Previous pass: [Irish project reconciliation and GoodWe exact models](../bess/research/2026-11-02_ireland_goodwe_report.md).
 
 ## NEMSA application staging
 
@@ -191,3 +191,20 @@ before using the established upsert API. A second inspection application is not
 a second asset. Public accessibility is not a bulk-reuse licence; inspect source
 terms before retrieval. See the [NEMSA/Freedom Won review](research/2026-11-02_nemsa_freedom_report.md)
 for accepted records, conflicts and the next source partition.
+
+## French registry staging
+
+The [ODRÉ/Rolls/Lithops review](research/2026-11-02_odre_rolls.md) records
+113 accepted French installations, one Namibian enrichment and 16 exact models.
+Consult its EIC ledger and ranked backlog before continuing a partition. Only
+individual, explicitly battery-only rows are eligible; multiple same-commune
+EICs, confidential names and hybrid scope require additional review.
+
+```bash
+uv run python scripts/stage_bess_odre.py artifacts/research-inputs/odre_battery_ge1mw_0.json --snapshot-date 2026-08-31 --output artifacts/odre-review.json
+```
+
+This offline command stages observations; it does not accept candidates or merge
+identities. Download bytes separately after checking current terms and revision.
+
+Latest iteration: [second French partition and Rolls components](research/2026-11-02_odre_partition2.md), including Bellac enrichment and the next reviewed-source queue.

@@ -1,8 +1,8 @@
 Global BESS OEM product database
 ================================
 
-Explore 381 product configurations and families from 38 suppliers, backed by
-135 primary sources. Filter manufacturer, chemistry, architecture and source status;
+Explore 413 product configurations and families from 39 suppliers, backed by
+169 primary sources. Filter manufacturer, chemistry, architecture and source status;
 compare qualified specifications, inspect per-field evidence and export CSV.
 
 Return to the :doc:`BESS projects <bess-database-viewer>`,

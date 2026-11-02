@@ -26,6 +26,15 @@ or a live availability feed. Do not interpret record counts as installed capacit
    `scripts/stage_bess_victron_html.py` preserves exact model headers, explicit
    merged-cell scope and separate W/VA rows. It stages facts only; compare
    undated editions and retain conflicting auxiliary/standard observations.
+   For the ODRÉ French register, use `scripts/stage_bess_odre.py` on downloaded
+   API JSON with the explicit reporting date. Exclude aggregates, confidential
+   names and inconsistent battery classifications; review multiple EICs at one
+   location before treating them as distinct projects or phases. Tiny reported
+   kWh values are quarantined, never silently rescaled. Preserve industrial-service
+   dates separately from contractual COD and annual energy separately from storage.
+   For Rolls flooded model pages, `scripts/stage_bess_rolls.py` stages exact named
+   HTML tables, rate-dependent monobloc Ah and charge limits. No inferred MWh,
+   cell-capacity substitution or charging-unit repairs; review source revisions.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
