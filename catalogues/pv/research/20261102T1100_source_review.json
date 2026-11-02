@@ -1,0 +1,213 @@
+{
+  "checked_at": "2026-11-02T11:15:44.851789+00:00",
+  "source_selection": {
+    "metric": "Expected verified yield, useful field coverage, rights clarity, extraction effort, and existing coverage",
+    "ranking_file": "20261101T0856_top10_markets.json",
+    "secondary_region": "Oceania; UTC start hour11 modulo6=5",
+    "ranked_batch": [
+      "GEM reviewed partition13:3439 projects with pinned bytes/identity digest",
+      "Fox current13-model technical tables after Solplanet rights hold and SAJ/Hypon access failures",
+      "193 complete-location corporate owner enrichments",
+      "New Zealand official fleet:14 explicit PV rows, same bytes as prior processed snapshot",
+      "India CEA primary multi-plant reports:promising unprocessed top-ten-market source, access failed"
+    ]
+  },
+  "solplanet": {
+    "product_url": "https://solplanet.net/products/asw-3-20k-lt-g2-pro-series-three-phase-inverters",
+    "legal_url": "https://solplanet.net/solplanet-legal-disclaimer",
+    "legal_locator": "Legal disclaimer paragraph immediately after company registration details",
+    "rights_result": "Personal-information-only scope plus copying/processing permission language; conservative public catalogue hold. No contact or permission request made.",
+    "source_metadata": {
+      "solplanet_small": {
+        "url": "https://solplanet.net/wp-content/uploads/2022/05/Datasheet-ASW-3-10K-LT-G2-Pro-Series_Global-EN_0924_web-1.pdf",
+        "retrieved_at": "2026-11-02T11:04:52.100971+00:00",
+        "sha256": "0d55f4f7368f1a472745c7eeb0ccc3268f65bb16fff2732eb86fd89fc6bb85b9",
+        "bytes": 183369
+      },
+      "solplanet_large": {
+        "url": "https://solplanet.net/wp-content/uploads/2022/05/Datasheet-ASW-ASW-12-20K-LT-G2-Pro-Series-Global-EN_0924_web-2.pdf",
+        "retrieved_at": "2026-11-02T11:04:52.140986+00:00",
+        "sha256": "ed8a1d41cfd70e9c54c274af092abee6d1777521847676e46579a4bf7294a38c",
+        "bytes": 193843
+      }
+    },
+    "candidate_models": [
+      "ASW3K-LT-G2 Pro",
+      "ASW4K-LT-G2 Pro",
+      "ASW5K-LT-G2 Pro",
+      "ASW6K-LT-G2 Pro",
+      "ASW8K-LT-G2 Pro",
+      "ASW10K-LT-G2 Pro",
+      "ASW12K-LT-G2 Pro",
+      "ASW13K-LT-G2 Pro",
+      "ASW15K-LT-G2 Pro",
+      "ASW17K-LT-G2 Pro",
+      "ASW20K-LT-G2 Pro"
+    ],
+    "accepted": 0,
+    "held_candidates": 11,
+    "quality_review": "Product page32A per string narrative versus20A benefit; exact tables contain model/MPPT-dependent currents. No scalar transplanted from page or one regional/revision into another.",
+    "retry_condition": "Explicit reusable source-specific terms or other authorized evidence for these exact models"
+  },
+  "fox": {
+    "download_page": "https://www.fox-ess.com/download/datasheets-4",
+    "page_sha256": "ab4f45b7f187ac1ff63c89fce0632b6f8e65216e49990f6bec61bcce43106780",
+    "privacy_url": "https://www.fox-ess.com/privacy",
+    "privacy_metadata": {
+      "url": "https://www.fox-ess.com/privacy",
+      "sha256": "07231306ede216258527a59e0756c77c4db35aa7bd45f23ba4b627b505273163",
+      "bytes": 108284,
+      "retrieved_at": "2026-11-02T11:08:20.425588+00:00"
+    },
+    "accepted_models": 13,
+    "accepted_batches": [
+      {
+        "source": {
+          "url": "https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENFG2DatasheetV2.020260703.pdf",
+          "sha256": "382b12d52017eabbee18a904f39251b6767030f034d5fe11e4e9919d87c5a919",
+          "bytes": 155129,
+          "retrieved_at": "2026-11-02T11:08:21.013810+00:00"
+        },
+        "release": "V2.0,2026-07-03",
+        "models": [
+          "F3000-G2",
+          "F3600-G2",
+          "F4600-G2",
+          "F5000-G2",
+          "F5300-G2",
+          "F6000-G2"
+        ]
+      },
+      {
+        "source": {
+          "url": "https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENSG3DatasheetV1.420260703.pdf",
+          "retrieved_at": "2026-11-02T11:08:58.190696+00:00",
+          "sha256": "cb57cae6d0c42ec06ba1187f82d4ee952692e455a45882c96898d9e5b3ab2ee9",
+          "bytes": 154640
+        },
+        "release": "V1.4,2026-07-03",
+        "models": [
+          "S700-G3",
+          "S1000-G3",
+          "S1500-G3",
+          "S2000-G3",
+          "S2500-G3",
+          "S3000-G3",
+          "S3300-G3"
+        ]
+      }
+    ],
+    "rights_assessment": "Selected technical facts from two ungated current OEM sheets; no open bulk licence assertion. No source PDF, artwork, prose or manual redistributed. Footer privacy page does not grant reuse. Separate older manual restriction not treated as permission.",
+    "older_s_g2_manual": {
+      "source": {
+        "url": "https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/EN-S%20Series%20%28G2%29-Manual-V1.3.pdf",
+        "retrieved_at": "2026-11-02T11:07:56.230114+00:00",
+        "sha256": "6575dc59d03000824e66067a4e98a020440158a720208be35bd956695487844b",
+        "bytes": 2789783
+      },
+      "release": "V1.3,10-500-10048-03",
+      "candidate_model_names_identified": 9,
+      "decision": "Not used for accepted fields; explicit manual copying/reproduction restriction and different hardware generation. Use current S-G3 sheet only."
+    },
+    "field_holds": [
+      {
+        "models": [
+          "F3000-G2",
+          "F3600-G2",
+          "F4600-G2",
+          "F5000-G2",
+          "F5300-G2",
+          "F6000-G2"
+        ],
+        "field": "pac_rated_w",
+        "decision": "null: table gives rated apparent VA, not active W. No conversion from VA/model name/cover kW."
+      },
+      {
+        "models": [
+          "S700-G3",
+          "S1000-G3",
+          "S1500-G3",
+          "S2000-G3",
+          "S2500-G3",
+          "S3000-G3",
+          "S3300-G3"
+        ],
+        "field": "AC Output Overvoltage Protection",
+        "as_reported": "III (AC), II (PV)",
+        "decision": "Literal label/value retained in extensions; no inferred protection boolean or category correction."
+      }
+    ],
+    "literal_review": "S3300-G3 max recommended DC5400W retained, not changed to4500/4950 by ratio/older model. F6000 max apparent6000VA, S3300 max apparent4000VA retained. F TypeII SPD standard; S TypeII SPD optional. Optional switches/AFCI/modules not asserted installed. Current scope remains as-reported, not inferred perMPPT."
+  },
+  "nz": {
+    "publisher": "New Zealand Electricity Authority",
+    "catalogue_url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-fleet/existing/",
+    "metadata": {
+      "url": "https://emidatasets.blob.core.windows.net/publicdata/Datasets/Wholesale/Generation/GenerationFleet/Existing/20260702_DispatchedGenerationPlant.csv",
+      "sha256": "0a1d0c2b64755bb6e87cfbcbacde6119a7df3e4e3d323eaaaa71ab874c3654ba",
+      "bytes": 23991,
+      "retrieved_at": "2026-11-02T11:05:22.821571+00:00"
+    },
+    "licence_url": "https://www.ea.govt.nz/copyright-disclaimer-transparency/",
+    "licence": "CC BY4.0 Crown, attribution/modification notice already present",
+    "native_rows": 157,
+    "positive_pv_rows": 14,
+    "revision": "2026-07-02",
+    "result": "Hash equals registered prior snapshot. Eight previously accepted/crosswalked rows; six prior identity-review cases remain. No repeated observation updates, duplicate plants or new timestamp churn.",
+    "held_identity_names": [
+      "Omeheu Solar Farm",
+      "Papareireiā",
+      "Pukenui Solar Farm",
+      "Rangitaiki Solar Farm",
+      "Te Puna Mauri ō Omaru at Ruawai",
+      "Twin Rivers Solar Farm"
+    ],
+    "next_action": "Resolve six host-site/renamed GEM identities with owner/registry crosswalk; no fuzzy merges, POC shared across plants is not identity."
+  },
+  "access_failures": [
+    {
+      "publisher": "SAJ",
+      "url": "https://www.saj-electric.com/services-support-download?product_model=R6_Series&product_type=On-grid+Inverter&type=Datasheet",
+      "result": "CatalogueHTML downloaded; three current table PDF normal GETs403; Spanish PDF403. No bytes/checksum for failedPDFs, no new/enriched accepted SAJ fields.",
+      "pdf_urls": [
+        "https://www.saj-electric.com/hubfs/Asia/Asia%20English/Document/R6-(15-25K)%20-T2-32_Datasheet_en_Vietnam.pdf",
+        "https://www.saj-electric.com/hubfs/Asia/Asia%20English/Document/R6-(25-50K)%20-(T2-T3)-32%20_Datesheet_en_Vietnam.pdf",
+        "https://www.saj-electric.com/hubfs/Europe%20Region%204%20document/Datasheet/Residential/R6-(8-25K)-T2-datasheet-EN-BEU.pdf",
+        "https://www.saj-electric.com/hubfs/Spain%20Datasheet/R6-%283-15K%29-T2-datasheet-ES.pdf"
+      ],
+      "next_action": "Normal public-download recovery; exact regional/revision review, especially AFCI differences, before changing populated Spain records. Do not create duplicate regional variants merely to increase count."
+    },
+    {
+      "publisher": "Hypontech",
+      "url": "https://www.hypontech.com/upload/file/2025/03/18/ccb1ae80-519e-412d-8ecf-6255e448c3e7.pdf",
+      "additional_urls": [
+        "https://www.hypontech.com/product/details_485_109.html",
+        "https://www.hypontech.com/"
+      ],
+      "result": "All three normal GETs503; no raw bytes/hash/accepted models. Search indexed newer PRO and older model tables are not interchangeable.",
+      "next_action": "Retry after recovery, verify terms and current exact-model catalogue before batch extraction."
+    },
+    {
+      "publisher": "Nextracker / Nextpower",
+      "url": "https://info.nextracker.com/hubfs/2024%20Datasheets/nxt_NX_Horizon_Datasheet_090723.pdf",
+      "result": "Normal exact baseline revision URL404; current HailPro page redirects to nextpower.com. No stale cached table transposed into current model.",
+      "next_action": "Find current ungated exact revision and review brand/variant identities; enrich existing NX Horizon where consistent."
+    },
+    {
+      "publisher": "ARRAY Technologies",
+      "url": "https://arraytechinc.com/resource/array-duratrack-d2s-data-sheet/",
+      "additional_urls": [
+        "https://arraytechinc.com/resource/array-duratrack-data-sheet/",
+        "https://arraytechinc.com/products/duratrack/"
+      ],
+      "result": "DirectGET403; normal web pages reviewed. DuraTrack product download points toshare.hsforms.com; resource download anchors self-reference/forms. No form submitted or hidden download path probed. No sparse configurable family row accepted.",
+      "next_action": "Use publicly released exact configuration sheet if ungated; do not turn optional marketing gains into technical ratings."
+    },
+    {
+      "publisher": "Central Electricity Authority,India",
+      "url": "https://www.cea.nic.in/divisionPage/506?lang=en",
+      "result": "NormalGET503; web fetch timedout, updates listing502. Search discovery identifies multi-plant renewable generation tables and Sep2026 under-construction report, but sourcebytes/technology/rights unverified. Zero rows accepted or counted as plant candidates.",
+      "next_action": "Retry official listing after recovery, inspect specific report revision/terms/PV labels and ID/phase columns, then reconcile India GEM inventory before import."
+    }
+  ]
+}

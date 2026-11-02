@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-11-02T10:03:19.991069+00:00",
+  "aneel": {
+    "publisher": "Agência Nacional de Energia Elétrica",
+    "catalogue_url": "https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/11ec447d-698d-4ab8-977f-b424d5deee6a",
+    "download_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/11ec447d-698d-4ab8-977f-b424d5deee6a/download/siga-empreendimentos-geracao.csv",
+    "api_url": "https://dadosabertos.aneel.gov.br/api/3/action/datastore_search",
+    "revision": "Portal says data/metadata updated2026-11-01",
+    "licence": "Open Data Commons Open Database License (ODbL), declared by official portal",
+    "access_result": "Both public CSV and bounded public CKAN API request returned HTTP503. No source bytes obtained, checksum null. Transient service error; no bypass.",
+    "source_checksum": null,
+    "rows_reviewed": 0,
+    "accepted": 0,
+    "columns_reviewed": [
+      "CodCEG",
+      "IdeNucleoCEG",
+      "SigTipoGeracao",
+      "DscFaseUsina",
+      "MdaPotenciaOutorgadaKw",
+      "MdaPotenciaFiscalizadaKw",
+      "DatEntradaOperacao",
+      "NumCoordNEmpreendimento",
+      "NumCoordEEmpreendimento"
+    ],
+    "next_action": "Retry after service recovery, inspect explicit UFV sample and dictionary, establish ODbL attribution/share-alike distribution handling, reconcile CEG/plant phases against GEM before acceptance. Do not assume kW basis or current operation from licence stage.",
+    "licence_text_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "licence_sections_reviewed": [
+      "4.2",
+      "4.4",
+      "4.5",
+      "4.6"
+    ]
+  },
+  "equipment": "See equipment_review.json: one voltage case; rendered SolaX MPPT grouping supersedes cached search text; no automatic successor merge."
+}
