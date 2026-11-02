@@ -120,3 +120,15 @@ individual-PV identity export is still mandatory, including names below the sele
 capacity band. Neither capacity selection nor a reviewed ID overrides aggregate,
 phase, privacy, existing-identity or shared-commune holds. See the reviewed
 `catalogues/pv/research/20261102T0000_odre_review.json` 5–10 MW batch.
+
+## Dated enrichment review: 2 November 2026
+
+The 16:01 review fills missing grid and industrial-service-date fields for 155
+existing French projects using unique EIC identifiers in the 31 August 2026 ODRE
+snapshot. It also promotes explicitly reported historical operators for 236
+complete GEM locations. Neither operation adds project identities or claims live
+operating status. Twelve Suntree component tables support two additional named
+platforms and four platform enrichments; voltage-labelled component ranges remain
+qualified within each platform. Rebuild the catalogue for current totals.
+
+Details and exclusions: [dated research ledger](https://github.com/julianascencio/energy-data-insights/blob/research/pv-database-20261102T1601Z/catalogues/pv/research/20261102T1601_report.md).
