@@ -1,0 +1,37 @@
+{
+  "held_model_cases": [
+    {
+      "model": "Horizon L:TEC 1P",
+      "held_fields": [
+        "wind_design_speed_m_s"
+      ],
+      "source_id": "ltec1p_20261102T0655",
+      "reason": "1P table gives111m/s,400km/h,228mph with inconsistent unit equivalents; webpage previously75m/s,conditions/revision unresolved",
+      "additional_hold": null
+    },
+    {
+      "model": "Horizon L:TEC 2P",
+      "held_fields": [
+        "wind_design_speed_m_s"
+      ],
+      "source_id": "ltec2p_20261102T0655",
+      "reason": "2P page1 table up to57m/s 3s gust at10m; page2 flat-stow claim up to72m/s lacks equivalent conditions",
+      "additional_hold": "2P wired-interface label US wired is retained literally, not normalized to a protocol"
+    }
+  ],
+  "solargik_blockers": [
+    {
+      "url": "https://www.solargik.com/wp-content/uploads/2025/10/Solargik_VersaTrack_SpecSheet_Ver3.pdf",
+      "result": "HTTP404 direct and web fetch"
+    },
+    {
+      "url": "https://solargik.com/wp-content/uploads/2025/10/Solargik_VersaTrack_SpecSheet_Ver3.pdf",
+      "result": "HTTP404 direct"
+    },
+    {
+      "url": "https://solargik.com/versatrack-spec-sheet",
+      "result": "Current product-page download link HTTP404"
+    }
+  ],
+  "result": "No Solargik record accepted; switched to current linked IDEEMATEC primary datasheets. No forms or contacts."
+}
