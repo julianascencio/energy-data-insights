@@ -2763,3 +2763,139 @@ Scatec ASA (2025). **Scatec reaches financial close for the 1.1GW solar + 100MW/
 **Role:** data. Financing paragraphs: whole hybrid USD590m estimated capex, USD479.1m project financing, USD120m equity bridge; sovereign PPA guarantee.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### victron_quattro_230v_20261102
+
+Victron Energy (2026). **Quattro Inverter/Charger 3kVA–15kVA 230 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-Quattro-3kVA-15kVA-EN-.pdf)
+
+**Role:** data. PDF page 2, five grouped columns containing nine exact codes; inverter, charger, enclosure and standards rows; footnotes 1–6.
+
+**Used by:** `catalogues/bess_oem/sources.json`, `data-retrieval/src/energy_data_retrieval/bess_oem_catalogue/victron.py`.
+
+### victron_multiplus_ii_120v_20261102
+
+Victron Energy (2026). **MultiPlus-II Inverter/Charger 120 V**. [Source](https://www.victronenergy.com/upload/documents/Datasheet-MultiPlus-II-120V-EN-.pdf)
+
+**Role:** data. PDF page 2, six exact model columns; inverter, charger, enclosure, listings and footnotes 1–7; 48/3000 dimensions use the UL1741-listed configuration.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### giga_portfolio_20261102
+
+GIGA Storage (2026). **GIGA Storage portfolio**. [Source](https://giga-storage.com/en/projects/)
+
+**Role:** data. PROJECTS cards: eight listed assets, Hippo in project navigation. Capacity summary differences retained.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_albatross_20261102
+
+GIGA Storage (2026). **GIGA Storage albatross**. [Source](https://giga-storage.com/en/projects/albatross/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_blue_marlin_20261102
+
+GIGA Storage (2026). **GIGA Storage blue marlin**. [Source](https://giga-storage.com/en/projects/blue-marlin/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_buffalo_20261102
+
+GIGA Storage (2026). **GIGA Storage buffalo**. [Source](https://giga-storage.com/en/projects/buffalo/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_giraffe_20261102
+
+GIGA Storage (2026). **GIGA Storage giraffe**. [Source](https://giga-storage.com/en/projects/giraffe/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_green_turtle_20261102
+
+GIGA Storage (2026). **GIGA Storage green turtle**. [Source](https://giga-storage.com/en/projects/green-turtle/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_hippo_nl_20261102
+
+GIGA Storage (2026). **GIGA Storage hippo nl**. [Source](https://giga-storage.com/en/projects/hippo-nl/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_leo_20261102
+
+GIGA Storage (2026). **GIGA Storage leo**. [Source](https://giga-storage.com/en/projects/leo/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_leopard_20261102
+
+GIGA Storage (2026). **GIGA Storage leopard**. [Source](https://giga-storage.com/en/projects/leopard/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_rhino_20261102
+
+GIGA Storage (2026). **GIGA Storage rhino**. [Source](https://giga-storage.com/en/projects/rhino/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_lion_nl_20261102
+
+GIGA Storage (2026). **GIGA Storage lion nl**. [Source](https://giga-storage.com/projecten/lion/)
+
+**Role:** data. Project introduction, technical table, site description, partners and planning sections; see record extensions for exact sub-section.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_lion_start_20261102
+
+GIGA Storage (2026). **GIGA Storage lion start**. [Source](https://giga-storage.com/eerste-paal-geslagen-voor-giga-lion-in-amsterdam/)
+
+**Role:** data. PROJECT GIGA LION; construction date, 10 MW/43 MWh, IJpolder 10 kV and contractor roles.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_albatross_close_20261102
+
+GIGA Storage (2026). **GIGA Storage albatross close**. [Source](https://giga-storage.com/en/giga-storage-bereikt-financial-close-voor-energieopslagproject-albatross-in-duitsland-en-bouwt-nu-aan-14-gw-in-drie-landen/)
+
+**Role:** data. Opening paragraphs, financing, grid agreement, CATL role and schedule; portfolio aggregate wording excluded.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_rhino_contract_20261102
+
+GIGA Storage (2026). **GIGA Storage rhino contract**. [Source](https://giga-storage.com/en/repowered-ondertekenen/)
+
+**Role:** data. Opening paragraphs: 12 MW/7.5 MWh, 2020 commissioning and prospective two-year Repowered contract.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### giga_leopard_close_20261102
+
+GIGA Storage (2025). **GIGA Storage leopard close**. [Source](https://giga-storage.com/en/giga-storage-completes-%E2%82%AC300-million-financing-and-starts-construction-of-300mw-1200mwh-battery-storage-project-in-delfzijl/)
+
+**Role:** data. Opening paragraphs: June 2025 construction, 300 MW/1200 MWh, financing and expected H2 2027 operation.
+
+**Used by:** `catalogues/bess/sources.json`.

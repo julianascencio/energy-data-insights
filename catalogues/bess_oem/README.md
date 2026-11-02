@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **255 records from 35 product
-suppliers, backed by 91 primary sources**: 242 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **270 records from 35 product
+suppliers, backed by 93 primary sources**: 257 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -120,7 +120,7 @@ existing `upsert_records` API. The newer 2026 family sheet differs from the manu
 it must not silently replace the older exact-configuration columns. Components
 S51100 and SBDU100 are separate product levels, not additional complete systems.
 
-Latest pass: [Victron/SMA equipment and Scatec projects](../bess/research/2026-11-02_victron_scatec_report.md), including field conflicts and the next source queue.
+Previous pass: [Victron/SMA equipment and Scatec projects](../bess/research/2026-11-02_victron_scatec_report.md), including field conflicts and the next source queue.
 
 ## Offline Victron staging
 
@@ -142,3 +142,18 @@ DC voltage from model names. Other specifications, shared cells, source terms,
 revisions, identities and conflicts still require review before the normal upsert.
 The separate standard-model and SMA tables were manually reviewed, not parsed by
 this adapter. No source PDF is bundled.
+
+Latest pass: [GIGA portfolio and Quattro/MultiPlus-II models](../bess/research/2026-11-02_giga_quattro_report.md), including capacity conflicts and exact electrical variants.
+
+For the nine exact Quattro 230 V codes printed in five grouped columns:
+
+```bash
+pdftotext -layout /outside-git/quattro.pdf /outside-git/quattro.txt
+uv run python scripts/stage_bess_victron.py --layout quattro-230v \
+  --document /outside-git/quattro.pdf --text /outside-git/quattro.txt \
+  --output artifacts/quattro-candidates.json
+```
+
+This adapter checks model grouping and column order, separates W from VA, and
+retains individual charger currents. It rejects changed units, incomplete groups
+and unsupported regional voltage tables. It stages candidates for review only.
