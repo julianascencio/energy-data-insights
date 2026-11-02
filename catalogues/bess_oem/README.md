@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **184 records from 32 product
-suppliers, backed by 80 primary sources**: 171 documented configurations and 13
+The 2 November 2026 expanded research snapshot contains **204 records from 32 product
+suppliers, backed by 83 primary sources**: 191 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, and non-lithium storage technologies. This is a
 researched starting inventory, not a complete list of suppliers or market-share ranking.
@@ -95,4 +95,26 @@ isolated PR. Never overwrite another writer's branch or remove retained records.
 Source terms apply separately from the repository's software license. Only factual
 metadata and attribution are stored; no OEM datasheets, images or logos are bundled.
 
-Latest iteration: [India, Fox ESS and Freedom Won research](../bess/research/2026-11-01_india_fox_freedom_report.md), including the candidate ledger, source access decisions and dated market-priority metric.
+Latest iteration: [Dyness, Nordic and Baltic research](../bess/research/2026-11-02_dyness_baltic_report.md), with model-level reconciliation, source backlog and current coverage.
+
+## Offline STACK100 table staging
+
+The source-specific adapter supports only the reviewed Dyness manual with printed
+revision V2 (2025-03-07). It stages the thirteen explicitly named strings, preserves
+rounded printed energy and voltage limits, and rejects missing/duplicate columns,
+changed units or an unreviewed revision. It does not generate configurations from
+a family range or import records automatically.
+
+```bash
+pdftotext -layout /outside-git/stack100-manual.pdf /outside-git/stack100-manual.txt
+uv run python scripts/stage_bess_dyness.py \
+  --document /outside-git/stack100-manual.pdf \
+  --text /outside-git/stack100-manual.txt \
+  --output artifacts/stack100-candidates.json
+```
+
+The output includes PDF/text SHA-256 fingerprints and printed page/model locators.
+Review source terms, identities and all additional specifications before using the
+existing `upsert_records` API. The newer 2026 family sheet differs from the manual;
+it must not silently replace the older exact-configuration columns. Components
+S51100 and SBDU100 are separate product levels, not additional complete systems.
