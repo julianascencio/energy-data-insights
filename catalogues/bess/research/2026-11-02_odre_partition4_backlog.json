@@ -1,0 +1,91 @@
+[
+  {
+    "priority": 1,
+    "url": "https://www.eskom.co.za/distribution/battery-energy-storage-system/",
+    "country": "ZAF",
+    "entity": "Eskom BESS portfolio",
+    "version": "Undated portfolio, fresh discovery 2026-11-02",
+    "access_license": "Public discovery; inspect terms and annual-report date before extraction",
+    "estimated_useful_yield": "5–12 new/enriched sites after canonical reconciliation",
+    "offered_fields": "Named sites, battery MW/MWh, PV portions, lifecycle",
+    "attempt_result": "Primary portfolio identified through search; not ingested this pass",
+    "processed_partition": "None",
+    "retry_condition": "Check reuse terms, canonical existing sites and latest commissioning evidence",
+    "next_action": "Review owner portfolio and NERSA site applications; distinguish historical planned figures from operating evidence",
+    "retrieved_at": "2026-11-02T19:52:52.923416+00:00"
+  },
+  {
+    "priority": 2,
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+    "country": "FRA",
+    "entity": "ODRE battery-only >=1MW",
+    "version": "2026-08-31 processed2026-10-20",
+    "access_license": "Etalab Open Licence v2",
+    "estimated_useful_yield": "Held candidates only, requires independent identity evidence",
+    "offered_fields": "Ratings, grid, location, dates",
+    "attempt_result": "Offsets600–797:72accepted117newheld9previouslyreviewed skipped",
+    "processed_partition": "All798 rows now reviewed across four partitions and earlier RTE ledger",
+    "retry_condition": "New dated release or independent evidence resolving held identities",
+    "next_action": "Do not reimport old EICs; prioritize confidential names and same-commune phases",
+    "downloads": [
+      {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=0",
+        "sha256": "daad0c57f835e1a36d22394ae113589b4378cf8a5e6dc31e4440f71c481519fb",
+        "retrieved_at": "2026-11-02T19:50:42.349504+00:00"
+      },
+      {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=100",
+        "sha256": "2934179cadc60f6c7ca23d57479ff72aac36e720aa86ed9e9d8596cb221caa40",
+        "retrieved_at": "2026-11-02T19:50:45.902249+00:00"
+      },
+      {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=200",
+        "sha256": "853f52eda60b0cf0120acfcdb54d5cefd238c964b6850002db98f5ea603c00a8",
+        "retrieved_at": "2026-11-02T19:50:49.586805+00:00"
+      },
+      {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=300",
+        "sha256": "2dbfc34884bbbe0f85aa7158fd3e5772eee9873f8ba43b00a7e9f8e967154e93",
+        "retrieved_at": "2026-11-02T19:50:53.406779+00:00"
+      },
+      {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=400",
+        "sha256": "ff72cb71ea1364777e38a03a97f21c6da1bf09be12b082e9cd20204356c58d5b",
+        "retrieved_at": "2026-11-02T19:50:59.516382+00:00"
+      },
+      {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=500",
+        "sha256": "120f173110ca8b23467b74d31a8df9c07c21651f7d86868b86a91d16864d1821",
+        "retrieved_at": "2026-11-02T19:51:03.481184+00:00"
+      },
+      {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=600",
+        "sha256": "a606938e5ba3d6b491ef0a10ea470b4d99be583fa2d3c44f6b2725542b4c8213",
+        "retrieved_at": "2026-11-02T19:51:08.530643+00:00"
+      },
+      {
+        "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=filiere%3D%27Stockage+non+hydraulique%27+and+technologie%3D%27Batterie%27+and+typestockage%3D%27BATTE%27+and+puismaxinstallee%3E%3D1000&order_by=codeeicresourceobject&limit=100&offset=700",
+        "sha256": "6f2c68e18f2ac1411687d9d29a4678380ab47118cdae085bd1e8de5a265bd89b",
+        "retrieved_at": "2026-11-02T19:51:13.542255+00:00"
+      }
+    ],
+    "retrieved_at": "2026-11-02T19:52:52.923416+00:00"
+  },
+  {
+    "priority": 3,
+    "url": "https://rollsbattery.com/catalog/",
+    "country": "CAN",
+    "entity": "Rolls stationary LFP exact configurations",
+    "version": "Live index 2026-11-02",
+    "access_license": "Copyright retained; bounded factual review, no blanket bulk licence",
+    "estimated_useful_yield": "Reconcile held models, then other OEM rack/PCS tables",
+    "offered_fields": "Electrical, thermal, BMS, lifecycle conditions",
+    "attempt_result": "Remaining24index-listed LFP pages reviewed separately; see equipment ledger",
+    "processed_partition": "Index positions16–39; earlier16 unchanged",
+    "retry_condition": "Corrected OEM claims or successor identity evidence",
+    "next_action": "Resolve held current/temperature/model-scope claims; do not multiply calculator combinations",
+    "index_sha256": "23ff8ea4bcd38fee2a2e7c10f1dd43ebdc57622290dad046bf3c888ffea8a7b0",
+    "terms_sha256": "6a1597d06c65d4a024c76cc7cb849d028439ca1f9e43c77af43c0db5a6cabe33",
+    "retrieved_at": "2026-11-02T19:52:52.923416+00:00"
+  }
+]
