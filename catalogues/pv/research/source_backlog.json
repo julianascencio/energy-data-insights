@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T10:03:19.991069+00:00",
+  "updated_at": "2026-11-02T11:15:44.851789+00:00",
   "ranking_file": "20261101T0856_top10_markets.json",
-  "selection_note": "Complete GEM batch12, eight SolaX exact models, two switched MC4-Evo2 exact combiner orders, and 141 complete-phase corporate-owner enrichments. Brazil ANEEL SIGA official portal/schema/ODbL assessed; CSV and bounded public API503, zero data rows accepted.",
-  "next_highest_value_source": "Fresh source/main/PR checks, then GEM batch13(c0–cf),3439 reviewed projects. Retry ANEEL UFV sample after503 recovery and resolve ODbL handling plus CEG/GEM site-phase crosswalk.",
+  "selection_note": "Complete GEM partition13,13 current Fox exact models and193 complete-phase corporate-owner enrichments. Solplanet11 candidates held on reuse terms; SAJ/Hypontech access failures; NZ157-row/14PV primary registry rechecked with identical checksum and no duplicate observation updates. India CEA multi-plant source and tracker sources attempted with explicit blockers.",
+  "next_highest_value_source": "Fresh source/head checks, then GEM partition14(d0–df),3551 reviewed projects; India CEA official multi-plant report after503 recovery; six New Zealand identity crosswalks.",
   "sources": [
     {
       "id": "uk_repd",
@@ -1816,6 +1816,267 @@
         "resource_id": "11ec447d-698d-4ab8-977f-b424d5deee6a",
         "next_filter": "SigTipoGeracao=UFV",
         "processed_rows": 0
+      }
+    },
+    {
+      "id": "gem_batch13_20261102T1100",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "version_or_date": "February2026",
+      "licence_assessment": "Existing CC BY4 attribution; TZ/WKSL complete locations excluded",
+      "access_assessment": "Fresh bytes/checksum and complete reviewed-set digest reproduced",
+      "estimated_useful_yield": {
+        "accepted": 3439,
+        "existing_enriched": 193
+      },
+      "fields_offered": [
+        "identity",
+        "PV classification",
+        "capacity/phase/lifecycle",
+        "location accuracy",
+        "ownership evidence"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "3439 new;193 prior projects owners+qualified phase evidence added",
+      "retry_condition": "Fresh source or next unprocessed partition",
+      "next_action": "GEM14(d0–df),3551 reviewed projects; do not repeat13",
+      "processed_cursor": {
+        "completed_batch": 13,
+        "next_batch": 14,
+        "next_reviewed_projects": 3551
+      }
+    },
+    {
+      "id": "fox_current_tables_20261102T1100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.fox-ess.com/download/datasheets-4",
+      "version_or_date": "F-G2V2.0/S-G3V1.4,2026-07-03",
+      "licence_assessment": "OEM copyright retained; selected facts only, no open bulk grant; PDFs/manual/artwork outside Git",
+      "access_assessment": "Two current linkedPDFs downloaded/checksummed/rendered",
+      "estimated_useful_yield": {
+        "accepted": 13
+      },
+      "fields_offered": [
+        "electrical",
+        "model-specific efficiency",
+        "mechanical",
+        "thermal/environment",
+        "protection/options",
+        "interfaces",
+        "qualified bounds"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "13 exact new models;6 activeWunknown and7 mislabelled-row field cases retained",
+      "retry_condition": "New revision or missing technical fields",
+      "next_action": "Selected tables exhausted; resolve fieldholds only with exact OEM evidence",
+      "processed_cursor": {
+        "complete_tables": [
+          "F-G2V2.0",
+          "S-G3V1.4"
+        ],
+        "accepted_models": [
+          "F3000-G2",
+          "F3600-G2",
+          "F4600-G2",
+          "F5000-G2",
+          "F5300-G2",
+          "F6000-G2",
+          "S700-G3",
+          "S1000-G3",
+          "S1500-G3",
+          "S2000-G3",
+          "S2500-G3",
+          "S3000-G3",
+          "S3300-G3"
+        ]
+      }
+    },
+    {
+      "id": "solplanet_reuse_hold_20261102T1100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/products/asw-3-20k-lt-g2-pro-series-three-phase-inverters",
+      "version_or_date": "Sep2024 global tables; newer regional sheets not blended",
+      "licence_assessment": "Personal-information-only restriction; public catalogue use held",
+      "access_assessment": "Two11-modelPDFs downloaded/checksummed; legal paragraph reviewed",
+      "estimated_useful_yield": {
+        "held_candidates": 11,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "electrical",
+        "efficiency",
+        "mechanical",
+        "environment",
+        "interfaces"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "11 table candidates held on rights; no canonical rows",
+      "retry_condition": "Explicit suitable reuse terms/other authorized evidence",
+      "next_action": "Explicit reusable source-specific terms or other authorized evidence for these exact models",
+      "processed_cursor": {
+        "reviewed_models": [
+          "ASW3K-LT-G2 Pro",
+          "ASW4K-LT-G2 Pro",
+          "ASW5K-LT-G2 Pro",
+          "ASW6K-LT-G2 Pro",
+          "ASW8K-LT-G2 Pro",
+          "ASW10K-LT-G2 Pro",
+          "ASW12K-LT-G2 Pro",
+          "ASW13K-LT-G2 Pro",
+          "ASW15K-LT-G2 Pro",
+          "ASW17K-LT-G2 Pro",
+          "ASW20K-LT-G2 Pro"
+        ],
+        "accepted": 0
+      }
+    },
+    {
+      "id": "nz_fleet_recheck_20261102T1100",
+      "country": "NZL",
+      "entity": "projects",
+      "source_url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-fleet/existing/",
+      "version_or_date": "2026-07-02",
+      "licence_assessment": "CC BY4; existingnotice",
+      "access_assessment": "Downloaded sameSHA256 as processed snapshot",
+      "estimated_useful_yield": {
+        "new": 0,
+        "previously_processed": 8,
+        "existing_identity_holds": 6
+      },
+      "fields_offered": [
+        "PV classification",
+        "POC/unitID",
+        "operator",
+        "dates",
+        "unspecified-nameplateMW"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "157 native/14PV; no new information, no observation churn",
+      "retry_condition": "Source revision or resolving evidence",
+      "next_action": "Resolve six named identity cases against ownerGEM location/phase evidence",
+      "processed_cursor": {
+        "snapshot_sha256": "0a1d0c2b64755bb6e87cfbcbacde6119a7df3e4e3d323eaaaa71ab874c3654ba",
+        "positive_pv_rows": 14,
+        "prior_accepted": 8,
+        "remaining_identity_cases": 6
+      }
+    },
+    {
+      "id": "followup_0_20261102T1100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.saj-electric.com/services-support-download?product_model=R6_Series&product_type=On-grid+Inverter&type=Datasheet",
+      "version_or_date": "Current public listing checked; exact new sourceversion unverified",
+      "licence_assessment": "No new reuse basis asserted; terms/revision required before ingestion",
+      "access_assessment": "Normal public request failed; no bypass",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "model-specific technical fields"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "CatalogueHTML downloaded; three current table PDF normal GETs403; Spanish PDF403. No bytes/checksum for failedPDFs, no new/enriched accepted SAJ fields.",
+      "retry_condition": "Public service recovery or ungated exact source",
+      "next_action": "Normal public-download recovery; exact regional/revision review, especially AFCI differences, before changing populated Spain records. Do not create duplicate regional variants merely to increase count.",
+      "processed_cursor": {
+        "processed_rows": 0,
+        "accepted": 0
+      }
+    },
+    {
+      "id": "followup_1_20261102T1100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.hypontech.com/upload/file/2025/03/18/ccb1ae80-519e-412d-8ecf-6255e448c3e7.pdf",
+      "version_or_date": "Current public listing checked; exact new sourceversion unverified",
+      "licence_assessment": "No new reuse basis asserted; terms/revision required before ingestion",
+      "access_assessment": "Normal public request failed; no bypass",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "model-specific technical fields"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "All three normal GETs503; no raw bytes/hash/accepted models. Search indexed newer PRO and older model tables are not interchangeable.",
+      "retry_condition": "Public service recovery or ungated exact source",
+      "next_action": "Retry after recovery, verify terms and current exact-model catalogue before batch extraction.",
+      "processed_cursor": {
+        "processed_rows": 0,
+        "accepted": 0
+      }
+    },
+    {
+      "id": "followup_2_20261102T1100",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://info.nextracker.com/hubfs/2024%20Datasheets/nxt_NX_Horizon_Datasheet_090723.pdf",
+      "version_or_date": "Current public listing checked; exact new sourceversion unverified",
+      "licence_assessment": "No new reuse basis asserted; terms/revision required before ingestion",
+      "access_assessment": "Normal public request failed; no bypass",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "model-specific technical fields"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "Normal exact baseline revision URL404; current HailPro page redirects to nextpower.com. No stale cached table transposed into current model.",
+      "retry_condition": "Public service recovery or ungated exact source",
+      "next_action": "Find current ungated exact revision and review brand/variant identities; enrich existing NX Horizon where consistent.",
+      "processed_cursor": {
+        "processed_rows": 0,
+        "accepted": 0
+      }
+    },
+    {
+      "id": "followup_3_20261102T1100",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://arraytechinc.com/resource/array-duratrack-d2s-data-sheet/",
+      "version_or_date": "Current public listing checked; exact new sourceversion unverified",
+      "licence_assessment": "No new reuse basis asserted; terms/revision required before ingestion",
+      "access_assessment": "Normal public request failed; no bypass",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "model-specific technical fields"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "DirectGET403; normal web pages reviewed. DuraTrack product download points toshare.hsforms.com; resource download anchors self-reference/forms. No form submitted or hidden download path probed. No sparse configurable family row accepted.",
+      "retry_condition": "Public service recovery or ungated exact source",
+      "next_action": "Use publicly released exact configuration sheet if ungated; do not turn optional marketing gains into technical ratings.",
+      "processed_cursor": {
+        "processed_rows": 0,
+        "accepted": 0
+      }
+    },
+    {
+      "id": "followup_4_20261102T1100",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://www.cea.nic.in/divisionPage/506?lang=en",
+      "version_or_date": "Current public listing checked; exact new sourceversion unverified",
+      "licence_assessment": "No new reuse basis asserted; terms/revision required before ingestion",
+      "access_assessment": "Normal public request failed; no bypass",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "project/phase metadata"
+      ],
+      "last_attempt": "2026-11-02T11:15:44.851789+00:00",
+      "result": "NormalGET503; web fetch timedout, updates listing502. Search discovery identifies multi-plant renewable generation tables and Sep2026 under-construction report, but sourcebytes/technology/rights unverified. Zero rows accepted or counted as plant candidates.",
+      "retry_condition": "Public service recovery or ungated exact source",
+      "next_action": "Retry official listing after recovery, inspect specific report revision/terms/PV labels and ID/phase columns, then reconcile India GEM inventory before import.",
+      "processed_cursor": {
+        "processed_rows": 0,
+        "accepted": 0
       }
     }
   ]
