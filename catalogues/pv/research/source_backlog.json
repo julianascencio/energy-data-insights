@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T03:06:17.465596+00:00",
+  "updated_at": "2026-11-03T04:01:52.441193+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "Seven fresh ODRE partitions, two exact Fox ESS PDF tables and the Aguasvivas prior identity hold.",
-  "next_highest_value_source": "EDF SEI Corse registry, 30 September 2025 snapshot under Licence Ouverte: inspect project-level schema, confidentiality and exact IDs before reconciling against the empty ODRE query.",
+  "selection_note": "EDF Corse full export reviewed; Swiss BFE parent/detail data inspected for next cohort; 11 exact inverters added from two OEM tables.",
+  "next_highest_value_source": "Swiss BFE October archive: confirm dataset-specific attribution and TotalPower basis, then reconcile parent xtf_id and PlantDetail links for the 364 explicit PV parents at native TotalPower >=1000. Exclude private addresses and hold unresolved GEM matches.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5252,6 +5252,56 @@
       "retry_condition": "Inspect fresh exact dataset export and snapshot",
       "next_action": "EDF SEI Corse registry, 30 September 2025 snapshot under Licence Ouverte: inspect project-level schema, confidentiality and exact IDs before reconciling against the empty ODRE query.",
       "processed_cursor": null
+    },
+    {
+      "id": "research_0400_fra",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://opendata-corse.edf.fr/api/explore/v2.1/catalog/datasets/registre-national-des-installations-de-production-et-de-stockage-delectricite-corse/exports/json",
+      "version_or_date": "2025-09-30",
+      "access_assessment": "Public exact export downloaded",
+      "licence_assessment": "Licence Ouverte per EDF metadata",
+      "estimated_useful_yield": 0,
+      "fields_offered": [
+        "technology",
+        "registry identity",
+        "capacity",
+        "grid",
+        "service date"
+      ],
+      "last_attempt": "2026-11-03T04:01:52.441193+00:00",
+      "result": "994 solar observations held: 878 confidential and 116 aggregates; all five 5–20 MW rows confidential and untyped",
+      "retry_condition": "New named explicit public evidence or independently permissible owner source",
+      "next_action": "Never identify confidential EDF records",
+      "processed_cursor": {
+        "sha256": "e49d15c3cf0b4b94e578e4f2c13f2a63ae6f7e1b4f75b46235916534d3bf1f4b",
+        "partition": "full export aggregate screen"
+      }
+    },
+    {
+      "id": "research_0400_che",
+      "country": "CHE",
+      "entity": "projects",
+      "source_url": "https://data.geo.admin.ch/ch.bfe.elektrizitaetsproduktionsanlagen/csv/2056/ch.bfe.elektrizitaetsproduktionsanlagen.zip",
+      "version_or_date": "ZIP parent/detail members dated 2026-10-15; portal metadata dated 2026-09-24",
+      "access_assessment": "Public exact export downloaded",
+      "licence_assessment": "Public federal portal; confirm source-specific terms and attribution before copying records",
+      "estimated_useful_yield": 364,
+      "fields_offered": [
+        "registry xtf_id",
+        "operation start",
+        "parent/child relationships",
+        "native power",
+        "municipality"
+      ],
+      "last_attempt": "2026-11-03T04:01:52.441193+00:00",
+      "result": "339927 explicit PV parents, 364 at native TotalPower >=1000; no candidate accepted; code catalogue confirms PV",
+      "retry_condition": "Confirm rating basis, privacy, rights and identity crosswalk",
+      "next_action": "Swiss BFE October archive: confirm dataset-specific attribution and TotalPower basis, then reconcile parent xtf_id and PlantDetail links for the 364 explicit PV parents at native TotalPower >=1000. Exclude private addresses and hold unresolved GEM matches.",
+      "processed_cursor": {
+        "sha256": "e803c67fbccce84533b36e13cb39c85c102325ff0587abcb4374b23b41d42a72",
+        "partition": "full export aggregate screen"
+      }
     }
   ]
 }
