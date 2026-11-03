@@ -65,6 +65,12 @@ or a live availability feed. Do not interpret record counts as installed capacit
    technology-neutral: a funding applicant named BESS is not battery evidence.
    Review exact project titles, grant/loan pairs, named sites and signed-contract
    evidence; recommendations are not awards, and awards are not construction.
+   For PGE notice 719197-2026 version 01, `scripts/stage_bess_ted_pge.py`
+   stages the original public TED XML. It checks the notice revision, four lots,
+   22 distinct named sites, battery CPV and delivery-period units. It excludes
+   personal contacts and lot-level geography. Review each site against existing
+   identities; Budzyń remains held. Procurement deadlines are not COD, and
+   missing annex ratings stay unknown. Changed revisions require fresh review.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
