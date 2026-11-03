@@ -1,21 +1,25 @@
 {
-  "batch": "2026-11-03-0731-resubmissions-abb",
+  "batch": "2026-11-03-0835",
   "local": {
-    "pytest": "1778 passed, 1 optional cdsapi skip; subsequent new integration test included in 16 passing REPD tests",
-    "catalogue": "5410 records validated",
-    "viewer": "13 Node tests passed; unchanged viewer code",
+    "pytest": "1817 passed, 1 optional cdsapi skip after rebase onto 47cf12e8",
+    "repd_tests": "18 passed",
+    "viewer": "13 Node tests passed",
+    "catalogue": "5410 validated",
+    "snapshots": "two independent builds byte-identical",
+    "sphinx": "strict build passed; 439 HTML pages link/asset audit passed",
     "ruff_check": "passed",
     "ty": "passed",
-    "snapshot_reproducibility": "All files from two independent final builds byte-identical",
-    "sphinx": "strict build passed; final prose update checked incrementally",
-    "preservation": "5409 prior records unchanged; capacity summaries unchanged; other catalogue trees unchanged",
-    "browser_smoke": "not executed",
-    "packages": "not rebuilt this run"
+    "citations": "passed",
+    "repository_hygiene": "passed",
+    "preservation": "5296 records unchanged; 114 only milestone/evidence/review timestamps changed; capacities and unrelated catalogue trees unchanged"
   },
-  "remote_ci": {
-    "previous_commit": "9ecc172254862c6deb5e8387caedcf7f7b825fb4",
-    "python": "success",
-    "documentation": "success",
-    "new_commit": "pending publication"
-  }
+  "corrected_failures": [
+    "Initial catalogue verification timestamp ordering failure corrected before final full suite"
+  ],
+  "not_executed": [
+    "new browser smoke",
+    "package build"
+  ],
+  "remote_ci": "pending publication",
+  "publication_base_main": "47cf12e8d95e4da29a52a54e3235db41ecce0d08"
 }

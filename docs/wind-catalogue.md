@@ -180,3 +180,12 @@ Its grid-side active kW, generator typical kW and apparent kVA remain distinct.
 Temperature/altitude derating and enclosure-only lifetime conditions are retained;
 no turbine compatibility or optional-configuration combinations are inferred.
 The complete ratings table contains one cabinet, not a 20-model equipment batch.
+
+## Procedural history continuation
+
+PR #89 is merged. Main at `33eec838` contains 5,355 projects, 53 equipment records
+and two curves. The next batch adds 232 dated planning/appeal events to 114
+existing projects without changing lifecycle or capacity eligibility. The first
+200 unlinked registry applications retain explicit identity holds and planning
+references in the 0835 ledger. No exact 77LC/87LC rating table was obtained;
+generic converter ranges and unrelated industrial drives were not imported.

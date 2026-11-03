@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-03T07:36:00Z",
-  "branch": "research/global-wind-database-20261103",
+  "updated_at": "2026-11-03T08:35:04Z",
+  "branch": "research/wind-20261103-0835",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
     {
@@ -23,38 +23,38 @@
       "rank": 2,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
-      "partition": "2216 deferred REPD applications; first 200 otherwise unlinked IDs pending",
-      "next_offset": 0,
+      "partition": "Unlinked REPD candidates in 0644 decision ledger, filtered by exact no-unique-crosswalk reason; offsets 200:400 next",
+      "next_offset": 200,
       "status": "crosswalk_partition_completed_remaining_applications_pending",
       "tasks": [
         "Do not rerun 642 completed crosswalk enrichments as new work",
         "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
-        "55 renamed cases completed: residual semantic/capacity changes in 2026-11-03-0731-decisions.jsonl; next first 200 otherwise unlinked Ref IDs",
-        "Reconcile scope of 642 enriched records against permits before enabling any capacity totals"
+        "Reconcile scope of 642 enriched records against permits before enabling any capacity totals",
+        "Offsets 0:200 structurally reviewed, not identity-cleared; permit references and replacement chains retained in 0835 ledger. Next offsets 200:400."
       ],
       "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
       "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "next_ids": [
-        "2470",
-        "2471",
-        "2472",
-        "2473",
-        "2475",
-        "2476",
-        "2477",
-        "2479",
-        "2484",
-        "2486",
-        "2502",
-        "2505",
-        "2507",
-        "2508",
-        "2516",
-        "2517",
-        "2520",
-        "2521",
-        "2522",
-        "2523"
+        "2951",
+        "2954",
+        "2957",
+        "2958",
+        "2959",
+        "2960",
+        "2961",
+        "2962",
+        "2963",
+        "2964",
+        "2967",
+        "2970",
+        "2972",
+        "2973",
+        "2974",
+        "2975",
+        "2976",
+        "2978",
+        "2980",
+        "2984"
       ]
     },
     {
@@ -84,7 +84,8 @@
         "Resolve V136 scalar and SG3.2-129 inconsistent published power density; qualify GE acoustic modes",
         "Prioritize publicly identified ABB wind converters/generators and Winergy gearboxes; reuse cross-sector IDs where exact",
         "Do not ingest Siemens Gamesa 08/2026 overview PDF under its explicit reproduction restriction",
-        "ACS880-77CC Rev A single exact cabinet processed; next ACS880-77LC/-87LC exact rating tables; generic ranges not exact configurations"
+        "ACS880-77CC Rev A single exact cabinet processed; next ACS880-77LC/-87LC exact rating tables; generic ranges not exact configurations",
+        "77LC/87LC search found firmware manual referring readers to local ABB for hardware manual; no exact ratings table recovered. Do not substitute 07LC industrial drives."
       ]
     },
     {
@@ -112,5 +113,43 @@
         "Separate original numerical, digitized and generic reference turbines; add thrust curves only with exact-model support"
       ]
     }
-  ]
+  ],
+  "user_priority_update": {
+    "date": "2026-11-03",
+    "focus": "Top ten markets by cumulative wind installed capacity; ordering is research priority, not capacity ranking",
+    "countries": [
+      "CHN",
+      "USA",
+      "DEU",
+      "IND",
+      "BRA",
+      "ESP",
+      "GBR",
+      "FRA",
+      "CAN",
+      "SWE"
+    ],
+    "research_priority": [
+      "CAN",
+      "DEU",
+      "SWE",
+      "CHN",
+      "IND",
+      "USA",
+      "BRA",
+      "ESP",
+      "FRA",
+      "GBR"
+    ],
+    "rationale": "Complete downloaded Canadian inventory; severe German/Swedish coverage gaps; expand beyond repeated UK-only iterations. Preserve existing partition offsets.",
+    "canada_partition": {
+      "ledger": "2026-11-03-top10-canada-candidates.jsonl",
+      "next_offset": 0,
+      "bounded_batch_size": 100,
+      "count": 327,
+      "status": "downloaded_and_name_screened_not_accepted"
+    },
+    "evidence_report": "2026-11-03-top10-source-review.json",
+    "source_guide": "2026-11-03-top10-markets.md"
+  }
 }

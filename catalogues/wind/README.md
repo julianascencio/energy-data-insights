@@ -5,8 +5,7 @@ individual turbines and numerical curves share stable linked identities.
 
 The proposed branch contains 5,355 project records (5,354 non-group records),
 53 exact equipment records (51 turbines, one blade and one converter), two original numerical
-power curves, 59 countries and six manufacturer names. Merged-main Wind totals
-remain zero at `15e9d60b`. These are catalogue counts, not an operating census.
+power curves, 59 countries and six manufacturer names. These totals are now merged in main at `33eec838`. These are catalogue counts, not an operating census.
 
 The initial 5,344-row WRI import is historical. The latest continuation enriches
 642 existing identities through the complete REPD Q2 2026 Wind/crosswalk review,
@@ -30,3 +29,8 @@ Use a fresh output path. Parquet is reproducibly generated, not committed; Sphin
 publishes it with the viewer. Unknown stays null. Parent totals, unresolved scopes
 and overlapping generations are excluded from capacity summaries, which separate
 lifecycle states. OEM curves and specifications are not operational validation.
+
+The 2026-11-03 08:35 continuation adds 232 previously omitted procedural dates
+to 114 linked UK projects, preserving all lifecycle and capacity fields. The first
+200 unlinked applications remain deferred after structural review. Refusals and
+later successful appeals are history, not contradictory current statuses.

@@ -192,6 +192,7 @@ def reconcile_repd(
                             "locator": locator,
                         }
                     )
+            milestones.extend(procedural_milestones(raw, source_id=source_id, locator=locator))
             observation = {
                 "field": "registry_application_capacity",
                 "value": capacity,
@@ -333,3 +334,41 @@ def reconcile_repd(
             decision.update(decision="deferred_invalid_value", reason=str(exc))
         decisions.append(decision)
     return incoming, decisions
+
+
+PROCEDURAL_DATES = (
+    "Planning Application Withdrawn",
+    "Planning Permission Refused",
+    "Appeal Lodged",
+    "Appeal Withdrawn",
+    "Appeal Refused",
+    "Appeal Granted",
+    "Secretary of State - Intervened",
+    "Secretary of State - Refusal",
+    "Secretary of State - Granted",
+)
+
+
+def procedural_milestones(
+    raw: dict[str, str], *, source_id: str, locator: str
+) -> list[dict[str, str]]:
+    """Read dated application history without treating a refusal as current status.
+
+    Dates are strictly day/month/year. Empty source cells produce no event; a
+    malformed nonempty date fails the record rather than becoming a null date.
+    Appeal success is not evidence of construction, operation or approved scope.
+    """
+    events = []
+    for column in PROCEDURAL_DATES:
+        value = raw.get(column, "").strip()
+        if value:
+            events.append(
+                {
+                    "event": column,
+                    "date": datetime.strptime(value, "%d/%m/%Y").date().isoformat(),
+                    "basis": "REPD application milestone; future dates are not achieved",
+                    "source_id": source_id,
+                    "locator": locator + "; " + column,
+                }
+            )
+    return events
