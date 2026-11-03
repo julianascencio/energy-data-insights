@@ -279,7 +279,7 @@ def parse_server_accelerator_matrix(
     }
     if reader.fieldnames is None or not required <= set(reader.fieldnames):
         raise ValueError("Missing server/accelerator matrix columns")
-    candidates: dict[tuple[str, str, str], dict[str, Any]] = {}
+    candidates: dict[tuple[str, str, str, str], dict[str, Any]] = {}
     for line, row in enumerate(reader, start=2):
         candidate = {key: (row.get(key) or "").strip() for key in required}
         if not all(candidate.values()):
@@ -299,10 +299,14 @@ def parse_server_accelerator_matrix(
             candidate["max_power_w"] = power
         else:
             candidate["max_power_w"] = None
+        generation = (row.get("server_generation") or "").strip()
+        if generation:
+            candidate["server_generation"] = generation
         identity = (
             candidate["manufacturer"],
             candidate["server_model"],
             candidate["accelerator_model"],
+            generation,
         )
         if identity in candidates:
             raise ValueError(f"Duplicate server/accelerator row for {identity}")

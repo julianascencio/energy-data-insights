@@ -131,10 +131,27 @@ def test_server_accelerator_matrix_preserves_power_boundary_and_range():
     )
     by_accelerator = {row["accelerator_model"]: row for row in result["candidates"]}
     assert by_accelerator["X1"]["max_power_w"] == 600
+    assert by_accelerator["X1"]["server_generation"] == "17th"
     assert by_accelerator["X2"]["max_power_w"] is None
+    assert by_accelerator["X2"]["server_generation"] == "16th"
     assert by_accelerator["X2"]["max_power_text"] == "350-400 W"
     assert result["review_required"]
     assert len(result["sha256"]) == 64
+
+
+def test_server_accelerator_matrix_keeps_generation_specific_identity():
+    header = SERVER_MATRIX.splitlines()[0]
+    first = SERVER_MATRIX.splitlines()[1].replace(b",17th,", b",16th,")
+    second = SERVER_MATRIX.splitlines()[1].replace(b",17th,", b",15th,")
+    result = parse_server_accelerator_matrix(
+        b"\n".join((header, first, second, b"")),
+        source_url="https://www.dell.com/server-gpu-matrix.csv",
+        expected_count=2,
+    )
+    assert [row["server_generation"] for row in result["candidates"]] == [
+        "15th",
+        "16th",
+    ]
 
 
 @pytest.mark.parametrize(

@@ -9,6 +9,7 @@ from pathlib import Path
 from energy_data_retrieval.data_center_catalogue.catalogue import stable_id
 
 RETRIEVED_AT = "2026-11-03T12:23:01Z"
+VERIFIED_AT = "2026-11-03T15:21:40Z"
 AS_OF = "2026-11-03"
 SOURCE_ID = "dell-poweredge-gpu-matrix-202509"
 SOURCE_URL = (
@@ -90,7 +91,7 @@ SPECS = {
         "workload": "AI / HPC",
     },
     "B200 AC": {
-        "memory": "180 GB HBM3e",
+        "memory": "141 GB HBM3e",
         "ecc": "Y",
         "bandwidth": "7.7 TB/sec",
         "power_text": "1000 W",
@@ -164,7 +165,7 @@ def observation(
 def build_record(vendor: str, accelerator: str, server: str) -> dict[str, object]:
     spec = SPECS[accelerator]
     compatibility_locator = (
-        f"page 3, PowerEdge 17th Generation servers table, "
+        f"page 4, PowerEdge 17th Generation servers table, "
         f"{accelerator} row / {server} column checkmark"
     )
     spec_label = str(spec.get("spec_label", accelerator))
@@ -197,7 +198,7 @@ def build_record(vendor: str, accelerator: str, server: str) -> dict[str, object
         evidence[field] = {
             "confidence": "high",
             "locator": locator,
-            "source_publication_dates": {SOURCE_ID: "2025-09"},
+            "source_publication_dates": {SOURCE_ID: "2026-10"},
         }
         if field == "accelerator_power_w":
             evidence[field]["unit"] = "W"
@@ -274,7 +275,7 @@ def build_record(vendor: str, accelerator: str, server: str) -> dict[str, object
         "equipment_category": "server",
         "evidence_json": compact(evidence),
         "field_sources_json": compact({field: [SOURCE_ID] for field in fields}),
-        "last_verified_at": RETRIEVED_AT,
+        "last_verified_at": VERIFIED_AT,
         "manufacturer": "Dell",
         "model": f"PowerEdge {server}",
         "name": f"Dell PowerEdge {server} with supported {vendor} {accelerator}",
@@ -291,7 +292,7 @@ def build_record(vendor: str, accelerator: str, server: str) -> dict[str, object
             "accelerator count, server input and rack input undisclosed"
         ),
         "power_rating_kind": "maximum accelerator power per device",
-        "product_status": "supported in Dell September 2025 PowerEdge GPU matrix",
+        "product_status": "supported in Dell October 2026 PowerEdge GPU matrix",
         "quality_status": "source_backed",
         "record_id": stable_id(
             "equipment", "Dell", "PowerEdge", server, vendor, accelerator, "17th Generation"
@@ -299,7 +300,7 @@ def build_record(vendor: str, accelerator: str, server: str) -> dict[str, object
         "record_scope": "configuration",
         "source_urls": [SOURCE_URL],
         "sources": [SOURCE_ID],
-        "updated_at": RETRIEVED_AT,
+        "updated_at": VERIFIED_AT,
         "variant": variant,
     }
     if power_w is not None:

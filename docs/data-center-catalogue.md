@@ -77,8 +77,10 @@ losses, impedance and noise remain bounded observations. Siemens voltage,
 short-circuit current and continuous-current values are portfolio maxima, not
 nominal inputs or ordered-panel configurations.
 The compute-system continuation processes every supported checkmark in Dell's
-September 2025 PowerEdge 17th Generation compatibility table: 33 exact server
-and accelerator pairings across 11 PowerEdge models and eight accelerator rows.
+October 2026 PowerEdge generation-specific compatibility tables: 33 exact 17th,
+52 exact 16th and 23 exact 15th Generation server/accelerator pairings. The
+accepted PDF is checksummed, and its printed revision/page locators correct the
+earlier evidence transcription while stable record/source identities remain.
 Per-accelerator maximum power and memory remain distinct from unknown server and
 rack input; accelerator quantity and deployment are not inferred. The H100 NVL
 350--400 W range remains an exact observation rather than a normalized scalar.
