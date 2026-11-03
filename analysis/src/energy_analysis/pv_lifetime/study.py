@@ -8,6 +8,7 @@ import json
 from importlib.metadata import version
 from importlib.resources import files
 from pathlib import Path
+from typing import cast
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -86,17 +87,19 @@ def field_projections() -> pd.DataFrame:
     """
     records = []
     for anchor in field_anchors().itertuples():
+        age_years = cast(float, anchor.age_years)
+        retained_power = cast(float, anchor.retained_power)
         for model in ("linear", "exponential"):
-            t = np.unique(np.r_[np.linspace(anchor.age_years, 50, 241), 40, 50])
+            t = np.unique(np.r_[np.linspace(age_years, 50, 241), 40, 50])
             rate = (
-                (1 - anchor.retained_power) / anchor.age_years
+                (1 - retained_power) / age_years
                 if model == "linear"
-                else -np.log(anchor.retained_power) / anchor.age_years
+                else -np.log(retained_power) / age_years
             )
             power = (
-                anchor.retained_power - rate * (t - anchor.age_years)
+                retained_power - rate * (t - age_years)
                 if model == "linear"
-                else anchor.retained_power * np.exp(-rate * (t - anchor.age_years))
+                else retained_power * np.exp(-rate * (t - age_years))
             )
             for age, retained in zip(t, power, strict=True):
                 records.append(
@@ -105,7 +108,7 @@ def field_projections() -> pd.DataFrame:
                         "model": model,
                         "age_years": age,
                         "retained_power": retained,
-                        "anchor_age_years": anchor.age_years,
+                        "anchor_age_years": age_years,
                         "assumed_rate_per_year": rate,
                         "evidence": "projection from group median; no longitudinal fit",
                     }
@@ -282,6 +285,8 @@ def plot_field_projections() -> Figure:
     fig, ax = plt.subplots(figsize=(10, 6.5))
     curves = field_projections()
     for anchor, color in zip(field_anchors().itertuples(), COLORS, strict=False):
+        age_years = cast(float, anchor.age_years)
+        retained_power = cast(float, anchor.retained_power)
         for model, style in (("linear", "--"), ("exponential", ":")):
             frame = curves[(curves.group == anchor.group) & (curves.model == model)]
             ax.plot(
@@ -292,14 +297,13 @@ def plot_field_projections() -> Figure:
                 linewidth=2,
             )
         ax.scatter(
-            anchor.age_years,
-            100 * anchor.retained_power,
+            age_years,
+            100 * retained_power,
             color=color,
             s=65,
             zorder=4,
             label=(
-                f"{anchor.group}: {anchor.retained_power:.1%} at "
-                f"{anchor.age_years:g} y (n={anchor.sample_count})"
+                f"{anchor.group}: {retained_power:.1%} at {age_years:g} y (n={anchor.sample_count})"
             ),
         )
     _axes(ax, "From measured group medians to year 50", left=25)

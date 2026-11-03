@@ -6567,3 +6567,19 @@ BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **BSLBATT ESS Limited Warranty Letter
 **Role:** data. Printed V1.2; no publication date stated. Conditional cabinet warranty, not installation eligibility or a universal ten-year system guarantee.
 
 **Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_residential_2026_2348
+
+BSLBATT (2026). **BSLBATT Residential Energy Storage Products 2026**. [Source](https://bslbatt.com/wp-content/uploads/BSLBATT-Residential-Energy-Storage-Products-2026.pdf)
+
+**Role:** data. Year in catalogue filename; selected exact tables PDF pp12,13,17,18. Manufacturer claims, not independently certified performance. Publication day/revision unverified.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### cabeolica_annual2024_2348
+
+Cabeólica S.A. (2025). **Cabeolica Annual Report 2024**. [Source](https://cabeolica.com/wp-content/uploads/2025/09/RC_2024_EN.pdf)
+
+**Role:** data. 2024 reporting year; board report dated27March2025; public reader, direct403. Programme milestones are not site construction/COD or finance allocations.
+
+**Used by:** `catalogues/bess/sources.json`.
