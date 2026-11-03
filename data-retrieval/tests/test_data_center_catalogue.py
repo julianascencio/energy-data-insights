@@ -21,6 +21,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_africa_data_centres_footprint,
     parse_airtrunk_locations,
     parse_portfolio,
+    parse_schneider_galaxy_vs_model_list,
 )
 
 ROOT = Path(__file__).resolve().parents[2] / "catalogues/data_centers"
@@ -222,6 +223,30 @@ def test_africa_data_centres_footprint_parser_is_complete_and_identity_only():
         )
     with pytest.raises(ValueError, match="official Africa"):
         parse_africa_data_centres_footprint(b"", source_url="https://example.com/")
+
+
+def test_schneider_model_list_parser_keeps_only_explicit_commercial_references():
+    content = (FIXTURES / "schneider-galaxy-vs.txt").read_bytes()
+    data = parse_schneider_galaxy_vs_model_list(
+        content,
+        source_url="https://www.se.com/uk/en/download/document/990-91317_EN/",
+        expected_count=3,
+    )
+    assert [row["commercial_reference"] for row in data["candidates"]] == [
+        "GVSUPS10KB2HS",
+        "GVSUPS20K0B4HS",
+        "GVSUPS60KB5HS",
+    ]
+    assert data["candidates"][1]["rated_active_power_kw"] == 20
+    assert "DO NOT EXTRACT" not in json.dumps(data)
+    with pytest.raises(ValueError, match="model-list shape"):
+        parse_schneider_galaxy_vs_model_list(
+            content,
+            source_url="https://www.se.com/uk/en/download/document/990-91317_EN/",
+            expected_count=23,
+        )
+    with pytest.raises(ValueError, match="official Schneider"):
+        parse_schneider_galaxy_vs_model_list(content, source_url="https://example.com/")
 
 
 def test_pue_table_selection_preserves_period_precision_and_empty_ttm():

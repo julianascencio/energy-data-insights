@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T01:29:30Z",
+  "updated_at": "2026-11-03T02:15:09Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -14,7 +14,10 @@
     "africa_data_centres_current_facilities": 5,
     "africa_data_centres_accra_announcements": 1,
     "vertiv_geist_emea_rpdu_models": 24,
-    "eaton_9px_gen2_rack_kit_skus": 4
+    "eaton_9px_gen2_rack_kit_skus": 4,
+    "teraco_current_facilities": 9,
+    "nextdc_kl1": 1,
+    "schneider_galaxy_vs_400v_skus": 23
   },
   "next_batches": [
     {
@@ -24,12 +27,12 @@
         "https://www.teraco.co.za/data-centre-locations/",
         "https://www.nextdc.com/data-centres"
       ],
-      "offset": 0,
-      "scope": "8 Teraco facility sheets; NEXTDC KL1, PH1, NE1, TK1, TK2, AK1; issuer certification lookups",
+      "offset": 10,
+      "scope": "Teraco current eight-facility portfolio, Isando aggregate and JB7 complete at 9+1; NEXTDC KL1 complete at offset 1. Continue issuer registries, JB4 area reconciliation and remaining NEXTDC edge/phase evidence.",
       "questions": [
-        "Verify units of Teraco IT Load cards; reconcile white-space vs technical area",
-        "Resolve NEXTDC M2 15000 vs 25000 m2 and phased operational vs ultimate IT capacities",
-        "Source utility/regulator grid MW and volts separately from IT"
+        "Resolve Teraco JB4 16,000 m2 white space versus 17,000 m2 across 14 halls",
+        "Issuer-verify NEXTDC KL1 and Teraco facility certifications with certificate identifiers, scope and dates",
+        "Source utility/regulator grid MW and volts separately from operator IT load and MVA observations"
       ]
     },
     {
@@ -81,8 +84,8 @@
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/"
       ],
-      "offset": 28,
-      "scope": "PowerIT Switched table complete at offset 8; Vertiv Geist EMEA rPDU table complete at offset 24; Eaton 9PX Gen2 rack-kit table complete at offset 4. Continue XDU thermal conditions and exact current chiller, CRAH, transformer, switchgear and generator models",
+      "offset": 51,
+      "scope": "Prior Vertiv/Eaton tables complete; Schneider Galaxy VS 400 V internal-battery model list complete at offset 23. Continue exact current chiller, CRAH, transformer, switchgear and generator models.",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",

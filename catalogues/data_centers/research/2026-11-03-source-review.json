@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T01:29:30Z",
+  "retrieved_at": "2026-11-03T02:15:09Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -42,6 +42,28 @@
       "accepted_records": 4,
       "reuse": "Factual extraction from official public OEM PDF; no open licence asserted; original not redistributed",
       "originals": "Official PDF capture available during review with SHA-256, byte count and May 2025 revision in sources.json"
+    },
+    {
+      "inventory": "Teraco current facility pages and dated JB4/CT1/CT2/JB7 releases",
+      "processed_offset": 10,
+      "accepted_records": 2,
+      "substantively_enriched": 9,
+      "reuse": "Factual extraction from public copyrighted operator pages; no open licence asserted; originals not redistributed",
+      "originals": "Seven official HTML captures available during review with SHA-256 and byte counts in sources.json"
+    },
+    {
+      "inventory": "NEXTDC KL1 current page and dated launch release",
+      "processed_offset": 1,
+      "accepted_records": 1,
+      "reuse": "Factual extraction from public copyrighted operator pages; no open licence asserted; originals not redistributed",
+      "originals": "Two official HTML captures available during review with SHA-256 and byte counts in sources.json"
+    },
+    {
+      "inventory": "Schneider Electric Galaxy VS 400 V internal-battery commercial-reference list, version 9",
+      "processed_offset": 23,
+      "accepted_records": 23,
+      "reuse": "Factual extraction from official public OEM PDF; no open licence asserted; original not redistributed",
+      "originals": "Official PDF capture available during review with SHA-256, byte count, release date and document revision in sources.json"
     }
   ],
   "deferred": [
@@ -56,6 +78,14 @@
     {
       "candidate": "NVIDIA B200/B300 and current integrated systems",
       "reason": "Current system and per-accelerator boundaries require a separate exact-configuration review"
+    },
+    {
+      "candidate": "Teraco JB4 data-hall area",
+      "reason": "16,000 m2 current-page white space and 17,000 m2 dated-release data halls remain quarantined pending scope reconciliation"
+    },
+    {
+      "candidate": "NEXTDC KL1 and Teraco issuer certification records",
+      "reason": "Operator claims are retained as observations until issuer registry identifiers, scope and dates are verified"
     }
   ],
   "excluded": [
@@ -78,6 +108,14 @@
     {
       "candidate": "Eaton 9PX Gen2 EBM and bypass combinations",
       "reason": "Optional accessory combinations were not promoted to exact UPS records; the four accepted records cover internal-battery rack-kit SKUs only"
+    },
+    {
+      "candidate": "Schneider Galaxy VS optional battery combinations",
+      "reason": "Only exact listed commercial references were accepted; no Cartesian configurations"
+    },
+    {
+      "candidate": "Teraco operator MVA values as grid MW",
+      "reason": "24 MVA and 68 MVA apparent power remain observations and were not converted to MW"
     }
   ],
   "holds_unchanged": [
@@ -95,6 +133,15 @@
         "20 MW client IT load upon completion for the expansion on the current page"
       ],
       "reason": "Overlapping facility and expansion scopes are not phase-dated well enough to select one normalized value"
+    },
+    {
+      "record": "Teraco JB4",
+      "field": "data_hall_area_m2",
+      "observations": [
+        "16,000 m2 white space on current location page",
+        "17,000 m2 across 14 data halls in the 2025 expansion completion release"
+      ],
+      "reason": "Terminology and scope do not support selecting one normalized data-hall-area value"
     }
   ],
   "normalization_notes": [
@@ -105,6 +152,9 @@
     "Africa Data Centres values labelled client or critical IT load are normalized only at their stated design/ultimate basis; generic power/site-capacity MW remain observations",
     "NBO1 37.5 MW is grid capacity because the facility sheet explicitly calls it campus capacity secured from utility",
     "Vertiv kVA and Eaton kW/kVA remain separate; no active power is inferred from apparent power, voltage or current",
-    "Eaton internal-battery runtimes preserve their stated loads and approximate-runtime caveat"
+    "Eaton internal-battery runtimes preserve their stated loads and approximate-runtime caveat",
+    "Teraco critical IT MW, utility MW and apparent-power MVA remain separate; current and ultimate bases are explicit",
+    "Schneider Galaxy VS kW and kVA are both source-reported at unity power factor; battery amp-hour labels are not converted to nominal or usable energy",
+    "KL1 AI-ready language is not treated as evidence of deployed accelerators"
   ]
 }

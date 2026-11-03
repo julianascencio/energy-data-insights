@@ -236,6 +236,43 @@ def parse_africa_data_centres_footprint(content: bytes, *, source_url: str) -> d
     }
 
 
+def parse_schneider_galaxy_vs_model_list(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage exact Galaxy VS commercial references from extracted PDF text.
+
+    Only explicit 400 V model-list entries are returned. Battery options are
+    retained as source text and are never expanded into possible combinations.
+    Electrical ratings and performance tables still require manual review.
+    """
+    if not (urlsplit(source_url).hostname or "").endswith("se.com"):
+        raise ValueError("Expected official Schneider Electric URL")
+    text = " ".join(content.decode("utf-8-sig").split())
+    matches = re.findall(
+        r"Galaxy VS UPS (\d+) kW 400 V, (.+?) \((GVSUPS[A-Z0-9]+)\)",
+        text,
+    )
+    candidates: dict[str, dict[str, Any]] = {}
+    for rating, configuration, sku in matches:
+        row = {
+            "commercial_reference": sku,
+            "rated_active_power_kw": int(rating),
+            "configuration": configuration,
+            "locator": f"Model list / {sku}",
+        }
+        previous = candidates.setdefault(sku, row)
+        if previous != row:
+            raise ValueError("Conflicting Schneider commercial reference")
+    if not candidates or (expected_count is not None and len(candidates) != expected_count):
+        raise ValueError("Changed Schneider Galaxy VS model-list shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [candidates[key] for key in sorted(candidates)],
+        "review_required": True,
+    }
+
+
 class _PueTables(HTMLParser):
     def __init__(self) -> None:
         super().__init__()

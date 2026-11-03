@@ -1,24 +1,21 @@
 {
-  "executed_at": "2026-11-03T01:29:30Z",
-  "local_environment": {
-    "python": "3.12",
-    "dependency_lock": "uv.lock"
-  },
+  "executed_at": "2026-11-03T02:15:09Z",
+  "python": "3.12",
   "checks": [
     {
-      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate --root catalogues/data_centers",
       "result": "passed",
-      "records": 191
+      "records": 216
     },
     {
       "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py",
       "result": "passed",
-      "tests": 20
+      "tests": 21
     },
     {
       "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_bess_catalogue.py data-retrieval/tests/test_pv_catalogue.py",
       "result": "passed",
-      "tests": 63
+      "tests": 64
     },
     {
       "command": "pytest -q analysis/tests/test_pv_database.py analysis/tests/test_bess_database.py analysis/tests/test_bess_oem_database.py methods/tests/test_references.py",
@@ -36,7 +33,13 @@
     },
     {
       "command": "python scripts/check_repository.py; python scripts/check_citations.py",
-      "result": "passed"
+      "result": "passed",
+      "repository_candidates": 2444
+    },
+    {
+      "command": "MPLBACKEND=Agg python examples/database/plot_data_center_catalogue.py",
+      "result": "passed",
+      "note": "Rebuilt geographic, capacity-completeness, cooling, GPU, UPS, rack-PDU and Schneider Galaxy VS comparisons"
     },
     {
       "command": "sphinx-build -E -a -W --keep-going -b html docs docs/_build/html",
@@ -51,18 +54,19 @@
     {
       "check": "Two independent Data Center snapshot builds",
       "result": "byte-identical projects.parquet, equipment.parquet and manifests",
-      "projects_parquet_sha256": "bc8aa89bccd763a66703c5e413b5fcbc9b01e009e6d6173a87b2a46e39b3964d",
-      "equipment_parquet_sha256": "5481a2d777a330a99eaf783fe1e74162dc6dce50ad5580f3c907a07153fe99c6"
+      "projects_parquet_sha256": "f647d8e969acd8f03fc9c501ecb5c809ca33991f2b91faa646e0320be892fcec",
+      "equipment_parquet_sha256": "0af26f914af2579f70f94df4c81b483de69c35043829e5ba0d05af9ea116174e",
+      "input_sha256": "55dfe0ba19177c4b1113930d81973362dbd93105804ce81c75749cd8602626c5"
     },
     {
       "check": "Generated viewer datasets",
-      "result": "passed; 121 project and 70 equipment rows with Parquet hashes matching the reproducible snapshot",
-      "note": "Headless Chromium was not executed in this continuation; browser-independent viewer behavior is covered by the nine Node tests"
+      "result": "passed through the strict docs build; 123 project and 93 equipment rows with checksum-linked Parquet snapshots",
+      "note": "A standalone headless Chromium run was not executed; browser-independent viewer behavior is covered by nine Node tests"
     }
   ],
   "publication_preflight": {
     "main_sha": "76d0c1a98a9cc20142b8f51375d4ba53d3780616",
-    "branch_sha": "4b68116d306ba3b954e9bdeb53796320871051f2",
+    "branch_sha": "4d987005a1d04d8a540056021c7b52e868ad6b43",
     "pull_request": "https://github.com/julianascencio/energy-data-insights/pull/84",
     "pull_request_state": "open",
     "remote_ci_for_new_commit": "not available until publication"

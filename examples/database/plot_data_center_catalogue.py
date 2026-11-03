@@ -110,4 +110,19 @@ print(
     .sort_values(["apparent_power_kva", "name"])
     .to_string(index=False)
 )
+print("Galaxy VS comparisons retain exact SKU, kW/kVA and full-load efficiency conditions:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Schneider Electric"),
+        [
+            "model",
+            "output_power_kw",
+            "apparent_power_kva",
+            "efficiency_pct",
+            "efficiency_conditions",
+        ],
+    ]
+    .sort_values(["output_power_kw", "model"])
+    .to_string(index=False)
+)
 plt.show()
