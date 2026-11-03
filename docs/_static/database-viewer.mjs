@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, hasLocation, dataCenterCapacity} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isDataCenter = root.dataset.database === "data_centers";
@@ -75,7 +75,7 @@ async function loadTable() {
     el("parquet").href = new URL(info.parquet, base).href;
     el("version").textContent = `Schema ${index.schema_version} · ${number(info.rows)} records · ${Object.keys(index.fields).length} columns`;
     el("provenance").textContent = `Parquet SHA-256: ${info.parquet_sha256}. Browser projection checksum verified; all records included.`;
-    if (el("title")) el("title").textContent = isDataCenter ? (entity === "projects" ? "Data Center Projects" : "Data Center Equipment") : entity === "projects" ? "PV project intelligence" : "PV equipment intelligence";
+    if (el("title")) el("title").textContent = isDataCenter ? (entity === "projects" ? "Data Center Projects" : "Data Center Equipment") : isBess ? "BESS project intelligence" : isBessOem ? "BESS equipment intelligence" : entity === "projects" ? "PV project intelligence" : "PV equipment intelligence";
     resetFilters(); defaultColumns(); renderColumns();
     el("workspace").hidden = false;
     render();
@@ -116,7 +116,7 @@ function render() {
   filtered = filterRows(rows, {search: el("search").value, field: el("filter-field").value,
     equals: el("filter-value").value, metric, min: el("min").value, max: el("max").value, missing: el("missing").value});
   const stats = statistics(filtered, metric);
-  const projects = tableName === "projects" && !isBess && !isBessOem && !isDataCenter;
+  const projects = tableName === "projects" && !isBessOem && !isDataCenter;
   const summary = [[number(filtered.length), projects ? "Matching projects" : "Matching records", `of ${number(rows.length)} in catalogue`]];
   if (isDataCenter && tableName === "projects") {
     summary.push([number(new Set(filtered.filter(r => r.record_scope !== "campus").map(r => r.facility_id)).size), "Facilities", `${filtered.filter(r => r.record_scope === "campus").length} separate campus aggregates`],
@@ -127,6 +127,13 @@ function render() {
       summary.push([entries.length ? entries.map(([basis,v]) => `${number(v.reported_mw)} ${basis.replaceAll("_", " ")}`).join("; ") : "Unknown", label,
         `${total.unknown} unknown · ${total.excluded} campus/overlap exclusions`]);
     }
+  } else if (projects && isBess) {
+    const totals = bessProjectSummary(filtered);
+    summary.push([number(totals.power.reportedSum), "Total power · MW", `${number(totals.power.known)} reported · ${number(totals.power.missing)} unknown`, "db-stat-ac"],
+      [number(totals.energy.reportedSum), "Total energy · MWh", `${number(totals.energy.known)} reported · ${number(totals.energy.missing)} unknown`],
+      [number(totals.countries), "Countries", "Reported country codes"],
+      [number(totals.located), "Mapped projects", `${number(filtered.length - totals.located)} without valid coordinates`],
+      [filtered.length ? `${Math.round(100 * totals.energy.known / filtered.length)}%` : "—", "Energy data coverage", "Share with reported MWh"]);
   } else if (projects) {
     const totals = projectSummary(filtered);
     summary.push([number(totals.ac.reportedSum), "Total AC capacity · MW", `${number(totals.ac.known)} reported · ${number(totals.ac.missing)} unknown`, "db-stat-ac"],
@@ -164,8 +171,8 @@ async function renderMap() {
     mapModule ||= import("./database-map.mjs");
     const {createProjectMap} = await mapModule;
     if (request !== mapRequest || tableName !== "projects") return;
-    projectMap ||= createProjectMap(el("map"), showRecord);
-    projectMap.update(filtered);
+    projectMap ||= createProjectMap(el("map"), showRecord, isBess ? "bess" : "pv");
+    projectMap.update(filtered, {worldView: isBess && filtered.length === rows.length});
   } catch {
     mapModule = null;
     el("map-caption").textContent = "Map could not load. Project KPIs and the results table remain available. Reload the page to retry.";
@@ -259,4 +266,5 @@ el("export").addEventListener("click", () => download(toCsv(sortRows(filtered, s
 el("export-record").addEventListener("click", () => download(JSON.stringify(currentRecord, null, 2), `${tableName}-${currentRecord.record_id}.json`, "application/json"));
 el("close").addEventListener("click", () => el("detail").close());
 el("map-fit")?.addEventListener("click", () => projectMap?.fit());
+el("map-world")?.addEventListener("click", () => projectMap?.world());
 initialize();

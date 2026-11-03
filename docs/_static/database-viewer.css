@@ -1,5 +1,5 @@
 /* Shared dashboard skin; theme variables also support PyData's dark mode. */
-:is(#pv-database, #data-center-database) {
+:is(#pv-database, #bess-database, #data-center-database) {
   --db-accent: #11796f;
   --db-border: var(--pst-color-border, #dce5e5);
   --db-surface: var(--pst-color-background, #fff);
@@ -7,95 +7,95 @@
   color: var(--pst-color-text-base, #203639);
   font-variant-numeric: tabular-nums;
 }
-html[data-theme="dark"] :is(#pv-database, #data-center-database) { --db-accent: #68d1bf; }
-body:has(:is(#pv-database, #data-center-database)) .bd-sidebar-secondary { display: none; }
-body:has(:is(#pv-database, #data-center-database)) .bd-main .bd-content .bd-article-container { max-width: 100%; width: 100%; }
-:is(#pv-database, #data-center-database) [hidden] { display: none !important; }
-:is(#pv-database, #data-center-database) .db-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.4rem 0 1rem; }
-:is(#pv-database, #data-center-database) .db-heading h2 { margin: .4rem 0; font-size: clamp(1.4rem, 2.4vw, 2rem); font-weight: 650; letter-spacing: -.035em; }
-:is(#pv-database, #data-center-database) .db-heading p { margin: 0; color: var(--db-muted); font-size: .86rem; }
-:is(#pv-database, #data-center-database) .db-eyebrow { font-size: .65rem; font-weight: 750; letter-spacing: .13em; color: var(--db-accent); }
-:is(#pv-database, #data-center-database) .db-snapshot-badge { flex-shrink: 0; padding: .35rem .65rem; border-radius: 30px; color: var(--db-accent); background: color-mix(in srgb, var(--db-accent) 9%, var(--db-surface)); font-size: .7rem; font-weight: 600; }
-:is(#pv-database, #data-center-database) .db-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .75rem; margin: 1rem 0; }
-:is(#pv-database, #data-center-database) .db-primary-controls { grid-template-columns: minmax(140px, 1fr) minmax(200px, 2.5fr) auto; align-items: end; padding: .8rem 0 .25rem; }
-:is(#pv-database, #data-center-database) label { display: flex; flex-direction: column; gap: .35rem; font-size: .73rem; font-weight: 600; color: var(--db-muted); }
-:is(#pv-database, #data-center-database) select, :is(#pv-database, #data-center-database) input { min-width: 0; width: 100%; padding: .6rem .7rem; border: 1px solid var(--db-border); border-radius: 8px; background: var(--db-surface); color: var(--pst-color-text-base); font: inherit; }
-:is(#pv-database, #data-center-database) button { border: 1px solid var(--db-border); border-radius: 7px; padding: .45rem .7rem; color: var(--pst-color-text-base); background: var(--db-surface); cursor: pointer; font-size: .75rem; font-weight: 550; }
-:is(#pv-database, #data-center-database) .db-primary-controls > button { height: 37px; }
-:is(#pv-database, #data-center-database) button:hover:not(:disabled) { border-color: var(--db-accent); color: var(--db-accent); }
-:is(#pv-database, #data-center-database) button:disabled { opacity: .45; cursor: default; }
-:is(#pv-database, #data-center-database) :focus-visible { outline: 3px solid var(--db-accent); outline-offset: 2px; }
-:is(#pv-database, #data-center-database) .db-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin: .7rem 0; font-size: .75rem; }
-:is(#pv-database, #data-center-database) .db-muted { font-size: .72rem; line-height: 1.6; color: var(--db-muted); overflow-wrap: anywhere; }
-:is(#pv-database, #data-center-database) .db-capacity-note { margin: 0 0 .35rem; }
-:is(#pv-database, #data-center-database) .db-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .6rem; margin: .4rem 0 .65rem; }
-:is(#pv-database, #data-center-database) .db-stat { min-width: 0; border: 1px solid var(--db-border); border-radius: 10px; padding: .8rem .85rem; background: var(--db-surface); box-shadow: 0 2px 8px #163a3604; }
-:is(#pv-database, #data-center-database) .db-stat-label { display: block; font-size: .66rem; font-weight: 600; color: var(--db-muted); }
-:is(#pv-database, #data-center-database) .db-stat strong { display: block; margin: .4rem 0 .25rem; font-size: 1.18rem; line-height: 1.25; font-weight: 650; letter-spacing: -.035em; white-space: nowrap; }
-:is(#pv-database, #data-center-database) .db-stat small { display: block; font-size: .61rem; line-height: 1.4; color: var(--db-muted); }
-:is(#pv-database, #data-center-database) .db-stat-ac { border-color: color-mix(in srgb, var(--db-accent) 35%, var(--db-border)); background: color-mix(in srgb, var(--db-accent) 6%, var(--db-surface)); }
-:is(#pv-database, #data-center-database) .db-stat-ac strong { color: var(--db-accent); }
-:is(#pv-database, #data-center-database) .db-panel { margin: 1rem 0; padding: 1.05rem; border: 1px solid var(--db-border); border-radius: 12px; background: var(--db-surface); min-width: 0; }
-:is(#pv-database, #data-center-database) .db-panel h2 { margin: .25rem 0 .5rem; font-size: 1.05rem; font-weight: 650; letter-spacing: -.02em; }
-:is(#pv-database, #data-center-database) .db-panel-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
-:is(#pv-database, #data-center-database) .db-panel-heading .db-actions { margin: 0; }
-:is(#pv-database, #data-center-database) summary { cursor: pointer; font-size: .8rem; font-weight: 600; }
-:is(#pv-database, #data-center-database) .db-filter-panel { margin: .4rem 0 1rem; padding: .7rem 1rem; }
-:is(#pv-database, #data-center-database) .db-filter-panel summary span { margin-left: .5rem; font-size: .7rem; color: var(--db-muted); font-weight: 400; }
-:is(#pv-database, #data-center-database) .db-visuals.db-with-map { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(270px, 1fr); gap: 1rem; }
-:is(#pv-database, #data-center-database) .db-visuals .db-panel { margin: 0; }
-:is(#pv-database, #data-center-database) .db-chart-panel .db-controls { grid-template-columns: 1fr 1fr; gap: .5rem; margin: .7rem 0; }
-:is(#pv-database, #data-center-database) #db-chart-caption { font-size: .67rem; line-height: 1.5; color: var(--db-muted); }
-:is(#pv-database, #data-center-database) #db-map { height: 400px; width: 100%; border: 1px solid var(--db-border); border-radius: 8px; background: #eff5f5; z-index: 0; }
-:is(#pv-database, #data-center-database) .db-map-note { margin: .65rem 0 0; font-size: .65rem; }
-:is(#pv-database, #data-center-database) .db-map-legend { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #11796f; margin-right: .2rem; }
-:is(#pv-database, #data-center-database) .db-map-marker { border: 0; background: transparent; }
-:is(#pv-database, #data-center-database) .db-map-cluster, :is(#pv-database, #data-center-database) .db-map-point { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; border-radius: 50%; background: #11796f; color: #fff; border: 2px solid #fff; box-shadow: 0 0 0 4px #11796f24; font-size: 10px; font-weight: 700; }
-:is(#pv-database, #data-center-database) .db-map-point { background: #df9954; box-shadow: 0 0 0 3px #df995428; }
-:is(#pv-database, #data-center-database) .leaflet-popup-content-wrapper, :is(#pv-database, #data-center-database) .leaflet-popup-tip { background: var(--db-surface); color: var(--pst-color-text-base); }
-:is(#pv-database, #data-center-database) .db-map-popup { font-family: var(--pst-font-family-base, sans-serif); font-size: .8rem; }
-:is(#pv-database, #data-center-database) .db-map-popup p { margin: .5rem 0; font-size: .73rem; }
-:is(#pv-database, #data-center-database) .db-map-popup ul { list-style: none; padding: 0; margin: .65rem 0; }
-:is(#pv-database, #data-center-database) .db-map-popup li button { width: 100%; text-align: left; margin-bottom: .2rem; }
-:is(#pv-database, #data-center-database) .db-map-pages { display: flex; align-items: center; justify-content: space-between; gap: .3rem; font-size: .65rem; }
-:is(#pv-database, #data-center-database) .db-map-warning { font-size: .7rem; color: var(--db-muted); }
-:is(#pv-database, #data-center-database) .db-column-panel { border-block: 1px solid var(--db-border); padding: .65rem 0; margin: .65rem 0; }
-:is(#pv-database, #data-center-database) .db-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .5rem; max-height: 360px; overflow-y: auto; padding-top: .5rem; }
-:is(#pv-database, #data-center-database) .db-columns label { flex-direction: row; align-items: start; font-weight: 400; overflow-wrap: anywhere; }
-:is(#pv-database, #data-center-database) .db-columns input { width: auto; margin-top: .2rem; }
-:is(#pv-database, #data-center-database) .db-bar-row { display: grid; grid-template-columns: minmax(45px, 1fr) minmax(40px, 2fr) minmax(40px, 1fr); align-items: center; gap: .5rem; margin: .5rem 0; font-size: .7rem; }
-:is(#pv-database, #data-center-database) .db-bar-label { overflow-wrap: anywhere; }
-:is(#pv-database, #data-center-database) .db-bar-row > span:last-child { text-align: right; }
-:is(#pv-database, #data-center-database) .db-bar-track { background: color-mix(in srgb, var(--db-accent) 8%, var(--db-surface)); border-radius: 3px; }
-:is(#pv-database, #data-center-database) .db-bar { height: 9px; border-radius: 3px; background: var(--db-accent); opacity: .8; }
-:is(#pv-database, #data-center-database) .db-table-wrap { overflow: auto; max-height: 650px; border: 1px solid var(--db-border); border-radius: 8px; }
-:is(#pv-database, #data-center-database) table { width: 100%; font-size: .74rem; border-collapse: collapse; }
-:is(#pv-database, #data-center-database) th, :is(#pv-database, #data-center-database) td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid var(--db-border); min-width: 120px; max-width: 320px; overflow-wrap: anywhere; vertical-align: top; }
-:is(#pv-database, #data-center-database) thead { position: sticky; top: 0; background: var(--db-surface); }
-:is(#pv-database, #data-center-database) th button { border: 0; padding: 0; font-weight: 650; text-align: left; }
-:is(#pv-database, #data-center-database) tbody tr:nth-child(even) { background: var(--pst-color-surface); }
-:is(#pv-database, #data-center-database) tbody tr:hover { background: color-mix(in srgb, var(--db-accent) 5%, var(--db-surface)); }
-:is(#pv-database, #data-center-database) caption { font-size: .7rem; padding: .5rem; }
-:is(#pv-database, #data-center-database) dialog { width: min(1000px, 94vw); max-height: 85vh; background: var(--db-surface); color: var(--pst-color-text-base); border: 1px solid var(--db-border); border-radius: 12px; padding: 1.2rem; }
-:is(#pv-database, #data-center-database) dialog::backdrop { background: #102e3e99; backdrop-filter: blur(3px); }
-:is(#pv-database, #data-center-database) dialog td { max-width: 65vw; }
-:is(#pv-database, #data-center-database) dialog pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 400px; font-size: .75rem; }
+html[data-theme="dark"] :is(#pv-database, #bess-database, #data-center-database) { --db-accent: #68d1bf; }
+body:has(:is(#pv-database, #bess-database, #data-center-database)) .bd-sidebar-secondary { display: none; }
+body:has(:is(#pv-database, #bess-database, #data-center-database)) .bd-main .bd-content .bd-article-container { max-width: 100%; width: 100%; }
+:is(#pv-database, #bess-database, #data-center-database) [hidden] { display: none !important; }
+:is(#pv-database, #bess-database, #data-center-database) .db-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.4rem 0 1rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-heading h2 { margin: .4rem 0; font-size: clamp(1.4rem, 2.4vw, 2rem); font-weight: 650; letter-spacing: -.035em; }
+:is(#pv-database, #bess-database, #data-center-database) .db-heading p { margin: 0; color: var(--db-muted); font-size: .86rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-eyebrow { font-size: .65rem; font-weight: 750; letter-spacing: .13em; color: var(--db-accent); }
+:is(#pv-database, #bess-database, #data-center-database) .db-snapshot-badge { flex-shrink: 0; padding: .35rem .65rem; border-radius: 30px; color: var(--db-accent); background: color-mix(in srgb, var(--db-accent) 9%, var(--db-surface)); font-size: .7rem; font-weight: 600; }
+:is(#pv-database, #bess-database, #data-center-database) .db-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .75rem; margin: 1rem 0; }
+:is(#pv-database, #bess-database, #data-center-database) .db-primary-controls { grid-template-columns: minmax(140px, 1fr) minmax(200px, 2.5fr) auto; align-items: end; padding: .8rem 0 .25rem; }
+:is(#pv-database, #bess-database, #data-center-database) label { display: flex; flex-direction: column; gap: .35rem; font-size: .73rem; font-weight: 600; color: var(--db-muted); }
+:is(#pv-database, #bess-database, #data-center-database) select, :is(#pv-database, #bess-database, #data-center-database) input { min-width: 0; width: 100%; padding: .6rem .7rem; border: 1px solid var(--db-border); border-radius: 8px; background: var(--db-surface); color: var(--pst-color-text-base); font: inherit; }
+:is(#pv-database, #bess-database, #data-center-database) button { border: 1px solid var(--db-border); border-radius: 7px; padding: .45rem .7rem; color: var(--pst-color-text-base); background: var(--db-surface); cursor: pointer; font-size: .75rem; font-weight: 550; }
+:is(#pv-database, #bess-database, #data-center-database) .db-primary-controls > button { height: 37px; }
+:is(#pv-database, #bess-database, #data-center-database) button:hover:not(:disabled) { border-color: var(--db-accent); color: var(--db-accent); }
+:is(#pv-database, #bess-database, #data-center-database) button:disabled { opacity: .45; cursor: default; }
+:is(#pv-database, #bess-database, #data-center-database) :focus-visible { outline: 3px solid var(--db-accent); outline-offset: 2px; }
+:is(#pv-database, #bess-database, #data-center-database) .db-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin: .7rem 0; font-size: .75rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-muted { font-size: .72rem; line-height: 1.6; color: var(--db-muted); overflow-wrap: anywhere; }
+:is(#pv-database, #bess-database, #data-center-database) .db-capacity-note { margin: 0 0 .35rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .6rem; margin: .4rem 0 .65rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-stat { min-width: 0; border: 1px solid var(--db-border); border-radius: 10px; padding: .8rem .85rem; background: var(--db-surface); box-shadow: 0 2px 8px #163a3604; }
+:is(#pv-database, #bess-database, #data-center-database) .db-stat-label { display: block; font-size: .66rem; font-weight: 600; color: var(--db-muted); }
+:is(#pv-database, #bess-database, #data-center-database) .db-stat strong { display: block; margin: .4rem 0 .25rem; font-size: 1.18rem; line-height: 1.25; font-weight: 650; letter-spacing: -.035em; white-space: nowrap; }
+:is(#pv-database, #bess-database, #data-center-database) .db-stat small { display: block; font-size: .61rem; line-height: 1.4; color: var(--db-muted); }
+:is(#pv-database, #bess-database, #data-center-database) .db-stat-ac { border-color: color-mix(in srgb, var(--db-accent) 35%, var(--db-border)); background: color-mix(in srgb, var(--db-accent) 6%, var(--db-surface)); }
+:is(#pv-database, #bess-database, #data-center-database) .db-stat-ac strong { color: var(--db-accent); }
+:is(#pv-database, #bess-database, #data-center-database) .db-panel { margin: 1rem 0; padding: 1.05rem; border: 1px solid var(--db-border); border-radius: 12px; background: var(--db-surface); min-width: 0; }
+:is(#pv-database, #bess-database, #data-center-database) .db-panel h2 { margin: .25rem 0 .5rem; font-size: 1.05rem; font-weight: 650; letter-spacing: -.02em; }
+:is(#pv-database, #bess-database, #data-center-database) .db-panel-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-panel-heading .db-actions { margin: 0; }
+:is(#pv-database, #bess-database, #data-center-database) summary { cursor: pointer; font-size: .8rem; font-weight: 600; }
+:is(#pv-database, #bess-database, #data-center-database) .db-filter-panel { margin: .4rem 0 1rem; padding: .7rem 1rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-filter-panel summary span { margin-left: .5rem; font-size: .7rem; color: var(--db-muted); font-weight: 400; }
+:is(#pv-database, #bess-database, #data-center-database) .db-visuals.db-with-map { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(270px, 1fr); gap: 1rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-visuals .db-panel { margin: 0; }
+:is(#pv-database, #bess-database, #data-center-database) .db-chart-panel .db-controls { grid-template-columns: 1fr 1fr; gap: .5rem; margin: .7rem 0; }
+:is(#pv-database, #bess-database, #data-center-database) #db-chart-caption { font-size: .67rem; line-height: 1.5; color: var(--db-muted); }
+:is(#pv-database, #bess-database, #data-center-database) #db-map { height: 400px; width: 100%; border: 1px solid var(--db-border); border-radius: 8px; background: #eff5f5; z-index: 0; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-note { margin: .65rem 0 0; font-size: .65rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-legend { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #11796f; margin-right: .2rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-marker { border: 0; background: transparent; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-cluster, :is(#pv-database, #bess-database, #data-center-database) .db-map-point { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; border-radius: 50%; background: #11796f; color: #fff; border: 2px solid #fff; box-shadow: 0 0 0 4px #11796f24; font-size: 10px; font-weight: 700; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-point { background: #df9954; box-shadow: 0 0 0 3px #df995428; }
+:is(#pv-database, #bess-database, #data-center-database) .leaflet-popup-content-wrapper, :is(#pv-database, #bess-database, #data-center-database) .leaflet-popup-tip { background: var(--db-surface); color: var(--pst-color-text-base); }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-popup { font-family: var(--pst-font-family-base, sans-serif); font-size: .8rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-popup p { margin: .5rem 0; font-size: .73rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-popup ul { list-style: none; padding: 0; margin: .65rem 0; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-popup li button { width: 100%; text-align: left; margin-bottom: .2rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-pages { display: flex; align-items: center; justify-content: space-between; gap: .3rem; font-size: .65rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-map-warning { font-size: .7rem; color: var(--db-muted); }
+:is(#pv-database, #bess-database, #data-center-database) .db-column-panel { border-block: 1px solid var(--db-border); padding: .65rem 0; margin: .65rem 0; }
+:is(#pv-database, #bess-database, #data-center-database) .db-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .5rem; max-height: 360px; overflow-y: auto; padding-top: .5rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-columns label { flex-direction: row; align-items: start; font-weight: 400; overflow-wrap: anywhere; }
+:is(#pv-database, #bess-database, #data-center-database) .db-columns input { width: auto; margin-top: .2rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-bar-row { display: grid; grid-template-columns: minmax(45px, 1fr) minmax(40px, 2fr) minmax(40px, 1fr); align-items: center; gap: .5rem; margin: .5rem 0; font-size: .7rem; }
+:is(#pv-database, #bess-database, #data-center-database) .db-bar-label { overflow-wrap: anywhere; }
+:is(#pv-database, #bess-database, #data-center-database) .db-bar-row > span:last-child { text-align: right; }
+:is(#pv-database, #bess-database, #data-center-database) .db-bar-track { background: color-mix(in srgb, var(--db-accent) 8%, var(--db-surface)); border-radius: 3px; }
+:is(#pv-database, #bess-database, #data-center-database) .db-bar { height: 9px; border-radius: 3px; background: var(--db-accent); opacity: .8; }
+:is(#pv-database, #bess-database, #data-center-database) .db-table-wrap { overflow: auto; max-height: 650px; border: 1px solid var(--db-border); border-radius: 8px; }
+:is(#pv-database, #bess-database, #data-center-database) table { width: 100%; font-size: .74rem; border-collapse: collapse; }
+:is(#pv-database, #bess-database, #data-center-database) th, :is(#pv-database, #bess-database, #data-center-database) td { padding: .6rem .7rem; text-align: left; border-bottom: 1px solid var(--db-border); min-width: 120px; max-width: 320px; overflow-wrap: anywhere; vertical-align: top; }
+:is(#pv-database, #bess-database, #data-center-database) thead { position: sticky; top: 0; background: var(--db-surface); }
+:is(#pv-database, #bess-database, #data-center-database) th button { border: 0; padding: 0; font-weight: 650; text-align: left; }
+:is(#pv-database, #bess-database, #data-center-database) tbody tr:nth-child(even) { background: var(--pst-color-surface); }
+:is(#pv-database, #bess-database, #data-center-database) tbody tr:hover { background: color-mix(in srgb, var(--db-accent) 5%, var(--db-surface)); }
+:is(#pv-database, #bess-database, #data-center-database) caption { font-size: .7rem; padding: .5rem; }
+:is(#pv-database, #bess-database, #data-center-database) dialog { width: min(1000px, 94vw); max-height: 85vh; background: var(--db-surface); color: var(--pst-color-text-base); border: 1px solid var(--db-border); border-radius: 12px; padding: 1.2rem; }
+:is(#pv-database, #bess-database, #data-center-database) dialog::backdrop { background: #102e3e99; backdrop-filter: blur(3px); }
+:is(#pv-database, #bess-database, #data-center-database) dialog td { max-width: 65vw; }
+:is(#pv-database, #bess-database, #data-center-database) dialog pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 400px; font-size: .75rem; }
 @media (max-width: 1200px) {
-  :is(#pv-database, #data-center-database) .db-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  :is(#pv-database, #data-center-database) .db-visuals.db-with-map { grid-template-columns: 1fr; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  :is(#pv-database, #bess-database, #data-center-database) .db-visuals.db-with-map { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
-  :is(#pv-database, #data-center-database) .db-heading { align-items: start; }
-  :is(#pv-database, #data-center-database) .db-snapshot-badge { display: none; }
-  :is(#pv-database, #data-center-database) .db-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
-  :is(#pv-database, #data-center-database) .db-stat { padding: .7rem; }
-  :is(#pv-database, #data-center-database) .db-stat strong { font-size: 1.35rem; }
-  :is(#pv-database, #data-center-database) .db-controls { grid-template-columns: 1fr 1fr; }
-  :is(#pv-database, #data-center-database) .db-primary-controls { grid-template-columns: 1fr auto; }
-  :is(#pv-database, #data-center-database) .db-primary-controls .db-wide { grid-column: 1 / -1; grid-row: 2; }
-  :is(#pv-database, #data-center-database) .db-panel { padding: .8rem; }
-  :is(#pv-database, #data-center-database) .db-filter-panel summary span { display: block; margin: .25rem 0 0 1rem; }
-  :is(#pv-database, #data-center-database) #db-map { height: 330px; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-heading { align-items: start; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-snapshot-badge { display: none; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-stat { padding: .7rem; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-stat strong { font-size: 1.35rem; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-controls { grid-template-columns: 1fr 1fr; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-primary-controls { grid-template-columns: 1fr auto; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-primary-controls .db-wide { grid-column: 1 / -1; grid-row: 2; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-panel { padding: .8rem; }
+  :is(#pv-database, #bess-database, #data-center-database) .db-filter-panel summary span { display: block; margin: .25rem 0 0 1rem; }
+  :is(#pv-database, #bess-database, #data-center-database) #db-map { height: 330px; }
 }
 
 #data-center-database .db-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }

@@ -9,7 +9,10 @@ const make = (tag, text, className) => {
   return element;
 };
 
-export function createProjectMap(container, onRecord) {
+export function createProjectMap(container, onRecord, database = "pv") {
+  const capacities = database === "bess" ?
+    [["power_capacity_mw", "MW power"], ["energy_capacity_mwh", "MWh energy"]] :
+    [["capacity_ac_mw", "MW AC"], ["capacity_dc_mw", "MW DC"]];
   const map = L.map(container, {preferCanvas: true, scrollWheelZoom: false,
     minZoom: 0, maxZoom: 16, zoomSnap: 0.5, maxBounds: [[-90, -220], [90, 220]]});
   const markers = L.layerGroup().addTo(map);
@@ -34,14 +37,18 @@ export function createProjectMap(container, onRecord) {
       const row = group.rows[0];
       content.append(make("strong", row.name || row.record_id),
         make("p", `${row.country_code || "Unknown country"} · ${row.status || "Unknown status"}`),
-        make("p", row.facility_id ? `${row.record_scope} · IT ${number(row.it_capacity_mw)} MW (${row.it_capacity_basis || "unknown basis"}) · Grid ${number(row.grid_capacity_mw)} MW · Facility ${number(row.facility_capacity_mw)} MW` : `${number(row.capacity_ac_mw)} MW AC · ${number(row.capacity_dc_mw)} MW DC`),
+        make("p", row.facility_id ? `${row.record_scope} · IT ${number(row.it_capacity_mw)} MW (${row.it_capacity_basis || "unknown basis"}) · Grid ${number(row.grid_capacity_mw)} MW · Facility ${number(row.facility_capacity_mw)} MW` : capacities.map(([field, unit]) => `${number(row[field])} ${unit}`).join(" · ")),
         make("p", `Location accuracy: ${row.location_accuracy || "Unknown"}`));
+      if (database === "bess") content.append(
+        make("p", `Power basis: ${row.power_basis || "Unknown"} · Energy basis: ${row.energy_basis || "Unknown"}`),
+        make("p", `Capacity scope: ${row.capacity_scope || "Unknown"} · Status as of: ${row.status_as_of || "Unknown"}`));
       const button = make("button", "View project details"); button.type = "button";
       button.addEventListener("click", () => onRecord(row)); content.append(button);
       return content;
     }
     content.append(make("strong", `${number(group.rows.length)} projects in this group`),
-      make("p", group.rows.some(row => row.facility_id) ? "Facility/campus records. Scope-aware capacities are shown in the dashboard." : `${number(statistics(group.rows, "capacity_ac_mw").reportedSum)} MW AC reported`));
+      make("p", group.rows.some(row => row.facility_id) ? "Facility/campus records. Scope-aware capacities are shown in the dashboard." : capacities.map(([field, unit]) => `${number(statistics(group.rows, field).reportedSum)} ${unit} reported`).join(" · ")));
+    if (database === "bess") content.append(make("p", "Reported sums; project phases, statuses and rating bases may differ."));
     const zoom = make("button", "Zoom to group"); zoom.type = "button";
     zoom.disabled = map.getZoom() === map.getMaxZoom();
     zoom.addEventListener("click", () => {
@@ -104,12 +111,19 @@ export function createProjectMap(container, onRecord) {
     if (locations.length) map.fitBounds(L.latLngBounds(locations.map((row) => [row.latitude, row.longitude])), {padding: [30, 30], maxZoom: 6, animate: false});
     else map.setView([20, 0], 1, {animate: false});
   }
+  function world() {
+    map.closePopup();
+    map.fitBounds([[-60, -180], [85, 180]], {padding: [12, 12], animate: false});
+  }
   new ResizeObserver(() => map.invalidateSize({pan: false})).observe(container);
   return {
-    update(rows) {
+    update(rows, {worldView = false} = {}) {
       locations = rows.filter(hasLocation);
-      map.invalidateSize({pan: false}); fit(); draw();
+      map.invalidateSize({pan: false});
+      if (worldView) world(); else fit();
+      draw();
     },
     fit,
+    world,
   };
 }
