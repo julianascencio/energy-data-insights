@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T10:20:40Z",
+  "updated_at": "2026-11-03T11:19:28Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -34,7 +34,9 @@
     "atnorth_explicit_first_phase": 1,
     "coolit_current_cdu_models": 6,
     "motivair_current_cdu_models": 8,
-    "nvent_rackchiller_skus": 6
+    "nvent_rackchiller_skus": 6,
+    "eaton_dry_transformer_configurations": 16,
+    "siemens_nxair_portfolio_variants": 5
   },
   "next_batches": [
     {
@@ -139,7 +141,7 @@
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
       "offset": 211,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, eight current Motivair CDU models and six nVent RackChiller SKUs complete; continue exact current transformer and switchgear tables, then generator suppliers beyond Cummins",
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows and five Siemens NXAIR variants complete; continue generator and electrical-equipment suppliers beyond Cummins/Eaton/Siemens",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -156,8 +158,8 @@
         "https://www.lenovo.com/",
         "https://www.coolitsystems.com/"
       ],
-      "offset": 14,
-      "scope": "Motivair and nVent CDU tables complete at 8+6. Continue exact integrated compute racks and direct-to-chip/immersion model tables; Asian and regional OEMs",
+      "offset": 35,
+      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5. Continue exact integrated compute racks and direct-to-chip/immersion model tables; Asian and regional OEMs",
       "questions": [
         "Rack input vs server vs accelerator limit",
         "Measured performance workload/precision/test conditions, temperatures and flow"
@@ -215,11 +217,11 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "motivair-nvent-20261103T102040Z",
+    "run_id": "eaton-siemens-20261103T111928Z",
     "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T1020-validation.json",
+    "validation": "2026-11-03T1119-validation.json",
     "added_projects": 0,
-    "added_equipment": 14,
+    "added_equipment": 21,
     "branch": "research/data-center-database-20261103T0909Z"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T10:20:40Z",
+  "retrieved_at": "2026-11-03T11:19:28Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -181,6 +181,14 @@
       "note": "Eight Motivair models plus six nVent catalogue configurations. Optional electrical choices remain observations. Motivair normalized cooling capacity is quarantined for all eight models because table row media and footnote 1 conflict.",
       "reuse": "Factual extraction from official public copyrighted OEM PDFs; no open licence asserted and source tables are not redistributed",
       "originals": "Public web readers exposed the exact tables. Direct current-original requests returned HTTP 403, so sources.json explicitly records unavailable bytes and no checksum rather than hashing an older redirect."
+    },
+    {
+      "inventory": "Eaton dry-type transformer 7.2-12 kV tables and Siemens NXAIR current portfolio",
+      "processed_offset": 21,
+      "accepted_records": 21,
+      "note": "Sixteen Eaton standard/rating configurations plus five Siemens portfolio variants. Transformer kVA is not converted to active kW; switchgear maxima remain observations rather than nominal inputs.",
+      "reuse": "Factual extraction from official public copyrighted OEM pages; no open licence asserted and source tables/cards are not redistributed",
+      "originals": "Official search indexes exposed complete factual tables/cards. Eaton original retrieval timed out and the Siemens page returned unsupported content to the reader, so sources.json records unavailable bytes and no checksum."
     }
   ],
   "deferred": [
@@ -277,6 +285,10 @@
     {
       "candidate": "Motivair MCDU-30/MCDU-60 and older nVent CDU800 configurations",
       "reason": "Older official sheets expose these models/SKUs, but they are absent from the selected current tables. Lifecycle status needs dated OEM evidence before any historical import."
+    },
+    {
+      "candidate": "Siemens NXAIR ordered panel and breaker configurations",
+      "reason": "The current portfolio cards establish five model/rating families but not exact breaker, busbar, panel-width or communications combinations; configuration-level continuation requires the current model catalog tables."
     }
   ],
   "excluded": [
@@ -331,6 +343,14 @@
     {
       "candidate": "Cummins inferred generator power factor or facility backup capacity",
       "reason": "No active/apparent conversion was performed and equipment ratings were not promoted to facility backup MW"
+    },
+    {
+      "candidate": "Eaton inferred active kW, efficiency and winding voltage",
+      "reason": "No kW/efficiency is calculated from kVA and reported losses; the 7.2-12 kV class is not promoted to exact primary or secondary voltage"
+    },
+    {
+      "candidate": "Siemens optional LPIT, remote monitoring, EcoTech and breaker combinations",
+      "reason": "Portfolio features were not expanded into exact product configurations or issuer-verified certifications without model-specific binding"
     }
   ],
   "holds_unchanged": [
@@ -458,6 +478,8 @@
     "No project equipment-model relationship inferred from supplier testimonials or GPU compatibility claims.",
     "Motivair electrical choices remain model options rather than invented configured SKUs; primary and secondary GPM remain separate observations, while the normalized liquid-flow field is an explicit secondary-loop unit conversion.",
     "nVent dry/filled CDU40 and CDU100 SKUs and CDU800 generation 3.2 country-of-origin SKUs remain separate configurations; the shared family sheet is not used to synthesize additional variants.",
-    "Motivair cooling-capacity scalars remain quarantined because the 25% PG row label conflicts with footnote 1's 100% water statement; all four exact rating points remain available as observations."
+    "Motivair cooling-capacity scalars remain quarantined because the 25% PG row label conflicts with footnote 1's 100% water statement; all four exact rating points remain available as observations.",
+    "Eaton transformer kVA, no-load/load losses, impedance and noise retain their standard and voltage-class table boundary; no active kW, efficiency or winding voltage is inferred.",
+    "Siemens NXAIR voltage, short-circuit current and continuous current are portfolio maxima stored as observations; nominal input fields remain null."
   ]
 }

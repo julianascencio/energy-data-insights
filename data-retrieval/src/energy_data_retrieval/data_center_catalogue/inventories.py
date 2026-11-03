@@ -1,4 +1,4 @@
-"""Offline identity staging for bounded official operator and CDU inventories.
+"""Offline staging for bounded official operator and equipment inventories.
 
 Only named inventory links are retained. Detail-page specifications, lifecycle,
 capacity boundaries and reuse conditions still require review before import.
@@ -143,6 +143,70 @@ def parse_cdu_spec_matrix(
         candidates[model] = candidate
     if len(candidates) != expected_count:
         raise ValueError(f"Changed CDU matrix shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
+def parse_power_equipment_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact transformer/switchgear table rows for manual review.
+
+    Maximum voltage/current values remain limits rather than nominal inputs,
+    and transformer kVA is never converted to active kW.
+    """
+    host = urlsplit(source_url).hostname
+    if host not in {"www.eaton.com", "www.siemens.com"}:
+        raise ValueError("Unsupported official power-equipment source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {"category", "manufacturer", "model", "variant", "locator"}
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing power-equipment matrix columns")
+    candidates: dict[tuple[str, str, str, str], dict[str, Any]] = {}
+    numeric = {
+        "apparent_power_kva",
+        "max_voltage_kv",
+        "max_short_circuit_ka",
+        "max_current_a",
+        "weight_kg",
+    }
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (row.get(key) or "").strip() for key in required}
+        if candidate["category"] not in {"transformer", "switchgear"}:
+            raise ValueError(f"Unsupported power-equipment category on row {line}")
+        if not all(candidate.values()):
+            raise ValueError(f"Incomplete power-equipment row {line}")
+        for field in numeric:
+            raw = (row.get(field) or "").strip()
+            if not raw:
+                candidate[field] = None
+                continue
+            try:
+                value = float(raw)
+            except ValueError as exc:
+                raise ValueError(f"Invalid {field} on row {line}") from exc
+            if value <= 0:
+                raise ValueError(f"Invalid {field} on row {line}")
+            candidate[field] = value
+        identity: tuple[str, str, str, str] = (
+            candidate["category"],
+            candidate["manufacturer"],
+            candidate["model"],
+            candidate["variant"],
+        )
+        if identity in candidates:
+            raise ValueError(f"Duplicate power-equipment row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed power-equipment matrix shape: {len(candidates)} != {expected_count}"
+        )
     return {
         "source_url": source_url,
         "sha256": hashlib.sha256(content).hexdigest(),

@@ -7,10 +7,14 @@ import pytest
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
     parse_named_inventory,
+    parse_power_equipment_matrix,
 )
 
 CONTENT = (Path(__file__).parent / "fixtures/data_centers/named-inventory.html").read_bytes()
 CDU_MATRIX = (Path(__file__).parent / "fixtures/data_centers/cdu-matrix.csv").read_bytes()
+POWER_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/power-equipment-matrix.csv"
+).read_bytes()
 
 
 @pytest.mark.parametrize(
@@ -66,4 +70,39 @@ def test_cdu_matrix_drift_duplicates_and_invalid_sources_fail():
             CDU_MATRIX,
             source_url="https://example.com/example.pdf",
             expected_count=2,
+        )
+
+
+def test_power_equipment_matrix_stages_exact_boundaries():
+    result = parse_power_equipment_matrix(
+        POWER_MATRIX,
+        source_url="https://www.eaton.com/example/transformers.html",
+        expected_count=2,
+    )
+    by_category = {row["category"]: row for row in result["candidates"]}
+    transformer = by_category["transformer"]
+    switchgear = by_category["switchgear"]
+    assert transformer["apparent_power_kva"] == 400
+    assert transformer["max_voltage_kv"] == 12
+    assert transformer["max_current_a"] is None
+    assert switchgear["max_voltage_kv"] == 24
+    assert switchgear["max_short_circuit_ka"] == 25
+    assert switchgear["max_current_a"] == 2000
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+@pytest.mark.parametrize(
+    ("source_url", "expected_count"),
+    [
+        ("https://example.com/table.csv", 2),
+        ("https://www.siemens.com/example/table.csv", 3),
+    ],
+)
+def test_power_equipment_matrix_rejects_unbounded_input(source_url, expected_count):
+    with pytest.raises(ValueError):
+        parse_power_equipment_matrix(
+            POWER_MATRIX,
+            source_url=source_url,
+            expected_count=expected_count,
         )

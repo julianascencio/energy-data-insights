@@ -38,12 +38,11 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 259 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Eaton,
-Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, STULZ and Vertiv. Current categories are GPU accelerators,
+has 280 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Eaton,
+Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, Siemens, STULZ and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
-and CRAC/precision air-conditioning equipment.
-Switchgear, transformers and additional cooling categories are supported by
-schema and ranked in the continuation backlog. The Schneider Galaxy
+and CRAC/precision air-conditioning equipment, transformers and switchgear.
+The Schneider Galaxy
 VS batch preserves exact commercial references, stated kW and kVA, battery-string
 arrangements, full-load efficiency conditions and dimensions without calculating
 battery energy or runtime.
@@ -71,6 +70,12 @@ quarantined because the row labels 25% propylene glycol while footnote 1 says
 capacities use 100% water. nVent CDU40/CDU100 dry and filled SKUs stay separate;
 CDU800 generation 3.2 US/Germany SKUs retain their shared 800 kW point and the
 separate 575 kW GB200-NVL72 application rating.
+The power-distribution continuation adds all 16 rows in Eaton's two current
+7.2--12 kV dry-type transformer tables and all five variants on Siemens' current
+NXAIR portfolio page. Transformer kVA is never converted to active kW; table
+losses, impedance and noise remain bounded observations. Siemens voltage,
+short-circuit current and continuous-current values are portfolio maxima, not
+nominal inputs or ordered-panel configurations.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server
@@ -133,9 +138,11 @@ including locator, confidence and normalized unit. Sources retain retrieval date
 publication date when known, revision and original-byte SHA-256 when retrievable.
 Original copyrighted pages/PDFs are not redistributed. The current Motivair and
 nVent tables were readable through the public web reader, while direct byte
-requests returned HTTP 403; this access failure and unavailable checksum are
-explicitly registered without treating them as reuse prohibitions. Public access
-does not imply an open licence. Explicit reuse restrictions remain separate.
+requests returned HTTP 403. Eaton's indexed tables were complete but the original
+page request timed out; the Siemens page returned an unsupported-content response
+to the reader. These access failures and unavailable checksums are explicitly
+registered without treating them as reuse prohibitions. Public access does not
+imply an open licence. Explicit reuse restrictions remain separate.
 
 The upsert preserves creation dates and unchanged update dates. Conflicting
 populated values are quarantined individually with both observations and dated
@@ -166,10 +173,10 @@ protocols. Publicly linked AHx180/AHx240 brochures add dimensions, verified
 visually. CHx3000's conflicting 45/50 °C ambient limits remain quarantined.
 No compatible GPU rack is treated as a deployed or newly configured rack.
 
-The next bounded CDU batch covers Motivair's eight-model 2026 table and six exact
-nVent HOFFMAN SKUs. Optional voltages were not expanded into invented products.
+The completed CDU continuation covers Motivair's eight-model 2026 table and six
+exact nVent HOFFMAN SKUs. Optional voltages were not expanded into invented products.
 Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-03T1020-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-03T1119-validation.json).

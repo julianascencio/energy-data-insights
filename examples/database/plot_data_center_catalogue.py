@@ -176,4 +176,22 @@ print(
     .sort_values(["manufacturer", "cooling_capacity_kw", "model"], na_position="last")
     .to_string(index=False)
 )
+print("Transformer comparison keeps kVA separate from table losses and active kW:")
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("transformer"),
+        ["manufacturer", "variant", "apparent_power_kva", "weight_kg", "power_conditions"],
+    ]
+    .sort_values(["manufacturer", "apparent_power_kva", "variant"])
+    .to_string(index=False)
+)
+print("Switchgear portfolio maxima remain observations, not nominal electrical inputs:")
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("switchgear"),
+        ["manufacturer", "model", "variant", "input_voltage_v", "input_current_a"],
+    ]
+    .sort_values(["manufacturer", "model", "variant"])
+    .to_string(index=False)
+)
 plt.show()
