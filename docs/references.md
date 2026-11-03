@@ -6375,3 +6375,11 @@ ABB (2018). **ABB wind converters ACS880 wind turbine converters**. [Source](htt
 **Role:** data source. 3AUA0000231755 Rev A 20 September2018, p10 full15-row rating table; typical kW distinguished from kVA; twin cabinet units retained.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### bonfiglioli_acu_vec521r6
+
+Bonfiglioli (2024). **ACTIVE CUBE Operating Instructions**. [Source](https://www.bonfiglioli.in/_default_upload_bucket/ACUx01_Operating%20Instructions_VEC521R6.pdf)
+
+**Role:** data source. VEC521R6 printed06/24 pp38–41, exact ACU401sizes1–5; motor ratings and time-qualified overloads. Wind-series application from WIND R05_2 p13, no turbine compatibility.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

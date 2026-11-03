@@ -412,3 +412,17 @@ interfaces and optional limits to15existing models. All p10ratings remain.
 Standard altitude1000m is separate from optional4000m; optional coolant55C is
 not a standard limit. No independent performance/certification claim is added.
 BMD R04_1 industrial identifiers remain held pending their wind-specific mapping.
+
+
+## Baden-Württemberg, Gotland and ACU control inverters
+
+Complete partitions add83projects and369turbines; all10059prior records and
+capacity totals remain unchanged.514German groups,28Swedish areas and3orphan
+units remain held. New project scopes stay excluded from capacity sums.
+
+Bonfiglioli ACU VEC521R6 pp38–41 (`bonfiglioli_acu_vec521r6`) adds all18exact
+ACU401type columns in sizes1–5. Motor shaft power, output current,60s/1s overload,
+2kHz losses, dimensions and approximate mass retain boundaries. ACU401-22
+keeps22A main-table and frequency-dependent23A/22.7A observations separately.
+WIND R05_2 p13 supports Active Cube series yaw application, not exact turbine
+compatibility. No artificial interface/cooling variants or performance claims.

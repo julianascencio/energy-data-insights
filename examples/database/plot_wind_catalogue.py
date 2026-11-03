@@ -223,11 +223,9 @@ if not ngc.empty:
 # %%
 print("Bonfiglioli peak torque by application; reference values, not nominal ratings:")
 for _, component in equipment.loc[equipment.manufacturer.eq("Bonfiglioli")].iterrows():
-    print(
-        component.model,
-        json.loads(component.extensions_json)["peak_torque_Nm_by_application"],
-        "Nm",
-    )
+    specs = json.loads(component.extensions_json)
+    if "peak_torque_Nm_by_application" in specs:
+        print(component.model, specs["peak_torque_Nm_by_application"], "Nm")
 
 # %%
 print("ABB historical converter ratings: typical generator kW; generator/grid kVA")
@@ -251,3 +249,9 @@ for _, component in equipment.loc[equipment.manufacturer.eq("ABB")].iterrows():
             conditions["coolant_inlet_temperature_c"],
             conditions["optional_limits"],
         )
+
+# %%
+print("ACU motor-side current; 60s and 1s overload limits, not turbine output:")
+for _, component in equipment.loc[equipment.model.fillna("").str.startswith("ACU 401-")].iterrows():
+    specs = json.loads(component.extensions_json)
+    print(component.model, specs["output_current_table_a"], specs["overload_current_a"])

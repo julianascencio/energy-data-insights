@@ -26,6 +26,7 @@ STATES = {
     "1400": "Brandenburg",
     "1414": "Sachsen-Anhalt",
     "1403": "Bayern",
+    "1402": "Baden-Württemberg",
 }
 
 
