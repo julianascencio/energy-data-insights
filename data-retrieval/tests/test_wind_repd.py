@@ -125,3 +125,55 @@ def test_missing_capacity_stays_null():
     assert rows[0].get("installed_capacity_mw") is None
     assert rows[0]["historical_capacity_mw"] == 10
     assert json.loads(rows[0]["extensions_json"])["repd"]["height_of_turbines_m_original"] == "100"
+
+
+@pytest.mark.parametrize(
+    "current,historical,accepted",
+    [
+        ("Hill", "Hill (Re-submission)", True),
+        ("Hill", "Hill - resubmitted", True),
+        ("Hill", "Hill II (resubmission)", False),
+        ("Hill", "Hill (Repower) (resubmission)", False),
+        ("Hill", "Hill Extension (resubmission)", False),
+        ("Hill", "Hill (Revised)", False),
+    ],
+)
+def test_resubmission_labels_do_not_erase_phases(current, historical, accepted):
+    from energy_data_retrieval.wind_catalogue.repd import resubmission_label_match
+
+    assert resubmission_label_match(current, historical) is accepted
+
+
+def test_reviewed_label_change_keeps_repeated_names_excluded():
+    text = (FIXTURES / "repd_synthetic.csv").read_text()
+    text += text.splitlines()[1].replace("101,", "104,", 1) + "\n"
+    crosswalk = (
+        "gppd_id,repd_id,repd_id2,repd_name,fuel,capacity\n"
+        "GBR_TEST_1,101,,Synthetic Hill (resubmission),Wind,0\n"
+    )
+    rows, ledger = reconcile_repd(
+        text,
+        crosswalk,
+        baseline(),
+        source_id="repd",
+        crosswalk_source_id="crosswalk",
+        now=NOW,
+        as_of="2026-08-03",
+        allow_resubmission_labels=True,
+    )
+    assert len(rows) == 1
+    assert rows[0]["record_id"] == baseline()[0]["record_id"]
+    assert rows[0]["aggregation_role"] == "unresolved"
+    assert ledger[0]["repeated_name_scope_unresolved"]
+    assert ledger[-1]["decision"] == "deferred_identity"
+    changed, _ = reconcile_repd(
+        text,
+        crosswalk.replace("Wind,0", "Wind,1"),
+        baseline(),
+        source_id="repd",
+        crosswalk_source_id="crosswalk",
+        now=NOW,
+        as_of="2026-08-03",
+        allow_resubmission_labels=True,
+    )
+    assert changed == []

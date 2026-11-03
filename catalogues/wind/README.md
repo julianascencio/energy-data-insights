@@ -4,8 +4,8 @@ Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
 The proposed branch contains 5,355 project records (5,354 non-group records),
-52 exact equipment records (51 turbines and one blade), two original numerical
-power curves, 59 countries and five manufacturer names. Merged-main Wind totals
+53 exact equipment records (51 turbines, one blade and one converter), two original numerical
+power curves, 59 countries and six manufacturer names. Merged-main Wind totals
 remain zero at `15e9d60b`. These are catalogue counts, not an operating census.
 
 The initial 5,344-row WRI import is historical. The latest continuation enriches

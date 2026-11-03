@@ -2,8 +2,8 @@
 
 The Wind catalogue connects identifiable projects, exact equipment configurations,
 individual turbines and numerical curves. The proposed branch contains **5,355 project
-records in 59 countries, 52 exact equipment records from five manufacturer names,
-and two original numerical power curves** (51 turbine configurations and one blade). No individual turbine inventory has
+records in 59 countries, 53 exact equipment records from six manufacturer names,
+and two original numerical power curves** (51 turbine configurations, one blade and one converter). No individual turbine inventory has
 yet been imported. These are proposed branch totals, not merged totals or a
 worldwide operating census.
 
@@ -164,3 +164,19 @@ individual curve provenance/conditions require reconciliation.
 Hourly continuation must inspect current main, compatible open PRs and the ledger,
 resume unfinished partitions, acquire a nonblocking branch lock, and publish using
 an expected-head check. Leave PRs open and unmerged; never overwrite another run.
+
+## Administrative-name reconciliation and first converter
+
+The next bounded review exhausted all 55 deferred changed-name REPD candidates.
+Only removal of an administrative resubmission label, corroborated by the explicit
+WRI registry crosswalk and unchanged reported capacity, can pass the opt-in adapter
+rule. Extension, phase, repowering and revised-application words are retained.
+Repeated names and replacement links remain held. Capacity aggregation exclusions
+are preserved even after a successful lifecycle enrichment.
+
+The first exact wind converter cabinet is ABB ACS880-77CC-6880A/5500A-7,
+from hardware manual 3AXD50000813605 Rev A (22 December 2021), pp87–92.
+Its grid-side active kW, generator typical kW and apparent kVA remain distinct.
+Temperature/altitude derating and enclosure-only lifetime conditions are retained;
+no turbine compatibility or optional-configuration combinations are inferred.
+The complete ratings table contains one cabinet, not a 20-model equipment batch.

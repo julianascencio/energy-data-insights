@@ -54,6 +54,19 @@ def _name(value: str) -> str:
     return re.sub(r"[^a-z0-9]", "", value.casefold())
 
 
+def resubmission_label_match(current: str, historical: str) -> bool:
+    """Compare names after removing only administrative resubmission labels.
+
+    This is a corroboration check after an explicit registry crosswalk, never an
+    identity matcher. Phase, extension, revised and repowering words are retained.
+    """
+
+    def clean(value: str) -> str:
+        return _name(re.sub(r"\bresubmitted\b|\bre-?submission\b", "", value, flags=re.IGNORECASE))
+
+    return bool(clean(current)) and clean(current) == clean(historical)
+
+
 def reconcile_repd(
     text: str,
     crosswalk: str,
@@ -63,6 +76,7 @@ def reconcile_repd(
     crosswalk_source_id: str,
     now: str,
     as_of: str,
+    allow_resubmission_labels: bool = False,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Return reviewed enrichments and decisions for all Wind CSV rows.
 
@@ -121,9 +135,19 @@ def reconcile_repd(
                 reason = "Crosswalk identity absent from baseline"
             elif link["repd_id2"]:
                 reason = "Crosswalk has a second REPD application; scope review required"
-            elif _name(raw["Site Name"]) != _name(link["repd_name"]):
+            elif _name(raw["Site Name"]) != _name(link["repd_name"]) and not (
+                allow_resubmission_labels
+                and resubmission_label_match(raw["Site Name"], link["repd_name"])
+                and raw["Installed Capacity (MWelec)"].strip()
+                and link.get("capacity", "").strip()
+                and float(raw["Installed Capacity (MWelec)"]) == float(link["capacity"])
+            ):
                 reason = "Registry name differs from explicit historical crosswalk"
-            elif names[_name(raw["Site Name"])] != 1:
+            elif names[_name(raw["Site Name"])] != 1 and not (
+                allow_resubmission_labels
+                and _name(raw["Site Name"]) != _name(link["repd_name"])
+                and old.get("aggregation_role") == "unresolved"
+            ):
                 reason = "Repeated registry name; application/phase identity review required"
             elif old.get("status") != "unknown":
                 reason = (
@@ -288,6 +312,11 @@ def reconcile_repd(
                 merged.pop("source_urls")  # Optional; source IDs remain authoritative.
             incoming.append(merged)
             decision.update(
+                identity_method=(
+                    "explicit crosswalk; name corroboration; "
+                    "capacity equality for resubmission-label changes"
+                ),
+                repeated_name_scope_unresolved=names[_name(raw["Site Name"])] > 1,
                 decision="enriched",
                 record_id=old["record_id"],
                 wri_gppd=link["gppd_id"],

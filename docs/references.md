@@ -5591,3 +5591,11 @@ GE Vernova (n.d.). **GE Vernova 3mw model technical tables**. [Source](https://w
 **Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### wind_abb_77cc_reva_2021
+
+ABB (2021). **ACS880-77CC wind turbine converters Hardware manual**. [Source](https://library.e.abb.com/public/9fc16ed5881b4af8ad9f91ca6880be52/EN_ACS880-77CC_HW_A_A4.pdf)
+
+**Role:** data. Rev A, pp87-92; original SHA256 in registry; grid kW, generator kW and kVA separated.
+
+**Used by:** `catalogues/wind/sources.json`.
