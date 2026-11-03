@@ -345,6 +345,72 @@ def parse_power_equipment_matrix(
     }
 
 
+def parse_ups_rating_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact UPS family/rating rows without deriving active power.
+
+    Each CSV row must be an explicitly published OEM configuration. Voltage and
+    frequency are retained as text so optional or multi-market choices are not
+    silently converted into one selected nominal value. Active kW is accepted
+    only when the source explicitly prints it for that row.
+    """
+    host = urlsplit(source_url).hostname
+    if host not in {"toshiba.com", "www.toshiba.com"}:
+        raise ValueError("Unsupported official UPS source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "manufacturer",
+        "family",
+        "variant",
+        "apparent_power_kva",
+        "output_power_kw",
+        "voltage_text",
+        "frequency_text",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing UPS rating matrix columns")
+    candidates: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate[key] for key in required - {"output_power_kw"}):
+            raise ValueError(f"Incomplete UPS rating row {line}")
+        try:
+            candidate["apparent_power_kva"] = float(candidate["apparent_power_kva"])
+        except ValueError as exc:
+            raise ValueError(f"Invalid apparent power on row {line}") from exc
+        if candidate["apparent_power_kva"] <= 0:
+            raise ValueError(f"Invalid apparent power on row {line}")
+        if candidate["output_power_kw"]:
+            try:
+                candidate["output_power_kw"] = float(candidate["output_power_kw"])
+            except ValueError as exc:
+                raise ValueError(f"Invalid active power on row {line}") from exc
+            if candidate["output_power_kw"] <= 0:
+                raise ValueError(f"Invalid active power on row {line}")
+        else:
+            candidate["output_power_kw"] = None
+        identity = (
+            str(candidate["manufacturer"]),
+            str(candidate["family"]),
+            str(candidate["variant"]),
+        )
+        if identity in candidates:
+            raise ValueError(f"Duplicate UPS rating row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed UPS matrix shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_server_accelerator_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:
