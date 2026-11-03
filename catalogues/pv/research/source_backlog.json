@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T14:03:22.580378+00:00",
-  "ranking_file": "20261103T1300_top10_coverage.json",
-  "selection_note": "ARENA named cost/funding rows and GoodWe MS G3 Spanish LATAM exact table.",
-  "next_highest_value_source": "Crosswalk ARENA Parkes, Griffith and Dubbo Hub rows to AEMO exact station/DUIDs and independently documented phases; then review grant scope.",
+  "updated_at": "2026-11-03T15:01:58.651620+00:00",
+  "ranking_file": "20261103T1500_top10_coverage.json",
+  "selection_note": "ARENA/AEMO/Neoen Parkes–Griffith–Dubbo reconciliation; MidNite combiner table; GoodWe SDT overlap screen.",
+  "next_highest_value_source": "Review ARENA Kidston phase 1 and White Rock PV separately from their co-located hydro and wind assets; require exact AEMO solar station boundaries.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6002,6 +6002,49 @@
       "processed_partition": "Complete five-column technical table",
       "retry_condition": "Distinct nonduplicated OEM table",
       "next_action": "Prefer tracker or combiner exact product tables after revision check."
+    },
+    {
+      "id": "arena_neoen_crosswalk_20261103T1500",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://arena.gov.au/projects/dubbo-solar-hub/",
+      "version_or_date": "2017 funding report and October 2026 AEMO workbook",
+      "licence_assessment": "ARENA licensed facts with attribution; AEMO attributed factual use; owner facts only",
+      "access_assessment": "Checksummed workbook reused; owner project pages reviewed",
+      "estimated_useful_yield": 2,
+      "fields_offered": [
+        "station ID",
+        "AC nameplate",
+        "historical project cost",
+        "grant"
+      ],
+      "last_attempt": "2026-11-03T15:01:58.651620+00:00",
+      "result": "Parkes and Griffith accepted; Dubbo cost remains aggregate",
+      "processed_partition": "Three deferred ARENA lines from 14:00 report",
+      "retry_condition": "Published per-station funding split for Dubbo",
+      "next_action": "Review ARENA Kidston phase 1 and White Rock PV separately from their co-located hydro and wind assets; require exact AEMO solar station boundaries."
+    },
+    {
+      "id": "midnite_pv_20261103T1500",
+      "country": "USA",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.midnitesolar.com/pdfs/pvCombiner_spec_sheet.pdf",
+      "version_or_date": "Undated manufacturer specifications sheet",
+      "licence_assessment": "OEM copyright retained; normalized technical facts only",
+      "access_assessment": "PDF downloaded and checksum registered",
+      "estimated_useful_yield": 8,
+      "fields_offered": [
+        "protection-specific input count",
+        "enclosure",
+        "mounting",
+        "wiring",
+        "certification"
+      ],
+      "last_attempt": "2026-11-03T15:01:58.651620+00:00",
+      "result": "Eight exact previously absent models",
+      "processed_partition": "All eight identifiers in three grouped columns",
+      "retry_condition": "New independently dated model-level datasheet",
+      "next_action": "Reconcile current manual and 250/300 V breaker nomenclature before adding voltage ratings."
     }
   ]
 }
