@@ -323,6 +323,74 @@ def parse_server_accelerator_matrix(
     }
 
 
+def parse_server_accelerator_shipping_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage OEM shipping rows without treating maxima as installed counts.
+
+    Blank quantities remain null. Parenthesized quantities are retained only as
+    configuration-dependent OEM maxima; callers must not promote them to an
+    installed accelerator count or multiply them into server/rack power.
+    """
+    host = urlsplit(source_url).hostname
+    if host not in {"www.dell.com", "www.delltechnologies.com"}:
+        raise ValueError("Unsupported official server-shipping source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "manufacturer",
+        "server_generation",
+        "server_model",
+        "accelerator_vendor",
+        "accelerator_model",
+        "shipping_status",
+        "max_shipping_quantity",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing server/accelerator shipping columns")
+    candidates: dict[tuple[str, str, str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate[key] for key in required - {"max_shipping_quantity"}):
+            raise ValueError(f"Incomplete server/accelerator shipping row {line}")
+        if candidate["manufacturer"] != "Dell":
+            raise ValueError(f"Unexpected server manufacturer on row {line}")
+        if candidate["shipping_status"].casefold() != "shipping":
+            raise ValueError(f"Unverified shipping status on row {line}")
+        raw_quantity = candidate.pop("max_shipping_quantity")
+        if raw_quantity:
+            try:
+                quantity = int(raw_quantity)
+            except ValueError as exc:
+                raise ValueError(f"Invalid maximum shipping quantity on row {line}") from exc
+            if quantity <= 0:
+                raise ValueError(f"Invalid maximum shipping quantity on row {line}")
+            candidate["max_shipping_quantity"] = quantity
+        else:
+            candidate["max_shipping_quantity"] = None
+        identity = (
+            candidate["server_generation"],
+            candidate["server_model"],
+            candidate["accelerator_vendor"],
+            candidate["accelerator_model"],
+        )
+        if identity in candidates:
+            raise ValueError(f"Duplicate server/accelerator shipping row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed server/accelerator shipping shape: {len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_supermicro_nvidia_systems(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:

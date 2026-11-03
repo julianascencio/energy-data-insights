@@ -10,6 +10,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_named_inventory,
     parse_power_equipment_matrix,
     parse_server_accelerator_matrix,
+    parse_server_accelerator_shipping_matrix,
     parse_supermicro_nvidia_systems,
 )
 
@@ -20,6 +21,9 @@ POWER_MATRIX = (
 ).read_bytes()
 SERVER_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/server-accelerator-matrix.csv"
+).read_bytes()
+SERVER_SHIPPING_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/server-accelerator-shipping-matrix.csv"
 ).read_bytes()
 LENOVO_COMPARISON = (
     Path(__file__).parent / "fixtures/data_centers/lenovo-gpu-comparison.html"
@@ -152,6 +156,31 @@ def test_server_accelerator_matrix_keeps_generation_specific_identity():
         "15th",
         "16th",
     ]
+
+
+def test_server_shipping_matrix_preserves_unknown_and_maximum_quantities():
+    result = parse_server_accelerator_shipping_matrix(
+        SERVER_SHIPPING_MATRIX,
+        source_url="https://www.delltechnologies.com/poweredge-gpu-matrix.pdf",
+        expected_count=2,
+    )
+    by_accelerator = {row["accelerator_model"]: row for row in result["candidates"]}
+    assert by_accelerator["X1"]["max_shipping_quantity"] == 4
+    assert by_accelerator["X2"]["max_shipping_quantity"] is None
+    assert result["review_required"]
+
+
+@pytest.mark.parametrize(
+    ("source_url", "expected_count"),
+    [("https://example.com/matrix.csv", 2), ("https://www.dell.com/matrix.csv", 3)],
+)
+def test_server_shipping_matrix_rejects_unbounded_input(source_url, expected_count):
+    with pytest.raises(ValueError):
+        parse_server_accelerator_shipping_matrix(
+            SERVER_SHIPPING_MATRIX,
+            source_url=source_url,
+            expected_count=expected_count,
+        )
 
 
 @pytest.mark.parametrize(

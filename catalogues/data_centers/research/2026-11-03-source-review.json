@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T15:21:40Z",
+  "retrieved_at": "2026-11-03T16:24:18Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -222,6 +222,15 @@
       "note": "Every supported checkmark on printed pages 5-7 is represented once: 52 generation-specific 16th-generation pairings and 23 15th-generation pairings. The earlier 33 17th-generation records were corrected to the PDF's printed October 2026 revision and page 4 locator; B200 AC memory now preserves the printed 141 GB HBM3e rather than the prior transcription error.",
       "reuse": "Factual extraction from an official public copyrighted OEM PDF; no open licence asserted and the tables are not redistributed",
       "originals": "The accepted official original is 887,932 bytes with SHA-256 77c75af47b6d24f71e2c7543940c3968b8c6789400ece5c8bc9007e306e95db4. A continuation fetch returned a 497-byte HTML error response, so the checksummed original was reused; this is an access/content failure, not a reuse prohibition."
+    },
+    {
+      "inventory": "Dell PowerEdge GPU Matrix, complete Shipping tables on pages 8-11",
+      "processed_offset": 85,
+      "accepted_records": 53,
+      "substantively_enriched": 32,
+      "note": "Every explicit Shipping cell is represented once. Sixty-six cells retain a parenthesized configuration-dependent OEM maximum; 19 report Shipping without a quantity and remain null. Maxima are observations, never installed accelerator_count or server/rack power. Twenty-five generic L4 rows remain platform-SKU-unbound between the HHHL and FHHL source rows.",
+      "reuse": "Factual extraction from an official public copyrighted OEM PDF; no open licence asserted and the tables are not redistributed",
+      "originals": "Reused the accepted 887,932-byte official original with SHA-256 77c75af47b6d24f71e2c7543940c3968b8c6789400ece5c8bc9007e306e95db4; no new original is claimed."
     }
   ],
   "deferred": [
@@ -234,8 +243,8 @@
       "reason": "Operator footprint is complete at offset 6; issuer registries, JHB1 phase boundaries, and post-2023 Accra permit/construction evidence require independent primary-source review"
     },
     {
-      "candidate": "Dell maximum-shipping-count tables",
-      "reason": "The complete 17th/16th/15th compatibility tables are now imported. Maximum shipping quantities remain a separate bounded inventory because they can vary by platform configuration and must not be treated as installed counts."
+      "candidate": "Dell exact platform-to-SKU bindings for generic L4 shipping rows",
+      "reason": "The shipping inventory is complete at 85 cells, but the OEM explicitly says the sheet does not identify platform-SKU associations. HHHL/FHHL form factor remains unresolved on 25 generic L4 rows."
     },
     {
       "candidate": "Teraco JB4 data-hall area",
@@ -513,6 +522,15 @@
         "The compatibility tables establish server support but not the accelerator's selected power limit, quantity, server input or rack input"
       ],
       "reason": "The exact range remains an observation and no scalar accelerator_power_w is selected on six 17th-generation and five 16th-generation records"
+    },
+    {
+      "record": "Twenty-five Dell PowerEdge generic NVIDIA L4 Shipping configurations",
+      "field": "form_factor and platform-SKU binding",
+      "observations": [
+        "The GPU specification table contains separate HHHL and FHHL L4 rows with the same reported memory, bandwidth and power",
+        "Footnote 3 says the sheet does not specifically identify platform-SKU associations"
+      ],
+      "reason": "Shipping status and configuration-dependent maximum remain valid, but form_factor stays null and no HHHL/FHHL SKU is selected for a platform"
     }
   ],
   "normalization_notes": [
@@ -553,7 +571,7 @@
     "Motivair cooling-capacity scalars remain quarantined because the 25% PG row label conflicts with footnote 1's 100% water statement; all four exact rating points remain available as observations.",
     "Eaton transformer kVA, no-load/load losses, impedance and noise retain their standard and voltage-class table boundary; no active kW, efficiency or winding voltage is inferred.",
     "Siemens NXAIR voltage, short-circuit current and continuous current are portfolio maxima stored as observations; nominal input fields remain null.",
-    "Dell's 108 generation-specific compatibility checkmarks establish supported server/accelerator pairs only. Accelerator maximum power remains per device, H100 NVL's 350-400 W range is not collapsed, and server/rack input and installed quantity remain null. The document's October 2026 footer and page numbers supersede the earlier source transcription while the stable source identifier is retained.",
+    "Dell's 108 generation-specific compatibility checkmarks and 85 Shipping cells remain different observations. Shipping quantities are configuration-dependent OEM maxima and never become accelerator_count, deployment, server input or rack input. Nineteen blank quantities remain null; 25 generic L4 rows do not select HHHL/FHHL form factor. Accelerator maximum power remains per device, and H100 NVL's 350-400 W range is not collapsed.",
     "Lenovo option quantities describe exact orderable boards/assemblies rather than deployments. Memory, bandwidth, TDP and performance remain per GPU; performance preserves precision and sparsity labels, and no board/server/rack total is calculated.",
     "Supermicro accelerator counts describe exact integrated-system designs, not deployments. Configurable accelerator limits remain per GPU; PSU module nameplates are not summed into server or rack input. B300 memory stays null where the same row says both 288 GB and 270 GB per GPU."
   ]

@@ -84,6 +84,12 @@ earlier evidence transcription while stable record/source identities remain.
 Per-accelerator maximum power and memory remain distinct from unknown server and
 rack input; accelerator quantity and deployment are not inferred. The H100 NVL
 350--400 W range remains an exact observation rather than a normalized scalar.
+All 85 cells in the same document's Shipping tables are processed separately:
+53 add documented configurations and 32 enrich exact existing pairs. Sixty-six
+parenthesized quantities remain configuration-dependent OEM maximum observations,
+not installed accelerator counts; 19 blank quantities remain null. Generic L4
+shipping rows do not select HHHL or FHHL because the source explicitly withholds
+platform-to-SKU association.
 The Lenovo continuation processes all 20 rows explicitly marked Available in the
 current ThinkSystem GPU comparison. Exact commercial part numbers or CTO feature
 codes, option GPU counts, form factors, announcement dates, per-GPU memory,
