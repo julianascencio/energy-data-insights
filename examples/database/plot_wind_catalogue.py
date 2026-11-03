@@ -30,6 +30,10 @@ print("Input fingerprint:", manifest["input_sha256"])
 print("Country-level coverage (includes historical and aggregate records):")
 print(projects.groupby(["country_code", "aggregation_role"]).size().unstack(fill_value=0))
 print("Technology coverage:", projects.technology.value_counts().to_dict())
+print("Dated lifecycle versus aggregation scope (known status does not resolve overlap):")
+print(projects.groupby(["status", "aggregation_role"]).size().unstack(fill_value=0))
+print("Equipment categories (components are not turbines):")
+print(equipment.groupby(["manufacturer", "equipment_category"]).size())
 
 # %%
 # Geographic counts describe this catalogue. Missing status is never operational.
@@ -63,7 +67,11 @@ axes[1, 1].set(title="Completeness across all project scopes", xlabel="Records")
 # Scalar ratings exclude flexible ranges and unresolved values. Hub options remain
 # one list per configuration; no artificial model expansion is performed.
 fig, axes = plt.subplots(1, 2, figsize=(14, 6), layout="constrained")
-comparable = equipment.loc[equipment.rated_power_kw.notna() & equipment.rotor_diameter_m.notna()]
+comparable = equipment.loc[
+    equipment.equipment_category.eq("wind_turbine")
+    & equipment.rated_power_kw.notna()
+    & equipment.rotor_diameter_m.notna()
+]
 for manufacturer, group in comparable.groupby("manufacturer"):
     values = [
         specific_power_w_m2(p, d)

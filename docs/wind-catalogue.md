@@ -1,18 +1,60 @@
 # Global Wind Database
 
 The Wind catalogue connects identifiable projects, exact equipment configurations,
-individual turbines and numerical curves. This first branch adds **5,355 project
-records in 59 countries, 30 turbine configurations from three manufacturer names,
-and two original numerical power curves**. No individual turbine inventory has
+individual turbines and numerical curves. The proposed branch contains **5,355 project
+records in 59 countries, 52 exact equipment records from five manufacturer names,
+and two original numerical power curves** (51 turbine configurations and one blade). No individual turbine inventory has
 yet been imported. These are proposed branch totals, not merged totals or a
 worldwide operating census.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.
-Two identities receive additional primary evidence within this import; eleven
+The initial import enriched two identities with primary evidence; eleven
 primary-source project records are added, including one aggregate and its two
 phases. There are 5,354 non-group project records. The baseline is not silently
 classified as current, operational, onshore or free of phase overlaps.
+
+## REPD and OEM continuation (3 November 2026)
+
+The complete **2,858-row REPD Q2 2026 wind partition** was reviewed against
+WRI’s pinned `resources/GBR/matches_GBR.csv` crosswalk. **642 existing identities**
+were substantively enriched (641 operational and one decommissioned observation).
+These are dated registry claims published 3 August 2026, not a November operating
+census. The other **2,216 applications are deferred**, with exact IDs and reasons
+in `2026-11-03-0644-repd-decisions.jsonl`. No applications were silently added as
+new farms, and no identities were merged using a name alone.
+
+All 642 retain their original IDs, creation dates, historical observations and
+`aggregation_role=unresolved`. Their new lifecycle evidence does **not** resolve
+phase or repowering overlap: capacity summaries are unchanged. Applicant/operator
+text remains qualified; grid X/Y and generic turbine height remain original values
+until CRS and hub/tip definitions are established. The CSV’s capacity field is
+interpreted with lifecycle, while CfD values stay distinct in support metadata.
+
+The 22 added OEM records cover all 15 distinct models in the inspected Siemens
+Gamesa onshore navigation/offshore portfolio, its explicitly announced APAC
+SG 8.0-167 variant, the B81 blade, and all five models in GE Vernova’s current
+3 MW/6 MW tables. B81 compatibility is explicitly sourced to the APAC announcement.
+India/US variants, flexible modes, frequency-dependent hub/temperature options
+and derating conditions remain within their documented configurations. Type
+certification targets are not achieved certificates. GE noise values are retained
+as qualified observations with scalar acoustics withheld because operating
+conditions are incomplete. No new curves or individual turbines were added.
+
+The REPD CSV, WRI crosswalk and all 16 OEM HTML captures have original-byte
+SHA-256 checksums. The inspected Siemens Gamesa August 2026 overview PDF explicitly
+prohibits reproduction; it is not ingested or redistributed. Independent public
+product-page tables supply the accepted model facts.
+
+```bash
+uv run python scripts/stage_wind_repd.py REPD_Publication_Q2_2026.csv matches_GBR.csv \
+  artifacts/repd-review --retrieved-at 2026-11-03T06:44:32Z
+```
+
+The adapter uses Windows-1252 for this source release, rejects identity collisions,
+and records every selected wind entry. It stages enrichment only; it does not
+authorize aggregation or overwrite existing primary lifecycle evidence. To
+reproduce this iteration, use the pre-iteration catalogue at commit `054d13c`.
 
 ## Storage and reproduction
 
@@ -83,8 +125,9 @@ Every populated scientific field has source IDs plus evidence locator, confidenc
 original value/unit or documented normalization. Source records retain revision,
 publication date if available, retrieval date and byte availability. Midnight UTC
 retrieval timestamps are explicitly date-normalized, not exact access times.
-The WRI CSV checksum covers acquired original bytes. Rendered OEM/project pages
-and the V47 PDF do not claim original-byte checksums. Public access is not a claim
+The initial WRI CSV checksum covers acquired original bytes. Initial rendered
+OEM/project pages and the V47 PDF do not claim original-byte checksums; the
+continuation’s original CSV and OEM HTML captures do. Public access is not a claim
 of open licensing; only factual specifications are transcribed. The WRI-derived
 partition is attributed under CC BY 4.0.
 
@@ -92,7 +135,7 @@ Broad schema coverage includes ownership shares, lifecycle dates, grid and offsh
 infrastructure, resource observations, performance, investment, PPAs, permits,
 dimensions, electrical/control details, environmental packages and certification
 scope. Many fields are currently null. Component compatibility requires explicit
-model-level evidence. Separate blade, gearbox, generator, converter, tower,
+model-level evidence. Beyond the linked B81 blade, separate gearbox, generator, converter, tower,
 foundation and floating-platform models remain ranked research tasks; no generic
 product families are counted as exact equipment records.
 

@@ -67,6 +67,8 @@ Counts describe research coverage, not market share. OEM specifications and
 manufacturer-calculated curves are not independently validated field performance.
 Coordinates retain source precision; missing coordinates are never geocoded.
 A map may include historical rows whose current status remains unverified.
+Dated lifecycle evidence and excluded project scopes are shown separately:
+REPD lifecycle updates do not by themselves resolve phase or repowering overlap.
 
 .. code-block:: bash
 

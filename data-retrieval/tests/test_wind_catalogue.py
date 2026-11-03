@@ -135,7 +135,7 @@ def test_identity_links_and_conflict_quarantine(catalogue):
     old = copy.deepcopy(next(r for r in rows if r.get("installed_capacity_mw")))
     new = copy.deepcopy(old)
     new["installed_capacity_mw"] += 1
-    merged, conflicts = upsert_records([old], [new], now=NOW)
+    merged, conflicts = upsert_records([old], [new], now=old["last_verified_at"])
     assert conflicts
     assert merged[0]["installed_capacity_mw"] is None
     assert merged[0]["created_at"] == old["created_at"]

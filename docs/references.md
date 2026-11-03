@@ -5455,3 +5455,139 @@ Vestas (n.d.). **V236-15.0 MW official technical specification**. [Source](https
 **Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered HTML text reviewed; original bytes unavailable; Manufacturer copyright; factual specifications only
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### wind_wri_gbr_crosswalk_2021_20261103
+
+World Resources Institute (n.d.). **WRI historical GBR registry identity crosswalk**. [Source](https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/resources/GBR/matches_GBR.csv)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original CSV bytes obtained and hashed; source bytes not redistributed; CC BY 4.0; WRI attribution; used only for identity reconciliation
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_7_0_170_20261103
+
+Siemens Gamesa (n.d.). **SG 7.0-170 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/wind-turbine-sg-7-0-170.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_5_0_145_20261103
+
+Siemens Gamesa (n.d.). **SG 5.0-145 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/wind-turbine-sg-5-0-145.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_4_4_164_20261103
+
+Siemens Gamesa (n.d.). **SG 5.2-165 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/wind-turbine-sg-4-4-164.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_3_4_132_20261103
+
+Siemens Gamesa (n.d.). **SG 3.4-132 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/wind-turbine-sg-3-4-132.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_3_4_145_20261103
+
+Siemens Gamesa (n.d.). **SG 3.4-145 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/wind-turbine-sg-3-4-145.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_3_2_129_dd_20261103
+
+Siemens Gamesa (n.d.). **SG 3.2-129 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/wind-turbine-sg-3-2-129-dd.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_2_6_114_20261103
+
+Siemens Gamesa (n.d.). **SG 2.6-114 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/wind-turbine-sg-2-6-114.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_onshore_dd_20261103
+
+Siemens Gamesa (n.d.). **Onshore Direct Drive model specification table**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/onshore/direct-drive-solutions.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_8_0_167_dd_20261103
+
+Siemens Gamesa (n.d.). **SG 8.0-167 DD technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/offshore/wind-turbine-sg-8-0-167-dd.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_11_0_200_dd_20261103
+
+Siemens Gamesa (n.d.). **SG 11-200 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/offshore/wind-turbine-sg-11-0-200-dd.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_14_222_dd_20261103
+
+Siemens Gamesa (n.d.). **SG 14-222 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/offshore/wind-turbine-sg-14-222-dd.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_14_236_dd_20261103
+
+Siemens Gamesa (n.d.). **SG 14-236 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/offshore/wind-turbine-sg-14-236-dd.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_15_236_20261103
+
+Siemens Gamesa (n.d.). **SG 15-236 technical specification**. [Source](https://www.siemensgamesa.com/global/en/home/products-and-services/offshore/wind-turbine-sg-15-236.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_sg_8_167_apac_2018_20261103
+
+Siemens Gamesa (2018). **SG 8.0-167 DD Asia-Pacific variant and B81 blade announcement**. [Source](https://www.siemensgamesa.com/global/en/home/press-releases/Siemens-Gamesa-tailors-SG-80-167-DD-for-Asia-Pacific-markets.html)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_ge_6mw_2026_20261103
+
+GE Vernova (n.d.). **GE Vernova 6mw model technical tables**. [Source](https://www.gevernova.com/wind-power/wind-turbines/onshore-wind-turbines-6mw)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_ge_3mw_2026_20261103
+
+GE Vernova (n.d.). **GE Vernova 3mw model technical tables**. [Source](https://www.gevernova.com/wind-power/wind-turbines/onshore-wind-turbines-3mw)
+
+**Role:** data. Field evidence and revision in Wind source registry. Original HTML bytes obtained; SHA-256 of original file; bytes not redistributed; Manufacturer copyright; extracted factual specifications; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.

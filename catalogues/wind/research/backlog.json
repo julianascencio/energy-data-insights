@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T00:00:00Z",
+  "updated_at": "2026-11-03T06:53:53Z",
   "branch": "research/global-wind-database-20261103",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -9,48 +9,80 @@
       "url": "https://energy.usgs.gov/uswtdb/data/",
       "partition": "v9.1 full turbine release; all states including offshore",
       "next_offset": 0,
-      "status": "blocked_api_403_try_official_download",
+      "status": "blocked_official_zip_403",
       "tasks": [
         "Obtain original release bytes and hash; verify version and complete count",
         "Adapter with offline tests; retain exact model only when supplied",
         "Cluster explicit project registry identities and reconcile WRI USA rows; add turbine children without double counting farms"
-      ]
+      ],
+      "last_attempt_url": "https://energy.usgs.gov/uswtdb/assets/data/uswtdbCSV.zip",
+      "last_http_status": 403,
+      "next_task": "Resolve v9.1 DOI 10.5066/F7TX3DN0 to official alternate release attachment; do not repeat unchanged ZIP route"
     },
     {
       "rank": 2,
       "source": "UK Renewable Energy Planning Database",
-      "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-monthly-extract",
-      "partition": "latest published quarterly CSV; onshore/offshore wind, all lifecycle statuses",
+      "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "partition": "2216 deferred IDs in 2026-11-03-0644-repd-decisions.jsonl, ordered by integer Ref ID; next bounded cohort first 200",
       "next_offset": 0,
-      "status": "not_started",
+      "status": "crosswalk_partition_completed_remaining_applications_pending",
       "tasks": [
-        "Record exact published quarter and download hash",
-        "Process entire selected wind partition; match WRI IDs/names/coordinates/phase boundaries",
-        "Prioritize floating and Scottish projects already present; retain cancelled and repowering scopes"
+        "Do not rerun 642 completed crosswalk enrichments as new work",
+        "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
+        "Review all 55 changed-name cases, then first 200 otherwise unlinked IDs; retain null exact model and ambiguous height/CRS",
+        "Reconcile scope of 642 enriched records against permits before enabling any capacity totals"
+      ],
+      "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
+      "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+      "next_ids": [
+        "2470",
+        "2471",
+        "2472",
+        "2473",
+        "2475",
+        "2476",
+        "2477",
+        "2479",
+        "2484",
+        "2486",
+        "2502",
+        "2505",
+        "2507",
+        "2508",
+        "2516",
+        "2517",
+        "2520",
+        "2521",
+        "2522",
+        "2523"
       ]
     },
     {
       "rank": 3,
       "source": "Brazil ANEEL SIGA generation registry",
       "url": "https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel",
-      "partition": "EOL all statuses and states",
+      "partition": "Daily 2026-11-02 EOL all states/statuses; alternative monthly resource 11ec447d-698d-4ab8-977f-b424d5deee6a",
       "next_offset": 0,
-      "status": "not_started",
+      "status": "blocked_daily_csv_503",
       "tasks": [
-        "Freeze CSV release and field dictionary",
-        "Reconcile CEG identifiers and WRI Brazil plants before adding new farms"
-      ]
+        "Retry daily once or use official datastore/monthly file; record original SHA-256",
+        "Dictionary: fiscalized kW can be last operating capacity of retired plants; operation date is first unit",
+        "CEG version suffix is not automatically a new project; reconcile stable IdeNucleoCEG and WRI names/geography"
+      ],
+      "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
+      "last_http_status": 503
     },
     {
       "rank": 4,
       "source": "Exact OEM documents and component catalogues",
-      "partition": "Siemens Gamesa SG 8.0-167 DD, GE Cypress configurations, Vestas current full technical PDFs; then WindFloat exact platform and public blade/gearbox/converter models",
+      "partition": "Changhua exact SG8.0-167 regional variant reconciliation; B81 compatible links beyond evidenced APAC only with explicit documents; exact OEM converter/generator/gearbox and WindFloat model docs",
       "next_offset": 0,
-      "status": "not_started",
+      "status": "sg_and_ge_tables_completed_components_pending",
       "tasks": [
-        "Resolve Changhua SG 8.0-167 DD equipment link from OEM evidence",
-        "Complete electrical, drivetrain, acoustic and environmental fields using revision/page locators",
-        "Do not treat platform families as exact model records or infer component compatibility"
+        "22 exact equipment records added; do not re-add documented mode/tower options",
+        "Resolve V136 scalar and SG3.2-129 inconsistent published power density; qualify GE acoustic modes",
+        "Prioritize publicly identified ABB wind converters/generators and Winergy gearboxes; reuse cross-sector IDs where exact",
+        "Do not ingest Siemens Gamesa 08/2026 overview PDF under its explicit reproduction restriction"
       ]
     },
     {

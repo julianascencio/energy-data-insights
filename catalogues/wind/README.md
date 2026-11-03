@@ -3,12 +3,16 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The first proposed batch contains 5,355 project records (5,354 non-group records)
-in 59 countries, 30 exact turbine configurations across three manufacturer names,
-and two original numerical power curves. The 5,344-row WRI partition is historical,
-not a current operating census. Thirteen project records have additional primary
-source evidence, including two enrichments within the initial import. No individual
-turbine inventory has yet been imported. Merged totals were zero at the baseline.
+The proposed branch contains 5,355 project records (5,354 non-group records),
+52 exact equipment records (51 turbines and one blade), two original numerical
+power curves, 59 countries and five manufacturer names. Merged-main Wind totals
+remain zero at `15e9d60b`. These are catalogue counts, not an operating census.
+
+The initial 5,344-row WRI import is historical. The latest continuation enriches
+642 existing identities through the complete REPD Q2 2026 Wind/crosswalk review,
+adds 22 exact OEM records, and preserves all 642 capacity-scope exclusions.
+2,216 other REPD applications remain deferred for identity review. No individual
+turbine inventory has yet been imported. See the dated ledgers for per-run counts.
 
 See [the evidence guide](../../docs/wind-catalogue.md),
 [viewer source](../../docs/wind-database-viewer.rst),
