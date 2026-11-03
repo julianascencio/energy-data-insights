@@ -6367,3 +6367,11 @@ Bonfiglioli (n.d.). **Solutions for WIND;700TW yaw/pitch models**. [Source](http
 **Role:** data source. R05_2 original PDF p14; application-specific reference peak torque. No turbine compatibility or T/TW identity inferred.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### abb_wind_converters_2018_reva
+
+ABB (2018). **ABB wind converters ACS880 wind turbine converters**. [Source](https://library.e.abb.com/public/25e19011bbcd4f2782f4b2c8271072af/Wind_converter_catalog_3AUA0000231755_RevA_EN.pdf)
+
+**Role:** data source. 3AUA0000231755 Rev A 20 September2018, p10 full15-row rating table; typical kW distinguished from kVA; twin cabinet units retained.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

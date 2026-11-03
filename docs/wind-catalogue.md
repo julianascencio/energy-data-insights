@@ -384,3 +384,17 @@ torque or independently validated performance. The19dimension rows on p15 use
 T designations and remain held pending T/TW reconciliation. See
 `bonfiglioli_wind_r05_2`. NGC2024original download returned404 while search and
 opened reader show different editions; MPPY/MPPB import remains deferred.
+
+
+## Sachsen-Anhalt, Kronoberg and ABB continuation
+
+Complete state/county partitions yield64projects and433linked units. All8461prior
+records remain byte-identical; capacity summaries unchanged.878German groups
+and44Swedish areas (326units) remain held. New scopes are excluded from totals.
+
+The complete15-row ABB2018RevA p10 table (`abb_wind_converters_2018_reva`)
+preserves exact77LC/87LC types, including documented twin cabinets. Typical
+generator kW is separate from generator/grid kVA and nominal side currents.
+Dimensions, mass and flow retain the original per-cabinet expressions. Ratings
+depend on selected options; historical specifications do not establish current
+product lifecycle, turbine compatibility or independently validated performance.

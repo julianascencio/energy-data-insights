@@ -228,3 +228,15 @@ for _, component in equipment.loc[equipment.manufacturer.eq("Bonfiglioli")].iter
         json.loads(component.extensions_json)["peak_torque_Nm_by_application"],
         "Nm",
     )
+
+# %%
+print("ABB historical converter ratings: typical generator kW; generator/grid kVA")
+for _, component in equipment.loc[equipment.manufacturer.eq("ABB")].iterrows():
+    specs = json.loads(component.extensions_json or "{}")
+    if "typical_generator_rating_kw" in specs:
+        print(
+            component.model,
+            specs["typical_generator_rating_kw"],
+            specs["generator_apparent_power_kva"],
+            specs["grid_apparent_power_kva"],
+        )

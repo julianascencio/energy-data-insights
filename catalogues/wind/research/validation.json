@@ -1,18 +1,18 @@
 {
-  "batch": "2026-11-03-1535",
+  "batch": "2026-11-03-1635",
   "local": {
-    "pytest": "1864 passed, 1 optional cdsapi skip",
+    "pytest": "1865 passed, 1 optional cdsapi skip",
     "viewer": "14 Node tests passed",
-    "catalogue": "8461 records validated by builds",
+    "catalogue": "8973 records validated by builds",
     "snapshots": "Two fresh builds byte-identical; four typed Parquet tables ZSTD verified; docs manifest matches final snapshot",
-    "preservation": "7530 preceding records byte-identical; six capacity summaries unchanged; 131 new scopes excluded",
-    "adapter": "German full 44351 units/5334 selected plus Swedish 151 areas/902 turbines across ten independently counted layers; 922 accepted project/unit records replay identical; original checksums verified; 16 MaStR adapter tests covered by full suite",
+    "preservation": "8461 preceding records byte-identical; six capacity totals unchanged;64 new scopes excluded",
+    "adapter": "German44351total/3506selected; Swedish99areas705units with10independent counts;497accepted source records replay identical;17MaStRtests in full suite",
     "sphinx": "Strict build and 449-page link/asset audit passed",
-    "example": "Offline gallery passed with application-specific Bonfiglioli peak torque output",
+    "example": "Offline gallery passed, separates ABB typical kW from generator/grid kVA",
     "ruff": "passed",
     "ty": "passed",
     "citations": "passed",
-    "repository_hygiene": "2871 candidate files passed",
+    "repository_hygiene": "2889 candidate files passed",
     "whitespace": "passed"
   },
   "not_executed": [
@@ -20,7 +20,7 @@
     "package builds"
   ],
   "remote_ci": {
-    "preceding_commit": "db95ee1: both workflows success",
+    "preceding_commit": "4c1d5d1: both workflows success",
     "this_increment": "Not yet published; local results separate"
   }
 }

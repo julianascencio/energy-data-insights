@@ -3,8 +3,8 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 5,912 project records (5,911 non-group records),
-91 exact equipment records, 2,456 registry turbine records and two original numerical
+The proposed branch contains 5,976 project records (5,975 non-group records),
+106 exact equipment records, 2,889 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
 Merged main at `5063c416` contains 5,355 projects, 53 equipment, zero individual
 turbines and two curves. These are catalogue counts, not an operating census.
@@ -66,3 +66,5 @@ yaw/pitch gearbox types. All6,753state units reviewed;2,665namegroups held.
 
 The15:35 increment adds131projects and791turbines from complete Brandenburg and
 Jönköping partitions, plus nine Bonfiglioli gearbox models. All prior rows remain.
+
+The16:35 batch adds64projects,433turbines and15exact ABB converter types.
