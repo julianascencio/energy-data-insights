@@ -4471,3 +4471,107 @@ Victron Energy (2026). **Inverter VE.Direct 230V HW15 technical specifications**
 **Role:** data. HW15 230 V manufacturer safety and EMC claims; not independent certification.
 
 **Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_10_52v_model_b_20260206
+
+Freedom Won (2026). **LiTE 2 Home 10/8 52V Model B specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-10_8-52V-B.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_15_52v_model_b_20260206
+
+Freedom Won (2026). **LiTE 2 Home 15/12 52V Model B specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-15_12-52V-B.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_20_52v_model_b_20260206
+
+Freedom Won (2026). **LiTE 2 Home 20/16 52V Model B specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-20_16-52V-B.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_business_40_52v_20260206
+
+Freedom Won (2026). **LiTE 2 Business 40/32 52V specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Business-40_32-52V-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_business_60_52v_20260206
+
+Freedom Won (2026). **LiTE 2 Business 60/48 52V specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Business-60_48-52V-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_business_80_52v_20260206
+
+Freedom Won (2026). **LiTE 2 Business 80/64 52V specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Business-80_64-52V-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_10_hv_20260206
+
+Freedom Won (2026). **LiTE 2 Home 10/8 HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-10_8-HV-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_15_hv_20260206
+
+Freedom Won (2026). **LiTE 2 Home 15/12 HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-15_12-HV.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_20_hv_20260206
+
+Freedom Won (2026). **LiTE 2 Home 20/16 HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-20_16-HV-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_30_hv_20260206
+
+Freedom Won (2026). **LiTE 2 Home 30/24 HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-30_24-HV-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### akuo_tonga_opening_20221025
+
+Akuo (2022). **Tonga BESS completion ceremony**. [Source](https://www.akuoenergy.com/en/press/official-completion-ceremony-tongas-1st-ever-large-scale-battery-energy-storage-systems)
+
+**Role:** data. Opening paragraphs and named sites
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### akuo_tonga_portfolio_20261103
+
+Akuo (2026). **Tonga renewable energy storage project**. [Source](https://www.akuoenergy.com/en/akuo-in-the-world/all-our-projects/tonga)
+
+**Role:** data. Two storage facilities and operation paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### tonga_ndc_review_2025
+
+Government of Tonga (2025). **Tonga Second Nationally Determined Contributions Review Report**. [Source](https://www.unfccc.int/sites/default/files/2025-09/Tongas%20Second%20Nationally%20Determined%20Contribution%20Review%20Report.pdf)
+
+**Role:** data. Printed page 16 / PDF page 24, battery storage paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
