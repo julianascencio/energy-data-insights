@@ -56,6 +56,10 @@ or a live availability feed. Do not interpret record counts as installed capacit
    separate MW/MWh control totals. Review every named row against the ownership
    chart and later releases. Marieboda remains held for possible multi-site scope;
    the adapter never turns portfolio rows or future COD targets into accepted projects.
+   `scripts/stage_bess_ceb.py` stages the reviewed26May2022 Mauritius table
+   from local text, checks both MW/MWh totals and keeps the Amaury expansion
+   separate. The table does not establish lifecycle: preserve unknown status
+   unless independently supported by a reusable dated primary source.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
