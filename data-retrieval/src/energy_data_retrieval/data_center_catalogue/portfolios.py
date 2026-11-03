@@ -307,6 +307,111 @@ def parse_stulz_cyberair_3pro_dx_modulating_table(
     )
 
 
+def parse_stulz_cyberair_3pro_dx_r134a_table(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage only the explicitly populated fixed-speed R134a rows.
+
+    The OEM table includes unavailable model columns. Those columns are removed
+    using the printed ``N/A`` airflow mask; blanks are never filled from R410A.
+    """
+    if not (urlsplit(source_url).hostname or "").endswith("stulz.es"):
+        raise ValueError("Expected official STULZ URL")
+    text = content.decode("utf-8-sig")
+    marker = "CyberAir 3PRO DX (ASR/ALR) - R134a - Technical Data"
+    if marker not in text:
+        raise ValueError("Missing R134a CyberAir 3PRO table")
+    r134a = text.split(marker, 1)[1]
+
+    def line(block: str, label: str) -> str:
+        value = next((row for row in block.splitlines() if row.strip().startswith(label)), None)
+        if value is None:
+            raise ValueError(f"Missing STULZ table row: {label}")
+        return value
+
+    def values(block: str, label: str, unit: str | None = None) -> list[str]:
+        row = line(block, label)
+        tail = row.split(unit, 1)[1] if unit else row[row.find(label) + len(label) :]
+        pattern = r"\d+\s*/\s*\d+" if label.startswith("Number of circuits") else r"\d[\d.,]*"
+        return [item.replace(" ", "") for item in re.findall(pattern, tail)]
+
+    def number(value: str) -> float:
+        return float(value.replace(".", "").replace(",", "."))
+
+    candidates: list[dict[str, Any]] = []
+    sections = [
+        (
+            "ASR",
+            "A",
+            "Air cooled with fixed speed compressor",
+            "Free cooling with fixed speed compressor",
+        ),
+        ("ALR", "GE", "Free cooling with fixed speed compressor", "Remarks:"),
+    ]
+    for family, suffix, start, end in sections:
+        if start not in r134a or end not in r134a:
+            raise ValueError("Changed STULZ R134a table shape")
+        block = r134a.split(start, 1)[1].split(end, 1)[0]
+        header = line(block, f"{family} xxx {suffix}")
+        models = re.findall(r"\b\d{3,4}\b", header.split(suffix, 1)[1])
+        airflow_line = line(block, "Air flow").split("m³/h", 1)[1]
+        airflow_cells = re.findall(r"N/A|\d[\d.,]*", airflow_line)
+        if len(airflow_cells) != len(models):
+            raise ValueError("Changed STULZ R134a availability mask")
+        available = [index for index, cell in enumerate(airflow_cells) if cell != "N/A"]
+        rows = {
+            "cooling_total_kw": values(block, "Cooling capacity (total = sensible)", "kW"),
+            "cooling_net_kw": values(block, "Cooling capacity (net)", "kW"),
+            "fan_power_kw": values(block, "Fan power consumption", "kW"),
+            "compressor_power_kw": values(block, "Compressor power consumption", "kW"),
+            "input_power_kw": values(block, "Total power consumption", "kW"),
+            "supply_air_temperature_c": values(block, "Supply air temperature", "°C"),
+            "eer_kw_per_kw": values(block, "EER", "kW/kW"),
+            "circuits_compressors": values(block, "Number of circuits / compressors"),
+            "weight_kg": values(block, "Weight", "kg"),
+        }
+        if family == "ALR":
+            rows["free_cooling_water_temperature_c"] = values(
+                block, "Water temp. for 100% free cooling", "°C"
+            )
+            rows["medium_volume_flow_m3_h"] = values(block, "Medium volume flow", "m³/h")
+        if any(len(row) != len(available) for row in rows.values()):
+            raise ValueError("Changed STULZ R134a populated row width")
+        for position, model_index in enumerate(available):
+            code = models[model_index]
+            candidates.append(
+                {
+                    "model": f"{family} {code} {suffix}",
+                    "refrigerant": "R134a",
+                    "airflow_m3_h": number(airflow_cells[model_index]),
+                    **{
+                        key: row[position]
+                        if key == "circuits_compressors"
+                        else number(row[position])
+                        for key, row in rows.items()
+                    },
+                    "locator": f"R134a / {family} xxx {suffix} / {code}",
+                }
+            )
+    if not candidates or (expected_count is not None and len(candidates) != expected_count):
+        raise ValueError("Changed STULZ CyberAir R134a table shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "rating_conditions": {
+            "voltage_v": 400,
+            "phases": 3,
+            "frequency_hz": 50,
+            "return_air_temperature_c": 33,
+            "return_air_relative_humidity_pct": 30,
+            "condensing_temperature_c": 45,
+            "external_static_pressure_pa": 20,
+        },
+        "review_required": True,
+    }
+
+
 def _parse_stulz_cyberair_3pro_dx_table(
     content: bytes,
     *,
@@ -519,5 +624,339 @@ def parse_google_pue(content: bytes, *, year: int, quarter: int) -> dict[str, An
         "quarter": quarter,
         "sha256": hashlib.sha256(content).hexdigest(),
         "candidates": candidates,
+        "review_required": True,
+    }
+
+
+class _MetaLocations(HTMLParser):
+    """Collect only the current global-fleet cards from Meta's official page."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.region: str | None = None
+        self.current: dict[str, str | None] | None = None
+        self.capture: str | None = None
+        self.parts: list[str] = []
+        self.rows: list[dict[str, str | None]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        classes = (values.get("class") or "").split()
+        if tag == "h2" and "data-center-location-header" in classes:
+            self.capture, self.parts = "region", []
+        elif tag == "article" and "wp-block-fbdc-card" in classes:
+            self.current = {"region": self.region}
+        elif self.current is not None and tag == "p" and "card__eyebrow-text" in classes:
+            self.capture, self.parts = "jurisdiction", []
+        elif self.current is not None and tag == "h3" and "card__title" in classes:
+            self.capture, self.parts = "locality", []
+        elif self.current is not None and tag == "p" and "card__excerpt" in classes:
+            self.capture, self.parts = "summary", []
+        elif self.current is not None and tag == "a" and "card__primary-cta" in classes:
+            self.current["url"] = values.get("href")
+
+    def handle_data(self, data: str) -> None:
+        if self.capture:
+            self.parts.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.capture == "region" and tag == "h2":
+            self.region = " ".join(" ".join(self.parts).split())
+            self.capture = None
+        elif self.capture == "jurisdiction" and tag == "p" and self.current is not None:
+            self.current["jurisdiction"] = " ".join(" ".join(self.parts).split())
+            self.capture = None
+        elif self.capture == "locality" and tag == "h3" and self.current is not None:
+            self.current["locality"] = " ".join(" ".join(self.parts).split())
+            self.capture = None
+        elif self.capture == "summary" and tag == "p" and self.current is not None:
+            self.current["summary"] = " ".join(" ".join(self.parts).split())
+            self.capture = None
+        elif tag == "article" and self.current is not None:
+            self.rows.append(self.current)
+            self.current = None
+            self.capture = None
+
+
+def parse_meta_locations(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage Meta's complete displayed fleet without inferring lifecycle or MW."""
+    if urlsplit(source_url).hostname != "datacenters.atmeta.com":
+        raise ValueError("Expected official Meta Data Centers URL")
+    parser = _MetaLocations()
+    parser.feed(content.decode("utf-8-sig"))
+    required = {"region", "jurisdiction", "locality", "summary", "url"}
+    candidates: list[dict[str, str]] = []
+    for raw in parser.rows:
+        if not required <= raw.keys() or not all(raw[key] for key in required):
+            raise ValueError("Incomplete Meta fleet card")
+        candidates.append(
+            {
+                **{key: str(raw[key]).strip() for key in required},
+                "url": urljoin(source_url, str(raw["url"]).strip()).removesuffix("%20"),
+                "locator": f"Our global data center fleet / {raw['region']} / {raw['locality']}",
+            }
+        )
+    identities = [(row["region"].casefold(), row["locality"].casefold()) for row in candidates]
+    if (
+        not candidates
+        or len(identities) != len(set(identities))
+        or (expected_count is not None and len(candidates) != expected_count)
+    ):
+        raise ValueError("Changed Meta global-fleet shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+class _VisibleText(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.skip = 0
+        self.parts: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in {"script", "style", "noscript"}:
+            self.skip += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"script", "style", "noscript"} and self.skip:
+            self.skip -= 1
+
+    def handle_data(self, data: str) -> None:
+        if not self.skip:
+            self.parts.append(data)
+
+
+def parse_raxio_facility_page(
+    content: bytes, *, source_url: str, expected_code: str | None = None
+) -> dict[str, Any]:
+    """Stage identity and public facility-design metrics from one Raxio page."""
+    if urlsplit(source_url).hostname not in {"raxiogroup.com", "www.raxiogroup.com"}:
+        raise ValueError("Expected official Raxio URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+
+    def one(pattern: str, label: str) -> str:
+        matches = list(dict.fromkeys(re.findall(pattern, text, re.IGNORECASE)))
+        if len(matches) != 1:
+            raise ValueError(f"Changed Raxio {label} shape")
+        return matches[0]
+
+    def optional_one(pattern: str, label: str) -> str | None:
+        matches = list(dict.fromkeys(re.findall(pattern, text, re.IGNORECASE)))
+        if len(matches) > 1:
+            raise ValueError(f"Changed Raxio {label} shape")
+        return matches[0] if matches else None
+
+    code = one(r"Raxio data centre:\s*([A-Z0-9]+)", "facility identity")
+    if expected_code is not None and code != expected_code:
+        raise ValueError("Changed Raxio facility identity")
+    it_mw = float(one(r"(\d+(?:\.\d+)?)\s*MW\s+IT Power", "IT-power"))
+    rack_count = int(one(r"(\d+(?:,\d+)?)\s*Racks", "rack-capacity").replace(",", ""))
+    grid_kv = float(one(r"(\d+(?:\.\d+)?)\s*kV utility supply", "utility-voltage"))
+    area = float(
+        one(
+            r"(\d+(?:,\d+)?)\s*(?:m\s*2|sqm)\s+(?:of\s+)?white space",
+            "white-space",
+        ).replace(",", "")
+    )
+    cooling_mw = float(one(r"(\d+(?:\.\d+)?)\s*MW of (?:installed )?cooling provision", "cooling"))
+    pue_text = optional_one(r"PUE of (\d+(?:\.\d+)?)", "PUE")
+    pue = float(pue_text) if pue_text is not None else None
+    status_markers = [
+        marker
+        for marker in (
+            "commissioned October 2025",
+            "Opened in 2024",
+            "Launched in 2024",
+            "Opened in 2023",
+            "Opened in 2021",
+            "Under Development",
+        )
+        if marker.casefold() in text.casefold()
+    ]
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": code,
+            "it_design_mw": it_mw,
+            "rack_capacity": rack_count,
+            "data_hall_area_m2": area,
+            "connection_voltage_kv": grid_kv,
+            "cooling_provision_mw": cooling_mw,
+            "pue": pue,
+            "status_markers": status_markers,
+            "locator": f"Raxio data centre: {code} / current facility page",
+        },
+        "review_required": True,
+    }
+
+
+def parse_vertiv_powerups6000_table(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage explicit PowerUPS 6000 kVA/topology configurations.
+
+    The shared family specifications are returned as rating conditions. The
+    parser does not calculate kW from the stated unity output power factor and
+    does not assign the layout's grouped dimensions or efficiency range to an
+    individual rating.
+    """
+    if not (urlsplit(source_url).hostname or "").endswith("vertiv.com"):
+        raise ValueError("Expected official Vertiv URL")
+    text = " ".join(content.decode("utf-8-sig").split())
+    if "Vertiv™ PowerUPS 6000 industrial" not in text:
+        raise ValueError("Missing Vertiv PowerUPS 6000 table")
+    configurations = [
+        ("single-phase", "single-phase", [6]),
+        ("three-phase", "single-phase", [10, 20, 30, 40, 60, 80, 100, 120]),
+        ("three-phase", "three-phase", [10, 20, 30, 40, 60, 80, 100, 120, 160, 200]),
+    ]
+    candidates: list[dict[str, Any]] = []
+    for input_topology, output_topology, expected_ratings in configurations:
+        label = f"{input_topology.capitalize()} input/{output_topology}"
+        match = re.search(rf"{re.escape(label)} (?P<ratings>(?:\d+ )+)output", text)
+        if match is None:
+            raise ValueError(f"Missing PowerUPS topology row: {label}")
+        ratings = [int(value) for value in re.findall(r"\d+", match["ratings"])]
+        if ratings != expected_ratings:
+            raise ValueError("Changed Vertiv PowerUPS 6000 rating row")
+        for rating in ratings:
+            candidates.append(
+                {
+                    "model": "PowerUPS 6000",
+                    "variant": f"{rating} kVA; {input_topology} input; {output_topology} output",
+                    "apparent_power_kva": rating,
+                    "input_topology": input_topology,
+                    "output_topology": output_topology,
+                    "input_voltage_text": (
+                        "220/230/240 V" if input_topology == "single-phase" else "380/400/415 V"
+                    ),
+                    "output_voltage_text": (
+                        "220/230/240 V" if output_topology == "single-phase" else "380/400/415 V"
+                    ),
+                    "locator": f"Technical specifications / {label} output / {rating} kVA",
+                }
+            )
+    if not candidates or (expected_count is not None and len(candidates) != expected_count):
+        raise ValueError("Changed Vertiv PowerUPS 6000 table shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "shared_conditions": {
+            "rated_input_frequency_text": "50/60 Hz",
+            "input_frequency_range_text": "40-70 Hz",
+            "input_power_factor": 0.95,
+            "output_power_factor": 1.0,
+            "operating_temperature_min_c": 0,
+            "operating_temperature_max_c": 50,
+            "communications": ["MODBUS", "SNMP", "dry contact", "RJ45"],
+        },
+        "review_required": True,
+    }
+
+
+_CARRIER_19DV_ROW = re.compile(
+    r"^(19DV-\S+)\s+([\d,]+)\s+([\d,]+)\s+([\d.]+)\s+([\d.]+)\s+"
+    r"([\d.]+)\s+([\d,]+)\s+([\d.]+)\s+([\d.]+)\s+(DN\d+)\s+"
+    r"([\d.]+)\s+([\d.]+)\s+(DN\d+)\s+([\d,]+)\s+([\d,]+)\s+"
+    r"([\d,]+)\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)\s*$",
+    re.MULTILINE,
+)
+
+
+def parse_carrier_19dv_table(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage exact Carrier AquaEdge 19DV table configurations.
+
+    Each row is an explicitly documented model at either 400 V/50 Hz or
+    380 V/60 Hz. Cooling, input power and COP/IPLV observations retain the
+    shared AHRI water-temperature and fouling-factor rating conditions.
+    """
+    host = urlsplit(source_url).hostname or ""
+    if not (host.endswith("carrier.com") or host.endswith("carrier.com.cn")):
+        raise ValueError("Expected official Carrier URL")
+    text = content.decode("utf-8-sig")
+    required_markers = (
+        "19DV\nCENTRIFUGAL CHILLER",
+        "Air-conditioning (400V-3ph-50Hz)",
+        "Air-conditioning (380V-3ph-60Hz)",
+        "standard AHRI condition",
+    )
+    if not all(marker in text for marker in required_markers):
+        raise ValueError("Missing Carrier 19DV table or rating conditions")
+
+    def number(value: str) -> float:
+        return float(value.replace(",", ""))
+
+    candidates: list[dict[str, Any]] = []
+    for match in _CARRIER_19DV_ROW.finditer(text):
+        values = match.groups()
+        model = values[0]
+        if model.endswith("9"):
+            voltage_v, frequency_hz = 400, 50
+        elif model.endswith("3"):
+            voltage_v, frequency_hz = 380, 60
+        else:
+            raise ValueError("Unrecognized Carrier 19DV electrical configuration")
+        candidates.append(
+            {
+                "model": model,
+                "variant": f"{voltage_v} V; 3 phase; {frequency_hz} Hz",
+                "cooling_capacity_kw": number(values[1]),
+                "cooling_capacity_tons": number(values[2]),
+                "input_power_kw": number(values[3]),
+                "full_load_cop": number(values[4]),
+                "iplv_ip": number(values[5]),
+                "input_current_a": number(values[6]),
+                "evaporator_flow_l_s": number(values[7]),
+                "evaporator_pressure_drop_kpa": number(values[8]),
+                "evaporator_connection": values[9],
+                "condenser_flow_l_s": number(values[10]),
+                "condenser_pressure_drop_kpa": number(values[11]),
+                "condenser_connection": values[12],
+                "length_mm": number(values[13]),
+                "width_mm": number(values[14]),
+                "height_mm": number(values[15]),
+                "operating_weight_kg": number(values[16]),
+                "rigging_weight_kg": number(values[17]),
+                "refrigerant_charge_kg": number(values[18]),
+                "input_voltage_v": voltage_v,
+                "frequency_hz": frequency_hz,
+                "locator": (f"Air-conditioning ({voltage_v}V-3ph-{frequency_hz}Hz) / {model}"),
+            }
+        )
+    identities = [row["model"] for row in candidates]
+    if (
+        not candidates
+        or len(identities) != len(set(identities))
+        or (expected_count is not None and len(candidates) != expected_count)
+    ):
+        raise ValueError("Changed Carrier 19DV table shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "shared_conditions": {
+            "leaving_evaporator_water_c": 6.7,
+            "entering_evaporator_water_c": 12.2,
+            "entering_condenser_water_c": 29.4,
+            "leaving_condenser_water_c": 34.6,
+            "evaporator_fouling_m2_k_kw": 0.0180,
+            "condenser_fouling_m2_k_kw": 0.0440,
+            "water_side_design_pressure_mpa": 1.0,
+            "evaporator_and_condenser_passes": 2,
+            "refrigerant": "R-1233zd(E)",
+            "communications": ["BACnet", "Modbus"],
+        },
         "review_required": True,
     }

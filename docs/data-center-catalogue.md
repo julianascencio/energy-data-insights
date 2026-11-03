@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 123 project records across 23 countries:
-53 facilities and 70 explicitly scoped campus aggregates, from eight operators.
+The current continuation branch has 165 project records across 34 countries:
+62 facilities and 103 explicitly scoped campus aggregates, from twelve operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -38,19 +38,27 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 143 exact models/configurations from NVIDIA, AMD, Eaton, Schneider Electric,
-STULZ and Vertiv. Current categories are GPU accelerators, servers, UPS, rack PDUs,
-coolant distribution units and CRAC/precision air-conditioning equipment.
+has 217 exact models/configurations from NVIDIA, AMD, Carrier, Eaton, Schneider
+Electric, STULZ and Vertiv. Current categories are GPU accelerators, servers, UPS,
+rack PDUs, chillers, coolant distribution units and CRAC/precision
+air-conditioning equipment.
 Switchgear, transformers, generators and additional cooling categories are
 supported by schema and ranked in the continuation backlog. The Schneider Galaxy
 VS batch preserves exact commercial references, stated kW and kVA, battery-string
 arrangements, full-load efficiency conditions and dimensions without calculating
 battery energy or runtime.
-The STULZ batches keep 30 fixed-speed and 20 modulating-EC R410A ASR/ALR
-configurations separate, normalize net sensible cooling only at the stated
-return-air/condensing/ESP
-rating point, and preserves total sensible cooling and component power as
-observations. R134a rows and compressor variants are never combined.
+The STULZ batches keep 30 fixed-speed R410A, 20 modulating-EC R410A and 23
+populated fixed-speed R134a ASR/ALR configurations separate. They normalize net
+sensible cooling only at the stated return-air/condensing/ESP rating point and
+preserve total sensible cooling and component power as observations. Printed N/A
+columns are excluded; refrigerant and compressor variants are never combined.
+The Vertiv UPS continuation adds all 19 topology/rating rows printed for PowerUPS
+6000 and four Trinergy CE ratings. Apparent kVA stays distinct from active kW;
+family efficiency ranges, grouped dimensions and battery energy/runtime remain
+unnormalized where the exact configuration table does not bind them.
+The Carrier continuation adds all 28 AquaEdge 19DV rows at the two explicitly
+published electrical variants. Cooling and input ratings retain the OEM's AHRI
+water temperatures, fouling factors, pass count and water-side pressure.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server

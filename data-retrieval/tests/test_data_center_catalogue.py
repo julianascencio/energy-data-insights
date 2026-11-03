@@ -20,10 +20,15 @@ from energy_data_retrieval.data_center_catalogue.catalogue import validate_recor
 from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_africa_data_centres_footprint,
     parse_airtrunk_locations,
+    parse_carrier_19dv_table,
+    parse_meta_locations,
     parse_portfolio,
+    parse_raxio_facility_page,
     parse_schneider_galaxy_vs_model_list,
     parse_stulz_cyberair_3pro_dx_modulating_table,
+    parse_stulz_cyberair_3pro_dx_r134a_table,
     parse_stulz_cyberair_3pro_dx_table,
+    parse_vertiv_powerups6000_table,
 )
 
 ROOT = Path(__file__).resolve().parents[2] / "catalogues/data_centers"
@@ -227,6 +232,108 @@ def test_africa_data_centres_footprint_parser_is_complete_and_identity_only():
         parse_africa_data_centres_footprint(b"", source_url="https://example.com/")
 
 
+def test_meta_global_fleet_parser_is_complete_and_identity_only():
+    content = (FIXTURES / "meta-locations.html").read_bytes()
+    data = parse_meta_locations(
+        content,
+        source_url="https://datacenters.atmeta.com/all-locations/",
+        expected_count=3,
+    )
+    assert [(row["region"], row["locality"]) for row in data["candidates"]] == [
+        ("Asia", "Singapore"),
+        ("Europe", "Odense"),
+        ("United States", "New Albany"),
+    ]
+    assert data["candidates"][1]["url"] == "https://datacenters.atmeta.com/asset/odense/"
+    assert "DO NOT EXTRACT" not in json.dumps(data)
+    with pytest.raises(ValueError, match="global-fleet shape"):
+        parse_meta_locations(
+            content,
+            source_url="https://datacenters.atmeta.com/all-locations/",
+            expected_count=33,
+        )
+    with pytest.raises(ValueError, match="official Meta"):
+        parse_meta_locations(content, source_url="https://example.com/")
+
+
+def test_raxio_parser_keeps_public_design_metrics_without_contact_details():
+    content = (FIXTURES / "raxio-facility.html").read_bytes()
+    data = parse_raxio_facility_page(
+        content,
+        source_url="https://www.raxiogroup.com/data-centres/example/",
+        expected_code="EX1",
+    )
+    assert data["candidate"] == {
+        "external_id": "EX1",
+        "it_design_mw": 3.0,
+        "rack_capacity": 400,
+        "data_hall_area_m2": 2000.0,
+        "connection_voltage_kv": 15.0,
+        "cooling_provision_mw": 3.0,
+        "pue": 1.3,
+        "status_markers": ["Opened in 2024"],
+        "locator": "Raxio data centre: EX1 / current facility page",
+    }
+    assert "contact" not in json.dumps(data).lower()
+    with pytest.raises(ValueError, match="facility identity"):
+        parse_raxio_facility_page(
+            content,
+            source_url="https://www.raxiogroup.com/data-centres/example/",
+            expected_code="WRONG",
+        )
+    with pytest.raises(ValueError, match="official Raxio"):
+        parse_raxio_facility_page(content, source_url="https://example.com/")
+
+
+def test_vertiv_powerups_parser_keeps_only_explicit_topology_ratings():
+    content = (FIXTURES / "vertiv-powerups6000.txt").read_bytes()
+    data = parse_vertiv_powerups6000_table(
+        content,
+        source_url="https://www.vertiv.com/globalassets/vertiv-power-ups-industrial.pdf",
+        expected_count=19,
+    )
+    assert len(data["candidates"]) == 19
+    assert data["candidates"][0]["variant"] == ("6 kVA; single-phase input; single-phase output")
+    assert data["candidates"][-1]["variant"] == ("200 kVA; three-phase input; three-phase output")
+    assert data["candidates"][1]["input_voltage_text"] == "380/400/415 V"
+    assert all(row["apparent_power_kva"] != 999 for row in data["candidates"])
+    assert data["shared_conditions"]["output_power_factor"] == 1.0
+    with pytest.raises(ValueError, match="table shape"):
+        parse_vertiv_powerups6000_table(
+            content,
+            source_url="https://www.vertiv.com/globalassets/vertiv-power-ups-industrial.pdf",
+            expected_count=20,
+        )
+
+
+def test_carrier_19dv_parser_keeps_exact_rows_and_rating_conditions():
+    content = (FIXTURES / "carrier-19dv.txt").read_bytes()
+    data = parse_carrier_19dv_table(
+        content,
+        source_url="https://brandportal.carrier.com/original/NA2316A_19DV.pdf",
+        expected_count=3,
+    )
+    assert [row["model"] for row in data["candidates"]] == [
+        "19DV-F20F223345B9",
+        "19DV-F21F223345B9",
+        "19DV-F20F223345B3",
+    ]
+    assert data["candidates"][0]["cooling_capacity_kw"] == 1055
+    assert data["candidates"][0]["input_power_kw"] == 151.5
+    assert data["candidates"][0]["input_voltage_v"] == 400
+    assert data["candidates"][-1]["frequency_hz"] == 60
+    assert data["shared_conditions"]["leaving_evaporator_water_c"] == 6.7
+    assert "DO NOT EXTRACT" not in json.dumps(data)
+    with pytest.raises(ValueError, match="table shape"):
+        parse_carrier_19dv_table(
+            content,
+            source_url="https://brandportal.carrier.com/original/NA2316A_19DV.pdf",
+            expected_count=28,
+        )
+    with pytest.raises(ValueError, match="official Carrier"):
+        parse_carrier_19dv_table(content, source_url="https://example.com/19dv.pdf")
+
+
 def test_schneider_model_list_parser_keeps_only_explicit_commercial_references():
     content = (FIXTURES / "schneider-galaxy-vs.txt").read_bytes()
     data = parse_schneider_galaxy_vs_model_list(
@@ -299,6 +406,31 @@ def test_stulz_cyberair_parser_keeps_exact_modulating_r410a_rows():
             content,
             source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
             expected_count=20,
+        )
+
+
+def test_stulz_cyberair_parser_uses_r134a_availability_mask():
+    content = (FIXTURES / "stulz-cyberair-3pro-dx.txt").read_bytes()
+    data = parse_stulz_cyberair_3pro_dx_r134a_table(
+        content,
+        source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
+        expected_count=4,
+    )
+    assert [row["model"] for row in data["candidates"]] == [
+        "ASR 201 A",
+        "ASR 561 A",
+        "ALR 201 GE",
+        "ALR 422 GE",
+    ]
+    assert all(row["model"] not in {"ASR 451 A", "ALR 551 GE"} for row in data["candidates"])
+    assert data["candidates"][1]["cooling_net_kw"] == 61.8
+    assert data["candidates"][2]["free_cooling_water_temperature_c"] == 16.2
+    assert data["candidates"][3]["medium_volume_flow_m3_h"] == 8.2
+    with pytest.raises(ValueError, match="R134a table shape"):
+        parse_stulz_cyberair_3pro_dx_r134a_table(
+            content,
+            source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
+            expected_count=23,
         )
 
 

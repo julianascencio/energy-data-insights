@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T04:19:11Z",
+  "updated_at": "2026-11-03T07:22:54Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -20,7 +20,14 @@
     "schneider_galaxy_vs_400v_skus": 23,
     "odata_country_technical_sheets": 12,
     "stulz_cyberair_fixed_speed_r410a_configurations": 30,
-    "stulz_cyberair_modulating_r410a_configurations": 20
+    "stulz_cyberair_modulating_r410a_configurations": 20,
+    "stulz_cyberair_fixed_speed_r134a_configurations": 23,
+    "uruguay_paraguay_primary_facilities": 2,
+    "meta_global_fleet_cards": 33,
+    "vertiv_powerups6000_topology_ratings": 19,
+    "vertiv_trinergy_ce_ratings": 4,
+    "carrier_aquaedge_19dv_configurations": 28,
+    "raxio_current_facilities": 7
   },
   "next_batches": [
     {
@@ -59,25 +66,28 @@
       "urls": [
         "https://www.africadatacentres.com/"
       ],
-      "offset": 6,
-      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; continue issuer registries, JHB1 phase reconciliation, Accra post-announcement evidence, and Uruguay/Paraguay primary inventories",
+      "offset": 15,
+      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; Uruguay/Paraguay batch complete at offset 2; Raxio complete displayed seven-country portfolio at offset 7. Continue issuer registries, JHB1 phase reconciliation, Raxio dated lifecycle/permit evidence, Accra post-announcement evidence, and additional underrepresented-country primary inventories",
       "questions": [
         "Issuer-verify facility certifications rather than normalizing operator badges",
         "Resolve JHB1 14.5 MW facility-sheet versus 20 MW expansion boundary and date",
-        "Find Accra permit/construction status and open regulator/environmental source inventories"
+        "Find Accra permit/construction status and open regulator/environmental source inventories",
+        "Find dated issuer award records for Antel Massera and Tigo Paraguay before normalizing certifications"
       ]
     },
     {
       "rank": 4,
-      "source": "North America/Europe structured official portfolios and AirTrunk phase evidence",
+      "source": "North America/Europe structured official portfolios, Meta, and AirTrunk phase evidence",
       "urls": [
         "https://www.digitalrealty.com/data-centers",
+        "https://datacenters.atmeta.com/all-locations/",
         "https://airtrunk.com/locations/"
       ],
-      "offset": 0,
-      "scope": "AirTrunk location inventory complete at offset 22; review planning/environmental records for building phases. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a bounded batch",
+      "offset": 55,
+      "scope": "AirTrunk location inventory complete at offset 22 and Meta global fleet cards complete at offset 33. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a bounded batch",
       "questions": [
         "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
+        "Treat Meta card break-ground years as year-precision observations, not full construction dates or evidence of current lifecycle",
         "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
       ]
     },
@@ -88,8 +98,8 @@
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/"
       ],
-      "offset": 101,
-      "scope": "Prior Vertiv/Eaton/Schneider tables plus 30 fixed-speed and 20 modulating-EC STULZ CyberAir R410A configurations complete; continue the separately tabulated R134a rows and exact current chiller, transformer, switchgear and generator tables",
+      "offset": 175,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings and all 28 Carrier AquaEdge 19DV 50/60 Hz rows complete; continue exact current transformer, switchgear and generator tables and diversify suppliers",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -117,7 +127,7 @@
       "source": "Google PUE continuation",
       "url": "https://www.datacenters.google/efficiency/",
       "offset": 35,
-      "scope": "Q2 2026 fully processed; check for Q3/Q4 updates, then enrich all 35 campus identities with individual phase evidence",
+      "scope": "Q2 2026 fully processed; 2026-11-03 English-page check found no Q3 table and an inconsistent Chinese search cache was not accepted. Recheck for an official Q3/Q4 table, then enrich all 35 campus identities with individual phase evidence",
       "questions": [
         "Retain separate campus and building boundaries",
         "Do not overwrite earlier measured periods or infer IT MW from PUE"

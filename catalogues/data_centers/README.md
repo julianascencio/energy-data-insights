@@ -5,11 +5,12 @@ canonical JSONL under `records/projects` and `records/equipment`, a source regis
 field-level evidence, stable UUIDs and deterministic typed Parquet snapshots.
 No network request occurs during validation, export or documentation builds.
 
-The current continuation branch contains **123 project records in 23 countries**:
-**53 facility records and 70 explicitly labelled campus aggregates**. Merged
-`main` has **123 exact equipment models/configurations** and this branch has
-**143 from six OEMs**. These are catalogue counts, not a worldwide census or a
-count of operating buildings. Eight operators are represented.
+The current continuation branch contains **165 project records in 34 countries**:
+**62 facility records and 103 explicitly labelled campus aggregates**. Merged
+`main` has **123 projects and 143 exact equipment models/configurations**; this
+branch has **217 equipment records from seven OEMs**. These are catalogue counts,
+not a worldwide census or a count of operating buildings. Twelve operators are
+represented.
 The research report and coverage manifest describe missing fields and scope.
 
 ```bash
@@ -20,6 +21,11 @@ uv run python scripts/stage_data_center_adc.py captured.html --source-url https:
 uv run python scripts/stage_data_center_schneider.py extracted.txt --source-url https://www.se.com/uk/en/download/document/990-91317_EN/ --expected-count 23
 uv run python scripts/stage_data_center_stulz.py extracted-layout.txt --source-url https://www.stulz.es/fileadmin/user_upload/Documents/STULZ__TechnicalData_CyberAir_3PRO_DX_ASR-ALR.pdf --expected-count 30
 uv run python scripts/stage_data_center_stulz.py extracted-layout.txt --source-url https://www.stulz.es/fileadmin/user_upload/Documents/STULZ__TechnicalData_CyberAir_3PRO_DX_ASR-ALR.pdf --compressor modulating-ec --expected-count 20
+uv run python scripts/stage_data_center_stulz.py extracted-layout.txt --source-url https://www.stulz.es/fileadmin/user_upload/Documents/STULZ__TechnicalData_CyberAir_3PRO_DX_ASR-ALR.pdf --compressor fixed-speed-r134a --expected-count 23
+uv run python scripts/stage_data_center_meta.py captured.html --source-url https://datacenters.atmeta.com/all-locations/ --expected-count 33
+uv run python scripts/stage_data_center_vertiv_powerups.py extracted.txt --source-url https://www.vertiv.com/49882a/globalassets/shared/vertiv-power-ups-industrial_data-sheet_en.pdf --expected-count 19
+uv run python scripts/stage_data_center_carrier_19dv.py extracted-layout.txt --source-url https://brandportal.carrier.com/m/7aed1ae899ea9c0e/original/NA2316A_brochure_aquaedge_19DV_EN_carrier_bat04_bd.pdf --expected-count 28
+uv run python scripts/stage_data_center_raxio.py captured.html --source-url https://www.raxiogroup.com/data-centres/angola/ --expected-code AO1
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
