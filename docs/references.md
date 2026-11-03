@@ -5104,454 +5104,6 @@ Vertiv (2021). **Liebert XDU450/1350 guide specifications**. [Source](https://ww
 
 **Used by:** `catalogues/data_centers/sources.json`.
 
-### discover_dry_solar_revb
-
-Discover Battery (2020). **DRY CELL solar energy storage guide**. [Source](https://assets.discoverbattery.com/documents/02_dry_cell/885_product_literature/gui-dry-cell-solar-energy-storage-product-guide-20200813.pdf)
-
-**Role:** data. Page 1 exact model rows; page 2 chemistry
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### discover_aes_6650_revc
-
-Discover Energy Systems (2026). **AES 42-48-6650 installation and operation manual**. [Source](https://discoverenergysys.com/s4x_files/resources/des-aes-42-48-6650-manual.pdf)
-
-**Role:** data. Tables 3-1 to 3-3, pages 6-7; undated manual year is access year, not publication year
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### discover_rack_revd
-
-Discover Energy Systems (2026). **AES RACKMOUNT installation and operation manual**. [Source](https://discoverbattery.com/s4x_files/resources/des-aes-rackmount-user-manual.pdf)
-
-**Role:** data. Tables 3-1 to 3-3, pages 7-9; undated manual year is access year, not publication year
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### discover_aes_3000_revc
-
-Discover Battery (2026). **44-48-3000 operating manual**. [Source](https://assets.discoverbattery.com/documents/03_aes/805_product_manual/aes-44-48-3000-manual.pdf)
-
-**Role:** data. Section 11 page 13; undated manual year is access year, not publication year
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### ppa_grid_case_studies_202009
-
-Pacific Power Association / SEIAPI (GSES with TAU, EPC and TPL) (2020). **Case Studies from Integrating Renewables into the Grid**. [Source](https://www.ppa.org.fj/wp-content/uploads/2020/10/Case-Studies-Guideline-September-2020.pdf)
-
-**Role:** data. Table 3 pp10-11; Samoa section 3.1.6 p23; Tonga Table 15 p37
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### infratec_cook_four_portfolio
-
-Infratec (2026). **Southern Group Cook Islands Renewable Microgrids**. [Source](https://infratec.co.nz/projects/southern-group-cook-islands-renewable-microgrids/)
-
-**Role:** data. Undated portfolio, access year; four named islands and aggregate discrepancy
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### crown_renewable_g0720
-
-Crown Battery Manufacturing Co. (2020). **Renewable Energy Storage Solutions, SB-CRP-G0720**. [Source](https://www.crownbattery.com/hubfs/Downloads/Renewable-Energy-Batteries.pdf)
-
-**Role:** data. Page 7 exact rows; chemistry groups; energy footnote
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### ingrid_eight_20240213
-
-Ingrid Capacity (2024). **Ingrid Capacity and BW ESS continue large-scale expansion of energy storage in Sweden**. [Source](https://www.ingridcapacity.com/press-releases/ingrid-capacity-and-bw-ess-continue-large-scale-expansion-of-energy-storage-in-sweden-e90ec3b6)
-
-**Role:** data. Named eight-site MW list; grid services paragraphs
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### ingrid_operating_20241010
-
-Ingrid Capacity (2024). **Swedish battery portfolio inauguration**. [Source](https://www.ingridcapacity.com/press-releases/swedens-minister-for-climate-and-the-environment-inaugurates-the-largest-battery-storage-portfolio-in-the-nordics-939df843)
-
-**Role:** data. 14-site portfolio; grid-connected status and joint ownership
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### bw_nordics_portfolio_20261103
-
-BW ESS (2026). **Nordics operating portfolio**. [Source](https://bw-ess.com/projects/nordics)
-
-**Role:** data. Named 14-site list and In operation label; access year for undated portfolio
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### ingrid_mirova_20260923
-
-Ingrid Capacity (2026). **Ingrid Capacity and Mirova Nordic partnership**. [Source](https://www.ingridcapacity.com/news/ingrid-capacity-and-global-investor-mirova-enter-strategic-partnership-for-a-large-scale-bess-portfolio-in-the-nordics)
-
-**Role:** data. Pedersöre and Vaggeryd paragraphs; portfolio investment
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### ingrid_alpiq_20261027
-
-Ingrid Capacity (2026). **Ingrid Capacity and Alpiq offtake partnership**. [Source](https://www.ingridcapacity.com/news/ingrid-capacity-and-alpiq-partner-to-accelerate-battery-storage-deployment-in-the-nordics)
-
-**Role:** data. Pedersöre executed agreement paragraph
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### nepower_haapajarvi_20251112
-
-Nordic Electro Power Oy (2025). **NEPower and Alpiq expand Haapajärvi cooperation**. [Source](https://nepower.fi/news/haapajarvi-september-26-2025-nepower-and-alpiq-have-expanded-their-cooperation-to-build-finlands-largest-125-mw-250-mwh-energy-storage-project)
-
-**Role:** data. EPC scope, 110/33 kV connection, construction and forecast paragraphs
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### merus_valkeakoski_20251030
-
-Merus Power Oyj via STT Info (2025). **Important launch from Merus Power: grid-forming storage**. [Source](https://www.sttinfo.fi/tiedote/71567312/important-launch-from-merus-power-new-energy-storage-technology-in-the-nordics?lang=en)
-
-**Role:** data. Opening paragraph and EPC responsibility paragraph
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### merus_mertaniemi_20250516
-
-Merus Power Oyj via STT Info (2025). **Lappeenranta storage commissioned; EUR15 million delivery**. [Source](https://www.sttinfo.fi/tiedote/71171076/one-of-finlands-largest-energy-storage-facilities-commissioned-in-lappeenranta-merus-powers-eur-15-million-delivery-completed?lang=en&publisherId=69821243)
-
-**Role:** data. Opening, capacity and Mertaniemi paragraphs
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### destia_ypr2_20260304
-
-Destia (2026). **Yllikkälä battery construction and electrical delivery**. [Source](https://destia.fi/en/article/the-largest-battery-storage-in-the-nordics-was-built-with-precise-teamwork/)
-
-**Role:** data. Infrastructure and electrical work; final equipment paragraph
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### epc_fiaga_tender_20261026
-
-Electric Power Corporation Samoa (2026). **SAMEPC12/2026 Fiaga solar and battery tender notice**. [Source](https://www.epc.ws/wp-content/uploads/2026/10/SAMEPC202026TENDERNOTICEFINALCLEANVERSION261026-1.pdf)
-
-**Role:** data. Public notice pages 1-2; excludes NDA-controlled bid documents
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### ingrid_ai4energy_portfolio_20241111
-
-Sara Frimodig; Ingrid Capacity (2024). **AI-driven stokastisk optimering för batterilagringssystem**. [Source](https://energiforsk.se/media/33870/9-sara-frimodig-ingrid-capacity.pdf)
-
-**Role:** data. PDF page 5, printed slide 6: named 2024 portfolio map; cover date with revision caveat in source register
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### rolls_agm_s12_33agm_re
-
-Rolls Battery (2024). **S12-33AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-33agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_55agm_re
-
-Rolls Battery (2024). **S12-55AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-55agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_95agm_re
-
-Rolls Battery (2024). **S12-95AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-95agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_116agm_re
-
-Rolls Battery (2024). **S12-116AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-116agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_128agm_re
-
-Rolls Battery (2024). **S12-128AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-128agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_160agm_re
-
-Rolls Battery (2024). **S12-160AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-160agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_170agm_re
-
-Rolls Battery (2024). **S12-170AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-170agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_180agm_re
-
-Rolls Battery (2023). **S12-180AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-180agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_230agm_re
-
-Rolls Battery (2022). **S12-230AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-230agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_240agm_re
-
-Rolls Battery (2022). **S12-240AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-240agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_290agm_re
-
-Rolls Battery (2022). **S12-290AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-290agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s12_380agm_re
-
-Rolls Battery (2023). **S12-380AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-380agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s8_200agm_re
-
-Rolls Battery (2022). **S8-200AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s8-200agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s8_210agm_re
-
-Rolls Battery (2021). **S8-210AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s8-210agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s8_230agm_re
-
-Rolls Battery (2022). **S8-230AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s8-230agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s6_220agm_re
-
-Rolls Battery (2022). **S6-220AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-220agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s6_245agm_re
-
-Rolls Battery (2022). **S6-245AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-245agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s6_260agm_re
-
-Rolls Battery (2022). **S6-260AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-260agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s6_275agm_re
-
-Rolls Battery (2022). **S6-275AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-275agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s6_250agm_re
-
-Rolls Battery (2022). **S6-250AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-250agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s6_300agm_re
-
-Rolls Battery (2025). **S6-300AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-300agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s6_370agm_re
-
-Rolls Battery (2022). **S6-370AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-370agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s6_460agm_re
-
-Rolls Battery (2024). **S6-460AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-460agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### rolls_agm_s2_1275agm_re
-
-Rolls Battery (2019). **S2-1275AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s2-1275agm-re/)
-
-**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### mulilo_bw2_20241224
-
-Mulilo (2024). **BESIPPPP Round 2 awards**. [Source](https://www.mulilo.com/news/2024/mulilo-secures-preferred-bidder-status-in-round-2-of-south-africa-s-besipppp-and-bw7/)
-
-**Role:** data. Five named BESS bullets; lead-member responsibilities; excludes Middlepunt solar
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### mulilo_bw3_20250530
-
-Mulilo (2025). **BESIPPPP Round 3 awards**. [Source](https://www.mulilo.com/news/2025/mulilo-secures-preferred-bidder-status-in-south-africa-s-besipppp-round-3/)
-
-**Role:** data. Four named BESS bullets; contract paragraph
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### mulilo_hartebeesfontein_20260611
-
-Mulilo (2026). **Hartebeesfontein financial close**. [Source](https://www.mulilo.com/news/2026/mulilo-makes-further-inroads-with-hartebeesfontein-bess-financial-close/)
-
-**Role:** data. Capacity, locality, PPA and lenders paragraphs
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### mulilo_vanilla_application
-
-Mulilo / Vanilla Energy Facility (RF) (Pty) Ltd (2026). **Vanilla BESS redacted NERSA application**. [Source](https://www.mulilo.com/media/wntkyjd1/registration-application-form-for-electricity-gen-license_vanilla_redacted.pdf)
-
-**Role:** data. Sections C2-C7 pp7-9; D pp12; F2 p14; not an issued licence; undated: year is access year
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### mulilo_bloemhoek_application
-
-Mulilo / Bloemhoek BESS (Pty) Ltd (2026). **Bloemhoek BESS redacted NERSA application**. [Source](https://www.mulilo.com/media/ljibzk0x/annexure-c-licence-application-form-with-redacted-confidential-information_final.pdf)
-
-**Role:** data. Sections A1/A7 pp2-3; C2-C7 pp7-9; D p12; F2 p14; undated: year is access year
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### edf_oasis_portfolio_20261103
-
-EDF power solutions (2026). **Oasis 1 construction portfolio**. [Source](https://southafrica.edf-powersolutions.com/construction/oasis-1/)
-
-**Role:** data. Three named site capacity bullets; developers, debt and PPA paragraphs; undated: year is access year
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### edf_umoyilanga_portfolio_20261103
-
-EDF power solutions (2026). **Umoyilanga project portfolio**. [Source](https://southafrica.edf-powersolutions.com/construction/umoyilanga/)
-
-**Role:** data. Individual Avondale/Dassiesridge battery MW; technology-specific contractor list; undated: year is access year
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### edf_umoyilanga_provisional_20251212
-
-EDF power solutions (2025). **Umoyilanga provisional COD at Dassiesridge**. [Source](https://southafrica.edf-powersolutions.com/https-southafrica-edf-powersolutions-com-umoyilanga-hybrid-project-reaches-provisional-cod-with-dassiesridge-plant/)
-
-**Role:** data. Opening milestone, 55 MW hybrid NDC, Avondale outstanding work and financial-close paragraphs
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### exilion_portfolio_20261103
-
-Exilion (2026). **Exilion Tuuli Ky portfolio**. [Source](https://exilion.fi/omistukset/exilion-tuuli-ky/)
-
-**Role:** data. SÄHKÖVARASTOT; Viinamäki, Mäntyharju, Tjusterby, Palanutkangas sections; undated: year is access year
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### exilion_mantyharju_20251101
-
-Exilion (2025). **Exilion orders Mäntyharju storage**. [Source](https://exilion.fi/exilion-tilaa-merus-powerilta-sahkovaraston/)
-
-**Role:** data. Opening capacity, Kuortti locality, EUR17m value and developer paragraph
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### merus_mantyharju_trade_20261027
-
-Merus Power Oyj (2026). **Mäntyharju trading and lifecycle service agreement**. [Source](https://www.sttinfo.fi/tiedote/72444702/exilion-starts-using-merus-powers-trading-service-at-its-mantyharju-battery-energy-storage?lang=en&publisherId=69821243)
-
-**Role:** data. Opening agreement and markets paragraphs
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### scatec_kenhardt_close_20220719
-
-Scatec ASA (2022). **Kenhardt construction and financial close**. [Source](https://www.scatec.com/en/scatec-is-starting-construction-of-solar-and-battery-project-in-south-africa-after-reaching-financial-close/)
-
-**Role:** data. Financial-close, funding and EPC/O&M paragraphs
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### exilion_sustainability_2025
-
-Exilion (2026). **Exilion Tuuli Ky sustainability report 2025**. [Source](https://exilion.fi/wp-content/uploads/2026/04/Exilion-Tuuli-Ky-Vastuullisuusraportti-2025-Final-1.pdf)
-
-**Role:** data. Page 3: planning list entries 2 and 5 explicitly say aurinko- ja akkuhanke; construction list Mäntyharju; year is access year, report covers 2025
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### exilion_varevaara_20260701
-
-Exilion (2026). **Exilion signs over 8 million euro battery energy storage deal with Merus Power**. [Source](https://exilion.fi/en/exilion-signs-over-8-million-euro-battery-energy-storage-deal-with-merus-power/)
-
-**Role:** data. Opening three paragraphs: named site, 20 MW / 41 MWh, turnkey order value and autumn 2027 delivery
-
-**Used by:** `catalogues/bess/sources.json`.
-
 ### wind_wri_gppd_1_3_0_20261103
 
 World Resources Institute (n.d.). **Global Power Plant Database v1.3.0, complete primary-fuel Wind partition**. [Source](https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/output_database/global_power_plant_database.csv)
@@ -6047,6 +5599,454 @@ ABB (2021). **ACS880-77CC wind turbine converters Hardware manual**. [Source](ht
 **Role:** data. Rev A, pp87-92; original SHA256 in registry; grid kW, generator kW and kVA separated.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### discover_dry_solar_revb
+
+Discover Battery (2020). **DRY CELL solar energy storage guide**. [Source](https://assets.discoverbattery.com/documents/02_dry_cell/885_product_literature/gui-dry-cell-solar-energy-storage-product-guide-20200813.pdf)
+
+**Role:** data. Page 1 exact model rows; page 2 chemistry
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### discover_aes_6650_revc
+
+Discover Energy Systems (2026). **AES 42-48-6650 installation and operation manual**. [Source](https://discoverenergysys.com/s4x_files/resources/des-aes-42-48-6650-manual.pdf)
+
+**Role:** data. Tables 3-1 to 3-3, pages 6-7; undated manual year is access year, not publication year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### discover_rack_revd
+
+Discover Energy Systems (2026). **AES RACKMOUNT installation and operation manual**. [Source](https://discoverbattery.com/s4x_files/resources/des-aes-rackmount-user-manual.pdf)
+
+**Role:** data. Tables 3-1 to 3-3, pages 7-9; undated manual year is access year, not publication year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### discover_aes_3000_revc
+
+Discover Battery (2026). **44-48-3000 operating manual**. [Source](https://assets.discoverbattery.com/documents/03_aes/805_product_manual/aes-44-48-3000-manual.pdf)
+
+**Role:** data. Section 11 page 13; undated manual year is access year, not publication year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ppa_grid_case_studies_202009
+
+Pacific Power Association / SEIAPI (GSES with TAU, EPC and TPL) (2020). **Case Studies from Integrating Renewables into the Grid**. [Source](https://www.ppa.org.fj/wp-content/uploads/2020/10/Case-Studies-Guideline-September-2020.pdf)
+
+**Role:** data. Table 3 pp10-11; Samoa section 3.1.6 p23; Tonga Table 15 p37
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### infratec_cook_four_portfolio
+
+Infratec (2026). **Southern Group Cook Islands Renewable Microgrids**. [Source](https://infratec.co.nz/projects/southern-group-cook-islands-renewable-microgrids/)
+
+**Role:** data. Undated portfolio, access year; four named islands and aggregate discrepancy
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### crown_renewable_g0720
+
+Crown Battery Manufacturing Co. (2020). **Renewable Energy Storage Solutions, SB-CRP-G0720**. [Source](https://www.crownbattery.com/hubfs/Downloads/Renewable-Energy-Batteries.pdf)
+
+**Role:** data. Page 7 exact rows; chemistry groups; energy footnote
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ingrid_eight_20240213
+
+Ingrid Capacity (2024). **Ingrid Capacity and BW ESS continue large-scale expansion of energy storage in Sweden**. [Source](https://www.ingridcapacity.com/press-releases/ingrid-capacity-and-bw-ess-continue-large-scale-expansion-of-energy-storage-in-sweden-e90ec3b6)
+
+**Role:** data. Named eight-site MW list; grid services paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_operating_20241010
+
+Ingrid Capacity (2024). **Swedish battery portfolio inauguration**. [Source](https://www.ingridcapacity.com/press-releases/swedens-minister-for-climate-and-the-environment-inaugurates-the-largest-battery-storage-portfolio-in-the-nordics-939df843)
+
+**Role:** data. 14-site portfolio; grid-connected status and joint ownership
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bw_nordics_portfolio_20261103
+
+BW ESS (2026). **Nordics operating portfolio**. [Source](https://bw-ess.com/projects/nordics)
+
+**Role:** data. Named 14-site list and In operation label; access year for undated portfolio
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_mirova_20260923
+
+Ingrid Capacity (2026). **Ingrid Capacity and Mirova Nordic partnership**. [Source](https://www.ingridcapacity.com/news/ingrid-capacity-and-global-investor-mirova-enter-strategic-partnership-for-a-large-scale-bess-portfolio-in-the-nordics)
+
+**Role:** data. Pedersöre and Vaggeryd paragraphs; portfolio investment
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_alpiq_20261027
+
+Ingrid Capacity (2026). **Ingrid Capacity and Alpiq offtake partnership**. [Source](https://www.ingridcapacity.com/news/ingrid-capacity-and-alpiq-partner-to-accelerate-battery-storage-deployment-in-the-nordics)
+
+**Role:** data. Pedersöre executed agreement paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nepower_haapajarvi_20251112
+
+Nordic Electro Power Oy (2025). **NEPower and Alpiq expand Haapajärvi cooperation**. [Source](https://nepower.fi/news/haapajarvi-september-26-2025-nepower-and-alpiq-have-expanded-their-cooperation-to-build-finlands-largest-125-mw-250-mwh-energy-storage-project)
+
+**Role:** data. EPC scope, 110/33 kV connection, construction and forecast paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### merus_valkeakoski_20251030
+
+Merus Power Oyj via STT Info (2025). **Important launch from Merus Power: grid-forming storage**. [Source](https://www.sttinfo.fi/tiedote/71567312/important-launch-from-merus-power-new-energy-storage-technology-in-the-nordics?lang=en)
+
+**Role:** data. Opening paragraph and EPC responsibility paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### merus_mertaniemi_20250516
+
+Merus Power Oyj via STT Info (2025). **Lappeenranta storage commissioned; EUR15 million delivery**. [Source](https://www.sttinfo.fi/tiedote/71171076/one-of-finlands-largest-energy-storage-facilities-commissioned-in-lappeenranta-merus-powers-eur-15-million-delivery-completed?lang=en&publisherId=69821243)
+
+**Role:** data. Opening, capacity and Mertaniemi paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### destia_ypr2_20260304
+
+Destia (2026). **Yllikkälä battery construction and electrical delivery**. [Source](https://destia.fi/en/article/the-largest-battery-storage-in-the-nordics-was-built-with-precise-teamwork/)
+
+**Role:** data. Infrastructure and electrical work; final equipment paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### epc_fiaga_tender_20261026
+
+Electric Power Corporation Samoa (2026). **SAMEPC12/2026 Fiaga solar and battery tender notice**. [Source](https://www.epc.ws/wp-content/uploads/2026/10/SAMEPC202026TENDERNOTICEFINALCLEANVERSION261026-1.pdf)
+
+**Role:** data. Public notice pages 1-2; excludes NDA-controlled bid documents
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_ai4energy_portfolio_20241111
+
+Sara Frimodig; Ingrid Capacity (2024). **AI-driven stokastisk optimering för batterilagringssystem**. [Source](https://energiforsk.se/media/33870/9-sara-frimodig-ingrid-capacity.pdf)
+
+**Role:** data. PDF page 5, printed slide 6: named 2024 portfolio map; cover date with revision caveat in source register
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### rolls_agm_s12_33agm_re
+
+Rolls Battery (2024). **S12-33AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-33agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_55agm_re
+
+Rolls Battery (2024). **S12-55AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-55agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_95agm_re
+
+Rolls Battery (2024). **S12-95AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-95agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_116agm_re
+
+Rolls Battery (2024). **S12-116AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-116agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_128agm_re
+
+Rolls Battery (2024). **S12-128AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-128agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_160agm_re
+
+Rolls Battery (2024). **S12-160AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-160agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_170agm_re
+
+Rolls Battery (2024). **S12-170AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-170agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_180agm_re
+
+Rolls Battery (2023). **S12-180AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-180agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_230agm_re
+
+Rolls Battery (2022). **S12-230AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-230agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_240agm_re
+
+Rolls Battery (2022). **S12-240AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-240agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_290agm_re
+
+Rolls Battery (2022). **S12-290AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-290agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s12_380agm_re
+
+Rolls Battery (2023). **S12-380AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s12-380agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s8_200agm_re
+
+Rolls Battery (2022). **S8-200AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s8-200agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s8_210agm_re
+
+Rolls Battery (2021). **S8-210AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s8-210agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s8_230agm_re
+
+Rolls Battery (2022). **S8-230AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s8-230agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s6_220agm_re
+
+Rolls Battery (2022). **S6-220AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-220agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s6_245agm_re
+
+Rolls Battery (2022). **S6-245AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-245agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s6_260agm_re
+
+Rolls Battery (2022). **S6-260AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-260agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s6_275agm_re
+
+Rolls Battery (2022). **S6-275AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-275agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s6_250agm_re
+
+Rolls Battery (2022). **S6-250AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-250agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s6_300agm_re
+
+Rolls Battery (2025). **S6-300AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-300agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s6_370agm_re
+
+Rolls Battery (2022). **S6-370AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-370agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s6_460agm_re
+
+Rolls Battery (2024). **S6-460AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s6-460agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_agm_s2_1275agm_re
+
+Rolls Battery (2019). **S2-1275AGM-RE technical specification**. [Source](https://www.rollsbattery.com/battery/s2-1275agm-re/)
+
+**Role:** data. Exact named model: Charge/Discharge, Hour Rate and Specifications tables; printed revision footer
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### mulilo_bw2_20241224
+
+Mulilo (2024). **BESIPPPP Round 2 awards**. [Source](https://www.mulilo.com/news/2024/mulilo-secures-preferred-bidder-status-in-round-2-of-south-africa-s-besipppp-and-bw7/)
+
+**Role:** data. Five named BESS bullets; lead-member responsibilities; excludes Middlepunt solar
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### mulilo_bw3_20250530
+
+Mulilo (2025). **BESIPPPP Round 3 awards**. [Source](https://www.mulilo.com/news/2025/mulilo-secures-preferred-bidder-status-in-south-africa-s-besipppp-round-3/)
+
+**Role:** data. Four named BESS bullets; contract paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### mulilo_hartebeesfontein_20260611
+
+Mulilo (2026). **Hartebeesfontein financial close**. [Source](https://www.mulilo.com/news/2026/mulilo-makes-further-inroads-with-hartebeesfontein-bess-financial-close/)
+
+**Role:** data. Capacity, locality, PPA and lenders paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### mulilo_vanilla_application
+
+Mulilo / Vanilla Energy Facility (RF) (Pty) Ltd (2026). **Vanilla BESS redacted NERSA application**. [Source](https://www.mulilo.com/media/wntkyjd1/registration-application-form-for-electricity-gen-license_vanilla_redacted.pdf)
+
+**Role:** data. Sections C2-C7 pp7-9; D pp12; F2 p14; not an issued licence; undated: year is access year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### mulilo_bloemhoek_application
+
+Mulilo / Bloemhoek BESS (Pty) Ltd (2026). **Bloemhoek BESS redacted NERSA application**. [Source](https://www.mulilo.com/media/ljibzk0x/annexure-c-licence-application-form-with-redacted-confidential-information_final.pdf)
+
+**Role:** data. Sections A1/A7 pp2-3; C2-C7 pp7-9; D p12; F2 p14; undated: year is access year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### edf_oasis_portfolio_20261103
+
+EDF power solutions (2026). **Oasis 1 construction portfolio**. [Source](https://southafrica.edf-powersolutions.com/construction/oasis-1/)
+
+**Role:** data. Three named site capacity bullets; developers, debt and PPA paragraphs; undated: year is access year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### edf_umoyilanga_portfolio_20261103
+
+EDF power solutions (2026). **Umoyilanga project portfolio**. [Source](https://southafrica.edf-powersolutions.com/construction/umoyilanga/)
+
+**Role:** data. Individual Avondale/Dassiesridge battery MW; technology-specific contractor list; undated: year is access year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### edf_umoyilanga_provisional_20251212
+
+EDF power solutions (2025). **Umoyilanga provisional COD at Dassiesridge**. [Source](https://southafrica.edf-powersolutions.com/https-southafrica-edf-powersolutions-com-umoyilanga-hybrid-project-reaches-provisional-cod-with-dassiesridge-plant/)
+
+**Role:** data. Opening milestone, 55 MW hybrid NDC, Avondale outstanding work and financial-close paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### exilion_portfolio_20261103
+
+Exilion (2026). **Exilion Tuuli Ky portfolio**. [Source](https://exilion.fi/omistukset/exilion-tuuli-ky/)
+
+**Role:** data. SÄHKÖVARASTOT; Viinamäki, Mäntyharju, Tjusterby, Palanutkangas sections; undated: year is access year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### exilion_mantyharju_20251101
+
+Exilion (2025). **Exilion orders Mäntyharju storage**. [Source](https://exilion.fi/exilion-tilaa-merus-powerilta-sahkovaraston/)
+
+**Role:** data. Opening capacity, Kuortti locality, EUR17m value and developer paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### merus_mantyharju_trade_20261027
+
+Merus Power Oyj (2026). **Mäntyharju trading and lifecycle service agreement**. [Source](https://www.sttinfo.fi/tiedote/72444702/exilion-starts-using-merus-powers-trading-service-at-its-mantyharju-battery-energy-storage?lang=en&publisherId=69821243)
+
+**Role:** data. Opening agreement and markets paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### scatec_kenhardt_close_20220719
+
+Scatec ASA (2022). **Kenhardt construction and financial close**. [Source](https://www.scatec.com/en/scatec-is-starting-construction-of-solar-and-battery-project-in-south-africa-after-reaching-financial-close/)
+
+**Role:** data. Financial-close, funding and EPC/O&M paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### exilion_sustainability_2025
+
+Exilion (2026). **Exilion Tuuli Ky sustainability report 2025**. [Source](https://exilion.fi/wp-content/uploads/2026/04/Exilion-Tuuli-Ky-Vastuullisuusraportti-2025-Final-1.pdf)
+
+**Role:** data. Page 3: planning list entries 2 and 5 explicitly say aurinko- ja akkuhanke; construction list Mäntyharju; year is access year, report covers 2025
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### exilion_varevaara_20260701
+
+Exilion (2026). **Exilion signs over 8 million euro battery energy storage deal with Merus Power**. [Source](https://exilion.fi/en/exilion-signs-over-8-million-euro-battery-energy-storage-deal-with-merus-power/)
+
+**Role:** data. Opening three paragraphs: named site, 20 MW / 41 MWh, turnkey order value and autumn 2027 delivery
+
+**Used by:** `catalogues/bess/sources.json`.
 
 ### rolls_r2_r2_1000agm
 
