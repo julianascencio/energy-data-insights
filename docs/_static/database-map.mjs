@@ -37,7 +37,7 @@ export function createProjectMap(container, onRecord, database = "pv") {
       const row = group.rows[0];
       content.append(make("strong", row.name || row.record_id),
         make("p", `${row.country_code || "Unknown country"} · ${row.status || "Unknown status"}`),
-        make("p", row.facility_id ? `${row.record_scope} · IT ${number(row.it_capacity_mw)} MW (${row.it_capacity_basis || "unknown basis"}) · Grid ${number(row.grid_capacity_mw)} MW · Facility ${number(row.facility_capacity_mw)} MW` : capacities.map(([field, unit]) => `${number(row[field])} ${unit}`).join(" · ")),
+        make("p", database === "wind" ? `${row.technology} · Installed ${number(row.installed_capacity_mw)} MW · Planned ${number(row.planned_capacity_mw)} MW · ${row.aggregation_role}` : row.facility_id ? `${row.record_scope} · IT ${number(row.it_capacity_mw)} MW (${row.it_capacity_basis || "unknown basis"}) · Grid ${number(row.grid_capacity_mw)} MW · Facility ${number(row.facility_capacity_mw)} MW` : capacities.map(([field, unit]) => `${number(row[field])} ${unit}`).join(" · ")),
         make("p", `Location accuracy: ${row.location_accuracy || "Unknown"}`));
       if (database === "bess") content.append(
         make("p", `Power basis: ${row.power_basis || "Unknown"} · Energy basis: ${row.energy_basis || "Unknown"}`),
@@ -47,7 +47,7 @@ export function createProjectMap(container, onRecord, database = "pv") {
       return content;
     }
     content.append(make("strong", `${number(group.rows.length)} projects in this group`),
-      make("p", group.rows.some(row => row.facility_id) ? "Facility/campus records. Scope-aware capacities are shown in the dashboard." : capacities.map(([field, unit]) => `${number(statistics(group.rows, field).reportedSum)} ${unit} reported`).join(" · ")));
+      make("p", database === "wind" ? "Capacity categories and reviewed scopes are shown in the dashboard." : group.rows.some(row => row.facility_id) ? "Facility/campus records. Scope-aware capacities are shown in the dashboard." : capacities.map(([field, unit]) => `${number(statistics(group.rows, field).reportedSum)} ${unit} reported`).join(" · ")));
     if (database === "bess") content.append(make("p", "Reported sums; project phases, statuses and rating bases may differ."));
     const zoom = make("button", "Zoom to group"); zoom.type = "button";
     zoom.disabled = map.getZoom() === map.getMaxZoom();

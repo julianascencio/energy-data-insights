@@ -1,0 +1,82 @@
+{
+  "batch": "2026-11-03-0644-repd-oem",
+  "updated_at": "2026-11-03T06:53:53Z",
+  "baseline_main": "15e9d60b84b0e741979437fd8d7172f0d7e30824",
+  "branch": "research/global-wind-database-20261103",
+  "merged_wind_counts_at_baseline": {
+    "projects": 0,
+    "equipment": 0,
+    "curves": 0,
+    "turbines": 0
+  },
+  "branch_totals": {
+    "projects": 5355,
+    "non_group_projects": 5354,
+    "equipment": 52,
+    "curves": 2,
+    "turbines": 0,
+    "countries": 59,
+    "manufacturers": [
+      "GE Vernova",
+      "MHI Vestas Offshore Wind",
+      "Nordex",
+      "Siemens Gamesa",
+      "Vestas"
+    ]
+  },
+  "changes_against_main": {
+    "new_projects": 5355,
+    "new_equipment": 52,
+    "substantively_enriched_existing_projects": 0,
+    "substantively_enriched_existing_equipment": 0,
+    "within_import_primary_enrichments": 2
+  },
+  "historical_partition": {
+    "selected_rows": 5344,
+    "accepted": 5344,
+    "excluded": 0,
+    "deferred_records": 0,
+    "current_status_unresolved": 4700
+  },
+  "primary_evidence_project_records": 655,
+  "technology_counts": {
+    "unknown": 4700,
+    "onshore": 617,
+    "offshore_unspecified": 32,
+    "fixed_bottom_offshore": 2,
+    "floating_offshore": 4
+  },
+  "identity_candidate_groups": 13,
+  "identity_candidate_records": 26,
+  "important_deferrals": [
+    "4700 historical rows still have unknown lifecycle; all 5342 historical unresolved scopes remain excluded",
+    "2216 REPD applications held with exact IDs/reasons; reconcile before adding farms",
+    "Existing 13 duplicate-name candidate groups remain unresolved",
+    "Lake Turkana installed MW; V136-4.2 scalar; GE acoustic operating boundaries; SG 3.2-129 reported power-density discrepancy",
+    "USWTDB release ZIP HTTP403; ANEEL daily CSV HTTP503, no asserted authentication/reuse restriction",
+    "Exact Changhua regional equipment configuration; independent generator/gearbox/converter/foundation models; archive curve provenance"
+  ],
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables",
+  "validation_report": "validation.json",
+  "coverage_manifest": "coverage-manifest.json",
+  "backlog": "backlog.json",
+  "publication_base_main": "15e9d60b84b0e741979437fd8d7172f0d7e30824",
+  "iteration_base_head": "054d13caa2cb2ba225873c6d6f2b01d498a10116",
+  "changes_this_run": {
+    "new_projects": 0,
+    "substantively_enriched_projects": 642,
+    "new_equipment": 22,
+    "substantively_enriched_equipment": 0,
+    "new_curves": 0,
+    "new_turbines": 0
+  },
+  "repd_partition": {
+    "selected_rows": 2858,
+    "enriched": 642,
+    "deferred_identity": 2216,
+    "capacity_scope_exclusions_preserved": 642,
+    "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
+  },
+  "new_geography": "No new country; United Kingdom primary registry reconciliation",
+  "new_technology_coverage": "First linked exact blade; additional direct-drive/geared turbine configurations and India/USA/APAC variants"
+}

@@ -1,0 +1,47 @@
+{
+  "batch": "2026-11-03-0644-repd-oem",
+  "checked_at": "2026-11-03T06:57:03.567208+00:00",
+  "python": "3.13.16",
+  "local": {
+    "pytest": {
+      "passed": 1772,
+      "skipped": 1,
+      "reason": "Optional cdsapi unavailable; no wind tests skipped"
+    },
+    "repd_adapter_tests": {
+      "passed": 9
+    },
+    "viewer_node_tests": {
+      "passed": 13
+    },
+    "catalogue_validation": "5409 records passed",
+    "ruff_format": "647 files passed",
+    "ruff_check": "passed",
+    "ty": "passed",
+    "snapshot_reproducibility": "Two independent builds; all Parquet/schema/source/manifest files byte-identical (diff -rq)",
+    "snapshot_input_sha256": "297f01ca16564f39eda7880aea3ec5f8e1bf1f9799188256fa2a5b6163959166",
+    "table_hashes": {
+      "projects": "218af4a7634e0a0265bae5b63780bf4c6619ce6588f1599aab17484c4b6cc929",
+      "equipment": "5cb5545379e80cd5aa4da677f354d15dcc1cbaf5d4be2ee46610b70449248d9d",
+      "turbines": "72a8737583dc6efad81eb7edd5fd83594fdfdbbf21a3a5cc363046c289c370ed",
+      "curves": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735"
+    },
+    "citations": "passed",
+    "repository_hygiene": "2666 candidates passed at checkpoint; final report files added afterward",
+    "package_build": "three wheels and three source distributions passed",
+    "twine_strict": "six distributions passed",
+    "sphinx_strict": "passed",
+    "documentation_links": "433 HTML pages passed",
+    "gallery": "Wind example executed offline; figures generated; no new visual browser inspection",
+    "browser_smoke": "not executed this iteration",
+    "preservation": "All 5387 prior IDs/creation times retained; 4745 unmodified records identical; six capacity summaries identical; PV/BESS/BESS OEM/Data Center catalogue trees unchanged",
+    "initial_failures_resolved": [
+      "Conflict test used fixed initial timestamp for now-newer catalogue record; uses the selected record verification time",
+      "Citation registration duplicated existing sources under unsanitized aliases; reused existing references and normalized only new identifiers"
+    ]
+  },
+  "remote_ci": {
+    "previous_head": "054d13caa2cb2ba225873c6d6f2b01d498a10116",
+    "new_commit_status": "pending publication; not assumed to pass"
+  }
+}

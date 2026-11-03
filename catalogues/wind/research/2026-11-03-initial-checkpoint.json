@@ -1,0 +1,61 @@
+{
+  "batch": "2026-11-03",
+  "updated_at": "2026-11-03T00:00:00Z",
+  "baseline_main": "4f493a8a8571bb931027c84cb776b0a0e417a8d8",
+  "branch": "research/global-wind-database-20261103",
+  "merged_wind_counts_at_baseline": {
+    "projects": 0,
+    "equipment": 0,
+    "curves": 0,
+    "turbines": 0
+  },
+  "branch_totals": {
+    "projects": 5355,
+    "non_group_projects": 5354,
+    "equipment": 30,
+    "curves": 2,
+    "turbines": 0,
+    "countries": 59,
+    "manufacturers": [
+      "MHI Vestas Offshore Wind",
+      "Nordex",
+      "Vestas"
+    ]
+  },
+  "changes_against_main": {
+    "new_projects": 5355,
+    "new_equipment": 30,
+    "substantively_enriched_existing_projects": 0,
+    "substantively_enriched_existing_equipment": 0,
+    "within_import_primary_enrichments": 2
+  },
+  "historical_partition": {
+    "selected_rows": 5344,
+    "accepted": 5344,
+    "excluded": 0,
+    "deferred_records": 0,
+    "current_status_unresolved": 5342
+  },
+  "primary_evidence_project_records": 13,
+  "technology_counts": {
+    "unknown": 5342,
+    "onshore": 6,
+    "fixed_bottom_offshore": 2,
+    "floating_offshore": 4,
+    "offshore_unspecified": 1
+  },
+  "identity_candidate_groups": 13,
+  "identity_candidate_records": 26,
+  "important_deferrals": [
+    "5342 historical rows need current status/technology/phase scope verification",
+    "Lake Turkana installed MW withheld pending capacity-scope evidence",
+    "V136-4.2 scalar rating withheld; flexible Nordex modes preserved as options",
+    "USWTDB original download blocked with 403",
+    "NREL archive curve provenance deferred; no archive data ingested"
+  ],
+  "completed_sources": "Complete WRI primary-fuel Wind partition, Vestas EnVentus/4MW/2MW portfolio tables, eleven Nordex pages, selected exact offshore/historical OEM configurations, original V47 tables and thirteen project evidence records",
+  "validation_report": "validation.json",
+  "coverage_manifest": "coverage-manifest.json",
+  "backlog": "backlog.json",
+  "publication_base_main": "a95521c9fbea3ff227e709862fb49f23aec90446"
+}

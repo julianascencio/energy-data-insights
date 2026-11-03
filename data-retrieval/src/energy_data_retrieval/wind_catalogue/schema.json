@@ -1,0 +1,742 @@
+{
+  "version": "1.0.0",
+  "entity_types": [
+    "projects",
+    "equipment",
+    "turbines",
+    "curves"
+  ],
+  "required": [
+    "record_id",
+    "entity_type",
+    "name",
+    "record_scope",
+    "capacity_scope",
+    "created_at",
+    "updated_at",
+    "last_verified_at",
+    "sources",
+    "field_sources_json",
+    "evidence_json",
+    "quality_status"
+  ],
+  "fields": {
+    "record_id": {
+      "type": "string",
+      "description": "Stable UUID; retain through renames and changes in capacity."
+    },
+    "name": {
+      "type": "string",
+      "description": "Identifiable facility, phase or exact equipment name."
+    },
+    "capacity_scope": {
+      "type": "string",
+      "description": "Physical boundary and configuration covered by reported ratings."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Review notes; no unsupported technical facts."
+    },
+    "country_code": {
+      "type": "string",
+      "description": "ISO alpha-3 country code."
+    },
+    "region": {
+      "type": "string",
+      "description": "Reported administrative region."
+    },
+    "locality": {
+      "type": "string",
+      "description": "Reported municipality/locality."
+    },
+    "location_accuracy": {
+      "type": "string",
+      "description": "Precision and method of public coordinates."
+    },
+    "phase_id": {
+      "type": "string",
+      "description": "Separately documented development phase identifier."
+    },
+    "parent_record_id": {
+      "type": "string",
+      "description": "Optional parent project UUID in this catalogue."
+    },
+    "overlap_group": {
+      "type": "string",
+      "description": "Stable group for overlapping capacity observations."
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "OEM, not distributor or integrator unless explicitly identified as manufacturer."
+    },
+    "model": {
+      "type": "string",
+      "description": "Exact OEM model designation."
+    },
+    "variant": {
+      "type": "string",
+      "description": "Explicit documented configuration; never synthesized combinations."
+    },
+    "product_status": {
+      "type": "string",
+      "description": "Dated OEM lifecycle claim; availability is not assumed."
+    },
+    "official_url": {
+      "type": "string",
+      "description": "Official project or product page."
+    },
+    "grid_utility": {
+      "type": "string",
+      "description": "Reported electrical utility."
+    },
+    "status_date_basis": {
+      "type": "string",
+      "description": "Publication date or dated retrieval of undated evidence."
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "Connected catalogue table.",
+      "enum": [
+        "projects",
+        "equipment",
+        "turbines",
+        "curves"
+      ]
+    },
+    "record_scope": {
+      "type": "string",
+      "description": "Physical identity granularity.",
+      "enum": [
+        "farm",
+        "phase",
+        "group",
+        "repowering_generation",
+        "model",
+        "configuration",
+        "turbine",
+        "curve"
+      ]
+    },
+    "aggregation_role": {
+      "type": "string",
+      "description": "Only independent or child records can contribute to sums. Aggregate and unresolved scopes are excluded even if filtered children are absent.",
+      "enum": [
+        "independent",
+        "child",
+        "aggregate",
+        "unresolved"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Last evidenced project lifecycle; a portfolio listing alone does not establish operation.",
+      "enum": [
+        "announced",
+        "permitted",
+        "under_construction",
+        "commissioning",
+        "operational",
+        "partially_operational",
+        "repowering",
+        "suspended",
+        "cancelled",
+        "decommissioned",
+        "unknown"
+      ]
+    },
+    "equipment_category": {
+      "type": "string",
+      "description": "Exact equipment category.",
+      "enum": [
+        "wind_turbine",
+        "blade",
+        "rotor",
+        "gearbox",
+        "generator",
+        "converter",
+        "tower",
+        "foundation",
+        "floating_platform",
+        "transformer",
+        "switchgear",
+        "control"
+      ]
+    },
+    "quality_status": {
+      "type": "string",
+      "description": "Evidence qualification; does not certify a facility or product.",
+      "enum": [
+        "source_backed",
+        "needs_review"
+      ]
+    },
+    "created_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "updated_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "last_verified_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "status_as_of": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "announcement_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "construction_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "commissioning_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "retirement_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "aliases": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "sources": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "source_urls": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "owner_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "operator_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "developer_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "contractor_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "supplier_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "equipment_record_ids": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "external_ids_json": {
+      "type": "json",
+      "description": "Namespace to exact public identifier.",
+      "json_container": "object"
+    },
+    "field_sources_json": {
+      "type": "json",
+      "description": "Map each populated factual column to registered source IDs. No wildcard evidence.",
+      "json_container": "object"
+    },
+    "evidence_json": {
+      "type": "json",
+      "description": "Field-level locator, units, publication date/revision and confidence; keys match field_sources_json.",
+      "json_container": "object"
+    },
+    "estimates_json": {
+      "type": "json",
+      "description": "Derived estimates with method and uncertainty, never substituted into reported columns.",
+      "json_container": "object"
+    },
+    "conflicts_json": {
+      "type": "json",
+      "description": "Quarantined field observations and source dates/boundaries; unresolved numeric fields must be null.",
+      "json_container": "object"
+    },
+    "extensions_json": {
+      "type": "json",
+      "description": "Extra documented metadata with units and conditions.",
+      "json_container": "object"
+    },
+    "certifications_json": {
+      "type": "json",
+      "description": "Issuer, certificate, scope, date and source; marketing claims are not verified certificates.",
+      "json_container": "object"
+    },
+    "latitude": {
+      "type": "float",
+      "description": "Public source coordinate; no inferred centroids.",
+      "minimum": -90,
+      "maximum": 90,
+      "unit": "degrees"
+    },
+    "longitude": {
+      "type": "float",
+      "description": "Public source coordinate; no inferred centroids.",
+      "minimum": -180,
+      "maximum": 180,
+      "unit": "degrees"
+    },
+    "project_group_id": {
+      "type": "string",
+      "description": "project group id"
+    },
+    "generation_id": {
+      "type": "string",
+      "description": "generation id"
+    },
+    "replaces_record_id": {
+      "type": "string",
+      "description": "replaces record id"
+    },
+    "project_record_id": {
+      "type": "string",
+      "description": "project record id"
+    },
+    "equipment_record_id": {
+      "type": "string",
+      "description": "equipment record id"
+    },
+    "platform": {
+      "type": "string",
+      "description": "platform"
+    },
+    "drivetrain": {
+      "type": "string",
+      "description": "drivetrain"
+    },
+    "generator_type": {
+      "type": "string",
+      "description": "generator type"
+    },
+    "gearbox_type": {
+      "type": "string",
+      "description": "gearbox type"
+    },
+    "converter_type": {
+      "type": "string",
+      "description": "converter type"
+    },
+    "pitch_yaw_control": {
+      "type": "string",
+      "description": "pitch yaw control"
+    },
+    "iec_class": {
+      "type": "string",
+      "description": "iec class"
+    },
+    "certification_scope": {
+      "type": "string",
+      "description": "certification scope"
+    },
+    "foundation_type": {
+      "type": "string",
+      "description": "foundation type"
+    },
+    "port": {
+      "type": "string",
+      "description": "port"
+    },
+    "substation": {
+      "type": "string",
+      "description": "substation"
+    },
+    "export_infrastructure": {
+      "type": "string",
+      "description": "export infrastructure"
+    },
+    "turbine_model": {
+      "type": "string",
+      "description": "turbine model"
+    },
+    "acoustic_conditions": {
+      "type": "string",
+      "description": "acoustic conditions"
+    },
+    "warranty_conditions": {
+      "type": "string",
+      "description": "warranty conditions"
+    },
+    "design_life_conditions": {
+      "type": "string",
+      "description": "design life conditions"
+    },
+    "rated_power_conditions": {
+      "type": "string",
+      "description": "rated power conditions"
+    },
+    "restart_conditions": {
+      "type": "string",
+      "description": "restart conditions"
+    },
+    "source_revision": {
+      "type": "string",
+      "description": "source revision"
+    },
+    "tower_options": {
+      "type": "string",
+      "description": "tower options"
+    },
+    "environmental_packages": {
+      "type": "string",
+      "description": "environmental packages"
+    },
+    "grid_interface": {
+      "type": "string",
+      "description": "grid interface"
+    },
+    "resource_kind": {
+      "type": "string",
+      "description": "resource kind"
+    },
+    "technology": {
+      "type": "string",
+      "description": "technology",
+      "enum": [
+        "onshore",
+        "fixed_bottom_offshore",
+        "floating_offshore",
+        "offshore_unspecified",
+        "unknown"
+      ]
+    },
+    "permitting_date": {
+      "type": "string",
+      "description": "permitting date",
+      "format": "date"
+    },
+    "first_power_date": {
+      "type": "string",
+      "description": "first power date",
+      "format": "date"
+    },
+    "repowering_date": {
+      "type": "string",
+      "description": "repowering date",
+      "format": "date"
+    },
+    "boundary_geojson": {
+      "type": "json",
+      "description": "boundary geojson",
+      "json_container": "object"
+    },
+    "ownership_json": {
+      "type": "json",
+      "description": "ownership json",
+      "json_container": "object"
+    },
+    "fleet_json": {
+      "type": "json",
+      "description": "fleet json",
+      "json_container": "list"
+    },
+    "milestones_json": {
+      "type": "json",
+      "description": "milestones json",
+      "json_container": "list"
+    },
+    "observations_json": {
+      "type": "json",
+      "description": "observations json",
+      "json_container": "list"
+    },
+    "resource_observations_json": {
+      "type": "json",
+      "description": "resource observations json",
+      "json_container": "list"
+    },
+    "finance_json": {
+      "type": "json",
+      "description": "finance json",
+      "json_container": "object"
+    },
+    "offtake_json": {
+      "type": "json",
+      "description": "offtake json",
+      "json_container": "object"
+    },
+    "permits_json": {
+      "type": "json",
+      "description": "permits json",
+      "json_container": "object"
+    },
+    "hub_height_options_json": {
+      "type": "json",
+      "description": "hub height options json",
+      "json_container": "object"
+    },
+    "operating_modes_json": {
+      "type": "json",
+      "description": "operating modes json",
+      "json_container": "object"
+    },
+    "dimensions_json": {
+      "type": "json",
+      "description": "dimensions json",
+      "json_container": "object"
+    },
+    "compatibility_json": {
+      "type": "json",
+      "description": "compatibility json",
+      "json_container": "list"
+    },
+    "cross_sector_links_json": {
+      "type": "json",
+      "description": "cross sector links json",
+      "json_container": "list"
+    },
+    "installed_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "commissioned_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "planned_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "awarded_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "export_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "historical_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "capacity_reference_year": {
+      "type": "int",
+      "description": "capacity reference year",
+      "minimum": 1900,
+      "maximum": 2200
+    },
+    "turbine_count": {
+      "type": "int",
+      "description": "turbine count",
+      "minimum": 0
+    },
+    "blade_count": {
+      "type": "int",
+      "description": "blade count",
+      "minimum": 0
+    },
+    "rated_power_kw": {
+      "type": "float",
+      "description": "rated power kw",
+      "minimum": 0,
+      "unit": "kW"
+    },
+    "rotor_diameter_m": {
+      "type": "float",
+      "description": "rotor diameter m",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "swept_area_m2": {
+      "type": "float",
+      "description": "swept area m2",
+      "minimum": 0,
+      "unit": "m2"
+    },
+    "blade_length_m": {
+      "type": "float",
+      "description": "blade length m",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "hub_height_m": {
+      "type": "float",
+      "description": "hub height m",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "tip_height_m": {
+      "type": "float",
+      "description": "tip height m",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "cut_in_m_s": {
+      "type": "float",
+      "description": "cut in m s",
+      "minimum": 0,
+      "unit": "m/s"
+    },
+    "rated_wind_speed_m_s": {
+      "type": "float",
+      "description": "rated wind speed m s",
+      "minimum": 0,
+      "unit": "m/s"
+    },
+    "cut_out_m_s": {
+      "type": "float",
+      "description": "cut out m s",
+      "minimum": 0,
+      "unit": "m/s"
+    },
+    "rotor_speed_min_rpm": {
+      "type": "float",
+      "description": "rotor speed min rpm",
+      "minimum": 0,
+      "unit": "rpm"
+    },
+    "rotor_speed_max_rpm": {
+      "type": "float",
+      "description": "rotor speed max rpm",
+      "minimum": 0,
+      "unit": "rpm"
+    },
+    "voltage_v": {
+      "type": "float",
+      "description": "voltage v",
+      "minimum": 0,
+      "unit": "V"
+    },
+    "frequency_hz": {
+      "type": "float",
+      "description": "frequency hz",
+      "minimum": 0,
+      "unit": "Hz"
+    },
+    "altitude_max_m": {
+      "type": "float",
+      "description": "altitude max m",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "sound_power_db_a": {
+      "type": "float",
+      "description": "sound power db a",
+      "minimum": 0,
+      "unit": "dB(A)"
+    },
+    "mass_kg": {
+      "type": "float",
+      "description": "mass kg",
+      "minimum": 0,
+      "unit": "kg"
+    },
+    "warranty_years": {
+      "type": "float",
+      "description": "warranty years",
+      "minimum": 0,
+      "unit": "years"
+    },
+    "design_life_years": {
+      "type": "float",
+      "description": "design life years",
+      "minimum": 0,
+      "unit": "years"
+    },
+    "connection_voltage_kv": {
+      "type": "float",
+      "description": "connection voltage kv",
+      "minimum": 0,
+      "unit": "kV"
+    },
+    "water_depth_min_m": {
+      "type": "float",
+      "description": "water depth min m",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "water_depth_max_m": {
+      "type": "float",
+      "description": "water depth max m",
+      "minimum": 0,
+      "unit": "m"
+    },
+    "distance_from_shore_km": {
+      "type": "float",
+      "description": "distance from shore km",
+      "minimum": 0,
+      "unit": "km"
+    },
+    "air_density_kg_m3": {
+      "type": "float",
+      "description": "air density kg m3",
+      "minimum": 0,
+      "unit": "kg/m3"
+    },
+    "temperature_min_c": {
+      "type": "float",
+      "description": "temperature min c",
+      "unit": "degC"
+    },
+    "temperature_max_c": {
+      "type": "float",
+      "description": "temperature max c",
+      "unit": "degC"
+    },
+    "curve_kind": {
+      "type": "string",
+      "description": "curve kind",
+      "enum": [
+        "power",
+        "thrust_coefficient"
+      ]
+    },
+    "curve_origin": {
+      "type": "string",
+      "description": "curve origin",
+      "enum": [
+        "original_numeric",
+        "digitized"
+      ]
+    },
+    "curve_conditions": {
+      "type": "json",
+      "description": "curve conditions",
+      "json_container": "object"
+    },
+    "curve_points_json": {
+      "type": "json",
+      "description": "curve points json",
+      "json_container": "list"
+    },
+    "curve_value_unit": {
+      "type": "string",
+      "description": "curve value unit"
+    },
+    "fleet_completeness": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial"
+      ],
+      "description": "Whether fleet_json accounts for all turbines; partial composition must never imply a single-model fleet."
+    }
+  }
+}

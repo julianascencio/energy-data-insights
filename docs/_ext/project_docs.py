@@ -116,6 +116,7 @@ def setup(app: Sphinx) -> dict[str, bool]:
     app.connect("build-finished", _publish_bess_database)
     app.connect("build-finished", _publish_bess_oem_database)
     app.connect("build-finished", _publish_data_center_database)
+    app.connect("build-finished", _publish_wind_database)
     return {"parallel_read_safe": True, "parallel_write_safe": True}
 
 
@@ -132,6 +133,23 @@ def _publish_data_center_database(app: Sphinx, exception: Exception | None) -> N
     with TemporaryDirectory(dir=destination.parent) as temporary:
         snapshot = Path(temporary) / "snapshot"
         build_parquet(root / "catalogues/data_centers", snapshot)
+        export_viewer_data(snapshot)
+        shutil.copytree(snapshot, destination, dirs_exist_ok=True)
+
+
+def _publish_wind_database(app: Sphinx, exception: Exception | None) -> None:
+    """Publish connected wind tables through the shared viewer."""
+    if exception is not None or app.builder is None or app.builder.format != "html":
+        return
+    from energy_analysis.pv_database import export_viewer_data
+    from energy_data_retrieval.wind_catalogue import build_parquet
+
+    root = Path(app.srcdir).parent
+    destination = Path(app.outdir) / "datasets/wind"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with TemporaryDirectory(dir=destination.parent) as temporary:
+        snapshot = Path(temporary) / "snapshot"
+        build_parquet(root / "catalogues/wind", snapshot)
         export_viewer_data(snapshot)
         shutil.copytree(snapshot, destination, dirs_exist_ok=True)
 
@@ -537,6 +555,7 @@ def prepare_sources(root: Path) -> list[str]:
     _site_and_degradation_assets(root)
     # Sphinx-Gallery hashes the script, not its catalogue inputs. This small
     # data-driven example must rerun when records, sources or the schema change.
+    (docs / "auto_examples/database/plot_wind_catalogue.py.md5").unlink(missing_ok=True)
     (docs / "auto_examples/database/plot_data_center_catalogue.py.md5").unlink(missing_ok=True)
     (docs / "auto_examples/database/plot_bess_projects.py.md5").unlink(missing_ok=True)
     (docs / "auto_examples/database/plot_bess_oem_catalogue.py.md5").unlink(missing_ok=True)

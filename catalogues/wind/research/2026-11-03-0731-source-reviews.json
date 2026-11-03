@@ -1,0 +1,29 @@
+[
+  {
+    "source": "USWTDB DOI",
+    "url": "https://doi.org/10.5066/F7TX3DN0",
+    "decision": "download_failure",
+    "http_status": 403
+  },
+  {
+    "source": "ANEEL SIGA datastore",
+    "decision": "download_failure",
+    "http_status": 503,
+    "resource_id": "2f65a1b0-19b8-4360-8238-b34ab4693d55"
+  },
+  {
+    "source": "ABB ACS880 general web tables",
+    "decision": "deferred_family_not_exact_configuration",
+    "url": "https://new.abb.com/power-converters-inverters/wind-turbines/utility-scale/acs880/technical-data",
+    "reason": "Generic 0.8\u20138 MW ranges and topology families do not specify exact ordered configurations; newer page also changes generator voltage boundary"
+  },
+  {
+    "source": "ABB77CC Rev A",
+    "decision": "processed_complete_single_row_ratings_table",
+    "source_id": "abb-acs880-77cc-reva-2021",
+    "new_equipment": 1,
+    "locator": "pp87\u201392",
+    "cross_sector_match": "No exact model found in BESS OEM/Data Center canonical records",
+    "next": "ACS880-77LC/-87LC exact ratings manual tables"
+  }
+]

@@ -20,6 +20,8 @@ Data access and scientific methods
    database-viewer
    bess-database-viewer
    bess-oem-database-viewer
+   wind-database-viewer
+   _generated/guides/wind-catalogue
    data-center-database-viewer
    _generated/guides/data-center-catalogue
    _generated/guides/bess-catalogue
