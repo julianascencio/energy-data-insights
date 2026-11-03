@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 3 November 2026 expanded research snapshot contains **591 records from 42 product
-suppliers, backed by 266 registered sources**: 578 documented configurations and 13
+The 3 November 2026 expanded research snapshot contains **601 records from 42 product
+suppliers, backed by 276 registered sources**: 588 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -229,4 +229,6 @@ Latest: [Pacific portfolio and Discover equipment](../bess/research/2026-11-03_p
 
 Latest: [Nordic portfolios, Samoa tender and Crown configurations](../bess/research/2026-11-03_nordic_crown.md).
 
-Latest: [South African portfolios, Finnish owner evidence and Rolls AGM configurations](../bess/research/2026-11-03_south_africa_rolls.md).
+Latest: [Named Ingrid/Locus sites and exact Rolls two-volt cells](../bess/research/2026-11-03_ingrid_r2.md).
+
+Previous: [South African portfolios, Finnish owner evidence and Rolls AGM configurations](../bess/research/2026-11-03_south_africa_rolls.md).

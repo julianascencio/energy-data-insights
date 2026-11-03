@@ -1,0 +1,283 @@
+{
+  "started_at": "2026-11-03T07:52:23+00:00",
+  "reviewed_at": "2026-11-03T07:58:33.264609+00:00",
+  "counts": {
+    "project_candidates": 13,
+    "projects_new": 8,
+    "projects_enriched": 2,
+    "project_candidates_deferred": 3,
+    "equipment_candidates": 11,
+    "equipment_new": 10,
+    "equipment_deferred": 1,
+    "permanent_record_rejections": 0,
+    "canonical_project_records_with_new_conflicts": 1,
+    "equipment_records_with_field_quarantines": 2
+  },
+  "new_countries": [],
+  "new_oems": [],
+  "identity_decisions": [
+    "Five of six western Swedish names accepted; Falköping held because existing BW ESS/Ingrid owner evidence conflicts with Locus attribution. No fuzzy merge or duplicate.",
+    "Gothenburg and Tuve expressly listed as separate facilities by owner; preserve two sites without guessed street coordinates.",
+    "Varberg existing named BW/Ingrid20MW identified; fills20MWh, adds scoped service observation.",
+    "Vaggeryd April100MW400MWh compared to existing September100MW200MWh; retain later value and quarantine earlier design, no new phase.",
+    "Rättvik operating confirmed explicitly, inauguration not exact COD.",
+    "Nivala construction not operation from a2026 forecast.",
+    "Horsaryd permit distinct from forecast construction.",
+    "All ten exact R2 codes absent from canonical manufacturer list; no synthetic variants."
+  ],
+  "deferred": [
+    "Retreat and Erfdeel technical application enrichment: fresh reader attempts have zero text; prior screenshot attempt unusable. Retry accessible original PDF/OCR edition.",
+    "Falköping Locus site: exact site identity and ownership reconciliation required against existing BW ESS record.",
+    "R2-600AGM: two reader attempts inaccessible; no substitution with R2-650AGM."
+  ],
+  "original_downloads": [
+    {
+      "url": "https://www.ingridcapacity.com/press-releases/ingrid-in-partnership-with-the-seb-nordic-energy-fund-through-locus-energy-is-strengthening-grid-flexibility-in-western-sweden-contributing-to-a-doubling-of-effekthandel-vast-992c11c5",
+      "sha256": "1905acacc896cf76141ec0196b42d117d5dcd4edf0142f9c97769e99f51efe6a",
+      "bytes": 69046,
+      "retrieved_at": "2026-11-03T07:56:12.862381+00:00"
+    },
+    {
+      "url": "https://www.ingridcapacity.com/news/ingrid-capacity-and-the-seb-nordic-energy-fund-through-locus-energy-inaugurate-a-new-battery-storage-facility-in-rattvik-to-strengthen-grid-flexibility",
+      "sha256": "fb73eafaa283c79cc32a218cac14618d6b4671bf08c9d35b99e1d278fb8ae43b",
+      "bytes": 80881,
+      "retrieved_at": "2026-11-03T07:56:15.682053+00:00"
+    },
+    {
+      "url": "https://www.ingridcapacity.com/press-releases/ingrid-capacity-in-collaboration-with-seb-nordic-energys-portfolio-company-locus-energy-break-ground-on-one-of-finlands-largest-battery-energy-storage-system-e73e89b7",
+      "sha256": "7e2b00ad81df022de50a1e95ee8729a29dbc307b6b89919ac62a714836a5fab3",
+      "bytes": 68507,
+      "retrieved_at": "2026-11-03T07:56:21.034299+00:00"
+    },
+    {
+      "url": "https://www.ingridcapacity.com/press-releases/ingrid-launches-peak-shaving-products-to-strengthen-local-power-grids-f24eba32",
+      "sha256": "fd530e6bf92e411f08b63a29e9fed638732dac0dbf8ab45946baf6f1a435b08a",
+      "bytes": 67845,
+      "retrieved_at": "2026-11-03T07:56:25.817468+00:00"
+    },
+    {
+      "url": "https://www.ingridcapacity.com/press-releases/ingrid-doubles-the-size-of-its-battery-storage-portfolio-with-groundbreaking-projects-in-southern-sweden-surpassing-1-gwh-in-capacity-384cb2c0",
+      "sha256": "befa26ba7c0892a6f4bdbfa5715b22d85d65e97c7bf5998089842794fd4da00f",
+      "bytes": 66367,
+      "retrieved_at": "2026-11-03T07:56:28.210305+00:00"
+    }
+  ],
+  "terms": "Owner pages and OEM footer reviewed: no open bulk licence. Bounded factual extraction only; copyrighted full sources remain outside Git. Rolls direct sample403, no bypass; reader text checksum is not original bytes.",
+  "accepted": {
+    "bess": [
+      {
+        "id": "066d5244-5bf3-5b38-8742-b8bf5a72b8a3",
+        "name": "Varberg BW ESS/Ingrid BESS",
+        "sources": [
+          "bw_nordics_portfolio_20261103",
+          "ingrid_ai4energy_portfolio_20241111",
+          "ingrid_operating_20241010",
+          "ingrid_varberg_20251218"
+        ],
+        "action": "enriched"
+      },
+      {
+        "id": "1572c78e-0fb4-53f2-b0e6-a30173f8e772",
+        "name": "Vaggeryd Ingrid/Mirova BESS",
+        "sources": [
+          "ingrid_mirova_20260923",
+          "ingrid_south_20260417"
+        ],
+        "action": "enriched"
+      },
+      {
+        "id": "16b132bb-5b3e-5460-bb56-a3bb9fd82bbd",
+        "name": "Götene Ingrid/Locus BESS",
+        "sources": [
+          "ingrid_west_20251204"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "396557b4-76ec-57f5-a594-052c8ba9a3a5",
+        "name": "Tuve Ingrid/Locus BESS",
+        "sources": [
+          "ingrid_west_20251204"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "3aadb02b-1264-55bb-990b-068a7e82c8fa",
+        "name": "Lerum Ingrid/Locus BESS",
+        "sources": [
+          "ingrid_west_20251204"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "50159b27-5bf1-589f-a6a6-325662cf462f",
+        "name": "Rättvik Ingrid/Locus BESS",
+        "sources": [
+          "ingrid_rattvik_20250925"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "5ffa8ea7-3029-50b4-9302-d0e60533656a",
+        "name": "Horsaryd Ingrid BESS",
+        "sources": [
+          "ingrid_south_20260417"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "92be0ab9-35d7-528d-826d-2fc05e8de1f0",
+        "name": "Gothenburg Ingrid/Locus BESS",
+        "sources": [
+          "ingrid_west_20251204"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "9f90a820-8f53-5bf2-8523-001ace2c0373",
+        "name": "Lidköping Ingrid/Locus BESS",
+        "sources": [
+          "ingrid_west_20251204"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "af3ced6a-71bc-555c-b47a-82070ed85b55",
+        "name": "Nivala Ingrid/Locus BESS",
+        "sources": [
+          "ingrid_nivala_20250527"
+        ],
+        "action": "new"
+      }
+    ],
+    "bess_oem": [
+      {
+        "id": "3b003080-e3f4-5282-861e-310912445ce7",
+        "name": "Rolls Battery R2-400AGM",
+        "sources": [
+          "rolls_r2_r2_400agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "476bed54-b1c3-52a9-b08d-e52032f1707d",
+        "name": "Rolls Battery R2-200AGM",
+        "sources": [
+          "rolls_r2_r2_200agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "59c6ba7d-086d-5ab0-824e-9b7e63f65b1b",
+        "name": "Rolls Battery R2-1000AGM",
+        "sources": [
+          "rolls_r2_r2_1000agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "94580a74-a0e0-53ea-930f-cb8f16607d59",
+        "name": "Rolls Battery R2-800AGM",
+        "sources": [
+          "rolls_r2_r2_800agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "b64f5831-3b38-5ec6-b3c3-9c462bec8768",
+        "name": "Rolls Battery R2-250AGM",
+        "sources": [
+          "rolls_r2_r2_250agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "ca6e4f42-b368-51bb-9b7a-f8aeda322239",
+        "name": "Rolls Battery R2-1200AGM",
+        "sources": [
+          "rolls_r2_r2_1200agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "d5188a7c-3098-5c3c-9fd2-2e5d816fea8e",
+        "name": "Rolls Battery R2-2000AGM",
+        "sources": [
+          "rolls_r2_r2_2000agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "d615437b-9972-53b2-aab8-8c6c0db9a29e",
+        "name": "Rolls Battery R2-1500AGM",
+        "sources": [
+          "rolls_r2_r2_1500agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "e69c127d-686a-5aa4-81e4-7c31b5ffd55f",
+        "name": "Rolls Battery R2-300AGM",
+        "sources": [
+          "rolls_r2_r2_300agm"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "ee762f61-3af8-5e8b-b9c7-470294ea210e",
+        "name": "Rolls Battery R2-500AGM",
+        "sources": [
+          "rolls_r2_r2_500agm"
+        ],
+        "action": "new"
+      }
+    ]
+  },
+  "preservation": {
+    "bess": {
+      "before": 1777,
+      "after": 1785,
+      "changed": [
+        "Varberg BW ESS/Ingrid BESS",
+        "Vaggeryd Ingrid/Mirova BESS"
+      ],
+      "all_old_ids_and_created_at_preserved": true,
+      "all_prior_scalar_and_nested_facts_preserved": true
+    },
+    "bess_oem": {
+      "before": 591,
+      "after": 601,
+      "changed": [],
+      "all_old_ids_and_created_at_preserved": true,
+      "all_prior_scalar_and_nested_facts_preserved": true
+    }
+  },
+  "bess_totals": {
+    "records": 1785,
+    "sources": 245,
+    "countries": 37
+  },
+  "bess_oem_totals": {
+    "records": 601,
+    "sources": 276,
+    "suppliers": 42
+  },
+  "concurrent_reconciliation": {
+    "incoming_head": "419d720063b165d1ec6dc046143ef49b5ed9bec1",
+    "incoming_main": "f10378da73f9646de8e040dbc7a03f2b86d26166",
+    "result": "Concurrent merge preserved; all PV/Wind/Data Center files identical to incoming head. Bibliography union equality-checked, exports regenerated."
+  },
+  "falkoping_hold": {
+    "canonical_record_id": "912317f0-10fe-57d1-9bf7-7d0248f9017a",
+    "new_source_id": "ingrid_west_20251204",
+    "candidate_owners": [
+      "Ingrid Capacity",
+      "Locus Energy"
+    ],
+    "existing_owners": [
+      "BW ESS",
+      "Ingrid Capacity"
+    ],
+    "resolution": "No canonical modification or new record until physical site/ownership is reconciled"
+  }
+}

@@ -69,3 +69,38 @@ def test_url_identity_and_host():
     for url in [URL.replace("rollsbattery.com", "example.org"), URL.replace("testagm", "other")]:
         with pytest.raises(ValueError):
             parse(url=url)
+
+
+def test_r2_undated_revision_and_blank_family():
+    text = (
+        TEXT.replace(MODEL, "R2-999AGM")
+        .replace("VRLA AGM-S", "")
+        .replace("Volts | 12", "Volts | 2")
+        .replace("Cells | 6", "Cells | 1")
+        .replace("Rev.#1 | January 2025", "Rev.#1")
+    )
+    row = parse_rolls_agm_text(
+        text.encode(),
+        source_url="https://www.rollsbattery.com/battery/r2-999agm/",
+        expected_model="R2-999AGM",
+        reviewed_r2=True,
+    )
+    assert row["reported_fields"]["Series"][0] == ""
+    assert row["document_revision"] == "Rev.#1"
+    with pytest.raises(ValueError):
+        parse_rolls_agm_text(
+            text.replace("Volts | 2", "Volts | 12").encode(),
+            source_url=row["source_url"],
+            expected_model="R2-999AGM",
+            reviewed_r2=True,
+        )
+
+
+def test_undated_s_table_still_rejected():
+    with pytest.raises(ValueError):
+        parse(TEXT.replace("Rev.#1 | January 2025", "Rev.#1"))
+
+
+def test_r2_flag_rejects_other_configuration():
+    with pytest.raises(ValueError):
+        parse_rolls_agm_text(TEXT.encode(), source_url=URL, expected_model=MODEL, reviewed_r2=True)

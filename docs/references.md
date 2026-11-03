@@ -6047,3 +6047,123 @@ Exilion (2026). **Exilion signs over 8 million euro battery energy storage deal 
 **Role:** data. Opening three paragraphs: named site, 20 MW / 41 MWh, turnkey order value and autumn 2027 delivery
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### rolls_r2_r2_1000agm
+
+Rolls Battery (2026). **R2-1000AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-1000agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_1200agm
+
+Rolls Battery (2026). **R2-1200AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-1200agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_1500agm
+
+Rolls Battery (2026). **R2-1500AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-1500agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_2000agm
+
+Rolls Battery (2026). **R2-2000AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-2000agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_200agm
+
+Rolls Battery (2026). **R2-200AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-200agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_250agm
+
+Rolls Battery (2026). **R2-250AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-250agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_300agm
+
+Rolls Battery (2026). **R2-300AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-300agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_400agm
+
+Rolls Battery (2026). **R2-400AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-400agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_500agm
+
+Rolls Battery (2026). **R2-500AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-500agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### rolls_r2_r2_800agm
+
+Rolls Battery (2026). **R2-800AGM exact technical table**. [Source](https://www.rollsbattery.com/battery/r2-800agm/)
+
+**Role:** data. Exact model heading; charging, hour-rate and physical specifications tables; Rev.#1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ingrid_west_20251204
+
+Ingrid Capacity (2025). **Western Sweden six named battery sites**. [Source](https://www.ingridcapacity.com/press-releases/ingrid-in-partnership-with-the-seb-nordic-energy-fund-through-locus-energy-is-strengthening-grid-flexibility-in-western-sweden-contributing-to-a-doubling-of-effekthandel-vast-992c11c5)
+
+**Role:** data. Battery storage that relieves the grid; growing presence section
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_rattvik_20250925
+
+Ingrid Capacity (2025). **Rättvik inauguration and operation**. [Source](https://www.ingridcapacity.com/news/ingrid-capacity-and-the-seb-nordic-energy-fund-through-locus-energy-inaugurate-a-new-battery-storage-facility-in-rattvik-to-strengthen-grid-flexibility)
+
+**Role:** data. Opening capacity; project developer explicitly confirms fully operational facility
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_nivala_20250527
+
+Ingrid Capacity (2025). **Nivala groundbreaking**. [Source](https://www.ingridcapacity.com/press-releases/ingrid-capacity-in-collaboration-with-seb-nordic-energys-portfolio-company-locus-energy-break-ground-on-one-of-finlands-largest-battery-energy-storage-system-e73e89b7)
+
+**Role:** data. Opening project capacity, location, construction and optimization sections
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_varberg_20251218
+
+Ingrid Capacity (2025). **Varberg peak shaving service**. [Source](https://www.ingridcapacity.com/press-releases/ingrid-launches-peak-shaving-products-to-strengthen-local-power-grids-f24eba32)
+
+**Role:** data. Opening 20 MW / 20 MWh and co-owners; Varbergortens Elnät collaboration
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_south_20260417
+
+Ingrid Capacity (2026). **Vaggeryd and Horsaryd development**. [Source](https://www.ingridcapacity.com/press-releases/ingrid-doubles-the-size-of-its-battery-storage-portfolio-with-groundbreaking-projects-in-southern-sweden-surpassing-1-gwh-in-capacity-384cb2c0)
+
+**Role:** data. Individual ratings; legally effective permits and planned dates paragraph
+
+**Used by:** `catalogues/bess/sources.json`.

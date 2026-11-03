@@ -42,6 +42,8 @@ or a live availability feed. Do not interpret record counts as installed capacit
    For exact Rolls AGM-S reader tables, `scripts/stage_bess_rolls_agm.py`
    stages local extracted text. Its hash is not an original-HTML checksum.
    Missing current stays null; inconsistent Ah/current rows require review.
+   `--reviewed-r2` additionally accepts reviewed 2 V, one-cell AGM tables with
+   undated revision labels; blank series stays unknown and other layouts fail.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
