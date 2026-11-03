@@ -361,7 +361,7 @@ def run_study(output: Path) -> dict:
     )
     for name, frame in results.items():
         frame.to_csv(output / name, index=False, float_format="%.12g")
-    age = np.linspace(0, 40, 401)
+    age = np.linspace(0, 50, 501)
     fig, ax = plt.subplots(figsize=(8.2, 4.8), layout="constrained")
     for row in tables["reliability_table3"]:
         curve = ReliabilityCurve(**{k: v for k, v in row.items() if k != "reported_failure_years"})
@@ -375,7 +375,7 @@ def run_study(output: Path) -> dict:
     ax.set(
         xlabel="Age (years)",
         ylabel="Normalized power",
-        ylim=(0.5, 1.02),
+        ylim=(0, 1.02),
         title="Published Table 3 parameters — extrapolated curves, no raw-data refit",
     )
     ax.legend(fontsize=9)

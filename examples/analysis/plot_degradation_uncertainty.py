@@ -33,7 +33,7 @@ from energy_methods.pv_reliability import ReliabilityCurve
 # The threshold is 80% retained power, not a survival probability.
 
 print(reliability_table_check().to_string(index=False))
-age = np.linspace(0, 40, 401)
+age = np.linspace(0, 50, 501)
 fig, ax = plt.subplots(figsize=(8.5, 5), layout="constrained")
 for row in published_tables()["reliability_table3"]:
     curve = ReliabilityCurve(**{k: v for k, v in row.items() if k != "reported_failure_years"})
@@ -43,7 +43,7 @@ ax.axvspan(0, 8.1, alpha=0.08, color="black", label="Paper's observation duratio
 ax.set(
     xlabel="Age (years)",
     ylabel="Normalized power",
-    ylim=(0.5, 1.02),
+    ylim=(0, 1.02),
     title="Published Table 3 coefficients: model-dependent extrapolation",
 )
 ax.legend(fontsize=9)

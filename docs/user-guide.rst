@@ -51,6 +51,7 @@ Data access and scientific methods
    _generated/guides/degradation
    _generated/guides/degradation-gallery
    _generated/guides/degradation-uncertainty
+   _generated/guides/pv-lifetime
 
 Applied studies
 ---------------

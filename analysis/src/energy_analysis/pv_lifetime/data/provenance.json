@@ -1,0 +1,35 @@
+{
+  "dataset_doi": "10.5281/zenodo.14524159",
+  "paper_doi": "10.1039/D4EL00040D",
+  "creators": [
+    "Hugo Quest",
+    "Ebrar Özkalay",
+    "Anika Gassner"
+  ],
+  "dataset_version": "1.0.0",
+  "dataset_publication_date": "2024-12-19",
+  "accessed_date": "2026-11-03",
+  "license": "CC-BY-4.0 (Zenodo API metadata. Paper is separately CC-BY-3.0.)",
+  "source_url": "https://zenodo.org/records/14524159",
+  "archive_md5": "b19a01369228f92769096a5a45965b1f",
+  "archive_sha256": "bd52d582192a642c91fb1f388e230f2d8f207d2fc5ac8f90e2c9829210205ead",
+  "workbooks_sha256": {
+    "Module degradation results/Indoor_module_degradation_results.xlsx": "b2128c97d0f17611ac947d1d914bc0b62e5660cd1d2e9852cb384d59ced00437",
+    "System PLR results/Outdoor_PLR_results.xlsx": "72d1caf4b574e9ebdab254a923130b7bea33417c943c34418b9dce926e2ead9c"
+  },
+  "modifications": "Numerical cells extracted to CSV; source workbooks unchanged.",
+  "age_convention": "Dismantle minus installation year, exactly as recorded in PM; integer years.",
+  "limitations": [
+    "Workbook dates imply exposures of 16, 24, 25, 30, 31 and 37 years. Do not replace with the paper's summary 30-35 years.",
+    "The pre-publication workbook has six Tiergarten SM55 and six HO records; paper section 3.2.1.1 reports five and seven. No reassignment made.",
+    "Outdoor v1.0.0 PLRs differ slightly from published text (e.g. -0.56 vs -0.55); these CSVs preserve the archive.",
+    "Mont-Soleil has no numeric nameplate powers, so normalized power is unavailable.",
+    "Stored references are not field-exposed modules. Nominal ratings are not measured initial powers.",
+    "EL sheet contains cached #REF! values; only PM numeric measurements and outdoor PLRs are used.",
+    "Selected module measurements do not provide fleet survival probabilities or complete failure histories."
+  ],
+  "tables_sha256": {
+    "module_measurements.csv": "77ef6379cfa0cf63a6b2b70fd2f2fb6a1fbfdec610923dea1aa7798f4feaf5e0",
+    "system_plr.csv": "8ba5ba417cf2182379c72116012ae6c45676d313b8ebada5241235cf03a807e5"
+  }
+}
