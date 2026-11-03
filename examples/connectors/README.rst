@@ -39,7 +39,7 @@ with explicit resolution, surface type and vertical reference. Its download
 bundle includes the four small GeoTIFFs and full request provenance.
 
 Timestral forecasting
---------------------
+---------------------
 
 The :doc:`Timestral solar/wind example </auto_examples/connectors/plot_timestral_forecast>` connects the
 optional Mistral model to an attributed EIA capture, with saved real inference,
