@@ -44,6 +44,13 @@ or a live availability feed. Do not interpret record counts as installed capacit
    Missing current stays null; inconsistent Ah/current rows require review.
    `--reviewed-r2` additionally accepts reviewed 2 V, one-cell AGM tables with
    undated revision labels; blank series stays unknown and other layouts fail.
+   For the historical EA September2024 pipeline, `scripts/stage_bess_nz_pipeline.py`
+   stages explicit chemical batteries without treating committed status as operation.
+   Its `--format transpower-2026` adapter preserves connection/parent IDs and anonymous
+   rows for review only; it does not grant reuse rights or infer physical status.
+   For Chinese Sinexcel two-page PCS sheets, `scripts/stage_bess_sinexcel.py` checks
+   exact model headers and columns in local `pdftotext -layout` output. AC kVA and
+   maximum DC kW remain distinct; conversion efficiency is not round-trip efficiency.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.

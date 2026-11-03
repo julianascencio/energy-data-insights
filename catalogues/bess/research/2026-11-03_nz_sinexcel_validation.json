@@ -1,0 +1,54 @@
+{
+  "started_at": "2026-11-03T08:51:55+00:00",
+  "validation_completed_at": "2026-11-03T09:16:56.192116+00:00",
+  "elapsed_effort_minutes_through_validation": 25.02,
+  "user_timezone": "Atlantic/Canary",
+  "validated_main": "a7ae7d6524f0244a2ec5a20ab5c67594ac4b7484",
+  "checks": {
+    "python_full_suite_after_rebase": {
+      "passed": 1832,
+      "skipped": 1,
+      "skip_reason": "Optional cdsapi dependency unavailable",
+      "seconds": 71.24
+    },
+    "focused_new_parser_tests": {
+      "passed": 15
+    },
+    "catalogue_validation": {
+      "projects": 1789,
+      "equipment": 612
+    },
+    "source_parser_replay": {
+      "sinexcel_models": 11,
+      "ea_candidates": 9,
+      "transpower_held_rows": 41
+    },
+    "offline_staging_clis": "all three modes passed",
+    "parquet": "Two independent final Zstandard builds identical; third after rebase matches committed manifests",
+    "preservation": "All prior IDs, created_at, ratings and nested facts preserved; three explicitly reviewed status-date corrections",
+    "references": "Source references and reciprocal Glenbrook phase links valid; no invented equipment-record assignment",
+    "ruff": "passed",
+    "ruff_format": "681 files already formatted",
+    "ty": "passed",
+    "citations": "passed",
+    "repository_hygiene": "passed",
+    "git_diff_check": "passed",
+    "node_viewer_tests": {
+      "passed": 13
+    },
+    "strict_sphinx_after_rebase": "passed",
+    "documentation_link_asset_audit": {
+      "html_pages": 443,
+      "result": "passed"
+    },
+    "offline_bess_examples": "Both project and equipment examples passed",
+    "packages": "All three packages built; six distributions passed strict Twine; all three installed wheels and entrypoints passed. Final BESS adapter code tested; package run preceded unrelated Wind/PV rebase."
+  },
+  "remote_ci": "Not represented by local checks; pending publication",
+  "limitations": [
+    "No fresh interactive browser smoke test",
+    "No imagery-extra wheel check",
+    "Source reuse and identity holds are documented separately; they are not accepted records"
+  ],
+  "finish_reason": "Selected eight OEM sheets, nine EA batteries, three NZCE pages and two Contact phases exhausted. Larger operator/African batches held for concrete reuse or identity reasons; no idle time or quota padding."
+}
