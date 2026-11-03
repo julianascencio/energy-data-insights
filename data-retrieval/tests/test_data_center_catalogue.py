@@ -22,6 +22,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_airtrunk_locations,
     parse_portfolio,
     parse_schneider_galaxy_vs_model_list,
+    parse_stulz_cyberair_3pro_dx_modulating_table,
     parse_stulz_cyberair_3pro_dx_table,
 )
 
@@ -275,6 +276,30 @@ def test_stulz_cyberair_parser_keeps_exact_fixed_speed_r410a_rows():
         )
     with pytest.raises(ValueError, match="official STULZ"):
         parse_stulz_cyberair_3pro_dx_table(content, source_url="https://example.com/")
+
+
+def test_stulz_cyberair_parser_keeps_exact_modulating_r410a_rows():
+    content = (FIXTURES / "stulz-cyberair-3pro-dx.txt").read_bytes()
+    data = parse_stulz_cyberair_3pro_dx_modulating_table(
+        content,
+        source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
+        expected_count=4,
+    )
+    assert [row["model"] for row in data["candidates"]] == [
+        "ASR 271 AS",
+        "ASR 401 AS",
+        "ALR 271 GES",
+        "ALR 401 GES",
+    ]
+    assert data["candidates"][1]["cooling_net_kw"] == 54.0
+    assert data["candidates"][2]["free_cooling_water_temperature_c"] == 12.7
+    assert data["candidates"][3]["medium_volume_flow_m3_h"] == 8.7
+    with pytest.raises(ValueError, match="modulating-ec table shape"):
+        parse_stulz_cyberair_3pro_dx_modulating_table(
+            content,
+            source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
+            expected_count=20,
+        )
 
 
 def test_pue_table_selection_preserves_period_precision_and_empty_ttm():

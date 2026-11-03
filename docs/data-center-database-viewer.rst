@@ -4,8 +4,8 @@ Global Data Center Database
 Search the connected **Data Center Projects** and **Data Center Equipment**
 tables. Select either table below, filter by country, lifecycle, technology,
 category or supplier, and expand a record for evidence and rating conditions.
-The open-branch catalogue covers 123 projects (53 facilities and 70 campus
-aggregates) in 23 countries, and 123 exact equipment records from six OEMs.
+The continuation branch catalogue covers 123 projects (53 facilities and 70 campus
+aggregates) in 23 countries, and 143 exact equipment records from six OEMs.
 
 .. raw:: html
 

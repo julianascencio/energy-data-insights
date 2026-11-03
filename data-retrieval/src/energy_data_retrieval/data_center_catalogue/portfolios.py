@@ -283,6 +283,37 @@ def parse_stulz_cyberair_3pro_dx_table(
     (ASR ``A`` and free-cooling ALR ``GE``); modulating and R134a tables remain
     separate configurations and are not combined with these rows.
     """
+    return _parse_stulz_cyberair_3pro_dx_table(
+        content,
+        source_url=source_url,
+        expected_count=expected_count,
+        compressor_kind="fixed-speed",
+    )
+
+
+def parse_stulz_cyberair_3pro_dx_modulating_table(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage explicit modulating-EC-compressor R410A configurations.
+
+    ASR ``AS`` and free-cooling ALR ``GES`` are separate documented models.
+    The parser never combines their values with fixed-speed or R134a tables.
+    """
+    return _parse_stulz_cyberair_3pro_dx_table(
+        content,
+        source_url=source_url,
+        expected_count=expected_count,
+        compressor_kind="modulating-ec",
+    )
+
+
+def _parse_stulz_cyberair_3pro_dx_table(
+    content: bytes,
+    *,
+    source_url: str,
+    expected_count: int | None,
+    compressor_kind: str,
+) -> dict[str, Any]:
     if not (urlsplit(source_url).hostname or "").endswith("stulz.es"):
         raise ValueError("Expected official STULZ URL")
     text = content.decode("utf-8-sig")
@@ -302,10 +333,38 @@ def parse_stulz_cyberair_3pro_dx_table(
         return [value.replace(" ", "") for value in re.findall(pattern, tail)]
 
     candidates: list[dict[str, Any]] = []
-    sections = [
-        ("ASR", "A", "Air cooled with fixed speed compressor", "Air cooled with modulating"),
-        ("ALR", "GE", "Free cooling with fixed speed compressor", "Free cooling with modulating"),
-    ]
+    if compressor_kind == "fixed-speed":
+        sections = [
+            (
+                "ASR",
+                "A",
+                "Air cooled with fixed speed compressor",
+                "Air cooled with modulating",
+            ),
+            (
+                "ALR",
+                "GE",
+                "Free cooling with fixed speed compressor",
+                "Free cooling with modulating",
+            ),
+        ]
+    elif compressor_kind == "modulating-ec":
+        sections = [
+            (
+                "ASR",
+                "AS",
+                "Air cooled with modulating EC compressor",
+                "Free cooling with fixed speed compressor",
+            ),
+            (
+                "ALR",
+                "GES",
+                "Free cooling with modulating EC compressor",
+                "Remarks:",
+            ),
+        ]
+    else:  # pragma: no cover - private defensive boundary
+        raise ValueError("Unsupported STULZ compressor table")
     for family, suffix, start, end in sections:
         if start not in r410a or end not in r410a:
             raise ValueError("Changed STULZ fixed-speed table shape")
@@ -333,8 +392,13 @@ def parse_stulz_cyberair_3pro_dx_table(
             "circuits_compressors": row_values(block, "Number of circuits / compressors"),
             "weight_kg": row_values(block, "Weight", "kg"),
         }
+        if compressor_kind == "modulating-ec" and family == "ALR":
+            rows["free_cooling_water_temperature_c"] = row_values(
+                block, "Water temp. for 100% free cooling", "°C"
+            )
+            rows["medium_volume_flow_m3_h"] = row_values(block, "Medium volume flow", "m³/h")
         if any(len(values) != len(models) for values in rows.values()):
-            raise ValueError("Changed STULZ fixed-speed row width")
+            raise ValueError(f"Changed STULZ {compressor_kind} row width")
 
         def number(value: str) -> float:
             return float(value.replace(".", "").replace(",", "."))
@@ -354,7 +418,7 @@ def parse_stulz_cyberair_3pro_dx_table(
                 }
             )
     if not candidates or (expected_count is not None and len(candidates) != expected_count):
-        raise ValueError("Changed STULZ CyberAir table shape")
+        raise ValueError(f"Changed STULZ CyberAir {compressor_kind} table shape")
     return {
         "source_url": source_url,
         "sha256": hashlib.sha256(content).hexdigest(),

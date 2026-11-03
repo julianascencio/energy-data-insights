@@ -5,11 +5,11 @@ canonical JSONL under `records/projects` and `records/equipment`, a source regis
 field-level evidence, stable UUIDs and deterministic typed Parquet snapshots.
 No network request occurs during validation, export or documentation builds.
 
-The current open-branch catalogue contains **123 project records in 23 countries**:
-**53 facility records and 70 explicitly labelled campus aggregates**, plus **123
-exact equipment models/configurations from six OEMs**. These are branch catalogue
-counts, not a worldwide census or a count of operating buildings. Eight operators
-are represented.
+The current continuation branch contains **123 project records in 23 countries**:
+**53 facility records and 70 explicitly labelled campus aggregates**. Merged
+`main` has **123 exact equipment models/configurations** and this branch has
+**143 from six OEMs**. These are catalogue counts, not a worldwide census or a
+count of operating buildings. Eight operators are represented.
 The research report and coverage manifest describe missing fields and scope.
 
 ```bash
@@ -19,6 +19,7 @@ uv run python scripts/stage_data_center_portfolio.py captured.html --source-url 
 uv run python scripts/stage_data_center_adc.py captured.html --source-url https://www.africadatacentres.com/nairobi/
 uv run python scripts/stage_data_center_schneider.py extracted.txt --source-url https://www.se.com/uk/en/download/document/990-91317_EN/ --expected-count 23
 uv run python scripts/stage_data_center_stulz.py extracted-layout.txt --source-url https://www.stulz.es/fileadmin/user_upload/Documents/STULZ__TechnicalData_CyberAir_3PRO_DX_ASR-ALR.pdf --expected-count 30
+uv run python scripts/stage_data_center_stulz.py extracted-layout.txt --source-url https://www.stulz.es/fileadmin/user_upload/Documents/STULZ__TechnicalData_CyberAir_3PRO_DX_ASR-ALR.pdf --compressor modulating-ec --expected-count 20
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
