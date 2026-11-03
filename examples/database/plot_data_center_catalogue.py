@@ -95,6 +95,15 @@ print(
         equipment.equipment_category.eq("server"), ["name", "input_power_kw", "power_conditions"]
     ].to_string(index=False)
 )
+print("Dell compatibility rows preserve accelerator limits separately from server input:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Dell"),
+        ["model", "variant", "accelerator_power_w", "input_power_kw", "power_conditions"],
+    ]
+    .sort_values(["model", "variant"])
+    .to_string(index=False)
+)
 print("Exact UPS ratings keep kW, kVA and runtime/load conditions separate:")
 print(
     equipment.loc[

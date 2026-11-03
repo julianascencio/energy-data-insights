@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T11:19:28Z",
+  "retrieved_at": "2026-11-03T12:23:01Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -189,6 +189,14 @@
       "note": "Sixteen Eaton standard/rating configurations plus five Siemens portfolio variants. Transformer kVA is not converted to active kW; switchgear maxima remain observations rather than nominal inputs.",
       "reuse": "Factual extraction from official public copyrighted OEM pages; no open licence asserted and source tables/cards are not redistributed",
       "originals": "Official search indexes exposed complete factual tables/cards. Eaton original retrieval timed out and the Siemens page returned unsupported content to the reader, so sources.json records unavailable bytes and no checksum."
+    },
+    {
+      "inventory": "Dell PowerEdge Server GPU Matrix, 17th Generation compatibility table",
+      "processed_offset": 33,
+      "accepted_records": 33,
+      "note": "Every supported checkmark in the bounded 17th-generation table is represented once. Per-accelerator limits are not server/rack input and no installed quantity is inferred; the H100 NVL power range remains unnormalized.",
+      "reuse": "Factual extraction from an official public copyrighted OEM PDF; no open licence asserted and the source table is not redistributed",
+      "originals": "Official 887,932-byte PDF retrieved successfully; SHA-256 and September 2025 document date are retained in sources.json."
     }
   ],
   "deferred": [
@@ -480,6 +488,7 @@
     "nVent dry/filled CDU40 and CDU100 SKUs and CDU800 generation 3.2 country-of-origin SKUs remain separate configurations; the shared family sheet is not used to synthesize additional variants.",
     "Motivair cooling-capacity scalars remain quarantined because the 25% PG row label conflicts with footnote 1's 100% water statement; all four exact rating points remain available as observations.",
     "Eaton transformer kVA, no-load/load losses, impedance and noise retain their standard and voltage-class table boundary; no active kW, efficiency or winding voltage is inferred.",
-    "Siemens NXAIR voltage, short-circuit current and continuous current are portfolio maxima stored as observations; nominal input fields remain null."
+    "Siemens NXAIR voltage, short-circuit current and continuous current are portfolio maxima stored as observations; nominal input fields remain null.",
+    "Dell compatibility checkmarks establish supported server/accelerator pairs only. Accelerator maximum power remains per device, H100 NVL's 350-400 W range is not collapsed, and server/rack input and installed quantity remain null."
   ]
 }

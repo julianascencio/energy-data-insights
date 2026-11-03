@@ -213,3 +213,70 @@ def parse_power_equipment_matrix(
         "review_required": True,
         "candidates": [candidates[key] for key in sorted(candidates)],
     }
+
+
+def parse_server_accelerator_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage explicit OEM server/accelerator compatibility rows for review.
+
+    The adapter accepts only rows which the OEM marks supported. Accelerator
+    power remains a per-device limit and is never promoted to server or rack
+    input. A range can be retained in ``max_power_text`` while the normalized
+    scalar stays null.
+    """
+    host = urlsplit(source_url).hostname
+    if host not in {"www.dell.com", "www.delltechnologies.com"}:
+        raise ValueError("Unsupported official server-matrix source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "manufacturer",
+        "server_model",
+        "accelerator_vendor",
+        "accelerator_model",
+        "compatibility",
+        "max_power_text",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing server/accelerator matrix columns")
+    candidates: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate.values()):
+            raise ValueError(f"Incomplete server/accelerator row {line}")
+        if candidate["manufacturer"] != "Dell":
+            raise ValueError(f"Unexpected server manufacturer on row {line}")
+        if candidate["compatibility"].casefold() != "supported":
+            raise ValueError(f"Unverified compatibility on row {line}")
+        raw_power = (row.get("max_power_w") or "").strip()
+        if raw_power:
+            try:
+                power = float(raw_power)
+            except ValueError as exc:
+                raise ValueError(f"Invalid accelerator power on row {line}") from exc
+            if power <= 0:
+                raise ValueError(f"Invalid accelerator power on row {line}")
+            candidate["max_power_w"] = power
+        else:
+            candidate["max_power_w"] = None
+        identity = (
+            candidate["manufacturer"],
+            candidate["server_model"],
+            candidate["accelerator_model"],
+        )
+        if identity in candidates:
+            raise ValueError(f"Duplicate server/accelerator row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed server/accelerator matrix shape: {len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }

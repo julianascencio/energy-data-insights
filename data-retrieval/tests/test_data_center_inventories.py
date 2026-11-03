@@ -8,12 +8,16 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
     parse_named_inventory,
     parse_power_equipment_matrix,
+    parse_server_accelerator_matrix,
 )
 
 CONTENT = (Path(__file__).parent / "fixtures/data_centers/named-inventory.html").read_bytes()
 CDU_MATRIX = (Path(__file__).parent / "fixtures/data_centers/cdu-matrix.csv").read_bytes()
 POWER_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/power-equipment-matrix.csv"
+).read_bytes()
+SERVER_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/server-accelerator-matrix.csv"
 ).read_bytes()
 
 
@@ -103,6 +107,36 @@ def test_power_equipment_matrix_rejects_unbounded_input(source_url, expected_cou
     with pytest.raises(ValueError):
         parse_power_equipment_matrix(
             POWER_MATRIX,
+            source_url=source_url,
+            expected_count=expected_count,
+        )
+
+
+def test_server_accelerator_matrix_preserves_power_boundary_and_range():
+    result = parse_server_accelerator_matrix(
+        SERVER_MATRIX,
+        source_url=(
+            "https://www.delltechnologies.com/asset/en-us/products/servers/"
+            "briefs-summaries/poweredge-server-gpu-matrix.pdf"
+        ),
+        expected_count=2,
+    )
+    by_accelerator = {row["accelerator_model"]: row for row in result["candidates"]}
+    assert by_accelerator["X1"]["max_power_w"] == 600
+    assert by_accelerator["X2"]["max_power_w"] is None
+    assert by_accelerator["X2"]["max_power_text"] == "350-400 W"
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+@pytest.mark.parametrize(
+    ("source_url", "expected_count"),
+    [("https://example.com/matrix.csv", 2), ("https://www.dell.com/matrix.csv", 3)],
+)
+def test_server_accelerator_matrix_rejects_unbounded_input(source_url, expected_count):
+    with pytest.raises(ValueError):
+        parse_server_accelerator_matrix(
+            SERVER_MATRIX,
             source_url=source_url,
             expected_count=expected_count,
         )

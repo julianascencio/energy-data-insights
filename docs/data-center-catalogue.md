@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 280 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Eaton,
+has 313 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Dell, Eaton,
 Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, Siemens, STULZ and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/precision air-conditioning equipment, transformers and switchgear.
@@ -76,6 +76,12 @@ NXAIR portfolio page. Transformer kVA is never converted to active kW; table
 losses, impedance and noise remain bounded observations. Siemens voltage,
 short-circuit current and continuous-current values are portfolio maxima, not
 nominal inputs or ordered-panel configurations.
+The compute-system continuation processes every supported checkmark in Dell's
+September 2025 PowerEdge 17th Generation compatibility table: 33 exact server
+and accelerator pairings across 11 PowerEdge models and eight accelerator rows.
+Per-accelerator maximum power and memory remain distinct from unknown server and
+rack input; accelerator quantity and deployment are not inferred. The H100 NVL
+350--400 W range remains an exact observation rather than a normalized scalar.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server
@@ -179,4 +185,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-03T1119-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-03T1223-validation.json).
