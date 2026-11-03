@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-11-03T14:14:31.870336+00:00",
+  "elapsed_minutes_through_local_validation": 24.8,
+  "full_python": {
+    "passed": 1857,
+    "skipped": 1,
+    "skip_reason": "optional cdsapi unavailable"
+  },
+  "focused_tests": 37,
+  "viewer_tests": 13,
+  "strict_sphinx": true,
+  "docs_pages_link_audit": 449,
+  "ruff": true,
+  "format": true,
+  "types": true,
+  "repository_hygiene": true,
+  "existing_citation_consistency": true,
+  "catalogue_validation": {
+    "bess": true,
+    "bess_oem": true
+  },
+  "offline_examples": [
+    "plot_bess_projects.py",
+    "plot_bess_oem_catalogue.py"
+  ],
+  "package_builds": [
+    "energy-analysis sdist/wheel",
+    "energy-data-retrieval sdist/wheel",
+    "energy-methods sdist/wheel"
+  ],
+  "deterministic_zstandard_snapshots": {
+    "bess": true,
+    "bess_oem": true
+  },
+  "remote_ci": "not yet run for this commit",
+  "pending_bibliography_references": 86,
+  "cumulative_vs_main": {
+    "projects": {
+      "new": 73,
+      "existing_enriched": 5
+    },
+    "equipment": {
+      "new": 67,
+      "existing_enriched": 2
+    }
+  },
+  "concurrency": {
+    "main": "5063c41694b17b1a3fc856ea9527a32211278203",
+    "bess_head": "f3f6ba5bf94e529c0995abd17454b6d646030e8c",
+    "pv_head": "58ed44b765b09c0b869a23d21a7e04bfd7a51292",
+    "pv_changed_paths_reviewed": true,
+    "active_runs_observed": 0
+  },
+  "local_acceptance_completed_at": "2026-11-03T14:15:01.452800+00:00",
+  "elapsed_minutes_through_local_acceptance": 25.29
+}

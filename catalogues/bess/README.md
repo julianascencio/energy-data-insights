@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,833 project and plant records across
-38 countries**, supported by **274 registered sources**. It combines curated
+The BESS section contains **1,862 project and plant records across
+39 countries**, supported by **281 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -238,3 +238,24 @@ Previous research: [Flower portfolio, Sinexcel guidebook and BlueNova equipment]
 Latest research: [Mauritius and Philippine projects, Eskom milestones and BlueNova configurations](research/2026-11-03_islands_bluenova.md), with the CEB offline adapter and source-access backlog.
 
 Latest reviewed batch: [Philippine historical inventory and BlueNova racks](research/2026-11-03_doe_racks.md).
+
+## Poland funding records (3 November 2026)
+
+The NFOŚiGW subset in `POL_20261103_funding_owner.jsonl` and the funding facts
+in `POL_20261103_energa.jsonl` are adapted from official Gov.pl textual material,
+attributed to NFOŚiGW and shared under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Changes include selecting battery-verified proposals, translating display names,
+normalizing fields and linking signed contracts. Original investment names,
+application IDs, contract IDs, source URLs and page/rank locators remain recorded.
+This notice applies to that source-derived subset, not unrelated catalogue sources.
+The ranking is technology-neutral and does not establish operation or funding.
+See the [review ledger](research/2026-11-03_poland_containers_review.json).
+
+To stage the reviewed 479-row/24-page edition offline (optional `pdfplumber`):
+
+```bash
+uv run --with pdfplumber python scripts/stage_bess_nfosigw.py /path/to/ranking.pdf --output /tmp/candidates.jsonl
+```
+
+The adapter stages funding applications; it never merges loan/grant rows,
+assigns chemistry, allocates portfolio capacity or promotes physical lifecycle.
