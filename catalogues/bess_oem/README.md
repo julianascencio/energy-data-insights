@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 3 November 2026 expanded research snapshot contains **679 records from 44 product
-suppliers, backed by 343 registered sources**: 666 documented configurations and 13
+The 3 November 2026 expanded research snapshot contains **695 records from 44 product
+suppliers, backed by 346 registered sources**: 682 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -240,3 +240,5 @@ Previous research: [Flower portfolio, Sinexcel guidebook and BlueNova equipment]
 Latest research: [Mauritius and Philippine projects, Eskom milestones and BlueNova configurations](../bess/research/2026-11-03_islands_bluenova.md), with the CEB offline adapter and source-access backlog.
 
 Latest reviewed batch: [Philippine historical inventory and BlueNova racks](../bess/research/2026-11-03_doe_racks.md).
+
+Latest equipment increment: [16 exact BYD LVS/LVL/HVB configurations](../bess/research/2026-11-03_energa_byd.md), with individual technical columns, usable-DC test conditions and qualified efficiency/warranty claims.
