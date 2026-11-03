@@ -38,12 +38,12 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 217 exact models/configurations from NVIDIA, AMD, Carrier, Eaton, Schneider
-Electric, STULZ and Vertiv. Current categories are GPU accelerators, servers, UPS,
-rack PDUs, chillers, coolant distribution units and CRAC/precision
-air-conditioning equipment.
-Switchgear, transformers, generators and additional cooling categories are
-supported by schema and ranked in the continuation backlog. The Schneider Galaxy
+has 239 exact models/configurations from NVIDIA, AMD, Carrier, Cummins, Eaton,
+Schneider Electric, STULZ and Vertiv. Current categories are GPU accelerators,
+servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
+and CRAC/precision air-conditioning equipment.
+Switchgear, transformers and additional cooling categories are supported by
+schema and ranked in the continuation backlog. The Schneider Galaxy
 VS batch preserves exact commercial references, stated kW and kVA, battery-string
 arrangements, full-load efficiency conditions and dimensions without calculating
 battery energy or runtime.
@@ -59,6 +59,10 @@ unnormalized where the exact configuration table does not bind them.
 The Carrier continuation adds all 28 AquaEdge 19DV rows at the two explicitly
 published electrical variants. Cooling and input ratings retain the OEM's AHRI
 water temperatures, fouling factors, pass count and water-side pressure.
+The Cummins continuation adds 22 exact KTA50/QSK60 model-frequency rows with
+explicit Data Center Continuous kW and kVA. Prime, standby and general continuous
+ratings remain observations. Four conflicting non-DCC fields on three duplicated
+QSK60 live-page rows are quarantined without discarding their matching DCC data.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server

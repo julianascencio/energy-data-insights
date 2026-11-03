@@ -21,6 +21,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_africa_data_centres_footprint,
     parse_airtrunk_locations,
     parse_carrier_19dv_table,
+    parse_cummins_generator_table,
     parse_meta_locations,
     parse_portfolio,
     parse_raxio_facility_page,
@@ -332,6 +333,32 @@ def test_carrier_19dv_parser_keeps_exact_rows_and_rating_conditions():
         )
     with pytest.raises(ValueError, match="official Carrier"):
         parse_carrier_19dv_table(content, source_url="https://example.com/19dv.pdf")
+
+
+def test_cummins_parser_deduplicates_dcc_and_quarantines_rating_conflicts():
+    content = (FIXTURES / "cummins-generators.html").read_bytes()
+    data = parse_cummins_generator_table(
+        content,
+        source_url="https://www.cummins.com/en-na/generators/products/test",
+        expected_count=1,
+    )
+    row = data["candidates"][0]
+    assert (row["model"], row["frequency_hz"]) == ("DQTEST", 60.0)
+    assert (row["data_center_continuous_kw"], row["data_center_continuous_kva"]) == (
+        1000.0,
+        1250.0,
+    )
+    assert row["ratings"]["standby"] == [{"kw": 1100.0, "kva": 1375.0}]
+    assert set(row["conflicts"]) == {"prime_rating", "continuous_rating"}
+    assert "NO-DCC" not in json.dumps(data)
+    with pytest.raises(ValueError, match="table shape"):
+        parse_cummins_generator_table(
+            content,
+            source_url="https://www.cummins.com/en-na/generators/products/test",
+            expected_count=2,
+        )
+    with pytest.raises(ValueError, match="official Cummins"):
+        parse_cummins_generator_table(content, source_url="https://example.com/test")
 
 
 def test_schneider_model_list_parser_keeps_only_explicit_commercial_references():

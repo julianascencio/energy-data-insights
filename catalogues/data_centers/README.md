@@ -7,8 +7,8 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **165 project records in 34 countries**:
 **62 facility records and 103 explicitly labelled campus aggregates**. Merged
-`main` has **123 projects and 143 exact equipment models/configurations**; this
-branch has **217 equipment records from seven OEMs**. These are catalogue counts,
+`main` has **165 projects and 217 exact equipment models/configurations**; this
+branch has **239 equipment records from eight OEMs**. These are catalogue counts,
 not a worldwide census or a count of operating buildings. Twelve operators are
 represented.
 The research report and coverage manifest describe missing fields and scope.
@@ -26,6 +26,7 @@ uv run python scripts/stage_data_center_meta.py captured.html --source-url https
 uv run python scripts/stage_data_center_vertiv_powerups.py extracted.txt --source-url https://www.vertiv.com/49882a/globalassets/shared/vertiv-power-ups-industrial_data-sheet_en.pdf --expected-count 19
 uv run python scripts/stage_data_center_carrier_19dv.py extracted-layout.txt --source-url https://brandportal.carrier.com/m/7aed1ae899ea9c0e/original/NA2316A_brochure_aquaedge_19DV_EN_carrier_bat04_bd.pdf --expected-count 28
 uv run python scripts/stage_data_center_raxio.py captured.html --source-url https://www.raxiogroup.com/data-centres/angola/ --expected-code AO1
+uv run python scripts/stage_data_center_cummins.py captured.html --source-url https://www.cummins.com/en-na/generators/products/qsk60 --expected-count 17
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.

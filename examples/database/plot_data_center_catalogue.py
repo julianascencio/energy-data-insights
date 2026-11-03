@@ -110,6 +110,15 @@ print(
     .sort_values(["apparent_power_kva", "name"])
     .to_string(index=False)
 )
+print("Generator comparison keeps Data Center Continuous kW and kVA separate:")
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("backup_generator"),
+        ["model", "frequency_hz", "output_power_kw", "apparent_power_kva", "quality_status"],
+    ]
+    .sort_values(["frequency_hz", "output_power_kw", "model"])
+    .to_string(index=False)
+)
 print("Galaxy VS comparisons retain exact SKU, kW/kVA and full-load efficiency conditions:")
 print(
     equipment.loc[

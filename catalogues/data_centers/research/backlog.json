@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T07:22:54Z",
+  "updated_at": "2026-11-03T08:17:47Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -27,7 +27,8 @@
     "vertiv_powerups6000_topology_ratings": 19,
     "vertiv_trinergy_ce_ratings": 4,
     "carrier_aquaedge_19dv_configurations": 28,
-    "raxio_current_facilities": 7
+    "raxio_current_facilities": 7,
+    "cummins_data_center_continuous_configurations": 22
   },
   "next_batches": [
     {
@@ -96,14 +97,16 @@
       "source": "OEM electrical and thermal specifications",
       "urls": [
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
-        "https://www.vertiv.com/"
+        "https://www.vertiv.com/",
+        "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 175,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings and all 28 Carrier AquaEdge 19DV 50/60 Hz rows complete; continue exact current transformer, switchgear and generator tables and diversify suppliers",
+      "offset": 197,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows and 22 Cummins KTA50/QSK60 Data Center Continuous configurations complete; continue exact current transformer and switchgear tables, then generator suppliers beyond Cummins",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
-        "Reference existing BESS battery models rather than duplicating them"
+        "Reference existing BESS battery models rather than duplicating them",
+        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page"
       ]
     },
     {
