@@ -1,0 +1,149 @@
+{
+  "source_rows": 14657,
+  "pv_rows": 7460,
+  "construction_ground_rows": 1064,
+  "source_only_held": 623,
+  "screen_note": "5km grid/coordinate and token heuristics only hold candidates; no fuzzy merge or canonical coordinates inferred",
+  "source_id": "repd_q2_2026_awaiting_20261102T2300",
+  "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+  "snapshot_date": "2026-06-30",
+  "reviewed_status": "Awaiting Construction",
+  "accepted_ref_ids": [
+    "6416",
+    "9456",
+    "12419",
+    "17707",
+    "18315"
+  ],
+  "accepted": 5,
+  "held": 1059,
+  "privacy_note": "Held names, capacity/date strings and canonical site names omitted from committed review; full staging outside Git. Public source RefIDs/checksum retain reproducibility. Applicant/contact/address columns not exported.",
+  "identity_review_note": "All1064 unique ground-awaiting observations screened against full7460-PV source and current canonical catalogue. ExactID/name/alias and conservative5km provisional-British-grid/token screens only hold, never merge. Five unflagged commercial>=1MW project identities manually reviewed across the incoming batch. No WGS84 coordinates, owner, AC/DC or current status inferred.",
+  "held_fields_by_ref_id": {
+    "17707": [
+      "land_area_ha"
+    ]
+  },
+  "screened_catalogue_main_commit": "20e9be161927cf0f780f6e05a85acc7ebdbbac49",
+  "full_staging_outside_git": true,
+  "review": [
+    {
+      "ref_id": "6416",
+      "name": "Speyslaw Solar Farm",
+      "region": "Scotland",
+      "capacity_native": "20",
+      "construction_date_native": "",
+      "reasons": [],
+      "result": "accepted",
+      "record_id": "bd32e76c-0275-50c3-91da-505be0da98e2",
+      "manual_review": "Distinct exact primary registry RefID, photovoltaic technology, named ground-mounted commercial project and useful capacity/geography/planning metadata. No source/canonical or incoming identity flags."
+    },
+    {
+      "ref_id": "9456",
+      "name": "Coldharbour Farm, Ashreigney - Solar Photovoltaic Array",
+      "region": "South West",
+      "capacity_native": "49.99",
+      "construction_date_native": "",
+      "reasons": [],
+      "result": "accepted",
+      "record_id": "7d44f159-2328-579a-a906-6d841dec7e6e",
+      "manual_review": "Distinct exact primary registry RefID, photovoltaic technology, named ground-mounted commercial project and useful capacity/geography/planning metadata. No source/canonical or incoming identity flags."
+    },
+    {
+      "ref_id": "12419",
+      "name": "Washdyke Farm, Billingborough Road - Solar farm",
+      "region": "East Midlands",
+      "capacity_native": "27",
+      "construction_date_native": "",
+      "reasons": [],
+      "result": "accepted",
+      "record_id": "505ecf6b-5b70-51f9-bece-4af99041b869",
+      "manual_review": "Distinct exact primary registry RefID, photovoltaic technology, named ground-mounted commercial project and useful capacity/geography/planning metadata. No source/canonical or incoming identity flags."
+    },
+    {
+      "ref_id": "17707",
+      "name": "Whitestones, Cuminestown - Solar Farm",
+      "region": "Scotland",
+      "capacity_native": "9.9",
+      "construction_date_native": "",
+      "reasons": [],
+      "result": "accepted",
+      "record_id": "612f5fb1-fd95-5d41-aa2e-c26ae93a2113",
+      "manual_review": "Distinct exact primary registry RefID, photovoltaic technology, named ground-mounted commercial project and useful capacity/geography/planning metadata. No source/canonical or incoming identity flags."
+    },
+    {
+      "ref_id": "18315",
+      "name": "Hungerford Park - Solar Array",
+      "region": "South East",
+      "capacity_native": "2.5",
+      "construction_date_native": "",
+      "reasons": [],
+      "result": "accepted",
+      "record_id": "e6379fc4-b010-5a3c-b018-731e888e1683",
+      "manual_review": "Distinct exact primary registry RefID, photovoltaic technology, named ground-mounted commercial project and useful capacity/geography/planning metadata. No source/canonical or incoming identity flags."
+    }
+  ],
+  "held_review_partitions": [
+    {
+      "path": "20261102T2300_repd_awaiting_holds/East_Midlands.jsonl",
+      "region": "East Midlands",
+      "held_observations": 115
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/Eastern.jsonl",
+      "region": "Eastern",
+      "held_observations": 160
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/London.jsonl",
+      "region": "London",
+      "held_observations": 1
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/North_East.jsonl",
+      "region": "North East",
+      "held_observations": 39
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/North_West.jsonl",
+      "region": "North West",
+      "held_observations": 52
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/Northern_Ireland.jsonl",
+      "region": "Northern Ireland",
+      "held_observations": 10
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/Scotland.jsonl",
+      "region": "Scotland",
+      "held_observations": 137
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/South_East.jsonl",
+      "region": "South East",
+      "held_observations": 131
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/South_West.jsonl",
+      "region": "South West",
+      "held_observations": 149
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/Wales.jsonl",
+      "region": "Wales",
+      "held_observations": 63
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/West_Midlands.jsonl",
+      "region": "West Midlands",
+      "held_observations": 88
+    },
+    {
+      "path": "20261102T2300_repd_awaiting_holds/Yorkshire_and_Humber.jsonl",
+      "region": "Yorkshire and Humber",
+      "held_observations": 114
+    }
+  ],
+  "review_storage_note": "All held identities/reasons retained in sorted region JSONL partitions; accepted records appear only in this ledger. No candidate rows are counted as accepted."
+}

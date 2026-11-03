@@ -1,0 +1,600 @@
+{
+  "source_captures_reviewed": [
+    {
+      "source_url": "https://www.peeringdb.com/api/fac?country__in=CL,UY,KE,AE,NZ,IS,SG",
+      "sha256": "e2e56f1ed9c2ec49aa9a6934de72cfbfcc97264bfad670f335379c84b4be0d4d",
+      "retrieved_at": "2026-11-02T23:13:04.972611Z",
+      "decision": "held_reuse_restriction",
+      "reason": "PeeringDB AUP bulk redistribution restriction"
+    },
+    {
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1297996/000110465926015365/dlr-20251231x10k.htm",
+      "sha256": "8ae21eaf51ff807e2fc35508b6e5b894fcfd436727aea0511a3080a9e5f2a4ae",
+      "retrieved_at": "2026-11-02T23:13:34.130257Z",
+      "decision": "excluded_scope",
+      "reason": "Schedule III market aggregates are not identifiable facilities"
+    },
+    {
+      "source_url": "https://airtrunk.com/locations/",
+      "sha256": "bd115b9ee1d406a50e40a997cd84fce801da2965eed74ada2636286ae63963e7",
+      "retrieved_at": "2026-11-02T23:20:19.991120Z",
+      "decision": "deferred",
+      "reason": "Complete portfolio discovered; campus/building scope needs review"
+    },
+    {
+      "source_url": "https://overpass-api.de/api/interpreter",
+      "decision": "deferred_access_failure",
+      "reason": "HTTP 502; no imported OSM data",
+      "sha256": null
+    },
+    {
+      "source_url": "https://overpass.kumi.systems/api/interpreter",
+      "decision": "deferred_access_failure",
+      "reason": "Read timeout; no imported OSM data",
+      "sha256": null
+    },
+    {
+      "source_url": "https://www.nextdc.com/data-centres",
+      "candidate": "KL1",
+      "decision": "deferred_scope",
+      "reason": "Outside selected 28-row block; review exact facility detail and lifecycle"
+    },
+    {
+      "source_url": "https://www.gulfdatahub.ae/abuDhabi",
+      "candidate": "Two additional unlabelled planned Abu Dhabi centers",
+      "decision": "deferred_identity",
+      "reason": "Four centers stated, only ICAD1 and KIZAD identifiable"
+    },
+    {
+      "source_url": "https://www.teraco.co.za/data-centre-locations/johannesburg/",
+      "candidate": "Teleport",
+      "decision": "excluded_category",
+      "reason": "Satellite earth station; not an additional data center facility"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/",
+      "candidate": "Noida1/Noida2 URLs",
+      "decision": "duplicate_candidate_held",
+      "reason": "Same Sitecore item ID; restricted portfolio not imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/london-data-centers/hemel-hempstead-2-data-center",
+      "sha256": "0b4ebd73bb4a15516efe1a0942d8ddbde3aecca242060942f0f56cb215b871a6",
+      "retrieved_at": "2026-11-02T23:06:42.232736Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/amsterdam-1-data-center",
+      "sha256": "9e1f95dd9cce1d18ee1609602004ce0fbae394e88e0226a8028c7a990ed1852f",
+      "retrieved_at": "2026-11-02T23:06:36.622071Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/berlin-data-centers/berlin-2-data-center",
+      "sha256": "bd7634d2c8be1549e08432bcdb7e0c21754ebe5db1b53aa7fd44b0d903c4ebea",
+      "retrieved_at": "2026-11-02T23:11:48.917553Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/cyberjaya-data-centers/cyberjaya-4-data-center",
+      "sha256": "9d99185628773ec715f16c95e758a0b9c8b5345950b62485a1a321efda4c3f8b",
+      "retrieved_at": "2026-11-02T23:07:21.190327Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/mumbai-data-centers/mumbai-6-data-center",
+      "sha256": "9212c6c78aec85db41f38e2625d015e2ecdca454ec07d4f8c1066c6a3d163283",
+      "retrieved_at": "2026-11-02T23:07:33.810253Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/frankfurt-data-centers",
+      "sha256": "6b1fe70a4e853e70675249572760cb3531a23262674385aa080c400a00c91bef",
+      "retrieved_at": "2026-11-02T23:06:30.795725Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/sacramento-data-centers/sacramento-ca-2-data-center",
+      "sha256": "e2e13d76e0e8b8ec41b9e96d516c103a12b2322e6d099e140d65af29580370a6",
+      "retrieved_at": "2026-11-02T23:11:53.781709Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/hillsboro-hi1-data-center",
+      "sha256": "91b534c884689b749326a834aabd9fb58f2b0eee29af1043cce5a6027a1f5e02",
+      "retrieved_at": "2026-11-02T23:06:57.999751Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/munich-data-centers/munich-2-data-center",
+      "sha256": "b71c98bd18e85e36bf3375c310be6af8d415759f4ec6500a91241255332d8290",
+      "retrieved_at": "2026-11-02T23:06:36.691285Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/chicago-data-centers/chicago-ch3-data-center",
+      "sha256": "c8025a9e2d44c8769c0cf4a66582818be68f84646b07c13074f6c5a271c1dbb9",
+      "retrieved_at": "2026-11-02T23:06:57.975345Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/bangkok-data-centers/bangkok-3-data-center",
+      "sha256": "b7d174322731e155d9fd395e908d089c958173e56c3699818b1933f33d8df812",
+      "retrieved_at": "2026-11-02T23:07:28.451567Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/london-data-centers/slough-2-data-center",
+      "sha256": "bfed65dc240cce4785a86d6434ccb788a5b734fd350e3172b0d6e58d979911a9",
+      "retrieved_at": "2026-11-02T23:06:47.525186Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/terms-of-use",
+      "sha256": "7a12e58fb3426e0e5ca24f33c398a8b4e250bf2d6fcfe025a6f79d4b4f2e66bb",
+      "retrieved_at": "2026-11-02T23:11:56.590546Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/mumbai-data-centers/mumbai-7-data-center",
+      "sha256": "2dd6e7d05432a040297ed4cb5d62fec815983c22f2e287a19042b2ded59dae9c",
+      "retrieved_at": "2026-11-02T23:07:33.759832Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/northern-virginia-data-centers/ashburn-va11-data-center",
+      "sha256": "c9af162df7936a434dc3e8502b2622a4ab869e90706ffc47581e94919c058c70",
+      "retrieved_at": "2026-11-02T23:07:08.975498Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/hong-kong-data-centers/tai-po-data-center",
+      "sha256": "bcb29558ad3e42ae9ffc34b4acb716af677f16da6a54d3fe68c3dcd755a9f5f3",
+      "retrieved_at": "2026-11-02T23:07:15.800380Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/mumbai-data-centers/mumbai-vikhroli-data-center",
+      "sha256": "5dfdf3e377b7c5879ce13a6ec763cc8ae7917024547d5fd7cad2645e8e7c66a8",
+      "retrieved_at": "2026-11-02T23:07:33.658023Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/mumbai-data-centers/navi-mumbai-data-center",
+      "sha256": "1ae100e3f7c6e861c4fb433a7256f3653e44d150c7b3d333a6cce0fa0772de46",
+      "retrieved_at": "2026-11-02T23:07:38.889864Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/berlin-data-centers/berlin-1-data-center",
+      "sha256": "43fcde4ec244ed47528f77f412acea889d14ef06e02b53636fbbb6c32f65842f",
+      "retrieved_at": "2026-11-02T23:11:48.926112Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/jakarta-data-centers/jakarta-2-data-center",
+      "sha256": "b4e662e9e20ee0e99ee6497e07c607d5a5b4fab8bb9c7885ec9eee4453d5e4a4",
+      "retrieved_at": "2026-11-02T23:07:15.782754Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/tokyo-11-data-center",
+      "sha256": "7c4033ecd4c2bac2fe457e986dd7d70bd080a56fd941466d9f2e5dd3820c81b2",
+      "retrieved_at": "2026-11-02T23:07:21.083685Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india",
+      "sha256": "c86402ab4ebe1104a2f21d136d4717f8a0a28241201f70d3200119a4c4018075",
+      "retrieved_at": "2026-11-02T23:05:47.064490Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/hong-kong-data-centers/financial-data-center-1-and-2",
+      "sha256": "98500c3bab96be47becf87903ed66f5861e0fb05012674ea34f1d97ffaba7d40",
+      "retrieved_at": "2026-11-02T23:07:15.915247Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/chicago-data-centers/chicago-ch2-data-center",
+      "sha256": "040744dd66692e2fd6c5ef61f2486035296211dfc292d681a4219935dec7fd9b",
+      "retrieved_at": "2026-11-02T23:06:57.983490Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/bangkok-data-centers/bangkok-1-data-center",
+      "sha256": "7561dde7d5f463ba14add44331faedaa9738dc0fd5ed1b5efe76bdc7464032a3",
+      "retrieved_at": "2026-11-02T23:07:24.531336Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/berlin-data-centers",
+      "sha256": "a96842b66127e93803010b3f117488888215c28f6f9213b4b83f7137a11ee3e5",
+      "retrieved_at": "2026-11-02T23:06:30.585912Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/vienna-1-data-center",
+      "sha256": "68d8a17d8332d5b2a544632fb6c0806c9c00a94ca22e8170a441890aa8cc91cb",
+      "retrieved_at": "2026-11-02T23:06:30.632842Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/south-africa-data-centers/johannesburg-1-data-center",
+      "sha256": "324649fe55efcd127f2a053346c096deded0b180e63ecd4dc3e7fab5666619cd",
+      "retrieved_at": "2026-11-02T23:06:36.713893Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/bengaluru-data-centers/bengaluru-4-campus",
+      "sha256": "6172f10dc57aa444b058d818bba9f49477240a58dde2d6ec930c0777a1c63722",
+      "retrieved_at": "2026-11-02T23:07:43.994383Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/london-data-centers/london-1-data-center",
+      "sha256": "cfe3fad0e2237c09f9dfd5fff03c0b42f61c1fe56a2e223e34bc1432476ba472",
+      "retrieved_at": "2026-11-02T23:06:42.373626Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/frankfurt-data-centers/frankfurt-1-data-center",
+      "sha256": "c499201b1e3a482b70dcd7b2cdffd659cf31e95854fb8757e6615dbc2188255c",
+      "retrieved_at": "2026-11-02T23:11:48.903121Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/cyberjaya-data-centers/cyberjaya-6-data-center",
+      "sha256": "c2623ba7dc20da21fd9d1aabfbd304d50db39ac5940d20fa8574b5149f8e666c",
+      "retrieved_at": "2026-11-02T23:07:24.502953Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/london-data-centers/hemel-hempstead-4-data-center",
+      "sha256": "dc0eaf143a88e5ae88cba81946f7f47177339ddb057df4ca8b171608e4498d43",
+      "retrieved_at": "2026-11-02T23:06:47.560516Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/jakarta-data-centers/jakarta-2a-data-center",
+      "sha256": "8dd3e64e29d70a0b8b5a08395b6b3ea4cc9851e5c91a66b1f54d97ad4eb469fe",
+      "retrieved_at": "2026-11-02T23:07:15.931948Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/zurich-1-data-center",
+      "sha256": "79344994ed5b9505d06e0243471ddc72d7b392305568d93e15e3df74c0a1815e",
+      "retrieved_at": "2026-11-02T23:06:42.258604Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/serangoon-data-center",
+      "sha256": "fba1465ca99720d41b76a07eb61caa90cfd358c3555f49979864f56e7c9242c5",
+      "retrieved_at": "2026-11-02T23:07:24.592397Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/northern-virginia-data-centers/ashburn-va-2-data-center",
+      "sha256": "a495d3396af6b151dddbc7bea9a2b6f2f7fce15e66a000c320189521ed6b4334",
+      "retrieved_at": "2026-11-02T23:07:03.376358Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/osaka-data-centers/osaka-osk12-data-center",
+      "sha256": "724b9389eb558be419026edc7e5631298135932592ff9b4fdddec48cfe283919",
+      "retrieved_at": "2026-11-02T23:11:58.681084Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas",
+      "sha256": "f68703b08def986d483793b0f7f6b1530d717f97683bcced531a81aa6332d05d",
+      "retrieved_at": "2026-11-02T23:05:47.011158Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/hamburg-1-data-center",
+      "sha256": "77700d7d4844fbc9ab789d8d06d05cbae38aea1e3afdff56e5463a6657632bb0",
+      "retrieved_at": "2026-11-02T23:06:30.757711Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/bengaluru-data-centers/bengaluru-3-data-center",
+      "sha256": "5d32a0b2648a68f018940cefee3a41bee465c9a48cea3650459faa91e6835c4f",
+      "retrieved_at": "2026-11-02T23:07:38.867974Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/phoenix-data-centers/phoenix-ph4-data-center",
+      "sha256": "a939f35aba64818cae7431b0604482702de5b1ab4658027f42c702ce6681ee54",
+      "retrieved_at": "2026-11-02T23:06:52.996663Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea",
+      "sha256": "7cd83fa0e4f76792e2c1c28891144452df7134f37e523944a3d2f14a45c6351a",
+      "retrieved_at": "2026-11-02T23:05:47.112289Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/mumbai-data-centers/mumbai-vikhroli-iv-data-center",
+      "sha256": "77ed87e91987b71e47f8c921679ebb821237f33dbf827e33d430d8173a88e6e2",
+      "retrieved_at": "2026-11-02T23:07:33.794274Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/northern-virginia-data-centers/ashburn-va-5-data-center",
+      "sha256": "f6cd41984360c5bef976f0c7f70b073b41e496f8efcecb4ca9281377f640aae7",
+      "retrieved_at": "2026-11-02T23:07:08.963585Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/sacramento-data-centers/sacramento-ca-3-data-center",
+      "sha256": "df0fdc84b5d463326a07435e4cdb1508937a29843bd07db87e3476c74382758c",
+      "retrieved_at": "2026-11-02T23:11:58.729322Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/chennai-data-centers/chennai-1-data-center",
+      "sha256": "213206a42a228139c7995ce39a0076d45ab3f787ab024a3b50de71e66c59eacb",
+      "retrieved_at": "2026-11-02T23:07:43.982001Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/sacramento-data-centers",
+      "sha256": "303e55ef1092629be994354c62b3d9bd49fa09b946d75a1d7510c2864612fe12",
+      "retrieved_at": "2026-11-02T23:06:52.951296Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/frankfurt-data-centers/frankfurt-2-data-center",
+      "sha256": "53fb87021b66a983a4566f22decc51cc69476a47fab47f9df39c173ca4d94ab2",
+      "retrieved_at": "2026-11-02T23:11:48.739531Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/phoenix-data-centers/phoenix-ph1-data-center",
+      "sha256": "4d83a714418ba452df8fce9e867317d5021d78fc714edfb36966f8a6ff1a48f3",
+      "retrieved_at": "2026-11-02T23:06:47.414841Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/silicon-valley-sv1-data-center",
+      "sha256": "b0a81f144a721c89407b64ace98598c30b4b38f7ccc2f3bdeffb8ea17e2a188d",
+      "retrieved_at": "2026-11-02T23:06:52.784564Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/mumbai-data-centers/mumbai-bse-data-center",
+      "sha256": "8ea9e4ade5a96c9b0dfbbab1e55644f166d77f957624c418e9ab8ec319effac2",
+      "retrieved_at": "2026-11-02T23:07:38.977036Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/dallas-data-centers/dallas-tx-4-data-center",
+      "sha256": "bbadf5d6a971475f253a8dddbe0cf27713ee4be025e954d83de49fba715521ae",
+      "retrieved_at": "2026-11-02T23:07:03.360496Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/london-data-centers/slough-3-data-center",
+      "sha256": "13193af9cf2dbbf79611d75895f08bd1fe1ae1a1f787db00ef11d4d4370819d5",
+      "retrieved_at": "2026-11-02T23:06:47.494220Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/chennai-data-centers/chennai-2-data-center",
+      "sha256": "6960bb8fb4be30df4dbf0f82d3853844e3dfc8ecc3a4510c16405d7b7982be98",
+      "retrieved_at": "2026-11-02T23:07:44.060120Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/cyberjaya-data-centers/cyberjaya-5-data-center",
+      "sha256": "55244c2a013b82fcc8a6f36ba405faf717e4fdabd2f24b23c39c6b44f212d732",
+      "retrieved_at": "2026-11-02T23:07:24.636296Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/northern-virginia-data-centers/ashburn-va7-data-center",
+      "sha256": "d3b321b03ae5185938099c20f8dfaadbe6bccde6a3c32125cfcd6633795bb16d",
+      "retrieved_at": "2026-11-02T23:07:09.033517Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific",
+      "sha256": "165d02ce73fe80fd688f7f2764753e4f4f0d54103e49362d45f5462dca1e23df",
+      "retrieved_at": "2026-11-02T23:05:46.780805Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/frankfurt-data-centers/frankfurt-4-data-center",
+      "sha256": "86c4dc16c6e3bb01df210155e07f43ace43aad2c4bd911fb1c78629e51d6d03e",
+      "retrieved_at": "2026-11-02T23:11:53.750762Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/bangkok-data-centers/bangkok-2-data-center",
+      "sha256": "96fae712a65aec1f0b5a8b24ac22de1a1480c0c4b3574ef969938979bd0433d6",
+      "retrieved_at": "2026-11-02T23:07:28.522023Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/mumbai-data-centers/mumbai-5-data-center",
+      "sha256": "f6a87a06d2caa2bed97ae7d2ae245db9647e79104b6a2f352f580a4ccd08e070",
+      "retrieved_at": "2026-11-02T23:07:28.391280Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/jakarta-data-centers/jakarta-3-data-center",
+      "sha256": "8254cf467ddbda87f799be5b83ef05260a43769c896b4fa8ec8977dfecc60f11",
+      "retrieved_at": "2026-11-02T23:07:21.147811Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/osaka-data-centers/keihanna-osk11-data-center",
+      "sha256": "e4590e1cda39cf3ce347d3007366373762ab7d50e2665677f7cbfe7db3dc7617",
+      "retrieved_at": "2026-11-02T23:11:58.586959Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/delhi-ncr-data-centers/noida-2-data-center",
+      "sha256": "b9b0af2f538b5131f00393629b99b15e9456ce9f559c87dd7e88ae1af7328cab",
+      "retrieved_at": "2026-11-02T23:07:49.039584Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/northern-virginia-data-centers/ashburn-va-3-data-center",
+      "sha256": "c4ff260614ab4dfa6c8062df058adec98ed8f83b868061412f476183e12a209f",
+      "retrieved_at": "2026-11-02T23:07:03.468160Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/dallas-data-centers/dallas-tx-1-data-center",
+      "sha256": "f56a9b6c0dbc3f3b246cf252a0dcfa1e2e30fa087d423ad7e13045580a825637",
+      "retrieved_at": "2026-11-02T23:06:57.868831Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/northern-virginia-data-centers/ashburn-va-1-data-center",
+      "sha256": "9ce724497d679ddbcfb8b1b2ff5d20d4f871cc5680da3a16c02be2e4d30d68b3",
+      "retrieved_at": "2026-11-02T23:07:03.443180Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/london-data-centers/hemel-hempstead-3-data-center",
+      "sha256": "a5136944781c3327706bfedef0174875836057485cc6191642c0314942984664",
+      "retrieved_at": "2026-11-02T23:06:42.373528Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/sacramento-data-centers/sacramento-ca-1-data-center",
+      "sha256": "b339d68c78a6120fadfa0fe8af88bd1eb05d7f840c525e7d6c75b8b39ba9f680",
+      "retrieved_at": "2026-11-02T23:11:53.781106Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/bengaluru-data-centers/bengaluru-2-data-center",
+      "sha256": "853b3c6319b355a34e12995eae140da76b6a4f24b4d76d39a1f6cae080052fac",
+      "retrieved_at": "2026-11-02T23:07:38.795458Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/madrid-1-data-center",
+      "sha256": "582b32bcab526afa6d1b1678e92cbd88949199e6f17b168da3327ab6215c99f0",
+      "retrieved_at": "2026-11-02T23:06:36.786545Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/emea/frankfurt-data-centers/frankfurt-3-data-center",
+      "sha256": "78cca07c4034c4979799c07d8e8d1d46db2f94e038a0879d3b3e76011b40de9c",
+      "retrieved_at": "2026-11-02T23:11:53.853652Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/osaka-data-centers",
+      "sha256": "a60941dc04d8c0877bc344187645f4e83500b97e59894df99597786927ccdda1",
+      "retrieved_at": "2026-11-02T23:07:21.132068Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/india/delhi-ncr-data-centers/noida-2-data-center",
+      "sha256": "b9b0af2f538b5131f00393629b99b15e9456ce9f559c87dd7e88ae1af7328cab",
+      "retrieved_at": "2026-11-02T23:07:49.228139Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/northern-virginia-data-centers/ashburn-va-4-data-center",
+      "sha256": "e549946c2c0e2f4ef704fa4399ac7a6d0e9f6c6e064839bdfc516478bdc521fd",
+      "retrieved_at": "2026-11-02T23:07:09.064355Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/americas/chicago-data-centers/chicago-ch1-data-center",
+      "sha256": "278c3c64db5c660ade61f5b631505514202a1f79a58f906e4f7b227aedcf0799",
+      "retrieved_at": "2026-11-02T23:06:52.855584Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    },
+    {
+      "source_url": "https://www.nttdata.com/en-gb/services/global-data-centers/global-locations/asia-pacific/ho-chi-minh-city-1-data-center",
+      "sha256": "f2693dc279d3a80f9c3ef6e016fd2800aaa9e6e50a562b88a6af52ce03bdef47",
+      "retrieved_at": "2026-11-02T23:07:28.489947Z",
+      "decision": "held_reuse_restriction",
+      "reason": "NTT explicit automation/republication restriction; no canonical records imported"
+    }
+  ]
+}

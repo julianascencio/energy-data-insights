@@ -260,3 +260,63 @@ structure changes. Contact fields, noncorporate headings and external links are
 omitted. Same-company licences remain separate observations. Raw HTML and full
 staging output stay outside Git; the dated review commits counts and native licence
 identifiers only. No current operation, ownership, AC/DC or plant boundary is inferred.
+
+## Reviewed UK construction entries
+
+REPD now supports an explicitly reviewed ground-mounted construction cohort. The
+existing operational default remains unchanged. For a construction ledger, set
+`"reviewed_status": "Under Construction"` or `"Awaiting Construction"` alongside the pinned source checksum,
+snapshot date and individually accepted Ref IDs, then use the existing offline
+`stage_pv_repd.py` and upsert commands. The adapter keeps construction milestones
+separate from commissioning/operation, rejects contradictory operational dates and
+unreviewed lifecycle scopes, and preserves stable identities. A planning application
+is not automatically a new plant: cross-source duplicates and phase/site boundaries
+remain review requirements. See the dictionary and dated review for held candidates.
+
+## Reproduce reviewed municipal PV and exact-EIC enrichments
+
+The offline Madrid adapter checks the entire pinned CSV against incoming building
+codes/names/pins and existing Spanish identities. `Código Ayto` identifies a building,
+not a national plant; the CSV sequence is only a locator. Repeated buildings and
+nearby pins are held for site/phase review, never merged. Published kWp is MWdc after
+unit conversion. Building coordinates retain unknown datum/accuracy; undefined
+surface and installer/administrative labels do not become land area or EPC/owners.
+The active status is a dated municipal inventory assertion. Attribution ships in
+`licenses/MADRID_PV_NOTICE.md`.
+
+```bash
+uv run python scripts/stage_pv_madrid.py --input /raw/madrid.csv \
+  --review catalogues/pv/research/20261103T0000_madrid_review.json \
+  --catalogue /baseline/catalogues/pv --output /tmp/madrid-reviewed.jsonl
+```
+
+Use the pinned pre-acceptance baseline named in the review ledger, with its source
+registry augmented by the immutable current source entry. Replays emit proposals;
+acceptance requires the usual upsert and validation. The public source's current
+export and coverage dates are recorded separately from its landing-page update.
+
+The ODRE staging CLI also accepts review `mode: enrichment` (default remains `new`).
+It checks the full national identity export, all canonical phase/external EICs and
+an explicit reviewed EIC allowlist. Only missing grid operator, substation and
+registry industrial-service date in one complete canonical phase are filled.
+Multiple source connections targeting one project, ambiguous/aggregate/private
+identities, future dates and existing extensions require review. Populated facts
+are preserved and differing native assertions retained as unresolved evidence.
+Replay against the ledger's pinned pre-enrichment baseline, then use upsert.
+
+## Aragón operating-PV discovery
+
+`pv_catalogue.aragon.read_aragon_geojson` and `scripts/stage_pv_aragon.py` verify a
+pinned resource319 FeatureCollection and stage review-only metadata. This stage
+assigns no canonical project IDs and performs no upsert. The GIS feature ID is not
+a national plant ID. Projected-looking polygons without a declared CRS do not
+become latitude/longitude or centroids, and the native inverter field labelled
+MWp does not become AC capacity. Promoter names are omitted from staged output.
+
+```bash
+uv run python scripts/stage_pv_aragon.py --input /raw/aragon319.json \
+  --sha256 <reviewed-source-sha256> --output /tmp/aragon-review-only.jsonl
+```
+
+Reconcile site/phase identities and source revision before accepting fields. CSV
+and GeoJSON export agreement is a source consistency check, not identity approval.

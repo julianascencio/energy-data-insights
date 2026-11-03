@@ -1,0 +1,103 @@
+{
+  "local_environment": {
+    "python": "3.13",
+    "dependency_lock": "uv.lock",
+    "imagery_integration": "pinned Orbital PV installed for existing gallery examples"
+  },
+  "checks": [
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py",
+      "result": "passed",
+      "tests": 18
+    },
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_bess_catalogue.py data-retrieval/tests/test_pv_catalogue.py",
+      "result": "passed",
+      "tests": 57,
+      "note": "Earlier checkpoint with 14 Data Center tests plus 43 existing catalogue regressions; later 18-test DC suite also passed"
+    },
+    {
+      "command": "pytest -q analysis/tests/test_pv_database.py analysis/tests/test_bess_database.py analysis/tests/test_bess_oem_database.py methods/tests/test_references.py",
+      "result": "passed",
+      "tests": 29
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed",
+      "tests": 9
+    },
+    {
+      "command": "ruff check .; ruff format --check .; ty check",
+      "result": "passed"
+    },
+    {
+      "command": "python scripts/check_repository.py; python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "sphinx-build -E -a -W --keep-going -b html docs docs/_build/html",
+      "result": "passed",
+      "note": "Clean environment build, offline example gallery and all database snapshot publishers"
+    },
+    {
+      "command": "python scripts/check_docs_links.py docs/_build/html",
+      "result": "passed",
+      "note": "Rebuilt stale generated viewcode page, then checked all links after build completion"
+    },
+    {
+      "command": "uv build --no-sources --all-packages --out-dir dist; twine check --strict dist/*",
+      "result": "passed",
+      "distributions": 6
+    },
+    {
+      "check": "Two independent Data Center snapshot builds",
+      "result": "byte-identical projects.parquet, equipment.parquet and manifests; committed coverage matches docs snapshot"
+    },
+    {
+      "check": "Headless Chromium browser QA with external requests blocked",
+      "result": "passed; zero page errors",
+      "coverage": [
+        "project/equipment tables",
+        "scope and basis KPIs",
+        "unknown grid/facility capacity",
+        "pagination invariance",
+        "map popup labels",
+        "expanded evidence",
+        "empty search",
+        "filtered campus exclusions",
+        "disabled unsafe project sums",
+        "CSV download",
+        "390px mobile overflow",
+        "dark mode",
+        "PV/BESS/BESS OEM viewer regression"
+      ]
+    },
+    {
+      "check": "Google period-aware parser against reviewed original",
+      "result": "All 35 Q2 2026 campus rows and blank TTM values exactly match canonical observations"
+    }
+  ],
+  "remote_ci": {
+    "checkpoint_commit": "7928f01b1b6f44795e83f4311e53a5e13273de5e",
+    "python_3_12": "success",
+    "python_3_13": "success",
+    "documentation": "success",
+    "pages_deploy": "skipped on PR",
+    "note": "These are observed checkpoint results. Check PR #84 for the final commit's current CI; local passes do not imply remote passes."
+  },
+  "publication": {
+    "pr": "https://github.com/julianascencio/energy-data-insights/pull/84",
+    "leave_open_unmerged": true,
+    "main_before_batch": "76d0c1a98a9cc20142b8f51375d4ba53d3780616",
+    "merged_data_center_projects": 0,
+    "merged_data_center_equipment": 0,
+    "branch_projects": 93,
+    "branch_equipment": 21
+  },
+  "continuation": {
+    "task_name": "Global Data Center Database",
+    "enabled": true,
+    "schedule": "Hourly at minute 20, Atlantic/Canary; PV at 59 and BESS at 50",
+    "backlog": "catalogues/data_centers/research/backlog.json"
+  }
+}

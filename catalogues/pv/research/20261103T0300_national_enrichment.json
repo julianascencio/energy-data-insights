@@ -1,0 +1,83 @@
+{
+  "source_id": "odre_national_20_plus_20261103T0300",
+  "source_sha256": "f27794f68370d56346ca37f69cee8ed2a355532fbe8c4b172c8084581bed8b41",
+  "identity_sha256": "8e5e385bde15a557411f80993035e4fb87faafb99b08e6b526712dc50a4c1cda",
+  "snapshot_date": "2026-08-31",
+  "mode": "enrichment",
+  "accepted_eics": [
+    "17W000002084765V"
+  ],
+  "observations": 8,
+  "enriched": 1,
+  "fields_added": 4,
+  "held": 7,
+  "review": [
+    {
+      "eic": "17W000002173846Z",
+      "review_key": "17W000002173846Z",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W0000024409377",
+      "review_key": "17W0000024409377",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002494315S",
+      "review_key": "17W000002494315S",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W0000014183678",
+      "review_key": "17W0000014183678",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": null,
+      "review_key": "aggregate:json-array-index:5",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002400455C",
+      "review_key": "17W000002400455C",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": null,
+      "review_key": "aggregate:json-array-index:7",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002084765V",
+      "result": "accepted",
+      "record_id": "c2282844-1dd6-51d1-87ff-568b56f71e2d",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000002084765V",
+          "native_fields": {
+            "datemiseenservice": "04/04/2024",
+            "gestionnaire": "RTE",
+            "postesource": "MESN5"
+          },
+          "phase_id": "G100001048999",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_national_20_plus_20261103T0300"
+        }
+      }
+    }
+  ]
+}

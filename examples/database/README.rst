@@ -38,3 +38,15 @@ column definitions, snapshot downloads and update rules.
    :outline:
 
    Explore BESS OEM products
+
+Data Center Projects and Equipment
+----------------------------------
+
+.. button-ref:: /data-center-database-viewer
+   :color: primary
+
+   Open the Global Data Center Database
+
+Explore two connected tables with separate facility/campus scope, IT/grid/facility
+capacity boundaries, dated PUE observations and exact equipment rating conditions.
+The four-view example covers geography, completeness, cooling and GPU comparisons.

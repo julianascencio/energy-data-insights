@@ -1,0 +1,682 @@
+{
+  "version": "1.0.0",
+  "entity_types": [
+    "projects",
+    "equipment"
+  ],
+  "required": [
+    "record_id",
+    "entity_type",
+    "name",
+    "record_scope",
+    "capacity_scope",
+    "created_at",
+    "updated_at",
+    "last_verified_at",
+    "sources",
+    "field_sources_json",
+    "evidence_json",
+    "quality_status"
+  ],
+  "fields": {
+    "record_id": {
+      "type": "string",
+      "description": "Stable UUID; retain through renames and changes in capacity."
+    },
+    "name": {
+      "type": "string",
+      "description": "Identifiable facility, phase or exact equipment name."
+    },
+    "capacity_scope": {
+      "type": "string",
+      "description": "Physical boundary and configuration covered by reported ratings."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Review notes; no unsupported technical facts."
+    },
+    "country_code": {
+      "type": "string",
+      "description": "ISO alpha-3 country code."
+    },
+    "region": {
+      "type": "string",
+      "description": "Reported administrative region."
+    },
+    "locality": {
+      "type": "string",
+      "description": "Reported municipality/locality."
+    },
+    "address": {
+      "type": "string",
+      "description": "Public postal address; no access instructions."
+    },
+    "location_accuracy": {
+      "type": "string",
+      "description": "Precision and method of public coordinates."
+    },
+    "campus_id": {
+      "type": "string",
+      "description": "Stable grouping identifier; not itself a capacity claim."
+    },
+    "facility_id": {
+      "type": "string",
+      "description": "Stable facility identifier, shared by phases of one facility."
+    },
+    "phase_id": {
+      "type": "string",
+      "description": "Separately documented development phase identifier."
+    },
+    "parent_record_id": {
+      "type": "string",
+      "description": "Optional parent project UUID in this catalogue."
+    },
+    "overlap_group": {
+      "type": "string",
+      "description": "Stable group for overlapping capacity observations."
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "OEM, not distributor or integrator unless explicitly identified as manufacturer."
+    },
+    "model": {
+      "type": "string",
+      "description": "Exact OEM model designation."
+    },
+    "variant": {
+      "type": "string",
+      "description": "Explicit documented configuration; never synthesized combinations."
+    },
+    "product_status": {
+      "type": "string",
+      "description": "Dated OEM lifecycle claim; availability is not assumed."
+    },
+    "official_url": {
+      "type": "string",
+      "description": "Official project or product page."
+    },
+    "cooling_technology": {
+      "type": "string",
+      "description": "Source-supported cooling technology."
+    },
+    "heat_rejection": {
+      "type": "string",
+      "description": "Source-supported heat rejection arrangement."
+    },
+    "grid_utility": {
+      "type": "string",
+      "description": "Reported electrical utility."
+    },
+    "water_source": {
+      "type": "string",
+      "description": "Reported water source."
+    },
+    "form_factor": {
+      "type": "string",
+      "description": "Physical form factor and units where applicable."
+    },
+    "interconnect": {
+      "type": "string",
+      "description": "Reported compute interconnect, including boundary."
+    },
+    "memory_type": {
+      "type": "string",
+      "description": "Reported GPU memory technology."
+    },
+    "power_rating_kind": {
+      "type": "string",
+      "description": "TDP, board power, rated input or other explicit boundary."
+    },
+    "power_conditions": {
+      "type": "string",
+      "description": "Conditions and qualifier of electrical rating."
+    },
+    "cooling_rating_conditions": {
+      "type": "string",
+      "description": "Temperatures, approach, flow and qualifiers at the stated cooling rating."
+    },
+    "efficiency_conditions": {
+      "type": "string",
+      "description": "Load, topology, mode and boundary for efficiency."
+    },
+    "warranty_conditions": {
+      "type": "string",
+      "description": "Territory, product/component coverage and limitations."
+    },
+    "redundancy": {
+      "type": "string",
+      "description": "Reported redundancy, no availability inference."
+    },
+    "status_date_basis": {
+      "type": "string",
+      "description": "Publication date or dated retrieval of undated evidence."
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "Connected catalogue table.",
+      "enum": [
+        "projects",
+        "equipment"
+      ]
+    },
+    "record_scope": {
+      "type": "string",
+      "description": "Physical identity granularity.",
+      "enum": [
+        "facility",
+        "phase",
+        "campus",
+        "model",
+        "configuration"
+      ]
+    },
+    "aggregation_role": {
+      "type": "string",
+      "description": "Only independent or child records can contribute to sums. Aggregate and unresolved scopes are excluded even if filtered children are absent.",
+      "enum": [
+        "independent",
+        "child",
+        "aggregate",
+        "unresolved"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Last evidenced project lifecycle; a portfolio listing alone does not establish operation.",
+      "enum": [
+        "announced",
+        "permitted",
+        "under_construction",
+        "commissioning",
+        "operational",
+        "partially_operational",
+        "suspended",
+        "cancelled",
+        "retired",
+        "unknown"
+      ]
+    },
+    "facility_type": {
+      "type": "string",
+      "description": "Evidence-supported data center purpose.",
+      "enum": [
+        "hyperscale",
+        "colocation",
+        "enterprise",
+        "ai_hpc",
+        "edge",
+        "modular",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "equipment_category": {
+      "type": "string",
+      "description": "Exact equipment category.",
+      "enum": [
+        "server",
+        "gpu_accelerator",
+        "compute_rack",
+        "ups",
+        "rack_pdu",
+        "switchgear",
+        "transformer",
+        "backup_generator",
+        "chiller",
+        "crah",
+        "crac",
+        "cooling_tower",
+        "dry_cooler",
+        "cdu",
+        "direct_to_chip",
+        "immersion",
+        "other"
+      ]
+    },
+    "quality_status": {
+      "type": "string",
+      "description": "Evidence qualification; does not certify a facility or product.",
+      "enum": [
+        "source_backed",
+        "needs_review"
+      ]
+    },
+    "created_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "updated_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "last_verified_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "status_as_of": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "announcement_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "construction_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "commissioning_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "expansion_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "retirement_date": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "aliases": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "sources": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "source_urls": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "owner_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "operator_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "developer_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "tenant_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "contractor_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "supplier_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "equipment_record_ids": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "bess_project_record_ids": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "bess_equipment_record_ids": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "communication_protocols": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "field_sources_json": {
+      "type": "json",
+      "description": "Map each populated factual column to registered source IDs. No wildcard evidence.",
+      "json_container": "object"
+    },
+    "evidence_json": {
+      "type": "json",
+      "description": "Field-level locator, units, publication date/revision and confidence; keys match field_sources_json.",
+      "json_container": "object"
+    },
+    "external_ids_json": {
+      "type": "json",
+      "description": "Namespace to exact public identifier.",
+      "json_container": "object"
+    },
+    "entities_json": {
+      "type": "json",
+      "description": "Stable entity IDs, disclosed names and precise owner/operator/developer/tenant roles.",
+      "json_container": "list"
+    },
+    "observations_json": {
+      "type": "json",
+      "description": "Bounded observations, each with field, value, unit, source_id, locator, boundary, as_of and kind. Use for PUE/WUE, dates, capacities, water, performance and investment.",
+      "json_container": "list"
+    },
+    "renewable_supply_json": {
+      "type": "json",
+      "description": "Separate physical_generation, contractual_procurement and environmental_claims objects; do not conflate.",
+      "json_container": "object"
+    },
+    "certifications_json": {
+      "type": "json",
+      "description": "Issuer, certificate, scope, date and source; marketing claims are not verified certificates.",
+      "json_container": "object"
+    },
+    "estimates_json": {
+      "type": "json",
+      "description": "Derived estimates with method and uncertainty, never substituted into reported columns.",
+      "json_container": "object"
+    },
+    "conflicts_json": {
+      "type": "json",
+      "description": "Quarantined field observations and source dates/boundaries; unresolved numeric fields must be null.",
+      "json_container": "object"
+    },
+    "extensions_json": {
+      "type": "json",
+      "description": "Extra documented metadata with units and conditions.",
+      "json_container": "object"
+    },
+    "it_capacity_mw": {
+      "type": "float",
+      "description": "Reported it capacity; requires basis. Never derived from another capacity.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "it_capacity_basis": {
+      "type": "string",
+      "description": "Stage/boundary of reported capacity.",
+      "enum": [
+        "operational",
+        "under_construction",
+        "ultimate_planned",
+        "design_maximum",
+        "unspecified"
+      ]
+    },
+    "grid_capacity_mw": {
+      "type": "float",
+      "description": "Reported grid capacity; requires basis. Never derived from another capacity.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "grid_capacity_basis": {
+      "type": "string",
+      "description": "Stage/boundary of reported capacity.",
+      "enum": [
+        "operational",
+        "under_construction",
+        "ultimate_planned",
+        "design_maximum",
+        "unspecified"
+      ]
+    },
+    "facility_capacity_mw": {
+      "type": "float",
+      "description": "Reported facility capacity; requires basis. Never derived from another capacity.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "facility_capacity_basis": {
+      "type": "string",
+      "description": "Stage/boundary of reported capacity.",
+      "enum": [
+        "operational",
+        "under_construction",
+        "ultimate_planned",
+        "design_maximum",
+        "unspecified"
+      ]
+    },
+    "it_operational_mw": {
+      "type": "float",
+      "description": "Explicit existing operational IT capacity.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "it_under_construction_mw": {
+      "type": "float",
+      "description": "Explicit IT capacity physically under construction.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "it_ultimate_mw": {
+      "type": "float",
+      "description": "Explicit total ultimate planned IT capacity; not additional capacity.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "backup_generation_mw": {
+      "type": "float",
+      "description": "Rated backup generator capacity, not IT or grid capacity.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "battery_power_mw": {
+      "type": "float",
+      "description": "Battery power at a stated boundary.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "battery_energy_mwh": {
+      "type": "float",
+      "description": "Battery energy with nominal/usable boundary.",
+      "minimum": 0,
+      "unit": "MWh"
+    },
+    "building_area_m2": {
+      "type": "float",
+      "description": "Reported building area; not site or data-hall area.",
+      "minimum": 0,
+      "unit": "m2"
+    },
+    "data_hall_area_m2": {
+      "type": "float",
+      "description": "Reported server/data-floor area; explicit unit conversion may be recorded.",
+      "minimum": 0,
+      "unit": "m2"
+    },
+    "rack_power_kw": {
+      "type": "float",
+      "description": "Reported rack rating, never a facility capacity estimate.",
+      "minimum": 0,
+      "unit": "kW"
+    },
+    "connection_voltage_kv": {
+      "type": "float",
+      "description": "Publicly reported nominal grid supply voltage.",
+      "minimum": 0,
+      "unit": "kV"
+    },
+    "input_power_kw": {
+      "type": "float",
+      "description": "Server/equipment input power; not accelerator TDP.",
+      "minimum": 0,
+      "unit": "kW"
+    },
+    "output_power_kw": {
+      "type": "float",
+      "description": "Rated active output power.",
+      "minimum": 0,
+      "unit": "kW"
+    },
+    "apparent_power_kva": {
+      "type": "float",
+      "description": "Rated apparent output power; not inferred active kW.",
+      "minimum": 0,
+      "unit": "kVA"
+    },
+    "accelerator_power_w": {
+      "type": "float",
+      "description": "Accelerator TDP/TBP or limit; rating kind and conditions required.",
+      "minimum": 0,
+      "unit": "W"
+    },
+    "peak_power_kw": {
+      "type": "float",
+      "description": "Reported peak power with duration/conditions.",
+      "minimum": 0,
+      "unit": "kW"
+    },
+    "input_voltage_v": {
+      "type": "float",
+      "description": "Nominal input voltage.",
+      "minimum": 0,
+      "unit": "V"
+    },
+    "output_voltage_v": {
+      "type": "float",
+      "description": "Nominal output voltage.",
+      "minimum": 0,
+      "unit": "V"
+    },
+    "frequency_hz": {
+      "type": "float",
+      "description": "Rated frequency.",
+      "minimum": 0,
+      "unit": "Hz"
+    },
+    "input_current_a": {
+      "type": "float",
+      "description": "Rated input current.",
+      "minimum": 0,
+      "unit": "A"
+    },
+    "efficiency_pct": {
+      "type": "float",
+      "description": "Reported efficiency with load and mode.",
+      "minimum": 0,
+      "unit": "%"
+    },
+    "cooling_capacity_kw": {
+      "type": "float",
+      "description": "Cooling/heat-transfer capacity at stated conditions.",
+      "minimum": 0,
+      "unit": "kW"
+    },
+    "thermal_output_kw": {
+      "type": "float",
+      "description": "Reported thermal output, not inferred from electrical input.",
+      "minimum": 0,
+      "unit": "kW"
+    },
+    "airflow_m3_h": {
+      "type": "float",
+      "description": "Reported airflow at stated rating.",
+      "minimum": 0,
+      "unit": "m3/h"
+    },
+    "liquid_flow_l_min": {
+      "type": "float",
+      "description": "Reported liquid flow at stated rating.",
+      "minimum": 0,
+      "unit": "L/min"
+    },
+    "temperature_min_c": {
+      "type": "float",
+      "description": "Minimum operating temperature.",
+      "unit": "degC"
+    },
+    "temperature_max_c": {
+      "type": "float",
+      "description": "Maximum operating temperature.",
+      "unit": "degC"
+    },
+    "width_mm": {
+      "type": "float",
+      "description": "Reported width.",
+      "minimum": 0,
+      "unit": "mm"
+    },
+    "height_mm": {
+      "type": "float",
+      "description": "Reported height.",
+      "minimum": 0,
+      "unit": "mm"
+    },
+    "depth_mm": {
+      "type": "float",
+      "description": "Reported depth.",
+      "minimum": 0,
+      "unit": "mm"
+    },
+    "weight_kg": {
+      "type": "float",
+      "description": "Weight with scope in evidence.",
+      "minimum": 0,
+      "unit": "kg"
+    },
+    "memory_gb": {
+      "type": "float",
+      "description": "Reported memory capacity; preserve OEM GB/GiB basis in evidence.",
+      "minimum": 0,
+      "unit": "GB"
+    },
+    "memory_bandwidth_gb_s": {
+      "type": "float",
+      "description": "Reported bandwidth; preserve maximum/peak qualifier.",
+      "minimum": 0,
+      "unit": "GB/s"
+    },
+    "runtime_minutes": {
+      "type": "float",
+      "description": "Runtime at runtime_load_kw with configuration and battery conditions.",
+      "minimum": 0,
+      "unit": "min"
+    },
+    "runtime_load_kw": {
+      "type": "float",
+      "description": "Explicit runtime test load.",
+      "minimum": 0,
+      "unit": "kW"
+    },
+    "warranty_years": {
+      "type": "float",
+      "description": "Warranty with component/territory conditions.",
+      "minimum": 0,
+      "unit": "years"
+    },
+    "rack_count": {
+      "type": "int",
+      "description": "Explicit reported count for this physical boundary.",
+      "minimum": 0
+    },
+    "accelerator_count": {
+      "type": "int",
+      "description": "Explicit reported count for this physical boundary.",
+      "minimum": 0
+    },
+    "latitude": {
+      "type": "float",
+      "description": "Public source coordinate; no inferred centroids.",
+      "minimum": -90,
+      "maximum": 90,
+      "unit": "degrees"
+    },
+    "longitude": {
+      "type": "float",
+      "description": "Public source coordinate; no inferred centroids.",
+      "minimum": -180,
+      "maximum": 180,
+      "unit": "degrees"
+    },
+    "liquid_cooling_ready": {
+      "type": "bool",
+      "description": "Explicit technical readiness; not verified installed GPUs or deployed liquid cooling."
+    },
+    "technical_area_m2": {
+      "type": "float",
+      "minimum": 0,
+      "unit": "m2",
+      "description": "Operator-reported technical space; not assumed identical to building or data-hall area."
+    }
+  }
+}

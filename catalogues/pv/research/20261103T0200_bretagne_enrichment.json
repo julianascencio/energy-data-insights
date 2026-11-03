@@ -1,0 +1,89 @@
+{
+  "source_id": "odre_bretagne_5_20_20261103T0200",
+  "source_sha256": "73d77d606e8bd2f763143f76a3d9ec31ca526d690255b9c21764168f7072abbe",
+  "identity_sha256": "8e5e385bde15a557411f80993035e4fb87faafb99b08e6b526712dc50a4c1cda",
+  "snapshot_date": "2026-08-31",
+  "mode": "enrichment",
+  "accepted_eics": [
+    "17W000001384115K"
+  ],
+  "observations": 9,
+  "enriched": 1,
+  "fields_added": 4,
+  "held": 8,
+  "review": [
+    {
+      "eic": "17W000002455853J",
+      "review_key": "17W000002455853J",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002455854H",
+      "review_key": "17W000002455854H",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000001700403I",
+      "review_key": "17W000001700403I",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W0000016384895",
+      "review_key": "17W0000016384895",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W0000017005513",
+      "review_key": "17W0000017005513",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W000001620479H",
+      "review_key": "17W000001620479H",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W000001402046R",
+      "review_key": "17W000001402046R",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W000001402045T",
+      "review_key": "17W000001402045T",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W000001384115K",
+      "result": "accepted",
+      "record_id": "a76ab904-1dec-5b52-a96e-37af0f8b38af",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000001384115K",
+          "native_fields": {
+            "datemiseenservice": "31/08/2021",
+            "gestionnaire": "Enedis",
+            "postesource": "BRUZ"
+          },
+          "phase_id": "G100000819052",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_bretagne_5_20_20261103T0200"
+        }
+      }
+    }
+  ]
+}
