@@ -216,6 +216,27 @@ def test_precision_cooling_matrix_accepts_exact_immersion_rows_without_scalar_ca
     assert result["candidates"][0]["cooling_capacity_kw"] is None
 
 
+def test_precision_cooling_matrix_accepts_exact_daikin_chiller_rows():
+    header = PRECISION_COOLING_MATRIX.splitlines()[0]
+    daikin_row = (
+        b"Daikin,EWAT-CZN,016; cooling-only,chiller,15.9,12/7 C entering/leaving "
+        b"water; 35 C ambient,,5.5,,48,,,,,EWAT-CZN table / 016"
+    )
+    result = parse_precision_cooling_matrix(
+        header + b"\n" + daikin_row + b"\n",
+        source_url=(
+            "https://www.daikin.eu/content/dam/internet-denv/catalogues_brochures/"
+            "industrial/Chillers_Catalogue_2026-ECPEN26-411.pdf"
+        ),
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["category"] == "chiller"
+    assert candidate["cooling_capacity_kw"] == 15.9
+    assert candidate["input_power_kw"] == 5.5
+    assert candidate["liquid_flow_l_min"] == 48
+
+
 def test_power_equipment_matrix_stages_exact_boundaries():
     result = parse_power_equipment_matrix(
         POWER_MATRIX,

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T22:26:00Z",
+  "updated_at": "2026-11-03T23:24:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -53,7 +53,8 @@
     "envicool_immersion_configurations": 13,
     "toshiba_current_three_phase_ups_configurations": 23,
     "mitsubishi_electric_current_ups_configurations": 26,
-    "fuji_electric_current_ups_configurations": 20
+    "fuji_electric_current_ups_configurations": 20,
+    "daikin_ewat_cz_2026_configurations": 27
   },
   "next_batches": [
     {
@@ -179,8 +180,8 @@
         "https://www.lenovo.com/",
         "https://www.coolitsystems.com/"
       ],
-      "offset": 311,
-      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Huawei NetCol8000-A/C and Delta RowCool/GoCool/in-rack tables are complete at 7+6+4+3+3. Envicool's two reviewed brochures are complete at 13 exact direct-to-chip and 13 immersion configurations. Continue independent regional electrical and liquid-cooling suppliers without recounting these inventories.",
+      "offset": 338,
+      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Huawei NetCol8000-A/C and Delta RowCool/GoCool/in-rack tables are complete at 7+6+4+3+3. Envicool's two reviewed brochures are complete at 13 exact direct-to-chip and 13 immersion configurations. Daikin EWAT-CZN/CZP/CZH 2026 nominal tables are complete at 9+9+9. Continue independent regional electrical and liquid-cooling suppliers without recounting these inventories.",
       "questions": [
         "Rack input vs server vs accelerator limit",
         "Measured performance workload/precision/test conditions, temperatures and flow",
@@ -188,7 +189,8 @@
         "Recheck Lenovo after a dated change-history update; do not recount the 20-option 2026-10-26 Available view",
         "Dell shipping quantities are complete at offset 85; values remain configuration-dependent maximum observations, never installed counts",
         "Resolve platform-SKU binding for 25 generic Dell L4 shipping rows before assigning HHHL/FHHL form factor",
-        "Envicool range-only IT-device power and coolant choices remain observations; do not promote them to cooling capacity, electrical input or ordered variants"
+        "Envicool range-only IT-device power and coolant choices remain observations; do not promote them to cooling capacity, electrical input or ordered variants",
+        "Daikin EWAT-CZ 2026 offset 27 is complete; preserve 040-MONO/040-DUAL identities and do not infer voltage, hydronic packages, dimensions or order-code suffixes"
       ]
     },
     {
@@ -247,11 +249,11 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "fuji-electric-ups-20261103T222600Z",
+    "run_id": "daikin-ewat-cz-20261103T232400Z",
     "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T2226-validation.json",
+    "validation": "2026-11-03T2324-validation.json",
     "added_projects": 0,
-    "added_equipment": 20,
+    "added_equipment": 27,
     "branch": "research/data-center-database-20261103T2221Z"
   }
 }

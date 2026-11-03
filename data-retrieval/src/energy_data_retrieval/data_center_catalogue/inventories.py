@@ -204,6 +204,7 @@ def parse_precision_cooling_matrix(
         "www.deltapowersolutions.com",
         "www.delta-emea.com",
         "www.deltaww.com",
+        "www.daikin.eu",
     }:
         raise ValueError("Unsupported official precision-cooling source URL")
     if expected_count < 1:
@@ -238,6 +239,7 @@ def parse_precision_cooling_matrix(
             "cdu",
             "crah",
             "crac",
+            "chiller",
             "direct_to_chip",
             "immersion",
         }:
