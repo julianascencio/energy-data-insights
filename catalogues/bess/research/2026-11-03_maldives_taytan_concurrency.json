@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-11-03T20:04:08Z",
+  "baseline_main": "2fd691a7a3f2f55b0c24748c5a8299d844d27b85",
+  "current_main": "2fd691a7a3f2f55b0c24748c5a8299d844d27b85",
+  "open_prs": [
+    {
+      "number": 107,
+      "title": "Add XGBoost and benchmark solar/wind forecasting models",
+      "head": "e47618a48f690c7230765de32def9a28e9732ead",
+      "branch": "feat/forecast-model-benchmark"
+    },
+    {
+      "number": 106,
+      "title": "[Wind Database] Add 52 projects, 188 turbines and 20 exact ACU configurations",
+      "head": "a8a3e79581d4e7a0d7ad608fcce98384ceeb3c9c",
+      "branch": "research/wind-20261103-1935"
+    },
+    {
+      "number": 105,
+      "title": "[Data Center Database] Add Envicool liquid-cooling inventory",
+      "head": "b6ebbbaa3cfc4625deb22db986af7950d63de633",
+      "branch": "research/data-center-database-20261103T1924Z"
+    },
+    {
+      "number": 49,
+      "title": "Bump actions/upload-pages-artifact from 4.0.0 to 5.0.0",
+      "head": "c2f94e0af68f13ee5f19ad9e9f716e5a5daebcd3",
+      "branch": "dependabot/github_actions/actions/upload-pages-artifact-5.0.0"
+    },
+    {
+      "number": 48,
+      "title": "Bump actions/configure-pages from 5.0.0 to 6.0.0",
+      "head": "9452b5a607a48308493f82b40bcad36000a1ff08",
+      "branch": "dependabot/github_actions/actions/configure-pages-6.0.0"
+    },
+    {
+      "number": 47,
+      "title": "Bump astral-sh/setup-uv from 10.3.2 to 10.3.3",
+      "head": "1e970297c47276a53ab4e4937346ec9e36165a72",
+      "branch": "dependabot/github_actions/astral-sh/setup-uv-10.3.3"
+    }
+  ],
+  "new_pr_paths": [
+    "CITATION.cff",
+    "README.md",
+    "analysis/README.md",
+    "analysis/src/energy_analysis/forecast_benchmark.py",
+    "analysis/tests/test_forecast_benchmark.py",
+    "data-retrieval/README.md",
+    "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
+    "data-retrieval/tests/test_ons.py",
+    "docs/_ext/project_docs.py",
+    "docs/forecast-benchmark.md",
+    "docs/references.md",
+    "docs/user-guide.rst",
+    "examples/analysis/README.rst",
+    "examples/analysis/data/forecast/forecast_benchmark_lead_scores.csv",
+    "examples/analysis/data/forecast/forecast_benchmark_provenance.json",
+    "examples/analysis/data/forecast/forecast_benchmark_scores.csv",
+    "examples/analysis/data/forecast/forecast_ons_provenance.json",
+    "examples/analysis/data/forecast/forecast_ons_solar.csv",
+    "examples/analysis/data/forecast/forecast_ons_wind.csv",
+    "examples/analysis/data/forecast/forecast_timestral_predictions.csv",
+    "examples/analysis/data/forecast/forecast_timestral_provenance.json",
+    "examples/analysis/plot_forecast_model_benchmark.py",
+    "methods/README.md",
+    "methods/pyproject.toml",
+    "methods/src/energy_methods/__init__.py",
+    "methods/src/energy_methods/_regression.py",
+    "methods/src/energy_methods/lightgbm.py",
+    "methods/src/energy_methods/references.json",
+    "methods/src/energy_methods/wind_physics.py",
+    "methods/src/energy_methods/xgboost.py",
+    "methods/tests/test_forecast_regressors.py",
+    "methods/tests/test_references.py",
+    "references.bib",
+    "scripts/prepare_forecast_benchmark.py",
+    "uv.lock"
+  ],
+  "active_workflow_runs": [],
+  "scope_assessment": "No open BESS or PV PR. Wind106 and forecasting107 touch shared citation files; seven references queued under BESS research. DataCenter105 is scoped elsewhere. No overlapping BESS record, source, schema or adapter writes observed."
+}

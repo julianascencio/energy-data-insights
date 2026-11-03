@@ -71,6 +71,13 @@ or a live availability feed. Do not interpret record counts as installed capacit
    personal contacts and lot-level geography. Review each site against existing
    identities; Budzyń remains held. Procurement deadlines are not COD, and
    missing annex ratings stay unknown. Changed revisions require fresh review.
+   For the 9 December 2021 Maldives ARISE screening report,
+   `scripts/stage_bess_arise.py` stages local `pdftotext -layout` output from
+   page 15. It checks units, date and all 18 named grid identities. Preserve the
+   two Addu grids and the single Isdhoo-Kallaidhoo-Dhanbidhoo grid. Its 32.7 MWh
+   row sum differs from the approximate 37 MWh cover and later 40 MWh tender;
+   never scale rows to fit a portfolio total. These are historical design
+   estimates, not current as-built ratings. Keep ARISE distinct from ASSURE.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.

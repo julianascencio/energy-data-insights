@@ -1,0 +1,63 @@
+{
+  "completed_at": "2026-11-03T20:04:08Z",
+  "checks": {
+    "ruff": 0,
+    "format": 0,
+    "types": 0,
+    "hygiene": 0,
+    "citations": 0,
+    "viewer": 0,
+    "projects_example": 0,
+    "equipment_example": 0
+  },
+  "full_python_suite": {
+    "passed": 1990,
+    "seconds": 89.45,
+    "command": "PYTHONPATH=data-retrieval/src:methods/src:analysis/src MPLBACKEND=Agg /tmp/bess1350/locked-env/bin/pytest -q"
+  },
+  "focused_tests": {
+    "passed": 37,
+    "new_parser_tests": 9
+  },
+  "documentation": {
+    "strict": true,
+    "gallery_reexecuted": true,
+    "local_link_pages_checked": 469
+  },
+  "viewer_tests_passed": 15,
+  "distribution_build": {
+    "packages": 3,
+    "wheels": 3,
+    "sdists": 3,
+    "twine_strict": "passed",
+    "isolated_wheel_smoke": "passed"
+  },
+  "parquet": {
+    "catalogues": [
+      "bess",
+      "bess_oem"
+    ],
+    "independent_builds_per_catalogue": 2,
+    "byte_identical": true,
+    "compression": "zstd",
+    "storage": "Outside Git under /tmp/bess1947; standard documentation build regenerates downloadable assets"
+  },
+  "initial_failure_fixed": "Ruff RUF001: curly foot-unit characters changed to explicit Unicode escapes; subsequent lint and 37 focused tests passed.",
+  "unrun": "Remote GitHub matrix/CI results are not represented as local successes; no additional imagery wheel smoke performed in this iteration.",
+  "log_sha256": {
+    "full-tests": "7db662fec110932905ca933f7d879efe2ff5b72891a9cc7992ed0580faea8f9c",
+    "ruff": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "format": "9d37eac3239c0313e5b9f8f304b1522816a5800d88f68745d026b0a590b15e67",
+    "types": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "hygiene": "7a2f08727760409322e04e8bdca22851a55b5d08a8a92631f552c17ba425f6d0",
+    "citations": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
+    "viewer": "3111a1070a1c6dd4b8bab279819056337c7a8dcff41ade61620c74291552fb47",
+    "projects_example": "23f6f366a601b97935d1a8c4f2d8a618591bd12eb18f38efb4850f6cc55e8dbc",
+    "equipment_example": "bd93e8f7c05afc236d31cd370da4b1d2d2ecfcf2f7021eb640730320f2bcdcf3",
+    "docs": "530859562c13578f47c8deccb0820bc482c6a5b1b81ecb18040d8b14c513eb6b",
+    "docs-links": "549f22bbde81aad461640f48de33871fc1ba780068593ed2199c7735e4a2eb74",
+    "build": "7770892eabf3cff6bb3a4ac6d188fcf25b0b966aaeac81a909e0ad06c27d4db8",
+    "twine": "80f16d86e34693fb35dc7c3c1800d1ba154f74e39f30449207192907d95c5433",
+    "wheels": "3ab8809cb511dd793d02caee1fe22bc10a2dbf5afa329e498f8ac365d787addc"
+  }
+}
