@@ -11,7 +11,16 @@ export function hasLocation(row) {
 
 export function projectSummary(rows) {
   const ac = statistics(rows, "capacity_ac_mw"), dc = statistics(rows, "capacity_dc_mw");
-  return {ac, dc, located: rows.filter(hasLocation).length,
+  return {ac, dc, ...projectGeography(rows)};
+}
+
+export function bessProjectSummary(rows) {
+  return {power: statistics(rows, "power_capacity_mw"),
+    energy: statistics(rows, "energy_capacity_mwh"), ...projectGeography(rows)};
+}
+
+function projectGeography(rows) {
+  return {located: rows.filter(hasLocation).length,
     countries: new Set(rows.map((row) => row.country_code).filter((code) =>
       typeof code === "string" && code.trim())).size};
 }
