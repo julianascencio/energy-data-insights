@@ -132,3 +132,35 @@ test("data center capacity keeps scopes and bases separate, even after filtering
   assert.deepEqual(dataCenterCapacity(rows.slice(3,4),"it_capacity_mw").byBasis,{});
   assert.throws(() => dataCenterCapacity(rows,"backup_generation_mw"));
 });
+
+
+test("wind excludes unresolved scopes and keeps capacity lifecycle categories separate", async () => {
+  const {windCapacity} = await import("../../docs/_static/database-core.mjs");
+  const rows = [
+    {aggregation_role:"child", status:"operational", installed_capacity_mw:0},
+    {aggregation_role:"child", status:"operational", installed_capacity_mw:20},
+    {aggregation_role:"aggregate", status:"operational", installed_capacity_mw:20},
+    {aggregation_role:"unresolved", status:"unknown", installed_capacity_mw:999},
+    {aggregation_role:"independent", status:"announced", planned_capacity_mw:100},
+    {aggregation_role:"child", status:"decommissioned", installed_capacity_mw:5},
+    {aggregation_role:"child", status:"operational", installed_capacity_mw:20, overlap_group:"repower"},
+  ];
+  assert.deepEqual(windCapacity(rows,"installed_capacity_mw"), {excluded:3,unknown:1,byStatus:{operational:{reported_mw:20,records:2},decommissioned:{reported_mw:5,records:1}}});
+  assert.equal(windCapacity(rows.slice(-1),"installed_capacity_mw").excluded,1);
+  assert.deepEqual(windCapacity(rows.slice(4,5),"installed_capacity_mw").byStatus,{});
+  assert.equal(windCapacity(rows,"planned_capacity_mw").byStatus.announced.reported_mw,100);
+  assert.throws(() => windCapacity(rows,"capacity_mw"));
+});
+
+test("wind lifecycle evidence does not imply eligible capacity scope", async () => {
+  const {windEvidence} = await import("../../docs/_static/database-core.mjs");
+  const rows = [
+    {entity_type:"projects",status:"operational",aggregation_role:"unresolved"},
+    {entity_type:"projects",status:"decommissioned",aggregation_role:"independent"},
+    {entity_type:"projects",status:"unknown",aggregation_role:"unresolved"},
+    {entity_type:"projects",status:"operational",aggregation_role:"child",overlap_group:"phase-pending"},
+    {entity_type:"equipment",status:"unknown"},
+  ];
+  assert.deepEqual(windEvidence(rows), {lifecycleKnown:3,lifecycleUnknown:1,scopeExcluded:3});
+  assert.deepEqual(windEvidence([]), {lifecycleKnown:0,lifecycleUnknown:0,scopeExcluded:0});
+});

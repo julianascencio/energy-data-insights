@@ -1,50 +1,48 @@
 {
-  "executed_at": "2026-11-03T04:19:11Z",
+  "executed_at": "2026-11-03T07:22:54Z",
   "python": "3.12",
   "checks": [
     {
       "command": "python -m energy_data_retrieval.data_center_catalogue validate --root catalogues/data_centers",
       "result": "passed",
-      "records": 266
+      "records": 382
     },
     {
       "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py",
       "result": "passed",
-      "tests": 23
+      "tests": 28
     },
     {
-      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_bess_catalogue.py data-retrieval/tests/test_pv_catalogue.py",
+      "command": "pytest -q",
       "result": "passed",
-      "tests": 66
+      "tests": 1747,
+      "skipped": 5,
+      "note": "Optional cdsapi, Python 3.13 Orbital PV and imagery integrations were skipped by their declared environment guards"
     },
     {
-      "command": "pytest -q analysis/tests/test_pv_database.py analysis/tests/test_bess_database.py analysis/tests/test_bess_oem_database.py methods/tests/test_references.py",
-      "result": "passed",
-      "tests": 29
-    },
-    {
-      "command": "node --test tests/js/test_database_viewer.mjs",
-      "result": "passed",
-      "tests": 9
-    },
-    {
-      "command": "ruff check .; ruff format --check .; ty check",
-      "result": "passed"
+      "command": "ruff format --check .; ruff check .; ty check",
+      "result": "passed after formatting correction",
+      "note": "The initial format check identified two changed Python files; both were formatted and all checks were rerun successfully"
     },
     {
       "command": "python scripts/check_repository.py; python scripts/check_citations.py",
       "result": "passed",
-      "repository_candidates": 2539
+      "repository_candidates": 2589
     },
     {
-      "command": "MPLBACKEND=Agg python examples/database/plot_data_center_catalogue.py",
+      "command": "python examples/database/plot_data_center_catalogue.py",
       "result": "passed",
-      "note": "Rebuilt geographic, capacity-completeness, cooling, GPU, UPS, rack-PDU, Schneider Galaxy VS and STULZ CyberAir comparisons"
+      "note": "Rebuilt geographic, completeness, cooling and equipment comparisons; capacity output keeps IT/grid/facility bases separate"
     },
     {
-      "command": "sphinx-build -E -a -W --keep-going -b html docs docs/_build/html",
+      "command": "node --test tests/js/test_database_viewer.mjs",
       "result": "passed",
-      "note": "Full offline gallery and shared Data Center viewer snapshot rebuilt"
+      "tests": 11
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs docs/_build/html",
+      "result": "passed",
+      "note": "Strict offline Sphinx/gallery build completed"
     },
     {
       "command": "python scripts/check_docs_links.py docs/_build/html",
@@ -54,21 +52,24 @@
     {
       "check": "Two independent Data Center snapshot builds",
       "result": "byte-identical projects.parquet, equipment.parquet and manifests",
-      "projects_parquet_sha256": "012646460267774f0788ae5bebb4fa3fdcd3646658bd3364f56b9861f9e8f96c",
-      "equipment_parquet_sha256": "f29d5235e3bd205a615008e118591eac38323601e9efdcd1abda0c984fc266d0",
-      "input_sha256": "90d3ddb0bd6d39806fee4306c1814cb11e6796b34590b5a8b1c0f21435376130"
+      "projects_parquet_sha256": "041b89fdfe7a0e572852bc42a0af99376f1bb6119939b11a503a19a6b208032f",
+      "equipment_parquet_sha256": "18d77450ab4f2a3f194631bee32ae94c6b61d78f9993718b3eaf0bcc939e278f",
+      "manifest_sha256": "052a51df3d593ccc24f7c7957005f4d61fa2e8c8a71ba363ab17b04ea0f9dcf6",
+      "input_sha256": "0b36029c7d428410dc46c90fb211a03b1fd08acf409a46cd314c9f0046352cba"
     },
     {
       "check": "Generated viewer datasets",
-      "result": "passed through the strict docs build; 123 project and 143 equipment rows with checksum-linked Parquet snapshots",
-      "note": "A standalone headless Chromium run was not executed; browser-independent viewer behavior is covered by nine Node tests"
+      "result": "passed through the strict docs build; 165 project and 217 equipment rows with checksum-linked Parquet snapshots",
+      "note": "A standalone headless Chromium run was not executed; browser-independent viewer behavior is covered by 11 Node tests"
     }
   ],
   "publication_preflight": {
-    "main_sha": "4f493a8a8571bb931027c84cb776b0a0e417a8d8",
-    "branch": "research/data-center-database-20261103T0417Z",
-    "pull_request": "pending publication",
-    "pull_request_state": "not yet opened",
+    "main_sha": "15e9d60b84b0e741979437fd8d7172f0d7e30824",
+    "branch": "research/data-center-database-20261103T0521Z",
+    "pull_request": 92,
+    "pull_request_state": "open before publication",
+    "remote_branch_head_before_publication": "cb6a1c54c29581a028cb0b7d5f6981ff36534345",
+    "remote_compare": "ahead 2, behind 0 from current main",
     "remote_ci_for_new_commit": "not available until publication"
   }
 }
