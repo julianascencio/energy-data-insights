@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T17:02:35.135326+00:00",
-  "ranking_file": "20261103T1700_top10_coverage.json",
-  "selection_note": "ARENA off-grid comparison table and named project follow-up; MidNite standard and prewired model table.",
-  "next_highest_value_source": "Reconcile Karratha Airport PV with the existing Karratha Solar Farm using site/operator IDs, and verify Doomadgee original array versus expansion using Ergon as-built phase documentation.",
+  "updated_at": "2026-11-03T18:02:29.596791+00:00",
+  "ranking_file": "20261103T1800_top10_coverage.json",
+  "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
+  "next_highest_value_source": "Ergon Burketown dedicated works record, then UK REPD Q2 2026 pending-construction partition and exact Ref IDs.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6131,6 +6131,120 @@
       "processed_partition": "MNPV16 family and HVPR factory-prewired configurations",
       "retry_condition": "OEM restores downloadable revision or distinct product manual",
       "next_action": "Reconcile 250/300 V product and breaker nomenclature on the live wiring diagrams."
+    },
+    {
+      "id": "karratha_fy2024",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://karratha.wa.gov.au/system/files/city_of_karratha_emissions_reduction_plan_report_1.pdf",
+      "version_or_date": "FY2024 Table 14",
+      "licence_assessment": "Limited factual extraction with attribution; report not redistributed",
+      "access_assessment": "Published source; no gated access attempted",
+      "estimated_useful_yield": {
+        "accepted_from_selected_partition": 7,
+        "remaining": "unverified"
+      },
+      "fields_offered": [
+        "facility identity",
+        "measured generation",
+        "reported size",
+        "export",
+        "self consumption"
+      ],
+      "last_attempt": "2026-11-03T18:02:29.596791+00:00",
+      "result": "Seven accepted; Operations Centre capacity conflict retained.",
+      "retry_condition": "Check revision, access and unresolved conditions before resuming.",
+      "next_action": "Obtain Operations Centre as-built rating with explicit AC or DC basis.",
+      "processed_cursor": {
+        "table": 14,
+        "reviewed": 7,
+        "accepted": 7
+      }
+    },
+    {
+      "id": "ergon_remote_portfolio",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.ergon.com.au/network/our-network/isolated-and-remote-power-stations/transitioning-to-renewables",
+      "version_or_date": "Public project pages checked 2026-11-03",
+      "licence_assessment": "Limited operator facts; no site prose or imagery redistributed",
+      "access_assessment": "Published source; no gated access attempted",
+      "estimated_useful_yield": {
+        "accepted_from_selected_partition": 3,
+        "remaining": "unverified"
+      },
+      "fields_offered": [
+        "network operator",
+        "phase scope",
+        "PV and battery design ratings"
+      ],
+      "last_attempt": "2026-11-03T18:02:29.596791+00:00",
+      "result": "Three sites accepted; Burketown held.",
+      "retry_condition": "Check revision, access and unresolved conditions before resuming.",
+      "next_action": "Find dedicated Burketown site and commissioning record.",
+      "processed_cursor": {
+        "reviewed": 4,
+        "accepted": 3,
+        "held": [
+          "Burketown"
+        ]
+      }
+    },
+    {
+      "id": "beny_disconnect",
+      "country": "CHN",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.beny.com/wp-content/uploads/2021/09/Solar-DC-AC-Box-BENY-Electric-202207-2.pdf",
+      "version_or_date": "202207-2",
+      "licence_assessment": "Copyrighted OEM document; factual values only; no bulk licence inferred",
+      "access_assessment": "Published source; no gated access attempted",
+      "estimated_useful_yield": {
+        "accepted_from_selected_partition": 6,
+        "remaining": "unverified"
+      },
+      "fields_offered": [
+        "voltage",
+        "currents",
+        "string counts",
+        "temperature",
+        "enclosure dimensions"
+      ],
+      "last_attempt": "2026-11-03T18:02:29.596791+00:00",
+      "result": "Six accepted. Previously recorded 600 V identity collision still held.",
+      "retry_condition": "Check revision, access and unresolved conditions before resuming.",
+      "next_action": "Only revisit held 600 V entries when OEM gives independent exact ordering identifiers.",
+      "processed_cursor": {
+        "partition": "BHS-6/1 and BHT-1/1, 12/1, 16/1 named DC tables",
+        "accepted": 6
+      }
+    },
+    {
+      "id": "aneel_daily_1800",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.aneel.gov.br/pt_BR/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55",
+      "version_or_date": "2026-11-03 daily",
+      "licence_assessment": "ODbL; mixed-catalogue reuse assessment pending",
+      "access_assessment": "Published source; no gated access attempted",
+      "estimated_useful_yield": {
+        "accepted_from_selected_partition": 0,
+        "remaining": "unverified"
+      },
+      "fields_offered": [
+        "CEG",
+        "PV technology",
+        "lifecycle",
+        "capacity",
+        "siting"
+      ],
+      "last_attempt": "2026-11-03T18:02:29.596791+00:00",
+      "result": "Resource metadata checked; zero accepted.",
+      "retry_condition": "Check revision, access and unresolved conditions before resuming.",
+      "next_action": "Review database-level obligations before staging any source observations.",
+      "processed_cursor": {
+        "release": "2026-11-03",
+        "accepted": 0
+      }
     }
   ]
 }
