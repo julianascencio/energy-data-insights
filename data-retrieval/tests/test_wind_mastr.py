@@ -121,20 +121,23 @@ def test_xml_partition_count_and_dictionary_guard(tmp_path):
         read_partition(wind, dictionary, expected_total=1, expected_selected=1)
 
 
-def test_niedersachsen_uses_explicit_state_and_preserves_scope():
+@pytest.mark.parametrize(
+    "state_code,state_name", [("1408", "Niedersachsen"), ("1409", "Nordrhein-Westfalen")]
+)
+def test_selected_state_preserves_scope(state_code, state_name):
     data = inputs()
-    data["dictionary"]["1408"] = "Niedersachsen"
+    data["dictionary"][state_code] = state_name
     for unit in data["units"]:
-        unit["Bundesland"] = "1408"
+        unit["Bundesland"] = state_code
     rows, _ = stage(
         data["units"],
         data["dictionary"],
         [],
         source_id="synthetic",
         now="2026-11-03T13:40:00Z",
-        state_code="1408",
+        state_code=state_code,
     )
-    assert rows[0]["region"] == "Niedersachsen"
+    assert rows[0]["region"] == state_name
     assert rows[0]["aggregation_role"] == "unresolved"
     with pytest.raises(ValueError, match="selected state"):
         run(data)

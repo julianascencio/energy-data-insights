@@ -349,3 +349,20 @@ NGC's independent product page describes broad platforms without an exact model
 rating table; no artificial configurations were generated from power ranges.
 Next: Nordrhein-Westfalen (code1409,6,753units), Jönköping and exact component
 configuration evidence.
+
+
+## Nordrhein-Westfalen and exact yaw/pitch gearboxes
+
+The complete6,753-unit MaStR partition(code1409) yields67parks and314linked
+units from2,732namegroups;2,665groups remain held. All prior records and six
+capacity summaries stay unchanged. Added state support preserves default APIs.
+
+The original NGC regional archive PDF supplies seven exact SYW yaw-drive types
+and seven SPT pitch-gearbox types. Rated-torque ranges, peak torque and gear
+ratios remain distinct; stage-count options stay within each model. Generic
+platform temperature, certification and turbine-compatibility claims are not
+inherited. Physical pages9/10(printed08/09) were visually reviewed. Five SMG
+platform columns remain held. See `ngc_wind_yaw_pitch_2022`. The German2024URL
+returned404; the regional2022PDF downloaded successfully. This was not an
+authentication or explicit reuse restriction. Winergy's unnamed6MW exhibition
+configuration remains held for exact identity. No numerical curves added.

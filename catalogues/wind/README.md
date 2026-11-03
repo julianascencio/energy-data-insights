@@ -3,9 +3,9 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 5,714 project records (5,713 non-group records),
-68 exact equipment records, 1,351 registry turbine records and two original numerical
-power curves, across 59 countries and nine equipment manufacturer names.
+The proposed branch contains 5,781 project records (5,780 non-group records),
+82 exact equipment records, 1,665 registry turbine records and two original numerical
+power curves, across 59 countries and ten equipment manufacturer names.
 Merged main at `5063c416` contains 5,355 projects, 53 equipment, zero individual
 turbines and two curves. These are catalogue counts, not an operating census.
 
@@ -60,3 +60,6 @@ remain excluded from capacity totals. See the 1235 ledgers.
 The 13:35 increment reviews all9,034 Niedersachsen units, adding73parks and366
 linked turbines;2,973namegroups remain held. Two exact Winergy integrated
 gearbox-generator assemblies add component coverage. Capacity exclusions remain.
+
+The14:35 increment adds67Nordrhein-Westfalen parks,314linked turbines and14NGC
+yaw/pitch gearbox types. All6,753state units reviewed;2,665namegroups held.

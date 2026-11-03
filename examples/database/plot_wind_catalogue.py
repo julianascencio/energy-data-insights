@@ -203,3 +203,19 @@ print(
         ["model", "rated_power_kw", "rated_power_conditions", "mass_kg"],
     ]
 )
+
+# %%
+# Exact yaw/pitch gearboxes are component types, not installed turbine fleets.
+ngc = equipment.loc[equipment.manufacturer.eq("NGC")]
+if not ngc.empty:
+    print("NGC gearbox envelopes; rated torque and peak torque remain distinct:")
+    for _, component in ngc.iterrows():
+        spec = json.loads(component.extensions_json)
+        print(
+            component.model,
+            spec["function"],
+            spec["rated_torque_range_kNm"],
+            spec["peak_torque_kNm"],
+            "kNm",
+            spec["speed_ratio_range"],
+        )

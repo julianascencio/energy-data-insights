@@ -6351,3 +6351,11 @@ Winergy (n.d.). **HybridDrive PZFG2456/PZFG2535 technical table**. [Source](http
 **Role:** data source. Original PDF p2 table; historical two-stage integrated gearbox-generator models. PDF creation metadata is not publication date. No turbine compatibility inferred.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### ngc_wind_yaw_pitch_2022
+
+NGC (n.d.). **Wind All New Products; SYW/SPT exact type tables**. [Source](https://ngcamericas.com/wp-content/uploads/2022/02/Wind-All-New-Products.pdf)
+
+**Role:** data source. Regional archive PDF; original checksum retained. Physical pages9/10, printed08/09 exact SYW/SPT types. Generic platform limits not transferred.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
