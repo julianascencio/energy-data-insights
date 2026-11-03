@@ -14,6 +14,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_server_accelerator_matrix,
     parse_server_accelerator_shipping_matrix,
     parse_supermicro_nvidia_systems,
+    parse_ups_rating_matrix,
 )
 
 CONTENT = (Path(__file__).parent / "fixtures/data_centers/named-inventory.html").read_bytes()
@@ -39,6 +40,51 @@ LENOVO_COMPARISON = (
 SUPERMICRO_SYSTEMS = (
     Path(__file__).parent / "fixtures/data_centers/supermicro-nvidia-systems.html"
 ).read_bytes()
+UPS_MATRIX = (Path(__file__).parent / "fixtures/data_centers/ups-rating-matrix.csv").read_bytes()
+
+
+def test_ups_matrix_preserves_kva_kw_and_market_boundaries():
+    toshiba_rows = b"\n".join(UPS_MATRIX.splitlines()[:3]) + b"\n"
+    result = parse_ups_rating_matrix(
+        toshiba_rows,
+        source_url="https://toshiba.com/tic/product/example-ups/",
+        expected_count=2,
+    )
+    assert [row["variant"] for row in result["candidates"]] == [
+        "40 kVA/kW; 480 V; 60 Hz",
+        "100 kVA; 480 V; 60 Hz",
+    ]
+    assert result["candidates"][0]["output_power_kw"] == 40
+    assert result["candidates"][1]["output_power_kw"] is None
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+def test_ups_matrix_drift_duplicates_and_invalid_sources_fail():
+    url = "https://www.toshiba.com/tic/product/example-ups/"
+    toshiba_rows = b"\n".join(UPS_MATRIX.splitlines()[:3]) + b"\n"
+    with pytest.raises(ValueError, match="Changed UPS matrix shape"):
+        parse_ups_rating_matrix(toshiba_rows, source_url=url, expected_count=3)
+    duplicate = toshiba_rows + UPS_MATRIX.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate UPS rating row"):
+        parse_ups_rating_matrix(duplicate, source_url=url, expected_count=2)
+    with pytest.raises(ValueError, match="Unsupported official UPS"):
+        parse_ups_rating_matrix(UPS_MATRIX, source_url="https://example.com/", expected_count=2)
+    with pytest.raises(ValueError, match="manufacturer/source mismatch"):
+        parse_ups_rating_matrix(UPS_MATRIX, source_url=url, expected_count=3)
+
+
+def test_ups_matrix_accepts_mitsubishi_official_rows():
+    header, *rows = UPS_MATRIX.splitlines()
+    mitsubishi = header + b"\n" + rows[-1] + b"\n"
+    result = parse_ups_rating_matrix(
+        mitsubishi,
+        source_url="https://mitsubishicritical.com/uninterruptible-power-supplies/",
+        expected_count=1,
+    )
+    assert result["candidates"][0]["manufacturer"] == "Mitsubishi Electric"
+    assert result["candidates"][0]["apparent_power_kva"] == 300
+    assert result["candidates"][0]["output_power_kw"] == 300
 
 
 @pytest.mark.parametrize(

@@ -1,0 +1,102 @@
+{
+  "run_id": "toshiba-ups-20261103T202700Z",
+  "validated_at": "2026-11-03T20:33:00Z",
+  "branch": "research/data-center-database-20261103T2022Z",
+  "base_main_sha": "2598b1431fc85aff95f589518e6cb8f5c4e572c1",
+  "prepublication_remote_head": null,
+  "canonical_records": 749,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 567,
+    "countries": 36,
+    "operators": 13,
+    "oems": 20
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 544,
+    "countries": 36,
+    "operators": 13,
+    "oems": 19
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 23,
+    "substantively_enriched_equipment": 0,
+    "new_oems": ["Toshiba"]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_toshiba_ups_batch.py <temporary-output> && cmp <temporary-output> catalogues/data_centers/records/equipment/2026-11-03-toshiba-ups.jsonl",
+      "result": "passed twice; 23 deterministic reviewed records"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 749 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "57 passed"
+    },
+    {
+      "command": "pytest -q",
+      "result": "2072 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 777 files format-checked"
+    },
+    {
+      "command": "uv sync --locked --all-packages --group docs && ty check",
+      "result": "passed after installing the locked optional xgboost dependency required by the fresh environment"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3207 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; current catalogue statistics and equipment comparison reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs docs/_build/html-toshiba && python scripts/check_docs_links.py docs/_build/html-toshiba",
+      "result": "passed; 489 HTML pages generated and link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+    "equipment_sha256": "2ccf0746bb3ce5036a3c4e1b4b7333f9f86316818008e95e8a222d3ae8c72e7f",
+    "input_sha256": "19581682a8d896b1b6ee687992db302bbf553ec96bf7c783430aaad5a11a9bff",
+    "manifest_sha256": "3f7545c4e3092b03e2721c68b84f4b68d0489d21753caf9fadefba66ce274eac"
+  },
+  "source_capture": {
+    "official_html_originals_checksummed": 4,
+    "source_bytes": 2214185,
+    "reuse_note": "Public copyrighted OEM product pages; factual extraction only; no open licence asserted and originals are not redistributed. Socomec remains under its existing explicit Section 5 reuse hold."
+  },
+  "remote_ci_before_publication": {
+    "commit": "b6ebbbaa3cfc4625deb22db986af7950d63de633",
+    "python_quality_and_tests_conclusion": "success",
+    "documentation_conclusion": "success"
+  }
+}

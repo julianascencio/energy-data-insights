@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T19:18:00Z",
+  "updated_at": "2026-11-03T21:25:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -50,7 +50,9 @@
     "delta_gocool_models": 3,
     "delta_inrack_l2l_configurations": 3,
     "envicool_direct_to_chip_configurations": 13,
-    "envicool_immersion_configurations": 13
+    "envicool_immersion_configurations": 13,
+    "toshiba_current_three_phase_ups_configurations": 23,
+    "mitsubishi_electric_current_ups_configurations": 26
   },
   "next_batches": [
     {
@@ -154,15 +156,16 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 231,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows and five Siemens NXAIR variants complete; continue generator and electrical-equipment suppliers beyond Cummins/mtu/Eaton/Siemens",
+      "offset": 257,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba current three-phase UPS configurations and all 26 exact rows in Mitsubishi Electric's current eight-family UPS comparison complete; continue independent generator and electrical-equipment suppliers without recounting these inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
         "Reference existing BESS battery models rather than duplicating them",
         "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page",
         "mtu 50/60 Hz DCC tables are complete at 12+8; never convert their kVA ratings to active kW or select a portfolio voltage",
-        "Find exact mtu model-level fuel consumption, dimensions, weight, emissions calibration and ordered voltage tables before enrichment"
+        "Find exact mtu model-level fuel consumption, dimensions, weight, emissions calibration and ordered voltage tables before enrichment",
+        "Mitsubishi family efficiency, cabinet/weight groups and compatible peripherals remain observations until exact rating-level tables bind them; do not infer 9900D 1500/1600/2000 kVA rows from the portfolio range"
       ]
     },
     {
@@ -234,6 +237,10 @@
       "source": "Princeton Digital Group website",
       "url": "https://princetondg.com/terms-and-conditions/",
       "reason": "Section 3 explicitly prohibits automated copying/downloading and redistribution. Stop collection/import; require permission or independent public planning records."
+    },
+    {
+      "source": "Socomec technical guides and product tables",
+      "reason": "Existing repository terms review records a Section 5 restriction on specification disclosure/copying without written authorization. No Data Center facts or downloaded source bytes may be imported without permission."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",

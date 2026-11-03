@@ -1,0 +1,100 @@
+{
+  "run_id": "mitsubishi-ups-20261103T212500Z",
+  "validated_at": "2026-11-03T21:35:00Z",
+  "branch": "research/data-center-database-20261103T2022Z",
+  "base_main_sha": "0afa324db3a2c0ef19cb3ff10621169e49221aa6",
+  "prepublication_remote_head": "3556f1a78c426d43fcc0ea5b303f74c05041e86b",
+  "canonical_records": 775,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 593,
+    "countries": 36,
+    "operators": 13,
+    "oems": 21
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 544,
+    "countries": 36,
+    "operators": 13,
+    "oems": 19
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 26,
+    "substantively_enriched_equipment": 0,
+    "new_oems": ["Mitsubishi Electric"]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_mitsubishi_ups_batch.py <temporary-output> && cmp <temporary-output> catalogues/data_centers/records/equipment/2026-11-03-mitsubishi-ups.jsonl",
+      "result": "passed twice; 26 deterministic reviewed records"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 775 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "58 passed"
+    },
+    {
+      "command": "pytest -q",
+      "result": "2075 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check . && ty check",
+      "result": "passed; 779 files format-checked"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3237 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed as part of strict Sphinx gallery; current catalogue statistics and equipment comparison reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs docs/_build/html-mitsubishi && python scripts/check_docs_links.py docs/_build/html-mitsubishi",
+      "result": "passed; 510 HTML pages generated and link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+    "equipment_sha256": "4abda66656f72777a3a1da3fa3a57e88900fc82d8a217c165406f8486696c5c9",
+    "input_sha256": "3af7b0583cfae3337db21ea2f3dac7ffed3dfd1f8f37e3ff36c2b86cbcea80ff",
+    "manifest_sha256": "f0fb9075fe9bcf8e8aceb9cd6642def5ac8a44e400fa141263919e0cbda260ea"
+  },
+  "source_capture": {
+    "official_html_originals_checksummed": 1,
+    "source_bytes": 230444,
+    "reuse_note": "Public copyrighted OEM comparison page; factual extraction only; no open licence asserted and the original is not redistributed."
+  },
+  "remote_ci_before_publication": {
+    "commit": "3556f1a78c426d43fcc0ea5b303f74c05041e86b",
+    "python_quality_and_tests_run": 41716271264,
+    "python_conclusion": "success",
+    "documentation_run": 41716271333,
+    "documentation_conclusion": "success"
+  }
+}
