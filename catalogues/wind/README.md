@@ -3,10 +3,10 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 6,713 project records (6,712 non-group records),
-202 exact equipment records, 5,745 registry turbine records and two original numerical
+The proposed branch contains 7,331 project records (7,330 non-group records),
+225 exact equipment records, 7,775 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
-Merged main at `273fe81f` contains 6,574 projects, 168 equipment records and 5,190 turbines
+Merged main at `6a84bebb` contains 6,713 projects, 202 equipment records and 5,745 turbines
 and two curves. These are catalogue counts, not an operating census.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
@@ -101,3 +101,19 @@ omission from the nomenclature summary. Unclaimed approvals remain unknown.
 Series yaw applicability is documented; turbine compatibility and independently
 validated operational performance are not inferred. The gallery includes the new
 230 V ACU210 entries.
+
+
+## Thüringen, Västra Götaland and line chokes
+
+This batch adds 618 projects, 2,030 turbines and 23 exact LCVS/LCVT line chokes.
+Merged main at the iteration baseline contains 6,713 projects, 202 equipment,
+5,745 turbines and two curves; proposed totals are 7,331 / 225 / 7,775 / 2.
+All 12,662 preceding records and capacity totals are unchanged. Complete registry
+partitions were reviewed; 371 German groups and 226 Swedish areas remain held.
+Thirteen duplicated Swedish turbine IDs quarantine their entire parent scope.
+Missing area boundaries remain null. All new project scopes are excluded from MW totals.
+
+OEM pp52–56 preserve explicit inverter pairings and original dimension letters.
+LCVT025 has conflicting inductance/loss rows; scalar values and the disputed
+ACU410-23 pairing are held. No guessed correction or turbine compatibility is added.
+The remaining 13 AL-suffix types are the next bounded equipment partition.

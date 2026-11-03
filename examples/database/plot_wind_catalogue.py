@@ -286,3 +286,20 @@ for _, component in equipment.loc[
         "cooling options",
         specs["mechanical_options"],
     )
+
+# %%
+# Exact line-choke pairings are component compatibility, not turbine performance.
+for component in rows:
+    if component.get("equipment_category") == "line_choke":
+        specs = json.loads(component["extensions_json"])
+        print(
+            component["model"],
+            "nominal A",
+            specs["nominal_current_a"],
+            "inductance mH",
+            specs["inductance_mh"],
+            "dissipation W",
+            specs["power_dissipation_w"],
+            "documented inverter pairings",
+            len(json.loads(component["compatibility_json"])),
+        )

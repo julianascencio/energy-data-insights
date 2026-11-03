@@ -1,10 +1,10 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. The proposed continuation contains **6,713 projects, 202 equipment
-records, 5,745 linked turbines and two original numerical curves**, across
-**59 countries and eleven equipment manufacturers**. Merged main at `273fe81f`
-contains 6,574 projects, 168 equipment records and 5,190 turbines plus two curves.
+numerical curves. The proposed continuation contains **7,331 projects, 225 equipment
+records, 7,775 linked turbines and two original numerical curves**, across
+**59 countries and eleven equipment manufacturers**. Merged main at `6a84bebb`
+contains 6,713 projects, 202 equipment records and 5,745 turbines plus two curves.
 These are catalogue counts, not a current operating census.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
@@ -490,3 +490,19 @@ omission from the nomenclature summary. Unclaimed approvals remain unknown.
 Series yaw applicability is documented; turbine compatibility and independently
 validated operational performance are not inferred. The gallery includes the new
 230 V ACU210 entries.
+
+
+## Thüringen, Västra Götaland and line chokes
+
+This batch adds 618 projects, 2,030 turbines and 23 exact LCVS/LCVT line chokes.
+Merged main at the iteration baseline contains 6,713 projects, 202 equipment,
+5,745 turbines and two curves; proposed totals are 7,331 / 225 / 7,775 / 2.
+All 12,662 preceding records and capacity totals are unchanged. Complete registry
+partitions were reviewed; 371 German groups and 226 Swedish areas remain held.
+Thirteen duplicated Swedish turbine IDs quarantine their entire parent scope.
+Missing area boundaries remain null. All new project scopes are excluded from MW totals.
+
+OEM pp52–56 preserve explicit inverter pairings and original dimension letters.
+LCVT025 has conflicting inductance/loss rows; scalar values and the disputed
+ACU410-23 pairing are held. No guessed correction or turbine compatibility is added.
+The remaining 13 AL-suffix types are the next bounded equipment partition.

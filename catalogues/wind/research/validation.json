@@ -1,26 +1,27 @@
 {
-  "batch": "2026-11-03-2135",
+  "batch": "2026-11-03-2235",
   "local": {
-    "pytest": "2081 passed,1 optional cdsapi skip after merging current main; initial pre-integration run2078passed/1skip",
+    "pytest": "2113 passed,1 optional cdsapi skip on final full run; initial run2112passed and one new test assertion failed, corrected to canonical omitted-null convention",
+    "focused": "50 Wind catalogue/adapter tests passed",
     "viewer": "15 Node tests passed",
-    "catalogue": "12662 records validated by two builds",
-    "snapshots": "Two fresh builds byte-identical; all four Parquet tables136typed fields; every column ZSTD; documentation wind manifest equals validated snapshot",
-    "preservation": "11934 preceding records and all prior source entries unchanged; six capacity totals unchanged;139new project scopes excluded;PV/BESS/Data Center records identical to publication main8156f311",
-    "adapter": "44351German total/1807selected;176Swedish areas691units independently counted across10layers;694project/turbine records replayed identically;Hessen dictionary scope regression included in full suite",
-    "example": "Offline wind gallery passed; ACU210/410 phase/frame/current/cooling boundaries exposed",
-    "ruff": "format/check passed after main integration",
-    "ty": "passed after main integration",
-    "citations": "passed",
-    "repository_hygiene": "3299 candidate files passed",
-    "whitespace": "passed",
-    "packages": "All three workspace packages built as wheels and source distributions after main integration",
-    "cross_sector_identity": "No matching Bonfiglioli ACU210/410 records found in PV,BESS,BESS OEM or Data Center catalogues",
-    "sphinx": "Strict build succeeded after main integration; Documentation check passed: 510 HTML pages; local links and assets resolve."
+    "catalogue": "15333 records validated;23 exact line-choke types,618projects,2030turbines added",
+    "source_replay": "2648 project/turbine records replayed exactly from checked original sources",
+    "snapshots": "Two independent builds byte-identical;4tables136typed columns each, all ZSTD; documentation Wind manifest matches",
+    "preservation": "12662 prior records and all prior source entries unchanged; six capacity totals unchanged; unrelated catalogues unchanged",
+    "ruff": "Repository lint and format passed; corrected test rechecked",
+    "ty": "Wind-focused typing passed. Repository-wide check FAILED with8 existing diagnostics in unchanged analysis/src/energy_analysis/pv_lifetime/study.py and analysis/tests/test_pv_lifetime_study.py",
+    "sphinx": "Strict build FAILED with6 warnings from3 short heading underlines in unchanged PV lifetime example; no Wind warning. HTML generated;516-page local link/asset audit passed",
+    "example": "Offline Wind gallery executed successfully",
+    "citations": "Passed",
+    "repository_hygiene": "3375candidate files passed",
+    "packages": "All3workspace packages built wheels and source distributions",
+    "whitespace": "Passed",
+    "cross_sector_identity": "No matching LCVS/LCVT models in PV,BESS OEM,Data Center catalogue"
   },
   "not_executed": [
     "new browser smoke test"
   ],
   "remote_ci": {
-    "this_increment": "Not yet published when local report was written; inspect PR checks for remote results"
+    "this_increment": "Not yet published when this report was written; inspect PR checks"
   }
 }

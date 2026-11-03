@@ -211,7 +211,7 @@ def stage_partition(
                 f"Reported linked turbine {anchor['properties']['VERKID']} anchor; not "
                 f"an area centroid; source positional accuracy unquantified"
             ),
-            "boundary_geojson": canonical_json(area["geometry"]),
+            "boundary_geojson": canonical_json(area["geometry"]) if area.get("geometry") else None,
             "official_url": "https://vbk.lansstyrelsen.se/",
             "fleet_json": canonical_json(fleet) if fleet else None,
             "fleet_completeness": "partial" if fleet else None,

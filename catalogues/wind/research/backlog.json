@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-03T21:45:00Z",
-  "branch": "research/wind-20261103-2135",
+  "updated_at": "2026-11-03T22:35:00Z",
+  "branch": "research/wind-20261103-2235",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
     {
@@ -98,7 +98,8 @@
         "ACU VEC521R6 original06/24 pp38–41 sizes1–5 complete18models. Next pp42–44 sizes6–8 complete tables; preserve2/4/8kHz conditions and footnotes. BMD wind mapping still held.",
         "VEC521R6 all ACU201pp35–37 and ACU401pp38–43 completed:38exacttypes in total. Correction: p44 has derating diagrams, not size8. Next acquire original VE_CAT_ACU_STD_ENG_R04_0.pdf (reader content-length limit, not HTTP restriction), compare ACU401 vs current ACU410/210 identity before size8 additions; do not relabel existing models. BMD wind mapping still held.",
         "R04_0 original13,189,500bytes acquired; pp24–25 complete24ACUx10frame7/8 configurations. Mechanical options nested; no ACUx01 alias inference. Next same original pp19–23 ACU210 and ACU410frames1–6 complete exact columns; inspect current frame/thermal conditions and reconcile shared names before additions. Six ACU610UL claims unresolved. VEC773R1 spindle manual excluded for explicit p7 restriction.",
-        "R04_0 pp19–23 exhausted:12ACU210 and22ACU410 exact type/frame columns, including410-12 p21. All pp19–25 current rating tables now processed. Next same original input-line-choke tables pp52–56: verify exact item codes, rating units and explicitly documented compatibility before additions; no family-range combinations. Reconcile previous ACU610 UL holds only with certification evidence."
+        "R04_0 pp19–23 exhausted:12ACU210 and22ACU410 exact type/frame columns, including410-12 p21. All pp19–25 current rating tables now processed. Next same original input-line-choke tables pp52–56: verify exact item codes, rating units and explicitly documented compatibility before additions; no family-range combinations. Reconcile previous ACU610 UL holds only with certification evidence.",
+        "All5LCVS and18non-AL LCVT exact types processed. LCVT025 pp54/55 electrical conflict and ACU410-23 pairing quarantined. Next13unique AL-suffix types pp55–56; retain per-inverter current/dissipation conditions without duplicate models."
       ]
     },
     {
@@ -168,11 +169,11 @@
     "source_guide": "2026-11-03-top10-markets.md",
     "sweden_partition": {
       "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
-      "completed_where": "OMRID < '1400'",
-      "reviewed_areas": 1867,
-      "reviewed_turbines": 7125,
-      "next_where": "OMRID >= '1400' AND OMRID < '1500'",
-      "next_county": "Västra Götaland",
+      "completed_where": "OMRID < '1500'",
+      "reviewed_areas": 2703,
+      "reviewed_turbines": 9854,
+      "next_where": "OMRID >= '1500' AND OMRID < '1800'",
+      "next_county": "Värmland and residual historical prefixes15/16",
       "layers": [
         2,
         3,
@@ -186,7 +187,7 @@
         12
       ],
       "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
-      "residual_ledger": "2026-11-03-2135-sweden-decisions.jsonl"
+      "residual_ledger": "2026-11-03-2235-sweden-decisions.jsonl"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",
@@ -196,16 +197,16 @@
         "Katalogkategorien.xml"
       ],
       "all_unit_rows": 44351,
-      "next_partition": "Bundesland1415 Thüringen;1232 units independently counted; dictionary validation required",
+      "next_partition": "Bundesland1413 Sachsen;1207units; dictionary validation required",
       "next_task": "Extend state parameter with dictionary validation; obtain complete independent count; reconcile names/operator/municipality/unit links and historical catalogue before additions. Review Schleswig-Holstein residual decisions separately.",
-      "source_review": "2026-11-03-2135-source-review.json",
+      "source_review": "2026-11-03-2235-source-review.json",
       "offset": 0,
-      "status": "ten_states_reviewed",
-      "completed_partition": "1411,1408,1409,1400,1414,1403,1402,1407,1410,1405 complete",
-      "accepted_projects": 347,
-      "accepted_turbines": 1733,
-      "deferred_groups": 13214,
-      "decision_ledger": "2026-11-03-2135-decisions.jsonl",
+      "status": "eleven_states_reviewed",
+      "completed_partition": "1411,1408,1409,1400,1414,1403,1402,1407,1410,1405 complete,1415",
+      "accepted_projects": 355,
+      "accepted_turbines": 1776,
+      "deferred_groups": 13585,
+      "decision_ledger": "2026-11-03-2235-decisions.jsonl",
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   }

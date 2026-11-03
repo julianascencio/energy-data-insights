@@ -1,19 +1,19 @@
 {
-  "batch": "2026-11-03-2135",
-  "updated_at": "2026-11-03T21:45:00Z",
-  "baseline_main": "273fe81fd3c068a5e802ad935874d368d1e40df1",
-  "branch": "research/wind-20261103-2135",
+  "batch": "2026-11-03-2235",
+  "updated_at": "2026-11-03T22:35:00Z",
+  "baseline_main": "6a84bebbcfe73b76f80aa782c8e212b28103fd29",
+  "branch": "research/wind-20261103-2235",
   "merged_wind_counts_at_baseline": {
-    "projects": 6574,
-    "equipment": 168,
     "curves": 2,
-    "turbines": 5190
+    "equipment": 202,
+    "projects": 6713,
+    "turbines": 5745
   },
   "branch_totals": {
-    "projects": 6713,
-    "non_group_projects": 6712,
-    "equipment": 202,
-    "turbines": 5745,
+    "projects": 7331,
+    "non_group_projects": 7330,
+    "equipment": 225,
+    "turbines": 7775,
     "curves": 2,
     "countries": 59,
     "manufacturers": [
@@ -31,11 +31,12 @@
     ]
   },
   "changes_against_main": {
-    "new_projects": 139,
-    "new_equipment": 34,
-    "new_turbines": 555,
-    "substantively_enriched_existing_projects": 0,
-    "substantively_enriched_existing_equipment": 0
+    "new_projects": 618,
+    "new_turbines": 2030,
+    "new_equipment": 23,
+    "new_curves": 0,
+    "substantively_enriched_projects": 0,
+    "substantively_enriched_equipment": 0
   },
   "historical_partition": {
     "selected_rows": 5344,
@@ -44,10 +45,10 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 2130,
+  "primary_evidence_project_records": 2748,
   "technology_counts": {
     "unknown": 4700,
-    "onshore": 1975,
+    "onshore": 2593,
     "offshore_unspecified": 32,
     "fixed_bottom_offshore": 2,
     "floating_offshore": 4
@@ -70,21 +71,22 @@
     "Baden-Württemberg514groups;Gotland28areas3orphanunits;no inferred turbine compatibility; size6–7 tables completed in1935",
     "Mecklenburg-Vorpommern722groups;Blekinge25areas/72units;ACUx01/x10 aliases not inferred; R04_0 exact frame7/8 tables completed2035",
     "Rheinland-Pfalz862groups;Skåne519areas/26orphanunits;6ACU610UL fields quarantined;spindle manual excluded by explicit reuse restriction",
-    "Hessen589groups;Halland75areas/2orphanunits;priorACU610UL and identity conflicts unchanged"
+    "Hessen589groups;Halland75areas/2orphanunits;priorACU610UL and identity conflicts unchanged",
+    "Thüringen371groups;VästraGötaland226areas/10orphans;13repeatedVERKIDs entireparent quarantined;LCVT025 electrical conflict;13AL types next"
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations; Hessen1807units/627groups:38parks170units; Halland176areas691units:101projects385units; ACU R04_0 pp19–23 complete34ACU210/410 configurations",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations; Hessen1807units/627groups:38parks170units; Halland176areas691units:101projects385units; ACU R04_0 pp19–23 complete34ACU210/410 configurations; Thüringen1232units/379groups:8parks43units; VästraGötaland836areas2729units:610projects1987turbines;23exactLCVS/non-AL LCVT types",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
-  "publication_base_main": "8156f311da2db37a2e165e5b854105afd36ac1ba",
-  "iteration_base_head": "273fe81fd3c068a5e802ad935874d368d1e40df1",
+  "publication_base_main": "6a84bebbcfe73b76f80aa782c8e212b28103fd29",
+  "iteration_base_head": "6a84bebbcfe73b76f80aa782c8e212b28103fd29",
   "changes_this_run": {
-    "new_projects": 139,
+    "new_projects": 618,
+    "new_turbines": 2030,
+    "new_equipment": 23,
+    "new_curves": 0,
     "substantively_enriched_projects": 0,
-    "new_equipment": 34,
-    "substantively_enriched_equipment": 0,
-    "new_turbines": 555,
-    "new_curves": 0
+    "substantively_enriched_equipment": 0
   },
   "repd_partition": {
     "selected_rows": 2858,
@@ -93,19 +95,115 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "Hessen and Halland; no new country",
-  "new_technology_coverage": "Onshore registry inventories; exact ACU210/410 frame1–6 configurations",
+  "new_geography": "Thüringen and Västra Götaland; no new country",
+  "new_technology_coverage": "Onshore inventories and exact line-choke components with explicit inverter links",
   "reviewed_this_run": {
-    "german_units": 1807,
-    "german_groups": 627,
-    "deferred_german_groups": 589,
-    "swedish_areas": 176,
-    "swedish_units": 691,
-    "held_swedish_areas": 75,
-    "orphan_units": 2,
-    "held_swedish_units": 306,
-    "equipment_added": 34,
-    "quarantined_equipment_fields": 0
+    "batch": "2026-11-03-2235",
+    "germany": {
+      "state": "Thüringen",
+      "code": "1415",
+      "units": 1232,
+      "groups": 379,
+      "accepted_projects": 8,
+      "accepted_turbines": 43,
+      "held_groups": 371,
+      "original_checksum_registry": "2026-11-03-1035-source-review.json; all members reverified"
+    },
+    "sweden": {
+      "where": "OMRID >= '1400' AND OMRID < '1500'",
+      "areas": 836,
+      "units": 2729,
+      "accepted_projects": 610,
+      "accepted_turbines": 1987,
+      "held_areas": 226,
+      "orphan_units": 10,
+      "held_unit_rows": 742,
+      "quarantine": "13 duplicated VERKIDs,52rows,one parent1480-V-001; full observations retained",
+      "retrievals": [
+        {
+          "layer": 2,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/2/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "c49238157584181fe08a02cd05d9439c6145f2ea4bfaef94efb0c9faece2d103",
+          "rows": 380
+        },
+        {
+          "layer": 3,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/3/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "c5b5e8792e7ebe617f2f7280421c4b200e4de4d9827dd497da54db3fd8d4f1d6",
+          "rows": 456
+        },
+        {
+          "layer": 5,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/5/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "4de4f7a4bec8149fb00665d4de983e8223dbc34060cbdf8140fab5af81c25dfc",
+          "rows": 695
+        },
+        {
+          "layer": 6,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/6/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "61229b0b6f97812e27e2b0c662eafdebfa8d06816b27d12b74051f30e6cd67b1",
+          "rows": 28
+        },
+        {
+          "layer": 7,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/7/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "08a16f8271d9f3d6ce469bf9576e42a2134e8e4d7006b782ed5f6a690bb47dc8",
+          "rows": 318
+        },
+        {
+          "layer": 8,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/8/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "99d713288032918bc2f39a6835c014a5d71540aa55a94a3294d1fa0b32cc08a2",
+          "rows": 85
+        },
+        {
+          "layer": 9,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/9/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "8c7e2ab6e332c13335a375ab906b9c6564d23c6bd1e7e51c2241c768cc6aef97",
+          "rows": 95
+        },
+        {
+          "layer": 10,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/10/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "acfbd49d5454c50ea110b68d00237dcbb62389f4c43b302d92568a98cb30be8e",
+          "rows": 17
+        },
+        {
+          "layer": 11,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/11/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+          "rows": 0
+        },
+        {
+          "layer": 12,
+          "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/12/query?f=geojson&where=OMRID+%3E%3D+%271400%27+AND+OMRID+%3C+%271500%27&outFields=%2A&outSR=4326&returnGeometry=true",
+          "sha256": "9556375099787724b838d775c3a1ba855fcb1629f3bd1e2069c25a138a1fcd6f",
+          "rows": 1491
+        }
+      ]
+    },
+    "oem": {
+      "source_id": "bonfiglioli-acu-r04-0",
+      "sha256": "f532098c625f7e5fe20aec2a79739d971a04e1043bca7a71c783c12819240713",
+      "original_bytes_available": true,
+      "reviewed_pages": [
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "visually_verified_pages": [
+        53,
+        54,
+        55,
+        56
+      ],
+      "accepted": 23,
+      "partition": "All5LCVS and18non-AL LCVT exact types",
+      "quarantined": "LCVT025 inductance/loss and ACU410-23 pairing; conflicting printed rows retained without correction",
+      "next_partition": "13 unique AL-suffix types, pp55–56; application-dependent ratings nested"
+    }
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -117,8 +215,8 @@
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
   },
-  "source_review": "2026-11-03-2135-source-review.json",
-  "decision_ledger": "2026-11-03-2135-decisions.jsonl",
-  "equipment_ledger": "2026-11-03-2135-equipment.jsonl",
-  "sweden_decision_ledger": "2026-11-03-2135-sweden-decisions.jsonl"
+  "source_review": "2026-11-03-2235-source-review.json",
+  "decision_ledger": "2026-11-03-2235-decisions.jsonl",
+  "equipment_ledger": "2026-11-03-2235-equipment.jsonl",
+  "sweden_decision_ledger": "2026-11-03-2235-sweden-decisions.jsonl"
 }
