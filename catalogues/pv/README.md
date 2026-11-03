@@ -320,3 +320,10 @@ uv run python scripts/stage_pv_aragon.py --input /raw/aragon319.json \
 
 Reconcile site/phase identities and source revision before accepting fields. CSV
 and GeoJSON export agreement is a source consistency check, not identity approval.
+
+To screen the Swiss SFOE production register offline, use
+`scripts/stage_pv_swiss.py --input ARCHIVE --sha256 HASH --output REVIEW.jsonl`.
+The output is for review only. It uses the source's PV code and exact parent
+links, keeps kW without inferring AC or DC, and excludes addresses, building
+identifiers and coordinates. Details may describe orientation or array splits
+as well as extensions; do not count them as independent projects.

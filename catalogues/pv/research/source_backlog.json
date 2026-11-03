@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T04:01:52.441193+00:00",
+  "updated_at": "2026-11-03T05:05:24.967814+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "EDF Corse full export reviewed; Swiss BFE parent/detail data inspected for next cohort; 11 exact inverters added from two OEM tables.",
-  "next_highest_value_source": "Swiss BFE October archive: confirm dataset-specific attribution and TotalPower basis, then reconcile parent xtf_id and PlantDetail links for the 364 explicit PV parents at native TotalPower >=1000. Exclude private addresses and hold unresolved GEM matches.",
+  "selection_note": "Swiss archive fully staged above 1,000 kW; 364 held, no additions; three exact ASW LT-G3 inverters accepted.",
+  "next_highest_value_source": "Swiss BFE 1,000 kW+ parents: establish stable ID and dataset terms; obtain named cantonal or owner evidence for shared-building and GEM identity crosswalks.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5301,6 +5301,77 @@
       "processed_cursor": {
         "sha256": "e803c67fbccce84533b36e13cb39c85c102325ff0587abcb4374b23b41d42a72",
         "partition": "full export aggregate screen"
+      }
+    },
+    {
+      "id": "swiss_bfe_stage_0500",
+      "country": "CHE",
+      "entity": "projects",
+      "source_url": "https://data.geo.admin.ch/ch.bfe.elektrizitaetsproduktionsanlagen/csv/2056/ch.bfe.elektrizitaetsproduktionsanlagen.zip",
+      "version_or_date": "2026-10-15 ZIP members; model v1.0 dated 2022-01-04",
+      "access_assessment": "Public checksum-pinned ZIP and model downloaded",
+      "licence_assessment": "Federal FSDI general terms defer to dataset-specific restrictions; redistribution not assumed",
+      "estimated_useful_yield": {
+        "staged": 364,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "Parent and detail links",
+        "Operation date",
+        "Initial and total kW, AC/DC unspecified"
+      ],
+      "last_attempt": "2026-11-03T05:05:24.967814+00:00",
+      "result": "364 held; 699 links, 52 shared-building flags; no canonical row staged for ingestion",
+      "retry_condition": "Independent named identity crosswalk and dataset-specific reuse assessment",
+      "next_action": "Swiss BFE 1,000 kW+ parents: establish stable ID and dataset terms; obtain named cantonal or owner evidence for shared-building and GEM identity crosswalks.",
+      "processed_cursor": {
+        "archive_sha256": "e803c67fbccce84533b36e13cb39c85c102325ff0587abcb4374b23b41d42a72",
+        "minimum_kw": 1000,
+        "complete": true
+      }
+    },
+    {
+      "id": "solplanet_45_60_ltg3_es_20261103T0500",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/wp-content/uploads/2024/09/FT_45-60K_LTG3_Oct25_Solplanet.pdf",
+      "version_or_date": "August 2025",
+      "licence_assessment": "Limited factual model specifications only; OEM copyright retained; no document or full table copied",
+      "access_assessment": "Public downloadable exact OEM PDF",
+      "estimated_useful_yield": "Three model columns corroborated across both PDFs; three total accepted",
+      "fields_offered": [
+        "Electrical, MPPT, protection, mechanical and environmental ratings"
+      ],
+      "last_attempt": "2026-11-03T05:05:10.814593+00:00",
+      "result": "Complete reviewed table",
+      "retry_condition": "New exact revision or material rating change",
+      "next_action": "Prioritize another OEM and distinct combiner or tracker architecture",
+      "processed_cursor": {
+        "sha256": "418a539f2871039e8c42dbd8cc506f5d21f5b25cd8d3d8192c7a3a6f85b25085",
+        "page": 2,
+        "complete": true
+      }
+    },
+    {
+      "id": "solplanet_45_60_ltg3_en_20261103T0500",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/wp-content/uploads/2023/03/Datasheet-ASW-45-50-60K-LT-G3-Series-EN_0924_web-1.pdf",
+      "version_or_date": "September 2024",
+      "licence_assessment": "Limited factual model specifications only; OEM copyright retained; no document or full table copied",
+      "access_assessment": "Public downloadable exact OEM PDF",
+      "estimated_useful_yield": "Three model columns corroborated across both PDFs; three total accepted",
+      "fields_offered": [
+        "Electrical, MPPT, protection, mechanical and environmental ratings"
+      ],
+      "last_attempt": "2026-11-03T05:05:10.814593+00:00",
+      "result": "Complete reviewed table",
+      "retry_condition": "New exact revision or material rating change",
+      "next_action": "Prioritize another OEM and distinct combiner or tracker architecture",
+      "processed_cursor": {
+        "sha256": "74e7a4032f4a7fb6db5216ee57b68d0770d85be118f41af466792fa96fccfe18",
+        "page": 2,
+        "complete": true
       }
     }
   ]
