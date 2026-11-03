@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T18:26:00Z",
+  "updated_at": "2026-11-03T19:18:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -48,7 +48,9 @@
     "huawei_netcol8000_c_configurations": 6,
     "delta_rowcool_cw_models": 4,
     "delta_gocool_models": 3,
-    "delta_inrack_l2l_configurations": 3
+    "delta_inrack_l2l_configurations": 3,
+    "envicool_direct_to_chip_configurations": 13,
+    "envicool_immersion_configurations": 13
   },
   "next_batches": [
     {
@@ -172,15 +174,16 @@
         "https://www.lenovo.com/",
         "https://www.coolitsystems.com/"
       ],
-      "offset": 285,
-      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Huawei NetCol8000-A/C exact tables and Delta RowCool/GoCool/in-rack L2L tables are complete at 7+6+4+3+3. Continue direct-to-chip/immersion and independent Asian/regional OEMs without recounting these inventories.",
+      "offset": 311,
+      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Huawei NetCol8000-A/C and Delta RowCool/GoCool/in-rack tables are complete at 7+6+4+3+3. Envicool's two reviewed brochures are complete at 13 exact direct-to-chip and 13 immersion configurations. Continue independent regional electrical and liquid-cooling suppliers without recounting these inventories.",
       "questions": [
         "Rack input vs server vs accelerator limit",
         "Measured performance workload/precision/test conditions, temperatures and flow",
         "Resolve Supermicro B300 288 GB accelerator-label versus 270 GB table-memory conflict before normalizing memory",
         "Recheck Lenovo after a dated change-history update; do not recount the 20-option 2026-10-26 Available view",
         "Dell shipping quantities are complete at offset 85; values remain configuration-dependent maximum observations, never installed counts",
-        "Resolve platform-SKU binding for 25 generic Dell L4 shipping rows before assigning HHHL/FHHL form factor"
+        "Resolve platform-SKU binding for 25 generic Dell L4 shipping rows before assigning HHHL/FHHL form factor",
+        "Envicool range-only IT-device power and coolant choices remain observations; do not promote them to cooling capacity, electrical input or ordered variants"
       ]
     },
     {
@@ -235,11 +238,11 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "huawei-delta-cooling-20261103T182600Z",
+    "run_id": "envicool-liquid-cooling-20261103T191800Z",
     "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T1826-validation.json",
+    "validation": "2026-11-03T1918-validation.json",
     "added_projects": 0,
-    "added_equipment": 23,
-    "branch": "research/data-center-database-20261103T0909Z"
+    "added_equipment": 26,
+    "branch": "research/data-center-database-20261103T1924Z"
   }
 }

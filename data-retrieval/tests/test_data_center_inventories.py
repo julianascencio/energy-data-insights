@@ -127,6 +127,18 @@ def test_precision_cooling_matrix_rejects_drift_duplicates_and_unofficial_source
         )
 
 
+def test_precision_cooling_matrix_accepts_exact_immersion_rows_without_scalar_capacity():
+    immersion = PRECISION_COOLING_MATRIX.decode().splitlines()
+    immersion[1] = immersion[1].replace(",crac,42.5,", ",immersion,,")
+    result = parse_precision_cooling_matrix(
+        ("\n".join([immersion[0], immersion[1]]) + "\n").encode(),
+        source_url="https://en.envicool.com/example.pdf",
+        expected_count=1,
+    )
+    assert result["candidates"][0]["category"] == "immersion"
+    assert result["candidates"][0]["cooling_capacity_kw"] is None
+
+
 def test_power_equipment_matrix_stages_exact_boundaries():
     result = parse_power_equipment_matrix(
         POWER_MATRIX,

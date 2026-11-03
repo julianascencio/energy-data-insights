@@ -1,0 +1,100 @@
+{
+  "run_id": "envicool-liquid-cooling-20261103T191800Z",
+  "validated_at": "2026-11-03T19:23:17Z",
+  "branch": "research/data-center-database-20261103T1924Z",
+  "base_main_sha": "f0c87f8d019b47bac03c93dcb502e8cc1cc72951",
+  "prepublication_remote_head": null,
+  "canonical_records": 726,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 544,
+    "countries": 36,
+    "operators": 13,
+    "oems": 19
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 518,
+    "countries": 36,
+    "operators": 13,
+    "oems": 18
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 26,
+    "substantively_enriched_equipment": 0,
+    "new_oems": ["Envicool"]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_envicool_batch.py <temporary-output> && cmp <temporary-output> catalogues/data_centers/records/equipment/2026-11-03-envicool-liquid-cooling.jsonl",
+      "result": "passed; 26 deterministic reviewed records"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 726 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "55 passed"
+    },
+    {
+      "command": "pytest -q",
+      "result": "1854 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "14 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check . && ty check",
+      "result": "passed"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 2822 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed as part of strict Sphinx gallery; direct-to-chip and immersion boundaries reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs docs/_build/html-envicool && python scripts/check_docs_links.py docs/_build/html-envicool",
+      "result": "passed; 447 HTML files generated and 445 content pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+    "equipment_sha256": "4729cc61adc196b93388c85d90868c2fff393c13951cc13e4d163a0fd6458f33",
+    "input_sha256": "37db6dc36e706f5b0c077edee5054c875c950e745518d28bf4cf5d257a121d42",
+    "manifest_sha256": "c09249e0aae7fba9d33eec6244d43dad9522d406972668d432230d57336f431b"
+  },
+  "source_capture": {
+    "official_pdfs_checksummed": 2,
+    "source_bytes": 7286457,
+    "reuse_note": "Public copyrighted OEM brochures; factual extraction only; no open licence asserted and originals are not redistributed."
+  },
+  "remote_ci_before_publication": {
+    "commit": "0308e677bea2a3f46a302bd97426114112a261e0",
+    "python_quality_and_tests_run": 41694232138,
+    "python_conclusion": "success",
+    "documentation_run": 41694232093,
+    "documentation_conclusion": "success"
+  }
+}

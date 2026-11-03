@@ -1,6 +1,13 @@
 {
-  "retrieved_at": "2026-11-03T18:26:00Z",
+  "retrieved_at": "2026-11-03T19:18:00Z",
   "accepted": [
+    {
+      "inventory": "Envicool direct-to-chip and immersion complete model tables",
+      "processed_offset": 26,
+      "accepted_records": 26,
+      "reuse": "Factual extraction from official public OEM PDFs; no open licence asserted; originals not redistributed",
+      "originals": "Both official PDF originals captured with SHA-256 and byte counts in sources.json"
+    },
     {
       "inventory": "AirTrunk locations and 22 official location pages",
       "processed_offset": 22,
@@ -605,6 +612,7 @@
     "Lenovo option quantities describe exact orderable boards/assemblies rather than deployments. Memory, bandwidth, TDP and performance remain per GPU; performance preserves precision and sparsity labels, and no board/server/rack total is calculated.",
     "Supermicro accelerator counts describe exact integrated-system designs, not deployments. Configurable accelerator limits remain per GPU; PSU module nameplates are not summed into server or rack input. B300 memory stays null where the same row says both 288 GB and 270 GB per GPU.",
     "mtu Series 4000 DCC kVA remains apparent power at the exact model/frequency row. Active kW is null; shared voltage choices and Tier III/IV compliance language remain observations rather than selected windings or issuer certifications.",
-    "Huawei and Delta cooling capacity is normalized only at the exact stated table rating point. Cooling-only and full/optional current, power and weight remain separate; multi-voltage/frequency choices and CFM are observations, and no OEM conformance claim is promoted to an issuer-registry certification."
+    "Huawei and Delta cooling capacity is normalized only at the exact stated table rating point. Cooling-only and full/optional current, power and weight remain separate; multi-voltage/frequency choices and CFM are observations, and no OEM conformance claim is promoted to an issuer-registry certification.",
+    "Envicool heat-exchange capacity is normalized only on direct-to-chip rows explicitly labelled as such. Immersion IT-device power and ranges, coolant alternatives, minimum facility-water flows and optional feeds remain observations and do not become cooling capacity, electrical input or synthesized configurations."
   ]
 }
