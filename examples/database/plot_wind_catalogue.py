@@ -175,3 +175,19 @@ ax.set(
 ax.legend()
 print("Curve conditions:", curves[0]["curve_conditions"])
 plt.show()
+
+# %%
+# German registry gross/net ratings and lifecycle observations stay at unit scope.
+german = [r for r in rows if r["entity_type"] == "turbines" and r.get("country_code") == "DEU"]
+if german:
+    states = pd.Series(
+        [json.loads(r["extensions_json"]).get("decoded_lifecycle") or "Unknown" for r in german]
+    )
+    fig, ax = plt.subplots(figsize=(10, 5), layout="constrained")
+    states.value_counts().sort_values().plot.barh(ax=ax, color="#198c92")
+    ax.set(
+        title="German registered units by reported lifecycle",
+        xlabel="Selected named-park inventory records; not a current operating census",
+    )
+    print("German linked parks:", len({r["project_record_id"] for r in german}))
+    print("Gross/net kW remain separate source fields; no farm MW is inferred.")

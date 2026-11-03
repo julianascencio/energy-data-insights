@@ -298,3 +298,32 @@ not authentication failure or evidence of reuse restrictions.
 
 Next Swedish partition: all Jönköping registry IDs (`0600 <= OMRID < 0700`).
 The German Schleswig-Holstein named-farm reconciliation task remains pending.
+
+
+## Schleswig-Holstein registry continuation
+
+The complete MaStR Schleswig-Holstein partition contains 4,788 registered units
+in 1,739 name groups, including the empty-name group. Conservative operator,
+municipality, coordinate, alias and historical-catalogue screens accept 22 named
+parks and 105 turbine children. The other 1,717 groups remain in the decision
+ledger. Park names are not official farm identifiers. Stable unit registry IDs
+anchor future reconciliation; ownership/name changes must not create new farms.
+All 22 parks retain unknown farm lifecycle, partial fleet completeness and
+unresolved aggregation scope. Unit status, commissioning dates and separate
+gross/net kW are retained without substituting sums for reported farm capacity.
+The offline `wind_catalogue.mastr.stage` adapter uses the pinned XML dictionary
+and a complete state partition; its synthetic fixture tests alias collisions,
+invalid scopes, replay identity and the distinction between unit and farm ratings.
+See `mastr_full_export_20261103` and the 1235 decision ledger.
+
+The ENERCON upgrade presentation adds exact E-82 E2 and E-103 EP2 model records
+with their respective OM-YO-01 and OM02sBV optional modes. Base ratings and
+geometry remain unknown because this source does not specify them. Yield claims
+retain annual-average wind-speed and site-load-study conditions; they are not
+measured operational performance. Graph-only curves remain deferred. The combined
+August 2026 overview duplicates the four configurations already catalogued.
+See `enercon_yield_modes_e82_e103`.
+
+Next German partition: Niedersachsen, dictionary code 1408, after verification
+against the original category 101 dictionary. Reconcile accepted Schleswig-Holstein
+unit links and held groups separately from new state intake.

@@ -6324,14 +6324,22 @@ VENSYS Energy AG (2025). **VENSYS current product technical data sheets, July–
 
 Bundesnetzagentur (2026). **Marktstammdatenregister Gesamtdatenexport 26.2**. [Source](https://www.marktstammdatenregister.de/MaStR/Datendownload)
 
-**Role:** data source. Research acquisition only; original wind XML extracted with HTTP byte ranges. Full ZIP checksum unavailable; no farm identities imported yet.
+**Role:** data source. Original wind XML extracted with HTTP byte ranges. Full ZIP checksum unavailable. Complete Schleswig-Holstein partition reviewed; accepted park groups retain unresolved capacity scope.
 
-**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`, `data-retrieval/src/energy_data_retrieval/wind_catalogue/mastr.py`.
 
 ### enercon_technical_sheets_202608
 
 ENERCON (2026). **E-138 EP3 E3, E-160 EP5 E3, E-175 EP5 E1/E2 technical data**. [Source](https://www.enercon.de/en/news-media/publications)
 
 **Role:** data source. August2026 revision; original three PDF hashes and p2/p4 locators retained. E2 power options and mode-dependent acoustic observations not collapsed into unqualified scalars.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### enercon_yield_modes_e82_e103
+
+ENERCON (n.d.). **Yield Optimized Mode for E-82 E2 and E-103 EP2**. [Source](https://www.enercon.de/en/news-media/publications)
+
+**Role:** data source. Undated three-slide original presentation; site-specific load study required. Exact optional modes, no original numerical curve tables.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

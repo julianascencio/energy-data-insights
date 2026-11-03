@@ -14582,9 +14582,10 @@
     "role": "data source",
     "used_by": [
       "catalogues/wind",
-      "docs/wind-catalogue.md"
+      "docs/wind-catalogue.md",
+      "data-retrieval/src/energy_data_retrieval/wind_catalogue/mastr.py"
     ],
-    "note": "Research acquisition only; original wind XML extracted with HTTP byte ranges. Full ZIP checksum unavailable; no farm identities imported yet.",
+    "note": "Original wind XML extracted with HTTP byte ranges. Full ZIP checksum unavailable. Complete Schleswig-Holstein partition reviewed; accepted park groups retain unresolved capacity scope.",
     "verified_at": "2026-11-03"
   },
   {
@@ -14603,6 +14604,24 @@
       "docs/wind-catalogue.md"
     ],
     "note": "August2026 revision; original three PDF hashes and p2/p4 locators retained. E2 power options and mode-dependent acoustic observations not collapsed into unqualified scalars.",
+    "verified_at": "2026-11-03"
+  },
+  {
+    "id": "enercon_yield_modes_e82_e103",
+    "title": "Yield Optimized Mode for E-82 E2 and E-103 EP2",
+    "authors": [
+      "ENERCON"
+    ],
+    "year": null,
+    "doi": null,
+    "url": "https://www.enercon.de/en/news-media/publications",
+    "kind": "technical_report",
+    "role": "data source",
+    "used_by": [
+      "catalogues/wind",
+      "docs/wind-catalogue.md"
+    ],
+    "note": "Undated three-slide original presentation; site-specific load study required. Exact optional modes, no original numerical curve tables.",
     "verified_at": "2026-11-03"
   }
 ]
