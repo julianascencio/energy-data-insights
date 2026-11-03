@@ -1,0 +1,75 @@
+{
+  "run_id": "atnorth-coolit-20261103T091200Z",
+  "executed_at": "2026-11-03T09:24:30Z",
+  "checks": [
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed",
+      "records": 427
+    },
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed",
+      "tests": 32
+    },
+    {
+      "command": "pytest -q",
+      "result": "passed",
+      "tests": 1831,
+      "skipped": 5,
+      "note": "Missing optional cdsapi (1), Python 3.13 Orbital PV integrations (3), Python 3.13 native imagery integration (1); final run after BESS PR99 rebase. Earlier run before that rebase: 1816 passed, 5 skipped."
+    },
+    {
+      "command": "ruff format --check .; ruff check .; ty check",
+      "result": "passed",
+      "note": "Final post-rebase rerun: 684 files formatted; lint and type checks passed."
+    },
+    {
+      "command": "python scripts/check_repository.py; python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg python examples/database/plot_data_center_catalogue.py",
+      "result": "passed"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed",
+      "tests": 14,
+      "note": "Includes new phase-versus-facility count regression"
+    },
+    {
+      "check": "Two independent snapshot builds",
+      "result": "byte-identical all snapshot files",
+      "projects_parquet_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+      "equipment_parquet_sha256": "3aa9c758c43f91ea8aa588ce628c00d66d409b25d49fc01151cf7e21aaca2241",
+      "input_sha256": "7d163dc839c9379cffb3c4bffb06be58094568941fd24a605c4776a61accee98",
+      "manifest_sha256": "112491bfc8ddaad55bc2b5cd6d3f707ea1bb458cd050f47d9b941b84ed8ac84e"
+    },
+    {
+      "check": "Preservation against current main",
+      "result": "All 404 prior Data Center canonical records unchanged; unrelated PV/BESS/Wind catalogue trees unchanged"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs docs/_build/html",
+      "result": "passed",
+      "note": "Strict offline docs/gallery build; phase colors, complete four-panel capture and readable labels visually inspected."
+    },
+    {
+      "command": "python scripts/check_docs_links.py docs/_build/html",
+      "result": "passed",
+      "html_pages": 445
+    },
+    {
+      "check": "Viewer projection counts and snapshot hashes",
+      "result": "182 project rows / 245 equipment rows; projection Parquet checksums match independently rebuilt bytes"
+    }
+  ],
+  "publication_preflight": {
+    "main_sha_at_start": "47cf12e8d95e4da29a52a54e3235db41ecce0d08",
+    "main_sha_before_publication": "5063c41694b17b1a3fc856ea9527a32211278203",
+    "branch": "research/data-center-database-20261103T0909Z",
+    "concurrent_changes": "Wind PR97, PV PR98 and BESS PR99 merged; rebased without Data Center overlap",
+    "remote_ci": "Not available before publication; inspect PR checks for remote results"
+  }
+}

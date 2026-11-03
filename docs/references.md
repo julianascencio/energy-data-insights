@@ -6296,6 +6296,14 @@ Contact Energy (2026). **Glenbrook Ohurua Battery opening**. [Source](https://co
 
 **Used by:** `catalogues/bess/sources.json`.
 
+### mistralai_2026_timestral
+
+Mistral AI (2026). **Timestral: standalone probabilistic time-series forecasting inference**. [Source](https://github.com/mistralai/timestral/tree/a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff)
+
+**Role:** software. Official model inference wrapped through an optional local connector. No retraining or reimplementation of the neural architecture. Inference code: Apache-2.0; separately distributed checkpoint weights: Modified MIT. Gallery replays pinned real Timestral-5M inference on attributed EIA CISO generation and offers explicit live inference. One historical holdout with unknown pretraining overlap is not operational validation or proof of superior accuracy.
+
+**Used by:** `methods/src/energy_methods/timestral.py`, `analysis/src/energy_analysis/timestral_case.py`, `examples/connectors/plot_timestral_forecast.py`, `scripts/prepare_timestral_example.py`, `docs/timestral.md`.
+
 ### nrcan_wind_turbine_database_2026
 
 Natural Resources Canada (2026). **Canadian Wind Turbine Database**. [Source](https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070)

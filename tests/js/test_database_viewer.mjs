@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {filterRows, sortRows, statistics, groupRows, toCsv, hasLocation, projectSummary, bessProjectSummary, clusterLocations} from "../../docs/_static/database-core.mjs";
+import {filterRows, sortRows, statistics, groupRows, toCsv, hasLocation, projectSummary, bessProjectSummary, clusterLocations, dataCenterScopes} from "../../docs/_static/database-core.mjs";
 
 const rows = [
   {name: "A", country: "CHL", power: 0, bifacial: false, sources: ["OEM"]},
@@ -8,6 +8,17 @@ const rows = [
   {name: "C", country: "ESP", power: null},
   {name: "D", country: null, power: 10},
 ];
+
+test("data center phases never inflate facility counts, including filtered phases", () => {
+  const scopes = [
+    {record_scope: "campus", facility_id: "campus"},
+    {record_scope: "facility", facility_id: "building"},
+    {record_scope: "phase", facility_id: "building", phase_id: "one"},
+    {record_scope: "phase", facility_id: "unresolved-building", phase_id: "two"},
+  ];
+  assert.deepEqual(dataCenterScopes(scopes), {facilities: 1, phases: 2, campuses: 1});
+  assert.deepEqual(dataCenterScopes(scopes.filter(r => r.record_scope === "phase")), {facilities: 0, phases: 2, campuses: 0});
+});
 test("filters combine search, exact values, ranges and explicit missingness", () => {
   assert.deepEqual(filterRows(rows, {search: "oem", metric: "power", min: "0", max: "0"}), [rows[0]]);
   assert.deepEqual(filterRows(rows, {field: "bifacial", equals: "false"}), [rows[0]]);

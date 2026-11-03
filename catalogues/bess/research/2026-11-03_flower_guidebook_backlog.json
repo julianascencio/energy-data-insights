@@ -1,0 +1,574 @@
+[
+  {
+    "rank": 1,
+    "url": "https://cms.eirgrid.ie/sites/default/files/publications/TSO-Contracted-Non-Wind-Report-28-11-2025.pdf",
+    "country_or_entity": "Ireland contracted battery inventory",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "20–40 candidates before identity review; estimate not an accepted count",
+    "offered_fields": [
+      "registry ID",
+      "connection node/voltage",
+      "MEC",
+      "signed date",
+      "connection status"
+    ],
+    "access_license": "Primary PDF discovery; current landing URL/revision and reuse conditions must be verified before extraction",
+    "attempt_result": "Search located older2025 contracted report and secondary references to5August2026 inventory; no ingestion",
+    "processed_partition": "None; do not use stale2025release as latest",
+    "retry_condition": "Confirm current official download and source-specific reuse permission",
+    "next_action": "Reconcile battery-only rows with canonical Ireland assets; MEC is not battery MW and contracted is not operational"
+  },
+  {
+    "rank": 2,
+    "url": "https://www.eskom.co.za/wp-content/uploads/2025/09/Eskom-integrated-report-2025.pdf",
+    "country_or_entity": "South Africa Eskom named BESS lifecycle",
+    "version_date": 2025,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "3–6 substantive site enrichments estimated",
+    "offered_fields": [
+      "named site",
+      "construction/operation",
+      "reporting period",
+      "phase scope"
+    ],
+    "access_license": "Copyright report; bounded named facts only, no open bulk licence asserted",
+    "attempt_result": "Primary report located with Hex, Skaapvlei, Graafwater and Paleisheuwel observations; no new extraction",
+    "processed_partition": "Discovery only;2025report not a2026operating census",
+    "retry_condition": "Locate2026revision then compare each named site against existing records",
+    "next_action": "Use named operational/construction evidence; do not promote forecast FY2026commissioning"
+  },
+  {
+    "rank": 3,
+    "url": "https://www.bluenova.co.za/products/outdoor-all-in-one-cabinet-solutions/",
+    "country_or_entity": "BlueNova South Africa integrated cabinets",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": 5,
+    "offered_fields": [
+      "AC/DC boundary",
+      "PV MPPT inputs",
+      "energy",
+      "cooling",
+      "controls"
+    ],
+    "access_license": "All rights reserved; inspect individual sheets and bounded factual reuse",
+    "attempt_result": "Five exact model links located, not downloaded this iteration",
+    "processed_partition": "0/5 AIO sheets; current10DC cabinets completed separately",
+    "retry_condition": "Reopen live listing and check printed revisions/checksums",
+    "next_action": "Review AIO105kW/241kWh with explicit PV options and125kW/241kWh/250kWp; no cross-model extrapolation"
+  },
+  {
+    "rank": 4,
+    "url": "https://www.flower.se/press/flower-german-tolling-ab-publ-closes-acquisition-of-two-bess-projects-in-germany-to-complete-112-mw-portfolio-acquisition/",
+    "country_or_entity": "Germany remaining Chint/Flower portfolio",
+    "version_date": "2026-10-26",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": 5,
+    "offered_fields": [
+      "individual identity",
+      "site",
+      "rating",
+      "permits",
+      "EPC"
+    ],
+    "access_license": "Copyright; bounded owner disclosures",
+    "attempt_result": "Two named sites accepted; five remaining sites not named in reviewed releases",
+    "processed_partition": "Borken/Berga complete;5of7 individual identities unresolved",
+    "retry_condition": "Named owner/local authority disclosure becomes available",
+    "next_action": "Find other five site identities without residual-capacity synthesis; compare against existingGermany projects"
+  },
+  {
+    "rank": 5,
+    "url": "https://www.flower.se/wp-content/uploads/2026/08/Flower-Second-Quarter-2026.pdf",
+    "country_or_entity": "Sweden Marieboda scope and Kungälv power",
+    "version_date": "Q2 2026",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": 2,
+    "offered_fields": [
+      "physical-site scope",
+      "battery MW basis",
+      "SPV"
+    ],
+    "access_license": "Copyright; factual observations only",
+    "attempt_result": "Marieboda3.3MW table may combine two assets; Kungälv15vs14.8MW unresolved",
+    "processed_partition": "All10Q2rows staged,9accepted;Mariebodaheld",
+    "retry_condition": "Q3report or named utility permit clarifies site scope and rating precision",
+    "next_action": "Do not createMarieboda until one-site/aggregate scope resolves; preserveKungälvMWnull"
+  },
+  {
+    "rank": 6,
+    "url": "https://www.sinexcel.com/uploads/soft/20250815/1755248863.pdf",
+    "country_or_entity": "Sinexcel revisions and450suffix",
+    "version_date": "2025 Engineering Guidebook",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": 3,
+    "offered_fields": [
+      "model/revision identity",
+      "AC/DC voltage",
+      "rack/mass options",
+      "efficiency"
+    ],
+    "access_license": "Copyright; no open bulk licence asserted",
+    "attempt_result": "10newcolumns;2existingrevisionconflicts;7existingunchanged;1suffixheld",
+    "processed_partition": "All20guidecolumns reviewed;125Pand135threecolumns crosschecked againsttwo sheets",
+    "retry_condition": "OEM issues revision identity or corrected sheet",
+    "next_action": "Resolve1250/1725guide versus standalone sheet; do not split450CN suffix by name alone"
+  },
+  {
+    "rank": 7,
+    "url": "https://www.bluenova.co.za/products/bmac-battery-monitor-and-control/",
+    "country_or_entity": "BlueNova BMAC-E/HV-BMAC identity",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": 2,
+    "offered_fields": [
+      "exact controller version",
+      "supply",
+      "ports",
+      "controls"
+    ],
+    "access_license": "Copyright; no contact/request submitted",
+    "attempt_result": "Web index showsBMAC-E/HV-BMAC; direct listing404; linked manual downloadable and explicitlyversionD accepted",
+    "processed_partition": "OneversionD manual complete;E/HVlabelsheld",
+    "retry_condition": "Corrected current listing or exact E/HVmanual appears",
+    "next_action": "Do not aliasD/E/HV or import older distributor dimensions"
+  },
+  {
+    "rank": 8,
+    "url": "https://www.epa.govt.nz/fast-track-consenting/referred-projects/harmony-energy-solar-farm-marton/the-application/",
+    "country_or_entity": "New Zealand permit reconciliation",
+    "version_date": null,
+    "assessed_at": "2026-11-03T09:54:42.247345+00:00",
+    "estimated_useful_yield": 3,
+    "offered_fields": [
+      "battery scope",
+      "consent",
+      "technical equipment"
+    ],
+    "access_license": "EPA-hosted applicant documents may be third-party; not presumed Crown CC BY",
+    "attempt_result": "Marton application located; current owner solar description excludes explicit battery. No appendix imported. Carterton/Tauhei current pages also solar-only.",
+    "processed_partition": "Marton application located; current owner solar description excludes explicit battery. No appendix imported. Carterton/Tauhei current pages also solar-only.",
+    "retry_condition": "Check third-party appendix reuse terms then current permit/owner scope; do not treat omission as cancellation.",
+    "next_action": "Check third-party appendix reuse terms then current permit/owner scope; do not treat omission as cancellation.",
+    "carried_from": "2026-11-03_harmony_conversion_backlog.json",
+    "freshness_note": "Historical assessment retained; not reverified by carrying this entry"
+  },
+  {
+    "rank": 9,
+    "url": "https://harmonyenergy.co.nz/projects/",
+    "country_or_entity": "Harmony voltage and solar conflicts",
+    "version_date": null,
+    "assessed_at": "2026-11-03T09:54:42.247345+00:00",
+    "estimated_useful_yield": 2,
+    "offered_fields": [
+      "grid voltage",
+      "solar rating"
+    ],
+    "access_license": "Copyright retained; no open bulk licence; privacy policy concerns personal data",
+    "attempt_result": "Complete10-card portfolio reviewed;7explicit battery proposals accepted,3solar-only descriptions held.",
+    "processed_partition": "Complete10-card portfolio reviewed;7explicit battery proposals accepted,3solar-only descriptions held.",
+    "retry_condition": "Recheck owner correction or independently corroborate grid voltages and Hinuera solar rating.",
+    "next_action": "Recheck owner correction or independently corroborate grid voltages and Hinuera solar rating.",
+    "carried_from": "2026-11-03_harmony_conversion_backlog.json",
+    "freshness_note": "Historical assessment retained; not reverified by carrying this entry"
+  },
+  {
+    "rank": 10,
+    "url": "https://www.transpower.co.nz/connections/whats-latest-grid-connections",
+    "country_or_entity": "Transpower named pipeline",
+    "version_date": "2026-10-08",
+    "assessed_at": "2026-11-03T09:54:42.247345+00:00",
+    "estimated_useful_yield": 7,
+    "offered_fields": [
+      "identity",
+      "grid",
+      "connection stage"
+    ],
+    "access_license": "Prior IP reuse restriction unchanged; no bypass",
+    "attempt_result": "Fresh listing still8October2026;41forward rows remain held from previous pass. No new bulk extraction.",
+    "processed_partition": "Fresh listing still8October2026;41forward rows remain held from previous pass. No new bulk extraction.",
+    "retry_condition": "Independent permissible owner/permit evidence for named candidates; anonymous rows remain unresolved.",
+    "next_action": "Independent permissible owner/permit evidence for named candidates; anonymous rows remain unresolved.",
+    "carried_from": "2026-11-03_harmony_conversion_backlog.json",
+    "freshness_note": "Historical assessment retained; not reverified by carrying this entry"
+  },
+  {
+    "rank": 11,
+    "url": "https://www.flower.se/wp-content/uploads/2026/08/Flower-Second-Quarter-2026.pdf",
+    "country_or_entity": "Flower Sweden/Germany",
+    "version_date": "Q2 2026, reporting period ended 30 June 2026",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 6 (printed 04), named MW/MWh table; PDF page 5 group structure; row locator retained per record",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 12,
+    "url": "https://www.flower.se/news/flower-begins-construction-of-hamburgs-largest-battery-storage-system/",
+    "country_or_entity": "Flower Sweden/Germany",
+    "version_date": "2026-09-10",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "Opening, four-hour system and ENGIE agreement paragraphs",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 13,
+    "url": "https://www.flower.se/news/112-mw-across-germany-flower-acquires-seven-ready-to-build-bess-projects/",
+    "country_or_entity": "Flower Sweden/Germany",
+    "version_date": "2026-07-09",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "EPC/O&M, permits/grid, 2027 target and named Döllnitz paragraph",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 14,
+    "url": "https://www.flower.se/press/flower-german-tolling-ab-publ-closes-acquisition-of-two-bess-projects-in-germany-to-complete-112-mw-portfolio-acquisition/",
+    "country_or_entity": "Flower Sweden/Germany",
+    "version_date": "2026-10-26",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "Borken and Berga named ratings, regions and closed ownership transaction",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 15,
+    "url": "https://www.flower.se/news/flower-activates-multiple-new-battery-projects-a-new-era-for-swedish-renewables/",
+    "country_or_entity": "Flower Sweden/Germany",
+    "version_date": "2024-08-21",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "Named Bredhälla, Kungälv and Hanhals status and ratings paragraphs",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 16,
+    "url": "https://www.flower.se/de/press/flower-advances-internally-developed-bess-project-in-saarland-germany/",
+    "country_or_entity": "Flower Sweden/Germany",
+    "version_date": "2026-04-30",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "Gersheim 10 MW/20 MWh, ready-to-build and expected 2027 paragraphs",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 17,
+    "url": "https://www.flower.se/press/flower-german-tolling-ab-publ-acquires-100-mw-battery-storage-project-in-germany/",
+    "country_or_entity": "Flower Sweden/Germany",
+    "version_date": "2026-10-13",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "Acquisition chain, project company, consideration and bond funding paragraphs",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 18,
+    "url": "https://www.sinexcel.com/uploads/soft/20250815/1755253686.pdf",
+    "country_or_entity": "Sinexcel China",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "Exact model table; per-record PDF page locators retained in extensions",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 19,
+    "url": "https://www.sinexcel.com/uploads/soft/20250815/1755252665.pdf",
+    "country_or_entity": "Sinexcel China",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "Exact model table; per-record PDF page locators retained in extensions",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 20,
+    "url": "https://www.sinexcel.com/uploads/soft/20250815/1755248863.pdf",
+    "country_or_entity": "Sinexcel China",
+    "version_date": "2025 Engineering Guidebook",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright retained. Bounded review of named factual observations; no open bulk reuse licence asserted. Full source bytes retained outside Git and not redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "Exact model table; per-record PDF page locators retained in extensions",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 21,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/05/iESS-cab-128k-AC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 2 Technical Specifications, left tables; page 1 module count and LFP. AC means air cooled, not AC integration.",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 22,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/05/iESS-cab-144k-AC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 2 Technical Specifications, left tables; page 1 module count and LFP. AC means air cooled, not AC integration.",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 23,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/05/iESS-cab-160k-AC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 2 Technical Specifications, left tables; page 1 module count and LFP. AC means air cooled, not AC integration.",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 24,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/05/iESS-cab-177k-AC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 2 Technical Specifications, left tables; page 1 module count and LFP. AC means air cooled, not AC integration.",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 25,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/05/iESS-cab-193k-AC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 2 Technical Specifications, left tables; page 1 module count and LFP. AC means air cooled, not AC integration.",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 26,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/05/iESS-cab-209k-AC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 2 Technical Specifications, left tables; page 1 module count and LFP. AC means air cooled, not AC integration.",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 27,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/05/iESS-cab-225k-AC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 2 Technical Specifications, left tables; page 1 module count and LFP. AC means air cooled, not AC integration.",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 28,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/05/iESS-cab-241k-AC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page 2 Technical Specifications, left tables; page 1 module count and LFP. AC means air cooled, not AC integration.",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 29,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/01/BN-iESS-cab-261k-LC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF pages 1–2 visually rendered; page 1 features; page 2 left DC/general specification tables",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 30,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/01/BN-iESS-cab-418k-LC.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": null,
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF pages 1–2 visually rendered; page 1 features; page 2 left DC/general specification tables",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  },
+  {
+    "rank": 31,
+    "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BlueNova-BMAC-Manual-v4.1.pdf",
+    "country_or_entity": "BlueNova South Africa",
+    "version_date": "2024-10-28",
+    "assessed_at": "2026-11-03T11:07:39.091122+00:00",
+    "estimated_useful_yield": "Processed;0unreviewed rows in selected source partition",
+    "offered_fields": [
+      "identity",
+      "technical/lifecycle facts",
+      "field evidence"
+    ],
+    "access_license": "Copyright Blue Nova Energy; all rights reserved. Terms page links purchase/sale contracts, not an open data licence. Bounded manual review of factual product specifications only; no full documents or figures redistributed.",
+    "attempt_result": "Accepted factual observations; see review ledger and canonical field sources",
+    "processed_partition": "PDF page1 revision, pages2–4 structure/ports/power; page6 compatibility; pages8–11 Wi-Fi and remote monitoring",
+    "retry_condition": "Source revision changes or unresolved conflict evidence becomes available",
+    "next_action": "Recheck URL/version/checksum before continuing; no timestamp-only rewrite"
+  }
+]

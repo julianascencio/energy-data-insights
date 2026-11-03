@@ -101,6 +101,15 @@ export function toCsv(rows, columns) {
 }
 
 
+/** Count physical facility records separately from documented phase and campus scopes. */
+export function dataCenterScopes(rows) {
+  return {
+    facilities: new Set(rows.filter(r => r.record_scope === "facility" && r.facility_id).map(r => r.facility_id)).size,
+    phases: rows.filter(r => r.record_scope === "phase").length,
+    campuses: rows.filter(r => r.record_scope === "campus").length,
+  };
+}
+
 /** Data-center capacity: exclude campus/unresolved overlap rows persistently.
  * Return separate rating bases, preserving zero and missingness. No conversion.
  */

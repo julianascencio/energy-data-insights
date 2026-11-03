@@ -327,3 +327,29 @@ The output is for review only. It uses the source's PV code and exact parent
 links, keeps kW without inferring AC or DC, and excludes addresses, building
 identifiers and coordinates. Details may describe orientation or array splits
 as well as extensions; do not count them as independent projects.
+
+### Australian major power stations
+
+The [November 2026 station review](research/20261103T1000_ga_review.json)
+pins the complete Geoscience Australia Major Power Stations layer response
+and the AEMO October Generation Information workbook. It lists the reviewed
+GA GlobalID, worksheet row and DUID for each accepted station or locality
+fill. Keep both raw files outside Git. For a fresh revision, review identity,
+nearby projects, native spatial confidence, technology and whole-site survey
+scope before generating a new decision ledger. An exact name or nearby pin
+alone is insufficient.
+
+On a checkout preceding the reviewed additions, stage the ledger with:
+
+```bash
+uv run python -m energy_data_retrieval.pv_catalogue.australia \
+  /path/to/ga.json /path/to/aemo.xlsx \
+  catalogues/pv/research/20261103T1000_ga_review.json catalogues/pv \
+  /path/to/australia-staged.jsonl
+```
+
+Register the two immutable source entries before passing the staged JSONL
+to the standard `upsert` command. The adapter emits only accepted decisions;
+it does not write the catalogue. An AEMO site with multiple survey rows
+requires separate review. GA points retain their native GDA2020 reference;
+GA's unspecified generation rating is never used as AC or DC capacity.

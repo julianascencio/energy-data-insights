@@ -1,0 +1,75 @@
+{
+  "run_id": "dell-shipping-20261103T162418Z",
+  "executed_at": "2026-11-03T16:24:18Z",
+  "checks": [
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed",
+      "records": 657
+    },
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed",
+      "tests": 49
+    },
+    {
+      "command": "pytest -q",
+      "result": "passed",
+      "tests": 1848,
+      "skipped": 5,
+      "note": "Missing optional cdsapi (1), Python 3.13 Orbital PV integrations (3), Python 3.13 native imagery integration (1)."
+    },
+    {
+      "command": "ruff format --check .; ruff check .; ty check",
+      "result": "passed",
+      "note": "696 files formatted; lint and type checks passed."
+    },
+    {
+      "command": "python scripts/check_repository.py; python scripts/check_citations.py; git diff --check",
+      "result": "passed",
+      "note": "Final repository check reviewed 2809 candidate files."
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed",
+      "tests": 14
+    },
+    {
+      "command": "MPLBACKEND=Agg python examples/database/plot_data_center_catalogue.py",
+      "result": "passed"
+    },
+    {
+      "command": "python scripts/build_data_center_dell_shipping_batch.py <two canonical inputs> <three outputs>; cmp <outputs> <canonical JSONL>",
+      "result": "passed",
+      "processed_cells": 85,
+      "new_records": 53,
+      "enriched_records": 32
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs <fresh-output>; python scripts/check_docs_links.py <fresh-output>/html",
+      "result": "passed",
+      "generated_html_pages": 447,
+      "link_checked_html_pages": 445
+    },
+    {
+      "check": "Two independent snapshot builds",
+      "result": "byte-identical projects, equipment and manifest files",
+      "projects_parquet_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+      "equipment_parquet_sha256": "b7a0abc543ca49c25028b855fcf7de355a5a6a8cb71be5970d386df446f6a175",
+      "input_sha256": "9a4a853c6a71eb1f0568953b1d9bf61d90ba23dda4531c4be34ab5a3dc454469",
+      "manifest_sha256": "2307b4210725e00e4c0a682c78f6ac84214d2972a8a464a59d49da65cb7dbbea"
+    },
+    {
+      "check": "Viewer projection and preservation",
+      "result": "182 project rows / 475 equipment rows; project Parquet and capacity summaries unchanged; 114 campus aggregates remain excluded"
+    }
+  ],
+  "publication_preflight": {
+    "main_sha_at_start": "5063c41694b17b1a3fc856ea9527a32211278203",
+    "pr": 100,
+    "remote_head_at_start": "ff32640c65dbbdbbbfcd1caadbcfd844e46c3401",
+    "branch": "research/data-center-database-20261103T0909Z",
+    "remote_ci_before_increment": "Documentation and Python quality/tests completed successfully on commit ff32640c65dbbdbbbfcd1caadbcfd844e46c3401",
+    "remote_ci_after_increment": "Not available before publication; inspect PR checks after commit"
+  }
+}

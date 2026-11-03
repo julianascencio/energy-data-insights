@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 3 November 2026 expanded research snapshot contains **612 records from 43 product
-suppliers, backed by 284 registered sources**: 599 documented configurations and 13
+The 3 November 2026 expanded research snapshot contains **707 records from 45 product
+suppliers, backed by 354 registered sources**: 694 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -233,4 +233,12 @@ Latest: [Named Ingrid/Locus sites and exact Rolls two-volt cells](../bess/resear
 
 Previous: [South African portfolios, Finnish owner evidence and Rolls AGM configurations](../bess/research/2026-11-03_south_africa_rolls.md).
 
-Latest research: [New Zealand reconciliation and exact Sinexcel PCS models](../bess/research/2026-11-03_nz_sinexcel.md).
+Previous research: [Harmony portfolio and exact Sinexcel conversion equipment](../bess/research/2026-11-03_harmony_conversion.md).
+
+Previous research: [Flower portfolio, Sinexcel guidebook and BlueNova equipment](../bess/research/2026-11-03_flower_guidebook.md), with exact revisions, source conflicts and the next ranked source queue.
+
+Latest research: [Mauritius and Philippine projects, Eskom milestones and BlueNova configurations](../bess/research/2026-11-03_islands_bluenova.md), with the CEB offline adapter and source-access backlog.
+
+Latest reviewed batch: [Philippine historical inventory and BlueNova racks](../bess/research/2026-11-03_doe_racks.md).
+
+Latest equipment increment: [16 exact BYD LVS/LVL/HVB configurations](../bess/research/2026-11-03_energa_byd.md), with individual technical columns, usable-DC test conditions and qualified efficiency/warranty claims.
