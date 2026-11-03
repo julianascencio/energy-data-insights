@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T18:57:57.029479+00:00",
+  "updated_at": "2026-11-03T20:06:43.470987+00:00",
   "ranking_file": "20261103T1800_top10_coverage.json",
   "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
-  "next_highest_value_source": "REPD Q2 2026 awaiting-construction exact-identity enrichment, Scotland first.",
+  "next_highest_value_source": "REPD Q2 2026 awaiting-construction crosswalk: Wales and the Midlands.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6306,6 +6306,67 @@
       "retry_condition": "Verify new revision or independent primary evidence.",
       "next_action": "Seek materially distinct OEM model family.",
       "processed_cursor": "Seven exact models already present"
+    },
+    {
+      "id": "repd_q2_awaiting_northern_crosswalk",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Q2 2026",
+      "licence_assessment": "OGL v3",
+      "access_assessment": "Official downloadable bytes checksum verified",
+      "estimated_useful_yield": 113,
+      "fields_offered": [
+        "authority",
+        "reference",
+        "planning dates"
+      ],
+      "last_attempt": "2026-11-03T20:06:43.470987+00:00",
+      "result": "Scotland, North East, North West, Yorkshire and Humber; 263 reviewed, 150 held",
+      "retry_condition": "Check revisions and independent evidence.",
+      "next_action": "Wales and Midlands exact-ID cohorts.",
+      "processed_cursor": "Scotland, North East, North West, Yorkshire and Humber; 263 reviewed, 150 held"
+    },
+    {
+      "id": "fronius_verto_plus_2000",
+      "country": "AUT",
+      "entity": "inverters",
+      "source_url": "https://www.fronius.com/~/downloads/Solar%20Energy/Datasheets/SE_DS_Fronius_Verto_Plus_EN.pdf",
+      "version_or_date": "EN edition",
+      "licence_assessment": "Limited OEM facts only",
+      "access_assessment": "Official downloadable bytes checksum verified",
+      "estimated_useful_yield": 6,
+      "fields_offered": [
+        "electrical",
+        "physical",
+        "thermal"
+      ],
+      "last_attempt": "2026-11-03T20:06:43.470987+00:00",
+      "result": "Six model columns exhausted",
+      "retry_condition": "Check revisions and independent evidence.",
+      "next_action": "Review independent exact model lines.",
+      "processed_cursor": "Six model columns exhausted"
+    },
+    {
+      "id": "deye_sun_g_2000",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/deyeinverter/2024/04/16/datasheet_sun-60-80k-g-deye_240416_en.pdf",
+      "version_or_date": "2024-04-16",
+      "licence_assessment": "Limited OEM facts only",
+      "access_assessment": "Official downloadable bytes checksum verified",
+      "estimated_useful_yield": 4,
+      "fields_offered": [
+        "electrical",
+        "physical",
+        "thermal",
+        "communications"
+      ],
+      "last_attempt": "2026-11-03T20:06:43.470987+00:00",
+      "result": "Four exact G suffix model columns; ambiguous merged values held",
+      "retry_condition": "Check revisions and independent evidence.",
+      "next_action": "Resolve merged cell scope against exact SKU material.",
+      "processed_cursor": "Four exact G suffix model columns; ambiguous merged values held"
     }
   ]
 }

@@ -313,3 +313,20 @@ counting with orientation correction, autocorrelation and source-resolution chec
 planes from geographic module footprints, declared elevation grids and explicit
 mounting parameters. See the [3D site method and other-site recipe](../docs/pv-site-3d.md).
 It preserves missingness and source datum; it does not recover depth from imagery.
+
+### Tabular forecasting and wind response
+
+`energy_methods.xgboost.fit_xgboost` provides deterministic CPU histogram
+regression with explicit feature order, finite-array validation and native JSON
+model export. `energy_methods.lightgbm.fit_lightgbm_features` handles the same
+prepared feature matrices; the existing monotone PV-specific `fit_lightgbm`
+interface remains available. Callers supply a chronological training partition
+and construct only features available at forecast issue time.
+
+`energy_methods.wind_physics.fit_wind_physics` calibrates a nonnegative farm
+response scale against a generic cubic wind curve. Its reference thresholds
+are 3/11.4/25 m/s; its scale is not installed capacity and it does not identify
+actual equipment. See the [solar/wind benchmark](../docs/forecast-benchmark.md)
+for real observations, runnable examples and approximation limits. The benchmark
+cites Ascencio-Vásquez et al. (2020), DOI 10.3390/en13092166, as methodological
+inspiration; XGBoost and wind have separate method references.

@@ -1,0 +1,92 @@
+{
+  "retrieved_at_utc": "2026-11-03T19:43:25.047597+00:00",
+  "sources": [
+    {
+      "technology": "solar",
+      "plant_id": "PBFCM4",
+      "plant_name": "Coremas IV",
+      "source_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/RESTRICAO_COFF_FOTOVOLTAICA_DETAIL_2024_06.parquet",
+      "request": {
+        "endpoint": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/RESTRICAO_COFF_FOTOVOLTAICA_DETAIL_2024_06.parquet",
+        "parameters": {},
+        "retrieved_at_utc": "2026-11-03T19:41:54.662723+00:00",
+        "sha256": "5ee9c525357d0ac8a3426802bd3abae34cb170ca9934860d8e1003cf84299bcf",
+        "size_bytes": 3435451,
+        "cache_hit": true
+      },
+      "source_sha256": "5ee9c525357d0ac8a3426802bd3abae34cb170ca9934860d8e1003cf84299bcf",
+      "sample_sha256": "c1db3c422ee31300159d26b0f54d32654d333455736b4ad5b7cbb42b5325b607",
+      "sample_rows": 1440,
+      "source_columns": [
+        "id_subsistema",
+        "id_estado",
+        "nom_modalidadeoperacao",
+        "nom_conjuntousina",
+        "nom_usina",
+        "id_ons",
+        "ceg",
+        "din_instante",
+        "val_irradianciaverificado",
+        "flg_dadoirradianciainvalido",
+        "val_geracaoestimada",
+        "val_geracaoverificada",
+        "id_ons_conjuntousina",
+        "nom_origemirradiancia",
+        "flg_dadoirradianciasupervisaoinvalido",
+        "nom_origemgeracaoreferencia",
+        "val_geracaoreferenciafinal",
+        "flg_geracaorestrita"
+      ],
+      "transformation": "Select declared plant; sort source timestamps; serialize all original Parquet columns as semicolon CSV. No interpolation or observations generated.",
+      "dictionary_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/DicionarioDados_RestricaoContrainedoff_UsiFotovoltaica_Detail.json"
+    },
+    {
+      "technology": "wind",
+      "plant_id": "MAEDT1",
+      "plant_name": "Delta 3 I",
+      "source_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_eolica_detail_tm/RESTRICAO_COFF_EOLICA_DETAIL_2024_06.parquet",
+      "request": {
+        "endpoint": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_eolica_detail_tm/RESTRICAO_COFF_EOLICA_DETAIL_2024_06.parquet",
+        "parameters": {},
+        "retrieved_at_utc": "2026-11-03T19:41:55.609841+00:00",
+        "sha256": "fe795bfe70e3677c64d9c3e118babf6c42ab1214accaab370808e7a167d1adbd",
+        "size_bytes": 10114222,
+        "cache_hit": true
+      },
+      "source_sha256": "fe795bfe70e3677c64d9c3e118babf6c42ab1214accaab370808e7a167d1adbd",
+      "sample_sha256": "8837377f454ab68d3442cdd09c70fbc10123e6eed9756afbb09322bdda503317",
+      "sample_rows": 1440,
+      "source_columns": [
+        "id_subsistema",
+        "id_estado",
+        "nom_modalidadeoperacao",
+        "nom_conjuntousina",
+        "nom_usina",
+        "id_ons",
+        "ceg",
+        "din_instante",
+        "val_ventoverificado",
+        "flg_dadoventoinvalido",
+        "val_geracaoestimada",
+        "val_geracaoverificada",
+        "id_ons_conjuntousina",
+        "nom_origemvento",
+        "flg_dadoventosupervisaoinvalido",
+        "nom_origemgeracaoreferencia",
+        "val_geracaoreferenciafinal",
+        "flg_geracaorestrita"
+      ],
+      "transformation": "Select declared plant; sort source timestamps; serialize all original Parquet columns as semicolon CSV. No interpolation or observations generated.",
+      "dictionary_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_eolica_detail_tm/DicionarioDados_RestricaoContrainedoff_UsiEolicas_DetalhamentoPorUsina.pdf"
+    }
+  ],
+  "attribution": "Operador Nacional do Sistema Eletrico (ONS), CC-BY; selections identified.",
+  "period": "2024-06-01 through 2024-06-30 inclusive, native Brazilian labels",
+  "plant_selection": "Solar PBFCM4 is the first plant in native export order with 672 initial training records, >=650 valid resource flags and >=150 valid readings above 100 W/m2. This excludes degenerate all-zero sensors despite valid flags. Wind MAEDT1 is the first wind plant in the native export. Selection used only the initial 14-day training inputs, never model errors or test-period quality.",
+  "clock": "America/Sao_Paulo source reference labels converted to UTC without shifting. Interval start/end is not asserted. Issue is last available historical source label.",
+  "target_unit": "MWmed (mean MW over the native half hour), not MWh",
+  "resource_policy": "Invalid resource flags mask training covariates. Solar forecasts reuse the latest valid same-clock observation; wind uses the last valid observation.",
+  "wind_unit_assumption": "The ONS PDF calls val_ventoverificado wind speed but prints m3/s. This dimensional inconsistency is retained here; the cubic-curve benchmark explicitly interprets the native numerical speeds as m/s. No volumetric-flow conversion.",
+  "solar_assumptions": "Measured irradiance is a POA proxy of undocumented sensor-plane orientation. No temperature observation is provided; the physical surrogate fixes 25 C.",
+  "availability_assumption": "Historical SCADA generation and resource are assumed available at their labels for this experiment. Exports include post-operation revisions; this is not a verified as-issued operational backtest."
+}

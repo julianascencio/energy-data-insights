@@ -285,3 +285,14 @@ to elevation grids, static/interactive views and OBJ/JSON exports. The
 [El Mirlo continuation and other-site recipe](../docs/pv-site-3d.md) use real
 terrain and explicitly assumed mounting planes. The example retains the original
 counting scope and uncertainty; it is not a surveyed as-built model.
+
+### Solar and wind forecasting benchmark
+
+[The runnable gallery example](../examples/analysis/plot_forecast_model_benchmark.py)
+compares LightGBM, XGBoost, Mistral Timestral and physical surrogates with a
+previous-day baseline. Real ONS half-hour observations support 16 chronological
+24-hour forecasts for Coremas IV solar and Delta 3 I wind. Default execution
+fits trees/physics locally and replays verified actual Timestral inference.
+The [guide](../docs/forecast-benchmark.md) explains weather persistence, input
+quality, fair scoring and differences from the cited Ascencio-Vásquez et al.
+(2020) PV-modelling paper. No future observed weather enters model features.

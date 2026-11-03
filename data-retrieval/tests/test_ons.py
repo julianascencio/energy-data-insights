@@ -99,6 +99,49 @@ def test_invalid_schema_numeric_alignment_and_duplicate_conflicts() -> None:
         parse_generation_csv(repeated, maximum_rows=1)
 
 
+def test_wind_native_resource_and_catalogue_discovery() -> None:
+    text = (
+        "din_instante;id_subsistema;nom_usina;id_ons;nom_modalidadeoperacao;"
+        "val_geracaoverificada;val_geracaoestimada;val_geracaoreferenciafinal;"
+        "flg_geracaorestrita;val_ventoverificado;flg_dadoventoinvalido\n"
+        "2024-06-01 12:30:00;NE;Wind A;A;TIPO II-C;5;8;;1;6.25;1\n"
+    )
+    url = (
+        "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/"
+        "restricao_coff_eolica_detail_tm/RESTRICAO_COFF_EOLICA_DETAIL_2024_06.parquet"
+    )
+    body = parquet_bytes(text)
+
+    def handle(request: httpx.Request) -> httpx.Response:
+        if request.url.host == "dados.ons.org.br":
+            assert request.url.params["id"] == "restricao_coff_eolica_detail"
+            root = catalogue(url)
+            root["result"]["resources"][0]["name"] = "Restricoes_coff_Eolicas_Detalhamento-2024-06"
+            return httpx.Response(200, json=root)
+        assert str(request.url) == url
+        return httpx.Response(200, content=body)
+
+    with HTTPClient(
+        ONS_HOSTS,
+        transport=httpx.MockTransport(handle),
+        config=HTTPConfig(minimum_interval_seconds=0),
+    ) as http:
+        result = ONSClient(http).wind_curtailment(
+            date(2024, 6, 1), date(2024, 6, 1), plant_ids=["A"]
+        )
+    frame = result.frame
+    assert frame["technology"].iloc[0] == "EOLICA"
+    assert frame["value"].iloc[0] == 5 and frame["val_geracaoestimada"].iloc[0] == 8
+    assert frame["val_ventoverificado"].iloc[0] == 6.25
+    assert frame["flg_dadoventoinvalido"].iloc[0] == "1"
+    assert frame["flg_geracaorestrita"].iloc[0] == "1"
+    assert frame["timestamp"].iloc[0] == pd.Timestamp("2024-06-01T15:30Z")
+    assert frame["unit"].iloc[0] == "MW" and frame["aggregation"].iloc[0] == "half_hour_mean"
+    assert result.requests[-1].sha256 == hashlib.sha256(body).hexdigest()
+    parsed = parse_generation_csv(text, product="wind_curtailment")
+    pd.testing.assert_frame_equal(frame, parsed)
+
+
 def test_catalogue_parquet_discovery_and_http_provenance() -> None:
     body = parquet_bytes(native())
     calls: list[httpx.Request] = []

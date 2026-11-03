@@ -1,0 +1,82 @@
+{
+  "generated_at_utc": "2026-11-03T19:43:33.984427+00:00",
+  "kind": "Actual Timestral inference, never synthetic baseline replacement",
+  "model_id": "mistralai/Timestral-5M",
+  "model_revision": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+  "checkpoint_sha256": {
+    "config.json": "b5f27f61513f8fd1a3aa996f3720d3679cb40bce5bcb08eb3dc320ce726e7c2f",
+    "model.safetensors": "7ace108c4987e7f2a99a75a445240019d1d31c2117139d1bd05ffdfd25aca738",
+    "LICENSE": "648194727930df730890e9f9affdbcc5c930d406d6829559b25ca3d5a973fc8c"
+  },
+  "reference_code_revision": "a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff",
+  "installed_source_sha256": {
+    "__init__.py": "46777bcb15b903f7721a3d6d91a6cb93463fc454816da238799eb8d5360e5ab5",
+    "config.py": "d46e37020875c536e7a75e1b6ace3f67419ba2f2c9d9e8465f4b07f837e92ed6",
+    "covariate_encoding.py": "1c7f5c320fa4b7622d3705f765f53ab9676b829cb1d4fd68f839ec593b8404c0",
+    "forecaster.py": "12a712f9be777d1e160513b7f8c81d545b991fcfe6cd4a46004a03533b7cb8fd",
+    "layers.py": "480ba93e7e3681dea185e5fa08a96dcce327cf938931c715ae54e6b02934527d",
+    "loading.py": "179257fa74e798c207887e2fed162e9a2fef9c37cadadb9437fabfeae68b3d6f",
+    "masks.py": "1792898d809b99034bb70e2cc1ab74f897ce8478886f83140e705fc67e6762b3",
+    "model.py": "988121c6a089e843c4941732cbc5c64b10cb0eccd9310e228abe38ecf2dfb668",
+    "scaler.py": "838da836f70b1640bcaed7701a70a1a358e30442693e63522a93f878e157a8ca"
+  },
+  "config": {
+    "training_steps": 672,
+    "horizon_steps": 48,
+    "step_minutes": 30,
+    "period_steps": 48
+  },
+  "fold_inputs": {
+    "PBFCM4|2024-06-15T02:30:00+00:00": "3f31198a7953497b08fb068c2396a799e05f837404a6553631e8f8e953af1682",
+    "PBFCM4|2024-06-16T02:30:00+00:00": "61d7ccab0d8a30122f6db84709153cbc3eaadb217eaafa5be65ccfee03c720aa",
+    "PBFCM4|2024-06-17T02:30:00+00:00": "05721573cb0143f75ff3d4d7fc6aa075c16f40cbfd6224df2f7d75ac206c25c5",
+    "PBFCM4|2024-06-18T02:30:00+00:00": "b6dd1e01c47a993f892cb98f73c7502422098d3308cc503e67eaa9a927087d0a",
+    "PBFCM4|2024-06-19T02:30:00+00:00": "6dab44d8a5a7cf5a501a6d09995f69f1670cd350e3e209ab1e6b4a90a1aecb30",
+    "PBFCM4|2024-06-20T02:30:00+00:00": "48a844eb1c2bc2b69338cf4040c59a5726ce23dc746850258738eb333c4e0e7a",
+    "PBFCM4|2024-06-21T02:30:00+00:00": "bc5b6f5c58f519dd4205fcadea9e724b745bab1edeaccb6f1b274e348e4d19c5",
+    "PBFCM4|2024-06-22T02:30:00+00:00": "ccebdd0166540fafa5871beab901a449419c06fb327412017740b829b23767ec",
+    "PBFCM4|2024-06-23T02:30:00+00:00": "917af1e8a0cdf3322e89cc2d20a65244af6d4cddf4dfca2bfe55588a57e42b9b",
+    "PBFCM4|2024-06-24T02:30:00+00:00": "7643bc142317e34acfd32fee0a11cee212eb082fd7b58e7409ae7cbdde52b540",
+    "PBFCM4|2024-06-25T02:30:00+00:00": "03786166b45b7c0a3123a03cf5b128d31720944ba406ca4118eb977d54abd151",
+    "PBFCM4|2024-06-26T02:30:00+00:00": "abbc5d417f9d6521da2e02bb721d0a19922e2a29a36d60533b8a3a65e23553dd",
+    "PBFCM4|2024-06-27T02:30:00+00:00": "4d348dc68ea444782a846035e68aa516811091a18a516b26f851849ab3d841cd",
+    "PBFCM4|2024-06-28T02:30:00+00:00": "fc789298f073635a71f6ced9c88270bdd7325015b35f316c5ebb5b7dddc574b9",
+    "PBFCM4|2024-06-29T02:30:00+00:00": "3479f5a70a71e271d7c43a0958f93246239f5940e2fff83c0becd23d9ad0b58d",
+    "PBFCM4|2024-06-30T02:30:00+00:00": "b48bfc208f3a07eddca3f322178f39f0bb2ef5fc1bce7382dd6ae036521e5631",
+    "MAEDT1|2024-06-15T02:30:00+00:00": "d3d6540f54c84a306e64358d92865a4c9d5db387f0fa2897ffa11050d6ecd87f",
+    "MAEDT1|2024-06-16T02:30:00+00:00": "db0b591d13d69353926967f04df42739e182713663f4c3b481dfc34f4116f874",
+    "MAEDT1|2024-06-17T02:30:00+00:00": "e719a534a2e33cfaa207f9951f31e1b6e6683041698a5977331db36cc0f478b6",
+    "MAEDT1|2024-06-18T02:30:00+00:00": "5d38c1c01dac7d774344d04cfdcefcb27610c87dee24db11f66b16f86553a2f5",
+    "MAEDT1|2024-06-19T02:30:00+00:00": "3c022374d0ae75df681d5ca7b21f251a50a7d2a3c0969b3cb70ded7241792f07",
+    "MAEDT1|2024-06-20T02:30:00+00:00": "9a49a1ca01a22500afa4fa66918846ea67d1bfde934f856e8cabb159ea423588",
+    "MAEDT1|2024-06-21T02:30:00+00:00": "557b899ab20a9ae3316d832083f129e46c7f880d61207afed0ba7178bd479c29",
+    "MAEDT1|2024-06-22T02:30:00+00:00": "32161bd150578862f9904d2d7d59e0718dbee6bb354f4570309839a3205b2d05",
+    "MAEDT1|2024-06-23T02:30:00+00:00": "02f70ded5298325d0e582aad4e4f41a28694e5749fa6d89bb19f9b863803a3f8",
+    "MAEDT1|2024-06-24T02:30:00+00:00": "8935d0b58c2f9fd1280414cd31de67e02a7c4f078b8afa46159c486b7aa7d797",
+    "MAEDT1|2024-06-25T02:30:00+00:00": "a7d17b4d819f7c8ed7cb838dff6cfe4fa07a066a71d37cea903af226ae2ed198",
+    "MAEDT1|2024-06-26T02:30:00+00:00": "83378648ab7b1e119ec122ba99a5228d72e0ad2a7d0ca7542da9a05b11bd5078",
+    "MAEDT1|2024-06-27T02:30:00+00:00": "3f07ddc8395baba9e24135d18359f1a079568c40d152017cde1f7b026c794b75",
+    "MAEDT1|2024-06-28T02:30:00+00:00": "97ecf77ac017e99749cb9daa102c8262f3f06e3ee4ec0795ff0dd73777a4c731",
+    "MAEDT1|2024-06-29T02:30:00+00:00": "4ed57c10c1678534c376ee71e5914dd25f6f9b3f450ae038c09893d983ebc361",
+    "MAEDT1|2024-06-30T02:30:00+00:00": "242aeb8caa8a5543dcbf5722aa819f51d58b2e8c8663762bc007b14efe72b360"
+  },
+  "forecast_sha256": "4f289049a4f39bfc029f5cb07878ba70cc2cace6fbbec99045e58e82ae2c0b59",
+  "device": "cpu",
+  "seed": 0,
+  "torch_threads": 1,
+  "python": "3.13.16",
+  "versions": {
+    "timestral": "1.0.0",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "huggingface_hub": "2.4.0",
+    "safetensors": "0.8.0"
+  },
+  "quantiles_retained": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "limits": "Unknown pretraining overlap; intervals uncalibrated. See input provenance for weather-persistence, revised-data and physical-surrogate assumptions."
+}
