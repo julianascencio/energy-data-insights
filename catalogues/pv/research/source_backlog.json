@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T09:04:13.269941+00:00",
-  "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "AEMO unchanged revision: nine single-phase AC fills; Adelaide held. Five exact Deye inverters; Axone Duo identical source skipped.",
-  "next_highest_value_source": "AEMO October 2026: independently crosswalk 60 name-only candidates using DUID and phase boundary. Prioritize explicit AC and DC fields. Adelaide remains held as mixed technology.",
+  "updated_at": "2026-11-03T10:08:15.444625+00:00",
+  "ranking_file": "20261103T1000_top10_coverage.json",
+  "selection_note": "GA/AEMO station layer, CER committed/probable, Deye exact table, and revised IEA PVPS Trends Annex 1",
+  "next_highest_value_source": "Australia: reconcile CER September 2026 Approved tab’s 2026 year-to-date photovoltaic sites with the historic REC public register and state planning records, starting with explicitly named PV installations in NSW and VIC; do not treat generic Solar or a certificate accreditation date as technology/commissioning proof.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5723,6 +5723,156 @@
         "sha256": "5c42306e347444dbae12b0410b75718ceaf390346d6b0e4a05ddff6d2c7f0552",
         "complete": true
       }
+    },
+    {
+      "id": "ga_20261103",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://services.ga.gov.au/gis/rest/services/Electricity_Infrastructure/MapServer/1/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=objectid&f=json",
+      "version_or_date": "2026-06-19; live layer bytes pinned",
+      "licence_assessment": "CC BY 4.0; Commonwealth of Australia (Geoscience Australia) 2026",
+      "access_assessment": "Complete 430-feature public ArcGIS response",
+      "estimated_useful_yield": {
+        "explicit_pv": 63,
+        "accepted_new": 16,
+        "existing_locality_fills": 11
+      },
+      "fields_offered": [
+        "GlobalID",
+        "station name",
+        "state",
+        "locality",
+        "technology",
+        "GDA2020 point",
+        "capacity (scope unstated)"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "27 accepted, 36 GA observations held; two hybrid/CSP features excluded",
+      "processed_partition": "Layer 1; entire response, 63 positive PV labels",
+      "retry_condition": "Changed layer or independent station-boundary/pin evidence",
+      "next_action": "For held IDs 323, 370 and 386 verify project positions through licence/owner plans; separately review 391 Springlands grouping."
+    },
+    {
+      "id": "cer_20261103",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cer.gov.au/document/power-stations-and-projects-status",
+      "version_or_date": "2026-09-30",
+      "licence_assessment": "CC BY 4.0 with derivative attribution; no flagged third-party material used",
+      "access_assessment": "XLSX and CSV downloaded; checksums in Australia ledger",
+      "estimated_useful_yield": {
+        "committed_solar": 31,
+        "probable_solar": 42,
+        "accepted": 9
+      },
+      "fields_offered": [
+        "status grouping",
+        "reported commitment month",
+        "MW unspecified",
+        "accreditation identifier in Approved tab"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "Nine pipeline enrichments. Approved tab and CSV are only year-to-date; zero approvals promoted.",
+      "processed_partition": "Committed and Probable: 73 Solar rows; Approved sample only",
+      "retry_condition": "Open historic public register export and exact explicit PV identities",
+      "next_action": "Australia: reconcile CER September 2026 Approved tab’s 2026 year-to-date photovoltaic sites with the historic REC public register and state planning records, starting with explicitly named PV installations in NSW and VIC; do not treat generic Solar or a certificate accreditation date as technology/commissioning proof."
+    },
+    {
+      "id": "aemo_register_20261103",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/participant_information/nem-registration-and-exemption-list.xlsx?rev=852f12a63f634cc3b23ac543b19c2e58&sc_lang=en",
+      "version_or_date": "2026-10-27",
+      "licence_assessment": "AEMO attributed factual use; confidential/third-party exclusions",
+      "access_assessment": "Workbook downloaded",
+      "estimated_useful_yield": {
+        "explicit_pv_units": 132,
+        "unique_generation_duid_crossmatches": 127
+      },
+      "fields_offered": [
+        "DUID",
+        "classification",
+        "registered and maximum generation MW",
+        "station/region"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "49 exact canonical name candidates reached ledger; names alone not accepted. Girgarre and Avonlie independent sources provided substantive facts.",
+      "processed_partition": "PU and Scheduled Loads: complete explicit photovoltaic subset",
+      "retry_condition": "Independent owner or connection/siting record and plant/phase match",
+      "next_action": "Review remaining names against state planning/connection decisions; keep Adelaide mixed-technology capacity unassigned."
+    },
+    {
+      "id": "deye_g06_cm2_p1_20261103",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/deyeinverter/2025/04/29/datasheet_sun-3-15k-g06p3-eu-cm2-p1_250427_en.pdf",
+      "version_or_date": "250427",
+      "licence_assessment": "Copyright retained; limited normalized facts only",
+      "access_assessment": "Official PDF downloaded, page 2 visually inspected",
+      "estimated_useful_yield": {
+        "exact_models": 10
+      },
+      "fields_offered": [
+        "rated active and maximum apparent output",
+        "MPPT",
+        "thermal",
+        "IP",
+        "warranty",
+        "efficiency",
+        "mechanical"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "All ten exact columns accepted, no aliases collided",
+      "processed_partition": "Complete model table",
+      "retry_condition": "New distinct engineering family or revision",
+      "next_action": "Seek multi-model smaller OEM with explicit part numbers; do not expand configurable variants."
+    },
+    {
+      "id": "antai_tracker_20261103",
+      "country": "CHN",
+      "entity": "trackers",
+      "source_url": "https://www.antaisolar.com/customers/resource-center",
+      "version_or_date": "2025 PDFs and 2026 revised public product pages",
+      "licence_assessment": "Public factual review only; no bulk redistribution grant identified",
+      "access_assessment": "OEM public PDFs/search extracts and current pages; no contact form submitted",
+      "estimated_useful_yield": {
+        "model_families": 3,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "tracking angle",
+        "allowable wind",
+        "row length",
+        "warranty",
+        "drive controls"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "TAI-Simple and TAI-Universal product pages and sheets give different wind/length figures; AT-Spark exact table still to be matched to revision.",
+      "processed_partition": "Three named product lines screened",
+      "retry_condition": "Exact part/revision mapping and same-basis gust test conditions",
+      "next_action": "Use dated revision documents from OEM resource center to distinguish platform revisions; hold conflicting scalar fields."
+    },
+    {
+      "id": "weid_high_current_20261103",
+      "country": "DEU",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.weidmuller.com/en/solutions/industries/photovoltaics/solutions_for_utility_scale_pv_plants/high_current_combiner_box.jsp",
+      "version_or_date": "Undated current OEM page",
+      "licence_assessment": "Public engineering facts only; no bulk grant established",
+      "access_assessment": "Family page opened",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "fuse family",
+        "warranty",
+        "input options"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "Named article 8000081269 already catalogued; other options lack exact configuration evidence on this page.",
+      "processed_partition": "High-current options page",
+      "retry_condition": "Official model-specific eShop PDFs for distinct articles",
+      "next_action": "Check article cross-reference from manufacturer, then inspect exact PDFs not general range brochure."
     }
   ]
 }
