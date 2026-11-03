@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,796 project and plant records across
-37 countries**, supported by **261 registered sources**. It combines curated
+The BESS section contains **1,809 project and plant records across
+37 countries**, supported by **268 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -91,7 +91,7 @@ tested adapters and a reviewed exclusion ledger. Both need ongoing review. Numer
 Conflicts are retained in `conflicts_json` with both source observations and a
 `needs_review` flag. The catalogue preserves conflicting Coya/Tamaya/Salisbury power ratings,
 Jurong Island energy ratings and Edwards & Sanborn registry-scope differences. It does not select a universal engineering
-rating from a marketing announcement. See [latest research notes](research/2026-11-02_odre_rolls.md) and the
+rating from a marketing announcement. See [latest research notes](research/2026-11-03_flower_guidebook.md) and the
 [original launch audit](research/launch_report.md).
 
 ## Contribution contract
@@ -231,4 +231,6 @@ Latest: [Named Ingrid/Locus sites and exact Rolls two-volt cells](research/2026-
 
 Previous: [South African portfolios, Finnish owner evidence and Rolls AGM configurations](research/2026-11-03_south_africa_rolls.md).
 
-Latest research: [Harmony portfolio and exact Sinexcel conversion equipment](research/2026-11-03_harmony_conversion.md).
+Previous research: [Harmony portfolio and exact Sinexcel conversion equipment](research/2026-11-03_harmony_conversion.md).
+
+Latest research: [Flower portfolio, Sinexcel guidebook and BlueNova equipment](research/2026-11-03_flower_guidebook.md), with exact revisions, source conflicts and the next ranked source queue.

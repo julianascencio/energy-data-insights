@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 3 November 2026 expanded research snapshot contains **624 records from 43 product
-suppliers, backed by 292 registered sources**: 611 documented configurations and 13
+The 3 November 2026 expanded research snapshot contains **645 records from 44 product
+suppliers, backed by 306 registered sources**: 632 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -233,4 +233,6 @@ Latest: [Named Ingrid/Locus sites and exact Rolls two-volt cells](../bess/resear
 
 Previous: [South African portfolios, Finnish owner evidence and Rolls AGM configurations](../bess/research/2026-11-03_south_africa_rolls.md).
 
-Latest research: [Harmony portfolio and exact Sinexcel conversion equipment](../bess/research/2026-11-03_harmony_conversion.md).
+Previous research: [Harmony portfolio and exact Sinexcel conversion equipment](../bess/research/2026-11-03_harmony_conversion.md).
+
+Latest research: [Flower portfolio, Sinexcel guidebook and BlueNova equipment](../bess/research/2026-11-03_flower_guidebook.md), with exact revisions, source conflicts and the next ranked source queue.

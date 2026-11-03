@@ -51,6 +51,11 @@ or a live availability feed. Do not interpret record counts as installed capacit
    For Chinese Sinexcel two-page PCS sheets, `scripts/stage_bess_sinexcel.py` checks
    exact model headers and columns in local `pdftotext -layout` output. AC kVA and
    maximum DC kW remain distinct; conversion efficiency is not round-trip efficiency.
+   For Flower Q2 2026, `scripts/stage_bess_flower.py` stages local
+   `pdftotext -layout` output, checks the reporting period, status sections and
+   separate MW/MWh control totals. Review every named row against the ownership
+   chart and later releases. Marieboda remains held for possible multi-site scope;
+   the adapter never turns portfolio rows or future COD targets into accepted projects.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
