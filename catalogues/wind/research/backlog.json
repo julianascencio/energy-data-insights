@@ -1,0 +1,82 @@
+{
+  "updated_at": "2026-11-03T00:00:00Z",
+  "branch": "research/global-wind-database-20261103",
+  "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
+  "queue": [
+    {
+      "rank": 1,
+      "source": "US Wind Turbine Database official release/API",
+      "url": "https://energy.usgs.gov/uswtdb/data/",
+      "partition": "v9.1 full turbine release; all states including offshore",
+      "next_offset": 0,
+      "status": "blocked_api_403_try_official_download",
+      "tasks": [
+        "Obtain original release bytes and hash; verify version and complete count",
+        "Adapter with offline tests; retain exact model only when supplied",
+        "Cluster explicit project registry identities and reconcile WRI USA rows; add turbine children without double counting farms"
+      ]
+    },
+    {
+      "rank": 2,
+      "source": "UK Renewable Energy Planning Database",
+      "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-monthly-extract",
+      "partition": "latest published quarterly CSV; onshore/offshore wind, all lifecycle statuses",
+      "next_offset": 0,
+      "status": "not_started",
+      "tasks": [
+        "Record exact published quarter and download hash",
+        "Process entire selected wind partition; match WRI IDs/names/coordinates/phase boundaries",
+        "Prioritize floating and Scottish projects already present; retain cancelled and repowering scopes"
+      ]
+    },
+    {
+      "rank": 3,
+      "source": "Brazil ANEEL SIGA generation registry",
+      "url": "https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel",
+      "partition": "EOL all statuses and states",
+      "next_offset": 0,
+      "status": "not_started",
+      "tasks": [
+        "Freeze CSV release and field dictionary",
+        "Reconcile CEG identifiers and WRI Brazil plants before adding new farms"
+      ]
+    },
+    {
+      "rank": 4,
+      "source": "Exact OEM documents and component catalogues",
+      "partition": "Siemens Gamesa SG 8.0-167 DD, GE Cypress configurations, Vestas current full technical PDFs; then WindFloat exact platform and public blade/gearbox/converter models",
+      "next_offset": 0,
+      "status": "not_started",
+      "tasks": [
+        "Resolve Changhua SG 8.0-167 DD equipment link from OEM evidence",
+        "Complete electrical, drivetrain, acoustic and environmental fields using revision/page locators",
+        "Do not treat platform families as exact model records or infer component compatibility"
+      ]
+    },
+    {
+      "rank": 5,
+      "source": "Country and project reconciliation",
+      "partition": "WRI wind 5344 rows; candidates file in this batch",
+      "next_offset": 0,
+      "status": "in_progress",
+      "tasks": [
+        "Review identity candidates in file order; do not merge on name alone",
+        "Verify Lake Turkana installed MW using dated 2024 report; clear field deferral only after scope reconciliation",
+        "Update Dumat current status from official operator/regulator",
+        "Add Africa and Middle East registries, Asian licensing lists and official floating inventories; retain full selected batches"
+      ]
+    },
+    {
+      "rank": 6,
+      "source": "Power/thrust coefficient numerical datasets",
+      "url": "https://github.com/NatLabRockies/turbine-models",
+      "partition": "V82 first, then offshore exact commercial models with original references",
+      "next_offset": 0,
+      "status": "provenance_review",
+      "tasks": [
+        "Reconcile source document revision, density and curve origin before import",
+        "Separate original numerical, digitized and generic reference turbines; add thrust curves only with exact-model support"
+      ]
+    }
+  ]
+}

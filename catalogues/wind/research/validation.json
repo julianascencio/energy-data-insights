@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-03",
+  "python": "3.13.16",
+  "local": {
+    "pytest": {
+      "passed": 1763,
+      "skipped": 1,
+      "reason": "Optional cdsapi dependency absent; no wind test skipped"
+    },
+    "ruff_format": "passed: 644 files",
+    "ruff_check": "passed",
+    "ty": "passed",
+    "viewer_node_tests": {
+      "passed": 10
+    },
+    "viewer_module_syntax": "passed",
+    "catalogue_validation": "5387 records passed",
+    "snapshot_reproducibility": "Four Parquet tables rebuilt twice with byte-identical files and manifests",
+    "citations": "passed",
+    "repository_hygiene": "passed: 2653 candidate files at checkpoint; final checks include new ledgers",
+    "package_build": "three wheels and three source distributions passed",
+    "twine_strict": "six distributions passed",
+    "sphinx_strict": "passed after removing two stale generated source-code pages",
+    "gallery_figures": "executed; coverage figure visually inspected",
+    "browser_smoke": "not executed: browser binary unavailable; Playwright download returned invalid/truncated ZIP",
+    "documentation_links": "passed: 431 HTML pages; local links and assets resolve",
+    "targeted_wind_and_data_center_tests": {
+      "passed": 40
+    }
+  },
+  "remote_ci": "Not executed locally; consult PR checks for published commit"
+}

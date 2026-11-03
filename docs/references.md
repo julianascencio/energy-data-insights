@@ -5103,3 +5103,355 @@ Vertiv (2021). **Liebert XDU450/1350 guide specifications**. [Source](https://ww
 **Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
 
 **Used by:** `catalogues/data_centers/sources.json`.
+
+### wind_wri_gppd_1_3_0_20261103
+
+World Resources Institute (n.d.). **Global Power Plant Database v1.3.0, complete primary-fuel Wind partition**. [Source](https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/output_database/global_power_plant_database.csv)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Complete original CSV bytes obtained via upstream Git repository; SHA-256 is of CSV bytes; original CSV not redistributed; CC BY 4.0; attribution to WRI; historical baseline with added evidence and review qualifications
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n169_5_x_20261103
+
+Nordex (n.d.). **N169/5.X official product page**. [Source](https://www.nordex-online.com/de/product/n169-5-x/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n193_7_x_20261103
+
+Nordex (n.d.). **N193/7.X official product page**. [Source](https://www.nordex-online.com/en/product/3920436/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n117_3600_20261103
+
+Nordex (n.d.). **N117/3600 official product page**. [Source](https://www.nordex-online.com/en/product/n117-3600/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n131_3600_20261103
+
+Nordex (n.d.). **N131/3600 official product page**. [Source](https://www.nordex-online.com/en/product/n131-3600/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n131_3900_20261103
+
+Nordex (n.d.). **N131/3900 official product page**. [Source](https://www.nordex-online.com/en/product/n131-3900/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n133_4_8_20261103
+
+Nordex (n.d.). **N133/4.8 official product page**. [Source](https://www.nordex-online.com/en/product/n133-4-8/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n149_4_x_20261103
+
+Nordex (n.d.). **N149/4.X official product page**. [Source](https://www.nordex-online.com/en/product/n149-4-0-4-5/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n149_5_x_20261103
+
+Nordex (n.d.). **N149/5.X official product page**. [Source](https://www.nordex-online.com/en/product/n149-5-x/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n163_5_x_20261103
+
+Nordex (n.d.). **N163/5.X official product page**. [Source](https://www.nordex-online.com/en/product/n163-5-x/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n163_6_x_20261103
+
+Nordex (n.d.). **N163/6.X official product page**. [Source](https://www.nordex-online.com/en/product/n163-6-x/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_nordex_n175_6_x_20261103
+
+Nordex (n.d.). **N175/6.X official product page**. [Source](https://www.nordex-online.com/en/product/n175-6-x/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v110_2_0_mw_20261103
+
+Vestas (n.d.). **V110-2.0 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/2-mw-platform/V110-2-0-mw)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v120_2_2_mw_20261103
+
+Vestas (n.d.). **V120-2.2 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/2-mw-platform/V120-2-2-MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v117_4_2_mw_20261103
+
+Vestas (n.d.). **V117-4.2 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/4-mw-platform/V117-4-2-MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v126_3_45_mw_20261103
+
+Vestas (n.d.). **V126-3.45 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/4-mw-platform/V126-3-45-MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v136_4_2_mw_20261103
+
+Vestas (n.d.). **V136-4.2 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/4-mw-platform/V136-4-2-MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v150_4_2_mw_20261103
+
+Vestas (n.d.). **V150-4.2 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/4-mw-platform/V150-4-2-MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v163_4_5_mw_20261103
+
+Vestas (n.d.). **V163-4.5 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/4-mw-platform/V163-4-5-MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v136_4_5_mw_20261103
+
+Vestas (n.d.). **V136-4.5 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/4-mw-platform/v136-4-5-mw)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v150_4_5_mw_20261103
+
+Vestas (n.d.). **V150-4.5 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/4-mw-platform/v150-4-5-mw)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v172_7_2_mw_20261103
+
+Vestas (n.d.). **V172-7.2 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/enventus-platform/V172-7-2-MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v182_7_2_mw_20261103
+
+Vestas (n.d.). **V182-7.2 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/enventus-platform/V182-7-2-MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v150_6_0_mw_20261103
+
+Vestas (n.d.). **V150-6.0 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/enventus-platform/v150-6-0)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v162_6_2_mw_20261103
+
+Vestas (n.d.). **V162-6.2 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/enventus-platform/v162-6-2-mw)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v162_7_2_mw_20261103
+
+Vestas (n.d.). **V162-7.2 MW official product page**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/enventus-platform/v162-7-2-mw)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Web-reader rendered text reviewed; original HTML bytes unavailable, no original-file checksum claimed; Manufacturer copyright; factual specifications only; original text/images not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_hywind_scotland_20261103
+
+Equinor (n.d.). **Hywind Scotland project facts**. [Source](https://www.equinor.com/energy/hywind-scotland)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_hywind_tampen_20261103
+
+Equinor (n.d.). **Hywind Tampen upgraded turbine and unchanged export-system scope**. [Source](https://www.equinor.com/energy/hywind-tampen)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_windfloat_20261103
+
+Principle Power (n.d.). **WindFloat Atlantic project facts**. [Source](https://www.principlepower.com/projects/windfloat-atlantic)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_v164_84_20261103
+
+MHI Vestas Offshore Wind (2019). **V164-8.4 MW installation at WindFloat Atlantic**. [Source](https://www.vestas.com/en/media/mwow-press-releases/2019/first-turbine-of-windfloat-atlantic-moves-into-position)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_kincardine_20261103
+
+Principle Power (n.d.). **Kincardine project and mixed installation scope**. [Source](https://www.principlepower.com/projects/kincardine-offshore-wind-farm)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_v164_95_20261103
+
+MHI Vestas Offshore Wind (n.d.). **Five V164-9.5 MW turbines for Kincardine**. [Source](https://www.vestas.com/en/media/mwow-press-releases/2019/kincarde-floating-offshore-v164-9-5-mw)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_changhua_open_20261103
+
+Ørsted (2024). **Greater Changhua 1 and 2a inauguration**. [Source](https://orsted.com.au/news/2024/04/chw-1-and-2a-inaguration)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_changhua_jacket_20261103
+
+Ørsted (n.d.). **Greater Changhua 1 and 2a jacket foundations**. [Source](https://orsted.tw/en/news/2021/11/first-100-taiwan-made-jacket-foundation)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_changhua_1_20261103
+
+Ørsted (n.d.). **Greater Changhua 1 project facts**. [Source](https://orsted.tw/en/renewable-energy-solutions/offshore-wind/our-projects/chw1)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_changhua_2a_20261103
+
+Ørsted (n.d.). **Greater Changhua 2a project facts**. [Source](https://orsted.tw/en/renewable-energy-solutions/offshore-wind/our-projects/chw2a)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_turkana_20261103
+
+Lake Turkana Wind Power (n.d.). **Project overview and grid/PPA boundary**. [Source](https://ltwp.co.ke/overview-2/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_dumat_award_20261103
+
+Masdar (2019). **Dumat Al Jandal auction award**. [Source](https://masdar.ae/en/news/newsroom/the-edf-renewables-masdar-consortium-awarded-the-dumat-al-jandal-400-mw-wind-project-in-saudi-arabia)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_macintyre_20261103
+
+ACCIONA Energía (2026). **MacIntyre operations and commissioning update**. [Source](https://community.acciona.com.au/macintyre/macintyre-wind-farm-operations-update)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_kallpa_20261103
+
+ENGIE Chile (2025). **Kallpa commercial operation announcement**. [Source](https://www.engie.cl/entra-en-operacion-nuestro-mayor-parque-de-energia-renovable-en-chile/)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_vestas_enventus_case_20261103
+
+Vestas (n.d.). **EnVentus portfolio and Mutkalampi case**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/enventus-platform)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_vestas_neosho_20261103
+
+Vestas (n.d.). **2 MW platform Neosho case**. [Source](https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/2-mw-platform)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_vestas_v47_r4_20261103
+
+Vestas Wind Systems A/S (2000). **V47 general specification 943111.R4 (school-hosted original manufacturer document)**. [Source](https://sti2d.ecolelamache.org/ressources/EE/premiere/TP/serie%202/Vestas_V47.pdf)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered web/PDF text reviewed; original source bytes unavailable; no checksum claimed; Publisher copyright; factual data extracted with attribution; original document not redistributed
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### wind_oem_vestas_v236_15_0_mw_20261103
+
+Vestas (n.d.). **V236-15.0 MW official technical specification**. [Source](https://www.vestas.com/en/energy-solutions/offshore-wind-turbines/V236-15MW)
+
+**Role:** data. Field evidence, revision and retrieval date in Wind source registry. Rendered HTML text reviewed; original bytes unavailable; Manufacturer copyright; factual specifications only
+
+**Used by:** `catalogues/wind/sources.json`.

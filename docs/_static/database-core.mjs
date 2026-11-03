@@ -107,3 +107,17 @@ export function dataCenterCapacity(rows, field) {
   }
   return {excluded: rows.length - eligible.length, unknown: eligible.filter(r => r[field] == null).length, byBasis};
 }
+
+/** Wind capacities never combine lifecycle states, parent totals or unresolved scopes. */
+export function windCapacity(rows, field) {
+  if (!["installed_capacity_mw", "commissioned_capacity_mw", "planned_capacity_mw", "awarded_capacity_mw", "export_capacity_mw", "historical_capacity_mw"].includes(field)) throw new Error("Choose an explicit wind capacity");
+  const selected = rows.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
+  const byStatus = {};
+  for (const row of selected) {
+    if (!numeric(row[field])) continue;
+    const key = row.status + (field === "historical_capacity_mw" ? `@${row.capacity_reference_year}` : "");
+    byStatus[key] ||= {reported_mw: 0, records: 0};
+    byStatus[key].reported_mw += row[field]; byStatus[key].records++;
+  }
+  return {excluded: rows.length - selected.length, unknown: selected.filter(r => r[field] == null).length, byStatus};
+}

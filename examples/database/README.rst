@@ -50,3 +50,11 @@ Data Center Projects and Equipment
 Explore two connected tables with separate facility/campus scope, IT/grid/facility
 capacity boundaries, dated PUE observations and exact equipment rating conditions.
 The four-view example covers geography, completeness, cooling and GPU comparisons.
+
+.. button-ref:: /wind-database-viewer
+   :color: primary
+
+   Explore Wind Projects and Wind Equipment
+
+Wind examples distinguish historical coverage, dated capacity categories, exact
+model specifications and compatible numerical curves.
