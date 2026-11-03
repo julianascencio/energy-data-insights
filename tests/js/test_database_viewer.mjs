@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {filterRows, sortRows, statistics, groupRows, toCsv, hasLocation, projectSummary, clusterLocations} from "../../docs/_static/database-core.mjs";
+import {filterRows, sortRows, statistics, groupRows, toCsv, hasLocation, projectSummary, bessProjectSummary, clusterLocations} from "../../docs/_static/database-core.mjs";
 
 const rows = [
   {name: "A", country: "CHL", power: 0, bifacial: false, sources: ["OEM"]},
@@ -65,6 +65,39 @@ test("dashboard totals follow combined filters, including filters on a different
   assert.equal(projectSummary(filterRows(projects, {search: "ESP"})).ac.reportedSum, null);
   const many = Array.from({length: 101}, () => projects[0]);
   assert.equal(projectSummary(many).ac.reportedSum, 10100); // Not the 25-row page.
+});
+
+// Synthetic BESS records: power and energy are independent source ratings.
+const batteries = [
+  {name: "A", country_code: "CHL", status: "operational", power_capacity_mw: 100, energy_capacity_mwh: 400, latitude: -34, longitude: -71},
+  {name: "B", country_code: "CHL", status: "planned", power_capacity_mw: 0, energy_capacity_mwh: null, latitude: 0, longitude: 0},
+  {name: "C", country_code: "ESP", status: "operational", power_capacity_mw: null, energy_capacity_mwh: 300, duration_hours: 3, latitude: null, longitude: null},
+  {name: "D", country_code: null, status: "planned", power_capacity_mw: 25, energy_capacity_mwh: 0, latitude: 91, longitude: 20},
+];
+test("BESS totals keep MW and MWh independent, including unmapped records and reported zeros", () => {
+  const summary = bessProjectSummary(batteries);
+  assert.equal(summary.power.reportedSum, 125);
+  assert.equal(summary.energy.reportedSum, 700);
+  assert.equal(summary.power.known, 3);
+  assert.equal(summary.energy.missing, 1);
+  assert.equal(summary.located, 2);
+  assert.equal(summary.countries, 2);
+  assert.equal(bessProjectSummary([batteries[1]]).power.reportedSum, 0);
+  assert.equal(bessProjectSummary([batteries[1]]).energy.reportedSum, null);
+  assert.equal(bessProjectSummary([batteries[2]]).power.reportedSum, null); // No MWh/duration inference.
+  assert.equal(bessProjectSummary([batteries[3]]).energy.reportedSum, 0);
+  assert.equal(bessProjectSummary([]).power.reportedSum, null);
+  assert.equal(bessProjectSummary([]).energy.reportedSum, null);
+});
+test("BESS KPIs follow combined filters across all rows, independent of page size and selected metric", () => {
+  const filtered = filterRows(batteries, {field: "status", equals: '"operational"', metric: "energy_capacity_mwh", min: "300"});
+  assert.equal(bessProjectSummary(filtered).power.reportedSum, 100);
+  assert.equal(bessProjectSummary(filtered).energy.reportedSum, 700);
+  assert.equal(bessProjectSummary(filtered).located, 1);
+  assert.equal(bessProjectSummary(filterRows(batteries, {search: "ESP"})).power.reportedSum, null);
+  const many = Array.from({length: 101}, () => batteries[0]);
+  assert.equal(bessProjectSummary(many).power.reportedSum, 10100);
+  assert.equal(bessProjectSummary(many).energy.reportedSum, 40400);
 });
 test("map rejects invalid/incomplete coordinates without rejecting valid zeros or boundaries", () => {
   for (const [latitude, longitude] of [[null, null], ["", ""], ["1", 2], [false, 0], [undefined, 1], [NaN, 1], [1, Infinity], [91, 2], [1, -181]]) {
