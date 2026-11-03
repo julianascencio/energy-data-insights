@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T14:40:00Z",
+  "updated_at": "2026-11-03T15:45:00Z",
   "branch": "research/wind-20261103-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -91,7 +91,8 @@
         "E82E2/E103EP2 optional modes complete:2exactmodels, base ratings/geometry unspecified. Combined08/2026overview duplicates4existingmodels. Next exact base-model datasheets and component models;2graph-onlycurves deferred, no numerical density assumptions.",
         "Independent Winergy discovery: official historical HybridDrive brochure has exact PZFG2456/PZFG2535 three-MW table. Next acquire original PDF/checksum and review full revision/table before import. Current HybridDrive6MW exhibition specs are not automatically the same configurations. URL https://www.winergy-group.com/en/products/gearboxes",
         "Winergy PZFG2456/2535 complete, two-stage historical integrated assemblies. NGC StanGear/WinGear page reviewed: broad1.5–25+MW platform range, no exact-model table; hold. Next Winergy current6MW exhibition configuration identity and exact NGC SMG rating sheets.",
-        "NGC regional2022PDF SYW/SPT tables exhausted:14exacttypes. Five SMG columns explicitly platforms, hold pending exact configuration; generic limits not inherited. Winergy6MW exhibition identity unresolved. German2024URL404; Americas2022 original acquired. Next NGC exact MPPY/MPPB current tables; compare revision before enriching existing SYW/SPT."
+        "NGC regional2022PDF SYW/SPT tables exhausted:14exacttypes. Five SMG columns explicitly platforms, hold pending exact configuration; generic limits not inherited. Winergy6MW exhibition identity unresolved. German2024URL404; Americas2022 original acquired. Next NGC exact MPPY/MPPB current tables; compare revision before enriching existing SYW/SPT.",
+        "NGC MPPY/MPPB hold:2024URL404; search exact types but reader redirects201802EN SYW/SPT; do not ingest mixed revision. Bonfiglioli R05_2 p14complete:9TWmodels with application-specific peak torque;19p15T-version dimensions held for T/TW identity. Next exact wind AC motor/brake and converter configurations in samePDF; no generic range synthesis."
       ]
     },
     {
@@ -161,11 +162,11 @@
     "source_guide": "2026-11-03-top10-markets.md",
     "sweden_partition": {
       "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
-      "completed_where": "OMRID < '0600'",
-      "reviewed_areas": 316,
-      "reviewed_turbines": 1020,
-      "next_where": "OMRID >= '0600' AND OMRID < '0700'",
-      "next_county": "Jönköping; verify independent counts on all ten layers",
+      "completed_where": "OMRID < '0700'",
+      "reviewed_areas": 467,
+      "reviewed_turbines": 1922,
+      "next_where": "OMRID >= '0700' AND OMRID < '0800'",
+      "next_county": "Kronoberg; independent counts on all ten layers",
       "layers": [
         2,
         3,
@@ -179,7 +180,7 @@
         12
       ],
       "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
-      "residual_ledger": "2026-11-03-1135-decisions.jsonl"
+      "residual_ledger": "2026-11-03-1535-sweden-decisions.jsonl"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",
@@ -189,16 +190,16 @@
         "Katalogkategorien.xml"
       ],
       "all_unit_rows": 44351,
-      "next_partition": "Bundesland1400 Brandenburg;5334unitrows; verify category101",
+      "next_partition": "Bundesland1414 Sachsen-Anhalt;3506units; dictionary verify before intake",
       "next_task": "Extend state parameter with dictionary validation; obtain complete independent count; reconcile names/operator/municipality/unit links and historical catalogue before additions. Review Schleswig-Holstein residual decisions separately.",
-      "source_review": "2026-11-03-1435-source-review.json",
+      "source_review": "2026-11-03-1535-source-review.json",
       "offset": 0,
-      "status": "three_states_reviewed",
-      "completed_partition": "1411,1408,1409 complete",
-      "accepted_projects": 162,
-      "accepted_turbines": 785,
-      "deferred_groups": 7355,
-      "decision_ledger": "2026-11-03-1435-decisions.jsonl"
+      "status": "four_states_reviewed",
+      "completed_partition": "1411,1408,1409,1400 complete",
+      "accepted_projects": 184,
+      "accepted_turbines": 968,
+      "deferred_groups": 8826,
+      "decision_ledger": "2026-11-03-1535-decisions.jsonl"
     }
   }
 }

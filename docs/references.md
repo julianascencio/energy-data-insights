@@ -6359,3 +6359,11 @@ NGC (n.d.). **Wind All New Products; SYW/SPT exact type tables**. [Source](https
 **Role:** data source. Regional archive PDF; original checksum retained. Physical pages9/10, printed08/09 exact SYW/SPT types. Generic platform limits not transferred.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### bonfiglioli_wind_r05_2
+
+Bonfiglioli (n.d.). **Solutions for WIND;700TW yaw/pitch models**. [Source](https://www.bonfiglioli.com/_default_upload_bucket/TR_CAT_WIND_STD_ENG_R05_2.pdf)
+
+**Role:** data source. R05_2 original PDF p14; application-specific reference peak torque. No turbine compatibility or T/TW identity inferred.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

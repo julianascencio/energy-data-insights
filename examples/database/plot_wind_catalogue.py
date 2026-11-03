@@ -219,3 +219,12 @@ if not ngc.empty:
             "kNm",
             spec["speed_ratio_range"],
         )
+
+# %%
+print("Bonfiglioli peak torque by application; reference values, not nominal ratings:")
+for _, component in equipment.loc[equipment.manufacturer.eq("Bonfiglioli")].iterrows():
+    print(
+        component.model,
+        json.loads(component.extensions_json)["peak_torque_Nm_by_application"],
+        "Nm",
+    )

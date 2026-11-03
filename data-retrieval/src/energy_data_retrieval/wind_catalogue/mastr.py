@@ -19,7 +19,12 @@ from .catalogue import stable_id
 from .gppd import evidence_record
 
 REFERENCE_IDS = ("mastr_full_export_20261103",)
-STATES = {"1411": "Schleswig-Holstein", "1408": "Niedersachsen", "1409": "Nordrhein-Westfalen"}
+STATES = {
+    "1411": "Schleswig-Holstein",
+    "1408": "Niedersachsen",
+    "1409": "Nordrhein-Westfalen",
+    "1400": "Brandenburg",
+}
 
 
 def distance(a: tuple[float, float], b: tuple[float, float]) -> float:

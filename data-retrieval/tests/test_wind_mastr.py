@@ -122,7 +122,8 @@ def test_xml_partition_count_and_dictionary_guard(tmp_path):
 
 
 @pytest.mark.parametrize(
-    "state_code,state_name", [("1408", "Niedersachsen"), ("1409", "Nordrhein-Westfalen")]
+    "state_code,state_name",
+    [("1408", "Niedersachsen"), ("1409", "Nordrhein-Westfalen"), ("1400", "Brandenburg")],
 )
 def test_selected_state_preserves_scope(state_code, state_name):
     data = inputs()

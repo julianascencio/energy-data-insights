@@ -366,3 +366,21 @@ platform columns remain held. See `ngc_wind_yaw_pitch_2022`. The German2024URL
 returned404; the regional2022PDF downloaded successfully. This was not an
 authentication or explicit reuse restriction. Winergy's unnamed6MW exhibition
 configuration remains held for exact identity. No numerical curves added.
+
+
+## Brandenburg, Jönköping and Bonfiglioli continuation
+
+Brandenburg's complete5,334-unit partition yields22parks and183units, with
+1,471namegroups deferred. Jönköping's151areas/902turbines yield109projects and
+608units. All ten layers match independent source counts. Forty-two areas and
+18orphan units remain held, covering294turbine rows. Both inventories retain
+unresolved aggregation scope. All7,530preceding rows and capacity totals stay
+unchanged. Exact query URLs and original response hashes are in the1535review.
+
+Bonfiglioli R05_2 p14 provides nine distinct TW model names across13pitch/yaw
+application rows. Each model keeps application-specific peak torque together,
+including differing yaw/pitch values. These are OEM reference limits, not nominal
+torque or independently validated performance. The19dimension rows on p15 use
+T designations and remain held pending T/TW reconciliation. See
+`bonfiglioli_wind_r05_2`. NGC2024original download returned404 while search and
+opened reader show different editions; MPPY/MPPB import remains deferred.
