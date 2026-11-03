@@ -1,0 +1,63 @@
+{
+  "generated_at_utc": "2026-11-03T17:46:35.539796+00:00",
+  "kind": "real pretrained Timestral inference on an existing attributed EIA capture",
+  "model_id": "mistralai/Timestral-5M",
+  "model_revision": "bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+  "model_url": "https://huggingface.co/mistralai/Timestral-5M/tree/bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+  "reference_code_revision": "a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff",
+  "reference_code_url": "https://github.com/mistralai/timestral/tree/a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff",
+  "installed_source_sha256": {
+    "__init__.py": "46777bcb15b903f7721a3d6d91a6cb93463fc454816da238799eb8d5360e5ab5",
+    "config.py": "d46e37020875c536e7a75e1b6ace3f67419ba2f2c9d9e8465f4b07f837e92ed6",
+    "covariate_encoding.py": "1c7f5c320fa4b7622d3705f765f53ab9676b829cb1d4fd68f839ec593b8404c0",
+    "forecaster.py": "12a712f9be777d1e160513b7f8c81d545b991fcfe6cd4a46004a03533b7cb8fd",
+    "layers.py": "480ba93e7e3681dea185e5fa08a96dcce327cf938931c715ae54e6b02934527d",
+    "loading.py": "179257fa74e798c207887e2fed162e9a2fef9c37cadadb9437fabfeae68b3d6f",
+    "masks.py": "1792898d809b99034bb70e2cc1ab74f897ce8478886f83140e705fc67e6762b3",
+    "model.py": "988121c6a089e843c4941732cbc5c64b10cb0eccd9310e228abe38ecf2dfb668",
+    "scaler.py": "838da836f70b1640bcaed7701a70a1a358e30442693e63522a93f878e157a8ca"
+  },
+  "checkpoint_sha256": {
+    "config.json": "b5f27f61513f8fd1a3aa996f3720d3679cb40bce5bcb08eb3dc320ce726e7c2f",
+    "model.safetensors": "7ace108c4987e7f2a99a75a445240019d1d31c2117139d1bd05ffdfd25aca738",
+    "LICENSE": "648194727930df730890e9f9affdbcc5c930d406d6829559b25ca3d5a973fc8c"
+  },
+  "source_sha256": "933ca45cfe77a6ec99d655db2b06150987681d0062c9c725a53e12b120de06a8",
+  "context_sha256": "744d7c7d07a0ac8a5eb1821b2987509df8dee8be2c21731ae42c3c4bd724f083",
+  "known_covariates_sha256": "fa587db7ff4e6f2fa08303e057239ee10cbab286e2f1316e4789306cced49c9b",
+  "forecast_sha256": "8fe1890762a48dc11600f1fc1143b0f6f7ce6a7e5656048baff94f3ec68067b5",
+  "context_hours": 144,
+  "horizon_hours": 24,
+  "target_order": [
+    "SUN",
+    "WND"
+  ],
+  "unit": "MWh per hourly interval (EIA hour-ending UTC labels)",
+  "forecast_start_utc": "2024-06-26T08:00:00+00:00",
+  "covariates": [
+    "sin(2*pi*UTC_hour/24)",
+    "cos(2*pi*UTC_hour/24)"
+  ],
+  "options": {
+    "symmetric_averaging": true,
+    "clip_nonnegative": true,
+    "max_context": 32768
+  },
+  "device": "cpu",
+  "seed": 0,
+  "torch_threads": 1,
+  "python": "3.12.14",
+  "versions": {
+    "timestral": "1.0.0",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "huggingface_hub": "2.4.0",
+    "safetensors": "0.8.0"
+  },
+  "limitations": "One 24-hour holdout; historical data may overlap pretraining. Not evidence of out-of-sample operational skill or calibrated interval coverage.",
+  "licences": {
+    "code": "Apache-2.0",
+    "weights": "Modified MIT (see checkpoint LICENSE)"
+  }
+}
