@@ -273,6 +273,105 @@ def parse_schneider_galaxy_vs_model_list(
     }
 
 
+def parse_stulz_cyberair_3pro_dx_table(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage explicit fixed-speed R410A CyberAir 3PRO DX configurations.
+
+    The adapter consumes layout-preserving text extracted from STULZ's official
+    technical-data PDF. It deliberately selects only the two fixed-speed tables
+    (ASR ``A`` and free-cooling ALR ``GE``); modulating and R134a tables remain
+    separate configurations and are not combined with these rows.
+    """
+    if not (urlsplit(source_url).hostname or "").endswith("stulz.es"):
+        raise ValueError("Expected official STULZ URL")
+    text = content.decode("utf-8-sig")
+    if "CyberAir 3PRO DX (ASR/ALR) - R410A - Technical Data" not in text:
+        raise ValueError("Missing R410A CyberAir 3PRO table")
+    r410a = text.split("CyberAir 3PRO DX (ASR/ALR) - R410A - Technical Data", 1)[1]
+    r410a = r410a.split("CyberAir 3PRO DX (ASR/ALR) - R134a - Technical Data", 1)[0]
+
+    def row_values(block: str, label: str, unit: str | None = None) -> list[str]:
+        line = next((line for line in block.splitlines() if line.strip().startswith(label)), None)
+        if line is None:
+            raise ValueError(f"Missing STULZ table row: {label}")
+        tail = (
+            line.split(unit, 1)[1] if unit else line[len(line) - len(line.lstrip()) + len(label) :]
+        )
+        pattern = r"\d+\s*/\s*\d+" if label.startswith("Number of circuits") else r"\d[\d.,]*"
+        return [value.replace(" ", "") for value in re.findall(pattern, tail)]
+
+    candidates: list[dict[str, Any]] = []
+    sections = [
+        ("ASR", "A", "Air cooled with fixed speed compressor", "Air cooled with modulating"),
+        ("ALR", "GE", "Free cooling with fixed speed compressor", "Free cooling with modulating"),
+    ]
+    for family, suffix, start, end in sections:
+        if start not in r410a or end not in r410a:
+            raise ValueError("Changed STULZ fixed-speed table shape")
+        block = r410a.split(start, 1)[1].split(end, 1)[0]
+        header = next(
+            (
+                line
+                for line in block.splitlines()
+                if line.strip().startswith(f"{family} xxx {suffix}")
+            ),
+            None,
+        )
+        if header is None:
+            raise ValueError("Missing STULZ model header")
+        models = re.findall(r"\b\d{3,4}\b", header.split(suffix, 1)[1])
+        rows = {
+            "airflow_m3_h": row_values(block, "Air flow", "m³/h"),
+            "cooling_total_kw": row_values(block, "Cooling capacity (total = sensible)", "kW"),
+            "cooling_net_kw": row_values(block, "Cooling capacity (net)", "kW"),
+            "fan_power_kw": row_values(block, "Fan power consumption", "kW"),
+            "compressor_power_kw": row_values(block, "Compressor power consumption", "kW"),
+            "input_power_kw": row_values(block, "Total power consumption", "kW"),
+            "supply_air_temperature_c": row_values(block, "Supply air temperature", "°C"),
+            "eer_kw_per_kw": row_values(block, "EER", "kW/kW"),
+            "circuits_compressors": row_values(block, "Number of circuits / compressors"),
+            "weight_kg": row_values(block, "Weight", "kg"),
+        }
+        if any(len(values) != len(models) for values in rows.values()):
+            raise ValueError("Changed STULZ fixed-speed row width")
+
+        def number(value: str) -> float:
+            return float(value.replace(".", "").replace(",", "."))
+
+        for index, code in enumerate(models):
+            candidates.append(
+                {
+                    "model": f"{family} {code} {suffix}",
+                    "refrigerant": "R410A",
+                    **{
+                        key: values[index]
+                        if key == "circuits_compressors"
+                        else number(values[index])
+                        for key, values in rows.items()
+                    },
+                    "locator": f"R410A / {family} xxx {suffix} / {code}",
+                }
+            )
+    if not candidates or (expected_count is not None and len(candidates) != expected_count):
+        raise ValueError("Changed STULZ CyberAir table shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "rating_conditions": {
+            "voltage_v": 400,
+            "phases": 3,
+            "frequency_hz": 50,
+            "return_air_temperature_c": 33,
+            "return_air_relative_humidity_pct": 30,
+            "condensing_temperature_c": 45,
+            "external_static_pressure_pa": 20,
+        },
+        "review_required": True,
+    }
+
+
 class _PueTables(HTMLParser):
     def __init__(self) -> None:
         super().__init__()

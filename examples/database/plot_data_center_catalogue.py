@@ -125,4 +125,20 @@ print(
     .sort_values(["output_power_kw", "model"])
     .to_string(index=False)
 )
+print("STULZ CyberAir comparisons use net cooling at one explicit rating point:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("STULZ"),
+        [
+            "model",
+            "variant",
+            "cooling_capacity_kw",
+            "input_power_kw",
+            "airflow_m3_h",
+            "cooling_rating_conditions",
+        ],
+    ]
+    .sort_values(["variant", "cooling_capacity_kw", "model"])
+    .to_string(index=False)
+)
 plt.show()

@@ -38,14 +38,18 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 93 exact models/configurations from NVIDIA, AMD, Eaton, Schneider Electric
-and Vertiv. Current
-categories are GPU accelerators, servers, UPS, rack PDUs and coolant distribution
-units. Switchgear, transformers, generators and additional cooling categories are
+has 123 exact models/configurations from NVIDIA, AMD, Eaton, Schneider Electric,
+STULZ and Vertiv. Current categories are GPU accelerators, servers, UPS, rack PDUs,
+coolant distribution units and CRAC/precision air-conditioning equipment.
+Switchgear, transformers, generators and additional cooling categories are
 supported by schema and ranked in the continuation backlog. The Schneider Galaxy
 VS batch preserves exact commercial references, stated kW and kVA, battery-string
 arrangements, full-load efficiency conditions and dimensions without calculating
 battery energy or runtime.
+The STULZ batch keeps 30 fixed-speed R410A ASR/ALR configurations separate,
+normalizes net sensible cooling only at the stated return-air/condensing/ESP
+rating point, and preserves total sensible cooling and component power as
+observations. R134a and modulating variants are not combined with these rows.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server

@@ -22,6 +22,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_airtrunk_locations,
     parse_portfolio,
     parse_schneider_galaxy_vs_model_list,
+    parse_stulz_cyberair_3pro_dx_table,
 )
 
 ROOT = Path(__file__).resolve().parents[2] / "catalogues/data_centers"
@@ -247,6 +248,33 @@ def test_schneider_model_list_parser_keeps_only_explicit_commercial_references()
         )
     with pytest.raises(ValueError, match="official Schneider"):
         parse_schneider_galaxy_vs_model_list(content, source_url="https://example.com/")
+
+
+def test_stulz_cyberair_parser_keeps_exact_fixed_speed_r410a_rows():
+    content = (FIXTURES / "stulz-cyberair-3pro-dx.txt").read_bytes()
+    data = parse_stulz_cyberair_3pro_dx_table(
+        content,
+        source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
+        expected_count=4,
+    )
+    assert [row["model"] for row in data["candidates"]] == [
+        "ASR 201 A",
+        "ASR 291 A",
+        "ALR 201 GE",
+        "ALR 291 GE",
+    ]
+    assert data["candidates"][0]["cooling_net_kw"] == 30.2
+    assert data["candidates"][3]["circuits_compressors"] == "1/1"
+    assert data["rating_conditions"]["return_air_temperature_c"] == 33
+    assert "DO NOT EXTRACT" not in json.dumps(data)
+    with pytest.raises(ValueError, match="table shape"):
+        parse_stulz_cyberair_3pro_dx_table(
+            content,
+            source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
+            expected_count=30,
+        )
+    with pytest.raises(ValueError, match="official STULZ"):
+        parse_stulz_cyberair_3pro_dx_table(content, source_url="https://example.com/")
 
 
 def test_pue_table_selection_preserves_period_precision_and_empty_ttm():

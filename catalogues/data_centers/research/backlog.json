@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T02:15:09Z",
+  "updated_at": "2026-11-03T03:26:41Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -17,7 +17,9 @@
     "eaton_9px_gen2_rack_kit_skus": 4,
     "teraco_current_facilities": 9,
     "nextdc_kl1": 1,
-    "schneider_galaxy_vs_400v_skus": 23
+    "schneider_galaxy_vs_400v_skus": 23,
+    "odata_country_technical_sheets": 12,
+    "stulz_cyberair_fixed_speed_r410a_configurations": 30
   },
   "next_batches": [
     {
@@ -42,11 +44,12 @@
         "https://odatadc.com/localidades/",
         "https://odatadc.com/brazil-data-centers/"
       ],
-      "offset": 0,
-      "scope": "All 12 already-identified campuses; discover current Chile/Colombia/Mexico country routes",
+      "offset": 12,
+      "scope": "All 12 country-sheet campus identities enriched at offset 12; continue planning/environmental records and exact building/phase splits without duplicating campus aggregates",
       "questions": [
-        "Map 22 stated centers to 12 campus identities without creating duplicates",
-        "Individual phase/building names, IT MW, cooling rating conditions and commissioning dates"
+        "Resolve QR03 275,000 m2 country-sheet versus 275 m2 launch-page conflict",
+        "Issuer-verify Tier/certification claims",
+        "Separate 200/400 MW electrical infrastructure from IT/grid/facility boundaries"
       ]
     },
     {
@@ -84,8 +87,8 @@
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/"
       ],
-      "offset": 51,
-      "scope": "Prior Vertiv/Eaton tables complete; Schneider Galaxy VS 400 V internal-battery model list complete at offset 23. Continue exact current chiller, CRAH, transformer, switchgear and generator models.",
+      "offset": 81,
+      "scope": "Prior Vertiv/Eaton/Schneider tables plus 30 STULZ CyberAir fixed-speed R410A configurations complete; continue STULZ modulating/R134a and exact current chiller, transformer, switchgear and generator tables",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
