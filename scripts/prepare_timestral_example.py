@@ -45,7 +45,10 @@ def main() -> None:
     torch = import_module("torch")
     hub = import_module("huggingface_hub")
     timestral = import_module("timestral")
-    package_directory = Path(timestral.__file__).parent
+    module_file = timestral.__file__
+    if module_file is None:
+        raise RuntimeError("Cannot record provenance for a Timestral package without source files")
+    package_directory = Path(module_file).parent
     installed_source_hashes = {
         path.relative_to(package_directory).as_posix(): hashlib.sha256(
             path.read_bytes()
