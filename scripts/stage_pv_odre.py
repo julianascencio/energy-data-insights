@@ -7,7 +7,11 @@ import json
 from pathlib import Path
 
 from energy_data_retrieval.pv_catalogue.catalogue import canonical_json, load_records
-from energy_data_retrieval.pv_catalogue.odre import read_odre_json, reviewed_odre_records
+from energy_data_retrieval.pv_catalogue.odre import (
+    read_odre_json,
+    reviewed_odre_enrichments,
+    reviewed_odre_records,
+)
 
 
 def main() -> None:
@@ -28,6 +32,22 @@ def main() -> None:
     identities = read_odre_json(
         args.identities.read_bytes(), sha256=review["identity_sha256"], identities_only=True
     )
+    if review.get("mode", "new") == "enrichment":
+        incoming = reviewed_odre_enrichments(
+            rows,
+            identities,
+            reviewed_ids=set(review["accepted_eics"]),
+            existing=load_records(args.catalogue),
+            source_id=review["source_id"],
+            snapshot_date=review["snapshot_date"],
+        )
+        with args.output.open("x", encoding="utf-8") as stream:
+            for row in incoming:
+                stream.write(canonical_json(row) + "\n")
+        print(f"Staged {len(incoming)} reviewed enrichments; upsert/validation still required.")
+        return
+    if review.get("mode", "new") != "new":
+        raise ValueError("Unknown ODRE review mode")
     # Existing accepted EICs are omitted solely for idempotent re-staging; all other
     # country records remain in the alias screen. Upsert resolves IDs without churn.
     accepted = set(review["accepted_eics"])

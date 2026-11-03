@@ -1,0 +1,240 @@
+{
+  "reviewed": 13,
+  "enriched": 7,
+  "held": 6,
+  "review": [
+    {
+      "objectid": 34901,
+      "record_id": "d08d9174-9736-5cd3-8624-6fa0b11e269e",
+      "result": "enriched",
+      "fields_added": [
+        "developers",
+        "extensions_json"
+      ],
+      "sources": [
+        "aragon_operating_pv_20261103T0100",
+        "aragon_san_20261103T0200",
+        "aragon_san_construction_20261103T0200"
+      ],
+      "evidence": {
+        "gis_objectid": 34901,
+        "historical_development_party": "Energías Renovables de Deimos, S.L.",
+        "identity_basis": "Unique named PV plant and one canonical phase; canonical municipality agrees with official documentation, and the GIS corporate promoter agrees with the named historical party.",
+        "gis_panel_mwp": 40,
+        "facts": {
+          "construction_authorisation_date": "2023-03-22",
+          "permit_ids": [
+            "IP-PC-0213/2021",
+            "G-Z-2021/033"
+          ],
+          "authorised_collection_kv": 30,
+          "planned_collection_substation": "Valdompere",
+          "historical_connection_permission_mw": 33.23,
+          "reported_construction_period": "2024-05",
+          "capacity_assertions": "39.68 MW installed in 2023 authorisation; May 2024 report cover 39.98 MW, no basis reconciliation"
+        },
+        "scope": "Historical design, permit or monitoring assertions only; no current owner/status, coordinates or capacity overwritten. GIS export CRS and revision still unresolved."
+      }
+    },
+    {
+      "objectid": 31381,
+      "record_id": "1854a3cb-88bf-5757-b9e5-d3d1e25f8210",
+      "result": "held",
+      "reason": "BOA Moneva and exact promoter identified, but canonical record lacks locality and 55 MW basis differs; require planning ID or corroborated location."
+    },
+    {
+      "objectid": 22738,
+      "record_id": "e2be778c-e3d9-5ac4-a28d-671fa1eebef8",
+      "result": "held",
+      "reason": "Wrong region: Castilla-La Mancha canonical plant vs Aragón feature."
+    },
+    {
+      "objectid": 30423,
+      "record_id": "5bf1c54a-7463-5b61-812e-bdabaefa43d1",
+      "result": "enriched",
+      "fields_added": [
+        "developers"
+      ],
+      "sources": [
+        "aragon_operating_pv_20261103T0100",
+        "aragon_vallobar_20261103T0200"
+      ],
+      "evidence": {
+        "gis_objectid": 30423,
+        "historical_development_party": "Planta Solar Opde 14, S.L.",
+        "identity_basis": "Unique named PV plant and one canonical phase; canonical municipality agrees with official documentation, and the GIS corporate promoter agrees with the named historical party.",
+        "gis_panel_mwp": 55,
+        "facts": {
+          "construction_authorisation_date": "2022-05-12",
+          "permit_ids": [
+            "IP-PC-0068/2019",
+            "G-SO-Z-050/2019"
+          ],
+          "capacity_assertions": "Pre-adenda project title 40 MW / 50 MWp; GIS panel field 55 MWp; no as-built capacity adopted"
+        },
+        "scope": "Historical design, permit or monitoring assertions only; no current owner/status, coordinates or capacity overwritten. GIS export CRS and revision still unresolved."
+      }
+    },
+    {
+      "objectid": 30424,
+      "record_id": "99e3e595-1cd4-564c-b497-814fb595bf4c",
+      "result": "held",
+      "reason": "Need original or revised Larral operating authorisation to reconcile 40 MW unspecified vs 55 MWp and the project boundary."
+    },
+    {
+      "objectid": 30429,
+      "record_id": "d31d3289-1854-5d5f-ac11-dc7c2974c3d7",
+      "result": "enriched",
+      "fields_added": [
+        "developers",
+        "extensions_json"
+      ],
+      "sources": [
+        "aragon_operating_pv_20261103T0100",
+        "aragon_estren_20261103T0200"
+      ],
+      "evidence": {
+        "gis_objectid": 30429,
+        "historical_development_party": "Parque Fotovoltaico Acampo Estrén, S.L.",
+        "identity_basis": "Unique named PV plant and one canonical phase; canonical municipality agrees with official documentation, and the GIS corporate promoter agrees with the named historical party.",
+        "gis_panel_mwp": 33,
+        "facts": {
+          "construction_authorisation_date": "2021-12-01",
+          "permit_ids": [
+            "IP-PC-0051/2019",
+            "G-SO-Z-072/2019",
+            "IP-CT-0029/2021"
+          ],
+          "design_array_peak_mwp": 34.0032,
+          "design_nominal_mw": 25,
+          "planned_connection_substation": "Cartujos",
+          "planned_evacuation_kv": 45,
+          "capacity_assertions": "Canonical 24.9 MWdc, operating GIS 33 MWp and revised design 34.0032 MWp retained separately"
+        },
+        "scope": "Historical design, permit or monitoring assertions only; no current owner/status, coordinates or capacity overwritten. GIS export CRS and revision still unresolved."
+      }
+    },
+    {
+      "objectid": 18680,
+      "record_id": "2a63aa52-fb0c-5ecc-927c-27153f4373d4",
+      "result": "held",
+      "reason": "Published monitoring confirms project name and Zaragoza but no matching GIS corporate promoter verified in reviewed report; retain capacity scopes separately."
+    },
+    {
+      "objectid": 18717,
+      "record_id": "092c7180-1bd1-5f2f-b37d-073fd3f7c5a5",
+      "result": "held",
+      "reason": "Official monitoring landing page access limited; verify exact developer, locality and operating authorisation."
+    },
+    {
+      "objectid": 25292,
+      "record_id": "4225537f-d528-563d-af18-55678be5f455",
+      "result": "enriched",
+      "fields_added": [
+        "developers",
+        "extensions_json"
+      ],
+      "sources": [
+        "aragon_operating_pv_20261103T0100",
+        "aragon_shared_20261103T0200",
+        "aragon_sierre_20261103T0200"
+      ],
+      "evidence": {
+        "gis_objectid": 25292,
+        "historical_development_party": "Energía Sierrezuela, S.L.",
+        "identity_basis": "Unique named PV plant and one canonical phase; canonical municipality agrees with official documentation, and the GIS corporate promoter agrees with the named historical party.",
+        "gis_panel_mwp": 50,
+        "facts": {
+          "shared_connection_preliminary_authorisation_date": "2018-07-20",
+          "historical_design_peak_mwp": 49.88,
+          "monitoring_period": "2024-03 to 2024-06",
+          "official_name_variant": "Sierrazuela in 2018 resolution, Sierrezuela in individual monitoring report"
+        },
+        "scope": "Historical design, permit or monitoring assertions only; no current owner/status, coordinates or capacity overwritten. GIS export CRS and revision still unresolved."
+      }
+    },
+    {
+      "objectid": 25293,
+      "record_id": "0f6a6f47-eb55-593d-94f9-a3ce3aec4293",
+      "result": "enriched",
+      "fields_added": [
+        "developers",
+        "extensions_json"
+      ],
+      "sources": [
+        "aragon_operating_pv_20261103T0100",
+        "aragon_shared_20261103T0200"
+      ],
+      "evidence": {
+        "gis_objectid": 25293,
+        "historical_development_party": "Ribagrande Energía, S.L.",
+        "identity_basis": "Unique named PV plant and one canonical phase; canonical municipality agrees with official documentation, and the GIS corporate promoter agrees with the named historical party.",
+        "gis_panel_mwp": 50,
+        "facts": {
+          "shared_connection_preliminary_authorisation_date": "2018-07-20",
+          "historical_reported_mw_unspecified": 49.88,
+          "phase_scope": "Distinct named PV plant, not the wind hybrid or shared substation"
+        },
+        "scope": "Historical design, permit or monitoring assertions only; no current owner/status, coordinates or capacity overwritten. GIS export CRS and revision still unresolved."
+      }
+    },
+    {
+      "objectid": 28186,
+      "record_id": "c6f7a0e3-d5b5-5d9e-823f-3b38b78f114b",
+      "result": "held",
+      "reason": "Existing Muel / 11 MWdc match, but independent phase-specific authorisation still needed."
+    },
+    {
+      "objectid": 25294,
+      "record_id": "cad0b622-5a27-5fdf-a6a7-7242c2047b4a",
+      "result": "enriched",
+      "fields_added": [
+        "developers",
+        "extensions_json"
+      ],
+      "sources": [
+        "aragon_operating_pv_20261103T0100",
+        "aragon_shared_20261103T0200",
+        "aragon_robledo_20261103T0200"
+      ],
+      "evidence": {
+        "gis_objectid": 25294,
+        "historical_development_party": "El Robledo Eólica, S.L.",
+        "identity_basis": "Unique named PV plant and one canonical phase; canonical municipality agrees with official documentation, and the GIS corporate promoter agrees with the named historical party.",
+        "gis_panel_mwp": 50,
+        "facts": {
+          "shared_connection_preliminary_authorisation_date": "2018-07-20",
+          "historical_reported_mw_unspecified": 49.88,
+          "monitoring_period": "2024-07 to 2024-10",
+          "phase_scope": "Individual PV project, not wind hybrid"
+        },
+        "scope": "Historical design, permit or monitoring assertions only; no current owner/status, coordinates or capacity overwritten. GIS export CRS and revision still unresolved."
+      }
+    },
+    {
+      "objectid": 35547,
+      "record_id": "05a8da57-0e88-55de-9b06-6db40a47325d",
+      "result": "enriched",
+      "fields_added": [
+        "developers",
+        "extensions_json"
+      ],
+      "sources": [
+        "aragon_operating_pv_20261103T0100",
+        "aragon_shared_20261103T0200"
+      ],
+      "evidence": {
+        "gis_objectid": 35547,
+        "historical_development_party": "Valdelagua Wind Power, S.L.",
+        "identity_basis": "Unique named PV plant and one canonical phase; canonical municipality agrees with official documentation, and the GIS corporate promoter agrees with the named historical party.",
+        "gis_panel_mwp": 50,
+        "facts": {
+          "shared_connection_preliminary_authorisation_date": "2018-07-20",
+          "historical_reported_mw_unspecified": 49.88,
+          "phase_scope": "Named PV plant; developer name does not determine technology"
+        },
+        "scope": "Historical design, permit or monitoring assertions only; no current owner/status, coordinates or capacity overwritten. GIS export CRS and revision still unresolved."
+      }
+    }
+  ]
+}

@@ -30,6 +30,10 @@ def main() -> None:
         source_id=review["source_id"],
         retrieved_at=source["retrieved_at"],
         snapshot_date=review["snapshot_date"],
+        reviewed_status=review.get("reviewed_status", "Operational"),
+        held_fields_by_ref_id={
+            ref: set(fields) for ref, fields in review.get("held_fields_by_ref_id", {}).items()
+        },
     )
     existing = load_records(args.catalogue)
     by_ref = {}

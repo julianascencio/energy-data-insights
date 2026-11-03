@@ -9,6 +9,7 @@ import json
 
 import pytest
 
+from energy_data_retrieval.pv_catalogue.catalogue import upsert_records
 from energy_data_retrieval.pv_catalogue.repd import (
     REQUIRED,
     read_repd_csv,
@@ -161,3 +162,157 @@ def test_reviewed_ids_do_not_accept_the_rest_of_the_registry():
     rows = read(native(), native("124", **{"Site Name": "Other park", "X-coordinate": "600000"}))
     assert len(mapped(rows)) == 1
     assert mapped(rows)[0]["record_id"] == mapped(read(native()))[0]["record_id"]
+
+
+def construction_rows(**changes):
+    return read(
+        native(
+            **{
+                "Development Status (short)": "Under Construction",
+                "Operational": "",
+                "Under Construction": "01/03/2025",
+                **changes,
+            }
+        )
+    )
+
+
+def construction_mapped(rows):
+    return reviewed_repd_records(
+        rows,
+        reviewed_ids={"123"},
+        source_id="test",
+        retrieved_at="2026-11-02T23:00:00Z",
+        snapshot_date="2026-06-30",
+        reviewed_status="Under Construction",
+    )
+
+
+def test_construction_requires_explicit_scope_and_keeps_lifecycle_milestone():
+    rows = construction_rows()
+    with pytest.raises(ValueError, match="outside reviewed scope"):
+        mapped(rows)
+    record = construction_mapped(rows)[0]
+    assert record["status"] == "under_construction_registry_snapshot"
+    ext = json.loads(record["extensions_json"])["repd"]
+    assert ext["construction_start_milestone_date"] == "2025-03-01"
+    assert ext["operational_milestone_date"] is None
+    assert not {"commissioning_date", "capacity_ac_mw", "owners", "operators"} & record.keys()
+    assert "Private" not in json.dumps(record)
+    assert record["record_id"] == mapped(read(native()))[0]["record_id"]
+
+
+def test_construction_missing_milestone_remains_unknown():
+    record = construction_mapped(construction_rows(**{"Under Construction": ""}))[0]
+    assert (
+        json.loads(record["extensions_json"])["repd"]["construction_start_milestone_date"] is None
+    )
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"Operational": "01/01/2025"},
+        {"Under Construction": "01/07/2026"},
+        {"Under Construction": "31/02/2025"},
+        {"Development Status (short)": "Awaiting Construction"},
+    ],
+)
+def test_construction_conflicting_future_or_unreviewed_scope_is_held(changes):
+    with pytest.raises(ValueError):
+        construction_mapped(construction_rows(**changes))
+
+
+def test_unlisted_lifecycle_scope_and_missing_construction_column_fail_closed():
+    with pytest.raises(ValueError, match="Unsupported"):
+        reviewed_repd_records(
+            read(native()),
+            reviewed_ids={"123"},
+            source_id="test",
+            retrieved_at="2026-11-02T23:00:00Z",
+            snapshot_date="2026-06-30",
+            reviewed_status="Application Submitted",
+        )
+    rows = construction_rows()
+    del rows[0]["Under Construction"]
+    with pytest.raises(ValueError, match="missing"):
+        construction_mapped(rows)
+
+
+def test_construction_observation_cannot_downgrade_existing_operation():
+    existing = mapped(read(native()))
+    incoming = construction_mapped(construction_rows())
+    merged, conflicts = upsert_records(existing, incoming, now="2026-11-02T23:00:00Z")
+    assert len(conflicts) == 1
+    assert merged == existing
+    assert merged[0]["status"] == "operational_registry_snapshot"
+
+
+def awaiting_mapped(rows):
+    return reviewed_repd_records(
+        rows,
+        reviewed_ids={"123"},
+        source_id="test",
+        retrieved_at="2026-11-02T23:00:00Z",
+        snapshot_date="2026-06-30",
+        reviewed_status="Awaiting Construction",
+    )
+
+
+def test_awaiting_scope_does_not_invent_construction_or_operation():
+    rows = construction_rows(
+        **{"Development Status (short)": "Awaiting Construction", "Under Construction": ""}
+    )
+    with pytest.raises(ValueError, match="outside reviewed scope"):
+        mapped(rows)
+    record = awaiting_mapped(rows)[0]
+    assert record["status"] == "awaiting_construction_registry_snapshot"
+    assert record["record_id"] == mapped(read(native()))[0]["record_id"]
+    assert "commissioning_date" not in record
+    ext = json.loads(record["extensions_json"])["repd"]
+    assert "construction_start_milestone_date" not in ext
+    assert ext["operational_milestone_date"] is None
+
+
+@pytest.mark.parametrize(
+    "milestones",
+    [{"Under Construction": "01/01/2025"}, {"Operational": "01/01/2025"}],
+)
+def test_awaiting_scope_rejects_actual_lifecycle_milestones(milestones):
+    rows = construction_rows(
+        **{
+            "Development Status (short)": "Awaiting Construction",
+            "Under Construction": "",
+            **milestones,
+        }
+    )
+    with pytest.raises(ValueError):
+        awaiting_mapped(rows)
+
+
+def test_explicit_area_hold_keeps_native_assertion_without_selecting_a_value():
+    record = reviewed_repd_records(
+        read(native()),
+        reviewed_ids={"123"},
+        source_id="test",
+        retrieved_at="2026-11-02T23:00:00Z",
+        snapshot_date="2026-06-30",
+        held_fields_by_ref_id={"123": {"land_area_ha"}},
+    )[0]
+    assert "land_area_ha" not in record
+    ext = json.loads(record["extensions_json"])["repd"]
+    assert ext["Solar Site Area (sqm)"] == "25000"
+    assert ext["held_canonical_fields"] == ["land_area_ha"]
+
+
+@pytest.mark.parametrize("holds", [{"123": {"name"}}, {"124": {"land_area_ha"}}])
+def test_field_holds_cannot_drop_identity_or_target_unreviewed_rows(holds):
+    with pytest.raises(ValueError, match="field hold"):
+        reviewed_repd_records(
+            read(native()),
+            reviewed_ids={"123"},
+            source_id="test",
+            retrieved_at="2026-11-02T23:00:00Z",
+            snapshot_date="2026-06-30",
+            held_fields_by_ref_id=holds,
+        )

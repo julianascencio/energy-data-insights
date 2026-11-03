@@ -147,14 +147,25 @@ def reviewed_repd_records(
     source_id: str,
     retrieved_at: str,
     snapshot_date: str,
+    reviewed_status: str = "Operational",
+    held_fields_by_ref_id: dict[str, set[str]] | None = None,
 ) -> list[dict[str, Any]]:
-    """Map reviewed, unambiguous operating ground-mounted entries; no automatic ingest.
+    """Map explicitly reviewed ground-mounted entries; no automatic ingest.
 
     A separate phase crosswalk is required before accepting any flagged identity.
     Applicant/operator is deliberately not promoted to owner/operator. Addresses,
     contact details and free-form applicant names are omitted for privacy. MWelec
     is retained as AC/DC-unspecified; operational date is a registry milestone.
+    The default scope remains operational. Construction requires an explicit
+    scope argument and never becomes operational or a commissioning date.
     """
+    if reviewed_status not in {"Operational", "Under Construction", "Awaiting Construction"}:
+        raise ValueError("Unsupported REPD reviewed lifecycle scope")
+    field_holds = held_fields_by_ref_id or {}
+    if not field_holds.keys() <= reviewed_ids or any(
+        not fields <= {"land_area_ha"} for fields in field_holds.values()
+    ):
+        raise ValueError("Unreviewed REPD field hold or identity")
     risks = screen_repd_identities(rows, reviewed_ids)
     if risks:
         raise ValueError(f"Unresolved REPD identity review: {sorted(risks)}")
@@ -165,11 +176,19 @@ def reviewed_repd_records(
             continue
         if (
             row["Country"] not in {"England", "Wales", "Scotland", "Northern Ireland"}
-            or row["Development Status (short)"] != "Operational"
+            or row["Development Status (short)"] != reviewed_status
             or row["Mounting Type for Solar"] != "Ground"
             or not row["Site Name"]
         ):
             raise ValueError(f"REPD identity outside reviewed scope: {ref}")
+        construction = reviewed_status == "Under Construction"
+        awaiting = reviewed_status == "Awaiting Construction"
+        if (construction or awaiting) and (
+            "Under Construction" not in row or row["Operational"] not in MISSING
+        ):
+            raise ValueError(f"Contradictory or missing REPD construction milestones: {ref}")
+        if awaiting and row["Under Construction"] not in MISSING:
+            raise ValueError(f"REPD awaiting-construction row has a construction milestone: {ref}")
         native: dict[str, Any] = {
             key: row[key]
             for key in (
@@ -193,6 +212,25 @@ def reviewed_repd_records(
             coordinate_note="Native grid coordinates only; datum/accuracy not asserted.",
             role_note="Operator (or Applicant) is ambiguous and intentionally not promoted.",
         )
+        if construction:
+            native["construction_start_milestone_date"] = _date(
+                row["Under Construction"], snapshot_date
+            )
+            native["lifecycle_note"] = (
+                "Historical registry construction status/milestone, not current progress "
+                "verification, expected completion, commissioning or operation."
+            )
+        if awaiting:
+            native["lifecycle_note"] = (
+                "Historical awaiting-construction registry status, not evidence of "
+                "construction, commissioning, current progress or a completion forecast."
+            )
+        if field_holds.get(ref):
+            native["held_canonical_fields"] = sorted(field_holds[ref])
+            native["field_hold_note"] = (
+                "Explicit reviewed field hold; native source value retained without "
+                "selecting or silently correcting conflicting area evidence."
+            )
         record: dict[str, Any] = {
             "record_id": stable_id("projects", "REPD", ref),
             "entity_type": "projects",
@@ -201,7 +239,15 @@ def reviewed_repd_records(
             "region": row["Region"],
             "locality": row["County"],
             "technology": "photovoltaic",
-            "status": "operational_registry_snapshot",
+            "status": (
+                "under_construction_registry_snapshot"
+                if construction
+                else (
+                    "awaiting_construction_registry_snapshot"
+                    if awaiting
+                    else "operational_registry_snapshot"
+                )
+            ),
             "source_date": snapshot_date,
             "mounting_type": "ground",
             "capacity_basis": "REPD Installed Capacity (MWelec); AC/DC basis unspecified",
@@ -222,7 +268,7 @@ def reviewed_repd_records(
         area = _number(row["Solar Site Area (sqm)"])
         if capacity is not None:
             record["capacity_unspecified_mw"] = capacity
-        if area is not None:
+        if area is not None and "land_area_ha" not in field_holds.get(ref, set()):
             record["land_area_ha"] = area / 10000
         result.append({key: value for key, value in record.items() if value != ""})
     return result

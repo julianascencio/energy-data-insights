@@ -265,3 +265,114 @@ def reviewed_odre_records(
             record["grid_voltage_kv"] = float(voltage[1].replace(",", "."))
         result.append({k: v for k, v in record.items() if v is not None and v != ""})
     return result
+
+
+def reviewed_odre_enrichments(
+    rows: list[dict[str, Any]],
+    identities: list[dict[str, Any]],
+    *,
+    reviewed_ids: set[str],
+    existing: list[dict[str, Any]],
+    source_id: str,
+    snapshot_date: str,
+) -> list[dict[str, Any]]:
+    """Fill missing grid/service facts for reviewed unique complete-phase EICs.
+
+    All canonical phase and external EICs participate in uniqueness. No name join,
+    phase aggregation, overwrite or existing extension merge is performed. Native
+    assertions that differ from populated fields remain explicit review evidence.
+    Callers must checksum-validate both exports with :func:`read_odre_json` first.
+    """
+    date.fromisoformat(snapshot_date)
+    individuals = [r for r in rows if r["codeeicresourceobject"] is not None]
+    lookup = {r["codeeicresourceobject"]: r for r in individuals}
+    national = {r["codeeicresourceobject"]: r for r in identities}
+    if len(lookup) != len(individuals) or len(national) != len(identities):
+        raise ValueError("Duplicate ODRE source EIC")
+    if any(not isinstance(eic, str) for eic in reviewed_ids) or not reviewed_ids <= lookup.keys():
+        raise ValueError("Missing reviewed ODRE EIC")
+    crosswalk: dict[str, set[str]] = {}
+    canonical = {r["record_id"]: r for r in existing}
+    if len(canonical) != len(existing):
+        raise ValueError("Duplicate canonical record ID")
+    for record in existing:
+        if record["entity_type"] != "projects":
+            continue
+        found = set()
+        for phase in json.loads(record.get("phases_json", "[]")):
+            for key in ("Other IDs (location)", "Other IDs (unit/phase)"):
+                found.update(
+                    re.findall(r"(?<![A-Z0-9])[A-Z0-9-]{16}(?![A-Z0-9])", phase.get(key) or "")
+                )
+        eic = json.loads(record.get("external_ids_json", "{}")).get("odre_eic")
+        if eic:
+            found.add(eic)
+        for eic in found:
+            crosswalk.setdefault(eic, set()).add(record["record_id"])
+    target_counts = Counter(
+        next(iter(crosswalk[eic])) for eic in reviewed_ids if len(crosswalk.get(eic, set())) == 1
+    )
+    if any(count > 1 for count in target_counts.values()):
+        raise ValueError("Multiple source EICs target one canonical project; review scope")
+    result = []
+    for eic in sorted(reviewed_ids):
+        row = lookup[eic]
+        if (
+            eic not in national
+            or any(row[k] != national[eic][k] for k in IDENTITY_FIELDS)
+            or row["nbinstallations"] != 1
+            or row["codetechnologie"] != "PHOTV"
+            or row["regime"] != "En service"
+            or not row["nominstallation"]
+            or any(t in normal_name(row["nominstallation"]) for t in ("confidentiel", "prive"))
+            or len(crosswalk.get(eic, set())) != 1
+        ):
+            raise ValueError("Unresolved ODRE enrichment identity/scope")
+        record = canonical[next(iter(crosswalk[eic]))]
+        phases = json.loads(record.get("phases_json", "[]"))
+        if (
+            record.get("country_code") != "FRA"
+            or len(phases) != 1
+            or not phases[0].get("GEM phase ID")
+            or record.get("extensions_json")
+        ):
+            raise ValueError("ODRE enrichment requires one complete phase without extensions")
+        assertions = {
+            "grid_operator": row.get("gestionnaire"),
+            "substation": row.get("postesource"),
+            "commissioning_date": _date(row.get("datemiseenservice"), snapshot_date),
+        }
+        fields = {k: v for k, v in assertions.items() if v and not record.get(k)}
+        if not fields:
+            raise ValueError("ODRE enrichment has no missing factual fields")
+        held = {
+            k: {"existing": record[k], "source_assertion": v}
+            for k, v in assertions.items()
+            if v and record.get(k) and record[k] != v
+        }
+        evidence = {
+            "as_of_snapshot": snapshot_date,
+            "eic": eic,
+            "phase_id": phases[0]["GEM phase ID"],
+            "source_id": source_id,
+            "native_fields": {
+                k: row.get(k) for k in ("gestionnaire", "postesource", "datemiseenservice")
+            },
+            "scope": (
+                "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; "
+                "registry industrial-service date does not prove current operation."
+            ),
+        }
+        if held:
+            evidence["unresolved_assertions_not_applied"] = held
+        result.append(
+            {
+                "record_id": record["record_id"],
+                "entity_type": "projects",
+                **fields,
+                "extensions_json": canonical_json({"odre_crosswalk_evidence": evidence}),
+                "sources": [source_id],
+                "field_sources_json": canonical_json({"*": source_id}),
+            }
+        )
+    return result
