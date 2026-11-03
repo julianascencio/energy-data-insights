@@ -252,6 +252,16 @@ for _, component in equipment.loc[equipment.manufacturer.eq("ABB")].iterrows():
 
 # %%
 print("ACU motor-side current; 60s and 1s overload limits, not turbine output:")
-for _, component in equipment.loc[equipment.model.fillna("").str.startswith("ACU 401-")].iterrows():
+for _, component in equipment.loc[
+    equipment.model.fillna("").str.startswith(("ACU 201-", "ACU 401-"))
+].iterrows():
     specs = json.loads(component.extensions_json)
     print(component.model, specs["output_current_table_a"], specs["overload_current_a"])
+
+# %%
+print("ACU input-phase limits and switching-frequency observations:")
+for _, component in equipment.loc[equipment.model.fillna("").str.startswith("ACU 201-")].iterrows():
+    specs = json.loads(component.extensions_json)
+    print(component.model, specs["switching_frequency_current_a"])
+    if "single_two_phase_max_output_current_a" in specs:
+        print("Single/two-phase maximum A:", specs["single_two_phase_max_output_current_a"])
