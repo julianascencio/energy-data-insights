@@ -36,13 +36,26 @@ Add executable examples as ``plot_*.py`` in the section that matches their purpo
 * ``examples/analysis/``: applied workflows combining inputs, methods and outputs.
 * ``examples/database/``: Parquet queries, catalogue statistics and data coverage.
 
-Each section has a ``README.rst`` introduction and a generated gallery page.
-The gallery and sidebar use the order Methods, Connectors, Analysis, Database, configured
-in ``docs/conf.py``. Keep support files beside their example (generation samples
-live in ``examples/connectors/data/``), update download links and provenance paths,
-and verify the clean documentation build. Clearly label synthetic inputs, use
-deterministic seeds where needed, and avoid network calls during gallery builds.
-The documentation extension retains redirects for the original flat example URLs.
+The gallery has two category levels: **main sections**, then **topic subsections**.
+``examples/index.rst`` links to the four main sections. Each section's
+``index.rst`` links to its ``topic_*.rst`` pages; each topic links to its examples
+through a thumbnail mini-gallery and a hidden toctree. These authored pages are
+copied by Sphinx-Gallery using ``copyfile_regex`` in ``docs/conf.py``.
+The sidebar and breadcrumbs use the same hierarchy.
+
+When adding an example, register it in exactly one topic's mini-gallery and
+toctree. For a new topic, add its card and toctree entry to the section index.
+Keep category nesting to those two levels; individual examples are the leaves.
+``tests/test_gallery_navigation.py`` checks that every runnable example is
+reachable exactly once, with matching thumbnails and links. The category pages
+contain navigation, while the example pages contain code and outputs.
+
+Keep Python scripts and their support files at their established paths
+(generation samples live in ``examples/connectors/data/``). Update download
+links and provenance paths and verify the clean documentation build. Clearly
+label synthetic inputs, use deterministic seeds where needed, and avoid network
+calls during gallery builds. Existing example URLs, notebooks and download
+bundles retain their paths, including redirects for the original flat gallery.
 
 The Database viewer uses local JavaScript and generated JSON projections of the
 published Parquet files. ``project_docs`` builds both together after a successful

@@ -1,0 +1,49 @@
+Analysis & case studies
+=======================
+
+Combine inputs and methods into maps, forecasts, inspections and uncertainty studies. Choose a topic below.
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+   :class-container: gallery-navigation
+
+   .. grid-item-card:: Climate classification and maps
+      :link: topic_climate_maps
+      :link-type: doc
+
+      Compare climate classifications worldwide, across Chile and the Canary Islands, or at a site.
+
+   .. grid-item-card:: Environmental risks
+      :link: topic_environmental_risks
+      :link-type: doc
+
+      Map soiling and snow exposure and compare climate risks across countries.
+
+   .. grid-item-card:: Degradation and uncertainty
+      :link: topic_degradation
+      :link-type: doc
+
+      Evaluate climate-driven degradation rates and uncertainty in estimated degradation.
+
+   .. grid-item-card:: Generation forecasting
+      :link: topic_forecasting
+      :link-type: doc
+
+      Benchmark solar and wind forecasts using common observations and scoring rules.
+
+   .. grid-item-card:: PV inspection and site models
+      :link: topic_pv_inspection
+      :link-type: doc
+
+      Audit module counts from imagery and inspect a solar site in three dimensions.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   topic_climate_maps
+   topic_environmental_risks
+   topic_degradation
+   topic_forecasting
+   topic_pv_inspection
+
