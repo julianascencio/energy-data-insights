@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T00:28:44Z",
+  "updated_at": "2026-11-03T01:29:30Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -10,7 +10,11 @@
     "vertiv_sl70643_models": 2,
     "airtrunk_locations": 22,
     "nvidia_legacy_accelerator_configurations": 13,
-    "vertiv_powerit_switched_models": 8
+    "vertiv_powerit_switched_models": 8,
+    "africa_data_centres_current_facilities": 5,
+    "africa_data_centres_accra_announcements": 1,
+    "vertiv_geist_emea_rpdu_models": 24,
+    "eaton_9px_gen2_rack_kit_skus": 4
   },
   "next_batches": [
     {
@@ -48,11 +52,12 @@
       "urls": [
         "https://www.africadatacentres.com/"
       ],
-      "offset": 0,
-      "scope": "Kenya, Nigeria, Ghana and Uruguay/Paraguay operator portfolios; discover primary URLs before ingest",
+      "offset": 6,
+      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; continue issuer registries, JHB1 phase reconciliation, Accra post-announcement evidence, and Uruguay/Paraguay primary inventories",
       "questions": [
-        "Named facilities and dated status",
-        "Open regulator/environmental source inventories and reuse conditions"
+        "Issuer-verify facility certifications rather than normalizing operator badges",
+        "Resolve JHB1 14.5 MW facility-sheet versus 20 MW expansion boundary and date",
+        "Find Accra permit/construction status and open regulator/environmental source inventories"
       ]
     },
     {
@@ -76,8 +81,8 @@
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/"
       ],
-      "offset": 0,
-      "scope": "PowerIT Switched table complete at offset 8; enrich 4 Eaton exact UPS runtime/load/voltage/efficiency tables; XDU thermal conditions; exact current rack PDU, chiller, CRAH, transformer, switchgear and generator models",
+      "offset": 28,
+      "scope": "PowerIT Switched table complete at offset 8; Vertiv Geist EMEA rPDU table complete at offset 24; Eaton 9PX Gen2 rack-kit table complete at offset 4. Continue XDU thermal conditions and exact current chiller, CRAH, transformer, switchgear and generator models",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",

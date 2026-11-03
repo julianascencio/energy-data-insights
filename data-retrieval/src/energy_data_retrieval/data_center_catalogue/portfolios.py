@@ -175,6 +175,67 @@ def parse_airtrunk_locations(content: bytes, *, source_url: str) -> dict[str, An
     }
 
 
+class _AfricaDataCentresFootprint(HTMLParser):
+    """Collect only named facility links from the public footprint navigation."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.href = ""
+        self.parts: list[str] = []
+        self.links: list[tuple[str, str, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "a":
+            self.href = dict(attrs).get("href") or ""
+            self.parts = []
+
+    def handle_data(self, data: str) -> None:
+        if self.href:
+            self.parts.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag != "a" or not self.href:
+            return
+        text = " ".join(" ".join(self.parts).split())
+        match = re.fullmatch(r"(JHB1|JHB2|CPT1|NBO1|LOS1)\s+(.+)", text)
+        if match:
+            self.links.append((match.group(1), match.group(2), self.href))
+        self.href = ""
+        self.parts = []
+
+
+def parse_africa_data_centres_footprint(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete five-facility footprint displayed by the operator.
+
+    Navigation establishes identities and official detail links only. Facility
+    status, capacity, certification and geography still require source review.
+    Duplicate desktop/mobile navigation entries are collapsed by immutable code.
+    """
+    if urlsplit(source_url).hostname != "www.africadatacentres.com":
+        raise ValueError("Expected official Africa Data Centres URL")
+    parser = _AfricaDataCentresFootprint()
+    parser.feed(content.decode("utf-8-sig"))
+    candidates: dict[str, dict[str, str]] = {}
+    for code, locality, href in parser.links:
+        candidate = {
+            "external_id": code,
+            "locality": locality,
+            "url": urljoin(source_url, href),
+            "locator": f"Pan-African Footprint link text {code}",
+        }
+        previous = candidates.setdefault(code, candidate)
+        if previous != candidate:
+            raise ValueError("Conflicting Africa Data Centres footprint identity")
+    if set(candidates) != {"JHB1", "JHB2", "CPT1", "NBO1", "LOS1"}:
+        raise ValueError("Changed Africa Data Centres footprint shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [candidates[key] for key in sorted(candidates)],
+        "review_required": True,
+    }
+
+
 class _PueTables(HTMLParser):
     def __init__(self) -> None:
         super().__init__()

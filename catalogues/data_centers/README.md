@@ -5,10 +5,10 @@ canonical JSONL under `records/projects` and `records/equipment`, a source regis
 field-level evidence, stable UUIDs and deterministic typed Parquet snapshots.
 No network request occurs during validation, export or documentation builds.
 
-The current open-branch catalogue contains **115 project records in 20 countries**:
-**45 facility records and 70 explicitly labelled campus aggregates**, plus **42
+The current open-branch catalogue contains **121 project records in 23 countries**:
+**51 facility records and 70 explicitly labelled campus aggregates**, plus **70
 exact equipment models/configurations from four OEMs**. These are branch catalogue
-counts, not a worldwide census or a count of operating buildings. Seven operators
+counts, not a worldwide census or a count of operating buildings. Eight operators
 are represented.
 The research report and coverage manifest describe missing fields and scope.
 
@@ -16,6 +16,7 @@ The research report and coverage manifest describe missing fields and scope.
 uv run python -m energy_data_retrieval.data_center_catalogue validate
 uv run python -m energy_data_retrieval.data_center_catalogue build --output artifacts/data-centers-v1
 uv run python scripts/stage_data_center_portfolio.py captured.html --source-url https://www.nextdc.com/data-centres
+uv run python scripts/stage_data_center_adc.py captured.html --source-url https://www.africadatacentres.com/nairobi/
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.

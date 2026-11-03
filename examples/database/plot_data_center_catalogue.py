@@ -86,4 +86,28 @@ print(
         equipment.equipment_category.eq("server"), ["name", "input_power_kw", "power_conditions"]
     ].to_string(index=False)
 )
+print("Exact UPS ratings keep kW, kVA and runtime/load conditions separate:")
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("ups"),
+        [
+            "name",
+            "output_power_kw",
+            "apparent_power_kva",
+            "runtime_minutes",
+            "runtime_load_kw",
+        ],
+    ]
+    .sort_values(["apparent_power_kva", "name"])
+    .to_string(index=False)
+)
+print("Rack PDU comparison uses only reported apparent-power rows:")
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("rack_pdu") & equipment.apparent_power_kva.notna(),
+        ["name", "apparent_power_kva", "input_current_a", "temperature_max_c"],
+    ]
+    .sort_values(["apparent_power_kva", "name"])
+    .to_string(index=False)
+)
 plt.show()

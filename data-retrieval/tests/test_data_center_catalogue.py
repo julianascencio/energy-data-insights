@@ -18,6 +18,7 @@ from energy_data_retrieval.data_center_catalogue import (
 )
 from energy_data_retrieval.data_center_catalogue.catalogue import validate_record
 from energy_data_retrieval.data_center_catalogue.portfolios import (
+    parse_africa_data_centres_footprint,
     parse_airtrunk_locations,
     parse_portfolio,
 )
@@ -122,7 +123,7 @@ def test_capacity_boundaries_null_zero_and_filtered_overlap():
 
 def test_upsert_quarantines_only_conflicting_field_and_retains_creation(catalogue):
     rows, sources = catalogue
-    old = copy.deepcopy(next(r for r in rows if r.get("it_capacity_mw")))
+    old = copy.deepcopy(next(r for r in rows if r.get("it_capacity_mw") and not r.get("aliases")))
     new = copy.deepcopy(old)
     new["it_capacity_mw"] += 1
     new["aliases"] = ["Synthetic renamed alias"]
@@ -196,6 +197,31 @@ def test_airtrunk_inventory_parser_is_complete_deduplicated_and_identity_only():
         parse_airtrunk_locations(
             b"<a href='/location/syd1/'>SYD1</a>", source_url="https://airtrunk.com/locations/"
         )
+
+
+def test_africa_data_centres_footprint_parser_is_complete_and_identity_only():
+    data = parse_africa_data_centres_footprint(
+        (FIXTURES / "africa-data-centres.html").read_bytes(),
+        source_url="https://www.africadatacentres.com/nairobi/",
+    )
+    assert [row["external_id"] for row in data["candidates"]] == [
+        "CPT1",
+        "JHB1",
+        "JHB2",
+        "LOS1",
+        "NBO1",
+    ]
+    assert next(row for row in data["candidates"] if row["external_id"] == "NBO1")["url"].endswith(
+        "/nairobi/"
+    )
+    assert "DO NOT EXTRACT" not in json.dumps(data)
+    with pytest.raises(ValueError, match="footprint shape"):
+        parse_africa_data_centres_footprint(
+            b"<a href='/nairobi/'>NBO1 Nairobi</a>",
+            source_url="https://www.africadatacentres.com/",
+        )
+    with pytest.raises(ValueError, match="official Africa"):
+        parse_africa_data_centres_footprint(b"", source_url="https://example.com/")
 
 
 def test_pue_table_selection_preserves_period_precision_and_empty_ttm():
