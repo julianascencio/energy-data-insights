@@ -214,3 +214,5 @@ Latest pass: [French partition 400–599 and Rolls LFP review](../bess/research/
 Latest pass: [Final French partition, LFP and Ventavon](../bess/research/2026-11-02_odre_partition4.md).
 
 Latest pass: [India IATI and HW15 inverter components](../bess/research/2026-11-02_india_vedirect.md).
+
+Latest pass: [Pacific inventory review and HW15 equipment](research/2026-11-03_pacific_hw15.md).

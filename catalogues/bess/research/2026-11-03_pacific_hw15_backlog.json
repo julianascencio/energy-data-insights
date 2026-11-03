@@ -1,0 +1,77 @@
+[
+  {
+    "rank": 1,
+    "entity": "Tonga Renewable Energy Project 49450-012",
+    "url": "https://www.tongapower.to/node/136",
+    "version": "25 October 2022 opening announcement; current download unavailable",
+    "access_license": "HTTP 503; no bulk licence verified; individually reviewed facts only after access/terms review",
+    "expected_yield": "2 named Tongatapu installations, then Eua and Vavau; do not import parent aggregate",
+    "offered_fields": [
+      "site identity",
+      "opening milestone",
+      "contractor",
+      "applications"
+    ],
+    "attempt_result": "50 IATI activities / one multi-site financing candidate; owner opening/specifications/contract pages each HTTP 503; web open 502/timeout",
+    "partition": "Tonga XML complete; owner pages unprocessed",
+    "retry_condition": "ordinary primary source access recovery",
+    "next_action": "Reconcile Popua grid-stability and Matatoa load-shifting separately; compare tender 5 MW usable/EOL against later gross battery ratings before normalization",
+    "assessed_at": "2026-11-03T00:50:51.458580+00:00"
+  },
+  {
+    "rank": 2,
+    "entity": "Mongolia 53249-001",
+    "url": "https://www.adb.org/projects/53249-001/main",
+    "version": "IATI generated 2026-10-21; fresh file same deferred identity",
+    "access_license": "ADB Project Data reuse with attribution, downstream acknowledgment and no endorsement; https://www.adb.org/terms-use",
+    "expected_yield": "one named plant",
+    "offered_fields": [
+      "contract rating",
+      "site",
+      "contractor",
+      "status"
+    ],
+    "attempt_result": "129 activities / one candidate; project page 403, cached indexed contract observations not imported; multimedia page excluded from Project Data reuse assumption",
+    "partition": "Mongolia XML complete",
+    "retry_condition": "project detail access recovery or reusable independent site document",
+    "next_action": "Connect physical Songino site to 53249-001 and dated commissioning; 100 MW national target is never plant rating",
+    "assessed_at": "2026-11-03T00:50:51.458580+00:00"
+  },
+  {
+    "rank": 3,
+    "entity": "Philippines IATI",
+    "url": "https://www.adb.org/iati/iati-activities-ph.xml",
+    "version": "2026-10-21",
+    "access_license": "ADB Project Data terms",
+    "expected_yield": "zero in current revision",
+    "offered_fields": [
+      "financing identities",
+      "descriptions"
+    ],
+    "attempt_result": "132 activities; three electric-tricycle financing entries excluded",
+    "partition": "complete",
+    "retry_condition": "changed revision",
+    "next_action": "Use DOE stationary-storage inventory instead of rechecking unchanged XML",
+    "assessed_at": "2026-11-03T00:50:51.458580+00:00"
+  },
+  {
+    "rank": 4,
+    "entity": "Victron HW15",
+    "url": "https://www.victronenergy.com/media/pg/Inverter_VE.Direct_120V_-_HW15/en/technical-specifications.html",
+    "version": "HW15 undated HTML",
+    "access_license": "copyright retained; bounded facts, no open bulk licence asserted",
+    "expected_yield": "selected table exhausted",
+    "offered_fields": [
+      "power",
+      "DC limits",
+      "physical data",
+      "thermal",
+      "manufacturer compliance claims"
+    ],
+    "attempt_result": "18/18 exact configurations added; 18 prior 230 V rows enriched from separate fresh 230 V source",
+    "partition": "all six columns and three explicitly listed DC models per column",
+    "retry_condition": "changed source revision",
+    "next_action": "Move to new regional battery cabinet OEM; do not synthesize socket variants. Clarify source per-Fahrenheit derating before engineering use.",
+    "assessed_at": "2026-11-03T00:50:51.458580+00:00"
+  }
+]

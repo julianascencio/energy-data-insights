@@ -4455,3 +4455,19 @@ Victron Energy (2026). **Inverter VE.Direct 230V HW15 technical specifications**
 **Role:** data_source. Primary factual evidence; exact locators, revision, checksum and source reuse qualification in catalogue sources.json.
 
 **Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_hw15_120v_20261103
+
+Victron Energy (2026). **Inverter VE.Direct 120V HW15 technical specifications**. [Source](https://www.victronenergy.com/media/pg/Inverter_VE.Direct_120V_-_HW15/en/technical-specifications.html)
+
+**Role:** data. Exact model factual specifications; table/model locators and source hash in source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_hw15_230v_20261103
+
+Victron Energy (2026). **Inverter VE.Direct 230V HW15 technical specifications**. [Source](https://www.victronenergy.com/media/pg/Inverter_VE.Direct_230V_-_HW15/en/technical-specifications.html)
+
+**Role:** data. HW15 230 V manufacturer safety and EMC claims; not independent certification.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
