@@ -6439,3 +6439,27 @@ Bonfiglioli (n.d.). **ACTIVE CUBE product catalogue**. [Source](https://www.bonf
 **Role:** data source. R04_0 pp12–14 nomenclature and pp24–25 complete ACUx10 frame7/8 rating tables. Publication date unknown; PDF metadata is not publication evidence. Mechanical options remain nested; ACUx01 not relabelled.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### ozkalay_2025_three_decades
+
+Özkalay, Ebrar; Quest, Hugo; Gassner, Anika; Virtuani, Alessandro; Eder, Gabriele C.; Vorstoffel, Stefanie; Buerhop-Lutz, Claudia; Friesen, Gabi; Ballif, Christophe; Burri, Matthias; Bucher, Christof (2025). **Three decades, three climates: environmental and material impacts on the long-term reliability of photovoltaic modules**. EES Solar, 1(4), 580–599. [DOI: 10.1039/D4EL00040D](https://doi.org/10.1039/D4EL00040D)
+
+**Role:** data. Published online 30 May 2025. Swiss multi-decade field evidence. Analysis uses attributed numerical extracts from the pre-publication Zenodo v1.0.0 archive, preserving date/count/rate differences from the final article. No 50-year measurement or fleet survival estimate is claimed.
+
+**Used by:** `analysis/src/energy_analysis/pv_lifetime/study.py`, `examples/analysis/plot_pv_lifetime_50_years.py`, `docs/pv-lifetime.md`.
+
+### quest_2024_swiss_data
+
+Quest, Hugo; Özkalay, Ebrar; Gassner, Anika (2024). **Three Decades, Three Climates: Environmental and Material Impacts on the Long-Term Reliability of Photovoltaic Modules - Shared data and results**. [DOI: 10.5281/zenodo.14524159](https://doi.org/10.5281/zenodo.14524159)
+
+**Role:** data. Version 1.0.0, 19 December 2024. Archive downloaded 3 November 2026 and verified against published MD5 b19a01369228f92769096a5a45965b1f. PM cell values and system PLRs extracted with addresses and hashes. Dataset CC-BY-4.0 confirmed from Zenodo API metadata; no license inferred from the article.
+
+**Used by:** `analysis/src/energy_analysis/pv_lifetime/study.py`, `examples/analysis/plot_pv_lifetime_50_years.py`, `docs/pv-lifetime.md`, `scripts/prepare_pv_lifetime_data.py`.
+
+### ravindrababu_2026_maple
+
+Ravindrababu, Suraj; Hädrich, Ingrid; Paetzold, Ulrich W.; Gebhardt, Paul (2026). **Development of a modular approach for photovoltaic module lifetime and reliability estimation**. Energy Reports, 15, 109323. [DOI: 10.1016/j.egyr.2026.109323](https://doi.org/10.1016/j.egyr.2026.109323)
+
+**Role:** implemented. Online 25 April 2026. Independent implementation of selected MAPLE MSM equations: independent mode product (8), sigmoid power (10), equivalent-time update (13; discussion 24–28). Rates are reciprocal years; shapes and stress histories in the example are hypothetical. Full CFM, dependent modes and multi-scale modelling are not implemented here.
+
+**Used by:** `methods/src/energy_methods/pv_lifetime.py`, `analysis/src/energy_analysis/pv_lifetime/study.py`, `examples/analysis/plot_pv_lifetime_50_years.py`, `docs/pv-lifetime.md`.
