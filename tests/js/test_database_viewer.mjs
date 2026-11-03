@@ -84,3 +84,18 @@ test("map clusters preserve all 60000 project references, including identical lo
     [{x: 2, y: 3, rows: [projects[0], projects[1]]}]);
   assert.deepEqual(clusterLocations([]), []);
 });
+
+test("data center capacity keeps scopes and bases separate, even after filtering", async () => {
+  const {dataCenterCapacity} = await import("../../docs/_static/database-core.mjs");
+  const rows = [
+    {aggregation_role:"independent", it_capacity_mw:0, it_capacity_basis:"operational"},
+    {aggregation_role:"child", it_capacity_mw:10, it_capacity_basis:"ultimate_planned"},
+    {aggregation_role:"aggregate", it_capacity_mw:100},
+    {aggregation_role:"independent", grid_capacity_mw:999},
+    {aggregation_role:"child", overlap_group:"uncertain", it_capacity_mw:50},
+  ];
+  assert.deepEqual(dataCenterCapacity(rows,"it_capacity_mw"), {excluded:2,unknown:1,byBasis:{operational:{reported_mw:0,records:1},ultimate_planned:{reported_mw:10,records:1}}});
+  assert.equal(dataCenterCapacity(rows.slice(-1),"it_capacity_mw").excluded,1);
+  assert.deepEqual(dataCenterCapacity(rows.slice(3,4),"it_capacity_mw").byBasis,{});
+  assert.throws(() => dataCenterCapacity(rows,"backup_generation_mw"));
+});

@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "updated_at": "2026-11-03T03:26:41Z",
+  "completed_offsets": {
+    "nextdc_dc_rows": 28,
+    "odata_map_entries": 12,
+    "google_2026_q2_campus_rows": 35,
+    "amd_comparison_columns": 4,
+    "eaton_exact_skus": 4,
+    "vertiv_sl70643_models": 2,
+    "airtrunk_locations": 22,
+    "nvidia_legacy_accelerator_configurations": 13,
+    "vertiv_powerit_switched_models": 8,
+    "africa_data_centres_current_facilities": 5,
+    "africa_data_centres_accra_announcements": 1,
+    "vertiv_geist_emea_rpdu_models": 24,
+    "eaton_9px_gen2_rack_kit_skus": 4,
+    "teraco_current_facilities": 9,
+    "nextdc_kl1": 1,
+    "schneider_galaxy_vs_400v_skus": 23,
+    "odata_country_technical_sheets": 12,
+    "stulz_cyberair_fixed_speed_r410a_configurations": 30
+  },
+  "next_batches": [
+    {
+      "rank": 1,
+      "source": "Teraco technical sheets + NEXTDC excluded/edge details",
+      "urls": [
+        "https://www.teraco.co.za/data-centre-locations/",
+        "https://www.nextdc.com/data-centres"
+      ],
+      "offset": 10,
+      "scope": "Teraco current eight-facility portfolio, Isando aggregate and JB7 complete at 9+1; NEXTDC KL1 complete at offset 1. Continue issuer registries, JB4 area reconciliation and remaining NEXTDC edge/phase evidence.",
+      "questions": [
+        "Resolve Teraco JB4 16,000 m2 white space versus 17,000 m2 across 14 halls",
+        "Issuer-verify NEXTDC KL1 and Teraco facility certifications with certificate identifiers, scope and dates",
+        "Source utility/regulator grid MW and volts separately from operator IT load and MVA observations"
+      ]
+    },
+    {
+      "rank": 2,
+      "source": "ODATA country technical sheets",
+      "urls": [
+        "https://odatadc.com/localidades/",
+        "https://odatadc.com/brazil-data-centers/"
+      ],
+      "offset": 12,
+      "scope": "All 12 country-sheet campus identities enriched at offset 12; continue planning/environmental records and exact building/phase splits without duplicating campus aggregates",
+      "questions": [
+        "Resolve QR03 275,000 m2 country-sheet versus 275 m2 launch-page conflict",
+        "Issuer-verify Tier/certification claims",
+        "Separate 200/400 MW electrical infrastructure from IT/grid/facility boundaries"
+      ]
+    },
+    {
+      "rank": 3,
+      "source": "Underrepresented operators and official permits",
+      "urls": [
+        "https://www.africadatacentres.com/"
+      ],
+      "offset": 6,
+      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; continue issuer registries, JHB1 phase reconciliation, Accra post-announcement evidence, and Uruguay/Paraguay primary inventories",
+      "questions": [
+        "Issuer-verify facility certifications rather than normalizing operator badges",
+        "Resolve JHB1 14.5 MW facility-sheet versus 20 MW expansion boundary and date",
+        "Find Accra permit/construction status and open regulator/environmental source inventories"
+      ]
+    },
+    {
+      "rank": 4,
+      "source": "North America/Europe structured official portfolios and AirTrunk phase evidence",
+      "urls": [
+        "https://www.digitalrealty.com/data-centers",
+        "https://airtrunk.com/locations/"
+      ],
+      "offset": 0,
+      "scope": "AirTrunk location inventory complete at offset 22; review planning/environmental records for building phases. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a bounded batch",
+      "questions": [
+        "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
+        "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
+      ]
+    },
+    {
+      "rank": 5,
+      "source": "OEM electrical and thermal specifications",
+      "urls": [
+        "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
+        "https://www.vertiv.com/"
+      ],
+      "offset": 81,
+      "scope": "Prior Vertiv/Eaton/Schneider tables plus 30 STULZ CyberAir fixed-speed R410A configurations complete; continue STULZ modulating/R134a and exact current chiller, transformer, switchgear and generator tables",
+      "questions": [
+        "Explicit rating configurations only; no cross-product Cartesian synthesis",
+        "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
+        "Reference existing BESS battery models rather than duplicating them"
+      ]
+    },
+    {
+      "rank": 6,
+      "source": "Compute racks and cooling supplier diversity",
+      "urls": [
+        "https://www.supermicro.com/",
+        "https://www.dell.com/",
+        "https://www.lenovo.com/",
+        "https://www.coolitsystems.com/"
+      ],
+      "offset": 0,
+      "scope": "Exact integrated compute rack and direct-to-chip/immersion model tables; Asian and regional OEMs",
+      "questions": [
+        "Rack input vs server vs accelerator limit",
+        "Measured performance workload/precision/test conditions, temperatures and flow"
+      ]
+    },
+    {
+      "rank": 7,
+      "source": "Google PUE continuation",
+      "url": "https://www.datacenters.google/efficiency/",
+      "offset": 35,
+      "scope": "Q2 2026 fully processed; check for Q3/Q4 updates, then enrich all 35 campus identities with individual phase evidence",
+      "questions": [
+        "Retain separate campus and building boundaries",
+        "Do not overwrite earlier measured periods or infer IT MW from PUE"
+      ]
+    },
+    {
+      "rank": 8,
+      "source": "NVIDIA lifecycle and current accelerator continuation",
+      "urls": [
+        "https://docs.nvidia.com/vgpu/gpus-supported-by-vgpu.html",
+        "https://www.nvidia.com/en-us/data-center/"
+      ],
+      "offset": 13,
+      "scope": "Legacy exact accelerator batch complete at offset 13; add dated lifecycle evidence and exact B200/B300/RTX PRO server variants only from current OEM tables",
+      "questions": [
+        "Do not combine memory, power and form-factor options across variants",
+        "Keep workload precision and sparsity conditions with any performance observation"
+      ]
+    }
+  ],
+  "holds": [
+    {
+      "source": "NTT DATA portfolio",
+      "reason": "Explicit automation/republication restrictions; permission required before future bulk capture/import",
+      "reviewed_pages": 72
+    },
+    {
+      "source": "PeeringDB bulk facility API",
+      "reason": "AUP redistribution restrictions; no import"
+    },
+    {
+      "source": "OpenStreetMap Overpass",
+      "reason": "502 and timeout; accessible ODbL source but no successful capture; any future import needs attribution/share-alike compliance"
+    },
+    {
+      "source": "Digital Realty 2025 10-K schedule III",
+      "reason": "Market aggregates, not facility identities"
+    }
+  ],
+  "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open."
+}

@@ -1,6 +1,7 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, hasLocation} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, hasLocation, dataCenterCapacity} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
+const isDataCenter = root.dataset.database === "data_centers";
 const isBess = root.dataset.database === "bess";
 const isBessOem = root.dataset.database === "bess_oem";
 const el = (id) => document.getElementById(`db-${id}`);
@@ -15,7 +16,7 @@ const base = new URL(root.dataset.base, document.baseURI);
 let index, rows = [], filtered = [], visible = [], page = 0, sortKey = "name", descending = false;
 let tableName = "", token = 0, currentRecord;
 let projectMap, mapModule, mapRequest = 0;
-const categories = ["manufacturer", "country_code", "technology", "status", "quality_status", "market_scope", "bifacial", "chemistry", "configuration", "power_basis", "energy_basis", "architecture", "market_segment", "record_scope", "product_status", "energy_boundary", "efficiency_boundary"];
+const categories = ["facility_type", "equipment_category", "aggregation_role", "it_capacity_basis", "grid_capacity_basis", "facility_capacity_basis", "cooling_technology", "manufacturer", "country_code", "technology", "status", "quality_status", "market_scope", "bifacial", "chemistry", "configuration", "power_basis", "energy_basis", "architecture", "market_segment", "record_scope", "product_status", "energy_boundary", "efficiency_boundary"];
 
 function options(element, entries, selected) {
   element.replaceChildren(...entries.map(([value, label]) => {
@@ -70,11 +71,11 @@ async function loadTable() {
     const metrics = Object.entries(index.fields).filter(([key, meta]) =>
       ["float", "int"].includes(meta.type) && populated.has(key)).map(([key]) => [key, fieldLabel(key)]);
     options(el("metric"), [["", "No numeric field"], ...metrics],
-      entity === "projects" ? (isBess ? "energy_capacity_mwh" : "capacity_ac_mw") : isBessOem ? "energy_capacity_mwh" : entity === "modules" ? "pmax_stc_w" : metrics[0]?.[0]);
+      entity === "projects" ? (isDataCenter ? "it_capacity_mw" : isBess ? "energy_capacity_mwh" : "capacity_ac_mw") : isDataCenter ? "accelerator_power_w" : isBessOem ? "energy_capacity_mwh" : entity === "modules" ? "pmax_stc_w" : metrics[0]?.[0]);
     el("parquet").href = new URL(info.parquet, base).href;
     el("version").textContent = `Schema ${index.schema_version} · ${number(info.rows)} records · ${Object.keys(index.fields).length} columns`;
     el("provenance").textContent = `Parquet SHA-256: ${info.parquet_sha256}. Browser projection checksum verified; all records included.`;
-    if (el("title")) el("title").textContent = entity === "projects" ? "PV project intelligence" : "PV equipment intelligence";
+    if (el("title")) el("title").textContent = isDataCenter ? (entity === "projects" ? "Data Center Projects" : "Data Center Equipment") : entity === "projects" ? "PV project intelligence" : "PV equipment intelligence";
     resetFilters(); defaultColumns(); renderColumns();
     el("workspace").hidden = false;
     render();
@@ -83,8 +84,8 @@ async function loadTable() {
   } catch (error) { if (request === token) failure(error); }
 }
 function defaultColumns() {
-  const specific = tableName === "projects" ? (isBess ? ["country_code", "status", "status_as_of", "power_capacity_mw", "energy_capacity_mwh", "chemistry"] : ["country_code", "status", "capacity_ac_mw", "capacity_dc_mw"]) :
-    isBessOem ? ["manufacturer", "model", "variant", "record_scope", "energy_capacity_mwh", "energy_basis", "power_capacity_mw", "power_basis", "apparent_power_mva", "chemistry", "product_status"] : ["manufacturer", "model", el("metric").value];
+  const specific = tableName === "projects" ? (isDataCenter ? ["country_code", "record_scope", "status", "it_capacity_mw", "it_capacity_basis", "grid_capacity_mw", "facility_capacity_mw", "cooling_technology"] : isBess ? ["country_code", "status", "status_as_of", "power_capacity_mw", "energy_capacity_mwh", "chemistry"] : ["country_code", "status", "capacity_ac_mw", "capacity_dc_mw"]) :
+    isDataCenter ? ["manufacturer", "model", "variant", "equipment_category", "input_power_kw", "accelerator_power_w", "memory_gb", "power_conditions"] : isBessOem ? ["manufacturer", "model", "variant", "record_scope", "energy_capacity_mwh", "energy_basis", "power_capacity_mw", "power_basis", "apparent_power_mva", "chemistry", "product_status"] : ["manufacturer", "model", el("metric").value];
   visible = [...new Set(["name", ...specific, "quality_status", "updated_at", "source_urls"])].filter((key) => key in index.fields);
 }
 function renderColumns() {
@@ -115,9 +116,18 @@ function render() {
   filtered = filterRows(rows, {search: el("search").value, field: el("filter-field").value,
     equals: el("filter-value").value, metric, min: el("min").value, max: el("max").value, missing: el("missing").value});
   const stats = statistics(filtered, metric);
-  const projects = tableName === "projects" && !isBess && !isBessOem;
+  const projects = tableName === "projects" && !isBess && !isBessOem && !isDataCenter;
   const summary = [[number(filtered.length), projects ? "Matching projects" : "Matching records", `of ${number(rows.length)} in catalogue`]];
-  if (projects) {
+  if (isDataCenter && tableName === "projects") {
+    summary.push([number(new Set(filtered.filter(r => r.record_scope !== "campus").map(r => r.facility_id)).size), "Facilities", `${filtered.filter(r => r.record_scope === "campus").length} separate campus aggregates`],
+      [number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Reported country codes"],
+      [number(filtered.filter(r => r.status === "operational").length), "Operational observations", "Includes labelled campuses; status is dated evidence"]);
+    for (const [field, label] of [["it_capacity_mw", "IT capacity · MW"], ["grid_capacity_mw", "Grid capacity · MW"], ["facility_capacity_mw", "Facility demand · MW"]]) {
+      const total = dataCenterCapacity(filtered, field), entries = Object.entries(total.byBasis);
+      summary.push([entries.length ? entries.map(([basis,v]) => `${number(v.reported_mw)} ${basis.replaceAll("_", " ")}`).join("; ") : "Unknown", label,
+        `${total.unknown} unknown · ${total.excluded} campus/overlap exclusions`]);
+    }
+  } else if (projects) {
     const totals = projectSummary(filtered);
     summary.push([number(totals.ac.reportedSum), "Total AC capacity · MW", `${number(totals.ac.known)} reported · ${number(totals.ac.missing)} unknown`, "db-stat-ac"],
       [number(totals.dc.reportedSum), "Total DC capacity · MW", `${number(totals.dc.known)} reported · ${number(totals.dc.missing)} unknown`],
@@ -134,9 +144,10 @@ function render() {
   }));
   if (el("metric-summary")) el("metric-summary").textContent = metric ?
     `${fieldLabel(metric)} · Mean ${number(stats.mean)} · Median ${number(stats.median)} · Range ${number(stats.min)}–${number(stats.max)} · ${number(stats.known)} reported / ${number(stats.missing)} unknown` : "Select a numeric field to inspect its statistics.";
+  if (isDataCenter && tableName === "projects" && el("metric-summary")) el("metric-summary").textContent = `${fieldLabel(metric)}: ${stats.known} reported, ${stats.missing} unknown. Scope-aware capacity totals above keep rating bases separate. Group charts show record counts.`;
   for (const key of ["min", "max", "missing"]) el(key).disabled = !metric;
-  el("aggregation").querySelectorAll("option").forEach((option) => { option.disabled = option.value !== "count" && !metric; });
-  if (!metric) el("aggregation").value = "count";
+  el("aggregation").querySelectorAll("option").forEach((option) => { option.disabled = option.value !== "count" && (!metric || (isDataCenter && tableName === "projects")); });
+  if (!metric || (isDataCenter && tableName === "projects")) el("aggregation").value = "count";
   renderChart(); renderTable(); renderMap();
 }
 async function renderMap() {

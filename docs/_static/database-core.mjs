@@ -90,3 +90,20 @@ export function toCsv(rows, columns) {
   };
   return [columns.map(cell).join(","), ...rows.map((row) => columns.map((c) => cell(row[c])).join(","))].join("\r\n");
 }
+
+
+/** Data-center capacity: exclude campus/unresolved overlap rows persistently.
+ * Return separate rating bases, preserving zero and missingness. No conversion.
+ */
+export function dataCenterCapacity(rows, field) {
+  if (!["it_capacity_mw", "grid_capacity_mw", "facility_capacity_mw"].includes(field)) throw new Error("Choose an explicit capacity boundary");
+  const eligible = rows.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
+  const basisField = field.replace(/_mw$/, "_basis"), byBasis = {};
+  for (const row of eligible) {
+    if (typeof row[field] !== "number" || !Number.isFinite(row[field])) continue;
+    const basis = row[basisField] || "unspecified";
+    byBasis[basis] ||= {reported_mw: 0, records: 0};
+    byBasis[basis].reported_mw += row[field]; byBasis[basis].records += 1;
+  }
+  return {excluded: rows.length - eligible.length, unknown: eligible.filter(r => r[field] == null).length, byBasis};
+}

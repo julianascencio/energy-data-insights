@@ -34,14 +34,14 @@ export function createProjectMap(container, onRecord) {
       const row = group.rows[0];
       content.append(make("strong", row.name || row.record_id),
         make("p", `${row.country_code || "Unknown country"} · ${row.status || "Unknown status"}`),
-        make("p", `${number(row.capacity_ac_mw)} MW AC · ${number(row.capacity_dc_mw)} MW DC`),
+        make("p", row.facility_id ? `${row.record_scope} · IT ${number(row.it_capacity_mw)} MW (${row.it_capacity_basis || "unknown basis"}) · Grid ${number(row.grid_capacity_mw)} MW · Facility ${number(row.facility_capacity_mw)} MW` : `${number(row.capacity_ac_mw)} MW AC · ${number(row.capacity_dc_mw)} MW DC`),
         make("p", `Location accuracy: ${row.location_accuracy || "Unknown"}`));
       const button = make("button", "View project details"); button.type = "button";
       button.addEventListener("click", () => onRecord(row)); content.append(button);
       return content;
     }
     content.append(make("strong", `${number(group.rows.length)} projects in this group`),
-      make("p", `${number(statistics(group.rows, "capacity_ac_mw").reportedSum)} MW AC reported`));
+      make("p", group.rows.some(row => row.facility_id) ? "Facility/campus records. Scope-aware capacities are shown in the dashboard." : `${number(statistics(group.rows, "capacity_ac_mw").reportedSum)} MW AC reported`));
     const zoom = make("button", "Zoom to group"); zoom.type = "button";
     zoom.disabled = map.getZoom() === map.getMaxZoom();
     zoom.addEventListener("click", () => {
