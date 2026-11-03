@@ -4439,3 +4439,19 @@ Asian Development Bank (2026). **ADB Uzbekistan IATI activities**. [Source](http
 **Role:** data. Activity IDs 57212-001-LN4380, 58338-001-LN4611, 58094-001-LN4661, 54056-003-GRNT4678; title, description, implementing entity, status/date fields; SHA256 34410bad5c2dd8c4ce96c60900618b1eeee6909887355c6a1fbc03b532954c43
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### adb_india_20261102
+
+Asian Development Bank (2026). **ADB India IATI activities**. [Source](https://www.adb.org/iati/iati-activities-in.xml)
+
+**Role:** data_source. Primary factual evidence; exact locators, revision, checksum and source reuse qualification in catalogue sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### victron_vedirect_hw15_230v_20261102
+
+Victron Energy (2026). **Inverter VE.Direct 230V HW15 technical specifications**. [Source](https://www.victronenergy.com/media/pg/Inverter_VE.Direct_230V_-_HW15/en/technical-specifications.html)
+
+**Role:** data_source. Primary factual evidence; exact locators, revision, checksum and source reuse qualification in catalogue sources.json.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
