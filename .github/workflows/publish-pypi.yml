@@ -1,6 +1,20 @@
 name: Publish packages to PyPI
 
 on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Package and committed version, e.g. methods-v0.1.0"
+        required: true
+        type: string
+  workflow_call:
+    inputs:
+      release_tag:
+        required: true
+        type: string
+    secrets:
+      PYPI_API_TOKEN:
+        required: true
   push:
     tags:
       - data-retrieval-v*
@@ -11,7 +25,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: pypi-${{ github.ref }}
+  group: pypi-${{ inputs.release_tag || github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -32,7 +46,7 @@ jobs:
       - name: Validate tag and package version
         id: release
         env:
-          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_TAG: ${{ inputs.release_tag || github.ref_name }}
         run: python3 scripts/release_plan.py "$RELEASE_TAG" --output "$GITHUB_OUTPUT"
 
   quality:
@@ -65,7 +79,7 @@ jobs:
         run: uv run --no-sync python scripts/check_wheels.py --package "$PACKAGE"
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: pypi-distributions
+          name: pypi-distributions-${{ needs.plan.outputs.package }}
           path: dist/*
           if-no-files-found: error
           retention-days: 14
@@ -79,11 +93,22 @@ jobs:
       url: https://pypi.org/project/${{ needs.plan.outputs.package }}/${{ needs.plan.outputs.version }}/
     permissions:
       contents: read
-      id-token: write
     steps:
+      - name: Require the PyPI API token
+        env:
+          PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          if [ -z "$PYPI_API_TOKEN" ]; then
+            echo "::error::Add PYPI_API_TOKEN in this repository's Actions secrets before publishing."
+            exit 1
+          fi
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          name: pypi-distributions
+          name: pypi-distributions-${{ needs.plan.outputs.package }}
           path: dist
-      - name: Publish wheel and source distribution with attestations
+      - name: Publish wheel and source distribution through the PyPI API
         uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 # v1.14.3
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          attestations: false

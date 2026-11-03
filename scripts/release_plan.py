@@ -40,13 +40,27 @@ def release_plan(tag: str, root: Path = ROOT) -> dict[str, str]:
     }
 
 
+def all_release_tags(root: Path = ROOT) -> dict[str, str]:
+    """Validate all package names and versions before an ordered workspace release."""
+    tags = {}
+    for directory in PACKAGES:
+        with (root / directory / "pyproject.toml").open("rb") as source:
+            version = tomllib.load(source)["project"]["version"]
+        tag = f"{directory}-v{version}"
+        release_plan(tag, root)
+        tags[f"{directory.replace('-', '_')}_tag"] = tag
+    return tags
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("tag")
+    selection = parser.add_mutually_exclusive_group(required=True)
+    selection.add_argument("tag", nargs="?")
+    selection.add_argument("--all", action="store_true", help="Plan all committed package versions")
     parser.add_argument("--output", type=Path, help="Append validated values to GITHUB_OUTPUT")
     args = parser.parse_args()
     try:
-        plan = release_plan(args.tag)
+        plan = all_release_tags() if args.all else release_plan(args.tag)
     except ValueError as error:
         parser.error(str(error))
     if args.output:

@@ -46,4 +46,4 @@ Once the corresponding releases have been published, use:
 Installing ``energy-analysis`` also installs its two sibling dependencies.
 Availability depends on completed releases; this page does not imply that
 the initial PyPI publication has already happened.
-See :doc:`release tags and Trusted Publishing <_generated/guides/releases>`.
+See :doc:`release tags and PyPI API publishing <_generated/guides/releases>`.

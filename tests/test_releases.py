@@ -86,3 +86,28 @@ def test_wheel_name_normalization():
     wheels.validate_wheel_set(
         [Path("energy_methods-0.1.0-py3-none-any.whl")], {"energy-methods": "0.1.0"}
     )
+
+
+def test_batch_release_preserves_independent_versions(tmp_path):
+    expected = {}
+    for index, (directory, package) in enumerate(release.PACKAGES.items()):
+        version = f"0.{index}.0"
+        (tmp_path / directory).mkdir()
+        (tmp_path / directory / "pyproject.toml").write_text(
+            f'[project]\nname = "{package}"\nversion = "{version}"\n'
+        )
+        expected[f"{directory.replace('-', '_')}_tag"] = f"{directory}-v{version}"
+    assert release.all_release_tags(tmp_path) == expected
+
+
+@pytest.mark.parametrize(
+    ("name", "version"),
+    [("wrong-project", "0.1.0"), ("energy-data-retrieval", "0.1.0+local")],
+)
+def test_batch_release_rejects_invalid_metadata(tmp_path, name, version):
+    (tmp_path / "data-retrieval").mkdir()
+    (tmp_path / "data-retrieval" / "pyproject.toml").write_text(
+        f'[project]\nname = "{name}"\nversion = "{version}"\n'
+    )
+    with pytest.raises(ValueError):
+        release.all_release_tags(tmp_path)
