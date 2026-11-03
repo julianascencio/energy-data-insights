@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T07:03:56.849412+00:00",
+  "updated_at": "2026-11-03T08:02:27.674730+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "Two exact Deye datasheets, ten accepted; four Swiss identity candidates followed up, two independent forecast fills.",
-  "next_highest_value_source": "Axpo NalpSolar 21 October 2025 partial connection, then independently reconcile Graubünden and the affected Tujetsch canonical records before lifecycle changes.",
+  "selection_note": "Fresh AEMO NEM workbook: 366 explicit PV units, five project fills; one Axpo forecast fill; eight exact Deye inverters.",
+  "next_highest_value_source": "AEMO October 2026 Generator Information: complete the ten held dual matches first, then independently crosswalk name-only candidates by DUID and phase boundary.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5555,6 +5555,108 @@
         "sha256": "102c610724dc5a0d691623911ac3826278ff8491eed7e2f2f279132ff692c1b8",
         "complete": true
       }
+    },
+    {
+      "id": "deye_g04p3_lv_20261103T0800",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/deyeinverter/2025/05/21/%E3%80%90b%E3%80%91datasheet_sun-35-50k-g04p3-eu-am4-lv_20250520_en.pdf",
+      "version_or_date": "Publisher filename revision 20250520",
+      "access_assessment": "Public document downloaded",
+      "licence_assessment": "Limited factual metadata only; OEM copyright retained; no table/document redistribution",
+      "estimated_useful_yield": 8,
+      "fields_offered": [
+        "Engineering specifications"
+      ],
+      "last_attempt": "2026-11-03T08:00:38.361931+00:00",
+      "result": "Selected facts accepted; source limits retained",
+      "retry_condition": "New revision or independently corroborated identity",
+      "next_action": "AEMO October 2026 Generator Information: complete the ten held dual matches first, then independently crosswalk name-only candidates by DUID and phase boundary.",
+      "processed_cursor": {
+        "sha256": "97d8f0e8581e8b996e4cb3f6b18ba102dfdd4f86855591fe5d186bdbc396c417",
+        "scope": "exact reviewed cohort"
+      }
+    },
+    {
+      "id": "deye_g04p3_cm_20261103T0800",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/deyeinverter/2025/09/23/%E3%80%90b%E3%80%91datasheet_sun-40-50k-g04p3-eu-cm4_20250922_en.pdf",
+      "version_or_date": "Publisher filename revision 20250922",
+      "access_assessment": "Public document downloaded",
+      "licence_assessment": "Limited factual metadata only; OEM copyright retained; no table/document redistribution",
+      "estimated_useful_yield": 8,
+      "fields_offered": [
+        "Engineering specifications"
+      ],
+      "last_attempt": "2026-11-03T08:00:38.361931+00:00",
+      "result": "Selected facts accepted; source limits retained",
+      "retry_condition": "New revision or independently corroborated identity",
+      "next_action": "AEMO October 2026 Generator Information: complete the ten held dual matches first, then independently crosswalk name-only candidates by DUID and phase boundary.",
+      "processed_cursor": {
+        "sha256": "bc24a349612d99b3eebcc41088e168167f7b1878539418dbec6bc64f3977b121",
+        "scope": "exact reviewed cohort"
+      }
+    },
+    {
+      "id": "axpo_nalpsolar_20251021_20261103T0800",
+      "country": "CHE",
+      "entity": "projects",
+      "source_url": "https://www.axpo.com/group/en/news-and-stories/media-releases/2025/nalpsolar-pioneer-project--first-10--of-alpine-solar-plant-conne.html",
+      "version_or_date": "2025-10-21",
+      "access_assessment": "Official indexed page reviewed; raw fetch timed out",
+      "licence_assessment": "Selected factual project evidence only; no full text or private data",
+      "estimated_useful_yield": 1,
+      "fields_offered": [
+        "Forecast and dated project milestone"
+      ],
+      "last_attempt": "2026-11-03T08:00:38.361931+00:00",
+      "result": "Selected facts accepted; source limits retained",
+      "retry_condition": "New revision or independently corroborated identity",
+      "next_action": "AEMO October 2026 Generator Information: complete the ten held dual matches first, then independently crosswalk name-only candidates by DUID and phase boundary.",
+      "processed_cursor": {
+        "sha256": null,
+        "scope": "exact reviewed cohort"
+      }
+    },
+    {
+      "id": "aemo_nem_october_2026_20261103T0800",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "version_or_date": "2026-10-30",
+      "access_assessment": "Public document downloaded",
+      "licence_assessment": "Workbook directs to AEMO Copyright Permissions; attribution required. Only selected project factual values, not third-party prose, custodian or workbook redistributed.",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "Capacity and status"
+      ],
+      "last_attempt": "2026-11-03T08:01:48.900841+00:00",
+      "result": "Selected facts accepted; source limits retained",
+      "retry_condition": "New revision or independently corroborated identity",
+      "next_action": "AEMO October 2026 Generator Information: complete the ten held dual matches first, then independently crosswalk name-only candidates by DUID and phase boundary.",
+      "processed_cursor": {
+        "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+        "scope": "exact reviewed cohort"
+      }
+    },
+    {
+      "id": "arctech_tracker_forms_0800",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://en.arctechsolar.com/skysmart-ii-data-sheet-form/",
+      "version_or_date": "Undated official product form",
+      "access_assessment": "Technical download gated; no form submitted",
+      "licence_assessment": "No reuse permission inferred",
+      "estimated_useful_yield": 0,
+      "fields_offered": [
+        "Potential exact engineering table"
+      ],
+      "last_attempt": "2026-11-03T08:02:27.674730+00:00",
+      "result": "Held SkySmart II and SkyLine II All-Terrain",
+      "retry_condition": "Ungated official engineering release",
+      "next_action": "Use independent ungated tracker OEM catalogue",
+      "processed_cursor": null
     }
   ]
 }
