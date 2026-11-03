@@ -1,0 +1,156 @@
+{
+  "batch": "2026-11-03-2135",
+  "germany": {
+    "url": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261103_26.2.zip",
+    "archive_bytes": 3269784561,
+    "archive_sha256": null,
+    "archive_checksum_note": "Full 3.27 GB archive not downloaded; HTTP206 byte ranges retrieved member data. SHA256 below applies only to decompressed original XML members, not the full ZIP.",
+    "license": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+    "members": [
+      {
+        "name": "EinheitenWind.xml",
+        "sha256": "9e69e5e69a759f6aa693f7dafec9411a67296952f6915c9e3602081f61e8df0c",
+        "bytes": 208210804
+      },
+      {
+        "name": "Katalogwerte.xml",
+        "sha256": "6190efa105d4852b4037409f1183d1dd0e706286075d56383508baba7fc09382",
+        "bytes": 414388
+      },
+      {
+        "name": "Katalogkategorien.xml",
+        "sha256": "28385d6ac478656fa085f7c30dfd844137f8d78110143471b9919b87d6e916da",
+        "bytes": 19842
+      }
+    ],
+    "unit_rows": 44351,
+    "imported_records": 0,
+    "next_partition": "Resolve catalogue code dictionaries, then complete Schleswig-Holstein (Bundesland code from Katalogwerte) named-farm groups. Reconcile explicit NameWindpark plus municipality/geography/operator and WRI records; gross/net ratings stay separate.",
+    "member_crc32_verified": {
+      "EinheitenWind.xml": "1c55c94b",
+      "Katalogkategorien.xml": "26cb63b0",
+      "Katalogwerte.xml": "4ee8aec8"
+    },
+    "next_partition_counts": {
+      "Bundesland": "1411",
+      "units": 4788,
+      "named_unit_rows": 4660,
+      "distinct_nonempty_farm_labels": 1738,
+      "note": "Labels are not cleared farm identities"
+    }
+  },
+  "selected_state": {
+    "code": "1405",
+    "name": "Hessen",
+    "units": 1807,
+    "groups": 627,
+    "accepted_projects": 38,
+    "accepted_units": 170,
+    "deferred_groups": 589
+  },
+  "sweden": {
+    "where": "OMRID >= '1300' AND OMRID < '1400'",
+    "areas": 176,
+    "units": 691,
+    "accepted_projects": 101,
+    "accepted_units": 385,
+    "held_areas": 75,
+    "orphan_units": 2,
+    "held_units": 306,
+    "independent_counts_verified": true,
+    "retrievals": [
+      {
+        "layer": 2,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/2/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "b478f48c04a3f543896d9b5c58f7d43500065d42eb57157fcb3820505f32f587",
+        "rows": 111
+      },
+      {
+        "layer": 3,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/3/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "cade1a07b68fda36cafa4f339404b4c0c71993c8be882e88b6467973110aa7ef",
+        "rows": 65
+      },
+      {
+        "layer": 5,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/5/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "1f9a2da83baecc5a8903fa8e19e618401ea84e70ffbb702941602430ac767673",
+        "rows": 260
+      },
+      {
+        "layer": 6,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/6/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 7,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/7/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ad91846c86764933d9829f5ae80affb65a761302925f899921d15c1024d314f0",
+        "rows": 85
+      },
+      {
+        "layer": 8,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/8/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "8c6a64f7ebbeedf3d2226033b5975f8abdba25cbc311df9328becb82dc8178b9",
+        "rows": 46
+      },
+      {
+        "layer": 9,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/9/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "6c5af80280208e1975e53bee8f98aa5a4e9c9139bea5a9f5cfc2644a4eeb7cec",
+        "rows": 34
+      },
+      {
+        "layer": 10,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/10/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "a6ccdc50ebf1e51b7e8ebabacbd4eec8fec02f612a40428315655885a866f9a6",
+        "rows": 16
+      },
+      {
+        "layer": 11,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/11/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 12,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/12/query?f=geojson&where=OMRID+%3E%3D+%271300%27+AND+OMRID+%3C+%271400%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "4aa951b342e6a5bcbe31ad6fc9f0c6938458c5e93db1eeca87573d7e8c3b5f3d",
+        "rows": 250
+      }
+    ]
+  },
+  "oem": {
+    "source_id": "bonfiglioli-acu-r04-0",
+    "source_sha256": "f532098c625f7e5fe20aec2a79739d971a04e1043bca7a71c783c12819240713",
+    "bytes": 13189500,
+    "original_bytes_available": true,
+    "revision": "VE_CAT_ACU_STD_ENG_R04_0",
+    "published_at": null,
+    "reviewed_pages": [
+      12,
+      13,
+      14,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "visual_table_review_pages": [
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "complete_selected_configurations": 34,
+    "application_source_id": "bonfiglioli-wind-r05-2",
+    "application_locator": "p13 Active Cube series under yaw drives",
+    "identity_scope": "12 exact ACU210 and22 ACU410 type/frame columns; no ACUx01 replacement or turbine compatibility inferred. ACU410-12 appears onp21 despite omission from nomenclature summary. No Cartesian options.",
+    "conditions": "Three-phase versus single/two-phase input rows separate. Choke footnotes retained per column. Standard/coldplate/liquid dimensions remain nested. ACU210frame3 and liquid approval dashes remain unknown. Motor-side power is not turbine nameplate capacity.",
+    "new_quarantines": 0,
+    "prior_six_ACU610_UL_holds": "Unchanged; this run did not review or overwrite those observations."
+  }
+}

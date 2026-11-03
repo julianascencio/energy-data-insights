@@ -3,11 +3,11 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 6,574 project records (6,573 non-group records),
-168 exact equipment records, 5,190 registry turbine records and two original numerical
+The proposed branch contains 6,713 project records (6,712 non-group records),
+202 exact equipment records, 5,745 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
-Merged main at `2598b143` contains 6,279 projects, 144 equipment, 4,364 individual
-turbines and two curves. These are catalogue counts, not an operating census.
+Merged main at `273fe81f` contains 6,574 projects, 168 equipment records and 5,190 turbines
+and two curves. These are catalogue counts, not an operating census.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
 not resolve capacity scope; 2,216 other applications remain deferred. Swedish
@@ -80,3 +80,24 @@ All 10,529 preceding records and six capacity totals remain unchanged.
 The 20:35 batch adds 295 projects, 826 turbines and 24 exact ACUx10 configurations
 from complete Rheinland-Pfalz/Skåne partitions and R04_0 frame7/8 tables.
 All 10,789 preceding records and six capacity totals remain unchanged.
+
+
+## Hessen, Halland and remaining ACUx10 tables
+
+The 21:35 continuation follows merged PR #111 and preserves the new gallery hierarchy.
+Complete Hessen (1,807 units / 627 groups) and Halland (176 areas / 691 units)
+partitions add 139 projects and 555 linked turbines. All 11,934 preceding records,
+prior source entries and six capacity totals remain unchanged. All new scopes
+remain excluded pending phase and repowering reconciliation. Holds cover 589
+German groups and 75 Swedish areas plus two orphan units (306 turbine rows).
+No country or manufacturer is newly counted.
+
+Bonfiglioli R04_0 pages 19–23 (`bonfiglioli_acu_r04_0`) supply 34 exact
+configurations: 12 ACU210 and 22 ACU410 columns. The source checksum was reverified
+and all five tables visually reviewed. Input-phase ratings and column-specific
+line-choke requirements stay distinct. Standard, coldplate and liquid dimensions
+and brake options remain nested. ACU410-12 is explicit on page 21 despite its
+omission from the nomenclature summary. Unclaimed approvals remain unknown.
+Series yaw applicability is documented; turbine compatibility and independently
+validated operational performance are not inferred. The gallery includes the new
+230 V ACU210 entries.
