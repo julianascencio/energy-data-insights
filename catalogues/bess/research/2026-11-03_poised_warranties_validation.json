@@ -1,0 +1,44 @@
+{
+  "started_at": "2026-11-03T20:49:10Z",
+  "validation_completed_at": "2026-11-03T21:00:30Z",
+  "elapsed_minutes_through_validation": 11.33,
+  "checks": {
+    "ruff": 0,
+    "format": 0,
+    "types": 0,
+    "hygiene": 0,
+    "citations": 0,
+    "viewer": 0,
+    "projects_example": 0,
+    "equipment_example": 0
+  },
+  "full_suite": {
+    "passed": 2074,
+    "skipped": 1,
+    "seconds": 96.68,
+    "skip": "Optional cdsapi absent; subsequently installed with locked cds extra and all36 CDS tests passed separately"
+  },
+  "focused_tests": 28,
+  "cds_tests": 36,
+  "types": "Passed with explicit .venv/bin/python interpreter",
+  "docs": "Strict build with gallery reexecution passed",
+  "links": "Documentation check passed: 489 HTML pages; local links and assets resolve.",
+  "packages": "All three wheel/sdist builds, strict Twine and isolated wheel entrypoints passed",
+  "parquet": "Two identical Zstandard snapshots per catalogue; manifests committed, binaries outside Git",
+  "preservation": "No removals or erased non-null values; created_at preserved; zero existing project edits;11 equipment evidence changes",
+  "initial_failures": "Older runtime lacked XGBoost; fresh locked environment fixed collection. ty initially selected host interpreter; explicit --python fixed resolution. Two link checks ran before asset generation finished; final post-build check passed.",
+  "remote_ci": "Not yet run for this commit",
+  "logs_sha256": {
+    "tests-final": "8061b7f2da54ce9cb96c3b78634e9700f859d9c47529a1f38fa03a94d71bd6fd",
+    "focused": "3d942460c2cb66a45e0c4c15b9991a1f8f967f35b1b80aeee326a248e7af19c8",
+    "cds": "cd38f0a1b9d87bab80d9efd8b769416636ef023c034e6f7c4b1e41a4df8bc536",
+    "types-correct": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs-final": "9c9e650358e7b5c7535386c7e5216e2003c9156f0832caf805e9a2303207c878",
+    "docs-links-final": "7a23d721ba68cc00852af5ba27422e0fdc036e8029f790a6b55e367dc71b6d2e",
+    "hygiene-final": "9cae496b2caf80abbafe8d39afafc2a55e509f4d1c8f5815ec696fa5ab5483e9",
+    "ruff-final": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "format-final": "2f67555f15036ec97cc96a596380cb868c548aafad2cd751cc51e3fea0129414",
+    "twine": "5c4eb0d99ad84eceef0243146389e19444db2261553dec78fe54a6457a8f6394",
+    "wheels": "eecb4c21e3a9b685287ff7a640740a85a0582ad81d10ddcc02d2289f66fb978e"
+  }
+}
