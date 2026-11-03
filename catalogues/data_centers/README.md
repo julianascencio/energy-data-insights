@@ -7,8 +7,8 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **182 project records in 36 countries**:
 **65 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **567 exact equipment records from 20 OEMs**.
-Merged `main` at `8d70323` contains **182 projects and 544 equipment records**.
+from 13 operators. It has **593 exact equipment records from 21 OEMs**.
+Merged `main` at `0afa324` contains **182 projects and 544 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
 
@@ -35,6 +35,7 @@ uv run python scripts/stage_data_center_supermicro.py captured.html staged.json 
 uv run python scripts/stage_data_center_cooling.py extracted.csv --source-url https://info.support.huawei.com/Energy/info/en_US/dataCenter/docView/EDOC1100129236 --expected-count 6
 uv run python scripts/build_data_center_envicool_batch.py staged-envicool.jsonl
 uv run python scripts/build_data_center_toshiba_ups_batch.py staged-toshiba-ups.jsonl
+uv run python scripts/build_data_center_mitsubishi_ups_batch.py staged-mitsubishi-ups.jsonl
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -52,7 +53,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-03-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-03-decisions.jsonl),
-[executed validation](research/2026-11-03T2027-validation.json), and
+[executed validation](research/2026-11-03T2125-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

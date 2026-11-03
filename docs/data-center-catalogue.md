@@ -38,10 +38,10 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 567 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
+has 593 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
 Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Lenovo, Motivair by Schneider
-Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens, STULZ, Supermicro,
-Toshiba and Vertiv. Current categories are GPU accelerators,
+Electric, Mitsubishi Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
+STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -91,6 +91,15 @@ kW is normalized only for the 3000 TP rows where the OEM explicitly prints
 kVA/kW. Family efficiency, battery compatibility, voltage/frequency choices,
 module ratings and optional cabinets remain bounded observations; no runtime,
 battery energy or parallel-system combination is inferred.
+The Mitsubishi Electric continuation processes all 26 exact apparent/active
+output pairs printed in the current eight-family UPS comparison table: four
+7011B, five 1100A, four 1100B, five 9900AEGIS, three 9900B, two SUMMIT, one
+9900CX and two 9900D ratings. The explicit kVA/kW pairs and single-valued family
+input voltages are normalized. Family efficiency claims without load points,
+ambiguous dimension/weight groupings, compatible battery types and optional
+bypass, transformer, disconnect, communications or parallel equipment remain
+observations rather than selected configurations. The page's broader 9900D
+portfolio range does not create unprinted rating rows.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options

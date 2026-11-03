@@ -356,7 +356,13 @@ def parse_ups_rating_matrix(
     only when the source explicitly prints it for that row.
     """
     host = urlsplit(source_url).hostname
-    if host not in {"toshiba.com", "www.toshiba.com"}:
+    manufacturers_by_host = {
+        "toshiba.com": {"Toshiba"},
+        "www.toshiba.com": {"Toshiba"},
+        "mitsubishicritical.com": {"Mitsubishi Electric"},
+        "www.mitsubishicritical.com": {"Mitsubishi Electric"},
+    }
+    if host not in manufacturers_by_host:
         raise ValueError("Unsupported official UPS source URL")
     if expected_count < 1:
         raise ValueError("Positive expected count required")
@@ -378,6 +384,8 @@ def parse_ups_rating_matrix(
         candidate = {key: (row.get(key) or "").strip() for key in required}
         if not all(candidate[key] for key in required - {"output_power_kw"}):
             raise ValueError(f"Incomplete UPS rating row {line}")
+        if candidate["manufacturer"] not in manufacturers_by_host[host]:
+            raise ValueError(f"UPS manufacturer/source mismatch on row {line}")
         try:
             candidate["apparent_power_kva"] = float(candidate["apparent_power_kva"])
         except ValueError as exc:

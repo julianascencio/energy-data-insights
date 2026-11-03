@@ -1,6 +1,13 @@
 {
-  "retrieved_at": "2026-11-03T20:27:00Z",
+  "retrieved_at": "2026-11-03T21:25:00Z",
   "accepted": [
+    {
+      "inventory": "Mitsubishi Electric current eight-family UPS comparison table",
+      "processed_offset": 26,
+      "accepted_records": 26,
+      "reuse": "Factual extraction from an official public OEM product-comparison page; no open licence asserted; original not redistributed",
+      "originals": "Official 230,444-byte HTML capture available during review with SHA-256 and page-modified date in sources.json"
+    },
     {
       "inventory": "Toshiba current three-phase UPS product-page configurations",
       "processed_offset": 23,
@@ -267,6 +274,10 @@
   ],
   "deferred": [
     {
+      "candidate": "Mitsubishi Electric 9900D 1500/1600/2000 kVA configurations",
+      "reason": "The current portfolio title advertises 1200-2000 kVA, but the reviewed comparison table prints exact kVA/kW rows only for 1200 and 1250 kVA. Additional current exact rating-level evidence is required."
+    },
+    {
       "candidate": "Socomec current UPS technical guides and product tables",
       "reason": "Existing repository terms review records a Section 5 restriction on specification disclosure/copying without written authorization. No Socomec Data Center equipment facts or downloaded bytes were imported."
     },
@@ -378,6 +389,10 @@
     }
   ],
   "excluded": [
+    {
+      "candidate": "Mitsubishi Electric UPS battery, bypass, transformer, disconnect, communications and parallel option combinations",
+      "reason": "Only the 26 explicitly printed current apparent/active rating pairs were imported. Family compatibility and peripheral lists remain observations and were not expanded into selected configurations, battery energy, runtime or deployment."
+    },
     {
       "candidate": "Toshiba UPS battery, cabinet, transformer and parallel-system option combinations",
       "reason": "Only the 23 explicitly displayed current rating configurations were imported. Family options and compatibility claims remain observations and were not expanded into exact ordered systems, battery energy, runtime or installed deployments."
