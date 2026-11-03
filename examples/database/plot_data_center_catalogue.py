@@ -10,6 +10,7 @@ See the :doc:`interactive viewer </data-center-database-viewer>` for field evide
 
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from textwrap import shorten
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -40,14 +41,17 @@ for field in ("it_capacity_mw", "grid_capacity_mw", "facility_capacity_mw"):
 # Geographic coverage: campus and facility counts remain visually distinct.
 fig, axes = plt.subplots(2, 2, figsize=(15, 11), layout="constrained")
 coverage = projects.groupby(["country_code", "record_scope"]).size().unstack(fill_value=0)
-coverage.plot.barh(stacked=True, ax=axes[0, 0], color=["#a5c8d4", "#167d9a"])
+scope_colors = {"campus": "#a5c8d4", "facility": "#167d9a", "phase": "#b58a45"}
+coverage.plot.barh(
+    stacked=True, ax=axes[0, 0], color=[scope_colors[scope] for scope in coverage.columns]
+)
 axes[0, 0].set(
     xlabel="Catalogue records; not market share",
     ylabel="Country",
     title="Geographic coverage by scope",
 )
 
-# %%
+# Keep one gallery execution block so all four axes are captured together.
 # Count reported capacities; null is not zero, and the three MW boundaries differ.
 fields = ["it_capacity_mw", "grid_capacity_mw", "facility_capacity_mw"]
 completeness = pd.DataFrame(
@@ -55,31 +59,36 @@ completeness = pd.DataFrame(
 )
 completeness.index = ["IT", "Grid", "Facility"]
 completeness.plot.barh(stacked=True, ax=axes[0, 1], color=["#167d9a", "#dedede"])
+axes[0, 1].legend(loc="upper left", fontsize=9)
 axes[0, 1].set(
     xlabel="Records (all scopes)",
     ylabel="Capacity boundary",
-    title="Capacity completeness; no inferred values",
+    title="Capacity completeness",
 )
 
-# %%
+# Keep one gallery execution block so all four axes are captured together.
 # Cooling descriptions preserve technologies; missing values remain an explicit group.
 cooling = projects.cooling_technology.fillna("Unknown").value_counts().sort_values()
 cooling.plot.barh(ax=axes[1, 0], color="#3d9c87")
+axes[1, 0].set_yticklabels(
+    [shorten(str(label), width=38, placeholder="…") for label in cooling.index], fontsize=8
+)
 axes[1, 0].set(
     xlabel="Records",
     ylabel="Reported description",
-    title="Cooling coverage; no deployment inference",
+    title="Cooling coverage (abbreviated labels)",
 )
 
-# %%
+# Keep one gallery execution block so all four axes are captured together.
 # Like-for-like comparison: accelerator limits in W only. Do not include server kW.
 gpus = equipment.loc[
     equipment.equipment_category.eq("gpu_accelerator") & equipment.accelerator_power_w.notna()
 ].sort_values("accelerator_power_w")
 axes[1, 1].barh(gpus["name"], gpus.accelerator_power_w, color="#b58a45")
+axes[1, 1].tick_params(axis="y", labelsize=8)
 axes[1, 1].set(
     xlabel="Published maximum accelerator power (W)",
-    title="Exact GPU variants; configurable limits, not measured draw",
+    title="GPU power limits; not measured draw",
 )
 print(
     equipment.loc[
@@ -148,6 +157,22 @@ print(
         ],
     ]
     .sort_values(["variant", "cooling_capacity_kw", "model"])
+    .to_string(index=False)
+)
+print("CDU comparison preserves approach temperatures and flow-rating conditions:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("CoolIT Systems"),
+        [
+            "model",
+            "cooling_capacity_kw",
+            "input_power_kw",
+            "liquid_flow_l_min",
+            "cooling_rating_conditions",
+            "quality_status",
+        ],
+    ]
+    .sort_values(["cooling_capacity_kw", "model"])
     .to_string(index=False)
 )
 plt.show()

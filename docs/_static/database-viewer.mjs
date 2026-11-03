@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, windCapacity, windEvidence} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isWind = root.dataset.database === "wind";
@@ -137,7 +137,8 @@ function render() {
     summary.push([number(new Set(filtered.map(r => r.manufacturer).filter(Boolean)).size), "Manufacturers"],
       [number(stats.known), "Metric reported"], [number(stats.missing), "Metric unknown"], [number(stats.mean), "Metric mean", fieldLabel(metric)]);
   } else if (isDataCenter && tableName === "projects") {
-    summary.push([number(new Set(filtered.filter(r => r.record_scope !== "campus").map(r => r.facility_id)).size), "Facilities", `${filtered.filter(r => r.record_scope === "campus").length} separate campus aggregates`],
+    const scopes = dataCenterScopes(filtered);
+    summary.push([number(scopes.facilities), "Facility records", `${scopes.phases} phase records · ${scopes.campuses} campus aggregates`],
       [number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Reported country codes"],
       [number(filtered.filter(r => r.status === "operational").length), "Operational observations", "Includes labelled campuses; status is dated evidence"]);
     for (const [field, label] of [["it_capacity_mw", "IT capacity · MW"], ["grid_capacity_mw", "Grid capacity · MW"], ["facility_capacity_mw", "Facility demand · MW"]]) {

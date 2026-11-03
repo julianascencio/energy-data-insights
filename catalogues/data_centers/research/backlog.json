@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T08:17:47Z",
+  "updated_at": "2026-11-03T09:12:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -28,11 +28,46 @@
     "vertiv_trinergy_ce_ratings": 4,
     "carrier_aquaedge_19dv_configurations": 28,
     "raxio_current_facilities": 7,
-    "cummins_data_center_continuous_configurations": 22
+    "cummins_data_center_continuous_configurations": 22,
+    "atnorth_named_sites": 13,
+    "atnorth_contractor_disclosures": 3,
+    "atnorth_explicit_first_phase": 1,
+    "coolit_current_cdu_models": 6
   },
   "next_batches": [
     {
       "rank": 1,
+      "source": "atNorth phase permits, FIN03 identity and disputed site observations",
+      "urls": [
+        "https://www.atnorth.com/nordic-data-centers/",
+        "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
+      ],
+      "offset": 13,
+      "scope": "All 13 current named sites and four explicit child buildings/phases accepted. Do not recount. Review Finnish municipal permits for FIN04A1 and July-2026 building identity; reconcile omitted FIN03; current-map SWE03 departure is not retirement.",
+      "questions": [
+        "DEN01 Q4 2025 first-phase live vs report Q1 2026 operation: distinguish events",
+        "DEN02 initial power 250 vs 500 MW; SWE04 land 50 vs 4 ha and power 300 vs 200 MW",
+        "FIN02 40 MW unspecified campus power vs contractor 45 MW gross future total have different boundaries; do not silently replace",
+        "Get dated commencement/completion evidence and explicit building/phase IT/grid/facility ratings; no generic PUE-derived estimates"
+      ]
+    },
+    {
+      "rank": 2,
+      "source": "CoolIT legacy/current CDU and supplier diversity continuation",
+      "urls": [
+        "https://www.coolitsystems.com/products-services/data-center-products/cooling-distribution-units/",
+        "https://www.coolitsystems.com/resources/news/coolit-systems-launches-three-high-density-coolant-distribution-units/"
+      ],
+      "offset": 6,
+      "scope": "Complete current six-product list imported. CHx500/CHx1500 are historical candidates requiring dated exact specifications and lifecycle, not inferred current variants. Continue nVent/Motivair exact CDU, transformer and switchgear tables.",
+      "questions": [
+        "Resolve CHx3000 45 vs 50 degC maximum ambient on same page",
+        "CHx2000 2125 L/min at 35 psi web value and 1.5 L/min/kW brochure have unspecified loop boundaries; retain separately",
+        "Seek voltage/frequency, weight, warranty and model-bound performance sheets; no multiplied flow or fabricated optional configurations"
+      ]
+    },
+    {
+      "rank": 3,
       "source": "Teraco technical sheets + NEXTDC excluded/edge details",
       "urls": [
         "https://www.teraco.co.za/data-centre-locations/",
@@ -47,7 +82,7 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 4,
       "source": "ODATA country technical sheets",
       "urls": [
         "https://odatadc.com/localidades/",
@@ -62,7 +97,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 5,
       "source": "Underrepresented operators and official permits",
       "urls": [
         "https://www.africadatacentres.com/"
@@ -77,7 +112,7 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 6,
       "source": "North America/Europe structured official portfolios, Meta, and AirTrunk phase evidence",
       "urls": [
         "https://www.digitalrealty.com/data-centers",
@@ -93,7 +128,7 @@
       ]
     },
     {
-      "rank": 5,
+      "rank": 7,
       "source": "OEM electrical and thermal specifications",
       "urls": [
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
@@ -110,7 +145,7 @@
       ]
     },
     {
-      "rank": 6,
+      "rank": 8,
       "source": "Compute racks and cooling supplier diversity",
       "urls": [
         "https://www.supermicro.com/",
@@ -126,7 +161,7 @@
       ]
     },
     {
-      "rank": 7,
+      "rank": 9,
       "source": "Google PUE continuation",
       "url": "https://www.datacenters.google/efficiency/",
       "offset": 35,
@@ -137,7 +172,7 @@
       ]
     },
     {
-      "rank": 8,
+      "rank": 10,
       "source": "NVIDIA lifecycle and current accelerator continuation",
       "urls": [
         "https://docs.nvidia.com/vgpu/gpus-supported-by-vgpu.html",
@@ -168,7 +203,20 @@
     {
       "source": "Digital Realty 2025 10-K schedule III",
       "reason": "Market aggregates, not facility identities"
+    },
+    {
+      "source": "Princeton Digital Group website",
+      "url": "https://princetondg.com/terms-and-conditions/",
+      "reason": "Section 3 explicitly prohibits automated copying/downloading and redistribution. Stop collection/import; require permission or independent public planning records."
     }
   ],
-  "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open."
+  "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
+  "latest_run": {
+    "run_id": "atnorth-coolit-20261103T091200Z",
+    "report": "2026-11-03-report.md",
+    "validation": "2026-11-03T0912-validation.json",
+    "added_projects": 17,
+    "added_equipment": 6,
+    "branch": "research/data-center-database-20261103T0909Z"
+  }
 }

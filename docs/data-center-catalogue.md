@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 165 project records across 34 countries:
-62 facilities and 103 explicitly scoped campus aggregates, from twelve operators.
+The current continuation branch has 182 project records across 36 countries:
+65 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 239 exact models/configurations from NVIDIA, AMD, Carrier, Cummins, Eaton,
+has 245 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Eaton,
 Schneider Electric, STULZ and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/precision air-conditioning equipment.
@@ -139,3 +139,22 @@ these offsets before research. The targets of 50 projects and 20 exact models pe
 run never override identity, evidence or reuse requirements. NTT/PeeringDB bulk
 sources remain on explicit reuse hold; OpenStreetMap fetch failures were access
 problems and yielded no imported records.
+
+## Nordic sites and coolant distribution units
+
+The atNorth batch processes all 13 named sites in the current portfolio, plus
+four separately documented buildings/phases linked to excluded campus parents.
+Iceland and Norway are new coverage. Generic site/campus power remains a bounded
+observation. FIN05 explicitly separates 230 MW gross planned capacity, up to
+160 MW IT at campus level and 60 MW IT for its first phase; only the child
+phase enters the ultimate-planned IT sum. FIN02's contractor reports 45 MW gross
+capacity for the whole expanded facility, not the expansion alone.
+
+The six-model current CoolIT CDU inventory retains cooling kW, electrical input,
+approach temperature difference, flow/pressure conditions, redundancy and
+protocols. Publicly linked AHx180/AHx240 brochures add dimensions, verified
+visually. CHx3000's conflicting 45/50 °C ambient limits remain quarantined.
+No compatible GPU rack is treated as a deployed or newly configured rack.
+
+See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
+and [executed validation](../catalogues/data_centers/research/2026-11-03T0912-validation.json).
