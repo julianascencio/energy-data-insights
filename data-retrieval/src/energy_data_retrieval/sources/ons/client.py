@@ -1,4 +1,4 @@
-"""Brazil ONS plant generation and per-plant photovoltaic constrained-off data."""
+"""Brazil ONS generation and per-plant solar/wind constrained-off observations."""
 
 from __future__ import annotations
 
@@ -24,13 +24,18 @@ from energy_data_retrieval.transport import (
 
 ONS_HOSTS = frozenset({"dados.ons.org.br", "ons-aws-prod-opendata.s3.amazonaws.com"})
 CATALOGUE_ENDPOINT = "https://dados.ons.org.br/api/3/action/package_show"
-REFERENCE_IDS = ("ons_hourly_generation", "ons_pv_curtailment")
+REFERENCE_IDS = ("ons_hourly_generation", "ons_pv_curtailment", "ons_wind_curtailment")
 _PRODUCTS = {
     "generation": ("geracao-usina-2", "Geracao_Usina_2-", "geracao_usina_2_ho"),
     "solar_curtailment": (
         "restricao_coff_fotovoltaica_detail",
         "Restricoes_coff_fotovoltaica_Detail-",
         "restricao_coff_fotovoltaica_detail_tm",
+    ),
+    "wind_curtailment": (
+        "restricao_coff_eolica_detail",
+        "Restricoes_coff_Eolicas_Detalhamento-",
+        "restricao_coff_eolica_detail_tm",
     ),
 }
 
@@ -49,7 +54,7 @@ def _normalize(
     maximum_rows: int,
 ) -> pd.DataFrame:
     if product not in _PRODUCTS:
-        raise ValueError("ONS product must be generation or solar_curtailment")
+        raise ValueError("ONS product must be generation, solar_curtailment or wind_curtailment")
     if len(native) > maximum_rows:
         raise RetrievalError("ONS native file exceeds maximum_rows")
     value_column = "val_geracao" if product == "generation" else "val_geracaoverificada"
@@ -92,7 +97,13 @@ def _normalize(
     frame["source"] = "ons"
     frame["area"] = frame["id_subsistema"]
     frame["unit_id"] = frame["id_ons"]
-    frame["technology"] = frame["nom_tipousina"] if product == "generation" else "FOTOVOLTAICA"
+    frame["technology"] = (
+        frame["nom_tipousina"]
+        if product == "generation"
+        else "EOLICA"
+        if product == "wind_curtailment"
+        else "FOTOVOLTAICA"
+    )
     frame["value"] = frame[value_column]
     frame["unit"] = "MW"
     frame["source_unit"] = "MWmed"
@@ -138,8 +149,8 @@ def parse_generation_csv(
     Timestamps are native reference labels in the supplied source timezone. The
     default interprets them as Brazilian civil time, with ambiguous historical DST labels
     rejected. Callers with evidence for a fixed clock may specify ``Etc/GMT+3``.
-    Type III and small-plant/MMGD estimates are excluded by default. PV detail
-    keeps irradiance flags, estimated MW, actual MW and reference MW separate.
+    Type III and small-plant/MMGD estimates are excluded by default. Solar/wind
+    detail keeps resource flags, estimated MW, actual MW and reference MW separate.
     """
     _limit(maximum_rows, "maximum_rows", 10_000_000)
     try:
@@ -197,6 +208,17 @@ class ONSClient:
     ) -> GenerationResult:
         """Retrieve half-hour PV detail, retaining actual/reference values and flags."""
         return self._retrieve(start, end, "solar_curtailment", plant_ids, source_timezone, False)
+
+    def wind_curtailment(
+        self,
+        start: date,
+        end: date,
+        *,
+        plant_ids: list[str] | None = None,
+        source_timezone: str = "America/Sao_Paulo",
+    ) -> GenerationResult:
+        """Retrieve half-hour wind detail with native wind-speed and validity flags."""
+        return self._retrieve(start, end, "wind_curtailment", plant_ids, source_timezone, False)
 
     def _retrieve(
         self,

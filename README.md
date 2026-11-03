@@ -510,3 +510,12 @@ the [usage guide](docs/data-center-catalogue.md),
 [runnable examples](examples/database/plot_data_center_catalogue.py), and
 [research backlog](catalogues/data_centers/research/backlog.json).
 Viewer links become public after merge and documentation deployment.
+
+### Solar and wind forecast comparison
+
+The [runnable benchmark](examples/analysis/plot_forecast_model_benchmark.py)
+compares LightGBM, XGBoost, Mistral Timestral and physical surrogates on real ONS
+solar/wind observations, with a previous-day baseline and 16 daily forecast
+origins per plant. It runs offline with captured real Timestral inference and
+can optionally run the model live. See the [benchmark guide](docs/forecast-benchmark.md)
+for commands, research attribution and model/data assumptions.

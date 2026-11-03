@@ -10,6 +10,12 @@ GeoTIFFs, with separate solar-resolution and accuracy qualifications.
 Each study documents
 its spatial resolution, time coverage and interpretation limits.
 
+The solar/wind forecast benchmark compares LightGBM, XGBoost, real Timestral
+inference and physical surrogates on 16 daily forecast windows per plant.
+It cites Ascencio-Vásquez et al. (2020) as inspiration and includes real ONS
+inputs, provenance, common test metrics and a complete offline download.
+See the :doc:`benchmark guide </_generated/guides/forecast-benchmark>`.
+
 The degradation-rate example recalculates the saved 2016-2018 climate scenario
 from annual stresses, with mechanism and rate-category maps. The site-climate
 tutorial looks up all four classifications near Rengo, retains full source

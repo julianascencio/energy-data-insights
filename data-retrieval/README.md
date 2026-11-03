@@ -872,3 +872,11 @@ samples sites while keeping missing values and vertical references explicit.
 ## Native satellite imagery
 
 `sources/orbitalpv_imagery` reuses Orbital PV for Sentinel-2 discovery, native COG reading and verified offline GeoTIFFs. It adds bounded Maxar Open Data event discovery and native-resolution selection. Use Python 3.13 with the `imagery` workspace dependency group (or install the pinned Orbital PV source alongside the package). See the [satellite guide](../docs/satellite-imagery.md) for installation, complete site metadata, sub-metre usage, coverage and licence limits.
+
+`ONSClient.wind_curtailment` retrieves native wind-plant restriction-detail
+exports with verified generation, wind resource and quality/restriction flags,
+using the same bounded discovery and provenance contract as solar curtailment.
+Large monthly exports may require an explicit `maximum_rows` increase; the
+June 2024 benchmark capture uses a two-million-row bound and Parquet filtering.
+Native resource fields remain unconverted; the wind dictionary's inconsistent
+speed unit is documented in the [forecast benchmark](../docs/forecast-benchmark.md).

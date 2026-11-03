@@ -18,6 +18,7 @@ from lightgbm import LGBMRegressor
 from numpy.typing import ArrayLike
 
 from energy_methods._arrays import BoolArray, FloatArray, aligned
+from energy_methods._regression import feature_labels, feature_matrix, training_arrays
 
 REFERENCE_IDS = (
     "ascencio_vasquez_2021_thesis",
@@ -102,6 +103,65 @@ class LightGBMModel:
 
 
 DEFAULT_CONFIG = LightGBMConfig()
+
+
+@dataclass(slots=True)
+class LightGBMFeatureModel:
+    """General forecast-feature regression; distinct from the monotone PV interface."""
+
+    estimator: LGBMRegressor
+    config: LightGBMConfig
+    feature_names: tuple[str, ...]
+    training_rows: int
+
+    def predict(self, features: ArrayLike) -> FloatArray:
+        values = feature_matrix(features, len(self.feature_names))
+        return np.asarray(
+            self.estimator.booster_.predict(values, num_threads=self.config.n_jobs),
+            dtype=np.float64,
+        )
+
+    def to_dict(self) -> dict[str, object]:
+        """Export native model text; no unit transformation or implicit clipping."""
+        return {
+            "method": "lightgbm_feature_regression",
+            "reference_ids": ["ke_2017_lightgbm", "lightgbm_parameters"],
+            "config": asdict(self.config),
+            "model_text": self.estimator.booster_.model_to_string(),
+            "feature_names": list(self.feature_names),
+            "training_rows": self.training_rows,
+        }
+
+
+def fit_lightgbm_features(
+    features: ArrayLike,
+    target: ArrayLike,
+    *,
+    feature_names: tuple[str, ...] | None = None,
+    config: LightGBMConfig = DEFAULT_CONFIG,
+) -> LightGBMFeatureModel:
+    """Fit arbitrary finite forecast features without PV-only monotonic assumptions.
+
+    The existing ``fit_lightgbm(poa, temperature, actual)`` API is unchanged.
+    This interface also supports wind, lags and calendar variables. Feature
+    creation and chronological splitting remain the caller's responsibility.
+    """
+    x, y = training_arrays(features, target, config.min_samples)
+    names = feature_labels(feature_names, x.shape[1])
+    estimator = LGBMRegressor(
+        objective="regression",
+        n_estimators=config.n_estimators,
+        learning_rate=config.learning_rate,
+        num_leaves=config.num_leaves,
+        min_child_samples=config.min_child_samples,
+        random_state=config.random_state,
+        n_jobs=config.n_jobs,
+        deterministic=True,
+        force_col_wise=True,
+        verbosity=-1,
+    )
+    estimator.fit(x, y)
+    return LightGBMFeatureModel(estimator, config, names, len(y))
 
 
 def fit_lightgbm(
