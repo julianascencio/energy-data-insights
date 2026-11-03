@@ -104,6 +104,15 @@ print(
     .sort_values(["model", "variant"])
     .to_string(index=False)
 )
+print("Lenovo exact options preserve per-GPU limits and option identities:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Lenovo"),
+        ["model", "variant", "accelerator_power_w", "power_conditions", "quality_status"],
+    ]
+    .sort_values(["accelerator_power_w", "model"], na_position="last")
+    .to_string(index=False)
+)
 print("Exact UPS ratings keep kW, kVA and runtime/load conditions separate:")
 print(
     equipment.loc[

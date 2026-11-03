@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 313 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Dell, Eaton,
-Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, Siemens, STULZ and Vertiv. Current categories are GPU accelerators,
+has 333 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Dell, Eaton,
+Lenovo, Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, Siemens, STULZ and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -82,6 +82,13 @@ and accelerator pairings across 11 PowerEdge models and eight accelerator rows.
 Per-accelerator maximum power and memory remain distinct from unknown server and
 rack input; accelerator quantity and deployment are not inferred. The H100 NVL
 350--400 W range remains an exact observation rather than a normalized scalar.
+The Lenovo continuation processes all 20 rows explicitly marked Available in the
+current ThinkSystem GPU comparison. Exact commercial part numbers or CTO feature
+codes, option GPU counts, form factors, announcement dates, per-GPU memory,
+bandwidth, TDP, interconnect, cooling and precision-labelled performance remain
+source-bound. Option quantities are not deployments and per-GPU values are never
+multiplied into board, server or rack input. The C3V2 H200 row's 700 W description
+versus 350 W TDP conflict is quarantined, leaving normalized power null.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server
@@ -149,6 +156,11 @@ page request timed out; the Siemens page returned an unsupported-content respons
 to the reader. These access failures and unavailable checksums are explicitly
 registered without treating them as reuse prohibitions. Public access does not
 imply an open licence. Explicit reuse restrictions remain separate.
+Lenovo's official comparison HTML was captured and checksummed; its embedded
+structured payload is parsed by a fail-closed offline adapter while the original
+page is not redistributed. A Supermicro collateral request returned HTML instead
+of the expected PDF, which is recorded as an access/content-shape limitation and
+not a reuse restriction.
 
 The upsert preserves creation dates and unchanged update dates. Conflicting
 populated values are quarantined individually with both observations and dated
@@ -185,4 +197,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-03T1223-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-03T1326-validation.json).

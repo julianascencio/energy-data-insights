@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T11:19:28Z",
+  "updated_at": "2026-11-03T13:26:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -36,7 +36,9 @@
     "motivair_current_cdu_models": 8,
     "nvent_rackchiller_skus": 6,
     "eaton_dry_transformer_configurations": 16,
-    "siemens_nxair_portfolio_variants": 5
+    "siemens_nxair_portfolio_variants": 5,
+    "dell_poweredge_17g_gpu_compatibility": 33,
+    "lenovo_thinksystem_current_gpu_options": 20
   },
   "next_batches": [
     {
@@ -158,11 +160,13 @@
         "https://www.lenovo.com/",
         "https://www.coolitsystems.com/"
       ],
-      "offset": 68,
-      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 33 supported pairs in Dell's September 2025 PowerEdge 17th Generation GPU compatibility table complete. Continue exact Supermicro/Lenovo integrated racks, later Dell generations and direct-to-chip/immersion model tables; Asian and regional OEMs",
+      "offset": 88,
+      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 33 supported pairs in Dell's September 2025 PowerEdge 17th Generation table and all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison complete. Continue exact Supermicro integrated systems, later Dell generations and direct-to-chip/immersion model tables; Asian and regional OEMs",
       "questions": [
         "Rack input vs server vs accelerator limit",
-        "Measured performance workload/precision/test conditions, temperatures and flow"
+        "Measured performance workload/precision/test conditions, temperatures and flow",
+        "Capture the Supermicro front-I/O HGX B200 original: the indexed PDF URL returned HTML in this run; do not import snippets alone",
+        "Recheck Lenovo after a dated change-history update; do not recount the 20-option 2026-10-26 Available view"
       ]
     },
     {
@@ -217,11 +221,11 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "dell-poweredge-gpu-20261103T122301Z",
+    "run_id": "lenovo-current-gpu-20261103T132600Z",
     "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T1223-validation.json",
+    "validation": "2026-11-03T1326-validation.json",
     "added_projects": 0,
-    "added_equipment": 33,
+    "added_equipment": 20,
     "branch": "research/data-center-database-20261103T0909Z"
   }
 }

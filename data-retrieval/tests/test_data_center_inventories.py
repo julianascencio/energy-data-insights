@@ -6,6 +6,7 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_lenovo_gpu_comparison,
     parse_named_inventory,
     parse_power_equipment_matrix,
     parse_server_accelerator_matrix,
@@ -18,6 +19,9 @@ POWER_MATRIX = (
 ).read_bytes()
 SERVER_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/server-accelerator-matrix.csv"
+).read_bytes()
+LENOVO_COMPARISON = (
+    Path(__file__).parent / "fixtures/data_centers/lenovo-gpu-comparison.html"
 ).read_bytes()
 
 
@@ -139,4 +143,36 @@ def test_server_accelerator_matrix_rejects_unbounded_input(source_url, expected_
             SERVER_MATRIX,
             source_url=source_url,
             expected_count=expected_count,
+        )
+
+
+def test_lenovo_comparison_stages_only_current_exact_options():
+    result = parse_lenovo_gpu_comparison(
+        LENOVO_COMPARISON,
+        source_url="https://lenovopress.lenovo.com/lp2265-thinksystem-gpu-comparison",
+        expected_count=1,
+    )
+    assert len(result["candidates"]) == 1
+    candidate = result["candidates"][0]
+    assert candidate["feature_code"] == "ABCD"
+    assert candidate["gpu_count"] == 8
+    assert candidate["tdp_w_per_gpu"] == 1000
+    assert candidate["memory_gb_per_gpu"] == 192
+    assert candidate["cooling_method"] == "Liquid / Water"
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+def test_lenovo_comparison_rejects_drift_and_unofficial_sources():
+    with pytest.raises(ValueError, match="Changed Lenovo"):
+        parse_lenovo_gpu_comparison(
+            LENOVO_COMPARISON,
+            source_url="https://lenovopress.lenovo.com/lp2265-thinksystem-gpu-comparison",
+            expected_count=2,
+        )
+    with pytest.raises(ValueError, match="Unsupported official Lenovo"):
+        parse_lenovo_gpu_comparison(
+            LENOVO_COMPARISON,
+            source_url="https://example.com/table",
+            expected_count=1,
         )

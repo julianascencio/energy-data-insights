@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T12:23:01Z",
+  "retrieved_at": "2026-11-03T13:26:00Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -197,6 +197,14 @@
       "note": "Every supported checkmark in the bounded 17th-generation table is represented once. Per-accelerator limits are not server/rack input and no installed quantity is inferred; the H100 NVL power range remains unnormalized.",
       "reuse": "Factual extraction from an official public copyrighted OEM PDF; no open licence asserted and the source table is not redistributed",
       "originals": "Official 887,932-byte PDF retrieved successfully; SHA-256 and September 2025 document date are retained in sources.json."
+    },
+    {
+      "inventory": "Lenovo ThinkSystem GPU Comparison current available-product view",
+      "processed_offset": 20,
+      "accepted_records": 20,
+      "note": "Every row explicitly marked Available in the complete current view is represented once. Exact part numbers or CTO feature codes, board quantities, form factors, dates, per-GPU memory/bandwidth/TDP, interconnect, cooling and precision-labelled performance remain source-bound. No option quantity or per-GPU TDP is multiplied into server or rack input.",
+      "reuse": "Factual extraction from an official public copyrighted OEM comparison page; no open licence asserted and the source table is not redistributed",
+      "originals": "Official 904,864-byte HTML capture retrieved successfully; SHA-256 and the October 26, 2026 change-history date are retained in sources.json."
     }
   ],
   "deferred": [
@@ -297,6 +305,10 @@
     {
       "candidate": "Siemens NXAIR ordered panel and breaker configurations",
       "reason": "The current portfolio cards establish five model/rating families but not exact breaker, busbar, panel-width or communications combinations; configuration-level continuation requires the current model catalog tables."
+    },
+    {
+      "candidate": "Supermicro front-I/O NVIDIA HGX B200 systems",
+      "reason": "Official indexed material identified exact liquid- and air-cooled system candidates, but the direct collateral URL returned an HTML response rather than the expected PDF. Defer canonical import until the original datasheet or current product pages can be captured and reconciled; this is an access/content-shape limitation, not a reuse prohibition."
     }
   ],
   "excluded": [
@@ -359,6 +371,10 @@
     {
       "candidate": "Siemens optional LPIT, remote monitoring, EcoTech and breaker combinations",
       "reason": "Portfolio features were not expanded into exact product configurations or issuer-verified certifications without model-specific binding"
+    },
+    {
+      "candidate": "Lenovo calculated board, server or rack power and installed deployment",
+      "reason": "GPU count is the exact orderable-option assembly count; per-GPU TDP is not multiplied and current availability is not evidence of deployment, server input or rack input"
     }
   ],
   "holds_unchanged": [
@@ -449,6 +465,15 @@
         "Footnote 1 says capacities are rated with 100% water"
       ],
       "reason": "All exact cooling values and their temperature points remain observations, but the normalized scalar stays null until the OEM clarifies the rating medium"
+    },
+    {
+      "record": "Lenovo ThinkSystem NVIDIA HGX H200 141GB 700W 4-GPU Board (feature C3V2)",
+      "field": "accelerator_power_w",
+      "observations": [
+        "Product description reports 700W",
+        "TDP Max Power Consumption attribute reports 350 W"
+      ],
+      "reason": "The same official comparison row conflicts internally; both values remain observations and the normalized scalar stays null"
     }
   ],
   "normalization_notes": [
@@ -489,6 +514,7 @@
     "Motivair cooling-capacity scalars remain quarantined because the 25% PG row label conflicts with footnote 1's 100% water statement; all four exact rating points remain available as observations.",
     "Eaton transformer kVA, no-load/load losses, impedance and noise retain their standard and voltage-class table boundary; no active kW, efficiency or winding voltage is inferred.",
     "Siemens NXAIR voltage, short-circuit current and continuous current are portfolio maxima stored as observations; nominal input fields remain null.",
-    "Dell compatibility checkmarks establish supported server/accelerator pairs only. Accelerator maximum power remains per device, H100 NVL's 350-400 W range is not collapsed, and server/rack input and installed quantity remain null."
+    "Dell compatibility checkmarks establish supported server/accelerator pairs only. Accelerator maximum power remains per device, H100 NVL's 350-400 W range is not collapsed, and server/rack input and installed quantity remain null.",
+    "Lenovo option quantities describe exact orderable boards/assemblies rather than deployments. Memory, bandwidth, TDP and performance remain per GPU; performance preserves precision and sparsity labels, and no board/server/rack total is calculated."
   ]
 }

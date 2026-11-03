@@ -9,6 +9,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import io
+import json
 import re
 from html.parser import HTMLParser
 from typing import Any
@@ -273,6 +274,149 @@ def parse_server_accelerator_matrix(
     if len(candidates) != expected_count:
         raise ValueError(
             f"Changed server/accelerator matrix shape: {len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
+def parse_lenovo_gpu_comparison(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage Lenovo's current GPU-option table from its embedded JSON payload.
+
+    The comparison page contains withdrawn and available products together. Only
+    rows explicitly marked ``Available`` are staged. Board GPU count and per-GPU
+    TDP remain separate; this adapter never multiplies them into server or rack
+    input power. A staged row still requires field-level evidence review before
+    canonical publication.
+    """
+    parsed_url = urlsplit(source_url)
+    if parsed_url.hostname != "lenovopress.lenovo.com" or parsed_url.scheme != "https":
+        raise ValueError("Unsupported official Lenovo comparison URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    text = content.decode("utf-8-sig")
+    anchor = text.find("scrollY: null")
+    marker = text.find("data: {", max(anchor, 0))
+    if anchor < 0 or marker < 0:
+        raise ValueError("Lenovo comparison payload not found")
+    start = marker + len("data: ")
+    depth = 0
+    in_string = False
+    escaped = False
+    end: int | None = None
+    for index, character in enumerate(text[start:], start=start):
+        if in_string:
+            if escaped:
+                escaped = False
+            elif character == "\\":
+                escaped = True
+            elif character == '"':
+                in_string = False
+            continue
+        if character == '"':
+            in_string = True
+        elif character == "{":
+            depth += 1
+        elif character == "}":
+            depth -= 1
+            if depth == 0:
+                end = index + 1
+                break
+    if end is None:
+        raise ValueError("Unterminated Lenovo comparison payload")
+    try:
+        payload = json.loads(text[start:end])
+    except json.JSONDecodeError as exc:
+        raise ValueError("Invalid Lenovo comparison payload") from exc
+    attributes = {item["label"]: item["id"] for item in payload["attributes"]}
+    values = {item["id"]: item.get("val") for item in payload["values"]}
+    required = {
+        "Description",
+        "Form factor ",
+        "Number of GPUs (Note 1)",
+        "Part number ",
+        "Feature code",
+        "Announcement date",
+        "Availability",
+        "GPU Architecture",
+        "GPU Memory type",
+        "GPU Memory (GB)",
+        "Memory Bandwidth GB/s",
+        "TDP Max Power Consumption (W)",
+        "Cooling method",
+    }
+    if not required <= set(attributes):
+        raise ValueError("Missing Lenovo comparison attributes")
+
+    def value(row: dict[str, Any], label: str) -> Any:
+        attribute_id = attributes[label]
+        cell = row.get(f"c_{attribute_id}")
+        return values.get(cell.get("v_id")) if cell else None
+
+    candidates: dict[str, dict[str, Any]] = {}
+    for row in payload["transposed_rows"]:
+        if value(row, "Availability") != "Available":
+            continue
+        feature_code = str(value(row, "Feature code") or "").strip()
+        part_number = str(value(row, "Part number ") or "").strip()
+        identity = part_number if part_number != "CTO Only" else feature_code
+        if not identity or not feature_code:
+            raise ValueError("Available Lenovo row lacks an orderable identity")
+        try:
+            gpu_count = int(value(row, "Number of GPUs (Note 1)"))
+            memory_gb = float(value(row, "GPU Memory (GB)"))
+            bandwidth_gbps = float(value(row, "Memory Bandwidth GB/s"))
+            tdp_w = float(value(row, "TDP Max Power Consumption (W)"))
+        except (TypeError, ValueError) as exc:
+            raise ValueError(f"Invalid Lenovo numeric field for {identity}") from exc
+        if min(gpu_count, memory_gb, bandwidth_gbps, tdp_w) <= 0:
+            raise ValueError(f"Invalid Lenovo numeric field for {identity}")
+        candidate = {
+            "product_id": row["p_id"],
+            "product_name": row["p_name"],
+            "description": value(row, "Description"),
+            "form_factor": value(row, "Form factor "),
+            "gpu_count": gpu_count,
+            "part_number": part_number,
+            "feature_code": feature_code,
+            "announcement_date": value(row, "Announcement date"),
+            "withdrawal_date": value(row, "Withdrawal date")
+            if "Withdrawal date" in attributes
+            else None,
+            "architecture": value(row, "GPU Architecture"),
+            "memory_type": value(row, "GPU Memory type"),
+            "memory_gb_per_gpu": memory_gb,
+            "memory_bandwidth_gbps_per_gpu": bandwidth_gbps,
+            "nvlink": value(row, "NVIDIA NVLink") if "NVIDIA NVLink" in attributes else None,
+            "interconnect": value(row, "Interconnect Bandwidth (GB/sec)")
+            if "Interconnect Bandwidth (GB/sec)" in attributes
+            else None,
+            "host_interface": value(row, "Host Interface")
+            if "Host Interface" in attributes
+            else None,
+            "mig": value(row, "Multi-Instance GPU (MIG)")
+            if "Multi-Instance GPU (MIG)" in attributes
+            else None,
+            "tdp_w_per_gpu": tdp_w,
+            "cooling_method": value(row, "Cooling method"),
+            "performance": {
+                label: value(row, label)
+                for label in attributes
+                if label.startswith("Peak ") and value(row, label) is not None
+            },
+            "locator": f"current comparison row {row['p_name']} ({identity})",
+        }
+        if identity in candidates:
+            raise ValueError(f"Duplicate Lenovo orderable identity {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed Lenovo available inventory shape: {len(candidates)} != {expected_count}"
         )
     return {
         "source_url": source_url,
