@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,738 project and plant records across
-37 countries**, supported by **215 registered sources**. It combines curated
+The BESS section contains **1,758 project and plant records across
+37 countries**, supported by **226 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -224,3 +224,5 @@ Latest: [Outer Tonga and Encore research](research/2026-11-03_outer_tonga_encore
 Latest: [Tonga review and EMS/PCS specifications](research/2026-11-03_tonga_ems_pcs.md).
 
 Latest: [Pacific portfolio and Discover equipment](research/2026-11-03_pacific_discover.md).
+
+Latest: [Nordic portfolios, Samoa tender and Crown configurations](research/2026-11-03_nordic_crown.md).

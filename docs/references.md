@@ -5151,3 +5151,99 @@ Infratec (2026). **Southern Group Cook Islands Renewable Microgrids**. [Source](
 **Role:** data. Undated portfolio, access year; four named islands and aggregate discrepancy
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### crown_renewable_g0720
+
+Crown Battery Manufacturing Co. (2020). **Renewable Energy Storage Solutions, SB-CRP-G0720**. [Source](https://www.crownbattery.com/hubfs/Downloads/Renewable-Energy-Batteries.pdf)
+
+**Role:** data. Page 7 exact rows; chemistry groups; energy footnote
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ingrid_eight_20240213
+
+Ingrid Capacity (2024). **Ingrid Capacity and BW ESS continue large-scale expansion of energy storage in Sweden**. [Source](https://www.ingridcapacity.com/press-releases/ingrid-capacity-and-bw-ess-continue-large-scale-expansion-of-energy-storage-in-sweden-e90ec3b6)
+
+**Role:** data. Named eight-site MW list; grid services paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_operating_20241010
+
+Ingrid Capacity (2024). **Swedish battery portfolio inauguration**. [Source](https://www.ingridcapacity.com/press-releases/swedens-minister-for-climate-and-the-environment-inaugurates-the-largest-battery-storage-portfolio-in-the-nordics-939df843)
+
+**Role:** data. 14-site portfolio; grid-connected status and joint ownership
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bw_nordics_portfolio_20261103
+
+BW ESS (2026). **Nordics operating portfolio**. [Source](https://bw-ess.com/projects/nordics)
+
+**Role:** data. Named 14-site list and In operation label; access year for undated portfolio
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_mirova_20260923
+
+Ingrid Capacity (2026). **Ingrid Capacity and Mirova Nordic partnership**. [Source](https://www.ingridcapacity.com/news/ingrid-capacity-and-global-investor-mirova-enter-strategic-partnership-for-a-large-scale-bess-portfolio-in-the-nordics)
+
+**Role:** data. Pedersöre and Vaggeryd paragraphs; portfolio investment
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_alpiq_20261027
+
+Ingrid Capacity (2026). **Ingrid Capacity and Alpiq offtake partnership**. [Source](https://www.ingridcapacity.com/news/ingrid-capacity-and-alpiq-partner-to-accelerate-battery-storage-deployment-in-the-nordics)
+
+**Role:** data. Pedersöre executed agreement paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nepower_haapajarvi_20251112
+
+Nordic Electro Power Oy (2025). **NEPower and Alpiq expand Haapajärvi cooperation**. [Source](https://nepower.fi/news/haapajarvi-september-26-2025-nepower-and-alpiq-have-expanded-their-cooperation-to-build-finlands-largest-125-mw-250-mwh-energy-storage-project)
+
+**Role:** data. EPC scope, 110/33 kV connection, construction and forecast paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### merus_valkeakoski_20251030
+
+Merus Power Oyj via STT Info (2025). **Important launch from Merus Power: grid-forming storage**. [Source](https://www.sttinfo.fi/tiedote/71567312/important-launch-from-merus-power-new-energy-storage-technology-in-the-nordics?lang=en)
+
+**Role:** data. Opening paragraph and EPC responsibility paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### merus_mertaniemi_20250516
+
+Merus Power Oyj via STT Info (2025). **Lappeenranta storage commissioned; EUR15 million delivery**. [Source](https://www.sttinfo.fi/tiedote/71171076/one-of-finlands-largest-energy-storage-facilities-commissioned-in-lappeenranta-merus-powers-eur-15-million-delivery-completed?lang=en&publisherId=69821243)
+
+**Role:** data. Opening, capacity and Mertaniemi paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### destia_ypr2_20260304
+
+Destia (2026). **Yllikkälä battery construction and electrical delivery**. [Source](https://destia.fi/en/article/the-largest-battery-storage-in-the-nordics-was-built-with-precise-teamwork/)
+
+**Role:** data. Infrastructure and electrical work; final equipment paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### epc_fiaga_tender_20261026
+
+Electric Power Corporation Samoa (2026). **SAMEPC12/2026 Fiaga solar and battery tender notice**. [Source](https://www.epc.ws/wp-content/uploads/2026/10/SAMEPC202026TENDERNOTICEFINALCLEANVERSION261026-1.pdf)
+
+**Role:** data. Public notice pages 1-2; excludes NDA-controlled bid documents
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### ingrid_ai4energy_portfolio_20241111
+
+Sara Frimodig; Ingrid Capacity (2024). **AI-driven stokastisk optimering för batterilagringssystem**. [Source](https://energiforsk.se/media/33870/9-sara-frimodig-ingrid-capacity.pdf)
+
+**Role:** data. PDF page 5, printed slide 6: named 2024 portfolio map; cover date with revision caveat in source register
+
+**Used by:** `catalogues/bess/sources.json`.
