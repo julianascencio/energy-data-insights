@@ -18,32 +18,49 @@ Git source; its workspace dependency group is not part of published wheel metada
 See the [satellite installation guide](satellite-imagery.md). This keeps the
 release artifacts free of direct Git URL dependencies.
 
-## One-time publisher setup
+## One-time API token setup
 
-The workflow uses [PyPI Trusted Publishing](https://docs.pypi.org/trusted-publishers/),
-with GitHub OIDC and publication attestations; no stored PyPI API token is needed.
-The workflow cannot grant itself access to a PyPI account. Before the first tag,
-the account owner must register these three publishers on **pypi.org**, not TestPyPI.
+Publishing uses the same API-token method as Orbital PV, through
+[PyPA's publishing action](https://github.com/pypa/gh-action-pypi-publish) and
+[PyPI's upload API](https://docs.pypi.org/api/upload/).
 
-For a new project, use [Add a new pending publisher](https://pypi.org/manage/account/publishing/).
-For an existing project you own, use its Publishing settings instead. Enter one
-publisher for each row above, with these shared values:
+1. Sign in to the PyPI account that will own all three projects. Create an API
+   token in [PyPI account settings](https://pypi.org/manage/account/token/).
+   For the first release, the token must allow creation of these projects;
+   a token scoped only to `orbital-pv` cannot publish them. Once projects exist,
+   appropriately scoped tokens can be used for individual package releases.
+2. In this repository's [Actions secrets](https://github.com/julianascencio/energy-data-insights/settings/secrets/actions),
+   add a **repository secret** named `PYPI_API_TOKEN` with the token as its value.
+   A secret saved only in the Orbital PV repository is not shared automatically.
+   Never put the token in source files, workflow inputs, logs or release notes.
+3. Keep the package environments in the table above. If an environment defines
+   its own `PYPI_API_TOKEN`, that token overrides the repository secret and must
+   permit that environment's package. Any environment approval or deployment
+   rules still apply; allow the relevant tags and `main` for manual/batch runs.
 
-- **PyPI project name:** the exact project name in the table.
-- **Owner:** `julianascencio`.
-- **Repository name:** `energy-data-insights`.
-- **Workflow name:** `publish-pypi.yml` (the filename, without `.github/workflows/`).
-- **Environment name:** the exact environment in the same row of the table.
+No Trusted Publisher registration is required for this configuration. Publishing
+jobs have no OIDC permission and explicitly disable attestations, which require
+Trusted Publishing. The token is used only for the credential-presence check and
+upload; builds and package tests run in separate jobs without it.
 
-A pending publisher creates its project on the first successful upload; it does
-not reserve the name beforehand. Registration requires a PyPI account with the
-appropriate permissions. See [creating a project through OIDC](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/).
+## Release all three packages
 
-GitHub creates the named environments when the workflow first references them.
-Maintainers can create them in advance under **Settings → Environments** and add
-reviewers or matching tag restrictions. If a deployment rule is configured, it
-must permit the package's tag pattern, rather than only the `main` branch. Ensure
-GitHub Actions is enabled for the repository.
+Run **Actions → Release all packages → Run workflow** on `main`. The workflow
+reads each package's committed version, validates it, and releases retrieval,
+then methods, then analysis. Each package passes the same quality, metadata and
+isolated-install checks used by a tag release. Analysis is only built against
+public sibling dependencies after their uploads succeed.
+
+The initial release is also triggered when `.pypi-initial-release` changes on
+`main`, matching Orbital PV's bootstrap mechanism. Ordinary code or database
+updates do not publish packages. The marker is a trigger, not a version source;
+manual/batch releases do not create Git tags or GitHub release objects.
+
+If the token is missing, the batch stops before building or uploading anything
+and identifies the missing secret. Add it and rerun that failed workflow. For a
+partially successful batch, **rerun failed jobs**, not all jobs: completed PyPI
+versions must not be uploaded again. Use the single-package workflow below when
+only some package versions have changed.
 
 ## Release a package
 
@@ -78,6 +95,10 @@ GitHub Actions is enabled for the repository.
    workflow's default `GITHUB_TOKEN` do not trigger this push workflow; create
    them as a maintainer.
 
+   Alternatively, run **Actions → Publish packages to PyPI → Run workflow** on
+   `main` and supply the exact scoped release tag, for example `methods-v0.1.1`.
+   This validates the same package/version without creating a Git tag.
+
 3. Follow **Actions → Publish packages to PyPI**. It validates the tag, runs the
    full quality/test workflow on Python 3.12 and 3.13, builds the selected package
    from its source distribution with uv's workspace sources disabled, checks
@@ -86,8 +107,8 @@ GitHub Actions is enabled for the repository.
    resources, and runs every console script's `--help`.
 
 4. A separate publishing job downloads the checked artifacts and uploads them
-   with OIDC. Only this job has `id-token: write`; it does not check out or build
-   repository code. The environment links to the published PyPI version.
+   using `PYPI_API_TOKEN`. It does not check out or build repository code. The
+   environment links to the published PyPI version.
 
 For the **first release**, publish `data-retrieval-v0.1.0` and `methods-v0.1.0`
 first, and wait for both to succeed. Then push `analysis-v0.1.0`. Analysis's
@@ -98,7 +119,7 @@ analysis raises a dependency's minimum version.
 
 PyPI versions are immutable. Do not move a published tag or overwrite a version.
 Fix a code or packaging defect with a new version and tag. For an authentication
-or transient failure before upload, fix the publisher configuration and rerun
+or transient failure before upload, fix the token configuration and rerun
 the failed job. If an upload was partially completed, inspect PyPI's files before
 retrying; this workflow deliberately does not skip existing files.
 
@@ -146,4 +167,4 @@ check the selected wheel against public dependencies. Neither the local checks
 nor pull-request CI uploads anything.
 
 Implementation references: [uv package builds](https://docs.astral.sh/uv/guides/package/)
-and [PyPI's GitHub Actions publisher](https://docs.pypi.org/trusted-publishers/using-a-publisher/).
+and [PyPA's GitHub Actions publisher](https://github.com/pypa/gh-action-pypi-publish).
