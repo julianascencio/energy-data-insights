@@ -164,3 +164,15 @@ test("wind lifecycle evidence does not imply eligible capacity scope", async () 
   assert.deepEqual(windEvidence(rows), {lifecycleKnown:3,lifecycleUnknown:1,scopeExcluded:3});
   assert.deepEqual(windEvidence([]), {lifecycleKnown:0,lifecycleUnknown:0,scopeExcluded:0});
 });
+
+test("wind turbine inventory counts parent IDs and unknowns without inferring operation", async () => {
+  const {windTurbineSummary} = await import("../../docs/_static/database-core.mjs");
+  const rows = [
+    {entity_type:"turbines", project_record_id:"p1", manufacturer:"OEM", status:"unknown", latitude:60, longitude:17},
+    {entity_type:"turbines", project_record_id:"p1", manufacturer:null, status:"decommissioned", latitude:null, longitude:null},
+    {entity_type:"turbines", project_record_id:"p2", manufacturer:"OEM", status:"permitted", latitude:60, longitude:17},
+    {entity_type:"projects", manufacturer:"Must not count"},
+  ];
+  assert.deepEqual(windTurbineSummary(rows), {projects:2,manufacturers:1,manufacturerUnknown:1,located:2,lifecycleUnknown:1});
+  assert.equal(windTurbineSummary([]).manufacturers,0);
+});

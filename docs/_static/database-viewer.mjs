@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, windCapacity, windEvidence} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, windCapacity, windEvidence, windTurbineSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isWind = root.dataset.database === "wind";
@@ -86,7 +86,7 @@ async function loadTable() {
 }
 function defaultColumns() {
   const specific = tableName === "projects" ? (isWind ? ["country_code", "technology", "status", "status_as_of", "installed_capacity_mw", "planned_capacity_mw", "historical_capacity_mw", "turbine_count", "aggregation_role"] : isDataCenter ? ["country_code", "record_scope", "status", "it_capacity_mw", "it_capacity_basis", "grid_capacity_mw", "facility_capacity_mw", "cooling_technology"] : isBess ? ["country_code", "status", "status_as_of", "power_capacity_mw", "energy_capacity_mwh", "chemistry"] : ["country_code", "status", "capacity_ac_mw", "capacity_dc_mw"]) :
-    isWind ? ["manufacturer", "model", "rated_power_kw", "rotor_diameter_m", "equipment_category", "curve_kind", "curve_origin"] : isDataCenter ? ["manufacturer", "model", "variant", "equipment_category", "input_power_kw", "accelerator_power_w", "memory_gb", "power_conditions"] : isBessOem ? ["manufacturer", "model", "variant", "record_scope", "energy_capacity_mwh", "energy_basis", "power_capacity_mw", "power_basis", "apparent_power_mva", "chemistry", "product_status"] : ["manufacturer", "model", el("metric").value];
+    isWind && tableName === "turbines" ? ["project_record_id", "country_code", "status", "manufacturer", "turbine_model", "rotor_diameter_m", "hub_height_m"] : isWind ? ["manufacturer", "model", "rated_power_kw", "rotor_diameter_m", "equipment_category", "curve_kind", "curve_origin"] : isDataCenter ? ["manufacturer", "model", "variant", "equipment_category", "input_power_kw", "accelerator_power_w", "memory_gb", "power_conditions"] : isBessOem ? ["manufacturer", "model", "variant", "record_scope", "energy_capacity_mwh", "energy_basis", "power_capacity_mw", "power_basis", "apparent_power_mva", "chemistry", "product_status"] : ["manufacturer", "model", el("metric").value];
   visible = [...new Set(["name", ...specific, "quality_status", "updated_at", "source_urls"])].filter((key) => key in index.fields);
 }
 function renderColumns() {
@@ -133,6 +133,12 @@ function render() {
         `${total.unknown} unknown · ${total.excluded} aggregate/unresolved exclusions`]);
     }
     summary.push([number(filtered.filter(r => r.historical_capacity_mw != null).length), "Historical capacity records", "Excluded until scope/status reconciliation; never a current MW total"]);
+  } else if (isWind && tableName === "turbines") {
+    const inventory = windTurbineSummary(filtered);
+    summary.push([number(inventory.projects), "Linked project identities", "Explicit registry parent links"],
+      [number(inventory.manufacturers), "Reported manufacturers", `${inventory.manufacturerUnknown} unknown; inventory labels, not OEM validation`],
+      [number(inventory.located), "Mapped turbine records", "Includes planned, erected and historical rows"],
+      [number(inventory.lifecycleUnknown), "Lifecycle unknown", "Erected alone does not establish operation"]);
   } else if (isWind && tableName === "equipment") {
     summary.push([number(new Set(filtered.map(r => r.manufacturer).filter(Boolean)).size), "Manufacturers"],
       [number(stats.known), "Metric reported"], [number(stats.missing), "Metric unknown"], [number(stats.mean), "Metric mean", fieldLabel(metric)]);
@@ -177,18 +183,20 @@ function render() {
 }
 async function renderMap() {
   if (!el("map-panel")) return;
-  const request = ++mapRequest, enabled = tableName === "projects";
+  const request = ++mapRequest, enabled = tableName === "projects" || (isWind && tableName === "turbines");
   el("map-panel").hidden = !enabled;
   el("visuals").classList.toggle("db-with-map", enabled);
   if (!enabled) return;
+  const noun = tableName === "turbines" ? "turbine records" : "projects";
+  el("map-title").textContent = tableName === "turbines" ? "Registry turbine locations" : "Project locations";
   const count = filtered.filter(hasLocation).length;
-  el("map-caption").textContent = count ? `${number(count)} mapped · ${number(filtered.length - count)} without valid coordinates. All matching projects contribute; zoom or open a group to explore.` :
-    filtered.length ? "No matching projects have valid coordinates. They remain available in the table and capacity totals." : "No projects match these filters.";
+  el("map-caption").textContent = count ? `${number(count)} mapped · ${number(filtered.length - count)} without valid coordinates. All matching ${noun} contribute; zoom or open a group to explore.` :
+    filtered.length ? `No matching ${noun} have valid coordinates. They remain available in the table.` : `No ${noun} match these filters.`;
   el("map-fit").disabled = !count;
   try {
     mapModule ||= import("./database-map.mjs");
     const {createProjectMap} = await mapModule;
-    if (request !== mapRequest || tableName !== "projects") return;
+    if (request !== mapRequest || !(tableName === "projects" || (isWind && tableName === "turbines"))) return;
     projectMap ||= createProjectMap(el("map"), showRecord, root.dataset.database || "pv");
     projectMap.update(filtered, {worldView: isBess && filtered.length === rows.length});
   } catch {

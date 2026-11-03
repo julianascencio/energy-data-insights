@@ -77,3 +77,14 @@ REPD lifecycle updates do not by themselves resolve phase or repowering overlap.
    uv run python examples/database/plot_wind_catalogue.py
 
 The production viewer becomes available after PR merge and Pages deployment.
+
+
+Registry turbine inventory
+--------------------------
+
+Select Turbines to explore explicit registry children, their project IDs and
+reported model labels on the clustered map. Inventory counts include planned,
+erected and historical rows; erection does not establish current operation.
+Maximum turbine ratings and calculated annual production stay in qualified
+metadata, outside installed project-capacity totals. Project map anchors may
+identify one reported turbine rather than a farm centroid; inspect precision.

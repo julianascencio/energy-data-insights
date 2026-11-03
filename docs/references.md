@@ -6303,3 +6303,27 @@ Natural Resources Canada (2026). **Canadian Wind Turbine Database**. [Source](ht
 **Role:** data_source. Inventory snapshot with source project/turbine attributes; not independent evidence of current operation.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/canada.py`.
+
+### vindbrukskollen_open_inventory_2026
+
+Länsstyrelserna; Swedish Energy Agency (2026). **Vindbrukskollen land-based project areas and wind turbines**. [Source](https://www.energimyndigheten.se/energisystem-och-analys/el--och-varmeproduktion/vindkraft/vindbrukskollen/)
+
+**Role:** data source. CC0 registry data. Complete OMRID < 0500 query partition; original response checksums and raw status semantics retained.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### vensys_technical_sheets_2025
+
+VENSYS Energy AG (2025). **VENSYS current product technical data sheets, July–August 2025**. [Source](https://www.vensys.de/en/media)
+
+**Role:** data source. Seven exact OEM configurations; p2 tables; original PDF checksums in Wind source registry. AEP tables are not instantaneous power curves.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### mastr_full_export_20261103
+
+Bundesnetzagentur (2026). **Marktstammdatenregister Gesamtdatenexport 26.2**. [Source](https://www.marktstammdatenregister.de/MaStR/Datendownload)
+
+**Role:** data source. Research acquisition only; original wind XML extracted with HTTP byte ranges. Full ZIP checksum unavailable; no farm identities imported yet.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

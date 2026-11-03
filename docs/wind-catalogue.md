@@ -211,3 +211,67 @@ source dictionaries. Original workbook units and commissioning strings are
 retained. The source registry and decision ledger preserve the original checksum
 and Excel-row locators. See `nrcan_wind_turbine_database_2026` in the citation
 catalogue. The portal update date is not a commercial-operation date.
+
+
+## Swedish registry areas, turbine inventory and VENSYS equipment
+
+The 10:35 batch covers the complete `OMRID < '0500'` partition in the official
+Vindbrukskollen MapServer: Stockholm, Uppsala and Södermanland. Layers 2 and 3
+supply 89 development areas; layers 5–12 supply 348 georeferenced turbine rows.
+Seventy-two named area identities and 321 explicit `VERKID` children are added.
+Ten repeated municipality/name areas, five unnamed areas and two areas without
+linked turbines remain deferred; two turbine rows lack a published parent area.
+All ten pre-existing Swedish records are preserved. Names and proximity to any
+existing Swedish project trigger reconciliation rather than automatic addition.
+
+A registry area is a documented development scope, not proof of an independent
+physical farm or repowering generation. Every new project retains unresolved
+aggregation scope. `Uppfört` means physically erected: current operation remains
+unknown. Permitted, dismantled and withdrawn states map only where explicit;
+mixed states and refused applications keep raw history without a guessed current
+lifecycle. Source dates, organizations, permit types, modeled annual production,
+maximum turbine ratings and boundary polygons remain attached. Reported zero
+annual production is preserved; zero dimensions and placeholder model/date
+values become null in normalized fields, with originals retained.
+
+Project map anchors use an explicitly identified linked turbine coordinate,
+not an invented centroid. Turbine points are transformed by the source service
+to EPSG:4326; positional accuracy remains unquantified. The viewer's turbine
+table has parent IDs, model labels, dimensions, filters, clustered map and
+inventory KPIs. Counts include proposed and historical records. Fleet composition
+is partial; no inventory label is promoted to an exact OEM configuration.
+
+The reusable offline adapter accepts complete source GeoJSON queries:
+
+```bash
+uv run python -m energy_data_retrieval.wind_catalogue.sweden \
+  --input /path/to/downloaded-queries --source-prefix vbk-20261103 \
+  --timestamp 2026-11-03T10:45:00Z \
+  --output /tmp/vbk-staged.jsonl --ledger /tmp/vbk-decisions.jsonl
+```
+
+Use the exact ten query URLs and checksums in
+`research/2026-11-03-1035-source-review.json`; save responses as
+`vbk-layerN.geojson`. This staging command never modifies canonical data and
+refuses output-file replacement. Existing IDs are held for explicit enrichment
+review. To reproduce the accepted first partition, use the pre-batch catalogue
+at `fc308ef3`; rerunning against the updated catalogue correctly holds its IDs.
+See `vindbrukskollen_open_inventory_2026` in the citation catalogue. Both original
+ZIP metadata files identify the inventory as CC0; background maps are separate.
+
+All seven currently linked VENSYS product sheets were reviewed, with original
+PDF checksums and p2 locators (`vensys_technical_sheets_2025`). Tower/IEC and grid
+frequency options remain nested within each exact configuration. VENSYS 175
+uses a medium-speed geared drivetrain; earlier direct-drive designs are not
+silently generalized to it. Thermal derating conditions and acoustic mode
+qualifications are retained. The VENSYS 136 PDF and undated webpage disagree on
+sound power; the normalized scalar is null pending revision/mode reconciliation.
+Numerical AEP tables retain unknown density/distribution and cannot substitute
+for instantaneous power curves. Seven plotted curves are deferred, not digitized.
+
+Germany's MaStR wind XML was acquired via verified HTTP206 ZIP byte ranges:
+44,351 unit rows, plus both catalogue dictionaries. Member SHA-256 values are
+recorded; a checksum for the undownloaded full archive is explicitly unavailable.
+The next task is the complete Schleswig-Holstein named-farm partition after
+catalogue-code verification and WRI reconciliation, not automatic turbine
+clustering. See `mastr_full_export_20261103` and the ranked backlog.

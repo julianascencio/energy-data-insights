@@ -139,3 +139,13 @@ export function windCapacity(rows, field) {
   }
   return {excluded: rows.length - selected.length, unknown: selected.filter(r => r[field] == null).length, byStatus};
 }
+
+// Registry inventory counts describe observations, never an operating fleet.
+export function windTurbineSummary(rows) {
+  const selected = rows.filter(row => row.entity_type === "turbines");
+  return {projects: new Set(selected.map(row => row.project_record_id).filter(Boolean)).size,
+    manufacturers: new Set(selected.map(row => row.manufacturer).filter(Boolean)).size,
+    manufacturerUnknown: selected.filter(row => !row.manufacturer).length,
+    located: selected.filter(hasLocation).length,
+    lifecycleUnknown: selected.filter(row => !row.status || row.status === "unknown").length};
+}

@@ -138,6 +138,25 @@ if inventory_counts:
     )
 
 # %%
+# Swedish registry turbine states include proposals and historical equipment.
+# "Uppfört" means physically erected, not independently verified operation.
+swedish = [r for r in rows if r["entity_type"] == "turbines" and r.get("country_code") == "SWE"]
+if swedish:
+    inventory = pd.DataFrame(
+        {
+            "Registry state": json.loads(r["extensions_json"])["source_fields"]["STATUS"],
+            "Reported manufacturer": r.get("manufacturer") or "Unknown",
+        }
+        for r in swedish
+    )
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5), layout="constrained")
+    for ax, field in zip(axes, inventory.columns, strict=True):
+        inventory[field].value_counts().sort_values().plot.barh(ax=ax, color="#198c92")
+        ax.set(title=field, xlabel="Registry turbine records; all lifecycle states")
+    print("Swedish linked project identities:", len({r["project_record_id"] for r in swedish}))
+    print("Inventory maximum ratings are not summed into installed project MW.")
+
+# %%
 # The two original numerical tables share density, pitch mode, turbulence,
 # averaging period and manufacturer-calculated basis. Digitized curves are rejected.
 curves = [r for r in rows if r["entity_type"] == "curves"]

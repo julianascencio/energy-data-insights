@@ -3,15 +3,16 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 5,355 project records (5,354 non-group records),
-53 exact equipment records (51 turbines, one blade and one converter), two original numerical
-power curves, 59 countries and six manufacturer names. These totals are now merged in main at `33eec838`. These are catalogue counts, not an operating census.
+The proposed branch contains 5,427 project records (5,426 non-group records),
+60 exact equipment records, 321 registry turbine records and two original numerical
+power curves, across 59 countries and seven equipment manufacturer names.
+Merged main at `5063c416` contains 5,355 projects, 53 equipment, zero individual
+turbines and two curves. These are catalogue counts, not an operating census.
 
-The initial 5,344-row WRI import is historical. The latest continuation enriches
-642 existing identities through the complete REPD Q2 2026 Wind/crosswalk review,
-adds 22 exact OEM records, and preserves all 642 capacity-scope exclusions.
-2,216 other REPD applications remain deferred for identity review. No individual
-turbine inventory has yet been imported. See the dated ledgers for per-run counts.
+The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
+not resolve capacity scope; 2,216 other applications remain deferred. Swedish
+registry areas and their explicit turbine children also stay outside project
+capacity totals until physical phase/repowering scope is reconciled.
 
 See [the evidence guide](../../docs/wind-catalogue.md),
 [viewer source](../../docs/wind-database-viewer.rst),
@@ -39,3 +40,9 @@ The 09:35 Canadian continuation reviews all 327 NRCan project groups and enriche
 117 existing identities with inventory fleet details; 210 remain deferred.
 Lifecycle and all capacity exclusions remain unchanged. Individual turbines
 and exact OEM records are not inferred from inventory model labels.
+
+The 10:35 continuation processes all 89 land-based registry areas and 348 turbine
+rows in Stockholm, Uppsala and Södermanland. It adds 72 named project identities
+and 321 linked turbines; 17 areas and two orphan turbine rows remain deferred.
+Seven current VENSYS technical sheets yield seven exact configurations. The
+VENSYS 136 sound-power conflict remains null with both observations preserved.

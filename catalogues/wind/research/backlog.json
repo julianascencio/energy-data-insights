@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T09:35:00Z",
+  "updated_at": "2026-11-03T10:50:00Z",
   "branch": "research/wind-20261103-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -85,7 +85,8 @@
         "Prioritize publicly identified ABB wind converters/generators and Winergy gearboxes; reuse cross-sector IDs where exact",
         "Do not ingest Siemens Gamesa 08/2026 overview PDF under its explicit reproduction restriction",
         "ACS880-77CC Rev A single exact cabinet processed; next ACS880-77LC/-87LC exact rating tables; generic ranges not exact configurations",
-        "77LC/87LC search found firmware manual referring readers to local ABB for hardware manual; no exact ratings table recovered. Do not substitute 07LC industrial drives."
+        "77LC/87LC search found firmware manual referring readers to local ABB for hardware manual; no exact ratings table recovered. Do not substitute 07LC industrial drives.",
+        "VENSYS current seven sheets completed; do not re-add nested tower options. Resolve VENSYS136105.8/104.1dBA revision/mode conflict. Next exact ENERCON current E-175EP5E1/E2, E-160EP5E3, E-138EP3E3 original sheets; no independent blade OEM inference from type labels."
       ]
     },
     {
@@ -130,9 +131,9 @@
       "SWE"
     ],
     "research_priority": [
-      "CAN",
       "DEU",
       "SWE",
+      "CAN",
       "CHN",
       "IND",
       "USA",
@@ -152,6 +153,42 @@
       "next_task": "Review deferred Canada groups in decision-ledger order; then explicit turbine IDs and lifecycle. German MaStR next new inventory."
     },
     "evidence_report": "2026-11-03-top10-source-review.json",
-    "source_guide": "2026-11-03-top10-markets.md"
+    "source_guide": "2026-11-03-top10-markets.md",
+    "sweden_partition": {
+      "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
+      "completed_where": "OMRID < '0500'",
+      "reviewed_areas": 89,
+      "reviewed_turbines": 348,
+      "next_where": "OMRID >= '0500' AND OMRID < '0600'",
+      "next_county": "Östergötland:227 areas in2026-11-02archive; query live count before staging",
+      "layers": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
+      "residual_ledger": "2026-11-03-1035-decisions.jsonl"
+    },
+    "germany_partition": {
+      "release": "Gesamtdatenexport_20261103_26.2.zip",
+      "members_acquired": [
+        "EinheitenWind.xml",
+        "Katalogwerte.xml",
+        "Katalogkategorien.xml"
+      ],
+      "all_unit_rows": 44351,
+      "next_partition": "Bundesland=1411 (catalogue category101 Schleswig-Holstein); all nonempty NameWindpark groups",
+      "next_task": "Verify coded fields/dictionary before adapter; use explicit operator, municipality, coordinates, installation dates and WRI candidate checks; never assume NameWindpark alone disambiguates phases",
+      "source_review": "2026-11-03-1035-source-review.json",
+      "offset": 0,
+      "status": "original_members_acquired_identity_adapter_pending"
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
-  "batch": "2026-11-03-0935",
-  "updated_at": "2026-11-03T09:35:00Z",
+  "batch": "2026-11-03-1035",
+  "updated_at": "2026-11-03T10:50:00Z",
   "baseline_main": "5063c41694b17b1a3fc856ea9527a32211278203",
   "branch": "research/wind-20261103-0935",
   "merged_wind_counts_at_baseline": {
@@ -10,11 +10,11 @@
     "turbines": 0
   },
   "branch_totals": {
-    "projects": 5355,
-    "non_group_projects": 5354,
-    "equipment": 53,
+    "projects": 5427,
+    "non_group_projects": 5426,
+    "equipment": 60,
     "curves": 2,
-    "turbines": 0,
+    "turbines": 321,
     "countries": 59,
     "manufacturers": [
       "ABB",
@@ -22,12 +22,14 @@
       "MHI Vestas Offshore Wind",
       "Nordex",
       "Siemens Gamesa",
+      "VENSYS Energy AG",
       "Vestas"
     ]
   },
   "changes_against_main": {
-    "new_projects": 0,
-    "new_equipment": 0,
+    "new_projects": 72,
+    "new_equipment": 7,
+    "new_turbines": 321,
     "substantively_enriched_existing_projects": 117,
     "substantively_enriched_existing_equipment": 0
   },
@@ -38,10 +40,10 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 772,
+  "primary_evidence_project_records": 844,
   "technology_counts": {
     "unknown": 4700,
-    "onshore": 617,
+    "onshore": 689,
     "offshore_unspecified": 32,
     "fixed_bottom_offshore": 2,
     "floating_offshore": 4
@@ -53,21 +55,22 @@
     "Existing 13 duplicate-name candidate groups remain unresolved",
     "Lake Turkana installed MW; V136-4.2 scalar; GE acoustic operating boundaries; SG 3.2-129 reported power-density discrepancy",
     "USWTDB release ZIP HTTP403; ANEEL daily CSV HTTP503, no asserted authentication/reuse restriction",
-    "Exact Changhua regional equipment configuration; independent generator/gearbox/converter/foundation models; archive curve provenance"
+    "Exact Changhua regional equipment configuration; independent generator/gearbox/converter/foundation models; archive curve provenance",
+    "Sweden17area candidates and2orphan turbines (27turbine rows total); VENSYS136sound_power_db_a conflict;7graph-only power curves held"
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
   "publication_base_main": "5063c41694b17b1a3fc856ea9527a32211278203",
-  "iteration_base_head": "5063c41694b17b1a3fc856ea9527a32211278203",
+  "iteration_base_head": "fc308ef30ccad2ec62adf85bed477d2f7be23622",
   "changes_this_run": {
-    "new_projects": 0,
-    "substantively_enriched_projects": 117,
-    "new_equipment": 0,
+    "new_projects": 72,
+    "substantively_enriched_projects": 0,
+    "new_equipment": 7,
     "substantively_enriched_equipment": 0,
     "new_curves": 0,
-    "new_turbines": 0
+    "new_turbines": 321
   },
   "repd_partition": {
     "selected_rows": 2858,
@@ -76,12 +79,18 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "Canada fleet enrichment; no new country",
-  "new_technology_coverage": "Inventory model/rotor/hub/rating composition; no new category",
+  "new_geography": "Three complete Swedish counties; SWE project coverage 10 to82; no new country",
+  "new_technology_coverage": "Onshore registry turbine children; VENSYS medium-speed geared and direct-drive OEM configurations",
   "reviewed_this_run": {
-    "canadian_project_groups": 327,
-    "enriched": 117,
-    "deferred": 210
+    "swedish_areas": 89,
+    "swedish_turbine_rows": 348,
+    "new_projects": 72,
+    "new_turbines": 321,
+    "deferred_areas": 17,
+    "orphan_turbines_deferred": 2,
+    "deferred_turbine_rows_total": 27,
+    "complete_oem_product_sheets": 7,
+    "quarantined_equipment_fields": 1
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -92,5 +101,8 @@
     "candidate_ledger": "2026-11-03-top10-canada-candidates.jsonl",
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
-  }
+  },
+  "source_review": "2026-11-03-1035-source-review.json",
+  "decision_ledger": "2026-11-03-1035-decisions.jsonl",
+  "equipment_ledger": "2026-11-03-1035-equipment.jsonl"
 }

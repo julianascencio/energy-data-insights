@@ -1,27 +1,28 @@
 {
-  "batch": "2026-11-03-0935",
+  "batch": "2026-11-03-1035",
   "local": {
-    "pytest": "1839 passed, 1 optional cdsapi skip; seven Canada tests passed again after type narrowing",
-    "adapter": "7 synthetic tests passed",
-    "catalogue": "5410 records validated",
-    "snapshots": "two independent builds byte-identical",
-    "preservation": "5293 records unchanged;117 only inventory extensions/provenance/review timestamps changed; all capacity summaries unchanged",
-    "viewer": "13 Node tests passed",
-    "example": "Wind gallery example executed offline",
-    "sphinx": "strict build passed;445-page link audit passed; final gallery update checked incrementally",
-    "ruff": "passed",
+    "pytest": "1847 passed, 1 optional cdsapi skip",
+    "adapter": "8 synthetic tests passed; full original-query offline replay exactly matches393acceptedproject/turbine records",
+    "catalogue": "5810 records validated;72newprojects321turbines7equipment",
+    "snapshots": "Two independent typed Zstandard builds byte-identical (all files), input SHA256 c09c21cfa6dd5e9c1f1a964d7140b649d8b82cf74fdcce992e331fe99e743753",
+    "preservation": "All5410prior records byte-equivalent as parsed records; all six capacity-category MW/lifecycle totals unchanged;72new unresolved scope exclusions",
+    "viewer": "14Node tests passed; viewer/map module syntax checks passed",
+    "example": "Wind gallery executed offline, including Swedish inventory chart",
+    "sphinx": "Strict build passed;447-page local link and asset audit passed",
+    "ruff": "passed after long-string formatting",
     "ty": "passed",
     "citations": "passed",
-    "repository_hygiene": "2774 candidates passed"
+    "repository_hygiene": "passed; no flagged raw data or secrets"
   },
   "corrected_initial_failures": [
-    "Missing required citation metadata fields",
-    "Ruff import/zip formatting",
-    "Type narrowing for optional values"
+    "Legacy test assumed zero individual turbines; replaced with canonical count and parent-link assertions",
+    "New citation used_by values corrected to real repository paths",
+    "Long adapter string formatting corrected",
+    "Initial local staging attempted PV-only writer; validation rejected it; finalized Wind-only dated shards with exact prior-record preservation"
   ],
   "not_executed": [
     "package builds",
     "new browser smoke test"
   ],
-  "remote_ci": "pending publication"
+  "remote_ci": "New commit not yet published; local results above are not remote CI results"
 }
