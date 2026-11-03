@@ -1,0 +1,555 @@
+{
+  "source_id": "odre_hauts_5_20_20261103T0100",
+  "source_sha256": "cfcf75575d815eeee31f5359ba1ba27ae0bdf0c793b33c3c718a0d95224fbf93",
+  "identity_sha256": "8e5e385bde15a557411f80993035e4fb87faafb99b08e6b526712dc50a4c1cda",
+  "snapshot_date": "2026-08-31",
+  "mode": "enrichment",
+  "accepted_eics": [
+    "17W000000982094F",
+    "17W000001004754I",
+    "17W000001401071X",
+    "17W000001401072V",
+    "17W000001401098D",
+    "17W0000014100147",
+    "17W000001537962H",
+    "17W0000021962156",
+    "17W000002248618Y",
+    "17W000002248620A",
+    "17W0000022486218",
+    "17W000002267005N",
+    "17W000002267008H"
+  ],
+  "observations": 47,
+  "enriched": 13,
+  "fields_added": 52,
+  "held": 34,
+  "review": [
+    {
+      "eic": "17W000001023393H",
+      "review_key": "17W000001023393H",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000001329017V",
+      "review_key": "17W000001329017V",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000001023575B",
+      "review_key": "17W000001023575B",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W0000012321948",
+      "review_key": "17W0000012321948",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000001235364V",
+      "review_key": "17W000001235364V",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000000043384E",
+      "review_key": "17W000000043384E",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000001713857W",
+      "review_key": "17W000001713857W",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000002145350Z",
+      "review_key": "17W000002145350Z",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002064930H",
+      "review_key": "17W000002064930H",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000002362530M",
+      "review_key": "17W000002362530M",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000001023513X",
+      "review_key": "17W000001023513X",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W0000000434599",
+      "review_key": "17W0000000434599",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W0000004760664",
+      "review_key": "17W0000004760664",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W000001023297D",
+      "review_key": "17W000001023297D",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000001313199Z",
+      "review_key": "17W000001313199Z",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W000001034971T",
+      "review_key": "17W000001034971T",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000001034970V",
+      "review_key": "17W000001034970V",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000000977053A",
+      "review_key": "17W000000977053A",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002065336O",
+      "review_key": "17W000002065336O",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002456628L",
+      "review_key": "17W000002456628L",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002456632U",
+      "review_key": "17W000002456632U",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002456629J",
+      "review_key": "17W000002456629J",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002456630Y",
+      "review_key": "17W000002456630Y",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002456631W",
+      "review_key": "17W000002456631W",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000001680162A",
+      "review_key": "17W000001680162A",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W0000014011411",
+      "review_key": "17W0000014011411",
+      "result": "held",
+      "reason": "anonymous_or_confidential"
+    },
+    {
+      "eic": "17W0000013521169",
+      "review_key": "17W0000013521169",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000001978147P",
+      "review_key": "17W000001978147P",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000002013189E",
+      "review_key": "17W000002013189E",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000002145295H",
+      "review_key": "17W000002145295H",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000001577856T",
+      "review_key": "17W000001577856T",
+      "result": "held",
+      "reason": "phase_or_existing_extension_review"
+    },
+    {
+      "eic": "17W000002518884A",
+      "review_key": "17W000002518884A",
+      "result": "held",
+      "reason": "absent_or_nonunique_canonical_eic"
+    },
+    {
+      "eic": "17W000002196100N",
+      "result": "held",
+      "reason": "multiple_EICs_target_one_canonical_project"
+    },
+    {
+      "eic": "17W000002213515D",
+      "result": "held",
+      "reason": "multiple_EICs_target_one_canonical_project"
+    },
+    {
+      "eic": "17W000000982094F",
+      "result": "accepted",
+      "record_id": "44e4950e-8e02-52c0-a4c9-0fd36aca44de",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000000982094F",
+          "native_fields": {
+            "datemiseenservice": "15/09/2020",
+            "gestionnaire": "Enedis",
+            "postesource": "RIEZ"
+          },
+          "phase_id": "G100000819847",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000001004754I",
+      "result": "accepted",
+      "record_id": "4b1eab49-4824-52dc-8fb3-919a40e591bb",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000001004754I",
+          "native_fields": {
+            "datemiseenservice": "22/01/2021",
+            "gestionnaire": "Enedis",
+            "postesource": "PREMY"
+          },
+          "phase_id": "G100000819848",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000001401071X",
+      "result": "accepted",
+      "record_id": "94a84df6-cdfd-576c-affb-4e801e8893ca",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000001401071X",
+          "native_fields": {
+            "datemiseenservice": "27/01/2022",
+            "gestionnaire": "SICAE Oise",
+            "postesource": "CATEN"
+          },
+          "phase_id": "G100000820291",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000001401072V",
+      "result": "accepted",
+      "record_id": "4844aaf5-300f-5832-9d46-f3bf35fe1fc7",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000001401072V",
+          "native_fields": {
+            "datemiseenservice": "16/03/2022",
+            "gestionnaire": "SICAE Oise",
+            "postesource": "CATEN"
+          },
+          "phase_id": "G100000820292",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000001401098D",
+      "result": "accepted",
+      "record_id": "7dcf9ad6-5a37-5386-abb5-ecdb43bc1742",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000001401098D",
+          "native_fields": {
+            "datemiseenservice": "18/02/2021",
+            "gestionnaire": "SICAE Oise",
+            "postesource": "ESTR5"
+          },
+          "phase_id": "G100000819213",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W0000014100147",
+      "result": "accepted",
+      "record_id": "7f822927-d32b-51e2-9b5e-a4c42246c896",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W0000014100147",
+          "native_fields": {
+            "datemiseenservice": "30/08/2022",
+            "gestionnaire": "Enedis",
+            "postesource": "V.COT"
+          },
+          "phase_id": "G100000820421",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000001537962H",
+      "result": "accepted",
+      "record_id": "9c72037a-5c31-528d-832d-6453d31e0d90",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000001537962H",
+          "native_fields": {
+            "datemiseenservice": "02/05/2023",
+            "gestionnaire": "Enedis",
+            "postesource": "V.COT"
+          },
+          "phase_id": "G100001003910",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W0000021962156",
+      "result": "accepted",
+      "record_id": "20406cdb-065c-50fb-a4a2-7968ab582c59",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W0000021962156",
+          "native_fields": {
+            "datemiseenservice": "19/02/2025",
+            "gestionnaire": "Enedis",
+            "postesource": "CARRI"
+          },
+          "phase_id": "G100001072344",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000002248618Y",
+      "result": "accepted",
+      "record_id": "bc7e5402-9a54-5601-a309-64523f91d320",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000002248618Y",
+          "native_fields": {
+            "datemiseenservice": "29/04/2025",
+            "gestionnaire": "Enedis",
+            "postesource": "CARRI"
+          },
+          "phase_id": "G100001005203",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000002248620A",
+      "result": "accepted",
+      "record_id": "19b2a23e-5ea0-5867-ac79-ad23277bfd88",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000002248620A",
+          "native_fields": {
+            "datemiseenservice": "30/04/2025",
+            "gestionnaire": "Enedis",
+            "postesource": "CARRI"
+          },
+          "phase_id": "G100001072345",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W0000022486218",
+      "result": "accepted",
+      "record_id": "31227193-a1f7-55c1-94ed-1eabff806bed",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W0000022486218",
+          "native_fields": {
+            "datemiseenservice": "28/04/2025",
+            "gestionnaire": "Enedis",
+            "postesource": "CARRI"
+          },
+          "phase_id": "G100001072346",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000002267005N",
+      "result": "accepted",
+      "record_id": "7af35e1e-cc86-54eb-a029-f7416d661634",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000002267005N",
+          "native_fields": {
+            "datemiseenservice": "28/05/2025",
+            "gestionnaire": "Enedis",
+            "postesource": "BARR6"
+          },
+          "phase_id": "G100001072347",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    },
+    {
+      "eic": "17W000002267008H",
+      "result": "accepted",
+      "record_id": "d86a63d6-9863-5cea-83dd-a96f28f829f3",
+      "fields_added": [
+        "grid_operator",
+        "substation",
+        "commissioning_date",
+        "extensions_json"
+      ],
+      "evidence": {
+        "odre_crosswalk_evidence": {
+          "as_of_snapshot": "2026-08-31",
+          "eic": "17W000002267008H",
+          "native_fields": {
+            "datemiseenservice": "27/05/2025",
+            "gestionnaire": "Enedis",
+            "postesource": "BARR6"
+          },
+          "phase_id": "G100001072348",
+          "scope": "Exact unique EIC in one complete canonical phase; no fuzzy/name merge; registry industrial-service date does not prove current operation.",
+          "source_id": "odre_hauts_5_20_20261103T0100"
+        }
+      }
+    }
+  ]
+}

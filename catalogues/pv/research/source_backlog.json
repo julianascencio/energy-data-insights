@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T00:34:41.368018+00:00",
+  "updated_at": "2026-11-03T01:17:27.871921+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "Three official registry partitions exhausted:166 distinct Madrid municipalPV additions and210 French existing-project enrichments/840 fields;17 exact Solis models and1 Electroinvent combiner. Source-specific privacy/rights/identity holds retained; no US bulk or historical tail-operator churn.",
-  "next_highest_value_source": "Spain Aragón operational PV resource319, ordinary CSV/GeoJSON download after fresh access/revision check and stable-ID/phase reconciliation. If transport remains blocked, ODRE Bourgogne-Franche-Comté PHOTV5–20MW exact-EIC enrichment.",
+  "selection_note": "Five fresh ODRE5–20MW partitions:353 observations,59 enrichments. Aragón344 GIS features staged with tested offline parser/CLI; one independently corroborated Torrubia historical promoter enrichment.11 exact Livoltek models accepted and deepened;24 conflicting field groups withheld.",
+  "next_highest_value_source": "Aragón resource319: obtain authoritative CRS and actual layer revision, then resolve13 remaining exact-name crosswalk suggestions using primary project authorisations. Do not infer AC from inverter MWp. Next fresh French partition: Bretagne PHOTV5–20MW.",
   "sources": [
     {
       "id": "uk_repd",
@@ -4438,7 +4438,7 @@
       "source_url": "https://opendata.aragon.es/GA_OD_Core/download?resource_id=319&formato=json",
       "version_or_date": "Currentcatalogueretrieved3November2026; exactdataversionnotestablished",
       "licence_assessment": "Officialdataset anddefaulttermsCCBY4.0; attribution/updateconditions; no source-specificexceptionobserved",
-      "access_assessment": "Official catalogue and terms200; legacy CKAN endpoint404; resource319 GeoJSON and CSV ordinary requests timed out. No bypass.",
+      "access_assessment": "Ordinary CSV and GeoJSON now200;344 matching feature/property tuples, exact checksums in dated ledger. Prior timeout condition resolved.",
       "estimated_useful_yield": {
         "potential": "tens tohundreds, unverifiedplanningestimate",
         "accepted": 0
@@ -4450,14 +4450,19 @@
         "lifecycle",
         "geographicgeometry; fields requireactualsample"
       ],
-      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
-      "result": "Official catalogue and CC BY4.0 terms accessible; resource319 identifies operating PV separately from pipeline scopes. GeoJSON and subsequent ordinary CSV requests both timed out. Zero data rows accepted.",
+      "last_attempt": "2026-11-03T01:17:27.871921+00:00",
+      "result": "One Torrubia existing-project crosswalk accepted using independent2018BOAauthorisation,LaMuela/region andmatching50MWp panel capacity; only dateddeveloper/evidence added. Other343 GIS features held; no new plants,AC,coordinates orcurrentowner inference.",
       "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
-      "next_action": "Retry resource319 CSV/GeoJSON with ordinary access limits; inspect exact revision, schema, PV classification, IDs and phase/whole-project scope before an importer. If transport still fails, use the queued French partition.",
+      "next_action": "Resolve CRS and actual revision through official layer metadata; review13 remaining name suggestions andphase/aggregate scope,never fuzzymerge.",
       "processed_cursor": {
-        "resource_id": 319,
-        "scope": "Plantas fotovoltaicas en funcionamiento",
-        "ingested": false
+        "resource": 319,
+        "features_staged": 344,
+        "accepted_enrichments": 1,
+        "accepted_feature_ids": [
+          18892
+        ],
+        "held": 343,
+        "review_ledger": "20261103T0100_aragon_review.json"
       },
       "priority": 1
     },
@@ -4633,6 +4638,125 @@
         "exhausted": true
       },
       "priority": 2
+    },
+    {
+      "id": "odre_5regions_0100",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/",
+      "version_or_date": "31August2026 snapshot; metadata hash unchanged; national95302 individualPV IDs freshly hash-matched",
+      "licence_assessment": "Licence Ouverte2.0; existing attribution retained",
+      "access_assessment": "Five ordinary JSON exports successful; exact URLs/hashes/retrieval in dateddownload ledger",
+      "estimated_useful_yield": {
+        "observations": 353,
+        "enriched": 59,
+        "held": 294,
+        "direct_values": 177,
+        "evidence_objects": 59
+      },
+      "fields_offered": [
+        "grid operator",
+        "substation",
+        "registry industrial-service date",
+        "qualified exactEIC evidence"
+      ],
+      "last_attempt": "2026-11-03T01:17:27.871921+00:00",
+      "result": "Bourgogne65→7/58held;GrandEst87→10/77;Auvergne74→23/51;Centre80→6/74;Hauts47→13/34. Complete5–20MW selected partitions exhausted; no new projects.",
+      "retry_condition": "New revision or explicit resolution of documented identity/phase/private/evidence holds",
+      "next_action": "Bretagne5–20MW; refresh source/national identity bytes first",
+      "processed_cursor": {
+        "completed_regions": [
+          "27",
+          "44",
+          "84",
+          "24",
+          "32"
+        ],
+        "minimum_kw": 5000,
+        "maximum_kw_exclusive": 20000,
+        "accepted_enrichments": 59,
+        "exhausted": true
+      },
+      "priority": 2
+    },
+    {
+      "id": "livoltek_gt3_d1_0100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.livoltek.com/product/grid-tied-inverter-threephase-gt3-4-25kw/",
+      "version_or_date": "Undated HTML plus public attached202610V2 Edition datasheet; no day inferred",
+      "licence_assessment": "OEM copyright retained; selected individually reviewed factual metadata only. No full source/table/prose/artwork redistribution.",
+      "access_assessment": "Indexed PDF404; current public product page leads supportproductDetail9; publicly linked JS file lists exact PDF attachment, downloaded normally without login/form/auth bypass",
+      "estimated_useful_yield": {
+        "new_exact_models": 11,
+        "duplicate_5KD1_presentation_removed": 1,
+        "DL1_models_deferred": 2,
+        "conflicting_field_groups_withheld": 24
+      },
+      "fields_offered": [
+        "model-specific electrical",
+        "MPPT currents/strings",
+        "efficiency",
+        "mass",
+        "environment/derating",
+        "cooling",
+        "protection",
+        "qualified interfaces"
+      ],
+      "last_attempt": "2026-11-03T01:17:27.871921+00:00",
+      "result": "11 new exactD1 models accepted; legal manufacturer from OEM privacy notice. PDF1000V versusHTML1100V and newdimensions conflict;15/17Kefficiencies differ. All46 affected scalar values withheld, both assertions retained. No warranty,protocol,MPPT/strings oractivepower inference.",
+      "retry_condition": "Clear revision/scope clarification for held values; no arbitrary source winner",
+      "next_action": "Resolve24 held groups before assigning maxvoltage/dimensions/15–17Kmaxefficiency; review distinct next OEM table with same source-specific rights checks",
+      "processed_cursor": {
+        "accepted_models": [
+          "GT3-4KD1",
+          "GT3-5KD1",
+          "GT3-6KD1",
+          "GT3-8KD1",
+          "GT3-10KD1",
+          "GT3-12KD1",
+          "GT3-15KD1",
+          "GT3-17KD1",
+          "GT3-20KD1",
+          "GT3-22KD1",
+          "GT3-25KD1"
+        ],
+        "table_exhausted": true,
+        "DL1_deferred": [
+          "GT3-10KDL1",
+          "GT3-12KDL1"
+        ]
+      },
+      "priority": 2
+    },
+    {
+      "id": "tracker_combiner_0100",
+      "country": "GLOBAL",
+      "entity": "trackers/combiner_boxes",
+      "source_url": "https://www.degerenergie.de/wp-content/uploads/2025/03/DEGER-D100-DEGER-D80_EN_2025.pdf",
+      "version_or_date": "Fresh3November2026 attempts; no tracker version accepted",
+      "licence_assessment": "Q3 legal notice requires prior written consent for any partial use; no accepted Q3 rows. DEGER rights not reviewed due403.",
+      "access_assessment": "Scorpius homepage503; DEGER homepage/PDF403; Q3 publicdatasheets accessible then held on exact legal terms",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "Q3_exact_SKUs_rights_held": 2
+      },
+      "fields_offered": [
+        "potential tracker specifications",
+        "Q3 exact combiner mechanical/electrical conditions"
+      ],
+      "last_attempt": "2026-11-03T01:17:27.871921+00:00",
+      "result": "Did not derive tracker data from indexed text or bypass403. Q3 GAKLITE1/2 sheets substantial but restricted, no rows accepted. SOFAR2024 sheet overlaps alreadyaccepted2026V7.4 models; no timestamp churn or downgrade.",
+      "retry_condition": "Ordinary access recovery and suitable source-specific reuse; no contact/form or bypass",
+      "next_action": "Another permitted tracker/combiner OEM; do not repeatedly reprocess these held sources without changed conditions",
+      "processed_cursor": {
+        "Q3_model_ids": [
+          "G1.1.00.00.1.KL.KL.12-S",
+          "G2.1.00.00.1.KL.KL.12-S"
+        ],
+        "accepted": 0
+      },
+      "priority": 3
     }
   ]
 }

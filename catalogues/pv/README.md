@@ -303,3 +303,20 @@ Multiple source connections targeting one project, ambiguous/aggregate/private
 identities, future dates and existing extensions require review. Populated facts
 are preserved and differing native assertions retained as unresolved evidence.
 Replay against the ledger's pinned pre-enrichment baseline, then use upsert.
+
+## Aragón operating-PV discovery
+
+`pv_catalogue.aragon.read_aragon_geojson` and `scripts/stage_pv_aragon.py` verify a
+pinned resource319 FeatureCollection and stage review-only metadata. This stage
+assigns no canonical project IDs and performs no upsert. The GIS feature ID is not
+a national plant ID. Projected-looking polygons without a declared CRS do not
+become latitude/longitude or centroids, and the native inverter field labelled
+MWp does not become AC capacity. Promoter names are omitted from staged output.
+
+```bash
+uv run python scripts/stage_pv_aragon.py --input /raw/aragon319.json \
+  --sha256 <reviewed-source-sha256> --output /tmp/aragon-review-only.jsonl
+```
+
+Reconcile site/phase identities and source revision before accepting fields. CSV
+and GeoJSON export agreement is a source consistency check, not identity approval.
