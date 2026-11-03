@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T18:02:29.596791+00:00",
+  "updated_at": "2026-11-03T18:57:57.029479+00:00",
   "ranking_file": "20261103T1800_top10_coverage.json",
   "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
-  "next_highest_value_source": "Ergon Burketown dedicated works record, then UK REPD Q2 2026 pending-construction partition and exact Ref IDs.",
+  "next_highest_value_source": "REPD Q2 2026 awaiting-construction exact-identity enrichment, Scotland first.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6245,6 +6245,67 @@
         "release": "2026-11-03",
         "accepted": 0
       }
+    },
+    {
+      "id": "repd_q2_construction_crosswalk",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "2026 Q2",
+      "licence_assessment": "OGL v3",
+      "access_assessment": "Official publication and document available",
+      "estimated_useful_yield": 80,
+      "fields_offered": [
+        "planning references",
+        "planning milestones"
+      ],
+      "last_attempt": "2026-11-03T18:57:57.029479+00:00",
+      "result": "80 enriched; 51 held",
+      "retry_condition": "Verify new revision or independent primary evidence.",
+      "next_action": "Review awaiting-construction Scotland cohort by exact IDs and aliases.",
+      "processed_cursor": "80 enriched; 51 held"
+    },
+    {
+      "id": "burketown_council_20241129",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.burke.qld.gov.au/files/assets/public/v/1/our-council/documents/council-meetings/2024/241129_Confirmed_Minutes.pdf",
+      "version_or_date": "2024-11-29",
+      "licence_assessment": "Limited factual attribution",
+      "access_assessment": "Official publication and document available",
+      "estimated_useful_yield": 1,
+      "fields_offered": [
+        "parcel",
+        "PV design",
+        "storage",
+        "grid voltage"
+      ],
+      "last_attempt": "2026-11-03T18:57:57.029479+00:00",
+      "result": "Accepted dated approval only",
+      "retry_condition": "Verify new revision or independent primary evidence.",
+      "next_action": "Check operator commissioning and as-built AC/DC ratings.",
+      "processed_cursor": "Accepted dated approval only"
+    },
+    {
+      "id": "solis_nga_k02_202507",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.solisinverters.com/ng/solarinverter38/S6-GR3P%283-10%29K02-NV-ND_ng.html",
+      "version_or_date": "NGA V1.5 July 2025",
+      "licence_assessment": "OEM copyright retained",
+      "access_assessment": "Official publication and document available",
+      "estimated_useful_yield": 0,
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "interfaces"
+      ],
+      "last_attempt": "2026-11-03T18:57:57.029479+00:00",
+      "result": "Seven exact models already present",
+      "retry_condition": "Verify new revision or independent primary evidence.",
+      "next_action": "Seek materially distinct OEM model family.",
+      "processed_cursor": "Seven exact models already present"
     }
   ]
 }
