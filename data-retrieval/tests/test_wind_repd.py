@@ -177,3 +177,30 @@ def test_reviewed_label_change_keeps_repeated_names_excluded():
         allow_resubmission_labels=True,
     )
     assert changed == []
+
+
+def test_procedural_history_preserves_refusal_and_later_appeal():
+    from energy_data_retrieval.wind_catalogue.repd import procedural_milestones
+
+    events = procedural_milestones(
+        {
+            "Planning Permission Refused": "01/02/2008",
+            "Appeal Granted": "03/04/2009",
+            "Appeal Refused": "",
+        },
+        source_id="repd",
+        locator="row 2",
+    )
+    assert [(x["event"], x["date"]) for x in events] == [
+        ("Planning Permission Refused", "2008-02-01"),
+        ("Appeal Granted", "2009-04-03"),
+    ]
+    assert all(x["source_id"] == "repd" for x in events)
+    assert events[1]["locator"].endswith("; Appeal Granted")
+
+
+def test_procedural_history_rejects_invalid_date():
+    from energy_data_retrieval.wind_catalogue.repd import procedural_milestones
+
+    with pytest.raises(ValueError):
+        procedural_milestones({"Appeal Granted": "31/02/2009"}, source_id="repd", locator="row 2")

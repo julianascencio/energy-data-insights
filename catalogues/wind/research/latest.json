@@ -1,12 +1,12 @@
 {
-  "batch": "2026-11-03-0731-resubmissions-abb",
-  "updated_at": "2026-11-03T07:36:00Z",
-  "baseline_main": "15e9d60b84b0e741979437fd8d7172f0d7e30824",
-  "branch": "research/global-wind-database-20261103",
+  "batch": "2026-11-03-0835",
+  "updated_at": "2026-11-03T08:35:04Z",
+  "baseline_main": "33eec8385eeb6c9d20b27bfce106d24a38e2e78c",
+  "branch": "research/wind-20261103-0835",
   "merged_wind_counts_at_baseline": {
-    "projects": 0,
-    "equipment": 0,
-    "curves": 0,
+    "projects": 5355,
+    "equipment": 53,
+    "curves": 2,
     "turbines": 0
   },
   "branch_totals": {
@@ -26,11 +26,10 @@
     ]
   },
   "changes_against_main": {
-    "new_projects": 5355,
-    "new_equipment": 53,
-    "substantively_enriched_existing_projects": 0,
-    "substantively_enriched_existing_equipment": 0,
-    "within_import_primary_enrichments": 2
+    "new_projects": 0,
+    "new_equipment": 0,
+    "substantively_enriched_existing_projects": 114,
+    "substantively_enriched_existing_equipment": 0
   },
   "historical_partition": {
     "selected_rows": 5344,
@@ -56,16 +55,16 @@
     "USWTDB release ZIP HTTP403; ANEEL daily CSV HTTP503, no asserted authentication/reuse restriction",
     "Exact Changhua regional equipment configuration; independent generator/gearbox/converter/foundation models; archive curve provenance"
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
-  "publication_base_main": "15e9d60b84b0e741979437fd8d7172f0d7e30824",
-  "iteration_base_head": "9ecc172254862c6deb5e8387caedcf7f7b825fb4",
+  "publication_base_main": "47cf12e8d95e4da29a52a54e3235db41ecce0d08",
+  "iteration_base_head": "33eec8385eeb6c9d20b27bfce106d24a38e2e78c",
   "changes_this_run": {
     "new_projects": 0,
-    "substantively_enriched_projects": 0,
-    "new_equipment": 1,
+    "substantively_enriched_projects": 114,
+    "new_equipment": 0,
     "substantively_enriched_equipment": 0,
     "new_curves": 0,
     "new_turbines": 0
@@ -77,12 +76,11 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "No new country; United Kingdom primary registry reconciliation",
-  "new_technology_coverage": "First exact wind power converter cabinet; no inferred turbine compatibility",
+  "new_geography": "No new country",
+  "new_technology_coverage": "No new category",
   "reviewed_this_run": {
-    "renamed_repd_candidates": 55,
-    "replacement_link_deferrals": 27,
-    "semantic_or_capacity_deferrals": 28,
-    "exact_equipment_added": 1
+    "unlinked_applications": 200,
+    "procedural_history_enrichments": 114,
+    "dated_events_added": 232
   }
 }
