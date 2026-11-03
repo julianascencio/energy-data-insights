@@ -71,6 +71,7 @@ zeros remain observations; missing values are never filled with zero.
 | `physics` | `fit_physics_model` | Accepted POA, ambient °C and hourly MWh. Two analytically constrained model families. |
 | `lightgbm` | `fit_lightgbm` | Separate monotone tree model; explicitly bounded threads and deterministic configuration. |
 | `metrics` | `energy_metrics` | Matching nonnegative actual/expected pairs, including reported zeros. |
+| `timestral` | `TimestralConnector.forecast`, `TimestralForecast` | Optional Mistral local inference; uniform time steps, original units, joint targets and covariates, CPU NumPy quantiles. |
 | `status` | `classify_status` | Ten observable hourly states plus envelope, band disagreement, near-zero and persistence evidence. |
 | `tdp` | `analyze_tdp` | Country-neutral DataFrame interface; configurable fixed profile clock, default UTC. |
 | `ccya` | `fit_ccya`, `CCYAModel.project`, `fit_site_adaptation` | Monthly GHI in W/m², ambient °C, native-calendar days and measured DC yield in kWh/kWp; complete years and separate scenario/member projections. |
@@ -80,6 +81,10 @@ exports its text booster representation, not a pickle. Physical models and tree
 models expose `weather_support()` independently of their broader prediction
 domain. This prevents an in-domain numerical value from silently becoming an
 independently supported operating reference.
+
+The [Timestral connector guide](../docs/timestral.md) documents installation,
+array shapes, pinned models and the runnable solar/wind example. Timestral and
+PyTorch are optional and loaded only when inference is explicitly requested.
 
 ## Training and evaluation order
 

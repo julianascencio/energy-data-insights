@@ -37,3 +37,11 @@ checksum-verified public responses. Download the :download:`PVGIS examples bundl
 The terrain example compares real native SRTM, Copernicus, IGN and USGS crops,
 with explicit resolution, surface type and vertical reference. Its download
 bundle includes the four small GeoTIFFs and full request provenance.
+
+Timestral forecasting
+--------------------
+
+The :doc:`Timestral solar/wind example </auto_examples/connectors/plot_timestral_forecast>` connects the
+optional Mistral model to an attributed EIA capture, with saved real inference,
+quantile bands and two baseline comparisons. It replays offline by default and
+offers an explicit mode to run the pinned model on CPU or GPU.

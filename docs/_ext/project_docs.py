@@ -188,6 +188,31 @@ def _generation_assets(root: Path) -> None:
             bundle.write(path, arcname=path.relative_to(examples))
 
 
+def _timestral_assets(root: Path) -> None:
+    """Publish verified inference and source data for the offline forecast example."""
+    examples = root / "examples/connectors"
+    gallery = root / "docs/auto_examples/connectors"
+    destination = gallery / "data"
+    destination.mkdir(parents=True, exist_ok=True)
+    samples = [
+        examples / "data" / name
+        for name in (
+            "generation_eia_ciso_2024.csv",
+            "generation_eia_ciso_2024.provenance.json",
+            "timestral_ciso_forecast.json",
+            "timestral_ciso_provenance.json",
+        )
+    ]
+    for sample in samples:
+        shutil.copyfile(sample, destination / sample.name)
+    with ZipFile(gallery / "timestral_example.zip", "w", compression=ZIP_DEFLATED) as bundle:
+        for path in [examples / "plot_timestral_forecast.py", *samples]:
+            bundle.write(path, arcname=path.relative_to(examples))
+        bundle.write(root / "docs/timestral.md", arcname="README.md")
+    # The gallery hashes Python source, not the captured forecast or observations.
+    (gallery / "plot_timestral_forecast.py.md5").unlink(missing_ok=True)
+
+
 def _pvgis_assets(root: Path) -> None:
     """Bundle complete PVGIS captures with their provenance and runnable examples."""
     examples = root / "examples/connectors"
@@ -543,6 +568,7 @@ def prepare_sources(root: Path) -> list[str]:
             encoding="utf-8",
         )
     _generation_assets(root)
+    _timestral_assets(root)
     _pvgis_assets(root)
     _terrain_assets(root)
     _imagery_assets(root)

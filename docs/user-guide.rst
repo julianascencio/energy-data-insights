@@ -36,6 +36,7 @@ Data access and scientific methods
    _generated/guides/pvgis
    _generated/guides/location-discovery
    _generated/guides/generation-connectors
+   _generated/guides/timestral
    _generated/guides/worldwide-generation
    _generated/guides/cds
    _generated/guides/ccya

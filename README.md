@@ -83,6 +83,11 @@ and export results. Statistics and browser data refresh with each documentation 
 Every gallery example runs offline during the documentation build. Download links
 on the example pages include the supporting data and provenance where needed.
 
+The **[Mistral Timestral example](examples/connectors/plot_timestral_forecast.py)**
+forecasts a day of real California solar and wind generation, with quantile bands
+and baseline comparisons. It replays captured model output offline; an explicit
+live mode runs the optional CPU/GPU connector. See the [setup guide](docs/timestral.md).
+
 Start with the **[worldwide connector coverage map](https://julianascencio.github.io/energy-data-insights/auto_examples/connectors/plot_generation_coverage.html)**
 and its [Python source](examples/connectors/plot_generation_coverage.py).
 Two reproducible figures introduce all 48 source modules: 22 generation providers,
