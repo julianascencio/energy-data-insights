@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,830 project and plant records across
-38 countries**, supported by **271 registered sources**. It combines curated
+The BESS section contains **1,833 project and plant records across
+38 countries**, supported by **274 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -236,3 +236,5 @@ Previous research: [Harmony portfolio and exact Sinexcel conversion equipment](r
 Previous research: [Flower portfolio, Sinexcel guidebook and BlueNova equipment](research/2026-11-03_flower_guidebook.md), with exact revisions, source conflicts and the next ranked source queue.
 
 Latest research: [Mauritius and Philippine projects, Eskom milestones and BlueNova configurations](research/2026-11-03_islands_bluenova.md), with the CEB offline adapter and source-access backlog.
+
+Latest reviewed batch: [Philippine historical inventory and BlueNova racks](research/2026-11-03_doe_racks.md).

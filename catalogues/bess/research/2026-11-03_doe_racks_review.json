@@ -1,0 +1,810 @@
+{
+  "new": [
+    "1219ad55-7f96-56ab-884e-3efafa30a40d",
+    "65568004-9daa-5d97-bbf0-4ffaea49699d",
+    "a33f8316-951c-5153-a593-f3442275d529"
+  ],
+  "enriched": [
+    "d569b4cb-8d09-5f50-a2d5-5d026fb06c49",
+    "0026144e-6d51-57f5-8c10-73e9ddff3867",
+    "e207a89e-53eb-5418-94fc-231ba92e404b",
+    "c2cf50e9-0a6b-5c1e-853b-7bcf321f82aa",
+    "8d81541e-dcf5-5d27-988a-a3d4a3b336f1",
+    "f6f43af8-de47-5680-b88c-6b37809f8d40",
+    "1941d28e-fcf0-59e8-bd0f-12705830fbda",
+    "060671a6-6831-524f-988a-23d010e082c7",
+    "41a360f5-2b61-5b7c-8c4e-9d28528640a9",
+    "4c0b3d0c-18f3-5e44-a0a0-033904459621",
+    "76fa4cc7-175d-5ec3-aabb-305fc5a0c45e",
+    "e56cfdda-2e01-5494-9fc2-485843b0c4c8"
+  ],
+  "conflicts": [
+    {
+      "record_id": "d569b4cb-8d09-5f50-a2d5-5d026fb06c49",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"coc_date\":\"2025-02-19\",\"coc_energy_mwh_combined\":35.258,\"contract\":\"ASPA regulating reserve; take-or-pay capacity payments for charging/discharging subject to dispatch rules\",\"locator\":\"PDF16–18 / printed15–17 and PDF28,32\",\"offtaker\":\"National Grid Corporation of the Philippines (NGCP)\",\"operation_maintenance_by_LPDSI_effective\":\"2019-06-01\",\"parent_group\":\"San Miguel Global Power Holdings Corp.\",\"phase1_acquisition_date\":\"2018-03-20\",\"phase2_energy_mwh_reported\":22.83,\"phase2_operational_by\":\"2025-12-31\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":12.4,\"installed_gross_nameplate_mw\":12.4,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"MASINLOC BESS\",\"reported_commissioned_or_commercial_operation\":\"Jun-2018\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"coc_date\":\"2025-02-19\",\"coc_energy_mwh_combined\":35.258,\"contract\":\"ASPA regulating reserve; take-or-pay capacity payments for charging/discharging subject to dispatch rules\",\"locator\":\"PDF16–18 / printed15–17 and PDF28,32\",\"offtaker\":\"National Grid Corporation of the Philippines (NGCP)\",\"operation_maintenance_by_LPDSI_effective\":\"2019-06-01\",\"parent_group\":\"San Miguel Global Power Holdings Corp.\",\"phase1_acquisition_date\":\"2018-03-20\",\"phase2_energy_mwh_reported\":22.83,\"phase2_operational_by\":\"2025-12-31\"}}"
+        }
+      },
+      "incoming": {
+        "applications": [
+          "Regulating reserve"
+        ],
+        "capacity_scope": "Combined Masinloc battery phases1 and2; excludes coal generating units and their230kV connection ratings",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "energy_basis": "unspecified",
+        "energy_capacity_mwh": 35.258,
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":12.4,\"installed_gross_nameplate_mw\":12.4,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"MASINLOC BESS\",\"reported_commissioned_or_commercial_operation\":\"Jun-2018\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"coc_date\":\"2025-02-19\",\"coc_energy_mwh_combined\":35.258,\"contract\":\"ASPA regulating reserve; take-or-pay capacity payments for charging/discharging subject to dispatch rules\",\"locator\":\"PDF16–18 / printed15–17 and PDF28,32\",\"offtaker\":\"National Grid Corporation of the Philippines (NGCP)\",\"operation_maintenance_by_LPDSI_effective\":\"2019-06-01\",\"parent_group\":\"San Miguel Global Power Holdings Corp.\",\"phase1_acquisition_date\":\"2018-03-20\",\"phase2_energy_mwh_reported\":22.83,\"phase2_operational_by\":\"2025-12-31\"}}",
+        "field_sources_json": "{\"applications\":[\"smgp_annual2025_20261103\"],\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"energy_basis\":[\"smgp_annual2025_20261103\"],\"energy_capacity_mwh\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_luzon\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"operators\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Masinloc",
+        "name": "Masinloc BESS",
+        "notes": "No10MW historic phase1 rating assigned to combined battery. Phase2 energy retained as explicitly reported; phase1 energy is not computed by subtraction. Coal plant power/offtake contracts excluded.",
+        "operators": [
+          "LPDSI"
+        ],
+        "owners": [
+          "Masinloc Power Co. Ltd."
+        ],
+        "quality_status": "source_backed",
+        "record_id": "d569b4cb-8d09-5f50-a2d5-5d026fb06c49",
+        "region": "Zambales",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_luzon"
+        ],
+        "status": "operational",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00"
+      }
+    },
+    {
+      "record_id": "0026144e-6d51-57f5-8c10-73e9ddff3867",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Lamao\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Lamao BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-16\",\"valid_to\":\"2026-07-15\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":69.9,\"installed_gross_nameplate_mw\":69.9,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"LAMAO PH 1&2 BESS\",\"reported_commissioned_or_commercial_operation\":\"Aug-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"barangay\":\"Lamao\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Lamao BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-16\",\"valid_to\":\"2026-07-15\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":69.9,\"installed_gross_nameplate_mw\":69.9,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"LAMAO PH 1&2 BESS\",\"reported_commissioned_or_commercial_operation\":\"Aug-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"barangay\":\"Lamao\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Lamao BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-16\",\"valid_to\":\"2026-07-15\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"conflicts_json\":[\"doe_evoss_202412_luzon\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_luzon\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Limay",
+        "name": "Lamao BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 66.063,
+        "quality_status": "needs_review",
+        "record_id": "0026144e-6d51-57f5-8c10-73e9ddff3867",
+        "region": "Bataan",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_luzon"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00",
+        "conflicts_json": "{\"doe_historical_power_scope\":{\"canonical_mw\":66.063,\"reported_mw\":69.9,\"resolution\":\"Quarantined historical rating/scope difference; preserve canonical rating and phase boundary, do not overwrite with older inventory\",\"source_id\":\"doe_evoss_202412_luzon\"}}"
+      }
+    },
+    {
+      "record_id": "e207a89e-53eb-5418-94fc-231ba92e404b",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Luz\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Limay BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-16\",\"valid_to\":\"2026-07-15\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":47.5,\"installed_gross_nameplate_mw\":47.5,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"BATAAN BESS (formerly LIMAY BCCPP)\",\"reported_commissioned_or_commercial_operation\":\"Aug-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"barangay\":\"Luz\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Limay BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-16\",\"valid_to\":\"2026-07-15\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":47.5,\"installed_gross_nameplate_mw\":47.5,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"BATAAN BESS (formerly LIMAY BCCPP)\",\"reported_commissioned_or_commercial_operation\":\"Aug-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"barangay\":\"Luz\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Limay BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-16\",\"valid_to\":\"2026-07-15\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_luzon\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Limay",
+        "name": "Limay BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 47.486,
+        "quality_status": "source_backed",
+        "record_id": "e207a89e-53eb-5418-94fc-231ba92e404b",
+        "region": "Bataan",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_luzon"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00"
+      }
+    },
+    {
+      "record_id": "c2cf50e9-0a6b-5c1e-853b-7bcf321f82aa",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Sta. Domingo\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, San Manuel BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-30\",\"valid_to\":\"2026-07-29\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":68.5,\"installed_gross_nameplate_mw\":68.5,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"SAN MANUEL PH 1&2 BESS\",\"reported_commissioned_or_commercial_operation\":\"Aug-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"barangay\":\"Sta. Domingo\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, San Manuel BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-30\",\"valid_to\":\"2026-07-29\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":68.5,\"installed_gross_nameplate_mw\":68.5,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"SAN MANUEL PH 1&2 BESS\",\"reported_commissioned_or_commercial_operation\":\"Aug-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"barangay\":\"Sta. Domingo\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, San Manuel BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-30\",\"valid_to\":\"2026-07-29\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"conflicts_json\":[\"doe_evoss_202412_luzon\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_luzon\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "San Manuel",
+        "name": "San Manuel BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 60.819,
+        "quality_status": "needs_review",
+        "record_id": "c2cf50e9-0a6b-5c1e-853b-7bcf321f82aa",
+        "region": "Pangasinan",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_luzon"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00",
+        "conflicts_json": "{\"doe_historical_power_scope\":{\"canonical_mw\":60.819,\"reported_mw\":68.5,\"resolution\":\"Quarantined historical rating/scope difference; preserve canonical rating and phase boundary, do not overwrite with older inventory\",\"source_id\":\"doe_evoss_202412_luzon\"}}"
+      }
+    },
+    {
+      "record_id": "8d81541e-dcf5-5d27-988a-a3d4a3b336f1",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"scatec\":{\"co_location\":\"Magat hydro power plant; battery is electrochemical storage, not hydro capacity.\",\"energy_scope\":\"40 MWh combined operating battery capacity stated by owner; no phase MWh inferred.\",\"financing\":\"Debt facilities related to Magat hydro plant\",\"joint_venture_equity_pct\":{\"Aboitiz Power\":50,\"Scatec\":50}}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":32.4,\"installed_gross_nameplate_mw\":32.4,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"MAGAT BESS\",\"reported_commissioned_or_commercial_operation\":\"Jan-2024\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"scatec\":{\"co_location\":\"Magat hydro power plant; battery is electrochemical storage, not hydro capacity.\",\"energy_scope\":\"40 MWh combined operating battery capacity stated by owner; no phase MWh inferred.\",\"financing\":\"Debt facilities related to Magat hydro plant\",\"joint_venture_equity_pct\":{\"Aboitiz Power\":50,\"Scatec\":50}}}"
+        }
+      },
+      "incoming": {
+        "applications": [
+          "Ancillary services",
+          "Grid frequency stability"
+        ],
+        "capacity_scope": "Combined Magat battery phases 1 and 2; excludes hydro generation and any separate phase rows.",
+        "connection_type": "grid_connected",
+        "country_code": "PHL",
+        "created_at": "2026-11-02T05:01:38+00:00",
+        "energy_basis": "unspecified",
+        "energy_capacity_mwh": 40,
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":32.4,\"installed_gross_nameplate_mw\":32.4,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"MAGAT BESS\",\"reported_commissioned_or_commercial_operation\":\"Jan-2024\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"scatec\":{\"co_location\":\"Magat hydro power plant; battery is electrochemical storage, not hydro capacity.\",\"energy_scope\":\"40 MWh combined operating battery capacity stated by owner; no phase MWh inferred.\",\"financing\":\"Debt facilities related to Magat hydro plant\",\"joint_venture_equity_pct\":{\"Aboitiz Power\":50,\"Scatec\":50}}}",
+        "field_sources_json": "{\"applications\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"capacity_scope\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"conflicts_json\":[\"doe_evoss_202412_luzon\"],\"connection_type\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"country_code\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"energy_basis\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"energy_capacity_mwh\":[\"scatec_philippines_20261102\"],\"extensions_json\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\",\"doe_evoss_202412_luzon\"],\"locality\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"name\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"owners\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"phases_json\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"power_basis\":[\"scatec_philippines_20261102\",\"scatec_philippines_close_20260203\",\"scatec_magat2_cod_20260515\"],\"power_capacity_mw\":[\"scatec_philippines_20261102\"],\"status\":[\"scatec_philippines_20261102\"],\"status_as_of\":[\"scatec_philippines_20261102\"],\"status_date_basis\":[\"scatec_philippines_20261102\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Magat hydro power plant",
+        "name": "Magat BESS",
+        "owners": [
+          "SN Aboitiz Power (SNAP)"
+        ],
+        "phases_json": "[{\"name\":\"Magat BESS 1\",\"operation_start_year\":2024,\"power_capacity_mw\":24,\"source_id\":\"scatec_magat2_cod_20260515\"},{\"name\":\"Magat BESS 2\",\"operational_by\":\"2026-05-15\",\"power_capacity_mw\":16,\"source_id\":\"scatec_magat2_cod_20260515\"}]",
+        "power_basis": "unspecified",
+        "power_capacity_mw": 40,
+        "quality_status": "needs_review",
+        "record_id": "8d81541e-dcf5-5d27-988a-a3d4a3b336f1",
+        "sources": [
+          "scatec_philippines_20261102",
+          "scatec_philippines_close_20260203",
+          "scatec_magat2_cod_20260515",
+          "doe_evoss_202412_luzon"
+        ],
+        "status": "operational",
+        "status_as_of": "2026-11-02",
+        "status_date_basis": "accessed_undated_page",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00",
+        "conflicts_json": "{\"doe_historical_power_scope\":{\"canonical_mw\":40,\"reported_mw\":32.4,\"resolution\":\"Quarantined historical rating/scope difference; preserve canonical rating and phase boundary, do not overwrite with older inventory\",\"source_id\":\"doe_evoss_202412_luzon\"}}"
+      }
+    },
+    {
+      "record_id": "f6f43af8-de47-5680-b88c-6b37809f8d40",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Sta. Rosa\",\"filing_update\":\"Extension pending\",\"locator\":\"PDF page32 / printed31, Concepcion BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-21\",\"valid_to\":\"2026-04-20\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":50,\"installed_gross_nameplate_mw\":72.3,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"CONCEPCION PH 1&2 BESS\",\"reported_commissioned_or_commercial_operation\":\"Mar-2024\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"barangay\":\"Sta. Rosa\",\"filing_update\":\"Extension pending\",\"locator\":\"PDF page32 / printed31, Concepcion BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-21\",\"valid_to\":\"2026-04-20\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":50,\"installed_gross_nameplate_mw\":72.3,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"CONCEPCION PH 1&2 BESS\",\"reported_commissioned_or_commercial_operation\":\"Mar-2024\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_luzon\"},\"smgp_2025\":{\"barangay\":\"Sta. Rosa\",\"filing_update\":\"Extension pending\",\"locator\":\"PDF page32 / printed31, Concepcion BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-21\",\"valid_to\":\"2026-04-20\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"conflicts_json\":[\"doe_evoss_202412_luzon\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_luzon\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Concepcion",
+        "name": "Concepcion BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 62.954,
+        "quality_status": "needs_review",
+        "record_id": "f6f43af8-de47-5680-b88c-6b37809f8d40",
+        "region": "Tarlac",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_luzon"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00",
+        "conflicts_json": "{\"doe_historical_power_scope\":{\"canonical_mw\":62.954,\"reported_mw\":72.3,\"resolution\":\"Quarantined historical rating/scope difference; preserve canonical rating and phase boundary, do not overwrite with older inventory\",\"source_id\":\"doe_evoss_202412_luzon\"}}"
+      }
+    },
+    {
+      "record_id": "1941d28e-fcf0-59e8-bd0f-12705830fbda",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"ngcp\":{\"erc_case\":\"2021-056 RC\",\"former_entity\":\"SMCGP Phils. Energy Storage Co. Ltd.\",\"listed_entity\":\"SMGP Kabankalan Power Co. Ltd.\",\"locator\":\"page1 Visayas Kabankalan row\",\"reporting_date\":\"2026-03-31\",\"role\":\"Listed ancillary services provider\",\"service_code\":\"RR\"},\"smgp_2025\":{\"both_phases_operational_by\":\"2025-12-31\",\"combined_phase1_phase2_energy_mwh\":33.867,\"locator\":\"PDF5–6,28 and32\",\"owner_project_company\":\"SMGP Kabankalan Power Co. Ltd.\",\"pao_issued\":\"2026-02-09\",\"pao_valid_from\":\"2025-11-29\",\"pao_valid_to\":\"2026-11-28\",\"phase1_ngcp_contracted_energy_mwh\":20,\"scope_note\":\"Existing20MW/20MWh is originalphase1; combined energy not substituted into phase1 rating or used to infer phase2 capacity/model\",\"source_id\":\"smgp_annual2025_20261103\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":22.5,\"installed_gross_nameplate_mw\":22.5,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"KABANKALAN BESS\",\"reported_commissioned_or_commercial_operation\":\"Jan-2022\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_visayas\"},\"ngcp\":{\"erc_case\":\"2021-056 RC\",\"former_entity\":\"SMCGP Phils. Energy Storage Co. Ltd.\",\"listed_entity\":\"SMGP Kabankalan Power Co. Ltd.\",\"locator\":\"page1 Visayas Kabankalan row\",\"reporting_date\":\"2026-03-31\",\"role\":\"Listed ancillary services provider\",\"service_code\":\"RR\"},\"smgp_2025\":{\"both_phases_operational_by\":\"2025-12-31\",\"combined_phase1_phase2_energy_mwh\":33.867,\"locator\":\"PDF5–6,28 and32\",\"owner_project_company\":\"SMGP Kabankalan Power Co. Ltd.\",\"pao_issued\":\"2026-02-09\",\"pao_valid_from\":\"2025-11-29\",\"pao_valid_to\":\"2026-11-28\",\"phase1_ngcp_contracted_energy_mwh\":20,\"scope_note\":\"Existing20MW/20MWh is originalphase1; combined energy not substituted into phase1 rating or used to infer phase2 capacity/model\",\"source_id\":\"smgp_annual2025_20261103\"}}"
+        }
+      },
+      "incoming": {
+        "applications": [
+          "Regulating reserve"
+        ],
+        "capacity_scope": "Original20MW/20MWh Kabankalan installation (phase1); combinedphase1+2 energy is preserved separately in extensions, not counted twice",
+        "country_code": "PHL",
+        "created_at": "2026-11-01T07:29:07+00:00",
+        "energy_basis": "unspecified",
+        "energy_capacity_mwh": 20,
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":22.5,\"installed_gross_nameplate_mw\":22.5,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"KABANKALAN BESS\",\"reported_commissioned_or_commercial_operation\":\"Jan-2022\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_visayas\"},\"ngcp\":{\"erc_case\":\"2021-056 RC\",\"former_entity\":\"SMCGP Phils. Energy Storage Co. Ltd.\",\"listed_entity\":\"SMGP Kabankalan Power Co. Ltd.\",\"locator\":\"page1 Visayas Kabankalan row\",\"reporting_date\":\"2026-03-31\",\"role\":\"Listed ancillary services provider\",\"service_code\":\"RR\"},\"smgp_2025\":{\"both_phases_operational_by\":\"2025-12-31\",\"combined_phase1_phase2_energy_mwh\":33.867,\"locator\":\"PDF5–6,28 and32\",\"owner_project_company\":\"SMGP Kabankalan Power Co. Ltd.\",\"pao_issued\":\"2026-02-09\",\"pao_valid_from\":\"2025-11-29\",\"pao_valid_to\":\"2026-11-28\",\"phase1_ngcp_contracted_energy_mwh\":20,\"scope_note\":\"Existing20MW/20MWh is originalphase1; combined energy not substituted into phase1 rating or used to infer phase2 capacity/model\",\"source_id\":\"smgp_annual2025_20261103\"}}",
+        "field_sources_json": "{\"applications\":[\"ngcp_as_202603\"],\"capacity_scope\":[\"fluence_kabankalan\",\"smgp_annual2025_20261103\"],\"conflicts_json\":[\"doe_evoss_202412_visayas\"],\"country_code\":[\"fluence_kabankalan\"],\"energy_basis\":[\"fluence_kabankalan\"],\"energy_capacity_mwh\":[\"fluence_kabankalan\"],\"extensions_json\":[\"ngcp_as_202603\",\"smgp_annual2025_20261103\",\"doe_evoss_202412_visayas\"],\"integrators\":[\"fluence_kabankalan\"],\"locality\":[\"fluence_kabankalan\"],\"name\":[\"fluence_kabankalan\"],\"owners\":[\"fluence_kabankalan\"],\"power_basis\":[\"fluence_kabankalan\"],\"power_capacity_mw\":[\"fluence_kabankalan\"],\"status\":[\"fluence_kabankalan\"],\"status_as_of\":[\"fluence_kabankalan\"],\"status_date_basis\":[\"fluence_kabankalan\"]}",
+        "integrators": [
+          "Fluence"
+        ],
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Kabankalan",
+        "name": "Kabankalan BESS",
+        "owners": [
+          "SMC Global Power Holdings"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 20,
+        "quality_status": "needs_review",
+        "record_id": "1941d28e-fcf0-59e8-bd0f-12705830fbda",
+        "sources": [
+          "fluence_kabankalan",
+          "ngcp_as_202603",
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_visayas"
+        ],
+        "status": "operational",
+        "status_as_of": "2022-01-27",
+        "status_date_basis": "publication_date",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00",
+        "conflicts_json": "{\"doe_historical_power_scope\":{\"canonical_mw\":20,\"reported_mw\":22.5,\"resolution\":\"Quarantined historical rating/scope difference; preserve canonical rating and phase boundary, do not overwrite with older inventory\",\"source_id\":\"doe_evoss_202412_visayas\"}}"
+      }
+    },
+    {
+      "record_id": "060671a6-6831-524f-988a-23d010e082c7",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Imelda\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Ubay BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-10-08\",\"valid_to\":\"2026-10-07\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":23.3,\"installed_gross_nameplate_mw\":23.3,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"UBAY BESS\",\"reported_commissioned_or_commercial_operation\":\"Dec-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_visayas\"},\"smgp_2025\":{\"barangay\":\"Imelda\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Ubay BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-10-08\",\"valid_to\":\"2026-10-07\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":23.3,\"installed_gross_nameplate_mw\":23.3,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"UBAY BESS\",\"reported_commissioned_or_commercial_operation\":\"Dec-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_visayas\"},\"smgp_2025\":{\"barangay\":\"Imelda\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Ubay BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-10-08\",\"valid_to\":\"2026-10-07\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"conflicts_json\":[\"doe_evoss_202412_visayas\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_visayas\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Ubay",
+        "name": "Ubay BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 21.373,
+        "quality_status": "needs_review",
+        "record_id": "060671a6-6831-524f-988a-23d010e082c7",
+        "region": "Bohol",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_visayas"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00",
+        "conflicts_json": "{\"doe_historical_power_scope\":{\"canonical_mw\":21.373,\"reported_mw\":23.3,\"resolution\":\"Quarantined historical rating/scope difference; preserve canonical rating and phase boundary, do not overwrite with older inventory\",\"source_id\":\"doe_evoss_202412_visayas\"}}"
+      }
+    },
+    {
+      "record_id": "41a360f5-2b61-5b7c-8c4e-9d28528640a9",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Milagro\",\"filing_update\":\"Extension/conversion to COC pending\",\"locator\":\"PDF page32 / printed31, Ormoc BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-07\",\"valid_to\":\"2026-04-06\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":40,\"installed_gross_nameplate_mw\":47.5,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"ORMOC PH 1&2 BESS\",\"reported_commissioned_or_commercial_operation\":\"Mar-2024\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_visayas\"},\"smgp_2025\":{\"barangay\":\"Milagro\",\"filing_update\":\"Extension/conversion to COC pending\",\"locator\":\"PDF page32 / printed31, Ormoc BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-07\",\"valid_to\":\"2026-04-06\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":40,\"installed_gross_nameplate_mw\":47.5,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"ORMOC PH 1&2 BESS\",\"reported_commissioned_or_commercial_operation\":\"Mar-2024\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_visayas\"},\"smgp_2025\":{\"barangay\":\"Milagro\",\"filing_update\":\"Extension/conversion to COC pending\",\"locator\":\"PDF page32 / printed31, Ormoc BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-07\",\"valid_to\":\"2026-04-06\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_visayas\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Ormoc City",
+        "name": "Ormoc BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 47.486,
+        "quality_status": "source_backed",
+        "record_id": "41a360f5-2b61-5b7c-8c4e-9d28528640a9",
+        "region": "Leyte",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_visayas"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00"
+      }
+    },
+    {
+      "record_id": "4c0b3d0c-18f3-5e44-a0a0-033904459621",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Concepcion\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Maco BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-01\",\"valid_to\":\"2026-06-30\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":24.3,\"installed_gross_nameplate_mw\":24.3,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"MACO BESS\",\"reported_commissioned_or_commercial_operation\":\"Aug-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_mindanao\"},\"smgp_2025\":{\"barangay\":\"Concepcion\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Maco BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-01\",\"valid_to\":\"2026-06-30\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":24.3,\"installed_gross_nameplate_mw\":24.3,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"MACO BESS\",\"reported_commissioned_or_commercial_operation\":\"Aug-2023\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_mindanao\"},\"smgp_2025\":{\"barangay\":\"Concepcion\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Maco BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-07-01\",\"valid_to\":\"2026-06-30\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"conflicts_json\":[\"doe_evoss_202412_mindanao\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_mindanao\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Maco",
+        "name": "Maco BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 22.83,
+        "quality_status": "needs_review",
+        "record_id": "4c0b3d0c-18f3-5e44-a0a0-033904459621",
+        "region": "Davao de Oro",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_mindanao"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00",
+        "conflicts_json": "{\"doe_historical_power_scope\":{\"canonical_mw\":22.83,\"reported_mw\":24.3,\"resolution\":\"Quarantined historical rating/scope difference; preserve canonical rating and phase boundary, do not overwrite with older inventory\",\"source_id\":\"doe_evoss_202412_mindanao\"}}"
+      }
+    },
+    {
+      "record_id": "76fa4cc7-175d-5ec3-aabb-305fc5a0c45e",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Aplaya\",\"filing_update\":\"Extension/conversion to COC pending\",\"locator\":\"PDF page32 / printed31, Jasaan BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-07\",\"valid_to\":\"2026-04-06\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":20,\"installed_gross_nameplate_mw\":22.8,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"JASAAN BESS\",\"reported_commissioned_or_commercial_operation\":\"Mar-2024\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_mindanao\"},\"smgp_2025\":{\"barangay\":\"Aplaya\",\"filing_update\":\"Extension/conversion to COC pending\",\"locator\":\"PDF page32 / printed31, Jasaan BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-07\",\"valid_to\":\"2026-04-06\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":20,\"installed_gross_nameplate_mw\":22.8,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"JASAAN BESS\",\"reported_commissioned_or_commercial_operation\":\"Mar-2024\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_mindanao\"},\"smgp_2025\":{\"barangay\":\"Aplaya\",\"filing_update\":\"Extension/conversion to COC pending\",\"locator\":\"PDF page32 / printed31, Jasaan BESS row\",\"name_location_note\":null,\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-04-07\",\"valid_to\":\"2026-04-06\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_mindanao\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Jasaan",
+        "name": "Jasaan BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 22.83,
+        "quality_status": "source_backed",
+        "record_id": "76fa4cc7-175d-5ec3-aabb-305fc5a0c45e",
+        "region": "Misamis Oriental",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_mindanao"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00"
+      }
+    },
+    {
+      "record_id": "e56cfdda-2e01-5494-9fc2-485843b0c4c8",
+      "detected_at": "2026-11-03T12:59:27.193049+00:00",
+      "fields": {
+        "extensions_json": {
+          "existing": "{\"smgp_2025\":{\"barangay\":\"Mohon\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Villanueva BESS row\",\"name_location_note\":\"Facility named Villanueva; location explicitly Tagoloan, not auto-corrected\",\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-10-29\",\"valid_to\":\"2026-10-28\"}}",
+          "incoming": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":20,\"installed_gross_nameplate_mw\":22.8,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"VILLANUEVA BESS\",\"reported_commissioned_or_commercial_operation\":\"Sept2024 PAO; Oct2024 COD\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_mindanao\"},\"smgp_2025\":{\"barangay\":\"Mohon\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Villanueva BESS row\",\"name_location_note\":\"Facility named Villanueva; location explicitly Tagoloan, not auto-corrected\",\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-10-29\",\"valid_to\":\"2026-10-28\"}}"
+        }
+      },
+      "incoming": {
+        "capacity_scope": "Named BESS facility in owner filing; power is the PAO-reported MW capacity, AC/DC and gross/usable rating not stated; excludes portfolio total",
+        "country_code": "PHL",
+        "created_at": "2026-11-03T12:06:03.138781+00:00",
+        "entity_type": "projects",
+        "extensions_json": "{\"doe_202412_registry_observation\":{\"date_precision\":\"month; PAO distinguished where explicitly labelled\",\"dependable_mw\":20,\"installed_gross_nameplate_mw\":22.8,\"rating_note\":\"Historical DOE installed gross and ambient-limited dependable capacity; not MWh, not current capacity. Phase scopes may differ from later owner filings.\",\"registry_name\":\"VILLANUEVA BESS\",\"reported_commissioned_or_commercial_operation\":\"Sept2024 PAO; Oct2024 COD\",\"reporting_date\":\"2024-12-31\",\"source_id\":\"doe_evoss_202412_mindanao\"},\"smgp_2025\":{\"barangay\":\"Mohon\",\"filing_update\":null,\"locator\":\"PDF page32 / printed31, Villanueva BESS row\",\"name_location_note\":\"Facility named Villanueva; location explicitly Tagoloan, not auto-corrected\",\"owner_role\":\"Group ownership only; site legal subsidiary not individually assigned by licence table\",\"permit_type\":\"ERC Provisional Authority to Operate (PAO)\",\"report_filing_date\":\"2026-04-15\",\"valid_from\":\"2025-10-29\",\"valid_to\":\"2026-10-28\"}}",
+        "field_sources_json": "{\"capacity_scope\":[\"smgp_annual2025_20261103\"],\"country_code\":[\"smgp_annual2025_20261103\"],\"extensions_json\":[\"smgp_annual2025_20261103\",\"doe_evoss_202412_mindanao\"],\"locality\":[\"smgp_annual2025_20261103\"],\"name\":[\"smgp_annual2025_20261103\"],\"owners\":[\"smgp_annual2025_20261103\"],\"power_basis\":[\"smgp_annual2025_20261103\"],\"power_capacity_mw\":[\"smgp_annual2025_20261103\"],\"region\":[\"smgp_annual2025_20261103\"],\"status\":[\"smgp_annual2025_20261103\"],\"status_as_of\":[\"smgp_annual2025_20261103\"],\"status_date_basis\":[\"smgp_annual2025_20261103\"]}",
+        "last_verified_at": "2026-11-03T12:59:27.193049+00:00",
+        "locality": "Tagoloan",
+        "name": "Villanueva BESS",
+        "notes": "PAO authorization is not proof of commercial operation. Historical reporting-period status retained; expiry/extension observations do not establish current November2026 permission. MW is transcribed as printed and not silently reinterpreted as MWh.",
+        "owners": [
+          "San Miguel Global Power Holdings Corp. (group, through subsidiaries)"
+        ],
+        "power_basis": "unspecified",
+        "power_capacity_mw": 22.83,
+        "quality_status": "source_backed",
+        "record_id": "e56cfdda-2e01-5494-9fc2-485843b0c4c8",
+        "region": "Misamis Oriental",
+        "sources": [
+          "smgp_annual2025_20261103",
+          "doe_evoss_202412_mindanao"
+        ],
+        "status": "permitted",
+        "status_as_of": "2025-12-31",
+        "status_date_basis": "reporting_period_end",
+        "updated_at": "2026-11-03T12:59:27.193049+00:00"
+      }
+    }
+  ],
+  "reviewed_rows": [
+    [
+      "Luzon",
+      "Alaminos BESS",
+      "ALAMINOS BESS",
+      60,
+      60,
+      "Mar-2022"
+    ],
+    [
+      "Luzon",
+      "Masinloc BESS",
+      "MASINLOC BESS",
+      12.4,
+      12.4,
+      "Jun-2018"
+    ],
+    [
+      "Luzon",
+      "Lamao BESS",
+      "LAMAO PH 1&2 BESS",
+      69.9,
+      69.9,
+      "Aug-2023"
+    ],
+    [
+      "Luzon",
+      "Limay BESS",
+      "BATAAN BESS (formerly LIMAY BCCPP)",
+      47.5,
+      47.5,
+      "Aug-2023"
+    ],
+    [
+      "Luzon",
+      "San Manuel BESS",
+      "SAN MANUEL PH 1&2 BESS",
+      68.5,
+      68.5,
+      "Aug-2023"
+    ],
+    [
+      "Luzon",
+      "Magat BESS",
+      "MAGAT BESS",
+      32.4,
+      32.4,
+      "Jan-2024"
+    ],
+    [
+      "Luzon",
+      "Concepcion BESS",
+      "CONCEPCION PH 1&2 BESS",
+      72.3,
+      50,
+      "Mar-2024"
+    ],
+    [
+      "Visayas",
+      "Kabankalan BESS",
+      "KABANKALAN BESS",
+      22.5,
+      22.5,
+      "Jan-2022"
+    ],
+    [
+      "Visayas",
+      "Toledo BESS",
+      "TOLEDO BESS",
+      23.7,
+      23.7,
+      "Aug-2023"
+    ],
+    [
+      "Visayas",
+      "Ubay BESS",
+      "UBAY BESS",
+      23.3,
+      23.3,
+      "Dec-2023"
+    ],
+    [
+      "Visayas",
+      "Ormoc BESS",
+      "ORMOC PH 1&2 BESS",
+      47.5,
+      40,
+      "Mar-2024"
+    ],
+    [
+      "Mindanao",
+      "Maco BESS",
+      "MACO BESS",
+      24.3,
+      24.3,
+      "Aug-2023"
+    ],
+    [
+      "Mindanao",
+      "Malita BESS",
+      "MALITA BESS",
+      22.8,
+      22.8,
+      "Nov-2023"
+    ],
+    [
+      "Mindanao",
+      "Jasaan BESS",
+      "JASAAN BESS",
+      22.8,
+      20,
+      "Mar-2024"
+    ],
+    [
+      "Mindanao",
+      "Villanueva BESS",
+      "VILLANUEVA BESS",
+      22.8,
+      20,
+      "Sept2024 PAO; Oct2024 COD"
+    ]
+  ],
+  "started_at": "2026-11-03T12:51:53+00:00",
+  "prepared_at": "2026-11-03T13:01:17.727454+00:00",
+  "base_head": "ce2a0ea1f233db2d817e7c7c8a5d8be403ebdeb9",
+  "preservation": {
+    "bess": {
+      "total": 1833,
+      "prior_unchanged": 1818,
+      "new": 3,
+      "enriched": 12,
+      "sources": 274
+    },
+    "bess_oem": {
+      "total": 674,
+      "prior_unchanged": 658,
+      "new": 16,
+      "enriched": 0,
+      "sources": 336
+    }
+  },
+  "counts": {
+    "project_candidates": 17,
+    "projects_new": 3,
+    "projects_enriched": 12,
+    "project_candidates_held": 2,
+    "project_rating_conflicts": 7,
+    "equipment_candidates_accepted": 16,
+    "equipment_new": 16,
+    "equipment_enriched": 0,
+    "equipment_protection_fields_quarantined": 16,
+    "socomec_candidates_held": 29,
+    "permanent_rejections": 0
+  },
+  "held_projects": [
+    "Kabankalan PH2: separate registry phase, but existing phase1 row already retains combined-phase evidence; require reviewed parent/phase model before separate addition",
+    "TMI hybrid diesel-battery: registry49MW is not accepted as battery-only capacity"
+  ],
+  "downloads": [
+    {
+      "key": "rack0",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/03/BN-iESS-rack-128k-AC.pdf",
+      "sha256": "4a188f5107539f1f17898e767987b51690d787ce7ad4de864ff9cd6cb2bfbd76",
+      "retrieved_at": "2026-11-03T12:55:08.519196+00:00"
+    },
+    {
+      "key": "rack1",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/06/BN-Warranty_v202604HV.pdf",
+      "sha256": "d202d95c5dd02eba0d3afe4f1c800c6977dfd33d745c4802f8b955d35d29b6f8",
+      "retrieved_at": "2026-11-03T12:55:09.975690+00:00"
+    },
+    {
+      "key": "rack2",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/03/BN-iESS-rack-144k-AC.pdf",
+      "sha256": "3b7105e49c60ac6df963692dace66e47114d0e610aca76d73bfeb5ffdfd62e2c",
+      "retrieved_at": "2026-11-03T12:55:12.260900+00:00"
+    },
+    {
+      "key": "rack3",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/03/BN-iESS-rack-160k-AC.pdf",
+      "sha256": "e529b2884701a3b9602dc4bf442500daa4c115eae4bd19dd7bb6f64ff51baf9a",
+      "retrieved_at": "2026-11-03T12:55:12.580474+00:00"
+    },
+    {
+      "key": "rack4",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/03/BN-iESS-rack-177k-AC.pdf",
+      "sha256": "62f2bad6b2256b006d56da63190c7b346c56b422ec825058e95a3258fd3fce79",
+      "retrieved_at": "2026-11-03T12:55:16.651204+00:00"
+    },
+    {
+      "key": "rack5",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/03/BN-iESS-rack-193k-AC.pdf",
+      "sha256": "597da89ef53d0131eb6841fb4fcbfa743e2d0658635b2fd903cfb426b721a781",
+      "retrieved_at": "2026-11-03T12:55:16.906381+00:00"
+    },
+    {
+      "key": "rack6",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/03/BN-iESS-rack-209k-AC.pdf",
+      "sha256": "dd225e5aa32bc23f6df0d00a2a04b75c8a6bea93abf7d5fac34785c59584342c",
+      "retrieved_at": "2026-11-03T12:55:21.103630+00:00"
+    },
+    {
+      "key": "rack7",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/03/BN-iESS-rack-225k-AC.pdf",
+      "sha256": "9f36f727ee52a607fbdc01ad9c804e11d75dfa1691a81e906d91161853505189",
+      "retrieved_at": "2026-11-03T12:55:20.821191+00:00"
+    },
+    {
+      "key": "rack8",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/03/BN-iESS-rack-241k-AC.pdf",
+      "sha256": "5872371ae9ee9192660ce1afb923bcc19246daf095694698ceb8dc98a74ef5cb",
+      "retrieved_at": "2026-11-03T12:55:26.866455+00:00"
+    },
+    {
+      "key": "rack9",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BN-iESS-rack-115k-AC.pdf",
+      "sha256": "69ead8a4ee3eb35105fabe5deb230857ad7f076ab07d5af2ac0fc381945de1e5",
+      "retrieved_at": "2026-11-03T12:55:26.838782+00:00"
+    },
+    {
+      "key": "rack10",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BN-iESS-rack-129k-AC.pdf",
+      "sha256": "690fa39a3d415ff8c939d24903bba76cf070722cf9666f6a670cf2904bd85b47",
+      "retrieved_at": "2026-11-03T12:55:31.324541+00:00"
+    },
+    {
+      "key": "rack11",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BN-iESS-rack-143k-AC.pdf",
+      "sha256": "33ec63eb4cd15e05d5fbd8635e3b2f458b0e623b73070aa13d11dfc6cb7e6996",
+      "retrieved_at": "2026-11-03T12:55:31.161154+00:00"
+    },
+    {
+      "key": "rack12",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BN-iESS-rack-158k-AC.pdf",
+      "sha256": "d11069c138868655b008cc498116f2e2b4da48de70a36ac44395d37ea4cbabf7",
+      "retrieved_at": "2026-11-03T12:55:36.724031+00:00"
+    },
+    {
+      "key": "rack13",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BN-iESS-rack-172k-AC.pdf",
+      "sha256": "b39decd5046d7b6c19582643f62f5a0bfa111ba90c062a68197ca480786e92f0",
+      "retrieved_at": "2026-11-03T12:55:36.713361+00:00"
+    },
+    {
+      "key": "rack14",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BN-iESS-rack-186k-AC.pdf",
+      "sha256": "058b28de105d6ea25b651520a1be7de868fd1c9e5fe00c3e9c3f7cd03deda5b8",
+      "retrieved_at": "2026-11-03T12:55:41.353237+00:00"
+    },
+    {
+      "key": "rack15",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BN-iESS-rack-201k-AC.pdf",
+      "sha256": "a56db28e27e2119378573f392141fbbc2f546e53a641df19b1d016eed838b096",
+      "retrieved_at": "2026-11-03T12:55:41.350085+00:00"
+    },
+    {
+      "key": "rack16",
+      "url": "https://www.bluenova.co.za/wp-content/uploads/2026/02/BN-iESS-rack-215k-AC.pdf",
+      "sha256": "b028457f5c4be850d99a92ebde211d40f00bc96dc1629bbec6a63803dafb3123",
+      "retrieved_at": "2026-11-03T12:55:46.638213+00:00"
+    }
+  ],
+  "limitations": [
+    "DOE originals returned403; reader-derived observations have null original checksum, no bypass or fabricated checksum",
+    "Socomec linked terms restrict specification redistribution; 29 variants discovered, only one sample examined, none accepted",
+    "CEB project page still404; six Mauritius lifecycle gaps remain",
+    "Warranty PDF downloaded but not fully reviewed; per-model sheet claims are qualified extensions, not contractual warranty fields"
+  ],
+  "access_attempts": [
+    {
+      "url": "https://evoss.ph/Home/Download/246660",
+      "status": 403,
+      "response_sha256": "a95043fc7cd5087a067d1581d1495c7c092f66054426f4541a6bb21f394e8089",
+      "retrieved_at": "2026-11-03T13:03:13.625885+00:00"
+    },
+    {
+      "url": "https://evoss.ph/Home/Download/246661",
+      "status": 403,
+      "response_sha256": "a95043fc7cd5087a067d1581d1495c7c092f66054426f4541a6bb21f394e8089",
+      "retrieved_at": "2026-11-03T13:03:16.658128+00:00"
+    },
+    {
+      "url": "https://evoss.ph/Home/Download/246659",
+      "sha256": "a95043fc7cd5087a067d1581d1495c7c092f66054426f4541a6bb21f394e8089",
+      "retrieved_at": "2026-11-03T12:54:01.337005+00:00",
+      "status": 403
+    }
+  ],
+  "validation": {
+    "finished_at": "2026-11-03T13:07:16.026706+00:00",
+    "elapsed_minutes_through_validation": 15.38,
+    "python_passed": 1848,
+    "python_optional_skips": 1,
+    "focused_passed": 28,
+    "viewer_passed": 13,
+    "docs_pages_checked": 447,
+    "strict_docs": true,
+    "lint_format_types": true,
+    "offline_examples": true,
+    "deterministic_parquet": true,
+    "wheel_build_repeated": false
+  }
+}
