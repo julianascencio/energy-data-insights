@@ -270,7 +270,7 @@ for _, component in equipment.loc[equipment.model.fillna("").str.startswith("ACU
 # %%
 print("ACUx10 frame-specific catalogue ratings; no turbine performance inference:")
 for _, component in equipment.loc[
-    equipment.model.fillna("").str.startswith(("ACU 410-", "ACU 510-", "ACU 610-"))
+    equipment.model.fillna("").str.startswith(("ACU 210-", "ACU 410-", "ACU 510-", "ACU 610-"))
 ].iterrows():
     specs = json.loads(component.extensions_json)
     print(

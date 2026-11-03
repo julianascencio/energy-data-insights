@@ -1,11 +1,11 @@
 # Global Wind Database
 
-The Wind catalogue connects identifiable projects, exact equipment configurations,
-individual turbines and numerical curves. The proposed continuation contains
-**6,574 projects, 168 equipment records, 5,190 linked turbines and two original
-numerical curves**, across **59 countries and eleven equipment manufacturers**.
-Merged main at `2598b143` contains 6,279 projects, 144 equipment records, 4,364
-turbines and two curves. These are catalogue counts, not a current operating census.
+The Wind catalogue connects projects, exact equipment configurations, turbines and
+numerical curves. The proposed continuation contains **6,713 projects, 202 equipment
+records, 5,745 linked turbines and two original numerical curves**, across
+**59 countries and eleven equipment manufacturers**. Merged main at `273fe81f`
+contains 6,574 projects, 168 equipment records and 5,190 turbines plus two curves.
+These are catalogue counts, not a current operating census.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.
@@ -469,3 +469,24 @@ the approval row supplies no claim. Scalar approval stays unknown. The gallery
 shows frame/voltage/current boundaries. No ACUx01 replacement, turbine interface
 or independently validated performance is inferred. The separately discovered
 spindle application manual was excluded for its explicit reuse restriction.
+
+
+## Hessen, Halland and remaining ACUx10 tables
+
+The 21:35 continuation follows merged PR #111 and preserves the new gallery hierarchy.
+Complete Hessen (1,807 units / 627 groups) and Halland (176 areas / 691 units)
+partitions add 139 projects and 555 linked turbines. All 11,934 preceding records,
+prior source entries and six capacity totals remain unchanged. All new scopes
+remain excluded pending phase and repowering reconciliation. Holds cover 589
+German groups and 75 Swedish areas plus two orphan units (306 turbine rows).
+No country or manufacturer is newly counted.
+
+Bonfiglioli R04_0 pages 19–23 (`bonfiglioli_acu_r04_0`) supply 34 exact
+configurations: 12 ACU210 and 22 ACU410 columns. The source checksum was reverified
+and all five tables visually reviewed. Input-phase ratings and column-specific
+line-choke requirements stay distinct. Standard, coldplate and liquid dimensions
+and brake options remain nested. ACU410-12 is explicit on page 21 despite its
+omission from the nomenclature summary. Unclaimed approvals remain unknown.
+Series yaw applicability is documented; turbine compatibility and independently
+validated operational performance are not inferred. The gallery includes the new
+230 V ACU210 entries.

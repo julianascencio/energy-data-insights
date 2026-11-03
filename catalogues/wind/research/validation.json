@@ -1,27 +1,26 @@
 {
-  "batch": "2026-11-03-2035",
+  "batch": "2026-11-03-2135",
   "local": {
-    "environment": "Initial pytest/ty collection lacked newly merged xgboost; uv sync --locked --all-packages --group imagery --group docs --python3.13 resolved it; final checks below",
-    "pytest": "2075 passed,1 optional cdsapi skip",
+    "pytest": "2081 passed,1 optional cdsapi skip after merging current main; initial pre-integration run2078passed/1skip",
     "viewer": "15 Node tests passed",
-    "catalogue": "11934 records validated by two builds",
-    "snapshots": "Two fresh builds byte-identical; four typed Parquet tables ZSTD verified; docs manifest equals validated snapshot",
-    "preservation": "10789 preceding records and prior source entries byte-identical; all six capacity totals unchanged;295 new project scopes excluded",
-    "adapter": "44351 German total/2464 selected;787 Swedish areas1962 units independently counted across10layers;1121 project/turbine source records replay identical;21 MaStR tests in full suite",
-    "sphinx": "Strict build and489-page link/asset audit passed",
-    "example": "Offline gallery passed; ACUx10 frame/voltage/current/cooling boundaries exposed",
-    "ruff": "format/check passed",
-    "ty": "passed after locked environment sync",
+    "catalogue": "12662 records validated by two builds",
+    "snapshots": "Two fresh builds byte-identical; all four Parquet tables136typed fields; every column ZSTD; documentation wind manifest equals validated snapshot",
+    "preservation": "11934 preceding records and all prior source entries unchanged; six capacity totals unchanged;139new project scopes excluded;PV/BESS/Data Center records identical to publication main8156f311",
+    "adapter": "44351German total/1807selected;176Swedish areas691units independently counted across10layers;694project/turbine records replayed identically;Hessen dictionary scope regression included in full suite",
+    "example": "Offline wind gallery passed; ACU210/410 phase/frame/current/cooling boundaries exposed",
+    "ruff": "format/check passed after main integration",
+    "ty": "passed after main integration",
     "citations": "passed",
-    "repository_hygiene": "3232 candidate files passed",
+    "repository_hygiene": "3299 candidate files passed",
     "whitespace": "passed",
-    "packages": "All three workspace packages built as wheels and source distributions",
-    "cross_sector_identity": "No existing Bonfiglioli ACUx10 equipment candidates outside wind"
+    "packages": "All three workspace packages built as wheels and source distributions after main integration",
+    "cross_sector_identity": "No matching Bonfiglioli ACU210/410 records found in PV,BESS,BESS OEM or Data Center catalogues",
+    "sphinx": "Strict build succeeded after main integration; Documentation check passed: 510 HTML pages; local links and assets resolve."
   },
   "not_executed": [
     "new browser smoke test"
   ],
   "remote_ci": {
-    "this_increment": "Not yet published when this local report was written; inspect PR checks for remote results"
+    "this_increment": "Not yet published when local report was written; inspect PR checks for remote results"
   }
 }
