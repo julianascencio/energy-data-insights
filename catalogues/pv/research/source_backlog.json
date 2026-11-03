@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T02:18:04.031535+00:00",
+  "updated_at": "2026-11-03T03:06:17.465596+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "Four ODRE 5–20 MW regional partitions and 13 existing Aragón crosswalk suggestions; 71 project enrichments. Reviewed 15 Phoenix Contact article tables; eight distinct configurations accepted. Grid-India REC access succeeded but publisher terms bar incorporation.",
-  "next_highest_value_source": "Aragón Aguasvivas: establish Moneva identity independently with BOA BOA20220922022 and an as-built/site crosswalk before any capacity update. In parallel, inspect ODRE Corse PHOTV 5–20 MW (code 94), then overseas partitions for exact EIC and non-confidential scope. India REC is rights-held, not the next bulk source.",
+  "selection_note": "Seven fresh ODRE partitions, two exact Fox ESS PDF tables and the Aguasvivas prior identity hold.",
+  "next_highest_value_source": "EDF SEI Corse registry, 30 September 2025 snapshot under Licence Ouverte: inspect project-level schema, confidentiality and exact IDs before reconciling against the empty ODRE query.",
   "sources": [
     {
       "id": "uk_repd",
@@ -4974,6 +4974,283 @@
       "retry_condition": "Source-specific open licence or independent suitable official state inventory.",
       "next_action": "Retry the independently published OGD solar parks resource and inspect its specific licence and project/park distinction; do not scrape the REC directory.",
       "priority": 8,
+      "processed_cursor": null
+    },
+    {
+      "id": "odre_0300_corse_5_20",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2794%27",
+      "version_or_date": "2026-08-31",
+      "access_assessment": "Public filtered export; empty means zero rows for exact query only",
+      "licence_assessment": "Licence Ouverte 2.0",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "enriched": 0
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "substation",
+        "industrial-service date"
+      ],
+      "last_attempt": "2026-11-03T03:04:00.855424+00:00",
+      "result": "0 rows; empty query, no national absence inferred",
+      "retry_condition": "New snapshot or verified alternate source field/coverage",
+      "next_action": "Screen ODRE PHOTV 5–20 MW by exact department/region values for overseas coverage; verify dataset metadata against EDF SEI and its independent open production registry before inferring absence.",
+      "processed_cursor": {
+        "query_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2794%27",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "complete": true
+      }
+    },
+    {
+      "id": "odre_0300_guadeloupe_5_20",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2701%27",
+      "version_or_date": "2026-08-31",
+      "access_assessment": "Public filtered export; empty means zero rows for exact query only",
+      "licence_assessment": "Licence Ouverte 2.0",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "enriched": 0
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "substation",
+        "industrial-service date"
+      ],
+      "last_attempt": "2026-11-03T03:03:59.720256+00:00",
+      "result": "0 rows; empty query, no national absence inferred",
+      "retry_condition": "New snapshot or verified alternate source field/coverage",
+      "next_action": "Screen ODRE PHOTV 5–20 MW by exact department/region values for overseas coverage; verify dataset metadata against EDF SEI and its independent open production registry before inferring absence.",
+      "processed_cursor": {
+        "query_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2701%27",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "complete": true
+      }
+    },
+    {
+      "id": "odre_0300_martinique_5_20",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2702%27",
+      "version_or_date": "2026-08-31",
+      "access_assessment": "Public filtered export; empty means zero rows for exact query only",
+      "licence_assessment": "Licence Ouverte 2.0",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "enriched": 0
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "substation",
+        "industrial-service date"
+      ],
+      "last_attempt": "2026-11-03T03:03:59.719935+00:00",
+      "result": "0 rows; empty query, no national absence inferred",
+      "retry_condition": "New snapshot or verified alternate source field/coverage",
+      "next_action": "Screen ODRE PHOTV 5–20 MW by exact department/region values for overseas coverage; verify dataset metadata against EDF SEI and its independent open production registry before inferring absence.",
+      "processed_cursor": {
+        "query_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2702%27",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "complete": true
+      }
+    },
+    {
+      "id": "odre_0300_guyane_5_20",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2703%27",
+      "version_or_date": "2026-08-31",
+      "access_assessment": "Public filtered export; empty means zero rows for exact query only",
+      "licence_assessment": "Licence Ouverte 2.0",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "enriched": 0
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "substation",
+        "industrial-service date"
+      ],
+      "last_attempt": "2026-11-03T03:03:59.903670+00:00",
+      "result": "0 rows; empty query, no national absence inferred",
+      "retry_condition": "New snapshot or verified alternate source field/coverage",
+      "next_action": "Screen ODRE PHOTV 5–20 MW by exact department/region values for overseas coverage; verify dataset metadata against EDF SEI and its independent open production registry before inferring absence.",
+      "processed_cursor": {
+        "query_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2703%27",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "complete": true
+      }
+    },
+    {
+      "id": "odre_0300_reunion_5_20",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2704%27",
+      "version_or_date": "2026-08-31",
+      "access_assessment": "Public filtered export; empty means zero rows for exact query only",
+      "licence_assessment": "Licence Ouverte 2.0",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "enriched": 0
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "substation",
+        "industrial-service date"
+      ],
+      "last_attempt": "2026-11-03T03:04:06.516613+00:00",
+      "result": "0 rows; empty query, no national absence inferred",
+      "retry_condition": "New snapshot or verified alternate source field/coverage",
+      "next_action": "Screen ODRE PHOTV 5–20 MW by exact department/region values for overseas coverage; verify dataset metadata against EDF SEI and its independent open production registry before inferring absence.",
+      "processed_cursor": {
+        "query_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2704%27",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "complete": true
+      }
+    },
+    {
+      "id": "odre_0300_mayotte_5_20",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2706%27",
+      "version_or_date": "2026-08-31",
+      "access_assessment": "Public filtered export; empty means zero rows for exact query only",
+      "licence_assessment": "Licence Ouverte 2.0",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "enriched": 0
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "substation",
+        "industrial-service date"
+      ],
+      "last_attempt": "2026-11-03T03:04:06.736828+00:00",
+      "result": "0 rows; empty query, no national absence inferred",
+      "retry_condition": "New snapshot or verified alternate source field/coverage",
+      "next_action": "Screen ODRE PHOTV 5–20 MW by exact department/region values for overseas coverage; verify dataset metadata against EDF SEI and its independent open production registry before inferring absence.",
+      "processed_cursor": {
+        "query_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2706%27",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "complete": true
+      }
+    },
+    {
+      "id": "odre_0300_national_20_plus",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D20000",
+      "version_or_date": "2026-08-31",
+      "access_assessment": "Public filtered export; empty means zero rows for exact query only",
+      "licence_assessment": "Licence Ouverte 2.0",
+      "estimated_useful_yield": {
+        "reviewed": 8,
+        "enriched": 1
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "substation",
+        "industrial-service date"
+      ],
+      "last_attempt": "2026-11-03T03:04:21.573673+00:00",
+      "result": "8 rows; one enriched, seven held",
+      "retry_condition": "New snapshot or verified alternate source field/coverage",
+      "next_action": "Screen ODRE PHOTV 5–20 MW by exact department/region values for overseas coverage; verify dataset metadata against EDF SEI and its independent open production registry before inferring absence.",
+      "processed_cursor": {
+        "query_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D20000",
+        "sha256": "f27794f68370d56346ca37f69cee8ed2a355532fbe8c4b172c8084581bed8b41",
+        "complete": true
+      }
+    },
+    {
+      "id": "foxess_r_20261103T0300",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260415/ENRG2DatasheetV1.320260415.pdf",
+      "version_or_date": "2026-04-15",
+      "access_assessment": "Public OEM PDF, raw bytes outside Git",
+      "licence_assessment": "OEM copyright retained; limited factual specifications, no full table/document reproduction or blanket licence assumed.",
+      "estimated_useful_yield": 6,
+      "fields_offered": [
+        "Qualified exact engineering data or dated project facts; see record mappings"
+      ],
+      "last_attempt": "2026-11-03T03:05:06.364141+00:00",
+      "result": "Accepted only exact named model or site; no current status or extra variants inferred.",
+      "retry_condition": "Substantive new revision or separate exact architecture",
+      "next_action": "Move to independent source; keep published scope and conflicting ratings separate.",
+      "processed_cursor": {
+        "sha256": "2885d2559f72748e628678cd9206d3b1bc368d23cbe13022a45e634c13c483fa",
+        "complete": true
+      }
+    },
+    {
+      "id": "foxess_p3_20261103T0300",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENP3PlusDatasheetV1.320260609.pdf",
+      "version_or_date": "2026-06-05",
+      "access_assessment": "Public OEM PDF, raw bytes outside Git",
+      "licence_assessment": "OEM copyright retained; limited factual specifications, no full table/document reproduction or blanket licence assumed.",
+      "estimated_useful_yield": 6,
+      "fields_offered": [
+        "Qualified exact engineering data or dated project facts; see record mappings"
+      ],
+      "last_attempt": "2026-11-03T03:05:06.754453+00:00",
+      "result": "Accepted only exact named model or site; no current status or extra variants inferred.",
+      "retry_condition": "Substantive new revision or separate exact architecture",
+      "next_action": "Move to independent source; keep published scope and conflicting ratings separate.",
+      "processed_cursor": {
+        "sha256": "cf1afd97e83d33f9845129bc4f2813ec52d42a6775cc3a79343232b12fdbbb20",
+        "complete": true
+      }
+    },
+    {
+      "id": "bruc_aguasvivas_20261103T0300",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://brucenergy.com/bruc-pone-en-marcha-la-planta-solar-fotovoltaica-aguasvivas-de-55-mw-en-aragon/",
+      "version_or_date": "2024-09-10",
+      "access_assessment": "Public announcement",
+      "licence_assessment": "Publisher rights retained; individually selected facts only",
+      "estimated_useful_yield": 1,
+      "fields_offered": [
+        "Qualified exact engineering data or dated project facts; see record mappings"
+      ],
+      "last_attempt": "2026-11-03T03:05:43.628693+00:00",
+      "result": "Accepted only exact named model or site; no current status or extra variants inferred.",
+      "retry_condition": "Substantive new revision or separate exact architecture",
+      "next_action": "Move to independent source; keep published scope and conflicting ratings separate.",
+      "processed_cursor": {
+        "sha256": "5e61e4298b85f78154f8b4363f5a728c7f30ae5e719984bdf6adb81581ed61ea",
+        "complete": true
+      }
+    },
+    {
+      "id": "edf_sei_corse_0300",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://opendata-corse.edf.fr/datasets/registre-national-des-installations-de-production-et-de-stockage-delectricite-corse",
+      "version_or_date": "2025-09-30",
+      "access_assessment": "Public publisher metadata reviewed; export not yet staged",
+      "licence_assessment": "Licence Ouverte indicated",
+      "estimated_useful_yield": "Unknown until export inspected",
+      "fields_offered": [
+        "Production installation identity and technology; inspect exact export"
+      ],
+      "last_attempt": "2026-11-03T03:06:20Z",
+      "result": "Discovery only",
+      "retry_condition": "Inspect fresh exact dataset export and snapshot",
+      "next_action": "EDF SEI Corse registry, 30 September 2025 snapshot under Licence Ouverte: inspect project-level schema, confidentiality and exact IDs before reconciling against the empty ODRE query.",
       "processed_cursor": null
     }
   ]
