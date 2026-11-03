@@ -11,3 +11,48 @@ html[data-theme="dark"] {
 .sd-card { border-radius: .6rem; }
 .sd-card-title { color: var(--pst-color-primary); }
 .sphx-glr-thumbcontainer { border-radius: .5rem; }
+
+/* Category pages show concise navigation; topic pages show readable examples. */
+.gallery-navigation .sd-card-title {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+.gallery-navigation .sd-card-text { line-height: 1.6; }
+.gallery-topic .sphx-glr-thumbnails {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.gallery-topic .sphx-glr-thumbcontainer {
+  padding: 1.25rem;
+  gap: 1rem;
+  box-shadow: none;
+  border: 1px solid var(--pst-color-border);
+}
+.gallery-topic .sphx-glr-thumbnail-title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.gallery-topic .sphx-glr-thumbcontainer:hover {
+  border-color: var(--pst-color-primary);
+}
+.gallery-topic .sphx-glr-thumbcontainer:focus-within,
+.gallery-navigation .sd-card:focus-within {
+  outline: 3px solid var(--pst-color-primary);
+  outline-offset: 3px;
+}
+/* Preserve the link name for assistive technology instead of display:none. */
+.gallery-topic .sphx-glr-thumbcontainer p a span {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media (max-width: 575px) {
+  .gallery-topic .sphx-glr-thumbnails { grid-template-columns: 1fr; }
+}
