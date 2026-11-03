@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 2 November 2026 expanded research snapshot contains **465 records from 39 product
-suppliers, backed by 211 primary sources**: 452 documented configurations and 13
+The 3 November 2026 expanded research snapshot contains **525 records from 40 product
+suppliers, backed by 237 registered sources**: 512 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -214,3 +214,13 @@ Latest iteration: [second French partition and Rolls components](../bess/researc
 Latest pass: [French partition 400–599 and Rolls LFP review](../bess/research/2026-11-02_odre_partition3.md).
 
 Latest pass: [Final French partition, LFP and Ventavon](../bess/research/2026-11-02_odre_partition4.md).
+
+Latest pass: [India IATI and HW15 inverter components](../bess/research/2026-11-02_india_vedirect.md).
+
+Latest pass: [Pacific inventories and exact HW15 120 V models](../bess/research/2026-11-03_pacific_hw15.md).
+
+Latest: [Tonga and LiTE 2 research](../bess/research/2026-11-03_tonga_lite2.md).
+
+Latest: [Outer Tonga and Encore research](../bess/research/2026-11-03_outer_tonga_encore.md).
+
+Latest: [Tonga review and EMS/PCS specifications](../bess/research/2026-11-03_tonga_ems_pcs.md).

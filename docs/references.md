@@ -4440,6 +4440,286 @@ Asian Development Bank (2026). **ADB Uzbekistan IATI activities**. [Source](http
 
 **Used by:** `catalogues/bess/sources.json`.
 
+### adb_india_20261102
+
+Asian Development Bank (2026). **ADB India IATI activities**. [Source](https://www.adb.org/iati/iati-activities-in.xml)
+
+**Role:** data_source. Primary factual evidence; exact locators, revision, checksum and source reuse qualification in catalogue sources.json.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### victron_vedirect_hw15_230v_20261102
+
+Victron Energy (2026). **Inverter VE.Direct 230V HW15 technical specifications**. [Source](https://www.victronenergy.com/media/pg/Inverter_VE.Direct_230V_-_HW15/en/technical-specifications.html)
+
+**Role:** data_source. Primary factual evidence; exact locators, revision, checksum and source reuse qualification in catalogue sources.json.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_hw15_120v_20261103
+
+Victron Energy (2026). **Inverter VE.Direct 120V HW15 technical specifications**. [Source](https://www.victronenergy.com/media/pg/Inverter_VE.Direct_120V_-_HW15/en/technical-specifications.html)
+
+**Role:** data. Exact model factual specifications; table/model locators and source hash in source register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### victron_hw15_230v_20261103
+
+Victron Energy (2026). **Inverter VE.Direct 230V HW15 technical specifications**. [Source](https://www.victronenergy.com/media/pg/Inverter_VE.Direct_230V_-_HW15/en/technical-specifications.html)
+
+**Role:** data. HW15 230 V manufacturer safety and EMC claims; not independent certification.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_10_52v_model_b_20260206
+
+Freedom Won (2026). **LiTE 2 Home 10/8 52V Model B specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-10_8-52V-B.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_15_52v_model_b_20260206
+
+Freedom Won (2026). **LiTE 2 Home 15/12 52V Model B specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-15_12-52V-B.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_20_52v_model_b_20260206
+
+Freedom Won (2026). **LiTE 2 Home 20/16 52V Model B specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-20_16-52V-B.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_business_40_52v_20260206
+
+Freedom Won (2026). **LiTE 2 Business 40/32 52V specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Business-40_32-52V-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_business_60_52v_20260206
+
+Freedom Won (2026). **LiTE 2 Business 60/48 52V specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Business-60_48-52V-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_business_80_52v_20260206
+
+Freedom Won (2026). **LiTE 2 Business 80/64 52V specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Business-80_64-52V-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_10_hv_20260206
+
+Freedom Won (2026). **LiTE 2 Home 10/8 HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-10_8-HV-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_15_hv_20260206
+
+Freedom Won (2026). **LiTE 2 Home 15/12 HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-15_12-HV.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_20_hv_20260206
+
+Freedom Won (2026). **LiTE 2 Home 20/16 HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-20_16-HV-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### freedomwon_lite2_home_30_hv_20260206
+
+Freedom Won (2026). **LiTE 2 Home 30/24 HV specification sheet**. [Source](https://www.freedomwon.co.za/wp-content/uploads/FW-LiTE-2-Home-30_24-HV-1.pdf)
+
+**Role:** data. Exact named model, page 1 rows/notes; source checksum in register.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### akuo_tonga_opening_20221025
+
+Akuo (2022). **Tonga BESS completion ceremony**. [Source](https://www.akuoenergy.com/en/press/official-completion-ceremony-tongas-1st-ever-large-scale-battery-energy-storage-systems)
+
+**Role:** data. Opening paragraphs and named sites
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### akuo_tonga_portfolio_20261103
+
+Akuo (2026). **Tonga renewable energy storage project**. [Source](https://www.akuoenergy.com/en/akuo-in-the-world/all-our-projects/tonga)
+
+**Role:** data. Two storage facilities and operation paragraphs
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### tonga_ndc_review_2025
+
+Government of Tonga (2025). **Tonga Second Nationally Determined Contributions Review Report**. [Source](https://www.unfccc.int/sites/default/files/2025-09/Tongas%20Second%20Nationally%20Determined%20Contribution%20Review%20Report.pdf)
+
+**Role:** data. Printed page 16 / PDF page 24, battery storage paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### encore_encore_12k_20261103
+
+Freedom Won (2024). **Encore 12K exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-Three-Phase-Inverter-12K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_encore_15k_20261103
+
+Freedom Won (2024). **Encore 15K exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-Three-Phase-Inverter-15K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps50_20261103
+
+Freedom Won (2024). **HPS50 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-50_120K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps100_20261103
+
+Freedom Won (2024). **HPS100 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-100_180K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps150_20261103
+
+Freedom Won (2024). **HPS150 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-150_240K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps250_20261103
+
+Freedom Won (2024). **HPS250 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-250_300K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps500_20261103
+
+Freedom Won (2024). **HPS500 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-500_600K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### tonga_pmo_eua_202303
+
+Government of Tonga, Prime Minister office (2023). **Eua solar and battery commissioning**. [Source](https://pmo.gov.to/kingdom-of-tonga-celebrates-major-milestone-towards-renewable-energy-target-with-commissioning-of-eua-island-350kw-solar-system-and-bess-tonga-renewable-energy-project/)
+
+**Role:** data. Dated opening paragraph, system description and contractor paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### tonga_pmo_vavau_202303
+
+Government of Tonga, Prime Minister office (2023). **Vavau solar and battery commissioning**. [Source](https://pmo.gov.to/kingdom-of-tonga-celebrates-major-milestone-towards-renewable-energy-target-with-commissioning-of-vavau-island-300kw-solar-system-and-bess-tonga-renewable-energy-project/)
+
+**Role:** data. Dated opening paragraph, system description and contractor paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### tpl_trep03_lot1_status_20261103
+
+Tonga Power Limited (2026). **TREP-03 Lot 1 Eua and Vavau solar and storage systems contract status**. [Source](https://tongapower.to/node/218)
+
+**Role:** data. Contract summary: completion certificate October 2024; current status plant in operation
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### freedomwon_ems_eol_20241021
+
+Freedom Won (2024). **EMS Standard and Pro historical hardware**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-EMS-Range-Overview-Sheet-EOL.pdf)
+
+**Role:** data. Pages 1-2, exact Standard/Pro columns and notes
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### epc_cab1000_3l2_20250923
+
+Freedom Won (EPC Power distributor) (2025). **EPC Power CAB1000 (3L.2) specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/EPC-Power-CAB1000-Spec-Sheet.pdf)
+
+**Role:** data. Page 1, five nominal-voltage columns and notes 1-8
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fw_enva_5_detail_20261103
+
+Freedom Won (2026). **ENVA 5 detailed specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-ENVA-5-Spec-Sheet-260526.pdf)
+
+**Role:** data. Exact model table: storage/prospective short-circuit rows (ENVA pages 1-2); connection/protection rows (SOLVA page 1)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fw_enva_16_detail_20261103
+
+Freedom Won (2026). **ENVA 16 detailed specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-ENVA-16-Spec-Sheet-280826.pdf)
+
+**Role:** data. Exact model table: storage/prospective short-circuit rows (ENVA pages 1-2); connection/protection rows (SOLVA page 1)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fw_solva_ac261_detail_20261103
+
+Freedom Won (2026). **SOLVA AC261 detailed specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-AC261-Spec-Sheet-170926.pdf)
+
+**Role:** data. Exact model table: storage/prospective short-circuit rows (ENVA pages 1-2); connection/protection rows (SOLVA page 1)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fw_solva_dc208_detail_20261103
+
+Freedom Won (2026). **SOLVA DC208 detailed specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-DC208-Spec-Sheet-170926.pdf)
+
+**Role:** data. Exact model table: storage/prospective short-circuit rows (ENVA pages 1-2); connection/protection rows (SOLVA page 1)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### dfat_tonga_completion_202402
+
+Australian Department of Foreign Affairs and Trade (2024). **Independent Completion Review: Australia contribution to the multi-donor Tonga Outer Islands Renewable Energy Project**. [Source](https://www.dfat.gov.au/sites/default/files/tonga-outer-islands-renewable-energy-project.pdf)
+
+**Role:** data. Table One, printed pages 11-12, PDF pages 20-21; surrounding text printed page 13
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sprep_tonga_bess_case_table
+
+SPREP library (ADB technical publication mirror) (2024). **Hybrid and Battery Energy Storage Systems: Tonga case-study table**. [Source](https://library.sprep.org/sites/default/files/2022-09/hybrid-battery-energy-storage-systems.pdf)
+
+**Role:** data. Table 3.2 continued, printed page 19; financed project infrastructure
+
+**Used by:** `catalogues/bess/sources.json`.
+
 ### dc_nextdc_20261102
 
 NEXTDC (n.d.). **Data Centres: complete displayed portfolio**. [Source](https://www.nextdc.com/data-centres)
