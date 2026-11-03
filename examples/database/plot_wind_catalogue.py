@@ -265,3 +265,24 @@ for _, component in equipment.loc[equipment.model.fillna("").str.startswith("ACU
     print(component.model, specs["switching_frequency_current_a"])
     if "single_two_phase_max_output_current_a" in specs:
         print("Single/two-phase maximum A:", specs["single_two_phase_max_output_current_a"])
+
+
+# %%
+print("ACUx10 frame-specific catalogue ratings; no turbine performance inference:")
+for _, component in equipment.loc[
+    equipment.model.fillna("").str.startswith(("ACU 410-", "ACU 510-", "ACU 610-"))
+].iterrows():
+    specs = json.loads(component.extensions_json)
+    print(
+        component.model,
+        "frame",
+        specs["size"],
+        "mains V",
+        specs["rated_mains_voltage_v"],
+        "motor A",
+        specs["output_current_table_a"],
+        "overload A",
+        specs["overload_current_a"],
+        "cooling options",
+        specs["mechanical_options"],
+    )

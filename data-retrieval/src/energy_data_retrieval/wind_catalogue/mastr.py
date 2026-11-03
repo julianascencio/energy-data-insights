@@ -28,6 +28,7 @@ STATES = {
     "1403": "Bayern",
     "1402": "Baden-Württemberg",
     "1407": "Mecklenburg-Vorpommern",
+    "1410": "Rheinland-Pfalz",
 }
 
 

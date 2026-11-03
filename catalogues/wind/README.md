@@ -3,10 +3,10 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 6,279 project records (6,278 non-group records),
-144 exact equipment records, 4,364 registry turbine records and two original numerical
+The proposed branch contains 6,574 project records (6,573 non-group records),
+168 exact equipment records, 5,190 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
-Merged main at `2fd691a7` contains 6,227 projects, 124 equipment, 4,176 individual
+Merged main at `2598b143` contains 6,279 projects, 144 equipment, 4,364 individual
 turbines and two curves. These are catalogue counts, not an operating census.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
@@ -76,3 +76,7 @@ The18:35 batch adds83projects,369turbines and18exact ACU401inverters.
 The 19:35 batch adds 52 projects, 188 turbines and 20 exact ACU configurations
 from complete Mecklenburg-Vorpommern/Blekinge partitions and OEM type tables.
 All 10,529 preceding records and six capacity totals remain unchanged.
+
+The 20:35 batch adds 295 projects, 826 turbines and 24 exact ACUx10 configurations
+from complete Rheinland-Pfalz/Skåne partitions and R04_0 frame7/8 tables.
+All 10,789 preceding records and six capacity totals remain unchanged.
