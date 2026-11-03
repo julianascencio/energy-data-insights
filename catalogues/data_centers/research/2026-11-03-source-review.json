@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T06:22:12Z",
+  "retrieved_at": "2026-11-03T07:22:54Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -128,6 +128,20 @@
       "accepted_records": 4,
       "reuse": "Factual extraction from the official OEM manual; the PDF reports copy disabled and proprietary/confidential markings, so the original is not redistributed",
       "originals": "Official 106-page PDF capture available during review with SHA-256, byte count and printed revision in sources.json"
+    },
+    {
+      "inventory": "Carrier AquaEdge 19DV exact 400 V/50 Hz and 380 V/60 Hz selection tables, revision NA23.16A",
+      "processed_offset": 28,
+      "accepted_records": 28,
+      "reuse": "Factual extraction from an official public copyrighted OEM brochure; no open licence asserted; original and table are not redistributed",
+      "originals": "Official 12-page PDF capture available during review with raw-byte SHA-256, byte count, PDF date, printed revision and table locators in sources.json"
+    },
+    {
+      "inventory": "Raxio complete displayed seven-country facility portfolio and seven official facility pages",
+      "processed_offset": 7,
+      "accepted_records": 7,
+      "reuse": "Factual extraction from public copyrighted operator pages; no open licence asserted; originals are not redistributed",
+      "originals": "Eight official HTML captures plus the dated MZ1 opening release were retrieved; raw-byte SHA-256 and byte counts are retained in sources.json"
     }
   ],
   "deferred": [
@@ -170,6 +184,14 @@
     {
       "candidate": "PowerUPS 6000 exact dimensions and efficiency by rating",
       "reason": "The document groups dimensions and presents a 92-97% family efficiency span without an unambiguous model-by-model binding"
+    },
+    {
+      "candidate": "Carrier 30RAP and 30HX exact configuration continuation",
+      "reason": "Screened official tables did not provide a complete exact rating set for this batch; 30RAP size 016 also prints an unresolved 800 lb / 1125 kg conflict"
+    },
+    {
+      "candidate": "Google 2026 Q3 campus PUE table",
+      "reason": "The English page still exposed Q1/Q2 only; an inconsistent Chinese search cache was not accepted as official Q3 evidence"
     }
   ],
   "excluded": [
@@ -216,6 +238,10 @@
     {
       "candidate": "Trinergy battery energy and runtime",
       "reason": "The manual states supported battery chemistries and a DC voltage range but does not bind nominal/usable energy or runtime to the four CE ratings"
+    },
+    {
+      "candidate": "Raxio operator certification badges",
+      "reason": "Badges were not normalized without issuer-registry certificate identifiers, exact scope and dated award evidence"
     }
   ],
   "holds_unchanged": [
@@ -274,6 +300,10 @@
     "Tigo's total site, corporate allocation, initial and ultimate rack/area boundaries remain separate observations rather than one normalized count",
     "Meta fleet cards are campus aggregates with unknown lifecycle; break-ground years remain year-precision observations and investments retain currency and lower-bound qualifiers",
     "PowerUPS 6000 kVA is normalized only for the 19 explicitly printed topology/rating rows; active kW, grouped dimensions and family efficiency are not assigned",
-    "Trinergy CE active output is normalized from the exact OEM table at 40 C; up-to efficiency claims remain qualified observations because load conditions are undisclosed"
+    "Trinergy CE active output is normalized from the exact OEM table at 40 C; up-to efficiency claims remain qualified observations because load conditions are undisclosed",
+    "Carrier 19DV cooling and electrical ratings retain AHRI water temperatures, fouling factors, pass count and water-side pressure; 50 Hz and 60 Hz model suffixes remain separate exact configurations",
+    "Raxio IT MW is design maximum only; connection kV and cooling provision MW remain observations and are not normalized as grid or facility demand",
+    "Raxio year/month lifecycle markers remain verbatim observations rather than fabricated full dates; only MZ1 has an exact commissioning date from a dated opening release",
+    "Raxio PUE 1.3 observations use unspecified kind with null measurement period and source boundary because the operator does not label them measured, design or target values"
   ]
 }

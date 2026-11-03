@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T06:22:12Z",
+  "updated_at": "2026-11-03T07:22:54Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -25,7 +25,9 @@
     "uruguay_paraguay_primary_facilities": 2,
     "meta_global_fleet_cards": 33,
     "vertiv_powerups6000_topology_ratings": 19,
-    "vertiv_trinergy_ce_ratings": 4
+    "vertiv_trinergy_ce_ratings": 4,
+    "carrier_aquaedge_19dv_configurations": 28,
+    "raxio_current_facilities": 7
   },
   "next_batches": [
     {
@@ -64,8 +66,8 @@
       "urls": [
         "https://www.africadatacentres.com/"
       ],
-      "offset": 8,
-      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; initial Uruguay/Paraguay official facility batch complete at offset 2. Continue issuer registries, JHB1 phase reconciliation, Accra post-announcement evidence, and additional underrepresented-country primary inventories",
+      "offset": 15,
+      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; Uruguay/Paraguay batch complete at offset 2; Raxio complete displayed seven-country portfolio at offset 7. Continue issuer registries, JHB1 phase reconciliation, Raxio dated lifecycle/permit evidence, Accra post-announcement evidence, and additional underrepresented-country primary inventories",
       "questions": [
         "Issuer-verify facility certifications rather than normalizing operator badges",
         "Resolve JHB1 14.5 MW facility-sheet versus 20 MW expansion boundary and date",
@@ -96,8 +98,8 @@
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/"
       ],
-      "offset": 147,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables plus all 19 PowerUPS 6000 topology/rating rows and four Trinergy CE ratings complete; continue exact current chiller, transformer, switchgear and generator tables and diversify suppliers",
+      "offset": 175,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings and all 28 Carrier AquaEdge 19DV 50/60 Hz rows complete; continue exact current transformer, switchgear and generator tables and diversify suppliers",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -125,7 +127,7 @@
       "source": "Google PUE continuation",
       "url": "https://www.datacenters.google/efficiency/",
       "offset": 35,
-      "scope": "Q2 2026 fully processed; check for Q3/Q4 updates, then enrich all 35 campus identities with individual phase evidence",
+      "scope": "Q2 2026 fully processed; 2026-11-03 English-page check found no Q3 table and an inconsistent Chinese search cache was not accepted. Recheck for an official Q3/Q4 table, then enrich all 35 campus identities with individual phase evidence",
       "questions": [
         "Retain separate campus and building boundaries",
         "Do not overwrite earlier measured periods or infer IT MW from PUE"
