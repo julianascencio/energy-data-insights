@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,713 project and plant records across
-35 countries**, supported by **208 primary sources**. It combines curated
+The BESS section contains **1,715 project and plant records across
+35 countries**, supported by **211 primary sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -218,3 +218,5 @@ Latest pass: [India IATI and HW15 inverter components](../bess/research/2026-11-
 Latest pass: [Pacific inventory review and HW15 equipment](research/2026-11-03_pacific_hw15.md).
 
 Latest: [Tonga and LiTE 2 research](research/2026-11-03_tonga_lite2.md).
+
+Latest: [Outer Tonga and Encore research](research/2026-11-03_outer_tonga_encore.md).

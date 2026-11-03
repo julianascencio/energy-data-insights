@@ -4575,3 +4575,83 @@ Government of Tonga (2025). **Tonga Second Nationally Determined Contributions R
 **Role:** data. Printed page 16 / PDF page 24, battery storage paragraph
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### encore_encore_12k_20261103
+
+Freedom Won (2024). **Encore 12K exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-Three-Phase-Inverter-12K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_encore_15k_20261103
+
+Freedom Won (2024). **Encore 15K exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-Three-Phase-Inverter-15K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps50_20261103
+
+Freedom Won (2024). **HPS50 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-50_120K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps100_20261103
+
+Freedom Won (2024). **HPS100 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-100_180K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps150_20261103
+
+Freedom Won (2024). **HPS150 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-150_240K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps250_20261103
+
+Freedom Won (2024). **HPS250 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-250_300K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### encore_hps500_20261103
+
+Freedom Won (2024). **HPS500 exact inverter specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Spec-Sheet-Encore-HPS-Inverter-500_600K.pdf)
+
+**Role:** data. Physical PDF page 1 electrical/thermal rows and numbered notes; page 2 physical rows for three-phase units
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### tonga_pmo_eua_202303
+
+Government of Tonga, Prime Minister office (2023). **Eua solar and battery commissioning**. [Source](https://pmo.gov.to/kingdom-of-tonga-celebrates-major-milestone-towards-renewable-energy-target-with-commissioning-of-eua-island-350kw-solar-system-and-bess-tonga-renewable-energy-project/)
+
+**Role:** data. Dated opening paragraph, system description and contractor paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### tonga_pmo_vavau_202303
+
+Government of Tonga, Prime Minister office (2023). **Vavau solar and battery commissioning**. [Source](https://pmo.gov.to/kingdom-of-tonga-celebrates-major-milestone-towards-renewable-energy-target-with-commissioning-of-vavau-island-300kw-solar-system-and-bess-tonga-renewable-energy-project/)
+
+**Role:** data. Dated opening paragraph, system description and contractor paragraph
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### tpl_trep03_lot1_status_20261103
+
+Tonga Power Limited (2026). **TREP-03 Lot 1 Eua and Vavau solar and storage systems contract status**. [Source](https://tongapower.to/node/218)
+
+**Role:** data. Contract summary: completion certificate October 2024; current status plant in operation
+
+**Used by:** `catalogues/bess/sources.json`.

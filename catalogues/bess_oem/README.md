@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 3 November 2026 expanded research snapshot contains **511 records from 39 product
-suppliers, backed by 224 primary sources**: 498 documented configurations and 13
+The 3 November 2026 expanded research snapshot contains **518 records from 39 product
+suppliers, backed by 231 primary sources**: 505 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -220,3 +220,5 @@ Latest pass: [India IATI and HW15 inverter components](../bess/research/2026-11-
 Latest pass: [Pacific inventories and exact HW15 120 V models](../bess/research/2026-11-03_pacific_hw15.md).
 
 Latest: [Tonga and LiTE 2 research](../bess/research/2026-11-03_tonga_lite2.md).
+
+Latest: [Outer Tonga and Encore research](../bess/research/2026-11-03_outer_tonga_encore.md).
