@@ -113,5 +113,43 @@
         "Separate original numerical, digitized and generic reference turbines; add thrust curves only with exact-model support"
       ]
     }
-  ]
+  ],
+  "user_priority_update": {
+    "date": "2026-11-03",
+    "focus": "Top ten markets by cumulative wind installed capacity; ordering is research priority, not capacity ranking",
+    "countries": [
+      "CHN",
+      "USA",
+      "DEU",
+      "IND",
+      "BRA",
+      "ESP",
+      "GBR",
+      "FRA",
+      "CAN",
+      "SWE"
+    ],
+    "research_priority": [
+      "CAN",
+      "DEU",
+      "SWE",
+      "CHN",
+      "IND",
+      "USA",
+      "BRA",
+      "ESP",
+      "FRA",
+      "GBR"
+    ],
+    "rationale": "Complete downloaded Canadian inventory; severe German/Swedish coverage gaps; expand beyond repeated UK-only iterations. Preserve existing partition offsets.",
+    "canada_partition": {
+      "ledger": "2026-11-03-top10-canada-candidates.jsonl",
+      "next_offset": 0,
+      "bounded_batch_size": 100,
+      "count": 327,
+      "status": "downloaded_and_name_screened_not_accepted"
+    },
+    "evidence_report": "2026-11-03-top10-source-review.json",
+    "source_guide": "2026-11-03-top10-markets.md"
+  }
 }
