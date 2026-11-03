@@ -297,3 +297,24 @@ rejects populated construction or operational milestones. An explicit
 source assertion and review note. Other fields/unknown Ref IDs are rejected, so a
 field hold cannot drop identity or silently override scope. Whitestones Ref17707
 uses this mechanism for the unresolved registry-versus-owner area discrepancy.
+
+
+## Reviewed Madrid municipal inventory and ODRE enrichment
+
+`pv_catalogue/madrid.py` preserves municipal `Código Ayto` as
+`external_ids_json.madrid_building_code`; `Número` remains a source locator and never
+an identity key. `Potencia KWp /1000` maps to `capacity_dc_mw`, `Puesta en servicio`
+to the source industrial-service date, and the published Latitud/Longitud to building
+points with datum and positional accuracy explicitly unspecified. `Superficie` has
+no defined array/site basis and remains native evidence. Administrative assignment
+is not PV ownership/operator; installer labels and street addresses are omitted.
+Repeated building/name and proximity flags are unresolved site/phase holds, never
+fuzzy merges. `active_municipal_inventory_snapshot` is a historical source status.
+
+`reviewed_odre_enrichments` fills only missing `grid_operator`, `substation` and
+`commissioning_date` from native `gestionnaire`, `postesource`, `datemiseenservice`.
+Evidence records exact EIC, GEM phase, date/native values and scope. Existing facts
+are not overwritten; disagreements remain `unresolved_assertions_not_applied` and
+in the dated review. Unique source EIC, unique canonical target and complete
+single-phase scope are mandatory; multiple EIC connections targeting one selected
+project require scope review. No capacity, owner, status or location is inferred.

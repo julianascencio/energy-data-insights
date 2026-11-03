@@ -272,3 +272,34 @@ separate from commissioning/operation, rejects contradictory operational dates a
 unreviewed lifecycle scopes, and preserves stable identities. A planning application
 is not automatically a new plant: cross-source duplicates and phase/site boundaries
 remain review requirements. See the dictionary and dated review for held candidates.
+
+## Reproduce reviewed municipal PV and exact-EIC enrichments
+
+The offline Madrid adapter checks the entire pinned CSV against incoming building
+codes/names/pins and existing Spanish identities. `Código Ayto` identifies a building,
+not a national plant; the CSV sequence is only a locator. Repeated buildings and
+nearby pins are held for site/phase review, never merged. Published kWp is MWdc after
+unit conversion. Building coordinates retain unknown datum/accuracy; undefined
+surface and installer/administrative labels do not become land area or EPC/owners.
+The active status is a dated municipal inventory assertion. Attribution ships in
+`licenses/MADRID_PV_NOTICE.md`.
+
+```bash
+uv run python scripts/stage_pv_madrid.py --input /raw/madrid.csv \
+  --review catalogues/pv/research/20261103T0000_madrid_review.json \
+  --catalogue /baseline/catalogues/pv --output /tmp/madrid-reviewed.jsonl
+```
+
+Use the pinned pre-acceptance baseline named in the review ledger, with its source
+registry augmented by the immutable current source entry. Replays emit proposals;
+acceptance requires the usual upsert and validation. The public source's current
+export and coverage dates are recorded separately from its landing-page update.
+
+The ODRE staging CLI also accepts review `mode: enrichment` (default remains `new`).
+It checks the full national identity export, all canonical phase/external EICs and
+an explicit reviewed EIC allowlist. Only missing grid operator, substation and
+registry industrial-service date in one complete canonical phase are filled.
+Multiple source connections targeting one project, ambiguous/aggregate/private
+identities, future dates and existing extensions require review. Populated facts
+are preserved and differing native assertions retained as unresolved evidence.
+Replay against the ledger's pinned pre-enrichment baseline, then use upsert.

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-02T23:34:59.813889+00:00",
-  "ranking_file": "20261102T2200_top10_coverage.json",
-  "selection_note": "Six new reviewed UK ground-PV projects;63 French exact-EIC enrichments/252 fields;13 exact GoodWe/Ginlong inverters; reusable explicit REPD lifecycle/field-hold mapping. 1382 unique registry observations reviewed,1313 held; no tail-operator batch repeated.",
-  "next_highest_value_source": "ODRE Occitanie PHOTV5–20MW exact-EIC enrichment after fresh metadata/identity check; UK held Ref6071 Porth Wen versus North Anglesey identity crosswalk; AEMO October2026 workbook only after ordinary access/rights recovery.",
+  "updated_at": "2026-11-03T00:34:41.368018+00:00",
+  "ranking_file": "20261103T0000_top10_coverage.json",
+  "selection_note": "Three official registry partitions exhausted:166 distinct Madrid municipalPV additions and210 French existing-project enrichments/840 fields;17 exact Solis models and1 Electroinvent combiner. Source-specific privacy/rights/identity holds retained; no US bulk or historical tail-operator churn.",
+  "next_highest_value_source": "Spain Aragón operational PV resource319, ordinary CSV/GeoJSON download after fresh access/revision check and stable-ID/phase reconciliation. If transport remains blocked, ODRE Bourgogne-Franche-Comté PHOTV5–20MW exact-EIC enrichment.",
   "sources": [
     {
       "id": "uk_repd",
@@ -88,7 +88,8 @@
       "retry_condition": "Normal public download succeeds; do not bypass HTTP access restrictions.",
       "next_action": "Retry normal public workbook access; inspect explanatory sheets, explicit PV classification, units versus stations; reconcile New England Solar before ingest.",
       "priority": 2,
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 306
     },
     {
       "id": "germany_mastr",
@@ -152,7 +153,8 @@
           "sha256": "959ed51246d1461edf6abbc4b0ae2dc57b09f1b240388c964cbff05f0d1fe850",
           "bytes": 35831
         }
-      }
+      },
+      "catalogue_projects_as_of_20261103": 8151
     },
     {
       "id": "china_nea",
@@ -174,7 +176,8 @@
       "retry_condition": "Recheck source revision/access/terms before resuming.",
       "next_action": "Inspect centralized-PV attachment sample and terms; registration is not operating status. Start one monthly/provincial partition.",
       "priority": 4,
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 12699
     },
     {
       "id": "india_cea",
@@ -211,7 +214,8 @@
           "sha256": "6eebe2eeb17c3a2762955ef4aead29f431cc96fcbd136c3f29cd5b62b74fefee",
           "bytes": 118988
         }
-      }
+      },
+      "catalogue_projects_as_of_20261103": 340
     },
     {
       "id": "japan_fit",
@@ -246,7 +250,8 @@
         "accepted_count": 0,
         "review_file": "20261101T1106_japan_fit_review.json",
         "next_partition": "Tottori named-project crosswalk; no additional prefecture selected"
-      }
+      },
+      "catalogue_projects_as_of_20261103": 10467
     },
     {
       "id": "brazil_siga",
@@ -269,7 +274,8 @@
       "retry_condition": "ODbL obligations and source-specific distribution reviewed before bulk acceptance.",
       "next_action": "Design compliant source-specific distribution/attribution; then inspect UFV batch and reconcile plant/phases.",
       "priority": 7,
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 3077
     },
     {
       "id": "spain_registry",
@@ -290,7 +296,8 @@
       "retry_condition": "Recheck source revision/access/terms before resuming.",
       "next_action": "Locate public electricity production extract and technology coding; separate PV from solar thermal and historic registration regimes.",
       "priority": 8,
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 1474
     },
     {
       "id": "pakistan_nepra",
@@ -314,7 +321,8 @@
       "retry_condition": "Recheck source revision/access/terms before resuming.",
       "next_action": "Inspect solar licence schedules, preserve AC/DC and scope; reconcile amendments before counting projects.",
       "priority": 9,
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 37
     },
     {
       "id": "italy_gse",
@@ -335,7 +343,8 @@
       "retry_condition": "Public dataset/export and terms available; no access bypass.",
       "next_action": "Find current permitted GSE open-data export and licence; do not treat 2017 guide as fresh inventory.",
       "priority": 10,
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 1179
     },
     {
       "id": "usa_eia",
@@ -359,7 +368,8 @@
       "retry_condition": "Recheck source revision/access/terms before resuming.",
       "next_action": "Prefer non-US gap closure; revisit only for new official revision or substantive field enrichment.",
       "priority": 20,
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 7309
     },
     {
       "id": "france_odre",
@@ -732,7 +742,8 @@
       "retry_condition": "Current public source and permitted reuse verified; no access-control bypass or contacting people",
       "next_action": "Find current licensed catalogue metadata and explicit PV/plant-boundary evidence before using historical rows.",
       "processed_cursor": null,
-      "priority": 9
+      "priority": 9,
+      "catalogue_projects_as_of_20261103": 10467
     },
     {
       "id": "ichigo_named_portfolio",
@@ -755,7 +766,8 @@
       "retry_condition": "Current public source and permitted reuse verified; no access-control bypass or contacting people",
       "next_action": "Use an independently permitted named-project/planning source to resolve Tottori candidates; revisit only if permission/terms change.",
       "processed_cursor": null,
-      "priority": 9
+      "priority": 9,
+      "catalogue_projects_as_of_20261103": 10467
     },
     {
       "id": "phoenix_batch_20261101T2134",
@@ -1105,7 +1117,8 @@
           "FOTOVOLTAICA_ACL_2026"
         ],
         "all_16_observations_excluded": true
-      }
+      },
+      "catalogue_projects_as_of_20261103": 3077
     },
     {
       "id": "kaco_nx3_manual_review",
@@ -1704,7 +1717,8 @@
           "SGC/149/2020"
         ],
         "accepted": 0
-      }
+      },
+      "catalogue_projects_as_of_20261103": 37
     },
     {
       "id": "gem_batch12_20261102T0955",
@@ -1826,7 +1840,8 @@
         "resource_id": "11ec447d-698d-4ab8-977f-b424d5deee6a",
         "next_filter": "SigTipoGeracao=UFV",
         "processed_rows": 0
-      }
+      },
+      "catalogue_projects_as_of_20261103": 3077
     },
     {
       "id": "gem_batch13_20261102T1100",
@@ -2087,7 +2102,8 @@
       "processed_cursor": {
         "processed_rows": 0,
         "accepted": 0
-      }
+      },
+      "catalogue_projects_as_of_20261103": 340
     },
     {
       "id": "gem_recovery_final_20261102T1200",
@@ -2290,7 +2306,8 @@
       "result": "503 on bounded UFV sample; no rows downloaded. ODbL distribution unresolved.",
       "retry_condition": "Retry after service recovery; source-specific ODbL distribution and CEG/site-phase crosswalk first.",
       "next_action": "Retry after service recovery; source-specific ODbL distribution and CEG/site-phase crosswalk first.",
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 3077
     },
     {
       "id": "aemo_1257",
@@ -2315,7 +2332,8 @@
       "result": "403 on normal October workbook download; no bytes or rows accepted.",
       "retry_condition": "Normal download recovery; inspect PV classification and unit/station scope.",
       "next_action": "Normal download recovery; inspect PV classification and unit/station scope.",
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 306
     },
     {
       "id": "cen_1257",
@@ -2493,7 +2511,8 @@
       "next_action": "Use separate AC work review results and resolve held IDs; next non-overlapping German unit-to-project partition only after checking its publication.",
       "processed_cursor": {
         "accepted_this_run": 0
-      }
+      },
+      "catalogue_projects_as_of_20261103": 8151
     },
     {
       "id": "suntree_1432",
@@ -2635,7 +2654,8 @@
       "result": "Scheme landingpage covers aggregates/parks, not unambiguous PV generating-project rows. No project accepted or capacity relabelled.",
       "retry_condition": "Current facility-level official list with positive PV, project/park boundaries and reuse review",
       "next_action": "Find CEA facility-level renewable generating-station inventory; compare against340 existing Indian projects before acceptance.",
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 340
     },
     {
       "id": "cea_inventory_1432",
@@ -2693,7 +2713,8 @@
       "result": "First response incomplete; one normal retry succeeded with full17273164 bytes and checksum. Summary/date sample and copyright policy reviewed; held on explicit prior-permission requirement. Zero facility candidates reviewed or accepted; no assumption that old Solar sections establish PV.",
       "retry_condition": "Applicable reuse permission plus historical snapshot/positivePV/plant-phase review; do not retry ingestion solely because download is accessible.",
       "next_action": "Rights hold; no contact sent. Use licensed MaStR metadata after reconciling separate AC task, or another permitted official inventory.",
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 340
     },
     {
       "id": "odre_na_exact_eic_1601",
@@ -2844,7 +2865,8 @@
       "result": "No ANEEL facts accepted; independent French inventory used instead.",
       "retry_condition": "Normal file access plus explicit compatible derivative-database/attribution design",
       "next_action": "Retain rights/access hold; do not substitute third-party mirrors or infer AC from inspected capacity.",
-      "processed_cursor": null
+      "processed_cursor": null,
+      "catalogue_projects_as_of_20261103": 3077
     },
     {
       "id": "odre_occitanie_exact_eic_1700",
@@ -3037,7 +3059,8 @@
       "processed_cursor": {
         "exhausted": true,
         "ledger": "20261102T1800_operator_review.json"
-      }
+      },
+      "catalogue_projects_as_of_20261103": 12699
     },
     {
       "id": "kstar_residential_1800",
@@ -3115,7 +3138,8 @@
         ],
         "selected_partition_exhausted": true,
         "ledger": "20261102T1800_beny_review.json"
-      }
+      },
+      "catalogue_projects_as_of_20261103": 12699
     },
     {
       "id": "clenergy_d2p120_1800",
@@ -3845,7 +3869,8 @@
         "explicit_pv": 27,
         "accepted_canonical": 0,
         "review": "20261102T2200_nepra_review.json"
-      }
+      },
+      "catalogue_projects_as_of_20261103": 37
     },
     {
       "id": "odre_centre_2228",
@@ -4000,7 +4025,8 @@
         "download_attempts": 3,
         "status": 503,
         "accepted": 0
-      }
+      },
+      "catalogue_projects_as_of_20261103": 3077
     },
     {
       "id": "mastr_freshness_2228",
@@ -4027,7 +4053,8 @@
         "landing_checked": true,
         "archive_downloaded": false,
         "accepted": 0
-      }
+      },
+      "catalogue_projects_as_of_20261103": 8151
     },
     {
       "id": "odre_pays_2300",
@@ -4266,7 +4293,346 @@
         "landing_status": 403,
         "latest_indexed_release": "2026-10-30",
         "accepted": 0
-      }
+      },
+      "catalogue_projects_as_of_20261103": 306
+    },
+    {
+      "id": "odre_occ_paca_0000",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Occitanie%27",
+      "version_or_date": "31August2026 snapshot;13October metadata unchanged; national95302 identities freshly hash-matched",
+      "licence_assessment": "Licence Ouvertev2.0; existingODRE_NOTICE.md retained",
+      "access_assessment": "Three pinnedexports+metadata200; Occ>=20MW query empty; initialPACA curly-apostrophe zero corrected using exactcoderegion93, not misreported as exhaustion",
+      "estimated_useful_yield": {
+        "reviewed": 599,
+        "enriched": 210,
+        "direct_values": 630,
+        "evidence_objects": 210,
+        "held": 389
+      },
+      "fields_offered": [
+        "grid operator",
+        "substation",
+        "industrial-service date",
+        "exactEIC/phase evidence"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "Occitanie:122 observations →43 enrichments/172 fields,79 held. PACA:477 →167/668 fields,310 held. Unique EIC/complete-phase scope only; multiple source connections targeting one project held.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Bourgogne-Franche-Comté PHOTV5–20MW; refresh metadata and national identities first.",
+      "processed_cursor": {
+        "completed": [
+          "Occitanie5000<=kW<20000",
+          "PACA coderegion93 1000<=kW<20000"
+        ],
+        "ledgers": [
+          "20261103T0000_occ_enrichment.json",
+          "20261103T0000_paca_enrichment.json"
+        ],
+        "exhausted": true
+      },
+      "priority": 1
+    },
+    {
+      "id": "madrid_municipal_0000",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://datos.madrid.es/dataset/300466-0-instalaciones-fotovoltaicas",
+      "version_or_date": "June30coverage,July3CSV; landingupdated9October2026",
+      "licence_assessment": "ExplicitCCBY4.0 and commercial/noncommercial reuse; MADRID_PV_NOTICE.md retained",
+      "access_assessment": "Current181-rowCSV,terms and2020dictionary downloaded/hash-pinned",
+      "estimated_useful_yield": {
+        "reviewed": 181,
+        "new_projects": 166,
+        "held": 15
+      },
+      "fields_offered": [
+        "building code",
+        "PV peak kWp",
+        "service date",
+        "building coordinates",
+        "district/use/administrative evidence"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "166 distinct municipal PV sites accepted;15 rows held for repeated/missing building IDs, names, nearby pins or invalid coordinates. Building IDs are not national PV IDs; installer/department labels do not establish EPC/ownership.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Resolve the15 held site/phase identities or resume on a new inventory revision; this export is exhausted.",
+      "processed_cursor": {
+        "all_source_sequences_processed": true,
+        "ledger": "20261103T0000_madrid_review.json",
+        "exhausted": true
+      },
+      "priority": 1
+    },
+    {
+      "id": "italy_puglia_0000",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://dati.puglia.it/ckan/dataset/impianti-proposti-via-fer",
+      "version_or_date": "Resource28November2025; CKANmetadata16February2026",
+      "licence_assessment": "CCBY4.0 explicitlydeclared; sourceattributionretained in datedreview",
+      "access_assessment": "670-rowXLSXpublicdownload; metadataformatCSV mismatch; actualZIP/XLSX parsednormally",
+      "estimated_useful_yield": {
+        "observations": 670,
+        "pv_or_agrivoltaic_labels": 455,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "province",
+        "municipality",
+        "procedure status",
+        "technology",
+        "MW unspecified"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "All670 rows screened for identity completeness:455 PV/agrivoltaic labels,215 other technologies and8 repeated complete observations. Five columns contain no project names or IDs; zero accepted.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Find public MASE procedure/project identifiers and their reuse terms. Do not fabricate identities from municipality and MW.",
+      "processed_cursor": {
+        "resource_id": "1728acca-e2fc-4dcb-bb52-0fc1eaa628c2",
+        "all670rows_identity_completeness_screened": true,
+        "canonical_accepted": 0
+      },
+      "priority": 4
+    },
+    {
+      "id": "catalunya_icaen_0000",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://analisi.transparenciacatalunya.cat/d/arbg-m6sq",
+      "version_or_date": "Latestdata2023, rowsupdated4September2025; viewmetadata17September2026",
+      "licence_assessment": "Llicència oberta d’ús d’informació-Catalunya; attribution/update conditions and explicit no reversal ofanonymization",
+      "access_assessment": "Metadata,fulltechnology/yearsummary and79>=1MWPVrows downloadednormally; titularnotrequested",
+      "estimated_useful_yield": {
+        "latest2023_pv_rows": 105595,
+        "latest2023_ge1mw_rows": 79,
+        "anonymous_ge1mw": 79,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "annual snapshot",
+        "PV technology",
+        "municipality",
+        "kW basisunspecified",
+        "self-consumption flag"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "All79 latest-year ≥1MW PV rows explicitly omit installation names/holders for personal-data protection. No IDs, and annual observations repeat. Zero accepted; anonymization is preserved.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Resume only if the publisher supplies suitable nonpersonal public identities. Do not reconstruct names from capacity and municipality.",
+      "processed_cursor": {
+        "year": "2023",
+        "technology": "Fotovoltaica",
+        "minimum_kw": 1000,
+        "observations": 79,
+        "accepted": 0,
+        "privacy_hold": true
+      },
+      "priority": 5
+    },
+    {
+      "id": "aragon_operating_pv_0000",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://opendata.aragon.es/GA_OD_Core/download?resource_id=319&formato=json",
+      "version_or_date": "Currentcatalogueretrieved3November2026; exactdataversionnotestablished",
+      "licence_assessment": "Officialdataset anddefaulttermsCCBY4.0; attribution/updateconditions; no source-specificexceptionobserved",
+      "access_assessment": "Official catalogue and terms200; legacy CKAN endpoint404; resource319 GeoJSON and CSV ordinary requests timed out. No bypass.",
+      "estimated_useful_yield": {
+        "potential": "tens tohundreds, unverifiedplanningestimate",
+        "accepted": 0
+      },
+      "fields_offered": [
+        "plant identifiers",
+        "name",
+        "capacity",
+        "lifecycle",
+        "geographicgeometry; fields requireactualsample"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "Official catalogue and CC BY4.0 terms accessible; resource319 identifies operating PV separately from pipeline scopes. GeoJSON and subsequent ordinary CSV requests both timed out. Zero data rows accepted.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Retry resource319 CSV/GeoJSON with ordinary access limits; inspect exact revision, schema, PV classification, IDs and phase/whole-project scope before an importer. If transport still fails, use the queued French partition.",
+      "processed_cursor": {
+        "resource_id": 319,
+        "scope": "Plantas fotovoltaicas en funcionamiento",
+        "ingested": false
+      },
+      "priority": 1
+    },
+    {
+      "id": "ntpc_portfolio_0000",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://ntpc.co.in/power-generation/renewable-energy",
+      "version_or_date": "Landing31October2026; selectedtablesnotadoptedascurrentplantfacts",
+      "licence_assessment": "Copyright/disclaimer onlypermitsauthorizedmedia use; no suitablepublicdatabasebulkgrantverified",
+      "access_assessment": "Twoownerportfolio pages downloaded; owned/JV andfuturecapacity scopes inspected",
+      "estimated_useful_yield": {
+        "tables_screened": 6,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "project name",
+        "state",
+        "portfolio attribution",
+        "MW installed/construction"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "Six owned/JV/current/future table scopes inspected. Mixed portfolio aggregates and generic Solar labels need project-level PV and phase checks. The published media-only grant does not establish suitable public-database bulk reuse. Zero accepted.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Seek another Indian regulator/owner source with suitable reuse terms and exact PV identities; do not silently adopt aggregate installed/construction capacities.",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "priority": 4
+    },
+    {
+      "id": "kenya_epra_0000",
+      "country": "KEN",
+      "entity": "projects",
+      "source_url": "https://epra.go.ke/electricity",
+      "version_or_date": "Fresh3November2026ordinaryaccess",
+      "licence_assessment": "Current inventory reuse terms unverified",
+      "access_assessment": "Officiallanding503; indexedregulatoryoverview isnotplantinventory",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "potentiallicensedplantIDs",
+        "technology",
+        "capacity"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "Ordinary official electricity landing returned503. Indexed regulatory text is not a plant inventory, and contractor/technician registers are not PV projects. Zero accepted.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Retry the public generation inventory/report after access recovery; review licence and plant schema first.",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "priority": 5
+    },
+    {
+      "id": "solis_exact_0000",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.solisinverters.com/global/inverter",
+      "version_or_date": "K02GLOBALV2.7 202507preliminary; S5-21AGlobalV4.0; GC3PK03GlobalV3.9",
+      "licence_assessment": "OEMcopyrightretained; selectedindividuallyreviewedfacts, notfulltables/documents",
+      "access_assessment": "ThreepublicPDFtables plusmanual/model-list exactidentitydocs downloaded/hash-pinned",
+      "estimated_useful_yield": {
+        "reviewed_and_accepted": 17
+      },
+      "fields_offered": [
+        "electrical",
+        "model-specificefficiency",
+        "mechanical",
+        "environment",
+        "protection",
+        "interfaceconditions"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "All17 exact models accepted from three tables:seven K02, five S5(21A), five GC3P K03 NV/HV. Seven K02 maximum DC/AC scope cases remain held. RS485 is an interface, not an inferred protocol.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Selected tables are exhausted; seek a distinct OEM with suitable reuse and substantive exact-model tables.",
+      "processed_cursor": {
+        "exact_model_ledger": "20261103T0000_equipment_review.json",
+        "exhausted": true
+      },
+      "priority": 3
+    },
+    {
+      "id": "tracker_rights_0000",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.axialstructural.com/terms-of-use?lang=en",
+      "version_or_date": "Axial2TT,1VTwin,AgriTracker undated sheets; MecasolarSUNRIDERv2400",
+      "licence_assessment": "Axialexplicitredistribution/exploitationlimits; Mecasolarpersonal/privateuseonlywithoutwrittenpermission",
+      "access_assessment": "FourtechnicalPDFs andbothOEMtermsdownloaded; no login/contact/form",
+      "estimated_useful_yield": {
+        "models_reviewed": 4,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "rotation",
+        "drives",
+        "controls",
+        "geometry",
+        "environment",
+        "qualifiedwarranty"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "Four exact tracker families reviewed:Axial2TT,1V Twin,AgriTracker and Mecasolar Single Row SUNRIDER. Explicit source-use restrictions prevent acceptance. No configurable variants or warranty maxima manufactured.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Use another permitted tracker source; retry these sheets only when rights change.",
+      "processed_cursor": {
+        "models": [
+          "Axial2TT",
+          "Axial1VTwin",
+          "AxialAgriTracker",
+          "MecasolarSingleRowSUNRIDER"
+        ],
+        "accepted": 0
+      },
+      "priority": 3
+    },
+    {
+      "id": "solplanet_25_40_0000",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/products/asw-25-40k-lt-g3-three-phase-inverters",
+      "version_or_date": "GlobalSep2024table; newerregional sheetsnotblended",
+      "licence_assessment": "Personal-informationrestrictionremains onfreshlegalpage; prior11-modelrights hold preserved",
+      "access_assessment": "Sixexact25/27/30/33/36/40KLT-G3columns,OEMidentity/CEdeclaration andterms inspected",
+      "estimated_useful_yield": {
+        "held_exact_models": 6,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "electrical",
+        "efficiency",
+        "physical",
+        "environment",
+        "interfaces"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "Six exact ASW25/27/30/33/36/40K-LT-G3 columns and AISWEI corporate identity inspected. The refreshed personal-information restriction remains; no model accepted. Prior11-model rights hold remains.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Resume only with suitable explicit reuse terms or an independent permitted source.",
+      "processed_cursor": {
+        "new_table_models_reviewed": 6,
+        "accepted": 0
+      },
+      "priority": 5
+    },
+    {
+      "id": "electroinvent_scb_0000",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://electroinvent.com/solar-pump-systems/",
+      "version_or_date": "SCB-12-1000 R03/02.2025",
+      "licence_assessment": "OEMcopyrightretained; selectedexact factualmetadata; nofullPDF/table/proseredistribution",
+      "access_assessment": "ExactlinkedpublicPDF andOEMidentity/about/privacy/footer reviewed",
+      "estimated_useful_yield": {
+        "exact_models_accepted": 1
+      },
+      "fields_offered": [
+        "ratedvoltage",
+        "12inputs/1output",
+        "fuse/SPD/switchconditions",
+        "mechanical",
+        "environment"
+      ],
+      "last_attempt": "2026-11-03T00:34:41.368018+00:00",
+      "result": "One exact SCB-12-1000 accepted; new OEM Electroinvent AD.200A is a switch-component rating,15A is fuse rating, and20years is UV resistance; none becomes an invented whole-box/string-current maximum or warranty.",
+      "retry_condition": "Refresh revision/access/terms; resolve the specified identity/privacy/rights/field scope before acceptance. No bypass or anonymous re-identification.",
+      "next_action": "Current exact sheet exhausted; prioritize a substantive multi-model combiner table.",
+      "processed_cursor": {
+        "model": "SCB-12-1000",
+        "exhausted": true
+      },
+      "priority": 2
     }
   ]
 }

@@ -218,3 +218,165 @@ def test_lower_partition_keeps_national_identity_and_privacy_guards():
     row["nbinstallations"] = 2
     risks = screen_odre_identities([row], [], existing=[], minimum_kw=5000, maximum_kw=10000)
     assert "aggregate_not_single_project" in risks[row["codeeicresourceobject"]]
+
+
+def phase_record(eic="17W000000043200D", **changes):
+    record = {
+        "record_id": "canonical-plant",
+        "entity_type": "projects",
+        "country_code": "FRA",
+        "name": "Reviewed canonical name",
+        "phases_json": json.dumps([{"GEM phase ID": "G100001", "Other IDs (unit/phase)": eic}]),
+    }
+    record.update(changes)
+    return record
+
+
+def enrich(rows=None, identities=None, existing=None, reviewed=None):
+    from energy_data_retrieval.pv_catalogue.odre import reviewed_odre_enrichments
+
+    rows = [native()] if rows is None else rows
+    return reviewed_odre_enrichments(
+        rows,
+        rows if identities is None else identities,
+        reviewed_ids={"17W000000043200D"} if reviewed is None else reviewed,
+        existing=[phase_record()] if existing is None else existing,
+        source_id="test",
+        snapshot_date="2026-08-31",
+    )
+
+
+def test_enrichment_uses_existing_identity_and_qualified_missing_facts():
+    record = enrich()[0]
+    assert record["record_id"] == "canonical-plant"
+    assert record["commissioning_date"] == "2013-12-18"
+    assert record["grid_operator"] == "Enedis" and record["substation"] == "DIOU"
+    assert not {"name", "status", "capacity_ac_mw", "owners", "latitude"} & record.keys()
+    assert "Private person" not in json.dumps(record)
+    assert json.loads(record["extensions_json"])["odre_crosswalk_evidence"]["phase_id"] == "G100001"
+
+
+@pytest.mark.parametrize("key", ["Other IDs (location)", "Other IDs (unit/phase)"])
+def test_enrichment_duplicate_phase_eic_across_canonical_records_is_held(key):
+    other = phase_record(record_id="other", phases_json=json.dumps([{key: "17W000000043200D"}]))
+    with pytest.raises(ValueError, match="identity"):
+        enrich(existing=[phase_record(), other])
+
+
+def test_enrichment_external_eic_also_participates_in_uniqueness():
+    other = phase_record(
+        record_id="other",
+        phases_json="[]",
+        external_ids_json=json.dumps({"odre_eic": "17W000000043200D"}),
+    )
+    with pytest.raises(ValueError, match="identity"):
+        enrich(existing=[phase_record(), other])
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"country_code": "GBR"},
+        {"phases_json": "[]"},
+        {"phases_json": json.dumps([{"Other IDs (location)": "17W000000043200D"}])},
+        {
+            "phases_json": json.dumps(
+                [
+                    {"GEM phase ID": "G1", "Other IDs (location)": "17W000000043200D"},
+                    {"GEM phase ID": "G2"},
+                ]
+            )
+        },
+        {"extensions_json": "{}"},
+    ],
+)
+def test_enrichment_rejects_incomplete_or_already_enriched_scope(changes):
+    with pytest.raises(ValueError):
+        enrich(existing=[phase_record(**changes)])
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"nominstallation": "Privé"},
+        {"nominstallation": "Confidentiel"},
+        {"codetechnologie": "SOLAI"},
+        {"nbinstallations": 2},
+        {"regime": "Projet"},
+        {"datemiseenservice": "01/09/2026"},
+    ],
+)
+def test_enrichment_rejects_private_non_pv_aggregate_future_or_nonservice(changes):
+    with pytest.raises(ValueError):
+        enrich(rows=[native(**changes)])
+
+
+def test_enrichment_pinned_identity_allowlist_and_duplicate_guards():
+    with pytest.raises(ValueError, match="identity"):
+        enrich(identities=[native(puismaxinstallee=13000)])
+    with pytest.raises(ValueError, match="Missing"):
+        enrich(reviewed={"17W000000043384E"})
+    with pytest.raises(ValueError, match="Duplicate ODRE"):
+        enrich(rows=[native(), native()])
+    with pytest.raises(ValueError, match="Duplicate ODRE"):
+        enrich(identities=[native(), native()])
+    with pytest.raises(ValueError, match="Duplicate canonical"):
+        enrich(existing=[phase_record(), phase_record()])
+    assert enrich(reviewed=set()) == []
+
+
+def test_enrichment_preserves_conflicts_without_selecting_new_winner():
+    r = enrich(existing=[phase_record(commissioning_date="2014-01-01")])[0]
+    assert "commissioning_date" not in r
+    held = json.loads(r["extensions_json"])["odre_crosswalk_evidence"][
+        "unresolved_assertions_not_applied"
+    ]
+    assert held["commissioning_date"] == {
+        "existing": "2014-01-01",
+        "source_assertion": "2013-12-18",
+    }
+    with pytest.raises(ValueError, match="no missing"):
+        enrich(
+            existing=[
+                phase_record(
+                    grid_operator="Enedis", substation="DIOU", commissioning_date="2013-12-18"
+                )
+            ]
+        )
+
+
+def test_enrichment_null_assertions_do_not_erase_existing_facts():
+    r = enrich(
+        rows=[native(datemiseenservice=None, gestionnaire=None)],
+        existing=[phase_record(grid_operator="Existing")],
+    )[0]
+    assert "commissioning_date" not in r and "grid_operator" not in r
+    assert r["substation"] == "DIOU"
+
+
+def test_enrichment_leaves_distinct_null_eic_aggregates_out_of_identity_lookup():
+    rows = read(
+        [
+            native(),
+            native(codeeicresourceobject=None, nbinstallations=8),
+            native(codeeicresourceobject=None, nbinstallations=9),
+        ]
+    )
+    assert len(enrich(rows=rows, identities=[native()])) == 1
+    with pytest.raises(ValueError, match="Missing"):
+        enrich(rows=rows, identities=[native()], reviewed={None})
+
+
+def test_enrichment_multiple_source_connections_to_one_project_require_scope_review():
+    second = native("17W000000043384E", nominstallation="Another grid connection")
+    record = phase_record(
+        phases_json=json.dumps(
+            [{"GEM phase ID": "G1", "Other IDs (location)": "17W000000043200D; 17W000000043384E"}]
+        )
+    )
+    with pytest.raises(ValueError, match="Multiple source EICs"):
+        enrich(
+            rows=[native(), second],
+            existing=[record],
+            reviewed={"17W000000043200D", "17W000000043384E"},
+        )
