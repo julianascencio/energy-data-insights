@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,862 project and plant records across
-39 countries**, supported by **281 registered sources**. It combines curated
+The BESS section contains **1,883 project and plant records across
+39 countries**, supported by **284 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -259,3 +259,5 @@ uv run --with pdfplumber python scripts/stage_bess_nfosigw.py /path/to/ranking.p
 
 The adapter stages funding applications; it never merges loan/grant rows,
 assigns chemistry, allocates portfolio capacity or promotes physical lifecycle.
+
+The funding facts in `POL_20261103_tauron.jsonl` also adapt NFOŚiGW material under CC BY-SA 4.0. Sixteen applications were manually linked by named site, beneficiary and power to the battery-classified TAURON portfolio. This attribution covers those funding facts only.
