@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T06:00:58.833250+00:00",
+  "updated_at": "2026-11-03T07:03:56.849412+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "Swiss alpine CSV and INTERLIS reconciliation, 29 parents and 58 linked status observations; two Solplanet tables, 11 accepted models.",
-  "next_highest_value_source": "Swiss BFE alpine INTERLIS: verify dataset-specific reuse terms and reconcile 18 name candidates using canton, operator site and plant boundaries; start with NalpSolar, SedrunSolar, Gondosolar and Morgeten.",
+  "selection_note": "Two exact Deye datasheets, ten accepted; four Swiss identity candidates followed up, two independent forecast fills.",
+  "next_highest_value_source": "Axpo NalpSolar 21 October 2025 partial connection, then independently reconcile Graubünden and the affected Tujetsch canonical records before lifecycle changes.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5469,6 +5469,90 @@
       "processed_cursor": {
         "sha256": "f1898d8871b2fea990ecf495ae30d383455269d4f396ff08cedb12750de0d037",
         "page": 2,
+        "complete": true
+      }
+    },
+    {
+      "id": "deye_g03_20261103T0700",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://es.deyeinverter.com/deyeinverter/2025/08/29/%E3%80%90b%E3%80%91datasheet_sun-70-110k-g03_20250821_es.pdf",
+      "version_or_date": "Publisher file identifier 20250821 (ES)",
+      "access_assessment": "Public source downloaded",
+      "licence_assessment": "Limited factual specifications only; OEM copyright retained; no table or document redistribution",
+      "estimated_useful_yield": 6,
+      "fields_offered": [
+        "Exact engineering model ratings"
+      ],
+      "last_attempt": "2026-11-03T07:03:21.338217+00:00",
+      "result": "Exact models accepted",
+      "retry_condition": "Material source revision or corroborated independent conflict resolution",
+      "next_action": "Independent exact combiner architecture",
+      "processed_cursor": {
+        "sha256": "7e944d5d3f841f4804d088c3fe5dceb207a1cda7f1b1895f217e5adff43d9069",
+        "complete": true
+      }
+    },
+    {
+      "id": "deye_g04_20261103T0700",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/deyeinverter/2025/05/21/%E3%80%90b%E3%80%91datasheet_sun-30-36k-g04_30240303000029_20250520_en.pdf",
+      "version_or_date": "Publisher file identifier 20250520 (EN)",
+      "access_assessment": "Public source downloaded",
+      "licence_assessment": "Limited factual specifications only; OEM copyright retained; no table or document redistribution",
+      "estimated_useful_yield": 4,
+      "fields_offered": [
+        "Exact engineering model ratings"
+      ],
+      "last_attempt": "2026-11-03T07:03:21.338217+00:00",
+      "result": "Exact models accepted",
+      "retry_condition": "Material source revision or corroborated independent conflict resolution",
+      "next_action": "Independent exact combiner architecture",
+      "processed_cursor": {
+        "sha256": "acfc5c239ee9cc8024c9221ab796b78e2829d1bc4d897ff21f0d707957681492",
+        "complete": true
+      }
+    },
+    {
+      "id": "sedrun_primary_20261103T0700",
+      "country": "CHE",
+      "entity": "projects",
+      "source_url": "https://www.lumesa.ch/en/about-us/news/sedrunsolar",
+      "version_or_date": "Undated public project profile",
+      "access_assessment": "Public source downloaded",
+      "licence_assessment": "Selected factual metadata only; no bulk redistribution assumed",
+      "estimated_useful_yield": 1,
+      "fields_offered": [
+        "Expected generation, project identity"
+      ],
+      "last_attempt": "2026-11-03T07:03:21.338217+00:00",
+      "result": "One forecast fill; scope conflicts held",
+      "retry_condition": "Material source revision or corroborated independent conflict resolution",
+      "next_action": "Axpo NalpSolar 21 October 2025 partial connection, then independently reconcile Graubünden and the affected Tujetsch canonical records before lifecycle changes.",
+      "processed_cursor": {
+        "sha256": "f1eafecf68063956d7efd6e80aeb529ef0cf1c931d5ab47c3bc14424ee0c09f5",
+        "complete": true
+      }
+    },
+    {
+      "id": "gondo_primary_20261103T0700",
+      "country": "CHE",
+      "entity": "projects",
+      "source_url": "https://www.gondosolar.ch/das-projekt",
+      "version_or_date": "Undated public project profile",
+      "access_assessment": "Public source downloaded",
+      "licence_assessment": "Selected factual metadata only; no bulk redistribution assumed",
+      "estimated_useful_yield": 1,
+      "fields_offered": [
+        "Expected generation, project identity"
+      ],
+      "last_attempt": "2026-11-03T07:03:21.338217+00:00",
+      "result": "One forecast fill; scope conflicts held",
+      "retry_condition": "Material source revision or corroborated independent conflict resolution",
+      "next_action": "Axpo NalpSolar 21 October 2025 partial connection, then independently reconcile Graubünden and the affected Tujetsch canonical records before lifecycle changes.",
+      "processed_cursor": {
+        "sha256": "102c610724dc5a0d691623911ac3826278ff8491eed7e2f2f279132ff692c1b8",
         "complete": true
       }
     }
