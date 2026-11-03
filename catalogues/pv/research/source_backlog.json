@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T13:02:30.867342+00:00",
+  "updated_at": "2026-11-03T14:03:22.580378+00:00",
   "ranking_file": "20261103T1300_top10_coverage.json",
-  "selection_note": "Resolved Leeton/Fivebough using CleanPeak and Photon Energy; DNS G3 LATAM models accepted, DNS G4 byte-identical.",
-  "next_highest_value_source": "Crosswalk Little Bogan (PPSWES-30, Lot 2 DP222408) and Mulwala (PPSWES-94, DA 2021/259) with owner or connection identifiers; use exact parcel/asset evidence before linking cards.",
+  "selection_note": "ARENA named cost/funding rows and GoodWe MS G3 Spanish LATAM exact table.",
+  "next_highest_value_source": "Crosswalk ARENA Parkes, Griffith and Dubbo Hub rows to AEMO exact station/DUIDs and independently documented phases; then review grant scope.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5959,6 +5959,49 @@
       "processed_partition": "Full DNS G3 and G4 five-column tables",
       "retry_condition": "Distinct exact model table or changed revision",
       "next_action": "Review adjacent OEM family only after catalogue identity comparison."
+    },
+    {
+      "id": "arena_lss_2017_20261103T1400",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://arena.gov.au/assets/2017/06/AU21509_ARENA_Large_Scale_Solar_Brochure_v6-1.pdf",
+      "version_or_date": "2017",
+      "licence_assessment": "CC BY 3.0 AU with third-party exceptions",
+      "access_assessment": "Public PDF retrieved",
+      "estimated_useful_yield": 4,
+      "fields_offered": [
+        "historical total project cost including financing",
+        "grant",
+        "developer",
+        "EPC"
+      ],
+      "last_attempt": "2026-11-03T14:03:22.580378+00:00",
+      "result": "Four historical evidence fills; other rows held for identity, aggregate scope or existing evidence-object reconciliation.",
+      "processed_partition": "Printed page 5 Tables 1 and 2",
+      "retry_condition": "Independent station/phase IDs or a safe evidence merge",
+      "next_action": "Crosswalk ARENA Parkes, Griffith and Dubbo Hub rows to AEMO exact station/DUIDs and independently documented phases; then review grant scope."
+    },
+    {
+      "id": "goodwe_ms_g3_20261103T1400",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://br.goodwe.com/Ftp/Downloads/Datasheet/LATAM/GW_MS%20G3_Datasheet-LATAM_ES.pdf",
+      "version_or_date": "20250910 LATAM ES V2.1",
+      "licence_assessment": "OEM rights retained; limited normalized specifications",
+      "access_assessment": "Public PDF retrieved",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "electrical",
+        "regional output/input limits",
+        "thermal",
+        "efficiency",
+        "mechanical"
+      ],
+      "last_attempt": "2026-11-03T14:03:22.580378+00:00",
+      "result": "Five exact models accepted",
+      "processed_partition": "Complete five-column technical table",
+      "retry_condition": "Distinct nonduplicated OEM table",
+      "next_action": "Prefer tracker or combiner exact product tables after revision check."
     }
   ]
 }
