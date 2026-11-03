@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T11:56:51.504497+00:00",
-  "ranking_file": "20261103T1200_top10_coverage.json",
-  "selection_note": "CleanPeak named portfolio cards; CER and NSW boundary review; SF7 revision check.",
-  "next_highest_value_source": "Resolve the CleanPeak Leeton/Fivebough, Mulwala and Nyngan homonyms using project boundaries and planning IDs; confirm Tabbita and Midkin CER records with individual site plans.",
+  "updated_at": "2026-11-03T13:02:30.867342+00:00",
+  "ranking_file": "20261103T1300_top10_coverage.json",
+  "selection_note": "Resolved Leeton/Fivebough using CleanPeak and Photon Energy; DNS G3 LATAM models accepted, DNS G4 byte-identical.",
+  "next_highest_value_source": "Crosswalk Little Bogan (PPSWES-30, Lot 2 DP222408) and Mulwala (PPSWES-94, DA 2021/259) with owner or connection identifiers; use exact parcel/asset evidence before linking cards.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5916,6 +5916,49 @@
       "processed_partition": "Complete portfolio inventory; selected named sites with first generation, unambiguous units and no known canonical overlap",
       "retry_condition": "Independent exact project/host scope or revised card",
       "next_action": "Resolve the CleanPeak Leeton/Fivebough, Mulwala and Nyngan homonyms using project boundaries and planning IDs; confirm Tabbita and Midkin CER records with individual site plans."
+    },
+    {
+      "id": "nsw_cleanpeak_crosswalk_20261103T1300",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cleanpeakenergy.com.au/cleanpeak-energy-acquires-leeton-solar-farm/",
+      "version_or_date": "2024-10-02 acquisition notice, cross-checked to FY2021 Photon portfolio",
+      "licence_assessment": "Normalized source-attributed project facts only",
+      "access_assessment": "Public owner, developer and NSW planning documents",
+      "estimated_useful_yield": 2,
+      "fields_offered": [
+        "separate names",
+        "DC nameplate",
+        "grid operator",
+        "commissioning year"
+      ],
+      "last_attempt": "2026-11-03T13:02:30.867342+00:00",
+      "result": "2 new; 2 owner-card matches held",
+      "processed_partition": "Leeton/Fivebough, Mulwala and Nyngan held-card cluster",
+      "retry_condition": "Separate consent, connection or exact parcel identity",
+      "next_action": "Crosswalk Little Bogan (PPSWES-30, Lot 2 DP222408) and Mulwala (PPSWES-94, DA 2021/259) with owner or connection identifiers; use exact parcel/asset evidence before linking cards."
+    },
+    {
+      "id": "goodwe_dns_latam_20261103T1300",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://latam.goodwe.com/Ftp/Downloads/Datasheet/LATAM/GW_DNS%20G3_Datasheet-LATAM_ES.pdf",
+      "version_or_date": "20250722 LATAM ES V2.1",
+      "licence_assessment": "OEM copyright retained; normalized exact facts only",
+      "access_assessment": "Two public PDFs downloaded",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "electrical",
+        "efficiency",
+        "dimensions",
+        "thermal",
+        "regional limits"
+      ],
+      "last_attempt": "2026-11-03T13:02:30.867342+00:00",
+      "result": "Five DNS G3 new; five DNS G4 already represented by byte-identical PDF",
+      "processed_partition": "Full DNS G3 and G4 five-column tables",
+      "retry_condition": "Distinct exact model table or changed revision",
+      "next_action": "Review adjacent OEM family only after catalogue identity comparison."
     }
   ]
 }
