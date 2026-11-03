@@ -1,0 +1,96 @@
+{
+  "batch": "2026-11-03-0835",
+  "updated_at": "2026-11-03T08:35:04Z",
+  "baseline_main": "33eec8385eeb6c9d20b27bfce106d24a38e2e78c",
+  "branch": "research/wind-20261103-0835",
+  "merged_wind_counts_at_baseline": {
+    "projects": 5355,
+    "equipment": 53,
+    "curves": 2,
+    "turbines": 0
+  },
+  "branch_totals": {
+    "projects": 5355,
+    "non_group_projects": 5354,
+    "equipment": 53,
+    "curves": 2,
+    "turbines": 0,
+    "countries": 59,
+    "manufacturers": [
+      "ABB",
+      "GE Vernova",
+      "MHI Vestas Offshore Wind",
+      "Nordex",
+      "Siemens Gamesa",
+      "Vestas"
+    ]
+  },
+  "changes_against_main": {
+    "new_projects": 0,
+    "new_equipment": 0,
+    "substantively_enriched_existing_projects": 114,
+    "substantively_enriched_existing_equipment": 0
+  },
+  "historical_partition": {
+    "selected_rows": 5344,
+    "accepted": 5344,
+    "excluded": 0,
+    "deferred_records": 0,
+    "current_status_unresolved": 4700
+  },
+  "primary_evidence_project_records": 655,
+  "technology_counts": {
+    "unknown": 4700,
+    "onshore": 617,
+    "offshore_unspecified": 32,
+    "fixed_bottom_offshore": 2,
+    "floating_offshore": 4
+  },
+  "identity_candidate_groups": 13,
+  "identity_candidate_records": 26,
+  "important_deferrals": [
+    "4700 historical lifecycles unknown; 2216 REPD applications still deferred; scope exclusions unchanged",
+    "Existing 13 duplicate-name candidate groups remain unresolved",
+    "Lake Turkana installed MW; V136-4.2 scalar; GE acoustic operating boundaries; SG 3.2-129 reported power-density discrepancy",
+    "USWTDB release ZIP HTTP403; ANEEL daily CSV HTTP503, no asserted authentication/reuse restriction",
+    "Exact Changhua regional equipment configuration; independent generator/gearbox/converter/foundation models; archive curve provenance"
+  ],
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities",
+  "validation_report": "validation.json",
+  "coverage_manifest": "coverage-manifest.json",
+  "backlog": "backlog.json",
+  "publication_base_main": "47cf12e8d95e4da29a52a54e3235db41ecce0d08",
+  "iteration_base_head": "33eec8385eeb6c9d20b27bfce106d24a38e2e78c",
+  "changes_this_run": {
+    "new_projects": 0,
+    "substantively_enriched_projects": 114,
+    "new_equipment": 0,
+    "substantively_enriched_equipment": 0,
+    "new_curves": 0,
+    "new_turbines": 0
+  },
+  "repd_partition": {
+    "selected_rows": 2858,
+    "enriched": 642,
+    "deferred_identity": 2216,
+    "capacity_scope_exclusions_preserved": 642,
+    "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
+  },
+  "new_geography": "No new country",
+  "new_technology_coverage": "No new category",
+  "reviewed_this_run": {
+    "unlinked_applications": 200,
+    "procedural_history_enrichments": 114,
+    "dated_events_added": 232
+  },
+  "latest_research_discovery": {
+    "date": "2026-11-03",
+    "focus": "top ten cumulative wind markets",
+    "accepted_record_changes": 0,
+    "canadian_project_groups_screened": 327,
+    "unmatched_name_groups_not_confirmed_new": 182,
+    "candidate_ledger": "2026-11-03-top10-canada-candidates.jsonl",
+    "source_review": "2026-11-03-top10-source-review.json",
+    "guide": "2026-11-03-top10-markets.md"
+  }
+}

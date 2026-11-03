@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-03T08:35:04Z",
-  "branch": "research/wind-20261103-0835",
+  "updated_at": "2026-11-03T09:35:00Z",
+  "branch": "research/wind-20261103-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
     {
@@ -144,10 +144,12 @@
     "rationale": "Complete downloaded Canadian inventory; severe German/Swedish coverage gaps; expand beyond repeated UK-only iterations. Preserve existing partition offsets.",
     "canada_partition": {
       "ledger": "2026-11-03-top10-canada-candidates.jsonl",
-      "next_offset": 0,
+      "next_offset": 327,
       "bounded_batch_size": 100,
       "count": 327,
-      "status": "downloaded_and_name_screened_not_accepted"
+      "status": "complete_inventory_corrob_review; residual identities deferred",
+      "decision_ledger": "2026-11-03-0935-decisions.jsonl",
+      "next_task": "Review deferred Canada groups in decision-ledger order; then explicit turbine IDs and lifecycle. German MaStR next new inventory."
     },
     "evidence_report": "2026-11-03-top10-source-review.json",
     "source_guide": "2026-11-03-top10-markets.md"

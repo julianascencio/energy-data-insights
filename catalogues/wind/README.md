@@ -34,3 +34,8 @@ The 2026-11-03 08:35 continuation adds 232 previously omitted procedural dates
 to 114 linked UK projects, preserving all lifecycle and capacity fields. The first
 200 unlinked applications remain deferred after structural review. Refusals and
 later successful appeals are history, not contradictory current statuses.
+
+The 09:35 Canadian continuation reviews all 327 NRCan project groups and enriches
+117 existing identities with inventory fleet details; 210 remain deferred.
+Lifecycle and all capacity exclusions remain unchanged. Individual turbines
+and exact OEM records are not inferred from inventory model labels.

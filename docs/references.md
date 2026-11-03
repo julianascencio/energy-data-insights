@@ -6295,3 +6295,11 @@ Contact Energy (2026). **Glenbrook Ohurua Battery opening**. [Source](https://co
 **Role:** data. 21 May 2026 announcement: separate Battery 1 and Battery 2 investment and equipment
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### nrcan_wind_turbine_database_2026
+
+Natural Resources Canada (2026). **Canadian Wind Turbine Database**. [Source](https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070)
+
+**Role:** data_source. Inventory snapshot with source project/turbine attributes; not independent evidence of current operation.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/canada.py`.

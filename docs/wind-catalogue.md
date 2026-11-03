@@ -189,3 +189,25 @@ existing projects without changing lifecycle or capacity eligibility. The first
 200 unlinked registry applications retain explicit identity holds and planning
 references in the 0835 ledger. No exact 77LC/87LC rating table was obtained;
 generic converter ranges and unrelated industrial drives were not imported.
+
+## Canadian inventory reconciliation
+
+The 2026-11-03 09:35 continuation reviews all 327 project-name groups from
+7,841 original NRCan workbook rows. It enriches 117 existing Canadian project
+identities with reported manufacturer/model, rating, rotor diameter, hub height
+and commissioning groupings; 210 identities remain deferred.
+
+Acceptance requires a unique normalized Canadian project name, all turbine
+coordinates within 10 km of the historical project coordinate, project-capacity
+agreement within 1% (0.1 MW minimum tolerance), and unique nonempty turbine IDs
+within the source group. These are corroboration checks, not proof of phase or
+repowering scope. All prior lifecycle fields, capacity values and aggregation
+exclusions remain unchanged. Inventory counts and mixed fleets are retained in
+`extensions_json.nrcan_inventory`; current fleet completeness remains unknown.
+No individual turbine or exact OEM equipment record is inferred from this review.
+
+The offline `wind_catalogue.canada.reconcile_group` adapter accepts decoded
+source dictionaries. Original workbook units and commissioning strings are
+retained. The source registry and decision ledger preserve the original checksum
+and Excel-row locators. See `nrcan_wind_turbine_database_2026` in the citation
+catalogue. The portal update date is not a commercial-operation date.

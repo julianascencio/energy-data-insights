@@ -117,6 +117,27 @@ for row in rows:
         print(row["name"], json.loads(row["fleet_json"]))
 
 # %%
+# Reported Canadian inventory composition is separate from OEM specifications and
+# from a current operating census. Unknown manufacturers remain explicit.
+inventory_counts = {}
+for row in rows:
+    inventory = json.loads(row.get("extensions_json") or "{}").get("nrcan_inventory")
+    if inventory:
+        for group in inventory["fleet_groups"]:
+            manufacturer = group.get("Manufacturer") or "Unknown"
+            inventory_counts[manufacturer] = (
+                inventory_counts.get(manufacturer, 0) + group["inventory_count"]
+            )
+if inventory_counts:
+    fig, ax = plt.subplots(figsize=(10, 5), layout="constrained")
+    pd.Series(inventory_counts).sort_values().plot.barh(ax=ax, color="#198c92")
+    ax.set(
+        xlabel="Reported inventory turbine rows in reconciled project groups",
+        ylabel="Reported manufacturer",
+        title="Canadian inventory composition · snapshot, not current operating fleet",
+    )
+
+# %%
 # The two original numerical tables share density, pitch mode, turbulence,
 # averaging period and manufacturer-calculated basis. Digitized curves are rejected.
 curves = [r for r in rows if r["entity_type"] == "curves"]
