@@ -1,0 +1,79 @@
+{
+  "generated_at_utc": "2026-11-03T19:46:14.078295+00:00",
+  "python": "3.13.16",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "energy-methods": "0.1.0",
+    "energy-analysis": "0.1.0",
+    "energy-data-retrieval": "0.1.0"
+  },
+  "benchmark_config": {
+    "training_steps": 672,
+    "horizon_steps": 48,
+    "step_minutes": 30,
+    "period_steps": 48
+  },
+  "model_configs": {
+    "LightGBM": {
+      "n_estimators": 200,
+      "learning_rate": 0.04,
+      "num_leaves": 15,
+      "min_child_samples": 20,
+      "min_samples": 48,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "XGBoost": {
+      "n_estimators": 200,
+      "learning_rate": 0.04,
+      "max_depth": 4,
+      "min_child_weight": 10.0,
+      "reg_lambda": 1.0,
+      "min_samples": 48,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "Solar physical": {
+      "family": "concave_spline",
+      "alpha": 0.1,
+      "min_samples": 24,
+      "poa_max_wm2": 1300.0,
+      "temperature_min_c": -20.0,
+      "temperature_max_c": 60.0,
+      "operational_zero_poa_wm2": 1.0,
+      "knots_wm2": [
+        200.0,
+        400.0,
+        600.0,
+        800.0,
+        1000.0,
+        1200.0
+      ]
+    },
+    "Wind physical": {
+      "cut_in_ms": 3.0,
+      "rated_ms": 11.4,
+      "cut_out_ms": 25.0,
+      "min_samples": 48
+    }
+  },
+  "timestral_mode": "Replay verified actual model inference; see Timestral provenance",
+  "file_sha256": {
+    "forecast_benchmark_lead_scores.csv": "8de0243b2de26fe5e2d9f6e3861db2bc8f6233d014cffa147f677adfcca39f24",
+    "forecast_benchmark_scores.csv": "18f637f79649ebef884ee189e8da9eeb8c45fc42090783a2b3c58cfd6da44aa6",
+    "forecast_ons_solar.csv": "c1db3c422ee31300159d26b0f54d32654d333455736b4ad5b7cbb42b5325b607",
+    "forecast_ons_wind.csv": "8837377f454ab68d3442cdd09c70fbc10123e6eed9756afbb09322bdda503317",
+    "forecast_timestral_predictions.csv": "4f289049a4f39bfc029f5cb07878ba70cc2cace6fbbec99045e58e82ae2c0b59"
+  },
+  "code_sha256": {
+    "analysis/src/energy_analysis/forecast_benchmark.py": "91184340f778dfa355a87cc0d4b0bc6cfbb80571d526fa272ccaf91dcffe52ae",
+    "methods/src/energy_methods/lightgbm.py": "eb32cb64ab390442d60bf40da2c127ae7fcd871102891cc6013df556d8fa0b33",
+    "methods/src/energy_methods/xgboost.py": "6aa7ba6c4eaa6602790b0f6b48fbb1ece5a3d34398d604355128a8bb88208a94",
+    "methods/src/energy_methods/physics.py": "1e3f7b1c680e46996f5bf40dabf4f7d47f718bd1ede78d78fed5036da710b464",
+    "methods/src/energy_methods/wind_physics.py": "197e8a7d374acb4c2a8d8e64ad14665b6a22456488426587a5f6569a7c3c525e"
+  }
+}

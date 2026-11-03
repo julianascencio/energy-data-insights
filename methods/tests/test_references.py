@@ -128,6 +128,8 @@ def test_method_paper_dois_remain_covered_by_catalogue() -> None:
         "acceptance_band",
         "poa",
         "lightgbm",
+        "xgboost",
+        "wind_physics",
         "physics",
         "status",
         "ccya",
@@ -143,4 +145,4 @@ def test_method_reference_ids_resolve_and_include_primary_thesis(module: str) ->
     reference_ids = import_module(f"energy_methods.{module}").REFERENCE_IDS
     selected = get_references(reference_ids)
     assert selected[0].id == PRIMARY_REFERENCE_ID
-    assert {reference.id for reference in selected} == set(reference_ids)
+    assert {reference.id for reference in selected} == set(reference_ids) | {PRIMARY_REFERENCE_ID}

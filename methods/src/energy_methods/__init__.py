@@ -1,4 +1,4 @@
-"""Reusable PV methods; measured data, reference estimates and causes stay distinct."""
+"""Reusable energy methods; measured data, reference estimates and causes stay distinct."""
 
 from importlib.metadata import version
 

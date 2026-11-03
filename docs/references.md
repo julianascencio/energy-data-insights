@@ -100,9 +100,9 @@ Ascencio-Vásquez, Julián; Osorio-Aravena, Juan Carlos; Brecl, Kristijan; Muño
 
 Ascencio-Vásquez, Julián; Bevc, Jakob; Reba, Kristjan; Brecl, Kristijan; Jankovec, Marko; Topič, Marko (2020). **Advanced PV Performance Modelling Based on Different Levels of Irradiance Data Accuracy**. Energies, 13(9), 2166. [DOI: 10.3390/en13092166](https://doi.org/10.3390/en13092166)
 
-**Role:** implemented. Source of the two-stage irradiance/power acceptance band and low/medium/high irradiance evidence levels. The repository states its interpretation of inconsistent printed roughness/distance expressions. Chronological validation and monotonic LightGBM settings are project adaptations.
+**Role:** implemented. Source of the two-stage irradiance/power acceptance band and low/medium/high irradiance evidence levels. The repository states its interpretation of inconsistent printed roughness/distance expressions. Chronological validation and monotonic LightGBM settings are project adaptations. The solar/wind forecasting benchmark uses this paper as methodological inspiration for resource-quality disclosure and empirical/ML comparison, not numerical reproduction. Rolling forecasts, XGBoost, Timestral and wind are project extensions; its acceptance-band algorithm and test-outlier removal are not applied in this benchmark.
 
-**Used by:** `methods/src/energy_methods/acceptance_band.py`, `methods/src/energy_methods/lightgbm.py`.
+**Used by:** `methods/src/energy_methods/acceptance_band.py`, `methods/src/energy_methods/lightgbm.py`, `analysis/src/energy_analysis/forecast_benchmark.py`, `examples/analysis/plot_forecast_model_benchmark.py`, `docs/forecast-benchmark.md`.
 
 ### erbs_1982_diffuse
 
@@ -174,7 +174,7 @@ Ke, Guolin; Meng, Qi; Finley, Thomas; Wang, Taifeng; Chen, Wei; Ma, Weidong; Ye,
 
 **Role:** implemented. Original LightGBM algorithm reference. The optional model uses the LightGBM library; monotonic settings do not guarantee concavity or any minimum prediction score.
 
-**Used by:** `methods/src/energy_methods/lightgbm.py`.
+**Used by:** `methods/src/energy_methods/lightgbm.py`, `analysis/src/energy_analysis/forecast_benchmark.py`, `examples/analysis/plot_forecast_model_benchmark.py`, `docs/forecast-benchmark.md`.
 
 ### lightgbm_parameters
 
@@ -854,7 +854,7 @@ Operador Nacional do Sistema Elétrico (n.d.). **Restrições de operação por 
 
 **Role:** data. Separate half-hour photovoltaic detail from April 2024. Verified output, estimated/reference values, irradiance flags and restrictions remain distinct; the adapter does not infer curtailment energy from an estimated/actual difference.
 
-**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ons/client.py`, `data-retrieval/src/energy_data_retrieval/sources/ons/README.md`, `examples/connectors/plot_generation_ons.py`, `docs/worldwide-generation.md`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`.
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ons/client.py`, `data-retrieval/src/energy_data_retrieval/sources/ons/README.md`, `examples/connectors/plot_generation_ons.py`, `docs/worldwide-generation.md`, `examples/connectors/plot_generation_coverage.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `scripts/prepare_forecast_benchmark.py`, `analysis/src/energy_analysis/forecast_benchmark.py`, `examples/analysis/plot_forecast_model_benchmark.py`, `docs/forecast-benchmark.md`.
 
 ### ieso_generator_output
 
@@ -6302,7 +6302,7 @@ Mistral AI (2026). **Timestral: standalone probabilistic time-series forecasting
 
 **Role:** software. Official model inference wrapped through an optional local connector. No retraining or reimplementation of the neural architecture. Inference code: Apache-2.0; separately distributed checkpoint weights: Modified MIT. Gallery replays pinned real Timestral-5M inference on attributed EIA CISO generation and offers explicit live inference. One historical holdout with unknown pretraining overlap is not operational validation or proof of superior accuracy.
 
-**Used by:** `methods/src/energy_methods/timestral.py`, `analysis/src/energy_analysis/timestral_case.py`, `examples/connectors/plot_timestral_forecast.py`, `scripts/prepare_timestral_example.py`, `docs/timestral.md`.
+**Used by:** `methods/src/energy_methods/timestral.py`, `analysis/src/energy_analysis/timestral_case.py`, `examples/connectors/plot_timestral_forecast.py`, `scripts/prepare_timestral_example.py`, `docs/timestral.md`, `analysis/src/energy_analysis/forecast_benchmark.py`, `scripts/prepare_forecast_benchmark.py`, `examples/analysis/plot_forecast_model_benchmark.py`, `docs/forecast-benchmark.md`.
 
 ### nrcan_wind_turbine_database_2026
 
@@ -6391,3 +6391,35 @@ Bonfiglioli (2024). **ACTIVE CUBE Operating Instructions**. [Source](https://www
 **Role:** data source. VEC521R6 printed06/24 pp38–41, exact ACU401sizes1–5; motor ratings and time-qualified overloads. Wind-series application from WIND R05_2 p13, no turbine compatibility.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### chen_guestrin_2016_xgboost
+
+Chen, Tianqi; Guestrin, Carlos (2016). **XGBoost: A Scalable Tree Boosting System**. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785-794. [DOI: 10.1145/2939672.2939785](https://doi.org/10.1145/2939672.2939785)
+
+**Role:** implemented. XGBoost software lineage. CPU histogram trees, fixed hyperparameters and chronological forecasting are repository choices.
+
+**Used by:** `methods/src/energy_methods/xgboost.py`, `analysis/src/energy_analysis/forecast_benchmark.py`, `examples/analysis/plot_forecast_model_benchmark.py`, `docs/forecast-benchmark.md`.
+
+### xgboost_python_api
+
+XGBoost contributors (2026). **XGBoost Python API Reference**. [Source](https://xgboost.readthedocs.io/en/stable/python/python_api.html)
+
+**Role:** implemented. Official XGBRegressor and native JSON model serialization documentation; access-year metadata, not a paper publication date.
+
+**Used by:** `methods/src/energy_methods/xgboost.py`.
+
+### jonkman_2009_nrel_5mw
+
+Jonkman, Jason; Butterfield, Sandy; Musial, Walt; Scott, George (2009). **Definition of a 5-MW Reference Wind Turbine for Offshore System Development**. [Source](https://www.nrel.gov/docs/fy09osti/38060.pdf)
+
+**Role:** background. NREL/TP-500-38060. Source of reference cut-in/rated/cut-out speeds 3/11.4/25 m/s only. The repository cubic interpolation and fitted farm scale do not reproduce the NREL aerodynamic curve or identify the actual farm equipment.
+
+**Used by:** `methods/src/energy_methods/wind_physics.py`, `analysis/src/energy_analysis/forecast_benchmark.py`, `examples/analysis/plot_forecast_model_benchmark.py`, `docs/forecast-benchmark.md`.
+
+### ons_wind_curtailment
+
+Operador Nacional do Sistema Elétrico (2026). **ONS Restrições de operação por constrained-off de usinas eólicas: detalhamento por usina**. [Source](https://dados.ons.org.br/dataset/restricao_coff_eolica_detail)
+
+**Role:** data. Native half-hour mean generation, wind resource and restriction/quality flags. Access-year metadata. The September 2026 dictionary prints m3/s for a wind-speed column; the benchmark explicitly assumes its numerical readings are m/s, retaining this source inconsistency in provenance. No estimated/reference generation is substituted for measured power.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/sources/ons/client.py`, `scripts/prepare_forecast_benchmark.py`, `analysis/src/energy_analysis/forecast_benchmark.py`, `examples/analysis/plot_forecast_model_benchmark.py`, `docs/forecast-benchmark.md`.
