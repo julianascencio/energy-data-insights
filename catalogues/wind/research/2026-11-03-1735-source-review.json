@@ -1,0 +1,130 @@
+{
+  "batch": "2026-11-03-1735",
+  "germany": {
+    "url": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261103_26.2.zip",
+    "archive_bytes": 3269784561,
+    "archive_sha256": null,
+    "archive_checksum_note": "Full 3.27 GB archive not downloaded; HTTP206 byte ranges retrieved member data. SHA256 below applies only to decompressed original XML members, not the full ZIP.",
+    "license": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+    "members": [
+      {
+        "name": "EinheitenWind.xml",
+        "sha256": "9e69e5e69a759f6aa693f7dafec9411a67296952f6915c9e3602081f61e8df0c",
+        "bytes": 208210804
+      },
+      {
+        "name": "Katalogwerte.xml",
+        "sha256": "6190efa105d4852b4037409f1183d1dd0e706286075d56383508baba7fc09382",
+        "bytes": 414388
+      },
+      {
+        "name": "Katalogkategorien.xml",
+        "sha256": "28385d6ac478656fa085f7c30dfd844137f8d78110143471b9919b87d6e916da",
+        "bytes": 19842
+      }
+    ],
+    "unit_rows": 44351,
+    "imported_records": 0,
+    "next_partition": "Resolve catalogue code dictionaries, then complete Schleswig-Holstein (Bundesland code from Katalogwerte) named-farm groups. Reconcile explicit NameWindpark plus municipality/geography/operator and WRI records; gross/net ratings stay separate.",
+    "member_crc32_verified": {
+      "EinheitenWind.xml": "1c55c94b",
+      "Katalogkategorien.xml": "26cb63b0",
+      "Katalogwerte.xml": "4ee8aec8"
+    },
+    "next_partition_counts": {
+      "Bundesland": "1411",
+      "units": 4788,
+      "named_unit_rows": 4660,
+      "distinct_nonempty_farm_labels": 1738,
+      "note": "Labels are not cleared farm identities"
+    }
+  },
+  "selected_state": {
+    "code": "1403",
+    "name": "Bayern",
+    "units": 1889,
+    "groups": 858,
+    "accepted_projects": 35,
+    "accepted_units": 166,
+    "deferred_groups": 823
+  },
+  "sweden": {
+    "where": "OMRID >= '0800' AND OMRID < '0900'",
+    "areas": 204,
+    "units": 1330,
+    "accepted_projects": 133,
+    "accepted_units": 752,
+    "held_areas": 71,
+    "orphan_units": 24,
+    "held_units": 578,
+    "independent_counts_verified": true,
+    "retrievals": [
+      {
+        "layer": 2,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/2/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "5bd5bbc4f7fd97b9fad53dd3a925e93f964ea2d16069d683de178a0d55cae1bc",
+        "rows": 76
+      },
+      {
+        "layer": 3,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/3/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "a8d88e571f601d7a147fd71572e47b80d6830d9cd1efda294441712eb3d80fdd",
+        "rows": 128
+      },
+      {
+        "layer": 5,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/5/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "c804e5b4fb6231bdba97e190efbda812ae70d47874e76160817b9a925d85d836",
+        "rows": 251
+      },
+      {
+        "layer": 6,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/6/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "c110c01174551dfbc8ce173118c03b07ee32fce285dd6f65502733e0c3d0432d",
+        "rows": 1
+      },
+      {
+        "layer": 7,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/7/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "6f66186af87c3a41e6af2ff26fdf8ac104ecab5883d4cc5f97f3021660044559",
+        "rows": 324
+      },
+      {
+        "layer": 8,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/8/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "50c01cdb1042470ec90aa99ba374e6ba3f732270713183aa7d50b1e24319a194",
+        "rows": 156
+      },
+      {
+        "layer": 9,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/9/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "b8d6e01c8111c4c873cc3652e745fb909c2c7371f9eb221c1a4147f728ea4301",
+        "rows": 13
+      },
+      {
+        "layer": 10,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/10/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 11,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/11/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 12,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/12/query?f=geojson&where=OMRID+%3E%3D+%270800%27+AND+OMRID+%3C+%270900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "53ad8e1d33f1f6a1d1bd40a255c28a14c89dc646969703696f49b6068d8725a3",
+        "rows": 585
+      }
+    ]
+  },
+  "oem": {
+    "source_id": "abb-wind-converter-reva-20180920",
+    "locator": "p8 visually reviewed; original checksum reverified",
+    "enriched": 15,
+    "bonfiglioli_hold_ledger": "2026-11-03-1735-equipment.jsonl"
+  }
+}

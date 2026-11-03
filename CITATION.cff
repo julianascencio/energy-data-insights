@@ -10861,6 +10861,137 @@
       "url": "https://github.com/mistralai/timestral/tree/a534bdbd244d64f3d9d743f46c7bf6fc330ed4ff",
       "notes": "Role: software. Official model inference wrapped through an optional local connector. No retraining or reimplementation of the neural architecture. Inference code: Apache-2.0; separately distributed checkpoint weights: Modified MIT. Gallery replays pinned real Timestral-5M inference on attributed EIA CISO generation and offers explicit live inference. One historical holdout with unknown pretraining overlap is not operational validation or proof of superior accuracy.",
       "year": 2026
+    },
+    {
+      "type": "dataset",
+      "title": "Canadian Wind Turbine Database",
+      "authors": [
+        {
+          "name": "Natural Resources Canada"
+        }
+      ],
+      "url": "https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070",
+      "notes": "Role: data_source. Inventory snapshot with source project/turbine attributes; not independent evidence of current operation.",
+      "year": 2026
+    },
+    {
+      "type": "dataset",
+      "title": "Vindbrukskollen land-based project areas and wind turbines",
+      "authors": [
+        {
+          "name": "Länsstyrelserna"
+        },
+        {
+          "name": "Swedish Energy Agency"
+        }
+      ],
+      "url": "https://www.energimyndigheten.se/energisystem-och-analys/el--och-varmeproduktion/vindkraft/vindbrukskollen/",
+      "notes": "Role: data source. CC0 registry data. Complete OMRID < 0500 query partition; original response checksums and raw status semantics retained.",
+      "year": 2026
+    },
+    {
+      "type": "technical_report",
+      "title": "VENSYS current product technical data sheets, July–August 2025",
+      "authors": [
+        {
+          "name": "VENSYS Energy AG"
+        }
+      ],
+      "url": "https://www.vensys.de/en/media",
+      "notes": "Role: data source. Seven exact OEM configurations; p2 tables; original PDF checksums in Wind source registry. AEP tables are not instantaneous power curves.",
+      "year": 2025
+    },
+    {
+      "type": "dataset",
+      "title": "Marktstammdatenregister Gesamtdatenexport 26.2",
+      "authors": [
+        {
+          "name": "Bundesnetzagentur"
+        }
+      ],
+      "url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "notes": "Role: data source. Original wind XML extracted with HTTP byte ranges. Full ZIP checksum unavailable. Complete Schleswig-Holstein partition reviewed; accepted park groups retain unresolved capacity scope.",
+      "year": 2026
+    },
+    {
+      "type": "technical_report",
+      "title": "E-138 EP3 E3, E-160 EP5 E3, E-175 EP5 E1/E2 technical data",
+      "authors": [
+        {
+          "name": "ENERCON"
+        }
+      ],
+      "url": "https://www.enercon.de/en/news-media/publications",
+      "notes": "Role: data source. August2026 revision; original three PDF hashes and p2/p4 locators retained. E2 power options and mode-dependent acoustic observations not collapsed into unqualified scalars.",
+      "year": 2026
+    },
+    {
+      "type": "technical_report",
+      "title": "Yield Optimized Mode for E-82 E2 and E-103 EP2",
+      "authors": [
+        {
+          "name": "ENERCON"
+        }
+      ],
+      "url": "https://www.enercon.de/en/news-media/publications",
+      "notes": "Role: data source. Undated three-slide original presentation; site-specific load study required. Exact optional modes, no original numerical curve tables."
+    },
+    {
+      "type": "technical_report",
+      "title": "HybridDrive PZFG2456/PZFG2535 technical table",
+      "authors": [
+        {
+          "name": "Winergy"
+        }
+      ],
+      "url": "https://www.winergy-group.com/en/medias/product-brochure-hybriddrive-winergy.pdf?context=bWFzdGVyfGRvY3VtZW50c3wyNDQ2ODV8YXBwbGljYXRpb24vcGRmfGRvY3VtZW50cy9oYzgvaGExLzg4MTUwODEwNjI0MzAucGRmfDQwYzc2MWQwY2I2NDcwODlhMzVmM2NhM2MxMjUxNzA2MDBlNGRiNzE4NDVhY2I4NWQ0ZWFjOGU4YjA2MDAzNWY",
+      "notes": "Role: data source. Original PDF p2 table; historical two-stage integrated gearbox-generator models. PDF creation metadata is not publication date. No turbine compatibility inferred."
+    },
+    {
+      "type": "technical_report",
+      "title": "Wind All New Products; SYW/SPT exact type tables",
+      "authors": [
+        {
+          "name": "NGC"
+        }
+      ],
+      "url": "https://ngcamericas.com/wp-content/uploads/2022/02/Wind-All-New-Products.pdf",
+      "notes": "Role: data source. Regional archive PDF; original checksum retained. Physical pages9/10, printed08/09 exact SYW/SPT types. Generic platform limits not transferred."
+    },
+    {
+      "type": "technical_report",
+      "title": "Solutions for WIND;700TW yaw/pitch models",
+      "authors": [
+        {
+          "name": "Bonfiglioli"
+        }
+      ],
+      "url": "https://www.bonfiglioli.com/_default_upload_bucket/TR_CAT_WIND_STD_ENG_R05_2.pdf",
+      "notes": "Role: data source. R05_2 original PDF p14; application-specific reference peak torque. No turbine compatibility or T/TW identity inferred."
+    },
+    {
+      "type": "technical_report",
+      "title": "ABB wind converters ACS880 wind turbine converters",
+      "authors": [
+        {
+          "name": "ABB"
+        }
+      ],
+      "url": "https://library.e.abb.com/public/25e19011bbcd4f2782f4b2c8271072af/Wind_converter_catalog_3AUA0000231755_RevA_EN.pdf",
+      "notes": "Role: data source. 3AUA0000231755 Rev A 20 September2018, p10 full15-row rating table; typical kW distinguished from kVA; twin cabinet units retained.",
+      "year": 2018
+    },
+    {
+      "type": "technical_report",
+      "title": "ACTIVE CUBE Operating Instructions",
+      "authors": [
+        {
+          "name": "Bonfiglioli"
+        }
+      ],
+      "url": "https://www.bonfiglioli.in/_default_upload_bucket/ACUx01_Operating%20Instructions_VEC521R6.pdf",
+      "notes": "Role: data source. VEC521R6 printed06/24 pp38–41, exact ACU401sizes1–5; motor ratings and time-qualified overloads. Wind-series application from WIND R05_2 p13, no turbine compatibility.",
+      "year": 2024
     }
   ]
 }

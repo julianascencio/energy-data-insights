@@ -1,0 +1,135 @@
+{
+  "batch": "2026-11-03-1835",
+  "germany": {
+    "url": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261103_26.2.zip",
+    "archive_bytes": 3269784561,
+    "archive_sha256": null,
+    "archive_checksum_note": "Full 3.27 GB archive not downloaded; HTTP206 byte ranges retrieved member data. SHA256 below applies only to decompressed original XML members, not the full ZIP.",
+    "license": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+    "members": [
+      {
+        "name": "EinheitenWind.xml",
+        "sha256": "9e69e5e69a759f6aa693f7dafec9411a67296952f6915c9e3602081f61e8df0c",
+        "bytes": 208210804
+      },
+      {
+        "name": "Katalogwerte.xml",
+        "sha256": "6190efa105d4852b4037409f1183d1dd0e706286075d56383508baba7fc09382",
+        "bytes": 414388
+      },
+      {
+        "name": "Katalogkategorien.xml",
+        "sha256": "28385d6ac478656fa085f7c30dfd844137f8d78110143471b9919b87d6e916da",
+        "bytes": 19842
+      }
+    ],
+    "unit_rows": 44351,
+    "imported_records": 0,
+    "next_partition": "Resolve catalogue code dictionaries, then complete Schleswig-Holstein (Bundesland code from Katalogwerte) named-farm groups. Reconcile explicit NameWindpark plus municipality/geography/operator and WRI records; gross/net ratings stay separate.",
+    "member_crc32_verified": {
+      "EinheitenWind.xml": "1c55c94b",
+      "Katalogkategorien.xml": "26cb63b0",
+      "Katalogwerte.xml": "4ee8aec8"
+    },
+    "next_partition_counts": {
+      "Bundesland": "1411",
+      "units": 4788,
+      "named_unit_rows": 4660,
+      "distinct_nonempty_farm_labels": 1738,
+      "note": "Labels are not cleared farm identities"
+    }
+  },
+  "selected_state": {
+    "code": "1402",
+    "name": "Baden-Württemberg",
+    "units": 1310,
+    "groups": 549,
+    "accepted_projects": 35,
+    "accepted_units": 143,
+    "deferred_groups": 514
+  },
+  "sweden": {
+    "where": "OMRID >= '0900' AND OMRID < '1000'",
+    "areas": 76,
+    "units": 357,
+    "accepted_projects": 48,
+    "accepted_units": 226,
+    "held_areas": 28,
+    "orphan_units": 3,
+    "held_units": 131,
+    "independent_counts_verified": true,
+    "retrievals": [
+      {
+        "layer": 2,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/2/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "4eb6e51280f0c8e4e6aa6944814b480f6c5e0bad203da5a9eb6338c4de81b78f",
+        "rows": 49
+      },
+      {
+        "layer": 3,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/3/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "b4d9ae58fbc8992300a26cf6dd9a9be06c0fe8cace91712dbfdeb83ea82b275d",
+        "rows": 27
+      },
+      {
+        "layer": 5,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/5/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "379649cdf459d788f1c1607ca6d7898bb8a02b63f0a62dd0479b9879d0abe78f",
+        "rows": 132
+      },
+      {
+        "layer": 6,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/6/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 7,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/7/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "88caa1f25dc885d382d6df9858f2e8927bfc60a1736213f5f000eb7eec31bd0f",
+        "rows": 43
+      },
+      {
+        "layer": 8,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/8/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "376aa2793ab1c81256f351b7eeb44e6cb91972e1c638888935128e6979366b9a",
+        "rows": 15
+      },
+      {
+        "layer": 9,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/9/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ad44514e87bd61ea5d353e0abfae9054051d8345695e5a57b1b26117d847efc5",
+        "rows": 18
+      },
+      {
+        "layer": 10,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/10/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 11,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/11/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 12,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/12/query?f=geojson&where=OMRID+%3E%3D+%270900%27+AND+OMRID+%3C+%271000%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "2e12aab54bb364f00ba8f4e899a310e0c7555ed83e604cc41c1b87119e421f23",
+        "rows": 149
+      }
+    ]
+  },
+  "oem": {
+    "url": "https://www.bonfiglioli.in/_default_upload_bucket/ACUx01_Operating%20Instructions_VEC521R6.pdf",
+    "publisher": "Bonfiglioli",
+    "title": "ACTIVE CUBE Operating Instructions",
+    "retrieved_at": "2026-11-03T18:35:00Z",
+    "published_at": null,
+    "revision": "VEC521R6; printed06/24",
+    "license": "Public OEM disclosure; no open licence asserted",
+    "sha256": "3a58938b49e33fb6659f35609f426f47783048401846d9dd9d0791a3d2733af3",
+    "original_availability": "Original PDF downloaded; physical/printed pp38–41 visually verified"
+  }
+}

@@ -6303,3 +6303,91 @@ Mistral AI (2026). **Timestral: standalone probabilistic time-series forecasting
 **Role:** software. Official model inference wrapped through an optional local connector. No retraining or reimplementation of the neural architecture. Inference code: Apache-2.0; separately distributed checkpoint weights: Modified MIT. Gallery replays pinned real Timestral-5M inference on attributed EIA CISO generation and offers explicit live inference. One historical holdout with unknown pretraining overlap is not operational validation or proof of superior accuracy.
 
 **Used by:** `methods/src/energy_methods/timestral.py`, `analysis/src/energy_analysis/timestral_case.py`, `examples/connectors/plot_timestral_forecast.py`, `scripts/prepare_timestral_example.py`, `docs/timestral.md`.
+
+### nrcan_wind_turbine_database_2026
+
+Natural Resources Canada (2026). **Canadian Wind Turbine Database**. [Source](https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070)
+
+**Role:** data_source. Inventory snapshot with source project/turbine attributes; not independent evidence of current operation.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/canada.py`.
+
+### vindbrukskollen_open_inventory_2026
+
+Länsstyrelserna; Swedish Energy Agency (2026). **Vindbrukskollen land-based project areas and wind turbines**. [Source](https://www.energimyndigheten.se/energisystem-och-analys/el--och-varmeproduktion/vindkraft/vindbrukskollen/)
+
+**Role:** data source. CC0 registry data. Complete OMRID < 0500 query partition; original response checksums and raw status semantics retained.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### vensys_technical_sheets_2025
+
+VENSYS Energy AG (2025). **VENSYS current product technical data sheets, July–August 2025**. [Source](https://www.vensys.de/en/media)
+
+**Role:** data source. Seven exact OEM configurations; p2 tables; original PDF checksums in Wind source registry. AEP tables are not instantaneous power curves.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### mastr_full_export_20261103
+
+Bundesnetzagentur (2026). **Marktstammdatenregister Gesamtdatenexport 26.2**. [Source](https://www.marktstammdatenregister.de/MaStR/Datendownload)
+
+**Role:** data source. Original wind XML extracted with HTTP byte ranges. Full ZIP checksum unavailable. Complete Schleswig-Holstein partition reviewed; accepted park groups retain unresolved capacity scope.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`, `data-retrieval/src/energy_data_retrieval/wind_catalogue/mastr.py`.
+
+### enercon_technical_sheets_202608
+
+ENERCON (2026). **E-138 EP3 E3, E-160 EP5 E3, E-175 EP5 E1/E2 technical data**. [Source](https://www.enercon.de/en/news-media/publications)
+
+**Role:** data source. August2026 revision; original three PDF hashes and p2/p4 locators retained. E2 power options and mode-dependent acoustic observations not collapsed into unqualified scalars.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### enercon_yield_modes_e82_e103
+
+ENERCON (n.d.). **Yield Optimized Mode for E-82 E2 and E-103 EP2**. [Source](https://www.enercon.de/en/news-media/publications)
+
+**Role:** data source. Undated three-slide original presentation; site-specific load study required. Exact optional modes, no original numerical curve tables.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### winergy_hybriddrive_pzfg
+
+Winergy (n.d.). **HybridDrive PZFG2456/PZFG2535 technical table**. [Source](https://www.winergy-group.com/en/medias/product-brochure-hybriddrive-winergy.pdf?context=bWFzdGVyfGRvY3VtZW50c3wyNDQ2ODV8YXBwbGljYXRpb24vcGRmfGRvY3VtZW50cy9oYzgvaGExLzg4MTUwODEwNjI0MzAucGRmfDQwYzc2MWQwY2I2NDcwODlhMzVmM2NhM2MxMjUxNzA2MDBlNGRiNzE4NDVhY2I4NWQ0ZWFjOGU4YjA2MDAzNWY)
+
+**Role:** data source. Original PDF p2 table; historical two-stage integrated gearbox-generator models. PDF creation metadata is not publication date. No turbine compatibility inferred.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### ngc_wind_yaw_pitch_2022
+
+NGC (n.d.). **Wind All New Products; SYW/SPT exact type tables**. [Source](https://ngcamericas.com/wp-content/uploads/2022/02/Wind-All-New-Products.pdf)
+
+**Role:** data source. Regional archive PDF; original checksum retained. Physical pages9/10, printed08/09 exact SYW/SPT types. Generic platform limits not transferred.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### bonfiglioli_wind_r05_2
+
+Bonfiglioli (n.d.). **Solutions for WIND;700TW yaw/pitch models**. [Source](https://www.bonfiglioli.com/_default_upload_bucket/TR_CAT_WIND_STD_ENG_R05_2.pdf)
+
+**Role:** data source. R05_2 original PDF p14; application-specific reference peak torque. No turbine compatibility or T/TW identity inferred.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### abb_wind_converters_2018_reva
+
+ABB (2018). **ABB wind converters ACS880 wind turbine converters**. [Source](https://library.e.abb.com/public/25e19011bbcd4f2782f4b2c8271072af/Wind_converter_catalog_3AUA0000231755_RevA_EN.pdf)
+
+**Role:** data source. 3AUA0000231755 Rev A 20 September2018, p10 full15-row rating table; typical kW distinguished from kVA; twin cabinet units retained.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### bonfiglioli_acu_vec521r6
+
+Bonfiglioli (2024). **ACTIVE CUBE Operating Instructions**. [Source](https://www.bonfiglioli.in/_default_upload_bucket/ACUx01_Operating%20Instructions_VEC521R6.pdf)
+
+**Role:** data source. VEC521R6 printed06/24 pp38–41, exact ACU401sizes1–5; motor ratings and time-qualified overloads. Wind-series application from WIND R05_2 p13, no turbine compatibility.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

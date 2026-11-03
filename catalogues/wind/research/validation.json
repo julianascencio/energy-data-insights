@@ -1,25 +1,26 @@
 {
-  "batch": "2026-11-03-0835",
+  "batch": "2026-11-03-1835",
   "local": {
-    "pytest": "1817 passed, 1 optional cdsapi skip after rebase onto 47cf12e8",
-    "repd_tests": "18 passed",
-    "viewer": "13 Node tests passed",
-    "catalogue": "5410 validated",
-    "snapshots": "two independent builds byte-identical",
-    "sphinx": "strict build passed; 439 HTML pages link/asset audit passed",
-    "ruff_check": "passed",
+    "pytest": "1867 passed,1 optional cdsapi skip;17 final catalogue tests passed after provenance refinement",
+    "viewer": "14 Node tests passed",
+    "catalogue": "10529records validated by final builds",
+    "snapshots": "Two fresh builds byte-identical; four typed Parquet tables ZSTD verified; docs manifest matches final snapshot",
+    "preservation": "10059preceding records byte-identical;6capacity totals unchanged;83new scopes excluded",
+    "adapter": "44351German total/1310selected;76Swedish areas357units independently counted across10layers;452source records replay identical;19MaStRtests in full suite",
+    "sphinx": "Strict build and 449-page link/asset audit passed",
+    "example": "Offline gallery passed; gearbox torque and ACU current/overload outputs distinct",
+    "ruff": "passed",
     "ty": "passed",
     "citations": "passed",
-    "repository_hygiene": "passed",
-    "preservation": "5296 records unchanged; 114 only milestone/evidence/review timestamps changed; capacities and unrelated catalogue trees unchanged"
+    "repository_hygiene": "2932 candidate files passed",
+    "whitespace": "passed"
   },
-  "corrected_failures": [
-    "Initial catalogue verification timestamp ordering failure corrected before final full suite"
-  ],
   "not_executed": [
-    "new browser smoke",
-    "package build"
+    "new browser smoke test",
+    "package builds"
   ],
-  "remote_ci": "pending publication",
-  "publication_base_main": "47cf12e8d95e4da29a52a54e3235db41ecce0d08"
+  "remote_ci": {
+    "preceding_commit": "070acfaa: both workflows success",
+    "this_increment": "Not yet published; local results separate"
+  }
 }

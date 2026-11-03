@@ -179,7 +179,11 @@ def test_reproducible_snapshot_and_lossless_viewer(tmp_path, catalogue):
             second / f"{entity}.parquet"
         ).read_bytes()
     assert pq.read_table(first / "projects.parquet").num_rows >= 5355
-    assert pq.read_table(first / "turbines.parquet").num_rows == 0
+    turbines = pq.read_table(first / "turbines.parquet").to_pylist()
+    expected = [r for r in catalogue[0] if r["entity_type"] == "turbines"]
+    assert len(turbines) == len(expected)
+    project_ids = {r["record_id"] for r in catalogue[0] if r["entity_type"] == "projects"}
+    assert all(r["project_record_id"] in project_ids for r in turbines)
     index = export_viewer_data(first)
     assert index["input_sha256"] == manifest["input_sha256"]
     with pytest.raises(FileExistsError):

@@ -189,3 +189,240 @@ existing projects without changing lifecycle or capacity eligibility. The first
 200 unlinked registry applications retain explicit identity holds and planning
 references in the 0835 ledger. No exact 77LC/87LC rating table was obtained;
 generic converter ranges and unrelated industrial drives were not imported.
+
+## Canadian inventory reconciliation
+
+The 2026-11-03 09:35 continuation reviews all 327 project-name groups from
+7,841 original NRCan workbook rows. It enriches 117 existing Canadian project
+identities with reported manufacturer/model, rating, rotor diameter, hub height
+and commissioning groupings; 210 identities remain deferred.
+
+Acceptance requires a unique normalized Canadian project name, all turbine
+coordinates within 10 km of the historical project coordinate, project-capacity
+agreement within 1% (0.1 MW minimum tolerance), and unique nonempty turbine IDs
+within the source group. These are corroboration checks, not proof of phase or
+repowering scope. All prior lifecycle fields, capacity values and aggregation
+exclusions remain unchanged. Inventory counts and mixed fleets are retained in
+`extensions_json.nrcan_inventory`; current fleet completeness remains unknown.
+No individual turbine or exact OEM equipment record is inferred from this review.
+
+The offline `wind_catalogue.canada.reconcile_group` adapter accepts decoded
+source dictionaries. Original workbook units and commissioning strings are
+retained. The source registry and decision ledger preserve the original checksum
+and Excel-row locators. See `nrcan_wind_turbine_database_2026` in the citation
+catalogue. The portal update date is not a commercial-operation date.
+
+
+## Swedish registry areas, turbine inventory and VENSYS equipment
+
+The 10:35 batch covers the complete `OMRID < '0500'` partition in the official
+Vindbrukskollen MapServer: Stockholm, Uppsala and Södermanland. Layers 2 and 3
+supply 89 development areas; layers 5–12 supply 348 georeferenced turbine rows.
+Seventy-two named area identities and 321 explicit `VERKID` children are added.
+Ten repeated municipality/name areas, five unnamed areas and two areas without
+linked turbines remain deferred; two turbine rows lack a published parent area.
+All ten pre-existing Swedish records are preserved. Names and proximity to any
+existing Swedish project trigger reconciliation rather than automatic addition.
+
+A registry area is a documented development scope, not proof of an independent
+physical farm or repowering generation. Every new project retains unresolved
+aggregation scope. `Uppfört` means physically erected: current operation remains
+unknown. Permitted, dismantled and withdrawn states map only where explicit;
+mixed states and refused applications keep raw history without a guessed current
+lifecycle. Source dates, organizations, permit types, modeled annual production,
+maximum turbine ratings and boundary polygons remain attached. Reported zero
+annual production is preserved; zero dimensions and placeholder model/date
+values become null in normalized fields, with originals retained.
+
+Project map anchors use an explicitly identified linked turbine coordinate,
+not an invented centroid. Turbine points are transformed by the source service
+to EPSG:4326; positional accuracy remains unquantified. The viewer's turbine
+table has parent IDs, model labels, dimensions, filters, clustered map and
+inventory KPIs. Counts include proposed and historical records. Fleet composition
+is partial; no inventory label is promoted to an exact OEM configuration.
+
+The reusable offline adapter accepts complete source GeoJSON queries:
+
+```bash
+uv run python -m energy_data_retrieval.wind_catalogue.sweden \
+  --input /path/to/downloaded-queries --source-prefix vbk-20261103 \
+  --timestamp 2026-11-03T10:45:00Z \
+  --output /tmp/vbk-staged.jsonl --ledger /tmp/vbk-decisions.jsonl
+```
+
+Use the exact ten query URLs and checksums in
+`research/2026-11-03-1035-source-review.json`; save responses as
+`vbk-layerN.geojson`. This staging command never modifies canonical data and
+refuses output-file replacement. Existing IDs are held for explicit enrichment
+review. To reproduce the accepted first partition, use the pre-batch catalogue
+at `fc308ef3`; rerunning against the updated catalogue correctly holds its IDs.
+See `vindbrukskollen_open_inventory_2026` in the citation catalogue. Both original
+ZIP metadata files identify the inventory as CC0; background maps are separate.
+
+All seven currently linked VENSYS product sheets were reviewed, with original
+PDF checksums and p2 locators (`vensys_technical_sheets_2025`). Tower/IEC and grid
+frequency options remain nested within each exact configuration. VENSYS 175
+uses a medium-speed geared drivetrain; earlier direct-drive designs are not
+silently generalized to it. Thermal derating conditions and acoustic mode
+qualifications are retained. The VENSYS 136 PDF and undated webpage disagree on
+sound power; the normalized scalar is null pending revision/mode reconciliation.
+Numerical AEP tables retain unknown density/distribution and cannot substitute
+for instantaneous power curves. Seven plotted curves are deferred, not digitized.
+
+Germany's MaStR wind XML was acquired via verified HTTP206 ZIP byte ranges:
+44,351 unit rows, plus both catalogue dictionaries. Member SHA-256 values are
+recorded; a checksum for the undownloaded full archive is explicitly unavailable.
+The next task is the complete Schleswig-Holstein named-farm partition after
+catalogue-code verification and WRI reconciliation, not automatic turbine
+clustering. See `mastr_full_export_20261103` and the ranked backlog.
+
+
+## Östergötland and ENERCON continuation
+
+The next complete partition (`0500 <= OMRID < 0600`) reviews 227 areas and
+672 turbine rows. Independent count queries agree with every downloaded layer.
+It adds 192 projects and 559 turbine children; 21 repeated-name scopes, 12 unnamed
+areas and two existing identity/spatial candidates remain held (113 turbine rows).
+All 5,810 preceding records and all six capacity-category totals remain unchanged.
+The adapter now optionally verifies an independent source count, catching silent
+truncation even when the response omits an exceeded-transfer-limit flag.
+
+Three ENERCON August 2026 sheets describe four exact configurations: E-138 EP3 E3,
+E-160 EP5 E3, E-175 EP5 E1 and E2. The E2 nominal 6,000/7,000 kW options remain
+nested; no single rating is selected. Mode/height-dependent acoustic observations
+also remain qualified metadata. Cold-climate packages stay distinct from normal
+temperature limits, and design-life claims keep their IEC scope. Annual-yield
+plots are not numerical power curves. See `enercon_technical_sheets_202608`.
+All three originals downloaded successfully after web-reader errors; this was
+not authentication failure or evidence of reuse restrictions.
+
+Next Swedish partition: all Jönköping registry IDs (`0600 <= OMRID < 0700`).
+The German Schleswig-Holstein named-farm reconciliation task remains pending.
+
+
+## Schleswig-Holstein registry continuation
+
+The complete MaStR Schleswig-Holstein partition contains 4,788 registered units
+in 1,739 name groups, including the empty-name group. Conservative operator,
+municipality, coordinate, alias and historical-catalogue screens accept 22 named
+parks and 105 turbine children. The other 1,717 groups remain in the decision
+ledger. Park names are not official farm identifiers. Stable unit registry IDs
+anchor future reconciliation; ownership/name changes must not create new farms.
+All 22 parks retain unknown farm lifecycle, partial fleet completeness and
+unresolved aggregation scope. Unit status, commissioning dates and separate
+gross/net kW are retained without substituting sums for reported farm capacity.
+The offline `wind_catalogue.mastr.stage` adapter uses the pinned XML dictionary
+and a complete state partition; its synthetic fixture tests alias collisions,
+invalid scopes, replay identity and the distinction between unit and farm ratings.
+See `mastr_full_export_20261103` and the 1235 decision ledger.
+
+The ENERCON upgrade presentation adds exact E-82 E2 and E-103 EP2 model records
+with their respective OM-YO-01 and OM02sBV optional modes. Base ratings and
+geometry remain unknown because this source does not specify them. Yield claims
+retain annual-average wind-speed and site-load-study conditions; they are not
+measured operational performance. Graph-only curves remain deferred. The combined
+August 2026 overview duplicates the four configurations already catalogued.
+See `enercon_yield_modes_e82_e103`.
+
+Next German partition: Niedersachsen, dictionary code 1408, after verification
+against the original category 101 dictionary. Reconcile accepted Schleswig-Holstein
+unit links and held groups separately from new state intake.
+
+
+## Niedersachsen and integrated drivetrain components
+
+The complete 9,034-unit MaStR state partition (code1408) contains3,046namegroups.
+The adapter accepts73parks and366linked units;2,973groups remain held. State
+selection is explicit and dictionary-checked; the default Schleswig-Holstein
+API remains compatible. Previous records and all capacity summaries stay unchanged.
+
+Winergy's historical HybridDrive table provides PZFG2456 and PZFG2535, each
+rated3000kW, with2000/2500kNm torque and25/31tonnes assembly mass. These are
+integrated two-stage gearbox/permanent-magnet generator assemblies, recorded
+once per exact model. Original units and normalization are retained. Current
+availability, specific turbine compatibility and absolute lifetime remain unknown.
+PDF creation metadata2013-06-03 is not asserted as publication date. The peak
+efficiency marketing claim lacks operating-point conditions and is not accepted
+as normalized performance. See `winergy_hybriddrive_pzfg`, original PDF p2.
+
+NGC's independent product page describes broad platforms without an exact model
+rating table; no artificial configurations were generated from power ranges.
+Next: Nordrhein-Westfalen (code1409,6,753units), Jönköping and exact component
+configuration evidence.
+
+
+## Nordrhein-Westfalen and exact yaw/pitch gearboxes
+
+The complete6,753-unit MaStR partition(code1409) yields67parks and314linked
+units from2,732namegroups;2,665groups remain held. All prior records and six
+capacity summaries stay unchanged. Added state support preserves default APIs.
+
+The original NGC regional archive PDF supplies seven exact SYW yaw-drive types
+and seven SPT pitch-gearbox types. Rated-torque ranges, peak torque and gear
+ratios remain distinct; stage-count options stay within each model. Generic
+platform temperature, certification and turbine-compatibility claims are not
+inherited. Physical pages9/10(printed08/09) were visually reviewed. Five SMG
+platform columns remain held. See `ngc_wind_yaw_pitch_2022`. The German2024URL
+returned404; the regional2022PDF downloaded successfully. This was not an
+authentication or explicit reuse restriction. Winergy's unnamed6MW exhibition
+configuration remains held for exact identity. No numerical curves added.
+
+
+## Brandenburg, Jönköping and Bonfiglioli continuation
+
+Brandenburg's complete5,334-unit partition yields22parks and183units, with
+1,471namegroups deferred. Jönköping's151areas/902turbines yield109projects and
+608units. All ten layers match independent source counts. Forty-two areas and
+18orphan units remain held, covering294turbine rows. Both inventories retain
+unresolved aggregation scope. All7,530preceding rows and capacity totals stay
+unchanged. Exact query URLs and original response hashes are in the1535review.
+
+Bonfiglioli R05_2 p14 provides nine distinct TW model names across13pitch/yaw
+application rows. Each model keeps application-specific peak torque together,
+including differing yaw/pitch values. These are OEM reference limits, not nominal
+torque or independently validated performance. The19dimension rows on p15 use
+T designations and remain held pending T/TW reconciliation. See
+`bonfiglioli_wind_r05_2`. NGC2024original download returned404 while search and
+opened reader show different editions; MPPY/MPPB import remains deferred.
+
+
+## Sachsen-Anhalt, Kronoberg and ABB continuation
+
+Complete state/county partitions yield64projects and433linked units. All8461prior
+records remain byte-identical; capacity summaries unchanged.878German groups
+and44Swedish areas (326units) remain held. New scopes are excluded from totals.
+
+The complete15-row ABB2018RevA p10 table (`abb_wind_converters_2018_reva`)
+preserves exact77LC/87LC types, including documented twin cabinets. Typical
+generator kW is separate from generator/grid kVA and nominal side currents.
+Dimensions, mass and flow retain the original per-cabinet expressions. Ratings
+depend on selected options; historical specifications do not establish current
+product lifecycle, turbine compatibility or independently validated performance.
+
+
+## Bayern, Kalmar and converter technical conditions
+
+Complete Bayern1889-unit and Kalmar204-area/1330-unit partitions add168projects
+and918linked turbines.823German groups,71Swedish areas and24orphan units remain
+held. All new project scopes remain excluded; prior capacity totals unchanged.
+
+ABB2018RevA p8 explicitly covers77LC/87LC and adds qualified series-level
+operating/storage temperatures, cooling inlet limits, altitude, electrical
+interfaces and optional limits to15existing models. All p10ratings remain.
+Standard altitude1000m is separate from optional4000m; optional coolant55C is
+not a standard limit. No independent performance/certification claim is added.
+BMD R04_1 industrial identifiers remain held pending their wind-specific mapping.
+
+
+## Baden-Württemberg, Gotland and ACU control inverters
+
+Complete partitions add83projects and369turbines; all10059prior records and
+capacity totals remain unchanged.514German groups,28Swedish areas and3orphan
+units remain held. New project scopes stay excluded from capacity sums.
+
+Bonfiglioli ACU VEC521R6 pp38–41 (`bonfiglioli_acu_vec521r6`) adds all18exact
+ACU401type columns in sizes1–5. Motor shaft power, output current,60s/1s overload,
+2kHz losses, dimensions and approximate mass retain boundaries. ACU401-22
+keeps22A main-table and frequency-dependent23A/22.7A observations separately.
+WIND R05_2 p13 supports Active Cube series yaw application, not exact turbine
+compatibility. No artificial interface/cooling variants or performance claims.

@@ -1,8 +1,8 @@
 {
-  "batch": "2026-11-03-0835",
-  "updated_at": "2026-11-03T08:35:04Z",
-  "baseline_main": "33eec8385eeb6c9d20b27bfce106d24a38e2e78c",
-  "branch": "research/wind-20261103-0835",
+  "batch": "2026-11-03-1835",
+  "updated_at": "2026-11-03T18:35:00Z",
+  "baseline_main": "5063c41694b17b1a3fc856ea9527a32211278203",
+  "branch": "research/wind-20261103-0935",
   "merged_wind_counts_at_baseline": {
     "projects": 5355,
     "equipment": 53,
@@ -10,25 +10,31 @@
     "turbines": 0
   },
   "branch_totals": {
-    "projects": 5355,
-    "non_group_projects": 5354,
-    "equipment": 53,
+    "projects": 6227,
+    "non_group_projects": 6226,
+    "equipment": 124,
+    "turbines": 4176,
     "curves": 2,
-    "turbines": 0,
     "countries": 59,
     "manufacturers": [
       "ABB",
+      "ENERCON",
       "GE Vernova",
       "MHI Vestas Offshore Wind",
       "Nordex",
       "Siemens Gamesa",
-      "Vestas"
+      "VENSYS Energy AG",
+      "Vestas",
+      "Winergy",
+      "NGC",
+      "Bonfiglioli"
     ]
   },
   "changes_against_main": {
-    "new_projects": 0,
-    "new_equipment": 0,
-    "substantively_enriched_existing_projects": 114,
+    "new_projects": 872,
+    "new_equipment": 71,
+    "new_turbines": 4176,
+    "substantively_enriched_existing_projects": 117,
     "substantively_enriched_existing_equipment": 0
   },
   "historical_partition": {
@@ -38,10 +44,10 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 655,
+  "primary_evidence_project_records": 1644,
   "technology_counts": {
     "unknown": 4700,
-    "onshore": 617,
+    "onshore": 1489,
     "offshore_unspecified": 32,
     "fixed_bottom_offshore": 2,
     "floating_offshore": 4
@@ -53,21 +59,29 @@
     "Existing 13 duplicate-name candidate groups remain unresolved",
     "Lake Turkana installed MW; V136-4.2 scalar; GE acoustic operating boundaries; SG 3.2-129 reported power-density discrepancy",
     "USWTDB release ZIP HTTP403; ANEEL daily CSV HTTP503, no asserted authentication/reuse restriction",
-    "Exact Changhua regional equipment configuration; independent generator/gearbox/converter/foundation models; archive curve provenance"
+    "Exact Changhua regional equipment configuration; independent generator/gearbox/converter/foundation models; archive curve provenance",
+    "Sweden17area candidates and2orphan turbines (27turbine rows total); VENSYS136sound_power_db_a conflict;7graph-only power curves held",
+    "Schleswig-Holstein1717namegroups held;22acceptedparkaggregation scopes unresolved;2ENERCON graph-onlycurves held",
+    "Niedersachsen2973namegroups;73newparkaggregation scopes unresolved; NGC platform ranges lack exact configuration identifiers",
+    "Nordrhein-Westfalen2665namegroups;67newpark scopes unresolved;5SMGplatforms and unnamed Winergy exhibit held",
+    "Brandenburg1471groups;Jönköping42areas and18orphan units;NGC2024search/reader revision mismatch;Bonfiglioli T/TW dimensions identity",
+    "Sachsen-Anhalt878groups;Kronoberg44areas/326units;Bonfiglioli pp18–23 exact type codes",
+    "Bayern823groups;Kalmar71areas24orphanunits;BMDindustrial/wind frame mapping unresolved",
+    "Baden-Württemberg514groups;Gotland28areas3orphanunits;ACU401sizes6–8next, no inferred turbine compatibility"
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
-  "publication_base_main": "47cf12e8d95e4da29a52a54e3235db41ecce0d08",
-  "iteration_base_head": "33eec8385eeb6c9d20b27bfce106d24a38e2e78c",
+  "publication_base_main": "5063c41694b17b1a3fc856ea9527a32211278203",
+  "iteration_base_head": "070acfaa452e34d89bc9cf3cfef023d6888b4992",
   "changes_this_run": {
-    "new_projects": 0,
-    "substantively_enriched_projects": 114,
-    "new_equipment": 0,
+    "new_projects": 83,
+    "substantively_enriched_projects": 0,
+    "new_equipment": 18,
     "substantively_enriched_equipment": 0,
-    "new_curves": 0,
-    "new_turbines": 0
+    "new_turbines": 369,
+    "new_curves": 0
   },
   "repd_partition": {
     "selected_rows": 2858,
@@ -76,12 +90,18 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "No new country",
-  "new_technology_coverage": "No new category",
+  "new_geography": "Baden-Württemberg and Gotland; no new country",
+  "new_technology_coverage": "Onshore registry inventories; yaw-control series frequency inverters",
   "reviewed_this_run": {
-    "unlinked_applications": 200,
-    "procedural_history_enrichments": 114,
-    "dated_events_added": 232
+    "german_units": 1310,
+    "german_groups": 549,
+    "deferred_german_groups": 514,
+    "swedish_areas": 76,
+    "swedish_units": 357,
+    "held_swedish_areas": 28,
+    "orphan_units": 3,
+    "held_swedish_units": 131,
+    "equipment_added": 18
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -92,5 +112,9 @@
     "candidate_ledger": "2026-11-03-top10-canada-candidates.jsonl",
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
-  }
+  },
+  "source_review": "2026-11-03-1835-source-review.json",
+  "decision_ledger": "2026-11-03-1835-decisions.jsonl",
+  "equipment_ledger": "2026-11-03-1835-equipment.jsonl",
+  "sweden_decision_ledger": "2026-11-03-1835-sweden-decisions.jsonl"
 }
