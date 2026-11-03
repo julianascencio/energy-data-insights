@@ -6343,3 +6343,11 @@ ENERCON (n.d.). **Yield Optimized Mode for E-82 E2 and E-103 EP2**. [Source](htt
 **Role:** data source. Undated three-slide original presentation; site-specific load study required. Exact optional modes, no original numerical curve tables.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### winergy_hybriddrive_pzfg
+
+Winergy (n.d.). **HybridDrive PZFG2456/PZFG2535 technical table**. [Source](https://www.winergy-group.com/en/medias/product-brochure-hybriddrive-winergy.pdf?context=bWFzdGVyfGRvY3VtZW50c3wyNDQ2ODV8YXBwbGljYXRpb24vcGRmfGRvY3VtZW50cy9oYzgvaGExLzg4MTUwODEwNjI0MzAucGRmfDQwYzc2MWQwY2I2NDcwODlhMzVmM2NhM2MxMjUxNzA2MDBlNGRiNzE4NDVhY2I4NWQ0ZWFjOGU4YjA2MDAzNWY)
+
+**Role:** data source. Original PDF p2 table; historical two-stage integrated gearbox-generator models. PDF creation metadata is not publication date. No turbine compatibility inferred.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T12:45:00Z",
+  "updated_at": "2026-11-03T13:40:00Z",
   "branch": "research/wind-20261103-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -89,7 +89,8 @@
         "VENSYS current seven sheets completed; do not re-add nested tower options. Resolve VENSYS136105.8/104.1dBA revision/mode conflict. Next exact ENERCON current E-175EP5E1/E2, E-160EP5E3, E-138EP3E3 original sheets; no independent blade OEM inference from type labels.",
         "ENERCON three August2026 sheets completed: E138EP3E3, E160EP5E3, E175EP5E1/E2. Do not re-add tower or power options. Next E82E2/E103EP2 yield-mode source and exact component specifications; retain E2 nominal-option and acoustic qualifications.",
         "E82E2/E103EP2 optional modes complete:2exactmodels, base ratings/geometry unspecified. Combined08/2026overview duplicates4existingmodels. Next exact base-model datasheets and component models;2graph-onlycurves deferred, no numerical density assumptions.",
-        "Independent Winergy discovery: official historical HybridDrive brochure has exact PZFG2456/PZFG2535 three-MW table. Next acquire original PDF/checksum and review full revision/table before import. Current HybridDrive6MW exhibition specs are not automatically the same configurations. URL https://www.winergy-group.com/en/products/gearboxes"
+        "Independent Winergy discovery: official historical HybridDrive brochure has exact PZFG2456/PZFG2535 three-MW table. Next acquire original PDF/checksum and review full revision/table before import. Current HybridDrive6MW exhibition specs are not automatically the same configurations. URL https://www.winergy-group.com/en/products/gearboxes",
+        "Winergy PZFG2456/2535 complete, two-stage historical integrated assemblies. NGC StanGear/WinGear page reviewed: broad1.5–25+MW platform range, no exact-model table; hold. Next Winergy current6MW exhibition configuration identity and exact NGC SMG rating sheets."
       ]
     },
     {
@@ -187,16 +188,16 @@
         "Katalogkategorien.xml"
       ],
       "all_unit_rows": 44351,
-      "next_partition": "Bundesland1408 Niedersachsen; dictionary category101 verified",
+      "next_partition": "Bundesland1409 Nordrhein-Westfalen;6753rows; verify dictionary category101",
       "next_task": "Extend state parameter with dictionary validation; obtain complete independent count; reconcile names/operator/municipality/unit links and historical catalogue before additions. Review Schleswig-Holstein residual decisions separately.",
-      "source_review": "2026-11-03-1235-source-review.json",
+      "source_review": "2026-11-03-1335-source-review.json",
       "offset": 0,
-      "status": "schleswig_holstein_complete_conservative_review",
-      "completed_partition": "Bundesland1411 Schleswig-Holstein:all4788units/1739namegroups",
-      "accepted_projects": 22,
-      "accepted_turbines": 105,
-      "deferred_groups": 1717,
-      "decision_ledger": "2026-11-03-1235-decisions.jsonl"
+      "status": "two_states_reviewed",
+      "completed_partition": "1411 Schleswig-Holstein and1408 Niedersachsen complete",
+      "accepted_projects": 95,
+      "accepted_turbines": 471,
+      "deferred_groups": 4690,
+      "decision_ledger": "2026-11-03-1335-decisions.jsonl"
     }
   }
 }

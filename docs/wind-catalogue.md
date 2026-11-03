@@ -327,3 +327,25 @@ See `enercon_yield_modes_e82_e103`.
 Next German partition: Niedersachsen, dictionary code 1408, after verification
 against the original category 101 dictionary. Reconcile accepted Schleswig-Holstein
 unit links and held groups separately from new state intake.
+
+
+## Niedersachsen and integrated drivetrain components
+
+The complete 9,034-unit MaStR state partition (code1408) contains3,046namegroups.
+The adapter accepts73parks and366linked units;2,973groups remain held. State
+selection is explicit and dictionary-checked; the default Schleswig-Holstein
+API remains compatible. Previous records and all capacity summaries stay unchanged.
+
+Winergy's historical HybridDrive table provides PZFG2456 and PZFG2535, each
+rated3000kW, with2000/2500kNm torque and25/31tonnes assembly mass. These are
+integrated two-stage gearbox/permanent-magnet generator assemblies, recorded
+once per exact model. Original units and normalization are retained. Current
+availability, specific turbine compatibility and absolute lifetime remain unknown.
+PDF creation metadata2013-06-03 is not asserted as publication date. The peak
+efficiency marketing claim lacks operating-point conditions and is not accepted
+as normalized performance. See `winergy_hybriddrive_pzfg`, original PDF p2.
+
+NGC's independent product page describes broad platforms without an exact model
+rating table; no artificial configurations were generated from power ranges.
+Next: Nordrhein-Westfalen (code1409,6,753units), Jönköping and exact component
+configuration evidence.

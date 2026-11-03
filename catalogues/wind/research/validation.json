@@ -1,26 +1,26 @@
 {
-  "batch": "2026-11-03-1235",
+  "batch": "2026-11-03-1335",
   "local": {
-    "pytest": "1860 passed;1 optional cdsapi skip in full suite. After final XML-count test/citation update,36 targeted adapter/reference tests passed (13 MaStR tests).",
-    "viewer": "14 Node tests passed; shared map/table reused unchanged",
-    "catalogue": "6694 records validated",
-    "snapshots": "Two fresh typed Zstandard snapshots byte-identical across all files; all Parquet columns inspected for ZSTD",
-    "preservation": "6565 preceding records byte-identical; all six capacity summaries unchanged;22 new excluded park scopes",
-    "adapter": "Full44,351-unit XML parsed with state count4788; full127-record accepted project/unit replay matches canonical data; all original XML member hashes reverified",
-    "example": "Offline gallery executed with German unit lifecycle summary",
-    "sphinx": "Strict final Sphinx build passed;449-page local link/asset audit passed",
+    "pytest": "1862 passed,1 optional cdsapi skip;31 final catalogue/adapter tests passed after mass-provenance correction",
+    "viewer": "14 Node tests passed",
+    "catalogue": "7135 records validated by final builds",
+    "snapshots": "Two final fresh builds byte-identical; all four Parquet tables ZSTD verified; published docs manifest matches final snapshot",
+    "preservation": "6694 preceding records byte-identical; six capacity summaries unchanged;73 new scopes excluded",
+    "adapter": "Complete44351-row XML with9034selected state units;439-record source replay identical; original member hashes reverified",
+    "sphinx": "Strict build passed;449-page local link/asset audit passed",
+    "example": "Offline gallery executed; state coverage and integrated component output included in strict gallery build",
     "ruff": "passed",
     "ty": "passed",
-    "citations": "passed; generated exports updated from canonical reference registry",
-    "repository_hygiene": "2818 candidate files passed",
-    "whitespace": "git diff --cached --check passed"
+    "citations": "passed",
+    "repository_hygiene": "2832 candidate files passed",
+    "whitespace": "passed"
   },
   "not_executed": [
     "new browser smoke test",
     "package builds"
   ],
   "remote_ci": {
-    "preceding_commit": "851cb15b:Documentation and Python quality/tests both success",
-    "this_increment": "not yet published; local results are not remote CI"
+    "preceding_commit": "ee90058:both workflows success",
+    "this_increment": "not yet published; local checks are separate"
   }
 }

@@ -119,3 +119,22 @@ def test_xml_partition_count_and_dictionary_guard(tmp_path):
     dictionary.write_text("<root/>")
     with pytest.raises(ValueError, match="dictionary"):
         read_partition(wind, dictionary, expected_total=1, expected_selected=1)
+
+
+def test_niedersachsen_uses_explicit_state_and_preserves_scope():
+    data = inputs()
+    data["dictionary"]["1408"] = "Niedersachsen"
+    for unit in data["units"]:
+        unit["Bundesland"] = "1408"
+    rows, _ = stage(
+        data["units"],
+        data["dictionary"],
+        [],
+        source_id="synthetic",
+        now="2026-11-03T13:40:00Z",
+        state_code="1408",
+    )
+    assert rows[0]["region"] == "Niedersachsen"
+    assert rows[0]["aggregation_role"] == "unresolved"
+    with pytest.raises(ValueError, match="selected state"):
+        run(data)

@@ -19,6 +19,7 @@ from .catalogue import stable_id
 from .gppd import evidence_record
 
 REFERENCE_IDS = ("mastr_full_export_20261103",)
+STATES = {"1411": "Schleswig-Holstein", "1408": "Niedersachsen"}
 
 
 def distance(a: tuple[float, float], b: tuple[float, float]) -> float:
@@ -47,6 +48,7 @@ def stage(
     *,
     source_id: str,
     now: str,
+    state_code: str = "1411",
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Review the full selected state, retaining all rejected group decisions.
 
@@ -58,8 +60,10 @@ def stage(
     ids = [r.get("EinheitMastrNummer") for r in units]
     if any(not x for x in ids) or len(ids) != len(set(ids)):
         raise ValueError("Missing or duplicate MaStR unit ID")
-    if any(r.get("Bundesland") != "1411" for r in units):
-        raise ValueError("Require complete Schleswig-Holstein partition")
+    if state_code not in STATES or dictionary.get(state_code) != STATES[state_code]:
+        raise ValueError("State dictionary code/revision mismatch")
+    if any(r.get("Bundesland") != state_code for r in units):
+        raise ValueError("Require complete selected state partition")
     groups: dict[str, list[dict[str, str]]] = defaultdict(list)
     for r in units:
         groups[(r.get("NameWindpark") or "").strip()].append(r)
@@ -136,7 +140,7 @@ def stage(
             "record_scope": "farm",
             "name": name,
             "country_code": "DEU",
-            "region": "Schleswig-Holstein",
+            "region": STATES[state_code],
             "locality": anchor.get("Gemeinde"),
             "capacity_scope": (
                 "Explicit named registry park inventory; phases and repowering unresolved"
@@ -273,17 +277,22 @@ def stage(
 
 
 def read_partition(
-    wind_xml: Path, dictionary_xml: Path, *, expected_total: int, expected_selected: int
+    wind_xml: Path,
+    dictionary_xml: Path,
+    *,
+    expected_total: int,
+    expected_selected: int,
+    state_code: str = "1411",
 ) -> tuple[list[dict[str, str]], dict[str, str]]:
     """Read the complete pinned member; reject incomplete XML or row counts.
 
     Callers verify original member SHA-256 before parsing. The current adapter is
-    deliberately bounded to Schleswig-Holstein rather than silently broadening.
+    bounded to explicitly supported states rather than silently broadening.
     """
     dictionary = {
         str(e.findtext("Id")): str(e.findtext("Wert")) for e in ET.parse(dictionary_xml).getroot()
     }
-    if dictionary.get("1411") != "Schleswig-Holstein":
+    if state_code not in STATES or dictionary.get(state_code) != STATES[state_code]:
         raise ValueError("State dictionary code/revision mismatch")
     units = []
     total = 0
@@ -291,7 +300,7 @@ def read_partition(
         if element.tag != "EinheitWind":
             continue
         total += 1
-        if element.findtext("Bundesland") == "1411":
+        if element.findtext("Bundesland") == state_code:
             units.append({child.tag: child.text for child in element if child.text is not None})
         element.clear()
     if total != expected_total or len(units) != expected_selected:

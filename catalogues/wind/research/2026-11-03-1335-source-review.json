@@ -1,0 +1,81 @@
+{
+  "batch": "2026-11-03-1335",
+  "germany": {
+    "url": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261103_26.2.zip",
+    "archive_bytes": 3269784561,
+    "archive_sha256": null,
+    "archive_checksum_note": "Full 3.27 GB archive not downloaded; HTTP206 byte ranges retrieved member data. SHA256 below applies only to decompressed original XML members, not the full ZIP.",
+    "license": "Datenlizenz Deutschland – Namensnennung – Version 2.0",
+    "members": [
+      {
+        "name": "EinheitenWind.xml",
+        "sha256": "9e69e5e69a759f6aa693f7dafec9411a67296952f6915c9e3602081f61e8df0c",
+        "bytes": 208210804
+      },
+      {
+        "name": "Katalogwerte.xml",
+        "sha256": "6190efa105d4852b4037409f1183d1dd0e706286075d56383508baba7fc09382",
+        "bytes": 414388
+      },
+      {
+        "name": "Katalogkategorien.xml",
+        "sha256": "28385d6ac478656fa085f7c30dfd844137f8d78110143471b9919b87d6e916da",
+        "bytes": 19842
+      }
+    ],
+    "unit_rows": 44351,
+    "imported_records": 0,
+    "next_partition": "Resolve catalogue code dictionaries, then complete Schleswig-Holstein (Bundesland code from Katalogwerte) named-farm groups. Reconcile explicit NameWindpark plus municipality/geography/operator and WRI records; gross/net ratings stay separate.",
+    "member_crc32_verified": {
+      "EinheitenWind.xml": "1c55c94b",
+      "Katalogkategorien.xml": "26cb63b0",
+      "Katalogwerte.xml": "4ee8aec8"
+    },
+    "next_partition_counts": {
+      "Bundesland": "1411",
+      "units": 4788,
+      "named_unit_rows": 4660,
+      "distinct_nonempty_farm_labels": 1738,
+      "note": "Labels are not cleared farm identities"
+    }
+  },
+  "selected_state": {
+    "code": "1408",
+    "label": "Niedersachsen",
+    "category": "101",
+    "unit_rows": 9034,
+    "name_groups": 3046,
+    "accepted_groups": 73,
+    "accepted_units": 366,
+    "deferred_groups": 2973
+  },
+  "next_state": {
+    "code": "1409",
+    "label": "Nordrhein-Westfalen",
+    "dictionary_verified": true
+  },
+  "oem": {
+    "url": "https://www.winergy-group.com/en/medias/product-brochure-hybriddrive-winergy.pdf?context=bWFzdGVyfGRvY3VtZW50c3wyNDQ2ODV8YXBwbGljYXRpb24vcGRmfGRvY3VtZW50cy9oYzgvaGExLzg4MTUwODEwNjI0MzAucGRmfDQwYzc2MWQwY2I2NDcwODlhMzVmM2NhM2MxMjUxNzA2MDBlNGRiNzE4NDVhY2I4NWQ0ZWFjOGU4YjA2MDAzNWY",
+    "publisher": "Winergy",
+    "title": "HybridDrive PZFG2456/PZFG2535 technical table",
+    "retrieved_at": "2026-11-03T13:40:00Z",
+    "published_at": null,
+    "revision": "Undated brochure; PDF creation metadata2013-06-03 is not asserted publication date",
+    "license": "Public OEM disclosure; no open license asserted",
+    "sha256": "932a968ff7a82fc340112854d830becb2cdf060f6b72beed2ec418bb41f1005e",
+    "original_availability": "Original two-page PDF acquired; p2 table visually inspected"
+  },
+  "limitations": [
+    "Full archive not downloaded; member checksums verified, archive checksum unavailable",
+    "Registry park label is not official farm ID; all accepted parks excluded from capacity summaries",
+    "Two integrated component models; no numerical power curves"
+  ],
+  "additional_oem_review": {
+    "url": "https://www.ngcgears.com/en/m-fd-detail/1",
+    "reviewed_at": "2026-11-03",
+    "decision": "deferred",
+    "reason": "StanGear/WinGear platform andSMG/CMG series only; no exact configuration rating table",
+    "sha256": null,
+    "original_availability": "Web-reader representation reviewed; original bytes not acquired"
+  }
+}

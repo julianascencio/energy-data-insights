@@ -191,3 +191,15 @@ if german:
     )
     print("German linked parks:", len({r["project_record_id"] for r in german}))
     print("Gross/net kW remain separate source fields; no farm MW is inferred.")
+
+# %%
+# Registry geography and integrated component ratings retain their own boundaries.
+print("German project coverage by state; includes unresolved/historical scopes:")
+print(projects.loc[projects.country_code.eq("DEU"), "region"].fillna("Unknown").value_counts())
+print("Integrated gearbox-generator specifications; not turbine performance:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Winergy"),
+        ["model", "rated_power_kw", "rated_power_conditions", "mass_kg"],
+    ]
+)

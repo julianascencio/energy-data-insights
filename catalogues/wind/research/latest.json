@@ -1,6 +1,6 @@
 {
-  "batch": "2026-11-03-1235",
-  "updated_at": "2026-11-03T12:45:00Z",
+  "batch": "2026-11-03-1335",
+  "updated_at": "2026-11-03T13:40:00Z",
   "baseline_main": "5063c41694b17b1a3fc856ea9527a32211278203",
   "branch": "research/wind-20261103-0935",
   "merged_wind_counts_at_baseline": {
@@ -10,10 +10,10 @@
     "turbines": 0
   },
   "branch_totals": {
-    "projects": 5641,
-    "non_group_projects": 5640,
-    "equipment": 66,
-    "turbines": 985,
+    "projects": 5714,
+    "non_group_projects": 5713,
+    "equipment": 68,
+    "turbines": 1351,
     "curves": 2,
     "countries": 59,
     "manufacturers": [
@@ -24,13 +24,14 @@
       "Nordex",
       "Siemens Gamesa",
       "VENSYS Energy AG",
-      "Vestas"
+      "Vestas",
+      "Winergy"
     ]
   },
   "changes_against_main": {
-    "new_projects": 286,
-    "new_equipment": 13,
-    "new_turbines": 985,
+    "new_projects": 359,
+    "new_equipment": 15,
+    "new_turbines": 1351,
     "substantively_enriched_existing_projects": 117,
     "substantively_enriched_existing_equipment": 0
   },
@@ -41,10 +42,10 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 1058,
+  "primary_evidence_project_records": 1131,
   "technology_counts": {
     "unknown": 4700,
-    "onshore": 903,
+    "onshore": 976,
     "offshore_unspecified": 32,
     "fixed_bottom_offshore": 2,
     "floating_offshore": 4
@@ -58,20 +59,21 @@
     "USWTDB release ZIP HTTP403; ANEEL daily CSV HTTP503, no asserted authentication/reuse restriction",
     "Exact Changhua regional equipment configuration; independent generator/gearbox/converter/foundation models; archive curve provenance",
     "Sweden17area candidates and2orphan turbines (27turbine rows total); VENSYS136sound_power_db_a conflict;7graph-only power curves held",
-    "Schleswig-Holstein1717namegroups held;22acceptedparkaggregation scopes unresolved;2ENERCON graph-onlycurves held"
+    "Schleswig-Holstein1717namegroups held;22acceptedparkaggregation scopes unresolved;2ENERCON graph-onlycurves held",
+    "Niedersachsen2973namegroups;73newparkaggregation scopes unresolved; NGC platform ranges lack exact configuration identifiers"
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
   "publication_base_main": "5063c41694b17b1a3fc856ea9527a32211278203",
-  "iteration_base_head": "851cb15b97ebe91e8f0fc10ef0f6edc576949cb5",
+  "iteration_base_head": "ee90058a88ff549e1348b49399120ae94beda31e",
   "changes_this_run": {
-    "new_projects": 22,
+    "new_projects": 73,
     "substantively_enriched_projects": 0,
     "new_equipment": 2,
     "substantively_enriched_equipment": 0,
-    "new_turbines": 105,
+    "new_turbines": 366,
     "new_curves": 0
   },
   "repd_partition": {
@@ -81,18 +83,18 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "Schleswig-Holstein; Germany47project records; no new country",
-  "new_technology_coverage": "Onshore German registry units; exact ENERCON optional yield modes; no new technology category",
+  "new_geography": "Niedersachsen; Germany120project records; no new country",
+  "new_technology_coverage": "Onshore inventory plus exact integrated gearbox/permanent-magnet generator assemblies",
   "reviewed_this_run": {
-    "german_unit_rows": 4788,
-    "german_name_groups": 1739,
-    "added_projects": 22,
-    "added_turbines": 105,
-    "deferred_name_groups": 1717,
-    "oem_presentation_slides": 3,
-    "oem_overview_duplicate_models": 4,
+    "german_unit_rows": 9034,
+    "german_name_groups": 3046,
+    "added_projects": 73,
+    "added_turbines": 366,
+    "deferred_name_groups": 2973,
+    "oem_pdf_pages": 2,
     "exact_equipment": 2,
-    "numerical_curves": 0
+    "numerical_curves": 0,
+    "additional_source": "NGC platforms deferred; exact configuration table absent"
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -104,7 +106,7 @@
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
   },
-  "source_review": "2026-11-03-1235-source-review.json",
-  "decision_ledger": "2026-11-03-1235-decisions.jsonl",
-  "equipment_ledger": "2026-11-03-1235-equipment.jsonl"
+  "source_review": "2026-11-03-1335-source-review.json",
+  "decision_ledger": "2026-11-03-1335-decisions.jsonl",
+  "equipment_ledger": "2026-11-03-1335-equipment.jsonl"
 }
