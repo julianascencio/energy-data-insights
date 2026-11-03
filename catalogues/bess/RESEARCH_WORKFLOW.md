@@ -51,6 +51,26 @@ or a live availability feed. Do not interpret record counts as installed capacit
    For Chinese Sinexcel two-page PCS sheets, `scripts/stage_bess_sinexcel.py` checks
    exact model headers and columns in local `pdftotext -layout` output. AC kVA and
    maximum DC kW remain distinct; conversion efficiency is not round-trip efficiency.
+   For Flower Q2 2026, `scripts/stage_bess_flower.py` stages local
+   `pdftotext -layout` output, checks the reporting period, status sections and
+   separate MW/MWh control totals. Review every named row against the ownership
+   chart and later releases. Marieboda remains held for possible multi-site scope;
+   the adapter never turns portfolio rows or future COD targets into accepted projects.
+   `scripts/stage_bess_ceb.py` stages the reviewed26May2022 Mauritius table
+   from local text, checks both MW/MWh totals and keeps the Amaury expansion
+   separate. The table does not establish lifecycle: preserve unknown status
+   unless independently supported by a reusable dated primary source.
+   For the 12 December 2025 NFOŚiGW ranking, `scripts/stage_bess_nfosigw.py`
+   stages the local 24-page PDF using optional pdfplumber. The programme is
+   technology-neutral: a funding applicant named BESS is not battery evidence.
+   Review exact project titles, grant/loan pairs, named sites and signed-contract
+   evidence; recommendations are not awards, and awards are not construction.
+   For PGE notice 719197-2026 version 01, `scripts/stage_bess_ted_pge.py`
+   stages the original public TED XML. It checks the notice revision, four lots,
+   22 distinct named sites, battery CPV and delivery-period units. It excludes
+   personal contacts and lot-level geography. Review each site against existing
+   identities; Budzyń remains held. Procurement deadlines are not COD, and
+   missing annex ratings stay unknown. Changed revisions require fresh review.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.

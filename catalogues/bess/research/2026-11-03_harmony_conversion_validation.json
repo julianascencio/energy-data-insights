@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-11-03T09:47:52+00:00",
+  "validation_completed_at": "2026-11-03T09:56:53.304285+00:00",
+  "elapsed_minutes_through_validation": 9.02,
+  "timezone_for_display": "Atlantic/Canary",
+  "checks": {
+    "full_python_suite": {
+      "passed": 1832,
+      "skipped": 1,
+      "skip_reason": "optional cdsapi unavailable",
+      "seconds": 64.62
+    },
+    "catalogue_validation": "1796 projects;624 equipment",
+    "preservation": "1789 prior projects and612 prior equipment records unchanged",
+    "exact_models": "23 unique Sinexcel model codes;12 new; no variant duplicates",
+    "parquet": "two independent builds identical; final third matches committed manifests",
+    "ruff": "passed",
+    "format": "682 files passed",
+    "ty": "passed",
+    "citations": "existing shared catalogue/exports consistent;16 new entries queued in scoped research file due active overlapping Wind PR101",
+    "repository_hygiene": "passed",
+    "viewer_tests": 13,
+    "strict_documentation": "passed",
+    "local_link_asset_audit_pages": 443,
+    "offline_examples": "both BESS examples passed",
+    "whitespace": "passed"
+  },
+  "initial_failure": "Source retrieval/verification ordering caught during initial batch validation and two early tests; fixed before final successful full suite",
+  "not_run": [
+    "package rebuild: no code/schema/dependency changes",
+    "fresh interactive browser smoke test"
+  ],
+  "remote_ci": "pending publication",
+  "finish_reason": "Selected ten-card owner portfolio and eight exact OEM sheets exhausted;7 explicit battery proposals and12exact models accepted. Three solar-only current descriptions held for scope reconciliation. No idle time."
+}
