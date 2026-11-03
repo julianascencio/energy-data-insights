@@ -307,6 +307,111 @@ def parse_stulz_cyberair_3pro_dx_modulating_table(
     )
 
 
+def parse_stulz_cyberair_3pro_dx_r134a_table(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage only the explicitly populated fixed-speed R134a rows.
+
+    The OEM table includes unavailable model columns. Those columns are removed
+    using the printed ``N/A`` airflow mask; blanks are never filled from R410A.
+    """
+    if not (urlsplit(source_url).hostname or "").endswith("stulz.es"):
+        raise ValueError("Expected official STULZ URL")
+    text = content.decode("utf-8-sig")
+    marker = "CyberAir 3PRO DX (ASR/ALR) - R134a - Technical Data"
+    if marker not in text:
+        raise ValueError("Missing R134a CyberAir 3PRO table")
+    r134a = text.split(marker, 1)[1]
+
+    def line(block: str, label: str) -> str:
+        value = next((row for row in block.splitlines() if row.strip().startswith(label)), None)
+        if value is None:
+            raise ValueError(f"Missing STULZ table row: {label}")
+        return value
+
+    def values(block: str, label: str, unit: str | None = None) -> list[str]:
+        row = line(block, label)
+        tail = row.split(unit, 1)[1] if unit else row[row.find(label) + len(label) :]
+        pattern = r"\d+\s*/\s*\d+" if label.startswith("Number of circuits") else r"\d[\d.,]*"
+        return [item.replace(" ", "") for item in re.findall(pattern, tail)]
+
+    def number(value: str) -> float:
+        return float(value.replace(".", "").replace(",", "."))
+
+    candidates: list[dict[str, Any]] = []
+    sections = [
+        (
+            "ASR",
+            "A",
+            "Air cooled with fixed speed compressor",
+            "Free cooling with fixed speed compressor",
+        ),
+        ("ALR", "GE", "Free cooling with fixed speed compressor", "Remarks:"),
+    ]
+    for family, suffix, start, end in sections:
+        if start not in r134a or end not in r134a:
+            raise ValueError("Changed STULZ R134a table shape")
+        block = r134a.split(start, 1)[1].split(end, 1)[0]
+        header = line(block, f"{family} xxx {suffix}")
+        models = re.findall(r"\b\d{3,4}\b", header.split(suffix, 1)[1])
+        airflow_line = line(block, "Air flow").split("m³/h", 1)[1]
+        airflow_cells = re.findall(r"N/A|\d[\d.,]*", airflow_line)
+        if len(airflow_cells) != len(models):
+            raise ValueError("Changed STULZ R134a availability mask")
+        available = [index for index, cell in enumerate(airflow_cells) if cell != "N/A"]
+        rows = {
+            "cooling_total_kw": values(block, "Cooling capacity (total = sensible)", "kW"),
+            "cooling_net_kw": values(block, "Cooling capacity (net)", "kW"),
+            "fan_power_kw": values(block, "Fan power consumption", "kW"),
+            "compressor_power_kw": values(block, "Compressor power consumption", "kW"),
+            "input_power_kw": values(block, "Total power consumption", "kW"),
+            "supply_air_temperature_c": values(block, "Supply air temperature", "°C"),
+            "eer_kw_per_kw": values(block, "EER", "kW/kW"),
+            "circuits_compressors": values(block, "Number of circuits / compressors"),
+            "weight_kg": values(block, "Weight", "kg"),
+        }
+        if family == "ALR":
+            rows["free_cooling_water_temperature_c"] = values(
+                block, "Water temp. for 100% free cooling", "°C"
+            )
+            rows["medium_volume_flow_m3_h"] = values(block, "Medium volume flow", "m³/h")
+        if any(len(row) != len(available) for row in rows.values()):
+            raise ValueError("Changed STULZ R134a populated row width")
+        for position, model_index in enumerate(available):
+            code = models[model_index]
+            candidates.append(
+                {
+                    "model": f"{family} {code} {suffix}",
+                    "refrigerant": "R134a",
+                    "airflow_m3_h": number(airflow_cells[model_index]),
+                    **{
+                        key: row[position]
+                        if key == "circuits_compressors"
+                        else number(row[position])
+                        for key, row in rows.items()
+                    },
+                    "locator": f"R134a / {family} xxx {suffix} / {code}",
+                }
+            )
+    if not candidates or (expected_count is not None and len(candidates) != expected_count):
+        raise ValueError("Changed STULZ CyberAir R134a table shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "rating_conditions": {
+            "voltage_v": 400,
+            "phases": 3,
+            "frequency_hz": 50,
+            "return_air_temperature_c": 33,
+            "return_air_relative_humidity_pct": 30,
+            "condensing_temperature_c": 45,
+            "external_static_pressure_pa": 20,
+        },
+        "review_required": True,
+    }
+
+
 def _parse_stulz_cyberair_3pro_dx_table(
     content: bytes,
     *,

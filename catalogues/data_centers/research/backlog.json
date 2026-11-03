@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T04:19:11Z",
+  "updated_at": "2026-11-03T05:24:04Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -20,7 +20,9 @@
     "schneider_galaxy_vs_400v_skus": 23,
     "odata_country_technical_sheets": 12,
     "stulz_cyberair_fixed_speed_r410a_configurations": 30,
-    "stulz_cyberair_modulating_r410a_configurations": 20
+    "stulz_cyberair_modulating_r410a_configurations": 20,
+    "stulz_cyberair_fixed_speed_r134a_configurations": 23,
+    "uruguay_paraguay_primary_facilities": 2
   },
   "next_batches": [
     {
@@ -59,12 +61,13 @@
       "urls": [
         "https://www.africadatacentres.com/"
       ],
-      "offset": 6,
-      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; continue issuer registries, JHB1 phase reconciliation, Accra post-announcement evidence, and Uruguay/Paraguay primary inventories",
+      "offset": 8,
+      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; initial Uruguay/Paraguay official facility batch complete at offset 2. Continue issuer registries, JHB1 phase reconciliation, Accra post-announcement evidence, and additional underrepresented-country primary inventories",
       "questions": [
         "Issuer-verify facility certifications rather than normalizing operator badges",
         "Resolve JHB1 14.5 MW facility-sheet versus 20 MW expansion boundary and date",
-        "Find Accra permit/construction status and open regulator/environmental source inventories"
+        "Find Accra permit/construction status and open regulator/environmental source inventories",
+        "Find dated issuer award records for Antel Massera and Tigo Paraguay before normalizing certifications"
       ]
     },
     {
@@ -88,8 +91,8 @@
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/"
       ],
-      "offset": 101,
-      "scope": "Prior Vertiv/Eaton/Schneider tables plus 30 fixed-speed and 20 modulating-EC STULZ CyberAir R410A configurations complete; continue the separately tabulated R134a rows and exact current chiller, transformer, switchgear and generator tables",
+      "offset": 124,
+      "scope": "Prior Vertiv/Eaton/Schneider tables plus 30 fixed-speed R410A, 20 modulating-EC R410A and all 23 populated fixed-speed R134a STULZ CyberAir configurations complete; continue exact current chiller, transformer, switchgear and generator tables",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",

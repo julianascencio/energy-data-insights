@@ -23,6 +23,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_portfolio,
     parse_schneider_galaxy_vs_model_list,
     parse_stulz_cyberair_3pro_dx_modulating_table,
+    parse_stulz_cyberair_3pro_dx_r134a_table,
     parse_stulz_cyberair_3pro_dx_table,
 )
 
@@ -299,6 +300,31 @@ def test_stulz_cyberair_parser_keeps_exact_modulating_r410a_rows():
             content,
             source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
             expected_count=20,
+        )
+
+
+def test_stulz_cyberair_parser_uses_r134a_availability_mask():
+    content = (FIXTURES / "stulz-cyberair-3pro-dx.txt").read_bytes()
+    data = parse_stulz_cyberair_3pro_dx_r134a_table(
+        content,
+        source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
+        expected_count=4,
+    )
+    assert [row["model"] for row in data["candidates"]] == [
+        "ASR 201 A",
+        "ASR 561 A",
+        "ALR 201 GE",
+        "ALR 422 GE",
+    ]
+    assert all(row["model"] not in {"ASR 451 A", "ALR 551 GE"} for row in data["candidates"])
+    assert data["candidates"][1]["cooling_net_kw"] == 61.8
+    assert data["candidates"][2]["free_cooling_water_temperature_c"] == 16.2
+    assert data["candidates"][3]["medium_volume_flow_m3_h"] == 8.2
+    with pytest.raises(ValueError, match="R134a table shape"):
+        parse_stulz_cyberair_3pro_dx_r134a_table(
+            content,
+            source_url="https://www.stulz.es/fileadmin/CyberAir_3PRO_DX_ASR-ALR.pdf",
+            expected_count=23,
         )
 
 

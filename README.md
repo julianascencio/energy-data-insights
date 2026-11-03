@@ -493,8 +493,8 @@ uv run python -m energy_data_retrieval.bess_oem_catalogue build --output artifac
 ## Global Data Center Database
 
 The [Data Center catalogue](catalogues/data_centers/README.md) adds two connected
-JSONL/Parquet tables: **123 project records in 23 countries** (53 facilities and
-70 campus aggregates) and **123 exact OEM models/configurations from six suppliers**.
+JSONL/Parquet tables: **125 project records in 25 countries** (55 facilities and
+70 campus aggregates) and **166 exact OEM models/configurations from six suppliers**.
 IT, grid and facility capacities, rating bases, dated efficiency measurements and
 source evidence remain separate. Unresolved values stay null; campus totals do
 not inflate facility capacity summaries. No existing PV/BESS API is replaced.

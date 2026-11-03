@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T04:19:11Z",
+  "retrieved_at": "2026-11-03T05:24:04Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -86,6 +86,27 @@
       "accepted_records": 20,
       "reuse": "Factual extraction from official public OEM PDF; PDF permissions report copy disabled and the original table is not redistributed",
       "originals": "Same official three-page PDF capture; raw-byte SHA-256, byte count, publication metadata and page/table locators are retained in sources.json"
+    },
+    {
+      "inventory": "STULZ CyberAir 3PRO DX fixed-speed R134a ASR/ALR tables",
+      "processed_offset": 23,
+      "accepted_records": 23,
+      "reuse": "Factual extraction from official public OEM PDF; PDF permissions report copy disabled and the original table is not redistributed",
+      "originals": "Same official three-page PDF capture; raw-byte SHA-256, byte count, publication metadata and page-2 table locators are retained in sources.json"
+    },
+    {
+      "inventory": "Antel Massera official expansion release and Uptime Institute issuer registry",
+      "processed_offset": 1,
+      "accepted_records": 1,
+      "reuse": "Factual extraction from public copyrighted operator and issuer-registry pages; no open licence asserted; originals not redistributed",
+      "originals": "Two official HTML captures available during review with SHA-256 and byte counts in sources.json"
+    },
+    {
+      "inventory": "Tigo Paraguay current service/help pages and Uptime Institute issuer registry",
+      "processed_offset": 1,
+      "accepted_records": 1,
+      "reuse": "Factual extraction from public copyrighted operator/help and issuer-registry pages; no open licence asserted; originals not redistributed",
+      "originals": "Four official HTML captures available during review with SHA-256 and byte counts in sources.json"
     }
   ],
   "deferred": [
@@ -118,8 +139,8 @@
       "reason": "Country sheets establish campus metadata but not certificate registry identifiers or non-overlapping building identities"
     },
     {
-      "candidate": "STULZ CyberAir R134a tables",
-      "reason": "Modulating R410A is complete at offset 20; the separately tabulated R134a configurations remain queued and must not be combined with R410A rows"
+      "candidate": "Antel Massera and Tigo Paraguay certification dates",
+      "reason": "Issuer registries verify facility and award scopes but public issue dates were unavailable; certifications_json remains null until dated issuer evidence is found"
     }
   ],
   "excluded": [
@@ -154,6 +175,10 @@
     {
       "candidate": "STULZ synthetic refrigerant/compressor combinations",
       "reason": "Only configurations explicitly printed together in one OEM table were published"
+    },
+    {
+      "candidate": "STULZ R134a N/A model columns",
+      "reason": "Seven printed N/A columns were excluded; blank specification values were not filled from other refrigerant or compressor tables"
     }
   ],
   "holds_unchanged": [
@@ -206,6 +231,9 @@
     "ODATA campus aggregates remain excluded from all capacity sums; QR01/QR03 ultimate and operating IT observations are not counted as facilities",
     "QR03 200/400 MW electrical infrastructure observations are not normalized as IT, grid or facility MW",
     "STULZ normalized cooling capacity is net sensible cooling at the exact rating point; total sensible cooling and electrical component powers remain observations",
-    "STULZ modulating free-cooling water temperature and medium-volume-flow values retain the OEM's printed units; grouped size/dimension rows remain unset where an individual model mapping is ambiguous"
+    "STULZ modulating free-cooling water temperature and medium-volume-flow values retain the OEM's printed units; grouped size/dimension rows remain unset where an individual model mapping is ambiguous",
+    "STULZ R134a availability follows the OEM's printed airflow N/A mask; only 13 ASR and 10 ALR populated configurations are accepted",
+    "Antel's greater-than 1,000 final rack statement remains a lower-bound observation rather than an exact rack_count",
+    "Tigo's total site, corporate allocation, initial and ultimate rack/area boundaries remain separate observations rather than one normalized count"
   ]
 }
