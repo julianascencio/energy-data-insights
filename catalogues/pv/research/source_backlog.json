@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T01:17:27.871921+00:00",
+  "updated_at": "2026-11-03T02:18:04.031535+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "Five fresh ODRE5–20MW partitions:353 observations,59 enrichments. Aragón344 GIS features staged with tested offline parser/CLI; one independently corroborated Torrubia historical promoter enrichment.11 exact Livoltek models accepted and deepened;24 conflicting field groups withheld.",
-  "next_highest_value_source": "Aragón resource319: obtain authoritative CRS and actual layer revision, then resolve13 remaining exact-name crosswalk suggestions using primary project authorisations. Do not infer AC from inverter MWp. Next fresh French partition: Bretagne PHOTV5–20MW.",
+  "selection_note": "Four ODRE 5–20 MW regional partitions and 13 existing Aragón crosswalk suggestions; 71 project enrichments. Reviewed 15 Phoenix Contact article tables; eight distinct configurations accepted. Grid-India REC access succeeded but publisher terms bar incorporation.",
+  "next_highest_value_source": "Aragón Aguasvivas: establish Moneva identity independently with BOA BOA20220922022 and an as-built/site crosswalk before any capacity update. In parallel, inspect ODRE Corse PHOTV 5–20 MW (code 94), then overseas partitions for exact EIC and non-confidential scope. India REC is rights-held, not the next bulk source.",
   "sources": [
     {
       "id": "uk_repd",
@@ -4757,6 +4757,224 @@
         "accepted": 0
       },
       "priority": 3
+    },
+    {
+      "id": "odre_bretagne_5_20_20261103T0200",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2753%27",
+      "version_or_date": "Registry snapshot 2026-08-31",
+      "licence_assessment": "Licence Ouverte 2.0; existing ODRE notice retained",
+      "access_assessment": "Public filtered export; national identities and metadata hashes rechecked",
+      "estimated_useful_yield": {
+        "reviewed": 9,
+        "enriched": 1,
+        "held": 8
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "source substation",
+        "industrial service date"
+      ],
+      "last_attempt": "2026-11-03T02:02:33.634249+00:00",
+      "result": "1 existing project matches and 8 held, no new project.",
+      "retry_condition": "New registry revision or independent canonical phase/identity evidence.",
+      "next_action": "Do not repeat same revision. Advance to Corse then overseas exact EIC partitions.",
+      "priority": 2,
+      "processed_cursor": {
+        "region": "Bretagne",
+        "region_code": "53",
+        "partition": "PHOTV 5000 <= installed kW < 20000",
+        "complete": true,
+        "sha256": "73d77d606e8bd2f763143f76a3d9ec31ca526d690255b9c21764168f7072abbe"
+      }
+    },
+    {
+      "id": "odre_normandie_5_20_20261103T0200",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2728%27",
+      "version_or_date": "Registry snapshot 2026-08-31",
+      "licence_assessment": "Licence Ouverte 2.0; existing ODRE notice retained",
+      "access_assessment": "Public filtered export; national identities and metadata hashes rechecked",
+      "estimated_useful_yield": {
+        "reviewed": 8,
+        "enriched": 1,
+        "held": 7
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "source substation",
+        "industrial service date"
+      ],
+      "last_attempt": "2026-11-03T02:02:33.522784+00:00",
+      "result": "1 existing project matches and 7 held, no new project.",
+      "retry_condition": "New registry revision or independent canonical phase/identity evidence.",
+      "next_action": "Do not repeat same revision. Advance to Corse then overseas exact EIC partitions.",
+      "priority": 2,
+      "processed_cursor": {
+        "region": "Normandie",
+        "region_code": "28",
+        "partition": "PHOTV 5000 <= installed kW < 20000",
+        "complete": true,
+        "sha256": "6535708cf2733489d852f110ad5b4f8d8c21f19cd016ce0a8add12d24bbc81bc"
+      }
+    },
+    {
+      "id": "odre_aquitaine_5_20_20261103T0200",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2775%27",
+      "version_or_date": "Registry snapshot 2026-08-31",
+      "licence_assessment": "Licence Ouverte 2.0; existing ODRE notice retained",
+      "access_assessment": "Public filtered export; national identities and metadata hashes rechecked",
+      "estimated_useful_yield": {
+        "reviewed": 277,
+        "enriched": 57,
+        "held": 220
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "source substation",
+        "industrial service date"
+      ],
+      "last_attempt": "2026-11-03T02:02:33.914046+00:00",
+      "result": "57 existing project matches and 220 held, no new project.",
+      "retry_condition": "New registry revision or independent canonical phase/identity evidence.",
+      "next_action": "Do not repeat same revision. Advance to Corse then overseas exact EIC partitions.",
+      "priority": 2,
+      "processed_cursor": {
+        "region": "Nouvelle-Aquitaine",
+        "region_code": "75",
+        "partition": "PHOTV 5000 <= installed kW < 20000",
+        "complete": true,
+        "sha256": "44256d2954a432ddab5b62ff0adc4369af314991132d92414722e12f70723209"
+      }
+    },
+    {
+      "id": "odre_idf_5_20_20261103T0200",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+coderegion%3D%2711%27",
+      "version_or_date": "Registry snapshot 2026-08-31",
+      "licence_assessment": "Licence Ouverte 2.0; existing ODRE notice retained",
+      "access_assessment": "Public filtered export; national identities and metadata hashes rechecked",
+      "estimated_useful_yield": {
+        "reviewed": 22,
+        "enriched": 5,
+        "held": 17
+      },
+      "fields_offered": [
+        "EIC",
+        "grid operator",
+        "source substation",
+        "industrial service date"
+      ],
+      "last_attempt": "2026-11-03T02:02:33.706346+00:00",
+      "result": "5 existing project matches and 17 held, no new project.",
+      "retry_condition": "New registry revision or independent canonical phase/identity evidence.",
+      "next_action": "Do not repeat same revision. Advance to Corse then overseas exact EIC partitions.",
+      "priority": 2,
+      "processed_cursor": {
+        "region": "Île-de-France",
+        "region_code": "11",
+        "partition": "PHOTV 5000 <= installed kW < 20000",
+        "complete": true,
+        "sha256": "cec41add0a506350c8506dc28df1cf87a5a23015c8afceaccde3595fb8fb7681"
+      }
+    },
+    {
+      "id": "aragon_operating_crosswalk_0200",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://opendata.aragon.es/datos/catalogo/dataset/energias-renovables-en-aragon",
+      "version_or_date": "Resource 319 pinned prior retrieval; seven BOA/monitoring sources dated in register",
+      "licence_assessment": "CC BY 4.0 GIS; selected official administrative facts only; no blanket BOA bulk licence",
+      "access_assessment": "BOA/monitoring downloads succeeded. Cartographic guide timed out; viewer/geodata returned 503 in shell. Indexed viewer-wide ETRS89 is not layer-specific.",
+      "estimated_useful_yield": {
+        "reviewed_suggestions": 13,
+        "enriched": 7,
+        "held": 6
+      },
+      "fields_offered": [
+        "historical development party",
+        "administrative permit",
+        "technical design scope",
+        "monitoring period",
+        "GIS feature ID"
+      ],
+      "last_attempt": "2026-11-03T02:18:04.031535+00:00",
+      "result": "Seven previously held crosswalks enriched; six need scope/site evidence. No geometry transformed or canonical rating changed.",
+      "retry_condition": "Layer-specific metadata, actual snapshot date, or independently corroborated site/phase IDs.",
+      "next_action": "Aragón Aguasvivas: establish Moneva identity independently with BOA BOA20220922022 and an as-built/site crosswalk before any capacity update. In parallel, inspect ODRE Corse PHOTV 5–20 MW (code 94), then overseas partitions for exact EIC and non-confidential scope. India REC is rights-held, not the next bulk source.",
+      "priority": 1,
+      "processed_cursor": {
+        "resource": 319,
+        "review": "13 prior normalized-name suggestions, excluding Torrubia",
+        "ledger": "20261103T0200_aragon_followup.json"
+      }
+    },
+    {
+      "id": "phoenix_exact_articles_0200",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.phoenixcontact.com/en-us/products/surge-protection/string-combiner-boxes-for-photovoltaic-systems",
+      "version_or_date": "Undated model-level public HTML, retrieved 2026-11-03",
+      "licence_assessment": "OEM rights retained; limited factual model specifications only; no manual or table reproduced or open bulk grant assumed.",
+      "access_assessment": "15 exact public article pages; guessed country-specific PDF route returned 404. Use actual public product downloads when linked.",
+      "estimated_useful_yield": {
+        "reviewed": 15,
+        "accepted": 8,
+        "held": 6,
+        "already_present": 1
+      },
+      "fields_offered": [
+        "input/output and MPPT counts",
+        "switch and fuse configuration",
+        "current/temperature conditions",
+        "surge class and impulse waveform",
+        "dimensions/mass",
+        "monitoring protocol"
+      ],
+      "last_attempt": "2026-11-03T02:18:04.031535+00:00",
+      "result": "Eight distinct configurations accepted; four one-string passthroughs and one unproven combining design held, one count-only sibling deferred, one exact duplicate unchanged.",
+      "retry_condition": "Explicit additional configuration or missing existing field from exact OEM revision, not port-count permutations.",
+      "next_action": "Prioritize a different OEM or model architecture; avoid repeat observations and revisiting only one polarity sibling.",
+      "priority": 5,
+      "processed_cursor": {
+        "ledger": "20261103T0200_phoenix_review.json"
+      }
+    },
+    {
+      "id": "grid_india_rec_0200",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://recregistry.grid-india.in/index.php/publics/registered_regens",
+      "version_or_date": "Live registry retrieved 2026-11-03",
+      "licence_assessment": "Publisher PrivacyPOSOCO terms explicitly bar incorporating site data in another site, publication or retrieval system; no import.",
+      "access_assessment": "Public live table downloaded for source assessment only; linked OGD Sikkim alternative returned 503.",
+      "estimated_useful_yield": {
+        "displayed_all_technologies": 842,
+        "accepted": 0,
+        "eligible_for_review": "None until suitable reuse terms or an independently licensed source"
+      },
+      "fields_offered": [
+        "explicit Solar PV technology",
+        "state",
+        "generator",
+        "project number",
+        "registered MW",
+        "registration/accreditation dates"
+      ],
+      "last_attempt": "2026-11-03T02:18:04.031535+00:00",
+      "result": "Representative sample and rights reviewed. No row staged or copied; displayed total is all technologies, not a PV candidate count.",
+      "retry_condition": "Source-specific open licence or independent suitable official state inventory.",
+      "next_action": "Retry the independently published OGD solar parks resource and inspect its specific licence and project/park distinction; do not scrape the REC directory.",
+      "priority": 8,
+      "processed_cursor": null
     }
   ]
 }
