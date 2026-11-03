@@ -6423,3 +6423,11 @@ Operador Nacional do Sistema Elétrico (2026). **ONS Restrições de operação 
 **Role:** data. Native half-hour mean generation, wind resource and restriction/quality flags. Access-year metadata. The September 2026 dictionary prints m3/s for a wind-speed column; the benchmark explicitly assumes its numerical readings are m/s, retaining this source inconsistency in provenance. No estimated/reference generation is substituted for measured power.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/sources/ons/client.py`, `scripts/prepare_forecast_benchmark.py`, `analysis/src/energy_analysis/forecast_benchmark.py`, `examples/analysis/plot_forecast_model_benchmark.py`, `docs/forecast-benchmark.md`.
+
+### kaaya_2021_uncertainties
+
+Kaaya, Ismail; Ascencio-Vásquez, Julián; Weiss, Karl-Anders; Topič, Marko (2021). **Assessment of uncertainties and variations in PV modules degradation rates and lifetime predictions using physical models**. Solar Energy, 218, 354-367. [DOI: 10.1016/j.solener.2021.01.071](https://doi.org/10.1016/j.solener.2021.01.071)
+
+**Role:** implemented. Verified from the user-supplied article PDF (SHA-256 dc16f0c30c75ac87e9755421985153173c2efd1c55d870ecc6734f37c528fb80). Table 2 reliability curves, Eqs. 1 and 3–17, Sections 2.5/3.4 preprocessing and Eqs. 19–20 metrics are implemented with explicit conventions. Table 5 omits A_N and C_N; the printed 273+delta-T term and incomplete rate-unit conventions are documented separately from the existing 2019 mapping model. Published-table checks and synthetic/scenario analyses are not reproduction or field validation of the original measurement study. Gamma is held fixed in wear-out fitting because only gamma/k is identifiable.
+
+**Used by:** `methods/src/energy_methods/pv_reliability.py`, `methods/src/energy_methods/degradation_uncertainty.py`, `methods/src/energy_methods/pv_stress_weather.py`, `methods/src/energy_methods/degradation_preprocessing.py`, `analysis/src/energy_analysis/degradation_uncertainty/study.py`, `docs/degradation-uncertainty.md`, `examples/analysis/plot_degradation_uncertainty.py`.

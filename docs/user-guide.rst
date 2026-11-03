@@ -50,6 +50,7 @@ Data access and scientific methods
    _generated/guides/country-mapping
    _generated/guides/degradation
    _generated/guides/degradation-gallery
+   _generated/guides/degradation-uncertainty
 
 Applied studies
 ---------------

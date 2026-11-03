@@ -11060,6 +11060,34 @@
       "url": "https://dados.ons.org.br/dataset/restricao_coff_eolica_detail",
       "notes": "Role: data. Native half-hour mean generation, wind resource and restriction/quality flags. Access-year metadata. The September 2026 dictionary prints m3/s for a wind-speed column; the benchmark explicitly assumes its numerical readings are m/s, retaining this source inconsistency in provenance. No estimated/reference generation is substituted for measured power.",
       "year": 2026
+    },
+    {
+      "type": "article",
+      "title": "Assessment of uncertainties and variations in PV modules degradation rates and lifetime predictions using physical models",
+      "authors": [
+        {
+          "family-names": "Kaaya",
+          "given-names": "Ismail"
+        },
+        {
+          "family-names": "Ascencio-Vásquez",
+          "given-names": "Julián"
+        },
+        {
+          "family-names": "Weiss",
+          "given-names": "Karl-Anders"
+        },
+        {
+          "family-names": "Topič",
+          "given-names": "Marko"
+        }
+      ],
+      "url": "https://doi.org/10.1016/j.solener.2021.01.071",
+      "notes": "Role: implemented. Verified from the user-supplied article PDF (SHA-256 dc16f0c30c75ac87e9755421985153173c2efd1c55d870ecc6734f37c528fb80). Table 2 reliability curves, Eqs. 1 and 3–17, Sections 2.5/3.4 preprocessing and Eqs. 19–20 metrics are implemented with explicit conventions. Table 5 omits A_N and C_N; the printed 273+delta-T term and incomplete rate-unit conventions are documented separately from the existing 2019 mapping model. Published-table checks and synthetic/scenario analyses are not reproduction or field validation of the original measurement study. Gamma is held fixed in wear-out fitting because only gamma/k is identifiable.",
+      "year": 2021,
+      "doi": "10.1016/j.solener.2021.01.071",
+      "journal": "Solar Energy",
+      "volume": "218"
     }
   ]
 }
