@@ -76,7 +76,8 @@ def test_ups_matrix_drift_duplicates_and_invalid_sources_fail():
 
 def test_ups_matrix_accepts_mitsubishi_official_rows():
     header, *rows = UPS_MATRIX.splitlines()
-    mitsubishi = header + b"\n" + rows[-1] + b"\n"
+    mitsubishi_row = next(row for row in rows if row.startswith(b"Mitsubishi Electric,"))
+    mitsubishi = header + b"\n" + mitsubishi_row + b"\n"
     result = parse_ups_rating_matrix(
         mitsubishi,
         source_url="https://mitsubishicritical.com/uninterruptible-power-supplies/",
@@ -85,6 +86,36 @@ def test_ups_matrix_accepts_mitsubishi_official_rows():
     assert result["candidates"][0]["manufacturer"] == "Mitsubishi Electric"
     assert result["candidates"][0]["apparent_power_kva"] == 300
     assert result["candidates"][0]["output_power_kw"] == 300
+
+
+def test_ups_matrix_accepts_fuji_electric_official_rows():
+    header, *rows = UPS_MATRIX.splitlines()
+    fuji_row = next(row for row in rows if row.startswith(b"Fuji Electric,"))
+    fuji = header + b"\n" + fuji_row + b"\n"
+    result = parse_ups_rating_matrix(
+        fuji,
+        source_url=(
+            "https://americas.fujielectric.com/wp-content/uploads/2024/10/"
+            "FEA-UPS-DS-100d-UPS7400.pdf"
+        ),
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Fuji Electric"
+    assert candidate["apparent_power_kva"] == 1000
+    assert candidate["output_power_kw"] == 1000
+
+
+def test_ups_matrix_rejects_fuji_source_manufacturer_mismatch():
+    header, *rows = UPS_MATRIX.splitlines()
+    mitsubishi_row = next(row for row in rows if row.startswith(b"Mitsubishi Electric,"))
+    mitsubishi = header + b"\n" + mitsubishi_row + b"\n"
+    with pytest.raises(ValueError, match="manufacturer/source mismatch"):
+        parse_ups_rating_matrix(
+            mitsubishi,
+            source_url="https://www.fujielectric.com/example/ups.html",
+            expected_count=1,
+        )
 
 
 @pytest.mark.parametrize(

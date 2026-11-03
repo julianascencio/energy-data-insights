@@ -357,6 +357,8 @@ def parse_ups_rating_matrix(
     """
     host = urlsplit(source_url).hostname
     manufacturers_by_host = {
+        "americas.fujielectric.com": {"Fuji Electric"},
+        "www.fujielectric.com": {"Fuji Electric"},
         "toshiba.com": {"Toshiba"},
         "www.toshiba.com": {"Toshiba"},
         "mitsubishicritical.com": {"Mitsubishi Electric"},

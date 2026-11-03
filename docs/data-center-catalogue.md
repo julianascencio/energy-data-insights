@@ -38,9 +38,9 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 593 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
+has 613 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
 Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Lenovo, Motivair by Schneider
-Electric, Mitsubishi Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
+Electric, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
@@ -100,6 +100,15 @@ ambiguous dimension/weight groupings, compatible battery types and optional
 bypass, transformer, disconnect, communications or parallel equipment remain
 observations rather than selected configurations. The page's broader 9900D
 portfolio range does not create unprinted rating rows.
+The Fuji Electric continuation processes the complete 20-column bounded current
+portfolio review: three UPS7000HX-T3U, three UPS7300WX-T3U, ten UPS7400WX-T3U
+and four voltage/UPM-specific UPS7500WX-T4 configurations. Active kW is populated
+only where the OEM table explicitly prints kVA(kW) or kVA/kW. The two distinct
+1000 kVA UPS7400 systems retain their three- versus four-UPM identities. Nominal
+and maximum input current, output current, online/HE efficiency points, battery
+interfaces, dimensions, weight and communications remain source-bound. Multi-
+voltage and 50/60 Hz choices do not create synthesized ordered variants, and OEM
+standards statements are not promoted to issuer-registry certifications.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options
@@ -209,6 +218,11 @@ front-I/O B200 product pages were captured and checksummed after the earlier
 collateral URL returned HTML instead of a PDF. The complete B200/B300 table is
 parsed offline; duplicate status rows collapse only when every hardware field
 agrees.
+Fuji Electric's current North American portfolio HTML, three exact PDF data
+sheets and the current global UPS7500WX specification page were all captured and
+checksummed. The older UPS7000HX exact table is accepted only because the current
+portfolio independently lists that family; its printed ratings are not treated
+as a claim that any optional upgrade path was ordered.
 
 The upsert preserves creation dates and unchanged update dates. Conflicting
 populated values are quarantined individually with both observations and dated

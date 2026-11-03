@@ -1,6 +1,13 @@
 {
-  "retrieved_at": "2026-11-03T21:25:00Z",
+  "retrieved_at": "2026-11-03T22:26:00Z",
   "accepted": [
+    {
+      "inventory": "Fuji Electric current UPS7000HX/7300WX/7400WX/7500WX exact rating configurations",
+      "processed_offset": 20,
+      "accepted_records": 20,
+      "reuse": "Factual extraction from official public OEM portfolio/specification pages and data sheets; no open licence asserted; originals not redistributed",
+      "originals": "Five official originals totaling 1,630,944 bytes were captured successfully; exact SHA-256 checksums and revisions are retained in sources.json"
+    },
     {
       "inventory": "Mitsubishi Electric current eight-family UPS comparison table",
       "processed_offset": 26,
@@ -390,6 +397,10 @@
   ],
   "excluded": [
     {
+      "candidate": "Fuji Electric calculated kW, battery/runtime, upgrade, redundancy and voltage/frequency option combinations",
+      "reason": "Only exact published rating/UPM columns were imported. Active kW remains null where not printed, and optional choices remain observations rather than synthesized systems or deployments."
+    },
+    {
       "candidate": "Mitsubishi Electric UPS battery, bypass, transformer, disconnect, communications and parallel option combinations",
       "reason": "Only the 26 explicitly printed current apparent/active rating pairs were imported. Family compatibility and peripheral lists remain observations and were not expanded into selected configurations, battery energy, runtime or deployment."
     },
@@ -644,6 +655,7 @@
     "Supermicro accelerator counts describe exact integrated-system designs, not deployments. Configurable accelerator limits remain per GPU; PSU module nameplates are not summed into server or rack input. B300 memory stays null where the same row says both 288 GB and 270 GB per GPU.",
     "mtu Series 4000 DCC kVA remains apparent power at the exact model/frequency row. Active kW is null; shared voltage choices and Tier III/IV compliance language remain observations rather than selected windings or issuer certifications.",
     "Huawei and Delta cooling capacity is normalized only at the exact stated table rating point. Cooling-only and full/optional current, power and weight remain separate; multi-voltage/frequency choices and CFM are observations, and no OEM conformance claim is promoted to an issuer-registry certification.",
-    "Envicool heat-exchange capacity is normalized only on direct-to-chip rows explicitly labelled as such. Immersion IT-device power and ranges, coolant alternatives, minimum facility-water flows and optional feeds remain observations and do not become cooling capacity, electrical input or synthesized configurations."
+    "Envicool heat-exchange capacity is normalized only on direct-to-chip rows explicitly labelled as such. Immersion IT-device power and ranges, coolant alternatives, minimum facility-water flows and optional feeds remain observations and do not become cooling capacity, electrical input or synthesized configurations.",
+    "Fuji Electric apparent and active output are both normalized only where the exact table prints kVA(kW) or kVA/kW. UPS7300 and UPS7500 active kW remains null; nominal/maximum input current and output current stay distinct, while multi-voltage, 50/60 Hz, battery, upgrade and redundancy choices are not expanded."
   ]
 }
