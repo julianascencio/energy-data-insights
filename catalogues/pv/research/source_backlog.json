@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T09:04:13.269941+00:00",
-  "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "AEMO unchanged revision: nine single-phase AC fills; Adelaide held. Five exact Deye inverters; Axone Duo identical source skipped.",
-  "next_highest_value_source": "AEMO October 2026: independently crosswalk 60 name-only candidates using DUID and phase boundary. Prioritize explicit AC and DC fields. Adelaide remains held as mixed technology.",
+  "updated_at": "2026-11-03T18:57:57.029479+00:00",
+  "ranking_file": "20261103T1800_top10_coverage.json",
+  "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
+  "next_highest_value_source": "REPD Q2 2026 awaiting-construction exact-identity enrichment, Scotland first.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5723,6 +5723,589 @@
         "sha256": "5c42306e347444dbae12b0410b75718ceaf390346d6b0e4a05ddff6d2c7f0552",
         "complete": true
       }
+    },
+    {
+      "id": "ga_20261103",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://services.ga.gov.au/gis/rest/services/Electricity_Infrastructure/MapServer/1/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=objectid&f=json",
+      "version_or_date": "2026-06-19; live layer bytes pinned",
+      "licence_assessment": "CC BY 4.0; Commonwealth of Australia (Geoscience Australia) 2026",
+      "access_assessment": "Complete 430-feature public ArcGIS response",
+      "estimated_useful_yield": {
+        "explicit_pv": 63,
+        "accepted_new": 16,
+        "existing_locality_fills": 11
+      },
+      "fields_offered": [
+        "GlobalID",
+        "station name",
+        "state",
+        "locality",
+        "technology",
+        "GDA2020 point",
+        "capacity (scope unstated)"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "27 accepted, 36 GA observations held; two hybrid/CSP features excluded",
+      "processed_partition": "Layer 1; entire response, 63 positive PV labels",
+      "retry_condition": "Changed layer or independent station-boundary/pin evidence",
+      "next_action": "For held IDs 323, 370 and 386 verify project positions through licence/owner plans; separately review 391 Springlands grouping."
+    },
+    {
+      "id": "cer_20261103",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cer.gov.au/document/power-stations-and-projects-status",
+      "version_or_date": "2026-09-30",
+      "licence_assessment": "CC BY 4.0 with derivative attribution; no flagged third-party material used",
+      "access_assessment": "XLSX and CSV downloaded; checksums in Australia ledger",
+      "estimated_useful_yield": {
+        "committed_solar": 31,
+        "probable_solar": 42,
+        "accepted": 9
+      },
+      "fields_offered": [
+        "status grouping",
+        "reported commitment month",
+        "MW unspecified",
+        "accreditation identifier in Approved tab"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "Nine pipeline enrichments. Approved tab and CSV are only year-to-date; zero approvals promoted.",
+      "processed_partition": "Committed and Probable: 73 Solar rows; Approved sample only",
+      "retry_condition": "Open historic public register export and exact explicit PV identities",
+      "next_action": "Australia: reconcile CER September 2026 Approved tab’s 2026 year-to-date photovoltaic sites with the historic REC public register and state planning records, starting with explicitly named PV installations in NSW and VIC; do not treat generic Solar or a certificate accreditation date as technology/commissioning proof."
+    },
+    {
+      "id": "aemo_register_20261103",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/participant_information/nem-registration-and-exemption-list.xlsx?rev=852f12a63f634cc3b23ac543b19c2e58&sc_lang=en",
+      "version_or_date": "2026-10-27",
+      "licence_assessment": "AEMO attributed factual use; confidential/third-party exclusions",
+      "access_assessment": "Workbook downloaded",
+      "estimated_useful_yield": {
+        "explicit_pv_units": 132,
+        "unique_generation_duid_crossmatches": 127
+      },
+      "fields_offered": [
+        "DUID",
+        "classification",
+        "registered and maximum generation MW",
+        "station/region"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "49 exact canonical name candidates reached ledger; names alone not accepted. Girgarre and Avonlie independent sources provided substantive facts.",
+      "processed_partition": "PU and Scheduled Loads: complete explicit photovoltaic subset",
+      "retry_condition": "Independent owner or connection/siting record and plant/phase match",
+      "next_action": "Review remaining names against state planning/connection decisions; keep Adelaide mixed-technology capacity unassigned."
+    },
+    {
+      "id": "deye_g06_cm2_p1_20261103",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/deyeinverter/2025/04/29/datasheet_sun-3-15k-g06p3-eu-cm2-p1_250427_en.pdf",
+      "version_or_date": "250427",
+      "licence_assessment": "Copyright retained; limited normalized facts only",
+      "access_assessment": "Official PDF downloaded, page 2 visually inspected",
+      "estimated_useful_yield": {
+        "exact_models": 10
+      },
+      "fields_offered": [
+        "rated active and maximum apparent output",
+        "MPPT",
+        "thermal",
+        "IP",
+        "warranty",
+        "efficiency",
+        "mechanical"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "All ten exact columns accepted, no aliases collided",
+      "processed_partition": "Complete model table",
+      "retry_condition": "New distinct engineering family or revision",
+      "next_action": "Seek multi-model smaller OEM with explicit part numbers; do not expand configurable variants."
+    },
+    {
+      "id": "antai_tracker_20261103",
+      "country": "CHN",
+      "entity": "trackers",
+      "source_url": "https://www.antaisolar.com/customers/resource-center",
+      "version_or_date": "2025 PDFs and 2026 revised public product pages",
+      "licence_assessment": "Public factual review only; no bulk redistribution grant identified",
+      "access_assessment": "OEM public PDFs/search extracts and current pages; no contact form submitted",
+      "estimated_useful_yield": {
+        "model_families": 3,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "tracking angle",
+        "allowable wind",
+        "row length",
+        "warranty",
+        "drive controls"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "TAI-Simple and TAI-Universal product pages and sheets give different wind/length figures; AT-Spark exact table still to be matched to revision.",
+      "processed_partition": "Three named product lines screened",
+      "retry_condition": "Exact part/revision mapping and same-basis gust test conditions",
+      "next_action": "Use dated revision documents from OEM resource center to distinguish platform revisions; hold conflicting scalar fields."
+    },
+    {
+      "id": "weid_high_current_20261103",
+      "country": "DEU",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.weidmuller.com/en/solutions/industries/photovoltaics/solutions_for_utility_scale_pv_plants/high_current_combiner_box.jsp",
+      "version_or_date": "Undated current OEM page",
+      "licence_assessment": "Public engineering facts only; no bulk grant established",
+      "access_assessment": "Family page opened",
+      "estimated_useful_yield": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "fuse family",
+        "warranty",
+        "input options"
+      ],
+      "last_attempt": "2026-11-03T10:08:15.444625+00:00",
+      "result": "Named article 8000081269 already catalogued; other options lack exact configuration evidence on this page.",
+      "processed_partition": "High-current options page",
+      "retry_condition": "Official model-specific eShop PDFs for distinct articles",
+      "next_action": "Check article cross-reference from manufacturer, then inspect exact PDFs not general range brochure."
+    },
+    {
+      "id": "cer_nsw_vic_approved_20261103T1100",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cer.gov.au/document/power-stations-and-projects-accredited",
+      "version_or_date": "September 2026 companion release; CSV bytes unchanged",
+      "licence_assessment": "CER CC BY 4.0 attribution; generic Solar not sufficient",
+      "access_assessment": "CSV fetched; historical REC web register did not expose results in static response",
+      "estimated_useful_yield": 87,
+      "fields_offered": [
+        "accreditation code",
+        "approval date",
+        "reported MW with unstated basis"
+      ],
+      "last_attempt": "2026-11-03T11:02:16.754212+00:00",
+      "result": "2 enrichments; 85 held",
+      "processed_partition": "NSW and VIC Solar rows, complete CSV cohort",
+      "retry_condition": "Independent exact site and photovoltaic scope evidence",
+      "next_action": "Crosswalk CER Tabbita SRPYNSJ3, Midkin SRPYNSG9 and Glen Innes SRPYNSK5 to named NSW consent or owner asset documents; require a separate plant boundary before accepting."
+    },
+    {
+      "id": "cleanpeak_portfolio_20261103T1200",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cleanpeakenergy.com.au/solar-generation/",
+      "version_or_date": "Undated live portfolio with 2026 project observations",
+      "licence_assessment": "Limited normalized factual extraction with attribution; no bulk republication grant asserted",
+      "access_assessment": "Public HTML retrieved; checksum pinned",
+      "estimated_useful_yield": 36,
+      "fields_offered": [
+        "named site",
+        "region",
+        "MW with unspecified basis",
+        "panel count",
+        "first generation month",
+        "portfolio owner label"
+      ],
+      "last_attempt": "2026-11-03T11:56:51.504497+00:00",
+      "result": "34 new; 2 enriched; 49 distinct cards held; two repeated names also withheld",
+      "processed_partition": "Complete portfolio inventory; selected named sites with first generation, unambiguous units and no known canonical overlap",
+      "retry_condition": "Independent exact project/host scope or revised card",
+      "next_action": "Resolve the CleanPeak Leeton/Fivebough, Mulwala and Nyngan homonyms using project boundaries and planning IDs; confirm Tabbita and Midkin CER records with individual site plans."
+    },
+    {
+      "id": "nsw_cleanpeak_crosswalk_20261103T1300",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cleanpeakenergy.com.au/cleanpeak-energy-acquires-leeton-solar-farm/",
+      "version_or_date": "2024-10-02 acquisition notice, cross-checked to FY2021 Photon portfolio",
+      "licence_assessment": "Normalized source-attributed project facts only",
+      "access_assessment": "Public owner, developer and NSW planning documents",
+      "estimated_useful_yield": 2,
+      "fields_offered": [
+        "separate names",
+        "DC nameplate",
+        "grid operator",
+        "commissioning year"
+      ],
+      "last_attempt": "2026-11-03T13:02:30.867342+00:00",
+      "result": "2 new; 2 owner-card matches held",
+      "processed_partition": "Leeton/Fivebough, Mulwala and Nyngan held-card cluster",
+      "retry_condition": "Separate consent, connection or exact parcel identity",
+      "next_action": "Crosswalk Little Bogan (PPSWES-30, Lot 2 DP222408) and Mulwala (PPSWES-94, DA 2021/259) with owner or connection identifiers; use exact parcel/asset evidence before linking cards."
+    },
+    {
+      "id": "goodwe_dns_latam_20261103T1300",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://latam.goodwe.com/Ftp/Downloads/Datasheet/LATAM/GW_DNS%20G3_Datasheet-LATAM_ES.pdf",
+      "version_or_date": "20250722 LATAM ES V2.1",
+      "licence_assessment": "OEM copyright retained; normalized exact facts only",
+      "access_assessment": "Two public PDFs downloaded",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "electrical",
+        "efficiency",
+        "dimensions",
+        "thermal",
+        "regional limits"
+      ],
+      "last_attempt": "2026-11-03T13:02:30.867342+00:00",
+      "result": "Five DNS G3 new; five DNS G4 already represented by byte-identical PDF",
+      "processed_partition": "Full DNS G3 and G4 five-column tables",
+      "retry_condition": "Distinct exact model table or changed revision",
+      "next_action": "Review adjacent OEM family only after catalogue identity comparison."
+    },
+    {
+      "id": "arena_lss_2017_20261103T1400",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://arena.gov.au/assets/2017/06/AU21509_ARENA_Large_Scale_Solar_Brochure_v6-1.pdf",
+      "version_or_date": "2017",
+      "licence_assessment": "CC BY 3.0 AU with third-party exceptions",
+      "access_assessment": "Public PDF retrieved",
+      "estimated_useful_yield": 4,
+      "fields_offered": [
+        "historical total project cost including financing",
+        "grant",
+        "developer",
+        "EPC"
+      ],
+      "last_attempt": "2026-11-03T14:03:22.580378+00:00",
+      "result": "Four historical evidence fills; other rows held for identity, aggregate scope or existing evidence-object reconciliation.",
+      "processed_partition": "Printed page 5 Tables 1 and 2",
+      "retry_condition": "Independent station/phase IDs or a safe evidence merge",
+      "next_action": "Crosswalk ARENA Parkes, Griffith and Dubbo Hub rows to AEMO exact station/DUIDs and independently documented phases; then review grant scope."
+    },
+    {
+      "id": "goodwe_ms_g3_20261103T1400",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://br.goodwe.com/Ftp/Downloads/Datasheet/LATAM/GW_MS%20G3_Datasheet-LATAM_ES.pdf",
+      "version_or_date": "20250910 LATAM ES V2.1",
+      "licence_assessment": "OEM rights retained; limited normalized specifications",
+      "access_assessment": "Public PDF retrieved",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "electrical",
+        "regional output/input limits",
+        "thermal",
+        "efficiency",
+        "mechanical"
+      ],
+      "last_attempt": "2026-11-03T14:03:22.580378+00:00",
+      "result": "Five exact models accepted",
+      "processed_partition": "Complete five-column technical table",
+      "retry_condition": "Distinct nonduplicated OEM table",
+      "next_action": "Prefer tracker or combiner exact product tables after revision check."
+    },
+    {
+      "id": "arena_neoen_crosswalk_20261103T1500",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://arena.gov.au/projects/dubbo-solar-hub/",
+      "version_or_date": "2017 funding report and October 2026 AEMO workbook",
+      "licence_assessment": "ARENA licensed facts with attribution; AEMO attributed factual use; owner facts only",
+      "access_assessment": "Checksummed workbook reused; owner project pages reviewed",
+      "estimated_useful_yield": 2,
+      "fields_offered": [
+        "station ID",
+        "AC nameplate",
+        "historical project cost",
+        "grant"
+      ],
+      "last_attempt": "2026-11-03T15:01:58.651620+00:00",
+      "result": "Parkes and Griffith accepted; Dubbo cost remains aggregate",
+      "processed_partition": "Three deferred ARENA lines from 14:00 report",
+      "retry_condition": "Published per-station funding split for Dubbo",
+      "next_action": "Review ARENA Kidston phase 1 and White Rock PV separately from their co-located hydro and wind assets; require exact AEMO solar station boundaries."
+    },
+    {
+      "id": "midnite_pv_20261103T1500",
+      "country": "USA",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.midnitesolar.com/pdfs/pvCombiner_spec_sheet.pdf",
+      "version_or_date": "Undated manufacturer specifications sheet",
+      "licence_assessment": "OEM copyright retained; normalized technical facts only",
+      "access_assessment": "PDF downloaded and checksum registered",
+      "estimated_useful_yield": 8,
+      "fields_offered": [
+        "protection-specific input count",
+        "enclosure",
+        "mounting",
+        "wiring",
+        "certification"
+      ],
+      "last_attempt": "2026-11-03T15:01:58.651620+00:00",
+      "result": "Eight exact previously absent models",
+      "processed_partition": "All eight identifiers in three grouped columns",
+      "retry_condition": "New independently dated model-level datasheet",
+      "next_action": "Reconcile current manual and 250/300 V breaker nomenclature before adding voltage ratings."
+    },
+    {
+      "id": "arena_phase_boundary_20261103T1600",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://arena.gov.au/assets/2017/06/AU21509_ARENA_Large_Scale_Solar_Brochure_v6-1.pdf",
+      "version_or_date": "2017 ARENA plus October 2026 AEMO and owner pages",
+      "licence_assessment": "ARENA CC BY 3.0 AU with exceptions; AEMO attributed facts; limited owner factual evidence",
+      "access_assessment": "Pinned existing ARENA and AEMO files and public asset pages",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "PV-only AEMO nameplate",
+        "phase boundaries",
+        "historical funding",
+        "module count"
+      ],
+      "last_attempt": "2026-11-03T15:58:33.995882+00:00",
+      "result": "Five new PV stations; Kidston DC and tracker type held; Normanton pending",
+      "processed_partition": "Kidston, White Rock, Oakey, Collinsville and Emu Downs; Normanton deferred",
+      "retry_condition": "Independent scope and rating evidence",
+      "next_action": "Review Normanton Solar Farm against its ARENA grid connection report and Queensland isolated-network records; avoid matching Normanton by locality alone."
+    },
+    {
+      "id": "midnite_1000_20261103T1600",
+      "country": "USA",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.midnitesolar.com/doc_prod_list.php?menuItem=products&productCat_ID=9",
+      "version_or_date": "Exact public product listings; 10-259-1 Rev D manual",
+      "licence_assessment": "OEM copyright retained; limited technical facts",
+      "access_assessment": "Model pages accessed; large manual downloaded, small manual download unavailable",
+      "estimated_useful_yield": 3,
+      "fields_offered": [
+        "1000 V configuration",
+        "holder positions",
+        "enclosure size",
+        "warranty",
+        "ETL scope"
+      ],
+      "last_attempt": "2026-11-03T15:58:33.995882+00:00",
+      "result": "Three exact enclosures accepted; base MNPV12 conflicting fuse count held",
+      "processed_partition": "MNPV2/4/10-1000; base MNPV12 comparison",
+      "retry_condition": "Dated revision crosswalk for base models",
+      "next_action": "Resolve MNPV12 fuse-holder and strings distinction before changing existing fields."
+    },
+    {
+      "id": "arena_offgrid_portfolio_2017_20261103T1700",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://arena.gov.au/assets/2017/06/ARENA_RAR-Off-grid-Portfolio-Overview_web-1.pdf",
+      "version_or_date": "2017 historical portfolio and later public project summaries",
+      "licence_assessment": "CC BY 3.0 AU brochure with third-party exclusions; limited attributed project-summary facts",
+      "access_assessment": "Public portfolio PDF downloaded; Normanton engineering report marked confidential, no report-derived facts accepted",
+      "estimated_useful_yield": 6,
+      "fields_offered": [
+        "PV rating basis",
+        "hybrid scope",
+        "battery power/energy",
+        "network operator"
+      ],
+      "last_attempt": "2026-11-03T17:02:35.135326+00:00",
+      "result": "Five new, one enriched; four portfolio rows held",
+      "processed_partition": "All ten published comparison-table observations",
+      "retry_condition": "Exact phase or identity evidence and source-specific reuse",
+      "next_action": "Reconcile Karratha Airport PV with the existing Karratha Solar Farm using site/operator IDs, and verify Doomadgee original array versus expansion using Ergon as-built phase documentation."
+    },
+    {
+      "id": "midnite_frontback03_20261103T1700",
+      "country": "USA",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.midnitesolar.com/pdfs/frontBack03.pdf",
+      "version_or_date": "Undated standard and prewired technical table",
+      "licence_assessment": "OEM rights retained; limited model-specific factual specifications",
+      "access_assessment": "OEM table inspected via index; direct historical PDF URL returned 404",
+      "estimated_useful_yield": 6,
+      "fields_offered": [
+        "configured DC voltage",
+        "OCPD",
+        "wire ranges",
+        "string count",
+        "output rating"
+      ],
+      "last_attempt": "2026-11-03T17:02:35.135326+00:00",
+      "result": "Six exact models accepted; other rows represent previously catalogued units",
+      "processed_partition": "MNPV16 family and HVPR factory-prewired configurations",
+      "retry_condition": "OEM restores downloadable revision or distinct product manual",
+      "next_action": "Reconcile 250/300 V product and breaker nomenclature on the live wiring diagrams."
+    },
+    {
+      "id": "karratha_fy2024",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://karratha.wa.gov.au/system/files/city_of_karratha_emissions_reduction_plan_report_1.pdf",
+      "version_or_date": "FY2024 Table 14",
+      "licence_assessment": "Limited factual extraction with attribution; report not redistributed",
+      "access_assessment": "Published source; no gated access attempted",
+      "estimated_useful_yield": {
+        "accepted_from_selected_partition": 7,
+        "remaining": "unverified"
+      },
+      "fields_offered": [
+        "facility identity",
+        "measured generation",
+        "reported size",
+        "export",
+        "self consumption"
+      ],
+      "last_attempt": "2026-11-03T18:02:29.596791+00:00",
+      "result": "Seven accepted; Operations Centre capacity conflict retained.",
+      "retry_condition": "Check revision, access and unresolved conditions before resuming.",
+      "next_action": "Obtain Operations Centre as-built rating with explicit AC or DC basis.",
+      "processed_cursor": {
+        "table": 14,
+        "reviewed": 7,
+        "accepted": 7
+      }
+    },
+    {
+      "id": "ergon_remote_portfolio",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.ergon.com.au/network/our-network/isolated-and-remote-power-stations/transitioning-to-renewables",
+      "version_or_date": "Public project pages checked 2026-11-03",
+      "licence_assessment": "Limited operator facts; no site prose or imagery redistributed",
+      "access_assessment": "Published source; no gated access attempted",
+      "estimated_useful_yield": {
+        "accepted_from_selected_partition": 3,
+        "remaining": "unverified"
+      },
+      "fields_offered": [
+        "network operator",
+        "phase scope",
+        "PV and battery design ratings"
+      ],
+      "last_attempt": "2026-11-03T18:02:29.596791+00:00",
+      "result": "Three sites accepted; Burketown held.",
+      "retry_condition": "Check revision, access and unresolved conditions before resuming.",
+      "next_action": "Find dedicated Burketown site and commissioning record.",
+      "processed_cursor": {
+        "reviewed": 4,
+        "accepted": 3,
+        "held": [
+          "Burketown"
+        ]
+      }
+    },
+    {
+      "id": "beny_disconnect",
+      "country": "CHN",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.beny.com/wp-content/uploads/2021/09/Solar-DC-AC-Box-BENY-Electric-202207-2.pdf",
+      "version_or_date": "202207-2",
+      "licence_assessment": "Copyrighted OEM document; factual values only; no bulk licence inferred",
+      "access_assessment": "Published source; no gated access attempted",
+      "estimated_useful_yield": {
+        "accepted_from_selected_partition": 6,
+        "remaining": "unverified"
+      },
+      "fields_offered": [
+        "voltage",
+        "currents",
+        "string counts",
+        "temperature",
+        "enclosure dimensions"
+      ],
+      "last_attempt": "2026-11-03T18:02:29.596791+00:00",
+      "result": "Six accepted. Previously recorded 600 V identity collision still held.",
+      "retry_condition": "Check revision, access and unresolved conditions before resuming.",
+      "next_action": "Only revisit held 600 V entries when OEM gives independent exact ordering identifiers.",
+      "processed_cursor": {
+        "partition": "BHS-6/1 and BHT-1/1, 12/1, 16/1 named DC tables",
+        "accepted": 6
+      }
+    },
+    {
+      "id": "aneel_daily_1800",
+      "country": "BRA",
+      "entity": "projects",
+      "source_url": "https://dadosabertos.aneel.gov.br/pt_BR/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55",
+      "version_or_date": "2026-11-03 daily",
+      "licence_assessment": "ODbL; mixed-catalogue reuse assessment pending",
+      "access_assessment": "Published source; no gated access attempted",
+      "estimated_useful_yield": {
+        "accepted_from_selected_partition": 0,
+        "remaining": "unverified"
+      },
+      "fields_offered": [
+        "CEG",
+        "PV technology",
+        "lifecycle",
+        "capacity",
+        "siting"
+      ],
+      "last_attempt": "2026-11-03T18:02:29.596791+00:00",
+      "result": "Resource metadata checked; zero accepted.",
+      "retry_condition": "Check revision, access and unresolved conditions before resuming.",
+      "next_action": "Review database-level obligations before staging any source observations.",
+      "processed_cursor": {
+        "release": "2026-11-03",
+        "accepted": 0
+      }
+    },
+    {
+      "id": "repd_q2_construction_crosswalk",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "2026 Q2",
+      "licence_assessment": "OGL v3",
+      "access_assessment": "Official publication and document available",
+      "estimated_useful_yield": 80,
+      "fields_offered": [
+        "planning references",
+        "planning milestones"
+      ],
+      "last_attempt": "2026-11-03T18:57:57.029479+00:00",
+      "result": "80 enriched; 51 held",
+      "retry_condition": "Verify new revision or independent primary evidence.",
+      "next_action": "Review awaiting-construction Scotland cohort by exact IDs and aliases.",
+      "processed_cursor": "80 enriched; 51 held"
+    },
+    {
+      "id": "burketown_council_20241129",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.burke.qld.gov.au/files/assets/public/v/1/our-council/documents/council-meetings/2024/241129_Confirmed_Minutes.pdf",
+      "version_or_date": "2024-11-29",
+      "licence_assessment": "Limited factual attribution",
+      "access_assessment": "Official publication and document available",
+      "estimated_useful_yield": 1,
+      "fields_offered": [
+        "parcel",
+        "PV design",
+        "storage",
+        "grid voltage"
+      ],
+      "last_attempt": "2026-11-03T18:57:57.029479+00:00",
+      "result": "Accepted dated approval only",
+      "retry_condition": "Verify new revision or independent primary evidence.",
+      "next_action": "Check operator commissioning and as-built AC/DC ratings.",
+      "processed_cursor": "Accepted dated approval only"
+    },
+    {
+      "id": "solis_nga_k02_202507",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.solisinverters.com/ng/solarinverter38/S6-GR3P%283-10%29K02-NV-ND_ng.html",
+      "version_or_date": "NGA V1.5 July 2025",
+      "licence_assessment": "OEM copyright retained",
+      "access_assessment": "Official publication and document available",
+      "estimated_useful_yield": 0,
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "environmental",
+        "interfaces"
+      ],
+      "last_attempt": "2026-11-03T18:57:57.029479+00:00",
+      "result": "Seven exact models already present",
+      "retry_condition": "Verify new revision or independent primary evidence.",
+      "next_action": "Seek materially distinct OEM model family.",
+      "processed_cursor": "Seven exact models already present"
     }
   ]
 }
