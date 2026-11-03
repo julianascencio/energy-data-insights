@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 518 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
-Dell, Delta Electronics, Eaton, Huawei Digital Power, Lenovo, Motivair by Schneider
+has 544 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
+Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Lenovo, Motivair by Schneider
 Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens, STULZ, Supermicro and
 Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
@@ -78,6 +78,12 @@ L2L configurations. Cooling-only and full/optional currents and weights remain
 distinct. Alternate capacity points, multiple voltage choices, CFM observations
 and exact water/air rating temperatures are preserved without synthesizing
 options. OEM conformance statements are not issuer-registry certifications.
+The Envicool continuation adds every exact model column in two official liquid-
+cooling brochures: 13 direct-to-chip configurations and 13 single-phase or
+phase-change immersion configurations. Heat-exchange capacity is normalized only
+where the table labels it as such. IT-device power ranges, coolant alternatives,
+facility-water minima and optional feeds remain observations rather than cooling
+capacity, electrical input or synthesized orderable variants.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options

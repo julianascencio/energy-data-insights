@@ -130,6 +130,15 @@ print(
     .sort_values(["model", "variant"])
     .to_string(index=False)
 )
+print("Envicool exact liquid-cooling configurations keep thermal boundaries explicit:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Envicool"),
+        ["model", "equipment_category", "cooling_capacity_kw", "cooling_rating_conditions"],
+    ]
+    .sort_values(["equipment_category", "model"])
+    .to_string(index=False)
+)
 print("Exact UPS ratings keep kW, kVA and runtime/load conditions separate:")
 print(
     equipment.loc[

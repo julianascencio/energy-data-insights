@@ -199,6 +199,7 @@ def parse_precision_cooling_matrix(
     """
     host = urlsplit(source_url).hostname
     if host not in {
+        "en.envicool.com",
         "info.support.huawei.com",
         "www.deltapowersolutions.com",
         "www.delta-emea.com",
@@ -233,9 +234,18 @@ def parse_precision_cooling_matrix(
     }
     for line, row in enumerate(reader, start=2):
         candidate: dict[str, Any] = {key: (row.get(key) or "").strip() for key in required}
-        if candidate["category"] not in {"cdu", "crah", "crac"}:
+        if candidate["category"] not in {
+            "cdu",
+            "crah",
+            "crac",
+            "direct_to_chip",
+            "immersion",
+        }:
             raise ValueError(f"Unsupported precision-cooling category on row {line}")
-        if not all(candidate.values()):
+        required_values = {
+            key: value for key, value in candidate.items() if key != "cooling_capacity_kw"
+        }
+        if not all(required_values.values()):
             raise ValueError(f"Incomplete precision-cooling row {line}")
         for field in numeric:
             raw = (row.get(field) or "").strip()
@@ -249,6 +259,8 @@ def parse_precision_cooling_matrix(
             if value <= 0:
                 raise ValueError(f"Invalid {field} on row {line}")
             candidate[field] = value
+        if candidate["cooling_capacity_kw"] is None and candidate["category"] != "immersion":
+            raise ValueError(f"Missing cooling capacity on row {line}")
         key = (
             candidate["manufacturer"],
             candidate["model"],
