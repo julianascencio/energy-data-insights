@@ -5103,3 +5103,51 @@ Vertiv (2021). **Liebert XDU450/1350 guide specifications**. [Source](https://ww
 **Role:** data. Field-level evidence and source-byte SHA-256 in the Data Center catalogue. Original content is not redistributed; public access does not imply an open licence.
 
 **Used by:** `catalogues/data_centers/sources.json`.
+
+### discover_dry_solar_revb
+
+Discover Battery (2020). **DRY CELL solar energy storage guide**. [Source](https://assets.discoverbattery.com/documents/02_dry_cell/885_product_literature/gui-dry-cell-solar-energy-storage-product-guide-20200813.pdf)
+
+**Role:** data. Page 1 exact model rows; page 2 chemistry
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### discover_aes_6650_revc
+
+Discover Energy Systems (2026). **AES 42-48-6650 installation and operation manual**. [Source](https://discoverenergysys.com/s4x_files/resources/des-aes-42-48-6650-manual.pdf)
+
+**Role:** data. Tables 3-1 to 3-3, pages 6-7; undated manual year is access year, not publication year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### discover_rack_revd
+
+Discover Energy Systems (2026). **AES RACKMOUNT installation and operation manual**. [Source](https://discoverbattery.com/s4x_files/resources/des-aes-rackmount-user-manual.pdf)
+
+**Role:** data. Tables 3-1 to 3-3, pages 7-9; undated manual year is access year, not publication year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### discover_aes_3000_revc
+
+Discover Battery (2026). **44-48-3000 operating manual**. [Source](https://assets.discoverbattery.com/documents/03_aes/805_product_manual/aes-44-48-3000-manual.pdf)
+
+**Role:** data. Section 11 page 13; undated manual year is access year, not publication year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ppa_grid_case_studies_202009
+
+Pacific Power Association / SEIAPI (GSES with TAU, EPC and TPL) (2020). **Case Studies from Integrating Renewables into the Grid**. [Source](https://www.ppa.org.fj/wp-content/uploads/2020/10/Case-Studies-Guideline-September-2020.pdf)
+
+**Role:** data. Table 3 pp10-11; Samoa section 3.1.6 p23; Tonga Table 15 p37
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### infratec_cook_four_portfolio
+
+Infratec (2026). **Southern Group Cook Islands Renewable Microgrids**. [Source](https://infratec.co.nz/projects/southern-group-cook-islands-renewable-microgrids/)
+
+**Role:** data. Undated portfolio, access year; four named islands and aggregate discrepancy
+
+**Used by:** `catalogues/bess/sources.json`.
