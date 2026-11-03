@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T15:01:58.651620+00:00",
-  "ranking_file": "20261103T1500_top10_coverage.json",
-  "selection_note": "ARENA/AEMO/Neoen Parkes–Griffith–Dubbo reconciliation; MidNite combiner table; GoodWe SDT overlap screen.",
-  "next_highest_value_source": "Review ARENA Kidston phase 1 and White Rock PV separately from their co-located hydro and wind assets; require exact AEMO solar station boundaries.",
+  "updated_at": "2026-11-03T15:58:33.995882+00:00",
+  "ranking_file": "20261103T1600_top10_coverage.json",
+  "selection_note": "ARENA deferred PV boundaries and MidNite exact 1000 V enclosure models.",
+  "next_highest_value_source": "Review Normanton Solar Farm against its ARENA grid connection report and Queensland isolated-network records; avoid matching Normanton by locality alone.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6045,6 +6045,49 @@
       "processed_partition": "All eight identifiers in three grouped columns",
       "retry_condition": "New independently dated model-level datasheet",
       "next_action": "Reconcile current manual and 250/300 V breaker nomenclature before adding voltage ratings."
+    },
+    {
+      "id": "arena_phase_boundary_20261103T1600",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://arena.gov.au/assets/2017/06/AU21509_ARENA_Large_Scale_Solar_Brochure_v6-1.pdf",
+      "version_or_date": "2017 ARENA plus October 2026 AEMO and owner pages",
+      "licence_assessment": "ARENA CC BY 3.0 AU with exceptions; AEMO attributed facts; limited owner factual evidence",
+      "access_assessment": "Pinned existing ARENA and AEMO files and public asset pages",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "PV-only AEMO nameplate",
+        "phase boundaries",
+        "historical funding",
+        "module count"
+      ],
+      "last_attempt": "2026-11-03T15:58:33.995882+00:00",
+      "result": "Five new PV stations; Kidston DC and tracker type held; Normanton pending",
+      "processed_partition": "Kidston, White Rock, Oakey, Collinsville and Emu Downs; Normanton deferred",
+      "retry_condition": "Independent scope and rating evidence",
+      "next_action": "Review Normanton Solar Farm against its ARENA grid connection report and Queensland isolated-network records; avoid matching Normanton by locality alone."
+    },
+    {
+      "id": "midnite_1000_20261103T1600",
+      "country": "USA",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.midnitesolar.com/doc_prod_list.php?menuItem=products&productCat_ID=9",
+      "version_or_date": "Exact public product listings; 10-259-1 Rev D manual",
+      "licence_assessment": "OEM copyright retained; limited technical facts",
+      "access_assessment": "Model pages accessed; large manual downloaded, small manual download unavailable",
+      "estimated_useful_yield": 3,
+      "fields_offered": [
+        "1000 V configuration",
+        "holder positions",
+        "enclosure size",
+        "warranty",
+        "ETL scope"
+      ],
+      "last_attempt": "2026-11-03T15:58:33.995882+00:00",
+      "result": "Three exact enclosures accepted; base MNPV12 conflicting fuse count held",
+      "processed_partition": "MNPV2/4/10-1000; base MNPV12 comparison",
+      "retry_condition": "Dated revision crosswalk for base models",
+      "next_action": "Resolve MNPV12 fuse-holder and strings distinction before changing existing fields."
     }
   ]
 }
