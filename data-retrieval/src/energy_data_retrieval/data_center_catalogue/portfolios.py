@@ -114,6 +114,67 @@ def parse_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
     }
 
 
+class _AirTrunkLocations(HTMLParser):
+    """Allowlist official location links without retaining page navigation text."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.href = ""
+        self.parts: list[str] = []
+        self.links: list[tuple[str, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "a":
+            self.href = dict(attrs).get("href") or ""
+            self.parts = []
+
+    def handle_data(self, data: str) -> None:
+        if self.href:
+            self.parts.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag != "a" or not self.href:
+            return
+        text = " ".join(" ".join(self.parts).split())
+        match = re.match(r"((?:SYD|MEL|JHB|SGP|HKG|TOK|OSK|BOM|MAA|HYD)\d)\b", text)
+        if match and "/location/" in self.href:
+            self.links.append((match.group(1), self.href))
+        self.href = ""
+        self.parts = []
+
+
+def parse_airtrunk_locations(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage AirTrunk's complete named-location inventory for manual review.
+
+    The inventory establishes identities and official detail-page links only. It
+    does not establish lifecycle status, electrical boundary, or exact capacity.
+    Duplicate legacy URLs for one displayed code are collapsed deterministically.
+    """
+    if urlsplit(source_url).hostname != "airtrunk.com":
+        raise ValueError("Expected official AirTrunk URL")
+    parser = _AirTrunkLocations()
+    parser.feed(content.decode("utf-8-sig"))
+    candidates: dict[str, dict[str, str]] = {}
+    for code, href in parser.links:
+        url = urljoin(source_url, href)
+        previous = candidates.get(code)
+        # Prefer the longer current descriptive slug when legacy aliases coexist.
+        if previous is None or len(url) > len(previous["url"]):
+            candidates[code] = {
+                "external_id": code,
+                "url": url,
+                "locator": f"locations link text {code}",
+            }
+    if len(candidates) != 22:
+        raise ValueError("Changed AirTrunk location inventory shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [candidates[key] for key in sorted(candidates)],
+        "review_required": True,
+    }
+
+
 class _PueTables(HTMLParser):
     def __init__(self) -> None:
         super().__init__()

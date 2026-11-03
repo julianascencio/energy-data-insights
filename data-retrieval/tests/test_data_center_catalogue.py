@@ -17,7 +17,10 @@ from energy_data_retrieval.data_center_catalogue import (
     validate_catalogue,
 )
 from energy_data_retrieval.data_center_catalogue.catalogue import validate_record
-from energy_data_retrieval.data_center_catalogue.portfolios import parse_portfolio
+from energy_data_retrieval.data_center_catalogue.portfolios import (
+    parse_airtrunk_locations,
+    parse_portfolio,
+)
 
 ROOT = Path(__file__).resolve().parents[2] / "catalogues/data_centers"
 FIXTURES = Path(__file__).parent / "fixtures/data_centers"
@@ -177,6 +180,22 @@ def test_offline_inventory_parsers_preserve_uncertainty_and_allowlist_fields():
         parse_portfolio(b"<html></html>", source_url="https://odatadc.com/localidades/")
     with pytest.raises(ValueError, match="Unsupported"):
         parse_portfolio(b"", source_url="https://example.com")
+
+
+def test_airtrunk_inventory_parser_is_complete_deduplicated_and_identity_only():
+    data = parse_airtrunk_locations(
+        (FIXTURES / "airtrunk.html").read_bytes(), source_url="https://airtrunk.com/locations/"
+    )
+    assert len(data["candidates"]) == 22
+    assert {row["external_id"] for row in data["candidates"]} >= {"BOM1", "JHB4", "SYD1"}
+    assert next(row for row in data["candidates"] if row["external_id"] == "TOK1")["url"].endswith(
+        "tok1-east-tokyo/"
+    )
+    assert "DO NOT EXTRACT" not in json.dumps(data)
+    with pytest.raises(ValueError, match="inventory shape"):
+        parse_airtrunk_locations(
+            b"<a href='/location/syd1/'>SYD1</a>", source_url="https://airtrunk.com/locations/"
+        )
 
 
 def test_pue_table_selection_preserves_period_precision_and_empty_ttm():

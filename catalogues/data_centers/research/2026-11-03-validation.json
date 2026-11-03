@@ -1,0 +1,81 @@
+{
+  "executed_at": "2026-11-03T00:28:44Z",
+  "local_environment": {
+    "python": "3.13",
+    "dependency_lock": "uv.lock"
+  },
+  "checks": [
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed",
+      "records": 157
+    },
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py",
+      "result": "passed",
+      "tests": 19
+    },
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_bess_catalogue.py data-retrieval/tests/test_pv_catalogue.py",
+      "result": "passed",
+      "tests": 62
+    },
+    {
+      "command": "pytest -q analysis/tests/test_pv_database.py analysis/tests/test_bess_database.py analysis/tests/test_bess_oem_database.py methods/tests/test_references.py",
+      "result": "passed",
+      "tests": 29
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed",
+      "tests": 9
+    },
+    {
+      "command": "ruff check .; ruff format --check .; ty check",
+      "result": "passed"
+    },
+    {
+      "command": "python scripts/check_repository.py; python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "sphinx-build -E -a -W --keep-going -b html docs docs/_build/html",
+      "result": "passed",
+      "note": "Full offline gallery and shared Data Center viewer snapshot rebuilt"
+    },
+    {
+      "command": "python scripts/check_docs_links.py docs/_build/html",
+      "result": "passed",
+      "html_pages": 416
+    },
+    {
+      "check": "Two independent Data Center snapshot builds",
+      "result": "byte-identical projects.parquet, equipment.parquet and manifests",
+      "projects_parquet_sha256": "ff716956385749fa829c48d47b420a4401aa3a73196721d9a58f7ecffe8e8b3e",
+      "equipment_parquet_sha256": "a1cffe147eccea5e2642d7d54947d6f4f5d192a7c7d9ab029a4851e9d6bdd743"
+    },
+    {
+      "check": "Headless Chromium viewer QA with external requests blocked",
+      "result": "passed; zero page errors",
+      "coverage": [
+        "115 project and 42 equipment rows",
+        "scope-aware IT/grid/facility KPIs",
+        "pagination invariance",
+        "map popup boundary labels",
+        "expanded evidence",
+        "filtered campus exclusions",
+        "disabled unsafe sums",
+        "CSV export",
+        "mobile overflow and dark mode",
+        "PV/BESS/BESS OEM viewer regression"
+      ]
+    }
+  ],
+  "publication_preflight": {
+    "main_sha": "76d0c1a98a9cc20142b8f51375d4ba53d3780616",
+    "branch_sha": "f8422d46fa6cd291682f30c0167d4b6cf7008b6d",
+    "pull_request": "https://github.com/julianascencio/energy-data-insights/pull/84",
+    "pull_request_state": "open",
+    "remote_ci_for_new_commit": "not available until publication"
+  }
+}

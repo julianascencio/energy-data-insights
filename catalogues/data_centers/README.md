@@ -5,10 +5,11 @@ canonical JSONL under `records/projects` and `records/equipment`, a source regis
 field-level evidence, stable UUIDs and deterministic typed Parquet snapshots.
 No network request occurs during validation, export or documentation builds.
 
-The first batch contains **93 project records in 17 countries**: **45 facility
-records and 48 explicitly labelled campus aggregates**, plus **21 exact equipment
-models/configurations from four OEMs**. These are branch catalogue counts, not a
-worldwide census or a count of operating buildings. Six operators are represented.
+The current open-branch catalogue contains **115 project records in 20 countries**:
+**45 facility records and 70 explicitly labelled campus aggregates**, plus **42
+exact equipment models/configurations from four OEMs**. These are branch catalogue
+counts, not a worldwide census or a count of operating buildings. Seven operators
+are represented.
 The research report and coverage manifest describe missing fields and scope.
 
 ```bash
@@ -29,9 +30,9 @@ Exact equipment links require a disclosed deployment; none are asserted in this
 batch. Existing stationary battery and BESS equipment records are referenced by
 validated BESS IDs, not copied into a competing battery catalogue.
 
-Read [the research report](research/2026-11-02-report.md),
+Read [the latest research report](research/2026-11-03-report.md),
 [ranked continuation backlog](research/backlog.json),
-[decision ledger](research/2026-11-02-decisions.jsonl), and
+[latest decision ledger](research/2026-11-03-decisions.jsonl), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

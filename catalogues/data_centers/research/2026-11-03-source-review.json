@@ -1,0 +1,67 @@
+{
+  "retrieved_at": "2026-11-03T00:28:44Z",
+  "accepted": [
+    {
+      "inventory": "AirTrunk locations and 22 official location pages",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "reuse": "Factual extraction from public copyrighted pages; no open licence asserted; raw pages not redistributed",
+      "originals": "23 HTML captures available during review with SHA-256 and byte counts in sources.json"
+    },
+    {
+      "inventory": "NVIDIA exact accelerator tables/datasheets",
+      "processed_offset": 13,
+      "accepted_records": 13,
+      "reuse": "Factual extraction from official public OEM pages/PDFs; no open licence asserted; originals not redistributed",
+      "originals": "Nine official captures available during review with SHA-256 and byte counts in sources.json"
+    },
+    {
+      "inventory": "Vertiv PowerIT Switched rPDU model table",
+      "processed_offset": 8,
+      "accepted_records": 8,
+      "reuse": "Factual extraction from official public OEM page; no open licence asserted; original not redistributed",
+      "originals": "HTML capture checksummed; exact model table was client-rendered and is explicitly identified as absent from the raw HTML payload"
+    }
+  ],
+  "deferred": [
+    {
+      "candidate": "AirTrunk facility buildings and phases",
+      "reason": "Portfolio pages report campus/location totals; planning records are required to separate physical buildings and phases without double counting"
+    },
+    {
+      "candidate": "Africa Data Centres Kenya, Nigeria and Ghana portfolio",
+      "reason": "Discovery completed but bounded official facility pages and dated status evidence were not fully captured before this publication checkpoint"
+    },
+    {
+      "candidate": "NVIDIA B200/B300 and current integrated systems",
+      "reason": "Current system and per-accelerator boundaries require a separate exact-configuration review"
+    }
+  ],
+  "excluded": [
+    {
+      "candidate": "AirTrunk SAUDI ARABIA navigation label",
+      "reason": "Country/navigation text without an identifiable named facility record"
+    },
+    {
+      "candidate": "Vertiv family-level electrical combinations",
+      "reason": "Possible combinations were not promoted to exact model records"
+    },
+    {
+      "candidate": "Tesla P4 50 W / 75 W choice",
+      "reason": "Official comparison does not bind the two power options to separate exact configurations; power remains null"
+    }
+  ],
+  "holds_unchanged": [
+    "NTT DATA explicit automation/republication restriction",
+    "PeeringDB bulk redistribution restriction",
+    "OpenStreetMap Overpass access failure",
+    "Digital Realty 10-K market aggregates are not facility identities"
+  ],
+  "quarantined_fields": [],
+  "normalization_notes": [
+    "AirTrunk total-capacity values with a plus sign are lower-bound observations at named location/campus scope; they are not IT, grid or facility MW columns",
+    "AirTrunk design PUE is stored as a design observation with null measurement period; values displayed as less-than preserve the qualifier",
+    "Vertiv voltage ranges remain observations; no nominal voltage or kW is inferred from voltage and current",
+    "Accelerator maximum power/TDP is never treated as server or rack input power"
+  ]
+}

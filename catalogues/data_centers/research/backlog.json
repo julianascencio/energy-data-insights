@@ -1,13 +1,16 @@
 {
   "version": 1,
-  "updated_at": "2026-11-02T23:20:42.675074Z",
+  "updated_at": "2026-11-03T00:28:44Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
     "google_2026_q2_campus_rows": 35,
     "amd_comparison_columns": 4,
     "eaton_exact_skus": 4,
-    "vertiv_sl70643_models": 2
+    "vertiv_sl70643_models": 2,
+    "airtrunk_locations": 22,
+    "nvidia_legacy_accelerator_configurations": 13,
+    "vertiv_powerit_switched_models": 8
   },
   "next_batches": [
     {
@@ -54,15 +57,15 @@
     },
     {
       "rank": 4,
-      "source": "North America/Europe structured official portfolios",
+      "source": "North America/Europe structured official portfolios and AirTrunk phase evidence",
       "urls": [
         "https://www.digitalrealty.com/data-centers",
         "https://airtrunk.com/locations/"
       ],
       "offset": 0,
-      "scope": "Review site portfolio licence and facility-vs-campus IDs before full bounded batch",
+      "scope": "AirTrunk location inventory complete at offset 22; review planning/environmental records for building phases. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a bounded batch",
       "questions": [
-        "Do not use SEC market totals as facilities",
+        "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
         "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
       ]
     },
@@ -74,7 +77,7 @@
         "https://www.vertiv.com/"
       ],
       "offset": 0,
-      "scope": "Enrich 4 Eaton exact UPS runtime/load/voltage/efficiency tables; XDU thermal conditions; exact rack PDU, chiller, CRAH, transformer, switchgear, generator models",
+      "scope": "PowerIT Switched table complete at offset 8; enrich 4 Eaton exact UPS runtime/load/voltage/efficiency tables; XDU thermal conditions; exact current rack PDU, chiller, CRAH, transformer, switchgear and generator models",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -106,6 +109,20 @@
       "questions": [
         "Retain separate campus and building boundaries",
         "Do not overwrite earlier measured periods or infer IT MW from PUE"
+      ]
+    },
+    {
+      "rank": 8,
+      "source": "NVIDIA lifecycle and current accelerator continuation",
+      "urls": [
+        "https://docs.nvidia.com/vgpu/gpus-supported-by-vgpu.html",
+        "https://www.nvidia.com/en-us/data-center/"
+      ],
+      "offset": 13,
+      "scope": "Legacy exact accelerator batch complete at offset 13; add dated lifecycle evidence and exact B200/B300/RTX PRO server variants only from current OEM tables",
+      "questions": [
+        "Do not combine memory, power and form-factor options across variants",
+        "Keep workload precision and sparsity conditions with any performance observation"
       ]
     }
   ],

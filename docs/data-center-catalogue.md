@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The first source-backed batch has 93 project records across 17 countries: 45
-facilities and 48 explicitly scoped campus aggregates, from six operators.
+The current open-branch catalogue has 115 project records across 20 countries:
+45 facilities and 70 explicitly scoped campus aggregates, from seven operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -38,10 +38,10 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 21 exact models/configurations from NVIDIA, AMD, Eaton and Vertiv. Initial
-categories are GPU accelerators, servers, UPS and coolant distribution units.
-Racks, PDUs, switchgear, transformers, generators and additional cooling categories
-are supported by schema and ranked in the continuation backlog.
+has 42 exact models/configurations from NVIDIA, AMD, Eaton and Vertiv. Current
+categories are GPU accelerators, servers, UPS, rack PDUs and coolant distribution
+units. Switchgear, transformers, generators and additional cooling categories are
+supported by schema and ranked in the continuation backlog.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server
