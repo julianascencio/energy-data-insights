@@ -6463,3 +6463,107 @@ Ravindrababu, Suraj; Hädrich, Ingrid; Paetzold, Ulrich W.; Gebhardt, Paul (2026
 **Role:** implemented. Online 25 April 2026. Independent implementation of selected MAPLE MSM equations: independent mode product (8), sigmoid power (10), equivalent-time update (13; discussion 24–28). Rates are reciprocal years; shapes and stress histories in the example are hypothetical. Full CFM, dependent modes and multi-scale modelling are not implemented here.
 
 **Used by:** `methods/src/energy_methods/pv_lifetime.py`, `analysis/src/energy_analysis/pv_lifetime/study.py`, `examples/analysis/plot_pv_lifetime_50_years.py`, `docs/pv-lifetime.md`.
+
+### cabo_santiago_sal_2150
+
+Cabeolica SA / Advisian (2025). **Cabeolica expansion components1–3 Santiago and Sal NTS**. [Source](https://cabeolica.com/wp-content/uploads/2025/02/NTS_Simplified_ESIA_Sal_and_Santiago_Final_251601.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cabo_boa_2150
+
+Cabeolica SA / Advisian (2025). **Cabeolica expansion component5 Boa Vista NTS**. [Source](https://cabeolica.com/wp-content/uploads/2025/03/NTS_Simplified_ESIA_BESS_Boa_Vista.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cabo_vicente_2150
+
+Cabeolica SA / Advisian (2025). **Cabeolica expansion component4 São Vicente NTS**. [Source](https://cabeolica.com/wp-content/uploads/2025/03/NTS_Simplified_ESIA_BESS_Sao_Vicente.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gov_vicente_2150
+
+Governo de Cabo Verde (2026). **Inauguração do sistema de armazenamento em São Vicente**. [Source](https://www.governo.cv/primeiro-ministro-inaugura-sistema-de-armazenamento-de-energia-em-baterias-em-s-vicente/)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gov_boa_2150
+
+Governo de Cabo Verde (2026). **Inauguração do sistema de armazenamento na Boa Vista**. [Source](https://www.governo.cv/primeiro-ministro-na-boa-vista-inaugurado-o-sistema-de-armazenamento-de-energia-em-baterias/)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gov_sal_2150
+
+Governo de Cabo Verde (2026). **Inauguração no Sal da extensão da central e sistema de baterias**. [Source](https://www.governo.cv/primeiro-ministro-inaugura-no-sal-a-extensao-da-central-electrica-e-o-sistema-de-armazenamento-de-energia-em-baterias/)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gov_santiago_2150
+
+Governo de Cabo Verde (2025). **Governo em Ação Novembro2025 No29**. [Source](https://www.governo.cv/wp-content/uploads/2025/12/newsletter_novembro_2025_n29_suple_especial_oe2026.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bsl_s205_2150
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **ESS-GRID S205 Station Series**. [Source](https://bslbatt.com/wp-content/uploads/2025/05/ESS-GRID-S205-250508.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_s314_2150
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **ESS-GRID S314 Station Series**. [Source](https://bslbatt.com/wp-content/uploads/2025/10/ESS-GRID-S314-250508.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_cabinet_2150
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **ESS-GRID Cabinet Series C225/C241**. [Source](https://bslbatt.com/wp-content/uploads/ESS-GRID-Cabinet-Series-260915.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_rack_2150
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **B-LFP48 Series 100E/200E/300E Rack Batteries**. [Source](https://bslbatt.com/wp-content/uploads/2025/05/机架合集（黑）-250329.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_cabinet_web_2150
+
+BSLBATT (n.d.). **ESS-GRID Cabinet C200/C215/C225/C241 product page**. [Source](https://bslbatt.com/ess-grid-c200-c215-c225-c241-industry-ess-cabinet-series/)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_ci_warranty_v12_2150
+
+BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **BSLBATT ESS Limited Warranty Letter V1.2**. [Source](https://bslbatt.com/wp-content/uploads/ESS-GRID-system-Limited-warranty-V1.2.pdf)
+
+**Role:** data. Printed V1.2; no publication date stated. Conditional cabinet warranty, not installation eligibility or a universal ten-year system guarantee.
+
+**Used by:** `catalogues/bess_oem/sources.json`.

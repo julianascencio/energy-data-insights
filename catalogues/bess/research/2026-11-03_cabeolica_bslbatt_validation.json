@@ -1,0 +1,96 @@
+{
+  "validated_at": "2026-11-03T22:58:14.571608+00:00",
+  "base_commit": "6a84bebbcfe73b76f80aa782c8e212b28103fd29",
+  "timing": {
+    "started_at": "2026-11-03T21:49:15+00:00",
+    "validation_completed_at": "2026-11-03T22:58:14.571608+00:00",
+    "elapsed_wall_minutes": 68.99,
+    "execution_interruption": "Approximately 22:10\u201322:51 UTC; resumed the same unfinished worktree, not an additional research batch.",
+    "active_effort_estimate_minutes": 28.0,
+    "active_effort_basis": "Wall elapsed minus approximately 41 minutes without execution; estimate, not CPU time.",
+    "why_finished": "Selected four-island owner portfolio and four exact OEM tables exhausted. Equipment objective met; project yield constrained by Eskom terms and identity/status evidence. Remaining candidates persist in backlog."
+  },
+  "accepted": {
+    "new_projects": 4,
+    "new_equipment": 19,
+    "existing_project_enrichments": 0,
+    "existing_equipment_enrichments": 0,
+    "project_candidates": 12,
+    "equipment_candidates": 31,
+    "held_project_candidates": 8,
+    "held_equipment_candidates": 12,
+    "accepted_equipment_with_field_quarantines": 12,
+    "permanent_rejections": 0
+  },
+  "checks": {
+    "catalogue_validation": "Both canonical catalogues passed; source references and natural identities checked.",
+    "full_python_suite": {
+      "passed": 2124,
+      "seconds": 91.95,
+      "base": "6a84beb",
+      "result": "passed"
+    },
+    "focused_tests": {
+      "passed": 71,
+      "includes_new_parser_tests": 12,
+      "result": "passed"
+    },
+    "reference_tests": {
+      "passed": 29,
+      "result": "passed"
+    },
+    "ruff_lint": "passed",
+    "ruff_format": "passed",
+    "scoped_bess_typing": "passed",
+    "repository_hygiene": "passed",
+    "citations": "passed",
+    "viewer_dom": {
+      "passed": 15
+    },
+    "offline_examples": [
+      "BESS projects passed",
+      "BESS OEM catalogue passed"
+    ],
+    "snapshots": "Both catalogues rebuilt twice with matching manifests and Parquet checksums; see companion manifest. Zstandard, typed, outside Git.",
+    "preservation": "All 1985 baseline projects and 718 baseline equipment unchanged, including created_at; see companion preservation ledger.",
+    "package_builds": "Three wheels and three sdists passed",
+    "twine_strict": "passed all six distributions",
+    "installed_wheels": "All three packages and CLI checks passed",
+    "strict_sphinx": {
+      "result": "failed",
+      "warnings": 6,
+      "cause": "Title underline too short in generated plot_pv_lifetime_50_years.rst lines 118,157,236 (each twice). Corresponding example is byte-identical to main; outside this change."
+    },
+    "documentation_links": {
+      "result": "passed",
+      "html_pages": 518
+    },
+    "repository_typing": {
+      "result": "failed",
+      "diagnostics": 8,
+      "cause": "Unchanged analysis/src/energy_analysis/pv_lifetime/study.py on main; BESS scoped checks pass."
+    }
+  },
+  "earlier_failures_resolved": [
+    "Three initial reference/documentation assertions occurred while bibliography was being updated; corrected and complete suite rerun.",
+    "Main advanced during interruption; rebased, preserved all upstream bibliography references, regenerated citation outputs and reran full suite."
+  ],
+  "concurrency": {
+    "main_rechecked": "2026-11-03T22:59:00Z approximately; connected compare returned identical to validated base",
+    "open_prs": [
+      47,
+      48,
+      49,
+      119,
+      120
+    ],
+    "paths_reviewed": "Wind119 and DataCenter120 have no overlap with BESS changed paths/shared bibliography. Dependency PRs are workflow-only.",
+    "publication": "New scoped branch; no compatible open BESS PR. Leave OPEN, no merge or force push."
+  },
+  "limitations": [
+    "No original owner PDF bytes: direct403, public reader used; checksum null explicitly.",
+    "Eskom automated collection restriction: no new ingestion.",
+    "No inferred commercial operation or as-built equipment assignments.",
+    "Remote CI is separate from local checks."
+  ]
+}
