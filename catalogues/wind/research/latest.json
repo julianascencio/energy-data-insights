@@ -1,19 +1,19 @@
 {
-  "batch": "2026-11-03-1935",
-  "updated_at": "2026-11-03T19:35:00Z",
-  "baseline_main": "2fd691a7a3f2f55b0c24748c5a8299d844d27b85",
-  "branch": "research/wind-20261103-1935",
+  "batch": "2026-11-03-2035",
+  "updated_at": "2026-11-03T20:35:00Z",
+  "baseline_main": "2598b1431fc85aff95f589518e6cb8f5c4e572c1",
+  "branch": "research/wind-20261103-2035",
   "merged_wind_counts_at_baseline": {
-    "projects": 6227,
-    "equipment": 124,
+    "projects": 6279,
+    "equipment": 144,
     "curves": 2,
-    "turbines": 4176
+    "turbines": 4364
   },
   "branch_totals": {
-    "projects": 6279,
-    "non_group_projects": 6278,
-    "equipment": 144,
-    "turbines": 4364,
+    "projects": 6574,
+    "non_group_projects": 6573,
+    "equipment": 168,
+    "turbines": 5190,
     "curves": 2,
     "countries": 59,
     "manufacturers": [
@@ -31,9 +31,9 @@
     ]
   },
   "changes_against_main": {
-    "new_projects": 52,
-    "new_equipment": 20,
-    "new_turbines": 188,
+    "new_projects": 295,
+    "new_equipment": 24,
+    "new_turbines": 826,
     "substantively_enriched_existing_projects": 0,
     "substantively_enriched_existing_equipment": 0
   },
@@ -44,10 +44,10 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 1696,
+  "primary_evidence_project_records": 1991,
   "technology_counts": {
     "unknown": 4700,
-    "onshore": 1541,
+    "onshore": 1836,
     "offshore_unspecified": 32,
     "fixed_bottom_offshore": 2,
     "floating_offshore": 4
@@ -68,20 +68,21 @@
     "Sachsen-Anhalt878groups;Kronoberg44areas/326units;Bonfiglioli pp18–23 exact type codes",
     "Bayern823groups;Kalmar71areas24orphanunits;BMDindustrial/wind frame mapping unresolved",
     "Baden-Württemberg514groups;Gotland28areas3orphanunits;no inferred turbine compatibility; size6–7 tables completed in1935",
-    "Mecklenburg-Vorpommern722groups;Blekinge25areas/72units;ACU401size8 separate original manual and ACU401/410 identity review required"
+    "Mecklenburg-Vorpommern722groups;Blekinge25areas/72units;ACUx01/x10 aliases not inferred; R04_0 exact frame7/8 tables completed2035",
+    "Rheinland-Pfalz862groups;Skåne519areas/26orphanunits;6ACU610UL fields quarantined;spindle manual excluded by explicit reuse restriction"
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
-  "publication_base_main": "2fd691a7a3f2f55b0c24748c5a8299d844d27b85",
-  "iteration_base_head": "2fd691a7a3f2f55b0c24748c5a8299d844d27b85",
+  "publication_base_main": "2598b1431fc85aff95f589518e6cb8f5c4e572c1",
+  "iteration_base_head": "2598b1431fc85aff95f589518e6cb8f5c4e572c1",
   "changes_this_run": {
-    "new_projects": 52,
+    "new_projects": 295,
     "substantively_enriched_projects": 0,
-    "new_equipment": 20,
+    "new_equipment": 24,
     "substantively_enriched_equipment": 0,
-    "new_turbines": 188,
+    "new_turbines": 826,
     "new_curves": 0
   },
   "repd_partition": {
@@ -91,18 +92,19 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "Mecklenburg-Vorpommern and Blekinge; no new country",
-  "new_technology_coverage": "Onshore registry inventories; Active Cube series frequency inverters with phase/frequency-qualified output ratings",
+  "new_geography": "Rheinland-Pfalz and Skåne; no new country",
+  "new_technology_coverage": "Onshore registry inventories; explicitly tabulated ACUx10 voltage-series and frame configurations",
   "reviewed_this_run": {
-    "german_units": 2741,
-    "german_groups": 741,
-    "deferred_german_groups": 722,
-    "swedish_areas": 58,
-    "swedish_units": 158,
-    "held_swedish_areas": 25,
-    "orphan_units": 0,
-    "held_swedish_units": 72,
-    "equipment_added": 20
+    "german_units": 2464,
+    "german_groups": 889,
+    "deferred_german_groups": 862,
+    "swedish_areas": 787,
+    "swedish_units": 1962,
+    "held_swedish_areas": 519,
+    "orphan_units": 26,
+    "held_swedish_units": 1266,
+    "equipment_added": 24,
+    "quarantined_equipment_fields": 6
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -114,8 +116,8 @@
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
   },
-  "source_review": "2026-11-03-1935-source-review.json",
-  "decision_ledger": "2026-11-03-1935-decisions.jsonl",
-  "equipment_ledger": "2026-11-03-1935-equipment.jsonl",
-  "sweden_decision_ledger": "2026-11-03-1935-sweden-decisions.jsonl"
+  "source_review": "2026-11-03-2035-source-review.json",
+  "decision_ledger": "2026-11-03-2035-decisions.jsonl",
+  "equipment_ledger": "2026-11-03-2035-equipment.jsonl",
+  "sweden_decision_ledger": "2026-11-03-2035-sweden-decisions.jsonl"
 }

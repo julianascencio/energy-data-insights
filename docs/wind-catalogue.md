@@ -2,9 +2,9 @@
 
 The Wind catalogue connects identifiable projects, exact equipment configurations,
 individual turbines and numerical curves. The proposed continuation contains
-**6,279 projects, 144 equipment records, 4,364 linked turbines and two original
+**6,574 projects, 168 equipment records, 5,190 linked turbines and two original
 numerical curves**, across **59 countries and eleven equipment manufacturers**.
-Merged main at `2fd691a7` contains 6,227 projects, 124 equipment records, 4,176
+Merged main at `2598b143` contains 6,279 projects, 144 equipment records, 4,364
 turbines and two curves. These are catalogue counts, not a current operating census.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
@@ -448,3 +448,24 @@ current, including ACU 201-19 and -22 discrepancies. ACU 201-15's single/two-pha
 UL scope and conditional IP20 statements remain qualified. WIND R05_2 page 13
 supports series-level yaw-drive application; it does not identify an installed
 turbine interface. The gallery exposes those phase/frequency conditions.
+
+
+## Rheinland-Pfalz, Skåne and ACUx10 frames
+
+The 20:35 batch follows the merge of PR #106. Complete Rheinland-Pfalz and
+Skåne inventories add 295 projects and 826 turbines. All 10,789 preceding
+records and all six capacity totals remain unchanged. The 862 German name
+groups, 519 Swedish areas and 26 orphan turbines retain explicit holds.
+The Swedish partition includes prefix11 and confirms no returned rows there.
+
+Bonfiglioli R04_0 (`bonfiglioli_acu_r04_0`) pages24–25 provide 24 exact
+ACUx10 configurations: six frame7 and eighteen frame8 entries. Frame7/8
+ACU410-51/-53 identities remain distinct, with different dimensions, mains
+currents and peak limits. Frame7 ACU410-53 is liquid-cooled only. Neither
+mechanical options nor brake-chopper choices create artificial records.
+
+The six ACU610 voltage-row notes about600V-for-UL remain qualified observations;
+the approval row supplies no claim. Scalar approval stays unknown. The gallery
+shows frame/voltage/current boundaries. No ACUx01 replacement, turbine interface
+or independently validated performance is inferred. The separately discovered
+spindle application manual was excluded for its explicit reuse restriction.

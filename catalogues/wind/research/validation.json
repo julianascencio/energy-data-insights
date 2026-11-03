@@ -1,20 +1,22 @@
 {
-  "batch": "2026-11-03-1935",
+  "batch": "2026-11-03-2035",
   "local": {
-    "pytest": "1981 passed,1 optional cdsapi skip",
+    "environment": "Initial pytest/ty collection lacked newly merged xgboost; uv sync --locked --all-packages --group imagery --group docs --python3.13 resolved it; final checks below",
+    "pytest": "2075 passed,1 optional cdsapi skip",
     "viewer": "15 Node tests passed",
-    "catalogue": "10789 records validated by two builds",
-    "snapshots": "Two fresh builds byte-identical; four typed Parquet tables ZSTD verified; docs manifest equals final snapshot",
-    "preservation": "10529 preceding records byte-identical; all six capacity totals unchanged;52 new project scopes excluded",
-    "adapter": "44351 German total/2741 selected;58 Swedish areas158 units independently counted across10layers;240 project/turbine source records replay identical;20 MaStR tests in full suite",
-    "sphinx": "Strict build and467-page link/asset audit passed",
-    "example": "Offline gallery passed;ACU201/401 output current, frequency and input-phase limits exposed",
+    "catalogue": "11934 records validated by two builds",
+    "snapshots": "Two fresh builds byte-identical; four typed Parquet tables ZSTD verified; docs manifest equals validated snapshot",
+    "preservation": "10789 preceding records and prior source entries byte-identical; all six capacity totals unchanged;295 new project scopes excluded",
+    "adapter": "44351 German total/2464 selected;787 Swedish areas1962 units independently counted across10layers;1121 project/turbine source records replay identical;21 MaStR tests in full suite",
+    "sphinx": "Strict build and489-page link/asset audit passed",
+    "example": "Offline gallery passed; ACUx10 frame/voltage/current/cooling boundaries exposed",
     "ruff": "format/check passed",
-    "ty": "passed",
+    "ty": "passed after locked environment sync",
     "citations": "passed",
-    "repository_hygiene": "3151 candidate files passed",
+    "repository_hygiene": "3232 candidate files passed",
     "whitespace": "passed",
-    "packages": "All three workspace packages built as wheels and source distributions"
+    "packages": "All three workspace packages built as wheels and source distributions",
+    "cross_sector_identity": "No existing Bonfiglioli ACUx10 equipment candidates outside wind"
   },
   "not_executed": [
     "new browser smoke test"

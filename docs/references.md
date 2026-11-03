@@ -6431,3 +6431,11 @@ Kaaya, Ismail; Ascencio-Vásquez, Julián; Weiss, Karl-Anders; Topič, Marko (20
 **Role:** implemented. Verified from the user-supplied article PDF (SHA-256 dc16f0c30c75ac87e9755421985153173c2efd1c55d870ecc6734f37c528fb80). Table 2 reliability curves, Eqs. 1 and 3–17, Sections 2.5/3.4 preprocessing and Eqs. 19–20 metrics are implemented with explicit conventions. Table 5 omits A_N and C_N; the printed 273+delta-T term and incomplete rate-unit conventions are documented separately from the existing 2019 mapping model. Published-table checks and synthetic/scenario analyses are not reproduction or field validation of the original measurement study. Gamma is held fixed in wear-out fitting because only gamma/k is identifiable.
 
 **Used by:** `methods/src/energy_methods/pv_reliability.py`, `methods/src/energy_methods/degradation_uncertainty.py`, `methods/src/energy_methods/pv_stress_weather.py`, `methods/src/energy_methods/degradation_preprocessing.py`, `analysis/src/energy_analysis/degradation_uncertainty/study.py`, `docs/degradation-uncertainty.md`, `examples/analysis/plot_degradation_uncertainty.py`.
+
+### bonfiglioli_acu_r04_0
+
+Bonfiglioli (n.d.). **ACTIVE CUBE product catalogue**. [Source](https://www.bonfiglioli.com/_default_upload_bucket/VE_CAT_ACU_STD_ENG_R04_0.pdf)
+
+**Role:** data source. R04_0 pp12–14 nomenclature and pp24–25 complete ACUx10 frame7/8 rating tables. Publication date unknown; PDF metadata is not publication evidence. Mechanical options remain nested; ACUx01 not relabelled.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
