@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T20:06:43.470987+00:00",
+  "updated_at": "2026-11-03T21:04:17.782324+00:00",
   "ranking_file": "20261103T1800_top10_coverage.json",
   "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
-  "next_highest_value_source": "REPD Q2 2026 awaiting-construction crosswalk: Wales and the Midlands.",
+  "next_highest_value_source": "REPD awaiting-construction exact crosswalk: Eastern and South East England.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6367,6 +6367,48 @@
       "retry_condition": "Check revisions and independent evidence.",
       "next_action": "Resolve merged cell scope against exact SKU material.",
       "processed_cursor": "Four exact G suffix model columns; ambiguous merged values held"
+    },
+    {
+      "id": "repd_q2_awaiting_wales_midlands",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Q2 2026",
+      "licence_assessment": "OGL v3",
+      "access_assessment": "Public document; SHA-256 verified",
+      "estimated_useful_yield": 104,
+      "fields_offered": [
+        "authority",
+        "planning reference",
+        "planning dates"
+      ],
+      "last_attempt": "2026-11-03T21:04:17.782324+00:00",
+      "result": "Wales and East/West Midlands: 217 reviewed, 104 enriched, 113 held",
+      "retry_condition": "Check for revised source or new corroborating identity.",
+      "next_action": "Eastern and South East England exact crosswalk",
+      "processed_cursor": "Wales and East/West Midlands: 217 reviewed, 104 enriched, 113 held"
+    },
+    {
+      "id": "solis_gc3p_lv_2100",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.solisinverters.com/uploads/file/S6-GC3P%2815-20%29K-Global-Flyer-V3%2C8.pdf",
+      "version_or_date": "Global Flyer V3.8",
+      "licence_assessment": "Copyright retained; limited attributed facts",
+      "access_assessment": "Public document; SHA-256 verified",
+      "estimated_useful_yield": 2,
+      "fields_offered": [
+        "electrical",
+        "thermal",
+        "mass",
+        "dimensions",
+        "communications"
+      ],
+      "last_attempt": "2026-11-03T21:04:17.782324+00:00",
+      "result": "Both exact K03-LV-ND columns accepted",
+      "retry_condition": "Check for revised source or new corroborating identity.",
+      "next_action": "Review distinct K03-NV-ND product line",
+      "processed_cursor": "Both exact K03-LV-ND columns accepted"
     }
   ]
 }
