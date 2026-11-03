@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,785 project and plant records across
-37 countries**, supported by **245 registered sources**. It combines curated
+The BESS section contains **1,789 project and plant records across
+37 countries**, supported by **253 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -230,3 +230,5 @@ Latest: [Nordic portfolios, Samoa tender and Crown configurations](research/2026
 Latest: [Named Ingrid/Locus sites and exact Rolls two-volt cells](research/2026-11-03_ingrid_r2.md).
 
 Previous: [South African portfolios, Finnish owner evidence and Rolls AGM configurations](research/2026-11-03_south_africa_rolls.md).
+
+Latest research: [New Zealand reconciliation and exact Sinexcel PCS models](research/2026-11-03_nz_sinexcel.md).

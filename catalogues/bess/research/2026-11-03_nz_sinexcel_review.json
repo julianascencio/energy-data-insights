@@ -1,0 +1,572 @@
+{
+  "started_at": "2026-11-03T08:51:55+00:00",
+  "reviewed_at": "2026-11-03T09:11:34.905808+00:00",
+  "base_main": "47cf12e8d95e4da29a52a54e3235db41ecce0d08",
+  "previous_pr": {
+    "number": 94,
+    "state": "merged",
+    "merged_at": "2026-11-03T08:22:07Z"
+  },
+  "counts": {
+    "projects_new": 4,
+    "projects_enriched": 4,
+    "equipment_new": 11,
+    "equipment_enriched": 0,
+    "equipment_records_with_field_quarantines": 5,
+    "new_project_field_quarantines": 0,
+    "permanent_whole_record_rejections": 0,
+    "ea_pipeline_rows": 164,
+    "ea_battery_candidates": 9,
+    "ea_nonbattery_rows_excluded": 155,
+    "ea_existing_records_enriched": 3,
+    "ea_candidates_held": 6,
+    "nzce_named_portfolio_candidates": 3,
+    "nzce_accepted_optional_battery_proposals": 3,
+    "contact_new_phase": 1,
+    "contact_enriched_existing_phase": 1,
+    "ea_services_existing_records_enriched": 3,
+    "transpower_forward_battery_candidates_held": 41,
+    "transpower_unnamed_forward_candidates": 34,
+    "transpower_named_forward_candidates": 7,
+    "transpower_completed_battery_observations_held": 4,
+    "miga_portfolio_projects_reviewed": 23,
+    "miga_battery_candidates_held": 9,
+    "sinexcel_datasheets": 8,
+    "sinexcel_exact_candidates_accepted": 11,
+    "hubble_existing_configurations": 18
+  },
+  "new_countries": [],
+  "new_oems": [
+    "Sinexcel"
+  ],
+  "accepted": {
+    "bess": [
+      {
+        "id": "0201be38-04e2-59b0-bee0-ba7a39f7b038",
+        "name": "Glenbrook-Ohurua BESS",
+        "sources": [
+          "contact_1_20261103",
+          "ea_nz_batteries",
+          "ea_nz_fleet_20260702",
+          "nz_pipeline_20261103",
+          "nz_services_20261103",
+          "contact_news_20261103"
+        ],
+        "action": "enriched"
+      },
+      {
+        "id": "1ab43d69-1478-5768-a51a-62270c1dc218",
+        "name": "NZCE Dannevirke optional BESS",
+        "sources": [
+          "nzce_dannevirke_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "35b5ad2e-d8cd-5bb4-a28a-82f9f87f8070",
+        "name": "NZCE Darfield optional BESS",
+        "sources": [
+          "nzce_darfield_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "70b09f0a-0627-5d6d-83eb-85b67ad6ca5f",
+        "name": "NZCE Masterton optional BESS",
+        "sources": [
+          "nzce_masterton_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "86bfa48b-1670-52ae-a304-5b25e386cd1c",
+        "name": "Rotohiko BESS",
+        "sources": [
+          "ea_nz_batteries",
+          "ea_nz_fleet_20260702",
+          "nz_services_20261103"
+        ],
+        "action": "enriched"
+      },
+      {
+        "id": "9ef8f024-bdca-5ec2-949e-aca96f37998e",
+        "name": "Ruakākā BESS",
+        "sources": [
+          "ea_nz_batteries",
+          "ea_nz_fleet_20260702",
+          "nz_pipeline_20261103",
+          "nz_services_20261103"
+        ],
+        "action": "enriched"
+      },
+      {
+        "id": "b9996295-befd-5158-9c8c-b150296b76df",
+        "name": "Glenbrook Ohurua Battery 2",
+        "sources": [
+          "contact_2_20261103",
+          "contact_news_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "f7469722-7710-5de8-8be2-b005af67b204",
+        "name": "Huntly BESS Stage 1",
+        "sources": [
+          "genesis_fy27q1_20261022",
+          "genesis_huntly_fid_20260420",
+          "saft_huntly_20240919",
+          "nz_pipeline_20261103"
+        ],
+        "action": "enriched"
+      }
+    ],
+    "bess_oem": [
+      {
+        "id": "052dad89-90e8-5736-b875-0443a95bd627",
+        "name": "Sinexcel PWS1-215M-H-O",
+        "sources": [
+          "sinexcel_215m_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "265d5145-fb76-5453-bb84-a939f1ceaf74",
+        "name": "Sinexcel PWS2-30P-CN",
+        "sources": [
+          "sinexcel_30p_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "33076a59-9bb5-5660-abff-7cce19379748",
+        "name": "Sinexcel PWS1-630KTL",
+        "sources": [
+          "sinexcel_630_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "3cd56138-76df-5dda-81ca-e28e40739a3c",
+        "name": "Sinexcel PWS1-1375KTL-H",
+        "sources": [
+          "sinexcel_1250_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "453ba941-62d6-5ba0-98ee-aa534ca93116",
+        "name": "Sinexcel PWS1-1250KTL-H",
+        "sources": [
+          "sinexcel_1250_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "4960c2e2-7142-518a-9313-f45f04bdd4b7",
+        "name": "Sinexcel PWS1-500KTL",
+        "sources": [
+          "sinexcel_500_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "5b4a592a-4381-59d0-b1d5-7d91f991c568",
+        "name": "Sinexcel PWS1-1575KTL-H",
+        "sources": [
+          "sinexcel_1575_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "69f338c4-3535-5e5f-85f6-00438731fbb4",
+        "name": "Sinexcel PWS1-1725KTL-H",
+        "sources": [
+          "sinexcel_1575_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "a1792945-c2aa-5b04-bc33-111c79b39ade",
+        "name": "Sinexcel PWS1-125M",
+        "sources": [
+          "sinexcel_125m_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "be631fcc-57e1-5283-ae04-0e079f9dd522",
+        "name": "Sinexcel PWS1-1500KTL-H",
+        "sources": [
+          "sinexcel_1250_20261103"
+        ],
+        "action": "new"
+      },
+      {
+        "id": "dfd22082-7e14-567c-9248-e7f1fce2e814",
+        "name": "Sinexcel PWS1-100M",
+        "sources": [
+          "sinexcel_100m_20261103"
+        ],
+        "action": "new"
+      }
+    ]
+  },
+  "preservation": {
+    "bess": {
+      "before": 1785,
+      "after": 1789,
+      "changed": [
+        "Glenbrook-Ohurua BESS",
+        "Rotohiko BESS",
+        "Ruakākā BESS",
+        "Huntly BESS Stage 1"
+      ],
+      "all_old_ids_and_created_at_preserved": true,
+      "prior_ratings_and_nested_facts_preserved": true,
+      "reviewed_scalar_corrections": [
+        "status_as_of/status_date_basis for three dated EA records"
+      ]
+    },
+    "bess_oem": {
+      "before": 601,
+      "after": 612,
+      "changed": [],
+      "all_old_ids_and_created_at_preserved": true,
+      "prior_ratings_and_nested_facts_preserved": true,
+      "reviewed_scalar_corrections": []
+    }
+  },
+  "identity_decisions": [
+    "Three optional NZCE hybrid batteries are named physical sites; their up-to MW and MWh ranges remain extensions, not fixed nameplates. Grid infrastructure and development milestones describe the hybrid site. No PV power or annual generation converted to battery ratings.",
+    "Glenbrook Battery 2 is explicitly adjacent to Battery 1; keeps separate stage identity, with reciprocal record links and no aggregate 300 MW row. Tesla Megapack 2 XL assignments are explicit; not linked to an unverified voltage/hardware equipment variant.",
+    "EA CSV Glenbrook/Contact, Huntly Stage 1/Genesis and Ruakaka/Meridian match existing reviewed identities. Historical planning rows never replace later operating status.",
+    "WEL Huntly 35 MW is not automatically matched to Rotohiko; developer/physical-site evidence still required.",
+    "Huntly Stage 2+ 300 MW is an aggregate planning scope, not the existing 100 MW Stage 2; no import or arithmetic splitting.",
+    "Meridian Manawatu and NZCE Bunnythorpe are not merged by region/name proximity. NZCE Glenbrook is not merged with Contact Glenbrook.",
+    "Stratford 2024 named 100 MW proposal is held against a later owner reference to 500 MW of consented batteries; scope requires reconciliation.",
+    "Three EA-backed records had 2026-11-01 access dates wrongly used as status dates. Current page visibly dates the article 2026-05-19; corrections retain old source registration and dated review history, without asserting fresh physical operation.",
+    "Sinexcel 11 exact printed model headers absent in prior catalogue; optional DC branch arrangements do not create more models. AC kVA and maximum DC kW remain distinct. Maximum PCS conversion efficiency is never round-trip efficiency.",
+    "Sinexcel 3000m is a derating threshold, not an absolute altitude ceiling; no canonical altitude_max_m populated. No warranty, chemistry or energy inferred."
+  ],
+  "terms_decisions": {
+    "EA": "CC BY4.0 checked at copyright-disclaimer-transparency. September2024 file is Authority-compiled public-domain information, rather than third-party consultation responses. Notice and modification statement added.",
+    "Sinexcel": "Official download listing and footer reviewed; copyright retained, no open bulk licence. Eight exact sheets individually reviewed for factual technical observations; no source prose/PDF redistribution.",
+    "NZCE_Contact": "Public named product/project pages and footer/legal index checked; copyright retained, no open bulk licence. Bounded factual research, no full-page redistribution. Contact terms index lists customer-service terms; no blanket reuse permission inferred.",
+    "Transpower": "Website terms intellectual-property clause requires consent except as allowed by law. No explicit open licence found in workbook. Entire 41-row forward extraction held from canonical data, including7named; adapter stages outsideGit only. Patai terms are not substituted for main-site terms.",
+    "AMEA": "Legal disclaimer restricts reuse without written consent; no canonical additions from owner portfolio.",
+    "EBRD_IFC": "Terms restrict use to personal/noncommercial with redistribution/derivative limits; no new canonical extraction. Existing historical sources left intact; backlog asks for alternative evidence/licence review.",
+    "MIGA": "Downloaded portfolio is readable though web-reader403; no open licence established in examined page. Nine battery candidates held; company portfolio mixes phase/stage scopes and possible MW/MWh error. No full source redistributed.",
+    "CEEC": "Explicit no automated extraction/reproduction term observed; stopped and held. No canonical facts from CEEC."
+  },
+  "bess_totals": {
+    "records": 1789,
+    "sources": 253,
+    "countries": 37
+  },
+  "bess_oem_totals": {
+    "records": 612,
+    "sources": 284,
+    "suppliers": 43
+  },
+  "ea_pipeline_decisions": [
+    {
+      "source_row": 18,
+      "developer": "Contact Energy",
+      "project": "Glenbrook Battery",
+      "power_mw": 100.0,
+      "earliest_commissioning_year": 2026,
+      "planning_status": "Committed",
+      "grid_connected_flag": "Y",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "enriched_existing",
+      "canonical_id": "0201be38-04e2-59b0-bee0-ba7a39f7b038",
+      "reason": "Exact owner/name/phase reviewed; historical observation only"
+    },
+    {
+      "source_row": 20,
+      "developer": "Contact Energy",
+      "project": "Stratford Battery",
+      "power_mw": 100.0,
+      "earliest_commissioning_year": 2028,
+      "planning_status": "Actively pursued",
+      "grid_connected_flag": "Y",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "held",
+      "canonical_id": null,
+      "reason": "Later 500 MW site portfolio not reconciled with historical100MW proposal"
+    },
+    {
+      "source_row": 48,
+      "developer": "Genesis Energy",
+      "project": "Huntly battery (Stage 1)",
+      "power_mw": 100.0,
+      "earliest_commissioning_year": 2026,
+      "planning_status": "Other",
+      "grid_connected_flag": "Y",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "enriched_existing",
+      "canonical_id": "f7469722-7710-5de8-8be2-b005af67b204",
+      "reason": "Exact owner/name/phase reviewed; historical observation only"
+    },
+    {
+      "source_row": 50,
+      "developer": "Genesis Energy",
+      "project": "Huntly battery (Stage 2+)",
+      "power_mw": 300.0,
+      "earliest_commissioning_year": 2029,
+      "planning_status": "Other",
+      "grid_connected_flag": "Y",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "held",
+      "canonical_id": null,
+      "reason": "Stage2+ aggregate overlaps existing Stage2; no arithmetic split"
+    },
+    {
+      "source_row": 116,
+      "developer": "Meridian Energy",
+      "project": "Ruakaka battery",
+      "power_mw": 100.0,
+      "earliest_commissioning_year": 2024,
+      "planning_status": "Committed",
+      "grid_connected_flag": "Y",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "enriched_existing",
+      "canonical_id": "9ef8f024-bdca-5ec2-949e-aca96f37998e",
+      "reason": "Exact owner/name/phase reviewed; historical observation only"
+    },
+    {
+      "source_row": 117,
+      "developer": "Meridian Energy",
+      "project": "Manawatū battery",
+      "power_mw": 100.0,
+      "earliest_commissioning_year": 2027,
+      "planning_status": "Actively pursued",
+      "grid_connected_flag": "Y",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "held",
+      "canonical_id": null,
+      "reason": "Manawatu versus Bunnythorpe physical identity needs explicit crosswalk"
+    },
+    {
+      "source_row": 136,
+      "developer": "NZ Clean Energy",
+      "project": "Bunnythorpe BESS",
+      "power_mw": 250.0,
+      "earliest_commissioning_year": 2028,
+      "planning_status": "Other",
+      "grid_connected_flag": "Y",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "held",
+      "canonical_id": null,
+      "reason": "Current NZCE named portfolio does not list this proposal; exact site continuity unresolved"
+    },
+    {
+      "source_row": 137,
+      "developer": "NZ Clean Energy",
+      "project": "Glenbrook BESS",
+      "power_mw": 350.0,
+      "earliest_commissioning_year": 2028,
+      "planning_status": "Other",
+      "grid_connected_flag": "Y",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "held",
+      "canonical_id": null,
+      "reason": "Do not merge with Contact; current individual site/ownership scope unresolved"
+    },
+    {
+      "source_row": 163,
+      "developer": "WEL Networks",
+      "project": "Huntly battery",
+      "power_mw": 35.0,
+      "earliest_commissioning_year": 2023,
+      "planning_status": "Committed",
+      "grid_connected_flag": "N",
+      "island": "North Island",
+      "snapshot_date": "2024-09-12",
+      "source_sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "action": "held",
+      "canonical_id": null,
+      "reason": "WEL Huntly versus Rotohiko identity requires explicit developer/site crosswalk"
+    }
+  ],
+  "transpower_result": {
+    "forward_rows_staged_outside_git": 41,
+    "all_canonical_imports_held": true,
+    "reviewed_named_partition": "Forward Pipeline rows7,13,16,18,20,22,25",
+    "completed_review": "Four BESS rows; not ingested",
+    "retry": "Establish compatible reuse permission or independently corroborate named projects using owner/permit records; retain anonymous rows as unresolved, never invent names."
+  },
+  "downloads": [
+    {
+      "key": "1250",
+      "url": "https://www.sinexcel.com/uploads/soft/20231102/1698895813.pdf",
+      "sha256": "06bd3dac9e635444ec60b928a1ca1e13526613d5ca64c08b0ab46e8396ea4ff6",
+      "bytes": 395157,
+      "retrieved_at": "2026-11-03T08:56:45.032883+00:00"
+    },
+    {
+      "key": "1575",
+      "url": "https://www.sinexcel.com/uploads/soft/20231102/1698893815.pdf",
+      "sha256": "afefcfad999712604f5e1f11bd44c4ad8a1c4cf4e7f23b47a0c939091a3c67d4",
+      "bytes": 394848,
+      "retrieved_at": "2026-11-03T08:56:55.736452+00:00"
+    },
+    {
+      "key": "125M",
+      "url": "https://www.sinexcel.com/uploads/soft/20250815/1755250494.pdf",
+      "sha256": "c96b8f5c1c12a6195367e50a36874a24c1565c3f81e5d32bad57e33e13df8112",
+      "bytes": 179752,
+      "retrieved_at": "2026-11-03T08:57:02.000970+00:00"
+    },
+    {
+      "key": "100M",
+      "url": "https://www.sinexcel.com/uploads/soft/20250815/1755250326.pdf",
+      "sha256": "5e6820c8f815b8e7b66ebe66fe0bb0721fdc434292379837a9de6d98d0c2745f",
+      "bytes": 440731,
+      "retrieved_at": "2026-11-03T08:57:08.913214+00:00"
+    },
+    {
+      "key": "500",
+      "url": "https://www.sinexcel.com/uploads/soft/20250815/1755246686.pdf",
+      "sha256": "f074d1302f726bd261474d4e085149d349bc62c8c57209bfd5889ab620b98266",
+      "bytes": 589477,
+      "retrieved_at": "2026-11-03T08:57:18.542052+00:00"
+    },
+    {
+      "key": "630",
+      "url": "https://www.sinexcel.com/uploads/soft/20250815/1755247013.pdf",
+      "sha256": "e5392935686d779580956e62512689d229a7b5cddb43f62cfa5cabcb107e85fc",
+      "bytes": 889984,
+      "retrieved_at": "2026-11-03T08:57:29.703173+00:00"
+    },
+    {
+      "key": "30P",
+      "url": "https://www.sinexcel.com/uploads/soft/20231102/1698895619.pdf",
+      "sha256": "8980439a98afe38ab73ed91f5de9421648e18dea64b0539bbbf5d39ad1b6ccda",
+      "bytes": 368240,
+      "retrieved_at": "2026-11-03T08:57:39.246674+00:00"
+    },
+    {
+      "key": "215M",
+      "url": "https://www.sinexcel.com/uploads/soft/20250512/1747041466.pdf",
+      "sha256": "8d7a9d99039d74250e29619d7d82d349d74b11b136aad78d8fe8ba959128e9a1",
+      "bytes": 322844,
+      "retrieved_at": "2026-11-03T08:57:46.261275+00:00"
+    },
+    {
+      "key": "miga",
+      "url": "https://www.miga.org/project/amea-power-portfolio-0",
+      "sha256": "624f439940ed0330c4b75262ee415742fece2aa72f2ee728a0721110a9590926",
+      "bytes": 149130,
+      "retrieved_at": "2026-11-03T08:57:51.472514+00:00"
+    },
+    {
+      "key": "ifc",
+      "url": "https://disclosures.ifc.org/project-detail/ESRS/50309/abydos-solar-ii",
+      "sha256": "df89896adb49c85395a08b9a588558ad6a0e3a94919d77742ed1048bbe00c299",
+      "bytes": 142959,
+      "retrieved_at": "2026-11-03T08:57:54.823512+00:00"
+    },
+    {
+      "key": "nz_pipeline",
+      "url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Proposed/20240912%20Generation%20investment%20pipeline.csv",
+      "sha256": "8f2149286103160d6e5b1751df6e3b261d942d9ae0f9e17365443f34f6afecfa",
+      "bytes": 16865,
+      "retrieved_at": "2026-11-03T08:57:41.626917+00:00"
+    },
+    {
+      "key": "nz_license",
+      "url": "https://www.ea.govt.nz/copyright-disclaimer-transparency/",
+      "sha256": "cb50addb0486e308db470ab9e8e430b4c07b016105e098cdb1ff45620fe4e635",
+      "bytes": 202492,
+      "retrieved_at": "2026-11-03T08:57:45.012196+00:00"
+    },
+    {
+      "key": "nz_services",
+      "url": "https://www.ea.govt.nz/news/eye-on-electricity/eye-on-electricity-battery-performance-in-new-zealand/",
+      "sha256": "95e18047eb1bcffa736cb953d654bc878b81dbc5c145ee66053da0d7d9c8248f",
+      "bytes": 203248,
+      "retrieved_at": "2026-11-03T08:57:48.011953+00:00"
+    },
+    {
+      "key": "transpower",
+      "url": "https://static.transpower.co.nz/public/uncontrolled_docs/Generation%20and%20energy%20storage%20connection%20pipeline.xlsx?VersionId=yAXo39NSX9UT.dZTzfrBlZXhEdjS2NKh",
+      "sha256": "47aa075c155e395fd879dad4f019f5e6123bb728f4caa6c2ccd88e23349e5779",
+      "bytes": 756073,
+      "retrieved_at": "2026-11-03T08:57:51.472163+00:00"
+    },
+    {
+      "key": "nzce_masterton",
+      "url": "https://www.nzcleanenergy.nz/projects/masterton-solar-energy-storage",
+      "sha256": "a2819f913937d2dd1296362ea07e32b6db354f612312ee087212beac38693fb6",
+      "bytes": 716209,
+      "retrieved_at": "2026-11-03T09:01:18.608805+00:00"
+    },
+    {
+      "key": "nzce_darfield",
+      "url": "https://www.nzcleanenergy.nz/projects/darfield-solar-energy-storage",
+      "sha256": "eada89554fe943f02445a14a0ab6637392f0e2d2e98eb3496b72785bab778832",
+      "bytes": 303381,
+      "retrieved_at": "2026-11-03T09:01:21.455409+00:00"
+    },
+    {
+      "key": "nzce_dannevirke",
+      "url": "https://www.nzcleanenergy.nz/projects/dannevirke-solar-energy-storage",
+      "sha256": "cf9043e16f59c0a2aa5b769919a92fbc255a8092283a14f3b020e695eaaab12d",
+      "bytes": 264183,
+      "retrieved_at": "2026-11-03T09:01:25.011912+00:00"
+    },
+    {
+      "key": "contact_1",
+      "url": "https://contact.co.nz/about-us/our-story/our-generation-and-power-sites/battery/glenbrook-ohurua-battery",
+      "sha256": "5ef8a43ba1135905d71ba818b397154b67be544c88bce050c7353e8c171098cb",
+      "bytes": 60744,
+      "retrieved_at": "2026-11-03T09:01:28.427172+00:00"
+    },
+    {
+      "key": "contact_2",
+      "url": "https://contact.co.nz/about-us/sustainability/our-projects/battery/glenbrook-ohurua-battery-2",
+      "sha256": "43a413eaa412e8c4cd0cbb4d512ce01efcfdfbb1dbf695fbb2329edae89cd6cd",
+      "bytes": 61187,
+      "retrieved_at": "2026-11-03T09:01:33.423275+00:00"
+    },
+    {
+      "key": "contact_news",
+      "url": "https://contact.co.nz/investor-centre/news/2026/glenbrook-ohurua-battery",
+      "sha256": "33fc1d9b68e0956cec92989bad847dcc859ed3fb7750832dcdae24c7e3ae2d23",
+      "bytes": 55025,
+      "retrieved_at": "2026-11-03T09:01:37.239388+00:00"
+    },
+    {
+      "key": "contact_stratford",
+      "url": "https://contact.co.nz/about-us/sustainability/our-projects/data-centre/potential-data-centre",
+      "sha256": "827b8e2601bc9c803b2c0f0862df38b8c18f2a0bc0ccfa4ab6aca00e3a52ba08",
+      "bytes": 62847,
+      "retrieved_at": "2026-11-03T09:01:40.731456+00:00"
+    }
+  ],
+  "source_batch_evidence": "See counts, complete EA ledger, downloads, accepted list and companion research log; observations overlap and must not be summed as unique projects.",
+  "currency_review": "Contact announcement prints $; retain symbol and amount, leave ISO currency and price year null.",
+  "publication_base_main": "a7ae7d6524f0244a2ec5a20ab5c67594ac4b7484",
+  "concurrency": {
+    "wind_97": "merged during validation; incorporated by rebase",
+    "pv_98": "merged during validation; incorporated by rebase",
+    "overlapping_changed_paths": []
+  }
+}

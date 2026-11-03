@@ -6167,3 +6167,131 @@ Ingrid Capacity (2026). **Vaggeryd and Horsaryd development**. [Source](https://
 **Role:** data. Individual ratings; legally effective permits and planned dates paragraph
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### sinexcel_1250_20261103
+
+Shenzhen Sinexcel Electric Co., Ltd. (2026). **PWS1-1250KTL-H / PWS1-1375KTL-H / PWS1-1500KTL-H Chinese PCS specification**. [Source](https://www.sinexcel.com/uploads/soft/20231102/1698895813.pdf)
+
+**Role:** data. PDF page 2 产品参数 exact model columns; page 1 operating features; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sinexcel_1575_20261103
+
+Shenzhen Sinexcel Electric Co., Ltd. (2026). **PWS1-1575KTL-H / PWS1-1725KTL-H Chinese PCS specification**. [Source](https://www.sinexcel.com/uploads/soft/20231102/1698893815.pdf)
+
+**Role:** data. PDF page 2 产品参数 exact model columns; page 1 operating features; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sinexcel_100m_20261103
+
+Shenzhen Sinexcel Electric Co., Ltd. (2026). **PWS1-100M Chinese PCS specification**. [Source](https://www.sinexcel.com/uploads/soft/20250815/1755250326.pdf)
+
+**Role:** data. PDF page 2 产品参数 exact model columns; page 1 operating features; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sinexcel_125m_20261103
+
+Shenzhen Sinexcel Electric Co., Ltd. (2026). **PWS1-125M Chinese PCS specification**. [Source](https://www.sinexcel.com/uploads/soft/20250815/1755250494.pdf)
+
+**Role:** data. PDF page 2 产品参数 exact model columns; page 1 operating features; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sinexcel_500_20261103
+
+Shenzhen Sinexcel Electric Co., Ltd. (2026). **PWS1-500KTL Chinese PCS specification**. [Source](https://www.sinexcel.com/uploads/soft/20250815/1755246686.pdf)
+
+**Role:** data. PDF page 2 产品参数 exact model columns; page 1 operating features; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sinexcel_630_20261103
+
+Shenzhen Sinexcel Electric Co., Ltd. (2026). **PWS1-630KTL Chinese PCS specification**. [Source](https://www.sinexcel.com/uploads/soft/20250815/1755247013.pdf)
+
+**Role:** data. PDF page 2 产品参数 exact model columns; page 1 operating features; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sinexcel_30p_20261103
+
+Shenzhen Sinexcel Electric Co., Ltd. (2026). **PWS2-30P-CN Chinese PCS specification**. [Source](https://www.sinexcel.com/uploads/soft/20231102/1698895619.pdf)
+
+**Role:** data. PDF page 2 产品参数 exact model columns; page 1 operating features; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sinexcel_215m_20261103
+
+Shenzhen Sinexcel Electric Co., Ltd. (2026). **PWS1-215M-H-O Chinese PCS specification**. [Source](https://www.sinexcel.com/uploads/soft/20250512/1747041466.pdf)
+
+**Role:** data. PDF page 2 产品参数 exact model columns; page 1 operating features; undated: year is retrieval year
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### nz_pipeline_20261103
+
+Electricity Authority New Zealand (2024). **Generation investment pipeline, September 2024**. [Source](https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Proposed/20240912%20Generation%20investment%20pipeline.csv)
+
+**Role:** data. CSV rows 18, 48 and 116; explicit chemical battery classification; historical planning observations only
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nz_services_20261103
+
+Electricity Authority New Zealand (2026). **Battery performance in New Zealand**. [Source](https://www.ea.govt.nz/news/eye-on-electricity/eye-on-electricity-battery-performance-in-new-zealand/)
+
+**Role:** data. 19 May 2026 header; energy versus instantaneous reserve dispatch through 28 April 2026
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nzce_masterton_20261103
+
+NZ Clean Energy (2026). **Masterton Solar & Energy Storage Project**. [Source](https://www.nzcleanenergy.nz/projects/masterton-solar-energy-storage)
+
+**Role:** data. Project information, location/grid and current status sections; undated: year is retrieval year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nzce_darfield_20261103
+
+NZ Clean Energy (2026). **Darfield Solar & Energy Storage Project**. [Source](https://www.nzcleanenergy.nz/projects/darfield-solar-energy-storage)
+
+**Role:** data. Project information, location/grid and current status sections; undated: year is retrieval year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### nzce_dannevirke_20261103
+
+NZ Clean Energy (2026). **Dannevirke Solar & Energy Storage Project**. [Source](https://www.nzcleanenergy.nz/projects/dannevirke-solar-energy-storage)
+
+**Role:** data. Project information, location/grid and current status sections; undated: year is retrieval year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### contact_1_20261103
+
+Contact Energy (2026). **Glenbrook Ohurua Battery 1**. [Source](https://contact.co.nz/about-us/our-story/our-generation-and-power-sites/battery/glenbrook-ohurua-battery)
+
+**Role:** data. Commissioned, operating narrative and partners sections; undated: year is retrieval year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### contact_2_20261103
+
+Contact Energy (2026). **Glenbrook Ohurua Battery 2**. [Source](https://contact.co.nz/about-us/sustainability/our-projects/battery/glenbrook-ohurua-battery-2)
+
+**Role:** data. Status, capacity, technology and grid connection table; separate adjacent Battery 1; undated: year is retrieval year
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### contact_news_20261103
+
+Contact Energy (2026). **Glenbrook Ohurua Battery opening**. [Source](https://contact.co.nz/investor-centre/news/2026/glenbrook-ohurua-battery)
+
+**Role:** data. 21 May 2026 announcement: separate Battery 1 and Battery 2 investment and equipment
+
+**Used by:** `catalogues/bess/sources.json`.
