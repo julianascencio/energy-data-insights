@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T11:02:16.754212+00:00",
-  "ranking_file": "20261103T1000_top10_coverage.json",
-  "selection_note": "CER NSW/VIC year-to-date approval screen and three Deye engineering tables.",
-  "next_highest_value_source": "Crosswalk CER Tabbita SRPYNSJ3, Midkin SRPYNSG9 and Glen Innes SRPYNSK5 to named NSW consent or owner asset documents; require a separate plant boundary before accepting.",
+  "updated_at": "2026-11-03T11:56:51.504497+00:00",
+  "ranking_file": "20261103T1200_top10_coverage.json",
+  "selection_note": "CleanPeak named portfolio cards; CER and NSW boundary review; SF7 revision check.",
+  "next_highest_value_source": "Resolve the CleanPeak Leeton/Fivebough, Mulwala and Nyngan homonyms using project boundaries and planning IDs; confirm Tabbita and Midkin CER records with individual site plans.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5893,6 +5893,29 @@
       "processed_partition": "NSW and VIC Solar rows, complete CSV cohort",
       "retry_condition": "Independent exact site and photovoltaic scope evidence",
       "next_action": "Crosswalk CER Tabbita SRPYNSJ3, Midkin SRPYNSG9 and Glen Innes SRPYNSK5 to named NSW consent or owner asset documents; require a separate plant boundary before accepting."
+    },
+    {
+      "id": "cleanpeak_portfolio_20261103T1200",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cleanpeakenergy.com.au/solar-generation/",
+      "version_or_date": "Undated live portfolio with 2026 project observations",
+      "licence_assessment": "Limited normalized factual extraction with attribution; no bulk republication grant asserted",
+      "access_assessment": "Public HTML retrieved; checksum pinned",
+      "estimated_useful_yield": 36,
+      "fields_offered": [
+        "named site",
+        "region",
+        "MW with unspecified basis",
+        "panel count",
+        "first generation month",
+        "portfolio owner label"
+      ],
+      "last_attempt": "2026-11-03T11:56:51.504497+00:00",
+      "result": "34 new; 2 enriched; 49 distinct cards held; two repeated names also withheld",
+      "processed_partition": "Complete portfolio inventory; selected named sites with first generation, unambiguous units and no known canonical overlap",
+      "retry_condition": "Independent exact project/host scope or revised card",
+      "next_action": "Resolve the CleanPeak Leeton/Fivebough, Mulwala and Nyngan homonyms using project boundaries and planning IDs; confirm Tabbita and Midkin CER records with individual site plans."
     }
   ]
 }
