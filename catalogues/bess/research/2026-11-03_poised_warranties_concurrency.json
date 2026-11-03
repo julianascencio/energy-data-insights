@@ -1,0 +1,98 @@
+{
+  "checked_at": "2026-11-03T20:59:31Z",
+  "main": "2598b1431fc85aff95f589518e6cb8f5c4e572c1",
+  "prior_pr": {
+    "number": 108,
+    "merged": true
+  },
+  "open_prs": [
+    {
+      "number": 112,
+      "title": "[Data Center Database] Add Toshiba current UPS inventory",
+      "head": "3556f1a78c426d43fcc0ea5b303f74c05041e86b"
+    },
+    {
+      "number": 111,
+      "title": "[Wind Database] Add 295 projects, 826 turbines and 24 exact ACUx10 configurations",
+      "head": "d1b2c1aeab86f593748abfbaabc25d06801f73a2"
+    },
+    {
+      "number": 49,
+      "title": "Bump actions/upload-pages-artifact from 4.0.0 to 5.0.0",
+      "head": "c2f94e0af68f13ee5f19ad9e9f716e5a5daebcd3"
+    },
+    {
+      "number": 48,
+      "title": "Bump actions/configure-pages from 5.0.0 to 6.0.0",
+      "head": "9452b5a607a48308493f82b40bcad36000a1ff08"
+    },
+    {
+      "number": 47,
+      "title": "Bump astral-sh/setup-uv from 10.3.2 to 10.3.3",
+      "head": "1e970297c47276a53ab4e4937346ec9e36165a72"
+    }
+  ],
+  "wind_paths": [
+    "CITATION.cff",
+    "catalogues/wind/README.md",
+    "catalogues/wind/records/equipment/bonfiglioli-20261103-2035.jsonl",
+    "catalogues/wind/records/projects/mastr-20261103-2035-00.jsonl",
+    "catalogues/wind/records/projects/vbk-20261103-2035-00.jsonl",
+    "catalogues/wind/records/projects/vbk-20261103-2035-01.jsonl",
+    "catalogues/wind/records/projects/vbk-20261103-2035-02.jsonl",
+    "catalogues/wind/records/projects/vbk-20261103-2035-03.jsonl",
+    "catalogues/wind/records/projects/vbk-20261103-2035-04.jsonl",
+    "catalogues/wind/records/projects/vbk-20261103-2035-05.jsonl",
+    "catalogues/wind/records/turbines/mastr-20261103-2035-00.jsonl",
+    "catalogues/wind/records/turbines/mastr-20261103-2035-01.jsonl",
+    "catalogues/wind/records/turbines/mastr-20261103-2035-02.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-00.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-01.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-02.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-03.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-04.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-05.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-06.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-07.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-08.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-09.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-10.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-11.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-12.jsonl",
+    "catalogues/wind/records/turbines/vbk-20261103-2035-13.jsonl",
+    "catalogues/wind/research/2026-11-03-2035-decisions.jsonl",
+    "catalogues/wind/research/2026-11-03-2035-equipment.jsonl",
+    "catalogues/wind/research/2026-11-03-2035-source-review.json",
+    "catalogues/wind/research/2026-11-03-2035-sweden-decisions.jsonl",
+    "catalogues/wind/research/backlog.json",
+    "catalogues/wind/research/coverage-manifest.json",
+    "catalogues/wind/research/latest.json",
+    "catalogues/wind/research/preservation.json",
+    "catalogues/wind/research/validation.json",
+    "catalogues/wind/sources.json",
+    "data-retrieval/src/energy_data_retrieval/wind_catalogue/mastr.py",
+    "data-retrieval/tests/test_wind_mastr.py",
+    "docs/references.md",
+    "docs/wind-catalogue.md",
+    "examples/database/plot_wind_catalogue.py",
+    "methods/src/energy_methods/references.json",
+    "references.bib"
+  ],
+  "data_center_paths": [
+    "catalogues/data_centers/README.md",
+    "catalogues/data_centers/records/equipment/2026-11-03-toshiba-ups.jsonl",
+    "catalogues/data_centers/research/2026-11-03-coverage.json",
+    "catalogues/data_centers/research/2026-11-03-decisions.jsonl",
+    "catalogues/data_centers/research/2026-11-03-report.md",
+    "catalogues/data_centers/research/2026-11-03-source-review.json",
+    "catalogues/data_centers/research/2026-11-03T2027-validation.json",
+    "catalogues/data_centers/research/backlog.json",
+    "catalogues/data_centers/sources.json",
+    "data-retrieval/src/energy_data_retrieval/data_center_catalogue/inventories.py",
+    "data-retrieval/tests/fixtures/data_centers/ups-rating-matrix.csv",
+    "data-retrieval/tests/test_data_center_inventories.py",
+    "docs/data-center-catalogue.md",
+    "scripts/build_data_center_toshiba_ups_batch.py"
+  ],
+  "decision": "No open BESS PR; new isolated branch. Wind111 shared bibliography overlap: queue three references; no shared files edited. DataCenter112 does not overlap BESS writes."
+}
