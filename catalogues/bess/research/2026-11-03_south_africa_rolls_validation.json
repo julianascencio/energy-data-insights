@@ -1,0 +1,52 @@
+{
+  "validated_at": "2026-11-03T07:11:16.007161+00:00",
+  "started_at": "2026-11-03T06:46:00+00:00",
+  "elapsed_minutes_through_validated_commit_preparation": 25.3,
+  "measurement_boundary": "Research, implementation and local validation; subsequent GitHub publication excluded from this precommit measurement",
+  "full_python": {
+    "passed": 1764,
+    "skipped": 1,
+    "skip_reason": "Optional cdsapi unavailable",
+    "timing": "Full suite after adapter implementation; final data/reference additions covered by focused reruns"
+  },
+  "final_focused_catalogue_parser_tests": 38,
+  "final_reference_analysis_tests": 28,
+  "viewer_node_tests": 11,
+  "catalogues": {
+    "projects": 1777,
+    "equipment": 591,
+    "validation": "passed"
+  },
+  "typed_zstandard_parquet": "Two independent final builds per catalogue identical; manifests committed, binaries outside Git",
+  "preservation": "All prior records, facts and created_at retained; only Kenhardt substantively enriched; all prior bibliography objects unchanged",
+  "exact_model_reconciliation": "All 24 accepted AGM models checked against staged source measurements, revisions and rate conflicts",
+  "offline_examples": "Both passed on final data",
+  "ruff": "passed",
+  "ruff_format": "passed; 642 files",
+  "ty": "passed",
+  "repository_hygiene": "passed; 2604 candidates",
+  "citations": "passed",
+  "distributions_built": 6,
+  "twine_strict": "all six passed",
+  "installed_wheel_smoke": "all three passed on final rebuilt packages outside workspace",
+  "strict_sphinx": "passed on final data and bibliography",
+  "documentation_links_html_pages": 424,
+  "git_diff_check": "passed",
+  "remote_ci": "Not claimed for new commit; preceding target head had successful workflows",
+  "initial_failures_resolved": [
+    "Typed staging rate-list annotation fixed and ty rerun successfully",
+    "One-off local helper rerun was non-idempotent; preservation-only audit used instead. Snapshot builder correctly refused existing destinations; final snapshots rebuilt in fresh directories.",
+    "Two command paths corrected after file discovery; actual repository hygiene and OEM example then passed"
+  ],
+  "concurrency": {
+    "main": "15e9d60b84b0e741979437fd8d7172f0d7e30824",
+    "target_head": "d69dfe80b46d5d1cc556a62bfe6521701b5d3f21",
+    "open_pr_paths_reviewed": [
+      89,
+      90,
+      91,
+      92
+    ],
+    "shared_bibliography": "Wind PR89 has additive bibliography changes on separate branch. Existing reference objects preserved; only 38 BESS source entries appended. No shared schema/importer edits."
+  }
+}
