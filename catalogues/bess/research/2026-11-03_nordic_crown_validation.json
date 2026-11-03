@@ -1,0 +1,29 @@
+{
+  "validated_at": "2026-11-03T06:12:24.389581+00:00",
+  "elapsed_research_implementation_validation_minutes": 19.4,
+  "full_python": {
+    "passed": 1754,
+    "skipped": 1,
+    "skip_reason": "Optional cdsapi unavailable"
+  },
+  "focused_python": 36,
+  "viewer_node_tests": 11,
+  "typed_zstandard_parquet": "Two independent builds per catalogue identical; final project cost-basis wording rebuilt and checked",
+  "offline_examples": "Both passed; project example rerun after cost-basis clarification",
+  "ruff": "passed",
+  "ruff_format": "passed",
+  "ty": "passed",
+  "repository_hygiene": "passed",
+  "citations": "passed",
+  "distributions_built": 6,
+  "twine_strict": "passed all six",
+  "installed_wheel_smoke": "passed all three packages outside workspace",
+  "strict_sphinx": "passed",
+  "documentation_links_html_pages": 422,
+  "git_diff_check": "passed",
+  "remote_ci": "Not claimed for new commit; prior PR90 head had successful workflows",
+  "initial_failures_resolved": [
+    "First full suite ran before final citation regeneration; exports regenerated and full suite rerun successfully",
+    "Cost metadata clarification temporarily violated update<=verification; timestamp ordering corrected and final catalogue builds/focused checks passed"
+  ]
+}

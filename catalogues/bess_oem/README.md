@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 3 November 2026 expanded research snapshot contains **525 records from 40 product
-suppliers, backed by 237 registered sources**: 512 documented configurations and 13
+The 3 November 2026 expanded research snapshot contains **591 records from 42 product
+suppliers, backed by 266 registered sources**: 578 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -224,3 +224,9 @@ Latest: [Tonga and LiTE 2 research](../bess/research/2026-11-03_tonga_lite2.md).
 Latest: [Outer Tonga and Encore research](../bess/research/2026-11-03_outer_tonga_encore.md).
 
 Latest: [Tonga review and EMS/PCS specifications](../bess/research/2026-11-03_tonga_ems_pcs.md).
+
+Latest: [Pacific portfolio and Discover equipment](../bess/research/2026-11-03_pacific_discover.md).
+
+Latest: [Nordic portfolios, Samoa tender and Crown configurations](../bess/research/2026-11-03_nordic_crown.md).
+
+Latest: [South African portfolios, Finnish owner evidence and Rolls AGM configurations](../bess/research/2026-11-03_south_africa_rolls.md).

@@ -35,6 +35,13 @@ or a live availability feed. Do not interpret record counts as installed capacit
    For Rolls flooded model pages, `scripts/stage_bess_rolls.py` stages exact named
    HTML tables, rate-dependent monobloc Ah and charge limits. No inferred MWh,
    cell-capacity substitution or charging-unit repairs; review source revisions.
+   For the reviewed Crown SB-CRP-G0720 table, use `scripts/stage_bess_crown.py`
+   on local `pdftotext -layout` output. Keep C20/C100 Ah and kWh observations
+   separate; the ambiguous DoD footnote does not authorize usable-energy inference.
+   Review metric/imperial discrepancies before promoting physical dimensions.
+   For exact Rolls AGM-S reader tables, `scripts/stage_bess_rolls_agm.py`
+   stages local extracted text. Its hash is not an original-HTML checksum.
+   Missing current stays null; inconsistent Ah/current rows require review.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
