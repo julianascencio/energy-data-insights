@@ -2384,5 +2384,144 @@
     "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
     "sha256": "9556375099787724b838d775c3a1ba855fcb1629f3bd1e2069c25a138a1fcd6f",
     "original_availability": "Original query response bytes available; 1491 features; no exceededTransferLimit"
+  },
+  "mastr-wind-20261103-sn": {
+    "url": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261103_26.2.zip",
+    "publisher": "Bundesnetzagentur",
+    "title": "MaStR26.2 wind XML: Sachsen named-park partition",
+    "license": "Datenlizenz Deutschland – Namensnennung – Version2.0",
+    "retrieved_at": "2026-11-03T10:47:00Z",
+    "published_at": null,
+    "revision": "2026-11-03 export26.2; original member checksums reverified this run",
+    "sha256": "9e69e5e69a759f6aa693f7dafec9411a67296952f6915c9e3602081f61e8df0c",
+    "original_availability": "Original decompressed XML bytes acquired via HTTP206 ZIP ranges; SHA applies to wind XML, not full archive; dictionary hashes retained",
+    "members": [
+      {
+        "name": "EinheitenWind.xml",
+        "sha256": "9e69e5e69a759f6aa693f7dafec9411a67296952f6915c9e3602081f61e8df0c",
+        "bytes": 208210804
+      },
+      {
+        "name": "Katalogwerte.xml",
+        "sha256": "6190efa105d4852b4037409f1183d1dd0e706286075d56383508baba7fc09382",
+        "bytes": 414388
+      },
+      {
+        "name": "Katalogkategorien.xml",
+        "sha256": "28385d6ac478656fa085f7c30dfd844137f8d78110143471b9919b87d6e916da",
+        "bytes": 19842
+      }
+    ],
+    "archive_sha256": null
+  },
+  "vbk-20261103-2335-layer-2": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/2/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 2; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "daab12982c23efbdc9fc2f5c3d9b937a4b2ee99f028c4407522794d23b86d9ab",
+    "original_availability": "Original query response bytes available; 52 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-3": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/3/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 3; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "321d3f64880736f0b7b2d49528e5827f11cc3c8ed7fe3d11e47e3bd96d7bf06c",
+    "original_availability": "Original query response bytes available; 46 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-5": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/5/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 5; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "fce45b84dcaa12302c5660cc483327d1f65b099e051c1625a58003baab5615e7",
+    "original_availability": "Original query response bytes available; 142 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-6": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/6/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 6; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "520714367764dd7ef143e0607e933ed2f7741ce9d79faf0984b1cae2a0c7cfa4",
+    "original_availability": "Original query response bytes available; 31 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-7": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/7/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 7; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "f72cee230ed0af9248f0c8766582b7f21f46137baa96fcc6731b8c20de2dfcfa",
+    "original_availability": "Original query response bytes available; 85 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-8": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/8/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 8; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "06ff0c76ac8cd4f74a74ce5e6af7fa9a25af116d199dc4775b4aa7298ba72052",
+    "original_availability": "Original query response bytes available; 512 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-9": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/9/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 9; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "4f46219ce03c7fcb2f9f807ac84b5d0cb18c81183de57e33aec70e553c3b18fa",
+    "original_availability": "Original query response bytes available; 1 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-10": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/10/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 10; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "554968cdc0132a848b64c204b00aa908f8e03280c17c746d9eebcaaa3eb5677f",
+    "original_availability": "Original query response bytes available; 26 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-11": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/11/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 11; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+    "original_availability": "Original query response bytes available; 0 features; no exceededTransferLimit"
+  },
+  "vbk-20261103-2335-layer-12": {
+    "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/12/query?f=geojson&where=OMRID+%3E%3D+%271500%27+AND+OMRID+%3C+%271800%27&outFields=%2A&outSR=4326&returnGeometry=true",
+    "publisher": "Länsstyrelserna / Swedish Energy Agency",
+    "title": "Vindbrukskollen land-based inventory layer 12; Värmland and residual prefixes15/16",
+    "license": "CC0 1.0 Universal; original ZIP metadata states Ingen begränsning",
+    "retrieved_at": "2026-11-03T23:35:00Z",
+    "published_at": null,
+    "revision": "Live registry query retrieved 2026-11-03; source per-record update timestamps retained; EPSG:4326",
+    "sha256": "d8e7679d28f98e6577a064bbaadd5f15a277a508669523627f5c14756f3e0c4d",
+    "original_availability": "Original query response bytes available; 481 features; no exceededTransferLimit"
   }
 }

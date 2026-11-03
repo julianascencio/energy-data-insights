@@ -3,10 +3,10 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 7,331 project records (7,330 non-group records),
-225 exact equipment records, 7,775 registry turbine records and two original numerical
+The proposed branch contains 7,401 project records (7,400 non-group records),
+253 exact equipment records, 8,411 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
-Merged main at `6a84bebb` contains 6,713 projects, 202 equipment records and 5,745 turbines
+Merged main at `7af547f9` contains 6,713 projects, 202 equipment records and 5,745 turbines
 and two curves. These are catalogue counts, not an operating census.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
@@ -117,3 +117,22 @@ OEM pp52–56 preserve explicit inverter pairings and original dimension letters
 LCVT025 has conflicting inductance/loss rows; scalar values and the disputed
 ACU410-23 pairing are held. No guessed correction or turbine compatibility is added.
 The remaining 13 AL-suffix types are the next bounded equipment partition.
+
+
+## Sachsen, Värmland and electrical components
+
+The 23:35 increment adds 70 projects, 636 linked turbines and 28 exact equipment
+types: 13 AL-suffix line chokes and 15 EMC filters. Proposed totals are 7,401
+projects, 253 equipment, 8,411 turbines and two curves. Merged main at `7af547f9`
+contains 6,713 / 202 / 5,745 / 2; PR #119 cumulatively adds 688 / 51 / 2,666 / 0.
+All 15,333 records preceding this increment and all capacity totals are unchanged.
+The completed Sachsen partition has 482 held groups; Värmland has 44 held areas
+covering 734 turbine rows. All 70 accepted project scopes remain excluded from MW totals.
+
+AL-choke current and dissipation depend on the printed inverter application;
+common inductance and assembly dimensions stay on one exact component record.
+Two choke-to-inverter links lack a frame identifier and remain held. One filter
+application prints ACU210-12, which has no exact existing configuration; its label
+is retained without an inferred alias. EMC class/cable conditions remain qualified,
+and the general 480V heading is not silently applied to the ACU610 application.
+Next: Saarland, Örebro and book-filter assembly tables pp62–63.

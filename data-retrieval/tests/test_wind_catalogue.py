@@ -188,3 +188,42 @@ def test_reproducible_snapshot_and_lossless_viewer(tmp_path, catalogue):
     assert index["input_sha256"] == manifest["input_sha256"]
     with pytest.raises(FileExistsError):
         build_parquet(ROOT, first)
+
+
+def test_application_dependent_choke_ratings_and_frame_ambiguity(catalogue):
+    rows, _ = catalogue
+    by_model = {r.get("model"): r for r in rows if r.get("equipment_category") == "line_choke"}
+    choke = by_model["LCVT280AL-525"]
+    specs = json.loads(choke["extensions_json"])
+    assert specs["nominal_current_a"] is None
+    assert specs["power_dissipation_w"] is None
+    assert specs["inductance_mh"] == 0.105
+    assert [
+        (o["nominal_current_a"], o["power_dissipation_w"])
+        for o in specs["application_observations"]
+    ] == [(280, 460), (270, 430)]
+    links = json.loads(choke["compatibility_json"])
+    assert [link["model"] for link in links] == ["ACU 510-53"]
+    # ACU410-51 has two documented frames; the choke table does not choose one.
+    assert len([r for r in rows if r.get("model") == "ACU 410-51"]) == 2
+
+
+def test_emc_filter_explicit_frame_and_voltage_boundary(catalogue):
+    rows, _ = catalogue
+    by_id = {r["record_id"]: r for r in rows}
+    filters = {r["model"]: r for r in rows if r.get("equipment_category") == "emc_filter"}
+    assert len(filters) == 15
+    links = json.loads(filters["FTV401A"]["compatibility_json"])
+    assert len(links) == 6
+    assert all("Frame size 8" in by_id[link["equipment_record_id"]]["variant"] for link in links)
+    high_voltage = filters["FTV400A-690"]
+    assert high_voltage.get("voltage_v") is None
+    spec = json.loads(high_voltage["extensions_json"])
+    assert spec["leakage_current_ma"] == 17
+    assert "not applied as scalar" in spec["voltage_observation"]["scope"]
+    eight = json.loads(filters["HLD 110-500/8"]["compatibility_json"])
+    assert "ACU 210-12" not in [link["model"] for link in eight]
+    assert (
+        "ACU 210-12"
+        in json.loads(filters["HLD 110-500/8"]["extensions_json"])["printed_application_models"]
+    )

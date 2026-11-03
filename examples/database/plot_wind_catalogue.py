@@ -303,3 +303,24 @@ for component in rows:
             "documented inverter pairings",
             len(json.loads(component["compatibility_json"])),
         )
+
+# %%
+# Application-specific choke ratings and qualified filter ratings stay separate.
+for component in rows:
+    if component.get("equipment_category") not in {"line_choke", "emc_filter"}:
+        continue
+    specs = json.loads(component["extensions_json"])
+    if "application_observations" in specs:
+        print(component["model"], "application ratings", specs["application_observations"])
+    if component["equipment_category"] == "emc_filter":
+        print(
+            component["model"],
+            "rated A",
+            specs["rated_current_a"],
+            "leakage mA",
+            specs["leakage_current_ma"],
+            "catalogue dissipation W",
+            specs["power_dissipation_w"],
+            "conditions",
+            specs["technical_conditions"],
+        )

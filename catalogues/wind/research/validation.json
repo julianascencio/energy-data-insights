@@ -1,22 +1,22 @@
 {
-  "batch": "2026-11-03-2235",
+  "batch": "2026-11-03-2335",
   "local": {
-    "pytest": "2113 passed,1 optional cdsapi skip on final full run; initial run2112passed and one new test assertion failed, corrected to canonical omitted-null convention",
-    "focused": "50 Wind catalogue/adapter tests passed",
+    "pytest": "2116 passed,1 optional cdsapi skip; full suite",
+    "focused": "53 Wind catalogue/adapter tests passed",
     "viewer": "15 Node tests passed",
-    "catalogue": "15333 records validated;23 exact line-choke types,618projects,2030turbines added",
-    "source_replay": "2648 project/turbine records replayed exactly from checked original sources",
-    "snapshots": "Two independent builds byte-identical;4tables136typed columns each, all ZSTD; documentation Wind manifest matches",
-    "preservation": "12662 prior records and all prior source entries unchanged; six capacity totals unchanged; unrelated catalogues unchanged",
-    "ruff": "Repository lint and format passed; corrected test rechecked",
-    "ty": "Wind-focused typing passed. Repository-wide check FAILED with8 existing diagnostics in unchanged analysis/src/energy_analysis/pv_lifetime/study.py and analysis/tests/test_pv_lifetime_study.py",
-    "sphinx": "Strict build FAILED with6 warnings from3 short heading underlines in unchanged PV lifetime example; no Wind warning. HTML generated;516-page local link/asset audit passed",
+    "catalogue": "16067 records validated;70projects636turbines28exactequipment added",
+    "source_replay": "706 project/turbine records replayed exactly from checked original sources",
+    "snapshots": "Two independent builds byte-identical;4tables136typed columns each, all ZSTD; completed documentation Wind manifest identical",
+    "preservation": "15333 preceding records and all prior source entries unchanged; all six capacity totals unchanged; unrelated catalogues unchanged relative to main",
+    "ruff": "Repository lint and format passed",
+    "ty": "Repository-wide check passed; main includes prior PV lifetime fixes",
+    "sphinx": "Strict build passed;516-page local link/asset audit passed",
     "example": "Offline Wind gallery executed successfully",
     "citations": "Passed",
-    "repository_hygiene": "3375candidate files passed",
+    "repository_hygiene": "3397 candidate files passed before final report update; final check repeated before commit",
     "packages": "All3workspace packages built wheels and source distributions",
     "whitespace": "Passed",
-    "cross_sector_identity": "No matching LCVS/LCVT models in PV,BESS OEM,Data Center catalogue"
+    "cross_sector_identity": "No matching AL chokes or fifteen EMC filter types in PV,BESS OEM,Data Center catalogues"
   },
   "not_executed": [
     "new browser smoke test"
