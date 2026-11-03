@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T08:02:27.674730+00:00",
+  "updated_at": "2026-11-03T09:04:13.269941+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "Fresh AEMO NEM workbook: 366 explicit PV units, five project fills; one Axpo forecast fill; eight exact Deye inverters.",
-  "next_highest_value_source": "AEMO October 2026 Generator Information: complete the ten held dual matches first, then independently crosswalk name-only candidates by DUID and phase boundary.",
+  "selection_note": "AEMO unchanged revision: nine single-phase AC fills; Adelaide held. Five exact Deye inverters; Axone Duo identical source skipped.",
+  "next_highest_value_source": "AEMO October 2026: independently crosswalk 60 name-only candidates using DUID and phase boundary. Prioritize explicit AC and DC fields. Adelaide remains held as mixed technology.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5657,6 +5657,72 @@
       "retry_condition": "Ungated official engineering release",
       "next_action": "Use independent ungated tracker OEM catalogue",
       "processed_cursor": null
+    },
+    {
+      "id": "aemo_nem_october_2026_20261103T0800_0900_review",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "version_or_date": "2026-10-30",
+      "access_assessment": "Public source downloaded",
+      "licence_assessment": "Workbook directs to AEMO Copyright Permissions; attribution required. Only selected project factual values, not third-party prose, custodian or workbook redistributed.",
+      "estimated_useful_yield": "9 AC fills, 1 mixed-site held",
+      "fields_offered": [
+        "AC nameplate"
+      ],
+      "last_attempt": "2026-11-03T09:04:13.269941+00:00",
+      "result": "9 AC fills, 1 mixed-site held",
+      "retry_condition": "New revision or independent missing identity/spec evidence",
+      "next_action": "AEMO October 2026: independently crosswalk 60 name-only candidates using DUID and phase boundary. Prioritize explicit AC and DC fields. Adelaide remains held as mixed technology.",
+      "processed_cursor": {
+        "scope": "10 prior held dual matches",
+        "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+        "complete": true
+      }
+    },
+    {
+      "id": "deye_g05_20261103T0900_0900_review",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/deyeinverter/2023/12/05/datasheet_sun-18-25k-g05_231205_en.pdf",
+      "version_or_date": "Publisher filename 231205",
+      "access_assessment": "Public source downloaded",
+      "licence_assessment": "Limited factual metadata only; OEM copyright retained; no table or document redistributed",
+      "estimated_useful_yield": "5 accepted; weight held",
+      "fields_offered": [
+        "Exact equipment specifications"
+      ],
+      "last_attempt": "2026-11-03T09:04:13.269941+00:00",
+      "result": "5 accepted; weight held",
+      "retry_condition": "New revision or independent missing identity/spec evidence",
+      "next_action": "AEMO October 2026: independently crosswalk 60 name-only candidates using DUID and phase boundary. Prioritize explicit AC and DC fields. Adelaide remains held as mixed technology.",
+      "processed_cursor": {
+        "scope": "five exact model columns",
+        "sha256": "562374e7898df9607614c84117abbc0a478f98a9d3fd3b05397517793c6cab54",
+        "complete": true
+      }
+    },
+    {
+      "id": "pvh_duo_20261031T2301_0900_review",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://pvhardware.com/documents/Axone-Duo-Datasheet_email.pdf",
+      "version_or_date": "Prior exact PDF",
+      "access_assessment": "Public source downloaded",
+      "licence_assessment": "Publisher retains document rights; individually extracted facts only; no document redistribution or bulk reuse license asserted",
+      "estimated_useful_yield": "Same SHA-256; no substantive change",
+      "fields_offered": [
+        "Exact equipment specifications"
+      ],
+      "last_attempt": "2026-11-03T09:04:13.269941+00:00",
+      "result": "Same SHA-256; no substantive change",
+      "retry_condition": "New revision or independent missing identity/spec evidence",
+      "next_action": "AEMO October 2026: independently crosswalk 60 name-only candidates using DUID and phase boundary. Prioritize explicit AC and DC fields. Adelaide remains held as mixed technology.",
+      "processed_cursor": {
+        "scope": "same tracker datasheet",
+        "sha256": "5c42306e347444dbae12b0410b75718ceaf390346d6b0e4a05ddff6d2c7f0552",
+        "complete": true
+      }
     }
   ]
 }
