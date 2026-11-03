@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T09:12:00Z",
+  "updated_at": "2026-11-03T10:20:40Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -32,7 +32,9 @@
     "atnorth_named_sites": 13,
     "atnorth_contractor_disclosures": 3,
     "atnorth_explicit_first_phase": 1,
-    "coolit_current_cdu_models": 6
+    "coolit_current_cdu_models": 6,
+    "motivair_current_cdu_models": 8,
+    "nvent_rackchiller_skus": 6
   },
   "next_batches": [
     {
@@ -59,11 +61,12 @@
         "https://www.coolitsystems.com/resources/news/coolit-systems-launches-three-high-density-coolant-distribution-units/"
       ],
       "offset": 6,
-      "scope": "Complete current six-product list imported. CHx500/CHx1500 are historical candidates requiring dated exact specifications and lifecycle, not inferred current variants. Continue nVent/Motivair exact CDU, transformer and switchgear tables.",
+      "scope": "Complete current CoolIT six-product list, Motivair CDU 2026 eight-model table and six exact current nVent RackChiller configurations imported. CHx500/CHx1500, Motivair MCDU-30/MCDU-60 and older nVent CDU800 SKUs are historical candidates requiring dated lifecycle review. Continue transformer and switchgear tables.",
       "questions": [
         "Resolve CHx3000 45 vs 50 degC maximum ambient on same page",
         "CHx2000 2125 L/min at 35 psi web value and 1.5 L/min/kW brochure have unspecified loop boundaries; retain separately",
-        "Seek voltage/frequency, weight, warranty and model-bound performance sheets; no multiplied flow or fabricated optional configurations"
+        "Resolve the Motivair row-label 25% PG versus footnote 1 100% water rating-medium contradiction before normalizing cooling capacity",
+        "Seek weight, warranty and exact configured electrical SKUs; no multiplied flow or fabricated optional configurations"
       ]
     },
     {
@@ -135,8 +138,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 197,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows and 22 Cummins KTA50/QSK60 Data Center Continuous configurations complete; continue exact current transformer and switchgear tables, then generator suppliers beyond Cummins",
+      "offset": 211,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, eight current Motivair CDU models and six nVent RackChiller SKUs complete; continue exact current transformer and switchgear tables, then generator suppliers beyond Cummins",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -153,8 +156,8 @@
         "https://www.lenovo.com/",
         "https://www.coolitsystems.com/"
       ],
-      "offset": 0,
-      "scope": "Exact integrated compute rack and direct-to-chip/immersion model tables; Asian and regional OEMs",
+      "offset": 14,
+      "scope": "Motivair and nVent CDU tables complete at 8+6. Continue exact integrated compute racks and direct-to-chip/immersion model tables; Asian and regional OEMs",
       "questions": [
         "Rack input vs server vs accelerator limit",
         "Measured performance workload/precision/test conditions, temperatures and flow"
@@ -212,11 +215,11 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "atnorth-coolit-20261103T091200Z",
+    "run_id": "motivair-nvent-20261103T102040Z",
     "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T0912-validation.json",
-    "added_projects": 17,
-    "added_equipment": 6,
+    "validation": "2026-11-03T1020-validation.json",
+    "added_projects": 0,
+    "added_equipment": 14,
     "branch": "research/data-center-database-20261103T0909Z"
   }
 }

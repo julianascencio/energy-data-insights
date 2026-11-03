@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T09:12:00Z",
+  "retrieved_at": "2026-11-03T10:20:40Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -173,6 +173,14 @@
       "note": "AHx180 PDF text encoding broken; dimensions visually reviewed. AHx240 dimension drawing visually reviewed. CHx3000 ambient limit unresolved.",
       "reuse": "Public copyrighted factual extraction; no original tables/images redistributed",
       "originals": "Ten HTML/PDF captures checksummed; direct linked public PDFs, no form submission"
+    },
+    {
+      "inventory": "Motivair CDU 2026 eight-model table and nVent RackChiller CDU40/CDU100/CDU800 exact configurations",
+      "processed_offset": 14,
+      "accepted_records": 14,
+      "note": "Eight Motivair models plus six nVent catalogue configurations. Optional electrical choices remain observations. Motivair normalized cooling capacity is quarantined for all eight models because table row media and footnote 1 conflict.",
+      "reuse": "Factual extraction from official public copyrighted OEM PDFs; no open licence asserted and source tables are not redistributed",
+      "originals": "Public web readers exposed the exact tables. Direct current-original requests returned HTTP 403, so sources.json explicitly records unavailable bytes and no checksum rather than hashing an older redirect."
     }
   ],
   "deferred": [
@@ -265,6 +273,10 @@
       "candidate": "CoolIT CHx500 and CHx1500",
       "reason": "Discovered in older release/datasheet, absent from current six-model list. Exact historical specifications and lifecycle must be reviewed in a separate bounded batch.",
       "url": "https://www.coolitsystems.com/resources/news/coolit-systems-launches-three-high-density-coolant-distribution-units/"
+    },
+    {
+      "candidate": "Motivair MCDU-30/MCDU-60 and older nVent CDU800 configurations",
+      "reason": "Older official sheets expose these models/SKUs, but they are absent from the selected current tables. Lifecycle status needs dated OEM evidence before any historical import."
     }
   ],
   "excluded": [
@@ -400,6 +412,15 @@
         "50 degC Features"
       ],
       "reason": "Unresolved source scope/value conflict; affected normalized value null while valid metadata retained"
+    },
+    {
+      "record": "Motivair MCDU-4U, MCDU-10, MCDU-25, MCDU-40, MCDU-45, MCDU-50, MCDU-55 and MCDU-70",
+      "field": "cooling_capacity_kw",
+      "observations": [
+        "Each first cooling-capacity row labels the secondary loop as 25% PG",
+        "Footnote 1 says capacities are rated with 100% water"
+      ],
+      "reason": "All exact cooling values and their temperature points remain observations, but the normalized scalar stays null until the OEM clarifies the rating medium"
     }
   ],
   "normalization_notes": [
@@ -434,6 +455,9 @@
     "FIN02 45 MW gross future whole-facility capacity belongs to excluded parent campus, not expansion phase; 40 MW operator metric has unspecified boundary.",
     "atNorth page PUE <=1.2 is a full-design-IT-load target per report page 21, not the measured portfolio 1.21. Portfolio PUE is not copied to sites.",
     "CoolIT cooling kW and CDU electrical input are separate; flow conditions/ATD preserved. CHx2000 specific flow is not multiplied into absolute flow.",
-    "No project equipment-model relationship inferred from supplier testimonials or GPU compatibility claims."
+    "No project equipment-model relationship inferred from supplier testimonials or GPU compatibility claims.",
+    "Motivair electrical choices remain model options rather than invented configured SKUs; primary and secondary GPM remain separate observations, while the normalized liquid-flow field is an explicit secondary-loop unit conversion.",
+    "nVent dry/filled CDU40 and CDU100 SKUs and CDU800 generation 3.2 country-of-origin SKUs remain separate configurations; the shared family sheet is not used to synthesize additional variants.",
+    "Motivair cooling-capacity scalars remain quarantined because the 25% PG row label conflicts with footnote 1's 100% water statement; all four exact rating points remain available as observations."
   ]
 }

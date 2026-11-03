@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 245 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Eaton,
-Schneider Electric, STULZ and Vertiv. Current categories are GPU accelerators,
+has 259 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Eaton,
+Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, STULZ and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/precision air-conditioning equipment.
 Switchgear, transformers and additional cooling categories are supported by
@@ -63,6 +63,14 @@ The Cummins continuation adds 22 exact KTA50/QSK60 model-frequency rows with
 explicit Data Center Continuous kW and kVA. Prime, standby and general continuous
 ratings remain observations. Four conflicting non-DCC fields on three duplicated
 QSK60 live-page rows are quarantined without discarding their matching DCC data.
+The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
+table and six exact nVent catalogue configurations. Motivair's four cooling
+rating points, primary/secondary flows, pump head, dimensions, electrical options
+and protocols remain model-bound. Its normalized cooling-capacity field is
+quarantined because the row labels 25% propylene glycol while footnote 1 says
+capacities use 100% water. nVent CDU40/CDU100 dry and filled SKUs stay separate;
+CDU800 generation 3.2 US/Germany SKUs retain their shared 800 kW point and the
+separate 575 kW GB200-NVL72 application rating.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server
@@ -122,10 +130,12 @@ has been installed or tested in that separate repository.
 
 Every non-administrative field has registered source IDs and evidence detail,
 including locator, confidence and normalized unit. Sources retain retrieval date,
-publication date when known, revision and original-byte SHA-256. All accepted
-sources were fetched successfully; original copyrighted pages/PDFs are not
-redistributed. Public access does not imply an open licence. Access failures and
-explicit reuse restrictions are recorded separately.
+publication date when known, revision and original-byte SHA-256 when retrievable.
+Original copyrighted pages/PDFs are not redistributed. The current Motivair and
+nVent tables were readable through the public web reader, while direct byte
+requests returned HTTP 403; this access failure and unavailable checksum are
+explicitly registered without treating them as reuse prohibitions. Public access
+does not imply an open licence. Explicit reuse restrictions remain separate.
 
 The upsert preserves creation dates and unchanged update dates. Conflicting
 populated values are quarantined individually with both observations and dated
@@ -156,5 +166,10 @@ protocols. Publicly linked AHx180/AHx240 brochures add dimensions, verified
 visually. CHx3000's conflicting 45/50 °C ambient limits remain quarantined.
 No compatible GPU rack is treated as a deployed or newly configured rack.
 
+The next bounded CDU batch covers Motivair's eight-model 2026 table and six exact
+nVent HOFFMAN SKUs. Optional voltages were not expanded into invented products.
+Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
+lifecycle candidates because they are absent from the selected current tables.
+
 See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-03T0912-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-03T1020-validation.json).

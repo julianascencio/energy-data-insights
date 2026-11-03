@@ -159,11 +159,12 @@ print(
     .sort_values(["variant", "cooling_capacity_kw", "model"])
     .to_string(index=False)
 )
-print("CDU comparison preserves approach temperatures and flow-rating conditions:")
+print("CDU comparison preserves approach temperatures, loop boundaries and quarantines:")
 print(
     equipment.loc[
-        equipment.manufacturer.eq("CoolIT Systems"),
+        equipment.equipment_category.eq("cdu"),
         [
+            "manufacturer",
             "model",
             "cooling_capacity_kw",
             "input_power_kw",
@@ -172,7 +173,7 @@ print(
             "quality_status",
         ],
     ]
-    .sort_values(["cooling_capacity_kw", "model"])
+    .sort_values(["manufacturer", "cooling_capacity_kw", "model"], na_position="last")
     .to_string(index=False)
 )
 plt.show()

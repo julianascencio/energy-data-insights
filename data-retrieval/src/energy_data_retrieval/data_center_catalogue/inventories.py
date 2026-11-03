@@ -6,7 +6,9 @@ capacity boundaries and reuse conditions still require review before import.
 
 from __future__ import annotations
 
+import csv
 import hashlib
+import io
 import re
 from html.parser import HTMLParser
 from typing import Any
@@ -78,6 +80,69 @@ def parse_named_inventory(
         }
     if len(candidates) != expected_count:
         raise ValueError(f"Changed inventory shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
+def parse_cdu_spec_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage an extracted OEM CDU matrix without inventing optional variants.
+
+    The offline CSV keeps the model and its stated rating conditions together.
+    It is a review aid, not an importer: source PDF locators and field evidence
+    must still be attached before canonical publication.
+    """
+    host = urlsplit(source_url).hostname
+    if host not in {"www.motivaircorp.com", "www.nvent.com"}:
+        raise ValueError("Unsupported official CDU source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    text = content.decode("utf-8-sig")
+    reader = csv.DictReader(io.StringIO(text))
+    required = {
+        "model",
+        "cooling_capacity_kw",
+        "cooling_rating_conditions",
+        "primary_flow",
+        "secondary_flow",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing CDU matrix columns")
+    candidates: dict[str, dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        model = (row.get("model") or "").strip()
+        conditions = (row.get("cooling_rating_conditions") or "").strip()
+        if not model or not conditions:
+            raise ValueError(f"Incomplete CDU row {line}")
+        try:
+            cooling = float(row["cooling_capacity_kw"])
+        except (TypeError, ValueError) as exc:
+            raise ValueError(f"Invalid cooling rating on row {line}") from exc
+        if cooling <= 0:
+            raise ValueError(f"Invalid cooling rating on row {line}")
+        candidate = {
+            "model": model,
+            "cooling_capacity_kw": cooling,
+            "cooling_rating_conditions": conditions,
+            "primary_flow": (row.get("primary_flow") or "").strip(),
+            "secondary_flow": (row.get("secondary_flow") or "").strip(),
+            "locator": f"extracted CDU matrix row {line}",
+        }
+        previous = candidates.get(model)
+        if previous is not None:
+            comparable = {key: value for key, value in candidate.items() if key != "locator"}
+            prior = {key: value for key, value in previous.items() if key != "locator"}
+            if prior != comparable:
+                raise ValueError(f"Conflicting CDU row for {model}")
+            raise ValueError(f"Duplicate CDU row for {model}")
+        candidates[model] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed CDU matrix shape: {len(candidates)} != {expected_count}")
     return {
         "source_url": source_url,
         "sha256": hashlib.sha256(content).hexdigest(),
