@@ -398,3 +398,17 @@ generator kW is separate from generator/grid kVA and nominal side currents.
 Dimensions, mass and flow retain the original per-cabinet expressions. Ratings
 depend on selected options; historical specifications do not establish current
 product lifecycle, turbine compatibility or independently validated performance.
+
+
+## Bayern, Kalmar and converter technical conditions
+
+Complete Bayern1889-unit and Kalmar204-area/1330-unit partitions add168projects
+and918linked turbines.823German groups,71Swedish areas and24orphan units remain
+held. All new project scopes remain excluded; prior capacity totals unchanged.
+
+ABB2018RevA p8 explicitly covers77LC/87LC and adds qualified series-level
+operating/storage temperatures, cooling inlet limits, altitude, electrical
+interfaces and optional limits to15existing models. All p10ratings remain.
+Standard altitude1000m is separate from optional4000m; optional coolant55C is
+not a standard limit. No independent performance/certification claim is added.
+BMD R04_1 industrial identifiers remain held pending their wind-specific mapping.

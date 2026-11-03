@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T16:35:00Z",
+  "updated_at": "2026-11-03T17:35:00Z",
   "branch": "research/wind-20261103-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -93,7 +93,8 @@
         "Winergy PZFG2456/2535 complete, two-stage historical integrated assemblies. NGC StanGear/WinGear page reviewed: broad1.5–25+MW platform range, no exact-model table; hold. Next Winergy current6MW exhibition configuration identity and exact NGC SMG rating sheets.",
         "NGC regional2022PDF SYW/SPT tables exhausted:14exacttypes. Five SMG columns explicitly platforms, hold pending exact configuration; generic limits not inherited. Winergy6MW exhibition identity unresolved. German2024URL404; Americas2022 original acquired. Next NGC exact MPPY/MPPB current tables; compare revision before enriching existing SYW/SPT.",
         "NGC MPPY/MPPB hold:2024URL404; search exact types but reader redirects201802EN SYW/SPT; do not ingest mixed revision. Bonfiglioli R05_2 p14complete:9TWmodels with application-specific peak torque;19p15T-version dimensions held for T/TW identity. Next exact wind AC motor/brake and converter configurations in samePDF; no generic range synthesis.",
-        "ABB2018RevA complete p10 table processed:15exact77LC/87LCtypes. Bonfiglioli pp18–23 frame/cooling ranges reviewed, held for full type codes. Next exact BMD/ACU technical type-code catalogue; no frame x pole x cooling synthesis."
+        "ABB2018RevA complete p10 table processed:15exact77LC/87LCtypes. Bonfiglioli pp18–23 frame/cooling ranges reviewed, held for full type codes. Next exact BMD/ACU technical type-code catalogue; no frame x pole x cooling synthesis.",
+        "ABB2018RevA p8 explicit77LC/87LC technical conditions applied to15existing records; all p10ratings preserved. BMD R04_1 original acquired; industrial65–170 frames differ from wind112M–200L, hold exact wind mapping. Next ACU exact type tables plus explicit wind applicability; current ABB revision comparison."
       ]
     },
     {
@@ -163,11 +164,11 @@
     "source_guide": "2026-11-03-top10-markets.md",
     "sweden_partition": {
       "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
-      "completed_where": "OMRID < '0800'",
-      "reviewed_areas": 566,
-      "reviewed_turbines": 2627,
-      "next_where": "OMRID >= '0800' AND OMRID < '0900'",
-      "next_county": "Kalmar",
+      "completed_where": "OMRID < '0900'",
+      "reviewed_areas": 770,
+      "reviewed_turbines": 3957,
+      "next_where": "OMRID >= '0900' AND OMRID < '1000'",
+      "next_county": "Gotland",
       "layers": [
         2,
         3,
@@ -181,7 +182,7 @@
         12
       ],
       "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
-      "residual_ledger": "2026-11-03-1635-sweden-decisions.jsonl"
+      "residual_ledger": "2026-11-03-1735-sweden-decisions.jsonl"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",
@@ -191,16 +192,16 @@
         "Katalogkategorien.xml"
       ],
       "all_unit_rows": 44351,
-      "next_partition": "Bundesland1403 Bayern; full state partition; independent count and dictionary validation",
+      "next_partition": "Bundesland1402 Baden-Württemberg; full state partition with count/dictionary checks",
       "next_task": "Extend state parameter with dictionary validation; obtain complete independent count; reconcile names/operator/municipality/unit links and historical catalogue before additions. Review Schleswig-Holstein residual decisions separately.",
-      "source_review": "2026-11-03-1635-source-review.json",
+      "source_review": "2026-11-03-1735-source-review.json",
       "offset": 0,
-      "status": "five_states_reviewed",
-      "completed_partition": "1411,1408,1409,1400,1414 complete",
-      "accepted_projects": 193,
-      "accepted_turbines": 1022,
-      "deferred_groups": 9704,
-      "decision_ledger": "2026-11-03-1635-decisions.jsonl"
+      "status": "six_states_reviewed",
+      "completed_partition": "1411,1408,1409,1400,1414,1403 complete",
+      "accepted_projects": 228,
+      "accepted_turbines": 1188,
+      "deferred_groups": 10527,
+      "decision_ledger": "2026-11-03-1735-decisions.jsonl"
     }
   }
 }

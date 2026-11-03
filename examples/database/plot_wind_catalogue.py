@@ -240,3 +240,14 @@ for _, component in equipment.loc[equipment.manufacturer.eq("ABB")].iterrows():
             specs["generator_apparent_power_kva"],
             specs["grid_apparent_power_kva"],
         )
+
+# %%
+print("ABB coolant inlet limits; standard and optional limits remain separate:")
+for _, component in equipment.loc[equipment.manufacturer.eq("ABB")].iterrows():
+    conditions = json.loads(component.extensions_json or "{}").get("series_technical_conditions")
+    if conditions:
+        print(
+            component.model,
+            conditions["coolant_inlet_temperature_c"],
+            conditions["optional_limits"],
+        )

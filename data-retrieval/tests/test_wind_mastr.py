@@ -128,6 +128,7 @@ def test_xml_partition_count_and_dictionary_guard(tmp_path):
         ("1409", "Nordrhein-Westfalen"),
         ("1400", "Brandenburg"),
         ("1414", "Sachsen-Anhalt"),
+        ("1403", "Bayern"),
     ],
 )
 def test_selected_state_preserves_scope(state_code, state_name):
