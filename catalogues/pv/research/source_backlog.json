@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T10:08:15.444625+00:00",
+  "updated_at": "2026-11-03T11:02:16.754212+00:00",
   "ranking_file": "20261103T1000_top10_coverage.json",
-  "selection_note": "GA/AEMO station layer, CER committed/probable, Deye exact table, and revised IEA PVPS Trends Annex 1",
-  "next_highest_value_source": "Australia: reconcile CER September 2026 Approved tab’s 2026 year-to-date photovoltaic sites with the historic REC public register and state planning records, starting with explicitly named PV installations in NSW and VIC; do not treat generic Solar or a certificate accreditation date as technology/commissioning proof.",
+  "selection_note": "CER NSW/VIC year-to-date approval screen and three Deye engineering tables.",
+  "next_highest_value_source": "Crosswalk CER Tabbita SRPYNSJ3, Midkin SRPYNSG9 and Glen Innes SRPYNSK5 to named NSW consent or owner asset documents; require a separate plant boundary before accepting.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5873,6 +5873,26 @@
       "processed_partition": "High-current options page",
       "retry_condition": "Official model-specific eShop PDFs for distinct articles",
       "next_action": "Check article cross-reference from manufacturer, then inspect exact PDFs not general range brochure."
+    },
+    {
+      "id": "cer_nsw_vic_approved_20261103T1100",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cer.gov.au/document/power-stations-and-projects-accredited",
+      "version_or_date": "September 2026 companion release; CSV bytes unchanged",
+      "licence_assessment": "CER CC BY 4.0 attribution; generic Solar not sufficient",
+      "access_assessment": "CSV fetched; historical REC web register did not expose results in static response",
+      "estimated_useful_yield": 87,
+      "fields_offered": [
+        "accreditation code",
+        "approval date",
+        "reported MW with unstated basis"
+      ],
+      "last_attempt": "2026-11-03T11:02:16.754212+00:00",
+      "result": "2 enrichments; 85 held",
+      "processed_partition": "NSW and VIC Solar rows, complete CSV cohort",
+      "retry_condition": "Independent exact site and photovoltaic scope evidence",
+      "next_action": "Crosswalk CER Tabbita SRPYNSJ3, Midkin SRPYNSG9 and Glen Innes SRPYNSK5 to named NSW consent or owner asset documents; require a separate plant boundary before accepting."
     }
   ]
 }
