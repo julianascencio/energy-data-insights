@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T05:05:24.967814+00:00",
+  "updated_at": "2026-11-03T06:00:58.833250+00:00",
   "ranking_file": "20261103T0000_top10_coverage.json",
-  "selection_note": "Swiss archive fully staged above 1,000 kW; 364 held, no additions; three exact ASW LT-G3 inverters accepted.",
-  "next_highest_value_source": "Swiss BFE 1,000 kW+ parents: establish stable ID and dataset terms; obtain named cantonal or owner evidence for shared-building and GEM identity crosswalks.",
+  "selection_note": "Swiss alpine CSV and INTERLIS reconciliation, 29 parents and 58 linked status observations; two Solplanet tables, 11 accepted models.",
+  "next_highest_value_source": "Swiss BFE alpine INTERLIS: verify dataset-specific reuse terms and reconcile 18 name candidates using canton, operator site and plant boundaries; start with NalpSolar, SedrunSolar, Gondosolar and Morgeten.",
   "sources": [
     {
       "id": "uk_repd",
@@ -5370,6 +5370,104 @@
       "next_action": "Prioritize another OEM and distinct combiner or tracker architecture",
       "processed_cursor": {
         "sha256": "74e7a4032f4a7fb6db5216ee57b68d0770d85be118f41af466792fa96fccfe18",
+        "page": 2,
+        "complete": true
+      }
+    },
+    {
+      "id": "bfe_alpine_csv_0600",
+      "country": "CHE",
+      "entity": "projects",
+      "source_url": "https://data.geo.admin.ch/ch.bfe.photovoltaik-grossanlagen/csv/2056/ch.bfe.photovoltaik-grossanlagen.zip",
+      "version_or_date": "Export member timestamps 2026-11-03; INTERLIS model V1.1",
+      "licence_assessment": "Federal general terms refer to dataset-specific conditions; bulk reuse not assumed",
+      "access_assessment": "Public ZIP downloaded",
+      "estimated_useful_yield": {
+        "projects_reviewed": 29,
+        "potential_name_matches": 18,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "Project ID/name, municipality and canton",
+        "Explicit ProjectR in INTERLIS",
+        "Dated status and power/production estimates"
+      ],
+      "last_attempt": "2026-11-03T06:00:58.833250+00:00",
+      "result": "29 held; CSV does not expose relationship; all 58 INTERLIS statuses link by exact ProjectR. No canonical assignment.",
+      "retry_condition": "Dataset-specific licence and independent project boundary/identity checks",
+      "next_action": "Swiss BFE alpine INTERLIS: verify dataset-specific reuse terms and reconcile 18 name candidates using canton, operator site and plant boundaries; start with NalpSolar, SedrunSolar, Gondosolar and Morgeten.",
+      "processed_cursor": {
+        "sha256": "465546a22948b26ded464303ce32fbda56fef6bc443a3cfe850e7df7019fd84d",
+        "complete": true
+      }
+    },
+    {
+      "id": "bfe_alpine_xtf_0600",
+      "country": "CHE",
+      "entity": "projects",
+      "source_url": "https://data.geo.admin.ch/ch.bfe.photovoltaik-grossanlagen/xtf/2056/ch.bfe.photovoltaik-grossanlagen.zip",
+      "version_or_date": "Export member timestamps 2026-11-03; INTERLIS model V1.1",
+      "licence_assessment": "Federal general terms refer to dataset-specific conditions; bulk reuse not assumed",
+      "access_assessment": "Public ZIP downloaded",
+      "estimated_useful_yield": {
+        "projects_reviewed": 29,
+        "potential_name_matches": 18,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "Project ID/name, municipality and canton",
+        "Explicit ProjectR in INTERLIS",
+        "Dated status and power/production estimates"
+      ],
+      "last_attempt": "2026-11-03T06:00:58.833250+00:00",
+      "result": "29 held; CSV does not expose relationship; all 58 INTERLIS statuses link by exact ProjectR. No canonical assignment.",
+      "retry_condition": "Dataset-specific licence and independent project boundary/identity checks",
+      "next_action": "Swiss BFE alpine INTERLIS: verify dataset-specific reuse terms and reconcile 18 name candidates using canton, operator site and plant boundaries; start with NalpSolar, SedrunSolar, Gondosolar and Morgeten.",
+      "processed_cursor": {
+        "sha256": "c1e09cd3a05a099a13a2f4a348a150ca2ff6f42dd1a5093762379096e23447ec",
+        "complete": true
+      }
+    },
+    {
+      "id": "solplanet_lt_20261103T0600",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/wp-content/uploads/2022/05/Datasheet-ASW-25-40K-LT-G3-Series-Global-EN_0924_web-1.pdf",
+      "version_or_date": "September 2024",
+      "access_assessment": "Public OEM technical PDF",
+      "licence_assessment": "Limited factual model specifications only; OEM copyright retained; no document or full table copied",
+      "estimated_useful_yield": 6,
+      "fields_offered": [
+        "MPPT, power, current, efficiency, enclosure and operating conditions"
+      ],
+      "last_attempt": "2026-11-03T06:00:00.820606+00:00",
+      "result": "Exact model columns accepted",
+      "retry_condition": "Material revision or distinct configuration",
+      "next_action": "Prioritize another OEM, tracker or combiner",
+      "processed_cursor": {
+        "sha256": "2323c6a108a2db73e1acfa8a3dbbe96abe11771625d78dcd863209626e434c3b",
+        "page": 2,
+        "complete": true
+      }
+    },
+    {
+      "id": "solplanet_h2_20261103T0600",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/wp-content/uploads/2023/05/Datasheet-Hybrid-ASW-H-T2-Series-5-12kW-EU-EN-web.pdf",
+      "version_or_date": "Current linked PDF, no printed version date asserted",
+      "access_assessment": "Public OEM technical PDF",
+      "licence_assessment": "Limited factual model specifications only; OEM copyright retained; no document or full table copied",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "MPPT, power, current, efficiency, enclosure and operating conditions"
+      ],
+      "last_attempt": "2026-11-03T06:00:00.820606+00:00",
+      "result": "Exact model columns accepted",
+      "retry_condition": "Material revision or distinct configuration",
+      "next_action": "Prioritize another OEM, tracker or combiner",
+      "processed_cursor": {
+        "sha256": "f1898d8871b2fea990ecf495ae30d383455269d4f396ff08cedb12750de0d037",
         "page": 2,
         "complete": true
       }
