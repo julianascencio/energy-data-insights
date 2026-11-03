@@ -960,3 +960,143 @@ def parse_carrier_19dv_table(
         },
         "review_required": True,
     }
+
+
+class _HtmlTables(HTMLParser):
+    """Collect visible table cells without presentation markup."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.table_depth = 0
+        self.row: list[str] | None = None
+        self.cell_parts: list[str] | None = None
+        self.tables: list[list[list[str]]] = []
+        self.current_table: list[list[str]] | None = None
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "table":
+            self.table_depth += 1
+            if self.table_depth == 1:
+                self.current_table = []
+        elif self.table_depth == 1 and tag == "tr":
+            self.row = []
+        elif self.table_depth == 1 and tag in {"th", "td"} and self.row is not None:
+            self.cell_parts = []
+
+    def handle_data(self, data: str) -> None:
+        if self.cell_parts is not None:
+            self.cell_parts.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"th", "td"} and self.cell_parts is not None and self.row is not None:
+            self.row.append(" ".join(" ".join(self.cell_parts).split()))
+            self.cell_parts = None
+        elif tag == "tr" and self.row is not None and self.current_table is not None:
+            if self.row:
+                self.current_table.append(self.row)
+            self.row = None
+        elif tag == "table" and self.table_depth:
+            self.table_depth -= 1
+            if self.table_depth == 0 and self.current_table:
+                self.tables.append(self.current_table)
+                self.current_table = None
+
+
+def _kw_kva(value: str) -> tuple[float, float] | None:
+    match = re.fullmatch(r"(\d+(?:\.\d+)?)\s*/\s*(\d+(?:\.\d+)?)", value.strip())
+    return (float(match[1]), float(match[2])) if match else None
+
+
+def parse_cummins_generator_table(
+    content: bytes,
+    *,
+    source_url: str,
+    expected_count: int | None = None,
+) -> dict[str, Any]:
+    """Stage exact Cummins rows with a Data Center Continuous rating.
+
+    Duplicate live-page rows are reconciled only when values agree. Differing
+    prime, standby or continuous ratings are returned as conflicts; the
+    independently consistent DCC kW/kVA pair is never calculated.
+    """
+    if urlsplit(source_url).hostname != "www.cummins.com":
+        raise ValueError("Expected official Cummins URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    tables = [
+        table
+        for table in parser.tables
+        if table
+        and table[0]
+        and table[0][0].casefold() == "generator model"
+        and "Data Center Continuous kW / kVA" in table[0]
+    ]
+    if len(tables) != 1:
+        raise ValueError("Expected one Cummins generator model table")
+    header, *raw_rows = tables[0]
+    grouped: dict[tuple[str, float], list[dict[str, str]]] = {}
+    for values in raw_rows:
+        if len(values) != len(header):
+            continue
+        row = dict(zip(header, values, strict=True))
+        dcc = _kw_kva(row["Data Center Continuous kW / kVA"])
+        if dcc is None or not row["generator model"] or not row["Hz"]:
+            continue
+        try:
+            frequency_hz = float(row["Hz"])
+        except ValueError as exc:
+            raise ValueError("Invalid Cummins frequency") from exc
+        grouped.setdefault((row["generator model"], frequency_hz), []).append(row)
+
+    candidates = []
+    rating_columns = {
+        "prime": "Prime kW / kVA",
+        "standby": "Standby kW / kVA",
+        "continuous": "Continuous kW / kVA",
+        "data_center_continuous": "Data Center Continuous kW / kVA",
+    }
+    for (model, frequency_hz), rows in grouped.items():
+        ratings: dict[str, list[dict[str, float | str]]] = {}
+        conflicts: dict[str, list[dict[str, float | str]]] = {}
+        for key, column in rating_columns.items():
+            parsed_values = {_kw_kva(row.get(column, "")) for row in rows}
+            values = sorted(value for value in parsed_values if value is not None)
+            payload: list[dict[str, float | str]] = [
+                {"kw": value[0], "kva": value[1]} for value in values
+            ]
+            if len(payload) > 1:
+                conflicts[f"{key}_rating"] = payload
+            elif payload:
+                ratings[key] = payload
+        dcc = ratings.get("data_center_continuous")
+        if dcc is None or conflicts.get("data_center_continuous_rating"):
+            raise ValueError("Conflicting Cummins Data Center Continuous rating")
+        engine_models = sorted({row.get("engine model", "") for row in rows} - {""})
+        if len(engine_models) > 1:
+            conflicts["engine_model"] = [{"value": value} for value in engine_models]
+        candidates.append(
+            {
+                "model": model,
+                "frequency_hz": frequency_hz,
+                "fuel_type": "Diesel",
+                "data_center_continuous_kw": dcc[0]["kw"],
+                "data_center_continuous_kva": dcc[0]["kva"],
+                "ratings": ratings,
+                "engine_model": engine_models[0] if len(engine_models) == 1 else None,
+                "conflicts": conflicts,
+                "locator": f"generator model table / {model} / {frequency_hz:g} Hz",
+            }
+        )
+    identities = [(row["model"], row["frequency_hz"]) for row in candidates]
+    if (
+        not candidates
+        or len(identities) != len(set(identities))
+        or (expected_count is not None and len(candidates) != expected_count)
+    ):
+        raise ValueError("Changed Cummins generator table shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }

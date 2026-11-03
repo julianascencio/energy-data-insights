@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T07:22:54Z",
+  "retrieved_at": "2026-11-03T08:17:47Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -142,6 +142,13 @@
       "accepted_records": 7,
       "reuse": "Factual extraction from public copyrighted operator pages; no open licence asserted; originals are not redistributed",
       "originals": "Eight official HTML captures plus the dated MZ1 opening release were retrieved; raw-byte SHA-256 and byte counts are retained in sources.json"
+    },
+    {
+      "inventory": "Cummins KTA50 and QSK60 exact Data Center Continuous generator model tables",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "reuse": "Factual extraction from official public copyrighted OEM product pages; no open licence asserted; originals and tables are not redistributed",
+      "originals": "Two official HTML captures were retrieved; raw-byte SHA-256 and byte counts are retained in sources.json"
     }
   ],
   "deferred": [
@@ -192,6 +199,18 @@
     {
       "candidate": "Google 2026 Q3 campus PUE table",
       "reason": "The English page still exposed Q1/Q2 only; an inconsistent Chinese search cache was not accepted as official Q3 evidence"
+    },
+    {
+      "candidate": "Cummins QSK78 exact generator continuation",
+      "reason": "The current product table includes duplicate and internally inconsistent family/model rows; it requires a separately bounded review before normalization"
+    },
+    {
+      "candidate": "Caterpillar exact data-center generator models",
+      "reason": "Screened product pages expose family ranges and multiple specification variants rather than one complete exact-model table suitable for this batch"
+    },
+    {
+      "candidate": "Cummins QST30 exact generator table",
+      "reason": "The retrieved official page did not contain the expected generator model table; this is an access/content-shape limitation, not a reuse prohibition"
     }
   ],
   "excluded": [
@@ -242,6 +261,10 @@
     {
       "candidate": "Raxio operator certification badges",
       "reason": "Badges were not normalized without issuer-registry certificate identifiers, exact scope and dated award evidence"
+    },
+    {
+      "candidate": "Cummins inferred generator power factor or facility backup capacity",
+      "reason": "No active/apparent conversion was performed and equipment ratings were not promoted to facility backup MW"
     }
   ],
   "holds_unchanged": [
@@ -277,6 +300,16 @@
         "275 m2 on dated 2025 launch page"
       ],
       "reason": "The launch value likely lost a thousands separator, but the source conflict is retained rather than silently corrected"
+    },
+    {
+      "record": "Cummins QSK60 DQKAD, DQKAE and DQKAF",
+      "field": "non-DCC table ratings",
+      "observations": [
+        "DQKAD general continuous rating: 1450 kW / 1813 kVA and 1450 kW / 1821 kVA",
+        "DQKAE prime rating: 1825 kW / 2281 kVA and 1852 kW / 2281 kVA",
+        "DQKAF prime and standby duplicate rows contain four distinct non-DCC field values"
+      ],
+      "reason": "Duplicate live-page rows agree on Data Center Continuous ratings but conflict on four non-DCC fields; DCC remains normalized while the conflicting observations remain quarantined"
     }
   ],
   "normalization_notes": [
@@ -304,6 +337,8 @@
     "Carrier 19DV cooling and electrical ratings retain AHRI water temperatures, fouling factors, pass count and water-side pressure; 50 Hz and 60 Hz model suffixes remain separate exact configurations",
     "Raxio IT MW is design maximum only; connection kV and cooling provision MW remain observations and are not normalized as grid or facility demand",
     "Raxio year/month lifecycle markers remain verbatim observations rather than fabricated full dates; only MZ1 has an exact commissioning date from a dated opening release",
-    "Raxio PUE 1.3 observations use unspecified kind with null measurement period and source boundary because the operator does not label them measured, design or target values"
+    "Raxio PUE 1.3 observations use unspecified kind with null measurement period and source boundary because the operator does not label them measured, design or target values",
+    "Cummins kW and kVA are normalized only from each exact Data Center Continuous row and remain separate; prime, standby and general continuous values remain observations",
+    "Generator equipment ratings are never treated as facility backup-generator capacity; no power factor is inferred from reported kW and kVA"
   ]
 }
