@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 125 project records across 25 countries:
-55 facilities and 70 explicitly scoped campus aggregates, from ten operators.
+The current continuation branch has 158 project records across 27 countries:
+55 facilities and 103 explicitly scoped campus aggregates, from eleven operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 166 exact models/configurations from NVIDIA, AMD, Eaton, Schneider Electric,
+has 189 exact models/configurations from NVIDIA, AMD, Eaton, Schneider Electric,
 STULZ and Vertiv. Current categories are GPU accelerators, servers, UPS, rack PDUs,
 coolant distribution units and CRAC/precision air-conditioning equipment.
 Switchgear, transformers, generators and additional cooling categories are
@@ -51,6 +51,10 @@ populated fixed-speed R134a ASR/ALR configurations separate. They normalize net
 sensible cooling only at the stated return-air/condensing/ESP rating point and
 preserve total sensible cooling and component power as observations. Printed N/A
 columns are excluded; refrigerant and compressor variants are never combined.
+The Vertiv UPS continuation adds all 19 topology/rating rows printed for PowerUPS
+6000 and four Trinergy CE ratings. Apparent kVA stays distinct from active kW;
+family efficiency ranges, grouped dimensions and battery energy/runtime remain
+unnormalized where the exact configuration table does not bind them.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server

@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T05:24:04Z",
+  "retrieved_at": "2026-11-03T06:22:12Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -107,6 +107,27 @@
       "accepted_records": 1,
       "reuse": "Factual extraction from public copyrighted operator/help and issuer-registry pages; no open licence asserted; originals not redistributed",
       "originals": "Four official HTML captures available during review with SHA-256 and byte counts in sources.json"
+    },
+    {
+      "inventory": "Meta complete global data center fleet cards",
+      "processed_offset": 33,
+      "accepted_records": 33,
+      "reuse": "Factual extraction from the official public portfolio; no open licence asserted; original not redistributed",
+      "originals": "Official HTML capture available during review with SHA-256 and byte count in sources.json"
+    },
+    {
+      "inventory": "Vertiv PowerUPS 6000 topology/rating table, revision SL-80154 R02/26",
+      "processed_offset": 19,
+      "accepted_records": 19,
+      "reuse": "Factual extraction from the official public OEM PDF; no open licence asserted; original not redistributed",
+      "originals": "Official four-page PDF capture available during review with SHA-256, byte count and revision in sources.json"
+    },
+    {
+      "inventory": "Vertiv Trinergy CE ratings table, UIM 10068023P60CE-UL / SL-80218 / REVG / 06-26",
+      "processed_offset": 4,
+      "accepted_records": 4,
+      "reuse": "Factual extraction from the official OEM manual; the PDF reports copy disabled and proprietary/confidential markings, so the original is not redistributed",
+      "originals": "Official 106-page PDF capture available during review with SHA-256, byte count and printed revision in sources.json"
     }
   ],
   "deferred": [
@@ -141,6 +162,14 @@
     {
       "candidate": "Antel Massera and Tigo Paraguay certification dates",
       "reason": "Issuer registries verify facility and award scopes but public issue dates were unavailable; certifications_json remains null until dated issuer evidence is found"
+    },
+    {
+      "candidate": "Meta fleet building/phase and dated lifecycle evidence",
+      "reason": "The 33 fleet cards establish named campus identities, locality, investment and break-ground year where displayed, but not non-overlapping buildings, current lifecycle, electrical boundary or commissioning date"
+    },
+    {
+      "candidate": "PowerUPS 6000 exact dimensions and efficiency by rating",
+      "reason": "The document groups dimensions and presents a 92-97% family efficiency span without an unambiguous model-by-model binding"
     }
   ],
   "excluded": [
@@ -179,6 +208,14 @@
     {
       "candidate": "STULZ R134a N/A model columns",
       "reason": "Seven printed N/A columns were excluded; blank specification values were not filled from other refrigerant or compressor tables"
+    },
+    {
+      "candidate": "PowerUPS 6000 calculated active kW",
+      "reason": "Active output was not calculated from kVA and the shared unity output power factor; the exact table reports apparent power only"
+    },
+    {
+      "candidate": "Trinergy battery energy and runtime",
+      "reason": "The manual states supported battery chemistries and a DC voltage range but does not bind nominal/usable energy or runtime to the four CE ratings"
     }
   ],
   "holds_unchanged": [
@@ -234,6 +271,9 @@
     "STULZ modulating free-cooling water temperature and medium-volume-flow values retain the OEM's printed units; grouped size/dimension rows remain unset where an individual model mapping is ambiguous",
     "STULZ R134a availability follows the OEM's printed airflow N/A mask; only 13 ASR and 10 ALR populated configurations are accepted",
     "Antel's greater-than 1,000 final rack statement remains a lower-bound observation rather than an exact rack_count",
-    "Tigo's total site, corporate allocation, initial and ultimate rack/area boundaries remain separate observations rather than one normalized count"
+    "Tigo's total site, corporate allocation, initial and ultimate rack/area boundaries remain separate observations rather than one normalized count",
+    "Meta fleet cards are campus aggregates with unknown lifecycle; break-ground years remain year-precision observations and investments retain currency and lower-bound qualifiers",
+    "PowerUPS 6000 kVA is normalized only for the 19 explicitly printed topology/rating rows; active kW, grouped dimensions and family efficiency are not assigned",
+    "Trinergy CE active output is normalized from the exact OEM table at 40 C; up-to efficiency claims remain qualified observations because load conditions are undisclosed"
   ]
 }

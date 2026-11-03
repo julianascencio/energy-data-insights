@@ -626,3 +626,153 @@ def parse_google_pue(content: bytes, *, year: int, quarter: int) -> dict[str, An
         "candidates": candidates,
         "review_required": True,
     }
+
+
+class _MetaLocations(HTMLParser):
+    """Collect only the current global-fleet cards from Meta's official page."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.region: str | None = None
+        self.current: dict[str, str | None] | None = None
+        self.capture: str | None = None
+        self.parts: list[str] = []
+        self.rows: list[dict[str, str | None]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        classes = (values.get("class") or "").split()
+        if tag == "h2" and "data-center-location-header" in classes:
+            self.capture, self.parts = "region", []
+        elif tag == "article" and "wp-block-fbdc-card" in classes:
+            self.current = {"region": self.region}
+        elif self.current is not None and tag == "p" and "card__eyebrow-text" in classes:
+            self.capture, self.parts = "jurisdiction", []
+        elif self.current is not None and tag == "h3" and "card__title" in classes:
+            self.capture, self.parts = "locality", []
+        elif self.current is not None and tag == "p" and "card__excerpt" in classes:
+            self.capture, self.parts = "summary", []
+        elif self.current is not None and tag == "a" and "card__primary-cta" in classes:
+            self.current["url"] = values.get("href")
+
+    def handle_data(self, data: str) -> None:
+        if self.capture:
+            self.parts.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.capture == "region" and tag == "h2":
+            self.region = " ".join(" ".join(self.parts).split())
+            self.capture = None
+        elif self.capture == "jurisdiction" and tag == "p" and self.current is not None:
+            self.current["jurisdiction"] = " ".join(" ".join(self.parts).split())
+            self.capture = None
+        elif self.capture == "locality" and tag == "h3" and self.current is not None:
+            self.current["locality"] = " ".join(" ".join(self.parts).split())
+            self.capture = None
+        elif self.capture == "summary" and tag == "p" and self.current is not None:
+            self.current["summary"] = " ".join(" ".join(self.parts).split())
+            self.capture = None
+        elif tag == "article" and self.current is not None:
+            self.rows.append(self.current)
+            self.current = None
+            self.capture = None
+
+
+def parse_meta_locations(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage Meta's complete displayed fleet without inferring lifecycle or MW."""
+    if urlsplit(source_url).hostname != "datacenters.atmeta.com":
+        raise ValueError("Expected official Meta Data Centers URL")
+    parser = _MetaLocations()
+    parser.feed(content.decode("utf-8-sig"))
+    required = {"region", "jurisdiction", "locality", "summary", "url"}
+    candidates: list[dict[str, str]] = []
+    for raw in parser.rows:
+        if not required <= raw.keys() or not all(raw[key] for key in required):
+            raise ValueError("Incomplete Meta fleet card")
+        candidates.append(
+            {
+                **{key: str(raw[key]).strip() for key in required},
+                "url": urljoin(source_url, str(raw["url"]).strip()).removesuffix("%20"),
+                "locator": f"Our global data center fleet / {raw['region']} / {raw['locality']}",
+            }
+        )
+    identities = [(row["region"].casefold(), row["locality"].casefold()) for row in candidates]
+    if (
+        not candidates
+        or len(identities) != len(set(identities))
+        or (expected_count is not None and len(candidates) != expected_count)
+    ):
+        raise ValueError("Changed Meta global-fleet shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_vertiv_powerups6000_table(
+    content: bytes, *, source_url: str, expected_count: int | None = None
+) -> dict[str, Any]:
+    """Stage explicit PowerUPS 6000 kVA/topology configurations.
+
+    The shared family specifications are returned as rating conditions. The
+    parser does not calculate kW from the stated unity output power factor and
+    does not assign the layout's grouped dimensions or efficiency range to an
+    individual rating.
+    """
+    if not (urlsplit(source_url).hostname or "").endswith("vertiv.com"):
+        raise ValueError("Expected official Vertiv URL")
+    text = " ".join(content.decode("utf-8-sig").split())
+    if "Vertiv™ PowerUPS 6000 industrial" not in text:
+        raise ValueError("Missing Vertiv PowerUPS 6000 table")
+    configurations = [
+        ("single-phase", "single-phase", [6]),
+        ("three-phase", "single-phase", [10, 20, 30, 40, 60, 80, 100, 120]),
+        ("three-phase", "three-phase", [10, 20, 30, 40, 60, 80, 100, 120, 160, 200]),
+    ]
+    candidates: list[dict[str, Any]] = []
+    for input_topology, output_topology, expected_ratings in configurations:
+        label = f"{input_topology.capitalize()} input/{output_topology}"
+        match = re.search(rf"{re.escape(label)} (?P<ratings>(?:\d+ )+)output", text)
+        if match is None:
+            raise ValueError(f"Missing PowerUPS topology row: {label}")
+        ratings = [int(value) for value in re.findall(r"\d+", match["ratings"])]
+        if ratings != expected_ratings:
+            raise ValueError("Changed Vertiv PowerUPS 6000 rating row")
+        for rating in ratings:
+            candidates.append(
+                {
+                    "model": "PowerUPS 6000",
+                    "variant": f"{rating} kVA; {input_topology} input; {output_topology} output",
+                    "apparent_power_kva": rating,
+                    "input_topology": input_topology,
+                    "output_topology": output_topology,
+                    "input_voltage_text": (
+                        "220/230/240 V" if input_topology == "single-phase" else "380/400/415 V"
+                    ),
+                    "output_voltage_text": (
+                        "220/230/240 V" if output_topology == "single-phase" else "380/400/415 V"
+                    ),
+                    "locator": f"Technical specifications / {label} output / {rating} kVA",
+                }
+            )
+    if not candidates or (expected_count is not None and len(candidates) != expected_count):
+        raise ValueError("Changed Vertiv PowerUPS 6000 table shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "shared_conditions": {
+            "rated_input_frequency_text": "50/60 Hz",
+            "input_frequency_range_text": "40-70 Hz",
+            "input_power_factor": 0.95,
+            "output_power_factor": 1.0,
+            "operating_temperature_min_c": 0,
+            "operating_temperature_max_c": 50,
+            "communications": ["MODBUS", "SNMP", "dry contact", "RJ45"],
+        },
+        "review_required": True,
+    }

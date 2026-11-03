@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T05:24:04Z",
+  "updated_at": "2026-11-03T06:22:12Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -22,7 +22,10 @@
     "stulz_cyberair_fixed_speed_r410a_configurations": 30,
     "stulz_cyberair_modulating_r410a_configurations": 20,
     "stulz_cyberair_fixed_speed_r134a_configurations": 23,
-    "uruguay_paraguay_primary_facilities": 2
+    "uruguay_paraguay_primary_facilities": 2,
+    "meta_global_fleet_cards": 33,
+    "vertiv_powerups6000_topology_ratings": 19,
+    "vertiv_trinergy_ce_ratings": 4
   },
   "next_batches": [
     {
@@ -72,15 +75,17 @@
     },
     {
       "rank": 4,
-      "source": "North America/Europe structured official portfolios and AirTrunk phase evidence",
+      "source": "North America/Europe structured official portfolios, Meta, and AirTrunk phase evidence",
       "urls": [
         "https://www.digitalrealty.com/data-centers",
+        "https://datacenters.atmeta.com/all-locations/",
         "https://airtrunk.com/locations/"
       ],
-      "offset": 0,
-      "scope": "AirTrunk location inventory complete at offset 22; review planning/environmental records for building phases. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a bounded batch",
+      "offset": 55,
+      "scope": "AirTrunk location inventory complete at offset 22 and Meta global fleet cards complete at offset 33. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a bounded batch",
       "questions": [
         "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
+        "Treat Meta card break-ground years as year-precision observations, not full construction dates or evidence of current lifecycle",
         "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
       ]
     },
@@ -91,8 +96,8 @@
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/"
       ],
-      "offset": 124,
-      "scope": "Prior Vertiv/Eaton/Schneider tables plus 30 fixed-speed R410A, 20 modulating-EC R410A and all 23 populated fixed-speed R134a STULZ CyberAir configurations complete; continue exact current chiller, transformer, switchgear and generator tables",
+      "offset": 147,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables plus all 19 PowerUPS 6000 topology/rating rows and four Trinergy CE ratings complete; continue exact current chiller, transformer, switchgear and generator tables and diversify suppliers",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",

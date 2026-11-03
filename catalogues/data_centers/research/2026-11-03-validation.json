@@ -1,27 +1,27 @@
 {
-  "executed_at": "2026-11-03T05:24:04Z",
+  "executed_at": "2026-11-03T06:22:12Z",
   "python": "3.12",
   "checks": [
     {
       "command": "python -m energy_data_retrieval.data_center_catalogue validate --root catalogues/data_centers",
       "result": "passed",
-      "records": 291
+      "records": 347
     },
     {
-      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py -k stulz",
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py -k 'meta_global_fleet or vertiv_powerups'",
       "result": "passed",
-      "tests": 3,
-      "note": "Includes the new synthetic R134a N/A-mask fixture and exact-count guard"
+      "tests": 2,
+      "deselected": 24
     },
     {
       "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py",
       "result": "passed",
-      "tests": 24
+      "tests": 26
     },
     {
       "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_bess_catalogue.py data-retrieval/tests/test_pv_catalogue.py",
       "result": "passed",
-      "tests": 67
+      "tests": 69
     },
     {
       "command": "pytest -q analysis/tests/test_pv_database.py analysis/tests/test_bess_database.py analysis/tests/test_bess_oem_database.py methods/tests/test_references.py",
@@ -36,17 +36,17 @@
     {
       "command": "ruff check .; ruff format --check .; ty check",
       "result": "passed after formatting correction",
-      "note": "Initial Ruff pass found two long lines in the new adapter; both were corrected and all three checks were rerun successfully"
+      "note": "The initial format check identified two new files; both were formatted and all three checks were rerun successfully"
     },
     {
       "command": "python scripts/check_repository.py; python scripts/check_citations.py",
       "result": "passed",
-      "repository_candidates": 2575
+      "repository_candidates": 2581
     },
     {
       "command": "MPLBACKEND=Agg python examples/database/plot_data_center_catalogue.py",
       "result": "passed",
-      "note": "Rebuilt geographic, capacity-completeness, cooling, GPU, UPS, rack-PDU, Schneider Galaxy VS and STULZ CyberAir comparisons including R134a"
+      "note": "Rebuilt geographic, capacity-completeness, cooling, GPU, UPS, rack-PDU, Galaxy VS and CyberAir comparisons; UPS output preserves kW/kVA distinctions"
     },
     {
       "command": "sphinx-build -E -a -W --keep-going -b html docs <fresh-output>/html",
@@ -56,27 +56,27 @@
     {
       "command": "python scripts/check_docs_links.py <fresh-output>/html",
       "result": "passed",
-      "html_pages": 420,
-      "note": "The first check against the pre-existing docs/_build tree exposed one stale view-source page; a clean build regenerated it and the complete link check passed"
+      "html_pages": 420
     },
     {
       "check": "Two independent Data Center snapshot builds",
       "result": "byte-identical projects.parquet, equipment.parquet and manifests",
-      "projects_parquet_sha256": "199a4c778b548afa1b7273fcf10b9da975415ec742e554ea91bf2180c8d59cfa",
-      "equipment_parquet_sha256": "be60bffa4f66abfeb9c95317500a293bdb68f0b5b1e39441864604ef3db2ea0c",
-      "input_sha256": "a0e6bbbdc37474eaf7e34df7556e56e31431823f97bcedb5c0af32ce24082d2c"
+      "projects_parquet_sha256": "7fb72ec4c704b79c2b1413eda1747fb7b7c0fe8d9e75e04d68cc861b1e835a2d",
+      "equipment_parquet_sha256": "54490752bafccc563dc69d5222b672018eff94d01a104ded4d9d62cf099d7ccc",
+      "input_sha256": "a6f0ae15a1dbd67e8015b18aba9347893c2457a7b38e0a9e81f818a0a64cc3fa"
     },
     {
       "check": "Generated viewer datasets",
-      "result": "passed through the strict clean docs build; 125 project and 166 equipment rows with checksum-linked Parquet snapshots",
+      "result": "passed through the strict clean docs build; 158 project and 189 equipment rows with checksum-linked Parquet snapshots",
       "note": "A standalone headless Chromium run was not executed; browser-independent viewer behavior is covered by 11 Node tests"
     }
   ],
   "publication_preflight": {
     "main_sha": "15e9d60b84b0e741979437fd8d7172f0d7e30824",
     "branch": "research/data-center-database-20261103T0521Z",
-    "pull_request": "pending publication",
-    "pull_request_state": "not yet opened",
+    "pull_request": 92,
+    "pull_request_state": "open before publication",
+    "remote_branch_head_before_publication": "bf57d08cf246c128c14554e097e05b6324e0f255",
     "remote_ci_for_new_commit": "not available until publication"
   }
 }

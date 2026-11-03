@@ -20,11 +20,13 @@ from energy_data_retrieval.data_center_catalogue.catalogue import validate_recor
 from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_africa_data_centres_footprint,
     parse_airtrunk_locations,
+    parse_meta_locations,
     parse_portfolio,
     parse_schneider_galaxy_vs_model_list,
     parse_stulz_cyberair_3pro_dx_modulating_table,
     parse_stulz_cyberair_3pro_dx_r134a_table,
     parse_stulz_cyberair_3pro_dx_table,
+    parse_vertiv_powerups6000_table,
 )
 
 ROOT = Path(__file__).resolve().parents[2] / "catalogues/data_centers"
@@ -226,6 +228,51 @@ def test_africa_data_centres_footprint_parser_is_complete_and_identity_only():
         )
     with pytest.raises(ValueError, match="official Africa"):
         parse_africa_data_centres_footprint(b"", source_url="https://example.com/")
+
+
+def test_meta_global_fleet_parser_is_complete_and_identity_only():
+    content = (FIXTURES / "meta-locations.html").read_bytes()
+    data = parse_meta_locations(
+        content,
+        source_url="https://datacenters.atmeta.com/all-locations/",
+        expected_count=3,
+    )
+    assert [(row["region"], row["locality"]) for row in data["candidates"]] == [
+        ("Asia", "Singapore"),
+        ("Europe", "Odense"),
+        ("United States", "New Albany"),
+    ]
+    assert data["candidates"][1]["url"] == "https://datacenters.atmeta.com/asset/odense/"
+    assert "DO NOT EXTRACT" not in json.dumps(data)
+    with pytest.raises(ValueError, match="global-fleet shape"):
+        parse_meta_locations(
+            content,
+            source_url="https://datacenters.atmeta.com/all-locations/",
+            expected_count=33,
+        )
+    with pytest.raises(ValueError, match="official Meta"):
+        parse_meta_locations(content, source_url="https://example.com/")
+
+
+def test_vertiv_powerups_parser_keeps_only_explicit_topology_ratings():
+    content = (FIXTURES / "vertiv-powerups6000.txt").read_bytes()
+    data = parse_vertiv_powerups6000_table(
+        content,
+        source_url="https://www.vertiv.com/globalassets/vertiv-power-ups-industrial.pdf",
+        expected_count=19,
+    )
+    assert len(data["candidates"]) == 19
+    assert data["candidates"][0]["variant"] == ("6 kVA; single-phase input; single-phase output")
+    assert data["candidates"][-1]["variant"] == ("200 kVA; three-phase input; three-phase output")
+    assert data["candidates"][1]["input_voltage_text"] == "380/400/415 V"
+    assert all(row["apparent_power_kva"] != 999 for row in data["candidates"])
+    assert data["shared_conditions"]["output_power_factor"] == 1.0
+    with pytest.raises(ValueError, match="table shape"):
+        parse_vertiv_powerups6000_table(
+            content,
+            source_url="https://www.vertiv.com/globalassets/vertiv-power-ups-industrial.pdf",
+            expected_count=20,
+        )
 
 
 def test_schneider_model_list_parser_keeps_only_explicit_commercial_references():
