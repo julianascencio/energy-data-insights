@@ -113,6 +113,23 @@ print(
     .sort_values(["accelerator_power_w", "model"], na_position="last")
     .to_string(index=False)
 )
+print("Supermicro integrated systems keep accelerator and server input boundaries separate:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Supermicro"),
+        [
+            "model",
+            "variant",
+            "accelerator_count",
+            "accelerator_power_w",
+            "input_power_kw",
+            "memory_gb",
+            "quality_status",
+        ],
+    ]
+    .sort_values(["model", "variant"])
+    .to_string(index=False)
+)
 print("Exact UPS ratings keep kW, kVA and runtime/load conditions separate:")
 print(
     equipment.loc[

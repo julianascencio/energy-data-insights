@@ -10,6 +10,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_named_inventory,
     parse_power_equipment_matrix,
     parse_server_accelerator_matrix,
+    parse_supermicro_nvidia_systems,
 )
 
 CONTENT = (Path(__file__).parent / "fixtures/data_centers/named-inventory.html").read_bytes()
@@ -22,6 +23,9 @@ SERVER_MATRIX = (
 ).read_bytes()
 LENOVO_COMPARISON = (
     Path(__file__).parent / "fixtures/data_centers/lenovo-gpu-comparison.html"
+).read_bytes()
+SUPERMICRO_SYSTEMS = (
+    Path(__file__).parent / "fixtures/data_centers/supermicro-nvidia-systems.html"
 ).read_bytes()
 
 
@@ -141,6 +145,40 @@ def test_server_accelerator_matrix_rejects_unbounded_input(source_url, expected_
     with pytest.raises(ValueError):
         parse_server_accelerator_matrix(
             SERVER_MATRIX,
+            source_url=source_url,
+            expected_count=expected_count,
+        )
+
+
+def test_supermicro_systems_stage_exact_rows_and_reconcile_statuses():
+    result = parse_supermicro_nvidia_systems(
+        SUPERMICRO_SYSTEMS,
+        source_url="https://www.supermicro.com/en/accelerators/nvidia-certified-systems",
+        expected_count=2,
+    )
+    by_model = {row["model"]: row for row in result["candidates"]}
+    assert set(by_model) == {"AS-X200-B3RT-LCC", "SYS-X100-BRT"}
+    assert by_model["SYS-X100-BRT"]["accelerator_power_w_per_gpu"] == 1000
+    assert by_model["SYS-X100-BRT"]["memory_gb_per_gpu"] == 180
+    assert by_model["AS-X200-B3RT-LCC"]["certification_states"] == [
+        "NVIDIA-Certified",
+        "NVIDIA-Qualified",
+    ]
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+@pytest.mark.parametrize(
+    ("source_url", "expected_count"),
+    [
+        ("https://example.com/table", 2),
+        ("https://www.supermicro.com/en/accelerators/nvidia-certified-systems", 3),
+    ],
+)
+def test_supermicro_systems_reject_unofficial_sources_and_drift(source_url, expected_count):
+    with pytest.raises(ValueError):
+        parse_supermicro_nvidia_systems(
+            SUPERMICRO_SYSTEMS,
             source_url=source_url,
             expected_count=expected_count,
         )

@@ -39,6 +39,42 @@ class _Links(HTMLParser):
             self.parts = []
 
 
+class _TableRows(HTMLParser):
+    """Collect visible table-cell text while ignoring page chrome."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.in_row = False
+        self.in_cell = False
+        self.cell_parts: list[str] = []
+        self.row: list[str] = []
+        self.rows: list[list[str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        del attrs
+        if tag == "tr":
+            self.in_row = True
+            self.row = []
+        elif self.in_row and tag in {"th", "td"}:
+            self.in_cell = True
+            self.cell_parts = []
+
+    def handle_data(self, data: str) -> None:
+        if self.in_cell:
+            self.cell_parts.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.in_cell and tag in {"th", "td"}:
+            self.row.append(" ".join(" ".join(self.cell_parts).split()))
+            self.in_cell = False
+            self.cell_parts = []
+        elif self.in_row and tag == "tr":
+            if self.row:
+                self.rows.append(self.row)
+            self.in_row = False
+            self.row = []
+
+
 def parse_named_inventory(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:
@@ -274,6 +310,92 @@ def parse_server_accelerator_matrix(
     if len(candidates) != expected_count:
         raise ValueError(
             f"Changed server/accelerator matrix shape: {len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
+def parse_supermicro_nvidia_systems(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact current Supermicro HGX B200/B300 system rows.
+
+    The official NVIDIA-certified systems table may list one system more than
+    once under different certification states. Those rows collapse only when
+    every hardware field agrees, while all distinct certification states are
+    retained. Per-GPU power and memory never become server or rack totals.
+    """
+    parsed_url = urlsplit(source_url)
+    if (
+        parsed_url.hostname != "www.supermicro.com"
+        or parsed_url.scheme != "https"
+        or parsed_url.path.rstrip("/") != "/en/accelerators/nvidia-certified-systems"
+    ):
+        raise ValueError("Unsupported official Supermicro inventory URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    parser = _TableRows()
+    parser.feed(content.decode("utf-8-sig"))
+    candidates: dict[str, dict[str, Any]] = {}
+    for row_number, row in enumerate(parser.rows, start=1):
+        if len(row) < 11 or not any(token in row[1] for token in ("B200", "B300")):
+            continue
+        model = re.sub(r"^(AS)\s+-", r"\1-", row[0].strip())
+        if not re.fullmatch(r"(?:ARS|AS|SYS)-[A-Z0-9-]+", model):
+            raise ValueError(f"Invalid Supermicro model on table row {row_number}")
+        count_match = re.fullmatch(r"(\d+) GPU", row[4])
+        power_match = re.fullmatch(r"Configurable up to ([\d,]+)W", row[6])
+        memory_match = re.fullmatch(r"([\d.]+)GB (.+)", row[7])
+        cpu_count_match = re.fullmatch(r"(\d+) CPUs", row[9])
+        if (
+            count_match is None
+            or power_match is None
+            or memory_match is None
+            or cpu_count_match is None
+        ):
+            raise ValueError(f"Incomplete Supermicro rating on table row {row_number}")
+        candidate: dict[str, Any] = {
+            "model": model,
+            "accelerator_model": row[1],
+            "cooling_method": row[2] or None,
+            "accelerator_form_factor": row[3],
+            "accelerator_count": int(count_match.group(1)),
+            "integration": row[5],
+            "accelerator_power_w_per_gpu": float(power_match.group(1).replace(",", "")),
+            "memory_gb_per_gpu": float(memory_match.group(1)),
+            "memory_type": memory_match.group(2),
+            "cpu_family": row[8],
+            "cpu_count": int(cpu_count_match.group(1)),
+            "certification_states": [row[10]],
+            "locator": f"current NVIDIA-certified systems table row {row_number}",
+        }
+        previous = candidates.get(model)
+        if previous is not None:
+            comparable = {
+                key: value
+                for key, value in candidate.items()
+                if key not in {"certification_states", "locator"}
+            }
+            prior = {
+                key: value
+                for key, value in previous.items()
+                if key not in {"certification_states", "locator"}
+            }
+            if prior != comparable:
+                raise ValueError(f"Conflicting Supermicro rows for {model}")
+            previous["certification_states"] = sorted(
+                set(previous["certification_states"] + candidate["certification_states"])
+            )
+            previous["locator"] += f" and {row_number}"
+            continue
+        candidates[model] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed Supermicro system inventory shape: {len(candidates)} != {expected_count}"
         )
     return {
         "source_url": source_url,

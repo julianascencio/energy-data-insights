@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 333 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Dell, Eaton,
-Lenovo, Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, Siemens, STULZ and Vertiv. Current categories are GPU accelerators,
+has 347 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Dell, Eaton,
+Lenovo, Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, Siemens, STULZ, Supermicro and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -158,9 +158,11 @@ registered without treating them as reuse prohibitions. Public access does not
 imply an open licence. Explicit reuse restrictions remain separate.
 Lenovo's official comparison HTML was captured and checksummed; its embedded
 structured payload is parsed by a fail-closed offline adapter while the original
-page is not redistributed. A Supermicro collateral request returned HTML instead
-of the expected PDF, which is recorded as an access/content-shape limitation and
-not a reuse restriction.
+page is not redistributed. Supermicro's current certification table and both
+front-I/O B200 product pages were captured and checksummed after the earlier
+collateral URL returned HTML instead of a PDF. The complete B200/B300 table is
+parsed offline; duplicate status rows collapse only when every hardware field
+agrees.
 
 The upsert preserves creation dates and unchanged update dates. Conflicting
 populated values are quarantined individually with both observations and dated
@@ -197,4 +199,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-03T1326-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-03T1419-validation.json).

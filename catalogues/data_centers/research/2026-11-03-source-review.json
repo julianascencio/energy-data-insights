@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T13:26:00Z",
+  "retrieved_at": "2026-11-03T14:19:14Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -205,6 +205,14 @@
       "note": "Every row explicitly marked Available in the complete current view is represented once. Exact part numbers or CTO feature codes, board quantities, form factors, dates, per-GPU memory/bandwidth/TDP, interconnect, cooling and precision-labelled performance remain source-bound. No option quantity or per-GPU TDP is multiplied into server or rack input.",
       "reuse": "Factual extraction from an official public copyrighted OEM comparison page; no open licence asserted and the source table is not redistributed",
       "originals": "Official 904,864-byte HTML capture retrieved successfully; SHA-256 and the October 26, 2026 change-history date are retained in sources.json."
+    },
+    {
+      "inventory": "Supermicro current NVIDIA-certified B200/B300 systems table plus front-I/O B200 product pages",
+      "processed_offset": 14,
+      "accepted_records": 14,
+      "note": "Fourteen table rows reconcile to 13 unique hardware identities after one identical duplicate is collapsed with both status labels; the separately current SYS-422GS-NBRT-LCC page adds the fourteenth configuration. Per-GPU limits remain separate from server/rack input and PSU module ratings are not summed.",
+      "reuse": "Factual extraction from official public copyrighted OEM pages; no open licence asserted and the source pages are not redistributed",
+      "originals": "All three official HTML originals were retrieved successfully; exact byte counts and SHA-256 checksums are retained in sources.json."
     }
   ],
   "deferred": [
@@ -217,8 +225,8 @@
       "reason": "Operator footprint is complete at offset 6; issuer registries, JHB1 phase boundaries, and post-2023 Accra permit/construction evidence require independent primary-source review"
     },
     {
-      "candidate": "NVIDIA B200/B300 and current integrated systems",
-      "reason": "Current system and per-accelerator boundaries require a separate exact-configuration review"
+      "candidate": "Dell 16th/15th generation compatibility and shipping-count tables",
+      "reason": "Remain generation-specific bounded inventories; do not combine their compatibility or maximum-count columns with the completed 17th-generation table"
     },
     {
       "candidate": "Teraco JB4 data-hall area",
@@ -375,6 +383,10 @@
     {
       "candidate": "Lenovo calculated board, server or rack power and installed deployment",
       "reason": "GPU count is the exact orderable-option assembly count; per-GPU TDP is not multiplied and current availability is not evidence of deployment, server input or rack input"
+    },
+    {
+      "candidate": "Supermicro CPU, NIC, cooling and PSU option combinations or installed deployments",
+      "reason": "Portfolio and product pages document exact base systems plus optional boundaries; they do not support Cartesian configurations, summed PSU input or claims of deployment"
     }
   ],
   "holds_unchanged": [
@@ -474,6 +486,15 @@
         "TDP Max Power Consumption attribute reports 350 W"
       ],
       "reason": "The same official comparison row conflicts internally; both values remain observations and the normalized scalar stays null"
+    },
+    {
+      "record": "Five Supermicro HGX B300 system configurations",
+      "field": "memory_gb",
+      "observations": [
+        "Accelerator model label reports 288 GB per GPU",
+        "The same table row's memory column reports 270 GB HBM3E per GPU"
+      ],
+      "reason": "The official table conflicts internally; both values remain dated observations and normalized memory stays null on all five affected systems"
     }
   ],
   "normalization_notes": [
@@ -515,6 +536,7 @@
     "Eaton transformer kVA, no-load/load losses, impedance and noise retain their standard and voltage-class table boundary; no active kW, efficiency or winding voltage is inferred.",
     "Siemens NXAIR voltage, short-circuit current and continuous current are portfolio maxima stored as observations; nominal input fields remain null.",
     "Dell compatibility checkmarks establish supported server/accelerator pairs only. Accelerator maximum power remains per device, H100 NVL's 350-400 W range is not collapsed, and server/rack input and installed quantity remain null.",
-    "Lenovo option quantities describe exact orderable boards/assemblies rather than deployments. Memory, bandwidth, TDP and performance remain per GPU; performance preserves precision and sparsity labels, and no board/server/rack total is calculated."
+    "Lenovo option quantities describe exact orderable boards/assemblies rather than deployments. Memory, bandwidth, TDP and performance remain per GPU; performance preserves precision and sparsity labels, and no board/server/rack total is calculated.",
+    "Supermicro accelerator counts describe exact integrated-system designs, not deployments. Configurable accelerator limits remain per GPU; PSU module nameplates are not summed into server or rack input. B300 memory stays null where the same row says both 288 GB and 270 GB per GPU."
   ]
 }
