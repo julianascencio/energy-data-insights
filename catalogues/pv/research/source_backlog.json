@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T21:04:17.782324+00:00",
+  "updated_at": "2026-11-03T22:05:30.849249+00:00",
   "ranking_file": "20261103T1800_top10_coverage.json",
   "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
-  "next_highest_value_source": "REPD awaiting-construction exact crosswalk: Eastern and South East England.",
+  "next_highest_value_source": "REPD Q2 2026 awaiting construction: South West and London exact crosswalk.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6409,6 +6409,67 @@
       "retry_condition": "Check for revised source or new corroborating identity.",
       "next_action": "Review distinct K03-NV-ND product line",
       "processed_cursor": "Both exact K03-LV-ND columns accepted"
+    },
+    {
+      "id": "repd_q2_east_southeast",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Q2 2026",
+      "licence_assessment": "OGL v3",
+      "access_assessment": "Official public source; raw bytes retained outside Git",
+      "estimated_useful_yield": 103,
+      "fields_offered": [
+        "planning authority",
+        "reference",
+        "dates"
+      ],
+      "last_attempt": "2026-11-03T22:05:30.849249+00:00",
+      "result": "Eastern and South East: 221 examined; 103 enriched; 118 held",
+      "retry_condition": "Recheck revision or independent corroboration.",
+      "next_action": "South West and London",
+      "processed_cursor": "Eastern and South East: 221 examined; 103 enriched; 118 held"
+    },
+    {
+      "id": "solis_23_36_lv_v38",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.solisinverters.com/uploads/file/S6-GC3P%2823-36%29K-Global-Flyer-V3%2C8.pdf",
+      "version_or_date": "Global Flyer V3.8",
+      "licence_assessment": "Limited attributed facts",
+      "access_assessment": "Official public source; raw bytes retained outside Git",
+      "estimated_useful_yield": 4,
+      "fields_offered": [
+        "electrical",
+        "physical",
+        "thermal",
+        "communications"
+      ],
+      "last_attempt": "2026-11-03T22:05:30.849249+00:00",
+      "result": "Four distinct models; mixed mass cell mapping deferred",
+      "retry_condition": "Recheck revision or independent corroboration.",
+      "next_action": "Check individual model mass tables",
+      "processed_cursor": "Four distinct models; mixed mass cell mapping deferred"
+    },
+    {
+      "id": "solis_25_40_nd_v39_checked",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.solisinverters.com/uploads/file/S6-GC3P%2825-40%29K-ND-Global-Flyer-V3%2C9.pdf",
+      "version_or_date": "Global Flyer V3.9",
+      "licence_assessment": "OEM copyright retained",
+      "access_assessment": "Official public source; raw bytes retained outside Git",
+      "estimated_useful_yield": 0,
+      "fields_offered": [
+        "electrical",
+        "physical",
+        "thermal"
+      ],
+      "last_attempt": "2026-11-03T22:05:30.849249+00:00",
+      "result": "Five exact models already catalogued; SHA-256 46d0bc5e024c4b8debe25a656f0a59e62bf0be28cffee0c221a4f9fe63f4b35e",
+      "retry_condition": "Recheck revision or independent corroboration.",
+      "next_action": "Only revisit on revision or missing field",
+      "processed_cursor": "Five exact models already catalogued; SHA-256 46d0bc5e024c4b8debe25a656f0a59e62bf0be28cffee0c221a4f9fe63f4b35e"
     }
   ]
 }
