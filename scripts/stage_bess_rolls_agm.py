@@ -14,9 +14,15 @@ def main() -> None:
     parser.add_argument("--url", required=True)
     parser.add_argument("--model", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--reviewed-r2", action="store_true", help="Explicitly reviewed R2 single-cell table"
+    )
     args = parser.parse_args()
     row = parse_rolls_agm_text(
-        args.input.read_bytes(), source_url=args.url, expected_model=args.model
+        args.input.read_bytes(),
+        source_url=args.url,
+        expected_model=args.model,
+        reviewed_r2=args.reviewed_r2,
     )
     args.output.write_text(json.dumps(row, indent=2, ensure_ascii=False) + "\n")
 

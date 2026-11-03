@@ -1,4 +1,4 @@
-"""Offline staging of exact Rolls AGM-S tables from reader-extracted text.
+"""Offline staging of exact Rolls AGM-S and reviewed R2 tables from reader-extracted text.
 
 The input is extracted text, not original HTML. Its checksum must never be
 reported as a checksum of the publisher's bytes. No network or canonical upsert.
@@ -12,12 +12,17 @@ from typing import Any
 from urllib.parse import urlsplit
 
 
-def parse_rolls_agm_text(content: bytes, *, source_url: str, expected_model: str) -> dict[str, Any]:
+def parse_rolls_agm_text(
+    content: bytes, *, source_url: str, expected_model: str, reviewed_r2: bool = False
+) -> dict[str, Any]:
     """Preserve exact unit/rate observations and flag inconsistent Ah/current pairs.
 
-    Accept one individually reviewed AGM-S model. Blank discharge currents stay
-    missing. Charge voltage strings retain per-cell and temperature boundaries.
+    Accept one individually reviewed AGM-S model or explicitly opted-in R2 cell.
+    Blank discharge currents stay missing. Charge voltage strings retain
+    per-cell and temperature boundaries.
     """
+    if reviewed_r2 and not re.fullmatch(r"R2-\d+AGM", expected_model):
+        raise ValueError("R2 review requires an exact two-volt model")
     url = urlsplit(source_url)
     if url.scheme != "https" or url.hostname not in {
         "rollsbattery.com",
@@ -62,12 +67,23 @@ def parse_rolls_agm_text(content: bytes, *, source_url: str, expected_model: str
             if hours <= 0 or ah <= 0 or (current is not None and current <= 0):
                 raise ValueError("Invalid discharge rate")
             rates.append(dict(hours=hours, capacity_ah=ah, current_a=current))
-    if not labels <= fields.keys() or fields["Series"][0] != "VRLA AGM-S":
+    if not labels <= fields.keys() or fields["Series"][0] not in (
+        {"VRLA AGM-R", ""} if reviewed_r2 else {"VRLA AGM-S"}
+    ):
         raise ValueError("Missing technical fields or unsupported series")
     hours = [r["hours"] for r in rates]
     if len(hours) != len(set(hours)) or not {5, 10, 20} <= set(hours):
         raise ValueError("Missing or duplicated discharge rates")
-    revision = [x for x in lines if re.fullmatch(r"Rev\.#\d+ \| [A-Za-z]+ \d{4}", x)]
+    revision = [
+        x
+        for x in lines
+        if re.fullmatch(
+            r"Rev\.#\d+(?: \| [A-Za-z]+ \d{4})?"
+            if reviewed_r2
+            else r"Rev\.#\d+ \| [A-Za-z]+ \d{4}",
+            x,
+        )
+    ]
     if len(revision) != 1:
         raise ValueError("Missing or duplicated printed revision")
     numeric = {}
@@ -85,6 +101,8 @@ def parse_rolls_agm_text(content: bytes, *, source_url: str, expected_model: str
         if not match or float(match[1]) <= 0:
             raise ValueError(f"Changed or invalid units for {key}")
         numeric[key] = float(match[1])
+    if reviewed_r2 and (numeric["Volts"] != 2 or numeric["Cells"] != 1):
+        raise ValueError("R2 configuration must explicitly be 2 V and one cell")
     conflicts = [
         r
         for r in rates

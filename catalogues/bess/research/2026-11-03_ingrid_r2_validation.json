@@ -1,0 +1,40 @@
+{
+  "validated_at": "2026-11-03T08:06:07.794431+00:00",
+  "elapsed_minutes_through_validated_commit_preparation": 13.7,
+  "publication_time_excluded": true,
+  "full_python": {
+    "passed": 1811,
+    "skipped": 1,
+    "skip_reason": "optional cdsapi unavailable",
+    "scope": "Rerun after concurrent-head reconciliation; previous pass1805 also successful"
+  },
+  "focused_parser_tests": 13,
+  "viewer_node_tests": 13,
+  "catalogue_validation": "1785 projects and601 equipment passed",
+  "preservation": "Existing IDs, created_at, scalar and nested facts preserved; incoming PV/Wind/DC byte-identical",
+  "reference_union": "761 references; equality asserted for overlapping IDs, generated exports consistent",
+  "parquet": "Two independent typed Zstandard builds per catalogue identical; manifests committed, binaries outside Git",
+  "offline_examples": "Both passed",
+  "ruff": "passed",
+  "ruff_format": "668 files passed",
+  "ty": "passed",
+  "repository_hygiene": "2737 candidates passed",
+  "strict_sphinx": "passed after concurrent reconciliation",
+  "documentation_html_pages_checked": 439,
+  "distributions": 6,
+  "twine_strict": "all six passed",
+  "installed_wheels": "all three passed outside workspace, rebuilt after reconciliation",
+  "git_diff_check": "passed",
+  "issues_resolved": [
+    "Shared citation merge conflicts resolved by exact reference union and regeneration",
+    "Late docstring line-length failures corrected; lint and types rerun successfully"
+  ],
+  "remote_ci": "Prior04a3907 workflows successful; no claim for new commit",
+  "publication_target": {
+    "main": "617f65b933acff6f9f6ea58ca5d69f0882433340",
+    "old_pr90": "externally merged at2026-11-03T08:03:11Z",
+    "branch": "research/bess-database-20261103T0808Z",
+    "validation_reuse_basis": "New main tree identical to reconciled419d720 input; no functional change",
+    "pv_pr93": "Changed paths inspected; no overlap"
+  }
+}
