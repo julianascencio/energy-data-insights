@@ -82,6 +82,36 @@ def degradation_rates(
     cycles_per_year: ArrayLike,
     parameters: DegradationParameters,
 ) -> DegradationRates:
+    """Evaluate the 2019 mapping model in numerical %/year.
+
+    Inputs are annual stresses: temperatures in degrees C, RH in percent,
+    UV dose in kWh/m²/year and cycles/year. No offset is applied to the thermal
+    temperature difference. Missing values propagate jointly; invalid values
+    and negative totals fail. The 2021 paper's printed variant is exposed in
+    ``degradation_uncertainty.combined_rate_2021`` instead.
+    """
+    return _evaluate_degradation_rates(
+        module_temperature_mean_c=module_temperature_mean_c,
+        module_temperature_upper_c=module_temperature_upper_c,
+        module_temperature_lower_c=module_temperature_lower_c,
+        relative_humidity_percent=relative_humidity_percent,
+        uv_dose_kwh_m2=uv_dose_kwh_m2,
+        cycles_per_year=cycles_per_year,
+        parameters=parameters,
+    )
+
+
+def _evaluate_degradation_rates(
+    *,
+    module_temperature_mean_c: ArrayLike,
+    module_temperature_upper_c: ArrayLike,
+    module_temperature_lower_c: ArrayLike,
+    relative_humidity_percent: ArrayLike,
+    uv_dose_kwh_m2: ArrayLike,
+    cycles_per_year: ArrayLike,
+    parameters: DegradationParameters,
+    thermal_range_offset: float = 0.0,
+) -> DegradationRates:
     """Evaluate Eqs. 3.14-3.17 on broadcastable annual climate stresses.
 
     Temperature inputs are °C (converted to K only inside Arrhenius terms).
@@ -135,7 +165,7 @@ def degradation_rates(
             )
             thermal = (
                 p.a_tm
-                * (upper - lower) ** p.theta
+                * (thermal_range_offset + upper - lower) ** p.theta
                 * cycles
                 * np.exp(-p.e_tm / (BOLTZMANN_EV_K * (upper + 273.15)))
             )

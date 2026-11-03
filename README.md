@@ -431,6 +431,19 @@ The [degradation-rate gallery](docs/degradation-gallery.md) recalculates the sav
 maps plus rate categories. It includes the full offline input bundle and keeps
 the 15-degree sampling, calibration assumptions and missing-data mask explicit.
 
+## Compare PV degradation uncertainty and lifetime
+
+The [2021 uncertainty study](docs/degradation-uncertainty.md) implements four
+reliability curves, physical degradation rates, climate-input models and
+reproducible published-table checks. The [runnable example](examples/analysis/plot_degradation_uncertainty.py)
+shows lifetime extrapolation and explicit sensitivity scenarios. Original field
+time series are unavailable; synthetic/scenario outputs are labelled accordingly.
+
+```bash
+uv run python -m energy_analysis.degradation_uncertainty \
+  --output artifacts/degradation-uncertainty
+```
+
 ## Creator and contact
 
 Energy Data Insights is created and maintained by **ASVA Consulting**.

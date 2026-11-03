@@ -166,3 +166,9 @@ complete-hour coverage, both aggregation orders, map categories and edges,
 latitude-dependent area weights, exact grid alignment and a CLI NetCDF/GeoJSON
 round trip with provenance. Synthetic tests establish implementation behavior;
 they are not validation against field observations or the published global maps.
+
+## Reliability and uncertainty extension
+
+The [2021 uncertainty study](degradation-uncertainty.md) adds explicit reliability
+curves, climate-input comparisons and the paper's distinct printed thermal
+expression. It preserves this mapping API and its calibration convention.

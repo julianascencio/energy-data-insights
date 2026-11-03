@@ -1,5 +1,12 @@
 # Energy methods
 
+## PV degradation uncertainty and lifetime
+
+[The 2021 uncertainty study](../docs/degradation-uncertainty.md) adds four reliability
+curves, physical stress-rate models, weather-input comparisons and reproducible
+published-table checks. Run `python -m energy_analysis.degradation_uncertainty`;
+scenario assumptions and synthetic examples remain explicit.
+
 ## PV climate classifications
 
 [Compare KGPV, JRC parametric climates, ML21 and PVCZ](../docs/climate-comparison.md).

@@ -137,6 +137,10 @@ def test_method_paper_dois_remain_covered_by_catalogue() -> None:
         "degradation",
         "degradation_mapping",
         "degradation_weather",
+        "pv_reliability",
+        "degradation_uncertainty",
+        "degradation_preprocessing",
+        "pv_stress_weather",
     ],
 )
 def test_method_reference_ids_resolve_and_include_primary_thesis(module: str) -> None:

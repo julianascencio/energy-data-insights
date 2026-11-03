@@ -1,0 +1,56 @@
+{
+  "source": {
+    "doi": "10.1016/j.solener.2021.01.071",
+    "title": "Assessment of uncertainties and variations in PV modules degradation rates and lifetime predictions using physical models",
+    "authors": ["Ismail Kaaya", "Julián Ascencio-Vásquez", "Karl-Anders Weiss", "Marko Topič"],
+    "year": 2021,
+    "journal": "Solar Energy",
+    "volume": "218",
+    "pages": "354-367",
+    "input_pdf_sha256": "dc16f0c30c75ac87e9755421985153173c2efd1c55d870ecc6734f37c528fb80",
+    "extraction": "Selected numerical facts manually transcribed and checked against the user-supplied PDF, 2026-11-03. Original article and figures are not redistributed.",
+    "limitations": [
+      "Original module and weather time series are not supplied.",
+      "Table 5 omits A_N and C_N; they must be explicit scenario assumptions.",
+      "Equation 6 prints (273 + delta T), unlike the repository's 2019 mapping convention.",
+      "Equation 1 uses daily UV irradiance but Table 6 reports annual UV dose; they cannot be substituted.",
+      "Table 6 lists Negev UV dose as 96.7; Table 10 lists 96.9. Each table retains its own reference.",
+      "Some printed Reldiff values do not exactly follow Eq. 20 with rounded table inputs. Calculations retain the discrepancy.",
+      "Table 3 labels every k as percent/year, although stretched-exponential k has dimensions year**(-beta)."
+    ]
+  },
+  "reliability_table3": [
+    {"kind": "linear", "k": 0.0083, "reported_failure_years": 24.0},
+    {"kind": "exponential", "k": 0.0085, "reported_failure_years": 26.2},
+    {"kind": "stretched_exponential", "k": 0.003, "beta": 1.59, "reported_failure_years": 15.1},
+    {"kind": "wear_out", "k": 0.0087, "gamma": 0.43, "mu": 0.52, "reported_failure_years": 19.7}
+  ],
+  "combined_table5": {"a_h": 43400000, "a_p": 43.95, "a_tm": 2.45, "e_h": 0.83, "e_p": 0.51, "e_tm": 0.46, "n": 1.72, "x": 0.63, "theta": 1.8},
+  "stress_rate_table4": {"beta0": 4.1, "beta1": 0.68, "beta2": 2.55, "beta3": 0.75, "beta4": 1.70},
+  "climate_table6": [
+    {"site": "Negev", "mean_c": 37.6, "upper_c": 56.2, "lower_c": 16.1, "rh_percent": 61.5, "uv_kwh_m2": 96.7},
+    {"site": "Gran Canaria", "mean_c": 27.4, "upper_c": 41.4, "lower_c": 15.5, "rh_percent": 70.3, "uv_kwh_m2": 97.8},
+    {"site": "Zugspitze", "mean_c": 15.5, "upper_c": 42.5, "lower_c": -3.19, "rh_percent": 77.7, "uv_kwh_m2": 76.5},
+    {"site": "Ljubljana", "mean_c": 22.0, "upper_c": 51.8, "lower_c": 0.5, "rh_percent": 72.0, "uv_kwh_m2": 74.5}
+  ],
+  "temperature_table8": [
+    {"site": "Negev", "model": "faiman", "mean_c": 37.9, "upper_c": 54.8, "lower_c": 18.9},
+    {"site": "Negev", "model": "ross", "mean_c": 37.5, "upper_c": 54.2, "lower_c": 18.5},
+    {"site": "Gran Canaria", "model": "faiman", "mean_c": 29.8, "upper_c": 43.5, "lower_c": 17.4},
+    {"site": "Gran Canaria", "model": "ross", "mean_c": 28.5, "upper_c": 39.2, "lower_c": 17.3},
+    {"site": "Zugspitze", "model": "faiman", "mean_c": 15.9, "upper_c": 40.8, "lower_c": -2.0},
+    {"site": "Zugspitze", "model": "ross", "mean_c": 15.7, "upper_c": 38.6, "lower_c": -1.6},
+    {"site": "Ljubljana", "model": "faiman", "mean_c": 23.7, "upper_c": 53.4, "lower_c": 2.2},
+    {"site": "Ljubljana", "model": "ross", "mean_c": 23.7, "upper_c": 53.9, "lower_c": 2.1}
+  ],
+  "uv_table10": [
+    {"site": "Negev", "measured": 96.9, "linear_5_percent": 121.2, "linear_fitted": 99.3, "wald": 96.5, "airmass": 97.3},
+    {"site": "Gran Canaria", "measured": 97.8, "linear_5_percent": 114.0, "linear_fitted": 105.6, "wald": 103.0, "airmass": 102.7}
+  ],
+  "humidity_table11": [
+    {"site": "Negev", "measured": 61.5, "modelled": 53.7},
+    {"site": "Gran Canaria", "measured": 70.3, "modelled": 76.8},
+    {"site": "Zugspitze", "measured": 77.7, "modelled": 79.6},
+    {"site": "Ljubljana", "measured": 72.0, "modelled": 79.4}
+  ]
+}

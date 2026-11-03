@@ -6391,3 +6391,11 @@ Bonfiglioli (2024). **ACTIVE CUBE Operating Instructions**. [Source](https://www
 **Role:** data source. VEC521R6 printed06/24 pp38–41, exact ACU401sizes1–5; motor ratings and time-qualified overloads. Wind-series application from WIND R05_2 p13, no turbine compatibility.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### kaaya_2021_uncertainties
+
+Kaaya, Ismail; Ascencio-Vásquez, Julián; Weiss, Karl-Anders; Topič, Marko (2021). **Assessment of uncertainties and variations in PV modules degradation rates and lifetime predictions using physical models**. Solar Energy, 218, 354-367. [DOI: 10.1016/j.solener.2021.01.071](https://doi.org/10.1016/j.solener.2021.01.071)
+
+**Role:** implemented. Verified from the user-supplied article PDF (SHA-256 dc16f0c30c75ac87e9755421985153173c2efd1c55d870ecc6734f37c528fb80). Table 2 reliability curves, Eqs. 1 and 3–17, Sections 2.5/3.4 preprocessing and Eqs. 19–20 metrics are implemented with explicit conventions. Table 5 omits A_N and C_N; the printed 273+delta-T term and incomplete rate-unit conventions are documented separately from the existing 2019 mapping model. Published-table checks and synthetic/scenario analyses are not reproduction or field validation of the original measurement study. Gamma is held fixed in wear-out fitting because only gamma/k is identifiable.
+
+**Used by:** `methods/src/energy_methods/pv_reliability.py`, `methods/src/energy_methods/degradation_uncertainty.py`, `methods/src/energy_methods/pv_stress_weather.py`, `methods/src/energy_methods/degradation_preprocessing.py`, `analysis/src/energy_analysis/degradation_uncertainty/study.py`, `docs/degradation-uncertainty.md`, `examples/analysis/plot_degradation_uncertainty.py`.
