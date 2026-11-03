@@ -28,7 +28,7 @@ from energy_analysis.pv_lifetime.study import (
 
 # %%
 # Measured module power
-# ---------------------
+# -------------------------
 # Display every rated field sample in the archived workbook, including the
 # weaker modules. Exposure is the workbook's dismantle minus installation year,
 # not the paper's broad age description. Missing ratings and stored references
@@ -39,7 +39,7 @@ plt.show()
 
 # %%
 # System performance loss is a separate quantity
-# ----------------------------------------------
+# --------------------------------------------------
 # These are archived system performance-ratio loss estimates and their reported
 # confidence intervals. They are not substituted for module-power coefficients.
 
@@ -48,7 +48,7 @@ plt.show()
 
 # %%
 # Project from long-exposed module groups to year 50
-# -------------------------------------------------
+# ------------------------------------------------------
 # Dots are measured group medians. All lines start at those ages and extrapolate
 # a constant average loss inferred from the nameplate. They are not measured
 # historical trajectories or longitudinal fits. Age-30 values are not fabricated
@@ -60,7 +60,7 @@ plt.show()
 
 # %%
 # A 30-year point does not fix the late-life shape
-# -----------------------------------------------
+# ----------------------------------------------------
 # Every curve here is hypothetical, with 90% power at year 30. Sigmoid shape B
 # changes late-life acceleration. An unreached 80% threshold is censored at 50
 # years, not recorded as an infinite or exactly 50-year lifetime.
@@ -71,7 +71,7 @@ print(horizon_summary(shape_scenarios()).to_string(index=False))
 
 # %%
 # Preserve damage when stress changes
-# -----------------------------------
+# ---------------------------------------
 # Selected MAPLE equations: normalized sigmoid power (Eq. 10), equivalent time
 # (Eq. 13) and independent mode multiplication (Eq. 8). The rate multipliers and
 # background rate are assumptions, not inferred climate projections. Previously
@@ -83,7 +83,7 @@ print(horizon_summary(stress_scenarios()).to_string(index=False))
 
 # %%
 # Inspect the complete 30-50-year design window
-# --------------------------------------------
+# -------------------------------------------------
 # This mathematical sensitivity map answers how low a constant linear loss must
 # be to retain 80% original power. At 50 years the maximum is 0.4%/year; an
 # exponential model would use a different coefficient and threshold relation.
