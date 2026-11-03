@@ -1,17 +1,17 @@
 # Global Wind Database
 
 The Wind catalogue connects identifiable projects, exact equipment configurations,
-individual turbines and numerical curves. The proposed branch contains **5,355 project
-records in 59 countries, 53 exact equipment records from six manufacturer names,
-and two original numerical power curves** (51 turbine configurations, one blade and one converter). No individual turbine inventory has
-yet been imported. These are proposed branch totals, not merged totals or a
-worldwide operating census.
+individual turbines and numerical curves. The proposed continuation contains
+**6,279 projects, 144 equipment records, 4,364 linked turbines and two original
+numerical curves**, across **59 countries and eleven equipment manufacturers**.
+Merged main at `2fd691a7` contains 6,227 projects, 124 equipment records, 4,176
+turbines and two curves. These are catalogue counts, not a current operating census.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.
 The initial import enriched two identities with primary evidence; eleven
 primary-source project records are added, including one aggregate and its two
-phases. There are 5,354 non-group project records. The baseline is not silently
+phases. The initial batch contained 5,354 non-group project records. The baseline is not silently
 classified as current, operational, onshore or free of phase overlaps.
 
 ## REPD and OEM continuation (3 November 2026)
@@ -426,3 +426,25 @@ ACU401type columns in sizes1–5. Motor shaft power, output current,60s/1s overl
 keeps22A main-table and frequency-dependent23A/22.7A observations separately.
 WIND R05_2 p13 supports Active Cube series yaw application, not exact turbine
 compatibility. No artificial interface/cooling variants or performance claims.
+
+
+## Mecklenburg-Vorpommern, Blekinge and completed ACU type tables
+
+The 19:35 batch follows the merge of PR #101. From main `2fd691a7`, it adds
+52 projects and 188 linked turbines across complete 2,741-unit German and
+58-area/158-unit Swedish partitions. All 10,529 preceding records remain
+unchanged. The 722 German groups and 25 Swedish areas covering 72 unit rows
+retain explicit deferral decisions. No new project scope enters capacity totals.
+
+Bonfiglioli VEC521R6 (`bonfiglioli_acu_vec521r6`) adds all 12 ACU 201 columns
+on pages 35–37 and all eight remaining ACU 401 columns on pages 42–43.
+The earlier backlog's size-8 reference was incorrect: page 44 contains derating
+diagrams. A separate original document and model-identity review is required.
+
+The records preserve switching-frequency current tables separately from headline
+current, including ACU 201-19 and -22 discrepancies. ACU 201-15's single/two-phase
+9.5 A limit is distinct from the 12.5 A main-table value. Overloads retain 60 s,
+1 s and ten-minute recurrence boundaries. Three-phase-only, choke, thermal,
+UL scope and conditional IP20 statements remain qualified. WIND R05_2 page 13
+supports series-level yaw-drive application; it does not identify an installed
+turbine interface. The gallery exposes those phase/frequency conditions.
