@@ -75,4 +75,4 @@ The18:35 batch adds83projects,369turbines and18exact ACU401inverters.
 
 The 19:35 batch adds 52 projects, 188 turbines and 20 exact ACU configurations
 from complete Mecklenburg-Vorpommern/Blekinge partitions and OEM type tables.
-All 10,529 preceding records and six capacity summaries remain unchanged.
+All 10,529 preceding records and six capacity totals remain unchanged.
