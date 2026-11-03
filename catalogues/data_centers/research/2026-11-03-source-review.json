@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T08:17:47Z",
+  "retrieved_at": "2026-11-03T18:26:00Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -149,6 +149,106 @@
       "accepted_records": 22,
       "reuse": "Factual extraction from official public copyrighted OEM product pages; no open licence asserted; originals and tables are not redistributed",
       "originals": "Two official HTML captures were retrieved; raw-byte SHA-256 and byte counts are retained in sources.json"
+    },
+    {
+      "inventory": "atNorth complete 13 named site inventory, 13 detail pages, future-sites page and June 2026 sustainability report",
+      "processed_offset": 13,
+      "accepted_records": 14,
+      "note": "13 site records plus explicitly documented FIN05 first phase. Site metrics retain physical boundary labels; report status map page 6 visually reviewed.",
+      "reuse": "Public copyrighted factual extraction; no raw pages/PDFs or marketing text redistributed",
+      "originals": "16 HTML/PDF captures checksummed in sources.json"
+    },
+    {
+      "inventory": "Skanska FIN02 expansion and YIT July/August FIN04 contracts",
+      "processed_offset": 3,
+      "accepted_records": 3,
+      "note": "Separate FIN02 expansion phase, FIN04A1 building and July FIN04 design-build phase. Future starts are not achieved events.",
+      "reuse": "Primary contractor public releases; factual extraction only",
+      "originals": "Three direct contractor HTML captures checksummed"
+    },
+    {
+      "inventory": "CoolIT complete current six-model CDU inventory, six product pages, three publicly linked product sheets",
+      "processed_offset": 6,
+      "accepted_records": 6,
+      "note": "AHx180 PDF text encoding broken; dimensions visually reviewed. AHx240 dimension drawing visually reviewed. CHx3000 ambient limit unresolved.",
+      "reuse": "Public copyrighted factual extraction; no original tables/images redistributed",
+      "originals": "Ten HTML/PDF captures checksummed; direct linked public PDFs, no form submission"
+    },
+    {
+      "inventory": "Motivair CDU 2026 eight-model table and nVent RackChiller CDU40/CDU100/CDU800 exact configurations",
+      "processed_offset": 14,
+      "accepted_records": 14,
+      "note": "Eight Motivair models plus six nVent catalogue configurations. Optional electrical choices remain observations. Motivair normalized cooling capacity is quarantined for all eight models because table row media and footnote 1 conflict.",
+      "reuse": "Factual extraction from official public copyrighted OEM PDFs; no open licence asserted and source tables are not redistributed",
+      "originals": "Public web readers exposed the exact tables. Direct current-original requests returned HTTP 403, so sources.json explicitly records unavailable bytes and no checksum rather than hashing an older redirect."
+    },
+    {
+      "inventory": "Eaton dry-type transformer 7.2-12 kV tables and Siemens NXAIR current portfolio",
+      "processed_offset": 21,
+      "accepted_records": 21,
+      "note": "Sixteen Eaton standard/rating configurations plus five Siemens portfolio variants. Transformer kVA is not converted to active kW; switchgear maxima remain observations rather than nominal inputs.",
+      "reuse": "Factual extraction from official public copyrighted OEM pages; no open licence asserted and source tables/cards are not redistributed",
+      "originals": "Official search indexes exposed complete factual tables/cards. Eaton original retrieval timed out and the Siemens page returned unsupported content to the reader, so sources.json records unavailable bytes and no checksum."
+    },
+    {
+      "inventory": "Dell PowerEdge Server GPU Matrix, 17th Generation compatibility table",
+      "processed_offset": 33,
+      "accepted_records": 33,
+      "note": "Every supported checkmark in the bounded 17th-generation table is represented once. Per-accelerator limits are not server/rack input and no installed quantity is inferred; the H100 NVL power range remains unnormalized.",
+      "reuse": "Factual extraction from an official public copyrighted OEM PDF; no open licence asserted and the source table is not redistributed",
+      "originals": "Official 887,932-byte PDF retrieved successfully; SHA-256 and the printed October 2026 document date are retained in sources.json. The legacy source identifier remains stable."
+    },
+    {
+      "inventory": "Lenovo ThinkSystem GPU Comparison current available-product view",
+      "processed_offset": 20,
+      "accepted_records": 20,
+      "note": "Every row explicitly marked Available in the complete current view is represented once. Exact part numbers or CTO feature codes, board quantities, form factors, dates, per-GPU memory/bandwidth/TDP, interconnect, cooling and precision-labelled performance remain source-bound. No option quantity or per-GPU TDP is multiplied into server or rack input.",
+      "reuse": "Factual extraction from an official public copyrighted OEM comparison page; no open licence asserted and the source table is not redistributed",
+      "originals": "Official 904,864-byte HTML capture retrieved successfully; SHA-256 and the October 26, 2026 change-history date are retained in sources.json."
+    },
+    {
+      "inventory": "Supermicro current NVIDIA-certified B200/B300 systems table plus front-I/O B200 product pages",
+      "processed_offset": 14,
+      "accepted_records": 14,
+      "note": "Fourteen table rows reconcile to 13 unique hardware identities after one identical duplicate is collapsed with both status labels; the separately current SYS-422GS-NBRT-LCC page adds the fourteenth configuration. Per-GPU limits remain separate from server/rack input and PSU module ratings are not summed.",
+      "reuse": "Factual extraction from official public copyrighted OEM pages; no open licence asserted and the source pages are not redistributed",
+      "originals": "All three official HTML originals were retrieved successfully; exact byte counts and SHA-256 checksums are retained in sources.json."
+    },
+    {
+      "inventory": "Dell PowerEdge Server GPU Matrix, complete 16th- and 15th-generation compatibility tables",
+      "processed_offset": 75,
+      "accepted_records": 75,
+      "substantively_enriched": 33,
+      "note": "Every supported checkmark on printed pages 5-7 is represented once: 52 generation-specific 16th-generation pairings and 23 15th-generation pairings. The earlier 33 17th-generation records were corrected to the PDF's printed October 2026 revision and page 4 locator; B200 AC memory now preserves the printed 141 GB HBM3e rather than the prior transcription error.",
+      "reuse": "Factual extraction from an official public copyrighted OEM PDF; no open licence asserted and the tables are not redistributed",
+      "originals": "The accepted official original is 887,932 bytes with SHA-256 77c75af47b6d24f71e2c7543940c3968b8c6789400ece5c8bc9007e306e95db4. A continuation fetch returned a 497-byte HTML error response, so the checksummed original was reused; this is an access/content failure, not a reuse prohibition."
+    },
+    {
+      "inventory": "Dell PowerEdge GPU Matrix, complete Shipping tables on pages 8-11",
+      "processed_offset": 85,
+      "accepted_records": 53,
+      "substantively_enriched": 32,
+      "note": "Every explicit Shipping cell is represented once. Sixty-six cells retain a parenthesized configuration-dependent OEM maximum; 19 report Shipping without a quantity and remain null. Maxima are observations, never installed accelerator_count or server/rack power. Twenty-five generic L4 rows remain platform-SKU-unbound between the HHHL and FHHL source rows.",
+      "reuse": "Factual extraction from an official public copyrighted OEM PDF; no open licence asserted and the tables are not redistributed",
+      "originals": "Reused the accepted 887,932-byte official original with SHA-256 77c75af47b6d24f71e2c7543940c3968b8c6789400ece5c8bc9007e306e95db4; no new original is claimed."
+    },
+    {
+      "inventory": "mtu Series 4000 complete populated 50/60 Hz Data Center Continuous rating columns",
+      "processed_offset": 20,
+      "accepted_records": 20,
+      "substantively_enriched": 0,
+      "note": "All 12 populated 50 Hz rows and all eight populated 60 Hz rows are represented once. DCC kVA remains apparent power; active kW is null. Standby, stationary-emergency, prime, speed and shared duty/voltage conditions remain observations.",
+      "reuse": "Factual extraction from two official public copyrighted OEM brochures; no open licence asserted and the tables are not redistributed",
+      "originals": "The official PDFs were readable through the public document index, but direct original-byte capture and page rendering failed. No source-byte checksum is claimed; this is an access/content retrieval limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "Huawei NetCol8000-A/C complete current model tables and Delta RowCool/GoCool/in-rack cooling tables",
+      "processed_offset": 23,
+      "accepted_records": 23,
+      "substantively_enriched": 0,
+      "note": "Seven Huawei air-cooled, six Huawei chilled-water, four Delta RowCool, three GoCool and three in-rack L2L configurations. Cooling/full-option boundaries and all rating conditions remain explicit; no option combinations or issuer certifications are inferred.",
+      "reuse": "Factual extraction from official public copyrighted OEM manuals/pages; no open licence asserted and originals/tables are not redistributed",
+      "originals": "Five Delta HTML originals have byte counts and SHA-256 checksums. Huawei complete manuals were readable in the official document reader, but direct requests returned only a shared application shell; no original checksum is claimed, and this is not treated as a reuse prohibition."
     }
   ],
   "deferred": [
@@ -161,8 +261,8 @@
       "reason": "Operator footprint is complete at offset 6; issuer registries, JHB1 phase boundaries, and post-2023 Accra permit/construction evidence require independent primary-source review"
     },
     {
-      "candidate": "NVIDIA B200/B300 and current integrated systems",
-      "reason": "Current system and per-accelerator boundaries require a separate exact-configuration review"
+      "candidate": "Dell exact platform-to-SKU bindings for generic L4 shipping rows",
+      "reason": "The shipping inventory is complete at 85 cells, but the OEM explicitly says the sheet does not identify platform-SKU associations. HHHL/FHHL form factor remains unresolved on 25 generic L4 rows."
     },
     {
       "candidate": "Teraco JB4 data-hall area",
@@ -211,6 +311,52 @@
     {
       "candidate": "Cummins QST30 exact generator table",
       "reason": "The retrieved official page did not contain the expected generator model table; this is an access/content-shape limitation, not a reuse prohibition"
+    },
+    {
+      "candidate": "Princeton Digital Group portfolio",
+      "reason": "Explicit automated-collection/republication prohibition found in terms section 3; no records imported.",
+      "url": "https://princetondg.com/terms-and-conditions/"
+    },
+    {
+      "candidate": "Vantage global portfolio",
+      "reason": "HTTP 403 for original inventory, plus restrictive material-reuse terms; no bulk import. Access failure is separately recorded from reuse review.",
+      "url": "https://vantage-dc.com/terms-of-use/"
+    },
+    {
+      "candidate": "PAIX portfolio and Ghana facility page",
+      "reason": "Direct original requests returned HTTP 403; an access failure, not a reuse prohibition. Search discovery is insufficient for a complete reconciled portfolio.",
+      "url": "https://www.paix.io/ghana"
+    },
+    {
+      "candidate": "Wingu Africa regional portfolio",
+      "reason": "Terms prohibit republication of site material; defer bulk reuse review and obtain independent permits. DDC/DJ2 and Tanzania location/phase identities also require reconciliation.",
+      "url": "https://www.wingu.africa/legal/terms-of-use"
+    },
+    {
+      "candidate": "atNorth FIN03 and SWE03",
+      "reason": "FIN03 is operational on June 2026 report map but absent from current named portfolio; exact facility identity/scope needs reconciliation. SWE03 leaving portfolio does not establish retirement.",
+      "url": "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
+    },
+    {
+      "candidate": "CoolIT CHx500 and CHx1500",
+      "reason": "Discovered in older release/datasheet, absent from current six-model list. Exact historical specifications and lifecycle must be reviewed in a separate bounded batch.",
+      "url": "https://www.coolitsystems.com/resources/news/coolit-systems-launches-three-high-density-coolant-distribution-units/"
+    },
+    {
+      "candidate": "Motivair MCDU-30/MCDU-60 and older nVent CDU800 configurations",
+      "reason": "Older official sheets expose these models/SKUs, but they are absent from the selected current tables. Lifecycle status needs dated OEM evidence before any historical import."
+    },
+    {
+      "candidate": "Siemens NXAIR ordered panel and breaker configurations",
+      "reason": "The current portfolio cards establish five model/rating families but not exact breaker, busbar, panel-width or communications combinations; configuration-level continuation requires the current model catalog tables."
+    },
+    {
+      "candidate": "Supermicro front-I/O NVIDIA HGX B200 systems",
+      "reason": "Official indexed material identified exact liquid- and air-cooled system candidates, but the direct collateral URL returned an HTML response rather than the expected PDF. Defer canonical import until the original datasheet or current product pages can be captured and reconciled; this is an access/content-shape limitation, not a reuse prohibition."
+    },
+    {
+      "candidate": "mtu Series 4000 exact ordered voltage, fuel-consumption, dimensions, weight and emissions configurations",
+      "reason": "The selected brochures bind model/frequency DCC ratings but expose voltage choices and optional equipment only at portfolio scope. Continue only from model-level OEM tables without synthesizing combinations."
     }
   ],
   "excluded": [
@@ -265,6 +411,30 @@
     {
       "candidate": "Cummins inferred generator power factor or facility backup capacity",
       "reason": "No active/apparent conversion was performed and equipment ratings were not promoted to facility backup MW"
+    },
+    {
+      "candidate": "Eaton inferred active kW, efficiency and winding voltage",
+      "reason": "No kW/efficiency is calculated from kVA and reported losses; the 7.2-12 kV class is not promoted to exact primary or secondary voltage"
+    },
+    {
+      "candidate": "Siemens optional LPIT, remote monitoring, EcoTech and breaker combinations",
+      "reason": "Portfolio features were not expanded into exact product configurations or issuer-verified certifications without model-specific binding"
+    },
+    {
+      "candidate": "Lenovo calculated board, server or rack power and installed deployment",
+      "reason": "GPU count is the exact orderable-option assembly count; per-GPU TDP is not multiplied and current availability is not evidence of deployment, server input or rack input"
+    },
+    {
+      "candidate": "Supermicro CPU, NIC, cooling and PSU option combinations or installed deployments",
+      "reason": "Portfolio and product pages document exact base systems plus optional boundaries; they do not support Cartesian configurations, summed PSU input or claims of deployment"
+    },
+    {
+      "candidate": "mtu 16V4000 DS2500 and 20V4000 DS3250 60 Hz DCC configurations",
+      "reason": "Their official Data Center Continuous cells are dashes; standby identity does not support an inferred DCC rating"
+    },
+    {
+      "candidate": "mtu calculated active kW, selected voltage and optional controller/breaker/radiator combinations",
+      "reason": "The exact rows report apparent kVA only and do not bind the shared portfolio choices to ordered configurations"
     }
   ],
   "holds_unchanged": [
@@ -310,6 +480,87 @@
         "DQKAF prime and standby duplicate rows contain four distinct non-DCC field values"
       ],
       "reason": "Duplicate live-page rows agree on Data Center Continuous ratings but conflict on four non-DCC fields; DCC remains normalized while the conflicting observations remain quarantined"
+    },
+    {
+      "record": "atNorth DEN01",
+      "field": "commissioning_date",
+      "observations": [
+        "Q4 2025 first phase live",
+        "Q1 2026 operational report footnote"
+      ],
+      "reason": "Unresolved source scope/value conflict; affected normalized value null while valid metadata retained"
+    },
+    {
+      "record": "atNorth DEN02",
+      "field": "initial power observation",
+      "observations": [
+        "250 MW detail-page initial capacity",
+        "500 MW future-sites initial capacity"
+      ],
+      "reason": "Unresolved source scope/value conflict; affected normalized value null while valid metadata retained"
+    },
+    {
+      "record": "atNorth SWE04",
+      "field": "site area and unbounded power",
+      "observations": [
+        "50 ha vs 4 ha",
+        "300 MW site power vs 200 MW path to power; scope unclear"
+      ],
+      "reason": "Unresolved source scope/value conflict; affected normalized value null while valid metadata retained"
+    },
+    {
+      "record": "CoolIT CHx3000",
+      "field": "temperature_max_c",
+      "observations": [
+        "45 degC intro/Benefits",
+        "50 degC Features"
+      ],
+      "reason": "Unresolved source scope/value conflict; affected normalized value null while valid metadata retained"
+    },
+    {
+      "record": "Motivair MCDU-4U, MCDU-10, MCDU-25, MCDU-40, MCDU-45, MCDU-50, MCDU-55 and MCDU-70",
+      "field": "cooling_capacity_kw",
+      "observations": [
+        "Each first cooling-capacity row labels the secondary loop as 25% PG",
+        "Footnote 1 says capacities are rated with 100% water"
+      ],
+      "reason": "All exact cooling values and their temperature points remain observations, but the normalized scalar stays null until the OEM clarifies the rating medium"
+    },
+    {
+      "record": "Lenovo ThinkSystem NVIDIA HGX H200 141GB 700W 4-GPU Board (feature C3V2)",
+      "field": "accelerator_power_w",
+      "observations": [
+        "Product description reports 700W",
+        "TDP Max Power Consumption attribute reports 350 W"
+      ],
+      "reason": "The same official comparison row conflicts internally; both values remain observations and the normalized scalar stays null"
+    },
+    {
+      "record": "Five Supermicro HGX B300 system configurations",
+      "field": "memory_gb",
+      "observations": [
+        "Accelerator model label reports 288 GB per GPU",
+        "The same table row's memory column reports 270 GB HBM3E per GPU"
+      ],
+      "reason": "The official table conflicts internally; both values remain dated observations and normalized memory stays null on all five affected systems"
+    },
+    {
+      "record": "Eleven Dell PowerEdge H100 NVL generation-specific compatibility configurations",
+      "field": "accelerator_power_w",
+      "observations": [
+        "The October 2026 GPU specification table reports 350W-400W maximum consumption per H100 NVL accelerator",
+        "The compatibility tables establish server support but not the accelerator's selected power limit, quantity, server input or rack input"
+      ],
+      "reason": "The exact range remains an observation and no scalar accelerator_power_w is selected on six 17th-generation and five 16th-generation records"
+    },
+    {
+      "record": "Twenty-five Dell PowerEdge generic NVIDIA L4 Shipping configurations",
+      "field": "form_factor and platform-SKU binding",
+      "observations": [
+        "The GPU specification table contains separate HHHL and FHHL L4 rows with the same reported memory, bandwidth and power",
+        "Footnote 3 says the sheet does not specifically identify platform-SKU associations"
+      ],
+      "reason": "Shipping status and configuration-dependent maximum remain valid, but form_factor stays null and no HHHL/FHHL SKU is selected for a platform"
     }
   ],
   "normalization_notes": [
@@ -339,6 +590,21 @@
     "Raxio year/month lifecycle markers remain verbatim observations rather than fabricated full dates; only MZ1 has an exact commissioning date from a dated opening release",
     "Raxio PUE 1.3 observations use unspecified kind with null measurement period and source boundary because the operator does not label them measured, design or target values",
     "Cummins kW and kVA are normalized only from each exact Data Center Continuous row and remain separate; prime, standby and general continuous values remain observations",
-    "Generator equipment ratings are never treated as facility backup-generator capacity; no power factor is inferred from reported kW and kVA"
+    "Generator equipment ratings are never treated as facility backup-generator capacity; no power factor is inferred from reported kW and kVA",
+    "atNorth generic site/campus MW are observations, never IT or grid MW. FIN05 explicitly reports gross 230 MW and up-to-160 MW IT; only child phase first-stage 60 MW IT enters ultimate-planned sum.",
+    "FIN02 45 MW gross future whole-facility capacity belongs to excluded parent campus, not expansion phase; 40 MW operator metric has unspecified boundary.",
+    "atNorth page PUE <=1.2 is a full-design-IT-load target per report page 21, not the measured portfolio 1.21. Portfolio PUE is not copied to sites.",
+    "CoolIT cooling kW and CDU electrical input are separate; flow conditions/ATD preserved. CHx2000 specific flow is not multiplied into absolute flow.",
+    "No project equipment-model relationship inferred from supplier testimonials or GPU compatibility claims.",
+    "Motivair electrical choices remain model options rather than invented configured SKUs; primary and secondary GPM remain separate observations, while the normalized liquid-flow field is an explicit secondary-loop unit conversion.",
+    "nVent dry/filled CDU40 and CDU100 SKUs and CDU800 generation 3.2 country-of-origin SKUs remain separate configurations; the shared family sheet is not used to synthesize additional variants.",
+    "Motivair cooling-capacity scalars remain quarantined because the 25% PG row label conflicts with footnote 1's 100% water statement; all four exact rating points remain available as observations.",
+    "Eaton transformer kVA, no-load/load losses, impedance and noise retain their standard and voltage-class table boundary; no active kW, efficiency or winding voltage is inferred.",
+    "Siemens NXAIR voltage, short-circuit current and continuous current are portfolio maxima stored as observations; nominal input fields remain null.",
+    "Dell's 108 generation-specific compatibility checkmarks and 85 Shipping cells remain different observations. Shipping quantities are configuration-dependent OEM maxima and never become accelerator_count, deployment, server input or rack input. Nineteen blank quantities remain null; 25 generic L4 rows do not select HHHL/FHHL form factor. Accelerator maximum power remains per device, and H100 NVL's 350-400 W range is not collapsed.",
+    "Lenovo option quantities describe exact orderable boards/assemblies rather than deployments. Memory, bandwidth, TDP and performance remain per GPU; performance preserves precision and sparsity labels, and no board/server/rack total is calculated.",
+    "Supermicro accelerator counts describe exact integrated-system designs, not deployments. Configurable accelerator limits remain per GPU; PSU module nameplates are not summed into server or rack input. B300 memory stays null where the same row says both 288 GB and 270 GB per GPU.",
+    "mtu Series 4000 DCC kVA remains apparent power at the exact model/frequency row. Active kW is null; shared voltage choices and Tier III/IV compliance language remain observations rather than selected windings or issuer certifications.",
+    "Huawei and Delta cooling capacity is normalized only at the exact stated table rating point. Cooling-only and full/optional current, power and weight remain separate; multi-voltage/frequency choices and CFM are observations, and no OEM conformance claim is promoted to an issuer-registry certification."
   ]
 }

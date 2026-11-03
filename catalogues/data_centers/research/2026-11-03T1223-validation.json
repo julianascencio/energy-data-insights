@@ -1,0 +1,67 @@
+{
+  "run_id": "dell-poweredge-gpu-20261103T122301Z",
+  "executed_at": "2026-11-03T12:23:01Z",
+  "checks": [
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed",
+      "records": 495
+    },
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed",
+      "tests": 40
+    },
+    {
+      "command": "pytest -q",
+      "result": "passed",
+      "tests": 1839,
+      "skipped": 5,
+      "note": "Missing optional cdsapi (1), Python 3.13 Orbital PV integrations (3), Python 3.13 native imagery integration (1)."
+    },
+    {
+      "command": "ruff format --check .; ruff check .; ty check",
+      "result": "passed",
+      "note": "689 files formatted; lint and type checks passed."
+    },
+    {
+      "command": "python scripts/check_repository.py; python scripts/check_citations.py; git diff --check",
+      "result": "passed",
+      "note": "Final repository check reviewed 2791 candidate files."
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed",
+      "tests": 14
+    },
+    {
+      "command": "MPLBACKEND=Agg python examples/database/plot_data_center_catalogue.py",
+      "result": "passed"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs <fresh-output>; python scripts/check_docs_links.py <fresh-output>/html",
+      "result": "passed",
+      "html_pages": 445
+    },
+    {
+      "check": "Two independent snapshot builds",
+      "result": "byte-identical projects, equipment and manifest files",
+      "projects_parquet_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+      "equipment_parquet_sha256": "848c4840960d711f32038df03469cd730313ec6f7f6eabcd2a7d10f98bc012bd",
+      "input_sha256": "61d46cd7d66ee9ab978d6535bb3c416795b1b265c0839ccf0ba7f27496636fc1",
+      "manifest_sha256": "b3df3e7fed133e130a88d3114cd30202745b097eae44d14d665f1bde4389cb65"
+    },
+    {
+      "check": "Viewer projection and preservation",
+      "result": "182 project rows / 313 equipment rows; project Parquet unchanged; project capacity summaries unchanged"
+    }
+  ],
+  "publication_preflight": {
+    "main_sha_at_start": "5063c41694b17b1a3fc856ea9527a32211278203",
+    "pr": 100,
+    "remote_head_at_start": "c87d2050be7690bd4a33cd6a0a6b1434b658cb2f",
+    "branch": "research/data-center-database-20261103T0909Z",
+    "remote_ci_before_increment": "Documentation and Python quality and tests both completed successfully",
+    "remote_ci_after_increment": "Not available before publication; inspect PR checks after commit"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T08:17:47Z",
+  "updated_at": "2026-11-03T18:26:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -28,11 +28,63 @@
     "vertiv_trinergy_ce_ratings": 4,
     "carrier_aquaedge_19dv_configurations": 28,
     "raxio_current_facilities": 7,
-    "cummins_data_center_continuous_configurations": 22
+    "cummins_data_center_continuous_configurations": 22,
+    "atnorth_named_sites": 13,
+    "atnorth_contractor_disclosures": 3,
+    "atnorth_explicit_first_phase": 1,
+    "coolit_current_cdu_models": 6,
+    "motivair_current_cdu_models": 8,
+    "nvent_rackchiller_skus": 6,
+    "eaton_dry_transformer_configurations": 16,
+    "siemens_nxair_portfolio_variants": 5,
+    "dell_poweredge_17g_gpu_compatibility": 33,
+    "dell_poweredge_16g_gpu_compatibility": 52,
+    "dell_poweredge_15g_gpu_compatibility": 23,
+    "dell_poweredge_shipping_cells": 85,
+    "lenovo_thinksystem_current_gpu_options": 20,
+    "supermicro_current_blackwell_systems": 14,
+    "mtu_series_4000_dcc_configurations": 20,
+    "huawei_netcol8000_a_configurations": 7,
+    "huawei_netcol8000_c_configurations": 6,
+    "delta_rowcool_cw_models": 4,
+    "delta_gocool_models": 3,
+    "delta_inrack_l2l_configurations": 3
   },
   "next_batches": [
     {
       "rank": 1,
+      "source": "atNorth phase permits, FIN03 identity and disputed site observations",
+      "urls": [
+        "https://www.atnorth.com/nordic-data-centers/",
+        "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
+      ],
+      "offset": 13,
+      "scope": "All 13 current named sites and four explicit child buildings/phases accepted. Do not recount. Review Finnish municipal permits for FIN04A1 and July-2026 building identity; reconcile omitted FIN03; current-map SWE03 departure is not retirement.",
+      "questions": [
+        "DEN01 Q4 2025 first-phase live vs report Q1 2026 operation: distinguish events",
+        "DEN02 initial power 250 vs 500 MW; SWE04 land 50 vs 4 ha and power 300 vs 200 MW",
+        "FIN02 40 MW unspecified campus power vs contractor 45 MW gross future total have different boundaries; do not silently replace",
+        "Get dated commencement/completion evidence and explicit building/phase IT/grid/facility ratings; no generic PUE-derived estimates"
+      ]
+    },
+    {
+      "rank": 2,
+      "source": "CoolIT legacy/current CDU and supplier diversity continuation",
+      "urls": [
+        "https://www.coolitsystems.com/products-services/data-center-products/cooling-distribution-units/",
+        "https://www.coolitsystems.com/resources/news/coolit-systems-launches-three-high-density-coolant-distribution-units/"
+      ],
+      "offset": 6,
+      "scope": "Complete current CoolIT six-product list, Motivair CDU 2026 eight-model table and six exact current nVent RackChiller configurations imported. CHx500/CHx1500, Motivair MCDU-30/MCDU-60 and older nVent CDU800 SKUs are historical candidates requiring dated lifecycle review. Continue transformer and switchgear tables.",
+      "questions": [
+        "Resolve CHx3000 45 vs 50 degC maximum ambient on same page",
+        "CHx2000 2125 L/min at 35 psi web value and 1.5 L/min/kW brochure have unspecified loop boundaries; retain separately",
+        "Resolve the Motivair row-label 25% PG versus footnote 1 100% water rating-medium contradiction before normalizing cooling capacity",
+        "Seek weight, warranty and exact configured electrical SKUs; no multiplied flow or fabricated optional configurations"
+      ]
+    },
+    {
+      "rank": 3,
       "source": "Teraco technical sheets + NEXTDC excluded/edge details",
       "urls": [
         "https://www.teraco.co.za/data-centre-locations/",
@@ -47,7 +99,7 @@
       ]
     },
     {
-      "rank": 2,
+      "rank": 4,
       "source": "ODATA country technical sheets",
       "urls": [
         "https://odatadc.com/localidades/",
@@ -62,7 +114,7 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 5,
       "source": "Underrepresented operators and official permits",
       "urls": [
         "https://www.africadatacentres.com/"
@@ -77,7 +129,7 @@
       ]
     },
     {
-      "rank": 4,
+      "rank": 6,
       "source": "North America/Europe structured official portfolios, Meta, and AirTrunk phase evidence",
       "urls": [
         "https://www.digitalrealty.com/data-centers",
@@ -93,24 +145,26 @@
       ]
     },
     {
-      "rank": 5,
+      "rank": 7,
       "source": "OEM electrical and thermal specifications",
       "urls": [
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 197,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows and 22 Cummins KTA50/QSK60 Data Center Continuous configurations complete; continue exact current transformer and switchgear tables, then generator suppliers beyond Cummins",
+      "offset": 231,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows and five Siemens NXAIR variants complete; continue generator and electrical-equipment suppliers beyond Cummins/mtu/Eaton/Siemens",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
         "Reference existing BESS battery models rather than duplicating them",
-        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page"
+        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page",
+        "mtu 50/60 Hz DCC tables are complete at 12+8; never convert their kVA ratings to active kW or select a portfolio voltage",
+        "Find exact mtu model-level fuel consumption, dimensions, weight, emissions calibration and ordered voltage tables before enrichment"
       ]
     },
     {
-      "rank": 6,
+      "rank": 8,
       "source": "Compute racks and cooling supplier diversity",
       "urls": [
         "https://www.supermicro.com/",
@@ -118,15 +172,19 @@
         "https://www.lenovo.com/",
         "https://www.coolitsystems.com/"
       ],
-      "offset": 0,
-      "scope": "Exact integrated compute rack and direct-to-chip/immersion model tables; Asian and regional OEMs",
+      "offset": 285,
+      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Huawei NetCol8000-A/C exact tables and Delta RowCool/GoCool/in-rack L2L tables are complete at 7+6+4+3+3. Continue direct-to-chip/immersion and independent Asian/regional OEMs without recounting these inventories.",
       "questions": [
         "Rack input vs server vs accelerator limit",
-        "Measured performance workload/precision/test conditions, temperatures and flow"
+        "Measured performance workload/precision/test conditions, temperatures and flow",
+        "Resolve Supermicro B300 288 GB accelerator-label versus 270 GB table-memory conflict before normalizing memory",
+        "Recheck Lenovo after a dated change-history update; do not recount the 20-option 2026-10-26 Available view",
+        "Dell shipping quantities are complete at offset 85; values remain configuration-dependent maximum observations, never installed counts",
+        "Resolve platform-SKU binding for 25 generic Dell L4 shipping rows before assigning HHHL/FHHL form factor"
       ]
     },
     {
-      "rank": 7,
+      "rank": 9,
       "source": "Google PUE continuation",
       "url": "https://www.datacenters.google/efficiency/",
       "offset": 35,
@@ -137,7 +195,7 @@
       ]
     },
     {
-      "rank": 8,
+      "rank": 10,
       "source": "NVIDIA lifecycle and current accelerator continuation",
       "urls": [
         "https://docs.nvidia.com/vgpu/gpus-supported-by-vgpu.html",
@@ -168,7 +226,20 @@
     {
       "source": "Digital Realty 2025 10-K schedule III",
       "reason": "Market aggregates, not facility identities"
+    },
+    {
+      "source": "Princeton Digital Group website",
+      "url": "https://princetondg.com/terms-and-conditions/",
+      "reason": "Section 3 explicitly prohibits automated copying/downloading and redistribution. Stop collection/import; require permission or independent public planning records."
     }
   ],
-  "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open."
+  "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
+  "latest_run": {
+    "run_id": "huawei-delta-cooling-20261103T182600Z",
+    "report": "2026-11-03-report.md",
+    "validation": "2026-11-03T1826-validation.json",
+    "added_projects": 0,
+    "added_equipment": 23,
+    "branch": "research/data-center-database-20261103T0909Z"
+  }
 }

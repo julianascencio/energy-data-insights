@@ -1,0 +1,73 @@
+{
+  "run_id": "supermicro-blackwell-20261103T141914Z",
+  "executed_at": "2026-11-03T14:19:14Z",
+  "checks": [
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed",
+      "records": 529
+    },
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed",
+      "tests": 45
+    },
+    {
+      "command": "pytest -q",
+      "result": "passed",
+      "tests": 1844,
+      "skipped": 5,
+      "note": "Missing optional cdsapi (1), Python 3.13 Orbital PV integrations (3), Python 3.13 native imagery integration (1)."
+    },
+    {
+      "command": "ruff format --check .; ruff check .; ty check",
+      "result": "passed",
+      "note": "693 files formatted; lint and type checks passed."
+    },
+    {
+      "command": "python scripts/check_repository.py; python scripts/check_citations.py; git diff --check",
+      "result": "passed",
+      "note": "Final repository check reviewed 2801 candidate files."
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed",
+      "tests": 14
+    },
+    {
+      "command": "MPLBACKEND=Agg python examples/database/plot_data_center_catalogue.py",
+      "result": "passed"
+    },
+    {
+      "command": "python scripts/build_data_center_supermicro_batch.py <three captured official HTML files> <output>; cmp <output> catalogues/data_centers/records/equipment/2026-11-03-supermicro-blackwell.jsonl",
+      "result": "passed",
+      "records": 14
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs <fresh-output>; python scripts/check_docs_links.py <fresh-output>/html",
+      "result": "passed",
+      "generated_html_pages": 447,
+      "link_checked_html_pages": 445
+    },
+    {
+      "check": "Two independent snapshot builds",
+      "result": "byte-identical projects, equipment and manifest files",
+      "projects_parquet_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+      "equipment_parquet_sha256": "b6148f74ebbf1c618081720ef786d08268d5b9d2caa09003a5c00dafb16886e2",
+      "input_sha256": "2cf5a3af3670c5788e422f4dd6642909dba6bad691bcfd32ac9ee9d828e7e345",
+      "manifest_sha256": "01427357d18beacdaabbd98acd97203f68f4a23c99a00e5675fb3e4a52b5bdfb"
+    },
+    {
+      "check": "Viewer projection and preservation",
+      "result": "182 project rows / 347 equipment rows; project Parquet unchanged; project capacity summaries unchanged"
+    }
+  ],
+  "publication_preflight": {
+    "main_sha_at_start": "5063c41694b17b1a3fc856ea9527a32211278203",
+    "pr": 100,
+    "remote_head_at_start": "74c2226183400cd223c67ec267cd4a31eba9bbfb",
+    "branch": "research/data-center-database-20261103T0909Z",
+    "remote_ci_before_increment": "Documentation and Python quality and tests both completed successfully",
+    "remote_ci_after_increment": "Not available before publication; inspect PR checks after commit"
+  }
+}

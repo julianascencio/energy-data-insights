@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 165 project records across 34 countries:
-62 facilities and 103 explicitly scoped campus aggregates, from twelve operators.
+The current continuation branch has 182 project records across 36 countries:
+65 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -38,12 +38,13 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 239 exact models/configurations from NVIDIA, AMD, Carrier, Cummins, Eaton,
-Schneider Electric, STULZ and Vertiv. Current categories are GPU accelerators,
+has 518 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
+Dell, Delta Electronics, Eaton, Huawei Digital Power, Lenovo, Motivair by Schneider
+Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens, STULZ, Supermicro and
+Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
-and CRAC/precision air-conditioning equipment.
-Switchgear, transformers and additional cooling categories are supported by
-schema and ranked in the continuation backlog. The Schneider Galaxy
+and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
+The Schneider Galaxy
 VS batch preserves exact commercial references, stated kW and kVA, battery-string
 arrangements, full-load efficiency conditions and dimensions without calculating
 battery energy or runtime.
@@ -63,6 +64,55 @@ The Cummins continuation adds 22 exact KTA50/QSK60 model-frequency rows with
 explicit Data Center Continuous kW and kVA. Prime, standby and general continuous
 ratings remain observations. Four conflicting non-DCC fields on three duplicated
 QSK60 live-page rows are quarantined without discarding their matching DCC data.
+The mtu continuation adds all 20 Series 4000 model/frequency rows with an explicit
+Data Center Continuous (3F) rating: 12 at 50 Hz and eight at 60 Hz. The brochures
+report apparent kVA for these exact rows, so active kW remains null. Standby,
+stationary-emergency and prime ratings, engine speed, shared voltage lists and
+duty conditions remain bounded observations. Portfolio voltage choices are not
+treated as selected windings, and the OEM Tier III/IV statement is not normalized
+as an issuer-registry certification.
+The Asian cooling continuation adds all 13 exact configurations in Huawei's
+current NetCol8000-A and NetCol8000-C model tables plus ten Delta configurations:
+four RowCool CW models, three GoCool CDUs and three explicitly documented in-rack
+L2L configurations. Cooling-only and full/optional currents and weights remain
+distinct. Alternate capacity points, multiple voltage choices, CFM observations
+and exact water/air rating temperatures are preserved without synthesizing
+options. OEM conformance statements are not issuer-registry certifications.
+The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
+table and six exact nVent catalogue configurations. Motivair's four cooling
+rating points, primary/secondary flows, pump head, dimensions, electrical options
+and protocols remain model-bound. Its normalized cooling-capacity field is
+quarantined because the row labels 25% propylene glycol while footnote 1 says
+capacities use 100% water. nVent CDU40/CDU100 dry and filled SKUs stay separate;
+CDU800 generation 3.2 US/Germany SKUs retain their shared 800 kW point and the
+separate 575 kW GB200-NVL72 application rating.
+The power-distribution continuation adds all 16 rows in Eaton's two current
+7.2--12 kV dry-type transformer tables and all five variants on Siemens' current
+NXAIR portfolio page. Transformer kVA is never converted to active kW; table
+losses, impedance and noise remain bounded observations. Siemens voltage,
+short-circuit current and continuous-current values are portfolio maxima, not
+nominal inputs or ordered-panel configurations.
+The compute-system continuation processes every supported checkmark in Dell's
+October 2026 PowerEdge generation-specific compatibility tables: 33 exact 17th,
+52 exact 16th and 23 exact 15th Generation server/accelerator pairings. The
+accepted PDF is checksummed, and its printed revision/page locators correct the
+earlier evidence transcription while stable record/source identities remain.
+Per-accelerator maximum power and memory remain distinct from unknown server and
+rack input; accelerator quantity and deployment are not inferred. The H100 NVL
+350--400 W range remains an exact observation rather than a normalized scalar.
+All 85 cells in the same document's Shipping tables are processed separately:
+53 add documented configurations and 32 enrich exact existing pairs. Sixty-six
+parenthesized quantities remain configuration-dependent OEM maximum observations,
+not installed accelerator counts; 19 blank quantities remain null. Generic L4
+shipping rows do not select HHHL or FHHL because the source explicitly withholds
+platform-to-SKU association.
+The Lenovo continuation processes all 20 rows explicitly marked Available in the
+current ThinkSystem GPU comparison. Exact commercial part numbers or CTO feature
+codes, option GPU counts, form factors, announcement dates, per-GPU memory,
+bandwidth, TDP, interconnect, cooling and precision-labelled performance remain
+source-bound. Option quantities are not deployments and per-GPU values are never
+multiplied into board, server or rack input. The C3V2 H200 row's 700 W description
+versus 350 W TDP conflict is quarantined, leaving normalized power null.
 
 Never generate configurations by combining optional specification values. Model
 punctuation and variant identifiers matter. Accelerator power limits, server
@@ -122,10 +172,21 @@ has been installed or tested in that separate repository.
 
 Every non-administrative field has registered source IDs and evidence detail,
 including locator, confidence and normalized unit. Sources retain retrieval date,
-publication date when known, revision and original-byte SHA-256. All accepted
-sources were fetched successfully; original copyrighted pages/PDFs are not
-redistributed. Public access does not imply an open licence. Access failures and
-explicit reuse restrictions are recorded separately.
+publication date when known, revision and original-byte SHA-256 when retrievable.
+Original copyrighted pages/PDFs are not redistributed. The current Motivair and
+nVent tables were readable through the public web reader, while direct byte
+requests returned HTTP 403. Eaton's indexed tables were complete but the original
+page request timed out; the Siemens page returned an unsupported-content response
+to the reader. These access failures and unavailable checksums are explicitly
+registered without treating them as reuse prohibitions. Public access does not
+imply an open licence. Explicit reuse restrictions remain separate.
+Lenovo's official comparison HTML was captured and checksummed; its embedded
+structured payload is parsed by a fail-closed offline adapter while the original
+page is not redistributed. Supermicro's current certification table and both
+front-I/O B200 product pages were captured and checksummed after the earlier
+collateral URL returned HTML instead of a PDF. The complete B200/B300 table is
+parsed offline; duplicate status rows collapse only when every hardware field
+agrees.
 
 The upsert preserves creation dates and unchanged update dates. Conflicting
 populated values are quarantined individually with both observations and dated
@@ -139,3 +200,27 @@ these offsets before research. The targets of 50 projects and 20 exact models pe
 run never override identity, evidence or reuse requirements. NTT/PeeringDB bulk
 sources remain on explicit reuse hold; OpenStreetMap fetch failures were access
 problems and yielded no imported records.
+
+## Nordic sites and coolant distribution units
+
+The atNorth batch processes all 13 named sites in the current portfolio, plus
+four separately documented buildings/phases linked to excluded campus parents.
+Iceland and Norway are new coverage. Generic site/campus power remains a bounded
+observation. FIN05 explicitly separates 230 MW gross planned capacity, up to
+160 MW IT at campus level and 60 MW IT for its first phase; only the child
+phase enters the ultimate-planned IT sum. FIN02's contractor reports 45 MW gross
+capacity for the whole expanded facility, not the expansion alone.
+
+The six-model current CoolIT CDU inventory retains cooling kW, electrical input,
+approach temperature difference, flow/pressure conditions, redundancy and
+protocols. Publicly linked AHx180/AHx240 brochures add dimensions, verified
+visually. CHx3000's conflicting 45/50 °C ambient limits remain quarantined.
+No compatible GPU rack is treated as a deployed or newly configured rack.
+
+The completed CDU continuation covers Motivair's eight-model 2026 table and six
+exact nVent HOFFMAN SKUs. Optional voltages were not expanded into invented products.
+Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
+lifecycle candidates because they are absent from the selected current tables.
+
+See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
+and [executed validation](../catalogues/data_centers/research/2026-11-03T1419-validation.json).

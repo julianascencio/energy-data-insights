@@ -2,33 +2,54 @@
   "executed_at": "2026-11-03T08:17:47Z",
   "python": "3.12",
   "checks": [
-    {"command": "python -m energy_data_retrieval.data_center_catalogue validate", "result": "passed", "records": 404},
-    {"command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py", "result": "passed", "tests": 29},
     {
-      "command": "pytest --cov --cov-report=term-missing",
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed",
+      "records": 404
+    },
+    {
+      "command": "pytest -q data-retrieval/tests/test_data_center_catalogue.py",
+      "result": "passed",
+      "tests": 29
+    },
+    {
+      "command": "pytest -q",
       "result": "passed",
       "tests": 1808,
       "skipped": 5,
-      "note": "Optional cdsapi, Python 3.13 Orbital PV and native imagery integrations were skipped by their declared environment guards"
+      "note": "Optional cdsapi, Python 3.13 Orbital PV and native imagery integrations were skipped by their declared environment guards",
+      "audit_correction": "Corrected command label: post-rebase 1808-pass run used pytest -q; earlier 1805-pass run used coverage."
     },
     {
       "command": "ruff format --check .; ruff check .; ty check",
       "result": "passed",
       "note": "All 671 files passed formatting; lint and type checks passed"
     },
-    {"command": "python scripts/check_repository.py; python scripts/check_citations.py", "result": "passed", "repository_candidates": 2744},
+    {
+      "command": "python scripts/check_repository.py; python scripts/check_citations.py",
+      "result": "passed",
+      "repository_candidates": 2744
+    },
     {
       "command": "python examples/database/plot_data_center_catalogue.py",
       "result": "passed",
       "note": "Rebuilt geographic, completeness, cooling and equipment comparisons including exact generator DCC kW/kVA"
     },
-    {"command": "node --test tests/js/test_database_viewer.mjs", "result": "passed", "tests": 13},
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed",
+      "tests": 13
+    },
     {
       "command": "sphinx-build -W --keep-going -b html docs docs/_build/html",
       "result": "passed",
       "note": "Strict offline Sphinx/gallery build completed"
     },
-    {"command": "python scripts/check_docs_links.py docs/_build/html", "result": "passed", "html_pages": 439},
+    {
+      "command": "python scripts/check_docs_links.py docs/_build/html",
+      "result": "passed",
+      "html_pages": 439
+    },
     {
       "check": "Two independent Data Center snapshot builds",
       "result": "byte-identical projects.parquet, equipment.parquet and manifests",

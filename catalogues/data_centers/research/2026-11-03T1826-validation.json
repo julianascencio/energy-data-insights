@@ -1,0 +1,103 @@
+{
+  "run_id": "huawei-delta-cooling-20261103T182600Z",
+  "validated_at": "2026-11-03T18:26:46Z",
+  "branch": "research/data-center-database-20261103T0909Z",
+  "base_main_sha": "5063c41694b17b1a3fc856ea9527a32211278203",
+  "prepublication_remote_head": "b65444588e4b000e5b814c98095855b68bf17765",
+  "canonical_records": 700,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 518,
+    "countries": 36,
+    "operators": 13,
+    "oems": 18
+  },
+  "merged_main_totals": {
+    "projects": 165,
+    "facility_records": 62,
+    "phase_records": 0,
+    "campus_aggregate_records": 103,
+    "equipment": 239,
+    "countries": 34,
+    "operators": 12,
+    "oems": 8
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 23,
+    "substantively_enriched_equipment": 0,
+    "new_oems": [
+      "Delta Electronics",
+      "Huawei Digital Power"
+    ]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_asian_cooling_batch.py <temporary-output> && cmp <temporary-output> catalogues/data_centers/records/equipment/2026-11-03-huawei-delta-cooling.jsonl",
+      "result": "passed; 23 deterministic reviewed records"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 700 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "54 passed"
+    },
+    {
+      "command": "pytest -q",
+      "result": "1853 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "14 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check . && ty check",
+      "result": "passed"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 2819 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; project scopes/capacity boundaries and cooling/electrical comparisons reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs docs/_build/html && python scripts/check_docs_links.py docs/_build/html",
+      "result": "passed; 447 HTML files generated and 445 content pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+    "equipment_sha256": "4e9f5f56b5111308e9e7e4ce3f209e3fd3bcfc0eeae41c8b71582060ce107c06",
+    "input_sha256": "4307b1cb7f00123e7d45acc8fbdd8ba2ee861b9e2771b20fb7ff4ce3f0f2aaef",
+    "manifest_sha256": "e7f102c361066204b546db4c13aa7eb975ee45c250e0a6730c0d0bff891ac067"
+  },
+  "source_capture": {
+    "delta_originals_checksummed": 5,
+    "huawei_originals_unavailable": 2,
+    "huawei_access_note": "The official reader exposed the complete manuals; direct requests returned only a shared 6908-byte application shell. No original checksum is claimed and no reuse prohibition is inferred."
+  },
+  "remote_ci_before_publication": {
+    "commit": "b65444588e4b000e5b814c98095855b68bf17765",
+    "python_quality_and_tests_run": 41684511001,
+    "python_conclusion": "success",
+    "documentation_run": 41684511003,
+    "documentation_conclusion": "success"
+  }
+}

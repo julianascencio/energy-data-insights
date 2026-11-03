@@ -10,6 +10,7 @@ See the :doc:`interactive viewer </data-center-database-viewer>` for field evide
 
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from textwrap import shorten
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -40,14 +41,17 @@ for field in ("it_capacity_mw", "grid_capacity_mw", "facility_capacity_mw"):
 # Geographic coverage: campus and facility counts remain visually distinct.
 fig, axes = plt.subplots(2, 2, figsize=(15, 11), layout="constrained")
 coverage = projects.groupby(["country_code", "record_scope"]).size().unstack(fill_value=0)
-coverage.plot.barh(stacked=True, ax=axes[0, 0], color=["#a5c8d4", "#167d9a"])
+scope_colors = {"campus": "#a5c8d4", "facility": "#167d9a", "phase": "#b58a45"}
+coverage.plot.barh(
+    stacked=True, ax=axes[0, 0], color=[scope_colors[scope] for scope in coverage.columns]
+)
 axes[0, 0].set(
     xlabel="Catalogue records; not market share",
     ylabel="Country",
     title="Geographic coverage by scope",
 )
 
-# %%
+# Keep one gallery execution block so all four axes are captured together.
 # Count reported capacities; null is not zero, and the three MW boundaries differ.
 fields = ["it_capacity_mw", "grid_capacity_mw", "facility_capacity_mw"]
 completeness = pd.DataFrame(
@@ -55,36 +59,76 @@ completeness = pd.DataFrame(
 )
 completeness.index = ["IT", "Grid", "Facility"]
 completeness.plot.barh(stacked=True, ax=axes[0, 1], color=["#167d9a", "#dedede"])
+axes[0, 1].legend(loc="upper left", fontsize=9)
 axes[0, 1].set(
     xlabel="Records (all scopes)",
     ylabel="Capacity boundary",
-    title="Capacity completeness; no inferred values",
+    title="Capacity completeness",
 )
 
-# %%
+# Keep one gallery execution block so all four axes are captured together.
 # Cooling descriptions preserve technologies; missing values remain an explicit group.
 cooling = projects.cooling_technology.fillna("Unknown").value_counts().sort_values()
 cooling.plot.barh(ax=axes[1, 0], color="#3d9c87")
+axes[1, 0].set_yticklabels(
+    [shorten(str(label), width=38, placeholder="…") for label in cooling.index], fontsize=8
+)
 axes[1, 0].set(
     xlabel="Records",
     ylabel="Reported description",
-    title="Cooling coverage; no deployment inference",
+    title="Cooling coverage (abbreviated labels)",
 )
 
-# %%
+# Keep one gallery execution block so all four axes are captured together.
 # Like-for-like comparison: accelerator limits in W only. Do not include server kW.
 gpus = equipment.loc[
     equipment.equipment_category.eq("gpu_accelerator") & equipment.accelerator_power_w.notna()
 ].sort_values("accelerator_power_w")
 axes[1, 1].barh(gpus["name"], gpus.accelerator_power_w, color="#b58a45")
+axes[1, 1].tick_params(axis="y", labelsize=8)
 axes[1, 1].set(
     xlabel="Published maximum accelerator power (W)",
-    title="Exact GPU variants; configurable limits, not measured draw",
+    title="GPU power limits; not measured draw",
 )
 print(
     equipment.loc[
         equipment.equipment_category.eq("server"), ["name", "input_power_kw", "power_conditions"]
     ].to_string(index=False)
+)
+print("Dell compatibility rows preserve accelerator limits separately from server input:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Dell"),
+        ["model", "variant", "accelerator_power_w", "input_power_kw", "power_conditions"],
+    ]
+    .sort_values(["model", "variant"])
+    .to_string(index=False)
+)
+print("Lenovo exact options preserve per-GPU limits and option identities:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Lenovo"),
+        ["model", "variant", "accelerator_power_w", "power_conditions", "quality_status"],
+    ]
+    .sort_values(["accelerator_power_w", "model"], na_position="last")
+    .to_string(index=False)
+)
+print("Supermicro integrated systems keep accelerator and server input boundaries separate:")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Supermicro"),
+        [
+            "model",
+            "variant",
+            "accelerator_count",
+            "accelerator_power_w",
+            "input_power_kw",
+            "memory_gb",
+            "quality_status",
+        ],
+    ]
+    .sort_values(["model", "variant"])
+    .to_string(index=False)
 )
 print("Exact UPS ratings keep kW, kVA and runtime/load conditions separate:")
 print(
@@ -148,6 +192,41 @@ print(
         ],
     ]
     .sort_values(["variant", "cooling_capacity_kw", "model"])
+    .to_string(index=False)
+)
+print("CDU comparison preserves approach temperatures, loop boundaries and quarantines:")
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("cdu"),
+        [
+            "manufacturer",
+            "model",
+            "cooling_capacity_kw",
+            "input_power_kw",
+            "liquid_flow_l_min",
+            "cooling_rating_conditions",
+            "quality_status",
+        ],
+    ]
+    .sort_values(["manufacturer", "cooling_capacity_kw", "model"], na_position="last")
+    .to_string(index=False)
+)
+print("Transformer comparison keeps kVA separate from table losses and active kW:")
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("transformer"),
+        ["manufacturer", "variant", "apparent_power_kva", "weight_kg", "power_conditions"],
+    ]
+    .sort_values(["manufacturer", "apparent_power_kva", "variant"])
+    .to_string(index=False)
+)
+print("Switchgear portfolio maxima remain observations, not nominal electrical inputs:")
+print(
+    equipment.loc[
+        equipment.equipment_category.eq("switchgear"),
+        ["manufacturer", "model", "variant", "input_voltage_v", "input_current_a"],
+    ]
+    .sort_values(["manufacturer", "model", "variant"])
     .to_string(index=False)
 )
 plt.show()
