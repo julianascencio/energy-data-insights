@@ -153,6 +153,8 @@ if swedish:
     for ax, field in zip(axes, inventory.columns, strict=True):
         inventory[field].value_counts().sort_values().plot.barh(ax=ax, color="#198c92")
         ax.set(title=field, xlabel="Registry turbine records; all lifecycle states")
+    print("Swedish project coverage by reported county:")
+    print(projects.loc[projects.country_code.eq("SWE"), "region"].fillna("Unknown").value_counts())
     print("Swedish linked project identities:", len({r["project_record_id"] for r in swedish}))
     print("Inventory maximum ratings are not summed into installed project MW.")
 

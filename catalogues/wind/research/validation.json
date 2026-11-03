@@ -1,28 +1,25 @@
 {
-  "batch": "2026-11-03-1035",
+  "batch": "2026-11-03-1135",
   "local": {
-    "pytest": "1847 passed, 1 optional cdsapi skip",
-    "adapter": "8 synthetic tests passed; full original-query offline replay exactly matches393acceptedproject/turbine records",
-    "catalogue": "5810 records validated;72newprojects321turbines7equipment",
-    "snapshots": "Two independent typed Zstandard builds byte-identical (all files), input SHA256 c09c21cfa6dd5e9c1f1a964d7140b649d8b82cf74fdcce992e331fe99e743753",
-    "preservation": "All5410prior records byte-equivalent as parsed records; all six capacity-category MW/lifecycle totals unchanged;72new unresolved scope exclusions",
-    "viewer": "14Node tests passed; viewer/map module syntax checks passed",
-    "example": "Wind gallery executed offline, including Swedish inventory chart",
-    "sphinx": "Strict build passed;447-page local link and asset audit passed",
-    "ruff": "passed after long-string formatting",
+    "pytest": "1848 passed; 1 optional cdsapi skip",
+    "viewer": "14 Node tests passed; shared map/table reused unchanged",
+    "catalogue": "6565 records validated",
+    "snapshots": "Two fresh typed Zstandard snapshots byte-identical across all files",
+    "preservation": "5810 preceding records unchanged; six capacity totals unchanged;192new excluded scopes",
+    "adapter": "9 synthetic tests; independent counts verified on all10layers; full751record replay matches canonical data",
+    "example": "Offline gallery executed with new county coverage summary",
+    "sphinx": "Strict build passed;447-page link/asset audit passed",
+    "ruff": "passed",
     "ty": "passed",
     "citations": "passed",
-    "repository_hygiene": "passed; no flagged raw data or secrets"
+    "repository_hygiene": "2807 candidates passed"
   },
-  "corrected_initial_failures": [
-    "Legacy test assumed zero individual turbines; replaced with canonical count and parent-link assertions",
-    "New citation used_by values corrected to real repository paths",
-    "Long adapter string formatting corrected",
-    "Initial local staging attempted PV-only writer; validation rejected it; finalized Wind-only dated shards with exact prior-record preservation"
-  ],
   "not_executed": [
-    "package builds",
-    "new browser smoke test"
+    "new browser smoke test",
+    "package builds"
   ],
-  "remote_ci": "New commit not yet published; local results above are not remote CI results"
+  "remote_ci": {
+    "preceding_commit": "0add4215:Documentation and Python quality/tests both success",
+    "this_increment": "not yet published; local results are not remote CI"
+  }
 }

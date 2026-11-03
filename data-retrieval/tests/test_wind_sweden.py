@@ -100,3 +100,10 @@ def test_replay_stable_ids_and_requires_reconciliation():
     staged, ledger = stage(data, rows)
     assert not staged
     assert ledger[0]["decision"] == "deferred"
+
+
+def test_independent_count_detects_silent_truncation():
+    response = {"type": "FeatureCollection", "features": []}
+    assert features(response, expected_count=0) == []
+    with pytest.raises(ValueError, match="independent source count"):
+        features(response, expected_count=1)

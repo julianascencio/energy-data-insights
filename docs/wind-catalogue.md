@@ -275,3 +275,26 @@ recorded; a checksum for the undownloaded full archive is explicitly unavailable
 The next task is the complete Schleswig-Holstein named-farm partition after
 catalogue-code verification and WRI reconciliation, not automatic turbine
 clustering. See `mastr_full_export_20261103` and the ranked backlog.
+
+
+## Östergötland and ENERCON continuation
+
+The next complete partition (`0500 <= OMRID < 0600`) reviews 227 areas and
+672 turbine rows. Independent count queries agree with every downloaded layer.
+It adds 192 projects and 559 turbine children; 21 repeated-name scopes, 12 unnamed
+areas and two existing identity/spatial candidates remain held (113 turbine rows).
+All 5,810 preceding records and all six capacity-category totals remain unchanged.
+The adapter now optionally verifies an independent source count, catching silent
+truncation even when the response omits an exceeded-transfer-limit flag.
+
+Three ENERCON August 2026 sheets describe four exact configurations: E-138 EP3 E3,
+E-160 EP5 E3, E-175 EP5 E1 and E2. The E2 nominal 6,000/7,000 kW options remain
+nested; no single rating is selected. Mode/height-dependent acoustic observations
+also remain qualified metadata. Cold-climate packages stay distinct from normal
+temperature limits, and design-life claims keep their IEC scope. Annual-yield
+plots are not numerical power curves. See `enercon_technical_sheets_202608`.
+All three originals downloaded successfully after web-reader errors; this was
+not authentication failure or evidence of reuse restrictions.
+
+Next Swedish partition: all Jönköping registry IDs (`0600 <= OMRID < 0700`).
+The German Schleswig-Holstein named-farm reconciliation task remains pending.

@@ -22,10 +22,14 @@ from .gppd import evidence_record
 REFERENCE_IDS = ("vindbrukskollen_open_inventory_2026",)
 
 
-def features(document: dict[str, Any]) -> list[dict[str, Any]]:
+def features(
+    document: dict[str, Any], *, expected_count: int | None = None
+) -> list[dict[str, Any]]:
     """Reject failed/truncated responses instead of accepting incomplete partitions."""
     if document.get("type") != "FeatureCollection" or document.get("exceededTransferLimit"):
         raise ValueError("Require complete GeoJSON FeatureCollection")
+    if expected_count is not None and len(document["features"]) != expected_count:
+        raise ValueError("Feature count differs from independent source count")
     return document["features"]
 
 

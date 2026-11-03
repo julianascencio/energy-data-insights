@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T10:50:00Z",
+  "updated_at": "2026-11-03T11:35:00Z",
   "branch": "research/wind-20261103-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -86,7 +86,8 @@
         "Do not ingest Siemens Gamesa 08/2026 overview PDF under its explicit reproduction restriction",
         "ACS880-77CC Rev A single exact cabinet processed; next ACS880-77LC/-87LC exact rating tables; generic ranges not exact configurations",
         "77LC/87LC search found firmware manual referring readers to local ABB for hardware manual; no exact ratings table recovered. Do not substitute 07LC industrial drives.",
-        "VENSYS current seven sheets completed; do not re-add nested tower options. Resolve VENSYS136105.8/104.1dBA revision/mode conflict. Next exact ENERCON current E-175EP5E1/E2, E-160EP5E3, E-138EP3E3 original sheets; no independent blade OEM inference from type labels."
+        "VENSYS current seven sheets completed; do not re-add nested tower options. Resolve VENSYS136105.8/104.1dBA revision/mode conflict. Next exact ENERCON current E-175EP5E1/E2, E-160EP5E3, E-138EP3E3 original sheets; no independent blade OEM inference from type labels.",
+        "ENERCON three August2026 sheets completed: E138EP3E3, E160EP5E3, E175EP5E1/E2. Do not re-add tower or power options. Next E82E2/E103EP2 yield-mode source and exact component specifications; retain E2 nominal-option and acoustic qualifications."
       ]
     },
     {
@@ -156,11 +157,11 @@
     "source_guide": "2026-11-03-top10-markets.md",
     "sweden_partition": {
       "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
-      "completed_where": "OMRID < '0500'",
-      "reviewed_areas": 89,
-      "reviewed_turbines": 348,
-      "next_where": "OMRID >= '0500' AND OMRID < '0600'",
-      "next_county": "Östergötland:227 areas in2026-11-02archive; query live count before staging",
+      "completed_where": "OMRID < '0600'",
+      "reviewed_areas": 316,
+      "reviewed_turbines": 1020,
+      "next_where": "OMRID >= '0600' AND OMRID < '0700'",
+      "next_county": "Jönköping; verify independent counts on all ten layers",
       "layers": [
         2,
         3,
@@ -174,7 +175,7 @@
         12
       ],
       "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
-      "residual_ledger": "2026-11-03-1035-decisions.jsonl"
+      "residual_ledger": "2026-11-03-1135-decisions.jsonl"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",

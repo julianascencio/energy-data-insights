@@ -3,9 +3,9 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 5,427 project records (5,426 non-group records),
-60 exact equipment records, 321 registry turbine records and two original numerical
-power curves, across 59 countries and seven equipment manufacturer names.
+The proposed branch contains 5,619 project records (5,618 non-group records),
+64 exact equipment records, 880 registry turbine records and two original numerical
+power curves, across 59 countries and eight equipment manufacturer names.
 Merged main at `5063c416` contains 5,355 projects, 53 equipment, zero individual
 turbines and two curves. These are catalogue counts, not an operating census.
 
@@ -46,3 +46,7 @@ rows in Stockholm, Uppsala and Södermanland. It adds 72 named project identitie
 and 321 linked turbines; 17 areas and two orphan turbine rows remain deferred.
 Seven current VENSYS technical sheets yield seven exact configurations. The
 VENSYS 136 sound-power conflict remains null with both observations preserved.
+
+The 11:35 increment adds 192 Östergötland project areas, 559 linked turbines and
+four exact ENERCON configurations. Thirty-five areas remain held; no prior
+record or capacity total changes. See the 1135 ledgers for source partitions.
