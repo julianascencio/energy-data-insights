@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-03T16:24:18Z",
+  "retrieved_at": "2026-11-03T17:26:00Z",
   "accepted": [
     {
       "inventory": "AirTrunk locations and 22 official location pages",
@@ -231,6 +231,15 @@
       "note": "Every explicit Shipping cell is represented once. Sixty-six cells retain a parenthesized configuration-dependent OEM maximum; 19 report Shipping without a quantity and remain null. Maxima are observations, never installed accelerator_count or server/rack power. Twenty-five generic L4 rows remain platform-SKU-unbound between the HHHL and FHHL source rows.",
       "reuse": "Factual extraction from an official public copyrighted OEM PDF; no open licence asserted and the tables are not redistributed",
       "originals": "Reused the accepted 887,932-byte official original with SHA-256 77c75af47b6d24f71e2c7543940c3968b8c6789400ece5c8bc9007e306e95db4; no new original is claimed."
+    },
+    {
+      "inventory": "mtu Series 4000 complete populated 50/60 Hz Data Center Continuous rating columns",
+      "processed_offset": 20,
+      "accepted_records": 20,
+      "substantively_enriched": 0,
+      "note": "All 12 populated 50 Hz rows and all eight populated 60 Hz rows are represented once. DCC kVA remains apparent power; active kW is null. Standby, stationary-emergency, prime, speed and shared duty/voltage conditions remain observations.",
+      "reuse": "Factual extraction from two official public copyrighted OEM brochures; no open licence asserted and the tables are not redistributed",
+      "originals": "The official PDFs were readable through the public document index, but direct original-byte capture and page rendering failed. No source-byte checksum is claimed; this is an access/content retrieval limitation, not a reuse prohibition."
     }
   ],
   "deferred": [
@@ -335,6 +344,10 @@
     {
       "candidate": "Supermicro front-I/O NVIDIA HGX B200 systems",
       "reason": "Official indexed material identified exact liquid- and air-cooled system candidates, but the direct collateral URL returned an HTML response rather than the expected PDF. Defer canonical import until the original datasheet or current product pages can be captured and reconciled; this is an access/content-shape limitation, not a reuse prohibition."
+    },
+    {
+      "candidate": "mtu Series 4000 exact ordered voltage, fuel-consumption, dimensions, weight and emissions configurations",
+      "reason": "The selected brochures bind model/frequency DCC ratings but expose voltage choices and optional equipment only at portfolio scope. Continue only from model-level OEM tables without synthesizing combinations."
     }
   ],
   "excluded": [
@@ -405,6 +418,14 @@
     {
       "candidate": "Supermicro CPU, NIC, cooling and PSU option combinations or installed deployments",
       "reason": "Portfolio and product pages document exact base systems plus optional boundaries; they do not support Cartesian configurations, summed PSU input or claims of deployment"
+    },
+    {
+      "candidate": "mtu 16V4000 DS2500 and 20V4000 DS3250 60 Hz DCC configurations",
+      "reason": "Their official Data Center Continuous cells are dashes; standby identity does not support an inferred DCC rating"
+    },
+    {
+      "candidate": "mtu calculated active kW, selected voltage and optional controller/breaker/radiator combinations",
+      "reason": "The exact rows report apparent kVA only and do not bind the shared portfolio choices to ordered configurations"
     }
   ],
   "holds_unchanged": [
@@ -573,6 +594,7 @@
     "Siemens NXAIR voltage, short-circuit current and continuous current are portfolio maxima stored as observations; nominal input fields remain null.",
     "Dell's 108 generation-specific compatibility checkmarks and 85 Shipping cells remain different observations. Shipping quantities are configuration-dependent OEM maxima and never become accelerator_count, deployment, server input or rack input. Nineteen blank quantities remain null; 25 generic L4 rows do not select HHHL/FHHL form factor. Accelerator maximum power remains per device, and H100 NVL's 350-400 W range is not collapsed.",
     "Lenovo option quantities describe exact orderable boards/assemblies rather than deployments. Memory, bandwidth, TDP and performance remain per GPU; performance preserves precision and sparsity labels, and no board/server/rack total is calculated.",
-    "Supermicro accelerator counts describe exact integrated-system designs, not deployments. Configurable accelerator limits remain per GPU; PSU module nameplates are not summed into server or rack input. B300 memory stays null where the same row says both 288 GB and 270 GB per GPU."
+    "Supermicro accelerator counts describe exact integrated-system designs, not deployments. Configurable accelerator limits remain per GPU; PSU module nameplates are not summed into server or rack input. B300 memory stays null where the same row says both 288 GB and 270 GB per GPU.",
+    "mtu Series 4000 DCC kVA remains apparent power at the exact model/frequency row. Active kW is null; shared voltage choices and Tier III/IV compliance language remain observations rather than selected windings or issuer certifications."
   ]
 }

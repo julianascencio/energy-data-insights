@@ -6,6 +6,7 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_generator_rating_matrix,
     parse_lenovo_gpu_comparison,
     parse_named_inventory,
     parse_power_equipment_matrix,
@@ -24,6 +25,9 @@ SERVER_MATRIX = (
 ).read_bytes()
 SERVER_SHIPPING_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/server-accelerator-shipping-matrix.csv"
+).read_bytes()
+GENERATOR_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/generator-rating-matrix.csv"
 ).read_bytes()
 LENOVO_COMPARISON = (
     Path(__file__).parent / "fixtures/data_centers/lenovo-gpu-comparison.html"
@@ -178,6 +182,35 @@ def test_server_shipping_matrix_rejects_unbounded_input(source_url, expected_cou
     with pytest.raises(ValueError):
         parse_server_accelerator_shipping_matrix(
             SERVER_SHIPPING_MATRIX,
+            source_url=source_url,
+            expected_count=expected_count,
+        )
+
+
+def test_generator_matrix_preserves_dcc_apparent_power_boundary():
+    result = parse_generator_rating_matrix(
+        GENERATOR_MATRIX,
+        source_url="https://www.mtu-solutions.com/example.pdf",
+        expected_count=2,
+    )
+    by_frequency = {row["frequency_hz"]: row for row in result["candidates"]}
+    assert by_frequency[50.0]["data_center_continuous_kva"] == 1600
+    assert by_frequency[50.0]["prime_emergency_kva"] == 1600
+    assert by_frequency[60.0]["data_center_continuous_kva"] == 1125
+    assert by_frequency[60.0]["prime_kva"] == 1125
+    assert "output_power_kw" not in by_frequency[50.0]
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+@pytest.mark.parametrize(
+    ("source_url", "expected_count"),
+    [("https://example.com/table.pdf", 2), ("https://www.mtu-solutions.com/x.pdf", 3)],
+)
+def test_generator_matrix_rejects_unofficial_sources_and_drift(source_url, expected_count):
+    with pytest.raises(ValueError):
+        parse_generator_rating_matrix(
+            GENERATOR_MATRIX,
             source_url=source_url,
             expected_count=expected_count,
         )

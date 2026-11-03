@@ -391,6 +391,105 @@ def parse_server_accelerator_shipping_matrix(
     }
 
 
+def parse_generator_rating_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact OEM generator rating rows without converting kVA to kW.
+
+    The extracted matrix must retain one source row per model/frequency pair.
+    Rows without an explicit Data Center Continuous rating are not candidates;
+    omission decisions remain in the research ledger. Portfolio voltage lists,
+    duty claims and other shared conditions remain observations during review.
+    """
+    parsed_url = urlsplit(source_url)
+    if (
+        parsed_url.scheme != "https"
+        or parsed_url.hostname != "www.mtu-solutions.com"
+        or not parsed_url.path.endswith(".pdf")
+    ):
+        raise ValueError("Unsupported official generator matrix URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "model",
+        "frequency_hz",
+        "speed_rpm",
+        "standby_kva",
+        "prime_emergency_kva",
+        "data_center_continuous_kva",
+        "prime_kva",
+        "locator",
+    }
+    if reader.fieldnames is None or set(reader.fieldnames) != required:
+        raise ValueError("Unexpected generator matrix columns")
+
+    def positive_number(
+        raw_value: str | None, field: str, *, line: int, required_value: bool
+    ) -> float | None:
+        raw = (raw_value or "").strip().replace(",", "")
+        if not raw:
+            if required_value:
+                raise ValueError(f"Missing {field} on row {line}")
+            return None
+        try:
+            value = float(raw)
+        except ValueError as exc:
+            raise ValueError(f"Invalid {field} on row {line}") from exc
+        if value <= 0:
+            raise ValueError(f"Invalid {field} on row {line}")
+        return value
+
+    candidates: dict[tuple[str, float], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        model = row["model"].strip()
+        locator = row["locator"].strip()
+        if not model or not locator:
+            raise ValueError(f"Incomplete generator identity on row {line}")
+
+        frequency = positive_number(
+            row["frequency_hz"], "frequency_hz", line=line, required_value=True
+        )
+        speed = positive_number(row["speed_rpm"], "speed_rpm", line=line, required_value=True)
+        assert frequency is not None and speed is not None
+        candidate = {
+            "model": model,
+            "frequency_hz": frequency,
+            "speed_rpm": speed,
+            "standby_kva": positive_number(
+                row["standby_kva"], "standby_kva", line=line, required_value=True
+            ),
+            "prime_emergency_kva": positive_number(
+                row["prime_emergency_kva"],
+                "prime_emergency_kva",
+                line=line,
+                required_value=False,
+            ),
+            "data_center_continuous_kva": positive_number(
+                row["data_center_continuous_kva"],
+                "data_center_continuous_kva",
+                line=line,
+                required_value=True,
+            ),
+            "prime_kva": positive_number(
+                row["prime_kva"], "prime_kva", line=line, required_value=False
+            ),
+            "locator": locator,
+        }
+        identity = (model, frequency)
+        if identity in candidates:
+            raise ValueError(f"Duplicate generator rating row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed generator matrix shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_supermicro_nvidia_systems(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:

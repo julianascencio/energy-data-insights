@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T16:24:18Z",
+  "updated_at": "2026-11-03T17:26:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -42,7 +42,8 @@
     "dell_poweredge_15g_gpu_compatibility": 23,
     "dell_poweredge_shipping_cells": 85,
     "lenovo_thinksystem_current_gpu_options": 20,
-    "supermicro_current_blackwell_systems": 14
+    "supermicro_current_blackwell_systems": 14,
+    "mtu_series_4000_dcc_configurations": 20
   },
   "next_batches": [
     {
@@ -146,13 +147,15 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 211,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows and five Siemens NXAIR variants complete; continue generator and electrical-equipment suppliers beyond Cummins/Eaton/Siemens",
+      "offset": 231,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows and five Siemens NXAIR variants complete; continue generator and electrical-equipment suppliers beyond Cummins/mtu/Eaton/Siemens",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
         "Reference existing BESS battery models rather than duplicating them",
-        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page"
+        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page",
+        "mtu 50/60 Hz DCC tables are complete at 12+8; never convert their kVA ratings to active kW or select a portfolio voltage",
+        "Find exact mtu model-level fuel consumption, dimensions, weight, emissions calibration and ordered voltage tables before enrichment"
       ]
     },
     {
@@ -227,11 +230,11 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "dell-shipping-20261103T162418Z",
+    "run_id": "mtu-series4000-20261103T172600Z",
     "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T1624-validation.json",
+    "validation": "2026-11-03T1726-validation.json",
     "added_projects": 0,
-    "added_equipment": 53,
+    "added_equipment": 20,
     "branch": "research/data-center-database-20261103T0909Z"
   }
 }

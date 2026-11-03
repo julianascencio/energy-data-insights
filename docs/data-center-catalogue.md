@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 347 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Dell, Eaton,
-Lenovo, Motivair by Schneider Electric, nVent HOFFMAN, Schneider Electric, Siemens, STULZ, Supermicro and Vertiv. Current categories are GPU accelerators,
+has 495 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins, Dell, Eaton,
+Lenovo, Motivair by Schneider Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens, STULZ, Supermicro and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -62,6 +62,13 @@ The Cummins continuation adds 22 exact KTA50/QSK60 model-frequency rows with
 explicit Data Center Continuous kW and kVA. Prime, standby and general continuous
 ratings remain observations. Four conflicting non-DCC fields on three duplicated
 QSK60 live-page rows are quarantined without discarding their matching DCC data.
+The mtu continuation adds all 20 Series 4000 model/frequency rows with an explicit
+Data Center Continuous (3F) rating: 12 at 50 Hz and eight at 60 Hz. The brochures
+report apparent kVA for these exact rows, so active kW remains null. Standby,
+stationary-emergency and prime ratings, engine speed, shared voltage lists and
+duty conditions remain bounded observations. Portfolio voltage choices are not
+treated as selected windings, and the OEM Tier III/IV statement is not normalized
+as an issuer-registry certification.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options
