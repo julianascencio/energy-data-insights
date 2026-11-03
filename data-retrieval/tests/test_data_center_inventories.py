@@ -10,6 +10,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_lenovo_gpu_comparison,
     parse_named_inventory,
     parse_power_equipment_matrix,
+    parse_precision_cooling_matrix,
     parse_server_accelerator_matrix,
     parse_server_accelerator_shipping_matrix,
     parse_supermicro_nvidia_systems,
@@ -19,6 +20,9 @@ CONTENT = (Path(__file__).parent / "fixtures/data_centers/named-inventory.html")
 CDU_MATRIX = (Path(__file__).parent / "fixtures/data_centers/cdu-matrix.csv").read_bytes()
 POWER_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/power-equipment-matrix.csv"
+).read_bytes()
+PRECISION_COOLING_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/precision-cooling-matrix.csv"
 ).read_bytes()
 SERVER_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/server-accelerator-matrix.csv"
@@ -89,6 +93,36 @@ def test_cdu_matrix_drift_duplicates_and_invalid_sources_fail():
         parse_cdu_spec_matrix(
             CDU_MATRIX,
             source_url="https://example.com/example.pdf",
+            expected_count=2,
+        )
+
+
+def test_precision_cooling_matrix_keeps_exact_rating_boundaries():
+    result = parse_precision_cooling_matrix(
+        PRECISION_COOLING_MATRIX,
+        source_url="https://info.support.huawei.com/example",
+        expected_count=2,
+    )
+    by_model = {row["model"]: row for row in result["candidates"]}
+    assert by_model["Air-42"]["cooling_capacity_kw"] == 42.5
+    assert by_model["Air-42"]["airflow_m3_h"] == 12000
+    assert by_model["CDU-90"]["liquid_flow_l_min"] == 120
+    assert by_model["CDU-90"]["input_power_kw"] is None
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+def test_precision_cooling_matrix_rejects_drift_duplicates_and_unofficial_sources():
+    url = "https://www.deltapowersolutions.com/example"
+    with pytest.raises(ValueError, match="Changed precision-cooling matrix shape"):
+        parse_precision_cooling_matrix(PRECISION_COOLING_MATRIX, source_url=url, expected_count=3)
+    duplicate = PRECISION_COOLING_MATRIX + PRECISION_COOLING_MATRIX.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate precision-cooling row"):
+        parse_precision_cooling_matrix(duplicate, source_url=url, expected_count=2)
+    with pytest.raises(ValueError, match="Unsupported official precision-cooling"):
+        parse_precision_cooling_matrix(
+            PRECISION_COOLING_MATRIX,
+            source_url="https://example.com/table.csv",
             expected_count=2,
         )
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T17:26:00Z",
+  "updated_at": "2026-11-03T18:26:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -43,7 +43,12 @@
     "dell_poweredge_shipping_cells": 85,
     "lenovo_thinksystem_current_gpu_options": 20,
     "supermicro_current_blackwell_systems": 14,
-    "mtu_series_4000_dcc_configurations": 20
+    "mtu_series_4000_dcc_configurations": 20,
+    "huawei_netcol8000_a_configurations": 7,
+    "huawei_netcol8000_c_configurations": 6,
+    "delta_rowcool_cw_models": 4,
+    "delta_gocool_models": 3,
+    "delta_inrack_l2l_configurations": 3
   },
   "next_batches": [
     {
@@ -167,8 +172,8 @@
         "https://www.lenovo.com/",
         "https://www.coolitsystems.com/"
       ],
-      "offset": 262,
-      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Continue direct-to-chip/immersion tables and Asian/regional OEMs; do not recount Dell shipping rows.",
+      "offset": 285,
+      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Huawei NetCol8000-A/C exact tables and Delta RowCool/GoCool/in-rack L2L tables are complete at 7+6+4+3+3. Continue direct-to-chip/immersion and independent Asian/regional OEMs without recounting these inventories.",
       "questions": [
         "Rack input vs server vs accelerator limit",
         "Measured performance workload/precision/test conditions, temperatures and flow",
@@ -230,11 +235,11 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "mtu-series4000-20261103T172600Z",
+    "run_id": "huawei-delta-cooling-20261103T182600Z",
     "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T1726-validation.json",
+    "validation": "2026-11-03T1826-validation.json",
     "added_projects": 0,
-    "added_equipment": 20,
+    "added_equipment": 23,
     "branch": "research/data-center-database-20261103T0909Z"
   }
 }

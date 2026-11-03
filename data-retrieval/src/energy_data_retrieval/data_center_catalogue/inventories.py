@@ -188,6 +188,87 @@ def parse_cdu_spec_matrix(
     }
 
 
+def parse_precision_cooling_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact OEM cooling rows while retaining each published rating point.
+
+    This adapter deliberately accepts one documented model/configuration per row.
+    Voltage choices, optional heaters/humidifiers and alternate rating points stay
+    in reviewed observations; the adapter does not expand them into combinations.
+    """
+    host = urlsplit(source_url).hostname
+    if host not in {
+        "info.support.huawei.com",
+        "www.deltapowersolutions.com",
+        "www.delta-emea.com",
+        "www.deltaww.com",
+    }:
+        raise ValueError("Unsupported official precision-cooling source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "manufacturer",
+        "model",
+        "variant",
+        "category",
+        "cooling_capacity_kw",
+        "cooling_rating_conditions",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing precision-cooling matrix columns")
+    candidates: dict[tuple[str, str, str], dict[str, Any]] = {}
+    numeric = {
+        "cooling_capacity_kw",
+        "airflow_m3_h",
+        "input_power_kw",
+        "input_current_a",
+        "liquid_flow_l_min",
+        "width_mm",
+        "height_mm",
+        "depth_mm",
+        "weight_kg",
+    }
+    for line, row in enumerate(reader, start=2):
+        candidate: dict[str, Any] = {key: (row.get(key) or "").strip() for key in required}
+        if candidate["category"] not in {"cdu", "crah", "crac"}:
+            raise ValueError(f"Unsupported precision-cooling category on row {line}")
+        if not all(candidate.values()):
+            raise ValueError(f"Incomplete precision-cooling row {line}")
+        for field in numeric:
+            raw = (row.get(field) or "").strip()
+            if not raw:
+                candidate[field] = None
+                continue
+            try:
+                value = float(raw)
+            except ValueError as exc:
+                raise ValueError(f"Invalid {field} on row {line}") from exc
+            if value <= 0:
+                raise ValueError(f"Invalid {field} on row {line}")
+            candidate[field] = value
+        key = (
+            candidate["manufacturer"],
+            candidate["model"],
+            candidate["variant"],
+        )
+        if key in candidates:
+            raise ValueError(f"Duplicate precision-cooling row for {key}")
+        candidates[key] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed precision-cooling matrix shape: {len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_power_equipment_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:
