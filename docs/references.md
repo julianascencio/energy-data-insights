@@ -4655,3 +4655,67 @@ Tonga Power Limited (2026). **TREP-03 Lot 1 Eua and Vavau solar and storage syst
 **Role:** data. Contract summary: completion certificate October 2024; current status plant in operation
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### freedomwon_ems_eol_20241021
+
+Freedom Won (2024). **EMS Standard and Pro historical hardware**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-EMS-Range-Overview-Sheet-EOL.pdf)
+
+**Role:** data. Pages 1-2, exact Standard/Pro columns and notes
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### epc_cab1000_3l2_20250923
+
+Freedom Won (EPC Power distributor) (2025). **EPC Power CAB1000 (3L.2) specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/EPC-Power-CAB1000-Spec-Sheet.pdf)
+
+**Role:** data. Page 1, five nominal-voltage columns and notes 1-8
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fw_enva_5_detail_20261103
+
+Freedom Won (2026). **ENVA 5 detailed specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-ENVA-5-Spec-Sheet-260526.pdf)
+
+**Role:** data. Exact model table: storage/prospective short-circuit rows (ENVA pages 1-2); connection/protection rows (SOLVA page 1)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fw_enva_16_detail_20261103
+
+Freedom Won (2026). **ENVA 16 detailed specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/Freedom-Won-ENVA-16-Spec-Sheet-280826.pdf)
+
+**Role:** data. Exact model table: storage/prospective short-circuit rows (ENVA pages 1-2); connection/protection rows (SOLVA page 1)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fw_solva_ac261_detail_20261103
+
+Freedom Won (2026). **SOLVA AC261 detailed specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-AC261-Spec-Sheet-170926.pdf)
+
+**Role:** data. Exact model table: storage/prospective short-circuit rows (ENVA pages 1-2); connection/protection rows (SOLVA page 1)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### fw_solva_dc208_detail_20261103
+
+Freedom Won (2026). **SOLVA DC208 detailed specification**. [Source](https://www.freedomwon.co.za/wp-content/uploads/SOLVA-DC208-Spec-Sheet-170926.pdf)
+
+**Role:** data. Exact model table: storage/prospective short-circuit rows (ENVA pages 1-2); connection/protection rows (SOLVA page 1)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### dfat_tonga_completion_202402
+
+Australian Department of Foreign Affairs and Trade (2024). **Independent Completion Review: Australia contribution to the multi-donor Tonga Outer Islands Renewable Energy Project**. [Source](https://www.dfat.gov.au/sites/default/files/tonga-outer-islands-renewable-energy-project.pdf)
+
+**Role:** data. Table One, printed pages 11-12, PDF pages 20-21; surrounding text printed page 13
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sprep_tonga_bess_case_table
+
+SPREP library (ADB technical publication mirror) (2024). **Hybrid and Battery Energy Storage Systems: Tonga case-study table**. [Source](https://library.sprep.org/sites/default/files/2022-09/hybrid-battery-energy-storage-systems.pdf)
+
+**Role:** data. Table 3.2 continued, printed page 19; financed project infrastructure
+
+**Used by:** `catalogues/bess/sources.json`.
