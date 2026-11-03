@@ -1,6 +1,9 @@
 """Synthetic ranking controls: identity, funding and technology boundaries."""
 
+import runpy
+import sys
 from copy import deepcopy
+from pathlib import Path
 
 import pytest
 
@@ -57,3 +60,24 @@ def test_layout_and_value_drift_fails(column, value):
 def test_duplicate_application_fails():
     with pytest.raises(ValueError):
         parse_ranking([row(), row("2")])
+
+
+@pytest.mark.parametrize("help_requested", [True, False])
+def test_cli_without_optional_pdf_dependency(monkeypatch, capsys, help_requested):
+    script = Path(__file__).resolve().parents[2] / "scripts" / "stage_bess_nfosigw.py"
+    main = runpy.run_path(str(script))["main"]
+
+    def unavailable(name):
+        raise ModuleNotFoundError(name=name)
+
+    monkeypatch.setitem(main.__globals__, "import_module", unavailable)
+    arguments = ["--help"] if help_requested else ["source.pdf", "--output", "staged.jsonl"]
+    monkeypatch.setattr(sys, "argv", [str(script), *arguments])
+    with pytest.raises(SystemExit) as exc:
+        main()
+    assert exc.value.code == (0 if help_requested else 2)
+    captured = capsys.readouterr()
+    if help_requested:
+        assert "--output" in captured.out
+    else:
+        assert "uv run --with pdfplumber" in captured.err

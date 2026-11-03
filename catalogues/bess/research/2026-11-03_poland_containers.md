@@ -122,3 +122,22 @@ Energa tender phase mapping, then the remaining Polish technology/identity holds
 Local acceptance and validation completed at 14:15:01 Atlantic/Canary on
 3 November 2026: **25.3 minutes of actual elapsed effort**, followed by the
 GitHub publication and final remote-state check. All times in data are UTC.
+
+### CI follow-up
+
+The first published commit's Python 3.12/3.13 type checks exposed an unresolved
+optional `pdfplumber` import. The original local environment had that extra
+installed. The CLI now loads the optional extractor only after argument parsing,
+keeps help available without it and provides installation guidance when absent.
+Two regression tests cover those paths. No schema, data or dependency lock changed.
+
+A fresh CI-equivalent locked Python 3.13 environment (including cdsapi, excluding
+pdfplumber) passed **1,860 tests with no skips**, **39 focused tests**, Ruff,
+formatting and ty. The corrected CLI reproduced all 479 rows byte-for-byte in
+the extractor-enabled environment. Strict distribution metadata checks passed
+for all six built artifacts. Prior documentation, viewer, catalogue and snapshot
+checks remain applicable; their inputs are unchanged by this CLI fix.
+
+Correction validation completed at 14:21:41 Atlantic/Canary: **32.0 minutes
+of elapsed effort** since the iteration began. The initial CI failure is retained
+here for transparency; the corrected remote run is checked separately after push.

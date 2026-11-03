@@ -12,18 +12,26 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from importlib import import_module
 from pathlib import Path
 
 from energy_data_retrieval.bess_catalogue.nfosigw import parse_ranking
 
 
 def main() -> None:
-    import pdfplumber  # Optional source-extraction dependency.
-
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("pdf", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    try:
+        pdfplumber = import_module("pdfplumber")
+    except ModuleNotFoundError as exc:
+        if exc.name != "pdfplumber":
+            raise
+        parser.error(
+            "Install the optional extractor with: uv run --with pdfplumber python "
+            "scripts/stage_bess_nfosigw.py PDF --output JSONL"
+        )
     rows = []
     with pdfplumber.open(args.pdf) as pdf:
         if len(pdf.pages) != 24 or "Lista rankingowa" not in (pdf.pages[0].extract_text() or ""):
