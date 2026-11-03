@@ -53,7 +53,7 @@ html_theme_options = {
     "navbar_align": "left",
     "show_prev_next": False,
     "show_toc_level": 2,
-    "navigation_depth": 3,
+    "navigation_depth": 4,
     "header_links_before_dropdown": 5,
     "logo": {"text": "Energy Data Insights"},
 }
@@ -71,10 +71,14 @@ sphinx_gallery_conf = {
         "../examples/database",
     ],
     "nested_sections": True,
+    # Custom indexes provide main section -> topic -> example navigation while
+    # Sphinx-Gallery keeps executing scripts at their established public URLs.
+    "backreferences_dir": "_generated/gallery_backreferences",
     "within_subsection_order": "FileNameSortKey",
     "reference_url": {},
     "capture_repr": (),
     "copyfile_regex": (
+        r"(?:index|topic_[a-z_]+)\.rst$|"
         r"(?:climate|site_climate|degradation|kgpv_worldwide|kgpv_canary|kgpv_chile|weather_risk|country_risk)_.*"
         r"\.(csv|json|geojson|tif|shp|shx|dbf|prj|cpg)$"
     ),

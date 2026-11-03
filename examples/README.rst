@@ -1,56 +1,20 @@
 Example gallery
 ===============
 
-Browse examples by task: learn a method, work with a data provider, or follow an
-applied analysis, or explore the database. The same sections organize the repository's ``examples/`` folder.
+Browse the `published example gallery
+<https://julianascencio.github.io/energy-data-insights/auto_examples/index.html>`_.
 
-The :doc:`worldwide connector coverage map <connectors/plot_generation_coverage>`
-introduces all implemented generation, station, weather and climate sources.
-Run its downloadable Python code offline to reproduce the country/system
-inventory and the station-catalogue and grid-scope views.
+The gallery has two category levels: main sections and topic subsections.
+Individual runnable examples sit within a topic.
 
-.. grid:: 1 2 2 4
-   :gutter: 3
+* **Methods**: PV performance; climate and yield.
+* **Data & connectors**: source coverage; weather and irradiance; regional
+  generation providers; measured PV; imagery and terrain; forecast models.
+* **Analysis & case studies**: climate maps; environmental risks; degradation
+  and uncertainty; generation forecasting; PV inspection and site models.
+* **Databases**: solar PV; wind; battery storage; data centres; database quality.
 
-   .. grid-item-card:: Methods
-      :link: methods/index
-      :link-type: doc
-
-      Reusable calculations: daily profiles, climate-change yield assessment
-      and KGPV classification.
-
-   .. grid-item-card:: Connectors
-      :link: connectors/index
-      :link-type: doc
-
-      Worldwide connector coverage, weather and generation: plant records,
-      system totals, station catalogues and measured PV research arrays.
-
-   .. grid-item-card:: Analysis
-      :link: analysis/index
-      :link-type: doc
-
-      Applied studies: worldwide KGPV climate zones, soiling/snow risks and
-      detailed maps for selected countries.
-
-   .. grid-item-card:: Database
-      :link: database/index
-      :link-type: doc
-
-      Interactive Parquet-backed explorer, equipment and project queries,
-      database statistics, field completeness and country coverage.
-
-Downloadable Python examples run during every documentation build without API
-credentials or live downloads. Generation captures use attributed real public
-observations with source URLs and checksums. ENTSO-E and KPX show offline request
-plans; NIST and DKASC demonstrate native-export imports until a real file is
-supplied. Other examples use clearly identified synthetic inputs,
-NOAA climatology, NASA POWER or ERA5-Land data. Each example explains its units,
-scope and limitations; a source observation does not establish validated plant
-performance or complete national coverage.
-
-Download the :download:`generation examples and their data together
-<connectors/generation_examples.zip>` to run the examples from an extracted folder.
-Install the repository's packages and docs dependencies first. See the
-:doc:`worldwide generation guide </_generated/guides/worldwide-generation>`
-for command-line usage and access requirements.
+The authored ``index.rst`` and ``topic_*.rst`` files define this navigation.
+Python scripts and data stay beside their existing download bundles. Each
+example documents its inputs, units and limitations and runs offline during
+the documentation build. See ``docs/development.rst`` for contributor guidance.
