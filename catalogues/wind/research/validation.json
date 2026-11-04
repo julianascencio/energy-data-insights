@@ -1,24 +1,24 @@
 {
-  "batch": "2026-11-04-0235",
+  "batch": "2026-11-04-0335",
   "local": {
-    "pytest": "2150 passed;1 optional cdsapi skip",
+    "pytest": "Before latest main integration:2156 passed,1 skip. Final integrated full rerun incomplete:3 failure markers then pytest internal error with temporary storage exhausted; no final full-suite pass claimed.",
     "viewer": "15 passed",
-    "catalogue": "18112 valid records;56 new projects928 linked turbines;1 equipment enriched",
-    "source_replay": "984 new project/turbine records replay exactly from complete source responses",
-    "snapshots": "Two byte-identical builds;4tables136typed columns,allZSTD;documentation manifest identical",
-    "preservation": "17127 prior records unchanged;1equipment enriched with prior specifications and creation timestamp preserved; prior sources and all six capacity totals unchanged; unrelated catalogues unchanged",
-    "ruff_ty": "Repository lint/format and typing passed; changed adapter rechecked after CLI addition",
-    "citations": "Passed; new ENERCON08/2019 reference and generated exports",
-    "hygiene": "3538 candidate files passed before final validation report update",
-    "packages": "All3workspace packages built wheels and sdists",
+    "source_replay": "902 accepted records exactly replayed",
+    "catalogue": "19014 records validated",
+    "preservation": "All18112 previous records and sources unchanged; six capacity totals unchanged",
+    "snapshots": "Two byte-identical builds;4tables136columns allZSTD",
+    "quality": "Ruff lint/format and ty with explicit Python environment, citations passed after integration",
+    "packages": "All3wheels and sdists built",
     "example": "Offline Wind gallery passed",
-    "docs": "Strict Sphinx passed;524-page local link/asset audit passed. Initial audit ran before dataset export finished; final completed-build audit passes.",
-    "whitespace": "Passed"
+    "docs": "Strict Sphinx terminated with exit137 during project coverage gallery; root disk full and shared temporary storage nearly full. No completed documentation audit claimed.",
+    "final_focused": "Swedish adapter tests rerun after integration; see PR report",
+    "hygiene": "3574 candidate files passed before final main integration; unrelated catalogue diff empty after integration"
   },
   "not_executed": [
+    "completed documentation link audit",
     "new browser smoke test"
   ],
   "remote_ci": {
-    "this_increment": "Not yet published; inspect PR checks"
+    "status": "pending publication"
   }
 }

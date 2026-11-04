@@ -1,10 +1,10 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. The proposed continuation contains **7,582 projects, 264 equipment
-records, 10,264 linked turbines and two original numerical curves**, across
-**59 countries and eleven equipment manufacturers**. Merged main at `1bc12f80`
-contains 7,526 projects, 264 equipment records and 9,336 turbines plus two curves.
+numerical curves. The proposed continuation contains **7,637 projects, 264 equipment
+records, 11,111 linked turbines and two original numerical curves**, across
+**59 countries and eleven equipment manufacturers**. Merged main at `6b38f9a4`
+contains 7,582 projects, 264 equipment records and 10,264 turbines plus two curves.
 These are catalogue counts, not a current operating census.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
@@ -557,3 +557,12 @@ units were screened across 48 name groups; aliases and sub-array labels prevent
 automatic farm additions. The existing E-82 E2 gains revision-qualified 08/2019
 base-model specifications. Two restricted Bonfiglioli manuals are excluded.
 No new project enters capacity totals; all prior specifications are preserved.
+
+
+## Västernorrland continuation
+
+The 03:35 batch reviews 97 areas and 2,177 linked/orphan turbine observations,
+adding 55 projects and 847 turbines. Forty-two areas and 117 orphan turbines
+remain held; no project capacity is inferred. All previous records are unchanged.
+The reusable quarantine helper now rejects missing IDs before grouping, so
+missing identities cannot be silently hidden as duplicate conflicts.

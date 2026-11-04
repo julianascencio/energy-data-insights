@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-04T02:35:00Z",
-  "branch": "research/wind-20261104-0235",
+  "updated_at": "2026-11-04T03:35:00Z",
+  "branch": "research/wind-20261104-0335",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
     {
@@ -103,7 +103,8 @@
         "All13unique AL-suffix chokes pp55–56 and15EMCfiltertypes pp58–61 processed. Preserve conditional current/loss observations,2ambiguous choke frame links and printed ACU210-12 with no inferred alias. Next book-filter dimension/assembly tables pp62–63; then exact braking-resistor types pp64 onward; no optional low-leakage variants without exact identifiers.",
         "R04_0 pp62–65 exhausted:12filter assembly enrichments11BR resistor types,38application rows. No synthetic2x equipment model. Next referenced Bonfiglioli braking resistor catalogue: acquire original exact dimension/thermal-switch tables; HLD110-500/42 remains unknown.",
         "VEC501R0 pp2/4 exhausted:11legacyBR enrichments; no new equipment. Next original AGL VEC671R7 section13.3 and ANG VEC1105R4 resistor tables, reconcile exact revision before current thermal/mass scalars; then pivot to independent turbine/OEM backlog.",
-        "AGL VEC671R7 section1.4 and ANG VEC1105R4 section1.5 originals successfully acquired but explicitly restricted; excluded, do not retry as network errors. E82E2 08/2019 OEM sheet complete,1existing model enriched; two nominal options nested, no curves. Next exact E103EP2 base datasheet on OEM CDN; current ABB revision and independent wind components remain pending."
+        "AGL VEC671R7 section1.4 and ANG VEC1105R4 section1.5 originals successfully acquired but explicitly restricted; excluded, do not retry as network errors. E82E2 08/2019 OEM sheet complete,1existing model enriched; two nominal options nested, no curves. Next exact E103EP2 base datasheet on OEM CDN; current ABB revision and independent wind components remain pending.",
+        "E103 EP2 wind-still mirror HTTP404, web verification page. Next obtain original OEM datasheet via official archive or review exact manufacturer appendix in San Gregorio official planning dossier; project says or similar, not installed-model evidence."
       ]
     },
     {
@@ -173,11 +174,11 @@
     "source_guide": "2026-11-03-top10-markets.md",
     "sweden_partition": {
       "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
-      "completed_where": "OMRID < '2200'",
-      "reviewed_areas": 3072,
-      "reviewed_turbines": 15149,
-      "next_where": "OMRID >= '2200' AND OMRID < '2300'",
-      "next_county": "Västernorrland",
+      "completed_where": "OMRID < '2300'",
+      "reviewed_areas": 3169,
+      "reviewed_turbines": 17326,
+      "next_where": "OMRID >= '2300' AND OMRID < '2400'",
+      "next_county": "Jämtland",
       "layers": [
         2,
         3,
@@ -191,7 +192,7 @@
         12
       ],
       "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
-      "residual_ledger": "2026-11-04-0235-sweden-decisions.jsonl"
+      "residual_ledger": "2026-11-04-0335-sweden-decisions.jsonl"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",
@@ -202,7 +203,7 @@
       ],
       "all_unit_rows": 44351,
       "next_partition": "EEZ group reconciliation: Amrumbank-West/Amrumbank West first, then NC1/2/3/4/NC4; full48-group ledger",
-      "next_task": "Build separate EEZ offshore identity/classification adapter; do not reuse onshore mapping. Reconcile parent phases and existing German offshore records before adding units.",
+      "next_task": "Amrumbank: operator reports80 turbines302MW currently vs288MW in2020; reconcile MaStR58+22unit IDs before grouping. Do not infer uprating cause. Then NC labels.",
       "source_review": "2026-11-04-0235-source-review.json",
       "offset": 0,
       "status": "all_states_and_eez_structurally_reviewed",
@@ -214,5 +215,5 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "Root filesystem reports full; build documentation and snapshots in a unique /dev/shm/wind-RUN directory after checking free memory. Do not delete other tasks or original source bytes."
+  "validation_storage": "Root full during0335staging; clean isolated checkout /dev/shm/wind0335-repo contains published state. Use nonblocking shared Wind lock and current remote head; original checkout must be reset only after checking no new writer. Source bytes /tmp/vbk0335. Avoid uv cache writes on root; use existing .venv/bin/python with local PYTHONPATH."
 }
