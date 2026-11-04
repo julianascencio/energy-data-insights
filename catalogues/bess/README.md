@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,997 project and plant records across
-42 countries**, supported by **318 registered sources**. It combines curated
+The BESS section contains **2,005 project and plant records across
+42 countries**, supported by **321 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -267,3 +267,5 @@ The signed-contract and application facts in `POL_20261103_energa_tender.jsonl`,
 Latest research: [Dominican technical annexes and HV PACK configurations](research/2026-11-04_fv6_hv_pack.md).
 
 Latest research: [Kenya source screening and Pylontech component/service evidence](research/2026-11-04_kenya_pylon.md).
+
+Latest research: [Philippines service and project reconciliation; EFFEKTA and Pylontech components](research/2026-11-04_philippines_effekta.md).

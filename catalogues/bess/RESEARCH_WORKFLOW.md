@@ -85,6 +85,14 @@ or a live availability feed. Do not interpret record counts as installed capacit
    row sum differs from the approximate 37 MWh cover and later 40 MWh tender;
    never scale rows to fit a portfolio total. These are historical design
    estimates, not current as-built ratings. Keep ARISE distinct from ASSURE.
+   `scripts/stage_bess_ngcp.py` stages the reviewed March and September 2026
+   NGCP service bulletins from local layout text. BSS means black start service,
+   not battery technology. Contract cases and certification do not establish COD,
+   ownership or capacity; preserve phase names and dated firm-capacity warnings.
+   Use `--september-2026` only with bulletin 2026-51; unknown rows fail closed.
+   `scripts/stage_bess_effekta.py` stages the 18 exact BTL overview models. C20 Ah
+   belongs to a monobloc, not a cell; do not derive energy or match differing model
+   suffixes automatically. Individual-sheet and overview rating bases stay separate.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
