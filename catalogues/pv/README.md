@@ -6,6 +6,15 @@ project. **This is an initial research dataset, not a complete global inventory 
 certification/compatibility service.** See [launch evidence](research/launch_summary.json)
 and [research findings](research/launch_report.md).
 
+The offline `pv_catalogue.nea.read_nea_pv_registrations` reader stages checksum-pinned
+Chinese NEA monthly DOCX attachments for review. It requires an explicitly labelled
+centralized-PV section, the exact five public columns, matching counts and unique
+PPC project codes. Registered installed MW has an unspecified AC/DC basis;
+registration and code digits do not establish operating status, dates or coordinates.
+The August 2026 attachment stages 23 candidates, with zero canonical acceptances.
+Project, local-name and phase reconciliation must precede upsert. See the
+[NEA attribution notice](licenses/NEA_ATTRIBUTION_NOTICE.md).
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;

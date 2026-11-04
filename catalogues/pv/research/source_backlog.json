@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T13:23:33.167060+00:00",
+  "updated_at": "2026-11-04T14:19:37.633039+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "This run completes both Navarra licensed PV layers (114rows), prioritizing useful missing metadata and exact case scope over row quota. Fresh SAJ/EPEVER attempts403; FIMER prior explicit consent restriction remains held. Existing complete Sungrow MH batch not repeated. Top-ten cumulativePV ranking preserved.",
-  "next_highest_value_source": "Plandata91held adoptedPV-plan/site/phase crosswalks using exactoriginalevidence; retain completed94planIDs/keysetmax12185383. Separately resolve installationlayer rights/stableIDs. HyponoriginalPROcertificate/edition scope beforeIP/alias acceptance.",
+  "selection_note": "Completed15 exact OEM models across three tables,4 existing project enrichments,127 French registry rows reviewed, and a tested23-row Chinese centralizedPV staging adapter. No Chinese candidate claimed as accepted.",
+  "next_highest_value_source": "NEA August2026 PPC projectcodes: independently reconcile native names/localities and GEM phases before canonical import, startingPPC2501340322001F thenPPC25013411030011. No repeat full download while checksum/release unchanged.",
   "sources": [
     {
       "id": "uk_repd",
@@ -162,22 +162,43 @@
       "entity": "projects",
       "source_url": "https://www.nea.gov.cn/20260923/aaadb598d4cc4c0a92585bfd26c8728e/c.html",
       "version_or_date": "2026-08 new registration batch, notice 2026-09-23",
-      "licence_assessment": "Bulk reuse not assessed; public access alone is not a licence",
+      "licence_assessment": "Central NEA website linked footer permits reproduction with attribution; no document/layout/images redistributed; no assumption from other agencies/subsites",
       "access_assessment": "Official Chinese-language notice identified; attachment not downloaded",
-      "estimated_useful_yield": null,
+      "estimated_useful_yield": {
+        "staged": 23,
+        "accepted": 0,
+        "future_verified_yield": null
+      },
       "fields_offered": [
         "project names",
         "centralized PV classification",
         "province",
         "registry information"
       ],
-      "last_attempt": "2026-11-01T09:13:29.908550+00:00",
-      "result": "Rank first; zero catalogue projects. Notice distinguishes centralized PV from commercial distributed PV, wind and biomass.",
-      "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Inspect centralized-PV attachment sample and terms; registration is not operating status. Start one monthly/provincial partition.",
+      "last_attempt": "2026-11-04T14:19:37.633039+00:00",
+      "result": "23explicit centralizedPV entries stage successfully;29wind and6biomass entries excluded. No canonical Chinese project accepted; identity/phase review pending.",
+      "retry_condition": "Check current monthly index/ETag; reuse unchanged capture. Independently resolve codes and whole-project/phase boundaries before acceptance.",
+      "next_action": "NEA August2026 PPC projectcodes: independently reconcile native names/localities and GEM phases before canonical import, startingPPC2501340322001F thenPPC25013411030011. No repeat full download while checksum/release unchanged.",
       "priority": 4,
-      "processed_cursor": null,
-      "catalogue_projects_as_of_20261103": 12699
+      "processed_cursor": {
+        "month": "2026-08",
+        "parsed_PV_rows": 23,
+        "accepted_projects": 0,
+        "held_pending_identity": 23,
+        "next_code": "PPC2501340322001F",
+        "review_file": "20261104T1400_nea_review.json"
+      },
+      "catalogue_projects_as_of_20261103": 12699,
+      "last_retrieval": "2026-11-04T14:15:54.722221+00:00",
+      "endpoint": "https://www.nea.gov.cn/20260923/aaadb598d4cc4c0a92585bfd26c8728e/20260923aaadb598d4cc4c0a92585bfd26c8728e_089a102b8c69e348f38fb327eaf4ba0602.docx",
+      "format": "DOCX five-public-column tables, bound/checksummed XML staging",
+      "publication_cadence": "Monthly registration notices; avoid hourly full downloads",
+      "last_release": "August2026 registrations, notice issued18September, URL23September2026",
+      "sha256": "abd37f290cae346cebd479e5d5ad99e99d0af1d6b859a89601f6b915d0a5b324",
+      "etag": "\"6abb7503-2adb05\"",
+      "licence_url": "https://www.nea.gov.cn/2017/201708bottom.htm",
+      "mapping": "pv_catalogue.nea.read_nea_pv_registrations; candidate-only, no canonical records or status/AC/DC/date inference",
+      "next_due_check": "2026-11-05T14:00:00Z"
     },
     {
       "id": "india_cea",
@@ -9286,6 +9307,403 @@
       "retry_condition": "Suitable independently verified source-specificreuse andexactedition/configuration scope",
       "next_action": "ResolveoriginalOEMrights andexactversion before technicalingestion; do not repeatedly retry regionalconsenthold",
       "next_due_check": null
+    },
+    {
+      "id": "hypon_editions_20261104T1400",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.hypon.com/download.html",
+      "endpoint": [
+        "https://www.hypon.com/upload/file/2024/06/12/5c113950-6946-4739-8877-f2d98c99ac70.pdf",
+        "https://www.hypon.com/upload/file/2026/03/10/9329ce7e-8a5f-49db-b4fd-efe6a84c8578.pdf",
+        "https://www.hypon.com/upload/file/2026/03/10/83ecacc9-5d35-4706-80f3-0cf546c38a72.pdf",
+        "https://www.hypon.com/upload/file/2024/08/13/9430e060-ac8c-45ff-b909-7421dbf9ea58.pdf",
+        "https://pl.hypon.com/upload/file/2024/06/12/3fa2c66a-a0ca-4dce-b58f-8063dab17d53.pdf"
+      ],
+      "format": "Five original OEM PDF editions; three exact reviewed model tables",
+      "version_or_date": "Exact dates in source register; transport paths not release dates",
+      "last_attempt": "2026-11-04T14:19:37.633039+00:00",
+      "last_release": "HPT EN20260410; HPS exact EN/PL documents undated",
+      "last_retrieval": "2026-11-04T14:07:16.707772+00:00",
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness before future partition",
+      "licence_assessment": "OEM copyright retained; limited attributed factual metadata, no full document/layout/artwork or open bulk grant. Cookie policy not treated as licence.",
+      "access_assessment": "15new exactmodels,244canonical technicalvalues. Five original PDFs compared; no near-identical regional/connector permutations. HPS depth/mass/IP/ACSPD/defaultconnector held, HPT30–50 mass and first3MPPT counts held; HPT60–80 protection label scope held.",
+      "estimated_useful_yield": {
+        "new_models": 15,
+        "technical_fields": 244
+      },
+      "fields_offered": [
+        "source-specific factual metadata; conditions preserved"
+      ],
+      "mapping": "20261104T1400_equipment_review.json exact canonical fields/native conditions;19-row upsert includes15models",
+      "processed_cursor": {
+        "models_complete": 15,
+        "whole_models_held": 0,
+        "sources": [
+          {
+            "name": "hpt30",
+            "url": "https://www.hypon.com/upload/file/2024/06/12/5c113950-6946-4739-8877-f2d98c99ac70.pdf",
+            "bytes": 5619978,
+            "sha256": "045b25f1312b471f1fc377dec7e83719c0bc5afb76b654aa14dd0cc78e4aba10",
+            "retrieved_at": "2026-11-04T14:01:39.356513+00:00",
+            "headers": {
+              "server": "envoy",
+              "date": "Wed, 04 Nov 2026 14:01:27 GMT",
+              "content-type": "application/pdf",
+              "content-length": "5619978",
+              "last-modified": "Wed, 12 Jun 2024 02:58:21 GMT",
+              "etag": "\"66690ecd-55c10a\"",
+              "expires": "Fri, 04 Dec 2026 14:01:27 GMT",
+              "cache-control": "max-age=2592000",
+              "accept-ranges": "bytes",
+              "x-envoy-upstream-service-time": "652",
+              "connection": "close"
+            }
+          },
+          {
+            "url": "https://www.hypon.com/upload/file/2026/03/10/9329ce7e-8a5f-49db-b4fd-efe6a84c8578.pdf",
+            "sha256": "c6f6cd50b8ac358c633856f0a743cecfe5330cafb98fcc06d45277736585a3d0",
+            "retrieved_at": "2026-11-04T14:07:16.707772+00:00",
+            "headers": {
+              "server": "envoy",
+              "date": "Wed, 04 Nov 2026 14:07:12 GMT",
+              "content-type": "application/pdf",
+              "content-length": "1748687",
+              "last-modified": "Tue, 10 Mar 2026 08:42:23 GMT",
+              "etag": "\"69afd96f-1aaecf\"",
+              "expires": "Fri, 04 Dec 2026 14:07:12 GMT",
+              "cache-control": "max-age=2592000",
+              "accept-ranges": "bytes",
+              "x-envoy-upstream-service-time": "226",
+              "connection": "close"
+            }
+          },
+          {
+            "url": "https://www.hypon.com/upload/file/2026/03/10/83ecacc9-5d35-4706-80f3-0cf546c38a72.pdf",
+            "sha256": "59e71e90452ce9fc501ca398640c16c6c85844190d6cc4593aa220b512477052",
+            "retrieved_at": "2026-11-04T14:03:40.444419+00:00",
+            "headers": {
+              "server": "envoy",
+              "date": "Wed, 04 Nov 2026 14:03:34 GMT",
+              "content-type": "application/pdf",
+              "content-length": "3124284",
+              "last-modified": "Tue, 10 Mar 2026 08:42:10 GMT",
+              "etag": "\"69afd962-2fac3c\"",
+              "expires": "Fri, 04 Dec 2026 14:03:34 GMT",
+              "cache-control": "max-age=2592000",
+              "accept-ranges": "bytes",
+              "x-envoy-upstream-service-time": "225",
+              "connection": "close"
+            }
+          },
+          {
+            "url": "https://www.hypon.com/upload/file/2024/08/13/9430e060-ac8c-45ff-b909-7421dbf9ea58.pdf",
+            "sha256": "b171a10819045dc9ae902952ac39d5870c7917c506ab87e9b82b3553bad15db5",
+            "retrieved_at": "2026-11-04T14:02:36.449219+00:00",
+            "headers": {
+              "server": "envoy",
+              "date": "Wed, 04 Nov 2026 14:02:34 GMT",
+              "content-type": "application/pdf",
+              "content-length": "840242",
+              "last-modified": "Tue, 13 Aug 2024 06:40:25 GMT",
+              "etag": "\"66baffd9-cd232\"",
+              "expires": "Fri, 04 Dec 2026 14:02:34 GMT",
+              "cache-control": "max-age=2592000",
+              "accept-ranges": "bytes",
+              "x-envoy-upstream-service-time": "227",
+              "connection": "close"
+            }
+          },
+          {
+            "name": "hpspro",
+            "url": "https://pl.hypon.com/upload/file/2024/06/12/3fa2c66a-a0ca-4dce-b58f-8063dab17d53.pdf",
+            "bytes": 2445491,
+            "sha256": "4bc3aa675872e7e5a3b1846b921f88b189a4ae4b1276c7c307e2e65b5939a5b7",
+            "retrieved_at": "2026-11-04T14:01:39.331798+00:00",
+            "headers": {
+              "server": "envoy",
+              "date": "Wed, 04 Nov 2026 14:01:28 GMT",
+              "content-type": "application/pdf",
+              "content-length": "2445491",
+              "last-modified": "Wed, 12 Jun 2024 02:35:46 GMT",
+              "etag": "\"66690982-2550b3\"",
+              "expires": "Fri, 04 Dec 2026 14:01:28 GMT",
+              "cache-control": "max-age=2592000",
+              "accept-ranges": "bytes",
+              "x-envoy-upstream-service-time": "1531",
+              "connection": "close"
+            }
+          }
+        ]
+      },
+      "result": "15new exactmodels,244canonical technicalvalues. Five original PDFs compared; no near-identical regional/connector permutations. HPS depth/mass/IP/ACSPD/defaultconnector held, HPT30–50 mass and first3MPPT counts held; HPT60–80 protection label scope held.",
+      "retry_condition": "New source/identity/rights evidence; avoid unchanged full downloads",
+      "next_action": "New independent exact edition/identity evidence for held fields; do not redownload complete tables hourly.",
+      "next_due_check": "2026-11-05T14:00:00Z"
+    },
+    {
+      "id": "odre_20_100_occ_5_20_20261104T1400",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/information/",
+      "endpoint": [
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+nbinstallations%3D1+AND+regime%3D%27En+service%27+AND+puismaxinstallee%3E%3D20000+AND+puismaxinstallee%3C100000&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Occitanie%27&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Occitanie%27&order_by=codeeicresourceobject&limit=100&offset=100&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource"
+      ],
+      "format": "JSON Explore2.1 bounded100-row pages; public projection",
+      "version_or_date": "Exact dates in source register; transport paths not release dates",
+      "last_attempt": "2026-11-04T14:19:37.633039+00:00",
+      "last_release": "Snapshot2026-08-31; metadata modified2026-10-13, processed2026-10-20",
+      "last_retrieval": "2026-11-04T14:04:36.918766+00:00",
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness before future partition",
+      "licence_assessment": "Licence Ouverte v2.0 (Etalab); source and snapshot attribution retained.",
+      "access_assessment": "Five individual20–100MW rows plus122Occitanie5–20MW rows reviewed:1installed-power enrichment,126no-change/held. Overlapping hold reasons include66privacy,23already-populated,35missing/nonuniqueEIC and11phase-scope; reasons not summed as unique records.",
+      "estimated_useful_yield": {
+        "reviewed": 127,
+        "enriched": 1,
+        "held_or_unchanged": 126
+      },
+      "fields_offered": [
+        "source-specific factual metadata; conditions preserved"
+      ],
+      "mapping": "Existing reviewed_installed_power_updates helper; exact complete single-phase EIC; no name merge",
+      "processed_cursor": {
+        "complete": true,
+        "reviewed": 127,
+        "accepted_enrichments": 1,
+        "requests": [
+          {
+            "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+nbinstallations%3D1+AND+regime%3D%27En+service%27+AND+puismaxinstallee%3E%3D20000+AND+puismaxinstallee%3C100000&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+            "retrieved_at": "2026-11-04T14:02:34.663479+00:00",
+            "sha256": "db97f6001ad864efc431c0cabc71a6d3c2538a082efcc753651c4815caf47138",
+            "headers": {
+              "server": "envoy",
+              "date": "Wed, 04 Nov 2026 14:02:34 GMT",
+              "content-type": "application/json; charset=utf-8",
+              "content-length": "2337",
+              "x-ratelimit-remaining": "9999997",
+              "x-ratelimit-limit": "10000000",
+              "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+              "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+              "vary": "Accept-Language, Cookie, Host",
+              "content-language": "en-us",
+              "access-control-allow-origin": "*",
+              "access-control-allow-methods": "POST, GET, OPTIONS",
+              "access-control-max-age": "1000",
+              "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+              "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+              "strict-transport-security": "max-age=31536000;includeSubdomains",
+              "x-content-type-options": "nosniff",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "content-security-policy": "upgrade-insecure-requests; ",
+              "x-ua-compatible": "IE=edge",
+              "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+              "x-envoy-upstream-service-time": "231",
+              "connection": "close"
+            }
+          },
+          {
+            "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Occitanie%27&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+            "sha256": "5a002e86343a955c5d684c057e8b78c60d0cd4f05fdaa5863ebc4c0a8a9daf90",
+            "retrieved_at": "2026-11-04T14:04:36.918766+00:00",
+            "headers": {
+              "server": "envoy",
+              "date": "Wed, 04 Nov 2026 14:04:36 GMT",
+              "content-type": "application/json; charset=utf-8",
+              "content-length": "42477",
+              "x-ratelimit-remaining": "9999994",
+              "x-ratelimit-limit": "10000000",
+              "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+              "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+              "vary": "Accept-Language, Cookie, Host",
+              "content-language": "en-us",
+              "access-control-allow-origin": "*",
+              "access-control-allow-methods": "POST, GET, OPTIONS",
+              "access-control-max-age": "1000",
+              "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+              "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+              "strict-transport-security": "max-age=31536000;includeSubdomains",
+              "x-content-type-options": "nosniff",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "content-security-policy": "upgrade-insecure-requests; ",
+              "x-ua-compatible": "IE=edge",
+              "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+              "x-envoy-upstream-service-time": "526",
+              "connection": "close"
+            }
+          },
+          {
+            "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Occitanie%27&order_by=codeeicresourceobject&limit=100&offset=100&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+            "sha256": "e79cb15a840e6444f7ba4fc013cc141df3b5f8696782fa029a9f8edd47f0169a",
+            "retrieved_at": "2026-11-04T14:04:36.696218+00:00",
+            "headers": {
+              "server": "envoy",
+              "date": "Wed, 04 Nov 2026 14:04:36 GMT",
+              "content-type": "application/json; charset=utf-8",
+              "content-length": "9382",
+              "x-ratelimit-remaining": "9999995",
+              "x-ratelimit-limit": "10000000",
+              "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+              "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+              "vary": "Accept-Language, Cookie, Host",
+              "content-language": "en-us",
+              "access-control-allow-origin": "*",
+              "access-control-allow-methods": "POST, GET, OPTIONS",
+              "access-control-max-age": "1000",
+              "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+              "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+              "strict-transport-security": "max-age=31536000;includeSubdomains",
+              "x-content-type-options": "nosniff",
+              "referrer-policy": "strict-origin-when-cross-origin",
+              "content-security-policy": "upgrade-insecure-requests; ",
+              "x-ua-compatible": "IE=edge",
+              "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+              "x-envoy-upstream-service-time": "320",
+              "connection": "close"
+            }
+          }
+        ]
+      },
+      "result": "Five individual20–100MW rows plus122Occitanie5–20MW rows reviewed:1installed-power enrichment,126no-change/held. Overlapping hold reasons include66privacy,23already-populated,35missing/nonuniqueEIC and11phase-scope; reasons not summed as unique records.",
+      "retry_condition": "New source/identity/rights evidence; avoid unchanged full downloads",
+      "next_action": "Next bounded regional5–20MW installed-power gaps after privacy/EIC/phase review; skip completed127rows on unchanged revision.",
+      "next_due_check": "2026-11-05T14:00:00Z"
+    },
+    {
+      "id": "denmark_epc_20261104T1400",
+      "country": "DNK",
+      "entity": "projects",
+      "source_url": "https://www.chintgreen.energy/projects/denmark-323-mwp-pv",
+      "endpoint": "https://www.chintgreen.energy/projects/denmark-323-mwp-pv",
+      "format": "Exact sources/captures in dated review and downloads ledgers",
+      "version_or_date": "Exact dates in source register; transport paths not release dates",
+      "last_attempt": "2026-11-04T14:19:37.633039+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness before future partition",
+      "licence_assessment": "See dated report and exact source register; public access is not open-content permission",
+      "access_assessment": "Three existing one-phase BeGreen sites gain6historical developer/EPC role fields plus3contract evidence groups from CHINT issuer2022release. Source rounded137.3/111.7 versus existing137/112MWp preserved; separate13MWp expansion unallocated.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "source-specific factual metadata; conditions preserved"
+      ],
+      "mapping": "Existing upsert API / reviewed exact identities; NEA candidate reader separately documented",
+      "processed_cursor": {
+        "exact_existing_projects": 3,
+        "canonical_new_projects": 0,
+        "source_date": "2022-02-10",
+        "issuer_url": "https://www.prnewswire.co.uk/news-releases/chint-solar-along-with-its-partner-intec-energy-solutions-intec-has-been-awarded-a-328-mwp-epc-contract-with-danish-solar-developer-begreen-a-s-827604234.html"
+      },
+      "result": "Three existing one-phase BeGreen sites gain6historical developer/EPC role fields plus3contract evidence groups from CHINT issuer2022release. Source rounded137.3/111.7 versus existing137/112MWp preserved; separate13MWp expansion unallocated.",
+      "retry_condition": "New source/identity/rights evidence; avoid unchanged full downloads",
+      "next_action": "Check independent project/phase evidence before addingUnibrew or assigning equipment; do not allocate portfolio totals.",
+      "next_due_check": "2026-11-05T14:00:00Z"
+    },
+    {
+      "id": "kroghoj_identity_20261104T1400",
+      "country": "DNK",
+      "entity": "projects",
+      "source_url": "https://ae-nergy.dk/en/projekt/kroghoej/",
+      "endpoint": "https://ae-nergy.dk/en/projekt/kroghoej/",
+      "format": "Exact sources/captures in dated review and downloads ledgers",
+      "version_or_date": "Exact dates in source register; transport paths not release dates",
+      "last_attempt": "2026-11-04T14:19:37.633039+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness before future partition",
+      "licence_assessment": "See dated report and exact source register; public access is not open-content permission",
+      "access_assessment": "Owner/developer44MWp case differs from existing66.7MWpBeGreen site; plan11299862 excludes old approximate point by2.49km but that does not establish independent phase identity. Netarea70vs74ha contradiction retained; plannedBESS not operating capacity.0accepted.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "source-specific factual metadata; conditions preserved"
+      ],
+      "mapping": "Existing upsert API / reviewed exact identities; NEA candidate reader separately documented",
+      "processed_cursor": {
+        "plan_id": 11299862,
+        "canonical_accepted": 0,
+        "owner_capture": {
+          "url": "https://ae-nergy.dk/en/projekt/kroghoej/",
+          "sha256": "e882c72388a657cd9d5715f72e0eb47006caead37344438b073ae72b2f3994cd",
+          "retrieved_at": "2026-11-04T14:06:17.418143+00:00",
+          "headers": {
+            "date": "Wed, 04 Nov 2026 14:06:17 GMT",
+            "content-type": "text/html; charset=UTF-8",
+            "vary": "Accept-Encoding",
+            "set-cookie": "PHPSESSID=oq9h2iepn0l3sfmf9plmo69niu; path=/; secure; HttpOnly; SameSite=Lax",
+            "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+            "cache-control": "no-store, no-cache, must-revalidate",
+            "pragma": "no-cache",
+            "link": "<https://ae-nergy.dk/en/wp-json/>; rel=\"https://api.w.org/\", <https://ae-nergy.dk/en/wp-json/wp/v2/projekt/20>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://ae-nergy.dk/en/?p=20>; rel=shortlink",
+            "x-pods-rid": "567b12fd70f2447145ba1adfb4ea93a1-e1",
+            "alt-svc": "h3=\":443\"; ma=86400",
+            "strict-transport-security": "max-age=31536000",
+            "x-envoy-upstream-service-time": "1397",
+            "server": "envoy",
+            "connection": "close",
+            "transfer-encoding": "chunked"
+          }
+        },
+        "geometry_capture": {
+          "url": "https://geoserver.plandata.dk/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=pdk%3Atheme_pdk_lokalplan_vedtaget_solcelle&outputFormat=application%2Fjson&CQL_FILTER=planid%3D11299862&srsName=EPSG%3A25832",
+          "sha256": "02f16ae981af7961c7578a039551ab4b99525836cde2b23ecbb2a32c01ecb92b",
+          "retrieved_at": "2026-11-04T14:08:30.148381+00:00",
+          "headers": {
+            "server": "envoy",
+            "date": "Wed, 04 Nov 2026 14:08:29 GMT",
+            "content-type": "application/json;charset=UTF-8",
+            "x-content-type-options": "nosniff",
+            "x-frame-options": "SAMEORIGIN",
+            "content-security-policy": "base-uri 'self'; default-src 'none'; child-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; form-action 'self'; frame-ancestors 'self';",
+            "content-disposition": "inline; filename=theme_pdk_lokalplan_vedtaget_solcelle.json",
+            "x-envoy-upstream-service-time": "451",
+            "connection": "close",
+            "transfer-encoding": "chunked"
+          }
+        }
+      },
+      "result": "Owner/developer44MWp case differs from existing66.7MWpBeGreen site; plan11299862 excludes old approximate point by2.49km but that does not establish independent phase identity. Netarea70vs74ha contradiction retained; plannedBESS not operating capacity.0accepted.",
+      "retry_condition": "New source/identity/rights evidence; avoid unchanged full downloads",
+      "next_action": "Review original plan boundary and independent owner site identity before canonical creation; no fuzzy merge.",
+      "next_due_check": "2026-11-05T14:00:00Z"
+    },
+    {
+      "id": "ftc_voyager_20261104T1400",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.ftcsolar.com/voyager-tracker/",
+      "endpoint": "https://www.ftcsolar.com/voyager-tracker/",
+      "format": "Exact sources/captures in dated review and downloads ledgers",
+      "version_or_date": "Exact dates in source register; transport paths not release dates",
+      "last_attempt": "2026-11-04T14:19:37.633039+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness before future partition",
+      "licence_assessment": "See dated report and exact source register; public access is not open-content permission",
+      "access_assessment": "Current product and exact terms routes both ordinaryGET403; webtermsopen403. No technicalPDFdownload or model accepted. ARRAYexistinggatedresource not reprobed.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "source-specific factual metadata; conditions preserved"
+      ],
+      "mapping": "Existing upsert API / reviewed exact identities; NEA candidate reader separately documented",
+      "processed_cursor": {
+        "reviewed_technical_models": 0,
+        "accepted": 0
+      },
+      "result": "Current product and exact terms routes both ordinaryGET403; webtermsopen403. No technicalPDFdownload or model accepted. ARRAYexistinggatedresource not reprobed.",
+      "retry_condition": "New source/identity/rights evidence; avoid unchanged full downloads",
+      "next_action": "Public recovery after24h and source-specific reuse/edition review; do not bypass or submit forms.",
+      "next_due_check": "2026-11-05T14:00:00Z"
     }
   ],
   "source_refresh_queue": [
