@@ -29,3 +29,7 @@ inventories from unresolved image counts and include complete offline downloads.
 For longer studies with configurable inputs and reports, see the
 :doc:`CCYA case guide </_generated/studies/ccya>` and
 :doc:`degradation study guide </_generated/studies/degradation>`.
+
+The PVDeg Canary Islands example imports the upstream Python library to map
+relative thermal exposure on a 100 m grid, with Tenerife detail and parameter
+sensitivity. It uses real climatology and does not claim calibrated degradation.

@@ -20,6 +20,9 @@ dependencies = [
   "matplotlib>=3.9,<4",
 ]
 
+[project.optional-dependencies]
+pvdeg = ["pvdeg==0.7.4"]
+
 [build-system]
 requires = ["hatchling>=1.27,<2"]
 build-backend = "hatchling.build"

@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,791 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
-Carrier, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
+has 1,811 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
@@ -212,6 +212,16 @@ maximum-model labels on one Mitsubishi and one Neuropower entry remain bounded
 observations with no maximum W or VA. The Fuji certification retains its
 reported 1,000 kW and 1,000 kVA minimum rating; the unbound maximum-W cell is
 not normalized because no maximum configuration is identified.
+The ENERGY STAR Enterprise Servers continuation processes all 20 Cisco Systems
+entries in the complete 476-row EPA dataset snapshot. Each record retains the
+immutable certification ID, model and form factor plus separately bounded low,
+typical/single and high SERT configurations. CPU, installed-memory, storage,
+PSU-nameplate, idle-power and workload-score observations are not combined into
+a synthetic rated server input or rack power, and maximum supported memory is
+not treated as installed memory. Three entries have a processor-socket count in
+the model label that conflicts with the dataset's socket-count attribute; both
+values remain in `conflicts_json`, the scalar is left null and the records remain
+`needs_review`. Certification entries are exact issuer records, not deployments.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -381,4 +391,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-04-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-04T1922-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-04T2027-validation.json).

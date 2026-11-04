@@ -6,6 +6,7 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_energy_star_enterprise_servers_inventory,
     parse_energy_star_ups_inventory,
     parse_generator_dcp_matrix,
     parse_generator_rating_matrix,
@@ -51,6 +52,52 @@ PROJECT_PERMIT_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/project-permit-matrix.csv"
 ).read_bytes()
 ENERGY_STAR_UPS = (Path(__file__).parent / "fixtures/data_centers/energy-star-ups.csv").read_bytes()
+ENERGY_STAR_SERVERS = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-enterprise-servers.csv"
+).read_bytes()
+
+
+def test_energy_star_enterprise_servers_keep_certification_and_form_factor():
+    url = "https://data.energystar.gov/api/v3/views/qifb-fcj2/export.csv"
+    result = parse_energy_star_enterprise_servers_inventory(
+        ENERGY_STAR_SERVERS,
+        source_url=url,
+        partner="Cisco Systems",
+        expected_count=2,
+    )
+    assert [row["ENERGY STAR Unique ID"] for row in result["candidates"]] == [
+        "1001",
+        "1002",
+    ]
+    assert result["candidates"][0]["Model Number"] == "UCSC-C220-M8 1S"
+    assert result["candidates"][1]["Form Factor"] == "Blade - Half Chassis"
+    assert len(result["sha256"]) == 64
+
+
+def test_energy_star_enterprise_servers_reject_drift_duplicate_and_unofficial_source():
+    url = "https://data.energystar.gov/api/v3/views/qifb-fcj2/export.csv"
+    with pytest.raises(ValueError, match="partner inventory shape"):
+        parse_energy_star_enterprise_servers_inventory(
+            ENERGY_STAR_SERVERS,
+            source_url=url,
+            partner="Cisco Systems",
+            expected_count=3,
+        )
+    duplicate = ENERGY_STAR_SERVERS + ENERGY_STAR_SERVERS.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate ENERGY STAR enterprise-server"):
+        parse_energy_star_enterprise_servers_inventory(
+            duplicate,
+            source_url=url,
+            partner="Cisco Systems",
+            expected_count=2,
+        )
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR enterprise-server"):
+        parse_energy_star_enterprise_servers_inventory(
+            ENERGY_STAR_SERVERS,
+            source_url="https://example.com/servers.csv",
+            partner="Cisco Systems",
+            expected_count=2,
+        )
 
 
 def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries():
