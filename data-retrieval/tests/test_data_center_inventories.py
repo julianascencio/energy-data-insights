@@ -93,6 +93,23 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
     assert ablerex["candidates"][0]["Minimum Configuration Tested Model Number"] == "N/A"
     assert ablerex["candidates"][0]["Energy Storage System Runtime at 100% Load (min.)"] == "N/A"
 
+    reviewed_partners = {
+        "Panduit Corp.": ("4001", "PANDUIT"),
+        "Appleton Grp LLC d/b/a Appleton Group": ("5001", "Emerson / SOLAHD"),
+        "Legrand AV Inc.": ("6001", "Middle Atlantic"),
+    }
+    for partner, (expected_id, expected_brand) in reviewed_partners.items():
+        batch = parse_energy_star_ups_inventory(
+            ENERGY_STAR_UPS,
+            source_url=(
+                "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+            ),
+            partner=partner,
+            expected_count=1,
+        )
+        assert [row["ENERGY STAR Unique ID"] for row in batch["candidates"]] == [expected_id]
+        assert batch["candidates"][0]["Brand Name"] == expected_brand
+
 
 def test_energy_star_ups_inventory_rejects_drift_duplicates_and_unofficial_sources():
     url = "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv"

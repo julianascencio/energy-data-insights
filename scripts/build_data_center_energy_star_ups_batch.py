@@ -47,6 +47,27 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "expected_count": 33,
         "retrieved_at": "2026-11-04T10:26:21Z",
     },
+    "panduit": {
+        "partner": "Panduit Corp.",
+        "manufacturer": "Panduit",
+        "name_prefix": "Panduit",
+        "expected_count": 10,
+        "retrieved_at": "2026-11-04T13:20:48Z",
+    },
+    "appleton": {
+        "partner": "Appleton Grp LLC d/b/a Appleton Group",
+        "manufacturer": "Appleton Group / SolaHD",
+        "name_prefix": "SolaHD",
+        "expected_count": 7,
+        "retrieved_at": "2026-11-04T13:20:48Z",
+    },
+    "legrand_av": {
+        "partner": "Legrand AV Inc.",
+        "manufacturer": "Legrand AV",
+        "name_prefix": None,
+        "expected_count": 7,
+        "retrieved_at": "2026-11-04T13:20:48Z",
+    },
 }
 DATASET_UPDATED = "2026-11-03T14:20:54Z"
 
