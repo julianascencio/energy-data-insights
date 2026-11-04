@@ -1,0 +1,124 @@
+{
+  "run_id": "energy-star-eaton-ups-20261104T161916Z",
+  "retrieved_at": "2026-11-04T16:19:16Z",
+  "branch": "research/data-center-database-20261104T1416Z",
+  "base_head": "b8dc106f7a854fb57c76146afd10fe080765006b",
+  "prepublication_remote_head": "e5c6a4af2679a173999c774a2a39654c5974d4c3",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus_aggregate": 114
+    },
+    "equipment": 1299,
+    "total": 1482,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 37,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 176,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 962,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 36
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 337,
+    "inventories": [
+      "EPA ENERGY STAR certified Delta Electronics partner inventory",
+      "EPA ENERGY STAR certified Cyber Power Systems partner inventory",
+      "EPA ENERGY STAR certified Eaton Corporation partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 990085,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {
+      "check": "deterministic ENERGY STAR partner builder replay",
+      "result": "passed",
+      "detail": "The new 176-record Eaton build matched its 36 reviewable canonical shards and the builder reproduced all eight previously published reviewed partner inventories byte-for-byte"
+    },
+    {
+      "check": "catalogue schema, identity, unit, source and evidence validation",
+      "result": "passed",
+      "detail": "Validated 1,482 canonical Data Center records"
+    },
+    {
+      "check": "focused Data Center tests",
+      "result": "passed",
+      "detail": "78 passed"
+    },
+    {
+      "check": "full Python test suite",
+      "result": "passed",
+      "detail": "2,403 passed and five optional-dependency tests skipped"
+    },
+    {
+      "check": "database viewer Node tests",
+      "result": "passed",
+      "detail": "16 passed"
+    },
+    {
+      "check": "Ruff format and lint",
+      "result": "passed",
+      "detail": "913 files formatted; all lint checks passed"
+    },
+    {
+      "check": "repository-wide ty",
+      "result": "passed",
+      "detail": "All type checks passed"
+    },
+    {
+      "check": "repository, citation and diff checks",
+      "result": "passed",
+      "detail": "Repository policy, citation registry and whitespace checks passed"
+    },
+    {
+      "check": "strict Sphinx and generated-site link validation",
+      "result": "passed",
+      "detail": "Strict build succeeded and local links and assets resolved across 579 HTML pages"
+    },
+    {
+      "check": "deterministic typed Parquet and coverage rebuild",
+      "result": "passed",
+      "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"
+    }
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "35f379557e06e7e36cabf5213fa67ff812245438febbabcd78486de52fcda7f2",
+    "projects_sha256": "a143dcdfa65de5782eaaf065eaf3f0398e138895533d6fc4e9514d71ca20ca56",
+    "equipment_sha256": "5447342bb02094162b5f909d1fdd6e0aef95f27e42a4e30134ac4c1efd9f73fa",
+    "manifest_sha256": "c024dfbe544ed2a9a8c7a1d30dff72d01803938792f8f359a5490396585d132b",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "4f5dee76d18c56adf5f24deeb3212d83f2737b5838ae2d1908e4bd14af1e7b3f"
+  },
+  "holds_added": [],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "All 176 Eaton Corporation entries in the 2026-11-03 ENERGY STAR dataset update are processed",
+    "Five exact reported brand labels are preserved without collapsing certification identities",
+    "Ten absent minimum-configuration identifiers, eight unavailable runtimes and six unavailable warranties remain null",
+    "Two reported maximum tested configurations remain observations while normalized ratings stay bound to minimum configurations",
+    "Active W and apparent VA remain distinct; runtime and efficiency retain certification and load boundaries",
+    "No battery energy, power factor, accessory combination or deployment is inferred",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain"
+  ]
+}

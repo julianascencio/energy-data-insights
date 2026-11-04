@@ -1,0 +1,82 @@
+{
+  "accepted": {
+    "record_id": "1ee5f6b6-157a-548e-b2bc-74ae9030ceb5",
+    "model": "AXETR",
+    "canonical_technical_fields": {
+      "tracker_type": "Horizontal single-axis; independent single-row control",
+      "module_orientation": "Portrait",
+      "tracking_min_deg": -60,
+      "tracking_max_deg": 60,
+      "backtracking": true,
+      "drive_type": "TGB slew drives and motors",
+      "power_supply": "P4Q Suntrack SelfPowered Plus; DC with battery backup",
+      "structural_warranty_years": 10
+    },
+    "conditions": {
+      "revision": "DS_AXE_TR V0.01",
+      "row_length_m": {
+        "upper_inclusive": 95
+      },
+      "controller": {
+        "manufacturer": "P4Q",
+        "model": "Suntrack SelfPowered Plus",
+        "ip_rating": "IP66",
+        "scope": "per-row controller only",
+        "functions": [
+          "power",
+          "driver",
+          "communications",
+          "tilt sensor",
+          "CPU"
+        ]
+      },
+      "foundation_options": [
+        "concrete-pile",
+        "pile-driven"
+      ],
+      "materials_native": "Posts,tube,smallparts:hot-dipped galvanised steel(8.8)",
+      "design_standard_labels_not_assembly_certification": [
+        "Eurocode1/SANS10160",
+        "Eurocode3/SANS10162",
+        "ISO1461",
+        "Eurocode9",
+        "Eurocode7/SANS10400"
+      ],
+      "ISO9001_label": "OEM/quality-management claim, not tracker conformity certificate",
+      "warranty_scope": {
+        "start": "date of delivery",
+        "beneficiary": "direct customer",
+        "coverage": "mounting structure structural failure; repair or replacement at OEM option",
+        "conditions": [
+          "qualified installation and OEM instructions",
+          "appropriate geotechnical/foundation design",
+          "annual inspection and maintenance",
+          "full payment",
+          "no modifications"
+        ],
+        "exclusions": [
+          "electrical components and third-party items",
+          "extraordinary/force-majeure events",
+          "high-abrasion desert sand-wind areas",
+          "cosmetic cut-edge/discolouration effects"
+        ],
+        "claim_notice_days": 5,
+        "liability_cap": "purchase price; consequential/incidental losses excluded"
+      },
+      "edition_scope": "One exact printed tracker model, no configuration permutation or marketing energy-gain parameter",
+      "locators": {
+        "axe_axetr_v001_20261104T1500": "PDF page1; Row Lengths,Rotation Angle,Drivers,Controllers,Foundation,Standards,Materials,Warranty",
+        "axe_struct_warranty_20261104T1500": "Statement,Conditions,Claims,Liability Limits"
+      }
+    },
+    "sources": [
+      "axe_axetr_v001_20261104T1500",
+      "axe_struct_warranty_20261104T1500"
+    ]
+  },
+  "comparison": "Indexed Tracker.pdf and current downloads-linked Tracker-1.pdf share printed DS_AXE_TR V0.01 and identical table facts; current linked bytes pinned. Copyright2019 not recast as source date.",
+  "other_reviewed": {
+    "Antaisolar": "Three direct ordinaryGET403; prior platform wind/length conflicts still held; no bypass/forms",
+    "Axial": "Public2page BlockingSystem PDF inspected; two dimensional configurations and multiple power/temperature/warranty options. Exact current model/revision identity and wind measurement basis not established;0accepted."
+  }
+}

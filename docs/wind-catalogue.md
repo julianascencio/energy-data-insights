@@ -1,11 +1,13 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. The proposed continuation contains **7,810 projects, 266 equipment
-records, 13,633 linked turbines and two original numerical curves**, across
-**59 countries and eleven equipment manufacturers**. Merged main at `6b38f9a4`
-contains 7,582 projects, 264 equipment records and 10,264 turbines plus two curves.
-These are catalogue counts, not a current operating census.
+numerical curves. At batch `2026-11-04-1935`, the proposed continuation contains
+**7,959 projects, 343 equipment records, 13,633 linked turbines and two original
+numerical curves**, across **59 countries and 46 manufacturer labels**. Labels
+are not a reconciled corporate-entity count. Merged main at `9dbf07ed` contains
+7,948 projects, 337 equipment records, 13,633 turbines and two curves.
+These are catalogue counts, not a current operating census. Subsequent totals
+are recorded in `catalogues/wind/research/latest.json`.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.

@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 962 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
-Carrier, CoolIT Systems, Cummins, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
+has 1,299 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+Carrier, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv and Para Systems / Minuteman Power Technologies. Current categories are GPU accelerators,
@@ -160,8 +160,9 @@ selectable electrical values, batteries and communications remain observations.
 The ENERGY STAR continuation processes all 33 current certification entries for
 Para Systems / Minuteman Power Technologies, all 22 entries for ADI, all 15
 entries for Ablerex Electronics, all ten entries for Panduit, all seven entries
-for Appleton Group / SolaHD and all seven entries for Legrand AV in EPA dataset
-`ifxy-2uty`. ADI's 11 W BOX and
+for Appleton Group / SolaHD, all seven entries for Legrand AV and all 26 entries
+for Delta Electronics and all 135 entries for Cyber Power Systems in EPA dataset
+`ifxy-2uty`, plus all 176 Eaton Corporation entries. ADI's 11 W BOX and
 11 UltraTech certifications remain distinct even where model names recur across
 brands. Each entry retains its immutable ENERGY STAR ID, certification date,
 active W, apparent VA, weighted and load-point efficiency, dimensions and
@@ -171,9 +172,19 @@ those values as unavailable, so their normalized fields remain null; they are
 not derived from the 11 AP entries. A normalized runtime is only a reported 100%
 load value, paired with the exact W-to-kW conversion of that configuration's
 active output. No battery energy, maximum configuration, output power factor or
-deployment is inferred. The EPA-certified Legrand AV entries are sourced from
-the public issuer dataset and do not reuse the separately held Legrand OEM
-technical tables.
+deployment is inferred. The EPA-certified Legrand AV and Delta Electronics
+entries are sourced from the public issuer dataset and do not reuse the
+separately held OEM technical tables.
+The Cyber Power Systems continuation retains all four reported brand identities
+(CyberPower, amazonbasics, Amazon Basics and AmazonCommerical) without collapsing
+certification IDs. Twenty-seven entries report a maximum tested configuration;
+those model and output values remain separate observations while normalized kW
+and kVA stay bound to the minimum tested configuration.
+The Eaton continuation preserves all five source brand labels, including Tripp
+Lite and Eaton variants, as issuer observations. Ten entries have no reported
+minimum-tested identifier, eight have no runtime and six have no warranty; those
+normalized fields remain null. Two reported maximum-tested configurations remain
+separate observations rather than replacing minimum-configuration ratings.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact

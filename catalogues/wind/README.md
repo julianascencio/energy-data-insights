@@ -3,11 +3,13 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 7,810 project records (7,809 non-group records),
-266 exact equipment records, 13,633 registry turbine records and two original numerical
-power curves, across 59 countries and eleven equipment manufacturer names.
-Merged main at `6b38f9a4` contains 7,582 projects, 264 equipment records and 10,264 turbines
-and two curves. These are catalogue counts, not an operating census.
+At batch `2026-11-04-1935`, the proposed branch contains **7,959 projects**
+(7,958 non-group records), **343 equipment configurations**, **13,633 linked
+registry turbines** and **two original numerical curves**, across **59 countries**
+and **46 manufacturer labels**. Labels are not a reconciled corporate-entity count.
+Merged main at `9dbf07ed` contains 7,948 projects, 337 equipment records,
+13,633 turbines and two curves. These are catalogue counts, not an operating census.
+Use the batch checkpoint below for subsequent totals.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
 not resolve capacity scope; 2,216 other applications remain deferred. Swedish
@@ -389,3 +391,26 @@ or guessed turbine model is added. Tesouro's 2024 authorization is dated evidenc
 not proof of current operation; its 60 MW access permission is separate from the
 50.4 MW authorized wind proposal and the later battery project. All four new
 project scopes remain excluded from capacity totals.
+
+### October planning notices and registry identities
+
+Batch `2026-11-04-1935` reviews all Series A/B wind-mentioned titles for
+October 1–3, 5–10 and 13–14, including the extra October 2 issue. It adds
+Conca de Barberà I, Anoia y Segarra II and the revised Mudarra proposal.
+Conca and Anoia retain dated historical construction permissions; Mudarra's
+100 MW revision is a consultation, with the earlier 99.9 MW authorization
+kept as a separate dated observation. All three remain excluded from sums.
+
+Mudarra explicitly specifies ten EN-182 turbines at 7 MW and five at 6 MW,
+with 182 m rotors and 120 m hubs. The two linked equipment configurations
+are planning specifications, not evidence of installation, independent
+performance validation or equivalence to the existing India-market model.
+The 100 MW arithmetic check corroborates, but does not replace, reported MW.
+No individual turbine records are inferred from property schedules.
+
+The BOE adapter now defers an existing exact `gencat_expediente` or
+`miteco_expediente` even when names change. A shared procedure requires scope
+review; it never automatically merges farms or phases. A shared BOE notice
+alone is not a project identifier. The source review retains sibling-farm
+holds and the explicit Sinoma website reuse exclusion. The next daily
+partition is September 28–30, alongside the recorded permit crosswalks.

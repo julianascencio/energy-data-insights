@@ -1,46 +1,92 @@
 {
-  "batch": "2026-11-04-1835",
-  "validated_base": "b8dc106f7a854fb57c76146afd10fe080765006b",
-  "iteration_parent": "aa1468fba7c6c551705baa9789286827e55b9de5",
-  "local": {
-    "pytest": "2409 passed; 5 optional skips",
-    "viewer": "16 passed",
-    "quality": "Ruff lint/format, ty, repository, citations and whitespace passed",
-    "catalogue": "21932 validated; all 21928 preceding records unchanged",
-    "capacity": "Six capacity totals unchanged; four new scopes excluded",
-    "replay": "4 records,6 decisions and2completeA/B indexes replay exactly",
-    "snapshots": "Two seven-file typed Zstandard builds byte-identical",
-    "docs": "Strict Sphinx plot_gallery=0 and 581 HTML page links/assets passed",
-    "packages": "Three wheels and three sdists built",
-    "example": "Offline Wind gallery passed"
-  },
-  "resolved_blockers": [
-    "Full filesystem prevented initial git status; reproducible old documentation outputs removed; source files and unpublished work preserved"
-  ],
-  "not_executed": [
-    "Full gallery",
-    "Interactive browser",
-    "Present operational verification"
-  ],
-  "remote_ci": {
-    "parent": "Python3.12/3.13 and documentation passed; deployment skipped",
-    "this_batch": "Pending publication"
-  },
+  "batch": "2026-11-04-1935",
+  "validated_base": "9dbf07ed4a09da16b8c25ca77cbafc8b216c6e07",
+  "iteration_parent": "b5496ce9421e3cff3c7f8c505decb0a9a6e7f75a",
+  "status": "Local validation completed",
   "snapshot_sha256": {
-    "sources.json": "c9debcb478c719441fee9cac674135cc9c7ba6b5d1d374b56976bb8252d984cc",
+    "sources.json": "35301be6b1e10c175c9b12129663f7b701e3f973497fd1f905210084578f6932",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "c4d7cfdaac2aa242c8e2787366f5182f5740458aabd15f424544d7290846acb1",
-    "equipment.parquet": "18d775a71129f692a5a62fa62612ab8689e0e414964dcff7524589449a6a33ba",
+    "manifest.json": "f8c21a9b54d79266b4b1167630b54282cdcfc245ff3c3873a215725ddb81d1e8",
+    "equipment.parquet": "75de522be024cea64869e5487d5262ab6904c74ce47c2ab717f448b374cccd2a",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "8149da3ff7e45ff789a17be94f240658a623b8b54b12f0c61bf1586810a72edc"
+    "projects.parquet": "674d31f3cbdf840af77c4eb295ff2c647a3530df2a8f381bbdfaf0ecadc29336"
   },
+  "local": {
+    "boe_tests": "24 passed",
+    "viewer": "16 passed",
+    "replay": "3 projects,2 equipment links and13 index resources across11 dates verified",
+    "catalogue": "21937 validated; all21932 preceding records unchanged",
+    "capacity": "All six category totals unchanged; three new scopes excluded",
+    "pytest": "2462 passed;5 optional skips;all2467 collected tests executed in24 sequential batches",
+    "quality": "Ruff lint/format,ty,repository,citations and whitespace passed",
+    "snapshots": "Two seven-file typed Zstandard builds byte-identical",
+    "docs": "Strict Sphinx plot_gallery=0 and589HTML page links/assets passed",
+    "packages": "Three wheels and three sdists built",
+    "example": "Offline Wind gallery passed",
+    "preservation": "All21932 preceding Wind records unchanged; PV/BESS/Data Center catalogue paths identical to main9dbf07ed"
+  },
+  "remote_ci": {
+    "parent": "Python3.12/3.13 and documentation succeeded; deployment skipped",
+    "this_batch": "Pending publication; final commit status must be checked on GitHub"
+  },
+  "local_attempts": [
+    {
+      "command": "Full pytest in one process alongside documentation build",
+      "exit_code": 137,
+      "result": "Terminated before completion; not reported as a passing suite"
+    },
+    {
+      "command": "Initial strict Sphinx build",
+      "exit_code": 137,
+      "result": "Terminated; successful final build used for reported result"
+    }
+  ],
+  "resolved_blockers": [
+    "Full filesystem recovered by removing only verified redundant temporary copies and reproducible documentation output; original source files and unpublished work retained",
+    "Reduced validation process size;24 sequential Python test batches and final strict documentation build passed"
+  ],
+  "not_executed": [
+    "Full executable gallery",
+    "Interactive browser",
+    "Current operational verification"
+  ],
   "log_sha256": {
+    "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
+    "docs.log": "a7c2fc8b45b871a2303e4542247ea420e729c5e0344da53ea0953d84d92c5835",
+    "format.log": "33004e2e6c0da7a3819d87800e47c7cc0e6bd3d2abb186bb888eee3fd3686116",
+    "gallery.log": "a6760859b187d646d4278efc06d7d55b7eb2740851d1b51320cf05b569424b45",
+    "links.log": "3ea08df3d89cc8158c12bfefece7a952a22d7a45f186cab77041b9ebc8f2ffa7",
     "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
-    "replay.log": "ad89af2c1411e31abde03dca4cc3df983fea5a188965276c1ce96da77a0e221f",
-    "gallery.log": "59db50aaca20dd4424d393a2878ded30629eb43de6af74a682d78c5a0757ad4d",
-    "pytest.log": "6f6e9b55e41454ac839304c509cea741aa4059f62cbe174660b6978fe7fa3ccf",
-    "links.log": "9c5076f86be2569c8c43f62d2d21bc49c95869de606656246a15a866a23e5bc4",
-    "docs.log": "01a2308b13803acdcb8e350fb2f25f17e8463dba193b204eedcd418aa60f5ae8"
+    "pytest-batch-00.log": "9a2ee238b8961138641ede9d0bb84e225d28a711bdcd53d001fce1b0ecb6cf70",
+    "pytest-batch-01.log": "6979dcb3f3dc3cda42b4c3d64eec9ac23dd9e8664102fd5b0c4776b34c0e0de6",
+    "pytest-batch-02.log": "a5450dc925dc3cba6cf57f24fe4401e42070ef0ee8499fecd73612b0a8cd3bd5",
+    "pytest-batch-03.log": "379d85326237d94748f8c089ffefa40a9ee4d0e084d0a356f85b66851533c86b",
+    "pytest-batch-04.log": "1e275ebfe505be813f81a0f7aba48a60d343d9f7fb68433db67a1d94339e828a",
+    "pytest-batch-05.log": "b52080b4187439104b409f28fb2de2221a8be28378434e9c4d34d8ec168c8d1c",
+    "pytest-batch-06.log": "31c862874c76c1a70db18891669f44d928d2b320eeada59f42f2a2b0b33b7e82",
+    "pytest-batch-07.log": "677c32971af21c86009208e0e1ac390a21cd9cde296143d0537017fd78daa394",
+    "pytest-batch-08.log": "6d009be36b549346535342add31e7761512ff77f183b72a42988a17b07d08161",
+    "pytest-batch-09.log": "5e409f6eb7e9e197944980c4c2c8675f12efa28f5f53adba51f1edf1e52f2950",
+    "pytest-batch-10.log": "fe6368086c0833ceaf3ef18b42ff5ca6cb1585e9024587460a9a6d12c36f4a37",
+    "pytest-batch-11.log": "726fa910704746e1ebce0a311cbdf0a004411dc8188f93f7623df6800c561b08",
+    "pytest-batch-12.log": "43bca83dd448469a3b5f3b769cbcb051f24ad113338a66084048e6b7118f95b5",
+    "pytest-batch-13.log": "eb6c20de6512c86a6257c7610fdd041ab24c6d409ed04ee8bd59525ca12236c3",
+    "pytest-batch-14.log": "e6c2c6bffe1022dea7f7b33f6695bed1004aa6b46127027de1ed48a777a74ac3",
+    "pytest-batch-15.log": "021629b2686f62dd358c67d93a15ed90d2232ed25c36e8bba0c9f4e39155c991",
+    "pytest-batch-16.log": "b71275f9041f83c6ec9bfae2b046539c2d4da4c8249c3d3a7e222ed61334204d",
+    "pytest-batch-17.log": "da1228faa1fd15a68b903c289f4cd2a436b1ecd1bb7df54172c86f3689eb659a",
+    "pytest-batch-18.log": "3dbfc0f902ab58c7d34d792087a569522b576073f07ffd6974d9512dcb6ba812",
+    "pytest-batch-19.log": "df66da804c0a7bdffcc6ef111a3671f3e9bf66ca0b24099fe7a28f7cfb453460",
+    "pytest-batch-20.log": "24a79592af318c9f52fa4e85b2886e7d6d85fabafea6bede65008c640c2c5b49",
+    "pytest-batch-21.log": "78d8109cf62f9e9a6ae4b83b34f2731398dbe0eeeaddb572b7fb56181db016dc",
+    "pytest-batch-22.log": "67bac1b167e9cd0e5120c4a23a12004aa5d6b504d71188df38f5ad849dffa5c1",
+    "pytest-batch-23.log": "b7a4163613de2e239568e4b2927a0a2351dfac27188c98bd0af5fd2d1de9b9bb",
+    "replay.log": "c35824881bc5889754be2828966cf8999378c60591246f2de04be43a07630fc7",
+    "repository.log": "47fac51043c9d4dec47615a8e868e8b0c1f11c2ad59946a0555f823536dade9e",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "ty.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "viewer.log": "38d6666b4e2ef88be0d8db2139ad064471fdbadb9bf83761aaa1ba984f7b853c",
+    "whitespace.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   }
 }

@@ -7095,3 +7095,27 @@ Government of Spain (2024). **Tesouro wind construction authorization**. [Source
 **Role:** data. Wind, solar and storage boundaries retained.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_31903
+
+Government of Spain (2026). **Conca de Barberà I utility consultation and prior authorization history**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-31903)
+
+**Role:** data. Proposal ratings and authorization dates do not establish operating capacity.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_32682
+
+Government of Spain (2026). **Mudarra revised mixed-fleet proposal and authorization history**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-32682)
+
+**Role:** data. Proposal ratings and authorization dates do not establish operating capacity.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_33451
+
+Government of Spain (2026). **Anoia y Segarra II public utility declaration**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-33451)
+
+**Role:** data. Proposal ratings and authorization dates do not establish operating capacity.
+
+**Used by:** `catalogues/wind/sources.json`.

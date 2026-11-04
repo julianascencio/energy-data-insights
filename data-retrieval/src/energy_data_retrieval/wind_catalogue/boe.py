@@ -22,6 +22,22 @@ from .gppd import evidence_record
 REFERENCE_IDS = ("boe_a_2026_22987",)
 
 
+def _registry_keys(row: dict[str, Any]) -> set[tuple[str, str]]:
+    """Only project/procedure registries, never a notice shared by several farms.
+
+    A shared procedure triggers review; it does not prove two farms are identical.
+    Namespace and identifier are exact: no punctuation or case-based aliasing.
+    """
+    identifiers = json.loads(row.get("external_ids_json") or "{}")
+    return {
+        (namespace, value)
+        for namespace, value in identifiers.items()
+        if namespace in {"gencat_expediente", "miteco_expediente"}
+        and isinstance(value, str)
+        and value.strip()
+    }
+
+
 def _normalized(text: str) -> str:
     return " ".join(
         "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c))
@@ -156,6 +172,13 @@ def stage_boe_notices(
         if r["entity_type"] == "projects" and r.get("country_code") == "ESP"
     }
     record_ids = {r["record_id"] for r in existing}
+    registry_keys = set().union(
+        *(
+            _registry_keys(r)
+            for r in existing
+            if r["entity_type"] == "projects" and r.get("country_code") == "ESP"
+        )
+    )
     rows, decisions = [], []
     for review in reviews:
         ident = review["notice_id"]
@@ -175,6 +198,7 @@ def stage_boe_notices(
                 rows.extend(staged)
                 names.update(_normalized(r["name"]) for r in staged)
                 record_ids.update(r["record_id"] for r in staged)
+                registry_keys.update(key for r in staged for key in _registry_keys(r))
                 decisions.extend({**d, "identity": child["identity"]} for d in ledger)
             continue
         if not review.get("values"):
@@ -203,11 +227,25 @@ def stage_boe_notices(
         if set(values) != set(review["locators"]):
             raise ValueError("Every reviewed field requires a locator")
         rid = stable_id("projects", "BOE", review["identity"])
+        shared_keys = _registry_keys(values) & registry_keys
+        if shared_keys:
+            decisions.append(
+                {
+                    "notice_id": ident,
+                    "decision": "existing_registry_review",
+                    "shared_identifiers": [list(key) for key in sorted(shared_keys)],
+                    "reason": (
+                        "Shared procedure requires farm/phase reconciliation, not automatic merge"
+                    ),
+                }
+            )
+            continue
         if rid in record_ids or _normalized(values["name"]) in names:
             decisions.append({"notice_id": ident, "decision": "existing_identity_review"})
             continue
         names.add(_normalized(values["name"]))
         record_ids.add(rid)
+        registry_keys.update(_registry_keys(values))
         values.update(
             record_id=rid,
             entity_type="projects",

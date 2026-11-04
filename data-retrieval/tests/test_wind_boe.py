@@ -1,6 +1,7 @@
 """BOE partition completeness and wind/solar/auxiliary decision boundaries."""
 
 import hashlib
+import json
 from pathlib import Path
 
 import pytest
@@ -181,3 +182,56 @@ def test_public_consultation_is_not_permission_or_operation():
     for status in ["permitted", "operational", "cancelled"]:
         with pytest.raises(ValueError, match="Public consultation"):
             stage(review(effect="public_consultation", status=status))
+
+
+def test_registry_stops_renamed_farm_without_merging_distinct_scopes():
+    first = review()
+    first["values"]["external_ids_json"] = json.dumps({"gencat_expediente": "FUE-1"})
+    first["locators"]["external_ids_json"] = "Expediente"
+    rows, _ = stage(first)
+    renamed = review()
+    renamed["identity"] = "different-natural-identity"
+    renamed["values"].update(
+        name="Renamed or separate phase", external_ids_json=first["values"]["external_ids_json"]
+    )
+    renamed["locators"]["external_ids_json"] = "Expediente"
+    new, decisions = stage(renamed, rows)
+    assert new == []
+    assert decisions[0]["decision"] == "existing_registry_review"
+    assert rows[0]["name"] == "Synthetic A"
+
+
+@pytest.mark.parametrize("namespace", ["boe_notice", "different_registry"])
+def test_shared_notice_or_different_registry_is_not_project_identity(namespace):
+    first = review()
+    first["values"]["external_ids_json"] = json.dumps(
+        {"gencat_expediente": "FUE-1", "boe_notice": "shared"}
+    )
+    first["locators"]["external_ids_json"] = "Identifiers"
+    rows, _ = stage(first)
+    second = review()
+    second["identity"] = "separate-farm"
+    second["values"].update(
+        name="Separate farm",
+        external_ids_json=json.dumps(
+            {namespace: "shared" if namespace == "boe_notice" else "FUE-1"}
+        ),
+    )
+    second["locators"]["external_ids_json"] = "Identifiers"
+    assert len(stage(second, rows)[0]) == 1
+
+
+def test_registry_guard_also_catches_collisions_within_a_multi_project_notice():
+    r = review()
+    r["projects"] = []
+    for name in ["Farm A", "Farm B"]:
+        child = review()
+        child["identity"] = name
+        child["values"].update(
+            name=name, external_ids_json=json.dumps({"miteco_expediente": "PEol-1"})
+        )
+        child["locators"]["external_ids_json"] = "Shared procedure, scope unresolved"
+        r["projects"].append(child)
+    rows, decisions = stage(r)
+    assert len(rows) == 1
+    assert decisions[-1]["decision"] == "existing_registry_review"

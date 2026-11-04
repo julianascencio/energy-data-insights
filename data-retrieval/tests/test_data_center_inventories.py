@@ -97,6 +97,9 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
         "Panduit Corp.": ("4001", "PANDUIT"),
         "Appleton Grp LLC d/b/a Appleton Group": ("5001", "Emerson / SOLAHD"),
         "Legrand AV Inc.": ("6001", "Middle Atlantic"),
+        "Delta Electronics, Inc. Tainan Branch": ("7001", "Delta"),
+        "Cyber Power Systems, Inc.": ("8001", "CyberPower"),
+        "Eaton Corporation": ("9001", "Tripp Lite"),
     }
     for partner, (expected_id, expected_brand) in reviewed_partners.items():
         batch = parse_energy_star_ups_inventory(
