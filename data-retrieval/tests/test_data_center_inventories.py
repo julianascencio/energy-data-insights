@@ -6,6 +6,7 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_generator_dcp_matrix,
     parse_generator_rating_matrix,
     parse_lenovo_gpu_comparison,
     parse_named_inventory,
@@ -34,6 +35,9 @@ SERVER_SHIPPING_MATRIX = (
 ).read_bytes()
 GENERATOR_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/generator-rating-matrix.csv"
+).read_bytes()
+GENERATOR_DCP_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/generator-dcp-matrix.csv"
 ).read_bytes()
 LENOVO_COMPARISON = (
     Path(__file__).parent / "fixtures/data_centers/lenovo-gpu-comparison.html"
@@ -182,6 +186,37 @@ def test_ups_matrix_keeps_kstar_epower_apparent_and_active_power_separate():
     assert candidate["manufacturer"] == "KSTAR"
     assert candidate["apparent_power_kva"] == 600
     assert candidate["output_power_kw"] == 540
+
+
+def test_ups_matrix_accepts_makelsan_exact_rating_row():
+    header, *rows = UPS_MATRIX.splitlines()
+    makelsan_row = next(row for row in rows if row.startswith(b"Makelsan,"))
+    makelsan = header + b"\n" + makelsan_row + b"\n"
+    result = parse_ups_rating_matrix(
+        makelsan,
+        source_url=("https://www.makelsan.com.tr/katalog/levelups-t3-series-10---200-kva.pdf"),
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Makelsan"
+    assert candidate["family"] == "LEVELUPS T3"
+    assert candidate["apparent_power_kva"] == 200
+    assert candidate["output_power_kw"] == 200
+
+
+def test_ups_matrix_accepts_borri_row_without_deriving_power_factor():
+    header, *rows = UPS_MATRIX.splitlines()
+    borri_row = next(row for row in rows if row.startswith(b"Borri,"))
+    borri = header + b"\n" + borri_row + b"\n"
+    result = parse_ups_rating_matrix(
+        borri,
+        source_url="https://www.borri.it/product/b9000fxs/",
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Borri"
+    assert candidate["apparent_power_kva"] == 300
+    assert candidate["output_power_kw"] == 270
 
 
 def test_ups_matrix_rejects_fuji_source_manufacturer_mismatch():
@@ -433,6 +468,34 @@ def test_generator_matrix_rejects_unofficial_sources_and_drift(source_url, expec
     with pytest.raises(ValueError):
         parse_generator_rating_matrix(
             GENERATOR_MATRIX,
+            source_url=source_url,
+            expected_count=expected_count,
+        )
+
+
+def test_dcp_generator_matrix_preserves_power_boundaries_and_frequency_identity():
+    result = parse_generator_dcp_matrix(
+        GENERATOR_DCP_MATRIX,
+        source_url="https://baudouin.com/example.pdf",
+        expected_count=2,
+    )
+    by_frequency = {row["frequency_hz"]: row for row in result["candidates"]}
+    assert by_frequency[50.0]["engine_power_kwm"] == 575
+    assert by_frequency[50.0]["output_power_kw"] == 500
+    assert by_frequency[50.0]["apparent_power_kva"] == 625
+    assert by_frequency[60.0]["speed_rpm"] == 1800
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+@pytest.mark.parametrize(
+    ("source_url", "expected_count"),
+    [("https://example.com/table.pdf", 2), ("https://baudouin.com/table.pdf", 3)],
+)
+def test_dcp_generator_matrix_rejects_unofficial_sources_and_drift(source_url, expected_count):
+    with pytest.raises(ValueError):
+        parse_generator_dcp_matrix(
+            GENERATOR_DCP_MATRIX,
             source_url=source_url,
             expected_count=expected_count,
         )
