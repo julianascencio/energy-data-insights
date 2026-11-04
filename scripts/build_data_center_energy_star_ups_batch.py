@@ -91,6 +91,14 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "retrieved_at": "2026-11-04T15:17:13Z",
         "include_maximum_configuration": True,
     },
+    "eaton_energy_star": {
+        "partner": "Eaton Corporation",
+        "manufacturer": "Eaton",
+        "name_prefix": None,
+        "expected_count": 176,
+        "retrieved_at": "2026-11-04T16:19:16Z",
+        "include_maximum_configuration": True,
+    },
 }
 DATASET_UPDATED = "2026-11-03T14:20:54Z"
 

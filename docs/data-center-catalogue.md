@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,123 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+has 1,299 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
@@ -162,7 +162,7 @@ Para Systems / Minuteman Power Technologies, all 22 entries for ADI, all 15
 entries for Ablerex Electronics, all ten entries for Panduit, all seven entries
 for Appleton Group / SolaHD, all seven entries for Legrand AV and all 26 entries
 for Delta Electronics and all 135 entries for Cyber Power Systems in EPA dataset
-`ifxy-2uty`. ADI's 11 W BOX and
+`ifxy-2uty`, plus all 176 Eaton Corporation entries. ADI's 11 W BOX and
 11 UltraTech certifications remain distinct even where model names recur across
 brands. Each entry retains its immutable ENERGY STAR ID, certification date,
 active W, apparent VA, weighted and load-point efficiency, dimensions and
@@ -180,6 +180,11 @@ The Cyber Power Systems continuation retains all four reported brand identities
 certification IDs. Twenty-seven entries report a maximum tested configuration;
 those model and output values remain separate observations while normalized kW
 and kVA stay bound to the minimum tested configuration.
+The Eaton continuation preserves all five source brand labels, including Tripp
+Lite and Eaton variants, as issuer observations. Ten entries have no reported
+minimum-tested identifier, eight have no runtime and six have no warranty; those
+normalized fields remain null. Two reported maximum-tested configurations remain
+separate observations rather than replacing minimum-configuration ratings.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact

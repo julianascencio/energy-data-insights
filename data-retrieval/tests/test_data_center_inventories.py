@@ -99,6 +99,7 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
         "Legrand AV Inc.": ("6001", "Middle Atlantic"),
         "Delta Electronics, Inc. Tainan Branch": ("7001", "Delta"),
         "Cyber Power Systems, Inc.": ("8001", "CyberPower"),
+        "Eaton Corporation": ("9001", "Tripp Lite"),
     }
     for partner, (expected_id, expected_brand) in reviewed_partners.items():
         batch = parse_energy_star_ups_inventory(
