@@ -1,0 +1,27 @@
+# IESO LT1 and Studer controls — 4 November 2026
+
+Continued open PR143 from685e61b3 in an isolated checkout. PR44 is merged. Current main b8dc106f, repository instructions, schemas/dictionaries, source registers, current manifests, EU/Studer backlog and PV conventions reviewed. Open PRs143–146 and47–49 inspected by title and full changed paths; no BESS overlap. Wind owns shared bibliography; references queued. No subagents or merge.
+
+## Accepted results
+
+Ten new Canadian projects from the complete IESO LT1 storage-category table (revision17April2026, pages1–4). Nameplate total1883.15MW and maximum-contract total1784.22MW independently reconcile to the printed totals. Preserve these quantities separately, with fixed capacity payment units, project company versus qualified applicant, Indigenous participation and grid zone/municipality. Contracted status is recorded in extensions with announced lifecycle; awards do not establish construction or operation. Energy, chemistry, battery models, costs and COD remain unknown. The official9May2024 IESO announcement explicitly identifies all ten as battery facilities. Three page5 gas/biogas rows excluded. Canadian baseline Oneida is distinct from all ten reviewed incoming project identities; no fuzzy merging.
+
+Thirteen existing exact Studer models enriched:6XTM,4XTH,3XTS. Every individual model block was checked for standby detection range, overload/short-circuit restart behavior, thermal protection, six charging stages, temperature-compensation accessory options, optional two-contact/remote-input modules and ventilation-qualified acoustic bounds. Do not treat accessory options as included hardware or new models; no temperature coefficient, battery compatibility, dBA weighting or measurement distance inferred. Existing numeric tables replay through the established parser. The upsert API quarantined13 populated JSON collisions; reviewed additive resolution preserves every previous nested/scalar value, source, conflict and creation date.
+
+Totals:2090projects/47countries/360sources;924equipment records/52suppliers/452sources. Equipment remains911exact configurations+13families. No new country/supplier. All six regions remain represented. Existing2080projects and911other equipment records unchanged. No new field conflicts or whole-record quarantines; historical conflicts retained.
+
+## Sources, gates and alternatives
+
+Fresh original EU inventory replays488rows and is semantically unchanged. SOVALIS remains without an identified physical site; the current owner page did not resolve it. DrossOne's original EU factsheet and Free2move owner description still do not separately rate the stationary buffer: fleet reserve capacity cannot be imported as stationary battery MW. Four project candidates held:these two plus Hagersville/Sanjgon under the Boralex source-reuse gate. No portfolio extraction from Boralex because its terms restrict copying/reuse. The IESO alternative succeeded and adds ten different LT1 identities; E-LT1 is the next partition for Hagersville/Tilbury.
+
+IESO terms (last updated25July2022) grant limited attributed use/reproduction, not an open sublicence; exact attribution is committed in licenses/IESO-NOTICE.md and source metadata. The source-specific procurement disclaimer was inspected. Original PDF page1 visually reviewed for column alignment before the bounded ten-row transcription. Full PDFs, logos and website code are not redistributed. Copyright retained for OEM pages; bounded independently structured facts only. Original downloads and checksums remain outside Git, metadata committed.
+
+The discovered manufacturer V4.9.4 English manual returns403. No controls bypassed; current original English product pages return200 and support the accepted model-specific enrichment. Prior product-page rights assessment retained. No new production code/schema or automatic parser was needed for this bounded manually reviewed project table; existing upsert, model parser and validation API used.
+
+Fresh IEA source retains the dated2025 annual utility-scale power-additions comparison:China55.10GW,US16.22GW,Australia4.32GW among named comparable countries. Europe/Middle East remain regional observations. This is not an operational stationary-energy GWh ranking; no GW-to-GWh conversion.
+
+## Validation and continuation
+
+Full Python suite2440passed/5optional skips before the final ten project rows;371focused BESS tests and complete catalogue validation after the data additions. Lint, format, typing,16viewer tests and both offline examples passed. Typed Zstandard snapshots rebuilt outside Git; repeated builds byte-identical. Strict docs and local-link results are in the validation ledger. Gallery execution disabled. No code/schema change, so package binaries were not rebuilt. No new-head remote-CI result claimed.
+
+The selected LT1 ten-row and Studer13-model partitions are exhausted. Project yield is below50–200 because this specific official table contains ten battery rows, with three nonbattery exclusions; four other identities remain held. The equipment enrichment objective is met without adding model variants. Actual elapsed time is recorded in the validation ledger; no idle padding. Next highest-value partition:original E-LT1 results, preserving nameplate versus seasonal contract capacities and reconciling aliases; then LT2 capacity results. Backlog entries retain URLs, access/terms, versions, fields, processed partitions, retry conditions and next actions. Prior Australia/Chile holds untouched.
