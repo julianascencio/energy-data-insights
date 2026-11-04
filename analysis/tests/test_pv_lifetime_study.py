@@ -2,6 +2,7 @@
 
 import hashlib
 from importlib.resources import files
+from typing import cast
 
 import matplotlib
 import numpy as np
@@ -50,19 +51,21 @@ def test_published_cells_dates_and_exclusions_are_preserved():
 def test_field_projections_begin_at_observation_not_fake_history():
     curves = field_projections()
     for anchor in field_anchors().itertuples():
+        age_years = cast(float, anchor.age_years)
+        retained_power = cast(float, anchor.retained_power)
         for model in ("linear", "exponential"):
             frame = curves[(curves.group == anchor.group) & (curves.model == model)]
-            assert frame.age_years.iloc[0] == anchor.age_years
-            assert frame.retained_power.iloc[0] == pytest.approx(anchor.retained_power)
+            assert frame.age_years.iloc[0] == age_years
+            assert frame.retained_power.iloc[0] == pytest.approx(retained_power)
             assert frame.age_years.iloc[-1] == 50
             assert np.all(np.diff(frame.retained_power) < 0)
             if model == "linear":
                 assert frame.retained_power.iloc[-1] == pytest.approx(
-                    1 - (1 - anchor.retained_power) * 50 / anchor.age_years
+                    1 - (1 - retained_power) * 50 / age_years
                 )
             else:
                 assert frame.retained_power.iloc[-1] == pytest.approx(
-                    anchor.retained_power ** (50 / anchor.age_years)
+                    retained_power ** (50 / age_years)
                 )
 
 
@@ -74,7 +77,7 @@ def test_scenarios_share_anchor_and_keep_future_damage():
             assert np.all(np.diff(frame.retained_power) <= 1e-13)
     summary = horizon_summary(shape_scenarios()).set_index("scenario")
     assert summary.loc["Linear", "power_at_50_percent"] == pytest.approx(83.333333333)
-    assert np.isnan(summary.loc["Linear", "threshold_crossing_year"])
+    assert np.isnan(cast(float, summary.loc["Linear", "threshold_crossing_year"]))
     assert summary.loc["Sigmoid B=8", "threshold_crossing_year"] == pytest.approx(
         34.1813, abs=0.001
     )
