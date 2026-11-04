@@ -6463,3 +6463,11 @@ Ravindrababu, Suraj; Hädrich, Ingrid; Paetzold, Ulrich W.; Gebhardt, Paul (2026
 **Role:** implemented. Online 25 April 2026. Independent implementation of selected MAPLE MSM equations: independent mode product (8), sigmoid power (10), equivalent-time update (13; discussion 24–28). Rates are reciprocal years; shapes and stress histories in the example are hypothetical. Full CFM, dependent modes and multi-scale modelling are not implemented here.
 
 **Used by:** `methods/src/energy_methods/pv_lifetime.py`, `analysis/src/energy_analysis/pv_lifetime/study.py`, `examples/analysis/plot_pv_lifetime_50_years.py`, `docs/pv-lifetime.md`.
+
+### bonfiglioli_br_vec501_r0
+
+Bonfiglioli Vectron (n.d.). **Braking Resistors**. [Source](https://www.bonfiglioli.com/international/usefulDocuments/braking-resistors-manual_inverters---servo-drives_brakings-resistor_eng_r00_0.pdf)
+
+**Role:** data source. COD.VEC501R0 physical pp2,4 complete11type tables. Publication date unknown. Legacy observations retained separately from current ACU catalogue; dimension units unspecified.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
