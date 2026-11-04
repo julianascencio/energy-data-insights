@@ -1,0 +1,85 @@
+{
+  "started_at": "2026-11-04T13:22:54+00:00",
+  "validated_at": "2026-11-04T13:53:29.776570+00:00",
+  "elapsed_minutes_through_validation": 30.6,
+  "timezone_user_facing": "Atlantic/Canary",
+  "initial_target_pr": 133,
+  "initial_target_head": "592bdcd045b25eed2c780e7846b02b5f6e81dbcd",
+  "external_merge_observed_at": "2026-11-04T13:42:53Z",
+  "publication_base": "6da869c9e6b990050f614ec0abbc62fd07a43604",
+  "branch": "research/bess-database-20261104T1346Z",
+  "checks": {
+    "full_python": {
+      "command": ".venv/bin/pytest -q",
+      "passed": 2381,
+      "skipped": 5,
+      "result": "pass on6da869c9 plus batch",
+      "skip_reason": "One cdsapi dependency skip; four Python3.13/optionalimagery skips"
+    },
+    "focused_bess": {
+      "passed": 349,
+      "new_parser_tests": 15,
+      "result": "pass"
+    },
+    "viewer_dom": {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "passed": 15,
+      "result": "pass"
+    },
+    "lint": "Ruff all checks passed",
+    "format": "909files already formatted",
+    "typing": "ty --python.venv/bin/python passed",
+    "hygiene": "Repository check passed: 3979 candidate files; no flagged secrets or data.",
+    "citations": "Citation catalogue and all exports are consistent.",
+    "docs": {
+      "command": "sphinx-build -W --keep-going -b html -D plot_gallery=0 docs ../evidence1322/docs_rebased",
+      "result": "pass on incremental retry after all other heavy checks completed",
+      "links": "Documentation check passed: 572 HTML pages; local links and assets resolve.",
+      "html_pages": 572,
+      "full_gallery_execution": false
+    },
+    "packages": {
+      "wheels": 3,
+      "sdists": 3,
+      "strict_twine": "all six passed",
+      "built_wheel_original_text_replay": "16configurations/26sourcecolumns passed"
+    },
+    "parquet": {
+      "catalogues": [
+        "bess",
+        "bess_oem"
+      ],
+      "typed": true,
+      "compression": "Zstandard",
+      "independent_final_builds_per_catalogue": 2,
+      "all_files_byte_identical": true,
+      "outputs_outside_git": true
+    },
+    "offline_examples": [
+      "examples/database/plot_bess_projects.py passed",
+      "examples/database/plot_bess_oem_catalogue.py passed"
+    ],
+    "whitespace": "git diff --check passed"
+  },
+  "initial_attempts": {
+    "pre_rebase_full_suite": "2319passed5skipped; superseded by final rebased run",
+    "viewer_glob": "Initial*.test.js selected0tests; corrected toactualmjsfileand15passed",
+    "documentation": "Initial builds killed(exit137) afterrendering; incrementalretrywithheavychecksfinished succeeded. PrematurelinkauditreportedmissingWindexports; finalauditaftercompletedbuild passed.",
+    "disk": "171staleNCCLtemporarycopiesremoved; installedlibrary/sourcebytes/canonicalrecordsretained. Empty scratchscript rewritten.",
+    "lint": "Initialformat/lineissuesfixed; fullRuffrerun passed"
+  },
+  "no_remote_ci_claim": true,
+  "finish_reason": "SelectedfourrowofficialcohortandthreeOEMtablesexhausted; unresolvedidentity/rights/ratingcasesheld.16acceptedconfigurationsmeet10\u201330equipmentobjective; noidletimepadding.",
+  "candidate_counts": {
+    "projects_reviewed": 6,
+    "projects_new": 2,
+    "projects_enriched": 1,
+    "projects_held": 3,
+    "equipment_reviewed": 20,
+    "equipment_new": 16,
+    "equipment_enriched": 0,
+    "equipment_held": 4,
+    "rejected": 0
+  },
+  "next_partition": "Portugal41award-to-named-sitecrosswalk withfresh2026rights/evidence; Ingeteam430DC-DC publicsheet"
+}

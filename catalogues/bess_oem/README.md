@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 4 November 2026 expanded research snapshot contains **890 records from 50 product
-suppliers, backed by 440 registered sources**: 877 documented configurations and 13
+The 4 November 2026 expanded research snapshot contains **906 records from 51 product
+suppliers, backed by 443 registered sources**: 893 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -277,3 +277,5 @@ uv run python scripts/stage_bess_leoch.py --text /outside-git/4OPzV200.txt --mod
 The parser fails on changed identity, nominal rating basis, current units or reviewed conditions. It stages only; exact revision, source rights, table anomalies and identity must be reviewed before the existing upsert API. C-rate and short-circuit current never become amperes or peak operating power.
 
 Latest continuation: [OPzS exact editions and Scatec portfolio](../bess/research/2026-11-04_opzs_scatec.md).
+
+Latest iteration: [Malaysia, Ingeteam and Omburu](../bess/research/2026-11-04_malaysia_ingeteam.md), with source access decisions, exact converter configurations and preserved rating conflicts.

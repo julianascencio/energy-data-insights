@@ -176,3 +176,12 @@ Common merged cells require visual review. Controlled plant capacity, optional I
 kits and control-loop timing retain their own boundaries; none is battery hardware
 capacity or unconditional performance. The Taiwan review distinguishes Xia Xing's
 two actual chemistry-specific systems from subsequent simulation scenarios.
+
+For Ingeteam revisions 300002287_C, 300001994/F and 300002273_A,
+`scripts/stage_bess_ingeteam.py` stages local PDF layout text with `--series M`,
+`C` or `350`. Named M600/M630/M660/M690 module configurations and C600–C840
+columns remain distinct. The eleven 350TL AC-voltage operating points remain
+one model. Preserve kVA, charge versus discharge, 30/40/50°C conditions,
+grid-tied versus off-grid DC limits and converter efficiency boundaries.
+Common cells, optional accessories and footnotes require visual review.
+Changed revisions, headings, units or column counts fail before staging.
