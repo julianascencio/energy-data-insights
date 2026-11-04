@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T02:03:55.375472+00:00",
-  "ranking_file": "20261103T1800_top10_coverage.json",
-  "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
-  "next_highest_value_source": "REPD operational remainder; original authority decisions for multi-phase holds.",
+  "updated_at": "2026-11-04T08:08:02.859100+00:00",
+  "ranking_file": "20261104T0800_top10_coverage.json",
+  "selection_note": "Complete Nouvelle-Aquitaine prior155-crosswalk power-gap partition plus exact physical BlueSolar module articles absent from CEC/SAM; no US repeat bulk ingestion or invented configuration combinations.",
+  "next_highest_value_source": "Review changed Grand Est and Hauts-de-France captures (22 prior crosswalks) against prior native evidence; register new immutable revisions only after semantic/identity review. Then advance remaining ODRE installed-power gaps or current CEA named PV annexes for India; REC registry is rights-held.",
   "sources": [
     {
       "id": "uk_repd",
@@ -380,10 +380,9 @@
       "licence_assessment": "Licence Ouverte v2.0 verified in metadata and full Etalab licence; attribution/date notice committed; privacy/aggregate restrictions respected.",
       "access_assessment": "Official JSON exports and glossary/EIC-change note downloaded with checksums. 95,302 individual PV identity rows screened.",
       "estimated_useful_yield": {
-        "remaining_1to5mw_observations": 1493,
-        "next_partition_observations": 432,
-        "next_partition_preliminary_unflagged": 62,
-        "accepted_next_partition": 0
+        "next_prior_crosswalks": 77,
+        "accepted_next_partition": 0,
+        "note": "Planning ceiling, not accepted additions; privacy and missing-field checks still required."
       },
       "fields_offered": [
         "installation identifiers",
@@ -392,10 +391,10 @@
         "region",
         "generation"
       ],
-      "last_attempt": "2026-11-02T16:12:00+00:00",
-      "result": "This iteration: 183 accepted / 572 held from 755 observations in eight complete 1–5 MW regions. France catalogue now 324. All >=5 MW partitions already processed. Later 16:01 review: 432 Nouvelle-Aquitaine observations screened against current GEM recovery; 155 existing exact-EIC project enrichments, no new projects.",
-      "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "Continue Occitanie 1–5 MW exact existing EIC enrichment first. Resolve 277 Nouvelle-Aquitaine confidentiality/identity/scope holds separately; do not claim they are accepted new projects.",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "result": "Five remaining prior-crosswalk cohorts:182 reviewed,114 installed-power fills,68 privacy holds;22 GrandEst/Hauts-de-France prior matches additionally held for changed export bytes.",
+      "retry_condition": "Do not re-download unchanged564-row Occitanie cohort hourly. Reuse cachedef2c66b5 bytes. Next region needs source metadata/version plus exact checksum and privacy/phase review.",
+      "next_action": "Review changed Grand Est and Hauts-de-France captures (22 prior crosswalks) against prior native evidence; register new immutable revisions only after semantic/identity review. Then advance remaining ODRE installed-power gaps or current CEA named PV annexes for India; REC registry is rights-held.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
@@ -405,7 +404,7 @@
         "candidate_rows_processed": 409,
         "accepted_ids_ledger": "20261101T0928_odre_review.json",
         "identity_screen_rows": 95302,
-        "next_partition": "Nouvelle-Aquitaine / 1000 <= puismaxinstallee <5000 kW / freshness recheck required",
+        "next_partition": "ODRE Auvergne-Rhône-Alpes1–5MW installed-power gaps on77previous exact-EIC crosswalks: metadata/byte checksum and privacy review, then only missing fields through existing staging helper.",
         "latest_ledger": "20261102T0058_odre_review.json",
         "cohort_1to5mw": {
           "minimum_kw": 1000,
@@ -441,8 +440,173 @@
           "held": 277,
           "ledger": "20261102T1601_odre_review.json",
           "scope": "Existing exact-ID crosswalk exhausted; new project identity acceptance remains unreviewed."
-        }
-      }
+        },
+        "identity_enrichment_history": [
+          {
+            "ledger": "20261102T1601_odre_review.json",
+            "source_id": "odre_nouvelle_aquitaine_20261102T1601",
+            "accepted": 155,
+            "fields_added": 620
+          },
+          {
+            "ledger": "20261102T1700_odre_review.json",
+            "source_id": "odre_occitanie_20261102T1700",
+            "accepted": 257,
+            "fields_added": 1025
+          },
+          {
+            "ledger": "20261102T1800_odre_review.json",
+            "source_id": "odre_ara_20261102T1800",
+            "accepted": 77,
+            "fields_added": 308
+          },
+          {
+            "ledger": "20261102T1900_odre_review.json",
+            "source_id": "odre_bfc_20261102T1900",
+            "accepted": 14,
+            "fields_added": 56
+          },
+          {
+            "ledger": "20261102T1910_odre_review.json",
+            "source_id": "odre_na_20261102T1910",
+            "accepted": 0,
+            "fields_added": 0
+          },
+          {
+            "ledger": "20261102T2000_odre_review.json",
+            "source_id": "odre_ge_20261102T2000",
+            "accepted": 18,
+            "fields_added": 72
+          },
+          {
+            "ledger": "20261102T2100_odre_review.json",
+            "source_id": "odre_hdf_20261102T2100",
+            "accepted": 4,
+            "fields_added": 16
+          },
+          {
+            "ledger": "20261102T2200_odre_review.json",
+            "source_id": "odre_normandie_20261102T2200",
+            "accepted": 1,
+            "fields_added": 4
+          },
+          {
+            "ledger": "20261102T2228_odre_review.json",
+            "source_id": "odre_centre_20261102T2228",
+            "accepted": 27,
+            "fields_added": 108
+          },
+          {
+            "ledger": "20261102T2300_odre_review.json",
+            "source_id": "odre_pays_loire_1_20mw_20261102T2300",
+            "accepted": 63,
+            "fields_added": 252
+          }
+        ],
+        "legacy_cursor_stale": true,
+        "installed_power_partition": {
+          "region": "Occitanie",
+          "minimum_kw": 1000,
+          "maximum_kw_exclusive": 5000,
+          "source_rows": 564,
+          "previous_exact_crosswalks": 257,
+          "reviewed": 257,
+          "enriched": 129,
+          "held_confidential_canonical_labels": 128,
+          "not_reprocessed_identity_holds": 307,
+          "unreviewed_in_selected_gap_cohort": 0,
+          "ledger": "20261104T0600_odre_capacity_review.json"
+        },
+        "installed_power_nouvelle_aquitaine": {
+          "minimum_kw": 1000,
+          "maximum_kw_exclusive": 5000,
+          "source_observations": 432,
+          "reviewed_crosswalks": 155,
+          "accepted_enrichments": 107,
+          "held": 48,
+          "remaining_selected_crosswalks": 0,
+          "source_sha256": "7f907d38df0d97684e91fa00ef070aa8420d7eb0b9234f3130a32764ca682681",
+          "ledger": "20261104T0700_review.json"
+        },
+        "installed_power_0800_partitions": [
+          {
+            "source_id": "odre_ara_20261102T1800",
+            "original_source_rows": 327,
+            "prior_crosswalks": 77,
+            "results": {
+              "accepted": 49,
+              "privacy_hold": 28
+            },
+            "sha256": "e4b742d316b36228cd77834f4e921e09ca5fe4f5eb860870bc064328395ab0ba"
+          },
+          {
+            "source_id": "odre_bfc_20261102T1900",
+            "original_source_rows": 78,
+            "prior_crosswalks": 14,
+            "results": {
+              "accepted": 8,
+              "privacy_hold": 6
+            },
+            "sha256": "88f0fca01340af4b26603df6b2e53a14971d6190b49fddf910de7e05d46225ba"
+          },
+          {
+            "source_id": "odre_normandie_20261102T2200",
+            "original_source_rows": 31,
+            "prior_crosswalks": 1,
+            "results": {
+              "privacy_hold": 1
+            },
+            "sha256": "d46ed09c484121fd25046082d6e42de607ed3856bd834ab50608352f41a11c6c"
+          },
+          {
+            "source_id": "odre_centre_20261102T2228",
+            "original_source_rows": 101,
+            "prior_crosswalks": 27,
+            "results": {
+              "accepted": 18,
+              "privacy_hold": 9
+            },
+            "sha256": "e30bb6db772748b6b3ee1890d127760a9928a8803312b18d7ff5b7547918f1d4"
+          },
+          {
+            "source_id": "odre_pays_loire_1_20mw_20261102T2300",
+            "original_source_rows": 170,
+            "prior_crosswalks": 63,
+            "results": {
+              "accepted": 39,
+              "privacy_hold": 24
+            },
+            "sha256": "6899055d10009500809b825ed56b10e2fab74c667d8d3db4750051870c9e0749"
+          }
+        ],
+        "changed_export_holds_0800": [
+          {
+            "source_id": "odre_ge_20261102T2000",
+            "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Grand%20Est%27",
+            "expected_sha256": "a0d8c247c48dce8988bd1574a7eabf87eb7155b29eefccb96fbc81d2582258d7",
+            "observed_sha256": "b9771d8d0c5e969431adbebc88e069be40063c165210ebe49e5d2e6c6fc39721",
+            "source_rows": 112,
+            "prior_crosswalks": 18,
+            "result": "changed_bytes_hold",
+            "reason": "Snapshot metadata unchanged but export byte checksum differs. No automatic repin; no table assertions ingested. Review new capture against prior evidence and register a new immutable source revision if accepted."
+          },
+          {
+            "source_id": "odre_hdf_20261102T2100",
+            "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Hauts-de-France%27",
+            "expected_sha256": "4d5ed6bb16f3a8beab617fe703f63195b2249db0b97fd4ded6c357f76d0f9a36",
+            "observed_sha256": "fe8136bd9bf40825190b7b3e99dff8246818e4a64e50d377259c5b531a156eb2",
+            "source_rows": 37,
+            "prior_crosswalks": 4,
+            "result": "changed_bytes_hold",
+            "reason": "Snapshot metadata unchanged but export byte checksum differs. No automatic repin; no table assertions ingested. Review new capture against prior evidence and register a new immutable source revision if accepted."
+          }
+        ]
+      },
+      "last_metadata_retrieval": "2026-11-04T07:03:39.805643+00:00",
+      "last_release": "2026-08-31",
+      "metadata_modified": "2026-10-13T19:24:24+00:00",
+      "metadata_sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+      "next_due_check": "2026-11-05T06:00:00Z"
     },
     {
       "id": "kaco_nx3",
@@ -930,20 +1094,18 @@
         "candidate_models": 3,
         "accepted": 0
       },
-      "last_attempt": "2026-11-01T22:01:29.524170+00:00",
-      "result": {
-        "candidate_models": 3,
-        "accepted": 0
-      },
+      "last_attempt": "2026-11-04T05:11:41.141016+00:00",
+      "result": "Fresh exact Rev C sheet accessible. Four model/configuration columns inspected; footer p4 prohibits use/disclosure/reproduction without prior written consent. Existing rights hold retained; zero accepted.",
       "retry_condition": "New permitted source/revision or clarification resolves held issue",
-      "next_action": "Seek separately permitted OEM facts or existing written permission; no contacting people authorised",
+      "next_action": "Resume only with independently applicable documented reuse permission; otherwise select a different OEM.",
       "processed_cursor": {
-        "models": [
-          "PVS-10-TL",
-          "PVS-12.5-TL",
-          "PVS-15-TL"
-        ]
-      }
+        "model_columns_reviewed": 4,
+        "accepted": 0,
+        "partition": "PVS20 2MPPT/4MPPT, PVS30 and PVS33"
+      },
+      "last_retrieval": "2026-11-04T04:59:44.969815+00:00",
+      "last_reviewed_document": "FIMER_PVS-20-30-33-TL__EN_Rev_C,22.06.2021,4 pages",
+      "last_reviewed_sha256": "82aaa766d9153dd5e9ac196d45a2dd573a4edc419023a47214354068cb69fc20"
     },
     {
       "id": "sungrow_rt_es_2021",
@@ -6659,6 +6821,1029 @@
       "retry_condition": "Recheck publication or new primary evidence.",
       "next_action": "Obtain decision and phase layout",
       "processed_cursor": "Extension identified; as-built mapping unresolved"
+    },
+    {
+      "id": "catalonia_named_pv_0400",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://analisi.transparenciacatalunya.cat/d/ggx8-jkp4",
+      "endpoint": "https://analisi.transparenciacatalunya.cat/resource/ggx8-jkp4.json?$limit=10000",
+      "metadata_endpoint": "https://analisi.transparenciacatalunya.cat/api/views/ggx8-jkp4.json",
+      "format": "Socrata JSON",
+      "publication_cadence": "Monthly",
+      "version_or_date": "Rows updated 2026-09-28T08:48:11Z",
+      "last_release": "2026-09-28T08:48:11Z",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "sha256": "df4f9164d0c047ee4b7fd63477699e0c5622cf045880670ab66aa9f6cd10eef5",
+      "metadata_sha256": "833b7caede748e43918fa227197ceb20689e4cf762d4768e7616b1caf1af0d7e",
+      "etag": null,
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "licence_assessment": "Llicència oberta d’ús d’informació - Catalunya; attribution and source update date retained; no sublicensing; no reversal of anonymization. Applicant/promoter omitted. Not the anonymous ICAEN arbg-m6sq annual inventory.",
+      "access_assessment": "Fresh metadata SHA256 equals pinned833b7cae; reused complete358-row df4f9164 export. No repeat full export download. Current source licence also rechecked with identical checksum.",
+      "estimated_useful_yield": {
+        "unreviewed_groups": 0,
+        "held_groups": 175,
+        "remaining_verified_yield": "Unknown; independent site/phase crosswalk needed"
+      },
+      "fields_offered": [
+        "application ID",
+        "named PV plant",
+        "nominal MW, AC/DC unspecified",
+        "plant area ha",
+        "municipal distribution",
+        "administrative and environmental status",
+        "environmental decision/date"
+      ],
+      "mapping": "pv_catalogue/catalonia.py stages only; manual decisions and existing upsert API accept canonical records. DATA_DICTIONARY.md documents mapping.",
+      "last_attempt": "2026-11-04T05:11:41.141016+00:00",
+      "result": "This pass208 previously unreviewed groups:77 new,4 applications mapped to2 existing projects,127 held.65 unique existing records enriched with100 scalar fields plus60 native phase values. Cumulative319 groups:106 new projects,38 application groups mapped to36 existing pre-PR projects,175 held.",
+      "retry_condition": "Recheck metadata rowsUpdatedAt before resume. Reuse unchanged pinned bytes; do not re-download full monthly export hourly. Resolve IDs/phases, zero/conflicting cells and geography discrepancies independently.",
+      "next_action": "First pass exhausted. Resolve Juncs/Alzineres, Torregrossa, Santpedor, Riba-roja and other saved site/phase holds using exact permit parcels, without summing possible overlapping areas. Skip unchanged export; check metadata on next due date.",
+      "processed_cursor": {
+        "source_sha256": "df4f9164d0c047ee4b7fd63477699e0c5622cf045880670ab66aa9f6cd10eef5",
+        "complete_export_rows": 358,
+        "complete_group_count": 319,
+        "reviewed": 319,
+        "accepted_new_projects": 106,
+        "enriched_application_groups": 38,
+        "accepted_enriched_pre_PR_projects": 36,
+        "held": 175,
+        "permanent_rejected": 0,
+        "remaining": 0,
+        "latest_ledger": "20261104T0500_catalonia_review.json",
+        "previous_ledger": "20261104T0400_catalonia_review.json",
+        "next_group_decisions": "held identities only; no unreviewed first-pass partition"
+      },
+      "priority": 1,
+      "last_metadata_retrieval": "2026-11-04T04:57:47.127199+00:00"
+    },
+    {
+      "id": "solinteg_mht_0400",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.solinteg.com/products.html",
+      "version_or_date": "Three English MHT sheets NO2.01-2026",
+      "format": "PDF, 2 pages each",
+      "licence_assessment": "Legal Statement prohibits copying, adaptation and storage in information retrieval systems without prior written permission. No permission obtained; no contacts authorized. Zero records accepted.",
+      "access_assessment": "Three current official product pages and their linked drive.solinteg.com PDFs downloaded normally; older Spanish link503. Technical tables visually inspected.",
+      "estimated_useful_yield": {
+        "exact_model_columns_reviewed": 15,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "PV/battery/grid/backup",
+        "electrical",
+        "mechanical",
+        "environmental",
+        "grid-code and firmware conditions"
+      ],
+      "result": "15 exact models absent from existing manufacturers/models, but rights-held. Do not describe extraction as an integrated feed or accepted models.",
+      "next_action": "Resume only with applicable documented reuse permission; otherwise choose a publisher with suitable terms.",
+      "processed_cursor": {
+        "three_tables_reviewed": true,
+        "models": 15,
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Resume only with applicable documented reuse permission; otherwise choose a publisher with suitable terms."
+    },
+    {
+      "id": "gave_modular_0400",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://pim.gave.com/Productos/catalogos/CA029/099CA01267.04EN.pdf",
+      "version_or_date": "099CA01267.04EN, undated; older indexed catalogue",
+      "format": "PDF,16pages",
+      "licence_assessment": "Gave Legal notice section5 requires prior written permission for use/copy/transmission of content. No grant established; no ingestion. Existing accepted SP model is not silently altered.",
+      "access_assessment": "Normal PDF download9997137bytes SHA256c93effa86dcac224e97d81e5066cc73e31fee0d3e0170ab4af6c9752b2763d7e. Modular model tables and distinct MPPT/string/current layouts inspected; fuse siblings not enumerated to inflate counts.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exact modular references",
+        "string/MPPT layout",
+        "Isc limit",
+        "surge devices",
+        "dimensions",
+        "enclosure tests"
+      ],
+      "result": "Combiner priority attempted with an independent smaller OEM; rights-held,zero accepted.",
+      "next_action": "Check independent OEM public technical-data reuse terms before tables; do not synthesize fuse/MPPT option permutations.",
+      "processed_cursor": {
+        "source_downloaded": true,
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Check independent OEM public technical-data reuse terms before tables; do not synthesize fuse/MPPT option permutations."
+    },
+    {
+      "id": "saj_r6_0400",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.saj-electric.com/services-support-download?page=2&product_model=R6_Series&product_type=On-grid+Inverter&type=Datasheet",
+      "version_or_date": "Official download listing entries22July2025",
+      "format": "HTML links to PDFs",
+      "licence_assessment": "No reuse grant inferred from public listing or privacy policy; exact technical bytes not obtained.",
+      "access_assessment": "Listing200; three distinct R6 5–10,25–50 and3–15kW PDF links403. No bypass.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exact model tables if accessible"
+      ],
+      "result": "Three PDF requests blocked;zero canonical candidates extracted.",
+      "next_action": "Normal public official source recovery; verify region/revision/rights before extraction.",
+      "processed_cursor": {
+        "pdf_requests": 3,
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Normal public official source recovery; verify region/revision/rights before extraction."
+    },
+    {
+      "id": "hoymiles_0400",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.hoymiles.com/products/hms-1600-1800-2000-eu.html",
+      "version_or_date": "Current website checked4November2026; indexed older URLs stale",
+      "format": "HTML/PDF",
+      "licence_assessment": "Cloud application licence is a separate scope; no website technical-data grant inferred.",
+      "access_assessment": "HMS page200; indexed HMT product page and 202506 PDF404.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "model-specific microinverter metadata"
+      ],
+      "result": "Avoided duplicating existing HMT208NA CEC entries; no new exact PDF evidence accepted.",
+      "next_action": "Resolve current OEM linked datasheet and terms; compare exact regional models before enrichment.",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Resolve current OEM linked datasheet and terms; compare exact regional models before enrichment."
+    },
+    {
+      "id": "chile_cne_construction_0400",
+      "country": "CHL",
+      "entity": "projects",
+      "source_url": "https://www.cne.cl/tarificacion/electrica/declaracion-en-construccion/",
+      "version_or_date": "October2026 list described on current page",
+      "format": "HTML; downloadable file endpoint not exposed in fetched markup",
+      "licence_assessment": "Suitable bulk reuse grant not verified. Existing CEN API reuse restriction remains; no API extraction resumed.",
+      "access_assessment": "CNE landing200. Separately, CEN October16 reportZIP downloaded/checksummed outsideGit but not extracted/ingested after existing terms hold identified. EnergyAbierta API link points to maintenance page.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "administrative construction declaration",
+        "plant names/technology/capacity if obtainable"
+      ],
+      "result": "Independent Chile source discovered, not integrated. No registry rows accepted or candidate totals invented.",
+      "next_action": "Find CNE tables endpoint plus applicable licence; separate declared construction from physical progress and reconcile CEG/CEN project boundaries.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Find CNE tables endpoint plus applicable licence; separate declared construction from physical progress and reconcile CEG/CEN project boundaries."
+    },
+    {
+      "id": "edf_registry_freshness_0400",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://opendata.edf.fr/datasets/registre-des-installations-de-production-et-de-stockage-d-electricite",
+      "version_or_date": "30September2025 snapshot, data updated10November2025",
+      "format": "Open-data mirror",
+      "licence_assessment": "Open Licence; source older than existing ODRE31August2026 snapshot.",
+      "access_assessment": "Official indexed metadata inspected; no full dataset downloaded.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "installation registry"
+      ],
+      "result": "Freshness/discovery only; do not replace newer ODRE evidence with older mirror.",
+      "next_action": "Seek independently current EDF-SEI ZNI evidence or resolve ODRE overseas filter values.",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Seek independently current EDF-SEI ZNI evidence or resolve ODRE overseas filter values."
+    },
+    {
+      "id": "invt_xg_0500",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.invt.com/products/xg-50-70kw-solar-inverter-211",
+      "endpoint": "https://www.invt.com/products/xg-50-70kw-solar-inverter-211",
+      "version_or_date": "XG50–70KTR 20240918 folder datasheet; manualV1.0 URL20231219. No publication date inferred from PDF creation metadata.",
+      "format": "HTML/PDF",
+      "publication_cadence": "Unspecified; on document revision",
+      "licence_assessment": "INVT legal statement requires prior written permission for copying and information-search-system storage; personal-use download exception does not establish catalogue reuse. No permission solicitation.",
+      "access_assessment": "Public two-page datasheet and39-page manual downloaded normally, as was legal statement.",
+      "estimated_useful_yield": {
+        "exact_base_model_columns_reviewed": 6,
+        "accepted": 0,
+        "existing_exact_models": 6,
+        "new_exact_models": 0
+      },
+      "fields_offered": [
+        "PV/grid electrical",
+        "MPPT/string conditions",
+        "mechanical",
+        "environmental",
+        "protection/protocols"
+      ],
+      "last_attempt": "2026-11-04T05:11:41.141016+00:00",
+      "last_retrieval": "2026-11-04T05:07:54.876005+00:00",
+      "result": "Six base columns considered; unreviewed -S table not multiplied into variants. Datasheet p2 startup250V versus manual section9.1/table9-1 startup180V; conflict retained, not resolved. Model XG66KTRL suffix also differs from abbreviated web label. All six exact base labels already exist in CEC-derived catalogue records: this was a potential OEM enrichment pass, not six new-model candidates.",
+      "retry_condition": "Revisit on source-specific reuse permission and resolved document/revision mapping; otherwise choose an independent OEM.",
+      "next_action": "Revisit on source-specific reuse permission and resolved document/revision mapping; otherwise choose an independent OEM.",
+      "processed_cursor": {
+        "models": [
+          "XG50KTR",
+          "XG50KTRL",
+          "XG60KTR",
+          "XG60KTRL",
+          "XG66KTRL",
+          "XG70KTRL"
+        ],
+        "accepted": 0
+      },
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "mapping": "Discovery/review only; not integrated or automatically accepted.",
+      "document_sha256": "986c1201b4e6eb1fbf1968394341314c281973c68986736240cc9658240f4e89",
+      "manual_sha256": "ce52ac7af8048fa87dc622716ede0f6fdb8724bb482cd3fa4cb3fdbea09f15aa",
+      "terms_url": "https://www.invt.com/es/legal-statement",
+      "terms_sha256": "0a19065fe757b9f59959115f44df122b149fc2f244645467d3eea20b0156ac60"
+    },
+    {
+      "id": "gantner_string_cb_0500",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.gantner-environment.com/products/string-cb",
+      "endpoint": "https://www.gantner-environment.com/products/string-cb",
+      "version_or_date": "Current indexed product page; current exact datasheet revision unverified",
+      "format": "HTML/PDF listing",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Reuse terms not verified",
+      "access_assessment": "Indexed OEM product/download listings found; ordinary product/download requests503, web open502/timeout.",
+      "estimated_useful_yield": {
+        "exact_models_reviewed": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "custom string configurations",
+        "monitoring",
+        "enclosure",
+        "DC voltage and current ranges"
+      ],
+      "last_attempt": "2026-11-04T05:11:41.141016+00:00",
+      "last_retrieval": null,
+      "result": "Configurable family offers no exact ordering identifiers in indexed product description. No fictional combination of independent options accepted.",
+      "retry_condition": "Retry ordinary public download after service recovery; find exact identifiers and reuse terms before technical extraction.",
+      "next_action": "Retry ordinary public download after service recovery; find exact identifiers and reuse terms before technical extraction.",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "mapping": "Discovery/review only; not integrated or automatically accepted.",
+      "last_discovery_checked_at": "2026-11-04T05:11:41.141016+00:00"
+    },
+    {
+      "id": "estonia_renewable_map_0500",
+      "country": "EST",
+      "entity": "projects",
+      "source_url": "https://keskkonnaportaal.ee/et/taastuvenergia-eestis-kaardirakendus",
+      "endpoint": "https://keskkonnaportaal.ee/et/taastuvenergia-eestis-kaardirakendus",
+      "version_or_date": "Official publisher listing22October2025, updated14November2025; actual layer release unverified",
+      "format": "Map/underlying service unresolved",
+      "publication_cadence": "Quarterly/annual by sector, per publisher description",
+      "licence_assessment": "Layer-specific reuse and third-party exclusions not verified",
+      "access_assessment": "Official indexed description available; ordinary portal503 and agency announcement403. No control bypass.",
+      "estimated_useful_yield": {
+        "planning_range": null,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "existing/planned ground PV",
+        "municipal grid connection totals",
+        "registry-linked map scope"
+      ],
+      "last_attempt": "2026-11-04T05:11:41.141016+00:00",
+      "last_retrieval": null,
+      "result": "New official source opportunity, not integrated. Publisher describes individual facilities and municipal aggregates; these must be distinguished. Service endpoint not yet obtained.",
+      "retry_condition": "Recover public map link/layer metadata, inspect a representative facility sample and licence; never turn municipal capacity aggregates into projects.",
+      "next_action": "Recover public map link/layer metadata, inspect a representative facility sample and licence; never turn municipal capacity aggregates into projects.",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "mapping": "Discovery/review only; not integrated or automatically accepted.",
+      "last_discovery_checked_at": "2026-11-04T05:11:41.141016+00:00"
+    },
+    {
+      "id": "india_nredcap_inventory_0500",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://nredcap.in/PDFs/2024/RE_Projects_as_on_31_12_2024.pdf",
+      "endpoint": "https://nredcap.in/PDFs/2024/RE_Projects_as_on_31_12_2024.pdf",
+      "version_or_date": "As on31December2024 per filename; current edition unverified",
+      "format": "PDF",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "NREDCAP reuse policy not verified; do not inherit unrelated MNRE/MNREDA permissions",
+      "access_assessment": "Official indexed grid-connected solar inventory identified; ordinary PDF/homepage503 and web PDF timeout.",
+      "estimated_useful_yield": {
+        "planning_range": null,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "plant/project location",
+        "commissioned financial year",
+        "capacity",
+        "project entity"
+      ],
+      "last_attempt": "2026-11-04T05:11:41.141016+00:00",
+      "last_retrieval": null,
+      "result": "No source bytes or rows extracted. Explicit PV classification and phase/project scope still require inspection. Generic Solar will not suffice.",
+      "retry_condition": "Retry public publisher index after recovery; locate newest inventory, verify terms/PV technology and then a bounded state cohort.",
+      "next_action": "Retry public publisher index after recovery; locate newest inventory, verify terms/PV technology and then a bounded state cohort.",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "mapping": "Discovery/review only; not integrated or automatically accepted.",
+      "last_discovery_checked_at": "2026-11-04T05:11:41.141016+00:00"
+    },
+    {
+      "id": "india_odisha_gridco_0500",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://greenenergyinvest.odisha.gov.in/projects/projects-standard/",
+      "endpoint": "https://greenenergyinvest.odisha.gov.in/projects/projects-standard/",
+      "version_or_date": "Current publisher page includes2026 rows; no overall as-of timestamp verified",
+      "format": "HTML table",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Applicable GRIDCO source-specific reuse terms not verified; Odisha state portal terms not silently extended to this agency site",
+      "access_assessment": "Official indexed visible existing-project table inspected; ordinary HTML503, repeat web open timeout.",
+      "estimated_useful_yield": {
+        "explicit_pv_example_rows": 2,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "station name",
+        "district",
+        "installed MW,AC/DC unspecified",
+        "commissioning year"
+      ],
+      "last_attempt": "2026-11-04T05:11:41.141016+00:00",
+      "last_retrieval": null,
+      "result": "Floating and rooftop Jindal rows explicitly sayPV. Other rows use generic Solar, and statewide DISCOM/OREDA rows are aggregates. No canonical acceptance or named ownership inferred.",
+      "retry_condition": "Recover ordinary publisher bytes and applicable reuse terms; first review explicitly namedPV rows against existing India identities, excluding statewide aggregates.",
+      "next_action": "Recover ordinary publisher bytes and applicable reuse terms; first review explicitly namedPV rows against existing India identities, excluding statewide aggregates.",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "mapping": "Discovery/review only; not integrated or automatically accepted.",
+      "last_discovery_checked_at": "2026-11-04T05:11:41.141016+00:00"
+    },
+    {
+      "id": "eti_green_protect_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.eti.si/images/userfiles/en-GB/documents/products/building_industry/Green_Protect.pdf",
+      "endpoint": "https://www.eti.si/images/userfiles/en-GB/documents/products/building_industry/Green_Protect.pdf",
+      "format": "PDF",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Applicable technical-data reuse terms unverified",
+      "access_assessment": "Ordinary PDF403; web PDF exceeds23.6MB rendering limit. No bypass.",
+      "fields_offered": [
+        "PV surge/protection components",
+        "catalogue model tables unextracted"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "No table bytes/model rows extracted. Not counted as accepted or quarantined equipment.",
+      "retry_condition": "Normal public access and applicable reuse available; isolate genuine combiner models from component SPDs.",
+      "next_action": "Normal public access and applicable reuse available; isolate genuine combiner models from component SPDs.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "etek_combiner_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.etek-china.com/upload/1c/202510/PV-Combiner-Box.pdf",
+      "endpoint": "https://www.etek-china.com/upload/1c/202510/PV-Combiner-Box.pdf",
+      "format": "PDF/HTML",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Copyright notice requires written authorization for extraction/republication; https://www.etek-china.com/copyright-notice . No permission inferred/contact attempted.",
+      "access_assessment": "Ordinary PDF and notice403; official notice readable via web index.",
+      "fields_offered": [
+        "exact model tables",
+        "enclosure",
+        "protection/electrical"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "No raw PDF or specifications accepted; no model candidate count invented.",
+      "retry_condition": "Resume only with applicable documented permission and normal document access.",
+      "next_action": "Resume only with applicable documented permission and normal document access.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "cnc_combiner_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.energy-cnc.com/wp-content/uploads/2026/07/CNC-Energy-Solar-Combiner-Box-Catalog.pdf",
+      "endpoint": "https://www.energy-cnc.com/wp-content/uploads/2026/07/CNC-Energy-Solar-Combiner-Box-Catalog.pdf",
+      "format": "PDF,5pages",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Reuse not established",
+      "access_assessment": "Ordinary PDF/product403; official PDF web-rendered for discovery.",
+      "fields_offered": [
+        "three configurable families",
+        "string/protection layouts",
+        "environmental limits"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "YCX8i,YCX8p,YCX8-(Fe) remain families. Independent options not multiplied into models; indexed table alignment requires original-page review.",
+      "retry_condition": "Obtain permitted original tables, exact complete orderingIDs and resolve row alignment/general-vs-table ratings before acceptance.",
+      "next_action": "Obtain permitted original tables, exact complete orderingIDs and resolve row alignment/general-vs-table ratings before acceptance.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "noark_pv_catalogue_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://noark-electric.eu/en/documents-and-software",
+      "endpoint": "https://noark-electric.eu/en/documents-and-software",
+      "format": "HTML/dynamic catalogue",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Applicable reuse unverified",
+      "access_assessment": "Ordinary HTML downloaded, SHA in download ledger; no current PV catalogue resolver obtained.",
+      "fields_offered": [
+        "PV component catalogues"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": "2026-11-04T06:00:38.623699+00:00",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Catalogue landing discovery only; no exact-model technical rows reviewed.",
+      "retry_condition": "Find current OEM PV PDF link/version and exact combiner ordering table plus source terms.",
+      "next_action": "Find current OEM PV PDF link/version and exact combiner ordering table plus source terms.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "download_sha256": "d2998a092c778cda99b063212f3bf6bbfe48f1418b7177f0fdc94b18f8fa7999"
+    },
+    {
+      "id": "viox_combiners_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://viox.com/combiner-box/",
+      "endpoint": "https://viox.com/combiner-box/",
+      "format": "HTML/model links",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Applicable reuse unverified",
+      "access_assessment": "Ordinary product index403; web listing accessible.",
+      "fields_offered": [
+        "exact model page opportunities"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Index lists named products; no specifications accepted from the index and no model counts inflated.",
+      "retry_condition": "Retrieve original individual model tables through ordinary public access; verify terms before extraction.",
+      "next_action": "Retrieve original individual model tables through ordinary public access; verify terms before extraction.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "cesena_pv_0600",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://dati.unionevallesavio.it/api/3/action/package_show?id=f5470986-9a8a-4a3c-b741-fa70e8c0f7dd",
+      "endpoint": "https://dati.unionevallesavio.it/api/3/action/package_show?id=f5470986-9a8a-4a3c-b741-fa70e8c0f7dd",
+      "format": "CKAN metadata; CSV/ODATA/WFS/KML opportunities",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Daily per national catalogue; publisher metadata unavailable",
+      "licence_assessment": "Italian national catalogue declares CC BY4.0; actual resource-level metadata still to verify.",
+      "access_assessment": "Publisher landing502; ordinary CKAN503. National metadata last-modified29June2026, daily cadence declared.",
+      "fields_offered": [
+        "PV installation map",
+        "source identities/geography",
+        "fields unverified"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "New licensed publisher opportunity; no actual feed integration or rows accepted.",
+      "retry_condition": "Recover public resource metadata, inspect bounded schema/sample; exclude private details and review plant boundaries before import.",
+      "next_action": "Recover public resource metadata, inspect bounded schema/sample; exclude private details and review plant boundaries before import.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "firenze_pv_0600",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://dati.toscana.it/api/3/action/package_show?id=5b304d1f-55fe-45ad-8973-b758db04ec75",
+      "endpoint": "https://dati.toscana.it/api/3/action/package_show?id=5b304d1f-55fe-45ad-8973-b758db04ec75",
+      "format": "CKAN metadata and ZIP containing KML",
+      "version_or_date": "Metadata11February2026; downloaded17-entry resource has no verified substantive as-of date",
+      "publication_cadence": "Unspecified in downloaded resource metadata",
+      "licence_assessment": "CC BY4.0 explicitly verified in downloaded metadata; retain Comune di Firenze attribution.",
+      "access_assessment": "Ordinary metadata and resource downloaded.17map entries; schema inspected without exporting addresses or coordinates.",
+      "fields_offered": [
+        "public facility/site names",
+        "FV classification",
+        "native POTENZA with unverified units",
+        "registry points"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": "2026-11-04T06:07:30.394318+00:00",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Discovery/sample review only:17entries held for units/as-of/identity review. No thin canonical rows added.",
+      "retry_condition": "Obtain capacity-unit definition and substantive source/as-of date, then reconcile17site identities against Italy catalogue. Do not infer current operation or kW from unlabeled POTENZA.",
+      "next_action": "Obtain capacity-unit definition and substantive source/as-of date, then reconcile17site identities against Italy catalogue. Do not infer current operation or kW from unlabeled POTENZA.",
+      "processed_cursor": {
+        "placemarks_reviewed": 17,
+        "held": 17,
+        "accepted": 0,
+        "reason": "Missing capacity units, substantive date and project-boundary review"
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "metadata_sha256": "3b32ae4d501b5a53aac1e8dfa15e16473deb34360f126f96284bfb65b1f4b069",
+      "resource_url": "https://data.comune.fi.it/datastore/download.php?id=6466&type=99&format=url&file_format=kml&file_id=20178",
+      "metadata_modified": "2026-02-11T11:07:27.461160"
+    },
+    {
+      "id": "victron_bluesolar_0700",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://www.victronenergy.com/solar-pv-panels/bluesolar-panels",
+      "endpoint": "https://www.victronenergy.com/upload/documents/Datasheet-BlueSolar-Monocrystalline-Panels-current-models-EN-.pdf",
+      "format": "PDF,onepage",
+      "publication_cadence": "Unspecified; linked current-model sheet has no printed revision date",
+      "version_or_date": "Undated current-models sheet; byte-pinned4November2026",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T07:03:38.314308+00:00",
+      "last_attempt": "2026-11-04T07:18:23.232850+00:00",
+      "sha256": "7ecf4a9953429b359f263b611096bf570e977af718dacb10e22b4c2a29949c3d",
+      "etag": null,
+      "licence_assessment": "No open-content licence asserted. OEM copyright retained; limited attributed factual specification extraction, no full document/layout/marketing/image redistribution. Public access not treated as a licence. Legal notice and linked commercial sale terms inspected; Buyer transaction/software/confidentiality terms not asserted as a public reuse grant. Exact assessment/URLs/hashes in immutable source entry.",
+      "access_assessment": "Current/legacy sheets, product page, legal notice and linked sales terms downloaded normally. Current PDF visually inspected; no contacts, forms or accounts.",
+      "estimated_useful_yield": {
+        "exact_candidates": 13,
+        "accepted_new": 10,
+        "held": 3,
+        "remaining_unreviewed": 0
+      },
+      "fields_offered": [
+        "STC electrical",
+        "maximum series fuse",
+        "mass and native dimensions",
+        "series cells",
+        "temperature coefficients/range",
+        "warranty durations and retention thresholds",
+        "junction box/cable information"
+      ],
+      "mapping": "Manually reviewed exact article-number rows and corresponding nonambiguous lower columns; existing upsert API. No new parser or automatic model generation.",
+      "processed_cursor": {
+        "all_current_articles_reviewed": 13,
+        "accepted": 10,
+        "held": [
+          "SPM040203603",
+          "SPM042357203",
+          "SPM042357204"
+        ],
+        "review_file": "20261104T0700_review.json"
+      },
+      "result": "Ten different physical articles accepted; no Victron manufacturer existed in any prior equipment table. 20W current outlier and ambiguous235W lower headers held. No efficiency-reference-area or dimension-axis guesses.",
+      "retry_condition": "Check conditional metadata/byte revision only when due; do not redownload the same undated sheet hourly. Held models need a revised OEM table or independently exact model source.",
+      "next_due_check": "2026-11-05T07:00:00Z",
+      "next_action": "Current13-article cohort exhausted. Review only three held articles on changed/corroborating exact OEM evidence; seek an independent tracker/combiner OEM batch."
+    },
+    {
+      "id": "mersen_pv_string_boxes_0700",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.mersen.com/en/products/pv-string-boxes-t12/83070110-pvbt12-1000v-bh-225",
+      "endpoint": "https://www.mersen.com/en/products/pv-string-boxes-t12/83070110-pvbt12-1000v-bh-225",
+      "format": "HTML and linked multi-model PDF not downloaded",
+      "version_or_date": "Current official page; technical table revision not verified",
+      "publication_cadence": "Unspecified",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T07:12:34.974386+00:00",
+      "last_attempt": "2026-11-04T07:18:23.232850+00:00",
+      "sha256": "850d68306f2ee2857a06fc1af4a920c9a18529d3d7519ef65d27c23b9c9affeb",
+      "etag": null,
+      "licence_assessment": "Legal notice article2 restricts personal use and article3 requires prior written approval for reuse/adaptation. No permission claimed or requested; no technical facts accepted.",
+      "terms_url": "https://www.mersen.com/en/legal-notice",
+      "terms_sha256": "a82a6cdc87111e8fe9ba5f050503ee93cca893389ab8309879562b2296b594b2",
+      "access_assessment": "Ordinary product/legal HTML fetched. Linked DS-DC-PV-Junction-Boxes-EN identified; further extraction stopped at rights review.",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "fields_offered": [
+        "exact ordering IDs",
+        "MPPT/string topology",
+        "surge protection"
+      ],
+      "mapping": "Discovery/rights review only, not integrated.",
+      "processed_cursor": {
+        "accepted": 0,
+        "model_specific_table_rows_extracted": 0
+      },
+      "result": "Independent combiner manufacturer opportunity held; distinguish true parallel-string combiners from independent SPD junction boxes before any future classification.",
+      "retry_condition": "Applicable documented permission and exact table access; no contacts authorized.",
+      "next_due_check": null,
+      "next_action": "Do not retry unchanged rights-restricted source hourly. Seek a permitted independent manufacturer/table."
+    },
+    {
+      "id": "odre_installed_power_remaining_0800",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+      "endpoint": [
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Auvergne-Rh%C3%B4ne-Alpes%27",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Bourgogne-Franche-Comt%C3%A9%27",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Normandie%27",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Centre-Val%20de%20Loire%27",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C20000%20AND%20region%3D%27Pays%20de%20la%20Loire%27"
+      ],
+      "format": "JSON bounded regional exports",
+      "version_or_date": "2026-08-31 snapshot; metadata unchanged 13 October/20 October processing",
+      "publication_cadence": "Monthly snapshot metadata; check metadata before bounded cohorts",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "last_retrieval": "2026-11-04T08:01:43.225844+00:00",
+      "sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+      "etag": null,
+      "licence_assessment": "Licence Ouverte v2.0, existing ODRE_NOTICE attribution retained",
+      "access_assessment": "Seven bounded exports checked once after prior scratch captures were pruned; five exact hashes match, two differ and remain held",
+      "estimated_useful_yield": {
+        "reviewed": 204,
+        "accepted": 114,
+        "privacy_held": 68,
+        "changed_bytes_held": 22
+      },
+      "fields_offered": [
+        "maximum active installed power"
+      ],
+      "mapping": "puismaxinstallee kW /1000 -> capacity_unspecified_mw; AC/DC and basis unchanged",
+      "processed_cursor": {
+        "exhausted_five_matching_hash_cohorts": true,
+        "review_file": "20261104T0800_review.json"
+      },
+      "result": "114 accepted existing-record enrichments; no new projects or adapter",
+      "retry_condition": "New snapshot or independent resolution of privacy/changed-byte holds; no hourly export repeats",
+      "next_action": "Review changed Grand Est and Hauts-de-France captures (22 prior crosswalks) against prior native evidence; register new immutable revisions only after semantic/identity review. Then advance remaining ODRE installed-power gaps or current CEA named PV annexes for India; REC registry is rights-held.",
+      "next_due_check": "2026-11-05T08:00:00Z"
+    },
+    {
+      "id": "braux_discovery_0800",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://braux.es/en/trackers/",
+      "endpoint": "https://braux.es/en/trackers/",
+      "format": "HTML",
+      "version_or_date": "Current public source reviewed 4 November 2026; exact technical revision not accepted",
+      "publication_cadence": "Unspecified",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "last_retrieval": "2026-11-04T08:01:44.515947+00:00",
+      "sha256": "1ce69e876917163bea371fc5fd86e91d58c3865004f0fd6d735b22d406bd1be6",
+      "etag": null,
+      "licence_assessment": "Section 3 prohibits exploitation/reproduction/distribution/use without authorization; public access does not grant reuse.",
+      "access_assessment": 200,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "future_verified_yield": null
+      },
+      "fields_offered": [
+        "Identifiers and technical/registry metadata subject to rights and scope review"
+      ],
+      "mapping": "Discovery only; no integration or canonical acceptance",
+      "processed_cursor": {
+        "canonical_accepted": 0,
+        "technical_rows_extracted": 0
+      },
+      "result": "New tracker PDF link discovered; no PDF downloaded or model table extracted after legal review.",
+      "retry_condition": "Materially changed source access/rights or alternate authorized primary evidence",
+      "next_action": "Find alternate permitted primary source; no contact or forms",
+      "next_due_check": null,
+      "technical_document_url": "https://braux.es/wp-content/uploads/2026/06/SOLAR-TRACKER-BRAUX-ENG.pdf"
+    },
+    {
+      "id": "noark_au_discovery_0800",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://noark.au/index.php/products/equipment?id=2",
+      "endpoint": "https://noark.au/index.php/products/equipment?id=2",
+      "format": "HTML",
+      "version_or_date": "Current public source reviewed 4 November 2026; exact technical revision not accepted",
+      "publication_cadence": "Unspecified",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "licence_assessment": "Applicable technical source reuse remains unverified; current privacy page is not a product-data reuse grant.",
+      "access_assessment": "HTTP Error 404: Not Found",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "future_verified_yield": null
+      },
+      "fields_offered": [
+        "Identifiers and technical/registry metadata subject to rights and scope review"
+      ],
+      "mapping": "Discovery only; no integration or canonical acceptance",
+      "processed_cursor": {
+        "canonical_accepted": 0,
+        "technical_rows_extracted": 0
+      },
+      "result": "Legacy exact product route and direct combiner brochure both return404; current home replaced by generic page. No models or technical rows accepted.",
+      "retry_condition": "Materially changed source access/rights or alternate authorized primary evidence",
+      "next_action": "Find alternate permitted primary source; no contact or forms",
+      "next_due_check": null
+    },
+    {
+      "id": "india_rec_discovery_0800",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://recregistry.grid-india.in/index.php/publics/State_Source_Wise_Accr_Status",
+      "endpoint": "https://recregistry.grid-india.in/index.php/publics/State_Source_Wise_Accr_Status",
+      "format": "HTML",
+      "version_or_date": "Current public source reviewed 4 November 2026; exact technical revision not accepted",
+      "publication_cadence": "Unspecified",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "last_retrieval": "2026-11-04T08:06:17.086397+00:00",
+      "sha256": "93cad1599628a06afa31ac2237f08e91c68346c3267f667a5470d69248d7ca6d",
+      "etag": null,
+      "licence_assessment": "Grid-India RIGHTS clause prohibits incorporation or storage of website data in other databases/publications; rights-held.",
+      "access_assessment": 200,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "future_verified_yield": null
+      },
+      "fields_offered": [
+        "Identifiers and technical/registry metadata subject to rights and scope review"
+      ],
+      "mapping": "Discovery only; no integration or canonical acceptance",
+      "processed_cursor": {
+        "canonical_accepted": 0,
+        "technical_rows_extracted": 0
+      },
+      "result": "New official multi-record registry discovered; registration/accreditation are distinct from operation and generator/project number requires facility-scope review. No project assertions stored or accepted.",
+      "retry_condition": "Materially changed source access/rights or alternate authorized primary evidence",
+      "next_action": "Find alternate permitted primary source; no contact or forms",
+      "next_due_check": null,
+      "terms_url": "https://recregistry.grid-india.in/index.php/publics/PrivacyPOSOCO"
+    },
+    {
+      "id": "solarsteel_2p_recheck_0800",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.gsolarsteel.com/products/2p-solar-trackers/",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "sha256": "c7bac5ccf5561e4370b863c3ddf98fb7d406aa216062127ef531810d56f8aca8",
+      "result": "Recognized previously reviewed 2P platform and existing personal/private-use restriction in solarsteel_1257; no repeated PDF extraction or accepted model.",
+      "next_action": "Do not repeat unchanged rights-held source",
+      "licence_assessment": "Existing rights hold retained",
+      "processed_cursor": {
+        "accepted": 0
+      }
+    }
+  ],
+  "source_refresh_queue": [
+    {
+      "country": "DEU",
+      "entrypoint": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "backlog_ids": [
+        "germany_mastr",
+        "mastr_1432_concurrency"
+      ],
+      "format": "ZIP/XML",
+      "cadence": "Daily, normally around05:00 publisher time",
+      "last_release_seen": "2026-11-03",
+      "next_due_check": "2026-11-05T05:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "Generating-unit IDs and EEG installation/project boundaries; reviewed/unreviewed flags required",
+      "cursor": "Existing concurrent AC-scope hold; no3.2GB download this run",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "dl-de/by2.0; existing access/concurrency review remains",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "BRA",
+      "entrypoint": "https://dadosabertos.aneel.gov.br/pt_BR/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel",
+      "backlog_ids": [
+        "brazil_siga",
+        "aneel_siga_2228"
+      ],
+      "format": "CSV/XML monthly and daily",
+      "cadence": "Monthly/daily metadata; no hourly full downloads",
+      "last_release_seen": "Monthly2026-11-01;daily2026-11-03",
+      "next_due_check": "2026-11-05T12:00:00Z",
+      "checksum_or_etag": null,
+      "publisher_hashes_untyped": {
+        "monthly": "cff9c1511b25bcaa0b15131ced20ab3d",
+        "daily": "8cbca50633d9c2b4897b14c924038bae"
+      },
+      "mapping": "UFV only; CEG stable ID; granted/inspected capacities and lifecycle separate",
+      "cursor": "Rights/access-held; no full retry during backoff",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "ODbL: derivative-database treatment unresolved; no silent relicensing",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "FRA",
+      "entrypoint": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/information/",
+      "backlog_ids": [
+        "france_odre"
+      ],
+      "format": "Explore API JSON/CSV",
+      "cadence": "Monthly metadata check; pinned partitions",
+      "last_release_seen": "Snapshot2026-08-31",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "PHOTV; exclude small aggregates; EIC change review; installed/export powers distinct",
+      "cursor": "Continue existing reviewed EIC ledgers/overseas value reconciliation",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Licence Ouverte2.0",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "JPN",
+      "entrypoint": "https://www.fit-portal.go.jp/PublicInfo",
+      "backlog_ids": [
+        "japan_fit"
+      ],
+      "format": "Prefectural XLSX",
+      "cadence": "Monthly announcement metadata; no hourly workbook downloads",
+      "last_release_seen": "Snapshot2026-09-30 announced2026-10-14;paper lag2026-06-30",
+      "next_due_check": "2026-11-14T06:00:00Z",
+      "checksum_or_etag": "ac10084eda5f0d1ee6f54c56ac25d7a0f2dbe0f4c3ef7113016111861c730749",
+      "mapping": "Facility IDs; certification is not operation; excludesPV<20kW; omit personal details",
+      "cursor": "62Tottori candidates already staged; named-project/parcel reconciliation remains",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Refresh portal terms before next prefecture",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "USA",
+      "entrypoint": "https://www.eia.gov/electricity/data/eia860/",
+      "monthly_entrypoint": "https://www.eia.gov/electricity/data/eia860m/",
+      "backlog_ids": [
+        "usa_eia"
+      ],
+      "format": "Annual ZIP/XLSX;monthly XLSX",
+      "cadence": "Annual detailed inventory;monthly preliminary supplement",
+      "last_release_seen": "EIA860M September2026,released2026-10-23;nextrelease2026-11-24;annual2025alreadyimported",
+      "next_due_check": "2026-11-24T18:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "Plant IDs with nested generator IDs;AC/DC/status dates separate;enrich existing plants",
+      "cursor": "No repeat US bulk import;non-US Catalonia source selected",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "EIA public-domain policy;source acknowledgement",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Current official EIA860M landing directly opened; no new workbook downloaded",
+      "annual_archive_sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba"
+    },
+    {
+      "country": "GBR",
+      "entrypoint": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "backlog_ids": [
+        "uk_repd"
+      ],
+      "format": "CSV/XLSX",
+      "cadence": "Quarterly;metadata-only check before saved partition resume",
+      "last_release_seen": "July/Q22026,published2026-08-03",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+      "mapping": "Applications/resubmissions/phases;source status as-of;MW basis unspecified",
+      "cursor": "Use existing accepted/held ledgers;unchanged extract not redownloaded",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "OGLv3 attribution retained",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "AUS",
+      "entrypoint": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "backlog_ids": [
+        "aemo_nem_october_2026_20261103T0800",
+        "aemo_nem_october_2026_20261103T0800_0900_review"
+      ],
+      "format": "XLSX",
+      "cadence": "Everythree months or asrequired, per AEMO;metadata-only check",
+      "last_release_seen": "2026-10-30 OctoberNEM generation information",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+      "mapping": "Existing/committed/proposed unit cohorts;NEM is not all Australia",
+      "cursor": "Resume existing held crosswalks without repeating accepted cohort",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Source-specific terms and prior assessment retained",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
     }
   ]
 }

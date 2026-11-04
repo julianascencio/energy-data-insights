@@ -353,3 +353,45 @@ to the standard `upsert` command. The adapter emits only accepted decisions;
 it does not write the catalogue. An AEMO site with multiple survey rows
 requires separate review. GA points retain their native GDA2020 reference;
 GA's unspecified generation rating is never used as AC or DC capacity.
+
+### Catalonia named PV review staging
+
+The Catalonia adapter handles dataset `ggx8-jkp4` (named ground-mounted PV
+above 100 kW). It groups application/name pairs across municipalities without
+summing repeated plant capacity or area, omits applicants, and flags shared IDs,
+reapplications, expansions, zero capacities and conflicting cells. It produces
+review candidates only. A unique application is not automatically a whole plant;
+compare the full extract and existing catalogue before using the upsert API.
+Nominal MW has no inferred AC/DC basis; administrative authorization does not
+establish physical construction. Operating coverage is limited to commissioning
+after November 2019. The September 2026 review decisions and source hashes are in
+`research/20261104T0400_catalonia_review.json`.
+
+```bash
+uv run python scripts/stage_pv_catalonia.py \
+  --input /path/to/catalonia.json --metadata /path/to/catalonia-meta.json \
+  --sha256 df4f9164d0c047ee4b7fd63477699e0c5622cf045880670ab66aa9f6cd10eef5 \
+  --metadata-sha256 833b7caede748e43918fa227197ceb20689e4cf762d4768e7616b1caf1af0d7e \
+  --expected-rows 358 --output /tmp/catalonia-review.json
+```
+
+Check metadata `rowsUpdatedAt` before resuming saved partitions. An unchanged
+monthly snapshot does not require another complete export. Source-specific
+Catalonia attribution and last-update notice travel with the snapshots.
+
+### Existing ODRE installed-power gaps
+
+`pv_catalogue.odre.reviewed_installed_power_updates` stages missing
+`capacity_unspecified_mw` from maximum active installed kW after an explicit
+canonical-record-ID → EIC review. First call `read_odre_json` with pinned bytes.
+The helper checks unique EICs across the complete canonical catalogue, a single
+native GEM phase, individual PHOTV classification, cohort bounds and privacy labels.
+It fails on already populated values. Pass its incoming rows to `upsert_records`;
+there is no name-based acceptance or automatic creation of projects.
+
+Existing `capacity_ac_mw`, `capacity_dc_mw`, their original `capacity_basis`,
+statuses and nested evidence remain unchanged. The separate installed-power
+column has unspecified AC/DC basis; it is not the grid-injection rating.
+Differences between dated ratings stay in the review ledger, without choosing a
+winner. The first installed-power partition and exact EIC/native-field locators
+are in `research/20261104T0600_odre_capacity_review.json`.
