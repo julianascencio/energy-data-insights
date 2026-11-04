@@ -1,53 +1,64 @@
 {
-  "batch": "2026-11-04-0835",
-  "validated_base": "c21dd1713067f15adc8b12954c3b7147906a770e",
-  "iteration_parent": "eea7e052d81c60ddfc7b292dc88f13804dc0df07",
+  "batch": "2026-11-04-0935",
+  "validated_base": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
+  "iteration_parent": "230b4b8d92992a9fa40c523294cc19ff7c7fa0c5",
   "local": {
-    "pytest": "2177passed,5optional skipped in115.12s; zero failures/errors",
+    "pytest": "2217passed,5optional skipped in111.16s after integration with current main; zero failures/errors",
     "skip_reasons": "cdsapi unavailable(1); optional Python3.13 imagery integrations(4)",
-    "adapter": "17ODRE tests passed, including4new cohort-boundary/national-screen/generic-name cases",
-    "viewer": "15passed",
-    "source_replay": "18accepted French records and all2458national decisions exactly replayed from original checksum-pinned bytes against published parent",
-    "catalogue": "21791records validated:7862projects294equipment13633turbines2curves",
-    "preservation": "21745prior Wind records unchanged; GErecord enriched additively; all prior scalar values, creation timestamps and source entries preserved; all6capacity totals unchanged; unrelated catalogues untouched",
-    "snapshots": "Two independent builds; all7files byte-identical; four136-column typed Zstandard Parquet tables",
-    "quality": "Repository Ruff lint/format826files,ty,citations,hygiene3687candidatefiles and whitespace checks passed",
-    "example": "Offline Wind gallery executed successfully with Agg backend",
-    "packages": "Three wheels and three sdists built",
-    "docs": "Strict Sphinx HTML passed with plot_gallery=0, including final bibliography refresh; full gallery execution not claimed",
-    "docs_links": "530HTML pages checked; local links/assets resolve",
-    "catalogue_cli": "CLI validation passed; final original manufacturing-entity provenance revalidated by both final snapshot builds"
+    "focused": "50Wind catalogue/component/ODRE tests passed;10new component cases",
+    "viewer": "16Node tests passed, including explicit bidirectional component applications",
+    "source_replay": "All52new projects,25equipment and both2458-row national decision ledgers exactly replayed from checksum-pinned originals/transcriptions against iteration parent",
+    "catalogue": "21868records validated:7914projects319equipment13633turbines2curves",
+    "preservation": "21782prior records unchanged;9turbines enriched additively; all prior scalars, creation timestamps, extension keys and sources preserved; six capacity totals unchanged, excluded project count increases52; unrelated catalogues untouched",
+    "snapshots": "Two final-main independent builds match all7earlier validated snapshot files byte-for-byte; four136-column typed Zstandard tables",
+    "quality": "Repository Ruff lint/format839files,ty,citations,hygiene3756candidatefiles and whitespace checks passed after current-main integration",
+    "example": "Offline Wind gallery passed again after current-main integration; missing NGC torque metadata reported unknown",
+    "packages": "Three wheels and three sdists rebuilt after current-main integration",
+    "docs": "Strict Sphinx HTML passed with plot_gallery=0 after integration with merged PV/Data Center main; full gallery execution not claimed",
+    "docs_links": "Documentation check passed: 534 HTML pages; local links and assets resolve."
   },
   "not_executed": [
     "Full gallery execution",
-    "New interactive browser smoke test",
-    "Independent verification of original type certificates or current ALMM eligibility"
+    "Interactive browser smoke test",
+    "Independent current component certification or operational performance verification"
   ],
   "remote_ci": {
-    "previous_published_commit": "eea7e052d81c60ddfc7b292dc88f13804dc0df07",
+    "previous_published_commit": "230b4b8d92992a9fa40c523294cc19ff7c7fa0c5",
     "previous_result": "Documentation and Python quality/tests workflows completed successfully",
     "this_batch": "Pending publication; local results are not remote CI"
   },
   "research_blockers": [
-    "US official ArcGIS403; Brazil monthly CSV andmetadata503; no authentication/reuse inference",
-    "20earlier FrenchEICs stillheld;220new-cohort candidates held",
-    "Vayona/SGidentity continuity; GEregionalhub equivalence; mixed-format/conditional certificate dates"
+    "555French cohort candidates held; previous13duplicate-name groups still unresolved",
+    "43component rows lack exact model identifiers; generic types retained as observations only",
+    "USGS catalogueXMLHTTP403; IBAMA queryHTTP200withArcGIS500; no authentication or reuse inference",
+    "PNE mixed commissioning/date-of-sale heading requires project-scope reconciliation"
   ],
   "snapshot_sha256": {
-    "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "051a5dee3f970a36a10f5ef92479a6a8916fdecdc4746c96c85ff78e99004b91",
-    "manifest.json": "d968ae6650a427b58f3fae0fec21392ecd3d67fc3a3180160dd1b8cdb1713d03",
-    "projects.parquet": "704fdf9d3c989300dfe144c495ab5f82c8758d6ea3f37b3d45ac37c12996b95b",
+    "sources.json": "2ddaa413ba1d9b4024f3a412e5f63abc67a44b2d72f58bd26afd58d3e29ed5ea",
+    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
+    "manifest.json": "772fbfd145d32fb624b91b2e120807bf49f68bfc1339103189fbd17c58801d0e",
+    "equipment.parquet": "165c0b00153dd62789dc7cbfd5de93266408ed5873b227798d81a60e7ff2bbdf",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "sources.json": "04232f367a2f821e68af540be0ad25008f870af85cf392d45e52556c48696248",
-    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
+    "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
+    "projects.parquet": "94f991a64ff0179db8928fd9fbfc5516a52c9b820e20e27cf6bda6a51f2ccb7b"
   },
   "log_sha256": {
-    "pytest.log": "dd90378bf82dcb33de3825290867ca407a5e6a7fbc87a40c59e38eda256a1321",
-    "viewer.log": "ffa7310838e6c9fadb1e1e2fda640a9b43e6311c3e1976d70901c9f36d55f4d7",
-    "gallery.log": "783edf521e72285cda8459ab2e52194de7a507d4d6f855bf34302dfd99d1543a",
+    "pytest.log": "a55ba24895bae566628c96f4045cfdf137a9bb079713f2157eeb38c089fde144",
+    "focused.log": "df27b4f4027e5aaa97267ed3b2ea9c6ec7bb4620cacb4ba2a028b39792bb1b28",
+    "viewer.log": "fc15b620f92c24d85ed8c3af034ab22bddb714e53dc292432fc6c45a0c242dab",
+    "quality.log": "3440e5b7a8509f6239719808a34a54cbb0602b9a152c37aa4aa6af0332665288",
+    "gallery-final.log": "bb9a5917d1a0e8c3bb1785563709064dce84a8966345a3ee226d5ab09d659c04",
     "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
-    "docs-final.log": "15abb023765b1c3cce6693ed301a1fafe7e60efc321daaa0517a6f4939591ec4",
-    "docs-links-final.log": "b02f7b128c9b79c2681ffff0fa0d0a4263ca5753cf57c87fcd28c4528299771a"
-  }
+    "docs.log": "fbb2ef04164f0ad67e7e8158dbcfa239d16fd35b5578baf92bd662e7ac2332b1",
+    "docs-final.log": "dbeafd13cbe3307ada3347441cb62015a4dc4233f76ed6ec1851054c3ec54c10",
+    "docs-links-final.log": "2aad958801552c277ed588a401d3ea29d0c99c22b691a17b33bbedf551aba696",
+    "pytest-main.log": "7590326ca0cf5df1a25d9275935ac805f3e0e3ef12463db7edb438249ffbb1df",
+    "quality-main.log": "298d8871b92b4c957b602b9d9b4adddefb74d9940ede79ea76e980d1df8573b7",
+    "docs-main.log": "9b3dbe685d455a03904f090f6c8d77c6c46331d196ea71da678229863bb73a4d",
+    "viewer-main.log": "4110d2cb69474d5d62af966cfc17c247ca04183f8f03a327921f59197e4b09c8",
+    "gallery-main.log": "bb9a5917d1a0e8c3bb1785563709064dce84a8966345a3ee226d5ab09d659c04",
+    "packages-main.log": "58bda4b172e5810ebf891e3a03be18b139649436a68d1cd2594f58bcd667d46d",
+    "docs-links-main.log": "38afbed222f7b1ee8eef1b0e08300c0d93877fd4b834c2a30ca81465bd68f81e"
+  },
+  "publication_reconciliation": "Main advanced after checks; previous Wind/PV/Data Center PRs merged externally; full checks repeated after clean cherry-pick"
 }

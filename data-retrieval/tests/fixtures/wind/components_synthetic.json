@@ -1,0 +1,15 @@
+[
+  {
+    "source_id": "synthetic",
+    "sha256": "",
+    "revision": "Synthetic fixture; not a real turbine or component",
+    "expected_rows": ["1", "2"],
+    "rows": [
+      {
+        "row": "1", "locator": "Synthetic table row1", "observation": "Explicit blade code; length absent",
+        "models": [{"manufacturer": "Synthetic Maker", "model": "B99", "category": "blade", "values": {}, "links": [{"equipment_record_id": "synthetic-turbine", "conditions": "Only synthetic tower option A"}]}]
+      },
+      {"row": "2", "locator": "Synthetic table row2", "observation": "Gearbox with two planetary stages; model unknown", "models": []}
+    ]
+  }
+]

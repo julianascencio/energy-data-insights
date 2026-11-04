@@ -70,6 +70,11 @@ Open record details for certificate dates, outstanding issues, regional tower
 options and excluded operating modes. A list entry does not establish deployment.
 Coordinates retain source precision; missing coordinates are never geocoded.
 A map may include historical rows whose current status remains unverified.
+Equipment details link both directions between components and explicitly named
+turbines. Each application retains its source, locator and tower or operating
+conditions. Multiple factories remain nested within one model; a shared supplier
+does not establish compatibility. Mechanical gearbox ratings are distinct from
+turbine electrical ratings, and blade lengths are never decoded from type names.
 Dated lifecycle evidence and excluded project scopes are shown separately:
 REPD lifecycle updates do not by themselves resolve phase or repowering overlap.
 

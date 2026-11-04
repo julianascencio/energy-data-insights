@@ -233,3 +233,25 @@ component expiry restrictions, outstanding issues and excluded boost modes
 remain visible. Original certificates and current eligibility are not verified.
 The source register contains the original checksum; the April association-hosted
 list is a separate reviewed revision, not mixed into the August observations.
+
+## French 2016–2019 installations and named turbine components
+
+The next two complete ODRE service-date cohorts contain 607 installations of at
+least 1 MW. National name/commune and existing-identity screening accepts 52;
+555 remain deferred. All 52 retain unresolved aggregation scope. This does not
+turn historical WRI observations into a current operating census.
+
+Nine complete manufacturer component disclosures linked by the August 2026 MNRE
+list, plus all three rows of the June 2026 ALMM-WTC list, add 25 exact blade,
+gearbox and generator models. Nine existing turbines gain dated component
+observations. The 66 reviewed source rows include 43 without exact model codes;
+those generic tower, generator and bearing descriptions remain in the ledger,
+not as synthetic equipment. Multiple manufacturing sites and applications stay
+on one model. The EF0953A 3,560 kW rating is mechanical; the listed turbine's
+3,000/3,150 kW rating has a separate boundary. Blade type numbers do not supply
+missing blade lengths. List inclusion does not establish current certification.
+
+The checksum-verified component adapter consumes reviewed transcriptions with
+complete document row sets. The gallery and equipment viewer follow explicit
+component/turbine applications in both directions with their conditions and
+source locators. They do not infer compatibility from common suppliers.

@@ -6703,3 +6703,83 @@ Cour administrative d’appel de Lyon / Legifrance (2024). **CAA de Lyon,21 Marc
 **Role:** data. Primary page reviewed for identity follow-up; no explicit EIC/permit crosswalk. Candidates remain deferred. Original source bytes/checksum unavailable.
 
 **Used by:** `catalogues/wind/research/2026-11-04-0835-identity-followup.jsonl`.
+
+### mnre_component_0_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for MWL160-5.2MW**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/202512261376636958.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_1_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for WD147-3000**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/202512261707251202.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_2_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for WD164-3300**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/202512261520340230.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_3_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for MWL-160-5.2MW HYT-140m**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/20251226548009955.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_4_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for EN-156/3.3 (LM76.5 P and EN 76.5 A V2)**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/08/20260821911204082.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_5_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for EN-182/5.0 IEC S 50Hz**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/02/202602101129651878.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_6_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for GE 3.8-154**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260602168592999.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_7_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for INOX DF/3000/145 3.0 MW Power Booster Mode 3.3 MW**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/08/20260821510614236.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_8_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for Senvion 3.1M130**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/10/202510011284534893.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_almm_wtc_20260602
+
+Ministry of New and Renewable Energy, Government of India (2026). **Approved List of Models and Manufacturers for Wind Turbine Components (ALMM-WTC)**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260603203651222.pdf)
+
+**Role:** data. As on02.06.2026; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.

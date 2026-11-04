@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-04T08:14:28Z",
-  "branch": "research/wind-20261104-0735",
+  "updated_at": "2026-11-04T08:50:52Z",
+  "branch": "research/wind-20261104-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
     {
@@ -9,23 +9,23 @@
       "url": "https://energy.usgs.gov/uswtdb/data/",
       "partition": "v9.1 full turbine release; all states including offshore",
       "next_offset": 0,
-      "status": "blocked_official_arcgis_403",
+      "status": "blocked_catalogue_metadata_403",
       "tasks": [
         "Obtain original release bytes and hash; verify version and complete count",
         "Adapter with offline tests; retain exact model only when supplied",
         "Cluster explicit project registry identities and reconcile WRI USA rows; add turbine children without double counting farms"
       ],
-      "last_attempt_url": "https://energy.usgs.gov/arcgis/rest/services/Hosted/uswtdbDyn/FeatureServer?f=pjson",
+      "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "Official Hosted/uswtdbDyn FeatureServer metadata also403. Next inspect official USGS release mirror/catalogue distribution metadata without retrying unchanged API/ZIP endpoints.",
-      "latest_attempt_review": "2026-11-04-0835-source-review.json"
+      "next_task": "Official USGS catalogue XML also403; next data.gov distribution metadata and LBNLalternate distribution listing. Do not retry unchanged ZIP/API/ArcGIS/XMLroutes.",
+      "latest_attempt_review": "2026-11-04-0935-source-review.json"
     },
     {
       "rank": 2,
       "source": "French ODRE national wind registry",
       "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codefiliere%3D%27EOLIE%27&order_by=codeeicresourceobject",
-      "partition": "National2458identity screen;2022+cohort539 and2020–2021cohort238 completed;52accepted total",
-      "status": "two_cohorts_complete_identity_holds_retained",
+      "partition": "National2458identity screen; all >=1MWservice cohorts2016–2026completed;104accepted total",
+      "status": "four_cohorts_complete_identity_holds_retained",
       "next_offset": 0,
       "next_ids": [
         "17W0000013597693",
@@ -49,9 +49,9 @@
         "17W0000013718721",
         "17W000001372535E"
       ],
-      "decision_ledger": "2026-11-04-0835-odre-decisions.jsonl",
+      "decision_ledger": "2026-11-04-0935-odre-2016-2017-decisions.jsonl",
       "sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
-      "next_task": "Next complete2018–2019 service cohort with national identity screen. Prior first20EICs reviewed in0835identity-followup: allheld. Obtain explicit permit/EICcrosswalks forMadon,HautsBouleaux,IEL26,Enertrag; do not repeat discovery or unmask anonymous rows.",
+      "next_task": "Next complete2014–2015service cohort, national identity screen retained. Previous20EICpermitcrosswalkholds unchanged; do not repeat discovery.",
       "completed_service_intervals": [
         [
           "2022-01-01",
@@ -60,9 +60,21 @@
         [
           "2020-01-01",
           "2021-12-31"
+        ],
+        [
+          "2018-01-01",
+          "2019-12-31"
+        ],
+        [
+          "2016-01-01",
+          "2017-12-31"
         ]
       ],
-      "identity_followup_ledger": "2026-11-04-0835-identity-followup.jsonl"
+      "identity_followup_ledger": "2026-11-04-0835-identity-followup.jsonl",
+      "decision_ledgers": [
+        "2026-11-04-0935-odre-2018-2019-decisions.jsonl",
+        "2026-11-04-0935-odre-2016-2017-decisions.jsonl"
+      ]
     },
     {
       "rank": 3,
@@ -117,7 +129,7 @@
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
       "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-      "next_task": "Daily and monthly download/metadata routes unavailable. Next official ANEEL spatial inventory/catalogue mirror; reconcile stable CEG roots before additions. No unchanged retries."
+      "next_task": "ANEEL daily/monthly paths stillblocked. IBAMA licensing FeatureServermetadata acquired but countquery HTTP200 withArcGIS500; it is not ANEELSIGA. Next official ANEEL spatialservice metadata; preserveCEGrootidentity. No unchanged retries."
     },
     {
       "rank": 5,
@@ -155,7 +167,8 @@
         "NETA-21 official document resolver succeeded: RevQ effective2026-09-18 pp225–226 processed. Do not retry RevP403. Next resolve NETA/NEXA per-device connector allocation and temperature typo; original E103EP2 appendix in Marne planning dossier https://www.marne.gouv.fr/contenu/telechargement/24186/154103/file/2b%20-%20Annexes%20Etude%20Impact.pdf",
         "Marne E103 appendix successfully downloaded but D0438349-0 legal notice explicitly restricts publication/derivatives: excluded, no retry as HTTP failure. ABB RevQ pp21–24 layout complete: NEXA-21 added/NETA-21 enriched; remaining EIA serial assignments and temperature discrepancy unresolved. Current Winergy exhibit still no exact identifier.",
         "GE4.2MW-117m complete table processed, one exact configuration; 4.23MW nameplate deliberately retained. Vestas4MW03/2024-EN brochure excluded for final-page copying restriction; acquired bytes, not HTTP failure. Next independent exact OEM product tables with revision and wind application evidence.",
-        "MNREALMM20August2026 all30entries processed;27new1GEenrichment1Vayonaidentityhold1Pioneer90m nestedoption. Do not repeatAprilrevision or tower/power combinations. Next complete official GE3.8-154 component disclosure https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260602168592999.pdf ; exact LM75.7P2GenB blade identity and only explicitly listed component types. Then MNRE ALMM-WTC2June2026 complete table, source acquisition first. VayonaSG3.4-145/3.6 identity and GEregionalhub equivalence remain held."
+        "MNREALMM20August2026 all30entries processed;27new1GEenrichment1Vayonaidentityhold1Pioneer90m nestedoption. Do not repeatAprilrevision or tower/power combinations. Next complete official GE3.8-154 component disclosure https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260602168592999.pdf ; exact LM75.7P2GenB blade identity and only explicitly listed component types. Then MNRE ALMM-WTC2June2026 complete table, source acquisition first. VayonaSG3.4-145/3.6 identity and GEregionalhub equivalence remain held.",
+        "Nine complete DMCdocuments (queueindices0–8,including GE3.8) and ALMM-WTC02June2026 complete:25new exact components,9turbines enriched,43generic rows held. Next queueindex9 Senvion4.2M160 https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf thenindices10–14 in 2026-11-04-0935-component-queue.json. Do not infer geometry/rating from model codes or split factory variants. Resolve generic types only with exact-model evidence."
       ]
     },
     {
@@ -182,6 +195,16 @@
         "Reconcile source document revision, density and curve origin before import",
         "Separate original numerical, digitized and generic reference turbines; add thrust curves only with exact-model support"
       ]
+    },
+    {
+      "rank": 8,
+      "source": "PNE worldwide references",
+      "url": "https://www.pnegroup.com/en/references/",
+      "status": "original_acquired_schema_review_only",
+      "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
+      "partition": "Complete Spanish wind rows, then complete Polish wind rows; exclude PV",
+      "next_offset": 0,
+      "next_task": "Commissioning/date of sale mixed heading; require primary project detail evidence, reconcile existing names/phases before adding or enriching; zeroWTG placeholders are unknown inventories."
     }
   ],
   "user_priority_update": {
@@ -267,5 +290,5 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "Fresh checkout and pinned uv environment; original source bytes and build/test logs in research0735 scratch. Reacquire sources by recorded URL/checksum if missing; do not repeat reviewed inventory partitions."
+  "validation_storage": "Original ODRE bytes in research0735; new component PDF originals, replay evidence and final-main validation logs in research0935. Reacquire by source URL/checksum if missing; do not repeat completed partitions."
 }

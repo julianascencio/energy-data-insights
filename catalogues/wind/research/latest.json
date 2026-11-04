@@ -1,29 +1,36 @@
 {
-  "batch": "2026-11-04-0835",
-  "updated_at": "2026-11-04T08:14:28Z",
-  "baseline_main": "c21dd1713067f15adc8b12954c3b7147906a770e",
-  "branch": "research/wind-20261104-0735",
+  "batch": "2026-11-04-0935",
+  "updated_at": "2026-11-04T08:50:52Z",
+  "baseline_main": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
+  "branch": "research/wind-20261104-0935",
   "merged_wind_counts_at_baseline": {
-    "projects": 7810,
-    "equipment": 266,
+    "projects": 7862,
+    "equipment": 294,
     "turbines": 13633,
     "curves": 2
   },
   "branch_totals": {
-    "projects": 7862,
+    "projects": 7914,
     "turbines": 13633,
-    "equipment": 294,
+    "equipment": 319,
     "curves": 2,
-    "non_group_projects": 7861,
+    "non_group_projects": 7913,
     "countries": 59,
     "manufacturers": [
       "ABB",
       "Adani New Industries",
       "Bonfiglioli",
+      "Dalian Huarui Special Transmission Equipment",
+      "ELIN Motoren",
       "ENERCON",
+      "Eickhoff Wind Power",
+      "Envision Energy",
       "Envision Energy India",
+      "Flender",
       "GE Vernova",
+      "Hunan Xiangtan Electric Power",
       "Inox Wind",
+      "LM Wind Power",
       "MHI Vestas Offshore Wind",
       "NGC",
       "Nordex",
@@ -32,21 +39,25 @@
       "Sany Wind Energy India",
       "Senvion Wind Technology",
       "Siemens Gamesa",
+      "Sinoma Wind Power Blade",
       "Siva Wind Turbine India",
       "Southern Wind Farms",
       "Suzlon",
+      "Tianjin CRRC Wind Turbine Blade Engineering",
       "VENSYS Energy AG",
       "Venwind Refex Power",
       "Vestas",
       "WEG Industries India",
-      "Winergy"
+      "Winergy",
+      "Xi’an Chen’an Electric",
+      "ZF Wind Power"
     ]
   },
   "changes_against_main": {
     "new_projects": 52,
     "substantively_enriched_projects": 0,
-    "new_equipment": 28,
-    "substantively_enriched_equipment": 1,
+    "new_equipment": 25,
+    "substantively_enriched_equipment": 9,
     "new_turbines": 0,
     "new_curves": 0
   },
@@ -57,9 +68,9 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 3279,
+  "primary_evidence_project_records": 3331,
   "technology_counts": {
-    "onshore": 3124,
+    "onshore": 3176,
     "unknown": 4700,
     "offshore_unspecified": 32,
     "fixed_bottom_offshore": 2,
@@ -94,19 +105,20 @@
     "63 Västerbotten areas/1400 turbines held; NETA/NEXA combined interface allocation and conflicting temperature endpoints unresolved",
     "31 Norrbotten areas1744turbines held; Marne E103 appendix excluded for explicit reuse restriction; Winergy exhibit exact identity unresolved",
     "French2022+>=1MW cohort539:34accepted,505deferred;1919otherrowsoutsidecohort. No capacity totals enabled; US officialalternates403, Minnesota404; Vestas4MWbrochureexplicitreuseexclusion.",
-    "ODRE2020–2021:220holds; first20priorEICcrosswalks remain unresolved. Vayona/SGcontinuity held; expired/conditional ALMMcertificate entries do not establish current eligibility."
+    "ODRE2020–2021:220holds; first20priorEICcrosswalks remain unresolved. Vayona/SGcontinuity held; expired/conditional ALMMcertificate entries do not establish current eligibility.",
+    "ODRE2016–2019:555held;43genericcomponent rows lack exact models; IBAMA countqueryHTTP200/ArcGIS500; PNE commissioning/sale ambiguity requires reconciliation."
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations; Hessen1807units/627groups:38parks170units; Halland176areas691units:101projects385units; ACU R04_0 pp19–23 complete34ACU210/410 configurations; Thüringen1232units/379groups:8parks43units; VästraGötaland836areas2729units:610projects1987turbines;23exactLCVS/non-AL LCVT types; Sachsen1207units/498groups:16parks92units; Värmland98areas1278units:54projects544turbines;13ALchokes and15EMCfiltertypes; Saarland286units126groups:12parks49units;Örebro85areas405units:60projects239turbines;ACUR04_0pp62–65:12filterenrichments11resistortypes; Bremen99Hamburg78Berlin10units:2projects9turbines;Västmanland/Dalarna98areas1488units:51projects628turbines;VEC501R0complete11type enrichment; Gävleborg88areas2124units:56projects928turbines;EEZ1813units48namegroups screened;ENERCON E82E2 08/2019 table enriched; Västernorrland97areas2177units:55projects847turbines; Jämtland138areas1729units:69projects784turbines; ABB2020RevC pp13–14,24–25:15converter enrichments and1NETA-21 control; Västerbotten130areas2316units:67projects916turbines; NETA21RevQ pp225–226; Norrbotten68areas2566units:37projects822turbines; ABBRevQ pp21–24 layout1new1enriched; French national EOLIE2458rows screened; 2022+>=1MW cohort:34new installations, zero capacity-total changes; Swedish residual10land-layerqueries zero; GE4.2MW-117m entire table1new; Complete ODRE2020–2021>=1MWcohort238:18new220held; first20priorEICs reviewed and remain held. Complete MNRE20August2026 ALMM30entries:27new1enriched1held1nestedtoweroption.",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations; Hessen1807units/627groups:38parks170units; Halland176areas691units:101projects385units; ACU R04_0 pp19–23 complete34ACU210/410 configurations; Thüringen1232units/379groups:8parks43units; VästraGötaland836areas2729units:610projects1987turbines;23exactLCVS/non-AL LCVT types; Sachsen1207units/498groups:16parks92units; Värmland98areas1278units:54projects544turbines;13ALchokes and15EMCfiltertypes; Saarland286units126groups:12parks49units;Örebro85areas405units:60projects239turbines;ACUR04_0pp62–65:12filterenrichments11resistortypes; Bremen99Hamburg78Berlin10units:2projects9turbines;Västmanland/Dalarna98areas1488units:51projects628turbines;VEC501R0complete11type enrichment; Gävleborg88areas2124units:56projects928turbines;EEZ1813units48namegroups screened;ENERCON E82E2 08/2019 table enriched; Västernorrland97areas2177units:55projects847turbines; Jämtland138areas1729units:69projects784turbines; ABB2020RevC pp13–14,24–25:15converter enrichments and1NETA-21 control; Västerbotten130areas2316units:67projects916turbines; NETA21RevQ pp225–226; Norrbotten68areas2566units:37projects822turbines; ABBRevQ pp21–24 layout1new1enriched; French national EOLIE2458rows screened; 2022+>=1MW cohort:34new installations, zero capacity-total changes; Swedish residual10land-layerqueries zero; GE4.2MW-117m entire table1new; Complete ODRE2020–2021>=1MWcohort238:18new220held; first20priorEICs reviewed and remain held. Complete MNRE20August2026 ALMM30entries:27new1enriched1held1nestedtoweroption.; ODRE2016–2019two cohorts complete607selected52new555held. Nine complete MNREcomponent disclosures and full ALMM-WTC3entries:25newcomponents9turbine enrichments.",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
-  "publication_base_main": "c21dd1713067f15adc8b12954c3b7147906a770e",
-  "iteration_base_head": "eea7e052d81c60ddfc7b292dc88f13804dc0df07",
+  "publication_base_main": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
+  "iteration_base_head": "230b4b8d92992a9fa40c523294cc19ff7c7fa0c5",
   "changes_this_run": {
-    "new_projects": 18,
+    "new_projects": 52,
     "substantively_enriched_projects": 0,
-    "new_equipment": 27,
-    "substantively_enriched_equipment": 1,
+    "new_equipment": 25,
+    "substantively_enriched_equipment": 9,
     "new_turbines": 0,
     "new_curves": 0
   },
@@ -117,129 +129,133 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "34 French onshore network installations across eight regions; country coverage unchanged",
-  "new_technology_coverage": "Dated French onshore registry capacities/grid metadata; GE 4.2 MW-117m exact turbine configuration",
+  "new_geography": "52 French onshore network installations; no new country",
+  "new_technology_coverage": "25 exact blades/gearboxes/generators with conditional turbine applications; nine existing turbines gain component disclosures; no new offshore project",
   "reviewed_this_run": {
-    "batch": "2026-11-04-0735",
+    "batch": "2026-11-04-0935",
     "france": {
-      "selected": "All 2458 national EOLIE rows checked; bounded new-installation cohort service date >=2022-01-01 and reported installed >=1000kW",
-      "accepted": 34,
-      "held_or_outside_cohort": 2424,
-      "all_capacities_excluded_until_scope_reconciliation": true,
-      "reason_counts": {
-        "outside_2022_plus_ge1MW_service_cohort": 1919,
-        "aggregate_not_individual_installation": 9,
-        "service_or_disconnection_requires_review": 9,
-        "missing_or_overseas_location": 25,
-        "shared_commune_scope": 1544,
-        "repeated_name": 1471,
-        "existing_identity_candidate": 1098,
-        "unit_phase_or_numbered_name": 487,
-        "anonymous_or_missing_name": 1409,
-        "not_explicit_onshore": 46
-      },
       "source_id": "odre-wind-20260831-20261104",
-      "checksum": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
-      "source_bytes": 3615286,
-      "cohort_rows": 539,
-      "cohort_deferred": 505,
-      "outside_cohort": 1919,
-      "accepted_regions": {
-        "Hauts-de-France": 9,
-        "Centre-Val de Loire": 2,
-        "Nouvelle-Aquitaine": 8,
-        "Pays de la Loire": 5,
-        "Normandie": 5,
-        "Bourgogne-Franche-Comté": 3,
-        "Auvergne-Rhône-Alpes": 1,
-        "Occitanie": 1
-      }
-    },
-    "sweden_residual": {
-      "where": "OMRID IS NULL OR OMRID >= '2600'",
-      "layers": {
-        "2": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "3": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "5": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "6": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "7": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "8": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "9": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "10": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "11": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        },
-        "12": {
-          "count": 0,
-          "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
-        }
-      },
-      "conclusion": "Residual count zero across ten previously selected land layers. This completes that land-layer partition scan, not identity resolution or national all-technology census."
-    },
-    "uswtdb": {
-      "release": "v9.1 September 2026",
-      "attempts": [
+      "sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+      "national_rows": 2458,
+      "cohorts": [
         {
-          "url": "https://energy.usgs.gov/api/uswtdb/v1/turbines?limit=2",
-          "http_status": 403
+          "start": "2018-01-01",
+          "end": "2019-12-31",
+          "new_projects": 26,
+          "selected": 296
         },
         {
-          "url": "https://www.sciencebase.gov/catalog/item/6001e327d34e592d8671fae0?format=json",
-          "http_status": 403
-        },
-        {
-          "url": "https://operations.gis.data.mn.gov/api/publicdownload/download/522/uswtdb_V8_3_20260325.csv",
-          "http_status": 404
-        },
-        {
-          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-10/uswtdb_decommissioned_20260928.csv",
-          "http_status": 403
-        },
-        {
-          "url": "https://eta-publications.lbl.gov/sites/default/files/2026-10/uswtdb_v9_1_20260928_codebook.xlsx",
-          "http_status": 403
+          "start": "2016-01-01",
+          "end": "2017-12-31",
+          "new_projects": 26,
+          "selected": 311
         }
       ],
-      "classification": "HTTP download failures; no authentication requirement or reuse restriction inferred"
-    },
-    "oem": {
-      "added": 1,
-      "source_id": "ge-4mw-117-20261104",
-      "complete_table": "4.2 MW-117m; 4.23 MW nameplate preserved separately from model label",
-      "excluded": {
-        "url": "https://www.vestas.com/content/dam/vestas-com/global/en/brochures/onshore/4MW_Platform_Brochure.pdf.coredownload.inline.pdf",
-        "sha256": "649fa42a390a7ebea29b213382179933b39f402938c98bdb33ede95464be033f",
-        "bytes": 11534165,
-        "revision": "03/2024-EN; copyright 2026",
-        "reason": "Final page explicitly forbids reproduction/alteration/copying without permission; no specifications ingested from this document",
-        "access": "Original successfully downloaded; web reader content-length error was not an HTTP failure"
+      "selected": 607,
+      "new_projects": 52,
+      "deferred": 555,
+      "outside_combined_cohort": 1851,
+      "all_new_capacity_scopes_unresolved": true,
+      "new_regions": {
+        "Grand Est": 11,
+        "Hauts-de-France": 13,
+        "Bretagne": 5,
+        "Auvergne-Rhône-Alpes": 1,
+        "Pays de la Loire": 7,
+        "Normandie": 8,
+        "Centre-Val de Loire": 2,
+        "Occitanie": 2,
+        "Nouvelle-Aquitaine": 2,
+        "Bourgogne-Franche-Comté": 1
       }
-    }
+    },
+    "components": {
+      "complete_disclosures": 9,
+      "complete_almm_wtc_tables": 1,
+      "source_rows": 66,
+      "rows_with_exact_models": 23,
+      "rows_without_exact_model": 43,
+      "new_unique_models": 25,
+      "existing_turbines_enriched": 9,
+      "explicit_application_links": 28,
+      "new_manufacturers": [
+        "Dalian Huarui Special Transmission Equipment",
+        "ELIN Motoren",
+        "Eickhoff Wind Power",
+        "Envision Energy",
+        "Flender",
+        "Hunan Xiangtan Electric Power",
+        "LM Wind Power",
+        "Sinoma Wind Power Blade",
+        "Tianjin CRRC Wind Turbine Blade Engineering",
+        "Xi’an Chen’an Electric",
+        "ZF Wind Power"
+      ],
+      "source_ids": [
+        "mnre-component-0-20261104",
+        "mnre-component-1-20261104",
+        "mnre-component-2-20261104",
+        "mnre-component-3-20261104",
+        "mnre-component-4-20261104",
+        "mnre-component-5-20261104",
+        "mnre-component-6-20261104",
+        "mnre-component-7-20261104",
+        "mnre-component-8-20261104",
+        "mnre-almm-wtc-20260602"
+      ],
+      "next_disclosure_index": 9,
+      "next_disclosure_url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf",
+      "notes": [
+        "Two shared models reuse one identity across original and HYT140m configurations; not duplicate variants",
+        "First listed maker/group used for stable identity; manufacturing entities retained; no unproved corporate ownership or sole-manufacturer claim",
+        "43generic type rows held from exact equipment creation; their observations retained on nine turbine records",
+        "EF0953A3560kW mechanical rating distinct from3000/3150kW turbine electrical rating",
+        "LM model numbers do not supply unknown blade lengths; only HT24/PW28 lengths explicitly reported",
+        "No current certification or independent operational validation claimed"
+      ]
+    },
+    "independent_sources": {
+      "usgs": {
+        "url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
+        "http_status": 403,
+        "classification": "Official catalogue metadata download failure; no authentication/reuse inference"
+      },
+      "brazil_ibama": {
+        "url": "https://pamgia.ibama.gov.br/server/rest/services/21_SIGA_Geo/usina_eolica/FeatureServer/1?f=pjson",
+        "http_status": 200,
+        "bytes": 8111,
+        "sha256": "9585ed0254388c6e9942854acd1a001dc3eed149f3ea6c82351d74311707d026",
+        "query": "where=1=1&returnCountOnly=true&f=json",
+        "query_http_status": 200,
+        "query_arcgis_error_code": 500,
+        "classification": "Service query application error, not HTTP500, authentication or reuse restriction",
+        "scope": "IBAMA federal environmental licensing points with SEIprocess references; not ANEEL SIGA generating-unit registry. No capacity/lifecycle/EIC equivalence inferred. No records imported."
+      },
+      "pne": {
+        "url": "https://www.pnegroup.com/en/references/",
+        "http_status": 200,
+        "bytes": 402863,
+        "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
+        "all_project_rows": 358,
+        "wind_rows": 319,
+        "wind_by_country": {
+          "Poland": 7,
+          "Germany": 249,
+          "France": 28,
+          "Unknown": 2,
+          "Sweden": 7,
+          "Canada": 1,
+          "USA": 8,
+          "Great Britain": 5,
+          "Italy": 7,
+          "Romania": 3,
+          "South Africa": 1,
+          "Spain": 1
+        },
+        "decision": "Discovery/schema review only; no additions. Commissioning/date of sale share one column; missing countries and zeroWTG placeholders cannot establish operation or zero fleet. Next complete Spanish wind partition, then Polish wind partition, with existing-identity and sale/commissioning scope checks."
+      }
+    },
+    "exclusions": "No new reuse exclusions. Previous explicitly restricted OEM documents remain excluded."
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -251,91 +267,170 @@
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
   },
-  "source_review": "2026-11-04-0835-source-review.json",
-  "decision_ledger": "2026-11-04-0835-odre-decisions.jsonl",
-  "equipment_ledger": "2026-11-04-0835-almm-decisions.jsonl",
+  "source_review": "2026-11-04-0935-source-review.json",
+  "decision_ledger": "2026-11-04-0935-odre-2016-2017-decisions.jsonl",
+  "equipment_ledger": "2026-11-04-0935-component-decisions.jsonl",
   "sweden_decision_ledger": "2026-11-04-0635-sweden-decisions.jsonl",
   "merged_main_totals": {
-    "projects": 7810,
-    "equipment": 266,
+    "projects": 7862,
+    "equipment": 294,
     "turbines": 13633,
     "curves": 2,
-    "main_commit": "c21dd1713067f15adc8b12954c3b7147906a770e"
-  },
-  "publication_reconciliation": {
-    "previous_pr": 132,
-    "state": "merged externally during validation at2026-11-04T07:47:42Z",
-    "new_branch_from": "c21dd1713067f15adc8b12954c3b7147906a770e",
-    "result": "Batch checkpointed and cleanly cherry-picked onto current main; merged Data Center work and UTF8 repair retained"
+    "main_commit": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144"
   },
   "iteration": {
-    "batch": "2026-11-04-0835",
+    "batch": "2026-11-04-0935",
     "france": {
       "source_id": "odre-wind-20260831-20261104",
-      "original_sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+      "sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
       "national_rows": 2458,
-      "service_cohort": [
-        "2020-01-01",
-        "2021-12-31"
+      "cohorts": [
+        {
+          "start": "2018-01-01",
+          "end": "2019-12-31",
+          "new_projects": 26,
+          "selected": 296
+        },
+        {
+          "start": "2016-01-01",
+          "end": "2017-12-31",
+          "new_projects": 26,
+          "selected": 311
+        }
       ],
-      "minimum_installed_kw": 1000,
-      "selected": 238,
-      "new_projects": 18,
-      "deferred": 220,
-      "outside_cohort": 2220,
-      "prior_first20_reviewed": 20,
-      "prior_first20_still_deferred": 20,
-      "generic_name_quarantine": "Hangar at Marcheville; no defensible wind-farm name",
-      "all_new_capacity_scopes_unresolved": true
-    },
-    "india": {
-      "source_id": "mnre-almm-wind-20260820",
-      "selected_entries": 30,
-      "new_equipment": 27,
-      "substantive_enrichment": 1,
-      "deferred": 1,
-      "nested_option": 1,
-      "independent_type_certificate_verification": false,
-      "quarantines": [
-        "SG3.4-145/3.6 Vayona versus existing Siemens Gamesa identity",
-        "No raw certificate date automatically parsed because mixed day/month and month/day formats",
-        "GE135.5m regional hub observation not substituted for OEM135m; equivalence unresolved",
-        "No certificate-issuer identity invented; registry claims in extensions, certifications_json left absent",
-        "No named blade/gearbox converted into independent equipment without exact maker/spec evidence"
-      ],
-      "earlier_revision": {
-        "url": "https://www.indianwindpower.com/wp-content/uploads/2026/04/ALMM-Wind.pdf",
-        "revision": "As on2April2026;31entries",
-        "sha256": "f1e1cacc916251bc382eefbc91d2e525ff829fc2e0a7cdb743af0111a66c0545",
-        "decision": "Discovery/comparison only; current batch uses original August list, no mixed-revision rows"
+      "selected": 607,
+      "new_projects": 52,
+      "deferred": 555,
+      "outside_combined_cohort": 1851,
+      "all_new_capacity_scopes_unresolved": true,
+      "new_regions": {
+        "Grand Est": 11,
+        "Hauts-de-France": 13,
+        "Bretagne": 5,
+        "Auvergne-Rhône-Alpes": 1,
+        "Pays de la Loire": 7,
+        "Normandie": 8,
+        "Centre-Val de Loire": 2,
+        "Occitanie": 2,
+        "Nouvelle-Aquitaine": 2,
+        "Bourgogne-Franche-Comté": 1
       }
     },
-    "download_attempts": [
-      {
-        "url": "https://energy.usgs.gov/arcgis/rest/services/Hosted/uswtdbDyn/FeatureServer?f=pjson",
-        "http_status": 403
+    "components": {
+      "complete_disclosures": 9,
+      "complete_almm_wtc_tables": 1,
+      "source_rows": 66,
+      "rows_with_exact_models": 23,
+      "rows_without_exact_model": 43,
+      "new_unique_models": 25,
+      "existing_turbines_enriched": 9,
+      "explicit_application_links": 28,
+      "new_manufacturers": [
+        "Dalian Huarui Special Transmission Equipment",
+        "ELIN Motoren",
+        "Eickhoff Wind Power",
+        "Envision Energy",
+        "Flender",
+        "Hunan Xiangtan Electric Power",
+        "LM Wind Power",
+        "Sinoma Wind Power Blade",
+        "Tianjin CRRC Wind Turbine Blade Engineering",
+        "Xi’an Chen’an Electric",
+        "ZF Wind Power"
+      ],
+      "source_ids": [
+        "mnre-component-0-20261104",
+        "mnre-component-1-20261104",
+        "mnre-component-2-20261104",
+        "mnre-component-3-20261104",
+        "mnre-component-4-20261104",
+        "mnre-component-5-20261104",
+        "mnre-component-6-20261104",
+        "mnre-component-7-20261104",
+        "mnre-component-8-20261104",
+        "mnre-almm-wtc-20260602"
+      ],
+      "next_disclosure_index": 9,
+      "next_disclosure_url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf",
+      "notes": [
+        "Two shared models reuse one identity across original and HYT140m configurations; not duplicate variants",
+        "First listed maker/group used for stable identity; manufacturing entities retained; no unproved corporate ownership or sole-manufacturer claim",
+        "43generic type rows held from exact equipment creation; their observations retained on nine turbine records",
+        "EF0953A3560kW mechanical rating distinct from3000/3150kW turbine electrical rating",
+        "LM model numbers do not supply unknown blade lengths; only HT24/PW28 lengths explicitly reported",
+        "No current certification or independent operational validation claimed"
+      ]
+    },
+    "independent_sources": {
+      "usgs": {
+        "url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
+        "http_status": 403,
+        "classification": "Official catalogue metadata download failure; no authentication/reuse inference"
       },
-      {
-        "url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/11ec447d-698d-4ab8-977f-b424d5deee6a/download/siga-empreendimentos-geracao.csv",
-        "http_status": 503
+      "brazil_ibama": {
+        "url": "https://pamgia.ibama.gov.br/server/rest/services/21_SIGA_Geo/usina_eolica/FeatureServer/1?f=pjson",
+        "http_status": 200,
+        "bytes": 8111,
+        "sha256": "9585ed0254388c6e9942854acd1a001dc3eed149f3ea6c82351d74311707d026",
+        "query": "where=1=1&returnCountOnly=true&f=json",
+        "query_http_status": 200,
+        "query_arcgis_error_code": 500,
+        "classification": "Service query application error, not HTTP500, authentication or reuse restriction",
+        "scope": "IBAMA federal environmental licensing points with SEIprocess references; not ANEEL SIGA generating-unit registry. No capacity/lifecycle/EIC equivalence inferred. No records imported."
       },
-      {
-        "url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-        "http_status": 503
+      "pne": {
+        "url": "https://www.pnegroup.com/en/references/",
+        "http_status": 200,
+        "bytes": 402863,
+        "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
+        "all_project_rows": 358,
+        "wind_rows": 319,
+        "wind_by_country": {
+          "Poland": 7,
+          "Germany": 249,
+          "France": 28,
+          "Unknown": 2,
+          "Sweden": 7,
+          "Canada": 1,
+          "USA": 8,
+          "Great Britain": 5,
+          "Italy": 7,
+          "Romania": 3,
+          "South Africa": 1,
+          "Spain": 1
+        },
+        "decision": "Discovery/schema review only; no additions. Commissioning/date of sale share one column; missing countries and zeroWTG placeholders cannot establish operation or zero fleet. Next complete Spanish wind partition, then Polish wind partition, with existing-identity and sale/commissioning scope checks."
       }
-    ],
-    "download_classification": "HTTP download failures only; no authentication requirement or reuse restriction inferred",
-    "exclusions": "No new reuse exclusions. Previous restricted OEM documents remain excluded."
+    },
+    "exclusions": "No new reuse exclusions. Previous explicitly restricted OEM documents remain excluded."
   },
   "geographic_changes_this_run": {
     "project_countries": [
       "FRA"
     ],
     "new_project_countries": [],
-    "french_regions": 9,
-    "equipment_market": "India",
-    "new_manufacturers": 12,
+    "french_regions": 10,
+    "equipment_market": "India manufacturing/application disclosures; international component manufacturers",
+    "new_manufacturers": 11,
     "new_technologies": [],
     "project_technology": "onshore"
+  },
+  "snapshot_builds": "Two independent builds of seven files were byte-identical; typed Zstandard Parquet",
+  "decision_ledgers": [
+    "2026-11-04-0935-odre-2018-2019-decisions.jsonl",
+    "2026-11-04-0935-odre-2016-2017-decisions.jsonl"
+  ],
+  "previous_publication_reconciliation": {
+    "previous_pr": 132,
+    "state": "merged externally during validation at2026-11-04T07:47:42Z",
+    "new_branch_from": "c21dd1713067f15adc8b12954c3b7147906a770e",
+    "result": "Batch checkpointed and cleanly cherry-picked onto current main; merged Data Center work and UTF8 repair retained"
+  },
+  "publication_reconciliation": {
+    "previous_pr": 136,
+    "state": "Merged externally during publication preparation",
+    "new_branch_from": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
+    "result": "Completed batch checkpointed and cleanly cherry-picked; merged PV and Data Center changes preserved",
+    "update_policy": "New branch with expected-head fast-forward update; leave new PR open and unmerged"
   }
 }

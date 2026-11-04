@@ -35,6 +35,13 @@ print(projects.groupby(["status", "aggregation_role"]).size().unstack(fill_value
 print("Equipment categories (components are not turbines):")
 print(equipment.groupby(["manufacturer", "equipment_category"]).size())
 
+# Follow only disclosed applications; component power is not turbine power.
+by_id = {row["record_id"]: row for row in rows}
+print("Explicit component applications and their conditions (not deployed fleets):")
+for row in rows:
+    for link in json.loads(row.get("compatibility_json") or "[]"):
+        print(row["name"], "→", by_id[link["equipment_record_id"]]["name"], link["conditions"])
+
 # Regional regulatory entries retain raw certificate dates and restrictions.
 # Inclusion is not a current certificate or permission-to-operate conclusion.
 print("India ALMM observations: dated listing, not verified current eligibility")
@@ -255,6 +262,9 @@ if not ngc.empty:
     print("NGC gearbox envelopes; rated torque and peak torque remain distinct:")
     for _, component in ngc.iterrows():
         spec = json.loads(component.extensions_json)
+        if "rated_torque_range_kNm" not in spec:
+            print(component.model, "Torque and speed-ratio specifications unknown")
+            continue
         print(
             component.model,
             spec["function"],
