@@ -1,50 +1,52 @@
 {
-  "batch": "2026-11-04-1535",
+  "batch": "2026-11-04-1635",
   "validated_base": "b8dc106f7a854fb57c76146afd10fe080765006b",
+  "iteration_parent": "4d121d46ca247edfe07b38a1b0792fca1b94150f",
   "local": {
-    "pytest": "2406 passed;5 optional skips",
-    "focused": "49 reference/BOE tests passed",
-    "viewer": "16 passed",
-    "quality": "Ruff lint/format913files,ty,repository4015candidates,citations,whitespace passed",
-    "catalogue": "21922 records validated;21920 prior records preserved;2new;exact replay2records3decisions",
-    "capacity": "All six totals and included unknown counts unchanged;2additional scopes excluded",
-    "snapshots": "Two seven-file builds byte-identical;typed Zstandard Parquet",
-    "docs": "Strict Sphinx plot_gallery=0 passed;579HTMLpages links/assets passed",
-    "example": "Offline wind example passed",
-    "packages": "Three wheels and three sdists built"
+    "pytest": "2408 passed;5optional skips",
+    "viewer": "16passed",
+    "quality": "Ruff lint/format,ty,repository hygiene,citations,whitespace passed",
+    "catalogue": "21923validated;1newproject3equipmentenriched;all other21919records preserved",
+    "capacity": "Six capacity totals unchanged;new scope excluded",
+    "replay": "BOE record/two decisions and all41DNVrows replay exactly",
+    "snapshots": "Two builds;seven files byte-identical;typed Zstandard Parquet",
+    "docs": "Strict Sphinx plot_gallery=0 passed;581HTMLpages links/assets passed",
+    "packages": "Three wheels and three sdists built",
+    "example": "Offline Wind gallery passed"
   },
   "resolved_validation_failures": [
-    "Two BOE reference IDs were already used by BESS; preserved existing references and unioned used_by; full suite rerun passed"
+    "Ruff import ordering and collections.abc.Iterable corrected;final lint passed"
   ],
   "not_executed": [
     "Full gallery",
     "Interactive browser",
-    "Independent operational performance verification"
+    "Present certificate validity or independent operational verification"
   ],
   "remote_ci": {
+    "parent": "Python3.12,Python3.13,Documentation succeeded;deploy skipped",
     "this_batch": "Pending publication"
   },
   "snapshot_sha256": {
-    "sources.json": "289c7b94a940d40255b545c70ee2c43aa8ef36335b8ac4df3cf84640c0a5d77f",
+    "sources.json": "d84a293c2dffb688c1f2f551d3dd5389c35cdf27767f1acdc802841495ec901b",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "17719d26f8729833b56dac58772116e5a804296aaf4a75290ca9e5945d8f0c62",
-    "equipment.parquet": "4429d5eaa2b673c5f77f04219cdf97fcaab78b2a2ba4e8d8c6969ca304f3b6b8",
+    "manifest.json": "fae0c1ac40a40333f2df0eb4b892379339213ef897c2cdb55390a2110ffbe62d",
+    "equipment.parquet": "2e006ccad6ad9dd2c0ce5ffa5ac110198977cb3b9b2290b907ea23bbfeea26ba",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "0733ac44596ce17aa5aae3d75f9879823bd072d13711c30d36a311cbec268f9a"
+    "projects.parquet": "935577c7b020c31d4bd8049215d44ace4417f081d7644d260da9af8ad926da4c"
   },
   "log_sha256": {
-    "pytest-final.log": "9eedeff8996d73d9bcfd95d82b79deca0af6ab72f4651c7083007d8ad053761c",
-    "docs-final.log": "b8a7487cc0f9aa809991c12ff2a7883a179f3f4e742c09d838f84f1f5f1b086d",
-    "links-final.log": "41cc996c36c277bf1d12aff4fb90543990bb04fc93442e03bd4becd8038f14c4",
-    "packages-final.log": "58bda4b172e5810ebf891e3a03be18b139649436a68d1cd2594f58bcd667d46d",
-    "viewer.log": "2172a9cff1a9bf48f48b5e70592fb5cd1477bac3a2271005e0802295f1ba53c5",
+    "pytest.log": "3aad41c5539b58a72bb9c29be3b4f1fc25d2413b1feff1b33177db2dfdf8b2c4",
+    "docs.log": "9276fcde217b460d6f6704448fd414afc8b0d535c266fefea477ffd52c7e1e2e",
+    "links.log": "9c5076f86be2569c8c43f62d2d21bc49c95869de606656246a15a866a23e5bc4",
+    "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
     "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "format.log": "b43c790958885fbec1b3aed9dc475af58a6485aee95fec48567718e278a1fa9b",
+    "format.log": "cdb38cddbec1bd8b9800f215fca1dc2eaca28c1a6a35fa2d081458cf83844175",
     "ty.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "repository.log": "9d1977f07b78bf8ace9364cc0c249054fb3cad9669aa6a4d16daed00ec315e7a",
+    "viewer.log": "64f964419fd5caac276cd1aabbfde3a885d714d52175d49c423fb8fdd271effa",
+    "repository.log": "325aaf2f0be04002771e4f3d880827a642926897864b43e847efb5c3710f8c95",
     "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
-    "replay.log": "ebbbcb0dbccf1a5d97a37d73d6edcee296caaf21d13232b7a5f6aad49d1b10f6",
-    "gallery.log": "30fe044dcae8e8d7102868c63e03fdd7ee75bccb46847ad65f6f9a35cc950ce2"
+    "replay.log": "8753ac4d2378f16e4d105e155c2b5971aa797e931c69c419715546809d86fd9a",
+    "gallery.log": "0832d136a6e9c0158fb85bdee11813610ae5a5ef1d95cd32c06de6d9cefefcea"
   }
 }

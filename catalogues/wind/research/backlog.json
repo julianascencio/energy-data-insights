@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T14:36:18Z",
+  "updated_at": "2026-11-04T15:34:18Z",
   "branch": "research/wind-20261104-1535",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -165,7 +165,8 @@
         "TC-240121 Rev.2 original acquired; complete p6 gearbox pair reviewed; EF0953A enriched with drawing-qualified ratio, distinct NGC candidate held. Next pp4–5,7–10 exact component tables; retain p11 option conditions and historical certification scope. WE4500S-01/WE7000G supplier spec originals remain unresolved.",
         "TC-240121 Rev2 component sections pp5,7–10 complete; p6NGC exact gearbox added;5new1turbine enrichment. Remaining21 assembly/alias holds retained. Next exact Bonfiglioli JB00024563/JB00024827 drawing sheets; no 7T/TW alias inference.",
         "Exact Bonfiglioli JB00024563/JB00024827/7T07W searches returned only the already reviewed certificate; no new drawings. Keep21 assembly holds; next independent supplier WE4500S-01 and WE7000G originals.",
-        "WE4500S-01/WE7000G searches yield previously reviewed MNRE disclosures and secondary DNV mirrors only. Next official DNV certificate search/export for CC-DNV-SE-0074-09388 revision2; no current-validity inference from mirrors."
+        "WE4500S-01/WE7000G searches yield previously reviewed MNRE disclosures and secondary DNV mirrors only. Next official DNV certificate search/export for CC-DNV-SE-0074-09388 revision2; no current-validity inference from mirrors.",
+        "Acquire exact component certificates for rows28,64,65; row16 resolves presence of09388-2 in dated register but Delijia legal-entity crosswalk remains held. Then complete non-gearbox CC DNV-SE-0074 rows."
       ]
     },
     {
@@ -220,22 +221,32 @@
         "2026-10-28",
         "2026-10-29",
         "2026-10-30",
-        "2026-10-31"
+        "2026-10-31",
+        "2026-10-24"
       ],
       "next_dates": [
-        "2026-10-24"
+        "2026-10-17",
+        "2026-10-19"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "SeriesA October24 gap; SeriesB October20–24 and November2–4 not previously reviewed. Always discover same-day extra issues before completion. Reconcile Romeral PFot-ALM-043-EOL against historical fa061da8-87aa-5290-b330-fca561b67e83. Then permit dossiers and earlier ranked crosswalk tasks.",
-      "decision_ledger": "2026-11-04-1535-decisions.json",
+      "next_task": "Complete earlier October17/19 A/B partitions; El Almendro/Los Almendros I/II and Romeral exact permit crosswalks; no repeat of completed dates",
+      "decision_ledger": "2026-11-04-1635-decisions.json",
       "series_b_completed_dates": [
         "2026-10-26",
         "2026-10-27",
         "2026-10-28",
         "2026-10-29",
         "2026-10-30",
-        "2026-10-31"
+        "2026-10-31",
+        "2026-10-20",
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04"
       ]
     }
   ],

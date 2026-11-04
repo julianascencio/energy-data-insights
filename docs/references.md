@@ -7015,3 +7015,27 @@ Government of Spain (2026). **Los Pedreros hybrid public consultation**. [Source
 **Role:** data. Wind and hybrid boundaries retained in source registry.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_34151
+
+Government of Spain (2026). **El Almendro solar hybrid decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-34151)
+
+**Role:** data. Procedure and technology boundaries retained in wind evidence.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_34388
+
+Government of Spain (2026). **Ouroso public utility consultation**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-34388)
+
+**Role:** data. Procedure and technology boundaries retained in wind evidence.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### dnv_register_20260420
+
+DNV (2026). **Renewables Certification register, status20April2026**. [Source](https://www.dnv.com/publications/renewables-certification-list-of-valid-certificates/)
+
+**Role:** data. Dated register observations; not current certificate validity or independent operating performance.
+
+**Used by:** `catalogues/wind/sources.json`, `data-retrieval/src/energy_data_retrieval/wind_catalogue/dnv.py`.

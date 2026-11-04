@@ -343,3 +343,20 @@ consultation. Neither record enters capacity totals. Hybrid regulatory
 capacity, PV, battery and flywheel ratings remain separate. Romeral is held
 for reconciliation with its historical name candidate. These bounded results
 do not meet the 50-project/20-equipment research targets.
+
+### Dated DNV register observations
+
+The 2026-11-04-1635 batch reviews the complete `CC DNV-SE-0074` partition
+whose object descriptions mention gearboxes in DNV's 20 April 2026 workbook.
+Three existing exact gearbox identities receive dated register observations.
+Applicants remain distinct from manufacturers. Certificate, design-evaluation
+and manufacturing-evaluation statements are not interchangeable; the register
+is not evidence of present validity or independently validated performance.
+Unresolved identities, platform labels and oil statements remain in the ledger.
+The offline adapter checks headers, date types and duplicate certificate IDs.
+
+Ouroso's seven proposed 5,900 kW turbines yield a derived check of 41.3 MW.
+No reported total MW is supplied by the reviewed notice, so no capacity scalar
+is populated. The public-utility consultation does not establish construction
+permission. El Almendro's solar decision remains deferred for wind identity
+reconciliation. Both preceding records and capacity exclusions are preserved.

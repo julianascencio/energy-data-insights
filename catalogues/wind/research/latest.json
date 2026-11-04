@@ -1,6 +1,6 @@
 {
-  "batch": "2026-11-04-1535",
-  "updated_at": "2026-11-04T14:36:18Z",
+  "batch": "2026-11-04-1635",
+  "updated_at": "2026-11-04T15:34:18Z",
   "baseline_main": "b8dc106f7a854fb57c76146afd10fe080765006b",
   "branch": "research/wind-20261104-1535",
   "merged_wind_counts_at_baseline": {
@@ -10,11 +10,11 @@
     "curves": 2
   },
   "branch_totals": {
-    "projects": 7950,
+    "projects": 7951,
     "turbines": 13633,
     "equipment": 337,
     "curves": 2,
-    "non_group_projects": 7949,
+    "non_group_projects": 7950,
     "countries": 59,
     "manufacturers": [
       "ABB",
@@ -64,10 +64,10 @@
     ]
   },
   "changes_against_main": {
-    "new_projects": 2,
+    "new_projects": 3,
     "substantively_enriched_projects": 0,
     "new_equipment": 0,
-    "substantively_enriched_equipment": 0,
+    "substantively_enriched_equipment": 3,
     "new_turbines": 0,
     "new_curves": 0
   },
@@ -78,9 +78,9 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 3367,
+  "primary_evidence_project_records": 3368,
   "technology_counts": {
-    "onshore": 3212,
+    "onshore": 3213,
     "unknown": 4700,
     "offshore_unspecified": 32,
     "fixed_bottom_offshore": 2,
@@ -123,12 +123,12 @@
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
   "publication_base_main": "b8dc106f7a854fb57c76146afd10fe080765006b",
-  "iteration_base_head": "b8dc106f7a854fb57c76146afd10fe080765006b",
+  "iteration_base_head": "4d121d46ca247edfe07b38a1b0792fca1b94150f",
   "changes_this_run": {
-    "new_projects": 2,
+    "new_projects": 1,
     "substantively_enriched_projects": 0,
     "new_equipment": 0,
-    "substantively_enriched_equipment": 0,
+    "substantively_enriched_equipment": 3,
     "new_turbines": 0,
     "new_curves": 0
   },
@@ -139,76 +139,74 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "Two Spanish onshore wind identities; no new country",
-  "new_technology_coverage": "Hybrid scope-qualified wind proposal and existing-farm observation",
+  "new_geography": "Ouroso, Asturias; no new country",
+  "new_technology_coverage": "Onshore proposal and dated gearbox certificate metadata",
   "reviewed_this_run": {
-    "batch": "2026-11-04-1535",
-    "indexes": [
+    "batch": "2026-11-04-1635",
+    "boe_indexes": [
       {
-        "file": "index-26.html",
-        "sha256": "78a9622f366f5bb908af6fe1d5dd1e35b318392f28b388d0cc1e62473cf1bfbe",
-        "series_a": [],
-        "series_b": []
-      },
-      {
-        "file": "index-27.html",
-        "sha256": "d1952c81cb6d38a88d7cd5b6bf9d14574147df0fcbed7156adfb888861eea9f3",
-        "series_a": [],
-        "series_b": [
+        "url": "https://www.boe.es/boe/dias/2026/10/20/",
+        "sha256": "701b114cc97e313476ca82cf22c6ce22f35a68e612d15dae2e3e7b12739db039",
+        "selected": [
           {
-            "notice_id": "BOE-B-2026-35162",
-            "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Albacete, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa y Autorización Administrativa de Construcción para la instalación de almacenamiento \"BESS Los Pedreros\", que incluye un sistema de baterías de 25,08 MW y un volante de inercia de 0,4 MW, para su hibridación con el parque eólico existente \"Los Pedreros\", de 49,95 MW, en el término municipal de Fuente-Álamo, en la provincia de Albacete, y para su infraestructura de evacuación, conformando una instalación híbrida de 55 MW de potencia instalada."
+            "notice_id": "BOE-B-2026-34151",
+            "title": "Resolución de la Dirección General de Política Energética y Minas por la que se otorga a Naturgy Renovables S.L.U. autorización administrativa de construcción para el módulo fotovoltaico \"El Almendro\", de 36 MW de potencia instalada y su infraestructura de evacuación, en el término municipal de El Almendro, en la provincia de Huelva, para su hibridación con el parque eólico existente PE El Almendro, y se declara, en concreto, su utilidad pública."
           }
         ]
       },
       {
-        "file": "index-28-267.html",
-        "sha256": "dfcc362e94d656b66588474bd47b365a49ce544b92c5869f41e5e5db473dc2ed",
-        "series_a": [],
-        "series_b": []
+        "url": "https://www.boe.es/boe/dias/2026/10/21/",
+        "sha256": "510f4dca16ceaa2638199c84e024d0833b0df3951eb2bd42017c422b01c36a94",
+        "selected": []
       },
       {
-        "file": "index-28.html",
-        "sha256": "1cc55105616376939bc5ed75dcffeafa4a4a5e6a6fffdff4255d1d546bb86a12",
-        "series_a": [],
-        "series_b": []
-      },
-      {
-        "file": "index-29.html",
-        "sha256": "32a35a63e5bb69b811a34955d75f6189dd565b76779998f874571fa9d33b2cbe",
-        "series_a": [],
-        "series_b": [
+        "url": "https://www.boe.es/boe/dias/2026/10/22/",
+        "sha256": "9578fba5d30a97f1834b92ae0fca4656cd8fe9fb47bcb15b94c27e5111e38181",
+        "selected": [
           {
-            "notice_id": "BOE-B-2026-35371",
-            "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Cuenca, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa, Autorización Administrativa de Construcción, Declaración de Impacto Ambiental y declaración, en concreto, de Utilidad Pública del módulo de generación eólica Olmedilla, de 36 MW de potencia instalada, sito en los términos municipales de Alarcón, Pozorrubielos de la Mancha, Valhermoso de la Fuente, Motilla del Palancar, y Valverdejo en la provincia de Cuenca, para su hibridación con la planta fotovoltaica FV Olmedilla, de 42 MW de potencia instalada, y con el módulo de almacenamiento por baterías \"BESS Hibridación Olmedilla\", de 28,78 MW de potencia instalada, y su infraestructura de evacuación, conformando una instalación híbrida de 55 MW de potencia instalada."
-          },
-          {
-            "notice_id": "BOE-B-2026-35372",
-            "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Cuenca, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa, Autorización Administrativa de Construcción, Declaración de Impacto Ambiental y declaración, en concreto, de Utilidad Pública del módulo de generación eólica Romeral, de 36 MW de potencia instalada, sito en los términos municipales de Olmedilla de Alarcón y Barchín del Hoyo en la provincia de Cuenca, para su hibridación con la planta fotovoltaica FV Romeral, de 42 MW de potencia instalada, y con el módulo de almacenamiento por baterías \"BESS Romeral\", de 28,78 MW de potencia instalada, y su infraestructura de evacuación, conformando una instalación híbrida de 55 MW de potencia instalada."
+            "notice_id": "BOE-B-2026-34388",
+            "title": "Anuncio de la Consejería de Ciencia, Industria y Empleo del Principado de Asturias sobre la información pública relativa a solicitud de declaración de utilidad pública de Parque Eólico. Expte.: AUTO/2022/2977 (PE-72-DUP)."
           }
         ]
       },
       {
-        "file": "index-30.html",
-        "sha256": "47bd1958f29abe92362886fbeacda771e08e49084047c7d3ec06c817dfb8b849",
-        "series_a": [],
-        "series_b": []
+        "url": "https://www.boe.es/boe/dias/2026/10/23/",
+        "sha256": "d756a526a9bf9f06afe15d870df83bca80dd062e8f22f9af3084144c55a413bc",
+        "selected": []
       },
       {
-        "file": "index-31.html",
-        "sha256": "124ba03ae25e356bc099270e561916bf259e12b08348a672352f31cc6dc90f69",
-        "series_a": [],
-        "series_b": []
+        "url": "https://www.boe.es/boe/dias/2026/10/24/",
+        "sha256": "455a7a5bbf00093b44719fcc797338bdaa25f92e68f0880291529ca5f3b5932a",
+        "selected": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/11/02/",
+        "sha256": "40fd03758199c21fdb909abf79b93bb4ab3bcc851aa451f0a3ac3c83ad98cc48",
+        "selected": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/11/03/",
+        "sha256": "76894295fbf40f86c435d85aeba8d75a94f2e9ab0f8788d8a06059c223c4c5d2",
+        "selected": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/11/04/",
+        "sha256": "eb4b0ee4ca79cb8163db0178411eb4413540020af1293c5520224846f4a19290",
+        "selected": []
       }
     ],
-    "scope": "Complete October26–31 SeriesA/B wind-title partitions, both October28 issues267/268; no national census claim",
-    "originals": {
-      "BOE-B-2026-35162": "28685fb751097747a95113a0ce3fcd95ece54dac0d061f143bdca54cca6f2cad",
-      "BOE-B-2026-35371": "963e2994881ab215ad14d8ca663a73c78b878e708bee2bf5b57c672f7d91aa67",
-      "BOE-B-2026-35372": "adce59246dd4b0dd560b456a485f00272308561f123ae53944c5fdf5a05a7ad4"
+    "dnv_partition": {
+      "scheme": "CC DNV-SE-0074",
+      "filter": "object contains gearbox case-insensitively",
+      "sheet": "Status 2026-04-20",
+      "selected_rows": 41,
+      "enriched": 3,
+      "deferred": 38,
+      "full_workbook_rows": 5474,
+      "suspended_sheet_review": "Separate sheet retained in original; not used to assert current validity",
+      "next_task": "Acquire exact component certificates for rows28,64,65; row16 resolves presence of09388-2 in dated register but Delijia legal-entity crosswalk remains held. Then complete non-gearbox CC DNV-SE-0074 rows."
     },
-    "equipment": "Official DNV exact certificate search found no original; secondary mirrors and previously processed MNRE disclosures excluded from new model counts",
-    "targets_met": false
+    "target_met": false
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -220,8 +218,8 @@
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
   },
-  "source_review": "2026-11-04-1535-source-review.json",
-  "decision_ledger": "2026-11-04-1535-decisions.json",
+  "source_review": "2026-11-04-1635-source-review.json",
+  "decision_ledger": "2026-11-04-1635-decisions.json",
   "sweden_decision_ledger": "2026-11-04-0635-sweden-decisions.jsonl",
   "merged_main_totals": {
     "projects": 7948,
@@ -231,73 +229,71 @@
     "main_commit": "b8dc106f7a854fb57c76146afd10fe080765006b"
   },
   "iteration": {
-    "batch": "2026-11-04-1535",
-    "indexes": [
+    "batch": "2026-11-04-1635",
+    "boe_indexes": [
       {
-        "file": "index-26.html",
-        "sha256": "78a9622f366f5bb908af6fe1d5dd1e35b318392f28b388d0cc1e62473cf1bfbe",
-        "series_a": [],
-        "series_b": []
-      },
-      {
-        "file": "index-27.html",
-        "sha256": "d1952c81cb6d38a88d7cd5b6bf9d14574147df0fcbed7156adfb888861eea9f3",
-        "series_a": [],
-        "series_b": [
+        "url": "https://www.boe.es/boe/dias/2026/10/20/",
+        "sha256": "701b114cc97e313476ca82cf22c6ce22f35a68e612d15dae2e3e7b12739db039",
+        "selected": [
           {
-            "notice_id": "BOE-B-2026-35162",
-            "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Albacete, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa y Autorización Administrativa de Construcción para la instalación de almacenamiento \"BESS Los Pedreros\", que incluye un sistema de baterías de 25,08 MW y un volante de inercia de 0,4 MW, para su hibridación con el parque eólico existente \"Los Pedreros\", de 49,95 MW, en el término municipal de Fuente-Álamo, en la provincia de Albacete, y para su infraestructura de evacuación, conformando una instalación híbrida de 55 MW de potencia instalada."
+            "notice_id": "BOE-B-2026-34151",
+            "title": "Resolución de la Dirección General de Política Energética y Minas por la que se otorga a Naturgy Renovables S.L.U. autorización administrativa de construcción para el módulo fotovoltaico \"El Almendro\", de 36 MW de potencia instalada y su infraestructura de evacuación, en el término municipal de El Almendro, en la provincia de Huelva, para su hibridación con el parque eólico existente PE El Almendro, y se declara, en concreto, su utilidad pública."
           }
         ]
       },
       {
-        "file": "index-28-267.html",
-        "sha256": "dfcc362e94d656b66588474bd47b365a49ce544b92c5869f41e5e5db473dc2ed",
-        "series_a": [],
-        "series_b": []
+        "url": "https://www.boe.es/boe/dias/2026/10/21/",
+        "sha256": "510f4dca16ceaa2638199c84e024d0833b0df3951eb2bd42017c422b01c36a94",
+        "selected": []
       },
       {
-        "file": "index-28.html",
-        "sha256": "1cc55105616376939bc5ed75dcffeafa4a4a5e6a6fffdff4255d1d546bb86a12",
-        "series_a": [],
-        "series_b": []
-      },
-      {
-        "file": "index-29.html",
-        "sha256": "32a35a63e5bb69b811a34955d75f6189dd565b76779998f874571fa9d33b2cbe",
-        "series_a": [],
-        "series_b": [
+        "url": "https://www.boe.es/boe/dias/2026/10/22/",
+        "sha256": "9578fba5d30a97f1834b92ae0fca4656cd8fe9fb47bcb15b94c27e5111e38181",
+        "selected": [
           {
-            "notice_id": "BOE-B-2026-35371",
-            "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Cuenca, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa, Autorización Administrativa de Construcción, Declaración de Impacto Ambiental y declaración, en concreto, de Utilidad Pública del módulo de generación eólica Olmedilla, de 36 MW de potencia instalada, sito en los términos municipales de Alarcón, Pozorrubielos de la Mancha, Valhermoso de la Fuente, Motilla del Palancar, y Valverdejo en la provincia de Cuenca, para su hibridación con la planta fotovoltaica FV Olmedilla, de 42 MW de potencia instalada, y con el módulo de almacenamiento por baterías \"BESS Hibridación Olmedilla\", de 28,78 MW de potencia instalada, y su infraestructura de evacuación, conformando una instalación híbrida de 55 MW de potencia instalada."
-          },
-          {
-            "notice_id": "BOE-B-2026-35372",
-            "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Cuenca, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa, Autorización Administrativa de Construcción, Declaración de Impacto Ambiental y declaración, en concreto, de Utilidad Pública del módulo de generación eólica Romeral, de 36 MW de potencia instalada, sito en los términos municipales de Olmedilla de Alarcón y Barchín del Hoyo en la provincia de Cuenca, para su hibridación con la planta fotovoltaica FV Romeral, de 42 MW de potencia instalada, y con el módulo de almacenamiento por baterías \"BESS Romeral\", de 28,78 MW de potencia instalada, y su infraestructura de evacuación, conformando una instalación híbrida de 55 MW de potencia instalada."
+            "notice_id": "BOE-B-2026-34388",
+            "title": "Anuncio de la Consejería de Ciencia, Industria y Empleo del Principado de Asturias sobre la información pública relativa a solicitud de declaración de utilidad pública de Parque Eólico. Expte.: AUTO/2022/2977 (PE-72-DUP)."
           }
         ]
       },
       {
-        "file": "index-30.html",
-        "sha256": "47bd1958f29abe92362886fbeacda771e08e49084047c7d3ec06c817dfb8b849",
-        "series_a": [],
-        "series_b": []
+        "url": "https://www.boe.es/boe/dias/2026/10/23/",
+        "sha256": "d756a526a9bf9f06afe15d870df83bca80dd062e8f22f9af3084144c55a413bc",
+        "selected": []
       },
       {
-        "file": "index-31.html",
-        "sha256": "124ba03ae25e356bc099270e561916bf259e12b08348a672352f31cc6dc90f69",
-        "series_a": [],
-        "series_b": []
+        "url": "https://www.boe.es/boe/dias/2026/10/24/",
+        "sha256": "455a7a5bbf00093b44719fcc797338bdaa25f92e68f0880291529ca5f3b5932a",
+        "selected": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/11/02/",
+        "sha256": "40fd03758199c21fdb909abf79b93bb4ab3bcc851aa451f0a3ac3c83ad98cc48",
+        "selected": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/11/03/",
+        "sha256": "76894295fbf40f86c435d85aeba8d75a94f2e9ab0f8788d8a06059c223c4c5d2",
+        "selected": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/11/04/",
+        "sha256": "eb4b0ee4ca79cb8163db0178411eb4413540020af1293c5520224846f4a19290",
+        "selected": []
       }
     ],
-    "scope": "Complete October26–31 SeriesA/B wind-title partitions, both October28 issues267/268; no national census claim",
-    "originals": {
-      "BOE-B-2026-35162": "28685fb751097747a95113a0ce3fcd95ece54dac0d061f143bdca54cca6f2cad",
-      "BOE-B-2026-35371": "963e2994881ab215ad14d8ca663a73c78b878e708bee2bf5b57c672f7d91aa67",
-      "BOE-B-2026-35372": "adce59246dd4b0dd560b456a485f00272308561f123ae53944c5fdf5a05a7ad4"
+    "dnv_partition": {
+      "scheme": "CC DNV-SE-0074",
+      "filter": "object contains gearbox case-insensitively",
+      "sheet": "Status 2026-04-20",
+      "selected_rows": 41,
+      "enriched": 3,
+      "deferred": 38,
+      "full_workbook_rows": 5474,
+      "suspended_sheet_review": "Separate sheet retained in original; not used to assert current validity",
+      "next_task": "Acquire exact component certificates for rows28,64,65; row16 resolves presence of09388-2 in dated register but Delijia legal-entity crosswalk remains held. Then complete non-gearbox CC DNV-SE-0074 rows."
     },
-    "equipment": "Official DNV exact certificate search found no original; secondary mirrors and previously processed MNRE disclosures excluded from new model counts",
-    "targets_met": false
+    "target_met": false
   },
   "geographic_changes_this_run": {
     "new_project_countries": [],
@@ -305,7 +301,8 @@
   },
   "snapshot_builds": "Two independent builds of seven files were byte-identical; typed Zstandard Parquet",
   "decision_ledgers": [
-    "2026-11-04-1535-decisions.json"
+    "2026-11-04-1635-decisions.json",
+    "2026-11-04-1635-dnv-decisions.json"
   ],
   "previous_publication_reconciliation": {
     "previous_pr": 132,
