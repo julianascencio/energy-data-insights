@@ -260,3 +260,21 @@ def test_legacy_resistor_observations_do_not_promote_current_claims(catalogue):
     assert legacy["mass_kg"] == 31.5
     assert r.get("mass_kg") is None
     assert legacy["dimension_unit"] is None
+
+
+def test_e82_base_options_do_not_become_scalar_or_new_mode_claims(catalogue):
+    rows, _ = catalogue
+    matching = [r for r in rows if r.get("model") == "E-82 E2"]
+    assert len(matching) == 1
+    row = matching[0]
+    assert row.get("rated_power_kw") is None
+    assert row.get("frequency_hz") is None
+    assert row.get("sound_power_db_a") is None
+    spec = json.loads(row["extensions_json"])["datasheet_201908"]
+    assert spec["nominal_power_options_kw"] == [2000, 2300]
+    assert spec["grid_frequency_options_hz"] == [50, 60]
+    assert row["temperature_min_c"] == -10  # normal operation, not extreme -20
+    assert spec["extreme_temperature_c"] == [-20, 50]
+    mode = json.loads(row["operating_modes_json"])["yield_optimized"]
+    assert "unspecified" in mode["rated_power_increase"]
+    assert row["created_at"] == "2026-11-03T12:45:00Z"

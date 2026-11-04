@@ -6639,3 +6639,11 @@ Bonfiglioli Vectron (n.d.). **Braking Resistors**. [Source](https://www.bonfigli
 **Role:** data source. COD.VEC501R0 physical pp2,4 complete11type tables. Publication date unknown. Legacy observations retained separately from current ACU catalogue; dimension units unspecified.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### enercon_e82_e2_201908
+
+ENERCON (2019). **Technical data E-82 E2**. [Source](https://assets-global.website-files.com/64c38ca9b1a2e59bd5b7d64a/65685f63f40d9a2bf64b4e59_ENERCON%20E-82%20EP2%20E2%20en.pdf)
+
+**Role:** data source. 08/2019 single-page OEM table. Nominal and hub-height options retained; annual yield graph not ingested as power curve.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

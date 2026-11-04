@@ -115,3 +115,30 @@ def test_missing_area_geometry_remains_unknown():
     rows, _ = stage(data)
     assert rows[0].get("boundary_geojson") is None
     assert rows[0]["aggregation_role"] == "unresolved"
+
+
+def test_duplicate_across_parents_quarantines_both_complete_inventories():
+    from energy_data_retrieval.wind_catalogue.sweden import quarantine_repeated_turbines
+
+    data = inputs()
+    other_area = deepcopy(data["areas"][0])
+    other_area["properties"]["OMRID"] = "OTHER"
+    duplicate = deepcopy(data["turbines"][0])
+    duplicate["properties"]["OMRID"] = "OTHER"
+    data["areas"].append(other_area)
+    data["turbines"].append(duplicate)
+    before = deepcopy(data)
+    areas, turbines, held = quarantine_repeated_turbines(data["areas"], data["turbines"])
+    assert areas == turbines == []
+    assert len(held) == 5  # both parents and all children, including nonduplicate child
+    assert data == before
+    assert [x["feature"] for x in held] == data["areas"] + data["turbines"]
+
+
+def test_clean_inventory_quarantine_is_lossless():
+    from energy_data_retrieval.wind_catalogue.sweden import quarantine_repeated_turbines
+
+    data = inputs()
+    areas, turbines, held = quarantine_repeated_turbines(data["areas"], data["turbines"])
+    assert areas == data["areas"] and turbines == data["turbines"]
+    assert not held

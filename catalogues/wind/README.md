@@ -3,10 +3,10 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 7,526 project records (7,525 non-group records),
-264 exact equipment records, 9,336 registry turbine records and two original numerical
+The proposed branch contains 7,582 project records (7,581 non-group records),
+264 exact equipment records, 10,264 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
-Merged main at `7af547f9` contains 6,713 projects, 202 equipment records and 5,745 turbines
+Merged main at `1bc12f80` contains 7,526 projects, 264 equipment records and 9,336 turbines
 and two curves. These are catalogue counts, not an operating census.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
@@ -157,3 +157,14 @@ mass, terminal and original drawing observations. Current-revision claims are
 not inferred. The 103 German groups and 47 Swedish areas held for identity
 review remain in decision ledgers. All new project scopes stay excluded from
 capacity totals; all previous values and creation timestamps are preserved.
+
+
+## Gävleborg and offshore identity screening
+
+The 4 November 02:35 increment adds 56 Gävleborg project areas and 928 linked
+turbines from all 88 areas and 2,124 turbine observations. The remaining 32
+areas/1,196 observations are held for identity/scope review. All 1,813 German EEZ
+units were screened across 48 name groups; aliases and sub-array labels prevent
+automatic farm additions. The existing E-82 E2 gains revision-qualified 08/2019
+base-model specifications. Two restricted Bonfiglioli manuals are excluded.
+No new project enters capacity totals; all prior specifications are preserved.

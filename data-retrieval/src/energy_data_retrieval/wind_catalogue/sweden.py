@@ -33,6 +33,35 @@ def features(
     return document["features"]
 
 
+def quarantine_repeated_turbines(
+    areas: list[dict[str, Any]], turbines: list[dict[str, Any]]
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+    """Hold every parent touched by a repeated turbine ID, retaining source rows.
+
+    Even identical repeated rows need source-layer reconciliation. Removing just
+    one copy could silently misstate a parent's inventory or lifecycle mix.
+    Missing IDs remain errors for ``stage_partition``; inputs are not mutated.
+    """
+    counts = Counter(f["properties"].get("VERKID") for f in turbines)
+    affected = {
+        f["properties"]["OMRID"] for f in turbines if counts[f["properties"].get("VERKID")] > 1
+    }
+    held = [
+        {
+            "decision": "deferred",
+            "reason": "Repeated turbine registry ID; entire parent scope quarantined",
+            "feature": f,
+        }
+        for f in areas + turbines
+        if f["properties"]["OMRID"] in affected
+    ]
+    return (
+        [f for f in areas if f["properties"]["OMRID"] not in affected],
+        [f for f in turbines if f["properties"]["OMRID"] not in affected],
+        held,
+    )
+
+
 def _label(value: Any) -> str | None:
     text = (value or "").strip()
     return text if text and text != "-" else None
@@ -351,6 +380,11 @@ def main() -> None:
     parser.add_argument("--timestamp", required=True, help="UTC retrieval/verification timestamp")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--ledger", type=Path, required=True)
+    parser.add_argument(
+        "--quarantine-output",
+        type=Path,
+        help="Optionally retain duplicate-ID parent scopes here before staging clean areas",
+    )
     args = parser.parse_args()
     areas, turbines = [], []
     for layer in (2, 3, 5, 6, 7, 8, 9, 10, 11, 12):
@@ -358,6 +392,10 @@ def main() -> None:
         for feature in selected:
             feature["_layer"] = layer
         (areas if layer in (2, 3) else turbines).extend(selected)
+    if args.quarantine_output is not None:
+        areas, turbines, held = quarantine_repeated_turbines(areas, turbines)
+        with args.quarantine_output.open("x") as stream:
+            stream.writelines(canonical_json(row) + "\n" for row in held)
     rows, ledger = stage_partition(
         areas,
         turbines,
