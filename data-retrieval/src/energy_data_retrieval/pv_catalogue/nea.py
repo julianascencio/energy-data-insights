@@ -62,7 +62,15 @@ def read_nea_pv_registrations(content: bytes, *, sha256: str) -> list[dict[str, 
         if len(cells) != 5:
             raise ValueError("Unexpected/private columns or merged cells")
         sequence, code, name, power, locality = cells
-        if sequence != str(index) or not re.fullmatch(r"PPC\d{13}[A-Z0-9]", code) or code in seen:
+        # September 2026 includes an explicitly printed overseas LA code. Keep
+        # this narrow observed form; neither its letters nor the locality field
+        # establish the generating site's country (the notice can list an office).
+        overseas = bool(re.fullmatch(r"PPC\d{8}LA\d{3}[A-Z0-9]", code))
+        if (
+            sequence != str(index)
+            or not (re.fullmatch(r"PPC\d{13}[A-Z0-9]", code) or overseas)
+            or code in seen
+        ):
             raise ValueError("Invalid, duplicate or non-centralized-PV registry code")
         if not name or not locality or not re.fullmatch(r"\d+(?:\.\d+)?", power):
             raise ValueError("Missing identity or ambiguous capacity")
@@ -82,6 +90,11 @@ def read_nea_pv_registrations(content: bytes, *, sha256: str) -> list[dict[str, 
                     "Registration does not establish construction, commissioning or operation",
                     "Reconcile project codes, local names and phases before canonical upsert",
                     "Do not derive dates or coordinates from the registry code or locality",
+                    *(
+                        ["Overseas code: independently verify generating-site country and scope"]
+                        if overseas
+                        else []
+                    ),
                 ],
             }
         )

@@ -64,3 +64,16 @@ def test_unreviewed_schema_identity_or_power_rejected(options):
 def test_checksum_before_parsing():
     with pytest.raises(ValueError, match="checksum"):
         read_nea_pv_registrations(b"invalid", sha256="0" * 64)
+
+
+def test_observed_overseas_code_remains_review_candidate():
+    row = read(document(codes=["PPC24120000LA001U"]))[0]
+    assert row["registry_code"] == "PPC24120000LA001U"
+    assert "country_code" not in row
+    assert "Overseas code" in row["review_flags"][-1]
+
+
+@pytest.mark.parametrize("code", ["PPC24120000XX001U", "PPC24120000LA01U", "PPC24120000LA00!U"])
+def test_unobserved_or_malformed_overseas_code_rejected(code):
+    with pytest.raises(ValueError, match="registry code"):
+        read(document(codes=[code]))

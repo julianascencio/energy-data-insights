@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T14:19:37.633039+00:00",
+  "updated_at": "2026-11-04T15:24:45.243250+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "Completed15 exact OEM models across three tables,4 existing project enrichments,127 French registry rows reviewed, and a tested23-row Chinese centralizedPV staging adapter. No Chinese candidate claimed as accepted.",
-  "next_highest_value_source": "NEA August2026 PPC projectcodes: independently reconcile native names/localities and GEM phases before canonical import, startingPPC2501340322001F thenPPC25013411030011. No repeat full download while checksum/release unchanged.",
+  "selection_note": "Reviewed141Chinese centralized-PV registrations across four monthly partitions:19existingprojects enriched,122held. Added22exactStatconinverters and1AxeStructtracker;2newOEMs. No Chinese new project, automaticfuzzymerge or AC/DC/lifecycle replacement.",
+  "next_highest_value_source": "NEA July2026 PPC2406340421001Z: independently reconcile Huaineng Fengtai Dingji mine-subsidence phase-II243.2MW against GEM phase/capacity evidence; then June2026 PPC24063417020018. All141reviewed rows/cursors retained; no unchanged monthly redownload.",
   "sources": [
     {
       "id": "uk_repd",
@@ -162,12 +162,13 @@
       "entity": "projects",
       "source_url": "https://www.nea.gov.cn/20260923/aaadb598d4cc4c0a92585bfd26c8728e/c.html",
       "version_or_date": "2026-08 new registration batch, notice 2026-09-23",
-      "licence_assessment": "Central NEA website linked footer permits reproduction with attribution; no document/layout/images redistributed; no assumption from other agencies/subsites",
+      "licence_assessment": "Central NEA linked footer permits reproduction with source attribution; no DOCX/layout/images redistributed; source-specific assessment retained",
       "access_assessment": "Official Chinese-language notice identified; attachment not downloaded",
       "estimated_useful_yield": {
-        "staged": 23,
-        "accepted": 0,
-        "future_verified_yield": null
+        "reviewed": 141,
+        "accepted_enrichments": 19,
+        "missing_installed_MW_fields": 6,
+        "additional_unresolved_yield": null
       },
       "fields_offered": [
         "project names",
@@ -175,30 +176,74 @@
         "province",
         "registry information"
       ],
-      "last_attempt": "2026-11-04T14:19:37.633039+00:00",
-      "result": "23explicit centralizedPV entries stage successfully;29wind and6biomass entries excluded. No canonical Chinese project accepted; identity/phase review pending.",
-      "retry_condition": "Check current monthly index/ETag; reuse unchanged capture. Independently resolve codes and whole-project/phase boundaries before acceptance.",
-      "next_action": "NEA August2026 PPC projectcodes: independently reconcile native names/localities and GEM phases before canonical import, startingPPC2501340322001F thenPPC25013411030011. No repeat full download while checksum/release unchanged.",
+      "last_attempt": "2026-11-04T15:24:45.243250+00:00",
+      "result": "Four monthly centralized-PV cohorts reviewed;19existingprojects gain registry-code/phase context and6missing unspecified installed-MW values.122held for identity/scope, occupied context or capacity conflicts. Overseas Lao project with Chinese listed locality held; no country inference.",
+      "retry_condition": "Reuse pinned captures; independent native-name/phase evidence for held rows. Check current index/ETag at next monthly due check, not hourly full downloads.",
+      "next_action": "NEA July2026 PPC2406340421001Z: independently reconcile Huaineng Fengtai Dingji mine-subsidence phase-II243.2MW against GEM phase/capacity evidence; then June2026 PPC24063417020018. All141reviewed rows/cursors retained; no unchanged monthly redownload.",
       "priority": 4,
       "processed_cursor": {
-        "month": "2026-08",
-        "parsed_PV_rows": 23,
-        "accepted_projects": 0,
-        "held_pending_identity": 23,
-        "next_code": "PPC2501340322001F",
-        "review_file": "20261104T1400_nea_review.json"
+        "cohorts": {
+          "2026-06": {
+            "reviewed": 36,
+            "enriched": 2,
+            "endpoint": "https://www.nea.gov.cn/20260720/f978dbe5fcbc4d8085a3909410b9366e/20260720f978dbe5fcbc4d8085a3909410b9366e_056a306750566f49c6a83290fe8476b6c1.docx",
+            "format": "DOCX centralized-PV five-public-column table",
+            "last_retrieval": "2026-11-04T15:20:22.763923+00:00",
+            "sha256": "f68d9246f21488820f311aa5426f5fe8e44deadad6bf70949a500b357cdb1122",
+            "etag": null,
+            "next_due_check": "2026-11-05T15:00:00Z",
+            "rejected": 0
+          },
+          "2026-07": {
+            "reviewed": 29,
+            "enriched": 3,
+            "endpoint": "https://www.nea.gov.cn/20260904/324fdc3e4908431392b82d19ab10de6b/20260904324fdc3e4908431392b82d19ab10de6b_42bd03ae02fada44ae9f4a1bba5cbe97fe.docx",
+            "format": "DOCX centralized-PV five-public-column table",
+            "last_retrieval": "2026-11-04T15:20:23.450792+00:00",
+            "sha256": "b68e82ecb4e6c10614edeb996bffc88ed234c6175e990cad3ae283ee4515c3c9",
+            "etag": null,
+            "next_due_check": "2026-11-05T15:00:00Z",
+            "rejected": 0
+          },
+          "2026-08": {
+            "reviewed": 23,
+            "enriched": 6,
+            "capture_reused_from": "20261104T1400",
+            "endpoint": "https://www.nea.gov.cn/20260923/aaadb598d4cc4c0a92585bfd26c8728e/20260923aaadb598d4cc4c0a92585bfd26c8728e_089a102b8c69e348f38fb327eaf4ba0602.docx",
+            "format": "DOCX centralized-PV five-public-column table",
+            "sha256": "abd37f290cae346cebd479e5d5ad99e99d0af1d6b859a89601f6b915d0a5b324",
+            "rejected": 0
+          },
+          "2026-09": {
+            "reviewed": 53,
+            "enriched": 8,
+            "endpoint": "https://www.nea.gov.cn/20261102/567b561e1eb846c3910b6efeafa55f5e/20261102567b561e1eb846c3910b6efeafa55f5e_53d7ea9781c78243c68ca69e8497e4b250.docx",
+            "format": "DOCX centralized-PV five-public-column table",
+            "last_retrieval": "2026-11-04T15:09:17.132072+00:00",
+            "sha256": "69be5438480a9b7f1ea172bae2774c6bfbe89dd05800106fcd337ea26da5845f",
+            "etag": null,
+            "next_due_check": "2026-11-05T15:00:00Z",
+            "rejected": 0
+          }
+        },
+        "total_reviewed": 141,
+        "total_enriched": 19,
+        "held": 122,
+        "new_projects": 0,
+        "next_review_code": "PPC2406340421001Z",
+        "review_file": "20261104T1500_nea_review.json"
       },
       "catalogue_projects_as_of_20261103": 12699,
-      "last_retrieval": "2026-11-04T14:15:54.722221+00:00",
-      "endpoint": "https://www.nea.gov.cn/20260923/aaadb598d4cc4c0a92585bfd26c8728e/20260923aaadb598d4cc4c0a92585bfd26c8728e_089a102b8c69e348f38fb327eaf4ba0602.docx",
-      "format": "DOCX five-public-column tables, bound/checksummed XML staging",
-      "publication_cadence": "Monthly registration notices; avoid hourly full downloads",
-      "last_release": "August2026 registrations, notice issued18September, URL23September2026",
-      "sha256": "abd37f290cae346cebd479e5d5ad99e99d0af1d6b859a89601f6b915d0a5b324",
-      "etag": "\"6abb7503-2adb05\"",
+      "last_retrieval": "2026-11-04T15:09:17.132072+00:00",
+      "endpoint": "https://www.nea.gov.cn/20261102/567b561e1eb846c3910b6efeafa55f5e/c.html",
+      "format": "Checksum-pinned five-public-column DOCX centralized-PV tables",
+      "publication_cadence": "Monthly notices; do not poll full attachments hourly",
+      "last_release": "September2026 registrations; notice2November2026",
+      "sha256": "69be5438480a9b7f1ea172bae2774c6bfbe89dd05800106fcd337ea26da5845f",
+      "etag": null,
       "licence_url": "https://www.nea.gov.cn/2017/201708bottom.htm",
-      "mapping": "pv_catalogue.nea.read_nea_pv_registrations; candidate-only, no canonical records or status/AC/DC/date inference",
-      "next_due_check": "2026-11-05T14:00:00Z"
+      "mapping": "pv_catalogue.nea.read_nea_pv_registrations stages only. Nineteen separately reviewed exact native-name/county/phase crosswalks upsert registration context; no new projects or AC/DC/status derivation.",
+      "next_due_check": "2026-11-05T15:00:00Z"
     },
     {
       "id": "india_cea",
@@ -9704,6 +9749,166 @@
       "retry_condition": "New source/identity/rights evidence; avoid unchanged full downloads",
       "next_action": "Public recovery after24h and source-specific reuse/edition review; do not bypass or submit forms.",
       "next_due_check": "2026-11-05T14:00:00Z"
+    },
+    {
+      "version_or_date": "Exact immutable source entries and retrieval ledgers in dated research files",
+      "last_attempt": "2026-11-04T15:24:45.243250+00:00",
+      "last_release": "18October2026",
+      "last_retrieval": "2026-11-04T15:09:15.497533+00:00",
+      "sha256": "ffa3bfdc8c579fbcf9a97dfa269b6ec34e56dccb95f147ad38950ca8d003e2c4",
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness and edition check before revisiting",
+      "licence_assessment": "Bounded attributed factual metadata; copyright retained; no open-content or bulk-reuse grant assumed",
+      "access_assessment": "Ordinary public GET; no forms/accounts/bypass",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "source-specific factual technical metadata with native conditions"
+      ],
+      "mapping": "Exact reviewed model/phase identities through existing upsert API",
+      "next_due_check": "2026-11-05T15:00:00Z",
+      "id": "statcon_gti_v4_20261104T1500",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://www.energiaa.in/support/downloads/",
+      "endpoint": "https://www.energiaa.in/wp-content/uploads/2026/10/on-grid-solar-inverter-catalogue.pdf",
+      "format": "PDF CAT/GTI/V4.0/181026; pages5,7,9",
+      "processed_cursor": {
+        "tables_complete": [
+          5,
+          7,
+          9
+        ],
+        "reviewed": 22,
+        "accepted": 22,
+        "technical_values": 367,
+        "source_id": "statcon_gti_v4_20261018_20261104T1500"
+      },
+      "result": "22exactmodels across single-phase residential and two commercial hardware families accepted;367canonical technicalvalues plus model conditions. No configurable grid/connector permutations. Dimensionunit omission, efficiency bounds, current pairs and warrantyfootnote not silently converted.",
+      "retry_condition": "Revised exact edition or independent explicit unit/footnote/current-basis evidence; do not redownload completed tables hourly",
+      "next_action": "Review hybrid/off-grid catalogue model tables after exact kW/kVA and battery/PV boundaries; current7MBcapture reused, not accepted yet."
+    },
+    {
+      "version_or_date": "Exact immutable source entries and retrieval ledgers in dated research files",
+      "last_attempt": "2026-11-04T15:24:45.243250+00:00",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T15:17:01.081889+00:00",
+      "sha256": "391e08abaed2d08ba5e3c8ae6031c449c6b163a60f2098db390d7ee78c2f0b6d",
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness and edition check before revisiting",
+      "licence_assessment": "Bounded attributed factual metadata; copyright retained; no open-content or bulk-reuse grant assumed",
+      "access_assessment": "Ordinary public GET; no forms/accounts/bypass",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "source-specific factual technical metadata with native conditions"
+      ],
+      "mapping": "Exact reviewed model/phase identities through existing upsert API",
+      "next_due_check": "2026-11-05T15:00:00Z",
+      "id": "axe_axetr_20261104T1500",
+      "country": "ZAF",
+      "entity": "trackers",
+      "source_url": "https://www.axestruct.com/downloads/",
+      "endpoint": "https://www.axestruct.com/wp-content/uploads/DS_AXE_TR-Datasheet-Tracker-1.pdf",
+      "format": "PDF DS_AXE_TR V0.01 and HTML structuralwarranty",
+      "processed_cursor": {
+        "reviewed": 1,
+        "accepted": 1,
+        "technical_fields": 8,
+        "rights_and_warranty_checked": true
+      },
+      "result": "One exact AXETR independent-row tracker accepted with±60degree,portrait,drive/power/backtracking and10year structuralwarranty.95m bound,controller-onlyIP66,standards and warranty conditions preserved; nowholeassemblycertification,unqualifiedproductwarranty orcontrollerIPassignedtotracker.",
+      "retry_condition": "Changed exact model/revision or independent engineering specifications",
+      "next_action": "CurrentTracker-1.pdf and indexedTracker.pdf facts agree; retain one model, no duplicate revisions/configurations."
+    },
+    {
+      "version_or_date": "Exact immutable source entries and retrieval ledgers in dated research files",
+      "last_attempt": "2026-11-04T15:24:45.243250+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness and edition check before revisiting",
+      "licence_assessment": "Bounded attributed factual metadata; copyright retained; no open-content or bulk-reuse grant assumed",
+      "access_assessment": "Three ordinary public GET403; no bypass or forms",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "source-specific factual technical metadata with native conditions"
+      ],
+      "mapping": "Exact reviewed model/phase identities through existing upsert API",
+      "next_due_check": "2026-11-05T15:00:00Z",
+      "id": "antaisolar_access_20261104T1500",
+      "country": "CHN",
+      "entity": "trackers",
+      "source_url": "https://www.antaisolar.com/customers/resource-center",
+      "endpoint": "https://www.antaisolar.com/customers/resource-center",
+      "format": "HTML/PDF routes",
+      "processed_cursor": {
+        "routes_attempted": 3,
+        "accepted": 0
+      },
+      "result": "Resource center,TAI-Simple and known2025PDF inaccessible by ordinaryGET. Previous wind/length conflicts retained, no untested integration claimed.",
+      "retry_condition": "Public access recovers and exact revision mapping resolves prior conflicts",
+      "next_action": "Wait at least24hours before retry; independent AxeStruct/Axial source paths attempted instead."
+    },
+    {
+      "version_or_date": "Exact immutable source entries and retrieval ledgers in dated research files",
+      "last_attempt": "2026-11-04T15:24:45.243250+00:00",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T15:16:01.950327+00:00",
+      "sha256": "4863486ed38036c99f4244444ad47ea77399b0cda60cb815c8c1406c692610a3",
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness and edition check before revisiting",
+      "licence_assessment": "Bounded attributed factual metadata; copyright retained; no open-content or bulk-reuse grant assumed",
+      "access_assessment": "Ordinary public GET; no forms/accounts/bypass",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "source-specific factual technical metadata with native conditions"
+      ],
+      "mapping": "Exact reviewed model/phase identities through existing upsert API",
+      "next_due_check": "2026-11-05T15:00:00Z",
+      "id": "axial_blocking_20261104T1500",
+      "country": "ESP",
+      "entity": "trackers",
+      "source_url": "https://axialstructural.com/wp-content/uploads/Datasheet-Axial-Tracker-ENG.pdf",
+      "endpoint": "https://axialstructural.com/wp-content/uploads/Datasheet-Axial-Tracker-ENG.pdf",
+      "format": "Public2pagePDF",
+      "processed_cursor": {
+        "dimensional_configurations_reviewed": 2,
+        "accepted": 0
+      },
+      "result": "2VX28/3HX20 configurations and self/grid power modes reviewed. Exact current model/revision identity and same-basis wind conditions unresolved; up-to warranties not exactvalues.0accepted.",
+      "retry_condition": "Dated exact configuration/part mapping and qualified engineering limits",
+      "next_action": "Resolve manufacturer/currentrevision and rights before scalar ingestion; do not manufacture fourpower/configuration SKUs."
+    },
+    {
+      "version_or_date": "Exact immutable source entries and retrieval ledgers in dated research files",
+      "last_attempt": "2026-11-04T15:24:45.243250+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unknown; conditional freshness and edition check before revisiting",
+      "licence_assessment": "Bounded attributed factual metadata; copyright retained; no open-content or bulk-reuse grant assumed",
+      "access_assessment": "Ordinary public GET; no forms/accounts/bypass",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "source-specific factual technical metadata with native conditions"
+      ],
+      "mapping": "Exact reviewed model/phase identities through existing upsert API",
+      "next_due_check": "2026-11-05T15:00:00Z",
+      "id": "combiner_discovery_20261104T1500",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://solar.se.com/eu/en/product/array-box/",
+      "endpoint": "https://solar.se.com/eu/en/product/array-box/",
+      "format": "Primary product/download discovery only; no feed integrated",
+      "processed_cursor": {
+        "accepted": 0,
+        "Schneider_datasheet_downloaded": false,
+        "MERZ_exact_product_screened": "MSB-244-16-1000-MDM-BC"
+      },
+      "result": "Schneider1000VArrayBox is explicitlydiscontinued, datasheet andwarranty publiclylinked but notdownloaded/accepted. MERZ exactbox lists4incoming/4outgoing and2MPPT: parallel-combiner versus independent protection topology unresolved. Mersen search surfacedcomponents, notexactboxmodels. Hoymiles requestedroute inaccessible.",
+      "retry_condition": "Download source-specific terms and exact discontinuedmodeltable, resolvemanufactureralias and combiner topology beforeacceptance",
+      "next_action": "Schneider1000VArrayBox linked20161115datasheet plus2015warranty: inspectrights/modelcodes, retain discontinuedstatus; MERZbrochurecircuitmustproveparallelcombining."
     }
   ],
   "source_refresh_queue": [
