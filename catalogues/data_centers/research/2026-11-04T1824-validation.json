@@ -1,0 +1,80 @@
+{
+  "run_id": "energy-star-vertiv-ups-20261104T182413Z",
+  "retrieved_at": "2026-11-04T18:24:13Z",
+  "branch": "research/data-center-database-20261104T1749Z",
+  "base_head": "9dbf07ed4a09da16b8c25ca77cbafc8b216c6e07",
+  "prepublication_remote_head": "cb432809f23664964d49645384b641dc879002c8",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 1775,
+    "total": 1958,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 37,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 254,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1299,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 37
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 476,
+    "inventories": [
+      "EPA ENERGY STAR certified Schneider Electric partner inventory",
+      "EPA ENERGY STAR certified Vertiv Corporation partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 990085,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {"check": "deterministic ENERGY STAR partner builder replay", "result": "passed", "detail": "The new 254-record Vertiv build matched its 51 reviewable canonical shards and the builder reproduced all ten previously published reviewed partner inventories byte-for-byte"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 1,958 canonical Data Center records"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "78 passed"},
+    {"check": "full Python test suite", "result": "passed in storage-segmented runs", "detail": "All 2,408 collected tests were covered: 2,403 passed and five optional-dependency tests skipped; the monolithic run reached 2,352 passed and five skipped before shared ENOSPC caused 12 environment failures and left 39 unrun, then all failed, unrun and overlapping tests passed in a 72-passed, one-skipped rerun"},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "Ruff format and lint", "result": "passed", "detail": "913 files formatted; all lint checks passed"},
+    {"check": "repository-wide ty", "result": "passed", "detail": "All type checks passed"},
+    {"check": "repository, citation and diff checks", "result": "passed", "detail": "Repository policy, citation registry and whitespace checks passed across 4,173 candidate files"},
+    {"check": "strict Sphinx and generated-site link validation", "result": "blocked by shared storage", "detail": "Both HTML/link and compact dummy attempts stopped before source parsing with ENOSPC while docs/conf.py copied an unrelated Candelaria example asset; no local documentation pass is claimed"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "10480094643012265200f73d7881ec62a39d96cc034863a807e943f207c57881",
+    "projects_sha256": "a143dcdfa65de5782eaaf065eaf3f0398e138895533d6fc4e9514d71ca20ca56",
+    "equipment_sha256": "e63af5b7df2fe61d441faf4559a5434cca6f336d1f59022f3239ffa064bc1766",
+    "manifest_sha256": "852691ce0df0eac9c9aafd1b77c7d87f910056a2be27b8443a8f761eba540518",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "bf96c617e6e213e07b469e8c64b285cd42df4fb7224fb9b8014fa47c6fa2a130"
+  },
+  "holds_added": [],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "All 254 Vertiv Corporation entries in the 2026-11-03 ENERGY STAR dataset update are processed",
+    "Five exact Vertiv and Liebert brand labels and 136 distinct model names are preserved",
+    "All entries report a minimum tested configuration, full-load runtime and warranty",
+    "Seventy-five maximum tested configurations remain observations; only 44 print maximum active W and none prints maximum apparent VA",
+    "Normalized ratings, runtime load and efficiency remain bound to minimum tested configurations",
+    "No battery energy, power factor, accessory combination, deployment or project relationship is inferred",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain",
+    "Local documentation generation was blocked by shared ENOSPC in an unrelated example asset; remote Documentation CI is reported separately"
+  ]
+}

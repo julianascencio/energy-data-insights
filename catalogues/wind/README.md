@@ -3,11 +3,13 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 7,810 project records (7,809 non-group records),
-266 exact equipment records, 13,633 registry turbine records and two original numerical
-power curves, across 59 countries and eleven equipment manufacturer names.
-Merged main at `6b38f9a4` contains 7,582 projects, 264 equipment records and 10,264 turbines
-and two curves. These are catalogue counts, not an operating census.
+At batch `2026-11-04-2235`, the proposed branch contains **8,136 projects**
+(8,135 non-group records), **357 equipment configurations**, **13,633 linked
+registry turbines** and **two original numerical curves**, across **59 countries**
+and **54 manufacturer labels**. Labels are not a reconciled corporate-entity count.
+Merged main at `7c31c06a` contains 7,948 projects, 337 equipment records,
+13,633 turbines and two curves. These are catalogue counts, not an operating census.
+Use the batch checkpoint below for subsequent totals.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
 not resolve capacity scope; 2,216 other applications remain deferred. Swedish
@@ -326,3 +328,143 @@ public-utility declarations and proposed capacities do not establish wind output
 or commissioning. All four new records remain excluded from capacity totals.
 Exact supplier searches produced no new primary OEM sheet; no new equipment is
 claimed. Next daily BOE partitions: 26–28 October 2026.
+
+
+### BOE hybrid consultations and multiple daily issues
+
+The 2026-11-04-1535 batch reviews all Series A/B wind-title notices for
+26–31 October, including both issues 267 and 268 on 28 October. The default
+BOE daily URL can show only an extraordinary issue. `issue_urls` discovers
+same-day alternatives; every returned issue must be fetched before claiming
+partition completeness. `select_wind_notices(..., series="B")` explicitly
+selects announcements; the default remains Series A.
+
+Olmedilla is a proposed wind module, not commissioned capacity. Los Pedreros'
+existing wind capacity is retained as a qualified observation from a storage
+consultation. Neither record enters capacity totals. Hybrid regulatory
+capacity, PV, battery and flywheel ratings remain separate. Romeral is held
+for reconciliation with its historical name candidate. These bounded results
+do not meet the 50-project/20-equipment research targets.
+
+### Dated DNV register observations
+
+The 2026-11-04-1635 batch reviews the complete `CC DNV-SE-0074` partition
+whose object descriptions mention gearboxes in DNV's 20 April 2026 workbook.
+Three existing exact gearbox identities receive dated register observations.
+Applicants remain distinct from manufacturers. Certificate, design-evaluation
+and manufacturing-evaluation statements are not interchangeable; the register
+is not evidence of present validity or independently validated performance.
+Unresolved identities, platform labels and oil statements remain in the ledger.
+The offline adapter checks headers, date types and duplicate certificate IDs.
+
+Ouroso's seven proposed 5,900 kW turbines yield a derived check of 41.3 MW.
+No reported total MW is supplied by the reviewed notice, so no capacity scalar
+is populated. The public-utility consultation does not establish construction
+permission. El Almendro's solar decision remains deferred for wind identity
+reconciliation. Both preceding records and capacity exclusions are preserved.
+
+### Complementary certificate partition and withdrawn project
+
+Batch `2026-11-04-1735` completes the DNV-SE-0074 register entries whose
+object descriptions do not mention gearboxes. This text partition is not a
+component classification: a gearbox identified only by its model code may
+appear here. Three explicitly branded dry-type transformer identities and one
+LM rotor blade are added; their model codes do not establish power, voltage or
+blade length. Certificate applicants remain separate from manufacturer labels,
+and the dated register does not establish present validity or operating performance.
+
+BOE October 17 and 19 Series A/B are reviewed completely. Mistral's PEol-338
+withdrawal is recorded separately from Nordés and from their former joint
+administrative procedure. Its 106.4 MW application capacity is not installed
+capacity and remains excluded from aggregate totals. El Páramo's extension and
+Tesouro's wind/battery boundaries require further identity reconciliation.
+
+### Hybrid proposals and dated construction permits
+
+Batch `2026-11-04-1835` completes BOE October 15–16 Series A/B and the
+Tesouro original wind construction permit crosswalk. The three Elawan Belinchón
+wind farms are separate from their existing photovoltaic hosts. The environmental
+notice reduces their combined design from ten turbines/72 MW to nine/64.8 MW;
+Belinchón II's revised individual capacity and count remain null while both
+observations and the removed B-10 position are retained. No aggregate project row
+or guessed turbine model is added. Tesouro's 2024 authorization is dated evidence,
+not proof of current operation; its 60 MW access permission is separate from the
+50.4 MW authorized wind proposal and the later battery project. All four new
+project scopes remain excluded from capacity totals.
+
+### October planning notices and registry identities
+
+Batch `2026-11-04-1935` reviews all Series A/B wind-mentioned titles for
+October 1–3, 5–10 and 13–14, including the extra October 2 issue. It adds
+Conca de Barberà I, Anoia y Segarra II and the revised Mudarra proposal.
+Conca and Anoia retain dated historical construction permissions; Mudarra's
+100 MW revision is a consultation, with the earlier 99.9 MW authorization
+kept as a separate dated observation. All three remain excluded from sums.
+
+Mudarra explicitly specifies ten EN-182 turbines at 7 MW and five at 6 MW,
+with 182 m rotors and 120 m hubs. The two linked equipment configurations
+are planning specifications, not evidence of installation, independent
+performance validation or equivalence to the existing India-market model.
+The 100 MW arithmetic check corroborates, but does not replace, reported MW.
+No individual turbine records are inferred from property schedules.
+
+The BOE adapter now defers an existing exact `gencat_expediente` or
+`miteco_expediente` even when names change. A shared procedure requires scope
+review; it never automatically merges farms or phases. A shared BOE notice
+alone is not a project identifier. The source review retains sibling-farm
+holds and the explicit Sinoma website reuse exclusion. The next daily
+partition is September 28–30, alongside the recorded permit crosswalks.
+
+
+Batch `2026-11-04-2035` reviews all September 28–30 Series A/B wind mentions,
+including both September 30 issues. Satrebares retains its refused application
+and corrected geography; Vientos del Cid I retains its 78 MW proposal and
+approximate original CRS coordinates; Alsa retains its new 18 MW proposal,
+four documented proposed turbine positions and dated annulment/reapplication
+history. Alsa's inconsistent printed annulled-instrument date remains unresolved.
+The Castillo Garcimuñoz storage notice is held for wind identity/scope review.
+All three new projects remain excluded from capacity totals.
+
+
+## NEM survey and small-wind certification batch
+
+Batch `2026-11-04-2135` adds 67 projects and nine exact equipment models.
+AEMO's October 30 workbook supplies the complete wind partition with survey IDs
+below 2000: 158 generating-unit rows at 125 survey sites. Sixty-six distinct
+sites are added; 59 name/alias/phase candidates are held for explicit crosswalks.
+All new scopes remain excluded from capacity totals. Eight explicitly named
+phases receive stable group links without additive parent rows. Individual
+turbines and exact deployed models remain unknown. NEM coverage excludes
+Western Australia and the Northern Territory; NSW1 includes ACT.
+
+Reported unit aggregate AC nameplates are never multiplied by turbine counts.
+Mixed lifecycle observations remain separated, shared hybrid-site dispatch limits
+do not become wind capacity, and forecast commercial-use dates do not become COD.
+The 24–26 September BOE partition adds El Tabaibal (ER150053), whose public-utility
+modification establishes neither current operation nor a normalized capacity category.
+
+The complete PNNL July 2026 table supports nine exact small-wind models, eight
+manufacturer/applicant labels, and power at 11 m/s under standard sea-level
+conditions. These are dated certification observations, not nominal model ratings
+or independently validated field performance. Acoustic limits at 60 m are kept
+separate from sound power; unknown rotor geometry precludes specific-power
+comparisons. No numerical curves were available from this table.
+
+The separate ICC-SWCC directory is excluded because its linked terms explicitly
+restrict extraction and redistribution. AEMO's workbook downloaded successfully
+although its landing page returned HTTP 403. These are distinct access/reuse outcomes.
+The equipment target of 20 was not met; no unsupported variants were added.
+
+See `research/2026-11-04-2135-source-review.json`, the AEMO candidate and decision
+ledgers, and the PNNL transcription. Next: AEMO survey IDs 2000–2999, then
+3000 and above; BOE September 21–23; OEM configuration documents for EOX S-16
+and KW20/KW30. Prior reconciliation holds remain queued.
+
+
+## NEM survey IDs 2000–2999 and small-wind OEM specifications
+
+Batch `2026-11-04-2235` reviews all 111 survey sites in this half-open partition:107 additions and four deferrals. All additions remain excluded from capacity totals. Three explicitly named phases retain stable group IDs, including Goyder South1B linked to the earlier1A family. Twenty sites contain21 generating-block count placeholders; their physical turbine counts stay null, while original counts and reported AC capacities remain reviewable. Wooroora/Chalumbin lifecycle and Clarke Creek/Baldon phase scope remain held.
+
+Five exact equipment models are added:SD3,SD3EX,SD6+,SD12 and the Powersync25 inverter. Existing Excel15 and SD6 identities gain geometry and qualified technical observations without replacing PNNL power at11m/s. SD3EX3/2.5kW observations conflict, so its scalar is null. SD6+ power depends on unspecified inverter settings. Powersync25 factory20kW,table23kW and field-adjusted25kW limits are separate. Nominal and11m/s ratings are excluded from a common nameplate-density comparison. No graph is silently digitized.
+
+Kodair pages were acquired but excluded under explicit republication terms. Eocycle page/PDF returned403; this is a download failure, not an authentication or reuse finding. Complete source decisions, count quarantine IDs, checksums and exact continuation partitions are in the batch research files. The20-equipment target was not met; no variants were invented.

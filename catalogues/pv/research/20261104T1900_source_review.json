@@ -1,0 +1,167 @@
+{
+  "new_registry_opportunities": [
+    {
+      "id": "ireland_seai_solar_atlas_20261104T1900",
+      "country": "IRL",
+      "entity": "projects",
+      "source_url": "https://maps.seai.ie/server/rest/services/SolarAtlas/SolarGenerators/MapServer",
+      "endpoint": "https://maps.seai.ie/server/rest/services/SolarAtlas/SolarGenerators/MapServer",
+      "format": "ArcGIS MapServer metadata; feature rows not downloaded",
+      "licence_assessment": "SEAI general terms restrict reproduction/retrieval-service reuse without prior written permission. Current service item licenseInfo is empty; no dataset-specific override found. Public access is not bulk reuse permission.",
+      "fields_offered": [
+        "generator reference",
+        "public source name",
+        "maximum export capacity MW (not installed capacity)",
+        "native connection status",
+        "local authority"
+      ],
+      "last_attempt": "2026-11-04T19:31:12.317272+00:00",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T19:15:27.311807+00:00",
+      "publication_cadence": "Publisher promises updates; specific interval unverified",
+      "sha256": "7149b9eb46ae9434f0e8cbcd9f78cf00b5300b8bff180cd1045abd7ac5c73450",
+      "etag": null,
+      "mapping": "Discovery only; no automatic canonical ingestion",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "processed_cursor": {
+        "service_layers": [
+          0,
+          1
+        ],
+        "feature_rows_downloaded": 0,
+        "metadata_review_complete": true
+      },
+      "result": "Official app/webmap/service discovery complete only. Map label says Q2 2026 but source effective date not established; old service item timestamps not repurposed as operational dates. Source coordinates can be substations; no plant points assigned.0 rows accepted; no adapter completed.",
+      "retry_condition": "Suitable explicit dataset licence/permission and exact source revision; then a bounded public-field sample. Do not contact anyone or inherit wind-dataset CC BY.",
+      "next_action": "Suitable explicit dataset licence/permission and exact source revision; then a bounded public-field sample. Do not contact anyone or inherit wind-dataset CC BY.",
+      "next_due_check": null,
+      "terms_url": "https://www.seai.ie/about/corporate-governance/legal-and-privacy",
+      "terms_sha256": "8f1d8c5bf0f7b1860b8d3db3a5d518e6b49c4e18c952e1dff42a4fa00b3c4f67",
+      "version_or_date": "Solar Generators Q2 2026 label; data-effective date unverified"
+    },
+    {
+      "id": "spain_aae_miea_20261104T1900",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://www.agenciaandaluzadelaenergia.es/MapMiea/",
+      "endpoint": "https://www.agenciaandaluzadelaenergia.es/MapMiea/",
+      "format": "Public MIEA map HTML; feature service configuration unavailable",
+      "licence_assessment": "Agency general notice grants commercial/noncommercial reuse with attribution/date, but condition d requires contacting the responsible department. No source-specific exception established; contact not authorized.",
+      "fields_offered": [
+        "named generation assets",
+        "installed power MW with basis unverified",
+        "municipal/provincial scope"
+      ],
+      "last_attempt": "2026-11-04T19:31:12.317272+00:00",
+      "last_release": "June2026 definitive; published2026-09-16",
+      "last_retrieval": "2026-11-04T19:15:06.263234+00:00",
+      "publication_cadence": "Semiannual per official Junta statistical catalogue",
+      "sha256": "cdd679b6527a944d2abb4e29aefd0d5a47cdc333ee3fd5575831f6ea113fea44",
+      "etag": null,
+      "mapping": "Discovery only; no automatic canonical ingestion",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "processed_cursor": {
+        "metadata_and_terms_reviewed": true,
+        "configuration_timeout": true,
+        "feature_rows_downloaded": 0
+      },
+      "result": "June2026 definitive inventory published16Sep2026 identified in official statistical catalogue. Source-specific map/library inspected; configuration read timed out.0 feature rows imported; no modelled MW/AC conversion.",
+      "retry_condition": "Find explicit dataset-level reuse terms overriding the contact condition and a normal public data endpoint before ingestion; no contacts or hourly full report downloads.",
+      "next_action": "Find explicit dataset-level reuse terms overriding the contact condition and a normal public data endpoint before ingestion; no contacts or hourly full report downloads.",
+      "next_due_check": "2026-11-18T19:00:00Z",
+      "terms_url": "https://www.agenciaandaluzadelaenergia.es/es/aviso-legal",
+      "terms_sha256": "a3ef2eaec31664a90d075377c58845d414791f132474f828e23b8f3bc861a59c"
+    },
+    {
+      "id": "netherlands_rvo_sde_july2026_20261104T1900",
+      "country": "NLD",
+      "entity": "projects",
+      "source_url": "https://www.rvo.nl/sites/default/files/2026-09/SDE-projecten-in-beheer-juli-2026.xlsx",
+      "endpoint": "https://www.rvo.nl/sites/default/files/2026-09/SDE-projecten-in-beheer-juli-2026.xlsx",
+      "format": "XLSX; checksum-enforced tested RVO subsidy-decision candidate reader",
+      "licence_assessment": "RVO explicitly permits reuse and links SDE viewer from its OpenData page; images excluded. Voluntary attribution retained; no unrelated CC0 licence inherited. Source anonymisation preserved.",
+      "fields_offered": [
+        "award reference",
+        "PV theme and mounting",
+        "municipality/province/RES region",
+        "maximum subsidy EUR, not capex",
+        "subsidy duration years",
+        "reported realisation/in-use-year observations"
+      ],
+      "last_attempt": "2026-11-04T19:31:12.317272+00:00",
+      "last_release": "July2026 (month precision)",
+      "last_retrieval": "2026-11-04T19:19:49.009129+00:00",
+      "publication_cadence": "Release-based; current publisher gives July2026 workbook, exact future cadence not promised",
+      "sha256": "78bf5e2920d0afa6cf310623c00dcce8fdc240b910fbe9447416a2fdc0f196de",
+      "etag": null,
+      "mapping": "pv_catalogue.rvo.read_rvo_workbook; positive Zon-PV theme; privacy filtering; lexical exact award cursor; no canonical upsert/identity/status/capacity inference",
+      "estimated_useful_yield": {
+        "source_decisions": 30230,
+        "explicitPV": 27819,
+        "eligible_ground_water_decisions": 981,
+        "staged_this_iteration": 100,
+        "accepted_canonical_records": 0,
+        "remaining_staging_partition": 881
+      },
+      "processed_cursor": {
+        "source_sha256": "78bf5e2920d0afa6cf310623c00dcce8fdc240b910fbe9447416a2fdc0f196de",
+        "worksheet": "Projecten in beheer (jul. 2026)",
+        "header_row": 11,
+        "last_staged_reference": "SDE1709464",
+        "staged_reference_ledger": "20261104T1900_rvo_review.json",
+        "identity_review_complete": false
+      },
+      "result": "Tested candidate reader completed:30,230 decisions,27,819 explicitPV;8,183 anonymisedPV excluded and18,655 other PV mountings left outside selected partition.981 non-anonymised ground/water decisions eligible. First100 staged,0 RVO canonical records accepted;881 remain after exact-reference cursor. No applicant/address/postcode/locality/geometry leaves staging.",
+      "retry_condition": "Reconcile first100 staged awards to exact plant/phase identities using independent permitted evidence. Awards can overlap a plant; no fuzzy merging, category-threshold ratings, grant-to-capex mapping or joins to older inconsistent viewer fields.",
+      "next_action": "Reconcile first100 staged awards to exact plant/phase identities using independent permitted evidence. Awards can overlap a plant; no fuzzy merging, category-threshold ratings, grant-to-capex mapping or joins to older inconsistent viewer fields.",
+      "next_due_check": "2026-11-11T19:00:00Z",
+      "terms_url": "https://www.rvo.nl/onderwerpen/open-data",
+      "terms_sha256": "f744874848cc0a6dd9abc49d4717f60c3007d24c155831aa371fd00d2574ccef",
+      "publisher_landing_review_date": "2026-10-09",
+      "older_viewer_warning": "Inspected service layer2 has May2025 edit metadata and a Maximale_subsidie field aliased as annual production. Do not silently join its capacities to July2026 decisions or treat that ambiguous field as cost."
+    }
+  ],
+  "CNE_existing_queue_refreshed": {
+    "id": "chile_cne_capacity_20261104T1700",
+    "country": "CHL",
+    "entity": "projects",
+    "source_url": "https://energiaabierta.cl/visualizaciones/capacidad-instalada/",
+    "endpoint": "https://energiaabierta.cl/visualizaciones/capacidad-instalada/",
+    "format": "Linked XLSX via official short URL",
+    "publication_cadence": "Not stated; metadata/revision check before repeat download",
+    "version_or_date": "See source register or dated review; no inferred release date",
+    "last_attempt": "2026-11-04T19:31:12.317272+00:00",
+    "licence_assessment": "Current primary Energia Abierta privacy/use policy explicitly permits particular noncommercial use only. No permissive bulk/database licence established; no request for permission or login.",
+    "access_assessment": "Official download resolves to CNE SharePoint workbook; ordinary request401. No authentication attempted; no workbook bytes accepted.",
+    "estimated_useful_yield": {
+      "workbook_attempts": 1,
+      "candidate_rows_reviewed": 0,
+      "accepted": 0
+    },
+    "fields_offered": [],
+    "result": "Fresh landing still links CNE SharePoint workbook; prior ordinary401 remains an access hold. This run stopped before workbook download after finding explicit noncommercial restriction.0 rows reviewed/accepted; no feed integrated.",
+    "retry_condition": "Applicable documented reusable dataset-specific licence plus ordinary public download; no contacts/forms/authentication authorized.",
+    "next_action": "Skip unchanged restricted portal; prefer a separately licensed CEN/Minenergia dataset with explicitPV and native capacity definitions.",
+    "processed_cursor": {
+      "linked_url": "https://3b9x.short.gy/rZWIBx",
+      "download_complete": false
+    },
+    "next_due_check": null,
+    "terms_url": "https://energiaabierta.cl/politica-de-privacidad/",
+    "terms_sha256": "ba08d37b7e5c329efc5ca2305b2a11a54595480d4ca2ecac7470040d56d86b3d",
+    "last_metadata_retrieval": "2026-11-04T19:13:01.572958+00:00"
+  },
+  "new_candidate_readers_completed": 1,
+  "new_automatic_canonical_ingestion_feeds": 0,
+  "RVO_canonical_acceptances": 0,
+  "GEM_primary_latest_release_rechecked": "February2026, primarypublisher page checked2026-11-04 around19:12UTC; unchanged pinned workbook reused",
+  "source_register_entries_added": 6,
+  "source_register_total": 450,
+  "seed_queues_and_schedule_preserved": true
+}

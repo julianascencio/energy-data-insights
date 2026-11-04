@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-11-04T18:56:05.647830+00:00",
+  "actual_elapsed_minutes_through_local_validation_checkpoint": 26.38,
+  "full_suite": {
+    "passed": 2466,
+    "skipped": 5,
+    "mode": "one full pytest invocation after storage recovered",
+    "seconds": 149.32
+  },
+  "focused_new_parser_tests": 14,
+  "ruff": "passed",
+  "format": "passed;941files",
+  "ty": "passed",
+  "citations": "passed",
+  "hygiene": "passed;4206candidatefiles",
+  "offline_example": "passed",
+  "packages": "3wheels+3sdists;6strictTwinechecks passed",
+  "snapshot": "freshfive typedtables;740field types;ZSTD;rowcounts;checksums;current source-registry/input digest verified",
+  "audit": "144 exact upsert replay;all prior created_at and440immutable source entries preserved;no power/status/ownership/phases/links changed",
+  "docs": "Full Python3.13 locked docs/imagery gallery build passed with warnings-as-errors;589 HTML pages and local links/assets pass",
+  "interrupted_checks": [
+    "Initial full suite exhausted shared-memory storage; not counted as passing",
+    "Initial local gallery used Python3.12 without required imagerygroup; not counted as passing",
+    "Snapshot retry removed duplicate in-memory catalogue load after process killed; only completed fresh verified snapshot counts"
+  ],
+  "code_changes": true,
+  "schema_changes": false,
+  "viewer_tests": {
+    "passed": 16
+  },
+  "idempotence": "144 repeated inputs preserve content/created_at/updated_at;last_verified_atmemoryonly"
+}

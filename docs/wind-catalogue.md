@@ -1,11 +1,13 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. The proposed continuation contains **7,810 projects, 266 equipment
-records, 13,633 linked turbines and two original numerical curves**, across
-**59 countries and eleven equipment manufacturers**. Merged main at `6b38f9a4`
-contains 7,582 projects, 264 equipment records and 10,264 turbines plus two curves.
-These are catalogue counts, not a current operating census.
+numerical curves. At batch `2026-11-04-2235`, the proposed continuation contains
+**8,136 projects, 357 equipment records, 13,633 linked turbines and two original
+numerical curves**, across **59 countries and 54 manufacturer labels**. Labels
+are not a reconciled corporate-entity count. Merged main at `7c31c06a` contains
+7,948 projects, 337 equipment records, 13,633 turbines and two curves.
+These are catalogue counts, not a current operating census. Subsequent totals
+are recorded in `catalogues/wind/research/latest.json`.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.
@@ -644,3 +646,47 @@ The shared viewer's expandable metadata exposes `boe_procedure` and field
 sources; the offline Wind example prints decision target, dated wind status,
 capacity categories and exclusions. A solar/auxiliary decision cannot be read as
 a wind commissioning event. The BOE partitions are not a national wind census.
+
+
+## NEM survey and small-wind certification batch
+
+Batch `2026-11-04-2135` adds 67 projects and nine exact equipment models.
+AEMO's October 30 workbook supplies the complete wind partition with survey IDs
+below 2000: 158 generating-unit rows at 125 survey sites. Sixty-six distinct
+sites are added; 59 name/alias/phase candidates are held for explicit crosswalks.
+All new scopes remain excluded from capacity totals. Eight explicitly named
+phases receive stable group links without additive parent rows. Individual
+turbines and exact deployed models remain unknown. NEM coverage excludes
+Western Australia and the Northern Territory; NSW1 includes ACT.
+
+Reported unit aggregate AC nameplates are never multiplied by turbine counts.
+Mixed lifecycle observations remain separated, shared hybrid-site dispatch limits
+do not become wind capacity, and forecast commercial-use dates do not become COD.
+The 24–26 September BOE partition adds El Tabaibal (ER150053), whose public-utility
+modification establishes neither current operation nor a normalized capacity category.
+
+The complete PNNL July 2026 table supports nine exact small-wind models, eight
+manufacturer/applicant labels, and power at 11 m/s under standard sea-level
+conditions. These are dated certification observations, not nominal model ratings
+or independently validated field performance. Acoustic limits at 60 m are kept
+separate from sound power; unknown rotor geometry precludes specific-power
+comparisons. No numerical curves were available from this table.
+
+The separate ICC-SWCC directory is excluded because its linked terms explicitly
+restrict extraction and redistribution. AEMO's workbook downloaded successfully
+although its landing page returned HTTP 403. These are distinct access/reuse outcomes.
+The equipment target of 20 was not met; no unsupported variants were added.
+
+See `research/2026-11-04-2135-source-review.json`, the AEMO candidate and decision
+ledgers, and the PNNL transcription. Next: AEMO survey IDs 2000–2999, then
+3000 and above; BOE September 21–23; OEM configuration documents for EOX S-16
+and KW20/KW30. Prior reconciliation holds remain queued.
+
+
+## NEM survey IDs 2000–2999 and small-wind OEM specifications
+
+Batch `2026-11-04-2235` reviews all 111 survey sites in this half-open partition:107 additions and four deferrals. All additions remain excluded from capacity totals. Three explicitly named phases retain stable group IDs, including Goyder South1B linked to the earlier1A family. Twenty sites contain21 generating-block count placeholders; their physical turbine counts stay null, while original counts and reported AC capacities remain reviewable. Wooroora/Chalumbin lifecycle and Clarke Creek/Baldon phase scope remain held.
+
+Five exact equipment models are added:SD3,SD3EX,SD6+,SD12 and the Powersync25 inverter. Existing Excel15 and SD6 identities gain geometry and qualified technical observations without replacing PNNL power at11m/s. SD3EX3/2.5kW observations conflict, so its scalar is null. SD6+ power depends on unspecified inverter settings. Powersync25 factory20kW,table23kW and field-adjusted25kW limits are separate. Nominal and11m/s ratings are excluded from a common nameplate-density comparison. No graph is silently digitized.
+
+Kodair pages were acquired but excluded under explicit republication terms. Eocycle page/PDF returned403; this is a download failure, not an authentication or reuse finding. Complete source decisions, count quarantine IDs, checksums and exact continuation partitions are in the batch research files. The20-equipment target was not met; no variants were invented.

@@ -233,3 +233,9 @@ battery-type labels can disagree: retain both, without deriving energy. Approxim
 mass is not exact mass, parenthesized charge voltages have an unspecified meaning,
 and generic NC/TC chemistry or lifecycle claims do not establish SC specifications.
 Higher-voltage partitions reuse some model codes and need independent identity review.
+
+`bess_oem_catalogue.neata_ups.parse_high_sc` stages the remaining thirteen
+SC102/192/204/240 models and checks the shared prior partition. Preserve the
+SC102 type-label/voltage-column discrepancy and 27/30Ah discrepancies; do not
+infer energy. Plain kW maximum-discharge observations have no stated continuous
+duration. Repeated NC/TC codes are outside this adapter's reviewed identity scope.

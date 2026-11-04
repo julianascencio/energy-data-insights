@@ -1,0 +1,123 @@
+{
+  "run_id": "energy-star-schneider-ups-20261104T172625Z",
+  "retrieved_at": "2026-11-04T17:26:25Z",
+  "branch": "research/data-center-database-20261104T1749Z",
+  "base_head": "9dbf07ed4a09da16b8c25ca77cbafc8b216c6e07",
+  "prepublication_remote_head": "9dbf07ed4a09da16b8c25ca77cbafc8b216c6e07",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus_aggregate": 114
+    },
+    "equipment": 1521,
+    "total": 1704,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 37,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 222,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1299,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 37
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 222,
+    "inventories": [
+      "EPA ENERGY STAR certified Schneider Electric partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 990085,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {
+      "check": "deterministic ENERGY STAR partner builder replay",
+      "result": "passed",
+      "detail": "The new 222-record Schneider Electric build matched its 45 reviewable canonical shards and the builder reproduced all nine previously published reviewed partner inventories byte-for-byte"
+    },
+    {
+      "check": "catalogue schema, identity, unit, source and evidence validation",
+      "result": "passed",
+      "detail": "Validated 1,704 canonical Data Center records"
+    },
+    {
+      "check": "focused Data Center tests",
+      "result": "passed",
+      "detail": "78 passed"
+    },
+    {
+      "check": "full Python test suite",
+      "result": "passed",
+      "detail": "2,403 passed and five optional-dependency tests skipped"
+    },
+    {
+      "check": "database viewer Node tests",
+      "result": "passed",
+      "detail": "16 passed"
+    },
+    {
+      "check": "Ruff format and lint",
+      "result": "passed",
+      "detail": "913 files formatted; all lint checks passed"
+    },
+    {
+      "check": "repository-wide ty",
+      "result": "passed",
+      "detail": "All type checks passed"
+    },
+    {
+      "check": "repository, citation and diff checks",
+      "result": "passed",
+      "detail": "Repository policy, citation registry and whitespace checks passed"
+    },
+    {
+      "check": "strict Sphinx and generated-site link validation",
+      "result": "passed",
+      "detail": "A serialized strict rebuild succeeded and local links and assets resolved across 579 HTML pages"
+    },
+    {
+      "check": "deterministic typed Parquet and coverage rebuild",
+      "result": "passed",
+      "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"
+    }
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "b3eeae776edf44273da8ea23d426ce41b5863f562dab1325c9f7c6496d525fe8",
+    "projects_sha256": "a143dcdfa65de5782eaaf065eaf3f0398e138895533d6fc4e9514d71ca20ca56",
+    "equipment_sha256": "b797913d0d87ee0b2ce13df9af5b26b2960749686b35ef98339610e1a5a6877f",
+    "manifest_sha256": "71878bbf9c821728e2529c966c62ff30e00b72f0ad12c8e17b35c4aa413b732f",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "22743408efeb97f3498bc89658656377d536cc818325aa08d9e9a33445de2d61"
+  },
+  "holds_added": [],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "All 222 Schneider Electric entries in the 2026-11-03 ENERGY STAR dataset update are processed",
+    "The exact APC by Schneider Electric and Schneider Electric brand labels are preserved",
+    "Thirty-two unavailable runtimes, 50%-load runtimes and warranties remain null",
+    "Fifty-four maximum tested configurations remain observations while normalized ratings stay bound to minimum configurations",
+    "Active W and apparent VA remain distinct; runtime and efficiency retain certification and load boundaries",
+    "No battery energy, power factor, accessory combination or deployment is inferred",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain",
+    "PR #145 merged concurrently after validation; this Schneider increment is rebased onto merge commit 9dbf07ed and published on a fresh continuation branch"
+  ]
+}

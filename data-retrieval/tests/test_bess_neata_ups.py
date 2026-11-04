@@ -54,3 +54,58 @@ def test_conflicting_label_preserved():
 def test_changed_source_fails(a, b):
     with pytest.raises(ValueError):
         parse_sc_partitions(sample().replace(a, b, 1))
+
+
+def high_sample():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import HIGH_MODELS
+
+    row = (
+        "<tr>"
+        + "".join(
+            "<td>" + v + "</td>"
+            for v in [
+                "MODEL",
+                "96V30Ah",
+                "102.4",
+                "27",
+                "4000",
+                "108.8~110.4(115.2)",
+                "15",
+                "27",
+                "4000W(5000W/60S)",
+                "600",
+                "442",
+                "86",
+                "36.5",
+            ]
+        )
+        + "</tr>"
+    )
+    return sample().replace(
+        b"</table>", ("".join(row.replace("MODEL", m) for m in HIGH_MODELS) + "</table>").encode()
+    )
+
+
+def test_high_conflicts_preserved():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_high_sc
+
+    rows = parse_high_sc(high_sample())
+    assert len(rows) == 13
+    assert rows[0]["voltage_v"] == "102.4"
+    assert rows[0]["battery_type_label"] == "96V30Ah"
+
+
+@pytest.mark.parametrize(
+    "a,b",
+    [
+        (b"SC102-20", b"SC102-27"),
+        (b"4000W(5000W/60S)", b"4000VA"),
+        (b"102.4", b"102.4V"),
+        (b"108.8~110.4(115.2)", b"108-115"),
+    ],
+)
+def test_high_mutations_fail(a, b):
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_high_sc
+
+    with pytest.raises(ValueError):
+        parse_high_sc(high_sample().replace(a, b, 1))

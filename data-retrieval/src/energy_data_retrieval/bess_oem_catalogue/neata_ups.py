@@ -57,3 +57,30 @@ def parse_sc_partitions(content: bytes) -> list[dict[str, str]]:
         if not re.fullmatch(r"\d+W\(\d+W/60[Ss]\)", r[8]):
             raise ValueError("Changed discharge duration or units")
     return [dict(zip(FIELDS, r, strict=True)) for r in rows]
+
+
+HIGH_MODELS = [f"SC102-{a}" for a in [20, 27, 50, 80, 100, 150, 200]] + [
+    f"SC{v}-{a}" for v in [192, 204, 240] for a in [20, 27]
+]
+
+
+def parse_high_sc(content: bytes) -> list[dict[str, str]]:
+    """Stage all remaining SC rows; retain type/voltage conflicts verbatim."""
+    parse_sc_partitions(content)  # Validate the shared header, units and prior partition.
+    p = _Tables()
+    p.feed(content.decode("utf-8-sig"))
+    rows = [r for r in p.tables[0][2:] if r and r[0].startswith("SC") and r[0] not in MODELS]
+    if [r[0] for r in rows] != HIGH_MODELS:
+        raise ValueError("Missing, duplicate or changed high SC model")
+    for r in rows:
+        if len(r) != 13 or not all(r):
+            raise ValueError("Incomplete high SC row")
+        if any(not re.fullmatch(r"\d+(?:\.\d+)?", r[i]) for i in [2, 3, 6, 7, 9, 10, 11, 12]):
+            raise ValueError("Changed high SC numeric units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?(?:KW)?", r[4]):
+            raise ValueError("Changed high SC power units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?~\d+(?:\.\d+)?\(\d+(?:\.\d+)?\)", r[5]):
+            raise ValueError("Changed high SC charge voltage")
+        if not re.fullmatch(r"(?:\d+W\(\d+W/60[Ss]\)|\d+(?:\.\d+)?KW)", r[8]):
+            raise ValueError("Changed high SC discharge units or timing")
+    return [dict(zip(FIELDS, r, strict=True)) for r in rows]

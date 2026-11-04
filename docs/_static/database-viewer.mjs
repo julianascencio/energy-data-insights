@@ -86,7 +86,7 @@ async function loadTable() {
 }
 function defaultColumns() {
   const specific = tableName === "projects" ? (isWind ? ["country_code", "technology", "status", "status_as_of", "installed_capacity_mw", "planned_capacity_mw", "historical_capacity_mw", "turbine_count", "aggregation_role"] : isDataCenter ? ["country_code", "record_scope", "status", "it_capacity_mw", "it_capacity_basis", "grid_capacity_mw", "facility_capacity_mw", "cooling_technology"] : isBess ? ["country_code", "status", "status_as_of", "power_capacity_mw", "energy_capacity_mwh", "chemistry"] : ["country_code", "status", "capacity_ac_mw", "capacity_dc_mw"]) :
-    isWind && tableName === "turbines" ? ["project_record_id", "country_code", "status", "manufacturer", "turbine_model", "rotor_diameter_m", "hub_height_m"] : isWind ? ["manufacturer", "model", "rated_power_kw", "rotor_diameter_m", "equipment_category", "curve_kind", "curve_origin"] : isDataCenter ? ["manufacturer", "model", "variant", "equipment_category", "input_power_kw", "accelerator_power_w", "memory_gb", "power_conditions"] : isBessOem ? ["manufacturer", "model", "variant", "record_scope", "energy_capacity_mwh", "energy_basis", "power_capacity_mw", "power_basis", "apparent_power_mva", "chemistry", "product_status"] : ["manufacturer", "model", el("metric").value];
+    isWind && tableName === "turbines" ? ["project_record_id", "country_code", "status", "manufacturer", "turbine_model", "rotor_diameter_m", "hub_height_m"] : isWind ? ["manufacturer", "model", "rated_power_kw", "rated_power_conditions", "rotor_diameter_m", "equipment_category", "curve_kind", "curve_origin"] : isDataCenter ? ["manufacturer", "model", "variant", "equipment_category", "input_power_kw", "accelerator_power_w", "memory_gb", "power_conditions"] : isBessOem ? ["manufacturer", "model", "variant", "record_scope", "energy_capacity_mwh", "energy_basis", "power_capacity_mw", "power_basis", "apparent_power_mva", "chemistry", "product_status"] : ["manufacturer", "model", el("metric").value];
   visible = [...new Set(["name", ...specific, "quality_status", "updated_at", "source_urls"])].filter((key) => key in index.fields);
 }
 function renderColumns() {
@@ -119,6 +119,7 @@ function render() {
   const stats = statistics(filtered, metric);
   const projects = tableName === "projects" && !isBessOem && !isDataCenter && !isWind;
   const summary = [[number(filtered.length), projects ? "Matching projects" : "Matching records", `of ${number(rows.length)} in catalogue`]];
+  if (isWind) summary.push([number(filtered.filter(r => r.quality_status === "needs_review").length), "Records needing review", "Inspect field conflicts; quarantined values remain unknown, not zero"]);
   if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
@@ -141,7 +142,7 @@ function render() {
       [number(inventory.lifecycleUnknown), "Lifecycle unknown", "Erected alone does not establish operation"]);
   } else if (isWind && tableName === "equipment") {
     summary.push([number(new Set(filtered.map(r => r.manufacturer).filter(Boolean)).size), "Manufacturers"],
-      [number(stats.known), "Metric reported", "Specifications, not field performance"], [number(stats.missing), "Metric unknown", "See nested options and unresolved fields"], [number(stats.mean), "Metric mean", fieldLabel(metric)]);
+      [number(stats.known), "Metric reported", "Specifications, not field performance"], [number(stats.missing), "Metric unknown", "See nested options and unresolved fields"], [metric === "rated_power_kw" ? "See conditions" : number(stats.mean), metric === "rated_power_kw" ? "Power rating basis" : "Metric mean", metric === "rated_power_kw" ? "Nominal, default-mode and power-at-wind-speed ratings are distinct" : fieldLabel(metric)]);
   } else if (isDataCenter && tableName === "projects") {
     const scopes = dataCenterScopes(filtered);
     summary.push([number(scopes.facilities), "Facility records", `${scopes.phases} phase records · ${scopes.campuses} campus aggregates`],

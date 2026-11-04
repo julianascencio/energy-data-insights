@@ -35,6 +35,20 @@ print(projects.groupby(["status", "aggregation_role"]).size().unstack(fill_value
 print("Equipment categories (components are not turbines):")
 print(equipment.groupby(["manufacturer", "equipment_category"]).size())
 
+# The NEM survey keeps mixed states and shared hybrid limits out of scalar totals.
+print("AEMO wind-only survey sites: unknown geometry and excluded capacity scopes")
+for row in rows:
+    ext = json.loads(row.get("extensions_json") or "{}")
+    if "capacity_by_aemo_status" in ext:
+        print(row["name"], ext["capacity_by_aemo_status"], row["aggregation_role"])
+print("Published turbine power ratings require their measurement conditions")
+print(
+    equipment.loc[
+        equipment.sources.apply(lambda v: "pnnl_small_wind_july2026" in v),
+        ["model", "rated_power_kw", "rated_power_conditions", "rotor_diameter_m"],
+    ]
+)
+
 # Procedural decisions can concern solar or auxiliary equipment, not the wind farm.
 print("BOE decision scope: wind lifecycle and capacity boundaries remain separate")
 for row in rows:
@@ -147,6 +161,12 @@ comparable = equipment.loc[
     equipment.equipment_category.eq("wind_turbine")
     & equipment.rated_power_kw.notna()
     & equipment.rotor_diameter_m.notna()
+    # These source ratings are power at 11 m/s, not nameplate densities.
+    & ~equipment.sources.apply(
+        lambda ids: any(
+            source in ids for source in ("pnnl_small_wind_july2026", "sdwind_sd12_20261104")
+        )
+    )
 ]
 for manufacturer, group in comparable.groupby("manufacturer"):
     values = [

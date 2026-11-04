@@ -20,6 +20,25 @@ locality must not be assumed to be the generating site. Project, local-name and
 phase reconciliation must precede upsert. See the
 [NEA attribution notice](licenses/NEA_ATTRIBUTION_NOTICE.md).
 
+The offline `pv_catalogue.dgeg.read_dgeg_page` reader validates checksum-pinned
+Portugal DGEG CS polygon pages and stages only explicitly labelled photovoltaic
+features. `group_dgeg_pages` preserves native blocks and kW/kVA values without
+summing them, requires a separately reviewed ID inventory to prove source coverage,
+and leaves every group unaccepted until site/phase review. The first complete
+750-feature capture contains 617 PV polygons across 289 licensing processes; these
+are not plant counts. No licence-to-operation, centroid or kVA-to-active-power
+inference is made. See the [DGEG attribution notice](licenses/DGEG_CC_BY4_NOTICE.md).
+
+The offline `pv_catalogue.rvo.read_rvo_workbook` reader stages checksum-pinned
+RVO SDE subsidy decisions in bounded ground/water PV partitions. It requires the
+explicit `Zon-PV` theme, excludes anonymised decisions entirely, and omits applicant,
+address, postcode and geometry fields. Award references are cursors, not plant IDs.
+Subsidy maxima are not capex, category MWp thresholds are not nameplate capacities,
+and realisation flags are not current operating-status verification. The July 2026
+source has 981 non-anonymised ground/water PV decisions; the first 100 remain
+candidates, with zero accepted RVO plants. See the
+[RVO reuse and attribution notice](licenses/RVO_REUSE_NOTICE.md).
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;
@@ -448,3 +467,40 @@ phases are overwritten. Other plans require original site/phase evidence before
 acceptance. Review the separate layer-specific licence before installation-layer
 feature requests; the general municipal CC BY4.0 grant does not license every
 third-party layer on the map.
+
+### Taipower station/site review
+
+`pv_catalogue.taipower.read_taipower_sites` stages the checksum-pinned public
+Taipower renewable-sites CSV (government dataset17141). It requires both the
+exact solar technology label and an explicit photovoltaic station name, validates
+technology-scoped station/site IDs, and returns complete station groups through
+an integer station cursor. A station can contain separate roofs, sites or phases;
+these groups are candidates, not canonical projects. Source addresses are excluded.
+
+Installed kW stays native with AC/DC basis unresolved. Model labels do not become
+OEM-verified equipment, application status does not become current operation, and
+HTTP Last-Modified is not a plant-status date. No capacity sum, automatic crosswalk
+or canonical upsert occurs. The initial 20:00 partition staged71PV sites in45
+station groups with zero canonical acceptances. The later20:30manual review accepts
+oneLongjingplant(station6,threebid/site rowsunder2nativephase labels) and qualifies
+contextsfor2existingprojects;otherstation/plantboundariesremainunresolved. See
+`research/20261104T2000_taipower_review.json` and its source-specific attribution.
+
+`pv_catalogue.taipower.read_taipower_monthly` additionally stages checksum-pinned
+station-month observations from dataset29938. Exact Gregorian periods, station
+names and whole observation keys are required. Conflicting duplicate periods fail
+closed unless an exact reviewed hold-key list is supplied; all observations for
+those keys are withheld together. No preferred duplicate, month repair, annual
+sum, AC/DC basis or plant boundary is inferred. Two historical June2016 conflict
+groups remain held; six Q3 2026 observations support two manually reviewed named
+station contexts. Those contexts are not plant/phase ID merges or rating updates.
+The dated Taiwan review separates the source station scope from canonical plants.
+
+The Longjing manual review checks complete source sites13/14/15, preserves the
+first two construction bids under native phaseI and site15 under phaseII, and
+excludes the unrelated CSC/ChinaSteel rooftop portfolio. Its September2026
+reported6485.94kW becomes6.48594MW with basis unknown, without summing site values.
+No coordinates or present operation are inferred. Tainan's214ha area and dated
+20MW/20MWh storage use separately licensed government evidence; earlier proposed
+15MW storage and incompatible forecast/rating scopes stay qualified. See
+`research/20261104T2030_taiwan_review.json` and the updated attribution notice.
