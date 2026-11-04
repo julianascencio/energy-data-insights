@@ -3,8 +3,8 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-At batch `2026-11-04-2135`, the proposed branch contains **8,029 projects**
-(8,028 non-group records), **352 equipment configurations**, **13,633 linked
+At batch `2026-11-04-2235`, the proposed branch contains **8,136 projects**
+(8,135 non-group records), **357 equipment configurations**, **13,633 linked
 registry turbines** and **two original numerical curves**, across **59 countries**
 and **54 manufacturer labels**. Labels are not a reconciled corporate-entity count.
 Merged main at `7c31c06a` contains 7,948 projects, 337 equipment records,
@@ -459,3 +459,12 @@ See `research/2026-11-04-2135-source-review.json`, the AEMO candidate and decisi
 ledgers, and the PNNL transcription. Next: AEMO survey IDs 2000–2999, then
 3000 and above; BOE September 21–23; OEM configuration documents for EOX S-16
 and KW20/KW30. Prior reconciliation holds remain queued.
+
+
+## NEM survey IDs 2000–2999 and small-wind OEM specifications
+
+Batch `2026-11-04-2235` reviews all 111 survey sites in this half-open partition:107 additions and four deferrals. All additions remain excluded from capacity totals. Three explicitly named phases retain stable group IDs, including Goyder South1B linked to the earlier1A family. Twenty sites contain21 generating-block count placeholders; their physical turbine counts stay null, while original counts and reported AC capacities remain reviewable. Wooroora/Chalumbin lifecycle and Clarke Creek/Baldon phase scope remain held.
+
+Five exact equipment models are added:SD3,SD3EX,SD6+,SD12 and the Powersync25 inverter. Existing Excel15 and SD6 identities gain geometry and qualified technical observations without replacing PNNL power at11m/s. SD3EX3/2.5kW observations conflict, so its scalar is null. SD6+ power depends on unspecified inverter settings. Powersync25 factory20kW,table23kW and field-adjusted25kW limits are separate. Nominal and11m/s ratings are excluded from a common nameplate-density comparison. No graph is silently digitized.
+
+Kodair pages were acquired but excluded under explicit republication terms. Eocycle page/PDF returned403; this is a download failure, not an authentication or reuse finding. Complete source decisions, count quarantine IDs, checksums and exact continuation partitions are in the batch research files. The20-equipment target was not met; no variants were invented.

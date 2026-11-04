@@ -102,6 +102,7 @@ def stage_wind_sites(
     published_date: str,
     minimum_id: int = 0,
     maximum_id: int = 2000,
+    quarantined_count_unit_ids: tuple[int, ...] = (),
 ) -> list[dict[str, Any]]:
     """Stage the complete half-open survey-ID partition for human identity review.
 
@@ -111,6 +112,7 @@ def stage_wind_sites(
     """
     if minimum_id < 0 or maximum_id <= minimum_id:
         raise ValueError("Invalid half-open survey partition")
+    count_holds = {_id(value) for value in quarantined_count_unit_ids}
     groups: dict[int, list[dict[str, Any]]] = defaultdict(list)
     seen: set[int] = set()
     for unit in units:
@@ -124,6 +126,17 @@ def stage_wind_sites(
         seen.add(ident)
         if minimum_id <= site < maximum_id:
             groups[site].append(unit)
+    selected_ids = {r["Gen Info Unit ID"] for rows in groups.values() for r in rows}
+    if not count_holds <= selected_ids:
+        raise ValueError("Count quarantine must identify units in the selected partition")
+
+    def reviewed_count(rows: list[dict[str, Any]]) -> float | None:
+        return (
+            None
+            if any(r["Gen Info Unit ID"] in count_holds for r in rows)
+            else _sum(rows, "Unit Count")
+        )
+
     output = []
     for site, rows in sorted(groups.items()):
         rows = sorted(rows, key=lambda r: r["Gen Info Unit ID"])
@@ -153,7 +166,7 @@ def stage_wind_sites(
         by_status = {}
         for state in sorted(states):
             selected = [r for r in rows if r["Commitment Status"] == state]
-            count = _sum(selected, "Unit Count")
+            count = reviewed_count(selected)
             if count is not None and int(count) != count:
                 raise ValueError("Fractional turbine count")
             by_status[state] = {
@@ -165,7 +178,7 @@ def stage_wind_sites(
             f"Generator Information rows {row_numbers}; survey ID {site}; "
             "Background Information definitions"
         )
-        total_count = _sum(rows, "Unit Count")
+        total_count = reviewed_count(rows)
         values = {
             "record_id": stable_id("projects", "AEMO survey site", str(site)),
             "entity_type": "projects",
@@ -233,6 +246,22 @@ def stage_wind_sites(
                 "as zero."
             ),
         }
+        held = [r for r in rows if r["Gen Info Unit ID"] in count_holds]
+        if held:
+            values["quality_status"] = "needs_review"
+            extensions = json.loads(values["extensions_json"])
+            extensions["field_quarantines"] = {
+                "turbine_count": {
+                    "reason": "Reviewed unit count/rating appears to describe a generating "
+                    "block rather than individual turbines; physical count unresolved",
+                    "source_id": source_id,
+                    "observed_at": published_date,
+                    "unit_ids": [r["Gen Info Unit ID"] for r in held],
+                    "original_counts": [r["Unit Count"] for r in held],
+                    "resolution": "Raw unit inventory and arithmetic retained; counts null",
+                }
+            }
+            values["extensions_json"] = canonical_json(extensions)
         record = evidence_record(values, source_id=source_id, now=now, locator=locator)
         evidence = json.loads(record["evidence_json"])
         for field, source_column in (

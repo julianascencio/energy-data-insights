@@ -161,6 +161,12 @@ comparable = equipment.loc[
     equipment.equipment_category.eq("wind_turbine")
     & equipment.rated_power_kw.notna()
     & equipment.rotor_diameter_m.notna()
+    # These source ratings are power at 11 m/s, not nameplate densities.
+    & ~equipment.sources.apply(
+        lambda ids: any(
+            source in ids for source in ("pnnl_small_wind_july2026", "sdwind_sd12_20261104")
+        )
+    )
 ]
 for manufacturer, group in comparable.groupby("manufacturer"):
     values = [

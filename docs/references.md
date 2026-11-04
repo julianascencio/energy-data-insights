@@ -7183,3 +7183,51 @@ Government of Spain / BOE (2026). **El Tabaibal public utility declaration modif
 **Role:** data. Dated source observations; no independent validation claimed.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### sdwind_sd3_20261104
+
+SD Wind Energy (2026). **SD3 product specification**. [Source](https://sd-windenergy.com/small-wind-turbines/sd3-3kw-wind-turbine/)
+
+**Role:** data. OEM specification observations, not independently validated performance. Access year where publication date is unavailable.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### sdwind_sd3ex_20261104
+
+SD Wind Energy (2026). **SD3EX product specification**. [Source](https://sd-windenergy.com/small-wind-turbines/sd3ex-3kw-wind-turbine/)
+
+**Role:** data. OEM specification observations, not independently validated performance. Access year where publication date is unavailable.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### sdwind_sd12_20261104
+
+SD Wind Energy (2026). **SD12 product specification**. [Source](https://sd-windenergy.com/small-wind-turbines/sd12-12kw-wind-turbine/)
+
+**Role:** data. OEM specification observations, not independently validated performance. Access year where publication date is unavailable.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### sdwind_sd6_20261104
+
+SD Wind Energy (2026). **SD6 product specification**. [Source](https://sd-windenergy.com/small-wind-turbines/sd6-6kw-wind-turbine/)
+
+**Role:** data. OEM specification observations, not independently validated performance. Access year where publication date is unavailable.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### sdwind_sd6_sdmk106
+
+SD Wind Energy (2026). **SD6 product specification SDMK106**. [Source](https://sd-windenergy.com/files/9315/6051/8111/SD6_Product_Leaflet.pdf)
+
+**Role:** data. OEM specification observations, not independently validated performance. Access year where publication date is unavailable.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### bergey_excel15_rev31
+
+Bergey Windpower Company (2025). **BWC EXCEL15 and Powersync25 owner manual**. [Source](https://www.bergey.com/wp-content/uploads/Excel-15S-Owners-Manual-Single-Box-12-30-25.pdf)
+
+**Role:** data. OEM specification observations, not independently validated performance. Access year where publication date is unavailable.
+
+**Used by:** `catalogues/wind/sources.json`.

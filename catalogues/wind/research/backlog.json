@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T20:44:50Z",
+  "updated_at": "2026-11-04T21:44:39Z",
   "branch": "research/wind-20261104-1535",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -170,7 +170,8 @@
         "Original certificates for new transformer types and LM47.6P2; reconcile YD80.5 and SI90.2 applicant/manufacturer identities; no repeat register partition",
         "Exact LM47.6P2 and Mingyang SCB11-8000/35 certificate searches found secondary register mirrors only. Different-manufacturer SCB11 specifications are not transferable. No source access restriction inferred; original certificates remain unavailable.",
         "Sinoma SI90.2/SI122 web specifications excluded by explicit site reuse restriction; no download/authentication failure. PDFJ2776 and SMG282CDT175-0136 original specification searches unresolved. Next exact official component certificates from pending register rows28/64/65, using independent originals; no repeat processed MNRE tables. Two explicitly enumerated EN-182 Mudarra configurations added; do not equate with India5MW model.",
-        "PNNL July2026 full nine-model table complete. ICC-SWCC directory excluded for explicit reuse terms; do not repeat. Next original OEM geometry/electrical configuration documents for the nine PNNL models, prioritizing EOX S-16 and KW20/KW30; certification dates remain source observations."
+        "PNNL July2026 full nine-model table complete. ICC-SWCC directory excluded for explicit reuse terms; do not repeat. Next original OEM geometry/electrical configuration documents for the nine PNNL models, prioritizing EOX S-16 and KW20/KW30; certification dates remain source observations.",
+        "Kodair KW20/KW30 original pages excluded for explicit terms; Eocycle S-series page and R5PDF HTTP403, not authentication/reuse claim. SD3/SD3EX/SD6/SD6+/SD12 current five tables completed; SD6 SDMK106 and Bergey Rev3.1 p5/12–14 processed. Next original SD3EX certificate for3/2.5kW conflict, SD6+ inverter-specific numerical data, Powersync25 p14–15 trip tables and pp16+ installation/environment; do not duplicate nested voltage/tower choices."
       ]
     },
     {
@@ -301,11 +302,11 @@
       "source": "AEMO NEM Generation Information October2026",
       "url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
       "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
-      "status": "first_bounded_partition_complete",
-      "completed_partition": "0 <= survey ID < 2000;125sites158units",
-      "next_partition": "2000 <= survey ID < 3000",
-      "next_task": "Review every wind site in next half-open partition; resolve phase links to accepted earlier survey sites; no wholesale name-only merging. Then >=3000.59identityholds in currentledger.",
-      "decision_ledger": "2026-11-04-2135-aemo-decisions.json"
+      "status": "two_bounded_partitions_complete",
+      "completed_partition": "0 <= survey ID < 3000;236sites reviewed in two batches;173additions63deferred",
+      "next_partition": "3000 <= survey ID < 4000",
+      "next_task": "Complete remaining33 survey sites; resolve phase links and count placeholders explicitly. Retain59prior identityholds and4newholds; never rediscover completed236sites.",
+      "decision_ledger": "2026-11-04-2235-aemo-decisions.json"
     }
   ],
   "user_priority_update": {

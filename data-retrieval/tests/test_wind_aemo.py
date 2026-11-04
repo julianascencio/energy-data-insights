@@ -119,6 +119,36 @@ def test_fractional_counts_cannot_cancel_in_aggregate():
         stage([unit(**{"Unit Count": 2.5}), unit(102, **{"Unit Count": 1.5})])
 
 
+def test_reviewed_block_count_quarantine_preserves_capacity_and_originals():
+    block = unit(
+        **{"Unit Count": 1, "Unit Capacity (MW AC)": 252, "Agg Nameplate Capacity (MW AC)": 252}
+    )
+    r = stage([block, unit(102)], quarantined_count_unit_ids=(101,))[0]
+    assert r["installed_capacity_mw"] == 264
+    assert "turbine_count" not in r
+    ext = json.loads(r["extensions_json"])
+    assert ext["capacity_by_aemo_status"]["In Service"]["turbine_count"] is None
+    assert ext["unit_inventory"][0]["Unit Count"] == 1
+    assert ext["field_quarantines"]["turbine_count"]["unit_ids"] == [101]
+    assert r["quality_status"] == "needs_review"
+    # An explicit review decision, never an undocumented numeric cutoff.
+    assert stage([block])[0]["turbine_count"] == 1
+
+
+def test_count_quarantine_requires_exact_selected_unit():
+    with pytest.raises(ValueError, match="selected partition"):
+        stage([unit()], quarantined_count_unit_ids=(999,))
+
+
+def test_quarantined_mixed_status_count_does_not_null_other_status():
+    r = stage(
+        [unit(), unit(102, **{"Commitment Status": "Committed"})], quarantined_count_unit_ids=(102,)
+    )[0]
+    states = json.loads(r["extensions_json"])["capacity_by_aemo_status"]
+    assert states["In Service"]["turbine_count"] == 4
+    assert states["Committed"]["turbine_count"] is None
+
+
 def test_workbook_adapter_checks_headers_and_keeps_excel_locators(tmp_path):
     from openpyxl import Workbook
 

@@ -119,6 +119,7 @@ function render() {
   const stats = statistics(filtered, metric);
   const projects = tableName === "projects" && !isBessOem && !isDataCenter && !isWind;
   const summary = [[number(filtered.length), projects ? "Matching projects" : "Matching records", `of ${number(rows.length)} in catalogue`]];
+  if (isWind) summary.push([number(filtered.filter(r => r.quality_status === "needs_review").length), "Records needing review", "Inspect field conflicts; quarantined values remain unknown, not zero"]);
   if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
@@ -141,7 +142,7 @@ function render() {
       [number(inventory.lifecycleUnknown), "Lifecycle unknown", "Erected alone does not establish operation"]);
   } else if (isWind && tableName === "equipment") {
     summary.push([number(new Set(filtered.map(r => r.manufacturer).filter(Boolean)).size), "Manufacturers"],
-      [number(stats.known), "Metric reported", "Specifications, not field performance"], [number(stats.missing), "Metric unknown", "See nested options and unresolved fields"], [number(stats.mean), "Metric mean", fieldLabel(metric)]);
+      [number(stats.known), "Metric reported", "Specifications, not field performance"], [number(stats.missing), "Metric unknown", "See nested options and unresolved fields"], [metric === "rated_power_kw" ? "See conditions" : number(stats.mean), metric === "rated_power_kw" ? "Power rating basis" : "Metric mean", metric === "rated_power_kw" ? "Nominal, default-mode and power-at-wind-speed ratings are distinct" : fieldLabel(metric)]);
   } else if (isDataCenter && tableName === "projects") {
     const scopes = dataCenterScopes(filtered);
     summary.push([number(scopes.facilities), "Facility records", `${scopes.phases} phase records · ${scopes.campuses} campus aggregates`],
