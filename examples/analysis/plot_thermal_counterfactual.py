@@ -1,6 +1,6 @@
 """
 HVAC: shifted starts and counterfactual response
-==============================================
+================================================
 
 Reproduce Foobot's T2 comparison for starts shifted by -60, -30, +30 and +60
 minutes. Each intervention is paired with the **same morning's T2 zero-offset

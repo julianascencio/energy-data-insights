@@ -1,6 +1,6 @@
 """
 HVAC: temperature accuracy versus comfort timing
-===============================================
+================================================
 
 Reanalyse all 30 published T1 mornings from Antoine Galataud's Foobot experiment
 (2026): `source article <https://techblog.foobot.io/ai/hvac/control/tsfm-counterfactual-thermal-dynamics.html>`_.
