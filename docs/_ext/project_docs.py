@@ -231,6 +231,22 @@ def _forecast_benchmark_assets(root: Path) -> None:
     (gallery / "plot_forecast_model_benchmark.py.md5").unlink(missing_ok=True)
 
 
+def _timestral_solar_assets(root: Path) -> None:
+    """Publish the audited case with observations, real inference and search evidence."""
+    examples = root / "examples/analysis"
+    gallery = root / "docs/auto_examples/analysis"
+    destination = gallery / "data/timestral_solar"
+    destination.mkdir(parents=True, exist_ok=True)
+    samples = sorted((examples / "data/timestral_solar").glob("*"))
+    for sample in samples:
+        shutil.copyfile(sample, destination / sample.name)
+    with ZipFile(gallery / "timestral_solar_example.zip", "w", compression=ZIP_DEFLATED) as bundle:
+        for path in [examples / "plot_timestral_solar_case.py", *samples]:
+            bundle.write(path, arcname=path.relative_to(examples))
+        bundle.write(root / "docs/timestral-solar-case.md", arcname="README.md")
+    (gallery / "plot_timestral_solar_case.py.md5").unlink(missing_ok=True)
+
+
 def _pvgis_assets(root: Path) -> None:
     """Bundle complete PVGIS captures with their provenance and runnable examples."""
     examples = root / "examples/connectors"
@@ -588,6 +604,7 @@ def prepare_sources(root: Path) -> list[str]:
     _generation_assets(root)
     _timestral_assets(root)
     _forecast_benchmark_assets(root)
+    _timestral_solar_assets(root)
     _pvgis_assets(root)
     _terrain_assets(root)
     _imagery_assets(root)

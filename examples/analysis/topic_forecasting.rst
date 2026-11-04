@@ -8,10 +8,12 @@ Benchmark solar and wind forecasts using common observations and scoring rules.
    .. minigallery::
 
       ../examples/analysis/plot_forecast_model_benchmark.py
+      ../examples/analysis/plot_timestral_solar_case.py
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
    plot_forecast_model_benchmark
+   plot_timestral_solar_case
 

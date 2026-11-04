@@ -1,0 +1,74 @@
+{
+  "sources": [
+    {
+      "technology": "solar",
+      "plant_id": "RNMB06",
+      "plant_name": "Mendubim VI",
+      "downloads": [
+        {
+          "source_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/RESTRICAO_COFF_FOTOVOLTAICA_DETAIL_2024_06.parquet",
+          "request": {
+            "endpoint": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/RESTRICAO_COFF_FOTOVOLTAICA_DETAIL_2024_06.parquet",
+            "parameters": {},
+            "retrieved_at_utc": "2026-11-03T22:10:00.419097+00:00",
+            "sha256": "5ee9c525357d0ac8a3426802bd3abae34cb170ca9934860d8e1003cf84299bcf",
+            "size_bytes": 3435451,
+            "cache_hit": false
+          }
+        },
+        {
+          "source_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/RESTRICAO_COFF_FOTOVOLTAICA_DETAIL_2024_07.parquet",
+          "request": {
+            "endpoint": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/RESTRICAO_COFF_FOTOVOLTAICA_DETAIL_2024_07.parquet",
+            "parameters": {},
+            "retrieved_at_utc": "2026-11-03T22:10:00.838447+00:00",
+            "sha256": "677dce64bbe40bf9a31b8696be6677125b5d8a162be5dcf057879fe9eb5e38c2",
+            "size_bytes": 3670146,
+            "cache_hit": false
+          }
+        },
+        {
+          "source_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/RESTRICAO_COFF_FOTOVOLTAICA_DETAIL_2024_08.parquet",
+          "request": {
+            "endpoint": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/RESTRICAO_COFF_FOTOVOLTAICA_DETAIL_2024_08.parquet",
+            "parameters": {},
+            "retrieved_at_utc": "2026-11-03T22:10:01.364296+00:00",
+            "sha256": "fb5b71924590bc343aa43d8294c330ae95e403e505c3674a37b804057aa75d2d",
+            "size_bytes": 3713883,
+            "cache_hit": false
+          }
+        }
+      ],
+      "sample_sha256": "6687650aeafda632271b64fcaace0e0e11e1d8fb03ec713a86796ddce208ff7e",
+      "sample_rows": 4416,
+      "source_columns": [
+        "id_subsistema",
+        "id_estado",
+        "nom_modalidadeoperacao",
+        "nom_conjuntousina",
+        "nom_usina",
+        "id_ons",
+        "ceg",
+        "din_instante",
+        "val_irradianciaverificado",
+        "flg_dadoirradianciainvalido",
+        "val_geracaoestimada",
+        "val_geracaoverificada",
+        "id_ons_conjuntousina",
+        "nom_origemirradiancia",
+        "flg_dadoirradianciasupervisaoinvalido",
+        "nom_origemgeracaoreferencia",
+        "val_geracaoreferenciafinal",
+        "flg_geracaorestrita"
+      ],
+      "transformation": "Select RNMB06, concatenate June/July/August, sort native timestamps, serialize all original columns as semicolon CSV; no interpolation.",
+      "dictionary_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/restricao_coff_fotovoltaica_detail_tm/DicionarioDados_RestricaoContrainedoff_UsiFotovoltaica_Detail.json"
+    }
+  ],
+  "attribution": "Operador Nacional do Sistema Eletrico (ONS), CC-BY; subset identified.",
+  "target_unit": "MWmed: mean MW over the half-hour; measured, not reference generation",
+  "clock": "America/Sao_Paulo reference labels converted to UTC without shifting. Interval start/end is not asserted. Issue is the last historical reference label.",
+  "availability": "Revised historical observations, assumed available at their labels; not a verified as-issued SCADA backtest.",
+  "physical_assumptions": "Measured irradiance is a POA proxy of undocumented plane; constant 25 C because temperature and module thermal parameters are unavailable.",
+  "selection": "See selection_audit.json, plant_search.csv and variant_search.csv. The plant was chosen on June errors; the final configuration used June/July only."
+}
