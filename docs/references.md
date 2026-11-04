@@ -7063,3 +7063,35 @@ Government of Spain (2026). **Tesouro Storage battery authorization**. [Source](
 **Role:** data. Administrative scope is distinct from physical operation.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_21602
+
+Government of Spain (2026). **Elawan Belinchón I, II and III wind environmental decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21602)
+
+**Role:** data. Wind, solar and storage boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_21603
+
+Government of Spain (2026). **Bordecorex Norte solar hybrid refusal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21603)
+
+**Role:** data. Wind, solar and storage boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_21604
+
+Government of Spain (2026). **Ventosa del Ducado solar hybrid refusal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21604)
+
+**Role:** data. Wind, solar and storage boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2024_14203
+
+Government of Spain (2024). **Tesouro wind construction authorization**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-14203)
+
+**Role:** data. Wind, solar and storage boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.

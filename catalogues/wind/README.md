@@ -376,3 +376,16 @@ withdrawal is recorded separately from Nordés and from their former joint
 administrative procedure. Its 106.4 MW application capacity is not installed
 capacity and remains excluded from aggregate totals. El Páramo's extension and
 Tesouro's wind/battery boundaries require further identity reconciliation.
+
+### Hybrid proposals and dated construction permits
+
+Batch `2026-11-04-1835` completes BOE October 15–16 Series A/B and the
+Tesouro original wind construction permit crosswalk. The three Elawan Belinchón
+wind farms are separate from their existing photovoltaic hosts. The environmental
+notice reduces their combined design from ten turbines/72 MW to nine/64.8 MW;
+Belinchón II's revised individual capacity and count remain null while both
+observations and the removed B-10 position are retained. No aggregate project row
+or guessed turbine model is added. Tesouro's 2024 authorization is dated evidence,
+not proof of current operation; its 60 MW access permission is separate from the
+50.4 MW authorized wind proposal and the later battery project. All four new
+project scopes remain excluded from capacity totals.

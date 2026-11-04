@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T16:36:47Z",
+  "updated_at": "2026-11-04T17:35:37Z",
   "branch": "research/wind-20261104-1535",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -167,7 +167,8 @@
         "Exact Bonfiglioli JB00024563/JB00024827/7T07W searches returned only the already reviewed certificate; no new drawings. Keep21 assembly holds; next independent supplier WE4500S-01 and WE7000G originals.",
         "WE4500S-01/WE7000G searches yield previously reviewed MNRE disclosures and secondary DNV mirrors only. Next official DNV certificate search/export for CC-DNV-SE-0074-09388 revision2; no current-validity inference from mirrors.",
         "Acquire exact component certificates for rows28,64,65; row16 resolves presence of09388-2 in dated register but Delijia legal-entity crosswalk remains held. Then complete non-gearbox CC DNV-SE-0074 rows.",
-        "Original certificates for new transformer types and LM47.6P2; reconcile YD80.5 and SI90.2 applicant/manufacturer identities; no repeat register partition"
+        "Original certificates for new transformer types and LM47.6P2; reconcile YD80.5 and SI90.2 applicant/manufacturer identities; no repeat register partition",
+        "Exact LM47.6P2 and Mingyang SCB11-8000/35 certificate searches found secondary register mirrors only. Different-manufacturer SCB11 specifications are not transferable. No source access restriction inferred; original certificates remain unavailable."
       ]
     },
     {
@@ -225,16 +226,18 @@
         "2026-10-31",
         "2026-10-24",
         "2026-10-17",
-        "2026-10-19"
-      ],
-      "next_dates": [
+        "2026-10-19",
         "2026-10-15",
         "2026-10-16"
       ],
+      "next_dates": [
+        "2026-10-13",
+        "2026-10-14"
+      ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "October15/16 A/B; PEol-899/929 parent-extension scope, Tesouro wind permit, El Almendro and Romeral crosswalks",
-      "decision_ledger": "2026-11-04-1735-decisions.json",
+      "next_task": "October13/14 A/B; Belinchón II revised permit/count, PEol-899/929 parent-extension, Bordecorex Norte and Ventosa del Ducado original wind permits",
+      "decision_ledger": "2026-11-04-1835-decisions.json",
       "series_b_completed_dates": [
         "2026-10-26",
         "2026-10-27",
@@ -251,7 +254,9 @@
         "2026-11-03",
         "2026-11-04",
         "2026-10-17",
-        "2026-10-19"
+        "2026-10-19",
+        "2026-10-15",
+        "2026-10-16"
       ]
     }
   ],
