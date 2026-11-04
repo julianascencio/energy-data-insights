@@ -1,0 +1,22 @@
+{
+  "baseline_commit": "40b18da3ada733925ff4180c3b516cead5939a5b",
+  "main_commit": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
+  "started_at": "2026-11-04T04:56:09Z",
+  "prepared_at": "2026-11-04T05:22:15.140500+00:00",
+  "elapsed_minutes_through_commit_preparation": 26.1,
+  "catalogue_validation": "89806 unique accepted records; schema, IDs, ranges, links and evidence passed",
+  "focused_pytest": {
+    "passed": 199,
+    "scope": "Catalogue, Catalonia, Australia, REPD, ODRE, Japan FIT, Aragon, Madrid, GEM, Swiss, NEPRA"
+  },
+  "ruff": "passed",
+  "ruff_format": "748 current source files passed; generated docs examples absent from isolated sparse checkout",
+  "ty": "passed with explicit current checkout package paths, Python3.12 and installed xgboost import path",
+  "offline_example": "Final existing PV example passed with65255 projects",
+  "parquet": "Final five148-column typed ZSTD tables: rows, codecs and SHA256 verified",
+  "preservation": "77 new;65 enriched;100 scalar fields and60 native phase values; no old values, created_at or records removed",
+  "code_changes": false,
+  "wider_suite_docs": "Not rerun for data/evidence-only continuation. Previous implementation run:1525 passed,4 skipped,15 inherited DataCenter setup errors; dummy docs one inherited Leaflet warning. No new full-suite/docs pass claimed.",
+  "concurrency": "PR134 open and unchanged at05:12Z;main6b38f9a4 unchanged;launch37merged;expected-head ref update required",
+  "storage": "Root volume full. Fresh isolated checkout on temporary volume. Only own superseded preliminary snapshot removed after final verified build to recover space; raw sources/final snapshot preserved."
+}

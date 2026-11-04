@@ -1,0 +1,50 @@
+{
+  "accepted_new_models": 0,
+  "accepted_equipment_enrichments": 0,
+  "held_model_columns": 10,
+  "batches": [
+    {
+      "publisher": "INVT",
+      "exact_models": [
+        "XG50KTR",
+        "XG50KTRL",
+        "XG60KTR",
+        "XG60KTRL",
+        "XG66KTRL",
+        "XG70KTRL"
+      ],
+      "existing_exact_models": 6,
+      "candidate_purpose": "OEM enrichment",
+      "datasheet_sha256": "986c1201b4e6eb1fbf1968394341314c281973c68986736240cc9658240f4e89",
+      "manual_sha256": "ce52ac7af8048fa87dc622716ede0f6fdb8724bb482cd3fa4cb3fdbea09f15aa",
+      "locator": "datasheet PDF page2; manual section9.1 table9-1, PDF page38 (printed34)",
+      "conflict": {
+        "field": "starting voltage",
+        "datasheet_v": 250,
+        "manual_v": 180,
+        "decision": "Unresolved revision conflict; no canonical change"
+      },
+      "rights": "Prior written permission requirement; legal URL/hash in backlog; no contact attempted."
+    },
+    {
+      "publisher": "FIMER",
+      "exact_model_columns": [
+        "PVS-20-TL (2MPPT)",
+        "PVS-20-TL (4MPPT)",
+        "PVS-30-TL",
+        "PVS-33-TL"
+      ],
+      "revision": "Rev C22June2021",
+      "sha256": "82aaa766d9153dd5e9ac196d45a2dd573a4edc419023a47214354068cb69fc20",
+      "locator": "technical tables pp3–4; rights footer p4",
+      "rights": "Prior written consent required for use/disclosure/reproduction; existing hold retained."
+    },
+    {
+      "publisher": "Gantner Instruments Environment",
+      "candidate_family": "String.CB",
+      "exact_model_columns": 0,
+      "decision": "Customizable family lacks exact ordering identifiers in accessible indexed description; normal source access503. No configurations fabricated."
+    }
+  ],
+  "raw_documents": "Outside Git; exact URLs and successful checksums in20261104T0500_downloads.json. No accepted specifications."
+}
