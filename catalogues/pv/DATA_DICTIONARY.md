@@ -493,3 +493,25 @@ Reviewed associations may fill a missing `extensions_json` context through the
 existing upsert API, with exact process/polygon references and field source maps.
 They do not replace phases, populate scalar ratings, or resolve unknown plant
 boundaries. Unreviewed groups remain candidates even when source coverage is complete.
+
+## RVO SDE decisions and qualified OEM tables
+
+`pv_catalogue.rvo` keeps subsidy decisions separate from canonical generating
+plants and their phases. `Referentie` is an exact award identifier, not a plant
+identifier. `Thema` must explicitly say `Zon-PV`; generic `Zon` does not suffice.
+Anonymised decisions are excluded entirely, and applicant/address/postcode/locality
+fields and geometry do not enter staging. Maximum subsidy is a financial ceiling,
+not capex or an actual payment. The workbook has no individual nameplate-capacity
+column; category MWp thresholds must not populate ratings. Source realisation flags
+and native in-use years do not establish present-day operation. No implicit join to
+an older viewer snapshot or interpretation of its conflicting field aliases occurs.
+
+Hopewind HSNV tables preserve per-MPPT currents and DC-input layouts as native
+context. Page-one current/efficiency discrepancies remain field holds, not repaired
+values. Apparent maximum kVA is not active kW; bounded weights are not exact mass.
+OMCO Origin One-In-Portrait is one mechanical model with alternative controller
+packages. Optional backtracking is not assumed installed; total tracking range does
+not create unstated endpoints. Module/length bounds, pose-dependent dimensions,
+typical drive counts and an unqualified advertised wind speed stay in context.
+Published structural/drive warranty durations use their respective columns; control,
+motor and damper terms remain separate. No legacy controller protocols are blended.

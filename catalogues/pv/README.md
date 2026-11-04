@@ -29,6 +29,16 @@ and leaves every group unaccepted until site/phase review. The first complete
 are not plant counts. No licence-to-operation, centroid or kVA-to-active-power
 inference is made. See the [DGEG attribution notice](licenses/DGEG_CC_BY4_NOTICE.md).
 
+The offline `pv_catalogue.rvo.read_rvo_workbook` reader stages checksum-pinned
+RVO SDE subsidy decisions in bounded ground/water PV partitions. It requires the
+explicit `Zon-PV` theme, excludes anonymised decisions entirely, and omits applicant,
+address, postcode and geometry fields. Award references are cursors, not plant IDs.
+Subsidy maxima are not capex, category MWp thresholds are not nameplate capacities,
+and realisation flags are not current operating-status verification. The July 2026
+source has 981 non-anonymised ground/water PV decisions; the first 100 remain
+candidates, with zero accepted RVO plants. See the
+[RVO reuse and attribution notice](licenses/RVO_REUSE_NOTICE.md).
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;
