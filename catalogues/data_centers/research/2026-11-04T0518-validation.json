@@ -1,0 +1,149 @@
+{
+  "run_id": "baudouin-dcp-generators-20261104T051800Z",
+  "validated_at": "2026-11-04T05:40:57Z",
+  "branch": "research/data-center-database-20261104T0347Z",
+  "base_main_sha": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
+  "prepublication_remote_head": "671bd4721203d4bb836b45b436c7a6459a55c1e2",
+  "canonical_records": 967,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 785,
+    "countries": 36,
+    "operators": 13,
+    "oems": 27
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 726,
+    "countries": 36,
+    "operators": 13,
+    "oems": 25
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 34,
+    "substantively_enriched_equipment": 0,
+    "new_countries": [],
+    "new_operators": [],
+    "new_oems": [
+      "Baudouin"
+    ]
+  },
+  "pull_request_cumulative_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 59,
+    "substantively_enriched_equipment": 0,
+    "new_oems": [
+      "Borri",
+      "Baudouin"
+    ],
+    "repair": "validated UTF-8 replacement for the 38 KSTAR EPOWER records already merged on main"
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_baudouin_generator_batch.py <temporary-output> twice && cmp both outputs with catalogues/data_centers/records/equipment/2026-11-04-baudouin-generators.jsonl",
+      "result": "passed; all 34 bounded rating rows reproduced byte-for-byte; canonical JSONL SHA-256 f017d50c82b58eb39134ebd847ec4717fedf3497478f5597c6f295d25265708a"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 967 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "70 passed"
+    },
+    {
+      "command": "TMPDIR=/dev/shm pytest -q -p no:cacheprovider",
+      "result": "2154 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 821 files format-checked"
+    },
+    {
+      "command": "ty check scripts/build_data_center_baudouin_generator_batch.py data-retrieval/src/energy_data_retrieval/data_center_catalogue/inventories.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed for all changed Python files"
+    },
+    {
+      "command": "ty check",
+      "result": "one pre-existing unrelated BESS diagnostic: scripts/stage_bess_nfosigw.py cannot resolve energy_data_retrieval.bess_catalogue.nfosigw; no Data Center diagnostics"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3538 candidate files"
+    },
+    {
+      "command": "TMPDIR=/dev/shm python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; geographic coverage, capacity completeness, cooling and equipment outputs reproduced"
+    },
+    {
+      "command": "TMPDIR=<ephemeral> sphinx-build -W --keep-going -b html docs <temporary-output> && python scripts/check_docs_links.py <temporary-output>",
+      "result": "passed; 528 HTML pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment, schema, sources and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e8d0ff04dbdbf7ed0b41120c85aac82fe6a6e93fc8b445ea34cc3ee549da04de",
+    "equipment_sha256": "07ff8ac784dfb5f67353f7f5a891ccd9b8c17ea51008636598f681e4f82ecb40",
+    "input_sha256": "da80a17cc1fe03d727eb5e9c5a7bcdbe1eef8224a3b69d9126327fc1e325d764",
+    "manifest_sha256": "141ab5c9a3fbb2dfa16ffe5fcd4704f14eecb88904ae0bad1832281763e424c3",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "02a55a2062938da4ea81d2e408233c9b711c557ea833aab1cdb0c7c60697a0e8"
+  },
+  "capacity_summary": {
+    "it_ultimate_planned_mw": 697.1,
+    "it_ultimate_planned_records": 12,
+    "it_design_mw": 534.1,
+    "it_design_records": 20,
+    "it_operational_mw": 146.0,
+    "it_operational_records": 5,
+    "grid_design_mw": 207.5,
+    "grid_design_records": 3,
+    "facility_ultimate_planned_mw": 75.0,
+    "facility_ultimate_planned_records": 1,
+    "campus_aggregates_excluded": 114
+  },
+  "source_capture": {
+    "official_pages_or_documents_reviewed": 4,
+    "accepted_model_frequency_rows": 34,
+    "official_originals_checksummed": 0,
+    "source_bytes": null,
+    "reuse_note": "Public copyrighted Baudouin rating card reviewed for factual extraction. Original response bytes were unavailable through the research interface; no checksum is claimed and this is an access/tooling limitation, not a reuse prohibition. The original is not redistributed."
+  },
+  "quarantines": [],
+  "deferred": [
+    "Alternator, voltage, emissions, enclosure and installation choices remain unknown and do not create synthesized Baudouin variants."
+  ],
+  "screened_reuse_holds": [
+    "Kohler/Rehlko generator tables: explicit official public/commercial reuse restriction; no facts or bytes imported.",
+    "FG Wilson DCC table: explicit official copying/transmission/printing restriction; no facts or bytes imported.",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale and Riello holds remain unchanged."
+  ],
+  "remote_ci_before_publication": {
+    "head_sha": "671bd4721203d4bb836b45b436c7a6459a55c1e2",
+    "documentation_run": 41774332460,
+    "documentation": "success",
+    "python_run": 41774332349,
+    "python_quality_and_tests": "success"
+  }
+}

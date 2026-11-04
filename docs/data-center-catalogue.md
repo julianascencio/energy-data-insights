@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 751 exact models/configurations from NVIDIA, AMD, Borri, Carrier, CoolIT Systems, Cummins,
+has 785 exact models/configurations from NVIDIA, AMD, Baudouin, Borri, Carrier, CoolIT Systems, Cummins,
 Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR, Lenovo, Motivair by Schneider
 Electric, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
@@ -139,6 +139,11 @@ battery autonomy and optional communications, parallel kits and transformers
 remain observations. The INGENIO MAX 250 and 500 kVA weights stay null because
 the current family page and January 2025 catalogue disagree; both dated values
 remain preserved as conflicting observations.
+The Baudouin continuation processes every row in the April 2025 Data Centre
+Power rating card: 19 exact 50 Hz and 15 exact 60 Hz configurations. Engine
+gross mechanical kWm, generator electrical kWe and generator apparent kVA stay
+separate. Speed, aspiration and governor remain row-bound observations; no
+alternator, voltage, emissions package, installation or deployment is inferred.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
