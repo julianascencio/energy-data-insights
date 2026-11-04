@@ -207,3 +207,21 @@ unidirectional stationary battery inverters, not bidirectional PCS. VA stays
 apparent power, maximum inverter efficiency stays separate from RTE, and optional
 solar-regulator standby conditions do not define extra model records. Review
 source terms and lifecycle before upsert; the six smaller models are discontinued.
+
+For BOE open-data daily indices, `scripts/stage_bess_boe.py --date YYYYMMDD`
+selects all battery-title mentions across the day's issues and sections. Original
+XML needs an `Accept: application/xml` request header. The offline adapter checks
+response/date, identifiers and URLs; `inspect_notice` checks original SHA-256 and
+returns numbered paragraphs for review. A title can denote non-stationary cells,
+a multi-site procurement or an amendment to an existing hybrid: never auto-import.
+One notice can cover distinct named projects, so retain project-qualified external
+identities and the shared notice in evidence. Administrative permits do not imply
+physical construction. Preserve gross/usable and container-arithmetic conflicts.
+
+`scripts/stage_bess_neata.py --series lfp48` (or `ess`) stages exact original
+Neata HTML tables. Model/header/units changes fail closed. Pack Ah is not cell Ah;
+current is not inferred watts, unnamed dimension-axis order stays native, and
+system efficiency is not automatically round-trip efficiency. Cycle and warranty
+claims without conditions remain qualified observations. Retain external
+communications separately from interfaces and reserved fire equipment from
+installed equipment. No project/model assignment follows from common branding.

@@ -7039,3 +7039,11 @@ Studer Innotec (2026). **next3 rack technical data**. [Source](https://studer-in
 **Role:** data. Original source checksum and exact field locators in catalogue registry. OEM page undated; year is retrieval year.
 
 **Used by:** `catalogues/bess_oem/sources.json`.
+
+### pvdeg_software
+
+Springer, Martin; Ovaitt, Silvana; Daxini, Rajiv; Ford, Timothy; Brown, Matthew; Karas, Joseph; Holsapple, Derek; Kempe, Michael (2026). **PVDeg: a Python package for modeling degradation of solar photovoltaic systems**. [DOI: 10.5281/zenodo.8088382](https://doi.org/10.5281/zenodo.8088382)
+
+**Role:** method. Integration pins pvdeg 0.7.4; DOI is upstream concept DOI. Relative thermal screening, not calibrated degradation or lifetime.
+
+**Used by:** `methods/src/energy_methods/pvdeg.py`, `analysis/src/energy_analysis/pvdeg_canary.py`, `docs/pvdeg-canary.md`, `examples/analysis/plot_pvdeg_canary.py`.
