@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T16:19:16Z",
+  "updated_at": "2026-11-04T17:26:25Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -72,7 +72,8 @@
     "energy_star_legrand_av_certifications": 7,
     "energy_star_delta_certifications": 26,
     "energy_star_cyberpower_certifications": 135,
-    "energy_star_eaton_certifications": 176
+    "energy_star_eaton_certifications": 176,
+    "energy_star_schneider_certifications": 222
   },
   "next_batches": [
     {
@@ -178,7 +179,7 @@
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
       "offset": 936,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 33 Para Systems/Minuteman, all 22 ADI, all 15 Ablerex, all ten Panduit, all seven Appleton/SolaHD, all seven Legrand AV, all 26 Delta Electronics, all 135 Cyber Power Systems and all 176 Eaton ENERGY STAR certification entries complete; continue independent generator/electrical suppliers without recounting completed inventories",
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 33 Para Systems/Minuteman, all 22 ADI, all 15 Ablerex, all ten Panduit, all seven Appleton/SolaHD, all seven Legrand AV, all 26 Delta Electronics, all 135 Cyber Power Systems, all 176 Eaton and all 222 Schneider Electric ENERGY STAR certification entries complete; continue independent generator/electrical suppliers without recounting completed inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -196,7 +197,7 @@
         "Makelsan LEVELUPS/T3/T4 offset 34 is complete at 18+11+5 exact three-phase columns; keep kVA and kW separate and never synthesize selectable voltage, frequency, battery, cabinet or communications options",
         "SIEL Safepower offset 27 is complete at 9+10+8 exact columns; keep SPM cabinet active kW null, retain merged dimensions and with/without-battery weights as observations, and never synthesize module, battery, voltage, frequency or communications options",
         "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices",
-        "EPA ENERGY STAR Para Systems/Minuteman offset 33, ADI offset 22, Ablerex offset 15, Panduit offset 10, Appleton/SolaHD offset 7, Legrand AV offset 7, Delta Electronics offset 26, Cyber Power Systems offset 135 and Eaton offset 176 are complete for dataset update 2026-11-03; retain unique certification IDs, partner/brand identity, W/VA and load-qualified efficiencies, preserve unavailable values as null, keep reported maximum tested configurations as observations rather than normalized ratings, and never infer battery energy"
+        "EPA ENERGY STAR Para Systems/Minuteman offset 33, ADI offset 22, Ablerex offset 15, Panduit offset 10, Appleton/SolaHD offset 7, Legrand AV offset 7, Delta Electronics offset 26, Cyber Power Systems offset 135, Eaton offset 176 and Schneider Electric offset 222 are complete for dataset update 2026-11-03; retain unique certification IDs, partner/brand identity, W/VA and load-qualified efficiencies, preserve unavailable values as null, keep reported maximum tested configurations as observations rather than normalized ratings, and never infer battery energy"
       ]
     },
     {
@@ -367,12 +368,12 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "energy-star-eaton-ups-20261104T161916Z",
+    "run_id": "energy-star-schneider-ups-20261104T172625Z",
     "report": "2026-11-04-report.md",
-    "validation": "2026-11-04T1619-validation.json",
+    "validation": "2026-11-04T1726-validation.json",
     "added_projects": 0,
     "enriched_projects": 0,
-    "added_equipment": 176,
-    "branch": "research/data-center-database-20261104T1416Z"
+    "added_equipment": 222,
+    "branch": "research/data-center-database-20261104T1749Z"
   }
 }
