@@ -176,3 +176,26 @@ Common merged cells require visual review. Controlled plant capacity, optional I
 kits and control-loop timing retain their own boundaries; none is battery hardware
 capacity or unconditional performance. The Taiwan review distinguishes Xia Xing's
 two actual chemistry-specific systems from subsequent simulation scenarios.
+
+For Ingeteam revisions 300002287_C, 300001994/F and 300002273_A,
+`scripts/stage_bess_ingeteam.py` stages local PDF layout text with `--series M`,
+`C` or `350`. Named M600/M630/M660/M690 module configurations and C600–C840
+columns remain distinct. The eleven 350TL AC-voltage operating points remain
+one model. Preserve kVA, charge versus discharge, 30/40/50°C conditions,
+grid-tied versus off-grid DC limits and converter efficiency boundaries.
+Common cells, optional accessories and footnotes require visual review.
+Changed revisions, headings, units or column counts fail before staging.
+
+For the final Portuguese C21-i18/2026 table after tie-breaking, use
+`scripts/stage_bess_portugal_grants.py --final-2026`. It requires 45 unique
+application IDs and the EUR80,250,000 funding control total. Zero funding
+remains zero; the GGS charging column has no published unit in this table
+and must not become MW. Applicant/company IDs are not physical-site identities.
+The adapter stages locally only; site reconciliation and reuse review remain
+prerequisites for canonical ingestion. This is a different cohort from 2025.
+
+## EU Innovation Fund and Studer offline staging (4 November 2026)
+
+`python scripts/stage_bess_innovation_fund.py INPUT.html --output candidates.json` stages grant inventory rows without treating grant status as plant lifecycle. Review technology and physical site identity before using the existing upsert API. Shared factsheet URLs are flagged for manual identity review. The 49 reviewed candidate decisions are in `research/2026-11-04_eu_studer_review.json`.
+
+`python scripts/stage_bess_studer.py INPUT.html --series xts --output candidates.json` accepts xtm/xth/xts original public product HTML. It requires exact model headings, consistent mobile/desktop tables, units and footnotes. VA stays apparent power; optional ecf 01 operating points stay within the original model. No network access or canonical writes occur in either adapter.

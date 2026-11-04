@@ -1,0 +1,40 @@
+{
+  "record_id": "a6694cef-eb4b-512e-8c1a-3f0c506da793",
+  "added_fields": [
+    "extensions_json"
+  ],
+  "context": {
+    "NEA_code": "PPC2406340421001Z",
+    "NEA_cohort": "2026-07",
+    "NEA_rating_basis": "unspecified; not reclassified as AC",
+    "NEA_registered_installed_MW": 243.2,
+    "existing_GEM_phase_capacity_MW": 316.6,
+    "existing_phase_capacity_preserved": true,
+    "grid_evacuation": {
+      "award_date": "2025-05-07",
+      "historical_EPC": "Jiangsu Electric Power Construction No.1",
+      "lines_km_approx": [
+        14.12,
+        10.33
+      ],
+      "scope": "PhaseII-to-phaseIstation and existingline rerouting to500kVcollectingstation; thirditemoutgoingbayextension. Not wholePV EPC.",
+      "voltage_kV": 220
+    },
+    "identity_review": "Same Fengtai Dingji mine-subsidence phaseII,province/county and connection to phaseI; different capacity bases not a second generating project. No fuzzymerge or scalar overwrite.",
+    "native_phase_name": "淮能电力丁集矿20万千瓦水面光伏二期",
+    "remaining_hold": "Only secondary reproductions currently expose316.6MWdc/243.2MWac mapping; primary AC/DC source still required. Do not assign phaseII rating to combined project.",
+    "reviewed_GEM_phase_ID": "G100001018100",
+    "field_source_ids": {
+      "NEA_code_and_registered_MW": "nea_jul2026_20261104T1500",
+      "grid_evacuation": "ceec_dingji_grid_20250507_20261104T1600",
+      "existing_phase_capacity": [
+        "gem_202602_recovery_20261102"
+      ]
+    }
+  },
+  "source_ids": [
+    "ceec_dingji_grid_20250507_20261104T1600",
+    "nea_jul2026_20261104T1500"
+  ],
+  "new_projects": 0
+}

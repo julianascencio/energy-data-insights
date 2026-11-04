@@ -23,6 +23,7 @@ class PartnerBatch(TypedDict):
     name_prefix: str | None
     expected_count: int
     retrieved_at: str
+    include_maximum_configuration: bool
 
 
 PARTNER_BATCHES: dict[str, PartnerBatch] = {
@@ -32,6 +33,7 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "name_prefix": "Ablerex",
         "expected_count": 15,
         "retrieved_at": "2026-11-04T12:17:31Z",
+        "include_maximum_configuration": False,
     },
     "adi": {
         "partner": "ADI",
@@ -39,6 +41,7 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "name_prefix": None,
         "expected_count": 22,
         "retrieved_at": "2026-11-04T11:18:04Z",
+        "include_maximum_configuration": False,
     },
     "minuteman": {
         "partner": "Para Systems, Inc./Minuteman Power Technologies",
@@ -46,6 +49,7 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "name_prefix": "Minuteman",
         "expected_count": 33,
         "retrieved_at": "2026-11-04T10:26:21Z",
+        "include_maximum_configuration": False,
     },
     "panduit": {
         "partner": "Panduit Corp.",
@@ -53,6 +57,7 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "name_prefix": "Panduit",
         "expected_count": 10,
         "retrieved_at": "2026-11-04T13:20:48Z",
+        "include_maximum_configuration": False,
     },
     "appleton": {
         "partner": "Appleton Grp LLC d/b/a Appleton Group",
@@ -60,6 +65,7 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "name_prefix": "SolaHD",
         "expected_count": 7,
         "retrieved_at": "2026-11-04T13:20:48Z",
+        "include_maximum_configuration": False,
     },
     "legrand_av": {
         "partner": "Legrand AV Inc.",
@@ -67,6 +73,31 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "name_prefix": None,
         "expected_count": 7,
         "retrieved_at": "2026-11-04T13:20:48Z",
+        "include_maximum_configuration": False,
+    },
+    "delta_energy_star": {
+        "partner": "Delta Electronics, Inc. Tainan Branch",
+        "manufacturer": "Delta Electronics",
+        "name_prefix": "Delta",
+        "expected_count": 26,
+        "retrieved_at": "2026-11-04T14:16:19Z",
+        "include_maximum_configuration": False,
+    },
+    "cyberpower_energy_star": {
+        "partner": "Cyber Power Systems, Inc.",
+        "manufacturer": "CyberPower Systems",
+        "name_prefix": None,
+        "expected_count": 135,
+        "retrieved_at": "2026-11-04T15:17:13Z",
+        "include_maximum_configuration": True,
+    },
+    "eaton_energy_star": {
+        "partner": "Eaton Corporation",
+        "manufacturer": "Eaton",
+        "name_prefix": None,
+        "expected_count": 176,
+        "retrieved_at": "2026-11-04T16:19:16Z",
+        "include_maximum_configuration": True,
     },
 }
 DATASET_UPDATED = "2026-11-03T14:20:54Z"
@@ -120,11 +151,19 @@ def build_record(
     manufacturer: str,
     name_prefix: str | None,
     retrieved_at: str,
+    include_maximum_configuration: bool = False,
 ) -> dict[str, object]:
     uid = row["ENERGY STAR Unique ID"]
     model = row["Model Name"]
     tested = row["Minimum Configuration Tested Model Number"]
     tested_reported = tested.strip() not in {"", "N/A", "None", "Not Applicable"}
+    maximum_tested = row["Maximum Configuration Tested Model Number"].strip()
+    maximum_reported = include_maximum_configuration and maximum_tested not in {
+        "",
+        "N/A",
+        "None",
+        "Not Applicable",
+    }
     output_kw = number(row["Active Output Power Rating Minimum Configuration (W)"]) / 1000
     apparent_kva = number(row["Apparent Output Power Rating Minimum Configuration (VA)"]) / 1000
     runtime = optional_number(row["Energy Storage System Runtime at 100% Load (min.)"])
@@ -301,6 +340,25 @@ def build_record(
         observation(row, "markets", row["Markets"], None, boundary),
         observation(row, "cb_model_identifier", row["CB Model Identifier"], None, boundary),
     ]
+    if maximum_reported:
+        observations.append(
+            observation(
+                row,
+                "maximum_tested_configuration",
+                {
+                    "model": maximum_tested,
+                    "active_output_w": optional_number(
+                        row["Active Output Power Rating Maximum Configuration (W)"]
+                    ),
+                    "apparent_output_va": optional_number(
+                        row["Apparent Output Power Rating Maximum Configuration (VA)"]
+                    ),
+                },
+                None,
+                "ENERGY STAR maximum tested configuration; values remain observations and "
+                "are not normalized as the record's minimum-configuration rating",
+            )
+        )
     if runtime_50 is not None:
         observations.insert(
             11,
@@ -348,6 +406,10 @@ def build_record(
         **normalized,
         "capacity_scope": (
             f"Exact ENERGY STAR certification entry {uid} for minimum tested "
+            f"configuration {tested}; maximum tested configuration {maximum_tested} is retained "
+            "as a separate observation"
+            if tested_reported and maximum_reported
+            else f"Exact ENERGY STAR certification entry {uid} for minimum tested "
             f"configuration {tested}; maximum configuration is not stated"
             if tested_reported
             else f"Exact ENERGY STAR certification entry {uid}; minimum tested configuration "
@@ -421,6 +483,12 @@ def main() -> None:
         default="minuteman",
         help="Reviewed partner inventory to extract (default: minuteman)",
     )
+    parser.add_argument(
+        "--shard-size",
+        type=int,
+        default=0,
+        help="Write numbered JSONL shards with at most this many records (default: one file)",
+    )
     args = parser.parse_args()
     batch = PARTNER_BATCHES[args.partner_batch]
     expected_count = batch["expected_count"]
@@ -437,6 +505,7 @@ def main() -> None:
                 manufacturer=batch["manufacturer"],
                 name_prefix=batch["name_prefix"],
                 retrieved_at=batch["retrieved_at"],
+                include_maximum_configuration=batch["include_maximum_configuration"],
             )
             for row in staged["candidates"]
         ),
@@ -447,8 +516,27 @@ def main() -> None:
         or len({record["record_id"] for record in records}) != expected_count
     ):
         raise ValueError(f"Expected {expected_count} unique {batch['partner']} configurations")
-    args.output.write_text("".join(f"{compact(record)}\n" for record in records), encoding="utf-8")
-    print(f"Wrote {expected_count} ENERGY STAR-certified {batch['partner']} configurations")
+    if args.shard_size < 0:
+        raise ValueError("--shard-size must be zero or positive")
+    if args.shard_size:
+        shard_count = (len(records) + args.shard_size - 1) // args.shard_size
+        for index in range(shard_count):
+            shard = records[index * args.shard_size : (index + 1) * args.shard_size]
+            shard_path = args.output.with_name(
+                f"{args.output.stem}-part-{index + 1:02d}{args.output.suffix}"
+            )
+            shard_path.write_text(
+                "".join(f"{compact(record)}\n" for record in shard), encoding="utf-8"
+            )
+        print(
+            f"Wrote {expected_count} ENERGY STAR-certified {batch['partner']} "
+            f"configurations in {shard_count} shards"
+        )
+    else:
+        args.output.write_text(
+            "".join(f"{compact(record)}\n" for record in records), encoding="utf-8"
+        )
+        print(f"Wrote {expected_count} ENERGY STAR-certified {batch['partner']} configurations")
 
 
 if __name__ == "__main__":

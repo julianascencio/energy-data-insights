@@ -1,0 +1,40 @@
+{
+  "started_at": "2026-11-04T14:49:56Z",
+  "validated_at": "2026-11-04T15:03:08.850272+00:00",
+  "elapsed_minutes": 13.21,
+  "checks": {
+    "python": "2389 passed,5optional skips",
+    "focused_bess": "357 passed including8new regression tests",
+    "viewer": "15 passed",
+    "parquet": "Two builds each catalogue; identical manifests and all outputbytes; typedZstd;outsideGit",
+    "preservation": "2066projects unchanged;891equipment unchanged;15 additive enrichments preserveeveryexistingnestedvalue,source,conflictandcreationtime",
+    "docs": "StrictSphinx -W --keep-going -D plot_gallery=0 passed;572HTMLlocal-linkauditpassed",
+    "packages": "3wheels and3sdists;6strictTwinechecks passed",
+    "lint": "All checks passed!",
+    "format": "911 files already formatted",
+    "typing": "All checks passed!",
+    "hygiene": "Repository check passed: 3992 candidate files; no flagged secrets or data.",
+    "citations": "Citation catalogue and all exports are consistent.",
+    "examples": "BothBESSofflineexamplespassed",
+    "remote_ci": "Not claimed; publication pending"
+  },
+  "limitations": "Gallery execution disabled. Existingoptionalimagery/cdsapiskips. Initialdiskfull andtypediagnosticfixed; reruns passed.",
+  "finish_reason": "Selected45-rowregistry and5new/15enrichedOEMpartitionsexhausted; othercandidates blockedbyrights,identityororiginalPDFaccess. Noidlepadding.",
+  "final_main": "b8dc106f7a854fb57c76146afd10fe080765006b",
+  "final_validated_at": "2026-11-04T15:09:13.484320+00:00",
+  "elapsed_minutes_through_final_validation": 19.29,
+  "post_main_checks": {
+    "python": "2426 passed,5optional skips",
+    "viewer": "16 passed",
+    "docs": "StrictSphinx passed, galleryexecutiondisabled",
+    "links": "Documentation check passed: 581 HTML pages; local links and assets resolve.",
+    "lint": "All checks passed!",
+    "format": "919 files already formatted",
+    "typing": "All checks passed!",
+    "hygiene": "Repository check passed: 4037 candidate files; no flagged secrets or data.",
+    "citations": "Stale citation exports: CITATION.cff, references.bib, docs/references.md\nRun: uv run python scripts/check_citations.py --write",
+    "packages": "3wheels/3sdists; strictTwine6passed; original45rowparserreplayfromwheelpassed",
+    "parquet": "Rebased snapshotbytes identical to both earlier builds",
+    "reconciliation": "67mainpaths incorporated withoutBESSchanges; tested mergedtree"
+  }
+}
