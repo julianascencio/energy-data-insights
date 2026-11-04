@@ -32,6 +32,7 @@ STATES = {
     "1405": "Hessen",
     "1415": "Thüringen",
     "1413": "Sachsen",
+    "1412": "Saarland",
 }
 
 

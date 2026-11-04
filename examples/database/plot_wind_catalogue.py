@@ -324,3 +324,17 @@ for component in rows:
             "conditions",
             specs["technical_conditions"],
         )
+
+# %%
+# Braking duty is conditional on drive rating, not wind-turbine generation.
+for component in rows:
+    if component.get("equipment_category") == "braking_resistor":
+        specs = json.loads(component["extensions_json"])
+        print(
+            component["model"],
+            specs["resistance_ohm"],
+            "ohm",
+            specs["continuous_rated_power_w"],
+            "W",
+            specs["application_observations"],
+        )

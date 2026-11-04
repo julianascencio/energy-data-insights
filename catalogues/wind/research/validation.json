@@ -1,27 +1,23 @@
 {
-  "batch": "2026-11-03-2335",
+  "batch": "2026-11-04-0035",
   "local": {
-    "pytest": "2116 passed,1 optional cdsapi skip; full suite",
-    "focused": "53 Wind catalogue/adapter tests passed",
-    "viewer": "15 Node tests passed",
-    "catalogue": "16067 records validated;70projects636turbines28exactequipment added",
-    "source_replay": "706 project/turbine records replayed exactly from checked original sources",
-    "snapshots": "Two independent builds byte-identical;4tables136typed columns each, all ZSTD; completed documentation Wind manifest identical",
-    "preservation": "15333 preceding records and all prior source entries unchanged; all six capacity totals unchanged; unrelated catalogues unchanged relative to main",
-    "ruff": "Repository lint and format passed",
-    "ty": "Repository-wide check passed; main includes prior PV lifetime fixes",
-    "sphinx": "Strict build passed;516-page local link/asset audit passed",
-    "example": "Offline Wind gallery executed successfully",
+    "pytest": "2118 passed,1 optional cdsapi skip; final catalogue20passed after dimensional-unit clarification",
+    "viewer": "15 tests passed",
+    "lint_typing": "Repository Ruff lint/format and ty passed",
+    "catalogue": "16438 records valid;360 new project/turbine records replay exactly",
+    "snapshots": "Two final builds byte-identical;4tables136typed fields each; all ZSTD; final-a retained, duplicate outputs cleaned after verification",
+    "preservation": "16055 preceding records unchanged;12filters substantively enriched with all preceding extension values and creation timestamps preserved; prior sources and six capacity totals unchanged; unrelated catalogues unchanged",
     "citations": "Passed",
-    "repository_hygiene": "3397 candidate files passed before final report update; final check repeated before commit",
-    "packages": "All3workspace packages built wheels and source distributions",
-    "whitespace": "Passed",
-    "cross_sector_identity": "No matching AL chokes or fifteen EMC filter types in PV,BESS OEM,Data Center catalogues"
+    "hygiene": "3412 candidate files passed before final report update",
+    "packages": "All3workspace packages built wheels and sdists",
+    "example": "Offline Wind gallery executed before unit clarification; no new inferred normalized dimension fields",
+    "docs": "Strict Sphinx FAILED at build-finished dataset export with Errno28 No space left on device. Retry interrupted after cleanup did not restore reported capacity. No completed site link audit or final docs manifest equality claimed. Generated HTML removed to release reproducible temporary output."
   },
   "not_executed": [
-    "new browser smoke test"
+    "new browser smoke test",
+    "completed documentation link audit"
   ],
   "remote_ci": {
-    "this_increment": "Not yet published when this report was written; inspect PR checks"
+    "this_increment": "Not yet published; inspect PR checks"
   }
 }

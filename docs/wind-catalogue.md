@@ -1,8 +1,8 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. The proposed continuation contains **7,401 projects, 253 equipment
-records, 8,411 linked turbines and two original numerical curves**, across
+numerical curves. The proposed continuation contains **7,473 projects, 264 equipment
+records, 8,699 linked turbines and two original numerical curves**, across
 **59 countries and eleven equipment manufacturers**. Merged main at `7af547f9`
 contains 6,713 projects, 202 equipment records and 5,745 turbines plus two curves.
 These are catalogue counts, not a current operating census.
@@ -525,3 +525,14 @@ application prints ACU210-12, which has no exact existing configuration; its lab
 is retained without an inferred alias. EMC class/cable conditions remain qualified,
 and the general 480V heading is not silently applied to the ACU610 application.
 Next: Saarland, Örebro and book-filter assembly tables pp62–63.
+
+
+## Saarland, Örebro and braking resistors
+
+The 4 November increment adds72projects288turbines11exactBRresistor types and
+enriches12EMCfilters with assembly specifications (R04_0 pp62–65).
+Saarland114groups andÖrebro25areas/166units remain held. New project scopes
+remain excluded from MW totals. Two-resistor combinations retain quantity and
+combination ratings within one component record; no artificial assembly model.
+HLD110-500/42dimensions and thermal-switch assignments remain unknown.
+All previous scalar ratings and creation timestamps are preserved.

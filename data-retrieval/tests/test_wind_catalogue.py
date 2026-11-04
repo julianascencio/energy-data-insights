@@ -227,3 +227,21 @@ def test_emc_filter_explicit_frame_and_voltage_boundary(catalogue):
         "ACU 210-12"
         in json.loads(filters["HLD 110-500/8"]["extensions_json"])["printed_application_models"]
     )
+
+
+def test_braking_combination_does_not_duplicate_component(catalogue):
+    rows, _ = catalogue
+    resistors = [r for r in rows if r.get("equipment_category") == "braking_resistor"]
+    assert len(resistors) == 11
+    spec = json.loads(next(r for r in resistors if r["model"] == "BR 8000/7")["extensions_json"])
+    assert spec["resistance_ohm"] == 7.5
+    assert spec["continuous_rated_power_w"] == 8000
+    double = [o for o in spec["application_observations"] if o["quantity"] == 2]
+    assert len(double) == 2
+    assert all(
+        o["combination_resistance_ohm"] == 3.75 and o["combination_continuous_power_w"] == 16000
+        for o in double
+    )
+    assert spec["thermal_switch"] is None
+    missing = next(r for r in rows if r.get("model") == "HLD 110-500/42")
+    assert "assembly_specifications" not in json.loads(missing["extensions_json"])

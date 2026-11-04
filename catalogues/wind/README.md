@@ -3,8 +3,8 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 7,401 project records (7,400 non-group records),
-253 exact equipment records, 8,411 registry turbine records and two original numerical
+The proposed branch contains 7,473 project records (7,472 non-group records),
+264 exact equipment records, 8,699 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
 Merged main at `7af547f9` contains 6,713 projects, 202 equipment records and 5,745 turbines
 and two curves. These are catalogue counts, not an operating census.
@@ -136,3 +136,14 @@ application prints ACU210-12, which has no exact existing configuration; its lab
 is retained without an inferred alias. EMC class/cable conditions remain qualified,
 and the general 480V heading is not silently applied to the ACU610 application.
 Next: Saarland, Örebro and book-filter assembly tables pp62–63.
+
+
+## Saarland, Örebro and braking resistors
+
+The 4 November increment adds72projects288turbines11exactBRresistor types and
+enriches12EMCfilters with assembly specifications (R04_0 pp62–65).
+Saarland114groups andÖrebro25areas/166units remain held. New project scopes
+remain excluded from MW totals. Two-resistor combinations retain quantity and
+combination ratings within one component record; no artificial assembly model.
+HLD110-500/42dimensions and thermal-switch assignments remain unknown.
+All previous scalar ratings and creation timestamps are preserved.
