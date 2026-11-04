@@ -1,0 +1,41 @@
+{
+  "retrieved_at": "2026-11-04T00:42:00Z",
+  "accepted": [
+    {
+      "inventory": "FIN02, FIN04 and FIN05 official Finnish municipal permit/disclosure observations",
+      "processed_offset": 6,
+      "accepted_records": 0,
+      "enriched_records": 4,
+      "reuse": "Factual extraction from public Finnish municipal and permit-authority notices; no open licence asserted; originals not redistributed",
+      "originals": "All five official pages were readable through the public web index. Original response bytes were unavailable in the research tool, so no checksum or byte count is claimed; this is an access/tooling limitation, not a reuse prohibition."
+    }
+  ],
+  "deferred": [
+    {
+      "candidate": "Airedale product tables",
+      "reason": "Explicit website terms prohibit copying or incorporation into another work beyond personal-use exceptions. The staged candidate batch was withdrawn in full before publication."
+    },
+    {
+      "candidate": "Riello UPS product tables",
+      "reason": "Explicit copyright notice prohibits duplication, downloading, storage, publication and use absent express permission. No facts or bytes were imported."
+    }
+  ],
+  "quarantined": [
+    {
+      "record": "atNorth FIN04 Myllykoski campus",
+      "field": "phase_id",
+      "observations": [
+        "The 2026-10-20 authority notice explicitly names FIN04A Phase 2",
+        "The existing July 2026 YIT phase is separately documented but not cross-referenced by the authority pages"
+      ],
+      "reason": "The identity relationship remains unresolved; no duplicate phase record or capacity allocation was created."
+    }
+  ],
+  "normalization_notes": [
+    "FIN02 decision identifiers and address do not establish capacity or a second construction event.",
+    "FIN04 building areas remain building-bound observations and never become campus or data-hall area.",
+    "FIN05 60 MW IT, 75 MW first-phase electrical demand and 230 MW whole-project demand remain distinct boundaries; none is treated as grid connection capacity.",
+    "FIN05 operator investment and possible customer-owned server/installation investment remain separately scoped observations.",
+    "Campus aggregates remain excluded from capacity sums under all viewer filters."
+  ]
+}

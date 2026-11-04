@@ -11,6 +11,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_named_inventory,
     parse_power_equipment_matrix,
     parse_precision_cooling_matrix,
+    parse_project_permit_matrix,
     parse_server_accelerator_matrix,
     parse_server_accelerator_shipping_matrix,
     parse_supermicro_nvidia_systems,
@@ -41,6 +42,38 @@ SUPERMICRO_SYSTEMS = (
     Path(__file__).parent / "fixtures/data_centers/supermicro-nvidia-systems.html"
 ).read_bytes()
 UPS_MATRIX = (Path(__file__).parent / "fixtures/data_centers/ups-rating-matrix.csv").read_bytes()
+PROJECT_PERMIT_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/project-permit-matrix.csv"
+).read_bytes()
+
+
+def test_project_permit_matrix_preserves_authority_scope_and_area():
+    result = parse_project_permit_matrix(
+        PROJECT_PERMIT_MATRIX,
+        source_url="https://ep10.kouvola.fi/cgi/example",
+        expected_count=2,
+    )
+    assert result["candidates"][0]["authority_id"] == "286-2025-165"
+    assert result["candidates"][0]["building_area_m2"] == 40285
+    assert result["candidates"][1]["building_area_m2"] is None
+    assert result["candidates"][1]["address"] == "Sinimäentie 6a"
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+def test_project_permit_matrix_rejects_drift_duplicates_and_unofficial_sources():
+    url = "https://www.espoo.fi/fi/example"
+    with pytest.raises(ValueError, match="Changed project-permit matrix shape"):
+        parse_project_permit_matrix(PROJECT_PERMIT_MATRIX, source_url=url, expected_count=3)
+    duplicate = PROJECT_PERMIT_MATRIX + PROJECT_PERMIT_MATRIX.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate project-permit row"):
+        parse_project_permit_matrix(duplicate, source_url=url, expected_count=2)
+    with pytest.raises(ValueError, match="Unsupported official project-permit"):
+        parse_project_permit_matrix(
+            PROJECT_PERMIT_MATRIX,
+            source_url="https://example.com/permit.csv",
+            expected_count=2,
+        )
 
 
 def test_ups_matrix_preserves_kva_kw_and_market_boundaries():

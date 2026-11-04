@@ -1,0 +1,132 @@
+{
+  "run_id": "atnorth-finland-permits-20261104T004200Z",
+  "validated_at": "2026-11-04T00:52:06Z",
+  "branch": "research/data-center-database-20261103T2221Z",
+  "base_main_sha": "7af547f900d676b4334226a64739aed2f4cb3f97",
+  "prepublication_remote_head": "e77c25ca7286866ad9d48afb80493e1606d744cd",
+  "canonical_records": 822,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 640,
+    "countries": 36,
+    "operators": 13,
+    "oems": 23
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 593,
+    "countries": 36,
+    "operators": 13,
+    "oems": 21
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 4,
+    "added_equipment": 0,
+    "substantively_enriched_equipment": 0,
+    "new_countries": [],
+    "new_operators": [],
+    "new_oems": []
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_atnorth_finland_permit_batch.py <temporary-output> twice && cmp both outputs with catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl",
+      "result": "passed; six bounded observations deterministically enriched four stable project records"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 822 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "63 passed"
+    },
+    {
+      "command": "TMPDIR=/dev/shm pytest -q -p no:cacheprovider",
+      "result": "2112 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 795 files format-checked"
+    },
+    {
+      "command": "ty check <changed Data Center Python files>",
+      "result": "passed"
+    },
+    {
+      "command": "ty check",
+      "result": "passed repository-wide"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3326 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed as part of strict Sphinx gallery; geographic coverage, capacity completeness, cooling and equipment outputs reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs /dev/shm/data-center-docs-atnorth-permits && python scripts/check_docs_links.py /dev/shm/data-center-docs-atnorth-permits",
+      "result": "passed; 516 HTML pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e8d0ff04dbdbf7ed0b41120c85aac82fe6a6e93fc8b445ea34cc3ee549da04de",
+    "equipment_sha256": "6904008c1da3a15a2e642bc1cb6c5d251bfe92126955f79689e2a11a6ccdb662",
+    "input_sha256": "6f66b1482aa47a37f7159772cb5d6ff572e40b40ecd54d9d10be6b7fc19dfe75",
+    "manifest_sha256": "1b996df1740385de2ff27ca6eac5fa926d5dc12091bf0545917f40c76450bcfa",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "eb13edd16e43341922479df0e77f8874e95878a047bcb7dc51bf9ff8e9f4deea"
+  },
+  "capacity_summary": {
+    "it_ultimate_planned_mw": 697.1,
+    "it_ultimate_planned_records": 12,
+    "it_design_mw": 534.1,
+    "it_design_records": 20,
+    "it_operational_mw": 146.0,
+    "it_operational_records": 5,
+    "grid_design_mw": 207.5,
+    "grid_design_records": 3,
+    "facility_ultimate_planned_mw": 75.0,
+    "facility_ultimate_planned_records": 1,
+    "campus_aggregates_excluded": 114
+  },
+  "source_capture": {
+    "official_pages_reviewed": 5,
+    "accepted_observations": 6,
+    "official_originals_checksummed": 0,
+    "source_bytes": null,
+    "reuse_note": "Public Finnish municipal decision, permit and release pages were reviewed for factual extraction. The browsing interface exposed the evidence, but source-byte capture was unavailable; no checksum or reuse prohibition is inferred."
+  },
+  "quarantines": [
+    "FIN04A Ph2 case LVV-U/84381/2026 is not bound to the existing July 2026 YIT phase record without an explicit official cross-reference; phase_id remains unresolved and no duplicate phase was added."
+  ],
+  "screened_reuse_holds": [
+    "Airedale website terms prohibit copying or incorporating the website contents into another work; the staged candidate batch was fully withdrawn and no facts or bytes remain.",
+    "Riello UPS copyright terms prohibit duplication, downloading, storage, publication and use absent permission; no facts or bytes were imported."
+  ],
+  "remote_ci_before_publication": {
+    "head_sha": "e77c25ca7286866ad9d48afb80493e1606d744cd",
+    "status": "to be rechecked after publication",
+    "note": "The final publication check must record actual workflow conclusions for the newly published head; local validation is reported separately."
+  }
+}

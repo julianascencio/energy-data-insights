@@ -125,6 +125,69 @@ def parse_named_inventory(
     }
 
 
+def parse_project_permit_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact public project-permit rows without promoting scope or capacity.
+
+    Each row is one dated administrative observation. The adapter retains the
+    authority's identifier, project boundary and optional reported building area;
+    it deliberately does not infer construction start, IT load or grid capacity.
+    """
+    host = urlsplit(source_url).hostname
+    if host not in {
+        "www.espoo.fi",
+        "www.kouvola.fi",
+        "ep10.kouvola.fi",
+        "tiedotteet.salo.fi",
+        "www.ymparisto.fi",
+    }:
+        raise ValueError("Unsupported official project-permit source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "record_id",
+        "source_id",
+        "authority_id",
+        "decision_date",
+        "project_scope",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing project-permit matrix columns")
+    candidates: dict[tuple[str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate: dict[str, Any] = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate.values()):
+            raise ValueError(f"Incomplete project-permit row {line}")
+        area = (row.get("building_area_m2") or "").strip()
+        if area:
+            try:
+                candidate["building_area_m2"] = float(area)
+            except ValueError as exc:
+                raise ValueError(f"Invalid building area on row {line}") from exc
+            if candidate["building_area_m2"] <= 0:
+                raise ValueError(f"Invalid building area on row {line}")
+        else:
+            candidate["building_area_m2"] = None
+        candidate["address"] = (row.get("address") or "").strip() or None
+        key = (candidate["record_id"], candidate["authority_id"])
+        if key in candidates:
+            raise ValueError(f"Duplicate project-permit row for {key}")
+        candidates[key] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed project-permit matrix shape: {len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_cdu_spec_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:

@@ -8,7 +8,7 @@ No network request occurs during validation, export or documentation builds.
 The current continuation branch contains **182 project records in 36 countries**:
 **65 facilities, three phases and 114 explicitly labelled campus aggregates**,
 from 13 operators. It has **640 exact equipment records from 23 OEMs**.
-Merged `main` at `6a84beb` contains **182 projects and 593 equipment records**.
+Merged `main` at `7af547f` contains **182 projects and 593 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
 
@@ -27,6 +27,7 @@ uv run python scripts/stage_data_center_carrier_19dv.py extracted-layout.txt --s
 uv run python scripts/stage_data_center_raxio.py captured.html --source-url https://www.raxiogroup.com/data-centres/angola/ --expected-code AO1
 uv run python scripts/stage_data_center_cummins.py captured.html --source-url https://www.cummins.com/en-na/generators/products/qsk60 --expected-count 17
 uv run python scripts/stage_data_center_inventory.py captured.html --source-url https://www.atnorth.com/nordic-data-centers/ --expected-count 13
+uv run python scripts/build_data_center_atnorth_finland_permit_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
 uv run python scripts/stage_data_center_cdu.py extracted.csv --source-url https://www.motivaircorp.com/uploads/files/brochures/CDU%202026%20Motivair%20by%20SE.pdf --expected-count 8
 uv run python scripts/stage_data_center_power_equipment.py extracted.csv --source-url https://www.eaton.com/dk/da-dk/catalog/medium-voltage-power-distribution-control-systems/dry-type-transformer.html --expected-count 16
 uv run python scripts/stage_data_center_server_matrix.py extracted.csv --source-url https://www.delltechnologies.com/asset/en-us/products/servers/briefs-summaries/poweredge-server-gpu-matrix.pdf --expected-count 33

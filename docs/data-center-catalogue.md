@@ -115,6 +115,16 @@ including separately labelled 040-MONO and 040-DUAL columns. Cooling output,
 input power and water flow preserve the 12/7 degC water and 35 degC ambient
 rating point. EER and IPLV remain ratios in observations; voltage, frequency,
 dimensions, weight, hydronic choices and order-code suffixes are not inferred.
+The Finnish permit continuation enriches four existing atNorth records from six
+bounded municipal observations without adding duplicate phases. FIN02 now carries
+decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
+40285 m2 and 18737 m2 building boundaries from permits 286-2025-165 and
+286-2026-178 as observations rather than campus area, while the relationship
+between the separately named FIN04A Phase 2 environmental case and the existing
+July 2026 YIT phase remains quarantined. FIN05 keeps 60 MW phase IT load separate
+from the municipality's 75 MW first-phase electrical demand, and its EUR 2 billion
+operator investment separate from up-to-EUR 10 billion of possible customer-owned
+server and installation investment.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options

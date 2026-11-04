@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T23:24:00Z",
+  "updated_at": "2026-11-04T00:42:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -54,7 +54,8 @@
     "toshiba_current_three_phase_ups_configurations": 23,
     "mitsubishi_electric_current_ups_configurations": 26,
     "fuji_electric_current_ups_configurations": 20,
-    "daikin_ewat_cz_2026_configurations": 27
+    "daikin_ewat_cz_2026_configurations": 27,
+    "atnorth_finland_municipal_observations": 6
   },
   "next_batches": [
     {
@@ -64,12 +65,13 @@
         "https://www.atnorth.com/nordic-data-centers/",
         "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
       ],
-      "offset": 13,
-      "scope": "All 13 current named sites and four explicit child buildings/phases accepted. Do not recount. Review Finnish municipal permits for FIN04A1 and July-2026 building identity; reconcile omitted FIN03; current-map SWE03 departure is not retirement.",
+      "offset": 19,
+      "scope": "All 13 current named sites, four explicit child buildings/phases and six Finnish municipal permit/disclosure observations are processed. Do not recount. FIN02 decision 468/2026, FIN04 permits 286-2025-165 and 286-2026-178, FIN04A Ph2 case LVV-U/84381/2026 and FIN05 Salo disclosure are complete; reconcile omitted FIN03 and current-map SWE03 departure.",
       "questions": [
         "DEN01 Q4 2025 first-phase live vs report Q1 2026 operation: distinguish events",
         "DEN02 initial power 250 vs 500 MW; SWE04 land 50 vs 4 ha and power 300 vs 200 MW",
         "FIN02 40 MW unspecified campus power vs contractor 45 MW gross future total have different boundaries; do not silently replace",
+        "FIN04A Ph2 versus the existing July-2026 YIT phase remains quarantined until an official cross-reference binds the identities; no duplicate phase record was added",
         "Get dated commencement/completion evidence and explicit building/phase IT/grid/facility ratings; no generic PUE-derived estimates"
       ]
     },
@@ -245,15 +247,26 @@
     {
       "source": "Socomec technical guides and product tables",
       "reason": "Existing repository terms review records a Section 5 restriction on specification disclosure/copying without written authorization. No Data Center facts or downloaded source bytes may be imported without permission."
+    },
+    {
+      "source": "Airedale product tables",
+      "url": "https://www.airedale.com/terms-and-conditions/",
+      "reason": "Terms of Use prohibit copying or incorporating website contents into another work beyond personal-use exceptions. The staged candidate batch was fully withdrawn; no Airedale facts or bytes were published."
+    },
+    {
+      "source": "Riello UPS product tables",
+      "url": "https://www.riello-ups.com/pages/52-copyright",
+      "reason": "Copyright notice prohibits duplication, downloading, storage, publication and use of site information or material absent express permission. No Riello facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "daikin-ewat-cz-20261103T232400Z",
-    "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T2324-validation.json",
+    "run_id": "atnorth-finland-permits-20261104T004200Z",
+    "report": "2026-11-04-report.md",
+    "validation": "2026-11-04T0042-validation.json",
     "added_projects": 0,
-    "added_equipment": 27,
+    "enriched_projects": 4,
+    "added_equipment": 0,
     "branch": "research/data-center-database-20261103T2221Z"
   }
 }
