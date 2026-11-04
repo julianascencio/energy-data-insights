@@ -68,6 +68,13 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "expected_count": 7,
         "retrieved_at": "2026-11-04T13:20:48Z",
     },
+    "delta_energy_star": {
+        "partner": "Delta Electronics, Inc. Tainan Branch",
+        "manufacturer": "Delta Electronics",
+        "name_prefix": "Delta",
+        "expected_count": 26,
+        "retrieved_at": "2026-11-04T14:16:19Z",
+    },
 }
 DATASET_UPDATED = "2026-11-03T14:20:54Z"
 
