@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,811 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
-Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
+has 1,831 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
@@ -222,6 +222,14 @@ not treated as installed memory. Three entries have a processor-socket count in
 the model label that conflicts with the dataset's socket-count attribute; both
 values remain in `conflicts_json`, the scalar is left null and the records remain
 `needs_review`. Certification entries are exact issuer records, not deployments.
+The Fujitsu continuation processes all 20 Fujitsu Limited entries from the same
+registered snapshot. Each PRIMERGY certification remains a distinct immutable
+issuer entry with exact model, form factor, socket attribute and separate low,
+typical/single and high SERT test configurations. All 20 socket attributes are
+internally consistent with their model labels. PSU nameplates, idle watts,
+benchmark scores and maximum supported memory remain bounded observations rather
+than rated server/rack input or installed memory; certifications are not treated
+as deployments.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact

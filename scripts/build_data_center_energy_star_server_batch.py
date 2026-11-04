@@ -16,10 +16,20 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
 SOURCE_ID = "epa-energy-star-certified-enterprise-servers-20261104"
 SOURCE_URL = "https://data.energystar.gov/api/v3/views/qifb-fcj2/export.csv?accessType=DOWNLOAD"
 DATASET_UPDATED = "2026-11-04T14:17:50Z"
-RETRIEVED_AT = "2026-11-04T20:27:06Z"
-PARTNER = "Cisco Systems"
-MANUFACTURER = "Cisco"
-EXPECTED_COUNT = 20
+PARTNER_BATCHES = {
+    "cisco": {
+        "partner": "Cisco Systems",
+        "manufacturer": "Cisco",
+        "expected_count": 20,
+        "retrieved_at": "2026-11-04T20:27:06Z",
+    },
+    "fujitsu": {
+        "partner": "Fujitsu Limited",
+        "manufacturer": "Fujitsu",
+        "expected_count": 20,
+        "retrieved_at": "2026-11-04T21:18:40Z",
+    },
+}
 
 CONFIGURATION_LABELS = (
     "Low-end Performance Configuration",
@@ -86,7 +96,7 @@ def tested_configuration(row: dict[str, str], label: str) -> dict[str, str]:
     return values
 
 
-def socket_conflicts(row: dict[str, str]) -> dict[str, object] | None:
+def socket_conflicts(row: dict[str, str], *, retrieved_at: str) -> dict[str, object] | None:
     model_number = row["Model Number"]
     attribute = row["Product Processor Socket Count"]
     claimed: int | None = None
@@ -101,7 +111,7 @@ def socket_conflicts(row: dict[str, str]) -> dict[str, object] | None:
             {
                 "boundary": "exact Model Number label",
                 "field": "processor_socket_count",
-                "observed_at": RETRIEVED_AT,
+                "observed_at": retrieved_at,
                 "sources": [SOURCE_ID],
                 "unit": "socket",
                 "value": claimed,
@@ -109,7 +119,7 @@ def socket_conflicts(row: dict[str, str]) -> dict[str, object] | None:
             {
                 "boundary": "Product Processor Socket Count attribute",
                 "field": "processor_socket_count",
-                "observed_at": RETRIEVED_AT,
+                "observed_at": retrieved_at,
                 "sources": [SOURCE_ID],
                 "unit": "socket",
                 "value": attribute,
@@ -118,7 +128,7 @@ def socket_conflicts(row: dict[str, str]) -> dict[str, object] | None:
     }
 
 
-def build_record(row: dict[str, str]) -> dict[str, object]:
+def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -> dict[str, object]:
     uid = row["ENERGY STAR Unique ID"]
     model = row["Model Name"]
     model_number = row["Model Number"]
@@ -206,7 +216,7 @@ def build_record(row: dict[str, str]) -> dict[str, object]:
             )
         )
 
-    conflict = socket_conflicts(row)
+    conflict = socket_conflicts(row, retrieved_at=retrieved_at)
     socket_attribute = row["Product Processor Socket Count"]
     socket_count = int(socket_attribute) if not conflict and socket_attribute.isdigit() else None
     fields = [
@@ -255,17 +265,17 @@ def build_record(row: dict[str, str]) -> dict[str, object]:
     record: dict[str, object] = {
         "capacity_scope": boundary,
         "certifications_json": compact(certifications),
-        "created_at": RETRIEVED_AT,
+        "created_at": retrieved_at,
         "entity_type": "equipment",
         "equipment_category": "server",
         "evidence_json": compact(evidence),
         "external_ids_json": compact(external_ids),
         "field_sources_json": compact({field: [SOURCE_ID] for field in fields}),
         "form_factor": form_factor,
-        "last_verified_at": RETRIEVED_AT,
-        "manufacturer": MANUFACTURER,
+        "last_verified_at": retrieved_at,
+        "manufacturer": manufacturer,
         "model": model,
-        "name": f"Cisco {model} ENERGY STAR enterprise-server certification {uid}",
+        "name": f"{manufacturer} {model} ENERGY STAR enterprise-server certification {uid}",
         "notes": (
             "This record represents one issuer-certified server-family entry, not an installed "
             "deployment. Low-end, typical/single and high-end CPU, memory, storage, PSU and SERT "
@@ -286,11 +296,11 @@ def build_record(row: dict[str, str]) -> dict[str, object]:
             "updated 2026-11-04"
         ),
         "quality_status": "needs_review" if conflict else "source_backed",
-        "record_id": stable_id("equipment", MANUFACTURER, "ENERGY STAR enterprise server", uid),
+        "record_id": stable_id("equipment", manufacturer, "ENERGY STAR enterprise server", uid),
         "record_scope": "configuration",
         "source_urls": [SOURCE_URL],
         "sources": [SOURCE_ID],
-        "updated_at": RETRIEVED_AT,
+        "updated_at": retrieved_at,
         "variant": f"ENERGY STAR {uid}; {model_number}",
     }
     if conflict:
@@ -308,22 +318,36 @@ def main() -> None:
         default=0,
         help="Write numbered JSONL shards with at most this many records",
     )
+    parser.add_argument(
+        "--partner-batch",
+        choices=sorted(PARTNER_BATCHES),
+        default="cisco",
+        help="Reviewed partner partition to build (default: cisco)",
+    )
     args = parser.parse_args()
+    batch = PARTNER_BATCHES[args.partner_batch]
+    partner = str(batch["partner"])
+    manufacturer = str(batch["manufacturer"])
+    expected_count = int(batch["expected_count"])
+    retrieved_at = str(batch["retrieved_at"])
     staged = parse_energy_star_enterprise_servers_inventory(
         args.source_csv.read_bytes(),
         source_url=SOURCE_URL,
-        partner=PARTNER,
-        expected_count=EXPECTED_COUNT,
+        partner=partner,
+        expected_count=expected_count,
     )
     records = sorted(
-        (build_record(row) for row in staged["candidates"]),
+        (
+            build_record(row, manufacturer=manufacturer, retrieved_at=retrieved_at)
+            for row in staged["candidates"]
+        ),
         key=lambda record: (str(record["model"]), str(record["variant"])),
     )
     if (
-        len(records) != EXPECTED_COUNT
-        or len({record["record_id"] for record in records}) != EXPECTED_COUNT
+        len(records) != expected_count
+        or len({record["record_id"] for record in records}) != expected_count
     ):
-        raise ValueError(f"Expected {EXPECTED_COUNT} unique {PARTNER} certifications")
+        raise ValueError(f"Expected {expected_count} unique {partner} certifications")
     if args.shard_size < 0:
         raise ValueError("--shard-size must be zero or positive")
     if args.shard_size:
@@ -336,12 +360,12 @@ def main() -> None:
             shard_path.write_text(
                 "".join(f"{compact(record)}\n" for record in shard), encoding="utf-8"
             )
-        print(f"Wrote {EXPECTED_COUNT} {PARTNER} certifications in {shard_count} shards")
+        print(f"Wrote {expected_count} {partner} certifications in {shard_count} shards")
     else:
         args.output.write_text(
             "".join(f"{compact(record)}\n" for record in records), encoding="utf-8"
         )
-        print(f"Wrote {EXPECTED_COUNT} {PARTNER} certifications")
+        print(f"Wrote {expected_count} {partner} certifications")
 
 
 if __name__ == "__main__":

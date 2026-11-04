@@ -7,7 +7,7 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **183 project records in 36 countries**:
 **66 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **1,811 exact equipment records from 44 OEMs**.
+from 13 operators. It has **1,831 exact equipment records from 45 OEMs**.
 Merged `main` at `7c31c06a` contains **183 projects and 1,299 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -67,6 +67,7 @@ uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-right-power-energy-star-ups.jsonl --partner-batch right_power_energy_star
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-upsonic-energy-star-ups.jsonl --partner-batch upsonic_energy_star
 uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-cisco-energy-star-servers.jsonl --shard-size 5
+uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-fujitsu-energy-star-servers.jsonl --partner-batch fujitsu --shard-size 5
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T20:27:06Z",
+  "updated_at": "2026-11-04T21:18:40Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -83,7 +83,8 @@
     "energy_star_power_logic_certifications": 2,
     "energy_star_right_power_certifications": 1,
     "energy_star_upsonic_certifications": 1,
-    "energy_star_cisco_enterprise_server_certifications": 20
+    "energy_star_cisco_enterprise_server_certifications": 20,
+    "energy_star_fujitsu_enterprise_server_certifications": 20
   },
   "next_batches": [
     {
@@ -188,8 +189,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 1226,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, and all 20 Cisco Systems entries in the EPA ENERGY STAR Enterprise Servers dataset complete; continue independent generator/electrical suppliers and separate enterprise-server partner partitions without recounting completed inventories",
+      "offset": 1246,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, and all 20 Cisco Systems plus all 20 Fujitsu Limited entries in the EPA ENERGY STAR Enterprise Servers dataset complete; continue independent generator/electrical suppliers and separate enterprise-server partner partitions without recounting completed inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -208,7 +209,8 @@
         "SIEL Safepower offset 27 is complete at 9+10+8 exact columns; keep SPM cabinet active kW null, retain merged dimensions and with/without-battery weights as observations, and never synthesize module, battery, voltage, frequency or communications options",
         "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices",
         "All 923 ENERGY STAR UPS records across 19 partner partitions are complete for dataset update 2026-11-03; residual offsets are Fuji 1, Ingram/V7 3, Mitsubishi 2, N1C 3, Neuropower 3, Power Logic 2, Right Power 1 and Upsonic 1. Retain unique certification IDs, partner/brand identity, W/VA and load-qualified efficiencies, preserve unavailable values as null, keep reported maximum tested configurations as observations rather than normalized ratings, and never infer battery energy",
-        "ENERGY STAR Enterprise Servers Cisco Systems offset 20 is complete for dataset update 2026-11-04. Keep low/typical/high SERT configurations separate, do not normalize PSU nameplates or benchmark scores as server/rack input, and retain the three model-label versus socket-attribute conflicts as quarantined observations."
+        "ENERGY STAR Enterprise Servers Cisco Systems offset 20 is complete for dataset update 2026-11-04. Keep low/typical/high SERT configurations separate, do not normalize PSU nameplates or benchmark scores as server/rack input, and retain the three model-label versus socket-attribute conflicts as quarantined observations.",
+        "ENERGY STAR Enterprise Servers Fujitsu Limited offset 20 is complete for dataset update 2026-11-04. Preserve PRIMERGY certification identities and socket attributes, keep tested configurations separate, and never promote maximum supported memory, PSU nameplates or benchmark scores to installed memory or rated server/rack input."
       ]
     },
     {
@@ -379,9 +381,9 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "energy-star-cisco-servers-20261104T202706Z",
+    "run_id": "energy-star-fujitsu-servers-20261104T211840Z",
     "report": "2026-11-04-report.md",
-    "validation": "2026-11-04T2027-validation.json",
+    "validation": "2026-11-04T2118-validation.json",
     "added_projects": 0,
     "enriched_projects": 0,
     "added_equipment": 20,
