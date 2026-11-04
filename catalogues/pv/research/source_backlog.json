@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T15:24:45.243250+00:00",
+  "updated_at": "2026-11-04T16:05:07.793032+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "Reviewed141Chinese centralized-PV registrations across four monthly partitions:19existingprojects enriched,122held. Added22exactStatconinverters and1AxeStructtracker;2newOEMs. No Chinese new project, automaticfuzzymerge or AC/DC/lifecycle replacement.",
-  "next_highest_value_source": "NEA July2026 PPC2406340421001Z: independently reconcile Huaineng Fengtai Dingji mine-subsidence phase-II243.2MW against GEM phase/capacity evidence; then June2026 PPC24063417020018. All141reviewed rows/cursors retained; no unchanged monthly redownload.",
+  "selection_note": "15exacthybridinverters from threepreviouslyunprocessedtables;1existingChinesephase-contextenrichment.351French5–20MWrowsreviewed,0safeinstalled-poweradditions; first274alsoscreenedformissinggrid/servicefacts. Schneider15combinerSKUs andEnwitec1modelrights-held; no candidates counted accepted.",
+  "next_highest_value_source": "NEA June2026 PPC24063417020018 Tongzishan11.2MW needs independent site/phase evidence; for equipment reuse Statcon pages14–15/17–19 with kVA kept native. WBSEDCL14completedplantcandidates require independently reusable state/regulator sources; rights-held feed notintegrated.",
   "sources": [
     {
       "id": "uk_repd",
@@ -176,8 +176,8 @@
         "province",
         "registry information"
       ],
-      "last_attempt": "2026-11-04T15:24:45.243250+00:00",
-      "result": "Four monthly centralized-PV cohorts reviewed;19existingprojects gain registry-code/phase context and6missing unspecified installed-MW values.122held for identity/scope, occupied context or capacity conflicts. Overseas Lao project with Chinese listed locality held; no country inference.",
+      "last_attempt": "2026-11-04T16:13:38.448186+00:00",
+      "result": "20existingprojects nowenrichedacross141registeredrows,121remainingholds. LatestDingjiphaseIIresolutionaddscontextonly;6earlierinstalled-MWfieldsunchanged.",
       "retry_condition": "Reuse pinned captures; independent native-name/phase evidence for held rows. Check current index/ETag at next monthly due check, not hourly full downloads.",
       "next_action": "NEA July2026 PPC2406340421001Z: independently reconcile Huaineng Fengtai Dingji mine-subsidence phase-II243.2MW against GEM phase/capacity evidence; then June2026 PPC24063417020018. All141reviewed rows/cursors retained; no unchanged monthly redownload.",
       "priority": 4,
@@ -196,7 +196,7 @@
           },
           "2026-07": {
             "reviewed": 29,
-            "enriched": 3,
+            "enriched": 4,
             "endpoint": "https://www.nea.gov.cn/20260904/324fdc3e4908431392b82d19ab10de6b/20260904324fdc3e4908431392b82d19ab10de6b_42bd03ae02fada44ae9f4a1bba5cbe97fe.docx",
             "format": "DOCX centralized-PV five-public-column table",
             "last_retrieval": "2026-11-04T15:20:23.450792+00:00",
@@ -227,11 +227,16 @@
           }
         },
         "total_reviewed": 141,
-        "total_enriched": 19,
-        "held": 122,
+        "total_enriched": 20,
+        "held": 121,
         "new_projects": 0,
-        "next_review_code": "PPC2406340421001Z",
-        "review_file": "20261104T1500_nea_review.json"
+        "next_review_code": "PPC24063417020018",
+        "review_file": "20261104T1500_nea_review.json",
+        "latest_resolution": {
+          "code": "PPC2406340421001Z",
+          "review_file": "20261104T1600_project_review.json",
+          "outcome": "Existingtwo-phasegroup enrichedwithphaseIIregistrationand220kVevacuationcontext; noAC/DCscalarinference"
+        }
       },
       "catalogue_projects_as_of_20261103": 12699,
       "last_retrieval": "2026-11-04T15:09:17.132072+00:00",
@@ -410,7 +415,15 @@
       "next_action": "Find current permitted GSE open-data export and licence; do not treat 2017 guide as fresh inventory.",
       "priority": 10,
       "processed_cursor": null,
-      "catalogue_projects_as_of_20261103": 1179
+      "catalogue_projects_as_of_20261103": 1179,
+      "current_coverage_review": {
+        "catalogue_projects": 1179,
+        "rank": 9,
+        "metric": "IEAPVPSrevisedend2025cumulativeinstalledPVGW",
+        "capacity_gw": 43.7,
+        "ranking_file": "20261104T1100_top10_coverage.json",
+        "note": "Priorresultaboutzerocoverage/ranktenthwasdatedlaunchdiscovery,notcurrentcoverage."
+      }
     },
     {
       "id": "usa_eia",
@@ -9909,6 +9922,400 @@
       "result": "Schneider1000VArrayBox is explicitlydiscontinued, datasheet andwarranty publiclylinked but notdownloaded/accepted. MERZ exactbox lists4incoming/4outgoing and2MPPT: parallel-combiner versus independent protection topology unresolved. Mersen search surfacedcomponents, notexactboxmodels. Hoymiles requestedroute inaccessible.",
       "retry_condition": "Download source-specific terms and exact discontinuedmodeltable, resolvemanufactureralias and combiner topology beforeacceptance",
       "next_action": "Schneider1000VArrayBox linked20161115datasheet plus2015warranty: inspectrights/modelcodes, retain discontinuedstatus; MERZbrochurecircuitmustproveparallelcombining."
+    },
+    {
+      "last_attempt": "2026-11-04T16:05:07.793032+00:00",
+      "publication_cadence": "Unknown; conditional freshness/edition check before retry",
+      "next_due_check": "2026-11-05T16:00:00Z",
+      "rejected": 0,
+      "mapping": "Existing upsert API and reviewed exact identities; no new adapter or feed integration claimed",
+      "id": "statcon_hybrid_20261104T1600",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://www.energiaa.in/wp-content/uploads/2026/10/hybrid-and-off-grid-solar-inverter-catalogue.pdf",
+      "endpoint": "https://www.energiaa.in/wp-content/uploads/2026/10/hybrid-and-off-grid-solar-inverter-catalogue.pdf",
+      "format": "PDFpages9,10,12",
+      "version_or_date": "CAT/HBD/V4.0/181026",
+      "licence_assessment": "OEMcopyright retained; bounded attributed facts only; linkedprivacy policy notanopenlicence",
+      "last_retrieval": "2026-11-04T15:09:15.719866+00:00",
+      "sha256": "825926ff00bed75bb173cec2bda619df3fe27c2b76389062783d0b94f9b45d8e",
+      "etag": null,
+      "fields_offered": [
+        "PVDC,MPPT,ACrating,efficiency,battery/gridconditions,environmental/protection"
+      ],
+      "processed_cursor": {
+        "pages_complete": [
+          9,
+          10,
+          12
+        ],
+        "reviewed": 15,
+        "accepted": 15,
+        "next_pages": [
+          14,
+          15,
+          17,
+          18,
+          19
+        ]
+      },
+      "result": "15accepted exact hybrid models;184canonical technicalvalues plusnativeconditions.4kVA-onlymodels have noactive-W field; malformed batterycurrent andgridimportlabelsheld.",
+      "retry_condition": "Changed edition or independent resolution of held units; reuse existing7MBcapture",
+      "next_action": "NEA June2026 PPC24063417020018 Tongzishan11.2MW: independent site/phase crosswalk before canonical creation; for equipment inspect Statcon physicalpages14–15and17–19 with kVA kept native. Reuse captures; no unchanged full downloads."
+    },
+    {
+      "last_attempt": "2026-11-04T16:05:07.793032+00:00",
+      "publication_cadence": "Unknown; conditional freshness/edition check before retry",
+      "next_due_check": "2026-11-05T16:00:00Z",
+      "rejected": 0,
+      "mapping": "Existing upsert API and reviewed exact identities; no new adapter or feed integration claimed",
+      "id": "odre_na_ara_5_20_20261104T1600",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/information/",
+      "format": "ExploreAPIboundedJSON",
+      "version_or_date": "31August2026snapshot;metadata13October2026",
+      "licence_assessment": "LicenceOuvertev2.0 verifiedinfreshmetadata",
+      "fields_offered": [
+        "installedpower",
+        "gridoperator",
+        "substation",
+        "industrialservicedate"
+      ],
+      "processed_cursor": {
+        "NA_offsets_complete": [
+          0,
+          100,
+          200
+        ],
+        "NA_total": 277,
+        "ARA_offsets_complete": [
+          0,
+          100
+        ],
+        "ARA_total": 74,
+        "reviewed": 351,
+        "accepted": 0,
+        "next_partition": "Otherregionsornewrelease; do not repeatcompleted351rows"
+      },
+      "result": "0installed-poweradditions; privacy/exactEIC/phase/existingfields block. Grid/serviceenrichment screen overfirst274rowsalso0becauseexistingcontext/fieldsoridentity/privacy. All351also screenedforsafegrid/serviceempty scalars:0; no mergingexistingcontextneeded.",
+      "retry_condition": "Newrevisionorindependentphase/identityevidence; skipunchangedcompletedrows",
+      "next_action": "Choose anothercountryofficialregistry with usefulmissingAC/gridfields; nofullmonthlyredownload",
+      "endpoint": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records",
+      "licence_url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+      "captures": [
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Nouvelle-Aquitaine%27&order_by=codeeicresourceobject&limit=100&offset=200&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+          "sha256": "46f6ecc4fcd0e20f9f91955b3954ae94a1e1c22285ea74fa065e535ef73524a7",
+          "retrieved_at": "2026-11-04T15:59:47.884884+00:00",
+          "headers": {
+            "server": "envoy",
+            "date": "Wed, 04 Nov 2026 15:59:47 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "33332",
+            "x-ratelimit-remaining": "9999969",
+            "x-ratelimit-limit": "10000000",
+            "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "vary": "Accept-Language, Cookie, Host",
+            "content-language": "en-us",
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "POST, GET, OPTIONS",
+            "access-control-max-age": "1000",
+            "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+            "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+            "strict-transport-security": "max-age=31536000;includeSubdomains",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "strict-origin-when-cross-origin",
+            "content-security-policy": "upgrade-insecure-requests; ",
+            "x-ua-compatible": "IE=edge",
+            "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+            "x-envoy-upstream-service-time": "548",
+            "connection": "close"
+          }
+        },
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Auvergne-Rh%C3%B4ne-Alpes%27&order_by=codeeicresourceobject&limit=100&offset=100&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+          "sha256": "ec8793ab79f93aa58748b22db24e03b0e8fe9c02b6d35727c578b41d94999e5f",
+          "retrieved_at": "2026-11-04T15:57:09.961550+00:00",
+          "headers": {
+            "server": "envoy",
+            "date": "Wed, 04 Nov 2026 15:57:09 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "34",
+            "x-ratelimit-remaining": "9999970",
+            "x-ratelimit-limit": "10000000",
+            "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "vary": "Accept-Language, Cookie, Host",
+            "content-language": "en-us",
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "POST, GET, OPTIONS",
+            "access-control-max-age": "1000",
+            "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+            "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+            "strict-transport-security": "max-age=31536000;includeSubdomains",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "strict-origin-when-cross-origin",
+            "content-security-policy": "upgrade-insecure-requests; ",
+            "x-ua-compatible": "IE=edge",
+            "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+            "x-envoy-upstream-service-time": "226",
+            "connection": "close"
+          }
+        },
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+          "sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+          "retrieved_at": "2026-11-04T15:57:05.740873+00:00",
+          "headers": {
+            "server": "envoy",
+            "date": "Wed, 04 Nov 2026 15:57:05 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "56139",
+            "x-ratelimit-remaining": "9999974",
+            "x-ratelimit-limit": "10000000",
+            "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "vary": "Accept-Language, Cookie, Host",
+            "content-language": "en-us",
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "POST, GET, OPTIONS",
+            "access-control-max-age": "1000",
+            "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+            "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+            "strict-transport-security": "max-age=31536000;includeSubdomains",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "strict-origin-when-cross-origin",
+            "content-security-policy": "upgrade-insecure-requests; ",
+            "x-ua-compatible": "IE=edge",
+            "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+            "x-envoy-upstream-service-time": "459",
+            "connection": "close"
+          }
+        },
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Nouvelle-Aquitaine%27&order_by=codeeicresourceobject&limit=100&offset=100&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+          "sha256": "e1ef228642110e806832c13d8a10cb9dbbedd0517b864cbc5c7948d472f2847a",
+          "retrieved_at": "2026-11-04T15:57:05.887687+00:00",
+          "headers": {
+            "server": "envoy",
+            "date": "Wed, 04 Nov 2026 15:57:05 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "43160",
+            "x-ratelimit-remaining": "9999973",
+            "x-ratelimit-limit": "10000000",
+            "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "vary": "Accept-Language, Cookie, Host",
+            "content-language": "en-us",
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "POST, GET, OPTIONS",
+            "access-control-max-age": "1000",
+            "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+            "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+            "strict-transport-security": "max-age=31536000;includeSubdomains",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "strict-origin-when-cross-origin",
+            "content-security-policy": "upgrade-insecure-requests; ",
+            "x-ua-compatible": "IE=edge",
+            "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+            "x-envoy-upstream-service-time": "734",
+            "connection": "close"
+          }
+        },
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Auvergne-Rh%C3%B4ne-Alpes%27&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+          "sha256": "0df65977dfe10eb71c6d0eda493af9dce3601df96a2b23ee33819ebfae715e2a",
+          "retrieved_at": "2026-11-04T15:57:10.123910+00:00",
+          "headers": {
+            "server": "envoy",
+            "date": "Wed, 04 Nov 2026 15:57:09 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "32531",
+            "x-ratelimit-remaining": "9999971",
+            "x-ratelimit-limit": "10000000",
+            "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "vary": "Accept-Language, Cookie, Host",
+            "content-language": "en-us",
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "POST, GET, OPTIONS",
+            "access-control-max-age": "1000",
+            "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+            "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+            "strict-transport-security": "max-age=31536000;includeSubdomains",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "strict-origin-when-cross-origin",
+            "content-security-policy": "upgrade-insecure-requests; ",
+            "x-ua-compatible": "IE=edge",
+            "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+            "x-envoy-upstream-service-time": "347",
+            "connection": "close"
+          }
+        },
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Nouvelle-Aquitaine%27&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+          "sha256": "67e9f51f8301fc757da8ed3add6f9d57d41beb9d05a61a4d1ac30bbd5a892447",
+          "retrieved_at": "2026-11-04T15:57:05.721305+00:00",
+          "headers": {
+            "server": "envoy",
+            "date": "Wed, 04 Nov 2026 15:57:05 GMT",
+            "content-type": "application/json; charset=utf-8",
+            "content-length": "44507",
+            "x-ratelimit-remaining": "9999972",
+            "x-ratelimit-limit": "10000000",
+            "x-ratelimit-reset": "2026-11-05 00:00:00+00:00",
+            "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+            "vary": "Accept-Language, Cookie, Host",
+            "content-language": "en-us",
+            "access-control-allow-origin": "*",
+            "access-control-allow-methods": "POST, GET, OPTIONS",
+            "access-control-max-age": "1000",
+            "access-control-allow-headers": "Authorization, X-Requested-With, Origin, ODS-API-Analytics-App, ODS-API-Analytics-Embed-Type, ODS-API-Analytics-Embed-Referrer, ODS-Widgets-Version, Accept",
+            "access-control-expose-headers": "ODS-Explore-API-Deprecation, Link, X-RateLimit-Remaining, X-RateLimit-Limit, X-RateLimit-Reset, X-RateLimit-dataset-Remaining, X-RateLimit-dataset-Limit, X-RateLimit-dataset-Reset",
+            "strict-transport-security": "max-age=31536000;includeSubdomains",
+            "x-content-type-options": "nosniff",
+            "referrer-policy": "strict-origin-when-cross-origin",
+            "content-security-policy": "upgrade-insecure-requests; ",
+            "x-ua-compatible": "IE=edge",
+            "permissions-policy": "midi=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+            "x-envoy-upstream-service-time": "610",
+            "connection": "close"
+          }
+        }
+      ],
+      "last_release": "31August2026snapshot",
+      "last_retrieval": "2026-11-04T15:59:47.884884+00:00",
+      "sha256": null,
+      "etag": null
+    },
+    {
+      "last_attempt": "2026-11-04T16:05:07.793032+00:00",
+      "publication_cadence": "Unknown; conditional freshness/edition check before retry",
+      "next_due_check": "2026-11-05T16:00:00Z",
+      "rejected": 0,
+      "mapping": "Existing upsert API and reviewed exact identities; no new adapter or feed integration claimed",
+      "id": "dingji_phaseII_20261104T1600",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://www.ceec.net.cn/art/2025/5/7/art_11019_2535236.html",
+      "endpoint": "https://www.ceec.net.cn/art/2025/5/7/art_11019_2535236.html",
+      "format": "PrimaryEPCawardHTMLandNEApinnedDOCX",
+      "version_or_date": "CEEC7May2025; NEAJuly2026",
+      "licence_assessment": "Bounded attributed historicalcontractfacts; nofullarticleimagesoropenlicenceclaim",
+      "fields_offered": [
+        "phaseidentity",
+        "gridevacuation",
+        "historicalEPC"
+      ],
+      "processed_cursor": {
+        "reviewed": 1,
+        "enriched": 1,
+        "new_projects": 0
+      },
+      "result": "1existinggroup gains phaseIIregistry and220kVevacuationcontext;243.2registeredMWand316.6existingphaseMWretained separately. NoAC/DCconversion/wholeprojectscalar/statuschange.",
+      "retry_condition": "Primaryphase-specificAC/DCdesignpublication",
+      "next_action": "Findprimaryowner/EPCdesignsheet establishing243.2MWac versus316.6MWdc; secondaryreproductions insufficient"
+    },
+    {
+      "last_attempt": "2026-11-04T16:05:07.793032+00:00",
+      "publication_cadence": "Unknown; conditional freshness/edition check before retry",
+      "next_due_check": "2026-11-05T16:00:00Z",
+      "rejected": 0,
+      "mapping": "Existing upsert API and reviewed exact identities; no new adapter or feed integration claimed",
+      "id": "schneider_arraybox_rights_20261104T1600",
+      "country": "FRA",
+      "entity": "combiner_boxes",
+      "source_url": "https://solar.se.com/eu/en/product/array-box/",
+      "format": "Two-pageOEMPDFandtermsofuse",
+      "version_or_date": "DC20161115_1000VArrayBox;productexplicitlydiscontinued",
+      "licence_assessment": "Termssection2restrictreproduction beyondpersonalnoncommercialusewithoutwrittenpermission; held",
+      "fields_offered": [
+        "15exactSKUstated",
+        "electricalmechanicalmonitoringconditions"
+      ],
+      "processed_cursor": {
+        "reviewed_model_codes": 15,
+        "accepted": 0
+      },
+      "result": "15exactProtect/Monitored/ControlledSKUscouldbedistinguished; noneaccepted dueexplicitreuse restrictions. No fabricatedoptionscounted.",
+      "retry_condition": "Publisherpermissionorcompatibleexplicitreusegrant",
+      "next_action": "Do not ingest technicaltable; anotherpublisherattemptedEnwitec",
+      "licence_url": "https://www.se.com/ww/en/about-us/legal/terms-of-use/",
+      "endpoint": "https://solar.se.com/eu/wp-content/uploads/sites/4/2021/12/1000v-solar-array-box-data-sheet-20161115.pdf",
+      "last_release": "2016-11-15",
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null
+    },
+    {
+      "last_attempt": "2026-11-04T16:05:07.793032+00:00",
+      "publication_cadence": "Unknown; conditional freshness/edition check before retry",
+      "next_due_check": "2026-11-05T16:00:00Z",
+      "rejected": 0,
+      "mapping": "Existing upsert API and reviewed exact identities; no new adapter or feed integration claimed",
+      "id": "enwitec_solarconnect_20261104T1600",
+      "country": "DEU",
+      "entity": "combiner_boxes",
+      "source_url": "https://enwitec.eu/wp-content/uploads/2025/05/10019463_Datenblatt_Solarconnect-1500_DE_2025_04_16.pdf",
+      "format": "Five-pageOEMPDF",
+      "version_or_date": "16April2025;article10019463",
+      "licence_assessment": "Impressumsection3requiresconsent forreuseoftexts/graphicsinelectronicpublications; held",
+      "fields_offered": [
+        "exactparallel-combinerengineeringtable"
+      ],
+      "processed_cursor": {
+        "reviewed": 1,
+        "accepted": 0
+      },
+      "result": "True24to1parallelcombinerclassificationverified;0acceptedbecauseexplicitreuserestriction. No datatable copied intoGit.",
+      "retry_condition": "Compatiblepermissionorgrant",
+      "next_action": "Seek anotherpublisherwith clearrights; do notbypassorcontactpeople",
+      "licence_url": "https://enwitec.eu/impressum/",
+      "endpoint": "https://enwitec.eu/wp-content/uploads/2025/05/10019463_Datenblatt_Solarconnect-1500_DE_2025_04_16.pdf",
+      "last_release": "2025-04-16",
+      "last_retrieval": "2026-11-04T16:02:24.687742+00:00",
+      "sha256": "102e212b7ff9d5fd9cfa07772f8a4c2f9ea0525d523c6c128a67fc0132f39bae",
+      "etag": null
+    },
+    {
+      "id": "wbsedcl_portfolio_20261104T1600",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://wbsedcl.in/irj/go/km/docs/internet/new_website/solar.html",
+      "endpoint": "https://wbsedcl.in/irj/go/km/docs/internet/new_website/solar.html",
+      "format": "HTMLownerportfolio tables",
+      "version_or_date": "Statusasof30April2026",
+      "last_attempt": "2026-11-04T16:11:42.708949+00:00",
+      "last_release": "30April2026as-of,publicationdateunspecified",
+      "last_retrieval": "2026-11-04T16:09:41.952832+00:00",
+      "sha256": "9256ea5ded14f7caae072441f7581bda8bfb10cd8d1503a1d1d3b5fc809ec47e",
+      "etag": null,
+      "publication_cadence": "Unknown; nohourlyfullredownload",
+      "licence_assessment": "Official.inDisclaimerandprivacyPolicyrestrictincorporation/reproductionwithoutpermission. Do not apply unrelatedwbsedcl.orgorstateportalgrant.0accepted.",
+      "licence_url": "https://www.wbsedcl.in/irj/go/km/docs/internet/new_website/Disclaimer.html",
+      "fields_offered": [
+        "datedcommissioning",
+        "awardcostnativeCr(currencyunresolved)",
+        "cumulativegenerationnativeMU(conversionnotassumed)",
+        "portfolio/phasedscope"
+      ],
+      "estimated_useful_yield": {
+        "portfolio_entries_reviewed": 31,
+        "completed_individual_plant_candidates": 14,
+        "accepted": 0
+      },
+      "mapping": "Discoveryonly,noadapterorcanonicalingestion",
+      "processed_cursor": {
+        "rows_screened": 31,
+        "canonical_accepted": 0,
+        "existing_Goaltore_is_multiphase": true
+      },
+      "result": "Threeownerportfoliotablesreviewed.14completedindividualplantcandidatesplusprogrammes/pipeline; rightsblockallingestion. OnlyGoaltoreclearcanonicalname match,withtwoexistingphases; do notapply112.5MW date towholegroup. NativeCrnotINRwithoutunitdefinition; actualcumulativeMUisnotannualexpectedMWh.",
+      "retry_condition": "Compatibleexplicitpermissionorreusableindependentprimarypublication; noformsoroutreach",
+      "next_due_check": "2026-11-05T16:00:00Z",
+      "next_action": "WestBengalPowerDepartmentorstateopendataprimaryfacts withsource-specificreusepolicyandplant/phaseidentities; noadoptionofWBSEDCLtablewithoutpermission."
     }
   ],
   "source_refresh_queue": [
