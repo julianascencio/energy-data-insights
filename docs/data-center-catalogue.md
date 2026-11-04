@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 726 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
+has 751 exact models/configurations from NVIDIA, AMD, Borri, Carrier, CoolIT Systems, Cummins,
 Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR, Lenovo, Motivair by Schneider
 Electric, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
@@ -132,6 +132,13 @@ quarantined because its column prints 3 kVA beside 24 kW. EPOWER 6P/12P weight
 alternatives remain observations unless the model suffix explicitly selects 12P;
 the exact EPOWER-L and EPOWER-H model-column weights are retained without
 synthesizing battery, communications or cabinet variants.
+The Borri continuation processes all 25 exact rating columns in the current
+INGENIO PLUS, INGENIO MAX, B9000FXS and B9600FXS tables. Published kVA and kW
+remain separate, while voltage/frequency choices, family maximum efficiency,
+battery autonomy and optional communications, parallel kits and transformers
+remain observations. The INGENIO MAX 250 and 500 kVA weights stay null because
+the current family page and January 2025 catalogue disagree; both dated values
+remain preserved as conflicting observations.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact

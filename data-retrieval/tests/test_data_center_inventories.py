@@ -184,6 +184,21 @@ def test_ups_matrix_keeps_kstar_epower_apparent_and_active_power_separate():
     assert candidate["output_power_kw"] == 540
 
 
+def test_ups_matrix_accepts_borri_row_without_deriving_power_factor():
+    header, *rows = UPS_MATRIX.splitlines()
+    borri_row = next(row for row in rows if row.startswith(b"Borri,"))
+    borri = header + b"\n" + borri_row + b"\n"
+    result = parse_ups_rating_matrix(
+        borri,
+        source_url="https://www.borri.it/product/b9000fxs/",
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Borri"
+    assert candidate["apparent_power_kva"] == 300
+    assert candidate["output_power_kw"] == 270
+
+
 def test_ups_matrix_rejects_fuji_source_manufacturer_mismatch():
     header, *rows = UPS_MATRIX.splitlines()
     mitsubishi_row = next(row for row in rows if row.startswith(b"Mitsubishi Electric,"))

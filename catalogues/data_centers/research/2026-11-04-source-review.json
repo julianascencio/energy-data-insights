@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-04T03:30:00Z",
+  "retrieved_at": "2026-11-04T04:20:00Z",
   "accepted": [
     {
       "inventory": "FIN02, FIN04 and FIN05 official Finnish municipal permit/disclosure observations",
@@ -32,6 +32,14 @@
       "enriched_records": 0,
       "reuse": "Factual extraction from the same public copyrighted OEM brochure; no open licence asserted; the original is not redistributed",
       "originals": "The official KSD/C&C 2025-01 brochure was readable through the public web index. Direct original-byte requests returned HTTP 403, so no checksum or byte count is claimed. This is an access/content failure, not a reuse prohibition."
+    },
+    {
+      "inventory": "Borri current INGENIO PLUS, INGENIO MAX, B9000FXS and B9600FXS rating columns",
+      "processed_offset": 25,
+      "accepted_records": 25,
+      "enriched_records": 0,
+      "reuse": "Factual extraction from public copyrighted OEM product pages and catalogue; no open licence asserted; originals are not redistributed",
+      "originals": "Four official product pages, the January 2025 catalogue and the privacy policy were readable through the public web index. Raw response bytes were unavailable in the research interface, so no checksums or byte counts are claimed. This is an access/tooling limitation, not a reuse prohibition."
     }
   ],
   "deferred": [
@@ -80,6 +88,15 @@
         "The same model column prints 24 kW"
       ],
       "reason": "The source inconsistency is not repaired from the model label; apparent power remains null while 24 kW and the printed 3 kVA observation are preserved."
+    },
+    {
+      "record": "Borri INGENIO MAX 250 and 500 kVA",
+      "field": "weight_kg",
+      "observations": [
+        "Current official product page: 745 kg at 250 kVA and 1250 kg at 500 kVA",
+        "Official January 2025 catalogue: 630 kg at 250 kVA and 1150 kg at 500 kVA"
+      ],
+      "reason": "Both official observations are preserved in conflicts_json; normalized weight remains null on the two configurations."
     }
   ],
   "normalization_notes": [
@@ -93,6 +110,9 @@
     "KR33 localized-page conflicts and KR11-RM internal voltage inconsistency remain quarantined rather than silently resolved.",
     "KSTAR kVA and kW remain separate published boundaries; voltage/frequency choices and shared efficiency, dimensions, battery and standard/long-run weight cells are not synthesized.",
     "The KSTAR EPI 30K printed apparent-power inconsistency remains quarantined.",
-    "The complete KSTAR EPOWER/EPOWER-L/EPOWER-H continuation is processed at 38 model columns; shared efficiency, cabinet, battery and 6P/12P cells remain observations and never create synthesized variants."
+    "The complete KSTAR EPOWER/EPOWER-L/EPOWER-H continuation is processed at 38 model columns; shared efficiency, cabinet, battery and 6P/12P cells remain observations and never create synthesized variants.",
+    "Borri current apparent-kVA and active-kW pairs remain separate reported values; voltage and frequency choices are not selected configurations.",
+    "Borri family-level maximum efficiency without a load point, merged dimensions, batteries, communications, parallel kits and transformer options remain observations.",
+    "INGENIO PLUS internal-battery autonomy is preserved only at the stated 70% load condition and is not normalized as generic runtime; INGENIO MAX conflicting weights remain quarantined."
   ]
 }
