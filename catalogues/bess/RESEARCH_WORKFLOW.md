@@ -85,6 +85,35 @@ or a live availability feed. Do not interpret record counts as installed capacit
    row sum differs from the approximate 37 MWh cover and later 40 MWh tender;
    never scale rows to fit a portfolio total. These are historical design
    estimates, not current as-built ratings. Keep ARISE distinct from ASSURE.
+   `scripts/stage_bess_ngcp.py` stages the reviewed March and September 2026
+   NGCP service bulletins from local layout text. BSS means black start service,
+   not battery technology. Contract cases and certification do not establish COD,
+   ownership or capacity; preserve phase names and dated firm-capacity warnings.
+   Use `--september-2026` only with bulletin 2026-51; unknown rows fail closed.
+   `scripts/stage_bess_effekta.py` stages the 18 exact BTL overview models. C20 Ah
+   belongs to a monobloc, not a cell; do not derive energy or match differing model
+   suffixes automatically. Individual-sheet and overview rating bases stay separate.
+   `scripts/stage_bess_effekta_individual.py` stages reviewed English BT/front-terminal
+   sheet facts from local layout text. Supply the printed model heading and archive
+   URL explicitly; filenames do not define identities. Preserve approximate mass,
+   height labels, C-rate versus amperes and short-circuit versus peak current.
+   Charging tables, rate conditions and overview discrepancies require manual review.
+   `scripts/stage_bess_leoch_opzs.py` stages reviewed two-page 2 V OPzS sheets
+   from local layout text. It requires the exact printed heading and publication
+   number, preserves C10 at 20°C/1.80 V per cell, and separates dry/approximate
+   mass, short-circuit amperes and maximum charge C-rate. The same marketed code
+   appears in standard and telecom URL editions: do not create duplicate identities
+   or select a terminal/mass winner without configuration evidence. Residual template
+   tokens in the text layer are not numerical specifications. Staging never imports.
+   `scripts/stage_bess_inventory.py repd --repd-status "Under Construction"`
+   selects that explicit lifecycle partition; the default remains Operational.
+   Recheck the release hash, exact application IDs, nearby sites, names and phases.
+   REPD construction flags are dated registry observations, not live availability.
+   `scripts/stage_bess_kehua.py` reads exact model tabs from local OEM HTML.
+   It fails on changed panel counts/labels/units and requires reviewed model order.
+   Preserve full-load versus operating DC ranges, rated kW versus maximum kVA,
+   temperature conditions, conversion efficiency versus RTE and NEMA versus IP.
+   Do not claim PDF-only specifications when the linked download service fails.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
@@ -112,3 +141,38 @@ checkpoint when it will prevent repeated work. Do not create empty commits or
 invent records to satisfy a target count. If a source becomes unavailable, retain
 its previous observation and record the access failure rather than asserting a
 new verification.
+
+The offline `bess_oem_catalogue.kehua_panels.parse_panels` adapter stages reviewed
+skid, cabinet and PCS panels with explicit expected model order and field labels.
+Retain channel currents, component-specific enclosure classes, adjustable transformer
+ratios and unspecified efficiency boundaries in native observations. Embedded public
+index routes can resolve canonical HTML URLs; unavailable PDFs confer no specifications.
+
+For the EA 29 September 2026 status overview, `scripts/stage_bess_nz_status.py`
+stages six local HTML rows and checks the release, headers, units and unique names.
+Retain owner slash labels and commissioning months verbatim. Commissioning month,
+registry effective date and exact commercial-operation date are different facts;
+older table statuses must not replace later owner evidence. Rotohiko's November
+registry date and December overview month remain unresolved.
+
+The Kehua panel parser also accepts a reviewed field set per model, for native
+label-spacing differences. Numeric bounds such as `<100ms` remain bounds; embedded
+markup still fails. PV MPPT limits must not populate battery DC limits, optional
+battery ranges must not become fixed energy, and EMS auxiliary supply must not
+become system power. Elum controller maximum controlled BESS capacity is a control
+limit, not energy installed in the controller. Optional enclosure IP and WIP
+metadata require explicit qualifiers; the MC-XL solar-row MWh label is unresolved.
+
+For Portugal's C21-i08 final grant report v1.1 (8 April 2025),
+`scripts/stage_bess_portugal_grants.py` reads local layout text and requires all
+41 final ranks on PDF pages 27–28. It stages application IDs and Decimal funding
+observations, preserving cumulative arithmetic discrepancies. An award ID is not
+a physical project identity. Reuse rights and site reconciliation are prerequisites
+for import; preliminary-table MVA limits and minimum hours cannot yield BESS MW/MWh.
+
+`scripts/stage_bess_elum.py` reads the exact three-column ES Compact / ES / ES+
+controller table. Changed columns, duplicate rows and unsupported units fail closed.
+Common merged cells require visual review. Controlled plant capacity, optional IP
+kits and control-loop timing retain their own boundaries; none is battery hardware
+capacity or unconditional performance. The Taiwan review distinguishes Xia Xing's
+two actual chemistry-specific systems from subsequent simulation scenarios.

@@ -1,0 +1,1610 @@
+{
+  "exact_models_reviewed": 14,
+  "accepted": 13,
+  "held": [
+    {
+      "model": "EVT560",
+      "source": "https://www.envertec.com/attached/file/datasheet/en/EVT560-EN.pdf",
+      "sha256": "a21e1873fdff8917593ab5926ecfe1066c515787a71c813e54d8fcb5a426186f",
+      "reason": "Printed model EVT560 but maximum continuous output600W. No silent correction or filename-based power inference; independent clarification required."
+    }
+  ],
+  "review": [
+    {
+      "model": "EVT350",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_5_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "idc_max_a",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT350 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          163.3,
+          163.7,
+          35.5
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 14,
+        "maximum_input_current_scope": "single printed input",
+        "printed_current_multiplicity": 1,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "LVD 2014/35/EU",
+          "EMC 2014/30/EU",
+          "IEC 62116",
+          "IEC 61727"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT350, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT350, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT350, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT350, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT350, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT350, Output AC row",
+          "weight_kg": "PDF physical p2, EVT350, Mechanical/environmental/Others or Warranty row",
+          "idc_max_a": "PDF physical p2, EVT350, Input DC row"
+        },
+        "maximum_units_per_12awg_branch": null
+      }
+    },
+    {
+      "model": "EVT360",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_9_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "idc_max_a",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT360 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          163.3,
+          163.7,
+          27
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 12,
+        "maximum_input_current_scope": "single printed input",
+        "printed_current_multiplicity": 1,
+        "input_short_circuit_current_a": 15,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "VDE-AR-N 4105",
+          "IEC/EN 61000",
+          "IEC/EN 62109-1/2",
+          "EN 50549-1/2019",
+          "TOR 2019",
+          "C10/11:2019",
+          "CEI 0-21",
+          "UTE C15-712-1:2013",
+          "VFR 2019"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT360, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT360, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT360, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT360, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT360, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT360, Output AC row",
+          "weight_kg": "PDF physical p2, EVT360, Mechanical/environmental/Others or Warranty row",
+          "idc_max_a": "PDF physical p2, EVT360, Input DC row"
+        },
+        "maximum_units_per_12awg_branch": 15
+      }
+    },
+    {
+      "model": "EVT400",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_4_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "idc_max_a",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT400 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          163.3,
+          163.7,
+          35.5
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 14,
+        "maximum_input_current_scope": "single printed input",
+        "printed_current_multiplicity": 1,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "LVD 2014/35/EU",
+          "EMC 2014/30/EU",
+          "IEC 62116",
+          "IEC 61727"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT400, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT400, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT400, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT400, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT400, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT400, Output AC row",
+          "weight_kg": "PDF physical p2, EVT400, Mechanical/environmental/Others or Warranty row",
+          "idc_max_a": "PDF physical p2, EVT400, Input DC row"
+        },
+        "maximum_units_per_12awg_branch": 13
+      }
+    },
+    {
+      "model": "EVT500",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_1_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "idc_max_a",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT500 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          163.3,
+          163.7,
+          35.5
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 18,
+        "maximum_input_current_scope": "single printed input",
+        "printed_current_multiplicity": 1,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "LVD 2014/35/EU",
+          "EMC 2014/30/EU",
+          "IEC 62116",
+          "IEC 61727"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT500, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT500, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT500, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT500, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT500, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT500, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT500, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT500, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT500, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT500, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT500, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT500, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT500, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT500, Output AC row",
+          "idc_max_a": "PDF physical p2, EVT500, Input DC row"
+        },
+        "connector_variants": {
+          "scope": "Same printed base model; Type B p1/2, standard p3/4, Type R p5/6. Common facts only; not separate fictional suffix models.",
+          "mass_kg_by_pdf_page": {
+            "2": 1.8,
+            "4": 2.1,
+            "6": 2.1
+          },
+          "maximum_units_per_12awg_branch_by_pdf_page": {
+            "2": null,
+            "4": 10,
+            "6": 10
+          },
+          "p2_branch_printed": "N/A",
+          "communication_p4": "PLCC",
+          "communication_p2_p6": "PLCC / Wi-Fi"
+        }
+      }
+    },
+    {
+      "model": "EVT600",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_6_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT600 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          264,
+          194,
+          35.5
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 14,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 2,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "VDE-AR-N 4105",
+          "IEC/EN 61000",
+          "IEC/EN 62109-1/2",
+          "EN 50549-1/2019",
+          "TOR 2019",
+          "C10/11:2019",
+          "CEI 0-21",
+          "UTE C15-712-1:2013",
+          "VFR 2019"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT600, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT600, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT600, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT600, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT600, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT600, Output AC row",
+          "weight_kg": "PDF physical p2, EVT600, Mechanical/environmental/Others or Warranty row"
+        },
+        "maximum_units_per_12awg_branch": 8
+      }
+    },
+    {
+      "model": "EVT720",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_11_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT720 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          264,
+          194,
+          35.5
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 12,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 2,
+        "input_short_circuit_current_a": 15,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "VDE-AR-N 4105",
+          "IEC/EN 61000",
+          "IEC/EN 62109-1/2",
+          "EN 50549-1/2019",
+          "TOR 2019",
+          "C10/11:2019",
+          "CEI 0-21",
+          "UTE C15-712-1:2013",
+          "VFR 2019"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT720, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT720, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT720, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT720, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT720, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT720, Output AC row",
+          "weight_kg": "PDF physical p2, EVT720, Mechanical/environmental/Others or Warranty row"
+        },
+        "maximum_units_per_12awg_branch": 7
+      }
+    },
+    {
+      "model": "EVT800",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_12_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT800 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          264,
+          194,
+          35.5
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 14,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 2,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "LVD 2014/35/EU",
+          "EMC 2014/30/EU",
+          "IEC 62116",
+          "IEC 61727"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT800, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT800, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT800, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT800, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT800, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT800, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT800, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT800, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT800, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT800, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT800, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT800, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT800, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT800, Output AC row"
+        },
+        "connector_variants": {
+          "scope": "Same printed base model; Type B p1/2, standard p3/4, Type R p5/6. Common facts only; not separate fictional suffix models.",
+          "mass_kg_by_pdf_page": {
+            "2": 3.7,
+            "4": 4.1,
+            "6": 4.1
+          },
+          "maximum_units_per_12awg_branch_by_pdf_page": {
+            "2": null,
+            "4": 6,
+            "6": 6
+          },
+          "p2_branch_printed": "N/A",
+          "communication_p4": "PLCC",
+          "communication_p2_p6": "PLCC / Wi-Fi"
+        }
+      }
+    },
+    {
+      "model": "EVT800SE",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_2_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "cooling_method",
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_count",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT800SE column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          248,
+          236,
+          27.5
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 14,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 2,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.9 adjustable",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "VA only; active W withheld",
+        "communication_options": [
+          "PLCC"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "VDE-AR-N 4105",
+          "IEC/EN 61000",
+          "IEC/EN 62109-1/2",
+          "EN 50549-1/2019",
+          "TOR 2019",
+          "C10/11:2019",
+          "CEI 0-21",
+          "UTE C15-712-1:2013",
+          "VFR 2019"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT800SE, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT800SE, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT800SE, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT800SE, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT800SE, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "weight_kg": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row",
+          "mppt_count": "PDF physical p2, EVT800SE, Input DC row",
+          "cooling_method": "PDF physical p2, EVT800SE, Mechanical/environmental/Others or Warranty row"
+        },
+        "dc_start_voltage_v": 16,
+        "maximum_continuous_apparent_output_va": 800,
+        "maximum_units_per_branch": {
+          "12AWG": 6
+        }
+      }
+    },
+    {
+      "model": "EVT1000",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_0_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT1000 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          264,
+          194,
+          35.5
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 18,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 2,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "LVD 2014/35/EU",
+          "EMC 2014/30/EU",
+          "IEC 62116",
+          "IEC 61727"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT1000, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT1000, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT1000, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT1000, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT1000, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT1000, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT1000, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT1000, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT1000, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT1000, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT1000, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT1000, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT1000, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT1000, Output AC row"
+        },
+        "connector_variants": {
+          "scope": "Same printed base model; Type B p1/2, standard p3/4, Type R p5/6. Common facts only; not separate fictional suffix models.",
+          "mass_kg_by_pdf_page": {
+            "2": 3.7,
+            "4": 4.1,
+            "6": 4.1
+          },
+          "maximum_units_per_12awg_branch_by_pdf_page": {
+            "2": null,
+            "4": 5,
+            "6": 5
+          },
+          "p2_branch_printed": "N/A",
+          "communication_p4": "PLCC",
+          "communication_p2_p6": "PLCC / Wi-Fi"
+        }
+      }
+    },
+    {
+      "model": "EVT1600SE",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_3_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "cooling_method",
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_count",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT1600SE column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          300,
+          199.5,
+          41
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 20,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 4,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.9 adjustable",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "VA only; active W withheld",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "VDE-AR-N 4105",
+          "IEC/EN 61000",
+          "IEC/EN 62109-1/2",
+          "EN 50549-1/2019",
+          "TOR 2019",
+          "C10/11:2019",
+          "CEI 0-21",
+          "UTE C15-712-1:2013",
+          "VFR 2019"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT1600SE, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT1600SE, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT1600SE, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT1600SE, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT1600SE, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "weight_kg": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row",
+          "mppt_count": "PDF physical p2, EVT1600SE, Input DC row",
+          "cooling_method": "PDF physical p2, EVT1600SE, Mechanical/environmental/Others or Warranty row"
+        },
+        "dc_start_voltage_v": 16,
+        "maximum_continuous_apparent_output_va": 1600,
+        "maximum_units_per_branch": {
+          "12AWG": 3,
+          "10AWG": 4
+        }
+      }
+    },
+    {
+      "model": "EVT1800SE",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_3_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "cooling_method",
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_count",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT1800SE column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          300,
+          199.5,
+          41
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 20,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 4,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.9 adjustable",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "VA only; active W withheld",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "VDE-AR-N 4105",
+          "IEC/EN 61000",
+          "IEC/EN 62109-1/2",
+          "EN 50549-1/2019",
+          "TOR 2019",
+          "C10/11:2019",
+          "CEI 0-21",
+          "UTE C15-712-1:2013",
+          "VFR 2019"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT1800SE, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT1800SE, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT1800SE, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT1800SE, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT1800SE, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "weight_kg": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row",
+          "mppt_count": "PDF physical p2, EVT1800SE, Input DC row",
+          "cooling_method": "PDF physical p2, EVT1800SE, Mechanical/environmental/Others or Warranty row"
+        },
+        "dc_start_voltage_v": 16,
+        "maximum_continuous_apparent_output_va": 1800,
+        "maximum_units_per_branch": {
+          "12AWG": 2,
+          "10AWG": 3
+        }
+      }
+    },
+    {
+      "model": "EVT2000SE",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_3_20261104T1000",
+        "envertech_sheet_4_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "cooling_method",
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_count",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT2000SE column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          300,
+          199.5,
+          41
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 20,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 4,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.9 adjustable",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC",
+          "Wi-Fi"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "VDE-AR-N 4105",
+          "IEC/EN 61000",
+          "IEC/EN 62109-1/2",
+          "EN 50549-1/2019",
+          "TOR 2019",
+          "C10/11:2019",
+          "CEI 0-21",
+          "UTE C15-712-1:2013",
+          "VFR 2019"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT2000SE, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT2000SE, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT2000SE, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT2000SE, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT2000SE, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "Second source physical p2; EVT2000SE column; Power (Max.continuous) (W)",
+          "weight_kg": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row",
+          "mppt_count": "PDF physical p2, EVT2000SE, Input DC row",
+          "cooling_method": "PDF physical p2, EVT2000SE, Mechanical/environmental/Others or Warranty row"
+        },
+        "dc_start_voltage_v": 16,
+        "maximum_continuous_apparent_output_va": 2000,
+        "maximum_units_per_branch": {
+          "12AWG": 2,
+          "10AWG": 3
+        },
+        "active_w_locator": "Second source physical p2; EVT2000SE column; Power (Max.continuous) (W)"
+      }
+    },
+    {
+      "model": "EVT2000",
+      "result": "accepted",
+      "source_ids": [
+        "envertech_sheet_13_20261104T1000"
+      ],
+      "canonical_spec_fields": [
+        "depth_m",
+        "efficiency_max_pct",
+        "height_m",
+        "insulation_method",
+        "ip_rating",
+        "mppt_max_v",
+        "mppt_min_v",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_current_max_a",
+        "pac_rated_w",
+        "product_warranty_years",
+        "vdc_max_v",
+        "weight_kg",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "Physical PDF page 2; EVT2000 column; Input DC, Output AC, Efficiency, Features and Others rows",
+        "dimension_axis_order": "W x H x D",
+        "dimension_mm": [
+          395,
+          242.4,
+          47
+        ],
+        "nominal_ac_voltage_options_v": [
+          220,
+          230
+        ],
+        "ac_voltage_range_v": [
+          189,
+          260
+        ],
+        "nominal_frequency_options_hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_hz": [
+          [
+            47.5,
+            52.5
+          ],
+          [
+            57.5,
+            62.5
+          ]
+        ],
+        "dc_operating_voltage_range_v": [
+          16,
+          60
+        ],
+        "maximum_input_current_a": 18,
+        "maximum_input_current_scope": "per printed input channel",
+        "printed_current_multiplicity": 4,
+        "input_short_circuit_current_a": 25,
+        "input_short_circuit_scope": "OEM Isc PV absolute maximum; port/aggregate scope not further stated",
+        "mppt_tracking_efficiency_pct": 99.9,
+        "night_power_consumption_w": {
+          "upper_exclusive": 0.1,
+          "original_unit": "mW",
+          "original_bound": "<100"
+        },
+        "total_harmonic_distortion_pct": {
+          "upper_exclusive": 3
+        },
+        "power_factor_printed": "+/-0.90",
+        "relative_humidity_pct": [
+          0,
+          98
+        ],
+        "optional_product_warranty_years": 20,
+        "protective_class": "Class I",
+        "overvoltage_category": {
+          "AC Main": "III",
+          "PV": "II"
+        },
+        "output_active_power_basis": "maximum continuous W as explicitly printed",
+        "communication_options": [
+          "PLCC"
+        ],
+        "compliance_claim_scope": "OEM labels, not independently verified certification",
+        "compliance_labels": [
+          "LVD 2014/35/EU",
+          "EMC 2014/30/EU",
+          "IEC 62116",
+          "IEC 61727",
+          "REACH",
+          "INMETRO",
+          "BIS",
+          "CQC"
+        ],
+        "field_locators": {
+          "vdc_max_v": "PDF physical p2, EVT2000, Input DC row",
+          "mppt_min_v": "PDF physical p2, EVT2000, Input DC row",
+          "mppt_max_v": "PDF physical p2, EVT2000, Input DC row",
+          "output_current_max_a": "PDF physical p2, EVT2000, Output AC row",
+          "efficiency_max_pct": "PDF physical p2, EVT2000, Efficiency row",
+          "operating_temperature_min_c": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row",
+          "operating_temperature_max_c": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row",
+          "width_m": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row",
+          "height_m": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row",
+          "depth_m": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row",
+          "product_warranty_years": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row",
+          "ip_rating": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row",
+          "insulation_method": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row",
+          "pac_rated_w": "PDF physical p2, EVT2000, Output AC row",
+          "weight_kg": "PDF physical p2, EVT2000, Mechanical/environmental/Others or Warranty row"
+        },
+        "communication_printed": "PLCC / PLCC; no Wi-Fi correction inferred",
+        "maximum_units_per_12awg_branch": 2
+      }
+    }
+  ]
+}

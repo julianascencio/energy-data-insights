@@ -2,10 +2,11 @@
 
 This is an illustrative energy-balance model, not a market or network optimizer.
 """
+
 from __future__ import annotations
 
-from dataclasses import dataclass
 from collections.abc import Sequence
+from dataclasses import dataclass
 
 
 @dataclass(frozen=True)

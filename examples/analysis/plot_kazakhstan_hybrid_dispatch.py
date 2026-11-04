@@ -1,9 +1,9 @@
 """
-Kazakhstan wind–solar–battery hybrid: reproducible dispatch sensitivity
+Kazakhstan wind-solar-battery hybrid: reproducible dispatch sensitivity
 ======================================================================
 
 **News trigger:** Ember, 3 November 2026, reports that a Kazakhstan
-wind–solar–battery hybrid could cover 70–90% of a typical demand profile
+wind-solar-battery hybrid could cover 70-90% of a typical demand profile
 at a delivered cost below $60/MWh.
 
 This gallery example does **not** reproduce that cost or coverage claim.
@@ -34,10 +34,7 @@ solar = [75 * max(0, math.sin(math.pi * ((h % 24) - 6) / 12)) for h in hours]
 demand = [90 + 12 * math.sin(2 * math.pi * ((h % 24) - 17) / 24) for h in hours]
 
 capacities = [0, 50, 100, 200, 400, 800]
-results = [
-    simulate_hybrid(wind, solar, demand, battery_mwh=e, battery_mw=50)
-    for e in capacities
-]
+results = [simulate_hybrid(wind, solar, demand, battery_mwh=e, battery_mw=50) for e in capacities]
 baseline = results[0]
 for capacity, result in zip(capacities, results, strict=True):
     print(
@@ -51,8 +48,11 @@ for capacity, result in zip(capacities, results, strict=True):
 fig, ax = plt.subplots()
 ax.plot(capacities, [100 * r.coverage for r in results], marker="o")
 ax.axhline(100 * baseline.coverage, linestyle="--", label="No storage baseline")
-ax.set(xlabel="Battery energy capacity (MWh)", ylabel="Demand served (%)",
-       title="Illustrative hybrid dispatch — SYNTHETIC inputs")
+ax.set(
+    xlabel="Battery energy capacity (MWh)",
+    ylabel="Demand served (%)",
+    title="Illustrative hybrid dispatch — SYNTHETIC inputs",
+)
 ax.set_ylim(0, 100)
 ax.legend()
 fig.tight_layout()

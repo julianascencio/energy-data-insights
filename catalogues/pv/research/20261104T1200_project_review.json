@@ -1,0 +1,44 @@
+{
+  "canonical_enriched": "bdce45ee-9fd6-5447-bbf7-708bb7e478a0",
+  "identity_evidence": [
+    "Unique canonical Viscofan naturalname/alias match",
+    "Cáseda,Navarra same locality and region",
+    "Single existing GEM phaseG100001071609; no phase sum or uncertain nearbycase crosswalk"
+  ],
+  "added_fields": {
+    "capacity_dc_mw": 48.114,
+    "module_count": 80190,
+    "inverter_count": 11,
+    "capex": 23296668,
+    "currency": "EUR"
+  },
+  "conditions": "Proposed PV selfconsumption hybrid with existing cogeneration; notice26February2025 atapplication/publicconsultation stage; estimatedPV+evacuation cost2025EUR. No currentstatus/owner/coordinates/equipmentmodels inferred.",
+  "holds": [
+    {
+      "field": "capacity_ac_mw",
+      "existing": 45,
+      "source_heading_installed_mw": 45.045,
+      "source_total_inverter_kva": 45045,
+      "decision": "Preserve45MWac; headingscope/rounding and apparentpower not adjudicated. No WfromVA."
+    },
+    {
+      "source_case": "3554-CE",
+      "source_features": 3,
+      "decision": "Small Cáseda polygons remain grouped/identity-held; no automatic linkage toViscofan"
+    }
+  ],
+  "non_pv_registry_dispositions": {
+    "source": "EnergistyrelsenEPT2025unitworkbook",
+    "all_unit_technology_labels_screened": 2916,
+    "solar_thermal": 144,
+    "solar_heat_pump": 8,
+    "explicit_pv": 0,
+    "accepted": 0,
+    "rejected_non_pv": 152
+  },
+  "discovery_only_sources": [
+    "Finland403",
+    "CastillaLeónmetadata",
+    "DenmarktruePVmap"
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "started_at": "2026-11-04T06:48:06+00:00",
+  "validation_checkpoint_at": "2026-11-04T07:17:52.182403+00:00",
+  "elapsed_minutes": 29.77,
+  "timezone_for_display": "Atlantic/Canary",
+  "baseline_pr_head": "8cb20d282d219c31cd67083129e4522b8f223eb2",
+  "main_head": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
+  "passed": {
+    "bess_tests": 268,
+    "new_synthetic_parser_tests": 12,
+    "viewer_tests": 15,
+    "catalogue_validation": [
+      "bess",
+      "bess_oem"
+    ],
+    "parquet": "two identical typed Zstandard builds per catalogue; binaries outside Git",
+    "preservation": "2004 previous projects and all 795 previous equipment records unchanged; Rohini preserves creation time, numeric and nested facts",
+    "offline_examples": [
+      "plot_bess_projects.py",
+      "plot_bess_oem_catalogue.py"
+    ],
+    "repository_checks": [
+      "Ruff check",
+      "Ruff format --check",
+      "ty check",
+      "citation consistency",
+      "repository hygiene",
+      "git diff --check"
+    ],
+    "packages": "three wheels and three sdists built with build isolation; six strict Twine passes"
+  },
+  "initial_commands": {
+    "tests": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/pytest",
+        "-q"
+      ],
+      "exit_code": -9
+    },
+    "ruff": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0
+    },
+    "format": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0
+    },
+    "typing": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/ty",
+        "check",
+        "--python",
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python"
+      ],
+      "exit_code": 0
+    },
+    "viewer": {
+      "command": [
+        "node",
+        "--test",
+        "tests/js/test_database_viewer.mjs"
+      ],
+      "exit_code": 0
+    },
+    "projects-example": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python",
+        "examples/database/plot_bess_projects.py"
+      ],
+      "exit_code": 0
+    },
+    "oem-example": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python",
+        "examples/database/plot_bess_oem_catalogue.py"
+      ],
+      "exit_code": 0
+    },
+    "citations": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python",
+        "scripts/check_citations.py"
+      ],
+      "exit_code": 0
+    },
+    "docs": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/sphinx-build",
+        "-W",
+        "--keep-going",
+        "-D",
+        "plot_gallery=0",
+        "-b",
+        "html",
+        "docs",
+        "/dev/bess0648-validation-tmp/docs"
+      ],
+      "exit_code": -9
+    },
+    "build": {
+      "command": [
+        "uv",
+        "build",
+        "--all-packages",
+        "--no-build-isolation",
+        "--out-dir",
+        "/dev/bess0648-validation-tmp/dist"
+      ],
+      "exit_code": 2
+    }
+  },
+  "sequential_retry_commands": {
+    "tests": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/pytest",
+        "-q"
+      ],
+      "exit_code": -9
+    },
+    "docs": {
+      "command": [
+        "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/sphinx-build",
+        "-W",
+        "--keep-going",
+        "-D",
+        "plot_gallery=0",
+        "-b",
+        "html",
+        "docs",
+        "/dev/bess0648-sequential-tmp/docs"
+      ],
+      "exit_code": -9
+    }
+  },
+  "limits": [
+    "Full pytest and strict Sphinx (gallery disabled) were terminated with SIGKILL/exit -9, including sequential retries. No complete current full-suite or strict-docs pass is claimed.",
+    "Initial package build without isolation failed because hatchling was unavailable; isolated retry succeeded.",
+    "Inherited invalid UTF-8 DataCenter KSTAR JSONL at baseline is independently confirmed; this pass did not change it. The terminated current checks cannot be attributed to that defect.",
+    "No full-gallery, linkcheck, installed-wheel smoke or new remote-CI success claimed.",
+    "Root disk and shared-memory limits required complete validation checkouts in private temporary output."
+  ],
+  "concurrency": {
+    "open_prs_checked": [
+      133,
+      134,
+      132,
+      131,
+      49,
+      48,
+      47
+    ],
+    "overlap": "No BESS overlap. Wind132 edits shared bibliography: six new entries queued, seven previous entries retained.",
+    "main_and_target_unchanged_at_review": true,
+    "publication": "Expected-head non-force update required; leave PR open and unmerged."
+  },
+  "log_sha256": {
+    "docs_retry.log": "c9e1430434abc0c7a32e8bf24f4cd33b811c67b16a3ad38e0d044b2925a93a5e",
+    "tests_retry.log": "6d529f8ff9f103c477c643f2e154edcaf58953fab73b6b05985a5b463ed64f5a",
+    "twine.log": "0495fbe1aebd99e7ff723b614fe950ea010ace4d26e6de2f083d52d72a4c81bb",
+    "build_retry.log": "0e2860a311d4164d35a4625c8a5c3b4c1336cf2e1ebd9f0e8f0ece13888de5a2",
+    "build.log": "6be4083ca3c21d066aa220adcb1562815c3e9bc2537eb29dc7e9bc55152c5b13",
+    "docs.log": "b20290ce2addb9453f700e77ce0e575c50f79e0efd05109db9e1f570af782df0",
+    "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
+    "oem-example.log": "b04f9d4306ab944eafe08c91d9ab6833266b282ac146bf124e364a3f2af33aaa",
+    "projects-example.log": "a29c456d1461bae905b13021502a1b38020e78f7f845906d745aa96fdfeada5e",
+    "viewer.log": "310c5274d167e933148f5f83d348d4c3a541471d8a5d28403f90ef3e03e5a856",
+    "typing.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "format.log": "7f760a65f99e5273d57b6af7e0a5c44b046b8905d4f707c3c9fd01f90b151bb4",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "tests.log": "ba4500bac6a56fd4fe02c13e33d79a338486b8f415905ee67d7019f3a50d04a0",
+    "focused.log": "7ab42d9beca8ed3494220d52b06f0b8c64e8522b7cc49929c1df8418fe9a716f"
+  }
+}

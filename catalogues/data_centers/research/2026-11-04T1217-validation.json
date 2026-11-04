@@ -1,0 +1,124 @@
+{
+  "run_id": "energy-star-ablerex-ups-20261104T121731Z",
+  "retrieved_at": "2026-11-04T12:17:31Z",
+  "branch": "research/data-center-database-20261104T0915Z",
+  "base_head": "7004215c89e6d4482a391577d321605860ae0f9a",
+  "prepublication_remote_head": "401c6dcafb601d3b9cc2b5aed00439333f8df08c",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus_aggregate": 114
+    },
+    "equipment": 938,
+    "total": 1121,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 33,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 15,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 182,
+    "equipment": 868,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 30
+  },
+  "pull_request_delta": {
+    "projects": 1,
+    "enriched_projects": 3,
+    "equipment": 70,
+    "inventories": [
+      "atNorth FIN03 identity and Nordic milestone reconciliation",
+      "EPA ENERGY STAR certified Para Systems / Minuteman partner inventory",
+      "EPA ENERGY STAR certified ADI partner inventory",
+      "EPA ENERGY STAR certified Ablerex Electronics partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 990085,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {
+      "check": "deterministic ENERGY STAR partner builder replay",
+      "result": "passed",
+      "detail": "The 15-record Ablerex build matched the canonical JSONL; the generalized builder also reproduced the prior 33-record Minuteman and 22-record ADI JSONL files byte-for-byte"
+    },
+    {
+      "check": "catalogue schema, identity, unit, source and evidence validation",
+      "result": "passed",
+      "detail": "Validated 1,121 canonical Data Center records"
+    },
+    {
+      "check": "focused Data Center tests",
+      "result": "passed",
+      "detail": "78 passed"
+    },
+    {
+      "check": "full Python test suite",
+      "result": "passed",
+      "detail": "2,212 passed and five optional-dependency tests skipped"
+    },
+    {
+      "check": "database viewer Node tests",
+      "result": "passed",
+      "detail": "15 passed"
+    },
+    {
+      "check": "Ruff format and lint",
+      "result": "passed",
+      "detail": "841 files formatted; all lint checks passed"
+    },
+    {
+      "check": "repository-wide ty",
+      "result": "passed",
+      "detail": "All type checks passed"
+    },
+    {
+      "check": "repository, citation and diff checks",
+      "result": "passed",
+      "detail": "Repository policy, citation registry and whitespace checks passed"
+    },
+    {
+      "check": "strict Sphinx and generated-site link validation",
+      "result": "passed",
+      "detail": "Standalone strict build succeeded and local links and assets resolved across 532 HTML pages; an earlier concurrent invocation was terminated by the host with exit 137 and was not counted as a pass"
+    },
+    {
+      "check": "deterministic typed Parquet and coverage rebuild",
+      "result": "passed",
+      "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"
+    }
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "55ac356c320ea492853076405d5d44845f8010971919779f447263290fbfe5f0",
+    "projects_sha256": "a143dcdfa65de5782eaaf065eaf3f0398e138895533d6fc4e9514d71ca20ca56",
+    "equipment_sha256": "21cef333cc85f31dbb252cb99ec1add58dbfae1cc62c50e75c63514cd2c05488",
+    "manifest_sha256": "3df296a44ba3cfbdbb0ba768b9173c0f1fda5523b0ddd7a9c6e09075cbcaddba",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "dae8fa1bd12278f7d96b6a941ef60e7dbfd62d8aec9f048890493db1b9e42856"
+  },
+  "holds_added": [],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "All 15 Ablerex entries in the 2026-11-03 ENERGY STAR dataset update are processed",
+    "The four modular MP entries explicitly report N/A runtime, warranty and tested-configuration identifiers; normalized fields remain null",
+    "The 11 AP entries retain their reported runtime and warranty values",
+    "Active W and apparent VA remain distinct; runtime and efficiency retain certification and load boundaries",
+    "No battery energy, maximum configuration, power factor or deployment is inferred",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain"
+  ]
+}

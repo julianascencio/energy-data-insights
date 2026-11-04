@@ -1,0 +1,52 @@
+{
+  "started_at": "2026-11-04T07:49:17+00:00",
+  "validation_completed_at": "2026-11-04T08:02:16.287210+00:00",
+  "elapsed_minutes": 12.99,
+  "passed": {
+    "bess_tests": 277,
+    "new_parser_tests": 9,
+    "viewer_tests": 15,
+    "both_catalogues": "validated; two identical typed Zstandard builds each",
+    "preservation": "All2006projects and814existing equipment unchanged",
+    "checks": [
+      "Ruff lint",
+      "Ruff format",
+      "ty with explicit project Python",
+      "repository hygiene",
+      "citation consistency",
+      "both offline examples",
+      "three wheels and three sdists; strict Twine"
+    ]
+  },
+  "full_suite": {
+    "passed": 2177,
+    "skipped": 5,
+    "errors": 15,
+    "timing": "Before final added heading regression; final277BESS tests include it",
+    "cause": "Inherited DataCenter invalidUTF8; no new BESS failure"
+  },
+  "docs": {
+    "command": "sphinx-build -W --keep-going -D plot_gallery=0 -b html docs",
+    "result": "Fails in inherited DataCenter build-finished export on invalid UTF8; no complete docs pass"
+  },
+  "limitations": [
+    "No full-gallery/linkcheck or installed-wheel smoke claimed",
+    "Optional cdsapi/orbitalpv absent; five full-suite skips",
+    "Main has advanced with DataCenter fix and Wind changes; targetPR retains inherited encoding defect and existing merge conflicts. No unrelated repair."
+  ],
+  "log_checksums": {
+    "tests.log": "0dbcb330de12d303adb5f685c818f38b73d7ad295c15240867db5f23bc2d7329",
+    "hygiene.log": "f6c2543e94cd02ff0b95f538103db98bb12d1d09af04498b08dc1f9a377fb274",
+    "format.log": "0c0b05fa669eac6ca48416a221d45232aaf132f93120f073a3c4d6326db62ec8",
+    "fulltests.log": "d0017a8e7b645db9c4b745031c3fd8ebb469b107f96ea3b5070299cf9ba3850c",
+    "twine.log": "319519c4ecb2b6fb8d8fd3a52529f177a52699d4a9bea702101b7646b595cef8",
+    "type.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "build.log": "fed7952ce68de765f4b23ceb311a3ad970ef9729cce34e3ad74e8cd578d016c8",
+    "project-example.log": "a29c456d1461bae905b13021502a1b38020e78f7f845906d745aa96fdfeada5e",
+    "example.log": "d4f0a3776d45df347b1c9b2557c746ee6615399ac7868f24112cce5a0a06bb0b",
+    "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
+    "lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "docs.log": "ed372d4d9360e7c47a5ac4af819850d15db3a2e47bce17543947ec05858749ae",
+    "viewer.log": "6a1cbcbc4b41223d72366f2d59ec1c98b5152ee85bc40e2fc1c6d1af4a593a35"
+  }
+}

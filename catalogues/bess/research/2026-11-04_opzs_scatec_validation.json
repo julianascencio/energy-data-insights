@@ -1,0 +1,63 @@
+{
+  "started_at": "2026-11-04T08:48:13Z",
+  "validated_at": "2026-11-04T09:13:47Z",
+  "elapsed_minutes_at_validation": 25.57,
+  "timezone_user_facing": "Atlantic/Canary",
+  "target_pr": 133,
+  "expected_head": "ba25144a4ca17478f8d5387ef4114f0b1922c60c",
+  "reconciled_main": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
+  "checks": {
+    "catalogue_validation": {
+      "projects": 2008,
+      "countries": 43,
+      "project_sources": 327,
+      "equipment": 844,
+      "suppliers": 48,
+      "equipment_sources": 422
+    },
+    "full_pytest": {
+      "passed": 2259,
+      "skipped": 5,
+      "seconds": 103.28,
+      "skip_reason": "Optional cdsapi/orbitalpv/native imagery dependencies"
+    },
+    "focused_bess_tests": 289,
+    "new_parser_synthetic_cases": 12,
+    "viewer_tests": 15,
+    "ruff_lint": "passed",
+    "ruff_format": "858 files already formatted",
+    "type_check": "passed with explicit .venv/bin/python",
+    "repository_hygiene": "3810 candidate files, passed",
+    "citations": "passed, regenerated union preserves 838 entries from both parents",
+    "strict_sphinx": "passed with gallery execution disabled",
+    "offline_examples": [
+      "examples/database/plot_bess_projects.py",
+      "examples/database/plot_bess_oem_catalogue.py"
+    ],
+    "snapshots": "Two byte-identical typed Zstandard Parquet builds per catalogue, outside Git",
+    "packages": "Three wheels and three sdists rebuilt; all six strict Twine passed",
+    "preservation": "2000 unaffected projects and all 828 previous equipment unchanged; existing six project scalar/nested facts and created_at preserved",
+    "unrelated_catalogues": "PV, Wind and DataCenter byte-identical to reconciled main",
+    "whitespace": "passed",
+    "local_docs_links": "542 HTML pages; local links and assets resolve"
+  },
+  "limitations": [
+    "No full-gallery execution, installed-wheel smoke or remote CI success claimed.",
+    "First full-suite pass had one citation-export drift failure, repaired; subsequent 2212-test run and final reconciled 2259-test run passed.",
+    "Initial project example path was incorrect; actual plot_bess_projects.py rerun passed.",
+    "Initial plain ty invocation picked host interpreter; explicit project-venv invocation passed.",
+    "Snapshot rebuild initially rejected existing output directories by design; fresh reconciled directories succeeded."
+  ],
+  "disposition": "Selected 24-sheet and nine-project partitions exhausted. Equipment objective met; project yield constrained by prior canonical coverage and rights/access holds. No thin or timestamp-only rows added.",
+  "concurrency": {
+    "open_prs_reviewed": [
+      133,
+      137,
+      47,
+      48,
+      49
+    ],
+    "wind137": "30 paths inspected, zero BESS paths; shared reference edits in active branch, new BESS references queued",
+    "old_pr_workflow_runs": "Connector returned no pull-request workflow runs for original head; no CI success claimed"
+  }
+}

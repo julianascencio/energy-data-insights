@@ -6,6 +6,7 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_energy_star_ups_inventory,
     parse_generator_dcp_matrix,
     parse_generator_rating_matrix,
     parse_lenovo_gpu_comparison,
@@ -49,6 +50,85 @@ UPS_MATRIX = (Path(__file__).parent / "fixtures/data_centers/ups-rating-matrix.c
 PROJECT_PERMIT_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/project-permit-matrix.csv"
 ).read_bytes()
+ENERGY_STAR_UPS = (Path(__file__).parent / "fixtures/data_centers/energy-star-ups.csv").read_bytes()
+
+
+def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries():
+    result = parse_energy_star_ups_inventory(
+        ENERGY_STAR_UPS,
+        source_url=(
+            "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+        ),
+        partner="Example UPS Partner",
+        expected_count=2,
+    )
+    first = result["candidates"][0]
+    assert first["ENERGY STAR Unique ID"] == "1001"
+    assert first["Active Output Power Rating Minimum Configuration (W)"] == "900"
+    assert first["Apparent Output Power Rating Minimum Configuration (VA)"] == "1,000"
+    assert first["Energy Storage System Runtime at 100% Load (min.)"] == "5"
+    assert result["partner"] == "Example UPS Partner"
+    assert len(result["sha256"]) == 64
+
+    adi = parse_energy_star_ups_inventory(
+        ENERGY_STAR_UPS,
+        source_url=(
+            "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+        ),
+        partner="ADI",
+        expected_count=1,
+    )
+    assert [row["ENERGY STAR Unique ID"] for row in adi["candidates"]] == ["2001"]
+    assert adi["candidates"][0]["Brand Name"] == "W BOX"
+
+    ablerex = parse_energy_star_ups_inventory(
+        ENERGY_STAR_UPS,
+        source_url=(
+            "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+        ),
+        partner="Ablerex Electronics Co., Ltd.",
+        expected_count=1,
+    )
+    assert [row["ENERGY STAR Unique ID"] for row in ablerex["candidates"]] == ["3001"]
+    assert ablerex["candidates"][0]["Minimum Configuration Tested Model Number"] == "N/A"
+    assert ablerex["candidates"][0]["Energy Storage System Runtime at 100% Load (min.)"] == "N/A"
+
+    reviewed_partners = {
+        "Panduit Corp.": ("4001", "PANDUIT"),
+        "Appleton Grp LLC d/b/a Appleton Group": ("5001", "Emerson / SOLAHD"),
+        "Legrand AV Inc.": ("6001", "Middle Atlantic"),
+    }
+    for partner, (expected_id, expected_brand) in reviewed_partners.items():
+        batch = parse_energy_star_ups_inventory(
+            ENERGY_STAR_UPS,
+            source_url=(
+                "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+            ),
+            partner=partner,
+            expected_count=1,
+        )
+        assert [row["ENERGY STAR Unique ID"] for row in batch["candidates"]] == [expected_id]
+        assert batch["candidates"][0]["Brand Name"] == expected_brand
+
+
+def test_energy_star_ups_inventory_rejects_drift_duplicates_and_unofficial_sources():
+    url = "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv"
+    with pytest.raises(ValueError, match="partner inventory shape"):
+        parse_energy_star_ups_inventory(
+            ENERGY_STAR_UPS, source_url=url, partner="Example UPS Partner", expected_count=3
+        )
+    duplicate = ENERGY_STAR_UPS + ENERGY_STAR_UPS.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate ENERGY STAR UPS unique ID"):
+        parse_energy_star_ups_inventory(
+            duplicate, source_url=url, partner="Example UPS Partner", expected_count=2
+        )
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR UPS"):
+        parse_energy_star_ups_inventory(
+            ENERGY_STAR_UPS,
+            source_url="https://example.com/ups.csv",
+            partner="Example UPS Partner",
+            expected_count=2,
+        )
 
 
 def test_project_permit_matrix_preserves_authority_scope_and_area():
