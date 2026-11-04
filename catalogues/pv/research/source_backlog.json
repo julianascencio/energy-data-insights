@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T01:00:56.541642+00:00",
+  "updated_at": "2026-11-04T02:03:55.375472+00:00",
   "ranking_file": "20261103T1800_top10_coverage.json",
   "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
-  "next_highest_value_source": "REPD Q2 2026 operational South West and London, then planning authority phase corroboration.",
+  "next_highest_value_source": "REPD operational remainder; original authority decisions for multi-phase holds.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6598,6 +6598,67 @@
       "retry_condition": "Recheck source revision or independent corroboration.",
       "next_action": "Review materially distinct exact equipment models",
       "processed_cursor": "1118968 added; 1154891 enriched; 1154890 fields already present"
+    },
+    {
+      "id": "repd_q2_sw_london_operational",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Q2 2026",
+      "licence_assessment": "OGL v3",
+      "access_assessment": "Public publisher source",
+      "estimated_useful_yield": 121,
+      "fields_offered": [
+        "authority",
+        "reference",
+        "milestones"
+      ],
+      "last_attempt": "2026-11-04T02:03:55.375472+00:00",
+      "result": "172 reviewed; 121 enriched; 51 held",
+      "retry_condition": "Recheck publication or new primary evidence.",
+      "next_action": "Cross-check original decisions for phase holds",
+      "processed_cursor": "172 reviewed; 121 enriched; 51 held"
+    },
+    {
+      "id": "solis_40_60_nd_v39_0200",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.solisinverters.com/uploads/file/S6-GC3P%2840-60%29K-ND-Global-Flyer-V3%2C9.pdf",
+      "version_or_date": "Global Flyer V3.9",
+      "licence_assessment": "Limited attributed OEM facts",
+      "access_assessment": "Public publisher source",
+      "estimated_useful_yield": 5,
+      "fields_offered": [
+        "power",
+        "electrical limits",
+        "thermal",
+        "mechanical",
+        "interfaces"
+      ],
+      "last_attempt": "2026-11-04T02:03:55.375472+00:00",
+      "result": "Five model columns exhausted",
+      "retry_condition": "Recheck publication or new primary evidence.",
+      "next_action": "Select a distinct tracker or combiner product line",
+      "processed_cursor": "Five model columns exhausted"
+    },
+    {
+      "id": "somerset_12_03914_ful_hold",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://somerset.moderngov.co.uk/Data/SSDC%20Area%20East%20Committee/20130313/Agenda/Minutes%20of%20Previous%20Meeting%20-%2013th%20February%202013%2013-03-2013.pdf",
+      "version_or_date": "2013-02-13",
+      "licence_assessment": "Discovery only, no document redistribution",
+      "access_assessment": "Public publisher source",
+      "estimated_useful_yield": 0,
+      "fields_offered": [
+        "planning reference",
+        "extension scope"
+      ],
+      "last_attempt": "2026-11-04T02:03:55.375472+00:00",
+      "result": "Extension identified; as-built mapping unresolved",
+      "retry_condition": "Recheck publication or new primary evidence.",
+      "next_action": "Obtain decision and phase layout",
+      "processed_cursor": "Extension identified; as-built mapping unresolved"
     }
   ]
 }
