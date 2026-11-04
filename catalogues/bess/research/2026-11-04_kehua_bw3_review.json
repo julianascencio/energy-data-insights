@@ -1,0 +1,313 @@
+{
+  "projects": [
+    {
+      "name": "Haru BESS",
+      "record_id": "0fb4345b-073c-5f2a-96cc-c466a966d00c",
+      "decision": "enriched",
+      "new_buyer_field_quarantine": false,
+      "observations": {
+        "award_date": "2025-05-30",
+        "procurement_stage": "preferred_bidder",
+        "contracted_capacity_mw": 123,
+        "substation_native": "Leander",
+        "capital_cost_recovery_charge_zar_per_mw_hour": 228.84,
+        "evaluation_price_zar_per_mwh": 2037.1,
+        "buyer_native": "NTCSA",
+        "price_basis": "Bid evaluation and capital-cost-recovery charge; neither project capex nor a realised merchant electricity price.",
+        "locator": "Preferred bidder table: Haru BESS"
+      }
+    },
+    {
+      "name": "Bloemhoek BESS",
+      "record_id": "b725f8e4-aeaa-50a4-a44c-590683fa35eb",
+      "decision": "enriched",
+      "new_buyer_field_quarantine": true,
+      "observations": {
+        "award_date": "2025-05-30",
+        "procurement_stage": "preferred_bidder",
+        "contracted_capacity_mw": 124,
+        "substation_native": "Theseus",
+        "capital_cost_recovery_charge_zar_per_mw_hour": 204.3,
+        "evaluation_price_zar_per_mwh": 1801.24,
+        "buyer_native": "NTCSA",
+        "price_basis": "Bid evaluation and capital-cost-recovery charge; neither project capex nor a realised merchant electricity price.",
+        "locator": "Preferred bidder table: Bloemhoek BESS"
+      }
+    },
+    {
+      "name": "Erfdeel BESS",
+      "record_id": "25355a75-493c-5ef1-b901-4b7644c9c5a3",
+      "decision": "enriched",
+      "new_buyer_field_quarantine": true,
+      "observations": {
+        "award_date": "2025-05-30",
+        "procurement_stage": "preferred_bidder",
+        "contracted_capacity_mw": 123,
+        "substation_native": "Everest",
+        "capital_cost_recovery_charge_zar_per_mw_hour": 203.47,
+        "evaluation_price_zar_per_mwh": 2157.29,
+        "buyer_native": "NTCSA",
+        "price_basis": "Bid evaluation and capital-cost-recovery charge; neither project capex nor a realised merchant electricity price.",
+        "locator": "Preferred bidder table: Erfdeel BESS"
+      }
+    },
+    {
+      "name": "Vanilla BESS",
+      "record_id": "6972bbed-4186-5d49-b055-60a6af610973",
+      "decision": "enriched",
+      "new_buyer_field_quarantine": true,
+      "observations": {
+        "award_date": "2025-05-30",
+        "procurement_stage": "preferred_bidder",
+        "contracted_capacity_mw": 123,
+        "substation_native": "Havard",
+        "capital_cost_recovery_charge_zar_per_mw_hour": 205.94,
+        "evaluation_price_zar_per_mwh": 2169.8,
+        "buyer_native": "NTCSA",
+        "price_basis": "Bid evaluation and capital-cost-recovery charge; neither project capex nor a realised merchant electricity price.",
+        "locator": "Preferred bidder table: Vanilla BESS"
+      }
+    },
+    {
+      "name": "Retreat BESS",
+      "record_id": "a4cbea59-ea95-58de-96ef-6ea77948348f",
+      "decision": "enriched",
+      "new_buyer_field_quarantine": true,
+      "observations": {
+        "award_date": "2025-05-30",
+        "procurement_stage": "preferred_bidder",
+        "contracted_capacity_mw": 123,
+        "substation_native": "Merapi",
+        "capital_cost_recovery_charge_zar_per_mw_hour": 235.32,
+        "evaluation_price_zar_per_mwh": 2477.86,
+        "buyer_native": "NTCSA",
+        "price_basis": "Bid evaluation and capital-cost-recovery charge; neither project capex nor a realised merchant electricity price.",
+        "locator": "Preferred bidder table: Retreat BESS"
+      }
+    }
+  ],
+  "equipment": [
+    {
+      "model": "BCS2500K-B-HUD/T",
+      "record_id": "56fc74c6-f35b-5d00-822f-b35dab65581c",
+      "source_id": "kehua_configurations_5_20261104",
+      "panel": 1,
+      "decision": "new",
+      "fields": {
+        "DC voltage range": "1000-1500Vdc",
+        "Rated AC output power": "2500kW",
+        "Max. AC output power": "2750kVA",
+        "Rated grid-tied voltage": "690Vac 3P3W+PE",
+        "Grid voltage range": "-15%~10% (settable)",
+        "MV / LV ratio": "10~33kV / 0.69kV (can be customized)",
+        "IP rating": "IP55(PCS) IP54(skid)"
+      }
+    },
+    {
+      "model": "BCS3000K-B-HUD/T",
+      "record_id": "3d8e6136-2148-52dc-adf6-7f85044c76b6",
+      "source_id": "kehua_configurations_5_20261104",
+      "panel": 2,
+      "decision": "new",
+      "fields": {
+        "DC voltage range": "1000-1500Vdc",
+        "Rated AC output power": "3000kW",
+        "Max. AC output power": "3300kVA",
+        "Rated grid-tied voltage": "690Vac 3P3W+PE",
+        "Grid voltage range": "-15%~10% (settable)",
+        "MV / LV ratio": "10~33kV / 0.69kV (can be customized)",
+        "IP rating": "IP55(PCS) IP54(skid)"
+      }
+    },
+    {
+      "model": "BCS3450K-B-HUD/T",
+      "record_id": "19ad15b5-e97a-5a4c-95e8-3bbb936d328b",
+      "source_id": "kehua_configurations_5_20261104",
+      "panel": 3,
+      "decision": "new",
+      "fields": {
+        "DC voltage range": "1000-1500Vdc",
+        "Rated AC output power": "3450kW",
+        "Max. AC output power": "3795kVA",
+        "Rated grid-tied voltage": "690Vac 3P3W+PE",
+        "Grid voltage range": "-15%~10% (settable)",
+        "MV / LV ratio": "10~33kV / 0.69kV (can be customized)",
+        "IP rating": "IP55(PCS) IP54(skid)"
+      }
+    },
+    {
+      "model": "BCS5000K-B-HUD/T",
+      "record_id": "706ead88-a357-5c89-be1a-c4a4064a2069",
+      "source_id": "kehua_configurations_6_20261104",
+      "panel": 1,
+      "decision": "new",
+      "fields": {
+        "DC voltage range": "1000-1500Vdc",
+        "Rated AC output power": "5000kW",
+        "Max. AC output power": "5500kVA",
+        "Rated grid-tied voltage": "690Vac 3P3W+PE",
+        "Grid voltage range": "-15%~10% (settable)",
+        "MV / LV ratio": "10~33kV / 0.69kV (can be customized)",
+        "IP rating": "IP55(PCS) IP54(skid)"
+      }
+    },
+    {
+      "model": "BCS6000K-B-HUD/T",
+      "record_id": "d2d050fc-b193-500d-ae1c-351287582a36",
+      "source_id": "kehua_configurations_6_20261104",
+      "panel": 2,
+      "decision": "new",
+      "fields": {
+        "DC voltage range": "1000-1500Vdc",
+        "Rated AC output power": "6000kW",
+        "Max. AC output power": "6600kVA",
+        "Rated grid-tied voltage": "690Vac 3P3W+PE",
+        "Grid voltage range": "-15%~10% (settable)",
+        "MV / LV ratio": "10~33kV / 0.69kV (can be customized)",
+        "IP rating": "IP55(PCS) IP54(skid)"
+      }
+    },
+    {
+      "model": "BCS6900K-B-HUD/T",
+      "record_id": "c37a2fb5-1d25-5acf-bd1d-de4c4873fb1a",
+      "source_id": "kehua_configurations_6_20261104",
+      "panel": 3,
+      "decision": "new",
+      "fields": {
+        "DC voltage range": "1000-1500Vdc",
+        "Rated AC output power": "6900kW",
+        "Max. AC output power": "7590kVA",
+        "Rated grid-tied voltage": "690Vac 3P3W+PE",
+        "Grid voltage range": "-15%~10% (settable)",
+        "MV / LV ratio": "10~33kV / 0.69kV (can be customized)",
+        "IP rating": "IP55(PCS) IP54(skid)"
+      }
+    },
+    {
+      "model": "BCS1000K-C-HUD-NP",
+      "record_id": "9bbd137b-6c2b-5768-8942-bd0280de86af",
+      "source_id": "kehua_configurations_10_20261104",
+      "panel": 1,
+      "decision": "new",
+      "fields": {
+        "Max. DC current": "1122A",
+        "Rated AC output power": "1000kW",
+        "Rated grid-tied voltage": "690Vac 3P3W+PE",
+        "Rated grid frequency": "60Hz",
+        "Max. output current": "920.4A",
+        "Adjustable range": "1(leading)~1(lagging)",
+        "IP rating": "NEMA 3R"
+      }
+    },
+    {
+      "model": "BCS1250K-C-HUD-NP",
+      "record_id": "8647ef42-859a-5b15-9a8b-6fb5bbdb9afe",
+      "source_id": "kehua_configurations_10_20261104",
+      "panel": 2,
+      "decision": "new",
+      "fields": {
+        "Max. DC current": "1403A",
+        "Rated AC output power": "1250kW",
+        "Rated grid-tied voltage": "690Vac 3P3W+PE",
+        "Rated grid frequency": "60Hz",
+        "Max. output current": "1150.6A",
+        "Adjustable range": "1(leading)~1(lagging)",
+        "IP rating": "NEMA 3R"
+      }
+    },
+    {
+      "model": "BCS3150K-C-HUD-EP",
+      "record_id": "fffb3f2d-163d-55ec-a100-820b73a2849a",
+      "source_id": "kehua_configurations_11_20261104",
+      "panel": 1,
+      "decision": "new",
+      "fields": {
+        "Max. DC current": "3536A / 1768A*2",
+        "Rated AC output power": "3150kW",
+        "Rated grid-tied voltage": "690Vac",
+        "Grid frequency range": "50/60Hz",
+        "Max. output current": "2900A",
+        "Adjustable power factor": "1 (leading)~1 (lagging)",
+        "IP rating": "IP65"
+      }
+    },
+    {
+      "model": "BCS3500K-C-HUD-EP",
+      "record_id": "de844d4d-b7a4-5c6e-bf4e-86cf83e960d0",
+      "source_id": "kehua_configurations_11_20261104",
+      "panel": 2,
+      "decision": "new",
+      "fields": {
+        "Max. DC current": "3928A / 1964A*2",
+        "Rated AC output power": "3500kW",
+        "Rated grid-tied voltage": "690Vac",
+        "Grid frequency range": "50/60Hz",
+        "Max. output current": "3222A",
+        "Adjustable power factor": "1 (leading)~1 (lagging)",
+        "IP rating": "IP65"
+      }
+    },
+    {
+      "model": "ESI241-100K-M",
+      "record_id": "97987472-630f-5bb2-85ba-5f0e0d0baca0",
+      "source_id": "kehua_configurations_14_20261104",
+      "panel": 1,
+      "decision": "new",
+      "fields": {
+        "Cell type/capacity": "LiFePO4 3.2V/314Ah",
+        "System energy capacity": "241kWh",
+        "Rated AC power": "100kW",
+        "Rated AC voltage": "400Vac 3P3W+PE",
+        "Nominal grid frequency": "50/60Hz",
+        "Max. efficiency": "90.2%",
+        "Dimension (W*H*D)": "1000\u00d72340\u00d71300mm",
+        "Weight": "2400kg"
+      }
+    },
+    {
+      "model": "BCS500K-S-HLC",
+      "record_id": "88762c9b-c2b4-5825-bdea-fb59c0dd5585",
+      "source_id": "kehua_configurations_18_20261104",
+      "panel": 1,
+      "decision": "new",
+      "fields": {
+        "Max. DC current": "240A*2",
+        "Max. AC output power": "500kVA",
+        "Rated output voltage": "690Vac 3P3W+PE",
+        "Grid frequency range": "50/60Hz (settable)",
+        "Max. continuous output current": "418A",
+        "Adjustable power factor": "1 (leading)-1 (lagging)",
+        "IP rating": "IP66"
+      }
+    },
+    {
+      "model": "ESI215-100K-M",
+      "record_id": "70dec3a7-2e5b-522d-958a-18c3612e63a0",
+      "source_id": "kehua_configurations_19_20261104",
+      "panel": 1,
+      "decision": "new",
+      "fields": {
+        "Cell type/capacity": "LiFePO4 3.2V/280Ah",
+        "System energy capacity": "215kWh",
+        "Rated AC power": "100kW",
+        "Rated AC voltage": "400Vac 3P3W+PE",
+        "Nominal grid frequency": "50/60Hz",
+        "Max. efficiency": "90.2%",
+        "Dimension (W*H*D)": "1000\u00d72340\u00d71300mm",
+        "Weight": "2300kg"
+      }
+    }
+  ],
+  "candidate_counts": {
+    "existing_projects_reviewed": 5,
+    "projects_enriched": 5,
+    "new_projects": 0,
+    "exact_models_reviewed": 13,
+    "new_models": 13,
+    "equipment_enriched": 0,
+    "project_buyer_field_quarantines": 4,
+    "equipment_field_quarantines": 0,
+    "permanent_record_rejections": 0,
+    "previous_coalburn_hold_retained": 1
+  }
+}

@@ -141,3 +141,9 @@ checkpoint when it will prevent repeated work. Do not create empty commits or
 invent records to satisfy a target count. If a source becomes unavailable, retain
 its previous observation and record the access failure rather than asserting a
 new verification.
+
+The offline `bess_oem_catalogue.kehua_panels.parse_panels` adapter stages reviewed
+skid, cabinet and PCS panels with explicit expected model order and field labels.
+Retain channel currents, component-specific enclosure classes, adjustable transformer
+ratios and unspecified efficiency boundaries in native observations. Embedded public
+index routes can resolve canonical HTML URLs; unavailable PDFs confer no specifications.
