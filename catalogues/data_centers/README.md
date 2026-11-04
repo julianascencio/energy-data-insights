@@ -7,7 +7,7 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **183 project records in 36 countries**:
 **66 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **923 exact equipment records from 32 OEMs**.
+from 13 operators. It has **938 exact equipment records from 33 OEMs**.
 Merged `main` at `7004215` contains **182 projects and 868 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -49,6 +49,7 @@ uv run python scripts/build_data_center_siel_ups_batch.py staged-siel-ups.jsonl
 uv run python scripts/build_data_center_tescom_ups_batch.py staged-tescom-ups.jsonl
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-energy-star-ups.jsonl
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-adi-ups.jsonl --partner-batch adi
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-ablerex-ups.jsonl --partner-batch ablerex
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -66,7 +67,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-04-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-04-decisions.jsonl),
-[executed validation](research/2026-11-04T1118-validation.json), and
+[executed validation](research/2026-11-04T1217-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

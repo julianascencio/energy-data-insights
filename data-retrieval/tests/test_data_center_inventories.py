@@ -81,6 +81,18 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
     assert [row["ENERGY STAR Unique ID"] for row in adi["candidates"]] == ["2001"]
     assert adi["candidates"][0]["Brand Name"] == "W BOX"
 
+    ablerex = parse_energy_star_ups_inventory(
+        ENERGY_STAR_UPS,
+        source_url=(
+            "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+        ),
+        partner="Ablerex Electronics Co., Ltd.",
+        expected_count=1,
+    )
+    assert [row["ENERGY STAR Unique ID"] for row in ablerex["candidates"]] == ["3001"]
+    assert ablerex["candidates"][0]["Minimum Configuration Tested Model Number"] == "N/A"
+    assert ablerex["candidates"][0]["Energy Storage System Runtime at 100% Load (min.)"] == "N/A"
+
 
 def test_energy_star_ups_inventory_rejects_drift_duplicates_and_unofficial_sources():
     url = "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv"

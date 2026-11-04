@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 923 exact models/configurations from NVIDIA, AMD, ADI, Baudouin, Borri, Carrier, CoolIT Systems, Cummins,
+has 938 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Baudouin, Borri, Carrier, CoolIT Systems, Cummins,
 Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR, Lenovo, Motivair by Schneider
 Electric, Makelsan, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv and Para Systems / Minuteman Power Technologies. Current categories are GPU accelerators,
@@ -157,15 +157,18 @@ and kW value remains separate. Exact weights and unqualified cabinet dimensions
 are normalized; battery-qualified DS POWER SH dimensions, module statements,
 selectable electrical values, batteries and communications remain observations.
 The ENERGY STAR continuation processes all 33 current certification entries for
-Para Systems / Minuteman Power Technologies and all 22 entries for ADI in EPA
-dataset `ifxy-2uty`. ADI's 11 W BOX and 11 UltraTech certifications remain
-distinct even where model names recur across brands. Each entry retains its
-immutable ENERGY STAR ID, certification date, exact minimum
-tested configuration, active W, apparent VA, weighted and load-point efficiency,
-dimensions, protocols, warranty and runtime at both stated percentage loads.
-The normalized runtime is only the reported 100% load value, paired with the
-exact W-to-kW conversion of that configuration's active output. No battery
-energy, maximum configuration, output power factor or deployment is inferred.
+Para Systems / Minuteman Power Technologies, all 22 entries for ADI and all 15
+entries for Ablerex Electronics in EPA dataset `ifxy-2uty`. ADI's 11 W BOX and
+11 UltraTech certifications remain distinct even where model names recur across
+brands. Each entry retains its immutable ENERGY STAR ID, certification date,
+active W, apparent VA, weighted and load-point efficiency, dimensions and
+protocols. Tested-configuration, warranty and percentage-load runtime fields are
+retained where reported. The four Ablerex MP modular entries explicitly report
+those values as unavailable, so their normalized fields remain null; they are
+not derived from the 11 AP entries. A normalized runtime is only a reported 100%
+load value, paired with the exact W-to-kW conversion of that configuration's
+active output. No battery energy, maximum configuration, output power factor or
+deployment is inferred.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -335,4 +338,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-04-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-04T0134-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-04T1217-validation.json).

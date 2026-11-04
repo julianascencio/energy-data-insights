@@ -26,6 +26,13 @@ class PartnerBatch(TypedDict):
 
 
 PARTNER_BATCHES: dict[str, PartnerBatch] = {
+    "ablerex": {
+        "partner": "Ablerex Electronics Co., Ltd.",
+        "manufacturer": "Ablerex Electronics",
+        "name_prefix": "Ablerex",
+        "expected_count": 15,
+        "retrieved_at": "2026-11-04T12:17:31Z",
+    },
     "adi": {
         "partner": "ADI",
         "manufacturer": "ADI",
@@ -50,6 +57,13 @@ def compact(value: object) -> str:
 
 def number(value: str) -> float:
     return float(value.replace(",", ""))
+
+
+def optional_number(value: str) -> float | None:
+    stripped = value.strip()
+    if stripped in {"", "N/A", "None", "Not Applicable"}:
+        return None
+    return number(stripped)
 
 
 def single_range(value: str) -> float | None:
@@ -89,9 +103,12 @@ def build_record(
     uid = row["ENERGY STAR Unique ID"]
     model = row["Model Name"]
     tested = row["Minimum Configuration Tested Model Number"]
+    tested_reported = tested.strip() not in {"", "N/A", "None", "Not Applicable"}
     output_kw = number(row["Active Output Power Rating Minimum Configuration (W)"]) / 1000
     apparent_kva = number(row["Apparent Output Power Rating Minimum Configuration (VA)"]) / 1000
-    runtime = number(row["Energy Storage System Runtime at 100% Load (min.)"])
+    runtime = optional_number(row["Energy Storage System Runtime at 100% Load (min.)"])
+    runtime_50 = optional_number(row["Energy Storage System Runtime at 50% Load (min.)"])
+    warranty = optional_number(row["Energy Storage System Warranty (yrs)"])
     efficiency = number(row["Weighted Efficiency Calc Min Config Lowest Dependency"])
     rack_u = row["Rack Mount Height (U)"]
     form_factor = (
@@ -123,11 +140,7 @@ def build_record(
         "power_rating_kind",
         "product_status",
         "record_scope",
-        "runtime_load_kw",
-        "runtime_minutes",
         "variant",
-        "warranty_conditions",
-        "warranty_years",
         "width_mm",
     ]
     normalized: dict[str, object] = {
@@ -137,10 +150,14 @@ def build_record(
         "height_mm": number(row["Height (mm)"]),
         "width_mm": number(row["Width (mm)"]),
         "depth_mm": number(row["Depth (mm)"]),
-        "runtime_minutes": runtime,
-        "runtime_load_kw": output_kw,
-        "warranty_years": number(row["Energy Storage System Warranty (yrs)"]),
     }
+    if runtime is not None:
+        fields.extend(["runtime_load_kw", "runtime_minutes"])
+        normalized["runtime_minutes"] = runtime
+        normalized["runtime_load_kw"] = output_kw
+    if warranty is not None:
+        fields.extend(["warranty_conditions", "warranty_years"])
+        normalized["warranty_years"] = warranty
     for field, source_field in {
         "input_voltage_v": "Rated Input Voltage (V rms)",
         "output_voltage_v": "Rated Output Voltage (V)",
@@ -163,11 +180,19 @@ def build_record(
             "scope": (
                 f"Ac-output UPS certification entry for {model}; tested minimum "
                 f"configuration {tested}"
+                if tested_reported
+                else f"Ac-output UPS certification entry for {model}; minimum tested "
+                "configuration identifier not reported"
             ),
             "source_id": SOURCE_ID,
         }
     }
-    boundary = f"ENERGY STAR certified minimum configuration {tested}; unique ID {uid}"
+    boundary = (
+        f"ENERGY STAR certified minimum configuration {tested}; unique ID {uid}"
+        if tested_reported
+        else f"ENERGY STAR certified entry; minimum configuration identifier not reported; "
+        f"unique ID {uid}"
+    )
     observations = [
         observation(row, "brand_name", row["Brand Name"], None, boundary),
         observation(row, "model_number", row["Model Number"], None, boundary),
@@ -215,13 +240,6 @@ def build_record(
         ),
         observation(
             row,
-            "runtime_at_50_pct_load",
-            number(row["Energy Storage System Runtime at 50% Load (min.)"]),
-            "min",
-            f"50% of certified minimum-configuration active output ({output_kw / 2:g} kW)",
-        ),
-        observation(
-            row,
             "energy_storage",
             {
                 "configuration": row["Energy Storage System Configuration"],
@@ -262,6 +280,17 @@ def build_record(
         observation(row, "markets", row["Markets"], None, boundary),
         observation(row, "cb_model_identifier", row["CB Model Identifier"], None, boundary),
     ]
+    if runtime_50 is not None:
+        observations.insert(
+            11,
+            observation(
+                row,
+                "runtime_at_50_pct_load",
+                runtime_50,
+                "min",
+                f"50% of certified minimum-configuration active output ({output_kw / 2:g} kW)",
+            ),
+        )
     model_url = row["Model Web Page URL"]
     if model_url:
         observations.append(observation(row, "model_web_page", model_url, None, boundary))
@@ -299,6 +328,9 @@ def build_record(
         "capacity_scope": (
             f"Exact ENERGY STAR certification entry {uid} for minimum tested "
             f"configuration {tested}; maximum configuration is not stated"
+            if tested_reported
+            else f"Exact ENERGY STAR certification entry {uid}; minimum tested configuration "
+            "identifier and maximum configuration are not stated"
         ),
         "certifications_json": compact(certifications),
         "communication_protocols": protocols,
@@ -322,12 +354,20 @@ def build_record(
             "load runtime, with the load converted exactly from W to kW. Battery "
             "energy, optional accessories, deployments and maximum configurations "
             "are not inferred."
+            if runtime is not None
+            else "This record is one third-party-certified configuration entry. W and VA "
+            "remain separate. The source reports no runtime value for this model, so "
+            "runtime and runtime load remain null. Battery energy, optional accessories, "
+            "deployments and maximum configurations are not inferred."
         ),
         "observations_json": compact(observations),
         "official_url": SOURCE_URL,
         "power_conditions": (
             f"Certified minimum configuration {tested}; active output converted "
             "exactly from W to kW and apparent output from VA to kVA"
+            if tested_reported
+            else "Certified entry with no reported minimum-configuration identifier; active "
+            "output converted exactly from W to kW and apparent output from VA to kVA"
         ),
         "power_rating_kind": "ENERGY STAR certified minimum-configuration UPS output",
         "product_status": (
@@ -339,9 +379,14 @@ def build_record(
         "source_urls": [SOURCE_URL],
         "sources": [SOURCE_ID],
         "updated_at": retrieved_at,
-        "variant": f"ENERGY STAR {uid}; tested configuration {tested}",
-        "warranty_conditions": "Certified entry's energy-storage-system warranty",
+        "variant": (
+            f"ENERGY STAR {uid}; tested configuration {tested}"
+            if tested_reported
+            else f"ENERGY STAR {uid}; tested configuration identifier not reported"
+        ),
     }
+    if warranty is not None:
+        record["warranty_conditions"] = "Certified entry's energy-storage-system warranty"
     return record
 
 
