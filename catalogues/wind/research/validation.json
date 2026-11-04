@@ -1,21 +1,22 @@
 {
-  "batch": "2026-11-04-0035",
+  "batch": "2026-11-04-0135",
   "local": {
-    "pytest": "2118 passed,1 optional cdsapi skip; final catalogue20passed after dimensional-unit clarification",
-    "viewer": "15 tests passed",
-    "lint_typing": "Repository Ruff lint/format and ty passed",
-    "catalogue": "16438 records valid;360 new project/turbine records replay exactly",
-    "snapshots": "Two final builds byte-identical;4tables136typed fields each; all ZSTD; final-a retained, duplicate outputs cleaned after verification",
-    "preservation": "16055 preceding records unchanged;12filters substantively enriched with all preceding extension values and creation timestamps preserved; prior sources and six capacity totals unchanged; unrelated catalogues unchanged",
-    "citations": "Passed",
-    "hygiene": "3412 candidate files passed before final report update",
+    "pytest": "2122 passed,1 optional cdsapi skip",
+    "viewer": "15 passed",
+    "catalogue": "17128 records valid;53projects637turbines added;11equipment enriched",
+    "source_replay": "690 new project/turbine records replayed exactly",
+    "snapshots": "Two byte-identical builds;4tables136typed columns each,allZSTD;documentation manifest identical",
+    "preservation": "16427 prior records unchanged;11enriched with all previous extension values and creation timestamps preserved; prior sources and six capacity summaries unchanged; unrelated catalogues unchanged",
+    "ruff_ty": "Repository lint,format and typing passed",
+    "citations": "Passed; new VEC501R0 reference and generated exports",
+    "hygiene": "3439 candidate files passed before final report update",
     "packages": "All3workspace packages built wheels and sdists",
-    "example": "Offline Wind gallery executed before unit clarification; no new inferred normalized dimension fields",
-    "docs": "Strict Sphinx FAILED at build-finished dataset export with Errno28 No space left on device. Retry interrupted after cleanup did not restore reported capacity. No completed site link audit or final docs manifest equality claimed. Generated HTML removed to release reproducible temporary output."
+    "example": "Offline Wind gallery passed",
+    "docs": "Strict Sphinx passed using /dev/shm to bypass full root filesystem;516-page link/asset audit passed",
+    "whitespace": "Passed"
   },
   "not_executed": [
-    "new browser smoke test",
-    "completed documentation link audit"
+    "new browser smoke test"
   ],
   "remote_ci": {
     "this_increment": "Not yet published; inspect PR checks"

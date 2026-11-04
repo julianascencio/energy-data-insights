@@ -338,3 +338,10 @@ for component in rows:
             "W",
             specs["application_observations"],
         )
+
+# %%
+# Legacy resistor revisions are displayed separately from current specifications.
+for component in rows:
+    specs = json.loads(component.get("extensions_json") or "{}")
+    if "legacy_vec501_r0_observations" in specs:
+        print(component["model"], "legacy VEC501R0 only", specs["legacy_vec501_r0_observations"])

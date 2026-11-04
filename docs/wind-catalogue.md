@@ -1,8 +1,8 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. The proposed continuation contains **7,473 projects, 264 equipment
-records, 8,699 linked turbines and two original numerical curves**, across
+numerical curves. The proposed continuation contains **7,526 projects, 264 equipment
+records, 9,336 linked turbines and two original numerical curves**, across
 **59 countries and eleven equipment manufacturers**. Merged main at `7af547f9`
 contains 6,713 projects, 202 equipment records and 5,745 turbines plus two curves.
 These are catalogue counts, not a current operating census.
@@ -536,3 +536,13 @@ remain excluded from MW totals. Two-resistor combinations retain quantity and
 combination ratings within one component record; no artificial assembly model.
 HLD110-500/42dimensions and thermal-switch assignments remain unknown.
 All previous scalar ratings and creation timestamps are preserved.
+
+
+## City states, Västmanland and Dalarna
+
+The 4 November continuation adds 53 projects and 637 linked turbines, and
+enriches 11 existing resistor records with legacy VEC501R0 electrical, thermal,
+mass, terminal and original drawing observations. Current-revision claims are
+not inferred. The 103 German groups and 47 Swedish areas held for identity
+review remain in decision ledgers. All new project scopes stay excluded from
+capacity totals; all previous values and creation timestamps are preserved.

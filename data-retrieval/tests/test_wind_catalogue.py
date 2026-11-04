@@ -245,3 +245,18 @@ def test_braking_combination_does_not_duplicate_component(catalogue):
     assert spec["thermal_switch"] is None
     missing = next(r for r in rows if r.get("model") == "HLD 110-500/42")
     assert "assembly_specifications" not in json.loads(missing["extensions_json"])
+
+
+def test_legacy_resistor_observations_do_not_promote_current_claims(catalogue):
+    rows, _ = catalogue
+    r = next(r for r in rows if r.get("model") == "BR 8000/7")
+    spec = json.loads(r["extensions_json"])
+    legacy = spec["legacy_vec501_r0_observations"]
+    assert legacy["intermittent_power_kw"] == 80
+    assert legacy["duty_cycle_pct"] == 10
+    assert spec["continuous_rated_power_w"] == 8000
+    assert legacy["thermal_protection"] is True
+    assert spec["thermal_switch"] is None
+    assert legacy["mass_kg"] == 31.5
+    assert r.get("mass_kg") is None
+    assert legacy["dimension_unit"] is None

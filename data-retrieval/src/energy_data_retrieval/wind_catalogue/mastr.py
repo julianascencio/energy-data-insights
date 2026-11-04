@@ -33,6 +33,9 @@ STATES = {
     "1415": "Thüringen",
     "1413": "Sachsen",
     "1412": "Saarland",
+    "1404": "Bremen",
+    "1406": "Hamburg",
+    "1401": "Berlin",
 }
 
 
