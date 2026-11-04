@@ -1,0 +1,27 @@
+{
+  "article": "https://techblog.foobot.io/ai/hvac/control/tsfm-counterfactual-thermal-dynamics.html",
+  "source": "https://techblog.foobot.io/assets/timestral-counterfactual/data.js",
+  "accessed_at": "2026-11-04T10:25:03.042989+00:00",
+  "source_sha256": "fbaae477f0625820f8c5370efb35ae1d253ae756ccf5514f64e1dfdca29dcf3a",
+  "outputs_sha256": {
+    "thermal_january12.csv": "b71bea147067f284f2da25a4688aea1511b151ac7e477af37566884b02cd5196",
+    "thermal_scores.csv": "513cfcb5e7acaf6f71ffc8b24f2b9eae2c97fefb4063ba663b5db17489aa0654",
+    "thermal_sensitivity.csv": "e20b5133c238ccf6c0c753526f39a33b2b5cee44b55cf0057a3201347eb62000"
+  },
+  "evidence": "Imported published model outputs; not measured building data",
+  "reference": "EnergyPlus simulation (publisher run)",
+  "prediction": "Timestral-209M (publisher run); no model run performed here",
+  "mornings": 30,
+  "panels": 180,
+  "threshold_c": 20.75,
+  "consecutive_samples": 2,
+  "time_semantics": "Minutes relative to baseline heating start; timezone not supplied",
+  "weather": "Simulation weather, not operational archived forecasts",
+  "limits": [
+    "No EnergyPlus IDF/EPW or original model checkpoint revision supplied",
+    "Rounded public trajectories can differ from full precision article metrics",
+    "Pointwise q10-q90 is not a comfort-time confidence interval",
+    "No energy consumption is supplied; no savings claim is calculated",
+    "Public access does not establish a licence for the source asset"
+  ]
+}
