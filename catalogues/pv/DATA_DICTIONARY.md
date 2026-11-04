@@ -331,3 +331,23 @@ project require scope review. No capacity, owner, status or location is inferred
 | `estat`, environmental procedure/decision/date | Dated native administrative observation in extensions | Authorization is not physical construction or commissioning |
 | `sol_licitant` | Omitted | Applicant/promoter not assigned as current owner; personal details excluded |
 | Dataset `rowsUpdatedAt` | `extensions_json.catalonia_planning_observation.source_updated_at` | Source update time, not a newly verified physical lifecycle event |
+
+## Victron BlueSolar current-model factual extract (4 November 2026)
+
+Exact `Article Number` is the model identity, with the stated series retained.
+Top-table PMPP, VMPP, IMPP, Voc and Isc map to the STC electrical fields; the
+footnote specifies 1,000 W/m², 25°C and AM1.5. Maximum series fuse rating, net
+mass, series-connected cells, maximum system voltage, temperature coefficients,
+reported temperature range and warranty durations use existing columns. The
+negative tolerance bound and the 10-year/25-year retained-output thresholds stay
+in extensions; no annual degradation rate is derived.
+
+Three dimensions stay in source order in extensions because axes are not labelled.
+`Frame` describes a frame, not an enclosure. Reported efficiency stays native
+because the reference area is unspecified. Cable/connector merged cells were
+reviewed visually: no cable on the accepted 30/40/55W entries; 900mm/MC4 on the
+accepted >=95W entries. No physical cell count is inferred from series count.
+The two 235W configurations have conflicting lower-table headers; the 20W
+short-circuit-current outlier also remains held. No old discontinued configurations
+are substituted for current models. Source-specific rights assessment and pinned
+PDF bytes are registered; only attributed factual values are redistributed.

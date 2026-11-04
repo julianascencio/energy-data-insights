@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T06:10:20.439463+00:00",
-  "ranking_file": "20261104T0600_top10_coverage.json",
-  "selection_note": "The old Occitanie identity cursor was stale: dated1700 ledger already contains257 enrichments. Complete installed-power gap pass now adds129 fields and holds128 confidential canonical labels. No old observations re-added.",
-  "next_highest_value_source": "France ODRE Nouvelle-Aquitaine 1–5 MW: inspect prior155 exact-EIC crosswalks for missing installed-power fields using the reviewed helper, excluding confidential/duplicate identities; freshness check and pinned bounded source bytes first.",
+  "updated_at": "2026-11-04T07:18:23.232850+00:00",
+  "ranking_file": "20261104T0700_top10_coverage.json",
+  "selection_note": "Complete Nouvelle-Aquitaine prior155-crosswalk power-gap partition plus exact physical BlueSolar module articles absent from CEC/SAM; no US repeat bulk ingestion or invented configuration combinations.",
+  "next_highest_value_source": "ODRE Auvergne-Rhône-Alpes1–5MW installed-power gaps on77previous exact-EIC crosswalks: metadata/byte checksum and privacy review, then only missing fields through existing staging helper.",
   "sources": [
     {
       "id": "uk_repd",
@@ -380,9 +380,9 @@
       "licence_assessment": "Licence Ouverte v2.0 verified in metadata and full Etalab licence; attribution/date notice committed; privacy/aggregate restrictions respected.",
       "access_assessment": "Official JSON exports and glossary/EIC-change note downloaded with checksums. 95,302 individual PV identity rows screened.",
       "estimated_useful_yield": {
-        "next_partition_prior_crosswalks": 155,
+        "next_prior_crosswalks": 77,
         "accepted_next_partition": 0,
-        "note": "Candidate ceiling only; actual non-confidential missing fields unknown until review."
+        "note": "Planning ceiling, not accepted additions; privacy and missing-field checks still required."
       },
       "fields_offered": [
         "installation identifiers",
@@ -391,10 +391,10 @@
         "region",
         "generation"
       ],
-      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
-      "result": "Occitanie installed-power gaps:257 previously accepted exact crosswalks reviewed,129 enriched,128 privacy-held. Old97 differing AC/DC and installed-power values remain separate with evidence. No new projects or operation inference.",
+      "last_attempt": "2026-11-04T07:18:23.232850+00:00",
+      "result": "Nouvelle-Aquitaine missing installed power:155 exact prior crosswalks reviewed;107fields added,48canonical confidentiality holds. All prior AC/DC/lifecycle/nested evidence preserved.",
       "retry_condition": "Do not re-download unchanged564-row Occitanie cohort hourly. Reuse cachedef2c66b5 bytes. Next region needs source metadata/version plus exact checksum and privacy/phase review.",
-      "next_action": "France ODRE Nouvelle-Aquitaine 1–5 MW: inspect prior155 exact-EIC crosswalks for missing installed-power fields using the reviewed helper, excluding confidential/duplicate identities; freshness check and pinned bounded source bytes first.",
+      "next_action": "ODRE Auvergne-Rhône-Alpes1–5MW installed-power gaps on77previous exact-EIC crosswalks: metadata/byte checksum and privacy review, then only missing fields through existing staging helper.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
@@ -404,7 +404,7 @@
         "candidate_rows_processed": 409,
         "accepted_ids_ledger": "20261101T0928_odre_review.json",
         "identity_screen_rows": 95302,
-        "next_partition": "France ODRE Nouvelle-Aquitaine 1–5 MW: inspect prior155 exact-EIC crosswalks for missing installed-power fields using the reviewed helper, excluding confidential/duplicate identities; freshness check and pinned bounded source bytes first.",
+        "next_partition": "ODRE Auvergne-Rhône-Alpes1–5MW installed-power gaps on77previous exact-EIC crosswalks: metadata/byte checksum and privacy review, then only missing fields through existing staging helper.",
         "latest_ledger": "20261102T0058_odre_review.json",
         "cohort_1to5mw": {
           "minimum_kw": 1000,
@@ -516,9 +516,20 @@
           "not_reprocessed_identity_holds": 307,
           "unreviewed_in_selected_gap_cohort": 0,
           "ledger": "20261104T0600_odre_capacity_review.json"
+        },
+        "installed_power_nouvelle_aquitaine": {
+          "minimum_kw": 1000,
+          "maximum_kw_exclusive": 5000,
+          "source_observations": 432,
+          "reviewed_crosswalks": 155,
+          "accepted_enrichments": 107,
+          "held": 48,
+          "remaining_selected_crosswalks": 0,
+          "source_sha256": "7f907d38df0d97684e91fa00ef070aa8420d7eb0b9234f3130a32764ca682681",
+          "ledger": "20261104T0700_review.json"
         }
       },
-      "last_metadata_retrieval": "2026-11-04T05:56:55.878512+00:00",
+      "last_metadata_retrieval": "2026-11-04T07:03:39.805643+00:00",
       "last_release": "2026-08-31",
       "metadata_modified": "2026-10-13T19:24:24+00:00",
       "metadata_sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
@@ -7373,6 +7384,90 @@
       "metadata_sha256": "3b32ae4d501b5a53aac1e8dfa15e16473deb34360f126f96284bfb65b1f4b069",
       "resource_url": "https://data.comune.fi.it/datastore/download.php?id=6466&type=99&format=url&file_format=kml&file_id=20178",
       "metadata_modified": "2026-02-11T11:07:27.461160"
+    },
+    {
+      "id": "victron_bluesolar_0700",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://www.victronenergy.com/solar-pv-panels/bluesolar-panels",
+      "endpoint": "https://www.victronenergy.com/upload/documents/Datasheet-BlueSolar-Monocrystalline-Panels-current-models-EN-.pdf",
+      "format": "PDF,onepage",
+      "publication_cadence": "Unspecified; linked current-model sheet has no printed revision date",
+      "version_or_date": "Undated current-models sheet; byte-pinned4November2026",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T07:03:38.314308+00:00",
+      "last_attempt": "2026-11-04T07:18:23.232850+00:00",
+      "sha256": "7ecf4a9953429b359f263b611096bf570e977af718dacb10e22b4c2a29949c3d",
+      "etag": null,
+      "licence_assessment": "No open-content licence asserted. OEM copyright retained; limited attributed factual specification extraction, no full document/layout/marketing/image redistribution. Public access not treated as a licence. Legal notice and linked commercial sale terms inspected; Buyer transaction/software/confidentiality terms not asserted as a public reuse grant. Exact assessment/URLs/hashes in immutable source entry.",
+      "access_assessment": "Current/legacy sheets, product page, legal notice and linked sales terms downloaded normally. Current PDF visually inspected; no contacts, forms or accounts.",
+      "estimated_useful_yield": {
+        "exact_candidates": 13,
+        "accepted_new": 10,
+        "held": 3,
+        "remaining_unreviewed": 0
+      },
+      "fields_offered": [
+        "STC electrical",
+        "maximum series fuse",
+        "mass and native dimensions",
+        "series cells",
+        "temperature coefficients/range",
+        "warranty durations and retention thresholds",
+        "junction box/cable information"
+      ],
+      "mapping": "Manually reviewed exact article-number rows and corresponding nonambiguous lower columns; existing upsert API. No new parser or automatic model generation.",
+      "processed_cursor": {
+        "all_current_articles_reviewed": 13,
+        "accepted": 10,
+        "held": [
+          "SPM040203603",
+          "SPM042357203",
+          "SPM042357204"
+        ],
+        "review_file": "20261104T0700_review.json"
+      },
+      "result": "Ten different physical articles accepted; no Victron manufacturer existed in any prior equipment table. 20W current outlier and ambiguous235W lower headers held. No efficiency-reference-area or dimension-axis guesses.",
+      "retry_condition": "Check conditional metadata/byte revision only when due; do not redownload the same undated sheet hourly. Held models need a revised OEM table or independently exact model source.",
+      "next_due_check": "2026-11-05T07:00:00Z",
+      "next_action": "Current13-article cohort exhausted. Review only three held articles on changed/corroborating exact OEM evidence; seek an independent tracker/combiner OEM batch."
+    },
+    {
+      "id": "mersen_pv_string_boxes_0700",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.mersen.com/en/products/pv-string-boxes-t12/83070110-pvbt12-1000v-bh-225",
+      "endpoint": "https://www.mersen.com/en/products/pv-string-boxes-t12/83070110-pvbt12-1000v-bh-225",
+      "format": "HTML and linked multi-model PDF not downloaded",
+      "version_or_date": "Current official page; technical table revision not verified",
+      "publication_cadence": "Unspecified",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T07:12:34.974386+00:00",
+      "last_attempt": "2026-11-04T07:18:23.232850+00:00",
+      "sha256": "850d68306f2ee2857a06fc1af4a920c9a18529d3d7519ef65d27c23b9c9affeb",
+      "etag": null,
+      "licence_assessment": "Legal notice article2 restricts personal use and article3 requires prior written approval for reuse/adaptation. No permission claimed or requested; no technical facts accepted.",
+      "terms_url": "https://www.mersen.com/en/legal-notice",
+      "terms_sha256": "a82a6cdc87111e8fe9ba5f050503ee93cca893389ab8309879562b2296b594b2",
+      "access_assessment": "Ordinary product/legal HTML fetched. Linked DS-DC-PV-Junction-Boxes-EN identified; further extraction stopped at rights review.",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "fields_offered": [
+        "exact ordering IDs",
+        "MPPT/string topology",
+        "surge protection"
+      ],
+      "mapping": "Discovery/rights review only, not integrated.",
+      "processed_cursor": {
+        "accepted": 0,
+        "model_specific_table_rows_extracted": 0
+      },
+      "result": "Independent combiner manufacturer opportunity held; distinguish true parallel-string combiners from independent SPD junction boxes before any future classification.",
+      "retry_condition": "Applicable documented permission and exact table access; no contacts authorized.",
+      "next_due_check": null,
+      "next_action": "Do not retry unchanged rights-restricted source hourly. Seek a permitted independent manufacturer/table."
     }
   ],
   "source_refresh_queue": [
