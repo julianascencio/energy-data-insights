@@ -378,3 +378,20 @@ uv run python scripts/stage_pv_catalonia.py \
 Check metadata `rowsUpdatedAt` before resuming saved partitions. An unchanged
 monthly snapshot does not require another complete export. Source-specific
 Catalonia attribution and last-update notice travel with the snapshots.
+
+### Existing ODRE installed-power gaps
+
+`pv_catalogue.odre.reviewed_installed_power_updates` stages missing
+`capacity_unspecified_mw` from maximum active installed kW after an explicit
+canonical-record-ID → EIC review. First call `read_odre_json` with pinned bytes.
+The helper checks unique EICs across the complete canonical catalogue, a single
+native GEM phase, individual PHOTV classification, cohort bounds and privacy labels.
+It fails on already populated values. Pass its incoming rows to `upsert_records`;
+there is no name-based acceptance or automatic creation of projects.
+
+Existing `capacity_ac_mw`, `capacity_dc_mw`, their original `capacity_basis`,
+statuses and nested evidence remain unchanged. The separate installed-power
+column has unspecified AC/DC basis; it is not the grid-injection rating.
+Differences between dated ratings stay in the review ledger, without choosing a
+winner. The first installed-power partition and exact EIC/native-field locators
+are in `research/20261104T0600_odre_capacity_review.json`.

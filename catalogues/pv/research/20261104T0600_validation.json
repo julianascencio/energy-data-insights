@@ -1,0 +1,31 @@
+{
+  "started_at": "2026-11-04T05:54:29Z",
+  "prepared_at": "2026-11-04T06:12:13.012158+00:00",
+  "elapsed_minutes_through_commit_preparation": 17.73,
+  "baseline_commit": "ac98b999cd3c3299c38462fcfa58a54857cecd74",
+  "main_commit": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
+  "catalogue_records_validated": 89806,
+  "projects_enriched": 129,
+  "scalar_fields_added": 129,
+  "new_records": 0,
+  "exact_adapter_upsert_replays": 129,
+  "focused_initial_tests": 199,
+  "wider_relevant_tests": 353,
+  "new_guard_tests": 15,
+  "ruff": "passed",
+  "format": "749 current source files passed",
+  "ty": "passed with explicit current package paths and Python3.12 environment",
+  "offline_example": "passed on final records",
+  "parquet": "Five148-column typedZSTD tables; rows,codecs,SHA256 verified",
+  "docs": {
+    "focused_sphinx_api": "passed with warnings as errors",
+    "full_repository": "blocked during prepare_sources:missing examples/connectors/data/generation_eia_ciso_2024.csv in fresh sparse checkout; no full pass claimed"
+  },
+  "test_environment": {
+    "initial_wider_run": "351 passed,1 failed because current-head generation_pvdaq.csv was omitted from sparse extraction",
+    "resolution": "Fetched exact current-head fixture; final353tests passed. Fixture is not part of this change."
+  },
+  "preservation": "All prior fields/created_at retained;129 added capacity_unspecified_mw fields only; sources and historical launch unchanged",
+  "root_disk": "Full. Own previously published0500checkout removed after confirming remote head and retaining raw/final snapshot; fresh current-head0600checkout uses separate temporary volume.",
+  "concurrency": "Launch37merged;PR134open and same head;unrelated PRs do not modifyPV;expected-head non-force update required"
+}

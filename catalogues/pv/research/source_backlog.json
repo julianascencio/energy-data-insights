@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T05:11:41.141016+00:00",
-  "ranking_file": "20261104T0500_top10_coverage.json",
-  "selection_note": "Completed the named Catalonia register first-pass review with unchanged source bytes; nominal MW remains AC/DC unspecified. Review holds are distinct from accepted records. Independent OEM/state-government/map candidates assessed without treating discovery as integration.",
-  "next_highest_value_source": "France ODRE Occitanie / PHOTV / 1000 <= puismaxinstallee <5000 kW: freshness/terms check, then existing exact-EIC enrichment using saved source/identity exports; no automatic plant/phase merges.",
+  "updated_at": "2026-11-04T06:10:20.439463+00:00",
+  "ranking_file": "20261104T0600_top10_coverage.json",
+  "selection_note": "The old Occitanie identity cursor was stale: dated1700 ledger already contains257 enrichments. Complete installed-power gap pass now adds129 fields and holds128 confidential canonical labels. No old observations re-added.",
+  "next_highest_value_source": "France ODRE Nouvelle-Aquitaine 1–5 MW: inspect prior155 exact-EIC crosswalks for missing installed-power fields using the reviewed helper, excluding confidential/duplicate identities; freshness check and pinned bounded source bytes first.",
   "sources": [
     {
       "id": "uk_repd",
@@ -380,10 +380,9 @@
       "licence_assessment": "Licence Ouverte v2.0 verified in metadata and full Etalab licence; attribution/date notice committed; privacy/aggregate restrictions respected.",
       "access_assessment": "Official JSON exports and glossary/EIC-change note downloaded with checksums. 95,302 individual PV identity rows screened.",
       "estimated_useful_yield": {
-        "remaining_1to5mw_observations": 1493,
-        "next_partition_observations": 432,
-        "next_partition_preliminary_unflagged": 62,
-        "accepted_next_partition": 0
+        "next_partition_prior_crosswalks": 155,
+        "accepted_next_partition": 0,
+        "note": "Candidate ceiling only; actual non-confidential missing fields unknown until review."
       },
       "fields_offered": [
         "installation identifiers",
@@ -392,10 +391,10 @@
         "region",
         "generation"
       ],
-      "last_attempt": "2026-11-02T16:12:00+00:00",
-      "result": "This iteration: 183 accepted / 572 held from 755 observations in eight complete 1–5 MW regions. France catalogue now 324. All >=5 MW partitions already processed. Later 16:01 review: 432 Nouvelle-Aquitaine observations screened against current GEM recovery; 155 existing exact-EIC project enrichments, no new projects.",
-      "retry_condition": "Recheck source revision/access/terms before resuming.",
-      "next_action": "France ODRE Occitanie / PHOTV / 1000 <= puismaxinstallee <5000 kW: freshness/terms check, then existing exact-EIC enrichment using saved source/identity exports; no automatic plant/phase merges.",
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "result": "Occitanie installed-power gaps:257 previously accepted exact crosswalks reviewed,129 enriched,128 privacy-held. Old97 differing AC/DC and installed-power values remain separate with evidence. No new projects or operation inference.",
+      "retry_condition": "Do not re-download unchanged564-row Occitanie cohort hourly. Reuse cachedef2c66b5 bytes. Next region needs source metadata/version plus exact checksum and privacy/phase review.",
+      "next_action": "France ODRE Nouvelle-Aquitaine 1–5 MW: inspect prior155 exact-EIC crosswalks for missing installed-power fields using the reviewed helper, excluding confidential/duplicate identities; freshness check and pinned bounded source bytes first.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
@@ -405,7 +404,7 @@
         "candidate_rows_processed": 409,
         "accepted_ids_ledger": "20261101T0928_odre_review.json",
         "identity_screen_rows": 95302,
-        "next_partition": "Occitanie / PHOTV / 1000 <= puismaxinstallee <5000 kW / existing exact EIC enrichment; recheck freshness before resume",
+        "next_partition": "France ODRE Nouvelle-Aquitaine 1–5 MW: inspect prior155 exact-EIC crosswalks for missing installed-power fields using the reviewed helper, excluding confidential/duplicate identities; freshness check and pinned bounded source bytes first.",
         "latest_ledger": "20261102T0058_odre_review.json",
         "cohort_1to5mw": {
           "minimum_kw": 1000,
@@ -441,8 +440,89 @@
           "held": 277,
           "ledger": "20261102T1601_odre_review.json",
           "scope": "Existing exact-ID crosswalk exhausted; new project identity acceptance remains unreviewed."
+        },
+        "identity_enrichment_history": [
+          {
+            "ledger": "20261102T1601_odre_review.json",
+            "source_id": "odre_nouvelle_aquitaine_20261102T1601",
+            "accepted": 155,
+            "fields_added": 620
+          },
+          {
+            "ledger": "20261102T1700_odre_review.json",
+            "source_id": "odre_occitanie_20261102T1700",
+            "accepted": 257,
+            "fields_added": 1025
+          },
+          {
+            "ledger": "20261102T1800_odre_review.json",
+            "source_id": "odre_ara_20261102T1800",
+            "accepted": 77,
+            "fields_added": 308
+          },
+          {
+            "ledger": "20261102T1900_odre_review.json",
+            "source_id": "odre_bfc_20261102T1900",
+            "accepted": 14,
+            "fields_added": 56
+          },
+          {
+            "ledger": "20261102T1910_odre_review.json",
+            "source_id": "odre_na_20261102T1910",
+            "accepted": 0,
+            "fields_added": 0
+          },
+          {
+            "ledger": "20261102T2000_odre_review.json",
+            "source_id": "odre_ge_20261102T2000",
+            "accepted": 18,
+            "fields_added": 72
+          },
+          {
+            "ledger": "20261102T2100_odre_review.json",
+            "source_id": "odre_hdf_20261102T2100",
+            "accepted": 4,
+            "fields_added": 16
+          },
+          {
+            "ledger": "20261102T2200_odre_review.json",
+            "source_id": "odre_normandie_20261102T2200",
+            "accepted": 1,
+            "fields_added": 4
+          },
+          {
+            "ledger": "20261102T2228_odre_review.json",
+            "source_id": "odre_centre_20261102T2228",
+            "accepted": 27,
+            "fields_added": 108
+          },
+          {
+            "ledger": "20261102T2300_odre_review.json",
+            "source_id": "odre_pays_loire_1_20mw_20261102T2300",
+            "accepted": 63,
+            "fields_added": 252
+          }
+        ],
+        "legacy_cursor_stale": true,
+        "installed_power_partition": {
+          "region": "Occitanie",
+          "minimum_kw": 1000,
+          "maximum_kw_exclusive": 5000,
+          "source_rows": 564,
+          "previous_exact_crosswalks": 257,
+          "reviewed": 257,
+          "enriched": 129,
+          "held_confidential_canonical_labels": 128,
+          "not_reprocessed_identity_holds": 307,
+          "unreviewed_in_selected_gap_cohort": 0,
+          "ledger": "20261104T0600_odre_capacity_review.json"
         }
-      }
+      },
+      "last_metadata_retrieval": "2026-11-04T05:56:55.878512+00:00",
+      "last_release": "2026-08-31",
+      "metadata_modified": "2026-10-13T19:24:24+00:00",
+      "metadata_sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+      "next_due_check": "2026-11-05T06:00:00Z"
     },
     {
       "id": "kaco_nx3",
@@ -7052,6 +7132,247 @@
       "etag": null,
       "mapping": "Discovery/review only; not integrated or automatically accepted.",
       "last_discovery_checked_at": "2026-11-04T05:11:41.141016+00:00"
+    },
+    {
+      "id": "eti_green_protect_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.eti.si/images/userfiles/en-GB/documents/products/building_industry/Green_Protect.pdf",
+      "endpoint": "https://www.eti.si/images/userfiles/en-GB/documents/products/building_industry/Green_Protect.pdf",
+      "format": "PDF",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Applicable technical-data reuse terms unverified",
+      "access_assessment": "Ordinary PDF403; web PDF exceeds23.6MB rendering limit. No bypass.",
+      "fields_offered": [
+        "PV surge/protection components",
+        "catalogue model tables unextracted"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "No table bytes/model rows extracted. Not counted as accepted or quarantined equipment.",
+      "retry_condition": "Normal public access and applicable reuse available; isolate genuine combiner models from component SPDs.",
+      "next_action": "Normal public access and applicable reuse available; isolate genuine combiner models from component SPDs.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "etek_combiner_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.etek-china.com/upload/1c/202510/PV-Combiner-Box.pdf",
+      "endpoint": "https://www.etek-china.com/upload/1c/202510/PV-Combiner-Box.pdf",
+      "format": "PDF/HTML",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Copyright notice requires written authorization for extraction/republication; https://www.etek-china.com/copyright-notice . No permission inferred/contact attempted.",
+      "access_assessment": "Ordinary PDF and notice403; official notice readable via web index.",
+      "fields_offered": [
+        "exact model tables",
+        "enclosure",
+        "protection/electrical"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "No raw PDF or specifications accepted; no model candidate count invented.",
+      "retry_condition": "Resume only with applicable documented permission and normal document access.",
+      "next_action": "Resume only with applicable documented permission and normal document access.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "cnc_combiner_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.energy-cnc.com/wp-content/uploads/2026/07/CNC-Energy-Solar-Combiner-Box-Catalog.pdf",
+      "endpoint": "https://www.energy-cnc.com/wp-content/uploads/2026/07/CNC-Energy-Solar-Combiner-Box-Catalog.pdf",
+      "format": "PDF,5pages",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Reuse not established",
+      "access_assessment": "Ordinary PDF/product403; official PDF web-rendered for discovery.",
+      "fields_offered": [
+        "three configurable families",
+        "string/protection layouts",
+        "environmental limits"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "YCX8i,YCX8p,YCX8-(Fe) remain families. Independent options not multiplied into models; indexed table alignment requires original-page review.",
+      "retry_condition": "Obtain permitted original tables, exact complete orderingIDs and resolve row alignment/general-vs-table ratings before acceptance.",
+      "next_action": "Obtain permitted original tables, exact complete orderingIDs and resolve row alignment/general-vs-table ratings before acceptance.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "noark_pv_catalogue_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://noark-electric.eu/en/documents-and-software",
+      "endpoint": "https://noark-electric.eu/en/documents-and-software",
+      "format": "HTML/dynamic catalogue",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Applicable reuse unverified",
+      "access_assessment": "Ordinary HTML downloaded, SHA in download ledger; no current PV catalogue resolver obtained.",
+      "fields_offered": [
+        "PV component catalogues"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": "2026-11-04T06:00:38.623699+00:00",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Catalogue landing discovery only; no exact-model technical rows reviewed.",
+      "retry_condition": "Find current OEM PV PDF link/version and exact combiner ordering table plus source terms.",
+      "next_action": "Find current OEM PV PDF link/version and exact combiner ordering table plus source terms.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "download_sha256": "d2998a092c778cda99b063212f3bf6bbfe48f1418b7177f0fdc94b18f8fa7999"
+    },
+    {
+      "id": "viox_combiners_0600",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://viox.com/combiner-box/",
+      "endpoint": "https://viox.com/combiner-box/",
+      "format": "HTML/model links",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Unspecified",
+      "licence_assessment": "Applicable reuse unverified",
+      "access_assessment": "Ordinary product index403; web listing accessible.",
+      "fields_offered": [
+        "exact model page opportunities"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Index lists named products; no specifications accepted from the index and no model counts inflated.",
+      "retry_condition": "Retrieve original individual model tables through ordinary public access; verify terms before extraction.",
+      "next_action": "Retrieve original individual model tables through ordinary public access; verify terms before extraction.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "cesena_pv_0600",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://dati.unionevallesavio.it/api/3/action/package_show?id=f5470986-9a8a-4a3c-b741-fa70e8c0f7dd",
+      "endpoint": "https://dati.unionevallesavio.it/api/3/action/package_show?id=f5470986-9a8a-4a3c-b741-fa70e8c0f7dd",
+      "format": "CKAN metadata; CSV/ODATA/WFS/KML opportunities",
+      "version_or_date": "Current publisher discovery; technical edition unverified",
+      "publication_cadence": "Daily per national catalogue; publisher metadata unavailable",
+      "licence_assessment": "Italian national catalogue declares CC BY4.0; actual resource-level metadata still to verify.",
+      "access_assessment": "Publisher landing502; ordinary CKAN503. National metadata last-modified29June2026, daily cadence declared.",
+      "fields_offered": [
+        "PV installation map",
+        "source identities/geography",
+        "fields unverified"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": null,
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "New licensed publisher opportunity; no actual feed integration or rows accepted.",
+      "retry_condition": "Recover public resource metadata, inspect bounded schema/sample; exclude private details and review plant boundaries before import.",
+      "next_action": "Recover public resource metadata, inspect bounded schema/sample; exclude private details and review plant boundaries before import.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z"
+    },
+    {
+      "id": "firenze_pv_0600",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://dati.toscana.it/api/3/action/package_show?id=5b304d1f-55fe-45ad-8973-b758db04ec75",
+      "endpoint": "https://dati.toscana.it/api/3/action/package_show?id=5b304d1f-55fe-45ad-8973-b758db04ec75",
+      "format": "CKAN metadata and ZIP containing KML",
+      "version_or_date": "Metadata11February2026; downloaded17-entry resource has no verified substantive as-of date",
+      "publication_cadence": "Unspecified in downloaded resource metadata",
+      "licence_assessment": "CC BY4.0 explicitly verified in downloaded metadata; retain Comune di Firenze attribution.",
+      "access_assessment": "Ordinary metadata and resource downloaded.17map entries; schema inspected without exporting addresses or coordinates.",
+      "fields_offered": [
+        "public facility/site names",
+        "FV classification",
+        "native POTENZA with unverified units",
+        "registry points"
+      ],
+      "last_attempt": "2026-11-04T06:10:20.439463+00:00",
+      "last_retrieval": "2026-11-04T06:07:30.394318+00:00",
+      "last_release": null,
+      "sha256": null,
+      "etag": null,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Discovery/sample review only:17entries held for units/as-of/identity review. No thin canonical rows added.",
+      "retry_condition": "Obtain capacity-unit definition and substantive source/as-of date, then reconcile17site identities against Italy catalogue. Do not infer current operation or kW from unlabeled POTENZA.",
+      "next_action": "Obtain capacity-unit definition and substantive source/as-of date, then reconcile17site identities against Italy catalogue. Do not infer current operation or kW from unlabeled POTENZA.",
+      "processed_cursor": {
+        "placemarks_reviewed": 17,
+        "held": 17,
+        "accepted": 0,
+        "reason": "Missing capacity units, substantive date and project-boundary review"
+      },
+      "mapping": "Discovery only; no feed integrated and no model configurations manufactured.",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "metadata_sha256": "3b32ae4d501b5a53aac1e8dfa15e16473deb34360f126f96284bfb65b1f4b069",
+      "resource_url": "https://data.comune.fi.it/datastore/download.php?id=6466&type=99&format=url&file_format=kml&file_id=20178",
+      "metadata_modified": "2026-02-11T11:07:27.461160"
     }
   ],
   "source_refresh_queue": [
