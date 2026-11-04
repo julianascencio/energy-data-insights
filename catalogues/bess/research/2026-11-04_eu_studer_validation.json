@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-11-04T15:51:58+00:00",
+  "validated_at": "2026-11-04T16:24:52.871486+00:00",
+  "elapsed_minutes": 32.91,
+  "timezone_user_facing": "Atlantic/Canary",
+  "checks": {
+    "python": "2440 passed, 5 skipped in 129.26s (0:02:09)",
+    "focused_bess": "371 passed in 7.23s",
+    "typing": "All checks passed!",
+    "lint": "All checks passed!",
+    "format": "926 files already formatted",
+    "repository": "Repository check passed: 4058 candidate files; no flagged secrets or data.",
+    "citations": "Citation catalogue and all exports are consistent.",
+    "docs": "Strict Sphinx -W --keep-going -D plot_gallery=0 passed; incremental final rebuild passed",
+    "links": "Documentation check passed: 585 HTML pages; local links and assets resolve.",
+    "viewer": "16 passed, zero failures",
+    "packages": "All three workspace wheels and three sdists built; all six strict Twine checks passed",
+    "examples": "Both offline BESS examples passed, reading 2080 projects and924 equipment rows",
+    "snapshots": "Two builds per catalogue identical across every file; Arrow typed fields and ZSTD checked; outputs outside Git",
+    "preservation": "2066 project rows unchanged;908 equipment rows unchanged;3 additive certificate enrichments preserve every prior scalar, nested compliance observation, conflict and created_at",
+    "replay": "Original source bytes replay488 EU rows and13 Studer models; catalogue upsert replay changes no substantive facts or updated_at; no verification-only updates persisted",
+    "remote_ci": "Prior head workflows complete/success; no new-head CI pass claimed"
+  },
+  "limitations": [
+    "Five optional dependency skips",
+    "Documentation gallery execution disabled",
+    "No live SGS issuer-register status claimed",
+    "Source access/identity holds in backlog",
+    "Initial typing used wrong environment; explicit venv rerun passed",
+    "Initial upsert byte-equality assertion failed on expected last_verified refresh and source ordering; semantic replay passes without persisting churn"
+  ],
+  "finish_reason": "Selected49 registry candidates, five additional named projects,13exactStuder models and3certificatecolumns exhausted;6project candidates remain held; publication after validation",
+  "base_main": "b8dc106f7a854fb57c76146afd10fe080765006b",
+  "continued_head": "6935f87da089f7ac50157d1e452bb61a7739e6b1"
+}
