@@ -1,0 +1,51 @@
+{
+  "batch": "2026-11-04-1135",
+  "retrieved_at": "2026-11-04T10:35:00Z",
+  "france": {
+    "source_id": "odre-wind-20260831-20261104",
+    "national_rows": 2458,
+    "selected_residuals": 57,
+    "added": 8,
+    "held": 49,
+    "source_sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+    "partition": "Missing service date OR missing installed rating OR installed rating below 1000 kW; full national identity screen retained"
+  },
+  "equipment": {
+    "original_sha256": "89d5af7b80e998503cde7e63c6d51e3c276e666d46596c34d12fdce50e001fbd",
+    "source_url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/06/202406031500179679.pdf",
+    "complete_partition": "Page 6 two-option gearbox table",
+    "decisions": [
+      {
+        "record_id": "f389cfae-01a9-5f0f-8fa8-af35c33adc92",
+        "model": "EF0953A",
+        "decision": "enriched",
+        "observation": {
+          "source_id": "suzlon-s144-tc240121-rev2",
+          "document_revision": "TC-240121 Rev.2",
+          "drawing_revision": "097-EF0953A001 Rev. E",
+          "gear_ratio": 113.85,
+          "gear_ratio_unit": "dimensionless",
+          "gearbox_type": "Two planetary stages and one helical stage",
+          "application": "Suzlon S144-3.0 / 3.15 MW certificate configuration",
+          "conditions": "Certificate requires prescribed maintenance and approval of design/quality-system changes; no current certificate-status check",
+          "locator": "Page 6, Gearbox options 1 and 2; page 1 conditions",
+          "observed_certificate_issue": "2024-05-06",
+          "observed_certificate_expiry": "2029-03-26"
+        }
+      }
+    ],
+    "deferred": "SMG282ADT113-0209 is a different model from existing SMG282CDT175-0136; retain candidate ratio 113.54 and drawing W289000135 Rev. R1, do not enrich the different model. Other certificate component tables pp4–5,7–10 need visual transcription and exact-model reconciliation; no new models from OCR alone"
+  },
+  "independent_sources": [
+    {
+      "url": "https://eta-publications.lbl.gov/publications/us-wind-turbine-database-files",
+      "result": "Official LBNL listing has memo, codebook and decommissioned CSV; current fleet download links back to USGS. No current-fleet alternate distribution recovered.",
+      "checksum": null,
+      "original_bytes": "Unavailable; web-reader page reviewed"
+    },
+    {
+      "query": "WE4500S-01; WE7000G; EF0953A exact supplier specifications",
+      "result": "No new primary supplier specification for first two models; EF0953A led to original historical certificate; earlier MNRE disclosures not recounted."
+    }
+  ]
+}

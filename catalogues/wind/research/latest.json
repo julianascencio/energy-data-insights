@@ -1,7 +1,7 @@
 {
-  "batch": "2026-11-04-1035",
-  "updated_at": "2026-11-04T09:34:00Z",
-  "baseline_main": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
+  "batch": "2026-11-04-1135",
+  "updated_at": "2026-11-04T10:35:00Z",
+  "baseline_main": "7004215c89e6d4482a391577d321605860ae0f9a",
   "branch": "research/wind-20261104-0935",
   "merged_wind_counts_at_baseline": {
     "projects": 7862,
@@ -10,11 +10,11 @@
     "curves": 2
   },
   "branch_totals": {
-    "projects": 7931,
+    "projects": 7939,
     "turbines": 13633,
     "equipment": 332,
     "curves": 2,
-    "non_group_projects": 7930,
+    "non_group_projects": 7938,
     "countries": 59,
     "manufacturers": [
       "ABB",
@@ -61,10 +61,10 @@
     ]
   },
   "changes_against_main": {
-    "new_projects": 69,
+    "new_projects": 77,
     "substantively_enriched_projects": 0,
     "new_equipment": 38,
-    "substantively_enriched_equipment": 14,
+    "substantively_enriched_equipment": 15,
     "new_turbines": 0,
     "new_curves": 0
   },
@@ -75,9 +75,9 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 3348,
+  "primary_evidence_project_records": 3356,
   "technology_counts": {
-    "onshore": 3193,
+    "onshore": 3201,
     "unknown": 4700,
     "offshore_unspecified": 32,
     "fixed_bottom_offshore": 2,
@@ -120,12 +120,12 @@
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
   "publication_base_main": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
-  "iteration_base_head": "84900059f82c30d4efebe635fcfed8d6fa4899d6",
+  "iteration_base_head": "498347e15dc42e4ca25659df5148e51b608e18d0",
   "changes_this_run": {
-    "new_projects": 17,
+    "new_projects": 8,
     "substantively_enriched_projects": 0,
-    "new_equipment": 13,
-    "substantively_enriched_equipment": 5,
+    "new_equipment": 0,
+    "substantively_enriched_equipment": 1,
     "new_turbines": 0,
     "new_curves": 0
   },
@@ -136,64 +136,58 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "17French onshore installations; no new country",
-  "new_technology_coverage": "Exact blade,gearbox,generator applications; no new offshore project",
+  "new_geography": "Eight French onshore installations; no new country",
+  "new_technology_coverage": "No new technology; historical revision-qualified gearbox ratios",
   "reviewed_this_run": {
-    "batch": "2026-11-04-1035",
+    "batch": "2026-11-04-1135",
+    "retrieved_at": "2026-11-04T10:35:00Z",
     "france": {
-      "cohorts": [
+      "source_id": "odre-wind-20260831-20261104",
+      "national_rows": 2458,
+      "selected_residuals": 57,
+      "added": 8,
+      "held": 49,
+      "source_sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+      "partition": "Missing service date OR missing installed rating OR installed rating below 1000 kW; full national identity screen retained"
+    },
+    "equipment": {
+      "original_sha256": "89d5af7b80e998503cde7e63c6d51e3c276e666d46596c34d12fdce50e001fbd",
+      "source_url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/06/202406031500179679.pdf",
+      "complete_partition": "Page 6 two-option gearbox table",
+      "decisions": [
         {
-          "start": "2014-01-01",
-          "end": "2015-12-31",
-          "new_projects": 12,
-          "selected": 206
-        },
-        {
-          "start": "2012-01-01",
-          "end": "2013-12-31",
-          "new_projects": 0,
-          "selected": 146
-        },
-        {
-          "start": "1900-01-01",
-          "end": "2011-12-31",
-          "new_projects": 5,
-          "selected": 665
+          "record_id": "f389cfae-01a9-5f0f-8fa8-af35c33adc92",
+          "model": "EF0953A",
+          "decision": "enriched",
+          "observation": {
+            "source_id": "suzlon-s144-tc240121-rev2",
+            "document_revision": "TC-240121 Rev.2",
+            "drawing_revision": "097-EF0953A001 Rev. E",
+            "gear_ratio": 113.85,
+            "gear_ratio_unit": "dimensionless",
+            "gearbox_type": "Two planetary stages and one helical stage",
+            "application": "Suzlon S144-3.0 / 3.15 MW certificate configuration",
+            "conditions": "Certificate requires prescribed maintenance and approval of design/quality-system changes; no current certificate-status check",
+            "locator": "Page 6, Gearbox options 1 and 2; page 1 conditions",
+            "observed_certificate_issue": "2024-05-06",
+            "observed_certificate_expiry": "2029-03-26"
+          }
         }
       ],
-      "selected": 1017,
-      "added": 17,
-      "held": 1000,
-      "national_identity_rows": 2458,
-      "all_new_scopes_excluded": true
+      "deferred": "SMG282ADT113-0209 is a different model from existing SMG282CDT175-0136; retain candidate ratio 113.54 and drawing W289000135 Rev. R1, do not enrich the different model. Other certificate component tables pp4–5,7–10 need visual transcription and exact-model reconciliation; no new models from OCR alone"
     },
-    "components": {
-      "documents": 6,
-      "reviewed_rows": 43,
-      "new_models": 13,
-      "enriched_turbines": 5,
-      "decisions": {
-        "staged_exact_models": 9,
-        "deferred": 25,
-        "existing_identity_review": 2
+    "independent_sources": [
+      {
+        "url": "https://eta-publications.lbl.gov/publications/us-wind-turbine-database-files",
+        "result": "Official LBNL listing has memo, codebook and decommissioned CSV; current fleet download links back to USGS. No current-fleet alternate distribution recovered.",
+        "checksum": null,
+        "original_bytes": "Unavailable; web-reader page reviewed"
       },
-      "source_ids": [
-        "mnre-component-9-20261104",
-        "mnre-component-11-20261104",
-        "mnre-component-12-20261104",
-        "mnre-component-13-20261104",
-        "mnre-component-14-20261104"
-      ],
-      "held_document": {
-        "url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/07/2026072759107351.pdf",
-        "sha256": "23cc41fae5a7530bff1553417d5881dd0c4694feeda0f9304d01b82cf12474e2",
-        "rows": 7,
-        "decision": "Allheld for unresolved SG3.4-145/3.6 versus Vayona existing-model identity; exact blade LM71.0,SG145TBV4 and yaw ringGP499535 retained as candidates, not linked or added"
-      },
-      "quarantines": "Exact bearing/structural IDs retained in observations without unsupported category mapping; priorHT24/PW28records reused, no duplicate models",
-      "no_new_reuse_exclusions": true
-    },
-    "independent_project_source": "PNE complete Spain/Poland wind partitions:8held, no COD/current-operation inference"
+      {
+        "query": "WE4500S-01; WE7000G; EF0953A exact supplier specifications",
+        "result": "No new primary supplier specification for first two models; EF0953A led to original historical certificate; earlier MNRE disclosures not recounted."
+      }
+    ]
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -205,9 +199,9 @@
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
   },
-  "source_review": "2026-11-04-1035-source-review.json",
-  "decision_ledger": "2026-11-04-1035-odre-1900-2011-decisions.jsonl",
-  "equipment_ledger": "2026-11-04-1035-component-decisions.jsonl",
+  "source_review": "2026-11-04-1135-source-review.json",
+  "decision_ledger": "2026-11-04-1135-residual-decisions.jsonl",
+  "equipment_ledger": "2026-11-04-1135-source-review.json",
   "sweden_decision_ledger": "2026-11-04-0635-sweden-decisions.jsonl",
   "merged_main_totals": {
     "projects": 7862,
@@ -217,74 +211,66 @@
     "main_commit": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144"
   },
   "iteration": {
-    "batch": "2026-11-04-1035",
+    "batch": "2026-11-04-1135",
+    "retrieved_at": "2026-11-04T10:35:00Z",
     "france": {
-      "cohorts": [
+      "source_id": "odre-wind-20260831-20261104",
+      "national_rows": 2458,
+      "selected_residuals": 57,
+      "added": 8,
+      "held": 49,
+      "source_sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+      "partition": "Missing service date OR missing installed rating OR installed rating below 1000 kW; full national identity screen retained"
+    },
+    "equipment": {
+      "original_sha256": "89d5af7b80e998503cde7e63c6d51e3c276e666d46596c34d12fdce50e001fbd",
+      "source_url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/06/202406031500179679.pdf",
+      "complete_partition": "Page 6 two-option gearbox table",
+      "decisions": [
         {
-          "start": "2014-01-01",
-          "end": "2015-12-31",
-          "new_projects": 12,
-          "selected": 206
-        },
-        {
-          "start": "2012-01-01",
-          "end": "2013-12-31",
-          "new_projects": 0,
-          "selected": 146
-        },
-        {
-          "start": "1900-01-01",
-          "end": "2011-12-31",
-          "new_projects": 5,
-          "selected": 665
+          "record_id": "f389cfae-01a9-5f0f-8fa8-af35c33adc92",
+          "model": "EF0953A",
+          "decision": "enriched",
+          "observation": {
+            "source_id": "suzlon-s144-tc240121-rev2",
+            "document_revision": "TC-240121 Rev.2",
+            "drawing_revision": "097-EF0953A001 Rev. E",
+            "gear_ratio": 113.85,
+            "gear_ratio_unit": "dimensionless",
+            "gearbox_type": "Two planetary stages and one helical stage",
+            "application": "Suzlon S144-3.0 / 3.15 MW certificate configuration",
+            "conditions": "Certificate requires prescribed maintenance and approval of design/quality-system changes; no current certificate-status check",
+            "locator": "Page 6, Gearbox options 1 and 2; page 1 conditions",
+            "observed_certificate_issue": "2024-05-06",
+            "observed_certificate_expiry": "2029-03-26"
+          }
         }
       ],
-      "selected": 1017,
-      "added": 17,
-      "held": 1000,
-      "national_identity_rows": 2458,
-      "all_new_scopes_excluded": true
+      "deferred": "SMG282ADT113-0209 is a different model from existing SMG282CDT175-0136; retain candidate ratio 113.54 and drawing W289000135 Rev. R1, do not enrich the different model. Other certificate component tables pp4–5,7–10 need visual transcription and exact-model reconciliation; no new models from OCR alone"
     },
-    "components": {
-      "documents": 6,
-      "reviewed_rows": 43,
-      "new_models": 13,
-      "enriched_turbines": 5,
-      "decisions": {
-        "staged_exact_models": 9,
-        "deferred": 25,
-        "existing_identity_review": 2
+    "independent_sources": [
+      {
+        "url": "https://eta-publications.lbl.gov/publications/us-wind-turbine-database-files",
+        "result": "Official LBNL listing has memo, codebook and decommissioned CSV; current fleet download links back to USGS. No current-fleet alternate distribution recovered.",
+        "checksum": null,
+        "original_bytes": "Unavailable; web-reader page reviewed"
       },
-      "source_ids": [
-        "mnre-component-9-20261104",
-        "mnre-component-11-20261104",
-        "mnre-component-12-20261104",
-        "mnre-component-13-20261104",
-        "mnre-component-14-20261104"
-      ],
-      "held_document": {
-        "url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/07/2026072759107351.pdf",
-        "sha256": "23cc41fae5a7530bff1553417d5881dd0c4694feeda0f9304d01b82cf12474e2",
-        "rows": 7,
-        "decision": "Allheld for unresolved SG3.4-145/3.6 versus Vayona existing-model identity; exact blade LM71.0,SG145TBV4 and yaw ringGP499535 retained as candidates, not linked or added"
-      },
-      "quarantines": "Exact bearing/structural IDs retained in observations without unsupported category mapping; priorHT24/PW28records reused, no duplicate models",
-      "no_new_reuse_exclusions": true
-    },
-    "independent_project_source": "PNE complete Spain/Poland wind partitions:8held, no COD/current-operation inference"
+      {
+        "query": "WE4500S-01; WE7000G; EF0953A exact supplier specifications",
+        "result": "No new primary supplier specification for first two models; EF0953A led to original historical certificate; earlier MNRE disclosures not recounted."
+      }
+    ]
   },
   "geographic_changes_this_run": {
     "project_countries": [
       "FRA"
     ],
     "new_project_countries": [],
-    "new_manufacturers": 7
+    "new_manufacturers": 0
   },
   "snapshot_builds": "Two independent builds of seven files were byte-identical; typed Zstandard Parquet",
   "decision_ledgers": [
-    "2026-11-04-1035-odre-2014-2015-decisions.jsonl",
-    "2026-11-04-1035-odre-2012-2013-decisions.jsonl",
-    "2026-11-04-1035-odre-1900-2011-decisions.jsonl"
+    "2026-11-04-1135-residual-decisions.jsonl"
   ],
   "previous_publication_reconciliation": {
     "previous_pr": 132,

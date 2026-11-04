@@ -48,6 +48,7 @@ def stage_inventory(
     snapshot: str = "2026-08-31",
     service_start: str = "2022-01-01",
     service_end: str | None = None,
+    residual: bool = False,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Screen national identities and stage a bounded industrial-service cohort.
 
@@ -56,6 +57,9 @@ def stage_inventory(
     prior name/commune candidates are held. No fuzzy merge, turbine count from
     nbGroupes, surveyed coordinates from administrative codes, or capacity factor.
     All accepted capacities remain excluded until farm/phase scope is reconciled.
+    The residual partition selects missing service dates or missing/sub-1-MW
+    installed ratings; missing/nonpositive ratings remain held. Other cohorts
+    still participate in the national identity screen.
     Bounds are inclusive ISO dates; the default preserves the original 2022+
     cohort. Filtering never removes other years from the national identity screen.
     """
@@ -79,7 +83,12 @@ def stage_inventory(
         service = _date(raw["datemiseenservice"], snapshot)
         installed = raw["puismaxinstallee"]
         reasons = []
-        if not service or not start <= service <= end or installed is None or installed < 1000:
+        if residual:
+            if service and installed is not None and installed >= 1000:
+                reasons.append("outside_residual_partition")
+            if installed is None or installed <= 0:
+                reasons.append("missing_or_nonpositive_installed_capacity")
+        elif not service or not start <= service <= end or installed is None or installed < 1000:
             reasons.append(
                 "outside_2022_plus_ge1MW_service_cohort"
                 if service_start == "2022-01-01" and service_end is None

@@ -255,3 +255,18 @@ The checksum-verified component adapter consumes reviewed transcriptions with
 complete document row sets. The gallery and equipment viewer follow explicit
 component/turbine applications in both directions with their conditions and
 source locators. They do not infer compatibility from common suppliers.
+
+## French residual installations and gearbox drawing revisions
+
+The complete 57-row missing-date/sub-1-MW residual partition adds eight named
+installations and holds 49. The full 2,458-row national inventory still screens
+names and communes; unknown service dates remain unknown, missing/nonpositive
+ratings are held, and all new scopes remain excluded from capacity totals.
+All dated cohorts and residual rows are now reviewed; identity reconciliation
+is the next task, not repeated bulk discovery.
+
+The original S144 TC-240121 Rev.2 certificate's complete two-option gearbox
+table adds drawing-qualified ratio evidence to EF0953A. The distinct
+SMG282ADT113-0209 candidate is held rather than merged into SMG282CDT175-0136.
+These are historical configuration observations with maintenance/design-change
+conditions, not independent current-certification or performance verification.

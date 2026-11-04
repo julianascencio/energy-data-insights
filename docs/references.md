@@ -6823,3 +6823,11 @@ Ministry of New and Renewable Energy, Government of India (n.d.). **Major compon
 **Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### suzlon_s144_tc240121_rev2
+
+DEWI-OCC Offshore and Certification Centre GmbH (2024). **Suzlon S144-3.0 / 3.15 MW type certificate TC-240121 Rev.2**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/06/202406031500179679.pdf)
+
+**Role:** data. TC-240121 Rev.2 issued 6 May 2024; page 6 gearbox options; historical certificate conditions, not current eligibility. Original SHA256 in source registry.
+
+**Used by:** `catalogues/wind/sources.json`.
