@@ -378,3 +378,103 @@ release or availability date. The source register records the legal publisher,
 reviewed rights assessment and exact page/model/field locators. Copyright is
 retained; only selected independently reviewed factual parameters are redistributed,
 with no open-content grant, full PDF, images or marketing prose claimed.
+
+## Envertech microinverter tables (4 November 2026)
+
+Thirteen exact base models use physical page 2 of the checksum-pinned OEM sheets.
+Printed connector options on pages 2/4/6 are grouped within the base model; no
+suffix, nominal-voltage or connector permutations are generated. Common DC voltage,
+MPPT voltage bounds, continuous AC current, peak conversion efficiency, temperature,
+W×H×D dimensions, isolation, standard warranty and IP rating use existing columns.
+Single-input DC current retains its printed scope. Multiplied input currents stay
+native; no aggregate current or MPPT count is inferred from panel count.
+
+`pac_rated_w` carries explicitly printed maximum continuous active W, with that
+basis in `extensions_json.envertech_datasheet`. EVT800SE, EVT1600SE and EVT1800SE
+have VA-only tables: their active W stays null. EVT2000SE's active W has a separate
+field source from the family table, alongside the dedicated sheet's apparent VA.
+Nominal 220/230 V and 50/60 Hz options, frequency/operating-voltage ranges, Isc scope,
+MPPT tracking efficiency, humidity, branch limits by cable size, optional 20-year
+warranty and OEM compliance labels remain qualified native facts. A `<100 mW`
+night-consumption bound is an upper-exclusive 0.1 W bound, not exact standby power.
+MPPT efficiency is not conversion efficiency; claims are not verified certification.
+
+EVT500/800/1000 weights and branch/communication options vary by connector page;
+canonical weight stays null and page-specific values remain native. No current
+availability date or exact nominal AC-voltage choice is asserted. EVT560's printed
+600 W rating is retained in review for clarification, without substituting a value
+from its model number. No schema change or full document/table layout is included.
+
+## Electra bounded installation-index reader
+
+`pv_catalogue.electra.read_electra_csv` requires independently pinned CSV and
+HTML search-result captures. It verifies the echoed explicit `Fotovoltaica`,
+region and minimum net-power filters, the result count, exact five-column schema,
+sequence, unique `INSTALACIONID` and regional scope. `AUTOID` is only a sequence
+locator. The query's threshold is not a capacity observation. Initial unfiltered
+responses must never be treated as a PV export.
+
+This reader produces candidates only. The filtered index lacks individual power,
+dates and phase details; its live revision is unknown, while the global files show
+27 January 2026. Registration is not proof of operation. Repeated names, existing
+names and exact namespaced registry IDs add review flags, never automatic merges.
+All 75 Canarias candidates remain held for whole-plant/phase, privacy, power and
+freshness review. Review output stores IDs/reasons without installation names,
+holders, contacts or addresses. No Electra record is upserted as a project.
+
+## Navarra IDENA operating and permitting inventories (4 November 2026)
+
+`pv_catalogue.navarra` verifies pinned ZIP bytes, embedded layer-specific CC BY4
+and panel-power definitions, exact DBF fields, row framing and positive finite
+power. It discards PROMOTOR before returning candidates. Operating and permitting
+layers have separate schemas and titles; neither establishes current operation.
+FEATURE is nonunique and never a project ID. A reviewed unique single EXPEDIENTE
+case is the canonical identity; repeated and grouped cases remain held.
+
+Panel-sum MW fills DC capacity with its exact basis. Explicit trailing kV in grid
+connection text can fill grid voltage, without converting it into power or owner
+information. Source service-year text stays native because its generic dictionary
+scope is insufficient for a normalized commissioning date. Insertion date is not
+commissioning; calculated polygon area is not accepted as land area. No polygon
+centroid, exact point, promoter, private owner/contact or inferred live status is
+populated. Full geometry and original documents stay outside Git.
+
+Both incoming layers, canonical names/aliases/native-language phase names and
+review-only spatial candidates were screened. Overlapping polygons, generic or
+related names, repeated/grouped cases and phase ambiguity remain review flags,
+never automatic merges. Cierzo II gains only missing grid voltage after exact-name,
+one-phase, regional and actual-polygon review. Its existing AC rating/status are
+preserved; the different source panel rating remains in review.
+
+## INHENERGY SI and Viscofan evidence boundaries
+
+`pv_catalogue.inhenergy` parses only exact reviewed SI columns from pinned PDFs.
+`pac_rated_w` is explicitly rated active AC output; maximum output and the two
+distinct PV input/access limits remain qualified native observations. A shared
+cell can apply to every model only when it spans the full reviewed table.
+Partially merged current, cooling and weight rows retain the `table_*` prefix;
+reviewed scalar mappings are recorded separately. Native L/W/H axes are preserved
+without an assumed width/depth remapping. Less-than bounds are not scalar values.
+
+The Viscofan BOE notice adds explicitly stated panel MWp, module/inverter counts
+and an estimated PV-plus-evacuation EUR budget at its 2025 application stage.
+Cost year, scope and design conditions travel in extensions. Its installed-power
+heading and kVA total do not replace the existing AC rating. Internal30kV and
+existing66kV grid links stay separately scoped. Publication is not commissioning,
+operation or authorization; private addresses and signatory details are omitted.
+
+## Danish planning and Hypontech exact editions
+
+Danish `planid` identifies an administrative plan. Explicit use8135 proves the
+plan permits PV; it does not prove an individual generating asset exists. Native
+adoption/update dates, source plan status and planned capacity cells are distinct
+from project operation/commissioning/capacity. Associated municipal-plan evidence
+can be retained in extensions after a reviewed crosswalk without allocating mixed
+wind/PV capacity or changing project identity.
+
+Hypontech exact model punctuation/suffixes are retained. Active rated W and maximum
+apparent VA remain separate; regional voltage/frequency choices and unspecific
+input-current scope stay native. Strict consumption/efficiency bounds are not
+converted into exact scalar values. Optional interfaces/connectors/monitoring/AFCI
+and unknown warranties/certification eligibility remain qualified. A malformed
+apparent-power cell is not repaired from a model number or expected ratio.

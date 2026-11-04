@@ -1,0 +1,695 @@
+{
+  "start_head": "30e2b67c6f26f55ff5d3542c76b79eafac7ffd7b",
+  "reviewed": 11,
+  "enriched": 11,
+  "new": 0,
+  "quarantined_records": 8,
+  "models": [
+    {
+      "record_id": "01bf227a-8d4a-50c9-8cd6-7e81319ee48c",
+      "model": "BTL 12-75 LX",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-75LX_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "a7b0548f83f4b0e3c6b3325f2e8abcd92ed21b2a5b70599562076c6d225e96f0",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 260.0,
+            "tolerance": 2.0
+          },
+          "width": {
+            "value": 168.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 208.0,
+            "tolerance": 2.0
+          },
+          "overall_height": {
+            "value": 211.0,
+            "tolerance": 2.0
+          }
+        },
+        "mass_kg": 24.2
+      },
+      "quarantined_fields": {}
+    },
+    {
+      "record_id": "221e97f9-c154-5250-8bdb-a6bc70629c1b",
+      "model": "BTL 12-90 LX",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-90LX_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "a8f991139841cff59781b64900bd3d85d920901948d96a83d3b5b8afb6206476",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 306.0,
+            "tolerance": 2.0
+          },
+          "width": {
+            "value": 168.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 207.0,
+            "tolerance": 2.0
+          },
+          "overall_height": {
+            "value": 210.0,
+            "tolerance": 2.0
+          }
+        },
+        "mass_kg": 28.2
+      },
+      "quarantined_fields": {
+        "height_m": {
+          "overview_value": 0.211,
+          "individual_value": 0.21,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-90LX_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        }
+      }
+    },
+    {
+      "record_id": "26f20f43-1b62-5a36-af83-c584aea895d4",
+      "model": "BTL 12-55 L",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-55L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "3a4b84ee27f44b9ca71ea33b46a2e0e94beb3362a5ae435492bf12bac82b8f7c",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 228.0,
+            "tolerance": 3.0
+          },
+          "width": {
+            "value": 137.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 210.0,
+            "tolerance": 3.0
+          },
+          "overall_height": {
+            "value": 230.0,
+            "tolerance": 3.0
+          }
+        },
+        "mass_kg": 17.7
+      },
+      "quarantined_fields": {
+        "depth_m": {
+          "overview_value": 0.229,
+          "individual_value": 0.228,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-55L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "width_m": {
+          "overview_value": 0.138,
+          "individual_value": 0.137,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-55L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "height_m": {
+          "overview_value": 0.235,
+          "individual_value": 0.23,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-55L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "weight_kg": {
+          "overview_value": 18.0,
+          "individual_value": 17.7,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-55L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        }
+      }
+    },
+    {
+      "record_id": "3e888b38-1719-540a-82eb-b02318007f8b",
+      "model": "BTL 12-100 LX",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-100LX_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "c88051ffa93a712fd1ecda8686ae874488a54050641dcfb2d5b40fd084ca2b09",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 325.5,
+            "tolerance": 2.0
+          },
+          "width": {
+            "value": 170.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 213.0,
+            "tolerance": 2.0
+          },
+          "overall_height": {
+            "value": 216.0,
+            "tolerance": 2.0
+          }
+        },
+        "mass_kg": 31.6
+      },
+      "quarantined_fields": {}
+    },
+    {
+      "record_id": "4d44527a-dcf9-576a-932b-ffb94b7f02e9",
+      "model": "BTL 12-33 L",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-33L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "dc7df5987d39e9b1604ded2e0e0fbddc25e0cf0ed49f817b3a4133386ba42c9f",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 197.0,
+            "tolerance": 2.0
+          },
+          "width": {
+            "value": 130.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 164.0,
+            "tolerance": 2.0
+          },
+          "overall_height": {
+            "value": 164.0,
+            "tolerance": 2.0
+          }
+        },
+        "mass_kg": 10.4
+      },
+      "quarantined_fields": {
+        "depth_m": {
+          "overview_value": 0.195,
+          "individual_value": 0.197,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-33L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "height_m": {
+          "overview_value": 0.18,
+          "individual_value": 0.164,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-33L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "weight_kg": {
+          "overview_value": 10.2,
+          "individual_value": 10.4,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-33L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        }
+      }
+    },
+    {
+      "record_id": "51648383-e066-5c21-aad4-45f1df9fed95",
+      "model": "BTL 12-12",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-12_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "5d460d24b2223b011b7eab5eac0dcd81bece0976f48a41f2efa0ea6cd28dad9d",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 151.0,
+            "tolerance": 2.0
+          },
+          "width": {
+            "value": 98.0,
+            "tolerance": 1.0
+          },
+          "case_height": {
+            "value": 95.0,
+            "tolerance": 1.0
+          },
+          "overall_height": {
+            "value": 101.0,
+            "tolerance": 2.0
+          }
+        },
+        "mass_kg": 3.8
+      },
+      "quarantined_fields": {}
+    },
+    {
+      "record_id": "5c6ec415-e171-54f4-9433-10ae5a1c6ea6",
+      "model": "BTL 12-18",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-18_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "580eee2640e99ccdd87cb0c7a4c4444406fbf0668e58aae57b5df51899455dad",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 181.5,
+            "tolerance": 2.0
+          },
+          "width": {
+            "value": 77.0,
+            "tolerance": 1.0
+          },
+          "case_height": {
+            "value": 167.5,
+            "tolerance": 2.0
+          },
+          "overall_height": {
+            "value": 167.5,
+            "tolerance": 2.0
+          }
+        },
+        "mass_kg": 5.7
+      },
+      "quarantined_fields": {
+        "depth_m": {
+          "overview_value": 0.181,
+          "individual_value": 0.1815,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-18_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "height_m": {
+          "overview_value": 0.167,
+          "individual_value": 0.1675,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-18_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        }
+      }
+    },
+    {
+      "record_id": "88d2c8a5-7d15-5af2-bc5b-86709b4e66e0",
+      "model": "BTL 12-65 L",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-65L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "c89822a36a69aba6ec10449d3151a5541b25def5f8805b658d752cb8b053c238",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 348.0,
+            "tolerance": 3.0
+          },
+          "width": {
+            "value": 167.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 178.0,
+            "tolerance": 2.0
+          },
+          "overall_height": {
+            "value": 178.0,
+            "tolerance": 2.0
+          }
+        },
+        "mass_kg": 21.0
+      },
+      "quarantined_fields": {
+        "depth_m": {
+          "overview_value": 0.35,
+          "individual_value": 0.348,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-65L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "height_m": {
+          "overview_value": 0.183,
+          "individual_value": 0.178,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-65L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        }
+      }
+    },
+    {
+      "record_id": "cb0cd034-c27a-53fc-a6eb-74b9d908e1cd",
+      "model": "BTL 12-120 L",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-120L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "daf28097eae7ceb8b43df994f9dcac623fa3ecc4c9ce9db1f9f98bd0158ed956",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 408.0,
+            "tolerance": 3.0
+          },
+          "width": {
+            "value": 177.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 225.0,
+            "tolerance": 3.0
+          },
+          "overall_height": {
+            "value": 225.0,
+            "tolerance": 3.0
+          }
+        },
+        "mass_kg": 36.6
+      },
+      "quarantined_fields": {
+        "depth_m": {
+          "overview_value": 0.407,
+          "individual_value": 0.408,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-120L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "height_m": {
+          "overview_value": 0.227,
+          "individual_value": 0.225,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-120L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "weight_kg": {
+          "overview_value": 35.0,
+          "individual_value": 36.6,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-120L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        }
+      }
+    },
+    {
+      "record_id": "d9419d8c-c231-5514-ac97-805b9cea0c81",
+      "model": "BTL 12-45 L",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-45L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "8d74a683097aa0962939af132cbac4a60cf1d4119e29803a700c74a40c38d528",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 197.0,
+            "tolerance": 2.0
+          },
+          "width": {
+            "value": 165.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 170.0,
+            "tolerance": 2.0
+          },
+          "overall_height": {
+            "value": 170.0,
+            "tolerance": 2.0
+          }
+        },
+        "mass_kg": 14.2
+      },
+      "quarantined_fields": {
+        "depth_m": {
+          "overview_value": 0.198,
+          "individual_value": 0.197,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-45L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "width_m": {
+          "overview_value": 0.166,
+          "individual_value": 0.165,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-45L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "weight_kg": {
+          "overview_value": 13.2,
+          "individual_value": 14.2,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-45L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        }
+      }
+    },
+    {
+      "record_id": "ebc9a477-fcc9-5766-b02c-2c41fea1e577",
+      "model": "BTL 12-150 L",
+      "facts": {
+        "source_id": "effekta_btl_individual_archive",
+        "locator": "BTL12-150L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows",
+        "member_sha256": "d29d96b6a893f884196a1c70182dfbd308e3c703bbe924b000ec094b7f0d167e",
+        "retrieved_at": "2026-11-04T05:54:25.276569+00:00",
+        "charging_voltage_v": [
+          14.4,
+          15.0
+        ],
+        "charging_reference_temperature_c": 25,
+        "charging_temperature_coefficient_mv_per_c": -30,
+        "float_voltage_v": [
+          13.5,
+          13.8
+        ],
+        "float_reference_temperature_c": 25,
+        "float_temperature_coefficient_mv_per_c": -20,
+        "coefficient_scope": "As printed for monobloc; not inferred per-cell coefficient; no extrapolated charge profile",
+        "storage_recharge_interval_months": 6,
+        "storage_reference_temperature_c": 25,
+        "storage_condition": "Recharge interval shortens at higher temperatures; retain separate overview20\u00b0C observation, not a universal safe-storage limit",
+        "dimensions_mm_with_tolerance": {
+          "length": {
+            "value": 483.0,
+            "tolerance": 3.0
+          },
+          "width": {
+            "value": 170.0,
+            "tolerance": 2.0
+          },
+          "case_height": {
+            "value": 238.5,
+            "tolerance": 3.0
+          },
+          "overall_height": {
+            "value": 238.5,
+            "tolerance": 3.0
+          }
+        },
+        "mass_kg": 47.2
+      },
+      "quarantined_fields": {
+        "height_m": {
+          "overview_value": 0.24,
+          "individual_value": 0.2385,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-150L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        },
+        "weight_kg": {
+          "overview_value": 44.5,
+          "individual_value": 47.2,
+          "overview_source_id": "effekta_btl_overview",
+          "individual_source_id": "effekta_btl_individual_archive",
+          "individual_locator": "BTL12-150L_Datenblatt_DE.pdf, PDFpage1 Ladespannung/Erhaltungsladung/Selbstentladung and physical rows"
+        }
+      }
+    }
+  ],
+  "source_downloads": {
+    "archive": {
+      "url": "https://www.effekta.com/download/datenblaetter-btl-serie-zip-datei/?wpdmdl=351",
+      "status": 200,
+      "sha256": "9677c02abf9b8d4efb62bdc4323afd2f4e793dce794a2b6f182bf4d530755c36",
+      "retrieved_at": "2026-11-04T05:54:25.276569+00:00"
+    },
+    "doe": {
+      "url": "https://doe.gov.ph/articles/3435676--list-of-existing-power-plants-grid-connected-as-of-march-2026",
+      "status": 200,
+      "sha256": "509a61c3f6e352d999fff94395f2f12d7d3a595f933afaaecabb244c50c3f482",
+      "retrieved_at": "2026-11-04T05:54:33.544895+00:00"
+    },
+    "historical": {
+      "url": "https://legacy.doe.gov.ph/sites/default/files/pdf/electric_power/03_Mindanao%20Committed_31jul2024.pdf",
+      "status": 503,
+      "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+      "retrieved_at": "2026-11-04T05:54:44.085770+00:00"
+    },
+    "terms": {
+      "url": "https://www.effekta.com/en/imprint/",
+      "status": 200,
+      "sha256": "448df7abc747a79559f5cd5bb69caaa96098a4d5461ae60a5cc65b8655553668",
+      "retrieved_at": "2026-11-04T05:54:52.123246+00:00"
+    },
+    "iea": {
+      "url": "https://www.iea.org/commentaries/battery-storage-is-scaling-up-and-taking-on-a-larger-system-role",
+      "status": 200,
+      "sha256": "a1a8a02b4174b8076ec3a85fc29b329e5ddc4d9e8fe49ffaf4b3f16a1c810bdf",
+      "retrieved_at": "2026-11-04T05:55:01.931656+00:00"
+    }
+  }
+}

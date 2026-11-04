@@ -1,0 +1,135 @@
+{
+  "run_id": "atnorth-reconciliation-20261104T092000Z",
+  "retrieved_at": "2026-11-04T09:20:00Z",
+  "branch": "research/data-center-database-20261104T0915Z",
+  "base_head": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
+  "prepublication_remote_head": null,
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus_aggregate": 114
+    },
+    "equipment": 868,
+    "total": 1051,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 30,
+    "added_projects": 1,
+    "enriched_projects": 3,
+    "added_equipment": 0,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 182,
+    "equipment": 868,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 30
+  },
+  "pull_request_delta": {
+    "projects": 1,
+    "enriched_projects": 3,
+    "equipment": 0,
+    "inventories": [
+      "atNorth FIN03 identity and Nordic milestone reconciliation"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 8,
+    "accepted_original_bytes": 920543,
+    "checksummed_originals": 8,
+    "unavailable_originals": 0
+  },
+  "executed_checks": [
+    {
+      "check": "deterministic atNorth reconciliation builder replay",
+      "result": "passed",
+      "detail": "Two independent builds matched the canonical atNorth project JSONL byte-for-byte"
+    },
+    {
+      "check": "catalogue schema, identity, unit, source and evidence validation",
+      "result": "passed",
+      "detail": "Validated 1,051 canonical Data Center records"
+    },
+    {
+      "check": "focused Data Center tests",
+      "result": "passed",
+      "detail": "76 passed and 1,512 deselected"
+    },
+    {
+      "check": "full Python test suite",
+      "result": "passed",
+      "detail": "2,214 passed and one optional-dependency test skipped"
+    },
+    {
+      "check": "database viewer Node tests",
+      "result": "passed",
+      "detail": "15 passed"
+    },
+    {
+      "check": "Ruff format and lint",
+      "result": "passed",
+      "detail": "839 files formatted; all lint checks passed"
+    },
+    {
+      "check": "targeted ty",
+      "result": "passed",
+      "detail": "Changed Data Center Python files passed type checking"
+    },
+    {
+      "check": "repository-wide ty",
+      "result": "blocked_by_unrelated_main",
+      "detail": "One pre-existing unresolved BESS import in scripts/stage_bess_nfosigw.py; no Data Center diagnostics"
+    },
+    {
+      "check": "repository, citation and diff checks",
+      "result": "passed",
+      "detail": "Repository policy, citation registry and whitespace checks passed"
+    },
+    {
+      "check": "Data Center catalogue example",
+      "result": "passed",
+      "detail": "Offline example completed against input fingerprint 9d5b6d8c6fd2d9902c3814d187e37148938eb75c8fb308e9fe2d61b9957a3c4f"
+    },
+    {
+      "check": "strict Sphinx and generated-site link validation",
+      "result": "passed",
+      "detail": "Strict build succeeded and local links and assets resolved across 532 HTML pages"
+    },
+    {
+      "check": "deterministic typed Parquet and coverage rebuild",
+      "result": "passed",
+      "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"
+    }
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "9d5b6d8c6fd2d9902c3814d187e37148938eb75c8fb308e9fe2d61b9957a3c4f",
+    "projects_sha256": "a143dcdfa65de5782eaaf065eaf3f0398e138895533d6fc4e9514d71ca20ca56",
+    "equipment_sha256": "518920edeee7fa59fbcedcb67546ec9629a3f592e17e7efbedbf94cbb92c68b8",
+    "manifest_sha256": "1c9ee6f2bfa5591775f0e40271f06e09784cd9599d21d008509fd5115247904a",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "091eaef501b43a4db15116223f497beb5ce03dc9eae3648503af34bfae510a93"
+  },
+  "holds_added": [
+    "Delta Electronics UPS",
+    "HITEC PowerPRO",
+    "HIMOINSA HGY",
+    "Generac industrial generators"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence"
+  ],
+  "quarantined_fields": [
+    "SWE04 commissioning_date",
+    "FIN04A Phase 2 identity relationship"
+  ],
+  "notes": [
+    "FIN03 combined FIN01/FIN03 capacity and rack figures remain observations and are not allocated",
+    "DEN02 campus and first-phase power statements remain observations because electrical boundaries are unspecified",
+    "SWE04 remains a campus aggregate and its grid connection is excluded from capacity totals under all filters",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain"
+  ]
+}

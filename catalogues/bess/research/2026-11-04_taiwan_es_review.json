@@ -1,0 +1,625 @@
+{
+  "baseline_commit": "0fd801ae6ea261cfd26d875671022f188f6f7370",
+  "projects": [
+    {
+      "record_id": "6d29a6a3-c37e-5def-841f-3effca6e3b75",
+      "name": "Luyuan BESS",
+      "decision": "new",
+      "natural_identity_review": "Country/site/native aliases and capacity scope manually checked against canonical records and incoming batch; no fuzzy merge",
+      "source_ids": [
+        "taipower_dongshan_20261104",
+        "taipower_portfolio_20261104"
+      ],
+      "sibling_scope_separate": false
+    },
+    {
+      "record_id": "81291d6c-f68e-5e6c-a91f-5b46ecb39214",
+      "name": "Longtan BESS",
+      "decision": "new",
+      "natural_identity_review": "Country/site/native aliases and capacity scope manually checked against canonical records and incoming batch; no fuzzy merge",
+      "source_ids": [
+        "taipower_longtan_20261104",
+        "taipower_portfolio_20261104"
+      ],
+      "sibling_scope_separate": false
+    },
+    {
+      "record_id": "88392e09-6af1-5cc9-98bb-0110dbe5f76d",
+      "name": "Dongshan BESS",
+      "decision": "new",
+      "natural_identity_review": "Country/site/native aliases and capacity scope manually checked against canonical records and incoming batch; no fuzzy merge",
+      "source_ids": [
+        "taipower_dongshan_20261104",
+        "taipower_portfolio_20261104"
+      ],
+      "sibling_scope_separate": false
+    },
+    {
+      "record_id": "409dba8c-186b-558f-9e8b-c6dccf272258",
+      "name": "Nanyan solar-plus-storage BESS",
+      "decision": "new",
+      "natural_identity_review": "Country/site/native aliases and capacity scope manually checked against canonical records and incoming batch; no fuzzy merge",
+      "source_ids": [
+        "taipower_yantian_20261104",
+        "taipower_portfolio_20261104"
+      ],
+      "sibling_scope_separate": false
+    },
+    {
+      "record_id": "d33ce560-2b48-5393-9c4d-12a59f9c4a58",
+      "name": "Xia Xing sodium-sulfur BESS",
+      "decision": "new",
+      "natural_identity_review": "Country/site/native aliases and capacity scope manually checked against canonical records and incoming batch; no fuzzy merge",
+      "source_ids": [
+        "taipower_research2023_20261104"
+      ],
+      "sibling_scope_separate": true
+    },
+    {
+      "record_id": "bc2b181d-5acf-5728-96fe-38017dd60d3c",
+      "name": "Xia Xing lithium BESS",
+      "decision": "new",
+      "natural_identity_review": "Country/site/native aliases and capacity scope manually checked against canonical records and incoming batch; no fuzzy merge",
+      "source_ids": [
+        "taipower_research2023_20261104"
+      ],
+      "sibling_scope_separate": true
+    }
+  ],
+  "equipment": [
+    {
+      "record_id": "88d4d8b7-bbc4-5a6b-892c-83f46460092e",
+      "model": "ePowerControl ES Compact",
+      "decision": "new",
+      "source_id": "elum_es_three_configurations_20261104",
+      "locator": "PDF page 2, exact column 1",
+      "controlled_capacity_not_installed_energy": true
+    },
+    {
+      "record_id": "bc5c9632-698f-536b-bc40-1a59588ad545",
+      "model": "ePowerControl ES",
+      "decision": "new",
+      "source_id": "elum_es_three_configurations_20261104",
+      "locator": "PDF page 2, exact column 2",
+      "controlled_capacity_not_installed_energy": true
+    },
+    {
+      "record_id": "0e2e5d40-61d4-57e4-ac03-b287474dad23",
+      "model": "ePowerControl ES +",
+      "decision": "new",
+      "source_id": "elum_es_three_configurations_20261104",
+      "locator": "PDF page 2, exact column 3",
+      "controlled_capacity_not_installed_energy": true
+    },
+    {
+      "record_id": "ae6bf4d4-1f94-5d22-873d-089b3c79a353",
+      "model": "PWS1-160M-H-EX",
+      "decision": "enriched",
+      "source_id": "sinexcel_next_0_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "current_thd_percent_upper",
+        "voltage_ripple_percent_upper",
+        "power_factor_range",
+        "grid_frequency_nominal_hz",
+        "grid_frequency_tolerance_hz",
+        "on_grid_voltage_tolerance_percent",
+        "off_grid_voltage_tolerance_percent",
+        "on_grid_wiring",
+        "off_grid_wiring",
+        "power_response_ms_upper_inclusive",
+        "response_locator"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "0ee0a7a4-d81e-54ad-8268-97dd8c9a0f95",
+      "model": "PWS1-160M-H-NA",
+      "decision": "enriched",
+      "source_id": "sinexcel_next_0_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "current_thd_percent_upper",
+        "voltage_ripple_percent_upper",
+        "power_factor_range",
+        "grid_frequency_nominal_hz",
+        "grid_frequency_tolerance_hz",
+        "on_grid_voltage_tolerance_percent",
+        "off_grid_voltage_tolerance_percent",
+        "on_grid_wiring",
+        "off_grid_wiring",
+        "power_response_ms_upper_inclusive",
+        "response_locator"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "e2085005-8d72-5b85-b3d7-85d70575c7b1",
+      "model": "PWS1-135M-CN",
+      "decision": "enriched",
+      "source_id": "sinexcel_guide_135k_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "voltage_ripple_percent_upper",
+        "power_factor_native",
+        "power_response_ms_upper_exclusive",
+        "response_locator",
+        "control_modes",
+        "power_quadrants"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "cd8c6921-cc15-5124-8f40-c5ef46418d6b",
+      "model": "PWS1-135M-EX",
+      "decision": "enriched",
+      "source_id": "sinexcel_guide_135k_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "voltage_ripple_percent_upper",
+        "power_factor_native",
+        "power_response_ms_upper_exclusive",
+        "response_locator",
+        "control_modes",
+        "power_quadrants"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "14dacda9-571d-554d-8177-a43747be9253",
+      "model": "PWS1-135M-NA",
+      "decision": "enriched",
+      "source_id": "sinexcel_guide_135k_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "voltage_ripple_percent_upper",
+        "power_factor_native",
+        "power_response_ms_upper_exclusive",
+        "response_locator",
+        "control_modes",
+        "power_quadrants"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "17b6bc85-e4dd-512f-b25f-d45b4574a6f6",
+      "model": "PWS1-450M-H-L",
+      "decision": "enriched",
+      "source_id": "sinexcel_next_1_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "current_thd_percent_upper",
+        "voltage_regulation_accuracy_percent_native",
+        "current_regulation_accuracy_percent_native",
+        "power_factor_native",
+        "on_grid_wiring",
+        "grid_frequency_nominal_hz",
+        "grid_frequency_tolerance_hz",
+        "grid_voltage_tolerance_percent",
+        "relative_humidity_percent",
+        "humidity_condition",
+        "noise_db_upper_exclusive",
+        "noise_measurement_distance_unspecified"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "70816e8f-a8c2-5937-aa0b-200f86a12081",
+      "model": "PWS1-225M-H-L",
+      "decision": "enriched",
+      "source_id": "sinexcel_next_2_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "current_thd_percent_upper",
+        "voltage_regulation_accuracy_percent_native",
+        "current_regulation_accuracy_percent_native",
+        "power_factor_native",
+        "on_grid_wiring",
+        "grid_frequency_nominal_hz",
+        "grid_frequency_tolerance_hz",
+        "grid_voltage_tolerance_percent",
+        "relative_humidity_percent",
+        "humidity_condition",
+        "noise_db_upper_exclusive",
+        "noise_measurement_distance_unspecified"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "7323a0b9-e783-5a93-b88b-f1a0bf9f2c18",
+      "model": "PWS1-215M-H-X",
+      "decision": "enriched",
+      "source_id": "sinexcel_next_3_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "current_thd_percent_upper",
+        "voltage_regulation_accuracy_percent_native",
+        "current_regulation_accuracy_percent_native",
+        "power_factor_native",
+        "on_grid_wiring",
+        "grid_frequency_nominal_hz",
+        "grid_frequency_tolerance_hz",
+        "grid_voltage_tolerance_percent",
+        "relative_humidity_percent",
+        "humidity_condition",
+        "noise_db_upper_exclusive",
+        "noise_measurement_distance_unspecified"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "24f2a4ff-f9c1-56df-a4e0-108329ce935d",
+      "model": "PDS1-100M-H",
+      "decision": "enriched",
+      "source_id": "sinexcel_next_4_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "noise_db_upper_exclusive",
+        "noise_measurement_distance_unspecified",
+        "relative_humidity_percent",
+        "humidity_condition",
+        "bms_integration_supported"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    },
+    {
+      "record_id": "a80ff910-3d86-590f-83c8-4f05d6c62f21",
+      "model": "PDS1-750K-H",
+      "decision": "enriched",
+      "source_id": "sinexcel_next_7_20261103",
+      "source_sha256_unchanged": true,
+      "added_fields": [
+        "locator",
+        "source_id",
+        "noise_db_upper_exclusive",
+        "noise_measurement_distance_unspecified",
+        "relative_humidity_percent",
+        "humidity_condition",
+        "bms_integration_supported"
+      ],
+      "locator": "PDF p2 exact model column; shared rows visually reviewed"
+    }
+  ],
+  "portugal_final_awards": [
+    {
+      "application_id": "10",
+      "rank": 1,
+      "locator": "PDF page 27, final Table 1, rank 1",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "32",
+      "rank": 2,
+      "locator": "PDF page 27, final Table 1, rank 2",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "71",
+      "rank": 3,
+      "locator": "PDF page 27, final Table 1, rank 3",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "64",
+      "rank": 4,
+      "locator": "PDF page 27, final Table 1, rank 4",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "70",
+      "rank": 5,
+      "locator": "PDF page 27, final Table 1, rank 5",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "22",
+      "rank": 6,
+      "locator": "PDF page 27, final Table 1, rank 6",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "72",
+      "rank": 7,
+      "locator": "PDF page 27, final Table 1, rank 7",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "69",
+      "rank": 8,
+      "locator": "PDF page 27, final Table 1, rank 8",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "14",
+      "rank": 9,
+      "locator": "PDF page 27, final Table 1, rank 9",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "39",
+      "rank": 10,
+      "locator": "PDF page 27, final Table 1, rank 10",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "40",
+      "rank": 11,
+      "locator": "PDF page 27, final Table 1, rank 11",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "60",
+      "rank": 12,
+      "locator": "PDF page 27, final Table 1, rank 12",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "86",
+      "rank": 13,
+      "locator": "PDF page 27, final Table 1, rank 13",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "62",
+      "rank": 14,
+      "locator": "PDF page 27, final Table 1, rank 14",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "54",
+      "rank": 15,
+      "locator": "PDF page 27, final Table 1, rank 15",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "46",
+      "rank": 16,
+      "locator": "PDF page 27, final Table 1, rank 16",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "43",
+      "rank": 17,
+      "locator": "PDF page 27, final Table 1, rank 17",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "49",
+      "rank": 18,
+      "locator": "PDF page 27, final Table 1, rank 18",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "20",
+      "rank": 19,
+      "locator": "PDF page 27, final Table 1, rank 19",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "6",
+      "rank": 20,
+      "locator": "PDF page 27, final Table 1, rank 20",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "81",
+      "rank": 21,
+      "locator": "PDF page 27, final Table 1, rank 21",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "87",
+      "rank": 22,
+      "locator": "PDF page 27, final Table 1, rank 22",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "48",
+      "rank": 23,
+      "locator": "PDF page 27, final Table 1, rank 23",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "57",
+      "rank": 24,
+      "locator": "PDF page 27, final Table 1, rank 24",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "12",
+      "rank": 25,
+      "locator": "PDF page 27, final Table 1, rank 25",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "27",
+      "rank": 26,
+      "locator": "PDF page 27, final Table 1, rank 26",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "65",
+      "rank": 27,
+      "locator": "PDF page 27, final Table 1, rank 27",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "61",
+      "rank": 28,
+      "locator": "PDF page 27, final Table 1, rank 28",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "63",
+      "rank": 29,
+      "locator": "PDF page 27, final Table 1, rank 29",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "66",
+      "rank": 30,
+      "locator": "PDF page 27, final Table 1, rank 30",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "58",
+      "rank": 31,
+      "locator": "PDF page 27, final Table 1, rank 31",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "68",
+      "rank": 32,
+      "locator": "PDF page 27, final Table 1, rank 32",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "21",
+      "rank": 33,
+      "locator": "PDF page 27, final Table 1, rank 33",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "41",
+      "rank": 34,
+      "locator": "PDF page 28, final Table 1, rank 34",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "36",
+      "rank": 35,
+      "locator": "PDF page 28, final Table 1, rank 35",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "47",
+      "rank": 36,
+      "locator": "PDF page 28, final Table 1, rank 36",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "79",
+      "rank": 37,
+      "locator": "PDF page 28, final Table 1, rank 37",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "76",
+      "rank": 38,
+      "locator": "PDF page 28, final Table 1, rank 38",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "75",
+      "rank": 39,
+      "locator": "PDF page 28, final Table 1, rank 39",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "80",
+      "rank": 40,
+      "locator": "PDF page 28, final Table 1, rank 40",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    },
+    {
+      "application_id": "73",
+      "rank": 41,
+      "locator": "PDF page 28, final Table 1, rank 41",
+      "decision": "held",
+      "reason": "Final award is not a physical site identity; reuse terms unresolved"
+    }
+  ],
+  "portugal_arithmetic_observations": [
+    {
+      "application_id": "49",
+      "rank": 18,
+      "locator": "PDF page 27, final Table 1, rank 18",
+      "cumulative_arithmetic_difference_eur": "-74088.97"
+    },
+    {
+      "application_id": "73",
+      "rank": 41,
+      "locator": "PDF page 28, final Table 1, rank 41",
+      "cumulative_arithmetic_difference_eur": "74088.97"
+    }
+  ],
+  "counts": {
+    "reviewed_project_or_award_candidates": 50,
+    "projects_new": 6,
+    "projects_enriched": 0,
+    "award_identity_and_rights_holds": 41,
+    "nz_existing_observations_no_change": 3,
+    "equipment_candidates": 13,
+    "equipment_new": 3,
+    "equipment_enriched": 10,
+    "equipment_rejected": 0,
+    "new_canonical_field_quarantines": 0,
+    "additional_discovery_only_project_leads": 2
+  },
+  "exclusions": [
+    "No160MWTaipower aggregate row",
+    "No Xia Xing simulation capacities",
+    "No Portugal MVA-to-MW conversion or minimum-hours energy inference",
+    "No controller control limit as installed battery energy",
+    "No generic Sinexcel hardware revision or duplicate variant rows"
+  ],
+  "previous_holds": "Earlier Atacama/Solar Ray, MREH reconciliation and all existing capacity/date/chemistry conflicts preserved unchanged"
+}

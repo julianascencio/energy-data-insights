@@ -79,7 +79,7 @@ sphinx_gallery_conf = {
     "capture_repr": (),
     "copyfile_regex": (
         r"(?:index|topic_[a-z_]+)\.rst$|"
-        r"(?:climate|site_climate|degradation|kgpv_worldwide|kgpv_canary|kgpv_chile|weather_risk|country_risk)_.*"
+        r"(?:thermal|climate|site_climate|degradation|kgpv_worldwide|kgpv_canary|kgpv_chile|weather_risk|country_risk)_.*"
         r"\.(csv|json|geojson|tif|shp|shx|dbf|prj|cpg)$"
     ),
 }

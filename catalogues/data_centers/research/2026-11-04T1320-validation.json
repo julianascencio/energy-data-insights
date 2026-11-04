@@ -1,0 +1,127 @@
+{
+  "run_id": "energy-star-panduit-appleton-legrand-ups-20261104T132048Z",
+  "retrieved_at": "2026-11-04T13:20:48Z",
+  "branch": "research/data-center-database-20261104T0915Z",
+  "base_head": "7004215c89e6d4482a391577d321605860ae0f9a",
+  "prepublication_remote_head": "f22fcd2ff8eacf6a944e8c06eb9bfe07b9cc03ad",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus_aggregate": 114
+    },
+    "equipment": 962,
+    "total": 1145,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 36,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 24,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 182,
+    "equipment": 868,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 30
+  },
+  "pull_request_delta": {
+    "projects": 1,
+    "enriched_projects": 3,
+    "equipment": 94,
+    "inventories": [
+      "atNorth FIN03 identity and Nordic milestone reconciliation",
+      "EPA ENERGY STAR certified Para Systems / Minuteman partner inventory",
+      "EPA ENERGY STAR certified ADI partner inventory",
+      "EPA ENERGY STAR certified Ablerex Electronics partner inventory",
+      "EPA ENERGY STAR certified Panduit partner inventory",
+      "EPA ENERGY STAR certified Appleton Group / SolaHD partner inventory",
+      "EPA ENERGY STAR certified Legrand AV partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 990085,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {
+      "check": "deterministic ENERGY STAR partner builder replay",
+      "result": "passed",
+      "detail": "The new 10-record Panduit, 7-record Appleton/SolaHD and 7-record Legrand AV builds matched canonical JSONL; the builder also reproduced the prior 33-record Minuteman, 22-record ADI and 15-record Ablerex shards byte-for-byte"
+    },
+    {
+      "check": "catalogue schema, identity, unit, source and evidence validation",
+      "result": "passed",
+      "detail": "Validated 1,145 canonical Data Center records"
+    },
+    {
+      "check": "focused Data Center tests",
+      "result": "passed",
+      "detail": "78 passed"
+    },
+    {
+      "check": "full Python test suite",
+      "result": "passed",
+      "detail": "2,212 passed and five optional-dependency tests skipped"
+    },
+    {
+      "check": "database viewer Node tests",
+      "result": "passed",
+      "detail": "15 passed"
+    },
+    {
+      "check": "Ruff format and lint",
+      "result": "passed",
+      "detail": "841 files formatted; all lint checks passed"
+    },
+    {
+      "check": "repository-wide ty",
+      "result": "passed",
+      "detail": "All type checks passed"
+    },
+    {
+      "check": "repository, citation and diff checks",
+      "result": "passed",
+      "detail": "Repository policy, citation registry and whitespace checks passed"
+    },
+    {
+      "check": "strict Sphinx and generated-site link validation",
+      "result": "passed",
+      "detail": "Strict build succeeded and local links and assets resolved across 532 HTML pages"
+    },
+    {
+      "check": "deterministic typed Parquet and coverage rebuild",
+      "result": "passed",
+      "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"
+    }
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "f14efe15ef1d0d44de85d8d932c8d0c2e8ee6965454d9e95a9ef0513affcbd29",
+    "projects_sha256": "a143dcdfa65de5782eaaf065eaf3f0398e138895533d6fc4e9514d71ca20ca56",
+    "equipment_sha256": "ab79a4d2317482227a767db9cc501908f5b590babb08819b2bd02e161ae836bd",
+    "manifest_sha256": "674f331b762d075819dcb651b70f6e527460e957a6ce4924992f5de82c4f0e4f",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "14f742d535fb607c9286faeddf72d59689a939397cdc35d76199a5c07a10adbd"
+  },
+  "holds_added": [],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "All ten Panduit, seven Appleton/SolaHD and seven Legrand AV entries in the 2026-11-03 ENERGY STAR dataset update are processed",
+    "Two Panduit entries report no runtime; five Middle Atlantic entries report no minimum tested-configuration identifier; normalized fields remain null",
+    "Active W and apparent VA remain distinct; runtime and efficiency retain certification and load boundaries",
+    "Legrand AV entries use the public EPA issuer dataset and do not reuse held Legrand OEM technical tables",
+    "No battery energy, maximum configuration, power factor or deployment is inferred",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain"
+  ]
+}

@@ -1,0 +1,911 @@
+{
+  "base_commit": "b32c6f8e7f34385605d05fa1e3690b9b98453d4a",
+  "main_at_start": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
+  "assessed_at": "2026-11-04T05:14:53.677451+00:00",
+  "accepted": {
+    "project_new": 8,
+    "project_enriched": 19,
+    "equipment_new": 21,
+    "equipment_enriched": 0,
+    "equipment_new_ids": [
+      "01bf227a-8d4a-50c9-8cd6-7e81319ee48c",
+      "18765123-439d-5ffe-84c0-28444f27da2a",
+      "221e97f9-c154-5250-8bdb-a6bc70629c1b",
+      "26f20f43-1b62-5a36-af83-c584aea895d4",
+      "3e888b38-1719-540a-82eb-b02318007f8b",
+      "4b2fd23a-1335-5752-a178-f52e8ceb1a28",
+      "4d421c6e-b081-564c-9174-f352844f528d",
+      "4d44527a-dcf9-576a-932b-ffb94b7f02e9",
+      "51648383-e066-5c21-aad4-45f1df9fed95",
+      "5c6ec415-e171-54f4-9433-10ae5a1c6ea6",
+      "6e49378d-e03c-56c2-a936-1902eaafa74a",
+      "7876e81c-9593-59f1-a1a6-056e3c11bda4",
+      "88d2c8a5-7d15-5af2-bc5b-86709b4e66e0",
+      "8bbaf725-2aa2-5377-bb00-ae4376bfa5af",
+      "9ed95144-9076-500f-b392-545b3a8bea9b",
+      "9fccae4c-2548-5f71-b93c-e6dfa69aafd4",
+      "a88db688-9cae-5d65-b74b-55e136fb623e",
+      "b86848ae-63f3-5c7a-9fa4-7a0c5dc7c51b",
+      "cb0cd034-c27a-53fc-a6eb-74b9d908e1cd",
+      "d9419d8c-c231-5514-ac97-805b9cea0c81",
+      "ebc9a477-fcc9-5766-b02c-2c41fea1e577"
+    ],
+    "project_enriched_ids": [
+      "0026144e-6d51-57f5-8c10-73e9ddff3867",
+      "060671a6-6831-524f-988a-23d010e082c7",
+      "0fc4bad8-fb4f-5826-ac9b-53f5f17d1c76",
+      "1219ad55-7f96-56ab-884e-3efafa30a40d",
+      "22a4e407-4b4f-5c46-b2c9-65c1948ce6f5",
+      "41a360f5-2b61-5b7c-8c4e-9d28528640a9",
+      "4c0b3d0c-18f3-5e44-a0a0-033904459621",
+      "65568004-9daa-5d97-bbf0-4ffaea49699d",
+      "76fa4cc7-175d-5ec3-aabb-305fc5a0c45e",
+      "8d81541e-dcf5-5d27-988a-a3d4a3b336f1",
+      "975eae8a-8ce8-5cf5-921b-f61633c6c157",
+      "981d5e50-aa69-5a63-b699-aa9c0e419a7b",
+      "a33f8316-951c-5153-a593-f3442275d529",
+      "c2cf50e9-0a6b-5c1e-853b-7bcf321f82aa",
+      "d569b4cb-8d09-5f50-a2d5-5d026fb06c49",
+      "e207a89e-53eb-5418-94fc-231ba92e404b",
+      "e56cfdda-2e01-5494-9fc2-485843b0c4c8",
+      "e830d648-d69d-595c-b293-cc69d0a57c6b",
+      "f6f43af8-de47-5680-b88c-6b37809f8d40"
+    ],
+    "field_quarantine_records": 1,
+    "whole_record_rejected": 0,
+    "project_new_ids": [
+      "07403cf5-c5f9-5cf1-8929-db6d977a8933",
+      "1dac10c9-d370-56dc-a740-e00a6e82a5a3",
+      "5e60ad82-9d9c-5644-ac2c-9b53c7db02d5",
+      "73640eb8-4a4b-5756-bcac-d6e32c6d09cf",
+      "8bceacda-e044-5766-95ba-4ec66696820f",
+      "9383b998-2d1d-5d42-bcba-70b31088f4db",
+      "dd1231fb-493c-5a85-8af1-3011a8ebf9bb",
+      "e84a239e-f7de-5744-a014-54ce00d76f35"
+    ],
+    "project_whole_candidates_withheld": 2
+  },
+  "project_candidates": {
+    "source_rows": {
+      "NGCP_March2026": 21,
+      "NGCP_September2026": 22,
+      "DOE_July2024": 9
+    },
+    "reviewed_unique_project_identities": 30,
+    "new": 8,
+    "substantively_enriched": 19,
+    "unchanged_already_evidenced": 1,
+    "withheld": 2,
+    "permanent_rejections": 0,
+    "identity_notes": [
+      "Alaminos two phases map to one canonical project.",
+      "Bataan maps to Limay, not Lamao.",
+      "Advancion Phase1 remains phased within Masinloc aggregate.",
+      "Historical Villanueva20MW not substituted for existing22.83MW.",
+      "MGEN Carmen/Toledo distinct from SMGP Toledo by provider and hostsite.",
+      "Gamu/Villanueva absence is not retirement.",
+      "September missing warning does not prove restored firm capacity."
+    ]
+  },
+  "march_rows": [
+    {
+      "plant_name": "Alaminos 2 Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": "2023-063 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Alaminos 2 Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "Alaminos BESS Inc.",
+      "former_provider_name": "Giga Ace 4, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "1219ad55-7f96-56ab-884e-3efafa30a40d",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Advancion Energy Storage Array (Phase 1)",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-064 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Advancion Energy Storage Array (Phase 1) row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "Masinloc Power Co. Ltd.",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "d569b4cb-8d09-5f50-a2d5-5d026fb06c49",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "San Manuel Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": "2023-067 RC",
+      "not_providing_contracted_firm_capacity": true,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, San Manuel Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "c2cf50e9-0a6b-5c1e-853b-7bcf321f82aa",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Lamao Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": "2023-070 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Lamao Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "0026144e-6d51-57f5-8c10-73e9ddff3867",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Bataan Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2023-086 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Bataan Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "e207a89e-53eb-5418-94fc-231ba92e404b",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Concepcion Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-091 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Concepcion Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "f6f43af8-de47-5680-b88c-6b37809f8d40",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Kabankalan Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2021-056 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Kabankalan Battery Energy Storage System row",
+      "canonical_id": "1941d28e-fcf0-59e8-bd0f-12705830fbda",
+      "decision": "Already fully evidenced; unchanged, not counted as enrichment"
+    },
+    {
+      "plant_name": "Ubay Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-068 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Ubay Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "060671a6-6831-524f-988a-23d010e082c7",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Ormoc Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-069 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Ormoc Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "41a360f5-2b61-5b7c-8c4e-9d28528640a9",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Toledo Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-074 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 1, existing_provider, Toledo Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "65568004-9daa-5d97-bbf0-4ffaea49699d",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Jasaan Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-072 RC",
+      "not_providing_contracted_firm_capacity": true,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 2, existing_provider, Jasaan Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "76fa4cc7-175d-5ec3-aabb-305fc5a0c45e",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Malita Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2023-073 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 2, existing_provider, Malita Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "a33f8316-951c-5153-a593-f3442275d529",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Maco Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2023-079 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 2, existing_provider, Maco Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": "Universal Power Solutions, Inc.",
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "4c0b3d0c-18f3-5e44-a0a0-033904459621",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Bac-Man BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Bac-Man BESS row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "Energy Development Corporation",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "22a4e407-4b4f-5c46-b2c9-65c1948ce6f5",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Alaminos 1 Battery Energy Storage System",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Alaminos 1 Battery Energy Storage System row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "Alaminos BESS Inc.",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "1219ad55-7f96-56ab-884e-3efafa30a40d",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Gamu BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Gamu BESS row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "e830d648-d69d-595c-b293-cc69d0a57c6b",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Lumban BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Lumban BESS row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "0fc4bad8-fb4f-5826-ac9b-53f5f17d1c76",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Magat BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR",
+        "RPS"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Magat BESS row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SN Aboitiz Power-Magat, Inc.",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "8d81541e-dcf5-5d27-988a-a3d4a3b336f1",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Southern Negros BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 3, certified_no_aspa, Southern Negros BESS row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "Energy Development Corporation",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "975eae8a-8ce8-5cf5-921b-f61633c6c157",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Tongonan BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 3, certified_no_aspa, Tongonan BESS row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "Energy Development Corporation",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "981d5e50-aa69-5a63-b699-aa9c0e419a7b",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    },
+    {
+      "plant_name": "Villanueva BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-03-31",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-04-10-08-44-31.%202026-19.pdf",
+      "locator": "PDF page 3, certified_no_aspa, Villanueva BESS row",
+      "source_id": "ngcp_as_202603",
+      "service_provider": "SMGP BESS Power, Inc.",
+      "former_provider_name": null,
+      "role": "Listed ancillary-service provider; not an inferred owner/operator assignment",
+      "scope_note": "Exact named phase only; no capacity or COD inferred. Certification/no-ASPA and firm-capacity warnings are not physical operating-status changes.",
+      "canonical_id": "e56cfdda-2e01-5494-9fc2-485843b0c4c8",
+      "decision": "Enrich existing canonical project; preserve phase distinctions"
+    }
+  ],
+  "september_rows": [
+    {
+      "plant_name": "Alaminos 2 Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": "2023-063 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Alaminos 2 Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Advancion Energy Storage Array (Phase 1)",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-064 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Advancion Energy Storage Array (Phase 1) row"
+    },
+    {
+      "plant_name": "San Manuel Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": "2023-067 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, San Manuel Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Lamao Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": "2023-070 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Lamao Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Bataan Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2023-086 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Bataan Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Concepcion Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-091 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Concepcion Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Lumban Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2026-088 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Lumban Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Kabankalan Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2021-056 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Kabankalan Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Ubay Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-068 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Ubay Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Ormoc Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-069 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Ormoc Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Toledo Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-074 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 1, existing_provider, Toledo Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Sangali Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2026-095 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 2, existing_provider, Sangali Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Jasaan Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": "2023-072 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 2, existing_provider, Jasaan Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Malita Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2023-073 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 2, existing_provider, Malita Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Maco Battery Energy Storage System",
+      "section": "existing_provider",
+      "service_codes": [
+        "RR"
+      ],
+      "erc_case": "2023-079 RC",
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 2, existing_provider, Maco Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Makban-Bay Geothermal Power Plant w/ BESS Unit 2",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Makban-Bay Geothermal Power Plant w/ BESS Unit 2 row"
+    },
+    {
+      "plant_name": "Bac-Man BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Bac-Man BESS row"
+    },
+    {
+      "plant_name": "Alaminos 1 Battery Energy Storage System",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Alaminos 1 Battery Energy Storage System row"
+    },
+    {
+      "plant_name": "Magat BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR",
+        "RPS"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 2, certified_no_aspa, Magat BESS row"
+    },
+    {
+      "plant_name": "Southern Negros BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 3, certified_no_aspa, Southern Negros BESS row"
+    },
+    {
+      "plant_name": "Tongonan BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 3, certified_no_aspa, Tongonan BESS row"
+    },
+    {
+      "plant_name": "Carmen BESS",
+      "section": "certified_no_aspa",
+      "service_codes": [
+        "RR",
+        "CR",
+        "RPS"
+      ],
+      "erc_case": null,
+      "not_providing_contracted_firm_capacity": false,
+      "reporting_date": "2026-09-28",
+      "date_basis": "publication_date",
+      "warning_scope": "Footnote presence only; absence does not prove delivery",
+      "source_url": "https://www.ngcp.ph/Attachment-Uploads/Customer%20Bulletin%20Nos-2026-09-29-14-42-56.%202026-51.pdf",
+      "locator": "PDF page 3, certified_no_aspa, Carmen BESS row"
+    }
+  ],
+  "additional_project_decisions": [
+    {
+      "name": "Pitogo BESS",
+      "decision": "accepted_new_historical_project",
+      "record_id": "73640eb8-4a4b-5756-bcac-d6e32c6d09cf",
+      "source_id": "doe_mindanao_committed_20240731",
+      "locator": "PDF page1, Battery Energy Storage System, Pitogo BESS row"
+    },
+    {
+      "name": "Sangali BESS",
+      "decision": "accepted_new_historical_project",
+      "record_id": "07403cf5-c5f9-5cf1-8929-db6d977a8933",
+      "source_id": "doe_mindanao_committed_20240731",
+      "locator": "PDF page1, Battery Energy Storage System, Sangali BESS row"
+    },
+    {
+      "name": "Tagum BESS",
+      "decision": "accepted_new_historical_project",
+      "record_id": "9383b998-2d1d-5d42-bcba-70b31088f4db",
+      "source_id": "doe_mindanao_committed_20240731",
+      "locator": "PDF page1, Battery Energy Storage System, Tagum BESS row"
+    },
+    {
+      "name": "Aurora BESS",
+      "decision": "accepted_new_historical_project",
+      "record_id": "8bceacda-e044-5766-95ba-4ec66696820f",
+      "source_id": "doe_mindanao_committed_20240731",
+      "locator": "PDF page1, Battery Energy Storage System, Aurora BESS row"
+    },
+    {
+      "name": "Placer BESS",
+      "decision": "accepted_new_historical_project",
+      "record_id": "5e60ad82-9d9c-5644-ac2c-9b53c7db02d5",
+      "source_id": "doe_mindanao_committed_20240731",
+      "locator": "PDF page2, Battery Energy Storage System, Placer BESS row"
+    },
+    {
+      "name": "Maramag BESS",
+      "decision": "accepted_new_historical_project",
+      "record_id": "e84a239e-f7de-5744-a014-54ce00d76f35",
+      "source_id": "doe_mindanao_committed_20240731",
+      "locator": "PDF page2, Battery Energy Storage System, Maramag BESS row"
+    },
+    {
+      "name": "General Santos BESS",
+      "decision": "accepted_new_historical_project",
+      "record_id": "dd1231fb-493c-5a85-8af1-3011a8ebf9bb",
+      "source_id": "doe_mindanao_committed_20240731",
+      "locator": "PDF page2, Battery Energy Storage System, General Santos BESS row"
+    },
+    {
+      "name": "Villanueva BESS",
+      "decision": "existing_identity; older20MW not substituted for canonical22.83MW"
+    },
+    {
+      "name": "Tagoloan BESS Phase2",
+      "decision": "withheld: phase relationship to existing Villanueva unresolved"
+    },
+    {
+      "name": "Makban-Bay Geothermal Power Plant w/ BESS Unit2",
+      "decision": "withheld: battery scope and useful technical metadata require owner/regulator source with permissible reuse"
+    }
+  ],
+  "equipment": {
+    "reviewed_unique_primary_exact_identities": 27,
+    "accepted_new": 21,
+    "enriched_existing": 0,
+    "withheld_suffix_identities": [
+      "BTL12-9K",
+      "BTL12-28L",
+      "BTL12-60R",
+      "BTL12-80R",
+      "BTL12-200R",
+      "BTL12-260R"
+    ],
+    "archive_members": 17,
+    "exact_whitespace_only_matches": 11,
+    "field_quarantine": {
+      "BTLi12-120B": "1560Wh conflicts arithmetically with120Ah×12.8V=1536Wh; energy scalar null; other facts accepted"
+    },
+    "whole_record_rejections": 0,
+    "source_exclusions": [
+      "Distributor-authored Pylon US/Force-L technical tables excluded as non-primary",
+      "Bornay restricted source not ingested"
+    ]
+  },
+  "no_project_equipment_assignments": true,
+  "new_countries": [],
+  "new_suppliers": [
+    "EFFEKTA"
+  ],
+  "supplier_role": "Product brand/supplier; cell manufacturer unknown"
+}

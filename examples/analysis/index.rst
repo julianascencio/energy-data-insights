@@ -37,6 +37,12 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
       Audit module counts from imagery and inspect a solar site in three dimensions.
 
+   .. grid-item-card:: Building thermal control
+      :link: topic_thermal_control
+      :link-type: doc
+
+      Compare normal forecasting with counterfactual HVAC scheduling.
+
 .. toctree::
    :hidden:
    :maxdepth: 1
@@ -47,3 +53,4 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
    topic_forecasting
    topic_pv_inspection
 
+   topic_thermal_control

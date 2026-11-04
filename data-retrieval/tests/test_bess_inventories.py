@@ -373,3 +373,29 @@ def test_australia_chile_ledger_preserves_scope_and_withheld_records():
     assert das["status"] == "commissioning"
     assert "commercial_operation_date" not in das
     assert "battery_manufacturers" not in das  # Supplier role is not manufacturer evidence.
+
+
+def test_repd_explicit_construction_partition_preserves_identity_and_no_cod():
+    frame = repd_frame()
+    (row,) = parse_repd_frame(frame, development_status="Under Construction", **PUBLISHED)
+    assert row["status"] == "under_construction"
+    assert json.loads(row["external_ids_json"]) == {"repd_ref_id": "2"}
+    assert "commercial_operation_date" not in row
+    assert "energy_capacity_mwh" not in row
+    (from_csv,) = parse_repd_csv(
+        frame.to_csv(index=False).encode("cp1252"),
+        development_status="Under Construction",
+        **PUBLISHED,
+    )
+    assert {k: v for k, v in from_csv.items() if k != "extensions_json"} == {
+        k: v for k, v in row.items() if k != "extensions_json"
+    }
+    frame.loc[1, "Development Status"] = "Operational"
+    same = parse_repd_frame(frame, **PUBLISHED)
+    assert row["record_id"] in {r["record_id"] for r in same}
+
+
+@pytest.mark.parametrize("status", ["Consented", "operational", "", "Under Construction "])
+def test_repd_partition_does_not_silently_accept_unknown_status(status):
+    with pytest.raises(ValueError, match="Unsupported REPD"):
+        parse_repd_frame(repd_frame(), development_status=status, **PUBLISHED)

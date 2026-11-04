@@ -1,0 +1,172 @@
+{
+  "started_at": "2026-11-04T03:50:03+00:00",
+  "validated_at": "2026-11-04T03:59:32.490326+00:00",
+  "elapsed_minutes": 9.49,
+  "timezone": "Atlantic/Canary",
+  "checks": {
+    "tests": {
+      "command": [
+        "<venv>/bin/pytest",
+        "-q"
+      ],
+      "exit_code": 1,
+      "log_sha256": "1eb79335efb544da5111d45dfce1deb34ff83a831b696012d6fafddbe0b7f878"
+    },
+    "focused": {
+      "command": [
+        "<venv>/bin/pytest",
+        "-q",
+        "data-retrieval/tests/test_bess_catalogue.py",
+        "data-retrieval/tests/test_bess_oem_catalogue.py",
+        "methods/tests/test_references.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "9cf7b79c8b729dbb66d829f4298942c5cad310f0cf42f6152af099f366b825a8"
+    },
+    "ruff": {
+      "command": [
+        "<venv>/bin/ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "format": {
+      "command": [
+        "<venv>/bin/ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "log_sha256": "2852ac673029b548db5824aefbc79efcfde7ea4554a2982f1f695c3e4a999a56"
+    },
+    "typing": {
+      "command": [
+        "<venv>/bin/ty",
+        "check",
+        "--python",
+        "<venv>/bin/python"
+      ],
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "viewer": {
+      "command": [
+        "node",
+        "--test",
+        "tests/js/test_database_viewer.mjs"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e5ebe02891074bc68c50f7907591aea5d9f3436f9ce89d669828f18e8eec0dce"
+    },
+    "projects-example": {
+      "command": [
+        "<venv>/bin/python",
+        "examples/database/plot_bess_projects.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "4e3c32919621824f8b3bb8c068cf5e7fde6acafabcb6b6191b766c96d67f9902"
+    },
+    "oem-example": {
+      "command": [
+        "<venv>/bin/python",
+        "examples/database/plot_bess_oem_catalogue.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e7e1e4c4bbcb86c2cde38c2e95edd47238d2dd07b6d1fe85ee14dcd1c8f55391"
+    },
+    "hygiene": {
+      "command": [
+        "<venv>/bin/python",
+        "scripts/check_repository.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "4d3e73b32abac757f17e5c25b02d812d1578b1d886e2db248336bf5dcc43fd0d"
+    },
+    "citations": {
+      "command": [
+        "<venv>/bin/python",
+        "scripts/check_citations.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141"
+    },
+    "diff": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs": {
+      "command": [
+        "<venv>/bin/sphinx-build",
+        "-W",
+        "--keep-going",
+        "-b",
+        "html",
+        "docs",
+        "<artifacts>/docs"
+      ],
+      "exit_code": 2,
+      "log_sha256": "99d86cd8ebb612cbc390b0506c545cfcb093785eb42770f097143fe72821af98"
+    },
+    "build": {
+      "command": [
+        "uv",
+        "build",
+        "--all-packages",
+        "--out-dir",
+        "<artifacts>/dist"
+      ],
+      "exit_code": 2,
+      "log_sha256": "f37ecdc745abe6f1e044a15fc00f59c6fb6861e37d459c1fb2581721c21bdbdc"
+    },
+    "links": {
+      "command": [
+        "<venv>/bin/python",
+        "scripts/check_docs_links.py",
+        "<artifacts>/docs"
+      ],
+      "exit_code": 1,
+      "log_sha256": "d3d873c94f432a6ebfc940c4692dce1237e9c86c2caab8f426c9488e0b1ea6b1"
+    },
+    "twine": {
+      "command": [
+        "<venv>/bin/python",
+        "-m",
+        "twine",
+        "check",
+        "--strict"
+      ],
+      "exit_code": 2,
+      "log_sha256": "73a0fc8b1a05cda6a648a99f48d9310a142616aa039fae7b9314f5c5c9814e04"
+    }
+  },
+  "summary": {
+    "focused_passed": 57,
+    "viewer_passed": 15,
+    "full_suite_passed": 2143,
+    "full_suite_errors": 15,
+    "full_suite_error_cause": "Unchanged inherited invalid UTF8 Data Center JSONL, openPR131",
+    "inherited_file": "catalogues/data_centers/records/equipment/2026-11-04-kstar-epower-ups.jsonl",
+    "inherited_sha256": "4bd4d68a59a6c65cde1bba9e8df8fbf14df252d041bf43f380325a8c3269c0f1",
+    "strict_docs": "Blocked by same inherited file; no completed-build link audit pass",
+    "catalogue_validation": "Both pass; two independent typed Zstandard builds byte-identical",
+    "preservation": "1996 old projects unchanged;764 old equipment unchanged;8 enrichments preserve all prior numeric/nested facts and creation timestamps",
+    "package_build": "Initial rootcache diskfull; no-isolation retry lacked hatchling; normal isolated build with UV_CACHE_DIR on sharedmemory succeeded for3wheels and3sdists",
+    "strict_twine": "Final six artifacts passed",
+    "new_tests": "No new parser/schema; no new tests added for reviewed factual records",
+    "remote_ci": "Not claimed",
+    "installed_wheel_smoke": "Not rerun"
+  },
+  "final_build_command": "UV_CACHE_DIR=<artifacts>/uv-cache TMPDIR=/dev/shm uv build --all-packages --out-dir <artifacts>/dist",
+  "bibliography": "8 prior queued and2 new sources integrated; historical queue files retained",
+  "finish_reason": "Selected exactcomponent and service/storage partitions exhausted. LargerKenyan candidates held for identity/allocation/reuse, not padded as thin rows.",
+  "build-final_log_sha256": "be93035ec93ef7df9a04a77b0b96f89363703e7060814ba8fea2b6afc3a0a9e0",
+  "twine-final_log_sha256": "7d0ab827179fa09acf8f2af2bd911b7e0b260ed166149a7b32d4f6304d475c4a"
+}

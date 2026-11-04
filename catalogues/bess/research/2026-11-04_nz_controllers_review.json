@@ -1,0 +1,446 @@
+{
+  "baseline_commit": "4520feadf23c270a64aeda136bd093a3b8f70065",
+  "projects": [
+    {
+      "record_id": "86bfa48b-1670-52ae-a304-5b25e386cd1c",
+      "name": "Rotohiko BESS",
+      "source_row": 1,
+      "decision": "enriched",
+      "ownership_promoted": false,
+      "date_field_quarantined": true,
+      "observations": {
+        "source_date": "2026-09-29",
+        "source_row": 1,
+        "owner_native": "WEL Network/NewPower",
+        "connection_native": "Distribution network connected",
+        "status_native": "Commissioned in December 2023",
+        "reported_duration_hours": 1.0,
+        "date_boundary": "Commissioning month is not exact commercial operation date; older status does not overwrite newer owner evidence.",
+        "commissioning_month": "2023-12"
+      }
+    },
+    {
+      "record_id": "9ef8f024-bdca-5ec2-949e-aca96f37998e",
+      "name": "Ruakākā BESS",
+      "source_row": 2,
+      "decision": "enriched",
+      "ownership_promoted": true,
+      "date_field_quarantined": false,
+      "observations": {
+        "source_date": "2026-09-29",
+        "source_row": 2,
+        "owner_native": "Meridian Energy",
+        "connection_native": "Grid connected",
+        "status_native": "Commissioned in May 2025",
+        "reported_duration_hours": 2.0,
+        "date_boundary": "Commissioning month is not exact commercial operation date; older status does not overwrite newer owner evidence.",
+        "commissioning_month": "2025-05"
+      }
+    },
+    {
+      "record_id": "0201be38-04e2-59b0-bee0-ba7a39f7b038",
+      "name": "Glenbrook-Ohurua BESS",
+      "source_row": 3,
+      "decision": "enriched",
+      "ownership_promoted": true,
+      "date_field_quarantined": false,
+      "observations": {
+        "source_date": "2026-09-29",
+        "source_row": 3,
+        "owner_native": "Contact Energy",
+        "connection_native": "Grid connected",
+        "status_native": "Commissioned in March 2026",
+        "reported_duration_hours": 2.0,
+        "date_boundary": "Commissioning month is not exact commercial operation date; older status does not overwrite newer owner evidence.",
+        "commissioning_month": "2026-03"
+      }
+    },
+    {
+      "record_id": "b9996295-befd-5158-9c8c-b150296b76df",
+      "name": "Glenbrook Ohurua Battery 2",
+      "source_row": 4,
+      "decision": "enriched",
+      "ownership_promoted": true,
+      "date_field_quarantined": false,
+      "observations": {
+        "source_date": "2026-09-29",
+        "source_row": 4,
+        "owner_native": "Contact Energy",
+        "connection_native": "Grid connected",
+        "status_native": "Under construction",
+        "reported_duration_hours": 2.0,
+        "date_boundary": "Commissioning month is not exact commercial operation date; older status does not overwrite newer owner evidence."
+      }
+    },
+    {
+      "record_id": "f7469722-7710-5de8-8be2-b005af67b204",
+      "name": "Huntly BESS Stage 1",
+      "source_row": 5,
+      "decision": "enriched",
+      "ownership_promoted": true,
+      "date_field_quarantined": false,
+      "observations": {
+        "source_date": "2026-09-29",
+        "source_row": 5,
+        "owner_native": "Genesis Energy",
+        "connection_native": "Grid connected",
+        "status_native": "Commissioning",
+        "reported_duration_hours": 2.0,
+        "date_boundary": "Commissioning month is not exact commercial operation date; older status does not overwrite newer owner evidence."
+      }
+    },
+    {
+      "record_id": "eb16b1cc-ff0e-50ce-9b27-a7aef56c73b5",
+      "name": "Huntly BESS Stage 2",
+      "source_row": 6,
+      "decision": "enriched",
+      "ownership_promoted": true,
+      "date_field_quarantined": false,
+      "observations": {
+        "source_date": "2026-09-29",
+        "source_row": 6,
+        "owner_native": "Genesis Energy",
+        "connection_native": "Grid connected",
+        "status_native": "Committed",
+        "reported_duration_hours": 2.0,
+        "date_boundary": "Commissioning month is not exact commercial operation date; older status does not overwrite newer owner evidence."
+      }
+    }
+  ],
+  "equipment": [
+    {
+      "record_id": "7dd2f263-d907-5006-b7e6-a366e1dc5ff4",
+      "model": "iStoragE1 3600",
+      "source_id": "kehua_hybrid_control_16_20261104",
+      "panel": 1,
+      "decision": "new",
+      "native_fields": {
+        "MPPT voltage range": "100~550Vdc",
+        "Max. PV input current": "15A/15A",
+        "Rated AC output voltage": "230Vac",
+        "Rated output frequency": "50Hz",
+        "Rated output power": "3.6kW",
+        "Max. efficiency": "97.70%",
+        "Energy capacity(With iStoragE B5-S1)": "5-40kWh"
+      }
+    },
+    {
+      "record_id": "1592ca26-704f-551f-bbe6-b094c7417261",
+      "model": "iStoragE1 5000",
+      "source_id": "kehua_hybrid_control_16_20261104",
+      "panel": 2,
+      "decision": "new",
+      "native_fields": {
+        "MPPT voltage range": "100~550Vdc",
+        "Max. PV input current": "15A/15A",
+        "Rated AC output voltage": "230Vac",
+        "Rated output frequency": "50Hz",
+        "Rated output power": "5.0kW",
+        "Max. efficiency": "97.70%",
+        "Energy capacity(With iStoragE B5-S1)": "5-40kWh"
+      }
+    },
+    {
+      "record_id": "044da839-dc58-5ac6-bc01-a193f8169ba4",
+      "model": "iStoragE1 6000",
+      "source_id": "kehua_hybrid_control_16_20261104",
+      "panel": 3,
+      "decision": "new",
+      "native_fields": {
+        "MPPT voltage range": "100~550Vdc",
+        "Max. PV input current": "15A/15A",
+        "Rated AC output voltage": "230Vac",
+        "Rated output frequency": "50Hz",
+        "Rated output power": "6.0kW",
+        "Max. efficiency": "97.70%",
+        "Energy capacity(With iStoragE B5-S1)": "5-40kWh"
+      }
+    },
+    {
+      "page": "https://digitalenergy.kehua.com/energy-storage-specification/modular-pcs-cabinet-US.html",
+      "models": [
+        "PCS Cabinet"
+      ],
+      "decision": "held",
+      "reason": "Generic PCS Cabinet label lacks exact model/configuration identity"
+    },
+    {
+      "record_id": "226b7562-96e6-5c46-9340-ab2a4d0e413e",
+      "model": "BTS200K-K-HUD/T",
+      "source_id": "kehua_hybrid_control_20_20261104",
+      "panel": 1,
+      "decision": "new",
+      "native_fields": {
+        "Grid capacity": "200KVA",
+        "Transformer power": "100KW",
+        "Maximum load-side AC power": "110KW",
+        "storage side": "110KW (@400Vac)",
+        "Access Capacity": "ESS ≤1 unit",
+        "Switch Selection": "Contactor type",
+        "Switching time": "<100ms",
+        "Permissible grid voltage range": "360~440Vac",
+        "Rated grid voltage": "400Vac",
+        "Frequency": "50Hz",
+        "Wiring Method": "3W+PE+N",
+        "Efficiency": "97%",
+        "Maximum working altitude": "3000m (>2000m derating)",
+        "Working environment temperature": "-35~55°C",
+        "Working humidity range": "0~100% (no-condensing)",
+        "System storage temperature range": "-40~70°C",
+        "Weights (T)": "1.5",
+        "Dimensions (D*W*H)": "1200*1300*2249mm",
+        "Communication protocols": "MODBUS TCP/ IEC104/61850",
+        "Inlet method": "bottom in and bottom out",
+        "Safeguard": "EPO/Over-temperature protection/Over-load protection",
+        "Anti-corrsion grade": "C3(C5 optional)",
+        "Protection class": "IP55",
+        "Cooling method": "Air cooling"
+      }
+    },
+    {
+      "record_id": "489e147b-5d65-5eaf-9552-c569094cbeb2",
+      "model": "BTS600K-K-HUD/T",
+      "source_id": "kehua_hybrid_control_20_20261104",
+      "panel": 2,
+      "decision": "new",
+      "native_fields": {
+        "Grid capacity": "600KVA",
+        "Transformer power": "300KW",
+        "Maximum load-side AC power": "330KW",
+        "storage side": "330KW (@400Vac)",
+        "Access Capacity": "ESS ≤3 unit",
+        "Switch Selection": "Contactor type",
+        "Switching time": "<100ms",
+        "Permissible grid voltage range": "360~440Vac",
+        "Rated grid voltage": "400Vac",
+        "Frequency": "50Hz",
+        "Wiring Method": "3W+PE+N",
+        "Efficiency": "97%",
+        "Maximum working altitude": "3000m (>2000m derating)",
+        "Working environment temperature": "-35~55°C",
+        "Working humidity range": "0~100% (no-condensing)",
+        "System storage temperature range": "-40~70°C",
+        "Weights (T)": "1.8",
+        "Dimensions (D*W*H)": "1200*1300*2249mm",
+        "Communication protocols": "MODBUS TCP/ IEC104/61850",
+        "Inlet method": "bottom in and bottom out",
+        "Safeguard": "EPO/Over-temperature protection/Over-load protection",
+        "Anti-corrsion grade": "C3(C5 optional)",
+        "Protection class": "IP55",
+        "Cooling method": "Air cooling"
+      }
+    },
+    {
+      "record_id": "6f1ec684-df07-5744-8402-dbfd89adbbe0",
+      "model": "BTS1000K-K-HUD/T",
+      "source_id": "kehua_hybrid_control_20_20261104",
+      "panel": 3,
+      "decision": "new",
+      "native_fields": {
+        "Grid capacity": "1000KVA",
+        "Transformer power": "500KW",
+        "Maximum load-side AC power": "550KW",
+        "storage side": "550KW (@400Vac)",
+        "Access Capacity": "ESS ≤5 unit",
+        "Switch Selection": "Contactor type",
+        "Switching time": "<100ms",
+        "Permissible grid voltage range": "360~440Vac",
+        "Rated grid voltage": "400Vac",
+        "Frequency": "50Hz",
+        "Wiring Method": "3W+PE+N",
+        "Efficiency": "97%",
+        "Maximum working altitude": "3000m (>2000m derating)",
+        "Working environment temperature": "-35~55°C",
+        "Working humidity range": "0~100% (no-condensing)",
+        "System storage temperature range": "-40~70°C",
+        "Weights (T)": "2.3",
+        "Dimensions (D*W*H)": "1200*1300*2249mm",
+        "Communication protocols": "MODBUS TCP/ IEC104/61850",
+        "Inlet method": "bottom in and bottom out",
+        "Safeguard": "EPO/Over-temperature protection/Over-load protection",
+        "Anti-corrsion grade": "C3(C5 optional)",
+        "Protection class": "IP55",
+        "Cooling method": "Air cooling"
+      }
+    },
+    {
+      "record_id": "b7b5c519-d5cc-5135-b7e3-f4252a187bf9",
+      "model": "KM-ECU-30",
+      "source_id": "kehua_hybrid_control_21_20261104",
+      "panel": 1,
+      "decision": "new",
+      "native_fields": {
+        "Number of Access Units": "≤10",
+        "ESS LAN interface": "10 independent 100M network ports",
+        "RS485 interface": "4",
+        "Northbound LAN interface": "2 independent 100M network ports",
+        "Wireless communications": "WIFI",
+        "DC power supply": "24Vdc±10%, 1A",
+        "AC power supply": "195-264Vac, 0.1A",
+        "Working environment temperature": "-35~55°C",
+        "Storage environment temperature": "-40~70°C",
+        "Relative humidity": "0~100% (no-condensing)",
+        "Anti-corrsion grade": "C3 (C5 optional)",
+        "Protection class": "IP65"
+      }
+    },
+    {
+      "record_id": "045090dc-081f-5259-9bd7-c51124750830",
+      "model": "iStoragE3 5k",
+      "source_id": "kehua_hybrid_control_22_20261104",
+      "panel": 1,
+      "decision": "new",
+      "native_fields": {
+        "MPPT voltage range": "150~900Vdc",
+        "Max. PV input current": "16A/16A",
+        "Rated AC output voltage": "400V",
+        "Rated output frequency": "50Hz",
+        "Rated output power": "5kW",
+        "Max. efficiency": "98.30%",
+        "Energy capacity (With iStoragE B5-S2)": "5-40kWh"
+      }
+    },
+    {
+      "record_id": "279f3808-5fa9-57c3-9b4f-7982b2f4cbaa",
+      "model": "iStoragE3 6k",
+      "source_id": "kehua_hybrid_control_22_20261104",
+      "panel": 2,
+      "decision": "new",
+      "native_fields": {
+        "MPPT voltage range": "150~900Vdc",
+        "Max. PV input current": "16A/16A",
+        "Rated AC output voltage": "400V",
+        "Rated output frequency": "50Hz",
+        "Rated output power": "6kW",
+        "Max. efficiency": "98.30%",
+        "Energy capacity(With iStoragE B5-S2)": "5-40kWh"
+      }
+    },
+    {
+      "record_id": "32215502-1973-5ad7-bfbb-ab5f4a852e44",
+      "model": "iStoragE3 8k",
+      "source_id": "kehua_hybrid_control_22_20261104",
+      "panel": 3,
+      "decision": "new",
+      "native_fields": {
+        "MPPT voltage range": "150~900Vdc",
+        "Max. PV input current": "27A/16A",
+        "Rated AC output voltage": "400V",
+        "Rated output frequency": "50Hz",
+        "Rated output power": "8kW",
+        "Max. efficiency": "98.30%",
+        "Energy capacity(With iStoragE B5-S2)": "5-40kWh"
+      }
+    },
+    {
+      "record_id": "794f8051-fa32-50b4-b2d3-43502db4b35b",
+      "model": "iStoragE3 10k",
+      "source_id": "kehua_hybrid_control_22_20261104",
+      "panel": 4,
+      "decision": "new",
+      "native_fields": {
+        "MPPT voltage range": "150~900Vdc",
+        "Max. PV input current": "27A/16A",
+        "Rated AC output voltage": "400V",
+        "Rated output frequency": "50Hz",
+        "Rated output power": "10kW",
+        "Max. efficiency": "98.30%",
+        "Energy capacity(With iStoragE B5-S2)": "5-40kWh"
+      }
+    },
+    {
+      "record_id": "7a4e9016-8a51-5233-858f-72df1342ce94",
+      "model": "iStoragE3 12k",
+      "source_id": "kehua_hybrid_control_22_20261104",
+      "panel": 5,
+      "decision": "new",
+      "native_fields": {
+        "MPPT voltage range": "150~900Vdc",
+        "Max. PV input current": "27A/16A",
+        "Rated AC output voltage": "400V",
+        "Rated output frequency": "50Hz",
+        "Rated output power": "12kW",
+        "Max. efficiency": "98.30%",
+        "Energy capacity(With iStoragE B5-S2)": "5-40kWh"
+      }
+    },
+    {
+      "page": "https://digitalenergy.kehua.com/energy-storage-specification/wifi-stick.html",
+      "models": [
+        "KC762A",
+        "KC761B"
+      ],
+      "decision": "excluded",
+      "reason": "Generic Wi-Fi/4G connectivity accessories; no demonstrated BMS/EMS functionality. Outside selected useful BESS model scope."
+    },
+    {
+      "model": "ePowerControl MC - XS",
+      "record_id": "e70b23b1-d34a-52c7-ac12-eee1d26de7a7",
+      "decision": "new",
+      "source_id": "elum_mc_five_configurations_20261104",
+      "locator": "p2 MC - XS column and merged rows",
+      "unit_field_quarantined": false,
+      "product_status": "preliminary",
+      "controlled_bess_energy_is_not_battery_energy": true
+    },
+    {
+      "model": "ePowerControl MC - S",
+      "record_id": "3d8ac6f2-c101-5e01-a818-2cd98936e333",
+      "decision": "new",
+      "source_id": "elum_mc_five_configurations_20261104",
+      "locator": "p2 MC - S column and merged rows",
+      "unit_field_quarantined": false,
+      "product_status": "preliminary",
+      "controlled_bess_energy_is_not_battery_energy": true
+    },
+    {
+      "model": "ePowerControl MC - M",
+      "record_id": "ef099a34-3e70-5a9b-83ca-1f37ed923462",
+      "decision": "new",
+      "source_id": "elum_mc_five_configurations_20261104",
+      "locator": "p2 MC - M column and merged rows",
+      "unit_field_quarantined": false,
+      "product_status": "preliminary",
+      "controlled_bess_energy_is_not_battery_energy": true
+    },
+    {
+      "model": "ePowerControl MC - L",
+      "record_id": "a50be720-e74f-52c1-beb9-fdb2e8ed420f",
+      "decision": "new",
+      "source_id": "elum_mc_five_configurations_20261104",
+      "locator": "p2 MC - L column and merged rows",
+      "unit_field_quarantined": false,
+      "product_status": "preliminary",
+      "controlled_bess_energy_is_not_battery_energy": true
+    },
+    {
+      "model": "ePowerControl MC - XL",
+      "record_id": "4d80a8e2-6feb-5de1-b180-ba234243430e",
+      "decision": "new",
+      "source_id": "elum_mc_five_configurations_20261104",
+      "locator": "p2 MC - XL column and merged rows",
+      "unit_field_quarantined": true,
+      "product_status": "preliminary",
+      "controlled_bess_energy_is_not_battery_energy": true
+    }
+  ],
+  "candidate_counts": {
+    "ea_table_candidates": 6,
+    "projects_new": 0,
+    "projects_enriched": 6,
+    "project_field_quarantines": 1,
+    "owner_source_leads_withheld_for_terms": 2,
+    "equipment_panel_candidates": 20,
+    "equipment_new": 17,
+    "equipment_enriched": 0,
+    "equipment_field_quarantines": 1,
+    "equipment_identity_hold": 1,
+    "equipment_accessories_excluded": 2
+  },
+  "previous_holds": "All earlier holds retained; no retry of Kehua403 PDFs before24h backoff",
+  "source_notes": {
+    "Transpower": "Fresh8October2026 landing page and terms rechecked; same prior partition remains held. No fresh row batch reimported or counted.",
+    "Meridian": "Ruakaka/Bunnythorpe originals reviewed; restrictive website terms preclude this planned redistribution. No facts imported from these pages.",
+    "Saft": "Discovery only; original reader502 and terms timeout, no accepted source or inferred specifications."
+  }
+}

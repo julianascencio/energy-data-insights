@@ -27,7 +27,12 @@ def main() -> None:
     parser.add_argument("--source-id", required=True)
     parser.add_argument("--root", type=Path, default=Path("catalogues/bess"))
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--repd-status", choices=["Operational", "Under Construction"], default="Operational"
+    )
     args = parser.parse_args()
+    if args.provider != "repd" and args.repd_status != "Operational":
+        parser.error("--repd-status applies only to REPD")
     sources = json.loads((args.root / "sources.json").read_text())
     source = sources[args.source_id]
     content = args.input.read_bytes()
@@ -36,7 +41,12 @@ def main() -> None:
     if args.provider == "eia860":
         rows = parse_eia860_archive(content, year=source["report_year"], **common)
     elif args.provider == "repd":
-        rows = parse_repd_csv(content, published_date=source["published_date"], **common)
+        rows = parse_repd_csv(
+            content,
+            published_date=source["published_date"],
+            development_status=args.repd_status,
+            **common,
+        )
     else:
         rows = parse_inventory_workbook(
             content, provider=args.provider, published_date=source["published_date"], **common

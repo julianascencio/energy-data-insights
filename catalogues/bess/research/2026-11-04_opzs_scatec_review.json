@@ -1,0 +1,455 @@
+{
+  "projects": {
+    "new": 2,
+    "enriched": 6,
+    "field_quarantined_records": 1,
+    "decisions": [
+      {
+        "name": "Dandara phase 1 BESS",
+        "decision": "substantive_enrichment",
+        "fields": [
+          "extensions_json",
+          "power_capacity_mw",
+          "power_basis"
+        ],
+        "record_id": "cc4efaca-9737-5b04-bb8b-a98ad54ff25a"
+      },
+      {
+        "name": "Mogobe BESS",
+        "decision": "substantive_enrichment",
+        "fields": [
+          "extensions_json"
+        ],
+        "record_id": "ef985309-033d-5341-9413-d274f07452c8"
+      },
+      {
+        "name": "Binga BESS",
+        "decision": "substantive_enrichment",
+        "fields": [
+          "extensions_json"
+        ],
+        "record_id": "a5985b95-a390-51d5-9650-82243694dd58"
+      },
+      {
+        "name": "Binga BESS 2",
+        "decision": "substantive_enrichment",
+        "fields": [
+          "extensions_json"
+        ],
+        "record_id": "7bf39469-18fe-5fc5-af76-ab47203897ae"
+      },
+      {
+        "name": "Ambuklao BESS",
+        "decision": "substantive_enrichment",
+        "fields": [
+          "extensions_json"
+        ],
+        "record_id": "9ed14307-7e5b-5a7d-b1a5-77fa14c6e5aa"
+      },
+      {
+        "name": "Energy Valley BESS",
+        "decision": "substantive_enrichment",
+        "fields": [
+          "extensions_json"
+        ],
+        "record_id": "faf9b2b3-4f24-5a61-bee7-276a2dbeb224"
+      },
+      {
+        "name": "Buciumi BESS",
+        "decision": "new",
+        "record_id": "2dfa4396-7e15-595f-960b-66a7dbce9255"
+      },
+      {
+        "name": "Dandara phase 2 BESS",
+        "decision": "new",
+        "record_id": "0083ab54-4c57-527a-b782-4de97d2f3d71"
+      }
+    ],
+    "preserved_unchanged": 2000,
+    "rights_held": 5,
+    "rights_held_note": "Five UJVN portfolio sites; no UJVN/UERC facts imported. EBRD Buciumi technical details separately held; owner identity accepted.",
+    "unchanged_reviewed": [
+      {
+        "name": "Haru BESS",
+        "reason": "Rounded economic-interest observation alone is not substantive enrichment."
+      }
+    ]
+  },
+  "equipment": {
+    "candidate_sheets": 24,
+    "candidate_models": 16,
+    "new": 16,
+    "enriched": 0,
+    "field_quarantined_records": 9,
+    "whole_record_rejected": 0,
+    "models": [
+      {
+        "model": "5OPzS350",
+        "sheets": 2,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_5opzs350_telecom_20261104",
+          "leoch_5opzs350_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {
+          "edition_physical_difference": {
+            "source_ids": [
+              "leoch_5opzs350_telecom_20261104",
+              "leoch_5opzs350_standard_20261104"
+            ],
+            "fields": [
+              "approximate_mass_kg",
+              "dry_mass_kg",
+              "terminal"
+            ],
+            "disposition": "Same exact marketed code appears in two URL editions with different physical specifications. One canonical identity; no terminal or mass scalar selected. See edition_observations."
+          },
+          "regional_physical_difference": {
+            "source_ids": [
+              "leoch_india_opzs_20261104",
+              "leoch_5opzs350_telecom_20261104",
+              "leoch_5opzs350_standard_20261104"
+            ],
+            "regional_approximate_mass_kg": 28.3,
+            "regional_terminal": "M10",
+            "disposition": "No silent reconciliation of undated regional table and revisioned sheets."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "6OPzS420",
+        "sheets": 2,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_6opzs420_telecom_20261104",
+          "leoch_6opzs420_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {
+          "edition_physical_difference": {
+            "source_ids": [
+              "leoch_6opzs420_telecom_20261104",
+              "leoch_6opzs420_standard_20261104"
+            ],
+            "fields": [
+              "approximate_mass_kg",
+              "dry_mass_kg",
+              "terminal"
+            ],
+            "disposition": "Same exact marketed code appears in two URL editions with different physical specifications. One canonical identity; no terminal or mass scalar selected. See edition_observations."
+          },
+          "regional_physical_difference": {
+            "source_ids": [
+              "leoch_india_opzs_20261104",
+              "leoch_6opzs420_telecom_20261104",
+              "leoch_6opzs420_standard_20261104"
+            ],
+            "regional_approximate_mass_kg": 32.7,
+            "regional_terminal": "M10",
+            "disposition": "No silent reconciliation of undated regional table and revisioned sheets."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "7OPzS490",
+        "sheets": 2,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_7opzs490_telecom_20261104",
+          "leoch_7opzs490_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {
+          "edition_physical_difference": {
+            "source_ids": [
+              "leoch_7opzs490_telecom_20261104",
+              "leoch_7opzs490_standard_20261104"
+            ],
+            "fields": [
+              "approximate_mass_kg",
+              "dry_mass_kg",
+              "terminal"
+            ],
+            "disposition": "Same exact marketed code appears in two URL editions with different physical specifications. One canonical identity; no terminal or mass scalar selected. See edition_observations."
+          },
+          "regional_physical_difference": {
+            "source_ids": [
+              "leoch_india_opzs_20261104",
+              "leoch_7opzs490_telecom_20261104",
+              "leoch_7opzs490_standard_20261104"
+            ],
+            "regional_approximate_mass_kg": 38.0,
+            "regional_terminal": "M10",
+            "disposition": "No silent reconciliation of undated regional table and revisioned sheets."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "8OPzS800",
+        "sheets": 2,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_8opzs800_telecom_20261104",
+          "leoch_8opzs800_standard_20261104"
+        ],
+        "field_quarantines": {
+          "edition_physical_difference": {
+            "source_ids": [
+              "leoch_8opzs800_telecom_20261104",
+              "leoch_8opzs800_standard_20261104"
+            ],
+            "fields": [
+              "approximate_mass_kg",
+              "dry_mass_kg",
+              "terminal"
+            ],
+            "disposition": "Same exact marketed code appears in two URL editions with different physical specifications. One canonical identity; no terminal or mass scalar selected. See edition_observations."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "10OPzS1000",
+        "sheets": 2,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_10opzs1000_telecom_20261104",
+          "leoch_10opzs1000_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {
+          "edition_physical_difference": {
+            "source_ids": [
+              "leoch_10opzs1000_telecom_20261104",
+              "leoch_10opzs1000_standard_20261104"
+            ],
+            "fields": [
+              "approximate_mass_kg",
+              "dry_mass_kg",
+              "terminal"
+            ],
+            "disposition": "Same exact marketed code appears in two URL editions with different physical specifications. One canonical identity; no terminal or mass scalar selected. See edition_observations."
+          },
+          "regional_physical_difference": {
+            "source_ids": [
+              "leoch_india_opzs_20261104",
+              "leoch_10opzs1000_telecom_20261104",
+              "leoch_10opzs1000_standard_20261104"
+            ],
+            "regional_approximate_mass_kg": 77.4,
+            "regional_terminal": "M10",
+            "disposition": "No silent reconciliation of undated regional table and revisioned sheets."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "12OPzS1200",
+        "sheets": 2,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_12opzs1200_telecom_20261104",
+          "leoch_12opzs1200_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {
+          "edition_physical_difference": {
+            "source_ids": [
+              "leoch_12opzs1200_telecom_20261104",
+              "leoch_12opzs1200_standard_20261104"
+            ],
+            "fields": [
+              "approximate_mass_kg",
+              "dry_mass_kg",
+              "terminal"
+            ],
+            "disposition": "Same exact marketed code appears in two URL editions with different physical specifications. One canonical identity; no terminal or mass scalar selected. See edition_observations."
+          },
+          "regional_physical_difference": {
+            "source_ids": [
+              "leoch_india_opzs_20261104",
+              "leoch_12opzs1200_telecom_20261104",
+              "leoch_12opzs1200_standard_20261104"
+            ],
+            "regional_approximate_mass_kg": 91.7,
+            "regional_terminal": "M10",
+            "disposition": "No silent reconciliation of undated regional table and revisioned sheets."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "12OPzS1500",
+        "sheets": 2,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_12opzs1500_telecom_20261104",
+          "leoch_12opzs1500_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {
+          "edition_physical_difference": {
+            "source_ids": [
+              "leoch_12opzs1500_telecom_20261104",
+              "leoch_12opzs1500_standard_20261104"
+            ],
+            "fields": [
+              "approximate_mass_kg",
+              "dry_mass_kg",
+              "terminal"
+            ],
+            "disposition": "Same exact marketed code appears in two URL editions with different physical specifications. One canonical identity; no terminal or mass scalar selected. See edition_observations."
+          },
+          "regional_physical_difference": {
+            "source_ids": [
+              "leoch_india_opzs_20261104",
+              "leoch_12opzs1500_telecom_20261104",
+              "leoch_12opzs1500_standard_20261104"
+            ],
+            "regional_approximate_mass_kg": 113.8,
+            "regional_terminal": "M10",
+            "disposition": "No silent reconciliation of undated regional table and revisioned sheets."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "16OPzS2000",
+        "sheets": 1,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_16opzs2000_telecom_20261104"
+        ],
+        "field_quarantines": {},
+        "accepted": true
+      },
+      {
+        "model": "20OPzS2500",
+        "sheets": 1,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_20opzs2500_telecom_20261104"
+        ],
+        "field_quarantines": {},
+        "accepted": true
+      },
+      {
+        "model": "24OPzS3000",
+        "sheets": 2,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_24opzs3000_telecom_20261104",
+          "leoch_24opzs3000_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {
+          "edition_physical_difference": {
+            "source_ids": [
+              "leoch_24opzs3000_telecom_20261104",
+              "leoch_24opzs3000_standard_20261104"
+            ],
+            "fields": [
+              "approximate_mass_kg",
+              "dry_mass_kg",
+              "terminal"
+            ],
+            "disposition": "Same exact marketed code appears in two URL editions with different physical specifications. One canonical identity; no terminal or mass scalar selected. See edition_observations."
+          },
+          "regional_physical_difference": {
+            "source_ids": [
+              "leoch_india_opzs_20261104",
+              "leoch_24opzs3000_telecom_20261104",
+              "leoch_24opzs3000_standard_20261104"
+            ],
+            "regional_approximate_mass_kg": 224.8,
+            "regional_terminal": "M10",
+            "disposition": "No silent reconciliation of undated regional table and revisioned sheets."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "2OPzS100",
+        "sheets": 1,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_2opzs100_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {},
+        "accepted": true
+      },
+      {
+        "model": "3OPzS150",
+        "sheets": 1,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_3opzs150_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {},
+        "accepted": true
+      },
+      {
+        "model": "4OPzS200",
+        "sheets": 1,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_4opzs200_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {},
+        "accepted": true
+      },
+      {
+        "model": "5OPzS250",
+        "sheets": 1,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_5opzs250_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {},
+        "accepted": true
+      },
+      {
+        "model": "6OPzS300",
+        "sheets": 1,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_6opzs300_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {
+          "regional_physical_difference": {
+            "source_ids": [
+              "leoch_india_opzs_20261104",
+              "leoch_6opzs300_standard_20261104"
+            ],
+            "regional_approximate_mass_kg": 24.5,
+            "regional_terminal": "M10",
+            "disposition": "No silent reconciliation of undated regional table and revisioned sheets."
+          }
+        },
+        "accepted": true
+      },
+      {
+        "model": "6OPzS600",
+        "sheets": 1,
+        "source_ids": [
+          "leoch_opzs_index_20261104",
+          "leoch_6opzs600_standard_20261104",
+          "leoch_india_opzs_20261104"
+        ],
+        "field_quarantines": {},
+        "accepted": true
+      }
+    ]
+  },
+  "whole_record_rejections": 0,
+  "previous_holds": "All earlier AEMO/CNE, India and OEM holds retained. Thirteen OPzS holds resolved by exact-sheet review; the three old differing12Videntities remain held."
+}
