@@ -6791,3 +6791,219 @@ Galataud, Antoine (2026). **Are time series foundation models good zero-shot the
 **Role:** implemented. Reanalysis of published numerical EnergyPlus and Timestral outputs, not new model inference. Start-gated event convention inferred from published numerical event times; unrestricted crossings retained.
 
 **Used by:** `methods/src/energy_methods/thermal_counterfactual.py`, `docs/thermal-counterfactual.md`.
+
+### mnre_component_0_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for MWL160-5.2MW**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/202512261376636958.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_1_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for WD147-3000**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/202512261707251202.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_2_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for WD164-3300**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/202512261520340230.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_3_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for MWL-160-5.2MW HYT-140m**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/20251226548009955.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_4_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for EN-156/3.3 (LM76.5 P and EN 76.5 A V2)**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/08/20260821911204082.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_5_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for EN-182/5.0 IEC S 50Hz**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/02/202602101129651878.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_6_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for GE 3.8-154**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260602168592999.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_7_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for INOX DF/3000/145 3.0 MW Power Booster Mode 3.3 MW**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/08/20260821510614236.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_8_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for Senvion 3.1M130**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/10/202510011284534893.pdf)
+
+**Role:** data. Undated manufacturer-submitted disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_almm_wtc_20260602
+
+Ministry of New and Renewable Energy, Government of India (2026). **Approved List of Models and Manufacturers for Wind Turbine Components (ALMM-WTC)**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260603203651222.pdf)
+
+**Role:** data. As on02.06.2026; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_9_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for wind turbine Model No: Senvion 4.2M160**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_11_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major Component details for the Wind Turbine Model No: Pioneer Wincon 750/49,750.0 kW, HT24, HH 61.5&HH75.0m, IEC IIIB**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/2025120215394926.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_12_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major Component details for the Wind Turbine Model No: Pioneer Wincon 750/57, 750.0 kW, PW 28.0, HH 90.0m IEC III A**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/20251202195561748.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_13_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major Component details for Wind Turbine Model no. SI-16840**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/202606021390750716.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_14_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for wind turbine Model No: Venwind wind turbine GWH182-5.3**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/08/202608211005381120.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### suzlon_s144_tc240121_rev2
+
+DEWI-OCC Offshore and Certification Centre GmbH (2024). **Suzlon S144-3.0 / 3.15 MW type certificate TC-240121 Rev.2**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2024/06/202406031500179679.pdf)
+
+**Role:** data. TC-240121 Rev.2 issued 6 May 2024; page 6 gearbox options; historical certificate conditions, not current eligibility. Original SHA256 in source registry.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_22987
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22987 Resolución de 22 de octubre de 2026, de la Dirección General de Calidad y Evaluación Ambiental, por la que se formula declaración de impacto ambiental del «Proyecto Módulo de Generación Eólica "Las Quinientas", para su hibridación con el parque fotovoltaico existente "Las Quinientas", y para su infraestructura de evacuación, en la provincia de Cádiz».**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22987)
+
+**Role:** data. Official resolution 2026-10-22; publication 2026-11-02. Original HTML SHA256 in source registry; technology and procedural boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`, `data-retrieval/src/energy_data_retrieval/wind_catalogue/boe.py`.
+
+### boe_a_2026_17271
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-17271 Resolución de 1 de julio de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Desarrollos Renovables Eólicos y Solares, SLU, de la solicitud de autorización administrativa previa y autorización administrativa de construcción del parque eólico «Taraguilla», de 62,7 MW de potencia instalada, y de su infraestructura de evacuación, en la provincia de Cádiz.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-17271)
+
+**Role:** data. Official resolution 2026-07-01; publication 2026-08-07. Original HTML SHA256 in source registry; technology and procedural boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_19188
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-19188 Resolución de 18 de agosto de 2026, de la Dirección General de Política Energética y Minas, por la que se corrigen errores en la de 1 de julio de 2026, por la que se acepta el desistimiento formulado por Desarrollos Renovables Eólicos y Solares, SLU, de la solicitud de autorización administrativa previa y autorización administrativa de construcción del parque eólico «Taraguilla», de 62,7 MW de potencia instalada, y de su infraestructura de evacuación, en la provincia de Cádiz.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-19188)
+
+**Role:** data. Official resolution 2026-08-18; publication 2026-09-14. Original HTML SHA256 in source registry; technology and procedural boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_22986
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22986 Resolución de 19 de octubre de 2026, de la Dirección General de Calidad y Evaluación Ambiental, por la que se formula declaración de impacto ambiental del proyecto «Hibridación de la planta solar fotovoltaica PFV Herrera de los Navarros, de 21 MW de potencia instalada, con el parque eólico Herrera de los Navarros existente de 35 MW y su infraestructura de evacuación, en la provincia de Zaragoza».**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22986)
+
+**Role:** data. Official resolution 2026-10-19; publication 2026-11-02. Original HTML SHA256 in source registry; technology and procedural boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_23160
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-23160 Resolución de 18 de octubre de 2026, de la Dirección General de Política Energética y Minas, por la que se otorga a Estudios y Proyectos Pradamap, SLU, autorización administrativa previa y autorización administrativa de construcción para una línea subterránea a 13,2 kV y un centro de transformación de servicios auxiliares, para punto de suministro en la subestación seccionadora «Villalba 220 kV», como parte de las infraestructuras de evacuación de parque eólico «Pinta y Guindalera», en La Mudarra (Valladolid).**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-23160)
+
+**Role:** data. Official resolution 2026-10-18; publication 2026-11-04. Original HTML SHA256 in source registry; technology and procedural boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_21854
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-21854 Resolución de 9 de septiembre de 2026, de la Dirección General de Política Energética y Minas, por la que se desestima la solicitud de Iberenova Promociones, SA, de autorización administrativa previa y autorización de construcción de la instalación fotovoltaica Los Campillos, de 33,825 MW de potencia instalada, para su hibridación con el parque eólico Los Campillos, de 34 MW de potencia instalada, en la provincia de Soria.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21854)
+
+**Role:** data. Official resolution 2026-09-09; publication 2026-10-20. Original HTML SHA256 in source registry; technology and procedural boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_21859
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-21859 Resolución de 25 de septiembre de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Greenalia Wind Power Nordés, SLU, de la solicitud de autorización administrativa previa del parque eólico «Nordés», de 67,2 MW de potencia instalada, y de su infraestructura de evacuación, en las provincias de Lugo y A Coruña.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21859)
+
+**Role:** data. Official resolution 2026-09-25; publication 2026-10-20. Original HTML SHA256 in source registry; technology and procedural boundaries retained.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_21939
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-21939 Resolución de 9 de septiembre de 2026, de la Dirección General de Política Energética y Minas, por la que se desestima la solicitud de Cefiro Holdco 7, SL, de autorización administrativa previa del parque eólico El Páramo, de 92,4 MW, en la provincia de León.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21939)
+
+**Role:** data. Dated decision 2026-09-09; original HTML checksum and scope qualifications in wind registry.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_22067
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22067 Resolución de 2 de octubre de 2026, de la Dirección General de Calidad y Evaluación Ambiental, por la que se formula declaración de impacto ambiental del proyecto «Ampliación de los parques eólicos Coll del Moro, de 11 MW de potencia instalada, y Torre Madrina, de 11 MW de potencia instalada, y su infraestructura de evacuación, en la provincia de Tarragona».**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22067)
+
+**Role:** data. Dated decision 2026-10-02; original HTML checksum and scope qualifications in wind registry.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_22069
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22069 Resolución de 1 de octubre de 2026, de la Dirección General de Política Energética y Minas, por la que se otorga a Renovalia Guara, SLU, la declaración, en concreto, de utilidad pública del parque eólico Valiente II, de 88,4 MW, y su infraestructura de evacuación, en Gurrea de Gállego, Alcalá de Gurrea, Almudévar, Lupiñén-Ortilla y La Sotonera (Huesca).**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22069)
+
+**Role:** data. Dated decision 2026-10-01; original HTML checksum and scope qualifications in wind registry.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_22071
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22071 Resolución de 2 de octubre de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Planta FV 130, SLU, de la solicitud de autorización administrativa previa para el parque eólico Valentina, de 90 MW, para su hibridación con la instalación solar fotovoltaica Valentina Solar, de 60,382 MW, y de una parte de su infraestructura de evacuación, en Rosinos de la Requejada, Espadañedo y Asturianos (Zamora).**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22071)
+
+**Role:** data. Dated decision 2026-10-02; original HTML checksum and scope qualifications in wind registry.
+
+**Used by:** `catalogues/wind/sources.json`.

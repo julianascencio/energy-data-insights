@@ -1,0 +1,65 @@
+{
+  "batch": "2026-11-04-1035",
+  "france": {
+    "cohorts": [
+      {
+        "start": "2014-01-01",
+        "end": "2015-12-31",
+        "new_projects": 12,
+        "selected": 206
+      },
+      {
+        "start": "2012-01-01",
+        "end": "2013-12-31",
+        "new_projects": 0,
+        "selected": 146
+      },
+      {
+        "start": "1900-01-01",
+        "end": "2011-12-31",
+        "new_projects": 5,
+        "selected": 665
+      }
+    ],
+    "selected": 1017,
+    "added": 17,
+    "held": 1000,
+    "national_identity_rows": 2458,
+    "all_new_scopes_excluded": true
+  },
+  "components": {
+    "documents": 6,
+    "reviewed_rows": 43,
+    "new_models": 13,
+    "enriched_turbines": 5,
+    "decisions": {
+      "staged_exact_models": 9,
+      "deferred": 25,
+      "existing_identity_review": 2
+    },
+    "source_ids": [
+      "mnre-component-9-20261104",
+      "mnre-component-11-20261104",
+      "mnre-component-12-20261104",
+      "mnre-component-13-20261104",
+      "mnre-component-14-20261104"
+    ],
+    "held_document": {
+      "url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/07/2026072759107351.pdf",
+      "sha256": "23cc41fae5a7530bff1553417d5881dd0c4694feeda0f9304d01b82cf12474e2",
+      "rows": 7,
+      "decision": "Allheld for unresolved SG3.4-145/3.6 versus Vayona existing-model identity; exact blade LM71.0,SG145TBV4 and yaw ringGP499535 retained as candidates, not linked or added"
+    },
+    "quarantines": "Exact bearing/structural IDs retained in observations without unsupported category mapping; priorHT24/PW28records reused, no duplicate models",
+    "no_new_reuse_exclusions": true
+  },
+  "independent_project_source": "PNE complete Spain/Poland wind partitions:8held, no COD/current-operation inference",
+  "usgs_distribution_review": {
+    "url": "https://catalog.data.gov/dataset/united-states-wind-turbine-database-ver-8-2-december-2025",
+    "retrieved_at": "2026-11-04",
+    "result": "Official catalogue read successfully; distribution only DOI landing page and previouslyblocked USGSXML, no independent release mirror",
+    "original_sha256": null,
+    "original_availability": "Web reader text; original bytes unavailable",
+    "no_download_retry": true
+  }
+}

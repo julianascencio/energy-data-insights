@@ -43,6 +43,12 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
       Compare normal forecasting with counterfactual HVAC scheduling.
 
+   .. grid-item-card:: Hybrid renewable dispatch
+      :link: topic_hybrid_dispatch
+      :link-type: doc
+
+      Explore synthetic wind, solar and battery demand coverage.
+
 .. toctree::
    :hidden:
    :maxdepth: 1
@@ -54,3 +60,4 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
    topic_pv_inspection
 
    topic_thermal_control
+   topic_hybrid_dispatch

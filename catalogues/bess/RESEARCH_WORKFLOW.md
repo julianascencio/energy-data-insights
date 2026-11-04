@@ -185,3 +185,11 @@ one model. Preserve kVA, charge versus discharge, 30/40/50°C conditions,
 grid-tied versus off-grid DC limits and converter efficiency boundaries.
 Common cells, optional accessories and footnotes require visual review.
 Changed revisions, headings, units or column counts fail before staging.
+
+For the final Portuguese C21-i18/2026 table after tie-breaking, use
+`scripts/stage_bess_portugal_grants.py --final-2026`. It requires 45 unique
+application IDs and the EUR80,250,000 funding control total. Zero funding
+remains zero; the GGS charging column has no published unit in this table
+and must not become MW. Applicant/company IDs are not physical-site identities.
+The adapter stages locally only; site reconciliation and reuse review remain
+prerequisites for canonical ingestion. This is a different cohort from 2025.

@@ -233,3 +233,96 @@ component expiry restrictions, outstanding issues and excluded boost modes
 remain visible. Original certificates and current eligibility are not verified.
 The source register contains the original checksum; the April association-hosted
 list is a separate reviewed revision, not mixed into the August observations.
+
+## French 2016–2019 installations and named turbine components
+
+The next two complete ODRE service-date cohorts contain 607 installations of at
+least 1 MW. National name/commune and existing-identity screening accepts 52;
+555 remain deferred. All 52 retain unresolved aggregation scope. This does not
+turn historical WRI observations into a current operating census.
+
+Nine complete manufacturer component disclosures linked by the August 2026 MNRE
+list, plus all three rows of the June 2026 ALMM-WTC list, add 25 exact blade,
+gearbox and generator models. Nine existing turbines gain dated component
+observations. The 66 reviewed source rows include 43 without exact model codes;
+those generic tower, generator and bearing descriptions remain in the ledger,
+not as synthetic equipment. Multiple manufacturing sites and applications stay
+on one model. The EF0953A 3,560 kW rating is mechanical; the listed turbine's
+3,000/3,150 kW rating has a separate boundary. Blade type numbers do not supply
+missing blade lengths. List inclusion does not establish current certification.
+
+The checksum-verified component adapter consumes reviewed transcriptions with
+complete document row sets. The gallery and equipment viewer follow explicit
+component/turbine applications in both directions with their conditions and
+source locators. They do not infer compatibility from common suppliers.
+
+## French residual installations and gearbox drawing revisions
+
+The complete 57-row missing-date/sub-1-MW residual partition adds eight named
+installations and holds 49. The full 2,458-row national inventory still screens
+names and communes; unknown service dates remain unknown, missing/nonpositive
+ratings are held, and all new scopes remain excluded from capacity totals.
+All dated cohorts and residual rows are now reviewed; identity reconciliation
+is the next task, not repeated bulk discovery.
+
+The original S144 TC-240121 Rev.2 certificate's complete two-option gearbox
+table adds drawing-qualified ratio evidence to EF0953A. The distinct
+SMG282ADT113-0209 candidate is held rather than merged into SMG282CDT175-0136.
+These are historical configuration observations with maintenance/design-change
+conditions, not independent current-certification or performance verification.
+
+## S144 component configuration continuation
+
+The retained TC-240121 Rev.2 original supplies five exact component identities:
+SB70 (SB70S1), SMG282ADT113-0209, SG055D06, WF1000-06L0270-CPN-A and HWDFM0693150.
+The complete selected component sections are recorded with explicit S144 links.
+Generator alternative manufacturers stay nested; no duplicate factory models
+are created. Tower drawing options remain observations rather than inferred
+commercial model variants. Bearing, coupling and structural identities remain
+held for category/assembly reconciliation. Historical certification conditions
+are not current eligibility or independent operational-performance validation.
+
+## Spanish regulatory decisions: bounded daily review
+
+The 2026-11-04-1335 batch reviews every Series A wind-mentioned title in the
+BOE daily indexes for 20 October and 2–4 November 2026 (five notices), plus the
+Taraguilla withdrawal and its correction. Five project identities are added:
+Las Quinientas wind module, Taraguilla, Nordés, Pinta y Guindalera and Herrera
+de los Navarros. This is a bounded regulatory review, not a Spanish plant census.
+
+The offline `wind_catalogue.boe` adapter selects complete title partitions and
+stages reviewed facts only after original-byte checksum and completeness checks.
+It does not extract capacity or operating status from a title. Solar decisions
+cannot cancel wind farms; environmental conditions alone do not establish
+construction authorization. Existing identities are held for reconciliation.
+
+Las Quinientas retains the final five-turbine, 33 MW proposal separately from
+its earlier 72.6 MW design and 72 MW access observation. Its inconsistent rotor
+figures remain quarantined. Taraguilla retains the 30/33 kV and destination
+conflicts; the subsequent correction changes section numbering only. Nordés
+is a withdrawn application, separate from Mistral despite their former joint
+processing. Pinta y Guindalera retains the 100 to 103.5 MW proposal revision;
+its 2026 auxiliary supply permission is not a commissioning event. Herrera's
+35 MW existing wind installation stays separate from the proposed 21 MW solar
+addition. Its precise operating lifecycle remains unknown.
+
+All five farm/phase scopes remain excluded from capacity totals. Los Campillos
+is deferred because the reviewed rejection concerns its solar hybrid. Incidental
+Mistral, Cerrato VI and Las Majas VIIB mentions remain research candidates.
+No equipment record is added: exact Bonfiglioli drawing searches found only the
+already processed certificate. See the dated transcription, source review and
+decision ledger; the next daily partitions are 21–23 October 2026.
+
+## Paired extension decisions
+
+The 1435 continuation completes BOE Series A wind-mentioned titles for
+21–23 October 2026: four notices and five project scopes. It adds the separately
+reported 11 MW Coll del Moro and Torre Madrina extensions, Valiente II and
+Valentina's withdrawn wind hybrid. Existing farms and proposed extensions are
+not combined. El Páramo remains held against two historical same-name identities.
+The adapter supports several explicitly reviewed project scopes in one notice,
+retaining separate phase IDs and shared original-source evidence. Solar ratings,
+public-utility declarations and proposed capacities do not establish wind output
+or commissioning. All four new records remain excluded from capacity totals.
+Exact supplier searches produced no new primary OEM sheet; no new equipment is
+claimed. Next daily BOE partitions: 26–28 October 2026.
