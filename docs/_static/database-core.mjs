@@ -190,3 +190,19 @@ export function windHubHeightSummary(rows) {
   }
   return summary;
 }
+
+// EPD locations and lifetime flows are modeled equipment scenarios, not farms.
+export function windEpdSummary(rows) {
+  const summary = {records: 0, scenarios: 0, withoutScenarios: 0};
+  for (const row of rows.filter(r => r.equipment_category === "wind_turbine")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const declarations = Array.isArray(ext?.environmental_product_declarations) ? ext.environmental_product_declarations : [];
+    const scenarios = declarations.flatMap(d => Array.isArray(d?.scenarios) ? d.scenarios : []).filter(s =>
+      s?.kind === "modeled" && s.unit === "MWh" && s.boundary === "one turbine; net electricity delivered to grid" &&
+      numeric(s.value) && s.value >= 0 && numeric(s.reference_service_life_years) && s.reference_service_life_years > 0);
+    if (scenarios.length) { summary.records++; summary.scenarios += scenarios.length; }
+    else summary.withoutScenarios++;
+  }
+  return summary;
+}

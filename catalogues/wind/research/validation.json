@@ -1,56 +1,41 @@
 {
-  "batch": "2026-11-04-2335",
+  "batch": "2026-11-04-2435",
   "validated_base": "9f36b0f35a0090a4908741704af883be376466b6",
-  "iteration_parent": "9f36b0f35a0090a4908741704af883be376466b6",
+  "iteration_parent": "cdfbc263fc64e287523a5aaf51cb9c7550268cde",
   "local": {
-    "focused_pytest": "328 passed after main integration:175 Wind,29 reference and124 merged PV/Data Center adapter tests",
-    "viewer": "17 Node tests passed;viewer syntax check passed",
-    "quality": "Ruff lint/format967files,ty,repository,citations and whitespace passed after main integration",
-    "catalogue": "22175 records validated;22125 preceding records unchanged;one project and two equipment enrichments retain prior facts and all creation timestamps",
-    "capacity": "All six capacity-category totals unchanged;all32 new project scopes excluded;CortijoI remains excluded",
-    "replay": "269 AEMO candidates across all3 nonoverlapping partitions reproduced;15 Goldwind exact models reproduced from reviewed complete columns and original hash",
-    "snapshots": "Two further independent seven-file typed Zstandard builds byte-identical after main integration;all Parquet columns verified ZSTD",
-    "docs": "Strict Sphinx plot_gallery=0 retry passed after main integration;607HTML pages passed links/assets;final built viewer/core assets equal source",
-    "example": "Offline Wind gallery passed",
-    "packages": "Three wheels and three source distributions rebuilt after main integration",
-    "preservation": "All non-Wind catalogues unchanged against9f36b0f;all476newly merged PV/Data Center paths byte-identical to main"
-  },
-  "resolved_validation_failures": [
-    "Initial reference test rejected uppercase/hyphenated new BOE bibliography IDs; normalized bibliography IDs and reran all204 focused tests successfully",
-    "Initial new viewer test lacked helper import; fixed test import and reran17viewer tests successfully",
-    "Transcription staging caught normalized swept-area evidence unit, certificate metadata keys and enrichment mass evidence unit; corrected and whole catalogue validation passed",
-    "Workspace disk exhaustion cleared by removing obsolete reproducible Sphinx builds; final328-test run passed. First post-integration Sphinx process exited137 near completion; strict retry exited0 and607-page link audit passed."
-  ],
-  "not_executed": [
-    "Full repository Python suite in this iteration",
-    "Full executable gallery",
-    "Interactive browser",
-    "Independent operational/performance verification"
-  ],
-  "remote_ci": {
-    "prior_commit": "4089fc06cb3409d88d1eb72716a95642b7362c28",
-    "prior_result": "Python3.12,Python3.13 and documentation passed;Pages deployment skipped",
-    "this_batch": "Pending publication;no remote result asserted"
+    "focused_pytest": "216 passed:187 Wind and29 reference tests",
+    "viewer": "18 Node tests and syntax passed",
+    "quality": "Ruff lint/format969files,ty,repository4458files,citations and whitespace passed",
+    "catalogue": "22181 validated;22167 preceding unchanged;8 enrichments preserve all earlier evidence and creation times",
+    "capacity": "All six capacity-category totals unchanged;all6newproject scopes excluded",
+    "replay": "Seven exactEPD models reproduced; repeatedrun idempotent",
+    "snapshots": "Two seven-file builds byte-identical; allParquetcolumns ZSTD",
+    "docs": "Strict Sphinx withgalleryexecutiondisabled passed;609HTMLpages passedlinks/assets",
+    "example": "OfflineWindgallery passed",
+    "packages": "Threewheels andthree source distributions rebuilt"
   },
   "snapshot_sha256": {
-    "sources.json": "c3592a8b377fce994602ac50ea25ce448bf604e272d21dc49780cd7c3a07ca8e",
+    "sources.json": "11bbfd49a535db2afbccbde60a22ea21855bb35251721cff568156f7f39b1318",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "1f7582fedb83cf14532895e55ac96aa0f86cb4173df313432e7fece15e9d9ac2",
-    "equipment.parquet": "6d9f4ed38553dcfe0eaf8ecf0cb00309ee2b551f46e828e7bc522af13110ecf2",
+    "manifest.json": "4b832ef90a2a2bf9e43642740fb9bbc3fd4c0b1436e530f828c94ee9d0af3321",
+    "equipment.parquet": "e8e95a3d7946a2da8152c46a88a75fb6eb6c494d291f1d259895ec801cc5166d",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "91ec6c60ff6f93ee405c0516fc19a8793de568f56133589e8d28f78070b89345"
+    "projects.parquet": "54cc9188e23b99ec693fbe3a0053f61baa451ba1dee0c55a5d57a83a1105842e"
   },
-  "original_bytes": "Retained outside Git with checksums; snapshot outputs immutable and reproduced offline",
-  "publication": "Main and PR head rechecked; expected-head update required; remote tree must equal validated local tree",
-  "original_iteration_parent": "4089fc06cb3409d88d1eb72716a95642b7362c28",
-  "publication_transition": {
-    "prior_pr": 146,
-    "prior_head": "4089fc06cb3409d88d1eb72716a95642b7362c28",
-    "reason": "PR146 merged externally during blob upload; publication stopped before branch update",
-    "new_main": "9f36b0f35a0090a4908741704af883be376466b6",
-    "new_branch": "research/wind-20261104-2335",
-    "overlapping_paths": [],
-    "action": "Fresh branch from newmain;cherry-picked validated batch without conflicts;revalidate preservedPV/DC merges"
-  }
+  "not_executed": [
+    "Full repository Python suite",
+    "Full executable gallery",
+    "Interactive browser",
+    "Independent turbine performance verification"
+  ],
+  "remote_ci": {
+    "prior_commit": "cdfbc263fc64e287523a5aaf51cb9c7550268cde",
+    "prior_result": "BothPythonversions anddocumentation passed;Pagesdeploymentskipped",
+    "this_batch": "Not published yet"
+  },
+  "resolved_validation_failures": [
+    "Ruff foundone longline andtwo list-concatenation styleissues; fixedandreranqualitychecks",
+    "Workspace free-space pressure; removedobsolete reproducible docs andcanonical-record copies, preserving originals andcurrentbatchbeforecopy"
+  ]
 }

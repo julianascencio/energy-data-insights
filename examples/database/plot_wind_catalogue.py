@@ -66,6 +66,27 @@ print(
 )
 print("Hub options do not create model variants; no common-condition power curves inferred.")
 
+# Environmental declarations use modeled sites, not independently observed farms.
+print("EPD lifetime scenarios: separate model, location, exposure and net-to-grid boundary")
+for row in rows:
+    declarations = json.loads(row.get("extensions_json") or "{}").get(
+        "environmental_product_declarations", []
+    )
+    for declaration in declarations:
+        for scenario in declaration["scenarios"]:
+            print(
+                row["model"],
+                scenario["location"],
+                scenario["reference_service_life_years"],
+                "years",
+                scenario["value"],
+                scenario["unit"],
+                scenario["kind"],
+                scenario["boundary"],
+                declaration["source_id"],
+            )
+print("No scenario total, capacity factor, operating project or comparable curve is inferred.")
+
 # Procedural decisions can concern solar or auxiliary equipment, not the wind farm.
 print("BOE decision scope: wind lifecycle and capacity boundaries remain separate")
 for row in rows:

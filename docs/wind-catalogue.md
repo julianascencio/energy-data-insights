@@ -1,11 +1,11 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-04-2335`, the proposed continuation contains
-**8,168 projects, 372 equipment records, 13,633 linked turbines and two original
-numerical curves**, across **59 countries and 54 manufacturer labels**. Labels
-are not a reconciled corporate-entity count. Merged main at `7c31c06a` contains
-7,948 projects, 337 equipment records, 13,633 turbines and two curves.
+numerical curves. At batch `2026-11-04-2435`, the proposed continuation contains
+**8,174 projects, 372 equipment records, 13,633 linked turbines and two original
+numerical curves**, across **59 countries and 55 manufacturer labels**. Labels
+are not a reconciled corporate-entity count. Merged main at `9f36b0f3` contains
+8,136 projects, 357 equipment records, 13,633 turbines and two curves.
 These are catalogue counts, not a current operating census. Subsequent totals
 are recorded in `catalogues/wind/research/latest.json`.
 
@@ -701,3 +701,34 @@ The complete September21–23 BOEA/B daily partition yields Ferromolín PEol-102
 Goldwind2025Q3 provides15explicit turbine columns, including table-reported165.8m and183.5m rotor diameters. Generator/converter voltages,50/60Hz choices, hub options, design life, operating/survival temperatures and environmental declaration claims retain their separate meanings. No unnamed component models or numerical curves are invented. SD3EX now retains three incompatible ratings3.2/3/2.5kW with a null scalar. Powersync25 gains exactPS25-240-1B identity, trip thresholds, enclosure and installation limits; conflicting inrush/fuse statements remain qualified. The viewer distinguishes offered hub options from scalar heights and unknowns.
 
 The50-project and20-equipment objectives were not met:33projects and17equipment were substantively changed. Completed source partitions, field holds and original-byte hashes are in the research ledgers. No repeated source imports or synthetic variants pad those counts.
+
+## Polish project reconciliation and original environmental declarations
+
+Batch `2026-11-04-2435` adds six Polish projects and enriches the historical
+Karcino record. All seven queued Polish references have now received detail-page
+review. Legnica's 2026 sale is separate from its planned 2030 commissioning.
+Kuślin and Krzęcin II retain 2020 project-company, auction, permit and electrical
+scopes alongside later launch observations. Proposed layout IDs are not installed
+turbine records. Karcino's 2009 historical year and 2010 developer launch remain
+separate; the owner confirms Karcino and Karścino are different acquired assets.
+All six additions and the enriched historical scope remain excluded from totals.
+
+Original EPDITALY0508 and EPDITALY0852 declarations enrich seven existing Goldwind
+models. The recurring adapter pins original bytes, requires the complete explicit
+model set and preserves all earlier evidence and creation timestamps. Four swept
+areas and one design-life scalar are null pending revision reconciliation. Blade
+labels without explicit model allocation and unnamed components remain nested.
+No compatibility is inferred from a list's order or similar model codes.
+
+Ten modeled lifetime-generation scenarios retain their individual turbine,
+net-to-grid boundary, location and 20/25-year exposure. Egypt and Tanzania are
+exemplary LCA sites, not new operating projects. The viewer and offline example
+show these scenarios without summing them, deriving capacity factors or calling
+EPD verification independently validated turbine performance. No new curves.
+
+All September 17–19 BOE A/B indexes were reviewed: zero wind notices. Hargraves'
+primary developer page was acquired, but its three AEMO identities remain held
+without an explicit registry crosswalk. Next: September 14–16 BOE issues, the
+Wimmera stage boundary, Jasna's exact installed fleet, and original Goldwind
+revision/type-certificate evidence. See the dated research ledgers for hashes,
+field locators and unresolved observations.

@@ -7263,3 +7263,107 @@ Agencia Estatal Boletín Oficial del Estado (2024). **Martelilla environmental d
 **Role:** data. Bounded local10km environmental inventory, not a provincial or national operating census; reported MW paragraph total differs from arithmetic.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### pne_kuslin_detail
+
+PNE AG (2026). **PNE kuslin project detail**. [Source](https://www.pnegroup.com/en/references/detail/kuslin/)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### pne_krzecin_detail
+
+PNE AG (2026). **PNE krzecin project detail**. [Source](https://www.pnegroup.com/en/references/detail/krzecin/)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### pne_karcino_detail
+
+PNE AG (2026). **PNE karcino project detail**. [Source](https://www.pnegroup.com/en/references/detail/karcino/)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### pne_barwice_detail
+
+PNE AG (2026). **PNE barwice project detail**. [Source](https://www.pnegroup.com/en/references/detail/barwice/)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### pne_bardy_detail
+
+PNE AG (2026). **PNE bardy project detail**. [Source](https://www.pnegroup.com/en/references/detail/bardy/)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### pne_jasna_detail
+
+PNE AG (2026). **PNE jasna project detail**. [Source](https://www.pnegroup.com/en/references/detail/jasna/)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### pne_legnica_sale_20260323
+
+PNE Group (2026). **Legnica project sale and future development milestones**. [Source](https://poland.pnegroup.com/en/newsroom/singleview/pne-group-sells-wind-farm-project-in-poland-to-global-player-in-energy-transition/)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### pne_kuslin_nts2020
+
+WKN / PNE Group (2020). **Kuslin wind farm non-technical summary**. [Source](https://www.pnegroup.com/fileadmin/user_upload/PNE_Polska/PNE_Polska_documents/WKN_NTS_for_Kuslin_wind_project_07-09-2020.pdf)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### pne_krzecin_nts2020
+
+WKN / PNE Group (2020). **Krzecin wind farm non-technical summary**. [Source](https://www.pnegroup.com/fileadmin/user_upload/PNE_Polska/PNE_Polska_documents/WKN_NTS_for_Krzecin_wind_project_25-08-2020.pdf)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### goldwind_epditaly0508
+
+EPDItaly / Goldwind (2023). **Goldwind environmental declaration EPDITALY0508**. [Source](https://www.epditaly.it/en/wp-content/uploads/2016/12/4-2-Goldwind_EPD_GWH182-5.36.27.27.5V20240113.pdf)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`, `data-retrieval/src/energy_data_retrieval/wind_catalogue/epd.py`.
+
+### goldwind_epditaly0852
+
+EPDItaly / Goldwind (2025). **Goldwind environmental declaration EPDITALY0852**. [Source](https://www.epditaly.it/en/wp-content/uploads/2016/12/4-2-Goldwind_EPD_GWH170-7.2GWH175-7.8GWH182-8.0-V20250210.pdf)
+
+**Role:** data. Dated source observations with distinct proposed, actual and modeled quantities; no independent turbine performance validation.
+
+**Used by:** `catalogues/wind/sources.json`, `data-retrieval/src/energy_data_retrieval/wind_catalogue/epd.py`.
+
+### pne_reference_table_20261104
+
+PNE AG (2026). **PNE worldwide reference table, Polish rows**. [Source](https://www.pnegroup.com/en/references/)
+
+**Role:** data. Combined commissioning/date-of-sale column remains an ambiguous event; model family labels not exact turbine configurations.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### energa_karcino_acquisition_20130731
+
+Energa SA (2013). **ENERGA wind asset acquisitions**. [Source](https://ir.energa.pl/en/pr/250398/energa-the-group-s-production-portfolio-extended-to-include-another-two-wind-farms)
+
+**Role:** data. Karcino51MW acquired fromDONG inJune2013; distinct fromKarścino/Bystra Julytransaction; shared budget not allocated.
+
+**Used by:** `catalogues/wind/sources.json`.

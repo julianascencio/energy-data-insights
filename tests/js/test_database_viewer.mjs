@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {windHubHeightSummary} from "../../docs/_static/database-core.mjs";
+import {windHubHeightSummary, windEpdSummary} from "../../docs/_static/database-core.mjs";
 import {filterRows, sortRows, statistics, groupRows, toCsv, hasLocation, projectSummary, bessProjectSummary, clusterLocations, dataCenterScopes} from "../../docs/_static/database-core.mjs";
 
 const rows = [
@@ -213,4 +213,16 @@ test("wind hub options never become scalar heights or model variants", () => {
     {equipment_category: "converter", hub_height_m: 50},
   ]);
   assert.deepEqual(summary, {reported: 1, optionsOnly: 1, unknown: 3});
+});
+
+test("EPD scenarios preserve zero and lifetime boundaries without creating farms or sums", () => {
+  const scenario = {kind: "modeled", unit: "MWh", boundary: "one turbine; net electricity delivered to grid", value: 0, reference_service_life_years: 20};
+  const row = scenarios => ({equipment_category: "wind_turbine", extensions_json: JSON.stringify({environmental_product_declarations: [{scenarios}]})});
+  assert.deepEqual(windEpdSummary([
+    row([scenario, {...scenario, value: 500, reference_service_life_years: 25}]),
+    row([{...scenario, kind: "measured"}]), row([{...scenario, boundary: "farm; gross"}]),
+    row([{...scenario, reference_service_life_years: null}]), row([{...scenario, value: null}]),
+    {equipment_category: "wind_turbine", extensions_json: "invalid"},
+    {...row([scenario]), equipment_category: "generator"},
+  ]), {records: 1, scenarios: 2, withoutScenarios: 5});
 });
