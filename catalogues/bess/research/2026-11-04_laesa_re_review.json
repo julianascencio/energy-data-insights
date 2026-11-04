@@ -1,0 +1,68 @@
+{
+  "started_at": "2026-11-04T01:55:12Z",
+  "reviewed_at": "2026-11-04T02:01:25.711653+00:00",
+  "base_head": "5ac0902f51d6539b61f8f0da9db3a87d358585ef",
+  "main": "7af547f900d676b4334226a64739aed2f4cb3f97",
+  "downloads": [
+    {
+      "key": "residential",
+      "url": "https://bslbatt.com/wp-content/uploads/BSLBATT-Residential-Energy-Storage-Products-2026.pdf",
+      "sha256": "123b395ec7325ab38cf76b9c44ae2a77aa8c8b5df6bcccc210f04579f5347df7",
+      "retrieved_at": "2026-11-04T01:57:00.820437+00:00"
+    },
+    {
+      "key": "laesa",
+      "url": "https://sie.gob.do/wp-content/uploads/2026/09/SIE-120-2026-RCD.pdf",
+      "sha256": "9220aa6e858d9232b22dda69e4e822d330dc4179715ae80ad1c16ba377af1955",
+      "retrieved_at": "2026-11-04T01:57:07.224855+00:00"
+    },
+    {
+      "key": "re",
+      "url": "https://bslbatt.com/ess-batt-re-series-high-voltage-battery-storage-system/",
+      "sha256": "c0c22f5a27c82fa26636ec2f886010d5788161c98316127046e1132296b14773",
+      "retrieved_at": "2026-11-04T01:57:11.250413+00:00"
+    },
+    {
+      "key": "terms",
+      "url": "https://sie.gob.do/terminos-de-uso/",
+      "sha256": "f8e1f9586689d53f2c387a052b13cf44972f00b8b87e868f1ac45c4dff80742b",
+      "retrieved_at": "2026-11-04T01:57:14.969523+00:00"
+    },
+    {
+      "key": "re_pdf",
+      "url": "https://bslbatt.com/wp-content/uploads/ESS-BATT-RE-Series-%E8%A1%A5%E5%85%85%E7%89%88-260310.pdf",
+      "sha256": "e024f340471cc57bf05ce0137dca77be7d9f41d8b3c296bb42b797e8a14e1dcf",
+      "retrieved_at": "2026-11-04T01:57:33.374213+00:00"
+    }
+  ],
+  "projects": {
+    "reviewed": 1,
+    "new": 1,
+    "existing_enriched": 0,
+    "whole_record_quarantined": 0,
+    "rejected": 0
+  },
+  "equipment": {
+    "reviewed": 13,
+    "new": 13,
+    "existing_enriched": 0,
+    "whole_record_quarantined": 0,
+    "rejected": 0,
+    "accepted_with_field_holds": 3
+  },
+  "identity_review": [
+    "All canonical BSLBATT model labels and incoming exact configurations checked; no duplicate models or family-derived cosmetic variants.",
+    "RE5\u2013RE12 are eight explicitly tabulated cluster configurations. Pack data stays nested, no separate invented pack model.",
+    "LAESA checked against canonical names/aliases; one battery portion, not PV or thermal generation.",
+    "No inherited row, creation timestamp or unresolved field changed."
+  ],
+  "quality_decisions": [
+    "LAESA signed22September2026; upload30September is not status date. Recommendation is announced, not permitted or operational.13.08MW minimum operation retained separately from16.25MW rating.",
+    "Li-Pro10240 nominal51.52V retained as printed alongside power/current discrepancy; no silent repair.",
+    "Styx80A/5.12kW charge inconsistency preserved.",
+    "ECO discharge kW applies to optional2C configuration; canonical discharge power withheld.",
+    "RE web summary is inconsistent on4000/6000cycles and model range; exact dated downloadable tables control these new configurations. No web marketing specification substituted.",
+    "PowerLine2.04kW charge number retained verbatim; no rescaling."
+  ],
+  "scope": "Manual bounded exact-table review; no new parser/schema/code. PDF pages14\u201316 and RE2\u20133 exhausted. LAESA decision reviewed; remaining annexes not treated as exhausted."
+}
