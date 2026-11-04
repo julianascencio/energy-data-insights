@@ -19,13 +19,13 @@ SOURCES = {
     "Safepower S": {
         "id": "siel-safepower-s-br074-rev03-202404",
         "url": "https://www.sielups.com/wp-content/uploads/2024/06/BR074-REV03-BROCHURE-FLYER-SAFEPOWER-S-series.pdf",
-        "publication_date": "2024-04-03",,
+        "publication_date": "2024-04-03",
     },
     "Safepower Evo HF": {
         "id": "siel-safepower-evo-hf-br076-rev02-202404",
         "url": "https://www.sielups.com/wp-content/uploads/2024/06/BR076-REV02-BROCHURE-FLYER-SAFEPOWER-EVO-HF.pdf",
         "publication_date": "2024-04-03",
-    },,
+    },
     "Safepower Modular SPM": {
         "id": "siel-safepower-modular-spm-br075-rev03-202404",
         "url": "https://www.sielups.com/wp-content/uploads/2024/06/BR075-REV03-BROCHURE-FLYER-SAFEPOWER-MODULAR-SPM.pdf",
@@ -45,7 +45,7 @@ FAMILIES: dict[str, dict[str, Any]] = {
             "115/57 kg with/without internal batteries",
             "171/64 kg with/without internal batteries",
             "223/71 kg with/without internal batteries",
-            None,,,
+            None,
             None,
             None,
             None,
