@@ -177,3 +177,16 @@ export function windComponentApplications(record, equipment) {
   }
   return result;
 }
+
+// Offered heights are not selected configurations or installed hub heights.
+export function windHubHeightSummary(rows) {
+  const summary = {reported: 0, optionsOnly: 0, unknown: 0};
+  for (const row of rows.filter(r => r.equipment_category === "wind_turbine")) {
+    if (numeric(row.hub_height_m)) { summary.reported++; continue; }
+    let options;
+    try { options = JSON.parse(row.hub_height_options_json || "{}"); } catch { options = {}; }
+    if (Array.isArray(options?.heights_m) && options.heights_m.some(v => numeric(v) && v > 0)) summary.optionsOnly++;
+    else summary.unknown++;
+  }
+  return summary;
+}

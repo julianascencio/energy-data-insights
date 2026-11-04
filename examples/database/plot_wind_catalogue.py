@@ -49,6 +49,23 @@ print(
     ]
 )
 
+# Published rotor geometry is independent of the digits in an OEM model name.
+print("Goldwind complete named columns: geometry, power conditions and offered hubs")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Goldwind"),
+        [
+            "model",
+            "rated_power_kw",
+            "rotor_diameter_m",
+            "swept_area_m2",
+            "rated_power_conditions",
+            "hub_height_options_json",
+        ],
+    ].to_string(index=False)
+)
+print("Hub options do not create model variants; no common-condition power curves inferred.")
+
 # Procedural decisions can concern solar or auxiliary equipment, not the wind farm.
 print("BOE decision scope: wind lifecycle and capacity boundaries remain separate")
 for row in rows:

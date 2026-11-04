@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import {windHubHeightSummary} from "../../docs/_static/database-core.mjs";
 import {filterRows, sortRows, statistics, groupRows, toCsv, hasLocation, projectSummary, bessProjectSummary, clusterLocations, dataCenterScopes} from "../../docs/_static/database-core.mjs";
 
 const rows = [
@@ -199,4 +200,17 @@ test("wind component navigation follows explicit evidence in both directions", a
   assert.equal(windComponentApplications(component, rows)[0].conditions, "Tower A only");
   assert.deepEqual(windComponentApplications(unrelated, rows), []);
   assert.deepEqual(windComponentApplications(component, [component]), []);
+});
+
+// Synthetic option lists distinguish missingness, malformed JSON and known zero.
+test("wind hub options never become scalar heights or model variants", () => {
+  const summary = windHubHeightSummary([
+    {equipment_category: "wind_turbine", hub_height_m: 0, hub_height_options_json: '{"heights_m":[110]}'},
+    {equipment_category: "wind_turbine", hub_height_options_json: '{"heights_m":[95,110,140]}'},
+    {equipment_category: "wind_turbine", hub_height_options_json: '{"heights_m":[null,0,"110"]}'},
+    {equipment_category: "wind_turbine", hub_height_options_json: "invalid"},
+    {equipment_category: "wind_turbine", hub_height_options_json: "null"},
+    {equipment_category: "converter", hub_height_m: 50},
+  ]);
+  assert.deepEqual(summary, {reported: 1, optionsOnly: 1, unknown: 3});
 });

@@ -1,0 +1,119 @@
+{
+  "batch": "2026-11-04-2335",
+  "aemo": {
+    "partition": "3000 <= survey ID < 4000",
+    "reviewed_sites": 33,
+    "wind_unit_rows": 34,
+    "additions": 25,
+    "deferred": 8,
+    "quarantined_count_unit_ids": [
+      301201,
+      306702,
+      311502,
+      311803,
+      320701,
+      321701,
+      326201,
+      331101,
+      331201,
+      334001,
+      334002,
+      336101
+    ],
+    "field_quarantined_candidate_sites": 11,
+    "accepted_field_quarantined_sites": 8,
+    "source_id": "aemo_nem_oct2026_wind",
+    "original_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+    "acquisition": "Reused checksum-pinned original; no duplicate national download",
+    "all_scopes_excluded": true,
+    "national_selected_wind_sites": 269,
+    "national_wind_unit_rows": 309,
+    "national_accepted_sites": 198,
+    "national_deferred_sites": 71,
+    "next_partition": null
+  },
+  "boe": {
+    "daily_dates": [
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23"
+    ],
+    "all_discovered_issues": 3,
+    "series_a_selected": 0,
+    "series_b_selected": 1,
+    "new_projects": 1,
+    "notice": "BOE-B-2026-30456",
+    "layout": "Six proposed positions; five reserve positions separate; not operating turbines",
+    "local_inventory_notice": "BOE-A-2024-19470",
+    "local_scope": "Complete8 wind entries within10km of PSFV Martelilla; not a Cádiz census",
+    "local_new_projects": 6,
+    "local_enriched_projects": 1,
+    "local_deferred": 1,
+    "local_arithmetic_conflict": {
+      "stated_total_mw": 214.04,
+      "sum_of_entries_mw": 214.07
+    }
+  },
+  "oem": {
+    "new_equipment": 15,
+    "enriched_equipment": 2,
+    "complete_tables": [
+      "Goldwind2025Q3 six4S/5S columns pp11–12",
+      "Goldwind2025Q3 nine7H/9H columns pp13–14",
+      "Goldwind environmental declaration observations pp21–22",
+      "SD3EX SDMK103EX Rev1p2",
+      "Bergey Rev3.1pp14–21 trip/installation tables"
+    ],
+    "original_sources": {
+      "goldwind_portfolio_2025q3": {
+        "url": "https://www.goldwind.com/en/Goldwind_Product_Profolio_2025Q3.pdf",
+        "sha256": "0bd1db6784d04ca668683823214ab65ca645d5ef3b81aaa6b04aa8c54e953023",
+        "retrieved_at": "2026-11-04T22:05:25Z",
+        "published_at": null,
+        "revision": "2025Q3; PDF metadata creation2025-12-03, not assumed publication date"
+      },
+      "sdwind_sd3ex_sdmk103ex_rev1": {
+        "url": "https://sd-windenergy.com/files/5317/2597/4607/SD3EX_Product_Leaflet.pdf",
+        "sha256": "cb7a94a11930c01adff789f94f449a737588186cd281f6cee2e45b4f0f080f41",
+        "retrieved_at": "2026-11-04T22:06:04Z",
+        "published_at": "2023-05-01",
+        "revision": "SDMK103EX Rev1; printed01/05/2023"
+      },
+      "bergey_excel15_rev31": {
+        "url": "https://www.bergey.com/wp-content/uploads/Excel-15S-Owners-Manual-Single-Box-12-30-25.pdf",
+        "sha256": "c2d0439495cfb381ec0561f761261ff2120bea76f39f6362fedc51ac47b13c2a",
+        "retrieved_at": "2026-11-04T21:44:39Z",
+        "published_at": "2025-07",
+        "revision": "Rev3.1 July2025; printed cover governs, not URL date"
+      }
+    },
+    "curves_added": 0,
+    "holds": [
+      "SD3EX3.2/3/2.5kW observations unresolved; scalar null",
+      "SD6+ inverter-specific numerical data remains unavailable; no new model inferred",
+      "Powersync25 inrush100Avs50A, fuse400Vvs600V and input-envelope distinctions retained",
+      "Goldwind unnamed generators/converters/towers remain nested, not invented component identities"
+    ]
+  },
+  "access_results": [
+    {
+      "source": "Goldwind current portfolio original PDF",
+      "http_status": 200,
+      "bytes": 63904105,
+      "search_reader_result": "Reader reported content length too large; direct original download succeeded; no authentication or reuse restriction inferred"
+    },
+    {
+      "source": "SD3EX leaflet",
+      "http_status": 200,
+      "bytes": 3418803,
+      "certificate_status": "Leaflet contains certification claims, not an original certificate"
+    }
+  ],
+  "targets": {
+    "projects": 33,
+    "equipment": 17,
+    "projects_target_met": false,
+    "equipment_target_met": false,
+    "reason": "Bounded remaining AEMO and BOE scopes plus full OEM tables exhausted. Identity holds, unnamed components, site-specific options and inconsistent ratings are not padded into records."
+  }
+}

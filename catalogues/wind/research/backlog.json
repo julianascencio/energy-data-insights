@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-04T21:44:39Z",
-  "branch": "research/wind-20261104-1535",
-  "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
+  "updated_at": "2026-11-04T22:17:23Z",
+  "branch": "research/wind-20261104-2335",
+  "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind-20261104-2335.lock for research/wind-20261104-2335; inspect active work and remote head; publish using an expected-head fast-forward, never overwrite another writer.",
   "queue": [
     {
       "rank": 1,
@@ -171,7 +171,8 @@
         "Exact LM47.6P2 and Mingyang SCB11-8000/35 certificate searches found secondary register mirrors only. Different-manufacturer SCB11 specifications are not transferable. No source access restriction inferred; original certificates remain unavailable.",
         "Sinoma SI90.2/SI122 web specifications excluded by explicit site reuse restriction; no download/authentication failure. PDFJ2776 and SMG282CDT175-0136 original specification searches unresolved. Next exact official component certificates from pending register rows28/64/65, using independent originals; no repeat processed MNRE tables. Two explicitly enumerated EN-182 Mudarra configurations added; do not equate with India5MW model.",
         "PNNL July2026 full nine-model table complete. ICC-SWCC directory excluded for explicit reuse terms; do not repeat. Next original OEM geometry/electrical configuration documents for the nine PNNL models, prioritizing EOX S-16 and KW20/KW30; certification dates remain source observations.",
-        "Kodair KW20/KW30 original pages excluded for explicit terms; Eocycle S-series page and R5PDF HTTP403, not authentication/reuse claim. SD3/SD3EX/SD6/SD6+/SD12 current five tables completed; SD6 SDMK106 and Bergey Rev3.1 p5/12–14 processed. Next original SD3EX certificate for3/2.5kW conflict, SD6+ inverter-specific numerical data, Powersync25 p14–15 trip tables and pp16+ installation/environment; do not duplicate nested voltage/tower choices."
+        "Kodair KW20/KW30 original pages excluded for explicit terms; Eocycle S-series page and R5PDF HTTP403, not authentication/reuse claim. SD3/SD3EX/SD6/SD6+/SD12 current five tables completed; SD6 SDMK106 and Bergey Rev3.1 p5/12–14 processed. Next original SD3EX certificate for3/2.5kW conflict, SD6+ inverter-specific numerical data, Powersync25 p14–15 trip tables and pp16+ installation/environment; do not duplicate nested voltage/tower choices.",
+        "Goldwind2025Q3 complete15exactcolumns andEPD observations exhausted; next original type/EPD certificates for GWH182 family before project links. SDMK103EXRev1 adds third3.2kW observation, not a rating resolution; certificate ID still missing. Powersync25pp14–21 complete, retain inrush/fuse/input-envelope discrepancies; next OEM correction or later manualrevision. No site-height variants or unnamed subcomponents."
       ]
     },
     {
@@ -203,11 +204,12 @@
       "rank": 8,
       "source": "PNE worldwide references",
       "url": "https://www.pnegroup.com/en/references/",
-      "status": "original_acquired_schema_review_only",
+      "status": "spanish_scope_partially_reconciled_polish_details_pending",
       "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
       "partition": "Complete Spanish wind rows, then complete Polish wind rows; exclude PV",
       "next_offset": 0,
-      "next_task": "Cadiz complete inventory and Cortijo I/II phase crosswalk still pending; current BOE daily notices are supplementary and do not allocate PNE capacities."
+      "next_task": "BOE2024localinventory separates CortijoI40.8MW and1.2MW expansion, but PNE42MW/14V90 scope remains unallocated. Next original permits for both; then seven Polish project detail pages in order Legnica,Kuślin,Krzęcin,Karcino,Barwice,Bardy,Jasna. Do not repeat8row reference-table scan.",
+      "followup_ledger": "2026-11-04-2335-cortijo-decisions.json"
     },
     {
       "rank": 9,
@@ -248,17 +250,20 @@
         "2026-09-30",
         "2026-09-24",
         "2026-09-25",
-        "2026-09-26"
-      ],
-      "next_dates": [
+        "2026-09-26",
         "2026-09-21",
         "2026-09-22",
         "2026-09-23"
       ],
+      "next_dates": [
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-19"
+      ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "September21–23 A/B all issues; ER150053 original public utility document for lifecycle; prior scope conflicts retained.",
-      "decision_ledger": "2026-11-04-2135-decisions.json",
+      "next_task": "September17–19 A/B allissues; preserve Ferromolín proposed/reserve distinction. Martelilla local inventory exhausted; obtain Castella expansion permit and CortijoI original/expansion permits.",
+      "decision_ledger": "2026-11-04-2335-boe-review.json",
       "series_b_completed_dates": [
         "2026-10-01",
         "2026-10-02",
@@ -294,7 +299,10 @@
         "2026-09-30",
         "2026-09-24",
         "2026-09-25",
-        "2026-09-26"
+        "2026-09-26",
+        "2026-09-21",
+        "2026-09-22",
+        "2026-09-23"
       ]
     },
     {
@@ -302,11 +310,21 @@
       "source": "AEMO NEM Generation Information October2026",
       "url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
       "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
-      "status": "two_bounded_partitions_complete",
-      "completed_partition": "0 <= survey ID < 3000;236sites reviewed in two batches;173additions63deferred",
-      "next_partition": "3000 <= survey ID < 4000",
-      "next_task": "Complete remaining33 survey sites; resolve phase links and count placeholders explicitly. Retain59prior identityholds and4newholds; never rediscover completed236sites.",
-      "decision_ledger": "2026-11-04-2235-aemo-decisions.json"
+      "status": "complete_national_wind_partition_scan",
+      "completed_partition": "All269wind survey sites/309unit rows:198additions71identityholds; source version exhausted",
+      "next_partition": null,
+      "next_task": "Reconcile71deferred identities against primary planning scopes, starting Hargraves3051/3112/3118; Wimmera2355/3089/3262; LakeVictoria2764/3330; CattleCreek2752/3340. Do not rescan completed national workbook.",
+      "decision_ledger": "2026-11-04-2335-aemo-decisions.json",
+      "next_ids": [
+        3051,
+        3089,
+        3112,
+        3118,
+        3262,
+        3280,
+        3330,
+        3340
+      ]
     }
   ],
   "user_priority_update": {

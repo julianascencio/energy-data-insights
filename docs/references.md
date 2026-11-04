@@ -7231,3 +7231,35 @@ Bergey Windpower Company (2025). **BWC EXCEL15 and Powersync25 owner manual**. [
 **Role:** data. OEM specification observations, not independently validated performance. Access year where publication date is unavailable.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_30456
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Ferromolín PEol-1023 public consultation**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-30456)
+
+**Role:** data. Public consultation does not establish construction authorization or operation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### goldwind_portfolio_2025q3
+
+Goldwind (2025). **Goldwind product portfolio 2025Q3**. [Source](https://www.goldwind.com/en/Goldwind_Product_Profolio_2025Q3.pdf)
+
+**Role:** data. OEM specifications and dated declaration claims, not independently validated performance or current certificate eligibility.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### sdwind_sd3ex_sdmk103ex_rev1
+
+SD Wind Energy (2023). **SD3EX product specification SDMK103EX Rev1**. [Source](https://sd-windenergy.com/files/5317/2597/4607/SD3EX_Product_Leaflet.pdf)
+
+**Role:** data. OEM specifications and dated declaration claims, not independently validated performance or current certificate eligibility.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2024_19470
+
+Agencia Estatal Boletín Oficial del Estado (2024). **Martelilla environmental decision: neighbouring wind inventory**. [Source](https://www.boe.es/buscar/doc.php?id=BOE-A-2024-19470)
+
+**Role:** data. Bounded local10km environmental inventory, not a provincial or national operating census; reported MW paragraph total differs from arithmetic.
+
+**Used by:** `catalogues/wind/sources.json`.
