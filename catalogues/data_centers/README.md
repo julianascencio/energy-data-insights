@@ -54,7 +54,7 @@ uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-appleton-ups.jsonl --partner-batch appleton
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-legrand-av-ups.jsonl --partner-batch legrand_av
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-delta-energy-star-ups.jsonl --partner-batch delta_energy_star
-uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-cyberpower-energy-star-ups.jsonl --partner-batch cyberpower_energy_star --shard-size 68
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-cyberpower-energy-star-ups.jsonl --partner-batch cyberpower_energy_star --shard-size 5
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
