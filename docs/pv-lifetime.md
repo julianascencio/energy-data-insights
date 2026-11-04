@@ -123,3 +123,21 @@ archive fails rather than silently replacing the reviewed source version.
 Tests check source cells and exclusions, analytic inversion, changing-rate and
 changing-shape updates, step subdivision, independent-mode multiplication,
 horizon censoring and complete offline exports.
+
+## Repairable plant operation over 30–50 years
+
+The executable [operation scenario](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_pv_operation_50_years.html)
+extends degradation-only projections with independent annual component failures,
+replacement downtime and constant-real replacement costs. Run it from the checkout
+with `uv run python examples/analysis/plot_pv_operation_50_years.py`.
+
+The reusable `energy_methods.pv_operation.simulate_operation` method accepts an
+existing `ReliabilityCurve` and explicit `ComponentScenario` assumptions. The
+example uses 2,000 seeded histories and reports years 30, 40 and 50 from the same
+histories. It compares original-component survival with an analytical independent
+Bernoulli calculation. Replacement restores service without resetting module age.
+All failure probabilities, costs and outage durations are hypothetical. Percentile
+bands reflect sampled failures conditional on those assumptions. Annual midpoint
+retention approximates energy integration. Multiple failures of one component in
+a year, repair queues, seasonal outages and parameter uncertainty are excluded.
+The returned table can be exported directly to CSV using the example's export line.
