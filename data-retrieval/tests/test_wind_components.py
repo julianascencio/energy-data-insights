@@ -88,3 +88,10 @@ def test_existing_component_is_held_for_revision_review():
     new, decisions = stage(inputs(), records)
     assert not new
     assert decisions[0]["decision"] == "existing_identity_review"
+
+
+def test_exact_out_of_category_identity_keeps_its_hold_reason():
+    docs = inputs()
+    docs[0]["rows"][1]["defer_reason"] = "Exact bearing code retained; category mapping pending"
+    _, ledger = stage(docs)
+    assert ledger[1]["reason"] == "Exact bearing code retained; category mapping pending"

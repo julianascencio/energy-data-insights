@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T08:50:52Z",
+  "updated_at": "2026-11-04T09:34:00Z",
   "branch": "research/wind-20261104-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -17,7 +17,7 @@
       ],
       "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "Official USGS catalogue XML also403; next data.gov distribution metadata and LBNLalternate distribution listing. Do not retry unchanged ZIP/API/ArcGIS/XMLroutes.",
+      "next_task": "Data.govdistributionmetadata reviewed:only DOIlandingpage and previouslyblockedXML. Next LBNLalternate distribution listing; do not repeat catalogue discovery or unchanged blocked routes.",
       "latest_attempt_review": "2026-11-04-0935-source-review.json"
     },
     {
@@ -25,7 +25,7 @@
       "source": "French ODRE national wind registry",
       "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codefiliere%3D%27EOLIE%27&order_by=codeeicresourceobject",
       "partition": "National2458identity screen; all >=1MWservice cohorts2016–2026completed;104accepted total",
-      "status": "four_cohorts_complete_identity_holds_retained",
+      "status": "all_dated_ge1MW_cohorts_reviewed",
       "next_offset": 0,
       "next_ids": [
         "17W0000013597693",
@@ -49,9 +49,9 @@
         "17W0000013718721",
         "17W000001372535E"
       ],
-      "decision_ledger": "2026-11-04-0935-odre-2016-2017-decisions.jsonl",
+      "decision_ledger": "2026-11-04-1035-odre-1900-2011-decisions.jsonl",
       "sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
-      "next_task": "Next complete2014–2015service cohort, national identity screen retained. Previous20EICpermitcrosswalkholds unchanged; do not repeat discovery.",
+      "next_task": "All dated>=1MWcohorts exhausted. Next missing-date/sub1MW residual partition, preserving national identity screen; then explicit EIC-permit crosswalk holds.",
       "completed_service_intervals": [
         [
           "2022-01-01",
@@ -68,12 +68,25 @@
         [
           "2016-01-01",
           "2017-12-31"
+        ],
+        [
+          "2014-01-01",
+          "2015-12-31"
+        ],
+        [
+          "2012-01-01",
+          "2013-12-31"
+        ],
+        [
+          "1900-01-01",
+          "2011-12-31"
         ]
       ],
       "identity_followup_ledger": "2026-11-04-0835-identity-followup.jsonl",
       "decision_ledgers": [
-        "2026-11-04-0935-odre-2018-2019-decisions.jsonl",
-        "2026-11-04-0935-odre-2016-2017-decisions.jsonl"
+        "2026-11-04-1035-odre-2014-2015-decisions.jsonl",
+        "2026-11-04-1035-odre-2012-2013-decisions.jsonl",
+        "2026-11-04-1035-odre-1900-2011-decisions.jsonl"
       ]
     },
     {
@@ -168,7 +181,8 @@
         "Marne E103 appendix successfully downloaded but D0438349-0 legal notice explicitly restricts publication/derivatives: excluded, no retry as HTTP failure. ABB RevQ pp21–24 layout complete: NEXA-21 added/NETA-21 enriched; remaining EIA serial assignments and temperature discrepancy unresolved. Current Winergy exhibit still no exact identifier.",
         "GE4.2MW-117m complete table processed, one exact configuration; 4.23MW nameplate deliberately retained. Vestas4MW03/2024-EN brochure excluded for final-page copying restriction; acquired bytes, not HTTP failure. Next independent exact OEM product tables with revision and wind application evidence.",
         "MNREALMM20August2026 all30entries processed;27new1GEenrichment1Vayonaidentityhold1Pioneer90m nestedoption. Do not repeatAprilrevision or tower/power combinations. Next complete official GE3.8-154 component disclosure https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260602168592999.pdf ; exact LM75.7P2GenB blade identity and only explicitly listed component types. Then MNRE ALMM-WTC2June2026 complete table, source acquisition first. VayonaSG3.4-145/3.6 identity and GEregionalhub equivalence remain held.",
-        "Nine complete DMCdocuments (queueindices0–8,including GE3.8) and ALMM-WTC02June2026 complete:25new exact components,9turbines enriched,43generic rows held. Next queueindex9 Senvion4.2M160 https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf thenindices10–14 in 2026-11-04-0935-component-queue.json. Do not infer geometry/rating from model codes or split factory variants. Resolve generic types only with exact-model evidence."
+        "Nine complete DMCdocuments (queueindices0–8,including GE3.8) and ALMM-WTC02June2026 complete:25new exact components,9turbines enriched,43generic rows held. Next queueindex9 Senvion4.2M160 https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf thenindices10–14 in 2026-11-04-0935-component-queue.json. Do not infer geometry/rating from model codes or split factory variants. Resolve generic types only with exact-model evidence.",
+        "DMCqueueindices9–14complete:13new5turbinesenriched; SG/Vayona remainsheld. All15queued disclosures exhausted. Next exact supplier specification originals for WE4500S-01,WE7000G,EF0953A; reconcile Delijia legal entities without alias inference. Bearing/structural category mappings need explicit schema design before importing retained codes."
       ]
     },
     {
@@ -204,7 +218,7 @@
       "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
       "partition": "Complete Spanish wind rows, then complete Polish wind rows; exclude PV",
       "next_offset": 0,
-      "next_task": "Commissioning/date of sale mixed heading; require primary project detail evidence, reconcile existing names/phases before adding or enriching; zeroWTG placeholders are unknown inventories."
+      "next_task": "Eight Spain/Poland rows structurally reviewed and held. Next Cortijo de Guerra project detail plus WRI crosswalk, then seven Polish identities; do not repeat table discovery."
     }
   ],
   "user_priority_update": {

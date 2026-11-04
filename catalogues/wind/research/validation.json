@@ -1,64 +1,47 @@
 {
-  "batch": "2026-11-04-0935",
+  "batch": "2026-11-04-1035",
   "validated_base": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
-  "iteration_parent": "230b4b8d92992a9fa40c523294cc19ff7c7fa0c5",
+  "iteration_parent": "84900059f82c30d4efebe635fcfed8d6fa4899d6",
   "local": {
-    "pytest": "2217passed,5optional skipped in111.16s after integration with current main; zero failures/errors",
-    "skip_reasons": "cdsapi unavailable(1); optional Python3.13 imagery integrations(4)",
-    "focused": "50Wind catalogue/component/ODRE tests passed;10new component cases",
-    "viewer": "16Node tests passed, including explicit bidirectional component applications",
-    "source_replay": "All52new projects,25equipment and both2458-row national decision ledgers exactly replayed from checksum-pinned originals/transcriptions against iteration parent",
-    "catalogue": "21868records validated:7914projects319equipment13633turbines2curves",
-    "preservation": "21782prior records unchanged;9turbines enriched additively; all prior scalars, creation timestamps, extension keys and sources preserved; six capacity totals unchanged, excluded project count increases52; unrelated catalogues untouched",
-    "snapshots": "Two final-main independent builds match all7earlier validated snapshot files byte-for-byte; four136-column typed Zstandard tables",
-    "quality": "Repository Ruff lint/format839files,ty,citations,hygiene3756candidatefiles and whitespace checks passed after current-main integration",
-    "example": "Offline Wind gallery passed again after current-main integration; missing NGC torque metadata reported unknown",
-    "packages": "Three wheels and three sdists rebuilt after current-main integration",
-    "docs": "Strict Sphinx HTML passed with plot_gallery=0 after integration with merged PV/Data Center main; full gallery execution not claimed",
-    "docs_links": "Documentation check passed: 534 HTML pages; local links and assets resolve."
+    "pytest": "2218passed,5optional skipped in113.79seconds",
+    "viewer": "16Node tests passed",
+    "catalogue": "21898records:7931projects332equipment13633turbines2curves",
+    "preservation": "21863priorrecords unchanged;5turbines additively enriched; prior scalars,creation timestamps,source lists and extension keys retained;6capacity totals unchanged",
+    "snapshots": "Two final builds identical across all7files;four136-column Zstandard Parquet tables",
+    "quality": "Ruff lint/format839files,ty,repository hygiene3763files,citations passed",
+    "example": "Offline Wind gallery executed with Agg backend",
+    "packages": "Three wheels and three sdists built",
+    "docs": "Strict Sphinx HTML plot_gallery=0 passed, including final evidence-locator refresh",
+    "docs_links": "Documentation check passed: 534 HTML pages; local links and assets resolve.",
+    "source_replay": "17projects and three2458-row decision ledgers exactly replayed;13component records exactly replayed from original hashed bytes/transcriptions"
   },
   "not_executed": [
     "Full gallery execution",
-    "Interactive browser smoke test",
-    "Independent current component certification or operational performance verification"
+    "Interactive browser smoke testing",
+    "Independent component certification/performance verification"
   ],
   "remote_ci": {
-    "previous_published_commit": "230b4b8d92992a9fa40c523294cc19ff7c7fa0c5",
-    "previous_result": "Documentation and Python quality/tests workflows completed successfully",
-    "this_batch": "Pending publication; local results are not remote CI"
+    "previous_commit": "84900059f82c30d4efebe635fcfed8d6fa4899d6",
+    "previous_result": "Python and Documentation workflows succeeded",
+    "this_batch": "Pending publication"
   },
-  "research_blockers": [
-    "555French cohort candidates held; previous13duplicate-name groups still unresolved",
-    "43component rows lack exact model identifiers; generic types retained as observations only",
-    "USGS catalogueXMLHTTP403; IBAMA queryHTTP200withArcGIS500; no authentication or reuse inference",
-    "PNE mixed commissioning/date-of-sale heading requires project-scope reconciliation"
-  ],
   "snapshot_sha256": {
-    "sources.json": "2ddaa413ba1d9b4024f3a412e5f63abc67a44b2d72f58bd26afd58d3e29ed5ea",
+    "sources.json": "2d23eb96dbd31c3e6dadcaf9cc0255aeee339d1b6e510d908225bd26b5829a60",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "772fbfd145d32fb624b91b2e120807bf49f68bfc1339103189fbd17c58801d0e",
-    "equipment.parquet": "165c0b00153dd62789dc7cbfd5de93266408ed5873b227798d81a60e7ff2bbdf",
+    "manifest.json": "4e416f6259959d5ffca958a202d379706c469b527c881825fb4562b29fc70b35",
+    "equipment.parquet": "9be194b18eb0a7db8cafd6b9c7868d844bf2f8c48a9bb8bad084a7519949a392",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "94f991a64ff0179db8928fd9fbfc5516a52c9b820e20e27cf6bda6a51f2ccb7b"
+    "projects.parquet": "158c37c9757bb500ee0f26085532fae55ade85ac2406abf2537b42d507de3146"
   },
   "log_sha256": {
-    "pytest.log": "a55ba24895bae566628c96f4045cfdf137a9bb079713f2157eeb38c089fde144",
-    "focused.log": "df27b4f4027e5aaa97267ed3b2ea9c6ec7bb4620cacb4ba2a028b39792bb1b28",
-    "viewer.log": "fc15b620f92c24d85ed8c3af034ab22bddb714e53dc292432fc6c45a0c242dab",
-    "quality.log": "3440e5b7a8509f6239719808a34a54cbb0602b9a152c37aa4aa6af0332665288",
-    "gallery-final.log": "bb9a5917d1a0e8c3bb1785563709064dce84a8966345a3ee226d5ab09d659c04",
+    "pytest.log": "bb540ccfb124b272395b7e31321ff810526ca02ee216e685a64e4bc630f1ca63",
+    "viewer.log": "3c11d26eafff57063111b5d5e8b554df29405a0002083eab12d567eb73aca4f9",
+    "gallery.log": "8554930b48af92c50c8ddf87600547819370c3cde84b6974f8f45c4f87cdbca1",
     "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
-    "docs.log": "fbb2ef04164f0ad67e7e8158dbcfa239d16fd35b5578baf92bd662e7ac2332b1",
-    "docs-final.log": "dbeafd13cbe3307ada3347441cb62015a4dc4233f76ed6ec1851054c3ec54c10",
-    "docs-links-final.log": "2aad958801552c277ed588a401d3ea29d0c99c22b691a17b33bbedf551aba696",
-    "pytest-main.log": "7590326ca0cf5df1a25d9275935ac805f3e0e3ef12463db7edb438249ffbb1df",
-    "quality-main.log": "298d8871b92b4c957b602b9d9b4adddefb74d9940ede79ea76e980d1df8573b7",
-    "docs-main.log": "9b3dbe685d455a03904f090f6c8d77c6c46331d196ea71da678229863bb73a4d",
-    "viewer-main.log": "4110d2cb69474d5d62af966cfc17c247ca04183f8f03a327921f59197e4b09c8",
-    "gallery-main.log": "bb9a5917d1a0e8c3bb1785563709064dce84a8966345a3ee226d5ab09d659c04",
-    "packages-main.log": "58bda4b172e5810ebf891e3a03be18b139649436a68d1cd2594f58bcd667d46d",
-    "docs-links-main.log": "38afbed222f7b1ee8eef1b0e08300c0d93877fd4b834c2a30ca81465bd68f81e"
-  },
-  "publication_reconciliation": "Main advanced after checks; previous Wind/PV/Data Center PRs merged externally; full checks repeated after clean cherry-pick"
+    "docs.log": "ea4a4f7938c2397b9b95ae12335cc862f68e3d88c3ab43b32fade10205e2ce13",
+    "links.log": "38afbed222f7b1ee8eef1b0e08300c0d93877fd4b834c2a30ca81465bd68f81e",
+    "docs-final.log": "537cc3ad874e54255477f8b623e464d9837040e5fdfd6ef196f64ced62d3e9dd",
+    "links-final.log": "38afbed222f7b1ee8eef1b0e08300c0d93877fd4b834c2a30ca81465bd68f81e"
+  }
 }

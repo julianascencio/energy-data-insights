@@ -65,7 +65,7 @@ def stage_components(
                     {
                         **decision,
                         "decision": "deferred",
-                        "reason": "No exact component model identifier",
+                        "reason": slot.get("defer_reason") or "No exact component model identifier",
                         "observation": slot["observation"],
                     }
                 )

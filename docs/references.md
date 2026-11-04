@@ -6783,3 +6783,43 @@ Ministry of New and Renewable Energy, Government of India (2026). **Approved Lis
 **Role:** data. As on02.06.2026; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_9_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for wind turbine Model No: Senvion 4.2M160**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_11_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major Component details for the Wind Turbine Model No: Pioneer Wincon 750/49,750.0 kW, HT24, HH 61.5&HH75.0m, IEC IIIB**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/2025120215394926.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_12_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major Component details for the Wind Turbine Model No: Pioneer Wincon 750/57, 750.0 kW, PW 28.0, HH 90.0m IEC III A**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/12/20251202195561748.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_13_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major Component details for Wind Turbine Model no. SI-16840**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/202606021390750716.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### mnre_component_14_20261104
+
+Ministry of New and Renewable Energy, Government of India (n.d.). **Major component details for wind turbine Model No: Venwind wind turbine GWH182-5.3**. [Source](https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/08/202608211005381120.pdf)
+
+**Role:** data. Undated manufacturer disclosure linked from MNRE ALMM20August2026; publication date unknown; original SHA256 in source registry; all component rows reviewed. Manufacture and compatibility disclosures are not independently validated performance.
+
+**Used by:** `catalogues/wind/sources.json`.
