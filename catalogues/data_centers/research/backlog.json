@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T00:42:00Z",
+  "updated_at": "2026-11-04T01:34:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -55,7 +55,8 @@
     "mitsubishi_electric_current_ups_configurations": 26,
     "fuji_electric_current_ups_configurations": 20,
     "daikin_ewat_cz_2026_configurations": 27,
-    "atnorth_finland_municipal_observations": 6
+    "atnorth_finland_municipal_observations": 6,
+    "kehua_current_ups_model_columns": 25
   },
   "next_batches": [
     {
@@ -160,8 +161,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 277,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba current three-phase UPS configurations, all 26 exact rows in Mitsubishi Electric's current eight-family UPS comparison and all 20 reviewed Fuji Electric UPS7000HX/7300WX/7400WX/7500WX configurations complete; continue independent generator and electrical-equipment suppliers without recounting these inventories",
+      "offset": 302,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, plus all 25 model columns in the reviewed Kehua KR11-RM/KR-RM/Eon/MY/KR33 current tables complete; continue independent generator and electrical-equipment suppliers without recounting these inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -170,7 +171,8 @@
         "mtu 50/60 Hz DCC tables are complete at 12+8; never convert their kVA ratings to active kW or select a portfolio voltage",
         "Find exact mtu model-level fuel consumption, dimensions, weight, emissions calibration and ordered voltage tables before enrichment",
         "Mitsubishi family efficiency, cabinet/weight groups and compatible peripherals remain observations until exact rating-level tables bind them; do not infer 9900D 1500/1600/2000 kVA rows from the portfolio range",
-        "Fuji UPS7000HX/7300WX/7400WX/7500WX offset 20 is complete; keep nominal and maximum input current, output current, online/HE efficiency, UPM count and battery interface boundaries separate, and do not infer active kW for UPS7300/7500"
+        "Fuji UPS7000HX/7300WX/7400WX/7500WX offset 20 is complete; keep nominal and maximum input current, output current, online/HE efficiency, UPM count and battery interface boundaries separate, and do not infer active kW for UPS7300/7500",
+        "Kehua current-table offset 25 is complete; KR33 efficiency and weight stay quarantined because current official English and Spanish pages disagree, and KR6000-RM/KR1110-RM retain the internally inconsistent 80-275 V versus 176-295 V full-load text without scalar normalization"
       ]
     },
     {
@@ -261,12 +263,12 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "atnorth-finland-permits-20261104T004200Z",
+    "run_id": "kehua-ups-20261104T013400Z",
     "report": "2026-11-04-report.md",
     "validation": "2026-11-04T0042-validation.json",
     "added_projects": 0,
-    "enriched_projects": 4,
-    "added_equipment": 0,
+    "enriched_projects": 0,
+    "added_equipment": 25,
     "branch": "research/data-center-database-20261103T2221Z"
   }
 }

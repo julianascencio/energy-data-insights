@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 640 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
-Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Lenovo, Motivair by Schneider
+has 665 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
+Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, Lenovo, Motivair by Schneider
 Electric, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
@@ -115,6 +115,14 @@ including separately labelled 040-MONO and 040-DUAL columns. Cooling output,
 input power and water flow preserve the 12/7 degC water and 35 degC ambient
 rating point. EER and IPLV remain ratios in observations; voltage, frequency,
 dimensions, weight, hydronic choices and order-code suffixes are not inferred.
+The Kehua continuation processes all 25 exact model columns across the current
+KR11-RM, KR-RM, Eon, MY and KR33 tables. Apparent kVA and active kW are populated
+only on the boundary printed by each family; selectable voltage/frequency ranges,
+battery systems, external battery modules, distribution boxes and parallel options
+remain observations. KR33 efficiency and weight stay null because the current
+official English and Spanish tables disagree, while both observations and original
+HTML checksums are preserved. The KR6000-RM and KR1110-RM input ranges also remain
+unnormalized because the printed full-load upper bound exceeds the stated range.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -274,5 +282,5 @@ exact nVent HOFFMAN SKUs. Optional voltages were not expanded into invented prod
 Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
-See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-03T1419-validation.json).
+See the [continuation report](../catalogues/data_centers/research/2026-11-04-report.md)
+and [executed validation](../catalogues/data_centers/research/2026-11-04T0134-validation.json).

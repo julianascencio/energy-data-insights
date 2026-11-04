@@ -7,7 +7,7 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **182 project records in 36 countries**:
 **65 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **640 exact equipment records from 23 OEMs**.
+from 13 operators. It has **665 exact equipment records from 24 OEMs**.
 Merged `main` at `7af547f` contains **182 projects and 593 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -39,6 +39,7 @@ uv run python scripts/build_data_center_toshiba_ups_batch.py staged-toshiba-ups.
 uv run python scripts/build_data_center_mitsubishi_ups_batch.py staged-mitsubishi-ups.jsonl
 uv run python scripts/build_data_center_fuji_ups_batch.py staged-fuji-ups.jsonl
 uv run python scripts/build_data_center_daikin_chiller_batch.py staged-daikin-chillers.jsonl
+uv run python scripts/build_data_center_kehua_ups_batch.py staged-kehua-ups.jsonl
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -53,10 +54,10 @@ Exact equipment links require a disclosed deployment; none are asserted in this
 batch. Existing stationary battery and BESS equipment records are referenced by
 validated BESS IDs, not copied into a competing battery catalogue.
 
-Read [the latest research report](research/2026-11-03-report.md),
+Read [the latest research report](research/2026-11-04-report.md),
 [ranked continuation backlog](research/backlog.json),
-[latest decision ledger](research/2026-11-03-decisions.jsonl),
-[executed validation](research/2026-11-03T2324-validation.json), and
+[latest decision ledger](research/2026-11-04-decisions.jsonl),
+[executed validation](research/2026-11-04T0134-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

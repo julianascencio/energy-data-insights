@@ -8,6 +8,14 @@
       "enriched_records": 4,
       "reuse": "Factual extraction from public Finnish municipal and permit-authority notices; no open licence asserted; originals not redistributed",
       "originals": "All five official pages were readable through the public web index. Original response bytes were unavailable in the research tool, so no checksum or byte count is claimed; this is an access/tooling limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "Kehua current KR11-RM, KR-RM, Eon, MY and KR33 model tables",
+      "processed_offset": 25,
+      "accepted_records": 25,
+      "enriched_records": 0,
+      "reuse": "Factual extraction from public copyrighted OEM product pages; no open licence asserted; originals are not redistributed",
+      "originals": "Seven official HTML captures total 1,635,667 bytes and each has a SHA-256 checksum in sources.json. Footer review exposed privacy and cookie policies but no explicit product-fact reuse prohibition."
     }
   ],
   "deferred": [
@@ -29,6 +37,24 @@
         "The existing July 2026 YIT phase is separately documented but not cross-referenced by the authority pages"
       ],
       "reason": "The identity relationship remains unresolved; no duplicate phase record or capacity allocation was created."
+    },
+    {
+      "record": "Kehua KR33 seven-model current table",
+      "field": "efficiency_pct and weight_kg",
+      "observations": [
+        "Global English table: 96.5% maximum efficiency and weights 700-2350 kg",
+        "Official Spanish table: 97% maximum efficiency and weights 750-2400 kg"
+      ],
+      "reason": "Both official current observations are retained; normalized efficiency and weight remain null on all seven KR33 records."
+    },
+    {
+      "record": "Kehua KR6000-RM and KR1110-RM",
+      "field": "input_voltage_v",
+      "observations": [
+        "Printed input range 80-275 V",
+        "Printed full-load range 176-295 V"
+      ],
+      "reason": "The full-load upper bound exceeds the stated range; exact text is retained and no scalar input voltage is normalized."
     }
   ],
   "normalization_notes": [
@@ -36,6 +62,9 @@
     "FIN04 building areas remain building-bound observations and never become campus or data-hall area.",
     "FIN05 60 MW IT, 75 MW first-phase electrical demand and 230 MW whole-project demand remain distinct boundaries; none is treated as grid connection capacity.",
     "FIN05 operator investment and possible customer-owned server/installation investment remain separately scoped observations.",
-    "Campus aggregates remain excluded from capacity sums under all viewer filters."
+    "Campus aggregates remain excluded from capacity sums under all viewer filters.",
+    "Kehua apparent kVA and active kW remain family-specific published boundaries; neither is derived from the other.",
+    "Selectable voltage/frequency, battery, distribution-box, EBM and parallel choices do not create synthesized configurations.",
+    "KR33 localized-page conflicts and KR11-RM internal voltage inconsistency remain quarantined rather than silently resolved."
   ]
 }

@@ -139,6 +139,21 @@ def test_ups_matrix_accepts_fuji_electric_official_rows():
     assert candidate["output_power_kw"] == 1000
 
 
+def test_ups_matrix_accepts_kehua_kw_only_row_without_inventing_kva():
+    header, *rows = UPS_MATRIX.splitlines()
+    kehua_row = next(row for row in rows if row.startswith(b"Kehua Tech,"))
+    kehua = header + b"\n" + kehua_row + b"\n"
+    result = parse_ups_rating_matrix(
+        kehua,
+        source_url="https://www.kehua.com/critical-power.html",
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Kehua Tech"
+    assert candidate["apparent_power_kva"] is None
+    assert candidate["output_power_kw"] == 60
+
+
 def test_ups_matrix_rejects_fuji_source_manufacturer_mismatch():
     header, *rows = UPS_MATRIX.splitlines()
     mitsubishi_row = next(row for row in rows if row.startswith(b"Mitsubishi Electric,"))
