@@ -326,3 +326,20 @@ public-utility declarations and proposed capacities do not establish wind output
 or commissioning. All four new records remain excluded from capacity totals.
 Exact supplier searches produced no new primary OEM sheet; no new equipment is
 claimed. Next daily BOE partitions: 26–28 October 2026.
+
+
+### BOE hybrid consultations and multiple daily issues
+
+The 2026-11-04-1535 batch reviews all Series A/B wind-title notices for
+26–31 October, including both issues 267 and 268 on 28 October. The default
+BOE daily URL can show only an extraordinary issue. `issue_urls` discovers
+same-day alternatives; every returned issue must be fetched before claiming
+partition completeness. `select_wind_notices(..., series="B")` explicitly
+selects announcements; the default remains Series A.
+
+Olmedilla is a proposed wind module, not commissioned capacity. Los Pedreros'
+existing wind capacity is retained as a qualified observation from a storage
+consultation. Neither record enters capacity totals. Hybrid regulatory
+capacity, PV, battery and flywheel ratings remain separate. Romeral is held
+for reconciliation with its historical name candidate. These bounded results
+do not meet the 50-project/20-equipment research targets.

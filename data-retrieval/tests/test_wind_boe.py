@@ -156,3 +156,28 @@ def test_separate_extensions_share_notice_not_identity_or_capacity():
     projects[1]["sha256"] = "0" * 64
     with pytest.raises(ValueError, match="provenance"):
         stage(r)
+
+
+def test_series_b_is_explicit_and_cannot_be_mixed_with_decisions():
+    html = FIXTURE.read_text().replace("BOE-A-", "BOE-B-")
+    assert select_wind_notices(html) == []
+    assert len(select_wind_notices(html, series="B")) == 4
+    with pytest.raises(ValueError, match="exactly one"):
+        select_wind_notices(html, series="AB")
+
+
+def test_multiple_daily_issues_discovery_keeps_same_day_only():
+    from energy_data_retrieval.wind_catalogue.boe import issue_urls
+
+    base = "https://www.boe.es/boe/dias/2026/10/28/"
+    html = '<a href="index.php?d=267">Regular</a><a href="index.php?d=267">Duplicate</a>'
+    html += '<a href="../27/index.php?d=266">Previous</a><a href="https://evil.example/index.php?d=1">Other</a>'
+    assert issue_urls(html, base) == [base, base + "index.php?d=267"]
+    with pytest.raises(ValueError):
+        issue_urls(html, "https://evil.example/boe/dias/2026/10/28/")
+
+
+def test_public_consultation_is_not_permission_or_operation():
+    for status in ["permitted", "operational", "cancelled"]:
+        with pytest.raises(ValueError, match="Public consultation"):
+            stage(review(effect="public_consultation", status=status))

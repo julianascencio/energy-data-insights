@@ -1,63 +1,50 @@
 {
-  "batch": "2026-11-04-1435",
-  "validated_base": "6da869c9e6b990050f614ec0abbc62fd07a43604",
-  "iteration_parent": "878a186ab8a9cfc7361a3f264011e14de793c310",
+  "batch": "2026-11-04-1535",
+  "validated_base": "b8dc106f7a854fb57c76146afd10fe080765006b",
   "local": {
-    "pytest": "2396 passed; five optional skips after current-main integration",
+    "pytest": "2406 passed;5 optional skips",
+    "focused": "49 reference/BOE tests passed",
     "viewer": "16 passed",
-    "quality": "Ruff lint/format (909 files), ty, repository hygiene (4006 candidates), citations and whitespace passed after integration",
-    "catalogue": "Exact replay 4 records/5 decisions; 21916 prior records/308 sources unchanged; 21920 records validated; seven snapshot files identical.",
-    "snapshots": "Two final builds of seven files byte-identical; immutable typed Zstandard Parquet",
-    "source_replay": "Four canonical records and five scope decisions replay exactly from checksummed original HTML and reviewed transcription",
-    "capacity": "All six reported capacity totals unchanged; excluded project count increases by4",
-    "docs": "Strict Sphinx plot_gallery=0 passed; Documentation check passed: 574 HTML pages; local links and assets resolve.",
-    "example": "Offline Wind gallery passed on final records",
+    "quality": "Ruff lint/format913files,ty,repository4015candidates,citations,whitespace passed",
+    "catalogue": "21922 records validated;21920 prior records preserved;2new;exact replay2records3decisions",
+    "capacity": "All six totals and included unknown counts unchanged;2additional scopes excluded",
+    "snapshots": "Two seven-file builds byte-identical;typed Zstandard Parquet",
+    "docs": "Strict Sphinx plot_gallery=0 passed;579HTMLpages links/assets passed",
+    "example": "Offline wind example passed",
     "packages": "Three wheels and three sdists built"
   },
   "resolved_validation_failures": [
-    "Shared BOE notice identifier replaced by unique project-scope identifiers for paired extensions; exact replay and full validation passed",
-    "Initial full suite/docs exhausted temporary storage; reproducible older outputs cleared; final full suite and strict docs passed"
+    "Two BOE reference IDs were already used by BESS; preserved existing references and unioned used_by; full suite rerun passed"
   ],
   "not_executed": [
     "Full gallery",
     "Interactive browser",
-    "Independent operational performance or current certificate eligibility verification"
+    "Independent operational performance verification"
   ],
   "remote_ci": {
-    "previous_commit": "878a186ab8a9cfc7361a3f264011e14de793c310",
-    "previous_result": "Python3.12/Python3.13 and Documentation succeeded; deployment skipped",
     "this_batch": "Pending publication"
   },
   "snapshot_sha256": {
-    "sources.json": "5a7cf6ae6e9e8d342a19d8a2edeecffb7eee9d79d0ecd0f414b949412d1af830",
+    "sources.json": "289c7b94a940d40255b545c70ee2c43aa8ef36335b8ac4df3cf84640c0a5d77f",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "f4834c0e47c21ef56a983f6d9364e51cf35779cf52602ee18f19971bb92fce16",
+    "manifest.json": "17719d26f8729833b56dac58772116e5a804296aaf4a75290ca9e5945d8f0c62",
     "equipment.parquet": "4429d5eaa2b673c5f77f04219cdf97fcaab78b2a2ba4e8d8c6969ca304f3b6b8",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "f61820b1859dbfaf9d179bb3accd57c428301d05e003c6b53b8e58b17b59d301"
+    "projects.parquet": "0733ac44596ce17aa5aae3d75f9879823bd072d13711c30d36a311cbec268f9a"
   },
   "log_sha256": {
-    "pytest-final.log": "8ee977e4ecea14eae2d5115d81f4d1cbd25da2a6b6c6f3f82c9dfcfc2bc7a22f",
-    "docs-final.log": "84626cae14155fa0193524fe6b964ac9883e8ebc7211045eedb0497dff96faeb",
-    "links-final.log": "00efba4fb7d5b09c21402aded869e7b3ec2cc5a78b0459a318361f806e5315c6",
+    "pytest-final.log": "9eedeff8996d73d9bcfd95d82b79deca0af6ab72f4651c7083007d8ad053761c",
+    "docs-final.log": "b8a7487cc0f9aa809991c12ff2a7883a179f3f4e742c09d838f84f1f5f1b086d",
+    "links-final.log": "41cc996c36c277bf1d12aff4fb90543990bb04fc93442e03bd4becd8038f14c4",
     "packages-final.log": "58bda4b172e5810ebf891e3a03be18b139649436a68d1cd2594f58bcd667d46d",
-    "replay-final.log": "b72f75a0af6117379ff3eb02ea25280f4be2d2beb40b2c7acd3fa327222d45d4",
+    "viewer.log": "2172a9cff1a9bf48f48b5e70592fb5cd1477bac3a2271005e0802295f1ba53c5",
     "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "format.log": "4c4af158016f111858b093be28e5eae0e2ecd3ab0850e5e8205bef2b88709fc6",
+    "format.log": "b43c790958885fbec1b3aed9dc475af58a6485aee95fec48567718e278a1fa9b",
     "ty.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "viewer.log": "533a1e33bc27b177510489baba5b1ba183155507fb530fb6df15f77f82514792",
-    "gallery-final.log": "e7eb80f310e2943df92d558fb9cebdc6e62ecd726ccb0335139cee6ed17688ac",
-    "repository.log": "245426fdc6b79ee1125c8a7dd32c4271904dac1fdda20ccbc7bbc46b12eb6cb7",
+    "repository.log": "9d1977f07b78bf8ace9364cc0c249054fb3cad9669aa6a4d16daed00ec315e7a",
     "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
-    "pytest-integrated.log": "5e87dc10880de54bd10359c5a8364a3cee54ef7758a82ae1a9daedc452298956",
-    "docs-integrated.log": "fce7f7d352038463b846634afaee8a7638c4371907638af0e47762ade7bb1147",
-    "links-integrated.log": "bbe25bddd005d6b1bbcb07c7a88ec80cdb9cc494a97ff8daa8b21eed8ad648ef",
-    "packages-integrated.log": "842b316ab0e33a3ef6dd9ee01b5eddcfb9f3a1ac9157666aa704c91df78ee456"
-  },
-  "publication_concurrency": {
-    "observed_head": "5dd56b0c8bcd40e174223291f55fc2725a19325e",
-    "change": "Concurrent main merge; all its citation entries retained exactly, no catalogue research changes",
-    "policy": "Fast-forward from observed head with expected-head lease; never replace its history"
+    "replay.log": "ebbbcb0dbccf1a5d97a37d73d6edcee296caaf21d13232b7a5f6aad49d1b10f6",
+    "gallery.log": "30fe044dcae8e8d7102868c63e03fdd7ee75bccb46847ad65f6f9a35cc950ce2"
   }
 }

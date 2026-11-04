@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-04T13:35:00Z",
-  "branch": "research/wind-20261104-0935",
+  "updated_at": "2026-11-04T14:36:18Z",
+  "branch": "research/wind-20261104-1535",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
     {
@@ -214,17 +214,29 @@
         "2026-11-04",
         "2026-10-21",
         "2026-10-22",
-        "2026-10-23"
-      ],
-      "next_dates": [
+        "2026-10-23",
         "2026-10-26",
         "2026-10-27",
-        "2026-10-28"
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "next_dates": [
+        "2026-10-24"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "Complete next daily Series A partitions; reconcile PEol-899 against two historical EL PARAMO identities; existing Coll del Moro/Torre Madrina farm registry links before aggregating extensions.",
-      "decision_ledger": "2026-11-04-1435-decisions.json"
+      "next_task": "SeriesA October24 gap; SeriesB October20–24 and November2–4 not previously reviewed. Always discover same-day extra issues before completion. Reconcile Romeral PFot-ALM-043-EOL against historical fa061da8-87aa-5290-b330-fca561b67e83. Then permit dossiers and earlier ranked crosswalk tasks.",
+      "decision_ledger": "2026-11-04-1535-decisions.json",
+      "series_b_completed_dates": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28",
+        "2026-10-29",
+        "2026-10-30",
+        "2026-10-31"
+      ]
     }
   ],
   "user_priority_update": {

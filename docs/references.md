@@ -2126,7 +2126,7 @@ Agencia Estatal Boletín Oficial del Estado (2026). **BOE-B-2026-35371**. [Sourc
 
 **Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
 
-**Used by:** `catalogues/bess/sources.json`.
+**Used by:** `catalogues/bess/sources.json`, `catalogues/wind/sources.json`.
 
 ### boe_b_2026_35372
 
@@ -2134,7 +2134,7 @@ Agencia Estatal Boletín Oficial del Estado (2026). **BOE-B-2026-35372**. [Sourc
 
 **Role:** data_source. Adapted BOE data; source terms and scope in BESS register.
 
-**Used by:** `catalogues/bess/sources.json`.
+**Used by:** `catalogues/bess/sources.json`, `catalogues/wind/sources.json`.
 
 ### byd_bcu20_hvs_20250328
 
@@ -7005,5 +7005,13 @@ Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A
 Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22071 Resolución de 2 de octubre de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Planta FV 130, SLU, de la solicitud de autorización administrativa previa para el parque eólico Valentina, de 90 MW, para su hibridación con la instalación solar fotovoltaica Valentina Solar, de 60,382 MW, y de una parte de su infraestructura de evacuación, en Rosinos de la Requejada, Espadañedo y Asturianos (Zamora).**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22071)
 
 **Role:** data. Dated decision 2026-10-02; original HTML checksum and scope qualifications in wind registry.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_35162
+
+Government of Spain (2026). **Los Pedreros hybrid public consultation**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-35162)
+
+**Role:** data. Wind and hybrid boundaries retained in source registry.
 
 **Used by:** `catalogues/wind/sources.json`.

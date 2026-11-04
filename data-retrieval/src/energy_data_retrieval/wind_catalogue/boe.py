@@ -12,7 +12,7 @@ import re
 import unicodedata
 from html.parser import HTMLParser
 from typing import Any
-from urllib.parse import parse_qs, urlsplit
+from urllib.parse import parse_qs, urljoin, urlsplit
 
 from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
 
@@ -31,8 +31,9 @@ def _normalized(text: str) -> str:
 
 
 class _Index(HTMLParser):
-    def __init__(self) -> None:
+    def __init__(self, series: str = "A") -> None:
         super().__init__()
+        self.series = series
         self.depth = 0
         self.paragraph = False
         self.title: list[str] = []
@@ -69,19 +70,21 @@ class _Index(HTMLParser):
                     if len(self.ids) != 1:
                         raise ValueError("Wind notice requires one document identifier")
                     ident = next(iter(self.ids))
-                    if re.fullmatch(r"BOE-A-\d{4}-\d+", ident):
+                    if re.fullmatch(rf"BOE-{self.series}-\d{{4}}-\d+", ident):
                         self.notices.append({"notice_id": ident, "title": title})
 
 
-def select_wind_notices(html: str) -> list[dict[str, str]]:
+def select_wind_notices(html: str, *, series: str = "A") -> list[dict[str, str]]:
     """Select Series A wind mentions, including solar hybrids and auxiliaries.
 
-    Series B announcements are outside this explicitly bounded partition.
+    Series B announcements require explicit ``series="B"`` selection.
     A selected title is a review candidate, never an automatic project record.
     """
     if "sumario" not in html.casefold() or "dispo" not in html:
         raise ValueError("Expected a complete BOE daily index, not an error/login page")
-    parser = _Index()
+    if series not in {"A", "B"}:
+        raise ValueError("Select exactly one BOE series: A or B")
+    parser = _Index(series)
     parser.feed(html)
     parser.close()
     if parser.depth:
@@ -90,6 +93,43 @@ def select_wind_notices(html: str) -> list[dict[str, str]]:
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate BOE notice")
     return parser.notices
+
+
+def issue_urls(html: str, daily_url: str) -> list[str]:
+    """Discover same-day extra issues; callers must fetch every returned URL.
+
+    A default daily index may show only the extraordinary issue. Discovery
+    cannot establish completeness of content that has not yet been fetched.
+    """
+    base = urlsplit(daily_url)
+    if (
+        base.scheme != "https"
+        or base.netloc != "www.boe.es"
+        or not re.fullmatch(r"/boe/dias/\d{4}/\d{2}/\d{2}/", base.path)
+        or base.query
+    ):
+        raise ValueError("Expected an official BOE daily directory URL")
+    found = {daily_url}
+
+    class Links(HTMLParser):
+        def handle_starttag(self, tag, attrs):
+            if tag != "a":
+                return
+            href = dict(attrs).get("href", "")
+            url = urlsplit(urljoin(daily_url, href))
+            query = parse_qs(url.query)
+            if (
+                url.scheme == base.scheme
+                and url.netloc == base.netloc
+                and url.path == base.path + "index.php"
+                and set(query) == {"d"}
+                and len(query["d"]) == 1
+                and query["d"][0].isdigit()
+            ):
+                found.add(urljoin(daily_url, href).split("#")[0])
+
+    Links().feed(html)
+    return sorted(found)
 
 
 def stage_boe_notices(
@@ -150,6 +190,8 @@ def stage_boe_notices(
             raise ValueError("Explicit decision technology boundary required")
         if target != "wind" and values["status"] == "cancelled":
             raise ValueError("Non-wind decision cannot cancel the wind farm")
+        if effect == "public_consultation" and values["status"] not in {"announced", "unknown"}:
+            raise ValueError("Public consultation does not establish permission or operation")
         if effect == "environmental_conditions" and values["status"] == "permitted":
             raise ValueError("Environmental decision alone is not construction authorization")
         if (
