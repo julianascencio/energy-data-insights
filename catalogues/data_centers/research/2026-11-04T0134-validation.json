@@ -1,0 +1,134 @@
+{
+  "run_id": "kehua-ups-20261104T013400Z",
+  "validated_at": "2026-11-04T01:45:00Z",
+  "branch": "research/data-center-database-20261103T2221Z",
+  "base_main_sha": "7af547f900d676b4334226a64739aed2f4cb3f97",
+  "prepublication_remote_head": "8eb28419f7a4997c9b33805c88b64c6708fa44f5",
+  "canonical_records": 847,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 665,
+    "countries": 36,
+    "operators": 13,
+    "oems": 24
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 593,
+    "countries": 36,
+    "operators": 13,
+    "oems": 21
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 25,
+    "substantively_enriched_equipment": 0,
+    "new_countries": [],
+    "new_operators": [],
+    "new_oems": [
+      "Kehua Tech"
+    ]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_kehua_ups_batch.py <temporary-output> twice && cmp both outputs with catalogues/data_centers/records/equipment/2026-11-04-kehua-ups.jsonl",
+      "result": "passed; 25 bounded model columns reproduced byte-for-byte"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 847 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "64 passed"
+    },
+    {
+      "command": "TMPDIR=/dev/shm pytest -q -p no:cacheprovider",
+      "result": "2113 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 796 files format-checked"
+    },
+    {
+      "command": "ty check <changed Data Center Python files>",
+      "result": "passed"
+    },
+    {
+      "command": "ty check",
+      "result": "passed repository-wide"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3329 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed standalone and as part of strict Sphinx gallery; geographic coverage, capacity completeness, cooling and equipment outputs reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs /dev/shm/data-center-docs-kehua-0134 && python scripts/check_docs_links.py /dev/shm/data-center-docs-kehua-0134",
+      "result": "passed; 516 HTML pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment, schema, sources and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e8d0ff04dbdbf7ed0b41120c85aac82fe6a6e93fc8b445ea34cc3ee549da04de",
+    "equipment_sha256": "480f87ee8736f3cffa4c0c5e1d354483c2a21782822f9b9ef88362178ff3084b",
+    "input_sha256": "29d7a79e1ea4924cf4fca2474bbf37cc74898b946fb00f7e915b364f8dd5e2df",
+    "manifest_sha256": "2676756b0dfe6abdebb27a09c6f15b3e3bd5a39ed099951defb3322ce10a10fd",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "fb1123d417afc7d3fbd14bc5330cd2d25d6fa511aeddc42d5e9274715832b8a5"
+  },
+  "capacity_summary": {
+    "it_ultimate_planned_mw": 697.1,
+    "it_ultimate_planned_records": 12,
+    "it_design_mw": 534.1,
+    "it_design_records": 20,
+    "it_operational_mw": 146.0,
+    "it_operational_records": 5,
+    "grid_design_mw": 207.5,
+    "grid_design_records": 3,
+    "facility_ultimate_planned_mw": 75.0,
+    "facility_ultimate_planned_records": 1,
+    "campus_aggregates_excluded": 114
+  },
+  "source_capture": {
+    "official_pages_reviewed": 7,
+    "accepted_model_columns": 25,
+    "official_originals_checksummed": 7,
+    "source_bytes": 1635667,
+    "reuse_note": "Public copyrighted Kehua Tech product pages were reviewed for factual extraction. Footer review found privacy and cookie policies but no explicit product-fact reuse prohibition. Originals are not redistributed."
+  },
+  "quarantines": [
+    "All seven KR33 configurations retain null normalized efficiency_pct and weight_kg because the current English and Spanish official pages disagree on both fields.",
+    "KR6000-RM and KR1110-RM retain null scalar input_voltage_v because the printed general and full-load voltage ranges are internally inconsistent."
+  ],
+  "screened_reuse_holds": [
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale and Riello holds remain unchanged; none of their facts or bytes were imported in this run."
+  ],
+  "remote_ci_before_publication": {
+    "head_sha": "8eb28419f7a4997c9b33805c88b64c6708fa44f5",
+    "status": "Documentation and Python quality/tests succeeded",
+    "note": "The newly published Kehua head must receive a separate post-publication workflow check; local validation is reported independently."
+  }
+}

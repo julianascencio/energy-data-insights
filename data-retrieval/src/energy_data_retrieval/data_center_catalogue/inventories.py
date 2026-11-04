@@ -125,6 +125,69 @@ def parse_named_inventory(
     }
 
 
+def parse_project_permit_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact public project-permit rows without promoting scope or capacity.
+
+    Each row is one dated administrative observation. The adapter retains the
+    authority's identifier, project boundary and optional reported building area;
+    it deliberately does not infer construction start, IT load or grid capacity.
+    """
+    host = urlsplit(source_url).hostname
+    if host not in {
+        "www.espoo.fi",
+        "www.kouvola.fi",
+        "ep10.kouvola.fi",
+        "tiedotteet.salo.fi",
+        "www.ymparisto.fi",
+    }:
+        raise ValueError("Unsupported official project-permit source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "record_id",
+        "source_id",
+        "authority_id",
+        "decision_date",
+        "project_scope",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing project-permit matrix columns")
+    candidates: dict[tuple[str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate: dict[str, Any] = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate.values()):
+            raise ValueError(f"Incomplete project-permit row {line}")
+        area = (row.get("building_area_m2") or "").strip()
+        if area:
+            try:
+                candidate["building_area_m2"] = float(area)
+            except ValueError as exc:
+                raise ValueError(f"Invalid building area on row {line}") from exc
+            if candidate["building_area_m2"] <= 0:
+                raise ValueError(f"Invalid building area on row {line}")
+        else:
+            candidate["building_area_m2"] = None
+        candidate["address"] = (row.get("address") or "").strip() or None
+        key = (candidate["record_id"], candidate["authority_id"])
+        if key in candidates:
+            raise ValueError(f"Duplicate project-permit row for {key}")
+        candidates[key] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed project-permit matrix shape: {len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_cdu_spec_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:
@@ -204,6 +267,7 @@ def parse_precision_cooling_matrix(
         "www.deltapowersolutions.com",
         "www.delta-emea.com",
         "www.deltaww.com",
+        "www.daikin.eu",
     }:
         raise ValueError("Unsupported official precision-cooling source URL")
     if expected_count < 1:
@@ -238,6 +302,7 @@ def parse_precision_cooling_matrix(
             "cdu",
             "crah",
             "crac",
+            "chiller",
             "direct_to_chip",
             "immersion",
         }:
@@ -357,10 +422,14 @@ def parse_ups_rating_matrix(
     """
     host = urlsplit(source_url).hostname
     manufacturers_by_host = {
+        "americas.fujielectric.com": {"Fuji Electric"},
+        "www.fujielectric.com": {"Fuji Electric"},
         "toshiba.com": {"Toshiba"},
         "www.toshiba.com": {"Toshiba"},
         "mitsubishicritical.com": {"Mitsubishi Electric"},
         "www.mitsubishicritical.com": {"Mitsubishi Electric"},
+        "kehua.com": {"Kehua Tech"},
+        "www.kehua.com": {"Kehua Tech"},
     }
     if host not in manufacturers_by_host:
         raise ValueError("Unsupported official UPS source URL")
@@ -382,16 +451,19 @@ def parse_ups_rating_matrix(
     candidates: dict[tuple[str, str, str], dict[str, Any]] = {}
     for line, row in enumerate(reader, start=2):
         candidate = {key: (row.get(key) or "").strip() for key in required}
-        if not all(candidate[key] for key in required - {"output_power_kw"}):
+        if not all(candidate[key] for key in required - {"apparent_power_kva", "output_power_kw"}):
             raise ValueError(f"Incomplete UPS rating row {line}")
         if candidate["manufacturer"] not in manufacturers_by_host[host]:
             raise ValueError(f"UPS manufacturer/source mismatch on row {line}")
-        try:
-            candidate["apparent_power_kva"] = float(candidate["apparent_power_kva"])
-        except ValueError as exc:
-            raise ValueError(f"Invalid apparent power on row {line}") from exc
-        if candidate["apparent_power_kva"] <= 0:
-            raise ValueError(f"Invalid apparent power on row {line}")
+        if candidate["apparent_power_kva"]:
+            try:
+                candidate["apparent_power_kva"] = float(candidate["apparent_power_kva"])
+            except ValueError as exc:
+                raise ValueError(f"Invalid apparent power on row {line}") from exc
+            if candidate["apparent_power_kva"] <= 0:
+                raise ValueError(f"Invalid apparent power on row {line}")
+        else:
+            candidate["apparent_power_kva"] = None
         if candidate["output_power_kw"]:
             try:
                 candidate["output_power_kw"] = float(candidate["output_power_kw"])
@@ -401,6 +473,8 @@ def parse_ups_rating_matrix(
                 raise ValueError(f"Invalid active power on row {line}")
         else:
             candidate["output_power_kw"] = None
+        if candidate["apparent_power_kva"] is None and candidate["output_power_kw"] is None:
+            raise ValueError(f"UPS row {line} has no published power rating")
         identity = (
             str(candidate["manufacturer"]),
             str(candidate["family"]),

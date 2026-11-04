@@ -1,0 +1,102 @@
+{
+  "run_id": "fuji-electric-ups-20261103T222600Z",
+  "validated_at": "2026-11-03T22:46:53Z",
+  "branch": "research/data-center-database-20261103T2221Z",
+  "base_main_sha": "6a84bebbcfe73b76f80aa782c8e212b28103fd29",
+  "prepublication_remote_head": null,
+  "canonical_records": 795,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 613,
+    "countries": 36,
+    "operators": 13,
+    "oems": 22
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 593,
+    "countries": 36,
+    "operators": 13,
+    "oems": 21
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 20,
+    "substantively_enriched_equipment": 0,
+    "new_oems": ["Fuji Electric"]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_fuji_ups_batch.py <temporary-output> && cmp <temporary-output> catalogues/data_centers/records/equipment/2026-11-03-fuji-electric-ups.jsonl",
+      "result": "passed twice; 20 deterministic reviewed records"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 795 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "60 passed"
+    },
+    {
+      "command": "pytest -q",
+      "result": "2109 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 792 files format-checked"
+    },
+    {
+      "command": "ty check <changed Data Center Python files>",
+      "result": "passed"
+    },
+    {
+      "command": "ty check",
+      "result": "failed after current main advanced; 8 diagnostics are confined to unrelated PV lifetime files introduced by PR #118"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3317 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed as part of strict Sphinx gallery; current catalogue statistics and equipment comparison reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs docs/_build/html-fuji && python scripts/check_docs_links.py docs/_build/html-fuji",
+      "result": "passed; 516 HTML pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+    "equipment_sha256": "a5c22c0782cccc96aa5f2e6e8d0ee95a9275ad89b08d994e2314940460be2b9c",
+    "input_sha256": "8e63c8e99f031b020d8a366978e2f3e1eef5240eebd733d131d05d9847631fc9",
+    "manifest_sha256": "5e0db198acaf6641e400acd007d9f66949040c1bf45a84cd225cc1720d147ac8"
+  },
+  "source_capture": {
+    "official_originals_checksummed": 5,
+    "source_bytes": 1630944,
+    "reuse_note": "Public copyrighted OEM pages and datasheets; factual extraction only; no open licence asserted and originals are not redistributed."
+  },
+  "remote_ci_before_publication": null
+}

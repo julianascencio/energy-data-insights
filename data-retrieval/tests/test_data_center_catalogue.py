@@ -142,7 +142,7 @@ def test_upsert_quarantines_only_conflicting_field_and_retains_creation(catalogu
     ev = json.loads(new["evidence_json"])
     ev["aliases"] = {"locator": "synthetic test observation", "confidence": "high"}
     new["evidence_json"] = json.dumps(ev)
-    now = "2026-11-04T00:00:00Z"
+    now = "2026-11-04T01:00:00Z"
     merged, conflicts = upsert_records([old], [new], now=now)
     row = merged[0]
     assert row["created_at"] == old["created_at"]
