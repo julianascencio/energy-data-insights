@@ -410,14 +410,22 @@ def parse_eia860_archive(
 
 
 def parse_repd_frame(
-    frame: pd.DataFrame, *, source_id: str, retrieved_at: str, published_date: str
+    frame: pd.DataFrame,
+    *,
+    source_id: str,
+    retrieved_at: str,
+    published_date: str,
+    development_status: str = "Operational",
 ) -> list[dict[str, Any]]:
-    """Stage operational battery planning records, not automatically unique sites.
+    """Stage one explicitly selected battery lifecycle partition, not automatically unique sites.
 
     REPD does not report MWh. The applicant/operator label and grid coordinates
     remain native metadata; neither is promoted to ownership or WGS84 location.
     Operational dates remain native, without asserting an exact commercial COD.
     """
+    statuses = {"Operational": "operational", "Under Construction": "under_construction"}
+    if development_status not in statuses:
+        raise ValueError("Unsupported REPD development status")
     required = {
         "Ref ID",
         "Site Name",
@@ -435,7 +443,7 @@ def parse_repd_frame(
     result = []
     for original in frame.to_dict(orient="records"):
         r = {str(k).strip(): _clean(v) for k, v in original.items()}
-        if r["Technology Type"] != "Battery" or r["Development Status"] != "Operational":
+        if r["Technology Type"] != "Battery" or r["Development Status"] != development_status:
             continue
         if r["Country"] not in {"England", "Scotland", "Wales", "Northern Ireland"}:
             raise ValueError("Unrecognized REPD country")
@@ -450,7 +458,7 @@ def parse_repd_frame(
                 "Battery planning-record capacity reported by REPD; "
                 "MWh and electrical rating basis unreported"
             ),
-            "status": "operational",
+            "status": statuses[development_status],
             "status_as_of": published_date,
             "status_date_basis": "publication_date",
             "power_capacity_mw": _number(r["Installed Capacity (MWelec)"]),
@@ -473,12 +481,21 @@ def parse_repd_frame(
 
 
 def parse_repd_csv(
-    content: bytes, *, source_id: str, retrieved_at: str, published_date: str
+    content: bytes,
+    *,
+    source_id: str,
+    retrieved_at: str,
+    published_date: str,
+    development_status: str = "Operational",
 ) -> list[dict[str, Any]]:
     """Read the registered Windows-1252 REPD export with bounded input size."""
     if len(content) > 50_000_000:
         raise ValueError("REPD file exceeds size limit")
     frame = pd.read_csv(io.BytesIO(content), encoding="cp1252", low_memory=False)
     return parse_repd_frame(
-        frame, source_id=source_id, retrieved_at=retrieved_at, published_date=published_date
+        frame,
+        source_id=source_id,
+        retrieved_at=retrieved_at,
+        published_date=published_date,
+        development_status=development_status,
     )

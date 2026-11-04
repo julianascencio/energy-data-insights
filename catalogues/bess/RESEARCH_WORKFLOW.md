@@ -105,6 +105,15 @@ or a live availability feed. Do not interpret record counts as installed capacit
    appears in standard and telecom URL editions: do not create duplicate identities
    or select a terminal/mass winner without configuration evidence. Residual template
    tokens in the text layer are not numerical specifications. Staging never imports.
+   `scripts/stage_bess_inventory.py repd --repd-status "Under Construction"`
+   selects that explicit lifecycle partition; the default remains Operational.
+   Recheck the release hash, exact application IDs, nearby sites, names and phases.
+   REPD construction flags are dated registry observations, not live availability.
+   `scripts/stage_bess_kehua.py` reads exact model tabs from local OEM HTML.
+   It fails on changed panel counts/labels/units and requires reviewed model order.
+   Preserve full-load versus operating DC ranges, rated kW versus maximum kVA,
+   temperature conditions, conversion efficiency versus RTE and NEMA versus IP.
+   Do not claim PDF-only specifications when the linked download service fails.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
