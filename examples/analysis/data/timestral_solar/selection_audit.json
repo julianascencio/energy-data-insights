@@ -1,0 +1,69 @@
+{
+  "question": "Can actual Timestral beat LightGBM, XGBoost and a physical solar model, with stronger baselines checked?",
+  "stage_1": {
+    "frozen_at_utc": "2026-11-03T22:01:30.337198+00:00",
+    "plant_id": "RNMB06",
+    "plant_name": "Mendubim VI",
+    "candidates": 20,
+    "selection_metric": "largest relative development MAE reduction against the best of six comparators",
+    "development": "2024-06-15 through 2024-06-30",
+    "validation": "2024-07-01 through 2024-07-31",
+    "checkpoint": "mistralai/Timestral-5M@bdd20cfc15a3fea0e4cb5ccef37f8d3ca7aa335f",
+    "hyperparameters": "unchanged repository defaults; no tuning"
+  },
+  "stage_1_candidate_rule": "First 20 plants in native June Parquet order passing first-14-day qualification: 672 rows, >=650 valid resource flags, >=150 valid readings >100 W/m2, complete nonnegative measured power. No August data used.",
+  "stage_1_result": "RNMB06 was the only June candidate beating all six comparators by MAE; 8.6606% gain. The selected 5M/four-covariate model lost July validation (3.586077 vs best baseline 3.032351 MW).",
+  "stage_2": {
+    "frozen_at_utc": "2026-11-03T22:04:21.149726+00:00",
+    "plant_id": "RNMB06",
+    "plant_name": "Mendubim VI",
+    "selection_metric": "lowest combined June 15 through July 31 MAE among six Timestral size/input variants at the June-selected plant",
+    "development": "2024-06-15 through 2024-07-31",
+    "holdout": "2024-08-01 through 2024-08-31",
+    "checkpoint": "mistralai/Timestral-28M@49b26409ac87b5935539a5d8ffe7f397b720db47",
+    "inputs": "target_only",
+    "prior_attempt": "5M with four covariates selected from 20 June plants lost July validation; July is now development, not test",
+    "comparator_parameters": "unchanged repository defaults; no tuning"
+  },
+  "stage_2_variants": "5M and 28M, each with target only, calendar only, or all four benchmark covariates. Select lowest combined June 15-July 31 MAE, with no August ranking or hyperparameter tuning.",
+  "availability_repairs": "During August execution, the final two origins lacked a valid same-clock resource reading within 14 days. Extend only the weather fallback to older pre-issue readings. The final origin had zero Q95 power among resource-valid calibration rows: retain the most recent informative tree/physical calibration. All 31 August days remain scored. These engineering changes followed input/fit failures before the full August score was computed; this is not a preregistered untouched-pipeline trial.",
+  "models": {
+    "LightGBM": {
+      "n_estimators": 200,
+      "learning_rate": 0.04,
+      "num_leaves": 15,
+      "min_child_samples": 20,
+      "min_samples": 48,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "XGBoost": {
+      "n_estimators": 200,
+      "learning_rate": 0.04,
+      "max_depth": 4,
+      "min_child_weight": 10.0,
+      "reg_lambda": 1.0,
+      "min_samples": 48,
+      "n_jobs": 1,
+      "random_state": 42
+    },
+    "Physical": {
+      "family": "concave_spline",
+      "alpha": 0.1,
+      "min_samples": 24,
+      "poa_max_wm2": 1300.0,
+      "temperature_min_c": -20.0,
+      "temperature_max_c": 60.0,
+      "operational_zero_poa_wm2": 1.0,
+      "knots_wm2": [
+        200.0,
+        400.0,
+        600.0,
+        800.0,
+        1000.0,
+        1200.0
+      ]
+    }
+  },
+  "interpretation": "Descriptive one-plant historical comparison. August Timestral MAE is lower than all six listed comparators, but its 0.0048% edge over Daily median is a practical tie, and Daily mean has lower RMSE. No universal superiority or statistical-significance claim. Unknown pretraining overlap."
+}

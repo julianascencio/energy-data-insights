@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-04T02:30:00Z",
+  "retrieved_at": "2026-11-04T03:30:00Z",
   "accepted": [
     {
       "inventory": "FIN02, FIN04 and FIN05 official Finnish municipal permit/disclosure observations",
@@ -24,6 +24,14 @@
       "enriched_records": 0,
       "reuse": "Factual extraction from a public copyrighted OEM brochure; no open licence asserted; the original is not redistributed",
       "originals": "The official brochure was readable through the public web index. Two direct original-byte requests returned HTTP 403, so no checksum or byte count is claimed. This is an access/content failure, not a reuse prohibition."
+    },
+    {
+      "inventory": "KSTAR EPOWER, EPOWER-L and EPOWER-H transformer-based UPS model columns",
+      "processed_offset": 38,
+      "accepted_records": 38,
+      "enriched_records": 0,
+      "reuse": "Factual extraction from the same public copyrighted OEM brochure; no open licence asserted; the original is not redistributed",
+      "originals": "The official KSD/C&C 2025-01 brochure was readable through the public web index. Direct original-byte requests returned HTTP 403, so no checksum or byte count is claimed. This is an access/content failure, not a reuse prohibition."
     }
   ],
   "deferred": [
@@ -84,6 +92,7 @@
     "Selectable voltage/frequency, battery, distribution-box, EBM and parallel choices do not create synthesized configurations.",
     "KR33 localized-page conflicts and KR11-RM internal voltage inconsistency remain quarantined rather than silently resolved.",
     "KSTAR kVA and kW remain separate published boundaries; voltage/frequency choices and shared efficiency, dimensions, battery and standard/long-run weight cells are not synthesized.",
-    "The KSTAR EPI 30K printed apparent-power inconsistency remains quarantined, and EPOWER/EPOWER-L/EPOWER-H remain a separate unprocessed inventory."
+    "The KSTAR EPI 30K printed apparent-power inconsistency remains quarantined.",
+    "The complete KSTAR EPOWER/EPOWER-L/EPOWER-H continuation is processed at 38 model columns; shared efficiency, cabinet, battery and 6P/12P cells remain observations and never create synthesized variants."
   ]
 }

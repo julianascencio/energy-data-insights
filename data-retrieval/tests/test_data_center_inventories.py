@@ -169,6 +169,21 @@ def test_ups_matrix_accepts_kstar_quarantined_kva_without_inventing_value():
     assert candidate["output_power_kw"] == 24
 
 
+def test_ups_matrix_keeps_kstar_epower_apparent_and_active_power_separate():
+    header, *rows = UPS_MATRIX.splitlines()
+    kstar_row = next(row for row in rows if b"EP600-H" in row)
+    kstar = header + b"\n" + kstar_row + b"\n"
+    result = parse_ups_rating_matrix(
+        kstar,
+        source_url="https://www.kstar.com/bocupload/2025/04/03/transfomerbasedups.pdf",
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "KSTAR"
+    assert candidate["apparent_power_kva"] == 600
+    assert candidate["output_power_kw"] == 540
+
+
 def test_ups_matrix_rejects_fuji_source_manufacturer_mismatch():
     header, *rows = UPS_MATRIX.splitlines()
     mitsubishi_row = next(row for row in rows if row.startswith(b"Mitsubishi Electric,"))
