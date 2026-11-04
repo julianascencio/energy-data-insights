@@ -445,3 +445,20 @@ related names, repeated/grouped cases and phase ambiguity remain review flags,
 never automatic merges. Cierzo II gains only missing grid voltage after exact-name,
 one-phase, regional and actual-polygon review. Its existing AC rating/status are
 preserved; the different source panel rating remains in review.
+
+## INHENERGY SI and Viscofan evidence boundaries
+
+`pv_catalogue.inhenergy` parses only exact reviewed SI columns from pinned PDFs.
+`pac_rated_w` is explicitly rated active AC output; maximum output and the two
+distinct PV input/access limits remain qualified native observations. A shared
+cell can apply to every model only when it spans the full reviewed table.
+Partially merged current, cooling and weight rows retain the `table_*` prefix;
+reviewed scalar mappings are recorded separately. Native L/W/H axes are preserved
+without an assumed width/depth remapping. Less-than bounds are not scalar values.
+
+The Viscofan BOE notice adds explicitly stated panel MWp, module/inverter counts
+and an estimated PV-plus-evacuation EUR budget at its 2025 application stage.
+Cost year, scope and design conditions travel in extensions. Its installed-power
+heading and kVA total do not replace the existing AC rating. Internal30kV and
+existing66kV grid links stay separately scoped. Publication is not commissioning,
+operation or authorization; private addresses and signatory details are omitted.

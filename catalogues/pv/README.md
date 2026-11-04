@@ -395,3 +395,24 @@ column has unspecified AC/DC basis; it is not the grid-injection rating.
 Differences between dated ratings stay in the review ledger, without choosing a
 winner. The first installed-power partition and exact EIC/native-field locators
 are in `research/20261104T0600_odre_capacity_review.json`.
+
+### Reviewed INHENERGY SI tables
+
+The offline SI reader stages exact model columns from checksum-pinned OEM PDFs.
+It checks the full publisher marker, crops the reviewed table at 72 dpi, then
+requires the reviewed model order and complete power/current columns. This avoids
+interleaving marketing text with shared table cells. Install Poppler locally.
+
+```bash
+uv run python scripts/stage_pv_inhenergy.py \
+  --raw-dir /path/to/original-pdfs \
+  --review catalogues/pv/research/20261104T1200_equipment_review.json \
+  --output /tmp/inhenergy-reviewed.jsonl
+```
+
+Use the existing upsert API after identity and field review. Maximum PV access
+power, maximum PV input power and rated AC output remain separate. Per-MPPT
+currents are unsummed; table-wide merged cells are explicitly labelled. Standard
+warranty, optional communications and strict bounds remain qualified. Conflicting
+MPPT/cooling/dimension/standards assertions and unresolved merged weights stay in
+the review ledger; no variants or certification eligibility are inferred.
