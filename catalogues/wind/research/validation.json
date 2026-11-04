@@ -1,32 +1,24 @@
 {
-  "batch": "2026-11-04-0435",
+  "batch": "2026-11-04-0535",
   "local": {
-    "pytest": "2144 passed,1 skipped,15 errors; all errors in Data Center catalogue fixture from inherited invalid UTF-8",
-    "wind_focused": "89 passed in29.21s",
+    "pytest": "2144 passed,1 skipped,15 inherited Data Center UTF-8 setup errors",
     "viewer": "15 passed",
-    "source_replay": "853 accepted Swedish project/turbine records exactly replayed",
-    "catalogue": "19868 records validated",
-    "preservation": "18999 prior records unchanged;15 equipment enrichments preserve every prior scalar/extension value and all creation timestamps; prior sources and six capacity totals preserved; unrelated catalogue diff empty",
-    "snapshots": "Two byte-identical builds including manifest,schema,sources; four136-column typed Parquet tables, all ZSTD",
-    "quality": "Repository-wide Ruff lint/format and ty passed; citations and exports consistent; git diff --check passed",
-    "packages": "All3wheels and sdists built",
-    "example": "Updated offline Wind gallery passed including optional-monitor relationships",
-    "docs": "Strict Sphinx HTML build with plot_gallery=0 failed at build-finished Data Center export on inherited invalid UTF-8; no complete docs pass claimed",
-    "hygiene": "3614 candidate files passed"
-  },
-  "inherited_blockers": {
-    "invalid_utf8_files": [
-      "catalogues/data_centers/records/equipment/2026-11-04-kstar-epower-ups.jsonl"
-    ],
-    "byte_identical_to_main": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
-    "repair_pr": 131
+    "source_replay": "983 accepted project/turbine records exactly replayed",
+    "catalogue": "20851 records validated",
+    "preservation": "19867 prior records unchanged; one NETA-21 enrichment preserves previous values and creation timestamp; prior sources and six capacity totals unchanged",
+    "snapshots": "Two byte-identical builds; four136-column typed ZSTD tables; manifest/schema/source bytes identical",
+    "quality": "Repository Ruff lint/format,ty,citations,hygiene3638files,diff checks passed",
+    "packages": "Three wheels and three sdists built",
+    "example": "Offline Wind gallery passed",
+    "docs": "Strict HTML build with plot_gallery=0 failed at PV publishing hook: Errno28 temporary storage exhausted. No completed docs pass."
   },
   "not_executed": [
-    "Completed documentation link audit",
-    "New browser smoke test",
-    "Full Sphinx gallery execution (Wind example executed separately)"
+    "Full Sphinx gallery execution",
+    "Completed docs link audit",
+    "New browser smoke test"
   ],
   "remote_ci": {
-    "status": "Pending publication; local checks are not remote CI"
-  }
+    "status": "Pending publication"
+  },
+  "inherited_blocker": "Data Center KSTAR invalid UTF-8; repair in open PR131"
 }

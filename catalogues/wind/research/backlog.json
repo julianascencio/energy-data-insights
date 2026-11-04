@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T04:35:00Z",
+  "updated_at": "2026-11-04T05:35:00Z",
   "branch": "research/wind-20261104-0335",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -105,7 +105,8 @@
         "VEC501R0 pp2/4 exhausted:11legacyBR enrichments; no new equipment. Next original AGL VEC671R7 section13.3 and ANG VEC1105R4 resistor tables, reconcile exact revision before current thermal/mass scalars; then pivot to independent turbine/OEM backlog.",
         "AGL VEC671R7 section1.4 and ANG VEC1105R4 section1.5 originals successfully acquired but explicitly restricted; excluded, do not retry as network errors. E82E2 08/2019 OEM sheet complete,1existing model enriched; two nominal options nested, no curves. Next exact E103EP2 base datasheet on OEM CDN; current ABB revision and independent wind components remain pending.",
         "E103 EP2 wind-still mirror HTTP404, web verification page. Next obtain original OEM datasheet via official archive or review exact manufacturer appendix in San Gregorio official planning dossier; project says or similar, not installed-model evidence.",
-        "ABB3AXD50000022022RevC pp13–14,24–25 complete:15existing77LC/87LC configurations enriched andNETA-21 added. Next original NETA-21 3AUA0000096939 manual through official ABB document resolver; RevP directURL returned403, no auth/reuse inference. Exact NEXA-21 only after its interface and optional wind applicability are explicit. E103originalbase sheet remains held; do not retry completed2018ratingtables."
+        "ABB3AXD50000022022RevC pp13–14,24–25 complete:15existing77LC/87LC configurations enriched andNETA-21 added. Next original NETA-21 3AUA0000096939 manual through official ABB document resolver; RevP directURL returned403, no auth/reuse inference. Exact NEXA-21 only after its interface and optional wind applicability are explicit. E103originalbase sheet remains held; do not retry completed2018ratingtables.",
+        "NETA-21 official document resolver succeeded: RevQ effective2026-09-18 pp225–226 processed. Do not retry RevP403. Next resolve NETA/NEXA per-device connector allocation and temperature typo; original E103EP2 appendix in Marne planning dossier https://www.marne.gouv.fr/contenu/telechargement/24186/154103/file/2b%20-%20Annexes%20Etude%20Impact.pdf"
       ]
     },
     {
@@ -175,11 +176,11 @@
     "source_guide": "2026-11-03-top10-markets.md",
     "sweden_partition": {
       "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
-      "completed_where": "OMRID < '2400'",
-      "reviewed_areas": 3307,
-      "reviewed_turbines": 19055,
-      "next_where": "OMRID >= '2400' AND OMRID < '2500'",
-      "next_county": "Västerbotten",
+      "completed_where": "OMRID < '2500'",
+      "reviewed_areas": 3437,
+      "reviewed_turbines": 21371,
+      "next_where": "OMRID >= '2500' AND OMRID < '2600'",
+      "next_county": "Norrbotten",
       "layers": [
         2,
         3,
@@ -193,7 +194,7 @@
         12
       ],
       "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
-      "residual_ledger": "2026-11-04-0435-sweden-decisions.jsonl"
+      "residual_ledger": "2026-11-04-0535-sweden-decisions.jsonl"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",
