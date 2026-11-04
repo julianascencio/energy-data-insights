@@ -38,7 +38,7 @@ from energy_methods.pvdeg import thermal_stress_index
 
 # %%
 # Recalculate the map with the actual PVDeg library
-# ------------------------------------------------
+# ----------------------------------------------------
 manifest = json.loads(Path("pvdeg_canary_provenance.json").read_text())
 results = {}
 for island, record in manifest["tiles"].items():
