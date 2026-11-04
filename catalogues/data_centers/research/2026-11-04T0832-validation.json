@@ -1,0 +1,130 @@
+{
+  "run_id": "tescom-ups-20261104T083200Z",
+  "retrieved_at": "2026-11-04T08:32:00Z",
+  "branch": "research/data-center-database-20261104T0745Z",
+  "base_head": "c21dd1713067f15adc8b12954c3b7147906a770e",
+  "prepublication_remote_head": "38eab3093df2525725e16a0869ee872cbc149d06",
+  "canonical_records": {
+    "projects": 182,
+    "project_scopes": {
+      "facility": 65,
+      "phase": 3,
+      "campus_aggregate": 114
+    },
+    "equipment": 868,
+    "total": 1050,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 30,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 22,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 182,
+    "equipment": 819,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 28
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "equipment": 49,
+    "equipment_manufacturers": 2,
+    "inventories": [
+      "SIEL Safepower S, Safepower Evo HF and Safepower Modular SPM",
+      "Tescom DS POWER 300HT, DS POWER 500-600, DS POWER SH and MTI250"
+    ]
+  },
+  "source_capture": {
+    "official_product_originals": 4,
+    "official_product_bytes": 381989,
+    "policy_review_originals": 1,
+    "policy_review_bytes": 83688,
+    "checksummed_originals": 5,
+    "unavailable_originals": 0
+  },
+  "executed_checks": [
+    {
+      "check": "deterministic Tescom builder replay",
+      "result": "passed",
+      "detail": "Two independent builds matched the 22-record canonical JSONL byte-for-byte; canonical SHA-256 39afbfda520c5028d365c37d80a4d6bf30e4df0f2f535a452bce717773bfd4b7"
+    },
+    {
+      "check": "catalogue schema, identity, unit, source and evidence validation",
+      "result": "passed",
+      "detail": "Validated 1,050 canonical Data Center records"
+    },
+    {
+      "check": "focused Data Center tests",
+      "result": "passed",
+      "detail": "73 passed"
+    },
+    {
+      "check": "full Python test suite",
+      "result": "passed",
+      "detail": "2,162 passed and 5 optional-dependency tests skipped"
+    },
+    {
+      "check": "database viewer Node tests",
+      "result": "passed",
+      "detail": "15 passed"
+    },
+    {
+      "check": "Ruff format and lint",
+      "result": "passed",
+      "detail": "825 files formatted; all lint checks passed"
+    },
+    {
+      "check": "repository-wide ty",
+      "result": "passed",
+      "detail": "All type checks passed"
+    },
+    {
+      "check": "repository, citation and diff checks",
+      "result": "passed",
+      "detail": "Repository policy, citation registry and whitespace checks passed"
+    },
+    {
+      "check": "Data Center catalogue example",
+      "result": "passed",
+      "detail": "Offline example completed against input fingerprint 44e4b12eff2d5a9b4a680d99b0834e1813f45b268ff973f187bc4c6bfeabd184"
+    },
+    {
+      "check": "strict Sphinx and generated-site link validation",
+      "result": "passed",
+      "detail": "CI-compatible Python 3.13 strict build executed all 57 selected gallery examples; links and assets passed across 528 HTML pages"
+    },
+    {
+      "check": "deterministic typed Parquet and coverage rebuild",
+      "result": "passed",
+      "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"
+    }
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "44e4b12eff2d5a9b4a680d99b0834e1813f45b268ff973f187bc4c6bfeabd184",
+    "projects_sha256": "e8d0ff04dbdbf7ed0b41120c85aac82fe6a6e93fc8b445ea34cc3ee549da04de",
+    "equipment_sha256": "518920edeee7fa59fbcedcb67546ec9629a3f592e17e7efbedbf94cbb92c68b8",
+    "manifest_sha256": "4dc7f564f713c02bf0aa9466d32ed2df7943ef1245508da2e26b790a80314364",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "2cac431af50e651b4f7521fd8ae1c8a4c9bf510fc2341f44a2265c20128d4671"
+  },
+  "holds_added": [
+    "Trane",
+    "Rittal",
+    "Legrand",
+    "Piller",
+    "ABB"
+  ],
+  "deferred": [
+    "LiquidStack public CDU tables pending a clearer site-specific public-datasheet reuse policy"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "No project, capacity, map or campus-overlap logic changed",
+    "All printed kVA and kW values remain separate reported boundaries",
+    "Battery-qualified dimensions, module statements and electrical or accessory choices remain observations rather than synthesized configurations",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain"
+  ]
+}

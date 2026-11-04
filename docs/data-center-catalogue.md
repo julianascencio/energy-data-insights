@@ -38,9 +38,9 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 819 exact models/configurations from NVIDIA, AMD, Baudouin, Borri, Carrier, CoolIT Systems, Cummins,
+has 868 exact models/configurations from NVIDIA, AMD, Baudouin, Borri, Carrier, CoolIT Systems, Cummins,
 Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR, Lenovo, Motivair by Schneider
-Electric, Makelsan, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
+Electric, Makelsan, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
@@ -150,6 +150,12 @@ Printed kVA and kW remain separate; the overlapping T3/T4 capacities remain
 distinct transformer-based family identities. Selectable voltage/frequency,
 family efficiency, battery cells, grouped cabinets and communications remain
 observations rather than synthesized variants, battery energy or runtime.
+The SIEL continuation processes all 27 exact UPS columns across three current brochures: nine Safepower S, ten Safepower Evo HF and eight Safepower Modular SPM cabinet configurations. S and Evo HF retain explicit kVA/kW pairs; SPM active kW remains null because the cabinet table prints only kVA. Merged dimensions, with/without-battery weights, module layouts, electrical choices, batteries, communications and parallel options remain observations and never create synthesized configurations or inferred runtime.
+The Tescom continuation processes 22 exact rows across the current DS POWER
+300HT, DS POWER 500--600 kVA, DS POWER SH and MTI250 tables. Every printed kVA
+and kW value remains separate. Exact weights and unqualified cabinet dimensions
+are normalized; battery-qualified DS POWER SH dimensions, module statements,
+selectable electrical values, batteries and communications remain observations.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact

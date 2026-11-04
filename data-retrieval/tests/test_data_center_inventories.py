@@ -219,6 +219,22 @@ def test_ups_matrix_accepts_borri_row_without_deriving_power_factor():
     assert candidate["output_power_kw"] == 270
 
 
+def test_ups_matrix_accepts_tescom_exact_rating_row():
+    header, *rows = UPS_MATRIX.splitlines()
+    tescom_row = next(row for row in rows if row.startswith(b"Tescom,"))
+    tescom = header + b"\n" + tescom_row + b"\n"
+    result = parse_ups_rating_matrix(
+        tescom,
+        source_url="https://www.tescom-ups.com/es/producto/ds-power-300ht-8",
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Tescom"
+    assert candidate["family"] == "DS POWER 300HT"
+    assert candidate["apparent_power_kva"] == 300
+    assert candidate["output_power_kw"] == 270
+
+
 def test_ups_matrix_rejects_fuji_source_manufacturer_mismatch():
     header, *rows = UPS_MATRIX.splitlines()
     mitsubishi_row = next(row for row in rows if row.startswith(b"Mitsubishi Electric,"))
@@ -578,3 +594,21 @@ def test_lenovo_comparison_rejects_drift_and_unofficial_sources():
             source_url="https://example.com/table",
             expected_count=1,
         )
+
+
+def test_ups_matrix_accepts_siel_modular_kva_without_active_kw():
+    content = (
+        b"manufacturer,family,variant,apparent_power_kva,output_power_kw,"
+        b"voltage_text,frequency_text,locator\n"
+        b"SIEL,Safepower Modular SPM,1200 kVA cabinet,1200,,"
+        b"380/400/415 Vac 3Ph+N,50/60 Hz,SPM frame table / 1200 kVA\n"
+    )
+    result = parse_ups_rating_matrix(
+        content,
+        source_url="https://www.sielups.com/example.pdf",
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["apparent_power_kva"] == 1200
+    assert candidate["output_power_kw"] is None
+    assert candidate["manufacturer"] == "SIEL"

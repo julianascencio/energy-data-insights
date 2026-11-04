@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-04T06:18:00Z",
+  "retrieved_at": "2026-11-04T08:32:00Z",
   "accepted": [
     {
       "inventory": "FIN02, FIN04 and FIN05 official Finnish municipal permit/disclosure observations",
@@ -56,6 +56,22 @@
       "enriched_records": 0,
       "reuse": "Factual extraction from public copyrighted OEM technical tables; no open licence asserted; originals are not redistributed",
       "originals": "The 1,655,064-byte LEVELUPS original was captured and checksummed. The complete official T3/T4 tables were readable through the public web index, while direct byte requests returned HTTP 404; those two sources have no claimed checksum and are classified as access/content failures, not reuse prohibitions."
+    },
+    {
+      "inventory": "SIEL Safepower S, Safepower Evo HF and Safepower Modular SPM exact UPS columns",
+      "processed_offset": 27,
+      "accepted_records": 27,
+      "enriched_records": 0,
+      "reuse": "Factual extraction from three public copyrighted OEM technical brochures; no open licence asserted; originals are not redistributed",
+      "originals": "All three official PDFs were captured and checksummed: 1,491,988-byte BR074 REV.03, 428,398-byte BR076 REV.02 and 985,639-byte BR075 REV.03."
+    },
+    {
+      "inventory": "Tescom DS POWER 300HT, DS POWER 500-600, DS POWER SH and MTI250 current UPS tables",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "enriched_records": 0,
+      "reuse": "Factual extraction from four public copyrighted OEM product pages; no open licence asserted; originals are not redistributed",
+      "originals": "All four official HTML captures and the policy-review homepage were retrieved and checksummed. Product captures total 381,989 bytes; source-specific byte counts and SHA-256 values are in sources.json."
     }
   ],
   "deferred": [
@@ -82,6 +98,42 @@
     {
       "candidate": "CyberPower three-phase UPS tables",
       "reason": "The official terms prohibit public or commercial copying, reproduction, publication, distribution or transmission without prior written consent. No specifications or bytes were imported."
+    },
+    {
+      "candidate": "Hitachi Hi-Rel UPS technical tables",
+      "reason": "Official terms require permission for use/reproduction of site and product-document content. No facts or bytes were imported."
+    },
+    {
+      "candidate": "TMEIC UPS technical tables",
+      "reason": "Official terms prohibit copying, reproduction, publication and derivative use without permission. No facts or bytes were imported."
+    },
+    {
+      "candidate": "Numeric UPS technical tables",
+      "reason": "Official terms prohibit systematic retrieval, database compilation and reproduction without permission. No facts or bytes were imported."
+    },
+    {
+      "candidate": "Trane Sintesis RTAF chiller table",
+      "reason": "Official terms limit site and downloaded materials to personal/non-commercial use and prohibit copying, redistribution, publication and automated monitoring without permission. No specifications or bytes were imported."
+    },
+    {
+      "candidate": "Rittal LCP technical tables",
+      "reason": "The official legal notice requires prior written permission for reproduction or publication beyond private/own use and reserves text-and-data-mining rights. No specifications or bytes were imported."
+    },
+    {
+      "candidate": "Legrand UPS technical tables",
+      "reason": "Official terms restrict reproduction to personal/private non-commercial use absent written permission. No specifications or bytes were imported."
+    },
+    {
+      "candidate": "Piller UPS technical tables",
+      "reason": "Official terms prohibit commercial reproduction, publication and use of proprietary product information without authorization. No specifications or bytes were imported."
+    },
+    {
+      "candidate": "ABB UPS technical tables",
+      "reason": "Official documentation terms limit copying and distribution to non-commercial informational use within an organization. No specifications or bytes were imported."
+    },
+    {
+      "candidate": "LiquidStack public CDU tables",
+      "reason": "Public sales terms restrict communication/distribution of supplied documents; public-datasheet reuse scope needs a clearer site-specific policy. No facts or bytes were imported."
     }
   ],
   "quarantined": [
@@ -149,6 +201,14 @@
     "Baudouin engine gross mechanical kWm, generator electrical kWe and generator apparent kVA remain distinct exact row boundaries.",
     "Baudouin frequency is part of the configuration identity; speed, aspiration and governor are row-bound observations, while alternator, voltage, emissions and installation choices remain unknown.",
     "Makelsan LEVELUPS, T3 and T4 apparent-kVA and active-kW values remain separate exact table-column ratings; no power factor is derived.",
-    "Makelsan selectable voltage/frequency, family efficiency, battery cells, cabinet groupings and communication options remain observations and never create synthesized configurations or generic runtime."
+    "Makelsan selectable voltage/frequency, family efficiency, battery cells, cabinet groupings and communication options remain observations and never create synthesized configurations or generic runtime.",
+    "SIEL Safepower S and Evo HF exact kVA/kW pairs remain separate reported boundaries; no power factor is derived.",
+    "SIEL Safepower Modular SPM cabinet active kW remains null because the frame table prints cabinet kVA but not cabinet kW.",
+    "SIEL merged dimension cells and with/without-internal-battery weight alternatives remain observations; exact single cabinet weights are normalized.",
+    "SIEL module, battery, voltage/frequency, communications and parallel options do not create synthesized configurations or inferred runtime/energy.",
+    "Tescom exact printed kVA and kW remain separate reported boundaries; no power factor is derived.",
+    "Tescom selectable voltage/frequency, battery, communications and module choices remain observations and do not create synthesized configurations, battery energy or runtime.",
+    "DS POWER SH battery-qualified dimension alternatives remain observations; only the exact unqualified weights are normalized.",
+    "MTI250 cabinet ratings and 25 kVA/25 kW power-module statements remain separate; module counts are not synthesized into additional cabinet variants."
   ]
 }
