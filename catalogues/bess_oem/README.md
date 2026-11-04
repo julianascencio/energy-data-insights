@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 4 November 2026 expanded research snapshot contains **814 records from 47 product
-suppliers, backed by 380 registered sources**: 801 documented configurations and 13
+The 4 November 2026 expanded research snapshot contains **828 records from 48 product
+suppliers, backed by 396 registered sources**: 815 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -264,3 +264,14 @@ Latest research: [Kenya source screening and Pylontech component/service evidenc
 Latest research: [EFFEKTA monoblocs and Pylontech communication hub](../bess/research/2026-11-04_philippines_effekta.md).
 
 Latest evidence review: [EFFEKTA charging conditions and physical-edition reconciliation](../bess/research/2026-11-04_effekta_charge.md).
+
+## Exact LEOCH OPzV staging
+
+[4 November research and review](../bess/research/2026-11-04_leoch.md) adds fourteen exact two-volt battery units. Regional and dated individual-sheet differences remain explicit.
+
+```bash
+pdftotext -layout /outside-git/4OPzV200.pdf /outside-git/4OPzV200.txt
+uv run python scripts/stage_bess_leoch.py --text /outside-git/4OPzV200.txt --model 4OPzV200 --output /outside-git/candidate.json
+```
+
+The parser fails on changed identity, nominal rating basis, current units or reviewed conditions. It stages only; exact revision, source rights, table anomalies and identity must be reviewed before the existing upsert API. C-rate and short-circuit current never become amperes or peak operating power.
