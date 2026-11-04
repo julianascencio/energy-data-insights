@@ -7,7 +7,7 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **183 project records in 36 countries**:
 **66 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **1,775 exact equipment records from 37 OEMs**.
+from 13 operators. It has **1,791 exact equipment records from 43 OEMs**.
 Merged `main` at `9dbf07ed` contains **183 projects and 1,299 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -58,6 +58,14 @@ uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-eaton-energy-star-ups.jsonl --partner-batch eaton_energy_star --shard-size 5
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-schneider-energy-star-ups.jsonl --partner-batch schneider_energy_star --shard-size 5
 uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-vertiv-energy-star-ups.jsonl --partner-batch vertiv_energy_star --shard-size 5
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-fuji-energy-star-ups.jsonl --partner-batch fuji_energy_star
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-ingram-v7-energy-star-ups.jsonl --partner-batch ingram_v7_energy_star
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-mitsubishi-energy-star-ups.jsonl --partner-batch mitsubishi_energy_star
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-n1c-energy-star-ups.jsonl --partner-batch n1c_energy_star
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-neuropower-energy-star-ups.jsonl --partner-batch neuropower_energy_star
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-power-logic-energy-star-ups.jsonl --partner-batch power_logic_energy_star
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-right-power-energy-star-ups.jsonl --partner-batch right_power_energy_star
+uv run python scripts/build_data_center_energy_star_ups_batch.py captured-energy-star-ups.csv staged-upsonic-energy-star-ups.jsonl --partner-batch upsonic_energy_star
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -75,7 +83,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-04-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-04-decisions.jsonl),
-[executed validation](research/2026-11-04T1824-validation.json), and
+[executed validation](research/2026-11-04T1922-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

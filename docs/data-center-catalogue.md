@@ -38,11 +38,13 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,775 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+has 1,791 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
-STULZ, Supermicro, Toshiba, Vertiv and Para Systems / Minuteman Power Technologies. Current categories are GPU accelerators,
+STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
+Ingram Micro / V7, N1 Critical Technologies, Neuropower, Power Logic / KOSS,
+Right Power Technology and Upsonic Power Systems. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -163,7 +165,9 @@ entries for Ablerex Electronics, all ten entries for Panduit, all seven entries
 for Appleton Group / SolaHD, all seven entries for Legrand AV and all 26 entries
 for Delta Electronics, all 135 entries for Cyber Power Systems, all 176 Eaton
 Corporation entries and all 222 Schneider Electric entries in EPA dataset
-`ifxy-2uty`, plus all 254 Vertiv Corporation entries. ADI's 11 W BOX and
+`ifxy-2uty`, plus all 254 Vertiv Corporation entries and all 16 entries across
+the eight residual partner partitions. The 923-row dataset is fully processed.
+ADI's 11 W BOX and
 11 UltraTech certifications remain distinct even where model names recur across
 brands. Each entry retains its immutable ENERGY STAR ID, certification date,
 active W, apparent VA, weighted and load-point efficiency, dimensions and
@@ -199,6 +203,15 @@ maximum tested model as a separate observation; 44 provide a maximum active-W
 value and none provides maximum apparent VA, so absent maximum values remain
 null. Normalized kW/kVA, runtime and efficiency stay bound to the minimum tested
 configuration, and no battery energy or deployment is inferred.
+The final ENERGY STAR continuation adds three Ingram Micro/V7, three N1
+Critical Technologies, three Neuropower, two Mitsubishi Electric Power
+Products, two Power Logic/KOSS and one each from Fuji Electric America, Right
+Power Technology and Upsonic. Eight records report no full-load runtime and six
+report no warranty, so those normalized fields remain null. The identical
+maximum-model labels on one Mitsubishi and one Neuropower entry remain bounded
+observations with no maximum W or VA. The Fuji certification retains its
+reported 1,000 kW and 1,000 kVA minimum rating; the unbound maximum-W cell is
+not normalized because no maximum configuration is identified.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -368,4 +381,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-04-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-04T1217-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-04T1922-validation.json).

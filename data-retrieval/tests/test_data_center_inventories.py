@@ -115,6 +115,31 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
         assert [row["ENERGY STAR Unique ID"] for row in batch["candidates"]] == [expected_id]
         assert batch["candidates"][0]["Brand Name"] == expected_brand
 
+    residual_partners = {
+        "Fuji Electric Corp. of America": "Fuji Electric",
+        "Ingram Micro Inc.": "V7",
+        "Mitsubishi Electric Power Products, Inc.": "Mitsubishi",
+        "N1 Critical Technologies": "N1C",
+        "Neuropower (Malaysia) Sdn Bhd": "NEUROPOWER",
+        "POWER LOGIC (M) SDN BHD": "KOSS",
+        "Right Power Technology Sdn Bhd": "Right Power",
+        "UPSONIC POWER SYSTEMS AMERICA INC": "UPSONIC",
+    }
+    for index, (partner, brand) in enumerate(residual_partners.items(), start=12001):
+        synthetic = ENERGY_STAR_UPS.replace(
+            b"Vertiv Corporation", f'"{partner}"'.encode(), 1
+        ).replace(b"Liebert", brand.encode(), 1)
+        batch = parse_energy_star_ups_inventory(
+            synthetic,
+            source_url=(
+                "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+            ),
+            partner=partner,
+            expected_count=1,
+        )
+        assert len(batch["candidates"]) == 1, index
+        assert batch["candidates"][0]["Brand Name"] == brand
+
 
 def test_energy_star_ups_inventory_rejects_drift_duplicates_and_unofficial_sources():
     url = "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv"
