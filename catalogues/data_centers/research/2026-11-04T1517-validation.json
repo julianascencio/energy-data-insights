@@ -1,0 +1,123 @@
+{
+  "run_id": "energy-star-cyberpower-ups-20261104T151713Z",
+  "retrieved_at": "2026-11-04T15:17:13Z",
+  "branch": "research/data-center-database-20261104T1416Z",
+  "base_head": "b8dc106f7a854fb57c76146afd10fe080765006b",
+  "prepublication_remote_head": "c12d94aa15b1aa0839975fc9bcec5b2d942f068a",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus_aggregate": 114
+    },
+    "equipment": 1123,
+    "total": 1306,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 37,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 135,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 962,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 36
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 161,
+    "inventories": [
+      "EPA ENERGY STAR certified Delta Electronics partner inventory",
+      "EPA ENERGY STAR certified Cyber Power Systems partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 990085,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {
+      "check": "deterministic ENERGY STAR partner builder replay",
+      "result": "passed",
+      "detail": "The new 135-record Cyber Power Systems build matched its two canonical shards and the builder reproduced all seven previously published reviewed partner inventories byte-for-byte"
+    },
+    {
+      "check": "catalogue schema, identity, unit, source and evidence validation",
+      "result": "passed",
+      "detail": "Validated 1,306 canonical Data Center records"
+    },
+    {
+      "check": "focused Data Center tests",
+      "result": "passed",
+      "detail": "78 passed"
+    },
+    {
+      "check": "full Python test suite",
+      "result": "passed",
+      "detail": "2,403 passed and five optional-dependency tests skipped"
+    },
+    {
+      "check": "database viewer Node tests",
+      "result": "passed",
+      "detail": "16 passed"
+    },
+    {
+      "check": "Ruff format and lint",
+      "result": "passed",
+      "detail": "913 files formatted; all lint checks passed"
+    },
+    {
+      "check": "repository-wide ty",
+      "result": "passed",
+      "detail": "All type checks passed"
+    },
+    {
+      "check": "repository, citation and diff checks",
+      "result": "passed",
+      "detail": "Repository policy, citation registry and whitespace checks passed"
+    },
+    {
+      "check": "strict Sphinx and generated-site link validation",
+      "result": "passed",
+      "detail": "Strict build succeeded and local links and assets resolved across 579 HTML pages"
+    },
+    {
+      "check": "deterministic typed Parquet and coverage rebuild",
+      "result": "passed",
+      "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"
+    }
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "bad4f1b2ea1f5a35167e1982e30926af416e217801555b58cfc4735d083fc146",
+    "projects_sha256": "a143dcdfa65de5782eaaf065eaf3f0398e138895533d6fc4e9514d71ca20ca56",
+    "equipment_sha256": "28bf90b9f7a76091adeb2f3bd8d5254eb06ab50221f0feb2d76769923757694d",
+    "manifest_sha256": "c9f55427889b850eeae6f739b4f04e404be20bd0533990a830e5fd45261e3280",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "915cb4881a96d209321a2426b5238a8f05bb00b4f793def507331da94f4dc2f7"
+  },
+  "holds_added": [],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "All 135 Cyber Power Systems entries in the 2026-11-03 ENERGY STAR dataset update are processed",
+    "The four exact reported brand spellings are preserved without collapsing certification identities",
+    "Twenty-seven reported maximum tested configurations remain separate observations while normalized ratings stay bound to minimum configurations",
+    "Active W and apparent VA remain distinct; runtime and efficiency retain certification and load boundaries",
+    "The existing CyberPower OEM-page reuse hold remains; this batch uses only the public EPA issuer dataset",
+    "No battery energy, power factor, accessory combination or deployment is inferred",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain"
+  ]
+}
