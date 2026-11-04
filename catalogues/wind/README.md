@@ -270,3 +270,14 @@ table adds drawing-qualified ratio evidence to EF0953A. The distinct
 SMG282ADT113-0209 candidate is held rather than merged into SMG282CDT175-0136.
 These are historical configuration observations with maintenance/design-change
 conditions, not independent current-certification or performance verification.
+
+## S144 component configuration continuation
+
+The retained TC-240121 Rev.2 original supplies five exact component identities:
+SB70 (SB70S1), SMG282ADT113-0209, SG055D06, WF1000-06L0270-CPN-A and HWDFM0693150.
+The complete selected component sections are recorded with explicit S144 links.
+Generator alternative manufacturers stay nested; no duplicate factory models
+are created. Tower drawing options remain observations rather than inferred
+commercial model variants. Bearing, coupling and structural identities remain
+held for category/assembly reconciliation. Historical certification conditions
+are not current eligibility or independent operational-performance validation.

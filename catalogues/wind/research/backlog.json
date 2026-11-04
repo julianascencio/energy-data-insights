@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:35:00Z",
+  "updated_at": "2026-11-04T11:35:52Z",
   "branch": "research/wind-20261104-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -9,7 +9,7 @@
       "url": "https://energy.usgs.gov/uswtdb/data/",
       "partition": "v9.1 full turbine release; all states including offshore",
       "next_offset": 0,
-      "status": "blocked_catalogue_metadata_403",
+      "status": "blocked_lbl_retired_csv_and_codebook_403",
       "tasks": [
         "Obtain original release bytes and hash; verify version and complete count",
         "Adapter with offline tests; retain exact model only when supplied",
@@ -17,8 +17,8 @@
       ],
       "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "LBNL listing reviewed; current fleet links return to USGS. Next acquire decommissioned CSV and codebook as a separate retired-turbine inventory; do not conflate with current fleet.",
-      "latest_attempt_review": "2026-11-04-1135-source-review.json"
+      "next_task": "Both LBNL files403; no unchanged retry. Next independently hosted official archive or state inventory with retired-unit IDs.",
+      "latest_attempt_review": "2026-11-04-1235-source-review.json"
     },
     {
       "rank": 2,
@@ -162,7 +162,8 @@
         "MNREALMM20August2026 all30entries processed;27new1GEenrichment1Vayonaidentityhold1Pioneer90m nestedoption. Do not repeatAprilrevision or tower/power combinations. Next complete official GE3.8-154 component disclosure https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260602168592999.pdf ; exact LM75.7P2GenB blade identity and only explicitly listed component types. Then MNRE ALMM-WTC2June2026 complete table, source acquisition first. VayonaSG3.4-145/3.6 identity and GEregionalhub equivalence remain held.",
         "Nine complete DMCdocuments (queueindices0–8,including GE3.8) and ALMM-WTC02June2026 complete:25new exact components,9turbines enriched,43generic rows held. Next queueindex9 Senvion4.2M160 https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf thenindices10–14 in 2026-11-04-0935-component-queue.json. Do not infer geometry/rating from model codes or split factory variants. Resolve generic types only with exact-model evidence.",
         "DMCqueueindices9–14complete:13new5turbinesenriched; SG/Vayona remainsheld. All15queued disclosures exhausted. Next exact supplier specification originals for WE4500S-01,WE7000G,EF0953A; reconcile Delijia legal entities without alias inference. Bearing/structural category mappings need explicit schema design before importing retained codes.",
-        "TC-240121 Rev.2 original acquired; complete p6 gearbox pair reviewed; EF0953A enriched with drawing-qualified ratio, distinct NGC candidate held. Next pp4–5,7–10 exact component tables; retain p11 option conditions and historical certification scope. WE4500S-01/WE7000G supplier spec originals remain unresolved."
+        "TC-240121 Rev.2 original acquired; complete p6 gearbox pair reviewed; EF0953A enriched with drawing-qualified ratio, distinct NGC candidate held. Next pp4–5,7–10 exact component tables; retain p11 option conditions and historical certification scope. WE4500S-01/WE7000G supplier spec originals remain unresolved.",
+        "TC-240121 Rev2 component sections pp5,7–10 complete; p6NGC exact gearbox added;5new1turbine enrichment. Remaining21 assembly/alias holds retained. Next exact Bonfiglioli JB00024563/JB00024827 drawing sheets; no 7T/TW alias inference."
       ]
     },
     {
@@ -198,7 +199,7 @@
       "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
       "partition": "Complete Spanish wind rows, then complete Polish wind rows; exclude PV",
       "next_offset": 0,
-      "next_task": "Eight Spain/Poland rows structurally reviewed and held. Next Cortijo de Guerra project detail plus WRI crosswalk, then seven Polish identities; do not repeat table discovery."
+      "next_task": "Cortijo government table discovery distinguishes I/I second phase/II; two historical canonical candidates. Original2023Cadiz PDF URL404. Next current official Cadiz inventory and explicit phase/permit crosswalk; no PNE aggregate allocation."
     }
   ],
   "user_priority_update": {

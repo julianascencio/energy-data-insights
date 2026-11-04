@@ -95,3 +95,16 @@ def test_exact_out_of_category_identity_keeps_its_hold_reason():
     docs[0]["rows"][1]["defer_reason"] = "Exact bearing code retained; category mapping pending"
     _, ledger = stage(docs)
     assert ledger[1]["reason"] == "Exact bearing code retained; category mapping pending"
+
+
+def test_exact_converter_does_not_inherit_turbine_rating():
+    docs = inputs()
+    model = docs[0]["rows"][0]["models"][0]
+    model.update(category="converter", model="Synthetic-C900")
+    records, _ = stage(docs)
+    assert records[0]["equipment_category"] == "converter"
+    assert "rated_power_kw" not in records[0]
+    assert (
+        json.loads(records[0]["compatibility_json"])[0]["equipment_record_id"]
+        == "synthetic-turbine"
+    )

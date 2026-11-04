@@ -74,7 +74,7 @@ def stage_components(
             for model in slot["models"]:
                 if not model["manufacturer"] or not model["model"] or not model["links"]:
                     raise ValueError("Exact identity and explicit application required")
-                if model["category"] not in {"blade", "gearbox", "generator"}:
+                if model["category"] not in {"blade", "gearbox", "generator", "converter"}:
                     raise ValueError("Unsupported reviewed component category")
                 if set(model.get("values", {})) - allowed:
                     raise ValueError("Unsupported specification field")

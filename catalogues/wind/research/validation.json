@@ -1,49 +1,44 @@
 {
-  "batch": "2026-11-04-1135",
+  "batch": "2026-11-04-1235",
   "validated_base": "7004215c89e6d4482a391577d321605860ae0f9a",
-  "iteration_parent": "498347e15dc42e4ca25659df5148e51b608e18d0",
+  "iteration_parent": "4890689e16098492e1087e7444c4ed2ff0b04daf",
   "local": {
-    "pytest": "2219 passed, 5 optional skips; final stable-input full rerun",
-    "initial_attempt": "2217 passed, 2 citation failures while citation files were being updated; superseded by final stable-input rerun",
-    "focused": "41 final Wind adapter/catalogue tests passed",
+    "pytest": "2220 passed; five optional skips",
     "viewer": "16 passed",
-    "quality": "Ruff lint/format, ty, repository hygiene, citations and whitespace checks passed",
-    "source_replay": "Eight records and all 57 residual decisions exactly replayed from checksummed 2458-row national source",
-    "preservation": "21,897 prior records unchanged; one existing gearbox additively enriched; eight projects added; prior scalars and all six capacity totals retained",
-    "snapshots": "Two builds, all seven files byte-identical; typed Zstandard Parquet",
-    "docs": "Strict Sphinx plot_gallery=0 passed; 534 HTML pages passed local link/asset audit",
+    "quality": "Ruff lint/format, ty, repository hygiene, citations and whitespace passed",
+    "catalogue": "21911 records validated; all prior scalars, creation timestamps, sources and extension observations retained",
+    "snapshots": "Two builds of seven files byte-identical; typed Zstandard Parquet",
+    "source_replay": "Five equipment records and 26 section decisions replay exactly from checksummed original and reviewed transcription",
+    "capacity": "All six capacity summaries unchanged",
+    "docs": "Strict Sphinx plot_gallery=0 passed; 534 HTML pages passed links/assets check",
     "example": "Offline Wind gallery passed",
     "packages": "Three wheels and three sdists built"
   },
   "not_executed": [
     "Full gallery",
-    "Interactive browser verification",
-    "Independent current certificate validity/performance verification"
+    "Interactive browser",
+    "Independent current certificate eligibility/performance verification"
   ],
   "remote_ci": {
-    "previous_commit": "498347e15dc42e4ca25659df5148e51b608e18d0",
+    "previous_commit": "4890689e16098492e1087e7444c4ed2ff0b04daf",
     "previous_result": "Python and Documentation succeeded",
     "this_batch": "Pending publication"
   },
   "snapshot_sha256": {
     "sources.json": "f83de9e633bc56220895ccc7094b408368e8fecba3de95af20003652d26d1751",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "3bd665477d87558d75b9af104d019a467d304eb64bcc08321cb6878c0126b9a5",
-    "equipment.parquet": "c59c769b8fa24bffd433438c692ef791a4b4d23b65bcb0518d73de98d987caab",
+    "manifest.json": "e780db5ef0f16fd4f6462228da1508455edff658f00759e4bb8d7ea567f1c5ed",
+    "equipment.parquet": "4429d5eaa2b673c5f77f04219cdf97fcaab78b2a2ba4e8d8c6969ca304f3b6b8",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "projects.parquet": "646692e08c8a3c343db798df6dfbce414956324fc30681b80761247f93296323"
   },
   "log_sha256": {
     "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
-    "docs-final.log": "b37a73d751fac37601e6ca455c2507b3a0617e56f635fc9d07da2af23fcaebea",
-    "gallery.log": "6ba6342e549526d8a8a7697bc357ac949593e22826bb25d1add51b1a472690d5",
-    "pytest-final.log": "66c38c44fd7a0fb2db9a51704f895853b76ed3c7be83de95463c6e8746d43760",
-    "pytest.log": "62c0ccb3b57fb7bda47e8d1a89524d044012d762f1278866603f969615fec4e7",
-    "links-final.log": "38afbed222f7b1ee8eef1b0e08300c0d93877fd4b834c2a30ca81465bd68f81e",
+    "gallery.log": "168cbf8167b0daa602207dba70b1844f5c4d4f6654e6bd44ba384bb2890a2e6f",
+    "pytest.log": "41448938d0f4f39e647fb3c3aa60aceb827d6a6983c15df0cbb7cc0e90ce7b83",
     "links.log": "38afbed222f7b1ee8eef1b0e08300c0d93877fd4b834c2a30ca81465bd68f81e",
-    "final-focused.log": "c5fde981d31cadbd4d18ee8e2d95477522f0da61ecb53b3e59dca77f8006abdf",
-    "docs.log": "7901ae32d035c281e5a58292e33f478e12dc6f9a00659e6ff1d93f5f66144975",
-    "viewer.log": "783be47b86c02fdbea8d3c38da7f0f5cd76feb5c83141554032529171871f8bd"
+    "docs.log": "2550b10a73b454dbf236fa2b4f326f91eb6f0aa2bd639443c4fac52bd93fae1c",
+    "viewer.log": "598bd22296cd2c81b393734725aa33d1df1cd5c84919c03e1efe01b01473ed08"
   }
 }
