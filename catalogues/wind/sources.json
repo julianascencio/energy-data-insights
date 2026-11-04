@@ -4409,5 +4409,54 @@
     "locator": "June DONG acquisition paragraph versus July Iberdrola Karścino/Bystra paragraph",
     "license": "Attributed factual company disclosure",
     "original_availability": "Original HTML acquired and hashed"
+  },
+  "eia860_2025": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Final 2025 Form EIA-860: complete Retired and Canceled wind technology tab, plant context and instructions",
+    "license": "U.S. government factual survey data; attribution retained; no authentication or explicit reuse restriction encountered",
+    "retrieved_at": "2026-11-04T23:06:14Z",
+    "published_at": "2026-09-10",
+    "revision": "Final 2025 annual release; status as of 2025-12-31",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original ZIP and extracted workbooks/PDF acquired HTTP200; original bytes checksummed, not redistributed",
+    "documents": {
+      "3_2_Wind_Y2025.xlsx": {
+        "sha256": "12e86fd1c89abd1b787862e9c65121d31795ff175c4347c98a2c339f2b52826d",
+        "bytes": 263379
+      },
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059",
+        "bytes": 4629134
+      },
+      "EIA-860 instructions.pdf": {
+        "sha256": "a8a620d9a3323914f1078881f9d6a31ca611263eb3616b64569efa9b1fa247c4",
+        "bytes": 782653
+      }
+    },
+    "landing_page": {
+      "url": "https://www.eia.gov/electricity/data/eia860/",
+      "sha256": "002be3dad15cd3258337ba8baeb42ddfabf6e2ee5c5329390920691ede52bffa"
+    },
+    "locator": "Wind workbook Retired and Canceled rows3–174; accepted per-row locators retained. Plant workbook matching IDs only. Instructions pp12,15–16,23.",
+    "scope": "129 plant groups/172 generator rows; not a comprehensive historical retirement inventory, turbine-level inventory or current operating census"
+  },
+  "wri_usa_identity": {
+    "url": "https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_USA.py",
+    "publisher": "World Resources Institute",
+    "title": "WRI U.S. importer and make_id registry identity mapping",
+    "license": "WRI repository source reviewed; factual identity mapping only; upstream code not redistributed",
+    "retrieved_at": "2026-11-04T23:06:14Z",
+    "published_at": null,
+    "revision": "7a91cfbb2a4e272597acbc00506d61fc1ec73b3d",
+    "sha256": "c3998a8453dc733d6f47d5a14421a15708b40ecd7951a3c76387321aea870f4c",
+    "original_availability": "Both original Python source files obtained HTTP200 and checksummed",
+    "documents": {
+      "powerplant_database.py": {
+        "sha256": "89547a4e63fe596d0cbf28ede1d28908e4289beb59a8c17da2d659a4ea35d544",
+        "locator": "make_id(letter_code,id_number): country prefix plus zero-padded7-digit EIA plant code"
+      }
+    },
+    "locator": "build_database_USA.py COLS_860_2 idnr=2, pw.make_id(SAVE_CODE, int(...)); powerplant_database.py make_id"
   }
 }

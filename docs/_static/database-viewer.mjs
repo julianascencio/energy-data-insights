@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isWind = root.dataset.database === "wind";
@@ -122,6 +122,8 @@ function render() {
   if (isWind) summary.push([number(filtered.filter(r => r.quality_status === "needs_review").length), "Records needing review", "Inspect field conflicts; quarantined values remain unknown, not zero"]);
   if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
+    const eia = windEiaSummary(filtered);
+    summary.push([number(eia.projects), "EIA unit evidence", `${eia.retired} retired · ${eia.canceled} canceled · ${eia.postponed} postponed dated unit observations; ${eia.withoutObservations} projects without this evidence. Unit status does not establish whole-farm status or current capacity.`]);
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
     summary.push([number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Catalogue coverage"],
       [number(statistics(eligible, "turbine_count").reportedSum), "Reported turbines", "Only reviewed non-overlapping project scopes"],

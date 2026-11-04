@@ -226,3 +226,16 @@ test("EPD scenarios preserve zero and lifetime boundaries without creating farms
     {...row([scenario]), equipment_category: "generator"},
   ]), {records: 1, scenarios: 2, withoutScenarios: 5});
 });
+
+test("EIA unit states remain dated observations and distinguish absence", async () => {
+  const {windEiaSummary} = await import("../../docs/_static/database-core.mjs");
+  const unit = {generator_id: "G1", locator: "row3", status_code: "RE", status_as_of: "2025-12-31"};
+  const row = units => ({entity_type: "projects", extensions_json: JSON.stringify({eia_annual_wind_partitions: [{source_id: "eia", year: 2025, units}]})});
+  assert.deepEqual(windEiaSummary([
+    row([unit, {...unit,status_code:"CN"}, {...unit,status_code:"IP"}]),
+    row([{...unit,status_as_of:"2026-12-31"}]), row([{...unit,status_code:"OP"}]),
+    {entity_type:"projects",extensions_json:"invalid"},
+    {entity_type:"projects",extensions_json:"null"},
+    {...row([unit]),entity_type:"equipment"},
+  ]), {projects:1,withoutObservations:4,retired:1,canceled:1,postponed:1});
+});

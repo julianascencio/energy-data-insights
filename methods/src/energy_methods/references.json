@@ -16904,5 +16904,43 @@
     ],
     "note": "Karcino51MW acquired fromDONG inJune2013; distinct fromKarścino/Bystra Julytransaction; shared budget not allocated.",
     "verified_at": "2026-11-04"
+  },
+  {
+    "id": "eia860_2025",
+    "title": "Final 2025 Form EIA-860: complete Retired and Canceled wind technology tab, plant context and instructions",
+    "authors": [
+      "U.S. Energy Information Administration"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "kind": "dataset",
+    "role": "data_source",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/wind_catalogue/eia.py",
+      "docs/wind-catalogue.md",
+      "catalogues/wind/README.md"
+    ],
+    "note": "Original checksum/revision and exact workbook row locators in Wind source registry. Unit observations do not reconcile whole-plant scope.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "wri_usa_identity",
+    "title": "WRI U.S. importer and make_id registry identity mapping",
+    "authors": [
+      "World Resources Institute"
+    ],
+    "year": 2022,
+    "doi": null,
+    "url": "https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_USA.py",
+    "kind": "software",
+    "role": "data_source",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/wind_catalogue/eia.py",
+      "docs/wind-catalogue.md",
+      "catalogues/wind/README.md"
+    ],
+    "note": "Original checksum/revision and exact workbook row locators in Wind source registry. Unit observations do not reconcile whole-plant scope.",
+    "verified_at": "2026-11-04"
   }
 ]

@@ -66,6 +66,23 @@ print(
 )
 print("Hub options do not create model variants; no common-condition power curves inferred.")
 
+# Annual EIA unit states do not reconcile whole-farm repowering or hybrid scope.
+print("EIA 2025 dated unit evidence: farm status/capacity exclusions remain unchanged")
+for row in rows:
+    for partition in json.loads(row.get("extensions_json") or "{}").get(
+        "eia_annual_wind_partitions", []
+    ):
+        states = [unit["status_code"] for unit in partition["units"]]
+        print(
+            row["name"],
+            partition["plant_code"],
+            partition["year"],
+            states,
+            row["status"],
+            row["aggregation_role"],
+        )
+print("Predominant models and representative heights are partial inventories, not exact fleets.")
+
 # Environmental declarations use modeled sites, not independently observed farms.
 print("EPD lifetime scenarios: separate model, location, exposure and net-to-grid boundary")
 for row in rows:

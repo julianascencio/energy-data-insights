@@ -1,27 +1,28 @@
 {
-  "batch": "2026-11-04-2435",
+  "batch": "2026-11-04-2535",
   "validated_base": "9f36b0f35a0090a4908741704af883be376466b6",
   "iteration_parent": "cdfbc263fc64e287523a5aaf51cb9c7550268cde",
+  "bounded_batch_parent": "7c563c3a76decaf99f83f1d18a2ffa2c2bd764ab",
   "local": {
-    "focused_pytest": "216 passed:187 Wind and29 reference tests",
-    "viewer": "18 Node tests and syntax passed",
-    "quality": "Ruff lint/format969files,ty,repository4458files,citations and whitespace passed",
-    "catalogue": "22181 validated;22167 preceding unchanged;8 enrichments preserve all earlier evidence and creation times",
-    "capacity": "All six capacity-category totals unchanged;all6newproject scopes excluded",
-    "replay": "Seven exactEPD models reproduced; repeatedrun idempotent",
-    "snapshots": "Two seven-file builds byte-identical; allParquetcolumns ZSTD",
-    "docs": "Strict Sphinx withgalleryexecutiondisabled passed;609HTMLpages passedlinks/assets",
-    "example": "OfflineWindgallery passed",
-    "packages": "Threewheels andthree source distributions rebuilt"
+    "focused_pytest": "231 passed:202 Wind and29 references; includes15 EIA and12 EPD tests",
+    "viewer": "19 Node tests and viewer syntax passed",
+    "quality": "Ruff lint/format971files,ty,repository4463files,citations and whitespace passed",
+    "catalogue": "22181 records validated;22109 preceding records unchanged;66 enrichments preserve prior evidence and creation times",
+    "capacity": "All six capacity-category totals unchanged; unresolved historical scopes remain excluded",
+    "replay": "All129 EIA candidates reproduced from pinned workbooks;58 enrichments replay and idempotence passed; preceding seven EPD model replay passed",
+    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
+    "docs": "Strict Sphinx with gallery execution disabled passed;611HTML pages passed links/assets",
+    "example": "Offline Wind gallery passed",
+    "packages": "Three wheels and three source distributions rebuilt"
   },
   "snapshot_sha256": {
-    "sources.json": "11bbfd49a535db2afbccbde60a22ea21855bb35251721cff568156f7f39b1318",
+    "sources.json": "0881e7a7bcae46e76521c61857183efb59b7d4c23c84852e1a15de16af148c88",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "4b832ef90a2a2bf9e43642740fb9bbc3fd4c0b1436e530f828c94ee9d0af3321",
+    "manifest.json": "b177d2b7e21d00eca4d05c352b10ae18713ee436c92e403c9585ee1ad2efe73c",
     "equipment.parquet": "e8e95a3d7946a2da8152c46a88a75fb6eb6c494d291f1d259895ec801cc5166d",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "54cc9188e23b99ec693fbe3a0053f61baa451ba1dee0c55a5d57a83a1105842e"
+    "projects.parquet": "8a14d240792c508e3c1e4e0ebf4d0c2ce5de45d26d255438bc775f2b3751b150"
   },
   "not_executed": [
     "Full repository Python suite",
@@ -30,12 +31,13 @@
     "Independent turbine performance verification"
   ],
   "remote_ci": {
-    "prior_commit": "cdfbc263fc64e287523a5aaf51cb9c7550268cde",
-    "prior_result": "BothPythonversions anddocumentation passed;Pagesdeploymentskipped",
-    "this_batch": "Not published yet"
+    "first_checkpoint": "7c563c3a76decaf99f83f1d18a2ffa2c2bd764ab",
+    "first_checkpoint_result": "Python quality/tests and Documentation workflows completed successfully",
+    "this_checkpoint": "Not yet published when this report was written; query PR head CI separately"
   },
   "resolved_validation_failures": [
-    "Ruff foundone longline andtwo list-concatenation styleissues; fixedandreranqualitychecks",
-    "Workspace free-space pressure; removedobsolete reproducible docs andcanonical-record copies, preserving originals andcurrentbatchbeforecopy"
+    "Initial adapter rejected offshore WS prime mover; corrected explicit technology/prime-mover pairs and added regression fixture",
+    "Initial Ruff issues corrected and checks rerun",
+    "Workspace ENOSPC interrupted initial EIA test-file write; removed reproducible Sphinx/test outputs and cache, rewrote file and reran all relevant checks"
   ]
 }

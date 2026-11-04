@@ -732,3 +732,30 @@ without an explicit registry crosswalk. Next: September 14–16 BOE issues, the
 Wimmera stage boundary, Jasna's exact installed fleet, and original Goldwind
 revision/type-certificate evidence. See the dated research ledgers for hashes,
 field locators and unresolved observations.
+
+## Dated EIA generator observations
+
+The complete final-2025 EIA wind **Retired and Canceled** tab contains 172 rows
+across 129 plant codes. It is not a complete historical retirement census.
+58 existing U.S. project identities receive 82 dated generator observations;
+71 identities remain deferred, including five code matches with name/location
+discrepancies. Whole-farm status, historical capacity, repowering boundaries and
+aggregation exclusions remain unchanged. The canonical extension retains row
+locators, original quantities, month/year dates, net seasonal versus nameplate
+MW, representative heights and predominant model labels. Those labels do not
+create exact OEM equipment or individual turbine records.
+
+`wind_catalogue.eia.parse_retired_partition` verifies original workbook hashes,
+reporting year, headers, wind prime movers, statuses and unique identities.
+`enrich_retired_partition` requires an explicit reviewed crosswalk plus matching
+WRI-encoded EIA code, normalized name and coordinates. Replaying a source
+revision is idempotent; changing it under the same source ID is rejected.
+The shared project viewer reports unit observations independently of farm
+lifecycle and current capacity. The deterministic gallery prints their reporting
+year and unchanged scope exclusions.
+
+EIA's workbook calls its speed field “Design Wind Speed”; its instructions ask
+for representative annual average speed. Both descriptions are retained, with
+measurement method, dates and height unknown. No measured/design performance
+comparison or capacity factor is inferred. Sources: final-2025 EIA-860 and the
+pinned WRI U.S. importer/identity helper (`eia860_2025`, `wri_usa_identity`).

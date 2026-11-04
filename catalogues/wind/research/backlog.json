@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T22:48:26Z",
+  "updated_at": "2026-11-04T23:06:14Z",
   "branch": "research/wind-20261104-2335",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind-20261104-2335.lock for research/wind-20261104-2335; inspect active work and remote head; publish using an expected-head fast-forward, never overwrite another writer.",
   "queue": [
@@ -17,8 +17,15 @@
       ],
       "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "Both LBNL files403; no unchanged retry. Next independently hosted official archive or state inventory with retired-unit IDs.",
-      "latest_attempt_review": "2026-11-04-1235-source-review.json"
+      "next_task": "Do not repeat completed EIA2025 nonoperabletab. ResolveEIA50535Mesa,50536SkyRiver,52162/52163(85A/B)locationchanges,55719MountainViewI&II; then complete2025Operablewind plantcodes1–9999 fromcachedoriginal, includinghybrid/repoweringidentitychecks. September2026EIA860MRetiredtab foraccepted58IDs beforewholefarmstatusreconciliation. OriginalUSGS/LBNL403remainseparate.",
+      "latest_attempt_review": "2026-11-04-1235-source-review.json",
+      "independent_source_completed": {
+        "source": "EIA2025final",
+        "partition": "RetiredandCanceled windtab129plants172rows",
+        "accepted": 58,
+        "deferred": 71,
+        "decision_ledger": "2026-11-04-2535-eia-decisions.json"
+      }
     },
     {
       "rank": 2,

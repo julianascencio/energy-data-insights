@@ -206,3 +206,26 @@ export function windEpdSummary(rows) {
   }
   return summary;
 }
+
+// Count dated unit observations, never infer whole-farm retirement or capacity.
+export function windEiaSummary(rows) {
+  const result = {projects: 0, withoutObservations: 0, retired: 0, canceled: 0, postponed: 0};
+  const keys = {RE: "retired", CN: "canceled", IP: "postponed"};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const partitions = Array.isArray(ext?.eia_annual_wind_partitions) ? ext.eia_annual_wind_partitions : [];
+    let count = 0;
+    for (const part of partitions) {
+      if (!part?.source_id || !Number.isInteger(part.year)) continue;
+      for (const unit of Array.isArray(part.units) ? part.units : []) {
+        const key = Object.hasOwn(keys, unit?.status_code) ? keys[unit.status_code] : null;
+        if (!key || !unit.generator_id || !unit.locator || unit.status_as_of !== `${part.year}-12-31`) continue;
+        result[key]++; count++;
+      }
+    }
+    if (count) result.projects++;
+    else result.withoutObservations++;
+  }
+  return result;
+}

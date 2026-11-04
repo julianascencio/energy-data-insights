@@ -7367,3 +7367,19 @@ Energa SA (2013). **ENERGA wind asset acquisitions**. [Source](https://ir.energa
 **Role:** data. Karcino51MW acquired fromDONG inJune2013; distinct fromKarścino/Bystra Julytransaction; shared budget not allocated.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### eia860_2025
+
+U.S. Energy Information Administration (2026). **Final 2025 Form EIA-860: complete Retired and Canceled wind technology tab, plant context and instructions**. [Source](https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip)
+
+**Role:** data_source. Original checksum/revision and exact workbook row locators in Wind source registry. Unit observations do not reconcile whole-plant scope.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/eia.py`, `docs/wind-catalogue.md`, `catalogues/wind/README.md`.
+
+### wri_usa_identity
+
+World Resources Institute (2022). **WRI U.S. importer and make_id registry identity mapping**. [Source](https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_USA.py)
+
+**Role:** data_source. Original checksum/revision and exact workbook row locators in Wind source registry. Unit observations do not reconcile whole-plant scope.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/eia.py`, `docs/wind-catalogue.md`, `catalogues/wind/README.md`.

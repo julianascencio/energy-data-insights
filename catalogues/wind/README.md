@@ -510,3 +510,37 @@ without an explicit registry crosswalk. Next: September 14–16 BOE issues, the
 Wimmera stage boundary, Jasna's exact installed fleet, and original Goldwind
 revision/type-certificate evidence. See the dated research ledgers for hashes,
 field locators and unresolved observations.
+
+### EIA 2025 nonoperable wind partition (2026-11-04 follow-on)
+
+The final 2025 EIA-860 wind workbook's complete **Retired and Canceled** tab
+contains 172 generator rows across 129 plant codes: 102 retired, 54 canceled and
+16 indefinitely postponed/no-longer-in-resource-plan rows. This annual tab is
+**not a comprehensive historical retirement census**. Its reporting cutoff is
+31 December 2025; the final release was published 10 September 2026.
+
+58 existing U.S. historical projects receive 82 dated unit observations (62 RE,
+20 CN), registry plant codes, predominant manufacturer/model labels,
+representative hub heights, original wind-speed fields, operating/retirement
+month and year, and plant/grid context. WRI's original importer explicitly
+encodes EIA plant codes; accepted matches also require agreeing names and
+coordinates. Five code matches with name/location discrepancies and 66 other
+plant identities remain deferred in the complete decision ledger. No plant
+status, capacity total or aggregation eligibility changes. Units are generator
+aggregations, not necessarily individual physical turbines. Predominant model
+labels are not exact OEM configurations or complete mixed-fleet inventories.
+
+The adapter preserves original units and source rows. Summer/winter net MW stay
+separate from nameplate MW. Feet normalize to metres by 0.3048. Wind speed uses
+0.44704 m/s per mph, but the workbook's “Design Wind Speed” heading differs from
+the instructions' representative annual-average wording; measurement method,
+dates and height remain unknown. No resource comparison or capacity factor is
+inferred. The shared viewer counts dated unit observations separately from
+whole-project status; the offline gallery demonstrates the same distinction.
+
+Together with the preceding Polish/EPD checkpoint, this iteration adds six
+projects, enriches 59 projects and seven exact equipment records, and adds no
+new equipment models, turbines or curves. The equipment target was not met;
+unnamed components and predominant registry labels were not converted into
+invented configurations. See `research/2026-11-04-2535-eia-decisions.json` for
+all 129 decisions and `research/latest.json` for exact continuation partitions.
