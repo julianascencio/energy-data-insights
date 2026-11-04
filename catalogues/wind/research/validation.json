@@ -1,18 +1,18 @@
 {
-  "batch": "2026-11-04-0135",
+  "batch": "2026-11-04-0235",
   "local": {
-    "pytest": "2122 passed,1 optional cdsapi skip",
+    "pytest": "2150 passed;1 optional cdsapi skip",
     "viewer": "15 passed",
-    "catalogue": "17128 records valid;53projects637turbines added;11equipment enriched",
-    "source_replay": "690 new project/turbine records replayed exactly",
-    "snapshots": "Two byte-identical builds;4tables136typed columns each,allZSTD;documentation manifest identical",
-    "preservation": "16427 prior records unchanged;11enriched with all previous extension values and creation timestamps preserved; prior sources and six capacity summaries unchanged; unrelated catalogues unchanged",
-    "ruff_ty": "Repository lint,format and typing passed",
-    "citations": "Passed; new VEC501R0 reference and generated exports",
-    "hygiene": "3439 candidate files passed before final report update",
+    "catalogue": "18112 valid records;56 new projects928 linked turbines;1 equipment enriched",
+    "source_replay": "984 new project/turbine records replay exactly from complete source responses",
+    "snapshots": "Two byte-identical builds;4tables136typed columns,allZSTD;documentation manifest identical",
+    "preservation": "17127 prior records unchanged;1equipment enriched with prior specifications and creation timestamp preserved; prior sources and all six capacity totals unchanged; unrelated catalogues unchanged",
+    "ruff_ty": "Repository lint/format and typing passed; changed adapter rechecked after CLI addition",
+    "citations": "Passed; new ENERCON08/2019 reference and generated exports",
+    "hygiene": "3538 candidate files passed before final validation report update",
     "packages": "All3workspace packages built wheels and sdists",
     "example": "Offline Wind gallery passed",
-    "docs": "Strict Sphinx passed using /dev/shm to bypass full root filesystem;516-page link/asset audit passed",
+    "docs": "Strict Sphinx passed;524-page local link/asset audit passed. Initial audit ran before dataset export finished; final completed-build audit passes.",
     "whitespace": "Passed"
   },
   "not_executed": [

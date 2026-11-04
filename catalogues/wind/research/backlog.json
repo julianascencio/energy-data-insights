@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-04T01:35:00Z",
-  "branch": "research/wind-20261103-2235",
+  "updated_at": "2026-11-04T02:35:00Z",
+  "branch": "research/wind-20261104-0235",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
     {
@@ -102,7 +102,8 @@
         "All5LCVS and18non-AL LCVT exact types processed. LCVT025 pp54/55 electrical conflict and ACU410-23 pairing quarantined. Next13unique AL-suffix types pp55–56; retain per-inverter current/dissipation conditions without duplicate models.",
         "All13unique AL-suffix chokes pp55–56 and15EMCfiltertypes pp58–61 processed. Preserve conditional current/loss observations,2ambiguous choke frame links and printed ACU210-12 with no inferred alias. Next book-filter dimension/assembly tables pp62–63; then exact braking-resistor types pp64 onward; no optional low-leakage variants without exact identifiers.",
         "R04_0 pp62–65 exhausted:12filter assembly enrichments11BR resistor types,38application rows. No synthetic2x equipment model. Next referenced Bonfiglioli braking resistor catalogue: acquire original exact dimension/thermal-switch tables; HLD110-500/42 remains unknown.",
-        "VEC501R0 pp2/4 exhausted:11legacyBR enrichments; no new equipment. Next original AGL VEC671R7 section13.3 and ANG VEC1105R4 resistor tables, reconcile exact revision before current thermal/mass scalars; then pivot to independent turbine/OEM backlog."
+        "VEC501R0 pp2/4 exhausted:11legacyBR enrichments; no new equipment. Next original AGL VEC671R7 section13.3 and ANG VEC1105R4 resistor tables, reconcile exact revision before current thermal/mass scalars; then pivot to independent turbine/OEM backlog.",
+        "AGL VEC671R7 section1.4 and ANG VEC1105R4 section1.5 originals successfully acquired but explicitly restricted; excluded, do not retry as network errors. E82E2 08/2019 OEM sheet complete,1existing model enriched; two nominal options nested, no curves. Next exact E103EP2 base datasheet on OEM CDN; current ABB revision and independent wind components remain pending."
       ]
     },
     {
@@ -172,11 +173,11 @@
     "source_guide": "2026-11-03-top10-markets.md",
     "sweden_partition": {
       "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
-      "completed_where": "OMRID < '2100'",
-      "reviewed_areas": 2984,
-      "reviewed_turbines": 13025,
-      "next_where": "OMRID >= '2100' AND OMRID < '2200'",
-      "next_county": "Gävleborg",
+      "completed_where": "OMRID < '2200'",
+      "reviewed_areas": 3072,
+      "reviewed_turbines": 15149,
+      "next_where": "OMRID >= '2200' AND OMRID < '2300'",
+      "next_county": "Västernorrland",
       "layers": [
         2,
         3,
@@ -190,7 +191,7 @@
         12
       ],
       "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
-      "residual_ledger": "2026-11-04-0135-sweden-decisions.jsonl"
+      "residual_ledger": "2026-11-04-0235-sweden-decisions.jsonl"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",
@@ -200,16 +201,16 @@
         "Katalogkategorien.xml"
       ],
       "all_unit_rows": 44351,
-      "next_partition": "EEZ1416:1813units; separate offshore adapter required; then residual identities",
+      "next_partition": "EEZ group reconciliation: Amrumbank-West/Amrumbank West first, then NC1/2/3/4/NC4; full48-group ledger",
       "next_task": "Build separate EEZ offshore identity/classification adapter; do not reuse onshore mapping. Reconcile parent phases and existing German offshore records before adding units.",
-      "source_review": "2026-11-04-0135-source-review.json",
+      "source_review": "2026-11-04-0235-source-review.json",
       "offset": 0,
-      "status": "sixteen_state_partitions_reviewed",
+      "status": "all_states_and_eez_structurally_reviewed",
       "completed_partition": "1411,1408,1409,1400,1414,1403,1402,1407,1410,1405 complete,1415,1413,1412,1404,1406,1401",
       "accepted_projects": 385,
       "accepted_turbines": 1926,
       "deferred_groups": 14284,
-      "decision_ledger": "2026-11-04-0135-germany-decisions.jsonl",
+      "decision_ledger": "2026-11-04-0235-eez-decisions.jsonl",
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
