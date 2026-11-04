@@ -23,6 +23,17 @@ def gearbox_partition(rows: Iterable[tuple[Any, ...]]) -> list[dict[str, Any]]:
     Keep statements, applicants and expired dates exactly scoped to the register.
     This does not establish present validity or infer equipment specifications.
     """
+    return component_partition(rows, gearbox_mentions=True)
+
+
+def component_partition(
+    rows: Iterable[tuple[Any, ...]], *, gearbox_mentions: bool
+) -> list[dict[str, Any]]:
+    """Select one exhaustive complementary text partition, not a component taxonomy.
+
+    A model without the word gearbox falls in the non-mention partition even if
+    it is a gearbox. Statement scope and applicant remain uninterpreted.
+    """
     rows = iter(rows)
     if tuple(next(rows, ())) != HEADER:
         raise ValueError("Unexpected DNV register header")
@@ -31,7 +42,9 @@ def gearbox_partition(rows: Iterable[tuple[Any, ...]]) -> list[dict[str, Any]]:
     for number, row in enumerate(rows, 2):
         if len(row) != 7:
             raise ValueError("Unexpected register width")
-        if row[0] != "CC DNV-SE-0074" or "gearbox" not in str(row[4]).casefold():
+        if row[0] != "CC DNV-SE-0074" or (
+            ("gearbox" in str(row[4]).casefold()) != gearbox_mentions
+        ):
             continue
         if not row[3] or row[3] in seen:
             raise ValueError("Missing or duplicate certificate identifier")

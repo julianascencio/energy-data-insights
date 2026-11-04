@@ -360,3 +360,19 @@ No reported total MW is supplied by the reviewed notice, so no capacity scalar
 is populated. The public-utility consultation does not establish construction
 permission. El Almendro's solar decision remains deferred for wind identity
 reconciliation. Both preceding records and capacity exclusions are preserved.
+
+### Complementary certificate partition and withdrawn project
+
+Batch `2026-11-04-1735` completes the DNV-SE-0074 register entries whose
+object descriptions do not mention gearboxes. This text partition is not a
+component classification: a gearbox identified only by its model code may
+appear here. Three explicitly branded dry-type transformer identities and one
+LM rotor blade are added; their model codes do not establish power, voltage or
+blade length. Certificate applicants remain separate from manufacturer labels,
+and the dated register does not establish present validity or operating performance.
+
+BOE October 17 and 19 Series A/B are reviewed completely. Mistral's PEol-338
+withdrawal is recorded separately from Nordés and from their former joint
+administrative procedure. Its 106.4 MW application capacity is not installed
+capacity and remains excluded from aggregate totals. El Páramo's extension and
+Tesouro's wind/battery boundaries require further identity reconciliation.

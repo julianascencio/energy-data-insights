@@ -1,52 +1,43 @@
 {
-  "batch": "2026-11-04-1635",
+  "batch": "2026-11-04-1735",
   "validated_base": "b8dc106f7a854fb57c76146afd10fe080765006b",
-  "iteration_parent": "4d121d46ca247edfe07b38a1b0792fca1b94150f",
+  "iteration_parent": "7a5a33cc11dee7a8863bc54f067702ed9ebeb1ee",
   "local": {
-    "pytest": "2408 passed;5optional skips",
-    "viewer": "16passed",
-    "quality": "Ruff lint/format,ty,repository hygiene,citations,whitespace passed",
-    "catalogue": "21923validated;1newproject3equipmentenriched;all other21919records preserved",
-    "capacity": "Six capacity totals unchanged;new scope excluded",
-    "replay": "BOE record/two decisions and all41DNVrows replay exactly",
-    "snapshots": "Two builds;seven files byte-identical;typed Zstandard Parquet",
-    "docs": "Strict Sphinx plot_gallery=0 passed;581HTMLpages links/assets passed",
+    "pytest": "2409 passed; 5 optional skips",
+    "viewer": "16 passed",
+    "quality": "Ruff lint/format, ty, repository, citations and whitespace passed",
+    "catalogue": "21928 records validated; 21923 preceding records unchanged",
+    "capacity": "All six capacity totals unchanged; new project excluded",
+    "replay": "Three BOE decisions, new project, two complete A/B indexes and all 74 DNV observations replayed",
+    "snapshots": "Two seven-file builds byte-identical; typed Zstandard",
+    "docs": "Strict Sphinx plot_gallery=0 and 581 HTML page links/assets passed",
     "packages": "Three wheels and three sdists built",
     "example": "Offline Wind gallery passed"
   },
-  "resolved_validation_failures": [
-    "Ruff import ordering and collections.abc.Iterable corrected;final lint passed"
-  ],
   "not_executed": [
     "Full gallery",
     "Interactive browser",
     "Present certificate validity or independent operational verification"
   ],
   "remote_ci": {
-    "parent": "Python3.12,Python3.13,Documentation succeeded;deploy skipped",
+    "parent": "Python 3.12/3.13 and documentation succeeded; deployment skipped",
     "this_batch": "Pending publication"
   },
   "snapshot_sha256": {
-    "sources.json": "d84a293c2dffb688c1f2f551d3dd5389c35cdf27767f1acdc802841495ec901b",
+    "sources.json": "4eac95df801c3c5b7ff484bf66a3064273bfc6addc7ba1b550aff6d7d68dd10f",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "fae0c1ac40a40333f2df0eb4b892379339213ef897c2cdb55390a2110ffbe62d",
-    "equipment.parquet": "2e006ccad6ad9dd2c0ce5ffa5ac110198977cb3b9b2290b907ea23bbfeea26ba",
+    "manifest.json": "75cf9dac8e57c77f250d1314d7dd41fc2d6e82067e8da947504eba88ffa64e07",
+    "equipment.parquet": "18d775a71129f692a5a62fa62612ab8689e0e414964dcff7524589449a6a33ba",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "935577c7b020c31d4bd8049215d44ace4417f081d7644d260da9af8ad926da4c"
+    "projects.parquet": "104bec9b73449fafefe96d391464483a515ddea786251ed2be46f4dcd79fbc66"
   },
   "log_sha256": {
-    "pytest.log": "3aad41c5539b58a72bb9c29be3b4f1fc25d2413b1feff1b33177db2dfdf8b2c4",
-    "docs.log": "9276fcde217b460d6f6704448fd414afc8b0d535c266fefea477ffd52c7e1e2e",
+    "packages.log": "58bda4b172e5810ebf891e3a03be18b139649436a68d1cd2594f58bcd667d46d",
+    "replay.log": "e5fb5d9e34a2f61fec96b5bb8578aee667e50eb4eee22dfb85df0ba6d77ffe51",
+    "gallery.log": "83ddac053c7e40495b6476c5aa04baed8e7438a2590364af57c4888cc8705c27",
+    "pytest.log": "74c18d7132a5531d2bc2e09d7a8191d14267e56f7814c068bafc232ddf3198a6",
     "links.log": "9c5076f86be2569c8c43f62d2d21bc49c95869de606656246a15a866a23e5bc4",
-    "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
-    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "format.log": "cdb38cddbec1bd8b9800f215fca1dc2eaca28c1a6a35fa2d081458cf83844175",
-    "ty.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "viewer.log": "64f964419fd5caac276cd1aabbfde3a885d714d52175d49c423fb8fdd271effa",
-    "repository.log": "325aaf2f0be04002771e4f3d880827a642926897864b43e847efb5c3710f8c95",
-    "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
-    "replay.log": "8753ac4d2378f16e4d105e155c2b5971aa797e931c69c419715546809d86fd9a",
-    "gallery.log": "0832d136a6e9c0158fb85bdee11813610ae5a5ef1d95cd32c06de6d9cefefcea"
+    "docs.log": "30ee1c2183a4ae7f0dfe1d4088ec1d5792e3c9fc909c35f3ff7ff2c675eb3744"
   }
 }

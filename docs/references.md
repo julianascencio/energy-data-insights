@@ -7039,3 +7039,27 @@ DNV (2026). **Renewables Certification register, status20April2026**. [Source](h
 **Role:** data. Dated register observations; not current certificate validity or independent operating performance.
 
 **Used by:** `catalogues/wind/sources.json`, `data-retrieval/src/energy_data_retrieval/wind_catalogue/dnv.py`.
+
+### boe_a_2026_21663
+
+Government of Spain (2026). **Ampliación El Páramo application rejection**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21663)
+
+**Role:** data. Administrative scope is distinct from physical operation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_21768
+
+Government of Spain (2026). **Mistral application withdrawal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21768)
+
+**Role:** data. Administrative scope is distinct from physical operation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_21769
+
+Government of Spain (2026). **Tesouro Storage battery authorization**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21769)
+
+**Role:** data. Administrative scope is distinct from physical operation.
+
+**Used by:** `catalogues/wind/sources.json`.
