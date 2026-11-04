@@ -34,16 +34,18 @@ def test_no_failures_and_midpoint_energy():
 
 
 def test_replay_and_survival():
-    kwargs = dict(
-        curve=ReliabilityCurve("exponential", 0.005),
-        initial_annual_energy_mwh=100,
-        years=10,
-        trials=10000,
-        components=(ComponentScenario("a", 0.1, 0.01, 5),),
-        seed=42,
-    )
-    result = simulate_operation(**kwargs)
-    assert result.equals(simulate_operation(**kwargs))
+    def run():
+        return simulate_operation(
+            curve=ReliabilityCurve("exponential", 0.005),
+            initial_annual_energy_mwh=100,
+            years=10,
+            trials=10000,
+            components=(ComponentScenario("a", 0.1, 0.01, 5),),
+            seed=42,
+        )
+
+    result = run()
+    assert result.equals(run())
     survival = result[result.year == 10].original_components_survive.mean()
     assert abs(survival - 0.9**10) < 0.02
 
