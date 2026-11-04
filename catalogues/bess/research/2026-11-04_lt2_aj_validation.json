@@ -1,0 +1,53 @@
+{
+  "started_at": "2026-11-04T19:47:54+00:00",
+  "validation_checkpoint_at": "2026-11-04T20:06:41.515416+00:00",
+  "elapsed_minutes_through_validation": 18.79,
+  "timezone_display": "Atlantic/Canary equals UTC on this date",
+  "publication": "Follows this checkpoint; no invented final duration",
+  "checks": {
+    "full_pytest": {
+      "passed": 2460,
+      "skipped": 5,
+      "seconds": 113.09,
+      "skips": "cdsapi unavailable; three OrbitalPV and one native imagery integration require optional Python3.13 environment"
+    },
+    "new_aj_parser_tests": 8,
+    "catalogues": "2104projects and937equipment valid; reference/source/identity validation passed",
+    "preservation": "2101originalprojects and924unaffectedOEMrows unchanged;2next3rows additive;created_at preserved",
+    "parquet": "Both typed Zstandard builds repeated byte-identically; manifests committed, binaries outsideGit",
+    "ruff_check": "passed",
+    "ruff_format_check": "940files passed",
+    "ty": "passed",
+    "repository": "passed",
+    "citations": "passed;9newreferences queued because shared writers",
+    "git_diff_check": "passed",
+    "viewer_tests": 16,
+    "offline_examples": "Project example passed; initial OEM invocation used nonexistentfilename, corrected plot_bess_oem_catalogue.py passed",
+    "docs": "Strict Sphinx -W --keep-going -D plot_gallery=0 passed",
+    "docs_links": "589HTMLpages passed links/assets",
+    "package_build": "3wheels and3sdists",
+    "installed_wheels": "all3packages and publicCLI smoke passed",
+    "twine": "all6artifacts strict checks passed"
+  },
+  "not_run": [
+    "Full executable Sphinx gallery",
+    "Optional live provider integrations",
+    "New-head remote CI (not yet published)"
+  ],
+  "final_concurrency_check": {
+    "pr": 150,
+    "open": true,
+    "expected_head": "380362d001012bd0f3d0c64f9e09081ebe2b138d",
+    "main": "9dbf07ed4a09da16b8c25ca77cbafc8b216c6e07",
+    "other_open_prs": [
+      146,
+      147,
+      148,
+      149
+    ],
+    "paths_rechecked": true,
+    "overlap": "Sharedbibliography146/148 excluded from newwrites;noBESSoverlap",
+    "previous_head_ci": "BothPython andDocumentation completed success, not claimed for newhead"
+  },
+  "yield_explanation": "Selected3rowLT2partition and11exactOEMmodels exhausted;modelobjective met. India503,IDAE andCapitalPower reuse gates,Eskom priorcollection/identity holds prevent additional defensible project imports. No idle padding."
+}

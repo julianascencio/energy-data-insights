@@ -199,3 +199,11 @@ prerequisites for canonical ingestion. This is a different cohort from 2025.
 `python scripts/stage_bess_innovation_fund.py INPUT.html --output candidates.json` stages grant inventory rows without treating grant status as plant lifecycle. Review technology and physical site identity before using the existing upsert API. Shared factsheet URLs are flagged for manual identity review. The 49 reviewed candidate decisions are in `research/2026-11-04_eu_studer_review.json`.
 
 `python scripts/stage_bess_studer.py INPUT.html --series xts --output candidates.json` accepts xtm/xth/xts original public product HTML. It requires exact model headings, consistent mobile/desktop tables, units and footnotes. VA stays apparent power; optional ecf 01 operating points stay within the original model. No network access or canonical writes occur in either adapter.
+
+For Studer AJ product pages, `scripts/stage_bess_studer_aj.py --series 275-400`
+(and `500-700`, `1000-1300`, `2100-2400`) stages local original HTML. It checks
+exact models, responsive tables, units and conditional footnotes. These are
+unidirectional stationary battery inverters, not bidirectional PCS. VA stays
+apparent power, maximum inverter efficiency stays separate from RTE, and optional
+solar-regulator standby conditions do not define extra model records. Review
+source terms and lifecycle before upsert; the six smaller models are discontinued.
