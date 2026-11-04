@@ -1,6 +1,14 @@
 {
-  "retrieved_at": "2026-11-04T09:20:00Z",
+  "retrieved_at": "2026-11-04T10:26:21Z",
   "accepted": [
+    {
+      "inventory": "EPA ENERGY STAR certified Para Systems / Minuteman UPS partner inventory",
+      "processed_offset": 33,
+      "accepted_records": 33,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact certification facts normalized without redistributing the source CSV",
+      "originals": "The complete 923-row, 990,085-byte official CSV snapshot was captured with SHA-256 0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f. The selected partner inventory contains all 33 certification entries in the 2026-11-03 dataset update."
+    },
     {
       "inventory": "atNorth FIN03 identity plus DEN01, DEN02 and SWE04 official milestone/boundary reconciliation",
       "processed_offset": 4,
@@ -158,6 +166,18 @@
     {
       "candidate": "LiquidStack public CDU tables",
       "reason": "Public sales terms restrict communication/distribution of supplied documents; public-datasheet reuse scope needs a clearer site-specific policy. No facts or bytes were imported."
+    },
+    {
+      "candidate": "Salicru UPS technical tables",
+      "reason": "Official legal terms limit content to private non-profit use and require authorization for reproduction, exploitation or distribution. No facts or bytes were imported."
+    },
+    {
+      "candidate": "Pramac, Kirloskar and Aksa generator rating tables",
+      "reason": "Supplier-specific official terms or brochure notices require permission for reproduction, publication or distribution. Candidate tables were screened only; no facts or bytes were imported."
+    },
+    {
+      "candidate": "Open Access Data Centres portfolio",
+      "reason": "Official terms prohibit reproduction except as allowed by the copyright notice. The current core/edge portfolio was screened only; no facility facts or bytes were imported."
     }
   ],
   "quarantined": [
@@ -242,6 +262,10 @@
     "Tescom exact printed kVA and kW remain separate reported boundaries; no power factor is derived.",
     "Tescom selectable voltage/frequency, battery, communications and module choices remain observations and do not create synthesized configurations, battery energy or runtime.",
     "DS POWER SH battery-qualified dimension alternatives remain observations; only the exact unqualified weights are normalized.",
-    "MTI250 cabinet ratings and 25 kVA/25 kW power-module statements remain separate; module counts are not synthesized into additional cabinet variants."
+    "MTI250 cabinet ratings and 25 kVA/25 kW power-module statements remain separate; module counts are not synthesized into additional cabinet variants.",
+    "ENERGY STAR Unique ID is the immutable identity for each certification entry; similarly named models are not collapsed across tested configurations.",
+    "Para Systems/Minuteman active W and apparent VA are converted exactly to kW and kVA but remain separate; no output power factor is derived.",
+    "Normalized runtime is the certified minimum configuration's reported 100% load runtime, with runtime_load_kw converted exactly from its active W rating; the separately reported 50% runtime remains a load-qualified observation.",
+    "Weighted and 25/50/75/100% efficiency values retain the minimum-configuration and lowest-input-dependency normal-mode boundary; battery energy and maximum configurations remain unknown."
   ]
 }

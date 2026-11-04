@@ -1,0 +1,394 @@
+{
+  "exact_table_pages_reviewed": 12,
+  "accepted": 4,
+  "held": [
+    {
+      "model": "SLP-1/1-600V",
+      "reason": "independent circuit passthrough; no parallel string aggregation; scope held"
+    },
+    {
+      "model": "SLP-2/2-600V",
+      "reason": "independent circuit passthrough; no parallel string aggregation; scope held"
+    },
+    {
+      "model": "SLP-1/1-1000V",
+      "reason": "independent circuit passthrough; no parallel string aggregation; scope held"
+    },
+    {
+      "model": "SLP-2/2-1000V",
+      "reason": "independent circuit passthrough; no parallel string aggregation; scope held"
+    },
+    {
+      "model": "SLP-3/3-1000V",
+      "reason": "independent circuit passthrough; no parallel string aggregation; scope held"
+    },
+    {
+      "model": "SLP-1/1-1500V",
+      "reason": "independent circuit passthrough; no parallel string aggregation; scope held"
+    },
+    {
+      "model": "SLP-2/1-600V",
+      "reason": "deferred voltage sibling to avoid near-identical variant inflation"
+    },
+    {
+      "model": "SLP-16/1-1500V / FLP-16/1-1500V",
+      "pdf_physical_page": 14,
+      "reason": "SLP heading conflicts with FLP Model No.; exact identity unresolved"
+    }
+  ],
+  "canonical_spec_fields": 46,
+  "review": [
+    {
+      "model": "SLP-2/1-1000V",
+      "pdf_physical_page": 7,
+      "printed_page": 5,
+      "result": "accepted",
+      "canonical_spec_fields": [
+        "depth_m",
+        "enclosure_material",
+        "height_m",
+        "input_count",
+        "ip_rating",
+        "mounting_type",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_count",
+        "output_current_max_a",
+        "system_voltage_max_v",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "PDF physical page 7; printed page 05; SLP-2/1-1000V; General Data and Accessory Data; wiring schematic",
+        "max_dc_short_circuit_current_per_input_a": 16,
+        "short_circuit_current_qualification": "Changeable; not fixed maximum operating string current",
+        "maximum_current_output_a": 32,
+        "maximum_current_output_scope": "single output",
+        "humidity_pct": {
+          "minimum": 5,
+          "maximum": 95
+        },
+        "altitude_m": 2000,
+        "altitude_basis": "Table says altitude, without an explicit maximum/bound condition",
+        "pv_surge_protector": {
+          "model": "SLP-PV1000/(S)",
+          "max_operation_voltage_v": 1000,
+          "compliance_claim": "IEC/EN 61643-31",
+          "maximum_discharge_current_ka": 40,
+          "certification_labels": "TUV CE; component claim only"
+        },
+        "dc_fuse_holder": {
+          "model": "LFPV-1038H",
+          "thermoplastic": true,
+          "rated_working_voltage_v": 1000,
+          "fuse_link_dimensions_mm": [
+            10,
+            38
+          ],
+          "fuse_link_rated_current_a": 16,
+          "certification_label": "CE; component claim only",
+          "scope": "Supplied fuse-link rating; not maximum permissible fuse rating"
+        },
+        "dc_miniature_circuit_breaker": {
+          "model": "TX7-63Z",
+          "rated_insulation_voltage_v": 1000,
+          "rated_current_a": 32,
+          "compliance_claim": "IEC 60947-2",
+          "certification_label": "CE; component claim only"
+        },
+        "enclosure": {
+          "model": "LWB-12",
+          "impact_resistance": "IK10",
+          "dimension_axis_order": "W x H x D",
+          "dimension_mm": [
+            280,
+            230,
+            120
+          ]
+        },
+        "cable_entries": {
+          "input": "PG09 Cable Gland, 2.5-16 mm2",
+          "output": "PG21 2.5-16 mm2"
+        },
+        "wiring_scope": "Parallel strings grouped to outputs as shown; output MPPT labels do not state inverter MPPT count",
+        "edition_note": "No printed publication date; PDF metadata date not promoted to source_date",
+        "field_locators": {
+          "system_voltage_max_v": "PDF p7; SLP-2/1-1000V; General Data",
+          "input_count": "PDF p7; SLP-2/1-1000V; General Data",
+          "output_count": "PDF p7; SLP-2/1-1000V; General Data",
+          "operating_temperature_min_c": "PDF p7; SLP-2/1-1000V; General Data",
+          "operating_temperature_max_c": "PDF p7; SLP-2/1-1000V; General Data",
+          "width_m": "PDF p7; SLP-2/1-1000V; Accessory Data > Enclosure",
+          "height_m": "PDF p7; SLP-2/1-1000V; Accessory Data > Enclosure",
+          "depth_m": "PDF p7; SLP-2/1-1000V; Accessory Data > Enclosure",
+          "enclosure_material": "PDF p7; SLP-2/1-1000V; Accessory Data > Enclosure",
+          "ip_rating": "PDF p7; SLP-2/1-1000V; Accessory Data > Enclosure",
+          "mounting_type": "PDF p7; SLP-2/1-1000V; General Data",
+          "output_current_max_a": "PDF p7; SLP-2/1-1000V; General Data"
+        }
+      }
+    },
+    {
+      "model": "SLP-3/1-1000V",
+      "pdf_physical_page": 9,
+      "printed_page": 7,
+      "result": "accepted",
+      "canonical_spec_fields": [
+        "depth_m",
+        "enclosure_material",
+        "height_m",
+        "input_count",
+        "ip_rating",
+        "mounting_type",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_count",
+        "output_current_max_a",
+        "system_voltage_max_v",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "PDF physical page 9; printed page 07; SLP-3/1-1000V; General Data and Accessory Data; wiring schematic",
+        "max_dc_short_circuit_current_per_input_a": 16,
+        "short_circuit_current_qualification": "Changeable; not fixed maximum operating string current",
+        "maximum_current_output_a": 50,
+        "maximum_current_output_scope": "single output",
+        "humidity_pct": {
+          "minimum": 5,
+          "maximum": 95
+        },
+        "altitude_m": 2000,
+        "altitude_basis": "Table says altitude, without an explicit maximum/bound condition",
+        "pv_surge_protector": {
+          "model": "SLP-PV1000/(S)",
+          "max_operation_voltage_v": 1000,
+          "compliance_claim": "IEC/EN 61643-31",
+          "maximum_discharge_current_ka": 40,
+          "certification_labels": "TUV CE; component claim only"
+        },
+        "dc_fuse_holder": {
+          "model": "LFPV-1038H",
+          "thermoplastic": true,
+          "rated_working_voltage_v": 1000,
+          "fuse_link_dimensions_mm": [
+            10,
+            38
+          ],
+          "fuse_link_rated_current_a": 16,
+          "certification_label": "CE; component claim only",
+          "scope": "Supplied fuse-link rating; not maximum permissible fuse rating"
+        },
+        "dc_miniature_circuit_breaker": {
+          "model": "TX7-63Z",
+          "rated_insulation_voltage_v": 1000,
+          "rated_current_a": 50,
+          "compliance_claim": "IEC 60947-2",
+          "certification_label": "CE; component claim only"
+        },
+        "enclosure": {
+          "model": "LWB-14",
+          "impact_resistance": "IK10",
+          "dimension_axis_order": "W x H x D",
+          "dimension_mm": [
+            310,
+            230,
+            120
+          ]
+        },
+        "cable_entries": {
+          "input": "PG09 Cable Gland, 2.5-16 mm2",
+          "output": "PG21 2.5-16 mm2"
+        },
+        "wiring_scope": "Parallel strings grouped to outputs as shown; output MPPT labels do not state inverter MPPT count",
+        "edition_note": "No printed publication date; PDF metadata date not promoted to source_date",
+        "field_locators": {
+          "system_voltage_max_v": "PDF p9; SLP-3/1-1000V; General Data",
+          "input_count": "PDF p9; SLP-3/1-1000V; General Data",
+          "output_count": "PDF p9; SLP-3/1-1000V; General Data",
+          "operating_temperature_min_c": "PDF p9; SLP-3/1-1000V; General Data",
+          "operating_temperature_max_c": "PDF p9; SLP-3/1-1000V; General Data",
+          "width_m": "PDF p9; SLP-3/1-1000V; Accessory Data > Enclosure",
+          "height_m": "PDF p9; SLP-3/1-1000V; Accessory Data > Enclosure",
+          "depth_m": "PDF p9; SLP-3/1-1000V; Accessory Data > Enclosure",
+          "enclosure_material": "PDF p9; SLP-3/1-1000V; Accessory Data > Enclosure",
+          "ip_rating": "PDF p9; SLP-3/1-1000V; Accessory Data > Enclosure",
+          "mounting_type": "PDF p9; SLP-3/1-1000V; General Data",
+          "output_current_max_a": "PDF p9; SLP-3/1-1000V; General Data"
+        }
+      }
+    },
+    {
+      "model": "SLP-4/2-1000V",
+      "pdf_physical_page": 11,
+      "printed_page": 9,
+      "result": "accepted",
+      "canonical_spec_fields": [
+        "depth_m",
+        "enclosure_material",
+        "height_m",
+        "input_count",
+        "ip_rating",
+        "mounting_type",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_count",
+        "system_voltage_max_v",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "PDF physical page 11; printed page 09; SLP-4/2-1000V; General Data and Accessory Data; wiring schematic",
+        "max_dc_short_circuit_current_per_input_a": 16,
+        "short_circuit_current_qualification": "Changeable; not fixed maximum operating string current",
+        "maximum_current_output_a": 32,
+        "maximum_current_output_scope": "multi-output table scope unspecified; do not sum or promote to aggregate output_current_max_a",
+        "humidity_pct": {
+          "minimum": 5,
+          "maximum": 95
+        },
+        "altitude_m": 2000,
+        "altitude_basis": "Table says altitude, without an explicit maximum/bound condition",
+        "pv_surge_protector": {
+          "model": "SLP-PV1000/(S)",
+          "max_operation_voltage_v": 1000,
+          "compliance_claim": "IEC/EN 61643-31",
+          "maximum_discharge_current_ka": 40,
+          "certification_labels": "TUV CE; component claim only"
+        },
+        "dc_fuse_holder": {
+          "model": "LFPV-1038H",
+          "thermoplastic": true,
+          "rated_working_voltage_v": 1000,
+          "fuse_link_dimensions_mm": [
+            10,
+            38
+          ],
+          "fuse_link_rated_current_a": 16,
+          "certification_label": "CE; component claim only",
+          "scope": "Supplied fuse-link rating; not maximum permissible fuse rating"
+        },
+        "dc_miniature_circuit_breaker": {
+          "model": "TX7-63Z",
+          "rated_insulation_voltage_v": 1000,
+          "rated_current_a": 32,
+          "compliance_claim": "IEC 60947-2",
+          "certification_label": "CE; component claim only"
+        },
+        "enclosure": {
+          "model": "LWB-24",
+          "impact_resistance": "IK10",
+          "dimension_axis_order": "W x H x D",
+          "dimension_mm": [
+            280,
+            393,
+            120
+          ]
+        },
+        "cable_entries": {
+          "input": "PG09 Cable Gland, 2.5-16 mm2",
+          "output": "PG21 2.5-16 mm2"
+        },
+        "wiring_scope": "Parallel strings grouped to outputs as shown; output MPPT labels do not state inverter MPPT count",
+        "edition_note": "No printed publication date; PDF metadata date not promoted to source_date",
+        "field_locators": {
+          "system_voltage_max_v": "PDF p11; SLP-4/2-1000V; General Data",
+          "input_count": "PDF p11; SLP-4/2-1000V; General Data",
+          "output_count": "PDF p11; SLP-4/2-1000V; General Data",
+          "operating_temperature_min_c": "PDF p11; SLP-4/2-1000V; General Data",
+          "operating_temperature_max_c": "PDF p11; SLP-4/2-1000V; General Data",
+          "width_m": "PDF p11; SLP-4/2-1000V; Accessory Data > Enclosure",
+          "height_m": "PDF p11; SLP-4/2-1000V; Accessory Data > Enclosure",
+          "depth_m": "PDF p11; SLP-4/2-1000V; Accessory Data > Enclosure",
+          "enclosure_material": "PDF p11; SLP-4/2-1000V; Accessory Data > Enclosure",
+          "ip_rating": "PDF p11; SLP-4/2-1000V; Accessory Data > Enclosure",
+          "mounting_type": "PDF p11; SLP-4/2-1000V; General Data"
+        }
+      }
+    },
+    {
+      "model": "SLP-9/3-1000V",
+      "pdf_physical_page": 12,
+      "printed_page": 10,
+      "result": "accepted",
+      "canonical_spec_fields": [
+        "depth_m",
+        "enclosure_material",
+        "height_m",
+        "input_count",
+        "ip_rating",
+        "mounting_type",
+        "operating_temperature_max_c",
+        "operating_temperature_min_c",
+        "output_count",
+        "system_voltage_max_v",
+        "width_m"
+      ],
+      "native_evidence": {
+        "locator": "PDF physical page 12; printed page 10; SLP-9/3-1000V; General Data and Accessory Data; wiring schematic",
+        "max_dc_short_circuit_current_per_input_a": 32,
+        "short_circuit_current_qualification": "Changeable; not fixed maximum operating string current",
+        "maximum_current_output_a": 63,
+        "maximum_current_output_scope": "multi-output table scope unspecified; do not sum or promote to aggregate output_current_max_a",
+        "humidity_pct": {
+          "minimum": 5,
+          "maximum": 95
+        },
+        "altitude_m": 2000,
+        "altitude_basis": "Table says altitude, without an explicit maximum/bound condition",
+        "pv_surge_protector": {
+          "model": "SLP-PV1000/(S)",
+          "max_operation_voltage_v": 1000,
+          "compliance_claim": "IEC/EN 61643-31",
+          "maximum_discharge_current_ka": 40,
+          "certification_labels": "TUV CE; component claim only"
+        },
+        "dc_fuse_holder": {
+          "model": "LFPV-1038H",
+          "thermoplastic": true,
+          "rated_working_voltage_v": 1000,
+          "fuse_link_dimensions_mm": [
+            10,
+            38
+          ],
+          "fuse_link_rated_current_a": 32,
+          "certification_label": "CE; component claim only",
+          "scope": "Supplied fuse-link rating; not maximum permissible fuse rating"
+        },
+        "dc_miniature_circuit_breaker": {
+          "model": "TX7-63Z",
+          "rated_insulation_voltage_v": 1000,
+          "rated_current_a": 63,
+          "compliance_claim": "IEC 60947-2",
+          "certification_label": "CE; component claim only"
+        },
+        "enclosure": {
+          "model": "LWB-435320",
+          "impact_resistance": "IK10",
+          "dimension_axis_order": "W x H x D",
+          "dimension_mm": [
+            437,
+            525,
+            200
+          ]
+        },
+        "cable_entries": {
+          "input": "PG09 Cable Gland, 2.5-16 mm2",
+          "output": "PG21 2.5-16 mm2"
+        },
+        "wiring_scope": "Parallel strings grouped to outputs as shown; output MPPT labels do not state inverter MPPT count",
+        "edition_note": "No printed publication date; PDF metadata date not promoted to source_date",
+        "field_locators": {
+          "system_voltage_max_v": "PDF p12; SLP-9/3-1000V; General Data",
+          "input_count": "PDF p12; SLP-9/3-1000V; General Data",
+          "output_count": "PDF p12; SLP-9/3-1000V; General Data",
+          "operating_temperature_min_c": "PDF p12; SLP-9/3-1000V; General Data",
+          "operating_temperature_max_c": "PDF p12; SLP-9/3-1000V; General Data",
+          "width_m": "PDF p12; SLP-9/3-1000V; Accessory Data > Enclosure",
+          "height_m": "PDF p12; SLP-9/3-1000V; Accessory Data > Enclosure",
+          "depth_m": "PDF p12; SLP-9/3-1000V; Accessory Data > Enclosure",
+          "enclosure_material": "PDF p12; SLP-9/3-1000V; Accessory Data > Enclosure",
+          "ip_rating": "PDF p12; SLP-9/3-1000V; Accessory Data > Enclosure",
+          "mounting_type": "PDF p12; SLP-9/3-1000V; General Data"
+        }
+      }
+    }
+  ]
+}

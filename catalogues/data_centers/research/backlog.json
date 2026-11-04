@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T09:20:00Z",
+  "updated_at": "2026-11-04T10:26:21Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -63,7 +63,8 @@
     "baudouin_dcp_50_60hz_configurations": 34,
     "siel_safepower_configurations": 27,
     "tescom_current_ups_configurations": 22,
-    "atnorth_nordic_reconciliation_records": 4
+    "atnorth_nordic_reconciliation_records": 4,
+    "energy_star_para_systems_minuteman_certifications": 33
   },
   "next_batches": [
     {
@@ -168,8 +169,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 505,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns and all 22 Tescom DS POWER/SH/MTI250 rows complete; continue independent generator/electrical suppliers without recounting completed inventories",
+      "offset": 538,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows and all 33 Para Systems/Minuteman ENERGY STAR certification entries complete; continue independent generator/electrical suppliers without recounting completed inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -186,7 +187,8 @@
         "Baudouin April 2025 DCP offset 34 is complete at 19 50 Hz plus 15 60 Hz rows; retain engine kWm, generator kWe and kVA as distinct boundaries and do not synthesize alternator, voltage, emissions or installation variants",
         "Makelsan LEVELUPS/T3/T4 offset 34 is complete at 18+11+5 exact three-phase columns; keep kVA and kW separate and never synthesize selectable voltage, frequency, battery, cabinet or communications options",
         "SIEL Safepower offset 27 is complete at 9+10+8 exact columns; keep SPM cabinet active kW null, retain merged dimensions and with/without-battery weights as observations, and never synthesize module, battery, voltage, frequency or communications options",
-        "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices"
+        "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices",
+        "EPA ENERGY STAR Para Systems/Minuteman offset 33 is complete for dataset update 2026-11-03; retain unique certification IDs, minimum tested configurations, W/VA, load-qualified efficiencies and 100%/50% runtime boundaries, and never infer maximum configurations or battery energy"
       ]
     },
     {
@@ -338,16 +340,31 @@
       "source": "Generac industrial generator tables",
       "url": "https://www.generac.com/policies/terms-conditions/",
       "reason": "Official terms prohibit copying, reproduction, display, distribution, reuse, publication, licensing and derivative use without written permission. No specifications or bytes were imported."
+    },
+    {
+      "source": "Salicru UPS technical tables",
+      "url": "https://www.salicru.com/legal-notice.html",
+      "reason": "Official terms limit site content to private non-profit use and require authorization for reproduction, exploitation or distribution. No specifications or bytes were imported."
+    },
+    {
+      "source": "Pramac, Kirloskar and Aksa generator tables",
+      "url": "https://www.pramac.com/terms-and-conditions",
+      "reason": "Supplier-specific official terms or brochure notices prohibit reproduction, publication or distribution without permission. The candidate rating tables were screened only; no facts or bytes were imported."
+    },
+    {
+      "source": "Open Access Data Centres portfolio",
+      "url": "https://www.openaccessdc.net/terms-and-conditions/",
+      "reason": "Official terms prohibit reproduction except as allowed by the copyright notice. The 13-core-site/30-plus-edge portfolio was screened only; no facility facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "atnorth-reconciliation-20261104T092000Z",
+    "run_id": "energy-star-minuteman-ups-20261104T102621Z",
     "report": "2026-11-04-report.md",
-    "validation": "2026-11-04T0920-validation.json",
-    "added_projects": 1,
-    "enriched_projects": 3,
-    "added_equipment": 0,
+    "validation": "2026-11-04T1026-validation.json",
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 33,
     "branch": "research/data-center-database-20261104T0915Z"
   }
 }
