@@ -555,3 +555,18 @@ reviewed native names, owner/operator and administrative context. It preserves
 site rows and monthly observations as qualified extensions, without changing
 canonical capacity, lifecycle, coordinates, phase IDs or equipment links. The
 214ha Tainan land-area field uses separately licensed city-government evidence.
+
+Taiwan private solar inventory candidates retain `company_native`,
+`plant_name_native`, `locality_native`, `installed_kw_native`,
+`commercial_year_roc_native` and `cell_origin_rows` outside canonical records.
+The source's merged company/name/year cells are expanded with physical origins;
+repeated blocks are never summed or merged automatically. Native solar labels do
+not prove every row's PV technology, and no company-role, AC/DC, exact-date or
+current-status mapping is automatic. The first100 of787 rows remain candidates.
+
+SWELECT Nexora exact-model records use base STC rows only. Rear-gain scenarios
+are contextual, not extra models or STC efficiency. NOCT, bifaciality and weight
+tolerances, absolute-watt power binning and measurement uncertainty remain in
+`extensions_json`. Generic 35A fuse ratings do not populate a maximum-fuse scalar.
+Exact applicable Rev04 warranty scope and commencement conditions accompany
+12/30-year durations and 1% first-year / 0.4% subsequent annual degradation terms.

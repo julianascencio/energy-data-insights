@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T20:56:45.739979+00:00",
+  "updated_at": "2026-11-04T22:07:59.756955+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "100historicalChineseoperators+2Taiwanprojectsenriched;oneLongjingwholeplantaccepted;12ATESSinverters+3combinersaccepted. Newmonthlyreaderwith23testsvalidates4216rowsandexplicitlyholds2contradictoryperiodpairs;9Q32026observationsqualified. SECIrightsandstatusambiguityblockeditsportfolio.",
-  "next_highest_value_source": "Taipowerstation14YonganSaltFlats(single site29) thenstation12TainanQigu(sourcephases/sites24/25),Q32026station-monthpartitionwithprimarywholeplantreviewandCSC/privateprojectaliaschecks. GEMhistoricaloperatorsnextafterL100000802473;3842eligible remain. Skipunchangedrights-heldSECI/GaveandSolarboxduringbackoff.",
+  "selection_note": "100Chinesehistoricaloperatorsenriched;2Taiwanwholeplantsaccepted;18SWELECTmodules/468technicalvaluesadded;newlicensedTaiwanprivateSolarreaderstages100/787rowswith0acceptedprivateplants;Mibetexactmodelidentityheld.",
+  "next_highest_value_source": "TaiwanprivateSolarinventory firstcompletecompanygroup rows1-12森勁,thenrows13-22昱鼎,withpositivePV/phaseidentityreview. Taipowerstation1Jinsha thenstation3Xingda. GEMnextafterL100000802626,3742eligible remain. Preserveunchangedseedsourcecadenceandrightsbackoff.",
   "sources": [
     {
       "id": "uk_repd",
@@ -10616,7 +10616,7 @@
       "format": "PinnedFebruary2026 XLSX;existingchecksum-enforcedreader",
       "publication_cadence": "Release-based;no hourly full download",
       "last_release": "February2026",
-      "last_attempt": "2026-11-04T20:56:45.739979+00:00",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
       "licence_assessment": "CCBY4;entireTZ/WKSLlocations excluded;positivePVonly",
       "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
       "fields_offered": [
@@ -10625,23 +10625,23 @@
       ],
       "estimated_useful_yield": {
         "initial_eligible": 4342,
-        "accepted_cumulative_enrichments": 500,
+        "accepted_cumulative_enrichments": 600,
         "accepted_this_iteration": 100,
-        "remaining": 3842
+        "remaining": 3742
       },
       "processed_cursor": {
-        "last_accepted_location_id": "L100000802473",
-        "review_file": "20261104T2030_project_review.json"
+        "last_accepted_location_id": "L100000802626",
+        "review_file": "20261104T2155_project_review.json"
       },
-      "next_action": "Next100complete eligible historicaloperator locations after L100000802473;reuse original pinned bytes after metadata/checksum freshness check",
+      "next_action": "Next100complete eligible historicaloperator locations after L100000802626;reuse pinned bytes after metadata freshness check",
       "retry_condition": "Verify pinnedrelease/checksum andcurrentcanonicalgaps",
-      "next_due_check": "2026-11-04T22:00:00Z",
+      "next_due_check": "2026-11-05T00:00:00Z",
       "last_retrieval": "2026-11-04T17:59:16.974122+00:00",
       "etag": null,
       "mapping": "operators plus qualified historical exact phase/workbook context; full phase-set equality;no current operator claim",
-      "result": "100further complete Chinese locations enriched;3previous native/source operator conflicts remain unchanged,not recounted. Primarylanding stillFebruary2026;no workbookredownload.",
-      "last_metadata_retrieval": "2026-11-04T20:42:25.026168+00:00",
-      "metadata_sha256": "0fd15319eecc41beb6cebf97aa2d09fd33b1632cb98a0767b1ba02bd3df4a54e"
+      "result": "100further complete Chinese locations enriched afterL100000802473;strict exactphase-set/operator agreement.3priorconflictsunchanged,not recounted. No workbookredownload.",
+      "last_metadata_retrieval": "2026-11-04T21:57:22.131780+00:00",
+      "metadata_sha256": "7b61205f127ac4fdec69b0e13bfdb8856a388602002930b194d3de04960fe9d6"
     },
     {
       "id": "tsun_gen3_6in1_20261104T1800",
@@ -10996,7 +10996,7 @@
       "licence_assessment": "Official dataset explicitly declares Open Government Data License Taiwan v1.0. Licence reviewed, permits reuse with attribution; source register contains required provider/year/name/version/licence notice. No unrelated licence borrowed.",
       "terms_url": "https://data.gov.tw/license",
       "terms_sha256": "dcc0bff30a7389852f636951a5fa8fb79c5b0b6e721c55400710b638552d00bb",
-      "last_attempt": "2026-11-04T20:56:45.739979+00:00",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
       "last_release": null,
       "version_or_date": "HTTP Last-Modified2026-10-08; not a dataset-effective date. Portal metadata timestamp2024-06-21 not current source period.",
       "publication_cadence": "Irregular/on change per current source entry; not daily despite an older MOEA catalogue summary",
@@ -11014,25 +11014,27 @@
       ],
       "mapping": "pv_catalogue.taipower.read_taipower_sites; checksum, exact header/row width/identity, explicit PV name+technology, whole-group cursor, privacy and scope guards; no canonical ingestion",
       "processed_cursor": {
-        "last_staged_station_id": 45,
         "all_sites_staged": 71,
         "station_groups_staged": 45,
         "manual_station_ids_reviewed": [
           6,
           8,
-          11
+          11,
+          12,
+          14
         ],
         "fully_reconciled_wholeplant_station_ids": [
-          6
+          6,
+          12,
+          14
         ],
         "qualified_existing_context_station_ids": [
           8,
           11
         ],
-        "remaining_groups_not_identity_reviewed": 42,
-        "new_wholeplants_accepted": 1,
-        "existing_projects_enriched": 2,
-        "review_file": "20261104T2030_taiwan_review.json"
+        "remaining_groups_not_identity_reviewed": 40,
+        "new_wholeplants_accepted_cumulative": 3,
+        "existing_projects_enriched_cumulative": 2
       },
       "estimated_useful_yield": {
         "source_rows": 102,
@@ -11042,9 +11044,9 @@
         "accepted_records": 0,
         "verified_future_yield": null
       },
-      "result": "ConditionalHEAD304matches sourceETag;cached CSV reused. Station6Longjing manuallyaccepted asoneplantwith3native sites/bidsunder2I/IIphasegroups;CSC/ChinaSteel district-name falsepositive explicitlyexcluded. Stations8/11 add qualifiedcontexts only;no installedpower/lifecycle/coordinates overwritten.42othergroupspending.",
+      "result": "CachedCSV304;stations12/14 manually accepted as2wholeplants;QiguI/IIpreserved,8privateQigudistrictmatchesexcluded.NoAC/DC/currentstatus/coords/equipmentassignmentinference.",
       "retry_condition": "Freshness/header/checksum review before any new version; independent station/site/whole-plant reconciliation plus capacity-basis/effective-date evidence before canonical acceptance.",
-      "next_action": "Station14Yongan Salt Flats(single site29) andstation12Tainan Qigu(phase/site24/25):source-defined wholeplant/phase review,independentnamedowner evidence and exactGEM/alias checks;no fuzzymerge orAC/DC inference.",
+      "next_action": "Reviewstation1KinmenJinsha(site1),thenstation3Xingda(sites3/4) withindependentwholeplant/phase evidence;do not recountstations6/8/11/12/14.",
       "next_due_check": "2026-11-11T20:30:00Z",
       "last_conditional_check": "2026-11-04T20:42:20.983419+00:00",
       "last_conditional_status": 304
@@ -11124,7 +11126,7 @@
       "licence_assessment": "Officialdataset29938 explicitlydeclares TaiwanOGDLv1.0;licenceandsource-specificattribution reviewed. Ministry/municipality news use their separate government-site reuse declarations,not a borroweddatasetlicence.",
       "terms_url": "https://data.gov.tw/license",
       "terms_sha256": "c3ad8549d211df24ce3909326c09355192dd07d06f9e9503b80847d0b0159250",
-      "last_attempt": "2026-11-04T20:56:45.739979+00:00",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
       "last_release": "Data2016-01through2026-09;HTTPmodified2026-10-20not a plantstatus date",
       "last_retrieval": "2026-11-04T20:34:06.446751+00:00",
       "sha256": "5457bccb865d9829d61f431b01a14d959021f1d82e73b76c99a1bcb5028848ab",
@@ -11139,26 +11141,18 @@
       ],
       "mapping": "pv_catalogue.taipower.read_taipower_monthly;23newtests,checksum/schema/numeric/calendar/exactkey/holdguards. Native station scope,notautomaticcanonicalplantfeed.",
       "processed_cursor": {
-        "source_sha256": "5457bccb865d9829d61f431b01a14d959021f1d82e73b76c99a1bcb5028848ab",
-        "source_rows_validated": 4216,
-        "source_station_name_labels": 52,
-        "reviewed_Q3_station_names": [
-          "台中龍井太陽光電發電站/Taichung Longjing Solar Power Station",
-          "彰化彰濱太陽光電發電站/Changhua Changbin Solar Power Station",
-          "台南鹽田太陽光電發電站/Tainan salt field Solar Power Station"
+        "current_iteration_station_ids": [
+          12,
+          14
         ],
-        "reviewed_observations": 9,
-        "last_key_in_two_station_partition": "2026-09|彰化彰濱太陽光電發電站/Changhua Changbin Solar Power Station",
-        "held_duplicate_keys": [
-          "2016-06|澎湖七美太陽光電發電站/Penghu Qimei Solar Power Station",
-          "2016-06|金門金沙太陽光電發電站/Kinmen Jinsha Solar Power Station"
+        "current_iteration_station_months": 6,
+        "next_station_ids": [
+          1,
+          3
         ],
-        "held_duplicate_observations": 4,
-        "review_files": [
-          "20261104T2030_monthly_review.json",
-          "20261104T2030_longjing_review.json",
-          "20261104T2030_taiwan_review.json"
-        ]
+        "period_start": "2026-07",
+        "period_end": "2026-09",
+        "old_duplicate_groups_held_unchanged": 2
       },
       "estimated_useful_yield": {
         "source_rows": 4216,
@@ -11169,10 +11163,11 @@
         "existing_manual_context_enrichments": 2,
         "automatic_acceptances": 0
       },
-      "result": "Newlicensedsource andreadercompleted. Two contradictoryJune2016periodgroupswith4valuesheldtogether;no preferredvalue ormonthrepair.9Q32026observations support1manuallyreviewednewplantand2qualifiedexistingprojectcontexts;not9newplants. Noannualsum,AC/DCinference oraveragetoPRconversion.",
+      "result": "CachedmonthlyCSV304;6Q3observationssupport2manualwholeplantreviews,notannualgeneration/currentstatus/ACDC. OldJune2016holdsunchanged.",
       "retry_condition": "FreshETag/header/checksumandexactstation/site/phaseidentitybeforeanotherpartition. Duplicateholdkeys mustmatchactualconflictsinthenewrevision;no staleallowlist.",
-      "next_action": "NextQ32026native station namesforstation14Yonganand12TainanQigu,afterplantidentityandphaseboundariesreview;retainoldJune2016conflictswithoutrepair.",
-      "next_due_check": "2026-11-11T20:30:00Z"
+      "next_action": "NextQ32026stationnamesforstations1/3 afterwholeplant/phase identityreview.",
+      "next_due_check": "2026-11-11T20:30:00Z",
+      "last_conditional_status": 304
     },
     {
       "id": "atess_hps_combiners_20261104T2030",
@@ -11296,6 +11291,125 @@
       "retry_condition": "Coverage-onlyuseafterlicence/revisionreview;findanindividual-plantregisterforcanonicalprojects.",
       "next_action": "Lowerprioritycoveragecheck,notanindividualplantfeed.",
       "next_due_check": null
+    },
+    {
+      "id": "taiwan_energy_private_solar_20261104T2155",
+      "country": "TWN",
+      "entity": "project_candidates",
+      "source_url": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "endpoint": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "format": "HTMLcaptionedtable,rowspan-expandingofflinecandidate reader",
+      "licence_assessment": "ExplicitOGDLTaiwanv1.0 source-specific declaration,sourceattributionretained",
+      "terms_url": "https://www.moeaea.gov.tw/ECW/populace/content/ContentFoot.aspx?menu_id=2900",
+      "terms_sha256": "99f997810966478358b8b642a5dc03aae91478ae4d4156092ee0e2bf1a6715a5",
+      "publication_cadence": "Not stated;contentdated2026-01-26,statistics2025-12-31;globalfooter115-11-04isnotdatasetrelease",
+      "last_release": "2026-01-26",
+      "last_retrieval": "2026-11-04T21:57:16.851567+00:00",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
+      "sha256": "edae11f5c3806bd785b6e79eb7d9eb6873055996c7453dbbaefa3c010986c126",
+      "etag": null,
+      "fields_offered": [
+        "nativecorporation",
+        "nativeplantlabel",
+        "administrativelocality",
+        "installedkWunknownACDC",
+        "nativeROCcommercialyear"
+      ],
+      "mapping": "pv_catalogue.taiwan_private.read_taiwan_private_pv;fivepubliccolumns;noautoupsert",
+      "processed_cursor": {
+        "last_staged_physical_data_row": 100,
+        "source_data_rows": 787,
+        "remaining_unstaged_rows": 687,
+        "accepted_plants": 0,
+        "first_company_group_to_reconcile": "rows1-12森勁",
+        "cursor_scope": "Snapshotrowonly,notplantregistryID"
+      },
+      "reviewed": 100,
+      "accepted": 0,
+      "rejected": 0,
+      "held_candidates": 100,
+      "estimated_useful_yield": {
+        "source_rows": 787,
+        "bounded_candidates_staged": 100,
+        "verified_future_accepted_yield": null
+      },
+      "result": "Readercomplete,14newguardtests;first100stagedandexactnative-labelscreened,0accepted. Rowspans,repeatedphaseblocks,PVpositiveclassification andcompanyrolesrequiremanualreview.",
+      "retry_condition": "Recheckconditionalmetadata/checksum before resuming;reviewfirstcompletecompanygroupbeforeadvancingacceptance",
+      "next_action": "Reconcilefirst12rows森勁 againstnativephases/aliases andindependentprimaryPV/ownershipevidence. Thenrows13-22昱鼎. Stagingcursor100doesnotmean100plantsprocessed.",
+      "next_due_check": "2026-12-04T21:55:00Z"
+    },
+    {
+      "id": "swelect_nexora_20261104T2155",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.swelectes.com/knowledgehub/downloads.php",
+      "endpoint": "https://www.swelectes.com/knowledgehub/downloads.php",
+      "format": "Threeimage-onlyOEMPDFtables,manuallyvisuallyverified;Rev04warrantytext+renderreview",
+      "licence_assessment": "OEMcopyrightretained;factualspecificationsonly,noopen-contentlicenceorPDF/fullmanualredistribution",
+      "terms_url": "https://www.swelectes.com/privacy-policy.php",
+      "last_release": "DatasheetsVER02.02.2026;warrantySHPV/D&D-Warranty/145-Rev04,issuedateunprinted",
+      "last_retrieval": "2026-11-04T21:58:18.500229+00:00",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
+      "sha256": "b3ab5427a77483aaa9f3a32a495833f39dfc2ea0a456bdda9924864830d1fdb3",
+      "etag": null,
+      "publication_cadence": "OEMrevision-based",
+      "fields_offered": [
+        "STCIV/power/efficiency",
+        "halfcellcount/layout",
+        "weight/dimensions/glass",
+        "thermal/environment",
+        "exactmodelwarranty/degradationconditions"
+      ],
+      "mapping": "Manual18exactmodelrows through existingupsertAPI;threephysicallydistinctcellcount/sizefamilies,notbifacialgain/cableoptionrows",
+      "processed_cursor": {
+        "selected_tables_exhausted": 3,
+        "accepted_models": 18,
+        "canonical_technical_values": 468,
+        "warranty_applicability_exact": true
+      },
+      "reviewed": 18,
+      "accepted": 18,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "accepted_modules": 18,
+        "new_manufacturers": 1,
+        "canonical_technical_values": 468
+      },
+      "result": "18moduleswith26canonicaltechnicalvalues/model,qualified35Afuselabel(notmax),80±5bifaciality,45±2NOCT,±5weight,0/+4.99Wbin,STCmeasurementuncertainty,12/30yearwarrantyand1%/.4%degradationterms",
+      "retry_condition": "ChangedOEMrevisionornewphysicallydistinctproducttable;avoidoptionsiblings",
+      "next_action": "Distinctunderrepresentedtracker/combinerOEMtablewithanexactmodelidentity;selectedNexora3tablesexhausted",
+      "next_due_check": "2026-12-04T21:55:00Z"
+    },
+    {
+      "id": "mibet_tracker_screen_20261104T2155",
+      "country": "CHN",
+      "entity": "trackers",
+      "source_url": "https://www.mbtenergy.com/mounting-systems/single-axis-tracker",
+      "endpoint": "https://www.mbtenergy.com/mounting-systems/single-axis-tracker",
+      "format": "OEMHTMLgenericfamilyoverview",
+      "licence_assessment": "Allrightsreservedfooter;noexactmodeltechnicalPDFlinkedontheinspectedpage",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T21:56:54.179555+00:00",
+      "sha256": "49693f27a0a79c124208202ac820c6e6e4a27cd561d6f7557346f601823f94f0",
+      "etag": null,
+      "publication_cadence": "Unstated",
+      "fields_offered": [
+        "genericdrive/backtracking/SCADA/stow/terrain/warrantyclaims"
+      ],
+      "mapping": "Discoveryonly;noexactmodelaccepted",
+      "processed_cursor": {
+        "generic_families_screened": 1,
+        "exact_models_accepted": 0
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Singleaxisoverviewdoesnotestablishexactmodel/configurationorsourceversion;marketingenergygainnotparameter. Noform/contactsubmitted.",
+      "retry_condition": "FindpublicexactMRacmodeltechnicaldatasheetandversion/terms",
+      "next_action": "SeekOEMexactMRacPDF,otherwiseanothertrackerpublisher;do notcreateathinconfigurablefamilyrow.",
+      "next_due_check": "2026-12-04T21:55:00Z"
     }
   ],
   "source_refresh_queue": [

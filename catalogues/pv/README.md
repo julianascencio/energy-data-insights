@@ -504,3 +504,13 @@ No coordinates or present operation are inferred. Tainan's214ha area and dated
 20MW/20MWh storage use separately licensed government evidence; earlier proposed
 15MW storage and incompatible forecast/rating scopes stay qualified. See
 `research/20261104T2030_taiwan_review.json` and the updated attribution notice.
+
+The offline `pv_catalogue.taiwan_private.read_taiwan_private_pv` reader validates
+Taiwan Energy Administration's checksum-pinned private solar inventory. It checks
+the exact caption and five public columns, preserves merged-cell origin rows,
+native kW and ROC-year text, and stages bounded physical-row partitions. The
+26 January 2026 content reports statistics through 31 December 2025: 787 solar
+rows, with the first100 staged and **zero plants accepted from this inventory**.
+Repeated rows/phases, positive PV technology, company roles and AC/DC basis need
+manual review. Row cursors are not native facility IDs. See the
+[Taiwan inventory attribution](licenses/TAIWAN_ENERGY_PRIVATE_OGDL_NOTICE.md).
