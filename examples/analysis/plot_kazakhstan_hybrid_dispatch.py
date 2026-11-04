@@ -1,6 +1,6 @@
 """
 Kazakhstan wind-solar-battery hybrid: reproducible dispatch sensitivity
-======================================================================
+=======================================================================
 
 **News trigger:** Ember, 3 November 2026, reports that a Kazakhstan
 wind-solar-battery hybrid could cover 70-90% of a typical demand profile
