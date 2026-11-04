@@ -3,8 +3,8 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 7,637 project records (7,636 non-group records),
-264 exact equipment records, 11,111 registry turbine records and two original numerical
+The proposed branch contains 7,706 project records (7,705 non-group records),
+265 exact equipment records, 11,895 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
 Merged main at `6b38f9a4` contains 7,582 projects, 264 equipment records and 10,264 turbines
 and two curves. These are catalogue counts, not an operating census.
@@ -177,3 +177,16 @@ adding 55 projects and 847 turbines. Forty-two areas and 117 orphan turbines
 remain held; no project capacity is inferred. All previous records are unchanged.
 The reusable quarantine helper now rejects missing IDs before grouping, so
 missing identities cannot be silently hidden as duplicate conflicts.
+
+
+## Jämtland and converter monitoring
+
+The 04:35 batch reviews all 138 Jämtland areas and 1,729 turbine observations,
+adding 69 projects and 784 linked turbines. The remaining 69 areas and 945
+turbines are deferred; no project capacity is inferred. ABB system description
+3AXD50000022022 Rev C (2020-04-27), pp. 13–14 and 24–25, supplies separately
+dated system interfaces for 15 existing exact converters and explicitly names
+the optional NETA-21 monitor. Its record and compatibility links preserve that
+series/revision boundary; historical ratings are unchanged. Detailed monitor
+limits remain unknown after an HTTP 403 download failure. Catalogue claims
+are manufacturer documentation, not independently validated performance.

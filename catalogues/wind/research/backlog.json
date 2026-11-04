@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T03:35:00Z",
+  "updated_at": "2026-11-04T04:35:00Z",
   "branch": "research/wind-20261104-0335",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -104,7 +104,8 @@
         "R04_0 pp62–65 exhausted:12filter assembly enrichments11BR resistor types,38application rows. No synthetic2x equipment model. Next referenced Bonfiglioli braking resistor catalogue: acquire original exact dimension/thermal-switch tables; HLD110-500/42 remains unknown.",
         "VEC501R0 pp2/4 exhausted:11legacyBR enrichments; no new equipment. Next original AGL VEC671R7 section13.3 and ANG VEC1105R4 resistor tables, reconcile exact revision before current thermal/mass scalars; then pivot to independent turbine/OEM backlog.",
         "AGL VEC671R7 section1.4 and ANG VEC1105R4 section1.5 originals successfully acquired but explicitly restricted; excluded, do not retry as network errors. E82E2 08/2019 OEM sheet complete,1existing model enriched; two nominal options nested, no curves. Next exact E103EP2 base datasheet on OEM CDN; current ABB revision and independent wind components remain pending.",
-        "E103 EP2 wind-still mirror HTTP404, web verification page. Next obtain original OEM datasheet via official archive or review exact manufacturer appendix in San Gregorio official planning dossier; project says or similar, not installed-model evidence."
+        "E103 EP2 wind-still mirror HTTP404, web verification page. Next obtain original OEM datasheet via official archive or review exact manufacturer appendix in San Gregorio official planning dossier; project says or similar, not installed-model evidence.",
+        "ABB3AXD50000022022RevC pp13–14,24–25 complete:15existing77LC/87LC configurations enriched andNETA-21 added. Next original NETA-21 3AUA0000096939 manual through official ABB document resolver; RevP directURL returned403, no auth/reuse inference. Exact NEXA-21 only after its interface and optional wind applicability are explicit. E103originalbase sheet remains held; do not retry completed2018ratingtables."
       ]
     },
     {
@@ -174,11 +175,11 @@
     "source_guide": "2026-11-03-top10-markets.md",
     "sweden_partition": {
       "source": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer",
-      "completed_where": "OMRID < '2300'",
-      "reviewed_areas": 3169,
-      "reviewed_turbines": 17326,
-      "next_where": "OMRID >= '2300' AND OMRID < '2400'",
-      "next_county": "Jämtland",
+      "completed_where": "OMRID < '2400'",
+      "reviewed_areas": 3307,
+      "reviewed_turbines": 19055,
+      "next_where": "OMRID >= '2400' AND OMRID < '2500'",
+      "next_county": "Västerbotten",
       "layers": [
         2,
         3,
@@ -192,7 +193,7 @@
         12
       ],
       "next_task": "Acquire full partition with count and exceededTransferLimit checks; reconcile against existing records; do not re-add first72areas/321turbines",
-      "residual_ledger": "2026-11-04-0335-sweden-decisions.jsonl"
+      "residual_ledger": "2026-11-04-0435-sweden-decisions.jsonl"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",
@@ -215,5 +216,5 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "Root full during0335staging; clean isolated checkout /dev/shm/wind0335-repo contains published state. Use nonblocking shared Wind lock and current remote head; original checkout must be reset only after checking no new writer. Source bytes /tmp/vbk0335. Avoid uv cache writes on root; use existing .venv/bin/python with local PYTHONPATH."
+  "validation_storage": "Root volume full; use /dev/shm/wind0335-repo, shared nonblocking Wind lock and existing original .venv via absolute paths/PYTHONPATH. Use run-specific temporary test directories and remove only own outputs after checks. Source originals /dev/shm/vbk0435 and /dev/shm/abb0435.pdf; source registry checksums persist. Fetch remote head before editing."
 }
