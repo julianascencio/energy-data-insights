@@ -1,0 +1,86 @@
+{
+  "run_id": "energy-star-xfusion-servers-20261104T221546Z",
+  "retrieved_at": "2026-11-04T22:15:46Z",
+  "branch": "research/data-center-database-20261104T2220Z",
+  "base_head": "9f36b0f35a0090a4908741704af883be376466b6",
+  "prepublication_remote_head": null,
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 1862,
+    "total": 2045,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 46,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 31,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1831,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 31,
+    "latest_inventories": [
+      "EPA ENERGY STAR certified xFusion Digital Technologies enterprise-server partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 852189,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {"check": "deterministic ENERGY STAR xFusion builder replay", "result": "passed", "detail": "All seven JSONL shards reproduced byte-for-byte from the registered complete 476-row source"},
+    {"check": "backward-compatible Cisco and Fujitsu builder replay", "result": "passed", "detail": "All eight previously published Cisco and Fujitsu shards reproduced byte-for-byte after adding xFusion partner selection"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,045 canonical Data Center records"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed"},
+    {"check": "full Python test suite", "result": "environment blocked", "detail": "The first attempt progressed through 67% before its executor process disappeared without a result. A clean retry stopped during collection in unrelated worldwide-PV example loading because psutil could not resolve the current transient process PID. Focused Data Center tests are green and no unrelated PV files were changed."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "Ruff format and lint", "result": "passed", "detail": "Changed Data Center code and focused tests are formatted; all focused lint checks passed"},
+    {"check": "repository-wide ty", "result": "passed", "detail": "All type checks passed"},
+    {"check": "repository, citation and diff checks", "result": "passed", "detail": "Repository policy passed across 4,326 candidate files; citation registry and whitespace checks passed"},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed with the expanded catalogue"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "b1b70ca9237a23b08469faa91b6e4d23f41702640bffc8d2fafb91619452ef12",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "a88ae9573b21209b1bb5a9d803cfd06da75f856d948b3ea8c70d89842d285519",
+    "manifest_sha256": "b4bae8f0fe34dfe2a47224b02f7f25d151bf01d7535c8d7289265c5df9397cb6",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "b5bf3d4d4cdf6f0ebc556fb6d58ce4ac87ac59451909d3b4f3ca4a98523721dd"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "Remaining ENERGY STAR Enterprise Server partner partitions remain bounded future batches"
+  ],
+  "quarantined_fields": [
+    "No new xFusion quarantine; the three existing Cisco processor_socket_count conflicts remain"
+  ],
+  "notes": [
+    "All 31 xFusion Digital Technologies certification entries in the 2026-11-04 ENERGY STAR Enterprise Servers dataset update are processed",
+    "The complete source contains 476 rows; only the complete xFusion partner partition is accepted in this bounded batch",
+    "Platform socket count remains separate from tested installed-processor population, including -1P and -2P model suffixes",
+    "Low-end, typical/single and high-end SERT configurations remain separately bounded observations",
+    "PSU nameplates and SERT power scores are not normalized as rated server input or rack input",
+    "Maximum supported memory is not treated as installed memory",
+    "Certification entries are not deployments",
+    "Campus aggregates remain excluded from project capacity totals under all viewer filters"
+  ]
+}

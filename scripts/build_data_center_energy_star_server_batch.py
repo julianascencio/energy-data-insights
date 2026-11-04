@@ -29,6 +29,12 @@ PARTNER_BATCHES = {
         "expected_count": 20,
         "retrieved_at": "2026-11-04T21:18:40Z",
     },
+    "xfusion": {
+        "partner": "xFusion Digital Technologies Co., Ltd.",
+        "manufacturer": "xFusion",
+        "expected_count": 31,
+        "retrieved_at": "2026-11-04T22:15:46Z",
+    },
 }
 
 CONFIGURATION_LABELS = (

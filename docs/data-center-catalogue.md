@@ -38,13 +38,13 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,831 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+has 1,862 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
 Ingram Micro / V7, N1 Critical Technologies, Neuropower, Power Logic / KOSS,
-Right Power Technology and Upsonic Power Systems. Current categories are GPU accelerators,
+Right Power Technology, Upsonic Power Systems and xFusion. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -230,6 +230,15 @@ internally consistent with their model labels. PSU nameplates, idle watts,
 benchmark scores and maximum supported memory remain bounded observations rather
 than rated server/rack input or installed memory; certifications are not treated
 as deployments.
+The xFusion continuation processes every one of the 31 xFusion Digital
+Technologies entries in the same issuer snapshot. The exact 1158H, 1258H,
+1288/1288H, 2158H, 2258/2258H, 2288/2288H, 2488H, 5298, 5885H and G-series
+certification identities remain distinct even where model names repeat. Platform
+socket count remains separate from the one-, two- or four-processor population
+reported in each SERT configuration; `-1P` and `-2P` suffixes are not used to
+overwrite the issuer socket attribute. Certification records remain issuer test
+entries rather than deployments, and their PSU, idle-power, benchmark and
+maximum-memory observations do not become server/rack input or installed memory.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -399,4 +408,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-04-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-04T2027-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-04T2215-validation.json).
