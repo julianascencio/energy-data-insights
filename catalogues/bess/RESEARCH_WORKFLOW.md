@@ -225,3 +225,11 @@ system efficiency is not automatically round-trip efficiency. Cycle and warranty
 claims without conditions remain qualified observations. Retain external
 communications separately from interfaces and reserved fire equipment from
 installed equipment. No project/model assignment follows from common branding.
+
+The offline `bess_oem_catalogue.neata_ups.parse_sc_partitions` stages the complete
+SC48/SC51/SC76 voltage partitions from original Neata UPS HTML. Changed exact
+model lists, units or 60-second peak notation fail closed. Pack capacity and
+battery-type labels can disagree: retain both, without deriving energy. Approximate
+mass is not exact mass, parenthesized charge voltages have an unspecified meaning,
+and generic NC/TC chemistry or lifecycle claims do not establish SC specifications.
+Higher-voltage partitions reuse some model codes and need independent identity review.
