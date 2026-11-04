@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import hashlib
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
 import numpy as np
@@ -88,15 +88,19 @@ class ForecastFold:
         return digest.hexdigest()
 
 
-def load_benchmark_observations(data_directory: str | Path) -> dict[str, pd.DataFrame]:
+def load_benchmark_observations(
+    data_directory: str | Path, *, technologies: tuple[str, ...] = ("solar", "wind")
+) -> dict[str, pd.DataFrame]:
     """Read checksum-verified native subsets and retain quality/restriction evidence."""
     directory = Path(data_directory)
+    if not technologies or len(set(technologies)) != len(technologies):
+        raise ValueError("Declare a nonempty set of distinct technologies")
     manifest = json.loads((directory / INPUT_MANIFEST).read_text())
     observations = {}
     for source in manifest["sources"]:
         technology = source["technology"]
         if technology not in {"solar", "wind"} or technology in observations:
-            raise ValueError("Exactly one solar and one wind case are required")
+            raise ValueError("Each source must declare a distinct solar or wind case")
         raw = (directory / f"forecast_ons_{technology}.csv").read_bytes()
         if hashlib.sha256(raw).hexdigest() != source["sample_sha256"]:
             raise ValueError(f"{technology} input checksum does not match provenance")
@@ -123,8 +127,8 @@ def load_benchmark_observations(data_directory: str | Path) -> dict[str, pd.Data
             raise ValueError("This fixed benchmark requires complete nonnegative measured power")
         values.attrs.update(plant_id=source["plant_id"], plant_name=source["plant_name"])
         observations[technology] = values
-    if set(observations) != {"solar", "wind"}:
-        raise ValueError("Exactly one solar and one wind case are required")
+    if set(observations) != set(technologies):
+        raise ValueError("Sources must match the declared technologies exactly")
     return observations
 
 
@@ -139,6 +143,7 @@ def prepare_forecast_fold(
     technology: str,
     *,
     config: ForecastBenchmarkConfig = DEFAULT_CONFIG,
+    earlier_resource: pd.DataFrame | None = None,
 ) -> ForecastFold:
     """Construct one forecast using history only; no future observation argument exists.
 
@@ -152,6 +157,11 @@ def prepare_forecast_fold(
     if len(history) != config.training_steps or len(future_index) != config.horizon_steps:
         raise ValueError("History/horizon sizes do not match the benchmark configuration")
     past_index = utc_index(pd.DatetimeIndex(history.index))
+    if earlier_resource is not None and (
+        earlier_resource.empty
+        or utc_index(pd.DatetimeIndex(earlier_resource.index))[-1] >= past_index[0]
+    ):
+        raise ValueError("Resource fallback must precede the entire training window")
     future_index = utc_index(future_index)
     joined = pd.DatetimeIndex(past_index.append(future_index))
     if not (joined[1:] - joined[:-1] == pd.Timedelta(minutes=config.step_minutes)).all():
@@ -176,6 +186,17 @@ def prepare_forecast_fold(
             else resource[::-1]
         )
         finite = candidates[np.isfinite(candidates)]
+        if not len(finite) and earlier_resource is not None and technology == "solar":
+            older = earlier_resource
+            older_index = utc_index(pd.DatetimeIndex(older.index))
+            clock = older_index.hour * 60 + older_index.minute
+            stamp = future_index[lead]
+            usable = (
+                (clock == stamp.hour * 60 + stamp.minute)
+                & older["resource_valid"]
+                & older["resource"].between(0, 1300)
+            )
+            finite = older.loc[usable, "resource"].to_numpy(dtype=float)[::-1]
         if not len(finite):
             raise ValueError("No pre-issue resource value at the required daily offset")
         predicted_resource[lead] = finite[0]
@@ -207,9 +228,15 @@ def prepare_forecast_fold(
 
 
 def forecast_folds(
-    observations: dict[str, pd.DataFrame], *, config: ForecastBenchmarkConfig = DEFAULT_CONFIG
+    observations: dict[str, pd.DataFrame],
+    *,
+    config: ForecastBenchmarkConfig = DEFAULT_CONFIG,
+    timestral_covariates: str = "all",
+    extend_resource_history: bool = False,
 ) -> list[ForecastFold]:
     """Use each test day once, refitting on the preceding fixed-length window."""
+    if timestral_covariates not in {"all", "calendar", "target_only"}:
+        raise ValueError("Timestral covariates must be all, calendar or target_only")
     folds = []
     for technology, frame in observations.items():
         for start in range(
@@ -217,7 +244,18 @@ def forecast_folds(
         ):
             history = frame.iloc[start - config.training_steps : start].copy()
             index = pd.DatetimeIndex(frame.index[start : start + config.horizon_steps])
-            folds.append(prepare_forecast_fold(history, index, technology, config=config))
+            older = frame.iloc[: start - config.training_steps]
+            fold = prepare_forecast_fold(
+                history,
+                index,
+                technology,
+                config=config,
+                earlier_resource=older if extend_resource_history and not older.empty else None,
+            )
+            if timestral_covariates != "all":
+                channels = slice(1, 3) if timestral_covariates == "calendar" else slice(0, 0)
+                fold = replace(fold, known_covariates=fold.known_covariates[:, channels])
+            folds.append(fold)
     if not folds:
         raise ValueError("No complete holdout horizon remains after training")
     return folds
@@ -225,7 +263,9 @@ def forecast_folds(
 
 def _timestral_rows(fold: ForecastFold, connector: TimestralConnector) -> pd.DataFrame:
     forecast = connector.forecast(
-        fold.history_power, len(fold.future_index), known_covariates=fold.known_covariates
+        fold.history_power,
+        len(fold.future_index),
+        known_covariates=fold.known_covariates if fold.known_covariates.shape[1] else None,
     )
     return pd.DataFrame(
         {
@@ -284,11 +324,43 @@ def _validate_timestral_rows(frame: pd.DataFrame, folds: list[ForecastFold]) -> 
     return frame
 
 
+def predict_comparators(fold: ForecastFold) -> dict[str, FloatArray]:
+    """Fit the fixed tree/physical comparators using only a prepared history fold."""
+    lgb = fit_lightgbm_features(fold.train_features, fold.train_power, feature_names=FEATURES)
+    xgb = fit_xgboost(fold.train_features, fold.train_power, feature_names=FEATURES)
+    if fold.technology == "solar":
+        # Existing PV API uses half-hour MWh; ONS power is mean MW. Temperature
+        # and sensor-plane metadata are absent, so use the declared 25 C surrogate.
+        physical = fit_physics_model(
+            fold.train_features[:, 0],
+            np.full(len(fold.train_power), 25.0),
+            fold.train_power * 0.5,
+        )
+        physical_values = (
+            physical.predict(fold.future_features[:, 0], np.full(len(fold.future_index), 25.0))
+            / 0.5
+        )
+    else:
+        wind = fit_wind_physics(fold.train_features[:, 0], fold.train_power)
+        physical_values = wind.predict(fold.future_features[:, 0])
+    return {
+        "Physical": physical_values,
+        "LightGBM": lgb.predict(fold.future_features),
+        "XGBoost": xgb.predict(fold.future_features),
+        "Previous day": fold.baseline,
+    }
+
+
 def run_forecast_benchmark(
     data_directory: str | Path,
     *,
     connector: TimestralConnector | None = None,
     config: ForecastBenchmarkConfig = DEFAULT_CONFIG,
+    technologies: tuple[str, ...] = ("solar", "wind"),
+    seasonal_baselines: bool = False,
+    timestral_covariates: str = "all",
+    extend_resource_history: bool = False,
+    retain_informative_fit: bool = False,
 ) -> pd.DataFrame:
     """Fit LightGBM/XGBoost/physical models locally and replay or run Timestral.
 
@@ -296,8 +368,15 @@ def run_forecast_benchmark(
     labels, with common nonnegative clipping. Restriction flags only annotate
     verification rows; they never filter fitting or forecasting observations.
     """
-    observations = load_benchmark_observations(data_directory)
-    folds = forecast_folds(observations, config=config)
+    observations = load_benchmark_observations(data_directory, technologies=technologies)
+    if seasonal_baselines and config.training_steps % config.period_steps:
+        raise ValueError("Seasonal baselines require a whole number of historical days")
+    folds = forecast_folds(
+        observations,
+        config=config,
+        timestral_covariates=timestral_covariates,
+        extend_resource_history=extend_resource_history,
+    )
     timestral = (
         load_timestral_forecasts(data_directory, folds, config=config)
         if connector is None
@@ -305,35 +384,28 @@ def run_forecast_benchmark(
     )
     timestral = timestral.set_index(["plant_id", "issue_time", "timestamp"]).sort_index()
     records = []
+    calibration: dict[str, ForecastFold] = {}
     for fold in folds:
-        lgb = fit_lightgbm_features(fold.train_features, fold.train_power, feature_names=FEATURES)
-        xgb = fit_xgboost(fold.train_features, fold.train_power, feature_names=FEATURES)
-        if fold.technology == "solar":
-            # Existing PV API uses interval MWh. Convert MW means to half-hour
-            # MWh before fitting, then back. ONS has no temperature/plane metadata:
-            # constant 25 C and POA-proxy irradiance define an isothermal surrogate.
-            physical = fit_physics_model(
-                fold.train_features[:, 0],
-                np.full(len(fold.train_power), 25.0),
-                fold.train_power * 0.5,
-            )
-            physical_values = (
-                physical.predict(fold.future_features[:, 0], np.full(len(fold.future_index), 25.0))
-                / 0.5
-            )
-        else:
-            wind = fit_wind_physics(fold.train_features[:, 0], fold.train_power)
-            physical_values = wind.predict(fold.future_features[:, 0])
+        fit_fold = fold
+        if retain_informative_fit:
+            if np.quantile(fold.train_power, 0.95) > 0:
+                calibration[fold.plant_id] = fold
+            elif fold.plant_id in calibration:
+                previous = calibration[fold.plant_id]
+                fit_fold = replace(
+                    fold, train_features=previous.train_features, train_power=previous.train_power
+                )
+            else:
+                raise ValueError("No earlier informative calibration is available")
         captured = timestral.xs((fold.plant_id, fold.issue_time), level=[0, 1]).reindex(
             fold.future_index
         )
-        predictions = {
-            "Physical": physical_values,
-            "LightGBM": lgb.predict(fold.future_features),
-            "XGBoost": xgb.predict(fold.future_features),
-            "Timestral": captured["prediction_mw"].to_numpy(),
-            "Previous day": fold.baseline,
-        }
+        predictions = predict_comparators(fit_fold)
+        predictions["Timestral"] = captured["prediction_mw"].to_numpy()
+        if seasonal_baselines:
+            days = fold.history_power.reshape(-1, config.period_steps)
+            predictions["Daily mean"] = days.mean(axis=0)
+            predictions["Daily median"] = np.median(days, axis=0)
         truth = observations[fold.technology].loc[fold.future_index]
         for model, predicted in predictions.items():
             if not np.isfinite(predicted).all():
@@ -350,7 +422,10 @@ def run_forecast_benchmark(
                         "actual_mw": float(truth["power_mw"].iloc[i]),
                         "prediction_mw": max(0.0, float(predicted[i])),
                         "training_q95_mw": fold.training_scale_mw,
-                        "training_rows": len(fold.train_power),
+                        "training_rows": len(fit_fold.train_power),
+                        "calibration_issue_time": calibration[fold.plant_id].issue_time
+                        if retain_informative_fit and model in {"Physical", "LightGBM", "XGBoost"}
+                        else fold.issue_time,
                         "resource_forecast": float(fold.future_features[i, 0]),
                         "restricted": int(truth["restricted"].iloc[i]),
                         "p10_mw": max(0.0, float(captured["p10_mw"].iloc[i]))
@@ -364,16 +439,20 @@ def run_forecast_benchmark(
     return pd.DataFrame(records)
 
 
-def benchmark_scores(predictions: pd.DataFrame, *, by_lead: bool = False) -> pd.DataFrame:
+def benchmark_scores(
+    predictions: pd.DataFrame, *, by_lead: bool = False, models: tuple[str, ...] = MODELS
+) -> pd.DataFrame:
     """Score every model on exactly the same keys; never drop failed predictions."""
     key = ["plant_id", "issue_time", "timestamp"]
     required = {"technology", "model", *key, "actual_mw", "prediction_mw", "training_q95_mw"}
     if required - set(predictions) or predictions.empty:
         raise ValueError("Incomplete forecast result table")
-    if set(predictions["model"]) != set(MODELS):
-        raise ValueError("The benchmark must contain exactly the four models and daily baseline")
+    if "Previous day" not in models or len(set(models)) != len(models):
+        raise ValueError("Declare distinct models including the previous-day baseline")
+    if set(predictions["model"]) != set(models):
+        raise ValueError("The benchmark must contain exactly the declared models")
     expected = None
-    for model in MODELS:
+    for model in models:
         rows = predictions[predictions["model"] == model]
         keys = set(rows[key].itertuples(index=False, name=None))
         if rows.duplicated(key).any() or not keys or (expected is not None and keys != expected):

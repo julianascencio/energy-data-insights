@@ -131,7 +131,16 @@ def download_observations(
     (directory / INPUT_MANIFEST).write_text(json.dumps(manifest, indent=2) + "\n")
 
 
-def capture_model(directory: Path, model_id: str, revision: str, local_only: bool) -> None:
+def capture_model(
+    directory: Path,
+    model_id: str,
+    revision: str,
+    local_only: bool,
+    *,
+    technologies: tuple[str, ...] = ("solar", "wind"),
+    timestral_covariates: str = "all",
+    extend_resource_history: bool = False,
+) -> None:
     """Record checkpoint hashes and actual deterministic CPU model predictions."""
     torch = import_module("torch")
     hub = import_module("huggingface_hub")
@@ -149,7 +158,11 @@ def capture_model(directory: Path, model_id: str, revision: str, local_only: boo
             hub.hf_hub_download(model_id, filename, revision=revision, local_files_only=local_only)
         )
         checkpoint_hashes[filename] = hashlib.sha256(path.read_bytes()).hexdigest()
-    folds = forecast_folds(load_benchmark_observations(directory))
+    folds = forecast_folds(
+        load_benchmark_observations(directory, technologies=technologies),
+        timestral_covariates=timestral_covariates,
+        extend_resource_history=extend_resource_history,
+    )
     connector = TimestralConnector(model_id, revision=revision, local_files_only=local_only)
     print(f"Running real {model_id} inference for {len(folds)} rolling origins", flush=True)
     predictions = capture_timestral_forecasts(folds, connector)
@@ -168,6 +181,8 @@ def capture_model(directory: Path, model_id: str, revision: str, local_only: boo
         "reference_code_revision": TIMESTRAL_SOURCE_REVISION,
         "installed_source_sha256": source_hashes,
         "config": asdict(DEFAULT_CONFIG),
+        "timestral_covariates": timestral_covariates,
+        "extend_resource_history": extend_resource_history,
         "fold_inputs": {fold.key: fold.input_sha256 for fold in folds},
         "forecast_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "device": "cpu",

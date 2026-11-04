@@ -288,6 +288,12 @@ counting scope and uncertainty; it is not a surveyed as-built model.
 
 ### Solar and wind forecasting benchmark
 
+The [audited Timestral solar case](../docs/timestral-solar-case.md) adds a real
+Mendubim VI example with separate development and August evaluation periods.
+Timestral-28M beats the fixed tree/physical comparators, while a stronger daily
+median is effectively tied. The gallery includes the failed first validation,
+full selection audit, offline replay and optional live inference.
+
 [The runnable gallery example](../examples/analysis/plot_forecast_model_benchmark.py)
 compares LightGBM, XGBoost, Mistral Timestral and physical surrogates with a
 previous-day baseline. Real ONS half-hour observations support 16 chronological
