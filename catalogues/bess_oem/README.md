@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 4 November 2026 expanded research snapshot contains **795 records from 47 product
-suppliers, backed by 376 registered sources**: 782 documented configurations and 13
+The 4 November 2026 expanded research snapshot contains **814 records from 47 product
+suppliers, backed by 380 registered sources**: 801 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -95,6 +95,20 @@ isolated PR. Never overwrite another writer's branch or remove retained records.
 
 Source terms apply separately from the repository's software license. Only factual
 metadata and attribution are stored; no OEM datasheets, images or logos are bundled.
+
+Latest iteration: [BT/front-terminal models and Indian project reconciliation](../bess/research/2026-11-04_bt_front_kajra.md).
+The English individual-sheet adapter stages local `pdftotext -layout` output:
+
+```bash
+uv run python scripts/stage_bess_effekta_individual.py /outside-git/model.txt \
+  --model 'BTL12-62FL' \
+  --source-url 'https://www.effekta.com/download/datenblaetter-btl-frontterminal-serie-zip-datei/?wpdmdl=358' \
+  --output /outside-git/candidate.json
+```
+
+The printed heading must match the reviewed identity. Filename suffixes, approximate
+mass, short-circuit current and charging C-rate retain their distinct meanings.
+Staging does not resolve conflicting editions or import records automatically.
 
 Earlier iteration: [Dyness, Nordic and Baltic research](../bess/research/2026-11-02_dyness_baltic_report.md), with model-level reconciliation, source backlog and current coverage.
 

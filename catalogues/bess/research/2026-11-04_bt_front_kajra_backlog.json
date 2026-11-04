@@ -1,0 +1,185 @@
+[
+  {
+    "rank": 1,
+    "url": "https://www.cea.nic.in/reports/dashboardView?headingId=107&lang=en&source=archive&subHeadingId=1003&subSubHeadingId=10046&title=Status+of+BESS+Projects",
+    "country_entity": "India / CEA",
+    "version_date": "Index advertises30September2026",
+    "access_licence_assessment": "Original503; public reader502. No document bytes/reuse terms verified. Error response hash is not a source-PDF checksum.",
+    "estimated_useful_yield": "Potential updated national status; exact site-level yield unknown",
+    "offered_fields": [
+      "status",
+      "MW",
+      "MWh",
+      "reporting date"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "Current archive route failed; older PIB inventory used as accessible alternative",
+    "processed_partition_cursor": "No September partition ingested",
+    "retry_condition": "Official route returns document and reuse/scope can be reviewed",
+    "next_action": "Retrieve latest PDF, determine aggregate versus named rows; review terms and compare18PIB identities before staging"
+  },
+  {
+    "rank": 2,
+    "url": "https://berc.co.in/arr-tariff-petitions/3144-petition-for-determination-of-levelized-tariff-of-185-mw-ac-kajra-solar-pv-with-282-mwh-battery-energy-storage-system-45-4-mw-for-4-hours-plant-at-kajra-for-bihar-state-power-generation-company-limited-bspgcl-audited-accounts-of-fy-2016-17-and-fy-2017-18-generation-data-for-fy-2016-17-and-fy-2017-18-government-of-bihar-loan-details",
+    "country_entity": "India / BSPGCL Kajra",
+    "version_date": "Case42/2025;final16March2026",
+    "access_licence_assessment": "Public regulatory order; bounded facts only, no open bulk licence asserted",
+    "estimated_useful_yield": "1existing project deep enrichment; separate expansion only with exact scope",
+    "offered_fields": [
+      "as-built equipment",
+      "AC/DC ratings",
+      "gross/usable energy",
+      "COD",
+      "costs"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "Six-page final order fully reviewed; accepted one previously held identity; rating fields partly unresolved",
+    "processed_partition_cursor": "Order §§1–3complete; full DPR and later audited filing not processed",
+    "retry_condition": "New/as-built filing explicitly resolves rating boundary",
+    "next_action": "Obtain commissioned battery schedule and distinguish282MWh from254MWh minimum and70.5MW from45.4MW delivery"
+  },
+  {
+    "rank": 3,
+    "url": "https://leoch.in/documents-resources/products/network-power/",
+    "country_entity": "LEOCH / regional OEM catalogue",
+    "version_date": "Undated discovery",
+    "access_licence_assessment": "Official regional source discovered; terms and individual revisions not yet inspected",
+    "estimated_useful_yield": "10–30exact OPzV/OPzS models after duplicate review",
+    "offered_fields": [
+      "C10/C100Ah",
+      "voltage",
+      "terminal",
+      "dimensions",
+      "weight",
+      "charge limits"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "Discovery only; no Leoch records accepted",
+    "processed_partition_cursor": "Unprocessed",
+    "retry_condition": "Official individual PDFs and terms available",
+    "next_action": "Compare canonical supplier/models first, review C10/C100 table and exact datasheets; do not equate regional labels without evidence"
+  },
+  {
+    "rank": 4,
+    "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2291650&lang=2&reg=48",
+    "country_entity": "India / Ministry of Power",
+    "version_date": "30July2026,asof30June2026",
+    "access_licence_assessment": "PIB attributed-reuse policy rechecked; third-party exceptions apply",
+    "estimated_useful_yield": "18inventory rows; this pass1new+1existing enrichment via independent sources",
+    "offered_fields": [
+      "project",
+      "state",
+      "MW",
+      "MWh",
+      "chemistry",
+      "reporting date"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "Existing offline adapter restaged18rows; prior ledger reconciled.8unchanged accepted identities;8prior holds remain; Kajra identity resolved with scalar power withheld",
+    "processed_partition_cursor": "All18TableIIrows reviewed; no blind reimport",
+    "retry_condition": "New release or evidence resolving eight old held sites/scopes",
+    "next_action": "Target named sites for merchant aggregates and Delhi tender; preserve portfolio/phase and chemistry ambiguity"
+  },
+  {
+    "rank": 5,
+    "url": "https://www.effekta.com/download/datenblaetter-bt-serie-zip-datei/?wpdmdl=357",
+    "country_entity": "EFFEKTA / BT",
+    "version_date": "Undated13member archive",
+    "access_licence_assessment": "Commercial terms2025 inspected; copyright retained; bounded factual extraction, not open bulk licence",
+    "estimated_useful_yield": "13accepted exact models; remainingoverview identities uncertain",
+    "offered_fields": [
+      "nominalAh",
+      "voltage",
+      "charge",
+      "peakcurrent",
+      "rateconditions",
+      "physical",
+      "temperature",
+      "life"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "All13sheets accepted with field-level quarantine where needed",
+    "processed_partition_cursor": "13/13page1 core-spec partitions complete",
+    "retry_condition": "Dated corrected sheets or explicit model aliases",
+    "next_action": "Resolve reversed BT12-12L charge range, BT12-1.2 mass/capacity and VdS/insert-terminal identities; review lower-rate tables independently"
+  },
+  {
+    "rank": 6,
+    "url": "https://www.effekta.com/download/datenblaetter-btl-frontterminal-serie-zip-datei/?wpdmdl=358",
+    "country_entity": "EFFEKTA / BTL front terminal",
+    "version_date": "Undated6member archive; filenameV1.1/date not promoted to printed revision",
+    "access_licence_assessment": "Same bounded factual policy; no full PDFs redistributed",
+    "estimated_useful_yield": "6accepted exact models",
+    "offered_fields": [
+      "charge",
+      "C-rate",
+      "shortcircuit",
+      "C10/C20",
+      "temperature",
+      "physical",
+      "terminals"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "All6sheets accepted;13physical discrepancies across botharchives and malformed62FL test units flagged",
+    "processed_partition_cursor": "6/6page1core-spec partitions complete",
+    "retry_condition": "Dated corrections or explicit revision applicability",
+    "next_action": "Resolve62FL malformedAh/W-per-cell fields and55FLlower-rate inconsistencies; never use short-circuitcurrent as peak rating"
+  },
+  {
+    "rank": 7,
+    "url": "https://www.larsentoubro.com/pressreleases/2025-08-04-lt-renewables-business-secures-significant-order-for-bess-integrated-solar-plant",
+    "country_entity": "India / Kajra expansion",
+    "version_date": "4August2025",
+    "access_licence_assessment": "Copyright terms limit site material to personal/noncommercial use; no ingestion from this source",
+    "estimated_useful_yield": "1potential distinctphase",
+    "offered_fields": [
+      "EPC",
+      "plannedbatteryenergy",
+      "cooling",
+      "solar scope"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "Discovery only; switched to BERCforfirst-phase facts",
+    "processed_partition_cursor": "No expansion accepted",
+    "retry_condition": "Independent reusable government/owner evidence available",
+    "next_action": "Find BERC/BSPGCL expansion contract and battery schedule; avoid whole-site495/523MWh double count"
+  },
+  {
+    "rank": 8,
+    "url": "https://blog.fluenceenergy.com/south-asia-largest-energy-storage-system-india",
+    "country_entity": "India / Rohini",
+    "version_date": "13February2019",
+    "access_licence_assessment": "Public OEM pressrelease, copyright retained; linked privacy policy not a reuse licence; bounded facts only; homepage403",
+    "estimated_useful_yield": "1existingproject enriched",
+    "offered_fields": [
+      "owners",
+      "supplier",
+      "services",
+      "inauguration",
+      "platform"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "Fluence original accessible; TataPower-DDL independent route406; no bypass",
+    "processed_partition_cursor": "Openingparagraphs1–5anddatedevent reviewed",
+    "retry_condition": "Later owner/regulator change or exact model evidence",
+    "next_action": "Obtain current ownership and exact commissioning record; Advancion platform is not an exact equipment configuration"
+  },
+  {
+    "rank": 9,
+    "url": "https://ntpc.co.in/index.php/technology/about-us/corporate-functions/netra/technology/vanadium-redox-flow-battery-3-mwhr-vrfb",
+    "country_entity": "India / NTPC NETRA",
+    "version_date": "Undated projectpage",
+    "access_licence_assessment": "Public ownerpage; disclaimer mainly protects images/media; no open bulk licence",
+    "estimated_useful_yield": "No accepted change from this page",
+    "offered_fields": [
+      "completion",
+      "electrolyte",
+      "generictechnologyclaims"
+    ],
+    "attempted_at": "2026-11-04T07:12:30.147780+00:00",
+    "attempt_result": "Existing0.6MW/3MWh identity confirmed; generic20000cycles/95%DoD claims not treated as tested project performance",
+    "processed_partition_cursor": "Page read; no fields imported",
+    "retry_condition": "Model-specific test conditions or contract schedules available",
+    "next_action": "Use tender2024_NTPC_87846_1andcommissioning documentation to establish component/O&M facts"
+  }
+]

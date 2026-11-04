@@ -93,6 +93,11 @@ or a live availability feed. Do not interpret record counts as installed capacit
    `scripts/stage_bess_effekta.py` stages the 18 exact BTL overview models. C20 Ah
    belongs to a monobloc, not a cell; do not derive energy or match differing model
    suffixes automatically. Individual-sheet and overview rating bases stay separate.
+   `scripts/stage_bess_effekta_individual.py` stages reviewed English BT/front-terminal
+   sheet facts from local layout text. Supply the printed model heading and archive
+   URL explicitly; filenames do not define identities. Preserve approximate mass,
+   height labels, C-rate versus amperes and short-circuit versus peak current.
+   Charging tables, rate conditions and overview discrepancies require manual review.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.
