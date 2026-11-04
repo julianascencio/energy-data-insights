@@ -209,8 +209,8 @@ export function windEpdSummary(rows) {
 
 // Count dated unit observations, never infer whole-farm retirement or capacity.
 export function windEiaSummary(rows) {
-  const result = {projects: 0, withoutObservations: 0, retired: 0, canceled: 0, postponed: 0};
-  const keys = {RE: "retired", CN: "canceled", IP: "postponed"};
+  const result = {projects: 0, withoutObservations: 0, retired: 0, canceled: 0, postponed: 0, operating: 0, outOfService: 0, standby: 0};
+  const keys = {RE: "retired", CN: "canceled", IP: "postponed", OP: "operating", OS: "outOfService", OA: "standby"};
   for (const row of rows.filter(r => r.entity_type === "projects")) {
     let ext;
     try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }

@@ -101,12 +101,19 @@ def _rows(data: bytes, sheet: str, columns: tuple[str, ...], year: int) -> list[
 
 
 def parse_retired_partition(
-    wind: bytes, plant: bytes, *, year: int, wind_sha256: str, plant_sha256: str
+    wind: bytes,
+    plant: bytes,
+    *,
+    year: int,
+    wind_sha256: str,
+    plant_sha256: str,
+    operable_range: tuple[int, int] | None = None,
 ) -> list[dict[str, Any]]:
     """Return every nonoperable wind plant group, retaining original unit rows.
 
     This is a complete workbook tab, not a complete historical retirement census.
-    Operable rows are inspected only as same-plant context; hybrid scope stays open.
+    By default operable rows supply context only. ``operable_range`` selects a
+    complete inclusive plant-code range instead; hybrid scope stays open.
     """
     if (
         hashlib.sha256(wind).hexdigest() != wind_sha256
@@ -139,8 +146,21 @@ def parse_retired_partition(
             ("Offshore Wind Turbine", "WS"),
         }:
             raise ValueError("Non-wind row in EIA wind partition")
-    for row in retired:
-        if row["Status"] not in STATUS:
+    states = (
+        STATUS
+        if operable_range is None
+        else {"OP": "operating", "OS": "out of service", "OA": "standby"}
+    )
+    selected = retired
+    sheet = "Retired and Canceled"
+    if operable_range is not None:
+        low, high = operable_range
+        if type(low) is not int or type(high) is not int or not 1 <= low <= high:
+            raise ValueError("Invalid complete plant-code range")
+        selected = [x for x in operable if low <= x["Plant Code"] <= high]
+        sheet = "Operable"
+    for row in selected:
+        if row["Status"] not in states:
             raise ValueError("Unknown nonoperable EIA status")
         code = int(row["Plant Code"])
         if code not in plant_map:
@@ -157,8 +177,8 @@ def parse_retired_partition(
 
             count = _number(row["Number of Turbines"], integer=True)
             for prefix in ("Operating", "Retirement"):
-                month = _number(row[f"{prefix} Month"], integer=True)
-                yr = _number(row[f"{prefix} Year"], integer=True)
+                month = _number(row.get(f"{prefix} Month"), integer=True)
+                yr = _number(row.get(f"{prefix} Year"), integer=True)
                 if month is not None and (not 1 <= month <= 12 or yr is None):
                     raise ValueError("Invalid EIA month/year observation")
             height = number("Turbine Hub Height (Feet)")
@@ -166,11 +186,11 @@ def parse_retired_partition(
             observations.append(
                 {
                     "generator_id": str(row["Generator ID"]).strip(),
-                    "status": STATUS[row["Status"]],
+                    "status": states[row["Status"]],
                     "status_code": row["Status"],
                     "status_as_of": f"{year}-12-31",
                     "original": {k: v for k, v in row.items() if k != "_row"},
-                    "locator": f"3_2_Wind_Y{year}.xlsx / Retired and Canceled / row {row['_row']}",
+                    "locator": f"3_2_Wind_Y{year}.xlsx / {sheet} / row {row['_row']}",
                     "reported_unit_nameplate_mw": number("Nameplate Capacity (MW)"),
                     "reported_unit_net_summer_mw": number("Summer Capacity (MW)"),
                     "reported_unit_net_winter_mw": number("Winter Capacity (MW)"),
@@ -223,6 +243,14 @@ def parse_retired_partition(
                 ),
             }
         )
+    if operable_range is not None:
+        for item in result:
+            item["scope"] = (
+                "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. "
+                "Generator observations are not a current whole-farm operating census "
+                "or hybrid/repowering reconciliation."
+            )
+            item["plant_code_range"] = list(operable_range)
     return result
 
 

@@ -215,3 +215,15 @@ def test_offshore_prime_mover_is_ws():
     wind, plant, kw = fixture(offshore=True)
     item = parse_retired_partition(wind, plant, **kw)[0]
     assert item["units"][0]["original"]["Prime Mover"] == "WS"
+
+
+def test_operable_range_keeps_unit_state_and_bounds():
+    wind, plant, kw = fixture()
+    rows = parse_retired_partition(wind, plant, **kw, operable_range=(123, 123))
+    assert rows[0]["units"][0]["status"] == "operating"
+    assert rows[0]["units"][0]["generator_id"] == "NEW"
+    assert "/ Operable /" in rows[0]["units"][0]["locator"]
+    assert rows[0]["plant_code_range"] == [123, 123]
+    assert parse_retired_partition(wind, plant, **kw, operable_range=(124, 130)) == []
+    with pytest.raises(ValueError, match="range"):
+        parse_retired_partition(wind, plant, **kw, operable_range=(130, 124))

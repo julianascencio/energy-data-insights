@@ -233,9 +233,16 @@ test("EIA unit states remain dated observations and distinguish absence", async 
   const row = units => ({entity_type: "projects", extensions_json: JSON.stringify({eia_annual_wind_partitions: [{source_id: "eia", year: 2025, units}]})});
   assert.deepEqual(windEiaSummary([
     row([unit, {...unit,status_code:"CN"}, {...unit,status_code:"IP"}]),
-    row([{...unit,status_as_of:"2026-12-31"}]), row([{...unit,status_code:"OP"}]),
+    row([{...unit,status_as_of:"2026-12-31"}]), row([{...unit,status_code:"UNKNOWN"}]),
     {entity_type:"projects",extensions_json:"invalid"},
     {entity_type:"projects",extensions_json:"null"},
     {...row([unit]),entity_type:"equipment"},
-  ]), {projects:1,withoutObservations:4,retired:1,canceled:1,postponed:1});
+  ]), {projects:1,withoutObservations:4,retired:1,canceled:1,postponed:1,operating:0,outOfService:0,standby:0});
+});
+
+test("operable EIA statuses stay distinct", async () => {
+  const {windEiaSummary} = await import("../../docs/_static/database-core.mjs");
+  const units = ["OP","OS","OA"].map(status_code=>({status_code,generator_id:status_code,locator:"row",status_as_of:"2025-12-31"}));
+  const result=windEiaSummary([{entity_type:"projects",extensions_json:JSON.stringify({eia_annual_wind_partitions:[{year:2025,source_id:"eia",units}]})}]);
+  assert.equal(result.operating,1); assert.equal(result.outOfService,1); assert.equal(result.standby,1);
 });

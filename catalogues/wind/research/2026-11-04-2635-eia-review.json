@@ -1,0 +1,4328 @@
+{
+  "batch": "2026-11-04-2635",
+  "reviewed_at": "2026-11-04T23:33:56Z",
+  "partition": [
+    1,
+    51999
+  ],
+  "completed_subpartitions": [
+    [
+      1,
+      9999
+    ],
+    [
+      10000,
+      51999
+    ]
+  ],
+  "candidate_plants": 33,
+  "generator_rows": 62,
+  "enriched_projects": 20,
+  "new_projects": 0,
+  "new_equipment": 0,
+  "enriched_equipment": 0,
+  "decisions": [
+    {
+      "plant_code": 1,
+      "name": "Sand Point",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 90,
+      "name": "Snake River",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 508,
+      "name": "Lamar Plant",
+      "record_id": "605eee1a-e12d-5a3c-87df-bd01d0ea0d3f",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 944,
+      "name": "Geneseo",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 1172,
+      "name": "Osage (IA)",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 1998,
+      "name": "Mountain Lake",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 2024,
+      "name": "Worthington",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 6304,
+      "name": "Kotzebue Hybrid",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 7381,
+      "name": "Searsburg Wind Turbine",
+      "record_id": "70afa1d1-6e42-518c-9dd6-a45e5b233a98",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 7501,
+      "name": "Princeton Wind Farm",
+      "record_id": "ba59ed08-4e4a-5e81-aa2a-43ac193c04fa",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 7526,
+      "name": "Solano Wind",
+      "record_id": "4d5b57bf-b93f-5b1d-8f17-41b84e3bcb09",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 7771,
+      "name": "Springview",
+      "record_id": "41e5e8db-e8ac-52a3-a1b1-99d3b3f275b4",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 7855,
+      "name": "Moorhead Wind Turbine",
+      "record_id": "6eea5329-3d88-59b6-a4a9-6ad81865cf18",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 7886,
+      "name": "Wind Turbine",
+      "record_id": "ae1deb30-5551-53a9-aa80-efb29a118591",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 7936,
+      "name": "Nine Canyon",
+      "record_id": "8fbd4949-9cc5-5c42-95a5-39200e2eff51",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 7966,
+      "name": "Iowa Distributed Wind Generation Project",
+      "record_id": "31de2ce9-1d79-5b66-b760-87d74ee939a5",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 10005,
+      "name": "Dinosaur Point",
+      "record_id": "ba755157-f329-5a8c-aba3-01549f9fa305",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 10191,
+      "name": "Tehachapi Wind Resource I",
+      "record_id": "67cd883f-3903-5eb4-a98d-56ed415c345b",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 10586,
+      "name": "Cameron Ridge LLC",
+      "record_id": "8e22e8e4-2e89-5a45-82b3-18e27e2696c5",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 10597,
+      "name": "Ridgetop Energy LLC",
+      "record_id": "9efbadce-4e33-5fe9-be95-db6e0a6b82ba",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 10718,
+      "name": "Karen Avenue Wind Farm",
+      "record_id": "79bcccbe-77e3-58ca-a626-acb5ff2b8619",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 10823,
+      "name": "Deer Island Treatment Plant",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 50281,
+      "name": "San Gorgonio Farms Wind Farm",
+      "record_id": "0bf7000d-85ce-5b82-8298-9d23a84df82c",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 50532,
+      "name": "Victory Garden (Tehachapi)",
+      "record_id": "810487cc-d6ab-5aaa-b84a-1876c4806927",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 50533,
+      "name": "Painted Hills Wind Park",
+      "record_id": null,
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 50535,
+      "name": "Mesa Wind Power LLC",
+      "record_id": "76cb596b-8575-583a-8850-d1175fddde4d",
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 50536,
+      "name": "Sky River Wind Energy Center",
+      "record_id": "38a8280a-569e-5413-af55-fe075c83ec30",
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 50552,
+      "name": "Salka Cabazon Wind",
+      "record_id": "f4be246d-f39c-5c4e-b168-3f9a731c523a",
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    },
+    {
+      "plant_code": 50553,
+      "name": "Edom Hills Project 1 LLC",
+      "record_id": "14e2bda2-ce49-5d63-99db-0648a2bdd558",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 50690,
+      "name": "San Gorgonio Westwinds II LLC",
+      "record_id": "5ceed30b-4a1d-5f76-923a-38df09d4b3cf",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 50754,
+      "name": "Oak Creek Energy Systems I",
+      "record_id": "5d7932cb-aef4-5a90-b6a1-e0db614bb424",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 50820,
+      "name": "East Winds Project",
+      "record_id": "f6e43727-2e10-5ffd-a4fe-289008f378d6",
+      "decision": "enrich",
+      "reason": "Exact WRI encoded EIA code, normalized name and coordinate agreement"
+    },
+    {
+      "plant_code": 50821,
+      "name": "Mojave 16/17/18",
+      "record_id": "0ea6f4db-255f-5e5d-a57f-bf24c8a05f50",
+      "decision": "defer",
+      "reason": "No accepted complete identity crosswalk; no name-only merge"
+    }
+  ],
+  "status_counts": {
+    "OS": 3,
+    "OP": 59
+  },
+  "next_partition": [
+    52000,
+    52999
+  ],
+  "held_identity_codes": [
+    50535,
+    50536,
+    52162,
+    52163,
+    55719
+  ],
+  "notes": [
+    "Current operating status and farm capacity not inferred; all prior scalar quantities/observations unchanged",
+    "Predominant manufacturer/model not an exact OEM configuration; partial fleet labels retained",
+    "Earlier five discrepancies remain held. Independent CEC2023 and EPA historical name/code search hits require original-document review; no fields imported from snippets."
+  ],
+  "candidates": [
+    {
+      "plant_code": 1,
+      "name": "Sand Point",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 1,
+        "Plant Name": "Sand Point",
+        "State": "AK",
+        "County": "Aleutians East",
+        "Latitude": 55.339722,
+        "Longitude": -160.497222,
+        "Balancing Authority Code": null,
+        "Balancing Authority Name": null,
+        "Transmission or Distribution System Owner": "TDX Sand Point Generating, LLC",
+        "Grid Voltage (kV)": 0.48,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3",
+      "units": [
+        {
+          "generator_id": "WT1",
+          "status": "out of service",
+          "status_code": "OS",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 63560,
+            "Utility Name": "Sand Point Generating, LLC",
+            "Plant Code": 1,
+            "Plant Name": "Sand Point",
+            "State": "AK",
+            "County": "Aleutians East",
+            "Generator ID": "WT1",
+            "Status": "OS",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.5,
+            "Summer Capacity (MW)": 0.1,
+            "Winter Capacity (MW)": 0.1,
+            "Operating Month": 10,
+            "Operating Year": 2011,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V39-500",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 155
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 3",
+          "reported_unit_nameplate_mw": 0.5,
+          "reported_unit_net_summer_mw": 0.1,
+          "reported_unit_net_winter_mw": 0.1,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 47.244,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "WT2",
+          "status": "out of service",
+          "status_code": "OS",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 63560,
+            "Utility Name": "Sand Point Generating, LLC",
+            "Plant Code": 1,
+            "Plant Name": "Sand Point",
+            "State": "AK",
+            "County": "Aleutians East",
+            "Generator ID": "WT2",
+            "Status": "OS",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.5,
+            "Summer Capacity (MW)": 0.3,
+            "Winter Capacity (MW)": 0.3,
+            "Operating Month": 10,
+            "Operating Year": 2011,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V39-500",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 155
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 4",
+          "reported_unit_nameplate_mw": 0.5,
+          "reported_unit_net_summer_mw": 0.3,
+          "reported_unit_net_winter_mw": 0.3,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 47.244,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "WT1",
+          "status_code": "OS",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 3"
+        },
+        {
+          "generator_id": "WT2",
+          "status_code": "OS",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 4"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 90,
+      "name": "Snake River",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 90,
+        "Plant Name": "Snake River",
+        "State": "AK",
+        "County": "Nome",
+        "Latitude": 64.505331,
+        "Longitude": -165.429814,
+        "Balancing Authority Code": null,
+        "Balancing Authority Name": null,
+        "Transmission or Distribution System Owner": "Nome Joint Utility Systems",
+        "Grid Voltage (kV)": 4,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 55",
+      "units": [
+        {
+          "generator_id": "EWT 1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 13642,
+            "Utility Name": "Nome Joint Utility Systems",
+            "Plant Code": 90,
+            "Plant Name": "Snake River",
+            "State": "AK",
+            "County": "Nome",
+            "Generator ID": "EWT 1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.9,
+            "Summer Capacity (MW)": 0.9,
+            "Winter Capacity (MW)": 0.9,
+            "Operating Month": 7,
+            "Operating Year": 2013,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "EWT",
+            "Predominant Turbine Model Number": "DW54-900",
+            "Design Wind Speed (mph)": 20,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 164
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 5",
+          "reported_unit_nameplate_mw": 0.9,
+          "reported_unit_net_summer_mw": 0.9,
+          "reported_unit_net_winter_mw": 0.9,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 49.9872,
+          "source_wind_speed_m_s": 8.9408,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "EWT 2",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 13642,
+            "Utility Name": "Nome Joint Utility Systems",
+            "Plant Code": 90,
+            "Plant Name": "Snake River",
+            "State": "AK",
+            "County": "Nome",
+            "Generator ID": "EWT 2",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.9,
+            "Summer Capacity (MW)": 0.9,
+            "Winter Capacity (MW)": 0.9,
+            "Operating Month": 7,
+            "Operating Year": 2013,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "EWT",
+            "Predominant Turbine Model Number": "DW54-900",
+            "Design Wind Speed (mph)": 20,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 164
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 6",
+          "reported_unit_nameplate_mw": 0.9,
+          "reported_unit_net_summer_mw": 0.9,
+          "reported_unit_net_winter_mw": 0.9,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 49.9872,
+          "source_wind_speed_m_s": 8.9408,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "EWT 1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 5"
+        },
+        {
+          "generator_id": "EWT 2",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 6"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 508,
+      "name": "Lamar Plant",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 508,
+        "Plant Name": "Lamar Plant",
+        "State": "CO",
+        "County": "Prowers",
+        "Latitude": 38.033327,
+        "Longitude": -102.537915,
+        "Balancing Authority Code": "PSCO",
+        "Balancing Authority Name": "Public Service Company of Colorado",
+        "Transmission or Distribution System Owner": "City of Lamar - (CO)",
+        "Grid Voltage (kV)": 69,
+        "Grid Voltage 2 (kV)": 115,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 333",
+      "units": [
+        {
+          "generator_id": "T1-T3",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10633,
+            "Utility Name": "City of Lamar - (CO)",
+            "Plant Code": 508,
+            "Plant Name": "Lamar Plant",
+            "State": "CO",
+            "County": "Prowers",
+            "Generator ID": "T1-T3",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 4.5,
+            "Summer Capacity (MW)": 4,
+            "Winter Capacity (MW)": 4,
+            "Operating Month": 2,
+            "Operating Year": 2004,
+            "Number of Turbines": 3,
+            "Predominant Turbine Manufacturer": "GE",
+            "Predominant Turbine Model Number": "1.5 XLE",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 262.4
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 7",
+          "reported_unit_nameplate_mw": 4.5,
+          "reported_unit_net_summer_mw": 4.0,
+          "reported_unit_net_winter_mw": 4.0,
+          "reported_turbine_count": 3,
+          "representative_hub_height_m": 79.97952,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "T4",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10633,
+            "Utility Name": "City of Lamar - (CO)",
+            "Plant Code": 508,
+            "Plant Name": "Lamar Plant",
+            "State": "CO",
+            "County": "Prowers",
+            "Generator ID": "T4",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 1.5,
+            "Summer Capacity (MW)": 1.5,
+            "Winter Capacity (MW)": 1.5,
+            "Operating Month": 2,
+            "Operating Year": 2004,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "GE",
+            "Predominant Turbine Model Number": "1.5 XLE",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 262.4
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 8",
+          "reported_unit_nameplate_mw": 1.5,
+          "reported_unit_net_summer_mw": 1.5,
+          "reported_unit_net_winter_mw": 1.5,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 79.97952,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "T1-T3",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 7"
+        },
+        {
+          "generator_id": "T4",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 8"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 944,
+      "name": "Geneseo",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 944,
+        "Plant Name": "Geneseo",
+        "State": "IL",
+        "County": "Henry",
+        "Latitude": 41.451494,
+        "Longitude": -90.148547,
+        "Balancing Authority Code": "MISO",
+        "Balancing Authority Name": "Midcontinent Independent Transmission System Operator, Inc..",
+        "Transmission or Distribution System Owner": "City of Geneseo - (IL)",
+        "Grid Voltage (kV)": 69,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 569",
+      "units": [
+        {
+          "generator_id": "10",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 7095,
+            "Utility Name": "City of Geneseo - (IL)",
+            "Plant Code": 944,
+            "Plant Name": "Geneseo",
+            "State": "IL",
+            "County": "Henry",
+            "Generator ID": "10",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 1.5,
+            "Summer Capacity (MW)": 1.5,
+            "Winter Capacity (MW)": 1.5,
+            "Operating Month": 9,
+            "Operating Year": 2009,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "VENSYS",
+            "Predominant Turbine Model Number": "VENSYS77",
+            "Design Wind Speed (mph)": 18,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 200
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 9",
+          "reported_unit_nameplate_mw": 1.5,
+          "reported_unit_net_summer_mw": 1.5,
+          "reported_unit_net_winter_mw": 1.5,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 60.96,
+          "source_wind_speed_m_s": 8.04672,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "11",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 7095,
+            "Utility Name": "City of Geneseo - (IL)",
+            "Plant Code": 944,
+            "Plant Name": "Geneseo",
+            "State": "IL",
+            "County": "Henry",
+            "Generator ID": "11",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 1.5,
+            "Summer Capacity (MW)": 1.5,
+            "Winter Capacity (MW)": 1.5,
+            "Operating Month": 10,
+            "Operating Year": 2009,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "VENSYS",
+            "Predominant Turbine Model Number": "VENSYS77",
+            "Design Wind Speed (mph)": 18,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 200
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 10",
+          "reported_unit_nameplate_mw": 1.5,
+          "reported_unit_net_summer_mw": 1.5,
+          "reported_unit_net_winter_mw": 1.5,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 60.96,
+          "source_wind_speed_m_s": 8.04672,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "10",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 9"
+        },
+        {
+          "generator_id": "11",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 10"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 1172,
+      "name": "Osage (IA)",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 1172,
+        "Plant Name": "Osage (IA)",
+        "State": "IA",
+        "County": "Mitchell",
+        "Latitude": 43.279722,
+        "Longitude": -92.810556,
+        "Balancing Authority Code": "MISO",
+        "Balancing Authority Name": "Midcontinent Independent Transmission System Operator, Inc..",
+        "Transmission or Distribution System Owner": "City of Osage - (IA)",
+        "Grid Voltage (kV)": 69,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 675",
+      "units": [
+        {
+          "generator_id": "W1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 14201,
+            "Utility Name": "City of Osage - (IA)",
+            "Plant Code": 1172,
+            "Plant Name": "Osage (IA)",
+            "State": "IA",
+            "County": "Mitchell",
+            "Generator ID": "W1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 1.6,
+            "Summer Capacity (MW)": 0.5,
+            "Winter Capacity (MW)": 0.5,
+            "Operating Month": 12,
+            "Operating Year": 2009,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "GE",
+            "Predominant Turbine Model Number": "1.5 SLE",
+            "Design Wind Speed (mph)": 17.8,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 260
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 11",
+          "reported_unit_nameplate_mw": 1.6,
+          "reported_unit_net_summer_mw": 0.5,
+          "reported_unit_net_winter_mw": 0.5,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 79.248,
+          "source_wind_speed_m_s": 7.957312,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "W1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 11"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 1998,
+      "name": "Mountain Lake",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 1998,
+        "Plant Name": "Mountain Lake",
+        "State": "MN",
+        "County": "Cottonwood",
+        "Latitude": 43.9405,
+        "Longitude": -94.9434,
+        "Balancing Authority Code": "MISO",
+        "Balancing Authority Name": "Midcontinent Independent Transmission System Operator, Inc..",
+        "Transmission or Distribution System Owner": "City of Mountain Lake - (MN)",
+        "Grid Voltage (kV)": 69,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 1036",
+      "units": [
+        {
+          "generator_id": "8",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 13048,
+            "Utility Name": "City of Mountain Lake - (MN)",
+            "Plant Code": 1998,
+            "Plant Name": "Mountain Lake",
+            "State": "MN",
+            "County": "Cottonwood",
+            "Generator ID": "8",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 1.2,
+            "Summer Capacity (MW)": 1.2,
+            "Winter Capacity (MW)": 1.2,
+            "Operating Month": 7,
+            "Operating Year": 2007,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "Suzlon",
+            "Predominant Turbine Model Number": "S64-1250",
+            "Design Wind Speed (mph)": 15,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 246
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 12",
+          "reported_unit_nameplate_mw": 1.2,
+          "reported_unit_net_summer_mw": 1.2,
+          "reported_unit_net_winter_mw": 1.2,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 74.9808,
+          "source_wind_speed_m_s": 6.7056,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "8",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 12"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 2024,
+      "name": "Worthington",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 2024,
+        "Plant Name": "Worthington",
+        "State": "MN",
+        "County": "Nobles",
+        "Latitude": 43.63349,
+        "Longitude": -95.609234,
+        "Balancing Authority Code": "MISO",
+        "Balancing Authority Name": "Midcontinent Independent Transmission System Operator, Inc..",
+        "Transmission or Distribution System Owner": "City of Worthington - (MN)",
+        "Grid Voltage (kV)": 12.47,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 1055",
+      "units": [
+        {
+          "generator_id": "10",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 21013,
+            "Utility Name": "City of Worthington - (MN)",
+            "Plant Code": 2024,
+            "Plant Name": "Worthington",
+            "State": "MN",
+            "County": "Nobles",
+            "Generator ID": "10",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.9,
+            "Summer Capacity (MW)": 0.9,
+            "Winter Capacity (MW)": 0.9,
+            "Operating Month": 7,
+            "Operating Year": 2002,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "NEG-Micon",
+            "Predominant Turbine Model Number": "NM52/900",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 240
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 13",
+          "reported_unit_nameplate_mw": 0.9,
+          "reported_unit_net_summer_mw": 0.9,
+          "reported_unit_net_winter_mw": 0.9,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 73.152,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "11",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 21013,
+            "Utility Name": "City of Worthington - (MN)",
+            "Plant Code": 2024,
+            "Plant Name": "Worthington",
+            "State": "MN",
+            "County": "Nobles",
+            "Generator ID": "11",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.9,
+            "Summer Capacity (MW)": 0.9,
+            "Winter Capacity (MW)": 0.9,
+            "Operating Month": 7,
+            "Operating Year": 2002,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "NEG-Micon",
+            "Predominant Turbine Model Number": "NM52/900",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 240
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 14",
+          "reported_unit_nameplate_mw": 0.9,
+          "reported_unit_net_summer_mw": 0.9,
+          "reported_unit_net_winter_mw": 0.9,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 73.152,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "12",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 21013,
+            "Utility Name": "City of Worthington - (MN)",
+            "Plant Code": 2024,
+            "Plant Name": "Worthington",
+            "State": "MN",
+            "County": "Nobles",
+            "Generator ID": "12",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 1,
+            "Summer Capacity (MW)": 1,
+            "Winter Capacity (MW)": 1,
+            "Operating Month": 12,
+            "Operating Year": 2003,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "NEG-Micon",
+            "Predominant Turbine Model Number": "NM54/950",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 240
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 15",
+          "reported_unit_nameplate_mw": 1.0,
+          "reported_unit_net_summer_mw": 1.0,
+          "reported_unit_net_winter_mw": 1.0,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 73.152,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "13",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 21013,
+            "Utility Name": "City of Worthington - (MN)",
+            "Plant Code": 2024,
+            "Plant Name": "Worthington",
+            "State": "MN",
+            "County": "Nobles",
+            "Generator ID": "13",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 1,
+            "Summer Capacity (MW)": 1,
+            "Winter Capacity (MW)": 1,
+            "Operating Month": 12,
+            "Operating Year": 2003,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "NEG-Micon",
+            "Predominant Turbine Model Number": "NM54/950",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 240
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 16",
+          "reported_unit_nameplate_mw": 1.0,
+          "reported_unit_net_summer_mw": 1.0,
+          "reported_unit_net_winter_mw": 1.0,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 73.152,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "8",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 21013,
+            "Utility Name": "City of Worthington - (MN)",
+            "Plant Code": 2024,
+            "Plant Name": "Worthington",
+            "State": "MN",
+            "County": "Nobles",
+            "Generator ID": "8",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.9,
+            "Summer Capacity (MW)": 0.9,
+            "Winter Capacity (MW)": 0.9,
+            "Operating Month": 7,
+            "Operating Year": 2002,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "NEG-Micon",
+            "Predominant Turbine Model Number": "NM52/900",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 240
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 17",
+          "reported_unit_nameplate_mw": 0.9,
+          "reported_unit_net_summer_mw": 0.9,
+          "reported_unit_net_winter_mw": 0.9,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 73.152,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "9",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 21013,
+            "Utility Name": "City of Worthington - (MN)",
+            "Plant Code": 2024,
+            "Plant Name": "Worthington",
+            "State": "MN",
+            "County": "Nobles",
+            "Generator ID": "9",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.9,
+            "Summer Capacity (MW)": 0.9,
+            "Winter Capacity (MW)": 0.9,
+            "Operating Month": 7,
+            "Operating Year": 2002,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "NEG-Micon",
+            "Predominant Turbine Model Number": "NM52/900",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 240
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 18",
+          "reported_unit_nameplate_mw": 0.9,
+          "reported_unit_net_summer_mw": 0.9,
+          "reported_unit_net_winter_mw": 0.9,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 73.152,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "10",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 13"
+        },
+        {
+          "generator_id": "11",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 14"
+        },
+        {
+          "generator_id": "12",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 15"
+        },
+        {
+          "generator_id": "13",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 16"
+        },
+        {
+          "generator_id": "8",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 17"
+        },
+        {
+          "generator_id": "9",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 18"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 6304,
+      "name": "Kotzebue Hybrid",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 6304,
+        "Plant Name": "Kotzebue Hybrid",
+        "State": "AK",
+        "County": "NORTHWEST ARCTIC",
+        "Latitude": 66.837778,
+        "Longitude": -162.556944,
+        "Balancing Authority Code": null,
+        "Balancing Authority Name": null,
+        "Transmission or Distribution System Owner": "Kotzebue Electric Assn Inc",
+        "Grid Voltage (kV)": 7.2,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2118",
+      "units": [
+        {
+          "generator_id": "11wt",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "11wt",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.1,
+            "Summer Capacity (MW)": 0.1,
+            "Winter Capacity (MW)": 0.1,
+            "Operating Month": 5,
+            "Operating Year": 2005,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "AOC",
+            "Predominant Turbine Model Number": "AOC15/50",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 19",
+          "reported_unit_nameplate_mw": 0.1,
+          "reported_unit_net_summer_mw": 0.1,
+          "reported_unit_net_winter_mw": 0.1,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "13WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "13WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.1,
+            "Summer Capacity (MW)": 0.1,
+            "Winter Capacity (MW)": 0.1,
+            "Operating Month": 5,
+            "Operating Year": 2006,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V15",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 20",
+          "reported_unit_nameplate_mw": 0.1,
+          "reported_unit_net_summer_mw": 0.1,
+          "reported_unit_net_winter_mw": 0.1,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "14wt",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "14wt",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.1,
+            "Summer Capacity (MW)": 0.1,
+            "Winter Capacity (MW)": 0.1,
+            "Operating Month": 5,
+            "Operating Year": 2002,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "Northern Power",
+            "Predominant Turbine Model Number": "Northwind 100",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 21",
+          "reported_unit_nameplate_mw": 0.1,
+          "reported_unit_net_summer_mw": 0.1,
+          "reported_unit_net_winter_mw": 0.1,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "15WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "15WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.1,
+            "Summer Capacity (MW)": 0.1,
+            "Winter Capacity (MW)": 0.1,
+            "Operating Month": 5,
+            "Operating Year": 2006,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "AOC",
+            "Predominant Turbine Model Number": "AOC15/50",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 22",
+          "reported_unit_nameplate_mw": 0.1,
+          "reported_unit_net_summer_mw": 0.1,
+          "reported_unit_net_winter_mw": 0.1,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "16WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "16WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.1,
+            "Summer Capacity (MW)": 0.1,
+            "Winter Capacity (MW)": 0.1,
+            "Operating Month": 5,
+            "Operating Year": 2006,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "AOC",
+            "Predominant Turbine Model Number": "AOC15/50",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 23",
+          "reported_unit_nameplate_mw": 0.1,
+          "reported_unit_net_summer_mw": 0.1,
+          "reported_unit_net_winter_mw": 0.1,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "17WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "17WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.1,
+            "Summer Capacity (MW)": 0.1,
+            "Winter Capacity (MW)": 0.1,
+            "Operating Month": 5,
+            "Operating Year": 2006,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "AOC",
+            "Predominant Turbine Model Number": "AOC15/50",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 24",
+          "reported_unit_nameplate_mw": 0.1,
+          "reported_unit_net_summer_mw": 0.1,
+          "reported_unit_net_winter_mw": 0.1,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "18WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "18WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.9,
+            "Summer Capacity (MW)": 0.9,
+            "Winter Capacity (MW)": 0.9,
+            "Operating Month": 5,
+            "Operating Year": 2012,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "EWT",
+            "Predominant Turbine Model Number": "DW54-900",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 250
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 25",
+          "reported_unit_nameplate_mw": 0.9,
+          "reported_unit_net_summer_mw": 0.9,
+          "reported_unit_net_winter_mw": 0.9,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 76.2,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "19WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "19WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.9,
+            "Summer Capacity (MW)": 0.9,
+            "Winter Capacity (MW)": 0.9,
+            "Operating Month": 5,
+            "Operating Year": 2012,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "EWT",
+            "Predominant Turbine Model Number": "DW54-900",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 250
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 26",
+          "reported_unit_nameplate_mw": 0.9,
+          "reported_unit_net_summer_mw": 0.9,
+          "reported_unit_net_winter_mw": 0.9,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 76.2,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "1WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "1WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.6,
+            "Summer Capacity (MW)": 0.6,
+            "Winter Capacity (MW)": 0.6,
+            "Operating Month": 5,
+            "Operating Year": 1999,
+            "Number of Turbines": 10,
+            "Predominant Turbine Manufacturer": "AOC",
+            "Predominant Turbine Model Number": "AOC15/50",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 27",
+          "reported_unit_nameplate_mw": 0.6,
+          "reported_unit_net_summer_mw": 0.6,
+          "reported_unit_net_winter_mw": 0.6,
+          "reported_turbine_count": 10,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "2WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "2WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.1,
+            "Summer Capacity (MW)": 0.1,
+            "Winter Capacity (MW)": 0.1,
+            "Operating Month": 5,
+            "Operating Year": 1999,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "AOC",
+            "Predominant Turbine Model Number": "AOC15/50",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 28",
+          "reported_unit_nameplate_mw": 0.1,
+          "reported_unit_net_summer_mw": 0.1,
+          "reported_unit_net_winter_mw": 0.1,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "3WT",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 10451,
+            "Utility Name": "Kotzebue Electric Assn Inc",
+            "Plant Code": 6304,
+            "Plant Name": "Kotzebue Hybrid",
+            "State": "AK",
+            "County": "NORTHWEST ARCTIC",
+            "Generator ID": "3WT",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.2,
+            "Summer Capacity (MW)": 0.2,
+            "Winter Capacity (MW)": 0.2,
+            "Operating Month": 1,
+            "Operating Year": 1997,
+            "Number of Turbines": 3,
+            "Predominant Turbine Manufacturer": "AOC",
+            "Predominant Turbine Model Number": "AOC15/50",
+            "Design Wind Speed (mph)": 13,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 90
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 29",
+          "reported_unit_nameplate_mw": 0.2,
+          "reported_unit_net_summer_mw": 0.2,
+          "reported_unit_net_winter_mw": 0.2,
+          "reported_turbine_count": 3,
+          "representative_hub_height_m": 27.432000000000002,
+          "source_wind_speed_m_s": 5.81152,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "11wt",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 19"
+        },
+        {
+          "generator_id": "13WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 20"
+        },
+        {
+          "generator_id": "14wt",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 21"
+        },
+        {
+          "generator_id": "15WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 22"
+        },
+        {
+          "generator_id": "16WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 23"
+        },
+        {
+          "generator_id": "17WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 24"
+        },
+        {
+          "generator_id": "18WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 25"
+        },
+        {
+          "generator_id": "19WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 26"
+        },
+        {
+          "generator_id": "1WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 27"
+        },
+        {
+          "generator_id": "2WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 28"
+        },
+        {
+          "generator_id": "3WT",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 29"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 7381,
+      "name": "Searsburg Wind Turbine",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 7381,
+        "Plant Name": "Searsburg Wind Turbine",
+        "State": "VT",
+        "County": "Bennington",
+        "Latitude": 42.8625,
+        "Longitude": -72.9628,
+        "Balancing Authority Code": "ISNE",
+        "Balancing Authority Name": "ISO New England Inc.",
+        "Transmission or Distribution System Owner": "Green Mountain Power Corp",
+        "Grid Voltage (kV)": 34.5,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2398",
+      "units": [
+        {
+          "generator_id": "1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 7601,
+            "Utility Name": "Green Mountain Power Corp",
+            "Plant Code": 7381,
+            "Plant Name": "Searsburg Wind Turbine",
+            "State": "VT",
+            "County": "Bennington",
+            "Generator ID": "1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 6,
+            "Summer Capacity (MW)": 5.2,
+            "Winter Capacity (MW)": 5,
+            "Operating Month": 6,
+            "Operating Year": 1997,
+            "Number of Turbines": 11,
+            "Predominant Turbine Manufacturer": "Zond",
+            "Predominant Turbine Model Number": "Z-40",
+            "Design Wind Speed (mph)": 18,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 132
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 30",
+          "reported_unit_nameplate_mw": 6.0,
+          "reported_unit_net_summer_mw": 5.2,
+          "reported_unit_net_winter_mw": 5.0,
+          "reported_turbine_count": 11,
+          "representative_hub_height_m": 40.2336,
+          "source_wind_speed_m_s": 8.04672,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 30"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 7501,
+      "name": "Princeton Wind Farm",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 7501,
+        "Plant Name": "Princeton Wind Farm",
+        "State": "MA",
+        "County": "Worcester",
+        "Latitude": 42.4789,
+        "Longitude": -71.9,
+        "Balancing Authority Code": "ISNE",
+        "Balancing Authority Name": "ISO New England Inc.",
+        "Transmission or Distribution System Owner": "Town of Princeton - (MA)",
+        "Grid Voltage (kV)": 13.8,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2449",
+      "units": [
+        {
+          "generator_id": "2",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 15371,
+            "Utility Name": "Town of Princeton - (MA)",
+            "Plant Code": 7501,
+            "Plant Name": "Princeton Wind Farm",
+            "State": "MA",
+            "County": "Worcester",
+            "Generator ID": "2",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 3,
+            "Summer Capacity (MW)": 3,
+            "Winter Capacity (MW)": 3,
+            "Operating Month": 1,
+            "Operating Year": 2010,
+            "Number of Turbines": 2,
+            "Predominant Turbine Manufacturer": "Fuhrlander",
+            "Predominant Turbine Model Number": "FL 1500-77",
+            "Design Wind Speed (mph)": 16,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 230
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 31",
+          "reported_unit_nameplate_mw": 3.0,
+          "reported_unit_net_summer_mw": 3.0,
+          "reported_unit_net_winter_mw": 3.0,
+          "reported_turbine_count": 2,
+          "representative_hub_height_m": 70.104,
+          "source_wind_speed_m_s": 7.15264,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "2",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 31"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 7526,
+      "name": "Solano Wind",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 7526,
+        "Plant Name": "Solano Wind",
+        "State": "CA",
+        "County": "Solano",
+        "Latitude": 38.116415,
+        "Longitude": -121.769031,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Pacific Gas & Electric Co",
+        "Grid Voltage (kV)": 230,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2459",
+      "units": [
+        {
+          "generator_id": "2",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 16534,
+            "Utility Name": "Sacramento Municipal Util Dist",
+            "Plant Code": 7526,
+            "Plant Name": "Solano Wind",
+            "State": "CA",
+            "County": "Solano",
+            "Generator ID": "2",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 24,
+            "Summer Capacity (MW)": 24,
+            "Winter Capacity (MW)": 24,
+            "Operating Month": 6,
+            "Operating Year": 2006,
+            "Number of Turbines": 8,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V90-3.0",
+            "Design Wind Speed (mph)": 16.8,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 262.4
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 32",
+          "reported_unit_nameplate_mw": 24.0,
+          "reported_unit_net_summer_mw": 24.0,
+          "reported_unit_net_winter_mw": 24.0,
+          "reported_turbine_count": 8,
+          "representative_hub_height_m": 79.97952,
+          "source_wind_speed_m_s": 7.5102720000000005,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "2B",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 16534,
+            "Utility Name": "Sacramento Municipal Util Dist",
+            "Plant Code": 7526,
+            "Plant Name": "Solano Wind",
+            "State": "CA",
+            "County": "Solano",
+            "Generator ID": "2B",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 63,
+            "Summer Capacity (MW)": 63,
+            "Winter Capacity (MW)": 63,
+            "Operating Month": 12,
+            "Operating Year": 2007,
+            "Number of Turbines": 21,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V90-3.0",
+            "Design Wind Speed (mph)": 16.8,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 262.4
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 33",
+          "reported_unit_nameplate_mw": 63.0,
+          "reported_unit_net_summer_mw": 63.0,
+          "reported_unit_net_winter_mw": 63.0,
+          "reported_turbine_count": 21,
+          "representative_hub_height_m": 79.97952,
+          "source_wind_speed_m_s": 7.5102720000000005,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "3",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 16534,
+            "Utility Name": "Sacramento Municipal Util Dist",
+            "Plant Code": 7526,
+            "Plant Name": "Solano Wind",
+            "State": "CA",
+            "County": "Solano",
+            "Generator ID": "3",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 128,
+            "Summer Capacity (MW)": 126,
+            "Winter Capacity (MW)": 126,
+            "Operating Month": 4,
+            "Operating Year": 2012,
+            "Number of Turbines": 55,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V90-1.8",
+            "Design Wind Speed (mph)": 16.8,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 262.4
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 34",
+          "reported_unit_nameplate_mw": 128.0,
+          "reported_unit_net_summer_mw": 126.0,
+          "reported_unit_net_winter_mw": 126.0,
+          "reported_turbine_count": 55,
+          "representative_hub_height_m": 79.97952,
+          "source_wind_speed_m_s": 7.5102720000000005,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "4",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 16534,
+            "Utility Name": "Sacramento Municipal Util Dist",
+            "Plant Code": 7526,
+            "Plant Name": "Solano Wind",
+            "State": "CA",
+            "County": "Solano",
+            "Generator ID": "4",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 85.5,
+            "Summer Capacity (MW)": 85.5,
+            "Winter Capacity (MW)": 85.5,
+            "Operating Month": 5,
+            "Operating Year": 2024,
+            "Number of Turbines": 19,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V150-6.0",
+            "Design Wind Speed (mph)": 16.8,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 262.4
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 35",
+          "reported_unit_nameplate_mw": 85.5,
+          "reported_unit_net_summer_mw": 85.5,
+          "reported_unit_net_winter_mw": 85.5,
+          "reported_turbine_count": 19,
+          "representative_hub_height_m": 79.97952,
+          "source_wind_speed_m_s": 7.5102720000000005,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "2",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 32"
+        },
+        {
+          "generator_id": "2B",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 33"
+        },
+        {
+          "generator_id": "3",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 34"
+        },
+        {
+          "generator_id": "4",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 35"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 7771,
+      "name": "Springview",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 7771,
+        "Plant Name": "Springview",
+        "State": "NE",
+        "County": "Keya Paha",
+        "Latitude": 42.82579,
+        "Longitude": -99.777467,
+        "Balancing Authority Code": "SWPP",
+        "Balancing Authority Name": "Southwest Power Pool",
+        "Transmission or Distribution System Owner": "Nebraska Public Power District",
+        "Grid Voltage (kV)": 12.5,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2535",
+      "units": [
+        {
+          "generator_id": "3",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 58190,
+            "Utility Name": "Bluestem LLC",
+            "Plant Code": 7771,
+            "Plant Name": "Springview",
+            "State": "NE",
+            "County": "Keya Paha",
+            "Generator ID": "3",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 1.5,
+            "Summer Capacity (MW)": 1.5,
+            "Winter Capacity (MW)": 1.5,
+            "Operating Month": 6,
+            "Operating Year": 2011,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "VENSYS",
+            "Predominant Turbine Model Number": "VENSYS77",
+            "Design Wind Speed (mph)": 16,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 201.7
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 36",
+          "reported_unit_nameplate_mw": 1.5,
+          "reported_unit_net_summer_mw": 1.5,
+          "reported_unit_net_winter_mw": 1.5,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 61.47816,
+          "source_wind_speed_m_s": 7.15264,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "4",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 58190,
+            "Utility Name": "Bluestem LLC",
+            "Plant Code": 7771,
+            "Plant Name": "Springview",
+            "State": "NE",
+            "County": "Keya Paha",
+            "Generator ID": "4",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 1.5,
+            "Summer Capacity (MW)": 1.5,
+            "Winter Capacity (MW)": 1.5,
+            "Operating Month": 6,
+            "Operating Year": 2011,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "VENSYS",
+            "Predominant Turbine Model Number": "VENSYS77",
+            "Design Wind Speed (mph)": 16,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 201.7
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 37",
+          "reported_unit_nameplate_mw": 1.5,
+          "reported_unit_net_summer_mw": 1.5,
+          "reported_unit_net_winter_mw": 1.5,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 61.47816,
+          "source_wind_speed_m_s": 7.15264,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "3",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 36"
+        },
+        {
+          "generator_id": "4",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 37"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 7855,
+      "name": "Moorhead Wind Turbine",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 7855,
+        "Plant Name": "Moorhead Wind Turbine",
+        "State": "MN",
+        "County": "Clay",
+        "Latitude": 46.895,
+        "Longitude": -96.7347,
+        "Balancing Authority Code": "SWPP",
+        "Balancing Authority Name": "Southwest Power Pool",
+        "Transmission or Distribution System Owner": "City of Moorhead - (MN)",
+        "Grid Voltage (kV)": 12.47,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2589",
+      "units": [
+        {
+          "generator_id": "8",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 12894,
+            "Utility Name": "City of Moorhead - (MN)",
+            "Plant Code": 7855,
+            "Plant Name": "Moorhead Wind Turbine",
+            "State": "MN",
+            "County": "Clay",
+            "Generator ID": "8",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.7,
+            "Summer Capacity (MW)": 0.7,
+            "Winter Capacity (MW)": 0.7,
+            "Operating Month": 5,
+            "Operating Year": 1999,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "NEG-Micon",
+            "Predominant Turbine Model Number": "NM48/750",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 180
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 38",
+          "reported_unit_nameplate_mw": 0.7,
+          "reported_unit_net_summer_mw": 0.7,
+          "reported_unit_net_winter_mw": 0.7,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 54.864000000000004,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "9",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 12894,
+            "Utility Name": "City of Moorhead - (MN)",
+            "Plant Code": 7855,
+            "Plant Name": "Moorhead Wind Turbine",
+            "State": "MN",
+            "County": "Clay",
+            "Generator ID": "9",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 0.7,
+            "Summer Capacity (MW)": 0.7,
+            "Winter Capacity (MW)": 0.7,
+            "Operating Month": 9,
+            "Operating Year": 2001,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "NEG-Micon",
+            "Predominant Turbine Model Number": "NM48/750",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 180
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 39",
+          "reported_unit_nameplate_mw": 0.7,
+          "reported_unit_net_summer_mw": 0.7,
+          "reported_unit_net_winter_mw": 0.7,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 54.864000000000004,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "8",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 38"
+        },
+        {
+          "generator_id": "9",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 39"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 7886,
+      "name": "Wind Turbine",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 7886,
+        "Plant Name": "Wind Turbine",
+        "State": "WI",
+        "County": "Kewaunee",
+        "Latitude": 44.6694,
+        "Longitude": -87.6333,
+        "Balancing Authority Code": "MISO",
+        "Balancing Authority Name": "Midcontinent Independent Transmission System Operator, Inc..",
+        "Transmission or Distribution System Owner": "Wisconsin Public Service Corp",
+        "Grid Voltage (kV)": 24.9,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2612",
+      "units": [
+        {
+          "generator_id": "1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 11479,
+            "Utility Name": "Madison Gas & Electric Co",
+            "Plant Code": 7886,
+            "Plant Name": "Wind Turbine",
+            "State": "WI",
+            "County": "Kewaunee",
+            "Generator ID": "1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 11,
+            "Summer Capacity (MW)": 11,
+            "Winter Capacity (MW)": 11,
+            "Operating Month": 6,
+            "Operating Year": 1999,
+            "Number of Turbines": 17,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V47-660",
+            "Design Wind Speed (mph)": 18,
+            "Wind Quality Class": 3,
+            "Turbine Hub Height (Feet)": 213
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 40",
+          "reported_unit_nameplate_mw": 11.0,
+          "reported_unit_net_summer_mw": 11.0,
+          "reported_unit_net_winter_mw": 11.0,
+          "reported_turbine_count": 17,
+          "representative_hub_height_m": 64.92240000000001,
+          "source_wind_speed_m_s": 8.04672,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 40"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 7936,
+      "name": "Nine Canyon",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 7936,
+        "Plant Name": "Nine Canyon",
+        "State": "WA",
+        "County": "Benton",
+        "Latitude": 46.0958,
+        "Longitude": -119.0964,
+        "Balancing Authority Code": "BPAT",
+        "Balancing Authority Name": "Bonneville Power Administration",
+        "Transmission or Distribution System Owner": "PUD No 1 of Benton County",
+        "Grid Voltage (kV)": 115,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2649",
+      "units": [
+        {
+          "generator_id": "1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 20160,
+            "Utility Name": "Energy Northwest",
+            "Plant Code": 7936,
+            "Plant Name": "Nine Canyon",
+            "State": "WA",
+            "County": "Benton",
+            "Generator ID": "1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 95.9,
+            "Summer Capacity (MW)": 95,
+            "Winter Capacity (MW)": 95,
+            "Operating Month": 9,
+            "Operating Year": 2002,
+            "Number of Turbines": 63,
+            "Predominant Turbine Manufacturer": "Siemens",
+            "Predominant Turbine Model Number": "SWT-1.3-62",
+            "Design Wind Speed (mph)": 14,
+            "Wind Quality Class": 4,
+            "Turbine Hub Height (Feet)": 200
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 41",
+          "reported_unit_nameplate_mw": 95.9,
+          "reported_unit_net_summer_mw": 95.0,
+          "reported_unit_net_winter_mw": 95.0,
+          "reported_turbine_count": 63,
+          "representative_hub_height_m": 60.96,
+          "source_wind_speed_m_s": 6.25856,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 41"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 7966,
+      "name": "Iowa Distributed Wind Generation Project",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 7966,
+        "Plant Name": "Iowa Distributed Wind Generation Project",
+        "State": "IA",
+        "County": "Kossuth",
+        "Latitude": 43.034722,
+        "Longitude": -94.140556,
+        "Balancing Authority Code": "SWPP",
+        "Balancing Authority Name": "Southwest Power Pool",
+        "Transmission or Distribution System Owner": "City of Algona - (IA)",
+        "Grid Voltage (kV)": 13.8,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2669",
+      "units": [
+        {
+          "generator_id": "IDWG",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 309,
+            "Utility Name": "City of Algona - (IA)",
+            "Plant Code": 7966,
+            "Plant Name": "Iowa Distributed Wind Generation Project",
+            "State": "IA",
+            "County": "Kossuth",
+            "Generator ID": "IDWG",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Electric Utility",
+            "Sector": 1,
+            "Nameplate Capacity (MW)": 2.3,
+            "Summer Capacity (MW)": 2.3,
+            "Winter Capacity (MW)": 2.3,
+            "Operating Month": 6,
+            "Operating Year": 2000,
+            "Number of Turbines": 3,
+            "Predominant Turbine Manufacturer": "Zond",
+            "Predominant Turbine Model Number": "Z-50",
+            "Design Wind Speed (mph)": 15.7,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 165
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 42",
+          "reported_unit_nameplate_mw": 2.3,
+          "reported_unit_net_summer_mw": 2.3,
+          "reported_unit_net_winter_mw": 2.3,
+          "reported_turbine_count": 3,
+          "representative_hub_height_m": 50.292,
+          "source_wind_speed_m_s": 7.018528,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "IDWG",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 42"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 10005,
+      "name": "Dinosaur Point",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 10005,
+        "Plant Name": "Dinosaur Point",
+        "State": "CA",
+        "County": "Merced",
+        "Latitude": 37.0478,
+        "Longitude": -121.1708,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Pacific Gas & Electric Co",
+        "Grid Voltage (kV)": 70,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2763",
+      "units": [
+        {
+          "generator_id": "WTGS",
+          "status": "out of service",
+          "status_code": "OS",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 9397,
+            "Utility Name": "International Turbine Res Inc",
+            "Plant Code": 10005,
+            "Plant Name": "Dinosaur Point",
+            "State": "CA",
+            "County": "Merced",
+            "Generator ID": "WTGS",
+            "Status": "OS",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 17.4,
+            "Summer Capacity (MW)": 17,
+            "Winter Capacity (MW)": 16,
+            "Operating Month": 5,
+            "Operating Year": 1988,
+            "Number of Turbines": 161,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V17-90",
+            "Design Wind Speed (mph)": 15.4,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 80
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 43",
+          "reported_unit_nameplate_mw": 17.4,
+          "reported_unit_net_summer_mw": 17.0,
+          "reported_unit_net_winter_mw": 16.0,
+          "reported_turbine_count": 161,
+          "representative_hub_height_m": 24.384,
+          "source_wind_speed_m_s": 6.884416,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "WTGS",
+          "status_code": "OS",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 43"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 10191,
+      "name": "Tehachapi Wind Resource I",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 10191,
+        "Plant Name": "Tehachapi Wind Resource I",
+        "State": "CA",
+        "County": "Kern",
+        "Latitude": 35.060556,
+        "Longitude": -118.389722,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 12,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2829",
+      "units": [
+        {
+          "generator_id": "EXIS",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2719,
+            "Utility Name": "CalWind Resources Inc",
+            "Plant Code": 10191,
+            "Plant Name": "Tehachapi Wind Resource I",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "EXIS",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 8.7,
+            "Summer Capacity (MW)": 8.7,
+            "Winter Capacity (MW)": 8.7,
+            "Operating Month": 12,
+            "Operating Year": 1984,
+            "Number of Turbines": 134,
+            "Predominant Turbine Manufacturer": "Nordtank",
+            "Predominant Turbine Model Number": "NTK 65/13",
+            "Design Wind Speed (mph)": 17,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 80
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 44",
+          "reported_unit_nameplate_mw": 8.7,
+          "reported_unit_net_summer_mw": 8.7,
+          "reported_unit_net_winter_mw": 8.7,
+          "reported_turbine_count": 134,
+          "representative_hub_height_m": 24.384,
+          "source_wind_speed_m_s": 7.59968,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "EXIS",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 44"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 10586,
+      "name": "Cameron Ridge LLC",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 10586,
+        "Plant Name": "Cameron Ridge LLC",
+        "State": "CA",
+        "County": "Kern",
+        "Latitude": 35.075,
+        "Longitude": -118.3158,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 66.6,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2980",
+      "units": [
+        {
+          "generator_id": "EXIS",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 10586,
+            "Plant Name": "Cameron Ridge LLC",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "EXIS",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 59.6,
+            "Summer Capacity (MW)": 59.6,
+            "Winter Capacity (MW)": 59.6,
+            "Operating Month": 12,
+            "Operating Year": 1984,
+            "Number of Turbines": 114,
+            "Predominant Turbine Manufacturer": "Micon",
+            "Predominant Turbine Model Number": "M700-225/40",
+            "Design Wind Speed (mph)": 22.4,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 180
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 45",
+          "reported_unit_nameplate_mw": 59.6,
+          "reported_unit_net_summer_mw": 59.6,
+          "reported_unit_net_winter_mw": 59.6,
+          "reported_turbine_count": 114,
+          "representative_hub_height_m": 54.864000000000004,
+          "source_wind_speed_m_s": 10.013696,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "EXIS",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 45"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 10597,
+      "name": "Ridgetop Energy LLC",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 10597,
+        "Plant Name": "Ridgetop Energy LLC",
+        "State": "CA",
+        "County": "Kern",
+        "Latitude": 35.0697,
+        "Longitude": -118.3167,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 66.6,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 2982",
+      "units": [
+        {
+          "generator_id": "WGN1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 10597,
+            "Plant Name": "Ridgetop Energy LLC",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "WGN1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 29,
+            "Summer Capacity (MW)": 29,
+            "Winter Capacity (MW)": 29,
+            "Operating Month": 1,
+            "Operating Year": 1984,
+            "Number of Turbines": 239,
+            "Predominant Turbine Manufacturer": "Nordtank",
+            "Predominant Turbine Model Number": "NTK 75/15",
+            "Design Wind Speed (mph)": 22.4,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 85
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 46",
+          "reported_unit_nameplate_mw": 29.0,
+          "reported_unit_net_summer_mw": 29.0,
+          "reported_unit_net_winter_mw": 29.0,
+          "reported_turbine_count": 239,
+          "representative_hub_height_m": 25.908,
+          "source_wind_speed_m_s": 10.013696,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "WGN1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 46"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 10718,
+      "name": "Karen Avenue Wind Farm",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 10718,
+        "Plant Name": "Karen Avenue Wind Farm",
+        "State": "CA",
+        "County": "Riverside",
+        "Latitude": 33.92194,
+        "Longitude": -116.56222,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 34.5,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3028",
+      "units": [
+        {
+          "generator_id": "WND",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 16630,
+            "Utility Name": "San Gorgonio Farms Inc",
+            "Plant Code": 10718,
+            "Plant Name": "Karen Avenue Wind Farm",
+            "State": "CA",
+            "County": "Riverside",
+            "Generator ID": "WND",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 11.7,
+            "Summer Capacity (MW)": 11.7,
+            "Winter Capacity (MW)": 11.7,
+            "Operating Month": 1,
+            "Operating Year": 1985,
+            "Number of Turbines": 12,
+            "Predominant Turbine Manufacturer": "GE",
+            "Predominant Turbine Model Number": "1.5 S",
+            "Design Wind Speed (mph)": 21,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 185
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 47",
+          "reported_unit_nameplate_mw": 11.7,
+          "reported_unit_net_summer_mw": 11.7,
+          "reported_unit_net_winter_mw": 11.7,
+          "reported_turbine_count": 12,
+          "representative_hub_height_m": 56.388000000000005,
+          "source_wind_speed_m_s": 9.38784,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "WND",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 47"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 10823,
+      "name": "Deer Island Treatment Plant",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 10823,
+        "Plant Name": "Deer Island Treatment Plant",
+        "State": "MA",
+        "County": "Suffolk",
+        "Latitude": 42.353333,
+        "Longitude": -70.962778,
+        "Balancing Authority Code": "ISNE",
+        "Balancing Authority Name": "ISO New England Inc.",
+        "Transmission or Distribution System Owner": "NSTAR Electric Company",
+        "Grid Voltage (kV)": 14,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3079",
+      "units": [
+        {
+          "generator_id": "WT101",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 11427,
+            "Utility Name": "Massachusetts Wtr Rauth-Deer I",
+            "Plant Code": 10823,
+            "Plant Name": "Deer Island Treatment Plant",
+            "State": "MA",
+            "County": "Suffolk",
+            "Generator ID": "WT101",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Commercial CHP",
+            "Sector": 5,
+            "Nameplate Capacity (MW)": 0.6,
+            "Summer Capacity (MW)": 0.6,
+            "Winter Capacity (MW)": 0.6,
+            "Operating Month": 11,
+            "Operating Year": 2009,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "PS-600",
+            "Design Wind Speed (mph)": 20.4,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 195
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 48",
+          "reported_unit_nameplate_mw": 0.6,
+          "reported_unit_net_summer_mw": 0.6,
+          "reported_unit_net_winter_mw": 0.6,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 59.436,
+          "source_wind_speed_m_s": 9.119615999999999,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "WT102",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 11427,
+            "Utility Name": "Massachusetts Wtr Rauth-Deer I",
+            "Plant Code": 10823,
+            "Plant Name": "Deer Island Treatment Plant",
+            "State": "MA",
+            "County": "Suffolk",
+            "Generator ID": "WT102",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "Commercial CHP",
+            "Sector": 5,
+            "Nameplate Capacity (MW)": 0.6,
+            "Summer Capacity (MW)": 0.6,
+            "Winter Capacity (MW)": 0.6,
+            "Operating Month": 11,
+            "Operating Year": 2009,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "PS-600",
+            "Design Wind Speed (mph)": 20.4,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 195
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 49",
+          "reported_unit_nameplate_mw": 0.6,
+          "reported_unit_net_summer_mw": 0.6,
+          "reported_unit_net_winter_mw": 0.6,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 59.436,
+          "source_wind_speed_m_s": 9.119615999999999,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "WT101",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 48"
+        },
+        {
+          "generator_id": "WT102",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 49"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50281,
+      "name": "San Gorgonio Farms Wind Farm",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50281,
+        "Plant Name": "San Gorgonio Farms Wind Farm",
+        "State": "CA",
+        "County": "Riverside",
+        "Latitude": 33.926111,
+        "Longitude": -116.615,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 115,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3235",
+      "units": [
+        {
+          "generator_id": "WGEN",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 16630,
+            "Utility Name": "San Gorgonio Farms Inc",
+            "Plant Code": 50281,
+            "Plant Name": "San Gorgonio Farms Wind Farm",
+            "State": "CA",
+            "County": "Riverside",
+            "Generator ID": "WGEN",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 31,
+            "Summer Capacity (MW)": 31,
+            "Winter Capacity (MW)": 31,
+            "Operating Month": 3,
+            "Operating Year": 1983,
+            "Number of Turbines": 111,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V42-600",
+            "Design Wind Speed (mph)": 22,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 131
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 50",
+          "reported_unit_nameplate_mw": 31.0,
+          "reported_unit_net_summer_mw": 31.0,
+          "reported_unit_net_winter_mw": 31.0,
+          "reported_turbine_count": 111,
+          "representative_hub_height_m": 39.9288,
+          "source_wind_speed_m_s": 9.83488,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "WGEN",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 50"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50532,
+      "name": "Victory Garden (Tehachapi)",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50532,
+        "Plant Name": "Victory Garden (Tehachapi)",
+        "State": "CA",
+        "County": "Kern",
+        "Latitude": 35.0686,
+        "Longitude": -118.3833,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 66,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3343",
+      "units": [
+        {
+          "generator_id": "15SLE",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 56899,
+            "Utility Name": "Wind Stream Operations LLC",
+            "Plant Code": 50532,
+            "Plant Name": "Victory Garden (Tehachapi)",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "15SLE",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 1.5,
+            "Summer Capacity (MW)": 1.5,
+            "Winter Capacity (MW)": 1.5,
+            "Operating Month": 5,
+            "Operating Year": 2000,
+            "Number of Turbines": 1,
+            "Predominant Turbine Manufacturer": "GE",
+            "Predominant Turbine Model Number": "1.5 S",
+            "Design Wind Speed (mph)": 19.5,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 210
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 51",
+          "reported_unit_nameplate_mw": 1.5,
+          "reported_unit_net_summer_mw": 1.5,
+          "reported_unit_net_winter_mw": 1.5,
+          "reported_turbine_count": 1,
+          "representative_hub_height_m": 64.00800000000001,
+          "source_wind_speed_m_s": 8.71728,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "WGNS",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 56899,
+            "Utility Name": "Wind Stream Operations LLC",
+            "Plant Code": 50532,
+            "Plant Name": "Victory Garden (Tehachapi)",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "WGNS",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 24.6,
+            "Summer Capacity (MW)": 17.3,
+            "Winter Capacity (MW)": 17.3,
+            "Operating Month": 12,
+            "Operating Year": 1981,
+            "Number of Turbines": 241,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V15",
+            "Design Wind Speed (mph)": 16.5,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 80
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 52",
+          "reported_unit_nameplate_mw": 24.6,
+          "reported_unit_net_summer_mw": 17.3,
+          "reported_unit_net_winter_mw": 17.3,
+          "reported_turbine_count": 241,
+          "representative_hub_height_m": 24.384,
+          "source_wind_speed_m_s": 7.37616,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "15SLE",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 51"
+        },
+        {
+          "generator_id": "WGNS",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 52"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50533,
+      "name": "Painted Hills Wind Park",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50533,
+        "Plant Name": "Painted Hills Wind Park",
+        "State": "CA",
+        "County": "Riverside",
+        "Latitude": 33.9369,
+        "Longitude": -116.6183,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 220,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3344",
+      "units": [
+        {
+          "generator_id": "PHW",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 50533,
+            "Plant Name": "Painted Hills Wind Park",
+            "State": "CA",
+            "County": "Riverside",
+            "Generator ID": "PHW",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 46.8,
+            "Summer Capacity (MW)": 46.8,
+            "Winter Capacity (MW)": 46.8,
+            "Operating Month": 4,
+            "Operating Year": 2021,
+            "Number of Turbines": 13,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V112-3.45",
+            "Design Wind Speed (mph)": 22,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 300.2
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 53",
+          "reported_unit_nameplate_mw": 46.8,
+          "reported_unit_net_summer_mw": 46.8,
+          "reported_unit_net_winter_mw": 46.8,
+          "reported_turbine_count": 13,
+          "representative_hub_height_m": 91.50096,
+          "source_wind_speed_m_s": 9.83488,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "PHW",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 53"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50535,
+      "name": "Mesa Wind Power LLC",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50535,
+        "Plant Name": "Mesa Wind Power LLC",
+        "State": "CA",
+        "County": "Riverside",
+        "Latitude": 33.9461,
+        "Longitude": -116.6769,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 133,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3346",
+      "units": [
+        {
+          "generator_id": "MWD1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 66119,
+            "Utility Name": "Mesa Wind Power LLC",
+            "Plant Code": 50535,
+            "Plant Name": "Mesa Wind Power LLC",
+            "State": "CA",
+            "County": "Riverside",
+            "Generator ID": "MWD1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 30,
+            "Summer Capacity (MW)": 30,
+            "Winter Capacity (MW)": 30,
+            "Operating Month": 6,
+            "Operating Year": 2024,
+            "Number of Turbines": 8,
+            "Predominant Turbine Manufacturer": "Vestas",
+            "Predominant Turbine Model Number": "V117-4.2",
+            "Design Wind Speed (mph)": 21.2,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 91.5
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 54",
+          "reported_unit_nameplate_mw": 30.0,
+          "reported_unit_net_summer_mw": 30.0,
+          "reported_unit_net_winter_mw": 30.0,
+          "reported_turbine_count": 8,
+          "representative_hub_height_m": 27.889200000000002,
+          "source_wind_speed_m_s": 9.477248,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "MWD1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 54"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50536,
+      "name": "Sky River Wind Energy Center",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50536,
+        "Plant Name": "Sky River Wind Energy Center",
+        "State": "CA",
+        "County": "Kern",
+        "Latitude": 35.2608,
+        "Longitude": -118.2469,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 230,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3347",
+      "units": [
+        {
+          "generator_id": "SRW1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 64156,
+            "Utility Name": "Sky River Wind LLC",
+            "Plant Code": 50536,
+            "Plant Name": "Sky River Wind Energy Center",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "SRW1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 60.2,
+            "Summer Capacity (MW)": 60.2,
+            "Winter Capacity (MW)": 60.2,
+            "Operating Month": 9,
+            "Operating Year": 2021,
+            "Number of Turbines": 21,
+            "Predominant Turbine Manufacturer": "Siemens Gamesa",
+            "Predominant Turbine Model Number": "SG 2.9-129",
+            "Design Wind Speed (mph)": 23,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 300
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 55",
+          "reported_unit_nameplate_mw": 60.2,
+          "reported_unit_net_summer_mw": 60.2,
+          "reported_unit_net_winter_mw": 60.2,
+          "reported_turbine_count": 21,
+          "representative_hub_height_m": 91.44,
+          "source_wind_speed_m_s": 10.28192,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "SRW1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 55"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50552,
+      "name": "Salka Cabazon Wind",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50552,
+        "Plant Name": "Salka Cabazon Wind",
+        "State": "CA",
+        "County": "Riverside",
+        "Latitude": 33.914986,
+        "Longitude": -116.71026,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 115,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3355",
+      "units": [
+        {
+          "generator_id": "WGNS",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 66081,
+            "Utility Name": "Salka Cabazon Wind LLC",
+            "Plant Code": 50552,
+            "Plant Name": "Salka Cabazon Wind",
+            "State": "CA",
+            "County": "Riverside",
+            "Generator ID": "WGNS",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 38.9,
+            "Summer Capacity (MW)": 38.9,
+            "Winter Capacity (MW)": 38.9,
+            "Operating Month": 1,
+            "Operating Year": 1999,
+            "Number of Turbines": 52,
+            "Predominant Turbine Manufacturer": "Zond",
+            "Predominant Turbine Model Number": "Z-48",
+            "Design Wind Speed (mph)": 20,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 213
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 56",
+          "reported_unit_nameplate_mw": 38.9,
+          "reported_unit_net_summer_mw": 38.9,
+          "reported_unit_net_winter_mw": 38.9,
+          "reported_turbine_count": 52,
+          "representative_hub_height_m": 64.92240000000001,
+          "source_wind_speed_m_s": 8.9408,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "WGNS",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 56"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50553,
+      "name": "Edom Hills Project 1 LLC",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50553,
+        "Plant Name": "Edom Hills Project 1 LLC",
+        "State": "CA",
+        "County": "Riverside",
+        "Latitude": 33.881667,
+        "Longitude": -116.460278,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 138,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3356",
+      "units": [
+        {
+          "generator_id": "1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 65490,
+            "Utility Name": "Edom Hills Project 1 LLC",
+            "Plant Code": 50553,
+            "Plant Name": "Edom Hills Project 1 LLC",
+            "State": "CA",
+            "County": "Riverside",
+            "Generator ID": "1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 20,
+            "Summer Capacity (MW)": 20,
+            "Winter Capacity (MW)": 20,
+            "Operating Month": 9,
+            "Operating Year": 2008,
+            "Number of Turbines": 8,
+            "Predominant Turbine Manufacturer": "Clipper",
+            "Predominant Turbine Model Number": "Liberty C93",
+            "Design Wind Speed (mph)": 19,
+            "Wind Quality Class": 2,
+            "Turbine Hub Height (Feet)": 262.4
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 57",
+          "reported_unit_nameplate_mw": 20.0,
+          "reported_unit_net_summer_mw": 20.0,
+          "reported_unit_net_winter_mw": 20.0,
+          "reported_turbine_count": 8,
+          "representative_hub_height_m": 79.97952,
+          "source_wind_speed_m_s": 8.49376,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 57"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50690,
+      "name": "San Gorgonio Westwinds II LLC",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50690,
+        "Plant Name": "San Gorgonio Westwinds II LLC",
+        "State": "CA",
+        "County": "Riverside",
+        "Latitude": 33.934,
+        "Longitude": -116.5781,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 34,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3410",
+      "units": [
+        {
+          "generator_id": "GEN1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 50690,
+            "Plant Name": "San Gorgonio Westwinds II LLC",
+            "State": "CA",
+            "County": "Riverside",
+            "Generator ID": "GEN1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 43.4,
+            "Summer Capacity (MW)": 43.4,
+            "Winter Capacity (MW)": 43.4,
+            "Operating Month": 6,
+            "Operating Year": 1999,
+            "Number of Turbines": 62,
+            "Predominant Turbine Manufacturer": "Micon",
+            "Predominant Turbine Model Number": "M700-225/40",
+            "Design Wind Speed (mph)": 22.4,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 180
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 58",
+          "reported_unit_nameplate_mw": 43.4,
+          "reported_unit_net_summer_mw": 43.4,
+          "reported_unit_net_winter_mw": 43.4,
+          "reported_turbine_count": 62,
+          "representative_hub_height_m": 54.864000000000004,
+          "source_wind_speed_m_s": 10.013696,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "GEN1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 58"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50754,
+      "name": "Oak Creek Energy Systems I",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50754,
+        "Plant Name": "Oak Creek Energy Systems I",
+        "State": "CA",
+        "County": "Kern",
+        "Latitude": 35.043889,
+        "Longitude": -118.276388,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 66,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3433",
+      "units": [
+        {
+          "generator_id": "GEN1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 50754,
+            "Plant Name": "Oak Creek Energy Systems I",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "GEN1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 3.5,
+            "Summer Capacity (MW)": 3.5,
+            "Winter Capacity (MW)": 3.5,
+            "Operating Month": 6,
+            "Operating Year": 1982,
+            "Number of Turbines": 37,
+            "Predominant Turbine Manufacturer": "Nordtank",
+            "Predominant Turbine Model Number": "NTK 75/15",
+            "Design Wind Speed (mph)": 22.4,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 85
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 59",
+          "reported_unit_nameplate_mw": 3.5,
+          "reported_unit_net_summer_mw": 3.5,
+          "reported_unit_net_winter_mw": 3.5,
+          "reported_turbine_count": 37,
+          "representative_hub_height_m": 25.908,
+          "source_wind_speed_m_s": 10.013696,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "GEN2",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 50754,
+            "Plant Name": "Oak Creek Energy Systems I",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "GEN2",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 4.2,
+            "Summer Capacity (MW)": 4.2,
+            "Winter Capacity (MW)": 4.2,
+            "Operating Month": 12,
+            "Operating Year": 1993,
+            "Number of Turbines": 7,
+            "Predominant Turbine Manufacturer": "Micon",
+            "Predominant Turbine Model Number": "M750-400/100",
+            "Design Wind Speed (mph)": 22.4,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 180
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 60",
+          "reported_unit_nameplate_mw": 4.2,
+          "reported_unit_net_summer_mw": 4.2,
+          "reported_unit_net_winter_mw": 4.2,
+          "reported_turbine_count": 7,
+          "representative_hub_height_m": 54.864000000000004,
+          "source_wind_speed_m_s": 10.013696,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "GEN3",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 50754,
+            "Plant Name": "Oak Creek Energy Systems I",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "GEN3",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 23.1,
+            "Summer Capacity (MW)": 23.1,
+            "Winter Capacity (MW)": 23.1,
+            "Operating Month": 6,
+            "Operating Year": 1999,
+            "Number of Turbines": 33,
+            "Predominant Turbine Manufacturer": "Micon",
+            "Predominant Turbine Model Number": "M750-400/100",
+            "Design Wind Speed (mph)": 22.4,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 180
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 61",
+          "reported_unit_nameplate_mw": 23.1,
+          "reported_unit_net_summer_mw": 23.1,
+          "reported_unit_net_winter_mw": 23.1,
+          "reported_turbine_count": 33,
+          "representative_hub_height_m": 54.864000000000004,
+          "source_wind_speed_m_s": 10.013696,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        },
+        {
+          "generator_id": "GEN4",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 50754,
+            "Plant Name": "Oak Creek Energy Systems I",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "GEN4",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 3.7,
+            "Summer Capacity (MW)": 3.7,
+            "Winter Capacity (MW)": 3.7,
+            "Operating Month": 6,
+            "Operating Year": 1999,
+            "Number of Turbines": 4,
+            "Predominant Turbine Manufacturer": "Micon",
+            "Predominant Turbine Model Number": "M750-400/100",
+            "Design Wind Speed (mph)": 22.4,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 180
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 62",
+          "reported_unit_nameplate_mw": 3.7,
+          "reported_unit_net_summer_mw": 3.7,
+          "reported_unit_net_winter_mw": 3.7,
+          "reported_turbine_count": 4,
+          "representative_hub_height_m": 54.864000000000004,
+          "source_wind_speed_m_s": 10.013696,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "GEN1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 59"
+        },
+        {
+          "generator_id": "GEN2",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 60"
+        },
+        {
+          "generator_id": "GEN3",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 61"
+        },
+        {
+          "generator_id": "GEN4",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 62"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50820,
+      "name": "East Winds Project",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50820,
+        "Plant Name": "East Winds Project",
+        "State": "CA",
+        "County": "Riverside",
+        "Latitude": 33.890913,
+        "Longitude": -116.541515,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 34,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3455",
+      "units": [
+        {
+          "generator_id": "GEN1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 50820,
+            "Plant Name": "East Winds Project",
+            "State": "CA",
+            "County": "Riverside",
+            "Generator ID": "GEN1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 3,
+            "Summer Capacity (MW)": 3,
+            "Winter Capacity (MW)": 3,
+            "Operating Month": 1,
+            "Operating Year": 1985,
+            "Number of Turbines": 5,
+            "Predominant Turbine Manufacturer": "Micon",
+            "Predominant Turbine Model Number": "M1500-600/150",
+            "Design Wind Speed (mph)": 15,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 151
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 63",
+          "reported_unit_nameplate_mw": 3.0,
+          "reported_unit_net_summer_mw": 3.0,
+          "reported_unit_net_winter_mw": 3.0,
+          "reported_turbine_count": 5,
+          "representative_hub_height_m": 46.0248,
+          "source_wind_speed_m_s": 6.7056,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "GEN1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 63"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    },
+    {
+      "plant_code": 50821,
+      "name": "Mojave 16/17/18",
+      "year": 2025,
+      "plant_context": {
+        "Plant Code": 50821,
+        "Plant Name": "Mojave 16/17/18",
+        "State": "CA",
+        "County": "Kern",
+        "Latitude": 35.045,
+        "Longitude": -118.2642,
+        "Balancing Authority Code": "CISO",
+        "Balancing Authority Name": "California Independent System Operator",
+        "Transmission or Distribution System Owner": "Southern California Edison Co",
+        "Grid Voltage (kV)": 230,
+        "Grid Voltage 2 (kV)": null,
+        "Grid Voltage 3 (kV)": null
+      },
+      "plant_locator": "2___Plant_Y2025.xlsx / Plant / row 3456",
+      "units": [
+        {
+          "generator_id": "GEN1",
+          "status": "operating",
+          "status_code": "OP",
+          "status_as_of": "2025-12-31",
+          "original": {
+            "Utility ID": 2770,
+            "Utility Name": "Terra-Gen Operating Co-Wind",
+            "Plant Code": 50821,
+            "Plant Name": "Mojave 16/17/18",
+            "State": "CA",
+            "County": "Kern",
+            "Generator ID": "GEN1",
+            "Status": "OP",
+            "Technology": "Onshore Wind Turbine",
+            "Prime Mover": "WT",
+            "Sector Name": "IPP Non-CHP",
+            "Sector": 2,
+            "Nameplate Capacity (MW)": 88.5,
+            "Summer Capacity (MW)": 88.5,
+            "Winter Capacity (MW)": 88.5,
+            "Operating Month": 12,
+            "Operating Year": 1989,
+            "Number of Turbines": 238,
+            "Predominant Turbine Manufacturer": "Mitsubishi",
+            "Predominant Turbine Model Number": "MWT-250",
+            "Design Wind Speed (mph)": 22.4,
+            "Wind Quality Class": 1,
+            "Turbine Hub Height (Feet)": 100
+          },
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 64",
+          "reported_unit_nameplate_mw": 88.5,
+          "reported_unit_net_summer_mw": 88.5,
+          "reported_unit_net_winter_mw": 88.5,
+          "reported_turbine_count": 238,
+          "representative_hub_height_m": 30.48,
+          "source_wind_speed_m_s": 10.013696,
+          "normalization": {
+            "height": "feet * 0.3048; representative across generator turbines",
+            "speed": "mph * 0.44704; workbook says Design Wind Speed, instructions p15 say representative annual average; method, dates and height unspecified"
+          },
+          "fleet_completeness": "predominant manufacturer/model only; mixed fleet possible; not exact OEM configuration",
+          "capacity_scope": "one reported generator or generator aggregation, not whole plant or current installed capacity"
+        }
+      ],
+      "operable_context": [
+        {
+          "generator_id": "GEN1",
+          "status_code": "OP",
+          "locator": "3_2_Wind_Y2025.xlsx / Operable / row 64"
+        }
+      ],
+      "scope": "Complete Operable wind plant-code partition; OP/OS/OA stay distinct. Generator observations are not a current whole-farm operating census or hybrid/repowering reconciliation.",
+      "plant_coordinate_scope": "EIA whole-plant point; accuracy unspecified; not individual turbine coordinates",
+      "plant_code_range": [
+        1,
+        51999
+      ]
+    }
+  ],
+  "snapshot_sha256": {
+    "sources.json": "7e4a4bbb6a4dbc0a89d7745c6837d710a0c5b9e9248ce69917f964687dcb698d",
+    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
+    "manifest.json": "60afc70cfaf3fef58efdfb931f323a9b4accfdadce882ec836faebd8fb3fbd5e",
+    "equipment.parquet": "e8e95a3d7946a2da8152c46a88a75fb6eb6c494d291f1d259895ec801cc5166d",
+    "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
+    "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
+    "projects.parquet": "99aeb13ffc86edc340c8dd3b9cb261b67638536ecc782cc3b1506ac357b5c692"
+  },
+  "equipment_followup": {
+    "queries": [
+      "site.goldwind.com GWH175 certificate",
+      "GWH182 26016 certificate"
+    ],
+    "results": [
+      "https://www.icmq.it/aziende/goldwind-science---technology-co--ltd/4901",
+      "https://www.linkedin.com/posts/goldwind_goldwind-is-pleased-to-announce-that-our-activity-7209823765617131521-PjuI"
+    ],
+    "decision": "Search discovery only; no original type-certificate technical table recovered. Existing geometry/design-life conflicts unchanged; no current certification-validity inference.",
+    "original_bytes_checksum": null
+  }
+}

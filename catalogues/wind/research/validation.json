@@ -1,43 +1,33 @@
 {
-  "batch": "2026-11-04-2535",
-  "validated_base": "9f36b0f35a0090a4908741704af883be376466b6",
-  "iteration_parent": "cdfbc263fc64e287523a5aaf51cb9c7550268cde",
-  "bounded_batch_parent": "7c563c3a76decaf99f83f1d18a2ffa2c2bd764ab",
+  "batch": "2026-11-04-2635",
+  "iteration_parent": "d5d2cf23d688cb3f3e01a1d0bd6d8415401b945f",
   "local": {
-    "focused_pytest": "231 passed:202 Wind and29 references; includes15 EIA and12 EPD tests",
-    "viewer": "19 Node tests and viewer syntax passed",
-    "quality": "Ruff lint/format971files,ty,repository4463files,citations and whitespace passed",
-    "catalogue": "22181 records validated;22109 preceding records unchanged;66 enrichments preserve prior evidence and creation times",
-    "capacity": "All six capacity-category totals unchanged; unresolved historical scopes remain excluded",
-    "replay": "All129 EIA candidates reproduced from pinned workbooks;58 enrichments replay and idempotence passed; preceding seven EPD model replay passed",
-    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
-    "docs": "Strict Sphinx with gallery execution disabled passed;611HTML pages passed links/assets",
-    "example": "Offline Wind gallery passed",
-    "packages": "Three wheels and three source distributions rebuilt"
+    "tests": "232 focused Python tests passed;20 Node tests passed;viewer syntax passed",
+    "quality": "Ruff lint/format,ty,citations,repository4464files and diff checks passed",
+    "catalogue": "22181 valid;22161 unchanged;20 enriched preserve prior scalar facts, IDs and creation timestamps;all6capacity totals unchanged",
+    "replay": "20 enrichment replay/idempotence passed;original workbook bytes match registered prior hashes",
+    "snapshots": "Two seven-file builds byte-identical;every Parquet column ZSTD",
+    "example": "Offline Wind example passed",
+    "packages": "Three wheels and three source distributions rebuilt",
+    "docs": "Strict Sphinx failed twice with ENOSPC during unchanged PV export. Not claimed passed. Post-attempt611page link/assets check passed."
   },
   "snapshot_sha256": {
-    "sources.json": "0881e7a7bcae46e76521c61857183efb59b7d4c23c84852e1a15de16af148c88",
+    "sources.json": "7e4a4bbb6a4dbc0a89d7745c6837d710a0c5b9e9248ce69917f964687dcb698d",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "b177d2b7e21d00eca4d05c352b10ae18713ee436c92e403c9585ee1ad2efe73c",
+    "manifest.json": "60afc70cfaf3fef58efdfb931f323a9b4accfdadce882ec836faebd8fb3fbd5e",
     "equipment.parquet": "e8e95a3d7946a2da8152c46a88a75fb6eb6c494d291f1d259895ec801cc5166d",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "8a14d240792c508e3c1e4e0ebf4d0c2ce5de45d26d255438bc775f2b3751b150"
+    "projects.parquet": "99aeb13ffc86edc340c8dd3b9cb261b67638536ecc782cc3b1506ac357b5c692"
+  },
+  "remote_ci": {
+    "prior_head": "d5d2cf23d688cb3f3e01a1d0bd6d8415401b945f",
+    "prior_result": "Python and Documentation workflows passed",
+    "new_head": "Not yet published"
   },
   "not_executed": [
-    "Full repository Python suite",
-    "Full executable gallery",
+    "Full local repository test suite",
     "Interactive browser",
-    "Independent turbine performance verification"
-  ],
-  "remote_ci": {
-    "first_checkpoint": "7c563c3a76decaf99f83f1d18a2ffa2c2bd764ab",
-    "first_checkpoint_result": "Python quality/tests and Documentation workflows completed successfully",
-    "this_checkpoint": "Not yet published when this report was written; query PR head CI separately"
-  },
-  "resolved_validation_failures": [
-    "Initial adapter rejected offshore WS prime mover; corrected explicit technology/prime-mover pairs and added regression fixture",
-    "Initial Ruff issues corrected and checks rerun",
-    "Workspace ENOSPC interrupted initial EIA test-file write; removed reproducible Sphinx/test outputs and cache, rewrote file and reran all relevant checks"
+    "Full executable gallery"
   ]
 }
