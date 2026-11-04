@@ -345,3 +345,21 @@ for component in rows:
     specs = json.loads(component.get("extensions_json") or "{}")
     if "legacy_vec501_r0_observations" in specs:
         print(component["model"], "legacy VEC501R0 only", specs["legacy_vec501_r0_observations"])
+
+# %%
+# Optional monitoring links retain the OEM's series and revision boundary.
+# A documented interface does not establish that an accessory is installed.
+by_id = {row["record_id"]: row for row in rows}
+for component in rows:
+    for link in json.loads(component.get("compatibility_json") or "[]"):
+        target = by_id[link["equipment_record_id"]]
+        if target.get("equipment_category") == "control":
+            print(
+                component["model"],
+                "optional monitor",
+                target["model"],
+                link["conditions"],
+                "evidence",
+                link["source_id"],
+                link["locator"],
+            )

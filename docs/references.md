@@ -6647,3 +6647,19 @@ ENERCON (2019). **Technical data E-82 E2**. [Source](https://assets-global.websi
 **Role:** data source. 08/2019 single-page OEM table. Nominal and hub-height options retained; annual yield graph not ingested as power curve.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### abb_wind_system_2020_revc
+
+ABB (2020). **ACS880-77LC/-87LC/-87CC wind turbine converters system description**. [Source](https://library.e.abb.com/public/2b4b8597d93940f59ee37087613d9518/EN_ACS880-77LC_87LC_87CC_SD_C_A4.pdf)
+
+**Role:** data source. 3AXD50000022022 Rev C, effective 2020-04-27; pp13–14,24–25 system interfaces and explicit optional NETA-21. Series-level conditions do not replace historical exact ratings.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### abb_neta21_2026_revq
+
+ABB (2026). **NETA-21 remote monitoring tool user manual**. [Source](https://search.abb.com/library/Download.aspx?DocumentID=3AUA0000096939&LanguageCode=en&DocumentPartId=1&Action=Launch)
+
+**Role:** data source. 3AUA0000096939 Rev Q effective2026-09-18; joint NETA/NEXA technical table pp225–226. Conflicting temperature endpoints retained; no whole-product UL certification inferred.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.

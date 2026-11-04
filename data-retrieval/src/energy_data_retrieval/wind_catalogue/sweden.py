@@ -42,6 +42,8 @@ def quarantine_repeated_turbines(
     one copy could silently misstate a parent's inventory or lifecycle mix.
     Missing IDs remain errors for ``stage_partition``; inputs are not mutated.
     """
+    if any(not f["properties"].get("VERKID") for f in turbines):
+        raise ValueError("Missing turbine registry identity")
     counts = Counter(f["properties"].get("VERKID") for f in turbines)
     affected = {
         f["properties"]["OMRID"] for f in turbines if counts[f["properties"].get("VERKID")] > 1

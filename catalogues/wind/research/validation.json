@@ -1,24 +1,26 @@
 {
-  "batch": "2026-11-04-0235",
+  "batch": "2026-11-04-0635",
   "local": {
-    "pytest": "2150 passed;1 optional cdsapi skip",
+    "focused_wind": "89 passed in37.87s on isolated temporary volume; initial shared-volume attempt failed with storage exhaustion",
+    "pytest": "2144 passed,1 skipped,15 inherited Data Center UTF-8 setup errors",
     "viewer": "15 passed",
-    "catalogue": "18112 valid records;56 new projects928 linked turbines;1 equipment enriched",
-    "source_replay": "984 new project/turbine records replay exactly from complete source responses",
-    "snapshots": "Two byte-identical builds;4tables136typed columns,allZSTD;documentation manifest identical",
-    "preservation": "17127 prior records unchanged;1equipment enriched with prior specifications and creation timestamp preserved; prior sources and all six capacity totals unchanged; unrelated catalogues unchanged",
-    "ruff_ty": "Repository lint/format and typing passed; changed adapter rechecked after CLI addition",
-    "citations": "Passed; new ENERCON08/2019 reference and generated exports",
-    "hygiene": "3538 candidate files passed before final validation report update",
-    "packages": "All3workspace packages built wheels and sdists",
+    "source_replay": "859 accepted Swedish records exactly replayed",
+    "catalogue": "21711 records validated",
+    "preservation": "20850 preceding records unchanged; NETA-21 enrichment preserves all prior values/extensions/timestamps; source registry and all six capacity totals preserved; unrelated catalogues unchanged",
+    "snapshots": "Two byte-identical builds; four136-column typed Parquet tables, allZSTD; manifest/schema/source bytes identical",
+    "quality": "Repository Ruff lint/format,ty,citations,hygiene3660files and diff checks passed",
+    "packages": "Three wheels and sdists built on isolated temporary volume",
     "example": "Offline Wind gallery passed",
-    "docs": "Strict Sphinx passed;524-page local link/asset audit passed. Initial audit ran before dataset export finished; final completed-build audit passes.",
-    "whitespace": "Passed"
+    "docs": "Strict Sphinx HTML with plot_gallery=0 reached Data Center publishing and failed on inherited invalid UTF-8; no completed docs/link pass"
   },
   "not_executed": [
-    "new browser smoke test"
+    "Full gallery execution",
+    "Completed documentation link audit",
+    "New browser smoke test"
   ],
   "remote_ci": {
-    "this_increment": "Not yet published; inspect PR checks"
-  }
+    "status": "Pending publication"
+  },
+  "blocker": "Data Center KSTAR invalid UTF-8 remains on main; repair openPR131",
+  "storage_resolution": "Private /dev temporary directory must be created and used within one exec invocation; logs copied to shared scratch before exit"
 }

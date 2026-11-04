@@ -3,10 +3,10 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 7,582 project records (7,581 non-group records),
-264 exact equipment records, 10,264 registry turbine records and two original numerical
+The proposed branch contains 7,810 project records (7,809 non-group records),
+266 exact equipment records, 13,633 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
-Merged main at `1bc12f80` contains 7,526 projects, 264 equipment records and 9,336 turbines
+Merged main at `6b38f9a4` contains 7,582 projects, 264 equipment records and 10,264 turbines
 and two curves. These are catalogue counts, not an operating census.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
@@ -168,3 +168,45 @@ units were screened across 48 name groups; aliases and sub-array labels prevent
 automatic farm additions. The existing E-82 E2 gains revision-qualified 08/2019
 base-model specifications. Two restricted Bonfiglioli manuals are excluded.
 No new project enters capacity totals; all prior specifications are preserved.
+
+
+## Västernorrland continuation
+
+The 03:35 batch reviews 97 areas and 2,177 linked/orphan turbine observations,
+adding 55 projects and 847 turbines. Forty-two areas and 117 orphan turbines
+remain held; no project capacity is inferred. All previous records are unchanged.
+The reusable quarantine helper now rejects missing IDs before grouping, so
+missing identities cannot be silently hidden as duplicate conflicts.
+
+
+## Jämtland and converter monitoring
+
+The 04:35 batch reviews all 138 Jämtland areas and 1,729 turbine observations,
+adding 69 projects and 784 linked turbines. The remaining 69 areas and 945
+turbines are deferred; no project capacity is inferred. ABB system description
+3AXD50000022022 Rev C (2020-04-27), pp. 13–14 and 24–25, supplies separately
+dated system interfaces for 15 existing exact converters and explicitly names
+the optional NETA-21 monitor. Its record and compatibility links preserve that
+series/revision boundary; historical ratings are unchanged. Detailed monitor
+limits remain unknown after an HTTP 403 download failure. Catalogue claims
+are manufacturer documentation, not independently validated performance.
+
+
+## Västerbotten continuation
+
+All 130 areas and 2,316 turbine observations were reviewed; 67 projects and
+916 linked turbines were accepted. The remaining 63 areas/1,400 turbines
+remain deferred. Capacity totals are unchanged. NETA-21 gains separately
+qualified Rev Q (2026-09-18) technical-table observations, pp.225–226;
+contradictory temperature endpoints are retained without a normalized scalar,
+and joint NETA/NEXA interface descriptions do not infer per-device allocation.
+
+
+## Norrbotten and monitoring extensions
+
+All 68 Norrbotten areas and 2,566 turbine observations were reviewed;
+37 projects and 822 linked turbines were accepted, with 31 areas/1,744 turbines
+held. Capacity totals remain unchanged. ABB Rev Q pp.21–24 resolve named
+NETA-21 connector assignments and explicitly connect the optional NEXA-21
+extension. No direct turbine compatibility or joint-table limits are inferred.
+The Marne E103 appendix is excluded for its explicit reuse restriction.
