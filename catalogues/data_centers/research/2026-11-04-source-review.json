@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-04T00:42:00Z",
+  "retrieved_at": "2026-11-04T02:30:00Z",
   "accepted": [
     {
       "inventory": "FIN02, FIN04 and FIN05 official Finnish municipal permit/disclosure observations",
@@ -16,6 +16,14 @@
       "enriched_records": 0,
       "reuse": "Factual extraction from public copyrighted OEM product pages; no open licence asserted; originals are not redistributed",
       "originals": "Seven official HTML captures total 1,635,667 bytes and each has a SHA-256 checksum in sources.json. Footer review exposed privacy and cookie policies but no explicit product-fact reuse prohibition."
+    },
+    {
+      "inventory": "KSTAR GP800, MASTER and EPI transformer-based UPS model columns",
+      "processed_offset": 23,
+      "accepted_records": 23,
+      "enriched_records": 0,
+      "reuse": "Factual extraction from a public copyrighted OEM brochure; no open licence asserted; the original is not redistributed",
+      "originals": "The official brochure was readable through the public web index. Two direct original-byte requests returned HTTP 403, so no checksum or byte count is claimed. This is an access/content failure, not a reuse prohibition."
     }
   ],
   "deferred": [
@@ -55,6 +63,15 @@
         "Printed full-load range 176-295 V"
       ],
       "reason": "The full-load upper bound exceeds the stated range; exact text is retained and no scalar input voltage is normalized."
+    },
+    {
+      "record": "KSTAR EPI 30K",
+      "field": "apparent_power_kva",
+      "observations": [
+        "The EPI 30K model column prints 3 kVA",
+        "The same model column prints 24 kW"
+      ],
+      "reason": "The source inconsistency is not repaired from the model label; apparent power remains null while 24 kW and the printed 3 kVA observation are preserved."
     }
   ],
   "normalization_notes": [
@@ -65,6 +82,8 @@
     "Campus aggregates remain excluded from capacity sums under all viewer filters.",
     "Kehua apparent kVA and active kW remain family-specific published boundaries; neither is derived from the other.",
     "Selectable voltage/frequency, battery, distribution-box, EBM and parallel choices do not create synthesized configurations.",
-    "KR33 localized-page conflicts and KR11-RM internal voltage inconsistency remain quarantined rather than silently resolved."
+    "KR33 localized-page conflicts and KR11-RM internal voltage inconsistency remain quarantined rather than silently resolved.",
+    "KSTAR kVA and kW remain separate published boundaries; voltage/frequency choices and shared efficiency, dimensions, battery and standard/long-run weight cells are not synthesized.",
+    "The KSTAR EPI 30K printed apparent-power inconsistency remains quarantined, and EPOWER/EPOWER-L/EPOWER-H remain a separate unprocessed inventory."
   ]
 }

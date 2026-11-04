@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 665 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
-Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, Lenovo, Motivair by Schneider
+has 688 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
+Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR, Lenovo, Motivair by Schneider
 Electric, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
@@ -123,6 +123,13 @@ remain observations. KR33 efficiency and weight stay null because the current
 official English and Spanish tables disagree, while both observations and original
 HTML checksums are preserved. The KR6000-RM and KR1110-RM input ranges also remain
 unnormalized because the printed full-load upper bound exceeds the stated range.
+The KSTAR continuation processes all 23 exact model columns in the GP800,
+MASTER and EPI tables from the current 2025 transformer-based UPS brochure.
+Apparent kVA and active kW stay separate; voltage/frequency choices and shared
+efficiency, dimensions and battery cells remain observations. The EPI 30K
+apparent-power scalar is quarantined because its column prints 3 kVA beside
+24 kW. The later EPOWER, EPOWER-L and EPOWER-H tables remain a distinct future
+inventory and are not counted in this bounded batch.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
