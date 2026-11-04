@@ -416,3 +416,21 @@ currents are unsummed; table-wide merged cells are explicitly labelled. Standard
 warranty, optional communications and strict bounds remain qualified. Conflicting
 MPPT/cooling/dimension/standards assertions and unresolved merged weights stay in
 the review ledger; no variants or certification eligibility are inferred.
+
+### Danish municipal PV-plan review
+
+`pv_catalogue.plandata.read_pv_plan_projection` stages a checksum-pinned, bounded
+public WFS projection for review. It requires explicit PV-use code8135 and adopted
+plan statusV, exact public fields and unique plan IDs. Geometry and unexpected
+fields are rejected. The `19000101` sentinel stays flagged; adoption never becomes
+commissioning. Planning capacity cells keep their native scope and unverified
+units. This helper produces no canonical projects or automatic crosswalks.
+
+The94-plan cohort and keyset cursor are recorded in
+`research/20261104T1300_project_review.json`. Three manually reviewed associated-plan
+observations use distinctive names/aliases and actual plan-polygon containment.
+Source plant points retain their original accuracy; no capacities, lifecycle or
+phases are overwritten. Other plans require original site/phase evidence before
+acceptance. Review the separate layer-specific licence before installation-layer
+feature requests; the general municipal CC BY4.0 grant does not license every
+third-party layer on the map.

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T12:29:21.121414+00:00",
+  "updated_at": "2026-11-04T13:23:33.167060+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
   "selection_note": "This run completes both Navarra licensed PV layers (114rows), prioritizing useful missing metadata and exact case scope over row quota. Fresh SAJ/EPEVER attempts403; FIMER prior explicit consent restriction remains held. Existing complete Sungrow MH batch not repeated. Top-ten cumulativePV ranking preserved.",
-  "next_highest_value_source": "Denmark Store solcelleanlæg official WFS/layer metadata: validate dataset-specific reuse, stable identities, >1MW and same-address aggregation before20-row sample. Parallel quality queue: held INH fields andNavarra3554-CE.",
+  "next_highest_value_source": "Plandata91held adoptedPV-plan/site/phase crosswalks using exactoriginalevidence; retain completed94planIDs/keysetmax12185383. Separately resolve installationlayer rights/stableIDs. HyponoriginalPROcertificate/edition scope beforeIP/alias acceptance.",
   "sources": [
     {
       "id": "uk_repd",
@@ -8697,17 +8697,17 @@
       "checksum_scope": "Original successful source bytes, not error response"
     },
     {
-      "last_attempt": "2026-11-04T12:22:33.426005+00:00",
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
       "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
       "last_release": null,
       "last_retrieval": null,
       "etag": null,
-      "next_due_check": "2026-11-05T12:00:00Z",
+      "next_due_check": "2026-11-05T13:00:00Z",
       "id": "denmark_pv_map_20261104T1200",
       "country": "DNK",
       "entity": "projects",
       "source_url": "https://ens.dk/energikilder/solenergi",
-      "endpoint": "https://sologvindinfo.dk/spatialmap",
+      "endpoint": "https://gisp.bpst.dk/ve/wfs",
       "format": "Public map landing and official guide only; no feature rows",
       "licence_assessment": "ENS attribution terms cannot automatically license separate Plan- og Landdistriktsstyrelsen service; dataset-specific metadata/rights unverified",
       "access_assessment": "ENSsolar landing200, mapHTML200, officialguide200. Guide exposes WFS entry point https://www.plandata.dk/webservices/introduktion-til-webservices/wfs ; not tested/integrated.",
@@ -8722,14 +8722,14 @@
         "location",
         "same-address aggregate warning"
       ],
-      "mapping": "Unintegrated; larger same-address installations may aggregate multiple connections",
+      "mapping": "Exact ve:store_solcelleanlaeg confirmed inWFS/WMS; EPSG25832; DescribeFeatureType onlygeometry,kommune,mw,netdato,metode; no plantname orstableprojectID property",
       "processed_cursor": {
-        "landings_only": true,
+        "capabilities_and_schema_reviewed": true,
         "feature_queries": 0
       },
-      "result": "Concrete truePV followup discovered. No feed or installation count claimed.",
+      "result": "Originalinstallationlayer has noMetadataURL/abstract rights declaration incheckedcapabilities. MunicipalplanningCCBY doesnotapplyautomatically. Schema lacksnamedprojectID andsameaddressaggregates remain. Nofeatureingestion.",
       "retry_condition": "Verify official layer metadata, licence, revision and representative public IDs before first bounded feature partition",
-      "next_action": "Read official WFS catalogue metadata and Store solcelleanlæg layer; inspect20representative schema/identity rows only after reuse review"
+      "next_action": "Obtain layer-specific rights/version and stablegenerating-asset identity definition before first feature partition; municipalplanning separately stagedunderexplicitCCBY"
     },
     {
       "last_attempt": "2026-11-04T12:22:33.426005+00:00",
@@ -8922,6 +8922,370 @@
       "retry_condition": "Public service recovery or independent official distribution after24-hour backoff",
       "next_action": "Verify rights/release and representative named generation-facility schema after recovery; no private contacts or Solar-only technology assumptions",
       "next_due_check": "2026-11-05T12:30:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Unknown; do not redownload full sources hourly",
+      "last_release": "PRO EN20241210; standard/KL exact PDFs undated; URLdate not effective date",
+      "last_retrieval": "2026-11-04T13:03:56.103953+00:00",
+      "etag": null,
+      "id": "hypon_tables_20261104T1300",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.hypon.com/download.html",
+      "endpoint": [
+        "https://www.hypon.com/upload/file/2024/12/16/0b103237-00f6-422d-91d5-ee7f9a15bed4.pdf",
+        "https://www.hypon.com/upload/file/2024/12/16/b4fc17db-5c24-4152-877c-b5d9fa3fc4ef.pdf",
+        "https://www.hypon.com/upload/file/2024/06/12/8dead5a9-9897-4a75-8ae0-7237f529f979.pdf"
+      ],
+      "format": "Three exact OEMPDF tables, two image-only; manually transcribed andvisually reviewed",
+      "licence_assessment": "OEMcopyright retained; limited attributed factual metadata only. PublicLegalpage iscookies, not openlicence; no document/artwork/layout/promotionalprose redistributed.",
+      "source_captures": [
+        {
+          "source_id": "hyponpdf_20261104T1300",
+          "url": "https://www.hypon.com/upload/file/2024/12/16/0b103237-00f6-422d-91d5-ee7f9a15bed4.pdf",
+          "sha256": "79438efb97028ca1751d03d981dcc6d47cb8a56a1e7fb93abcb2a3e6090b6ce0",
+          "retrieved_at": "2026-11-04T13:03:06.924948+00:00"
+        },
+        {
+          "source_id": "hypon15_20261104T1300",
+          "url": "https://www.hypon.com/upload/file/2024/12/16/b4fc17db-5c24-4152-877c-b5d9fa3fc4ef.pdf",
+          "sha256": "268dff28325af0de550640cf201c8f4b490a27b7c4d9eb1124b97124067d881c",
+          "retrieved_at": "2026-11-04T13:03:56.103953+00:00"
+        },
+        {
+          "source_id": "hyponkl_20261104T1300",
+          "url": "https://www.hypon.com/upload/file/2024/06/12/8dead5a9-9897-4a75-8ae0-7237f529f979.pdf",
+          "sha256": "9a42f8717db6ab81161deafdcbbc9b74bc60a24836e61a56152b500c193607ed",
+          "retrieved_at": "2026-11-04T13:03:53.062194+00:00"
+        }
+      ],
+      "fields_offered": [
+        "activeW vs apparentVA",
+        "maximum/nominalDC",
+        "MPPT",
+        "outputcurrent",
+        "efficiencies",
+        "mechanical",
+        "environment",
+        "qualified optional functions"
+      ],
+      "estimated_useful_yield": {
+        "exact_columns_reviewed": 17,
+        "accepted_new": 17,
+        "whole_models_held": 0
+      },
+      "mapping": "Reviewed exact model arrays in20261104T1300_equipment_review.json; existingupsertAPI. BrandHypontech; not inferred corporatealias merge.",
+      "processed_cursor": {
+        "tables_complete": 3,
+        "accepted_models": [
+          "HPT-3000P",
+          "HPT-4000P",
+          "HPT-5000P",
+          "HPT-6000P",
+          "HPT-8000P",
+          "HPT-10KP",
+          "HPT-12KP",
+          "HPT-15KP",
+          "HPT-15K",
+          "HPT-17K",
+          "HPT-20K",
+          "HPT-25K",
+          "HPT-15KL",
+          "HPT-20KL",
+          "HPT-22KL",
+          "HPT-25KL",
+          "HPT-30KL"
+        ],
+        "selected_tables_exhausted": true
+      },
+      "result": "17newexactmodels; one newbrand. EightPROIPfields held for originalcertificate/edition review; HPT30KL malformed apparentpowercell not repaired; HPT25Kfamily/table PV limit staysqualified.",
+      "retry_condition": "Newexactrevision or independently obtained matchingcertificate/identityclarification",
+      "next_action": "Resolve original PROcertificate and HPT10KP/HPT10000P alias/hardware scope beforeIP/certification fields; inspect another distinct OEMsource",
+      "next_due_check": "2026-12-04T13:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Unknown; do not redownload full sources hourly",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T12:10:55.077352+00:00",
+      "etag": null,
+      "id": "inh_surge_enrichment_20261104T1300",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.inhenergy.com/",
+      "endpoint": [
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI312KT2.pdf",
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI1330KT2-200.pdf",
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI3360KT2.pdf",
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI7080K.pdf"
+      ],
+      "format": "Four pinned originalPDF tables reused",
+      "licence_assessment": "Prior exactsource factual-extraction basis unchanged; no new fullsource copying",
+      "fields_offered": [
+        "AC/DC surgeprotection presence, unspecifiedtype/ratings"
+      ],
+      "estimated_useful_yield": {
+        "reviewed_models": 24,
+        "enriched": 24,
+        "fields_added": 24
+      },
+      "mapping": "Exact existing manufacturer/model/sourceID matches; missing surge_protection only; no rating/type inference",
+      "processed_cursor": {
+        "completed_models": [
+          "SI-3K-T2",
+          "SI-4K-T2",
+          "SI-5K-T2",
+          "SI-6K-T2",
+          "SI-8K-T2",
+          "SI-10K-T2",
+          "SI-12K-T2",
+          "SI-13K-T2",
+          "SI-15K-T2",
+          "SI-17K-T2",
+          "SI-20K-T2",
+          "SI-22K-T2",
+          "SI-23K-T2",
+          "SI-25K-T2",
+          "SI-27K-T2",
+          "SI-30K-T2",
+          "SI-33K-T2",
+          "SI-36K-T2",
+          "SI-40K-T2",
+          "SI-45K-T2",
+          "SI-50K-T2",
+          "SI-60K-T2",
+          "SI-70K",
+          "SI-80K"
+        ]
+      },
+      "result": "24missing protectionfields filled. Allfour ETagconditional requests304; originalbytes andimmutable sourceentries reused.",
+      "retry_condition": "Changed source edition or other substantively missing reviewed fields",
+      "next_action": "Resolve earlier MPPT/cooling/dimension/weight holds with independent exact evidence, not repeated observations",
+      "next_due_check": "2026-12-04T13:00:00Z",
+      "last_metadata_check": "2026-11-04T13:14:15.166963+00:00",
+      "source_captures": [
+        {
+          "source_id": "inh_si_12_20261104T1200",
+          "sha256": "4ad637ed9689c6e775043cb0fef033a55838199a5115c654bb561f7741f91025",
+          "retrieved_at": "2026-11-04T12:10:48.747721+00:00"
+        },
+        {
+          "source_id": "inh_si_14_20261104T1200",
+          "sha256": "372b5336769960321811c6b4307bf31fa4cec5a2c6232ab9dc5f33f435fd599e",
+          "retrieved_at": "2026-11-04T12:10:54.735369+00:00"
+        },
+        {
+          "source_id": "inh_si_17_20261104T1200",
+          "sha256": "3f5a0a9c980b6606adf00fd1efe0b51f5a85182977bf762dd819a05d5c0c5871",
+          "retrieved_at": "2026-11-04T12:10:55.077352+00:00"
+        },
+        {
+          "source_id": "inh_si_42_20261104T1200",
+          "sha256": "e6ee3142471bbfd7245c3334d492c771e19dcf809ecece4395c1a1dc5024d046",
+          "retrieved_at": "2026-11-04T12:10:54.669561+00:00"
+        }
+      ]
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Unknown; do not redownload full sources hourly",
+      "last_release": "Live database; per-plan datoopdt retained, response timestamps2026-11-04",
+      "last_retrieval": "2026-11-04T13:17:13.365906+00:00",
+      "etag": null,
+      "id": "denmark_adopted_pv_plans_20261104T1300",
+      "country": "DNK",
+      "entity": "projects",
+      "source_url": "https://www.plandata.dk/webservices",
+      "endpoint": "https://geoserver.plandata.dk/geoserver/wfs",
+      "format": "WFS2JSON explicitpublicpropertyprojection; adoptedmunicipalplanlayer",
+      "licence_assessment": "CC BY4.0 explicitly applies municipal planning layers perofficialwebservicespolicy; not automatically thepartnerinstallationlayer orlinkedPDFs.",
+      "source_captures": [
+        {
+          "source_id": "planning_pv_20261104T1300",
+          "url": "https://geoserver.plandata.dk/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=pdk%3Atheme_pdk_lokalplan_vedtaget_solcelle&count=20&startIndex=0&outputFormat=application%2Fjson&propertyName=planid%2Cplannr%2Cplannavn%2Ckomnr%2Cdatovedt%2Cstatus%2Cdatoopdt%2Canvspec1%2Canvspec2%2Canvspec3%2Canvspec4%2Canvspec5%2Canvspec6%2Canvspec7%2Canvspec8%2Canvspec9%2Canvspec10%2Cplankap1%2Cplankap2%2Cplankap3%2Cplankap4%2Cplankap5%2Cplankap6%2Cplankap7%2Cplankap8%2Cplankap9%2Cplankap10&sortBy=planid+A&cql_filter=%28anvspec1%3D8135+OR+anvspec2%3D8135+OR+anvspec3%3D8135+OR+anvspec4%3D8135+OR+anvspec5%3D8135+OR+anvspec6%3D8135+OR+anvspec7%3D8135+OR+anvspec8%3D8135+OR+anvspec9%3D8135+OR+anvspec10%3D8135%29",
+          "sha256": "586b33713db10b1fd89dddea02184afa573384e20f405ed83967fbc4165d1686",
+          "retrieved_at": "2026-11-04T13:15:36.985270+00:00"
+        },
+        {
+          "source_id": "planning_pv_rest_20261104T1300",
+          "url": "https://geoserver.plandata.dk/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=pdk%3Atheme_pdk_lokalplan_vedtaget_solcelle&count=100&startIndex=0&outputFormat=application%2Fjson&propertyName=planid%2Cplannr%2Cplannavn%2Ckomnr%2Cdatovedt%2Cstatus%2Cdatoopdt%2Canvspec1%2Canvspec2%2Canvspec3%2Canvspec4%2Canvspec5%2Canvspec6%2Canvspec7%2Canvspec8%2Canvspec9%2Canvspec10%2Cplankap1%2Cplankap2%2Cplankap3%2Cplankap4%2Cplankap5%2Cplankap6%2Cplankap7%2Cplankap8%2Cplankap9%2Cplankap10&sortBy=planid+A&cql_filter=%28anvspec1%3D8135+OR+anvspec2%3D8135+OR+anvspec3%3D8135+OR+anvspec4%3D8135+OR+anvspec5%3D8135+OR+anvspec6%3D8135+OR+anvspec7%3D8135+OR+anvspec8%3D8135+OR+anvspec9%3D8135+OR+anvspec10%3D8135%29+AND+planid%3E10777688",
+          "sha256": "55adb589d1f739c6911bd148048763d95dc2b83dcb237937b4a4b76515dcb0de",
+          "retrieved_at": "2026-11-04T13:17:13.365906+00:00"
+        },
+        {
+          "source_id": "planning_crosswalk_20261104T1300",
+          "url": "https://geoserver.plandata.dk/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=pdk%3Atheme_pdk_lokalplan_vedtaget_solcelle&count=3&outputFormat=application%2Fjson&cql_filter=planid+IN+%2811172509%2C11249009%2C9573950%29&srsName=EPSG%3A25832&propertyName=planid%2Cplannavn%2Ckomnr%2Cdatovedt%2Cstatus%2Cdatoopdt%2Cgeometri",
+          "sha256": "1e05bc714f33e4b400c2315505318be892a4c08234e998e1393caf049330dec9",
+          "retrieved_at": "2026-11-04T13:19:11.270023+00:00"
+        }
+      ],
+      "fields_offered": [
+        "administrativeplanID",
+        "PV use8135",
+        "publicplanname",
+        "municipalitycode",
+        "nativeadoption/update",
+        "review-onlyplanningcapacity"
+      ],
+      "estimated_useful_yield": {
+        "explicit_PV_plan_rows_structurally_screened": 94,
+        "project_associations_accepted": 3,
+        "remaining_identity_scope_holds": 91,
+        "new_projects": 0,
+        "capacity_acceptance": 0
+      },
+      "mapping": "pv_catalogue.plandata review-onlyreader; exact8135,statusV,whitelist,checksum,counts,IDs,dateguards; no automaticcanonicalrows",
+      "processed_cursor": {
+        "completed_explicit_pv_plan_ids": [
+          2268228,
+          2971772,
+          2993986,
+          2999663,
+          3003920,
+          3487198,
+          3543107,
+          9537063,
+          9537076,
+          9537079,
+          9573950,
+          9602419,
+          9636870,
+          9654855,
+          9701809,
+          9753425,
+          10062049,
+          10268216,
+          10716746,
+          10777688,
+          10777709,
+          10851304,
+          10937599,
+          10985487,
+          11021628,
+          11021662,
+          11168087,
+          11172509,
+          11193835,
+          11204057,
+          11232100,
+          11234628,
+          11235455,
+          11247245,
+          11249009,
+          11251296,
+          11252419,
+          11253108,
+          11253933,
+          11257371,
+          11265918,
+          11270630,
+          11270697,
+          11271399,
+          11280482,
+          11281539,
+          11282106,
+          11282107,
+          11282213,
+          11282400,
+          11284533,
+          11284586,
+          11285512,
+          11285634,
+          11292904,
+          11297603,
+          11299862,
+          11300042,
+          11300133,
+          11300140,
+          11300363,
+          11309238,
+          11330034,
+          11331575,
+          11339826,
+          11347018,
+          11352502,
+          11372098,
+          11425122,
+          11425131,
+          11426129,
+          11431483,
+          11453935,
+          11486879,
+          11654781,
+          11747288,
+          11846590,
+          11907094,
+          11912465,
+          11922494,
+          11922496,
+          11922502,
+          11938584,
+          11963344,
+          12085235,
+          12088198,
+          12107334,
+          12117485,
+          12121860,
+          12138157,
+          12160498,
+          12182008,
+          12185112,
+          12185383
+        ],
+        "max_plan_id": 12185383,
+        "remaining_matched_after_keyset": 0,
+        "source_scope": "94 explicit8135 adopted plans returned in two timestamped bounded partitions; not one atomic national PV inventory",
+        "next": "Originalplan/site/phase proof for91holds; proposals and futurechangedplanIDs are separate partitions"
+      },
+      "result": "94explicitPV-use adoptedplans staged. Three distinctive-name/alias andactual-polygon crosswalks add associatedplanobservations only. Allcapacities,projectstatuses,phases,dates andpoints preserved.44plans have native capacitycells,none acceptedaspower.",
+      "retry_condition": "Changed planIDs/datoopdt ororiginal site/phase evidence; no hourly repeated94-rowexport",
+      "next_action": "Resolve91held plan-to-site/phase crosswalks usingoriginal independently permittedplan evidence; proposals are a distinct futurepartition. Recheck keyset andsourceupdate before resuming.",
+      "next_due_check": "2026-11-05T13:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Unknown; do not redownload full sources hourly",
+      "last_release": "English EN02/2025; Spanishprinted2025-11, not URLfilename2025-10",
+      "last_retrieval": null,
+      "etag": null,
+      "id": "deger_source_review_20261104T1300",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.degerenergie.de/",
+      "endpoint": [
+        "https://www.degerenergie.de/wp-content/uploads/2025/12/DEGER-D100-DEGER-D80_EN_2025.pdf",
+        "https://degeriberica.com/wp-content/uploads/2026/03/2025-10-Ficha-Tecnica-DEGER-D18H-D25H-D60H-D80-D100-ES.pdf"
+      ],
+      "format": "OriginalEnglish andregionalSpanishPDFs",
+      "licence_assessment": "Regional https://degeriberica.com/aviso-legal/ explicitlyrequirespriorauthorization forcopy/distribution/adaptation; no grant assumed. OriginalOEMproductpage403 prevents independent currentterms review.",
+      "access_assessment": "TwoPDF200; sourceOEMproductpage403. No contactorform.",
+      "estimated_useful_yield": {
+        "distinct_models_reviewed": 5,
+        "held": 5,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "exactdual-axismodels",
+        "mechanicalenvelope",
+        "separatecomponentIPclasses",
+        "climatic/controlconditions"
+      ],
+      "mapping": "Noimport; do not blendregional editions,repair anomalous cells orallocate componentmass/IP towholeunit",
+      "processed_cursor": {
+        "source_documents_reviewed": 2,
+        "models_held": [
+          "D18H",
+          "D25H",
+          "D60H",
+          "D80",
+          "D100"
+        ]
+      },
+      "result": "OriginalPDFaccess recovered throughnewpublicindexedDecemberpath; doesnotresolve source-specificreuse orregional engineering differences. Zeroequipment accepted.",
+      "retry_condition": "Suitable independently verified source-specificreuse andexactedition/configuration scope",
+      "next_action": "ResolveoriginalOEMrights andexactversion before technicalingestion; do not repeatedly retry regionalconsenthold",
+      "next_due_check": null
     }
   ],
   "source_refresh_queue": [

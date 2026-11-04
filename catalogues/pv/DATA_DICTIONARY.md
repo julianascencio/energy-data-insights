@@ -462,3 +462,19 @@ Cost year, scope and design conditions travel in extensions. Its installed-power
 heading and kVA total do not replace the existing AC rating. Internal30kV and
 existing66kV grid links stay separately scoped. Publication is not commissioning,
 operation or authorization; private addresses and signatory details are omitted.
+
+## Danish planning and Hypontech exact editions
+
+Danish `planid` identifies an administrative plan. Explicit use8135 proves the
+plan permits PV; it does not prove an individual generating asset exists. Native
+adoption/update dates, source plan status and planned capacity cells are distinct
+from project operation/commissioning/capacity. Associated municipal-plan evidence
+can be retained in extensions after a reviewed crosswalk without allocating mixed
+wind/PV capacity or changing project identity.
+
+Hypontech exact model punctuation/suffixes are retained. Active rated W and maximum
+apparent VA remain separate; regional voltage/frequency choices and unspecific
+input-current scope stay native. Strict consumption/efficiency bounds are not
+converted into exact scalar values. Optional interfaces/connectors/monitoring/AFCI
+and unknown warranties/certification eligibility remain qualified. A malformed
+apparent-power cell is not repaired from a model number or expected ratio.
