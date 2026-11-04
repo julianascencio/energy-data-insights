@@ -1,0 +1,96 @@
+{
+  "batch": "2026-11-04-2235",
+  "aemo": {
+    "partition": "2000 <= AEMO survey ID < 3000",
+    "reviewed_sites": 111,
+    "wind_unit_rows": 117,
+    "additions": 107,
+    "deferred": 4,
+    "field_quarantined_sites": 20,
+    "quarantined_count_unit_ids": [
+      202301,
+      202401,
+      202501,
+      202601,
+      202901,
+      206001,
+      222901,
+      223101,
+      223201,
+      228701,
+      228702,
+      233701,
+      237001,
+      240301,
+      248601,
+      249201,
+      254201,
+      276201,
+      277901,
+      282601,
+      298301
+    ],
+    "source_id": "aemo_nem_oct2026_wind",
+    "original_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+    "acquisition": "Reuse checksum-pinned original acquired in preceding batch; no duplicate national download",
+    "all_scopes_excluded": true,
+    "next_partition": "3000 <= AEMO survey ID < 4000"
+  },
+  "oem": {
+    "complete_tables": [
+      "SD3",
+      "SD3EX",
+      "SD12",
+      "SD6",
+      "SD6+",
+      "SD6 leaflet SDMK106 p2",
+      "Bergey Rev3.1 p5 turbine and pp12–14 inverter"
+    ],
+    "new_equipment": 5,
+    "enriched_equipment": 2,
+    "curves": 0,
+    "field_conflicts": [
+      "SD3EX rated_power_kw:3kW table versus2.5kW navigation;scalar null"
+    ],
+    "qualified_observations": [
+      "SD6+6kW at11m/s versus9kW high-wind inverter-dependent output;scalar unset",
+      "Powersync25 default20kW,output table23kW and adjusted25kW kept separate",
+      "Bergey start-up6m/s distinct from cut-in2.5m/s; no zero cut-out threshold",
+      "PNNL11m/s power remains unchanged; no nameplate-density comparison"
+    ]
+  },
+  "access_results": [
+    {
+      "source": "Kodair KW20/KW30",
+      "decision": "excluded",
+      "http_status": 200,
+      "reason": "Explicit website terms restrict copying/republication; no specification fields imported",
+      "terms_url": "https://www.kodairwind.com/terms/",
+      "terms_sha256": "9bd2e32d11acb1a42115ac7482c5d10432ce66d76d6c745cd0bdb19734501998",
+      "original_page_sha256": {
+        "kw20": "d80213f12be6b2d67b0e25bc91aaf215eae524364e487bad772432c55ec914bf",
+        "kw30": "c7d102ba4f177d76f69d6adcac5739343d9ef76c2e1ff6b31801d88558440166"
+      }
+    },
+    {
+      "source": "Eocycle S-series page and R5 spec sheet",
+      "decision": "deferred_download",
+      "http_status": 403,
+      "reason": "HTTP failure; no authentication or reuse restriction inferred",
+      "urls": [
+        "https://eocycle.com/s-series/",
+        "https://eocycle.com/wp-content/uploads/2021/05/15064-EocycleMerger-SpecSheet-S16-R5.pdf"
+      ],
+      "response_body_sha256": {
+        "eocycle.html": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+        "s16.pdf": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864"
+      },
+      "original_availability": "Only HTTP403 error bodies acquired; original source bytes unavailable"
+    }
+  ],
+  "targets": {
+    "projects_met": true,
+    "equipment_met": false,
+    "reason": "Five new exact records and two enrichments supported; options and unsupported variants not padded"
+  }
+}

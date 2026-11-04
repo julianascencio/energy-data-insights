@@ -1,63 +1,55 @@
 {
-  "batch": "2026-11-04-1435",
-  "validated_base": "6da869c9e6b990050f614ec0abbc62fd07a43604",
-  "iteration_parent": "878a186ab8a9cfc7361a3f264011e14de793c310",
+  "batch": "2026-11-04-2235",
+  "validated_base": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
+  "iteration_parent": "c5a47cc6c00731d81c9ae809141eb12a894e680b",
   "local": {
-    "pytest": "2396 passed; five optional skips after current-main integration",
-    "viewer": "16 passed",
-    "quality": "Ruff lint/format (909 files), ty, repository hygiene (4006 candidates), citations and whitespace passed after integration",
-    "catalogue": "Exact replay 4 records/5 decisions; 21916 prior records/308 sources unchanged; 21920 records validated; seven snapshot files identical.",
-    "snapshots": "Two final builds of seven files byte-identical; immutable typed Zstandard Parquet",
-    "source_replay": "Four canonical records and five scope decisions replay exactly from checksummed original HTML and reviewed transcription",
-    "capacity": "All six reported capacity totals unchanged; excluded project count increases by4",
-    "docs": "Strict Sphinx plot_gallery=0 passed; Documentation check passed: 574 HTML pages; local links and assets resolve.",
-    "example": "Offline Wind gallery passed on final records",
-    "packages": "Three wheels and three sdists built"
+    "focused_pytest": "195 passed:166 Wind tests including20 AEMO tests and29 reference tests",
+    "viewer": "16 Node tests passed;viewer module syntax check passed",
+    "quality": "Ruff lint/format,ty,repository,citations and whitespace passed",
+    "catalogue": "22128 records validated;22014 preceding records unchanged;two enriched records retain all prior facts and creation timestamps",
+    "capacity": "All six capacity-category totals unchanged;all107 new scopes excluded",
+    "replay": "236 AEMO candidates reproduced:125 previous defaults byte-identical and111 new candidates with21 explicit count quarantine IDs across20sites",
+    "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD",
+    "docs": "Strict Sphinx plot_gallery=0 passed;599 HTML pages passed links/assets;final built viewer asset equals source",
+    "example": "Offline Wind gallery passed",
+    "packages": "Three wheels and three source distributions built",
+    "preservation": "All non-Wind catalogues unchanged against current main"
   },
-  "resolved_validation_failures": [
-    "Shared BOE notice identifier replaced by unique project-scope identifiers for paired extensions; exact replay and full validation passed",
-    "Initial full suite/docs exhausted temporary storage; reproducible older outputs cleared; final full suite and strict docs passed"
-  ],
   "not_executed": [
-    "Full gallery",
+    "Full repository Python suite in this iteration",
+    "Full executable gallery",
     "Interactive browser",
-    "Independent operational performance or current certificate eligibility verification"
+    "Independent operational/performance verification"
   ],
   "remote_ci": {
-    "previous_commit": "878a186ab8a9cfc7361a3f264011e14de793c310",
-    "previous_result": "Python3.12/Python3.13 and Documentation succeeded; deployment skipped",
-    "this_batch": "Pending publication"
+    "prior_commit": "c5a47cc6c00731d81c9ae809141eb12a894e680b",
+    "prior_result": "Python3.12,Python3.13 and documentation passed;Pages deployment skipped",
+    "this_batch": "Pending publication;no remote result asserted"
   },
   "snapshot_sha256": {
-    "sources.json": "5a7cf6ae6e9e8d342a19d8a2edeecffb7eee9d79d0ecd0f414b949412d1af830",
+    "sources.json": "bafa9f205b00c46f52ab1f2d19d33ae3d64e7758c75b37d6197b00e2b9633c32",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "f4834c0e47c21ef56a983f6d9364e51cf35779cf52602ee18f19971bb92fce16",
-    "equipment.parquet": "4429d5eaa2b673c5f77f04219cdf97fcaab78b2a2ba4e8d8c6969ca304f3b6b8",
+    "manifest.json": "040259399b8a8a6d9ac1a062b2c3eba1f9ada9322e4bfaf0ead4873cfef78b62",
+    "equipment.parquet": "f09f4fbc289bb59b9dbcef110ccebbf3640c3d5d659188a31920f10341403686",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "f61820b1859dbfaf9d179bb3accd57c428301d05e003c6b53b8e58b17b59d301"
+    "projects.parquet": "cd51feb25578b7c7d6b90576553f7cf7202aa91bf25540800be50519a4caa4dc"
   },
   "log_sha256": {
-    "pytest-final.log": "8ee977e4ecea14eae2d5115d81f4d1cbd25da2a6b6c6f3f82c9dfcfc2bc7a22f",
-    "docs-final.log": "84626cae14155fa0193524fe6b964ac9883e8ebc7211045eedb0497dff96faeb",
-    "links-final.log": "00efba4fb7d5b09c21402aded869e7b3ec2cc5a78b0459a318361f806e5315c6",
-    "packages-final.log": "58bda4b172e5810ebf891e3a03be18b139649436a68d1cd2594f58bcd667d46d",
-    "replay-final.log": "b72f75a0af6117379ff3eb02ea25280f4be2d2beb40b2c7acd3fa327222d45d4",
+    "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
+    "docs-final.log": "ace4b8d1ef93afe9938c2882c969a3429f03ed4384401be3e098ac0042f97ee0",
+    "whitespace.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gallery.log": "0acdbf4544fcf01fb5018869547dcaabfd64de13fe7c72e7a6dcb9e16fd30b67",
+    "format.log": "e95bb53e019ad73d1ff1b7ddb8df8be08021289b742d01fe7b6f80ac00a8ad2a",
     "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "format.log": "4c4af158016f111858b093be28e5eae0e2ecd3ab0850e5e8205bef2b88709fc6",
+    "verify.log": "5fc02ed8c4050ce869641c5cc8ed002579d418adbc6ed13b98c2df758f6dd721",
+    "repository.log": "a5f428420cc0ce216af391fbd1e0d82c6a7b6e5450ffdf1e9b8de0e3bd405013",
     "ty.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "viewer.log": "533a1e33bc27b177510489baba5b1ba183155507fb530fb6df15f77f82514792",
-    "gallery-final.log": "e7eb80f310e2943df92d558fb9cebdc6e62ecd726ccb0335139cee6ed17688ac",
-    "repository.log": "245426fdc6b79ee1125c8a7dd32c4271904dac1fdda20ccbc7bbc46b12eb6cb7",
+    "links-final.log": "082d655d08464f838cebf36c99fef6ef873d2f9f8de735c28f5c213777c0f4f7",
+    "links.log": "082d655d08464f838cebf36c99fef6ef873d2f9f8de735c28f5c213777c0f4f7",
+    "focused.log": "1f63a82d01f900e81ee34180b3329d1f34974d4e3d99ee11c00b9050bbed8307",
     "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
-    "pytest-integrated.log": "5e87dc10880de54bd10359c5a8364a3cee54ef7758a82ae1a9daedc452298956",
-    "docs-integrated.log": "fce7f7d352038463b846634afaee8a7638c4371907638af0e47762ade7bb1147",
-    "links-integrated.log": "bbe25bddd005d6b1bbcb07c7a88ec80cdb9cc494a97ff8daa8b21eed8ad648ef",
-    "packages-integrated.log": "842b316ab0e33a3ef6dd9ee01b5eddcfb9f3a1ac9157666aa704c91df78ee456"
-  },
-  "publication_concurrency": {
-    "observed_head": "5dd56b0c8bcd40e174223291f55fc2725a19325e",
-    "change": "Concurrent main merge; all its citation entries retained exactly, no catalogue research changes",
-    "policy": "Fast-forward from observed head with expected-head lease; never replace its history"
+    "docs.log": "e9a496bb9873c3cbd5eb1eb9b46c418d29cdab44af4bea73dbb9a215fa378667",
+    "viewer.log": "e71c804b4e8bbb4756fdd7f631173c4c782ff8bec509de092a2ead4d5f8285c3"
   }
 }

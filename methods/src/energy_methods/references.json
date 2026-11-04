@@ -12,37 +12,37 @@
     "role": "foundational",
     "used_by": [
       "README.md",
-      "methods/README.md",
       "analysis/README.md",
-      "methods/src/energy_methods/degradation.py",
-      "docs/degradation.md",
-      "methods/src/energy_methods/ccya.py",
-      "docs/ccya.md",
       "analysis/examples/ccya/README.md",
+      "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
       "analysis/src/energy_analysis/ccya_case/pipeline.py",
-      "examples/analysis/plot_kgpv_worldwide.py",
+      "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
+      "docs/ccya.md",
+      "docs/climate-comparison.md",
+      "docs/degradation.md",
+      "docs/kgpv-canary.md",
+      "docs/kgpv-chile.md",
       "docs/kgpv.md",
-      "methods/src/energy_methods/weather_risk.py",
-      "methods/src/energy_methods/weather_risk_mapping.py",
       "docs/soiling-snow.md",
-      "examples/analysis/plot_soiling_snow_risk.py",
-      "examples/analysis/plot_country_risk.py",
-      "examples/connectors/plot_generation_coverage.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/analysis/plot_country_risk.py",
+      "examples/analysis/plot_kgpv_canary.py",
+      "examples/analysis/plot_kgpv_chile.py",
+      "examples/analysis/plot_kgpv_worldwide.py",
+      "examples/analysis/plot_soiling_snow_risk.py",
       "examples/connectors/data/generation_coverage_stations.csv",
       "examples/connectors/data/generation_coverage_stations_provenance.json",
-      "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_canary.py",
-      "docs/kgpv-canary.md",
-      "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_chile.py",
-      "docs/kgpv-chile.md",
+      "examples/connectors/plot_generation_coverage.py",
+      "methods/README.md",
+      "methods/src/energy_methods/ccya.py",
       "methods/src/energy_methods/climate_zones.py",
+      "methods/src/energy_methods/degradation.py",
       "methods/src/energy_methods/jrc_climate.py",
       "methods/src/energy_methods/ml21.py",
       "methods/src/energy_methods/pvcz.py",
-      "docs/climate-comparison.md"
+      "methods/src/energy_methods/weather_risk.py",
+      "methods/src/energy_methods/weather_risk_mapping.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Project inspiration and scientific foundation for the early studies and methods. Later additions include independent methods, connectors, databases and applications with their own sources; this thesis is not the source of every repository component. University of Ljubljana catalogue: COBISS 77808131; national-library URN:NBN:SI:DOC-TMG3QFI9. Defended 21 September 2021. Marko Topič is the advisor, not a coauthor. No thesis DOI has been verified. Citation does not claim that every thesis chapter is implemented. CCYA implementation follows sections 7.5.1–7.5.3 (pp. 150–164), with equations 3.6/3.8 for thermal context. The institutional full text is https://repozitorij.uni-lj.si/Dokument.php?id=148326&lang=eng. Explicit choices for monthly centroid scaling, incremental temperature normalization, nonexceedance quantiles and cumulative ratio versus signed gain are documented in docs/ccya.md; no numerical reproduction of Bolzano is claimed. Soiling and snow indicators follow Eqs. 3.2–3.4 (pp. 49–51) and Tables 6.6–6.7 (pp. 135–136), with explicit equality/low-domain conventions and alternative example data documented in docs/soiling-snow.md.",
     "verified_at": "2026-10-30",
@@ -90,11 +90,11 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/acceptance_band.py",
-      "methods/src/energy_methods/lightgbm.py",
       "analysis/src/energy_analysis/forecast_benchmark.py",
+      "docs/forecast-benchmark.md",
       "examples/analysis/plot_forecast_model_benchmark.py",
-      "docs/forecast-benchmark.md"
+      "methods/src/energy_methods/acceptance_band.py",
+      "methods/src/energy_methods/lightgbm.py"
     ],
     "note": "Source of the two-stage irradiance/power acceptance band and low/medium/high irradiance evidence levels. The repository states its interpretation of inconsistent printed roughness/distance expressions. Chronological validation and monotonic LightGBM settings are project adaptations. The solar/wind forecasting benchmark uses this paper as methodological inspiration for resource-quality disclosure and empirical/ML comparison, not numerical reproduction. Rolling forecasts, XGBoost, Timestral and wind are project extensions; its acceptance-band algorithm and test-outlier removal are not applied in this benchmark.",
     "verified_at": "2026-11-03",
@@ -294,10 +294,10 @@
     "kind": "conference-paper",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/lightgbm.py",
       "analysis/src/energy_analysis/forecast_benchmark.py",
+      "docs/forecast-benchmark.md",
       "examples/analysis/plot_forecast_model_benchmark.py",
-      "docs/forecast-benchmark.md"
+      "methods/src/energy_methods/lightgbm.py"
     ],
     "note": "Original LightGBM algorithm reference. The optional model uses the LightGBM library; monotonic settings do not guarantee concavity or any minimum prediction score.",
     "verified_at": "2026-10-29",
@@ -316,8 +316,8 @@
     "kind": "manual",
     "role": "software",
     "used_by": [
-      "methods/src/energy_methods/lightgbm.py",
-      "methods/README.md"
+      "methods/README.md",
+      "methods/src/energy_methods/lightgbm.py"
     ],
     "note": "Reference for deterministic CPU execution, objective compatibility, bounded thread counts and feature monotonicity. Version-specific behavior is tied to the lockfile.",
     "verified_at": "2026-10-29"
@@ -487,8 +487,8 @@
     "kind": "standard",
     "role": "standard",
     "used_by": [
-      "methods/src/energy_methods/status.py",
-      "analysis/README.md"
+      "analysis/README.md",
+      "methods/src/energy_methods/status.py"
     ],
     "note": "Information-model context only. The ten observable states and numeric thresholds are project screening rules, not normative IEC categories or a conformity claim. Causes remain unconfirmed and the workflow does not compute certified availability.",
     "verified_at": "2026-10-29"
@@ -506,9 +506,9 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/cen",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Actual-generation API source. Use the exact request interval, access time, response provenance and effective unit roster recorded by the acquisition; catalogue inclusion is not evidence of live authorization or complete national coverage.",
     "verified_at": "2026-10-29"
@@ -526,14 +526,14 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/cen",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md",
       "docs/chile-module-counting.md",
+      "docs/rengo-module-counting.md",
+      "docs/worldwide-generation.md",
+      "examples/analysis/data/rengo_modules/rengo_study.json",
       "examples/analysis/plot_chile_largest_module_counting.py",
       "examples/analysis/plot_chile_smallest_module_counting.py",
-      "docs/rengo-module-counting.md",
-      "examples/analysis/data/rengo_modules/rengo_study.json"
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Public plant registry source. Reported maximum power is retained without silently treating it as verified AC or DC nameplate capacity.",
     "verified_at": "2026-10-29"
@@ -550,11 +550,11 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/cen",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/cen",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Provider catalogue for historical generation and Qlik exports. Every imported export requires its specific source URL/file, timestamp conventions and hash; this general catalogue does not certify the completeness of a supplied export.",
     "verified_at": "2026-10-29"
@@ -571,11 +571,11 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/cen/history.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/cen/history.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Source interface for preserved generation exports. The adapter imports user-supplied CSV/XLSX/ZIP exports with an explicit contract; citation does not imply anonymous live access, successful authorization or an implemented Qlik session client.",
     "verified_at": "2026-10-29"
@@ -634,14 +634,14 @@
     "kind": "article",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
-      "docs/location-discovery.md",
       "data-retrieval/src/energy_data_retrieval/sources/cds",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "docs/location-discovery.md",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Scientific description of ERA5 reanalysis. Reanalysis is modelled weather and cannot be relabelled as a measured station. Cite the actual dataset and acquisition wrapper separately.",
     "verified_at": "2026-10-29",
@@ -662,14 +662,14 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
-      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
-      "docs/location-discovery.md",
       "data-retrieval/src/energy_data_retrieval/sources/cds",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
+      "docs/location-discovery.md",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Single-level dataset citation as recommended by the Earthmover source catalogue. Record the actual retrieval date and selected data vintage; do not use the metadata-verification date as a data-access date.",
     "verified_at": "2026-10-29"
@@ -686,12 +686,12 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "data-retrieval/src/energy_data_retrieval/sources/earthmover_era5",
       "docs/location-discovery.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Optional native ERA5 source. Cite Earthmover, the C3S single-level dataset, and underlying ERA5 research; acquisition must retain the pinned snapshot and actual access date. Catalogue metadata verification does not establish current snapshot coverage or a new data acquisition.",
     "verified_at": "2026-10-29"
@@ -708,16 +708,16 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
       "docs/location-discovery.md",
-      "scripts/prepare_weather_risk_example.py",
-      "examples/analysis/plot_soiling_snow_risk.py",
       "docs/soiling-snow.md",
+      "docs/worldwide-generation.md",
       "examples/analysis/plot_country_risk.py",
-      "examples/connectors/plot_generation_coverage.py",
+      "examples/analysis/plot_soiling_snow_risk.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_weather_risk_example.py"
     ],
     "note": "Optional ERA5 weather wrapper. Cite the underlying ERA5 dataset/paper and retain the explicitly requested product, grid cell and interval semantics; this is not measured irradiance. The snow example separately selects ERA5-Land physical ground snow_depth, credits Open-Meteo (CC BY 4.0), and retains the provider warning about snow-depth overestimation.",
     "verified_at": "2026-10-30"
@@ -734,12 +734,12 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
       "docs/location-discovery.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Optional archive of numerical forecasts. The adapter explicitly selects ECMWF IFS; do not describe these records as ERA5 or observations. Record model, vintage and interval semantics from provenance.",
     "verified_at": "2026-10-29"
@@ -756,9 +756,9 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
       "data-retrieval/README.md",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
+      "data-retrieval/src/energy_data_retrieval/sources/open_meteo",
       "docs/location-discovery.md"
     ],
     "note": "Provider definitions for preceding-hour radiation/gust variables and instantaneous temperature/wind. Archive-specific variable definitions take priority where products differ.",
@@ -782,11 +782,11 @@
     "kind": "article",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/cmip6",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Scientific design of the CMIP6 archive accessed by the retrieval provider. The repository retrieves published climate-model output; it does not implement or run the contributing climate models. Cite each selected model/experiment dataset and its version separately using the preserved provider citation links.",
     "verified_at": "2026-10-29",
@@ -819,8 +819,8 @@
     "kind": "article",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/cmip6",
-      "data-retrieval/README.md"
+      "data-retrieval/README.md",
+      "data-retrieval/src/energy_data_retrieval/sources/cmip6"
     ],
     "note": "Scientific description of the SSP scenario experiments selectable by the CMIP6 retrieval provider. Scenario simulations are conditional climate projections, not observations or deterministic weather forecasts. Their availability and coverage are established by each saved catalogue result, not by this paper citation.",
     "verified_at": "2026-10-29",
@@ -841,9 +841,9 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/cmip6",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official access guidance identifies the east and west ESGF STAC discovery services and deprecates the legacy Solr search interface. This provider uses direct HTTP requests; this reference does not mean esgf-pyclient is a runtime dependency. Preserve the actual endpoint, search criteria, resolved dataset version, asset URLs and access time in acquisition provenance.",
     "verified_at": "2026-10-29"
@@ -895,9 +895,9 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/cmip6",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Document version 19 October 2022. Source of the data-citation and provenance guidance: retain official model and institution names, experimental identifiers, dataset versions and the original citation/further-information links. A general CMIP6 paper citation does not replace dataset-specific author and DOI attribution. Use the current STAC access documentation for endpoints because this older guide includes legacy interfaces.",
     "verified_at": "2026-10-29"
@@ -969,12 +969,12 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/bsrn",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Canonical scientific description of the BSRN radiation archive. The provider retrieves station observations through PANGAEA and preserves their published identity and provenance. Cite the actual station collection and monthly dataset DOIs in addition to this network paper. Archive checks do not establish that a downloaded value passed every subsequent scientific quality check or represents a particular PV site.",
     "verified_at": "2026-10-29",
@@ -996,12 +996,12 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/bsrn",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official source guidance for UTC timestamps, station/month datasets and logical records. The adapter targets basic radiation records; other record types require their own explicit contract. AWI states that resulting detailed BSRN quality-check flags are not archived. PANGAEA value annotations, when present, are preserved separately and do not establish completed scientific quality control. Preserve each dataset's citation, station metadata and BSRN data-release conditions.",
     "verified_at": "2026-10-29"
@@ -1019,11 +1019,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/bsrn",
-      "examples/connectors/plot_generation_coverage.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Documents DOI-based programmatic access, tab-delimited exports, structured metadata and citation links. PANGAEA describes these as standard HTTP access rather than a separate proprietary data API. The adapter retains the original citation/license text and source hashes; a DOI identifies the selected dataset and does not imply unrestricted access or a license for all PANGAEA holdings.",
     "verified_at": "2026-10-29"
@@ -1050,12 +1050,12 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/noaa",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official NOAA dataset citation, including all ten credited authors. Identify the actual station/year subset, product version and access date when citing an acquisition. The adapter retrieves GHCNh station reports and retains measurement, quality, source and report codes; the word hourly does not convert every reported value into a one-hour mean or supply missing irradiance observations.",
     "verified_at": "2026-10-29",
@@ -1074,12 +1074,12 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/noaa",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official documentation updated 10 March 2026. Defines native station/year PSV access, station identifiers, units and measurement/quality/report/source codes. GHCNh version 1.1.0 supersedes previous versions and replaces the legacy ISD product. Preserve source fields and actual report timestamps; transformations into analysis intervals require a separately stated aggregation policy.",
     "verified_at": "2026-10-29"
@@ -1097,11 +1097,11 @@
     "role": "background",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/noaa",
-      "examples/connectors/plot_generation_coverage.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official notice dated 23 June 2026 explains why new acquisition uses GHCNh. It records that legacy ISD updates stopped after 24 August 2025 and announces retirement of NCEI's ISD FTP/HTTPS distribution, while legacy files remain available through NODD. This repository's NOAA provider does not implement a legacy ISD fallback.",
     "verified_at": "2026-10-29"
@@ -1119,11 +1119,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/bsrn",
-      "examples/connectors/plot_generation_coverage.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Defines numeric-value annotations for questionable, invalid, unknown, individually defined and inequality-qualified observations. The BSRN parser preserves the annotation and original field rather than silently treating an annotated value as unqualified. PANGAEA syntax alone does not certify detailed BSRN scientific quality control.",
     "verified_at": "2026-10-29"
@@ -1178,11 +1178,11 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/aemet/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/aemet/client.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Current official OpenAPI 3.0.1 document, service version 2.0. Defines header api_key authentication, daily-climate inventory and date-range endpoints, and recent conventional station observations described as the latest 12 hours. The recent endpoint does not accept a historical date range. Exact per-field units and observation periods are preserved from each retrieved metadata document.",
     "verified_at": "2026-10-29"
@@ -1199,11 +1199,11 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/aemet/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/aemet/client.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official documentation of API estado responses and temporary datos/metadatos links, which expire after about five minutes. Field metadata contains source units, definitions, attribution and usage conditions. Canonical JSON snapshots retain data values and metadata; they do not claim to preserve exact HTTP encoding. Key expiry follows the newer published access notices rather than older FAQ PDF statements.",
     "verified_at": "2026-10-29"
@@ -1220,11 +1220,11 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/aemet/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/aemet/client.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official interpretation guidance distinguishing instantaneous temperature, wind averaging intervals, gusts and accumulated precipitation. The public website and API may display different units; this implementation checks returned API field metadata before assigning physical-unit columns. Native reporting dates and variable-specific aggregation periods are retained without inferring a uniform hourly observation contract.",
     "verified_at": "2026-10-29"
@@ -1241,8 +1241,8 @@
     "kind": "manual",
     "role": "background",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/aemet/client.py",
-      "data-retrieval/README.md"
+      "data-retrieval/README.md",
+      "data-retrieval/src/energy_data_retrieval/sources/aemet/client.py"
     ],
     "note": "Current 2026 notices describe retirement of keys issued without expiration and three-month validity for newly issued keys. The source reads AEMET_API_KEY from the environment, sends it through the documented private HTTP header and excludes credentials from output, provenance and public caches.",
     "verified_at": "2026-10-29"
@@ -1259,14 +1259,14 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/dwd/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
+      "data-retrieval/src/energy_data_retrieval/sources/dwd/client.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "DWD CDC dataset version v24.03; published 29 March 2024. Dataset identifier urn:x-wmo:md:de.dwd.cdc::obsgermany-climate-hourly-solar. CC BY 4.0. Native hourly radiation energy remains in J/cm², and acquisition hashes record the separately changing station-archive vintage.",
     "verified_at": "2026-10-29"
@@ -1283,14 +1283,14 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/dwd/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
+      "data-retrieval/src/energy_data_retrieval/sources/dwd/client.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official version v24.03, published 29 March 2024 and last edited 6 May 2024. Defines native fields, hourly energy sums, missing sentinel -999, QN quality-procedure codes, true-solar-time labels, station metadata and CC BY 4.0. The adapter also verifies per-archive parameter metadata specifying UTC and WOZ; interval boundaries and irradiance flux are not inferred.",
     "verified_at": "2026-10-29"
@@ -1309,13 +1309,13 @@
     "kind": "article",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Scientific network reference explicitly requested by NOAA in README_SURFRAD for publications using SURFRAD data. Author names and bibliographic fields verified against publisher-deposited Crossref metadata. Cite the actual station/day subset and access date as well. Page range follows Crossref and the NOAA README (2341–2357); the current AMS web display ends at 2358.",
     "verified_at": "2026-10-29",
@@ -1340,13 +1340,13 @@
     "kind": "article",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Scientific network reference explicitly requested by NOAA in README_SURFRAD for publications using SURFRAD data. Author names and bibliographic fields verified against publisher-deposited Crossref metadata. Cite the actual station/day subset and access date as well. Describes the seven-station network and its BSRN affiliation; this affiliation creates potential overlap between archive routes.",
     "verified_at": "2026-10-29",
@@ -1367,14 +1367,14 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
+      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official 48-field native daily format, station filename aliases, UTC interval-end labels, three-minute averages before 1 January 2009 and one-minute averages thereafter. Defines missing sentinel -9999.9, native quality codes, physical units including UVB in mW/m² and instrument temperatures in Kelvin, and CC0-1.0 licensing. The provider preserves original flags and source values without additional filtering or correction.",
     "verified_at": "2026-10-29"
@@ -1391,14 +1391,14 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
+      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official current station catalogue. The seven SURFRAD archive aliases are bon, tbl, dra, fpk, gwn, psu and sxf; Bondville has site code BND but file prefix bon. The separately linked ARM Southern Great Plains site is outside this provider. Current catalogue positions do not override historical file-header coordinates or elevations.",
     "verified_at": "2026-10-29"
@@ -1415,13 +1415,13 @@
     "kind": "manual",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official network scope, radiation and meteorological instrumentation, calibration context and BSRN participation. SURFRAD and BSRN archive acquisitions must not be treated as independent observations without checking station/time/variable/vintage overlap.",
     "verified_at": "2026-10-29"
@@ -1438,14 +1438,14 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "data-retrieval/README.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
+      "data-retrieval/src/energy_data_retrieval/sources/surfrad/client.py",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Public GML station/year daily text archive actually used by this provider. Cite the selected station, UTC days and acquisition date; preserve its native files, quality flags and hashes. CC0-1.0 with NOAA attribution and fair-use guidance. This is not a claim to retrieve the separately published NCEI NetCDF, QCRAD, or realtime products.",
     "verified_at": "2026-10-29"
@@ -1466,12 +1466,12 @@
       "data-retrieval/src/energy_data_retrieval/sources/bsrn/stations.py",
       "data-retrieval/src/energy_data_retrieval/station_discovery.py",
       "docs/location-discovery.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
       "docs/worldwide-generation.md",
-      "scripts/prepare_connector_station_coverage.py",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/data/generation_coverage_stations.csv",
-      "examples/connectors/data/generation_coverage_stations_provenance.json"
+      "examples/connectors/data/generation_coverage_stations_provenance.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_connector_station_coverage.py"
     ],
     "note": "Official BSRN station inventory linked from the Alfred Wegener Institute station overview. Its bounded tab-delimited export preserves event codes, names, location, elevation, event dates, comments and source URIs. Event date extents do not establish monthly observation availability or continuous measurements; geographic proximity does not establish site representativeness. The selected catalogue and retrieval timestamp identify the acquisition vintage.",
     "verified_at": "2026-10-29"
@@ -1490,17 +1490,17 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/kgpv.py",
-      "methods/src/energy_methods/climatology.py",
-      "methods/src/energy_methods/mapping.py",
-      "docs/kgpv.md",
-      "examples/analysis/plot_kgpv_worldwide.py",
       "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_canary.py",
-      "docs/kgpv-canary.md",
       "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
+      "docs/kgpv-canary.md",
+      "docs/kgpv-chile.md",
+      "docs/kgpv.md",
+      "examples/analysis/plot_kgpv_canary.py",
       "examples/analysis/plot_kgpv_chile.py",
-      "docs/kgpv-chile.md"
+      "examples/analysis/plot_kgpv_worldwide.py",
+      "methods/src/energy_methods/climatology.py",
+      "methods/src/energy_methods/kgpv.py",
+      "methods/src/energy_methods/mapping.py"
     ],
     "note": "Fig. A1 classification precedence and fixed irradiation thresholds; Table 4 merges 24 raw combinations into 12 zones. Verified against the open-access institutional full text. Uses updated GPCC/CRU releases and caller-selected baseline rather than reproducing the original 1990-2016 map. Exact 18 C is assigned tropical, irradiation upper edges are inclusive, and aridity reductions use a machine-roundoff tolerance; these numerical conventions are explicit. No PV yield simulation is claimed.",
     "verified_at": "2026-10-29",
@@ -1524,8 +1524,8 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/kgpv.py",
-      "docs/kgpv.md"
+      "docs/kgpv.md",
+      "methods/src/energy_methods/kgpv.py"
     ],
     "note": "Eq. 2.1 seasonal dryness threshold uses at least two thirds of annual precipitation in winter or summer. The KGPV paper cites this work with year 2007, but the verified publication is 2006. KGPV Fig. A1 supplies the relabelling and polar/steppe equality rules.",
     "verified_at": "2026-10-29",
@@ -1551,9 +1551,9 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/gpcc/client.py",
       "docs/kgpv.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Four resolutions: 0.25, 0.5, 1.0 and 2.5 degrees. Cite the selected product DOI 10.5676/DWD_GPCC/MONTHLY_V2025_025, _050, _100 or _250 respectively; the request and retrieval manifest expose the exact DOI. Monthly totals; precip_infill is opt-in. Five-year blocks through 2020, 2021-2024 block, monthly files from 2025. Retain native gauge/error fields in raw archives. Follow DWD terms of use.",
     "verified_at": "2026-10-29",
@@ -1576,9 +1576,9 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/cru_ts/client.py",
       "docs/kgpv.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Method reference requested by the CRU TS provider. Data version is cited separately; use of this adapter does not imply that any particular analysis consumed CRU data.",
     "verified_at": "2026-10-29",
@@ -1600,9 +1600,9 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/cru_ts/client.py",
       "docs/kgpv.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Pinned release cruts.2604091129.v4.10, monthly 1901-2025 at 0.5 degrees over land excluding Antarctica. No version DOI was provided on the verified release page. Provider asks users to prefer CEDA and use UEA if CEDA is unavailable or the release has not yet been published there. ODbL with Database Contents License, attribution and share-alike. TMP is monthly mean temperature; PRE is monthly total; PET remains mm/day.",
     "verified_at": "2026-10-29"
@@ -1619,8 +1619,8 @@
     "kind": "software",
     "role": "software",
     "used_by": [
-      "methods/src/energy_methods/mapping.py",
-      "data-retrieval/src/energy_data_retrieval/climate_grid.py"
+      "data-retrieval/src/energy_data_retrieval/climate_grid.py",
+      "methods/src/energy_methods/mapping.py"
     ],
     "note": "Software used for labelled climate grids, CF NetCDF masking/scaling, explicit coordinate alignment, interpolation and NetCDF serialization. The algorithms and scientific threshold choices remain attributed to their individual method papers.",
     "verified_at": "2026-10-29"
@@ -1641,9 +1641,9 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
+      "docs/degradation.md",
       "methods/src/energy_methods/degradation.py",
-      "methods/src/energy_methods/degradation_mapping.py",
-      "docs/degradation.md"
+      "methods/src/energy_methods/degradation_mapping.py"
     ],
     "note": "Source of climate-driven mechanism mapping and 0.2 percent/year categories, also presented in thesis Section 6.4. This implementation requires explicit module calibration and stress conventions. Mean daily extrema and arithmetic ambient humidity in the optional hourly processor are declared adaptations; the published global rasters and their calibration are not claimed reproduced.",
     "verified_at": "2026-10-29",
@@ -1668,9 +1668,9 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
+      "docs/degradation.md",
       "methods/src/energy_methods/degradation.py",
-      "methods/src/energy_methods/degradation_mapping.py",
-      "docs/degradation.md"
+      "methods/src/energy_methods/degradation_mapping.py"
     ],
     "note": "Original hydrolysis, photodegradation, thermomechanical and multiplicative combined-rate equations (3)-(7), reproduced in thesis equations 3.14-3.17. Publication Boltzmann constant and normalization placement retained. Calibration and climatic aggregation must be supplied explicitly; no universal module coefficients, power-loss trajectory or service-lifetime predictor are implied.",
     "verified_at": "2026-10-29",
@@ -1692,8 +1692,8 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/ccya.py",
-      "docs/ccya.md"
+      "docs/ccya.md",
+      "methods/src/energy_methods/ccya.py"
     ],
     "note": "Thesis reference [154] for module-temperature correlations, including the Ross relation in thesis equation 3.8. CCYA uses monthly site-adapted GHI and ambient temperature, with the thesis case-study Ross coefficient 0.03 degrees C m2/W. This is a coarse monthly thermal approximation, not hourly irradiance-weighted module temperature. Metadata verified against publisher-deposited Crossref record.",
     "verified_at": "2026-10-29",
@@ -1722,8 +1722,8 @@
     "kind": "article",
     "role": "background",
     "used_by": [
-      "methods/src/energy_methods/ccya.py",
-      "docs/ccya.md"
+      "docs/ccya.md",
+      "methods/src/energy_methods/ccya.py"
     ],
     "note": "Thesis reference [287], cited as background for site adaptation in section 7.5.1. CCYA implements the thesis simple monthly linear regression; it does not implement or reproduce the entire benchmark or all correction techniques in this paper. Metadata verified against publisher-deposited Crossref record.",
     "verified_at": "2026-10-29",
@@ -1844,8 +1844,8 @@
     "kind": "thesis",
     "role": "implemented",
     "used_by": [
-      "analysis/src/energy_analysis/degradation/pipeline.py",
-      "analysis/examples/degradation/kaaya_2019_scenario.json"
+      "analysis/examples/degradation/kaaya_2019_scenario.json",
+      "analysis/src/energy_analysis/degradation/pipeline.py"
     ],
     "note": "Author-accessible verification of the 2019 Kaaya model coefficients: Table 4.3, printed p.45 / PDF p.55. Gran Canaria mono-Si calibration: Ah=4.91e7, Eh=0.74, n=1.90; Ap=71.83, Ep=0.45, x=0.63; Atm=2.04, Etm=0.43, theta=2.24. A_N=1 and the applied analysis aggregation/cycling conventions are explicit study choices, not newly fitted coefficients.",
     "institution": "University of Málaga, School of Industrial Engineering",
@@ -1863,11 +1863,11 @@
     "kind": "software",
     "role": "software",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/cds",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/cds",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official CDS API setup and access guidance. The connector uses optional cdsapi, personal access tokens and manually accepted dataset terms. Cite the selected dataset separately; native downloads are not normalized observations. SDK version and artifact/request hashes are recorded per acquisition.",
     "verified_at": "2026-10-29"
@@ -1884,11 +1884,11 @@
     "kind": "data",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/cds",
       "data-retrieval/src/energy_data_retrieval/grid_discovery.py",
-      "examples/connectors/plot_generation_coverage.py",
+      "data-retrieval/src/energy_data_retrieval/sources/cds",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official CDS catalogue publication date 18 April 2019 and dataset DOI verified. Monthly averaged reanalysis retains native units and accumulation semantics; it is not an hourly station observation. Record the actual retrieval date, selection and downloaded artifact hash because upstream ERA5T can be revised.",
     "verified_at": "2026-10-29"
@@ -1905,12 +1905,12 @@
     "kind": "dataset",
     "role": "data",
     "used_by": [
-      "examples/analysis/plot_kgpv_worldwide.py",
-      "scripts/prepare_kgpv_worldwide.py",
       "docs/kgpv.md",
-      "scripts/prepare_weather_risk_example.py",
+      "docs/soiling-snow.md",
+      "examples/analysis/plot_kgpv_worldwide.py",
       "examples/analysis/plot_soiling_snow_risk.py",
-      "docs/soiling-snow.md"
+      "scripts/prepare_kgpv_worldwide.py",
+      "scripts/prepare_weather_risk_example.py"
     ],
     "note": "Source of the 1991–2020 air temperature, precipitation-rate and downward surface solar-flux climatologies and Gaussian land mask used in the worldwide KGPV gallery fixture. The 5-degree CSV is a derived illustration, not an official NOAA product or reproduction of the published KGPV map. Exact source URLs, retrieval timestamps, checksums, unit conversions, coverage and clipping policy are recorded in examples/analysis/kgpv_worldwide_provenance.json. NOAA lists no usage restrictions and requests attribution to NOAA PSL, Boulder, Colorado, USA; see https://psl.noaa.gov/data/help/. The soiling/snow example reuses the reviewed KGPV fixture's coarse land mask.",
     "verified_at": "2026-10-29"
@@ -1948,9 +1948,9 @@
     "kind": "article",
     "role": "background",
     "used_by": [
+      "docs/kgpv.md",
       "examples/analysis/plot_kgpv_worldwide.py",
-      "scripts/prepare_kgpv_worldwide.py",
-      "docs/kgpv.md"
+      "scripts/prepare_kgpv_worldwide.py"
     ],
     "note": "Methodological reference requested by NOAA PSL for NCEP/NCAR Reanalysis 1. Bibliographic metadata verified against NOAA NCEI study 10873 and the publisher; the separately identified PSL files, not the paleo study subset, supply this example.",
     "verified_at": "2026-10-29",
@@ -1982,10 +1982,10 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/weather_risk.py",
-      "methods/src/energy_methods/weather_risk_mapping.py",
       "docs/soiling-snow.md",
-      "examples/analysis/plot_soiling_snow_risk.py"
+      "examples/analysis/plot_soiling_snow_risk.py",
+      "methods/src/energy_methods/weather_risk.py",
+      "methods/src/energy_methods/weather_risk_mapping.py"
     ],
     "note": "Underlying annual-average AOD/soiling correlation from Chilean sites; implemented as the piecewise thesis Eq. 3.2, with explicit boundary conventions. This is a daily-rate indicator, not a cleaning-aware annual loss model or a globally validated dust-event model.",
     "verified_at": "2026-10-30",
@@ -2006,10 +2006,10 @@
     "kind": "report",
     "role": "background",
     "used_by": [
-      "methods/src/energy_methods/weather_risk.py",
-      "methods/src/energy_methods/weather_risk_mapping.py",
       "docs/soiling-snow.md",
-      "examples/analysis/plot_soiling_snow_risk.py"
+      "examples/analysis/plot_soiling_snow_risk.py",
+      "methods/src/energy_methods/weather_risk.py",
+      "methods/src/energy_methods/weather_risk_mapping.py"
     ],
     "note": "Underlying snow-model report cited by the thesis. The repository implements the thesis's logarithmic annual snow-depth fit for fixed latitude-tilt modules, not the full SAM snow-coverage model. Centimetre units come from thesis Figure 3.4; low-domain and exact-boundary extensions are explicit.",
     "verified_at": "2026-10-30",
@@ -2029,13 +2029,13 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/nasa_power",
-      "scripts/prepare_weather_risk_example.py",
-      "examples/analysis/plot_soiling_snow_risk.py",
       "docs/soiling-snow.md",
+      "docs/worldwide-generation.md",
       "examples/analysis/plot_country_risk.py",
-      "examples/connectors/plot_generation_coverage.py",
+      "examples/analysis/plot_soiling_snow_risk.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_weather_risk_example.py"
     ],
     "note": "Source documentation for total dimensionless AOD at 550 nm from CERES SYN1deg/MATCH. The example explicitly requests unadjusted AOD_55 and UTC dates, averages daily values annually, and credits NASA POWER/CERES. This replaces the thesis ECMWF aerosol source; modelled AOD is not observed surface deposition.",
     "verified_at": "2026-10-30"
@@ -2069,13 +2069,13 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/open_meteo/snow.py",
-      "scripts/prepare_weather_risk_example.py",
-      "examples/analysis/plot_soiling_snow_risk.py",
       "docs/soiling-snow.md",
+      "docs/worldwide-generation.md",
       "examples/analysis/plot_country_risk.py",
-      "examples/connectors/plot_generation_coverage.py",
+      "examples/analysis/plot_soiling_snow_risk.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "scripts/prepare_weather_risk_example.py"
     ],
     "note": "Underlying ERA5-Land reanalysis for the example snow inputs, explicitly selected through Open-Meteo. The wrapper returns physical ground snow depth in metres; native ERA5 water-equivalent sd is not substituted. Credit Copernicus/ERA5-Land and the wrapper. Source snow biases remain; this is an alternative dataset to the thesis ERA5 inputs.",
     "verified_at": "2026-10-30",
@@ -2096,11 +2096,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/aemo/client.py",
-      "examples/connectors/plot_generation_aemo.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_aemo.py",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official schema for public DUID-level instantaneous SCADA MW at the start of each dispatch interval. SETTLEMENTDATE remains the published label; readings are not interval means or settlement energy. Scheduled, semi-scheduled and selected non-scheduled units are included where SCADA is available. Technology and generator/load class require a verified roster.",
     "verified_at": "2026-10-30"
@@ -2118,11 +2118,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/aemo/client.py",
-      "examples/connectors/plot_generation_aemo.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_aemo.py",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official daily archive listing. The connector discovers current or archived files and verifies bounded nested ZIP/CSV contents. The gallery retains 864 original rows from three DUIDs on 27 October 2026, with source URL, retrieval time, full-archive and subset hashes. Archive retention and publication coverage are finite.",
     "verified_at": "2026-10-30"
@@ -2140,11 +2140,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/aemo/client.py",
-      "examples/connectors/plot_generation_aemo.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_aemo.py",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official market-time convention: fixed Australian Eastern Standard Time, UTC+10, without daylight-saving changes. The connector preserves the published dispatch label and converts that label to UTC.",
     "verified_at": "2026-10-30"
@@ -2162,11 +2162,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/eia/client.py",
-      "examples/connectors/plot_generation_eia.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_eia.py"
     ],
     "note": "Official API routes, data/facet parameters, registered-key access and maximum JSON page size. The connector uses stable sorting and bounded offset pagination for hourly fuel-type generation and monthly facility-fuel net generation. Credentialed routes were contract-tested without asserting authenticated live validation.",
     "verified_at": "2026-10-30"
@@ -2184,11 +2184,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/eia/client.py",
-      "examples/connectors/plot_generation_eia.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_eia.py"
     ],
     "note": "Official EIA-930 scope and hour-ending conventions. Hourly energy uses explicit UTC interval bounds; public balance-file hourly average MW is multiplied by one hour to obtain MWh. No imputed/adjusted values substitute for missing reported data. Regional aggregates overlap individual balancing authorities; distributed-generation coverage is incomplete.",
     "verified_at": "2026-10-30"
@@ -2206,8 +2206,8 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/eia/client.py",
-      "examples/connectors/plot_generation_eia.py",
-      "docs/generation-connectors.md"
+      "docs/generation-connectors.md",
+      "examples/connectors/plot_generation_eia.py"
     ],
     "note": "Official code workbook used to verify fuel and storage/hybrid codes, including the expanded 2025 taxonomy. Unknown columns or unavailable requested fuels fail explicitly; aggregate/detail categories are not silently summed.",
     "verified_at": "2026-10-30"
@@ -2225,11 +2225,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/eia/client.py",
-      "examples/connectors/plot_generation_eia.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_eia.py"
     ],
     "note": "Official reporting instructions for hourly integrated generation and the updated storage/hybrid energy-source categories. A schema/code reference, not independent evidence that all requested observations exist.",
     "verified_at": "2026-10-30"
@@ -2247,11 +2247,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/ree/client.py",
-      "examples/connectors/plot_generation_ree.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_ree.py"
     ],
     "note": "Official public generation-structure endpoint and complete geographic filter contract. Dates are inclusive source calendar dates; returned UTC offsets and last-update metadata remain. The connector bounds calendar-year chunks and supports daily/monthly/yearly full-period generation.",
     "verified_at": "2026-10-30"
@@ -2269,11 +2269,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/ree/client.py",
-      "examples/connectors/plot_generation_ree.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_ree.py"
     ],
     "note": "System-level generation by technology. API values are MWh even when the website scales charts to GWh; the scale was cross-checked against the official 2024 report (https://www.sistemaelectrico-ree.es/es/2024/informe-del-sistema-electrico/generacion/generacion-de-energia-electrica/generacion-total-de-energia-electrica). Totals remain separate to prevent double counting. The gallery preserves a complete June 2024 daily response, with checksums and update metadata. This product is not plant telemetry or total estimated self-consumption. Provider terms apply.",
     "verified_at": "2026-10-30"
@@ -2291,11 +2291,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py",
-      "examples/connectors/plot_generation_entsoe.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_entsoe.py"
     ],
     "note": "Official actual-generation requests A75/A16 by production type and A73/A16 by published unit, EIC domains, UTC bounds and security token. Current production endpoint is https://web-api.tp.entsoe.eu/api. Credentials are environment-only and redacted. Authenticated live retrieval was not performed; no-data HTTP 200 acknowledgements and other responses follow the official Query-Response guidance.",
     "verified_at": "2026-10-30"
@@ -2313,11 +2313,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py",
-      "examples/connectors/plot_generation_entsoe.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_entsoe.py"
     ],
     "note": "Official generation definitions, interval-average net power and publication scope. A73 does not enumerate every small plant; aggregate actual generation can contain submitted estimates. Generation and consumption remain separate flows; unit EICs, production type, document revisions and native intervals are preserved.",
     "verified_at": "2026-10-30"
@@ -2335,11 +2335,11 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/entsoe/client.py",
-      "examples/connectors/plot_generation_entsoe.py",
       "docs/generation-connectors.md",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/worldwide-generation.md",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_entsoe.py"
     ],
     "note": "Official fixed- and variable-block XML semantics. A03 is expanded within each Period at the published resolution, including explicit missing blocks; A01 absent positions remain missing. No value is carried across Period boundaries. Official public XML examples validate schema compatibility but are not claimed to be operational measurements.",
     "verified_at": "2026-10-30"
@@ -2356,24 +2356,24 @@
     "kind": "data",
     "role": "data",
     "used_by": [
+      "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
+      "data-retrieval/src/energy_data_retrieval/sources/natural_earth",
+      "docs/country-mapping.md",
+      "docs/kgpv-chile.md",
+      "docs/worldwide-generation.md",
+      "examples/analysis/plot_country_risk.py",
+      "examples/analysis/plot_kgpv_chile.py",
+      "examples/connectors/data/candelaria_site.json",
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "examples/connectors/data/generation_coverage_provenance.json",
+      "examples/connectors/data/generation_coverage_world.geojson",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/plot_generation_coverage.py",
       "methods/src/energy_methods/country_boundaries.py",
       "methods/src/energy_methods/country_mapping.py",
-      "docs/country-mapping.md",
-      "examples/analysis/plot_country_risk.py",
-      "data-retrieval/src/energy_data_retrieval/sources/natural_earth",
-      "scripts/prepare_weather_risk_example.py",
-      "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_chile.py",
-      "docs/kgpv-chile.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md",
+      "scripts/prepare_candelaria_imagery.py",
       "scripts/prepare_connector_coverage.py",
-      "examples/connectors/data/generation_coverage_world.geojson",
-      "examples/connectors/data/generation_coverage_provenance.json",
-      "examples/connectors/plot_candelaria_solar_farm.py",
-      "examples/connectors/data/candelaria_site.json",
-      "scripts/prepare_candelaria_imagery.py"
+      "scripts/prepare_weather_risk_example.py"
     ],
     "note": "Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. The worldwide connector coverage fixture retains 176 unchanged 1:110 million country geometries from the same version; Antarctica is explicitly excluded because its original unsplit world-spanning ring fails the country-map antimeridian contract. Its provenance records the source archive, derived GeoJSON checksum and exclusion. Country shapes supply geographic context rather than electrical service territories or evidence of observation availability. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.",
     "verified_at": "2026-10-30"
@@ -2390,10 +2390,10 @@
     "kind": "manual",
     "role": "software",
     "used_by": [
-      "methods/src/energy_methods/country_boundaries.py",
-      "methods/src/energy_methods/country_mapping.py",
       "docs/country-mapping.md",
-      "examples/analysis/plot_country_risk.py"
+      "examples/analysis/plot_country_risk.py",
+      "methods/src/energy_methods/country_boundaries.py",
+      "methods/src/energy_methods/country_mapping.py"
     ],
     "note": "Polygon topology, point/cell intersection masks, transformations and exact country-cell footprint clipping. Operations are planar longitude/latitude; country areas require geodesic or equal-area calculations. Invalid geometries and unsplit antimeridian rings are rejected explicitly.",
     "verified_at": "2026-10-30"
@@ -2410,8 +2410,8 @@
     "kind": "manual",
     "role": "software",
     "used_by": [
-      "methods/src/energy_methods/country_boundaries.py",
-      "docs/country-mapping.md"
+      "docs/country-mapping.md",
+      "methods/src/energy_methods/country_boundaries.py"
     ],
     "note": "Reads declared shapefile CRS and transforms selected boundaries to EPSG:4326 using always_xy=True. Missing shapefile CRS requires explicit caller input; no coordinate system is guessed from coordinate magnitudes.",
     "verified_at": "2026-10-30"
@@ -2428,8 +2428,8 @@
     "kind": "manual",
     "role": "software",
     "used_by": [
-      "methods/src/energy_methods/country_boundaries.py",
-      "docs/country-mapping.md"
+      "docs/country-mapping.md",
+      "methods/src/energy_methods/country_boundaries.py"
     ],
     "note": "Reads and writes ESRI shapefile geometry/attributes and companion files. Selected exports retain polygon holes and islands with ESRI ring orientation; the PRJ and CPG files declare WGS84 and UTF-8.",
     "verified_at": "2026-10-30"
@@ -2446,12 +2446,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/ons/README.md",
-      "examples/connectors/plot_generation_ons.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_ons.py"
     ],
     "note": "Verified plant/group average MW (MWmed); Type III and MMGD estimate/forecast categories are excluded by default. Native labels and an explicit source-clock interpretation are retained. Public Parquet resources are discovered through the CKAN catalogue.",
     "verified_at": "2026-10-30"
@@ -2468,16 +2468,16 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
-      "data-retrieval/src/energy_data_retrieval/sources/ons/README.md",
-      "examples/connectors/plot_generation_ons.py",
-      "docs/worldwide-generation.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json",
-      "scripts/prepare_forecast_benchmark.py",
       "analysis/src/energy_analysis/forecast_benchmark.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ons/README.md",
+      "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
+      "docs/forecast-benchmark.md",
+      "docs/worldwide-generation.md",
       "examples/analysis/plot_forecast_model_benchmark.py",
-      "docs/forecast-benchmark.md"
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "examples/connectors/plot_generation_coverage.py",
+      "examples/connectors/plot_generation_ons.py",
+      "scripts/prepare_forecast_benchmark.py"
     ],
     "note": "Separate half-hour photovoltaic detail from April 2024. Verified output, estimated/reference values, irradiance flags and restrictions remain distinct; the adapter does not infer curtailment energy from an estimated/actual difference.",
     "verified_at": "2026-10-30"
@@ -2494,12 +2494,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/ieso/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/ieso/README.md",
-      "examples/connectors/plot_generation_ieso.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ieso/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_ieso.py"
     ],
     "note": "Ontario published generator output MW, hourly hour-ending labels in fixed Eastern Standard Time. Capability is not generation. The public recent XML archive is not a promise of complete historical or distributed-generation coverage.",
     "verified_at": "2026-10-30"
@@ -2516,12 +2516,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/ieso/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/ieso/README.md",
-      "examples/connectors/plot_generation_ieso.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ieso/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_ieso.py"
     ],
     "note": "Official report discovery and publication scope. Gallery observations are captured from native public generator-output XML and retain a source/selection/checksum manifest.",
     "verified_at": "2026-10-30"
@@ -2538,12 +2538,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/xm/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/xm/README.md",
-      "examples/connectors/plot_generation_xm.py",
+      "data-retrieval/src/energy_data_retrieval/sources/xm/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_xm.py"
     ],
     "note": "Actual hourly generation-boundary records, distinct from estimated daily SCADA dataset E17D25. Native kWh is retained beside normalized MWh; an explicit settlement revision defaults to TXF without fallback. Source FechaHora is interpreted as Colombia UTC-05 without shifting its label.",
     "verified_at": "2026-10-30"
@@ -2560,12 +2560,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/xm/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/xm/README.md",
-      "examples/connectors/plot_generation_xm.py",
+      "data-retrieval/src/energy_data_retrieval/sources/xm/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_xm.py"
     ],
     "note": "Provider-maintained query documentation supports public dataset/date and settlement-version filtering. The adapter validates metadata, bounds request/row counts and preserves native resource/agent identifiers and revision.",
     "verified_at": "2026-10-30"
@@ -2582,12 +2582,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/aeso/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/aeso/README.md",
-      "examples/connectors/plot_generation_aeso.py",
+      "data-retrieval/src/energy_data_retrieval/sources/aeso/client.py",
       "docs/worldwide-generation.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "examples/connectors/plot_generation_aeso.py",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Public CSD Generation five-minute/hourly archive exports. Volume is interval-average MW, not MWh; explicit Date (MST) is fixed UTC-07 and Date (MPT) is retained. Local import follows user download/extraction, preserves the exact file hash and performs no historical API call.",
     "verified_at": "2026-10-30"
@@ -2604,12 +2604,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/aeso/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/aeso/README.md",
-      "examples/connectors/plot_generation_aeso.py",
+      "data-retrieval/src/energy_data_retrieval/sources/aeso/client.py",
       "docs/worldwide-generation.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "examples/connectors/plot_generation_aeso.py",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Current operational net_generation MW with explicit UTC timestamp, distinct capacity/reserve fields and an API-KEY header. Official documented schema was verified and mocked; no authenticated live response is claimed. Scope is published reporting assets over 5 MW.",
     "verified_at": "2026-10-30"
@@ -2626,12 +2626,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/adme/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/adme/README.md",
-      "examples/connectors/plot_generation_adme.py",
+      "data-retrieval/src/energy_data_retrieval/sources/adme/client.py",
       "docs/worldwide-generation.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "examples/connectors/plot_generation_adme.py",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Official Uruguayan market/open-data entry point. The implementation uses the available public native SCADA archive rather than the legacy CSV endpoint that returned PHP warnings during verification.",
     "verified_at": "2026-10-30"
@@ -2648,12 +2648,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/adme/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/adme/README.md",
-      "examples/connectors/plot_generation_adme.py",
+      "data-retrieval/src/energy_data_retrieval/sources/adme/client.py",
       "docs/worldwide-generation.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "examples/connectors/plot_generation_adme.py",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Public archive discovery and bounded six-header-line SAS parsing. Actual GETOTMEDP.AV MW is distinguished from dispatch limits and forecasts, the declared sample period is retained, and missing sentinels remain missing. The source labels have no offset; the explicit default interpretation is America/Montevideo.",
     "verified_at": "2026-10-30"
@@ -2670,12 +2670,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/elexon/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/elexon/README.md",
-      "examples/connectors/plot_generation_elexon.py",
+      "data-retrieval/src/energy_data_retrieval/sources/elexon/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_elexon.py"
     ],
     "note": "Public B1610 metered-volume acquisition with bounded response/pagination checks, UTC half-hour-end labels validated against Great Britain settlement dates and periods, and request provenance.",
     "verified_at": "2026-10-30"
@@ -2692,12 +2692,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/elexon/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/elexon/README.md",
-      "examples/connectors/plot_generation_elexon.py",
+      "data-retrieval/src/energy_data_retrieval/sources/elexon/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_elexon.py"
     ],
     "note": "BM-unit signed half-hour metered MWh. A BM unit is not automatically an individual PV plant, negative values can represent import, and published records can be revised.",
     "verified_at": "2026-10-30"
@@ -2714,12 +2714,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/rte/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/rte/README.md",
-      "examples/connectors/plot_generation_rte.py",
+      "data-retrieval/src/energy_data_retrieval/sources/rte/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_rte.py"
     ],
     "note": "National consolidated actual technology generation in MW at half-hour resolution. Quarter-hour rows containing forecasts only are excluded; missing values at actual half-hour labels remain missing. Pumping, totals and overlapping technology subcategories are kept outside the selected disjoint generation series.",
     "verified_at": "2026-10-30"
@@ -2736,12 +2736,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/rte/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/rte/README.md",
-      "examples/connectors/plot_generation_rte.py",
+      "data-retrieval/src/energy_data_retrieval/sources/rte/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_rte.py"
     ],
     "note": "Public offset-aware queries and explicit pagination with total-count, duplicate-page and row/request bounds. This connector does not claim the separate live or regional products.",
     "verified_at": "2026-10-30"
@@ -2758,12 +2758,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/caiso/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/caiso/README.md",
-      "examples/connectors/plot_generation_caiso.py",
+      "data-retrieval/src/energy_data_retrieval/sources/caiso/client.py",
       "docs/worldwide-generation.md",
-      "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/data/generation_coverage_catalogue.json",
+      "examples/connectors/plot_generation_caiso.py",
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Operational five-minute fuel-mix MW from public daily CSV files. Imports, storage and mixed Other supply (including proxy demand response) remain distinct flows. Source Pacific local labels on DST clock-change days may be ambiguous or nonexistent; the adapter fails rather than fabricate a UTC timeline. These data are not settlement meter records.",
     "verified_at": "2026-10-30"
@@ -2780,12 +2780,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/smard/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/smard/README.md",
-      "examples/connectors/plot_generation_smard.py",
+      "data-retrieval/src/energy_data_retrieval/sources/smard/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_smard.py"
     ],
     "note": "Verified public German solar, onshore-wind and offshore-wind generation series at quarter-hour resolution in MWh. Weekly data are located through source index JSON and filtered by German civil dates; no additional country or unverified technology identifiers are implied.",
     "verified_at": "2026-10-30"
@@ -2802,12 +2802,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/smard/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/smard/README.md",
-      "examples/connectors/plot_generation_smard.py",
+      "data-retrieval/src/energy_data_retrieval/sources/smard/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_smard.py"
     ],
     "note": "Provider reuse and attribution guidance for SMARD public data. Gallery captures preserve original series responses, exact source requests and checksums; applicable source terms remain authoritative.",
     "verified_at": "2026-10-30"
@@ -2824,12 +2824,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/emi/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/emi/README.md",
-      "examples/connectors/plot_generation_emi.py",
+      "data-retrieval/src/energy_data_retrieval/sources/emi/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_emi.py"
     ],
     "note": "Metered injection in kWh by plant/connection and half-hour trading period. Pacific/Auckland civil days have 46, 48 or 50 intervals; the adapter validates the native trading-period layout and preserves source identities and missing values.",
     "verified_at": "2026-10-30"
@@ -2846,12 +2846,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/emi/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/emi/README.md",
-      "examples/connectors/plot_generation_emi.py",
+      "data-retrieval/src/energy_data_retrieval/sources/emi/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_emi.py"
     ],
     "note": "Provider reuse terms generally use Creative Commons Attribution 4.0 with stated exceptions. The gallery preserves attributed source selections and does not extend those terms to unrelated third-party data.",
     "verified_at": "2026-10-30"
@@ -2868,12 +2868,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/tepco/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/tepco/README.md",
-      "examples/connectors/plot_generation_tepco.py",
+      "data-retrieval/src/energy_data_retrieval/sources/tepco/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_tepco.py"
     ],
     "note": "Monthly native CP932 CSV, current _03 schema from February 2024. The unit row specifies average MW or ten-thousand kW, which is converted explicitly. Half-hour technology generation is separate from demand, total, storage, imports and curtailment.",
     "verified_at": "2026-10-30"
@@ -2890,12 +2890,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/tepco/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/tepco/README.md",
-      "examples/connectors/plot_generation_tepco.py",
+      "data-retrieval/src/energy_data_retrieval/sources/tepco/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_tepco.py"
     ],
     "note": "Provider definitions, estimation/revision caveats and Tokyo-area scope. Source labels use Japan UTC+09. The gallery records the exact raw CP932 hash and its documented UTF-8 subset transformation.",
     "verified_at": "2026-10-30"
@@ -2912,12 +2912,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/taipower/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/taipower/README.md",
-      "examples/connectors/plot_generation_taipower.py",
+      "data-retrieval/src/energy_data_retrieval/sources/taipower/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_taipower.py"
     ],
     "note": "Public current MW snapshot, not a ten-minute average. Published assets, groups, subtotals and storage load are distinguished; aggregate and load rows are excluded by default. Source time is UTC+08.",
     "verified_at": "2026-10-30"
@@ -2934,12 +2934,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/taipower/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/taipower/README.md",
-      "examples/connectors/plot_generation_taipower.py",
+      "data-retrieval/src/energy_data_retrieval/sources/taipower/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_taipower.py"
     ],
     "note": "Documents the separate delayed historical product. The implemented connector is bounded current-snapshot retrieval and does not claim automatic ingestion of the much larger historical download. Taiwan Open Government Data License terms apply to the provider dataset.",
     "verified_at": "2026-10-30"
@@ -2956,12 +2956,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/kpx/README.md",
-      "examples/connectors/plot_generation_kpx.py",
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_kpx.py"
     ],
     "note": "Approved-key API for net market-traded regional solar energy in MWh. It does not cover all national rooftop PV; ESS operation can produce nighttime output. The endpoint and native schema were verified from official Swagger, with mocked retrieval tests and no authenticated live-data claim.",
     "verified_at": "2026-10-30"
@@ -2978,12 +2978,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/kpx/README.md",
-      "examples/connectors/plot_generation_kpx.py",
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_kpx.py"
     ],
     "note": "Native tradeNo values 01..24 are hour-ending market periods; 01 maps to 00:00–01:00 KST. The adapter retains interval boundaries and UTC+09 source semantics.",
     "verified_at": "2026-10-30"
@@ -3000,12 +3000,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/kpx/README.md",
-      "examples/connectors/plot_generation_kpx.py",
+      "data-retrieval/src/energy_data_retrieval/sources/kpx/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_kpx.py"
     ],
     "note": "Provider field definitions, access requirements and product scope. The serviceKey is read from KPX_API_KEY, sent only as a secret parameter and excluded from caches, logs and provenance.",
     "verified_at": "2026-10-30"
@@ -3022,12 +3022,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/eskom/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/eskom/README.md",
-      "examples/connectors/plot_generation_eskom.py",
+      "data-retrieval/src/energy_data_retrieval/sources/eskom/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_eskom.py"
     ],
     "note": "Eskom-owned/contracted renewable wind, PV, CSP and other output, excluding embedded generation. Current exact Hourly_Generation CSV URLs are discovered through the public media catalogue because the chart page can retain a stale upload link.",
     "verified_at": "2026-10-30"
@@ -3044,12 +3044,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/eskom/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/eskom/README.md",
-      "examples/connectors/plot_generation_eskom.py",
+      "data-retrieval/src/energy_data_retrieval/sources/eskom/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_eskom.py"
     ],
     "note": "Supports the MW contribution convention used for Eskom renewable statistics. The hourly CSV uses hour-beginning labels in South African UTC+02; the adapter calls it reported hourly power without inferring a finer sampling definition or independently metered MWh.",
     "verified_at": "2026-10-30"
@@ -3066,12 +3066,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/pvdaq/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/pvdaq/README.md",
-      "examples/connectors/plot_generation_pvdaq.py",
+      "data-retrieval/src/energy_data_retrieval/sources/pvdaq/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_pvdaq.py"
     ],
     "note": "Public anonymous OEDI daily PV system measurements and channel metadata. The adapter selects a bounded system/date range; it preserves native columns and requires explicit power units and source clock. Missing archive files fail instead of generating observations.",
     "verified_at": "2026-10-30"
@@ -3088,12 +3088,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/pvdaq/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/pvdaq/README.md",
-      "examples/connectors/plot_generation_pvdaq.py",
+      "data-retrieval/src/energy_data_retrieval/sources/pvdaq/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_pvdaq.py"
     ],
     "note": "Defines system/site metadata, measured_on and UTC fields, and channel units/scaling/aggregation. The real system 4 example uses metric315 AC power in W, scale1/offset0, and an explicit winter UTC-07 clock. Parquet channel metadata is kept alongside the captured native CSV.",
     "verified_at": "2026-10-30"
@@ -3110,12 +3110,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/nist/README.md",
-      "examples/connectors/plot_generation_nist.py",
+      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_nist.py"
     ],
     "note": "Instrumented Ground, Roof and Canopy photovoltaic arrays in Gaithersburg. The connector imports user-downloaded native CSV/TOA5 exports; no portal-token handling or unattended bulk-download claim. No real NIST capture is bundled.",
     "verified_at": "2026-10-30"
@@ -3132,12 +3132,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/nist/README.md",
-      "examples/connectors/plot_generation_nist.py",
+      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_nist.py"
     ],
     "note": "Native TIMESTAMP is local standard time. InvPAC_kW and PwrMtrP_kW are AC real-power kW channels; one-minute average suffixes and instantaneous channels remain distinct from accumulated kWh registers.",
     "verified_at": "2026-10-30"
@@ -3154,12 +3154,12 @@
     "kind": "article",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/nist/README.md",
-      "examples/connectors/plot_generation_nist.py",
+      "data-retrieval/src/energy_data_retrieval/sources/nist/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_nist.py"
     ],
     "note": "Verifies fixed Eastern Standard Time with no daylight saving, one-minute aggregate suffixes, one-second instantaneous channels and missing NAN readings. The importer preserves signed and missing observations and does not infer interval-edge alignment.",
     "verified_at": "2026-10-30",
@@ -3179,12 +3179,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md",
-      "examples/connectors/plot_generation_dkasc.py",
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_dkasc.py"
     ],
     "note": "Measured PV array exports are obtained through the provider form. The adapter imports a user-downloaded native CSV with exact selected columns/date format and records its hash; it does not submit personal details or accept provider terms for the user.",
     "verified_at": "2026-10-30"
@@ -3201,12 +3201,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md",
-      "examples/connectors/plot_generation_dkasc.py",
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_dkasc.py"
     ],
     "note": "Five-minute average AC power in kW is distinct from cumulative kWh registers. Total and phase channels remain separate. Alice Springs source labels are normalized using Australia/Darwin UTC+09:30 and retain native values.",
     "verified_at": "2026-10-30"
@@ -3223,12 +3223,12 @@
     "kind": "web",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
       "data-retrieval/src/energy_data_retrieval/sources/dkasc/README.md",
-      "examples/connectors/plot_generation_dkasc.py",
+      "data-retrieval/src/energy_data_retrieval/sources/dkasc/client.py",
       "docs/worldwide-generation.md",
+      "examples/connectors/data/generation_coverage_catalogue.json",
       "examples/connectors/plot_generation_coverage.py",
-      "examples/connectors/data/generation_coverage_catalogue.json"
+      "examples/connectors/plot_generation_dkasc.py"
     ],
     "note": "Provider terms distinguish limited unaltered excerpts up to 5000 data cells with attribution/disclaimer from larger redistribution requiring permission. No DKASC observations are bundled; the gallery is an import workflow until a real export is supplied.",
     "verified_at": "2026-10-30"
@@ -3252,12 +3252,12 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_canary.py",
-      "docs/kgpv-canary.md",
       "data-retrieval/src/energy_data_retrieval/sources/canary_clim",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/kgpv-canary.md",
+      "docs/worldwide-generation.md",
+      "examples/analysis/plot_kgpv_canary.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "CC0 v1.0 COG release, monthly 1979–2013 temperature and precipitation. The acquired files have approximately 5 m pixel spacing; this is not validated 5 m climate accuracy. Encoded nodata is masked before scale/offset conversion. Source checksums, grid, dates and original license are retained in the Canary Islands example provenance.",
     "verified_at": "2026-10-30"
@@ -3281,12 +3281,12 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_canary.py",
-      "docs/kgpv-canary.md",
       "data-retrieval/src/energy_data_retrieval/sources/canary_clim",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/kgpv-canary.md",
+      "docs/worldwide-generation.md",
+      "examples/analysis/plot_kgpv_canary.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Scientific description and 100 m model-resolution benchmark for CanaryClim. Citation does not validate the current approximately 5 m COG spacing or this derived KGPV application at five metres.",
     "publication": "Diversity and Distributions",
@@ -3310,12 +3310,12 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_canary.py",
-      "docs/kgpv-canary.md",
       "data-retrieval/src/energy_data_retrieval/sources/global_solar_atlas",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/kgpv-canary.md",
+      "docs/worldwide-generation.md",
+      "examples/analysis/plot_kgpv_canary.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Pinned 2019 Spain archive, annual GHI at 9 arcseconds (nominally 250 m), 1994–2018 according to its XML metadata. Values are already annual kWh/m². Nearest-cell sampling adds no finer solar information. Developed and operated by Solargis s.r.o. on behalf of the World Bank Group using Solargis data with ESMAP funding. CC BY 4.0 with additional mediation/arbitration terms, preserved in the example manifest. Regional extraction and KGPV derivation are modifications; no provider endorsement is implied.",
     "verified_at": "2026-10-30"
@@ -3333,13 +3333,13 @@
     "role": "software",
     "used_by": [
       "analysis/src/energy_analysis/canary_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_canary.py",
-      "docs/kgpv-canary.md",
       "analysis/src/energy_analysis/canary_kgpv/plotting.py",
       "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_chile.py",
+      "data-retrieval/src/energy_data_retrieval/sources/chelsa",
+      "docs/kgpv-canary.md",
       "docs/kgpv-chile.md",
-      "data-retrieval/src/energy_data_retrieval/sources/chelsa"
+      "examples/analysis/plot_kgpv_canary.py",
+      "examples/analysis/plot_kgpv_chile.py"
     ],
     "note": "Bounded raster-window processing, nearest-neighbour GHI sampling and categorical overviews. Native climate pixel centres and missing values remain explicit; display reduction does not change downloadable native rasters.",
     "verified_at": "2026-10-30"
@@ -3365,12 +3365,12 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_chile.py",
-      "docs/kgpv-chile.md",
       "data-retrieval/src/energy_data_retrieval/sources/chelsa",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/kgpv-chile.md",
+      "docs/worldwide-generation.md",
+      "examples/analysis/plot_kgpv_chile.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "CC0 v2.1 climatologies, 1981–2010 monthly temperature and precipitation, 30 arcseconds. Regional windows retain source pixels, CF units, scale/offset and masks. Strong source ETags and crop-pixel SHA-256 pins are recorded; ETags are not SHA-256 hashes. Current files are served from the provider’s chelsa02 container on os.unil.cloud.switch.ch.",
     "verified_at": "2026-10-30"
@@ -3396,12 +3396,12 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_chile.py",
-      "docs/kgpv-chile.md",
       "data-retrieval/src/energy_data_retrieval/sources/chelsa",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/kgpv-chile.md",
+      "docs/worldwide-generation.md",
+      "examples/analysis/plot_kgpv_chile.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Scientific description of CHELSA; use the versioned dataset record for the exact v2.1 baseline, storage encoding and release. Does not independently validate the derived Chile KGPV classifications.",
     "publication": "Scientific Data",
@@ -3425,12 +3425,12 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/chile_kgpv/pipeline.py",
-      "examples/analysis/plot_kgpv_chile.py",
-      "docs/kgpv-chile.md",
       "data-retrieval/src/energy_data_retrieval/sources/global_solar_atlas",
-      "examples/connectors/plot_generation_coverage.py",
+      "docs/kgpv-chile.md",
+      "docs/worldwide-generation.md",
+      "examples/analysis/plot_kgpv_chile.py",
       "examples/connectors/data/generation_coverage_catalogue.json",
-      "docs/worldwide-generation.md"
+      "examples/connectors/plot_generation_coverage.py"
     ],
     "note": "Pinned 2019 Chile archive. XML identifies 1999–2018 annual GHI, kWh/m²; 9 arcseconds, nominal 250 m. Usable values stop at 45°S, though the file rectangle extends to 46°S; southern mainland Patagonia is unclassified. CC BY 4.0 plus additional mediation/arbitration terms retained in the provenance. World Bank/ESMAP/Solargis attribution; derived KGPV does not imply endorsement.",
     "verified_at": "2026-10-30"
@@ -3449,8 +3449,8 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/jrc_climate.py",
-      "docs/climate-comparison.md"
+      "docs/climate-comparison.md",
+      "methods/src/energy_methods/jrc_climate.py"
     ],
     "note": "Parametric two-feature workflow only; independent implementation using sklearn with documented convergence and empty-cluster adaptations. JRC labels are a saved refit, not a claim of identical published raster reconstruction. The distribution/optimal-transport method is not implemented. Online publication 2025; journal issue 2026.",
     "publication": "Solar Energy",
@@ -3491,9 +3491,9 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/ml21.py",
       "data-retrieval/src/energy_data_retrieval/sources/ml21/client.py",
-      "docs/climate-comparison.md"
+      "docs/climate-comparison.md",
+      "methods/src/energy_methods/ml21.py"
     ],
     "note": "Original published labels imported from the 55,418-row supplementary workbook. New seven-feature regression-weighted fits have their own MLxx IDs and frozen training state; no exact reproduction of published centroids or performance improvement is claimed. Radiation statistics retain native workbook conventions. Article CC BY; online 2025, journal volume 2026.",
     "publication": "Renewable Energy",
@@ -3515,8 +3515,8 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/pvcz.py",
-      "docs/climate-comparison.md"
+      "docs/climate-comparison.md",
+      "methods/src/energy_methods/pvcz.py"
     ],
     "note": "IEEE PVSC paper supplied in the author repository. Table I thermal/specific-humidity boundaries and Arrhenius equivalent temperature at 1.1 eV. Equality enters the warmer/wetter class; missing ID zero shifts upstream IDs by one. Stress classes do not predict a degradation rate or lifetime.",
     "publication": "IEEE Photovoltaic Specialists Conference",
@@ -3590,8 +3590,8 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/srtm/client.py",
       "docs/terrain.md",
-      "examples/connectors/plot_terrain_sources.py",
       "examples/connectors/data/terrain_provenance.json",
+      "examples/connectors/plot_terrain_sources.py",
       "scripts/prepare_terrain_samples.py"
     ],
     "note": "Finest publicly distributed SRTM grid: 1 arcsecond, approximately 30 m; 60 N to 56 S; February 2000 radar acquisition; EGM96 orthometric heights. SRTMGL1 void-filled HGT posts are retained without vertical conversion.",
@@ -3611,8 +3611,8 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/srtm/client.py",
       "docs/terrain.md",
-      "examples/connectors/plot_terrain_sources.py",
       "examples/connectors/data/terrain_provenance.json",
+      "examples/connectors/plot_terrain_sources.py",
       "scripts/prepare_terrain_samples.py"
     ],
     "note": "Anonymous official ESA distribution of NASA SRTMGL1 HGT ZIP tiles. Downloaded N28W017 and validated one 3601 by 3601 big-endian int16 member; no SNAP ellipsoid correction applied.",
@@ -3631,14 +3631,14 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/copernicus_dem/client.py",
+      "docs/pv-site-3d.md",
       "docs/terrain.md",
-      "examples/connectors/plot_terrain_sources.py",
-      "examples/connectors/data/terrain_provenance.json",
-      "scripts/prepare_terrain_samples.py",
-      "methods/src/energy_methods/pv_site_3d.py",
-      "examples/analysis/plot_rengo_site_3d.py",
       "examples/analysis/data/rengo_3d/terrain_provenance.json",
-      "docs/pv-site-3d.md"
+      "examples/analysis/plot_rengo_site_3d.py",
+      "examples/connectors/data/terrain_provenance.json",
+      "examples/connectors/plot_terrain_sources.py",
+      "methods/src/energy_methods/pv_site_3d.py",
+      "scripts/prepare_terrain_samples.py"
     ],
     "note": "GLO-30 DSM, primarily TanDEM-X acquisition 2011-2015 with other products for gap filling; EGM2008 heights. Licence attribution is retained in the sample manifest, gallery and guide. Public GLO-30 does not grant EEA-10 access.",
     "verified_at": "2026-10-31"
@@ -3656,12 +3656,12 @@
     "role": "data",
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/copernicus_dem/client.py",
+      "docs/pv-site-3d.md",
       "docs/terrain.md",
-      "examples/connectors/plot_terrain_sources.py",
       "examples/connectors/data/terrain_provenance.json",
-      "scripts/prepare_terrain_samples.py",
+      "examples/connectors/plot_terrain_sources.py",
       "scripts/prepare_rengo_3d.py",
-      "docs/pv-site-3d.md"
+      "scripts/prepare_terrain_samples.py"
     ],
     "note": "Public mirror has unavailable/restricted tiles and absent ocean tiles. COG removes duplicate southern/eastern posts, retains 3600 rows and latitude-dependent longitudinal spacing; 10 in the path means 1.0 arcsecond, not 10 m.",
     "verified_at": "2026-10-31"
@@ -3680,8 +3680,8 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/ign_terrain/client.py",
       "docs/terrain.md",
-      "examples/connectors/plot_terrain_sources.py",
       "examples/connectors/data/terrain_provenance.json",
+      "examples/connectors/plot_terrain_sources.py",
       "scripts/prepare_terrain_samples.py"
     ],
     "note": "Bare-earth terrain products include 5 m, 2 m and 0.5 m coverages. This connector explicitly retrieves the 5 m WCS layer, not the finer standalone downloads. Spanish official height references vary between mainland and islands; confirm project metadata.",
@@ -3701,8 +3701,8 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/ign_terrain/client.py",
       "docs/terrain.md",
-      "examples/connectors/plot_terrain_sources.py",
       "examples/connectors/data/terrain_provenance.json",
+      "examples/connectors/plot_terrain_sources.py",
       "scripts/prepare_terrain_samples.py"
     ],
     "note": "WCS 2.0.1 numeric elevation, with live DescribeCoverage and native-aligned subsets of Elevacion4083_5 and Elevacion25830_5 supported. Live Canary TIFF is 5 m int16 with no nodata declared. DescribeCoverage has generic radiance units; original XML retained and elevations interpreted from official MDT documentation as metres.",
@@ -3722,8 +3722,8 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/usgs_3dep/client.py",
       "docs/terrain.md",
-      "examples/connectors/plot_terrain_sources.py",
       "examples/connectors/data/terrain_provenance.json",
+      "examples/connectors/plot_terrain_sources.py",
       "scripts/prepare_terrain_samples.py"
     ],
     "note": "Project-based 1 m bare-earth DEMs derive from lidar; no complete national or global 1 m coverage implied. CONUS uses projected metre coordinates and NAVD88 heights. Separate seamless 1 m products are not selected by this connector.",
@@ -3743,8 +3743,8 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/usgs_3dep/client.py",
       "docs/terrain.md",
-      "examples/connectors/plot_terrain_sources.py",
       "examples/connectors/data/terrain_provenance.json",
+      "examples/connectors/plot_terrain_sources.py",
       "scripts/prepare_terrain_samples.py"
     ],
     "note": "TNM products API returns metadata, project extents and official GeoTIFF download URLs. Search pagination and byte budgets are bounded. A project bounding box is not a valid-data mask; overlapping tiles require explicit project selection.",
@@ -3764,12 +3764,12 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py",
       "docs/satellite-imagery.md",
-      "examples/connectors/plot_satellite_imagery.py",
-      "examples/connectors/data/imagery_provenance.json",
-      "scripts/prepare_satellite_imagery_samples.py",
-      "examples/connectors/plot_candelaria_solar_farm.py",
       "examples/connectors/data/candelaria_site.json",
-      "scripts/prepare_candelaria_imagery.py"
+      "examples/connectors/data/imagery_provenance.json",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/plot_satellite_imagery.py",
+      "scripts/prepare_candelaria_imagery.py",
+      "scripts/prepare_satellite_imagery_samples.py"
     ],
     "note": "Actual dependency, pinned to commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05. Uses Sentinel2GroundConnector, read_ground_image, GroundImage.save_geotiff and load_ground_image. Python 3.13+ optional workspace dependency group; Git pin remains outside published package metadata. Earlier PyPI 0.7.0 lacks these ground APIs.",
     "verified_at": "2026-10-31"
@@ -3788,12 +3788,12 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py",
       "docs/satellite-imagery.md",
-      "examples/connectors/plot_satellite_imagery.py",
-      "examples/connectors/data/imagery_provenance.json",
-      "scripts/prepare_satellite_imagery_samples.py",
-      "examples/connectors/plot_candelaria_solar_farm.py",
       "examples/connectors/data/candelaria_site.json",
-      "scripts/prepare_candelaria_imagery.py"
+      "examples/connectors/data/imagery_provenance.json",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/plot_satellite_imagery.py",
+      "scripts/prepare_candelaria_imagery.py",
+      "scripts/prepare_satellite_imagery_samples.py"
     ],
     "note": "Public Earth Search v1, sentinel-2-c1-l2a. Asset-level GSD, projection, scale, offset and nodata retained; scene-wide cloud cover is not a local mask.",
     "verified_at": "2026-10-31"
@@ -3813,12 +3813,12 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py",
       "docs/satellite-imagery.md",
-      "examples/connectors/plot_satellite_imagery.py",
-      "examples/connectors/data/imagery_provenance.json",
-      "scripts/prepare_satellite_imagery_samples.py",
-      "examples/connectors/plot_candelaria_solar_farm.py",
       "examples/connectors/data/candelaria_site.json",
-      "scripts/prepare_candelaria_imagery.py"
+      "examples/connectors/data/imagery_provenance.json",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "examples/connectors/plot_satellite_imagery.py",
+      "scripts/prepare_candelaria_imagery.py",
+      "scripts/prepare_satellite_imagery_samples.py"
     ],
     "note": "Native 10 m visible/NIR, 20 m and 60 m bands. Examples retain native grid and SCL quality classes; RGB display is not reflectance. Contains modified Copernicus Sentinel data (2026).",
     "verified_at": "2026-10-31"
@@ -3837,8 +3837,8 @@
     "used_by": [
       "data-retrieval/src/energy_data_retrieval/sources/orbitalpv_imagery/client.py",
       "docs/satellite-imagery.md",
-      "examples/connectors/plot_satellite_imagery.py",
       "examples/connectors/data/imagery_provenance.json",
+      "examples/connectors/plot_satellite_imagery.py",
       "scripts/prepare_satellite_imagery_samples.py"
     ],
     "note": "Event-limited disaster imagery, program/event CC BY-NC 4.0. Archive https://maxar-opendata.s3.amazonaws.com/events/catalog.json. Original acquisition collection proprietary declaration is also retained. Finest selection compares native GSD and asset grid, never a sharpened preview. Actual WorldView-3 sample has 0.33 m declared GSD; approximately 0.305 m visual display spacing is not new sensor detail.",
@@ -3857,13 +3857,13 @@
     "kind": "dataset",
     "role": "data",
     "used_by": [
-      "examples/connectors/plot_candelaria_solar_farm.py",
-      "examples/connectors/data/candelaria_site.json",
-      "scripts/prepare_candelaria_imagery.py",
-      "docs/satellite-imagery.md",
-      "examples/connectors/data/candelaria_README.txt",
       "docs/pv-module-counting.md",
-      "examples/analysis/plot_candelaria_module_counting.py"
+      "docs/satellite-imagery.md",
+      "examples/analysis/plot_candelaria_module_counting.py",
+      "examples/connectors/data/candelaria_README.txt",
+      "examples/connectors/data/candelaria_site.json",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "scripts/prepare_candelaria_imagery.py"
     ],
     "note": "CC BY. Official catalogue feature 6 identifies Planta Icor at longitude -16.442229, latitude 28.194341 with 2,000 kW listed power; AC/DC basis unspecified. Full canonical GeoJSON and request hash retained. OSM point-in-polygon association is not a surveyed boundary.",
     "verified_at": "2026-10-31"
@@ -3880,13 +3880,13 @@
     "kind": "dataset",
     "role": "data",
     "used_by": [
-      "examples/connectors/plot_candelaria_solar_farm.py",
-      "examples/connectors/data/candelaria_site.json",
-      "scripts/prepare_candelaria_imagery.py",
-      "docs/satellite-imagery.md",
-      "examples/connectors/data/candelaria_README.txt",
       "docs/pv-module-counting.md",
-      "examples/analysis/plot_candelaria_module_counting.py"
+      "docs/satellite-imagery.md",
+      "examples/analysis/plot_candelaria_module_counting.py",
+      "examples/connectors/data/candelaria_README.txt",
+      "examples/connectors/data/candelaria_site.json",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "scripts/prepare_candelaria_imagery.py"
     ],
     "note": "ODbL-1.0. Original query-bound Tenerife capture from Orbital PV commit 498c47e182f9f0e1b0f0d40bc3125ef7c2110a05, examples/ground_imagery/_data/tenerife-osm.json, retrieved 2026-10-30; original sidecar and checksum retained. Way 430266023 contains the official Icor point. Mapping does not establish ownership, full installation extent or capacity.",
     "verified_at": "2026-10-31"
@@ -3904,13 +3904,13 @@
     "kind": "dataset",
     "role": "data",
     "used_by": [
-      "examples/connectors/plot_candelaria_solar_farm.py",
-      "examples/connectors/data/candelaria_site.json",
-      "scripts/prepare_candelaria_imagery.py",
-      "docs/satellite-imagery.md",
-      "examples/connectors/data/candelaria_README.txt",
       "docs/pv-module-counting.md",
-      "examples/analysis/plot_candelaria_module_counting.py"
+      "docs/satellite-imagery.md",
+      "examples/analysis/plot_candelaria_module_counting.py",
+      "examples/connectors/data/candelaria_README.txt",
+      "examples/connectors/data/candelaria_site.json",
+      "examples/connectors/plot_candelaria_solar_farm.py",
+      "scripts/prepare_candelaria_imagery.py"
     ],
     "note": "PNOA/IGN rendered aerial orthophoto via https://www.ign.es/wms-inspire/pnoa-ma, OI.OrthoimageCoverage, WMS 1.1.1. IGN attribution/licence terms apply. The Icor view is aerial, not satellite or calibrated reflectance; acquisition date and native GSD remain unknown. Render width does not establish native detail. Original query and SHA-256 retained.",
     "verified_at": "2026-10-31"
@@ -3929,9 +3929,9 @@
     "kind": "article",
     "role": "background",
     "used_by": [
-      "methods/src/energy_methods/pv_module_counting.py",
       "docs/pv-module-counting.md",
-      "examples/analysis/plot_candelaria_module_counting.py"
+      "examples/analysis/plot_candelaria_module_counting.py",
+      "methods/src/energy_methods/pv_module_counting.py"
     ],
     "note": "Background for colour-based PV module recognition and mapping from aerial imagery. The repository uses its own experimental RGB thresholding, morphology, robust table-edge fitting and brightness-profile grid counter; it does not reproduce the paper’s HSV/UAV workflow or its validation. Candidate counts require independent annotations or an as-built inventory.",
     "verified_at": "2026-10-31",
@@ -3952,10 +3952,10 @@
     "kind": "software",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/pv_module_counting.py",
       "docs/pv-module-counting.md",
       "examples/analysis/plot_candelaria_module_counting.py",
-      "methods/src/energy_methods/pv_lattice_counting.py"
+      "methods/src/energy_methods/pv_lattice_counting.py",
+      "methods/src/energy_methods/pv_module_counting.py"
     ],
     "note": "Peak detection on detrended table brightness profiles. Prominence, distance and height conditions are explicit image-space screening parameters, not calibrated detection probabilities. Morphological operations and interpolation also use SciPy.",
     "verified_at": "2026-10-31"
@@ -3973,10 +3973,10 @@
     "role": "data",
     "used_by": [
       "docs/chile-module-counting.md",
-      "examples/analysis/plot_chile_largest_module_counting.py",
-      "examples/analysis/plot_chile_smallest_module_counting.py",
       "docs/rengo-module-counting.md",
-      "examples/analysis/data/rengo_modules/rengo_study.json"
+      "examples/analysis/data/rengo_modules/rengo_study.json",
+      "examples/analysis/plot_chile_largest_module_counting.py",
+      "examples/analysis/plot_chile_smallest_module_counting.py"
     ],
     "note": "Attributed research-report static maps for the Chile audits and El Mirlo pilot. Source resolution and rendered service sampling differ. Map copyrights remain with Esri and licensors; static-map terms https://doc.arcgis.com/en/arcgis-online/reference/static-maps.htm. No open imagery-data license asserted.",
     "verified_at": "2026-10-31"
@@ -4035,8 +4035,8 @@
     "kind": "article",
     "role": "background",
     "used_by": [
-      "methods/src/energy_methods/pv_lattice_counting.py",
-      "docs/rengo-module-counting.md"
+      "docs/rengo-module-counting.md",
+      "methods/src/energy_methods/pv_lattice_counting.py"
     ],
     "note": "Background on geometric individual-module detection from high-resolution UAV RGB/thermal and 3D data. The PCA/autocorrelation method here is a separate experimental implementation, not a reproduction; published accuracy does not transfer to the El Mirlo basemap pilot. No known-count gap filling is implemented.",
     "verified_at": "2026-10-31",
@@ -4111,8 +4111,8 @@
     "kind": "software",
     "role": "software",
     "used_by": [
-      "methods/src/energy_methods/pv_site_3d.py",
-      "docs/pv-site-3d.md"
+      "docs/pv-site-3d.md",
+      "methods/src/energy_methods/pv_site_3d.py"
     ],
     "note": "Local WGS84 azimuthal-equidistant projection for metre-based PV scenes. The local radius guard and table-plane lifting rule are repository choices, not a PROJ photogrammetry algorithm.",
     "verified_at": "2026-10-31"
@@ -4735,8 +4735,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Operating battery units aggregated by Plant Code. Nameplate power AC; stored energy nameplate; December 31 reporting-year status per archive instructions. Electrochemical capacitors excluded.",
     "verified_at": "2026-11-01"
@@ -4753,8 +4753,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "CP1252 CSV; operational Battery records only. Planning records require phase and alias reconciliation; MWh unreported; native applicant/operator and projected coordinates retained without role or datum inference.",
     "verified_at": "2026-11-01"
@@ -4771,8 +4771,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "238.5 MW / 477 MWh operating; South Australia; release date not asserted as COD.",
     "verified_at": "2026-11-01"
@@ -4789,8 +4789,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Stages 1 and 2 operating at combined 540 MW / 1080 MWh. Stage 3 is 305 MW / 1220 MWh under construction, expected summer 2027/28 and excluded from current totals.",
     "verified_at": "2026-11-01"
@@ -4807,8 +4807,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "300 MWh BESS at 500 MW solar plant in Aswan; commissioning complete ahead of scheduled COD; exact commercial operation unconfirmed.",
     "verified_at": "2026-11-01"
@@ -4825,8 +4825,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Named Abydos I BESS: 300 MWh integrated with existing 500 MWac PV in Aswan. The November 2024 commissioning date refers to solar, not BESS.",
     "verified_at": "2026-11-01"
@@ -4843,8 +4843,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Company received notice on 11 February 2026 that full COD had been achieved. 334 MW / 501 MWh Plant 2, 200 MW PV Plant 1, Tashkent region. Notice receipt is not necessarily the exact COD.",
     "verified_at": "2026-11-01"
@@ -4861,8 +4861,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Second Aghada battery 150 MW / 300 MWh, following first 19 MW / 38 MWh in 2022. Poolbeg 75 MW /150 MWh. Aghada combined arithmetic total is 169 MW /338 MWh; no duplicate phase rows.",
     "verified_at": "2026-11-01"
@@ -4879,8 +4879,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "75 MW /150 MWh operational since late November 2023. Owner reports coordinates 53.340380,-6.189385. February 2024 opening is not COD.",
     "verified_at": "2026-11-01"
@@ -4897,8 +4897,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "New facility 40 MW /80 MWh enters operation in Szazhalombatta. Huawei equipment, Forest-Vill main contractor. Separate 2022 Tesla demonstrator 4 MW /8 MWh excluded from new-facility ratings.",
     "verified_at": "2026-11-01"
@@ -4915,8 +4915,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_expansion.md"
+      "catalogues/bess/research/2026-11-01_expansion.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Two independent 100 MW /200 MWh parks. Kiisa operating for grid services Q4 2025. Arukula construction completed in 2026; both regulate grid frequency. No exact COD inferred. Joint venture Evecon, Corsica Sole and Mirova.",
     "verified_at": "2026-11-01"
@@ -4933,8 +4933,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -4951,8 +4951,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -4969,8 +4969,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -4987,8 +4987,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5005,8 +5005,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5023,8 +5023,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5041,8 +5041,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5059,8 +5059,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5077,8 +5077,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5095,8 +5095,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5113,8 +5113,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5131,8 +5131,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5149,8 +5149,8 @@
     "kind": "webpage",
     "role": "data",
     "used_by": [
-      "catalogues/bess/sources.json",
-      "catalogues/bess/research/2026-11-01_australia_chile.md"
+      "catalogues/bess/research/2026-11-01_australia_chile.md",
+      "catalogues/bess/sources.json"
     ],
     "note": "Primary-source BESS factual metadata; see catalogue for access method and rating/scope qualifications.",
     "verified_at": "2026-11-01"
@@ -5660,7 +5660,8 @@
     "kind": "website",
     "role": "data_source",
     "used_by": [
-      "catalogues/bess/sources.json"
+      "catalogues/bess/sources.json",
+      "catalogues/wind/sources.json"
     ],
     "note": "Adapted BOE data; source terms and scope in BESS register.",
     "verified_at": "2026-11-01"
@@ -5677,7 +5678,8 @@
     "kind": "website",
     "role": "data_source",
     "used_by": [
-      "catalogues/bess/sources.json"
+      "catalogues/bess/sources.json",
+      "catalogues/wind/sources.json"
     ],
     "note": "Adapted BOE data; source terms and scope in BESS register.",
     "verified_at": "2026-11-01"
@@ -14537,15 +14539,15 @@
     "kind": "software",
     "role": "software",
     "used_by": [
-      "methods/src/energy_methods/timestral.py",
-      "analysis/src/energy_analysis/timestral_case.py",
-      "examples/connectors/plot_timestral_forecast.py",
-      "scripts/prepare_timestral_example.py",
-      "docs/timestral.md",
       "analysis/src/energy_analysis/forecast_benchmark.py",
-      "scripts/prepare_forecast_benchmark.py",
+      "analysis/src/energy_analysis/timestral_case.py",
+      "docs/forecast-benchmark.md",
+      "docs/timestral.md",
       "examples/analysis/plot_forecast_model_benchmark.py",
-      "docs/forecast-benchmark.md"
+      "examples/connectors/plot_timestral_forecast.py",
+      "methods/src/energy_methods/timestral.py",
+      "scripts/prepare_forecast_benchmark.py",
+      "scripts/prepare_timestral_example.py"
     ],
     "note": "Official model inference wrapped through an optional local connector. No retraining or reimplementation of the neural architecture. Inference code: Apache-2.0; separately distributed checkpoint weights: Modified MIT. Gallery replays pinned real Timestral-5M inference on attributed EIA CISO generation and offers explicit live inference. One historical holdout with unknown pretraining overlap is not operational validation or proof of superior accuracy.",
     "verified_at": "2026-11-03"
@@ -14617,8 +14619,8 @@
     "role": "data source",
     "used_by": [
       "catalogues/wind",
-      "docs/wind-catalogue.md",
-      "data-retrieval/src/energy_data_retrieval/wind_catalogue/mastr.py"
+      "data-retrieval/src/energy_data_retrieval/wind_catalogue/mastr.py",
+      "docs/wind-catalogue.md"
     ],
     "note": "Original wind XML extracted with HTTP byte ranges. Full ZIP checksum unavailable. Complete Schleswig-Holstein partition reviewed; accepted park groups retain unresolved capacity scope.",
     "verified_at": "2026-11-03"
@@ -14762,10 +14764,10 @@
     "kind": "conference-paper",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/xgboost.py",
       "analysis/src/energy_analysis/forecast_benchmark.py",
+      "docs/forecast-benchmark.md",
       "examples/analysis/plot_forecast_model_benchmark.py",
-      "docs/forecast-benchmark.md"
+      "methods/src/energy_methods/xgboost.py"
     ],
     "note": "XGBoost software lineage. CPU histogram trees, fixed hyperparameters and chronological forecasting are repository choices.",
     "publication": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
@@ -14804,10 +14806,10 @@
     "kind": "report",
     "role": "background",
     "used_by": [
-      "methods/src/energy_methods/wind_physics.py",
       "analysis/src/energy_analysis/forecast_benchmark.py",
+      "docs/forecast-benchmark.md",
       "examples/analysis/plot_forecast_model_benchmark.py",
-      "docs/forecast-benchmark.md"
+      "methods/src/energy_methods/wind_physics.py"
     ],
     "note": "NREL/TP-500-38060. Source of reference cut-in/rated/cut-out speeds 3/11.4/25 m/s only. The repository cubic interpolation and fitted farm scale do not reproduce the NREL aerodynamic curve or identify the actual farm equipment.",
     "verified_at": "2026-11-03"
@@ -14824,11 +14826,11 @@
     "kind": "dataset",
     "role": "data",
     "used_by": [
-      "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
-      "scripts/prepare_forecast_benchmark.py",
       "analysis/src/energy_analysis/forecast_benchmark.py",
+      "data-retrieval/src/energy_data_retrieval/sources/ons/client.py",
+      "docs/forecast-benchmark.md",
       "examples/analysis/plot_forecast_model_benchmark.py",
-      "docs/forecast-benchmark.md"
+      "scripts/prepare_forecast_benchmark.py"
     ],
     "note": "Native half-hour mean generation, wind resource and restriction/quality flags. Access-year metadata. The September 2026 dictionary prints m3/s for a wind-speed column; the benchmark explicitly assumes its numerical readings are m/s, retaining this source inconsistency in provenance. No estimated/reference generation is substituted for measured power.",
     "verified_at": "2026-11-03"
@@ -14848,13 +14850,13 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/pv_reliability.py",
-      "methods/src/energy_methods/degradation_uncertainty.py",
-      "methods/src/energy_methods/pv_stress_weather.py",
-      "methods/src/energy_methods/degradation_preprocessing.py",
       "analysis/src/energy_analysis/degradation_uncertainty/study.py",
       "docs/degradation-uncertainty.md",
-      "examples/analysis/plot_degradation_uncertainty.py"
+      "examples/analysis/plot_degradation_uncertainty.py",
+      "methods/src/energy_methods/degradation_preprocessing.py",
+      "methods/src/energy_methods/degradation_uncertainty.py",
+      "methods/src/energy_methods/pv_reliability.py",
+      "methods/src/energy_methods/pv_stress_weather.py"
     ],
     "note": "Verified from the user-supplied article PDF (SHA-256 dc16f0c30c75ac87e9755421985153173c2efd1c55d870ecc6734f37c528fb80). Table 2 reliability curves, Eqs. 1 and 3–17, Sections 2.5/3.4 preprocessing and Eqs. 19–20 metrics are implemented with explicit conventions. Table 5 omits A_N and C_N; the printed 273+delta-T term and incomplete rate-unit conventions are documented separately from the existing 2019 mapping model. Published-table checks and synthetic/scenario analyses are not reproduction or field validation of the original measurement study. Gamma is held fixed in wear-out fitting because only gamma/k is identifiable.",
     "verified_at": "2026-11-03",
@@ -14904,8 +14906,8 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/pv_lifetime/study.py",
-      "examples/analysis/plot_pv_lifetime_50_years.py",
-      "docs/pv-lifetime.md"
+      "docs/pv-lifetime.md",
+      "examples/analysis/plot_pv_lifetime_50_years.py"
     ],
     "note": "Published online 30 May 2025. Swiss multi-decade field evidence. Analysis uses attributed numerical extracts from the pre-publication Zenodo v1.0.0 archive, preserving date/count/rate differences from the final article. No 50-year measurement or fleet survival estimate is claimed.",
     "publication": "EES Solar",
@@ -14929,8 +14931,8 @@
     "role": "data",
     "used_by": [
       "analysis/src/energy_analysis/pv_lifetime/study.py",
-      "examples/analysis/plot_pv_lifetime_50_years.py",
       "docs/pv-lifetime.md",
+      "examples/analysis/plot_pv_lifetime_50_years.py",
       "scripts/prepare_pv_lifetime_data.py"
     ],
     "note": "Version 1.0.0, 19 December 2024. Archive downloaded 3 November 2026 and verified against published MD5 b19a01369228f92769096a5a45965b1f. PM cell values and system PLRs extracted with addresses and hashes. Dataset CC-BY-4.0 confirmed from Zenodo API metadata; no license inferred from the article.",
@@ -14951,10 +14953,10 @@
     "kind": "article",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/pv_lifetime.py",
       "analysis/src/energy_analysis/pv_lifetime/study.py",
+      "docs/pv-lifetime.md",
       "examples/analysis/plot_pv_lifetime_50_years.py",
-      "docs/pv-lifetime.md"
+      "methods/src/energy_methods/pv_lifetime.py"
     ],
     "note": "Online 25 April 2026. Independent implementation of selected MAPLE MSM equations: independent mode product (8), sigmoid power (10), equivalent-time update (13; discussion 24–28). Rates are reciprocal years; shapes and stress histories in the example are hypothetical. Full CFM, dependent modes and multi-scale modelling are not implemented here.",
     "publication": "Energy Reports",
@@ -15658,8 +15660,8 @@
     "kind": "web",
     "role": "implemented",
     "used_by": [
-      "methods/src/energy_methods/thermal_counterfactual.py",
-      "docs/thermal-counterfactual.md"
+      "docs/thermal-counterfactual.md",
+      "methods/src/energy_methods/thermal_counterfactual.py"
     ],
     "note": "Reanalysis of published numerical EnergyPlus and Timestral outputs, not new model inference. Start-gated event convention inferred from published numerical event times; unrestricted crossings retained.",
     "verified_at": "2026-11-04"
@@ -16125,6 +16127,313 @@
     "verified_at": "2026-11-04"
   },
   {
+    "id": "boe_b_2026_35162",
+    "title": "Los Pedreros hybrid public consultation",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-35162",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Wind and hybrid boundaries retained in source registry.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_34151",
+    "title": "El Almendro solar hybrid decision",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-34151",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Procedure and technology boundaries retained in wind evidence.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_34388",
+    "title": "Ouroso public utility consultation",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-34388",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Procedure and technology boundaries retained in wind evidence.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "dnv_register_20260420",
+    "title": "Renewables Certification register, status20April2026",
+    "authors": [
+      "DNV"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.dnv.com/publications/renewables-certification-list-of-valid-certificates/",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json",
+      "data-retrieval/src/energy_data_retrieval/wind_catalogue/dnv.py"
+    ],
+    "note": "Dated register observations; not current certificate validity or independent operating performance.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_a_2026_21663",
+    "title": "Ampliación El Páramo application rejection",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21663",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Administrative scope is distinct from physical operation.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_a_2026_21768",
+    "title": "Mistral application withdrawal",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21768",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Administrative scope is distinct from physical operation.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_a_2026_21769",
+    "title": "Tesouro Storage battery authorization",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21769",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Administrative scope is distinct from physical operation.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_a_2026_21602",
+    "title": "Elawan Belinchón I, II and III wind environmental decision",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21602",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Wind, solar and storage boundaries retained.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_a_2026_21603",
+    "title": "Bordecorex Norte solar hybrid refusal",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21603",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Wind, solar and storage boundaries retained.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_a_2026_21604",
+    "title": "Ventosa del Ducado solar hybrid refusal",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21604",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Wind, solar and storage boundaries retained.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_a_2024_14203",
+    "title": "Tesouro wind construction authorization",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2024,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-14203",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Wind, solar and storage boundaries retained.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_31903",
+    "title": "Conca de Barberà I utility consultation and prior authorization history",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-31903",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Proposal ratings and authorization dates do not establish operating capacity.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_32682",
+    "title": "Mudarra revised mixed-fleet proposal and authorization history",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-32682",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Proposal ratings and authorization dates do not establish operating capacity.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_33451",
+    "title": "Anoia y Segarra II public utility declaration",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-33451",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Proposal ratings and authorization dates do not establish operating capacity.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_a_2026_20137",
+    "title": "BOE-A-2026-20137 wind project scope and procedural evidence",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20137",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Dated proposals and procedural history, not independently validated operation.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_31550",
+    "title": "BOE-B-2026-31550 wind project scope and procedural evidence",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-31550",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Dated proposals and procedural history, not independently validated operation.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_31657",
+    "title": "BOE-B-2026-31657 wind project scope and procedural evidence",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-31657",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Dated proposals and procedural history, not independently validated operation.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_31682",
+    "title": "BOE-B-2026-31682 wind project scope and procedural evidence",
+    "authors": [
+      "Government of Spain"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-31682",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Dated proposals and procedural history, not independently validated operation.",
+    "verified_at": "2026-11-04"
+  },
+  {
     "id": "pvdeg_software",
     "title": "PVDeg: a Python package for modeling degradation of solar photovoltaic systems",
     "authors": [
@@ -16149,6 +16458,160 @@
       "examples/analysis/plot_pvdeg_canary.py"
     ],
     "note": "Integration pins pvdeg 0.7.4; DOI is upstream concept DOI. Relative thermal screening, not calibrated degradation or lifetime.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "aemo_nem_oct2026_bess",
+    "title": "NEM Generation Information, October 2026: wind survey units",
+    "authors": [
+      "Australian Energy Market Operator"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json",
+      "data-retrieval/src/energy_data_retrieval/wind_catalogue/aemo.py"
+    ],
+    "note": "Dated source observations; no independent validation claimed.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "pnnl_small_wind_july2026",
+    "title": "Small Wind Turbine Certifications: July 2026 table",
+    "authors": [
+      "Pacific Northwest National Laboratory"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.pnnl.gov/distributed-wind/technology-update/small-wind-turbine-certifications",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Dated source observations; no independent validation claimed.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "boe_b_2026_30961",
+    "title": "El Tabaibal public utility declaration modification ER150053",
+    "authors": [
+      "Government of Spain / BOE"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-30961",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "Dated source observations; no independent validation claimed.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "sdwind_sd3_20261104",
+    "title": "SD3 product specification",
+    "authors": [
+      "SD Wind Energy"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://sd-windenergy.com/small-wind-turbines/sd3-3kw-wind-turbine/",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "OEM specification observations, not independently validated performance. Access year where publication date is unavailable.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "sdwind_sd3ex_20261104",
+    "title": "SD3EX product specification",
+    "authors": [
+      "SD Wind Energy"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://sd-windenergy.com/small-wind-turbines/sd3ex-3kw-wind-turbine/",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "OEM specification observations, not independently validated performance. Access year where publication date is unavailable.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "sdwind_sd12_20261104",
+    "title": "SD12 product specification",
+    "authors": [
+      "SD Wind Energy"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://sd-windenergy.com/small-wind-turbines/sd12-12kw-wind-turbine/",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "OEM specification observations, not independently validated performance. Access year where publication date is unavailable.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "sdwind_sd6_20261104",
+    "title": "SD6 product specification",
+    "authors": [
+      "SD Wind Energy"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://sd-windenergy.com/small-wind-turbines/sd6-6kw-wind-turbine/",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "OEM specification observations, not independently validated performance. Access year where publication date is unavailable.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "sdwind_sd6_sdmk106",
+    "title": "SD6 product specification SDMK106",
+    "authors": [
+      "SD Wind Energy"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://sd-windenergy.com/files/9315/6051/8111/SD6_Product_Leaflet.pdf",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "OEM specification observations, not independently validated performance. Access year where publication date is unavailable.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "bergey_excel15_rev31",
+    "title": "BWC EXCEL15 and Powersync25 owner manual",
+    "authors": [
+      "Bergey Windpower Company"
+    ],
+    "year": 2025,
+    "doi": null,
+    "url": "https://www.bergey.com/wp-content/uploads/Excel-15S-Owners-Manual-Single-Box-12-30-25.pdf",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/wind/sources.json"
+    ],
+    "note": "OEM specification observations, not independently validated performance. Access year where publication date is unavailable.",
     "verified_at": "2026-11-04"
   }
 ]
