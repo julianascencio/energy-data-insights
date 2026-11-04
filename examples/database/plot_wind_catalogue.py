@@ -35,6 +35,31 @@ print(projects.groupby(["status", "aggregation_role"]).size().unstack(fill_value
 print("Equipment categories (components are not turbines):")
 print(equipment.groupby(["manufacturer", "equipment_category"]).size())
 
+# Procedural decisions can concern solar or auxiliary equipment, not the wind farm.
+print("BOE decision scope: wind lifecycle and capacity boundaries remain separate")
+for row in rows:
+    procedure = json.loads(row.get("extensions_json") or "{}").get("boe_procedure")
+    if procedure:
+        print(
+            row["name"],
+            "decision target",
+            procedure["decision_target"],
+            "decision date",
+            procedure["decision_date"],
+            "wind status",
+            row["status"],
+            "status date",
+            row["status_as_of"],
+            "installed MW",
+            row.get("installed_capacity_mw"),
+            "planned MW",
+            row.get("planned_capacity_mw"),
+            "aggregation",
+            row["aggregation_role"],
+            "quarantined fields",
+            sorted(json.loads(row.get("conflicts_json") or "{}")),
+        )
+
 # Follow only disclosed applications; component power is not turbine power.
 by_id = {row["record_id"]: row for row in rows}
 print("Explicit component applications and their conditions (not deployed fleets):")

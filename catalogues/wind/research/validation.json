@@ -1,44 +1,54 @@
 {
-  "batch": "2026-11-04-1235",
+  "batch": "2026-11-04-1335",
   "validated_base": "7004215c89e6d4482a391577d321605860ae0f9a",
-  "iteration_parent": "4890689e16098492e1087e7444c4ed2ff0b04daf",
+  "iteration_parent": "56627081204d3b4ce6c0c284992e779b9bde383f",
   "local": {
-    "pytest": "2220 passed; five optional skips",
+    "pytest": "2236 passed; five optional skips",
     "viewer": "16 passed",
     "quality": "Ruff lint/format, ty, repository hygiene, citations and whitespace passed",
-    "catalogue": "21911 records validated; all prior scalars, creation timestamps, sources and extension observations retained",
-    "snapshots": "Two builds of seven files byte-identical; typed Zstandard Parquet",
-    "source_replay": "Five equipment records and 26 section decisions replay exactly from checksummed original and reviewed transcription",
-    "capacity": "All six capacity summaries unchanged",
-    "docs": "Strict Sphinx plot_gallery=0 passed; 534 HTML pages passed links/assets check",
-    "example": "Offline Wind gallery passed",
+    "catalogue": "21916 records validated; all21911 preceding records and301 previous source-registry entries preserved",
+    "snapshots": "Two final builds of seven files byte-identical; immutable typed Zstandard Parquet",
+    "source_replay": "Five canonical records including conflict quarantine and supporting correction, and seven notice decisions, replay exactly from checksummed original HTML and reviewed transcription",
+    "capacity": "All six reported capacity totals and included unknown counts unchanged; excluded project count increases by5",
+    "docs": "Strict Sphinx plot_gallery=0 passed;536 HTML pages passed local links/assets check",
+    "example": "Offline Wind gallery passed on final records",
     "packages": "Three wheels and three sdists built"
   },
+  "resolved_validation_failures": [
+    "Initial citation used_by module name corrected to actual repository path; full suite rerun passed",
+    "A later full-suite/docs rerun exhausted workspace disk space; reproducible older outputs cleared; final suite and strict docs rebuilt successfully"
+  ],
   "not_executed": [
     "Full gallery",
     "Interactive browser",
-    "Independent current certificate eligibility/performance verification"
+    "Independent operational performance or current certificate eligibility verification"
   ],
   "remote_ci": {
-    "previous_commit": "4890689e16098492e1087e7444c4ed2ff0b04daf",
-    "previous_result": "Python and Documentation succeeded",
+    "previous_commit": "56627081204d3b4ce6c0c284992e779b9bde383f",
+    "previous_result": "Python3.12/Python3.13 and Documentation succeeded; deployment skipped",
     "this_batch": "Pending publication"
   },
   "snapshot_sha256": {
-    "sources.json": "f83de9e633bc56220895ccc7094b408368e8fecba3de95af20003652d26d1751",
+    "sources.json": "9477ecd6d7f68b40312e7a24234c4c65a0a870efc962f41e6a046c111686c392",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "e780db5ef0f16fd4f6462228da1508455edff658f00759e4bb8d7ea567f1c5ed",
+    "manifest.json": "64b4cb2041d836800b55c8371dd55ceef8ca69d4db3bdd4848d04b2c5740b966",
     "equipment.parquet": "4429d5eaa2b673c5f77f04219cdf97fcaab78b2a2ba4e8d8c6969ca304f3b6b8",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "646692e08c8a3c343db798df6dfbce414956324fc30681b80761247f93296323"
+    "projects.parquet": "6657068eb2dfe1db9731edd42ff86b5201f71d3902d4d6ca7b7d19c2589e0330"
   },
   "log_sha256": {
-    "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
-    "gallery.log": "168cbf8167b0daa602207dba70b1844f5c4d4f6654e6bd44ba384bb2890a2e6f",
-    "pytest.log": "41448938d0f4f39e647fb3c3aa60aceb827d6a6983c15df0cbb7cc0e90ce7b83",
-    "links.log": "38afbed222f7b1ee8eef1b0e08300c0d93877fd4b834c2a30ca81465bd68f81e",
-    "docs.log": "2550b10a73b454dbf236fa2b4f326f91eb6f0aa2bd639443c4fac52bd93fae1c",
-    "viewer.log": "598bd22296cd2c81b393734725aa33d1df1cd5c84919c03e1efe01b01473ed08"
+    "pytest-verified.log": "859c07a3c891735e52919079f72be24104d5b7c5a19021af6119b4a0dd5e596c",
+    "docs-verified.log": "d6c567a8af40e22b04f77579bf725b1cd18580a5b25eee8388de33ec71685b31",
+    "links-verified.log": "00efba4fb7d5b09c21402aded869e7b3ec2cc5a78b0459a318361f806e5315c6",
+    "packages-verified.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
+    "replay-verified.log": "bf0d2915b8bff432bb4c3ad82665129c6f5b00d39df13238ac8a55c9c81f67bc",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "format.log": "4c4af158016f111858b093be28e5eae0e2ecd3ab0850e5e8205bef2b88709fc6",
+    "ty.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "viewer.log": "5774beeff0b6d1575fb68437df546cd02c8748ef3f6cf59fd1a571b0b7bcee32",
+    "gallery-final.log": "d2fa91b2610e3c10c61d7ea50221d36f9d82dccb489b0ea38a8c8f526bc92648",
+    "repository-final.log": "8ad704cd4a31559fe6948d1dfd9ccc429a13ed64e87f54240284ccce79f9b5d5",
+    "citations-final.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141"
   }
 }

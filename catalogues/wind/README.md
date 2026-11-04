@@ -281,3 +281,34 @@ are created. Tower drawing options remain observations rather than inferred
 commercial model variants. Bearing, coupling and structural identities remain
 held for category/assembly reconciliation. Historical certification conditions
 are not current eligibility or independent operational-performance validation.
+
+## Spanish regulatory decisions: bounded daily review
+
+The 2026-11-04-1335 batch reviews every Series A wind-mentioned title in the
+BOE daily indexes for 20 October and 2–4 November 2026 (five notices), plus the
+Taraguilla withdrawal and its correction. Five project identities are added:
+Las Quinientas wind module, Taraguilla, Nordés, Pinta y Guindalera and Herrera
+de los Navarros. This is a bounded regulatory review, not a Spanish plant census.
+
+The offline `wind_catalogue.boe` adapter selects complete title partitions and
+stages reviewed facts only after original-byte checksum and completeness checks.
+It does not extract capacity or operating status from a title. Solar decisions
+cannot cancel wind farms; environmental conditions alone do not establish
+construction authorization. Existing identities are held for reconciliation.
+
+Las Quinientas retains the final five-turbine, 33 MW proposal separately from
+its earlier 72.6 MW design and 72 MW access observation. Its inconsistent rotor
+figures remain quarantined. Taraguilla retains the 30/33 kV and destination
+conflicts; the subsequent correction changes section numbering only. Nordés
+is a withdrawn application, separate from Mistral despite their former joint
+processing. Pinta y Guindalera retains the 100 to 103.5 MW proposal revision;
+its 2026 auxiliary supply permission is not a commissioning event. Herrera's
+35 MW existing wind installation stays separate from the proposed 21 MW solar
+addition. Its precise operating lifecycle remains unknown.
+
+All five farm/phase scopes remain excluded from capacity totals. Los Campillos
+is deferred because the reviewed rejection concerns its solar hybrid. Incidental
+Mistral, Cerrato VI and Las Majas VIIB mentions remain research candidates.
+No equipment record is added: exact Bonfiglioli drawing searches found only the
+already processed certificate. See the dated transcription, source review and
+decision ledger; the next daily partitions are 21–23 October 2026.

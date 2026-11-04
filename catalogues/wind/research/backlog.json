@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T11:35:52Z",
+  "updated_at": "2026-11-04T12:43:00Z",
   "branch": "research/wind-20261104-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -163,7 +163,8 @@
         "Nine complete DMCdocuments (queueindices0–8,including GE3.8) and ALMM-WTC02June2026 complete:25new exact components,9turbines enriched,43generic rows held. Next queueindex9 Senvion4.2M160 https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf thenindices10–14 in 2026-11-04-0935-component-queue.json. Do not infer geometry/rating from model codes or split factory variants. Resolve generic types only with exact-model evidence.",
         "DMCqueueindices9–14complete:13new5turbinesenriched; SG/Vayona remainsheld. All15queued disclosures exhausted. Next exact supplier specification originals for WE4500S-01,WE7000G,EF0953A; reconcile Delijia legal entities without alias inference. Bearing/structural category mappings need explicit schema design before importing retained codes.",
         "TC-240121 Rev.2 original acquired; complete p6 gearbox pair reviewed; EF0953A enriched with drawing-qualified ratio, distinct NGC candidate held. Next pp4–5,7–10 exact component tables; retain p11 option conditions and historical certification scope. WE4500S-01/WE7000G supplier spec originals remain unresolved.",
-        "TC-240121 Rev2 component sections pp5,7–10 complete; p6NGC exact gearbox added;5new1turbine enrichment. Remaining21 assembly/alias holds retained. Next exact Bonfiglioli JB00024563/JB00024827 drawing sheets; no 7T/TW alias inference."
+        "TC-240121 Rev2 component sections pp5,7–10 complete; p6NGC exact gearbox added;5new1turbine enrichment. Remaining21 assembly/alias holds retained. Next exact Bonfiglioli JB00024563/JB00024827 drawing sheets; no 7T/TW alias inference.",
+        "Exact Bonfiglioli JB00024563/JB00024827/7T07W searches returned only the already reviewed certificate; no new drawings. Keep21 assembly holds; next independent supplier WE4500S-01 and WE7000G originals."
       ]
     },
     {
@@ -199,7 +200,27 @@
       "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
       "partition": "Complete Spanish wind rows, then complete Polish wind rows; exclude PV",
       "next_offset": 0,
-      "next_task": "Cortijo government table discovery distinguishes I/I second phase/II; two historical canonical candidates. Original2023Cadiz PDF URL404. Next current official Cadiz inventory and explicit phase/permit crosswalk; no PNE aggregate allocation."
+      "next_task": "Cadiz complete inventory and Cortijo I/II phase crosswalk still pending; current BOE daily notices are supplementary and do not allocate PNE capacities."
+    },
+    {
+      "rank": 9,
+      "source": "BOE complete daily Series A wind-mentioned decisions",
+      "status": "bounded_daily_partitions_complete",
+      "completed_dates": [
+        "2026-10-20",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04"
+      ],
+      "next_dates": [
+        "2026-10-21",
+        "2026-10-22",
+        "2026-10-23"
+      ],
+      "adapter": "energy_data_retrieval.wind_catalogue.boe",
+      "next_offset": 0,
+      "next_task": "Select every wind-mentioned Series A notice in next_dates; review full original and correction links. Reconcile Los Campillos actual wind permit/status before using PV decision. Mistral PEol-338 remains separate from withdrawn Nordés. No automatic title capacity/status extraction.",
+      "decision_ledger": "2026-11-04-1335-decisions.json"
     }
   ],
   "user_priority_update": {

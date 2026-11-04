@@ -1,0 +1,179 @@
+"""Offline BOE discovery and reviewed notice staging with technology boundaries.
+
+The index adapter selects every Series A notice mentioning wind; it never reads
+MW or a lifecycle from the title. Reviewed facts require checksummed originals.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+import unicodedata
+from html.parser import HTMLParser
+from typing import Any
+from urllib.parse import parse_qs, urlsplit
+
+from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
+
+from .catalogue import stable_id
+from .gppd import evidence_record
+
+REFERENCE_IDS = ("boe_a_2026_22987",)
+
+
+def _normalized(text: str) -> str:
+    return " ".join(
+        "".join(c for c in unicodedata.normalize("NFKD", text) if not unicodedata.combining(c))
+        .casefold()
+        .split()
+    )
+
+
+class _Index(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.depth = 0
+        self.paragraph = False
+        self.title: list[str] = []
+        self.ids: set[str] = set()
+        self.notices: list[dict[str, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        if tag == "li":
+            if self.depth:
+                self.depth += 1
+            elif "dispo" in (values.get("class") or "").split():
+                self.depth = 1
+                self.title, self.ids = [], set()
+        if self.depth and tag == "p":
+            self.paragraph = True
+        if self.depth and tag == "a":
+            url = urlsplit(values.get("href") or "")
+            if url.path == "/diario_boe/txt.php":
+                self.ids.update(parse_qs(url.query).get("id", []))
+
+    def handle_data(self, data: str) -> None:
+        if self.paragraph:
+            self.title.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "p":
+            self.paragraph = False
+        if tag == "li" and self.depth:
+            self.depth -= 1
+            if not self.depth:
+                title = " ".join("".join(self.title).split())
+                if "eolic" in _normalized(title):
+                    if len(self.ids) != 1:
+                        raise ValueError("Wind notice requires one document identifier")
+                    ident = next(iter(self.ids))
+                    if re.fullmatch(r"BOE-A-\d{4}-\d+", ident):
+                        self.notices.append({"notice_id": ident, "title": title})
+
+
+def select_wind_notices(html: str) -> list[dict[str, str]]:
+    """Select Series A wind mentions, including solar hybrids and auxiliaries.
+
+    Series B announcements are outside this explicitly bounded partition.
+    A selected title is a review candidate, never an automatic project record.
+    """
+    if "sumario" not in html.casefold() or "dispo" not in html:
+        raise ValueError("Expected a complete BOE daily index, not an error/login page")
+    parser = _Index()
+    parser.feed(html)
+    parser.close()
+    if parser.depth:
+        raise ValueError("Truncated BOE index")
+    ids = [n["notice_id"] for n in parser.notices]
+    if len(ids) != len(set(ids)):
+        raise ValueError("Duplicate BOE notice")
+    return parser.notices
+
+
+def stage_boe_notices(
+    reviews: list[dict[str, Any]],
+    originals: dict[str, bytes],
+    existing: list[dict[str, Any]],
+    *,
+    expected_ids: list[str],
+    now: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Stage a complete reviewed partition; keep procedural and plant scopes apart.
+
+    All new records remain excluded from capacity sums until farm boundaries are
+    independently reconciled. Existing names require explicit reconciliation.
+    """
+    ids = [r["notice_id"] for r in reviews]
+    if len(ids) != len(set(ids)) or len(expected_ids) != len(set(expected_ids)):
+        raise ValueError("Duplicate review/selection identifier")
+    if set(ids) != set(expected_ids):
+        raise ValueError("Incomplete notice review")
+    names = {
+        _normalized(r["name"])
+        for r in existing
+        if r["entity_type"] == "projects" and r.get("country_code") == "ESP"
+    }
+    record_ids = {r["record_id"] for r in existing}
+    rows, decisions = [], []
+    for review in reviews:
+        ident = review["notice_id"]
+        if hashlib.sha256(originals[ident]).hexdigest() != review["sha256"]:
+            raise ValueError("Original BOE checksum mismatch")
+        if not review.get("values"):
+            decisions.append(
+                {"notice_id": ident, "decision": "deferred", "reason": review["reason"]}
+            )
+            continue
+        values = dict(review["values"])
+        if values.get("country_code") != "ESP" or not values.get("technology"):
+            raise ValueError("Reviewed country and turbine technology required")
+        target, effect = review["decision_target"], review["decision_effect"]
+        if target not in {"wind", "solar", "auxiliary"}:
+            raise ValueError("Explicit decision technology boundary required")
+        if target != "wind" and values["status"] == "cancelled":
+            raise ValueError("Non-wind decision cannot cancel the wind farm")
+        if effect == "environmental_conditions" and values["status"] == "permitted":
+            raise ValueError("Environmental decision alone is not construction authorization")
+        if (
+            target == "wind"
+            and values["status"] in {"announced", "permitted", "cancelled"}
+            and values.get("installed_capacity_mw") is not None
+        ):
+            raise ValueError("Proposed authorization MW is not installed capacity")
+        if set(values) != set(review["locators"]):
+            raise ValueError("Every reviewed field requires a locator")
+        rid = stable_id("projects", "BOE", review["identity"])
+        if rid in record_ids or _normalized(values["name"]) in names:
+            decisions.append({"notice_id": ident, "decision": "existing_identity_review"})
+            continue
+        names.add(_normalized(values["name"]))
+        record_ids.add(rid)
+        values.update(
+            record_id=rid,
+            entity_type="projects",
+            record_scope="farm",
+            aggregation_role="unresolved",
+        )
+        row = evidence_record(values, source_id=ident, now=now, locator=review["locator"])
+        evidence = json.loads(row["evidence_json"])
+        for field, locator in review["locators"].items():
+            if field in evidence:
+                evidence[field].update(locator=locator, publication_date=review["published_at"])
+        field_sources = json.loads(row["field_sources_json"])
+        for field, observations in review.get("supporting_evidence", {}).items():
+            if field not in evidence:
+                raise ValueError("Supporting evidence requires an existing factual field")
+            for observation in observations:
+                sid = observation["source_id"]
+                if sid not in ids or not observation.get("locator"):
+                    raise ValueError("Supporting notice must be reviewed with a locator")
+                row["sources"] = sorted(set(row["sources"] + [sid]))
+                field_sources[field] = sorted(set(field_sources[field] + [sid]))
+            evidence[field]["supporting_evidence"] = observations
+        row["field_sources_json"] = canonical_json(field_sources)
+        row["evidence_json"] = canonical_json(evidence)
+        rows.append(row)
+        decisions.append({"notice_id": ident, "decision": "added", "record_id": rid})
+    return sorted(rows, key=lambda r: r["record_id"]), decisions
