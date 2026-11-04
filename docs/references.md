@@ -6464,6 +6464,174 @@ Ravindrababu, Suraj; Hädrich, Ingrid; Paetzold, Ulrich W.; Gebhardt, Paul (2026
 
 **Used by:** `methods/src/energy_methods/pv_lifetime.py`, `analysis/src/energy_analysis/pv_lifetime/study.py`, `examples/analysis/plot_pv_lifetime_50_years.py`, `docs/pv-lifetime.md`.
 
+### cabo_santiago_sal_2150
+
+Cabeolica SA / Advisian (2025). **Cabeolica expansion components1–3 Santiago and Sal NTS**. [Source](https://cabeolica.com/wp-content/uploads/2025/02/NTS_Simplified_ESIA_Sal_and_Santiago_Final_251601.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cabo_boa_2150
+
+Cabeolica SA / Advisian (2025). **Cabeolica expansion component5 Boa Vista NTS**. [Source](https://cabeolica.com/wp-content/uploads/2025/03/NTS_Simplified_ESIA_BESS_Boa_Vista.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cabo_vicente_2150
+
+Cabeolica SA / Advisian (2025). **Cabeolica expansion component4 São Vicente NTS**. [Source](https://cabeolica.com/wp-content/uploads/2025/03/NTS_Simplified_ESIA_BESS_Sao_Vicente.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gov_vicente_2150
+
+Governo de Cabo Verde (2026). **Inauguração do sistema de armazenamento em São Vicente**. [Source](https://www.governo.cv/primeiro-ministro-inaugura-sistema-de-armazenamento-de-energia-em-baterias-em-s-vicente/)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gov_boa_2150
+
+Governo de Cabo Verde (2026). **Inauguração do sistema de armazenamento na Boa Vista**. [Source](https://www.governo.cv/primeiro-ministro-na-boa-vista-inaugurado-o-sistema-de-armazenamento-de-energia-em-baterias/)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gov_sal_2150
+
+Governo de Cabo Verde (2026). **Inauguração no Sal da extensão da central e sistema de baterias**. [Source](https://www.governo.cv/primeiro-ministro-inaugura-no-sal-a-extensao-da-central-electrica-e-o-sistema-de-armazenamento-de-energia-em-baterias/)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### gov_santiago_2150
+
+Governo de Cabo Verde (2025). **Governo em Ação Novembro2025 No29**. [Source](https://www.governo.cv/wp-content/uploads/2025/12/newsletter_novembro_2025_n29_suple_especial_oe2026.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bsl_s205_2150
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **ESS-GRID S205 Station Series**. [Source](https://bslbatt.com/wp-content/uploads/2025/05/ESS-GRID-S205-250508.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_s314_2150
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **ESS-GRID S314 Station Series**. [Source](https://bslbatt.com/wp-content/uploads/2025/10/ESS-GRID-S314-250508.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_cabinet_2150
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **ESS-GRID Cabinet Series C225/C241**. [Source](https://bslbatt.com/wp-content/uploads/ESS-GRID-Cabinet-Series-260915.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_rack_2150
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **B-LFP48 Series 100E/200E/300E Rack Batteries**. [Source](https://bslbatt.com/wp-content/uploads/2025/05/机架合集（黑）-250329.pdf)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_cabinet_web_2150
+
+BSLBATT (n.d.). **ESS-GRID Cabinet C200/C215/C225/C241 product page**. [Source](https://bslbatt.com/ess-grid-c200-c215-c225-c241-industry-ess-cabinet-series/)
+
+**Role:** data. Primary source for bounded factual catalogue observations; source-specific reuse assessment, revision, locators and checksums are in the catalogue source register. No source licence inferred from this bibliographic entry.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_ci_warranty_v12_2150
+
+BSL NEW ENERGY TECHNOLOGY CO., LTD (n.d.). **BSLBATT ESS Limited Warranty Letter V1.2**. [Source](https://bslbatt.com/wp-content/uploads/ESS-GRID-system-Limited-warranty-V1.2.pdf)
+
+**Role:** data. Printed V1.2; no publication date stated. Conditional cabinet warranty, not installation eligibility or a universal ten-year system guarantee.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_residential_2026_2348
+
+BSLBATT (2026). **BSLBATT Residential Energy Storage Products 2026**. [Source](https://bslbatt.com/wp-content/uploads/BSLBATT-Residential-Energy-Storage-Products-2026.pdf)
+
+**Role:** data. Year in catalogue filename; selected exact tables PDF pp12,13,17,18. Manufacturer claims, not independently certified performance. Publication day/revision unverified.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### cabeolica_annual2024_2348
+
+Cabeólica S.A. (2025). **Cabeolica Annual Report 2024**. [Source](https://cabeolica.com/wp-content/uploads/2025/09/RC_2024_EN.pdf)
+
+**Role:** data. 2024 reporting year; board report dated27March2025; public reader, direct403. Programme milestones are not site construction/COD or finance allocations.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_sie002_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-002-2026-RCD — Parque Solar Mirasol SAEB**. [Source](https://sie.gob.do/wp-content/uploads/2026/01/SIE-002-2026-RCD.pdf)
+
+**Role:** data. PDF pp1–3,8–13; technical report pp9–10; original decision incomplete; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_sie002corrected_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Acto rectificativo y Resolución SIE-002-2026-RCD — Mirasol SAEB**. [Source](https://sie.gob.do/wp-content/uploads/2026/03/SIE-002-2026-RCD-3.pdf)
+
+**Role:** data. PDF p1 correction notice; pp2–15 corrected resolution; decision printed pp11–14 (PDF12–15). Original number/date retained; March URL is not issue date.; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_sie004_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-004-2026-RCD — Planta Santanasol SAEB**. [Source](https://sie.gob.do/wp-content/uploads/2026/01/SIE-004-2026-RCD.pdf)
+
+**Role:** data. PDF pp1–3,10–13,17; printed page numbers match PDF; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_sie006_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-006-2026-RCD — Peravia Solar I SAEB**. [Source](https://sie.gob.do/wp-content/uploads/2026/01/SIE-006-2026-RCD.pdf)
+
+**Role:** data. PDF pp1–3,9–12,15; cover/year2026 and signed date15January2026; footer says2025; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_haina_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-114-2026-AMEM — BESS-Haina installation authorization**. [Source](https://sie.gob.do/wp-content/uploads/2026/09/SIE-114-2026-AMEM.pdf)
+
+**Role:** data. PDF pp1,6–12; authorized ratingsp10, commissioning prerequisitespp9,11–12; technical paragraphp7 misnames asset; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bsl_warranty_v141_20261104
+
+BSLBATT / Huizhou BSL NEW ENERGY Technology Co., Ltd. (n.d.). **BSLBATT Lithium Battery Limited Warranty Letter V1.41**. [Source](https://bslbatt.com/wp-content/uploads/BSLBATT-ESS-Battery-Warranty-V1.41.pdf)
+
+**Role:** data. PDF pp1–3 applicable types, clauses1.1–1.3 and Table1.0; pp4–5 coverage; pp7–10 exclusions, registration and AppendixA; Copyright retained; bounded factual model/condition observations from OEM public document. No full-document redistribution or open bulk-reuse licence inferred.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
 ### bonfiglioli_br_vec501_r0
 
 Bonfiglioli Vectron (n.d.). **Braking Resistors**. [Source](https://www.bonfiglioli.com/international/usefulDocuments/braking-resistors-manual_inverters---servo-drives_brakings-resistor_eng_r00_0.pdf)

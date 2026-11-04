@@ -17,6 +17,13 @@ or a live availability feed. Do not interpret record counts as installed capacit
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
 4. Stage national inventory candidates with `scripts/stage_bess_inventory.py`.
+   For the seven-column BSLBATT S205/S314 station sheets,
+   `scripts/stage_bess_bslbatt.py` stages local `pdftotext -layout` output and
+   checks model order, units, merged-cell scope and voltage envelopes. The row
+   labelled `Rate Power(kWh)` is energy, never active power. S205 maximum-current
+   assertions require manual reconciliation with its separate 0.5C claim.
+   Component dimensions are not complete-system dimensions; neither optional
+   equipment nor index filenames establish installed configuration or revision dates.
    For the reviewed PIB Indian Table-II format, use `scripts/stage_bess_pib.py`
    on downloaded HTML; it stages candidates only and does not import identities.
    For public NEMSA mini-grid applications, `scripts/stage_bess_nemsa.py` stages

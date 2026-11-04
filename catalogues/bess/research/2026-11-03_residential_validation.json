@@ -1,0 +1,33 @@
+{
+  "completed_at": "2026-11-03T23:57:41.834705+00:00",
+  "elapsed_minutes_to_validation": 9.2,
+  "base_main": "7af547f900d676b4334226a64739aed2f4cb3f97",
+  "starting_pr_head": "d74a8e68249d02a9d5b5cebc37af5a43e44e5fcd",
+  "checks": {
+    "python_suite": "2124 passed in89.25s",
+    "final_catalogue_tests": "28 passed",
+    "references": "29 passed",
+    "viewer": "15 passed",
+    "ruff_lint": "passed",
+    "ruff_format": "795 files passed",
+    "ty": "passed repository-wide",
+    "strict_sphinx": "passed after integrating main PV fixes",
+    "links": "Documentation check passed: 518 HTML pages; local links and assets resolve.",
+    "hygiene": "Repository check passed: 3331 candidate files; no flagged secrets or data.",
+    "citations": "passed",
+    "diff_check": "passed",
+    "offline_examples": "BESS projects and OEM passed",
+    "parquet": "Both catalogues rebuilt twice deterministically; typed Zstandard; outside Git",
+    "packages": "Three wheels and three sdists built; strict Twine passed",
+    "installed_wheel_smoke": "Not repeated; no package code changes in this iteration"
+  },
+  "corrected_attempts": [
+    "Temporary environment symlink rejected by hygiene; removed and hygiene passed.",
+    "First link audit ran before Sphinx snapshot postprocessing completed; rerun after successful build passed.",
+    "Existing upsert correctly quarantined additive nested changes; seven edits explicitly reviewed and prior facts retained."
+  ],
+  "preservation": "See companion preservation audit;4 project and3 equipment records changed, all other existing records unchanged;created_at preserved.",
+  "publication": "Leave PR121 open; expected-head non-force update; main/open PRs rechecked before publication.",
+  "yield": "Selected three new-model tables and rack comparison table exhausted.4-site existing owner portfolio exhausted.12 new models meets equipment objective; no thin new projects manufactured.",
+  "remote_ci": "Not claimed as passed"
+}
