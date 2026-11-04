@@ -188,6 +188,22 @@ def test_ups_matrix_keeps_kstar_epower_apparent_and_active_power_separate():
     assert candidate["output_power_kw"] == 540
 
 
+def test_ups_matrix_accepts_makelsan_exact_rating_row():
+    header, *rows = UPS_MATRIX.splitlines()
+    makelsan_row = next(row for row in rows if row.startswith(b"Makelsan,"))
+    makelsan = header + b"\n" + makelsan_row + b"\n"
+    result = parse_ups_rating_matrix(
+        makelsan,
+        source_url=("https://www.makelsan.com.tr/katalog/levelups-t3-series-10---200-kva.pdf"),
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Makelsan"
+    assert candidate["family"] == "LEVELUPS T3"
+    assert candidate["apparent_power_kva"] == 200
+    assert candidate["output_power_kw"] == 200
+
+
 def test_ups_matrix_accepts_borri_row_without_deriving_power_factor():
     header, *rows = UPS_MATRIX.splitlines()
     borri_row = next(row for row in rows if row.startswith(b"Borri,"))

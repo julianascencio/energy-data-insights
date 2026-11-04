@@ -434,6 +434,10 @@ def parse_ups_rating_matrix(
         "www.kstar.com": {"KSTAR"},
         "borri.it": {"Borri"},
         "www.borri.it": {"Borri"},
+        "makelsan.com.tr": {"Makelsan"},
+        "www.makelsan.com.tr": {"Makelsan"},
+        "makelsanjenerator.com.tr": {"Makelsan"},
+        "www.makelsanjenerator.com.tr": {"Makelsan"},
     }
     if host not in manufacturers_by_host:
         raise ValueError("Unsupported official UPS source URL")

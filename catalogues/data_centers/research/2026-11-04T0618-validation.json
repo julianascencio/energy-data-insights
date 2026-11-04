@@ -1,0 +1,131 @@
+{
+  "run_id": "makelsan-levelups-20261104T061800Z",
+  "validated_at": "2026-11-04T06:43:00Z",
+  "branch": "research/data-center-database-20261104T0347Z",
+  "base_main_sha": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
+  "prepublication_remote_head": "a40d8960759284c59532e8d610c3650d177c12c6",
+  "canonical_records": 1001,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 819,
+    "countries": 36,
+    "operators": 13,
+    "oems": 28
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 726,
+    "countries": 36,
+    "operators": 13,
+    "oems": 25
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 34,
+    "substantively_enriched_equipment": 0,
+    "new_countries": [],
+    "new_operators": [],
+    "new_oems": ["Makelsan"]
+  },
+  "pull_request_cumulative_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 93,
+    "substantively_enriched_equipment": 0,
+    "new_oems": ["Borri", "Baudouin", "Makelsan"],
+    "repair": "validated UTF-8 replacement for the 38 KSTAR EPOWER records already merged on main"
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_makelsan_ups_batch.py <temporary-output> twice && cmp both outputs with canonical JSONL",
+      "result": "passed; all 34 bounded rows reproduced byte-for-byte; canonical JSONL SHA-256 a22d9b24e86a10279001bf92fffb726ce08a342e838a66f7b0df10df4c16fd8b"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 1001 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "71 passed"
+    },
+    {
+      "command": "pytest -q -p no:cacheprovider",
+      "result": "runner storage exhaustion prevented completion after 1463 passes and 4 optional skips; reported failures were OSError ENOSPC while writing temporary test files, not assertion failures; rely on remote CI for the full-suite conclusion"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check --no-cache . && ruff check --no-cache .",
+      "result": "passed; 822 files format-checked"
+    },
+    {
+      "command": "ty check scripts/build_data_center_makelsan_ups_batch.py data-retrieval/src/energy_data_retrieval/data_center_catalogue/inventories.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed for all changed Python files"
+    },
+    {
+      "command": "python scripts/check_citations.py && git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "python scripts/check_repository.py",
+      "result": "local scratch-volume exhaustion required four tracked working files to be symlinked to tmpfs, so the checker stopped at its explicit symlink guard; published Git blobs are regular files and remote CI is authoritative"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment, schema, sources and manifest were byte-identical"
+    }
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e8d0ff04dbdbf7ed0b41120c85aac82fe6a6e93fc8b445ea34cc3ee549da04de",
+    "equipment_sha256": "71fd50e3fb16ba8b89f1e4accbae33985729df0f39a76fb755ce3b09461f7911",
+    "input_sha256": "e62d90e4265b9ce4f6b9231e9ca1ef3f16ae48538bf22ee6a413eeeeab78adfc",
+    "manifest_sha256": "7fac8e6543dfb4e92d7a0accb29db778b40d406ed918955b4ed89bc89a107766",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "058d58cef88d444792f31b244e8d5bdf91d3692b053904911227383b5312fb8c"
+  },
+  "capacity_summary": {
+    "it_ultimate_planned_mw": 697.1,
+    "it_ultimate_planned_records": 12,
+    "it_design_mw": 534.1,
+    "it_design_records": 20,
+    "it_operational_mw": 146.0,
+    "it_operational_records": 5,
+    "grid_design_mw": 207.5,
+    "grid_design_records": 3,
+    "facility_ultimate_planned_mw": 75.0,
+    "facility_ultimate_planned_records": 1,
+    "campus_aggregates_excluded": 114
+  },
+  "source_capture": {
+    "official_pages_or_documents_reviewed": 6,
+    "accepted_rating_rows": 34,
+    "official_originals_checksummed": 1,
+    "source_bytes": 1655064,
+    "reuse_note": "Public copyrighted Makelsan tables reviewed for factual extraction. The base LEVELUPS original was captured and checksummed; T3/T4 byte requests returned HTTP 404 and are recorded as access/content failures, not reuse prohibitions. Originals are not redistributed."
+  },
+  "quarantines": [],
+  "deferred": [
+    "Selectable electrical, battery, cabinet, efficiency and communications options remain observations and do not create synthesized variants."
+  ],
+  "screened_reuse_holds": [
+    "INVT UPS tables: explicit official copying/transmission/commercial-use restriction; no facts or bytes imported.",
+    "CyberPower three-phase UPS tables: explicit official public/commercial reuse restriction; no facts or bytes imported.",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello, Kohler/Rehlko and FG Wilson holds remain unchanged."
+  ],
+  "remote_ci_before_publication": {
+    "head_sha": "a40d8960759284c59532e8d610c3650d177c12c6",
+    "documentation_run": 41780942238,
+    "documentation": "success",
+    "python_run": 41780942307,
+    "python_quality_and_tests": "success"
+  }
+}
