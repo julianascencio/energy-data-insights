@@ -1,0 +1,133 @@
+{
+  "run_id": "kstar-transformer-ups-20261104T023000Z",
+  "validated_at": "2026-11-04T03:05:00Z",
+  "branch": "research/data-center-database-20261104T0217Z",
+  "base_main_sha": "1bc12f80aa01b43d7f2bcd911660d843f936b339",
+  "prepublication_remote_head": null,
+  "canonical_records": 870,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 688,
+    "countries": 36,
+    "operators": 13,
+    "oems": 25
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 665,
+    "countries": 36,
+    "operators": 13,
+    "oems": 24
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 23,
+    "substantively_enriched_equipment": 0,
+    "new_countries": [],
+    "new_operators": [],
+    "new_oems": [
+      "KSTAR"
+    ]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_kstar_transformer_ups_batch.py <temporary-output> twice && cmp both outputs with catalogues/data_centers/records/equipment/2026-11-04-kstar-transformer-ups.jsonl",
+      "result": "passed; 23 bounded model columns reproduced byte-for-byte"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 870 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "65 passed"
+    },
+    {
+      "command": "TMPDIR=/dev/shm pytest -q -p no:cacheprovider",
+      "result": "2144 passed, 5 optional skips after merging current main"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 813 files format-checked"
+    },
+    {
+      "command": "ty check <changed Data Center Python files> && ty check",
+      "result": "passed targeted and repository-wide"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3514 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed standalone and during strict Sphinx gallery; geographic coverage, capacity completeness, cooling and equipment outputs reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs /dev/shm/data-center-docs-kstar-merged && python scripts/check_docs_links.py /dev/shm/data-center-docs-kstar-merged",
+      "result": "passed after merging current main; 524 HTML pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment, schema, sources and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e8d0ff04dbdbf7ed0b41120c85aac82fe6a6e93fc8b445ea34cc3ee549da04de",
+    "equipment_sha256": "9fc21e7bcd3e02da2fcdf3bf19fc85e2b52d0c7821f7ccf89036a429fd451bed",
+    "input_sha256": "ac1030f235673edba3876191ac35b1aa49116ff7cc5344ab6498d1acba81dfdc",
+    "manifest_sha256": "a02b58ab35bd62d8aafa88a62386abefb5ac224e5e489d341dd50882d495d5b9",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "8691361d08673a15b584ec821a94b096488442448c5ba185d8e98a51f0a88a51"
+  },
+  "capacity_summary": {
+    "it_ultimate_planned_mw": 697.1,
+    "it_ultimate_planned_records": 12,
+    "it_design_mw": 534.1,
+    "it_design_records": 20,
+    "it_operational_mw": 146.0,
+    "it_operational_records": 5,
+    "grid_design_mw": 207.5,
+    "grid_design_records": 3,
+    "facility_ultimate_planned_mw": 75.0,
+    "facility_ultimate_planned_records": 1,
+    "campus_aggregates_excluded": 114
+  },
+  "source_capture": {
+    "official_documents_reviewed": 1,
+    "accepted_model_columns": 23,
+    "official_originals_checksummed": 0,
+    "source_bytes": null,
+    "reuse_note": "Public copyrighted KSTAR brochure reviewed for factual extraction. Two direct original-byte requests returned HTTP 403; no checksum is claimed and this is an access/content failure, not a reuse prohibition. The original is not redistributed."
+  },
+  "quarantines": [
+    "KSTAR EPI 30K retains null apparent_power_kva because its exact column prints 3 kVA beside 24 kW; the model label is not used to infer a replacement value.",
+    "Shared efficiency, dimensions, battery-voltage and GP800 standard/long-run weight cells remain observations when the exact model binding is ambiguous."
+  ],
+  "deferred": [
+    "KSTAR EPOWER, EPOWER-L and EPOWER-H tables are a distinct unprocessed continuation in the same brochure and are not included in the completed 23-row offset."
+  ],
+  "screened_reuse_holds": [
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale and Riello holds remain unchanged; none of their facts or bytes were imported in this run."
+  ],
+  "remote_ci_before_publication": {
+    "head_sha": "2e3cb3cbe11c859c8193f1ebc19a01f23d881422",
+    "status": "Prior merged PR #120 Documentation and Python quality/tests succeeded",
+    "note": "This new KSTAR branch has not yet been published; its remote workflow conclusions must be checked after push. Local validation is reported independently."
+  }
+}

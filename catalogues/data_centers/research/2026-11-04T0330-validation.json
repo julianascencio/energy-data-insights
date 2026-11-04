@@ -1,0 +1,143 @@
+{
+  "run_id": "kstar-epower-ups-20261104T033000Z",
+  "validated_at": "2026-11-04T04:03:00Z",
+  "branch": "research/data-center-database-20261104T0217Z",
+  "base_main_sha": "9f30c080758bb704088fd8481884e32d14572d52",
+  "prepublication_remote_head": "b3e2a5e539493d571d72a3a9e2c8b9aa8d85ba15",
+  "canonical_records": 908,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 726,
+    "countries": 36,
+    "operators": 13,
+    "oems": 25
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 665,
+    "countries": 36,
+    "operators": 13,
+    "oems": 24
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 38,
+    "substantively_enriched_equipment": 0,
+    "new_countries": [],
+    "new_operators": [],
+    "new_oems": []
+  },
+  "pull_request_cumulative_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 61,
+    "substantively_enriched_equipment": 0,
+    "new_oems": [
+      "KSTAR"
+    ]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_kstar_epower_batch.py <temporary-output> twice && cmp both outputs with catalogues/data_centers/records/equipment/2026-11-04-kstar-epower-ups.jsonl",
+      "result": "passed; all 38 bounded model columns reproduced byte-for-byte"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 908 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "66 passed"
+    },
+    {
+      "command": "TMPDIR=/dev/shm pytest -q -p no:cacheprovider",
+      "result": "2150 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 819 files format-checked"
+    },
+    {
+      "command": "ty check scripts/build_data_center_kstar_epower_batch.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed for all changed Python files"
+    },
+    {
+      "command": "ty check",
+      "result": "failed on one unrelated pre-existing BESS diagnostic: scripts/stage_bess_nfosigw.py cannot resolve energy_data_retrieval.bess_catalogue.nfosigw"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3531 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed standalone and during strict Sphinx gallery; geographic coverage, capacity completeness, cooling and equipment outputs reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs <temporary-output> && python scripts/check_docs_links.py <temporary-output>",
+      "result": "passed; 528 HTML pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment, schema, sources and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e8d0ff04dbdbf7ed0b41120c85aac82fe6a6e93fc8b445ea34cc3ee549da04de",
+    "equipment_sha256": "e7ac3440222aaa37de16a7accf30618e4f7adf796797eed47977d2a21abe09b5",
+    "input_sha256": "2f6e13f39a0de1294a56f26e1d7aec36b011b25688f4035c32fd8370e6d9422f",
+    "manifest_sha256": "fde2854e1e07ef0d21ff6771765b313623c675f773fb1b0df6ee720221672f76",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "638b7db14015efc780c56ecc2eb239fc2957439284922353620ac15b07478c00"
+  },
+  "capacity_summary": {
+    "it_ultimate_planned_mw": 697.1,
+    "it_ultimate_planned_records": 12,
+    "it_design_mw": 534.1,
+    "it_design_records": 20,
+    "it_operational_mw": 146.0,
+    "it_operational_records": 5,
+    "grid_design_mw": 207.5,
+    "grid_design_records": 3,
+    "facility_ultimate_planned_mw": 75.0,
+    "facility_ultimate_planned_records": 1,
+    "campus_aggregates_excluded": 114
+  },
+  "source_capture": {
+    "official_documents_reviewed": 1,
+    "accepted_model_columns": 38,
+    "official_originals_checksummed": 0,
+    "source_bytes": null,
+    "reuse_note": "Public copyrighted KSTAR brochure reviewed for factual extraction. Direct original-byte requests returned HTTP 403; no checksum is claimed and this is an access/content failure, not a reuse prohibition. The original is not redistributed."
+  },
+  "quarantines": [],
+  "deferred": [
+    "EPOWER shared or merged maximum-efficiency, dimensions and battery cells remain family-table observations where exact model binding is unclear.",
+    "EP100 through EP400 6P/12P net-weight alternatives remain observations because the printed model names do not select one pole-count cabinet."
+  ],
+  "screened_reuse_holds": [
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale and Riello holds remain unchanged; none of their facts or bytes were imported in this run."
+  ],
+  "remote_ci_before_publication": {
+    "head_sha": "b3e2a5e539493d571d72a3a9e2c8b9aa8d85ba15",
+    "documentation": "success",
+    "python_quality_and_tests": "success",
+    "note": "The published KSTAR GP800/MASTER/EPI head passed both workflows. This EPOWER continuation has not yet been published; its remote conclusions must be checked separately after publication."
+  }
+}
