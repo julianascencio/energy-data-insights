@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-11-04T00:49:00Z",
+  "validated_at": "2026-11-04T01:10:57.121063+00:00",
+  "elapsed_minutes_through_validation": 22.0,
+  "full_python_suite": {
+    "passed": 2124,
+    "seconds": 98.38
+  },
+  "focused_catalogue_and_references": {
+    "passed": 57
+  },
+  "final_catalogue_after_planned_model_column_update": {
+    "passed": 28
+  },
+  "checks_passed": [
+    "Both catalogue validators and natural identity/reference checks",
+    "Two byte-identical typed Zstandard Parquet builds; 1993 projects/60 fields and 749 equipment/73 fields",
+    "Preservation audit: 0 prior project changes; 12 OEM enrichments; all created_at, prior technical ratings, nested evidence and conflicts retained",
+    "Ruff lint; Ruff format 796 files; repository-wide ty",
+    "15 Node viewer tests; both offline catalogue examples",
+    "Citation exports regenerated and checked; repository hygiene; git diff --check",
+    "Strict Sphinx -W --keep-going build",
+    "518 HTML page local-link and asset audit",
+    "Documentation snapshot manifests and Parquet hashes exactly match final catalogue builds",
+    "Three wheels and three sdists built; strict Twine all six passed"
+  ],
+  "initial_attempts_and_recovery": [
+    "Initial documentation build failed with filesystem Errno28; completed successfully using /dev/shm output and temporary directory. Initial incomplete-output link audit superseded by successful final audit.",
+    "Initial Twine invocation accidentally included generated .gitignore; corrected to only six distribution artifacts, all passed.",
+    "Initial snapshot destination reuse refused by builder; rebuilt into new finala/finalb destinations."
+  ],
+  "not_run": [
+    "Installed-wheel smoke not repeated: no code/schema/parser change in this iteration",
+    "Remote CI status not claimed"
+  ],
+  "publication": "Expected-head non-force update planned after final head/main/path recheck; keep PR open."
+}

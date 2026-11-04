@@ -6583,3 +6583,51 @@ Cabeólica S.A. (2025). **Cabeolica Annual Report 2024**. [Source](https://cabeo
 **Role:** data. 2024 reporting year; board report dated27March2025; public reader, direct403. Programme milestones are not site construction/COD or finance allocations.
 
 **Used by:** `catalogues/bess/sources.json`.
+
+### sie_sie002_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-002-2026-RCD — Parque Solar Mirasol SAEB**. [Source](https://sie.gob.do/wp-content/uploads/2026/01/SIE-002-2026-RCD.pdf)
+
+**Role:** data. PDF pp1–3,8–13; technical report pp9–10; original decision incomplete; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_sie002corrected_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Acto rectificativo y Resolución SIE-002-2026-RCD — Mirasol SAEB**. [Source](https://sie.gob.do/wp-content/uploads/2026/03/SIE-002-2026-RCD-3.pdf)
+
+**Role:** data. PDF p1 correction notice; pp2–15 corrected resolution; decision printed pp11–14 (PDF12–15). Original number/date retained; March URL is not issue date.; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_sie004_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-004-2026-RCD — Planta Santanasol SAEB**. [Source](https://sie.gob.do/wp-content/uploads/2026/01/SIE-004-2026-RCD.pdf)
+
+**Role:** data. PDF pp1–3,10–13,17; printed page numbers match PDF; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_sie006_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-006-2026-RCD — Peravia Solar I SAEB**. [Source](https://sie.gob.do/wp-content/uploads/2026/01/SIE-006-2026-RCD.pdf)
+
+**Role:** data. PDF pp1–3,9–12,15; cover/year2026 and signed date15January2026; footer says2025; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_haina_20261104
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-114-2026-AMEM — BESS-Haina installation authorization**. [Source](https://sie.gob.do/wp-content/uploads/2026/09/SIE-114-2026-AMEM.pdf)
+
+**Role:** data. PDF pp1,6–12; authorized ratingsp10, commissioning prerequisitespp9,11–12; technical paragraphp7 misnames asset; Public official resolution; site terms retain copyright and do not grant open bulk reuse. Bounded attributed factual review only; no full text, personal data or PDF redistribution.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bsl_warranty_v141_20261104
+
+BSLBATT / Huizhou BSL NEW ENERGY Technology Co., Ltd. (n.d.). **BSLBATT Lithium Battery Limited Warranty Letter V1.41**. [Source](https://bslbatt.com/wp-content/uploads/BSLBATT-ESS-Battery-Warranty-V1.41.pdf)
+
+**Role:** data. PDF pp1–3 applicable types, clauses1.1–1.3 and Table1.0; pp4–5 coverage; pp7–10 exclusions, registration and AppendixA; Copyright retained; bounded factual model/condition observations from OEM public document. No full-document redistribution or open bulk-reuse licence inferred.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
