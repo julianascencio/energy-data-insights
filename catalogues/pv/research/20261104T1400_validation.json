@@ -46,7 +46,18 @@
   "snapshot": "All740types,counts,ZSTD,hashes,inputmanifest pass;recordtablesbyte-identical across2builds",
   "upsert_replay": "19incomingchanges exactlyreplay;89930createdtimestamps and415prior sources preserved",
   "sources": 423,
-  "publication": "Pending fresh scoped branch/PR; leaveopen/unmerged",
+  "publication": {
+    "accepted_data_commit": "436c05738174596f0ea1944ede89c76e98b316ae",
+    "accepted_tree": "32d3adcd77787eae300c53b297180b9a4d849635",
+    "all35_changed_local_files_match_remote_tree": true,
+    "branch": "research/pv-database-20261104T1428Z",
+    "expected_parent": "b8dc106f7a854fb57c76146afd10fe080765006b",
+    "main_and_open_PV_PRs_checked_immediately_before_ref_update": true,
+    "expected_head_non_force_publication": true,
+    "verified_at_utc": "2026-11-04T14:29:43.905017+00:00",
+    "elapsed_minutes": 30.53,
+    "next_step": "Commit this publication evidence, verify sole-file diff and parent, create one fresh scoped PR and leaveopen/unmerged; final-head remote CI tracked in PRdescription."
+  },
   "new_remote_ci": "Notyetverified; do notborrowbaseline success",
   "logs_sha256": {
     "pytest-latest-main.log": "5b32627d499aa07d2b86c1d546f608b0f7c9131a5e35b3dc9142aa9a9b6f0b68",
