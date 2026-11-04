@@ -248,3 +248,5 @@ Latest research: [Dominican technical annexes and HV PACK configurations](../bes
 Latest research: [Kenya source screening and Pylontech component/service evidence](../bess/research/2026-11-04_kenya_pylon.md).
 
 Latest research: [EFFEKTA monoblocs and Pylontech communication hub](../bess/research/2026-11-04_philippines_effekta.md).
+
+Latest evidence review: [EFFEKTA charging conditions and physical-edition reconciliation](../bess/research/2026-11-04_effekta_charge.md).

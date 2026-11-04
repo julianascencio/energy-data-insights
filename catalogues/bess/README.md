@@ -269,3 +269,5 @@ Latest research: [Dominican technical annexes and HV PACK configurations](resear
 Latest research: [Kenya source screening and Pylontech component/service evidence](research/2026-11-04_kenya_pylon.md).
 
 Latest research: [Philippines service and project reconciliation; EFFEKTA and Pylontech components](research/2026-11-04_philippines_effekta.md).
+
+Latest evidence review: [EFFEKTA charging conditions and physical-edition reconciliation](research/2026-11-04_effekta_charge.md).
