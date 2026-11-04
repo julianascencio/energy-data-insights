@@ -38,3 +38,37 @@ def test_unreviewed_panel_rejected(mutation):
         parse_panels(
             mutation(fixture()), expected_models=["TEST-A"], expected_fields={"Channel current"}
         )
+
+
+def test_numeric_upper_bound_is_preserved():
+    result = parse_panels(
+        fixture("&lt;100ms"), expected_models=["TEST-A"], expected_fields={"Channel current"}
+    )
+    assert result[0]["fields"]["Channel current"] == "<100ms"
+
+
+@pytest.mark.parametrize("value", ["<b>100</b>", "&lt;script&gt;bad&lt;/script&gt;", "<!--x-->"])
+def test_markup_is_rejected(value):
+    with pytest.raises(ValueError, match="markup"):
+        parse_panels(
+            fixture(value), expected_models=["TEST-A"], expected_fields={"Channel current"}
+        )
+
+
+def test_per_model_field_labels_require_exact_review():
+    content = fixture().replace(b"</a></div>", b"</a><a>TEST-B</a></div>")
+    content += (
+        fixture()
+        .split(b'<div class="info_list">', 1)[1]
+        .join([b'<div class="info_list">', b""])
+        .replace(b"Channel current", b"Channel current (B)")
+    )
+    labels = [{"Channel current"}, {"Channel current (B)"}]
+    assert (
+        len(parse_panels(content, expected_models=["TEST-A", "TEST-B"], expected_fields=labels))
+        == 2
+    )
+    with pytest.raises(ValueError, match="field set"):
+        parse_panels(content, expected_models=["TEST-A", "TEST-B"], expected_fields=labels[:1])
+    with pytest.raises(ValueError, match="layout"):
+        parse_panels(content, expected_models=["TEST-A", "TEST-B"], expected_fields=labels[::-1])

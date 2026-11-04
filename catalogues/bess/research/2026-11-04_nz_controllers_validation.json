@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-11-04T11:45:37+00:00",
+  "validated_at": "2026-11-04T12:01:36.804079+00:00",
+  "elapsed_minutes_through_validation": 16.0,
+  "timezone_user_facing": "Atlantic/Canary",
+  "full_python": {
+    "passed": 2291,
+    "skipped": 5,
+    "reason_skips": "Optional imagery dependencies"
+  },
+  "focused_bess_passed": 321,
+  "new_parser_guard_tests_passed": 18,
+  "viewer_tests_passed": 15,
+  "ruff": "passed after splitting one long regex line",
+  "format": "passed",
+  "ty": "passed explicit isolated venv",
+  "catalogue_validation": "both passed",
+  "preservation": "All prior scalar facts, extension keys, conflict keys, source lists, field provenance and created_at preserved",
+  "parquet": "Two independent final typed Zstandard builds per catalogue byte-identical; outside Git",
+  "offline_examples": "Both passed",
+  "strict_sphinx": "Passed with plot_gallery=0",
+  "docs_link_audit": {
+    "pages": 548,
+    "result": "passed"
+  },
+  "package_build": "Three wheel and three sdist; six strict Twine checks passed",
+  "not_claimed": [
+    "Fresh remote CI",
+    "Full online gallery execution",
+    "Independent OEM certification"
+  ],
+  "concurrency": {
+    "main": "7004215c89e6d4482a391577d321605860ae0f9a",
+    "expected_pr_head": "4520feadf23c270a64aeda136bd093a3b8f70065",
+    "open_prs_inspected": [
+      133,
+      137,
+      139,
+      140,
+      141,
+      142,
+      47,
+      48,
+      49
+    ]
+  }
+}

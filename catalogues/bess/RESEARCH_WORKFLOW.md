@@ -147,3 +147,18 @@ skid, cabinet and PCS panels with explicit expected model order and field labels
 Retain channel currents, component-specific enclosure classes, adjustable transformer
 ratios and unspecified efficiency boundaries in native observations. Embedded public
 index routes can resolve canonical HTML URLs; unavailable PDFs confer no specifications.
+
+For the EA 29 September 2026 status overview, `scripts/stage_bess_nz_status.py`
+stages six local HTML rows and checks the release, headers, units and unique names.
+Retain owner slash labels and commissioning months verbatim. Commissioning month,
+registry effective date and exact commercial-operation date are different facts;
+older table statuses must not replace later owner evidence. Rotohiko's November
+registry date and December overview month remain unresolved.
+
+The Kehua panel parser also accepts a reviewed field set per model, for native
+label-spacing differences. Numeric bounds such as `<100ms` remain bounds; embedded
+markup still fails. PV MPPT limits must not populate battery DC limits, optional
+battery ranges must not become fixed energy, and EMS auxiliary supply must not
+become system power. Elum controller maximum controlled BESS capacity is a control
+limit, not energy installed in the controller. Optional enclosure IP and WIP
+metadata require explicit qualifiers; the MC-XL solar-row MWh label is unresolved.
