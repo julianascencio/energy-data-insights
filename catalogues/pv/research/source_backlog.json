@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03T23:01:27.819982+00:00",
+  "updated_at": "2026-11-04T00:05:30.223521+00:00",
   "ranking_file": "20261103T1800_top10_coverage.json",
   "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
-  "next_highest_value_source": "REPD Q2 2026 Northern Ireland awaiting-construction crosswalk and planning authority checks.",
+  "next_highest_value_source": "REPD Q2 2026 operational: northern England and Wales.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6513,6 +6513,49 @@
       "retry_condition": "Recheck release or independent corroboration.",
       "next_action": "Review distinct current SKUs with exact datasheets",
       "processed_cursor": "Exact SKUs 2975540000, 2890570000 and 2890370000 reviewed; 2021 family guide used for discovery only, SHA-256 53c2a3584ed9a2f93bf5be7e1d9f331128d45179e93037160f01f14e4213f428"
+    },
+    {
+      "id": "repd_q2_ni_scotland_operational",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "version_or_date": "Q2 2026",
+      "licence_assessment": "OGL v3",
+      "access_assessment": "Official public source; raw bytes retained outside Git",
+      "estimated_useful_yield": 167,
+      "fields_offered": [
+        "authority",
+        "reference",
+        "milestones"
+      ],
+      "last_attempt": "2026-11-04T00:05:30.223521+00:00",
+      "result": "NI awaiting/operational and Scotland operational: 20 reviewed; Eastern, South East and Midlands operational: 256 reviewed. 167 accepted, 109 held.",
+      "retry_condition": "Recheck source release and corroborating evidence.",
+      "next_action": "Northern England and Wales operational",
+      "processed_cursor": "NI awaiting/operational and Scotland operational: 20 reviewed; Eastern, South East and Midlands operational: 256 reviewed. 167 accepted, 109 held."
+    },
+    {
+      "id": "weidmuller_wm4c_0000",
+      "country": "DEU",
+      "entity": "combiner_boxes",
+      "source_url": "https://datasheet.weidmueller.com/pdf/en/2737600000/scope/2/",
+      "version_or_date": "February/March 2026",
+      "licence_assessment": "Limited attributed facts; OEM copyright retained",
+      "access_assessment": "Official public source; raw bytes retained outside Git",
+      "estimated_useful_yield": 2,
+      "fields_offered": [
+        "topology",
+        "voltage",
+        "current",
+        "thermal",
+        "dimensions",
+        "warranty"
+      ],
+      "last_attempt": "2026-11-04T00:05:30.223521+00:00",
+      "result": "Accepted exact two-input/one-output SKUs 2737600000 and 2791920000",
+      "retry_condition": "Recheck source release and corroborating evidence.",
+      "next_action": "Look for a distinct OEM product family",
+      "processed_cursor": "Accepted exact two-input/one-output SKUs 2737600000 and 2791920000"
     }
   ]
 }
