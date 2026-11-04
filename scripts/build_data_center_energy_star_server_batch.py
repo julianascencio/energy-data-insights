@@ -35,6 +35,18 @@ PARTNER_BATCHES = {
         "expected_count": 31,
         "retrieved_at": "2026-11-04T22:15:46Z",
     },
+    "hitachi": {
+        "partner": "Hitachi Vantara LLC",
+        "manufacturer": "Hitachi Vantara",
+        "expected_count": 16,
+        "retrieved_at": "2026-11-04T23:18:00Z",
+    },
+    "nutanix": {
+        "partner": "Nutanix",
+        "manufacturer": "Nutanix",
+        "expected_count": 19,
+        "retrieved_at": "2026-11-04T23:18:00Z",
+    },
 }
 
 CONFIGURATION_LABELS = (
@@ -97,8 +109,6 @@ def tested_configuration(row: dict[str, str], label: str) -> dict[str, str]:
         if not key or key in values:
             raise ValueError(f"Ambiguous {label} field {header!r}")
         values[key] = value.strip()
-    if not values:
-        raise ValueError(f"Missing {label} fields")
     return values
 
 
@@ -139,9 +149,23 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
     model = row["Model Name"]
     model_number = row["Model Number"]
     certified = iso_date(row["Date Certified"])
+    configured = [
+        (label, values)
+        for label in CONFIGURATION_LABELS
+        if (values := tested_configuration(row, label))
+    ]
+    if not configured:
+        raise ValueError(f"Missing every SERT configuration for ENERGY STAR ID {uid}")
+    if len(configured) == len(CONFIGURATION_LABELS):
+        configuration_scope = "low-end, typical/single and high-end"
+    else:
+        configuration_scope = ", ".join(
+            label.replace(" Performance Configuration", "").replace(" Configuration", "").lower()
+            for label, _ in configured
+        )
     boundary = (
-        f"ENERGY STAR enterprise-server certification {uid} for {model}; low-end, "
-        "typical/single and high-end SERT configurations remain separately bounded"
+        f"ENERGY STAR enterprise-server certification {uid} for {model}; "
+        f"{configuration_scope} SERT configurations remain separately bounded"
     )
     form_factor = f"{row['Form Factor']} enterprise server"
     sert_version = source_value(row, "SERT Version")
@@ -206,8 +230,7 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
             "certified server-family entry; shipment and end-user-enablement states retained",
         ),
     ]
-    for label in CONFIGURATION_LABELS:
-        configuration = tested_configuration(row, label)
+    for label, configuration in configured:
         observations.append(
             observation(
                 row,
@@ -284,7 +307,7 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
         "name": f"{manufacturer} {model} ENERGY STAR enterprise-server certification {uid}",
         "notes": (
             "This record represents one issuer-certified server-family entry, not an installed "
-            "deployment. Low-end, typical/single and high-end CPU, memory, storage, PSU and SERT "
+            f"deployment. {configuration_scope.capitalize()} CPU, memory, storage, PSU and SERT "
             "test values remain separately bounded observations. PSU nameplates and SERT power "
             "scores are not summed or normalized as server input or rack power. Maximum supported "
             "memory is not substituted for installed memory."
@@ -292,7 +315,7 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
         "observations_json": compact(observations),
         "official_url": SOURCE_URL,
         "power_conditions": (
-            f"SERT {sert_version} test observations by low-end, typical/single and high-end "
+            f"SERT {sert_version} test observations by {configuration_scope} "
             "configuration; rated server input and rack input are undisclosed"
         ),
         "power_rating_kind": "SERT benchmark observations; no normalized rated input power",

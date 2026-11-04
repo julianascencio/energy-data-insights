@@ -38,9 +38,9 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,862 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
-Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, Huawei Digital Power, Kehua Tech, KSTAR,
-Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
+has 1,897 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, Hitachi Vantara, Huawei Digital Power, Kehua Tech, KSTAR,
+Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
 Ingram Micro / V7, N1 Critical Technologies, Neuropower, Power Logic / KOSS,
@@ -239,6 +239,16 @@ reported in each SERT configuration; `-1P` and `-2P` suffixes are not used to
 overwrite the issuer socket attribute. Certification records remain issuer test
 entries rather than deployments, and their PSU, idle-power, benchmark and
 maximum-memory observations do not become server/rack input or installed memory.
+The Nutanix and Hitachi Vantara continuation processes all 19 and 16 issuer
+entries respectively. Eighteen Nutanix entries retain low-end, typical/single
+and high-end SERT configurations; one Nutanix entry retains only its reported
+typical/single configuration. Fifteen Hitachi entries report only a
+typical/single configuration and HA835 G3 1P reports low-end plus typical/single.
+Missing configuration tiers remain absent rather than being synthesized. Hitachi
+`1P`/`2P`/`4P` model labels remain distinct from platform socket capacity and
+tested installed-processor counts. PSU nameplates, idle watts, benchmark scores
+and maximum supported memory remain observations rather than rated input,
+installed memory or deployments.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
