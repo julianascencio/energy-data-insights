@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,521 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+has 1,775 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
@@ -163,7 +163,7 @@ entries for Ablerex Electronics, all ten entries for Panduit, all seven entries
 for Appleton Group / SolaHD, all seven entries for Legrand AV and all 26 entries
 for Delta Electronics, all 135 entries for Cyber Power Systems, all 176 Eaton
 Corporation entries and all 222 Schneider Electric entries in EPA dataset
-`ifxy-2uty`. ADI's 11 W BOX and
+`ifxy-2uty`, plus all 254 Vertiv Corporation entries. ADI's 11 W BOX and
 11 UltraTech certifications remain distinct even where model names recur across
 brands. Each entry retains its immutable ENERGY STAR ID, certification date,
 active W, apparent VA, weighted and load-point efficiency, dimensions and
@@ -192,6 +192,13 @@ identities. Thirty-two entries report runtime and warranty as unavailable; those
 normalized fields remain null. Fifty-four entries retain their reported maximum-
 tested configurations only as observations, while normalized ratings stay bound
 to the minimum tested configuration.
+The Vertiv continuation preserves five exact source brand labels across 254
+immutable certification identities. All minimum configuration identifiers,
+100%-load runtimes and warranties are reported. Seventy-five entries retain a
+maximum tested model as a separate observation; 44 provide a maximum active-W
+value and none provides maximum apparent VA, so absent maximum values remain
+null. Normalized kW/kVA, runtime and efficiency stay bound to the minimum tested
+configuration, and no battery energy or deployment is inferred.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact

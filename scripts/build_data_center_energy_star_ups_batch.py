@@ -107,6 +107,14 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "retrieved_at": "2026-11-04T17:26:25Z",
         "include_maximum_configuration": True,
     },
+    "vertiv_energy_star": {
+        "partner": "Vertiv Corporation",
+        "manufacturer": "Vertiv",
+        "name_prefix": None,
+        "expected_count": 254,
+        "retrieved_at": "2026-11-04T18:24:13Z",
+        "include_maximum_configuration": True,
+    },
 }
 DATASET_UPDATED = "2026-11-03T14:20:54Z"
 

@@ -101,6 +101,7 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
         "Cyber Power Systems, Inc.": ("8001", "CyberPower"),
         "Eaton Corporation": ("9001", "Tripp Lite"),
         "Schneider Electric": ("10001", "APC by Schneider Electric"),
+        "Vertiv Corporation": ("11001", "Liebert"),
     }
     for partner, (expected_id, expected_brand) in reviewed_partners.items():
         batch = parse_energy_star_ups_inventory(
