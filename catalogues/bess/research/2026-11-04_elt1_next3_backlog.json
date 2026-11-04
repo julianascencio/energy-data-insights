@@ -1,0 +1,191 @@
+[
+  {
+    "rank": 0,
+    "url": "https://www.ieso.ca/-/media/Files/IESO/Document-Library/long-term-rfp/ELT1-RFP-Selected-Proponents.pdf",
+    "country_or_entity": "Canada/IESO",
+    "version_or_date": "2023-09-18",
+    "checked_at": "2026-11-04T18:59:00.389931+00:00",
+    "access_licence_assessment": "IESO limited use/reproduction licence with exact attribution; inspect PDF-specific conditions",
+    "estimated_useful_yield": "4held identities",
+    "offered_fields": [
+      "nameplate MW",
+      "summer/winter contracted MW",
+      "payment",
+      "project company",
+      "location"
+    ],
+    "attempt_result": "Original200;15battery rows reviewed;11accepted;4site/phase holds;2gas rows excluded",
+    "processed_partitions_or_cursors": "E-LT1 all15 storage rows reviewed; no unprocessed storage rows",
+    "retry_condition": "Independent parcel/site or phase evidence",
+    "next_action": "Resolve Walker4/5/6 shared site and Almonte vs Almonte2; then current IESO LT2 inventory"
+  },
+  {
+    "rank": 1,
+    "url": "https://studer-innotec.com/aj275-400/",
+    "country_or_entity": "Studer Innotec / AJ series",
+    "version_or_date": "Undated page; discovery2026-11-04",
+    "access_licence_assessment": "Public search discovery only; original bytes/terms not yet inspected",
+    "estimated_useful_yield": "Six or more named inverter models, eligibility not confirmed",
+    "offered_fields": [
+      "voltage",
+      "apparent power",
+      "temperature",
+      "dimensions"
+    ],
+    "attempt_result": "OEM search shows discontinued sine-wave inverters; bidirectional conversion not established",
+    "processed_partitions_or_cursors": "No canonical rows or original downloads",
+    "retry_condition": "Confirm stationary component scope and original exact-model table",
+    "next_action": "Prefer bidirectional next1 tables; review AJ eligibility separately before ingesting"
+  },
+  {
+    "rank": 1,
+    "url": "https://www.boralex.com/en/projects-and-sites",
+    "country_or_entity": "France/Canada Boralex",
+    "version_or_date": "undated; accessed2026-11-04",
+    "checked_at": "2026-11-04T16:55:38.097302+00:00",
+    "access_licence_assessment": "Terms at https://www.boralex.com/en/terms-use restrict copying/reuse absent permission; no portfolio ingestion",
+    "estimated_useful_yield": "Two Canadian named sites plus SOVALIS identity follow-up",
+    "offered_fields": [
+      "site",
+      "MW/MWh",
+      "lifecycle"
+    ],
+    "attempt_result": "Portfolio and SOVALIS inspected; source-reuse gate; SOVALIS still no exact location",
+    "processed_partitions_or_cursors": "Discovery only; no bulk import",
+    "retry_condition": "Independent reusable operator/regulator source",
+    "next_action": "Inspect IESO contracted facility inventory for Hagersville/Sanjgon; independently identify SOVALIS"
+  },
+  {
+    "rank": 1,
+    "url": "https://climate.ec.europa.eu/areas-action/eu-funding-climate-action/innovation-fund/innovation-fund-projects_en",
+    "country_or_entity": "EU",
+    "version_or_date": "2026-11-04 retrieval; linked fact sheets updated 2026-10-02",
+    "checked_at": "2026-11-04T16:17:16.763036+00:00",
+    "access_licence_assessment": "EU documents CC BY 4.0 except third-party material",
+    "estimated_useful_yield": "6 held candidates; additional rows require technology screening",
+    "offered_fields": [
+      "grant IDs",
+      "technology",
+      "coordinator",
+      "schedule",
+      "site",
+      "battery ratings"
+    ],
+    "attempt_result": "488 staged,49 screened,8 accepted grant identities ->9 battery sites",
+    "processed_partitions_or_cursors": "All 488 rows staged; 49 decisions persisted; no blind continuation",
+    "retry_condition": "New factsheet or separately documented stationary battery/site",
+    "next_action": "Resolve SOVALIS against French registry; then DrossOne stationary buffer, GtF and MITIGAT factsheets"
+  },
+  {
+    "rank": 2,
+    "url": "https://greengenius.com/news/green-genius-expands-capacity-in-latvia-battery-energy-storage-system-commissioned/",
+    "country_or_entity": "LVA/LTU",
+    "version_or_date": "2026-10-13",
+    "checked_at": "2026-11-04T18:59:00.389931+00:00",
+    "access_licence_assessment": "No open bulk licence presumed; inspect source-specific terms before reuse",
+    "estimated_useful_yield": "Further manual-only fields unknown",
+    "offered_fields": [
+      "COD",
+      "phase",
+      "MW",
+      "MWh",
+      "services"
+    ],
+    "attempt_result": "Original manual still403; alternative next3 and next3 rack tables200,2exact configurations accepted",
+    "processed_partitions_or_cursors": "Entire named battery portfolio paragraph processed",
+    "retry_condition": "Owner commissioning update",
+    "next_action": "Review next1 exact model page and public original manuals; do not retry403 rapidly"
+  },
+  {
+    "rank": 3,
+    "url": "https://studer-innotec.com/downloads/",
+    "country_or_entity": "Studer Innotec",
+    "version_or_date": "2026-11-04",
+    "checked_at": "2026-11-04T16:55:38.097302+00:00",
+    "access_licence_assessment": "No open bulk licence presumed; inspect source-specific terms before reuse",
+    "estimated_useful_yield": "13 model enrichments",
+    "offered_fields": [
+      "derating",
+      "communications",
+      "warranty",
+      "grid certifications"
+    ],
+    "attempt_result": "Original V4.9.4 EN manual403; three current model pages200.13models enriched with independently checked controls/protection/options.",
+    "processed_partitions_or_cursors": "All13modelblocks checked; no family extrapolation",
+    "retry_condition": "Manufacturer provides public original manual",
+    "next_action": "Retry original manual only when accessible; inspect model-specific wiring/derating and warranty"
+  },
+  {
+    "rank": 4,
+    "url": "https://www.victronenergy.com/upload/documents/Certificate-ESS-C10-11-MultiPlus-II-8kVA-10kVA-15kVA-2026.pdf",
+    "country_or_entity": "Victron Energy",
+    "version_or_date": "2622/0478-C/E2-CER 2026-06-11",
+    "checked_at": "2026-11-04T16:17:16.763036+00:00",
+    "access_licence_assessment": "No open bulk licence presumed; inspect source-specific terms before reuse",
+    "estimated_useful_yield": "3 certification status enrichments",
+    "offered_fields": [
+      "issuer validation",
+      "firmware scope"
+    ],
+    "attempt_result": "Original certificate reviewed, three exact models enriched",
+    "processed_partitions_or_cursors": "Three certificate model columns processed",
+    "retry_condition": "Public register available",
+    "next_action": "Verify current issuer/DSO listing without overwriting general ratings"
+  },
+  {
+    "rank": 5,
+    "url": "https://cea.nic.in/",
+    "country_or_entity": "India",
+    "version_or_date": "2026-11-04",
+    "checked_at": "2026-11-04T16:17:16.763036+00:00",
+    "access_licence_assessment": "No open bulk licence presumed; inspect source-specific terms before reuse",
+    "estimated_useful_yield": "Potential official multi-project inventory; unquantified",
+    "offered_fields": [
+      "technology",
+      "MW",
+      "MWh",
+      "lifecycle"
+    ],
+    "attempt_result": "Current report route404; prior archive503",
+    "processed_partitions_or_cursors": "No rows ingested",
+    "retry_condition": "Official original succeeds; do not retry rapid failures",
+    "next_action": "Try official CEA monthly storage report index then Ministry of Power parliamentary attachments"
+  },
+  {
+    "rank": 6,
+    "url": "https://www.eskom.co.za/",
+    "country_or_entity": "South Africa",
+    "version_or_date": "2026-11-04 backlog carry-forward",
+    "checked_at": "2026-11-04T16:17:16.763036+00:00",
+    "access_licence_assessment": "No open bulk licence presumed; inspect source-specific terms before reuse",
+    "estimated_useful_yield": "Named BESS phases; unquantified",
+    "offered_fields": [
+      "commissioning",
+      "grid",
+      "MW",
+      "MWh"
+    ],
+    "attempt_result": "Not processed in this Europe/OEM pass",
+    "processed_partitions_or_cursors": "No claim of fresh verification",
+    "retry_condition": "Fresh owner portfolio and terms review",
+    "next_action": "Review Eskom official BESS phase portfolio after higher-ranked unresolved candidates"
+  },
+  {
+    "rank": 7,
+    "url": "https://www.coordinador.cl/",
+    "country_or_entity": "Chile",
+    "version_or_date": "2026-11-04 backlog carry-forward",
+    "checked_at": "2026-11-04T16:17:16.763036+00:00",
+    "access_licence_assessment": "No open bulk licence presumed; inspect source-specific terms before reuse",
+    "estimated_useful_yield": "Held Atacama/Solar Ray identities",
+    "offered_fields": [
+      "phase",
+      "rating",
+      "operation"
+    ],
+    "attempt_result": "Prior held records preserved; no reimport of completed AEMO/CNE pass",
+    "processed_partitions_or_cursors": "Preserve November1 reconciliation",
+    "retry_condition": "Fresh identity evidence",
+    "next_action": "Resolve phase boundaries from operator registration"
+  }
+]

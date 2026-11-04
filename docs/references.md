@@ -7007,3 +7007,35 @@ Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A
 **Role:** data. Dated decision 2026-10-02; original HTML checksum and scope qualifications in wind registry.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### bess_elt1_20261104
+
+Independent Electricity System Operator (2023). **Expedited Long-Term RFP Final Results**. [Source](https://www.ieso.ca/-/media/Files/IESO/Document-Library/long-term-rfp/ELT1-RFP-Selected-Proponents.pdf)
+
+**Role:** data. Dated official procurement evidence; not current operating status.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bess_classification_20261104
+
+Independent Electricity System Operator (2023). **IESO Resource Adequacy Update**. [Source](https://www.ieso.ca/-/media/Files/IESO/Document-Library/resource-adequacy/ieso-resource-adequacy-update-june2023.ashx)
+
+**Role:** data. Dated official procurement evidence; not current operating status.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bess_next3_20261104
+
+Studer Innotec (2026). **next3 technical data**. [Source](https://studer-innotec.com/next3/)
+
+**Role:** data. Original source checksum and exact field locators in catalogue registry. OEM page undated; year is retrieval year.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bess_next3rack_20261104
+
+Studer Innotec (2026). **next3 rack technical data**. [Source](https://studer-innotec.com/next3-rack/)
+
+**Role:** data. Original source checksum and exact field locators in catalogue registry. OEM page undated; year is retrieval year.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
