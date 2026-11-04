@@ -378,3 +378,46 @@ release or availability date. The source register records the legal publisher,
 reviewed rights assessment and exact page/model/field locators. Copyright is
 retained; only selected independently reviewed factual parameters are redistributed,
 with no open-content grant, full PDF, images or marketing prose claimed.
+
+## Envertech microinverter tables (4 November 2026)
+
+Thirteen exact base models use physical page 2 of the checksum-pinned OEM sheets.
+Printed connector options on pages 2/4/6 are grouped within the base model; no
+suffix, nominal-voltage or connector permutations are generated. Common DC voltage,
+MPPT voltage bounds, continuous AC current, peak conversion efficiency, temperature,
+W×H×D dimensions, isolation, standard warranty and IP rating use existing columns.
+Single-input DC current retains its printed scope. Multiplied input currents stay
+native; no aggregate current or MPPT count is inferred from panel count.
+
+`pac_rated_w` carries explicitly printed maximum continuous active W, with that
+basis in `extensions_json.envertech_datasheet`. EVT800SE, EVT1600SE and EVT1800SE
+have VA-only tables: their active W stays null. EVT2000SE's active W has a separate
+field source from the family table, alongside the dedicated sheet's apparent VA.
+Nominal 220/230 V and 50/60 Hz options, frequency/operating-voltage ranges, Isc scope,
+MPPT tracking efficiency, humidity, branch limits by cable size, optional 20-year
+warranty and OEM compliance labels remain qualified native facts. A `<100 mW`
+night-consumption bound is an upper-exclusive 0.1 W bound, not exact standby power.
+MPPT efficiency is not conversion efficiency; claims are not verified certification.
+
+EVT500/800/1000 weights and branch/communication options vary by connector page;
+canonical weight stays null and page-specific values remain native. No current
+availability date or exact nominal AC-voltage choice is asserted. EVT560's printed
+600 W rating is retained in review for clarification, without substituting a value
+from its model number. No schema change or full document/table layout is included.
+
+## Electra bounded installation-index reader
+
+`pv_catalogue.electra.read_electra_csv` requires independently pinned CSV and
+HTML search-result captures. It verifies the echoed explicit `Fotovoltaica`,
+region and minimum net-power filters, the result count, exact five-column schema,
+sequence, unique `INSTALACIONID` and regional scope. `AUTOID` is only a sequence
+locator. The query's threshold is not a capacity observation. Initial unfiltered
+responses must never be treated as a PV export.
+
+This reader produces candidates only. The filtered index lacks individual power,
+dates and phase details; its live revision is unknown, while the global files show
+27 January 2026. Registration is not proof of operation. Repeated names, existing
+names and exact namespaced registry IDs add review flags, never automatic merges.
+All 75 Canarias candidates remain held for whole-plant/phase, privacy, power and
+freshness review. Review output stores IDs/reasons without installation names,
+holders, contacts or addresses. No Electra record is upserted as a project.

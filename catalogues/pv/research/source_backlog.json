@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T09:12:24.602146+00:00",
-  "ranking_file": "20261104T0900_top10_coverage.json",
-  "selection_note": "Complete Nouvelle-Aquitaine prior155-crosswalk power-gap partition plus exact physical BlueSolar module articles absent from CEC/SAM; no US repeat bulk ingestion or invented configuration combinations.",
-  "next_highest_value_source": "Spain Electra: review reuse terms and a bounded explicit Fotovoltaica / Canarias >=1 MW sample; reconcile registry IDs, whole-plant/phase scope, privacy and gross/net power definitions. Global files show 27 January 2026, not current November operation; CKAN metadata route is503.",
+  "updated_at": "2026-11-04T10:25:14.370020+00:00",
+  "ranking_file": "20261104T1000_top10_coverage.json",
+  "selection_note": "Prefer useful missing fields, licensed source scale and reviewed identities. This run: Electra Canarias bounded75-row index and new Envertech tables; additional Navarra59-row licensed geometry/DBF batch discovered. No US bulk repeat. UTC start hour9 modulo6=3 (Latin America/Caribbean) remains secondary to these high-yield unresolved sources.",
+  "next_highest_value_source": "Navarra CC BY4 operating-PV layer: reuse the pinned59-row capture after metadata/ETag freshness check; build a tested source-specific reader and reconcile rows1-20 by case/phase identity. FEATURE is constant, PROMOTOR may identify a natural person, and no canonical name crosswalk is established.",
   "sources": [
     {
       "id": "uk_repd",
@@ -8077,40 +8077,44 @@
       "entity": "projects",
       "source_url": "https://energia.serviciosmin.gob.es/Electra/BuscarDatos.aspx",
       "endpoint": "https://energia.serviciosmin.gob.es/Electra/BuscarDatos.aspx",
-      "format": "HTML/ASP.NET query; CSV/Excel controls observed",
+      "format": "Verified filtered five-column semicolon CSV plus pinned HTML scope capture; reader integrated for candidate screening only",
       "version_or_date": "Global files shown27January2026; not evidence of current operation",
       "publication_cadence": "Publisher labels daily compilation, but displayed global timestamps are stale; live query cadence unverified",
-      "licence_assessment": "Reuse/export terms still unverified; no bulk extraction or canonical acceptance",
-      "access_assessment": "Public landing200; technology optionFotovoltaica, separate solar technologies; net/gross-power filters observed",
+      "licence_assessment": "Official dataset metadata links source-specific public-data reuse conditions: attribution, update date, unchanged meaning/metadata, personal-data purpose and no reidentification. No CC grant asserted.",
+      "access_assessment": "Ordinary public session/postback controls; initial direct requests failed scope guard, no unfiltered CSV downloaded. Published technology/region postbacks yielded75-row filtered CSV.",
       "estimated_useful_yield": {
+        "reviewed": 75,
         "accepted": 0,
-        "future_verified_yield": null,
-        "planning_sample": "50-200 only after terms, power definitions and identity reconciliation"
+        "held": 75,
+        "repeat_name_ids": 7
       },
       "fields_offered": [
-        "registry identifiers",
-        "technology",
-        "installation status",
-        "net/gross power",
-        "service/registration dates",
-        "location"
+        "INSTALACIONID",
+        "regime",
+        "installation name",
+        "autonomous community",
+        "query-level PV/minimum-net-power provenance only"
       ],
-      "last_attempt": "2026-11-04T09:12:24.602146+00:00",
-      "last_retrieval": "2026-11-04T09:09:32.366521+00:00",
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_retrieval": "2026-11-04T10:06:01.415571+00:00",
       "last_release": "2026-01-27; displayed global file generation date only",
-      "sha256": "b552759e41fd89ff11a8c3d3439eb348f7464a05e7a4ae6820225c6d3ce7b570",
+      "sha256": "34e032ac671141af6aaa25d93db77dddc6f82289b83c839fa238ba6706bf081e",
       "etag": null,
-      "mapping": "Unintegrated. Net/gross is not automatically AC/DC; registry installation or registration need phase/project review. Holder/private fields omitted.",
+      "mapping": "pv_catalogue.electra.read_electra_csv / screen_electra_candidates; dictionary Electra section; scope and CSV hashes checked separately. Index is not phase/power/status evidence.",
       "processed_cursor": {
-        "landing_reviewed": true,
-        "export_downloaded": false,
-        "canonical_accepted": 0,
-        "next_scope": "Fotovoltaica / Canarias / >=1 MW after rights/units review"
+        "region": "Canarias",
+        "technology": "Fotovoltaica",
+        "minimum_net_kw": 1000,
+        "index_rows": 75,
+        "scope_verified": true,
+        "accepted": 0,
+        "index_exhausted": true,
+        "review_file": "20261104T1000_project_review.json"
       },
-      "result": "Concrete alternate route advances prior generic Spain registry discovery. Official CKAN metadata API returned503.",
-      "retry_condition": "Verify reuse terms/current revision and a small public filtered sample; no full national download yet",
-      "next_action": "Spain Electra: review reuse terms and a bounded explicit Fotovoltaica / Canarias >=1 MW sample; reconcile registry IDs, whole-plant/phase scope, privacy and gross/net power definitions. Global files show 27 January 2026, not current November operation; CKAN metadata route is503.",
-      "next_due_check": "2026-11-05T09:00:00Z"
+      "result": "75 IDs structurally checked against canonical names/namespaced IDs; all held for phase/privacy/freshness/power evidence. Seven IDs share normalized names with another incoming ID. No capacity/name-derived W or operation claim.",
+      "retry_condition": "Resume only with richer licensed phase/power/date evidence or revised global export; retain existing index capture and recheck freshness before resuming.",
+      "next_action": "Do not repeat the75-row index; obtain legally reusable phase-level workbook/official regional registry crosswalk, retaining live revision as unknown. Prefer newly discovered licensed Navarra rows1-20 first.",
+      "next_due_check": "2026-11-05T10:00:00Z"
     },
     {
       "id": "cea_september_current_route_0900",
@@ -8143,6 +8147,175 @@
       "retry_condition": "Public access restored; wait at least24h before same route",
       "next_action": "Try current exact official report link when index recovers; prioritize accessible Electra review meanwhile",
       "next_due_check": "2026-11-05T09:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_release": null,
+      "publication_cadence": "Not stated; avoid hourly full downloads",
+      "country": "GLOBAL",
+      "etag": null,
+      "id": "envertech_tables_20261104T1000",
+      "entity": "inverters",
+      "source_url": "https://www.envertec.com/services/download/",
+      "endpoint": "https://www.envertec.com/services/download/",
+      "format": "Public OEM PDFs; exact model columns, visual/text review",
+      "version_or_date": "EN-EVT-2023-V01 / EN-EVT-2024-V01 / EN-EVT-2024-V02; editions, not publication dates",
+      "licence_assessment": "OEM copyright retained; limited independently reviewed factual specifications only; no open bulk/content grant. About/download reviewed; no linked reuse prohibition located. No PDFs/layout/images/prose redistributed.",
+      "access_assessment": "14 linked technical PDFs captured;3 literal-space URLs corrected by standard percent encoding, not access bypass. No forms/login.",
+      "estimated_useful_yield": {
+        "exact_models_reviewed": 14,
+        "accepted": 13,
+        "held": 1,
+        "canonical_spec_fields_added": 201
+      },
+      "fields_offered": [
+        "explicit W/VA",
+        "voltage/MPPT/current scopes",
+        "efficiency",
+        "mechanical/environmental",
+        "standard/optional warranty",
+        "communication/branch/certification qualifiers"
+      ],
+      "last_retrieval": "2026-11-04T10:14:37.287803+00:00",
+      "sha256": "18f9abd9b0933985dc6df04a97c6de0bdd25d871f74f018c39e2b0b1599701a7",
+      "mapping": "Dictionary Envertech section; source-specific physical p2/model/row locators; connector p2/4/6 comparison",
+      "processed_cursor": {
+        "review_file": "20261104T1000_equipment_review.json",
+        "accepted_models": [
+          "EVT350",
+          "EVT360",
+          "EVT400",
+          "EVT500",
+          "EVT600",
+          "EVT720",
+          "EVT800",
+          "EVT800SE",
+          "EVT1000",
+          "EVT1600SE",
+          "EVT1800SE",
+          "EVT2000SE",
+          "EVT2000"
+        ],
+        "connector_options_grouped": true,
+        "selected_tables_exhausted": true
+      },
+      "result": "13 new models, one new OEM,201 canonical specs plus qualified native conditions. EVT560600W anomaly deferred; published model number is not a rating observation. Three connector-dependent masses remain null.",
+      "retry_condition": "Changed source revision or exact OEM clarification; do not generate nominal-voltage/connector variants",
+      "next_action": "Clarify EVT560 identity/rating anomaly from a revised exact OEM source; pursue an independently identified OEM tracker/combiner family rather than duplicate these pages.",
+      "next_due_check": "2026-12-04T10:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_release": "DBF header2026-10-06; row effective dates remain unverified",
+      "publication_cadence": "Not stated; avoid hourly full downloads",
+      "country": "ESP",
+      "etag": "\"c95ad764cc55dd1:0\"",
+      "id": "navarra_operating_pv_20261104T1000",
+      "entity": "projects",
+      "source_url": "https://datos.gob.es/es/catalogo/a15002917-plantas-solares-fotovoltaicas-en-servicio1",
+      "endpoint": "https://idena.navarra.es/descargas/ENERGI_Pol_PSolar.zip",
+      "format": "ZIP: DBF/SHP/SHX/PRJ + embedded ISO metadata and attribute dictionary",
+      "version_or_date": "Catalogue15April2026; embedded citation19May; DBF6October2026; distinct dates retained",
+      "licence_assessment": "CC BY 4.0 explicitly in embedded layer metadata; attribution: Información geográfica propiedad del Gobierno de Navarra.",
+      "access_assessment": "Official metadata and64,203-byte linked archive downloaded after explicit CC BY4 review; all59 DBF rows structurally screened, no canonical acceptance",
+      "estimated_useful_yield": {
+        "source_rows": 59,
+        "structurally_screened": 59,
+        "fully_reconciled": 0,
+        "accepted": 0,
+        "expected_accepted": null
+      },
+      "fields_offered": [
+        "panel-sum MW; not net/export power",
+        "service year with scope review",
+        "case references",
+        "RAIPEE text may be generic/grouped rather than ID",
+        "grid connection text",
+        "polygon geometry and calculated area",
+        "insertion date, not commissioning"
+      ],
+      "last_retrieval": "2026-11-04T10:21:43.865759+00:00",
+      "sha256": "3b82e037282d9cb9d2de03ce77257545ae3aadc11bdb0d867716294e7ecdbd05",
+      "mapping": "20261104T1000_navarra_discovery.json; FEATURE is a constant SITNA feature/model identifier in this capture, not a unique plant ID; EXPEDIENTE has repeated references; RAIPEE includes generic/group labels; power is sum of panel ratings per metadata, not grid power.",
+      "processed_cursor": {
+        "zip_downloaded": true,
+        "structural_partition": "all59 DBF rows",
+        "canonical_acceptance": false,
+        "next_partition": "rows1-20; reviewed case/phase identities and private-promoter exclusion before upsert"
+      },
+      "result": "59 source rows;57distinct nonempty case references,three rows repeat a case reference;zero exact canonical-name crosswalks. All await project/phase/privacy review. No source row described as an accepted project.",
+      "retry_condition": "Recheck metadata/HEAD/ETag and reuse unchanged pinned bytes; implement tested reader and reviewed crosswalks before upsert",
+      "next_action": "Navarra CC BY4 operating-PV layer: reuse the pinned59-row capture after metadata/ETag freshness check; build a tested source-specific reader and reconcile rows1-20 by case/phase identity. FEATURE is constant, PROMOTOR may identify a natural person, and no canonical name crosswalk is established.",
+      "next_due_check": "2026-11-05T10:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_release": null,
+      "publication_cadence": "Not stated; avoid hourly full downloads",
+      "country": "ESP",
+      "etag": null,
+      "id": "canarias_pv_wms_20261104T1000",
+      "entity": "projects",
+      "source_url": "https://www.idecanarias.es/listado_servicios/parques-fotovoltaicos-de-canarias",
+      "endpoint": "https://idecan2.grafcan.es/ServicioWMS/ParquesFotovoltaicos?SERVICE=WMS&REQUEST=GetCapabilities",
+      "format": "OGC WMS1.3 GetCapabilities metadata only",
+      "version_or_date": "Landing saysJune2025 data; service publication25November2019",
+      "licence_assessment": "SOURCE-SPECIFIC BLOCK: AccessConstraints prohibit commercial use and bulk downloading. General SITCAN CC BY3 default must not override service-specific restrictions.",
+      "access_assessment": "Landing direct500; primary web landing reviewed. GetCapabilities200 confirms installed/construction/authorization layers. No feature request, map data download or acceptance.",
+      "estimated_useful_yield": {
+        "reviewed_features": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "PV lifecycle layer classification",
+        "possible installation/geometry data not extracted"
+      ],
+      "last_retrieval": "2026-11-04T10:20:53.235793+00:00",
+      "sha256": "a4f9bf87b878f8cdcb1c5db2c3ea8b7b79bcac75c153935e9bae13bf6c61f4da",
+      "mapping": "No integrated feed; metadata only. P_FOTOV_E installed; P_FOTOV_C construction; P_FOTOV_T authorization. Aggregated installations require reconciliation.",
+      "processed_cursor": {
+        "capabilities_reviewed": true,
+        "feature_requests": 0,
+        "blocked_by_terms": true
+      },
+      "result": "Source discovered and rights block verified before any feature/bulk request.",
+      "retry_condition": "Explicit revised source licence allowing intended public/commercial reuse; otherwise use separately licensed official tabular evidence",
+      "next_action": "Do not ingest this WMS. Use CC BY4 Navarra, or independently review licensing/privacy of regional published workbooks.",
+      "next_due_check": null
+    },
+    {
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_release": null,
+      "publication_cadence": "Not stated; avoid hourly full downloads",
+      "country": "ESP",
+      "etag": "\"d9717-65bbd3fc7c333\"",
+      "id": "canarias_self_consumption_discovery_20261104T1000",
+      "entity": "projects",
+      "source_url": "https://www.gobiernodecanarias.org/energia/materias/energias-renovables/index.html",
+      "endpoint": "https://www.gobiernodecanarias.org/energia/descargas/SDE/Portal/EnergiasRenovables/FV_AC_20260617_web.xlsx",
+      "format": "XLSX; HEAD only, not downloaded",
+      "version_or_date": "Publisher17June2026 label; HTTP Last-Modified18September2026 (transport date, not dataset release)",
+      "licence_assessment": "Government legal notice permits reproduction with source unless stated otherwise. Dataset-specific overrides and privacy not yet reviewed; do not apply separate WMS or SITCAN terms automatically.",
+      "access_assessment": "Publisher landing200 and linked workbook HEAD200;890647-byte Content-Length; no workbook rows inspected",
+      "estimated_useful_yield": {
+        "reviewed_rows": 0,
+        "accepted": 0,
+        "expected_accepted": null
+      },
+      "fields_offered": [
+        "PV self-consumption inventory; exact schema not yet verified"
+      ],
+      "last_retrieval": "2026-11-04T10:20:52.159006+00:00",
+      "sha256": null,
+      "mapping": "Untested download; no adapter or accepted records",
+      "processed_cursor": {
+        "head_only": true,
+        "rows_downloaded": 0
+      },
+      "result": "Concrete linked workbook and release label discovered. No integration claimed.",
+      "retry_condition": "Verify dataset-specific rights and privacy first; use saved ETag and bounded partition rather than repeated full downloads",
+      "next_action": "After Navarra first20, inspect workbook schema and private-holder/address exposure under source-specific terms; no owner or current-operation inference.",
+      "next_due_check": "2026-11-05T10:00:00Z"
     }
   ],
   "source_refresh_queue": [
