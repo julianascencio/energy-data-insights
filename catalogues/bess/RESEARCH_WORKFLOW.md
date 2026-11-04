@@ -162,3 +162,17 @@ battery ranges must not become fixed energy, and EMS auxiliary supply must not
 become system power. Elum controller maximum controlled BESS capacity is a control
 limit, not energy installed in the controller. Optional enclosure IP and WIP
 metadata require explicit qualifiers; the MC-XL solar-row MWh label is unresolved.
+
+For Portugal's C21-i08 final grant report v1.1 (8 April 2025),
+`scripts/stage_bess_portugal_grants.py` reads local layout text and requires all
+41 final ranks on PDF pages 27–28. It stages application IDs and Decimal funding
+observations, preserving cumulative arithmetic discrepancies. An award ID is not
+a physical project identity. Reuse rights and site reconciliation are prerequisites
+for import; preliminary-table MVA limits and minimum hours cannot yield BESS MW/MWh.
+
+`scripts/stage_bess_elum.py` reads the exact three-column ES Compact / ES / ES+
+controller table. Changed columns, duplicate rows and unsupported units fail closed.
+Common merged cells require visual review. Controlled plant capacity, optional IP
+kits and control-loop timing retain their own boundaries; none is battery hardware
+capacity or unconditional performance. The Taiwan review distinguishes Xia Xing's
+two actual chemistry-specific systems from subsequent simulation scenarios.
