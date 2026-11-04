@@ -6703,3 +6703,11 @@ Cour administrative d’appel de Lyon / Legifrance (2024). **CAA de Lyon,21 Marc
 **Role:** data. Primary page reviewed for identity follow-up; no explicit EIC/permit crosswalk. Candidates remain deferred. Original source bytes/checksum unavailable.
 
 **Used by:** `catalogues/wind/research/2026-11-04-0835-identity-followup.jsonl`.
+
+### galataud_2026_thermal_counterfactual
+
+Galataud, Antoine (2026). **Are time series foundation models good zero-shot thermal dynamics learners?**. [Source](https://techblog.foobot.io/ai/hvac/control/tsfm-counterfactual-thermal-dynamics.html)
+
+**Role:** implemented. Reanalysis of published numerical EnergyPlus and Timestral outputs, not new model inference. Start-gated event convention inferred from published numerical event times; unrestricted crossings retained.
+
+**Used by:** `methods/src/energy_methods/thermal_counterfactual.py`, `docs/thermal-counterfactual.md`.
