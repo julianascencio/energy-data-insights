@@ -210,3 +210,26 @@ held. Capacity totals remain unchanged. ABB Rev Q pp.21–24 resolve named
 NETA-21 connector assignments and explicitly connect the optional NEXA-21
 extension. No direct turbine compatibility or joint-table limits are inferred.
 The Marne E103 appendix is excluded for its explicit reuse restriction.
+
+## French 2020–2021 cohort and India model register
+
+The 08:35 continuation reviews all 238 French wind installations with industrial
+service dates in 2020–2021 and reported installed ratings of at least 1 MW. The
+complete 2,458-row national extract remains the identity-screening boundary:
+18 named installations are added, 220 candidates held, and 2,220 rows outside
+the selected cohort retained in the ledger. All new capacities remain excluded
+until farm, phase and repowering boundaries are reconciled. A generic “Hangar”
+label is quarantined; registry generating-group counts are not turbine counts.
+The first 20 earlier deferred EICs were reviewed and remain unresolved.
+
+All 30 entries of MNRE's ALMM-Wind list dated 20 August 2026 were manually
+transcribed and checked against the original four-page PDF. The batch adds
+27 exact equipment records and enriches the existing GE 3.8 MW-154m with
+India-specific observations. Two Pioneer 750/57 tower-height entries share one
+model record; the Vayona SG entry is held for manufacturer/model continuity.
+Power and tower options are nested. Numeric ratings and diameters follow the
+table even when model labels differ. Mixed-format certificate dates stay raw;
+component expiry restrictions, outstanding issues and excluded boost modes
+remain visible. Original certificates and current eligibility are not verified.
+The source register contains the original checksum; the April association-hosted
+list is a separate reviewed revision, not mixed into the August observations.

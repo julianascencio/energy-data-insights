@@ -599,3 +599,28 @@ held. Capacity totals remain unchanged. ABB Rev Q pp.21–24 resolve named
 NETA-21 connector assignments and explicitly connect the optional NEXA-21
 extension. No direct turbine compatibility or joint-table limits are inferred.
 The Marne E103 appendix is excluded for its explicit reuse restriction.
+
+## French network installations and Swedish residual check
+
+The 07:35 iteration checks all 2,458 EOLIE rows in the official ODRE snapshot
+of 31 August 2026 against national names/communes and existing French records.
+The bounded cohort covers installations with industrial-service dates from
+2022 and reported installed capacity of at least 1 MW. Thirty-four named
+onshore installations pass the conservative identity screen. All retain
+unresolved farm/phase/repowering scope and remain excluded from capacity totals.
+Installed and maximum grid-injection ratings are separate observations.
+Network groups are not turbine counts, HTA/HTB are not numeric voltages, and
+administrative communes are not surveyed project coordinates. Native rolling
+energy values retain their reporting-boundary limitations; no capacity factors
+are calculated. See the dated decision ledger for every screened row.
+
+All ten selected Swedish land layers return zero records for null IDs or
+OMRID >= 2600, completing that partition scan. Deferred identities and offshore
+coverage still require separate work. USWTDB alternate downloads returned
+HTTP errors; no authentication or reuse prohibition is inferred.
+
+The complete GE 4.2 MW-117m table adds one exact equipment configuration;
+its published 4.23 MW nameplate is preserved separately from the model label.
+Frequency-specific hub options stay nested, and the inadequately qualified
+noise range is not promoted to a scalar sound-power value. The Vestas 4 MW
+brochure is excluded under its explicit final-page reuse restriction.

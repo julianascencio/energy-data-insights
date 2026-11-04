@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-04T06:35:00Z",
-  "branch": "research/wind-20261104-0335",
+  "updated_at": "2026-11-04T08:14:28Z",
+  "branch": "research/wind-20261104-0735",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
     {
@@ -9,18 +9,63 @@
       "url": "https://energy.usgs.gov/uswtdb/data/",
       "partition": "v9.1 full turbine release; all states including offshore",
       "next_offset": 0,
-      "status": "blocked_official_zip_403",
+      "status": "blocked_official_arcgis_403",
       "tasks": [
         "Obtain original release bytes and hash; verify version and complete count",
         "Adapter with offline tests; retain exact model only when supplied",
         "Cluster explicit project registry identities and reconcile WRI USA rows; add turbine children without double counting farms"
       ],
-      "last_attempt_url": "https://doi.org/10.5066/F7TX3DN0",
+      "last_attempt_url": "https://energy.usgs.gov/arcgis/rest/services/Hosted/uswtdbDyn/FeatureServer?f=pjson",
       "last_http_status": 403,
-      "next_task": "Resolve v9.1 DOI 10.5066/F7TX3DN0 to official alternate release attachment; do not repeat unchanged ZIP route"
+      "next_task": "Official Hosted/uswtdbDyn FeatureServer metadata also403. Next inspect official USGS release mirror/catalogue distribution metadata without retrying unchanged API/ZIP endpoints.",
+      "latest_attempt_review": "2026-11-04-0835-source-review.json"
     },
     {
       "rank": 2,
+      "source": "French ODRE national wind registry",
+      "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codefiliere%3D%27EOLIE%27&order_by=codeeicresourceobject",
+      "partition": "National2458identity screen;2022+cohort539 and2020–2021cohort238 completed;52accepted total",
+      "status": "two_cohorts_complete_identity_holds_retained",
+      "next_offset": 0,
+      "next_ids": [
+        "17W0000013597693",
+        "17W000001359810W",
+        "17W0000013656351",
+        "17W000001365681V",
+        "17W000001366223J",
+        "17W0000013665318",
+        "17W000001366792H",
+        "17W000001370374M",
+        "17W000001370521Z",
+        "17W000001370572I",
+        "17W0000013705972",
+        "17W000001370650O",
+        "17W000001370682B",
+        "17W000001370755A",
+        "17W000001370925B",
+        "17W000001371611T",
+        "17W000001371785X",
+        "17W0000013718373",
+        "17W0000013718721",
+        "17W000001372535E"
+      ],
+      "decision_ledger": "2026-11-04-0835-odre-decisions.jsonl",
+      "sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+      "next_task": "Next complete2018–2019 service cohort with national identity screen. Prior first20EICs reviewed in0835identity-followup: allheld. Obtain explicit permit/EICcrosswalks forMadon,HautsBouleaux,IEL26,Enertrag; do not repeat discovery or unmask anonymous rows.",
+      "completed_service_intervals": [
+        [
+          "2022-01-01",
+          "2026-08-31"
+        ],
+        [
+          "2020-01-01",
+          "2021-12-31"
+        ]
+      ],
+      "identity_followup_ledger": "2026-11-04-0835-identity-followup.jsonl"
+    },
+    {
+      "rank": 3,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
       "partition": "Unlinked REPD candidates in 0644 decision ledger, filtered by exact no-unique-crosswalk reason; offsets 200:400 next",
@@ -58,12 +103,12 @@
       ]
     },
     {
-      "rank": 3,
+      "rank": 4,
       "source": "Brazil ANEEL SIGA generation registry",
       "url": "https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel",
       "partition": "Daily 2026-11-02 EOL all states/statuses; alternative monthly resource 11ec447d-698d-4ab8-977f-b424d5deee6a",
       "next_offset": 0,
-      "status": "blocked_daily_csv_503",
+      "status": "blocked_monthly_csv_and_metadata_503",
       "tasks": [
         "Retry daily once or use official datastore/monthly file; record original SHA-256",
         "Dictionary: fiscalized kW can be last operating capacity of retired plants; operation date is first unit",
@@ -71,10 +116,11 @@
       ],
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
-      "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/datastore_search?resource_id=2f65a1b0-19b8-4360-8238-b34ab4693d55&limit=5"
+      "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
+      "next_task": "Daily and monthly download/metadata routes unavailable. Next official ANEEL spatial inventory/catalogue mirror; reconcile stable CEG roots before additions. No unchanged retries."
     },
     {
-      "rank": 4,
+      "rank": 5,
       "source": "Exact OEM documents and component catalogues",
       "partition": "Changhua exact SG8.0-167 regional variant reconciliation; B81 compatible links beyond evidenced APAC only with explicit documents; exact OEM converter/generator/gearbox and WindFloat model docs",
       "next_offset": 0,
@@ -107,11 +153,13 @@
         "E103 EP2 wind-still mirror HTTP404, web verification page. Next obtain original OEM datasheet via official archive or review exact manufacturer appendix in San Gregorio official planning dossier; project says or similar, not installed-model evidence.",
         "ABB3AXD50000022022RevC pp13–14,24–25 complete:15existing77LC/87LC configurations enriched andNETA-21 added. Next original NETA-21 3AUA0000096939 manual through official ABB document resolver; RevP directURL returned403, no auth/reuse inference. Exact NEXA-21 only after its interface and optional wind applicability are explicit. E103originalbase sheet remains held; do not retry completed2018ratingtables.",
         "NETA-21 official document resolver succeeded: RevQ effective2026-09-18 pp225–226 processed. Do not retry RevP403. Next resolve NETA/NEXA per-device connector allocation and temperature typo; original E103EP2 appendix in Marne planning dossier https://www.marne.gouv.fr/contenu/telechargement/24186/154103/file/2b%20-%20Annexes%20Etude%20Impact.pdf",
-        "Marne E103 appendix successfully downloaded but D0438349-0 legal notice explicitly restricts publication/derivatives: excluded, no retry as HTTP failure. ABB RevQ pp21–24 layout complete: NEXA-21 added/NETA-21 enriched; remaining EIA serial assignments and temperature discrepancy unresolved. Current Winergy exhibit still no exact identifier."
+        "Marne E103 appendix successfully downloaded but D0438349-0 legal notice explicitly restricts publication/derivatives: excluded, no retry as HTTP failure. ABB RevQ pp21–24 layout complete: NEXA-21 added/NETA-21 enriched; remaining EIA serial assignments and temperature discrepancy unresolved. Current Winergy exhibit still no exact identifier.",
+        "GE4.2MW-117m complete table processed, one exact configuration; 4.23MW nameplate deliberately retained. Vestas4MW03/2024-EN brochure excluded for final-page copying restriction; acquired bytes, not HTTP failure. Next independent exact OEM product tables with revision and wind application evidence.",
+        "MNREALMM20August2026 all30entries processed;27new1GEenrichment1Vayonaidentityhold1Pioneer90m nestedoption. Do not repeatAprilrevision or tower/power combinations. Next complete official GE3.8-154 component disclosure https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/06/20260602168592999.pdf ; exact LM75.7P2GenB blade identity and only explicitly listed component types. Then MNRE ALMM-WTC2June2026 complete table, source acquisition first. VayonaSG3.4-145/3.6 identity and GEregionalhub equivalence remain held."
       ]
     },
     {
-      "rank": 5,
+      "rank": 6,
       "source": "Country and project reconciliation",
       "partition": "WRI wind 5344 rows; candidates file in this batch",
       "next_offset": 0,
@@ -124,7 +172,7 @@
       ]
     },
     {
-      "rank": 6,
+      "rank": 7,
       "source": "Power/thrust coefficient numerical datasets",
       "url": "https://github.com/NatLabRockies/turbine-models",
       "partition": "V82 first, then offshore exact commercial models with original references",
@@ -180,7 +228,7 @@
       "completed_where": "OMRID < '2600'",
       "reviewed_areas": 3505,
       "reviewed_turbines": 23937,
-      "next_where": "OMRID IS NULL OR OMRID >= '2600'",
+      "next_where": null,
       "next_county": null,
       "layers": [
         2,
@@ -194,8 +242,9 @@
         11,
         12
       ],
-      "next_task": "Count residual/null IDs across same10land layers before claiming complete national coverage; then reconcile deferred scopes, not reimport counties. Advance USWTDB alternate attachment and top-ten-market backlog.",
-      "residual_ledger": "2026-11-04-0635-sweden-decisions.jsonl"
+      "next_task": "Residual/null IDs zero across ten land layers on 2026-11-04. Reconcile deferred identities in dated ledgers; offshore is separate and national all-technology completeness is not claimed.",
+      "residual_ledger": "2026-11-04-0735-source-review.json",
+      "status": "selected_land_layer_partition_scan_complete"
     },
     "germany_partition": {
       "release": "Gesamtdatenexport_20261103_26.2.zip",
@@ -218,5 +267,5 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "Root and shared /dev/shm nearly full. Use one exec invocation creating a unique /dev/wind-<batch> directory and setting TMPDIR there for tests/builds/docs; this private tmpfs is scoped to that invocation and not visible from another exec. Copy small logs and manifests to shared repo/scratch before the invocation ends. Do not remove other tasks outputs. Shared checkout /dev/shm/wind0335-repo and nonblocking Wind lock remain authoritative. Original .venv used with explicit local PYTHONPATH. Sources: /dev/shm/vbk0635 and prior /dev/shm/neta0535.pdf; restricted Marne PDF removed after checksum/legal review."
+  "validation_storage": "Fresh checkout and pinned uv environment; original source bytes and build/test logs in research0735 scratch. Reacquire sources by recorded URL/checksum if missing; do not repeat reviewed inventory partitions."
 }
