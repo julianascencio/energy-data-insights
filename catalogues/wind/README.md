@@ -3,8 +3,8 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-At batch `2026-11-04-1935`, the proposed branch contains **7,959 projects**
-(7,958 non-group records), **343 equipment configurations**, **13,633 linked
+At batch `2026-11-04-2035`, the proposed branch contains **7,962 projects**
+(7,961 non-group records), **343 equipment configurations**, **13,633 linked
 registry turbines** and **two original numerical curves**, across **59 countries**
 and **46 manufacturer labels**. Labels are not a reconciled corporate-entity count.
 Merged main at `9dbf07ed` contains 7,948 projects, 337 equipment records,
@@ -414,3 +414,13 @@ review; it never automatically merges farms or phases. A shared BOE notice
 alone is not a project identifier. The source review retains sibling-farm
 holds and the explicit Sinoma website reuse exclusion. The next daily
 partition is September 28–30, alongside the recorded permit crosswalks.
+
+
+Batch `2026-11-04-2035` reviews all September 28–30 Series A/B wind mentions,
+including both September 30 issues. Satrebares retains its refused application
+and corrected geography; Vientos del Cid I retains its 78 MW proposal and
+approximate original CRS coordinates; Alsa retains its new 18 MW proposal,
+four documented proposed turbine positions and dated annulment/reapplication
+history. Alsa's inconsistent printed annulled-instrument date remains unresolved.
+The Castillo Garcimuñoz storage notice is held for wind identity/scope review.
+All three new projects remain excluded from capacity totals.

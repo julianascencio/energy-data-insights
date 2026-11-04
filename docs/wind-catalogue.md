@@ -1,8 +1,8 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-04-1935`, the proposed continuation contains
-**7,959 projects, 343 equipment records, 13,633 linked turbines and two original
+numerical curves. At batch `2026-11-04-2035`, the proposed continuation contains
+**7,962 projects, 343 equipment records, 13,633 linked turbines and two original
 numerical curves**, across **59 countries and 46 manufacturer labels**. Labels
 are not a reconciled corporate-entity count. Merged main at `9dbf07ed` contains
 7,948 projects, 337 equipment records, 13,633 turbines and two curves.

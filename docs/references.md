@@ -7119,3 +7119,35 @@ Government of Spain (2026). **Anoia y Segarra II public utility declaration**. [
 **Role:** data. Proposal ratings and authorization dates do not establish operating capacity.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### boe_a_2026_20137
+
+Government of Spain (2026). **BOE-A-2026-20137 wind project scope and procedural evidence**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20137)
+
+**Role:** data. Dated proposals and procedural history, not independently validated operation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_31550
+
+Government of Spain (2026). **BOE-B-2026-31550 wind project scope and procedural evidence**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-31550)
+
+**Role:** data. Dated proposals and procedural history, not independently validated operation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_31657
+
+Government of Spain (2026). **BOE-B-2026-31657 wind project scope and procedural evidence**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-31657)
+
+**Role:** data. Dated proposals and procedural history, not independently validated operation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### boe_b_2026_31682
+
+Government of Spain (2026). **BOE-B-2026-31682 wind project scope and procedural evidence**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-31682)
+
+**Role:** data. Dated proposals and procedural history, not independently validated operation.
+
+**Used by:** `catalogues/wind/sources.json`.

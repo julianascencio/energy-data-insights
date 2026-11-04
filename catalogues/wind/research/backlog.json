@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T18:37:41Z",
+  "updated_at": "2026-11-04T19:39:32Z",
   "branch": "research/wind-20261104-1535",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -240,17 +240,20 @@
         "2026-10-31",
         "2026-11-02",
         "2026-11-03",
-        "2026-11-04"
-      ],
-      "next_dates": [
+        "2026-11-04",
         "2026-09-28",
         "2026-09-29",
         "2026-09-30"
       ],
+      "next_dates": [
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-26"
+      ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "September28–30 A/B all issues. Reconcile PEol-406 earlier permit with revised Mudarra scope; Conca de Barberà II/III separate permits; then Belinchón II revised count and PEol-899/929 parent-extension identities.",
-      "decision_ledger": "2026-11-04-1935-decisions.json",
+      "next_task": "September24–26 A/B all issues; original Castillo Garcimuñoz wind permit; Alsa court ruling209/2023 to resolve annulled instrument date. Retain Mudarra/Conca/Belinchón crosswalk backlog.",
+      "decision_ledger": "2026-11-04-2035-decisions.json",
       "series_b_completed_dates": [
         "2026-10-01",
         "2026-10-02",
@@ -280,7 +283,10 @@
         "2026-10-31",
         "2026-11-02",
         "2026-11-03",
-        "2026-11-04"
+        "2026-11-04",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30"
       ]
     }
   ],
