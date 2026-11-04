@@ -20,6 +20,15 @@ locality must not be assumed to be the generating site. Project, local-name and
 phase reconciliation must precede upsert. See the
 [NEA attribution notice](licenses/NEA_ATTRIBUTION_NOTICE.md).
 
+The offline `pv_catalogue.dgeg.read_dgeg_page` reader validates checksum-pinned
+Portugal DGEG CS polygon pages and stages only explicitly labelled photovoltaic
+features. `group_dgeg_pages` preserves native blocks and kW/kVA values without
+summing them, requires a separately reviewed ID inventory to prove source coverage,
+and leaves every group unaccepted until site/phase review. The first complete
+750-feature capture contains 617 PV polygons across 289 licensing processes; these
+are not plant counts. No licence-to-operation, centroid or kVA-to-active-power
+inference is made. See the [DGEG attribution notice](licenses/DGEG_CC_BY4_NOTICE.md).
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;

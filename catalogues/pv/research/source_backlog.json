@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T18:06:41.976186+00:00",
+  "updated_at": "2026-11-04T18:49:14.248757+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "100 existing Chinese projects gain historical operator and exact phase/workbook provenance;10exactTSUNmodels. New Portugal DGEGCCBY4 verified directly in WFS metadata;400 polygon features structurally inspected, no plant additions until block/process reconciliation.",
-  "next_highest_value_source": "Portugal DGEG CS first400 features: group complete processo/subparque/block identities, then compare Portuguese canonical locations and native names; no kVA-to-active conversion. GEM next100 eligible complete Chinese operator locations after L100000801766",
+  "selection_note": "144 existing projects enriched:100 Chinese historical operators and44 Portuguese qualified native registry contexts. New DGEG candidate reader tested on complete750-polygon source inventory; no new plant identities inferred.",
+  "next_highest_value_source": "DGEG34 held suggested associations: official site/phase and rating-definition evidence;245 process groups remain unaccepted as canonical contexts. Next GEM100 after L100000801967 using same bytes. Independent exact OEM table with clear reuse terms.",
   "sources": [
     {
       "id": "uk_repd",
@@ -10564,8 +10564,8 @@
       "terms_url": "https://servergeo.dgeg.gov.pt/arcgis/services/Visualizadores/CS/MapServer/WFSServer?service=WFS&request=GetCapabilities",
       "publication_cadence": "Unknown; use metadata/checksum conditional refresh, not hourly full downloads",
       "last_release": "No source-effective date established",
-      "last_attempt": "2026-11-04T18:06:41.976186+00:00",
-      "last_retrieval": "2026-11-04T18:00:07.374147+00:00",
+      "last_attempt": "2026-11-04T18:49:14.248757+00:00",
+      "last_retrieval": "2026-11-04T18:33:09.450374+00:00",
       "sha256": "fbe47c5dc6311848015b3a3378b1cc3da512ab3327a1f933a24e6292721667c7",
       "etag": null,
       "fields_offered": [
@@ -10577,24 +10577,33 @@
         "installed/connection kVA",
         "municipality/district"
       ],
-      "mapping": "Candidate schema inspection only; no integrated adapter. Generator kW basis unresolved, kVA never treated as active MW. Repeated park/block values must not be summed. Owner fields not requested.",
+      "mapping": "Checksum-enforced candidate reader completed and tested.44 reviewed existing-project extensions_json contexts via upsert. All native kW/kVA/licence states retained; no scalar capacity/status, phase or plant identity inference.",
       "estimated_useful_yield": {
-        "features_inspected": 400,
-        "explicit_PV_features": 357,
-        "distinct_PV_processes_in_partial_page": 209,
-        "repeated_PV_processes": 54,
-        "accepted": 0
+        "features_reviewed": 750,
+        "explicit_PV_features": 617,
+        "PV_process_groups": 289,
+        "suggested_associations_reviewed": 78,
+        "accepted_existing_contexts": 44,
+        "suggestions_held": 34,
+        "other_groups_unmatched_or_unreviewed": 211,
+        "new_projects": 0
       },
       "processed_cursor": {
-        "max_objectid_seen": 10403,
-        "partial_page_exceededTransferLimit": true,
-        "whole_source_exhausted": false,
-        "identity_review_complete": false
+        "max_objectid_seen": 27352,
+        "whole_source_inventory_captured": true,
+        "independent_ID_inventory_count": 750,
+        "identity_review_complete": false,
+        "review_file": "20261104T1830_dgeg_review.json"
       },
-      "result": "Successful fresh multi-record source discovery and structural review only; zero accepted rows. Need complete-process/phase crosswalk and rating semantics.",
-      "retry_condition": "Recheck primary rights/revision before resume; retain captured400features to avoid repeat",
-      "next_action": "Review first400features by completeprocess, retrieve missing block partitions only, and crosswalk canonical Portuguese projects before upsert",
-      "next_due_check": "2026-11-05T18:00:00Z"
+      "result": "Tested candidate reader complete; full750polygon inventory exactly reconciled.44 existing project contexts accepted;245 process groups not accepted as canonical contexts.133 other-classification features excluded from PV staging, not rejected plants.",
+      "retry_condition": "New official identity/rating evidence or source revision; do not hourly download unchanged fullinventory",
+      "next_action": "Review34 held name suggestions with official phase/site evidence and verify rating definitions before scalar enrichment. Continue245 unaccepted process groups; reuse750 captured features. Fresh terms/checksum before refresh.",
+      "next_due_check": "2026-11-05T18:00:00Z",
+      "checksums": {
+        "dgeg_next": "ad6fc23a1418bae1c11323215a1604e1bf83b9dbb16b26d3b6a260f212f88897",
+        "dgeg_ids": "630f4d5de7a6df36d5502d702af0bbecd54a9e8a989f87cee3d7921efd704296",
+        "dgeg_terms": "4f28fa2d95606977e4ac8ca98c0b28209fe92d2c261a6855f9668dead632ccf0"
+      }
     },
     {
       "id": "gem_operator_complete_20261104T1800",
@@ -10604,7 +10613,7 @@
       "format": "PinnedFebruary2026 XLSX;existingchecksum-enforcedreader",
       "publication_cadence": "Release-based;no hourly full download",
       "last_release": "February2026",
-      "last_attempt": "2026-11-04T18:06:41.976186+00:00",
+      "last_attempt": "2026-11-04T18:49:14.248757+00:00",
       "licence_assessment": "CCBY4;entireTZ/WKSLlocations excluded;positivePVonly",
       "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
       "fields_offered": [
@@ -10612,17 +10621,21 @@
         "completephaseworkbookcontext"
       ],
       "estimated_useful_yield": {
-        "eligible": 4342,
-        "accepted_enrichments": 100,
-        "remaining": 4242
+        "initial_eligible": 4342,
+        "accepted_cumulative_enrichments": 200,
+        "accepted_this_iteration": 100,
+        "remaining": 4142
       },
       "processed_cursor": {
-        "last_accepted_location_id": "L100000801766",
-        "review_file": "20261104T1800_project_review.json"
+        "last_accepted_location_id": "L100000801967",
+        "review_file": "20261104T1830_project_review.json"
       },
-      "next_action": "Next100 complete eligible locations after savedID;reuse capturedbytes ifunchanged",
+      "next_action": "Next100 complete eligible locations after L100000801967;reuse unchanged pinned workbook bytes",
       "retry_condition": "Verify pinnedrelease/checksum andcurrentcanonicalgaps",
-      "next_due_check": "2026-11-04T19:00:00Z"
+      "next_due_check": "2026-11-04T19:00:00Z",
+      "last_retrieval": "2026-11-04T17:59:16.974122+00:00",
+      "etag": null,
+      "mapping": "operators plus qualified historical exact phase/workbook context; full phase-set equality;no current operator claim"
     },
     {
       "id": "tsun_gen3_6in1_20261104T1800",
@@ -10659,8 +10672,8 @@
       "format": "PrimaryOEM HTML/PDF discovery",
       "version_or_date": "Source revision not established",
       "publication_cadence": "Unstated",
-      "last_attempt": "2026-11-04T18:17:33.966140+00:00",
-      "licence_assessment": "Not assessed for extraction; no accepted facts from this opportunity",
+      "last_attempt": "2026-11-04T18:49:14.248757+00:00",
+      "licence_assessment": "Primary legal notice articles2/3 restrict use/reproduction/adaptation; prior written consent required. No permission claimed or sought.",
       "fields_offered": [
         "1000Vdc",
         "SPDtype",
@@ -10668,16 +10681,17 @@
         "modelweights"
       ],
       "estimated_useful_yield": {
-        "references_or_platforms_discovered": 7,
+        "exact_references_present": 14,
         "accepted": 0
       },
       "processed_cursor": {
         "acceptance_complete": false
       },
-      "result": "Seven published references found; junction protection box versus actual parallel-combiner topology unresolved. No accepted rows or full-data licensing claim.",
-      "retry_condition": "Source-specific terms and identity/topology review required",
-      "next_action": "Inspect linked DS-DC-PV-Junction-Boxes-EN circuit diagrams, exact part tables and publisher reuse terms before classifying.",
-      "next_due_check": "2026-11-06T18:00:00Z"
+      "result": "14 references across T1+2 andT2 table held by specific reuse restriction. SPD Imax is surge-discharge kA, never string operating current; topology still requires review.",
+      "retry_condition": "Documented applicable reuse permission; no contact authorized",
+      "next_action": "Skip unchanged restricted table; seek independent permitted OEM technical catalogue",
+      "next_due_check": null,
+      "terms_url": "https://www.mersen.com/en/legal-notice"
     },
     {
       "id": "zimtrack_revision_discovery_1800",
@@ -10687,7 +10701,7 @@
       "format": "PrimaryOEM HTML/PDF discovery",
       "version_or_date": "Source revision not established",
       "publication_cadence": "Unstated",
-      "last_attempt": "2026-11-04T18:17:33.966140+00:00",
+      "last_attempt": "2026-11-04T18:49:14.248757+00:00",
       "licence_assessment": "Not assessed for extraction; no accepted facts from this opportunity",
       "fields_offered": [
         "trackingrange",
@@ -10702,10 +10716,42 @@
       "processed_cursor": {
         "acceptance_complete": false
       },
-      "result": "HistoricalZIMTrack datasheet found; currentZIMTrack1P revision/configuration relationship and specificreuse terms unresolved. No exactnewvariant manufactured.",
+      "result": "One legacy platform held: current ZIMTrack1P relationship/revision and accessible specific terms unresolved; no configuration multiplication.",
       "retry_condition": "Source-specific terms and identity/topology review required",
-      "next_action": "Locate current OEM version, compare model/platform identity, confirm copyright terms and keep configurable dimensions/power supplies qualified.",
+      "next_action": "Find current exact OEM model/revision and accessible rights statement; seek independent tracker source meanwhile",
       "next_due_check": "2026-11-06T18:00:00Z"
+    },
+    {
+      "id": "soltigua_itracker_m_20261104T1830",
+      "country": null,
+      "entity": "trackers",
+      "source_url": "https://www.soltigua.com/itracker-m/",
+      "endpoint": "https://www.soltigua.com/itracker-m/",
+      "format": "OEM HTML",
+      "version_or_date": "No dated technical revision established",
+      "publication_cadence": "Unstated",
+      "licence_assessment": "Public OEM copyright; no open-content licence inferred from privacy policy. Only source metadata retained.",
+      "last_release": null,
+      "last_attempt": "2026-11-04T18:49:14.248757+00:00",
+      "last_retrieval": "2026-11-04T18:40:43.546314+00:00",
+      "sha256": "3c029ee845e7471d9b06e72aced09592e37b9087c1c8e1a30c99a1f177feae50",
+      "etag": null,
+      "mapping": "No accepted technical mapping; exact model-specific table absent",
+      "estimated_useful_yield": {
+        "configuration_labels_reviewed": 3,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "configurable family description; sparse marketing values"
+      ],
+      "processed_cursor": {
+        "page_reviewed": true,
+        "downloadable_exact_table_found": false
+      },
+      "result": "Fallback after restricted Mersen: M/MA1/MA2 configuration labels and configurable heights insufficient for exact technical model acceptance. Existing Soltigua DUETTO/XL identities checked.",
+      "retry_condition": "Public exact model-specific OEM engineering datasheet and reuse assessment",
+      "next_due_check": "2026-11-11T18:30:00Z",
+      "next_action": "Locate exact downloadable iTracker M engineering table; do not manufacture option rows"
     }
   ],
   "source_refresh_queue": [

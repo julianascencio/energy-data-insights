@@ -6255,5 +6255,55 @@
     "methodology_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
     "locator": "Utility-Scale (1MW+) sheet;exactGEM location/phase IDs and Operator column; physical row locators in dated review",
     "limitations": "Historical February2026 source claim, not current operator verification. Require complete source/canonical phase-set equality, allPV, single identical operator, no TZ/WKSL identifiers anywhere in location. No owner inference or phase/site duplication."
+  },
+  "gem_operator_complete_locations_20261104T1830": {
+    "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+    "publisher": "Global Energy Monitor",
+    "title": "Global Solar Power Tracker February2026; reviewed100 complete Chinese operator locations",
+    "license": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+    "retrieved_at": "2026-11-04T17:59:16.974122+00:00",
+    "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+    "release": "February 2026",
+    "methodology_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+    "retrieval_method": "Reuse of pinned raw bytes; no repeated workbook download; original byte retrieval in prior immutable source entry",
+    "locator": "Utility-Scale (1MW+) sheet;exactGEM location/phase IDs and Operator column; physical row locators in dated review",
+    "limitations": "Historical February2026 source claim, not current operator verification. Require complete source/canonical phase-set equality, allPV, single identical operator, no TZ/WKSL identifiers anywhere in location. No owner inference or phase/site duplication.",
+    "verified_at": "2026-11-04T18:36:10.134465+00:00"
+  },
+  "dgeg_cs_page1_20261104T1830": {
+    "url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=1%3D1&outFields=objectid%2Cprocesso%2Cnome%2Csubparque%2Ctipo_central%2Csubtipo_instalacao%2Cpotencia_geradorkw%2Cpotencia_instaladakva%2Cpotencia_ligacaokva%2Cconcelho%2Cdistrito%2Clic_producao%2Clic_exploracao%2Cinspireid&returnGeometry=false&f=json&resultRecordCount=400&orderByFields=objectid",
+    "sha256": "fbe47c5dc6311848015b3a3378b1cc3da512ab3327a1f933a24e6292721667c7",
+    "retrieved_at": "2026-11-04T18:00:07.374147+00:00",
+    "publisher": "Direção-Geral de Energia e Geologia (DGEG), Portugal",
+    "title": "Centrais Solares polygon feature page",
+    "revision": "Service-effective date not published; captured query response, not a current-operation assertion",
+    "locator": "Exact objectid/inspireid and processo in record extension; projected feature attributes only",
+    "license": "CC BY4.0; attribution DGEG. Current primary WFS GetCapabilities explicitly specifies CC BY4.0; data selection/grouping changes documented; no endorsement implied.",
+    "terms_url": "https://servergeo.dgeg.gov.pt/arcgis/services/Visualizadores/CS/MapServer/WFSServer?service=WFS&request=GetCapabilities",
+    "limitations": "Polygons and licensing processes are not independent whole plants. No kVA to active power, no generator kW AC/DC basis inference, no licence-to-current-operation inference, no geometry centroid assignment. Owner/private details excluded."
+  },
+  "dgeg_cs_page2_20261104T1830": {
+    "url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=objectid%3E10403&outFields=objectid%2Cprocesso%2Cnome%2Csubparque%2Ctipo_central%2Csubtipo_instalacao%2Cpotencia_geradorkw%2Cpotencia_instaladakva%2Cpotencia_ligacaokva%2Cconcelho%2Cdistrito%2Clic_producao%2Clic_exploracao%2Cinspireid&returnGeometry=false&f=json&resultRecordCount=400&orderByFields=objectid",
+    "sha256": "ad6fc23a1418bae1c11323215a1604e1bf83b9dbb16b26d3b6a260f212f88897",
+    "retrieved_at": "2026-11-04T18:33:09.450374+00:00",
+    "publisher": "Direção-Geral de Energia e Geologia (DGEG), Portugal",
+    "title": "Centrais Solares polygon feature page",
+    "revision": "Service-effective date not published; captured query response, not a current-operation assertion",
+    "locator": "Exact objectid/inspireid and processo in record extension; projected feature attributes only",
+    "license": "CC BY4.0; attribution DGEG. Current primary WFS GetCapabilities explicitly specifies CC BY4.0; data selection/grouping changes documented; no endorsement implied.",
+    "terms_url": "https://servergeo.dgeg.gov.pt/arcgis/services/Visualizadores/CS/MapServer/WFSServer?service=WFS&request=GetCapabilities",
+    "limitations": "Polygons and licensing processes are not independent whole plants. No kVA to active power, no generator kW AC/DC basis inference, no licence-to-current-operation inference, no geometry centroid assignment. Owner/private details excluded."
+  },
+  "dgeg_cs_page3_20261104T1830": {
+    "url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=1%3D1&returnIdsOnly=true&f=json",
+    "sha256": "630f4d5de7a6df36d5502d702af0bbecd54a9e8a989f87cee3d7921efd704296",
+    "retrieved_at": "2026-11-04T18:35:30.372443+00:00",
+    "publisher": "Direção-Geral de Energia e Geologia (DGEG), Portugal",
+    "title": "Centrais Solares complete public object-ID inventory",
+    "revision": "Service-effective date not published; captured query response, not a current-operation assertion",
+    "locator": "Exact objectid/inspireid and processo in record extension; projected feature attributes only",
+    "license": "CC BY4.0; attribution DGEG. Current primary WFS GetCapabilities explicitly specifies CC BY4.0; data selection/grouping changes documented; no endorsement implied.",
+    "terms_url": "https://servergeo.dgeg.gov.pt/arcgis/services/Visualizadores/CS/MapServer/WFSServer?service=WFS&request=GetCapabilities",
+    "limitations": "Polygons and licensing processes are not independent whole plants. No kVA to active power, no generator kW AC/DC basis inference, no licence-to-current-operation inference, no geometry centroid assignment. Owner/private details excluded."
   }
 }

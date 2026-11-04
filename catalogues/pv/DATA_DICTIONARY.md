@@ -478,3 +478,18 @@ input-current scope stay native. Strict consumption/efficiency bounds are not
 converted into exact scalar values. Optional interfaces/connectors/monitoring/AFCI
 and unknown warranties/certification eligibility remain qualified. A malformed
 apparent-power cell is not repaired from a model number or expected ratio.
+
+## Portugal DGEG staging crosswalk
+
+`pv_catalogue.dgeg` stages CS ArcGIS polygons, never automatic plant records.
+`objectid` and `inspireid` identify source polygons; `processo` is a licensing
+process that may contain several blocks/sub-parks. Native `potencia_geradorkw`
+is generator kW with AC/DC basis unresolved. `potencia_instaladakva` and
+`potencia_ligacaokva` are apparent kVA, not active MW. Repeated park/block values
+are not summed. Licence states are retained without an operating-status inference.
+Source geometry and owner/private fields are omitted from staged outputs.
+
+Reviewed associations may fill a missing `extensions_json` context through the
+existing upsert API, with exact process/polygon references and field source maps.
+They do not replace phases, populate scalar ratings, or resolve unknown plant
+boundaries. Unreviewed groups remain candidates even when source coverage is complete.
