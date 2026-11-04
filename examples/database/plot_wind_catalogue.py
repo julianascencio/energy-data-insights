@@ -286,3 +286,62 @@ for _, component in equipment.loc[
         "cooling options",
         specs["mechanical_options"],
     )
+
+# %%
+# Exact line-choke pairings are component compatibility, not turbine performance.
+for component in rows:
+    if component.get("equipment_category") == "line_choke":
+        specs = json.loads(component["extensions_json"])
+        print(
+            component["model"],
+            "nominal A",
+            specs["nominal_current_a"],
+            "inductance mH",
+            specs["inductance_mh"],
+            "dissipation W",
+            specs["power_dissipation_w"],
+            "documented inverter pairings",
+            len(json.loads(component["compatibility_json"])),
+        )
+
+# %%
+# Application-specific choke ratings and qualified filter ratings stay separate.
+for component in rows:
+    if component.get("equipment_category") not in {"line_choke", "emc_filter"}:
+        continue
+    specs = json.loads(component["extensions_json"])
+    if "application_observations" in specs:
+        print(component["model"], "application ratings", specs["application_observations"])
+    if component["equipment_category"] == "emc_filter":
+        print(
+            component["model"],
+            "rated A",
+            specs["rated_current_a"],
+            "leakage mA",
+            specs["leakage_current_ma"],
+            "catalogue dissipation W",
+            specs["power_dissipation_w"],
+            "conditions",
+            specs["technical_conditions"],
+        )
+
+# %%
+# Braking duty is conditional on drive rating, not wind-turbine generation.
+for component in rows:
+    if component.get("equipment_category") == "braking_resistor":
+        specs = json.loads(component["extensions_json"])
+        print(
+            component["model"],
+            specs["resistance_ohm"],
+            "ohm",
+            specs["continuous_rated_power_w"],
+            "W",
+            specs["application_observations"],
+        )
+
+# %%
+# Legacy resistor revisions are displayed separately from current specifications.
+for component in rows:
+    specs = json.loads(component.get("extensions_json") or "{}")
+    if "legacy_vec501_r0_observations" in specs:
+        print(component["model"], "legacy VEC501R0 only", specs["legacy_vec501_r0_observations"])

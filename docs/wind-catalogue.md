@@ -1,10 +1,10 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. The proposed continuation contains **6,713 projects, 202 equipment
-records, 5,745 linked turbines and two original numerical curves**, across
-**59 countries and eleven equipment manufacturers**. Merged main at `273fe81f`
-contains 6,574 projects, 168 equipment records and 5,190 turbines plus two curves.
+numerical curves. The proposed continuation contains **7,526 projects, 264 equipment
+records, 9,336 linked turbines and two original numerical curves**, across
+**59 countries and eleven equipment manufacturers**. Merged main at `7af547f9`
+contains 6,713 projects, 202 equipment records and 5,745 turbines plus two curves.
 These are catalogue counts, not a current operating census.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
@@ -490,3 +490,59 @@ omission from the nomenclature summary. Unclaimed approvals remain unknown.
 Series yaw applicability is documented; turbine compatibility and independently
 validated operational performance are not inferred. The gallery includes the new
 230 V ACU210 entries.
+
+
+## Thüringen, Västra Götaland and line chokes
+
+This batch adds 618 projects, 2,030 turbines and 23 exact LCVS/LCVT line chokes.
+Merged main at the iteration baseline contains 6,713 projects, 202 equipment,
+5,745 turbines and two curves; proposed totals are 7,331 / 225 / 7,775 / 2.
+All 12,662 preceding records and capacity totals are unchanged. Complete registry
+partitions were reviewed; 371 German groups and 226 Swedish areas remain held.
+Thirteen duplicated Swedish turbine IDs quarantine their entire parent scope.
+Missing area boundaries remain null. All new project scopes are excluded from MW totals.
+
+OEM pp52–56 preserve explicit inverter pairings and original dimension letters.
+LCVT025 has conflicting inductance/loss rows; scalar values and the disputed
+ACU410-23 pairing are held. No guessed correction or turbine compatibility is added.
+The remaining 13 AL-suffix types are the next bounded equipment partition.
+
+
+## Sachsen, Värmland and electrical components
+
+The 23:35 increment adds 70 projects, 636 linked turbines and 28 exact equipment
+types: 13 AL-suffix line chokes and 15 EMC filters. Proposed totals are 7,401
+projects, 253 equipment, 8,411 turbines and two curves. Merged main at `7af547f9`
+contains 6,713 / 202 / 5,745 / 2; PR #119 cumulatively adds 688 / 51 / 2,666 / 0.
+All 15,333 records preceding this increment and all capacity totals are unchanged.
+The completed Sachsen partition has 482 held groups; Värmland has 44 held areas
+covering 734 turbine rows. All 70 accepted project scopes remain excluded from MW totals.
+
+AL-choke current and dissipation depend on the printed inverter application;
+common inductance and assembly dimensions stay on one exact component record.
+Two choke-to-inverter links lack a frame identifier and remain held. One filter
+application prints ACU210-12, which has no exact existing configuration; its label
+is retained without an inferred alias. EMC class/cable conditions remain qualified,
+and the general 480V heading is not silently applied to the ACU610 application.
+Next: Saarland, Örebro and book-filter assembly tables pp62–63.
+
+
+## Saarland, Örebro and braking resistors
+
+The 4 November increment adds72projects288turbines11exactBRresistor types and
+enriches12EMCfilters with assembly specifications (R04_0 pp62–65).
+Saarland114groups andÖrebro25areas/166units remain held. New project scopes
+remain excluded from MW totals. Two-resistor combinations retain quantity and
+combination ratings within one component record; no artificial assembly model.
+HLD110-500/42dimensions and thermal-switch assignments remain unknown.
+All previous scalar ratings and creation timestamps are preserved.
+
+
+## City states, Västmanland and Dalarna
+
+The 4 November continuation adds 53 projects and 637 linked turbines, and
+enriches 11 existing resistor records with legacy VEC501R0 electrical, thermal,
+mass, terminal and original drawing observations. Current-revision claims are
+not inferred. The 103 German groups and 47 Swedish areas held for identity
+review remain in decision ledgers. All new project scopes stay excluded from
+capacity totals; all previous values and creation timestamps are preserved.

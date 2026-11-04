@@ -1,0 +1,109 @@
+{
+  "run_id": "daikin-ewat-cz-20261103T232400Z",
+  "validated_at": "2026-11-03T23:41:48Z",
+  "branch": "research/data-center-database-20261103T2221Z",
+  "base_main_sha": "7af547f900d676b4334226a64739aed2f4cb3f97",
+  "prepublication_remote_head": "0562b2f27fecea4af24be1320691ece5a6385e70",
+  "canonical_records": 822,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 640,
+    "countries": 36,
+    "operators": 13,
+    "oems": 23
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 593,
+    "countries": 36,
+    "operators": 13,
+    "oems": 21
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 27,
+    "substantively_enriched_equipment": 0,
+    "new_oems": ["Daikin"]
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_daikin_chiller_batch.py <temporary-output> && cmp <temporary-output> catalogues/data_centers/records/equipment/2026-11-03-daikin-ewat-cz-chillers.jsonl",
+      "result": "passed; 27 deterministic reviewed records"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 822 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "61 passed"
+    },
+    {
+      "command": "TMPDIR=/dev/shm pytest -q -p no:cacheprovider",
+      "result": "2110 passed, 5 optional skips after current main integration"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 793 files format-checked"
+    },
+    {
+      "command": "ty check <changed Data Center Python files>",
+      "result": "passed"
+    },
+    {
+      "command": "ty check",
+      "result": "one unrelated unresolved-import diagnostic in scripts/stage_bess_nfosigw.py; no Data Center diagnostics"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3319 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed as part of strict Sphinx gallery; current catalogue statistics and equipment comparison reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs /dev/shm/data-center-docs-daikin-merged && python scripts/check_docs_links.py /dev/shm/data-center-docs-daikin-merged",
+      "result": "passed after integrating current main; 516 HTML pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e863ad797e2726b1b235bf842ca73afe38b9d6fd72b4fd1009e598dd3070f965",
+    "equipment_sha256": "6904008c1da3a15a2e642bc1cb6c5d251bfe92126955f79689e2a11a6ccdb662",
+    "input_sha256": "a5b6806178f38187cc06f51c9bc95388762016bf79b99c9fdc0e899f98c63ffb",
+    "manifest_sha256": "d13c081e5400f7c16d9025731e2f28c62087c78bc0208071d059456917206c7e"
+  },
+  "source_capture": {
+    "official_originals_checksummed": 0,
+    "source_bytes": null,
+    "reuse_note": "Public copyrighted OEM catalogue; factual extraction only; no open licence asserted. Complete tables were available through the official reader, but original-byte capture was unavailable, so no checksum is claimed."
+  },
+  "remote_ci_before_publication": {
+    "head_sha": "0562b2f27fecea4af24be1320691ece5a6385e70",
+    "documentation_run": 41734825379,
+    "documentation_conclusion": "failure",
+    "python_run": 41734825163,
+    "python_conclusion": "failure",
+    "note": "Both prior-head failures were caused by unrelated PV-lifetime changes already present on the then-current main. Main PR #123 fixed those files and was integrated before publication."
+  }
+}

@@ -6631,3 +6631,11 @@ BSLBATT / Huizhou BSL NEW ENERGY Technology Co., Ltd. (n.d.). **BSLBATT Lithium 
 **Role:** data. PDF pp1–3 applicable types, clauses1.1–1.3 and Table1.0; pp4–5 coverage; pp7–10 exclusions, registration and AppendixA; Copyright retained; bounded factual model/condition observations from OEM public document. No full-document redistribution or open bulk-reuse licence inferred.
 
 **Used by:** `catalogues/bess_oem/sources.json`.
+
+### bonfiglioli_br_vec501_r0
+
+Bonfiglioli Vectron (n.d.). **Braking Resistors**. [Source](https://www.bonfiglioli.com/international/usefulDocuments/braking-resistors-manual_inverters---servo-drives_brakings-resistor_eng_r00_0.pdf)
+
+**Role:** data source. COD.VEC501R0 physical pp2,4 complete11type tables. Publication date unknown. Legacy observations retained separately from current ACU catalogue; dimension units unspecified.
+
+**Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
