@@ -1,0 +1,89 @@
+{
+  "batch": "2026-11-04-1335",
+  "daily_indexes": [
+    {
+      "date": "20261020",
+      "source_url": "https://www.boe.es/boe/dias/2026/10/20/index.php",
+      "sha256": "701b114cc97e313476ca82cf22c6ce22f35a68e612d15dae2e3e7b12739db039",
+      "selected_notices": [
+        {
+          "notice_id": "BOE-A-2026-21854",
+          "title": "Resolución de 9 de septiembre de 2026, de la Dirección General de Política Energética y Minas, por la que se desestima la solicitud de Iberenova Promociones, SA, de autorización administrativa previa y autorización de construcción de la instalación fotovoltaica Los Campillos, de 33,825 MW de potencia instalada, para su hibridación con el parque eólico Los Campillos, de 34 MW de potencia instalada, en la provincia de Soria."
+        },
+        {
+          "notice_id": "BOE-A-2026-21859",
+          "title": "Resolución de 25 de septiembre de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Greenalia Wind Power Nordés, SLU, de la solicitud de autorización administrativa previa del parque eólico «Nordés», de 67,2 MW de potencia instalada, y de su infraestructura de evacuación, en las provincias de Lugo y A Coruña."
+        }
+      ],
+      "series": "A; wind mentions; not Series B or a national plant census"
+    },
+    {
+      "date": "20261102",
+      "source_url": "https://www.boe.es/boe/dias/2026/11/02/index.php",
+      "sha256": "40fd03758199c21fdb909abf79b93bb4ab3bcc851aa451f0a3ac3c83ad98cc48",
+      "selected_notices": [
+        {
+          "notice_id": "BOE-A-2026-22986",
+          "title": "Resolución de 19 de octubre de 2026, de la Dirección General de Calidad y Evaluación Ambiental, por la que se formula declaración de impacto ambiental del proyecto «Hibridación de la planta solar fotovoltaica PFV Herrera de los Navarros, de 21 MW de potencia instalada, con el parque eólico Herrera de los Navarros existente de 35 MW y su infraestructura de evacuación, en la provincia de Zaragoza»."
+        },
+        {
+          "notice_id": "BOE-A-2026-22987",
+          "title": "Resolución de 22 de octubre de 2026, de la Dirección General de Calidad y Evaluación Ambiental, por la que se formula declaración de impacto ambiental del «Proyecto Módulo de Generación Eólica \"Las Quinientas\", para su hibridación con el parque fotovoltaico existente \"Las Quinientas\", y para su infraestructura de evacuación, en la provincia de Cádiz»."
+        }
+      ],
+      "series": "A; wind mentions; not Series B or a national plant census"
+    },
+    {
+      "date": "20261103",
+      "source_url": "https://www.boe.es/boe/dias/2026/11/03/index.php",
+      "sha256": "76894295fbf40f86c435d85aeba8d75a94f2e9ab0f8788d8a06059c223c4c5d2",
+      "selected_notices": [],
+      "series": "A; wind mentions; not Series B or a national plant census"
+    },
+    {
+      "date": "20261104",
+      "source_url": "https://www.boe.es/boe/dias/2026/11/04/index.php",
+      "sha256": "eb4b0ee4ca79cb8163db0178411eb4413540020af1293c5520224846f4a19290",
+      "selected_notices": [
+        {
+          "notice_id": "BOE-A-2026-23160",
+          "title": "Resolución de 18 de octubre de 2026, de la Dirección General de Política Energética y Minas, por la que se otorga a Estudios y Proyectos Pradamap, SLU, autorización administrativa previa y autorización administrativa de construcción para una línea subterránea a 13,2 kV y un centro de transformación de servicios auxiliares, para punto de suministro en la subestación seccionadora «Villalba 220 kV», como parte de las infraestructuras de evacuación de parque eólico «Pinta y Guindalera», en La Mudarra (Valladolid)."
+        }
+      ],
+      "series": "A; wind mentions; not Series B or a national plant census"
+    }
+  ],
+  "complete_daily_series_a_wind_mentions": 5,
+  "supplemental_notices": [
+    "BOE-A-2026-17271",
+    "BOE-A-2026-19188"
+  ],
+  "reviewed_notices": 7,
+  "new_projects": 5,
+  "new_equipment": 0,
+  "project_deferrals": 1,
+  "companion_corrections_not_new_projects": 1,
+  "quarantined_project_records": 2,
+  "quarantined_fields": [
+    "Las Quinientas rotor_diameter_m",
+    "Taraguilla connection_voltage_kv",
+    "Taraguilla substation"
+  ],
+  "incidental_candidates_held": [
+    "Mistral PEol-338 lifecycle",
+    "Cerrato VI farm identity",
+    "Las Majas VIIB farm scope"
+  ],
+  "equipment_followup": {
+    "queries": [
+      "Bonfiglioli JB00024563",
+      "Bonfiglioli JB00024827",
+      "Bonfiglioli 7T07W"
+    ],
+    "result": "Only previously processed TC-240121 Rev2 found; no new original drawing; existing 21 assembly/alias holds retained"
+  },
+  "prior_cadiz_inventory": "2023 original URL404 in preceding run; current Cadiz complete farm inventory still not acquired; BOE supplement does not complete that backlog",
+  "identity_review": "All existing Spanish canonical names/aliases and registry IDs screened; no exact target identities. No municipality centroid or inferred model. PV Las Quinientas remains a candidate cross-sector link, not a confirmed registry equivalence.",
+  "scope": "Four complete daily Series A title partitions; not all Spanish wind, not Series B, not all October notices",
+  "capacity": "All six reported capacity totals unchanged; excluded count increases by5"
+}

@@ -1,0 +1,36 @@
+{
+  "batch": "2026-11-04-1235",
+  "selected_component_sections": 26,
+  "new_equipment": 5,
+  "enriched_equipment": 1,
+  "held_sections": 21,
+  "original_sha256": "89d5af7b80e998503cde7e63c6d51e3c276e666d46596c34d12fdce50e001fbd",
+  "project_research": {
+    "source": "LBNL USWTDB v9.1 retired turbine CSV and codebook",
+    "urls": [
+      "https://eta-publications.lbl.gov/sites/default/files/2026-10/uswtdb_decommissioned_20260928.csv",
+      "https://eta-publications.lbl.gov/sites/default/files/2026-10/uswtdb_v9_1_20260928_codebook.xlsx"
+    ],
+    "http_status": [
+      403,
+      403
+    ],
+    "original_bytes_available": false,
+    "authentication_or_reuse_restriction_inferred": false
+  },
+  "new_projects": 0,
+  "boundary": "No independent certification, current status, turbine deployment, synthetic tower variants or rating inferred from type codes",
+  "independent_project_reconciliation": {
+    "candidate": "PNE Cortijo de Guerra",
+    "canonical_candidates": [
+      "72fd522b-d548-5351-804b-4000eb630d54",
+      "a5e29fed-e7ea-53e3-b628-fb74bcddeb16"
+    ],
+    "primary_discovery_url": "https://www.agenciaandaluzadelaenergia.es/sites/default/files/Documentos/Infraestructuras/20231231%20Informe_Prov_CA_MIEA.pdf",
+    "discovery": "Indexed government table distinguishes I, I second phase and II. PNE aggregate label is insufficient for unique phase crosswalk.",
+    "direct_http_status": 404,
+    "original_sha256": null,
+    "decision": "Held; no current lifecycle, capacity allocation or merge inferred",
+    "next": "Acquire current official Cadiz inventory and complete phase/permit crosswalk, then process complete wind table"
+  }
+}

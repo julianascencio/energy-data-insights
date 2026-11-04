@@ -158,3 +158,22 @@ export function windTurbineSummary(rows) {
     located: selected.filter(hasLocation).length,
     lifecycleUnknown: selected.filter(row => !row.status || row.status === "unknown").length};
 }
+// Only explicit, source-backed links are shown; shared makers imply no compatibility.
+export function windComponentApplications(record, equipment) {
+  const lookup = new Map(equipment.map(row => [row.record_id, row]));
+  const result = [];
+  for (const row of equipment) {
+    let links;
+    try { links = JSON.parse(row.compatibility_json || "[]"); } catch { continue; }
+    if (!Array.isArray(links)) continue;
+    for (const link of links) {
+      if (!link?.source_id || !link.locator || !link.conditions) continue;
+      const target = lookup.get(link.equipment_record_id);
+      if (!target) continue;
+      if (row.record_id !== record.record_id && target.record_id !== record.record_id) continue;
+      const other = row.record_id === record.record_id ? target : row;
+      result.push({...link, record_id: other.record_id, name: other.name});
+    }
+  }
+  return result;
+}

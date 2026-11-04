@@ -187,3 +187,16 @@ test("wind turbine inventory counts parent IDs and unknowns without inferring op
   assert.deepEqual(windTurbineSummary(rows), {projects:2,manufacturers:1,manufacturerUnknown:1,located:2,lifecycleUnknown:1});
   assert.equal(windTurbineSummary([]).manufacturers,0);
 });
+
+test("wind component navigation follows explicit evidence in both directions", async () => {
+  const {windComponentApplications} = await import("../../docs/_static/database-core.mjs");
+  const turbine = {record_id: "t", name: "Turbine", manufacturer: "Shared"};
+  const component = {record_id: "b", name: "Blade", manufacturer: "Shared", compatibility_json: JSON.stringify([{equipment_record_id: "t", source_id: "source", locator: "p1", conditions: "Tower A only"}])};
+  const unrelated = {record_id: "u", name: "Other", manufacturer: "Shared"};
+  const rows = [turbine, component, unrelated, {record_id: "bad", compatibility_json: "{}"}];
+  assert.equal(windComponentApplications(turbine, rows)[0].record_id, "b");
+  assert.equal(windComponentApplications(component, rows)[0].record_id, "t");
+  assert.equal(windComponentApplications(component, rows)[0].conditions, "Tower A only");
+  assert.deepEqual(windComponentApplications(unrelated, rows), []);
+  assert.deepEqual(windComponentApplications(component, [component]), []);
+});

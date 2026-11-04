@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isWind = root.dataset.database === "wind";
@@ -265,7 +265,20 @@ function showRecord(row) {
     } else td.textContent = display(value);
     tr.append(th, td); tbody.append(tr);
   }
-  el("detail-content").replaceChildren(table); el("detail").showModal();
+  const applications = make("section");
+  if (isWind && row.entity_type === "equipment") {
+    const links = windComponentApplications(row, rows);
+    if (links.length) applications.append(make("h3", "Documented component applications"));
+    for (const link of links) {
+      const item = make("p"), button = make("button", link.name);
+      button.type = "button";
+      button.addEventListener("click", () => showRecord(rows.find(r => r.record_id === link.record_id)));
+      item.append(button, make("span", ` — ${link.conditions} (${link.source_id}; ${link.locator})`));
+      applications.append(item);
+    }
+  }
+  el("detail-content").replaceChildren(applications, table);
+  if (!el("detail").open) el("detail").showModal();
 }
 function download(content, name, mime) {
   const url = URL.createObjectURL(new Blob([content], {type: mime})), anchor = make("a");

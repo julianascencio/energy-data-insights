@@ -1,0 +1,126 @@
+{
+  "batch": "2026-11-04-0935",
+  "france": {
+    "source_id": "odre-wind-20260831-20261104",
+    "sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+    "national_rows": 2458,
+    "cohorts": [
+      {
+        "start": "2018-01-01",
+        "end": "2019-12-31",
+        "new_projects": 26,
+        "selected": 296
+      },
+      {
+        "start": "2016-01-01",
+        "end": "2017-12-31",
+        "new_projects": 26,
+        "selected": 311
+      }
+    ],
+    "selected": 607,
+    "new_projects": 52,
+    "deferred": 555,
+    "outside_combined_cohort": 1851,
+    "all_new_capacity_scopes_unresolved": true,
+    "new_regions": {
+      "Grand Est": 11,
+      "Hauts-de-France": 13,
+      "Bretagne": 5,
+      "Auvergne-Rhône-Alpes": 1,
+      "Pays de la Loire": 7,
+      "Normandie": 8,
+      "Centre-Val de Loire": 2,
+      "Occitanie": 2,
+      "Nouvelle-Aquitaine": 2,
+      "Bourgogne-Franche-Comté": 1
+    }
+  },
+  "components": {
+    "complete_disclosures": 9,
+    "complete_almm_wtc_tables": 1,
+    "source_rows": 66,
+    "rows_with_exact_models": 23,
+    "rows_without_exact_model": 43,
+    "new_unique_models": 25,
+    "existing_turbines_enriched": 9,
+    "explicit_application_links": 28,
+    "new_manufacturers": [
+      "Dalian Huarui Special Transmission Equipment",
+      "ELIN Motoren",
+      "Eickhoff Wind Power",
+      "Envision Energy",
+      "Flender",
+      "Hunan Xiangtan Electric Power",
+      "LM Wind Power",
+      "Sinoma Wind Power Blade",
+      "Tianjin CRRC Wind Turbine Blade Engineering",
+      "Xi’an Chen’an Electric",
+      "ZF Wind Power"
+    ],
+    "source_ids": [
+      "mnre-component-0-20261104",
+      "mnre-component-1-20261104",
+      "mnre-component-2-20261104",
+      "mnre-component-3-20261104",
+      "mnre-component-4-20261104",
+      "mnre-component-5-20261104",
+      "mnre-component-6-20261104",
+      "mnre-component-7-20261104",
+      "mnre-component-8-20261104",
+      "mnre-almm-wtc-20260602"
+    ],
+    "next_disclosure_index": 9,
+    "next_disclosure_url": "https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2026/03/20260303799526182.pdf",
+    "notes": [
+      "Two shared models reuse one identity across original and HYT140m configurations; not duplicate variants",
+      "First listed maker/group used for stable identity; manufacturing entities retained; no unproved corporate ownership or sole-manufacturer claim",
+      "43generic type rows held from exact equipment creation; their observations retained on nine turbine records",
+      "EF0953A3560kW mechanical rating distinct from3000/3150kW turbine electrical rating",
+      "LM model numbers do not supply unknown blade lengths; only HT24/PW28 lengths explicitly reported",
+      "No current certification or independent operational validation claimed"
+    ]
+  },
+  "independent_sources": {
+    "usgs": {
+      "url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
+      "http_status": 403,
+      "classification": "Official catalogue metadata download failure; no authentication/reuse inference"
+    },
+    "brazil_ibama": {
+      "url": "https://pamgia.ibama.gov.br/server/rest/services/21_SIGA_Geo/usina_eolica/FeatureServer/1?f=pjson",
+      "http_status": 200,
+      "bytes": 8111,
+      "sha256": "9585ed0254388c6e9942854acd1a001dc3eed149f3ea6c82351d74311707d026",
+      "query": "where=1=1&returnCountOnly=true&f=json",
+      "query_http_status": 200,
+      "query_arcgis_error_code": 500,
+      "classification": "Service query application error, not HTTP500, authentication or reuse restriction",
+      "scope": "IBAMA federal environmental licensing points with SEIprocess references; not ANEEL SIGA generating-unit registry. No capacity/lifecycle/EIC equivalence inferred. No records imported."
+    },
+    "pne": {
+      "url": "https://www.pnegroup.com/en/references/",
+      "http_status": 200,
+      "bytes": 402863,
+      "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
+      "all_project_rows": 358,
+      "wind_rows": 319,
+      "wind_by_country": {
+        "Poland": 7,
+        "Germany": 249,
+        "France": 28,
+        "Unknown": 2,
+        "Sweden": 7,
+        "Canada": 1,
+        "USA": 8,
+        "Great Britain": 5,
+        "Italy": 7,
+        "Romania": 3,
+        "South Africa": 1,
+        "Spain": 1
+      },
+      "decision": "Discovery/schema review only; no additions. Commissioning/date of sale share one column; missing countries and zeroWTG placeholders cannot establish operation or zero fleet. Next complete Spanish wind partition, then Polish wind partition, with existing-identity and sale/commissioning scope checks."
+    }
+  },
+  "exclusions": "No new reuse exclusions. Previous explicitly restricted OEM documents remain excluded."
+}

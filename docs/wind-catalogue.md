@@ -624,3 +624,23 @@ its published 4.23 MW nameplate is preserved separately from the model label.
 Frequency-specific hub options stay nested, and the inadequately qualified
 noise range is not promoted to a scalar sound-power value. The Vestas 4 MW
 brochure is excluded under its explicit final-page reuse restriction.
+
+## Regulatory decisions and hybrid boundaries
+
+The BOE adapter reviews Series A notices mentioning wind, including decisions
+about associated solar plants or auxiliary supplies. It requires complete
+reviewed selections and checksummed originals before staging records. Its
+synthetic offline tests reject title-based capacity inference, missing notices,
+duplicate identities and cancellation of a wind farm from a solar decision.
+
+The Spanish continuation adds five project identities from four complete daily
+title partitions and two supplemental notices. Final and superseded proposals,
+withdrawals, conditional environmental declarations and construction permits
+remain distinct. Conflicting geometry and electrical fields stay null with
+original observations retained. Unknown operating status is not converted to
+zero capacity. All new farm/phase scopes remain excluded from capacity totals.
+
+The shared viewer's expandable metadata exposes `boe_procedure` and field
+sources; the offline Wind example prints decision target, dated wind status,
+capacity categories and exclusions. A solar/auxiliary decision cannot be read as
+a wind commissioning event. The BOE partitions are not a national wind census.

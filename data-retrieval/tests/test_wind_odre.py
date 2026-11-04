@@ -4,6 +4,7 @@ import hashlib
 import json
 from copy import deepcopy
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -57,7 +58,7 @@ def test_null_export_is_not_zero():
 def test_bounded_cohort_keeps_other_years_in_identity_screen():
     raw = inputs()
     raw[0]["datemiseenservice"] = "01/01/2020"
-    options = dict(
+    options: dict[str, Any] = dict(
         source_id="fixture", now=NOW, service_start="2020-01-01", service_end="2021-12-31"
     )
     assert len(stage_inventory(raw, [], **options)[0]) == 1
@@ -139,3 +140,23 @@ def test_bad_dates_and_incomplete_or_duplicate_source_fail():
     duplicate = json.dumps(raw + raw).encode()
     with pytest.raises(ValueError, match="duplicate"):
         read_inventory(duplicate, sha256=hashlib.sha256(duplicate).hexdigest(), expected_count=2)
+
+
+def test_residual_unknown_dates_and_small_ratings_keep_national_screen():
+    raw = inputs()
+    raw[0]["datemiseenservice"] = None
+    options: dict[str, Any] = dict(source_id="fixture", now=NOW, residual=True)
+    records, _ = stage_inventory(raw, [], **options)
+    assert len(records) == 1
+    assert "commissioning_date" not in records[0]
+    raw[0]["datemiseenservice"] = "01/01/2024"
+    assert not stage_inventory(raw, [], **options)[0]
+    raw[0]["puismaxinstallee"] = 900
+    assert stage_inventory(raw, [], **options)[0][0]["installed_capacity_mw"] == 0.9
+    other = deepcopy(raw[0])
+    other["codeeicresourceobject"] = "17W000000000002B"
+    other["puismaxinstallee"] = 2000
+    assert not stage_inventory([*raw, other], [], **options)[0]
+    for rating in (None, 0):
+        raw[0]["puismaxinstallee"] = rating
+        assert not stage_inventory(raw, [], **options)[0]
