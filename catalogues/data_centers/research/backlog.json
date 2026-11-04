@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T07:18:00Z",
+  "updated_at": "2026-11-04T08:32:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -61,7 +61,8 @@
     "kstar_epower_model_columns": 38,
     "borri_current_three_phase_ups_configurations": 25,
     "baudouin_dcp_50_60hz_configurations": 34,
-    "siel_safepower_configurations": 27
+    "siel_safepower_configurations": 27,
+    "tescom_current_ups_configurations": 22
   },
   "next_batches": [
     {
@@ -166,8 +167,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 483,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns and all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns and all 27 SIEL Safepower S/Evo HF/Modular SPM columns complete; continue independent generator/electrical suppliers without recounting completed inventories",
+      "offset": 505,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns and all 22 Tescom DS POWER/SH/MTI250 rows complete; continue independent generator/electrical suppliers without recounting completed inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -183,7 +184,8 @@
         "Borri current three-phase monolithic UPS offset 25 is complete; INGENIO MAX 250 and 500 kVA weights remain quarantined because the current product page reports 745/1250 kg while the January 2025 official catalogue reports 630/1150 kg, and merged dimensions/efficiency/battery cells must not create inferred variants",
         "Baudouin April 2025 DCP offset 34 is complete at 19 50 Hz plus 15 60 Hz rows; retain engine kWm, generator kWe and kVA as distinct boundaries and do not synthesize alternator, voltage, emissions or installation variants",
         "Makelsan LEVELUPS/T3/T4 offset 34 is complete at 18+11+5 exact three-phase columns; keep kVA and kW separate and never synthesize selectable voltage, frequency, battery, cabinet or communications options",
-        "SIEL Safepower offset 27 is complete at 9+10+8 exact columns; keep SPM cabinet active kW null, retain merged dimensions and with/without-battery weights as observations, and never synthesize module, battery, voltage, frequency or communications options"
+        "SIEL Safepower offset 27 is complete at 9+10+8 exact columns; keep SPM cabinet active kW null, retain merged dimensions and with/without-battery weights as observations, and never synthesize module, battery, voltage, frequency or communications options",
+        "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices"
       ]
     },
     {
@@ -305,16 +307,26 @@
       "source": "Numeric UPS technical tables",
       "url": "https://www.numericups.com/terms-and-conditions",
       "reason": "Official terms prohibit systematic retrieval, database compilation and reproduction without permission. No specifications or bytes were imported."
+    },
+    {
+      "source": "Trane, Rittal, Legrand, Piller and ABB technical tables",
+      "url": "https://www.trane.com/commercial/north-america/canada/en/terms-of-use.html",
+      "reason": "Supplier-specific official terms limit copying, publication, commercial use or text/data mining beyond private or internal informational purposes. No specifications or bytes were imported; individual policy URLs are preserved in the decision ledger and source review."
+    },
+    {
+      "source": "LiquidStack public CDU tables",
+      "url": "https://liquidstack.com/terms-conditions",
+      "reason": "Public sales terms restrict communication/distribution of supplied documents; public-datasheet reuse scope requires clarification. No facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "siel-safepower-20261104T071800Z",
+    "run_id": "tescom-ups-20261104T083200Z",
     "report": "2026-11-04-report.md",
-    "validation": "2026-11-04T0718-validation.json",
+    "validation": "2026-11-04T0832-validation.json",
     "added_projects": 0,
     "enriched_projects": 0,
-    "added_equipment": 27,
-    "branch": "research/data-center-database-20261104T0347Z"
+    "added_equipment": 22,
+    "branch": "research/data-center-database-20261104T0745Z"
   }
 }
