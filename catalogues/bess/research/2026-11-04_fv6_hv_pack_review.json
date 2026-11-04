@@ -1,0 +1,77 @@
+{
+  "assessed_at": "2026-11-04T02:58:39.622943+00:00",
+  "baseline_commit": "1bc12f80aa01b43d7f2bcd911660d843f936b339",
+  "projects": {
+    "candidates": 3,
+    "new": 2,
+    "enriched": 1,
+    "whole_record_quarantined": 0,
+    "rejected": 0,
+    "accepted_records_with_field_holds": 2,
+    "decisions": [
+      {
+        "name": "FV6",
+        "result": "new",
+        "source_id": "sie_fv6_088_2026",
+        "status": "announced",
+        "holds": "Inconsistent grid routes and historical30MW/30MWh connection design retained"
+      },
+      {
+        "name": "Maranatha20MW",
+        "result": "new",
+        "source_ids": [
+          "sie_maranatha_139_2025",
+          "cne_maranatha_modif_005_2026"
+        ],
+        "status": "permitted",
+        "limit": "Primary indexed CNE registry; original page470, no live operating assertion"
+      },
+      {
+        "name": "LAESA",
+        "result": "enriched",
+        "source_id": "sie_laesa_120_2026",
+        "holds": "65MWh project versus65.19MWh container total and four-batteries wording; proposed equipment only"
+      }
+    ]
+  },
+  "equipment": {
+    "candidates": 21,
+    "new": 10,
+    "enriched": 7,
+    "deferred": 4,
+    "deferred_models": [
+      "RE6",
+      "RE8",
+      "RE10",
+      "RE12"
+    ],
+    "reason": "No exact numeric column in manual V1.1; family range not extrapolated",
+    "field_hold_records_new": 9,
+    "field_hold_records_enriched": 7,
+    "new_ids": [
+      "18f8c101-317b-50db-9bee-f64dab12a2ab",
+      "348ba8b4-4b0a-5c1e-912c-93dbd48e3be3",
+      "4434170e-ba21-5c77-8e20-71346ef93333",
+      "478f0a13-ae0a-5d9a-ab64-1042a380ecfc",
+      "62ce16ac-a882-5713-9e8c-309db5162c3e",
+      "80e2ec16-ee4e-5752-8e1e-2f3e7cf5dd5e",
+      "893fcce5-2185-58b9-904b-9d42a7272f26",
+      "8d72054b-bec8-5b0e-8dc6-9b351ccd826f",
+      "9d9ee626-283d-55d9-9081-261600eb9246",
+      "a780462f-cb55-5dca-b624-726d560ac225"
+    ],
+    "enriched_ids": [
+      "42ef9f5a-877d-5b65-a807-2f7627518b7e",
+      "78d56a61-98fa-5350-b270-0e7b47f363ba",
+      "9499cdb6-6ffb-5378-898b-4f8f1cf198e1",
+      "a950b259-cbe2-54be-bb5b-aeb67bdfd096",
+      "b791b29a-0207-5ede-bce1-17e77b9b60b7",
+      "b9a29c61-10fa-5028-8598-b48a692659de",
+      "f0fdcc30-7940-5f28-a404-50fd26405414"
+    ]
+  },
+  "new_countries": [],
+  "new_oems": [],
+  "scope": "No schema/importer changes; manual exact-column and scanned-decision review through existing upsert API; all conflicting nested changes explicitly reviewed",
+  "reference_integrity": "Existing Huawei catalogue has215/241kWh cabinets, not exact5015-2S/213KTL-H0 design models. No fabricated OEM row IDs or installed assignments."
+}
