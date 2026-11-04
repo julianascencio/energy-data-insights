@@ -478,3 +478,80 @@ input-current scope stay native. Strict consumption/efficiency bounds are not
 converted into exact scalar values. Optional interfaces/connectors/monitoring/AFCI
 and unknown warranties/certification eligibility remain qualified. A malformed
 apparent-power cell is not repaired from a model number or expected ratio.
+
+## Portugal DGEG staging crosswalk
+
+`pv_catalogue.dgeg` stages CS ArcGIS polygons, never automatic plant records.
+`objectid` and `inspireid` identify source polygons; `processo` is a licensing
+process that may contain several blocks/sub-parks. Native `potencia_geradorkw`
+is generator kW with AC/DC basis unresolved. `potencia_instaladakva` and
+`potencia_ligacaokva` are apparent kVA, not active MW. Repeated park/block values
+are not summed. Licence states are retained without an operating-status inference.
+Source geometry and owner/private fields are omitted from staged outputs.
+
+Reviewed associations may fill a missing `extensions_json` context through the
+existing upsert API, with exact process/polygon references and field source maps.
+They do not replace phases, populate scalar ratings, or resolve unknown plant
+boundaries. Unreviewed groups remain candidates even when source coverage is complete.
+
+## RVO SDE decisions and qualified OEM tables
+
+`pv_catalogue.rvo` keeps subsidy decisions separate from canonical generating
+plants and their phases. `Referentie` is an exact award identifier, not a plant
+identifier. `Thema` must explicitly say `Zon-PV`; generic `Zon` does not suffice.
+Anonymised decisions are excluded entirely, and applicant/address/postcode/locality
+fields and geometry do not enter staging. Maximum subsidy is a financial ceiling,
+not capex or an actual payment. The workbook has no individual nameplate-capacity
+column; category MWp thresholds must not populate ratings. Source realisation flags
+and native in-use years do not establish present-day operation. No implicit join to
+an older viewer snapshot or interpretation of its conflicting field aliases occurs.
+
+Hopewind HSNV tables preserve per-MPPT currents and DC-input layouts as native
+context. Page-one current/efficiency discrepancies remain field holds, not repaired
+values. Apparent maximum kVA is not active kW; bounded weights are not exact mass.
+OMCO Origin One-In-Portrait is one mechanical model with alternative controller
+packages. Optional backtracking is not assumed installed; total tracking range does
+not create unstated endpoints. Module/length bounds, pose-dependent dimensions,
+typical drive counts and an unqualified advertised wind speed stay in context.
+Published structural/drive warranty durations use their respective columns; control,
+motor and damper terms remain separate. No legacy controller protocols are blended.
+
+### Taipower public station/site candidate scope
+
+The checksum-enforced Taipower reader stages CSV record numbers and native station
+and site IDs. IDs are scoped to the explicit solar/PV technology. A dash station
+cell is resolved only within an exactly named group having an explicit unique ID;
+there is no positional forward fill or automatic plant identity. Source addresses
+and portal contact details are excluded. The initial71site rows/45station groups were candidates. The20:30manual review
+reconciles station6asoneLongjingplantwith2nativephases, andqualifiescontextsfor
+2existingprojects. Otherstation/phaseboundariesremaininreview.
+
+| Native field | Review representation and limit |
+| --- | --- |
+| `裝置容量(瓩)/Installed Capacity(kW)` | Native site kW in candidate context; AC/DC unestablished, no aggregate or canonical rating |
+| `申設狀態/Application Status` | Native administrative label; not current operation or a dated lifecycle scalar |
+| `型號/Model` | Native source equipment label; not an OEM-verified model or equipment assignment |
+| Station name and IDs | Exact-name station grouping only; whole-plant/phase identity unresolved |
+| CSV HTTP Last-Modified | Retrieval metadata only; not the dataset-effective or operating-status date |
+
+Government dataset17141 explicitly declares Taiwan Open Government Data License
+v1.0. Retain the Taipower attribution and licence URL in source metadata; do not
+inherit that licence for unrelated OEM documents or private material.
+
+### Taipower station-month evidence
+
+Dataset29938 reports Gregorian year/month, a native station name, installed kW,
+monthly generation kWh and an average unit daily-energy value. The average's
+formula and denominator are not independently established, so it remains native
+rather than a PR/efficiency scalar. Installed kW does not establish AC/DC basis.
+Named stations can change their site/phase coverage between months.
+
+The monthly reader validates the entire pinned source before selecting a bounded
+period/name partition. Duplicate station-periods fail closed unless their exact
+keys have been explicitly reviewed; all contradictory rows are then retained in
+review and excluded together. It never repairs the year/month or chooses a value.
+The Q3 2026 review associates two named stations with existing projects using
+reviewed native names, owner/operator and administrative context. It preserves
+site rows and monthly observations as qualified extensions, without changing
+canonical capacity, lifecycle, coordinates, phase IDs or equipment links. The
+214ha Tainan land-area field uses separately licensed city-government evidence.

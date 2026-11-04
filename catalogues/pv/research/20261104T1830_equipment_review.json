@@ -1,0 +1,104 @@
+{
+  "accepted_by_entity": {
+    "modules": 0,
+    "inverters": 0,
+    "trackers": 0,
+    "combiner_boxes": 0
+  },
+  "reviewed_sources": [
+    {
+      "id": "mersen_stringbox_discovery_1800",
+      "entity": "equipment",
+      "country": null,
+      "source_url": "https://www.mersen.com/en/products/pv-string-boxes-t12",
+      "format": "PrimaryOEM HTML/PDF discovery",
+      "version_or_date": "Source revision not established",
+      "publication_cadence": "Unstated",
+      "last_attempt": "2026-11-04T18:49:14.248757+00:00",
+      "licence_assessment": "Primary legal notice articles2/3 restrict use/reproduction/adaptation; prior written consent required. No permission claimed or sought.",
+      "fields_offered": [
+        "1000Vdc",
+        "SPDtype",
+        "7exactreferences",
+        "modelweights"
+      ],
+      "estimated_useful_yield": {
+        "exact_references_present": 14,
+        "accepted": 0
+      },
+      "processed_cursor": {
+        "acceptance_complete": false
+      },
+      "result": "14 references across T1+2 andT2 table held by specific reuse restriction. SPD Imax is surge-discharge kA, never string operating current; topology still requires review.",
+      "retry_condition": "Documented applicable reuse permission; no contact authorized",
+      "next_action": "Skip unchanged restricted table; seek independent permitted OEM technical catalogue",
+      "next_due_check": null,
+      "terms_url": "https://www.mersen.com/en/legal-notice"
+    },
+    {
+      "id": "zimtrack_revision_discovery_1800",
+      "entity": "equipment",
+      "country": null,
+      "source_url": "https://pv-tracker.de/wp-content/uploads/sites/7/2021/06/ZIM-Track-Data-Sheet.pdf",
+      "format": "PrimaryOEM HTML/PDF discovery",
+      "version_or_date": "Source revision not established",
+      "publication_cadence": "Unstated",
+      "last_attempt": "2026-11-04T18:49:14.248757+00:00",
+      "licence_assessment": "Not assessed for extraction; no accepted facts from this opportunity",
+      "fields_offered": [
+        "trackingrange",
+        "bounds",
+        "structure/controlwarranty",
+        "backtracking"
+      ],
+      "estimated_useful_yield": {
+        "references_or_platforms_discovered": 1,
+        "accepted": 0
+      },
+      "processed_cursor": {
+        "acceptance_complete": false
+      },
+      "result": "One legacy platform held: current ZIMTrack1P relationship/revision and accessible specific terms unresolved; no configuration multiplication.",
+      "retry_condition": "Source-specific terms and identity/topology review required",
+      "next_action": "Find current exact OEM model/revision and accessible rights statement; seek independent tracker source meanwhile",
+      "next_due_check": "2026-11-06T18:00:00Z"
+    },
+    {
+      "id": "soltigua_itracker_m_20261104T1830",
+      "country": null,
+      "entity": "trackers",
+      "source_url": "https://www.soltigua.com/itracker-m/",
+      "endpoint": "https://www.soltigua.com/itracker-m/",
+      "format": "OEM HTML",
+      "version_or_date": "No dated technical revision established",
+      "publication_cadence": "Unstated",
+      "licence_assessment": "Public OEM copyright; no open-content licence inferred from privacy policy. Only source metadata retained.",
+      "last_release": null,
+      "last_attempt": "2026-11-04T18:49:14.248757+00:00",
+      "last_retrieval": "2026-11-04T18:40:43.546314+00:00",
+      "sha256": "3c029ee845e7471d9b06e72aced09592e37b9087c1c8e1a30c99a1f177feae50",
+      "etag": null,
+      "mapping": "No accepted technical mapping; exact model-specific table absent",
+      "estimated_useful_yield": {
+        "configuration_labels_reviewed": 3,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "configurable family description; sparse marketing values"
+      ],
+      "processed_cursor": {
+        "page_reviewed": true,
+        "downloadable_exact_table_found": false
+      },
+      "result": "Fallback after restricted Mersen: M/MA1/MA2 configuration labels and configurable heights insufficient for exact technical model acceptance. Existing Soltigua DUETTO/XL identities checked.",
+      "retry_condition": "Public exact model-specific OEM engineering datasheet and reuse assessment",
+      "next_due_check": "2026-11-11T18:30:00Z",
+      "next_action": "Locate exact downloadable iTracker M engineering table; do not manufacture option rows"
+    }
+  ],
+  "rights_blocked_exact_references": 14,
+  "legacy_platforms_held": 1,
+  "sparse_config_labels_deferred": 3,
+  "new_manufacturers": [],
+  "full_documents_or_model_table_not_committed": true
+}

@@ -1,0 +1,761 @@
+{
+  "accepted": 10,
+  "canonical_technical_values": 160,
+  "models": [
+    {
+      "model": "TSOL-MX2400D",
+      "fields": {
+        "pac_rated_w": 2400,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth"
+        ],
+        "output_current_max_a": 12,
+        "efficiency_euro_pct": 96.7
+      },
+      "source_id": "tsun_gen3_6_singlephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX2400D column",
+        "phase_count": 1,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18*; asterisk footnote says forDaisy-chain andTrunk Cable; applicability retained",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": null,
+        "output_voltage_options_native": "220/230/240,L/N/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 40,
+          "condition": "ratedambientcondition"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 3,
+          "10AWG": 4,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [
+          "2xRS485"
+        ],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX2500D",
+      "fields": {
+        "pac_rated_w": 2500,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth"
+        ],
+        "output_current_max_a": 12.5,
+        "efficiency_euro_pct": 96.7
+      },
+      "source_id": "tsun_gen3_6_singlephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX2500D column",
+        "phase_count": 1,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18*; asterisk footnote says forDaisy-chain andTrunk Cable; applicability retained",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": null,
+        "output_voltage_options_native": "220/230/240,L/N/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 40,
+          "condition": "ratedambientcondition"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 3,
+          "10AWG": 4,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [
+          "2xRS485"
+        ],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX2700D",
+      "fields": {
+        "pac_rated_w": 2700,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth"
+        ],
+        "output_current_max_a": 13.5,
+        "efficiency_euro_pct": 96.7
+      },
+      "source_id": "tsun_gen3_6_singlephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX2700D column",
+        "phase_count": 1,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18*; asterisk footnote says forDaisy-chain andTrunk Cable; applicability retained",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": null,
+        "output_voltage_options_native": "220/230/240,L/N/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 40,
+          "condition": "ratedambientcondition"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 2,
+          "10AWG": 3,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [
+          "2xRS485"
+        ],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX3000D",
+      "fields": {
+        "pac_rated_w": 3000,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth"
+        ],
+        "output_current_max_a": 15,
+        "efficiency_euro_pct": 96.7
+      },
+      "source_id": "tsun_gen3_6_singlephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX3000D column",
+        "phase_count": 1,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18*; asterisk footnote says forDaisy-chain andTrunk Cable; applicability retained",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": null,
+        "output_voltage_options_native": "220/230/240,L/N/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 40,
+          "condition": "ratedambientcondition"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 2,
+          "10AWG": 3,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [
+          "2xRS485"
+        ],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX3300D",
+      "fields": {
+        "pac_rated_w": 3300,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth"
+        ],
+        "output_current_max_a": 15.9,
+        "efficiency_euro_pct": 96.7
+      },
+      "source_id": "tsun_gen3_6_singlephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX3300D column",
+        "phase_count": 1,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18*; asterisk footnote says forDaisy-chain andTrunk Cable; applicability retained",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": null,
+        "output_voltage_options_native": "220/230/240,L/N/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 40,
+          "condition": "ratedambientcondition"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 2,
+          "10AWG": 3,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [
+          "2xRS485"
+        ],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX2400D-T",
+      "fields": {
+        "pac_rated_w": 2400,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth",
+          "RS485"
+        ]
+      },
+      "source_id": "tsun_gen3_6_threephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX2400D-T column",
+        "phase_count": 3,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": 4,
+        "output_voltage_options_native": "220/230/240,L/N/PE; three-phase title does not establish line-to-line voltage",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 50,
+          "condition": "PVinput30V"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 9,
+          "10AWG": 12,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX2500D-T",
+      "fields": {
+        "pac_rated_w": 2500,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth",
+          "RS485"
+        ]
+      },
+      "source_id": "tsun_gen3_6_threephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX2500D-T column",
+        "phase_count": 3,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": 4.17,
+        "output_voltage_options_native": "220/230/240,L/N/PE; three-phase title does not establish line-to-line voltage",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 50,
+          "condition": "PVinput30V"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 9,
+          "10AWG": 11,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX2700D-T",
+      "fields": {
+        "pac_rated_w": 2700,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth",
+          "RS485"
+        ]
+      },
+      "source_id": "tsun_gen3_6_threephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX2700D-T column",
+        "phase_count": 3,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": 4.5,
+        "output_voltage_options_native": "220/230/240,L/N/PE; three-phase title does not establish line-to-line voltage",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 50,
+          "condition": "PVinput30V"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 8,
+          "10AWG": 10,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX3000D-T",
+      "fields": {
+        "pac_rated_w": 3000,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth",
+          "RS485"
+        ]
+      },
+      "source_id": "tsun_gen3_6_threephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX3000D-T column",
+        "phase_count": 3,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": 5,
+        "output_voltage_options_native": "220/230/240,L/N/PE; three-phase title does not establish line-to-line voltage",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 50,
+          "condition": "PVinput30V"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 7,
+          "10AWG": 9,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    },
+    {
+      "model": "TSOL-MX3300D-T",
+      "fields": {
+        "pac_rated_w": 3300,
+        "vdc_max_v": 60,
+        "mppt_min_v": 16,
+        "mppt_max_v": 60,
+        "efficiency_max_pct": 97,
+        "width_m": 0.38,
+        "height_m": 0.313,
+        "depth_m": 0.049,
+        "ip_rating": "IP67",
+        "insulation_method": "HF isolation",
+        "cooling_method": "Natural convection",
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 65,
+        "product_warranty_years": 12,
+        "communication_protocols": [
+          "Wi-Fi",
+          "Bluetooth",
+          "RS485"
+        ]
+      },
+      "source_id": "tsun_gen3_6_threephase_20261104T1800",
+      "conditions": {
+        "locator": "Physical page2;exact TSOL-MX3300D-T column",
+        "phase_count": 3,
+        "DC_input_count": 6,
+        "MPPT_count_hold": "Not printed; six DCinputs not assigned to mppt_count",
+        "max_input_current_per_input_A_native": "18",
+        "short_current_A_native": 25,
+        "startup_per_input_V": 22,
+        "recommended_module_Wp_native": "400–700+; not rated inverter DC power",
+        "PV_modules": {
+          "min": 1,
+          "max": 6
+        },
+        "output_max_current_per_phase_A": 5.5,
+        "output_voltage_options_native": "220/230/240,L/N/PE; three-phase title does not establish line-to-line voltage",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "power_factor": ">0.99default;0.8leading to0.8lagging",
+        "THD_pct": {
+          "upper_exclusive": 3
+        },
+        "nominal_MPPT_efficiency_pct": 99.9,
+        "night_consumption_W": {
+          "upper_exclusive": 0.05
+        },
+        "weights_kg": {
+          "daisy_chain": 8.2,
+          "trunk_cable": 7.5
+        },
+        "temperature_derating": {
+          "above_C": 50,
+          "condition": "PVinput30V"
+        },
+        "humidity_pct_native": 100,
+        "altitude_without_derating_m": 2000,
+        "branch_max_units": {
+          "12AWG": 6,
+          "10AWG": 8,
+          "condition": "Daisy-chain andTrunk Cable"
+        },
+        "cable_max_m": {
+          "daisy_chain": 3.7,
+          "trunk_cable": 0.5
+        },
+        "optional_not_standard": [],
+        "warranty_condition": "Published standard12years; contract/regional exclusions not supplied; no performance warranty inferred"
+      }
+    }
+  ]
+}
