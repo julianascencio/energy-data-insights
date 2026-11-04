@@ -1,0 +1,60 @@
+{
+  "run_id": "siel-safepower-20261104T071800Z",
+  "retrieved_at": "2026-11-04T07:18:00Z",
+  "branch": "research/data-center-database-20261104T0347Z",
+  "base_head": "fc8d95a72536075f9431394afcfaddbcf9f2342f",
+  "canonical_records": {
+    "projects": 182,
+    "equipment": 846,
+    "total": 1028,
+    "added_equipment": 27
+  },
+  "executed_checks": [
+    {
+      "check": "connector-side JSONL parse",
+      "result": "passed",
+      "detail": "27 lines parsed as JSON"
+    },
+    {
+      "check": "deterministic identity uniqueness",
+      "result": "passed",
+      "detail": "27 unique UUIDv5 equipment IDs"
+    },
+    {
+      "check": "rating-boundary assertions",
+      "result": "passed",
+      "detail": "19 explicit kVA/kW rows; eight SPM kVA-only rows; no derived active kW"
+    },
+    {
+      "check": "exact-weight assertions",
+      "result": "passed",
+      "detail": "19 exact single weights normalized; alternative with/without-battery weights remain observations"
+    },
+    {
+      "check": "source/evidence completeness",
+      "result": "passed",
+      "detail": "Each record binds official URL, source ID, field sources and evidence; three captured PDFs have checksums"
+    },
+    {
+      "check": "Python/Node/docs/full repository suites",
+      "result": "not_run",
+      "detail": "Local execution environment unavailable after shared filesystem exhaustion; remote CI is authoritative"
+    },
+    {
+      "check": "Parquet and coverage rebuild",
+      "result": "not_run",
+      "detail": "Runner unavailable; prior manifest intentionally left unchanged for an explicit runner-backed follow-up"
+    }
+  ],
+  "holds_added": [
+    "Hitachi Hi-Rel",
+    "TMEIC",
+    "Numeric UPS"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "No project records changed",
+    "Existing NTT/PeeringDB/PDG/Socomec/Airedale/Riello and other saved holds remain",
+    "Campus capacity logic and viewer code are unchanged"
+  ]
+}
