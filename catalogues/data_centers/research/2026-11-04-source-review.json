@@ -1,6 +1,14 @@
 {
-  "retrieved_at": "2026-11-04T08:32:00Z",
+  "retrieved_at": "2026-11-04T09:20:00Z",
   "accepted": [
+    {
+      "inventory": "atNorth FIN03 identity plus DEN01, DEN02 and SWE04 official milestone/boundary reconciliation",
+      "processed_offset": 4,
+      "accepted_records": 1,
+      "enriched_records": 3,
+      "reuse": "Factual extraction from public operator, seller, municipal and corroborating secondary pages; no open licence asserted; originals are not redistributed",
+      "originals": "Eight accepted HTML originals total 920,543 bytes and each has a SHA-256 checksum in sources.json. The existing checksummed 2025 atNorth sustainability report supplies the FIN03 operational status and DEN01 campus milestone."
+    },
     {
       "inventory": "FIN02, FIN04 and FIN05 official Finnish municipal permit/disclosure observations",
       "processed_offset": 6,
@@ -76,6 +84,22 @@
   ],
   "deferred": [
     {
+      "candidate": "Delta current IPT and DPM UPS tables",
+      "reason": "Official terms prohibit reproducing, copying, distributing, publishing, licensing, derivative use or transfer without prior written permission. No UPS facts or bytes were imported."
+    },
+    {
+      "candidate": "HITEC PowerPRO technical tables",
+      "reason": "The reviewed official PowerPRO3600 brochure labels its contents confidential and proprietary. No rating rows or brochure bytes were imported pending clearer permission."
+    },
+    {
+      "candidate": "HIMOINSA HGY generator tables",
+      "reason": "Official legal terms limit materials to private use and prohibit storage, publication and reproduction without authorization. No HGY facts or bytes were imported."
+    },
+    {
+      "candidate": "Generac industrial generator tables",
+      "reason": "Official terms prohibit copying, reproduction, display, distribution, reuse, publication, licensing and derivative use without written permission. No specifications or bytes were imported."
+    },
+    {
       "candidate": "Airedale product tables",
       "reason": "Explicit website terms prohibit copying or incorporation into another work beyond personal-use exceptions. The staged candidate batch was withdrawn in full before publication."
     },
@@ -137,6 +161,15 @@
     }
   ],
   "quarantined": [
+    {
+      "record": "atNorth SWE04 Solleftea",
+      "field": "commissioning_date",
+      "observations": [
+        "Municipal current-status page targets operation during H1 2028",
+        "Municipal grid-connection release forecasts operation during autumn 2028"
+      ],
+      "reason": "Both dated municipal observations are retained; commissioning_date remains null until a later permit or operator milestone resolves the schedule. The separate 200 MW phase-one grid connection, 300 MW planned project scope and 500 MW industrial-park capacity are no longer conflated."
+    },
     {
       "record": "atNorth FIN04 Myllykoski campus",
       "field": "phase_id",

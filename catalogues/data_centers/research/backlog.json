@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T08:32:00Z",
+  "updated_at": "2026-11-04T09:20:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -62,7 +62,8 @@
     "borri_current_three_phase_ups_configurations": 25,
     "baudouin_dcp_50_60hz_configurations": 34,
     "siel_safepower_configurations": 27,
-    "tescom_current_ups_configurations": 22
+    "tescom_current_ups_configurations": 22,
+    "atnorth_nordic_reconciliation_records": 4
   },
   "next_batches": [
     {
@@ -72,13 +73,13 @@
         "https://www.atnorth.com/nordic-data-centers/",
         "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
       ],
-      "offset": 19,
-      "scope": "All 13 current named sites, four explicit child buildings/phases and six Finnish municipal permit/disclosure observations are processed. Do not recount. FIN02 decision 468/2026, FIN04 permits 286-2025-165 and 286-2026-178, FIN04A Ph2 case LVV-U/84381/2026 and FIN05 Salo disclosure are complete; reconcile omitted FIN03 and current-map SWE03 departure.",
+      "offset": 23,
+      "scope": "All 13 current named sites, four explicit child buildings/phases, six Finnish municipal observations and four Nordic identity/status reconciliations are processed. Do not recount. FIN03 is now a separately identified operational facility with combined FIN01/FIN03 capacity left unallocated. DEN01 first-phase and campus milestones are separated; DEN02 planning/contractor/phase observations and SWE04 municipal land/grid/site boundaries are complete.",
       "questions": [
-        "DEN01 Q4 2025 first-phase live vs report Q1 2026 operation: distinguish events",
-        "DEN02 initial power 250 vs 500 MW; SWE04 land 50 vs 4 ha and power 300 vs 200 MW",
         "FIN02 40 MW unspecified campus power vs contractor 45 MW gross future total have different boundaries; do not silently replace",
         "FIN04A Ph2 versus the existing July-2026 YIT phase remains quarantined until an official cross-reference binds the identities; no duplicate phase record was added",
+        "SWE04 H1 2028 versus autumn 2028 commissioning targets remain quarantined; seek a later dated permit or operator milestone",
+        "The stale SWE04 4 ha operator FAQ text is preserved as a contradicted observation; current operator and municipal evidence support approximately 50 ha",
         "Get dated commencement/completion evidence and explicit building/phase IT/grid/facility ratings; no generic PUE-derived estimates"
       ]
     },
@@ -317,16 +318,36 @@
       "source": "LiquidStack public CDU tables",
       "url": "https://liquidstack.com/terms-conditions",
       "reason": "Public sales terms restrict communication/distribution of supplied documents; public-datasheet reuse scope requires clarification. No facts or bytes were imported."
+    },
+    {
+      "source": "Delta UPS product tables",
+      "url": "https://www.deltapowersolutions.com/pt-br/terms-of-use.php",
+      "reason": "Official terms prohibit reproducing, copying, distributing, publishing, licensing, derivative use or transfer of site contents without prior written permission. Current IPT and DPM tables were screened only; no UPS facts or bytes were imported."
+    },
+    {
+      "source": "HITEC PowerPRO technical brochures",
+      "url": "https://www.hitec-ups.com/wp-content/uploads/2020/10/HITEC_Brochure_PowerPRO3600_English_Spread_LR.pdf",
+      "reason": "The official technical brochure labels its contents confidential and proprietary. No PowerPRO rating rows or brochure bytes were imported pending clearer permission."
+    },
+    {
+      "source": "HIMOINSA HGY generator tables",
+      "url": "https://www.himoinsa.com/legal-notice/eng.html",
+      "reason": "Official terms limit materials to private use and prohibit storage, publication, reproduction and derivative use without prior authorization. HGY tables were screened only; no facts or bytes were imported."
+    },
+    {
+      "source": "Generac industrial generator tables",
+      "url": "https://www.generac.com/policies/terms-conditions/",
+      "reason": "Official terms prohibit copying, reproduction, display, distribution, reuse, publication, licensing and derivative use without written permission. No specifications or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "tescom-ups-20261104T083200Z",
+    "run_id": "atnorth-reconciliation-20261104T092000Z",
     "report": "2026-11-04-report.md",
-    "validation": "2026-11-04T0832-validation.json",
-    "added_projects": 0,
-    "enriched_projects": 0,
-    "added_equipment": 22,
-    "branch": "research/data-center-database-20261104T0745Z"
+    "validation": "2026-11-04T0920-validation.json",
+    "added_projects": 1,
+    "enriched_projects": 3,
+    "added_equipment": 0,
+    "branch": "research/data-center-database-20261104T0915Z"
   }
 }
