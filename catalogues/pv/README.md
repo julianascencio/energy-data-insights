@@ -480,6 +480,27 @@ these groups are candidates, not canonical projects. Source addresses are exclud
 Installed kW stays native with AC/DC basis unresolved. Model labels do not become
 OEM-verified equipment, application status does not become current operation, and
 HTTP Last-Modified is not a plant-status date. No capacity sum, automatic crosswalk
-or canonical upsert occurs. The current reviewed partition has71PV sites in45
-station groups; zero Taipower canonical records are accepted. See
+or canonical upsert occurs. The initial 20:00 partition staged71PV sites in45
+station groups with zero canonical acceptances. The later20:30manual review accepts
+oneLongjingplant(station6,threebid/site rowsunder2nativephase labels) and qualifies
+contextsfor2existingprojects;otherstation/plantboundariesremainunresolved. See
 `research/20261104T2000_taipower_review.json` and its source-specific attribution.
+
+`pv_catalogue.taipower.read_taipower_monthly` additionally stages checksum-pinned
+station-month observations from dataset29938. Exact Gregorian periods, station
+names and whole observation keys are required. Conflicting duplicate periods fail
+closed unless an exact reviewed hold-key list is supplied; all observations for
+those keys are withheld together. No preferred duplicate, month repair, annual
+sum, AC/DC basis or plant boundary is inferred. Two historical June2016 conflict
+groups remain held; six Q3 2026 observations support two manually reviewed named
+station contexts. Those contexts are not plant/phase ID merges or rating updates.
+The dated Taiwan review separates the source station scope from canonical plants.
+
+The Longjing manual review checks complete source sites13/14/15, preserves the
+first two construction bids under native phaseI and site15 under phaseII, and
+excludes the unrelated CSC/ChinaSteel rooftop portfolio. Its September2026
+reported6485.94kW becomes6.48594MW with basis unknown, without summing site values.
+No coordinates or present operation are inferred. Tainan's214ha area and dated
+20MW/20MWh storage use separately licensed government evidence; earlier proposed
+15MW storage and incompatible forecast/rating scopes stay qualified. See
+`research/20261104T2030_taiwan_review.json` and the updated attribution notice.

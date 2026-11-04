@@ -1,0 +1,205 @@
+{
+  "new_sources": [
+    {
+      "id": "taiwan_taipower_monthly_20261104T2030",
+      "country": "TWN",
+      "entity": "projects",
+      "source_url": "https://data.gov.tw/dataset/29938",
+      "endpoint": "https://service.taipower.com.tw/data/opendata/apply/file/d693003/001.csv",
+      "format": "UTF-8BOM CSV;tested source-specific bounded station-month reader",
+      "licence_assessment": "Officialdataset29938 explicitlydeclares TaiwanOGDLv1.0;licenceandsource-specificattribution reviewed. Ministry/municipality news use their separate government-site reuse declarations,not a borroweddatasetlicence.",
+      "terms_url": "https://data.gov.tw/license",
+      "terms_sha256": "c3ad8549d211df24ce3909326c09355192dd07d06f9e9503b80847d0b0159250",
+      "last_attempt": "2026-11-04T20:56:45.739979+00:00",
+      "last_release": "Data2016-01through2026-09;HTTPmodified2026-10-20not a plantstatus date",
+      "last_retrieval": "2026-11-04T20:34:06.446751+00:00",
+      "sha256": "5457bccb865d9829d61f431b01a14d959021f1d82e73b76c99a1bcb5028848ab",
+      "etag": "\"0e84a04260dd1:0\"",
+      "publication_cadence": "Monthlypercurrentofficialportal;nextcheckmetadata/conditionalHEAD,not hourlyfullCSV",
+      "fields_offered": [
+        "Gregorianyear/month",
+        "nativePVstationname",
+        "installedkW withbasisunestablished",
+        "monthlygenerationkWh",
+        "averageunitdailyvaluewithformulanotverified"
+      ],
+      "mapping": "pv_catalogue.taipower.read_taipower_monthly;23newtests,checksum/schema/numeric/calendar/exactkey/holdguards. Native station scope,notautomaticcanonicalplantfeed.",
+      "processed_cursor": {
+        "source_sha256": "5457bccb865d9829d61f431b01a14d959021f1d82e73b76c99a1bcb5028848ab",
+        "source_rows_validated": 4216,
+        "source_station_name_labels": 52,
+        "reviewed_Q3_station_names": [
+          "台中龍井太陽光電發電站/Taichung Longjing Solar Power Station",
+          "彰化彰濱太陽光電發電站/Changhua Changbin Solar Power Station",
+          "台南鹽田太陽光電發電站/Tainan salt field Solar Power Station"
+        ],
+        "reviewed_observations": 9,
+        "last_key_in_two_station_partition": "2026-09|彰化彰濱太陽光電發電站/Changhua Changbin Solar Power Station",
+        "held_duplicate_keys": [
+          "2016-06|澎湖七美太陽光電發電站/Penghu Qimei Solar Power Station",
+          "2016-06|金門金沙太陽光電發電站/Kinmen Jinsha Solar Power Station"
+        ],
+        "held_duplicate_observations": 4,
+        "review_files": [
+          "20261104T2030_monthly_review.json",
+          "20261104T2030_longjing_review.json",
+          "20261104T2030_taiwan_review.json"
+        ]
+      },
+      "estimated_useful_yield": {
+        "source_rows": 4216,
+        "station_name_labels_not_plants": 52,
+        "unambiguous_source_observations": 4212,
+        "selected_station_month_observations": 9,
+        "new_manual_canonical_projects": 1,
+        "existing_manual_context_enrichments": 2,
+        "automatic_acceptances": 0
+      },
+      "result": "Newlicensedsource andreadercompleted. Two contradictoryJune2016periodgroupswith4valuesheldtogether;no preferredvalue ormonthrepair.9Q32026observations support1manuallyreviewednewplantand2qualifiedexistingprojectcontexts;not9newplants. Noannualsum,AC/DCinference oraveragetoPRconversion.",
+      "retry_condition": "FreshETag/header/checksumandexactstation/site/phaseidentitybeforeanotherpartition. Duplicateholdkeys mustmatchactualconflictsinthenewrevision;no staleallowlist.",
+      "next_action": "NextQ32026native station namesforstation14Yonganand12TainanQigu,afterplantidentityandphaseboundariesreview;retainoldJune2016conflictswithoutrepair.",
+      "next_due_check": "2026-11-11T20:30:00Z"
+    },
+    {
+      "id": "atess_hps_combiners_20261104T2030",
+      "country": "GLOBAL",
+      "entity": "inverters,combiner_boxes",
+      "source_url": "https://www.atesspower.com/download",
+      "endpoint": "https://www.atesspower.com/download",
+      "format": "6OEMPDF modeltables,renderedandvisuallyreviewed",
+      "licence_assessment": "OEMcopyrightretained;privacy policy isnotopen-contentlicence. Separatelyrepresentedfactualspecificationsandidentifiers only;noPDF/manual/images/fullformattedtable redistribution.",
+      "terms_url": "https://www.atesspower.com/privacy-policy",
+      "terms_sha256": "a069bc99e050e59a5d0c7b228ec4e27ece9772031f97ccf19427adc4d17bb704",
+      "last_attempt": "2026-11-04T20:56:45.739979+00:00",
+      "last_release": "CurrentOEM-linkedversions:TL202604/202605;classicHPSURL20260707(issue dateunprinted);combiners202604and20240816",
+      "last_retrieval": "2026-11-04T20:38:45.998471+00:00",
+      "sha256": "35b44a8690f1837d21d59195232927e130e5725fc65d7196af20574796d739e7",
+      "etag": null,
+      "publication_cadence": "OEMrevision-based",
+      "fields_offered": [
+        "ratedactiveAC versusapparent power",
+        "PVaccess/input versusbattery power",
+        "voltageandMPPT arrays",
+        "dimensions/weight/environment",
+        "protection/communications",
+        "combinerfuses/breakers/terminals/monitoring"
+      ],
+      "mapping": "ExistingupsertAPI;12exactinverters+3fixedcombiners;manufacturerlegalidentityfromcurrentcompanyprofile.264canonicaltechnicalvalues plusqualifiedcontexts.",
+      "processed_cursor": {
+        "completed_tables": [
+          "HPS30/50/100/120/150",
+          "HPS15000/20000/30000TL",
+          "HPS40000/50000TL",
+          "HPS100KTL/125KTL",
+          "PV-CB8M/PV-CB16M-P",
+          "PVCB8HV"
+        ],
+        "selected_partition_remaining": 0,
+        "review_files": [
+          "20261104T2030_equipment_review.json",
+          "20261104T2030_combiner_review.json"
+        ]
+      },
+      "estimated_useful_yield": {
+        "reviewed_exact_models": 15,
+        "accepted_inverters": 12,
+        "accepted_combiners": 3,
+        "canonical_technical_values": 264,
+        "new_manufacturers": 1,
+        "equipment_field_conflicts_held": 1
+      },
+      "result": "All6selectedtablesexhausted;nooptionclones,legacynamevariantsorcurrent/voltageinferences. PV-CB8Moutput144A tableversus160A overviewheld. Suppliedfusesarenotmaxpermissibleratings;unknownwarranties/efficienciesnotfilled.",
+      "retry_condition": "Newexactmodeltableorrevisedinternallyconsistentdatasheet;donotretimestampunchangedmodels.",
+      "next_action": "Seekanotherunderrepresentedmodule/trackerOEMmulti-modelcatalogue;reviewATESSheldoutputonlyifsourceversionchanges.",
+      "next_due_check": "2026-12-04T20:30:00Z"
+    },
+    {
+      "id": "india_seci_own_portfolio_20261104T2030",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://www.seci.co.in/own-projects",
+      "endpoint": "https://www.seci.co.in/own-projects",
+      "format": "OfficialownerHTMLportfolio;noimportercompleted",
+      "licence_assessment": "CurrentWebsitePolicy Copyrightsectionrequirespriorwrittenpermissionforpartial/fullcopyingandreproduction. Noapplicablebulk/databasegrantestablished;no contactauthorised.",
+      "terms_url": "https://www.seci.co.in/website-policy",
+      "terms_sha256": "becc43e5568aef7e9b3bcbb834e445c5ece6159250c12f1c739ae6d68c8e99ed",
+      "last_attempt": "2026-11-04T20:56:45.739979+00:00",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T20:33:11.143193+00:00",
+      "sha256": "4766ccdc10791ee75a2f0a4169509029b98ca16e1949c33001bf99efb5d783a3",
+      "etag": null,
+      "publication_cadence": "Unstatedownerwebupdates",
+      "fields_offered": [
+        "namedprojectcapacity/location/development",
+        "explicitAC/DCandstorageatTaru",
+        "historiccommissioningmonths",
+        "publishedgrid/PPAcontext"
+      ],
+      "mapping": "Discovery/rights reviewonly;no values imported oruntestedfeedclaimed",
+      "processed_cursor": {
+        "project_blocks_examined": 11,
+        "single_PV_projects": 8,
+        "distributed_PV_aggregates": 2,
+        "standalone_BESS": 1,
+        "accepted": 0
+      },
+      "estimated_useful_yield": {
+        "potential_named_single_PV_candidates": 8,
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "8singlePVentries+2distributedPVaggregates+1standaloneBESS examined.4possibleexistingGEMmatchesnotaccepted;Getalsud/Ramagiriheaderssaycommissionedwhilebodysaysfuturedevelopment. No lifecyclevaluechosen. Rightsblocksthisportfolio;aggregate/phaseidentitiesanddatesalso require review.",
+      "retry_condition": "Explicitapplicablepermissionordifferentpermissiveofficialsource;noemails/forms/login.",
+      "next_action": "PreferCEA/MNREofficialcommissioned-projectfileswithclearreuseandcapacitydefinitions;retainSECIportfolioasrights-helddiscovery,notanimportedsource.",
+      "next_due_check": null
+    },
+    {
+      "id": "belgium_fluvius_aggregate_screen_20261104T2030",
+      "country": "BEL",
+      "entity": "coverage",
+      "source_url": "https://opendata.fluvius.be/explore/dataset/1_33-lp-open-data-fluvius/",
+      "endpoint": "https://opendata.fluvius.be/explore/dataset/1_33-lp-open-data-fluvius/",
+      "format": "Officialindexedmunicipalaggregateentry;featuredataandtermsnotdownloaded",
+      "licence_assessment": "Unreviewedsource-specificFluviuslicence;no reuseassumption",
+      "last_attempt": "2026-11-04T20:56:45.739979+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unverified",
+      "fields_offered": [
+        "Municipality-levelinstalledkVA,notindividualplantactiveMW"
+      ],
+      "mapping": "Discoveryonly;aggregatedcoveragecontextnotcanonicalprojects",
+      "processed_cursor": {
+        "individualplantrows": 0
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_individual_plant_yield": 0
+      },
+      "result": "ScreeningidentifiedmunicipalaggregationandkVAscope;notusedforplantrowsorACMW.0datadownloaded/accepted.",
+      "retry_condition": "Coverage-onlyuseafterlicence/revisionreview;findanindividual-plantregisterforcanonicalprojects.",
+      "next_action": "Lowerprioritycoveragecheck,notanindividualplantfeed.",
+      "next_due_check": null
+    }
+  ],
+  "source_register_entries_added": 13,
+  "source_register_total": 471,
+  "new_automatic_feeds": 0,
+  "new_tested_source_specific_readers": 1,
+  "new_focused_tests": 23,
+  "manual_new_projects": 1,
+  "existing_enriched_projects": 102,
+  "GEM_latest_release": "February2026,primarymetadatarechecked;originalbytesreused",
+  "Taipower_site_freshness": "ConditionalHEAD304,unchangedETag,noCSVredownload",
+  "primary_batches_processed": {
+    "GEM_pinned_workbook_partition": 1,
+    "Taipower_pinned_site_inventory": 1,
+    "Taipower_new_monthly_CSV": 1,
+    "OEM_model_tables": 6,
+    "licensed_government_news": 3,
+    "rights_held_owner_portfolio": 1
+  },
+  "seed_queues_schedule_concurrency_preserved": true
+}

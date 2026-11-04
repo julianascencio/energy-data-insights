@@ -1,0 +1,100 @@
+{
+  "accepted_enriched_projects": 2,
+  "fields_added": {
+    "extensions_json": 2,
+    "land_area_ha": 1,
+    "storage_power_mw": 1,
+    "storage_energy_mwh": 1
+  },
+  "canonical_project_rating_lifecycle_coordinates_equipment_links_unchanged": true,
+  "records": [
+    {
+      "record_id": "48048590-ea9f-5050-b54a-ecae663e4f27",
+      "name": "Changhua Coastal solar farm",
+      "station_id_native": 8,
+      "accepted": "Qualified named-station evidence context; no project/phase merge or rating update",
+      "fields_added": [
+        "extensions_json"
+      ],
+      "source_site_ids": [
+        "17",
+        "18"
+      ],
+      "monthly_observations": 3
+    },
+    {
+      "record_id": "8659e613-4908-5dcf-84ed-d3b5117ccea0",
+      "name": "Tainan Salt Fields solar farm",
+      "station_id_native": 11,
+      "accepted": "Qualified named-station evidence context; no project/phase merge or rating update",
+      "fields_added": [
+        "extensions_json",
+        "land_area_ha"
+      ],
+      "source_site_ids": [
+        "22",
+        "23"
+      ],
+      "monthly_observations": 3
+    }
+  ],
+  "field_scope_holds": [
+    {
+      "record_id": "48048590-ea9f-5050-b54a-ecae663e4f27",
+      "field": "capacity_dc_mw",
+      "existing": 100,
+      "station_monthly_kw": [
+        99999.1,
+        116510.14,
+        116510.14
+      ],
+      "reason": "Station8 includesbase site17 andphase2site18;source scope andAC/DCbasisunestablished,no100MWoverwrite"
+    },
+    {
+      "record_id": "8659e613-4908-5dcf-84ed-d3b5117ccea0",
+      "field": "expected_annual_generation_mwh",
+      "source_id": "tainan_city_saltfield_20210331_20261104T2030",
+      "headline_kwh": 200000000,
+      "body_kwh": 207000000,
+      "reason": "Source headline/body precision differs;both retained,no scalar preference"
+    },
+    {
+      "record_id": "8659e613-4908-5dcf-84ed-d3b5117ccea0",
+      "field": "capacity_unspecified_mw",
+      "existing": 151.8,
+      "city_2021": 150,
+      "monthly_2026_kw": 150096.76,
+      "reason": "Different historical/site/station/phase scopes unresolved;existing scalar preserved"
+    }
+  ],
+  "source_station_month_duplicates_held": 2,
+  "new_canonical_Taipower_plants": 1,
+  "new_automatic_feeds": 0,
+  "monthly_reader_accepted_records": 0,
+  "primary_Javascript_journal": "OrdinaryHTML returnsSPA shell;cached search excerpt not used to populate accepted fields;public government news and licensed datasets used instead",
+  "new_projects": 1,
+  "new_project_record_id": "d3ee449d-7916-5ea5-ba30-d0767a319a5a",
+  "new_project_name": "Taichung Longjing Solar Power Station",
+  "source_station_groups_fully_reconciled": 1,
+  "qualified_associated_station_contexts": 2,
+  "new_project_identity_review": {
+    "reviewed_existing_record": "b1ed4300-5a11-5fe6-b46c-ba9be3d19bb2",
+    "decision": "DistinctCSC/ChinaSteelrooftopportfolio,whoseLongjingtokenisadistrict. Itsnativeindustrialprojectnames,owner/operator,2022–23historyand17.2MWTaichung/ChanghuaphasedifferfromnamedTaipowerstationcompleted2014. No fuzzy merge or coordinate-basedguess."
+  },
+  "new_project_phase_grouping": "3native sites/bids groupedunder2explicitI/IIlabels;onecanonicalproject",
+  "source_register_total": 471,
+  "new_project_fields": [
+    "name",
+    "aliases",
+    "country_code",
+    "region",
+    "locality",
+    "technology",
+    "capacity_basis",
+    "capacity_unspecified_mw",
+    "external_ids_json",
+    "phases_json",
+    "extensions_json"
+  ],
+  "manual_scope": "Onewholeplantstation6;2qualifiedexistingstationcontexts8/11;noautomaticfeed"
+}

@@ -522,8 +522,9 @@ The checksum-enforced Taipower reader stages CSV record numbers and native stati
 and site IDs. IDs are scoped to the explicit solar/PV technology. A dash station
 cell is resolved only within an exactly named group having an explicit unique ID;
 there is no positional forward fill or automatic plant identity. Source addresses
-and portal contact details are excluded. All71site rows/45station groups remain
-candidates pending independent plant/phase reconciliation.
+and portal contact details are excluded. The initial71site rows/45station groups were candidates. The20:30manual review
+reconciles station6asoneLongjingplantwith2nativephases, andqualifiescontextsfor
+2existingprojects. Otherstation/phaseboundariesremaininreview.
 
 | Native field | Review representation and limit |
 | --- | --- |
@@ -536,3 +537,21 @@ candidates pending independent plant/phase reconciliation.
 Government dataset17141 explicitly declares Taiwan Open Government Data License
 v1.0. Retain the Taipower attribution and licence URL in source metadata; do not
 inherit that licence for unrelated OEM documents or private material.
+
+### Taipower station-month evidence
+
+Dataset29938 reports Gregorian year/month, a native station name, installed kW,
+monthly generation kWh and an average unit daily-energy value. The average's
+formula and denominator are not independently established, so it remains native
+rather than a PR/efficiency scalar. Installed kW does not establish AC/DC basis.
+Named stations can change their site/phase coverage between months.
+
+The monthly reader validates the entire pinned source before selecting a bounded
+period/name partition. Duplicate station-periods fail closed unless their exact
+keys have been explicitly reviewed; all contradictory rows are then retained in
+review and excluded together. It never repairs the year/month or chooses a value.
+The Q3 2026 review associates two named stations with existing projects using
+reviewed native names, owner/operator and administrative context. It preserves
+site rows and monthly observations as qualified extensions, without changing
+canonical capacity, lifecycle, coordinates, phase IDs or equipment links. The
+214ha Tainan land-area field uses separately licensed city-government evidence.

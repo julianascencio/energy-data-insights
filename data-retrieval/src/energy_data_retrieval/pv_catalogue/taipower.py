@@ -125,3 +125,143 @@ def read_taipower_sites(
         "addresses_and_personal_contacts_excluded": True,
         "no_capacity_sum_or_status_date_inference": True,
     }
+
+
+MONTHLY_HEADERS = (
+    "年度/Year",
+    "月份/Month",
+    "發電站名稱/Name of The Power Station",
+    "裝置容量(瓩)/Installed Capacity(kW)",
+    "發電量(度)/Power Generation(kWh)",
+    "平均單位裝置容量每日發電量/Average of Each Unit Power Generatioon Per Day",
+)
+
+
+def read_taipower_monthly(
+    content: bytes,
+    *,
+    sha256: str,
+    period_start: str,
+    period_end: str,
+    station_names: list[str] | None = None,
+    reviewed_duplicate_keys: list[str] | None = None,
+    after_key: str | None = None,
+    limit: int = 100,
+) -> dict[str, Any]:
+    """Stage native station-month observations, never plant nameplate ratings.
+
+    Dataset29938 supplies monthly energy and reported installed kW. Its station
+    boundaries can change with sites/phases. No annual sums, present operation,
+    AC/DC basis, plant crosswalk or normalized-performance metric is inferred.
+    """
+    if hashlib.sha256(content).hexdigest() != sha256:
+        raise ValueError("Taipower monthly source checksum mismatch")
+    if type(limit) is not int or not 1 <= limit <= 1000:
+        raise ValueError("Taipower monthly limit must be 1-1000")
+    for period in (period_start, period_end):
+        if not isinstance(period, str) or not re.fullmatch(
+            r"(?:19|20)\d{2}-(?:0[1-9]|1[0-2])", period
+        ):
+            raise ValueError("Taipower monthly period must be Gregorian YYYY-MM")
+    if period_start > period_end:
+        raise ValueError("Taipower monthly period bounds reversed")
+    if station_names is not None and (
+        not isinstance(station_names, list)
+        or not station_names
+        or any(not isinstance(n, str) or not n.strip() for n in station_names)
+        or len(set(station_names)) != len(station_names)
+    ):
+        raise ValueError("Taipower monthly station names must be unique nonempty strings")
+    if after_key is not None and (not isinstance(after_key, str) or not after_key.strip()):
+        raise ValueError("Taipower monthly cursor must be nonempty")
+    reader = csv.reader(io.StringIO(content.decode("utf-8-sig"), newline=""))
+    if tuple(next(reader, ())) != MONTHLY_HEADERS:
+        raise ValueError("Taipower monthly schema changed")
+    if reviewed_duplicate_keys is not None and (
+        not isinstance(reviewed_duplicate_keys, list)
+        or any(not isinstance(k, str) or not k.strip() for k in reviewed_duplicate_keys)
+        or len(set(reviewed_duplicate_keys)) != len(reviewed_duplicate_keys)
+    ):
+        raise ValueError("Taipower reviewed duplicate keys must be unique strings")
+    rows: list[dict[str, Any]] = []
+    key_counts: dict[str, int] = {}
+    keys: set[str] = set()
+    names: set[str] = set()
+    for number, cells in enumerate(reader, 2):
+        if not cells or not any(c.strip() for c in cells):
+            continue
+        if len(cells) != len(MONTHLY_HEADERS):
+            raise ValueError("Taipower monthly row width changed")
+        year, month, name, capacity, energy, average = (v.strip() for v in cells)
+        if not re.fullmatch(r"(?:19|20)\d{2}", year) or not re.fullmatch(
+            r"(?:0?[1-9]|1[0-2])", month
+        ):
+            raise ValueError("Taipower monthly Gregorian year/month invalid")
+        if "光電" not in name and "photovoltaic" not in name.lower():
+            raise ValueError("Taipower monthly station not explicitly PV")
+        period = f"{year}-{int(month):02d}"
+        key = period + "|" + name
+        key_counts[key] = key_counts.get(key, 0) + 1
+        keys.add(key)
+        names.add(name)
+        values = []
+        for value in (capacity, energy, average):
+            if not re.fullmatch(r"\d+(?:\.\d+)?", value):
+                raise ValueError("Taipower monthly value is not native nonnegative number")
+            parsed = float(value)
+            if not math.isfinite(parsed):
+                raise ValueError("Taipower monthly value not finite")
+            values.append(parsed)
+        rows.append(
+            {
+                "key": key,
+                "csv_record_number": number,
+                "period": period,
+                "station_name_native": name,
+                "installed_capacity_kw_native": values[0],
+                "monthly_generation_kwh": values[1],
+                "reported_average_unit_daily_energy_native": values[2],
+                "scope": (
+                    "Named station-month; AC/DC and site/phase boundaries unestablished. "
+                    "Average formula/denominator not independently verified."
+                ),
+                "accepted": False,
+            }
+        )
+    duplicate_keys = {k for k, count in key_counts.items() if count > 1}
+    if duplicate_keys != set(reviewed_duplicate_keys or []):
+        raise ValueError("Taipower monthly duplicate station/period needs exact reviewed hold keys")
+    held_duplicates = [r for r in rows if r["key"] in duplicate_keys]
+    if after_key in duplicate_keys:
+        raise ValueError("Taipower monthly cursor is a held duplicate")
+    if station_names is not None and not set(station_names) <= names:
+        raise ValueError("Taipower monthly requested station absent from source")
+    if after_key is not None and after_key not in keys:
+        raise ValueError("Taipower monthly cursor absent from source revision")
+    selected = sorted(
+        (
+            r
+            for r in rows
+            if r["key"] not in duplicate_keys
+            and period_start <= r["period"] <= period_end
+            and (station_names is None or r["station_name_native"] in station_names)
+            and (after_key is None or r["key"] > after_key)
+        ),
+        key=lambda r: r["key"],
+    )
+    return {
+        "sha256": sha256,
+        "source_rows": len(rows),
+        "source_station_names": len(names),
+        "held_duplicate_period_groups": len(duplicate_keys),
+        "held_duplicate_observations": held_duplicates,
+        "source_period_min": min((r["period"] for r in rows), default=None),
+        "source_period_max": max((r["period"] for r in rows), default=None),
+        "selected_period_start": period_start,
+        "selected_period_end": period_end,
+        "candidates": selected[:limit],
+        "next_after_key": selected[min(limit, len(selected)) - 1]["key"] if selected else after_key,
+        "remaining_after_partition": max(0, len(selected) - limit),
+        "accepted_records": 0,
+        "no_annual_sum_or_status_capacity_basis_inference": True,
+    }
