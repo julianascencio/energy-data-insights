@@ -1,10 +1,10 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-04-2035`, the proposed continuation contains
-**7,962 projects, 343 equipment records, 13,633 linked turbines and two original
-numerical curves**, across **59 countries and 46 manufacturer labels**. Labels
-are not a reconciled corporate-entity count. Merged main at `9dbf07ed` contains
+numerical curves. At batch `2026-11-04-2135`, the proposed continuation contains
+**8,029 projects, 352 equipment records, 13,633 linked turbines and two original
+numerical curves**, across **59 countries and 54 manufacturer labels**. Labels
+are not a reconciled corporate-entity count. Merged main at `7c31c06a` contains
 7,948 projects, 337 equipment records, 13,633 turbines and two curves.
 These are catalogue counts, not a current operating census. Subsequent totals
 are recorded in `catalogues/wind/research/latest.json`.
@@ -646,3 +646,38 @@ The shared viewer's expandable metadata exposes `boe_procedure` and field
 sources; the offline Wind example prints decision target, dated wind status,
 capacity categories and exclusions. A solar/auxiliary decision cannot be read as
 a wind commissioning event. The BOE partitions are not a national wind census.
+
+
+## NEM survey and small-wind certification batch
+
+Batch `2026-11-04-2135` adds 67 projects and nine exact equipment models.
+AEMO's October 30 workbook supplies the complete wind partition with survey IDs
+below 2000: 158 generating-unit rows at 125 survey sites. Sixty-six distinct
+sites are added; 59 name/alias/phase candidates are held for explicit crosswalks.
+All new scopes remain excluded from capacity totals. Eight explicitly named
+phases receive stable group links without additive parent rows. Individual
+turbines and exact deployed models remain unknown. NEM coverage excludes
+Western Australia and the Northern Territory; NSW1 includes ACT.
+
+Reported unit aggregate AC nameplates are never multiplied by turbine counts.
+Mixed lifecycle observations remain separated, shared hybrid-site dispatch limits
+do not become wind capacity, and forecast commercial-use dates do not become COD.
+The 24–26 September BOE partition adds El Tabaibal (ER150053), whose public-utility
+modification establishes neither current operation nor a normalized capacity category.
+
+The complete PNNL July 2026 table supports nine exact small-wind models, eight
+manufacturer/applicant labels, and power at 11 m/s under standard sea-level
+conditions. These are dated certification observations, not nominal model ratings
+or independently validated field performance. Acoustic limits at 60 m are kept
+separate from sound power; unknown rotor geometry precludes specific-power
+comparisons. No numerical curves were available from this table.
+
+The separate ICC-SWCC directory is excluded because its linked terms explicitly
+restrict extraction and redistribution. AEMO's workbook downloaded successfully
+although its landing page returned HTTP 403. These are distinct access/reuse outcomes.
+The equipment target of 20 was not met; no unsupported variants were added.
+
+See `research/2026-11-04-2135-source-review.json`, the AEMO candidate and decision
+ledgers, and the PNNL transcription. Next: AEMO survey IDs 2000–2999, then
+3000 and above; BOE September 21–23; OEM configuration documents for EOX S-16
+and KW20/KW30. Prior reconciliation holds remain queued.

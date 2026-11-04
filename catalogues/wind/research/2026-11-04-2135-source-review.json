@@ -1,0 +1,74 @@
+{
+  "batch": "2026-11-04-2135",
+  "indexes": [
+    {
+      "url": "https://www.boe.es/boe/dias/2026/09/24/",
+      "sha256": "c5e3023d0bfc8a1b70d665eddff3777bfe7ac02490764c9bad13c338823f0717",
+      "selected": {
+        "A": [],
+        "B": []
+      }
+    },
+    {
+      "url": "https://www.boe.es/boe/dias/2026/09/25/",
+      "sha256": "f9c0c510a9032de7a6351b2664c540415a10ea70a021936937a91e6efaeaeae8",
+      "selected": {
+        "A": [],
+        "B": [
+          {
+            "notice_id": "BOE-B-2026-30961",
+            "title": "Anuncio de la Dirección General de Energía de la Consejería de Transición Ecológica y Energía del Gobierno de Canarias sobre la concesión a Naturgy Renovables Canarias, S.L.U., de modificación de la declaración, en concreto, de utilidad pública del proyecto denominado \"Parque eólico el Tabaibal\", de 4,7 MW, en los términos municipales de Santa Lucía de Tirajana y Agüimes, isla de Gran Canaria, concedida por la resolución n.º 861/2024, de 25/07/2024. Expediente ER150053."
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://www.boe.es/boe/dias/2026/09/26/",
+      "sha256": "9eb159fd2d7a203a862fb99ca2b61a6f900f33cc9bee97fda1c8d1b73f75ec8d",
+      "selected": {
+        "A": [],
+        "B": []
+      }
+    }
+  ],
+  "aemo": {
+    "original_wind_units": 309,
+    "original_wind_sites": 269,
+    "partition": "0 <= AEMO Survey ID < 2000",
+    "reviewed_sites": 125,
+    "additions": 66,
+    "deferred_identity": 59,
+    "next_partition": "2000 <= AEMO Survey ID < 3000",
+    "all_scopes_excluded": true,
+    "landing_http_status": 403,
+    "workbook_http_status": 200,
+    "original_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb"
+  },
+  "boe": {
+    "notices_reviewed": 1,
+    "new_projects": 1,
+    "status_unknown": 1
+  },
+  "pnnl": {
+    "complete_table_rows": 9,
+    "new_equipment": 9,
+    "as_of": "2026-07",
+    "curves": 0
+  },
+  "excluded_sources": [
+    {
+      "source": "ICC-SWCC current directory and eight detail pages",
+      "url": "https://smallwindcertification.org/certified-turbines/",
+      "reason": "Explicit linked terms restrict automated extraction and third-party redistribution; not an HTTP failure or authentication requirement",
+      "terms_url": "https://www.iccsafe.org/about/terms-of-use/",
+      "terms_sha256": "3415af93b214bdc52baa3b5125613b91cac0424d060d2a1cd8a4be7dedffd118",
+      "directory_sha256": "a22e7abaf46d0736b39ab65518735372aed647dd2dad66d92506e7b946170129",
+      "canonical_records": 0
+    }
+  ],
+  "target_met": {
+    "projects": true,
+    "equipment": false
+  },
+  "equipment_shortfall": "Only nine exact supported PNNL models; no padded options or independent turbine installations"
+}

@@ -1,7 +1,7 @@
 {
-  "batch": "2026-11-04-2035",
-  "updated_at": "2026-11-04T19:39:32Z",
-  "baseline_main": "9dbf07ed4a09da16b8c25ca77cbafc8b216c6e07",
+  "batch": "2026-11-04-2135",
+  "updated_at": "2026-11-04T20:44:50Z",
+  "baseline_main": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
   "branch": "research/wind-20261104-1535",
   "merged_wind_counts_at_baseline": {
     "projects": 7948,
@@ -10,16 +10,17 @@
     "curves": 2
   },
   "branch_totals": {
-    "projects": 7962,
+    "projects": 8029,
     "turbines": 13633,
-    "equipment": 343,
+    "equipment": 352,
     "curves": 2,
-    "non_group_projects": 7961,
+    "non_group_projects": 8028,
     "countries": 59,
     "manufacturers": [
       "ABB",
       "Adani New Industries",
       "Beijing Sany Smart Electrical Machine",
+      "Bergey Windpower Company",
       "Bonfiglioli",
       "CG Power and Industrial Solutions",
       "Dalian Huarui Special Transmission Equipment",
@@ -29,12 +30,16 @@
       "Eickhoff Wind Power",
       "Envision Energy",
       "Envision Energy India",
+      "Eocycle Technologies, Inc.",
+      "Eveready Diversified Products (Pty) Ltd.",
       "Flender",
       "GE Vernova",
+      "HI-VAWT Technology Corporation / Colite Technologies",
       "Hitachi",
       "Hunan Xiangtan Electric Power",
       "Inox Wind",
       "Jiangsu Delijia Drive Technology",
+      "Kodair Wind Designs Ltd.",
       "LM Wind Power",
       "MHI Vestas Offshore Wind",
       "Mingyang",
@@ -44,6 +49,7 @@
       "Pioneer Wincon Energy Systems",
       "PowerWind",
       "SANY (Shaoshan) Wind Power Equipment",
+      "SD Wind Energy, Ltd.",
       "Sany Wind Energy India",
       "Senvion Wind Technology",
       "Siemens Gamesa",
@@ -51,6 +57,7 @@
       "Sinoma Wind Power Blade",
       "Sinomatech Wind Power Blade",
       "Siva Wind Turbine India",
+      "SkyWind Energy GmbH",
       "Southern Wind Farms",
       "Suzhou Hopewind Electric",
       "Suzlon",
@@ -60,15 +67,16 @@
       "Vertiv Tech (Mianyang)",
       "Vestas",
       "WEG Industries India",
+      "Wind Resource, LLC",
       "Winergy",
       "Xi’an Chen’an Electric",
       "ZF Wind Power"
     ]
   },
   "changes_against_main": {
-    "new_projects": 14,
+    "new_projects": 81,
     "substantively_enriched_projects": 0,
-    "new_equipment": 6,
+    "new_equipment": 15,
     "substantively_enriched_equipment": 3,
     "new_turbines": 0,
     "new_curves": 0
@@ -80,12 +88,12 @@
     "deferred_records": 0,
     "current_status_unresolved": 4700
   },
-  "primary_evidence_project_records": 3379,
+  "primary_evidence_project_records": 3446,
   "technology_counts": {
-    "onshore": 3224,
+    "onshore": 3290,
     "unknown": 4700,
     "offshore_unspecified": 32,
-    "fixed_bottom_offshore": 2,
+    "fixed_bottom_offshore": 3,
     "floating_offshore": 4
   },
   "identity_candidate_groups": 13,
@@ -118,18 +126,19 @@
     "31 Norrbotten areas1744turbines held; Marne E103 appendix excluded for explicit reuse restriction; Winergy exhibit exact identity unresolved",
     "French2022+>=1MW cohort539:34accepted,505deferred;1919otherrowsoutsidecohort. No capacity totals enabled; US officialalternates403, Minnesota404; Vestas4MWbrochureexplicitreuseexclusion.",
     "ODRE2020–2021:220holds; first20priorEICcrosswalks remain unresolved. Vayona/SGcontinuity held; expired/conditional ALMMcertificate entries do not establish current eligibility.",
-    "ODRE2016–2019:555held;43genericcomponent rows lack exact models; IBAMA countqueryHTTP200/ArcGIS500; PNE commissioning/sale ambiguity requires reconciliation."
+    "ODRE2016–2019:555held;43genericcomponent rows lack exact models; IBAMA countqueryHTTP200/ArcGIS500; PNE commissioning/sale ambiguity requires reconciliation.",
+    "AEMO59 survey identities require explicit WRI/phase crosswalk; all66 new survey scopes excluded from capacity totals. ICC-SWCC excluded for explicit reuse terms; PNNL exact table independently acquired."
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations; Hessen1807units/627groups:38parks170units; Halland176areas691units:101projects385units; ACU R04_0 pp19–23 complete34ACU210/410 configurations; Thüringen1232units/379groups:8parks43units; VästraGötaland836areas2729units:610projects1987turbines;23exactLCVS/non-AL LCVT types; Sachsen1207units/498groups:16parks92units; Värmland98areas1278units:54projects544turbines;13ALchokes and15EMCfiltertypes; Saarland286units126groups:12parks49units;Örebro85areas405units:60projects239turbines;ACUR04_0pp62–65:12filterenrichments11resistortypes; Bremen99Hamburg78Berlin10units:2projects9turbines;Västmanland/Dalarna98areas1488units:51projects628turbines;VEC501R0complete11type enrichment; Gävleborg88areas2124units:56projects928turbines;EEZ1813units48namegroups screened;ENERCON E82E2 08/2019 table enriched; Västernorrland97areas2177units:55projects847turbines; Jämtland138areas1729units:69projects784turbines; ABB2020RevC pp13–14,24–25:15converter enrichments and1NETA-21 control; Västerbotten130areas2316units:67projects916turbines; NETA21RevQ pp225–226; Norrbotten68areas2566units:37projects822turbines; ABBRevQ pp21–24 layout1new1enriched; French national EOLIE2458rows screened; 2022+>=1MW cohort:34new installations, zero capacity-total changes; Swedish residual10land-layerqueries zero; GE4.2MW-117m entire table1new; Complete ODRE2020–2021>=1MWcohort238:18new220held; first20priorEICs reviewed and remain held. Complete MNRE20August2026 ALMM30entries:27new1enriched1held1nestedtoweroption.; ODRE2016–2019two cohorts complete607selected52new555held. Nine complete MNREcomponent disclosures and full ALMM-WTC3entries:25newcomponents9turbine enrichments.; Remaining French dated>=1MWcohorts through2015complete; six remaining DMCqueue entries9–14 reviewed.; BOE October1–3,5–10,13–14 complete A/B indexes including October2 extra issue;3new farms2explicit Mudarra configurations.",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations; Hessen1807units/627groups:38parks170units; Halland176areas691units:101projects385units; ACU R04_0 pp19–23 complete34ACU210/410 configurations; Thüringen1232units/379groups:8parks43units; VästraGötaland836areas2729units:610projects1987turbines;23exactLCVS/non-AL LCVT types; Sachsen1207units/498groups:16parks92units; Värmland98areas1278units:54projects544turbines;13ALchokes and15EMCfiltertypes; Saarland286units126groups:12parks49units;Örebro85areas405units:60projects239turbines;ACUR04_0pp62–65:12filterenrichments11resistortypes; Bremen99Hamburg78Berlin10units:2projects9turbines;Västmanland/Dalarna98areas1488units:51projects628turbines;VEC501R0complete11type enrichment; Gävleborg88areas2124units:56projects928turbines;EEZ1813units48namegroups screened;ENERCON E82E2 08/2019 table enriched; Västernorrland97areas2177units:55projects847turbines; Jämtland138areas1729units:69projects784turbines; ABB2020RevC pp13–14,24–25:15converter enrichments and1NETA-21 control; Västerbotten130areas2316units:67projects916turbines; NETA21RevQ pp225–226; Norrbotten68areas2566units:37projects822turbines; ABBRevQ pp21–24 layout1new1enriched; French national EOLIE2458rows screened; 2022+>=1MW cohort:34new installations, zero capacity-total changes; Swedish residual10land-layerqueries zero; GE4.2MW-117m entire table1new; Complete ODRE2020–2021>=1MWcohort238:18new220held; first20priorEICs reviewed and remain held. Complete MNRE20August2026 ALMM30entries:27new1enriched1held1nestedtoweroption.; ODRE2016–2019two cohorts complete607selected52new555held. Nine complete MNREcomponent disclosures and full ALMM-WTC3entries:25newcomponents9turbine enrichments.; Remaining French dated>=1MWcohorts through2015complete; six remaining DMCqueue entries9–14 reviewed.; BOE October1–3,5–10,13–14 complete A/B indexes including October2 extra issue;3new farms2explicit Mudarra configurations.; AEMO October2026 complete surveyID<2000 wind partition125sites:66new59held; PNNL July2026 complete9model certification table; BOE September24–26 all A/B issues1new.",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
-  "publication_base_main": "9dbf07ed4a09da16b8c25ca77cbafc8b216c6e07",
-  "iteration_base_head": "45f23aea52bee9dae19132242a826fe9bc616733",
+  "publication_base_main": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
+  "iteration_base_head": "7e141de58a071234375f4245c67f985205d1e947",
   "changes_this_run": {
-    "new_projects": 3,
+    "new_projects": 67,
     "substantively_enriched_projects": 0,
-    "new_equipment": 0,
+    "new_equipment": 9,
     "substantively_enriched_equipment": 0,
     "new_turbines": 0,
     "new_curves": 0
@@ -141,85 +150,81 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "Galicia, Burgos and Cantabria; no new country",
-  "new_technology_coverage": "Onshore refused application and revised proposals",
+  "new_geography": "Australia NEM regions and Gran Canaria; no new country",
+  "new_technology_coverage": "Onshore, fixed-bottom offshore proposal, nine small-wind models",
   "reviewed_this_run": {
-    "batch": "2026-11-04-2035",
+    "batch": "2026-11-04-2135",
     "indexes": [
       {
-        "url": "https://www.boe.es/boe/dias/2026/09/28/",
-        "sha256": "69bfcbd2ee52a8601fc3af231ae1d6c5a2cd7291667a10eee8cbc378353cedcd",
-        "selected": {
-          "A": [
-            {
-              "notice_id": "BOE-A-2026-20137",
-              "title": "Resolución de 2 de septiembre de 2026, de la Dirección General de Política Energética y Minas, por la que se corrigen errores en la de 19 de junio de 2026, por la que se desestima la solicitud de Maracaibo Solar, SL, de autorización administrativa previa del parque eólico «Satrebares», de 125 MW de potencia instalada, y de su infraestructura de evacuación, en las provincias de Lugo y A Coruña."
-            }
-          ],
-          "B": []
-        }
-      },
-      {
-        "url": "https://www.boe.es/boe/dias/2026/09/29/",
-        "sha256": "3979f9e470dacc23225db29cd5a87c9a4e6241de8fd5731081f5856f48f9172d",
-        "selected": {
-          "A": [],
-          "B": [
-            {
-              "notice_id": "BOE-B-2026-31550",
-              "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Cuenca, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa y Autorización Administrativa de Construcción el módulo de almacenamiento hibrido Castillo Garcimuñoz, de 19,5 MW de potencia instalada, y su infraestructura de evacuación, sito en el término municipal de Pinarejo, en la provincia de Cuenca, para su hibridación con el parque eólico existente Castillo Garcimuñoz, de 25,5 MW de potencia instalada, y la instalación fotovoltaica existente hibrida Castillo Garcimuñoz, de 20,925 MW de potencia instalada, conformando una instalación híbrida de 30 MW de potencia instalada."
-            }
-          ]
-        }
-      },
-      {
-        "url": "https://www.boe.es/boe/dias/2026/09/30/",
-        "sha256": "e9db59a6a0640aed965960904b975da495a12349dc8ed5ada4d7d1ae121f9fde",
+        "url": "https://www.boe.es/boe/dias/2026/09/24/",
+        "sha256": "c5e3023d0bfc8a1b70d665eddff3777bfe7ac02490764c9bad13c338823f0717",
         "selected": {
           "A": [],
           "B": []
         }
       },
       {
-        "url": "https://www.boe.es/boe/dias/2026/09/30/index.php?d=241",
-        "sha256": "89dfa9f46760fd8ae4be2cb459fa7073134e6df2e64fc746c7b19aa8feb953cf",
+        "url": "https://www.boe.es/boe/dias/2026/09/25/",
+        "sha256": "f9c0c510a9032de7a6351b2664c540415a10ea70a021936937a91e6efaeaeae8",
         "selected": {
           "A": [],
           "B": [
             {
-              "notice_id": "BOE-B-2026-31657",
-              "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Burgos por el que se somete a Información Pública la solicitud de Declaración de Impacto Ambiental y Autorización Administrativa Previa de la instalación Parque Eólico «Vientos del Cid I» de 78 MW de potencia instalada, y su infraestructura de evacuación, en los términos municipales de Villayerno Morquillas, Valle de las Navas, Hurones y Burgos, en la provincia de Burgos; promovida por la mercantil «Ener Epsilon, S.L.». código PEol-1024."
-            },
-            {
-              "notice_id": "BOE-B-2026-31682",
-              "title": "Anuncio de la Dirección General de Industria, Energía y Minas de la Consejería de Industria, Empleo, Innovación y Comercio del Gobierno de Cantabria relativa a la Información pública de nueva solicitud de autorización administrativa previa, autorización administrativa de construcción, declaración, en concreto, de utilidad pública y evaluación de impacto ambiental del proyecto de ejecución del parque eólico ALSA, de 18 MW y su infraestructura de evacuación, situado en los términos municipales de Campoo de Yuso, San Miguel de Aguayo y Molledo. Expediente nº: EOL-73-2025."
+              "notice_id": "BOE-B-2026-30961",
+              "title": "Anuncio de la Dirección General de Energía de la Consejería de Transición Ecológica y Energía del Gobierno de Canarias sobre la concesión a Naturgy Renovables Canarias, S.L.U., de modificación de la declaración, en concreto, de utilidad pública del proyecto denominado \"Parque eólico el Tabaibal\", de 4,7 MW, en los términos municipales de Santa Lucía de Tirajana y Agüimes, isla de Gran Canaria, concedida por la resolución n.º 861/2024, de 25/07/2024. Expediente ER150053."
             }
           ]
         }
       },
       {
-        "url": "https://www.boe.es/boe/dias/2026/09/30/index.php?d=242",
-        "sha256": "e9db59a6a0640aed965960904b975da495a12349dc8ed5ada4d7d1ae121f9fde",
+        "url": "https://www.boe.es/boe/dias/2026/09/26/",
+        "sha256": "9eb159fd2d7a203a862fb99ca2b61a6f900f33cc9bee97fda1c8d1b73f75ec8d",
         "selected": {
           "A": [],
           "B": []
         }
       }
     ],
-    "selected_notices": 4,
-    "new_projects": 3,
-    "new_equipment": 0,
-    "deferred_notices": 1,
-    "field_conflict": "Alsa annulled instrument date; both printed dates preserved, no resolved scalar",
-    "independent_oem_search": {
-      "queries": [
-        "PDFJ2776 gearbox certificate",
-        "LM47.6P2 certificate DNV",
-        "site:dnv.com PDFJ2776"
-      ],
-      "result": "No original exact specification recovered; secondary trade listings are not accepted equipment evidence"
+    "aemo": {
+      "original_wind_units": 309,
+      "original_wind_sites": 269,
+      "partition": "0 <= AEMO Survey ID < 2000",
+      "reviewed_sites": 125,
+      "additions": 66,
+      "deferred_identity": 59,
+      "next_partition": "2000 <= AEMO Survey ID < 3000",
+      "all_scopes_excluded": true,
+      "landing_http_status": 403,
+      "workbook_http_status": 200,
+      "original_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb"
     },
-    "target_met": false
+    "boe": {
+      "notices_reviewed": 1,
+      "new_projects": 1,
+      "status_unknown": 1
+    },
+    "pnnl": {
+      "complete_table_rows": 9,
+      "new_equipment": 9,
+      "as_of": "2026-07",
+      "curves": 0
+    },
+    "excluded_sources": [
+      {
+        "source": "ICC-SWCC current directory and eight detail pages",
+        "url": "https://smallwindcertification.org/certified-turbines/",
+        "reason": "Explicit linked terms restrict automated extraction and third-party redistribution; not an HTTP failure or authentication requirement",
+        "terms_url": "https://www.iccsafe.org/about/terms-of-use/",
+        "terms_sha256": "3415af93b214bdc52baa3b5125613b91cac0424d060d2a1cd8a4be7dedffd118",
+        "directory_sha256": "a22e7abaf46d0736b39ab65518735372aed647dd2dad66d92506e7b946170129",
+        "canonical_records": 0
+      }
+    ],
+    "target_met": {
+      "projects": true,
+      "equipment": false
+    },
+    "equipment_shortfall": "Only nine exact supported PNNL models; no padded options or independent turbine installations"
   },
   "latest_research_discovery": {
     "date": "2026-11-03",
@@ -231,103 +236,100 @@
     "source_review": "2026-11-03-top10-source-review.json",
     "guide": "2026-11-03-top10-markets.md"
   },
-  "source_review": "2026-11-04-2035-source-review.json",
-  "decision_ledger": "2026-11-04-2035-decisions.json",
+  "source_review": "2026-11-04-2135-source-review.json",
+  "decision_ledger": "2026-11-04-2135-decisions.json",
   "sweden_decision_ledger": "2026-11-04-0635-sweden-decisions.jsonl",
   "merged_main_totals": {
     "projects": 7948,
     "equipment": 337,
     "turbines": 13633,
     "curves": 2,
-    "main_commit": "9dbf07ed4a09da16b8c25ca77cbafc8b216c6e07",
+    "main_commit": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
     "countries": 59,
     "manufacturer_labels": 44
   },
   "iteration": {
-    "batch": "2026-11-04-2035",
+    "batch": "2026-11-04-2135",
     "indexes": [
       {
-        "url": "https://www.boe.es/boe/dias/2026/09/28/",
-        "sha256": "69bfcbd2ee52a8601fc3af231ae1d6c5a2cd7291667a10eee8cbc378353cedcd",
-        "selected": {
-          "A": [
-            {
-              "notice_id": "BOE-A-2026-20137",
-              "title": "Resolución de 2 de septiembre de 2026, de la Dirección General de Política Energética y Minas, por la que se corrigen errores en la de 19 de junio de 2026, por la que se desestima la solicitud de Maracaibo Solar, SL, de autorización administrativa previa del parque eólico «Satrebares», de 125 MW de potencia instalada, y de su infraestructura de evacuación, en las provincias de Lugo y A Coruña."
-            }
-          ],
-          "B": []
-        }
-      },
-      {
-        "url": "https://www.boe.es/boe/dias/2026/09/29/",
-        "sha256": "3979f9e470dacc23225db29cd5a87c9a4e6241de8fd5731081f5856f48f9172d",
-        "selected": {
-          "A": [],
-          "B": [
-            {
-              "notice_id": "BOE-B-2026-31550",
-              "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Cuenca, por el que se somete al trámite de Información Pública la Solicitud de Autorización Administrativa Previa y Autorización Administrativa de Construcción el módulo de almacenamiento hibrido Castillo Garcimuñoz, de 19,5 MW de potencia instalada, y su infraestructura de evacuación, sito en el término municipal de Pinarejo, en la provincia de Cuenca, para su hibridación con el parque eólico existente Castillo Garcimuñoz, de 25,5 MW de potencia instalada, y la instalación fotovoltaica existente hibrida Castillo Garcimuñoz, de 20,925 MW de potencia instalada, conformando una instalación híbrida de 30 MW de potencia instalada."
-            }
-          ]
-        }
-      },
-      {
-        "url": "https://www.boe.es/boe/dias/2026/09/30/",
-        "sha256": "e9db59a6a0640aed965960904b975da495a12349dc8ed5ada4d7d1ae121f9fde",
+        "url": "https://www.boe.es/boe/dias/2026/09/24/",
+        "sha256": "c5e3023d0bfc8a1b70d665eddff3777bfe7ac02490764c9bad13c338823f0717",
         "selected": {
           "A": [],
           "B": []
         }
       },
       {
-        "url": "https://www.boe.es/boe/dias/2026/09/30/index.php?d=241",
-        "sha256": "89dfa9f46760fd8ae4be2cb459fa7073134e6df2e64fc746c7b19aa8feb953cf",
+        "url": "https://www.boe.es/boe/dias/2026/09/25/",
+        "sha256": "f9c0c510a9032de7a6351b2664c540415a10ea70a021936937a91e6efaeaeae8",
         "selected": {
           "A": [],
           "B": [
             {
-              "notice_id": "BOE-B-2026-31657",
-              "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Burgos por el que se somete a Información Pública la solicitud de Declaración de Impacto Ambiental y Autorización Administrativa Previa de la instalación Parque Eólico «Vientos del Cid I» de 78 MW de potencia instalada, y su infraestructura de evacuación, en los términos municipales de Villayerno Morquillas, Valle de las Navas, Hurones y Burgos, en la provincia de Burgos; promovida por la mercantil «Ener Epsilon, S.L.». código PEol-1024."
-            },
-            {
-              "notice_id": "BOE-B-2026-31682",
-              "title": "Anuncio de la Dirección General de Industria, Energía y Minas de la Consejería de Industria, Empleo, Innovación y Comercio del Gobierno de Cantabria relativa a la Información pública de nueva solicitud de autorización administrativa previa, autorización administrativa de construcción, declaración, en concreto, de utilidad pública y evaluación de impacto ambiental del proyecto de ejecución del parque eólico ALSA, de 18 MW y su infraestructura de evacuación, situado en los términos municipales de Campoo de Yuso, San Miguel de Aguayo y Molledo. Expediente nº: EOL-73-2025."
+              "notice_id": "BOE-B-2026-30961",
+              "title": "Anuncio de la Dirección General de Energía de la Consejería de Transición Ecológica y Energía del Gobierno de Canarias sobre la concesión a Naturgy Renovables Canarias, S.L.U., de modificación de la declaración, en concreto, de utilidad pública del proyecto denominado \"Parque eólico el Tabaibal\", de 4,7 MW, en los términos municipales de Santa Lucía de Tirajana y Agüimes, isla de Gran Canaria, concedida por la resolución n.º 861/2024, de 25/07/2024. Expediente ER150053."
             }
           ]
         }
       },
       {
-        "url": "https://www.boe.es/boe/dias/2026/09/30/index.php?d=242",
-        "sha256": "e9db59a6a0640aed965960904b975da495a12349dc8ed5ada4d7d1ae121f9fde",
+        "url": "https://www.boe.es/boe/dias/2026/09/26/",
+        "sha256": "9eb159fd2d7a203a862fb99ca2b61a6f900f33cc9bee97fda1c8d1b73f75ec8d",
         "selected": {
           "A": [],
           "B": []
         }
       }
     ],
-    "selected_notices": 4,
-    "new_projects": 3,
-    "new_equipment": 0,
-    "deferred_notices": 1,
-    "field_conflict": "Alsa annulled instrument date; both printed dates preserved, no resolved scalar",
-    "independent_oem_search": {
-      "queries": [
-        "PDFJ2776 gearbox certificate",
-        "LM47.6P2 certificate DNV",
-        "site:dnv.com PDFJ2776"
-      ],
-      "result": "No original exact specification recovered; secondary trade listings are not accepted equipment evidence"
+    "aemo": {
+      "original_wind_units": 309,
+      "original_wind_sites": 269,
+      "partition": "0 <= AEMO Survey ID < 2000",
+      "reviewed_sites": 125,
+      "additions": 66,
+      "deferred_identity": 59,
+      "next_partition": "2000 <= AEMO Survey ID < 3000",
+      "all_scopes_excluded": true,
+      "landing_http_status": 403,
+      "workbook_http_status": 200,
+      "original_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb"
     },
-    "target_met": false
+    "boe": {
+      "notices_reviewed": 1,
+      "new_projects": 1,
+      "status_unknown": 1
+    },
+    "pnnl": {
+      "complete_table_rows": 9,
+      "new_equipment": 9,
+      "as_of": "2026-07",
+      "curves": 0
+    },
+    "excluded_sources": [
+      {
+        "source": "ICC-SWCC current directory and eight detail pages",
+        "url": "https://smallwindcertification.org/certified-turbines/",
+        "reason": "Explicit linked terms restrict automated extraction and third-party redistribution; not an HTTP failure or authentication requirement",
+        "terms_url": "https://www.iccsafe.org/about/terms-of-use/",
+        "terms_sha256": "3415af93b214bdc52baa3b5125613b91cac0424d060d2a1cd8a4be7dedffd118",
+        "directory_sha256": "a22e7abaf46d0736b39ab65518735372aed647dd2dad66d92506e7b946170129",
+        "canonical_records": 0
+      }
+    ],
+    "target_met": {
+      "projects": true,
+      "equipment": false
+    },
+    "equipment_shortfall": "Only nine exact supported PNNL models; no padded options or independent turbine installations"
   },
   "geographic_changes_this_run": {
     "new_project_countries": [],
-    "new_manufacturers": 0
+    "new_manufacturers": 8
   },
   "snapshot_builds": "Two independent builds of seven files were byte-identical; typed Zstandard Parquet",
   "decision_ledgers": [
-    "2026-11-04-2035-decisions.json"
+    "2026-11-04-2135-decisions.json",
+    "2026-11-04-2135-aemo-decisions.json"
   ],
   "previous_publication_reconciliation": {
     "previous_pr": 132,
