@@ -1,0 +1,192 @@
+{
+  "started_at": "2026-11-04T02:46:30+00:00",
+  "validated_at": "2026-11-04T03:04:17.572370+00:00",
+  "elapsed_minutes_to_validation": 17.79,
+  "user_facing_timezone": "Atlantic/Canary",
+  "base_commit": "1bc12f80aa01b43d7f2bcd911660d843f936b339",
+  "checks": {
+    "tests": {
+      "command": [
+        "<venv>/bin/pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "log_sha256": "b64bb01e095f9a7942cdef9389ef028c862d0052839f9fd2b2c0a884db6df7af"
+    },
+    "focused": {
+      "command": [
+        "<venv>/bin/pytest",
+        "-q",
+        "data-retrieval/tests/test_bess_catalogue.py",
+        "data-retrieval/tests/test_bess_oem_catalogue.py",
+        "methods/tests/test_references.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "2c98cf35a6ca023feb462387b3e392f42b37ab8caa64b37f29f163c00c6b5474"
+    },
+    "ruff": {
+      "command": [
+        "<venv>/bin/ruff",
+        "check",
+        "."
+      ],
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "format": {
+      "command": [
+        "<venv>/bin/ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0,
+      "log_sha256": "5d207e330fc1b2575390b60fde79386ed211106a51fb94f0ea3880af66cb80e0"
+    },
+    "typing": {
+      "command": [
+        "<venv>/bin/ty",
+        "check",
+        "--python",
+        "<venv>/bin/python"
+      ],
+      "exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "viewer": {
+      "command": [
+        "node",
+        "--test",
+        "tests/js/test_database_viewer.mjs"
+      ],
+      "exit_code": 0,
+      "log_sha256": "91ed9f20dcdf06bed97fd8fe63c064bc80b866e47b2cb3d958c0dda3d9561e44"
+    },
+    "projects-example": {
+      "command": [
+        "<venv>/bin/python",
+        "examples/database/plot_bess_projects.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "5005912cd521ff3b005d120dce76768aa31f907ffa73d3ee3a9fc1cb646e6bf4"
+    },
+    "oem-example": {
+      "command": [
+        "<venv>/bin/python",
+        "examples/database/plot_bess_oem_catalogue.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "f1db31f723eedfd3563e777aa0a91954966c1c3f2034c664dde495c49dc5a029"
+    },
+    "hygiene": {
+      "command": [
+        "<venv>/bin/python",
+        "scripts/check_repository.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "bdee09481b0b6d60c7012c8f71708f10c3f95a8115a3b3b2f2af9f53dcc87652"
+    },
+    "citations": {
+      "command": [
+        "<venv>/bin/python",
+        "scripts/check_citations.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141"
+    },
+    "diff": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs": {
+      "command": [
+        "<venv>/bin/sphinx-build",
+        "-W",
+        "--keep-going",
+        "-b",
+        "html",
+        "docs",
+        "<artifacts>/docs"
+      ],
+      "exit_code": 0,
+      "log_sha256": "4155afdc6393f0f87894a45ac04b9a75d6a7b0914115622827cfa9a012c81dee"
+    },
+    "build": {
+      "command": [
+        "uv",
+        "build",
+        "--all-packages",
+        "--out-dir",
+        "<artifacts>/dist"
+      ],
+      "exit_code": 0,
+      "log_sha256": "696923bcd7cae7668aab2450a200b0b8d5032b40972f4d02c104e613d3d0fb2d"
+    },
+    "links": {
+      "command": [
+        "<venv>/bin/python",
+        "scripts/check_docs_links.py",
+        "<artifacts>/docs"
+      ],
+      "exit_code": 0,
+      "log_sha256": "bfe25b0226d164dfb67f5563bcb20d280843db2e4d99fdd5a679140994d87aaa"
+    },
+    "twine": {
+      "command": [
+        "<venv>/bin/python",
+        "-m",
+        "twine",
+        "check",
+        "--strict",
+        "<artifacts>/dist/energy_data_retrieval-0.1.0-py3-none-any.whl",
+        "<artifacts>/dist/energy_methods-0.1.0-py3-none-any.whl",
+        "<artifacts>/dist/energy_analysis-0.1.0-py3-none-any.whl",
+        "<artifacts>/dist/energy_data_retrieval-0.1.0.tar.gz",
+        "<artifacts>/dist/energy_analysis-0.1.0.tar.gz",
+        "<artifacts>/dist/energy_methods-0.1.0.tar.gz"
+      ],
+      "exit_code": 0,
+      "log_sha256": "40fa3152492cbe994a96005733b74fb6fd603417746132904d7a9ccaf6eeb88c"
+    }
+  },
+  "results": {
+    "python_tests_passed": 2148,
+    "focused_tests_passed": 57,
+    "node_tests_passed": 15,
+    "strict_docs_link_audit": "Documentation check passed: 524 HTML pages; local links and assets resolve.",
+    "catalogue_validation": "both canonical catalogues validated through existing snapshot API",
+    "snapshot_reproducibility": "two independent builds byte-identical; completed documentation manifests exactly equal standalone manifests",
+    "preservation": "all 1993 untouched projects and 755 untouched equipment records unchanged; all existing creation timestamps and numeric/nested facts preserved"
+  },
+  "limitations": [
+    "No new parser or schema code; no new parser tests needed for bounded reviewed transcriptions.",
+    "No remote CI result claimed.",
+    "No new installed-wheel smoke test; three wheels/sdists built and strict Twine checked.",
+    "Five new bibliography entries queued because open Wind PR #129 overlaps shared bibliography; three prior entries remain queued.",
+    "CNE original inventory/page inaccessible; primary indexed Maranatha record explicitly qualified."
+  ],
+  "concurrency": {
+    "main_rechecked_at": "2026-11-04T03:03:00Z",
+    "main_unchanged": true,
+    "open_prs_reviewed": [
+      127,
+      128,
+      129,
+      49,
+      48,
+      47
+    ],
+    "new_bess_pr": "none found before publication",
+    "shared_writes_skipped": [
+      "methods/src/energy_methods/references.json",
+      "references.bib",
+      "CITATION.cff",
+      "docs/references.md"
+    ]
+  }
+}
