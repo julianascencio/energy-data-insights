@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 4 November 2026 expanded research snapshot contains **772 records from 46 product
-suppliers, backed by 371 registered sources**: 759 documented configurations and 13
+The 4 November 2026 expanded research snapshot contains **774 records from 46 product
+suppliers, backed by 372 registered sources**: 761 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverter/chargers, and non-lithium
 storage technologies. This is a
@@ -244,3 +244,5 @@ Latest reviewed batch: [Philippine historical inventory and BlueNova racks](../b
 Latest equipment increment: [16 exact BYD LVS/LVL/HVB configurations](../bess/research/2026-11-03_energa_byd.md), with individual technical columns, usable-DC test conditions and qualified efficiency/warranty claims.
 
 Latest research: [Dominican technical annexes and HV PACK configurations](../bess/research/2026-11-04_fv6_hv_pack.md).
+
+Latest research: [Kenya source screening and Pylontech component/service evidence](../bess/research/2026-11-04_kenya_pylon.md).

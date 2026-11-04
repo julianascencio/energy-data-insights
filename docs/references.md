@@ -6647,3 +6647,83 @@ ENERCON (2019). **Technical data E-82 E2**. [Source](https://assets-global.websi
 **Role:** data source. 08/2019 single-page OEM table. Nominal and hub-height options retained; annual yield graph not ingested as power curve.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### sie_laesa_120_2026
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-120-2026-RCD — Parque Solar LAESA**. [Source](https://sie.gob.do/wp-content/uploads/2026/09/SIE-120-2026-RCD.pdf)
+
+**Role:** data. PDF pp1,8–12; decisionp9 and signeddatep12. Annexes afterp12 not fully reviewed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bsl_residential_remaining_20261104
+
+BSLBATT (2026). **BSLBATT Residential Energy Storage Products 2026 — remaining tables**. [Source](https://bslbatt.com/wp-content/uploads/BSLBATT-Residential-Energy-Storage-Products-2026.pdf)
+
+**Role:** data. PDF pp14–16, exact columns; visually reviewed
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_re_260310
+
+BSLBATT (2026). **ESS-BATT RE Series supplementary datasheet 260310**. [Source](https://bslbatt.com/wp-content/uploads/ESS-BATT-RE-Series-%E8%A1%A5%E5%85%85%E7%89%88-260310.pdf)
+
+**Role:** data. PDF pp2–3 battery cluster tables; pack and cluster boundaries separate
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sie_fv6_088_2026
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-088-2026-RCD — Parque Fotovoltaico FV6**. [Source](https://sie.gob.do/wp-content/uploads/2026/07/SIE-088-2026-RCD.pdf)
+
+**Role:** data. Decision PDF pp1,8–11,14–16; signed date p16, not July27 PDF creation/upload. Technical annex pp17–116 not fully reviewed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_maranatha_139_2025
+
+Superintendencia de Electricidad, República Dominicana (2025). **Resolución SIE-139-2025-RCD — ampliación Parque Solar Fotovoltaico Maranatha20MW**. [Source](https://sie.gob.do/wp-content/uploads/2025/11/SIE-139-2025-RCD.pdf)
+
+**Role:** data. PDF pp1,8–12 decision; annex pp13–96 not substantively extracted
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cne_maranatha_modif_005_2026
+
+Comisión Nacional de Energía, República Dominicana (2026). **Parque Solar Fotovoltaico Maranatha20MW — concesión**. [Source](https://cne.gob.do/concesion/parque-solar-fotovoltaico-maranatha/)
+
+**Role:** data. Named concession registry record: resolution/date, storage MW/MWh, company, location, solar ratings, duration
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bsl_hv_pack_261024
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (2026). **ESS-GRID HV PACK 135 datasheet**. [Source](https://bslbatt.com/wp-content/uploads/ESS-GRID-HV-PACK-135-261024.pdf)
+
+**Role:** data. PDF pp2–3 exact model columns; p6 shared high-voltage BCU; p7 application and chemistry
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_re_manual_v11
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (2026). **ESS-BATT RE Series User Manual V1.1**. [Source](https://bslbatt.com/wp-content/uploads/ESS-BATT-RE-UserManual-ENGvers-260122.pdf)
+
+**Role:** data. PDF p3 revision history; pp12,14–18,43–45 (printed pp7,9–13,38–40)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ecocloud_saigeri_20261008
+
+Eco Cloud Consultants Limited (2026). **Saigeri 40 MW Solar Park & Storage**. [Source](https://ecocloudconsultants.co.ke/projects/saigeri-40mw-solar-park/)
+
+**Role:** data. Project overview, at-a-glance and project status; Copyright retained; terms2026-10-03 reviewed. Bounded public factual record only, no materials redistribution or private documents.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pylon_h2_v2_22p2fhb1018
+
+Pylon Technologies Co., Ltd. (n.d.). **Force-H2-V2 Operation Manual**. [Source](https://pylonwebs3.s3.amazonaws.com/upload/2024/09/25/RESS-Installation%20Manual--Force-H2-V2%205PMPA08-00134%20%28V1.1%29%20EU_20240925122333A033.pdf)
+
+**Role:** data. PDF pp12,14–21 / printed8,10–17; exact FH9637M and FC0500M-40S-V2 sections; Copyright retained; bounded factual review of two exact components, no bulk licence or full-document redistribution.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
