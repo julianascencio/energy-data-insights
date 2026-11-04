@@ -1,0 +1,111 @@
+{
+  "batch": "2026-11-04-0035",
+  "germany": {
+    "unit_rows": 286,
+    "groups": 126,
+    "added": {
+      "projects": 12,
+      "turbines": 49
+    },
+    "decisions": {
+      "Missing explicit park label or fewer than three units; manual identity review": 100,
+      "added": 12,
+      "Another registry park label within 500 m; alias/phase reconciliation": 9,
+      "Existing German name/spatial candidate": 1,
+      "Multiple or missing operator/municipality scopes": 4
+    }
+  },
+  "sweden": {
+    "where": "OMRID >= '1800' AND OMRID < '1900'",
+    "areas": 85,
+    "units": 405,
+    "accepted_projects": 60,
+    "accepted_turbines": 239,
+    "held_areas": 25,
+    "held_units": 166,
+    "orphan_units": 0,
+    "retrievals": [
+      {
+        "layer": 2,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/2/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "df7df92418b02dd082d19a5090b00de0ce77acba0ca38ada178023dc3f8b370f",
+        "rows": 49
+      },
+      {
+        "layer": 3,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/3/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "8cb415e4e9fd5ce0ef92328495b67c480345eea0f124452436d4f20df32b535a",
+        "rows": 36
+      },
+      {
+        "layer": 5,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/5/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "6a8ebca0982a5196f5fc5d75aa3b74c682d5447130ff414ab771cfa5fd4e925c",
+        "rows": 116
+      },
+      {
+        "layer": 6,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/6/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ae28652c6926392aaa6538df91ff6fde48919be2be7dae51bbfb6e6baadf4acf",
+        "rows": 15
+      },
+      {
+        "layer": 7,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/7/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "128fa36836131d46f100b68adc9a7a5069deee29c002c5f851df500656aa8c77",
+        "rows": 32
+      },
+      {
+        "layer": 8,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/8/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "5fb4e9eeb4f1f956f4dac2fbcd8207e26e227638bbe19ef8ea1a8f501056c2f6",
+        "rows": 97
+      },
+      {
+        "layer": 9,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/9/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "f009a476c57a23be59c6ee72cdb56668da774f8ad15306454dac66dddccc3db4",
+        "rows": 8
+      },
+      {
+        "layer": 10,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/10/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 11,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/11/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+        "rows": 0
+      },
+      {
+        "layer": 12,
+        "url": "https://ext-geodata-applikationer.lansstyrelsen.se/arcgis/rest/services/VBK/lst_vbk_wms_vindbrukskollen/MapServer/12/query?f=geojson&where=OMRID+%3E%3D+%271800%27+AND+OMRID+%3C+%271900%27&outFields=%2A&outSR=4326&returnGeometry=true",
+        "sha256": "d3f75fd2ca96df1c1fa0fc787f3f6768f387eb609fd131b2fbbc464a182c9804",
+        "rows": 137
+      }
+    ]
+  },
+  "oem": {
+    "source_id": "bonfiglioli-acu-r04-0",
+    "sha256": "f532098c625f7e5fe20aec2a79739d971a04e1043bca7a71c783c12819240713",
+    "original_bytes_available": true,
+    "reviewed_pages": [
+      62,
+      63,
+      64,
+      65
+    ],
+    "visually_verified_pages": [
+      62,
+      63,
+      65
+    ],
+    "new": 11,
+    "enriched": 12,
+    "application_rows": 38,
+    "deferred": "HLD110-500/42 dimension row absent; thermal switch type assignment unavailable; AxiaVert terminal diagram not assigned to Active Cube",
+    "dimension_units": "Not printed on pp62–63; original values retained, normalization withheld"
+  }
+}

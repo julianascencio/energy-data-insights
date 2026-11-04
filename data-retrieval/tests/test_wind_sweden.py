@@ -107,3 +107,11 @@ def test_independent_count_detects_silent_truncation():
     assert features(response, expected_count=0) == []
     with pytest.raises(ValueError, match="independent source count"):
         features(response, expected_count=1)
+
+
+def test_missing_area_geometry_remains_unknown():
+    data = inputs()
+    data["areas"][0]["geometry"] = None
+    rows, _ = stage(data)
+    assert rows[0].get("boundary_geojson") is None
+    assert rows[0]["aggregation_role"] == "unresolved"

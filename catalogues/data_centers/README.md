@@ -7,8 +7,8 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **182 project records in 36 countries**:
 **65 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **593 exact equipment records from 21 OEMs**.
-Merged `main` at `0afa324` contains **182 projects and 544 equipment records**.
+from 13 operators. It has **665 exact equipment records from 24 OEMs**.
+Merged `main` at `7af547f` contains **182 projects and 593 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
 
@@ -27,6 +27,7 @@ uv run python scripts/stage_data_center_carrier_19dv.py extracted-layout.txt --s
 uv run python scripts/stage_data_center_raxio.py captured.html --source-url https://www.raxiogroup.com/data-centres/angola/ --expected-code AO1
 uv run python scripts/stage_data_center_cummins.py captured.html --source-url https://www.cummins.com/en-na/generators/products/qsk60 --expected-count 17
 uv run python scripts/stage_data_center_inventory.py captured.html --source-url https://www.atnorth.com/nordic-data-centers/ --expected-count 13
+uv run python scripts/build_data_center_atnorth_finland_permit_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
 uv run python scripts/stage_data_center_cdu.py extracted.csv --source-url https://www.motivaircorp.com/uploads/files/brochures/CDU%202026%20Motivair%20by%20SE.pdf --expected-count 8
 uv run python scripts/stage_data_center_power_equipment.py extracted.csv --source-url https://www.eaton.com/dk/da-dk/catalog/medium-voltage-power-distribution-control-systems/dry-type-transformer.html --expected-count 16
 uv run python scripts/stage_data_center_server_matrix.py extracted.csv --source-url https://www.delltechnologies.com/asset/en-us/products/servers/briefs-summaries/poweredge-server-gpu-matrix.pdf --expected-count 33
@@ -36,6 +37,9 @@ uv run python scripts/stage_data_center_cooling.py extracted.csv --source-url ht
 uv run python scripts/build_data_center_envicool_batch.py staged-envicool.jsonl
 uv run python scripts/build_data_center_toshiba_ups_batch.py staged-toshiba-ups.jsonl
 uv run python scripts/build_data_center_mitsubishi_ups_batch.py staged-mitsubishi-ups.jsonl
+uv run python scripts/build_data_center_fuji_ups_batch.py staged-fuji-ups.jsonl
+uv run python scripts/build_data_center_daikin_chiller_batch.py staged-daikin-chillers.jsonl
+uv run python scripts/build_data_center_kehua_ups_batch.py staged-kehua-ups.jsonl
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -50,10 +54,10 @@ Exact equipment links require a disclosed deployment; none are asserted in this
 batch. Existing stationary battery and BESS equipment records are referenced by
 validated BESS IDs, not copied into a competing battery catalogue.
 
-Read [the latest research report](research/2026-11-03-report.md),
+Read [the latest research report](research/2026-11-04-report.md),
 [ranked continuation backlog](research/backlog.json),
-[latest decision ledger](research/2026-11-03-decisions.jsonl),
-[executed validation](research/2026-11-03T2125-validation.json), and
+[latest decision ledger](research/2026-11-04-decisions.jsonl),
+[executed validation](research/2026-11-04T0134-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

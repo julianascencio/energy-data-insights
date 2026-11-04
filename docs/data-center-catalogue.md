@@ -38,9 +38,9 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 593 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
-Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Lenovo, Motivair by Schneider
-Electric, Mitsubishi Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
+has 665 exact models/configurations from NVIDIA, AMD, Carrier, CoolIT Systems, Cummins,
+Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, Lenovo, Motivair by Schneider
+Electric, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
@@ -100,6 +100,39 @@ ambiguous dimension/weight groupings, compatible battery types and optional
 bypass, transformer, disconnect, communications or parallel equipment remain
 observations rather than selected configurations. The page's broader 9900D
 portfolio range does not create unprinted rating rows.
+The Fuji Electric continuation processes the complete 20-column bounded current
+portfolio review: three UPS7000HX-T3U, three UPS7300WX-T3U, ten UPS7400WX-T3U
+and four voltage/UPM-specific UPS7500WX-T4 configurations. Active kW is populated
+only where the OEM table explicitly prints kVA(kW) or kVA/kW. The two distinct
+1000 kVA UPS7400 systems retain their three- versus four-UPM identities. Nominal
+and maximum input current, output current, online/HE efficiency points, battery
+interfaces, dimensions, weight and communications remain source-bound. Multi-
+voltage and 50/60 Hz choices do not create synthesized ordered variants, and OEM
+standards statements are not promoted to issuer-registry certifications.
+The Daikin continuation processes all 27 nominal cooling columns across the 2026
+EWAT-CZN, EWAT-CZP and EWAT-CZH tables. Each family retains nine exact sizes,
+including separately labelled 040-MONO and 040-DUAL columns. Cooling output,
+input power and water flow preserve the 12/7 degC water and 35 degC ambient
+rating point. EER and IPLV remain ratios in observations; voltage, frequency,
+dimensions, weight, hydronic choices and order-code suffixes are not inferred.
+The Kehua continuation processes all 25 exact model columns across the current
+KR11-RM, KR-RM, Eon, MY and KR33 tables. Apparent kVA and active kW are populated
+only on the boundary printed by each family; selectable voltage/frequency ranges,
+battery systems, external battery modules, distribution boxes and parallel options
+remain observations. KR33 efficiency and weight stay null because the current
+official English and Spanish tables disagree, while both observations and original
+HTML checksums are preserved. The KR6000-RM and KR1110-RM input ranges also remain
+unnormalized because the printed full-load upper bound exceeds the stated range.
+The Finnish permit continuation enriches four existing atNorth records from six
+bounded municipal observations without adding duplicate phases. FIN02 now carries
+decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
+40285 m2 and 18737 m2 building boundaries from permits 286-2025-165 and
+286-2026-178 as observations rather than campus area, while the relationship
+between the separately named FIN04A Phase 2 environmental case and the existing
+July 2026 YIT phase remains quarantined. FIN05 keeps 60 MW phase IT load separate
+from the municipality's 75 MW first-phase electrical demand, and its EUR 2 billion
+operator investment separate from up-to-EUR 10 billion of possible customer-owned
+server and installation investment.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options
@@ -209,6 +242,11 @@ front-I/O B200 product pages were captured and checksummed after the earlier
 collateral URL returned HTML instead of a PDF. The complete B200/B300 table is
 parsed offline; duplicate status rows collapse only when every hardware field
 agrees.
+Fuji Electric's current North American portfolio HTML, three exact PDF data
+sheets and the current global UPS7500WX specification page were all captured and
+checksummed. The older UPS7000HX exact table is accepted only because the current
+portfolio independently lists that family; its printed ratings are not treated
+as a claim that any optional upgrade path was ordered.
 
 The upsert preserves creation dates and unchanged update dates. Conflicting
 populated values are quarantined individually with both observations and dated
@@ -244,5 +282,5 @@ exact nVent HOFFMAN SKUs. Optional voltages were not expanded into invented prod
 Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
-See the [continuation report](../catalogues/data_centers/research/2026-11-03-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-03T1419-validation.json).
+See the [continuation report](../catalogues/data_centers/research/2026-11-04-report.md)
+and [executed validation](../catalogues/data_centers/research/2026-11-04T0134-validation.json).

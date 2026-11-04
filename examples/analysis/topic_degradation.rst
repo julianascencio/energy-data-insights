@@ -11,6 +11,7 @@ Evaluate climate-driven degradation rates and uncertainty in estimated degradati
       ../examples/analysis/plot_degradation_uncertainty.py
       ../examples/analysis/plot_pv_lifetime_50_years.py
       ../examples/analysis/plot_pv_operation_50_years.py
+      ../examples/analysis/plot_pv_repowering.py
 
 .. toctree::
    :hidden:
@@ -20,4 +21,5 @@ Evaluate climate-driven degradation rates and uncertainty in estimated degradati
    plot_degradation_uncertainty
    plot_pv_lifetime_50_years
    plot_pv_operation_50_years
+   plot_pv_repowering
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-03T21:25:00Z",
+  "updated_at": "2026-11-04T01:34:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -52,7 +52,11 @@
     "envicool_direct_to_chip_configurations": 13,
     "envicool_immersion_configurations": 13,
     "toshiba_current_three_phase_ups_configurations": 23,
-    "mitsubishi_electric_current_ups_configurations": 26
+    "mitsubishi_electric_current_ups_configurations": 26,
+    "fuji_electric_current_ups_configurations": 20,
+    "daikin_ewat_cz_2026_configurations": 27,
+    "atnorth_finland_municipal_observations": 6,
+    "kehua_current_ups_model_columns": 25
   },
   "next_batches": [
     {
@@ -62,12 +66,13 @@
         "https://www.atnorth.com/nordic-data-centers/",
         "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
       ],
-      "offset": 13,
-      "scope": "All 13 current named sites and four explicit child buildings/phases accepted. Do not recount. Review Finnish municipal permits for FIN04A1 and July-2026 building identity; reconcile omitted FIN03; current-map SWE03 departure is not retirement.",
+      "offset": 19,
+      "scope": "All 13 current named sites, four explicit child buildings/phases and six Finnish municipal permit/disclosure observations are processed. Do not recount. FIN02 decision 468/2026, FIN04 permits 286-2025-165 and 286-2026-178, FIN04A Ph2 case LVV-U/84381/2026 and FIN05 Salo disclosure are complete; reconcile omitted FIN03 and current-map SWE03 departure.",
       "questions": [
         "DEN01 Q4 2025 first-phase live vs report Q1 2026 operation: distinguish events",
         "DEN02 initial power 250 vs 500 MW; SWE04 land 50 vs 4 ha and power 300 vs 200 MW",
         "FIN02 40 MW unspecified campus power vs contractor 45 MW gross future total have different boundaries; do not silently replace",
+        "FIN04A Ph2 versus the existing July-2026 YIT phase remains quarantined until an official cross-reference binds the identities; no duplicate phase record was added",
         "Get dated commencement/completion evidence and explicit building/phase IT/grid/facility ratings; no generic PUE-derived estimates"
       ]
     },
@@ -156,8 +161,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 257,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba current three-phase UPS configurations and all 26 exact rows in Mitsubishi Electric's current eight-family UPS comparison complete; continue independent generator and electrical-equipment suppliers without recounting these inventories",
+      "offset": 302,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, plus all 25 model columns in the reviewed Kehua KR11-RM/KR-RM/Eon/MY/KR33 current tables complete; continue independent generator and electrical-equipment suppliers without recounting these inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -165,7 +170,9 @@
         "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page",
         "mtu 50/60 Hz DCC tables are complete at 12+8; never convert their kVA ratings to active kW or select a portfolio voltage",
         "Find exact mtu model-level fuel consumption, dimensions, weight, emissions calibration and ordered voltage tables before enrichment",
-        "Mitsubishi family efficiency, cabinet/weight groups and compatible peripherals remain observations until exact rating-level tables bind them; do not infer 9900D 1500/1600/2000 kVA rows from the portfolio range"
+        "Mitsubishi family efficiency, cabinet/weight groups and compatible peripherals remain observations until exact rating-level tables bind them; do not infer 9900D 1500/1600/2000 kVA rows from the portfolio range",
+        "Fuji UPS7000HX/7300WX/7400WX/7500WX offset 20 is complete; keep nominal and maximum input current, output current, online/HE efficiency, UPM count and battery interface boundaries separate, and do not infer active kW for UPS7300/7500",
+        "Kehua current-table offset 25 is complete; KR33 efficiency and weight stay quarantined because current official English and Spanish pages disagree, and KR6000-RM/KR1110-RM retain the internally inconsistent 80-275 V versus 176-295 V full-load text without scalar normalization"
       ]
     },
     {
@@ -177,8 +184,8 @@
         "https://www.lenovo.com/",
         "https://www.coolitsystems.com/"
       ],
-      "offset": 311,
-      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Huawei NetCol8000-A/C and Delta RowCool/GoCool/in-rack tables are complete at 7+6+4+3+3. Envicool's two reviewed brochures are complete at 13 exact direct-to-chip and 13 immersion configurations. Continue independent regional electrical and liquid-cooling suppliers without recounting these inventories.",
+      "offset": 338,
+      "scope": "Motivair and nVent CDU tables complete at 8+6; Eaton transformer and Siemens switchgear tables complete at 16+5; all 108 supported pairs and all 85 Shipping cells across Dell's October 2026 generation-specific and shipping tables, all 20 options explicitly Available in Lenovo's current ThinkSystem GPU comparison and 14 current exact Supermicro B200/B300 systems complete. Huawei NetCol8000-A/C and Delta RowCool/GoCool/in-rack tables are complete at 7+6+4+3+3. Envicool's two reviewed brochures are complete at 13 exact direct-to-chip and 13 immersion configurations. Daikin EWAT-CZN/CZP/CZH 2026 nominal tables are complete at 9+9+9. Continue independent regional electrical and liquid-cooling suppliers without recounting these inventories.",
       "questions": [
         "Rack input vs server vs accelerator limit",
         "Measured performance workload/precision/test conditions, temperatures and flow",
@@ -186,7 +193,8 @@
         "Recheck Lenovo after a dated change-history update; do not recount the 20-option 2026-10-26 Available view",
         "Dell shipping quantities are complete at offset 85; values remain configuration-dependent maximum observations, never installed counts",
         "Resolve platform-SKU binding for 25 generic Dell L4 shipping rows before assigning HHHL/FHHL form factor",
-        "Envicool range-only IT-device power and coolant choices remain observations; do not promote them to cooling capacity, electrical input or ordered variants"
+        "Envicool range-only IT-device power and coolant choices remain observations; do not promote them to cooling capacity, electrical input or ordered variants",
+        "Daikin EWAT-CZ 2026 offset 27 is complete; preserve 040-MONO/040-DUAL identities and do not infer voltage, hydronic packages, dimensions or order-code suffixes"
       ]
     },
     {
@@ -241,15 +249,26 @@
     {
       "source": "Socomec technical guides and product tables",
       "reason": "Existing repository terms review records a Section 5 restriction on specification disclosure/copying without written authorization. No Data Center facts or downloaded source bytes may be imported without permission."
+    },
+    {
+      "source": "Airedale product tables",
+      "url": "https://www.airedale.com/terms-and-conditions/",
+      "reason": "Terms of Use prohibit copying or incorporating website contents into another work beyond personal-use exceptions. The staged candidate batch was fully withdrawn; no Airedale facts or bytes were published."
+    },
+    {
+      "source": "Riello UPS product tables",
+      "url": "https://www.riello-ups.com/pages/52-copyright",
+      "reason": "Copyright notice prohibits duplication, downloading, storage, publication and use of site information or material absent express permission. No Riello facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "envicool-liquid-cooling-20261103T191800Z",
-    "report": "2026-11-03-report.md",
-    "validation": "2026-11-03T1918-validation.json",
+    "run_id": "kehua-ups-20261104T013400Z",
+    "report": "2026-11-04-report.md",
+    "validation": "2026-11-04T0042-validation.json",
     "added_projects": 0,
-    "added_equipment": 26,
-    "branch": "research/data-center-database-20261103T1924Z"
+    "enriched_projects": 0,
+    "added_equipment": 25,
+    "branch": "research/data-center-database-20261103T2221Z"
   }
 }

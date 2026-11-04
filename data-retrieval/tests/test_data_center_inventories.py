@@ -11,6 +11,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_named_inventory,
     parse_power_equipment_matrix,
     parse_precision_cooling_matrix,
+    parse_project_permit_matrix,
     parse_server_accelerator_matrix,
     parse_server_accelerator_shipping_matrix,
     parse_supermicro_nvidia_systems,
@@ -41,6 +42,38 @@ SUPERMICRO_SYSTEMS = (
     Path(__file__).parent / "fixtures/data_centers/supermicro-nvidia-systems.html"
 ).read_bytes()
 UPS_MATRIX = (Path(__file__).parent / "fixtures/data_centers/ups-rating-matrix.csv").read_bytes()
+PROJECT_PERMIT_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/project-permit-matrix.csv"
+).read_bytes()
+
+
+def test_project_permit_matrix_preserves_authority_scope_and_area():
+    result = parse_project_permit_matrix(
+        PROJECT_PERMIT_MATRIX,
+        source_url="https://ep10.kouvola.fi/cgi/example",
+        expected_count=2,
+    )
+    assert result["candidates"][0]["authority_id"] == "286-2025-165"
+    assert result["candidates"][0]["building_area_m2"] == 40285
+    assert result["candidates"][1]["building_area_m2"] is None
+    assert result["candidates"][1]["address"] == "Sinimäentie 6a"
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+def test_project_permit_matrix_rejects_drift_duplicates_and_unofficial_sources():
+    url = "https://www.espoo.fi/fi/example"
+    with pytest.raises(ValueError, match="Changed project-permit matrix shape"):
+        parse_project_permit_matrix(PROJECT_PERMIT_MATRIX, source_url=url, expected_count=3)
+    duplicate = PROJECT_PERMIT_MATRIX + PROJECT_PERMIT_MATRIX.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate project-permit row"):
+        parse_project_permit_matrix(duplicate, source_url=url, expected_count=2)
+    with pytest.raises(ValueError, match="Unsupported official project-permit"):
+        parse_project_permit_matrix(
+            PROJECT_PERMIT_MATRIX,
+            source_url="https://example.com/permit.csv",
+            expected_count=2,
+        )
 
 
 def test_ups_matrix_preserves_kva_kw_and_market_boundaries():
@@ -76,7 +109,8 @@ def test_ups_matrix_drift_duplicates_and_invalid_sources_fail():
 
 def test_ups_matrix_accepts_mitsubishi_official_rows():
     header, *rows = UPS_MATRIX.splitlines()
-    mitsubishi = header + b"\n" + rows[-1] + b"\n"
+    mitsubishi_row = next(row for row in rows if row.startswith(b"Mitsubishi Electric,"))
+    mitsubishi = header + b"\n" + mitsubishi_row + b"\n"
     result = parse_ups_rating_matrix(
         mitsubishi,
         source_url="https://mitsubishicritical.com/uninterruptible-power-supplies/",
@@ -85,6 +119,51 @@ def test_ups_matrix_accepts_mitsubishi_official_rows():
     assert result["candidates"][0]["manufacturer"] == "Mitsubishi Electric"
     assert result["candidates"][0]["apparent_power_kva"] == 300
     assert result["candidates"][0]["output_power_kw"] == 300
+
+
+def test_ups_matrix_accepts_fuji_electric_official_rows():
+    header, *rows = UPS_MATRIX.splitlines()
+    fuji_row = next(row for row in rows if row.startswith(b"Fuji Electric,"))
+    fuji = header + b"\n" + fuji_row + b"\n"
+    result = parse_ups_rating_matrix(
+        fuji,
+        source_url=(
+            "https://americas.fujielectric.com/wp-content/uploads/2024/10/"
+            "FEA-UPS-DS-100d-UPS7400.pdf"
+        ),
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Fuji Electric"
+    assert candidate["apparent_power_kva"] == 1000
+    assert candidate["output_power_kw"] == 1000
+
+
+def test_ups_matrix_accepts_kehua_kw_only_row_without_inventing_kva():
+    header, *rows = UPS_MATRIX.splitlines()
+    kehua_row = next(row for row in rows if row.startswith(b"Kehua Tech,"))
+    kehua = header + b"\n" + kehua_row + b"\n"
+    result = parse_ups_rating_matrix(
+        kehua,
+        source_url="https://www.kehua.com/critical-power.html",
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["manufacturer"] == "Kehua Tech"
+    assert candidate["apparent_power_kva"] is None
+    assert candidate["output_power_kw"] == 60
+
+
+def test_ups_matrix_rejects_fuji_source_manufacturer_mismatch():
+    header, *rows = UPS_MATRIX.splitlines()
+    mitsubishi_row = next(row for row in rows if row.startswith(b"Mitsubishi Electric,"))
+    mitsubishi = header + b"\n" + mitsubishi_row + b"\n"
+    with pytest.raises(ValueError, match="manufacturer/source mismatch"):
+        parse_ups_rating_matrix(
+            mitsubishi,
+            source_url="https://www.fujielectric.com/example/ups.html",
+            expected_count=1,
+        )
 
 
 @pytest.mark.parametrize(
@@ -183,6 +262,27 @@ def test_precision_cooling_matrix_accepts_exact_immersion_rows_without_scalar_ca
     )
     assert result["candidates"][0]["category"] == "immersion"
     assert result["candidates"][0]["cooling_capacity_kw"] is None
+
+
+def test_precision_cooling_matrix_accepts_exact_daikin_chiller_rows():
+    header = PRECISION_COOLING_MATRIX.splitlines()[0]
+    daikin_row = (
+        b"Daikin,EWAT-CZN,016; cooling-only,chiller,15.9,12/7 C entering/leaving "
+        b"water; 35 C ambient,,5.5,,48,,,,,EWAT-CZN table / 016"
+    )
+    result = parse_precision_cooling_matrix(
+        header + b"\n" + daikin_row + b"\n",
+        source_url=(
+            "https://www.daikin.eu/content/dam/internet-denv/catalogues_brochures/"
+            "industrial/Chillers_Catalogue_2026-ECPEN26-411.pdf"
+        ),
+        expected_count=1,
+    )
+    candidate = result["candidates"][0]
+    assert candidate["category"] == "chiller"
+    assert candidate["cooling_capacity_kw"] == 15.9
+    assert candidate["input_power_kw"] == 5.5
+    assert candidate["liquid_flow_l_min"] == 48
 
 
 def test_power_equipment_matrix_stages_exact_boundaries():
