@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **1,996 project and plant records across
-42 countries**, supported by **317 registered sources**. It combines curated
+The BESS section contains **2,064 project and plant records across
+44 countries**, supported by **340 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -91,7 +91,7 @@ tested adapters and a reviewed exclusion ledger. Both need ongoing review. Numer
 Conflicts are retained in `conflicts_json` with both source observations and a
 `needs_review` flag. The catalogue preserves conflicting Coya/Tamaya/Salisbury power ratings,
 Jurong Island energy ratings and Edwards & Sanborn registry-scope differences. It does not select a universal engineering
-rating from a marketing announcement. See [latest research notes](research/2026-11-03_flower_guidebook.md) and the
+rating from a marketing announcement. See [latest research notes](research/2026-11-04_repd_kehua.md) and the
 [original launch audit](research/launch_report.md).
 
 ## Contribution contract
@@ -233,7 +233,7 @@ Previous: [South African portfolios, Finnish owner evidence and Rolls AGM config
 
 Previous research: [Harmony portfolio and exact Sinexcel conversion equipment](research/2026-11-03_harmony_conversion.md).
 
-Previous research: [Flower portfolio, Sinexcel guidebook and BlueNova equipment](research/2026-11-03_flower_guidebook.md), with exact revisions, source conflicts and the next ranked source queue.
+Previous research: [Flower portfolio, Sinexcel guidebook and BlueNova equipment](research/2026-11-04_repd_kehua.md), with exact revisions, source conflicts and the next ranked source queue.
 
 Latest research: [Mauritius and Philippine projects, Eskom milestones and BlueNova configurations](research/2026-11-03_islands_bluenova.md), with the CEB offline adapter and source-access backlog.
 
@@ -265,3 +265,11 @@ The funding facts in `POL_20261103_tauron.jsonl` also adapt NFOŚiGW material un
 The signed-contract and application facts in `POL_20261103_energa_tender.jsonl`, and the additional TAURON contract observations, adapt NFOŚiGW material under CC BY-SA 4.0. Original titles/identifiers and source links are retained; normalized monetary values and English field labels are modifications. Owner technical evidence has separate attribution. See the [Energa/BYD iteration](research/2026-11-03_energa_byd.md).
 
 Latest research: [Dominican technical annexes and HV PACK configurations](research/2026-11-04_fv6_hv_pack.md).
+
+Latest research: [Kenya source screening and Pylontech component/service evidence](research/2026-11-04_kenya_pylon.md).
+
+Latest research: [Philippines service and project reconciliation; EFFEKTA and Pylontech components](research/2026-11-04_philippines_effekta.md).
+
+Latest evidence review: [EFFEKTA charging conditions and physical-edition reconciliation](research/2026-11-04_effekta_charge.md).
+
+Latest continuation: [Scatec portfolio and exact OPzS editions](research/2026-11-04_opzs_scatec.md).

@@ -1,0 +1,81 @@
+{
+  "started_at": "2026-11-04T09:18:36+00:00",
+  "validation_completed_at": "2026-11-04T09:48:34.212631+00:00",
+  "elapsed_minutes_through_validation": 29.97,
+  "timezone_display": "Atlantic/Canary",
+  "base_main": "65c8cb6704a9b1cc1bf7529c19ad40eefa4b9144",
+  "base_pr_head": "0c6a49340bb9fa059ab530e042134a66228e3f68",
+  "pr": 133,
+  "accepted": {
+    "projects_new": 50,
+    "projects_enriched": 2,
+    "models_new": 13,
+    "equipment_enriched": 0,
+    "project_field_quarantines": 1,
+    "equipment_field_quarantines": 0,
+    "project_candidates_withheld": 70,
+    "permanent_record_rejections": 0
+  },
+  "checks": {
+    "catalogue_validation": {
+      "projects": 2058,
+      "equipment": 857,
+      "passed": true
+    },
+    "full_python_suite": {
+      "passed": 2273,
+      "skipped": 5,
+      "seconds": 109.99,
+      "skip_reason": "Optional cdsapi/orbitalpv/imagery dependencies unavailable"
+    },
+    "focused_bess": {
+      "passed": 303
+    },
+    "viewer_node": {
+      "passed": 15
+    },
+    "new_synthetic_tests": 14,
+    "ruff_lint": "passed",
+    "ruff_format": "861 files already formatted",
+    "ty": "passed with explicit project .venv",
+    "repository_hygiene": "passed",
+    "citations": "passed; shared bibliography additions queued because Wind PR overlaps",
+    "offline_examples": [
+      "BESS projects passed after final reconciliation",
+      "BESS OEM passed"
+    ],
+    "strict_sphinx": "passed: -W --keep-going, plot_gallery=0",
+    "docs_local_links": "544 HTML pages passed",
+    "packages": "three wheels and three sdists built; all six strict Twine checks passed",
+    "typed_zstandard_snapshots": "two independent final builds for each catalogue byte-identical; manifests committed, binaries outside Git",
+    "preservation": "2006 old projects and 844 old equipment unchanged; two project enrichments preserve all prior scalars/nested facts/created_at",
+    "cli_smoke": "REPD Under Construction stages 122 candidates; Kehua stages three exact B-HUD panels"
+  },
+  "not_claimed": [
+    "Fresh remote CI success for the new commit",
+    "Full online gallery execution",
+    "PDF-only Kehua specifications",
+    "Exhaustive global market capacity coverage"
+  ],
+  "concurrency": {
+    "main_and_pr_head_unchanged_at_validation": true,
+    "other_open_prs_reviewed_by_title_and_paths": [
+      137,
+      138,
+      139,
+      47,
+      48,
+      49
+    ],
+    "new_data_center_pr139_paths": 12,
+    "bess_overlap": false,
+    "previous_head_ci": "Both Python and Documentation completed successfully on previous head only"
+  },
+  "yield_and_stop": "Both planning targets met; selected REPD partition and five complete Kehua model tables exhausted. Seventy project holds require independent identity/scope/depth/freshness evidence; no padding. Portugal and Ireland source limitations triggered the licensed REPD alternative.",
+  "next_sources": [
+    "Independent Alcemi source for held Coalburn 1 after rights review",
+    "Blackhillock owner clarification of 600/700 MWh total",
+    "Portugal funding-to-permit physical-site crosswalk after reuse review",
+    "Kehua exact PDF downloads after application-code-500 retry"
+  ]
+}

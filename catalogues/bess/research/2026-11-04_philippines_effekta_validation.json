@@ -1,0 +1,180 @@
+{
+  "focused": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/pytest",
+      "-q",
+      "data-retrieval/tests/test_bess_catalogue.py",
+      "data-retrieval/tests/test_bess_oem_catalogue.py",
+      "methods/tests/test_references.py",
+      "data-retrieval/tests/test_bess_ngcp.py",
+      "data-retrieval/tests/test_bess_effekta.py"
+    ],
+    "exit_code": 0,
+    "passed": 76
+  },
+  "ruff": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/ruff",
+      "check",
+      "."
+    ],
+    "exit_code": 0
+  },
+  "format": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/ruff",
+      "format",
+      "--check",
+      "."
+    ],
+    "exit_code": 0
+  },
+  "typing": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/ty",
+      "check",
+      "--python",
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python"
+    ],
+    "exit_code": 0
+  },
+  "viewer": {
+    "command": [
+      "node",
+      "--test",
+      "tests/js/test_database_viewer.mjs"
+    ],
+    "exit_code": 0,
+    "passed": 15
+  },
+  "projects-example": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python",
+      "examples/database/plot_bess_projects.py"
+    ],
+    "exit_code": 0
+  },
+  "oem-example": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python",
+      "examples/database/plot_bess_oem_catalogue.py"
+    ],
+    "exit_code": 0
+  },
+  "hygiene": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python",
+      "scripts/check_repository.py"
+    ],
+    "exit_code": 0
+  },
+  "citations": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python",
+      "scripts/check_citations.py"
+    ],
+    "exit_code": 0
+  },
+  "diff": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  "build": {
+    "command": [
+      "uv",
+      "build",
+      "--all-packages",
+      "--out-dir",
+      "/dev/shm/bess0453-evidence/dist"
+    ],
+    "exit_code": 0,
+    "artifacts": "Three wheels and three sdists; strictTwine passed"
+  },
+  "links": {
+    "not_run": "Strict docs failed; no valid built site"
+  },
+  "twine": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/python",
+      "-m",
+      "twine",
+      "check",
+      "--strict",
+      "/dev/shm/bess0453-evidence/dist/energy_data_retrieval-0.1.0-py3-none-any.whl",
+      "/dev/shm/bess0453-evidence/dist/energy_methods-0.1.0-py3-none-any.whl",
+      "/dev/shm/bess0453-evidence/dist/energy_analysis-0.1.0-py3-none-any.whl",
+      "/dev/shm/bess0453-evidence/dist/energy_data_retrieval-0.1.0.tar.gz",
+      "/dev/shm/bess0453-evidence/dist/energy_methods-0.1.0.tar.gz",
+      "/dev/shm/bess0453-evidence/dist/energy_analysis-0.1.0.tar.gz"
+    ],
+    "exit_code": 0
+  },
+  "tests_initial": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/pytest",
+      "-q"
+    ],
+    "exit_code": 1
+  },
+  "docs_initial": {
+    "command": [
+      "/workspace/scratch/b0921a633c45/bess-run-2150/.venv/bin/sphinx-build",
+      "-W",
+      "--keep-going",
+      "-b",
+      "html",
+      "docs",
+      "/dev/shm/bess0453-evidence/docs"
+    ],
+    "exit_code": 120
+  },
+  "tests": {
+    "command": "PYTHONPATH=data-retrieval/src:methods/src:analysis/src pytest -q --basetemp=<private temporary volume>",
+    "exit_code": 1,
+    "passed": 2162,
+    "errors": 15,
+    "reason": "Unchanged inherited invalidUTF8 DataCenter KSTAR JSONL; all15setup errors. Initialattempt interrupted by full shared volume; retry completed."
+  },
+  "docs": {
+    "command": "sphinx-build -W --keep-going -b html docs <private temporary volume>",
+    "exit_code": 2,
+    "reason": "Full gallery/strictHTML attempt reaches inherited DataCenter UTF8 error. First attempt diskfull; interim path setup repaired before finalretry. No full docs/link pass claimed."
+  },
+  "inherited_blocker": {
+    "path": "catalogues/data_centers/records/equipment/2026-11-04-kstar-epower-ups.jsonl",
+    "sha256": "4bd4d68a59a6c65cde1bba9e8df8fbf14df252d041bf43f380325a8c3269c0f1",
+    "identical_to_start_head": true,
+    "repair_pr": 131
+  },
+  "catalogues": {
+    "validated_projects": 2005,
+    "validated_equipment": 795,
+    "deterministic_typed_zstandard_builds": 2,
+    "creation_numeric_nested_evidence_preserved": true,
+    "no_invented_project_equipment_links": true
+  },
+  "concurrency": {
+    "pr": 133,
+    "open_prs_titles_and_paths_reviewed": [
+      134,
+      133,
+      132,
+      131,
+      49,
+      48,
+      47
+    ],
+    "shared_bibliography_writes_skipped_for_pr132": true
+  },
+  "effort": {
+    "started_at": "2026-11-04T04:53:29+00:00",
+    "validation_checkpoint": "2026-11-04T05:19:04.041624+00:00",
+    "elapsed_minutes": 25.58,
+    "timezone_user_facing": "Atlantic/Canary",
+    "stop_reason": "Selected defensible source partitions exhausted; project access/identity/reuse limits recorded; equipment objective met. Publication follows."
+  }
+}

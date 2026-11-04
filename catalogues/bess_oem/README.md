@@ -1,9 +1,9 @@
 # Global BESS OEM product database
 
-The 4 November 2026 expanded research snapshot contains **772 records from 46 product
-suppliers, backed by 371 registered sources**: 759 documented configurations and 13
+The 4 November 2026 expanded research snapshot contains **890 records from 50 product
+suppliers, backed by 440 registered sources**: 877 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
-a small residential sample, standalone battery inverter/chargers, and non-lithium
+a small residential sample, standalone battery inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
 researched starting inventory, not a complete list of suppliers or market-share ranking.
 
@@ -95,6 +95,20 @@ isolated PR. Never overwrite another writer's branch or remove retained records.
 
 Source terms apply separately from the repository's software license. Only factual
 metadata and attribution are stored; no OEM datasheets, images or logos are bundled.
+
+Latest iteration: [BT/front-terminal models and Indian project reconciliation](../bess/research/2026-11-04_bt_front_kajra.md).
+The English individual-sheet adapter stages local `pdftotext -layout` output:
+
+```bash
+uv run python scripts/stage_bess_effekta_individual.py /outside-git/model.txt \
+  --model 'BTL12-62FL' \
+  --source-url 'https://www.effekta.com/download/datenblaetter-btl-frontterminal-serie-zip-datei/?wpdmdl=358' \
+  --output /outside-git/candidate.json
+```
+
+The printed heading must match the reviewed identity. Filename suffixes, approximate
+mass, short-circuit current and charging C-rate retain their distinct meanings.
+Staging does not resolve conflicting editions or import records automatically.
 
 Earlier iteration: [Dyness, Nordic and Baltic research](../bess/research/2026-11-02_dyness_baltic_report.md), with model-level reconciliation, source backlog and current coverage.
 
@@ -244,3 +258,22 @@ Latest reviewed batch: [Philippine historical inventory and BlueNova racks](../b
 Latest equipment increment: [16 exact BYD LVS/LVL/HVB configurations](../bess/research/2026-11-03_energa_byd.md), with individual technical columns, usable-DC test conditions and qualified efficiency/warranty claims.
 
 Latest research: [Dominican technical annexes and HV PACK configurations](../bess/research/2026-11-04_fv6_hv_pack.md).
+
+Latest research: [Kenya source screening and Pylontech component/service evidence](../bess/research/2026-11-04_kenya_pylon.md).
+
+Latest research: [EFFEKTA monoblocs and Pylontech communication hub](../bess/research/2026-11-04_philippines_effekta.md).
+
+Latest evidence review: [EFFEKTA charging conditions and physical-edition reconciliation](../bess/research/2026-11-04_effekta_charge.md).
+
+## Exact LEOCH OPzV staging
+
+[4 November research and review](../bess/research/2026-11-04_leoch.md) adds fourteen exact two-volt battery units. Regional and dated individual-sheet differences remain explicit.
+
+```bash
+pdftotext -layout /outside-git/4OPzV200.pdf /outside-git/4OPzV200.txt
+uv run python scripts/stage_bess_leoch.py --text /outside-git/4OPzV200.txt --model 4OPzV200 --output /outside-git/candidate.json
+```
+
+The parser fails on changed identity, nominal rating basis, current units or reviewed conditions. It stages only; exact revision, source rights, table anomalies and identity must be reviewed before the existing upsert API. C-rate and short-circuit current never become amperes or peak operating power.
+
+Latest continuation: [OPzS exact editions and Scatec portfolio](../bess/research/2026-11-04_opzs_scatec.md).
