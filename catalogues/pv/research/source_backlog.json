@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T22:07:59.756955+00:00",
+  "updated_at": "2026-11-04T23:20:16.613822+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "100Chinesehistoricaloperatorsenriched;2Taiwanwholeplantsaccepted;18SWELECTmodules/468technicalvaluesadded;newlicensedTaiwanprivateSolarreaderstages100/787rowswith0acceptedprivateplants;Mibetexactmodelidentityheld.",
-  "next_highest_value_source": "TaiwanprivateSolarinventory firstcompletecompanygroup rows1-12森勁,thenrows13-22昱鼎,withpositivePV/phaseidentityreview. Taipowerstation1Jinsha thenstation3Xingda. GEMnextafterL100000802626,3742eligible remain. Preserveunchangedseedsourcecadenceandrightsbackoff.",
+  "selection_note": "2258UTC: UTC-hourmod6=4 secondaryNorthAmerica priority; non-US usefulfield gaps and source quality took precedence.198historicalChineseowner/operatorenrichments,1Taiwanphaseidentityenrichment,8exactcombiners. No full-download seed rotation;unchanged/notdue seed queues preserved.",
+  "next_highest_value_source": "Taiwan private rows13–22: resolve Daliao ROC103/104 commercial-year conflict; GEMsoleowner/operator afterL100000803047,1688eligible; nextOEMHoymilesMIT4000/4500/5000-8T exact regional table",
   "sources": [
     {
       "id": "uk_repd",
@@ -11410,6 +11410,585 @@
       "retry_condition": "FindpublicexactMRacmodeltechnicaldatasheetandversion/terms",
       "next_action": "SeekOEMexactMRacPDF,otherwiseanothertrackerpublisher;do notcreateathinconfigurablefamilyrow.",
       "next_due_check": "2026-12-04T21:55:00Z"
+    },
+    {
+      "id": "gem_china_owner_operator_20261104T2258",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "XLSX; complete-location/phase rows",
+      "licence_assessment": "GEMCCBY4; source-specific attribution and whole-location TZ/WKSL exclusion preserved",
+      "publication_cadence": "Release-based; February2026 still latest shown; no hourly workbook download",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-04T23:00:16.083381+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/download-data/",
+          "retrieved_at": "2026-11-04T23:00:16.083381+00:00",
+          "sha256": "9aaed3d2c9324fa308651ab8abe43bc8b06b6463aae5d83cf82cfa5239f5ed3c",
+          "bytes": 134149,
+          "etag": null
+        }
+      ],
+      "fields_offered": [
+        "historical_owner",
+        "historical_operator",
+        "phase_scope"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": {
+        "queue": "missing_sole_owner_and_operator_complete_locations",
+        "after_location_id": "L100000803047",
+        "remaining_eligible": 1688,
+        "workbook_sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+        "operator_only_queue_cursor_retained": "L100000802626",
+        "operator_only_remaining": 3544,
+        "operator_queue_note": "Do not advance past operator-only locations skipped by stricter sole-owner filter; acceptedIDs naturally excluded",
+        "privacy_held_location_ids": [
+          "L100000802887",
+          "L100000802888"
+        ],
+        "remaining_structurally_eligible_before_party_screen": 1688
+      },
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 200,
+        "future_accepted_yield": null
+      },
+      "reviewed": 200,
+      "accepted": 198,
+      "rejected": 0,
+      "held_candidates": 2,
+      "result": "200locations reviewed;198corporate sole-owner/operator updates accepted;2individual-owner candidates completely withheld and baseline preserved. Separate queue retained; pinned workbook reused.",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Resume afterL100000803047 with corporate-party screening; hold two saved individual-owner locations unless separate corporate-role evidence supports a nonpersonal update. Preserve broaderoperator-only queue."
+    },
+    {
+      "id": "taiwan_private_sungen_identity_20261104T2258",
+      "country": "TWN",
+      "entity": "projects",
+      "source_url": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "endpoint": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "format": "HTMLcaptionedtable + governmentrelease",
+      "licence_assessment": "EAOGDLTaiwanv1; CTSP source-specific free reuse with attribution",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": "Statistics2025-12-31;content2026-01-26",
+      "last_retrieval": "2026-11-04T23:09:37.799984+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+          "retrieved_at": "2026-11-04T23:01:54.459105+00:00",
+          "sha256": "b3064c52f7512b2058de09b8c703a113c42d93b021c7f6ef113545103209b012",
+          "bytes": 214764,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.ctsp.gov.tw/chinese/01-News/01-online_view.aspx?fr=1000&no=1001&sn=5225&v=1",
+          "retrieved_at": "2026-11-04T23:01:45.559907+00:00",
+          "sha256": "99bc9ee31b4b0a0d12272d3a1d2689f450406f0684a58fd4a8f1b345891694c5",
+          "bytes": 92156,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.ctsp.gov.tw/chinese/other/security_1.aspx?v=1",
+          "retrieved_at": "2026-11-04T23:04:36.464468+00:00",
+          "sha256": "67ade6d29a6cc61ba1f722e8df2601303562c881f9bc8dfffc7cb530ddea3d1d",
+          "bytes": 80840,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.moeaea.gov.tw/ECW_WEBPAGE/FlipBook/106AnnualReport/files/basic-html/page58.html",
+          "retrieved_at": "2026-11-04T23:09:37.799984+00:00",
+          "sha256": "b67a44620eb4b744eef076710e01589ef80ee6175cf0d830fc49fca4baa10436",
+          "bytes": 12965,
+          "etag": null,
+          "error": null
+        }
+      ],
+      "fields_offered": [
+        "native_phase_identity",
+        "native_corporation",
+        "historical_capacity_unknownbasis",
+        "ROCyear"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": {
+        "staged_rows": 100,
+        "identity_company_group_cursor": 12,
+        "next_group_screened": [
+          13,
+          22
+        ],
+        "remaining_unstaged": 687,
+        "staged_candidates_with_no_canonical_acceptance": 90,
+        "candidate_year_conflicts": 1,
+        "cumulative_held_staged_rows": 90,
+        "unreviewed_staged_rows": 78
+      },
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 22,
+        "future_accepted_yield": null
+      },
+      "reviewed": 22,
+      "accepted": 1,
+      "rejected": 0,
+      "held_candidates": 12,
+      "result": "22rows manually screened/reconciled:10rows associated with1existingphaseI–Vaggregate,12reviewedrows held(2differentfacilities+10nextcompanygroup).78otherstagedrows awaitmanualidentityreview;90totalstagedrows unaccepted. First100tablevalues unchanged;1Daliaocommercial-yearconflict retained.",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Resolve Daliao ROC103/104 conflict with dated licence; reconcile rows13–22 by exact plant/site IDs; do not infer currentoperation/ACDC",
+      "terms_url": "https://www.moeaea.gov.tw/ECW/populace/content/ContentFoot.aspx?menu_id=2900"
+    },
+    {
+      "id": "tbb_pvb_v13_20261104T2258",
+      "country": null,
+      "entity": "combiner_boxes",
+      "source_url": "https://www.tbbrenewable.com/downloads",
+      "endpoint": "https://www.tbbrenewable.com/downloads",
+      "format": "PublicNuxtlisting+imagePDF",
+      "licence_assessment": "Copyrightretained; bounded individual factual extraction only; no open/bulk licence claimed",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": "V1.3; issue date unstated",
+      "last_retrieval": "2026-11-04T23:10:48.938037+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://www.tbbrenewable.com/downloads",
+          "retrieved_at": "2026-11-04T23:04:33.971956+00:00",
+          "sha256": "3762f502948977388815e8dd459b029d72ccd1ea1ebcd9f0c7b42e1ffb62df98",
+          "bytes": 505276,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.tbbrenewable.com/getFile/profile%2Fupload%2F2024%2F08%2F30%2FPower_Distribution_Box_en_V1.3.pdf",
+          "retrieved_at": "2026-11-04T23:10:48.938037+00:00",
+          "sha256": "f465df8779999a46a585c57cd8605b01cf1b080ef2d9eac62e7f227f2d9ed4db",
+          "bytes": 3222339,
+          "etag": null,
+          "error": null
+        }
+      ],
+      "fields_offered": [
+        "model",
+        "PVstrings",
+        "max_open_circuit_voltage",
+        "mass",
+        "IP",
+        "temperature",
+        "component_conditions"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": {
+        "table": "PDFphysicalpage4left",
+        "reviewed_models": 7,
+        "table_exhausted": true
+      },
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 7,
+        "future_accepted_yield": null
+      },
+      "reviewed": 7,
+      "accepted": 7,
+      "rejected": 0,
+      "held_candidates": 0,
+      "result": "Seven exact PVcombiners accepted; distribution/voltage-switch/meter devices not imported. Public client download mapping reproduced without access bypass.",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Selected seven-model table exhausted; look for exact TBBPVinverter datasheet; assess scope/terms and natural identities first"
+    },
+    {
+      "id": "hoymiles_hmsc_20261104T2258",
+      "country": null,
+      "entity": "combiner_boxes",
+      "source_url": "https://www.hoymiles.com/ysecm_api?c=api&cache_siteid=6&get=&m=template&name=list_data.html&s=download",
+      "endpoint": "https://www.hoymiles.com/ysecm_api?c=api&cache_siteid=6&get=&m=template&name=list_data.html&s=download",
+      "format": "PublicOEMHTMLlisting+PDF",
+      "licence_assessment": "Copyrightretained; bounded factual extraction; privacy policy is not open-content licence; CloudAPPterms not assumed applicable to PDF",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": "HMS-CV202406;HU02BCP-08REV1.2",
+      "last_retrieval": "2026-11-04T23:09:38.863681+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://www.hoymiles.com/ysecm_api?c=api&cache_siteid=6&get=&m=template&name=list_data.html&s=download",
+          "retrieved_at": "2026-11-04T23:04:55.217214+00:00",
+          "sha256": "a328e1cf31740b83953d5a7e64351130e41ec4aa04da8a562f781c4337617d60",
+          "bytes": 684757,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://w3oss.hoymiles.com/uploadfile/1/202506/2581a5fc11.pdf",
+          "retrieved_at": "2026-11-04T23:09:30.380133+00:00",
+          "sha256": "7b1b53472e54075f0fbaaf206688c9725c0527eba3c10e8cc72b3dc477d75287",
+          "bytes": 1794713,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.hoymiles.com/uploadfile/1/202610/85f8d4a1f7.pdf",
+          "retrieved_at": "2026-11-04T23:09:30.859826+00:00",
+          "sha256": "13011cf9f01765beae004dae9a4d3b34b302cb5db89e3adea7551fee911d83a6",
+          "bytes": 467776,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.hoymiles.com/privacy-policy/",
+          "retrieved_at": "2026-11-04T23:09:38.863681+00:00",
+          "sha256": "59c3f3a5485664e043856be3e4fac0533677a40e128e0bd6e2c459dd1b95b6f0",
+          "bytes": 63922,
+          "etag": null,
+          "error": null
+        }
+      ],
+      "fields_offered": [
+        "ACvoltage",
+        "mass",
+        "WHD",
+        "thermal",
+        "IPmaterial",
+        "communication",
+        "compliance",
+        "limitedwarranty"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": {
+        "processed_detail_pages": [
+          "datasheet-combiner-box-global-en.html",
+          "datasheet-ac-combiner-cabinet-hu02bcp-08-global-en.html"
+        ]
+      },
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 2,
+        "future_accepted_yield": null
+      },
+      "reviewed": 2,
+      "accepted": 1,
+      "rejected": 1,
+      "held_candidates": 0,
+      "result": "HMS-C accepted, HU02BCP-08 rejected from PVscope because explicitbattery-storagecombiner. NoDCvoltage/current inference.",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Inspect MIT-4000/4500/5000-8T exactmodel table versusCEC/SAM and region/configuration identities",
+      "terms_url": "https://www.hoymiles.com/privacy-policy/"
+    },
+    {
+      "id": "luxen_rights_hold_20261104T2258",
+      "country": null,
+      "entity": "equipment_candidates",
+      "source_url": "https://luxensolar.com/download-center/",
+      "endpoint": "https://luxensolar.com/download-center/",
+      "format": "OEMHTML/PDF",
+      "licence_assessment": "OEM disclaimer limits downloads toviewing and prohibits copying/transmission/linking content without consent; notaccepted",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T23:00:57.903939+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://luxensolar.com/wp-content/uploads/2026/08/LNAB-465-495-BA-EN.pdf",
+          "retrieved_at": "2026-11-04T23:00:57.876822+00:00",
+          "sha256": "6a8d04db341b19cb44ca6149e5e3120d7a109224e44e31fe5f8b4437153c844c",
+          "bytes": 3742764,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://luxensolar.com/wp-content/uploads/2026/08/LNDT-640-670-BD-EN.pdf",
+          "retrieved_at": "2026-11-04T23:00:57.903939+00:00",
+          "sha256": "c90d24509e6ab68f28e44c2a23e6ff9418825f26a2b824c1a63f296586523163",
+          "bytes": 7004152,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://luxensolar.com/wp-content/uploads/2024/04/Disclaimer.pdf",
+          "retrieved_at": "2026-11-04T23:00:57.787776+00:00",
+          "sha256": "38feb7722b7c5aead7d78148759911bf5ee211818aa5ffbd84054e525311eebe",
+          "bytes": 26958,
+          "etag": null,
+          "error": null
+        }
+      ],
+      "fields_offered": [
+        "exact_model_candidate_identifiers",
+        "technical_tables_pending_rights"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 14,
+        "future_accepted_yield": null
+      },
+      "reviewed": 14,
+      "accepted": 0,
+      "rejected": 0,
+      "held_candidates": 14,
+      "result": "Discovery/screening only; zero accepted; publisher Luxen",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Revisit onlyif applicable permissive factualreuse terms are published; no contacts"
+    },
+    {
+      "id": "mersen_rights_scope_hold_20261104T2258",
+      "country": null,
+      "entity": "equipment_candidates",
+      "source_url": "https://www.mersen.com/en/products/pv-string-boxes-t2",
+      "endpoint": "https://www.mersen.com/en/products/pv-string-boxes-t2",
+      "format": "OEMHTML/PDF",
+      "licence_assessment": "Legalnotice requires priorapproval for reproduction/use/adaptation. Device stringcombining scope unresolved; SPD20/40kA not continuous current",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T23:01:03.623502+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://www.mersen.com/sites/default/files/medias/PIM/files/DS-DC-PV-Junction-Boxes-EN.PDF",
+          "retrieved_at": "2026-11-04T23:00:57.943656+00:00",
+          "sha256": "9b560cbb43930d2fce552a3eb9391948b72f55f36a994fb7f8cbc9a2b9176ea9",
+          "bytes": 577044,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.mersen.com/en/legal-notice",
+          "retrieved_at": "2026-11-04T23:01:03.623502+00:00",
+          "sha256": "a82a6cdc87111e8fe9ba5f050503ee93cca893389ab8309879562b2296b594b2",
+          "bytes": 98836,
+          "etag": null,
+          "error": null
+        }
+      ],
+      "fields_offered": [
+        "exact_model_candidate_identifiers",
+        "technical_tables_pending_rights"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 14,
+        "future_accepted_yield": null
+      },
+      "reviewed": 14,
+      "accepted": 0,
+      "rejected": 0,
+      "held_candidates": 14,
+      "result": "Discovery/screening only; zero accepted; publisher Mersen",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Seek different explicitly combining OEM family with usable terms; retain scope/rights hold"
+    },
+    {
+      "id": "merz_rights_hold_20261104T2258",
+      "country": null,
+      "entity": "equipment_candidates",
+      "source_url": "https://www.merz-schaltgeraete.de/en/uptodate/news/merz-series-msb-dc-combiner-boxes",
+      "endpoint": "https://www.merz-schaltgeraete.de/en/uptodate/news/merz-series-msb-dc-combiner-boxes",
+      "format": "OEMHTML/PDF",
+      "licence_assessment": "Imprint prohibits copying/distributing/publicavailability withoutconsent; fixed table held; connector/monitor variants not inflated as additions",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T23:18:08.068684+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://www.merz-schaltgeraete.de/files/media/downloads/broschueren/02_dc-schalter/01_deutsch-englisch/MERZ-Generatoranschlussk%C3%A4sten-gro%C3%9F_Broschuere_ENG_ww.pdf",
+          "retrieved_at": "2026-11-04T23:01:04.164997+00:00",
+          "sha256": "1f2e3c03256ff77300616735e4fa0cc3331512f3e2844b9444d889c1b76b9801",
+          "bytes": 3858066,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.merz-schaltgeraete.de/en/imprint",
+          "retrieved_at": "2026-11-04T23:18:08.068684+00:00",
+          "sha256": "f43c77d9208b1d7bd4beac2839dcfecc353e956e091fa75e864049043738dce9",
+          "bytes": 59117,
+          "etag": null,
+          "error": null
+        }
+      ],
+      "fields_offered": [
+        "exact_model_candidate_identifiers",
+        "technical_tables_pending_rights"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 8,
+        "future_accepted_yield": null
+      },
+      "reviewed": 8,
+      "accepted": 0,
+      "rejected": 0,
+      "held_candidates": 8,
+      "result": "Discovery/screening only; zero accepted; publisher MERZ",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Revisit onlyif applicable terms permit; do not split connector/monitor options to inflate yield"
+    },
+    {
+      "id": "luxor_rights_hold_20261104T2258",
+      "country": null,
+      "entity": "equipment_candidates",
+      "source_url": "https://www.luxor.solar/en/downloads.html",
+      "endpoint": "https://www.luxor.solar/en/downloads.html",
+      "format": "OEMHTML/PDF",
+      "licence_assessment": "Imprint limits copies/downloads to private use and restricts commercial use; no catalogue tables imported",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T23:02:01.826730+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://www.luxor.solar/en/downloads.html",
+          "retrieved_at": "2026-11-04T23:01:57.413903+00:00",
+          "sha256": "cbbb7998750e2b69f8bd8ebd352293f9cbafb3e407961adf6e397583ec8eae18",
+          "bytes": 81347,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.luxor.solar/en/imprint.html",
+          "retrieved_at": "2026-11-04T23:02:01.826730+00:00",
+          "sha256": "7a2bd39d27715e24af6e765c4df9a3158ca6c5e7088e6a6a96fa39c46abbe9dd",
+          "bytes": 32115,
+          "etag": null,
+          "error": null
+        }
+      ],
+      "fields_offered": [
+        "exact_model_candidate_identifiers",
+        "technical_tables_pending_rights"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 0,
+        "future_accepted_yield": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "held_candidates": 0,
+      "result": "Discovery/screening only; zero accepted; publisher Luxor",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Seek another OEM; noPDFtable extraction/accepted model count claimed"
+    },
+    {
+      "id": "huasun_catalogue_discovery_20261104T2258",
+      "country": null,
+      "entity": "equipment_candidates",
+      "source_url": "https://www.huasunsolar.com/downloads.html",
+      "endpoint": "https://www.huasunsolar.com/downloads.html",
+      "format": "OEMHTML/PDF",
+      "licence_assessment": "Copyright retained; publiclistingdynamic and rights not established for batch; no downloaded modeltable imported",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T23:05:18.767422+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://www.huasunsolar.com/downloads.html",
+          "retrieved_at": "2026-11-04T23:04:31.180400+00:00",
+          "sha256": "941ed996cc234576dc3fa964c254342a04fc5137fa0698bef9f935879f7a8782",
+          "bytes": 174872,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.huasunsolar.com/privacy-policy",
+          "retrieved_at": "2026-11-04T23:05:18.767422+00:00",
+          "sha256": "f9b99d62f0319eb35e4285521c7942cc32bd8d162e51a22716a96c780f0c172c",
+          "bytes": 168500,
+          "etag": null,
+          "error": null
+        }
+      ],
+      "fields_offered": [
+        "exact_model_candidate_identifiers",
+        "technical_tables_pending_rights"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 0,
+        "future_accepted_yield": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "held_candidates": 0,
+      "result": "Discovery/screening only; zero accepted; publisher Huasun",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Inspect exact publicdatasheetlink and applicable reuse conditions; discovery only"
+    },
+    {
+      "id": "bluesun_revision_pdf_hold_20261104T2258",
+      "country": null,
+      "entity": "equipment_candidates",
+      "source_url": "https://www.bluesunpv.com/products/660w-bifacial-topcon-solar-module/",
+      "endpoint": "https://www.bluesunpv.com/products/660w-bifacial-topcon-solar-module/",
+      "format": "OEMHTML/PDF",
+      "licence_assessment": "Copyright retained; one exact model HTMLtable inspected; linked PDF404 and revision mismatch unresolved. Earlier empty body was a local disk error, not publisher access denial.",
+      "publication_cadence": "Not stated; check publisher metadata before another download",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T23:19:06.738654+00:00",
+      "last_attempt": "2026-11-04T23:20:16.613822+00:00",
+      "captures": [
+        {
+          "url": "https://www.bluesunpv.com/products/660w-bifacial-topcon-solar-module/",
+          "retrieved_at": "2026-11-04T23:18:23.927906+00:00",
+          "sha256": "cce6e14f729d645ac49ce357fb0beb4d5f7ecead4c205196b29476fa08207b3b",
+          "bytes": 159642,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://www.bluesunpv.com/privacy-policy/",
+          "retrieved_at": "2026-11-04T23:19:06.738654+00:00",
+          "sha256": "faf3bc1655620f38b61e91e6d22cec76126a1d24beba5930818b5a40a385277b",
+          "bytes": 131895,
+          "etag": null,
+          "error": null
+        },
+        {
+          "url": "https://static.bluesunpv.com/products/HEX7-BSM645-665G12-60HNH-BIFACIAL-V2608-EN.pdf",
+          "retrieved_at": "2026-11-04T23:19:06.370791+00:00",
+          "sha256": null,
+          "bytes": null,
+          "etag": null,
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "fields_offered": [
+        "exact_model_candidate_identifiers",
+        "technical_tables_pending_rights"
+      ],
+      "mapping": "Explicit exact-model/table locators in dated review; importer/upsert API for accepted records; no untested feed integration",
+      "processed_cursor": null,
+      "next_due_check": "2026-11-05T23:00:00Z",
+      "estimated_useful_yield": {
+        "identified_candidates": 1,
+        "future_accepted_yield": null
+      },
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "held_candidates": 1,
+      "result": "One exact-model HTMLtable screened;0accepted. Published narrative2026-07Rev01 and linkedfilenameV2608 mismatch; linkedPDF404. Earlier zero-byte localcapture wasENOSPC, recovered by fresh request; not a sourceaccess denial.",
+      "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
+      "next_action": "Resolve HTML2026-07Rev01 versus linked filenameV2608; obtain working OEM PDF before accepting model specifications"
     }
   ],
   "source_refresh_queue": [
