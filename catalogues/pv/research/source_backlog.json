@@ -8427,7 +8427,7 @@
       "last_attempt": "2026-11-04T12:22:33.426005+00:00",
       "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
       "last_release": null,
-      "last_retrieval": null,
+      "last_retrieval": "2026-11-04T12:10:55.077352+00:00",
       "etag": null,
       "next_due_check": "2026-12-04T12:00:00Z",
       "id": "inh_si_tables_20261104T1200",
@@ -8567,13 +8567,64 @@
           "last_modified": "Sat, 15 Aug 2026 11:23:14 GMT",
           "content_length": "2073668"
         }
+      ],
+      "source_captures": [
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI33.3KS2.pdf",
+          "sha256": "d80ee296456df74e41af8cc5d1c88c2263b6c5b7e070415519fa52279331eb16",
+          "retrieved_at": "2026-11-04T12:10:48.539272+00:00",
+          "bytes": 2791263,
+          "etag": "\"6a804881-2a975f\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI3.66KS2.pdf",
+          "sha256": "56ca4adfd6af7a9d84631843e427558e024d6e06e52ade8ea69febd63ef42053",
+          "retrieved_at": "2026-11-04T12:10:48.832115+00:00",
+          "bytes": 3341452,
+          "etag": "\"6a8048db-32fc8c\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI710KS2.pdf",
+          "sha256": "0a4cf4ba114919e0d0b1047580d149eb464d2f047668997f4b44b2030d892f12",
+          "retrieved_at": "2026-11-04T12:10:48.744396+00:00",
+          "bytes": 4609883,
+          "etag": "\"6a804937-46575b\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI312KT2.pdf",
+          "sha256": "4ad637ed9689c6e775043cb0fef033a55838199a5115c654bb561f7741f91025",
+          "retrieved_at": "2026-11-04T12:10:48.747721+00:00",
+          "bytes": 5561475,
+          "etag": "\"6a804ae2-54dc83\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI1330KT2-200.pdf",
+          "sha256": "372b5336769960321811c6b4307bf31fa4cec5a2c6232ab9dc5f33f435fd599e",
+          "retrieved_at": "2026-11-04T12:10:54.735369+00:00",
+          "bytes": 12716983,
+          "etag": "\"6a804b53-c20bb7\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI3360KT2.pdf",
+          "sha256": "3f5a0a9c980b6606adf00fd1efe0b51f5a85182977bf762dd819a05d5c0c5871",
+          "retrieved_at": "2026-11-04T12:10:55.077352+00:00",
+          "bytes": 4611773,
+          "etag": "\"6a804bc1-465ebd\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI7080K.pdf",
+          "sha256": "e6ee3142471bbfd7245c3334d492c771e19dcf809ecece4395c1a1dc5024d046",
+          "retrieved_at": "2026-11-04T12:10:54.669561+00:00",
+          "bytes": 2073668,
+          "etag": "\"6a804c22-1fa444\""
+        }
       ]
     },
     {
       "last_attempt": "2026-11-04T12:22:33.426005+00:00",
       "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
       "last_release": null,
-      "last_retrieval": null,
+      "last_retrieval": "2026-11-04T12:08:11.196367+00:00",
       "etag": null,
       "next_due_check": "2026-12-04T12:00:00Z",
       "id": "kstar_gsc24mh_20261104T1200",
@@ -8601,13 +8652,15 @@
       },
       "result": "Onecombiner accepted alongside35newINH models. Five selectedKSTARinverter PDFs rechecked but already substantively populated; zero repeat observations counted.",
       "retry_condition": "Changed exact source or fixed configuration clarifying optional current",
-      "next_action": "Seek another exact OEM combiner/trackermodel table; do not invent GSC configurations"
+      "next_action": "Seek another exact OEM combiner/trackermodel table; do not invent GSC configurations",
+      "sha256": "3a90fb4d06ef6e9da8b4c4021d68577f3f1600558a69c51298a9b2b20547efa1",
+      "checksum_scope": "Original successful source bytes, not error response"
     },
     {
       "last_attempt": "2026-11-04T12:22:33.426005+00:00",
       "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
       "last_release": "2025reportingyear, public current landing verified4Nov2026",
-      "last_retrieval": null,
+      "last_retrieval": "2026-11-04T12:09:02.870803+00:00",
       "etag": null,
       "next_due_check": "2027-01-04T12:00:00Z",
       "id": "denmark_ept_2025_20261104T1200",
@@ -8639,7 +8692,9 @@
       },
       "result": "0PV eligible.152solar-labelled units rejected as thermal/heat-pump; no projects or adapter integrated. Plant-level fuel shares do not prove PV.",
       "retry_condition": "New source adding explicitPV or separately licensed truePV layer",
-      "next_action": "Move to Store solcelleanlæg layer via official Sol-og-Vindinfo metadata; establish aggregate/address boundary, stable public identity, reuse and capacity basis first"
+      "next_action": "Move to Store solcelleanlæg layer via official Sol-og-Vindinfo metadata; establish aggregate/address boundary, stable public identity, reuse and capacity basis first",
+      "sha256": "365f82f477158f8f62d61457793a0a0901dc92f0d205faf9e71d02ce1818c343",
+      "checksum_scope": "Original successful source bytes, not error response"
     },
     {
       "last_attempt": "2026-11-04T12:22:33.426005+00:00",
@@ -8740,7 +8795,7 @@
       "last_attempt": "2026-11-04T12:22:33.426005+00:00",
       "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
       "last_release": "2025-02-26",
-      "last_retrieval": null,
+      "last_retrieval": "2026-11-04T12:11:00.469585+00:00",
       "etag": null,
       "next_due_check": "2026-12-04T12:00:00Z",
       "id": "viscofan_boe_20261104T1200",
@@ -8771,7 +8826,9 @@
       },
       "result": "Oneexistingproject enriched with5canonical fields andqualified design/cost observations.45.045MWinstalled heading/45045kVA does not replace45MWac; case3554-CE remains unresolved.",
       "retry_condition": "Later grantedpermit/as-built dossier or explicitidentityscope evidence",
-      "next_action": "Establish3554-CE smallCáseda asset grouping independently; do not merge intoViscofan based onproximity"
+      "next_action": "Establish3554-CE smallCáseda asset grouping independently; do not merge intoViscofan based onproximity",
+      "sha256": "513016ad8b0f894b40a8c70d3de2ad8c9944a886d67b9bea7a6a0f39ac9aa2da",
+      "checksum_scope": "Original successful source bytes, not error response"
     },
     {
       "id": "kenya_stats_20261104T1200",
