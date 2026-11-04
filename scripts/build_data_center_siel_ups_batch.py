@@ -29,8 +29,8 @@ SOURCES = {
     "Safepower Modular SPM": {
         "id": "siel-safepower-modular-spm-br075-rev03-202404",
         "url": "https://www.sielups.com/wp-content/uploads/2024/06/BR075-REV03-BROCHURE-FLYER-SAFEPOWER-MODULAR-SPM.pdf",
-        "publication_date": "2024-04-03"
-    }
+        "publication_date": "2024-04-03",
+    },
 }
 
 FAMILIES: dict[str, dict[str, Any]] = {
@@ -50,7 +50,7 @@ FAMILIES: dict[str, dict[str, Any]] = {
             None,
             None,
             None,
-            None
+            None,
         ],
         "form": "floor-standing transformer-free three-phase UPS",
         "input": "380/400/415 Vac three-phase plus neutral; 50/60 Hz",
@@ -76,7 +76,7 @@ FAMILIES: dict[str, dict[str, Any]] = {
             None,
             None,
             None,
-            None
+            None,
         ],
         "form": "floor-standing transformer-free three-phase UPS",
         "input": "380/400/415 Vac three-phase plus neutral; 50/60 Hz",
