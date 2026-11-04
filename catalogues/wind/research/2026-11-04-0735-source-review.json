@@ -1,0 +1,122 @@
+{
+  "batch": "2026-11-04-0735",
+  "france": {
+    "selected": "All 2458 national EOLIE rows checked; bounded new-installation cohort service date >=2022-01-01 and reported installed >=1000kW",
+    "accepted": 34,
+    "held_or_outside_cohort": 2424,
+    "all_capacities_excluded_until_scope_reconciliation": true,
+    "reason_counts": {
+      "outside_2022_plus_ge1MW_service_cohort": 1919,
+      "aggregate_not_individual_installation": 9,
+      "service_or_disconnection_requires_review": 9,
+      "missing_or_overseas_location": 25,
+      "shared_commune_scope": 1544,
+      "repeated_name": 1471,
+      "existing_identity_candidate": 1098,
+      "unit_phase_or_numbered_name": 487,
+      "anonymous_or_missing_name": 1409,
+      "not_explicit_onshore": 46
+    },
+    "source_id": "odre-wind-20260831-20261104",
+    "checksum": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+    "source_bytes": 3615286,
+    "cohort_rows": 539,
+    "cohort_deferred": 505,
+    "outside_cohort": 1919,
+    "accepted_regions": {
+      "Hauts-de-France": 9,
+      "Centre-Val de Loire": 2,
+      "Nouvelle-Aquitaine": 8,
+      "Pays de la Loire": 5,
+      "Normandie": 5,
+      "Bourgogne-Franche-Comté": 3,
+      "Auvergne-Rhône-Alpes": 1,
+      "Occitanie": 1
+    }
+  },
+  "sweden_residual": {
+    "where": "OMRID IS NULL OR OMRID >= '2600'",
+    "layers": {
+      "2": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "3": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "5": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "6": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "7": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "8": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "9": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "10": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "11": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      },
+      "12": {
+        "count": 0,
+        "sha256": "618de7d9f46f3f697d827a1b6d84974760d5deda62e4e592adaa3c646602a94c"
+      }
+    },
+    "conclusion": "Residual count zero across ten previously selected land layers. This completes that land-layer partition scan, not identity resolution or national all-technology census."
+  },
+  "uswtdb": {
+    "release": "v9.1 September 2026",
+    "attempts": [
+      {
+        "url": "https://energy.usgs.gov/api/uswtdb/v1/turbines?limit=2",
+        "http_status": 403
+      },
+      {
+        "url": "https://www.sciencebase.gov/catalog/item/6001e327d34e592d8671fae0?format=json",
+        "http_status": 403
+      },
+      {
+        "url": "https://operations.gis.data.mn.gov/api/publicdownload/download/522/uswtdb_V8_3_20260325.csv",
+        "http_status": 404
+      },
+      {
+        "url": "https://eta-publications.lbl.gov/sites/default/files/2026-10/uswtdb_decommissioned_20260928.csv",
+        "http_status": 403
+      },
+      {
+        "url": "https://eta-publications.lbl.gov/sites/default/files/2026-10/uswtdb_v9_1_20260928_codebook.xlsx",
+        "http_status": 403
+      }
+    ],
+    "classification": "HTTP download failures; no authentication requirement or reuse restriction inferred"
+  },
+  "oem": {
+    "added": 1,
+    "source_id": "ge-4mw-117-20261104",
+    "complete_table": "4.2 MW-117m; 4.23 MW nameplate preserved separately from model label",
+    "excluded": {
+      "url": "https://www.vestas.com/content/dam/vestas-com/global/en/brochures/onshore/4MW_Platform_Brochure.pdf.coredownload.inline.pdf",
+      "sha256": "649fa42a390a7ebea29b213382179933b39f402938c98bdb33ede95464be033f",
+      "bytes": 11534165,
+      "revision": "03/2024-EN; copyright 2026",
+      "reason": "Final page explicitly forbids reproduction/alteration/copying without permission; no specifications ingested from this document",
+      "access": "Original successfully downloaded; web reader content-length error was not an HTTP failure"
+    }
+  }
+}

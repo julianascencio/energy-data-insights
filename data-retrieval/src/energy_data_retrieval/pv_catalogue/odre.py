@@ -376,3 +376,80 @@ def reviewed_odre_enrichments(
             }
         )
     return result
+
+
+def reviewed_installed_power_updates(
+    rows: list[dict[str, Any]],
+    existing: list[dict[str, Any]],
+    *,
+    reviewed_crosswalks: dict[str, str],
+    source_id: str,
+    minimum_kw: float = 1000,
+    maximum_kw: float = 5000,
+) -> list[dict[str, Any]]:
+    """Fill missing installed MW on explicitly reviewed, unique single-phase EICs.
+
+    Call ``read_odre_json`` with pinned bytes first. The allowlist maps canonical
+    record IDs to reviewed EICs; it is never inferred from names. Older AC/DC
+    values, lifecycle and their capacity_basis are untouched. Registry installed
+    active kW is kept in the separate AC/DC-unspecified column, not injection MW.
+    """
+    if not source_id or not 0 < minimum_kw < maximum_kw:
+        raise ValueError("Invalid source or installed-power cohort")
+    lookup = {r["record_id"]: r for r in existing}
+    if len(lookup) != len(existing):
+        raise ValueError("Duplicate canonical identity")
+    by_eic = {}
+    for row in rows:
+        eic = row.get("codeeicresourceobject")
+        if eic is not None:
+            if eic in by_eic:
+                raise ValueError("Duplicate source EIC")
+            by_eic[eic] = row
+    canonical_eics: dict[str, set[str]] = {}
+    pattern = r"\bODRE:\s*([A-Z0-9-]{16})(?![A-Z0-9-])"
+    for record in existing:
+        external_eic = json.loads(record.get("external_ids_json", "{}")).get("odre_eic")
+        if external_eic:
+            canonical_eics.setdefault(external_eic, set()).add(record["record_id"])
+        for phase in json.loads(record.get("phases_json", "[]")):
+            for eic in re.findall(pattern, phase.get("Other IDs (unit/phase)", "")):
+                canonical_eics.setdefault(eic, set()).add(record["record_id"])
+    result = []
+    for identifier, eic in sorted(reviewed_crosswalks.items()):
+        record, row = lookup.get(identifier), by_eic.get(eic)
+        if record is None or row is None or canonical_eics.get(eic) != {identifier}:
+            raise ValueError("Missing or nonunique reviewed EIC")
+        phases = json.loads(record.get("phases_json", "[]"))
+        if (
+            record.get("entity_type") != "projects"
+            or record.get("country_code") != "FRA"
+            or len(phases) != 1
+            or set(re.findall(pattern, phases[0].get("Other IDs (unit/phase)", ""))) != {eic}
+        ):
+            raise ValueError("Reviewed EIC must cover one complete canonical phase")
+        names = (record.get("name", ""), row.get("nominstallation") or "")
+        if any(not n or re.search(r"confidentiel|priv[eé]", n, re.I) for n in names):
+            raise ValueError("Confidential or missing identity requires review")
+        power = _number(row.get("puismaxinstallee"))
+        if (
+            row.get("codetechnologie") != "PHOTV"
+            or isinstance(row.get("nbinstallations"), bool)
+            or row.get("nbinstallations") != 1
+            or row.get("regime") != "En service"
+            or power is None
+            or not minimum_kw <= power < maximum_kw
+        ):
+            raise ValueError("Outside individual photovoltaic installed-power scope")
+        if record.get("capacity_unspecified_mw") is not None:
+            raise ValueError("Existing installed-power field must not be overwritten")
+        result.append(
+            {
+                "record_id": identifier,
+                "entity_type": "projects",
+                "capacity_unspecified_mw": power / 1000,
+                "sources": [source_id],
+                "field_sources_json": canonical_json({"capacity_unspecified_mw": source_id}),
+            }
+        )
+    return result

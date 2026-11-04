@@ -35,6 +35,50 @@ print(projects.groupby(["status", "aggregation_role"]).size().unstack(fill_value
 print("Equipment categories (components are not turbines):")
 print(equipment.groupby(["manufacturer", "equipment_category"]).size())
 
+# Regional regulatory entries retain raw certificate dates and restrictions.
+# Inclusion is not a current certificate or permission-to-operate conclusion.
+print("India ALMM observations: dated listing, not verified current eligibility")
+for row in rows:
+    almm = json.loads(row.get("extensions_json") or "{}").get("mnre_almm_india")
+    if almm:
+        for entry in almm["rows"]:
+            print(
+                row["model"],
+                "entry",
+                entry["row"],
+                "listed kW",
+                entry["ratings_kw"],
+                "hub options m",
+                entry["hub_heights_m"],
+                "certificate date as printed",
+                entry["certificate_validity_raw"],
+                "outstanding issue",
+                entry["outstanding_issue"],
+                "restriction",
+                entry["remarks"],
+            )
+
+# French registry EICs describe network installations. A dated operating state
+# and two reported ratings do not establish non-overlapping whole-farm scope.
+french_registry = projects.loc[
+    projects.external_ids_json.fillna("").str.contains('"odre_eic"', regex=False)
+]
+if not french_registry.empty:
+    print("French network installations: dated capacity observations, excluded from totals")
+    print(
+        french_registry[
+            [
+                "name",
+                "region",
+                "status_as_of",
+                "installed_capacity_mw",
+                "export_capacity_mw",
+                "aggregation_role",
+            ]
+        ].to_string(index=False)
+    )
+    print("No surveyed coordinates inferred from French administrative geography.")
+
 # %%
 # Geographic counts describe this catalogue. Missing status is never operational.
 fig, axes = plt.subplots(2, 2, figsize=(15, 11), layout="constrained")
@@ -83,7 +127,7 @@ axes[0].set(
     ylabel="Derived nameplate W/m²",
     title="Specific power; not measured energy yield",
 )
-axes[0].legend()
+axes[0].legend(fontsize="small", ncol=2)
 print("Exact model and hub-height options:")
 print(
     equipment[["manufacturer", "model", "variant", "hub_height_options_json"]].to_string(
@@ -345,3 +389,21 @@ for component in rows:
     specs = json.loads(component.get("extensions_json") or "{}")
     if "legacy_vec501_r0_observations" in specs:
         print(component["model"], "legacy VEC501R0 only", specs["legacy_vec501_r0_observations"])
+
+# %%
+# Optional monitoring links retain the OEM's series and revision boundary.
+# A documented interface does not establish that an accessory is installed.
+by_id = {row["record_id"]: row for row in rows}
+for component in rows:
+    for link in json.loads(component.get("compatibility_json") or "[]"):
+        target = by_id[link["equipment_record_id"]]
+        if target.get("equipment_category") == "control":
+            print(
+                component["model"],
+                "optional monitor",
+                target["model"],
+                link["conditions"],
+                "evidence",
+                link["source_id"],
+                link["locator"],
+            )

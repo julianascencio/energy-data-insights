@@ -142,3 +142,13 @@ def test_clean_inventory_quarantine_is_lossless():
     areas, turbines, held = quarantine_repeated_turbines(data["areas"], data["turbines"])
     assert areas == data["areas"] and turbines == data["turbines"]
     assert not held
+
+
+def test_missing_ids_cannot_be_hidden_by_duplicate_quarantine():
+    from energy_data_retrieval.wind_catalogue.sweden import quarantine_repeated_turbines
+
+    data = inputs()
+    for row in data["turbines"]:
+        row["properties"]["VERKID"] = None
+    with pytest.raises(ValueError, match="Missing turbine registry identity"):
+        quarantine_repeated_turbines(data["areas"], data["turbines"])

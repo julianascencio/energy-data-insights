@@ -98,6 +98,13 @@ or a live availability feed. Do not interpret record counts as installed capacit
    URL explicitly; filenames do not define identities. Preserve approximate mass,
    height labels, C-rate versus amperes and short-circuit versus peak current.
    Charging tables, rate conditions and overview discrepancies require manual review.
+   `scripts/stage_bess_leoch_opzs.py` stages reviewed two-page 2 V OPzS sheets
+   from local layout text. It requires the exact printed heading and publication
+   number, preserves C10 at 20°C/1.80 V per cell, and separates dry/approximate
+   mass, short-circuit amperes and maximum charge C-rate. The same marketed code
+   appears in standard and telecom URL editions: do not create duplicate identities
+   or select a terminal/mass winner without configuration evidence. Residual template
+   tokens in the text layer are not numerical specifications. Staging never imports.
    Resolve external IDs, aliases, physical location, phases and commercial-project
    scope against existing rows and the ledgers before accepting candidates.
    AEMO survey sites 3100/3101/3102 already belong to the single MREH record.

@@ -432,6 +432,16 @@ def parse_ups_rating_matrix(
         "www.kehua.com": {"Kehua Tech"},
         "kstar.com": {"KSTAR"},
         "www.kstar.com": {"KSTAR"},
+        "borri.it": {"Borri"},
+        "www.borri.it": {"Borri"},
+        "makelsan.com.tr": {"Makelsan"},
+        "www.makelsan.com.tr": {"Makelsan"},
+        "makelsanjenerator.com.tr": {"Makelsan"},
+        "www.makelsanjenerator.com.tr": {"Makelsan"},
+        "sielups.com": {"SIEL"},
+        "www.sielups.com": {"SIEL"},
+        "tescom-ups.com": {"Tescom"},
+        "www.tescom-ups.com": {"Tescom"},
     }
     if host not in manufacturers_by_host:
         raise ValueError("Unsupported official UPS source URL")
@@ -725,6 +735,94 @@ def parse_generator_rating_matrix(
         candidates[identity] = candidate
     if len(candidates) != expected_count:
         raise ValueError(f"Changed generator matrix shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
+def parse_generator_dcp_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact Baudouin Data Centre Power rows without boundary conversion.
+
+    Engine gross mechanical power, generator active output and generator apparent
+    output remain separate.  Frequency is part of the immutable configuration
+    identity; shared portfolio claims and possible alternator choices are not
+    expanded into fabricated variants.
+    """
+    parsed_url = urlsplit(source_url)
+    if (
+        parsed_url.scheme != "https"
+        or parsed_url.hostname not in {"baudouin.com", "www.baudouin.com"}
+        or not parsed_url.path.endswith(".pdf")
+    ):
+        raise ValueError("Unsupported official DCP generator matrix URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "model",
+        "frequency_hz",
+        "engine_power_kwm",
+        "output_power_kw",
+        "apparent_power_kva",
+        "speed_rpm",
+        "aspiration",
+        "governor",
+        "locator",
+    }
+    if reader.fieldnames is None or set(reader.fieldnames) != required:
+        raise ValueError("Unexpected DCP generator matrix columns")
+
+    def positive_number(raw_value: str | None, field: str, *, line: int) -> float:
+        raw = (raw_value or "").strip().replace(",", "")
+        if not raw:
+            raise ValueError(f"Missing {field} on row {line}")
+        try:
+            value = float(raw)
+        except ValueError as exc:
+            raise ValueError(f"Invalid {field} on row {line}") from exc
+        if value <= 0:
+            raise ValueError(f"Invalid {field} on row {line}")
+        return value
+
+    candidates: dict[tuple[str, float], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        model = row["model"].strip()
+        aspiration = row["aspiration"].strip()
+        governor = row["governor"].strip()
+        locator = row["locator"].strip()
+        if not all((model, aspiration, governor, locator)):
+            raise ValueError(f"Incomplete DCP generator identity on row {line}")
+        frequency = positive_number(row["frequency_hz"], "frequency_hz", line=line)
+        candidate = {
+            "model": model,
+            "frequency_hz": frequency,
+            "engine_power_kwm": positive_number(
+                row["engine_power_kwm"], "engine_power_kwm", line=line
+            ),
+            "output_power_kw": positive_number(
+                row["output_power_kw"], "output_power_kw", line=line
+            ),
+            "apparent_power_kva": positive_number(
+                row["apparent_power_kva"], "apparent_power_kva", line=line
+            ),
+            "speed_rpm": positive_number(row["speed_rpm"], "speed_rpm", line=line),
+            "aspiration": aspiration,
+            "governor": governor,
+            "locator": locator,
+        }
+        identity = (model, frequency)
+        if identity in candidates:
+            raise ValueError(f"Duplicate DCP generator row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed DCP generator matrix shape: {len(candidates)} != {expected_count}"
+        )
     return {
         "source_url": source_url,
         "sha256": hashlib.sha256(content).hexdigest(),

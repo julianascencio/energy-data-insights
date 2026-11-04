@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T03:30:00Z",
+  "updated_at": "2026-11-04T08:32:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -58,7 +58,11 @@
     "atnorth_finland_municipal_observations": 6,
     "kehua_current_ups_model_columns": 25,
     "kstar_transformer_ups_gp_master_epi": 23,
-    "kstar_epower_model_columns": 38
+    "kstar_epower_model_columns": 38,
+    "borri_current_three_phase_ups_configurations": 25,
+    "baudouin_dcp_50_60hz_configurations": 34,
+    "siel_safepower_configurations": 27,
+    "tescom_current_ups_configurations": 22
   },
   "next_batches": [
     {
@@ -163,8 +167,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 363,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns and all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns complete; continue independent generator/electrical suppliers without recounting completed inventories",
+      "offset": 505,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns and all 22 Tescom DS POWER/SH/MTI250 rows complete; continue independent generator/electrical suppliers without recounting completed inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -176,7 +180,12 @@
         "Fuji UPS7000HX/7300WX/7400WX/7500WX offset 20 is complete; keep nominal and maximum input current, output current, online/HE efficiency, UPM count and battery interface boundaries separate, and do not infer active kW for UPS7300/7500",
         "Kehua current-table offset 25 is complete; KR33 efficiency and weight stay quarantined because current official English and Spanish pages disagree, and KR6000-RM/KR1110-RM retain the internally inconsistent 80-275 V versus 176-295 V full-load text without scalar normalization",
         "KSTAR GP800/MASTER/EPI offset 23 is complete; EPI 30K apparent kVA remains quarantined because the brochure prints 3 kVA beside 24 kW, and shared efficiency/dimension/battery cells remain observations",
-        "KSTAR EPOWER/EPOWER-L/EPOWER-H offset 38 is complete; do not split merged cabinet, efficiency or battery cells into inferred model variants, and retain EPOWER 6P/12P weight alternatives as observations unless an exact suffix is printed"
+        "KSTAR EPOWER/EPOWER-L/EPOWER-H offset 38 is complete; do not split merged cabinet, efficiency or battery cells into inferred model variants, and retain EPOWER 6P/12P weight alternatives as observations unless an exact suffix is printed",
+        "Borri current three-phase monolithic UPS offset 25 is complete; INGENIO MAX 250 and 500 kVA weights remain quarantined because the current product page reports 745/1250 kg while the January 2025 official catalogue reports 630/1150 kg, and merged dimensions/efficiency/battery cells must not create inferred variants",
+        "Baudouin April 2025 DCP offset 34 is complete at 19 50 Hz plus 15 60 Hz rows; retain engine kWm, generator kWe and kVA as distinct boundaries and do not synthesize alternator, voltage, emissions or installation variants",
+        "Makelsan LEVELUPS/T3/T4 offset 34 is complete at 18+11+5 exact three-phase columns; keep kVA and kW separate and never synthesize selectable voltage, frequency, battery, cabinet or communications options",
+        "SIEL Safepower offset 27 is complete at 9+10+8 exact columns; keep SPM cabinet active kW null, retain merged dimensions and with/without-battery weights as observations, and never synthesize module, battery, voltage, frequency or communications options",
+        "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices"
       ]
     },
     {
@@ -263,16 +272,61 @@
       "source": "Riello UPS product tables",
       "url": "https://www.riello-ups.com/pages/52-copyright",
       "reason": "Copyright notice prohibits duplication, downloading, storage, publication and use of site information or material absent express permission. No Riello facts or bytes were imported."
+    },
+    {
+      "source": "Kohler / Rehlko generator tables",
+      "url": "https://www.kohlerpower.com/legal",
+      "reason": "Official legal statement prohibits reuse or reporting of site contents for public or commercial purposes without permission. No Kohler/Rehlko specifications or bytes were imported."
+    },
+    {
+      "source": "FG Wilson Data Centre Continuous rating table",
+      "url": "https://www.fgwilson.com/en_GB/legal.html",
+      "reason": "Official legal statement prohibits duplicating, modifying, transmitting or printing website files without written permission beyond the stated viewing/transmission exception. The 32-row table was screened only; no specifications or bytes were imported."
+    },
+    {
+      "source": "INVT UPS technical tables",
+      "url": "https://www.invt.com/es/legal-statement",
+      "reason": "Official legal statement prohibits copying, reproducing, transmitting or commercial use of site materials without prior written permission. No specifications or bytes were imported."
+    },
+    {
+      "source": "CyberPower three-phase UPS tables",
+      "url": "https://www.cyberpower.com/VN/EN/policy/terms",
+      "reason": "Official terms prohibit public or commercial copying, reproduction, publication, distribution or transmission without prior written consent. No specifications or bytes were imported."
+    },
+    {
+      "source": "Hitachi Hi-Rel UPS technical tables",
+      "url": "https://www.hitachi-hirel.com/terms-conditions",
+      "reason": "Official terms prohibit use, reproduction or redistribution of site and product-document content without permission. No specifications or bytes were imported."
+    },
+    {
+      "source": "TMEIC UPS technical tables",
+      "url": "https://www.tmeic.com/terms-use",
+      "reason": "Official terms prohibit copying, reproduction, publication and derivative use without permission. No specifications or bytes were imported."
+    },
+    {
+      "source": "Numeric UPS technical tables",
+      "url": "https://www.numericups.com/terms-and-conditions",
+      "reason": "Official terms prohibit systematic retrieval, database compilation and reproduction without permission. No specifications or bytes were imported."
+    },
+    {
+      "source": "Trane, Rittal, Legrand, Piller and ABB technical tables",
+      "url": "https://www.trane.com/commercial/north-america/canada/en/terms-of-use.html",
+      "reason": "Supplier-specific official terms limit copying, publication, commercial use or text/data mining beyond private or internal informational purposes. No specifications or bytes were imported; individual policy URLs are preserved in the decision ledger and source review."
+    },
+    {
+      "source": "LiquidStack public CDU tables",
+      "url": "https://liquidstack.com/terms-conditions",
+      "reason": "Public sales terms restrict communication/distribution of supplied documents; public-datasheet reuse scope requires clarification. No facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "kstar-transformer-ups-20261104T023000Z",
+    "run_id": "tescom-ups-20261104T083200Z",
     "report": "2026-11-04-report.md",
-    "validation": "2026-11-04T0230-validation.json",
+    "validation": "2026-11-04T0832-validation.json",
     "added_projects": 0,
     "enriched_projects": 0,
-    "added_equipment": 23,
-    "branch": "research/data-center-database-20261104T0217Z"
+    "added_equipment": 22,
+    "branch": "research/data-center-database-20261104T0745Z"
   }
 }

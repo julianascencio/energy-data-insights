@@ -228,6 +228,7 @@ def validate_catalogue(rows: list[dict[str, Any]], sources: dict[str, Any]) -> N
         for link in json.loads(row.get("compatibility_json") or "[]"):
             if (
                 not isinstance(link, dict)
+                or link.get("equipment_record_id") == row["record_id"]
                 or link.get("equipment_record_id") not in lookup
                 or lookup[link["equipment_record_id"]]["entity_type"] != "equipment"
                 or link.get("source_id") not in row["sources"]
