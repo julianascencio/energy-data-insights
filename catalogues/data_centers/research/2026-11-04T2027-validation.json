@@ -1,0 +1,88 @@
+{
+  "run_id": "energy-star-cisco-servers-20261104T202706Z",
+  "retrieved_at": "2026-11-04T20:27:06Z",
+  "branch": "research/data-center-database-20261104T1749Z",
+  "base_head": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
+  "prepublication_remote_head": "d42ec3d8cc3c4bbd79993e11e5ddafc5cf11bfbc",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 1811,
+    "total": 1994,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 44,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 20,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1299,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 37
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 512,
+    "inventories": [
+      "EPA ENERGY STAR certified Schneider Electric UPS partner inventory",
+      "EPA ENERGY STAR certified Vertiv Corporation UPS partner inventory",
+      "EPA ENERGY STAR residual eight-partner UPS inventory",
+      "EPA ENERGY STAR certified Cisco Systems enterprise-server partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 852189,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781",
+    "reused_registered_snapshot": false
+  },
+  "executed_checks": [
+    {"check": "deterministic ENERGY STAR Cisco builder replay", "result": "passed", "detail": "All four five-record JSONL shards reproduced byte-for-byte from the registered complete 476-row source"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 1,994 canonical Data Center records"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed"},
+    {"check": "full Python test suite", "result": "one unrelated environment failure", "detail": "2,461 passed and five optional-dependency tests skipped; one PV degradation subprocess test failed because psutil could not resolve its transient process PID in this container. The focused Data Center suite is green and no unrelated PV files were changed."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "Ruff format and lint", "result": "passed", "detail": "946 files formatted; all lint checks passed"},
+    {"check": "repository-wide ty", "result": "passed", "detail": "All type checks passed after installing the locked pvdeg optional extra"},
+    {"check": "repository, citation and diff checks", "result": "passed", "detail": "Repository policy, citation registry and whitespace checks passed across 4,313 candidate files"},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed with the expanded catalogue"},
+    {"check": "strict Sphinx and generated-site link validation", "result": "environment blocked", "detail": "The Python 3.12 local build stopped when the unrelated Candelaria gallery example required the Python 3.13-only Orbital PV imagery dependency; no local documentation or link pass is claimed and remote Documentation CI is required"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "0e04963281462fd088ffd3baa620ac7ae75b32e4afa460c7b938a11d0616f4d0",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "1df1c15f5178b2415dab581e5a367d9f9ba74cea08c6d057dfc4f3a94bdcf158",
+    "manifest_sha256": "cb20b16457eeff8241d56f01bb740dbce0d9dedb0ddc400d4591a9e7aeaedc2f",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "b5bf3d4d4cdf6f0ebc556fb6d58ce4ac87ac59451909d3b4f3ca4a98523721dd"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "Kohler/Rehlko generator tables: official permission-required reuse hold reconfirmed; no specifications or bytes imported"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "Remaining ENERGY STAR Enterprise Server partner partitions remain bounded future batches"
+  ],
+  "quarantined_fields": [
+    "processor_socket_count on UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S"
+  ],
+  "notes": [
+    "All 20 Cisco Systems certification entries in the 2026-11-04 ENERGY STAR Enterprise Servers dataset update are processed",
+    "The complete source contains 476 rows; only the complete Cisco partner partition is accepted in this bounded batch",
+    "Low-end, typical/single and high-end SERT configurations remain separately bounded observations",
+    "PSU nameplates and SERT power scores are not normalized as rated server input or rack input",
+    "Maximum supported memory is not treated as installed memory",
+    "Certification entries are not deployments",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds remain"
+  ]
+}

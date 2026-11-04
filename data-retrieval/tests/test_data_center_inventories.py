@@ -6,6 +6,7 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_energy_star_enterprise_servers_inventory,
     parse_energy_star_ups_inventory,
     parse_generator_dcp_matrix,
     parse_generator_rating_matrix,
@@ -51,6 +52,52 @@ PROJECT_PERMIT_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/project-permit-matrix.csv"
 ).read_bytes()
 ENERGY_STAR_UPS = (Path(__file__).parent / "fixtures/data_centers/energy-star-ups.csv").read_bytes()
+ENERGY_STAR_SERVERS = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-enterprise-servers.csv"
+).read_bytes()
+
+
+def test_energy_star_enterprise_servers_keep_certification_and_form_factor():
+    url = "https://data.energystar.gov/api/v3/views/qifb-fcj2/export.csv"
+    result = parse_energy_star_enterprise_servers_inventory(
+        ENERGY_STAR_SERVERS,
+        source_url=url,
+        partner="Cisco Systems",
+        expected_count=2,
+    )
+    assert [row["ENERGY STAR Unique ID"] for row in result["candidates"]] == [
+        "1001",
+        "1002",
+    ]
+    assert result["candidates"][0]["Model Number"] == "UCSC-C220-M8 1S"
+    assert result["candidates"][1]["Form Factor"] == "Blade - Half Chassis"
+    assert len(result["sha256"]) == 64
+
+
+def test_energy_star_enterprise_servers_reject_drift_duplicate_and_unofficial_source():
+    url = "https://data.energystar.gov/api/v3/views/qifb-fcj2/export.csv"
+    with pytest.raises(ValueError, match="partner inventory shape"):
+        parse_energy_star_enterprise_servers_inventory(
+            ENERGY_STAR_SERVERS,
+            source_url=url,
+            partner="Cisco Systems",
+            expected_count=3,
+        )
+    duplicate = ENERGY_STAR_SERVERS + ENERGY_STAR_SERVERS.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate ENERGY STAR enterprise-server"):
+        parse_energy_star_enterprise_servers_inventory(
+            duplicate,
+            source_url=url,
+            partner="Cisco Systems",
+            expected_count=2,
+        )
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR enterprise-server"):
+        parse_energy_star_enterprise_servers_inventory(
+            ENERGY_STAR_SERVERS,
+            source_url="https://example.com/servers.csv",
+            partner="Cisco Systems",
+            expected_count=2,
+        )
 
 
 def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries():
@@ -100,6 +147,8 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
         "Delta Electronics, Inc. Tainan Branch": ("7001", "Delta"),
         "Cyber Power Systems, Inc.": ("8001", "CyberPower"),
         "Eaton Corporation": ("9001", "Tripp Lite"),
+        "Schneider Electric": ("10001", "APC by Schneider Electric"),
+        "Vertiv Corporation": ("11001", "Liebert"),
     }
     for partner, (expected_id, expected_brand) in reviewed_partners.items():
         batch = parse_energy_star_ups_inventory(
@@ -112,6 +161,31 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
         )
         assert [row["ENERGY STAR Unique ID"] for row in batch["candidates"]] == [expected_id]
         assert batch["candidates"][0]["Brand Name"] == expected_brand
+
+    residual_partners = {
+        "Fuji Electric Corp. of America": "Fuji Electric",
+        "Ingram Micro Inc.": "V7",
+        "Mitsubishi Electric Power Products, Inc.": "Mitsubishi",
+        "N1 Critical Technologies": "N1C",
+        "Neuropower (Malaysia) Sdn Bhd": "NEUROPOWER",
+        "POWER LOGIC (M) SDN BHD": "KOSS",
+        "Right Power Technology Sdn Bhd": "Right Power",
+        "UPSONIC POWER SYSTEMS AMERICA INC": "UPSONIC",
+    }
+    for index, (partner, brand) in enumerate(residual_partners.items(), start=12001):
+        synthetic = ENERGY_STAR_UPS.replace(
+            b"Vertiv Corporation", f'"{partner}"'.encode(), 1
+        ).replace(b"Liebert", brand.encode(), 1)
+        batch = parse_energy_star_ups_inventory(
+            synthetic,
+            source_url=(
+                "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+            ),
+            partner=partner,
+            expected_count=1,
+        )
+        assert len(batch["candidates"]) == 1, index
+        assert batch["candidates"][0]["Brand Name"] == brand
 
 
 def test_energy_star_ups_inventory_rejects_drift_duplicates_and_unofficial_sources():

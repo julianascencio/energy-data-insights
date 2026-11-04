@@ -1,0 +1,86 @@
+{
+  "run_id": "energy-star-fujitsu-servers-20261104T211840Z",
+  "retrieved_at": "2026-11-04T21:18:40Z",
+  "branch": "research/data-center-database-20261104T1749Z",
+  "base_head": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
+  "prepublication_remote_head": "ee4e1e6c72d6c7367f3788d32234a81e827b810c",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 1831,
+    "total": 2014,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 20,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1299,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 37
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 532,
+    "latest_inventories": [
+      "EPA ENERGY STAR certified Cisco Systems enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Fujitsu Limited enterprise-server partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 852189,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {"check": "deterministic ENERGY STAR Fujitsu builder replay", "result": "passed", "detail": "All four five-record JSONL shards reproduced byte-for-byte from the registered complete 476-row source"},
+    {"check": "backward-compatible Cisco builder replay", "result": "passed", "detail": "All four previously published Cisco shards reproduced byte-for-byte after adding partner selection"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,014 canonical Data Center records"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed"},
+    {"check": "full Python test suite", "result": "one unrelated environment failure", "detail": "2,461 passed and five optional-dependency tests skipped; one PV degradation subprocess test failed, and failed again in isolation, because psutil could not resolve its transient process PID in this container. The focused Data Center suite is green and no unrelated PV files were changed."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "Ruff format and lint", "result": "passed", "detail": "Changed Data Center code and focused tests are formatted; all focused lint checks passed"},
+    {"check": "repository-wide ty", "result": "passed", "detail": "All type checks passed"},
+    {"check": "repository, citation and diff checks", "result": "passed", "detail": "Repository policy passed across 4,318 candidate files; citation registry and whitespace checks passed"},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed with the expanded catalogue"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "843e5cb9ffb8712cf6f1f31f7da3dae4c2c61a4eab05e699834b3f6b1232d166",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "ddd45000d5275f464eb795f3e47cfdd33c18d808c257df4416fb8a6829bc5ac5",
+    "manifest_sha256": "df97620459fca8a11a48b5c874cba260a61a22d7002a85a3c364d9189efdf024",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "b5bf3d4d4cdf6f0ebc556fb6d58ce4ac87ac59451909d3b4f3ca4a98523721dd"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "Remaining ENERGY STAR Enterprise Server partner partitions remain bounded future batches"
+  ],
+  "quarantined_fields": [
+    "No new Fujitsu quarantine; the three existing Cisco processor_socket_count conflicts remain"
+  ],
+  "notes": [
+    "All 20 Fujitsu Limited certification entries in the 2026-11-04 ENERGY STAR Enterprise Servers dataset update are processed",
+    "The complete source contains 476 rows; only the complete Fujitsu partner partition is accepted in this bounded batch",
+    "Low-end, typical/single and high-end SERT configurations remain separately bounded observations",
+    "PSU nameplates and SERT power scores are not normalized as rated server input or rack input",
+    "Maximum supported memory is not treated as installed memory",
+    "Certification entries are not deployments",
+    "Campus aggregates remain excluded from project capacity totals under all viewer filters"
+  ]
+}
