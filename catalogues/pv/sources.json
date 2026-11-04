@@ -5335,5 +5335,58 @@
     "product_page_sha256": "73c8c5a9caa747e3ec04a22c453409cf3c577b2cd02b508e51d71d15b9b75dca",
     "locator": "Page1; upper exact article-number row and corresponding nonambiguous lower-table model column; common conditions and STC footnote",
     "limitations": "20W article and235W series4c/4d held. Efficiency reference area unspecified; retained native, not normalized. Dimension axis labels absent; listed-order dimensions retained native. No physical cell count inferred from series count. No current country approvals or availability inferred."
+  },
+  "odre_ge_20261102T2000_capture_20261104T0802": {
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Grand%20Est%27",
+    "publisher": "RTE / ODRE; Enedis and network operators",
+    "title": "National production registry: Grand Est 1–5 MW PV, 31 August 2026 snapshot; independently re-reviewed capture 4 November 2026",
+    "license": "Licence Ouverte / Open Licence v2.0; retain catalogues/pv/licenses/ODRE_NOTICE.md",
+    "retrieved_at": "2026-11-04T08:02:29.524702+00:00",
+    "sha256": "b9771d8d0c5e969431adbebc88e069be40063c165210ebe49e5d2e6c6fc39721",
+    "source_date": "2026-08-31",
+    "locator": "JSON array; exact codeeicresourceobject and native column names",
+    "limitations": "Historical network-installation snapshot, not present-day operation. EIC is not automatically a whole project. Only exact unique single-phase crosswalks used; confidential names excluded. No AC/DC or geographic inference.",
+    "supersedes_assertion": false,
+    "previous_source_id": "odre_ge_20261102T2000",
+    "capture_review": "Original and current byte hashes differ; prior full bytes unavailable. Whole-export semantic equivalence is unknown, not asserted. All selected EIC/phase and prior grid/date native assertions reviewed individually; new installed-power field only. Old source entry untouched."
+  },
+  "odre_hdf_20261102T2100_capture_20261104T0802": {
+    "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Hauts-de-France%27",
+    "publisher": "RTE / ODRE; Enedis and network operators",
+    "title": "National production registry: Hauts-de-France 1–5 MW PV, 31 August 2026 snapshot; independently re-reviewed capture 4 November 2026",
+    "license": "Licence Ouverte / Open Licence v2.0; retain catalogues/pv/licenses/ODRE_NOTICE.md",
+    "retrieved_at": "2026-11-04T08:02:29.321542+00:00",
+    "sha256": "fe8136bd9bf40825190b7b3e99dff8246818e4a64e50d377259c5b531a156eb2",
+    "source_date": "2026-08-31",
+    "locator": "JSON array; exact codeeicresourceobject and native column names",
+    "limitations": "Historical network-installation snapshot, not present-day operation. EIC is not automatically a whole project. Only exact unique single-phase crosswalks used; confidential names excluded. No AC/DC or geographic inference.",
+    "supersedes_assertion": false,
+    "previous_source_id": "odre_hdf_20261102T2100",
+    "capture_review": "Original and current byte hashes differ; prior full bytes unavailable. Whole-export semantic equivalence is unknown, not asserted. All selected EIC/phase and prior grid/date native assertions reviewed individually; new installed-power field only. Old source entry untouched."
+  },
+  "lsp_combiner_catalogue_20261104T0900": {
+    "url": "https://lsp.global/wp-content/uploads/2025/09/LSP-Catalogue-DC-Combiner-Box.pdf",
+    "publisher": "LSP / Wenzhou Arrester Electric Co., Ltd.",
+    "title": "DC Combiner Box Catalogue; exact 1000 V parallel-combiner models",
+    "license": "OEM copyright retained. Reviewed product/download and privacy pages identify LSP and legal publisher; no open-content reuse grant claimed. Limited independently reviewed factual model identifiers and technical parameters only; no PDF/layout/images/marketing prose redistributed. No public factual-extraction prohibition found in reviewed material. This is not an open bulk catalogue licence.",
+    "retrieved_at": "2026-11-04T08:58:20.376487+00:00",
+    "sha256": "c895fb3e9e7b530258dd9eea8c4facc7d098954632988dc871886ff9f161f5df",
+    "bytes": 19950115,
+    "locator": "PDF physical pages 7,9,11,12; printed pages 05,07,09,10; exact SLP model heading and General/Accessory Data rows",
+    "limitations": "Undated technical edition; PDF metadata modification 2026-08-04 is not asserted as publication or availability date. Changeable Isc/fuse and ambiguous multiple-output current stay native; component compliance is not assembly certification. No generic FAQ warranty applied.",
+    "supporting_pages": {
+      "lsp": {
+        "url": "https://lsp.global/solar-combiner-box/",
+        "sha256": "450f5280f3582ee8d9f3a62586cf746bef40b67898cb2343d53a007b08d1b85d",
+        "retrieved_at": "2026-11-04T08:57:32.464071+00:00"
+      },
+      "lsp_privacy": {
+        "url": "https://lsp.global/privacy-policy/",
+        "sha256": "064163f7743938a000c948d7a5aea109d9c049cb88ed1b549f028b634b220745",
+        "retrieved_at": "2026-11-04T08:58:19.784236+00:00"
+      }
+    },
+    "pdf_metadata_modified_date": "2026-08-04",
+    "source_date": null
   }
 }

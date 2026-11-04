@@ -351,3 +351,30 @@ The two 235W configurations have conflicting lower-table headers; the 20W
 short-circuit-current outlier also remains held. No old discontinued configurations
 are substituted for current models. Source-specific rights assessment and pinned
 PDF bytes are registered; only attributed factual values are redistributed.
+
+## LSP parallel-combiner factual extract (4 November 2026)
+
+The accepted exact 1,000 V models are SLP-2/1-1000V, SLP-3/1-1000V,
+SLP-4/2-1000V and SLP-9/3-1000V. Their respective input/output counts are
+2/1, 3/1, 4/2 and 9/3; wiring diagrams explicitly combine parallel strings.
+Table identifier spacing is retained as aliases. No configurable permutations
+are generated. Six independent-circuit passthrough boxes remain scope-held;
+the 600 V voltage sibling is deferred. The 1,500 V sixteen-input page has an
+SLP heading versus FLP model-number conflict and remains identity-held.
+
+General maximum voltage, explicit counts and temperature range use existing
+columns. W×H×D enclosure millimetres map to width/height/depth in metres;
+polycarbonate and IP65 retain enclosure scope. Only single-output current is
+normalized: multiple-output maximum-current scope remains native, without
+summing circuits. Changeable input short-circuit current is not fixed operating
+string current. Supplied fuse-link current is not maximum permissible fuse rating.
+Humidity, unqualified altitude, impact resistance, cable entries, component
+models/ratings and component standards labels remain source-qualified extensions.
+Component claims are not whole-assembly certification; output MPPT diagram labels
+are not an inverter MPPT count. No generic FAQ warranty is assigned.
+
+The undated catalogue is checksum-pinned; its PDF metadata date is not a publication,
+release or availability date. The source register records the legal publisher,
+reviewed rights assessment and exact page/model/field locators. Copyright is
+retained; only selected independently reviewed factual parameters are redistributed,
+with no open-content grant, full PDF, images or marketing prose claimed.
