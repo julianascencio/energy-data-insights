@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T19:31:12.317272+00:00",
+  "updated_at": "2026-11-04T20:13:02.022856+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "100 additional exact complete Chinese project operators/context,12 Hopewind inverters and1 OMCO tracker accepted. New RVO free-reuse candidate reader stages100/981 public ground/waterPV subsidy decisions,0 canonical RVO records. Ireland/Andalucia/Chile source-specific access/rights reviewed, no bulk assumptions.",
-  "next_highest_value_source": "RVO first100 ground/waterPV decisions: exact plant/phase crosswalk and independent identity evidence before acceptance; next cursor SDE1709464,881 further eligible decisions. Immediate missing-field enrichment: next100 GEM locations after L100000802163,4042 remain. Equipment: Hopewind G03 V3.0 current table, not duplicate G01 options.",
+  "selection_note": "101 existing projects enriched (100 historical Chinese operators,1 direct Dutch owner/developer project);13 Hopewind exact inverters accepted. New Taipower licensed candidate reader covers71PV sites/45stations with0 accepted plants. RVO next100 staged and first100 identity suggestions held; no plant award link invented.",
+  "next_highest_value_source": "Taipower station8 Changhua Changbin/station11 Tainan Salt Field: exact native plant/phase reconciliation and capacity-basis/effective-date evidence. RVO second100 awards after SDE1709464 through SDE1785290;781 further remain. Immediately defensible historical operator enrichment: next100 GEM after L100000802316,3942eligible remain.",
   "sources": [
     {
       "id": "uk_repd",
@@ -10616,7 +10616,7 @@
       "format": "PinnedFebruary2026 XLSX;existingchecksum-enforcedreader",
       "publication_cadence": "Release-based;no hourly full download",
       "last_release": "February2026",
-      "last_attempt": "2026-11-04T19:31:12.317272+00:00",
+      "last_attempt": "2026-11-04T20:13:02.022856+00:00",
       "licence_assessment": "CCBY4;entireTZ/WKSLlocations excluded;positivePVonly",
       "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
       "fields_offered": [
@@ -10625,21 +10625,23 @@
       ],
       "estimated_useful_yield": {
         "initial_eligible": 4342,
-        "accepted_cumulative_enrichments": 300,
+        "accepted_cumulative_enrichments": 400,
         "accepted_this_iteration": 100,
-        "remaining": 4042
+        "remaining": 3942
       },
       "processed_cursor": {
-        "last_accepted_location_id": "L100000802163",
-        "review_file": "20261104T1900_project_review.json"
+        "last_accepted_location_id": "L100000802316",
+        "review_file": "20261104T2000_project_review.json"
       },
-      "next_action": "Next100 complete eligible locations after L100000802163; reuse pinned original bytes after metadata/checksum freshness checks",
+      "next_action": "Next100 complete eligible locations after L100000802316; reuse pinned original bytes only after metadata/checksum freshness checks",
       "retry_condition": "Verify pinnedrelease/checksum andcurrentcanonicalgaps",
-      "next_due_check": "2026-11-04T20:00:00Z",
+      "next_due_check": "2026-11-04T21:00:00Z",
       "last_retrieval": "2026-11-04T17:59:16.974122+00:00",
       "etag": null,
       "mapping": "operators plus qualified historical exact phase/workbook context; full phase-set equality;no current operator claim",
-      "result": "100 further exact complete Chinese locations enriched with historical operators/context; no current operator or ownership claim. Three pre-existing native/source operator conflicts remain held; no new repeated-conflict progress counted."
+      "result": "100 additional exact complete Chinese locations enriched with historical operators/context. February2026 remains latest in freshly downloaded primary metadata. Three pre-existing operator conflicts unchanged; no repeated conflict counted as new.",
+      "last_metadata_retrieval": "2026-11-04T20:11:13.916054+00:00",
+      "metadata_sha256": "0d27fed0eb136429f2bca3de42e101f5917c70dfce6d4e042f4c82244642d8ff"
     },
     {
       "id": "tsun_gen3_6in1_20261104T1800",
@@ -10851,7 +10853,7 @@
         "subsidy duration years",
         "reported realisation/in-use-year observations"
       ],
-      "last_attempt": "2026-11-04T19:31:12.317272+00:00",
+      "last_attempt": "2026-11-04T20:13:02.022856+00:00",
       "last_release": "July2026 (month precision)",
       "last_retrieval": "2026-11-04T19:19:49.009129+00:00",
       "publication_cadence": "Release-based; current publisher gives July2026 workbook, exact future cadence not promised",
@@ -10859,29 +10861,35 @@
       "etag": null,
       "mapping": "pv_catalogue.rvo.read_rvo_workbook; positive Zon-PV theme; privacy filtering; lexical exact award cursor; no canonical upsert/identity/status/capacity inference",
       "estimated_useful_yield": {
-        "source_decisions": 30230,
-        "explicitPV": 27819,
         "eligible_ground_water_decisions": 981,
+        "staged_cumulative": 200,
         "staged_this_iteration": 100,
-        "accepted_canonical_records": 0,
-        "remaining_staging_partition": 881
+        "first_partition_identity_reviewed": 100,
+        "suggested_unproven_associations": 2,
+        "accepted_canonical_RVO_records": 0,
+        "remaining_staging_partition": 781
       },
       "processed_cursor": {
         "source_sha256": "78bf5e2920d0afa6cf310623c00dcce8fdc240b910fbe9447416a2fdc0f196de",
-        "worksheet": "Projecten in beheer (jul. 2026)",
-        "header_row": 11,
-        "last_staged_reference": "SDE1709464",
-        "staged_reference_ledger": "20261104T1900_rvo_review.json",
-        "identity_review_complete": false
+        "last_staged_reference": "SDE1785290",
+        "staged_reference_ledgers": [
+          "20261104T1900_rvo_review.json",
+          "20261104T2000_rvo_review.json"
+        ],
+        "first100_identity_review_complete": true,
+        "first100_unresolved": 100,
+        "second100_identity_review_complete": false
       },
-      "result": "Tested candidate reader completed:30,230 decisions,27,819 explicitPV;8,183 anonymisedPV excluded and18,655 other PV mountings left outside selected partition.981 non-anonymised ground/water decisions eligible. First100 staged,0 RVO canonical records accepted;881 remain after exact-reference cursor. No applicant/address/postcode/locality/geometry leaves staging.",
+      "result": "Fresh landing still links same July2026 workbook; raw bytes reused after checksum verification. First100 award identities reviewed against62 existing Dutch plants;2 name/corporate suggestions remain unproven,98 unmatched.0 RVO canonical acceptances. Next100 staged;781 remain. Chint supports independent plant facts but not an award-to-phase link. Groningen Seaports terms restrict redistribution; no permission request.",
       "retry_condition": "Reconcile first100 staged awards to exact plant/phase identities using independent permitted evidence. Awards can overlap a plant; no fuzzy merging, category-threshold ratings, grant-to-capex mapping or joins to older inconsistent viewer fields.",
-      "next_action": "Reconcile first100 staged awards to exact plant/phase identities using independent permitted evidence. Awards can overlap a plant; no fuzzy merging, category-threshold ratings, grant-to-capex mapping or joins to older inconsistent viewer fields.",
-      "next_due_check": "2026-11-11T19:00:00Z",
+      "next_action": "Review second100 exact references through SDE1785290 for independently proven plant/phase identity. Retain first100 unresolved; do not map subsidy maxima to capex or category thresholds to ratings.",
+      "next_due_check": "2026-11-11T20:00:00Z",
       "terms_url": "https://www.rvo.nl/onderwerpen/open-data",
       "terms_sha256": "f744874848cc0a6dd9abc49d4717f60c3007d24c155831aa371fd00d2574ccef",
       "publisher_landing_review_date": "2026-10-09",
-      "older_viewer_warning": "Inspected service layer2 has May2025 edit metadata and a Maximale_subsidie field aliased as annual production. Do not silently join its capacities to July2026 decisions or treat that ambiguous field as cost."
+      "older_viewer_warning": "Inspected service layer2 has May2025 edit metadata and a Maximale_subsidie field aliased as annual production. Do not silently join its capacities to July2026 decisions or treat that ambiguous field as cost.",
+      "last_metadata_retrieval": "2026-11-04T20:11:09.223447+00:00",
+      "metadata_sha256": "d46aa073a470d2b57ff821f57ddda734f7ff8900c115ab2cd937f067be819a44"
     },
     {
       "id": "hopewind_hsnv_g01_tables_20261104T1900",
@@ -10901,7 +10909,7 @@
         "IP/ambient/cooling",
         "communications/protection"
       ],
-      "last_attempt": "2026-11-04T19:31:12.317272+00:00",
+      "last_attempt": "2026-11-04T20:13:02.022856+00:00",
       "last_release": "25–50/60–110 V2.9;125/150 V3.0; portal updates2026-06-18 and2026-10-15",
       "last_retrieval": "2026-11-04T19:07:09.885272+00:00",
       "publication_cadence": "OEM revision-based",
@@ -10909,24 +10917,34 @@
       "etag": null,
       "mapping": "12 exact model columns, physicalpage2 each; source-specific qualifiers and field maps; existing upsert API",
       "estimated_useful_yield": {
-        "reviewed_exact_models": 12,
-        "accepted_models": 12,
-        "canonical_technical_values": 250,
-        "held_field_groups": 12
+        "accepted_previous": 12,
+        "accepted_this_iteration": 13,
+        "accepted_cumulative": 25,
+        "canonical_technical_values_this_iteration": 280,
+        "held_field_groups_this_iteration": 15
       },
       "processed_cursor": {
-        "completed_tables": [
+        "completed_prior_tables": [
           "HSNV25-50K-G01 V2.9",
           "HSNV60-110K-G01 V2.9",
           "HSNV125/150K-G01 V3.0"
         ],
-        "selected_partition_remaining": 0,
-        "review_file": "20261104T1900_equipment_review.json"
+        "completed_this_iteration_tables": [
+          "HSNV60/100/110K-G03 V3.0",
+          "HSNV60/70/75/100/110K-G02 V2.9",
+          "HSNV20/25K-L-G01 V2.4",
+          "HSNV30/45K-L-G01 V2.4",
+          "HSNV75K-L-G01 V2.9"
+        ],
+        "review_file": "20261104T2000_equipment_review.json",
+        "selected_partition_remaining": 0
       },
-      "result": "12 exact G01 models accepted with250 canonical technical values.10 MPPT-current headline/table scope conflicts and2 maximum-efficiency discrepancies held; no current repair, kVA-to-kW conversion or exact bounded-weight scalar.0 duplicate or option rows.",
+      "result": "Five further current OEM tables rendered and visually reviewed;13 exact named fixed hardware models accepted, no option clones or legacy hopeSun aliases.15 field groups held:9 input-current scope,5 PID inclusion,1 max efficiency. Prior12 holds remain separate.",
       "retry_condition": "The selected3 tables are exhausted. Next inspect current HSNV60-110K-G03 V3.0, portal updated2Nov2026; distinguish generation/model identity and resolve source conflicts before accepting any scalar.",
-      "next_action": "The selected3 tables are exhausted. Next inspect current HSNV60-110K-G03 V3.0, portal updated2Nov2026; distinguish generation/model identity and resolve source conflicts before accepting any scalar.",
-      "next_due_check": "2026-11-05T19:00:00Z"
+      "next_action": "Selected HSNV tables exhausted. Seek a different smaller OEM combiner/tracker catalogue with several fixed models; revisit these held claims only on a revised internally consistent datasheet.",
+      "next_due_check": "2026-12-04T20:00:00Z",
+      "metadata_sha256": "f27932f9d63deb7e3c1800de22b940a6feeb5c0813f6b79ab9e94df152d592ea",
+      "last_metadata_retrieval": "2026-11-04T19:58:43.651663+00:00"
     },
     {
       "id": "omco_origin_1p_20261104T1900",
@@ -10967,6 +10985,119 @@
       "retry_condition": "Selected table exhausted. For enrichment seek exact applicable warranty conditions and wind design/test configuration; do not clone AC/DC or Zigbee/Star options into separate rows.",
       "next_action": "Selected table exhausted. For enrichment seek exact applicable warranty conditions and wind design/test configuration; do not clone AC/DC or Zigbee/Star options into separate rows.",
       "next_due_check": "2026-12-04T19:00:00Z"
+    },
+    {
+      "id": "taiwan_taipower_sites_20261104T2000",
+      "country": "TWN",
+      "entity": "projects",
+      "source_url": "https://data.gov.tw/dataset/17141",
+      "endpoint": "https://service.taipower.com.tw/data/opendata/apply/file/d693002/001.csv",
+      "format": "UTF-8 BOM CSV; reusable source-specific candidate reader",
+      "licence_assessment": "Official dataset explicitly declares Open Government Data License Taiwan v1.0. Licence reviewed, permits reuse with attribution; source register contains required provider/year/name/version/licence notice. No unrelated licence borrowed.",
+      "terms_url": "https://data.gov.tw/license",
+      "terms_sha256": "dcc0bff30a7389852f636951a5fa8fb79c5b0b6e721c55400710b638552d00bb",
+      "last_attempt": "2026-11-04T20:13:02.022856+00:00",
+      "last_release": null,
+      "version_or_date": "HTTP Last-Modified2026-10-08; not a dataset-effective date. Portal metadata timestamp2024-06-21 not current source period.",
+      "publication_cadence": "Irregular/on change per current source entry; not daily despite an older MOEA catalogue summary",
+      "last_retrieval": "2026-11-04T20:07:00.591760+00:00",
+      "sha256": "366e7f928e60c9c1dc531eb5d9f39b6f3b02c88417e7ac0edabc8dbbd14b49c6",
+      "etag": "\"08cbf64bf56dd1:0\"",
+      "http_last_modified": "Thu, 08 Oct 2026 00:53:12 GMT",
+      "fields_offered": [
+        "technology-scoped station/site IDs",
+        "native bilingual station names",
+        "site descriptions",
+        "native installed kW with AC/DC unestablished",
+        "native module labels",
+        "administrative application statuses"
+      ],
+      "mapping": "pv_catalogue.taipower.read_taipower_sites; checksum, exact header/row width/identity, explicit PV name+technology, whole-group cursor, privacy and scope guards; no canonical ingestion",
+      "processed_cursor": {
+        "source_sha256": "366e7f928e60c9c1dc531eb5d9f39b6f3b02c88417e7ac0edabc8dbbd14b49c6",
+        "last_staged_station_id": 45,
+        "all_site_rows_staged": 71,
+        "station_groups_staged": 45,
+        "review_file": "20261104T2000_taipower_review.json",
+        "identity_review_complete": false
+      },
+      "estimated_useful_yield": {
+        "source_rows": 102,
+        "explicit_PV_sites": 71,
+        "station_groups": 45,
+        "non_PV_or_unproven_rows_excluded": 31,
+        "accepted_records": 0,
+        "verified_future_yield": null
+      },
+      "result": "New licensed structured source discovered; adapter completed and20tests pass. All71PV sites grouped into45stations for review,0 accepted canonical plants/models. No capacity summation, AC/DC conversion, current-operation/date inference, source addresses or contacts. Site names explicitly光電, genericSolar alone rejected.",
+      "retry_condition": "Freshness/header/checksum review before any new version; independent station/site/whole-plant reconciliation plus capacity-basis/effective-date evidence before canonical acceptance.",
+      "next_action": "Review stations8 Changhua Changbin and11 Tainan Salt Field against existing native GEM phase names/owners; keep separately named roofs/phase2 distinct and hold rating scope. Then smaller station IDs, never fuzzy merge.",
+      "next_due_check": "2026-11-11T20:00:00Z"
+    },
+    {
+      "id": "taiwan_taipower_generation_20261104T2000",
+      "country": "TWN",
+      "entity": "projects",
+      "source_url": "https://data.gov.tw/dataset/17140",
+      "endpoint": "https://service.taipower.com.tw/data/opendata/apply/file/d693001/001.csv",
+      "format": "CSV link discovered, data not downloaded/tested",
+      "licence_assessment": "Official dataset17140 declares Taiwan Open Government Data License v1.0; source-specific grant reviewed. Attribution required if future values imported.",
+      "terms_url": "https://data.gov.tw/license",
+      "last_attempt": "2026-11-04T20:13:02.022856+00:00",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T20:06:28.824251+00:00",
+      "sha256": "d76193ccc8484486834544dfaa4fd3ee90686efb9c9f8ded331d356587274321",
+      "etag": null,
+      "publication_cadence": "Monthly per current official portal",
+      "fields_offered": [
+        "native year/month",
+        "energy type",
+        "station name",
+        "monthly generation kWh"
+      ],
+      "mapping": "Discovery only; no reader or station crosswalk tested",
+      "processed_cursor": {
+        "data_rows_downloaded": 0
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Current metadata provides long-form monthly station generation schema, unlike older broad-column MOEA search summaries.0 CSV rows downloaded/accepted; not integrated.",
+      "retry_condition": "First resolve exact Taipower station/site relationships, period/calendar and full coverage; then a bounded monthly sample with attribution.",
+      "next_action": "Use station CSV identity reconciliation before generation join; do not turn historic/monthly generation into expected annual output.",
+      "next_due_check": "2026-11-11T20:00:00Z"
+    },
+    {
+      "id": "solarbox_itscb_20261104T2000",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.solarbox.it/en/itscb-series-string-combiner-box.html",
+      "endpoint": "https://www.solarbox.it/en/itscb-series-string-combiner-box.html",
+      "format": "OEM product-family HTML; ordinary GET503, no technical file obtained",
+      "licence_assessment": "Not established; no reuse grant inferred from public search indexing. Must inspect OEM terms before factual extraction.",
+      "last_attempt": "2026-11-04T20:15:19.000215+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "publication_cadence": "Unverified OEM revision-based",
+      "estimated_useful_yield": {
+        "reviewed_exact_models": 0,
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "fields_offered": [
+        "Potential multi-model DC string-combiner specifications, not obtained or verified"
+      ],
+      "mapping": "Discovery/access attempt only; no reader or accepted equipment",
+      "processed_cursor": {
+        "rows_reviewed": 0
+      },
+      "result": "Primary indexed ITSCB string-combiner family identified; ordinary GET503. No retries, contacts, authentication or inferred model rows. Gave existing permission hold retained; Cahors indexed tariff items are isolator enclosures and not assumed combiners.",
+      "retry_condition": "Ordinary service recovery after24hour backoff, source-specific rights and exact version/model table; otherwise another OEM publisher.",
+      "next_action": "Afterbackoff retrieve OEM family page/technical catalogue and terms. Compare exact fixed hardware identities against112 current combiners; avoid option-only clones.",
+      "next_due_check": "2026-11-05T20:15:00Z"
     }
   ],
   "source_refresh_queue": [

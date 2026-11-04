@@ -515,3 +515,24 @@ not create unstated endpoints. Module/length bounds, pose-dependent dimensions,
 typical drive counts and an unqualified advertised wind speed stay in context.
 Published structural/drive warranty durations use their respective columns; control,
 motor and damper terms remain separate. No legacy controller protocols are blended.
+
+### Taipower public station/site candidate scope
+
+The checksum-enforced Taipower reader stages CSV record numbers and native station
+and site IDs. IDs are scoped to the explicit solar/PV technology. A dash station
+cell is resolved only within an exactly named group having an explicit unique ID;
+there is no positional forward fill or automatic plant identity. Source addresses
+and portal contact details are excluded. All71site rows/45station groups remain
+candidates pending independent plant/phase reconciliation.
+
+| Native field | Review representation and limit |
+| --- | --- |
+| `裝置容量(瓩)/Installed Capacity(kW)` | Native site kW in candidate context; AC/DC unestablished, no aggregate or canonical rating |
+| `申設狀態/Application Status` | Native administrative label; not current operation or a dated lifecycle scalar |
+| `型號/Model` | Native source equipment label; not an OEM-verified model or equipment assignment |
+| Station name and IDs | Exact-name station grouping only; whole-plant/phase identity unresolved |
+| CSV HTTP Last-Modified | Retrieval metadata only; not the dataset-effective or operating-status date |
+
+Government dataset17141 explicitly declares Taiwan Open Government Data License
+v1.0. Retain the Taipower attribution and licence URL in source metadata; do not
+inherit that licence for unrelated OEM documents or private material.

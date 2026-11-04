@@ -467,3 +467,19 @@ phases are overwritten. Other plans require original site/phase evidence before
 acceptance. Review the separate layer-specific licence before installation-layer
 feature requests; the general municipal CC BY4.0 grant does not license every
 third-party layer on the map.
+
+### Taipower station/site review
+
+`pv_catalogue.taipower.read_taipower_sites` stages the checksum-pinned public
+Taipower renewable-sites CSV (government dataset17141). It requires both the
+exact solar technology label and an explicit photovoltaic station name, validates
+technology-scoped station/site IDs, and returns complete station groups through
+an integer station cursor. A station can contain separate roofs, sites or phases;
+these groups are candidates, not canonical projects. Source addresses are excluded.
+
+Installed kW stays native with AC/DC basis unresolved. Model labels do not become
+OEM-verified equipment, application status does not become current operation, and
+HTTP Last-Modified is not a plant-status date. No capacity sum, automatic crosswalk
+or canonical upsert occurs. The current reviewed partition has71PV sites in45
+station groups; zero Taipower canonical records are accepted. See
+`research/20261104T2000_taipower_review.json` and its source-specific attribution.
