@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T09:12:24.602146+00:00",
-  "ranking_file": "20261104T0900_top10_coverage.json",
-  "selection_note": "Complete Nouvelle-Aquitaine prior155-crosswalk power-gap partition plus exact physical BlueSolar module articles absent from CEC/SAM; no US repeat bulk ingestion or invented configuration combinations.",
-  "next_highest_value_source": "Spain Electra: review reuse terms and a bounded explicit Fotovoltaica / Canarias >=1 MW sample; reconcile registry IDs, whole-plant/phase scope, privacy and gross/net power definitions. Global files show 27 January 2026, not current November operation; CKAN metadata route is503.",
+  "updated_at": "2026-11-04T13:23:33.167060+00:00",
+  "ranking_file": "20261104T1100_top10_coverage.json",
+  "selection_note": "This run completes both Navarra licensed PV layers (114rows), prioritizing useful missing metadata and exact case scope over row quota. Fresh SAJ/EPEVER attempts403; FIMER prior explicit consent restriction remains held. Existing complete Sungrow MH batch not repeated. Top-ten cumulativePV ranking preserved.",
+  "next_highest_value_source": "Plandata91held adoptedPV-plan/site/phase crosswalks using exactoriginalevidence; retain completed94planIDs/keysetmax12185383. Separately resolve installationlayer rights/stableIDs. HyponoriginalPROcertificate/edition scope beforeIP/alias acceptance.",
   "sources": [
     {
       "id": "uk_repd",
@@ -8077,40 +8077,44 @@
       "entity": "projects",
       "source_url": "https://energia.serviciosmin.gob.es/Electra/BuscarDatos.aspx",
       "endpoint": "https://energia.serviciosmin.gob.es/Electra/BuscarDatos.aspx",
-      "format": "HTML/ASP.NET query; CSV/Excel controls observed",
+      "format": "Verified filtered five-column semicolon CSV plus pinned HTML scope capture; reader integrated for candidate screening only",
       "version_or_date": "Global files shown27January2026; not evidence of current operation",
       "publication_cadence": "Publisher labels daily compilation, but displayed global timestamps are stale; live query cadence unverified",
-      "licence_assessment": "Reuse/export terms still unverified; no bulk extraction or canonical acceptance",
-      "access_assessment": "Public landing200; technology optionFotovoltaica, separate solar technologies; net/gross-power filters observed",
+      "licence_assessment": "Official dataset metadata links source-specific public-data reuse conditions: attribution, update date, unchanged meaning/metadata, personal-data purpose and no reidentification. No CC grant asserted.",
+      "access_assessment": "Ordinary public session/postback controls; initial direct requests failed scope guard, no unfiltered CSV downloaded. Published technology/region postbacks yielded75-row filtered CSV.",
       "estimated_useful_yield": {
+        "reviewed": 75,
         "accepted": 0,
-        "future_verified_yield": null,
-        "planning_sample": "50-200 only after terms, power definitions and identity reconciliation"
+        "held": 75,
+        "repeat_name_ids": 7
       },
       "fields_offered": [
-        "registry identifiers",
-        "technology",
-        "installation status",
-        "net/gross power",
-        "service/registration dates",
-        "location"
+        "INSTALACIONID",
+        "regime",
+        "installation name",
+        "autonomous community",
+        "query-level PV/minimum-net-power provenance only"
       ],
-      "last_attempt": "2026-11-04T09:12:24.602146+00:00",
-      "last_retrieval": "2026-11-04T09:09:32.366521+00:00",
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_retrieval": "2026-11-04T10:06:01.415571+00:00",
       "last_release": "2026-01-27; displayed global file generation date only",
-      "sha256": "b552759e41fd89ff11a8c3d3439eb348f7464a05e7a4ae6820225c6d3ce7b570",
+      "sha256": "34e032ac671141af6aaa25d93db77dddc6f82289b83c839fa238ba6706bf081e",
       "etag": null,
-      "mapping": "Unintegrated. Net/gross is not automatically AC/DC; registry installation or registration need phase/project review. Holder/private fields omitted.",
+      "mapping": "pv_catalogue.electra.read_electra_csv / screen_electra_candidates; dictionary Electra section; scope and CSV hashes checked separately. Index is not phase/power/status evidence.",
       "processed_cursor": {
-        "landing_reviewed": true,
-        "export_downloaded": false,
-        "canonical_accepted": 0,
-        "next_scope": "Fotovoltaica / Canarias / >=1 MW after rights/units review"
+        "region": "Canarias",
+        "technology": "Fotovoltaica",
+        "minimum_net_kw": 1000,
+        "index_rows": 75,
+        "scope_verified": true,
+        "accepted": 0,
+        "index_exhausted": true,
+        "review_file": "20261104T1000_project_review.json"
       },
-      "result": "Concrete alternate route advances prior generic Spain registry discovery. Official CKAN metadata API returned503.",
-      "retry_condition": "Verify reuse terms/current revision and a small public filtered sample; no full national download yet",
-      "next_action": "Spain Electra: review reuse terms and a bounded explicit Fotovoltaica / Canarias >=1 MW sample; reconcile registry IDs, whole-plant/phase scope, privacy and gross/net power definitions. Global files show 27 January 2026, not current November operation; CKAN metadata route is503.",
-      "next_due_check": "2026-11-05T09:00:00Z"
+      "result": "75 IDs structurally checked against canonical names/namespaced IDs; all held for phase/privacy/freshness/power evidence. Seven IDs share normalized names with another incoming ID. No capacity/name-derived W or operation claim.",
+      "retry_condition": "Resume only with richer licensed phase/power/date evidence or revised global export; retain existing index capture and recheck freshness before resuming.",
+      "next_action": "Do not repeat the75-row index; obtain legally reusable phase-level workbook/official regional registry crosswalk, retaining live revision as unknown. Prefer newly discovered licensed Navarra rows1-20 first.",
+      "next_due_check": "2026-11-05T10:00:00Z"
     },
     {
       "id": "cea_september_current_route_0900",
@@ -8143,6 +8147,1145 @@
       "retry_condition": "Public access restored; wait at least24h before same route",
       "next_action": "Try current exact official report link when index recovers; prioritize accessible Electra review meanwhile",
       "next_due_check": "2026-11-05T09:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_release": null,
+      "publication_cadence": "Not stated; avoid hourly full downloads",
+      "country": "GLOBAL",
+      "etag": null,
+      "id": "envertech_tables_20261104T1000",
+      "entity": "inverters",
+      "source_url": "https://www.envertec.com/services/download/",
+      "endpoint": "https://www.envertec.com/services/download/",
+      "format": "Public OEM PDFs; exact model columns, visual/text review",
+      "version_or_date": "EN-EVT-2023-V01 / EN-EVT-2024-V01 / EN-EVT-2024-V02; editions, not publication dates",
+      "licence_assessment": "OEM copyright retained; limited independently reviewed factual specifications only; no open bulk/content grant. About/download reviewed; no linked reuse prohibition located. No PDFs/layout/images/prose redistributed.",
+      "access_assessment": "14 linked technical PDFs captured;3 literal-space URLs corrected by standard percent encoding, not access bypass. No forms/login.",
+      "estimated_useful_yield": {
+        "exact_models_reviewed": 14,
+        "accepted": 13,
+        "held": 1,
+        "canonical_spec_fields_added": 201
+      },
+      "fields_offered": [
+        "explicit W/VA",
+        "voltage/MPPT/current scopes",
+        "efficiency",
+        "mechanical/environmental",
+        "standard/optional warranty",
+        "communication/branch/certification qualifiers"
+      ],
+      "last_retrieval": "2026-11-04T10:14:37.287803+00:00",
+      "sha256": "18f9abd9b0933985dc6df04a97c6de0bdd25d871f74f018c39e2b0b1599701a7",
+      "mapping": "Dictionary Envertech section; source-specific physical p2/model/row locators; connector p2/4/6 comparison",
+      "processed_cursor": {
+        "review_file": "20261104T1000_equipment_review.json",
+        "accepted_models": [
+          "EVT350",
+          "EVT360",
+          "EVT400",
+          "EVT500",
+          "EVT600",
+          "EVT720",
+          "EVT800",
+          "EVT800SE",
+          "EVT1000",
+          "EVT1600SE",
+          "EVT1800SE",
+          "EVT2000SE",
+          "EVT2000"
+        ],
+        "connector_options_grouped": true,
+        "selected_tables_exhausted": true
+      },
+      "result": "13 new models, one new OEM,201 canonical specs plus qualified native conditions. EVT560600W anomaly deferred; published model number is not a rating observation. Three connector-dependent masses remain null.",
+      "retry_condition": "Changed source revision or exact OEM clarification; do not generate nominal-voltage/connector variants",
+      "next_action": "Clarify EVT560 identity/rating anomaly from a revised exact OEM source; pursue an independently identified OEM tracker/combiner family rather than duplicate these pages.",
+      "next_due_check": "2026-12-04T10:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T11:13:37.805625+00:00",
+      "last_release": "DBF header2026-10-06; row effective dates remain unverified",
+      "publication_cadence": "Not stated; avoid hourly full downloads",
+      "country": "ESP",
+      "etag": "\"c95ad764cc55dd1:0\"",
+      "id": "navarra_operating_pv_20261104T1000",
+      "entity": "projects",
+      "source_url": "https://datos.gob.es/es/catalogo/a15002917-plantas-solares-fotovoltaicas-en-servicio1",
+      "endpoint": "https://idena.navarra.es/descargas/ENERGI_Pol_PSolar.zip",
+      "format": "ZIP: DBF/SHP/SHX/PRJ + embedded ISO metadata and attribute dictionary",
+      "version_or_date": "Catalogue15April2026; embedded citation19May; DBF6October2026; distinct dates retained",
+      "licence_assessment": "CC BY 4.0 explicitly in embedded layer metadata; attribution: Información geográfica propiedad del Gobierno de Navarra.",
+      "access_assessment": "Official metadata and64,203-byte linked archive downloaded after explicit CC BY4 review; all59 DBF rows structurally screened, no canonical acceptance",
+      "estimated_useful_yield": {
+        "source_rows": 59,
+        "structurally_screened": 59,
+        "fully_reconciled": 0,
+        "accepted": 0,
+        "expected_accepted": null
+      },
+      "fields_offered": [
+        "panel-sum MW; not net/export power",
+        "service year with scope review",
+        "case references",
+        "RAIPEE text may be generic/grouped rather than ID",
+        "grid connection text",
+        "polygon geometry and calculated area",
+        "insertion date, not commissioning"
+      ],
+      "last_retrieval": "2026-11-04T10:21:43.865759+00:00",
+      "sha256": "3b82e037282d9cb9d2de03ce77257545ae3aadc11bdb0d867716294e7ecdbd05",
+      "mapping": "pv_catalogue.navarra reader/builder; dictionary Navarra section; 20261104T1100_review.json",
+      "processed_cursor": {
+        "all_rows_reviewed": 59,
+        "accepted_new": 21,
+        "enriched": 1,
+        "held": 37,
+        "source_index_exhausted": true,
+        "next_partition": "shared3554-CE Cáseda/Viscofan and grouped-case permits"
+      },
+      "result": "Complete59-row review:21new cases,one existing grid-voltage enrichment,37held. ConditionalGET304 reuses original pinned archive. New permitting layer also checked for case/polygon overlap.",
+      "retry_condition": "Recheck metadata/HEAD/ETag and reuse unchanged pinned bytes; implement tested reader and reviewed crosswalks before upsert",
+      "next_action": "Navarra held case/phase cohorts: review shared case3554-CE across three Cáseda rows against Viscofan, then grouped huertas and named Cierzo/Atalaya/Tudela phases using official permit dossiers. No repeat full download while ETags match.",
+      "next_due_check": "2026-11-05T10:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_release": null,
+      "publication_cadence": "Not stated; avoid hourly full downloads",
+      "country": "ESP",
+      "etag": null,
+      "id": "canarias_pv_wms_20261104T1000",
+      "entity": "projects",
+      "source_url": "https://www.idecanarias.es/listado_servicios/parques-fotovoltaicos-de-canarias",
+      "endpoint": "https://idecan2.grafcan.es/ServicioWMS/ParquesFotovoltaicos?SERVICE=WMS&REQUEST=GetCapabilities",
+      "format": "OGC WMS1.3 GetCapabilities metadata only",
+      "version_or_date": "Landing saysJune2025 data; service publication25November2019",
+      "licence_assessment": "SOURCE-SPECIFIC BLOCK: AccessConstraints prohibit commercial use and bulk downloading. General SITCAN CC BY3 default must not override service-specific restrictions.",
+      "access_assessment": "Landing direct500; primary web landing reviewed. GetCapabilities200 confirms installed/construction/authorization layers. No feature request, map data download or acceptance.",
+      "estimated_useful_yield": {
+        "reviewed_features": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "PV lifecycle layer classification",
+        "possible installation/geometry data not extracted"
+      ],
+      "last_retrieval": "2026-11-04T10:20:53.235793+00:00",
+      "sha256": "a4f9bf87b878f8cdcb1c5db2c3ea8b7b79bcac75c153935e9bae13bf6c61f4da",
+      "mapping": "No integrated feed; metadata only. P_FOTOV_E installed; P_FOTOV_C construction; P_FOTOV_T authorization. Aggregated installations require reconciliation.",
+      "processed_cursor": {
+        "capabilities_reviewed": true,
+        "feature_requests": 0,
+        "blocked_by_terms": true
+      },
+      "result": "Source discovered and rights block verified before any feature/bulk request.",
+      "retry_condition": "Explicit revised source licence allowing intended public/commercial reuse; otherwise use separately licensed official tabular evidence",
+      "next_action": "Do not ingest this WMS. Use CC BY4 Navarra, or independently review licensing/privacy of regional published workbooks.",
+      "next_due_check": null
+    },
+    {
+      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_release": null,
+      "publication_cadence": "Not stated; avoid hourly full downloads",
+      "country": "ESP",
+      "etag": "\"d9717-65bbd3fc7c333\"",
+      "id": "canarias_self_consumption_discovery_20261104T1000",
+      "entity": "projects",
+      "source_url": "https://www.gobiernodecanarias.org/energia/materias/energias-renovables/index.html",
+      "endpoint": "https://www.gobiernodecanarias.org/energia/descargas/SDE/Portal/EnergiasRenovables/FV_AC_20260617_web.xlsx",
+      "format": "XLSX; HEAD only, not downloaded",
+      "version_or_date": "Publisher17June2026 label; HTTP Last-Modified18September2026 (transport date, not dataset release)",
+      "licence_assessment": "Government legal notice permits reproduction with source unless stated otherwise. Dataset-specific overrides and privacy not yet reviewed; do not apply separate WMS or SITCAN terms automatically.",
+      "access_assessment": "Publisher landing200 and linked workbook HEAD200;890647-byte Content-Length; no workbook rows inspected",
+      "estimated_useful_yield": {
+        "reviewed_rows": 0,
+        "accepted": 0,
+        "expected_accepted": null
+      },
+      "fields_offered": [
+        "PV self-consumption inventory; exact schema not yet verified"
+      ],
+      "last_retrieval": "2026-11-04T10:20:52.159006+00:00",
+      "sha256": null,
+      "mapping": "Untested download; no adapter or accepted records",
+      "processed_cursor": {
+        "head_only": true,
+        "rows_downloaded": 0
+      },
+      "result": "Concrete linked workbook and release label discovered. No integration claimed.",
+      "retry_condition": "Verify dataset-specific rights and privacy first; use saved ETag and bounded partition rather than repeated full downloads",
+      "next_action": "After Navarra first20, inspect workbook schema and private-holder/address exposure under source-specific terms; no owner or current-operation inference.",
+      "next_due_check": "2026-11-05T10:00:00Z"
+    },
+    {
+      "id": "navarra_permitting_20261104T1100",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://datos.gob.es/es/catalogo/a15002917-plantas-solares-fotovoltaicas-en-tramitacion1",
+      "endpoint": "https://idena.navarra.es/descargas/ENERGI_Pol_PSolarTra.zip",
+      "format": "ZIP DBF/SHP/embeddedISO metadata",
+      "publication_cadence": "Unknown; use conditional refresh rather than hourly full download",
+      "last_release": "DBF header2026-10-06; effective date per row unknown",
+      "last_attempt": "2026-11-04T11:13:37.805625+00:00",
+      "last_retrieval": "2026-11-04T11:04:18.369878+00:00",
+      "sha256": "0d3d619092bfec63047776465cc09c7e291e4862c89762d90cf1f8958eefa40a",
+      "etag": "\"cfc8df64cc55dd1:0\"",
+      "licence_assessment": "CC BY4.0 in embedded layer metadata; attribution Información geográfica propiedad del Gobierno de Navarra. No promoter data redistributed.",
+      "fields_offered": [
+        "panel-sum DC MW",
+        "case identity",
+        "native authorization classification",
+        "explicit grid voltage",
+        "environmental reference",
+        "grid connection text"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 55,
+        "accepted_new": 23,
+        "held": 32
+      },
+      "mapping": "pv_catalogue.navarra layer=permitting; exactDBFschema,rights,checksum,case guards; no current status inferred",
+      "processed_cursor": {
+        "all_rows_reviewed": 55,
+        "accepted_new": 23,
+        "held": 32,
+        "source_index_exhausted": true,
+        "review_file": "20261104T1100_review.json"
+      },
+      "result": "23unique reviewed single-case facilities accepted. All operating/permitting cases cross-checked; no repeated case across layers. Overlap/phase/canonical risks held, no fuzzy merge.",
+      "retry_condition": "Refresh metadata/ETag before resuming; repeat full capture only ifchanged. Resolve held permit/site identities with official dossiers.",
+      "next_action": "Navarra held case/phase cohorts: review shared case3554-CE across three Cáseda rows against Viscofan, then grouped huertas and named Cierzo/Atalaya/Tudela phases using official permit dossiers. No repeat full download while ETags match.",
+      "next_due_check": "2026-11-05T11:00:00Z"
+    },
+    {
+      "id": "saj_pdf_20261104T1100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.saj-electric.com/hubfs/Europe%20Region%202%20document/Datasheet/Residential/North/R6%2015-25K%20Three%20Phase%20On-Grid%20Inverter-datasheet-EN-North.pdf",
+      "endpoint": "https://www.saj-electric.com/hubfs/Europe%20Region%202%20document/Datasheet/Residential/North/R6%2015-25K%20Three%20Phase%20On-Grid%20Inverter-datasheet-EN-North.pdf",
+      "format": "PDF attempt; no bytes obtained",
+      "publication_cadence": "Unknown",
+      "last_release": null,
+      "last_attempt": "2026-11-04T11:04:14.579066+00:00",
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "licence_assessment": "No new rights inferred from failed access; exact document/revision must be reviewed before factual extraction",
+      "access_assessment": "HTTP Error 403: Forbidden",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "reviewed_technical_rows": 0
+      },
+      "fields_offered": [
+        "exact model electrical/mechanical/environmental tables ifpublic access recovers"
+      ],
+      "mapping": "Not integrated; no exact source bytes to validate",
+      "processed_cursor": {
+        "accepted": 0,
+        "pdf_obtained": false
+      },
+      "result": "Normal public GET403; no bypass or candidate rows accepted.",
+      "retry_condition": "Public access recovery after24-hour backoff, or different independently reusable OEM source",
+      "next_action": "Retry only after backoff; verify rights, exact model identity and revision before extraction.",
+      "next_due_check": "2026-11-05T11:00:00Z"
+    },
+    {
+      "id": "epever_sheet_20261104T1100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.epever.com/upload/file/2109/EPEVER-Datasheet_UP-HI_220V.pdf",
+      "endpoint": "https://www.epever.com/upload/file/2109/EPEVER-Datasheet_UP-HI_220V.pdf",
+      "format": "PDF attempt; no bytes obtained",
+      "publication_cadence": "Unknown",
+      "last_release": null,
+      "last_attempt": "2026-11-04T11:09:09.829791+00:00",
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "licence_assessment": "No new rights inferred from failed access; exact document/revision must be reviewed before factual extraction",
+      "access_assessment": "HTTP Error 403: Forbidden",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "reviewed_technical_rows": 0
+      },
+      "fields_offered": [
+        "exact model electrical/mechanical/environmental tables ifpublic access recovers"
+      ],
+      "mapping": "Not integrated; no exact source bytes to validate",
+      "processed_cursor": {
+        "accepted": 0,
+        "pdf_obtained": false
+      },
+      "result": "Normal public GET403; no bypass or candidate rows accepted.",
+      "retry_condition": "Public access recovery after24-hour backoff, or different independently reusable OEM source",
+      "next_action": "Retry only after backoff; verify rights, exact model identity and revision before extraction.",
+      "next_due_check": "2026-11-05T11:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T12:22:33.426005+00:00",
+      "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T12:10:55.077352+00:00",
+      "etag": null,
+      "next_due_check": "2026-12-04T12:00:00Z",
+      "id": "inh_si_tables_20261104T1200",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.inhenergy.com/product/power-station-management?tp=4",
+      "endpoint": "Seven exact linked PDF URLs/checksums in20261104T1200_equipment_review.json",
+      "format": "PDF; offline Poppler72dpi right-table crop and reviewed layout adapter",
+      "version_or_date": "No printed release date;20260815URL date and PDFmetadata are not silently treated as effective date",
+      "licence_assessment": "OEM copyright retained; selected attributed factual technical metadata, no open bulk grant or document/artwork/prose redistribution. Public privacy policy reviewed.",
+      "access_assessment": "Seven current PDFs200, all rendered and visually checked. Legacy still-linked33–60PDF200 separately compared, not duplicate accepted columns.",
+      "estimated_useful_yield": {
+        "current_exact_columns_reviewed": 35,
+        "accepted_new": 35,
+        "whole_records_held": 0,
+        "field_hold_groups": 5
+      },
+      "fields_offered": [
+        "active AC W",
+        "AC current",
+        "maximum PV voltage",
+        "separate access/input PV power",
+        "efficiencies",
+        "weight",
+        "temperature",
+        "IP",
+        "standard vs optional warranty",
+        "qualified MPPT/cooling/interfaces"
+      ],
+      "mapping": "pv_catalogue.inhenergy + scripts/stage_pv_inhenergy.py; existing upsert API",
+      "processed_cursor": {
+        "tables_completed": 7,
+        "accepted_models": [
+          "SI-3K-S2",
+          "SI-3.3K-S2",
+          "SI-3.6K-S2",
+          "SI-4K-S2",
+          "SI-4.6K-S2",
+          "SI-5K-S2",
+          "SI-6K-S2",
+          "SI-7K-S2",
+          "SI-8K-S2",
+          "SI-9K-S2",
+          "SI-10K-S2",
+          "SI-3K-T2",
+          "SI-4K-T2",
+          "SI-5K-T2",
+          "SI-6K-T2",
+          "SI-8K-T2",
+          "SI-10K-T2",
+          "SI-12K-T2",
+          "SI-13K-T2",
+          "SI-15K-T2",
+          "SI-17K-T2",
+          "SI-20K-T2",
+          "SI-22K-T2",
+          "SI-23K-T2",
+          "SI-25K-T2",
+          "SI-27K-T2",
+          "SI-30K-T2",
+          "SI-33K-T2",
+          "SI-36K-T2",
+          "SI-40K-T2",
+          "SI-45K-T2",
+          "SI-50K-T2",
+          "SI-60K-T2",
+          "SI-70K",
+          "SI-80K"
+        ],
+        "selected_tables_exhausted": true,
+        "legacy_duplicate_tables": 1
+      },
+      "result": "35new exact models; one new OEM. SixMPPT counts,sevencooling values,sixdimension/standards cases andnineweights withheld; table-wide merged cells stay explicitly table-scoped. No variants invented.",
+      "retry_condition": "Changed exact edition or independent manufacturer clarification of held fields; do not repeat complete tables hourly",
+      "next_action": "Resolve source-specific merged SI13–30 weight cell edges and contradictory MPPT/cooling wording; inspect next distinct hybrid source only after rights/version review",
+      "transport_metadata": [
+        {
+          "source_id": "inh_si_40_20261104T1200",
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI33.3KS2.pdf",
+          "status": 200,
+          "retrieved_at": "2026-11-04T12:28:04.730387+00:00",
+          "etag": "\"6a804881-2a975f\"",
+          "last_modified": "Sat, 15 Aug 2026 11:07:45 GMT",
+          "content_length": "2791263"
+        },
+        {
+          "source_id": "inh_si_11_20261104T1200",
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI3.66KS2.pdf",
+          "status": 200,
+          "retrieved_at": "2026-11-04T12:28:04.731482+00:00",
+          "etag": "\"6a8048db-32fc8c\"",
+          "last_modified": "Sat, 15 Aug 2026 11:09:15 GMT",
+          "content_length": "3341452"
+        },
+        {
+          "source_id": "inh_si_13_20261104T1200",
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI710KS2.pdf",
+          "status": 200,
+          "retrieved_at": "2026-11-04T12:28:04.735052+00:00",
+          "etag": "\"6a804937-46575b\"",
+          "last_modified": "Sat, 15 Aug 2026 11:10:47 GMT",
+          "content_length": "4609883"
+        },
+        {
+          "source_id": "inh_si_12_20261104T1200",
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI312KT2.pdf",
+          "status": 200,
+          "retrieved_at": "2026-11-04T12:28:12.351196+00:00",
+          "etag": "\"6a804ae2-54dc83\"",
+          "last_modified": "Sat, 15 Aug 2026 11:17:54 GMT",
+          "content_length": "5561475"
+        },
+        {
+          "source_id": "inh_si_14_20261104T1200",
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI1330KT2-200.pdf",
+          "status": 200,
+          "retrieved_at": "2026-11-04T12:28:12.358930+00:00",
+          "etag": "\"6a804b53-c20bb7\"",
+          "last_modified": "Sat, 15 Aug 2026 11:19:47 GMT",
+          "content_length": "12716983"
+        },
+        {
+          "source_id": "inh_si_17_20261104T1200",
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI3360KT2.pdf",
+          "status": 200,
+          "retrieved_at": "2026-11-04T12:28:12.353329+00:00",
+          "etag": "\"6a804bc1-465ebd\"",
+          "last_modified": "Sat, 15 Aug 2026 11:21:37 GMT",
+          "content_length": "4611773"
+        },
+        {
+          "source_id": "inh_si_42_20261104T1200",
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI7080K.pdf",
+          "status": 200,
+          "retrieved_at": "2026-11-04T12:28:17.973969+00:00",
+          "etag": "\"6a804c22-1fa444\"",
+          "last_modified": "Sat, 15 Aug 2026 11:23:14 GMT",
+          "content_length": "2073668"
+        }
+      ],
+      "source_captures": [
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI33.3KS2.pdf",
+          "sha256": "d80ee296456df74e41af8cc5d1c88c2263b6c5b7e070415519fa52279331eb16",
+          "retrieved_at": "2026-11-04T12:10:48.539272+00:00",
+          "bytes": 2791263,
+          "etag": "\"6a804881-2a975f\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI3.66KS2.pdf",
+          "sha256": "56ca4adfd6af7a9d84631843e427558e024d6e06e52ade8ea69febd63ef42053",
+          "retrieved_at": "2026-11-04T12:10:48.832115+00:00",
+          "bytes": 3341452,
+          "etag": "\"6a8048db-32fc8c\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI710KS2.pdf",
+          "sha256": "0a4cf4ba114919e0d0b1047580d149eb464d2f047668997f4b44b2030d892f12",
+          "retrieved_at": "2026-11-04T12:10:48.744396+00:00",
+          "bytes": 4609883,
+          "etag": "\"6a804937-46575b\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI312KT2.pdf",
+          "sha256": "4ad637ed9689c6e775043cb0fef033a55838199a5115c654bb561f7741f91025",
+          "retrieved_at": "2026-11-04T12:10:48.747721+00:00",
+          "bytes": 5561475,
+          "etag": "\"6a804ae2-54dc83\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI1330KT2-200.pdf",
+          "sha256": "372b5336769960321811c6b4307bf31fa4cec5a2c6232ab9dc5f33f435fd599e",
+          "retrieved_at": "2026-11-04T12:10:54.735369+00:00",
+          "bytes": 12716983,
+          "etag": "\"6a804b53-c20bb7\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI3360KT2.pdf",
+          "sha256": "3f5a0a9c980b6606adf00fd1efe0b51f5a85182977bf762dd819a05d5c0c5871",
+          "retrieved_at": "2026-11-04T12:10:55.077352+00:00",
+          "bytes": 4611773,
+          "etag": "\"6a804bc1-465ebd\""
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI7080K.pdf",
+          "sha256": "e6ee3142471bbfd7245c3334d492c771e19dcf809ecece4395c1a1dc5024d046",
+          "retrieved_at": "2026-11-04T12:10:54.669561+00:00",
+          "bytes": 2073668,
+          "etag": "\"6a804c22-1fa444\""
+        }
+      ]
+    },
+    {
+      "last_attempt": "2026-11-04T12:22:33.426005+00:00",
+      "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T12:08:11.196367+00:00",
+      "etag": null,
+      "next_due_check": "2026-12-04T12:00:00Z",
+      "id": "kstar_gsc24mh_20261104T1200",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.kstarnewenergy.com/support.html",
+      "endpoint": "https://www.kstarnewenergy.com/DOWNLOADS/Datasheet_GSC24-MH_EN_V1.pdf",
+      "format": "PDF",
+      "licence_assessment": "Selected factual specifications only; OEM copyright retained, no open-content grant assumed",
+      "access_assessment": "200; original checksum in source register and downloads ledger; rendered page2 reviewed",
+      "estimated_useful_yield": {
+        "exact_models_reviewed": 1,
+        "accepted": 1
+      },
+      "fields_offered": [
+        "DC operating envelope",
+        "physical/environment",
+        "monitoring",
+        "power source",
+        "RS485/ModbusRTU"
+      ],
+      "mapping": "ExactGSC24-MH, existing KSTAR canonical manufacturer reviewed; no configurable input-current SKUs",
+      "processed_cursor": {
+        "exact_table_complete": true
+      },
+      "result": "Onecombiner accepted alongside35newINH models. Five selectedKSTARinverter PDFs rechecked but already substantively populated; zero repeat observations counted.",
+      "retry_condition": "Changed exact source or fixed configuration clarifying optional current",
+      "next_action": "Seek another exact OEM combiner/trackermodel table; do not invent GSC configurations",
+      "sha256": "3a90fb4d06ef6e9da8b4c4021d68577f3f1600558a69c51298a9b2b20547efa1",
+      "checksum_scope": "Original successful source bytes, not error response"
+    },
+    {
+      "last_attempt": "2026-11-04T12:22:33.426005+00:00",
+      "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
+      "last_release": "2025reportingyear, public current landing verified4Nov2026",
+      "last_retrieval": "2026-11-04T12:09:02.870803+00:00",
+      "etag": null,
+      "next_due_check": "2027-01-04T12:00:00Z",
+      "id": "denmark_ept_2025_20261104T1200",
+      "country": "DNK",
+      "entity": "projects",
+      "source_url": "https://ens.dk/analyser-og-statistik/data-oversigt-over-energisektoren",
+      "endpoint": "https://ens.dk/media/7198/download",
+      "format": "XLSX; unit andplant tables",
+      "licence_assessment": "https://ens.dk/om-os/datapolitik permits free electronic copying of nonimage material with Energistyrelsen attribution and no content distortion. No grant applied to a different map publisher.",
+      "access_assessment": "Both workbooks200 and checksummed; unit schema and all2916 unit technology labels screened",
+      "estimated_useful_yield": {
+        "unit_rows_screened": 2916,
+        "solar_label_rows": 152,
+        "explicit_pv_rows": 0,
+        "accepted": 0,
+        "rejected_non_pv": 152
+      },
+      "fields_offered": [
+        "plant/unit IDs",
+        "electric and heat capacities",
+        "commissioning/closure",
+        "source technology"
+      ],
+      "mapping": "Discovery-only; Solvarme144 and VarmepumpeSolvarme8 are heat technologies, never PV",
+      "processed_cursor": {
+        "technology_column_complete": true,
+        "pv_cohort_exhausted": true,
+        "private_or_company_fields_not_republished": true
+      },
+      "result": "0PV eligible.152solar-labelled units rejected as thermal/heat-pump; no projects or adapter integrated. Plant-level fuel shares do not prove PV.",
+      "retry_condition": "New source adding explicitPV or separately licensed truePV layer",
+      "next_action": "Move to Store solcelleanlæg layer via official Sol-og-Vindinfo metadata; establish aggregate/address boundary, stable public identity, reuse and capacity basis first",
+      "sha256": "365f82f477158f8f62d61457793a0a0901dc92f0d205faf9e71d02ce1818c343",
+      "checksum_scope": "Original successful source bytes, not error response"
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
+      "last_release": null,
+      "last_retrieval": null,
+      "etag": null,
+      "next_due_check": "2026-11-05T13:00:00Z",
+      "id": "denmark_pv_map_20261104T1200",
+      "country": "DNK",
+      "entity": "projects",
+      "source_url": "https://ens.dk/energikilder/solenergi",
+      "endpoint": "https://gisp.bpst.dk/ve/wfs",
+      "format": "Public map landing and official guide only; no feature rows",
+      "licence_assessment": "ENS attribution terms cannot automatically license separate Plan- og Landdistriktsstyrelsen service; dataset-specific metadata/rights unverified",
+      "access_assessment": "ENSsolar landing200, mapHTML200, officialguide200. Guide exposes WFS entry point https://www.plandata.dk/webservices/introduktion-til-webservices/wfs ; not tested/integrated.",
+      "estimated_useful_yield": {
+        "estimated_project_opportunities": "Potential50–150 larger assets, unverified planning estimate only",
+        "features_reviewed": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "capacity>1MW",
+        "gridconnectiondate",
+        "location",
+        "same-address aggregate warning"
+      ],
+      "mapping": "Exact ve:store_solcelleanlaeg confirmed inWFS/WMS; EPSG25832; DescribeFeatureType onlygeometry,kommune,mw,netdato,metode; no plantname orstableprojectID property",
+      "processed_cursor": {
+        "capabilities_and_schema_reviewed": true,
+        "feature_queries": 0
+      },
+      "result": "Originalinstallationlayer has noMetadataURL/abstract rights declaration incheckedcapabilities. MunicipalplanningCCBY doesnotapplyautomatically. Schema lacksnamedprojectID andsameaddressaggregates remain. Nofeatureingestion.",
+      "retry_condition": "Verify official layer metadata, licence, revision and representative public IDs before first bounded feature partition",
+      "next_action": "Obtain layer-specific rights/version and stablegenerating-asset identity definition before first feature partition; municipalplanning separately stagedunderexplicitCCBY"
+    },
+    {
+      "last_attempt": "2026-11-04T12:22:33.426005+00:00",
+      "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
+      "last_release": null,
+      "last_retrieval": null,
+      "etag": null,
+      "next_due_check": "2026-11-05T12:00:00Z",
+      "id": "finland_energiavirasto_20261104T1200",
+      "country": "FIN",
+      "entity": "projects",
+      "source_url": "https://energiavirasto.fi/toimitusvarmuus",
+      "endpoint": "https://energiavirasto.fi/toimitusvarmuus",
+      "format": "HTML attempt; registry workbook not obtained",
+      "licence_assessment": "Dataset reuse not yet verified; no suitable grant inferred from public index",
+      "access_assessment": "OrdinaryGET403; no login, challenge bypass or guessed workbook import",
+      "estimated_useful_yield": {
+        "rows_reviewed": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "Potential explicitPV inverter/AC capacity and stable plant identities, not yet obtained"
+      ],
+      "mapping": "Discovery only",
+      "processed_cursor": {
+        "rows": 0
+      },
+      "result": "403blocks originalpublic landing. Secondary references not accepted as registry evidence.",
+      "retry_condition": "Public recovery after24hbackoff or independently public official distribution",
+      "next_action": "Afterbackoff verify exact official registry link, date, licence and photovoltaic classification; compareexistingFinnishGEM assets"
+    },
+    {
+      "last_attempt": "2026-11-04T12:22:33.426005+00:00",
+      "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
+      "last_release": null,
+      "last_retrieval": null,
+      "etag": null,
+      "next_due_check": "2026-11-05T12:00:00Z",
+      "id": "castilla_leon_gis_20261104T1200",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://idecyl.jcyl.es/geonetwork/srv/search?cl_maintenanceAndUpdateFrequency=monthly",
+      "endpoint": "https://idecyl.jcyl.es/geonetwork/srv/search?cl_maintenanceAndUpdateFrequency=monthly",
+      "format": "GeoNetwork public metadata searchHTML, no feature extraction",
+      "licence_assessment": "Exact layer licence/reuse terms not verified",
+      "access_assessment": "HTML200; indexed description names PV polygons and registry codes. No full data export attempted.",
+      "estimated_useful_yield": {
+        "feature_rows_reviewed": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "Potential registrationcode/name/kW/geometry; exact technology/phase andkW basis require review"
+      ],
+      "mapping": "Untestedsource, noadapter/integration",
+      "processed_cursor": {
+        "metadata_landing_only": true
+      },
+      "result": "Current promisedmetadata fields found; generic capacities are notAC/DC and digitizedPNOA2023 polygons do not establish currentoperation.",
+      "retry_condition": "Resolve exact metadataUUID, specific licence and source edition",
+      "next_action": "Use officialGeoNetwork search UI/API documentation to identify exact energy layer and its rights before querying a bounded cohort"
+    },
+    {
+      "last_attempt": "2026-11-04T12:22:33.426005+00:00",
+      "publication_cadence": "Not stated; use release/link metadata and conditional requests before any changed-byte download",
+      "last_release": "2025-02-26",
+      "last_retrieval": "2026-11-04T12:11:00.469585+00:00",
+      "etag": null,
+      "next_due_check": "2026-12-04T12:00:00Z",
+      "id": "viscofan_boe_20261104T1200",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2025-6960",
+      "endpoint": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2025-6960",
+      "format": "HTML administrative notice",
+      "licence_assessment": "BOEconditions effective28June2024 allow commercial/noncommercial extraction withattribution/link/date/noendorsement; notice reviewed separately from developer documents",
+      "access_assessment": "Noticeandterms200, checksum-pinned",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "enriched": 1,
+        "new": 0,
+        "whole_records_held": 0,
+        "capacity_heading_scope_hold": 1
+      },
+      "fields_offered": [
+        "panelMWp",
+        "exactequipmentcounts",
+        "estimatedbudget/currency/basis",
+        "grid/design context"
+      ],
+      "mapping": "Existing bdce45ee-9fd6-5447-bbf7-708bb7e478a0; exactViscofan/Cáseda/Navarra andoneGEMphase reviewed; not a3554-CE crosswalk",
+      "processed_cursor": {
+        "notice_factual_extraction_complete": true,
+        "five_canonical_fields_added": true
+      },
+      "result": "Oneexistingproject enriched with5canonical fields andqualified design/cost observations.45.045MWinstalled heading/45045kVA does not replace45MWac; case3554-CE remains unresolved.",
+      "retry_condition": "Later grantedpermit/as-built dossier or explicitidentityscope evidence",
+      "next_action": "Establish3554-CE smallCáseda asset grouping independently; do not merge intoViscofan based onproximity",
+      "sha256": "513016ad8b0f894b40a8c70d3de2ad8c9944a886d67b9bea7a6a0f39ac9aa2da",
+      "checksum_scope": "Original successful source bytes, not error response"
+    },
+    {
+      "id": "kenya_stats_20261104T1200",
+      "country": "KEN",
+      "entity": "projects",
+      "source_url": "https://www.epra.go.ke/statistics-0",
+      "endpoint": "https://www.epra.go.ke/statistics-0",
+      "format": "Official public HTML landing attempt",
+      "licence_assessment": "Facility-level reuse terms not verified; failed response is not licence evidence",
+      "access_assessment": "OrdinaryGET HTTP503; no bypass/login/contact/form",
+      "last_attempt": "2026-11-04T12:26:26.690240+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "publication_cadence": "Unknown; avoid hourly repeated failures",
+      "checksum_or_etag": null,
+      "estimated_useful_yield": {
+        "reviewed_facility_rows": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "Potential official generating-facility names,technology,licence IDs anddated capacity; not obtained"
+      ],
+      "mapping": "Not integrated; source-specific technology/lifecycle/identity/privacy andrights screening required",
+      "processed_cursor": {
+        "public_landing_attempt_only": true,
+        "facility_rows": 0
+      },
+      "result": "HTTP503 on newly selected official publisher route. No sourcefile obtained or plantfacts accepted. Ghana indexed provisional permits are historical, not operation; installation-contractor lists are not projects.",
+      "retry_condition": "Public service recovery or independent official distribution after24-hour backoff",
+      "next_action": "Verify rights/release and representative named generation-facility schema after recovery; no private contacts or Solar-only technology assumptions",
+      "next_due_check": "2026-11-05T12:30:00Z"
+    },
+    {
+      "id": "ghana_generation_20261104T1200",
+      "country": "GHA",
+      "entity": "projects",
+      "source_url": "https://energycom.gov.gh/regnew/index.php/Energy/loadRegister/Provisional%20Wholesale%20Supply%20and%20Generation%20License%20Holders",
+      "endpoint": "https://energycom.gov.gh/regnew/index.php/Energy/loadRegister/Provisional%20Wholesale%20Supply%20and%20Generation%20License%20Holders",
+      "format": "Official public HTML landing attempt",
+      "licence_assessment": "Facility-level reuse terms not verified; failed response is not licence evidence",
+      "access_assessment": "OrdinaryGET HTTP406; no bypass/login/contact/form",
+      "last_attempt": "2026-11-04T12:26:22.022855+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "publication_cadence": "Unknown; avoid hourly repeated failures",
+      "checksum_or_etag": null,
+      "estimated_useful_yield": {
+        "reviewed_facility_rows": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "Potential official generating-facility names,technology,licence IDs anddated capacity; not obtained"
+      ],
+      "mapping": "Not integrated; source-specific technology/lifecycle/identity/privacy andrights screening required",
+      "processed_cursor": {
+        "public_landing_attempt_only": true,
+        "facility_rows": 0
+      },
+      "result": "HTTP406 on newly selected official publisher route. No sourcefile obtained or plantfacts accepted. Ghana indexed provisional permits are historical, not operation; installation-contractor lists are not projects.",
+      "retry_condition": "Public service recovery or independent official distribution after24-hour backoff",
+      "next_action": "Verify rights/release and representative named generation-facility schema after recovery; no private contacts or Solar-only technology assumptions",
+      "next_due_check": "2026-11-05T12:30:00Z"
+    },
+    {
+      "id": "namibia_rss_20261104T1200",
+      "country": "NAM",
+      "entity": "projects",
+      "source_url": "https://www.ecb.org.na/regulatory-support-services/",
+      "endpoint": "https://www.ecb.org.na/regulatory-support-services/",
+      "format": "Official public HTML landing attempt",
+      "licence_assessment": "Facility-level reuse terms not verified; failed response is not licence evidence",
+      "access_assessment": "OrdinaryGET HTTP503; no bypass/login/contact/form",
+      "last_attempt": "2026-11-04T12:26:23.356188+00:00",
+      "last_release": null,
+      "last_retrieval": null,
+      "publication_cadence": "Unknown; avoid hourly repeated failures",
+      "checksum_or_etag": null,
+      "estimated_useful_yield": {
+        "reviewed_facility_rows": 0,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "Potential official generating-facility names,technology,licence IDs anddated capacity; not obtained"
+      ],
+      "mapping": "Not integrated; source-specific technology/lifecycle/identity/privacy andrights screening required",
+      "processed_cursor": {
+        "public_landing_attempt_only": true,
+        "facility_rows": 0
+      },
+      "result": "HTTP503 on newly selected official publisher route. No sourcefile obtained or plantfacts accepted. Ghana indexed provisional permits are historical, not operation; installation-contractor lists are not projects.",
+      "retry_condition": "Public service recovery or independent official distribution after24-hour backoff",
+      "next_action": "Verify rights/release and representative named generation-facility schema after recovery; no private contacts or Solar-only technology assumptions",
+      "next_due_check": "2026-11-05T12:30:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Unknown; do not redownload full sources hourly",
+      "last_release": "PRO EN20241210; standard/KL exact PDFs undated; URLdate not effective date",
+      "last_retrieval": "2026-11-04T13:03:56.103953+00:00",
+      "etag": null,
+      "id": "hypon_tables_20261104T1300",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.hypon.com/download.html",
+      "endpoint": [
+        "https://www.hypon.com/upload/file/2024/12/16/0b103237-00f6-422d-91d5-ee7f9a15bed4.pdf",
+        "https://www.hypon.com/upload/file/2024/12/16/b4fc17db-5c24-4152-877c-b5d9fa3fc4ef.pdf",
+        "https://www.hypon.com/upload/file/2024/06/12/8dead5a9-9897-4a75-8ae0-7237f529f979.pdf"
+      ],
+      "format": "Three exact OEMPDF tables, two image-only; manually transcribed andvisually reviewed",
+      "licence_assessment": "OEMcopyright retained; limited attributed factual metadata only. PublicLegalpage iscookies, not openlicence; no document/artwork/layout/promotionalprose redistributed.",
+      "source_captures": [
+        {
+          "source_id": "hyponpdf_20261104T1300",
+          "url": "https://www.hypon.com/upload/file/2024/12/16/0b103237-00f6-422d-91d5-ee7f9a15bed4.pdf",
+          "sha256": "79438efb97028ca1751d03d981dcc6d47cb8a56a1e7fb93abcb2a3e6090b6ce0",
+          "retrieved_at": "2026-11-04T13:03:06.924948+00:00"
+        },
+        {
+          "source_id": "hypon15_20261104T1300",
+          "url": "https://www.hypon.com/upload/file/2024/12/16/b4fc17db-5c24-4152-877c-b5d9fa3fc4ef.pdf",
+          "sha256": "268dff28325af0de550640cf201c8f4b490a27b7c4d9eb1124b97124067d881c",
+          "retrieved_at": "2026-11-04T13:03:56.103953+00:00"
+        },
+        {
+          "source_id": "hyponkl_20261104T1300",
+          "url": "https://www.hypon.com/upload/file/2024/06/12/8dead5a9-9897-4a75-8ae0-7237f529f979.pdf",
+          "sha256": "9a42f8717db6ab81161deafdcbbc9b74bc60a24836e61a56152b500c193607ed",
+          "retrieved_at": "2026-11-04T13:03:53.062194+00:00"
+        }
+      ],
+      "fields_offered": [
+        "activeW vs apparentVA",
+        "maximum/nominalDC",
+        "MPPT",
+        "outputcurrent",
+        "efficiencies",
+        "mechanical",
+        "environment",
+        "qualified optional functions"
+      ],
+      "estimated_useful_yield": {
+        "exact_columns_reviewed": 17,
+        "accepted_new": 17,
+        "whole_models_held": 0
+      },
+      "mapping": "Reviewed exact model arrays in20261104T1300_equipment_review.json; existingupsertAPI. BrandHypontech; not inferred corporatealias merge.",
+      "processed_cursor": {
+        "tables_complete": 3,
+        "accepted_models": [
+          "HPT-3000P",
+          "HPT-4000P",
+          "HPT-5000P",
+          "HPT-6000P",
+          "HPT-8000P",
+          "HPT-10KP",
+          "HPT-12KP",
+          "HPT-15KP",
+          "HPT-15K",
+          "HPT-17K",
+          "HPT-20K",
+          "HPT-25K",
+          "HPT-15KL",
+          "HPT-20KL",
+          "HPT-22KL",
+          "HPT-25KL",
+          "HPT-30KL"
+        ],
+        "selected_tables_exhausted": true
+      },
+      "result": "17newexactmodels; one newbrand. EightPROIPfields held for originalcertificate/edition review; HPT30KL malformed apparentpowercell not repaired; HPT25Kfamily/table PV limit staysqualified.",
+      "retry_condition": "Newexactrevision or independently obtained matchingcertificate/identityclarification",
+      "next_action": "Resolve original PROcertificate and HPT10KP/HPT10000P alias/hardware scope beforeIP/certification fields; inspect another distinct OEMsource",
+      "next_due_check": "2026-12-04T13:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Unknown; do not redownload full sources hourly",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T12:10:55.077352+00:00",
+      "etag": null,
+      "id": "inh_surge_enrichment_20261104T1300",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.inhenergy.com/",
+      "endpoint": [
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI312KT2.pdf",
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI1330KT2-200.pdf",
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI3360KT2.pdf",
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20260815/SI7080K.pdf"
+      ],
+      "format": "Four pinned originalPDF tables reused",
+      "licence_assessment": "Prior exactsource factual-extraction basis unchanged; no new fullsource copying",
+      "fields_offered": [
+        "AC/DC surgeprotection presence, unspecifiedtype/ratings"
+      ],
+      "estimated_useful_yield": {
+        "reviewed_models": 24,
+        "enriched": 24,
+        "fields_added": 24
+      },
+      "mapping": "Exact existing manufacturer/model/sourceID matches; missing surge_protection only; no rating/type inference",
+      "processed_cursor": {
+        "completed_models": [
+          "SI-3K-T2",
+          "SI-4K-T2",
+          "SI-5K-T2",
+          "SI-6K-T2",
+          "SI-8K-T2",
+          "SI-10K-T2",
+          "SI-12K-T2",
+          "SI-13K-T2",
+          "SI-15K-T2",
+          "SI-17K-T2",
+          "SI-20K-T2",
+          "SI-22K-T2",
+          "SI-23K-T2",
+          "SI-25K-T2",
+          "SI-27K-T2",
+          "SI-30K-T2",
+          "SI-33K-T2",
+          "SI-36K-T2",
+          "SI-40K-T2",
+          "SI-45K-T2",
+          "SI-50K-T2",
+          "SI-60K-T2",
+          "SI-70K",
+          "SI-80K"
+        ]
+      },
+      "result": "24missing protectionfields filled. Allfour ETagconditional requests304; originalbytes andimmutable sourceentries reused.",
+      "retry_condition": "Changed source edition or other substantively missing reviewed fields",
+      "next_action": "Resolve earlier MPPT/cooling/dimension/weight holds with independent exact evidence, not repeated observations",
+      "next_due_check": "2026-12-04T13:00:00Z",
+      "last_metadata_check": "2026-11-04T13:14:15.166963+00:00",
+      "source_captures": [
+        {
+          "source_id": "inh_si_12_20261104T1200",
+          "sha256": "4ad637ed9689c6e775043cb0fef033a55838199a5115c654bb561f7741f91025",
+          "retrieved_at": "2026-11-04T12:10:48.747721+00:00"
+        },
+        {
+          "source_id": "inh_si_14_20261104T1200",
+          "sha256": "372b5336769960321811c6b4307bf31fa4cec5a2c6232ab9dc5f33f435fd599e",
+          "retrieved_at": "2026-11-04T12:10:54.735369+00:00"
+        },
+        {
+          "source_id": "inh_si_17_20261104T1200",
+          "sha256": "3f5a0a9c980b6606adf00fd1efe0b51f5a85182977bf762dd819a05d5c0c5871",
+          "retrieved_at": "2026-11-04T12:10:55.077352+00:00"
+        },
+        {
+          "source_id": "inh_si_42_20261104T1200",
+          "sha256": "e6ee3142471bbfd7245c3334d492c771e19dcf809ecece4395c1a1dc5024d046",
+          "retrieved_at": "2026-11-04T12:10:54.669561+00:00"
+        }
+      ]
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Unknown; do not redownload full sources hourly",
+      "last_release": "Live database; per-plan datoopdt retained, response timestamps2026-11-04",
+      "last_retrieval": "2026-11-04T13:17:13.365906+00:00",
+      "etag": null,
+      "id": "denmark_adopted_pv_plans_20261104T1300",
+      "country": "DNK",
+      "entity": "projects",
+      "source_url": "https://www.plandata.dk/webservices",
+      "endpoint": "https://geoserver.plandata.dk/geoserver/wfs",
+      "format": "WFS2JSON explicitpublicpropertyprojection; adoptedmunicipalplanlayer",
+      "licence_assessment": "CC BY4.0 explicitly applies municipal planning layers perofficialwebservicespolicy; not automatically thepartnerinstallationlayer orlinkedPDFs.",
+      "source_captures": [
+        {
+          "source_id": "planning_pv_20261104T1300",
+          "url": "https://geoserver.plandata.dk/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=pdk%3Atheme_pdk_lokalplan_vedtaget_solcelle&count=20&startIndex=0&outputFormat=application%2Fjson&propertyName=planid%2Cplannr%2Cplannavn%2Ckomnr%2Cdatovedt%2Cstatus%2Cdatoopdt%2Canvspec1%2Canvspec2%2Canvspec3%2Canvspec4%2Canvspec5%2Canvspec6%2Canvspec7%2Canvspec8%2Canvspec9%2Canvspec10%2Cplankap1%2Cplankap2%2Cplankap3%2Cplankap4%2Cplankap5%2Cplankap6%2Cplankap7%2Cplankap8%2Cplankap9%2Cplankap10&sortBy=planid+A&cql_filter=%28anvspec1%3D8135+OR+anvspec2%3D8135+OR+anvspec3%3D8135+OR+anvspec4%3D8135+OR+anvspec5%3D8135+OR+anvspec6%3D8135+OR+anvspec7%3D8135+OR+anvspec8%3D8135+OR+anvspec9%3D8135+OR+anvspec10%3D8135%29",
+          "sha256": "586b33713db10b1fd89dddea02184afa573384e20f405ed83967fbc4165d1686",
+          "retrieved_at": "2026-11-04T13:15:36.985270+00:00"
+        },
+        {
+          "source_id": "planning_pv_rest_20261104T1300",
+          "url": "https://geoserver.plandata.dk/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=pdk%3Atheme_pdk_lokalplan_vedtaget_solcelle&count=100&startIndex=0&outputFormat=application%2Fjson&propertyName=planid%2Cplannr%2Cplannavn%2Ckomnr%2Cdatovedt%2Cstatus%2Cdatoopdt%2Canvspec1%2Canvspec2%2Canvspec3%2Canvspec4%2Canvspec5%2Canvspec6%2Canvspec7%2Canvspec8%2Canvspec9%2Canvspec10%2Cplankap1%2Cplankap2%2Cplankap3%2Cplankap4%2Cplankap5%2Cplankap6%2Cplankap7%2Cplankap8%2Cplankap9%2Cplankap10&sortBy=planid+A&cql_filter=%28anvspec1%3D8135+OR+anvspec2%3D8135+OR+anvspec3%3D8135+OR+anvspec4%3D8135+OR+anvspec5%3D8135+OR+anvspec6%3D8135+OR+anvspec7%3D8135+OR+anvspec8%3D8135+OR+anvspec9%3D8135+OR+anvspec10%3D8135%29+AND+planid%3E10777688",
+          "sha256": "55adb589d1f739c6911bd148048763d95dc2b83dcb237937b4a4b76515dcb0de",
+          "retrieved_at": "2026-11-04T13:17:13.365906+00:00"
+        },
+        {
+          "source_id": "planning_crosswalk_20261104T1300",
+          "url": "https://geoserver.plandata.dk/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=pdk%3Atheme_pdk_lokalplan_vedtaget_solcelle&count=3&outputFormat=application%2Fjson&cql_filter=planid+IN+%2811172509%2C11249009%2C9573950%29&srsName=EPSG%3A25832&propertyName=planid%2Cplannavn%2Ckomnr%2Cdatovedt%2Cstatus%2Cdatoopdt%2Cgeometri",
+          "sha256": "1e05bc714f33e4b400c2315505318be892a4c08234e998e1393caf049330dec9",
+          "retrieved_at": "2026-11-04T13:19:11.270023+00:00"
+        }
+      ],
+      "fields_offered": [
+        "administrativeplanID",
+        "PV use8135",
+        "publicplanname",
+        "municipalitycode",
+        "nativeadoption/update",
+        "review-onlyplanningcapacity"
+      ],
+      "estimated_useful_yield": {
+        "explicit_PV_plan_rows_structurally_screened": 94,
+        "project_associations_accepted": 3,
+        "remaining_identity_scope_holds": 91,
+        "new_projects": 0,
+        "capacity_acceptance": 0
+      },
+      "mapping": "pv_catalogue.plandata review-onlyreader; exact8135,statusV,whitelist,checksum,counts,IDs,dateguards; no automaticcanonicalrows",
+      "processed_cursor": {
+        "completed_explicit_pv_plan_ids": [
+          2268228,
+          2971772,
+          2993986,
+          2999663,
+          3003920,
+          3487198,
+          3543107,
+          9537063,
+          9537076,
+          9537079,
+          9573950,
+          9602419,
+          9636870,
+          9654855,
+          9701809,
+          9753425,
+          10062049,
+          10268216,
+          10716746,
+          10777688,
+          10777709,
+          10851304,
+          10937599,
+          10985487,
+          11021628,
+          11021662,
+          11168087,
+          11172509,
+          11193835,
+          11204057,
+          11232100,
+          11234628,
+          11235455,
+          11247245,
+          11249009,
+          11251296,
+          11252419,
+          11253108,
+          11253933,
+          11257371,
+          11265918,
+          11270630,
+          11270697,
+          11271399,
+          11280482,
+          11281539,
+          11282106,
+          11282107,
+          11282213,
+          11282400,
+          11284533,
+          11284586,
+          11285512,
+          11285634,
+          11292904,
+          11297603,
+          11299862,
+          11300042,
+          11300133,
+          11300140,
+          11300363,
+          11309238,
+          11330034,
+          11331575,
+          11339826,
+          11347018,
+          11352502,
+          11372098,
+          11425122,
+          11425131,
+          11426129,
+          11431483,
+          11453935,
+          11486879,
+          11654781,
+          11747288,
+          11846590,
+          11907094,
+          11912465,
+          11922494,
+          11922496,
+          11922502,
+          11938584,
+          11963344,
+          12085235,
+          12088198,
+          12107334,
+          12117485,
+          12121860,
+          12138157,
+          12160498,
+          12182008,
+          12185112,
+          12185383
+        ],
+        "max_plan_id": 12185383,
+        "remaining_matched_after_keyset": 0,
+        "source_scope": "94 explicit8135 adopted plans returned in two timestamped bounded partitions; not one atomic national PV inventory",
+        "next": "Originalplan/site/phase proof for91holds; proposals and futurechangedplanIDs are separate partitions"
+      },
+      "result": "94explicitPV-use adoptedplans staged. Three distinctive-name/alias andactual-polygon crosswalks add associatedplanobservations only. Allcapacities,projectstatuses,phases,dates andpoints preserved.44plans have native capacitycells,none acceptedaspower.",
+      "retry_condition": "Changed planIDs/datoopdt ororiginal site/phase evidence; no hourly repeated94-rowexport",
+      "next_action": "Resolve91held plan-to-site/phase crosswalks usingoriginal independently permittedplan evidence; proposals are a distinct futurepartition. Recheck keyset andsourceupdate before resuming.",
+      "next_due_check": "2026-11-05T13:00:00Z"
+    },
+    {
+      "last_attempt": "2026-11-04T13:23:33.167060+00:00",
+      "publication_cadence": "Unknown; do not redownload full sources hourly",
+      "last_release": "English EN02/2025; Spanishprinted2025-11, not URLfilename2025-10",
+      "last_retrieval": null,
+      "etag": null,
+      "id": "deger_source_review_20261104T1300",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.degerenergie.de/",
+      "endpoint": [
+        "https://www.degerenergie.de/wp-content/uploads/2025/12/DEGER-D100-DEGER-D80_EN_2025.pdf",
+        "https://degeriberica.com/wp-content/uploads/2026/03/2025-10-Ficha-Tecnica-DEGER-D18H-D25H-D60H-D80-D100-ES.pdf"
+      ],
+      "format": "OriginalEnglish andregionalSpanishPDFs",
+      "licence_assessment": "Regional https://degeriberica.com/aviso-legal/ explicitlyrequirespriorauthorization forcopy/distribution/adaptation; no grant assumed. OriginalOEMproductpage403 prevents independent currentterms review.",
+      "access_assessment": "TwoPDF200; sourceOEMproductpage403. No contactorform.",
+      "estimated_useful_yield": {
+        "distinct_models_reviewed": 5,
+        "held": 5,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "exactdual-axismodels",
+        "mechanicalenvelope",
+        "separatecomponentIPclasses",
+        "climatic/controlconditions"
+      ],
+      "mapping": "Noimport; do not blendregional editions,repair anomalous cells orallocate componentmass/IP towholeunit",
+      "processed_cursor": {
+        "source_documents_reviewed": 2,
+        "models_held": [
+          "D18H",
+          "D25H",
+          "D60H",
+          "D80",
+          "D100"
+        ]
+      },
+      "result": "OriginalPDFaccess recovered throughnewpublicindexedDecemberpath; doesnotresolve source-specificreuse orregional engineering differences. Zeroequipment accepted.",
+      "retry_condition": "Suitable independently verified source-specificreuse andexactedition/configuration scope",
+      "next_action": "ResolveoriginalOEMrights andexactversion before technicalingestion; do not repeatedly retry regionalconsenthold",
+      "next_due_check": null
     }
   ],
   "source_refresh_queue": [

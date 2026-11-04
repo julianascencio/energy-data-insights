@@ -1,0 +1,110 @@
+{
+  "source": "https://idena.navarra.es/descargas/ENERGI_Pol_PSolar.zip",
+  "metadata": "https://datos.gob.es/es/catalogo/a15002917-plantas-solares-fotovoltaicas-en-servicio1",
+  "licence": "CC BY 4.0 explicitly in embedded layer metadata; attribution: Información geográfica propiedad del Gobierno de Navarra.",
+  "metadata_citation_date": "2026-05-19",
+  "dbf_last_update": "2026-10-06",
+  "date_scope_note": "Catalogue modification15April2026 differs from embedded citation19May and DBF header6October. None establishes current operation or effective date for every row; preserve separately.",
+  "raw_rows": 59,
+  "accepted": 0,
+  "structurally_screened": 59,
+  "fully_reconciled": 0,
+  "fields": [
+    {
+      "name": "FEATURE",
+      "type": "N",
+      "width": 7,
+      "declared_decimals": 0
+    },
+    {
+      "name": "NOMBRE",
+      "type": "C",
+      "width": 40,
+      "declared_decimals": 0
+    },
+    {
+      "name": "PROMOTOR",
+      "type": "C",
+      "width": 50,
+      "declared_decimals": 0
+    },
+    {
+      "name": "POT_MW",
+      "type": "F",
+      "width": 6,
+      "declared_decimals": 5
+    },
+    {
+      "name": "PUESTSERV",
+      "type": "N",
+      "width": 11,
+      "declared_decimals": 0
+    },
+    {
+      "name": "EXPEDIENTE",
+      "type": "C",
+      "width": 50,
+      "declared_decimals": 0
+    },
+    {
+      "name": "RAIPEE",
+      "type": "C",
+      "width": 254,
+      "declared_decimals": 0
+    },
+    {
+      "name": "DIA",
+      "type": "C",
+      "width": 254,
+      "declared_decimals": 0
+    },
+    {
+      "name": "EVACUACION",
+      "type": "C",
+      "width": 254,
+      "declared_decimals": 0
+    },
+    {
+      "name": "GEOM_AREA",
+      "type": "F",
+      "width": 19,
+      "declared_decimals": 2
+    },
+    {
+      "name": "GEOM_PERI",
+      "type": "F",
+      "width": 19,
+      "declared_decimals": 2
+    },
+    {
+      "name": "BEGINLIFE",
+      "type": "C",
+      "width": 10,
+      "declared_decimals": 0
+    }
+  ],
+  "feature_unique_values": 1,
+  "feature_identity_note": "FEATURE is described as a SITNA feature/model identifier and is constant across all59 rows; it must never be used as a unique canonical plant ID.",
+  "distinct_nonempty_case_references": 57,
+  "duplicate_case_reference_rows": 3,
+  "repeated_name_rows": 0,
+  "exact_existing_name_flags": 0,
+  "nonpositive_or_invalid_power_row_locators": [],
+  "fields_offered": [
+    "panel-sum MW; not net/export power",
+    "service year with scope review",
+    "case references",
+    "RAIPEE text may be generic/grouped rather than ID",
+    "grid connection text",
+    "polygon geometry and calculated area",
+    "insertion date, not commissioning"
+  ],
+  "privacy": "PROMOTOR can be company or natural person; no names/contacts/addresses or owner inference committed.",
+  "processed_cursor": {
+    "zip_downloaded": true,
+    "structural_partition": "all59 DBF rows",
+    "canonical_acceptance": false,
+    "next_partition": "rows1-20; reviewed case/phase identities and private-promoter exclusion before upsert"
+  },
+  "next_action": "Use the pinned CC BY4 layer for a tested source-specific DBF/shape reader; manually reconcile first20 case/phase identities against GEM/canonical records. Preserve panel-sum capacity scope, effective-date uncertainty and RAIPEE groups; no FEATURE IDs or polygon centroids as exact plant points."
+}
