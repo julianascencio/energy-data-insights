@@ -2,7 +2,7 @@
   "started_at_utc": "2026-11-04T13:01:20Z",
   "checked_at_utc": "2026-11-04T13:30:56.983616+00:00",
   "elapsed_minutes": 29.62,
-  "source_research_and_reconciliation": "About28productive minutes; validation overlappedfrom13:12. All3selectedOEMtables and94adoptedPVplanrows processed; remaining holds require independent identity/rights/edition evidence.",
+  "source_research_and_reconciliation": "About 28 productive minutes; validation overlapped from 13:12. All three selected OEM tables and 94 adopted PV-plan rows processed; remaining holds require independent identity, rights or edition evidence.",
   "full_python_tests": 2249,
   "optional_skips": 5,
   "focused_tests": 35,
@@ -15,7 +15,7 @@
   "new_projects": 0,
   "new_technical_field_values": 298,
   "new_equipment_scalar_enrichments": 24,
-  "project_enrichment": "3associated-plan extension groups;7native/contextobservations each, not21scalarcapacity/lifecyclefields",
+  "project_enrichment": "Three associated-plan extension groups, seven native/context observations each; no canonical capacity or lifecycle scalar inferred.",
   "quarantine": 0,
   "held_plan_identities": 91,
   "held_tracker_models": 5,
@@ -39,7 +39,7 @@
     "sha256": "32a70c5be7cb095af6ff4ca66140e7d2ba69931c1a1edd76c8612bc91423a4ed"
   },
   "baseline_ci": "Python andDocumentation bothsuccess on0720baf3 verifiedfresh thisrun",
-  "new_remote_ci": "Notyetverified; do notborrowbaseline success",
+  "new_remote_ci": "Pending verification on final publication-evidence commit; baseline CI success is separate.",
   "logs_sha256": {
     "format.log": "5a3c98391e31cd753bd597fe56cc701e642ee74819c6b9b38c2abffe6dce0355",
     "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
@@ -58,5 +58,17 @@
     "docs.log": "d34dd1ad469c89a91a05afac3f92cd2d535a225ac8d252a9f2e80ef54ce986da",
     "snapshot.log": "38c1ca2ef7c129bc0177d646e1450855b5cebbd643c5b899ea2d5591275aa7f8"
   },
-  "publication": "Pendingexpectedheadnormal publication toPR142; keepopen/unmerged"
+  "publication": {
+    "accepted_data_commit": "3c264f19573091a08d85f3929de33bbe9fb44ebc",
+    "accepted_tree": "bf7587c45fc032f0144615028742e13b54df00e0",
+    "expected_parent": "0720baf33a30bc697168636acd4adc1b139cbac1",
+    "all_56_local_changed_files_match_remote_tree": true,
+    "main_rechecked": "7004215c89e6d4482a391577d321605860ae0f9a",
+    "pr_number": 142,
+    "pr_open_unmerged": true,
+    "non_force_expected_head_guard": true,
+    "verified_at_utc": "2026-11-04T13:37:02.539492+00:00",
+    "elapsed_minutes": 35.71,
+    "next_step": "Publish this validation evidence through the Contents API, verify its sole-file diff and final PR head, then inspect fresh CI."
+  }
 }
