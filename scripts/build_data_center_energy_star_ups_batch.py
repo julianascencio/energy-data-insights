@@ -99,6 +99,14 @@ PARTNER_BATCHES: dict[str, PartnerBatch] = {
         "retrieved_at": "2026-11-04T16:19:16Z",
         "include_maximum_configuration": True,
     },
+    "schneider_energy_star": {
+        "partner": "Schneider Electric",
+        "manufacturer": "Schneider Electric",
+        "name_prefix": None,
+        "expected_count": 222,
+        "retrieved_at": "2026-11-04T17:26:25Z",
+        "include_maximum_configuration": True,
+    },
 }
 DATASET_UPDATED = "2026-11-03T14:20:54Z"
 
