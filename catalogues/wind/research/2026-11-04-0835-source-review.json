@@ -1,0 +1,59 @@
+{
+  "batch": "2026-11-04-0835",
+  "france": {
+    "source_id": "odre-wind-20260831-20261104",
+    "original_sha256": "bb518f2ca66b38e7fe00db8131e6e6eb29e427784f510f1527aaaf3c72f3e2d0",
+    "national_rows": 2458,
+    "service_cohort": [
+      "2020-01-01",
+      "2021-12-31"
+    ],
+    "minimum_installed_kw": 1000,
+    "selected": 238,
+    "new_projects": 18,
+    "deferred": 220,
+    "outside_cohort": 2220,
+    "prior_first20_reviewed": 20,
+    "prior_first20_still_deferred": 20,
+    "generic_name_quarantine": "Hangar at Marcheville; no defensible wind-farm name",
+    "all_new_capacity_scopes_unresolved": true
+  },
+  "india": {
+    "source_id": "mnre-almm-wind-20260820",
+    "selected_entries": 30,
+    "new_equipment": 27,
+    "substantive_enrichment": 1,
+    "deferred": 1,
+    "nested_option": 1,
+    "independent_type_certificate_verification": false,
+    "quarantines": [
+      "SG3.4-145/3.6 Vayona versus existing Siemens Gamesa identity",
+      "No raw certificate date automatically parsed because mixed day/month and month/day formats",
+      "GE135.5m regional hub observation not substituted for OEM135m; equivalence unresolved",
+      "No certificate-issuer identity invented; registry claims in extensions, certifications_json left absent",
+      "No named blade/gearbox converted into independent equipment without exact maker/spec evidence"
+    ],
+    "earlier_revision": {
+      "url": "https://www.indianwindpower.com/wp-content/uploads/2026/04/ALMM-Wind.pdf",
+      "revision": "As on2April2026;31entries",
+      "sha256": "f1e1cacc916251bc382eefbc91d2e525ff829fc2e0a7cdb743af0111a66c0545",
+      "decision": "Discovery/comparison only; current batch uses original August list, no mixed-revision rows"
+    }
+  },
+  "download_attempts": [
+    {
+      "url": "https://energy.usgs.gov/arcgis/rest/services/Hosted/uswtdbDyn/FeatureServer?f=pjson",
+      "http_status": 403
+    },
+    {
+      "url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/11ec447d-698d-4ab8-977f-b424d5deee6a/download/siga-empreendimentos-geracao.csv",
+      "http_status": 503
+    },
+    {
+      "url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
+      "http_status": 503
+    }
+  ],
+  "download_classification": "HTTP download failures only; no authentication requirement or reuse restriction inferred",
+  "exclusions": "No new reuse exclusions. Previous restricted OEM documents remain excluded."
+}

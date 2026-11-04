@@ -54,6 +54,37 @@ def test_null_export_is_not_zero():
     assert stage(raw)[0][0]["export_capacity_mw"] == 0
 
 
+def test_bounded_cohort_keeps_other_years_in_identity_screen():
+    raw = inputs()
+    raw[0]["datemiseenservice"] = "01/01/2020"
+    options = dict(
+        source_id="fixture", now=NOW, service_start="2020-01-01", service_end="2021-12-31"
+    )
+    assert len(stage_inventory(raw, [], **options)[0]) == 1
+    raw[0]["datemiseenservice"] = "31/12/2021"
+    assert len(stage_inventory(raw, [], **options)[0]) == 1
+    other = deepcopy(raw[0])
+    other["codeeicresourceobject"] = "17W000000000002B"
+    other["datemiseenservice"] = "01/01/2024"
+    assert not stage_inventory([*raw, other], [], **options)[0]
+    raw[0]["datemiseenservice"] = "01/01/2022"
+    assert not stage_inventory(raw, [], **options)[0]
+
+
+@pytest.mark.parametrize("start,end", [("2021-01-01", "2020-12-31"), ("2020-01-01", "2027-01-01")])
+def test_invalid_service_bounds_fail(start, end):
+    with pytest.raises(ValueError, match="cohort"):
+        stage_inventory(
+            inputs(), [], source_id="fixture", now=NOW, service_start=start, service_end=end
+        )
+
+
+def test_generic_name_is_not_a_defensible_farm_identity():
+    raw = inputs()
+    raw[0]["nominstallation"] = "Hangar"
+    assert stage(raw)[1][0]["reasons"] == ["generic_name_requires_identity_review"]
+
+
 @pytest.mark.parametrize(
     "field,value",
     [

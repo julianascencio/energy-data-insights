@@ -65,6 +65,9 @@ See the :doc:`evidence guide <_generated/guides/wind-catalogue>` and
 :doc:`runnable gallery <auto_examples/database/plot_wind_catalogue>`.
 Counts describe research coverage, not market share. OEM specifications and
 manufacturer-calculated curves are not independently validated field performance.
+Regulatory model lists are dated observations, not proof of current eligibility.
+Open record details for certificate dates, outstanding issues, regional tower
+options and excluded operating modes. A list entry does not establish deployment.
 Coordinates retain source precision; missing coordinates are never geocoded.
 A map may include historical rows whose current status remains unverified.
 Dated lifecycle evidence and excluded project scopes are shown separately:

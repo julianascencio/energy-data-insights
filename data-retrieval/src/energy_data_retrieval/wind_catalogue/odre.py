@@ -46,15 +46,23 @@ def stage_inventory(
     source_id: str,
     now: str,
     snapshot: str = "2026-08-31",
+    service_start: str = "2022-01-01",
+    service_end: str | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Review every row; stage named onshore installations commissioned since 2022.
+    """Screen national identities and stage a bounded industrial-service cohort.
 
     This bounded cohort avoids automatically treating historical WRI municipality
     aggregates as modern EICs. Shared communes, repeated names, phase markers and
     prior name/commune candidates are held. No fuzzy merge, turbine count from
     nbGroupes, surveyed coordinates from administrative codes, or capacity factor.
     All accepted capacities remain excluded until farm/phase scope is reconciled.
+    Bounds are inclusive ISO dates; the default preserves the original 2022+
+    cohort. Filtering never removes other years from the national identity screen.
     """
+    start = datetime.strptime(service_start, "%Y-%m-%d").date().isoformat()
+    end = datetime.strptime(service_end or snapshot, "%Y-%m-%d").date().isoformat()
+    if start > end or end > snapshot:
+        raise ValueError("Service cohort must be ordered and within the snapshot")
     names = Counter(normal_name(r["nominstallation"] or "") for r in rows)
     communes = Counter(r["codeinseecommuneimplantation"] for r in rows)
     old = [r for r in existing if r["entity_type"] == "projects" and r.get("country_code") == "FRA"]
@@ -71,8 +79,12 @@ def stage_inventory(
         service = _date(raw["datemiseenservice"], snapshot)
         installed = raw["puismaxinstallee"]
         reasons = []
-        if not service or service < "2022-01-01" or installed is None or installed < 1000:
-            reasons.append("outside_2022_plus_ge1MW_service_cohort")
+        if not service or not start <= service <= end or installed is None or installed < 1000:
+            reasons.append(
+                "outside_2022_plus_ge1MW_service_cohort"
+                if service_start == "2022-01-01" and service_end is None
+                else "outside_selected_ge1MW_service_cohort"
+            )
         if raw["codetechnologie"] != "TERRE":
             reasons.append("not_explicit_onshore")
         if raw["nbinstallations"] != 1:
@@ -81,6 +93,8 @@ def stage_inventory(
             reasons.append("service_or_disconnection_requires_review")
         if not normalized or normalized in {"confidentiel", "prive"}:
             reasons.append("anonymous_or_missing_name")
+        if normalized in {"hangar", "eolienne", "eoliennes", "parc eolien"}:
+            reasons.append("generic_name_requires_identity_review")
         if not commune or commune.startswith(("97", "98")):
             reasons.append("missing_or_overseas_location")
         if communes[commune] > 1:

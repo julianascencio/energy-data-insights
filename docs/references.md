@@ -6679,3 +6679,27 @@ GE Vernova (2026). **GE Vernova 4.2 MW-117m turbine specification table**. [Sour
 **Role:** data. Dated source registry and original-byte checksum retained; factual normalized observations, not independent operational validation.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### mnre_almm_wind_20260820
+
+Ministry of New and Renewable Energy, Government of India (2026). **Approved List of Models and Manufacturer (ALMM) – Wind, as on20 August2026**. [Source](https://mnre.gov.in/static/uploads/2026/10/a87985436c1f6c562b4a5a67384c7a9b.pdf)
+
+**Role:** data. All30entries reviewed, pp1–4; original checksum in source registry. Listing does not imply certification, suitability or current eligibility.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### neoen_madon_moselle_20220524
+
+Neoen (2022). **Pays entre Madon et Moselle wind farm inauguration announcement**. [Source](https://neoen.com/fr/actualites/2022/neoen-inaugure-le-parc-du-pays-entre-madon-et-moselle-son-plus-grand-parc-eolien-en-france-396-mw/)
+
+**Role:** data. Primary page reviewed for identity follow-up; no explicit EIC/permit crosswalk. Candidates remain deferred. Original source bytes/checksum unavailable.
+
+**Used by:** `catalogues/wind/research/2026-11-04-0835-identity-followup.jsonl`.
+
+### lyon_enertrag_bourgogne_20240321
+
+Cour administrative d’appel de Lyon / Legifrance (2024). **CAA de Lyon,21 March2024,23LY03252: Cussy-les-Forges wind permit**. [Source](https://www.legifrance.gouv.fr/ceta/id/CETATEXT000049336411)
+
+**Role:** data. Primary page reviewed for identity follow-up; no explicit EIC/permit crosswalk. Candidates remain deferred. Original source bytes/checksum unavailable.
+
+**Used by:** `catalogues/wind/research/2026-11-04-0835-identity-followup.jsonl`.

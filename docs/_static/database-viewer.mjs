@@ -141,7 +141,7 @@ function render() {
       [number(inventory.lifecycleUnknown), "Lifecycle unknown", "Erected alone does not establish operation"]);
   } else if (isWind && tableName === "equipment") {
     summary.push([number(new Set(filtered.map(r => r.manufacturer).filter(Boolean)).size), "Manufacturers"],
-      [number(stats.known), "Metric reported"], [number(stats.missing), "Metric unknown"], [number(stats.mean), "Metric mean", fieldLabel(metric)]);
+      [number(stats.known), "Metric reported", "Specifications, not field performance"], [number(stats.missing), "Metric unknown", "See nested options and unresolved fields"], [number(stats.mean), "Metric mean", fieldLabel(metric)]);
   } else if (isDataCenter && tableName === "projects") {
     const scopes = dataCenterScopes(filtered);
     summary.push([number(scopes.facilities), "Facility records", `${scopes.phases} phase records · ${scopes.campuses} campus aggregates`],

@@ -1,47 +1,53 @@
 {
-  "batch": "2026-11-04-0735",
+  "batch": "2026-11-04-0835",
   "validated_base": "c21dd1713067f15adc8b12954c3b7147906a770e",
+  "iteration_parent": "eea7e052d81c60ddfc7b292dc88f13804dc0df07",
   "local": {
-    "focused_wind": "102 passed, including13 new ODRE adapter tests",
-    "pytest": "2173 passed,5 skipped in101.74s on refreshed main; zero failures/errors",
+    "pytest": "2177passed,5optional skipped in115.12s; zero failures/errors",
     "skip_reasons": "cdsapi unavailable(1); optional Python3.13 imagery integrations(4)",
-    "viewer": "15 passed on refreshed main",
-    "source_replay": "34 French records exactly replayed from complete2458-row checksum-pinned export;505 current-cohort deferrals and1919 outside-cohort rows retained",
-    "catalogue": "21746 records validated;7844projects267equipment13633turbines2curves",
-    "preservation": "All21711 preceding Wind records and prior source entries unchanged; all six capacity totals unchanged; PV/BESS/Data Center catalogue diff against refreshed main empty",
-    "snapshots": "Final corrected metadata rebuilt twice, all seven files byte-identical; four136-column typed Parquet tables allZSTD",
-    "quality": "Repository Ruff lint and format826files,ty,citations,hygiene3680files and whitespace checks passed",
-    "packages": "Three wheels and three sdists built on refreshed main",
-    "example": "Offline Wind gallery executed successfully",
-    "docs": "Strict Sphinx HTML with plot_gallery=0 completed successfully (exit0); full gallery execution not claimed",
-    "docs_links": "530 HTML pages checked; local links/assets resolve"
+    "adapter": "17ODRE tests passed, including4new cohort-boundary/national-screen/generic-name cases",
+    "viewer": "15passed",
+    "source_replay": "18accepted French records and all2458national decisions exactly replayed from original checksum-pinned bytes against published parent",
+    "catalogue": "21791records validated:7862projects294equipment13633turbines2curves",
+    "preservation": "21745prior Wind records unchanged; GErecord enriched additively; all prior scalar values, creation timestamps and source entries preserved; all6capacity totals unchanged; unrelated catalogues untouched",
+    "snapshots": "Two independent builds; all7files byte-identical; four136-column typed Zstandard Parquet tables",
+    "quality": "Repository Ruff lint/format826files,ty,citations,hygiene3687candidatefiles and whitespace checks passed",
+    "example": "Offline Wind gallery executed successfully with Agg backend",
+    "packages": "Three wheels and three sdists built",
+    "docs": "Strict Sphinx HTML passed with plot_gallery=0, including final bibliography refresh; full gallery execution not claimed",
+    "docs_links": "530HTML pages checked; local links/assets resolve",
+    "catalogue_cli": "CLI validation passed; final original manufacturing-entity provenance revalidated by both final snapshot builds"
   },
   "not_executed": [
     "Full gallery execution",
-    "New interactive browser smoke test"
+    "New interactive browser smoke test",
+    "Independent verification of original type certificates or current ALMM eligibility"
   ],
   "remote_ci": {
-    "status": "Pending publication; separate from local results"
-  },
-  "publication_reconciliation": {
-    "previous_pr": 132,
-    "previous_head": "8d434b3c8562308d9aa1fe2d8fff5a7f60393e30",
-    "observation": "PR132 merged externally while batch was validating; remote branch gained KSTAR UTF8repair and current main also incorporated PR131",
-    "action": "Checkpointed local batch, created new branch from current main and cleanly cherry-picked; no remote history overwritten",
-    "pre_reconciliation_results": "2153pass5skip15inheritedDataCenterUTF8errors; earlier strictdocs failedsamehook. Both replaced by successful current-main reruns."
+    "previous_published_commit": "eea7e052d81c60ddfc7b292dc88f13804dc0df07",
+    "previous_result": "Documentation and Python quality/tests workflows completed successfully",
+    "this_batch": "Pending publication; local results are not remote CI"
   },
   "research_blockers": [
-    "USGS API/ScienceBase and LBNL original attachments returned403; Minnesota historical mirror404",
-    "Vestas4MWbrochure excluded for explicit reuse restriction",
-    "Unresolved identities and farm/phase scope remain excluded from capacity totals"
+    "US official ArcGIS403; Brazil monthly CSV andmetadata503; no authentication/reuse inference",
+    "20earlier FrenchEICs stillheld;220new-cohort candidates held",
+    "Vayona/SGidentity continuity; GEregionalhub equivalence; mixed-format/conditional certificate dates"
   ],
+  "snapshot_sha256": {
+    "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
+    "equipment.parquet": "051a5dee3f970a36a10f5ef92479a6a8916fdecdc4746c96c85ff78e99004b91",
+    "manifest.json": "d968ae6650a427b58f3fae0fec21392ecd3d67fc3a3180160dd1b8cdb1713d03",
+    "projects.parquet": "704fdf9d3c989300dfe144c495ab5f82c8758d6ea3f37b3d45ac37c12996b95b",
+    "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
+    "sources.json": "04232f367a2f821e68af540be0ad25008f870af85cf392d45e52556c48696248",
+    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
+  },
   "log_sha256": {
-    "focused.log": "546eedf55461250504cf462c72051ec16440c8a4d508d0ee6da92b288e04369a",
-    "full-tests-current-main.log": "e37cdd0bad885990359f428bc19c9adb6f3914eed5b24cdd527a4ef3cd9a4e21",
-    "viewer-current.log": "bcf3717ec1713485fb8759279993f4f59263f309bf5b638ed3c5127cea7ad0aa",
-    "docs-final.log": "9f14a0cec591e2c8b98a6700dd3574df8dae1034d06556f552c60d849f529bfc",
-    "docs-links.log": "b02f7b128c9b79c2681ffff0fa0d0a4263ca5753cf57c87fcd28c4528299771a",
-    "packages-current.log": "831d0d2ab87881ecd0ebf122373d224990e2601af0278e7237c709734ec5847f",
-    "gallery.log": "f52975e19a34b604044a3a756ef759f1ed0bc0a55222d69e8850aa44228fbb71"
+    "pytest.log": "dd90378bf82dcb33de3825290867ca407a5e6a7fbc87a40c59e38eda256a1321",
+    "viewer.log": "ffa7310838e6c9fadb1e1e2fda640a9b43e6311c3e1976d70901c9f36d55f4d7",
+    "gallery.log": "783edf521e72285cda8459ab2e52194de7a507d4d6f855bf34302dfd99d1543a",
+    "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
+    "docs-final.log": "15abb023765b1c3cce6693ed301a1fafe7e60efc321daaa0517a6f4939591ec4",
+    "docs-links-final.log": "b02f7b128c9b79c2681ffff0fa0d0a4263ca5753cf57c87fcd28c4528299771a"
   }
 }
