@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-11-04T16:55:38.097302+00:00",
+  "equipment_candidates": 13,
+  "equipment_new": 0,
+  "equipment_enriched": 13,
+  "equipment_held": 0,
+  "whole_record_rejections": 0,
+  "new_conflicts": 0,
+  "reviewed_additive_upsert_collisions": 13,
+  "updated_ids": [
+    "484abc2e-8216-5e26-a7cb-baa6e1791927",
+    "93325f63-9f3b-5818-894e-de8054b89c11",
+    "a326d5fe-7b54-5453-8270-7e02fdf3c30f",
+    "3129d959-7fa1-5b03-a583-bdb24c57a79c",
+    "072e5f67-98ec-5efe-a253-ef84bb42c0ba",
+    "a3dfc796-e0f3-5250-a7dd-2a6291a99394",
+    "d7f6fd93-cfef-5a97-979e-5f94c6060da7",
+    "461a5bbb-6edf-5e27-b330-073846cb4dc6",
+    "ba57893c-83e9-562d-aa08-22dba9d49c73",
+    "a65be35b-9034-56ed-b5ff-eb1eb76fdf8e",
+    "108453ac-bc7b-564a-a829-344b59905b68",
+    "c3b335ab-45c2-5b25-8689-9408b61de7b3",
+    "52fea676-2876-5c36-8de3-6f25f0ac714b"
+  ],
+  "preservation": "2080priorprojects unchanged;911OEMrows unchanged;13enrichments preserve all prior facts andcreated_at",
+  "project_inventory_replay": 488,
+  "project_candidates_held": [
+    "SOVALIS",
+    "DrossOne stationary buffer",
+    "Hagersville",
+    "Sanjgon"
+  ],
+  "project_acceptance": 10,
+  "reason": "SOVALIS lacks site; DrossOne stationary portion unquantified; Boralex portfolio terms restrict reuse. No restricted portfolio imported.",
+  "controls": {
+    "standby_load_detection_w": [
+      2,
+      25
+    ],
+    "standby_load_detection_adjustment": "rcc 02/03, footnote (2)",
+    "overload_short_circuit_response": "Automatic disconnection with three restart attempts",
+    "overtemperature_response": "Warning before shutdown; automatic restart",
+    "charger_stages": [
+      "bulk",
+      "absorption",
+      "floating",
+      "equalization",
+      "reduced floating",
+      "periodic absorption"
+    ],
+    "charger_stage_adjustment": "rcc 02/03, footnote (2); no battery chemistry compatibility inferred",
+    "temperature_compensation_accessories": [
+      "bts 01",
+      "bsp 500",
+      "bsp 1200"
+    ],
+    "temperature_compensation_coefficient": null,
+    "optional_contacts": {
+      "module": "arm 02",
+      "contact_count": 2,
+      "included": false
+    },
+    "optional_remote_input": {
+      "module": "rcm 10",
+      "input_count": 1,
+      "included": false
+    },
+    "acoustic_level_db_bounds": {
+      "without_ventilation": {
+        "value": 40,
+        "qualifier": "less_than"
+      },
+      "with_ventilation": {
+        "value": 45,
+        "qualifier": "less_than"
+      },
+      "distance_and_weighting": "not specified; not inferred dBA"
+    },
+    "accessory_role": "Compatibility/options reported in each exact model block; not separate equipment records or included hardware"
+  },
+  "project_excluded_nonbattery": 3
+}
