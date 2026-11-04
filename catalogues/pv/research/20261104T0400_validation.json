@@ -1,0 +1,39 @@
+{
+  "baseline_commit": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
+  "catalogue_validation": "89729 unique accepted records; schema/field evidence passed",
+  "focused_pytest": {
+    "passed": 73,
+    "scope": [
+      "PV catalogue",
+      "Australia",
+      "REPD",
+      "new Catalonia parser"
+    ],
+    "new_parser_tests": 13
+  },
+  "wider_retrieval_pytest": {
+    "passed": 1525,
+    "skipped": 4,
+    "errors": 15,
+    "error_scope": "Unchanged Data Center catalogue fixture fails UTF-8 decoding of KSTAR EPOWER file; repair tracked separately in PR131",
+    "new_pv_failures": 0
+  },
+  "ruff": "passed",
+  "ruff_format": "823 files checked,passed",
+  "ty": "passed with explicit Python3.12 environment and installed xgboost import path",
+  "docs": {
+    "command": "sphinx -W --keep-going -b dummy -D plot_gallery=0",
+    "result": "1 unchanged toc.not_included warning: docs/_static/vendor/leaflet/README.md",
+    "examples_executed": false,
+    "note": "Initial environment had missing xgboost warnings; rerun with existing xgboost path leaves only the baseline Leaflet warning. No full HTML/gallery pass claimed."
+  },
+  "offline_pv_example": "passed on final65178-project catalogue; generated fresh temporary snapshot",
+  "parquet": "Five148-column typed tables; all ZSTD codecs, rowcounts and SHA256 verified",
+  "preservation": "34 existing changes limited to extensions/evidence and timestamps; all prior created_at/capacities/statuses retained;29 additions;no deletions",
+  "raw_sources": "OutsideGit under /dev/shm/raw0400, checksums in download ledger",
+  "root_disk": "100%full;isolated latest-main checkout and validation ran on separate /dev/shm volume",
+  "started_at": "2026-11-04T03:58:20+00:00",
+  "validation_completed_at": "2026-11-04T04:24:23.537728+00:00",
+  "elapsed_minutes_through_commit_preparation": 28.78,
+  "commit_prepared_at": "2026-11-04T04:27:06.993728+00:00"
+}

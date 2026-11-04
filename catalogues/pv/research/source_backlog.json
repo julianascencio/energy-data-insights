@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T02:03:55.375472+00:00",
+  "updated_at": "2026-11-04T04:17:13.903470+00:00",
   "ranking_file": "20261103T1800_top10_coverage.json",
-  "selection_note": "City of Karratha named FY2024 facility rows, Ergon remote portfolio and BENY disconnect tables.",
-  "next_highest_value_source": "REPD operational remainder; original authority decisions for multi-phase holds.",
+  "selection_note": "New source expansion: named Catalonia government PV register outranks repeat UK observations by identity availability, open reuse, project count, geography and useful fields. Nominal capacity is not inferred AC.",
+  "next_highest_value_source": "Catalonia ggx8-jkp4: remaining 208 groups, beginning named >=1 MW single-application plants, after metadata freshness check and national catalogue/phase reconciliation.",
   "sources": [
     {
       "id": "uk_repd",
@@ -6659,6 +6659,364 @@
       "retry_condition": "Recheck publication or new primary evidence.",
       "next_action": "Obtain decision and phase layout",
       "processed_cursor": "Extension identified; as-built mapping unresolved"
+    },
+    {
+      "id": "catalonia_named_pv_0400",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://analisi.transparenciacatalunya.cat/d/ggx8-jkp4",
+      "endpoint": "https://analisi.transparenciacatalunya.cat/resource/ggx8-jkp4.json?$limit=10000",
+      "metadata_endpoint": "https://analisi.transparenciacatalunya.cat/api/views/ggx8-jkp4.json",
+      "format": "Socrata JSON",
+      "publication_cadence": "Monthly",
+      "version_or_date": "Rows updated 2026-09-28T08:48:11Z",
+      "last_release": "2026-09-28T08:48:11Z",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "sha256": "df4f9164d0c047ee4b7fd63477699e0c5622cf045880670ab66aa9f6cd10eef5",
+      "metadata_sha256": "833b7caede748e43918fa227197ceb20689e4cf762d4768e7616b1caf1af0d7e",
+      "etag": null,
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "licence_assessment": "Llicència oberta d’ús d’informació - Catalunya; attribution and source update date retained; no sublicensing; no reversal of anonymization. Applicant/promoter omitted. Not the anonymous ICAEN arbg-m6sq annual inventory.",
+      "access_assessment": "Ordinary public GET: 358 source rows; checksum-pinned metadata/JSON. No login or forms.",
+      "estimated_useful_yield": {
+        "remaining_groups_not_accepted": 208,
+        "remaining_verified_yield": "unknown until natural identity/phase review"
+      },
+      "fields_offered": [
+        "application ID",
+        "named PV plant",
+        "nominal MW, AC/DC unspecified",
+        "plant area ha",
+        "municipal distribution",
+        "administrative and environmental status",
+        "environmental decision/date"
+      ],
+      "mapping": "pv_catalogue/catalonia.py stages only; manual decisions and existing upsert API accept canonical records. DATA_DICTIONARY.md documents mapping.",
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "result": "358 observations grouped into319 candidates;111 reviewed:29 new,34 enriched with536 native values,48 held.208 not reviewed.13 parser tests; no automatic acceptance/fuzzy merges.",
+      "retry_condition": "Recheck metadata rowsUpdatedAt before resume. Reuse unchanged pinned bytes; do not re-download full monthly export hourly. Resolve IDs/phases, zero/conflicting cells and geography discrepancies independently.",
+      "next_action": "Catalonia ggx8-jkp4: remaining 208 groups, beginning named >=1 MW single-application plants, after metadata freshness check and national catalogue/phase reconciliation.",
+      "processed_cursor": {
+        "source_sha256": "df4f9164d0c047ee4b7fd63477699e0c5622cf045880670ab66aa9f6cd10eef5",
+        "complete_export_rows": 358,
+        "complete_group_count": 319,
+        "small_project_groups_reviewed": 56,
+        "existing_name_suggestions_reviewed": 55,
+        "reviewed": 111,
+        "accepted_new": 29,
+        "accepted_enriched": 34,
+        "held": 48,
+        "permanent_rejected": 0,
+        "next_group_decisions": "20261104T0400_catalonia_review.json: decision=not_reviewed",
+        "remaining": 208
+      },
+      "priority": 1
+    },
+    {
+      "id": "solinteg_mht_0400",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.solinteg.com/products.html",
+      "version_or_date": "Three English MHT sheets NO2.01-2026",
+      "format": "PDF, 2 pages each",
+      "licence_assessment": "Legal Statement prohibits copying, adaptation and storage in information retrieval systems without prior written permission. No permission obtained; no contacts authorized. Zero records accepted.",
+      "access_assessment": "Three current official product pages and their linked drive.solinteg.com PDFs downloaded normally; older Spanish link503. Technical tables visually inspected.",
+      "estimated_useful_yield": {
+        "exact_model_columns_reviewed": 15,
+        "accepted": 0
+      },
+      "fields_offered": [
+        "PV/battery/grid/backup",
+        "electrical",
+        "mechanical",
+        "environmental",
+        "grid-code and firmware conditions"
+      ],
+      "result": "15 exact models absent from existing manufacturers/models, but rights-held. Do not describe extraction as an integrated feed or accepted models.",
+      "next_action": "Resume only with applicable documented reuse permission; otherwise choose a publisher with suitable terms.",
+      "processed_cursor": {
+        "three_tables_reviewed": true,
+        "models": 15,
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Resume only with applicable documented reuse permission; otherwise choose a publisher with suitable terms."
+    },
+    {
+      "id": "gave_modular_0400",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://pim.gave.com/Productos/catalogos/CA029/099CA01267.04EN.pdf",
+      "version_or_date": "099CA01267.04EN, undated; older indexed catalogue",
+      "format": "PDF,16pages",
+      "licence_assessment": "Gave Legal notice section5 requires prior written permission for use/copy/transmission of content. No grant established; no ingestion. Existing accepted SP model is not silently altered.",
+      "access_assessment": "Normal PDF download9997137bytes SHA256c93effa86dcac224e97d81e5066cc73e31fee0d3e0170ab4af6c9752b2763d7e. Modular model tables and distinct MPPT/string/current layouts inspected; fuse siblings not enumerated to inflate counts.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exact modular references",
+        "string/MPPT layout",
+        "Isc limit",
+        "surge devices",
+        "dimensions",
+        "enclosure tests"
+      ],
+      "result": "Combiner priority attempted with an independent smaller OEM; rights-held,zero accepted.",
+      "next_action": "Check independent OEM public technical-data reuse terms before tables; do not synthesize fuse/MPPT option permutations.",
+      "processed_cursor": {
+        "source_downloaded": true,
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Check independent OEM public technical-data reuse terms before tables; do not synthesize fuse/MPPT option permutations."
+    },
+    {
+      "id": "saj_r6_0400",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.saj-electric.com/services-support-download?page=2&product_model=R6_Series&product_type=On-grid+Inverter&type=Datasheet",
+      "version_or_date": "Official download listing entries22July2025",
+      "format": "HTML links to PDFs",
+      "licence_assessment": "No reuse grant inferred from public listing or privacy policy; exact technical bytes not obtained.",
+      "access_assessment": "Listing200; three distinct R6 5–10,25–50 and3–15kW PDF links403. No bypass.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "exact model tables if accessible"
+      ],
+      "result": "Three PDF requests blocked;zero canonical candidates extracted.",
+      "next_action": "Normal public official source recovery; verify region/revision/rights before extraction.",
+      "processed_cursor": {
+        "pdf_requests": 3,
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Normal public official source recovery; verify region/revision/rights before extraction."
+    },
+    {
+      "id": "hoymiles_0400",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.hoymiles.com/products/hms-1600-1800-2000-eu.html",
+      "version_or_date": "Current website checked4November2026; indexed older URLs stale",
+      "format": "HTML/PDF",
+      "licence_assessment": "Cloud application licence is a separate scope; no website technical-data grant inferred.",
+      "access_assessment": "HMS page200; indexed HMT product page and 202506 PDF404.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "model-specific microinverter metadata"
+      ],
+      "result": "Avoided duplicating existing HMT208NA CEC entries; no new exact PDF evidence accepted.",
+      "next_action": "Resolve current OEM linked datasheet and terms; compare exact regional models before enrichment.",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Resolve current OEM linked datasheet and terms; compare exact regional models before enrichment."
+    },
+    {
+      "id": "chile_cne_construction_0400",
+      "country": "CHL",
+      "entity": "projects",
+      "source_url": "https://www.cne.cl/tarificacion/electrica/declaracion-en-construccion/",
+      "version_or_date": "October2026 list described on current page",
+      "format": "HTML; downloadable file endpoint not exposed in fetched markup",
+      "licence_assessment": "Suitable bulk reuse grant not verified. Existing CEN API reuse restriction remains; no API extraction resumed.",
+      "access_assessment": "CNE landing200. Separately, CEN October16 reportZIP downloaded/checksummed outsideGit but not extracted/ingested after existing terms hold identified. EnergyAbierta API link points to maintenance page.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "administrative construction declaration",
+        "plant names/technology/capacity if obtainable"
+      ],
+      "result": "Independent Chile source discovered, not integrated. No registry rows accepted or candidate totals invented.",
+      "next_action": "Find CNE tables endpoint plus applicable licence; separate declared construction from physical progress and reconcile CEG/CEN project boundaries.",
+      "processed_cursor": {
+        "canonical_accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Find CNE tables endpoint plus applicable licence; separate declared construction from physical progress and reconcile CEG/CEN project boundaries."
+    },
+    {
+      "id": "edf_registry_freshness_0400",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://opendata.edf.fr/datasets/registre-des-installations-de-production-et-de-stockage-d-electricite",
+      "version_or_date": "30September2025 snapshot, data updated10November2025",
+      "format": "Open-data mirror",
+      "licence_assessment": "Open Licence; source older than existing ODRE31August2026 snapshot.",
+      "access_assessment": "Official indexed metadata inspected; no full dataset downloaded.",
+      "estimated_useful_yield": null,
+      "fields_offered": [
+        "installation registry"
+      ],
+      "result": "Freshness/discovery only; do not replace newer ODRE evidence with older mirror.",
+      "next_action": "Seek independently current EDF-SEI ZNI evidence or resolve ODRE overseas filter values.",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "last_attempt": "2026-11-04T04:17:13.903470+00:00",
+      "last_retrieval": "2026-11-04T04:17:13.903470+00:00",
+      "next_due_check": null,
+      "retry_condition": "Seek independently current EDF-SEI ZNI evidence or resolve ODRE overseas filter values."
+    }
+  ],
+  "source_refresh_queue": [
+    {
+      "country": "DEU",
+      "entrypoint": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "backlog_ids": [
+        "germany_mastr",
+        "mastr_1432_concurrency"
+      ],
+      "format": "ZIP/XML",
+      "cadence": "Daily, normally around05:00 publisher time",
+      "last_release_seen": "2026-11-03",
+      "next_due_check": "2026-11-05T05:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "Generating-unit IDs and EEG installation/project boundaries; reviewed/unreviewed flags required",
+      "cursor": "Existing concurrent AC-scope hold; no3.2GB download this run",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "dl-de/by2.0; existing access/concurrency review remains",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "BRA",
+      "entrypoint": "https://dadosabertos.aneel.gov.br/pt_BR/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel",
+      "backlog_ids": [
+        "brazil_siga",
+        "aneel_siga_2228"
+      ],
+      "format": "CSV/XML monthly and daily",
+      "cadence": "Monthly/daily metadata; no hourly full downloads",
+      "last_release_seen": "Monthly2026-11-01;daily2026-11-03",
+      "next_due_check": "2026-11-05T12:00:00Z",
+      "checksum_or_etag": null,
+      "publisher_hashes_untyped": {
+        "monthly": "cff9c1511b25bcaa0b15131ced20ab3d",
+        "daily": "8cbca50633d9c2b4897b14c924038bae"
+      },
+      "mapping": "UFV only; CEG stable ID; granted/inspected capacities and lifecycle separate",
+      "cursor": "Rights/access-held; no full retry during backoff",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "ODbL: derivative-database treatment unresolved; no silent relicensing",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "FRA",
+      "entrypoint": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/information/",
+      "backlog_ids": [
+        "france_odre"
+      ],
+      "format": "Explore API JSON/CSV",
+      "cadence": "Monthly metadata check; pinned partitions",
+      "last_release_seen": "Snapshot2026-08-31",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "PHOTV; exclude small aggregates; EIC change review; installed/export powers distinct",
+      "cursor": "Continue existing reviewed EIC ledgers/overseas value reconciliation",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Licence Ouverte2.0",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "JPN",
+      "entrypoint": "https://www.fit-portal.go.jp/PublicInfo",
+      "backlog_ids": [
+        "japan_fit"
+      ],
+      "format": "Prefectural XLSX",
+      "cadence": "Monthly announcement metadata; no hourly workbook downloads",
+      "last_release_seen": "Snapshot2026-09-30 announced2026-10-14;paper lag2026-06-30",
+      "next_due_check": "2026-11-14T06:00:00Z",
+      "checksum_or_etag": "ac10084eda5f0d1ee6f54c56ac25d7a0f2dbe0f4c3ef7113016111861c730749",
+      "mapping": "Facility IDs; certification is not operation; excludesPV<20kW; omit personal details",
+      "cursor": "62Tottori candidates already staged; named-project/parcel reconciliation remains",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Refresh portal terms before next prefecture",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "USA",
+      "entrypoint": "https://www.eia.gov/electricity/data/eia860/",
+      "monthly_entrypoint": "https://www.eia.gov/electricity/data/eia860m/",
+      "backlog_ids": [
+        "usa_eia"
+      ],
+      "format": "Annual ZIP/XLSX;monthly XLSX",
+      "cadence": "Annual detailed inventory;monthly preliminary supplement",
+      "last_release_seen": "EIA860M September2026,released2026-10-23;nextrelease2026-11-24;annual2025alreadyimported",
+      "next_due_check": "2026-11-24T18:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "Plant IDs with nested generator IDs;AC/DC/status dates separate;enrich existing plants",
+      "cursor": "No repeat US bulk import;non-US Catalonia source selected",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "EIA public-domain policy;source acknowledgement",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Current official EIA860M landing directly opened; no new workbook downloaded",
+      "annual_archive_sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba"
+    },
+    {
+      "country": "GBR",
+      "entrypoint": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "backlog_ids": [
+        "uk_repd"
+      ],
+      "format": "CSV/XLSX",
+      "cadence": "Quarterly;metadata-only check before saved partition resume",
+      "last_release_seen": "July/Q22026,published2026-08-03",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+      "mapping": "Applications/resubmissions/phases;source status as-of;MW basis unspecified",
+      "cursor": "Use existing accepted/held ledgers;unchanged extract not redownloaded",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "OGLv3 attribution retained",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "AUS",
+      "entrypoint": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "backlog_ids": [
+        "aemo_nem_october_2026_20261103T0800",
+        "aemo_nem_october_2026_20261103T0800_0900_review"
+      ],
+      "format": "XLSX",
+      "cadence": "Everythree months or asrequired, per AEMO;metadata-only check",
+      "last_release_seen": "2026-10-30 OctoberNEM generation information",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+      "mapping": "Existing/committed/proposed unit cohorts;NEM is not all Australia",
+      "cursor": "Resume existing held crosswalks without repeating accepted cohort",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Source-specific terms and prior assessment retained",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
     }
   ]
 }

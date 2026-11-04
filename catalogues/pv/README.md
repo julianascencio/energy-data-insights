@@ -353,3 +353,28 @@ to the standard `upsert` command. The adapter emits only accepted decisions;
 it does not write the catalogue. An AEMO site with multiple survey rows
 requires separate review. GA points retain their native GDA2020 reference;
 GA's unspecified generation rating is never used as AC or DC capacity.
+
+### Catalonia named PV review staging
+
+The Catalonia adapter handles dataset `ggx8-jkp4` (named ground-mounted PV
+above 100 kW). It groups application/name pairs across municipalities without
+summing repeated plant capacity or area, omits applicants, and flags shared IDs,
+reapplications, expansions, zero capacities and conflicting cells. It produces
+review candidates only. A unique application is not automatically a whole plant;
+compare the full extract and existing catalogue before using the upsert API.
+Nominal MW has no inferred AC/DC basis; administrative authorization does not
+establish physical construction. Operating coverage is limited to commissioning
+after November 2019. The September 2026 review decisions and source hashes are in
+`research/20261104T0400_catalonia_review.json`.
+
+```bash
+uv run python scripts/stage_pv_catalonia.py \
+  --input /path/to/catalonia.json --metadata /path/to/catalonia-meta.json \
+  --sha256 df4f9164d0c047ee4b7fd63477699e0c5622cf045880670ab66aa9f6cd10eef5 \
+  --metadata-sha256 833b7caede748e43918fa227197ceb20689e4cf762d4768e7616b1caf1af0d7e \
+  --expected-rows 358 --output /tmp/catalonia-review.json
+```
+
+Check metadata `rowsUpdatedAt` before resuming saved partitions. An unchanged
+monthly snapshot does not require another complete export. Source-specific
+Catalonia attribution and last-update notice travel with the snapshots.

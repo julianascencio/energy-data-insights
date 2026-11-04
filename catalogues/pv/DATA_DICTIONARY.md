@@ -318,3 +318,16 @@ are not overwritten; disagreements remain `unresolved_assertions_not_applied` an
 in the dated review. Unique source EIC, unique canonical target and complete
 single-phase scope are mandatory; multiple EIC connections targeting one selected
 project require scope review. No capacity, owner, status or location is inferred.
+
+
+## Catalonia named ground PV crosswalk
+
+| Source field | Treatment | Qualification |
+| --- | --- | --- |
+| `sol_licitud`, `nom` | Reviewed identity; new records use `external_ids_json.catalonia_application_id` | Shared applications and reapplications held; existing IDs preserved |
+| `pot_ncia_mw` | New records: `capacity_unspecified_mw`; existing records: dated native observation | Nominal MW is not automatically AC or DC; municipal rows are not summed |
+| `superf_cie_ha` | New records: `land_area_ha`; existing records: native observation | Plant-wide area; conflicting and zero cells held |
+| `municipi`, municipal/comarca codes, `vegueria`, municipal area | Administrative geography in extensions | No plant coordinates derived; municipal areas remain separate |
+| `estat`, environmental procedure/decision/date | Dated native administrative observation in extensions | Authorization is not physical construction or commissioning |
+| `sol_licitant` | Omitted | Applicant/promoter not assigned as current owner; personal details excluded |
+| Dataset `rowsUpdatedAt` | `extensions_json.catalonia_planning_observation.source_updated_at` | Source update time, not a newly verified physical lifecycle event |
