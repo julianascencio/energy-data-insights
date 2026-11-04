@@ -1,26 +1,47 @@
 {
-  "batch": "2026-11-04-0635",
+  "batch": "2026-11-04-0735",
+  "validated_base": "c21dd1713067f15adc8b12954c3b7147906a770e",
   "local": {
-    "focused_wind": "89 passed in37.87s on isolated temporary volume; initial shared-volume attempt failed with storage exhaustion",
-    "pytest": "2144 passed,1 skipped,15 inherited Data Center UTF-8 setup errors",
-    "viewer": "15 passed",
-    "source_replay": "859 accepted Swedish records exactly replayed",
-    "catalogue": "21711 records validated",
-    "preservation": "20850 preceding records unchanged; NETA-21 enrichment preserves all prior values/extensions/timestamps; source registry and all six capacity totals preserved; unrelated catalogues unchanged",
-    "snapshots": "Two byte-identical builds; four136-column typed Parquet tables, allZSTD; manifest/schema/source bytes identical",
-    "quality": "Repository Ruff lint/format,ty,citations,hygiene3660files and diff checks passed",
-    "packages": "Three wheels and sdists built on isolated temporary volume",
-    "example": "Offline Wind gallery passed",
-    "docs": "Strict Sphinx HTML with plot_gallery=0 reached Data Center publishing and failed on inherited invalid UTF-8; no completed docs/link pass"
+    "focused_wind": "102 passed, including13 new ODRE adapter tests",
+    "pytest": "2173 passed,5 skipped in101.74s on refreshed main; zero failures/errors",
+    "skip_reasons": "cdsapi unavailable(1); optional Python3.13 imagery integrations(4)",
+    "viewer": "15 passed on refreshed main",
+    "source_replay": "34 French records exactly replayed from complete2458-row checksum-pinned export;505 current-cohort deferrals and1919 outside-cohort rows retained",
+    "catalogue": "21746 records validated;7844projects267equipment13633turbines2curves",
+    "preservation": "All21711 preceding Wind records and prior source entries unchanged; all six capacity totals unchanged; PV/BESS/Data Center catalogue diff against refreshed main empty",
+    "snapshots": "Final corrected metadata rebuilt twice, all seven files byte-identical; four136-column typed Parquet tables allZSTD",
+    "quality": "Repository Ruff lint and format826files,ty,citations,hygiene3680files and whitespace checks passed",
+    "packages": "Three wheels and three sdists built on refreshed main",
+    "example": "Offline Wind gallery executed successfully",
+    "docs": "Strict Sphinx HTML with plot_gallery=0 completed successfully (exit0); full gallery execution not claimed",
+    "docs_links": "530 HTML pages checked; local links/assets resolve"
   },
   "not_executed": [
     "Full gallery execution",
-    "Completed documentation link audit",
-    "New browser smoke test"
+    "New interactive browser smoke test"
   ],
   "remote_ci": {
-    "status": "Pending publication"
+    "status": "Pending publication; separate from local results"
   },
-  "blocker": "Data Center KSTAR invalid UTF-8 remains on main; repair openPR131",
-  "storage_resolution": "Private /dev temporary directory must be created and used within one exec invocation; logs copied to shared scratch before exit"
+  "publication_reconciliation": {
+    "previous_pr": 132,
+    "previous_head": "8d434b3c8562308d9aa1fe2d8fff5a7f60393e30",
+    "observation": "PR132 merged externally while batch was validating; remote branch gained KSTAR UTF8repair and current main also incorporated PR131",
+    "action": "Checkpointed local batch, created new branch from current main and cleanly cherry-picked; no remote history overwritten",
+    "pre_reconciliation_results": "2153pass5skip15inheritedDataCenterUTF8errors; earlier strictdocs failedsamehook. Both replaced by successful current-main reruns."
+  },
+  "research_blockers": [
+    "USGS API/ScienceBase and LBNL original attachments returned403; Minnesota historical mirror404",
+    "Vestas4MWbrochure excluded for explicit reuse restriction",
+    "Unresolved identities and farm/phase scope remain excluded from capacity totals"
+  ],
+  "log_sha256": {
+    "focused.log": "546eedf55461250504cf462c72051ec16440c8a4d508d0ee6da92b288e04369a",
+    "full-tests-current-main.log": "e37cdd0bad885990359f428bc19c9adb6f3914eed5b24cdd527a4ef3cd9a4e21",
+    "viewer-current.log": "bcf3717ec1713485fb8759279993f4f59263f309bf5b638ed3c5127cea7ad0aa",
+    "docs-final.log": "9f14a0cec591e2c8b98a6700dd3574df8dae1034d06556f552c60d849f529bfc",
+    "docs-links.log": "b02f7b128c9b79c2681ffff0fa0d0a4263ca5753cf57c87fcd28c4528299771a",
+    "packages-current.log": "831d0d2ab87881ecd0ebf122373d224990e2601af0278e7237c709734ec5847f",
+    "gallery.log": "f52975e19a34b604044a3a756ef759f1ed0bc0a55222d69e8850aa44228fbb71"
+  }
 }

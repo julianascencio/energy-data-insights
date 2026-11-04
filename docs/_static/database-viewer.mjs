@@ -124,7 +124,7 @@ function render() {
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
     summary.push([number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Catalogue coverage"],
       [number(statistics(eligible, "turbine_count").reportedSum), "Reported turbines", "Only reviewed non-overlapping project scopes"],
-      [number(filtered.filter(hasLocation).length), "Mapped records", "Historical and current evidence; inspect precision"],
+      [number(filtered.filter(hasLocation).length), "Mapped records", `${number(filtered.filter(r => !hasLocation(r)).length)} without coordinates; administrative locations remain in the table`],
       [number(evidence.lifecycleKnown), "Dated lifecycle evidence", `${number(evidence.lifecycleUnknown)} unknown; inspect observation dates`],
       [number(evidence.scopeExcluded), "Excluded project scopes", "Known lifecycle alone does not resolve phase or repowering overlap"]);
     for (const [field, label] of [["installed_capacity_mw", "Installed MW"], ["commissioned_capacity_mw", "Commissioned MW"], ["planned_capacity_mw", "Planned MW"], ["awarded_capacity_mw", "Awarded MW"], ["export_capacity_mw", "Export MW"]]) {

@@ -6663,3 +6663,19 @@ ABB (2026). **NETA-21 remote monitoring tool user manual**. [Source](https://sea
 **Role:** data source. 3AUA0000096939 Rev Q effective2026-09-18; joint NETA/NEXA technical table pp225–226. Conflicting temperature endpoints retained; no whole-product UL certification inferred.
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
+
+### odre_wind_20260831
+
+RTE / ODRÉ (2026). **French national wind installation registry, snapshot 31 August 2026**. [Source](https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codefiliere%3D%27EOLIE%27&order_by=codeeicresourceobject)
+
+**Role:** data. Dated source registry and original-byte checksum retained; factual normalized observations, not independent operational validation.
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### ge_4mw117_20261104
+
+GE Vernova (2026). **GE Vernova 4.2 MW-117m turbine specification table**. [Source](https://www.gevernova.com/wind-power/wind-turbines/onshore-wind-turbines-4mw)
+
+**Role:** data. Dated source registry and original-byte checksum retained; factual normalized observations, not independent operational validation.
+
+**Used by:** `catalogues/wind/sources.json`.

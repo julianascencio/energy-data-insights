@@ -35,6 +35,27 @@ print(projects.groupby(["status", "aggregation_role"]).size().unstack(fill_value
 print("Equipment categories (components are not turbines):")
 print(equipment.groupby(["manufacturer", "equipment_category"]).size())
 
+# French registry EICs describe network installations. A dated operating state
+# and two reported ratings do not establish non-overlapping whole-farm scope.
+french_registry = projects.loc[
+    projects.external_ids_json.fillna("").str.contains('"odre_eic"', regex=False)
+]
+if not french_registry.empty:
+    print("French network installations: dated capacity observations, excluded from totals")
+    print(
+        french_registry[
+            [
+                "name",
+                "region",
+                "status_as_of",
+                "installed_capacity_mw",
+                "export_capacity_mw",
+                "aggregation_role",
+            ]
+        ].to_string(index=False)
+    )
+    print("No surveyed coordinates inferred from French administrative geography.")
+
 # %%
 # Geographic counts describe this catalogue. Missing status is never operational.
 fig, axes = plt.subplots(2, 2, figsize=(15, 11), layout="constrained")
