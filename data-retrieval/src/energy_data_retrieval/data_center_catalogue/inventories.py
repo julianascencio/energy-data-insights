@@ -438,6 +438,8 @@ def parse_ups_rating_matrix(
         "www.makelsan.com.tr": {"Makelsan"},
         "makelsanjenerator.com.tr": {"Makelsan"},
         "www.makelsanjenerator.com.tr": {"Makelsan"},
+        "sielups.com": {"SIEL"},
+        "www.sielups.com": {"SIEL"},
     }
     if host not in manufacturers_by_host:
         raise ValueError("Unsupported official UPS source URL")
