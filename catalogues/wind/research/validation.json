@@ -1,24 +1,26 @@
 {
-  "batch": "2026-11-04-0535",
+  "batch": "2026-11-04-0635",
   "local": {
+    "focused_wind": "89 passed in37.87s on isolated temporary volume; initial shared-volume attempt failed with storage exhaustion",
     "pytest": "2144 passed,1 skipped,15 inherited Data Center UTF-8 setup errors",
     "viewer": "15 passed",
-    "source_replay": "983 accepted project/turbine records exactly replayed",
-    "catalogue": "20851 records validated",
-    "preservation": "19867 prior records unchanged; one NETA-21 enrichment preserves previous values and creation timestamp; prior sources and six capacity totals unchanged",
-    "snapshots": "Two byte-identical builds; four136-column typed ZSTD tables; manifest/schema/source bytes identical",
-    "quality": "Repository Ruff lint/format,ty,citations,hygiene3638files,diff checks passed",
-    "packages": "Three wheels and three sdists built",
+    "source_replay": "859 accepted Swedish records exactly replayed",
+    "catalogue": "21711 records validated",
+    "preservation": "20850 preceding records unchanged; NETA-21 enrichment preserves all prior values/extensions/timestamps; source registry and all six capacity totals preserved; unrelated catalogues unchanged",
+    "snapshots": "Two byte-identical builds; four136-column typed Parquet tables, allZSTD; manifest/schema/source bytes identical",
+    "quality": "Repository Ruff lint/format,ty,citations,hygiene3660files and diff checks passed",
+    "packages": "Three wheels and sdists built on isolated temporary volume",
     "example": "Offline Wind gallery passed",
-    "docs": "Strict HTML build with plot_gallery=0 failed at PV publishing hook: Errno28 temporary storage exhausted. No completed docs pass."
+    "docs": "Strict Sphinx HTML with plot_gallery=0 reached Data Center publishing and failed on inherited invalid UTF-8; no completed docs/link pass"
   },
   "not_executed": [
-    "Full Sphinx gallery execution",
-    "Completed docs link audit",
+    "Full gallery execution",
+    "Completed documentation link audit",
     "New browser smoke test"
   ],
   "remote_ci": {
     "status": "Pending publication"
   },
-  "inherited_blocker": "Data Center KSTAR invalid UTF-8; repair in open PR131"
+  "blocker": "Data Center KSTAR invalid UTF-8 remains on main; repair openPR131",
+  "storage_resolution": "Private /dev temporary directory must be created and used within one exec invocation; logs copied to shared scratch before exit"
 }

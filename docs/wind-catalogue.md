@@ -1,8 +1,8 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. The proposed continuation contains **7,773 projects, 265 equipment
-records, 12,811 linked turbines and two original numerical curves**, across
+numerical curves. The proposed continuation contains **7,810 projects, 266 equipment
+records, 13,633 linked turbines and two original numerical curves**, across
 **59 countries and eleven equipment manufacturers**. Merged main at `6b38f9a4`
 contains 7,582 projects, 264 equipment records and 10,264 turbines plus two curves.
 These are catalogue counts, not a current operating census.
@@ -589,3 +589,13 @@ remain deferred. Capacity totals are unchanged. NETA-21 gains separately
 qualified Rev Q (2026-09-18) technical-table observations, pp.225–226;
 contradictory temperature endpoints are retained without a normalized scalar,
 and joint NETA/NEXA interface descriptions do not infer per-device allocation.
+
+
+## Norrbotten and monitoring extensions
+
+All 68 Norrbotten areas and 2,566 turbine observations were reviewed;
+37 projects and 822 linked turbines were accepted, with 31 areas/1,744 turbines
+held. Capacity totals remain unchanged. ABB Rev Q pp.21–24 resolve named
+NETA-21 connector assignments and explicitly connect the optional NEXA-21
+extension. No direct turbine compatibility or joint-table limits are inferred.
+The Marne E103 appendix is excluded for its explicit reuse restriction.

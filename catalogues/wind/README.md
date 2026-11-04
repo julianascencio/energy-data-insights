@@ -3,8 +3,8 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-The proposed branch contains 7,773 project records (7,772 non-group records),
-265 exact equipment records, 12,811 registry turbine records and two original numerical
+The proposed branch contains 7,810 project records (7,809 non-group records),
+266 exact equipment records, 13,633 registry turbine records and two original numerical
 power curves, across 59 countries and eleven equipment manufacturer names.
 Merged main at `6b38f9a4` contains 7,582 projects, 264 equipment records and 10,264 turbines
 and two curves. These are catalogue counts, not an operating census.
@@ -200,3 +200,13 @@ remain deferred. Capacity totals are unchanged. NETA-21 gains separately
 qualified Rev Q (2026-09-18) technical-table observations, pp.225–226;
 contradictory temperature endpoints are retained without a normalized scalar,
 and joint NETA/NEXA interface descriptions do not infer per-device allocation.
+
+
+## Norrbotten and monitoring extensions
+
+All 68 Norrbotten areas and 2,566 turbine observations were reviewed;
+37 projects and 822 linked turbines were accepted, with 31 areas/1,744 turbines
+held. Capacity totals remain unchanged. ABB Rev Q pp.21–24 resolve named
+NETA-21 connector assignments and explicitly connect the optional NEXA-21
+extension. No direct turbine compatibility or joint-table limits are inferred.
+The Marne E103 appendix is excluded for its explicit reuse restriction.
