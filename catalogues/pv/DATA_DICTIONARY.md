@@ -421,3 +421,27 @@ names and exact namespaced registry IDs add review flags, never automatic merges
 All 75 Canarias candidates remain held for whole-plant/phase, privacy, power and
 freshness review. Review output stores IDs/reasons without installation names,
 holders, contacts or addresses. No Electra record is upserted as a project.
+
+## Navarra IDENA operating and permitting inventories (4 November 2026)
+
+`pv_catalogue.navarra` verifies pinned ZIP bytes, embedded layer-specific CC BY4
+and panel-power definitions, exact DBF fields, row framing and positive finite
+power. It discards PROMOTOR before returning candidates. Operating and permitting
+layers have separate schemas and titles; neither establishes current operation.
+FEATURE is nonunique and never a project ID. A reviewed unique single EXPEDIENTE
+case is the canonical identity; repeated and grouped cases remain held.
+
+Panel-sum MW fills DC capacity with its exact basis. Explicit trailing kV in grid
+connection text can fill grid voltage, without converting it into power or owner
+information. Source service-year text stays native because its generic dictionary
+scope is insufficient for a normalized commissioning date. Insertion date is not
+commissioning; calculated polygon area is not accepted as land area. No polygon
+centroid, exact point, promoter, private owner/contact or inferred live status is
+populated. Full geometry and original documents stay outside Git.
+
+Both incoming layers, canonical names/aliases/native-language phase names and
+review-only spatial candidates were screened. Overlapping polygons, generic or
+related names, repeated/grouped cases and phase ambiguity remain review flags,
+never automatic merges. Cierzo II gains only missing grid voltage after exact-name,
+one-phase, regional and actual-polygon review. Its existing AC rating/status are
+preserved; the different source panel rating remains in review.

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T10:25:14.370020+00:00",
-  "ranking_file": "20261104T1000_top10_coverage.json",
-  "selection_note": "Prefer useful missing fields, licensed source scale and reviewed identities. This run: Electra Canarias bounded75-row index and new Envertech tables; additional Navarra59-row licensed geometry/DBF batch discovered. No US bulk repeat. UTC start hour9 modulo6=3 (Latin America/Caribbean) remains secondary to these high-yield unresolved sources.",
-  "next_highest_value_source": "Navarra CC BY4 operating-PV layer: reuse the pinned59-row capture after metadata/ETag freshness check; build a tested source-specific reader and reconcile rows1-20 by case/phase identity. FEATURE is constant, PROMOTOR may identify a natural person, and no canonical name crosswalk is established.",
+  "updated_at": "2026-11-04T11:13:37.805625+00:00",
+  "ranking_file": "20261104T1100_top10_coverage.json",
+  "selection_note": "This run completes both Navarra licensed PV layers (114rows), prioritizing useful missing metadata and exact case scope over row quota. Fresh SAJ/EPEVER attempts403; FIMER prior explicit consent restriction remains held. Existing complete Sungrow MH batch not repeated. Top-ten cumulativePV ranking preserved.",
+  "next_highest_value_source": "Navarra held case/phase cohorts: review shared case3554-CE across three Cáseda rows against Viscofan, then grouped huertas and named Cierzo/Atalaya/Tudela phases using official permit dossiers. No repeat full download while ETags match.",
   "sources": [
     {
       "id": "uk_repd",
@@ -8205,7 +8205,7 @@
       "next_due_check": "2026-12-04T10:00:00Z"
     },
     {
-      "last_attempt": "2026-11-04T10:25:14.370020+00:00",
+      "last_attempt": "2026-11-04T11:13:37.805625+00:00",
       "last_release": "DBF header2026-10-06; row effective dates remain unverified",
       "publication_cadence": "Not stated; avoid hourly full downloads",
       "country": "ESP",
@@ -8236,16 +8236,18 @@
       ],
       "last_retrieval": "2026-11-04T10:21:43.865759+00:00",
       "sha256": "3b82e037282d9cb9d2de03ce77257545ae3aadc11bdb0d867716294e7ecdbd05",
-      "mapping": "20261104T1000_navarra_discovery.json; FEATURE is a constant SITNA feature/model identifier in this capture, not a unique plant ID; EXPEDIENTE has repeated references; RAIPEE includes generic/group labels; power is sum of panel ratings per metadata, not grid power.",
+      "mapping": "pv_catalogue.navarra reader/builder; dictionary Navarra section; 20261104T1100_review.json",
       "processed_cursor": {
-        "zip_downloaded": true,
-        "structural_partition": "all59 DBF rows",
-        "canonical_acceptance": false,
-        "next_partition": "rows1-20; reviewed case/phase identities and private-promoter exclusion before upsert"
+        "all_rows_reviewed": 59,
+        "accepted_new": 21,
+        "enriched": 1,
+        "held": 37,
+        "source_index_exhausted": true,
+        "next_partition": "shared3554-CE Cáseda/Viscofan and grouped-case permits"
       },
-      "result": "59 source rows;57distinct nonempty case references,three rows repeat a case reference;zero exact canonical-name crosswalks. All await project/phase/privacy review. No source row described as an accepted project.",
+      "result": "Complete59-row review:21new cases,one existing grid-voltage enrichment,37held. ConditionalGET304 reuses original pinned archive. New permitting layer also checked for case/polygon overlap.",
       "retry_condition": "Recheck metadata/HEAD/ETag and reuse unchanged pinned bytes; implement tested reader and reviewed crosswalks before upsert",
-      "next_action": "Navarra CC BY4 operating-PV layer: reuse the pinned59-row capture after metadata/ETag freshness check; build a tested source-specific reader and reconcile rows1-20 by case/phase identity. FEATURE is constant, PROMOTOR may identify a natural person, and no canonical name crosswalk is established.",
+      "next_action": "Navarra held case/phase cohorts: review shared case3554-CE across three Cáseda rows against Viscofan, then grouped huertas and named Cierzo/Atalaya/Tudela phases using official permit dossiers. No repeat full download while ETags match.",
       "next_due_check": "2026-11-05T10:00:00Z"
     },
     {
@@ -8316,6 +8318,110 @@
       "retry_condition": "Verify dataset-specific rights and privacy first; use saved ETag and bounded partition rather than repeated full downloads",
       "next_action": "After Navarra first20, inspect workbook schema and private-holder/address exposure under source-specific terms; no owner or current-operation inference.",
       "next_due_check": "2026-11-05T10:00:00Z"
+    },
+    {
+      "id": "navarra_permitting_20261104T1100",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://datos.gob.es/es/catalogo/a15002917-plantas-solares-fotovoltaicas-en-tramitacion1",
+      "endpoint": "https://idena.navarra.es/descargas/ENERGI_Pol_PSolarTra.zip",
+      "format": "ZIP DBF/SHP/embeddedISO metadata",
+      "publication_cadence": "Unknown; use conditional refresh rather than hourly full download",
+      "last_release": "DBF header2026-10-06; effective date per row unknown",
+      "last_attempt": "2026-11-04T11:13:37.805625+00:00",
+      "last_retrieval": "2026-11-04T11:04:18.369878+00:00",
+      "sha256": "0d3d619092bfec63047776465cc09c7e291e4862c89762d90cf1f8958eefa40a",
+      "etag": "\"cfc8df64cc55dd1:0\"",
+      "licence_assessment": "CC BY4.0 in embedded layer metadata; attribution Información geográfica propiedad del Gobierno de Navarra. No promoter data redistributed.",
+      "fields_offered": [
+        "panel-sum DC MW",
+        "case identity",
+        "native authorization classification",
+        "explicit grid voltage",
+        "environmental reference",
+        "grid connection text"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 55,
+        "accepted_new": 23,
+        "held": 32
+      },
+      "mapping": "pv_catalogue.navarra layer=permitting; exactDBFschema,rights,checksum,case guards; no current status inferred",
+      "processed_cursor": {
+        "all_rows_reviewed": 55,
+        "accepted_new": 23,
+        "held": 32,
+        "source_index_exhausted": true,
+        "review_file": "20261104T1100_review.json"
+      },
+      "result": "23unique reviewed single-case facilities accepted. All operating/permitting cases cross-checked; no repeated case across layers. Overlap/phase/canonical risks held, no fuzzy merge.",
+      "retry_condition": "Refresh metadata/ETag before resuming; repeat full capture only ifchanged. Resolve held permit/site identities with official dossiers.",
+      "next_action": "Navarra held case/phase cohorts: review shared case3554-CE across three Cáseda rows against Viscofan, then grouped huertas and named Cierzo/Atalaya/Tudela phases using official permit dossiers. No repeat full download while ETags match.",
+      "next_due_check": "2026-11-05T11:00:00Z"
+    },
+    {
+      "id": "saj_pdf_20261104T1100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.saj-electric.com/hubfs/Europe%20Region%202%20document/Datasheet/Residential/North/R6%2015-25K%20Three%20Phase%20On-Grid%20Inverter-datasheet-EN-North.pdf",
+      "endpoint": "https://www.saj-electric.com/hubfs/Europe%20Region%202%20document/Datasheet/Residential/North/R6%2015-25K%20Three%20Phase%20On-Grid%20Inverter-datasheet-EN-North.pdf",
+      "format": "PDF attempt; no bytes obtained",
+      "publication_cadence": "Unknown",
+      "last_release": null,
+      "last_attempt": "2026-11-04T11:04:14.579066+00:00",
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "licence_assessment": "No new rights inferred from failed access; exact document/revision must be reviewed before factual extraction",
+      "access_assessment": "HTTP Error 403: Forbidden",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "reviewed_technical_rows": 0
+      },
+      "fields_offered": [
+        "exact model electrical/mechanical/environmental tables ifpublic access recovers"
+      ],
+      "mapping": "Not integrated; no exact source bytes to validate",
+      "processed_cursor": {
+        "accepted": 0,
+        "pdf_obtained": false
+      },
+      "result": "Normal public GET403; no bypass or candidate rows accepted.",
+      "retry_condition": "Public access recovery after24-hour backoff, or different independently reusable OEM source",
+      "next_action": "Retry only after backoff; verify rights, exact model identity and revision before extraction.",
+      "next_due_check": "2026-11-05T11:00:00Z"
+    },
+    {
+      "id": "epever_sheet_20261104T1100",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.epever.com/upload/file/2109/EPEVER-Datasheet_UP-HI_220V.pdf",
+      "endpoint": "https://www.epever.com/upload/file/2109/EPEVER-Datasheet_UP-HI_220V.pdf",
+      "format": "PDF attempt; no bytes obtained",
+      "publication_cadence": "Unknown",
+      "last_release": null,
+      "last_attempt": "2026-11-04T11:09:09.829791+00:00",
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "licence_assessment": "No new rights inferred from failed access; exact document/revision must be reviewed before factual extraction",
+      "access_assessment": "HTTP Error 403: Forbidden",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "reviewed_technical_rows": 0
+      },
+      "fields_offered": [
+        "exact model electrical/mechanical/environmental tables ifpublic access recovers"
+      ],
+      "mapping": "Not integrated; no exact source bytes to validate",
+      "processed_cursor": {
+        "accepted": 0,
+        "pdf_obtained": false
+      },
+      "result": "Normal public GET403; no bypass or candidate rows accepted.",
+      "retry_condition": "Public access recovery after24-hour backoff, or different independently reusable OEM source",
+      "next_action": "Retry only after backoff; verify rights, exact model identity and revision before extraction.",
+      "next_due_check": "2026-11-05T11:00:00Z"
     }
   ],
   "source_refresh_queue": [
