@@ -1,0 +1,107 @@
+{
+  "dgeg": {
+    "id": "portugal_dgeg_cs_20261104T1800",
+    "country": "PRT",
+    "entity": "projects",
+    "source_url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer",
+    "endpoint": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=1%3D1&outFields=objectid%2Cprocesso%2Cnome%2Csubparque%2Ctipo_central%2Csubtipo_instalacao%2Cpotencia_geradorkw%2Cpotencia_instaladakva%2Cpotencia_ligacaokva%2Cconcelho%2Cdistrito%2Clic_producao%2Clic_exploracao%2Cinspireid&returnGeometry=false&f=json&resultRecordCount=400&orderByFields=objectid",
+    "format": "ArcGIS JSON; polygon blocks, not automatically individual projects",
+    "licence_assessment": "Primary WFS GetCapabilities explicitlyCCBY4.0; iteminfoCCBY. Independently checked current primary text rather than secondary claim of noncommercial restriction.",
+    "terms_url": "https://servergeo.dgeg.gov.pt/arcgis/services/Visualizadores/CS/MapServer/WFSServer?service=WFS&request=GetCapabilities",
+    "publication_cadence": "Unknown; use metadata/checksum conditional refresh, not hourly full downloads",
+    "last_release": "No source-effective date established",
+    "last_attempt": "2026-11-04T18:06:41.976186+00:00",
+    "last_retrieval": "2026-11-04T18:00:07.374147+00:00",
+    "sha256": "fbe47c5dc6311848015b3a3378b1cc3da512ab3327a1f933a24e6292721667c7",
+    "etag": null,
+    "fields_offered": [
+      "processo",
+      "plant/subpark/block identity",
+      "native PV classification",
+      "licence states",
+      "generator kW",
+      "installed/connection kVA",
+      "municipality/district"
+    ],
+    "mapping": "Candidate schema inspection only; no integrated adapter. Generator kW basis unresolved, kVA never treated as active MW. Repeated park/block values must not be summed. Owner fields not requested.",
+    "estimated_useful_yield": {
+      "features_inspected": 400,
+      "explicit_PV_features": 357,
+      "distinct_PV_processes_in_partial_page": 209,
+      "repeated_PV_processes": 54,
+      "accepted": 0
+    },
+    "processed_cursor": {
+      "max_objectid_seen": 10403,
+      "partial_page_exceededTransferLimit": true,
+      "whole_source_exhausted": false,
+      "identity_review_complete": false
+    },
+    "result": "Successful fresh multi-record source discovery and structural review only; zero accepted rows. Need complete-process/phase crosswalk and rating semantics.",
+    "retry_condition": "Recheck primary rights/revision before resume; retain captured400features to avoid repeat",
+    "next_action": "Review first400features by completeprocess, retrieve missing block partitions only, and crosswalk canonical Portuguese projects before upsert",
+    "next_due_check": "2026-11-05T18:00:00Z"
+  },
+  "primary_copyright_and_type_review": true,
+  "Ireland": "OfficialConnected/Contractedlandingdownloaded; no workbook/source-specificterms inspected yet; discoveryonly",
+  "adapters_completed": 0,
+  "registry_records_added": 0,
+  "additional_equipment_opportunities": [
+    {
+      "id": "mersen_stringbox_discovery_1800",
+      "entity": "equipment",
+      "country": null,
+      "source_url": "https://www.mersen.com/en/products/pv-string-boxes-t12",
+      "format": "PrimaryOEM HTML/PDF discovery",
+      "version_or_date": "Source revision not established",
+      "publication_cadence": "Unstated",
+      "last_attempt": "2026-11-04T18:17:33.966140+00:00",
+      "licence_assessment": "Not assessed for extraction; no accepted facts from this opportunity",
+      "fields_offered": [
+        "1000Vdc",
+        "SPDtype",
+        "7exactreferences",
+        "modelweights"
+      ],
+      "estimated_useful_yield": {
+        "references_or_platforms_discovered": 7,
+        "accepted": 0
+      },
+      "processed_cursor": {
+        "acceptance_complete": false
+      },
+      "result": "Seven published references found; junction protection box versus actual parallel-combiner topology unresolved. No accepted rows or full-data licensing claim.",
+      "retry_condition": "Source-specific terms and identity/topology review required",
+      "next_action": "Inspect linked DS-DC-PV-Junction-Boxes-EN circuit diagrams, exact part tables and publisher reuse terms before classifying.",
+      "next_due_check": "2026-11-06T18:00:00Z"
+    },
+    {
+      "id": "zimtrack_revision_discovery_1800",
+      "entity": "equipment",
+      "country": null,
+      "source_url": "https://pv-tracker.de/wp-content/uploads/sites/7/2021/06/ZIM-Track-Data-Sheet.pdf",
+      "format": "PrimaryOEM HTML/PDF discovery",
+      "version_or_date": "Source revision not established",
+      "publication_cadence": "Unstated",
+      "last_attempt": "2026-11-04T18:17:33.966140+00:00",
+      "licence_assessment": "Not assessed for extraction; no accepted facts from this opportunity",
+      "fields_offered": [
+        "trackingrange",
+        "bounds",
+        "structure/controlwarranty",
+        "backtracking"
+      ],
+      "estimated_useful_yield": {
+        "references_or_platforms_discovered": 1,
+        "accepted": 0
+      },
+      "processed_cursor": {
+        "acceptance_complete": false
+      },
+      "result": "HistoricalZIMTrack datasheet found; currentZIMTrack1P revision/configuration relationship and specificreuse terms unresolved. No exactnewvariant manufactured.",
+      "retry_condition": "Source-specific terms and identity/topology review required",
+      "next_action": "Locate current OEM version, compare model/platform identity, confirm copyright terms and keep configurable dimensions/power supplies qualified.",
+      "next_due_check": "2026-11-06T18:00:00Z"
+    }
+  ]
+}
