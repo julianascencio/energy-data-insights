@@ -136,3 +136,23 @@ def test_supporting_correction_is_linked_without_creating_another_project():
     assert set(rows[0]["sources"]) == {r["notice_id"], "correction"}
     with pytest.raises(ValueError, match="Supporting notice"):
         stage(r)
+
+
+def test_separate_extensions_share_notice_not_identity_or_capacity():
+    r = review()
+    projects = []
+    for name in ["Extension A", "Extension B"]:
+        child = review()
+        child["identity"] = name
+        child["values"].update(name=name, record_scope="phase", phase_id=name)
+        child["locators"].update(record_scope="Extension scope", phase_id="Extension scope")
+        projects.append(child)
+    r["projects"] = projects
+    rows, ledger = stage(r)
+    assert len(rows) == len(ledger) == 2
+    assert len({x["record_id"] for x in rows}) == 2
+    assert all(x["record_scope"] == "phase" for x in rows)
+    assert all(x["aggregation_role"] == "unresolved" for x in rows)
+    projects[1]["sha256"] = "0" * 64
+    with pytest.raises(ValueError, match="provenance"):
+        stage(r)

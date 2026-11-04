@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T12:43:00Z",
+  "updated_at": "2026-11-04T13:35:00Z",
   "branch": "research/wind-20261104-0935",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind.lock in a shared worker; always compare remote branch SHA before publishing. A changed head requires stopping/reconciliation, never force overwrite.",
   "queue": [
@@ -164,7 +164,8 @@
         "DMCqueueindices9–14complete:13new5turbinesenriched; SG/Vayona remainsheld. All15queued disclosures exhausted. Next exact supplier specification originals for WE4500S-01,WE7000G,EF0953A; reconcile Delijia legal entities without alias inference. Bearing/structural category mappings need explicit schema design before importing retained codes.",
         "TC-240121 Rev.2 original acquired; complete p6 gearbox pair reviewed; EF0953A enriched with drawing-qualified ratio, distinct NGC candidate held. Next pp4–5,7–10 exact component tables; retain p11 option conditions and historical certification scope. WE4500S-01/WE7000G supplier spec originals remain unresolved.",
         "TC-240121 Rev2 component sections pp5,7–10 complete; p6NGC exact gearbox added;5new1turbine enrichment. Remaining21 assembly/alias holds retained. Next exact Bonfiglioli JB00024563/JB00024827 drawing sheets; no 7T/TW alias inference.",
-        "Exact Bonfiglioli JB00024563/JB00024827/7T07W searches returned only the already reviewed certificate; no new drawings. Keep21 assembly holds; next independent supplier WE4500S-01 and WE7000G originals."
+        "Exact Bonfiglioli JB00024563/JB00024827/7T07W searches returned only the already reviewed certificate; no new drawings. Keep21 assembly holds; next independent supplier WE4500S-01 and WE7000G originals.",
+        "WE4500S-01/WE7000G searches yield previously reviewed MNRE disclosures and secondary DNV mirrors only. Next official DNV certificate search/export for CC-DNV-SE-0074-09388 revision2; no current-validity inference from mirrors."
       ]
     },
     {
@@ -210,17 +211,20 @@
         "2026-10-20",
         "2026-11-02",
         "2026-11-03",
-        "2026-11-04"
-      ],
-      "next_dates": [
+        "2026-11-04",
         "2026-10-21",
         "2026-10-22",
         "2026-10-23"
       ],
+      "next_dates": [
+        "2026-10-26",
+        "2026-10-27",
+        "2026-10-28"
+      ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "Select every wind-mentioned Series A notice in next_dates; review full original and correction links. Reconcile Los Campillos actual wind permit/status before using PV decision. Mistral PEol-338 remains separate from withdrawn Nordés. No automatic title capacity/status extraction.",
-      "decision_ledger": "2026-11-04-1335-decisions.json"
+      "next_task": "Complete next daily Series A partitions; reconcile PEol-899 against two historical EL PARAMO identities; existing Coll del Moro/Torre Madrina farm registry links before aggregating extensions.",
+      "decision_ledger": "2026-11-04-1435-decisions.json"
     }
   ],
   "user_priority_update": {

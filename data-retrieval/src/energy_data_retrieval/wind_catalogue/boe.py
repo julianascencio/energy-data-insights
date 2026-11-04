@@ -121,6 +121,22 @@ def stage_boe_notices(
         ident = review["notice_id"]
         if hashlib.sha256(originals[ident]).hexdigest() != review["sha256"]:
             raise ValueError("Original BOE checksum mismatch")
+        if "projects" in review:
+            if not review["projects"]:
+                raise ValueError("Empty multi-project notice")
+            for project in review["projects"]:
+                child = {k: v for k, v in review.items() if k != "projects"}
+                child.update(project)
+                if child["notice_id"] != ident or child["sha256"] != review["sha256"]:
+                    raise ValueError("Project cannot replace its notice provenance")
+                staged, ledger = stage_boe_notices(
+                    [child], originals, existing + rows, expected_ids=[ident], now=now
+                )
+                rows.extend(staged)
+                names.update(_normalized(r["name"]) for r in staged)
+                record_ids.update(r["record_id"] for r in staged)
+                decisions.extend({**d, "identity": child["identity"]} for d in ledger)
+            continue
         if not review.get("values"):
             decisions.append(
                 {"notice_id": ident, "decision": "deferred", "reason": review["reason"]}
@@ -153,7 +169,7 @@ def stage_boe_notices(
         values.update(
             record_id=rid,
             entity_type="projects",
-            record_scope="farm",
+            record_scope=values.get("record_scope", "farm"),
             aggregation_role="unresolved",
         )
         row = evidence_record(values, source_id=ident, now=now, locator=review["locator"])

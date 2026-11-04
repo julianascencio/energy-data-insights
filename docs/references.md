@@ -6648,6 +6648,86 @@ ENERCON (2019). **Technical data E-82 E2**. [Source](https://assets-global.websi
 
 **Used by:** `catalogues/wind`, `docs/wind-catalogue.md`.
 
+### sie_laesa_120_2026
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-120-2026-RCD — Parque Solar LAESA**. [Source](https://sie.gob.do/wp-content/uploads/2026/09/SIE-120-2026-RCD.pdf)
+
+**Role:** data. PDF pp1,8–12; decisionp9 and signeddatep12. Annexes afterp12 not fully reviewed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bsl_residential_remaining_20261104
+
+BSLBATT (2026). **BSLBATT Residential Energy Storage Products 2026 — remaining tables**. [Source](https://bslbatt.com/wp-content/uploads/BSLBATT-Residential-Energy-Storage-Products-2026.pdf)
+
+**Role:** data. PDF pp14–16, exact columns; visually reviewed
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_re_260310
+
+BSLBATT (2026). **ESS-BATT RE Series supplementary datasheet 260310**. [Source](https://bslbatt.com/wp-content/uploads/ESS-BATT-RE-Series-%E8%A1%A5%E5%85%85%E7%89%88-260310.pdf)
+
+**Role:** data. PDF pp2–3 battery cluster tables; pack and cluster boundaries separate
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### sie_fv6_088_2026
+
+Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-088-2026-RCD — Parque Fotovoltaico FV6**. [Source](https://sie.gob.do/wp-content/uploads/2026/07/SIE-088-2026-RCD.pdf)
+
+**Role:** data. Decision PDF pp1,8–11,14–16; signed date p16, not July27 PDF creation/upload. Technical annex pp17–116 not fully reviewed.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### sie_maranatha_139_2025
+
+Superintendencia de Electricidad, República Dominicana (2025). **Resolución SIE-139-2025-RCD — ampliación Parque Solar Fotovoltaico Maranatha20MW**. [Source](https://sie.gob.do/wp-content/uploads/2025/11/SIE-139-2025-RCD.pdf)
+
+**Role:** data. PDF pp1,8–12 decision; annex pp13–96 not substantively extracted
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### cne_maranatha_modif_005_2026
+
+Comisión Nacional de Energía, República Dominicana (2026). **Parque Solar Fotovoltaico Maranatha20MW — concesión**. [Source](https://cne.gob.do/concesion/parque-solar-fotovoltaico-maranatha/)
+
+**Role:** data. Named concession registry record: resolution/date, storage MW/MWh, company, location, solar ratings, duration
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bsl_hv_pack_261024
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (2026). **ESS-GRID HV PACK 135 datasheet**. [Source](https://bslbatt.com/wp-content/uploads/ESS-GRID-HV-PACK-135-261024.pdf)
+
+**Role:** data. PDF pp2–3 exact model columns; p6 shared high-voltage BCU; p7 application and chemistry
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bsl_re_manual_v11
+
+BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (2026). **ESS-BATT RE Series User Manual V1.1**. [Source](https://bslbatt.com/wp-content/uploads/ESS-BATT-RE-UserManual-ENGvers-260122.pdf)
+
+**Role:** data. PDF p3 revision history; pp12,14–18,43–45 (printed pp7,9–13,38–40)
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### ecocloud_saigeri_20261008
+
+Eco Cloud Consultants Limited (2026). **Saigeri 40 MW Solar Park & Storage**. [Source](https://ecocloudconsultants.co.ke/projects/saigeri-40mw-solar-park/)
+
+**Role:** data. Project overview, at-a-glance and project status; Copyright retained; terms2026-10-03 reviewed. Bounded public factual record only, no materials redistribution or private documents.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### pylon_h2_v2_22p2fhb1018
+
+Pylon Technologies Co., Ltd. (n.d.). **Force-H2-V2 Operation Manual**. [Source](https://pylonwebs3.s3.amazonaws.com/upload/2024/09/25/RESS-Installation%20Manual--Force-H2-V2%205PMPA08-00134%20%28V1.1%29%20EU_20240925122333A033.pdf)
+
+**Role:** data. PDF pp12,14–21 / printed8,10–17; exact FH9637M and FC0500M-40S-V2 sections; Copyright retained; bounded factual review of two exact components, no bulk licence or full-document redistribution.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
 ### abb_wind_system_2020_revc
 
 ABB (2020). **ACS880-77LC/-87LC/-87CC wind turbine converters system description**. [Source](https://library.e.abb.com/public/2b4b8597d93940f59ee37087613d9518/EN_ACS880-77LC_87LC_87CC_SD_C_A4.pdf)
@@ -6703,6 +6783,14 @@ Cour administrative d’appel de Lyon / Legifrance (2024). **CAA de Lyon,21 Marc
 **Role:** data. Primary page reviewed for identity follow-up; no explicit EIC/permit crosswalk. Candidates remain deferred. Original source bytes/checksum unavailable.
 
 **Used by:** `catalogues/wind/research/2026-11-04-0835-identity-followup.jsonl`.
+
+### galataud_2026_thermal_counterfactual
+
+Galataud, Antoine (2026). **Are time series foundation models good zero-shot thermal dynamics learners?**. [Source](https://techblog.foobot.io/ai/hvac/control/tsfm-counterfactual-thermal-dynamics.html)
+
+**Role:** implemented. Reanalysis of published numerical EnergyPlus and Timestral outputs, not new model inference. Start-gated event convention inferred from published numerical event times; unrestricted crossings retained.
+
+**Used by:** `methods/src/energy_methods/thermal_counterfactual.py`, `docs/thermal-counterfactual.md`.
 
 ### mnre_component_0_20261104
 
@@ -6888,90 +6976,34 @@ Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A
 
 **Used by:** `catalogues/wind/sources.json`.
 
-### sie_laesa_120_2026
+### boe_a_2026_21939
 
-Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-120-2026-RCD — Parque Solar LAESA**. [Source](https://sie.gob.do/wp-content/uploads/2026/09/SIE-120-2026-RCD.pdf)
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-21939 Resolución de 9 de septiembre de 2026, de la Dirección General de Política Energética y Minas, por la que se desestima la solicitud de Cefiro Holdco 7, SL, de autorización administrativa previa del parque eólico El Páramo, de 92,4 MW, en la provincia de León.**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21939)
 
-**Role:** data. PDF pp1,8–12; decisionp9 and signeddatep12. Annexes afterp12 not fully reviewed.
+**Role:** data. Dated decision 2026-09-09; original HTML checksum and scope qualifications in wind registry.
 
-**Used by:** `catalogues/bess/sources.json`.
+**Used by:** `catalogues/wind/sources.json`.
 
-### bsl_residential_remaining_20261104
+### boe_a_2026_22067
 
-BSLBATT (2026). **BSLBATT Residential Energy Storage Products 2026 — remaining tables**. [Source](https://bslbatt.com/wp-content/uploads/BSLBATT-Residential-Energy-Storage-Products-2026.pdf)
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22067 Resolución de 2 de octubre de 2026, de la Dirección General de Calidad y Evaluación Ambiental, por la que se formula declaración de impacto ambiental del proyecto «Ampliación de los parques eólicos Coll del Moro, de 11 MW de potencia instalada, y Torre Madrina, de 11 MW de potencia instalada, y su infraestructura de evacuación, en la provincia de Tarragona».**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22067)
 
-**Role:** data. PDF pp14–16, exact columns; visually reviewed
+**Role:** data. Dated decision 2026-10-02; original HTML checksum and scope qualifications in wind registry.
 
-**Used by:** `catalogues/bess_oem/sources.json`.
+**Used by:** `catalogues/wind/sources.json`.
 
-### bsl_re_260310
+### boe_a_2026_22069
 
-BSLBATT (2026). **ESS-BATT RE Series supplementary datasheet 260310**. [Source](https://bslbatt.com/wp-content/uploads/ESS-BATT-RE-Series-%E8%A1%A5%E5%85%85%E7%89%88-260310.pdf)
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22069 Resolución de 1 de octubre de 2026, de la Dirección General de Política Energética y Minas, por la que se otorga a Renovalia Guara, SLU, la declaración, en concreto, de utilidad pública del parque eólico Valiente II, de 88,4 MW, y su infraestructura de evacuación, en Gurrea de Gállego, Alcalá de Gurrea, Almudévar, Lupiñén-Ortilla y La Sotonera (Huesca).**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22069)
 
-**Role:** data. PDF pp2–3 battery cluster tables; pack and cluster boundaries separate
+**Role:** data. Dated decision 2026-10-01; original HTML checksum and scope qualifications in wind registry.
 
-**Used by:** `catalogues/bess_oem/sources.json`.
+**Used by:** `catalogues/wind/sources.json`.
 
-### sie_fv6_088_2026
+### boe_a_2026_22071
 
-Superintendencia de Electricidad, República Dominicana (2026). **Resolución SIE-088-2026-RCD — Parque Fotovoltaico FV6**. [Source](https://sie.gob.do/wp-content/uploads/2026/07/SIE-088-2026-RCD.pdf)
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). **BOE-A-2026-22071 Resolución de 2 de octubre de 2026, de la Dirección General de Política Energética y Minas, por la que se acepta el desistimiento formulado por Planta FV 130, SLU, de la solicitud de autorización administrativa previa para el parque eólico Valentina, de 90 MW, para su hibridación con la instalación solar fotovoltaica Valentina Solar, de 60,382 MW, y de una parte de su infraestructura de evacuación, en Rosinos de la Requejada, Espadañedo y Asturianos (Zamora).**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-22071)
 
-**Role:** data. Decision PDF pp1,8–11,14–16; signed date p16, not July27 PDF creation/upload. Technical annex pp17–116 not fully reviewed.
+**Role:** data. Dated decision 2026-10-02; original HTML checksum and scope qualifications in wind registry.
 
-**Used by:** `catalogues/bess/sources.json`.
-
-### sie_maranatha_139_2025
-
-Superintendencia de Electricidad, República Dominicana (2025). **Resolución SIE-139-2025-RCD — ampliación Parque Solar Fotovoltaico Maranatha20MW**. [Source](https://sie.gob.do/wp-content/uploads/2025/11/SIE-139-2025-RCD.pdf)
-
-**Role:** data. PDF pp1,8–12 decision; annex pp13–96 not substantively extracted
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### cne_maranatha_modif_005_2026
-
-Comisión Nacional de Energía, República Dominicana (2026). **Parque Solar Fotovoltaico Maranatha20MW — concesión**. [Source](https://cne.gob.do/concesion/parque-solar-fotovoltaico-maranatha/)
-
-**Role:** data. Named concession registry record: resolution/date, storage MW/MWh, company, location, solar ratings, duration
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### bsl_hv_pack_261024
-
-BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (2026). **ESS-GRID HV PACK 135 datasheet**. [Source](https://bslbatt.com/wp-content/uploads/ESS-GRID-HV-PACK-135-261024.pdf)
-
-**Role:** data. PDF pp2–3 exact model columns; p6 shared high-voltage BCU; p7 application and chemistry
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### bsl_re_manual_v11
-
-BSLBATT / BSL NEW ENERGY TECHNOLOGY CO., LTD (2026). **ESS-BATT RE Series User Manual V1.1**. [Source](https://bslbatt.com/wp-content/uploads/ESS-BATT-RE-UserManual-ENGvers-260122.pdf)
-
-**Role:** data. PDF p3 revision history; pp12,14–18,43–45 (printed pp7,9–13,38–40)
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### ecocloud_saigeri_20261008
-
-Eco Cloud Consultants Limited (2026). **Saigeri 40 MW Solar Park & Storage**. [Source](https://ecocloudconsultants.co.ke/projects/saigeri-40mw-solar-park/)
-
-**Role:** data. Project overview, at-a-glance and project status; Copyright retained; terms2026-10-03 reviewed. Bounded public factual record only, no materials redistribution or private documents.
-
-**Used by:** `catalogues/bess/sources.json`.
-
-### pylon_h2_v2_22p2fhb1018
-
-Pylon Technologies Co., Ltd. (n.d.). **Force-H2-V2 Operation Manual**. [Source](https://pylonwebs3.s3.amazonaws.com/upload/2024/09/25/RESS-Installation%20Manual--Force-H2-V2%205PMPA08-00134%20%28V1.1%29%20EU_20240925122333A033.pdf)
-
-**Role:** data. PDF pp12,14–21 / printed8,10–17; exact FH9637M and FC0500M-40S-V2 sections; Copyright retained; bounded factual review of two exact components, no bulk licence or full-document redistribution.
-
-**Used by:** `catalogues/bess_oem/sources.json`.
-
-### galataud_2026_thermal_counterfactual
-
-Galataud, Antoine (2026). **Are time series foundation models good zero-shot thermal dynamics learners?**. [Source](https://techblog.foobot.io/ai/hvac/control/tsfm-counterfactual-thermal-dynamics.html)
-
-**Role:** implemented. Reanalysis of published numerical EnergyPlus and Timestral outputs, not new model inference. Start-gated event convention inferred from published numerical event times; unrestricted crossings retained.
-
-**Used by:** `methods/src/energy_methods/thermal_counterfactual.py`, `docs/thermal-counterfactual.md`.
+**Used by:** `catalogues/wind/sources.json`.

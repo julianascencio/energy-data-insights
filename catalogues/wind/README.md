@@ -312,3 +312,17 @@ Mistral, Cerrato VI and Las Majas VIIB mentions remain research candidates.
 No equipment record is added: exact Bonfiglioli drawing searches found only the
 already processed certificate. See the dated transcription, source review and
 decision ledger; the next daily partitions are 21–23 October 2026.
+
+## Paired extension decisions
+
+The 1435 continuation completes BOE Series A wind-mentioned titles for
+21–23 October 2026: four notices and five project scopes. It adds the separately
+reported 11 MW Coll del Moro and Torre Madrina extensions, Valiente II and
+Valentina's withdrawn wind hybrid. Existing farms and proposed extensions are
+not combined. El Páramo remains held against two historical same-name identities.
+The adapter supports several explicitly reviewed project scopes in one notice,
+retaining separate phase IDs and shared original-source evidence. Solar ratings,
+public-utility declarations and proposed capacities do not establish wind output
+or commissioning. All four new records remain excluded from capacity totals.
+Exact supplier searches produced no new primary OEM sheet; no new equipment is
+claimed. Next daily BOE partitions: 26–28 October 2026.

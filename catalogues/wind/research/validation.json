@@ -1,22 +1,22 @@
 {
-  "batch": "2026-11-04-1335",
-  "validated_base": "7004215c89e6d4482a391577d321605860ae0f9a",
-  "iteration_parent": "56627081204d3b4ce6c0c284992e779b9bde383f",
+  "batch": "2026-11-04-1435",
+  "validated_base": "6da869c9e6b990050f614ec0abbc62fd07a43604",
+  "iteration_parent": "878a186ab8a9cfc7361a3f264011e14de793c310",
   "local": {
-    "pytest": "2236 passed; five optional skips",
+    "pytest": "2396 passed; five optional skips after current-main integration",
     "viewer": "16 passed",
-    "quality": "Ruff lint/format, ty, repository hygiene, citations and whitespace passed",
-    "catalogue": "21916 records validated; all21911 preceding records and301 previous source-registry entries preserved",
+    "quality": "Ruff lint/format (909 files), ty, repository hygiene (4006 candidates), citations and whitespace passed after integration",
+    "catalogue": "Exact replay 4 records/5 decisions; 21916 prior records/308 sources unchanged; 21920 records validated; seven snapshot files identical.",
     "snapshots": "Two final builds of seven files byte-identical; immutable typed Zstandard Parquet",
-    "source_replay": "Five canonical records including conflict quarantine and supporting correction, and seven notice decisions, replay exactly from checksummed original HTML and reviewed transcription",
-    "capacity": "All six reported capacity totals and included unknown counts unchanged; excluded project count increases by5",
-    "docs": "Strict Sphinx plot_gallery=0 passed;536 HTML pages passed local links/assets check",
+    "source_replay": "Four canonical records and five scope decisions replay exactly from checksummed original HTML and reviewed transcription",
+    "capacity": "All six reported capacity totals unchanged; excluded project count increases by4",
+    "docs": "Strict Sphinx plot_gallery=0 passed; Documentation check passed: 574 HTML pages; local links and assets resolve.",
     "example": "Offline Wind gallery passed on final records",
     "packages": "Three wheels and three sdists built"
   },
   "resolved_validation_failures": [
-    "Initial citation used_by module name corrected to actual repository path; full suite rerun passed",
-    "A later full-suite/docs rerun exhausted workspace disk space; reproducible older outputs cleared; final suite and strict docs rebuilt successfully"
+    "Shared BOE notice identifier replaced by unique project-scope identifiers for paired extensions; exact replay and full validation passed",
+    "Initial full suite/docs exhausted temporary storage; reproducible older outputs cleared; final full suite and strict docs passed"
   ],
   "not_executed": [
     "Full gallery",
@@ -24,31 +24,40 @@
     "Independent operational performance or current certificate eligibility verification"
   ],
   "remote_ci": {
-    "previous_commit": "56627081204d3b4ce6c0c284992e779b9bde383f",
+    "previous_commit": "878a186ab8a9cfc7361a3f264011e14de793c310",
     "previous_result": "Python3.12/Python3.13 and Documentation succeeded; deployment skipped",
     "this_batch": "Pending publication"
   },
   "snapshot_sha256": {
-    "sources.json": "9477ecd6d7f68b40312e7a24234c4c65a0a870efc962f41e6a046c111686c392",
+    "sources.json": "5a7cf6ae6e9e8d342a19d8a2edeecffb7eee9d79d0ecd0f414b949412d1af830",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "64b4cb2041d836800b55c8371dd55ceef8ca69d4db3bdd4848d04b2c5740b966",
+    "manifest.json": "f4834c0e47c21ef56a983f6d9364e51cf35779cf52602ee18f19971bb92fce16",
     "equipment.parquet": "4429d5eaa2b673c5f77f04219cdf97fcaab78b2a2ba4e8d8c6969ca304f3b6b8",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "6657068eb2dfe1db9731edd42ff86b5201f71d3902d4d6ca7b7d19c2589e0330"
+    "projects.parquet": "f61820b1859dbfaf9d179bb3accd57c428301d05e003c6b53b8e58b17b59d301"
   },
   "log_sha256": {
-    "pytest-verified.log": "859c07a3c891735e52919079f72be24104d5b7c5a19021af6119b4a0dd5e596c",
-    "docs-verified.log": "d6c567a8af40e22b04f77579bf725b1cd18580a5b25eee8388de33ec71685b31",
-    "links-verified.log": "00efba4fb7d5b09c21402aded869e7b3ec2cc5a78b0459a318361f806e5315c6",
-    "packages-verified.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
-    "replay-verified.log": "bf0d2915b8bff432bb4c3ad82665129c6f5b00d39df13238ac8a55c9c81f67bc",
+    "pytest-final.log": "8ee977e4ecea14eae2d5115d81f4d1cbd25da2a6b6c6f3f82c9dfcfc2bc7a22f",
+    "docs-final.log": "84626cae14155fa0193524fe6b964ac9883e8ebc7211045eedb0497dff96faeb",
+    "links-final.log": "00efba4fb7d5b09c21402aded869e7b3ec2cc5a78b0459a318361f806e5315c6",
+    "packages-final.log": "58bda4b172e5810ebf891e3a03be18b139649436a68d1cd2594f58bcd667d46d",
+    "replay-final.log": "b72f75a0af6117379ff3eb02ea25280f4be2d2beb40b2c7acd3fa327222d45d4",
     "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
     "format.log": "4c4af158016f111858b093be28e5eae0e2ecd3ab0850e5e8205bef2b88709fc6",
     "ty.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "viewer.log": "5774beeff0b6d1575fb68437df546cd02c8748ef3f6cf59fd1a571b0b7bcee32",
-    "gallery-final.log": "d2fa91b2610e3c10c61d7ea50221d36f9d82dccb489b0ea38a8c8f526bc92648",
-    "repository-final.log": "8ad704cd4a31559fe6948d1dfd9ccc429a13ed64e87f54240284ccce79f9b5d5",
-    "citations-final.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141"
+    "viewer.log": "533a1e33bc27b177510489baba5b1ba183155507fb530fb6df15f77f82514792",
+    "gallery-final.log": "e7eb80f310e2943df92d558fb9cebdc6e62ecd726ccb0335139cee6ed17688ac",
+    "repository.log": "245426fdc6b79ee1125c8a7dd32c4271904dac1fdda20ccbc7bbc46b12eb6cb7",
+    "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
+    "pytest-integrated.log": "5e87dc10880de54bd10359c5a8364a3cee54ef7758a82ae1a9daedc452298956",
+    "docs-integrated.log": "fce7f7d352038463b846634afaee8a7638c4371907638af0e47762ade7bb1147",
+    "links-integrated.log": "bbe25bddd005d6b1bbcb07c7a88ec80cdb9cc494a97ff8daa8b21eed8ad648ef",
+    "packages-integrated.log": "842b316ab0e33a3ef6dd9ee01b5eddcfb9f3a1ac9157666aa704c91df78ee456"
+  },
+  "publication_concurrency": {
+    "observed_head": "5dd56b0c8bcd40e174223291f55fc2725a19325e",
+    "change": "Concurrent main merge; all its citation entries retained exactly, no catalogue research changes",
+    "policy": "Fast-forward from observed head with expected-head lease; never replace its history"
   }
 }
