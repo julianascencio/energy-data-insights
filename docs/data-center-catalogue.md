@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 182 project records across 36 countries:
-65 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
+The current continuation branch has 183 project records across 36 countries:
+66 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -38,10 +38,11 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 868 exact models/configurations from NVIDIA, AMD, Baudouin, Borri, Carrier, CoolIT Systems, Cummins,
-Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR, Lenovo, Motivair by Schneider
-Electric, Makelsan, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
-STULZ, Supermicro, Toshiba and Vertiv. Current categories are GPU accelerators,
+has 962 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+Carrier, CoolIT Systems, Cummins, Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR,
+Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
+nVent HOFFMAN, Schneider Electric, Siemens,
+STULZ, Supermicro, Toshiba, Vertiv and Para Systems / Minuteman Power Technologies. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -156,6 +157,23 @@ The Tescom continuation processes 22 exact rows across the current DS POWER
 and kW value remains separate. Exact weights and unqualified cabinet dimensions
 are normalized; battery-qualified DS POWER SH dimensions, module statements,
 selectable electrical values, batteries and communications remain observations.
+The ENERGY STAR continuation processes all 33 current certification entries for
+Para Systems / Minuteman Power Technologies, all 22 entries for ADI, all 15
+entries for Ablerex Electronics, all ten entries for Panduit, all seven entries
+for Appleton Group / SolaHD and all seven entries for Legrand AV in EPA dataset
+`ifxy-2uty`. ADI's 11 W BOX and
+11 UltraTech certifications remain distinct even where model names recur across
+brands. Each entry retains its immutable ENERGY STAR ID, certification date,
+active W, apparent VA, weighted and load-point efficiency, dimensions and
+protocols. Tested-configuration, warranty and percentage-load runtime fields are
+retained where reported. The four Ablerex MP modular entries explicitly report
+those values as unavailable, so their normalized fields remain null; they are
+not derived from the 11 AP entries. A normalized runtime is only a reported 100%
+load value, paired with the exact W-to-kW conversion of that configuration's
+active output. No battery energy, maximum configuration, output power factor or
+deployment is inferred. The EPA-certified Legrand AV entries are sourced from
+the public issuer dataset and do not reuse the separately held Legrand OEM
+technical tables.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -166,6 +184,15 @@ July 2026 YIT phase remains quarantined. FIN05 keeps 60 MW phase IT load separat
 from the municipality's 75 MW first-phase electrical demand, and its EUR 2 billion
 operator investment separate from up-to-EUR 10 billion of possible customer-owned
 server and installation investment.
+The Nordic reconciliation continuation adds the previously omitted atNorth FIN03
+facility as an operational Helsinki-metro identity without allocating the combined
+FIN01/FIN03 3.2 MW observation to either site. It separates DEN01's Q4 2025
+first-phase live milestone from the Q1 2026 campus-operational milestone and moves
+DEN02 to permitted status from a dated local-plan approval while keeping its 60 MW
+first-phase and up-to-500 MW campus statements unclassified. Municipal evidence for
+SWE04 now binds the 200 MW phase-one grid connection to E.ON and keeps it separate
+from 300 MW planned project power and 500 MW Hamre industrial-park capacity. The
+conflicting H1 2028 and autumn 2028 commissioning targets remain quarantined.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options
@@ -316,4 +343,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-04-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-04T0134-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-04T1217-validation.json).

@@ -1,6 +1,46 @@
 {
-  "retrieved_at": "2026-11-04T08:32:00Z",
+  "retrieved_at": "2026-11-04T13:20:48Z",
   "accepted": [
+    {
+      "inventory": "EPA ENERGY STAR certified Panduit, Appleton/SolaHD and Legrand AV UPS partner inventories",
+      "processed_offset": 24,
+      "accepted_records": 24,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact certification facts normalized without redistributing the source CSV. The Legrand AV entries use the issuer dataset and do not reuse the separately held Legrand OEM tables.",
+      "originals": "The complete official CSV remains byte-identical to the registered 923-row, 990,085-byte snapshot with SHA-256 0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f. The three complete partner inventories contain ten Panduit, seven Appleton/SolaHD and seven Legrand AV certification entries in the 2026-11-03 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified Ablerex Electronics UPS partner inventory",
+      "processed_offset": 15,
+      "accepted_records": 15,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact certification facts normalized without redistributing the source CSV",
+      "originals": "The complete official CSV re-fetch is byte-identical to the registered 923-row, 990,085-byte snapshot with SHA-256 0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f. The Ablerex inventory contains all 15 certification entries in the 2026-11-03 dataset update; four modular MP rows explicitly report runtime, warranty and tested-configuration identifiers as unavailable."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified ADI UPS partner inventory",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact certification facts normalized without redistributing the source CSV",
+      "originals": "The complete official CSV re-fetch is byte-identical to the registered 923-row, 990,085-byte snapshot with SHA-256 0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f. The ADI inventory contains all 22 certification entries in the 2026-11-03 dataset update: 11 W BOX and 11 UltraTech."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified Para Systems / Minuteman UPS partner inventory",
+      "processed_offset": 33,
+      "accepted_records": 33,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact certification facts normalized without redistributing the source CSV",
+      "originals": "The complete 923-row, 990,085-byte official CSV snapshot was captured with SHA-256 0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f. The selected partner inventory contains all 33 certification entries in the 2026-11-03 dataset update."
+    },
+    {
+      "inventory": "atNorth FIN03 identity plus DEN01, DEN02 and SWE04 official milestone/boundary reconciliation",
+      "processed_offset": 4,
+      "accepted_records": 1,
+      "enriched_records": 3,
+      "reuse": "Factual extraction from public operator, seller, municipal and corroborating secondary pages; no open licence asserted; originals are not redistributed",
+      "originals": "Eight accepted HTML originals total 920,543 bytes and each has a SHA-256 checksum in sources.json. The existing checksummed 2025 atNorth sustainability report supplies the FIN03 operational status and DEN01 campus milestone."
+    },
     {
       "inventory": "FIN02, FIN04 and FIN05 official Finnish municipal permit/disclosure observations",
       "processed_offset": 6,
@@ -76,6 +116,22 @@
   ],
   "deferred": [
     {
+      "candidate": "Delta current IPT and DPM UPS tables",
+      "reason": "Official terms prohibit reproducing, copying, distributing, publishing, licensing, derivative use or transfer without prior written permission. No UPS facts or bytes were imported."
+    },
+    {
+      "candidate": "HITEC PowerPRO technical tables",
+      "reason": "The reviewed official PowerPRO3600 brochure labels its contents confidential and proprietary. No rating rows or brochure bytes were imported pending clearer permission."
+    },
+    {
+      "candidate": "HIMOINSA HGY generator tables",
+      "reason": "Official legal terms limit materials to private use and prohibit storage, publication and reproduction without authorization. No HGY facts or bytes were imported."
+    },
+    {
+      "candidate": "Generac industrial generator tables",
+      "reason": "Official terms prohibit copying, reproduction, display, distribution, reuse, publication, licensing and derivative use without written permission. No specifications or bytes were imported."
+    },
+    {
       "candidate": "Airedale product tables",
       "reason": "Explicit website terms prohibit copying or incorporation into another work beyond personal-use exceptions. The staged candidate batch was withdrawn in full before publication."
     },
@@ -134,9 +190,30 @@
     {
       "candidate": "LiquidStack public CDU tables",
       "reason": "Public sales terms restrict communication/distribution of supplied documents; public-datasheet reuse scope needs a clearer site-specific policy. No facts or bytes were imported."
+    },
+    {
+      "candidate": "Salicru UPS technical tables",
+      "reason": "Official legal terms limit content to private non-profit use and require authorization for reproduction, exploitation or distribution. No facts or bytes were imported."
+    },
+    {
+      "candidate": "Pramac, Kirloskar and Aksa generator rating tables",
+      "reason": "Supplier-specific official terms or brochure notices require permission for reproduction, publication or distribution. Candidate tables were screened only; no facts or bytes were imported."
+    },
+    {
+      "candidate": "Open Access Data Centres portfolio",
+      "reason": "Official terms prohibit reproduction except as allowed by the copyright notice. The current core/edge portfolio was screened only; no facility facts or bytes were imported."
     }
   ],
   "quarantined": [
+    {
+      "record": "atNorth SWE04 Solleftea",
+      "field": "commissioning_date",
+      "observations": [
+        "Municipal current-status page targets operation during H1 2028",
+        "Municipal grid-connection release forecasts operation during autumn 2028"
+      ],
+      "reason": "Both dated municipal observations are retained; commissioning_date remains null until a later permit or operator milestone resolves the schedule. The separate 200 MW phase-one grid connection, 300 MW planned project scope and 500 MW industrial-park capacity are no longer conflated."
+    },
     {
       "record": "atNorth FIN04 Myllykoski campus",
       "field": "phase_id",
@@ -209,6 +286,10 @@
     "Tescom exact printed kVA and kW remain separate reported boundaries; no power factor is derived.",
     "Tescom selectable voltage/frequency, battery, communications and module choices remain observations and do not create synthesized configurations, battery energy or runtime.",
     "DS POWER SH battery-qualified dimension alternatives remain observations; only the exact unqualified weights are normalized.",
-    "MTI250 cabinet ratings and 25 kVA/25 kW power-module statements remain separate; module counts are not synthesized into additional cabinet variants."
+    "MTI250 cabinet ratings and 25 kVA/25 kW power-module statements remain separate; module counts are not synthesized into additional cabinet variants.",
+    "ENERGY STAR Unique ID is the immutable identity for each certification entry; similarly named models are not collapsed across tested configurations.",
+    "Para Systems/Minuteman active W and apparent VA are converted exactly to kW and kVA but remain separate; no output power factor is derived.",
+    "Normalized runtime is the certified minimum configuration's reported 100% load runtime, with runtime_load_kw converted exactly from its active W rating; the separately reported 50% runtime remains a load-qualified observation.",
+    "Weighted and 25/50/75/100% efficiency values retain the minimum-configuration and lowest-input-dependency normal-mode boundary; battery energy and maximum configurations remain unknown."
   ]
 }

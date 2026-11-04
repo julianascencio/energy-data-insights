@@ -1,0 +1,124 @@
+{
+  "run_id": "energy-star-adi-ups-20261104T111804Z",
+  "retrieved_at": "2026-11-04T11:18:04Z",
+  "branch": "research/data-center-database-20261104T0915Z",
+  "base_head": "7004215c89e6d4482a391577d321605860ae0f9a",
+  "prepublication_remote_head": "dd3229f72a7f1d904b50d49ac5d12e4bf86499d6",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus_aggregate": 114
+    },
+    "equipment": 923,
+    "total": 1106,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 32,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 22,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 182,
+    "equipment": 868,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 30
+  },
+  "pull_request_delta": {
+    "projects": 1,
+    "enriched_projects": 3,
+    "equipment": 55,
+    "inventories": [
+      "atNorth FIN03 identity and Nordic milestone reconciliation",
+      "EPA ENERGY STAR certified Para Systems / Minuteman partner inventory",
+      "EPA ENERGY STAR certified ADI partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 990085,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0c5243e451f3d533c3b3ab0555c151d67bdbc8481f6e63f44abd126d43d62a5f",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {
+      "check": "deterministic ENERGY STAR partner builder replay",
+      "result": "passed",
+      "detail": "The 22-record ADI build matched the canonical JSONL; the generalized builder also reproduced the prior 33-record Minuteman JSONL byte-for-byte"
+    },
+    {
+      "check": "catalogue schema, identity, unit, source and evidence validation",
+      "result": "passed",
+      "detail": "Validated 1,106 canonical Data Center records"
+    },
+    {
+      "check": "focused Data Center tests",
+      "result": "passed",
+      "detail": "78 passed"
+    },
+    {
+      "check": "full Python test suite",
+      "result": "passed",
+      "detail": "2,212 passed and five optional-dependency tests skipped"
+    },
+    {
+      "check": "database viewer Node tests",
+      "result": "passed",
+      "detail": "15 passed"
+    },
+    {
+      "check": "Ruff format and lint",
+      "result": "passed",
+      "detail": "841 files formatted; all lint checks passed"
+    },
+    {
+      "check": "repository-wide ty",
+      "result": "passed",
+      "detail": "All type checks passed"
+    },
+    {
+      "check": "repository, citation and diff checks",
+      "result": "passed",
+      "detail": "Repository policy, citation registry and whitespace checks passed"
+    },
+    {
+      "check": "strict Sphinx and generated-site link validation",
+      "result": "passed",
+      "detail": "Strict build succeeded and local links and assets resolved across 532 HTML pages"
+    },
+    {
+      "check": "deterministic typed Parquet and coverage rebuild",
+      "result": "passed",
+      "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"
+    }
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "a7a9fb8762964de42148011714e1a47140fc8b834df4109f20fad1ac30e29136",
+    "projects_sha256": "a143dcdfa65de5782eaaf065eaf3f0398e138895533d6fc4e9514d71ca20ca56",
+    "equipment_sha256": "1b7584d696660eabd8207ff9a9f347f2a0db9c042e949d7c943c79d4e37717b8",
+    "manifest_sha256": "8b3922f4d3202ee73d415cc6454111438dfb997844fce0c1a47192e5240e556c",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "9c879221b411f0a88ca1d43f494c7f088dc74c1b03244abf7ebd96a560484b22"
+  },
+  "holds_added": [],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "EPA ENERGY STAR Ablerex partner inventory: 15 entries in the current snapshot"
+  ],
+  "quarantined_fields": [],
+  "notes": [
+    "All 22 ADI entries in the 2026-11-03 ENERGY STAR dataset update are processed",
+    "The ADI inventory contains 11 W BOX and 11 UltraTech certifications",
+    "ENERGY STAR Unique ID remains the immutable configuration identity; repeated models across brands are not collapsed",
+    "Active W and apparent VA remain distinct; runtime and efficiency retain tested-configuration and load boundaries",
+    "No battery energy, maximum configuration, power factor or deployment is inferred",
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale, Riello and saved supplier holds and quarantines remain"
+  ]
+}

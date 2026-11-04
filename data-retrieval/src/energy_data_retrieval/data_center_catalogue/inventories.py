@@ -188,6 +188,61 @@ def parse_project_permit_matrix(
     }
 
 
+def parse_energy_star_ups_inventory(
+    content: bytes, *, source_url: str, partner: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage one complete ENERGY STAR UPS partner inventory without merging models.
+
+    The public EPA dataset is certification-entry oriented. Each ENERGY STAR
+    unique ID is therefore retained as an immutable configuration identity;
+    similarly named models are not collapsed and percentage-load runtime or
+    efficiency values are not converted into unrelated electrical boundaries.
+    """
+    parsed = urlsplit(source_url)
+    if parsed.scheme != "https" or parsed.hostname != "data.energystar.gov":
+        raise ValueError("Unsupported ENERGY STAR UPS source URL")
+    if expected_count < 1 or not partner.strip():
+        raise ValueError("Partner and positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "ENERGY STAR Unique ID",
+        "ENERGY STAR Partner",
+        "Brand Name",
+        "Model Name",
+        "Model Number",
+        "Minimum Configuration Tested Model Number",
+        "Active Output Power Rating Minimum Configuration (W)",
+        "Apparent Output Power Rating Minimum Configuration (VA)",
+        "Application",
+        "Date Certified",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing ENERGY STAR UPS inventory columns")
+    candidates: dict[str, dict[str, str]] = {}
+    for line, row in enumerate(reader, start=2):
+        if (row.get("ENERGY STAR Partner") or "").strip() != partner:
+            continue
+        candidate = {key: (value or "").strip() for key, value in row.items()}
+        unique_id = candidate["ENERGY STAR Unique ID"]
+        if not unique_id or not candidate["Model Name"] or not candidate["Date Certified"]:
+            raise ValueError(f"Incomplete ENERGY STAR UPS row {line}")
+        if unique_id in candidates:
+            raise ValueError(f"Duplicate ENERGY STAR UPS unique ID {unique_id}")
+        candidates[unique_id] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed ENERGY STAR UPS partner inventory shape: "
+            f"{len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "partner": partner,
+        "candidates": [candidates[key] for key in sorted(candidates, key=int)],
+    }
+
+
 def parse_cdu_spec_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:

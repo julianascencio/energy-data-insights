@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-04T08:32:00Z",
+  "updated_at": "2026-11-04T13:20:48Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -62,7 +62,14 @@
     "borri_current_three_phase_ups_configurations": 25,
     "baudouin_dcp_50_60hz_configurations": 34,
     "siel_safepower_configurations": 27,
-    "tescom_current_ups_configurations": 22
+    "tescom_current_ups_configurations": 22,
+    "atnorth_nordic_reconciliation_records": 4,
+    "energy_star_para_systems_minuteman_certifications": 33,
+    "energy_star_adi_certifications": 22,
+    "energy_star_ablerex_certifications": 15,
+    "energy_star_panduit_certifications": 10,
+    "energy_star_appleton_solahd_certifications": 7,
+    "energy_star_legrand_av_certifications": 7
   },
   "next_batches": [
     {
@@ -72,13 +79,13 @@
         "https://www.atnorth.com/nordic-data-centers/",
         "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
       ],
-      "offset": 19,
-      "scope": "All 13 current named sites, four explicit child buildings/phases and six Finnish municipal permit/disclosure observations are processed. Do not recount. FIN02 decision 468/2026, FIN04 permits 286-2025-165 and 286-2026-178, FIN04A Ph2 case LVV-U/84381/2026 and FIN05 Salo disclosure are complete; reconcile omitted FIN03 and current-map SWE03 departure.",
+      "offset": 23,
+      "scope": "All 13 current named sites, four explicit child buildings/phases, six Finnish municipal observations and four Nordic identity/status reconciliations are processed. Do not recount. FIN03 is now a separately identified operational facility with combined FIN01/FIN03 capacity left unallocated. DEN01 first-phase and campus milestones are separated; DEN02 planning/contractor/phase observations and SWE04 municipal land/grid/site boundaries are complete.",
       "questions": [
-        "DEN01 Q4 2025 first-phase live vs report Q1 2026 operation: distinguish events",
-        "DEN02 initial power 250 vs 500 MW; SWE04 land 50 vs 4 ha and power 300 vs 200 MW",
         "FIN02 40 MW unspecified campus power vs contractor 45 MW gross future total have different boundaries; do not silently replace",
         "FIN04A Ph2 versus the existing July-2026 YIT phase remains quarantined until an official cross-reference binds the identities; no duplicate phase record was added",
+        "SWE04 H1 2028 versus autumn 2028 commissioning targets remain quarantined; seek a later dated permit or operator milestone",
+        "The stale SWE04 4 ha operator FAQ text is preserved as a contradicted observation; current operator and municipal evidence support approximately 50 ha",
         "Get dated commencement/completion evidence and explicit building/phase IT/grid/facility ratings; no generic PUE-derived estimates"
       ]
     },
@@ -167,8 +174,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 505,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns and all 22 Tescom DS POWER/SH/MTI250 rows complete; continue independent generator/electrical suppliers without recounting completed inventories",
+      "offset": 599,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 33 Para Systems/Minuteman, all 22 ADI, all 15 Ablerex, all ten Panduit, all seven Appleton/SolaHD and all seven Legrand AV ENERGY STAR certification entries complete; continue independent generator/electrical suppliers without recounting completed inventories",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -185,7 +192,8 @@
         "Baudouin April 2025 DCP offset 34 is complete at 19 50 Hz plus 15 60 Hz rows; retain engine kWm, generator kWe and kVA as distinct boundaries and do not synthesize alternator, voltage, emissions or installation variants",
         "Makelsan LEVELUPS/T3/T4 offset 34 is complete at 18+11+5 exact three-phase columns; keep kVA and kW separate and never synthesize selectable voltage, frequency, battery, cabinet or communications options",
         "SIEL Safepower offset 27 is complete at 9+10+8 exact columns; keep SPM cabinet active kW null, retain merged dimensions and with/without-battery weights as observations, and never synthesize module, battery, voltage, frequency or communications options",
-        "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices"
+        "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices",
+        "EPA ENERGY STAR Para Systems/Minuteman offset 33, ADI offset 22, Ablerex offset 15, Panduit offset 10, Appleton/SolaHD offset 7 and Legrand AV offset 7 are complete for dataset update 2026-11-03; retain unique certification IDs, partner/brand identity, W/VA and load-qualified efficiencies, preserve unavailable tested-configuration/runtime/warranty values as null, and never infer maximum configurations or battery energy"
       ]
     },
     {
@@ -317,16 +325,51 @@
       "source": "LiquidStack public CDU tables",
       "url": "https://liquidstack.com/terms-conditions",
       "reason": "Public sales terms restrict communication/distribution of supplied documents; public-datasheet reuse scope requires clarification. No facts or bytes were imported."
+    },
+    {
+      "source": "Delta UPS product tables",
+      "url": "https://www.deltapowersolutions.com/pt-br/terms-of-use.php",
+      "reason": "Official terms prohibit reproducing, copying, distributing, publishing, licensing, derivative use or transfer of site contents without prior written permission. Current IPT and DPM tables were screened only; no UPS facts or bytes were imported."
+    },
+    {
+      "source": "HITEC PowerPRO technical brochures",
+      "url": "https://www.hitec-ups.com/wp-content/uploads/2020/10/HITEC_Brochure_PowerPRO3600_English_Spread_LR.pdf",
+      "reason": "The official technical brochure labels its contents confidential and proprietary. No PowerPRO rating rows or brochure bytes were imported pending clearer permission."
+    },
+    {
+      "source": "HIMOINSA HGY generator tables",
+      "url": "https://www.himoinsa.com/legal-notice/eng.html",
+      "reason": "Official terms limit materials to private use and prohibit storage, publication, reproduction and derivative use without prior authorization. HGY tables were screened only; no facts or bytes were imported."
+    },
+    {
+      "source": "Generac industrial generator tables",
+      "url": "https://www.generac.com/policies/terms-conditions/",
+      "reason": "Official terms prohibit copying, reproduction, display, distribution, reuse, publication, licensing and derivative use without written permission. No specifications or bytes were imported."
+    },
+    {
+      "source": "Salicru UPS technical tables",
+      "url": "https://www.salicru.com/legal-notice.html",
+      "reason": "Official terms limit site content to private non-profit use and require authorization for reproduction, exploitation or distribution. No specifications or bytes were imported."
+    },
+    {
+      "source": "Pramac, Kirloskar and Aksa generator tables",
+      "url": "https://www.pramac.com/terms-and-conditions",
+      "reason": "Supplier-specific official terms or brochure notices prohibit reproduction, publication or distribution without permission. The candidate rating tables were screened only; no facts or bytes were imported."
+    },
+    {
+      "source": "Open Access Data Centres portfolio",
+      "url": "https://www.openaccessdc.net/terms-and-conditions/",
+      "reason": "Official terms prohibit reproduction except as allowed by the copyright notice. The 13-core-site/30-plus-edge portfolio was screened only; no facility facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "tescom-ups-20261104T083200Z",
+    "run_id": "energy-star-panduit-appleton-legrand-ups-20261104T132048Z",
     "report": "2026-11-04-report.md",
-    "validation": "2026-11-04T0832-validation.json",
+    "validation": "2026-11-04T1320-validation.json",
     "added_projects": 0,
     "enriched_projects": 0,
-    "added_equipment": 22,
-    "branch": "research/data-center-database-20261104T0745Z"
+    "added_equipment": 24,
+    "branch": "research/data-center-database-20261104T0915Z"
   }
 }
