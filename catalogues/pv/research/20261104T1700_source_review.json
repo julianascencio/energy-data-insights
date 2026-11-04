@@ -1,0 +1,395 @@
+{
+  "sources": [
+    {
+      "id": "tsun_exact_microinverters_20261104T1700",
+      "country": null,
+      "entity": "equipment",
+      "source_url": "https://www.tsun-ess.com/downloads.html",
+      "endpoint": "https://www.tsun-ess.com/downloads.html",
+      "format": "Four OEM PDF tables; manually reviewed exact models through existing upsert API",
+      "publication_cadence": "Not stated; metadata/revision check before repeat download",
+      "version_or_date": "See source register or dated review; no inferred release date",
+      "last_attempt": "2026-11-04T17:19:34.381240+00:00",
+      "licence_assessment": "Copyright retained; bounded attributed factual metadata only; privacy policies are not open-content licences. No full PDFs/images/layout/promotional text redistributed.",
+      "access_assessment": "25 exact inverter models accepted;450 canonical technical values, additional qualified per-input/mechanical/environment/warranty observations. Three MCB AC combiners held as sparse.",
+      "estimated_useful_yield": {
+        "reviewed_inverters": 25,
+        "accepted_inverters": 25,
+        "held_sparse_combiners": 3
+      },
+      "fields_offered": [
+        "active W",
+        "MPPT count and range",
+        "per-input current",
+        "efficiencies",
+        "dimensions",
+        "assembly-dependent weight",
+        "isolation",
+        "cooling",
+        "IP",
+        "temperature/derating",
+        "standard warranty"
+      ],
+      "result": "25 exact inverter models accepted;450 canonical technical values, additional qualified per-input/mechanical/environment/warranty observations. Three MCB AC combiners held as sparse.",
+      "retry_condition": "New source revision, restored ordinary public access, or independently permitted identity/evidence; no bypass or contact forms",
+      "next_action": "Inspect distinct GEN3 6-in-1 single/three-phase tables; screen all existing OEM identities. Prefer a substantive tracker/combiner table from another publisher when available.",
+      "processed_cursor": {
+        "complete_models": [
+          "TSOL-MS300",
+          "TSOL-MS350",
+          "TSOL-MS400",
+          "TSOL-MX400",
+          "TSOL-MX450",
+          "TSOL-MX500",
+          "TSOL-MS600",
+          "TSOL-MS700",
+          "TSOL-MS800",
+          "TSOL-MX800",
+          "TSOL-MX900",
+          "TSOL-MX1000",
+          "TSOL-MS1600",
+          "TSOL-MS1800",
+          "TSOL-MS2000",
+          "TSOL-MX2250",
+          "TSOL-MS3000",
+          "TSOL-MP2250",
+          "TSOL-MP3000",
+          "TSOL-MP3680",
+          "TSOL-MP3750",
+          "TSOL-MP4000",
+          "TSOL-MP4600",
+          "TSOL-MP5000",
+          "TSOL-MP6000"
+        ],
+        "selected_four_PDFs_exhausted": true
+      },
+      "next_due_check": "2026-11-05T17:00:00Z",
+      "terms_url": "https://www.tsun-ess.com/privacy.html"
+    },
+    {
+      "id": "mexico_cenace_disclosure_20261104T1700",
+      "country": "MEX",
+      "entity": "projects",
+      "source_url": "https://www.cenace.gob.mx/Docs/Transparencia/RespuestaSolicitud/341002600011626.zip",
+      "endpoint": "https://www.cenace.gob.mx/Docs/Transparencia/RespuestaSolicitud/341002600011626.zip",
+      "format": "ZIP disclosure linked from official public transparency table",
+      "publication_cadence": "Not stated; metadata/revision check before repeat download",
+      "version_or_date": "See source register or dated review; no inferred release date",
+      "last_attempt": "2026-11-04T17:19:34.381240+00:00",
+      "licence_assessment": "Directory explains open-data reuse but specific ZIP licence unverified; do not extend directory language automatically to all attachments.",
+      "access_assessment": "July31 2026 COD/technology/capacity disclosure listed with August27 response; ordinary ZIP GET403. No bytes, row count, checksum, integration or accepted projects claimed.",
+      "estimated_useful_yield": {
+        "source_packages_attempted": 1,
+        "candidate_rows_reviewed": 0,
+        "accepted": 0
+      },
+      "fields_offered": [],
+      "result": "July31 2026 COD/technology/capacity disclosure listed with August27 response; ordinary ZIP GET403. No bytes, row count, checksum, integration or accepted projects claimed.",
+      "retry_condition": "New source revision, restored ordinary public access, or independently permitted identity/evidence; no bypass or contact forms",
+      "next_action": "Retry exact linked attachment only after ordinary public recovery; inspect licence, technology, generating-unit/whole-plant scope and sample before importer.",
+      "processed_cursor": {
+        "disclosure": "341002600011626",
+        "download_complete": false
+      },
+      "next_due_check": "2026-11-05T17:00:00Z"
+    },
+    {
+      "id": "mexico_cne_permits_20261104T1700",
+      "country": "MEX",
+      "entity": "projects",
+      "source_url": "https://www.datos.gob.mx/dataset/electricidad/resource/ec0f8ad4-6d76-4a3a-a606-771faf93196d",
+      "endpoint": "https://www.datos.gob.mx/dataset/electricidad/resource/ec0f8ad4-6d76-4a3a-a606-771faf93196d",
+      "format": "CSV metadata, bytes blocked",
+      "publication_cadence": "Monthly per official indexed resource metadata",
+      "version_or_date": "See source register or dated review; no inferred release date",
+      "last_attempt": "2026-11-04T17:19:34.381240+00:00",
+      "licence_assessment": "Official resource search metadata reports CC BY4.0 and monthly cadence; full resource licence and dictionary must be inspected on recovery.",
+      "access_assessment": "Official search metadata offers permit holder, permit ID, authorized capacity, technology/status fields. Resource GET403; no rows downloaded or integrated.",
+      "estimated_useful_yield": {
+        "resource_attempts": 1,
+        "candidate_rows_reviewed": 0,
+        "accepted": 0
+      },
+      "fields_offered": [],
+      "result": "Official search metadata offers permit holder, permit ID, authorized capacity, technology/status fields. Resource GET403; no rows downloaded or integrated.",
+      "retry_condition": "New source revision, restored ordinary public access, or independently permitted identity/evidence; no bypass or contact forms",
+      "next_action": "Recover current ordinary resource/download and exact dictionary. Permit issuance/status and estimated operating dates do not prove current operation; omit personal holders/addresses.",
+      "processed_cursor": {
+        "download_complete": false
+      },
+      "next_due_check": "2026-11-05T17:00:00Z",
+      "last_release": "Resource metadata20April2026; data-effective date unknown"
+    },
+    {
+      "id": "chile_cne_capacity_20261104T1700",
+      "country": "CHL",
+      "entity": "projects",
+      "source_url": "https://energiaabierta.cl/visualizaciones/capacidad-instalada/",
+      "endpoint": "https://energiaabierta.cl/visualizaciones/capacidad-instalada/",
+      "format": "Linked XLSX via official short URL",
+      "publication_cadence": "Not stated; metadata/revision check before repeat download",
+      "version_or_date": "See source register or dated review; no inferred release date",
+      "last_attempt": "2026-11-04T17:19:34.381240+00:00",
+      "licence_assessment": "Specific workbook terms not yet assessed; do not assume public landing grants reuse.",
+      "access_assessment": "Official download resolves to CNE SharePoint workbook; ordinary request401. No authentication attempted; no workbook bytes accepted.",
+      "estimated_useful_yield": {
+        "workbook_attempts": 1,
+        "candidate_rows_reviewed": 0,
+        "accepted": 0
+      },
+      "fields_offered": [],
+      "result": "Official download resolves to CNE SharePoint workbook; ordinary request401. No authentication attempted; no workbook bytes accepted.",
+      "retry_condition": "New source revision, restored ordinary public access, or independently permitted identity/evidence; no bypass or contact forms",
+      "next_action": "Wait for genuinely public publisher export or independent licensed inventory; distinguish net installed capacity, systems excluded and individual PV plants.",
+      "processed_cursor": {
+        "linked_url": "https://3b9x.short.gy/rZWIBx",
+        "download_complete": false
+      },
+      "next_due_check": "2026-11-05T17:00:00Z"
+    },
+    {
+      "id": "chile_infotecnica_rights_20261104T1700",
+      "country": "CHL",
+      "entity": "projects",
+      "source_url": "https://api-infotecnica.coordinador.cl/v1/centrales/?limit=5",
+      "endpoint": "https://api-infotecnica.coordinador.cl/v1/centrales/?limit=5",
+      "format": "Public JSON API sample; limit ignored by server",
+      "publication_cadence": "Not stated; metadata/revision check before repeat download",
+      "version_or_date": "See source register or dated review; no inferred release date",
+      "last_attempt": "2026-11-04T17:19:34.381240+00:00",
+      "licence_assessment": "Publisher terms sections3–4 prohibit automated bulk extraction without express authorization and commercial redistribution without permission. No open-compatible feed accepted.",
+      "access_assessment": "One sample request returned633396 bytes despite limit5. No pagination/further extraction after terms review; raw capture outsideGit. No plant facts or rows copied into canonical data.",
+      "estimated_useful_yield": {
+        "requests": 1,
+        "canonical_candidates_reviewed": 0,
+        "accepted": 0
+      },
+      "fields_offered": [],
+      "result": "One sample request returned633396 bytes despite limit5. No pagination/further extraction after terms review; raw capture outsideGit. No plant facts or rows copied into canonical data.",
+      "retry_condition": "New source revision, restored ordinary public access, or independently permitted identity/evidence; no bypass or contact forms",
+      "next_action": "Use independently licensed Chilean government source; do not paginate or build mass importer under these terms.",
+      "processed_cursor": {
+        "stopped_for_rights": true
+      },
+      "next_due_check": "2026-11-05T17:00:00Z",
+      "terms_url": "https://www.coordinador.cl/terminos-y-condiciones/"
+    },
+    {
+      "id": "nz_shared_connection_followup_20261104T1700",
+      "country": "NZL",
+      "entity": "projects",
+      "source_url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-fleet/existing/",
+      "endpoint": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-fleet/existing/",
+      "format": "Saved July2026 dispatch CSV review plus independent primary pages",
+      "publication_cadence": "Not stated; metadata/revision check before repeat download",
+      "version_or_date": "See source register or dated review; no inferred release date",
+      "last_attempt": "2026-11-04T17:19:34.381240+00:00",
+      "licence_assessment": "EA CSV CC BY4 retained. Aquila website requires consent for material reuse; Northpower only permits informational noncommercial reuse; those pages not imported. MBIE government report potentially CC BY4 but current page/copyright GET403.",
+      "access_assessment": "Six saved shared-connection identities revisited;5-project Aquila portfolio and Northpower case studies discovered. No rights-compatible resolving record additions; do not copy claims across publishers to evade source terms.",
+      "estimated_useful_yield": {
+        "EA_held_cases_revisited": 6,
+        "Aquila_portfolio_rows_discovered": 5,
+        "accepted": 0
+      },
+      "fields_offered": [],
+      "result": "Six saved shared-connection identities revisited;5-project Aquila portfolio and Northpower case studies discovered. No rights-compatible resolving record additions; do not copy claims across publishers to evade source terms.",
+      "retry_condition": "New source revision, restored ordinary public access, or independently permitted identity/evidence; no bypass or contact forms",
+      "next_action": "Seek permitted system-operator unit-to-site evidence for six exact POC:unit keys, then reconcile canonical GEM phases. Do not infer identity from shared grid point or copy restricted owner tables.",
+      "processed_cursor": {
+        "held_EA_keys": [
+          "EDG0331:EDS0",
+          "EDG0331:RGT0",
+          "MTO0331:GDS0",
+          "MTO0331:RWI0",
+          "KOE1101:PSF0",
+          "KOE1101:TRS0"
+        ],
+        "full_CSV_redownloaded": false
+      },
+      "next_due_check": "2026-11-05T17:00:00Z"
+    },
+    {
+      "id": "tongzishan_primary_review_20261104T1700",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://ecp.hdec.com/cms/channel/2ywgg1/864.htm",
+      "endpoint": "https://ecp.hdec.com/cms/channel/2ywgg1/864.htm",
+      "format": "Primary EPC and owner procurement HTML",
+      "publication_cadence": "Not stated; metadata/revision check before repeat download",
+      "version_or_date": "See source register or dated review; no inferred release date",
+      "last_attempt": "2026-11-04T17:19:34.381240+00:00",
+      "licence_assessment": "Bounded attributed factual procurement metadata; no full notice, contact details or third-party images redistributed; no open licence asserted.",
+      "access_assessment": "Two primary notices establish existing Tongzishan whole-project EPC and planned minimumDC/grid/mounting context. NEA11.2MW observation not resolved as wholeproject rating; GEM ownership differs and remains preserved.",
+      "estimated_useful_yield": {
+        "primary_notices": 2,
+        "canonical_projects_reviewed": 1,
+        "enriched": 1,
+        "new": 0
+      },
+      "fields_offered": [],
+      "result": "Two primary notices establish existing Tongzishan whole-project EPC and planned minimumDC/grid/mounting context. NEA11.2MW observation not resolved as wholeproject rating; GEM ownership differs and remains preserved.",
+      "retry_condition": "New source revision, restored ordinary public access, or independently permitted identity/evidence; no bypass or contact forms",
+      "next_action": "Obtain specific NEA11.2MW registration unit/phase and ownership-transfer evidence; do not create duplicate100MW or11.2MW plant.",
+      "processed_cursor": {
+        "canonical_id": "1454b014-bde3-5df0-b6e3-fb52df71573b",
+        "NEA_code_held": "PPC24063417020018"
+      },
+      "next_due_check": "2026-11-05T17:00:00Z"
+    }
+  ],
+  "seed_queue_preserved": [
+    {
+      "country": "DEU",
+      "entrypoint": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "backlog_ids": [
+        "germany_mastr",
+        "mastr_1432_concurrency"
+      ],
+      "format": "ZIP/XML",
+      "cadence": "Daily, normally around05:00 publisher time",
+      "last_release_seen": "2026-11-03",
+      "next_due_check": "2026-11-05T05:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "Generating-unit IDs and EEG installation/project boundaries; reviewed/unreviewed flags required",
+      "cursor": "Existing concurrent AC-scope hold; no3.2GB download this run",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "dl-de/by2.0; existing access/concurrency review remains",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "BRA",
+      "entrypoint": "https://dadosabertos.aneel.gov.br/pt_BR/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel",
+      "backlog_ids": [
+        "brazil_siga",
+        "aneel_siga_2228"
+      ],
+      "format": "CSV/XML monthly and daily",
+      "cadence": "Monthly/daily metadata; no hourly full downloads",
+      "last_release_seen": "Monthly2026-11-01;daily2026-11-03",
+      "next_due_check": "2026-11-05T12:00:00Z",
+      "checksum_or_etag": null,
+      "publisher_hashes_untyped": {
+        "monthly": "cff9c1511b25bcaa0b15131ced20ab3d",
+        "daily": "8cbca50633d9c2b4897b14c924038bae"
+      },
+      "mapping": "UFV only; CEG stable ID; granted/inspected capacities and lifecycle separate",
+      "cursor": "Rights/access-held; no full retry during backoff",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "ODbL: derivative-database treatment unresolved; no silent relicensing",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "FRA",
+      "entrypoint": "https://odre.opendatasoft.com/explore/dataset/registre-national-installation-production-stockage-electricite-agrege/information/",
+      "backlog_ids": [
+        "france_odre"
+      ],
+      "format": "Explore API JSON/CSV",
+      "cadence": "Monthly metadata check; pinned partitions",
+      "last_release_seen": "Snapshot2026-08-31",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "PHOTV; exclude small aggregates; EIC change review; installed/export powers distinct",
+      "cursor": "Continue existing reviewed EIC ledgers/overseas value reconciliation",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Licence Ouverte2.0",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "JPN",
+      "entrypoint": "https://www.fit-portal.go.jp/PublicInfo",
+      "backlog_ids": [
+        "japan_fit"
+      ],
+      "format": "Prefectural XLSX",
+      "cadence": "Monthly announcement metadata; no hourly workbook downloads",
+      "last_release_seen": "Snapshot2026-09-30 announced2026-10-14;paper lag2026-06-30",
+      "next_due_check": "2026-11-14T06:00:00Z",
+      "checksum_or_etag": "ac10084eda5f0d1ee6f54c56ac25d7a0f2dbe0f4c3ef7113016111861c730749",
+      "mapping": "Facility IDs; certification is not operation; excludesPV<20kW; omit personal details",
+      "cursor": "62Tottori candidates already staged; named-project/parcel reconciliation remains",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Refresh portal terms before next prefecture",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "USA",
+      "entrypoint": "https://www.eia.gov/electricity/data/eia860/",
+      "monthly_entrypoint": "https://www.eia.gov/electricity/data/eia860m/",
+      "backlog_ids": [
+        "usa_eia"
+      ],
+      "format": "Annual ZIP/XLSX;monthly XLSX",
+      "cadence": "Annual detailed inventory;monthly preliminary supplement",
+      "last_release_seen": "EIA860M September2026,released2026-10-23;nextrelease2026-11-24;annual2025alreadyimported",
+      "next_due_check": "2026-11-24T18:00:00Z",
+      "checksum_or_etag": null,
+      "mapping": "Plant IDs with nested generator IDs;AC/DC/status dates separate;enrich existing plants",
+      "cursor": "No repeat US bulk import;non-US Catalonia source selected",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "EIA public-domain policy;source acknowledgement",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Current official EIA860M landing directly opened; no new workbook downloaded",
+      "annual_archive_sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba"
+    },
+    {
+      "country": "GBR",
+      "entrypoint": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "backlog_ids": [
+        "uk_repd"
+      ],
+      "format": "CSV/XLSX",
+      "cadence": "Quarterly;metadata-only check before saved partition resume",
+      "last_release_seen": "July/Q22026,published2026-08-03",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
+      "mapping": "Applications/resubmissions/phases;source status as-of;MW basis unspecified",
+      "cursor": "Use existing accepted/held ledgers;unchanged extract not redownloaded",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "OGLv3 attribution retained",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    },
+    {
+      "country": "AUS",
+      "entrypoint": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "backlog_ids": [
+        "aemo_nem_october_2026_20261103T0800",
+        "aemo_nem_october_2026_20261103T0800_0900_review"
+      ],
+      "format": "XLSX",
+      "cadence": "Everythree months or asrequired, per AEMO;metadata-only check",
+      "last_release_seen": "2026-10-30 OctoberNEM generation information",
+      "next_due_check": "2026-11-05T06:00:00Z",
+      "checksum_or_etag": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+      "mapping": "Existing/committed/proposed unit cohorts;NEM is not all Australia",
+      "cursor": "Resume existing held crosswalks without repeating accepted cohort",
+      "reviewed": 0,
+      "accepted_this_run": 0,
+      "rejected_this_run": 0,
+      "terms": "Source-specific terms and prior assessment retained",
+      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
+      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+    }
+  ],
+  "ranking_file": "20261104T1100_top10_coverage.json",
+  "source_discovery_is_not_adapter_or_acceptance": true,
+  "new_adapters": 0,
+  "schema_changes": 0
+}

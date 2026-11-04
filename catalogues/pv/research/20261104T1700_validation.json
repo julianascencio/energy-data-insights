@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-11-04T17:22:26.297273+00:00",
+  "started_at": "2026-11-04T17:01:02+00:00",
+  "elapsed_minutes_through_validation": 21.4,
+  "focused_pytest": {
+    "passed": 28
+  },
+  "full_pytest": {
+    "passed": 2415,
+    "skipped": 5,
+    "elapsed_seconds": 116.72,
+    "optional_skips": [
+      "cdsapi not installed",
+      "three OrbitalPV tests require Python3.13",
+      "native image example requires Python3.13 and optional imagery"
+    ]
+  },
+  "ruff_check": "passed",
+  "ruff_format": {
+    "result": "passed",
+    "files": 919
+  },
+  "ty": "passed;explicit pv0800 virtualenv Python",
+  "repository_hygiene": "passed after final research evidence;4053 candidate files",
+  "citations": "passed with current-checkout PYTHONPATH; initial shared editable-environment invocation was stale and not counted as success",
+  "docs": {
+    "result": "passed",
+    "flags": "-W --keep-going -b html -D plot_gallery=0",
+    "local_link_pages": 581,
+    "full_gallery_local": false,
+    "snapshot_bytes_match": true
+  },
+  "offline_example": "passed",
+  "snapshot": {
+    "result": "passed",
+    "all_typed_columns": 740,
+    "compression": "ZSTD",
+    "all_row_counts_and_hashes": true,
+    "input_digest": true
+  },
+  "packages": {
+    "build": "3 wheels and3 sdists",
+    "twine_strict": "passed"
+  },
+  "git_diff_check": "passed",
+  "new_code_or_schema": false,
+  "CI": "Fresh final-head CI to be checked after publish; preceding-head success not substituted"
+}
