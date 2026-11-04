@@ -1,0 +1,145 @@
+{
+  "run_id": "borri-ups-20261104T042000Z",
+  "validated_at": "2026-11-04T04:58:00Z",
+  "branch": "research/data-center-database-20261104T0347Z",
+  "base_main_sha": "6b38f9a406c07bb2490f2ec49a612d37d9ebf349",
+  "prepublication_remote_head": "7892e8e0435a82792a21ef5ee0fba0ee94ba165e",
+  "canonical_records": 933,
+  "branch_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 751,
+    "countries": 36,
+    "operators": 13,
+    "oems": 26
+  },
+  "merged_main_totals": {
+    "projects": 182,
+    "facility_records": 65,
+    "phase_records": 3,
+    "campus_aggregate_records": 114,
+    "equipment": 726,
+    "countries": 36,
+    "operators": 13,
+    "oems": 25
+  },
+  "run_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 25,
+    "substantively_enriched_equipment": 0,
+    "new_countries": [],
+    "new_operators": [],
+    "new_oems": [
+      "Borri"
+    ]
+  },
+  "pull_request_cumulative_delta": {
+    "added_projects": 0,
+    "substantively_enriched_projects": 0,
+    "added_equipment": 25,
+    "substantively_enriched_equipment": 0,
+    "new_oems": [
+      "Borri"
+    ],
+    "repair": "validated UTF-8 replacement for the 38 KSTAR EPOWER records already merged on main"
+  },
+  "checks": [
+    {
+      "command": "python scripts/build_data_center_borri_ups_batch.py <temporary-output> twice && cmp both outputs with catalogues/data_centers/records/equipment/2026-11-04-borri-ups.jsonl",
+      "result": "passed; all 25 bounded rating columns reproduced byte-for-byte; canonical JSONL SHA-256 633a96d0bc92076f4677d63b28e3345c93dbc4c0c2c4c1c16e4be23fac37cfef"
+    },
+    {
+      "command": "python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 933 records"
+    },
+    {
+      "command": "pytest data-retrieval/tests/test_data_center_catalogue.py data-retrieval/tests/test_data_center_inventories.py -q",
+      "result": "67 passed"
+    },
+    {
+      "command": "TMPDIR=/dev/shm pytest -q -p no:cacheprovider",
+      "result": "2151 passed, 5 optional skips"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "15 passed"
+    },
+    {
+      "command": "ruff format --check . && ruff check .",
+      "result": "passed; 820 files format-checked"
+    },
+    {
+      "command": "ty check scripts/build_data_center_borri_ups_batch.py data-retrieval/src/energy_data_retrieval/data_center_catalogue/inventories.py data-retrieval/tests/test_data_center_inventories.py && ty check",
+      "result": "passed for changed files and repository-wide"
+    },
+    {
+      "command": "python scripts/check_repository.py && python scripts/check_citations.py && git diff --check",
+      "result": "passed; repository scan covered 3534 candidate files"
+    },
+    {
+      "command": "python examples/database/plot_data_center_catalogue.py",
+      "result": "passed standalone and during strict Sphinx gallery; geographic coverage, capacity completeness, cooling and equipment outputs reproduced"
+    },
+    {
+      "command": "sphinx-build -W --keep-going -b html docs <temporary-output> && python scripts/check_docs_links.py <temporary-output>",
+      "result": "passed; 528 HTML pages link-checked"
+    },
+    {
+      "command": "two independent data_center_catalogue build invocations plus byte comparison",
+      "result": "passed; projects, equipment, schema, sources and manifest were byte-identical"
+    }
+  ],
+  "optional_skips": [
+    "cdsapi is not installed",
+    "three Orbital PV imagery tests require Python 3.13",
+    "one native imagery example requires Python 3.13 and the optional imagery group"
+  ],
+  "snapshot_hashes": {
+    "projects_sha256": "e8d0ff04dbdbf7ed0b41120c85aac82fe6a6e93fc8b445ea34cc3ee549da04de",
+    "equipment_sha256": "b1064dcd3fe3024a689b1ea69b5ac8873330ef4d0ef2cb8000eff0c2ead2040c",
+    "input_sha256": "efb43b64807e42973232618843d46eef7213e10b35081f50313032b100929e02",
+    "manifest_sha256": "7ce0b1e9f90417fc23d835fa30ff1001a49ac29b9967c576b063d264e349a964",
+    "schema_sha256": "82981176c9ca1f1c90f2d48e030159ae54c1867b751fdecc44447eec59bf3b14",
+    "sources_sha256": "b6fe184a3aab421df778b828dcc9130a61460f10423bbf83db8e235f40a32231"
+  },
+  "capacity_summary": {
+    "it_ultimate_planned_mw": 697.1,
+    "it_ultimate_planned_records": 12,
+    "it_design_mw": 534.1,
+    "it_design_records": 20,
+    "it_operational_mw": 146.0,
+    "it_operational_records": 5,
+    "grid_design_mw": 207.5,
+    "grid_design_records": 3,
+    "facility_ultimate_planned_mw": 75.0,
+    "facility_ultimate_planned_records": 1,
+    "campus_aggregates_excluded": 114
+  },
+  "source_capture": {
+    "official_pages_or_documents_reviewed": 6,
+    "accepted_model_columns": 25,
+    "official_originals_checksummed": 0,
+    "source_bytes": null,
+    "reuse_note": "Public copyrighted Borri product tables and catalogue reviewed for factual extraction. Raw response bytes were unavailable through the research interface; no checksums are claimed and this is an access/tooling limitation, not a reuse prohibition. Originals are not redistributed."
+  },
+  "quarantines": [
+    "INGENIO MAX 250 kVA weight: current page 745 kg versus January 2025 catalogue 630 kg; normalized weight_kg is null.",
+    "INGENIO MAX 500 kVA weight: current page 1250 kg versus January 2025 catalogue 1150 kg; normalized weight_kg is null."
+  ],
+  "deferred": [
+    "Merged family-table dimensions, family maximum efficiency without a load point, selectable batteries, communications, parallel kits and transformer options remain observations and do not create synthesized configurations."
+  ],
+  "screened_reuse_holds": [
+    "Existing NTT, PeeringDB, PDG, Socomec, Airedale and Riello holds remain unchanged; none of their facts or bytes were imported in this run."
+  ],
+  "remote_ci_before_publication": {
+    "head_sha": "7892e8e0435a82792a21ef5ee0fba0ee94ba165e",
+    "documentation_run": 41769063608,
+    "documentation": "success",
+    "python_run": 41769063563,
+    "python_quality_and_tests": "success"
+  }
+}

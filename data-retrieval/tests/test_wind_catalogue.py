@@ -278,3 +278,28 @@ def test_e82_base_options_do_not_become_scalar_or_new_mode_claims(catalogue):
     mode = json.loads(row["operating_modes_json"])["yield_optimized"]
     assert "unspecified" in mode["rated_power_increase"]
     assert row["created_at"] == "2026-11-03T12:45:00Z"
+
+
+def test_optional_monitor_links_preserve_revision_and_rating_scope(catalogue):
+    rows, sources = catalogue
+    monitor = next(r for r in rows if r.get("model") == "NETA-21")
+    converters = [
+        r for r in rows if "system_description_2020" in json.loads(r.get("extensions_json") or "{}")
+    ]
+    assert len(converters) == 15
+    for converter in converters:
+        extension = json.loads(converter["extensions_json"])
+        assert extension["voltage_v"] == 690
+        assert "2018" in converter["variant"]
+        assert converter["created_at"] < converter["updated_at"]
+        (link,) = json.loads(converter["compatibility_json"])
+        assert link["equipment_record_id"] == monitor["record_id"]
+        assert "Optional" in link["conditions"] and "2020" in link["conditions"]
+        assert "2018" in link["conditions"]
+    assert monitor.get("rated_power_kw") is None
+    bad = copy.deepcopy(converters[0])
+    link = json.loads(bad["compatibility_json"])[0]
+    link["equipment_record_id"] = bad["record_id"]
+    bad["compatibility_json"] = json.dumps([link])
+    with pytest.raises(ValueError, match="Compatibility"):
+        validate_catalogue([bad], sources)

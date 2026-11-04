@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T07:18:23.232850+00:00",
-  "ranking_file": "20261104T0700_top10_coverage.json",
+  "updated_at": "2026-11-04T08:08:02.859100+00:00",
+  "ranking_file": "20261104T0800_top10_coverage.json",
   "selection_note": "Complete Nouvelle-Aquitaine prior155-crosswalk power-gap partition plus exact physical BlueSolar module articles absent from CEC/SAM; no US repeat bulk ingestion or invented configuration combinations.",
-  "next_highest_value_source": "ODRE Auvergne-Rhône-Alpes1–5MW installed-power gaps on77previous exact-EIC crosswalks: metadata/byte checksum and privacy review, then only missing fields through existing staging helper.",
+  "next_highest_value_source": "Review changed Grand Est and Hauts-de-France captures (22 prior crosswalks) against prior native evidence; register new immutable revisions only after semantic/identity review. Then advance remaining ODRE installed-power gaps or current CEA named PV annexes for India; REC registry is rights-held.",
   "sources": [
     {
       "id": "uk_repd",
@@ -391,10 +391,10 @@
         "region",
         "generation"
       ],
-      "last_attempt": "2026-11-04T07:18:23.232850+00:00",
-      "result": "Nouvelle-Aquitaine missing installed power:155 exact prior crosswalks reviewed;107fields added,48canonical confidentiality holds. All prior AC/DC/lifecycle/nested evidence preserved.",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "result": "Five remaining prior-crosswalk cohorts:182 reviewed,114 installed-power fills,68 privacy holds;22 GrandEst/Hauts-de-France prior matches additionally held for changed export bytes.",
       "retry_condition": "Do not re-download unchanged564-row Occitanie cohort hourly. Reuse cachedef2c66b5 bytes. Next region needs source metadata/version plus exact checksum and privacy/phase review.",
-      "next_action": "ODRE Auvergne-Rhône-Alpes1–5MW installed-power gaps on77previous exact-EIC crosswalks: metadata/byte checksum and privacy review, then only missing fields through existing staging helper.",
+      "next_action": "Review changed Grand Est and Hauts-de-France captures (22 prior crosswalks) against prior native evidence; register new immutable revisions only after semantic/identity review. Then advance remaining ODRE installed-power gaps or current CEA named PV annexes for India; REC registry is rights-held.",
       "priority": 1,
       "processed_cursor": {
         "completed_partitions": [
@@ -527,7 +527,80 @@
           "remaining_selected_crosswalks": 0,
           "source_sha256": "7f907d38df0d97684e91fa00ef070aa8420d7eb0b9234f3130a32764ca682681",
           "ledger": "20261104T0700_review.json"
-        }
+        },
+        "installed_power_0800_partitions": [
+          {
+            "source_id": "odre_ara_20261102T1800",
+            "original_source_rows": 327,
+            "prior_crosswalks": 77,
+            "results": {
+              "accepted": 49,
+              "privacy_hold": 28
+            },
+            "sha256": "e4b742d316b36228cd77834f4e921e09ca5fe4f5eb860870bc064328395ab0ba"
+          },
+          {
+            "source_id": "odre_bfc_20261102T1900",
+            "original_source_rows": 78,
+            "prior_crosswalks": 14,
+            "results": {
+              "accepted": 8,
+              "privacy_hold": 6
+            },
+            "sha256": "88f0fca01340af4b26603df6b2e53a14971d6190b49fddf910de7e05d46225ba"
+          },
+          {
+            "source_id": "odre_normandie_20261102T2200",
+            "original_source_rows": 31,
+            "prior_crosswalks": 1,
+            "results": {
+              "privacy_hold": 1
+            },
+            "sha256": "d46ed09c484121fd25046082d6e42de607ed3856bd834ab50608352f41a11c6c"
+          },
+          {
+            "source_id": "odre_centre_20261102T2228",
+            "original_source_rows": 101,
+            "prior_crosswalks": 27,
+            "results": {
+              "accepted": 18,
+              "privacy_hold": 9
+            },
+            "sha256": "e30bb6db772748b6b3ee1890d127760a9928a8803312b18d7ff5b7547918f1d4"
+          },
+          {
+            "source_id": "odre_pays_loire_1_20mw_20261102T2300",
+            "original_source_rows": 170,
+            "prior_crosswalks": 63,
+            "results": {
+              "accepted": 39,
+              "privacy_hold": 24
+            },
+            "sha256": "6899055d10009500809b825ed56b10e2fab74c667d8d3db4750051870c9e0749"
+          }
+        ],
+        "changed_export_holds_0800": [
+          {
+            "source_id": "odre_ge_20261102T2000",
+            "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Grand%20Est%27",
+            "expected_sha256": "a0d8c247c48dce8988bd1574a7eabf87eb7155b29eefccb96fbc81d2582258d7",
+            "observed_sha256": "b9771d8d0c5e969431adbebc88e069be40063c165210ebe49e5d2e6c6fc39721",
+            "source_rows": 112,
+            "prior_crosswalks": 18,
+            "result": "changed_bytes_hold",
+            "reason": "Snapshot metadata unchanged but export byte checksum differs. No automatic repin; no table assertions ingested. Review new capture against prior evidence and register a new immutable source revision if accepted."
+          },
+          {
+            "source_id": "odre_hdf_20261102T2100",
+            "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Hauts-de-France%27",
+            "expected_sha256": "4d5ed6bb16f3a8beab617fe703f63195b2249db0b97fd4ded6c357f76d0f9a36",
+            "observed_sha256": "fe8136bd9bf40825190b7b3e99dff8246818e4a64e50d377259c5b531a156eb2",
+            "source_rows": 37,
+            "prior_crosswalks": 4,
+            "result": "changed_bytes_hold",
+            "reason": "Snapshot metadata unchanged but export byte checksum differs. No automatic repin; no table assertions ingested. Review new capture against prior evidence and register a new immutable source revision if accepted."
+          }
+        ]
       },
       "last_metadata_retrieval": "2026-11-04T07:03:39.805643+00:00",
       "last_release": "2026-08-31",
@@ -7468,6 +7541,158 @@
       "retry_condition": "Applicable documented permission and exact table access; no contacts authorized.",
       "next_due_check": null,
       "next_action": "Do not retry unchanged rights-restricted source hourly. Seek a permitted independent manufacturer/table."
+    },
+    {
+      "id": "odre_installed_power_remaining_0800",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+      "endpoint": [
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Auvergne-Rh%C3%B4ne-Alpes%27",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Bourgogne-Franche-Comt%C3%A9%27",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Normandie%27",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C5000%20AND%20region%3D%27Centre-Val%20de%20Loire%27",
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/exports/json?where=codetechnologie%3D%27PHOTV%27%20AND%20puismaxinstallee%3E%3D1000%20AND%20puismaxinstallee%3C20000%20AND%20region%3D%27Pays%20de%20la%20Loire%27"
+      ],
+      "format": "JSON bounded regional exports",
+      "version_or_date": "2026-08-31 snapshot; metadata unchanged 13 October/20 October processing",
+      "publication_cadence": "Monthly snapshot metadata; check metadata before bounded cohorts",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "last_retrieval": "2026-11-04T08:01:43.225844+00:00",
+      "sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+      "etag": null,
+      "licence_assessment": "Licence Ouverte v2.0, existing ODRE_NOTICE attribution retained",
+      "access_assessment": "Seven bounded exports checked once after prior scratch captures were pruned; five exact hashes match, two differ and remain held",
+      "estimated_useful_yield": {
+        "reviewed": 204,
+        "accepted": 114,
+        "privacy_held": 68,
+        "changed_bytes_held": 22
+      },
+      "fields_offered": [
+        "maximum active installed power"
+      ],
+      "mapping": "puismaxinstallee kW /1000 -> capacity_unspecified_mw; AC/DC and basis unchanged",
+      "processed_cursor": {
+        "exhausted_five_matching_hash_cohorts": true,
+        "review_file": "20261104T0800_review.json"
+      },
+      "result": "114 accepted existing-record enrichments; no new projects or adapter",
+      "retry_condition": "New snapshot or independent resolution of privacy/changed-byte holds; no hourly export repeats",
+      "next_action": "Review changed Grand Est and Hauts-de-France captures (22 prior crosswalks) against prior native evidence; register new immutable revisions only after semantic/identity review. Then advance remaining ODRE installed-power gaps or current CEA named PV annexes for India; REC registry is rights-held.",
+      "next_due_check": "2026-11-05T08:00:00Z"
+    },
+    {
+      "id": "braux_discovery_0800",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://braux.es/en/trackers/",
+      "endpoint": "https://braux.es/en/trackers/",
+      "format": "HTML",
+      "version_or_date": "Current public source reviewed 4 November 2026; exact technical revision not accepted",
+      "publication_cadence": "Unspecified",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "last_retrieval": "2026-11-04T08:01:44.515947+00:00",
+      "sha256": "1ce69e876917163bea371fc5fd86e91d58c3865004f0fd6d735b22d406bd1be6",
+      "etag": null,
+      "licence_assessment": "Section 3 prohibits exploitation/reproduction/distribution/use without authorization; public access does not grant reuse.",
+      "access_assessment": 200,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "future_verified_yield": null
+      },
+      "fields_offered": [
+        "Identifiers and technical/registry metadata subject to rights and scope review"
+      ],
+      "mapping": "Discovery only; no integration or canonical acceptance",
+      "processed_cursor": {
+        "canonical_accepted": 0,
+        "technical_rows_extracted": 0
+      },
+      "result": "New tracker PDF link discovered; no PDF downloaded or model table extracted after legal review.",
+      "retry_condition": "Materially changed source access/rights or alternate authorized primary evidence",
+      "next_action": "Find alternate permitted primary source; no contact or forms",
+      "next_due_check": null,
+      "technical_document_url": "https://braux.es/wp-content/uploads/2026/06/SOLAR-TRACKER-BRAUX-ENG.pdf"
+    },
+    {
+      "id": "noark_au_discovery_0800",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://noark.au/index.php/products/equipment?id=2",
+      "endpoint": "https://noark.au/index.php/products/equipment?id=2",
+      "format": "HTML",
+      "version_or_date": "Current public source reviewed 4 November 2026; exact technical revision not accepted",
+      "publication_cadence": "Unspecified",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "last_retrieval": null,
+      "sha256": null,
+      "etag": null,
+      "licence_assessment": "Applicable technical source reuse remains unverified; current privacy page is not a product-data reuse grant.",
+      "access_assessment": "HTTP Error 404: Not Found",
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "future_verified_yield": null
+      },
+      "fields_offered": [
+        "Identifiers and technical/registry metadata subject to rights and scope review"
+      ],
+      "mapping": "Discovery only; no integration or canonical acceptance",
+      "processed_cursor": {
+        "canonical_accepted": 0,
+        "technical_rows_extracted": 0
+      },
+      "result": "Legacy exact product route and direct combiner brochure both return404; current home replaced by generic page. No models or technical rows accepted.",
+      "retry_condition": "Materially changed source access/rights or alternate authorized primary evidence",
+      "next_action": "Find alternate permitted primary source; no contact or forms",
+      "next_due_check": null
+    },
+    {
+      "id": "india_rec_discovery_0800",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://recregistry.grid-india.in/index.php/publics/State_Source_Wise_Accr_Status",
+      "endpoint": "https://recregistry.grid-india.in/index.php/publics/State_Source_Wise_Accr_Status",
+      "format": "HTML",
+      "version_or_date": "Current public source reviewed 4 November 2026; exact technical revision not accepted",
+      "publication_cadence": "Unspecified",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "last_retrieval": "2026-11-04T08:06:17.086397+00:00",
+      "sha256": "93cad1599628a06afa31ac2237f08e91c68346c3267f667a5470d69248d7ca6d",
+      "etag": null,
+      "licence_assessment": "Grid-India RIGHTS clause prohibits incorporation or storage of website data in other databases/publications; rights-held.",
+      "access_assessment": 200,
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "future_verified_yield": null
+      },
+      "fields_offered": [
+        "Identifiers and technical/registry metadata subject to rights and scope review"
+      ],
+      "mapping": "Discovery only; no integration or canonical acceptance",
+      "processed_cursor": {
+        "canonical_accepted": 0,
+        "technical_rows_extracted": 0
+      },
+      "result": "New official multi-record registry discovered; registration/accreditation are distinct from operation and generator/project number requires facility-scope review. No project assertions stored or accepted.",
+      "retry_condition": "Materially changed source access/rights or alternate authorized primary evidence",
+      "next_action": "Find alternate permitted primary source; no contact or forms",
+      "next_due_check": null,
+      "terms_url": "https://recregistry.grid-india.in/index.php/publics/PrivacyPOSOCO"
+    },
+    {
+      "id": "solarsteel_2p_recheck_0800",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.gsolarsteel.com/products/2p-solar-trackers/",
+      "last_attempt": "2026-11-04T08:08:02.859100+00:00",
+      "sha256": "c7bac5ccf5561e4370b863c3ddf98fb7d406aa216062127ef531810d56f8aca8",
+      "result": "Recognized previously reviewed 2P platform and existing personal/private-use restriction in solarsteel_1257; no repeated PDF extraction or accepted model.",
+      "next_action": "Do not repeat unchanged rights-held source",
+      "licence_assessment": "Existing rights hold retained",
+      "processed_cursor": {
+        "accepted": 0
+      }
     }
   ],
   "source_refresh_queue": [
