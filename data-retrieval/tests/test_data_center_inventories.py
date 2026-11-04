@@ -70,6 +70,17 @@ def test_energy_star_ups_inventory_keeps_certification_id_and_power_boundaries()
     assert result["partner"] == "Example UPS Partner"
     assert len(result["sha256"]) == 64
 
+    adi = parse_energy_star_ups_inventory(
+        ENERGY_STAR_UPS,
+        source_url=(
+            "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
+        ),
+        partner="ADI",
+        expected_count=1,
+    )
+    assert [row["ENERGY STAR Unique ID"] for row in adi["candidates"]] == ["2001"]
+    assert adi["candidates"][0]["Brand Name"] == "W BOX"
+
 
 def test_energy_star_ups_inventory_rejects_drift_duplicates_and_unofficial_sources():
     url = "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv"

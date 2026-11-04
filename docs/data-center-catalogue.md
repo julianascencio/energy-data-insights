@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 901 exact models/configurations from NVIDIA, AMD, Baudouin, Borri, Carrier, CoolIT Systems, Cummins,
+has 923 exact models/configurations from NVIDIA, AMD, ADI, Baudouin, Borri, Carrier, CoolIT Systems, Cummins,
 Daikin, Dell, Delta Electronics, Eaton, Envicool, Huawei Digital Power, Kehua Tech, KSTAR, Lenovo, Motivair by Schneider
 Electric, Makelsan, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu, nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv and Para Systems / Minuteman Power Technologies. Current categories are GPU accelerators,
@@ -157,8 +157,10 @@ and kW value remains separate. Exact weights and unqualified cabinet dimensions
 are normalized; battery-qualified DS POWER SH dimensions, module statements,
 selectable electrical values, batteries and communications remain observations.
 The ENERGY STAR continuation processes all 33 current certification entries for
-Para Systems / Minuteman Power Technologies in EPA dataset `ifxy-2uty`. Each
-entry retains its immutable ENERGY STAR ID, certification date, exact minimum
+Para Systems / Minuteman Power Technologies and all 22 entries for ADI in EPA
+dataset `ifxy-2uty`. ADI's 11 W BOX and 11 UltraTech certifications remain
+distinct even where model names recur across brands. Each entry retains its
+immutable ENERGY STAR ID, certification date, exact minimum
 tested configuration, active W, apparent VA, weighted and load-point efficiency,
 dimensions, protocols, warranty and runtime at both stated percentage loads.
 The normalized runtime is only the reported 100% load value, paired with the

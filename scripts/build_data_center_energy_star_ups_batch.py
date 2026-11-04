@@ -6,6 +6,7 @@ import argparse
 import json
 from datetime import datetime
 from pathlib import Path
+from typing import TypedDict
 
 from energy_data_retrieval.data_center_catalogue.catalogue import stable_id
 from energy_data_retrieval.data_center_catalogue.inventories import (
@@ -14,9 +15,32 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
 
 SOURCE_ID = "epa-energy-star-certified-ups-20261104"
 SOURCE_URL = "https://data.energystar.gov/api/v3/views/ifxy-2uty/export.csv?accessType=DOWNLOAD"
-PARTNER = "Para Systems, Inc./Minuteman Power Technologies"
-MANUFACTURER = "Para Systems / Minuteman Power Technologies"
-RETRIEVED_AT = "2026-11-04T10:26:21Z"
+
+
+class PartnerBatch(TypedDict):
+    partner: str
+    manufacturer: str
+    name_prefix: str | None
+    expected_count: int
+    retrieved_at: str
+
+
+PARTNER_BATCHES: dict[str, PartnerBatch] = {
+    "adi": {
+        "partner": "ADI",
+        "manufacturer": "ADI",
+        "name_prefix": None,
+        "expected_count": 22,
+        "retrieved_at": "2026-11-04T11:18:04Z",
+    },
+    "minuteman": {
+        "partner": "Para Systems, Inc./Minuteman Power Technologies",
+        "manufacturer": "Para Systems / Minuteman Power Technologies",
+        "name_prefix": "Minuteman",
+        "expected_count": 33,
+        "retrieved_at": "2026-11-04T10:26:21Z",
+    },
+}
 DATASET_UPDATED = "2026-11-03T14:20:54Z"
 
 
@@ -55,7 +79,13 @@ def observation(
     }
 
 
-def build_record(row: dict[str, str]) -> dict[str, object]:
+def build_record(
+    row: dict[str, str],
+    *,
+    manufacturer: str,
+    name_prefix: str | None,
+    retrieved_at: str,
+) -> dict[str, object]:
     uid = row["ENERGY STAR Unique ID"]
     model = row["Model Name"]
     tested = row["Minimum Configuration Tested Model Number"]
@@ -272,7 +302,7 @@ def build_record(row: dict[str, str]) -> dict[str, object]:
         ),
         "certifications_json": compact(certifications),
         "communication_protocols": protocols,
-        "created_at": RETRIEVED_AT,
+        "created_at": retrieved_at,
         "efficiency_conditions": (
             "ENERGY STAR weighted efficiency for minimum configuration, "
             "lowest-input-dependency AC normal mode"
@@ -282,10 +312,10 @@ def build_record(row: dict[str, str]) -> dict[str, object]:
         "evidence_json": compact(evidence),
         "field_sources_json": compact({field: [SOURCE_ID] for field in fields}),
         "form_factor": form_factor,
-        "last_verified_at": RETRIEVED_AT,
-        "manufacturer": MANUFACTURER,
+        "last_verified_at": retrieved_at,
+        "manufacturer": manufacturer,
         "model": model,
-        "name": f"Minuteman {model} ENERGY STAR configuration",
+        "name": f"{name_prefix or row['Brand Name']} {model} ENERGY STAR configuration",
         "notes": (
             "This record is one third-party-certified minimum test configuration. "
             "W and VA remain separate; the normalized runtime is the reported 100% "
@@ -304,11 +334,11 @@ def build_record(row: dict[str, str]) -> dict[str, object]:
             "listed in the current ENERGY STAR certified UPS dataset snapshot updated 2026-11-03"
         ),
         "quality_status": "source_backed",
-        "record_id": stable_id("equipment", MANUFACTURER, "ENERGY STAR", uid),
+        "record_id": stable_id("equipment", manufacturer, "ENERGY STAR", uid),
         "record_scope": "configuration",
         "source_urls": [SOURCE_URL],
         "sources": [SOURCE_ID],
-        "updated_at": RETRIEVED_AT,
+        "updated_at": retrieved_at,
         "variant": f"ENERGY STAR {uid}; tested configuration {tested}",
         "warranty_conditions": "Certified entry's energy-storage-system warranty",
     }
@@ -319,21 +349,40 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source_csv", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument(
+        "--partner-batch",
+        choices=sorted(PARTNER_BATCHES),
+        default="minuteman",
+        help="Reviewed partner inventory to extract (default: minuteman)",
+    )
     args = parser.parse_args()
+    batch = PARTNER_BATCHES[args.partner_batch]
+    expected_count = batch["expected_count"]
     staged = parse_energy_star_ups_inventory(
         args.source_csv.read_bytes(),
         source_url=SOURCE_URL,
-        partner=PARTNER,
-        expected_count=33,
+        partner=batch["partner"],
+        expected_count=expected_count,
     )
     records = sorted(
-        (build_record(row) for row in staged["candidates"]),
+        (
+            build_record(
+                row,
+                manufacturer=batch["manufacturer"],
+                name_prefix=batch["name_prefix"],
+                retrieved_at=batch["retrieved_at"],
+            )
+            for row in staged["candidates"]
+        ),
         key=lambda record: (str(record["model"]), str(record["variant"])),
     )
-    if len(records) != 33 or len({record["record_id"] for record in records}) != 33:
-        raise ValueError("Expected 33 unique Para Systems / Minuteman configurations")
+    if (
+        len(records) != expected_count
+        or len({record["record_id"] for record in records}) != expected_count
+    ):
+        raise ValueError(f"Expected {expected_count} unique {batch['partner']} configurations")
     args.output.write_text("".join(f"{compact(record)}\n" for record in records), encoding="utf-8")
-    print("Wrote 33 ENERGY STAR-certified Para Systems / Minuteman configurations")
+    print(f"Wrote {expected_count} ENERGY STAR-certified {batch['partner']} configurations")
 
 
 if __name__ == "__main__":
