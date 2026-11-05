@@ -7,7 +7,9 @@ import pytest
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
     parse_doe_transformer_certification_matrix,
+    parse_energy_star_data_center_storage_inventory,
     parse_energy_star_enterprise_servers_inventory,
+    parse_energy_star_large_network_equipment_inventory,
     parse_energy_star_ups_inventory,
     parse_generator_dcp_matrix,
     parse_generator_rating_matrix,
@@ -56,6 +58,103 @@ ENERGY_STAR_UPS = (Path(__file__).parent / "fixtures/data_centers/energy-star-up
 ENERGY_STAR_SERVERS = (
     Path(__file__).parent / "fixtures/data_centers/energy-star-enterprise-servers.csv"
 ).read_bytes()
+ENERGY_STAR_STORAGE_BLOCK = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-storage-block.csv"
+).read_bytes()
+ENERGY_STAR_STORAGE_FILE = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-storage-file.csv"
+).read_bytes()
+ENERGY_STAR_NETWORK = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-large-network.csv"
+).read_bytes()
+
+
+def test_energy_star_large_network_keeps_test_power_boundaries():
+    result = parse_energy_star_large_network_equipment_inventory(
+        ENERGY_STAR_NETWORK,
+        source_url="https://data.energystar.gov/api/v3/views/n8cx-m62r/export.csv",
+        expected_count=1,
+    )
+    row = result["candidates"][0]
+    assert row["ENERGY STAR Unique ID"] == "1001"
+    assert row["Product Type"] == "Switch"
+    assert row["Typ Power Config Full-port Full Load Power Measured (watts)"] == "101.2"
+    assert row["Typ Power Config Power Supply Rated Output (W)"] == "650"
+    assert len(result["sha256"]) == 64
+
+
+def test_energy_star_large_network_rejects_drift_duplicate_and_wrong_source():
+    url = "https://data.energystar.gov/api/v3/views/n8cx-m62r/export.csv"
+    with pytest.raises(ValueError, match="inventory shape"):
+        parse_energy_star_large_network_equipment_inventory(
+            ENERGY_STAR_NETWORK,
+            source_url=url,
+            expected_count=2,
+        )
+    duplicate = ENERGY_STAR_NETWORK + ENERGY_STAR_NETWORK.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate ENERGY STAR large-network-equipment"):
+        parse_energy_star_large_network_equipment_inventory(
+            duplicate,
+            source_url=url,
+            expected_count=1,
+        )
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR large-network-equipment"):
+        parse_energy_star_large_network_equipment_inventory(
+            ENERGY_STAR_NETWORK,
+            source_url="https://example.com/network.csv",
+            expected_count=1,
+        )
+
+
+def test_energy_star_storage_keeps_workload_and_power_boundaries():
+    block = parse_energy_star_data_center_storage_inventory(
+        ENERGY_STAR_STORAGE_BLOCK,
+        source_url="https://data.energystar.gov/api/v3/views/3uec-2gqf/export.csv",
+        dataset_kind="block_io",
+        expected_count=1,
+    )
+    assert block["candidates"][0]["ENERGY STAR Unique ID"] == "1001"
+    assert block["candidates"][0]["Trans PSU Rated Output (W)"] == "1200"
+    assert (
+        block["candidates"][0]["Trans Optimal Point Random Read Workload Test (IOPS/W)"] == "42.5"
+    )
+    assert len(block["sha256"]) == 64
+
+    file_io = parse_energy_star_data_center_storage_inventory(
+        ENERGY_STAR_STORAGE_FILE,
+        source_url="https://data.energystar.gov/api/v3/views/put7-uu67/export.csv",
+        dataset_kind="file_io",
+        expected_count=1,
+    )
+    assert file_io["candidates"][0]["PD_ID"] == "2001"
+    assert file_io["candidates"][0]["Comp PSU Rated Output (W)"] == "750W"
+    assert file_io["candidates"][0]["Comp Total Amount of Cache (GiB)"] == "288.00"
+
+
+def test_energy_star_storage_rejects_drift_duplicate_and_wrong_dataset():
+    url = "https://data.energystar.gov/api/v3/views/3uec-2gqf/export.csv"
+    with pytest.raises(ValueError, match="inventory shape"):
+        parse_energy_star_data_center_storage_inventory(
+            ENERGY_STAR_STORAGE_BLOCK,
+            source_url=url,
+            dataset_kind="block_io",
+            expected_count=2,
+        )
+    duplicate = ENERGY_STAR_STORAGE_BLOCK + ENERGY_STAR_STORAGE_BLOCK.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate ENERGY STAR data-center-storage"):
+        parse_energy_star_data_center_storage_inventory(
+            duplicate,
+            source_url=url,
+            dataset_kind="block_io",
+            expected_count=1,
+        )
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR data-center-storage source"):
+        parse_energy_star_data_center_storage_inventory(
+            ENERGY_STAR_STORAGE_BLOCK,
+            source_url="https://data.energystar.gov/api/v3/views/put7-uu67/export.csv",
+            dataset_kind="block_io",
+            expected_count=1,
+        )
 
 
 def test_energy_star_enterprise_servers_keep_certification_and_form_factor():

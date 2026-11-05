@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T08:20:00Z",
+  "retrieved_at": "2026-11-05T10:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -120,6 +120,30 @@
       "enriched_records": 0,
       "reuse": "Public U.S. Department of Energy certification database; exact manufacturer-represented brand, basic model, phase count, kVA and represented-efficiency facts normalized without redistributing the source page. Model suffixes are not decoded and listing is not treated as a DOE compliance determination.",
       "originals": "The official indexed page reader exposed every selected displayed row from the public 2026-10-23 snapshot. Direct original-byte requests returned HTTP 403 in this execution environment, so no source checksum is claimed; this is an access limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Center Storage Block I/O complete dataset",
+      "processed_offset": 84,
+      "accepted_records": 84,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA certification dataset under the EPA Data License; exact issuer identity, controller, configuration, lifecycle and workload facts normalized without redistributing the source CSV. No deployment claim is imported.",
+      "originals": "The complete official 84-row, 65,084-byte CSV was captured successfully with SHA-256 2d1daab000dff286c0034b9144fa48a291acd58f4ace50a9514e1e9c3a659bc6."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Center Storage File I/O complete dataset",
+      "processed_offset": 36,
+      "accepted_records": 36,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA certification dataset under the EPA Data License; exact issuer identity, controller, configuration, lifecycle and workload facts normalized without redistributing the source CSV. No deployment claim is imported.",
+      "originals": "The complete official 36-row, 31,584-byte CSV was captured successfully with SHA-256 fc55a7b3b62e2fe40d5e7d0f1cbaff6b7e727b76c7a5280ef401383dc27ff267."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Large Network Equipment complete dataset",
+      "processed_offset": 96,
+      "accepted_records": 96,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA certification dataset under the EPA Data License; exact issuer identity, router/switch classification, port, PoE, modular, power-supply, lifecycle and test facts normalized without redistributing the source CSV. No deployment claim is imported.",
+      "originals": "The complete official 96-row, 223-column, 72,103-byte v3 CSV was captured successfully with SHA-256 e769eedcef814b652ad6594b6cadb43b239e57e9250071a90cc133b07907e533."
     }
   ],
   "deferred": [
@@ -132,8 +156,8 @@
       "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence."
     },
     {
-      "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current electrical/liquid-cooling table",
-      "reason": "The first 50 displayed low-voltage dry-type, medium-voltage dry-type and liquid-immersed basic-model rows are complete. Medium-voltage rows 51-100 remain inaccessible through a stable pagination boundary in this environment. Continue only through a verified non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount completed pages."
+      "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current network/electrical/liquid-cooling table",
+      "reason": "The first 50 displayed low-voltage dry-type, medium-voltage dry-type and liquid-immersed basic-model rows and all 96 current ENERGY STAR Large Network Equipment entries are complete. Medium-voltage rows 51-100 remain inaccessible through a stable pagination boundary in this environment. Continue only through a verified non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount completed pages or network certifications."
     }
   ],
   "quarantined": [
@@ -177,6 +201,11 @@
     "DOE represented efficiency stays an observation because the displayed table omits the load/test condition; phase count and apparent kVA remain exact, active kW is not inferred and listing is not treated as a DOE compliance determination.",
     "The saved Delta UPS reuse hold was screened and enforced; no Delta UPS facts, records or source bytes were committed.",
     "Campus aggregates remain excluded from capacity sums under all viewer filters.",
-    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko reuse holds remain in force; no held facts or bytes were imported."
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko reuse holds remain in force; no held facts or bytes were imported.",
+    "All 84 Block I/O and all 36 File I/O certifications in the 2026-11-04 ENERGY STAR Data Center Storage exports are processed; the current bounded inventories are exhausted.",
+    "Block I/O and File I/O certification IDs remain distinct immutable identities even when model names overlap across datasets.",
+    "Storage PSU nameplates, cache/device quantities and workload metrics remain exact test-configuration observations; they are not normalized as equipment input, installed inventory, generic efficiency or deployment.",
+    "All 96 rows in the 2026-10-27 ENERGY STAR Large Network Equipment export are processed; the current bounded inventory is exhausted.",
+    "Network minimum, typical and maximum configurations remain separate observations; measured watts retain topology, throughput, utilization, voltage and frequency boundaries; PSU output remains a nameplate; no rated device/rack input, option combination or deployment is inferred."
   ]
 }

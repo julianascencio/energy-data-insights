@@ -1,0 +1,125 @@
+{
+  "run_id": "energy-star-large-network-equipment-20261105T102000Z",
+  "validated_at": "2026-11-05T10:20:00Z",
+  "base_main_sha": "861ba7389ff14cae376056a9b37b7ce3d19452cf",
+  "branch": "research/data-center-database-20261105T0920Z",
+  "catalogue": {
+    "canonical_records": 2816,
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus": 114
+    },
+    "equipment": 2633,
+    "countries": 36,
+    "operators": 13,
+    "oems": 70,
+    "added_equipment": 96,
+    "added_projects": 0,
+    "enriched_projects": 0
+  },
+  "inventory": {
+    "source_id": "epa-energy-star-large-network-equipment-20261027",
+    "dataset_id": "n8cx-m62r",
+    "records_processed": 96,
+    "source_total_rows": 96,
+    "source_columns": 223,
+    "source_bytes": 72103,
+    "sha256": "e769eedcef814b652ad6594b6cadb43b239e57e9250071a90cc133b07907e533",
+    "product_types": {
+      "Switch": 91,
+      "Router": 5
+    },
+    "classifications": {
+      "Fixed": 87,
+      "Modular": 9
+    },
+    "manufacturer_counts": {
+      "Extreme Networks": 41,
+      "Dell": 34,
+      "Cisco": 20,
+      "Huawei": 1
+    },
+    "original_bytes_available": true,
+    "reuse_prohibited": false,
+    "license": "EPA Data License"
+  },
+  "local_checks": [
+    {
+      "command": "jq parsing for sources, backlog, source review, coverage and all new JSONL records",
+      "result": "passed"
+    },
+    {
+      "command": ".venv/bin/python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 2816 records"
+    },
+    {
+      "command": ".venv/bin/python scripts/build_data_center_energy_star_network_batch.py /tmp/n8cx-m62r-v3.csv /tmp/dc-network-replay plus cmp",
+      "result": "passed; byte-identical 96-record replay across four shards"
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q data-retrieval/tests/test_data_center_inventories.py data-retrieval/tests/test_data_center_catalogue.py",
+      "result": "passed; 85 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed; 22 tests"
+    },
+    {
+      "command": ".venv/bin/ruff format --check .",
+      "result": "passed; 1027 files"
+    },
+    {
+      "command": ".venv/bin/ruff check .",
+      "result": "passed"
+    },
+    {
+      "command": ".venv/bin/ty check scripts/build_data_center_energy_star_network_batch.py data-retrieval/src/energy_data_retrieval/data_center_catalogue/inventories.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed"
+    },
+    {
+      "command": ".venv/bin/ty check",
+      "result": "two unrelated diagnostics already present in optional PV and BESS imports on current main; changed Data Center files passed targeted type checking"
+    },
+    {
+      "command": ".venv/bin/python scripts/check_repository.py",
+      "result": "passed; 4993 candidate files"
+    },
+    {
+      "command": ".venv/bin/python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg .venv/bin/python examples/database/plot_data_center_catalogue.py",
+      "result": "passed"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus cmp",
+      "result": "passed; byte-identical snapshots"
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q",
+      "result": "2703 passed, 5 optional skips, 3 unrelated failures caused by the absent optional pvdeg dependency"
+    },
+    {
+      "command": ".venv/bin/sphinx-build -W --keep-going -b html docs /tmp/dc-network-docs",
+      "result": "not executable locally because sphinx-build is absent from the current Python 3.12 environment; remote Python 3.13 documentation CI is authoritative"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "8323df118965665e0e3458ef2dd5d0e67d73f05c0984ebae9640545415e1ee6d",
+    "projects": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment": "cc2edecd7ad954d50785584d26afe4e4c9d3a642579ee87c5d274ee57b774f61",
+    "manifest": "0c08d78494e155dc2b3a9144dd756af344f823c1d9a5533db2f90482114dfc18",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "517a2aa184362fe608d0a5aabf8627d13ac5d05d92aff0656ae2ced34fe1b8a6"
+  },
+  "remote_ci": {
+    "status_at_validation": "not_started"
+  }
+}
