@@ -203,6 +203,22 @@ print(
     .sort_values(["variant", "cooling_capacity_kw", "model"])
     .to_string(index=False)
 )
+print("DOE CCMS CRAC rows keep issuer conflicts and test boundaries visible:")
+print(
+    equipment.loc[
+        equipment.manufacturer.isin(["AboveAir", "AIRSYS"]),
+        [
+            "manufacturer",
+            "model",
+            "cooling_capacity_kw",
+            "airflow_m3_h",
+            "cooling_rating_conditions",
+            "quality_status",
+        ],
+    ]
+    .sort_values(["manufacturer", "cooling_capacity_kw", "model"], na_position="last")
+    .to_string(index=False)
+)
 print("CDU comparison preserves approach temperatures, loop boundaries and quarantines:")
 print(
     equipment.loc[

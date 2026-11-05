@@ -55,7 +55,7 @@ issuer updates or independent planning, utility and lifecycle evidence.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,655 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,727 exact models/configurations from NVIDIA, AMD, AIRSYS, AboveAir, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
@@ -64,6 +64,13 @@ Ingram Micro / V7, N1 Critical Technologies, Neuropower, Power Logic / KOSS,
 Right Power Technology, Upsonic Power Systems, xFusion and ZTE. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
+The DOE CCMS CRAC continuation retains all 50 rows displayed on the first public
+page: 36 AboveAir and 14 AIRSYS basic-model configurations. AIRSYS net-total
+capacity and every row's rated airflow are unit-converted while the printed
+Btu/h and SCFM values remain observations. AboveAir's displayed sensible values
+exceed its displayed totals, so all 36 normalized cooling capacities remain null
+with explicit conflicts. NSenCOP remains a ratio observation, and registry
+listing is not treated as a DOE compliance determination or a deployment.
 The Schneider Galaxy
 VS batch preserves exact commercial references, stated kW and kVA, battery-string
 arrangements, full-load efficiency conditions and dimensions without calculating

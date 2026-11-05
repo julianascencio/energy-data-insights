@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T19:20:00Z",
+  "retrieved_at": "2026-11-05T20:24:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -208,6 +208,14 @@
       "enriched_records": 0,
       "reuse": "Public OEM product tables were used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved reuse hold applies to these pages.",
       "originals": "All three official HTML originals were captured and checksummed: D8 Stage IIIA 187,457 bytes; D13 Stage IIIA 191,067 bytes; D16 Stage IIIA 190,260 bytes. The exact SHA-256 values are in sources.json."
+    },
+    {
+      "inventory": "U.S. DOE CCMS computer-room air-conditioner displayed rows 1-50",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. Department of Energy certification data were used for factual extraction only. DOE identifies the values as manufacturer representations and states that listing is not a compliance determination. No source page is redistributed and no reuse prohibition was found.",
+      "originals": "The accessible public reader exposed all 50 selected rows. A direct original-byte request returned HTTP 403, so sources.json claims no source bytes or checksum. This is an access/content limitation, not a reuse restriction."
     }
   ],
   "deferred": [
@@ -230,6 +238,10 @@
     {
       "inventory": "Doosan Portable Power generator tables",
       "reason": "Current official terms restrict stored, reproduced, republished or distributed website content to narrow personal-use exceptions. No Doosan product facts or bytes were imported."
+    },
+    {
+      "inventory": "DOE CCMS computer-room air-conditioner rows 51-100",
+      "reason": "Rows 1-50 are complete. Continue only after a stable public page, filter or download boundary exposes a verified non-overlapping inventory; do not infer page contents or recount the first page."
     }
   ],
   "quarantined": [
@@ -242,6 +254,11 @@
       "record": "ZTE R5300 G5 ENERGY STAR certification 4654814",
       "field": "configuration_identity",
       "reason": "The issuer row labels the certified model R5300 G5 but prints R5300 G6 for the high-end configuration identifier. Both observations remain exact and no cross-model configuration identity is inferred."
+    },
+    {
+      "record": "36 AboveAir DOE CCMS CRAC basic-model rows",
+      "field": "cooling_capacity_kw",
+      "reason": "Every displayed net sensible cooling value exceeds the same row's displayed net total cooling value under the page's printed Btu/h headings. Both issuer observations are preserved, but normalized scalar cooling capacity remains null pending corrected issuer data or an explicit unit clarification."
     }
   ],
   "normalization_notes": [
@@ -297,6 +314,9 @@
     "SWE04 130 kV line construction and heat-reuse development agreement are planning observations; no facility commissioning date, delivered heat or contracted heat quantity is inferred.",
     "All 22 populated Volvo Penta model/frequency rows across the selected current D8, D13 and D16 baseline tables are processed; blank TAD1640GE cells remain excluded.",
     "All 22 populated Volvo Penta Stage IIIA/Tier 3 model/frequency rows are processed: six D8, ten D13 and six D16. D13 60 Hz-only and D16 50 Hz-only columns remain sparse; printed N/A cells are not configurations.",
-    "Volvo Penta prime electrical kW/kVA, standby electrical kW/kVA and engine mechanical kWm remain distinct; fuel/emissions labels are OEM observations and no alternator, voltage, complete genset BOM, issuer certification or deployment is inferred."
+    "Volvo Penta prime electrical kW/kVA, standby electrical kW/kVA and engine mechanical kWm remain distinct; fuel/emissions labels are OEM observations and no alternator, voltage, complete genset BOM, issuer certification or deployment is inferred.",
+    "All 50 displayed DOE CCMS computer-room air-conditioner rows are processed for the public page updated 2026-10-23: 36 AboveAir and 14 AIRSYS basic-model configurations.",
+    "AIRSYS net-total Btu/h is converted to cooling_capacity_kw and all SCFM ratings are converted to airflow_m3_h using fixed physical conversion factors; the printed originals remain observations.",
+    "AboveAir cooling_capacity_kw remains null on all 36 rows because the issuer's displayed net sensible values exceed its displayed net totals. NSenCOP remains a ratio observation and listing is not a DOE compliance determination or deployment."
   ]
 }

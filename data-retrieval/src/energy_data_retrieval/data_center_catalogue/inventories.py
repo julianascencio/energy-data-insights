@@ -859,6 +859,79 @@ def parse_doe_transformer_certification_matrix(
     }
 
 
+def parse_doe_crac_certification_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact public DOE computer-room air-conditioner basic-model rows.
+
+    The adapter retains the issuer's printed Btu/h and SCFM values without
+    repairing cross-field inconsistencies. A public CCMS listing is a
+    manufacturer representation, not a DOE compliance determination.
+    """
+    parsed_url = urlsplit(source_url)
+    if parsed_url.hostname != "www.regulations.doe.gov" or parsed_url.path != (
+        "/certification-data/"
+        "CCMS-4-Air_Conditioners_and_Heat_Pumps_-_Computer_Room_Air_Conditioners.html"
+    ):
+        raise ValueError("Unsupported official DOE CRAC certification source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "brand",
+        "basic_model",
+        "indoor_model",
+        "outdoor_model",
+        "condenser_heat_rejection",
+        "configuration",
+        "net_total_btu_h",
+        "net_sensible_btu_h",
+        "rated_airflow_scfm",
+        "nsencop",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing DOE CRAC certification columns")
+    candidates: dict[tuple[str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate: dict[str, Any] = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate[key] for key in required if key not in {"outdoor_model"}):
+            raise ValueError(f"Incomplete DOE CRAC row {line}")
+        try:
+            for field in (
+                "net_total_btu_h",
+                "net_sensible_btu_h",
+                "rated_airflow_scfm",
+                "nsencop",
+            ):
+                candidate[field] = float(candidate[field])
+        except ValueError as exc:
+            raise ValueError(f"Invalid DOE CRAC numeric value on row {line}") from exc
+        if any(
+            candidate[field] <= 0
+            for field in (
+                "net_total_btu_h",
+                "net_sensible_btu_h",
+                "rated_airflow_scfm",
+                "nsencop",
+            )
+        ):
+            raise ValueError(f"Invalid DOE CRAC rating on row {line}")
+        candidate["outdoor_model"] = candidate["outdoor_model"] or None
+        identity = (str(candidate["brand"]), str(candidate["basic_model"]))
+        if identity in candidates:
+            raise ValueError(f"Duplicate DOE CRAC row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed DOE CRAC matrix shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_ups_rating_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:

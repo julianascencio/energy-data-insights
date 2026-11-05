@@ -6,6 +6,7 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_doe_crac_certification_matrix,
     parse_doe_transformer_certification_matrix,
     parse_energy_star_certified_data_centers,
     parse_energy_star_data_center_storage_inventory,
@@ -75,6 +76,38 @@ ENERGY_STAR_NETWORK = (
 ENERGY_STAR_DATA_CENTERS = (
     Path(__file__).parent / "fixtures/data_centers/energy-star-certified-data-centers.html"
 ).read_bytes()
+DOE_CRAC = (Path(__file__).parent / "fixtures/data_centers/doe-crac-matrix.csv").read_bytes()
+
+
+def test_doe_crac_keeps_issuer_capacity_and_airflow_boundaries():
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Air_Conditioners_and_Heat_Pumps_-_Computer_Room_Air_Conditioners.html"
+    )
+    result = parse_doe_crac_certification_matrix(DOE_CRAC, source_url=url, expected_count=2)
+    rows = {(row["brand"], row["basic_model"]): row for row in result["candidates"]}
+    aboveair = rows[("AboveAir", "HKA-053(kW)*")]
+    assert aboveair["outdoor_model"] is None
+    assert aboveair["net_total_btu_h"] == 37800
+    assert aboveair["net_sensible_btu_h"] == 129000
+    assert rows[("AIRSYS", "UNI-EDG.20V1*1MR410CAC")]["rated_airflow_scfm"] == 2520
+    assert len(result["sha256"]) == 64
+
+
+def test_doe_crac_rejects_source_shape_and_identity_drift():
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Air_Conditioners_and_Heat_Pumps_-_Computer_Room_Air_Conditioners.html"
+    )
+    with pytest.raises(ValueError, match="Unsupported official DOE CRAC"):
+        parse_doe_crac_certification_matrix(
+            DOE_CRAC, source_url="https://example.com/crac.csv", expected_count=2
+        )
+    with pytest.raises(ValueError, match="matrix shape"):
+        parse_doe_crac_certification_matrix(DOE_CRAC, source_url=url, expected_count=3)
+    duplicate = DOE_CRAC + DOE_CRAC.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate DOE CRAC"):
+        parse_doe_crac_certification_matrix(duplicate, source_url=url, expected_count=2)
 
 
 def test_energy_star_data_centers_keep_state_only_and_unqualified_area():
