@@ -1,41 +1,36 @@
 {
-  "batch": "2026-11-05-0835",
-  "iteration_parent": "aa842b959bebe8b4279a449f91176be26f0ad6a5",
+  "batch": "2026-11-05-0910",
+  "iteration_parent": "9d697427c00fe5406f759a636019d730ba6b3b3a",
   "reconciled_main": "d92d1b823496c9229610a62755de879bfc5294aa",
   "local": {
-    "tests": "212 Wind tests passed on Python3.13;6 history tests rerun after formatting passed",
-    "viewer": "23 Node viewer tests and syntax passed",
-    "catalogue": "22222 valid;22179 prior records unchanged;8new projects,2enriched projects,33new equipment;all prior scalar facts/IDs/creation times and six capacity totals preserved",
-    "source_registry": "373 prior entries unchanged;4added; original ZIP/workbook/OEM/Polenergia/URE checksums verified",
-    "replay": "EIA site staging and complete46-row OEM adapter replay deterministic; offline synthetic tests cover range, repeated options, conflicting values, existing models, missing rows and original hash mismatch",
-    "snapshots": "Final two seven-file builds byte-identical; all Parquet columns ZSTD; first checkpoint also built twice",
-    "quality": "Repository-wide Ruff,format1013files,ty check with explicit Python environment,citations,repository hygiene passed",
-    "packages": "uv build --all-packages passed; all3packages produced wheel and sdist",
-    "docs": "Strict Sphinx build with Wind-only executable gallery selection passed; full gallery blocked by unrelated psutil.NoSuchProcess container error",
-    "example": "Offline Wind example passed standalone at first checkpoint and executed in final scoped Sphinx build",
-    "docs_links": "623 HTML pages; local links and assets resolve"
+    "tests": "215 Wind tests passed;22 identity/EIA tests also passed",
+    "viewer": "23 Node viewer tests passed",
+    "catalogue": "22278 valid;22222 preceding records unchanged;56new projects; all six capacity totals and377source entries preserved",
+    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
+    "quality": "Repository-wide Ruff, format1015files, ty with explicit Python3.13, citations and repository hygiene passed"
   },
   "snapshot_sha256": {
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "adac06be5f5110c7bb0fd66044d783aadfdef180d93e3bb4c43d3ff593f5093f",
-    "manifest.json": "0b3eff5e101cd362426d5b441a1f31b26faaca115d4029bb47bce3a603814b9e",
-    "projects.parquet": "e8920a9d7e0d445a015a4a2e19262b1859f0d376988610edb703f87540574e90",
+    "manifest.json": "b5879edc4861f484bb77355529304154ef974d52195773f6a1f877d8ff3d229e",
+    "projects.parquet": "56911bdc11934f5eafbe6b0aced5baf7623e7289c7099154a5675117e38d8b44",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "sources.json": "8b4f80ea243649c9013b544a698e9a6258188fbe02951db1685f485148429d01",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
   "remote_ci": {
-    "first_checkpoint": "af607c579a713e4c8fbcd60410375a81816c27ae",
-    "first_checkpoint_result": "Python quality/tests and Documentation both passed",
-    "final_update": "Data/code checkpoint c8fb285b46bb22f2beaa3734379b20a24964087f published; Python and Documentation in progress at09:06UTC. Query live PR158 head for subsequent metadata-commit CI; no unobserved success claimed."
+    "previous_head": "9d697427c00fe5406f759a636019d730ba6b3b3a",
+    "previous_head_result": "Python quality/tests and Documentation passed",
+    "current_update": "Not published yet; no result claimed"
   },
   "not_executed": [
-    "Full local Python test suite",
+    "Full local Python suite",
+    "Current-run package build",
+    "Current-run Sphinx build",
     "Browser interaction"
   ],
   "resolved_attempts": [
-    "Initial two catalogue test failures from missing new coordinate-precision metadata corrected before first publication",
-    "Initial optional pvdeg type-check dependency missing; installed in isolated environment and final type check passed",
-    "Python environment replacement interrupted one test collection; clean isolated Python3.13 environment used for final tests"
+    "Initial test command included unmatched analysis/methods globs: no tests ran; corrected to actual Wind test files",
+    "Ruff literal-list formatting corrected before passing checks"
   ]
 }

@@ -3,13 +3,13 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-At batch `2026-11-05-0835`, the proposed branch contains **8,182 projects**
-(8,181 non-group records), **405 equipment configurations**, **13,633 linked
+At batch `2026-11-05-0910`, the proposed branch contains **8,238 projects**
+(8,237 non-group records), **405 equipment configurations**, **13,633 linked
 registry turbines** and **two original numerical curves**, across **59 countries**
 and **57 manufacturer labels**. Labels are not a reconciled corporate-entity count.
 Merged main at `d92d1b82` contains 8,174 projects, 372 equipment records,
-13,633 turbines and two curves. This iteration adds eight projects and 33 exact
-OEM types and enriches two existing projects. These are catalogue counts, not an
+13,633 turbines and two curves. This run adds 56 projects. The cumulative PR adds 64 projects and 33 exact
+OEM types and enriches two pre-existing projects. These are catalogue counts, not an
 operating census. PR #158 remains open for review.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
@@ -564,3 +564,17 @@ N27/150 and N27/250 contradictory printed ratings are not silently corrected.
 Krzęcin 6 MW and Krzęcin II 19.2 MW now have supported type/rating links to S77
 and N117 respectively; installed revisions and options remain unknown. The
 undated table's production headings do not establish current availability.
+
+
+Batch `2026-11-05-0910` resumes PR #158 at `9d697427`: 56 new US onshore
+registry sites across 20 states, with no farm capacity totals enabled. Exactly
+142 saved identity holds were reviewed; 86 remain. A geodesic distance screen
+includes existing sites and candidates within the same cohort, while distinctive
+name and alias checks ignore generic legal/site words. These are review flags,
+not automatic identity decisions. The original final-2025 EIA Operable sheet
+has 1,573 generator rows and maximum plant code 69,327; the residual range
+above 69,999 is empty, completing the partition scan. Individual turbine
+inventories, exact predominant-model configuration links and whole-farm
+capacities are not inferred. All previous records and six capacity totals are
+preserved. The equipment manufacturer count is 57 labels; inventory turbine
+labels are now reported separately in `latest.json`.
