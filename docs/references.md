@@ -7415,3 +7415,11 @@ World Resources Institute (2022). **WRI U.S. importer and make_id registry ident
 **Role:** data_source. Original checksum/revision and exact workbook row locators in Wind source registry. Unit observations do not reconcile whole-plant scope.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/eia.py`, `docs/wind-catalogue.md`, `catalogues/wind/README.md`.
+
+### hydro_wri_gppd_1_3_0_20261105
+
+World Resources Institute (n.d.). **Global Power Plant Database v1.3.0, complete primary-fuel Hydro partition**. [Source](https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/output_database/global_power_plant_database.csv)
+
+**Role:** data. Historical WRI baseline, CC BY 4.0. Full source checksum and per-field evidence in catalogues/hydro. Current status and pumped-storage classification are not inferred.
+
+**Used by:** `catalogues/hydro/sources.json`, `examples/database/plot_hydro_catalogue.py`.

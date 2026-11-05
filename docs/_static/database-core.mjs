@@ -275,3 +275,16 @@ export function windOemHistorySummary(rows) {
   }
   return result;
 }
+
+export function hydroCapacity(rows, field) {
+  if (!["installed_capacity_mw", "operational_capacity_mw", "planned_capacity_mw", "pumping_capacity_mw", "historical_capacity_mw"].includes(field)) throw new Error("Choose an explicit hydro capacity");
+  const selected = rows.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
+  const result = {excluded: rows.length - selected.length, unknown: selected.filter(r => r[field] == null).length, byStatus: {}};
+  for (const row of selected) {
+    if (row[field] == null) continue;
+    const key = `${row.status}/${row.technology}${field === "historical_capacity_mw" ? `@${row.capacity_reference_year}` : ""}`;
+    const item = result.byStatus[key] ||= {reported_mw: 0, records: 0};
+    item.reported_mw += row[field]; item.records += 1;
+  }
+  return result;
+}

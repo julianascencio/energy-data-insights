@@ -1,45 +1,32 @@
 {
-  "batch": "2026-11-05-0910",
-  "iteration_parent": "9d697427c00fe5406f759a636019d730ba6b3b3a",
-  "reconciled_main": "d92d1b823496c9229610a62755de879bfc5294aa",
+  "batch": "2026-11-05-0945",
+  "stage": "project checkpoint",
+  "iteration_parent": "1786ce8915247ffdc0fcd2eaff65b2a830fdc2c9",
   "local": {
-    "tests": "221 Wind tests passed on Python3.13;22 identity/EIA and6 OEM-observation tests also passed separately",
-    "viewer": "24 Node viewer tests and both shared-viewer JavaScript syntax checks passed",
-    "catalogue": "22278 valid;22191 of22222 preceding records unchanged;56new projects31enriched equipment; all prior scalar facts,IDs,creation times,six capacity totals and377source entries preserved",
-    "snapshots": "Final two new seven-file snapshot directories byte-identical; all columns typed and ZSTD; first checkpoint also built twice",
-    "quality": "Repository-wide Ruff,format1017files,ty with explicit Python3.13,citations and repository hygiene passed",
-    "source_registry": "Three new dated OEM HTML sources checksummed; reused pinned EIA originals;380total sources",
-    "replay": "56new EIA records and31OEM observations replay exactly; second OEM application preserves timestamps;3original HTML hashes verified",
-    "packages": "All3packages build wheel and sdist",
-    "docs": "Strict Sphinx -W --keep-going build passed with Wind-only executable gallery selection;1of1 selected example executed successfully",
-    "docs_links": "627 HTML pages; local links and assets resolve"
+    "tests": "221 Wind tests passed on Python3.13",
+    "catalogue": "22330 valid records;52new projects;all22278preceding records and380source entries preserved;all6capacity totals unchanged",
+    "snapshots": "Two fresh seven-file typed ZSTD snapshots byte-identical",
+    "viewer": "25 Node shared Wind/PV/BESS/DataCenter andHydro tests passed;both JSsyntax checks passed after resolving shared-viewer merge",
+    "main_reconciliation": "Merged current main861ba738 Hydropower; retained both Wind helpers andHydro capacity function"
   },
   "snapshot_sha256": {
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "8724cd2d7b3310143af3c7f559bd056499d22dc1d3f1fec3bee6cf12d7dde017",
-    "manifest.json": "1652a8aaad32a06fde71a4bc22ed55e93e4bf9a8778b39d40340ce1f1728764a",
-    "projects.parquet": "56911bdc11934f5eafbe6b0aced5baf7623e7289c7099154a5675117e38d8b44",
+    "manifest.json": "7f5ce0e661e34acdb190e45fb26aa5201b50758f019fd87d761c59cfd50ca1da",
+    "projects.parquet": "20bdeae1734b3ae8a69a5a62c2b1f7db2e13372e15f5a09d377f5ad9dccce858",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "sources.json": "4c9f7ecddfc5a6e581755fb9d77e1c0ddb7d35dc25df7fdd3c1c7f53d65f6095",
+    "sources.json": "dcb79ff1ae77a14916dcde7e1dfed7442e99016b53dc68155b39f9aac1423ae6",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
   "remote_ci": {
-    "previous_head": "9d697427c00fe5406f759a636019d730ba6b3b3a",
-    "previous_head_result": "Python quality/tests and Documentation passed",
-    "current_update": "OEM continuation not yet published when this report was built; query live PR158 head for CI",
-    "project_checkpoint": "9163fbf705b71425122acd01a8fd16312e2656db",
-    "project_checkpoint_result": "Python quality/tests and Documentation passed"
+    "previous_head": "1786ce8915247ffdc0fcd2eaff65b2a830fdc2c9",
+    "previous_head_result": "Python3.12,Python3.13 andDocumentation passed",
+    "current_update": "Not yet published when report built; check live PR158"
   },
   "not_executed": [
     "Full local Python suite",
     "Full local executable gallery",
     "Browser interaction"
-  ],
-  "resolved_attempts": [
-    "Initial test command included unmatched analysis/methods globs: no tests ran; corrected to actual Wind test files",
-    "Ruff literal-list formatting corrected before passing checks",
-    "Snapshot writer correctly rejected reusing earlier nonempty snapshot directory after data changes; final pair built in fresh immutable directories",
-    "Source-review check corrected an unsubstantiated N1635–5.5MW comparison before publication; original table says5MWrange, not an exact upper bound"
   ],
   "reviewed_open_prs": [
     154,
@@ -48,11 +35,8 @@
     159,
     160,
     161,
-    162
+    162,
+    163
   ],
-  "publication_preflight": {
-    "main": "d92d1b823496c9229610a62755de879bfc5294aa",
-    "expected_branch_head": "9163fbf705b71425122acd01a8fd16312e2656db",
-    "new_prs": "161Wind economics and162PV reviewed; no overlapping Wind catalogue changes; shared APIs preserved"
-  }
+  "reconciled_main": "861ba7389ff14cae376056a9b37b7ce3d19452cf"
 }
