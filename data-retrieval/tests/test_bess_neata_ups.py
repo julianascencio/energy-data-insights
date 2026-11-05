@@ -109,3 +109,59 @@ def test_high_mutations_fail(a, b):
 
     with pytest.raises(ValueError):
         parse_high_sc(high_sample().replace(a, b, 1))
+
+
+def cabinet_sample():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import CABINET_MODELS
+
+    row = (
+        "<tr>"
+        + "".join(
+            "<td>" + v + "</td>"
+            for v in [
+                "MODEL",
+                "204.8V50Ah",
+                "204.8",
+                "50",
+                "max. 48.64KW",
+                "217.6~220.8(230.4)",
+                "25",
+                "50",
+                "39.68KW/15min",
+                "800",
+                "600",
+                "1165",
+                "215",
+            ]
+        )
+        + "</tr>"
+    )
+    return high_sample().replace(
+        b"</table>",
+        ("".join(row.replace("MODEL", m) for m in CABINET_MODELS) + "</table>").encode(),
+    )
+
+
+def test_cabinets_preserve_distinct_power_observations():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_low_voltage_cabinets
+
+    rows = parse_low_voltage_cabinets(cabinet_sample())
+    assert len(rows) == 12
+    assert rows[0]["power_w"] == "max. 48.64KW"
+    assert rows[0]["discharge_power_native"] == "39.68KW/15min"
+
+
+@pytest.mark.parametrize(
+    "a,b",
+    [
+        (b"TC40</td>", b"NC16</td>"),
+        (b"max. 48.64KW", b"48.64KVA"),
+        (b"39.68KW/15min", b"39.68KW/15h"),
+        (b"204.8</td>", b"512</td>"),
+    ],
+)
+def test_cabinet_mutations_fail(a, b):
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_low_voltage_cabinets
+
+    with pytest.raises(ValueError):
+        parse_low_voltage_cabinets(cabinet_sample().replace(a, b, 1))

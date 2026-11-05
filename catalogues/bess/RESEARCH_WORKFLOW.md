@@ -239,3 +239,10 @@ SC102/192/204/240 models and checks the shared prior partition. Preserve the
 SC102 type-label/voltage-column discrepancy and 27/30Ah discrepancies; do not
 infer energy. Plain kW maximum-discharge observations have no stated continuous
 duration. Repeated NC/TC codes are outside this adapter's reviewed identity scope.
+
+`neata_ups.parse_low_voltage_cabinets` stages twelve reviewed unique NC/TC models
+at 204.8/240/256 V. It rejects repeated selected codes anywhere in the table,
+changed units and unknown timing syntax. NC40/TC100Y remain outside scope because
+codes repeat at other configurations. NC35's exact printed `60mi` is preserved
+as ambiguous text, never silently corrected to minutes. Maximum and timed
+power ratings are separate observations; neither defines stored energy.

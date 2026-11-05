@@ -84,3 +84,45 @@ def parse_high_sc(content: bytes) -> list[dict[str, str]]:
         if not re.fullmatch(r"(?:\d+W\(\d+W/60[Ss]\)|\d+(?:\.\d+)?KW)", r[8]):
             raise ValueError("Changed high SC discharge units or timing")
     return [dict(zip(FIELDS, r, strict=True)) for r in rows]
+
+
+CABINET_MODELS = [
+    "TC40",
+    "NC16",
+    "TC40E",
+    "NC28",
+    "TC50Y",
+    "NC20Y",
+    "NC35Y",
+    "NC50Y",
+    "TC50",
+    "TC50E",
+    "NC35",
+    "NC50",
+]
+
+
+def parse_low_voltage_cabinets(content: bytes) -> list[dict[str, str]]:
+    """Stage unique reviewed 204.8/240/256V cabinets; no repeated-code inference."""
+    parse_high_sc(content)
+    p = _Tables()
+    p.feed(content.decode("utf-8-sig"))
+    rows = [r for r in p.tables[0][2:] if r and r[0] in CABINET_MODELS]
+    if [r[0] for r in rows] != CABINET_MODELS:
+        raise ValueError("Missing or repeated cabinet identity")
+    for r in rows:
+        if len(r) != 13 or not all(r):
+            raise ValueError("Incomplete cabinet row")
+        if r[2] not in ["204.8", "240", "256"]:
+            raise ValueError("Unexpected cabinet voltage partition")
+        if any(not re.fullmatch(r"\d+(?:\.\d+)?", r[i]) for i in [2, 3, 6, 7, 9, 10, 11, 12]):
+            raise ValueError("Changed cabinet numeric units")
+        if not re.fullmatch(r"max\.\s*\d+(?:\.\d+)?KW", r[4]):
+            raise ValueError("Changed cabinet maximum power units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?KW/\d+min", r[8]) and not (
+            r[0] == "NC35" and r[8] == "37.85KW/60mi"
+        ):
+            raise ValueError("Changed cabinet timed discharge notation")
+        if not re.fullmatch(r"\d+(?:\.\d+)?~\d+(?:\.\d+)?\(\d+(?:\.\d+)?\)", r[5]):
+            raise ValueError("Changed cabinet charging voltage")
+    return [dict(zip(FIELDS, r, strict=True)) for r in rows]
