@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from energy_data_retrieval.sources.jwpa_cost import load_offshore_cost_snapshot
+from energy_data_retrieval.cost_inputs import load_offshore_cost_snapshot
 
 
 def test_published_snapshot(tmp_path: Path) -> None:
