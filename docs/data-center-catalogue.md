@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 316 project records across 36 countries:
-199 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
+The current continuation branch has 366 project records across 36 countries:
+249 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -35,16 +35,19 @@ workload and test conditions. `renewable_supply_json` explicitly separates
 physical generation, contractual procurement and environmental claims.
 Certificates require issuer, scope and validity evidence, not marketing badges.
 
-The current U.S. facility continuation adds all 133 entries whose most recent
-label year is 2026 in EPA's complete 337-entry ENERGY STAR Certified Data
-Centers registry. Each remains an issuer-verified facility identity. EPA
+The current U.S. facility continuation includes all 133 entries whose most recent
+label year is 2026 and all 50 whose most recent label year is 2025 in EPA's
+complete 337-entry ENERGY STAR Certified Data Centers registry. Each remains an
+issuer-verified facility identity. The 2025 partition retains current lifecycle
+as unknown because an earlier certification is not proof of 2026 operation. EPA
 intentionally exposes only the state for security, so locality, address and
 coordinates remain null even when address-like text appears inside the exact
 public facility name. The source's unlabeled floor-space value and year-only
 construction value remain bounded observations; neither is converted to square
 metres or promoted to an event date. Owner and the three printed property-manager
 relationships are retained, while operator, capacity, PUE and equipment remain
-unknown.
+unknown. The remaining 154 entries with most recent labels from 2010 through
+2024 remain deferred for separate lifecycle review.
 
 ## Data Center Equipment
 

@@ -92,6 +92,32 @@ def test_energy_star_data_centers_keep_state_only_and_unqualified_area():
     assert len(result["sha256"]) == 64
 
 
+def test_energy_star_data_centers_keep_historical_partition_separate():
+    result = parse_energy_star_certified_data_centers(
+        ENERGY_STAR_DATA_CENTERS,
+        source_url="https://www.energystar.gov/buildings/certified-data-centers",
+        certification_year=2025,
+        expected_total_count=3,
+        expected_selected_count=1,
+    )
+    assert result["certification_year"] == 2025
+    assert result["candidates"] == [
+        {
+            "facility_name": "Historical Facility",
+            "state": "Ohio",
+            "owner": "Past Owner",
+            "property_manager": None,
+            "label_years": [2024, 2025],
+            "reported_floor_space": 75000,
+            "reported_floor_space_unit": None,
+            "constructed_year": 2010,
+            "certification_count": 2,
+            "most_recent_certification_year": 2025,
+            "locator": "certified data centers table / Historical Facility",
+        }
+    ]
+
+
 def test_energy_star_data_centers_reject_source_and_shape_drift():
     with pytest.raises(ValueError, match="Unsupported ENERGY STAR"):
         parse_energy_star_certified_data_centers(

@@ -152,6 +152,14 @@
       "enriched_records": 0,
       "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. No hidden location, capacity, PUE, operator or deployment claim is imported.",
       "originals": "The complete official 337-entry, 651,382-byte HTML registry was captured successfully with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2026 most-recent-certification partition contains 133 exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2025 most-recent-label partition",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last label is historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2025 most-recent-certification partition contains 50 exact facility identities."
     }
   ],
   "deferred": [
@@ -168,8 +176,8 @@
       "reason": "The first 50 displayed low-voltage dry-type, medium-voltage dry-type and liquid-immersed basic-model rows and all 96 current ENERGY STAR Large Network Equipment entries are complete. Medium-voltage rows 51-100 remain inaccessible through a stable pagination boundary in this environment. Continue only through a verified non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount completed pages or network certifications."
     },
     {
-      "inventory": "EPA ENERGY STAR Certified Data Centers historical most-recent-label partitions",
-      "reason": "The current registry contains 204 facilities whose most recent label year is 2025 or earlier. They are outside the selected 2026 partition and require separate lifecycle review before any historical facility import; no stale certification is promoted to current operation."
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2010-2024 most-recent-label partitions",
+      "reason": "The current registry contains 154 facilities whose most recent label year is 2010 through 2024. They remain deferred for separate lifecycle review; no stale certification is promoted to current operation."
     }
   ],
   "quarantined": [
@@ -222,6 +230,8 @@
     "All 133 facilities whose most recent label year is 2026 in the complete 337-entry ENERGY STAR Certified Data Centers registry are processed; the 2026 partition is exhausted.",
     "EPA intentionally reports only state geography for certified data centers. No locality, address or coordinate is inferred from facility-name text, and address-like names remain unparsed identifiers.",
     "The registry's total-floor-space column has no printed unit, so values remain observations and are not normalized to building_area_m2. Year constructed remains a year-only observation rather than a construction or commissioning date.",
-    "The 2026 issuer label supports operational status in the certification year but does not disclose exact certification date, commissioning date, operator, capacity, PUE, energy use or equipment deployment."
+    "The 2026 issuer label supports operational status in the certification year but does not disclose exact certification date, commissioning date, operator, capacity, PUE, energy use or equipment deployment.",
+    "All 50 facilities whose most recent label year is 2025 are processed with current lifecycle status unknown; the certification supports operation only in its printed label year.",
+    "The NTT reuse hold applies to the NTT portfolio source. Two 2025 rows naming NTT as owner use only independent EPA issuer-registry evidence; no NTT source facts or bytes are imported."
   ]
 }
