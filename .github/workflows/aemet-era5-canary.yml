@@ -3,6 +3,8 @@ on:
   push:
     branches: [analysis/aemet-era5-degradation]
     paths:
+      - .github/workflows/aemet-era5-canary.yml
+      - scripts/prepare_aemet_canary_calibration.py
       - analysis/src/energy_analysis/aemet_era5_canary.py
       - methods/src/energy_methods/weather_calibration.py
   workflow_dispatch:
@@ -39,6 +41,7 @@ jobs:
             git push origin HEAD:analysis/aemet-era5-degradation
           fi
       - name: Acquire matching ERA5 cell histories
+        timeout-minutes: 45
         run: uv run --no-sync python scripts/prepare_aemet_canary_calibration.py era5
       - name: Calculate calibrated rate rasters and validate held-out data
         run: uv run --no-sync python scripts/analyze_aemet_canary_calibration.py
