@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T04:13:24.931382+00:00",
+  "updated_at": "2026-11-05T05:22:35.857121+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "04:00 iteration: secondary North America priority; AESO/OEB Canadian multi-record sources attempted first, Canada IAAC assessment reviewed and held; 200 complete Chinese corporate-party locations enriched; 28 substantive SAJ/EPEVER inverter hardware models accepted.",
-  "next_highest_value_source": "GEM strict corporate queue after L100000810626 (814 structurally eligible before manual review); preserve wider operator-only L100000802626 queue (2694). For North America, find a permissively reusable Canadian plant-level source; AESO/IAAC rights and OEB access are held.",
+  "selection_note": "05:00 iteration: Oceania official multi-record sources checked; Transpower rights-held, EMI July2026 unchanged and CER scope still unresolved. Advance200complete corporate locations; add3Steca inverter-chargers/3Antai hardware trackers and fill60typed fields in12existingINHENERGYmodels. No configurable option clones.",
+  "next_highest_value_source": "GEM strict corporate queue afterL100000811010:614structural candidates; broader operator-only queue2494afterL100000802626. Oceania: independent names/phase evidence for existing sixEMIshared connections and85CERidentity holds; no hourly file download. ARENA: reconcile Dubbo aggregate and design/as-built scope before scalar changes; FRV requires reuse basis.",
   "sources": [
     {
       "id": "uk_repd",
@@ -14396,6 +14396,667 @@
       "next_due_check": "2026-11-06T04:00:00Z",
       "retry_condition": "Only resume on applicable reuse permission and clarified project description; do not accept assessment completion as operation",
       "next_action": "Only resume on applicable reuse permission and clarified project description; do not accept assessment completion as operation"
+    },
+    {
+      "id": "gem_20261105T0500",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": [
+        "https://globalenergymonitor.org/projects/global-solar-power-tracker/"
+      ],
+      "format": "Public primary HTML/PDF/XLSX/CSV; existing pinned GEM reader",
+      "licence_assessment": "Existing GEM CC BY4 attribution; complete TZ/WKSL locations excluded",
+      "publication_cadence": "Release-based or unstated; checksum/metadata first; no hourly full-file downloads",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T05:05:19.880279+00:00",
+      "last_attempt": "2026-11-05T05:22:35.857121+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+          "retrieved_at": "2026-11-05T05:05:19.880279+00:00",
+          "sha256": "a4bde75d3a9e0cc76b505dd2527c41c07ce8f68c1ed234ef19a6933a8e4786d3",
+          "bytes": 134149,
+          "status": 200,
+          "etag": null,
+          "raw_name": "gem.html",
+          "last_modified": "Thu, 05 Nov 2026 04:55:55 GMT"
+        }
+      ],
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "result": "200complete locations accepted;{'owners': 171, 'operators': 191}unique corporate labels manually reviewed. Three prior disagreements remain excluded.",
+      "fields_offered": [
+        "owner",
+        "operator",
+        "historical context"
+      ],
+      "mapping": "Exact source IDs/model columns and physical page/row locators in dated review. Existing upsert API. No fuzzy merging.",
+      "processed_cursor": {
+        "after": "L100000810626",
+        "next": "L100000811010",
+        "strict_remaining": 614,
+        "operator_cursor": "L100000802626",
+        "operator_remaining": 2494,
+        "workbook_sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959"
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Resume strict nextpartition;preserve wideroperatorqueue",
+      "next_action": "Resume strict nextpartition;preserve wideroperatorqueue"
+    },
+    {
+      "id": "steca_20261105T0500",
+      "country": "DEU",
+      "entity": "equipment",
+      "source_url": "https://www.kontron-solar.com/Steca-Solarix-PLI",
+      "endpoint": [
+        "https://www.kontron-solar.com/Steca-Solarix-PLI",
+        "https://www.kontron-solar.com/frontend/standard/popup_download.php?datei=218/21872_0x0x0x0x0_StecaSolarixPLIproductdatasheetENAUS_112020_2.pdf",
+        "https://www.kontron-solar.com/Imprint",
+        "https://www.kontron-solar.com/Terms-and-conditions-of-sale-and-purchase",
+        "https://www.kontron-solar.com/Legal"
+      ],
+      "format": "Public primary HTML/PDF/XLSX/CSV; existing pinned GEM reader",
+      "licence_assessment": "Bounded individually reviewed factual specifications; OEM copyright retained, no open bulk licence asserted",
+      "publication_cadence": "Release-based or unstated; checksum/metadata first; no hourly full-file downloads",
+      "last_release": "2020-09-08",
+      "last_retrieval": "2026-11-05T05:08:09.782073+00:00",
+      "last_attempt": "2026-11-05T05:22:35.857121+00:00",
+      "captures": [
+        {
+          "url": "https://www.kontron-solar.com/Steca-Solarix-PLI",
+          "retrieved_at": "2026-11-05T05:05:14.075876+00:00",
+          "sha256": "af6a82067c42a25660b70c562caea6257cd27d4bd032a30dc5777f83de06186a",
+          "bytes": 159516,
+          "status": 200,
+          "etag": null,
+          "raw_name": "steca.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.kontron-solar.com/frontend/standard/popup_download.php?datei=218/21872_0x0x0x0x0_StecaSolarixPLIproductdatasheetENAUS_112020_2.pdf",
+          "retrieved_at": "2026-11-05T05:05:54.382635+00:00",
+          "sha256": "b041b901494dd57f5e14eca0686341265ce4cbca42cf4977a03c84ded8a66721",
+          "bytes": 2915150,
+          "status": 200,
+          "etag": null,
+          "raw_name": "steca.pdf",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.kontron-solar.com/Imprint",
+          "retrieved_at": "2026-11-05T05:08:09.782073+00:00",
+          "sha256": "90ae5f117f35599a27272165d6dcb72e7e0ad0527356a946c6f73f1781c2219b",
+          "bytes": 374597,
+          "status": 200,
+          "etag": null,
+          "raw_name": "steca_imprint.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.kontron-solar.com/Terms-and-conditions-of-sale-and-purchase",
+          "retrieved_at": "2026-11-05T05:08:02.826515+00:00",
+          "sha256": "34586ab4e416c04176a4bfb61a635e9dd58bdf076fbec715b9be64312932defa",
+          "bytes": 102580,
+          "status": 200,
+          "etag": null,
+          "raw_name": "steca_sales.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.kontron-solar.com/Legal",
+          "retrieved_at": "2026-11-05T05:05:54.373058+00:00",
+          "sha256": "a5a116e12be1a817b72ea8ff1073bea48df5f9c1bd45a6a5cb034c82ad2e683d",
+          "bytes": 102497,
+          "status": 200,
+          "etag": null,
+          "raw_name": "steca_terms.html",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 3,
+      "accepted": 3,
+      "rejected": 0,
+      "result": "3exact historical KATEK/Steca hardware models accepted; no active W inferred fromVA and no voltage-option clones.",
+      "fields_offered": [
+        "PV/battery/AC",
+        "mechanical",
+        "thermal",
+        "protection/control"
+      ],
+      "mapping": "Exact source IDs/model columns and physical page/row locators in dated review. Existing upsert API. No fuzzy merging.",
+      "processed_cursor": {
+        "pages_complete": [
+          1,
+          2
+        ],
+        "models": 3
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Selected full three-model table exhausted; next genuinely distinct architecture",
+      "next_action": "Selected full three-model table exhausted; next genuinely distinct architecture"
+    },
+    {
+      "id": "inh_axes_20261105T0500",
+      "country": "CHN",
+      "entity": "equipment",
+      "source_url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20250917/SI3to12KT2.pdf",
+      "endpoint": [
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20250917/SI3to12KT2.pdf",
+        "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20250917/SI3.6to6KS2.pdf"
+      ],
+      "format": "Public primary HTML/PDF/XLSX/CSV; existing pinned GEM reader",
+      "licence_assessment": "Bounded individually reviewed factual specifications; OEM copyright retained, no open bulk licence asserted",
+      "publication_cadence": "Release-based or unstated; checksum/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T05:05:13.012786+00:00",
+      "last_attempt": "2026-11-05T05:22:35.857121+00:00",
+      "captures": [
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20250917/SI3to12KT2.pdf",
+          "retrieved_at": "2026-11-05T05:05:12.969700+00:00",
+          "sha256": "f17a507d87714019d740aaf1570d12f70042cdb140e799574f1afe048299ff6e",
+          "bytes": 5316451,
+          "status": 200,
+          "etag": "\"68ca5cf6-511f63\"",
+          "raw_name": "inh.pdf",
+          "last_modified": "Wed, 17 Sep 2025 07:02:14 GMT"
+        },
+        {
+          "url": "https://www.inhenergy.com/Public/Uploads/uploadfile/files/20250917/SI3.6to6KS2.pdf",
+          "retrieved_at": "2026-11-05T05:05:13.012786+00:00",
+          "sha256": "24c3a2803020acb63d23c8a77ce1ecb68fecdcbaad775291c477afef59d6ad9b",
+          "bytes": 3044219,
+          "status": 200,
+          "etag": "\"68ca58a1-2e737b\"",
+          "raw_name": "inhs.pdf",
+          "last_modified": "Wed, 17 Sep 2025 06:43:45 GMT"
+        }
+      ],
+      "reviewed": 12,
+      "accepted": 12,
+      "rejected": 0,
+      "result": "12existing models enriched60typedfields. Exact old literal dimensions agree. Native L/W/H mapsto length/width/height; depthunknown. No current/cooling conflict overwritten.",
+      "fields_offered": [
+        "length_m",
+        "width_m",
+        "height_m",
+        "insulation_method",
+        "strings_per_mppt"
+      ],
+      "mapping": "Exact source IDs/model columns and physical page/row locators in dated review. Existing upsert API. No fuzzy merging.",
+      "processed_cursor": {
+        "complete_tables": [
+          "SI3–12KT2",
+          "SI3.6–6KS2"
+        ]
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Two selected tables exhausted for null fields; resolve old current/cooling conflicts only with explicit revision evidence",
+      "next_action": "Two selected tables exhausted for null fields; resolve old current/cooling conflicts only with explicit revision evidence"
+    },
+    {
+      "id": "antai_20261105T0500",
+      "country": "CHN",
+      "entity": "equipment",
+      "source_url": "https://www.antaisolar.com/customers/resource-center",
+      "endpoint": [
+        "https://www.antaisolar.com/customers/resource-center",
+        "https://www.antaisolar.com/privacy-policy",
+        "https://www.antaisolar.com/upfiles/resources/202609/30KRP919AXT3.pdf",
+        "https://www.antaisolar.com/upfiles/resources/202609/ANWFWNAXNZB1.pdf",
+        "https://www.antaisolar.com/upfiles/resources/202609/X5MNNFZJZK67.pdf"
+      ],
+      "format": "Public primary HTML/PDF/XLSX/CSV; existing pinned GEM reader",
+      "licence_assessment": "Bounded individually reviewed factual specifications; OEM copyright retained, no open bulk licence asserted",
+      "publication_cadence": "Release-based or unstated; checksum/metadata first; no hourly full-file downloads",
+      "last_release": "May2026",
+      "last_retrieval": "2026-11-05T05:11:50.259714+00:00",
+      "last_attempt": "2026-11-05T05:22:35.857121+00:00",
+      "captures": [
+        {
+          "url": "https://www.antaisolar.com/customers/resource-center",
+          "retrieved_at": "2026-11-05T05:11:15.143834+00:00",
+          "sha256": "a3c361c21453b58f783205870c40c97932bb351ba77b3f0197974408ad83766b",
+          "bytes": 95099,
+          "status": 200,
+          "etag": null,
+          "raw_name": "antai.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.antaisolar.com/privacy-policy",
+          "retrieved_at": "2026-11-05T05:11:49.087794+00:00",
+          "sha256": "b98cb889a7b08474ac4273bdc66e15f94f5301367c337e5aa8cd093d2fe0ca13",
+          "bytes": 74261,
+          "status": 200,
+          "etag": null,
+          "raw_name": "antai_terms.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.antaisolar.com/upfiles/resources/202609/30KRP919AXT3.pdf",
+          "retrieved_at": "2026-11-05T05:11:50.062763+00:00",
+          "sha256": "cb97be2a71f3a258fc401565ccb3d52189f15f4069e4d72afa479a5ce2bddaa4",
+          "bytes": 397565,
+          "status": 200,
+          "etag": "\"6aa0ee01-610fd\"",
+          "raw_name": "tai_simple.pdf",
+          "last_modified": "Wed, 09 Sep 2026 05:26:25 GMT"
+        },
+        {
+          "url": "https://www.antaisolar.com/upfiles/resources/202609/ANWFWNAXNZB1.pdf",
+          "retrieved_at": "2026-11-05T05:11:50.259714+00:00",
+          "sha256": "1fe8d40c508b49f2f3a17c3d1e562e785fcc29c6a99614960b302e8f579b581a",
+          "bytes": 925475,
+          "status": 200,
+          "etag": "\"6aa0ee64-e1f23\"",
+          "raw_name": "tai_spark.pdf",
+          "last_modified": "Wed, 09 Sep 2026 05:28:04 GMT"
+        },
+        {
+          "url": "https://www.antaisolar.com/upfiles/resources/202609/X5MNNFZJZK67.pdf",
+          "retrieved_at": "2026-11-05T05:11:50.100906+00:00",
+          "sha256": "51e614acb482f2cde084e65af811ee07fa846d2ce0af820520eb7686ec607a84",
+          "bytes": 452782,
+          "status": 200,
+          "etag": "\"6aa0ee75-6e8ae\"",
+          "raw_name": "tai_universal.pdf",
+          "last_modified": "Wed, 09 Sep 2026 05:28:21 GMT"
+        }
+      ],
+      "reviewed": 3,
+      "accepted": 3,
+      "rejected": 0,
+      "result": "3distinct single/multipoint1P/2P trackers accepted. Project-dependent dimensions/module counts/wind/stow/options retained as bounds; no configurable variants.",
+      "fields_offered": [
+        "drive",
+        "control",
+        "thermal",
+        "component warranty",
+        "project bounds"
+      ],
+      "mapping": "Exact source IDs/model columns and physical page/row locators in dated review. Existing upsert API. No fuzzy merging.",
+      "processed_cursor": {
+        "complete_models": [
+          "TAI-Simple",
+          "AT-SPARK",
+          "TAI-Universal"
+        ]
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Selected three exact models exhausted; recheck revision before further enrichment",
+      "next_action": "Selected three exact models exhausted; recheck revision before further enrichment"
+    },
+    {
+      "id": "transpower_20261105T0500",
+      "country": "NZL",
+      "entity": "projects",
+      "source_url": "https://static.transpower.co.nz/public/uncontrolled_docs/Generation%20and%20energy%20storage%20connection%20pipeline.xlsx?VersionId=yAXo39NSX9UT.dZTzfrBlZXhEdjS2NKh",
+      "endpoint": [
+        "https://static.transpower.co.nz/public/uncontrolled_docs/Generation%20and%20energy%20storage%20connection%20pipeline.xlsx?VersionId=yAXo39NSX9UT.dZTzfrBlZXhEdjS2NKh",
+        "https://www.transpower.co.nz/terms-and-conditions",
+        "https://www.transpower.co.nz/connections/whats-latest-grid-connections"
+      ],
+      "format": "Public primary HTML/PDF/XLSX/CSV; existing pinned GEM reader",
+      "licence_assessment": "Transpower intellectual-property permission restriction; no blanket open licence established",
+      "publication_cadence": "Release-based or unstated; checksum/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T05:06:57.726443+00:00",
+      "last_attempt": "2026-11-05T05:22:35.857121+00:00",
+      "captures": [
+        {
+          "url": "https://static.transpower.co.nz/public/uncontrolled_docs/Generation%20and%20energy%20storage%20connection%20pipeline.xlsx?VersionId=yAXo39NSX9UT.dZTzfrBlZXhEdjS2NKh",
+          "retrieved_at": "2026-11-05T05:05:53.292119+00:00",
+          "sha256": "47aa075c155e395fd879dad4f019f5e6123bb728f4caa6c2ccd88e23349e5779",
+          "bytes": 756073,
+          "status": 200,
+          "etag": "\"a450ae6642f32ae5135745f1b94b61fb\"",
+          "raw_name": "nz.xlsx",
+          "last_modified": "Thu, 08 Oct 2026 01:28:15 GMT"
+        },
+        {
+          "url": "https://www.transpower.co.nz/terms-and-conditions",
+          "retrieved_at": "2026-11-05T05:06:57.726443+00:00",
+          "sha256": "360c979addbaf60abc0421fb2f34c37269d7af12a65354e843dbfa2bc3ab5108",
+          "bytes": 32016,
+          "status": 200,
+          "etag": null,
+          "raw_name": "nz_terms.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.transpower.co.nz/connections/whats-latest-grid-connections",
+          "retrieved_at": "2026-11-05T05:05:12.058479+00:00",
+          "sha256": "3ff60514338a74a4baff20542ded4c79e0432750a7d9ee3759e8c388f6ea5c00",
+          "bytes": 35511,
+          "status": 200,
+          "etag": null,
+          "raw_name": "transpower.html",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "New promising multi-record XLSX downloaded and checksummed outsideGit. Terms require prior consent for reproduction exceptlaw. No plant rows parsed or accepted, no integrated feed.",
+      "fields_offered": [
+        "potential project/grid/stage/capacity"
+      ],
+      "mapping": "Exact source IDs/model columns and physical page/row locators in dated review. Existing upsert API. No fuzzy merging.",
+      "processed_cursor": {
+        "download_version_id": "yAXo39NSX9UT.dZTzfrBlZXhEdjS2NKh",
+        "parsed": false
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Applicable reuse basis required before row extraction; no contacts/forms",
+      "next_action": "Applicable reuse basis required before row extraction; no contacts/forms"
+    },
+    {
+      "id": "gsolar_tracker_20261105T0500",
+      "country": "ESP",
+      "entity": "equipment",
+      "source_url": "https://www.gsolarsteel.com/es/products/seguidores-solares-1p/",
+      "endpoint": [
+        "https://www.gsolarsteel.com/es/products/seguidores-solares-1p/",
+        "https://www.gsolarsteel.com/es/aviso-legal/"
+      ],
+      "format": "Public primary HTML/PDF/XLSX/CSV; existing pinned GEM reader",
+      "licence_assessment": "Personal/private use only; explicit redistribution/commercial restrictions",
+      "publication_cadence": "Release-based or unstated; checksum/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T05:09:44.728341+00:00",
+      "last_attempt": "2026-11-05T05:22:35.857121+00:00",
+      "captures": [
+        {
+          "url": "https://www.gsolarsteel.com/es/products/seguidores-solares-1p/",
+          "retrieved_at": "2026-11-05T05:08:19.952769+00:00",
+          "sha256": "1d44338706da54440f1d57a5dd6095ba82808d64ff24f79c4d13dddf16064c63",
+          "bytes": 181177,
+          "status": 200,
+          "etag": null,
+          "raw_name": "tracker.html",
+          "last_modified": "Wed, 28 Oct 2026 12:51:55 GMT"
+        },
+        {
+          "url": "https://www.gsolarsteel.com/es/aviso-legal/",
+          "retrieved_at": "2026-11-05T05:09:44.728341+00:00",
+          "sha256": "69ca257cb696bd4b676e48fd3e7c9648e0eb4c3bcd6e3f428cb9d3fdb84ea38c",
+          "bytes": 101532,
+          "status": 200,
+          "etag": null,
+          "raw_name": "tracker_terms.html",
+          "last_modified": "Wed, 28 Oct 2026 17:12:27 GMT"
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "Current linked R6 sheet discovered, but Spanish legal terms restrict storage/copying to personal/private use and prohibit commercial redistribution/embedding. No technical PDF extracted.",
+      "fields_offered": [
+        "potential tracker technical tables"
+      ],
+      "mapping": "Exact source IDs/model columns and physical page/row locators in dated review. Existing upsert API. No fuzzy merging.",
+      "processed_cursor": null,
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Only resume when applicable reuse basis changes; select another OEM",
+      "next_action": "Only resume when applicable reuse basis changes; select another OEM"
+    },
+    {
+      "id": "emi_20261105T0500",
+      "country": "NZL",
+      "entity": "projects",
+      "source_url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing/20260702_DispatchedGenerationPlant.csv",
+      "endpoint": [
+        "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing/20260702_DispatchedGenerationPlant.csv",
+        "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing",
+        "https://www.ea.govt.nz/copyright-disclaimer-transparency/"
+      ],
+      "format": "Public primary HTML/PDF/XLSX/CSV; existing pinned GEM reader",
+      "licence_assessment": "Electricity Authority CC BY4.0 with existing attribution/exclusions retained",
+      "publication_cadence": "Release-based or unstated; checksum/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T05:11:21.309410+00:00",
+      "last_attempt": "2026-11-05T05:22:35.857121+00:00",
+      "captures": [
+        {
+          "url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing/20260702_DispatchedGenerationPlant.csv",
+          "retrieved_at": "2026-11-05T05:11:21.309410+00:00",
+          "sha256": "0a1d0c2b64755bb6e87cfbcbacde6119a7df3e4e3d323eaaaa71ab874c3654ba",
+          "bytes": 23991,
+          "status": 200,
+          "etag": "0x8DED80E93D2B7D6",
+          "raw_name": "emi.csv",
+          "last_modified": "Thu, 02 Jul 2026 07:50:25 GMT"
+        },
+        {
+          "url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing",
+          "retrieved_at": "2026-11-05T05:10:17.532090+00:00",
+          "sha256": "7f81f51364b90afcb0be16d1deb95ecfc802cfeae30de02a4903e252af7b8bd2",
+          "bytes": 20615,
+          "status": 200,
+          "etag": null,
+          "raw_name": "emi.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.ea.govt.nz/copyright-disclaimer-transparency/",
+          "retrieved_at": "2026-11-05T05:11:14.778187+00:00",
+          "sha256": "cb50addb0486e308db470ab9e8e430b4c07b016105e098cdb1ff45620fe4e635",
+          "bytes": 202492,
+          "status": 200,
+          "etag": null,
+          "raw_name": "emi_terms.html",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "Landing still lists previously processed2026-07-02 file. No repeated rows accepted or timestamp churn; six shared-connection identities remain held. A small CSV freshness retrieval was redundant; retain checksum and skip future full requests until revision.",
+      "fields_offered": [
+        "PV identifiers",
+        "capacity basis",
+        "operator",
+        "effective dates"
+      ],
+      "mapping": "Exact source IDs/model columns and physical page/row locators in dated review. Existing upsert API. No fuzzy merging.",
+      "processed_cursor": {
+        "version": "2026-07-02",
+        "existing_partition_complete": true
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Resolve EDG0331/MTO0331/KOE1101 against independent site evidence; new release before another full download",
+      "next_action": "Resolve EDG0331/MTO0331/KOE1101 against independent site evidence; new release before another full download"
+    },
+    {
+      "id": "cer_20261105T0500",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://cer.gov.au/document_page/power-stations-accredited",
+      "endpoint": [
+        "https://cer.gov.au/document_page/power-stations-accredited"
+      ],
+      "format": "Public primary HTML/PDF/XLSX/CSV; existing pinned GEM reader",
+      "licence_assessment": "Existing regulator CC BY assessment retained; verify exact release/third-party exclusions before any new extraction",
+      "publication_cadence": "Release-based or unstated; checksum/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T05:10:11.920662+00:00",
+      "last_attempt": "2026-11-05T05:22:35.857121+00:00",
+      "captures": [
+        {
+          "url": "https://cer.gov.au/document_page/power-stations-accredited",
+          "retrieved_at": "2026-11-05T05:10:11.920662+00:00",
+          "sha256": "48bdb0ea8d23fc25508ea9284094c1ac38c5f9d99faad1d81255aba5eb70855a",
+          "bytes": 142397,
+          "status": 200,
+          "etag": "\"1793855411\"",
+          "raw_name": "cer.html",
+          "last_modified": "Thu, 05 Nov 2026 05:10:11 GMT"
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "Current accredited-station entrypoint checked against existing CER queue. No CSV parsed, no genericSolar-to-PV inference and no accreditation-to-COD promotion. Existing85holds remain.",
+      "fields_offered": [
+        "potential accreditation IDs/capacity"
+      ],
+      "mapping": "Exact source IDs/model columns and physical page/row locators in dated review. Existing upsert API. No fuzzy merging.",
+      "processed_cursor": {
+        "existing_hold_queue": "cer_nsw_vic_approved_20261103T1100"
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Independent state permit/owner PV scope forTabbita/Midkin/GlenInnes; inspect release metadata before downloading",
+      "next_action": "Independent state permit/owner PV scope forTabbita/Midkin/GlenInnes; inspect release metadata before downloading"
+    },
+    {
+      "id": "frv_20261105T0500",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://frv.com/en/",
+      "endpoint": [
+        "https://frv.com/en/",
+        "https://frv.com/wp-content/uploads/2020/10/NdP_FRV-secures-Green-Finance-for-Sebastopol-Solar-Farm-NSW-Australia.pdf",
+        "https://frv.com/en/terms-of-use/"
+      ],
+      "format": "Primary PDF/HTML",
+      "licence_assessment": "Prior express written consent for reproduction/distribution/exploitation; held",
+      "publication_cadence": "Historical dated source, no periodic full re-download",
+      "last_release": "2020; printed release month missing",
+      "last_retrieval": "2026-11-05T05:18:20.192098+00:00",
+      "last_attempt": "2026-11-05T05:24:26.470708+00:00",
+      "captures": [
+        {
+          "url": "https://frv.com/en/",
+          "retrieved_at": "2026-11-05T05:17:35.324512+00:00",
+          "sha256": "2112b887c0115b18a79294a9d32f9992ab999e1c72d0cbe6952ade4160cd3735",
+          "bytes": 255132,
+          "status": 200,
+          "etag": null,
+          "raw_name": "frv.html",
+          "last_modified": "Wed, 04 Nov 2026 22:40:35 GMT"
+        },
+        {
+          "url": "https://frv.com/wp-content/uploads/2020/10/NdP_FRV-secures-Green-Finance-for-Sebastopol-Solar-Farm-NSW-Australia.pdf",
+          "retrieved_at": "2026-11-05T05:17:35.444849+00:00",
+          "sha256": "590df29c1f3de8a84bb257be0df7c6c7991fbec40dcb7fb26685eede54efc7b7",
+          "bytes": 555508,
+          "status": 200,
+          "etag": "\"879f4-5bb8a4d574840\"",
+          "raw_name": "frv.pdf",
+          "last_modified": "Wed, 17 Feb 2021 15:59:21 GMT"
+        },
+        {
+          "url": "https://frv.com/en/terms-of-use/",
+          "retrieved_at": "2026-11-05T05:18:20.192098+00:00",
+          "sha256": "b28e856011ce20566a96fe7c78f15e286d911922851bb3702088d3cba0f2a01b",
+          "bytes": 139489,
+          "status": 200,
+          "etag": null,
+          "raw_name": "frv_terms.html",
+          "last_modified": "Thu, 05 Nov 2026 01:45:45 GMT"
+        }
+      ],
+      "reviewed": 7,
+      "accepted": 0,
+      "held": 7,
+      "rejected": 0,
+      "result": "Seven-site AC portfolio reviewed for source/rights. No plant values accepted. Royalla also needs capacity-basis conflict review; no value chosen.",
+      "fields_offered": [
+        "historical AC/mounting and dated reference context"
+      ],
+      "mapping": "Exact reviewed canonical names and Figure1/page2 orportfolio/page1; no fuzzy merge",
+      "processed_cursor": {
+        "complete": true
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Permission or independent reusable primary source; retain exact page1 portfolio locator",
+      "next_action": "Permission or independent reusable primary source; retain exact page1 portfolio locator"
+    },
+    {
+      "id": "arena_20261105T0500",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://arena.gov.au/assets/2018/12/large-scale-solar-program-a-look-at-levelised-cost-of-energy.pdf",
+      "endpoint": [
+        "https://arena.gov.au/assets/2018/12/large-scale-solar-program-a-look-at-levelised-cost-of-energy.pdf",
+        "https://arena.gov.au/terms-of-use/"
+      ],
+      "format": "Primary PDF/HTML",
+      "licence_assessment": "ARENA CC BY2.5Australia; Coat of Arms/otherwise-noted/external exclusions; Ekistica attribution retained",
+      "publication_cadence": "Historical dated source, no periodic full re-download",
+      "last_release": "December2018",
+      "last_retrieval": "2026-11-05T05:19:22.052955+00:00",
+      "last_attempt": "2026-11-05T05:24:26.470708+00:00",
+      "captures": [
+        {
+          "url": "https://arena.gov.au/assets/2018/12/large-scale-solar-program-a-look-at-levelised-cost-of-energy.pdf",
+          "retrieved_at": "2026-11-05T05:18:20.502703+00:00",
+          "sha256": "9edc19d1ee38db44b0bedbf706b394294833ae9159a55ee575297eb0c949600d",
+          "bytes": 564800,
+          "status": 200,
+          "etag": "\"89e40-5d247cd7-0;;;\"",
+          "raw_name": "arena.pdf",
+          "last_modified": null
+        },
+        {
+          "url": "https://arena.gov.au/terms-of-use/",
+          "retrieved_at": "2026-11-05T05:19:22.052955+00:00",
+          "sha256": "ea75d22e15c93b524f030dce82d5cdf4ab36e72531e3d3b55b94e310f7401a8e",
+          "bytes": 48094,
+          "status": 200,
+          "etag": null,
+          "raw_name": "arena_copyright.html",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 12,
+      "accepted": 11,
+      "held": 1,
+      "rejected": 0,
+      "result": "12referenceprojects reviewed.11historicalAC/mounting contexts accepted by explicit additive resolution;0scalarAC/status/mountingchanges. Dubbo aggregate held.",
+      "fields_offered": [
+        "historical AC/mounting and dated reference context"
+      ],
+      "mapping": "Exact reviewed canonical names and Figure1/page2 orportfolio/page1; no fuzzy merge",
+      "processed_cursor": {
+        "complete": true
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T05:00:00Z",
+      "retry_condition": "Resolve historical-versus-current rating scope with independently dated as-built evidence; Dubbo needs two-site boundary crosswalk",
+      "next_action": "Resolve historical-versus-current rating scope with independently dated as-built evidence; Dubbo needs two-site boundary crosswalk"
     }
   ],
   "source_refresh_queue": [
