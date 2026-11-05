@@ -1,68 +1,53 @@
 {
-  "batch": "2026-11-05-1807",
-  "iteration_parent": "cb71b9a9fde68995e5a7983ab4049c9fde1c4b66",
+  "batch": "2026-11-05-2135",
+  "iteration_parent": "d612ab10c31b6a8234dfada1af988734a78c79a4",
   "local": {
-    "python": "357focused Wind/Hydropower/reference tests passed, including25newEPE tests",
-    "viewer": "31Node tests passed",
-    "quality": "Ruff check/format1071, full repository ty with explicit .venv Python, hygiene, citations and diff passed",
-    "catalogue": "68projects and2equipment enriched;3projects4equipment16plannedturbines added;22346prior records unchanged;398prior sources unchanged,6sources added. Prior scalar fields and creation timestamps preserved.",
-    "aggregation": "All6eligible MW summaries and unknown counts unchanged; excluded project counts increase3.",
+    "python": "418 focused Wind/Hydropower/reference tests passed, including15 OEM table boundary tests",
+    "viewer": "34 Node viewer/Hydro tests passed",
+    "quality": "Ruff check; format1138files; full repository ty with workspace interpreter; hygiene; citations; diff check passed",
+    "catalogue": "67projects enriched;35exact OEM models added.22406prior records and409prior sources unchanged;1source added. All prior IDs,creationtimestamps andscalarfields preserved; all non-Wind catalogue paths unchanged.",
+    "aggregation": "All6 capacity summaries including eligibleMW,unknown andexcluded counts unchanged",
+    "replay": "EPE67identical records on replay; OEM35existing identities held on replay, no duplicates",
     "snapshots": "Two7file builds byte-identical; allParquetcolumns ZSTD",
-    "docs": "Strict Wind-gallery Sphinx passed after citation-role fix; Documentation check passed: 662 HTML pages; local links and assets resolve.",
-    "visual": "New dated SIGA completeness chart rendered and inspected",
-    "followup": "25EPE tests rerun after explicitly typed fixture helper; passed"
+    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 692 HTML pages; local links and assets resolve.",
+    "visual": "OriginalPDFpages9,10,11 visually reviewed;67column hub-option figure rendered and inspected"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "6539dde066535462733bd64996f3539d61bd3b49fca6b9b33bb67f9388771c54",
-    "projects.parquet": "2b8c401e55ead0f6694af0806e7bea8512fb6d810533dab43ea26b4ef5c960dc",
+    "manifest.json": "88ebee6acc15f3735b6272109dc43e3bc7a5a8e18aea39af31e7ecfa69428a7f",
+    "projects.parquet": "d897996318f29d5d4d290ec851eb58170a12247b7980e3e6bdf2c6e7d226e1e0",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "ab4aeb764eb3953cc5aafe68aed9af0fe703607688650fb1e6c6f6e44763649d",
+    "sources.json": "b4bda341db602c217e92b0baf0394da0c1b0edb0410084a4d94fed89c1405c3a",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "ea8f89178aa395bc34890e09c61ce8e3cd326091ed3f39b667dc5b02c7c934f4"
+    "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
   },
   "main_comparison": {
     "main": {
       "curves": 2,
-      "equipment": 450,
-      "projects": 8290,
-      "turbines": 13633
+      "equipment": 486,
+      "projects": 8294,
+      "turbines": 13657
     },
     "branch": {
       "projects": 8294,
       "turbines": 13657,
-      "equipment": 486,
+      "equipment": 555,
       "curves": 2
     },
     "added": {
-      "equipment": 36,
-      "turbines": 24,
-      "projects": 4
+      "equipment": 69
     },
     "enriched": {
-      "equipment": 16,
-      "projects": 342
+      "projects": 227
     },
-    "main_manufacturers": 57,
-    "branch_manufacturers": 63
+    "main_manufacturers": 63,
+    "branch_manufacturers": 64
   },
   "remote_ci": {
-    "previous_head": "cb71b9a9fde68995e5a7983ab4049c9fde1c4b66",
+    "previous_head": "d612ab10c31b6a8234dfada1af988734a78c79a4",
     "previous_result": "Python3.12/3.13 and Documentation passed",
-    "current_result": "Corrected commit pending publication; final result reported on PR",
-    "initial_published_commit": "1524156e1e8482de56777daba9e544077920c746",
-    "initial_python_run": 42085979235,
-    "initial_result": "Fulltype check failed in test helper; corrected in followup"
+    "current_result": "Pending publication; final result reported on PR"
   },
-  "resolved_attempts": [
-    "New equipment required capacity_scope; added before successful catalogue validation",
-    "Planned turbine registry IDs changed to procedure-qualified turbine IDs; repeated parent procedure IDs belong in observations",
-    "Unknown fleet completeness omitted instead of invalid enum",
-    "Preservation comparison separates increased exclusion counts from unchanged eligible MW",
-    "Unsupported MyST cite role replaced by source links; strict rebuild passed",
-    "Ruff long literals and list expansion fixed before final test run",
-    "Initial published commit1524156 failed remote fullty on heterogeneous test-helper kwargs. Explicit typed helper arguments now pass fullty with .venv interpreter and25affected tests. An initial local fullty command selected the unrelated system environment; explicit --python .venv/bin/python resolved that environment mismatch. No catalogue/adapter/snapshot changes."
-  ],
   "not_executed": [
     "Full localPython suite",
     "Full localgallery",

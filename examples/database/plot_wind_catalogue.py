@@ -699,3 +699,69 @@ if siga_observations:
         fontsize=9,
     )
     fig.tight_layout()
+
+
+# Counts of linked projects by dated state partition, not a national inventory.
+if siga_observations:
+    state_projects: dict[tuple[str, str], set[str]] = {}
+    for row in rows:
+        if row["entity_type"] != "projects":
+            continue
+        for observation in json.loads(row.get("extensions_json") or "{}").get(
+            "epe_siga_snapshots", []
+        ):
+            key = (observation["original"]["sigufprincipal"], observation["observation_date"])
+            state_projects.setdefault(key, set()).add(row["record_id"])
+    keys = sorted(state_projects)
+    fig, ax = plt.subplots(figsize=(9, 3.5))
+    ax.barh(
+        [f"{state} · {date}" for state, date in keys],
+        [len(state_projects[k]) for k in keys],
+        color="#3d718e",
+    )
+    ax.set(
+        title="SIGA evidence linked to existing projects",
+        xlabel="Distinct linked projects per state and date",
+    )
+    ax.text(
+        0,
+        -0.32,
+        "Selected state partitions only; unmatched identities held. "
+        "No capacity eligibility change.",
+        transform=ax.transAxes,
+        fontsize=9,
+    )
+    fig.tight_layout()
+
+# Exact table columns, with ranges plotted as options rather than installations.
+oem_columns = [
+    observation
+    for row in rows
+    if row["entity_type"] == "equipment"
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "oem_table_observations", []
+    )
+    if observation["source_id"] in row["sources"]
+]
+if oem_columns:
+    fig, ax = plt.subplots(figsize=(9, 4))
+    for observation in oem_columns:
+        values = observation["values"]
+        diameter = values["rotor_diameter_m"]
+        low, high = values["hub_height_range_m"]
+        ax.plot([diameter, diameter], [low, high], color="#3d718e", alpha=0.5)
+        ax.scatter([diameter, diameter], [low, high], s=12, color="#3d718e")
+    ax.set(
+        title="Windey 2022 exact-model tables: published hub options",
+        xlabel="Explicit rotor diameter (m)",
+        ylabel="Published hub-height option range (m)",
+    )
+    ax.text(
+        0,
+        -0.3,
+        f"{len(oem_columns)} reviewed model columns; overlapping options are not installations. "
+        "Density and operating mode unknown; no performance comparison.",
+        transform=ax.transAxes,
+        fontsize=8,
+    )
+    fig.tight_layout()

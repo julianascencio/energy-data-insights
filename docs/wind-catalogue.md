@@ -1043,3 +1043,96 @@ Sources: [EPE SIGA layer](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hos
 [Salinas II notice](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29433) and
 [Salinas I notice](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29434).
 Full bibliographic metadata and stable source identifiers are in the reference catalogue.
+
+### Rio Grande do Norte continuation and bounded OEM review
+
+The complete **317-entry Rio Grande do Norte** EPE wind partition is now reviewed.
+The before/after ID inventories agree, and both response pages are complete.
+**107 existing projects** gain dated observations; **210 identities remain held**
+(200 missing or nonunique historical matches and 10 ID/name disagreements).
+The dataset date remains **2026-01-13**, distinct from retrieval on 2026-11-05.
+Authorized capacity, inspected capacity and physical guarantee remain separate
+observations. All six eligible capacity summaries are unchanged. Suspicious
+source operation dates, including Macau's 1900 date, stay in the original
+observations and are not promoted to commissioning milestones.
+
+The adapter now rejects a CEG revision change against prior EPE evidence even
+when the project has no scalar ANEEL identifier. A real two-row RN fixture tests
+separate capacity categories, reported zero and the suspicious date boundary.
+The shared viewer and deterministic gallery show distinct linked projects by
+state and dataset date, with unresolved identities and aggregation exclusions
+visible. This is selected evidence coverage, not a current operating census.
+
+Three exact Windey model records are added: **WD200-7700 (Saudi 60 Hz)**,
+**WD220-10000**, and **WD225-9000**. Their explicitly reported unit ratings are
+7.7 MW, 10 MW and 9,000 kW respectively. Detailed configurations are partial;
+rotor diameters are not inferred from model names. Twelve OEM case cards and
+two further announcements remain queued for project, revision or certificate
+crosswalks. The Saudi configuration is not assigned to the Ethiopian proposal.
+No numerical curves or independently validated performance are added.
+
+Bachmann's component tables and case study are excluded under its explicit
+prior-consent reuse terms. Delta's proposed PDF redirects to a terms-verification
+page with an internal-use restriction; the original PDF was not acquired.
+Ingeteam's two historical document links redirect to homepage HTML. These are
+recorded separately from authentication or HTTP download failures. Windey's
+large-image timeouts were resolved, with all four original image checksums saved
+in the review ledger. The equipment target was not met by inventing variants.
+
+This run adds **0 projects, 3 equipment records, 0 individual turbines and
+0 curves**, and enriches **107 projects**. Branch totals are **8,294 projects,
+489 equipment records, 13,657 turbines and 2 curves** across 59 countries and
+64 equipment-manufacturer labels. The next registry batch is the complete
+EPE **CE** partition; previously completed BA/RN and ONS partitions stay closed.
+
+Sources: [EPE SIGA layer](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0),
+[Windey product cases](https://windeyenergy.com/en/product_show?id=19),
+[Windey Saudi announcement](https://windeyenergy.com/en/news_show?id=210).
+Decisions and original-byte checksums are in
+`2026-11-05-1935-epe-review.json` and `2026-11-05-1935-oem-review.json`.
+
+The November 5 20:35 continuation reviews all 103 Ceará EPE wind entries,
+linking 53 existing identities and holding 50 for a historical/phase crosswalk.
+The dated categories do not change capacity eligibility. BA and RN partitions
+are already complete; the next complete EPE partition is RS.
+
+The Windey June 2022 English brochure contributes 31 exact models and one
+historical observation for the existing WD225-9000. PDF pages 7, 8 and 12
+(printed 09/10, 11/12 and 19/20) contain 32 explicit columns; pages 9–11 remain
+queued. The checksum-pinned `oem_tables` adapter consumes visually reviewed
+columns and rejects missing, reordered or duplicate identities. Generator RPM
+and converter kVA stay separate from rotor RPM and turbine kW. Temperature,
+cut-out and hub-height ranges remain options; the viewer and gallery expose
+these without claiming installed configurations or validated performance.
+
+### Complete Rio Grande do Sul partition and remaining Windey columns
+
+The November 5 21:35 continuation reviews all **80** EPE-hosted SIGA wind
+entries for Rio Grande do Sul. Stable before/after OBJECTID queries and the
+complete response agree. **67 existing projects** gain dated native registry
+observations; **13 identities remain held**. No projects, individual turbines,
+capacity eligibility or lifecycle claims are inferred. All six capacity
+summaries, including unknown and excluded counts, remain unchanged.
+
+The remaining Windey brochure tables on PDF pages **9, 10 and 11** (printed
+13/14, 15/16 and 17/18) add **35 exact models**. All **67 printed model columns**
+on PDF pages 7–12 have now been reviewed across two batches. The prior source
+registry and original-byte checksum remain intact; the new review ledger records
+expanded locators and visual transcription. These are historical specifications,
+not independent performance validation or installed project configurations.
+
+Column boundaries matter: WD164-3600 states a converter range of 47.5–51.5 Hz,
+while the other 34 newly reviewed columns state 47.5–52.5 Hz. WD172-5500's
+80.5 m blade length is retained as printed, without replacing it using another
+172 m rotor model. Generator kW/RPM, converter grid-side/turbine-side kVA and A,
+component mass/dimensions, hub-height options and operating conditions remain
+separate observations. Exact component model IDs, density, operating mode,
+warranty, certification identifiers and numerical curves remain unknown.
+
+The offline adapter now rejects malformed component quantities and vectors.
+Small attributed fixtures exercise column-specific values and unit boundaries.
+The shared viewer counts usable converter rating pairs separately from missing
+ones, rejects malformed hub ranges, and explicitly separates component quantities
+from turbine ratings. The gallery dynamically displays the reviewed model count.
+The next complete EPE partition is **PI**; the next OEM/project work is the
+AfDB Aysha I original ESIA and exact phase crosswalk recorded in the backlog.

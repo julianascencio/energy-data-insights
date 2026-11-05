@@ -13,7 +13,12 @@ from typing import Any
 
 from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
 
-REFERENCE_IDS = ("epe_siga_bahia_20260113", "wri_brazil_identity")
+REFERENCE_IDS = (
+    "epe_siga_bahia_20260113",
+    "epe_siga_ceara_20260113",
+    "epe_siga_rio_grande_do_norte_20260113",
+    "wri_brazil_identity",
+)
 POWER_FIELDS = {
     "mdapotenciaoutorgadakw": "authorized_mw",
     "mdapotenciafiscalizadakw": "inspected_mw",
@@ -190,6 +195,13 @@ def reconcile(
             prior_ceg := json.loads(matches[0].get("external_ids_json") or "{}").get("aneel_ceg")
         ) and ceg_key(prior_ceg) != ceg_key(item["ceg"]):
             reason = "Existing CEG disagreement; no registry overwrite"
+        elif any(
+            ceg_key(observation["ceg"]) != ceg_key(item["ceg"])
+            for observation in json.loads(matches[0].get("extensions_json") or "{}").get(
+                "epe_siga_snapshots", []
+            )
+        ):
+            reason = "Prior EPE CEG revision disagreement; phase/repowering crosswalk required"
         decision = dict(
             ceg=item["ceg"],
             wri_gppd=item["wri_gppd"],
