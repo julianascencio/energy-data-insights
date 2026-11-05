@@ -3,8 +3,9 @@
 The initial research batch contains **7,156 historical WRI plant records in 128
 countries**, imported from the complete primary-fuel Hydro partition. This is a
 discovery baseline, not 7,156 independently reverified operating plants. The WRI
-repository stopped maintenance in early 2022. All initial rows have unknown
-current status, unknown hydro subtype and unresolved aggregation scope.
+repository stopped maintenance in early 2022. The initial rows retain historical capacity; 110 Norwegian identities now have
+NVE-backed current status and technical metadata. Aggregation scope remains
+unresolved for all records.
 
 Data attribution: World Resources Institute, Global Power Plant Database v1.3.0
 repository snapshot, CC BY 4.0. Source commit, checksum, licence and retrieval
@@ -54,7 +55,7 @@ See the published snapshot schema for every field and unit.
 
 The NVE all-assets API was processed completely: 2,010 source rows yielded
 1,977 generating candidates and 33 pump-only exclusions, with no parsing
-quarantines. **None of these candidates have entered canonical plant counts.**
+quarantines. **110 candidates now enrich existing WRI identities; none add new plant IDs.**
 The existing 291 Norwegian WRI identities require an explicit registry crosswalk;
 name equality is not proof of identity. Candidate facts and decisions persist in
 `catalogues/hydro/research/nve-20261105/`, alongside the original-response checksum.
@@ -79,3 +80,23 @@ metric is operating generating nameplate MW for facilities of at least 30 MW;
 it is not an all-size national inventory. Pumped capacity is a subset, never an
 addition to the hydropower ranking. Source sheet URLs and row locators accompany
 the factual summary. GEM bulk-file access and reuse review remain outstanding.
+
+
+## Reviewed Norwegian identity enrichment
+
+On 5 November 2026, 110 existing WRI records were linked to NVE registry IDs
+through an explicitly reviewed crosswalk: unique exact names, NVE API/map ID
+agreement, points within 250 metres and matching current API/map capacity and
+operating state. No fuzzy names or spatial proximity alone trigger a merge.
+The crosswalk and selected official map evidence are retained under `research/`.
+Map data attribution: NVE, NLOD; https://www.nve.no/kart/kartdata/.
+
+Enrichment preserves UUIDs, creation dates, historical capacities and generation
+observations. Current generating MW, status, owners/operators, basin, head,
+maximum turbine flow and normal-period generation retain separate provenance.
+Differences between historical and current ratings are not attributed to
+uprating. All 110 remain excluded from capacity sums pending scope review.
+The remaining 1,867 NVE candidates are not additional accepted plants.
+
+Replay `uv run python scripts/enrich_hydro_nve.py` from the repository root.
+Reapplying the same evidence leaves update timestamps and JSONL bytes unchanged.

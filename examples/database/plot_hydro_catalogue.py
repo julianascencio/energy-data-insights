@@ -6,7 +6,9 @@ Rebuild the WRI Global Power Plant Database hydro partition offline as typed
 Parquet and map its reported coordinates. CC BY 4.0 attribution: World Resources
 Institute, GPPD v1.3.0 repository snapshot. WRI stopped maintenance in early 2022.
 This is historical discovery coverage, not a current operating census or a
-ranking of installed national capacity. Pumped storage is not inferred from names.
+ranking of installed national capacity. 110 Norwegian records have reviewed
+NVE lifecycle and technical enrichment.
+Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
 """
 
@@ -24,7 +26,8 @@ with TemporaryDirectory() as folder:
     snapshot = Path(folder) / "snapshot"
     manifest = build_parquet(ROOT / "catalogues/hydro", snapshot)
     plants = pd.read_parquet(snapshot / "projects.parquet")
-print("Historical records:", len(plants), "Countries:", plants.country_code.nunique())
+print("Canonical records:", len(plants), "Countries:", plants.country_code.nunique())
+print("NVE-enriched operating records:", sum(r["status"] == "operational" for r in rows))
 print("Input fingerprint:", manifest["input_sha256"])
 print("Reviewed installed generating MW:", capacity_summary(rows, "installed_capacity_mw"))
 print("Pumping input MW (separate from generation):", capacity_summary(rows, "pumping_capacity_mw"))
@@ -46,5 +49,5 @@ axes[1].set(
     ylabel="Country code",
     title="Coverage leaders, not capacity market share",
 )
-fig.suptitle("Global hydropower discovery baseline · current status and phase scope unverified")
+fig.suptitle("Global hydro coverage · 110 NVE lifecycle updates · capacity scope unresolved")
 plt.show()
