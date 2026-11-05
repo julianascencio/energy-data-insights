@@ -532,3 +532,7 @@ solar/wind observations, with a previous-day baseline and 16 daily forecast
 origins per plant. It runs offline with captured real Timestral inference and
 can optionally run the model live. See the [benchmark guide](docs/forecast-benchmark.md)
 for commands, research attribution and model/data assumptions.
+
+### Global Hydropower Database
+
+[Hydropower catalogue](catalogues/hydro/README.md): 7,156 historical WRI plant records across 128 countries, with dated provenance, typed Parquet snapshots and a [runnable coverage example](examples/database/plot_hydro_catalogue.py). The shared viewer includes a world map and separates generating/pumping capacity; unresolved historical rows are not current operating capacity.

@@ -1,6 +1,7 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
+const isHydro = root.dataset.database === "hydro";
 const isWind = root.dataset.database === "wind";
 const isDataCenter = root.dataset.database === "data_centers";
 const isBess = root.dataset.database === "bess";
@@ -72,7 +73,7 @@ async function loadTable() {
     const metrics = Object.entries(index.fields).filter(([key, meta]) =>
       ["float", "int"].includes(meta.type) && populated.has(key)).map(([key]) => [key, fieldLabel(key)]);
     options(el("metric"), [["", "No numeric field"], ...metrics],
-      entity === "projects" ? (isWind ? "installed_capacity_mw" : isDataCenter ? "it_capacity_mw" : isBess ? "energy_capacity_mwh" : "capacity_ac_mw") : isWind ? "rated_power_kw" : isDataCenter ? "accelerator_power_w" : isBessOem ? "energy_capacity_mwh" : entity === "modules" ? "pmax_stc_w" : metrics[0]?.[0]);
+      entity === "projects" ? (isHydro ? "historical_capacity_mw" : isWind ? "installed_capacity_mw" : isDataCenter ? "it_capacity_mw" : isBess ? "energy_capacity_mwh" : "capacity_ac_mw") : isWind ? "rated_power_kw" : isDataCenter ? "accelerator_power_w" : isBessOem ? "energy_capacity_mwh" : entity === "modules" ? "pmax_stc_w" : metrics[0]?.[0]);
     el("parquet").href = new URL(info.parquet, base).href;
     el("version").textContent = `Schema ${index.schema_version} · ${number(info.rows)} records · ${Object.keys(index.fields).length} columns`;
     el("provenance").textContent = `Parquet SHA-256: ${info.parquet_sha256}. Browser projection checksum verified; all records included.`;
@@ -85,7 +86,7 @@ async function loadTable() {
   } catch (error) { if (request === token) failure(error); }
 }
 function defaultColumns() {
-  const specific = tableName === "projects" ? (isWind ? ["country_code", "technology", "status", "status_as_of", "installed_capacity_mw", "planned_capacity_mw", "historical_capacity_mw", "turbine_count", "aggregation_role"] : isDataCenter ? ["country_code", "record_scope", "status", "it_capacity_mw", "it_capacity_basis", "grid_capacity_mw", "facility_capacity_mw", "cooling_technology"] : isBess ? ["country_code", "status", "status_as_of", "power_capacity_mw", "energy_capacity_mwh", "chemistry"] : ["country_code", "status", "capacity_ac_mw", "capacity_dc_mw"]) :
+  const specific = tableName === "projects" ? (isHydro ? ["country_code", "technology", "status", "historical_capacity_mw", "capacity_reference_year", "installed_capacity_mw", "pumping_capacity_mw", "aggregation_role"] : isWind ? ["country_code", "technology", "status", "status_as_of", "installed_capacity_mw", "planned_capacity_mw", "historical_capacity_mw", "turbine_count", "aggregation_role"] : isDataCenter ? ["country_code", "record_scope", "status", "it_capacity_mw", "it_capacity_basis", "grid_capacity_mw", "facility_capacity_mw", "cooling_technology"] : isBess ? ["country_code", "status", "status_as_of", "power_capacity_mw", "energy_capacity_mwh", "chemistry"] : ["country_code", "status", "capacity_ac_mw", "capacity_dc_mw"]) :
     isWind && tableName === "turbines" ? ["project_record_id", "country_code", "status", "manufacturer", "turbine_model", "rotor_diameter_m", "hub_height_m"] : isWind ? ["manufacturer", "model", "rated_power_kw", "rated_power_conditions", "rotor_diameter_m", "equipment_category", "curve_kind", "curve_origin"] : isDataCenter ? ["manufacturer", "model", "variant", "equipment_category", "input_power_kw", "accelerator_power_w", "memory_gb", "power_conditions"] : isBessOem ? ["manufacturer", "model", "variant", "record_scope", "energy_capacity_mwh", "energy_basis", "power_capacity_mw", "power_basis", "apparent_power_mva", "chemistry", "product_status"] : ["manufacturer", "model", el("metric").value];
   visible = [...new Set(["name", ...specific, "quality_status", "updated_at", "source_urls"])].filter((key) => key in index.fields);
 }
@@ -117,10 +118,19 @@ function render() {
   filtered = filterRows(rows, {search: el("search").value, field: el("filter-field").value,
     equals: el("filter-value").value, metric, min: el("min").value, max: el("max").value, missing: el("missing").value});
   const stats = statistics(filtered, metric);
-  const projects = tableName === "projects" && !isBessOem && !isDataCenter && !isWind;
+  const projects = tableName === "projects" && !isBessOem && !isDataCenter && !isWind && !isHydro;
   const summary = [[number(filtered.length), projects ? "Matching projects" : "Matching records", `of ${number(rows.length)} in catalogue`]];
   if (isWind) summary.push([number(filtered.filter(r => r.quality_status === "needs_review").length), "Records needing review", "Inspect field conflicts; quarantined values remain unknown, not zero"]);
-  if (isWind && tableName === "projects") {
+  if (isHydro && tableName === "projects") {
+    summary.push([number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Catalogue coverage"],
+      [number(filtered.filter(hasLocation).length), "Mapped plants", "Source coordinates; accuracy varies"],
+      [number(filtered.filter(r => r.historical_capacity_mw != null).length), "Historical records", "Not a current operating census"]);
+    for (const [field, label] of [["installed_capacity_mw", "Installed generating MW"], ["operational_capacity_mw", "Operational generating MW"], ["pumping_capacity_mw", "Pumping input MW"], ["planned_capacity_mw", "Planned generating MW"]]) {
+      const total = hydroCapacity(filtered, field), entries = Object.entries(total.byStatus);
+      summary.push([entries.length ? entries.map(([status,v]) => `${number(v.reported_mw)} ${status}`).join("; ") : "Unknown", label,
+        `${total.unknown} unknown · ${total.excluded} unresolved/aggregate exclusions`]);
+    }
+  } else if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
     summary.push([number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Catalogue coverage"],
@@ -179,8 +189,8 @@ function render() {
     `${fieldLabel(metric)} · Mean ${number(stats.mean)} · Median ${number(stats.median)} · Range ${number(stats.min)}–${number(stats.max)} · ${number(stats.known)} reported / ${number(stats.missing)} unknown` : "Select a numeric field to inspect its statistics.";
   if (isDataCenter && tableName === "projects" && el("metric-summary")) el("metric-summary").textContent = `${fieldLabel(metric)}: ${stats.known} reported, ${stats.missing} unknown. Capacity totals above keep scope, lifecycle and rating categories separate. Group charts show record counts.`;
   for (const key of ["min", "max", "missing"]) el(key).disabled = !metric;
-  el("aggregation").querySelectorAll("option").forEach((option) => { option.disabled = option.value !== "count" && (!metric || ((isDataCenter || isWind) && tableName === "projects")); });
-  if (!metric || ((isDataCenter || isWind) && tableName === "projects")) el("aggregation").value = "count";
+  el("aggregation").querySelectorAll("option").forEach((option) => { option.disabled = option.value !== "count" && (!metric || ((isDataCenter || isWind || isHydro) && tableName === "projects")); });
+  if (!metric || ((isDataCenter || isWind || isHydro) && tableName === "projects")) el("aggregation").value = "count";
   renderChart(); renderTable(); renderMap();
 }
 async function renderMap() {

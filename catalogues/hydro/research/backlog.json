@@ -1,0 +1,64 @@
+{
+  "reviewed_at": "2026-11-05T08:18:58Z",
+  "completed": [
+    {
+      "source": "wri-gppd-1.3.0",
+      "partition": "primary_fuel=Hydro",
+      "accepted": 7156,
+      "deferred": 0,
+      "cursor": "complete; do not reimport unchanged source"
+    }
+  ],
+  "next_sources": [
+    {
+      "priority": 1,
+      "url": "https://globalenergymonitor.org/projects/global-hydropower-tracker/",
+      "release": "March 2026 per publisher page",
+      "status": "metadata reviewed; bulk file and reuse terms not yet reviewed",
+      "next_action": "Obtain openly available release and verify licence, then crosswalk IDs before importing; no automatic name merges",
+      "fields": [
+        "technology",
+        "status",
+        "complex",
+        "capacity",
+        "turbines",
+        "owner"
+      ]
+    },
+    {
+      "priority": 2,
+      "url": "https://www.nve.no/energi/energisystem/vannkraft/",
+      "country": "NOR",
+      "status": "candidate; official registry not yet fetched",
+      "next_action": "Inspect NVE plant registry and reusable API/export; reconcile WRI IDs and Norwegian names"
+    },
+    {
+      "priority": 3,
+      "url": "https://www.eia.gov/electricity/data/eia860/",
+      "country": "USA",
+      "status": "candidate",
+      "next_action": "Review dated EIA-860 conventional and pumped hydro generator partitions; aggregate only compatible plant scopes"
+    },
+    {
+      "priority": 4,
+      "url": "https://dadosabertos.aneel.gov.br/",
+      "country": "BRA",
+      "status": "candidate",
+      "next_action": "Review SIGA hydro UHE/PCH/CGH export and reuse terms"
+    }
+  ],
+  "market_ranking": {
+    "status": "unresolved; no current top-ten ranking claimed",
+    "metric": "operating installed generating MW, with pumped storage separately ranked",
+    "source": "https://globalenergymonitor.org/projects/global-hydropower-tracker/",
+    "next_action": "Retrieve March 2026 country capacity and pumped-storage summary tables. Do not substitute WRI historical coverage counts for market ranking."
+  },
+  "regional_rotation": [
+    "Asia",
+    "Latin America/Caribbean",
+    "North America",
+    "Europe",
+    "Africa",
+    "Oceania"
+  ]
+}

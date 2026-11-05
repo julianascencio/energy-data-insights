@@ -58,3 +58,8 @@ The four-view example covers geography, completeness, cooling and GPU comparison
 
 Wind examples distinguish historical coverage, dated capacity categories, exact
 model specifications and compatible numerical curves.
+
+.. button-ref:: /hydro-database-viewer
+   :color: primary
+
+   Explore worldwide hydropower plants
