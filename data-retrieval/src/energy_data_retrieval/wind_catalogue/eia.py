@@ -324,7 +324,7 @@ def enrich_retired_partition(
         if any(
             old.get("year") == item["year"]
             and old.get("plant_code") == code
-            and any(unit in old.get("units", []) for unit in item["units"])
+            and old.get("units") == item["units"]
             for old in history
         ):
             raise ValueError("Overlapping EIA unit observation from another source")

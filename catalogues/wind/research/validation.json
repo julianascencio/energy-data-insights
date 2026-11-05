@@ -1,34 +1,34 @@
 {
-  "batch": "2026-11-05-0035",
-  "iteration_parent": "d72676ec4a03ad263670f0977bfbc4d78d378044",
+  "batch": "2026-11-05-0135",
+  "iteration_parent": "788dfbd7ff0ca14cc697f4b679dee021994c8275",
   "local": {
-    "tests": "233 focused Python tests passed (including17EIA);21Node viewer tests passed;viewer syntax passed",
-    "quality": "Ruff lint/format971files,ty,citations,repository4465files and diff checks passed",
-    "catalogue": "22181 valid;22128 unchanged;53 enriched preserve prior scalar facts,IDs and creation timestamps;all6capacity totals unchanged",
-    "replay": "53 enrichment replay/idempotence passed;original workbook bytes verified against previously registered hashes",
-    "snapshots": "Two independent seven-file builds byte-identical;every Parquet column ZSTD",
-    "example": "Offline Wind example passed, including reporting-year observation counts",
-    "packages": "Three wheels and three source distributions rebuilt",
-    "docs": "Strict Sphinx warnings-as-errors build passed with gallery execution disabled; links/assets result recorded below",
-    "links": "Documentation check passed: 611 HTML pages; local links and assets resolve."
+    "tests": "234 focused Python tests passed after initial ENOSPC failure;21Node viewer tests and syntax passed",
+    "quality": "Ruff lint/format971files,ty,citations and diff passed;repository4466files passed",
+    "catalogue": "22181valid;21883unchanged;298enrichments preserve IDs,creation timestamps,prior scalar facts and all6capacity summaries",
+    "replay": "Replay/idempotence and registered original hashes passed",
+    "snapshots": "Two seven-file typed ZSTD builds byte-identical after ENOSPC recovery",
+    "example": "Offline Wind example passed",
+    "docs": "Not run this iteration: shared filesystem exhausted; prior head documentation CI passed",
+    "packages": "Three wheels and three source distributions passed"
   },
   "snapshot_sha256": {
-    "sources.json": "23a229f9aca46d5a9e659d366dd189bae83dd34fb0cd62c6a5ce936d92c5c6a1",
+    "sources.json": "8544eaed6e18f2fb83874972d04a55e658197258e1e67954d473898286fe23cf",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "090811679b45896cc03ec7fbacf588a4d94d7b9f60d8bf55e88eb7f5bbbaaad3",
+    "manifest.json": "146fe07ccdf0718d1f0fcd47b2665fcc15e474e445b4b494f8ffc2416a73efcb",
     "equipment.parquet": "e8e95a3d7946a2da8152c46a88a75fb6eb6c494d291f1d259895ec801cc5166d",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "2b1245395af5bc3c6bfda78f5854e5d433b5dd52bec01bc7c84c6ed34de3ccc9"
+    "projects.parquet": "52c5176464472f023c06517bf9e46c030ab9d4a41dd2da40b5e19129f2ee1549"
   },
   "remote_ci": {
-    "prior_head": "d72676ec4a03ad263670f0977bfbc4d78d378044",
-    "prior_result": "Python and Documentation workflows passed, verified this run",
-    "new_head": "Not yet published; no new-head CI result claimed"
+    "prior_head": "788dfbd7ff0ca14cc697f4b679dee021994c8275",
+    "prior_result": "Python and Documentation passed",
+    "new_head": "Pending publication"
   },
   "not_executed": [
-    "Full local repository test suite",
+    "Full local suite",
     "Interactive browser",
-    "Full executable gallery"
+    "Full executable gallery",
+    "Strict local documentation build"
   ]
 }

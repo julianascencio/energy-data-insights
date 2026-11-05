@@ -256,3 +256,28 @@ def test_overlapping_source_alias_rejected_but_disjoint_tab_accepted():
     assert [x["units"][0]["generator_id"] for x in history] == ["OLD", "NEW"]
     assert new["status"] == "unknown"
     assert new["historical_capacity_mw"] == 30
+
+
+def test_revised_source_keeps_conflicts_and_unchanged_units():
+    wind, plant, kw = fixture()
+    candidates = parse_retired_partition(wind, plant, **kw)
+    second = copy.deepcopy(candidates[0]["units"][0])
+    second["generator_id"] = "SECOND"
+    second["locator"] = "synthetic row4"
+    candidates[0]["units"].append(second)
+    first = apply(candidates, existing())[0]
+    revised = copy.deepcopy(candidates)
+    revised[0]["units"][0]["reported_unit_nameplate_mw"] = 3
+    result = enrich_retired_partition(
+        revised,
+        [first],
+        {123: "test"},
+        source_id="revised_document",
+        identity_source_id="wri",
+        now="2026-11-05T01:35:00Z",
+    )[0]
+    history = json.loads(result["extensions_json"])["eia_annual_wind_partitions"]
+    assert [h["units"][0]["reported_unit_nameplate_mw"] for h in history] == [2, 3]
+    assert history[0]["units"][1] == history[1]["units"][1]
+    assert result["historical_capacity_mw"] == 30
+    assert result["status"] == "unknown"

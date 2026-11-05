@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T00:42:05Z",
+  "updated_at": "2026-11-05T01:33:48Z",
   "branch": "research/wind-20261104-2335",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind-20261104-2335.lock for research/wind-20261104-2335; inspect active work and remote head; publish using an expected-head fast-forward, never overwrite another writer.",
   "queue": [
@@ -17,7 +17,7 @@
       ],
       "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "EIA final2025 Operable codes1–55999 complete; next56000–56999, then57000–57999 if bounded yield is low. Reuse pinned original bytes. CEC258092p41 names/IDs corroborate50535/50536 but aliases/repowering/coordinates remain unresolved; next historical EPA original crosswalk. All eight current identity holds retained.",
+      "next_task": "Complete EIA2025 Operable57000–57999 next; codes1–56999 exhausted. EPA historical crosswalk403; preserve held identities. Reuse original pinned workbooks.",
       "latest_attempt_review": "2026-11-04-1235-source-review.json",
       "independent_source_completed": {
         "source": "EIA2025final",
@@ -28,9 +28,9 @@
       },
       "operable_completed": [
         1,
-        55999
+        56999
       ],
-      "operable_decision_ledger": "2026-11-05-0035-eia-review.json"
+      "operable_decision_ledger": "2026-11-05-0135-eia-review.json"
     },
     {
       "rank": 2,
@@ -185,7 +185,8 @@
         "PNNL July2026 full nine-model table complete. ICC-SWCC directory excluded for explicit reuse terms; do not repeat. Next original OEM geometry/electrical configuration documents for the nine PNNL models, prioritizing EOX S-16 and KW20/KW30; certification dates remain source observations.",
         "Kodair KW20/KW30 original pages excluded for explicit terms; Eocycle S-series page and R5PDF HTTP403, not authentication/reuse claim. SD3/SD3EX/SD6/SD6+/SD12 current five tables completed; SD6 SDMK106 and Bergey Rev3.1 p5/12–14 processed. Next original SD3EX certificate for3/2.5kW conflict, SD6+ inverter-specific numerical data, Powersync25 p14–15 trip tables and pp16+ installation/environment; do not duplicate nested voltage/tower choices.",
         "Goldwind2025Q3 complete15exactcolumns andEPD observations exhausted; next original type/EPD certificates for GWH182 family before project links. SDMK103EXRev1 adds third3.2kW observation, not a rating resolution; certificate ID still missing. Powersync25pp14–21 complete, retain inrush/fuse/input-envelope discrepancies; next OEM correction or later manualrevision. No site-height variants or unnamed subcomponents.",
-        "EPDITALY0508/0852 complete technical tables and scoped lifetimeflows reviewed:7equipmentenriched,5scalarconflictsnull. Next original typecertificates/EPD revision resolving183.5m/26446m2 versus26016m2 andGWH17520/25year life; explicit blade-to-modelmapping, no assumedSinoma90.2/SI90.2 equivalence. Environmentalimpacttables not transcribed; originalsourcechecksums retained."
+        "EPDITALY0508/0852 complete technical tables and scoped lifetimeflows reviewed:7equipmentenriched,5scalarconflictsnull. Next original typecertificates/EPD revision resolving183.5m/26446m2 versus26016m2 andGWH17520/25year life; explicit blade-to-modelmapping, no assumedSinoma90.2/SI90.2 equivalence. Environmentalimpacttables not transcribed; originalsourcechecksums retained.",
+        "Mendi GW-26CP.0004VersionA original acquired but explicit reproduction restriction: excluded; do not retry as HTTP failure. Seek unrestricted original geometry/design-life certificate."
       ]
     },
     {
