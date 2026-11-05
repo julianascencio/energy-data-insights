@@ -510,9 +510,9 @@ Taiwan Energy Administration's checksum-pinned private solar inventory. It check
 the exact caption and five public columns, preserves merged-cell origin rows,
 native kW and ROC-year text, and stages bounded physical-row partitions. The
 26 January 2026 content reports statistics through 31 December 2025: 787 solar
-rows, with the first300 staged. Manual primary-source reviews associate rows1–10
+rows, with the first400 staged. Manual primary-source reviews associate rows1–10
 with an existing Sungen phase aggregate and accept **one Daliao depot plant**
-from row13. No plants are accepted from newly staged rows101–300. Daliao
+from row13. No plants are accepted from newly staged rows101–400. Daliao
 commissioning-year evidence conflicts and remains unpopulated.
 Repeated rows/phases, positive PV technology, company roles and AC/DC basis need
 manual review. Row cursors are not native facility IDs. See the
@@ -523,3 +523,10 @@ PV, EPS and grid conditions separately. The 5 November review leaves disputed
 Hyper width/height axes, HP2 MPPT upper bounds and battery currents, and a
 suspicious shared KL2 output-current value unpopulated. See the dated
 `research/20261105T0058_equipment_review.json` for both source observations.
+
+Five exact DEGER trackers retain component IP ratings, module-load and module-area
+bounds, conditional wind limits and source-specific drive/control conditions.
+Contractual defect-liability periods are qualified separately from unrestricted
+product or structural warranties. Beitou and Changxing rooftop plant identities
+use independent primary city evidence; Changxing planned-opening and regulatory
+commercial-year scopes remain distinct. See the dated 5 November 01:30 reviews.

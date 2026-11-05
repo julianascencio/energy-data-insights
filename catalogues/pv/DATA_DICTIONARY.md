@@ -587,3 +587,11 @@ voltage alternatives and battery limits in qualified extensions. HP2 combined
 W/VA nominal rows do not establish an unambiguous active-power scalar. Conflicting
 MPPT upper bounds, battery currents and Hyper dimension axes remain null; a
 merged KL2 current cell spanning unequal power models is held for clarification.
+
+DEGER tracker extensions retain maximum module-dependent Wp, module surface/load,
+partial assembly mass and planning-tool wind conditions. These do not populate
+exact array power/area, complete tracker mass or universal wind-design scalars.
+Dual-axis drive/control IP ratings remain component-specific. The single-axis
+model has explicit -50/+50 degree rotation limits. The material-defect contract
+retains two-year claims and ten-year inside-out steel rust-through conditions;
+these do not establish unrestricted product/structural warranty scalars.
