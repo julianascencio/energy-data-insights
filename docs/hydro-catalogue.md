@@ -100,3 +100,32 @@ The remaining 1,867 NVE candidates are not additional accepted plants.
 
 Replay `uv run python scripts/enrich_hydro_nve.py` from the repository root.
 Reapplying the same evidence leaves update timestamps and JSONL bytes unchanged.
+
+
+## US EIA annual generator inventory
+
+The final 2025 EIA-860 plant-code partition 1–500 enriches 173 existing plant
+identities with 369 distinct generating-unit observations. The reported
+nameplate sum is 13,153 MW **at year-end 2025**, not live 2026 capacity.
+All accepted plants have only HY/OP generator rows in the Operable sheet.
+The other 43 hydro-containing plants are held: 37 mixed technology/state,
+four missing existing identities and two name discrepancies. No fuzzy merges
+or inferred new plants are accepted.
+
+The WRI upstream importer explicitly encodes EIA plant codes in USA-prefixed
+identities; exact names and coordinates independently confirm this partition.
+Existing UUIDs, creation dates, historical capacity and generation are preserved.
+Generator IDs, statuses, nameplate and seasonal MW, operating month/year and
+reported unit metadata remain in `extensions_json.eia_hydro_annual_inventory`
+with workbook/sheet/row provenance. Seasonal capacity is not nameplate power.
+Generator count is not turbine count. The HY code does not establish reservoir,
+run-of-river or diversion subtype. Pumping MW and energy storage remain unknown.
+All aggregation roles remain unresolved, including split reporting facilities;
+these annual observations therefore do not enter global capacity sums.
+
+Source: U.S. Energy Information Administration, final 2025 EIA-860 release,
+retrieved 5 November 2026. Public-domain reuse policy and original ZIP/workbook
+checksums are in the source registry. The importer is
+`energy_data_retrieval.hydro_catalogue.eia.parse_partition`; replay the committed
+bounded evidence using `uv run python scripts/enrich_hydro_eia.py`.
+Next partition: EIA plant codes 501–1000, without repeating accepted 1–500 IDs.

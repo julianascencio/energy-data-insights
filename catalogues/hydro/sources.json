@@ -34,5 +34,43 @@
     "license_url": "https://www.nve.no/kart/kartdata/",
     "original_availability": "Original full 1892-feature JSON response downloaded with outSR=4326; no transfer-limit flag. Selected exact feature evidence retained. Source coordinate accuracy unquantified.",
     "query": "where=1=1&outFields=*&outSR=4326&f=json&resultRecordCount=2000&orderByFields=objectid"
+  },
+  "wri_usa_identity": {
+    "url": "https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_USA.py",
+    "publisher": "World Resources Institute",
+    "title": "WRI U.S. importer and make_id registry identity mapping",
+    "license": "WRI repository source reviewed; factual identity mapping only; upstream code not redistributed",
+    "retrieved_at": "2026-11-04T23:06:14Z",
+    "published_at": null,
+    "revision": "7a91cfbb2a4e272597acbc00506d61fc1ec73b3d",
+    "sha256": "c3998a8453dc733d6f47d5a14421a15708b40ecd7951a3c76387321aea870f4c",
+    "original_availability": "Both original Python source files obtained HTTP200 and checksummed",
+    "documents": {
+      "powerplant_database.py": {
+        "sha256": "89547a4e63fe596d0cbf28ede1d28908e4289beb59a8c17da2d659a4ea35d544",
+        "locator": "make_id(letter_code,id_number): country prefix plus zero-padded7-digit EIA plant code"
+      }
+    },
+    "locator": "build_database_USA.py COLS_860_2 idnr=2, pw.make_id(SAVE_CODE, int(...)); powerplant_database.py make_id"
+  },
+  "eia860-2025-hydro-1-500": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 1-500",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T11:42:26Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
   }
 }

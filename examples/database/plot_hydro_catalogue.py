@@ -7,7 +7,7 @@ Parquet and map its reported coordinates. CC BY 4.0 attribution: World Resources
 Institute, GPPD v1.3.0 repository snapshot. WRI stopped maintenance in early 2022.
 This is historical discovery coverage, not a current operating census or a
 ranking of installed national capacity. 110 Norwegian records have reviewed
-NVE lifecycle and technical enrichment.
+NVE lifecycle and technical enrichment; 173 US records carry dated 2025 EIA inventory.
 Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
 """
@@ -27,7 +27,11 @@ with TemporaryDirectory() as folder:
     manifest = build_parquet(ROOT / "catalogues/hydro", snapshot)
     plants = pd.read_parquet(snapshot / "projects.parquet")
 print("Canonical records:", len(plants), "Countries:", plants.country_code.nunique())
-print("NVE-enriched operating records:", sum(r["status"] == "operational" for r in rows))
+print("NVE-enriched operating records:", sum("nve-hydro-20261105" in r["sources"] for r in rows))
+print(
+    "EIA year-end 2025 enriched records:",
+    sum("eia860-2025-hydro-1-500" in r["sources"] for r in rows),
+)
 print("Input fingerprint:", manifest["input_sha256"])
 print("Reviewed installed generating MW:", capacity_summary(rows, "installed_capacity_mw"))
 print("Pumping input MW (separate from generation):", capacity_summary(rows, "pumping_capacity_mw"))
@@ -49,5 +53,5 @@ axes[1].set(
     ylabel="Country code",
     title="Coverage leaders, not capacity market share",
 )
-fig.suptitle("Global hydro coverage · 110 NVE lifecycle updates · capacity scope unresolved")
+fig.suptitle("Global hydro coverage · dated NVE/EIA updates · capacity scope unresolved")
 plt.show()
