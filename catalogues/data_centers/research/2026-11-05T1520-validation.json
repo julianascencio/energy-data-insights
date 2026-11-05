@@ -1,0 +1,62 @@
+{
+  "run_id": "energy-star-certified-data-centers-2019-2022-20261105T152000Z",
+  "validated_at": "2026-11-05T15:20:00Z",
+  "base_main_sha": "76179409be2ce1166d60714145f1711776182b16",
+  "branch": "research/data-center-database-20261105T1320Z",
+  "catalogue": {
+    "canonical_records": 3107,
+    "projects": 474,
+    "project_scopes": {"facility": 357, "phase": 3, "campus": 114},
+    "equipment": 2633,
+    "countries": 36,
+    "operators": 13,
+    "oems": 70,
+    "added_projects": 54,
+    "enriched_projects": 0,
+    "added_equipment": 0
+  },
+  "inventory": {
+    "source_id": "epa-energy-star-certified-data-centers-20261105",
+    "records_processed": 54,
+    "source_total_rows": 337,
+    "source_bytes": 651382,
+    "sha256": "47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5",
+    "most_recent_certification_years": {"2019": 16, "2020": 9, "2021": 20, "2022": 9},
+    "states": 19,
+    "owner_labels": 23,
+    "property_manager_relations": 8,
+    "deferred_historical_rows": 46,
+    "original_bytes_available": true,
+    "reuse_prohibited": false,
+    "license": "EPA Data License"
+  },
+  "local_checks": [
+    {"command": "jq parsing for sources, backlog, source review, coverage, validation and all new JSONL records", "result": "passed"},
+    {"command": "uv run python -m energy_data_retrieval.data_center_catalogue validate", "result": "passed; 3107 records"},
+    {"command": "uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py for 2019 through 2026 plus cmp", "result": "passed; all eight completed yearly partitions replayed byte-identically"},
+    {"command": "uv run --group dev pytest -q data-retrieval/tests/test_data_center_inventories.py data-retrieval/tests/test_data_center_catalogue.py", "result": "passed; 88 tests"},
+    {"command": "node --test tests/js/test_database_viewer.mjs", "result": "passed; 25 tests"},
+    {"command": "uv run ruff format --check .", "result": "passed; 1061 files"},
+    {"command": "uv run ruff check .", "result": "passed"},
+    {"command": "uv run ty check", "result": "passed repository-wide"},
+    {"command": "uv run python scripts/check_repository.py", "result": "passed; 5148 candidate files"},
+    {"command": "uv run python scripts/check_citations.py", "result": "passed"},
+    {"command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py", "result": "passed; explicit project scopes are 357 facility, 3 phase and 114 campus records"},
+    {"command": "two independent data_center_catalogue build commands plus cmp", "result": "passed; byte-identical snapshots"},
+    {"command": "uv run --group dev pytest -q", "result": "2796 passed, 5 optional skips and one unrelated transient psutil.NoSuchProcess failure in methods/tests/test_degradation_mapping.py"},
+    {"command": "git diff --check", "result": "passed"}
+  ],
+  "snapshot_sha256": {
+    "input": "e76a63431ea3f27365ea28980f05fe3a67925f33f01f0e1246913f97857b299d",
+    "projects": "42fa17945e4cfa55d92210dda135ad107ba08f2aed0cd222f05e438638281c3e",
+    "equipment": "cc2edecd7ad954d50785584d26afe4e4c9d3a642579ee87c5d274ee57b774f61",
+    "manifest": "f7817073854ec082c068f8e99f908efac211afb38843720b58acb471bf197fbe",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "39adec5290b896c25acd3b9b33f846a74b03758410bebca2c019e76065025808"
+  },
+  "remote_ci": {
+    "prior_head": "4066403aaa1027eb7b8c15336ae7f6f19a24a642",
+    "prior_head_status": "Python quality and tests and Documentation completed successfully",
+    "status_at_validation": "not_started_for_new_head"
+  }
+}

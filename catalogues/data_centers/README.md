@@ -5,10 +5,10 @@ canonical JSONL under `records/projects` and `records/equipment`, a source regis
 field-level evidence, stable UUIDs and deterministic typed Parquet snapshots.
 No network request occurs during validation, export or documentation builds.
 
-The current continuation branch contains **316 project records in 36 countries**:
-**199 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **2,633 exact equipment records from 70 OEMs**.
-Merged `main` at `c44b15a0` contains **183 projects and 2,633 equipment records**.
+The current continuation branch contains **520 project records in 36 countries**:
+**403 facilities, three phases and 114 explicitly labelled campus aggregates**,
+from 13 operators. It has **2,677 exact equipment records from 71 OEMs**.
+Merged `main` at `76179409` contains **316 projects and 2,633 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
 
@@ -29,6 +29,7 @@ uv run python scripts/stage_data_center_cummins.py captured.html --source-url ht
 uv run python scripts/stage_data_center_inventory.py captured.html --source-url https://www.atnorth.com/nordic-data-centers/ --expected-count 13
 uv run python scripts/build_data_center_atnorth_finland_permit_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
 uv run python scripts/build_data_center_atnorth_reconciliation_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
+uv run python scripts/build_data_center_atnorth_current_permit_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
 uv run python scripts/stage_data_center_cdu.py extracted.csv --source-url https://www.motivaircorp.com/uploads/files/brochures/CDU%202026%20Motivair%20by%20SE.pdf --expected-count 8
 uv run python scripts/stage_data_center_power_equipment.py extracted.csv --source-url https://www.eaton.com/dk/da-dk/catalog/medium-voltage-power-distribution-control-systems/dry-type-transformer.html --expected-count 16
 uv run python scripts/build_data_center_doe_transformer_batch.py staged-doe-transformers.jsonl
@@ -47,6 +48,8 @@ uv run python scripts/build_data_center_kehua_ups_batch.py staged-kehua-ups.json
 uv run python scripts/build_data_center_kstar_transformer_ups_batch.py staged-kstar-ups.jsonl
 uv run python scripts/build_data_center_borri_ups_batch.py staged-borri-ups.jsonl
 uv run python scripts/build_data_center_baudouin_generator_batch.py staged-baudouin-generators.jsonl
+uv run python scripts/build_data_center_volvo_penta_powergen_batch.py staged-volvo-penta-powergen.jsonl
+uv run python scripts/build_data_center_volvo_penta_powergen_batch.py staged-volvo-penta-stage-iiia-powergen.jsonl --inventory stage-iiia
 uv run python scripts/build_data_center_makelsan_ups_batch.py staged-makelsan-ups.jsonl
 uv run python scripts/build_data_center_siel_ups_batch.py staged-siel-ups.jsonl
 uv run python scripts/build_data_center_tescom_ups_batch.py staged-tescom-ups.jsonl
@@ -89,6 +92,14 @@ uv run python scripts/build_data_center_energy_star_server_batch.py captured-ene
 uv run python scripts/build_data_center_energy_star_storage_batch.py captured-energy-star-storage-block.csv captured-energy-star-storage-file.csv staged-energy-star-storage
 uv run python scripts/build_data_center_energy_star_network_batch.py captured-energy-star-network.csv staged-energy-star-network
 uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2025 --certification-year 2025
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2024 --certification-year 2024
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2023 --certification-year 2023
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2022 --certification-year 2022
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2021 --certification-year 2021
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2020 --certification-year 2020
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2019 --certification-year 2019
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2018 --certification-year 2018
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -106,7 +117,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-05-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-05-decisions.jsonl),
-[executed validation](research/2026-11-05T1220-validation.json), and
+[executed validation](research/2026-11-05T1820-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

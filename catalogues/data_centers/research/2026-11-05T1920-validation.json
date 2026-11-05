@@ -1,0 +1,63 @@
+{
+  "run_id": "volvo-penta-stage-iiia-powergen-20261105T192000Z",
+  "validated_at": "2026-11-05T19:20:00Z",
+  "base_main_sha": "76179409be2ce1166d60714145f1711776182b16",
+  "branch": "research/data-center-database-20261105T1320Z",
+  "catalogue": {
+    "canonical_records": 3197,
+    "projects": 520,
+    "project_scopes": {"facility": 403, "phase": 3, "campus": 114},
+    "equipment": 2677,
+    "countries": 36,
+    "operators": 13,
+    "oems": 71,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 22
+  },
+  "inventory": {
+    "source_ids": [
+      "volvo-penta-d8-stage-iiia-current-20261105",
+      "volvo-penta-d13-stage-iiia-current-20261105",
+      "volvo-penta-d16-stage-iiia-current-20261105"
+    ],
+    "records_added": 22,
+    "records_enriched": 0,
+    "d8_stage_iiia_configurations": 6,
+    "d13_stage_iiia_configurations": 10,
+    "d16_stage_iiia_configurations": 6,
+    "excluded_na_model_frequency_pairs": 4,
+    "original_bytes_available": true,
+    "reuse_prohibited": false,
+    "new_reuse_holds": ["Caterpillar Electric Power", "Doosan Portable Power"]
+  },
+  "local_checks": [
+    {"command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger", "result": "passed"},
+    {"command": "uv run python -m energy_data_retrieval.data_center_catalogue validate", "result": "passed; 3197 records"},
+    {"command": "build_data_center_volvo_penta_powergen_batch.py --inventory stage-iiia replay twice plus cmp against canonical JSONL", "result": "passed; 22 records reproduced byte-identically"},
+    {"command": "focused Data Center pytest inventory, builder, catalogue and atNorth suites", "result": "passed; 98 tests"},
+    {"command": "node --test tests/js/test_database_viewer.mjs", "result": "passed; 25 tests"},
+    {"command": "uv run ruff format --check . and ruff check .", "result": "passed; 1065 files formatted"},
+    {"command": "uv run ty check", "result": "passed repository-wide"},
+    {"command": "uv run python scripts/check_repository.py", "result": "passed; 5168 candidate files"},
+    {"command": "uv run python scripts/check_citations.py", "result": "passed"},
+    {"command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py", "result": "passed"},
+    {"command": "two independent data_center_catalogue build commands plus diff", "result": "passed; byte-identical typed Zstandard snapshots"},
+    {"command": "uv run --group dev pytest -q", "result": "2803 passed, 5 optional skips and 1 unrelated environment failure in a PV degradation subprocess; psutil.NoSuchProcess occurred before Data Center code loaded"},
+    {"command": "uv run --group docs sphinx-build -W --keep-going -b html", "result": "blocked locally by the Python 3.13-only optional Orbital PV imagery gallery dependency"},
+    {"command": "git diff --check", "result": "passed"}
+  ],
+  "snapshot_sha256": {
+    "input": "0edfa6e6caf71a3f846eab695c3db53129ac78919522e93e4e9f4eb3d06408d6",
+    "projects": "08365446210a654e49b3d38256b7158dc126efa6eb84cd77f90228050f545aee",
+    "equipment": "6e17ff149cafbf56f2d8540a3e233384b78d26387bc5721944b78f8ea40e2e88",
+    "manifest": "cc0d24fa648356f2aeb4ea3cc7ebbb91cbc78bb7b57925de555bf9b6bb6807da",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "70bd2ce6f2f4722874cc64cdfa7bec34aaa374d8f36e82cdee053a9e11a92015"
+  },
+  "remote_ci": {
+    "prior_head": "981ecab80bf6c00d623dd5e2c047ba00d39400a2",
+    "prior_head_status": "Documentation run 42086777849 and Python quality/tests run 42086777803 completed successfully",
+    "status_at_validation": "not_started_for_new_head"
+  }
+}

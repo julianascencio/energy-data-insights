@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 316 project records across 36 countries:
-199 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
+The current continuation branch has 520 project records across 36 countries:
+403 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -35,25 +35,31 @@ workload and test conditions. `renewable_supply_json` explicitly separates
 physical generation, contractual procurement and environmental claims.
 Certificates require issuer, scope and validity evidence, not marketing badges.
 
-The current U.S. facility continuation adds all 133 entries whose most recent
-label year is 2026 in EPA's complete 337-entry ENERGY STAR Certified Data
-Centers registry. Each remains an issuer-verified facility identity. EPA
+The current U.S. facility continuation includes all 133 entries whose most recent
+label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and
+all 54 from 2019 through 2022 and all 46 from 2010 through 2018 in EPA's
+complete 337-entry ENERGY STAR Certified Data Centers registry. The registry is
+fully processed. Each remains an issuer-verified facility identity. The
+2010-2025 partitions retain current
+lifecycle as unknown because an earlier certification is not proof of current
+operation. EPA
 intentionally exposes only the state for security, so locality, address and
 coordinates remain null even when address-like text appears inside the exact
 public facility name. The source's unlabeled floor-space value and year-only
 construction value remain bounded observations; neither is converted to square
-metres or promoted to an event date. Owner and the three printed property-manager
+metres or promoted to an event date. Owner and all 42 printed property-manager
 relationships are retained, while operator, capacity, PUE and equipment remain
-unknown.
+unknown. No registry entry remains unprocessed; future work should use later
+issuer updates or independent planning, utility and lifecycle evidence.
 
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,633 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,655 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
-STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
+STULZ, Supermicro, Toshiba, Vertiv, Volvo Penta, Para Systems / Minuteman Power Technologies,
 Ingram Micro / V7, N1 Critical Technologies, Neuropower, Power Logic / KOSS,
 Right Power Technology, Upsonic Power Systems, xFusion and ZTE. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
@@ -158,6 +164,17 @@ Power rating card: 19 exact 50 Hz and 15 exact 60 Hz configurations. Engine
 gross mechanical kWm, generator electrical kWe and generator apparent kVA stay
 separate. Speed, aspiration and governor remain row-bound observations; no
 alternator, voltage, emissions package, installation or deployment is inferred.
+The Volvo Penta continuation processes all 22 populated model/frequency columns
+in four current D8, D13 and D16 power-generation tables. Prime electrical kW and
+kVA are normalized separately; standby electrical output and engine mechanical
+kWm remain bounded observations. Blank TAD1640GE cells are excluded, and fuel,
+emissions and cylinder statements do not establish a complete generator-set BOM,
+issuer certification, site installation or deployment.
+The non-overlapping Stage IIIA/Tier 3 continuation adds all 22 populated rows
+from the current D8, D13 and D16 tables (six, ten and six). Explicit 50 Hz-only
+and 60 Hz-only columns remain sparse: printed N/A cells do not become invented
+configurations. The same active/apparent/mechanical and deployment boundaries
+apply.
 The Makelsan continuation processes every exact three-phase model column in the
 reviewed LEVELUPS, LEVELUPS T3 and LEVELUPS T4 tables: 18, 11 and five rows.
 Printed kVA and kW remain separate; the overlapping T3/T4 capacities remain
@@ -348,6 +365,16 @@ first-phase and up-to-500 MW campus statements unclassified. Municipal evidence 
 SWE04 now binds the 200 MW phase-one grid connection to E.ON and keeps it separate
 from 300 MW planned project power and 500 MW Hamre industrial-park capacity. The
 conflicting H1 2028 and autumn 2028 commissioning targets remain quarantined.
+The current permit reconciliation binds FIN04A Phase 2 to Kouvola permit
+286-2025-384 and retains exact, separately scoped observations for FIN04A Phase 3
+(286-2026-281), the FIN04B modification (286-2026-282) and FIN04C Phase 2
+(286-2026-277). Their building areas are not promoted to campus or data-hall area,
+and the generic YIT contract records are not assigned to a permit phase without an
+official cross-reference. SWE04 additionally retains 1,200 MW of planned backup
+combustion fuel input, two 130 kV line-project observations and a heat-reuse
+development agreement. None is normalized as IT/grid capacity, commissioned
+facility power or delivered heat; the line project's March 2029 completion target
+does not resolve the facility commissioning conflict.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options
@@ -531,4 +558,4 @@ deployed inventory. The official 96-row, 223-column v3 CSV is 72,103 bytes with
 SHA-256 `e769eedcef814b652ad6594b6cadb43b239e57e9250071a90cc133b07907e533`.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T1020-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T1720-validation.json).

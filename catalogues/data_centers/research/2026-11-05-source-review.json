@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T12:20:00Z",
+  "retrieved_at": "2026-11-05T19:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -152,24 +152,84 @@
       "enriched_records": 0,
       "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. No hidden location, capacity, PUE, operator or deployment claim is imported.",
       "originals": "The complete official 337-entry, 651,382-byte HTML registry was captured successfully with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2026 most-recent-certification partition contains 133 exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2025 most-recent-label partition",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last label is historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2025 most-recent-certification partition contains 50 exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2023 and 2024 most-recent-label partitions",
+      "processed_offset": 54,
+      "accepted_records": 54,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2023 and 2024 most-recent-certification partitions contain 31 and 23 exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2019 through 2022 most-recent-label partitions",
+      "processed_offset": 54,
+      "accepted_records": 54,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2019, 2020, 2021 and 2022 most-recent-certification partitions contain 16, nine, 20 and nine exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2010 through 2018 complete tail",
+      "processed_offset": 46,
+      "accepted_records": 46,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The 2010-2018 tail contains 46 exact facility identities and exhausts the captured inventory."
+    },
+    {
+      "inventory": "atNorth FIN04 current Kouvola permits and SWE04 consultation, grid-line and heat-reuse planning evidence",
+      "processed_offset": 15,
+      "accepted_records": 0,
+      "enriched_records": 2,
+      "reuse": "Seven public official municipal, operator and contractor pages support 15 bounded observations. Facts are normalized without redistributing originals; no held source was used.",
+      "originals": "The browsing interface exposed the official content but not stable original bytes, so no checksums are claimed. This is an access/content-tooling limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "Volvo Penta current D8, D13 and D16 power-generation engine tables",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "enriched_records": 0,
+      "reuse": "Public OEM product tables were used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved reuse hold applies to these pages.",
+      "originals": "All four official HTML originals were captured and checksummed: D8 Stage V 186,212 bytes; D13 Stage V 185,089 bytes; D16 Stage V 186,051 bytes; D16 Stage II/EPA Tier 2 191,073 bytes. The exact SHA-256 values are in sources.json."
+    },
+    {
+      "inventory": "Volvo Penta current D8, D13 and D16 Stage IIIA/EPA Tier 3 power-generation tables",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "enriched_records": 0,
+      "reuse": "Public OEM product tables were used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved reuse hold applies to these pages.",
+      "originals": "All three official HTML originals were captured and checksummed: D8 Stage IIIA 187,457 bytes; D13 Stage IIIA 191,067 bytes; D16 Stage IIIA 190,260 bytes. The exact SHA-256 values are in sources.json."
     }
   ],
   "deferred": [
     {
-      "inventory": "FIN04A Phase 2 identity",
-      "reason": "An official cross-reference is still required to bind the environmental case to the existing July 2026 YIT phase without creating a duplicate phase."
+      "inventory": "FIN04 generic YIT contract-to-permit phase mapping",
+      "reason": "FIN04A Phase 2 is now bound to permit 286-2025-384, but official evidence does not map the generic July/August 2026 YIT contract scopes to FIN04A Phase 2, FIN04A Phase 3, FIN04B or FIN04C Phase 2. No duplicate child record is added."
     },
     {
       "inventory": "SWE04 commissioning milestone",
-      "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence."
+      "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence. The March 2029 line-project completion target is not facility commissioning."
     },
     {
       "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current network/electrical/liquid-cooling table",
       "reason": "The first 50 displayed low-voltage dry-type, medium-voltage dry-type and liquid-immersed basic-model rows and all 96 current ENERGY STAR Large Network Equipment entries are complete. Medium-voltage rows 51-100 remain inaccessible through a stable pagination boundary in this environment. Continue only through a verified non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount completed pages or network certifications."
     },
     {
-      "inventory": "EPA ENERGY STAR Certified Data Centers historical most-recent-label partitions",
-      "reason": "The current registry contains 204 facilities whose most recent label year is 2025 or earlier. They are outside the selected 2026 partition and require separate lifecycle review before any historical facility import; no stale certification is promoted to current operation."
+      "inventory": "Caterpillar Electric Power product tables and ratings guides",
+      "reason": "Current official terms prohibit extraction for database creation and copying, republication or distribution without written consent. No Caterpillar product facts or bytes were imported."
+    },
+    {
+      "inventory": "Doosan Portable Power generator tables",
+      "reason": "Current official terms restrict stored, reproduced, republished or distributed website content to narrow personal-use exceptions. No Doosan product facts or bytes were imported."
     }
   ],
   "quarantined": [
@@ -222,6 +282,21 @@
     "All 133 facilities whose most recent label year is 2026 in the complete 337-entry ENERGY STAR Certified Data Centers registry are processed; the 2026 partition is exhausted.",
     "EPA intentionally reports only state geography for certified data centers. No locality, address or coordinate is inferred from facility-name text, and address-like names remain unparsed identifiers.",
     "The registry's total-floor-space column has no printed unit, so values remain observations and are not normalized to building_area_m2. Year constructed remains a year-only observation rather than a construction or commissioning date.",
-    "The 2026 issuer label supports operational status in the certification year but does not disclose exact certification date, commissioning date, operator, capacity, PUE, energy use or equipment deployment."
+    "The 2026 issuer label supports operational status in the certification year but does not disclose exact certification date, commissioning date, operator, capacity, PUE, energy use or equipment deployment.",
+    "All 50 facilities whose most recent label year is 2025 are processed with current lifecycle status unknown; the certification supports operation only in its printed label year.",
+    "The NTT reuse hold applies to the NTT portfolio source. Two 2025 rows and four 2023-2024 rows naming NTT as owner use only independent EPA issuer-registry evidence; no NTT source facts or bytes are imported.",
+    "All 23 facilities whose most recent label year is 2024 and all 31 whose most recent label year is 2023 are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
+    "The certified-data-center parser validates construction year against each row's own most-recent certification year, so selecting an older partition does not incorrectly reject newer rows elsewhere in the complete registry.",
+    "All 16 facilities whose most recent label year is 2019, nine from 2020, 20 from 2021 and nine from 2022 are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
+    "The NTT reuse hold applies to the NTT portfolio source. The one 2019-2022 row naming NTT as owner uses only independent EPA issuer-registry evidence; no NTT source facts or bytes are imported.",
+    "All 46 facilities in the 2010-2018 tail are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
+    "All 337 entries in the captured ENERGY STAR Certified Data Centers registry are processed across exact annual partitions from 2010 through 2026; the captured inventory is exhausted and must not be recounted.",
+    "FIN04A Phase 2 permit 286-2025-384 and the FIN04A Phase 3, FIN04B modification and FIN04C Phase 2 permit observations remain campus-level evidence until official party and phase cross-references support child identities.",
+    "FIN04 permit areas remain source observations and are not normalized as campus or data-hall area.",
+    "SWE04 1,200 MW is planned combustion fuel input for backup plant, not electrical output, grid capacity or IT capacity.",
+    "SWE04 130 kV line construction and heat-reuse development agreement are planning observations; no facility commissioning date, delivered heat or contracted heat quantity is inferred.",
+    "All 22 populated Volvo Penta model/frequency rows across the selected current D8, D13 and D16 baseline tables are processed; blank TAD1640GE cells remain excluded.",
+    "All 22 populated Volvo Penta Stage IIIA/Tier 3 model/frequency rows are processed: six D8, ten D13 and six D16. D13 60 Hz-only and D16 50 Hz-only columns remain sparse; printed N/A cells are not configurations.",
+    "Volvo Penta prime electrical kW/kVA, standby electrical kW/kVA and engine mechanical kWm remain distinct; fuel/emissions labels are OEM observations and no alternator, voltage, complete genset BOM, issuer certification or deployment is inferred."
   ]
 }
