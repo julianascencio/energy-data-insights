@@ -176,6 +176,14 @@
       "enriched_records": 0,
       "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
       "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2019, 2020, 2021 and 2022 most-recent-certification partitions contain 16, nine, 20 and nine exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2010 through 2018 complete tail",
+      "processed_offset": 46,
+      "accepted_records": 46,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The 2010-2018 tail contains 46 exact facility identities and exhausts the captured inventory."
     }
   ],
   "deferred": [
@@ -190,10 +198,6 @@
     {
       "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current network/electrical/liquid-cooling table",
       "reason": "The first 50 displayed low-voltage dry-type, medium-voltage dry-type and liquid-immersed basic-model rows and all 96 current ENERGY STAR Large Network Equipment entries are complete. Medium-voltage rows 51-100 remain inaccessible through a stable pagination boundary in this environment. Continue only through a verified non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount completed pages or network certifications."
-    },
-    {
-      "inventory": "EPA ENERGY STAR Certified Data Centers 2010-2018 most-recent-label partitions",
-      "reason": "The current registry contains 46 facilities whose most recent label year is 2010 through 2018. They remain deferred for separate lifecycle review; no stale certification is promoted to current operation."
     }
   ],
   "quarantined": [
@@ -252,6 +256,8 @@
     "All 23 facilities whose most recent label year is 2024 and all 31 whose most recent label year is 2023 are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
     "The certified-data-center parser validates construction year against each row's own most-recent certification year, so selecting an older partition does not incorrectly reject newer rows elsewhere in the complete registry.",
     "All 16 facilities whose most recent label year is 2019, nine from 2020, 20 from 2021 and nine from 2022 are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
-    "The NTT reuse hold applies to the NTT portfolio source. The one 2019-2022 row naming NTT as owner uses only independent EPA issuer-registry evidence; no NTT source facts or bytes are imported."
+    "The NTT reuse hold applies to the NTT portfolio source. The one 2019-2022 row naming NTT as owner uses only independent EPA issuer-registry evidence; no NTT source facts or bytes are imported.",
+    "All 46 facilities in the 2010-2018 tail are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
+    "All 337 entries in the captured ENERGY STAR Certified Data Centers registry are processed across exact annual partitions from 2010 through 2026; the captured inventory is exhausted and must not be recounted."
   ]
 }

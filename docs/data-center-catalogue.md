@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 474 project records across 36 countries:
-357 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
+The current continuation branch has 520 project records across 36 countries:
+403 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -37,19 +37,20 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and
-all 54 from 2019 through 2022 in EPA's complete 337-entry ENERGY STAR Certified
-Data Centers registry. Each remains an issuer-verified facility identity. The
-2019-2025 partitions retain current
+all 54 from 2019 through 2022 and all 46 from 2010 through 2018 in EPA's
+complete 337-entry ENERGY STAR Certified Data Centers registry. The registry is
+fully processed. Each remains an issuer-verified facility identity. The
+2010-2025 partitions retain current
 lifecycle as unknown because an earlier certification is not proof of current
 operation. EPA
 intentionally exposes only the state for security, so locality, address and
 coordinates remain null even when address-like text appears inside the exact
 public facility name. The source's unlabeled floor-space value and year-only
 construction value remain bounded observations; neither is converted to square
-metres or promoted to an event date. Owner and all 25 printed property-manager
+metres or promoted to an event date. Owner and all 42 printed property-manager
 relationships are retained, while operator, capacity, PUE and equipment remain
-unknown. The remaining 46 entries with most recent labels from 2010 through
-2018 remain deferred for separate lifecycle review.
+unknown. No registry entry remains unprocessed; future work should use later
+issuer updates or independent planning, utility and lifecycle evidence.
 
 ## Data Center Equipment
 

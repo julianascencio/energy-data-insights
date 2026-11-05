@@ -5,8 +5,8 @@ canonical JSONL under `records/projects` and `records/equipment`, a source regis
 field-level evidence, stable UUIDs and deterministic typed Parquet snapshots.
 No network request occurs during validation, export or documentation builds.
 
-The current continuation branch contains **474 project records in 36 countries**:
-**357 facilities, three phases and 114 explicitly labelled campus aggregates**,
+The current continuation branch contains **520 project records in 36 countries**:
+**403 facilities, three phases and 114 explicitly labelled campus aggregates**,
 from 13 operators. It has **2,633 exact equipment records from 70 OEMs**.
 Merged `main` at `76179409` contains **316 projects and 2,633 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
@@ -96,6 +96,7 @@ uv run python scripts/build_data_center_energy_star_certified_facilities_batch.p
 uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2021 --certification-year 2021
 uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2020 --certification-year 2020
 uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2019 --certification-year 2019
+uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py captured-energy-star-certified-data-centers.html staged-energy-star-facilities-2018 --certification-year 2018
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -113,7 +114,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-05-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-05-decisions.jsonl),
-[executed validation](research/2026-11-05T1520-validation.json), and
+[executed validation](research/2026-11-05T1620-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
