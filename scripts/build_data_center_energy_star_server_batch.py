@@ -65,6 +65,12 @@ PARTNER_BATCHES = {
         "expected_count": 49,
         "retrieved_at": "2026-11-05T02:20:00Z",
     },
+    "lenovo_energy_star": {
+        "partner": "Lenovo Group Limited",
+        "manufacturer": "Lenovo",
+        "expected_count": 45,
+        "retrieved_at": "2026-11-05T03:20:00Z",
+    },
 }
 
 CONFIGURATION_LABELS = (
