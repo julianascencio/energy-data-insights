@@ -7519,3 +7519,27 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Public consultation: Hibri
 **Role:** data_source. Dated procedure and proposed capacities only; no commissioning or current census inference.
 
 **Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### epe_siga_rio_grande_do_norte_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Rio Grande do Norte: complete317-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Rio Grande do Norte full wind partition317IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### windey_product_cases_20261105
+
+Windey Energy Technology Group (n.d.). **Windey wind turbine manufacturing: complete four-image product and case presentation**. [Source](https://windeyenergy.com/en/product_show?id=19)
+
+**Role:** data_source. Exact named OEM model and explicit rating only; detailed geometry/configuration unknown; no independent performance validation.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### windey_saudi_60hz_20260115
+
+Windey Energy Technology Group (2026). **Windey first turbine start-up in Saudi Arabia: WD200-7700 for 60Hz**. [Source](https://windeyenergy.com/en/news_show?id=210)
+
+**Role:** data_source. Exact named OEM model and explicit rating only; detailed geometry/configuration unknown; no independent performance validation.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.

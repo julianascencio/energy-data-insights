@@ -356,5 +356,20 @@ test("SIGA preserves dated categories, unknowns and zeros without summing capaci
     original:{sigufprincipal:"BA"},normalized_power:{authorized_mw:0,inspected_mw:null,physical_guarantee_mw:13.4}};
   const row={entity_type:"projects",sources:["epe"],extensions_json:JSON.stringify({epe_siga_snapshots:[observation,observation]})};
   assert.deepEqual(windSigaSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
-    {projects:1,snapshots:1,withoutEvidence:2,dates:["2026-01-13"],states:["BA"],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
+    {projects:1,snapshots:1,withoutEvidence:2,dates:["2026-01-13"],states:["BA"],partitions:[{state:"BA",date:"2026-01-13",projects:1,observations:1}],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
+});
+
+test("SIGA separates dated state coverage and deduplicates project counts", async () => {
+  const {windSigaSummary}=await import("../../docs/_static/database-core.mjs");
+  const make=(id,state,date,objectId)=>({record_id:id,entity_type:"projects",sources:["epe"],
+    extensions_json:JSON.stringify({epe_siga_snapshots:[{source_id:"epe",source_sha256:"hash",object_id:objectId,
+      observation_date:date,original:{sigufprincipal:state},normalized_power:{authorized_mw:0}}]})});
+  const result=windSigaSummary([make("a","RN","2026-01-13",1),make("b","RN","2026-01-13",2),
+    make("a","RN","2026-02-01",3),make("c",null,"2026-01-13",4)]);
+  assert.deepEqual(result.partitions,[
+    {state:"RN",date:"2026-01-13",projects:2,observations:2},
+    {state:"RN",date:"2026-02-01",projects:1,observations:1},
+    {state:null,date:"2026-01-13",projects:1,observations:1}]);
+  assert.equal(result.categories.authorized_mw.zero,4);
+  assert.equal(result.categories.inspected_mw.unknown,4);
 });

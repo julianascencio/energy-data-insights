@@ -1,72 +1,63 @@
 {
-  "batch": "2026-11-05-1807",
-  "iteration_parent": "cb71b9a9fde68995e5a7983ab4049c9fde1c4b66",
+  "batch": "2026-11-05-1935",
+  "iteration_parent": "600db672269079ab8a92224ad5de3cf80e8206bf",
   "local": {
-    "python": "357focused Wind/Hydropower/reference tests passed, including25newEPE tests",
-    "viewer": "31Node tests passed",
-    "quality": "Ruff check/format1071, full repository ty with explicit .venv Python, hygiene, citations and diff passed",
-    "catalogue": "68projects and2equipment enriched;3projects4equipment16plannedturbines added;22346prior records unchanged;398prior sources unchanged,6sources added. Prior scalar fields and creation timestamps preserved.",
-    "aggregation": "All6eligible MW summaries and unknown counts unchanged; excluded project counts increase3.",
-    "snapshots": "Two7file builds byte-identical; allParquetcolumns ZSTD",
-    "docs": "Strict Wind-gallery Sphinx passed after citation-role fix; Documentation check passed: 662 HTML pages; local links and assets resolve.",
-    "visual": "New dated SIGA completeness chart rendered and inspected",
-    "followup": "25EPE tests rerun after explicitly typed fixture helper; passed"
+    "python": "403 focused Wind/Hydropower/reference tests passed after incorporating new main, including29 EPE tests",
+    "viewer": "32 Node viewer/Hydro tests passed",
+    "quality": "Ruff check; format1136 files; full repository ty with workspace interpreter; repository hygiene5682 files; citations; diff check passed",
+    "catalogue": "107projects enriched;3exact OEM models added with partial configurations;22332prior records unchanged;404prior sources unchanged,3added. Prior IDs,scalarfields andcreationtimestamps preserved; PV/BESS/DataCenter/Hydro catalogue paths unchanged.",
+    "aggregation": "All6capacity summaries,including eligibleMW,unknown andexcluded counts unchanged",
+    "snapshots": "Two fresh7file builds after new main are byte-identical and match earlier validated snapshots; allParquetcolumns ZSTD",
+    "docs": "Strict Wind-gallery Sphinx passed after incorporating new main; Documentation check passed: 690 HTML pages; local links and assets resolve.",
+    "visual": "Dated-state coverage chart rendered and inspected"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "6539dde066535462733bd64996f3539d61bd3b49fca6b9b33bb67f9388771c54",
-    "projects.parquet": "2b8c401e55ead0f6694af0806e7bea8512fb6d810533dab43ea26b4ef5c960dc",
+    "manifest.json": "0d3e410eb9b9414b7bac1cd306c2d4ff9a6db467343b5141536c4903a3535c0a",
+    "projects.parquet": "68bb651bcb2f045b8f65dee1d4de9cfab8bd21c1f34226f0f02a0dadca86883b",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "ab4aeb764eb3953cc5aafe68aed9af0fe703607688650fb1e6c6f6e44763649d",
+    "sources.json": "2e98901372bb5e74d40698cd54420b7fe15b1631be37e174e4087d5930c2a0f8",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "ea8f89178aa395bc34890e09c61ce8e3cd326091ed3f39b667dc5b02c7c934f4"
+    "equipment.parquet": "975c7dbf33c21cbd320739d6857c58a0bbe094dcdc9953fda3823ec3385f4d4d"
   },
   "main_comparison": {
     "main": {
       "curves": 2,
-      "equipment": 450,
-      "projects": 8290,
-      "turbines": 13633
+      "equipment": 486,
+      "projects": 8294,
+      "turbines": 13657
     },
     "branch": {
       "projects": 8294,
       "turbines": 13657,
-      "equipment": 486,
+      "equipment": 489,
       "curves": 2
     },
     "added": {
-      "equipment": 36,
-      "turbines": 24,
-      "projects": 4
+      "equipment": 3
     },
     "enriched": {
-      "equipment": 16,
-      "projects": 342
+      "projects": 107
     },
-    "main_manufacturers": 57,
-    "branch_manufacturers": 63
+    "main_manufacturers": 63,
+    "branch_manufacturers": 64
   },
   "remote_ci": {
-    "previous_head": "cb71b9a9fde68995e5a7983ab4049c9fde1c4b66",
+    "previous_head": "c5f176b411a774a2d64da12221b6704ed5c49398",
     "previous_result": "Python3.12/3.13 and Documentation passed",
-    "current_result": "Corrected commit pending publication; final result reported on PR",
-    "initial_published_commit": "1524156e1e8482de56777daba9e544077920c746",
-    "initial_python_run": 42085979235,
-    "initial_result": "Fulltype check failed in test helper; corrected in followup"
+    "current_result": "New PR pending after external merge; final result reported on PR"
   },
   "resolved_attempts": [
-    "New equipment required capacity_scope; added before successful catalogue validation",
-    "Planned turbine registry IDs changed to procedure-qualified turbine IDs; repeated parent procedure IDs belong in observations",
-    "Unknown fleet completeness omitted instead of invalid enum",
-    "Preservation comparison separates increased exclusion counts from unchanged eligible MW",
-    "Unsupported MyST cite role replaced by source links; strict rebuild passed",
-    "Ruff long literals and list expansion fixed before final test run",
-    "Initial published commit1524156 failed remote fullty on heterogeneous test-helper kwargs. Explicit typed helper arguments now pass fullty with .venv interpreter and25affected tests. An initial local fullty command selected the unrelated system environment; explicit --python .venv/bin/python resolved that environment mismatch. No catalogue/adapter/snapshot changes."
+    "Ruff long chart annotation split before successful checks",
+    "Large original Windey image3 transfers timed out; completed via query-string download with checksum",
+    "HTML extraction attempted with unavailable system bs4; used standard-library HTMLParser",
+    "Immutable snapshot writer rejected reused output directory; fresh post-main directories built successfully"
   ],
   "not_executed": [
     "Full localPython suite",
     "Full localgallery",
     "Browser interaction",
     "Package builds"
-  ]
+  ],
+  "publication_transition": "PR171 merged externally; changed batch cherry-picked onto current main without conflicts"
 }

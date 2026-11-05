@@ -395,7 +395,7 @@ export function windOnsGeography(rows) {
 export function windSigaSummary(rows) {
   const result = {projects:0, snapshots:0, withoutEvidence:0, dates:[], states:[],
     categories:{authorized_mw:{known:0,unknown:0,zero:0},inspected_mw:{known:0,unknown:0,zero:0},physical_guarantee_mw:{known:0,unknown:0,zero:0}}};
-  const dates=new Set(), states=new Set();
+  const dates=new Set(), states=new Set(), partitions=new Map();
   for (const row of rows.filter(r=>r.entity_type === "projects")) {
     let ext;
     try {ext=JSON.parse(row.extensions_json || "{}");} catch {ext={};}
@@ -410,6 +410,11 @@ export function windSigaSummary(rows) {
       if (seen.has(key)) continue;
       seen.add(key); result.snapshots++; dates.add(s.observation_date);
       if (s.original?.sigufprincipal) states.add(s.original.sigufprincipal);
+      const partitionKey=JSON.stringify([s.original?.sigufprincipal || null,s.observation_date]);
+      if (!partitions.has(partitionKey)) partitions.set(partitionKey, {
+        state:s.original?.sigufprincipal || null, date:s.observation_date, projects:new Set(), observations:0});
+      const partition=partitions.get(partitionKey);
+      partition.projects.add(row.record_id); partition.observations++;
       for (const [field,counts] of Object.entries(result.categories)) {
         const value=s.normalized_power[field];
         if (typeof value !== "number" || !Number.isFinite(value) || value < 0) counts.unknown++;
@@ -418,5 +423,7 @@ export function windSigaSummary(rows) {
     }
   }
   result.dates=[...dates].sort(); result.states=[...states].sort();
+  result.partitions=[...partitions.values()].map(p=>({...p,projects:p.projects.size}))
+    .sort((a,b)=>JSON.stringify([a.state,a.date]).localeCompare(JSON.stringify([b.state,b.date])));
   return result;
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T18:23:25Z",
+  "updated_at": "2026-11-05T19:54:33Z",
   "branch": "research/wind-20261105-1235",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-1235.lock; acquire before any branch write",
   "queue": [
@@ -285,7 +285,7 @@
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
       "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-      "next_task": "EPE-hostedSIGA Bahia381complete68enriched313held. NextRNfullIDpartition; source remains2026-01-13dated. SavedONSfirst20heldcrosswalk reviewed,0resolved; historical catalogue/phase maps still needed. No completedONSrescan.",
+      "next_task": "Next complete EPE CE partition with stable before/after IDs. BA381 and RN317 complete, respectively313 and210 identity holds; savedONS first20 crosswalk remains unresolved. No completedONS rescan.",
       "independent_source": {
         "source": "ONS daily capacity generator CSV",
         "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
@@ -307,15 +307,31 @@
       "epe_independent_source": {
         "url": "https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0",
         "dataset_date": "2026-01-13",
-        "completed_where": "sigtipogeracao='EOL' AND sigufprincipal='BA'",
-        "reviewed": 381,
-        "enriched": 68,
-        "held": 313,
-        "ledger": "2026-11-05-1807-epe-review.json",
-        "next_where": "sigtipogeracao='EOL' AND sigufprincipal='RN'",
-        "next_task": "Fresh ID inventory then complete bounded RN pages; record source dataset date and require stable before/after IDs. Bahia exhausted; reconcile313heldidentities without rescan."
+        "completed_where": "sigtipogeracao='EOL' AND sigufprincipal='RN'",
+        "reviewed": 317,
+        "enriched": 107,
+        "held": 210,
+        "ledger": "2026-11-05-1935-epe-review.json",
+        "next_where": "sigtipogeracao='EOL' AND sigufprincipal='CE'",
+        "next_task": "Fresh CE ID inventory, all bounded objectID pages, second ID inventory; require exact coverage and common source dataset date. BA/RN complete; no rescan."
       },
-      "identity_review": "2026-11-05-1807-identity-review.json"
+      "identity_review": "2026-11-05-1807-identity-review.json",
+      "epe_completed_partitions": [
+        {
+          "state": "BA",
+          "selected": 381,
+          "enriched": 68,
+          "held": 313,
+          "ledger": "2026-11-05-1807-epe-review.json"
+        },
+        {
+          "state": "RN",
+          "selected": 317,
+          "enriched": 107,
+          "held": 210,
+          "ledger": "2026-11-05-1935-epe-review.json"
+        }
+      ]
     },
     {
       "rank": 5,
@@ -376,7 +392,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "Six conflict IDs followed up1510; do not repeat sameindexqueries. Obtain U136 STC-180901 Rev0 design annex and explicit KS WT-1902-00-170356 to UL TC-190502 crosswalk; U151 TC-200103 page2/STC-200109 and KS WT-2201-00-190356 crosswalk. Resolve E138 certificate WT-2602-01-221439 E2(KSNARA)/E3(KNREC) identity before geometry. SWT3.2/GW109 originals and V162gearbox remain held. Then32prior configuration/revision holds; sevenFGWHTq originalDNV Mode0 crosswalks. Goldwind Americas2.5MW English3columns and Spanish2columns now complete: do not rescan. Next corrected area-definition table and GW10910.5static/10.2unspecified mode/revision crosswalk; KS107.5m remains held. Goldwind1.5MW English4columns and2.5MW digital-English2columns complete:4new2enriched; no rescan. Survival temperature semantics explicit in digital English, existing GW109 area/ratedspeed conflicts unresolved.",
+      "next_task": "Six conflict IDs followed up1510; do not repeat sameindexqueries. Obtain U136 STC-180901 Rev0 design annex and explicit KS WT-1902-00-170356 to UL TC-190502 crosswalk; U151 TC-200103 page2/STC-200109 and KS WT-2201-00-190356 crosswalk. Resolve E138 certificate WT-2602-01-221439 E2(KSNARA)/E3(KNREC) identity before geometry. SWT3.2/GW109 originals and V162gearbox remain held. Then32prior configuration/revision holds; sevenFGWHTq originalDNV Mode0 crosswalks. Goldwind Americas2.5MW English3columns and Spanish2columns now complete: do not rescan. Next corrected area-definition table and GW10910.5static/10.2unspecified mode/revision crosswalk; KS107.5m remains held. Goldwind1.5MW English4columns and2.5MW digital-English2columns complete:4new2enriched; no rescan. Survival temperature semantics explicit in digital English, existing GW109 area/ratedspeed conflicts unresolved. Windey4product images/12casecards and3dated announcements reviewed:3exact models added, remaining identities held. Do not expand6platform ranges. Bachmann andDelta excluded by explicit terms; Ingeteam originalPDF links redirect to HTML.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -390,7 +406,13 @@
       "vestas_new_review": "2026-11-05-1235-fgw-review.json",
       "knrec_review": "2026-11-05-1435-knrec-review.json",
       "original_certificate_followup": "2026-11-05-1510-oem-review.json",
-      "latest_oem_review": "2026-11-05-1807-oem-review.json"
+      "latest_oem_review": "2026-11-05-1935-oem-review.json",
+      "next_exact_oem_batches": [
+        "Windey Xiangshan No.1 PhaseII official registry and parent-phase crosswalk; WD225-9000 original specification/certificate",
+        "Windey Saudi project official name/registry and WD200-7700 60Hz exact datasheet",
+        "AyshaI AfDB official project identifier and scope; no Saudi configuration equivalence",
+        "WD230-11500 original certificate/model table; explicit rating/geometry needed"
+      ]
     },
     {
       "rank": 6,
@@ -647,5 +669,11 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "Original ODRE bytes in research0735; new component PDF originals, replay evidence and final-main validation logs in research0935. Reacquire by source URL/checksum if missing; do not repeat completed partitions."
+  "validation_storage": "Original ODRE bytes in research0735; new component PDF originals, replay evidence and final-main validation logs in research0935. Reacquire by source URL/checksum if missing; do not repeat completed partitions.",
+  "publication_continuation": {
+    "branch": "research/wind-20261105-2005",
+    "base": "600db672269079ab8a92224ad5de3cf80e8206bf",
+    "previous_pr": 171,
+    "reason": "Merged externally during this run"
+  }
 }

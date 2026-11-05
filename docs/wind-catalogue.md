@@ -1043,3 +1043,50 @@ Sources: [EPE SIGA layer](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hos
 [Salinas II notice](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29433) and
 [Salinas I notice](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29434).
 Full bibliographic metadata and stable source identifiers are in the reference catalogue.
+
+### Rio Grande do Norte continuation and bounded OEM review
+
+The complete **317-entry Rio Grande do Norte** EPE wind partition is now reviewed.
+The before/after ID inventories agree, and both response pages are complete.
+**107 existing projects** gain dated observations; **210 identities remain held**
+(200 missing or nonunique historical matches and 10 ID/name disagreements).
+The dataset date remains **2026-01-13**, distinct from retrieval on 2026-11-05.
+Authorized capacity, inspected capacity and physical guarantee remain separate
+observations. All six eligible capacity summaries are unchanged. Suspicious
+source operation dates, including Macau's 1900 date, stay in the original
+observations and are not promoted to commissioning milestones.
+
+The adapter now rejects a CEG revision change against prior EPE evidence even
+when the project has no scalar ANEEL identifier. A real two-row RN fixture tests
+separate capacity categories, reported zero and the suspicious date boundary.
+The shared viewer and deterministic gallery show distinct linked projects by
+state and dataset date, with unresolved identities and aggregation exclusions
+visible. This is selected evidence coverage, not a current operating census.
+
+Three exact Windey model records are added: **WD200-7700 (Saudi 60 Hz)**,
+**WD220-10000**, and **WD225-9000**. Their explicitly reported unit ratings are
+7.7 MW, 10 MW and 9,000 kW respectively. Detailed configurations are partial;
+rotor diameters are not inferred from model names. Twelve OEM case cards and
+two further announcements remain queued for project, revision or certificate
+crosswalks. The Saudi configuration is not assigned to the Ethiopian proposal.
+No numerical curves or independently validated performance are added.
+
+Bachmann's component tables and case study are excluded under its explicit
+prior-consent reuse terms. Delta's proposed PDF redirects to a terms-verification
+page with an internal-use restriction; the original PDF was not acquired.
+Ingeteam's two historical document links redirect to homepage HTML. These are
+recorded separately from authentication or HTTP download failures. Windey's
+large-image timeouts were resolved, with all four original image checksums saved
+in the review ledger. The equipment target was not met by inventing variants.
+
+This run adds **0 projects, 3 equipment records, 0 individual turbines and
+0 curves**, and enriches **107 projects**. Branch totals are **8,294 projects,
+489 equipment records, 13,657 turbines and 2 curves** across 59 countries and
+64 equipment-manufacturer labels. The next registry batch is the complete
+EPE **CE** partition; previously completed BA/RN and ONS partitions stay closed.
+
+Sources: [EPE SIGA layer](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0),
+[Windey product cases](https://windeyenergy.com/en/product_show?id=19),
+[Windey Saudi announcement](https://windeyenergy.com/en/news_show?id=210).
+Decisions and original-byte checksums are in
+`2026-11-05-1935-epe-review.json` and `2026-11-05-1935-oem-review.json`.

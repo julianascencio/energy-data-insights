@@ -179,3 +179,71 @@ def test_ceg_padding_only_not_different_revisions():
     other["ceg"] = "EOL.CV.BA.030283-0.2"
     rows, ledger = attach([*items, other], existing())
     assert not rows and len(ledger) == 2
+
+
+def test_later_snapshot_requires_same_ceg_even_without_external_ceg():
+    rows = existing()
+    rows[0]["external_ids_json"] = json.dumps(dict(wri_gppd="BRA0030283"))
+    first, _ = attach(parse(), rows)
+    later = parse()
+    later[0]["ceg"] = "EOL.CV.BA.030283-0.2"
+    later[0]["source_sha256"] = "later-sha"
+    enriched, ledger = reconcile(later, first, source_id="later", identity_source_id="wri", now=NOW)
+    assert not enriched
+    assert "revision disagreement" in ledger[0]["reason"]
+    assert json.loads(first[0]["extensions_json"])["epe_siga_snapshots"][0]["ceg"].endswith(".1")
+
+
+def test_later_dated_snapshot_retains_history_and_prior_capacity():
+    first, _ = attach(parse(), existing())
+    later = parse()
+    later[0].update(observation_date="2026-02-01", source_sha256="later-sha")
+    later[0]["normalized_power"]["authorized_mw"] = 40
+    enriched, ledger = reconcile(later, first, source_id="later", identity_source_id="wri", now=NOW)
+    assert ledger[0]["decision"] == "enriched"
+    observations = json.loads(enriched[0]["extensions_json"])["epe_siga_snapshots"]
+    assert [s["normalized_power"]["authorized_mw"] for s in observations] == [35.07, 40]
+    assert enriched[0]["installed_capacity_mw"] is None
+    assert enriched[0]["aggregation_role"] == "unresolved"
+
+
+def test_reject_dates_drifting_between_pages():
+    doc = json.loads(FIXTURE.read_text())
+    second = copy.deepcopy(doc)
+    second["features"][0]["attributes"].update(
+        objectid=69, codceg="EOL.CV.BA.030284-0.1", datgeracaoconjuntodados="2026-02-01"
+    )
+    pages = [json.dumps(d).encode() for d in [doc, second]]
+    with pytest.raises(ValueError, match="Mixed EPE dataset dates"):
+        parse_partition(
+            pages,
+            sha256=[hashlib.sha256(d).hexdigest() for d in pages],
+            expected_ids=[68, 69],
+            confirmed_ids=[69, 68],
+            state="BA",
+            retrieved_at=NOW,
+        )
+
+
+def test_rn_actual_fixture_retains_suspicious_date_without_promoting_lifecycle():
+    data = FIXTURE.with_name("rn_two.json").read_bytes()
+    candidates = parse_partition(
+        [data],
+        sha256=[hashlib.sha256(data).hexdigest()],
+        expected_ids=[6, 25],
+        confirmed_ids=[25, 6],
+        state="RN",
+        retrieved_at=NOW,
+    )
+    macau = next(c for c in candidates if c["object_id"] == 25)
+    assert macau["original"]["datentradaoperacao"] == "1900-01-03"
+    assert macau["normalized_power"]["physical_guarantee_mw"] == 0
+    assert macau["normalized_power"]["inspected_mw"] == 1.8
+    row = existing()[0]
+    row.update(name="Macau", external_ids_json=json.dumps({"wri_gppd": "BRA0028787"}))
+    enriched, decisions = attach([macau], [row])
+    assert decisions[0]["decision"] == "enriched"
+    assert enriched[0]["status"] == "unknown"
+    assert enriched[0]["installed_capacity_mw"] is None
+    assert enriched[0].get("commissioning_date") is None
+    assert enriched[0]["aggregation_role"] == "unresolved"

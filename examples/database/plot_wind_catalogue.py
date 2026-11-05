@@ -699,3 +699,36 @@ if siga_observations:
         fontsize=9,
     )
     fig.tight_layout()
+
+
+# Counts of linked projects by dated state partition, not a national inventory.
+if siga_observations:
+    state_projects: dict[tuple[str, str], set[str]] = {}
+    for row in rows:
+        if row["entity_type"] != "projects":
+            continue
+        for observation in json.loads(row.get("extensions_json") or "{}").get(
+            "epe_siga_snapshots", []
+        ):
+            key = (observation["original"]["sigufprincipal"], observation["observation_date"])
+            state_projects.setdefault(key, set()).add(row["record_id"])
+    keys = sorted(state_projects)
+    fig, ax = plt.subplots(figsize=(9, 3.5))
+    ax.barh(
+        [f"{state} · {date}" for state, date in keys],
+        [len(state_projects[k]) for k in keys],
+        color="#3d718e",
+    )
+    ax.set(
+        title="SIGA evidence linked to existing projects",
+        xlabel="Distinct linked projects per state and date",
+    )
+    ax.text(
+        0,
+        -0.32,
+        "Selected state partitions only; unmatched identities held. "
+        "No capacity eligibility change.",
+        transform=ax.transAxes,
+        fontsize=9,
+    )
+    fig.tight_layout()
