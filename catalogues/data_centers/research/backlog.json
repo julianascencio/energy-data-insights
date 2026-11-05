@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T06:20:00Z",
+  "updated_at": "2026-11-05T07:20:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -100,7 +100,8 @@
     "energy_star_altos_enterprise_server_certifications": 3,
     "energy_star_oracle_enterprise_server_certifications": 3,
     "energy_star_ace_enterprise_server_certifications": 1,
-    "doe_ccms_lvdt_basic_model_displayed_rows": 50
+    "doe_ccms_lvdt_basic_model_displayed_rows": 50,
+    "doe_ccms_mvdt_basic_model_displayed_rows": 50
   },
   "next_batches": [
     {
@@ -205,8 +206,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 1732,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, and the first 50 displayed current DOE CCMS low-voltage dry-type transformer basic-model rows complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
+      "offset": 1782,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type transformer basic-model rows and the first 50 displayed medium-voltage dry-type rows complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -238,7 +239,7 @@
         "ENERGY STAR Enterprise Servers New H3C Technology offset 9 is complete for dataset update 2026-11-04. All rows report three SERT tiers; four G7 rows omit only the low-end configuration ID, which remains absent while the low-end technical observations are preserved.",
         "The 476-row ENERGY STAR Enterprise Servers dataset update 2026-11-04 is exhausted across all 17 partner partitions. Residual offsets are IBM 9, Aivres/KAYTUS 8, ZTE 6, Altos 3, Oracle 3 and Ace Computers 1. Keep IBM S1014 and all KAYTUS/Altos/Ace missing tiers absent, and do not treat certification rows as deployments.",
         "ZTE certification 4654814 is labeled R5300 G5 but reports R5300 G6 as its high-end configuration identifier. Preserve both issuer observations and quarantine configuration-identity inference until a corrected issuer row or OEM cross-reference resolves the mismatch.",
-        "DOE CCMS low-voltage dry-type displayed rows 1-50 are complete for the 2026-10-23 public snapshot. Keep manufacturer-represented efficiency as an observation because the displayed table omits the load/test condition, never convert kVA to active kW and do not treat listing as a DOE compliance determination. Continue only with a stable non-overlapping page, filter or exact basic-model inventory."
+        "DOE CCMS low-voltage and medium-voltage dry-type displayed rows 1-50 are complete for the 2026-10-23 public snapshot. Keep manufacturer-represented efficiency as an observation because the displayed tables omit the load/test condition, never convert kVA to active kW, keep BIL group rating distinct from winding voltage and do not treat listing as a DOE compliance determination. Continue only with a stable non-overlapping page, filter or exact basic-model inventory."
       ]
     },
     {
@@ -409,9 +410,9 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "doe-ccms-eaton-transformers-20261105T062000Z",
+    "run_id": "doe-ccms-medium-voltage-transformers-20261105T072000Z",
     "report": "2026-11-05-report.md",
-    "validation": "2026-11-05T0620-validation.json",
+    "validation": "2026-11-05T0720-validation.json",
     "added_projects": 0,
     "enriched_projects": 0,
     "added_equipment": 50,

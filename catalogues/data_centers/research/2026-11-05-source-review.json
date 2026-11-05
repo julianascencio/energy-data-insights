@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T06:20:00Z",
+  "retrieved_at": "2026-11-05T07:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -104,6 +104,14 @@
       "enriched_records": 0,
       "reuse": "Public U.S. Department of Energy certification database; exact manufacturer-represented brand, basic model, phase count, kVA and represented-efficiency facts normalized without redistributing the source page. Listing is not treated as a DOE compliance determination.",
       "originals": "The official page reader exposed every selected displayed row from the public 2026-10-23 snapshot. A direct original-byte request returned HTTP 403, so no source checksum is claimed; this is an access limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "U.S. DOE CCMS medium-voltage dry-type transformer basic-model displayed rows 1-50",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. Department of Energy certification database; exact manufacturer-represented brand, basic model, phase count, kVA, BIL group rating and represented-efficiency facts normalized without redistributing the source page. Listing is not treated as a DOE compliance determination.",
+      "originals": "The official page reader exposed every selected displayed row from the public 2026-10-23 snapshot. A direct request to the public MCP endpoint returned HTTP 403 in this execution environment, so no source checksum is claimed; this is an access limitation, not a reuse prohibition."
     }
   ],
   "deferred": [
@@ -117,7 +125,7 @@
     },
     {
       "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current electrical/liquid-cooling table",
-      "reason": "The first 50 displayed low-voltage dry-type basic-model rows are complete. Continue only through a stable non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount the displayed page."
+      "reason": "The first 50 displayed low-voltage and medium-voltage dry-type basic-model rows are complete. Continue only through a stable non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount either displayed page."
     }
   ],
   "quarantined": [

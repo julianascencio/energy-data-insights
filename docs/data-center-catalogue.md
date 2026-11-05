@@ -302,6 +302,13 @@ Exact basic-model identity, phase count, apparent kVA and represented efficiency
 remain issuer-registry evidence. The displayed page omits the efficiency load/test
 condition, so no generic efficiency scalar is normalized; kVA is not converted to
 active kW and listing is not treated as a DOE compliance determination.
+The independent medium-voltage dry-type continuation adds all 50 rows displayed
+on its current DOE page: two Hitachi, two Hitran Corporation, four Howard
+Industries, 23 JEI and 19 MGM basic models. Exact apparent kVA, phase count,
+represented efficiency and BIL group rating remain bounded observations. BIL is
+not treated as winding voltage, represented efficiency remains unnormalized
+without a load/test condition, and no listing is promoted to a deployment or DOE
+compliance determination.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -471,4 +478,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T0620-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T0720-validation.json).
