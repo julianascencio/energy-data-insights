@@ -562,7 +562,7 @@ Taiwan private solar inventory candidates retain `company_native`,
 The source's merged company/name/year cells are expanded with physical origins;
 repeated blocks are never summed or merged automatically. Native solar labels do
 not prove every row's PV technology, and no company-role, AC/DC, exact-date or
-current-status mapping is automatic. The first100 of787 rows remain candidates.
+current-status mapping is automatic. Physical staging cursors do not count accepted plants; dated manual reviews distinguish candidates, phase associations and accepted whole projects.
 
 SWELECT Nexora exact-model records use base STC rows only. Rear-gain scenarios
 are contextual, not extra models or STC efficiency. NOCT, bifaciality and weight
@@ -570,3 +570,14 @@ tolerances, absolute-watt power binning and measurement uncertainty remain in
 `extensions_json`. Generic 35A fuse ratings do not populate a maximum-fuse scalar.
 Exact applicable Rev04 warranty scope and commencement conditions accompany
 12/30-year durations and 1% first-year / 0.4% subsequent annual degradation terms.
+
+The 5 November Daliao depot record uses explicit primary photovoltaic/licence
+evidence and one regulator plant row. Its ROC103/104 commercial-year disagreement
+remains qualified context; neither commissioning date nor current status is inferred.
+Registry company associations do not automatically populate owners/operators.
+
+TBB RiiO Sun II and Hoymiles MIT fields retain PV versus battery input, per-tracker
+versus aggregate current, inverter versus charger efficiency and apparent VA versus
+active W. Explicit maximum W is not promoted to continuous rated active power.
+Unlabelled dimension axes, bounds, optional communications and source-specific
+transfer times remain in extensions. Published standards are OEM claims.

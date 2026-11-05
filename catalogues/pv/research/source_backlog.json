@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-04T23:20:16.613822+00:00",
+  "updated_at": "2026-11-05T00:12:01.350221+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
   "selection_note": "2258UTC: UTC-hourmod6=4 secondaryNorthAmerica priority; non-US usefulfield gaps and source quality took precedence.198historicalChineseowner/operatorenrichments,1Taiwanphaseidentityenrichment,8exactcombiners. No full-download seed rotation;unchanged/notdue seed queues preserved.",
-  "next_highest_value_source": "Taiwan private rows13–22: resolve Daliao ROC103/104 commercial-year conflict; GEMsoleowner/operator afterL100000803047,1688eligible; nextOEMHoymilesMIT4000/4500/5000-8T exact regional table",
+  "next_highest_value_source": "Taiwanrows14–22 andDaliaoROCyearlicencecheck;GEMcorporatequeueafterL100000803409,1514remaining;newSouthAfricanIPPportalonlyafterrightsanddataverification",
   "sources": [
     {
       "id": "uk_repd",
@@ -11989,6 +11989,302 @@
       "result": "One exact-model HTMLtable screened;0accepted. Published narrative2026-07Rev01 and linkedfilenameV2608 mismatch; linkedPDF404. Earlier zero-byte localcapture wasENOSPC, recovered by fresh request; not a sourceaccess denial.",
       "retry_condition": "Check saved release/checksum and applicable terms before resuming; unchanged sources skipped",
       "next_action": "Resolve HTML2026-07Rev01 versus linked filenameV2608; obtain working OEM PDF before accepting model specifications"
+    },
+    {
+      "id": "gem_corporate_next150_20261105T0002",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/download-data/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/download-data/",
+      "format": "XLSX/pinned original workbook",
+      "licence_assessment": "CCBY4,whole-locationTZ/WKSL exclusions",
+      "publication_cadence": "Release-based orunstated;metadata/checksumfirst,not hourlyfullfile",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T00:03:19.988272+00:00",
+      "last_attempt": "2026-11-05T00:12:01.350221+00:00",
+      "sha256": "1f8e3ad91f8a01781410b94743950ac2e12282d4586ad98f81351c2af5a3e516",
+      "etag": null,
+      "access_error": null,
+      "reviewed": 150,
+      "accepted": 150,
+      "rejected": 0,
+      "fields_offered": [
+        "ownership/operator/phaseevidence"
+      ],
+      "mapping": "Existingchecksum-aware reader and importer/upsert API;explicitdatedfield/source locators;nofuzzymerge",
+      "processed_cursor": {
+        "after": "L100000803047",
+        "next": "L100000803409",
+        "remaining_corporate_filtered": 1514,
+        "operator_only_remaining": 3394
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "result": "150existingprojects enriched with corporate Owner/Operator and complete-phase evidence",
+      "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
+      "next_action": "Resume strict corporate-party queue afterL100000803409; preserve wider operator-only queue",
+      "next_due_check": "2026-11-06T00:00:00Z"
+    },
+    {
+      "id": "taiwan_private_partition_20261105T0002",
+      "country": "TWN",
+      "entity": "projects",
+      "source_url": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "endpoint": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "format": "HTML/publicfive-columnPVtable",
+      "licence_assessment": "EAOGDLTaiwan1.0;CTCIboundedfactualprojectevidence only",
+      "publication_cadence": "Release-based orunstated;metadata/checksumfirst,not hourlyfullfile",
+      "last_release": "Statistics2025-12-31/content2026-01-26",
+      "last_retrieval": "2026-11-05T00:03:15.941200+00:00",
+      "last_attempt": "2026-11-05T00:12:01.350221+00:00",
+      "sha256": "d44f89f7148fcc916e03711153d3a79814f9742dd11cfaf9547ce2f7eb7460b9",
+      "etag": null,
+      "access_error": null,
+      "reviewed": 110,
+      "accepted": 1,
+      "rejected": 0,
+      "fields_offered": [
+        "PVidentity",
+        "installedpowerunknownbasis",
+        "nativeyear"
+      ],
+      "mapping": "Existingchecksum-aware reader and importer/upsert API;explicitdatedfield/source locators;nofuzzymerge",
+      "processed_cursor": {
+        "staging_after_row": 200,
+        "remaining_unstaged": 587,
+        "new_staged_rows": 100,
+        "new_partition_accepted": 0,
+        "identity_review_next_rows": [
+          14,
+          22
+        ]
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "result": "1Daliaowholeplant accepted;commissioningyearROC103/104 conflict remainsnull.100newrows staged,0plantsacceptedfromnewpartition",
+      "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
+      "next_action": "Independentlyreconcile rows14–22; resolveDaliaoyearwithdatedlicence,do notchooseone",
+      "next_due_check": "2026-11-06T00:00:00Z",
+      "manually_reviewed_rows": 10,
+      "new_staged_rows": 100,
+      "reviewed_count_scope": "110native rows:10manualidentityreviews plus100checksum/schema-stagedcandidates;stagingisnotcanonicalacceptance"
+    },
+    {
+      "id": "tbb_riio_hv_20261105T0002",
+      "country": null,
+      "entity": "equipment",
+      "source_url": "https://www.tbbrenewable.com/getFile/upload%2F2026%2F03%2F18%2FRiiO_Sun_II_Hybrid_Inverter_230Vac_en_V3.7.pdf",
+      "endpoint": "https://www.tbbrenewable.com/getFile/upload%2F2026%2F03%2F18%2FRiiO_Sun_II_Hybrid_Inverter_230Vac_en_V3.7.pdf",
+      "format": "OEMPDF",
+      "licence_assessment": "Copyrightretained;individualfactualspecificationonly",
+      "publication_cadence": "Release-based orunstated;metadata/checksumfirst,not hourlyfullfile",
+      "last_release": "LinkedfilenameV3.7;printedrevision/dateunstated",
+      "last_retrieval": "2026-11-05T00:04:42.975734+00:00",
+      "last_attempt": "2026-11-05T00:12:01.350221+00:00",
+      "sha256": "449dfaa6453e67999e62d5a0927a7b3e9ebf4b9d74e1c3e4b39d287a144d7602",
+      "etag": null,
+      "access_error": null,
+      "reviewed": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "fields_offered": [
+        "exactmodel",
+        "PVlimits",
+        "thermal",
+        "mechanical",
+        "electricalconditions"
+      ],
+      "mapping": "Existingchecksum-aware reader and importer/upsert API;explicitdatedfield/source locators;nofuzzymerge",
+      "processed_cursor": {
+        "table": "physicalpage2",
+        "exhausted": true
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "result": "4exactinverters accepted;currentOEMlistingV3.7filename;printedrevisionunstated",
+      "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
+      "next_action": "Selectedtableexhausted;seekdifferentPVcontroller/trackersource",
+      "next_due_check": "2026-11-06T00:00:00Z"
+    },
+    {
+      "id": "tbb_riio_lv_20261105T0002",
+      "country": null,
+      "entity": "equipment",
+      "source_url": "https://www.tbbrenewable.com/getFile/upload%2F2026%2F03%2F18%2FRiiO_Sun_II_Hybrid_Inverter_120Vac_120_240Vac_en_V3.2.pdf",
+      "endpoint": "https://www.tbbrenewable.com/getFile/upload%2F2026%2F03%2F18%2FRiiO_Sun_II_Hybrid_Inverter_120Vac_120_240Vac_en_V3.2.pdf",
+      "format": "OEMPDF",
+      "licence_assessment": "Copyrightretained;individualfactualspecificationonly",
+      "publication_cadence": "Release-based orunstated;metadata/checksumfirst,not hourlyfullfile",
+      "last_release": "LinkedfilenameV3.2;printedrevision/dateunstated",
+      "last_retrieval": "2026-11-05T00:04:28.231769+00:00",
+      "last_attempt": "2026-11-05T00:12:01.350221+00:00",
+      "sha256": "2b92b95d0322deb7f74640cd55aa12a470a9aa8117140b26388be31117242536",
+      "etag": null,
+      "access_error": null,
+      "reviewed": 3,
+      "accepted": 3,
+      "rejected": 0,
+      "fields_offered": [
+        "exactmodel",
+        "PVlimits",
+        "thermal",
+        "mechanical",
+        "electricalconditions"
+      ],
+      "mapping": "Existingchecksum-aware reader and importer/upsert API;explicitdatedfield/source locators;nofuzzymerge",
+      "processed_cursor": {
+        "table": "physicalpage2",
+        "exhausted": true
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "result": "3exactLV/splitphaseinverters accepted;fixedhardwaremodelnames,nosettingsvariants",
+      "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
+      "next_action": "Selectedtableexhausted;do notduplicatevoltageoptions",
+      "next_due_check": "2026-11-06T00:00:00Z"
+    },
+    {
+      "id": "hoymiles_mit_global_20261105T0002",
+      "country": null,
+      "entity": "equipment",
+      "source_url": "https://www.hoymiles.com/uploadfile/1/202510/c0ca46abbd.pdf",
+      "endpoint": "https://www.hoymiles.com/uploadfile/1/202510/c0ca46abbd.pdf",
+      "format": "OEMPDF",
+      "licence_assessment": "Copyrightretained;individualfactualspecificationonly",
+      "publication_cadence": "Release-based orunstated;metadata/checksumfirst,not hourlyfullfile",
+      "last_release": "V202507REV1,10",
+      "last_retrieval": "2026-11-05T00:03:51.675536+00:00",
+      "last_attempt": "2026-11-05T00:12:01.350221+00:00",
+      "sha256": "99b11a1d12a19940323fa655e8a4a83b497088ca5c79596d4be1e3875ba5f3ec",
+      "etag": null,
+      "access_error": null,
+      "reviewed": 3,
+      "accepted": 3,
+      "rejected": 0,
+      "fields_offered": [
+        "exactmodel",
+        "PVlimits",
+        "thermal",
+        "mechanical",
+        "electricalconditions"
+      ],
+      "mapping": "Existingchecksum-aware reader and importer/upsert API;explicitdatedfield/source locators;nofuzzymerge",
+      "processed_cursor": {
+        "table": "physicalpage2",
+        "exhausted": true
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "result": "3exactMITmodelsaccepted;VAretained,noratedWderived",
+      "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
+      "next_action": "Inspectdistinctnewarchitectureonlyaftermodel/regioncrosscheck",
+      "next_due_check": "2026-11-06T00:00:00Z"
+    },
+    {
+      "id": "hoymiles_hione_access_20261105T0002",
+      "country": null,
+      "entity": "equipment",
+      "source_url": "https://w3oss.hoymiles.com/uploadfile/1/202610/2f18e7f60c.pdf",
+      "endpoint": "https://w3oss.hoymiles.com/uploadfile/1/202610/2f18e7f60c.pdf",
+      "format": "PublicOEMCDNredirect",
+      "licence_assessment": "Noaccessorrightsgrantassumed",
+      "publication_cadence": "Release-based orunstated;metadata/checksumfirst,not hourlyfullfile",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T00:03:52.385720+00:00",
+      "last_attempt": "2026-11-05T00:12:01.350221+00:00",
+      "sha256": null,
+      "etag": null,
+      "access_error": "HTTP Error 403: Forbidden",
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "Potentialtechnicaltablesnotretrieved"
+      ],
+      "mapping": "Publicredirectonly;notestedtechnicalmapping",
+      "processed_cursor": {
+        "blocked_tables": 2
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "result": "TwoHiOnetablesheld:CDN403,ordinarypublicwwwmirror404;noauthbypass",
+      "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
+      "next_action": "RetryonlyrestoredpublicdownloadornewOEMrelease;noforms/contact",
+      "next_due_check": "2026-11-06T00:00:00Z",
+      "held_tables": 2
+    },
+    {
+      "id": "namibia_licensing_retry_20261105T0002",
+      "country": "NAM",
+      "entity": "projects",
+      "source_url": "https://www.ecb.org.na/licensing/",
+      "endpoint": "https://www.ecb.org.na/licensing/",
+      "format": "OfficialHTMLlanding",
+      "licence_assessment": "Notverifiable;noextractionpermissionassumed",
+      "publication_cadence": "Release-based orunstated;metadata/checksumfirst,not hourlyfullfile",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T00:06:53.872259+00:00",
+      "last_attempt": "2026-11-05T00:12:01.350221+00:00",
+      "sha256": null,
+      "etag": null,
+      "access_error": "HTTP Error 503: Service Unavailable",
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "PotentiallicenceID/PVtechnology/installedMW/status/COD/locality;facilitybytesnotretrieved"
+      ],
+      "mapping": "Discoveryonly;notestedimporteroracceptedrows",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "result": "SingleordinarylicensingrouteGET503;noinventorybytes. DifferentRSSroutebackoffunchanged",
+      "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
+      "next_action": "Backoffuntil2026-11-06;nohourlydownload/repeatedfailures",
+      "next_due_check": "2026-11-06T00:00:00Z"
+    },
+    {
+      "id": "sa_ippp_archive_20261105T0002",
+      "country": "ZAF",
+      "entity": "projects",
+      "source_url": "https://www.ipp-projects.co.za/media-archives/",
+      "endpoint": "https://www.ipp-projects.co.za/media-archives/",
+      "format": "OfficialPowerPagesHTML",
+      "licence_assessment": "Contentreusegrantunverified",
+      "publication_cadence": "Release-based orunstated;metadata/checksumfirst,not hourlyfullfile",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T00:06:56.117407+00:00",
+      "last_attempt": "2026-11-05T00:12:01.350221+00:00",
+      "sha256": "211160259bd62a480e86046e492643568b1338b6d3097c91dcfcf43ab47e4d62",
+      "etag": null,
+      "access_error": null,
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "Quarterlypublications;facilityfieldsandcontracted-versus-installedMWnotverified"
+      ],
+      "mapping": "Discoveryonly;offlineNoDataportal;notestedimporteroracceptedrows",
+      "processed_cursor": {
+        "accepted": 0,
+        "facility_rows": 0
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "result": "NewofficialpublisherentryreturnsNoData/read-onlyofflineportal;indexedJune2026quarterlyreportnotdownloadedorintegrated",
+      "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
+      "next_action": "Afterpublicportalrecovery,verifylatestquarterlyreportterms,PVtechnology,contractedversusinstalledMWandidentities",
+      "next_due_check": "2026-11-06T00:00:00Z"
     }
   ],
   "source_refresh_queue": [

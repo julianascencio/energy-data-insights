@@ -510,7 +510,10 @@ Taiwan Energy Administration's checksum-pinned private solar inventory. It check
 the exact caption and five public columns, preserves merged-cell origin rows,
 native kW and ROC-year text, and stages bounded physical-row partitions. The
 26 January 2026 content reports statistics through 31 December 2025: 787 solar
-rows, with the first100 staged and **zero plants accepted from this inventory**.
+rows, with the first200 staged. Manual primary-source reviews associate rows1–10
+with an existing Sungen phase aggregate and accept **one Daliao depot plant**
+from row13. No plants are accepted from newly staged rows101–200. Daliao
+commissioning-year evidence conflicts and remains unpopulated.
 Repeated rows/phases, positive PV technology, company roles and AC/DC basis need
 manual review. Row cursors are not native facility IDs. See the
 [Taiwan inventory attribution](licenses/TAIWAN_ENERGY_PRIVATE_OGDL_NOTICE.md).
