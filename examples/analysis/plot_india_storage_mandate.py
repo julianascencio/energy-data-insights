@@ -31,10 +31,7 @@ from energy_methods.storage_peak_shift import simulate_storage_peak_shift
 hours = list(range(7 * 24))
 # Every input below is SYNTHETIC, not observations or a published India series.
 # Solar surplus after contemporaneous load; peak shortfall 18:00-22:00.
-solar_surplus = [
-    max(0.0, 64 * math.sin(math.pi * ((h % 24) - 6) / 12) - 18)
-    for h in hours
-]
+solar_surplus = [max(0.0, 64 * math.sin(math.pi * ((h % 24) - 6) / 12) - 18) for h in hours]
 peak_shortfall = [32.0 if 18 <= h % 24 < 23 else 0.0 for h in hours]
 
 powers_mw = [0.0, 20.0, 40.0]
