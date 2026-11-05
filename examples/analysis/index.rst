@@ -43,6 +43,12 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
       Compare normal forecasting with counterfactual HVAC scheduling.
 
+   .. grid-item-card:: Storage financing and policy
+      :link: topic_storage_finance
+      :link-type: doc
+
+      Examine published storage policy allocations against explicitly hypothetical BESS financing.
+
    .. grid-item-card:: Hybrid renewable dispatch
       :link: topic_hybrid_dispatch
       :link-type: doc
@@ -61,3 +67,4 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
    topic_thermal_control
    topic_hybrid_dispatch
+   topic_storage_finance
