@@ -615,3 +615,7 @@ Three historical Steca inverter-chargers and three distinct Antaisolar trackers 
 ### Research update — 5 November 2026, 06:00 UTC
 
 200 complete Chinese projects gain historical corporate owners, operators and phase-linked evidence (600 fields). Eleven exact Felicitysolar hybrid models add 155 canonical technical values plus qualified battery, PV, grid, backup, mechanical and environmental conditions. Backup watts do not establish grid rated active watts; per-tracker and battery currents remain separate. Unlabelled axes, warranty applicability, ambiguous string layouts and inconsistent full-load voltage limits stay qualified or held. Cáseda huerta rows remain separate from nearby Viscofan; the exact BON resolution endpoint returns 503. See the dated 06:00 source, project, equipment, identity, audit and validation ledgers.
+
+### Research update — 5 November 2026, 07:00 UTC
+
+Ten exact SRNE models add140 canonical technical values and qualified PV/battery/grid/load conditions. ASP link bytes are manualVer1.9 dated21August2026 despite the old filename. Battery-only efficiency, apparent peaks, typical transfer time, unlabelled axes and the HESP DC surge-class disagreement remain qualified or held.200projects gain600 historical corporate-party/context fields. Two battery busbars are excluded from PV combiners. NERSA's September2026 workbook is newly accessible through its public Registered entities category; reuse/identity/power scope remains unresolved and zero plants are accepted. See dated0700review, source captures, audit, coverage and report.
