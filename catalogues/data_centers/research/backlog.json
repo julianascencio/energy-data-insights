@@ -29,6 +29,7 @@
     "carrier_aquaedge_19dv_configurations": 28,
     "raxio_current_facilities": 7,
     "cummins_data_center_continuous_configurations": 22,
+    "cummins_qsk50_dcc_configurations": 8,
     "atnorth_named_sites": 13,
     "atnorth_contractor_disclosures": 3,
     "atnorth_explicit_first_phase": 1,
@@ -233,15 +234,17 @@
       "urls": [
         "https://www.eaton.com/gb/en-gb/skuPage.9PX1000IRT2U.html",
         "https://www.vertiv.com/",
-        "https://www.cummins.com/en-na/generators/products/qsk60"
+        "https://www.cummins.com/en-na/generators/products/qsk60",
+        "https://www.cummins.com/en-na/generators/products/qsk50?application=Data%20Centers&v=3021"
       ],
-      "offset": 1954,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed transformer basic-model rows, the first 50 displayed DOE CCMS computer-room air-conditioner rows, the first 50 displayed DOE CCMS UPS individual-model rows, and 44 current Volvo Penta model/frequency rows across the baseline and Stage IIIA batches complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent unheld generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
+      "offset": 1962,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 plus eight QSK50 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed transformer basic-model rows, the first 50 displayed DOE CCMS computer-room air-conditioner rows, the first 50 displayed DOE CCMS UPS individual-model rows, and 44 current Volvo Penta model/frequency rows across the baseline and Stage IIIA batches complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent unheld generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
         "Reference existing BESS battery models rather than duplicating them",
-        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; QST30 table was absent from the retrieved page",
+        "QSK50 DCC offset 8 is complete; five identities have full prime/standby/continuous rows and three have exact DCC-only rows, so missing rating kinds remain absent",
+        "Resolve QSK78 duplicate/model-table inconsistencies before any continuation; do not bind the QST30 family DCC range to individual model cards",
         "mtu 50/60 Hz DCC tables are complete at 12+8; never convert their kVA ratings to active kW or select a portfolio voltage",
         "Find exact mtu model-level fuel consumption, dimensions, weight, emissions calibration and ordered voltage tables before enrichment",
         "Mitsubishi family efficiency, cabinet/weight groups and compatible peripherals remain observations until exact rating-level tables bind them; do not infer 9900D 1500/1600/2000 kVA rows from the portfolio range",
