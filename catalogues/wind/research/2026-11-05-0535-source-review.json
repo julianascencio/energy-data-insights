@@ -1,0 +1,43 @@
+{
+  "batch": "2026-11-05-0535",
+  "reviewed_at": "2026-11-05T05:37:52Z",
+  "accepted": [
+    {
+      "source_id": "eia860_2025_operable_60000_60999",
+      "candidate_plants": 75,
+      "generator_rows": 85,
+      "enriched_projects": 70,
+      "deferred_identities": 5
+    }
+  ],
+  "curve_review": {
+    "repository": "https://github.com/NatLabRockies/turbine-models",
+    "tree": "e9e4ccc6a87f50c0c65d236154a2897e752c47c9",
+    "model": "Vestas V82 1.65MW",
+    "data_path": "turbine_models/data/Onshore/VestasV82_1.65MW_82.csv",
+    "spec_path": "turbine_models/specs/Onshore/VestasV82_1.65MW_82.yaml",
+    "data_git_blob": "445c1121ab3e7569145f4fc12496be6a36da1f32",
+    "spec_git_blob": "c5fe82e93f8ee505cce9e41b9bdea874c986f035",
+    "data_sha256": "567a42237d8d2685c755887322bdf8fe0c604642c04c340744b6af66419d9dc1",
+    "spec_sha256": "c6778c4bee621d7bd853bd980735243508c2388514dbc72d90f6e71153c3b927",
+    "original_availability": "Exact UTF8 bytes retrieved; Git blob hashes verified",
+    "decision": "defer_provenance_and_comparison",
+    "curve_type": "theoretical",
+    "reference_links": [],
+    "air_density_kg_m3": null,
+    "operating_mode": null,
+    "numerical_rows": 18,
+    "units": [
+      "m/s",
+      "kW",
+      "1",
+      "1"
+    ],
+    "reason": "No original source/revision, mode or density. Do not infer conditions from Cp or label independently validated performance. No catalogue curve or equipment imported.",
+    "license": "Repository BSD-3-Clause; rights restriction not asserted"
+  },
+  "new_quarantines": 0,
+  "new_exclusions": 0,
+  "new_equipment": 0,
+  "enriched_equipment": 0
+}

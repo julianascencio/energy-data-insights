@@ -49,6 +49,79 @@ print(
     ]
 )
 
+# Published rotor geometry is independent of the digits in an OEM model name.
+print("Goldwind complete named columns: geometry, power conditions and offered hubs")
+print(
+    equipment.loc[
+        equipment.manufacturer.eq("Goldwind"),
+        [
+            "model",
+            "rated_power_kw",
+            "rotor_diameter_m",
+            "swept_area_m2",
+            "rated_power_conditions",
+            "hub_height_options_json",
+        ],
+    ].to_string(index=False)
+)
+print("Hub options do not create model variants; no common-condition power curves inferred.")
+
+# Announced modes and tower approvals remain dated options on the existing model.
+print("Dated OEM product updates: modes and approval timing, not installed variants")
+for row in rows:
+    for update in json.loads(row.get("extensions_json") or "{}").get("oem_product_updates", []):
+        print(row["name"], update["published_at"], update["operating_modes"])
+        print(update["tower_configurations"], update["conditions"])
+
+# Annual EIA unit states do not reconcile whole-farm repowering or hybrid scope.
+print("EIA 2025 dated unit evidence: farm status/capacity exclusions remain unchanged")
+for row in rows:
+    for partition in json.loads(row.get("extensions_json") or "{}").get(
+        "eia_annual_wind_partitions", []
+    ):
+        states = [unit["status_code"] for unit in partition["units"]]
+        print(
+            row["name"],
+            partition["plant_code"],
+            partition["year"],
+            states,
+            row["status"],
+            row["aggregation_role"],
+        )
+print("Predominant models and representative heights are partial inventories, not exact fleets.")
+# Compare observation counts within reporting years, never sum MW across years.
+eia_years = {}
+for row in rows:
+    for partition in json.loads(row.get("extensions_json") or "{}").get(
+        "eia_annual_wind_partitions", []
+    ):
+        counts = eia_years.setdefault(partition["year"], {})
+        for unit in partition["units"]:
+            state = unit["status_code"]
+            counts[state] = counts.get(state, 0) + 1
+print("Dated EIA generator observations by reporting year:", dict(sorted(eia_years.items())))
+
+# Environmental declarations use modeled sites, not independently observed farms.
+print("EPD lifetime scenarios: separate model, location, exposure and net-to-grid boundary")
+for row in rows:
+    declarations = json.loads(row.get("extensions_json") or "{}").get(
+        "environmental_product_declarations", []
+    )
+    for declaration in declarations:
+        for scenario in declaration["scenarios"]:
+            print(
+                row["model"],
+                scenario["location"],
+                scenario["reference_service_life_years"],
+                "years",
+                scenario["value"],
+                scenario["unit"],
+                scenario["kind"],
+                scenario["boundary"],
+                declaration["source_id"],
+            )
+print("No scenario total, capacity factor, operating project or comparable curve is inferred.")
+
 # Procedural decisions can concern solar or auxiliary equipment, not the wind farm.
 print("BOE decision scope: wind lifecycle and capacity boundaries remain separate")
 for row in rows:

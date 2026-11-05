@@ -1,0 +1,141 @@
+{
+  "batch": "2026-11-04-2435",
+  "reviewed_at": "2026-11-04T22:48:26Z",
+  "boe": {
+    "indexes": [
+      {
+        "url": "https://www.boe.es/boe/dias/2026/09/17/",
+        "sha256": "adfbf35255c99dac61ab4b99dae93244d6bd783cd5822853e217fad4bd6d7bcf",
+        "a": [],
+        "b": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/09/18/",
+        "sha256": "bc52781f5765eaf80142a22a9c23b9353087cdec7b88b30d77ab1ed82af08fdc",
+        "a": [],
+        "b": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/09/19/",
+        "sha256": "7f5d9fced3c93d8824e8f870a9714dd0b868ae9ee3ed290ceda0e400165883a8",
+        "a": [],
+        "b": []
+      }
+    ],
+    "selected_notices": 0,
+    "all_discovered_issues": 3,
+    "next_dates": [
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16"
+    ]
+  },
+  "pne": {
+    "partition": "All seven saved Polish wind references; six substantive detail pages plus Legnica dated sale notice; two complete NTS documents sections1–2/5 reviewed",
+    "new_projects": 6,
+    "enriched_projects": 1,
+    "soft_empty_detail": {
+      "url": "https://www.pnegroup.com/en/references/detail/legnica/",
+      "http_status": 200,
+      "reason": "Empty main project body; independent dated sale announcement acquired"
+    },
+    "identity_notes": [
+      "Karcino51MW distinct fromKarścino90MW; independent Energa2013 transaction confirms separate assets",
+      "KrzęcinII19.2MW/Forthewind distinct disclosed newscope; WRIKręcin6MW/Polenergia retained, no inferred parent link",
+      "All seven ambiguous reference-table year observations retained alongside specific launch and sale disclosures",
+      "No exact OEM equipment IDs linked to incomplete family labels or mismatched rating revisions"
+    ],
+    "holds": [
+      "Karcino WRI2009 versus detail2010 commissioning/launch unresolved",
+      "Jasna tableV126 remains family-only observation; exact installed rating/model revision unresolved",
+      "Krzęcin environmental notice paragraph spellsKoszęcinII; preserve wording, originalpermit needed"
+    ]
+  },
+  "epd": {
+    "complete_declarations": [
+      "EPDITALY0508 technicalTable1/scope/functionalunit/referenceflows",
+      "EPDITALY0852 technicalTable1/scope/functionalunit/referenceflows"
+    ],
+    "enriched_equipment": 7,
+    "modeled_scenarios": 10,
+    "scalar_conflicts": {
+      "swept_area_m2": [
+        "GWH182-5.3MW",
+        "GWH182-6.2MW",
+        "GWH182-7.2MW",
+        "GWH182-7.5MW"
+      ],
+      "design_life_years": [
+        "GWH175-7.8MW"
+      ]
+    },
+    "holds": [
+      "0852 comma-separated blades/areas not explicitly mapped toindividualmodels; no position-based compatibility",
+      "Sinoma90.2 is not automatically existingSI90.2",
+      "Unnamed generator/converter/switchcabinet types remain nested; no exactmodel invented",
+      "0852 original10February dates differ fromportfolio2October dates; both preserved",
+      "Environmental validation is not independent turbine performance validation; no numerical curves in these declarations"
+    ]
+  },
+  "aemo_followup": {
+    "ids": [
+      3051,
+      3112,
+      3118
+    ],
+    "status": "all three identity holds retained",
+    "primary_url": "https://www.hargravesenergy.com/about-1",
+    "sha256": "17616f956db690e91c1e532a859f101515daf5a7aca5a0439eb1c0427588f9b5",
+    "http_status": 200,
+    "observations": {
+      "wind_initial_phase_mw": 600,
+      "solar_mw": 250,
+      "battery_mw": 200,
+      "battery_mwh": 800,
+      "stage": "pre-feasibility",
+      "construction_target": "early2029",
+      "wind_sodar_mean_m_s": 7.17,
+      "measurement_duration_years": 2,
+      "measurement_dates": null,
+      "measurement_height_m": null
+    },
+    "reason": "No explicit AEMO survey IDs or accepted phase crosswalk; source resource duration lacks dates/height, not imported as comparable observation"
+  },
+  "access": [
+    {
+      "file": "kuslin-nts.pdf",
+      "url": "https://www.pnegroup.com/fileadmin/user_upload/PNE_Polska/PNE_Polska_documents/WKN_NTS_for_Kuslin_wind_project_07-09-2020.pdf",
+      "status": 200,
+      "bytes": 1189755,
+      "sha256": "8ade7d168790b5b2a27dc04b2a9c6a71aeda0c225589941a81ae652da6a6989a"
+    },
+    {
+      "file": "krzecin-nts.pdf",
+      "url": "https://www.pnegroup.com/fileadmin/user_upload/PNE_Polska/PNE_Polska_documents/WKN_NTS_for_Krzecin_wind_project_25-08-2020.pdf",
+      "status": 200,
+      "bytes": 1411620,
+      "sha256": "3528ec8c7e8ed4602e9ee9487bef28d58caf0c8b8d5f0b3a04e6e9a637785e56"
+    },
+    {
+      "file": "epd0852.pdf",
+      "url": "https://www.epditaly.it/en/wp-content/uploads/2016/12/4-2-Goldwind_EPD_GWH170-7.2GWH175-7.8GWH182-8.0-V20250210.pdf",
+      "status": 200,
+      "bytes": 1121671,
+      "sha256": "ec2c3da5f682815c94d917caa253165340f077e0e39afd765ef0d2e3d4988941"
+    },
+    {
+      "file": "hargraves.html",
+      "url": "https://www.hargravesenergy.com/about-1",
+      "status": 200,
+      "bytes": 153416,
+      "sha256": "17616f956db690e91c1e532a859f101515daf5a7aca5a0439eb1c0427588f9b5"
+    }
+  ],
+  "targets": {
+    "projects_touched": 7,
+    "equipment_touched": 7,
+    "project_target_met": false,
+    "equipment_target_met": false,
+    "reason": "Complete queued detail/declaration partitions reviewed; zero selectedBOEnotices; no padding of scenarios, options or unnamed components"
+  }
+}

@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windOemUpdateSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isWind = root.dataset.database === "wind";
@@ -122,6 +122,16 @@ function render() {
   if (isWind) summary.push([number(filtered.filter(r => r.quality_status === "needs_review").length), "Records needing review", "Inspect field conflicts; quarantined values remain unknown, not zero"]);
   if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
+    const eiaYears = [...new Set(filtered.flatMap(row => {
+      try { return (JSON.parse(row.extensions_json || "{}").eia_annual_wind_partitions || []).filter(p => p?.source_id && Number.isInteger(p.year)).map(p => p.year); }
+      catch { return []; }
+    }))].sort((a,b) => a-b);
+    for (const year of eiaYears) {
+      const yearly = windEiaSummary(filtered, year);
+      summary.push([number(yearly.projects), `EIA ${year} evidence`, `${yearly.operating} operating · ${yearly.outOfService} out of service · ${yearly.standby} standby · ${yearly.retired} retired · ${yearly.canceled} canceled · ${yearly.postponed} postponed generator observations as of ${year}-12-31. These are dated units, not whole-farm statuses.`]);
+    }
+    const eia = windEiaSummary(filtered);
+    summary.push([number(eia.projects), "EIA unit evidence", `${eia.operating} operating · ${eia.outOfService} out of service · ${eia.standby} standby · ${eia.retired} retired · ${eia.canceled} canceled · ${eia.postponed} postponed dated unit observations; ${eia.withoutObservations} projects without this evidence. Unit status does not establish whole-farm status or current capacity.`]);
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
     summary.push([number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Catalogue coverage"],
       [number(statistics(eligible, "turbine_count").reportedSum), "Reported turbines", "Only reviewed non-overlapping project scopes"],
@@ -141,6 +151,12 @@ function render() {
       [number(inventory.located), "Mapped turbine records", "Includes planned, erected and historical rows"],
       [number(inventory.lifecycleUnknown), "Lifecycle unknown", "Erected alone does not establish operation"]);
   } else if (isWind && tableName === "equipment") {
+    const hubs = windHubHeightSummary(filtered);
+    const epds = windEpdSummary(filtered);
+    const updates = windOemUpdateSummary(filtered);
+    summary.push([number(updates.updates), "Dated OEM updates", `${updates.models} turbine models · ${updates.withoutUpdates} without update evidence. Inspect extensions for modes, tower options and approval dates; announced options do not establish installed configurations or validated performance.`]);
+    summary.push([number(epds.scenarios), "Modeled LCA scenarios", `${epds.records} turbine models · ${epds.withoutScenarios} without scenarios. Lifetime net-to-grid flows remain separate by location and exposure; not measured output or project counts.`]);
+    summary.push([number(hubs.optionsOnly), "Hub-height options only", `${hubs.reported} scalar heights · ${hubs.unknown} unknown; turbine models only. Options are not selected installations.`]);
     summary.push([number(new Set(filtered.map(r => r.manufacturer).filter(Boolean)).size), "Manufacturers"],
       [number(stats.known), "Metric reported", "Specifications, not field performance"], [number(stats.missing), "Metric unknown", "See nested options and unresolved fields"], [metric === "rated_power_kw" ? "See conditions" : number(stats.mean), metric === "rated_power_kw" ? "Power rating basis" : "Metric mean", metric === "rated_power_kw" ? "Nominal, default-mode and power-at-wind-speed ratings are distinct" : fieldLabel(metric)]);
   } else if (isDataCenter && tableName === "projects") {

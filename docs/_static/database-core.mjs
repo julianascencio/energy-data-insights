@@ -177,3 +177,71 @@ export function windComponentApplications(record, equipment) {
   }
   return result;
 }
+
+// Offered heights are not selected configurations or installed hub heights.
+export function windHubHeightSummary(rows) {
+  const summary = {reported: 0, optionsOnly: 0, unknown: 0};
+  for (const row of rows.filter(r => r.equipment_category === "wind_turbine")) {
+    if (numeric(row.hub_height_m)) { summary.reported++; continue; }
+    let options;
+    try { options = JSON.parse(row.hub_height_options_json || "{}"); } catch { options = {}; }
+    if (Array.isArray(options?.heights_m) && options.heights_m.some(v => numeric(v) && v > 0)) summary.optionsOnly++;
+    else summary.unknown++;
+  }
+  return summary;
+}
+
+// EPD locations and lifetime flows are modeled equipment scenarios, not farms.
+export function windEpdSummary(rows) {
+  const summary = {records: 0, scenarios: 0, withoutScenarios: 0};
+  for (const row of rows.filter(r => r.equipment_category === "wind_turbine")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const declarations = Array.isArray(ext?.environmental_product_declarations) ? ext.environmental_product_declarations : [];
+    const scenarios = declarations.flatMap(d => Array.isArray(d?.scenarios) ? d.scenarios : []).filter(s =>
+      s?.kind === "modeled" && s.unit === "MWh" && s.boundary === "one turbine; net electricity delivered to grid" &&
+      numeric(s.value) && s.value >= 0 && numeric(s.reference_service_life_years) && s.reference_service_life_years > 0);
+    if (scenarios.length) { summary.records++; summary.scenarios += scenarios.length; }
+    else summary.withoutScenarios++;
+  }
+  return summary;
+}
+
+// Count dated unit observations, never infer whole-farm retirement or capacity.
+export function windEiaSummary(rows, year = null) {
+  const result = {projects: 0, withoutObservations: 0, retired: 0, canceled: 0, postponed: 0, operating: 0, outOfService: 0, standby: 0};
+  const keys = {RE: "retired", CN: "canceled", IP: "postponed", OP: "operating", OS: "outOfService", OA: "standby"};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const partitions = Array.isArray(ext?.eia_annual_wind_partitions) ? ext.eia_annual_wind_partitions : [];
+    let count = 0;
+    for (const part of partitions) {
+      if (!part?.source_id || !Number.isInteger(part.year) || (year !== null && part.year !== year)) continue;
+      for (const unit of Array.isArray(part.units) ? part.units : []) {
+        const key = Object.hasOwn(keys, unit?.status_code) ? keys[unit.status_code] : null;
+        if (!key || !unit.generator_id || !unit.locator || unit.status_as_of !== `${part.year}-12-31`) continue;
+        result[key]++; count++;
+      }
+    }
+    if (count) result.projects++;
+    else result.withoutObservations++;
+  }
+  return result;
+}
+
+// Dated OEM updates retain options and approval timing, never selected installations.
+export function windOemUpdateSummary(rows) {
+  const result = {models: 0, updates: 0, withoutUpdates: 0};
+  for (const row of rows.filter(r => r.equipment_category === "wind_turbine")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const updates = Array.isArray(ext?.oem_product_updates) ? ext.oem_product_updates : [];
+    const valid = updates.filter(u => u?.source_id && u.locator && u.conditions &&
+      /^\d{4}-\d{2}-\d{2}$/.test(u.published_at || "") &&
+      Array.isArray(row.sources) && row.sources.includes(u.source_id));
+    if (valid.length) { result.models++; result.updates += valid.length; }
+    else result.withoutUpdates++;
+  }
+  return result;
+}

@@ -1,55 +1,34 @@
 {
-  "batch": "2026-11-04-2235",
-  "validated_base": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
-  "iteration_parent": "c5a47cc6c00731d81c9ae809141eb12a894e680b",
+  "batch": "2026-11-05-0735",
+  "iteration_parent": "b8f26c43be4c9c1376a89597e49a1254632995e7",
   "local": {
-    "focused_pytest": "195 passed:166 Wind tests including20 AEMO tests and29 reference tests",
-    "viewer": "16 Node tests passed;viewer module syntax check passed",
-    "quality": "Ruff lint/format,ty,repository,citations and whitespace passed",
-    "catalogue": "22128 records validated;22014 preceding records unchanged;two enriched records retain all prior facts and creation timestamps",
-    "capacity": "All six capacity-category totals unchanged;all107 new scopes excluded",
-    "replay": "236 AEMO candidates reproduced:125 previous defaults byte-identical and111 new candidates with21 explicit count quarantine IDs across20sites",
-    "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD",
-    "docs": "Strict Sphinx plot_gallery=0 passed;599 HTML pages passed links/assets;final built viewer asset equals source",
-    "example": "Offline Wind gallery passed",
-    "packages": "Three wheels and three source distributions built",
-    "preservation": "All non-Wind catalogues unchanged against current main"
-  },
-  "not_executed": [
-    "Full repository Python suite in this iteration",
-    "Full executable gallery",
-    "Interactive browser",
-    "Independent operational/performance verification"
-  ],
-  "remote_ci": {
-    "prior_commit": "c5a47cc6c00731d81c9ae809141eb12a894e680b",
-    "prior_result": "Python3.12,Python3.13 and documentation passed;Pages deployment skipped",
-    "this_batch": "Pending publication;no remote result asserted"
+    "tests": "18 EIA adapter tests passed",
+    "viewer": "22 Node viewer tests and syntax passed; shared viewer unchanged",
+    "catalogue": "22181 valid;22144 unchanged;37 enriched projects; all scalar/ID/creation fields and six capacity summaries preserved",
+    "source_registry": "371 prior entries unchanged; two entries added",
+    "replay": "Original workbook hashes and same-source replay passed",
+    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
+    "quality": "Ruff, format971files, ty and citations passed",
+    "example": "Offline Wind example passed against expanded isolated catalogue"
   },
   "snapshot_sha256": {
-    "sources.json": "bafa9f205b00c46f52ab1f2d19d33ae3d64e7758c75b37d6197b00e2b9633c32",
-    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "040259399b8a8a6d9ac1a062b2c3eba1f9ada9322e4bfaf0ead4873cfef78b62",
-    "equipment.parquet": "f09f4fbc289bb59b9dbcef110ccebbf3640c3d5d659188a31920f10341403686",
-    "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "cd51feb25578b7c7d6b90576553f7cf7202aa91bf25540800be50519a4caa4dc"
+    "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
+    "manifest.json": "a48c66d6b2873f306b4478fcd543025c0bf603f62ef3565a50d7cc493902e8ef",
+    "projects.parquet": "fdd71364546a38925f71a126acd15501c0cd57ca98de89859f7f2de8b07fdca8",
+    "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
+    "sources.json": "65caa33805a867b42650298f01c570ff13ce527cb92ac9b8c85b6a2d6515e595",
+    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
-  "log_sha256": {
-    "packages.log": "ffbb5d5a75dba3a17bfb9115340f3316e9f1d7abf5c0007f7bdf07c4c41f750d",
-    "docs-final.log": "ace4b8d1ef93afe9938c2882c969a3429f03ed4384401be3e098ac0042f97ee0",
-    "whitespace.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "gallery.log": "0acdbf4544fcf01fb5018869547dcaabfd64de13fe7c72e7a6dcb9e16fd30b67",
-    "format.log": "e95bb53e019ad73d1ff1b7ddb8df8be08021289b742d01fe7b6f80ac00a8ad2a",
-    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "verify.log": "5fc02ed8c4050ce869641c5cc8ed002579d418adbc6ed13b98c2df758f6dd721",
-    "repository.log": "a5f428420cc0ce216af391fbd1e0d82c6a7b6e5450ffdf1e9b8de0e3bd405013",
-    "ty.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "links-final.log": "082d655d08464f838cebf36c99fef6ef873d2f9f8de735c28f5c213777c0f4f7",
-    "links.log": "082d655d08464f838cebf36c99fef6ef873d2f9f8de735c28f5c213777c0f4f7",
-    "focused.log": "1f63a82d01f900e81ee34180b3329d1f34974d4e3d99ee11c00b9050bbed8307",
-    "citations.log": "dd7a1b5dd88f8a0d88023723663956289a1962ebd1760646e25b1450904f2141",
-    "docs.log": "e9a496bb9873c3cbd5eb1eb9b46c418d29cdab44af4bea73dbb9a215fa378667",
-    "viewer.log": "e71c804b4e8bbb4756fdd7f631173c4c782ff8bec509de092a2ead4d5f8285c3"
-  }
+  "remote_ci": {
+    "prior_head": "b8f26c43be4c9c1376a89597e49a1254632995e7",
+    "prior_result": "Python and Documentation passed",
+    "new_head": "Not yet published"
+  },
+  "not_executed": [
+    "Full local Python suite",
+    "Strict local docs/full gallery",
+    "Browser",
+    "Package rebuild; no package code changed"
+  ]
 }
