@@ -12,7 +12,8 @@
     "quality": "Repository-wide Ruff,format1013files,ty check with explicit Python environment,citations,repository hygiene passed",
     "packages": "uv build --all-packages passed; all3packages produced wheel and sdist",
     "docs": "Strict Sphinx build with Wind-only executable gallery selection passed; full gallery blocked by unrelated psutil.NoSuchProcess container error",
-    "example": "Offline Wind example passed standalone at first checkpoint and executed in final scoped Sphinx build"
+    "example": "Offline Wind example passed standalone at first checkpoint and executed in final scoped Sphinx build",
+    "docs_links": "623 HTML pages; local links and assets resolve"
   },
   "snapshot_sha256": {
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
@@ -26,7 +27,7 @@
   "remote_ci": {
     "first_checkpoint": "af607c579a713e4c8fbcd60410375a81816c27ae",
     "first_checkpoint_result": "Python quality/tests and Documentation both passed",
-    "final_update": "Not yet published; no final-head CI result claimed"
+    "final_update": "Data/code checkpoint c8fb285b46bb22f2beaa3734379b20a24964087f published; Python and Documentation in progress at09:06UTC. Query live PR158 head for subsequent metadata-commit CI; no unobserved success claimed."
   },
   "not_executed": [
     "Full local Python test suite",

@@ -380,10 +380,11 @@
   },
   "publication_reconciliation": {
     "pr": 158,
-    "state": "Open; first checkpoint published, next update must use expected-head lease",
-    "expected_head": "af607c579a713e4c8fbcd60410375a81816c27ae",
+    "state": "Published in open unmerged PR158; read live head before continuation",
     "main_rechecked": "d92d1b823496c9229610a62755de879bfc5294aa",
-    "publication_method": "Fast-forward with expected SHA; two-parent commit includes updated main; remote tree must equal validated local tree"
+    "publication_method": "Fast-forward with expected SHA; two-parent commit includes updated main; remote tree must equal validated local tree",
+    "expected_head_policy": "Fetch current PR158 head and use it as expected-head lease; do not use a checkpoint SHA as assumed current head",
+    "last_published_data_checkpoint": "c8fb285b46bb22f2beaa3734379b20a24964087f"
   },
   "publication_transition": {
     "previous_pr89_state": "merged2026-11-03",
@@ -404,6 +405,13 @@
       "new_projects": 8,
       "enriched_projects": 1,
       "new_equipment": 0
+    },
+    {
+      "commit": "c8fb285b46bb22f2beaa3734379b20a24964087f",
+      "cumulative_new_projects": 8,
+      "cumulative_enriched_projects": 2,
+      "cumulative_new_equipment": 33,
+      "verified_tree": "2477a8f3475382c31ddd272fde853ad6a7dbdfce"
     }
   ]
 }
