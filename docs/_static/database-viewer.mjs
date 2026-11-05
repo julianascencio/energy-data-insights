@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary, windCertificationSummary, windOnsSummary, windOnsGeography} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary, windCertificationSummary, windOnsSummary, windOnsGeography, windSigaSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isHydro = root.dataset.database === "hydro";
@@ -132,6 +132,8 @@ function render() {
     }
   } else if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
+    const siga = windSigaSummary(filtered);
+    summary.push([number(siga.projects), "Dated SIGA registry evidence", `${siga.dates.join(" · ") || "No dataset date"} · ${siga.states.join(", ")} · ${siga.snapshots} observations · ${siga.withoutEvidence} projects without evidence. ${Object.entries(siga.categories).map(([key,c])=>`${key}: ${c.known} known, ${c.unknown} unknown, ${c.zero} reported zero`).join(" · ")}. Categories are separate; physical guarantee is not installed capacity. No current census or aggregation eligibility inferred.`]);
     const ons = windOnsSummary(filtered);
     const onsGeo = windOnsGeography(filtered);
     summary.push([number(onsGeo.projects), "ONS geographic evidence", `${Object.entries(onsGeo.stateProjects).map(([state,count]) => `${state}: ${count}`).join(" · ") || "No reported state"} · ${onsGeo.unknownStateProjects} projects with unknown state observations. Each project counts once per reported state across snapshots; this is evidence coverage, not a current fleet distribution.`]);

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T17:35:00Z",
+  "updated_at": "2026-11-05T18:23:25Z",
   "branch": "research/wind-20261105-1235",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-1235.lock; acquire before any branch write",
   "queue": [
@@ -285,7 +285,7 @@
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
       "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-      "next_task": "Pinned ONS1082CEGs complete340enriched742held. First20 held CEGs and original ledger links in1735 continuation; obtain explicit ANEEL/permit-to-WRI crosswalk. No same-release rescan or generating-unit-to-turbine inference.",
+      "next_task": "EPE-hostedSIGA Bahia381complete68enriched313held. NextRNfullIDpartition; source remains2026-01-13dated. SavedONSfirst20heldcrosswalk reviewed,0resolved; historical catalogue/phase maps still needed. No completedONSrescan.",
       "independent_source": {
         "source": "ONS daily capacity generator CSV",
         "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
@@ -303,7 +303,19 @@
         "cumulative_enriched": 340,
         "cumulative_deferred": 742,
         "continuation": "2026-11-05-1735-ons-continuation.json"
-      }
+      },
+      "epe_independent_source": {
+        "url": "https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0",
+        "dataset_date": "2026-01-13",
+        "completed_where": "sigtipogeracao='EOL' AND sigufprincipal='BA'",
+        "reviewed": 381,
+        "enriched": 68,
+        "held": 313,
+        "ledger": "2026-11-05-1807-epe-review.json",
+        "next_where": "sigtipogeracao='EOL' AND sigufprincipal='RN'",
+        "next_task": "Fresh ID inventory then complete bounded RN pages; record source dataset date and require stable before/after IDs. Bahia exhausted; reconcile313heldidentities without rescan."
+      },
+      "identity_review": "2026-11-05-1807-identity-review.json"
     },
     {
       "rank": 5,
@@ -364,7 +376,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "Six conflict IDs followed up1510; do not repeat sameindexqueries. Obtain U136 STC-180901 Rev0 design annex and explicit KS WT-1902-00-170356 to UL TC-190502 crosswalk; U151 TC-200103 page2/STC-200109 and KS WT-2201-00-190356 crosswalk. Resolve E138 certificate WT-2602-01-221439 E2(KSNARA)/E3(KNREC) identity before geometry. SWT3.2/GW109 originals and V162gearbox remain held. Then32prior configuration/revision holds; sevenFGWHTq originalDNV Mode0 crosswalks. Goldwind Americas2.5MW English3columns and Spanish2columns now complete: do not rescan. Next corrected area-definition table and GW10910.5static/10.2unspecified mode/revision crosswalk; KS107.5m remains held.",
+      "next_task": "Six conflict IDs followed up1510; do not repeat sameindexqueries. Obtain U136 STC-180901 Rev0 design annex and explicit KS WT-1902-00-170356 to UL TC-190502 crosswalk; U151 TC-200103 page2/STC-200109 and KS WT-2201-00-190356 crosswalk. Resolve E138 certificate WT-2602-01-221439 E2(KSNARA)/E3(KNREC) identity before geometry. SWT3.2/GW109 originals and V162gearbox remain held. Then32prior configuration/revision holds; sevenFGWHTq originalDNV Mode0 crosswalks. Goldwind Americas2.5MW English3columns and Spanish2columns now complete: do not rescan. Next corrected area-definition table and GW10910.5static/10.2unspecified mode/revision crosswalk; KS107.5m remains held. Goldwind1.5MW English4columns and2.5MW digital-English2columns complete:4new2enriched; no rescan. Survival temperature semantics explicit in digital English, existing GW109 area/ratedspeed conflicts unresolved.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -378,7 +390,7 @@
       "vestas_new_review": "2026-11-05-1235-fgw-review.json",
       "knrec_review": "2026-11-05-1435-knrec-review.json",
       "original_certificate_followup": "2026-11-05-1510-oem-review.json",
-      "latest_oem_review": "2026-11-05-1735-oem-review.json"
+      "latest_oem_review": "2026-11-05-1807-oem-review.json"
     },
     {
       "rank": 6,
@@ -466,17 +478,20 @@
         "2026-09-19",
         "2026-09-14",
         "2026-09-15",
-        "2026-09-16"
-      ],
-      "next_dates": [
+        "2026-09-16",
         "2026-09-10",
         "2026-09-11",
         "2026-09-12"
       ],
+      "next_dates": [
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09"
+      ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "September10–12 allA/Bissues. September14–16 complete: SalinasIII1new8plannedturbines; Taraguilla correction already retained. Next original PEol-FV-313 layout/configuration document to reconcile118m hub against published OEM98/113/126m options.",
-      "decision_ledger": "2026-11-05-1435-boe-review.json",
+      "next_task": "September7–9 allA/Bissues. September10–12 complete5notices:3projects16plannedturbines,1solar identity hold,1generic exclusion. Original SalinasI/II/III118m configuration and shared-infrastructure scope still held.",
+      "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
         "2026-10-01",
         "2026-10-02",
@@ -521,7 +536,10 @@
         "2026-09-19",
         "2026-09-14",
         "2026-09-15",
-        "2026-09-16"
+        "2026-09-16",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12"
       ]
     },
     {

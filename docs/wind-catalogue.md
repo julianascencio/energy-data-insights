@@ -996,3 +996,50 @@ crosswalk. The five plotted power curves are graph-only, with density stated but
 mode unresolved; no numerical curve, compatibility claim or independently
 validated performance is inferred. See the 1735 OEM decision ledger and source
 registry for checksums, exact page/column locators and continuation tasks.
+
+### Dated EPE-hosted SIGA and Spanish proposal observations
+
+The 2026-11-05 continuation reviews the complete **381-entry Bahia wind
+partition** of EPE's hosted SIGA layer, whose dataset date is **2026-01-13**.
+Repeated object-ID queries agreed before and after all pages were acquired.
+Sixty-eight entries enrich existing projects through a unique WRI-encoded CEG
+identity plus exact name; 313 identities remain deferred. The original CEG
+spelling is retained, with only numeric suffix padding compared. The layer's
+misleading date-typed `idenucleoceg` field is not used as an identifier.
+
+Authorized kW, inspected kW and physical-guarantee kW are normalized separately
+to MW inside dated observations. Physical guarantee is not installed capacity.
+Original lifecycle text, operating-entry date, permit term, ownership text,
+municipality and registry-point coordinates remain qualified by their source.
+Coordinate decimal precision is not positional accuracy. None of these
+observations changes canonical capacity, lifecycle or aggregation eligibility.
+The shared viewer and deterministic gallery show category completeness,
+including reported zeros and unknown values, without summing incompatible MW.
+This successful public EPE ArcGIS download is independent of the earlier
+ANEEL CSV HTTP 503 failure; neither failure implies authentication or a reuse ban.
+
+BOE Series A/B issues of 10–12 September 2026 yield two proposed Salinas wind
+modules, each 36 MW with eight individually identified planned turbines, and
+the archived 144 MW Alto Cabrera application. Proposed wind MW, existing solar
+MW and combined hybrid MW remain separate. Alto Cabrera's whole-project status
+is unknown: dismissal of application PEol-382 does not establish the fate of
+all possible iterations or appeals. Salinas electrical length/conductor
+inconsistencies and the unresolved 118 m OEM hub configuration are retained.
+The solar-only environmental notice remains an identity hold, and the generic
+cadastral notice is excluded. Private landholder names are not imported.
+
+Four exact Goldwind 1.5 MW brochure models are added, and two existing 2.5 MW
+models receive separate digital-English edition observations. The latter
+explicitly distinguishes survival from operating temperature. Printed rotor
+areas and earlier rated-speed disagreements remain qualified observations;
+unresolved scalars stay null. Six graph-only curves are deferred, with no
+numerical points or synthetic variants created. These are manufacturer
+specifications, not independently validated performance.
+
+Sources: [EPE SIGA layer](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0),
+[Goldwind 1.5 MW original](https://www.goldwindamericas.com/sites/default/files/Goldwind-Brochure-1.5-Web.pdf),
+[Goldwind 2.5 MW digital original](https://www.goldwindamericas.com/sites/default/files/GW%202S%20MW-ENG-DIGITAL.pdf),
+[Alto Cabrera notice](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-19045),
+[Salinas II notice](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29433) and
+[Salinas I notice](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29434).
+Full bibliographic metadata and stable source identifiers are in the reference catalogue.

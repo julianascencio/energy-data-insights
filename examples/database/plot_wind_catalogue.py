@@ -659,3 +659,43 @@ if ons_project_states:
         fontsize=9,
     )
     fig.tight_layout()
+
+
+# Separate dated registry categories, with unknowns visible and no MW aggregation.
+siga_observations = [
+    observation
+    for row in rows
+    if row["entity_type"] == "projects"
+    for observation in json.loads(row.get("extensions_json") or "{}").get("epe_siga_snapshots", [])
+]
+if siga_observations:
+    categories = ["authorized_mw", "inspected_mw", "physical_guarantee_mw"]
+    counts = pd.DataFrame(
+        {
+            label: {
+                "Positive reported": sum(
+                    o["normalized_power"][label] is not None and o["normalized_power"][label] > 0
+                    for o in siga_observations
+                ),
+                "Reported zero": sum(o["normalized_power"][label] == 0 for o in siga_observations),
+                "Unknown": sum(o["normalized_power"][label] is None for o in siga_observations),
+            }
+            for label in categories
+        }
+    ).T
+    fig, ax = plt.subplots(figsize=(9, 4))
+    counts.plot.barh(stacked=True, ax=ax, color=["#3d718e", "#e7ab54", "#9a9a9a"])
+    dates = sorted({o["observation_date"] for o in siga_observations})
+    ax.set(
+        title="SIGA reported category completeness — " + ", ".join(dates),
+        xlabel="Registry observations; not summed MW",
+        ylabel="",
+    )
+    ax.text(
+        0,
+        -0.3,
+        "Physical guarantee is not installed capacity; unresolved scope exclusions remain.",
+        transform=ax.transAxes,
+        fontsize=9,
+    )
+    fig.tight_layout()

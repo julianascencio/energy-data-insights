@@ -1,30 +1,62 @@
 {
-  "batch": "2026-11-05-1735",
-  "iteration_parent": "c5eb0ae2cc8321333ebe4f14701740dbf489caf2",
+  "batch": "2026-11-05-1807",
+  "iteration_parent": "cb71b9a9fde68995e5a7983ab4049c9fde1c4b66",
   "local": {
-    "python": "332focused Wind/Hydropower/reference tests passed",
-    "viewer": "30Node tests passed",
-    "quality": "Ruff,format1068,targetedty,hygiene,citations,diff passed",
-    "catalogue": "175project enrichments,3new equipment;22238other records unchanged;395prior source entries preserved,3sources added;all6capacity summaries unchanged",
-    "snapshots": "Two7file builds byte-identical;allParquetcolumnsZSTD",
-    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 660 HTML pages; local links and assets resolve."
+    "python": "357focused Wind/Hydropower/reference tests passed, including25newEPE tests",
+    "viewer": "31Node tests passed",
+    "quality": "Ruff check,format1071,targetedty,repositoryhygiene,citations,diff passed",
+    "catalogue": "68projects and2equipment enriched;3projects4equipment16plannedturbines added;22346prior records unchanged;398prior sources unchanged,6sources added. Prior scalar fields and creation timestamps preserved.",
+    "aggregation": "All6eligible MW summaries and unknown counts unchanged; excluded project counts increase3.",
+    "snapshots": "Two7file builds byte-identical; allParquetcolumns ZSTD",
+    "docs": "Strict Wind-gallery Sphinx passed after citation-role fix; Documentation check passed: 662 HTML pages; local links and assets resolve.",
+    "visual": "New dated SIGA completeness chart rendered and inspected"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "433f3216282a03c35fd63156806856421e552f4b77c4ddfddcf13c15e4ee9ab2",
-    "projects.parquet": "331dfd6e5429976948eb9fc801787a7072645100b0d8fdfa231c38a343df1fb3",
-    "turbines.parquet": "e3ec34b7a764223f002671d92e38fed08e63a643529cf2173c28db69ec56145d",
-    "sources.json": "ba2aa527c2cadb98acec50d29cd40466888bed6ea893c0ebd9a3fe31561d96fc",
+    "manifest.json": "6539dde066535462733bd64996f3539d61bd3b49fca6b9b33bb67f9388771c54",
+    "projects.parquet": "2b8c401e55ead0f6694af0806e7bea8512fb6d810533dab43ea26b4ef5c960dc",
+    "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
+    "sources.json": "ab4aeb764eb3953cc5aafe68aed9af0fe703607688650fb1e6c6f6e44763649d",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "49b7b388bb824fac3f9b7e654cb0233006dbe5f33863f7cf2e9e1b450f6175aa"
+    "equipment.parquet": "ea8f89178aa395bc34890e09c61ce8e3cd326091ed3f39b667dc5b02c7c934f4"
+  },
+  "main_comparison": {
+    "main": {
+      "curves": 2,
+      "equipment": 450,
+      "projects": 8290,
+      "turbines": 13633
+    },
+    "branch": {
+      "projects": 8294,
+      "turbines": 13657,
+      "equipment": 486,
+      "curves": 2
+    },
+    "added": {
+      "equipment": 36,
+      "turbines": 24,
+      "projects": 4
+    },
+    "enriched": {
+      "equipment": 16,
+      "projects": 342
+    },
+    "main_manufacturers": 57,
+    "branch_manufacturers": 63
   },
   "remote_ci": {
-    "previous_head": "c5eb0ae2cc8321333ebe4f14701740dbf489caf2",
-    "previous_result": "Python3.12/3.13 andDocumentation passed",
-    "current_result": "Pending publication"
+    "previous_head": "cb71b9a9fde68995e5a7983ab4049c9fde1c4b66",
+    "previous_result": "Python3.12/3.13 and Documentation passed",
+    "current_result": "Pending publication; final result reported on PR"
   },
   "resolved_attempts": [
-    "Changed-path allowlist initially omitted generated CITATION.cff/references.bib exports; corrected read-only check passed"
+    "New equipment required capacity_scope; added before successful catalogue validation",
+    "Planned turbine registry IDs changed to procedure-qualified turbine IDs; repeated parent procedure IDs belong in observations",
+    "Unknown fleet completeness omitted instead of invalid enum",
+    "Preservation comparison separates increased exclusion counts from unchanged eligible MW",
+    "Unsupported MyST cite role replaced by source links; strict rebuild passed",
+    "Ruff long literals and list expansion fixed before final test run"
   ],
   "not_executed": [
     "Full localPython suite",

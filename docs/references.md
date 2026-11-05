@@ -7471,3 +7471,51 @@ Goldwind Americas (n.d.). **Goldwind 2.5MW PMDD series: Spanish original brochur
 **Role:** data_source. Exact original OEM model tables; no independently validated performance or present certification inferred. Printed revision/publication date unspecified.
 
 **Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### epe_siga_bahia_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Bahia: complete381-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Bahia full wind partition381IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### goldwind_americas_15mw_en
+
+Goldwind Americas (n.d.). **Goldwind Americas 1.5MW PMDD English original brochure**. [Source](https://www.goldwindamericas.com/sites/default/files/Goldwind-Brochure-1.5-Web.pdf)
+
+**Role:** data_source. Complete original technical table visually reviewed; edition/revision and environmental conditions retained; graphs not digitized.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### goldwind_americas_25mw_digital_en
+
+Goldwind Americas (n.d.). **Goldwind Americas 2.5MW digital English original brochure**. [Source](https://www.goldwindamericas.com/sites/default/files/GW%202S%20MW-ENG-DIGITAL.pdf)
+
+**Role:** data_source. Complete original technical table visually reviewed; edition/revision and environmental conditions retained; graphs not digitized.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### boe_a_2026_19045
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Alto Cabrera PEol-382: prior-authorization application dismissed**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-19045)
+
+**Role:** data_source. Dated procedure and proposed capacities only; no commissioning or current census inference.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### boe_b_2026_29433
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Public consultation: Hibridación FV-PEol Salinas II, PEol-FV-312**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29433)
+
+**Role:** data_source. Dated procedure and proposed capacities only; no commissioning or current census inference.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### boe_b_2026_29434
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Public consultation: Hibridación FV-PEol Salinas I, PEol-FV-311**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29434)
+
+**Role:** data_source. Dated procedure and proposed capacities only; no commissioning or current census inference.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.

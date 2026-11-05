@@ -349,3 +349,12 @@ test("ONS geography counts each project once per reported state across snapshots
     {projects:1,stateProjects:{RN:1,RS:1},unknownStateProjects:1});
   assert.deepEqual(windOnsGeography([]),{projects:0,stateProjects:{},unknownStateProjects:0});
 });
+
+test("SIGA preserves dated categories, unknowns and zeros without summing capacity", async () => {
+  const {windSigaSummary}=await import("../../docs/_static/database-core.mjs");
+  const observation={source_id:"epe",source_sha256:"hash",object_id:68,observation_date:"2026-01-13",
+    original:{sigufprincipal:"BA"},normalized_power:{authorized_mw:0,inspected_mw:null,physical_guarantee_mw:13.4}};
+  const row={entity_type:"projects",sources:["epe"],extensions_json:JSON.stringify({epe_siga_snapshots:[observation,observation]})};
+  assert.deepEqual(windSigaSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
+    {projects:1,snapshots:1,withoutEvidence:2,dates:["2026-01-13"],states:["BA"],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
+});

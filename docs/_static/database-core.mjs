@@ -390,3 +390,33 @@ export function windOnsGeography(rows) {
   }
   return {projects, stateProjects: Object.fromEntries([...stateProjects].sort(([a],[b]) => a.localeCompare(b))), unknownStateProjects};
 }
+
+// Keep registry categories and dates visible; never sum physical guarantee as capacity.
+export function windSigaSummary(rows) {
+  const result = {projects:0, snapshots:0, withoutEvidence:0, dates:[], states:[],
+    categories:{authorized_mw:{known:0,unknown:0,zero:0},inspected_mw:{known:0,unknown:0,zero:0},physical_guarantee_mw:{known:0,unknown:0,zero:0}}};
+  const dates=new Set(), states=new Set();
+  for (const row of rows.filter(r=>r.entity_type === "projects")) {
+    let ext;
+    try {ext=JSON.parse(row.extensions_json || "{}");} catch {ext={};}
+    const valid=(Array.isArray(ext?.epe_siga_snapshots) ? ext.epe_siga_snapshots : []).filter(s=>
+      s?.source_id && s.source_sha256 && s.observation_date && s.normalized_power &&
+      Array.isArray(row.sources) && row.sources.includes(s.source_id));
+    if (!valid.length) {result.withoutEvidence++; continue;}
+    result.projects++;
+    const seen=new Set();
+    for (const s of valid) {
+      const key=JSON.stringify([s.source_id,s.source_sha256,s.object_id]);
+      if (seen.has(key)) continue;
+      seen.add(key); result.snapshots++; dates.add(s.observation_date);
+      if (s.original?.sigufprincipal) states.add(s.original.sigufprincipal);
+      for (const [field,counts] of Object.entries(result.categories)) {
+        const value=s.normalized_power[field];
+        if (typeof value !== "number" || !Number.isFinite(value) || value < 0) counts.unknown++;
+        else {counts.known++; if (value === 0) counts.zero++;}
+      }
+    }
+  }
+  result.dates=[...dates].sort(); result.states=[...states].sort();
+  return result;
+}
