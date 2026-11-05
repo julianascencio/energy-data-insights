@@ -2,6 +2,7 @@
 
 import argparse
 import hashlib
+import io
 import json
 import zipfile
 from datetime import datetime
@@ -28,7 +29,7 @@ def main() -> None:
     archive = args.archive.read_bytes()
     if hashlib.sha256(archive).hexdigest() != args.sha256:
         parser.error("Archive checksum mismatch")
-    with zipfile.ZipFile(args.archive) as source:
+    with zipfile.ZipFile(io.BytesIO(archive)) as source:
         plants = source.read(f"2___Plant_Y{args.year}.xlsx")
         units = source.read(f"3_1_Generator_Y{args.year}.xlsx")
     source_id = f"eia860-{args.year}-hydro-{args.first}-{args.last}"

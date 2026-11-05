@@ -296,3 +296,38 @@ uv run python scripts/enrich_hydro_iha.py
 Coverage remains 7,156 records / 128 countries, with 710 enriched identities.
 Next: the ten remaining matched-station rows, then Africa rotation; 88 held
 identities retain complete evidence for later review.
+
+
+## India completion, EIA continuation and Africa discovery
+
+The last ten IHA matched-station candidates yield one accepted Koldam
+enrichment and nine holds. All 110 matched rows are now reviewed: 13 enriched
+and 97 held. Lower Periyar's coordinates disagree substantially and are not
+overwritten. Historical river and raw evidence do not establish current status.
+
+EIA codes 3001–3500 add 77 existing identities and 260 generator observations,
+with 14 holds (13 mixed technology/state and one name discrepancy). EIA totals
+are 534 identities / 1,508 generators / 135 holds. Overall coverage remains
+7,156 records in 128 countries, with 788 enriched identities.
+
+```bash
+uv run python scripts/enrich_hydro_iha.py --batch catalogues/hydro/research/iha-india-2019-0101-0110.json
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-3001-3500.json
+```
+
+African discovery acquired the original RePP Africa workbook. Its hosting
+metadata says CC0 but its Info sheet says CC BY-SA 4.0; reuse remains under
+review and no African records are accepted or redistributed. The source
+review ledger records checksums, structural counts and access attempts.
+An independent African Hydropower Atlas v2.1 successor is the next target.
+Its spreadsheet, field units, original evidence and identity boundaries need
+review before import; modeled generation must stay separate from measurements.
+
+The IHA parser now rejects shifted/truncated CSV rows. EIA preparation parses
+the exact bytes whose checksum was verified, avoiding a second file read.
+
+The AHA v2.1 spreadsheet has now been acquired and checksummed under its
+CC BY 4.0 resource terms. Its Overview label says v1.0 despite its filename;
+a v2.2 successor is linked by the repository. Compare these releases before
+reviewing the first 100 spatial/technical rows. No African plant data is
+accepted in this batch.

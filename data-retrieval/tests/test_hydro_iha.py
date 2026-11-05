@@ -93,3 +93,13 @@ def test_explicit_crosswalk_and_immutable_observation():
     changed["raw"]["River"] = "Other"
     with pytest.raises(ValueError, match="Immutable"):
         enrich(new, changed, **kw)
+
+
+def test_parser_rejects_truncated_and_extra_cells():
+    header = (
+        b"ID,Database Status,Hydropower Station Name,Lat (hydropower station 1),"
+        b"Long (hydropower station 1),HPP_elec_cap,River,Main_basin\n"
+    )
+    for row in [b"1,Matched with hydro station\n", b"1,E,N,20,80,10,R,B,extra\n"]:
+        with pytest.raises(ValueError, match="Malformed IHA row"):
+            parse_inventory(header + row)

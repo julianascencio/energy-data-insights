@@ -27,6 +27,8 @@ def parse_inventory(data: bytes) -> list[dict[str, Any]]:
         raise ValueError("Missing IHA columns")
     result, seen = [], set()
     for index, row in enumerate(reader, 2):
+        if None in row or any(value is None for value in row.values()):
+            raise ValueError(f"Malformed IHA row {index}")
         identity = int(row["ID"])
         if identity < 1 or identity in seen:
             raise ValueError("Invalid or duplicate IHA identity")
