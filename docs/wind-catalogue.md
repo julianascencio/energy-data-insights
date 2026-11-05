@@ -906,3 +906,35 @@ numerical power/Ct curve is inferred. The shared viewer and deterministic galler
 show counts by reference site, withdrawn observations and missing evidence without
 summing yields or presenting an unsupported performance comparison. Paid reference
 certificates are separate from the freely readable published tables.
+
+## Korean certificate configurations and Salinas III proposal (5 November, 14:35)
+
+The remaining 55 rows of the checksum-pinned KNREC register are now reviewed:
+23 certificate-scoped equipment configurations are added and 32 rows await
+revision crosswalks or conflict resolution. Together with the prior two HTq rows,
+all 57 registry rows have a recorded disposition. Multiple power and hub values
+remain options within one record, never Cartesian variants. Printed expired
+notes are retained; blank status does not establish current certification validity.
+The shared viewer and offline gallery distinguish these registry observations
+from independent performance validation. Six new OEM labels retain original
+Korean company names without inferring corporate succession.
+
+BOE daily indexes for 14–16 September 2026, including both Series A and B and
+any linked extra issues, yield one new wind-only proposal: Hibridación FV-PEol
+Salinas III (PEol-FV-313). Its reported 36 MW planned capacity, eight explicitly
+identified proposed turbines, 118 m hubs, 163 m rotors, 30 kV underground
+collection and EUR 39,576,856.27 material-execution budget are source-qualified.
+The budget price year is unknown. Existing PV capacity and the proposed hybrid
+total are separate observations. Public consultation establishes neither approval
+nor installation. The eight annex turbine IDs link to the proposed parent, with
+unknown coordinates. The named base V163 model is recorded as a relationship;
+an exact equipment-configuration link remains unset because the planned 118 m
+hub differs from the existing OEM page's published hub options. Private landholder
+names are not copied. Taraguilla's paragraph-number correction was already
+retained and is counted as duplicate evidence, not an enrichment.
+
+REPD offsets 600–800 received structural review only: all 200 applications remain
+identity holds, with no claim that original permit contents have been reviewed.
+No capacity aggregation exclusion is lifted. All earlier records and creation
+timestamps remain unchanged. See the dated KNREC, BOE and REPD decision ledgers
+in `catalogues/wind/research`; the continuation cursors are in `backlog.json`.

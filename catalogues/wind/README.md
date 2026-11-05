@@ -631,3 +631,11 @@ Primary permit contents still need review; application status never becomes
 farm status through this staging step. Next structural partition: 400–599.
 
 The 2026-11-05-1335 review adds one Korean certificate-scoped V126 HTq configuration. Its two reported power modes remain nested; current certificate validity and FGW equivalence are unknown. A second HTq entry has inconsistent class labels and remains held. REPD saved offsets400–599 were structurally reviewed; all200 remain identity holds, with no farm capacity or lifecycle assignments.
+
+The 5 November 14:35 batch adds 23 Korean certificate configurations, one Spanish
+wind-module proposal and eight planned turbines. Branch totals: 8,291 projects,
+479 equipment, 13,641 turbines and two curves. KNREC's full 57-row register now
+has review decisions; 32 remaining-row candidates and the earlier HTq conflict
+remain held. REPD's next structural-review cursor is 800; BOE's next dates are
+10–12 September 2026. The shared viewer distinguishes expired/unspecified issuer
+listings without asserting current validity. All capacity exclusions are retained.

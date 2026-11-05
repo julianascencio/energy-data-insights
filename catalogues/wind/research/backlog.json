@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-05T13:35:19Z",
+  "updated_at": "2026-11-05T14:43:44Z",
   "branch": "research/wind-20261105-1235",
-  "run_lock": "Acquire flock -n /tmp/energy-data-insights-wind-20261105-0835.lock; inspect active work and remote head; never overwrite another writer",
+  "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-1235.lock; acquire before any branch write",
   "queue": [
     {
       "rank": 1,
@@ -235,41 +235,40 @@
       "rank": 3,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
-      "partition": "Unlinked REPD saved candidates offsets600:800 next",
-      "next_offset": 600,
+      "partition": "Unlinked REPD saved candidates offsets800:1000 next",
+      "next_offset": 800,
       "status": "crosswalk_partition_completed_remaining_applications_pending",
       "tasks": [
         "Do not rerun 642 completed crosswalk enrichments as new work",
         "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
         "Reconcile scope of 642 enriched records against permits before enabling any capacity totals",
-        "Offsets 0:200 structurally reviewed, not identity-cleared; permit references and replacement chains retained in 0835 ledger. Next offsets 200:400.",
-        "Offsets200:400 structurally reviewed, all200identity holds retained; primary permit contents not reviewed. Next400:600, then exact permit crosswalks."
+        "Offsets0:800 structurally reviewed; all remain identity holds, permit contents not yet reviewed. Next800:1000 then exact original permit crosswalks."
       ],
       "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
       "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "next_ids": [
-        "3714",
-        "3715",
-        "3719",
-        "3720",
-        "3721",
-        "3725",
-        "3728",
-        "3729",
-        "3730",
-        "3731",
-        "3734",
-        "3736",
-        "3737",
-        "3740",
-        "3742",
-        "3744",
-        "3745",
-        "3751",
-        "3753",
-        "3755"
+        "4105",
+        "4106",
+        "4107",
+        "4112",
+        "4115",
+        "4117",
+        "4126",
+        "4127",
+        "4128",
+        "4129",
+        "4131",
+        "4132",
+        "4134",
+        "4135",
+        "4136",
+        "4137",
+        "4144",
+        "4145",
+        "4146",
+        "4147"
       ],
-      "structural_review": "2026-11-05-1335-repd-review.json"
+      "structural_review": "2026-11-05-1435-repd-review.json"
     },
     {
       "rank": 4,
@@ -347,7 +346,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "KNREC HTq rows30/38 reviewed: row30 separate certificate configuration added; row38 class conflict held. Seven FGW HTq observations still require original DNV certificate/Mode0 crosswalk. Next remaining55KNREC rows as bounded reviewed partitions; N27/N169 originals remain held.",
+      "next_task": "All57KNREC rows reviewed across1335/1435; do not rediscover. 23new certificate configurations thisrun,32remaining-row holds plus priorHTq38 hold. Next original certificates WT-MLWS-2-0021, WT-MLWS-3-0028, WT-1902-00-170356, WT-2201-00-190356, WT-2601-01-200856 and WT-2602-01-221439 for six explicit semantic/unit conflicts; then32held revision crosswalks. Unison U136 page3-22m/s versus platform3/25m/s unresolved; no threshold fill. Seven FGW HTq rows still need original DNV Mode0 crosswalk.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -358,7 +357,8 @@
         "enriched_equipment": 24
       },
       "vestas_old_review": "2026-11-05-1135-fgw-review.json",
-      "vestas_new_review": "2026-11-05-1235-fgw-review.json"
+      "vestas_new_review": "2026-11-05-1235-fgw-review.json",
+      "knrec_review": "2026-11-05-1435-knrec-review.json"
     },
     {
       "rank": 6,
@@ -443,17 +443,20 @@
         "2026-09-23",
         "2026-09-17",
         "2026-09-18",
-        "2026-09-19"
-      ],
-      "next_dates": [
+        "2026-09-19",
         "2026-09-14",
         "2026-09-15",
         "2026-09-16"
       ],
+      "next_dates": [
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12"
+      ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "September14–16 allA/Bissues. September17–19completezero windnotices; do not repeat.",
-      "decision_ledger": "2026-11-04-2435-source-review.json",
+      "next_task": "September10–12 allA/Bissues. September14–16 complete: SalinasIII1new8plannedturbines; Taraguilla correction already retained. Next original PEol-FV-313 layout/configuration document to reconcile118m hub against published OEM98/113/126m options.",
+      "decision_ledger": "2026-11-05-1435-boe-review.json",
       "series_b_completed_dates": [
         "2026-10-01",
         "2026-10-02",
@@ -495,7 +498,10 @@
         "2026-09-23",
         "2026-09-17",
         "2026-09-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16"
       ]
     },
     {

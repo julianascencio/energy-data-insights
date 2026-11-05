@@ -320,3 +320,12 @@ test("reference correction dates count observations, never commissioning", async
   assert.equal(windReferenceYieldSummary([row]).corrected,1);
   assert.equal(windReferenceYieldSummary([row]).observations,2);
 });
+
+test("certificate observations separate expiry from unknown and deduplicate same evidence", async () => {
+  const {windCertificationSummary} = await import("../../docs/_static/database-core.mjs");
+  const o = {certificate_id:"WT-synthetic",listed_date:"2020-01-01",source_id:"issuer",registry_status:"expired"};
+  const row = {entity_type:"equipment",equipment_category:"wind_turbine",sources:["issuer"],extensions_json:JSON.stringify({certification_register_observations:[o,o,{...o,certificate_id:"WT-other",registry_status:""}]})};
+  assert.deepEqual(windCertificationSummary([row,{...row,extensions_json:"null"},{...row,sources:[]},{...row,entity_type:"projects"}]),
+    {models:1,observations:2,expired:1,cancelled:0,unspecified:1,withoutEvidence:2});
+  assert.deepEqual(windCertificationSummary([]), {models:0,observations:0,expired:0,cancelled:0,unspecified:0,withoutEvidence:0});
+});

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import re
 from html.parser import HTMLParser
 
 
@@ -52,3 +53,46 @@ def certification_rows(original: bytes, *, sha256: str) -> dict[str, list[str]]:
     if not result:
         raise ValueError("No certification rows")
     return result
+
+
+def specification(row: list[str]) -> dict[str, object]:
+    """Normalize a reviewed row, retaining multiple options without pairing them.
+
+    This does not approve identity, resolve contradictory cells, or establish
+    current certificate validity. Unitless and range values remain untyped.
+    """
+    if len(row) != 14 or not row[1].startswith("WT-"):
+        raise ValueError("Expected fourteen certification cells")
+
+    def options(value: str, unit: str, scale: float = 1) -> list[float]:
+        match = re.fullmatch(
+            r"\s*(\d+(?:\.\d+)?(?:\s*[,/]\s*\d+(?:\.\d+)?)*)\s*" + re.escape(unit), value
+        )
+        if not match:
+            return []
+        values = [float(v) * scale for v in re.split(r"\s*[,/]\s*", match[1])]
+        if any(v <= 0 for v in values) or len(set(values)) != len(values):
+            raise ValueError("Nonpositive or duplicate specification options")
+        return values
+
+    power = options(row[5], "MW", 1000)
+    rotor = options(row[10], "m")
+    hubs = options(row[11], "m")
+    speeds = options(row[9], "m/s")
+    return {
+        "rating_options_kw": power,
+        "rated_power_kw": power[0] if len(power) == 1 else None,
+        "rotor_diameter_m": rotor[0] if len(rotor) == 1 else None,
+        "hub_height_options_m": hubs,
+        "hub_height_m": hubs[0] if len(hubs) == 1 else None,
+        "rated_wind_speed_options_m_s": speeds,
+        "rated_wind_speed_m_s": speeds[0] if len(speeds) == 1 else None,
+        "gearbox_present": {"유": True, "무": False}.get(row[7]),
+        "application": {"육상용": "onshore", "해상용": "offshore"}.get(row[8]),
+        "registry_status": "expired"
+        if row[13] == "만료"
+        else "cancelled"
+        if row[13].startswith("인증취소")
+        else "unspecified",
+        "current_validity": None,
+    }

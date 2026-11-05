@@ -316,3 +316,28 @@ export function windReferenceYieldSummary(rows) {
   }
   return result;
 }
+
+// Issuer listings are observations; blank status never establishes valid certification.
+export function windCertificationSummary(rows) {
+  const result = {models: 0, observations: 0, expired: 0, cancelled: 0, unspecified: 0, withoutEvidence: 0};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext; try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = null; }
+    const observations = Array.isArray(ext?.certification_register_observations) ? ext.certification_register_observations : [];
+    const seen = new Set();
+    const valid = observations.filter(o => {
+      if (!o?.certificate_id || !o.listed_date || !row.sources?.includes(o.source_id)) return false;
+      const key = `${o.source_id}:${o.certificate_id}:${o.listed_date}`;
+      if (seen.has(key)) return false;
+      seen.add(key); return true;
+    });
+    if (!valid.length) { result.withoutEvidence++; continue; }
+    result.models++;
+    for (const o of valid) {
+      result.observations++;
+      if (o.registry_status === "expired") result.expired++;
+      else if (o.registry_status === "cancelled") result.cancelled++;
+      else result.unspecified++;
+    }
+  }
+  return result;
+}

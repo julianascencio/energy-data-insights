@@ -121,6 +121,20 @@ print(
     "Density, operating mode and gross/net boundary are unknown; no CF or performance comparison."
 )
 
+# Dated issuer listings retain expired and unknown status; options are not variants.
+certification_status = {}
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "certification_register_observations", []
+    ):
+        status = observation.get("registry_status", "unspecified")
+        certification_status[status] = certification_status.get(status, 0) + 1
+print(
+    "Certification registry observations by stated status:",
+    dict(sorted(certification_status.items())),
+)
+print("Unspecified status does not establish current validity; listed date is not commissioning.")
+
 # Annual EIA unit states do not reconcile whole-farm repowering or hybrid scope.
 print("EIA 2025 dated unit evidence: farm status/capacity exclusions remain unchanged")
 for row in rows:
