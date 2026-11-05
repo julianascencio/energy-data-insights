@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T12:20:00Z",
+  "retrieved_at": "2026-11-05T17:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -184,16 +184,24 @@
       "enriched_records": 0,
       "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
       "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The 2010-2018 tail contains 46 exact facility identities and exhausts the captured inventory."
+    },
+    {
+      "inventory": "atNorth FIN04 current Kouvola permits and SWE04 consultation, grid-line and heat-reuse planning evidence",
+      "processed_offset": 15,
+      "accepted_records": 0,
+      "enriched_records": 2,
+      "reuse": "Seven public official municipal, operator and contractor pages support 15 bounded observations. Facts are normalized without redistributing originals; no held source was used.",
+      "originals": "The browsing interface exposed the official content but not stable original bytes, so no checksums are claimed. This is an access/content-tooling limitation, not a reuse prohibition."
     }
   ],
   "deferred": [
     {
-      "inventory": "FIN04A Phase 2 identity",
-      "reason": "An official cross-reference is still required to bind the environmental case to the existing July 2026 YIT phase without creating a duplicate phase."
+      "inventory": "FIN04 generic YIT contract-to-permit phase mapping",
+      "reason": "FIN04A Phase 2 is now bound to permit 286-2025-384, but official evidence does not map the generic July/August 2026 YIT contract scopes to FIN04A Phase 2, FIN04A Phase 3, FIN04B or FIN04C Phase 2. No duplicate child record is added."
     },
     {
       "inventory": "SWE04 commissioning milestone",
-      "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence."
+      "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence. The March 2029 line-project completion target is not facility commissioning."
     },
     {
       "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current network/electrical/liquid-cooling table",
@@ -258,6 +266,10 @@
     "All 16 facilities whose most recent label year is 2019, nine from 2020, 20 from 2021 and nine from 2022 are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
     "The NTT reuse hold applies to the NTT portfolio source. The one 2019-2022 row naming NTT as owner uses only independent EPA issuer-registry evidence; no NTT source facts or bytes are imported.",
     "All 46 facilities in the 2010-2018 tail are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
-    "All 337 entries in the captured ENERGY STAR Certified Data Centers registry are processed across exact annual partitions from 2010 through 2026; the captured inventory is exhausted and must not be recounted."
+    "All 337 entries in the captured ENERGY STAR Certified Data Centers registry are processed across exact annual partitions from 2010 through 2026; the captured inventory is exhausted and must not be recounted.",
+    "FIN04A Phase 2 permit 286-2025-384 and the FIN04A Phase 3, FIN04B modification and FIN04C Phase 2 permit observations remain campus-level evidence until official party and phase cross-references support child identities.",
+    "FIN04 permit areas remain source observations and are not normalized as campus or data-hall area.",
+    "SWE04 1,200 MW is planned combustion fuel input for backup plant, not electrical output, grid capacity or IT capacity.",
+    "SWE04 130 kV line construction and heat-reuse development agreement are planning observations; no facility commissioning date, delivered heat or contracted heat quantity is inferred."
   ]
 }

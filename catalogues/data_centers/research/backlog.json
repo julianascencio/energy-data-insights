@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T16:20:00Z",
+  "updated_at": "2026-11-05T17:20:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -122,7 +122,8 @@
     "energy_star_certified_data_centers_2013": 7,
     "energy_star_certified_data_centers_2012": 3,
     "energy_star_certified_data_centers_2011": 4,
-    "energy_star_certified_data_centers_2010": 2
+    "energy_star_certified_data_centers_2010": 2,
+    "atnorth_fin04_swe04_current_official_observations": 15
   },
   "next_batches": [
     {
@@ -132,12 +133,12 @@
         "https://www.atnorth.com/nordic-data-centers/",
         "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
       ],
-      "offset": 23,
-      "scope": "All 13 current named sites, four explicit child buildings/phases, six Finnish municipal observations and four Nordic identity/status reconciliations are processed. Do not recount. FIN03 is now a separately identified operational facility with combined FIN01/FIN03 capacity left unallocated. DEN01 first-phase and campus milestones are separated; DEN02 planning/contractor/phase observations and SWE04 municipal land/grid/site boundaries are complete.",
+      "offset": 38,
+      "scope": "All 13 current named sites, four explicit child buildings/phases, six earlier Finnish municipal observations, four Nordic identity/status reconciliations and 15 current FIN04/SWE04 official observations are processed. Do not recount. FIN03 is a separately identified operational facility with combined FIN01/FIN03 capacity left unallocated. FIN04A Phase 2 environmental identity now binds to permit 286-2025-384; FIN04A Phase 3, FIN04B modification and FIN04C Phase 2 permit observations are retained without inventing child records. SWE04 fuel-input, grid-line and heat-reuse planning boundaries remain separate from IT/grid capacity and commissioning.",
       "questions": [
         "FIN02 40 MW unspecified campus power vs contractor 45 MW gross future total have different boundaries; do not silently replace",
-        "FIN04A Ph2 versus the existing July-2026 YIT phase remains quarantined until an official cross-reference binds the identities; no duplicate phase record was added",
-        "SWE04 H1 2028 versus autumn 2028 commissioning targets remain quarantined; seek a later dated permit or operator milestone",
+        "FIN04A Phase 2 permit identity is resolved, but the generic July/August 2026 YIT contract scopes are not officially mapped to FIN04A Phase 2, FIN04A Phase 3, FIN04B or FIN04C Phase 2; no duplicate child record was added",
+        "SWE04 H1 2028 versus autumn 2028 commissioning targets remain quarantined; March 2029 is the grid-line project completion target, not facility commissioning",
         "The stale SWE04 4 ha operator FAQ text is preserved as a contradicted observation; current operator and municipal evidence support approximately 50 ha",
         "Get dated commencement/completion evidence and explicit building/phase IT/grid/facility ratings; no generic PUE-derived estimates"
       ]

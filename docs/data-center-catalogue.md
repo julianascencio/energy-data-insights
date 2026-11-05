@@ -354,6 +354,16 @@ first-phase and up-to-500 MW campus statements unclassified. Municipal evidence 
 SWE04 now binds the 200 MW phase-one grid connection to E.ON and keeps it separate
 from 300 MW planned project power and 500 MW Hamre industrial-park capacity. The
 conflicting H1 2028 and autumn 2028 commissioning targets remain quarantined.
+The current permit reconciliation binds FIN04A Phase 2 to Kouvola permit
+286-2025-384 and retains exact, separately scoped observations for FIN04A Phase 3
+(286-2026-281), the FIN04B modification (286-2026-282) and FIN04C Phase 2
+(286-2026-277). Their building areas are not promoted to campus or data-hall area,
+and the generic YIT contract records are not assigned to a permit phase without an
+official cross-reference. SWE04 additionally retains 1,200 MW of planned backup
+combustion fuel input, two 130 kV line-project observations and a heat-reuse
+development agreement. None is normalized as IT/grid capacity, commissioned
+facility power or delivered heat; the line project's March 2029 completion target
+does not resolve the facility commissioning conflict.
 The liquid-cooling continuation adds all eight models in Motivair's CDU 2026
 table and six exact nVent catalogue configurations. Motivair's four cooling
 rating points, primary/secondary flows, pump head, dimensions, electrical options
@@ -537,4 +547,4 @@ deployed inventory. The official 96-row, 223-column v3 CSV is 72,103 bytes with
 SHA-256 `e769eedcef814b652ad6594b6cadb43b239e57e9250071a90cc133b07907e533`.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T1020-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T1720-validation.json).
