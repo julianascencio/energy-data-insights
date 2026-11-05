@@ -7,8 +7,8 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **520 project records in 36 countries**:
 **403 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **2,766 exact equipment records from 74 OEMs**.
-Merged `main` at `eb03f8f4` contains **520 projects and 2,677 equipment records**.
+from 13 operators. It has **2,774 exact equipment records from 74 OEMs**.
+Merged `main` at `4ef42de4` contains **520 projects and 2,766 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
 
@@ -26,6 +26,7 @@ uv run python scripts/stage_data_center_vertiv_powerups.py extracted.txt --sourc
 uv run python scripts/stage_data_center_carrier_19dv.py extracted-layout.txt --source-url https://brandportal.carrier.com/m/7aed1ae899ea9c0e/original/NA2316A_brochure_aquaedge_19DV_EN_carrier_bat04_bd.pdf --expected-count 28
 uv run python scripts/stage_data_center_raxio.py captured.html --source-url https://www.raxiogroup.com/data-centres/angola/ --expected-code AO1
 uv run python scripts/stage_data_center_cummins.py captured.html --source-url https://www.cummins.com/en-na/generators/products/qsk60 --expected-count 17
+uv run python scripts/build_data_center_cummins_qsk50_batch.py captured-qsk50.html staged-cummins-qsk50.jsonl
 uv run python scripts/stage_data_center_inventory.py captured.html --source-url https://www.atnorth.com/nordic-data-centers/ --expected-count 13
 uv run python scripts/build_data_center_atnorth_finland_permit_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
 uv run python scripts/build_data_center_atnorth_reconciliation_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
