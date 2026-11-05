@@ -1,37 +1,35 @@
 {
-  "batch": "2026-11-05-0335",
-  "iteration_parent": "71dc29945247e23c9de5d223aaeb9f63deb504a7",
+  "batch": "2026-11-05-0435",
+  "iteration_parent": "8bc81c58863ecafcd17419f05e5707ff82a1ae9d",
   "local": {
-    "tests": "234 focused Python tests passed on sequential retry; initial concurrent attempt failed during resource exhaustion",
-    "viewer": "22 Node viewer tests and JavaScript syntax check passed on updated isolated viewer",
-    "catalogue": "22181 valid records;22048 unchanged;132 projects and1 equipment enriched;all prior scalar facts,IDs,creation timestamps and all6capacity summaries preserved",
-    "source_registry": "All 364 prior source entries unchanged; two new sources",
-    "replay": "EIA same-source replay/idempotence and original workbook checksums passed",
-    "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD; first combined attempt killed before second build; sequential clean builds passed",
-    "example": "Updated offline Wind example executed against isolated expanded catalogue",
-    "quality": "Ruff check,format972files,explicit-Python ty,citations passed;working-repository hygiene4466files passed;isolated JSONL/schema/provenance validated separately",
-    "docs": "Strict local docs not executed due main-filesystem exhaustion",
-    "isolation": "Expanded catalogue, viewer, example, tests and docs assembled in memory-backed storage; main working checkout remains at05ab14f6"
+    "tests": "18 EIA adapter tests passed; broad234-test attempt failed during temporary-storage exhaustion, no full-suite pass claimed",
+    "viewer": "22 Node tests and JavaScript syntax passed; existing viewer reused unchanged",
+    "catalogue": "22181 valid;22086 unchanged;95 enriched projects preserve prior scalar facts, IDs, creation timestamps and all6capacity summaries",
+    "source_registry": "All366 preceding source entries unchanged;one bounded EIA alias added",
+    "replay": "Original workbook hashes and EIA same-source idempotence passed",
+    "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD",
+    "example": "Offline Wind example passed against expanded isolated catalogue",
+    "quality": "Ruff,format972files,ty,citations passed;working-repository hygiene4466files passed;isolated catalogue validated separately",
+    "docs": "Not executed: full main filesystem"
   },
   "snapshot_sha256": {
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
-    "manifest.json": "6cde8068b8da2a1538fb915fbfe86c33260d411218790659f484acbd4fbc92eb",
-    "projects.parquet": "13584b54007e232f99409a23e08a4ccb215e0d5e4ac4953b88941d52edafd324",
+    "manifest.json": "c0d5309de57ef904183563a125c8599b6192f0bf3efa74acfaefad2a6ce1c797",
+    "projects.parquet": "17160414612c72e628c9712fde42ad6cfb52d4ad22eec7cf38738dac0b876954",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "sources.json": "cb15e7ea499767c94a0cdc377faf3f27908f0b3244e9e04eb316f990937f2de2",
+    "sources.json": "ceaeac8bdb42df9568ce7a0b6caa210e778472fbb4f82082643bc02cc851f795",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
   "remote_ci": {
-    "prior_head": "71dc29945247e23c9de5d223aaeb9f63deb504a7",
+    "prior_head": "8bc81c58863ecafcd17419f05e5707ff82a1ae9d",
     "prior_result": "Python and Documentation passed",
-    "new_head": "Pending publication; not yet observed"
+    "new_head": "Not yet published"
   },
   "not_executed": [
-    "Full local Python suite",
-    "Strict local docs",
-    "Full gallery",
-    "Interactive browser",
-    "Package rebuild (no package code changed)"
+    "Full successful local Python suite",
+    "Strict local docs/full gallery",
+    "Browser",
+    "Package rebuild; no package code changed"
   ]
 }
