@@ -10,8 +10,8 @@
     "repd": "200 saved candidates reviewed:200 identity holds,160 permit references,33 replacement references; SHA pinned; no canonical project changes",
     "snapshots": "Two final seven-file builds byte-identical; every Parquet column ZSTD",
     "packages": "All three packages built wheel and sdist",
-    "docs": "Strict incremental Sphinx build passed with Wind-only gallery selection; full executable gallery not run",
-    "docs_links": "652 HTML pages: local links and assets passed"
+    "docs": "Strict incremental Sphinx passed again after main reconciliation; Wind-only executable gallery selection",
+    "docs_links": "656 HTML pages: local links and assets passed after main reconciliation"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
@@ -25,7 +25,8 @@
   "remote_ci": {
     "previous_head": "c8d0758b38ec94465b030c4e3a99b2ce9c4733eb",
     "previous_head_result": "Python3.12,Python3.13,Documentation passed",
-    "current_update": "Not yet published when report written; inspect new PR checks"
+    "current_update": "Python3.12,Python3.13 and Documentation running at publication checkpoint; inspect final PR head checks",
+    "data_commit": "0c85696209a9e43c7fc4b9f3172954287b27d78a"
   },
   "not_executed": [
     "Full local Python suite",
