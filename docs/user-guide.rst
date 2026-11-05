@@ -41,6 +41,7 @@ Data access and scientific methods
    _generated/guides/timestral
    _generated/guides/forecast-benchmark
    _generated/guides/kazakhstan-hybrid-dispatch
+   _generated/guides/india-storage-peak-shift
    _generated/guides/thermal-counterfactual
    _generated/guides/timestral-solar-case
    _generated/guides/worldwide-generation
