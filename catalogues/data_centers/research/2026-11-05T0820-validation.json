@@ -1,0 +1,114 @@
+{
+  "run_id": "doe-ccms-liquid-transformers-20261105T082000Z",
+  "validated_at": "2026-11-05T08:20:00Z",
+  "base_main_sha": "aa842b959bebe8b4279a449f91176be26f0ad6a5",
+  "branch": "research/data-center-database-20261105T0820Z",
+  "catalogue": {
+    "canonical_records": 2600,
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus": 114
+    },
+    "equipment": 2417,
+    "countries": 36,
+    "operators": 13,
+    "oems": 63,
+    "added_equipment": 50,
+    "added_projects": 0,
+    "enriched_projects": 0
+  },
+  "inventory": {
+    "source_id": "doe-ccms-liquid-transformer-basic-model-page1-20261023",
+    "displayed_rows_processed": 50,
+    "source_total_rows": 43140,
+    "manufacturer_counts": {
+      "CMI": 50
+    },
+    "phase_counts": {
+      "single_phase": 24,
+      "three_phase": 26
+    },
+    "apparent_power_kva_range": [
+      37.5,
+      2500.0
+    ],
+    "original_bytes_available": false,
+    "original_access_result": "HTTP 403 from direct official page and public MCP endpoint; indexed public reader exposed all selected rows",
+    "reuse_prohibited": false
+  },
+  "local_checks": [
+    {
+      "command": "python -m json.tool plus JSONL line parsing for sources, backlog, source review, decisions and new records",
+      "result": "passed"
+    },
+    {
+      "command": "uv run --no-sync python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 2600 records"
+    },
+    {
+      "command": "uv run --no-sync python scripts/build_data_center_doe_liquid_transformer_batch.py /tmp/doe-liquid-replay.jsonl && cmp ...",
+      "result": "passed; byte-identical 50-record replay"
+    },
+    {
+      "command": "uv run --no-sync pytest -q data-retrieval/tests/test_data_center_inventories.py data-retrieval/tests/test_data_center_catalogue.py",
+      "result": "passed; 81 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed after merging current main; 22 tests"
+    },
+    {
+      "command": "uv run --no-sync ruff format --check .",
+      "result": "passed; 1004 files"
+    },
+    {
+      "command": "uv run --no-sync ruff check .",
+      "result": "passed"
+    },
+    {
+      "command": "uv run --no-sync ty check scripts/build_data_center_doe_liquid_transformer_batch.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed"
+    },
+    {
+      "command": "uv run --no-sync ty check",
+      "result": "one unrelated unresolved optional pvdeg import on current main; changed Data Center files passed targeted type checking"
+    },
+    {
+      "command": "uv run --no-sync python scripts/check_repository.py",
+      "result": "passed after merging current main; 4838 candidate files"
+    },
+    {
+      "command": "uv run --no-sync python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg uv run --no-sync python examples/database/plot_data_center_catalogue.py",
+      "result": "passed"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus diff -qr",
+      "result": "passed; byte-identical snapshots"
+    },
+    {
+      "command": "uv run --no-sync pytest -q",
+      "result": "2636 passed, 5 optional skips, 3 unrelated failures caused by missing optional pvdeg dependency before the current-main merge; focused Data Center and viewer checks were rerun after the merge"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "87ed8e57d0b043a8326ca82a50f51cbf91993bf31cf0a9dc80811d2b4e66a3ec",
+    "projects": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment": "3fcc7d703c3a510b8c9f46d71b352b64541b5b3abddbfd3440a34b2ef9078bb7",
+    "manifest": "a198090d8810b64d382c3d86ae21f99027d0494f573a2e6cbffdb3e27226629e",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "0fc34e95d3069c698e102fd33f6c2ff0b86812f0804e009adca0e09890e8c7b2"
+  },
+  "remote_ci": {
+    "status_at_validation": "not_started"
+  }
+}
