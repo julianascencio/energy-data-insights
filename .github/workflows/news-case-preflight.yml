@@ -5,6 +5,10 @@ on:
     branches:
       - feature/news-india-storage-vgf-20261105
 
+concurrency:
+  group: news-preflight-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
