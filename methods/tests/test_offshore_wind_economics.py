@@ -71,7 +71,9 @@ def test_mw_scale_does_not_change_lcoe(scenario: OffshoreWindScenario) -> None:
         ("annual_degradation", 1),
     ],
 )
-def test_reject_invalid_inputs(scenario: OffshoreWindScenario, attribute: str, value: float) -> None:
+def test_reject_invalid_inputs(
+    scenario: OffshoreWindScenario, attribute: str, value: float
+) -> None:
     with pytest.raises(ValueError):
         evaluate_offshore_wind(replace(scenario, **{attribute: value}))
 
