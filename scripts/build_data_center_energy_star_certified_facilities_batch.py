@@ -16,7 +16,16 @@ SOURCE_URL = "https://www.energystar.gov/buildings/certified-data-centers"
 RETRIEVED_AT = "2026-11-05T12:20:00Z"
 AS_OF = "2026-11-05"
 EXPECTED_TOTAL_COUNT = 337
-EXPECTED_SELECTED_COUNTS = {2023: 31, 2024: 23, 2025: 50, 2026: 133}
+EXPECTED_SELECTED_COUNTS = {
+    2019: 16,
+    2020: 9,
+    2021: 20,
+    2022: 9,
+    2023: 31,
+    2024: 23,
+    2025: 50,
+    2026: 133,
+}
 
 
 def compact(value: object) -> str:
