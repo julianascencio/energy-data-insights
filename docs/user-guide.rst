@@ -58,6 +58,7 @@ Data access and scientific methods
    _generated/guides/degradation-gallery
    _generated/guides/degradation-uncertainty
    _generated/guides/pv-lifetime
+   _generated/guides/aemet-era5-canary
    _generated/guides/pvdeg-canary
 
 Applied studies

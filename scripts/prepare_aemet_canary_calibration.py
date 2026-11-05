@@ -35,6 +35,14 @@ def acquire_aemet() -> None:
     """Use the all-station daily API in conservative 15-day partitions."""
     OUT.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
+    complete = OUT / "aemet_provenance.json"
+    if complete.exists():
+        manifest = json.loads(complete.read_text())
+        for name, key in (("daily.csv", "daily_sha256"), ("stations.csv", "station_sha256")):
+            if hashlib.sha256((OUT / name).read_bytes()).hexdigest() != manifest[key]:
+                raise ValueError("Captured AEMET input checksum mismatch")
+        print("Reusing checksum-verified AEMET 2022-2023 snapshot", flush=True)
+        return
     records = []
     with HTTPClient(
         frozenset({"opendata.aemet.es"}), config=HTTPConfig(minimum_interval_seconds=2.0)

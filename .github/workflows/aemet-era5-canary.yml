@@ -3,8 +3,8 @@ on:
   push:
     branches: [analysis/aemet-era5-degradation]
     paths:
-      - scripts/prepare_aemet_canary_calibration.py
-      - .github/workflows/aemet-era5-canary.yml
+      - analysis/src/energy_analysis/aemet_era5_canary.py
+      - methods/src/energy_methods/weather_calibration.py
   workflow_dispatch:
 permissions:
   contents: write
@@ -40,7 +40,14 @@ jobs:
           fi
       - name: Acquire matching ERA5 cell histories
         run: uv run --no-sync python scripts/prepare_aemet_canary_calibration.py era5
-      - name: Save ERA5 inputs on study branch
+      - name: Calculate calibrated rate rasters and validate held-out data
+        run: uv run --no-sync python scripts/analyze_aemet_canary_calibration.py
+      - name: Render calibrated and comparison maps
+        env:
+          MPLBACKEND: Agg
+        working-directory: examples/analysis
+        run: uv run --no-sync python plot_aemet_era5_canary.py
+      - name: Save ERA5 inputs and model results on study branch
         if: always()
         run: |
           git add -f examples/analysis/aemet_era5_canary

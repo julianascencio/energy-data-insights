@@ -5,6 +5,14 @@ The original [thermal gallery](https://julianascencio.github.io/energy-data-insi
 includes a 100 m archipelago map, a Tenerife detail and parameter sensitivity.
 
 
+## AEMET-adjusted continuous rate maps
+
+The [AEMET/ERA5 follow-up](aemet-era5-canary.md) fits seasonal weather
+corrections from local observations and calculates continuous land rasters for
+hydrolysis, photodegradation, thermomechanical and combined degradation rates.
+The weather is locally adjusted; module-rate parameters remain a published
+mono-Si scenario. Raw and corrected maps and held-out validation are included.
+
 ## Nine hourly degradation-mechanism maps
 
 The [mechanism gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_pvdeg_canary_mechanisms.html)
