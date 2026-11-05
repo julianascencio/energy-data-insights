@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T21:23:00Z",
+  "retrieved_at": "2026-11-05T22:22:01Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -224,6 +224,14 @@
       "enriched_records": 11,
       "reuse": "Public U.S. Department of Energy certification data were used for factual extraction only. DOE identifies the values as manufacturer representations and states that listing is not a compliance determination. No source page is redistributed and no reuse prohibition was found.",
       "originals": "The accessible public reader exposed all 50 selected rows. Direct requests to the public MCP endpoint returned HTTP 403, so sources.json claims no source bytes or checksum. This is an access/content limitation, not a reuse restriction."
+    },
+    {
+      "inventory": "Cummins QSK50 Data Center Continuous generator table",
+      "processed_offset": 8,
+      "accepted_records": 8,
+      "enriched_records": 0,
+      "reuse": "The public OEM page was used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved Cummins reuse hold applies.",
+      "originals": "The official 216,857-byte HTML original was captured successfully with SHA-256 d6507bb53731f8491de0db48d46706e57397ef9708ab04af0fbd4437fb2e6fcb. All eight exact model/frequency identities with populated Data Center Continuous ratings were processed."
     }
   ],
   "deferred": [
@@ -338,6 +346,8 @@
     "All 50 displayed DOE CCMS UPS rows are processed for the public page updated 2026-10-23: four ABB rows and 46 APC rows.",
     "Exact individual-model deduplication enriched 11 existing ENERGY STAR APC configurations and added 39 new configurations; no duplicate configuration identity was created.",
     "DOE active W, apparent VA and average load-adjusted efficiency remain separate and retain the reported lowest supported input dependency mode. Battery energy, runtime, frequency, dimensions, accessories and deployment are not inferred.",
-    "DOE listing is not treated as a compliance determination. The BN1500M2 and BN1500M2-CA efficiency disagreement remains explicitly quarantined rather than replacing either issuer observation."
+    "DOE listing is not treated as a compliance determination. The BN1500M2 and BN1500M2-CA efficiency disagreement remains explicitly quarantined rather than replacing either issuer observation.",
+    "All eight Cummins QSK50 model/frequency identities with populated Data Center Continuous ratings are processed. Five full rating rows retain prime, standby, continuous and engine observations; three DCC-only identities do not inherit missing family-level facts.",
+    "Cummins DCC kW and kVA remain separate exact OEM outputs, not facility capacity or deployment. Duplicate live-page rows are reconciled only when DCC values agree; no voltage, alternator, enclosure or installation option is synthesized."
   ]
 }
