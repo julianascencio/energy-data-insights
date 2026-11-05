@@ -633,6 +633,12 @@ def prepare_sources(root: Path) -> list[str]:
     _rengo_3d_assets(root)
     _climate_assets(root)
     _site_and_degradation_assets(root)
+    shutil.copytree(
+        root / "examples/analysis/aemet_era5_canary",
+        root / "docs/auto_examples/analysis/aemet_era5_canary",
+        dirs_exist_ok=True,
+        ignore=shutil.ignore_patterns("daily", "weather"),
+    )
     # Sphinx-Gallery hashes the script, not its catalogue inputs. This small
     # data-driven example must rerun when records, sources or the schema change.
     (docs / "auto_examples/database/plot_wind_catalogue.py.md5").unlink(missing_ok=True)

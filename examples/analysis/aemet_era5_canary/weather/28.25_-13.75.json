@@ -1,0 +1,61 @@
+{
+  "requested_latitude": 28.25,
+  "requested_longitude": -13.75,
+  "cell_latitude": 28.25,
+  "cell_longitude": -13.75,
+  "requests": [
+    {
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "parameters": {
+        "latitude": "28.25",
+        "longitude": "-13.75",
+        "start_date": "2022-01-01",
+        "end_date": "2023-01-01",
+        "hourly": "shortwave_radiation,temperature_2m,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,terrestrial_radiation",
+        "models": "era5",
+        "timezone": "UTC",
+        "timeformat": "unixtime",
+        "wind_speed_unit": "ms",
+        "temperature_unit": "celsius",
+        "cell_selection": "nearest",
+        "elevation": "nan"
+      },
+      "retrieved_at_utc": "2026-11-05T14:00:08.945829+00:00",
+      "sha256": "ac015a5b1cc3297fee9f41407f9695fd4c21da0a957f601dd514213cc19369e8",
+      "size_bytes": 338679,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "parameters": {
+        "latitude": "28.25",
+        "longitude": "-13.75",
+        "start_date": "2023-01-01",
+        "end_date": "2024-01-01",
+        "hourly": "shortwave_radiation,temperature_2m,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,terrestrial_radiation",
+        "models": "era5",
+        "timezone": "UTC",
+        "timeformat": "unixtime",
+        "wind_speed_unit": "ms",
+        "temperature_unit": "celsius",
+        "cell_selection": "nearest",
+        "elevation": "nan"
+      },
+      "retrieved_at_utc": "2026-11-05T14:02:18.141888+00:00",
+      "sha256": "798b6839deba73f30008cd0ade99b9de5a372090f9411c3697c932fd621bace4",
+      "size_bytes": 338160,
+      "cache_hit": false
+    }
+  ],
+  "files": [
+    {
+      "file": "28.25_-13.75_2022.csv",
+      "sha256": "309724682a5fc676e5160dfcd0df17f7e92bf8551cda4bba9c46dd094880ed3d"
+    },
+    {
+      "file": "28.25_-13.75_2023.csv",
+      "sha256": "ee28cab3c2c1f026649a5978a45a9848b536425509304f52b7b8c9a1657e56e5"
+    }
+  ],
+  "legacy_sha256": "564122604afd19b2b6056f3006d29eb526d37232ded3027862dabd47f2fe16e5"
+}
