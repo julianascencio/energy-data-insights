@@ -6,9 +6,7 @@ from energy_methods.storage_peak_shift import simulate_storage_peak_shift
 
 
 def test_no_storage_and_energy_accounting() -> None:
-    result = simulate_storage_peak_shift(
-        [10, 0], [0, 5], battery_power_mw=0, battery_energy_mwh=0
-    )
+    result = simulate_storage_peak_shift([10, 0], [0, 5], battery_power_mw=0, battery_energy_mwh=0)
     assert result.peak_coverage == 0
     assert result.curtailed_mwh == 10
     assert result.steps[-1].unmet_peak_mwh == 5
@@ -44,7 +42,10 @@ def test_round_trip_efficiency() -> None:
 
 def test_energy_capacity_and_demand_cap() -> None:
     result = simulate_storage_peak_shift(
-        [100, 0], [0, 1], battery_power_mw=20, battery_energy_mwh=2,
+        [100, 0],
+        [0, 1],
+        battery_power_mw=20,
+        battery_energy_mwh=2,
         round_trip_efficiency=1,
     )
     assert result.peak_delivered_mwh == 1
@@ -53,9 +54,7 @@ def test_energy_capacity_and_demand_cap() -> None:
 
 
 def test_zero_peak_shortfall_is_covered() -> None:
-    result = simulate_storage_peak_shift(
-        [0, 0], [0, 0], battery_power_mw=2, battery_energy_mwh=2
-    )
+    result = simulate_storage_peak_shift([0, 0], [0, 0], battery_power_mw=2, battery_energy_mwh=2)
     assert result.peak_coverage == 1.0
     assert result.peak_shortfall_mwh == 0
 
