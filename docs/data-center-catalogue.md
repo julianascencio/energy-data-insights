@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,267 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,317 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
@@ -295,6 +295,13 @@ G6 for the high-end configuration ID; both issuer observations are preserved and
 configuration-identity inference remains quarantined. PSU nameplates, benchmark
 scores, maximum supported memory and certification status remain bounded evidence,
 not rated server/rack input, installed memory or deployment claims.
+The DOE CCMS continuation adds every one of the first 50 displayed current
+low-voltage dry-type transformer basic-model rows: 27 three-phase 15 kVA EATON
+models, 15 three-phase 112.5 kVA models and eight single-phase 100 kVA models.
+Exact basic-model identity, phase count, apparent kVA and represented efficiency
+remain issuer-registry evidence. The displayed page omits the efficiency load/test
+condition, so no generic efficiency scalar is normalized; kVA is not converted to
+active kW and listing is not treated as a DOE compliance determination.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -464,4 +471,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T0520-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T0620-validation.json).

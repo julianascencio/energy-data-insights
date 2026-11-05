@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T05:20:00Z",
+  "retrieved_at": "2026-11-05T06:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -96,6 +96,14 @@
       "enriched_records": 0,
       "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No Ace Computers OEM-page facts or deployment claims are imported.",
       "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains the only J.C. Technology dba Ace Computers certification entry in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "U.S. DOE CCMS low-voltage dry-type transformer basic-model displayed rows 1-50",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. Department of Energy certification database; exact manufacturer-represented brand, basic model, phase count, kVA and represented-efficiency facts normalized without redistributing the source page. Listing is not treated as a DOE compliance determination.",
+      "originals": "The official page reader exposed every selected displayed row from the public 2026-10-23 snapshot. A direct original-byte request returned HTTP 403, so no source checksum is claimed; this is an access limitation, not a reuse prohibition."
     }
   ],
   "deferred": [
@@ -108,8 +116,8 @@
       "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence."
     },
     {
-      "inventory": "Independent current electrical or liquid-cooling supplier table",
-      "reason": "The selected EPA ENERGY STAR Enterprise Servers snapshot is exhausted at 476/476 rows across all 17 partners. Continue a distinct official supplier table or wait for a dated issuer-dataset revision rather than recounting completed rows."
+      "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current electrical/liquid-cooling table",
+      "reason": "The first 50 displayed low-voltage dry-type basic-model rows are complete. Continue only through a stable non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount the displayed page."
     }
   ],
   "quarantined": [
@@ -147,6 +155,9 @@
     "All three Altos and the one Ace Computers entry retain only typical/single SERT observations; absent low-end/high-end tiers and configuration IDs remain absent.",
     "All six ZTE and three Oracle entries retain their reported three-tier observations. ZTE certification 4654814 does not resolve its R5300 G5/R5300 G6 configuration-label mismatch.",
     "All 476 rows across all 17 ENERGY STAR Enterprise Servers partner partitions in the 2026-11-04 dataset snapshot are now processed.",
+    "All 50 displayed DOE CCMS low-voltage dry-type transformer basic-model rows are processed for the public page updated 2026-10-23.",
+    "DOE represented efficiency stays an observation because the displayed table omits the load/test condition; phase count and apparent kVA remain exact, active kW is not inferred and listing is not treated as a DOE compliance determination.",
+    "The saved Delta UPS reuse hold was screened and enforced; no Delta UPS facts, records or source bytes were committed.",
     "Campus aggregates remain excluded from capacity sums under all viewer filters.",
     "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko reuse holds remain in force; no held facts or bytes were imported."
   ]

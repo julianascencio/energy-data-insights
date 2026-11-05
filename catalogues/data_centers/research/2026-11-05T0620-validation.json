@@ -1,0 +1,86 @@
+{
+  "run_id": "doe-ccms-eaton-transformers-20261105T062000Z",
+  "retrieved_at": "2026-11-05T06:20:00Z",
+  "branch": "research/data-center-database-20261104T2220Z",
+  "base_head": "9f36b0f35a0090a4908741704af883be376466b6",
+  "prepublication_remote_head": "f25fc86aa99caf2d4569629d88d829443120399f",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 2317,
+    "total": 2500,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 57,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 50,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1831,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 486,
+    "latest_inventory": "US DOE CCMS low-voltage dry-type transformer basic-model public table, displayed rows 1-50"
+  },
+  "source_capture": {
+    "accepted_originals": 0,
+    "accepted_original_bytes": 0,
+    "checksummed_originals": 0,
+    "unavailable_originals": 1,
+    "source_sha256": null,
+    "access_result": "The official public page was readable through the web index, while direct byte retrieval returned HTTP 403; this is an access/content limitation, not a reuse prohibition"
+  },
+  "executed_checks": [
+    {"check": "deterministic DOE transformer builder replay", "result": "passed", "detail": "The isolated builder reproduced all 50 records byte-for-byte twice and matched the staged canonical JSONL"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,500 canonical Data Center records from the isolated expanded catalogue"},
+    {"check": "DOE adapter tests", "result": "passed", "detail": "2 passed; exact boundary preservation, duplicate rejection, identity drift and source-host enforcement covered"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "82 passed"},
+    {"check": "full Python test suite", "result": "unrelated local collection failure", "detail": "The dirty local worktree stopped during collection on unrelated missing PV/BESS/Wind modules and a transient psutil process lookup. The isolated Data Center suite is green and no unrelated files were changed."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "targeted Ruff format and lint", "result": "passed", "detail": "The new builder, changed inventory adapter and focused tests passed Ruff format --check and Ruff check"},
+    {"check": "targeted ty", "result": "passed", "detail": "The new builder and changed inventory adapter passed type checking with the isolated package search path"},
+    {"check": "repository hygiene", "result": "passed", "detail": "4,505 candidate files checked; no flagged secrets or data"},
+    {"check": "citation registry", "result": "unrelated local worktree failure", "detail": "The checker reports stale CITATION.cff, references.bib and docs/references.md exports in the unrelated dirty worktree. Fresh remote CI is authoritative."},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed against the isolated expanded catalogue"},
+    {"check": "strict Sphinx and generated-site link validation", "result": "not run locally", "detail": "The local Python 3.12 validation environment cannot install the unrelated Python 3.13-only Orbital PV gallery dependency; remote Documentation CI is authoritative"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "c3c5ca1a92bb4cc71ac28de1d6fe505e5d87e1dae472956a6bec53af7ebf7866",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "4909da87ff9277ec67252dfe48bbd1917e9f513cadb2a60c5aaac48c8de56e39",
+    "manifest_sha256": "dd259588593d2559bdb585b24be329e121a6ea4429c35cc4148cfce266047abe",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "f93ab63c9adedbd630221e6386bd1542127e69995918f21c6ab23508f2f0f0b2"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "Delta UPS tables were screened but excluded immediately because the saved backlog records an explicit reuse hold; no Delta UPS facts or bytes were retained",
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "DOE CCMS low-voltage dry-type transformer rows after the displayed 1-50 boundary, requiring a stable non-overlapping page or filter boundary",
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "An independent current electrical or liquid-cooling supplier inventory"
+  ],
+  "quarantined_fields": [
+    "represented_efficiency_pct is preserved as an exact observation but normalized efficiency_pct remains null because the public table does not print the applicable load or test condition",
+    "processor_socket_count on UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S remains from the earlier Cisco batch",
+    "configuration identity inference for ZTE certification 4654814 remains quarantined because the issuer row labels R5300 G5 but prints R5300 G6 for the high-end configuration ID"
+  ],
+  "notes": [
+    "The bounded run adds every one of the 50 rows displayed on the reviewed DOE CCMS page: 42 three-phase Eaton models and eight single-phase Eaton models",
+    "Apparent power remains kVA; active kW, voltage, current, dimensions, weight and deployment are not inferred",
+    "DOE describes these as manufacturer representations and the public listing is not treated as a DOE compliance determination",
+    "Campus aggregates remain excluded from capacity sums under all viewer filters"
+  ]
+}
