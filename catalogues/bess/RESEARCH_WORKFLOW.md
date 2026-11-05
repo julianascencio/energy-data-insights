@@ -258,3 +258,9 @@ ratings do not establish stored energy or indefinite continuous power.
 have conflicting 30 Ah type labels and 27 Ah capacity columns; keep both native
 observations and withhold resolved capacity. Maximum power and timed discharge
 ratings remain separate, with no inferred stored energy or continuous power.
+
+`neata_ups.parse_final_voltage_cabinets` stages the final 23 unique cabinets at
+614.4/716.8/768 V. Repeated NC56 remains outside accepted identities. TC72/TC84/TC90
+retain conflicting 30 Ah labels and 27 Ah columns. NC42/TC84 omit the power-unit
+suffix under a generic W header: retain native text without resolving a power
+scalar. Do not infer energy or repair unusual timed ratings.

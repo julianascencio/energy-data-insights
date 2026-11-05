@@ -205,3 +205,54 @@ def parse_upper_voltage_cabinets(content: bytes) -> list[dict[str, str]]:
         if not re.fullmatch(r"\d+(?:\.\d+)?~\d+(?:\.\d+)?\(\d+(?:\.\d+)?\)", r[5]):
             raise ValueError("Changed upper-voltage charging notation")
     return [dict(zip(FIELDS, r, strict=True)) for r in rows]
+
+
+FINAL_CABINET_MODELS = [
+    "NC36",
+    "TC72",
+    "TC120",
+    "NC48",
+    "TC120E",
+    "TC240",
+    "NC84",
+    "NC120",
+    "NC42",
+    "TC84",
+    "TC140",
+    "TC140E",
+    "TC280",
+    "NC98",
+    "NC140",
+    "NC45",
+    "TC90",
+    "TC150",
+    "NC60",
+    "TC150E",
+    "TC300",
+    "NC105",
+    "NC150",
+]
+
+
+def parse_final_voltage_cabinets(content: bytes) -> list[dict[str, str]]:
+    """Stage unique614.4/716.8/768V models; repeated NC56 identity is excluded."""
+    parse_upper_voltage_cabinets(content)
+    p = _Tables()
+    p.feed(content.decode("utf-8-sig"))
+    rows = [r for r in p.tables[0][2:] if r and r[0] in FINAL_CABINET_MODELS]
+    if [r[0] for r in rows] != FINAL_CABINET_MODELS:
+        raise ValueError("Missing or repeated final-voltage cabinet identity")
+    for r in rows:
+        if len(r) != 13 or not all(r) or r[2] not in ["614.4", "716.8", "768"]:
+            raise ValueError("Incomplete or unexpected final-voltage row")
+        if any(not re.fullmatch(r"\d+(?:\.\d+)?", r[i]) for i in [2, 3, 6, 7, 9, 10, 11, 12]):
+            raise ValueError("Changed final-voltage numeric units")
+        if not re.fullmatch(r"max\.\s*\d+(?:\.\d+)?KW", r[4]) and not (
+            r[0] in {"NC42", "TC84"} and re.fullmatch(r"max\.\d+(?:\.\d+)?", r[4])
+        ):
+            raise ValueError("Changed final-voltage maximum power units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?KW/\d+min", r[8]):
+            raise ValueError("Changed final-voltage timing units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?~\d+(?:\.\d+)?\(\d+(?:\.\d+)?\)", r[5]):
+            raise ValueError("Changed final-voltage charging notation")
+    return [dict(zip(FIELDS, r, strict=True)) for r in rows]
