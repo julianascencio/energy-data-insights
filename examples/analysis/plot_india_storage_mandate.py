@@ -1,6 +1,6 @@
 """
 India BESS policy: evening peak-shifting storage sizing (synthetic study)
-=======================================================================
+=========================================================================
 
 India announced plans to require electricity buyers, including state utilities,
 to install storage (Reuters, **5 November 2026**). The required size was **not**
