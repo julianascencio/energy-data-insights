@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T00:12:01.350221+00:00",
+  "updated_at": "2026-11-05T01:10:54.541403+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "2258UTC: UTC-hourmod6=4 secondaryNorthAmerica priority; non-US usefulfield gaps and source quality took precedence.198historicalChineseowner/operatorenrichments,1Taiwanphaseidentityenrichment,8exactcombiners. No full-download seed rotation;unchanged/notdue seed queues preserved.",
-  "next_highest_value_source": "Taiwanrows14–22 andDaliaoROCyearlicencecheck;GEMcorporatequeueafterL100000803409,1514remaining;newSouthAfricanIPPportalonlyafterrightsanddataverification",
+  "selection_note": "0058UTC: secondary Africa rotation; preserved Namibia/SouthAfrica backoff/rights holds. Ranked non-US useful-field coverage first:150 complete Chinese corporate-owner/operator locations,22 exact LIVOLTEK hybrids, next100 Taiwan rows staged. No repeated national bulk downloads or new untested-feed claims.",
+  "next_highest_value_source": "GEM strict corporate queue afterL100000803737 (1364 structurally eligible); Taiwan rows17–22 independent PV/site identities and Yanchao/Wuri licence boundaries; exact tracker/combiner OEM catalogue beyond exhausted Suntree; public LIVOLTEK HP1-S2 table only after revision/identity review.",
   "sources": [
     {
       "id": "uk_repd",
@@ -12285,6 +12285,389 @@
       "retry_condition": "Newsourceversion orrestoredpublicaccess;respectsourcebackoff",
       "next_action": "Afterpublicportalrecovery,verifylatestquarterlyreportterms,PVtechnology,contractedversusinstalledMWandidentities",
       "next_due_check": "2026-11-06T00:00:00Z"
+    },
+    {
+      "id": "gem_corporate_next150_20261105T0058",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "Pinned XLSX+fresh landing HTML",
+      "licence_assessment": "CCBY4.0; whole-location TZ/WKSL exclusions; corporate labels manually screened",
+      "version_or_date": "February2026",
+      "publication_cadence": "Release-based or unstated; conditional metadata check before resuming; no hourly full download",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T00:59:16.087660+00:00",
+      "last_attempt": "2026-11-05T01:10:54.541403+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/download-data/",
+          "retrieved_at": "2026-11-05T00:59:16.087660+00:00",
+          "sha256": "9309644130042419b2dfdf52906200474be7fab05ea35eea63a6883cbc91fecb",
+          "bytes": 134149,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 150,
+      "accepted": 150,
+      "rejected": 0,
+      "result": "150 existing complete locations enriched with150owners,150operators,150historical contexts;0new plants",
+      "fields_offered": [
+        "direct sole owner",
+        "operator",
+        "historical evidence"
+      ],
+      "mapping": "Exact native identities/model columns and source/page/row locators in dated review; existing upsert API for accepted records; no fuzzy merge",
+      "processed_cursor": {
+        "after": "L100000803409",
+        "next": "L100000803737",
+        "remaining_corporate_filtered": 1364,
+        "operator_only_remaining": 3244,
+        "workbook_sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959"
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "retry_condition": "New partition/revision or rights/identity clarification as specified; preserve access backoff",
+      "next_due_check": "2026-11-06T00:00:00Z",
+      "next_action": "Resume strict complete-phase corporate queue; broader operator-only cursor remainsL100000802626"
+    },
+    {
+      "id": "taiwan_private_partition_20261105T0058",
+      "country": "TWN",
+      "entity": "projects",
+      "source_url": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "endpoint": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "format": "Captioned HTML PV inventory + host HTML/PDF",
+      "licence_assessment": "EAOGDLTaiwan1.0; THSRC copyright retained, bounded factual identity review only; no report redistribution",
+      "version_or_date": "Statistics2025-12-31;content2026-01-26",
+      "publication_cadence": "Release-based or unstated; conditional metadata check before resuming; no hourly full download",
+      "last_release": "Statistics2025-12-31;content2026-01-26",
+      "last_retrieval": "2026-11-05T00:59:49.917635+00:00",
+      "last_attempt": "2026-11-05T01:10:54.541403+00:00",
+      "captures": [
+        {
+          "url": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+          "retrieved_at": "2026-11-05T00:59:49.651502+00:00",
+          "sha256": "5d1b430cf5383b004dc5ffd839dffeda7a2a4cccc38290e4827a360d6ceedb3e",
+          "bytes": 209452,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.thsrc.com.tw/corp/080571a8-7661-4f00-9735-579337d13010",
+          "retrieved_at": "2026-11-05T00:59:48.970224+00:00",
+          "sha256": "181871f758e522ee53c76677546dce287f0907c19e964ad8eefd242a6628be38",
+          "bytes": 73502,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.thsrc.com.tw/Corp/9edfd684-60e2-4661-bf9e-bbbe1110b8b2/assets/481603a4-c6e0-4152-bb8b-77cadbc69a41.pdf",
+          "retrieved_at": "2026-11-05T00:59:49.917635+00:00",
+          "sha256": "7090925037f4f053d423731e81b60f99a566b449931eabedfe02d5814bc76614",
+          "bytes": 9480966,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 103,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "100 additional rows schema/checksum staged,0 accepted;3 manual identity reviews held. Wuri/Yanchao host aggregates differ from licensed rows",
+      "fields_offered": [
+        "native name",
+        "installed kW unknown AC/DC",
+        "ROC year",
+        "scope evidence"
+      ],
+      "mapping": "Exact native identities/model columns and source/page/row locators in dated review; existing upsert API for accepted records; no fuzzy merge",
+      "processed_cursor": {
+        "staging_after_row": 300,
+        "remaining_unstaged": 487,
+        "new_staged_rows": 100,
+        "new_partition_accepted": 0,
+        "manual_identity_rows": [
+          14,
+          15,
+          16
+        ]
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "retry_condition": "New partition/revision or rights/identity clarification as specified; preserve access backoff",
+      "next_due_check": "2026-11-06T00:00:00Z",
+      "next_action": "Review rows17–22 and obtain independent licence boundaries for rows14–15; Daliao date conflict remainsheld"
+    },
+    {
+      "id": "vikram_hypersol_rights_20261105T0058",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.vikramsolar.com/homesolution/downloads/",
+      "endpoint": "https://www.vikramsolar.com/homesolution/downloads/",
+      "format": "OEM PDF,3 exact power-bin tables",
+      "licence_assessment": "Explicit terms prohibit storage/construction/distribution of a database and reuse without written permission; no ingestion and no contact",
+      "version_or_date": "Current downloads linked under2026/10; issue not inferred",
+      "publication_cadence": "Release-based or unstated; conditional metadata check before resuming; no hourly full download",
+      "last_release": "Current downloads linked under2026/10; issue not inferred",
+      "last_retrieval": "2026-11-05T01:00:06.813127+00:00",
+      "last_attempt": "2026-11-05T01:10:54.541403+00:00",
+      "captures": [
+        {
+          "url": "https://www.vikramsolar.com/homesolution/downloads/",
+          "retrieved_at": "2026-11-05T00:59:14.259331+00:00",
+          "sha256": "5401264316195c2a80fbdd7fdd7c199ea5f95195e0266fa66d8ee74e3afef965",
+          "bytes": 121990,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.vikramsolar.com/terms-of-use/",
+          "retrieved_at": "2026-11-05T01:00:06.813127+00:00",
+          "sha256": "e3606cc83b8cd98fae401fa79d7d1401e93c19895bdcdba6c759f3b70880fcf1",
+          "bytes": 110397,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.vikramsolar.com/wp-content/uploads/2026/10/HYPERSOL-G12-705-730W-132-CELLS.pdf",
+          "retrieved_at": "2026-11-05T01:00:05.983973+00:00",
+          "sha256": "c30e7ba4ad861191dacb3da9f113b6e764c1e58683d9e252f0a65d5738f39ae1",
+          "bytes": 532316,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.vikramsolar.com/wp-content/uploads/2026/10/HYPERSOL-G12R-620-650W-132-CELLS.pdf",
+          "retrieved_at": "2026-11-05T01:00:06.019768+00:00",
+          "sha256": "f34cd482de2d50d7ef84e84260294be8887ee3feccf17041a6770509716c5e82",
+          "bytes": 323409,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.vikramsolar.com/wp-content/uploads/2026/10/HYPERSOL-M10R-580-605W-144-CELLS.pdf",
+          "retrieved_at": "2026-11-05T01:00:06.247662+00:00",
+          "sha256": "58f7ccb14b93873dd2e9491f60b799f1edf421375064e107a740d0dd5c77e00d",
+          "bytes": 606157,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 19,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "3 multi-model tables located;19 power-bin candidate columns rights-held,0 accepted models; detailed specs not copied into catalogue",
+      "fields_offered": [
+        "Exact model tables discovered; technical values not accepted"
+      ],
+      "mapping": "Exact native identities/model columns and source/page/row locators in dated review; existing upsert API for accepted records; no fuzzy merge",
+      "processed_cursor": {
+        "tables": 3,
+        "candidate_columns": 19,
+        "rights_held": 19
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "retry_condition": "New partition/revision or rights/identity clarification as specified; preserve access backoff",
+      "next_due_check": "2026-11-06T00:00:00Z",
+      "next_action": "Do not extract/ingest until applicable permission/licence changes; choose independent OEM"
+    },
+    {
+      "id": "suntree_exhaustion_20261105T0058",
+      "country": "CHN",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.chinasuntree.com/uploads-suntree/1-m/pdf/solar-energy-combiner-box.pdf",
+      "endpoint": "https://www.chinasuntree.com/uploads-suntree/1-m/pdf/solar-energy-combiner-box.pdf",
+      "format": "48-page OEM PDF",
+      "licence_assessment": "Copyright retained; existing bounded factual records only; no new table reuse",
+      "version_or_date": "Same historical48page catalogue",
+      "publication_cadence": "Release-based or unstated; conditional metadata check before resuming; no hourly full download",
+      "last_release": "Same historical48page catalogue",
+      "last_retrieval": "2026-11-05T00:59:16.329320+00:00",
+      "last_attempt": "2026-11-05T01:10:54.541403+00:00",
+      "captures": [
+        {
+          "url": "https://www.chinasuntree.com/uploads-suntree/1-m/pdf/solar-energy-combiner-box.pdf",
+          "retrieved_at": "2026-11-05T00:59:16.329320+00:00",
+          "sha256": "525cde3f05c63caade2c11b329d2d67400014204e9472557d4dbf93a6e0e85ab",
+          "bytes": 7605504,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "Source queue confirms pages1–48 previously exhausted, with original conflicts retained;0 duplicate model additions",
+      "fields_offered": [
+        "No new fields"
+      ],
+      "mapping": "Exact native identities/model columns and source/page/row locators in dated review; existing upsert API for accepted records; no fuzzy merge",
+      "processed_cursor": {
+        "pages_reviewed_previously": [
+          1,
+          48
+        ],
+        "table_exhausted": true
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "retry_condition": "New partition/revision or rights/identity clarification as specified; preserve access backoff",
+      "next_due_check": "2026-11-06T00:00:00Z",
+      "next_action": "Skip unchanged catalogue; seek independent exact combiner OEM table"
+    },
+    {
+      "id": "livoltek_hybrids_20261105T0058",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://support.livoltek.com/",
+      "endpoint": "https://support.livoltek.com/",
+      "format": "Public support JS attachment list +3 OEM PDF tables",
+      "licence_assessment": "OEM copyright retained; bounded individually reviewed factual model parameters; no open/bulk licence claim; public policy inspected",
+      "version_or_date": "Hyperundated;HP3202608V1;HP2202610V2",
+      "publication_cadence": "Release-based or unstated; conditional metadata check before resuming; no hourly full download",
+      "last_release": "Hyperundated;HP3202608V1;HP2202610V2",
+      "last_retrieval": "2026-11-05T01:06:24.165178+00:00",
+      "last_attempt": "2026-11-05T01:10:54.541403+00:00",
+      "captures": [
+        {
+          "url": "https://support.livoltek.com/js/umi.73670db9.js",
+          "retrieved_at": "2026-11-05T01:01:28.458633+00:00",
+          "sha256": "f945ad8c93425591104b9f02b5e63aa021333a9da0ac338991614649d1063d07",
+          "bytes": 1475911,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.livoltek.com/privacy-policy/",
+          "retrieved_at": "2026-11-05T01:00:53.833128+00:00",
+          "sha256": "9ee5a66aa303bea299aebe22ff179f79eeb1e3f2bda666712a1b24a0edc5a759",
+          "bytes": 265385,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://info-support.livoltek.com/2-Product-Material/1-Product%20Datasheet/1-Inverter%20%2B%20BESS/Hyper-3~6kW.pdf",
+          "retrieved_at": "2026-11-05T01:02:00.484431+00:00",
+          "sha256": "d4c980d27c1298124b7670e6bcc2543b6076f7092828e6722657ca2dab4fda9a",
+          "bytes": 7104958,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://info-support.livoltek.com/2-Product-Material/1-Product%20Datasheet/1-Inverter%20%2B%20BESS/DS_HP3-5-12KD2%2C%205-15KL2.pdf",
+          "retrieved_at": "2026-11-05T01:01:59.547744+00:00",
+          "sha256": "77ca395ecb6963f6b0a54ce32e8d9964114a1f7f785443326e91cd3ad5237b36",
+          "bytes": 4507428,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://info-support.livoltek.com/2-Product-Material/1-Product%20Datasheet/1-Inverter%20%2B%20BESS/DS_Split-Phase%20Hybird%20Inverter_HP2-6-12KL1P.pdf",
+          "retrieved_at": "2026-11-05T01:01:58.906752+00:00",
+          "sha256": "c418021396f19a75b2156f1c93c84ecf80d663d0888c59999921022000e117e3",
+          "bytes": 4104104,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.livoltek.com/product/hybrid-inverter-single-phase-3-6kw/",
+          "retrieved_at": "2026-11-05T01:06:24.165178+00:00",
+          "sha256": "19a2024ff5cf69ec6293ec1ba2f0d8a7c020e8985b0bab7214bc38dba2b1ae21",
+          "bytes": 321023,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.livoltek.com/product/hybrid-inverter-three-phase-hp3-5-12kw-d2/",
+          "retrieved_at": "2026-11-05T01:05:06.514764+00:00",
+          "sha256": "f9d407f7ef3efd42d604700f20deac3b04e7fdbe786c4b2fba3d517684df5c1b",
+          "bytes": 320520,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.livoltek.com/product/hybrid-inverter-6-12kw/",
+          "retrieved_at": "2026-11-05T00:59:13.608221+00:00",
+          "sha256": "e18cd05d29cd442f51fe1410067cb23e3105eabf9d85b0e18fe51153371e83c6",
+          "bytes": 321160,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 22,
+      "accepted": 22,
+      "rejected": 0,
+      "result": "22 exact models accepted,380 canonical technical field values;16 groups/25 conflicting or suspicious scalar fields withheld; no new manufacturer",
+      "fields_offered": [
+        "rated activeW when explicit",
+        "MPPT",
+        "current",
+        "efficiency",
+        "dimensions",
+        "mass",
+        "thermal/IP/cooling",
+        "qualified battery/EPS/grid conditions"
+      ],
+      "mapping": "Exact native identities/model columns and source/page/row locators in dated review; existing upsert API for accepted records; no fuzzy merge",
+      "processed_cursor": {
+        "accepted_models": [
+          "Hyper-3000",
+          "Hyper-3680",
+          "Hyper-4600",
+          "Hyper-5000",
+          "Hyper-6000",
+          "HP3-5KD2",
+          "HP3-6KD2",
+          "HP3-8KD2",
+          "HP3-9.9KD2",
+          "HP3-10KD2",
+          "HP3-12KD2",
+          "HP3-5KL2",
+          "HP3-6KL2",
+          "HP3-8KL2",
+          "HP3-10KL2",
+          "HP3-12KL2",
+          "HP3-15KL2",
+          "HP2-6KL1P",
+          "HP2-7K5L1P",
+          "HP2-8KL1P",
+          "HP2-10KL1P",
+          "HP2-12KL1P"
+        ],
+        "selected_tables_exhausted": true,
+        "held_groups": 16,
+        "held_scalar_fields": 25
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "retry_condition": "New partition/revision or rights/identity clarification as specified; preserve access backoff",
+      "next_due_check": "2026-11-06T00:00:00Z",
+      "next_action": "Selected3tables exhausted; review distinct HP1-S2 public attachment revision/model identity or independent tracker/combiner source"
     }
   ],
   "source_refresh_queue": [

@@ -581,3 +581,9 @@ versus aggregate current, inverter versus charger efficiency and apparent VA ver
 active W. Explicit maximum W is not promoted to continuous rated active power.
 Unlabelled dimension axes, bounds, optional communications and source-specific
 transfer times remain in extensions. Published standards are OEM claims.
+
+LIVOLTEK hybrid records keep per-tracker vectors, EPS peak duration, nominal
+voltage alternatives and battery limits in qualified extensions. HP2 combined
+W/VA nominal rows do not establish an unambiguous active-power scalar. Conflicting
+MPPT upper bounds, battery currents and Hyper dimension axes remain null; a
+merged KL2 current cell spanning unequal power models is held for clarification.

@@ -1,0 +1,70 @@
+{
+  "new_staged_physical_rows": [
+    201,
+    300
+  ],
+  "new_staged_candidates": 100,
+  "new_partition_accepted_projects": 0,
+  "remaining_unstaged_rows": 487,
+  "complete_source_rows": 787,
+  "unchanged_first200_parsed_rows_verified": true,
+  "source": {
+    "url": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+    "retrieved_at": "2026-11-05T00:59:49.651502+00:00",
+    "sha256": "5d1b430cf5383b004dc5ffd839dffeda7a2a4cccc38290e4827a360d6ceedb3e",
+    "bytes": 209452,
+    "etag": null,
+    "status": 200,
+    "error": null
+  },
+  "manual_identity_reviews": [
+    {
+      "row": 14,
+      "native_name": "高鐵燕巢總機廠(屋頂型)",
+      "registry_kw": 3356.74,
+      "host_campus_kw_2016": 3856.59,
+      "decision": "Held; licence/project boundary differs from host campus aggregate, no power overwrite"
+    },
+    {
+      "row": 15,
+      "native_name": "高鐵烏日基地第一型太陽能電廠",
+      "registry_kw": 577.63,
+      "host_campus_kw_2016": 1106.85,
+      "decision": "Held; licence/project boundary differs from host campus aggregate, no power overwrite"
+    },
+    {
+      "row": 16,
+      "native_name": "高捷北機廠第一型太陽能電廠",
+      "registry_kw": 828.24,
+      "decision": "Held pending independent whole-plant/phase and role evidence"
+    }
+  ],
+  "host_evidence": [
+    {
+      "url": "https://www.thsrc.com.tw/corp/080571a8-7661-4f00-9735-579337d13010",
+      "retrieved_at": "2026-11-05T00:59:48.970224+00:00",
+      "sha256": "181871f758e522ee53c76677546dce287f0907c19e964ad8eefd242a6628be38",
+      "bytes": 73502,
+      "etag": null,
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.thsrc.com.tw/Corp/9edfd684-60e2-4661-bf9e-bbbe1110b8b2/assets/481603a4-c6e0-4152-bb8b-77cadbc69a41.pdf",
+      "retrieved_at": "2026-11-05T00:59:49.917635+00:00",
+      "sha256": "7090925037f4f053d423731e81b60f99a566b449931eabedfe02d5814bc76614",
+      "bytes": 9480966,
+      "etag": null,
+      "status": 200,
+      "error": null
+    }
+  ],
+  "scope_rules": [
+    "THSRC roof lessor is not automatically plant owner/operator",
+    "2014–2016 actual generation is not expected annual yield",
+    "Campus aggregate area/generation/power not transferred to individual licence",
+    "Daliao ROC103/104 conflict from prior run remains unresolved",
+    "No personal details, coordinates, current operation or AC/DC basis inferred"
+  ],
+  "host_report_locator": "THSRC2016 sustainability report, physicalPDFpage34, solar installation/generation table"
+}
