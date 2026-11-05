@@ -1,0 +1,52 @@
+{
+  "file": "28.25_-16.75.csv.gz",
+  "requested_latitude": 28.25,
+  "requested_longitude": -16.75,
+  "cell_latitude": 28.25,
+  "cell_longitude": -16.75,
+  "requests": [
+    {
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "parameters": {
+        "latitude": "28.25",
+        "longitude": "-16.75",
+        "start_date": "2022-01-01",
+        "end_date": "2023-01-01",
+        "hourly": "shortwave_radiation,temperature_2m,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,terrestrial_radiation",
+        "models": "era5",
+        "timezone": "UTC",
+        "timeformat": "unixtime",
+        "wind_speed_unit": "ms",
+        "temperature_unit": "celsius",
+        "cell_selection": "nearest",
+        "elevation": "nan"
+      },
+      "retrieved_at_utc": "2026-11-05T13:44:08.084187+00:00",
+      "sha256": "22cb72efa460d3d09335b03deb37d5ac2dfc289914cf9ca9446b71f401fda4cb",
+      "size_bytes": 336821,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "parameters": {
+        "latitude": "28.25",
+        "longitude": "-16.75",
+        "start_date": "2023-01-01",
+        "end_date": "2024-01-01",
+        "hourly": "shortwave_radiation,temperature_2m,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,terrestrial_radiation",
+        "models": "era5",
+        "timezone": "UTC",
+        "timeformat": "unixtime",
+        "wind_speed_unit": "ms",
+        "temperature_unit": "celsius",
+        "cell_selection": "nearest",
+        "elevation": "nan"
+      },
+      "retrieved_at_utc": "2026-11-05T13:46:17.379620+00:00",
+      "sha256": "79957405fe222618270b73642fffd0f1704c72da963d80a775057c8a0301a83a",
+      "size_bytes": 336315,
+      "cache_hit": false
+    }
+  ],
+  "sha256": "0c1d967d3fbf5aef826b8135c579bef23a7dfab1ebcba082e6964b2ca9fbbddf"
+}
