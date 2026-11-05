@@ -129,3 +129,95 @@ def read_nsw_renewable_tracker(data: bytes, *, sha256: str, as_of: str) -> list[
             }
         )
     return result
+
+
+class _PermitText(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.tokens: list[str] = []
+        self.heading: list[str] = []
+        self.skip = 0
+        self.in_heading = False
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in {"script", "style"}:
+            self.skip += 1
+        if tag == "h1":
+            self.in_heading = True
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"script", "style"}:
+            self.skip -= 1
+        if tag == "h1":
+            self.in_heading = False
+
+    def handle_data(self, data: str) -> None:
+        value = " ".join(data.split())
+        if value and not self.skip:
+            self.tokens.append(value)
+            if self.in_heading:
+                self.heading.append(value)
+
+
+def read_nsw_project_page(data: bytes, *, sha256: str) -> dict[str, Any]:
+    """Stage bounded departmental permit metadata, never submissions or contacts.
+
+    A solar application category does not prove PV, operation, capacity basis or
+    plant identity. Modifications remain separate application metadata.
+    """
+    if hashlib.sha256(data).hexdigest() != sha256:
+        raise ValueError("NSW permit checksum mismatch")
+    parser = _PermitText()
+    parser.feed(data.decode("utf-8"))
+    tokens = parser.tokens
+    if len(parser.heading) != 1 or tokens.count("Project Details") != 1:
+        raise ValueError("Ambiguous NSW permit heading/details")
+    start = tokens.index("Project Details") + 1
+    stops = [i for i in range(start, len(tokens)) if tokens[i].startswith("Contact")]
+    if not stops:
+        raise ValueError("Missing NSW permit contact boundary")
+    details = tokens[start : stops[0]]
+    fields = {
+        "Application Number": "application_id",
+        "EPBC ID Number": "epbc_referral_id",
+        "Assessment Type": "assessment_type",
+        "Development Type": "development_type",
+        "Local Government Areas": "local_government_area",
+        "Decision": "decision",
+        "Determination Date": "determination_date",
+        "Decider": "decider",
+        "Last Modified By": "last_modified_application",
+        "Last Modified On": "last_modified_on",
+    }
+    result: dict[str, Any] = {"project_name": parser.heading[0]}
+    positions = [(i, t) for i, t in enumerate(details) if t in fields]
+    if not positions or positions[0] != (0, "Application Number"):
+        raise ValueError("Unknown NSW permit detail layout")
+    for n, (i, label) in enumerate(positions):
+        end = positions[n + 1][0] if n + 1 < len(positions) else len(details)
+        values = details[i + 1 : end]
+        key = fields[label]
+        if key in result or len(values) != 1:
+            raise ValueError("Duplicate or malformed NSW permit field")
+        result[key] = values[0]
+    if not {"application_id", "assessment_type", "local_government_area"} <= result.keys():
+        raise ValueError("Missing NSW permit identity fields")
+    if not re.fullmatch(
+        r"(?:SSD-\d+(?:-[Mm][Oo][Dd]-\d+)?|MP_?\d{2}_\d{4})", result["application_id"]
+    ):
+        raise ValueError("Unknown NSW application identifier")
+    for key in ("determination_date", "last_modified_on"):
+        if key in result:
+            result[key] = datetime.strptime(result[key], "%d/%m/%Y").date().isoformat()
+    if "epbc_referral_id" in result and not re.fullmatch(
+        r"\d{4}/\d{4,5}", result["epbc_referral_id"]
+    ):
+        raise ValueError("Unknown EPBC referral identifier")
+    result["is_modification"] = "-mod-" in result["application_id"].lower()
+    result["review_status"] = (
+        "Unaccepted permit metadata; positive PV and project identity review required"
+    )
+    result["scope"] = (
+        "Departmental Project Details only; no submissions, contacts, operation or AC/DC inference"
+    )
+    return result

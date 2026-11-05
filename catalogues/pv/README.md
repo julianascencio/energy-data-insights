@@ -39,6 +39,13 @@ source has 981 non-anonymised ground/water PV decisions; the first 100 remain
 candidates, with zero accepted RVO plants. See the
 [RVO reuse and attribution notice](licenses/RVO_REUSE_NOTICE.md).
 
+The offline `pv_catalogue.nsw.read_nsw_project_page` reader stages checksum-pinned
+departmental Planning Portal Project Details, retaining application IDs, decision
+dates, local government areas and modification scope. It excludes submissions and
+contacts, fails closed on ambiguous/schema-drifted identity fields, and never treats
+a solar category or approval as positive PV or current operation. Canonical identity
+review remains mandatory; modifications are not additional plants.
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;
