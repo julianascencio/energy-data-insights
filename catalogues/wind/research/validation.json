@@ -1,28 +1,27 @@
 {
-  "batch": "2026-11-05-0535",
-  "iteration_parent": "724fb9097f6396ef3b1ab6eb9233c02842b5dcf6",
+  "batch": "2026-11-05-0635",
+  "iteration_parent": "d5dd1fb1d5f7e876e46b5e8980054dc42c487a68",
   "local": {
-    "tests": "18 EIA adapter tests passed; broad suite not rerun under storage exhaustion",
-    "viewer": "22 Node tests and JavaScript syntax passed; shared viewer reused unchanged",
-    "catalogue": "22181 valid;22111 unchanged;70 enriched projects preserve prior scalar facts, IDs, creation timestamps and all6capacity summaries",
-    "source_registry": "All 367 prior source entries unchanged;one bounded EIA alias added",
-    "replay": "Original workbook checksums and same-source idempotence passed",
-    "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD",
-    "example": "Offline Wind example passed against expanded isolated catalogue",
-    "quality": "Ruff,format972files,ty,citations passed;working-repository hygiene4466files passed;isolated schema/provenance validation separate",
-    "docs": "Not executed: full main filesystem"
+    "tests": "18 EIA tests passed after disabling bytecode writes and plugin autoload to recover disk-full startup failure",
+    "viewer": "22 Node viewer tests and syntax passed",
+    "catalogue": "22181 valid;22113 unchanged;68 enriched projects; all scalar/ID/creation fields and six capacity summaries preserved",
+    "source_registry": "368 prior entries unchanged; three entries added",
+    "replay": "Original workbook hashes and same-source replay passed",
+    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
+    "quality": "Ruff, format971files, ty and citations passed",
+    "example": "Offline Wind example passed against expanded isolated catalogue"
   },
   "snapshot_sha256": {
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
-    "manifest.json": "925fafee77c9cc129c6800509c0bf44ef0d383c4689ada64159a65b4e43a7a29",
-    "projects.parquet": "f359cb0cb81462335710b7ffa560edad78c4890889aa26c30933540475500a44",
+    "manifest.json": "d5cb0a627f9db080c7282f448cf11e8664c02a94cfb256e05debfd9986b589a1",
+    "projects.parquet": "60084d8ddcd131ec6fb7a32e306ab891db72b688a1cae9267a233cb8b18a3c62",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "sources.json": "a513772b07f95cde6fd3307a263b343c5cc682a2378fb90de94ba290958cff0f",
+    "sources.json": "7e5c107aabcd4674ebd0c9c6248f510a415030a4f0b4e8f84fd8af8ff85ce38d",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
   "remote_ci": {
-    "prior_head": "724fb9097f6396ef3b1ab6eb9233c02842b5dcf6",
+    "prior_head": "d5dd1fb1d5f7e876e46b5e8980054dc42c487a68",
     "prior_result": "Python and Documentation passed",
     "new_head": "Not yet published"
   },

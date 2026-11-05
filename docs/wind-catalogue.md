@@ -813,3 +813,10 @@ The complete final-2025 Operable 60000–60999 partition reviews 75 plants and
 The queued V82 archive power/Ct table remains deferred: its metadata labels it
 theoretical, provides no reference links and omits air density and operating mode.
 No conditions are reverse-engineered from Cp and no OEM curve is added.
+
+The complete final-2025 Operable 61000–61999 partition reviews 85 plants and
+100 generator rows: 67 existing projects enriched and 18 identities held.
+Jasna gains a dated mixed-fleet observation: 22 V126 turbines reported at
+3.45 MW and 17 at 3.3 MW. The arithmetic check is separate from reported
+132 MW, and no exact OEM revision or individual turbine identity is inferred.
+March 2021 commissioning-in-progress remains distinct from the prior launch label.
