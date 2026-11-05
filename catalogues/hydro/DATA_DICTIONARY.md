@@ -1,0 +1,66 @@
+# Hydropower data dictionary
+
+Schema version 1.0.0. Unknown values are null or omitted. All populated factual fields require provenance.
+
+| Field | Type | Unit | Meaning |
+|---|---|---|---|
+| record_id | string |  | Stable UUID; retain through renames and changes in capacity. |
+| name | string |  | Identifiable facility, phase or exact equipment name. |
+| capacity_scope | string |  | Physical boundary and configuration covered by reported ratings. |
+| notes | string |  | Review notes; no unsupported technical facts. |
+| country_code | string |  | ISO alpha-3 country code. |
+| location_accuracy | string |  | Precision and method of public coordinates. |
+| parent_record_id | string |  | Optional parent project UUID in this catalogue. |
+| overlap_group | string |  | Stable group for overlapping capacity observations. |
+| status_date_basis | string |  | Publication date or dated retrieval of undated evidence. |
+| entity_type | string |  | Connected catalogue table. |
+| record_scope | string |  | Physical identity granularity. |
+| aggregation_role | string |  | Only independent or child records can contribute to sums. Aggregate and unresolved scopes are excluded even if filtered children are absent. |
+| status | string |  | Last evidenced project lifecycle; a portfolio listing alone does not establish operation. |
+| quality_status | string |  | Evidence qualification; does not certify a facility or product. |
+| created_at | timestamp |  | UTC timestamp; updated_at changes only on substantive data/evidence changes. |
+| updated_at | timestamp |  | UTC timestamp; updated_at changes only on substantive data/evidence changes. |
+| last_verified_at | timestamp |  | UTC timestamp; updated_at changes only on substantive data/evidence changes. |
+| status_as_of | string |  | ISO date; only precise reported dates, never a forecast treated as achieved. |
+| aliases | list_string |  | Explicit evidenced values; linked IDs refer to existing canonical records. |
+| sources | list_string |  | Explicit evidenced values; linked IDs refer to existing canonical records. |
+| source_urls | list_string |  | Explicit evidenced values; linked IDs refer to existing canonical records. |
+| owner_names | list_string |  | Explicit evidenced values; linked IDs refer to existing canonical records. |
+| operator_names | list_string |  | Explicit evidenced values; linked IDs refer to existing canonical records. |
+| developer_names | list_string |  | Explicit evidenced values; linked IDs refer to existing canonical records. |
+| external_ids_json | json |  | Namespace to exact public identifier. |
+| field_sources_json | json |  | Map each populated factual column to registered source IDs. No wildcard evidence. |
+| evidence_json | json |  | Field-level locator, units, publication date/revision and confidence; keys match field_sources_json. |
+| estimates_json | json |  | Derived estimates with method and uncertainty, never substituted into reported columns. |
+| conflicts_json | json |  | Quarantined field observations and source dates/boundaries; unresolved numeric fields must be null. |
+| extensions_json | json |  | Extra documented metadata with units and conditions. |
+| latitude | float | degrees | Public source coordinate; no inferred centroids. |
+| longitude | float | degrees | Public source coordinate; no inferred centroids. |
+| technology | string |  | technology |
+| observations_json | json |  | observations json |
+| installed_capacity_mw | float | MW | Reported capacity at its explicit boundary; never substituted from turbine ratings. |
+| planned_capacity_mw | float | MW | Reported capacity at its explicit boundary; never substituted from turbine ratings. |
+| historical_capacity_mw | float | MW | Reported capacity at its explicit boundary; never substituted from turbine ratings. |
+| capacity_reference_year | int |  | capacity reference year |
+| turbine_count | int |  | turbine count |
+| pumping_capacity_mw | float | MW | Electrical input in pumping mode |
+| operational_capacity_mw | float | MW | Dated operational generating capacity |
+| storage_capacity_mwh | float | MWh | Explicitly reported usable electrical storage; never reservoir volume |
+| gross_head_m | float | m | Gross hydraulic head |
+| net_head_m | float | m | Net hydraulic head |
+| design_flow_m3_s | float | m3/s | Design hydraulic flow |
+| reservoir_volume_m3 | float | m3 | Total reservoir volume |
+| usable_reservoir_volume_m3 | float | m3 | Usable reservoir volume |
+| river | string |  | Reported river |
+| basin | string |  | Reported river basin |
+| dam_name | string |  | Reported dam |
+| reservoir_name | string |  | Reported reservoir |
+| turbine_type | string |  | Reported turbine type |
+| turbine_model | string |  | Exact reported turbine model |
+| manufacturer | string |  | Reported turbine manufacturer |
+| commissioning_date | string |  | Reported commissioning date and precision |
+| refurbishment_date | string |  | Reported refurbishment date and precision |
+| grid_connection | string |  | Reported grid connection |
+| cost_observations_json | json |  | Costs with currency, year and basis |
+| environmental_constraints | string |  | Publicly documented constraints |
+| cross_catalogue_links_json | json |  | Reviewed links to other catalogue identities |

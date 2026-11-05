@@ -13,6 +13,12 @@ Explore attributed project and equipment records, coverage and completeness. Cho
 
       Query PV equipment and project records, then inspect geographic coverage.
 
+   .. grid-item-card:: Hydropower
+      :link: topic_hydro
+      :link-type: doc
+
+      Explore worldwide hydropower records, evidence and historical coverage.
+
    .. grid-item-card:: Wind
       :link: topic_wind
       :link-type: doc
@@ -42,6 +48,7 @@ Explore attributed project and equipment records, coverage and completeness. Cho
    :maxdepth: 1
 
    topic_solar_pv
+   topic_hydro
    topic_wind
    topic_battery_storage
    topic_data_centres
