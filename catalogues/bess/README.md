@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
 The BESS section contains **2,149 project and plant records across
-48 countries**, supported by **409 registered sources**. It combines curated
+48 countries**, supported by **410 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -294,3 +294,5 @@ Latest iteration: [25 TAB OGi exact models and South African lender evidence](re
 Latest continuation: [40 Victron warranty enrichments and African inventory screening](research/2026-11-05_victron_warranty.md). No new project/model rows; reuse holds and candidate counts remain explicit.
 
 Latest continuation: [Kenyan battery replacements and nine exact installation enrichments](research/2026-11-05_kenya_installation.md).
+
+Latest continuation: [Fullriver exact models and South African bid identities](research/2026-11-05_fullriver_bw3.md).
