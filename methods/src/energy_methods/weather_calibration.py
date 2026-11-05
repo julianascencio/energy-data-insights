@@ -51,12 +51,27 @@ def fit_monthly_bias(pairs: pd.DataFrame, *, year: int, minimum_days: int = 20) 
                     "value": value,
                     "training_days": len(sample),
                     "training_year": year,
+                    "operation": "multiply" if variable == "wind_speed_ms" else "add",
+                    "parameter_unit": {
+                        "temperature_c": "degC",
+                        "relative_humidity_percent": "percentage_points",
+                        "wind_speed_ms": "dimensionless",
+                    }[variable],
                 }
             )
         if len(months) == 12:
             records.extend(months)
     return pd.DataFrame(
-        records, columns=["variable", "month", "value", "training_days", "training_year"]
+        records,
+        columns=[
+            "variable",
+            "month",
+            "value",
+            "training_days",
+            "training_year",
+            "operation",
+            "parameter_unit",
+        ],
     )
 
 
