@@ -15,7 +15,7 @@ On **5 November 2026**, [Reuters reported Tokyo Gas's withdrawal from the Kashim
 
 ## Input → method → analysis
 
-The versioned input loader `energy_data_retrieval.sources.jwpa_cost.load_offshore_cost_snapshot` validates evidence classification, values and source metadata. No live API, secret or data download is needed.
+The versioned input loader `energy_data_retrieval.cost_inputs.load_offshore_cost_snapshot` validates evidence classification, values and source metadata. No live API, secret or data download is needed.
 
 The reusable `energy_methods.offshore_wind_economics.evaluate_offshore_wind` computes
 
