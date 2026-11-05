@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T05:22:35.857121+00:00",
+  "updated_at": "2026-11-05T06:13:02.019489+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "05:00 iteration: Oceania official multi-record sources checked; Transpower rights-held, EMI July2026 unchanged and CER scope still unresolved. Advance200complete corporate locations; add3Steca inverter-chargers/3Antai hardware trackers and fill60typed fields in12existingINHENERGYmodels. No configurable option clones.",
-  "next_highest_value_source": "GEM strict corporate queue afterL100000811010:614structural candidates; broader operator-only queue2494afterL100000802626. Oceania: independent names/phase evidence for existing sixEMIshared connections and85CERidentity holds; no hourly file download. ARENA: reconcile Dubbo aggregate and design/as-built scope before scalar changes; FRV requires reuse basis.",
+  "selection_note": "06:00 batch: advance200complete historical Chinese corporate-party locations; add11distinct Felicitysolar hybrid models from two full OEM tables. Refresh Germany/France/UK metadata without full registry downloads. Revisit3Navarra3554-CE holds; no proximity/Viscofan merge. No adapter/schema changes.",
+  "next_highest_value_source": "GEM afterL100000811449:414strict candidates before manual review; preserve broaderoperatorqueue2494afterL100000802626. Spain: exactBON2022/57/5(40E/2022) to resolve3554-CE huerta expansion, official endpoint503/backoff. Equipment: other genuinely distinct OEMtables, no clones of exhausted11models.",
   "sources": [
     {
       "id": "uk_repd",
@@ -8326,8 +8326,9 @@
       },
       "result": "Complete59-row review:21new cases,one existing grid-voltage enrichment,37held. ConditionalGET304 reuses original pinned archive. New permitting layer also checked for case/polygon overlap.",
       "retry_condition": "Recheck metadata/HEAD/ETag and reuse unchanged pinned bytes; implement tested reader and reviewed crosswalks before upsert",
-      "next_action": "Navarra held case/phase cohorts: review shared case3554-CE across three Cáseda rows against Viscofan, then grouped huertas and named Cierzo/Atalaya/Tudela phases using official permit dossiers. No repeat full download while ETags match.",
-      "next_due_check": "2026-11-05T10:00:00Z"
+      "next_action": "Exact40E/2022resolutionBON2022/57/5for3554-CE CÁSEDA3expansion; official503backoff. CÁSEDAhuertasmustnotbemergedwithViscofanbasedonproximity.",
+      "next_due_check": "2026-11-05T10:00:00Z",
+      "last_scope_review": "20261105T0600_navarra_review.json"
     },
     {
       "last_attempt": "2026-11-04T10:25:14.370020+00:00",
@@ -15057,6 +15058,577 @@
       "next_due_check": "2026-11-06T05:00:00Z",
       "retry_condition": "Resolve historical-versus-current rating scope with independently dated as-built evidence; Dubbo needs two-site boundary crosswalk",
       "next_action": "Resolve historical-versus-current rating scope with independently dated as-built evidence; Dubbo needs two-site boundary crosswalk"
+    },
+    {
+      "id": "gem_20261105T0600",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": [
+        "https://globalenergymonitor.org/projects/global-solar-power-tracker/"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "Existing GEM CC BY4 attribution retained; whole TZ/WKSL locations excluded",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T06:00:15.039818+00:00",
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+          "retrieved_at": "2026-11-05T06:00:15.039818+00:00",
+          "sha256": "90edb222464eb8e6cf1da05fec1ce815cd252743c96078822a64c9ff5df557c8",
+          "bytes": 134149,
+          "status": 200,
+          "etag": null,
+          "raw_name": "gem-landing.html",
+          "last_modified": "Thu, 05 Nov 2026 05:41:10 GMT"
+        }
+      ],
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "fields_offered": [
+        "owners",
+        "operators",
+        "historical context"
+      ],
+      "result": "200/200complete locations accepted; allunique corporate labels manually reviewed:{'owners': 168, 'operators': 194}. Historical sole100%owners/directoperators; no parent inference or current-operation claim. Original workbook checksum and full phase sets verified. Three prior source/native disagreements remain excluded.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "after": "L100000811010",
+        "next": "L100000811449",
+        "strict_remaining": 414,
+        "operator_cursor": "L100000802626",
+        "operator_remaining": 2494,
+        "workbook_sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959"
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Resume strict nextpartition; preserve wideroperatorqueue",
+      "next_action": "Resume strict nextpartition; preserve wideroperatorqueue"
+    },
+    {
+      "id": "felicity_20261105T0600",
+      "country": "CHN",
+      "entity": "equipment",
+      "source_url": "https://www.felicitysolar.com/download/",
+      "endpoint": [
+        "https://www.felicitysolar.com/download/",
+        "https://www.felicitysolar.com/product/ivgm10-20kw-p3g1/",
+        "https://www.felicitysolar.com/privacy-policy/",
+        "https://eu.felicitysolar.com/product/ivgm10-20kw-p3g1/",
+        "https://doc.felicitysolar.com/Datasheet/Inverter-en/IVGM10KLP3G1%20IVGM12KLP3G1%20IVGM14KLP3G1%20IVGM15KLP3G1%20IVGM16KLP3G1%20IVGM18KLP3G1%20IVGM20KLP3G1%20%20Datasheet%20-%20EN.pdf",
+        "https://eu.felicitysolar.com/product/ivgm5-8kw-p1g1/",
+        "https://doc.felicitysolar.com/Datasheet/Inverter-en/IVGM5KLP1G1%20IVGM6KLP1G1%20IVGM7K6LP1G1%20IVGM8KLP1G1%20Datasheet%20-%20EN.pdf"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "OEMcopyright retained; bounded manually reviewed factualspecifications; no PDF/image/whole-table/prose redistribution and no open bulk grant. Privacy page is not content permission.",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T06:04:29.525683+00:00",
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [
+        {
+          "url": "https://www.felicitysolar.com/download/",
+          "retrieved_at": "2026-11-05T06:02:20.217067+00:00",
+          "sha256": "0fff12d8086ea3a906a37cc552ca82d5b324ad0e2cf385745a253b59a2a32d01",
+          "bytes": 999755,
+          "status": 200,
+          "etag": null,
+          "raw_name": "felicity-downloads.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.felicitysolar.com/product/ivgm10-20kw-p3g1/",
+          "retrieved_at": "2026-11-05T06:03:25.756113+00:00",
+          "sha256": "2a6db1229bb9bb0a991604d5f1a4e5e7cf5f524346124e31b1cec1c891ccf629",
+          "bytes": 785904,
+          "status": 200,
+          "etag": null,
+          "raw_name": "felicity-global.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.felicitysolar.com/privacy-policy/",
+          "retrieved_at": "2026-11-05T06:02:22.806308+00:00",
+          "sha256": "d9ef30758665142434007b62a8de61f879cf33e642033b09404fcb819e49d861",
+          "bytes": 680788,
+          "status": 200,
+          "etag": null,
+          "raw_name": "felicity-terms.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://eu.felicitysolar.com/product/ivgm10-20kw-p3g1/",
+          "retrieved_at": "2026-11-05T06:02:26.440187+00:00",
+          "sha256": "2a6db1229bb9bb0a991604d5f1a4e5e7cf5f524346124e31b1cec1c891ccf629",
+          "bytes": 785904,
+          "status": 200,
+          "etag": null,
+          "raw_name": "felicity.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://doc.felicitysolar.com/Datasheet/Inverter-en/IVGM10KLP3G1%20IVGM12KLP3G1%20IVGM14KLP3G1%20IVGM15KLP3G1%20IVGM16KLP3G1%20IVGM18KLP3G1%20IVGM20KLP3G1%20%20Datasheet%20-%20EN.pdf",
+          "retrieved_at": "2026-11-05T06:02:49.418840+00:00",
+          "sha256": "6c6bd913e87eb5e5cec0eafefec4dd6b75c72d915bff76eb29d46d0158e5c665",
+          "bytes": 4193977,
+          "status": 200,
+          "etag": "\"1547741ea84f24ae96b6be1fd8d6fb75\"",
+          "raw_name": "felicity.pdf",
+          "last_modified": "Mon, 22 Dec 2025 03:33:43 GMT"
+        },
+        {
+          "url": "https://eu.felicitysolar.com/product/ivgm5-8kw-p1g1/",
+          "retrieved_at": "2026-11-05T06:04:02.778351+00:00",
+          "sha256": "6f07260ab4cb1247fdd511011845f0c3c40a2799b47f80e1afce1b10a82947e1",
+          "bytes": 790051,
+          "status": 200,
+          "etag": null,
+          "raw_name": "felicity3.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://doc.felicitysolar.com/Datasheet/Inverter-en/IVGM5KLP1G1%20IVGM6KLP1G1%20IVGM7K6LP1G1%20IVGM8KLP1G1%20Datasheet%20-%20EN.pdf",
+          "retrieved_at": "2026-11-05T06:04:29.525683+00:00",
+          "sha256": "b2fdc3d0725f024f8a9cd93f01d097aed90ee62eaf2769e832b30f142d0f9e13",
+          "bytes": 2477894,
+          "status": 200,
+          "etag": "\"0081e7c873d0342cb97c8101ce0f3233\"",
+          "raw_name": "felicity3.pdf",
+          "last_modified": "Mon, 22 Dec 2025 03:33:52 GMT"
+        }
+      ],
+      "reviewed": 11,
+      "accepted": 11,
+      "rejected": 0,
+      "fields_offered": [
+        "PV/battery/grid/backup",
+        "mechanical",
+        "thermal",
+        "controls",
+        "qualified warranty/standards"
+      ],
+      "result": "11exactmodels accepted from2full raster technical tables visually reviewed.155canonicaltechnicalvalues plus qualified model-specific conditions. Single-phase backupW not gridratedW; currentvectors not summed; unlabelledaxes/warranty/full-loadwindow discrepanciesheld. Two erroneousglobal5–8product paths returned homepage and were not accepted as technicalevidence.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "tables_complete": [
+          "IVGM10–20KLP3G1",
+          "IVGM5–8KLP1G1"
+        ],
+        "visual_pages": [
+          1,
+          2
+        ],
+        "models": 11
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Selected7P3G1/4P1G1modelcolumns exhausted; use genuinely distinct nextOEMtable, recheck revision before changes",
+      "next_action": "Selected7P3G1/4P1G1modelcolumns exhausted; use genuinely distinct nextOEMtable, recheck revision before changes"
+    },
+    {
+      "id": "kaco_20261105T0600",
+      "country": "DEU",
+      "entity": "equipment",
+      "source_url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=10042&t=f&token=d62d6047b0ac14906a1a00decb56141029bff791",
+      "endpoint": [
+        "https://kaco-newenergy.com/index.php?eID=dumpFile&f=10042&t=f&token=d62d6047b0ac14906a1a00decb56141029bff791",
+        "https://kaco-newenergy.com/imprint",
+        "https://kaco-newenergy.com/general-terms-and-conditions",
+        "https://kaco-newenergy.com/products/combiner-box",
+        "https://kaco-newenergy.com/fileadmin/downloads/documents/Portfolio_KACO_2025_EN.pdf"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "Imprint explicit private copies only/commercial use requires permission",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T06:00:57.244268+00:00",
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [
+        {
+          "url": "https://kaco-newenergy.com/index.php?eID=dumpFile&f=10042&t=f&token=d62d6047b0ac14906a1a00decb56141029bff791",
+          "retrieved_at": "2026-11-05T06:00:57.244268+00:00",
+          "sha256": "54842dbe9594b483bec445df5bb3b1a0cb33b281d3be803741e254040babbe0f",
+          "bytes": 727431,
+          "status": 200,
+          "etag": null,
+          "raw_name": "kaco-combiner.pdf",
+          "last_modified": "Mon, 26 Sep 2022 14:08:35 GMT"
+        },
+        {
+          "url": "https://kaco-newenergy.com/imprint",
+          "retrieved_at": "2026-11-05T06:00:56.973032+00:00",
+          "sha256": "3f2f7e6349f8555f9215e5d45ecf63321fd139cb0a29c2a2036d1fc6ac308280",
+          "bytes": 31382,
+          "status": 200,
+          "etag": null,
+          "raw_name": "kaco-imprint.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://kaco-newenergy.com/general-terms-and-conditions",
+          "retrieved_at": "2026-11-05T06:00:56.755784+00:00",
+          "sha256": "8587d233788a2c7e7d4c2b65409f37bf516a3a4eb2e9936df6182fab6aa92f7a",
+          "bytes": 29021,
+          "status": 200,
+          "etag": null,
+          "raw_name": "kaco-terms.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://kaco-newenergy.com/products/combiner-box",
+          "retrieved_at": "2026-11-05T06:00:19.534902+00:00",
+          "sha256": "6d7d8a36a1702dd1e917d0e2457e481ff33491f0bc5fe7532cc616eab09cba37",
+          "bytes": 46408,
+          "status": 200,
+          "etag": null,
+          "raw_name": "kaco.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://kaco-newenergy.com/fileadmin/downloads/documents/Portfolio_KACO_2025_EN.pdf",
+          "retrieved_at": "2026-11-05T06:00:25.338611+00:00",
+          "sha256": "dacf1ccd601465ec381db121bca9c563bd4f8f27b7d82352a4933a9781817311",
+          "bytes": 8978361,
+          "status": 200,
+          "etag": null,
+          "raw_name": "kaco.pdf",
+          "last_modified": "Wed, 04 Jun 2025 08:47:33 GMT"
+        }
+      ],
+      "reviewed": 6,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "potential exact combiner codes/technicalconditions"
+      ],
+      "result": "Sixexact catalogueordercodes identified; reuseheld under imprint private-use/commercialpermission restriction. No acceptedmodel, no joined genericfamily specification or invented variant.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "catalogue": "June2025",
+        "datasheet": "EN5001731-005-220926",
+        "accepted": 0
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Applicable reuse basis required; no contact/forms; choose anotherOEM",
+      "next_action": "Applicable reuse basis required; no contact/forms; choose anotherOEM"
+    },
+    {
+      "id": "fimer_20261105T0600",
+      "country": "ITA",
+      "entity": "equipment",
+      "source_url": "https://www.fimer.com/sites/default/files/910.400.241GB%20REV00%20Combiner%20boxes%20zone%20monitoring%2050%20A%20-1500V%20datasheet.pdf",
+      "endpoint": [
+        "https://www.fimer.com/sites/default/files/910.400.241GB%20REV00%20Combiner%20boxes%20zone%20monitoring%2050%20A%20-1500V%20datasheet.pdf"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "Priorwrittenconsent expressly required by exactOEMsheet",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": null,
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [],
+      "reviewed": 3,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "potential combiner technicaltable"
+      ],
+      "result": "Three-model primarydatasheet discovered in websearch. Its copyright notice forbids reproduction/disclosure/utilization without prior writtenconsent. No rawtechnicalPDF downloaded or candidate specs committed.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "downloaded": false,
+        "accepted": 0
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Applicable reuse basis required; choose independentOEM",
+      "next_action": "Applicable reuse basis required; choose independentOEM"
+    },
+    {
+      "id": "invt_20261105T0600",
+      "country": "CHN",
+      "entity": "equipment",
+      "source_url": "https://www.invt-solar.com/",
+      "endpoint": [
+        "https://www.invt-solar.com/",
+        "https://www.invt-solar.com/xg3_10kW.html",
+        "https://invt-solar.com/userfiles/files/download/Brochure/Brochure-XG%2820240918%29/INVT_XG3-10KTL%20Single%20Phase%20On-Grid%20Solar%20Inverter_EN.pdf"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "Existing boundedOEMfactualextract assessment retained; no publicbulkgrant asserted",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T06:01:42.055664+00:00",
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [
+        {
+          "url": "https://www.invt-solar.com/",
+          "retrieved_at": "2026-11-05T06:01:42.055664+00:00",
+          "sha256": "7d142e572c8cb0e9bbdcc0bd19ab0c34b8b89bc8a9b732080825f7ae35819cd5",
+          "bytes": 71792,
+          "status": 200,
+          "etag": null,
+          "raw_name": "invt-home.html",
+          "last_modified": null
+        },
+        {
+          "url": "https://www.invt-solar.com/xg3_10kW.html",
+          "retrieved_at": "2026-11-05T06:01:41.404664+00:00",
+          "sha256": "e42d66b42b178653f9c6c3d5283c79c91f319ee720f5c8c1120d59aa4ed0c07a",
+          "bytes": 79925,
+          "status": 200,
+          "etag": "\"db69d42fcf35dd1:0\"",
+          "raw_name": "invt.html",
+          "last_modified": "Thu, 27 Aug 2026 02:53:06 GMT"
+        },
+        {
+          "url": "https://invt-solar.com/userfiles/files/download/Brochure/Brochure-XG%2820240918%29/INVT_XG3-10KTL%20Single%20Phase%20On-Grid%20Solar%20Inverter_EN.pdf",
+          "retrieved_at": "2026-11-05T06:01:41.249203+00:00",
+          "sha256": "49104ed26f7b8ef91bd660123d298b959e4d150a0ede4e587fcbb6a0a90a7a55",
+          "bytes": 379128,
+          "status": 200,
+          "etag": "\"20988b57fdcdb1:0\"",
+          "raw_name": "invt.pdf",
+          "last_modified": "Sun, 22 Sep 2024 14:40:17 GMT"
+        }
+      ],
+      "reviewed": 13,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "existing exact specifications"
+      ],
+      "result": "All13selected XG3–10KTLmodels already have substantive table evidence; no useful new field from same revision. Zero repeated observations/timestampupdates accepted.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "selected_table_complete": true,
+        "existing_models": 13
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Choose an unprocessed exact model table or newer source revision",
+      "next_action": "Choose an unprocessed exact model table or newer source revision"
+    },
+    {
+      "id": "mastr_refresh_20261105T0600",
+      "country": "DEU",
+      "entity": "projects",
+      "source_url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "endpoint": [
+        "https://www.marktstammdatenregister.de/MaStR/Datendownload"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "Landing explicitly dl-de/by2.0; retain attribution and project-scope review",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T06:02:19.351767+00:00",
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [
+        {
+          "url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+          "retrieved_at": "2026-11-05T06:02:19.351767+00:00",
+          "sha256": "1fccae359669fe5c2ee73b651b90c3e583bb4c6194fa667a1ea06f0d5137ac7d",
+          "bytes": 77364,
+          "status": 200,
+          "etag": null,
+          "raw_name": "mastr.html",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "potential IDs/review flags/capacity"
+      ],
+      "result": "Current5Nov2026v26.2export identified,3,197,723KB. No3.2GBdownload on storage-limitedhost; unit/project/ACscope reconciliation remains held. New endpoint/version discovered, no integratedfeed or addedrows.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "release": "2026-11-05",
+        "endpoint": "https://download.marktstammdatenregister.de/Gesamtdatenexport_20261105_26.2.zip",
+        "unit_scope_unresolved": true
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Use capacity-suitable host/streaming source-specific unit/project plan; retain reviewed/unreviewed distinction",
+      "next_action": "Use capacity-suitable host/streaming source-specific unit/project plan; retain reviewed/unreviewed distinction"
+    },
+    {
+      "id": "odre_refresh_20261105T0600",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+      "endpoint": [
+        "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "LicenceOuvertev2.0(Etalab) explicitly in currentdatasetmetadata",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T06:02:18.191503+00:00",
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+          "retrieved_at": "2026-11-05T06:02:18.191503+00:00",
+          "sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+          "bytes": 56139,
+          "status": 200,
+          "etag": null,
+          "raw_name": "odre-metadata.json",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "PHOTV/EIC/capacity metadata"
+      ],
+      "result": "CurrentAPIstill31Aug2026snapshot,modified13Oct2026,141589all-technology records; not PVplant count. LOv2 confirmed. Skip unchanged sourcepartitions and full data download; priorprivacy/phase/EIC holds preserved.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "snapshot": "2026-08-31",
+        "metadata_modified": "2026-10-13T19:24:24+00:00",
+        "all_technology_records": 141589
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Resume saved licensed privacy-reviewed partitions only with useful missingfields; metadata first",
+      "next_action": "Resume saved licensed privacy-reviewed partitions only with useful missingfields; metadata first"
+    },
+    {
+      "id": "repd_refresh_20261105T0600",
+      "country": "GBR",
+      "entity": "projects",
+      "source_url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+      "endpoint": [
+        "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "Existing OGLv3attribution retained",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T06:00:56.855617+00:00",
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [
+        {
+          "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+          "retrieved_at": "2026-11-05T06:00:56.855617+00:00",
+          "sha256": "01637ba92853ca7e4fe5ac099c5aa9aecce12a314161073bca11eec6ed9c9e3c",
+          "bytes": 106654,
+          "status": 200,
+          "etag": "W/\"01637ba92853ca7e4fe5ac099c5aa9ae\"",
+          "raw_name": "repd.html",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "planning IDs/statusasof/capacityscope"
+      ],
+      "result": "Officiallanding still latestJuly2026published3Aug2026. Searchsnippet November was historicalchangelog, not newrelease. No unchangedCSV downloaded.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "latest": "July2026",
+        "published": "2026-08-03"
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Resume saved identity/application holds or newrelease; no hourlyfullfile",
+      "next_action": "Resume saved identity/application holds or newrelease; no hourlyfullfile"
+    },
+    {
+      "id": "navarra_hold_review_20261105T0600",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://bon.navarra.es/es/anuncio/-/texto/2022/57/5",
+      "endpoint": [
+        "https://bon.navarra.es/es/anuncio/-/texto/2022/57/5",
+        "https://idena.navarra.es/descargas/ENERGI_Pol_PSolar.zip",
+        "https://geoportal.navarra.es/es/idena/descargar"
+      ],
+      "format": "Public primary HTML/PDF/JSON; pinned workbook or DBF archive where stated",
+      "licence_assessment": "EmbeddedNavarralayerCCBY4; do not extend automatically to thirdpartyEIAconsultantdocuments",
+      "publication_cadence": "Release/metadata first; no hourly full-file downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T06:11:10.301925+00:00",
+      "last_attempt": "2026-11-05T06:13:02.019489+00:00",
+      "captures": [
+        {
+          "url": "https://bon.navarra.es/es/anuncio/-/texto/2022/57/5",
+          "retrieved_at": "2026-11-05T06:11:01.276014+00:00",
+          "error": "HTTP Error 503: Service Unavailable",
+          "raw_name": "navarra-bon.html",
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "url": "https://idena.navarra.es/descargas/ENERGI_Pol_PSolar.zip",
+          "retrieved_at": "2026-11-05T06:08:53.018339+00:00",
+          "conditional_etag": "\"c95ad764cc55dd1:0\"",
+          "status": 304,
+          "raw_name": "navarra-conditional",
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "url": "https://geoportal.navarra.es/es/idena/descargar",
+          "retrieved_at": "2026-11-05T06:11:10.301925+00:00",
+          "error": "HTTP Error 503: Service Unavailable",
+          "raw_name": "navarra-scope.html",
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 3,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "case/phase identity",
+        "nativepanelMW",
+        "grid scope"
+      ],
+      "result": "ConditionalGET304reuses pinnedCCBY4archive. Three3554-CErows reviewed; CÁSEDA1/2/3huertas are not Viscofan by locality. Exact40E/2022resolution identified atBON2022/57/5; officialBONandGeoportal503. No duplicateplant, sum, currentstatus or capacity accepted.",
+      "mapping": "Dated exact-ID/model/phase/page/row review; existing upsert API; no automatic fuzzy merge",
+      "processed_cursor": {
+        "case": "3554-CE",
+        "held_rows": [
+          2,
+          23,
+          39
+        ],
+        "next_BON": "https://bon.navarra.es/es/anuncio/-/texto/2022/57/5",
+        "sha256": "3b82e037282d9cb9d2de03ce77257545ae3aadc11bdb0d867716294e7ecdbd05"
+      },
+      "estimated_useful_yield": {
+        "remaining_verified_acceptance": null
+      },
+      "next_due_check": "2026-11-06T06:00:00Z",
+      "retry_condition": "Retry exactBONafter24hbackoff; determineCÁSEDA3expansionboundary before canonical association",
+      "next_action": "Retry exactBONafter24hbackoff; determineCÁSEDA3expansionboundary before canonical association"
     }
   ],
   "source_refresh_queue": [
@@ -15069,17 +15641,17 @@
       ],
       "format": "ZIP/XML",
       "cadence": "Daily, normally around05:00 publisher time",
-      "last_release_seen": "2026-11-03",
-      "next_due_check": "2026-11-05T05:00:00Z",
+      "last_release_seen": "2026-11-05v26.2",
+      "next_due_check": "2026-11-06T06:00:00Z",
       "checksum_or_etag": null,
       "mapping": "Generating-unit IDs and EEG installation/project boundaries; reviewed/unreviewed flags required",
-      "cursor": "Existing concurrent AC-scope hold; no3.2GB download this run",
+      "cursor": "3.2GBexportnotdownloaded; unit/project/ACscope and hoststorage blockers",
       "reviewed": 0,
       "accepted_this_run": 0,
       "rejected_this_run": 0,
       "terms": "dl-de/by2.0; existing access/concurrency review remains",
-      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
-      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+      "freshness_checked_at": "2026-11-05T06:13:02.019489+00:00",
+      "freshness_method": "DirectpublisherHTML/APImetadata captured in20261105T0600_source_captures.json; no fullregistrydownload"
     },
     {
       "country": "BRA",
@@ -15115,7 +15687,7 @@
       "format": "Explore API JSON/CSV",
       "cadence": "Monthly metadata check; pinned partitions",
       "last_release_seen": "Snapshot2026-08-31",
-      "next_due_check": "2026-11-05T06:00:00Z",
+      "next_due_check": "2026-11-06T06:00:00Z",
       "checksum_or_etag": null,
       "mapping": "PHOTV; exclude small aggregates; EIC change review; installed/export powers distinct",
       "cursor": "Continue existing reviewed EIC ledgers/overseas value reconciliation",
@@ -15123,8 +15695,8 @@
       "accepted_this_run": 0,
       "rejected_this_run": 0,
       "terms": "Licence Ouverte2.0",
-      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
-      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+      "freshness_checked_at": "2026-11-05T06:13:02.019489+00:00",
+      "freshness_method": "DirectpublisherHTML/APImetadata captured in20261105T0600_source_captures.json; no fullregistrydownload"
     },
     {
       "country": "JPN",
@@ -15177,7 +15749,7 @@
       "format": "CSV/XLSX",
       "cadence": "Quarterly;metadata-only check before saved partition resume",
       "last_release_seen": "July/Q22026,published2026-08-03",
-      "next_due_check": "2026-11-05T06:00:00Z",
+      "next_due_check": "2026-11-06T06:00:00Z",
       "checksum_or_etag": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "mapping": "Applications/resubmissions/phases;source status as-of;MW basis unspecified",
       "cursor": "Use existing accepted/held ledgers;unchanged extract not redownloaded",
@@ -15185,8 +15757,8 @@
       "accepted_this_run": 0,
       "rejected_this_run": 0,
       "terms": "OGLv3 attribution retained",
-      "freshness_checked_at": "2026-11-04T04:17:13.903470+00:00",
-      "freshness_method": "Publisher metadata/search discovery only; no newly integrated feed or checksum claim"
+      "freshness_checked_at": "2026-11-05T06:13:02.019489+00:00",
+      "freshness_method": "DirectpublisherHTML/APImetadata captured in20261105T0600_source_captures.json; no fullregistrydownload"
     },
     {
       "country": "AUS",

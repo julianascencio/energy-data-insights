@@ -7480,5 +7480,73 @@
     "license_url": "https://creativecommons.org/licenses/by/2.5/au/",
     "license_review_url": "https://arena.gov.au/terms-of-use/",
     "limitations": "Historical reference, includes completed/under-construction projects and application-phase LCOE inputs. No current/as-built capacity, status or mounting inference. Do not replace finer/newer ratings."
+  },
+  "gem_owner_operator_complete_locations_20261105T0600": {
+    "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+    "publisher": "Global Energy Monitor",
+    "title": "Global Solar Power Tracker February2026; reviewed200 complete Chinese sole-owner/operator locations",
+    "license": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+    "retrieved_at": "2026-11-04T17:59:16.974122+00:00",
+    "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+    "release": "February 2026",
+    "methodology_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+    "verified_at": "2026-11-05T06:00:05.505500+00:00",
+    "retrieval_method": "Reuse of pinned raw bytes; no repeated workbook download; original byte retrieval in prior immutable source entry",
+    "locator": "Utility-Scale (1MW+) sheet;exactGEM location/phase IDs and Owner/Operator columns; physical row locators in dated review",
+    "limitations": "Historical February2026 source claim, not current operator verification. Require complete source/canonical phase-set equality, allPV, single identical operator, no TZ/WKSL identifiers anywhere in location. DirecthistoricalOwnercolumnsingle100percentownerandOperatorcolumnagreeacrossallcompletephases. No currentownershiporparentinference,phaseduplicationorcapacitychanges."
+  },
+  "felicity_p3g1_20261105T0600": {
+    "url": "https://doc.felicitysolar.com/Datasheet/Inverter-en/IVGM10KLP3G1%20IVGM12KLP3G1%20IVGM14KLP3G1%20IVGM15KLP3G1%20IVGM16KLP3G1%20IVGM18KLP3G1%20IVGM20KLP3G1%20%20Datasheet%20-%20EN.pdf",
+    "sha256": "6c6bd913e87eb5e5cec0eafefec4dd6b75c72d915bff76eb29d46d0158e5c665",
+    "retrieved_at": "2026-11-05T06:02:49.418840+00:00",
+    "publisher": "Guangzhou Felicity Solar Technology Co., Ltd.",
+    "title": "IVGM low-voltage three-phase 10–20kW exact-model datasheet",
+    "locator": "Physical page2; seven exact model columns, named row labels; page1 architecture. Raster PDF visually reviewed.",
+    "document_version": "Undated current linked sheet; no release date inferred from URL or retrieval",
+    "license": "OEM copyright retained. Bounded individually reviewed factual specifications only; no PDF, image, whole table or marketing prose redistributed. No open bulk licence asserted.",
+    "license_review_urls": [
+      "https://www.felicitysolar.com/privacy-policy/"
+    ],
+    "access": "Ordinary public GET; linked OEM doc.felicitysolar.com PDF; no accounts/forms/bypass",
+    "limitations": "Privacy page is not a content licence. Manufacturer claims, not independent certification or current market availability."
+  },
+  "felicity_p1g1_20261105T0600": {
+    "url": "https://doc.felicitysolar.com/Datasheet/Inverter-en/IVGM5KLP1G1%20IVGM6KLP1G1%20IVGM7K6LP1G1%20IVGM8KLP1G1%20Datasheet%20-%20EN.pdf",
+    "sha256": "b2fdc3d0725f024f8a9cd93f01d097aed90ee62eaf2769e832b30f142d0f9e13",
+    "retrieved_at": "2026-11-05T06:04:29.525683+00:00",
+    "publisher": "Guangzhou Felicity Solar Technology Co., Ltd.",
+    "title": "IVGM low-voltage single-phase 5–8kW exact-model datasheet",
+    "locator": "Physical page2; four exact model columns, named row labels; page1 architecture. Raster PDF visually reviewed.",
+    "document_version": "Undated current linked sheet; no release date inferred from URL or retrieval",
+    "license": "OEM copyright retained. Bounded individually reviewed factual specifications only; no PDF, image, whole table or marketing prose redistributed. No open bulk licence asserted.",
+    "license_review_urls": [
+      "https://www.felicitysolar.com/privacy-policy/"
+    ],
+    "access": "Ordinary public GET; linked OEM doc.felicitysolar.com PDF; no accounts/forms/bypass",
+    "limitations": "Privacy page is not a content licence. Manufacturer claims, not independent certification or current market availability."
+  },
+  "felicity_p3_product_20261105T0600": {
+    "url": "https://eu.felicitysolar.com/product/ivgm10-20kw-p3g1/",
+    "sha256": "2a6db1229bb9bb0a991604d5f1a4e5e7cf5f524346124e31b1cec1c891ccf629",
+    "retrieved_at": "2026-11-05T06:02:26.440187+00:00",
+    "publisher": "Guangzhou Felicity Solar Technology Co., Ltd.",
+    "title": "Felicitysolar P3G1 exact-model product table",
+    "locator": "HTML model table; all exact model headers and maximum efficiency row; direct English datasheet link for matched family",
+    "document_version": "Undated current public page; translated French response captured; not a release date",
+    "license": "OEM copyright retained. Bounded individually reviewed factual specifications only; no PDF, image, whole table or marketing prose redistributed. No open bulk licence asserted.",
+    "access": "Ordinary public GET; no forms/accounts/bypass",
+    "limitations": "Maximum conversion efficiency claim, not European efficiency or independent test result; translated page is not a new model/version"
+  },
+  "felicity_p1_product_20261105T0600": {
+    "url": "https://eu.felicitysolar.com/product/ivgm5-8kw-p1g1/",
+    "sha256": "6f07260ab4cb1247fdd511011845f0c3c40a2799b47f80e1afce1b10a82947e1",
+    "retrieved_at": "2026-11-05T06:04:02.778351+00:00",
+    "publisher": "Guangzhou Felicity Solar Technology Co., Ltd.",
+    "title": "Felicitysolar P1G1 exact-model product table",
+    "locator": "HTML model table; all exact model headers and maximum efficiency row; direct English datasheet link for matched family",
+    "document_version": "Undated current public page; translated French response captured; not a release date",
+    "license": "OEM copyright retained. Bounded individually reviewed factual specifications only; no PDF, image, whole table or marketing prose redistributed. No open bulk licence asserted.",
+    "access": "Ordinary public GET; no forms/accounts/bypass",
+    "limitations": "Maximum conversion efficiency claim, not European efficiency or independent test result; translated page is not a new model/version"
   }
 }

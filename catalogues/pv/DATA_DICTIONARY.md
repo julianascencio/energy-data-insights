@@ -611,3 +611,7 @@ values from environmental consultation describe proposed design, not operation.
 ### Research update — 5 November 2026, 05:00 UTC
 
 Three historical Steca inverter-chargers and three distinct Antaisolar trackers are added. Twelve existing INHENERGY models gain60typed dimension/topology/string fields with nativeL/W/H axes preserved.211projects gain611historical party/reference fields. ARENA2018integerAC/mounting references remain historical contexts; scalar capacities, lifecycle and installed mounting are unchanged. Steca VA and efficiency bounds are not activeW/exact efficiencies. Tracker maxima/options remain project-dependent and component warranties stay separate. See dated0500review/audit/report and persistent source queue.
+
+### Research update — 5 November 2026, 06:00 UTC
+
+200 complete Chinese projects gain historical corporate owners, operators and phase-linked evidence (600 fields). Eleven exact Felicitysolar hybrid models add 155 canonical technical values plus qualified battery, PV, grid, backup, mechanical and environmental conditions. Backup watts do not establish grid rated active watts; per-tracker and battery currents remain separate. Unlabelled axes, warranty applicability, ambiguous string layouts and inconsistent full-load voltage limits stay qualified or held. Cáseda huerta rows remain separate from nearby Viscofan; the exact BON resolution endpoint returns 503. See the dated 06:00 source, project, equipment, identity, audit and validation ledgers.
