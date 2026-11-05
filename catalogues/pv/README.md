@@ -601,3 +601,16 @@ families; arbitrary fuse variants are not expanded. Current, fuse inclusion,
 temperature-unit and unlabelled-axis conflicts remain held. OEM warranty is a generic
 three-year limited sale-term claim from purchase, not a measured lifetime. See dated
 1155 reviews, preservation, source captures, snapshots and the resumable backlog.
+
+### NSW planning tracker review
+
+The offline `pv_catalogue.nsw.read_nsw_renewable_tracker` reader checks pinned HTML,
+its explicit table as-of date, the complete summary/detail inventory, card headers
+and Australian-format approval dates. Duplicate names remain separate candidates.
+The 6 August 2026 tracker contains 93 Solar Farm cards, including 16 under assessment;
+that publisher category alone does not prove PV. The 5 November 16:09 review enriches
+23 existing positively identified PV projects after manual identity review. Native
+planning capacities, storage, statuses and regional location labels remain qualified
+historical context, with no nameplate, operating-status or coordinate inference.
+Existing non-null contexts are held rather than overwritten. Source attribution is
+in `licenses/NSW_DPHI_CC_BY4_NOTICE.md`; third-party reports/submissions are excluded.

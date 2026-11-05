@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T15:52:21.769804+00:00",
-  "ranking_file": "20261105T1535_top10_gaps.json",
-  "selection_note": "202existingprojects +7existingWeidmullermodels enriched;415substantivefields including2reviewedadditiveIDJSONfields. Zero newrecords/countries/manufacturers. Sixacceptedpublisherbatches, nonewparser/feedintegration. Solartech/Gave/FRVrights-held; DEGERunchanged; Soltiguaconfigtablesabsent.",
-  "next_highest_value_source": "Remaining48AEMOcrosswalks for missingAC; respect6Nov15:12freshnessbackoff. GEMafterL100001018717;414predicateeligible aftercursor plusone separately heldmalformedlabel.",
+  "updated_at": "2026-11-05T16:31:26.829044+00:00",
+  "ranking_file": "20261105T1609_top10_gaps.json",
+  "selection_note": "12newSiebencombiners/110typedvalues;223uniqueprojects enriched/446substantivefields. TestedNSWreader stages93candidates,23acceptedexistingPV enrichments;0newNSWplants, no automatedfeedintegration claimed. Fiveacceptedtechnicalbatches/fourpublishers. One newmanufacturer, no newcountry.",
+  "next_highest_value_source": "AEMO7remaining singlephaseidentity opportunities (BRDDSF01,CRWASF1,GIRGSF,KINGASF1,LANCSF1,LILYSF1,WUNUSF1), then46broaderphase/crosswalkcandidates. GEMafterL100001020271;213predicateeligibleaftercursor plusoneheldlabel. NSW70reviewcards pendingidentity/contextreconciliation.",
   "sources": [
     {
       "id": "uk_repd",
@@ -18409,6 +18409,291 @@
       "next_action": "Keep restrictedownerpage out of accepteddata; no contact/forms.",
       "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
       "next_due_check": "2026-12-05T15:35:00Z"
+    },
+    {
+      "id": "gem_operator_partition_20261105T1609",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CC BY4, wholeTZ/WKSLlocation exclusions",
+      "last_release": "February2026",
+      "publication_cadence": "Release based; reusecachedpartitions",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "after": "L100001018717",
+        "next": "L100001020271",
+        "remaining_after_cursor": 213,
+        "label_hold": [
+          {
+            "record_id": "6216b389-b3c1-5803-ac07-5854572f7797",
+            "location_id": "L100001019672",
+            "operator_as_reported": "Zhirun New Energy Taizhou Hailing Chengdong Street Fishing and Solar Photovoltaic Project",
+            "reason": "Project-like operator label is not clearly a corporate organisation; independent verification required"
+          }
+        ]
+      },
+      "reviewed": 201,
+      "accepted": 200,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 201,
+        "accepted": 200,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "201reviewed→200operator/context enrichments;1project-like operatorlabel held, no inventedcorrection. Lastlandingcheck5Nov15:35, pinnedsourcebytesreused; no currentoperation or newrelease claim.",
+      "next_action": "Resume afterL100001020271;213eligibleaftercursor plusone heldlabel.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T16:09:00Z",
+      "last_retrieval": "2026-11-05T15:36:23.528233+00:00",
+      "sha256": "b873a4853582582fb4f26f1f436d82d1210e6e891649a6030eeb7311ab74e63b",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 15:36:33 GMT",
+      "retrieval_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/"
+    },
+    {
+      "id": "nsw_tracker_20261105T1609",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "endpoint": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "format": "HTMLsummary/detailtables",
+      "licence_assessment": "NSWdepartment CC BY4, thirdpartyreports/submissions excluded",
+      "last_release": "6August2026table;28August2026pagefooter",
+      "publication_cadence": "Unspecified updatecadence, revision-based",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "complete_inventory": 193,
+        "solar_cards": 93,
+        "accepted_existing": 23,
+        "other_holds": 70,
+        "duplicate_name": "RiverinaSolarFarm",
+        "review": "20261105T1609_nsw_review.json"
+      },
+      "reviewed": 93,
+      "accepted": 23,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 93,
+        "accepted": 23,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "Reusablechecksum/asof/schema/inventory/datevalidated reader+12tests;93reviewcandidates staged,23existingpositivePVprojects enriched/40fields (23qualifiedcontexts,15localitylabels,2regions). Zero newNSWplants; sourcecontains16underassessment despiteintroapprovedwording. OneTamworth/Somerton locality difference retainedwithoutoverwrite.",
+      "next_action": "Review70othercards for explicit identity/aliases and additiveexistingcontext resolution; no fuzzymerge/automaticacceptance.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T16:09:00Z",
+      "last_retrieval": "2026-11-05T16:13:37.300353+00:00",
+      "sha256": "510e9ec32890927d7e259abf031885d500357af19d35e3184a5677b449f66f37",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 06:42:51 GMT",
+      "retrieval_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy"
+    },
+    {
+      "id": "aemo_singlephase_20261105T1609",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "endpoint": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "format": "CachedXLSX+NSWHTML",
+      "licence_assessment": "AEMO attributed-use permission; NSWCCBY4",
+      "last_release": "30October2026survey",
+      "publication_cadence": "Monthly;403backoffretained",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "remaining_crosswalk_candidates": 46,
+        "accepted_duids": [
+          "MULWASF1",
+          "WELNSF1"
+        ],
+        "next_singlephase_duids": [
+          "BRDDSF01",
+          "CRWASF1",
+          "GIRGSF",
+          "KINGASF1",
+          "LANCSF1",
+          "LILYSF1",
+          "WUNUSF1"
+        ]
+      },
+      "reviewed": 2,
+      "accepted": 2,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 2,
+        "accepted": 2,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "2singlephase reviews→2additiveIDJSONs,1AC,1DC,2siteowners; theseprojects overlapNSW23, not2additionalprojectcounts. Mulwala31/31.16AC andWellington425/426.4DC held. Aldoga/Barcaldine/Bomen have multiplecanonicalphases, no wholeprojectmapping accepted.",
+      "next_action": "Review remaining7singlephase identities with permittedprimaryevidence first. Preserve broader46candidatequeue/phaseholds. Ordinaryfreshness noearlier6Nov15:12UTC.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-11-06T15:12:00Z",
+      "last_retrieval": "2026-11-05T13:30:14.845760+00:00",
+      "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+      "etag": "0bff23fd31cd4e39be18d6b2aac81276",
+      "last_modified": "Fri, 30 Oct 2026 06:24:27 GMT",
+      "retrieval_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en"
+    },
+    {
+      "id": "sieben_tables_20261105T1609",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.siebengroup.com/en_products/PV-Combiner-Box-143.html",
+      "endpoint": "https://www.siebengroup.com/en_products/PV-Combiner-Box-143.html",
+      "format": "TwoOEMHTMLtechnicaltables",
+      "licence_assessment": "OEMcopyrightretained, boundedfacts; noopenbulk/documentlicence asserted",
+      "last_release": "UndatedliveS-PV/SH-PVtables",
+      "publication_cadence": "Revision based",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "models": [
+          "S-PV2",
+          "S-PV3",
+          "S-PV4",
+          "S-PV6",
+          "S-PV8",
+          "S-PV10",
+          "S-PV16",
+          "SH-PV-1/1",
+          "SH-PV-2/1",
+          "SH-PV-4/1",
+          "SH-PV-4/2",
+          "SH-PV-6/1"
+        ],
+        "SH_endpoint": "https://www.siebengroup.com/en_products/en-147.html"
+      },
+      "reviewed": 12,
+      "accepted": 12,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 12,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "12newliteralmodels,110typedtechnicalvalues, newSiebenGroupmanufacturer. Truepublishedcircuittopology/modeltables, no crossproduct ofvoltage/current/optionalconfigurations. Fivequalifiedconflictgroups retained: fusecells,outputsuffix,SPDunit,humidity and voltage/currentpairs.",
+      "next_action": "Selectedtwo tables exhausted; sourcecurrentlynoadditionalexacttracker/combinermodelcatalogue accepted. Skipunchangedobservations.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T16:09:00Z",
+      "last_retrieval": "2026-11-05T16:10:51.808966+00:00",
+      "sha256": "1aa5b1d5a4613eff494e0be04f67715c57909e892532a416376e40661f9cc81a",
+      "etag": null,
+      "last_modified": null,
+      "retrieval_url": "https://www.siebengroup.com/en_products/PV-Combiner-Box-143.html"
+    },
+    {
+      "id": "veichi_rights_20261105T1609",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.veichienergy.com/download/",
+      "endpoint": "https://www.veichienergy.com/download/",
+      "format": "HTMLlisting/Terms",
+      "licence_assessment": "Terms prohibit copying/storing ininformationretrievalsystems withoutpriorpermission",
+      "last_release": "Listing22October2026datasheets; termsmodified31August2026",
+      "publication_cadence": "Onlyifrightschange",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "rights_url": "https://www.veichienergy.com/legal.html",
+        "potential_models_from_listing": 9,
+        "downloadedtechnicalPDFs": 0
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "PromisingVHT/VLS/VLT multirecordcatalogues found; explicitreuseblock discovered beforePDFdownloads.0technicalmodelsreviewed/accepted, no feedintegrated.",
+      "next_action": "Rights hold; use anotherpermittedOEM, no contact/forms or alternatehostbypass.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T16:09:00Z",
+      "last_retrieval": "2026-11-05T16:13:37.251163+00:00",
+      "sha256": "bf450c46175c1359b74617d2c6a6d333493b79f924079a8ffb8fc14a5afb0a29",
+      "etag": null,
+      "last_modified": "Wed, 04 Nov 2026 09:02:20 GMT",
+      "retrieval_url": "https://www.veichienergy.com/download/"
+    },
+    {
+      "id": "aldoga_acciona_20261105T1609",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.acciona.com/projects/aldoga-solar-farm",
+      "endpoint": "https://www.acciona.com/projects/aldoga-solar-farm",
+      "format": "HTML+terms",
+      "licence_assessment": "ACCIONA LegalNoteexpressprohibition on extraction/reuse/retrievalstorage withoutpermission; no ingestion",
+      "last_release": "Undatedliveprojectpage; currentlegalnote",
+      "publication_cadence": "Onlyifrightschange",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "legal_url": "https://www.acciona.com/legal-note",
+        "NZEAgov": "503, no retry"
+      },
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "Ownerfacts notaccepted; Aldoga additionallyhas2canonicalphases. ARENA Barcaldine andNSWBomen primarypages examined, butbothmultiphasecontexts held. IndependentNSWtracker/Siebenfallbacks used.",
+      "next_action": "Keep phase/rights holds; independentpermittedphase-specific evidence needed.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T16:09:00Z",
+      "last_retrieval": "2026-11-05T16:10:51.202804+00:00",
+      "sha256": "98c0b550a19a2723249884461f71d0abb4a21cb4bc9ac6d3e3ce9413f23ed267",
+      "etag": null,
+      "last_modified": null,
+      "retrieval_url": "https://www.acciona.com/projects/aldoga-solar-farm"
     }
   ],
   "source_refresh_queue": [
