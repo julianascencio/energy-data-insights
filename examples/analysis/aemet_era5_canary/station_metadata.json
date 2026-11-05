@@ -1,0 +1,52 @@
+{
+  "unidad_generadora": "Servicio del Banco de Datos Nacional de Climatología",
+  "periodicidad": "1 vez al día",
+  "descripcion": "Inventario de estaciones para el apartado Valores Climatología",
+  "formato": "application/json",
+  "copyright": "© AEMET. Autorizado el uso de la información y su reproducción citando a AEMET como autora de la misma.",
+  "notaLegal": "https://www.aemet.es/es/nota_legal",
+  "campos": [
+    {
+      "id": "latitud",
+      "descripcion": "latitud de la estación",
+      "tipo_datos": "string",
+      "requerido": true
+    },
+    {
+      "id": "provincia",
+      "descripcion": "provincia donde reside la estación",
+      "tipo_datos": "string",
+      "requerido": true
+    },
+    {
+      "id": "indicativo",
+      "descripcion": "indicativo climatológico de la estación",
+      "tipo_datos": "string",
+      "requerido": true
+    },
+    {
+      "id": "altitud",
+      "descripcion": "altitud de la estación ",
+      "tipo_datos": "string",
+      "requerido": true
+    },
+    {
+      "id": "nombre",
+      "descripcion": "ubicación de la estación",
+      "tipo_datos": "string",
+      "requerido": true
+    },
+    {
+      "id": "indsinop",
+      "descripcion": "Indicativo sinóptico",
+      "tipo_datos": "string",
+      "requerido": true
+    },
+    {
+      "id": "longitud",
+      "descripcion": "longitud de la estación",
+      "tipo_datos": "string",
+      "requerido": true
+    }
+  ]
+}
