@@ -1,0 +1,341 @@
+{
+  "version": "1.0.0",
+  "entity_types": [
+    "projects"
+  ],
+  "required": [
+    "record_id",
+    "entity_type",
+    "name",
+    "record_scope",
+    "capacity_scope",
+    "created_at",
+    "updated_at",
+    "last_verified_at",
+    "sources",
+    "field_sources_json",
+    "evidence_json",
+    "quality_status"
+  ],
+  "fields": {
+    "record_id": {
+      "type": "string",
+      "description": "Stable UUID; retain through renames and changes in capacity."
+    },
+    "name": {
+      "type": "string",
+      "description": "Identifiable facility, phase or exact equipment name."
+    },
+    "capacity_scope": {
+      "type": "string",
+      "description": "Physical boundary and configuration covered by reported ratings."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Review notes; no unsupported technical facts."
+    },
+    "country_code": {
+      "type": "string",
+      "description": "ISO alpha-3 country code."
+    },
+    "location_accuracy": {
+      "type": "string",
+      "description": "Precision and method of public coordinates."
+    },
+    "parent_record_id": {
+      "type": "string",
+      "description": "Optional parent project UUID in this catalogue."
+    },
+    "overlap_group": {
+      "type": "string",
+      "description": "Stable group for overlapping capacity observations."
+    },
+    "status_date_basis": {
+      "type": "string",
+      "description": "Publication date or dated retrieval of undated evidence."
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "Connected catalogue table.",
+      "enum": [
+        "projects"
+      ]
+    },
+    "record_scope": {
+      "type": "string",
+      "description": "Physical identity granularity.",
+      "enum": [
+        "plant",
+        "phase",
+        "complex",
+        "unit"
+      ]
+    },
+    "aggregation_role": {
+      "type": "string",
+      "description": "Only independent or child records can contribute to sums. Aggregate and unresolved scopes are excluded even if filtered children are absent.",
+      "enum": [
+        "independent",
+        "child",
+        "aggregate",
+        "unresolved"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Last evidenced project lifecycle; a portfolio listing alone does not establish operation.",
+      "enum": [
+        "announced",
+        "permitted",
+        "under_construction",
+        "commissioning",
+        "operational",
+        "partially_operational",
+        "refurbishment",
+        "suspended",
+        "cancelled",
+        "decommissioned",
+        "unknown"
+      ]
+    },
+    "quality_status": {
+      "type": "string",
+      "description": "Evidence qualification; does not certify a facility or product.",
+      "enum": [
+        "source_backed",
+        "needs_review"
+      ]
+    },
+    "created_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "updated_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "last_verified_at": {
+      "type": "timestamp",
+      "description": "UTC timestamp; updated_at changes only on substantive data/evidence changes."
+    },
+    "status_as_of": {
+      "type": "string",
+      "description": "ISO date; only precise reported dates, never a forecast treated as achieved.",
+      "format": "date"
+    },
+    "aliases": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "sources": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "source_urls": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "owner_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "operator_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "developer_names": {
+      "type": "list_string",
+      "description": "Explicit evidenced values; linked IDs refer to existing canonical records."
+    },
+    "external_ids_json": {
+      "type": "json",
+      "description": "Namespace to exact public identifier.",
+      "json_container": "object"
+    },
+    "field_sources_json": {
+      "type": "json",
+      "description": "Map each populated factual column to registered source IDs. No wildcard evidence.",
+      "json_container": "object"
+    },
+    "evidence_json": {
+      "type": "json",
+      "description": "Field-level locator, units, publication date/revision and confidence; keys match field_sources_json.",
+      "json_container": "object"
+    },
+    "estimates_json": {
+      "type": "json",
+      "description": "Derived estimates with method and uncertainty, never substituted into reported columns.",
+      "json_container": "object"
+    },
+    "conflicts_json": {
+      "type": "json",
+      "description": "Quarantined field observations and source dates/boundaries; unresolved numeric fields must be null.",
+      "json_container": "object"
+    },
+    "extensions_json": {
+      "type": "json",
+      "description": "Extra documented metadata with units and conditions.",
+      "json_container": "object"
+    },
+    "latitude": {
+      "type": "float",
+      "description": "Public source coordinate; no inferred centroids.",
+      "minimum": -90,
+      "maximum": 90,
+      "unit": "degrees"
+    },
+    "longitude": {
+      "type": "float",
+      "description": "Public source coordinate; no inferred centroids.",
+      "minimum": -180,
+      "maximum": 180,
+      "unit": "degrees"
+    },
+    "technology": {
+      "type": "string",
+      "description": "technology",
+      "enum": [
+        "reservoir",
+        "run_of_river",
+        "diversion",
+        "pumped_storage",
+        "mixed_pumped_storage",
+        "unknown"
+      ]
+    },
+    "observations_json": {
+      "type": "json",
+      "description": "observations json",
+      "json_container": "list"
+    },
+    "installed_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "planned_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "historical_capacity_mw": {
+      "type": "float",
+      "description": "Reported capacity at its explicit boundary; never substituted from turbine ratings.",
+      "minimum": 0,
+      "unit": "MW"
+    },
+    "capacity_reference_year": {
+      "type": "int",
+      "description": "capacity reference year",
+      "minimum": 1900,
+      "maximum": 2200
+    },
+    "turbine_count": {
+      "type": "int",
+      "description": "turbine count",
+      "minimum": 0
+    },
+    "pumping_capacity_mw": {
+      "type": "float",
+      "description": "Electrical input in pumping mode",
+      "unit": "MW",
+      "minimum": 0
+    },
+    "operational_capacity_mw": {
+      "type": "float",
+      "description": "Dated operational generating capacity",
+      "unit": "MW",
+      "minimum": 0
+    },
+    "storage_capacity_mwh": {
+      "type": "float",
+      "description": "Explicitly reported usable electrical storage; never reservoir volume",
+      "unit": "MWh",
+      "minimum": 0
+    },
+    "gross_head_m": {
+      "type": "float",
+      "description": "Gross hydraulic head",
+      "unit": "m",
+      "minimum": 0
+    },
+    "net_head_m": {
+      "type": "float",
+      "description": "Net hydraulic head",
+      "unit": "m",
+      "minimum": 0
+    },
+    "design_flow_m3_s": {
+      "type": "float",
+      "description": "Design hydraulic flow",
+      "unit": "m3/s",
+      "minimum": 0
+    },
+    "reservoir_volume_m3": {
+      "type": "float",
+      "description": "Total reservoir volume",
+      "unit": "m3",
+      "minimum": 0
+    },
+    "usable_reservoir_volume_m3": {
+      "type": "float",
+      "description": "Usable reservoir volume",
+      "unit": "m3",
+      "minimum": 0
+    },
+    "river": {
+      "type": "string",
+      "description": "Reported river"
+    },
+    "basin": {
+      "type": "string",
+      "description": "Reported river basin"
+    },
+    "dam_name": {
+      "type": "string",
+      "description": "Reported dam"
+    },
+    "reservoir_name": {
+      "type": "string",
+      "description": "Reported reservoir"
+    },
+    "turbine_type": {
+      "type": "string",
+      "description": "Reported turbine type"
+    },
+    "turbine_model": {
+      "type": "string",
+      "description": "Exact reported turbine model"
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "Reported turbine manufacturer"
+    },
+    "commissioning_date": {
+      "type": "string",
+      "description": "Reported commissioning date and precision"
+    },
+    "refurbishment_date": {
+      "type": "string",
+      "description": "Reported refurbishment date and precision"
+    },
+    "grid_connection": {
+      "type": "string",
+      "description": "Reported grid connection"
+    },
+    "cost_observations_json": {
+      "type": "json",
+      "description": "Costs with currency, year and basis"
+    },
+    "environmental_constraints": {
+      "type": "string",
+      "description": "Publicly documented constraints"
+    },
+    "cross_catalogue_links_json": {
+      "type": "json",
+      "description": "Reviewed links to other catalogue identities"
+    }
+  }
+}
