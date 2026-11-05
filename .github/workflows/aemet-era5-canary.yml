@@ -12,7 +12,7 @@ permissions:
   contents: write
 concurrency:
   group: aemet-era5-canary-acquisition
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   acquire:
     runs-on: ubuntu-24.04

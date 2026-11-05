@@ -202,7 +202,7 @@ def acquire_era5() -> None:
     manifest = []
     with HTTPClient(
         frozenset({"archive-api.open-meteo.com"}),
-        config=HTTPConfig(minimum_interval_seconds=8.0, timeout_seconds=120),
+        config=HTTPConfig(minimum_interval_seconds=8.0, timeout_seconds=30, attempts=6),
     ) as http:
         client = OpenMeteoClient(
             http, product=WeatherProduct.ERA5, include_degradation=True, chunk_days=366
