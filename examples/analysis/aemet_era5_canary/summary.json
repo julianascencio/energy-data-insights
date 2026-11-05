@@ -1,0 +1,106 @@
+{
+  "training_year": 2022,
+  "validation_and_map_year": 2023,
+  "station_inventory": 77,
+  "stations_with_coefficients": 73,
+  "station_support_by_variable": {
+    "relative_humidity_percent": 69,
+    "temperature_c": 72,
+    "wind_speed_ms": 70
+  },
+  "unsupported_stations": [
+    "C129Z",
+    "C619I",
+    "C839I",
+    "C839X"
+  ],
+  "grid_cells": 441,
+  "supported_grid_cells": 441,
+  "degradation_parameters": {
+    "a_h": 49100000.0,
+    "a_p": 71.83,
+    "a_tm": 2.04,
+    "e_h": 0.74,
+    "e_p": 0.45,
+    "e_tm": 0.43,
+    "n": 1.9,
+    "x": 0.63,
+    "theta": 2.24,
+    "a_n": 1.0,
+    "calibration_id": "kaaya-2019-mono-si-explicit-study-scenario",
+    "calibration_source": "Kaaya et al. 2019, Table IV, DOI 10.1109/JPHOTOV.2019.2916197. A_N=1, arithmetic ambient RH, mean daily extrema and one cycle/day are explicit study assumptions; this is not a new field calibration or exact reproduction of the thesis maps. Independently checked against Kaaya (2020), doctoral thesis Table 4.3, p.45: https://www.uma.es/media/tinyimages/file/Ismail__Thesis2.pdf."
+  },
+  "weather_calibration": "Monthly additive temperature/RH and wind multiplier, 2022 only",
+  "spatial_transfer": "IDW nearest four stations within 75 km; no elevation downscaling",
+  "radiation": "Uncorrected ERA5 GHI; UV=5% GHI proxy; 4-6% sensitivity is not confidence",
+  "module": "GHI-based Faiman, U0=26.9, U1=6.2, 2 m height, open-rack scenario",
+  "stress": "Annual mean T/RH, mean daily module extrema, 365 cycles/year; A_N=1",
+  "limits": [
+    "Daily date/period and station sampling differences remain",
+    "Only two years; seasonal means corrected, hourly/extreme skill not established",
+    "Spatial transfer may fail at mountains/coasts; inspect spatial holdout validation",
+    "Weather correction is not a new module/material calibration",
+    "No PID, LID, LeTID, salt corrosion, hail or field-loss measurement inferred"
+  ],
+  "ranges_percent_per_year": {
+    "hydrolysis": [
+      0.006563625658896963,
+      0.07604629956309433
+    ],
+    "photodegradation": [
+      0.020480374809661472,
+      0.14543782265145713
+    ],
+    "thermomechanical": [
+      0.030943855748256605,
+      0.21387780583624164
+    ],
+    "total": [
+      0.08367369594353756,
+      0.43160400999580284
+    ]
+  },
+  "validation": [
+    {
+      "validation": "spatial_and_temporal_holdout",
+      "variable": "relative_humidity_percent",
+      "raw_monthly_rmse": 14.266418208429476,
+      "corrected_monthly_rmse": 10.87919846930524
+    },
+    {
+      "validation": "spatial_and_temporal_holdout",
+      "variable": "temperature_c",
+      "raw_monthly_rmse": 2.6015366121353236,
+      "corrected_monthly_rmse": 2.6609297268618017
+    },
+    {
+      "validation": "spatial_and_temporal_holdout",
+      "variable": "wind_speed_ms",
+      "raw_monthly_rmse": 2.231436497595026,
+      "corrected_monthly_rmse": 1.278836795344138
+    },
+    {
+      "validation": "temporal_holdout",
+      "variable": "relative_humidity_percent",
+      "raw_monthly_rmse": 13.897697170473752,
+      "corrected_monthly_rmse": 7.870306655371072
+    },
+    {
+      "validation": "temporal_holdout",
+      "variable": "temperature_c",
+      "raw_monthly_rmse": 2.6079157135855557,
+      "corrected_monthly_rmse": 0.95228720251565
+    },
+    {
+      "validation": "temporal_holdout",
+      "variable": "wind_speed_ms",
+      "raw_monthly_rmse": 2.197268006173482,
+      "corrected_monthly_rmse": 0.6611395821285597
+    }
+  ],
+  "reference_ids": [
+    "aemet_opendata_specification",
+    "kaaya_2019_degradation",
+    "ascencio_vasquez_2019_degradation_mapping"
+  ]
+}

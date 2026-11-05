@@ -6,8 +6,13 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_doe_crac_certification_matrix,
     parse_doe_transformer_certification_matrix,
+    parse_doe_ups_certification_matrix,
+    parse_energy_star_certified_data_centers,
+    parse_energy_star_data_center_storage_inventory,
     parse_energy_star_enterprise_servers_inventory,
+    parse_energy_star_large_network_equipment_inventory,
     parse_energy_star_ups_inventory,
     parse_generator_dcp_matrix,
     parse_generator_rating_matrix,
@@ -20,6 +25,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_server_accelerator_shipping_matrix,
     parse_supermicro_nvidia_systems,
     parse_ups_rating_matrix,
+    parse_volvo_penta_powergen_matrix,
 )
 
 CONTENT = (Path(__file__).parent / "fixtures/data_centers/named-inventory.html").read_bytes()
@@ -42,6 +48,9 @@ GENERATOR_MATRIX = (
 GENERATOR_DCP_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/generator-dcp-matrix.csv"
 ).read_bytes()
+VOLVO_PENTA_POWERGEN_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/volvo-penta-powergen-matrix.csv"
+).read_bytes()
 LENOVO_COMPARISON = (
     Path(__file__).parent / "fixtures/data_centers/lenovo-gpu-comparison.html"
 ).read_bytes()
@@ -56,6 +65,256 @@ ENERGY_STAR_UPS = (Path(__file__).parent / "fixtures/data_centers/energy-star-up
 ENERGY_STAR_SERVERS = (
     Path(__file__).parent / "fixtures/data_centers/energy-star-enterprise-servers.csv"
 ).read_bytes()
+ENERGY_STAR_STORAGE_BLOCK = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-storage-block.csv"
+).read_bytes()
+ENERGY_STAR_STORAGE_FILE = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-storage-file.csv"
+).read_bytes()
+ENERGY_STAR_NETWORK = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-large-network.csv"
+).read_bytes()
+ENERGY_STAR_DATA_CENTERS = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-certified-data-centers.html"
+).read_bytes()
+DOE_CRAC = (Path(__file__).parent / "fixtures/data_centers/doe-crac-matrix.csv").read_bytes()
+DOE_UPS = (Path(__file__).parent / "fixtures/data_centers/doe-ups-matrix.csv").read_bytes()
+
+
+def test_doe_ups_keeps_watts_va_modes_and_efficiency_boundaries():
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Uninterruptible_Power_Supplies.html"
+    )
+    result = parse_doe_ups_certification_matrix(DOE_UPS, source_url=url, expected_count=2)
+    rows = {(row["brand"], row["individual_model"]): row for row in result["candidates"]}
+    abb = rows[("ABB", "UPS POWERVALUE 11RT G2 1 kVA B UL")]
+    assert abb["lowest_active_w"] == 1000
+    assert abb["lowest_apparent_va"] == 1000
+    assert abb["lowest_efficiency_pct"] == 91.2
+    assert abb["highest_mode"] is None
+    multi = rows[("Synthetic", "MODEL-HIGH")]
+    assert multi["lowest_mode"] == "VFI"
+    assert multi["highest_mode"] == "VI"
+    assert multi["highest_active_w"] == 900
+    assert multi["highest_apparent_va"] == 1000
+    assert multi["highest_efficiency_pct"] == 98.1
+    assert result["review_required"]
+    assert len(result["sha256"]) == 64
+
+
+def test_doe_ups_rejects_drift_duplicates_and_unofficial_sources():
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Uninterruptible_Power_Supplies.html"
+    )
+    with pytest.raises(ValueError, match="Changed DOE UPS"):
+        parse_doe_ups_certification_matrix(DOE_UPS, source_url=url, expected_count=3)
+    with pytest.raises(ValueError, match="Duplicate DOE UPS"):
+        parse_doe_ups_certification_matrix(
+            DOE_UPS + DOE_UPS.splitlines(keepends=True)[1],
+            source_url=url,
+            expected_count=2,
+        )
+    with pytest.raises(ValueError, match="Unsupported official DOE UPS"):
+        parse_doe_ups_certification_matrix(
+            DOE_UPS, source_url="https://example.com/ups.csv", expected_count=2
+        )
+
+
+def test_doe_crac_keeps_issuer_capacity_and_airflow_boundaries():
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Air_Conditioners_and_Heat_Pumps_-_Computer_Room_Air_Conditioners.html"
+    )
+    result = parse_doe_crac_certification_matrix(DOE_CRAC, source_url=url, expected_count=2)
+    rows = {(row["brand"], row["basic_model"]): row for row in result["candidates"]}
+    aboveair = rows[("AboveAir", "HKA-053(kW)*")]
+    assert aboveair["outdoor_model"] is None
+    assert aboveair["net_total_btu_h"] == 37800
+    assert aboveair["net_sensible_btu_h"] == 129000
+    assert rows[("AIRSYS", "UNI-EDG.20V1*1MR410CAC")]["rated_airflow_scfm"] == 2520
+    assert len(result["sha256"]) == 64
+
+
+def test_doe_crac_rejects_source_shape_and_identity_drift():
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Air_Conditioners_and_Heat_Pumps_-_Computer_Room_Air_Conditioners.html"
+    )
+    with pytest.raises(ValueError, match="Unsupported official DOE CRAC"):
+        parse_doe_crac_certification_matrix(
+            DOE_CRAC, source_url="https://example.com/crac.csv", expected_count=2
+        )
+    with pytest.raises(ValueError, match="matrix shape"):
+        parse_doe_crac_certification_matrix(DOE_CRAC, source_url=url, expected_count=3)
+    duplicate = DOE_CRAC + DOE_CRAC.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate DOE CRAC"):
+        parse_doe_crac_certification_matrix(duplicate, source_url=url, expected_count=2)
+
+
+def test_energy_star_data_centers_keep_state_only_and_unqualified_area():
+    result = parse_energy_star_certified_data_centers(
+        ENERGY_STAR_DATA_CENTERS,
+        source_url="https://www.energystar.gov/buildings/certified-data-centers",
+        certification_year=2026,
+        expected_total_count=3,
+        expected_selected_count=2,
+    )
+    by_name = {row["facility_name"]: row for row in result["candidates"]}
+    assert set(by_name) == {"Alpha DC (ABC1)", "Beta Facility"}
+    assert by_name["Alpha DC (ABC1)"]["state"] == "Virginia"
+    assert by_name["Alpha DC (ABC1)"]["reported_floor_space"] == 100000
+    assert by_name["Alpha DC (ABC1)"]["reported_floor_space_unit"] is None
+    assert by_name["Alpha DC (ABC1)"]["label_years"] == [2025, 2026]
+    assert by_name["Beta Facility"]["property_manager"] == "Example Manager"
+    assert result["inventory_count"] == 3
+    assert len(result["sha256"]) == 64
+
+
+def test_energy_star_data_centers_keep_historical_partition_separate():
+    content = ENERGY_STAR_DATA_CENTERS.replace(
+        b"<td>50000</td><td>2018</td><td>ENERGYSTAR: 1 (2026)</td>",
+        b"<td>50000</td><td>2026</td><td>ENERGYSTAR: 1 (2026)</td>",
+    )
+    result = parse_energy_star_certified_data_centers(
+        content,
+        source_url="https://www.energystar.gov/buildings/certified-data-centers",
+        certification_year=2025,
+        expected_total_count=3,
+        expected_selected_count=1,
+    )
+    assert result["certification_year"] == 2025
+    assert result["candidates"] == [
+        {
+            "facility_name": "Historical Facility",
+            "state": "Ohio",
+            "owner": "Past Owner",
+            "property_manager": None,
+            "label_years": [2024, 2025],
+            "reported_floor_space": 75000,
+            "reported_floor_space_unit": None,
+            "constructed_year": 2010,
+            "certification_count": 2,
+            "most_recent_certification_year": 2025,
+            "locator": "certified data centers table / Historical Facility",
+        }
+    ]
+
+
+def test_energy_star_data_centers_reject_source_and_shape_drift():
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR"):
+        parse_energy_star_certified_data_centers(
+            ENERGY_STAR_DATA_CENTERS,
+            source_url="https://example.com/data-centers",
+            certification_year=2026,
+            expected_total_count=3,
+            expected_selected_count=2,
+        )
+    with pytest.raises(ValueError, match="inventory shape"):
+        parse_energy_star_certified_data_centers(
+            ENERGY_STAR_DATA_CENTERS,
+            source_url="https://www.energystar.gov/buildings/certified-data-centers",
+            certification_year=2026,
+            expected_total_count=4,
+            expected_selected_count=2,
+        )
+    with pytest.raises(ValueError, match="certification-year partition"):
+        parse_energy_star_certified_data_centers(
+            ENERGY_STAR_DATA_CENTERS,
+            source_url="https://www.energystar.gov/buildings/certified-data-centers",
+            certification_year=2026,
+            expected_total_count=3,
+            expected_selected_count=3,
+        )
+
+
+def test_energy_star_large_network_keeps_test_power_boundaries():
+    result = parse_energy_star_large_network_equipment_inventory(
+        ENERGY_STAR_NETWORK,
+        source_url="https://data.energystar.gov/api/v3/views/n8cx-m62r/export.csv",
+        expected_count=1,
+    )
+    row = result["candidates"][0]
+    assert row["ENERGY STAR Unique ID"] == "1001"
+    assert row["Product Type"] == "Switch"
+    assert row["Typ Power Config Full-port Full Load Power Measured (watts)"] == "101.2"
+    assert row["Typ Power Config Power Supply Rated Output (W)"] == "650"
+    assert len(result["sha256"]) == 64
+
+
+def test_energy_star_large_network_rejects_drift_duplicate_and_wrong_source():
+    url = "https://data.energystar.gov/api/v3/views/n8cx-m62r/export.csv"
+    with pytest.raises(ValueError, match="inventory shape"):
+        parse_energy_star_large_network_equipment_inventory(
+            ENERGY_STAR_NETWORK,
+            source_url=url,
+            expected_count=2,
+        )
+    duplicate = ENERGY_STAR_NETWORK + ENERGY_STAR_NETWORK.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate ENERGY STAR large-network-equipment"):
+        parse_energy_star_large_network_equipment_inventory(
+            duplicate,
+            source_url=url,
+            expected_count=1,
+        )
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR large-network-equipment"):
+        parse_energy_star_large_network_equipment_inventory(
+            ENERGY_STAR_NETWORK,
+            source_url="https://example.com/network.csv",
+            expected_count=1,
+        )
+
+
+def test_energy_star_storage_keeps_workload_and_power_boundaries():
+    block = parse_energy_star_data_center_storage_inventory(
+        ENERGY_STAR_STORAGE_BLOCK,
+        source_url="https://data.energystar.gov/api/v3/views/3uec-2gqf/export.csv",
+        dataset_kind="block_io",
+        expected_count=1,
+    )
+    assert block["candidates"][0]["ENERGY STAR Unique ID"] == "1001"
+    assert block["candidates"][0]["Trans PSU Rated Output (W)"] == "1200"
+    assert (
+        block["candidates"][0]["Trans Optimal Point Random Read Workload Test (IOPS/W)"] == "42.5"
+    )
+    assert len(block["sha256"]) == 64
+
+    file_io = parse_energy_star_data_center_storage_inventory(
+        ENERGY_STAR_STORAGE_FILE,
+        source_url="https://data.energystar.gov/api/v3/views/put7-uu67/export.csv",
+        dataset_kind="file_io",
+        expected_count=1,
+    )
+    assert file_io["candidates"][0]["PD_ID"] == "2001"
+    assert file_io["candidates"][0]["Comp PSU Rated Output (W)"] == "750W"
+    assert file_io["candidates"][0]["Comp Total Amount of Cache (GiB)"] == "288.00"
+
+
+def test_energy_star_storage_rejects_drift_duplicate_and_wrong_dataset():
+    url = "https://data.energystar.gov/api/v3/views/3uec-2gqf/export.csv"
+    with pytest.raises(ValueError, match="inventory shape"):
+        parse_energy_star_data_center_storage_inventory(
+            ENERGY_STAR_STORAGE_BLOCK,
+            source_url=url,
+            dataset_kind="block_io",
+            expected_count=2,
+        )
+    duplicate = ENERGY_STAR_STORAGE_BLOCK + ENERGY_STAR_STORAGE_BLOCK.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate ENERGY STAR data-center-storage"):
+        parse_energy_star_data_center_storage_inventory(
+            duplicate,
+            source_url=url,
+            dataset_kind="block_io",
+            expected_count=1,
+        )
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR data-center-storage source"):
+        parse_energy_star_data_center_storage_inventory(
+            ENERGY_STAR_STORAGE_BLOCK,
+            source_url="https://data.energystar.gov/api/v3/views/put7-uu67/export.csv",
+            dataset_kind="block_io",
+            expected_count=1,
+        )
 
 
 def test_energy_star_enterprise_servers_keep_certification_and_form_factor():
@@ -759,6 +1018,43 @@ def test_dcp_generator_matrix_rejects_unofficial_sources_and_drift(source_url, e
     with pytest.raises(ValueError):
         parse_generator_dcp_matrix(
             GENERATOR_DCP_MATRIX,
+            source_url=source_url,
+            expected_count=expected_count,
+        )
+
+
+def test_volvo_penta_powergen_preserves_prime_standby_and_mechanical_boundaries():
+    result = parse_volvo_penta_powergen_matrix(
+        VOLVO_PENTA_POWERGEN_MATRIX,
+        source_url=(
+            "https://www.volvopenta.com/industrial/power-generation-engines/"
+            "power-generation-engine-range/d16-eu-stage-v/"
+        ),
+        expected_count=2,
+    )
+    by_frequency = {row["frequency_hz"]: row for row in result["candidates"]}
+    assert by_frequency[50.0]["prime_output_kw"] == 528
+    assert by_frequency[50.0]["standby_apparent_kva"] == 726
+    assert by_frequency[60.0]["prime_mechanical_kw"] is None
+    assert by_frequency[60.0]["fuel_type"] == "Diesel/HVO"
+    assert result["review_required"]
+
+
+@pytest.mark.parametrize(
+    ("source_url", "expected_count"),
+    [
+        ("https://example.com/power-generation-engine-range/d16/", 2),
+        (
+            "https://www.volvopenta.com/industrial/power-generation-engines/"
+            "power-generation-engine-range/d16-eu-stage-v/",
+            3,
+        ),
+    ],
+)
+def test_volvo_penta_powergen_rejects_unofficial_sources_and_drift(source_url, expected_count):
+    with pytest.raises(ValueError):
+        parse_volvo_penta_powergen_matrix(
+            VOLVO_PENTA_POWERGEN_MATRIX,
             source_url=source_url,
             expected_count=expected_count,
         )

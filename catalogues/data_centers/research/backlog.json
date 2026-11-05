@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T08:20:00Z",
+  "updated_at": "2026-11-05T21:23:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -102,7 +102,32 @@
     "energy_star_ace_enterprise_server_certifications": 1,
     "doe_ccms_lvdt_basic_model_displayed_rows": 50,
     "doe_ccms_mvdt_basic_model_displayed_rows": 50,
-    "doe_ccms_liquid_transformer_basic_model_displayed_rows": 50
+    "doe_ccms_liquid_transformer_basic_model_displayed_rows": 50,
+    "energy_star_data_center_storage_block_certifications": 84,
+    "energy_star_data_center_storage_file_certifications": 36,
+    "energy_star_large_network_equipment_certifications": 96,
+    "energy_star_certified_data_centers_2026": 133,
+    "energy_star_certified_data_centers_2025": 50,
+    "energy_star_certified_data_centers_2024": 23,
+    "energy_star_certified_data_centers_2023": 31,
+    "energy_star_certified_data_centers_2022": 9,
+    "energy_star_certified_data_centers_2021": 20,
+    "energy_star_certified_data_centers_2020": 9,
+    "energy_star_certified_data_centers_2019": 16,
+    "energy_star_certified_data_centers_2018": 14,
+    "energy_star_certified_data_centers_2017": 10,
+    "energy_star_certified_data_centers_2016": 4,
+    "energy_star_certified_data_centers_2015": 1,
+    "energy_star_certified_data_centers_2014": 1,
+    "energy_star_certified_data_centers_2013": 7,
+    "energy_star_certified_data_centers_2012": 3,
+    "energy_star_certified_data_centers_2011": 4,
+    "energy_star_certified_data_centers_2010": 2,
+    "atnorth_fin04_swe04_current_official_observations": 15,
+    "volvo_penta_current_powergen_configurations": 22,
+    "volvo_penta_stage_iiia_powergen_configurations": 22,
+    "doe_ccms_crac_displayed_rows": 50,
+    "doe_ccms_ups_displayed_rows": 50
   },
   "next_batches": [
     {
@@ -112,12 +137,12 @@
         "https://www.atnorth.com/nordic-data-centers/",
         "https://www.atnorth.com/wp-content/uploads/2026/06/Sustainability-Report-2025.pdf"
       ],
-      "offset": 23,
-      "scope": "All 13 current named sites, four explicit child buildings/phases, six Finnish municipal observations and four Nordic identity/status reconciliations are processed. Do not recount. FIN03 is now a separately identified operational facility with combined FIN01/FIN03 capacity left unallocated. DEN01 first-phase and campus milestones are separated; DEN02 planning/contractor/phase observations and SWE04 municipal land/grid/site boundaries are complete.",
+      "offset": 38,
+      "scope": "All 13 current named sites, four explicit child buildings/phases, six earlier Finnish municipal observations, four Nordic identity/status reconciliations and 15 current FIN04/SWE04 official observations are processed. Do not recount. FIN03 is a separately identified operational facility with combined FIN01/FIN03 capacity left unallocated. FIN04A Phase 2 environmental identity now binds to permit 286-2025-384; FIN04A Phase 3, FIN04B modification and FIN04C Phase 2 permit observations are retained without inventing child records. SWE04 fuel-input, grid-line and heat-reuse planning boundaries remain separate from IT/grid capacity and commissioning.",
       "questions": [
         "FIN02 40 MW unspecified campus power vs contractor 45 MW gross future total have different boundaries; do not silently replace",
-        "FIN04A Ph2 versus the existing July-2026 YIT phase remains quarantined until an official cross-reference binds the identities; no duplicate phase record was added",
-        "SWE04 H1 2028 versus autumn 2028 commissioning targets remain quarantined; seek a later dated permit or operator milestone",
+        "FIN04A Phase 2 permit identity is resolved, but the generic July/August 2026 YIT contract scopes are not officially mapped to FIN04A Phase 2, FIN04A Phase 3, FIN04B or FIN04C Phase 2; no duplicate child record was added",
+        "SWE04 H1 2028 versus autumn 2028 commissioning targets remain quarantined; March 2029 is the grid-line project completion target, not facility commissioning",
         "The stale SWE04 4 ha operator FAQ text is preserved as a contradicted observation; current operator and municipal evidence support approximately 50 ha",
         "Get dated commencement/completion evidence and explicit building/phase IT/grid/facility ratings; no generic PUE-derived estimates"
       ]
@@ -185,17 +210,20 @@
     },
     {
       "rank": 6,
-      "source": "North America/Europe structured official portfolios, Meta, and AirTrunk phase evidence",
+      "source": "North America/Europe structured official portfolios, Meta, AirTrunk and ENERGY STAR facility evidence",
       "urls": [
         "https://www.digitalrealty.com/data-centers",
         "https://datacenters.atmeta.com/all-locations/",
-        "https://airtrunk.com/locations/"
+        "https://airtrunk.com/locations/",
+        "https://www.energystar.gov/buildings/certified-data-centers"
       ],
-      "offset": 55,
-      "scope": "AirTrunk location inventory complete at offset 22 and Meta global fleet cards complete at offset 33. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a bounded batch",
+      "offset": 392,
+      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33 and all 337 ENERGY STAR Certified Data Centers entries complete across every 2010-2026 most-recent-label partition. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
       "questions": [
         "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
         "Treat Meta card break-ground years as year-precision observations, not full construction dates or evidence of current lifecycle",
+        "The ENERGY STAR 2026 partition is exhausted. Its state-only geography, unlabeled floor-space values and year-only construction observations must not be promoted to coordinates, square metres or full dates",
+        "The complete 337-entry ENERGY STAR registry is exhausted: 133 current-year 2026 facilities and 204 historical 2010-2025 facilities with current lifecycle unknown. Do not recount this capture; await a later issuer update or independent lifecycle evidence",
         "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
       ]
     },
@@ -207,8 +235,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 1832,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed transformer basic-model rows complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
+      "offset": 1954,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed transformer basic-model rows, the first 50 displayed DOE CCMS computer-room air-conditioner rows, the first 50 displayed DOE CCMS UPS individual-model rows, and 44 current Volvo Penta model/frequency rows across the baseline and Stage IIIA batches complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent unheld generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -228,6 +256,8 @@
         "Tescom offset 22 is complete at 15 DS POWER 300HT, two DS POWER 500-600, three DS POWER SH and two MTI250 rows; retain DS POWER SH dimension alternatives as observations and never synthesize electrical, battery, communications or module choices",
         "All 923 ENERGY STAR UPS records across 19 partner partitions are complete for dataset update 2026-11-03; residual offsets are Fuji 1, Ingram/V7 3, Mitsubishi 2, N1C 3, Neuropower 3, Power Logic 2, Right Power 1 and Upsonic 1. Retain unique certification IDs, partner/brand identity, W/VA and load-qualified efficiencies, preserve unavailable values as null, keep reported maximum tested configurations as observations rather than normalized ratings, and never infer battery energy",
         "ENERGY STAR Enterprise Servers Cisco Systems offset 20 is complete for dataset update 2026-11-04. Keep low/typical/high SERT configurations separate, do not normalize PSU nameplates or benchmark scores as server/rack input, and retain the three model-label versus socket-attribute conflicts as quarantined observations.",
+        "DOE CCMS UPS displayed-row offset 50 is complete for the public page updated 2026-10-23. Eleven exact APC individual models enrich existing ENERGY STAR records rather than becoming duplicates; the other 39 rows are new configurations. Keep active W, apparent VA and input-dependency-mode efficiency boundaries separate.",
+        "BN1500M2 and BN1500M2-CA normalized efficiency remain null because the current DOE listing reports 98.9% while the existing ENERGY STAR entries report 99.0%; retain both dated observations until issuer evidence reconciles the difference.",
         "ENERGY STAR Enterprise Servers Fujitsu Limited offset 20 is complete for dataset update 2026-11-04. Preserve PRIMERGY certification identities and socket attributes, keep tested configurations separate, and never promote maximum supported memory, PSU nameplates or benchmark scores to installed memory or rated server/rack input.",
         "ENERGY STAR Enterprise Servers xFusion offset 31 is complete for dataset update 2026-11-04. Treat platform socket capacity separately from tested installed-processor population, preserve repeated model names by immutable certification ID and never promote PSU nameplates, benchmark scores or maximum memory to rated input or installed memory.",
         "ENERGY STAR Enterprise Servers Nutanix offset 19 is complete for dataset update 2026-11-04. Eighteen rows report low/typical/high configurations; NXS2U4NL12G900 reports only typical/single, so missing tiers remain absent.",
@@ -240,7 +270,9 @@
         "ENERGY STAR Enterprise Servers New H3C Technology offset 9 is complete for dataset update 2026-11-04. All rows report three SERT tiers; four G7 rows omit only the low-end configuration ID, which remains absent while the low-end technical observations are preserved.",
         "The 476-row ENERGY STAR Enterprise Servers dataset update 2026-11-04 is exhausted across all 17 partner partitions. Residual offsets are IBM 9, Aivres/KAYTUS 8, ZTE 6, Altos 3, Oracle 3 and Ace Computers 1. Keep IBM S1014 and all KAYTUS/Altos/Ace missing tiers absent, and do not treat certification rows as deployments.",
         "ZTE certification 4654814 is labeled R5300 G5 but reports R5300 G6 as its high-end configuration identifier. Preserve both issuer observations and quarantine configuration-identity inference until a corrected issuer row or OEM cross-reference resolves the mismatch.",
-        "DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed displayed rows 1-50 are complete for the 2026-10-23 public snapshot. Keep manufacturer-represented efficiency as an observation because the displayed tables omit the load/test condition, never convert kVA to active kW, keep BIL group rating distinct from winding voltage, do not decode liquid-transformer model suffixes into unreported voltage or fluid options and do not treat listing as a DOE compliance determination. Continue only with a stable non-overlapping page, filter or exact basic-model inventory."
+        "DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed displayed rows 1-50 are complete for the 2026-10-23 public snapshot. Keep manufacturer-represented efficiency as an observation because the displayed tables omit the load/test condition, never convert kVA to active kW, keep BIL group rating distinct from winding voltage, do not decode liquid-transformer model suffixes into unreported voltage or fluid options and do not treat listing as a DOE compliance determination. Continue only with a stable non-overlapping page, filter or exact basic-model inventory.",
+        "Volvo Penta Stage IIIA/Tier 3 offset 22 is complete at D8 6, D13 10 and D16 6 populated model/frequency rows. Frequency-qualified columns remain sparse, prime electrical kW/kVA and standby electrical kW/kVA remain separate from engine kWm, and no alternator, voltage, complete genset BOM, installation or deployment is inferred.",
+        "DOE CCMS computer-room air-conditioner displayed rows 1-50 are complete for the 2026-10-23 public snapshot: 36 AboveAir and 14 AIRSYS basic models. AboveAir net sensible values exceed displayed net totals, so normalized cooling_capacity_kw remains null on all 36 conflicting rows. Keep Btu/h, SCFM and NSenCOP as issuer observations, and continue only with a verified non-overlapping page/filter boundary."
       ]
     },
     {
@@ -407,16 +439,26 @@
       "source": "Open Access Data Centres portfolio",
       "url": "https://www.openaccessdc.net/terms-and-conditions/",
       "reason": "Official terms prohibit reproduction except as allowed by the copyright notice. The 13-core-site/30-plus-edge portfolio was screened only; no facility facts or bytes were imported."
+    },
+    {
+      "source": "Caterpillar Electric Power product tables and ratings guides",
+      "url": "https://parts.cat.com/en/catcorp/legal/legal-terms",
+      "reason": "Current official terms prohibit extraction for database creation and copying, republication or distribution without written consent. Candidate ratings were screened only; no facts or bytes were imported."
+    },
+    {
+      "source": "Doosan Portable Power generator tables",
+      "url": "https://doosanportablepower.com/dpp-la/la/en/legal/terms-of-use",
+      "reason": "Current official terms restrict stored, reproduced, republished or distributed website content to narrow personal-use exceptions. Candidate generator tables were screened only; no facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "doe-ccms-liquid-transformers-20261105T082000Z",
+    "run_id": "volvo-penta-stage-iiia-powergen-20261105T192000Z",
     "report": "2026-11-05-report.md",
-    "validation": "2026-11-05T0820-validation.json",
+    "validation": "2026-11-05T1920-validation.json",
     "added_projects": 0,
     "enriched_projects": 0,
-    "added_equipment": 50,
-    "branch": "research/data-center-database-20261105T0820Z"
+    "added_equipment": 22,
+    "branch": "research/data-center-database-20261105T1320Z"
   }
 }

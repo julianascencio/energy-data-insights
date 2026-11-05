@@ -16,7 +16,35 @@ or a live availability feed. Do not interpret record counts as installed capacit
    local languages when useful. Check recent status updates as well as technical
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
-4. Stage national inventory candidates with `scripts/stage_bess_inventory.py`.
+4. For TAB TOPzS PDF pages 10–11, `scripts/stage_bess_tab_topzs.py` stages
+   eight exact cell models. Preserve the printed `6 TOPzS750` identity and reviewed
+   web spacing alias; C10 uses 20°C, C100 uses 25°C, and C20 temperature is unstated.
+   Fault current is in A, not kA or operating current. Live-table wet/dry mass
+   order is reversed from the PDF. Two additional OPzS live-only cells were
+   reviewed separately; do not copy brochure life/voltage/temperature onto them.
+   For TAB UPS PDF pages 8–9, `scripts/stage_bess_tab_ups.py` stages
+   the 15-model table. C10 Ah belongs to the cell/monobloc; timed W/cell
+   observations are not continuous unit power. Preserve rate-specific final voltage
+   and reference temperature, dry/wet mass, and the printed compensation-unit hold.
+   For TAB OGi PDF page 6, `scripts/stage_bess_tab_ogi.py` stages the
+   reviewed 25-model partition. Preserve kA fault current, 2 V cell versus
+   6/12 V monobloc Ah, and PDF dry/wet versus website wet/dry mass order.
+   Page 7 supplies operating conditions; do not normalize its questionable
+   temperature-compensation unit or choose between conflicting web/PDF capacities.
+   Website-only models were separately reviewed on 5 November.
+   `scripts/stage_bess_tab_ogi_web.py --cells cells.json --output staged.json`
+   accepts a local JSON array of `td/th` text in DOM order, retaining empty cells.
+   The malformed live HTML must not be grouped by `tr`. Check all 41 identities,
+   rate/end-voltage headers and wet/dry mass order; 25 previously imported models
+   are reconciliation-only, not new rows. Fourteen extra rows omit the shortest
+   rate capacity and nominal voltage; the live page states no capacity temperature.
+   Do not transfer brochure-only conditions to these website-only models.
+   For TAB stationary OPzS PDF tables, `scripts/stage_bess_tab_opzs.py`
+   stages the 22-cell or six-block partition (`--partition blocks`). It rejects
+   changed units/mass order, duplicates and partial tables. Cell Ah and block Ah,
+   short-circuit versus operating current, and cell/block design-life footnotes
+   must remain distinct; no MWh is inferred. Website-only models need separate review.
+   Stage national inventory candidates with `scripts/stage_bess_inventory.py`.
    For the seven-column BSLBATT S205/S314 station sheets,
    `scripts/stage_bess_bslbatt.py` stages local `pdftotext -layout` output and
    checks model order, units, merged-cell scope and voltage envelopes. The row
@@ -258,3 +286,38 @@ ratings do not establish stored energy or indefinite continuous power.
 have conflicting 30 Ah type labels and 27 Ah capacity columns; keep both native
 observations and withhold resolved capacity. Maximum power and timed discharge
 ratings remain separate, with no inferred stored energy or continuous power.
+
+`neata_ups.parse_final_voltage_cabinets` stages the final 23 unique cabinets at
+614.4/716.8/768 V. Repeated NC56 remains outside accepted identities. TC72/TC84/TC90
+retain conflicting 30 Ah labels and 27 Ah columns. NC42/TC84 omit the power-unit
+suffix under a generic W header: retain native text without resolving a power
+scalar. Do not infer energy or repair unusual timed ratings.
+
+For Microcare manuals INV-1-5kW-LION-2018-4-V10R5/6 and the reviewed
+2021-1-V21R1 editions, `scripts/stage_bess_microcare.py` stages local
+`pdftotext -layout` text. Exact model columns, revision, units and voltage
+envelopes must match. The three manuals yield18 observations but17 identities:
+5kW48V appears twice and must be reconciled before upsert. Preserve8kW
+manual/datasheet current and standby disagreements and10/15kW AC-current
+disagreements. Grid-assisted200% throughput is not battery inverter rated power;
+peak efficiency is not RTE, L in LxWxD is not automatically height, and warranty
+eligibility depends on manufacture date. Never create unlisted voltage variants.
+
+### TAB OPzV partition
+
+`scripts/stage_bess_tab_opzv.py --text LOCAL_LAYOUT_TEXT --output NEW_JSON` stages the 14-model brochure page 12 partition offline. Obtain text with `pdftotext -layout` after reviewing source terms and checksum. It rejects changed revision marks, units, heights, rate basis and identities. Staging is not acceptance: compare the live OEM table before the existing upsert API. The 5 November review found differing measured Ah, fault current, masses and resistance; keep both observations in quarantine. Nominal Ah is not measured C10 Ah, H2 includes terminals, and neither fault current nor charge-rate formulas establish active power. See [review ledger](research/2026-11-05_opzv_latvia_review.json).
+
+For Fullriver DC Series, `scripts/stage_bess_fullriver.py` stages exact selected
+HTML cards, requiring one metric and one imperial panel. Pass reviewed model
+headings with `--models`; suffix variants are not equivalent. The brochure tables
+on PDF pages 2 and 3 are raster and require visual transcription; they repeat
+identities but disagree on DC150-12 capacity/reserves and DC85-12 height. Preserve
+56A versus75A reserve conditions, Ah per battery unit, cranking temperatures and
+removable-post qualifiers. Undated web/PDF physical differences remain holds; do
+not infer energy, cell count or a newest revision. Mobility-only PowerVault packs
+are excluded without stationary evidence.
+
+Fullriver individual-sheet electrical tables use `fullriver.parse_datasheet` on
+local layout text. Keep per-battery Ah separate from cell Ah; retain the explicit
+SoC, temperature and per-cell endpoint. Raster sheets require visual review.
+Undated sheet/brochure conflicts remain observations, not silently chosen ratings.

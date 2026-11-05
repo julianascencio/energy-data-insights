@@ -1,10 +1,95 @@
-# PVDeg integration and Canary Islands thermal screening
+# PVDeg Canary Islands degradation-mechanism atlas
 
 This contribution imports **PVDeg 0.7.4**, rather than reproducing its algorithm.
-The [runnable gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_pvdeg_canary.html)
+The original [thermal gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_pvdeg_canary.html)
 includes a 100 m archipelago map, a Tenerife detail and parameter sensitivity.
 
-## Connector, method and analysis
+
+## AEMET-adjusted continuous rate maps
+
+The [AEMET/ERA5 follow-up](aemet-era5-canary.md) fits seasonal weather
+corrections from local observations and calculates continuous land rasters for
+hydrolysis, photodegradation, thermomechanical and combined degradation rates.
+The weather is locally adjusted; module-rate parameters remain a published
+mono-Si scenario. Raw and corrected maps and held-out validation are included.
+
+## Nine hourly degradation-mechanism maps
+
+The [mechanism gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/analysis/plot_pvdeg_canary_mechanisms.html)
+adds **nine maps**, recomputed with PVDeg 0.7.4 from real PVGIS TMY inputs at
+11 locations spanning all eight main islands. The original thermal raster alone
+was not a complete degradation analysis.
+
+| Map | Calculation and interpretation |
+| --- | --- |
+| Thermal | Hourly module-temperature Arrhenius exposure |
+| Damp heat / hydrolysis stress | Temperature × surface humidity exposure, n=1 |
+| Broadband light + heat | Temperature × POA irradiance exposure, p=1; not UV-specific |
+| Light + moisture + heat | Joint exposure, n=p=1; not total module degradation |
+| Surface moisture | Mean module-surface relative humidity |
+| Front encapsulant moisture | Mean EVA W001 front encapsulant RH |
+| Back encapsulant moisture | Mean EVA W001 back encapsulant RH |
+| Backsheet moisture | Mean PET W017 backsheet RH |
+| Solder fatigue | PVDeg hourly thermomechanical fatigue damage metric, kPa |
+
+The first four are dimensionless relative exposures at 60 kJ/mol, normalized
+against equal-duration exposure at 25 C, 50% RH and 1000 W/m². The other maps
+have their own units. **Do not sum them or interpret them as %/year.**
+
+### Shared scenario and actual spatial support
+
+PVGIS selects representative months from 2005–2023 (SARAH3 radiation and ERA5
+meteorology); the manifest retains each site's selected source years and provider
+metadata. This assembled TMY is not a continuous historical year or an extreme
+weather record. A 2023 UTC calendar is used only to align month/day/hour. Solar
+position includes the provider's irradiance time offset. Model parameters:
+28° south-facing fixed tilt, isotropic sky, albedo 0.25, SAPM open-rack
+glass/polymer temperatures and provider 10 m wind without a height correction.
+
+Moisture uses upstream EVA W001 and PET W017 properties, **0.46 mm back
+encapsulant and 0.30 mm backsheet**. The upstream initial water state is retained
+(half equilibrium at the first sample); no multi-year moisture equilibration is
+claimed. The front-encapsulant model uses the full-year weighted exposure.
+Solder fatigue uses upstream hourly defaults (54.8 C reversal, C1=405.6,
+n=1.9, b=0.33, Q=0.12 eV), with fixed UTC day boundaries. TMY month joins may
+introduce artificial transitions, so fatigue is screening, not field validation.
+
+**Only the colored points are calculated.** Gray island silhouettes come from
+the existing 100 m climate masks. Weather has its provider's coarser spatial
+support: no 100 m humidity, wind, irradiance or degradation accuracy is claimed.
+Coastal and mountain points do not represent whole-island averages. Source and
+processed-input SHA-256 hashes are retained. Small negative PVGIS wind speeds
+(from -0.5 to 0 m/s) are capped at zero with per-site correction counts; larger
+negative speeds fail validation. Original provider bytes remain unchanged; the gallery runs without networking.
+
+### Mechanisms not yet quantified
+
+- Spectral UV degradation / discoloration needs UV spectral irradiance and
+  material action spectra; broadband POA is not an equivalent input.
+- LeTID and LID need cell technology, initial defect states, lifetime and kinetics.
+  A generic cell assumption would not establish the islands' actual loss rates.
+- PID needs voltage/polarity, electrical topology and technology-specific leakage
+  and degradation calibration. Moisture alone is not PID.
+- Corrosion, delamination and cracking require mechanism/material calibration;
+  the moisture and solder maps are stress indicators, not those failure rates.
+- Annual power loss, remaining lifetime and combined loss need field calibration
+  and an interaction model. None is fabricated from the nine screening metrics.
+
+### Reproduce the hourly maps
+
+```bash
+uv sync --locked --all-packages --group docs
+uv run --no-sync python scripts/prepare_pvdeg_canary_weather.py
+cd examples/analysis
+uv run --no-sync python plot_pvdeg_canary_mechanisms.py
+```
+
+The acquisition script writes exact raw provider responses under `outputs/` and
+plain CSV inputs plus provenance under
+`examples/analysis/pvdeg_canary_weather/`. Existing raw files are reused; remove
+that output directory explicitly to acquire a fresh provider snapshot.
+
+## Original thermal connector, method and analysis
 
 - `energy_data_retrieval.pvdeg.to_pvdeg_weather` validates canonical weather
   columns and UTC timestamps for PVDeg workflows. The existing PVGIS connector

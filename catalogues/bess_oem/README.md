@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 5 November 2026 expanded research snapshot contains **1,024 records from 53 product
-suppliers, backed by 465 registered sources**: 1,011 documented configurations and 13
+The 5 November 2026 expanded research snapshot contains **1,192 records from 56 product
+suppliers, backed by 504 registered sources**: 1,179 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -284,3 +284,17 @@ Latest continuation: [AJ and next1 exact models; next3 environmental conditions]
 AJ records describe unidirectional stationary battery inverter components, with
 optional solar regulators explicitly separate. Use
 `scripts/stage_bess_studer_aj.py` to stage the reviewed local model-page format.
+
+Previous iteration: [28 exact TAB OPzS cells/blocks](../bess/research/2026-11-05_tab_slovenia.md). The offline `scripts/stage_bess_tab_opzs.py` adapter accepts the reviewed PDF cell or block partition; rate-dependent Ah, wet/dry mass and fault current remain separate.
+
+Latest iteration: [14 TAB OPzV models and 28 OPzS enrichments](../bess/research/2026-11-05_opzv_latvia.md). The live OPzV table differs from the brochure; conflicting numeric observations remain quarantined with both sources.
+
+Latest iteration: [25 TAB OGi exact models and South African lender evidence](../bess/research/2026-11-05_ogi_south_africa.md). Includes one independently reconciled project and seven procurement enrichments; model capacity conflicts and source-access holds remain explicit.
+
+Latest continuation: [40 Victron warranty enrichments and African inventory screening](../bess/research/2026-11-05_victron_warranty.md). No new project/model rows; reuse holds and candidate counts remain explicit.
+
+Latest continuation: [Kenyan battery replacements and nine exact installation enrichments](../bess/research/2026-11-05_kenya_installation.md).
+
+Latest continuation: [Fullriver exact models and South African bid identities](../bess/research/2026-11-05_fullriver_bw3.md).
+
+Individual-sheet capacity/test-condition enrichment: [5 November review](../bess/research/2026-11-05_fullriver_sheets.md).

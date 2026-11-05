@@ -1,0 +1,1460 @@
+{
+  "candidate_literal_models": 12,
+  "accepted_new": 12,
+  "existing_manufacturer": "Shenzhen Senergy Technology Co Ltd",
+  "new_manufacturers": [],
+  "typed_values": 268,
+  "records": [
+    {
+      "model": "SE 10KTL-D3/G2P",
+      "source_id": "senergy_grid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 10000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 16.8,
+        "efficiency_euro_pct": 97.8,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 18.7,
+        "cooling_method": "Natural cooling",
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "communication_protocols": [
+          "RS485"
+        ]
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 1: SE 10KTL-D3/G2P; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_apparent_output_VA": 11000,
+        "maximum_input_current_per_MPPT_A": [
+          15,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20,
+          40
+        ],
+        "strings_per_MPPT": [
+          1,
+          2
+        ],
+        "PV_configuration_max_pct": 150,
+        "PV_configuration_scope": "Explicit150%; no inferred DC power rating",
+        "startup_voltage_V": 180,
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "maximum_AC_current_native": "3*16.8A",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "topology": "Transformerless",
+        "night_consumption_native": "<1W",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communication": "RS485; optional WiFi/GPRS/LAN",
+        "grid_standards_native": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 15KTL-D3/G2P",
+      "source_id": "senergy_grid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 15000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 25.3,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 20.1,
+        "cooling_method": "Fan cooling",
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "strings_per_mppt": 2,
+        "communication_protocols": [
+          "RS485"
+        ]
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 2: SE 15KTL-D3/G2P; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_apparent_output_VA": 16500,
+        "maximum_input_current_per_MPPT_A": [
+          30,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "PV_configuration_max_pct": 150,
+        "PV_configuration_scope": "Explicit150%; no inferred DC power rating",
+        "startup_voltage_V": 180,
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "maximum_AC_current_native": "3*25.3A",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "topology": "Transformerless",
+        "night_consumption_native": "<1W",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communication": "RS485; optional WiFi/GPRS/LAN",
+        "grid_standards_native": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 17KTL-D3/G2",
+      "source_id": "senergy_grid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 17000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 28.6,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 20.1,
+        "cooling_method": "Fan cooling",
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "strings_per_mppt": 2,
+        "communication_protocols": [
+          "RS485"
+        ]
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 3: SE 17KTL-D3/G2; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_apparent_output_VA": 18700,
+        "maximum_input_current_per_MPPT_A": [
+          30,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "PV_configuration_max_pct": 150,
+        "PV_configuration_scope": "Explicit150%; no inferred DC power rating",
+        "startup_voltage_V": 180,
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "maximum_AC_current_native": "3*28.6A",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "topology": "Transformerless",
+        "night_consumption_native": "<1W",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communication": "RS485; optional WiFi/GPRS/LAN",
+        "grid_standards_native": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 20KTL-D3/G2",
+      "source_id": "senergy_grid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 20000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 33.7,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 20.3,
+        "cooling_method": "Fan cooling",
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "strings_per_mppt": 2,
+        "communication_protocols": [
+          "RS485"
+        ]
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 4: SE 20KTL-D3/G2; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_apparent_output_VA": 22000,
+        "maximum_input_current_per_MPPT_A": [
+          30,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "PV_configuration_max_pct": 150,
+        "PV_configuration_scope": "Explicit150%; no inferred DC power rating",
+        "startup_voltage_V": 180,
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "maximum_AC_current_native": "3*33.7A",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "topology": "Transformerless",
+        "night_consumption_native": "<1W",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communication": "RS485; optional WiFi/GPRS/LAN",
+        "grid_standards_native": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 22KTL-D3/G2",
+      "source_id": "senergy_grid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 22000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 37,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 20.3,
+        "cooling_method": "Fan cooling",
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "strings_per_mppt": 2,
+        "communication_protocols": [
+          "RS485"
+        ]
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 5: SE 22KTL-D3/G2; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_apparent_output_VA": 24200,
+        "maximum_input_current_per_MPPT_A": [
+          30,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "PV_configuration_max_pct": 150,
+        "PV_configuration_scope": "Explicit150%; no inferred DC power rating",
+        "startup_voltage_V": 180,
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "maximum_AC_current_native": "3*37A",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "topology": "Transformerless",
+        "night_consumption_native": "<1W",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communication": "RS485; optional WiFi/GPRS/LAN",
+        "grid_standards_native": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 25KTL-D3/G2",
+      "source_id": "senergy_grid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 25000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 39.8,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 20.3,
+        "cooling_method": "Fan cooling",
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "strings_per_mppt": 2,
+        "communication_protocols": [
+          "RS485"
+        ]
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 6: SE 25KTL-D3/G2; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_apparent_output_VA": 27500,
+        "maximum_input_current_per_MPPT_A": [
+          30,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "PV_configuration_max_pct": 150,
+        "PV_configuration_scope": "Explicit150%; no inferred DC power rating",
+        "startup_voltage_V": 180,
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "maximum_AC_current_native": "3*39.8A",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "topology": "Transformerless",
+        "night_consumption_native": "<1W",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communication": "RS485; optional WiFi/GPRS/LAN",
+        "grid_standards_native": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 30KTL-D3/G2",
+      "source_id": "senergy_grid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 30000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 50.2,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 20.3,
+        "cooling_method": "Fan cooling",
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "strings_per_mppt": 2,
+        "communication_protocols": [
+          "RS485"
+        ]
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 7: SE 30KTL-D3/G2; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_apparent_output_VA": 33000,
+        "maximum_input_current_per_MPPT_A": [
+          40,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          50,
+          37.5
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "PV_configuration_max_pct": 150,
+        "PV_configuration_scope": "Explicit150%; no inferred DC power rating",
+        "startup_voltage_V": 180,
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "maximum_AC_current_native": "3*50.2A",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "topology": "Transformerless",
+        "night_consumption_native": "<1W",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communication": "RS485; optional WiFi/GPRS/LAN",
+        "grid_standards_native": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 12KHB-D3",
+      "source_id": "senergy_hybrid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 12000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.2,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "hybrid": true,
+        "vdc_max_v": 1000,
+        "mppt_max_v": 950,
+        "mppt_count": 2,
+        "strings_per_mppt": 2,
+        "output_current_max_a": 20,
+        "efficiency_euro_pct": 97.9,
+        "width_m": 0.66,
+        "height_m": 0.596,
+        "depth_m": 0.235,
+        "weight_kg": 45,
+        "cooling_method": "Natural cooling",
+        "connector_type": "MC4/H4",
+        "communication_protocols": [
+          "RS485",
+          "CAN"
+        ],
+        "mounting_type": "Wall bracket"
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 1: SE 12KHB-D3; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_PV_input_power_W": 30000,
+        "PV_power_scope": "Maximum input, not rated DC or AC conversion",
+        "startup_voltage_V": 150,
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "battery_types": [
+          "Lithium-ion",
+          "Lead-acid"
+        ],
+        "battery_voltage_range_V": [
+          120,
+          800
+        ],
+        "battery_voltage_at_rated_power_V": [
+          230,
+          800
+        ],
+        "maximum_battery_current_native": "60A/60A charge/discharge",
+        "maximum_battery_charge_power_W": 30000,
+        "maximum_battery_discharge_power_W": 14400,
+        "battery_to_AC_efficiency_max_pct": 98.0,
+        "maximum_grid_apparent_output_VA": 13200,
+        "maximum_grid_active_output_at_PF1_W": 13200,
+        "maximum_AC_current_native": "3*20A",
+        "maximum_single_phase_power_VA": 10000,
+        "maximum_grid_input_VA": 36000,
+        "maximum_grid_input_current_native": "3*54.5A",
+        "grid_voltage_range_V": [
+          277,
+          520
+        ],
+        "backup_nominal_power_W": 12000,
+        "backup_nominal_current_native": "3*18.2A",
+        "backup_peak_apparent_5min_VA": 14400,
+        "backup_peak_apparent_10s_VA": 18000,
+        "transfer_time_native": "<10ms typical",
+        "THDV_native": "<3% at100% R load",
+        "protection_class": "Class I",
+        "surge_conflict": {
+          "DC_AC_overvoltage_row": "DC Type II, AC Type III",
+          "Surge_arrester_row": "DC Type II, AC Type II",
+          "resolution": "Scalar surge_protection held; conflicting AC qualification retained, no value chosen"
+        },
+        "AFCI": "Optional",
+        "temperature_derating": ">45degC",
+        "altitude_derating": ">2000m",
+        "mounting": "Wall bracket",
+        "display": "Bluetooth &APP +LED; LCD optional",
+        "communication": "RS485/CAN forBMS; RS485; DRM/RS485 forMeter; optionalWiFi/LAN;3DO,2DI",
+        "EMC_native": "IEC/EN61000",
+        "grid_standards_native": [
+          "VDE4105",
+          "EN50549-1",
+          "CEI0-21",
+          "NRS097-2-1",
+          "RD1699/661/647/413",
+          "UNE217002",
+          "AS4777.2",
+          "C10/11",
+          "IEC61727/62116"
+        ]
+      }
+    },
+    {
+      "model": "SE 15KHB-D3",
+      "source_id": "senergy_hybrid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 15000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.2,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "hybrid": true,
+        "vdc_max_v": 1000,
+        "mppt_max_v": 950,
+        "mppt_count": 2,
+        "strings_per_mppt": 2,
+        "output_current_max_a": 25,
+        "efficiency_euro_pct": 97.9,
+        "width_m": 0.66,
+        "height_m": 0.596,
+        "depth_m": 0.235,
+        "weight_kg": 45,
+        "cooling_method": "Natural cooling",
+        "connector_type": "MC4/H4",
+        "communication_protocols": [
+          "RS485",
+          "CAN"
+        ],
+        "mounting_type": "Wall bracket"
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 2: SE 15KHB-D3; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_PV_input_power_W": 30000,
+        "PV_power_scope": "Maximum input, not rated DC or AC conversion",
+        "startup_voltage_V": 150,
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "battery_types": [
+          "Lithium-ion",
+          "Lead-acid"
+        ],
+        "battery_voltage_range_V": [
+          120,
+          800
+        ],
+        "battery_voltage_at_rated_power_V": [
+          285,
+          800
+        ],
+        "maximum_battery_current_native": "60A/60A charge/discharge",
+        "maximum_battery_charge_power_W": 30000,
+        "maximum_battery_discharge_power_W": 18000,
+        "battery_to_AC_efficiency_max_pct": 98.0,
+        "maximum_grid_apparent_output_VA": 16500,
+        "maximum_grid_active_output_at_PF1_W": 16500,
+        "maximum_AC_current_native": "3*25A",
+        "maximum_single_phase_power_VA": 10000,
+        "maximum_grid_input_VA": 40000,
+        "maximum_grid_input_current_native": "3*60.6A",
+        "grid_voltage_range_V": [
+          277,
+          520
+        ],
+        "backup_nominal_power_W": 15000,
+        "backup_nominal_current_native": "3*22.7A",
+        "backup_peak_apparent_5min_VA": 18000,
+        "backup_peak_apparent_10s_VA": 22500,
+        "transfer_time_native": "<10ms typical",
+        "THDV_native": "<3% at100% R load",
+        "protection_class": "Class I",
+        "surge_conflict": {
+          "DC_AC_overvoltage_row": "DC Type II, AC Type III",
+          "Surge_arrester_row": "DC Type II, AC Type II",
+          "resolution": "Scalar surge_protection held; conflicting AC qualification retained, no value chosen"
+        },
+        "AFCI": "Optional",
+        "temperature_derating": ">45degC",
+        "altitude_derating": ">2000m",
+        "mounting": "Wall bracket",
+        "display": "Bluetooth &APP +LED; LCD optional",
+        "communication": "RS485/CAN forBMS; RS485; DRM/RS485 forMeter; optionalWiFi/LAN;3DO,2DI",
+        "EMC_native": "IEC/EN61000",
+        "grid_standards_native": [
+          "VDE4105",
+          "EN50549-1",
+          "CEI0-21",
+          "NRS097-2-1",
+          "RD1699/661/647/413",
+          "UNE217002",
+          "AS4777.2",
+          "C10/11",
+          "IEC61727/62116"
+        ]
+      }
+    },
+    {
+      "model": "SE 20KHB-D3",
+      "source_id": "senergy_hybrid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 20000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.2,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "hybrid": true,
+        "vdc_max_v": 1000,
+        "mppt_max_v": 950,
+        "mppt_count": 2,
+        "strings_per_mppt": 2,
+        "output_current_max_a": 33.3,
+        "efficiency_euro_pct": 97.9,
+        "width_m": 0.66,
+        "height_m": 0.596,
+        "depth_m": 0.235,
+        "weight_kg": 45,
+        "cooling_method": "Natural cooling",
+        "connector_type": "MC4/H4",
+        "communication_protocols": [
+          "RS485",
+          "CAN"
+        ],
+        "mounting_type": "Wall bracket"
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 3: SE 20KHB-D3; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_PV_input_power_W": 30000,
+        "PV_power_scope": "Maximum input, not rated DC or AC conversion",
+        "startup_voltage_V": 150,
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2
+        ],
+        "battery_types": [
+          "Lithium-ion",
+          "Lead-acid"
+        ],
+        "battery_voltage_range_V": [
+          120,
+          800
+        ],
+        "battery_voltage_at_rated_power_V": [
+          380,
+          800
+        ],
+        "maximum_battery_current_native": "60A/60A charge/discharge",
+        "maximum_battery_charge_power_W": 30000,
+        "maximum_battery_discharge_power_W": 24000,
+        "battery_to_AC_efficiency_max_pct": 98.0,
+        "maximum_grid_apparent_output_VA": 22000,
+        "maximum_grid_active_output_at_PF1_W": 22000,
+        "maximum_AC_current_native": "3*33.3A",
+        "maximum_single_phase_power_VA": 10000,
+        "maximum_grid_input_VA": 40000,
+        "maximum_grid_input_current_native": "3*60.6A",
+        "grid_voltage_range_V": [
+          277,
+          520
+        ],
+        "backup_nominal_power_W": 20000,
+        "backup_nominal_current_native": "3*30.3A",
+        "backup_peak_apparent_5min_VA": 24000,
+        "backup_peak_apparent_10s_VA": 30000,
+        "transfer_time_native": "<10ms typical",
+        "THDV_native": "<3% at100% R load",
+        "protection_class": "Class I",
+        "surge_conflict": {
+          "DC_AC_overvoltage_row": "DC Type II, AC Type III",
+          "Surge_arrester_row": "DC Type II, AC Type II",
+          "resolution": "Scalar surge_protection held; conflicting AC qualification retained, no value chosen"
+        },
+        "AFCI": "Optional",
+        "temperature_derating": ">45degC",
+        "altitude_derating": ">2000m",
+        "mounting": "Wall bracket",
+        "display": "Bluetooth &APP +LED; LCD optional",
+        "communication": "RS485/CAN forBMS; RS485; DRM/RS485 forMeter; optionalWiFi/LAN;3DO,2DI",
+        "EMC_native": "IEC/EN61000",
+        "grid_standards_native": [
+          "VDE4105",
+          "EN50549-1",
+          "CEI0-21",
+          "NRS097-2-1",
+          "RD1699/661/647/413",
+          "UNE217002",
+          "AS4777.2",
+          "C10/11",
+          "IEC61727/62116"
+        ]
+      }
+    },
+    {
+      "model": "SE 25KHB-T3",
+      "source_id": "senergy_hybrid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 25000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "hybrid": true,
+        "vdc_max_v": 1000,
+        "mppt_max_v": 950,
+        "mppt_count": 3,
+        "strings_per_mppt": 2,
+        "output_current_max_a": 41.7,
+        "efficiency_euro_pct": 97.9,
+        "width_m": 0.66,
+        "height_m": 0.596,
+        "depth_m": 0.235,
+        "weight_kg": 55,
+        "cooling_method": "Smart fan cooling",
+        "connector_type": "MC4/H4",
+        "communication_protocols": [
+          "RS485",
+          "CAN"
+        ],
+        "mounting_type": "Wall bracket"
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 4: SE 25KHB-T3; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_PV_input_power_W": 45000,
+        "PV_power_scope": "Maximum input, not rated DC or AC conversion",
+        "startup_voltage_V": 150,
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          32
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2,
+          2
+        ],
+        "battery_types": [
+          "Lithium-ion",
+          "Lead-acid"
+        ],
+        "battery_voltage_range_V": [
+          120,
+          800
+        ],
+        "battery_voltage_at_rated_power_V": [
+          190,
+          800
+        ],
+        "maximum_battery_current_native": "2*75A/2*75A charge/discharge",
+        "maximum_battery_charge_power_W": 45000,
+        "maximum_battery_discharge_power_W": 30000,
+        "battery_to_AC_efficiency_max_pct": 98.0,
+        "maximum_grid_apparent_output_VA": 27500,
+        "maximum_grid_active_output_at_PF1_W": 27500,
+        "maximum_AC_current_native": "3*41.7A",
+        "maximum_single_phase_power_VA": 11000,
+        "maximum_grid_input_VA": 45000,
+        "maximum_grid_input_current_native": "3*68.2A",
+        "grid_voltage_range_V": [
+          277,
+          520
+        ],
+        "backup_nominal_power_W": 25000,
+        "backup_nominal_current_native": "3*37.9A",
+        "backup_peak_apparent_5min_VA": 30000,
+        "backup_peak_apparent_10s_VA": 37500,
+        "transfer_time_native": "<10ms typical",
+        "THDV_native": "<3% at100% R load",
+        "protection_class": "Class I",
+        "surge_conflict": {
+          "DC_AC_overvoltage_row": "DC Type II, AC Type III",
+          "Surge_arrester_row": "DC Type II, AC Type II",
+          "resolution": "Scalar surge_protection held; conflicting AC qualification retained, no value chosen"
+        },
+        "AFCI": "Optional",
+        "temperature_derating": ">45degC",
+        "altitude_derating": ">2000m",
+        "mounting": "Wall bracket",
+        "display": "Bluetooth &APP +LED; LCD optional",
+        "communication": "RS485/CAN forBMS; RS485; DRM/RS485 forMeter; optionalWiFi/LAN;3DO,2DI",
+        "EMC_native": "IEC/EN61000",
+        "grid_standards_native": [
+          "VDE4105",
+          "EN50549-1",
+          "CEI0-21",
+          "NRS097-2-1",
+          "RD1699/661/647/413",
+          "UNE217002",
+          "AS4777.2",
+          "C10/11",
+          "IEC61727/62116"
+        ]
+      }
+    },
+    {
+      "model": "SE 30KHB-T3",
+      "source_id": "senergy_hybrid_20261105T2003",
+      "typed_fields": {
+        "pac_rated_w": 30000,
+        "mppt_min_v": 160,
+        "efficiency_max_pct": 98.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "product_warranty_years": 5,
+        "hybrid": true,
+        "vdc_max_v": 1000,
+        "mppt_max_v": 950,
+        "mppt_count": 3,
+        "strings_per_mppt": 2,
+        "output_current_max_a": 50,
+        "efficiency_euro_pct": 97.9,
+        "width_m": 0.66,
+        "height_m": 0.596,
+        "depth_m": 0.235,
+        "weight_kg": 55,
+        "cooling_method": "Smart fan cooling",
+        "connector_type": "MC4/H4",
+        "communication_protocols": [
+          "RS485",
+          "CAN"
+        ],
+        "mounting_type": "Wall bracket"
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 Model column 5: SE 30KHB-T3; corresponding named parameter rows. Shared cell spans visually reviewed against rendered table.",
+        "model_identity_review": "Manufacturer punctuation reviewed against14 existing Senergy CEC records; these exact European/international G2(P)/D3/T3 codes absent. UL/LV and voltage-specific CEC models distinct; no fuzzy merge or artificial voltage variants.",
+        "AC_output_current_scope": "Maximum AC output current per phase; native3* notation retained, never summed",
+        "grid_nominal_voltage_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_voltage_scope": "3W+N+PE; alternatives, no single nominal voltage chosen",
+        "frequency_Hz": [
+          50,
+          60
+        ],
+        "frequency_range_Hz_native": "45–55 /55–65, adjustable; varies with grid code",
+        "power_factor_native": ">0.99 at rated power, adjustable0.8LD–0.8LG",
+        "THDI_native": "<3% at rated power",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "altitude_max_m": 4000,
+        "warranty_scope": "5years as stated in model table; no extended/regional terms inferred",
+        "certification_scope": "OEM listed standards only; not independently verified certificates or universal market approval",
+        "specification_date": "Body undated; upload path is not publication date; hybrid V2.2 is filename revision only",
+        "standards_safety_native": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "protection_native": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "dimensions_scope": "OEM W*H*D; mm divided by1000 only, no enclosure orientation reinterpretation",
+        "max_PV_input_power_W": 45000,
+        "PV_power_scope": "Maximum input, not rated DC or AC conversion",
+        "startup_voltage_V": 150,
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          32
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          40,
+          40,
+          40
+        ],
+        "strings_per_MPPT": [
+          2,
+          2,
+          2
+        ],
+        "battery_types": [
+          "Lithium-ion",
+          "Lead-acid"
+        ],
+        "battery_voltage_range_V": [
+          120,
+          800
+        ],
+        "battery_voltage_at_rated_power_V": [
+          230,
+          800
+        ],
+        "maximum_battery_current_native": "2*75A/2*75A charge/discharge",
+        "maximum_battery_charge_power_W": 45000,
+        "maximum_battery_discharge_power_W": 36000,
+        "battery_to_AC_efficiency_max_pct": 98.0,
+        "maximum_grid_apparent_output_VA": 33000,
+        "maximum_grid_active_output_at_PF1_W": 33000,
+        "maximum_AC_current_native": "3*50A",
+        "maximum_single_phase_power_VA": 11000,
+        "maximum_grid_input_VA": 45000,
+        "maximum_grid_input_current_native": "3*68.2A",
+        "grid_voltage_range_V": [
+          277,
+          520
+        ],
+        "backup_nominal_power_W": 30000,
+        "backup_nominal_current_native": "3*45.5A",
+        "backup_peak_apparent_5min_VA": 36000,
+        "backup_peak_apparent_10s_VA": 45000,
+        "transfer_time_native": "<10ms typical",
+        "THDV_native": "<3% at100% R load",
+        "protection_class": "Class I",
+        "surge_conflict": {
+          "DC_AC_overvoltage_row": "DC Type II, AC Type III",
+          "Surge_arrester_row": "DC Type II, AC Type II",
+          "resolution": "Scalar surge_protection held; conflicting AC qualification retained, no value chosen"
+        },
+        "AFCI": "Optional",
+        "temperature_derating": ">45degC",
+        "altitude_derating": ">2000m",
+        "mounting": "Wall bracket",
+        "display": "Bluetooth &APP +LED; LCD optional",
+        "communication": "RS485/CAN forBMS; RS485; DRM/RS485 forMeter; optionalWiFi/LAN;3DO,2DI",
+        "EMC_native": "IEC/EN61000",
+        "grid_standards_native": [
+          "VDE4105",
+          "EN50549-1",
+          "CEI0-21",
+          "NRS097-2-1",
+          "RD1699/661/647/413",
+          "UNE217002",
+          "AS4777.2",
+          "C10/11",
+          "IEC61727/62116"
+        ]
+      }
+    }
+  ],
+  "held_fields": [
+    "Five hybrid AC surge type conflicts",
+    "Alternative AC voltages",
+    "Per-MPPT input/short-circuit currents",
+    "Night consumption upper bound",
+    "Document dates unknown; URL upload dates not publication dates"
+  ],
+  "rights": "OEM copyright retained; terms/privacy/footer reviewed. Bounded factual technical extraction only; no documents, diagrams, promotional prose or contact details republished. No open licence asserted."
+}

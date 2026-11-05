@@ -1,0 +1,97 @@
+{
+  "started_at": "2026-11-05T11:55:20Z",
+  "checkpoint": "2026-11-05T12:14:08.089517+00:00",
+  "elapsed_minutes_checkpoint": 18.8,
+  "baseline": "c44b15a0dfd4d8086fe4b86c4260e2cecf77dba7",
+  "launch37_merged": true,
+  "prior162_merged_externally": "2026-11-05T10:56:18Z",
+  "initial_open_paths": {
+    "167": 77,
+    "166": 15,
+    "161": 10,
+    "157": 24,
+    "49": 1,
+    "48": 1,
+    "47": 3
+  },
+  "PVoverlap": 0,
+  "focused_PV_tests": 382,
+  "new_mastr_tests": 13,
+  "viewer_tests": 25,
+  "checks": {
+    "pytest": {
+      "exit": 2,
+      "tail": [
+        "=========================== short test summary info ============================",
+        "ERROR tests/test_kgpv_worldwide_example.py - psutil.NoSuchProcess: process PI...",
+        "!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!",
+        "1 error in 8.89s"
+      ]
+    },
+    "ruff": {
+      "exit": 0,
+      "tail": [
+        "All checks passed!"
+      ]
+    },
+    "format": {
+      "exit": 0,
+      "tail": [
+        "1055 files already formatted"
+      ]
+    },
+    "ty": {
+      "exit": 0,
+      "tail": [
+        "All checks passed!"
+      ]
+    },
+    "catalogue": {
+      "exit": 0,
+      "tail": [
+        "Validated 90260 unique records; schema and field evidence present"
+      ]
+    },
+    "hygiene": {
+      "exit": 0,
+      "tail": [
+        "Repository check passed: 5101 candidate files; no flagged secrets or data."
+      ]
+    },
+    "citations": {
+      "exit": 0,
+      "tail": [
+        "Citation catalogue and all exports are consistent."
+      ]
+    },
+    "example": {
+      "exit": 0,
+      "tail": [
+        "                               Rosario solar project          CHL             5.5             NaN  -34.3593   -70.8903 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+        "                             Caracoles solar project          CHL             2.7             NaN  -35.6929   -71.4890 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+        "                           Aurora solar farm (Chile)          CHL           187.0             NaN  -20.7981   -69.4502 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+        "                             Dona Igna solar project          CHL             2.2             NaN  -33.5897   -71.2133 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]"
+      ]
+    },
+    "viewer": {
+      "exit": 0,
+      "tail": [
+        "\u2139 cancelled 0",
+        "\u2139 skipped 0",
+        "\u2139 todo 0",
+        "\u2139 duration_ms 188.54229"
+      ]
+    }
+  },
+  "broader_package_tests": {
+    "passed": 2682,
+    "failed": 28,
+    "errors": 24,
+    "skipped": 1,
+    "all_52_failure_error_traces": "psutil.NoSuchProcess(pid5); no introduced failure or bypass; final normalCI must pass"
+  },
+  "full_local_docs": "Standard3.13 lockedimagery/docs attempted; Dask/psutilNoSuchProcess(pid5). Earlier3.12 attempt cannotrun3.13Orbitalimagery. No dependencies/tests disabled.",
+  "snapshots": "Five148column typedZSTDtables/checksums/UTCtypes/browserprojection verified",
+  "new_code": "Bounded MaStR solarunitreview reader, notprojectimporter",
+  "new_schema": false
+}

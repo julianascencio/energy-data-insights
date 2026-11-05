@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-05T09:01:23.183163+00:00",
+  "base_at_discovery": "aa842b959bebe8b4279a449f91176be26f0ad6a5",
+  "base_after_concurrency_reconciliation": "d92d1b82",
+  "catalogues": {
+    "projects": 2132,
+    "project_sources": 391,
+    "countries": 47,
+    "equipment": 1047,
+    "supplier_labels": 53,
+    "equipment_sources": 465,
+    "exact_configurations": 1034,
+    "family_records": 13
+  },
+  "accepted_delta": {
+    "new_projects": 0,
+    "enriched_projects": 1,
+    "new_equipment": 23,
+    "enriched_equipment": 0,
+    "new_oems": 0,
+    "new_countries": 0,
+    "held_equipment_candidates": 1,
+    "rejected_projects": 0,
+    "rejected_equipment": 0
+  },
+  "checks": {
+    "catalogue_validation": "both passed",
+    "snapshot_reproducibility": "two byte-identical builds per catalogue; typed Zstandard Parquet outside Git",
+    "upsert_replay": "equipment idempotent; all 1024 previous equipment preserved; project additive resolution preserves every prior fact and created_at",
+    "focused_bess": "61 passed",
+    "reconciled_bess_and_data_center_tests": "113 passed",
+    "full_python_suite": "2682 passed, 5 skipped, 1 failure in unrelated degradation CLI subprocess; Dask/psutil NoSuchProcess",
+    "unmodified_main_reproduction": "same degradation test fails on clean d92d1b82 with psutil.NoSuchProcess; no dependency or unrelated method changes made",
+    "ruff": "passed",
+    "format": "passed",
+    "ty": "passed with explicit Python3.12 virtualenv",
+    "strict_docs": "gallery-disabled strict Sphinx passed on reconciled d92d1b82 base",
+    "docs_links": "621 HTML pages passed after main reconciliation",
+    "viewer": "22 Node tests passed",
+    "offline_examples": "BESS projects and OEM examples passed",
+    "packages": "three wheels and three sdists built; strict Twine six passed; installed-wheel checks for all three packages passed",
+    "citations": "Passed with current-worktree PYTHONPATH; stale editable-environment invocation diagnosed and rerun correctly. NamPower bibliography entry queued due shared-path overlap.",
+    "full_gallery": "not run"
+  },
+  "limits": "Optional cdsapi and Python3.13 imagery tests skipped; full-suite psutil failure remains an environment blocker, not a green suite claim",
+  "effort_minutes_at_checkpoint": 13.7
+}

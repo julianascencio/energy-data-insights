@@ -1,0 +1,60 @@
+{
+  "batch": "2026-11-05-0910",
+  "processed": [
+    {
+      "source_id": "eia860_2025_operable_64000_69999",
+      "decision": "Exact142savedholds revisited:56additions86deferred; pinned original bytes reused",
+      "source_revision": "Final2025, published2026-09-10",
+      "residual_scan": {
+        "sheet": "Operable",
+        "source_id": "eia860_2025",
+        "sha256": "12e86fd1c89abd1b787862e9c65121d31795ff175c4347c98a2c339f2b52826d",
+        "all_rows": 1573,
+        "minimum_code": 1,
+        "maximum_code": 69327,
+        "codes_ge_70000": 0,
+        "complete_scan": "Previously processed1–69999 plus complete residual>=70000 now exhausted; no repeated empty partitions"
+      }
+    },
+    {
+      "source_id": "nordex_anniversary6_20250612",
+      "published_at": "2025-06-12",
+      "retrieved_at": "2026-11-05T09:29:14Z",
+      "sha256": "5111a07bfe2a812d001c8d61519a7a9f63cae3ca722a8199ce5ea2cc321e1515",
+      "url": "https://www.nordex-online.com/en/2025/06/anniversary-newsletter-edition-6-40-years-46-turbine-types-innovation-in-motion/",
+      "locator": "Named model paragraphs under section headings; exact locators in transcription",
+      "decision": "31 exact equipment enrichments; dated historical boundaries retained",
+      "access": "Original HTML acquired; no authentication failure or explicit reuse restriction encountered"
+    },
+    {
+      "source_id": "nordex_anniversary2_20250218",
+      "published_at": "2025-02-18",
+      "retrieved_at": "2026-11-05T09:29:14Z",
+      "sha256": "82e598753e466ee66554c0734862269f36007964d57169de5d4d92692d06733d",
+      "url": "https://www.nordex-online.com/en/2025/02/anniversary-newsletter-edition-2-the-first-wind-turbine-branded-nordex/",
+      "locator": "Opening paragraph and prototype account",
+      "decision": "Conflict follow-up evidence; no canonical addition or scalar correction",
+      "access": "Original HTML acquired; no authentication failure or explicit reuse restriction encountered"
+    },
+    {
+      "source_id": "nordex_n169_20240722",
+      "published_at": "2024-07-22",
+      "retrieved_at": "2026-11-05T09:29:14Z",
+      "sha256": "3d584dbba99ca90f0ddc8426ddf1bc2456fdc9a9d5808fcdd8213962dd4ded7d",
+      "url": "https://www.nordex-online.com/en/2024/07/press-release-nordex-group-to-offer-n169-5-x-turbine-for-the-us-market/",
+      "locator": "Opening technical paragraphs and manufacturing plan",
+      "decision": "Conflict follow-up evidence; no canonical addition or scalar correction",
+      "access": "Original HTML acquired; no authentication failure or explicit reuse restriction encountered"
+    }
+  ],
+  "new_exclusions": 0,
+  "new_quarantines": 0,
+  "conflicts": "All prior conflicts and13duplicate-name candidate groups retained",
+  "reviewed_at": "2026-11-05T09:35:42Z",
+  "new_candidate_holds": 1,
+  "new_candidate_hold": "AW77/1300 lone narrative mention; exact specification required",
+  "equipment_new": 0,
+  "equipment_enriched": 31,
+  "discovery_only": [],
+  "prior_restrictions": "Previously recorded download/authentication/reuse classifications unchanged"
+}

@@ -1,0 +1,300 @@
+{
+  "batch": "2026-11-05-1935",
+  "retrieved_at": "2026-11-05T19:52:00Z",
+  "new_equipment": 3,
+  "enriched_equipment": 0,
+  "new_projects": 0,
+  "new_turbines": 0,
+  "new_curves": 0,
+  "added": [
+    {
+      "record_id": "7886d280-8c48-566d-9b2a-12f6ad2ba446",
+      "model": "WD220-10000",
+      "source_id": "windey-product-cases-20261105"
+    },
+    {
+      "record_id": "87089586-6abb-5a9a-bf63-70d4f302a4cc",
+      "model": "WD225-9000",
+      "source_id": "windey-product-cases-20261105"
+    },
+    {
+      "record_id": "58a5fbbe-fd3d-5d72-80de-5e1c7dc93d3f",
+      "model": "WD200-7700",
+      "source_id": "windey-saudi-60hz-20260115"
+    }
+  ],
+  "reviewed_windey_cases": [
+    {
+      "case": 1,
+      "name": "Alibunar-I, Serbia",
+      "decision": "Project deferred",
+      "reason": "No exact model; reported annual energy lacks period/method"
+    },
+    {
+      "case": 2,
+      "name": "Akmolinsk Phase II, Kazakhstan",
+      "decision": "Project deferred",
+      "reason": "41 turbines/56MW reported; model and registry scope unresolved"
+    },
+    {
+      "case": 3,
+      "name": "Ulanqab, China",
+      "decision": "Project deferred",
+      "reason": "Mixed 35 WD156-5200 and 26 WD156-5500; exact phase/registry crosswalk and explicit unit ratings absent"
+    },
+    {
+      "case": 4,
+      "name": "Zhangzi Island, China",
+      "decision": "Project deferred",
+      "reason": "12 WD25-250; no explicit unit rating or registry scope"
+    },
+    {
+      "case": 5,
+      "name": "Unnamed high-altitude project",
+      "decision": "Project deferred",
+      "reason": "WD131-2200 named; identity and explicit rating missing"
+    },
+    {
+      "case": 6,
+      "name": "Chinh Thang, Vietnam",
+      "decision": "Project deferred",
+      "reason": "Mixed 13 WD147-3000 and 3 WD147-3600; registry crosswalk and explicit ratings missing"
+    },
+    {
+      "case": 7,
+      "name": "Haiying floating prototype",
+      "decision": "Project deferred",
+      "reason": "16–18MW range; exact configuration absent; design water depth is not measured site depth"
+    },
+    {
+      "case": 8,
+      "name": "Jushi Group/Windey project",
+      "decision": "Project deferred",
+      "reason": "233MW/180m towers; exact project identity and model missing"
+    },
+    {
+      "case": 9,
+      "name": "Chifeng, China",
+      "decision": "Project deferred",
+      "reason": "Exact WD220-10000 model/rating accepted; generic farm identity held"
+    },
+    {
+      "case": 10,
+      "name": "Xiangshan No.1 Phase II, China",
+      "decision": "Project deferred",
+      "reason": "Exact WD225-9000 model/rating accepted; registry/parent-phase identity held; 56×9000kW is only arithmetic check"
+    },
+    {
+      "case": 11,
+      "name": "Unnamed Saudi project",
+      "decision": "Project deferred",
+      "reason": "Exact WD200-7700 60Hz accepted from dated article; unnamed project and first-unit/full-farm distinction held"
+    },
+    {
+      "case": 12,
+      "name": "Ningbo Zhoushan Port",
+      "decision": "Project deferred",
+      "reason": "WD190-6250 named; exact facility scope, count and explicit rating absent; annual output is expected"
+    }
+  ],
+  "platform_decision": "Six displayed onshore/offshore platform ranges not expanded into synthetic variants",
+  "other_announcements": [
+    {
+      "url": "https://windeyenergy.com/en/news_show?id=216",
+      "model": "WD230-11500",
+      "decision": "Deferred: OEM certification claim has no certificate number; no explicit nominal rating or rotor geometry in announcement; test-farm relative performance lacks comparable boundaries"
+    },
+    {
+      "url": "https://windeyenergy.com/en/news_show?id=224",
+      "project": "Aysha I, Ethiopia",
+      "decision": "Deferred: exact project registry/phase crosswalk and financing source verification pending; Saudi60Hz configuration not transferred to Ethiopian WD200-7700 claim; expected generation not measured"
+    }
+  ],
+  "exclusions": [
+    {
+      "publisher": "Bachmann",
+      "url": "https://www.bachmann.info/en/imprint",
+      "reason": "Explicit prior-written-consent requirement for text/images/code/design use; acquired MX, GMP, GSP and cold-climate tables and case study excluded from canonical extraction"
+    },
+    {
+      "publisher": "Delta",
+      "url": "https://www.deltaww.com/en-US/service-support/download-center/terms-of-use/verify?path=%2FProducts%2FDownload%2F05%2F0503%2F2013_Catalogue.pdf",
+      "reason": "Download redirected to terms-verification HTML; internal-use restriction; original PDF not obtained or terms accepted"
+    }
+  ],
+  "access_deferrals": [
+    {
+      "publisher": "Ingeteam",
+      "urls": [
+        "https://www.ingeteam.com/Portals/0/Productos/Documentos/eolico/grupos/Grupo3.pdf",
+        "https://www.ingeteam.com/Portals/0/Productos/Documentos/PTD23__Manual%20de%20instalaci%C3%B3n%20Ingecon%20%C2%B5Wind.pdf"
+      ],
+      "outcome": "Web retrieval redirects to homepage HTTP200 HTML, not original PDF; no authentication failure or explicit reuse restriction inferred",
+      "sha256": null,
+      "checksum_status": "Original PDF bytes unavailable"
+    },
+    {
+      "publisher": "Windey",
+      "outcome": "Large image3 transfers timed out initially; query-string download completed; all4 image checksums available; not authentication"
+    }
+  ],
+  "originals": [
+    {
+      "name": "bachmann-cc",
+      "url": "https://www.bachmann.info/media/229/download/M200_ColdClimate_en.pdf?v=7",
+      "final_url": "https://www.bachmann.info/media/229/download/M200_ColdClimate_en.pdf?v=7",
+      "status": 200,
+      "sha256": "38c7e34708b5594d981e6318a51a07e9d4f95e57e1b60358ebd5d44e9aec0310",
+      "bytes": 91782
+    },
+    {
+      "name": "bachmann-mx",
+      "url": "https://www.bachmann.info/media/235/download/MX207_MX213_MX220_Processors_en.pdf?v=12",
+      "final_url": "https://www.bachmann.info/media/235/download/MX207_MX213_MX220_Processors_en.pdf?v=12",
+      "status": 200,
+      "sha256": "f5bf5f6ec7a9c06ef13ff74c6b05f034bf6ec7bb75a5c9559885da6790239b7f",
+      "bytes": 179982
+    },
+    {
+      "name": "bachmann-index",
+      "url": "https://www.bachmann.info/en/service/download-center/datasheets",
+      "final_url": "https://www.bachmann.info/en/service/download-center/datasheets",
+      "status": 200,
+      "sha256": "25285ca9227eb92f916c3e096faf876c3b6d801fb794213ebc55d7f006d150a0",
+      "bytes": 369349
+    },
+    {
+      "name": "bachmann-case",
+      "url": "https://www.bachmann.info/en/references/app-cases/gateway-closes-the-gap",
+      "final_url": "https://www.bachmann.info/en/references/app-cases/gateway-closes-the-gap",
+      "status": 200,
+      "sha256": "357cf121196ff7e4365f55deb50dc1274efc1650308f68829fcafb5dd6b04983",
+      "bytes": 89242
+    },
+    {
+      "name": "bachmann-gmp",
+      "url": "https://www.bachmann.info/media/5225/download/GMP232-x2_en.pdf?v=9",
+      "final_url": "https://www.bachmann.info/media/5225/download/GMP232-x2_en.pdf?v=9",
+      "status": 200,
+      "sha256": "e3893d39a42f991b49bed636276bfb721a1c10712cf4bfaa301674e97e89f985",
+      "bytes": 754801
+    },
+    {
+      "name": "bachmann-gsp",
+      "url": "https://www.bachmann.info/media/285/download/GSP274_en.pdf?v=10",
+      "final_url": "https://www.bachmann.info/media/285/download/GSP274_en.pdf?v=10",
+      "status": 200,
+      "sha256": "b0e01004e1bd3ffd815b6af89939da6791a66cd6bc7f87797c5ce12f841ff89a",
+      "bytes": 310442
+    },
+    {
+      "name": "bachmann-imprint",
+      "url": "https://www.bachmann.info/en/imprint",
+      "final_url": "https://www.bachmann.info/en/imprint",
+      "status": 200,
+      "sha256": "fad633ef0feb99a7703959231eb47b7394c534ee19eebef530f93f07f17fa713",
+      "bytes": 83060
+    },
+    {
+      "name": "bachmann-energy",
+      "url": "https://www.bachmann.info/en/industries/energy",
+      "final_url": "https://www.bachmann.info/en/industries/energy",
+      "status": 200,
+      "sha256": "5e9c8386a8adb6bc8e7d3759e57d973cf55d0f63b04f3fe830d504940bb334e6",
+      "bytes": 89558
+    },
+    {
+      "name": "windey-index",
+      "url": "https://windeyenergy.com/en",
+      "final_url": "https://windeyenergy.com/en",
+      "status": 200,
+      "sha256": "b6f80cf2ef960ddad2aa45d100cf948569d74285d339e72e63e9f91b03b963d6",
+      "bytes": 59036
+    },
+    {
+      "name": "delta-catalogue",
+      "url": "https://filecenter.deltaww.com/Products/Download/05/0503/2013_Catalogue.pdf",
+      "final_url": "https://www.deltaww.com/en-US/service-support/download-center/terms-of-use/verify?path=%2FProducts%2FDownload%2F05%2F0503%2F2013_Catalogue.pdf",
+      "status": 200,
+      "sha256": "da2878c0ced5fdc6f129b2cc34d4c02ea54beec7b9b27cdbf3ef2e8b7fafba74",
+      "bytes": 317610
+    },
+    {
+      "name": "windey-216",
+      "url": "https://windeyenergy.com/en/news_show?id=216",
+      "final_url": "https://windeyenergy.com/en/news_show?id=216",
+      "status": 200,
+      "sha256": "65de6dd697de1bd9befea99a13e282fc2d5ce7f8081dc81a288fd5f927ede6ec",
+      "bytes": 22517
+    },
+    {
+      "name": "windey-210",
+      "url": "https://windeyenergy.com/en/news_show?id=210",
+      "final_url": "https://windeyenergy.com/en/news_show?id=210",
+      "status": 200,
+      "sha256": "1295a9e2069fd39ecbe9ffb56e190cba126074797e2c51e209ece5046dc6a6c3",
+      "bytes": 21830
+    },
+    {
+      "name": "windey-224",
+      "url": "https://windeyenergy.com/en/news_show?id=224",
+      "final_url": "https://windeyenergy.com/en/news_show?id=224",
+      "status": 200,
+      "sha256": "5f525a32d382d790f325b6232b406fc78c3fa537faafce09747e5c72bc8e9270",
+      "bytes": 23012
+    },
+    {
+      "name": "windey-products",
+      "url": "https://windeyenergy.com/en/product_show?id=19",
+      "final_url": "https://windeyenergy.com/en/product_show?id=19",
+      "status": 200,
+      "sha256": "d6469f705e18e7ff7e26f4bb4f8db2f7a2d56df768e3bb7edb05e2f2d8e92ded",
+      "bytes": 18709
+    }
+  ],
+  "windey_images": [
+    {
+      "url": "https://windeyenergy.com/upload/img/20260324/c1d0ca50a13364d0ec4e62db52452e64.jpg",
+      "retrieval_url": "https://windeyenergy.com/upload/img/20260324/c1d0ca50a13364d0ec4e62db52452e64.jpg",
+      "sha256": "9e25ca77c8fe75e6134612cca83ad75fb429ad4adae3d71e78dfe930b25dc9e2",
+      "bytes": 1490502,
+      "locator": "Product page image 1 of 4",
+      "published_at": null
+    },
+    {
+      "url": "https://windeyenergy.com/upload/img/20260324/b2d38b113c76d94697d75fc0843eee90.jpg",
+      "retrieval_url": "https://windeyenergy.com/upload/img/20260324/b2d38b113c76d94697d75fc0843eee90.jpg",
+      "sha256": "34dff065435ba65a9ae4b80efcfb29069535125d520c004769b3a41e55e2421c",
+      "bytes": 2126491,
+      "locator": "Product page image 2 of 4",
+      "published_at": null
+    },
+    {
+      "url": "https://windeyenergy.com/upload/img/20260324/ee0b3cf9a2625f61dba009d995c19185.jpg",
+      "retrieval_url": "https://windeyenergy.com/upload/img/20260324/ee0b3cf9a2625f61dba009d995c19185.jpg?download=1",
+      "sha256": "8deaba71955cb81f181d0fbb90804d6f6a884cfa92efc390faf711f74f982634",
+      "bytes": 1738319,
+      "locator": "Product page image 3 of 4",
+      "published_at": null
+    },
+    {
+      "url": "https://windeyenergy.com/upload/img/20260324/c2650771b3138f07e2738f2815b70b0d.jpg",
+      "retrieval_url": "https://windeyenergy.com/upload/img/20260324/c2650771b3138f07e2738f2815b70b0d.jpg",
+      "sha256": "3e1ef56845bc96adc27470ed038eb3870e5cc9fcec52e43b2f4fefcfe5080b2e",
+      "bytes": 1309369,
+      "locator": "Product page image 4 of 4",
+      "published_at": null
+    }
+  ],
+  "quarantines": [],
+  "duplicates": [],
+  "conflicts": [],
+  "next_exact_tasks": [
+    "EPE CE full stable-ID partition",
+    "Xiangshan No.1 Phase II official registry/parent-phase crosswalk, then link WD225-9000 without inferred geometry",
+    "Saudi project official name/registry and exact 60Hz type datasheet",
+    "Aysha I official AfDB project/phase identifier; no Saudi configuration transfer",
+    "Original WD230-11500 certificate and model table; no rating inferred from identifier"
+  ],
+  "no_current_census": true
+}

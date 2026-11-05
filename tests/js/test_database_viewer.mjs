@@ -271,3 +271,124 @@ test("OEM update coverage requires dated linked evidence, not a selected mode or
   assert.deepEqual(windOemUpdateSummary([]), {models:0,updates:0,withoutUpdates:0});
   assert.equal(JSON.stringify(rows), before);
 });
+
+test("EIA farm completeness keeps unknown capacity distinct from a reported zero", async () => {
+  const {windEiaScopeSummary} = await import("../../docs/_static/database-core.mjs");
+  const evidence = JSON.stringify({eia_annual_wind_partitions:[{source_id:"eia",year:2025,units:[{generator_id:"1",locator:"row 3",status_as_of:"2025-12-31",status_code:"OP"}]}]});
+  assert.deepEqual(windEiaScopeSummary([
+    {entity_type:"projects",aggregation_role:"unresolved",extensions_json:evidence},
+    {entity_type:"projects",aggregation_role:"unresolved",installed_capacity_mw:0,extensions_json:evidence},
+    {entity_type:"projects",extensions_json:"invalid"},
+    {entity_type:"equipment",extensions_json:evidence}
+  ]), {projects:2,withoutEvidence:1,unresolvedScopes:2,unknownInstalledCapacity:1});
+});
+
+test("OEM history needs dated registered evidence and never classifies a turbine fleet", async () => {
+  const {windOemHistorySummary} = await import("../../docs/_static/database-core.mjs");
+  const observation = {source_id: "oem", locator: "section", boundary: "prototype only", published_at: "2025-06-12",
+    facts: {production_status_observation: "discontinued", status_as_of: "2025-06-12"}};
+  const row = {entity_type: "equipment", equipment_category: "wind_turbine", sources: ["oem"],
+    extensions_json: JSON.stringify({oem_historical_observations: [observation]})};
+  assert.deepEqual(windOemHistorySummary([row, {...row, entity_type: "turbines"}, {...row, sources: []},
+    {...row, extensions_json: "bad"}, {...row, extensions_json: JSON.stringify({oem_historical_observations: [{...observation, boundary: ""}]})}]),
+    {models: 1, observations: 1, withoutHistory: 3, datedDiscontinuations: 1});
+  assert.deepEqual(windOemHistorySummary([]), {models: 0, observations: 0, withoutHistory: 0, datedDiscontinuations: 0});
+  assert.equal(row.status, undefined);
+});
+
+test("reference yields separate sites, withdrawals and missing evidence without summing energy", async () => {
+  const {windReferenceYieldSummary} = await import("../../docs/_static/database-core.mjs");
+  const entry = {locator:"synthetic row", note:"synthetic restriction", reference_yield_kwh:1000, operating_mode:null};
+  const observation = {source_id:"table", period_source_id:"method", period_years:5,
+    quantity_kind:"modeled reference energy", reference_site:"old", reference_conditions:{air_density_kg_m3:null},
+    rows:[entry,{...entry,withdrawn:true},{...entry,reference_yield_kwh:0}]};
+  const row = {entity_type:"equipment", equipment_category:"wind_turbine", sources:["table","method"],
+    extensions_json:JSON.stringify({reference_yield_observations:[observation,{...observation,reference_site:"new",rows:[entry]}]})};
+  assert.deepEqual(windReferenceYieldSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"projects"}]),
+    {models:1,observations:3,withdrawn:1,corrected:0,unknownRotor:3,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
+  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,corrected:0,unknownRotor:0,withoutReference:0,unknownConditions:0,bySite:{}});
+});
+
+
+test("reference correction dates count observations, never commissioning", async () => {
+  const {windReferenceYieldSummary} = await import("../../docs/_static/database-core.mjs");
+  const row = {entity_type:"equipment",equipment_category:"wind_turbine",sources:["s","p"],
+    extensions_json:JSON.stringify({reference_yield_observations:[{source_id:"s",period_source_id:"p",period_years:5,
+      quantity_kind:"modeled reference energy",reference_site:"new",rows:[
+        {locator:"synthetic",note:"corrected",reference_yield_kwh:10,corrected_at:"2026-09-14"},
+        {locator:"synthetic",note:"unknown date",reference_yield_kwh:20,corrected_at:null}]}]})};
+  assert.equal(windReferenceYieldSummary([row]).corrected,1);
+  assert.equal(windReferenceYieldSummary([row]).observations,2);
+});
+
+test("certificate observations separate expiry from unknown and deduplicate same evidence", async () => {
+  const {windCertificationSummary} = await import("../../docs/_static/database-core.mjs");
+  const o = {certificate_id:"WT-synthetic",listed_date:"2020-01-01",source_id:"issuer",registry_status:"expired"};
+  const row = {entity_type:"equipment",equipment_category:"wind_turbine",sources:["issuer"],extensions_json:JSON.stringify({certification_register_observations:[o,o,{...o,certificate_id:"WT-other",registry_status:""}]})};
+  assert.deepEqual(windCertificationSummary([row,{...row,extensions_json:"null"},{...row,sources:[]},{...row,entity_type:"projects"}]),
+    {models:1,observations:2,expired:1,cancelled:0,unspecified:1,withoutEvidence:2});
+  assert.deepEqual(windCertificationSummary([]), {models:0,observations:0,expired:0,cancelled:0,unspecified:0,withoutEvidence:0});
+});
+
+test("ONS daily evidence counts unknown and zero without aggregating units into turbines or MW", async () => {
+  const {windOnsSummary} = await import("../../docs/_static/database-core.mjs");
+  const row={entity_type:"projects",sources:["ons"],extensions_json:JSON.stringify({ons_wind_unit_snapshots:[
+    {source_id:"ons",source_sha256:"hash",retrieved_at:"2026-11-05T15:13:00Z",units:[
+      {reported_nominal_mw:0},{reported_nominal_mw:null},{reported_nominal_mw:21}]}]})};
+  assert.deepEqual(windOnsSummary([row,{...row,extensions_json:"null"},{...row,sources:[]},{entity_type:"equipment"}]),
+    {projects:1,snapshots:1,units:3,unknownNominal:1,zeroNominal:1,withoutEvidence:2});
+});
+
+test("ONS geography counts each project once per reported state across snapshots", async () => {
+  const {windOnsGeography} = await import("../../docs/_static/database-core.mjs");
+  const snapshot = {source_id:"ons",source_sha256:"hash",retrieved_at:"2026-11-05T15:13:00Z",units:[
+    {original:{id_estado:"RN"}},{original:{id_estado:"RN"}},{original:{id_estado:"RS"}},
+    {original:{id_estado:null}},{original:{id_estado:"0"}}]};
+  const row={entity_type:"projects",sources:["ons"],extensions_json:JSON.stringify({ons_wind_unit_snapshots:[snapshot,snapshot]})};
+  assert.deepEqual(windOnsGeography([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
+    {projects:1,stateProjects:{RN:1,RS:1},unknownStateProjects:1});
+  assert.deepEqual(windOnsGeography([]),{projects:0,stateProjects:{},unknownStateProjects:0});
+});
+
+test("SIGA preserves dated categories, unknowns and zeros without summing capacity", async () => {
+  const {windSigaSummary}=await import("../../docs/_static/database-core.mjs");
+  const observation={source_id:"epe",source_sha256:"hash",object_id:68,observation_date:"2026-01-13",
+    original:{sigufprincipal:"BA"},normalized_power:{authorized_mw:0,inspected_mw:null,physical_guarantee_mw:13.4}};
+  const row={entity_type:"projects",sources:["epe"],extensions_json:JSON.stringify({epe_siga_snapshots:[observation,observation]})};
+  assert.deepEqual(windSigaSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
+    {projects:1,snapshots:1,withoutEvidence:2,dates:["2026-01-13"],states:["BA"],partitions:[{state:"BA",date:"2026-01-13",projects:1,observations:1}],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
+});
+
+test("SIGA separates dated state coverage and deduplicates project counts", async () => {
+  const {windSigaSummary}=await import("../../docs/_static/database-core.mjs");
+  const make=(id,state,date,objectId)=>({record_id:id,entity_type:"projects",sources:["epe"],
+    extensions_json:JSON.stringify({epe_siga_snapshots:[{source_id:"epe",source_sha256:"hash",object_id:objectId,
+      observation_date:date,original:{sigufprincipal:state},normalized_power:{authorized_mw:0}}]})});
+  const result=windSigaSummary([make("a","RN","2026-01-13",1),make("b","RN","2026-01-13",2),
+    make("a","RN","2026-02-01",3),make("c",null,"2026-01-13",4)]);
+  assert.deepEqual(result.partitions,[
+    {state:"RN",date:"2026-01-13",projects:2,observations:2},
+    {state:"RN",date:"2026-02-01",projects:1,observations:1},
+    {state:null,date:"2026-01-13",projects:1,observations:1}]);
+  assert.equal(result.categories.authorized_mw.zero,4);
+  assert.equal(result.categories.inspected_mw.unknown,4);
+});
+
+import {windOemTableSummary} from "../../docs/_static/database-core.mjs";
+test("OEM tables retain option and unknown-condition counts without multiplying models", () => {
+  const observation = {source_id: "oem", revision: "2022", locator: "page7 col1", values: {hub_height_range_m: [65, 160]}};
+  const equipment = {entity_type: "equipment", equipment_category: "wind_turbine", sources: ["oem"], extensions_json: JSON.stringify({oem_table_observations: [observation, observation]})};
+  assert.deepEqual(windOemTableSummary([equipment, {...equipment, extensions_json: "{}"}, {...equipment, sources: []}]), {models: 1, observations: 1, optionRanges: 1, withoutTables: 2, unknownConditions: 1, componentRatings: 0, unknownComponentRatings: 1});
+  assert.equal(windOemTableSummary([{...equipment, entity_type: "projects"}]).observations, 0);
+  assert.equal(windOemTableSummary([{...equipment, extensions_json: "null"}]).withoutTables, 1);
+});
+
+test("OEM component ratings retain separate boundaries and reject malformed ranges", () => {
+  const make = values => ({entity_type: "equipment", equipment_category: "wind_turbine", sources: ["oem"], extensions_json: JSON.stringify({oem_table_observations: [{source_id: "oem", revision: "2022", locator: "PDF9/column1", values}]})});
+  const rows = [make({hub_height_range_m: [95, 160], converter_power_kva_grid_turbine: [695, 1294]}), make({hub_height_range_m: [160, 95], converter_power_kva_grid_turbine: [null, 0]}), make({hub_height_range_m: [95], converter_power_kva_grid_turbine: [695]})];
+  const summary = windOemTableSummary(rows);
+  assert.equal(summary.optionRanges, 1);
+  assert.equal(summary.componentRatings, 1);
+  assert.equal(summary.unknownComponentRatings, 2);
+  assert.equal(summary.unknownConditions, 3);
+});

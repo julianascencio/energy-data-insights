@@ -355,3 +355,61 @@ def enrich_retired_partition(
         )
         result.append(row)
     return sorted(result, key=lambda x: x["record_id"])
+
+
+def stage_reviewed_site(item: dict[str, Any], *, source_id: str, now: str) -> dict[str, Any]:
+    """Stage one independently reviewed new EIA site, without inferring farm totals.
+
+    Caller must review existing registry IDs, names, coordinates and related phases.
+    Unit observations retain status and capacity; unresolved farm scope excludes sums.
+    """
+    from .catalogue import stable_id
+    from .gppd import evidence_record
+
+    code = item["plant_code"]
+    if type(code) is not int or code <= 0 or not item["name"] or not item["units"]:
+        raise ValueError("Require a named EIA site with generating-unit evidence")
+    native = item["plant_context"]
+    lat, lon = native["Latitude"], native["Longitude"]
+    if (
+        lat is None
+        or lon is None
+        or not math.isfinite(lat)
+        or not math.isfinite(lon)
+        or not -90 <= lat <= 90
+        or not -180 <= lon <= 180
+    ):
+        raise ValueError("Require valid whole-plant coordinates")
+    technologies = {u["original"]["Technology"] for u in item["units"]}
+    if technologies != {"Onshore Wind Turbine"}:
+        raise ValueError("Review offshore/mixed site scope separately")
+    return evidence_record(
+        {
+            "record_id": stable_id("projects", "EIA plant", str(code)),
+            "entity_type": "projects",
+            "record_scope": "farm",
+            "name": item["name"],
+            "country_code": "USA",
+            "region": native["State"],
+            "latitude": lat,
+            "longitude": lon,
+            "location_accuracy": "EIA whole-plant point; positional accuracy unquantified",
+            "technology": "onshore",
+            "status": "unknown",
+            "status_as_of": f"{item['year']}-12-31",
+            "status_date_basis": "Annual generator statuses retained; farm lifecycle unresolved",
+            "aggregation_role": "unresolved",
+            "capacity_scope": "EIA registry site; phase/hybrid/repowering boundary unresolved",
+            "external_ids_json": canonical_json({"eia_plant_code": str(code)}),
+            "extensions_json": canonical_json(
+                {
+                    "eia_annual_wind_partitions": [{**copy.deepcopy(item), "source_id": source_id}],
+                    "coordinate_precision": "Source whole-plant point; accuracy unknown",
+                    "inventory_completeness": "All selected wind generator rows; no turbine IDs",
+                }
+            ),
+        },
+        source_id=source_id,
+        now=now,
+        locator=item["plant_locator"] + "; embedded generator row locators",
+    )

@@ -125,6 +125,126 @@ def parse_named_inventory(
     }
 
 
+def parse_energy_star_certified_data_centers(
+    content: bytes,
+    *,
+    source_url: str,
+    certification_year: int,
+    expected_total_count: int,
+    expected_selected_count: int,
+) -> dict[str, Any]:
+    """Stage one exact certification-year partition of EPA's data-center registry.
+
+    EPA deliberately reports only the state for these facilities. Facility names are
+    therefore retained verbatim, but address-like text is never promoted to an address,
+    locality or coordinate. Floor-space values retain their source text because the
+    public table does not label a unit.
+    """
+    parsed = urlsplit(source_url)
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname != "www.energystar.gov"
+        or parsed.path != "/buildings/certified-data-centers"
+    ):
+        raise ValueError("Unsupported ENERGY STAR certified-data-center source URL")
+    if certification_year < 2000 or min(expected_total_count, expected_selected_count) < 1:
+        raise ValueError("Invalid certified-data-center partition bounds")
+
+    parser = _TableRows()
+    parser.feed(content.decode("utf-8-sig"))
+    header = [
+        "Facility Name",
+        "State",
+        "Owner",
+        "Property Manager",
+        "Label Years",
+        "Total Floor Space",
+        "Year Constructed",
+        "Number of Certifications (Most Recent Year)",
+    ]
+    try:
+        header_index = parser.rows.index(header)
+    except ValueError as exc:
+        raise ValueError("Missing ENERGY STAR certified-data-center table") from exc
+    table_rows: list[list[str]] = []
+    for row in parser.rows[header_index + 1 :]:
+        if len(row) != len(header):
+            if table_rows:
+                break
+            continue
+        table_rows.append(row)
+    if len(table_rows) != expected_total_count:
+        raise ValueError(
+            "Changed ENERGY STAR certified-data-center inventory shape: "
+            f"{len(table_rows)} != {expected_total_count}"
+        )
+
+    certification_re = re.compile(
+        r"^(?:ENERGYSTAR NextGen:\s*(\d+)\s*\((\d{4})\)\s*)?"
+        r"ENERGYSTAR:\s*(\d+)\s*\((\d{4})\)$"
+    )
+    candidates: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for line, row in enumerate(table_rows, start=1):
+        values = dict(zip(header, row, strict=True))
+        match = certification_re.fullmatch(values[header[-1]])
+        if not match:
+            raise ValueError(f"Invalid certification summary on registry row {line}")
+        nextgen_count = int(match[1]) if match[1] else 0
+        nextgen_year = int(match[2]) if match[2] else None
+        standard_count = int(match[3])
+        standard_year = int(match[4])
+        count = nextgen_count + standard_count
+        most_recent_year = max(year for year in (nextgen_year, standard_year) if year is not None)
+        try:
+            label_years = [int(value.strip()) for value in values["Label Years"].split(",")]
+            floor_space = int(values["Total Floor Space"])
+            constructed_year = int(values["Year Constructed"])
+        except ValueError as exc:
+            raise ValueError(f"Invalid numeric registry field on row {line}") from exc
+        if (
+            not values["Facility Name"]
+            or not values["State"]
+            or not values["Owner"]
+            or floor_space <= 0
+            or constructed_year < 1800
+            or constructed_year > most_recent_year
+            or count != len(label_years)
+            or most_recent_year != max(label_years)
+        ):
+            raise ValueError(f"Inconsistent ENERGY STAR registry row {line}")
+        if most_recent_year != certification_year:
+            continue
+        identity = (values["Facility Name"], values["State"], values["Owner"])
+        if identity in candidates:
+            raise ValueError(f"Duplicate ENERGY STAR facility identity {identity}")
+        candidates[identity] = {
+            "facility_name": values["Facility Name"],
+            "state": values["State"],
+            "owner": values["Owner"],
+            "property_manager": values["Property Manager"] or None,
+            "label_years": label_years,
+            "reported_floor_space": floor_space,
+            "reported_floor_space_unit": None,
+            "constructed_year": constructed_year,
+            "certification_count": count,
+            "most_recent_certification_year": most_recent_year,
+            "locator": f"certified data centers table / {values['Facility Name']}",
+        }
+    if len(candidates) != expected_selected_count:
+        raise ValueError(
+            "Changed ENERGY STAR certification-year partition: "
+            f"{len(candidates)} != {expected_selected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "certification_year": certification_year,
+        "inventory_count": len(table_rows),
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_project_permit_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:
@@ -297,6 +417,160 @@ def parse_energy_star_enterprise_servers_inventory(
         "sha256": hashlib.sha256(content).hexdigest(),
         "review_required": True,
         "partner": partner,
+        "candidates": [candidates[key] for key in sorted(candidates, key=int)],
+    }
+
+
+def parse_energy_star_large_network_equipment_inventory(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage the complete ENERGY STAR large-network-equipment inventory.
+
+    Each issuer ID remains one certified product entry.  Minimum, typical and
+    maximum test configurations stay attached to that identity and are never
+    promoted into a generic device-input or rack-input power rating.
+    """
+    parsed = urlsplit(source_url)
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname != "data.energystar.gov"
+        or "n8cx-m62r" not in parsed.path
+    ):
+        raise ValueError("Unsupported ENERGY STAR large-network-equipment source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "ENERGY STAR Unique ID",
+        "ENERGY STAR Partner",
+        "Brand Name",
+        "Model Name",
+        "Model Number",
+        "Product Type",
+        "Product Classification",
+        "Product Characteristics",
+        "Min Power Config Full-port Full Load Power Measured (watts)",
+        "Max Power Config Full-port Full Load Power Measured (watts)",
+        "Typ Power Config Full-port Full Load Power Measured (watts)",
+        "Date Available on Market",
+        "Date Certified",
+        "Markets",
+        "CB Model Identifier",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing ENERGY STAR large-network-equipment inventory columns")
+    candidates: dict[str, dict[str, str]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (value or "").strip() for key, value in row.items()}
+        unique_id = candidate["ENERGY STAR Unique ID"].replace(",", "")
+        if (
+            not unique_id
+            or not candidate["ENERGY STAR Partner"]
+            or not candidate["Model Name"]
+            or not candidate["Model Number"]
+            or candidate["Product Type"] not in {"Router", "Switch"}
+            or candidate["Product Classification"] not in {"Fixed", "Modular"}
+            or not candidate["Date Certified"]
+            or not candidate["CB Model Identifier"]
+        ):
+            raise ValueError(f"Incomplete ENERGY STAR large-network-equipment row {line}")
+        if unique_id in candidates:
+            raise ValueError(f"Duplicate ENERGY STAR large-network-equipment unique ID {unique_id}")
+        candidate["ENERGY STAR Unique ID"] = unique_id
+        candidates[unique_id] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            "Changed ENERGY STAR large-network-equipment inventory shape: "
+            f"{len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates, key=int)],
+    }
+
+
+def parse_energy_star_data_center_storage_inventory(
+    content: bytes, *, source_url: str, dataset_kind: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage one complete ENERGY STAR data-center-storage dataset.
+
+    Block-I/O and File-I/O certifications use different immutable identifiers,
+    tested-configuration prefixes and workload metrics.  This reader preserves
+    the complete issuer row and never merges a storage family across datasets,
+    converts PSU nameplates into equipment input, or treats tested cache/device
+    quantities as deployed capacity.
+    """
+    dataset_ids = {"block_io": "3uec-2gqf", "file_io": "put7-uu67"}
+    if dataset_kind not in dataset_ids:
+        raise ValueError("Unsupported ENERGY STAR data-center-storage dataset kind")
+    parsed = urlsplit(source_url)
+    expected_dataset_id = dataset_ids[dataset_kind]
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname != "data.energystar.gov"
+        or expected_dataset_id not in parsed.path
+    ):
+        raise ValueError("Unsupported ENERGY STAR data-center-storage source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    id_field = "ENERGY STAR Unique ID" if dataset_kind == "block_io" else "PD_ID"
+    type_field = "Product Type" if dataset_kind == "block_io" else "SNIA Online Taxonomy Category"
+    controller_field = (
+        "Storage Controller Configuration"
+        if dataset_kind == "block_io"
+        else "Storage Controller Implementation"
+    )
+    model_identifier_field = (
+        "CB Model Identifier" if dataset_kind == "block_io" else "ENERGY STAR Model Identifier"
+    )
+    required = {
+        id_field,
+        "ENERGY STAR Partner",
+        "Brand Name",
+        "Model Name",
+        "Model Number",
+        type_field,
+        controller_field,
+        "Storage Controller Manufacturer Name",
+        "Storage Controller Model Name",
+        "Storage Controller Model Number",
+        "Date Available On Market",
+        "Date Qualified",
+        "Markets",
+        model_identifier_field,
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing ENERGY STAR data-center-storage inventory columns")
+    candidates: dict[str, dict[str, str]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (value or "").strip() for key, value in row.items()}
+        unique_id = candidate[id_field].replace(",", "")
+        if (
+            not unique_id.isdigit()
+            or not candidate["ENERGY STAR Partner"]
+            or not candidate["Model Name"]
+            or not candidate["Model Number"]
+            or not candidate[type_field]
+            or not candidate["Date Qualified"]
+        ):
+            raise ValueError(f"Incomplete ENERGY STAR data-center-storage row {line}")
+        candidate[id_field] = unique_id
+        if unique_id in candidates:
+            raise ValueError(f"Duplicate ENERGY STAR data-center-storage unique ID {unique_id}")
+        candidates[unique_id] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            "Changed ENERGY STAR data-center-storage inventory shape: "
+            f"{len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "dataset_kind": dataset_kind,
         "candidates": [candidates[key] for key in sorted(candidates, key=int)],
     }
 
@@ -577,6 +851,169 @@ def parse_doe_transformer_certification_matrix(
         raise ValueError(
             f"Changed DOE transformer matrix shape: {len(candidates)} != {expected_count}"
         )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
+def parse_doe_crac_certification_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact public DOE computer-room air-conditioner basic-model rows.
+
+    The adapter retains the issuer's printed Btu/h and SCFM values without
+    repairing cross-field inconsistencies. A public CCMS listing is a
+    manufacturer representation, not a DOE compliance determination.
+    """
+    parsed_url = urlsplit(source_url)
+    if parsed_url.hostname != "www.regulations.doe.gov" or parsed_url.path != (
+        "/certification-data/"
+        "CCMS-4-Air_Conditioners_and_Heat_Pumps_-_Computer_Room_Air_Conditioners.html"
+    ):
+        raise ValueError("Unsupported official DOE CRAC certification source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "brand",
+        "basic_model",
+        "indoor_model",
+        "outdoor_model",
+        "condenser_heat_rejection",
+        "configuration",
+        "net_total_btu_h",
+        "net_sensible_btu_h",
+        "rated_airflow_scfm",
+        "nsencop",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing DOE CRAC certification columns")
+    candidates: dict[tuple[str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate: dict[str, Any] = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate[key] for key in required if key not in {"outdoor_model"}):
+            raise ValueError(f"Incomplete DOE CRAC row {line}")
+        try:
+            for field in (
+                "net_total_btu_h",
+                "net_sensible_btu_h",
+                "rated_airflow_scfm",
+                "nsencop",
+            ):
+                candidate[field] = float(candidate[field])
+        except ValueError as exc:
+            raise ValueError(f"Invalid DOE CRAC numeric value on row {line}") from exc
+        if any(
+            candidate[field] <= 0
+            for field in (
+                "net_total_btu_h",
+                "net_sensible_btu_h",
+                "rated_airflow_scfm",
+                "nsencop",
+            )
+        ):
+            raise ValueError(f"Invalid DOE CRAC rating on row {line}")
+        candidate["outdoor_model"] = candidate["outdoor_model"] or None
+        identity = (str(candidate["brand"]), str(candidate["basic_model"]))
+        if identity in candidates:
+            raise ValueError(f"Duplicate DOE CRAC row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed DOE CRAC matrix shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
+def parse_doe_ups_certification_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact public DOE UPS basic/individual-model rows.
+
+    Watts and volt-amperes remain distinct. Average load-adjusted efficiency is
+    retained with its supported input-dependency-mode boundary, and a public
+    CCMS listing is not treated as a DOE compliance determination.
+    """
+    parsed_url = urlsplit(source_url)
+    if parsed_url.hostname != "www.regulations.doe.gov" or parsed_url.path != (
+        "/certification-data/CCMS-4-Uninterruptible_Power_Supplies.html"
+    ):
+        raise ValueError("Unsupported official DOE UPS certification source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "brand",
+        "basic_model",
+        "individual_model",
+        "input_voltage_v",
+        "output_voltage_v",
+        "lowest_mode",
+        "lowest_active_w",
+        "lowest_apparent_va",
+        "highest_mode",
+        "highest_active_w",
+        "highest_apparent_va",
+        "lowest_efficiency_pct",
+        "third_mode",
+        "highest_efficiency_pct",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing DOE UPS certification columns")
+    optional = {
+        "highest_mode",
+        "highest_active_w",
+        "highest_apparent_va",
+        "third_mode",
+        "highest_efficiency_pct",
+    }
+    numeric = {
+        "input_voltage_v",
+        "output_voltage_v",
+        "lowest_active_w",
+        "lowest_apparent_va",
+        "lowest_efficiency_pct",
+    }
+    optional_numeric = {
+        "highest_active_w",
+        "highest_apparent_va",
+        "highest_efficiency_pct",
+    }
+    candidates: dict[tuple[str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate: dict[str, Any] = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate[key] for key in required if key not in optional):
+            raise ValueError(f"Incomplete DOE UPS row {line}")
+        try:
+            for field in numeric:
+                candidate[field] = float(candidate[field])
+            for field in optional_numeric:
+                candidate[field] = float(candidate[field]) if candidate[field] else None
+        except ValueError as exc:
+            raise ValueError(f"Invalid DOE UPS numeric value on row {line}") from exc
+        if any(float(candidate[field]) <= 0 for field in numeric):
+            raise ValueError(f"Invalid DOE UPS rating on row {line}")
+        if any(
+            candidate[field] is not None and float(candidate[field]) <= 0
+            for field in optional_numeric
+        ):
+            raise ValueError(f"Invalid optional DOE UPS rating on row {line}")
+        for field in optional - optional_numeric:
+            candidate[field] = candidate[field] or None
+        identity = (str(candidate["brand"]), str(candidate["individual_model"]))
+        if identity in candidates:
+            raise ValueError(f"Duplicate DOE UPS row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed DOE UPS matrix shape: {len(candidates)} != {expected_count}")
     return {
         "source_url": source_url,
         "sha256": hashlib.sha256(content).hexdigest(),
@@ -998,6 +1435,108 @@ def parse_generator_dcp_matrix(
         raise ValueError(
             f"Changed DCP generator matrix shape: {len(candidates)} != {expected_count}"
         )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
+def parse_volvo_penta_powergen_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact Volvo Penta engine/frequency power-generation rows."""
+    parsed_url = urlsplit(source_url)
+    if (
+        parsed_url.scheme != "https"
+        or parsed_url.hostname != "www.volvopenta.com"
+        or "/power-generation-engines/power-generation-engine-range/" not in parsed_url.path
+    ):
+        raise ValueError("Unsupported official Volvo Penta power-generation URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "family",
+        "emission_level",
+        "model",
+        "frequency_hz",
+        "prime_mechanical_kw",
+        "prime_output_kw",
+        "prime_apparent_kva",
+        "standby_mechanical_kw",
+        "standby_output_kw",
+        "standby_apparent_kva",
+        "fuel_type",
+        "cylinders",
+        "locator",
+    }
+    if reader.fieldnames is None or set(reader.fieldnames) != required:
+        raise ValueError("Unexpected Volvo Penta power-generation matrix columns")
+
+    def positive_number(
+        raw_value: str | None, field: str, *, line: int, optional: bool = False
+    ) -> float | None:
+        raw = (raw_value or "").strip().replace(",", "")
+        if not raw and optional:
+            return None
+        try:
+            value = float(raw)
+        except ValueError as exc:
+            raise ValueError(f"Invalid {field} on row {line}") from exc
+        if value <= 0:
+            raise ValueError(f"Invalid {field} on row {line}")
+        return value
+
+    candidates: dict[tuple[str, float], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        family = row["family"].strip()
+        emission_level = row["emission_level"].strip()
+        model = row["model"].strip()
+        fuel_type = row["fuel_type"].strip()
+        locator = row["locator"].strip()
+        if not all((family, emission_level, model, fuel_type, locator)):
+            raise ValueError(f"Incomplete Volvo Penta identity on row {line}")
+        frequency = positive_number(row["frequency_hz"], "frequency_hz", line=line)
+        cylinders = positive_number(row["cylinders"], "cylinders", line=line)
+        assert frequency is not None and cylinders is not None
+        candidate = {
+            "family": family,
+            "emission_level": emission_level,
+            "model": model,
+            "frequency_hz": frequency,
+            "prime_mechanical_kw": positive_number(
+                row["prime_mechanical_kw"], "prime_mechanical_kw", line=line, optional=True
+            ),
+            "prime_output_kw": positive_number(
+                row["prime_output_kw"], "prime_output_kw", line=line
+            ),
+            "prime_apparent_kva": positive_number(
+                row["prime_apparent_kva"], "prime_apparent_kva", line=line
+            ),
+            "standby_mechanical_kw": positive_number(
+                row["standby_mechanical_kw"],
+                "standby_mechanical_kw",
+                line=line,
+                optional=True,
+            ),
+            "standby_output_kw": positive_number(
+                row["standby_output_kw"], "standby_output_kw", line=line
+            ),
+            "standby_apparent_kva": positive_number(
+                row["standby_apparent_kva"], "standby_apparent_kva", line=line
+            ),
+            "fuel_type": fuel_type,
+            "cylinders": int(cylinders),
+            "locator": locator,
+        }
+        identity = (model, frequency)
+        if identity in candidates:
+            raise ValueError(f"Duplicate Volvo Penta power-generation row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed Volvo Penta matrix shape: {len(candidates)} != {expected_count}")
     return {
         "source_url": source_url,
         "sha256": hashlib.sha256(content).hexdigest(),

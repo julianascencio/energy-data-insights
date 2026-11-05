@@ -3,13 +3,14 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-At batch `2026-11-04-2435`, the proposed branch contains **8,174 projects**
-(8,173 non-group records), **372 equipment configurations**, **13,633 linked
+At batch `2026-11-05-0910`, the proposed branch contains **8,238 projects**
+(8,237 non-group records), **405 equipment configurations**, **13,633 linked
 registry turbines** and **two original numerical curves**, across **59 countries**
-and **55 manufacturer labels**. Labels are not a reconciled corporate-entity count.
-Merged main at `9f36b0f3` contains 8,136 projects, 357 equipment records,
-13,633 turbines and two curves. These are catalogue counts, not an operating census.
-Use the batch checkpoint below for subsequent totals.
+and **57 manufacturer labels**. Labels are not a reconciled corporate-entity count.
+Merged main at `d92d1b82` contains 8,174 projects, 372 equipment records,
+13,633 turbines and two curves. This run adds 56 projects and enriches 31 existing equipment records. The cumulative PR adds 64 projects and 33 exact
+OEM types and enriches two pre-existing projects and four equipment records from main. These are catalogue counts, not an
+operating census. PR #158 remains open for review.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
 not resolve capacity scope; 2,216 other applications remain deferred. Swedish
@@ -544,3 +545,97 @@ new equipment models, turbines or curves. The equipment target was not met;
 unnamed components and predominant registry labels were not converted into
 invented configurations. See `research/2026-11-04-2535-eia-decisions.json` for
 all 129 decisions and `research/latest.json` for exact continuation partitions.
+
+Batch `2026-11-05-0835` starts from merged main `aa842b95` (PR #153 was
+merged externally). The first checkpoint adds eight EIA registry sites and
+substantively enriches historical Krzęcin 6 MW with owner and regulator evidence:
+8,182 projects versus 8,174 on that main; equipment/turbine/curve totals unchanged.
+All 150 plants / 158 generator rows in Operable codes 64000–69999 were reviewed;
+142 identities remain deferred. Generator ratings remain nested observations,
+not farm capacity totals. The viewer and offline example distinguish unknown
+installed MW from zero and unresolved aggregation scopes. See the latest
+checkpoint for subsequent equipment research and validation results.
+
+The second checkpoint processes every row of the six-page Nordex OEM history
+table: 46 rows yield 33 new exact types, nine existing-model revision holds and
+three conflicting-rating/unit holds. The repeated AW77/1500 tower observation
+stays nested; S46 and N155 rating ranges do not generate synthetic variants.
+N27/150 and N27/250 contradictory printed ratings are not silently corrected.
+Krzęcin 6 MW and Krzęcin II 19.2 MW now have supported type/rating links to S77
+and N117 respectively; installed revisions and options remain unknown. The
+undated table's production headings do not establish current availability.
+
+
+Batch `2026-11-05-0910` resumes PR #158 at `9d697427`: 56 new US onshore
+registry sites across 20 states, with no farm capacity totals enabled. Exactly
+142 saved identity holds were reviewed; 86 remain. A geodesic distance screen
+includes existing sites and candidates within the same cohort, while distinctive
+name and alias checks ignore generic legal/site words. These are review flags,
+not automatic identity decisions. The original final-2025 EIA Operable sheet
+has 1,573 generator rows and maximum plant code 69,327; the residual range
+above 69,999 is empty, completing the partition scan. Individual turbine
+inventories, exact predominant-model configuration links and whole-farm
+capacities are not inferred. All previous records and six capacity totals are
+preserved. The equipment manufacturer count is 57 labels; inventory turbine
+labels are now reported separately in `latest.json`.
+
+
+The OEM continuation adds dated history to 31 existing exact types using Nordex's
+12 June 2025 article: early stall/drivetrain controls, Südwind pitch control,
+Gamma/Delta maintenance designs, AW prototype and dated production-status facts,
+and later blade/mode/hub observations. The 18 February 2025 N27 account and
+22 July 2024 N169 announcement were also reviewed. The two N27 table ratings and
+N169 printed unit remain held, as does a lone AW77/1300 narrative mention.
+Specifications remain OEM statements; no independent performance validation is
+claimed. `oem_historical_observations` keeps dates, boundaries and field provenance
+without replacing supported scalar specifications.
+
+Batch `2026-11-05-0945` resumes PR #158 at `1786ce89`. It adds 52 US registry
+sites from 110 saved EIA holds; 58 remain. Four Orchard candidates remain held
+after primary Oregon PUC shared-interconnection evidence because their registry
+and physical boundaries still need reconciliation. All six capacity totals stay
+unchanged. Current main's Hydropower addition was incorporated and both sectors'
+shared-viewer functions preserved.
+
+FGW's current-index Nordex tables (110 old-site rows, 70 new-site rows) add
+16 exact printed types/revisions and enrich 24 existing equipment records.
+The 173 accepted observations retain five-year modeled kWh, hub and power settings,
+reference-site conditions, original strings and restriction notes. Five withdrawn
+values remain alongside replacements. Seven N27 rows are held for the prior
+OEM rating conflict; three missing rotor cells remain null. No inferred installed
+compatibility, synthetic variants, capacity factors or numerical curves are added.
+See the batch transcription and decision ledgers in `research/` and the current
+counts and executed checks in `latest.json` and `validation.json`.
+
+The 2026-11-05 Vestas FGW old-reference-site batch reviews all 103 numerical
+rows across four pages. It adds 29 explicitly printed configurations and enriches
+V47-660/200 kW. Hub-height choices stay nested; missing rotor diameters remain
+unknown, including in the viewer's observation completeness count. Two HTq
+rows await revision mapping, and the V66 reduced-power contact notice supplies
+no numerical data. These five-year modeled reference yields are neither measured
+production nor numerical power curves. The newer reference-site table remains
+a separate queued partition. See `research/2026-11-05-1135-fgw-review.json`.
+
+The subsequent new-reference-site Vestas table has 114 numerical rows: 109
+accepted observations across five new configurations and sixteen enriched
+records, with five HTq revision mappings deferred. Four withdrawn observations
+retain their 8 July 2026 decision date alongside replacements; three corrected
+observations retain 14 September 2026. These dates describe reference-result
+revisions, not equipment commissioning. Density and blank rotor cells stay
+unknown. The shared viewer and deterministic example count dated corrections.
+
+The checksum-pinned REPD review adapter stages saved unlinked candidates in
+ledger order without importing farms. Offsets 200–399 retain all 200 identity
+holds, including 160 permit references and 33 explicit replacement references.
+Primary permit contents still need review; application status never becomes
+farm status through this staging step. Next structural partition: 400–599.
+
+The 2026-11-05-1335 review adds one Korean certificate-scoped V126 HTq configuration. Its two reported power modes remain nested; current certificate validity and FGW equivalence are unknown. A second HTq entry has inconsistent class labels and remains held. REPD saved offsets400–599 were structurally reviewed; all200 remain identity holds, with no farm capacity or lifecycle assignments.
+
+The 5 November 14:35 batch adds 23 Korean certificate configurations, one Spanish
+wind-module proposal and eight planned turbines. Branch totals: 8,291 projects,
+479 equipment, 13,641 turbines and two curves. KNREC's full 57-row register now
+has review decisions; 32 remaining-row candidates and the earlier HTq conflict
+remain held. REPD's next structural-review cursor is 800; BOE's next dates are
+10–12 September 2026. The shared viewer distinguishes expired/unspecified issuer
+listings without asserting current validity. All capacity exclusions are retained.

@@ -1,0 +1,325 @@
+{
+  "wri-gppd-1.3.0": {
+    "url": "https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/output_database/global_power_plant_database.csv",
+    "publisher": "World Resources Institute",
+    "title": "Global Power Plant Database v1.3.0 repository snapshot, complete primary-fuel Hydro partition",
+    "license": "CC BY 4.0; attribution to WRI; historical baseline with added evidence and review qualifications",
+    "retrieved_at": "2026-11-05T08:18:58Z",
+    "published_at": null,
+    "revision": "v1.3-era historical repository snapshot; commit 7a91cfbb2a4e272597acbc00506d61fc1ec73b3d; exact publication date unverified",
+    "sha256": "4b1f93e0fd93664f18684d9b05d0a52ed9658c6a8cf0d21ff2520791379ba7fc",
+    "original_availability": "Complete original CSV bytes obtained via upstream Git repository; SHA-256 is of CSV bytes; original CSV not redistributed"
+  },
+  "nve-hydro-20261105": {
+    "url": "https://api.nve.no/web/Powerplant/GetHydroPowerPlants",
+    "publisher": "Norwegian Water Resources and Energy Directorate (NVE)",
+    "title": "Vannkraftdatabase - all hydropower assets",
+    "published_at": null,
+    "revision": "Continuously updated API; retrieved 2026-11-05",
+    "retrieved_at": "2026-11-05T08:45:58Z",
+    "sha256": "35f4514e6250d21c5fad49d490feadd848d46b2283ce3cab799055fa99642b6c",
+    "license": "NLOD; NVE identifies compatibility with CC BY 3.0 Norway",
+    "license_url": "https://api.nve.no/doc/vannkraftdatabase/",
+    "original_availability": "Complete original response bytes retrieved; normalized candidates retained for identity review, not canonical acceptance"
+  },
+  "nve-gis-20261105": {
+    "url": "https://kart.nve.no/enterprise/rest/services/Vannkraft1/MapServer/0",
+    "publisher": "Norwegian Water Resources and Energy Directorate (NVE)",
+    "title": "Vannkraft1 - Vannkraftverk point layer",
+    "published_at": null,
+    "revision": "Live layer snapshot 2026-11-05",
+    "retrieved_at": "2026-11-05T09:40:43Z",
+    "sha256": "ff12434f505f34afa84193e856ea64e1717c02202e0ce2166c00e2c2dff059e9",
+    "license": "NLOD, NVE map-data distribution policy",
+    "license_url": "https://www.nve.no/kart/kartdata/",
+    "original_availability": "Original full 1892-feature JSON response downloaded with outSR=4326; no transfer-limit flag. Selected exact feature evidence retained. Source coordinate accuracy unquantified.",
+    "query": "where=1=1&outFields=*&outSR=4326&f=json&resultRecordCount=2000&orderByFields=objectid"
+  },
+  "wri_usa_identity": {
+    "url": "https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_USA.py",
+    "publisher": "World Resources Institute",
+    "title": "WRI U.S. importer and make_id registry identity mapping",
+    "license": "WRI repository source reviewed; factual identity mapping only; upstream code not redistributed",
+    "retrieved_at": "2026-11-04T23:06:14Z",
+    "published_at": null,
+    "revision": "7a91cfbb2a4e272597acbc00506d61fc1ec73b3d",
+    "sha256": "c3998a8453dc733d6f47d5a14421a15708b40ecd7951a3c76387321aea870f4c",
+    "original_availability": "Both original Python source files obtained HTTP200 and checksummed",
+    "documents": {
+      "powerplant_database.py": {
+        "sha256": "89547a4e63fe596d0cbf28ede1d28908e4289beb59a8c17da2d659a4ea35d544",
+        "locator": "make_id(letter_code,id_number): country prefix plus zero-padded7-digit EIA plant code"
+      }
+    },
+    "locator": "build_database_USA.py COLS_860_2 idnr=2, pw.make_id(SAVE_CODE, int(...)); powerplant_database.py make_id"
+  },
+  "eia860-2025-hydro-1-500": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 1-500",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T11:42:26Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "eia860-2025-hydro-501-1000": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 501-1000",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T12:40:39Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "eia860-2025-hydro-1001-1500": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 1001-1500",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T13:38:22Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "eia860-2025-hydro-1501-2000": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 1501-2000",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T13:38:22Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "ons-hydro-20261105-0001-0100": {
+    "url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/capacidade-geracao/CAPACIDADE_GERACAO.csv",
+    "publisher": "Operador Nacional do Sistema El\u00e9trico (ONS)",
+    "title": "Capacidade Instalada de Gera\u00e7\u00e3o \u2014 first 100 sorted hydro CEGs",
+    "license": "CC-BY per publisher; ONS attribution; normalized whitespace, grouped hydro units, exact registry crosswalk",
+    "license_url": "https://dados.ons.org.br/dataset/capacidade-geracao",
+    "retrieved_at": "2026-11-05T14:43:28Z",
+    "sha256": "39f8350e4e5821035ac9043a4af55df075218449a832b79f59bc929152fdcdee",
+    "published_at": null,
+    "revision": "Downloaded 2026-11-05; publisher metadata last updated 2026-11-04T15:01Z; source observation date not independently established",
+    "dictionary_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/capacidade-geracao/DicionarioDados_Capacidade_Instalada_Geracao.json",
+    "dictionary_sha256": "68e823cd62cc06aeb2ccdcc261a53904edc36c9a08b97c75ed1c3e3d21faea17",
+    "access_assessment": "Original files downloaded; CSV lacks optional id_ons dictionary field. No synthetic column added.",
+    "original_availability": "Original source downloaded; checksum pinned; selected facts and row locators retained"
+  },
+  "wri_brazil_identity": {
+    "url": "https://github.com/wri/global-power-plant-database/blob/master/build_databases/build_database_BRA.py",
+    "publisher": "World Resources Institute",
+    "title": "Brazil importer CEG numeric code to BRA-prefixed identity",
+    "license": "MIT source code; GPPD data CC BY 4.0",
+    "retrieved_at": "2026-11-05T14:43:28Z",
+    "sha256": "1b4a16cf9d1729b58c997ea5860d3e20b0cd726201c83b041e3e43496cb0424d",
+    "locator": "lines 124-125 extract CEG numeric component; line 187 pw.make_id(SAVE_CODE, plant_id)",
+    "access_assessment": "Original upstream importer downloaded; checksum pins reviewed content",
+    "original_availability": "Original source downloaded; checksum pinned; selected facts and row locators retained"
+  },
+  "ons-hydro-20261105-0101-0180": {
+    "url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/capacidade-geracao/CAPACIDADE_GERACAO.csv",
+    "publisher": "Operador Nacional do Sistema El\u00e9trico (ONS)",
+    "title": "Capacidade Instalada de Gera\u00e7\u00e3o \u2014 remaining 80 sorted hydro CEGs",
+    "license": "CC-BY per publisher; ONS attribution; normalized whitespace, grouped hydro units, exact registry crosswalk",
+    "license_url": "https://dados.ons.org.br/dataset/capacidade-geracao",
+    "retrieved_at": "2026-11-05T15:37:53Z",
+    "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
+    "published_at": null,
+    "revision": "Downloaded 2026-11-05; publisher metadata last updated 2026-11-04T15:01Z; source observation date not independently established",
+    "dictionary_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/capacidade-geracao/DicionarioDados_Capacidade_Instalada_Geracao.json",
+    "dictionary_sha256": "68e823cd62cc06aeb2ccdcc261a53904edc36c9a08b97c75ed1c3e3d21faea17",
+    "access_assessment": "Original files downloaded; CSV lacks optional id_ons dictionary field. No synthetic column added.",
+    "original_availability": "Original official CSV/dictionary downloaded; retained reviewed evidence with exact row locators"
+  },
+  "eia860-2025-hydro-2001-2500": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 2001-2500",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T16:40:58Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "eia860-2025-hydro-2501-3000": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 2501-3000",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T16:40:58Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "iha-india-2019-0001-0100": {
+    "url": "https://energydata.info/dataset/01f6fdfc-ee24-4f3f-9580-389eb39ef959/resource/71e057a7-585b-4cc7-925c-b62061aff404/download/iha_hydrodatabase_240919_csv.csv",
+    "publisher": "International Hydropower Association",
+    "title": "India Hydropower Database",
+    "revision": "2019 release; metadata updated 2019-09-30",
+    "published_at": "2019-09-30",
+    "retrieved_at": "2026-11-05T17:39:30Z",
+    "sha256": "14dc339892cb4ffca5314a2da84db18f2a95d5377b9651ac8ad8cbe2c697a5b9",
+    "license": "CC BY 4.0; attribution to IHA; reviewed crosswalk and normalization are our transformations",
+    "license_url": "https://energydata.info/en/dataset/india-hydropower-database",
+    "original_availability": "Original CSV obtained HTTP 200; Windows-1252; historical temporal metadata 1917-2015; raw fields retained with CSV row locator; not current status"
+  },
+  "eia860-2025-hydro-3001-3500": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 3001-3500",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T16:40:58Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "iha-india-2019-0101-0110": {
+    "url": "https://energydata.info/dataset/01f6fdfc-ee24-4f3f-9580-389eb39ef959/resource/71e057a7-585b-4cc7-925c-b62061aff404/download/iha_hydrodatabase_240919_csv.csv",
+    "publisher": "International Hydropower Association",
+    "title": "India Hydropower Database",
+    "revision": "2019 release; metadata updated 2019-09-30",
+    "published_at": "2019-09-30",
+    "retrieved_at": "2026-11-05T18:42:41Z",
+    "sha256": "14dc339892cb4ffca5314a2da84db18f2a95d5377b9651ac8ad8cbe2c697a5b9",
+    "license": "CC BY 4.0; attribution to IHA; reviewed crosswalk and normalization are our transformations",
+    "license_url": "https://energydata.info/en/dataset/india-hydropower-database",
+    "original_availability": "Original CSV obtained HTTP 200; Windows-1252; historical temporal metadata 1917-2015; raw fields retained with CSV row locator; not current status"
+  },
+  "aha-v2.3-technical-20261105": {
+    "url": "https://www.hydroshare.org/resource/197eab83ae424be3804ee154ed98aea8/data/contents/African_Hydropower_Atlas_v2-3.xlsx",
+    "publisher": "Sebastian Sterl and Charles J. Chawanda",
+    "title": "African Hydropower Atlas v2.3, spatial and technical table",
+    "revision": "v2.3; file modified 2024-02-14",
+    "published_at": "2024-02-14",
+    "retrieved_at": "2026-11-05T19:42:24Z",
+    "sha256": "5a24121837e0b57c226afbcc63a9e3e821b1fe2a3715db2b1a4ee73dca599ae6",
+    "license": "CC BY 4.0; attribution to Sterl and Chawanda; crosswalk and normalization are our changes",
+    "license_url": "https://www.hydroshare.org/resource/197eab83ae424be3804ee154ed98aea8/",
+    "original_availability": "Original XLSX obtained HTTP 200; retained selected technical fields with Excel row locators and original source columns; derived model/storage columns excluded. Not current lifecycle evidence."
+  },
+  "eia860-2025-hydro-3501-4000": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 3501-4000",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T20:40:13Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "eia860-2025-hydro-4001-4500": {
+    "url": "https://www.eia.gov/electricity/data/eia860/xls/eia8602025.zip",
+    "publisher": "U.S. Energy Information Administration",
+    "title": "Form EIA-860 final 2025 Plant and Operable Generator inventory; hydro plant codes 4001-4500",
+    "license": "U.S. government public-domain data; attribution to EIA",
+    "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+    "retrieved_at": "2026-11-05T21:45:03Z",
+    "published_at": null,
+    "revision": "Final 2025 annual release; archive workbooks dated 2026-09-09",
+    "sha256": "2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba",
+    "original_availability": "Original official ZIP downloaded; selected normalized plant/unit evidence retained with spreadsheet row locators. Raw workbook binaries not redistributed.",
+    "documents": {
+      "2___Plant_Y2025.xlsx": {
+        "sha256": "3c338f5e9d2647bb487dee8b3f4ed5c3fdd3e82db3b1bc5fdf206cee5470e059"
+      },
+      "3_1_Generator_Y2025.xlsx": {
+        "sha256": "931e1ed0be2c6706794c196f158f779b5c8a32d08c61d748a823dfc25a3201a8"
+      }
+    }
+  },
+  "nz-ea-fleet-20260702": {
+    "url": "https://emidatasets.blob.core.windows.net/publicdata/Datasets/Wholesale/Generation/GenerationFleet/Existing/20260702_DispatchedGenerationPlant.csv",
+    "publisher": "Electricity Authority, New Zealand",
+    "title": "Dispatched Generation Plant, 2 July 2026",
+    "retrieved_at": "2026-11-05T21:45:03Z",
+    "published_at": "2026-07-02",
+    "revision": "20260702 file; listing prose filename stale",
+    "sha256": "0a1d0c2b64755bb6e87cfbcbacde6119a7df3e4e3d323eaaaa71ab874c3654ba",
+    "license": "CC BY 4.0; Electricity Authority attribution; normalized candidate extraction is our change",
+    "license_url": "https://www.ea.govt.nz/copyright-disclaimer-transparency/",
+    "original_availability": "Original CSV acquired HTTP 200 via official Azure redirect; 157 rows, 68 HYD observations / 42 names; all hydro rows held, none canonical. Listing includes formerly dispatched plants."
+  }
+}

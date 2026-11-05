@@ -1,0 +1,43 @@
+{
+  "reviewed_at": "2026-11-05T19:42:24Z",
+  "versions": {
+    "21": {
+      "sha256": "77aafb6d4bc8eb8a4489ad59a2b34e3da075f1e4adaea980dc314520fddc19bb",
+      "rows": 670,
+      "changed_rows_vs23": 45
+    },
+    "22": {
+      "sha256": "0a7041bc4ea8bd831895a98ffdaba12f4f619a34687b97ec2ebb2110a77d3502",
+      "rows": 670,
+      "changed_rows_vs23": 45
+    },
+    "23": {
+      "sha256": "5a24121837e0b57c226afbcc63a9e3e821b1fe2a3715db2b1a4ee73dca599ae6",
+      "rows": 670,
+      "changed_rows_vs23": 0
+    }
+  },
+  "selected": "v2.3, latest successor linked by repository on review date",
+  "limitations": [
+    "Overview title can be stale; pin resource ID and checksum.",
+    "Shared plants and country discrepancies held; no automatic alias merging.",
+    "Raw flow/availability may be modeled; not promoted to canonical measurements.",
+    "River Channel ID and Reservoir ID are model references, not official plant registry IDs."
+  ],
+  "units": {
+    "Latitude": "degrees",
+    "Longitude": "degrees",
+    "Capacity": "MW generating nameplate, historical source scope",
+    "Reservoir Size": "million cubic metres; not energy",
+    "Mean Annual Discharge": "m3/s; raw source may be modeled",
+    "Design Discharge": "m3/s",
+    "Filling Time": "days; derived raw value",
+    "Availability": "fraction or text; modeled assumptions possible",
+    "First Year": "year; source basis not promoted"
+  },
+  "resource_urls": {
+    "21": "https://www.hydroshare.org/resource/7def95046b9b480c89605e12233059e9/",
+    "22": "https://www.hydroshare.org/resource/87bf4534220343b79aeacce11d3631a7/",
+    "23": "https://www.hydroshare.org/resource/197eab83ae424be3804ee154ed98aea8/"
+  }
+}

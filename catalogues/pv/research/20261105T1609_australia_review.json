@@ -1,0 +1,89 @@
+{
+  "initial_identity_candidates": 48,
+  "phase_scope_examined": [
+    "Aldoga",
+    "Barcaldine Remote Community",
+    "Bomen"
+  ],
+  "phase_scope_holds": "Allthree have multiplecanonicalphases; no wholeprojectnameplate/IDs accepted fromonesurveyunit without scope reconciliation. Aldogaownerreuseblocked, NZEAgov503; Bomen/Barcaldineofficialheaders reviewed only.",
+  "singlephase_candidates_examined": 9,
+  "accepted_identity_enriched": 2,
+  "remaining_identity_candidates": 46,
+  "decisions": [
+    {
+      "record_id": "9e72e320-c974-514e-aaf9-2479fa427005",
+      "name": "Mulwala solar farm",
+      "duid": "MULWASF1",
+      "survey_row": 1100,
+      "survey_id": 1998,
+      "identity_review": "Unique exactreviewedcanonical and AEMO names; independently publishedNSWdepartmental projectheader and trackername/location; existingnativePV singlephase and NSWlocality agree; completeAEMOsiteonePVunit. No automaticname/proximitymerge, no coordinateschanged.",
+      "nsw_source_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/mulwala-solar-farm"
+    },
+    {
+      "record_id": "c242dbdf-face-539b-9c0f-59503e19d21d",
+      "name": "Wellington North solar farm",
+      "duid": "WELNSF1",
+      "survey_row": 1683,
+      "survey_id": 1960,
+      "identity_review": "Unique exactreviewedcanonical and AEMO names; independently publishedNSWdepartmental projectheader and trackername/location; existingnativePV singlephase and NSWlocality agree; completeAEMOsiteonePVunit. No automaticname/proximitymerge, no coordinateschanged.",
+      "nsw_source_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/wellington-north-solar-farm"
+    }
+  ],
+  "field_review": [
+    {
+      "as_of": "2026-10-30",
+      "sheet_row": 1100,
+      "survey_id": 1998,
+      "unit_id": 199801,
+      "duid": "MULWASF1",
+      "site_name": "Mulwala Solar Farm",
+      "technology": "Solar PV",
+      "technology_detail": "Single Axis Tracking",
+      "nameplate_ac_mw": 31.16,
+      "nameplate_dc_mw": 40.47,
+      "max_site_dispatch_ac_mw": 25,
+      "commitment_status": "In Commissioning",
+      "full_commercial_use_date": "2026-10-10 00:00:00",
+      "scope": "Single survey unit at site; exact existing DUID, no name/proximity merge",
+      "record_id": "9e72e320-c974-514e-aaf9-2479fa427005",
+      "fields_added": [
+        "capacity_dc_mw",
+        "owners"
+      ],
+      "conflicts": {
+        "capacity_ac_mw": {
+          "existing": 31,
+          "aemo_observation": 31.16
+        }
+      }
+    },
+    {
+      "as_of": "2026-10-30",
+      "sheet_row": 1683,
+      "survey_id": 1960,
+      "unit_id": 196001,
+      "duid": "WELNSF1",
+      "site_name": "Wellington North Solar Farm",
+      "technology": "Solar PV",
+      "technology_detail": "Single Axis Tracking",
+      "nameplate_ac_mw": 436.8,
+      "nameplate_dc_mw": 426.4,
+      "max_site_dispatch_ac_mw": 330,
+      "commitment_status": "In Service",
+      "full_commercial_use_date": null,
+      "scope": "Single survey unit at site; exact existing DUID, no name/proximity merge",
+      "record_id": "c242dbdf-face-539b-9c0f-59503e19d21d",
+      "fields_added": [
+        "capacity_ac_mw",
+        "owners"
+      ],
+      "conflicts": {
+        "capacity_dc_mw": {
+          "existing": 425,
+          "aemo_observation": 426.4
+        }
+      }
+    }
+  ],
+  "limitations": "CachedOctober2026 AEMO, actualretrieval retained; no retryduring403backoff. ExplicitaggregateAC/DCnameplates, notMaxSiteCapacitydispatch or planningcapacity. WellingtonNorth436.8MWAC versus330MWdispatch is preserved metricdistinction, no AC/DCinference. Mulwala31versus31.16AC andWellingtonNorth425versus426.4DC remainconflicts; oldvalueskept. No currentlifecycle or FCUDcommissioningdate assignments."
+}

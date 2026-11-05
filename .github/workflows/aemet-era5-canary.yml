@@ -1,0 +1,67 @@
+name: AEMET ERA5 Canary acquisition
+on:
+  push:
+    branches: [analysis/aemet-era5-degradation]
+    paths:
+      - .github/workflows/aemet-era5-canary.yml
+      - scripts/prepare_aemet_canary_calibration.py
+      - analysis/src/energy_analysis/aemet_era5_canary.py
+      - methods/src/energy_methods/weather_calibration.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: aemet-era5-canary-acquisition
+  cancel-in-progress: true
+jobs:
+  acquire:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: analysis/aemet-era5-degradation
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+        with:
+          version: '0.13.4'
+          python-version: '3.12'
+      - run: uv sync --locked --all-packages
+      - name: Acquire AEMET daily station observations
+        env:
+          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
+        run: uv run --no-sync python scripts/prepare_aemet_canary_calibration.py aemet
+      - name: Save AEMET checkpoint on study branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add examples/analysis/aemet_era5_canary
+          if ! git diff --cached --quiet; then
+            git commit -m 'Capture AEMET Canary daily observations for 2022-2023'
+            git pull --rebase origin analysis/aemet-era5-degradation
+            git push origin HEAD:analysis/aemet-era5-degradation
+          fi
+      - name: Acquire matching ERA5 cell histories
+        timeout-minutes: 45
+        run: uv run --no-sync python scripts/prepare_aemet_canary_calibration.py era5
+      - name: Calculate calibrated rate rasters and validate held-out data
+        run: uv run --no-sync python scripts/analyze_aemet_canary_calibration.py
+      - name: Render calibrated and comparison maps
+        env:
+          MPLBACKEND: Agg
+        working-directory: examples/analysis
+        run: uv run --no-sync python plot_aemet_era5_canary.py
+      - name: Save ERA5 inputs and model results on study branch
+        if: always()
+        run: |
+          git add -f examples/analysis/aemet_era5_canary
+          if ! git diff --cached --quiet; then
+            git commit -m 'Capture explicit ERA5 cell histories for Canary calibration'
+            git pull --rebase origin analysis/aemet-era5-degradation
+            git push origin HEAD:analysis/aemet-era5-degradation
+          fi
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: aemet-era5-canary-source-snapshots
+          path: outputs/aemet_era5_canary
+          retention-days: 30

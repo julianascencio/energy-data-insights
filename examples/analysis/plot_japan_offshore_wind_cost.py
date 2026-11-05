@@ -1,6 +1,6 @@
 """
 Japan offshore wind: when does CAPEX inflation break an investment case?
-=======================================================================
+====================================================================================================
 
 **News trigger:** Reuters, 5 November 2026, reported Tokyo Gas withdrawing
 from an offshore wind project near Kashima Bay, citing rising costs:
@@ -17,7 +17,7 @@ Other inputs are clearly labelled illustrative. No Kashima project's actual
 costs, financing, bids, output or future viability are inferred.
 
 Download the :download:`source assumptions and provenance
-<data/jwpa_offshore_cost_2026.json>`. Method details and limitations:
+<jwpa_offshore_cost_2026.json>`. Method details and limitations:
 :doc:`offshore-wind economic stress guide
 </_generated/guides/offshore-wind-economics>`.
 """
@@ -43,7 +43,7 @@ from energy_methods.offshore_wind_economics import (
 # *illustrative assumptions*, not an interpretation of any project's contract.
 
 root = Path(globals().get("__file__", Path.cwd() / "plot_japan_offshore_wind_cost.py"))
-source = root.resolve().parent / "data" / "jwpa_offshore_cost_2026.json"
+source = root.resolve().parent / "jwpa_offshore_cost_2026.json"
 benchmark = load_offshore_cost_snapshot(source)
 scenario = OffshoreWindScenario(
     capacity_mw=100.0,
@@ -123,7 +123,7 @@ plt.show()
 
 # %%
 # 4. Audit cash-flow consistency with an assumed (NOT awarded) tariff
-# ------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------
 # The break-even tariff produces approximately zero NPV by construction.
 # Compare it with a hypothetical 30 JPY/kWh flat real contract for an
 # illustrative 100 MW asset; this is not a Japanese market price forecast.

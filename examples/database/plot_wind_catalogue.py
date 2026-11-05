@@ -41,6 +41,23 @@ for row in rows:
     ext = json.loads(row.get("extensions_json") or "{}")
     if "capacity_by_aemo_status" in ext:
         print(row["name"], ext["capacity_by_aemo_status"], row["aggregation_role"])
+# Registry unit evidence does not resolve farm boundaries or missing farm MW.
+eia_projects = [
+    row
+    for row in rows
+    if row["entity_type"] == "projects"
+    and json.loads(row.get("extensions_json") or "{}").get("eia_annual_wind_partitions")
+]
+print(
+    "EIA evidence: project counts, not capacity totals",
+    {
+        "projects": len(eia_projects),
+        "unresolved_scope": sum(row["aggregation_role"] == "unresolved" for row in eia_projects),
+        "unknown_installed_mw": sum(
+            row.get("installed_capacity_mw") is None for row in eia_projects
+        ),
+    },
+)
 print("Published turbine power ratings require their measurement conditions")
 print(
     equipment.loc[
@@ -72,6 +89,51 @@ for row in rows:
     for update in json.loads(row.get("extensions_json") or "{}").get("oem_product_updates", []):
         print(row["name"], update["published_at"], update["operating_modes"])
         print(update["tower_configurations"], update["conditions"])
+
+# Retrospective prototype and production facts retain dates and exact model links.
+print("OEM historical observations: not current configuration or fleet retirement")
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "oem_historical_observations", []
+    ):
+        print(row["model"], observation["published_at"], observation["boundary"])
+        print(observation["facts"])
+
+# Reference yields are hypothetical five-year energy, never farm generation.
+reference_counts = {}
+reference_unknown_rotor = 0
+reference_corrections = 0
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "reference_yield_observations", []
+    ):
+        for entry in observation["rows"]:
+            reference_unknown_rotor += entry.get("rotor_diameter_m") is None
+            reference_corrections += entry.get("corrected_at") is not None
+            key = (observation["reference_site"], entry.get("withdrawn", False))
+            reference_counts[key] = reference_counts.get(key, 0) + 1
+print("FGW observation counts by reference site and withdrawn status:")
+print(dict(sorted(reference_counts.items())))
+print("Reference observations with unknown rotor diameter:", reference_unknown_rotor)
+print("Dated reference-yield corrections, not commissioning:", reference_corrections)
+print("Reference yields retain five-year kWh, hub/power settings and source notes.")
+print(
+    "Density, operating mode and gross/net boundary are unknown; no CF or performance comparison."
+)
+
+# Dated issuer listings retain expired and unknown status; options are not variants.
+certification_status = {}
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "certification_register_observations", []
+    ):
+        status = observation.get("registry_status", "unspecified")
+        certification_status[status] = certification_status.get(status, 0) + 1
+print(
+    "Certification registry observations by stated status:",
+    dict(sorted(certification_status.items())),
+)
+print("Unspecified status does not establish current validity; listed date is not commissioning.")
 
 # Annual EIA unit states do not reconcile whole-farm repowering or hybrid scope.
 print("EIA 2025 dated unit evidence: farm status/capacity exclusions remain unchanged")
@@ -535,3 +597,171 @@ for component in rows:
                 link["source_id"],
                 link["locator"],
             )
+
+# ONS rows may represent turbine groups. Count evidence, never infer farm totals.
+ons_snapshots = [
+    snapshot
+    for row in rows
+    if row["entity_type"] == "projects"
+    for snapshot in json.loads(row.get("extensions_json") or "{}").get(
+        "ons_wind_unit_snapshots", []
+    )
+]
+ons_units = [unit for snapshot in ons_snapshots for unit in snapshot["units"]]
+print(
+    "ONS daily evidence; unit rows are not individual turbines or farm capacity totals",
+    {
+        "snapshots": len(ons_snapshots),
+        "unit_observations": len(ons_units),
+        "unknown_nominal_mw": sum(u["reported_nominal_mw"] is None for u in ons_units),
+        "reported_zero_nominal_mw": sum(u["reported_nominal_mw"] == 0 for u in ons_units),
+    },
+)
+
+# Count reported ONS state labels per snapshot; these are not capacity totals.
+ons_state_evidence = {}
+for snapshot in ons_snapshots:
+    states = {u["original"].get("id_estado") for u in snapshot["units"]}
+    for state in sorted(states, key=lambda v: v or ""):
+        label = state or "Unknown state"
+        ons_state_evidence[label] = ons_state_evidence.get(label, 0) + 1
+print(
+    "ONS state coverage: snapshot counts, not installed MW",
+    dict(sorted(ons_state_evidence.items())),
+)
+
+# Deduplicate project/state pairs across unit rows and daily snapshots.
+ons_project_states = set()
+for row in rows:
+    if row["entity_type"] != "projects":
+        continue
+    for snapshot in json.loads(row.get("extensions_json") or "{}").get(
+        "ons_wind_unit_snapshots", []
+    ):
+        for unit in snapshot["units"]:
+            ons_project_states.add(
+                (row["record_id"], unit["original"].get("id_estado") or "Unknown")
+            )
+if ons_project_states:
+    state_counts = pd.Series([state for _, state in sorted(ons_project_states)]).value_counts()
+    fig, ax = plt.subplots(figsize=(8, 4))
+    state_counts.sort_index().plot.bar(ax=ax, color="#3d718e")
+    ax.set(
+        title="ONS project evidence by reported state",
+        ylabel="Projects with evidence",
+        xlabel="Reported state",
+    )
+    ax.text(
+        0,
+        -0.28,
+        "One project/state pair; no current fleet or capacity total inferred.",
+        transform=ax.transAxes,
+        fontsize=9,
+    )
+    fig.tight_layout()
+
+
+# Separate dated registry categories, with unknowns visible and no MW aggregation.
+siga_observations = [
+    observation
+    for row in rows
+    if row["entity_type"] == "projects"
+    for observation in json.loads(row.get("extensions_json") or "{}").get("epe_siga_snapshots", [])
+]
+if siga_observations:
+    categories = ["authorized_mw", "inspected_mw", "physical_guarantee_mw"]
+    counts = pd.DataFrame(
+        {
+            label: {
+                "Positive reported": sum(
+                    o["normalized_power"][label] is not None and o["normalized_power"][label] > 0
+                    for o in siga_observations
+                ),
+                "Reported zero": sum(o["normalized_power"][label] == 0 for o in siga_observations),
+                "Unknown": sum(o["normalized_power"][label] is None for o in siga_observations),
+            }
+            for label in categories
+        }
+    ).T
+    fig, ax = plt.subplots(figsize=(9, 4))
+    counts.plot.barh(stacked=True, ax=ax, color=["#3d718e", "#e7ab54", "#9a9a9a"])
+    dates = sorted({o["observation_date"] for o in siga_observations})
+    ax.set(
+        title="SIGA reported category completeness — " + ", ".join(dates),
+        xlabel="Registry observations; not summed MW",
+        ylabel="",
+    )
+    ax.text(
+        0,
+        -0.3,
+        "Physical guarantee is not installed capacity; unresolved scope exclusions remain.",
+        transform=ax.transAxes,
+        fontsize=9,
+    )
+    fig.tight_layout()
+
+
+# Counts of linked projects by dated state partition, not a national inventory.
+if siga_observations:
+    state_projects: dict[tuple[str, str], set[str]] = {}
+    for row in rows:
+        if row["entity_type"] != "projects":
+            continue
+        for observation in json.loads(row.get("extensions_json") or "{}").get(
+            "epe_siga_snapshots", []
+        ):
+            key = (observation["original"]["sigufprincipal"], observation["observation_date"])
+            state_projects.setdefault(key, set()).add(row["record_id"])
+    keys = sorted(state_projects)
+    fig, ax = plt.subplots(figsize=(9, 3.5))
+    ax.barh(
+        [f"{state} · {date}" for state, date in keys],
+        [len(state_projects[k]) for k in keys],
+        color="#3d718e",
+    )
+    ax.set(
+        title="SIGA evidence linked to existing projects",
+        xlabel="Distinct linked projects per state and date",
+    )
+    ax.text(
+        0,
+        -0.32,
+        "Selected state partitions only; unmatched identities held. "
+        "No capacity eligibility change.",
+        transform=ax.transAxes,
+        fontsize=9,
+    )
+    fig.tight_layout()
+
+# Exact table columns, with ranges plotted as options rather than installations.
+oem_columns = [
+    observation
+    for row in rows
+    if row["entity_type"] == "equipment"
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "oem_table_observations", []
+    )
+    if observation["source_id"] in row["sources"]
+]
+if oem_columns:
+    fig, ax = plt.subplots(figsize=(9, 4))
+    for observation in oem_columns:
+        values = observation["values"]
+        diameter = values["rotor_diameter_m"]
+        low, high = values["hub_height_range_m"]
+        ax.plot([diameter, diameter], [low, high], color="#3d718e", alpha=0.5)
+        ax.scatter([diameter, diameter], [low, high], s=12, color="#3d718e")
+    ax.set(
+        title="Windey 2022 exact-model tables: published hub options",
+        xlabel="Explicit rotor diameter (m)",
+        ylabel="Published hub-height option range (m)",
+    )
+    ax.text(
+        0,
+        -0.3,
+        f"{len(oem_columns)} reviewed model columns; overlapping options are not installations. "
+        "Density and operating mode unknown; no performance comparison.",
+        transform=ax.transAxes,
+        fontsize=8,
+    )
+    fig.tight_layout()

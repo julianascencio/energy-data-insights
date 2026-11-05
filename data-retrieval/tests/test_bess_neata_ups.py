@@ -277,3 +277,72 @@ def test_upper_mutations_fail(a, b):
 
     with pytest.raises(ValueError):
         parse_upper_voltage_cabinets(upper_sample().replace(a, b, 1))
+
+
+def final_sample():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import FINAL_CABINET_MODELS
+
+    row = (
+        "<tr>"
+        + "".join(
+            "<td>" + v + "</td>"
+            for v in [
+                "MODEL",
+                "614.4V30Ah",
+                "614.4",
+                "27",
+                "max.44.8KW",
+                "510~517.5(540)",
+                "15",
+                "27",
+                "41.6KW/10min",
+                "800",
+                "600",
+                "1165",
+                "257",
+            ]
+        )
+        + "</tr>"
+    )
+    return upper_sample().replace(
+        b"</table>",
+        ("".join(row.replace("MODEL", m) for m in FINAL_CABINET_MODELS) + "</table>").encode(),
+    )
+
+
+def test_final_native_conflict_retained():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_final_voltage_cabinets
+
+    rows = parse_final_voltage_cabinets(final_sample())
+    assert len(rows) == 23
+    assert rows[0]["battery_type_label"] == "614.4V30Ah"
+    assert rows[0]["pack_ah"] == "27"
+
+
+@pytest.mark.parametrize(
+    "a,b",
+    [
+        (b"NC36</td>", b"TC72</td>"),
+        (b"max.44.8KW", b"max.44.8KVA"),
+        (b"41.6KW/10min", b"41.6KW/10h"),
+        (b"614.4</td>", b"1024</td>"),
+    ],
+)
+def test_final_mutations_fail(a, b):
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_final_voltage_cabinets
+
+    with pytest.raises(ValueError):
+        parse_final_voltage_cabinets(final_sample().replace(a, b, 1))
+
+
+def test_final_missing_power_suffix_is_native_only_for_reviewed_models():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_final_voltage_cabinets
+
+    raw = final_sample().replace(
+        b"NC42</td><td>614.4V30Ah</td><td>614.4</td><td>27</td><td>max.44.8KW",
+        b"NC42</td><td>614.4V30Ah</td><td>614.4</td><td>27</td><td>max.44.8",
+    )
+    row = next(r for r in parse_final_voltage_cabinets(raw) if r["model"] == "NC42")
+    assert row["power_w"] == "max.44.8"
+    with pytest.raises(ValueError):
+        parse_final_voltage_cabinets(raw.replace(b"max.44.8KW", b"max.44.8", 1))

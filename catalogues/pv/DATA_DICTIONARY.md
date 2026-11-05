@@ -623,3 +623,20 @@ Ten exact SRNE models add140 canonical technical values and qualified PV/battery
 ### Research update — 5 November 2026, 08:00 UTC
 
 214 complete Chinese PV projects gain642 historical corporate owner/operator/context fields, exhausting the strict sole-owner/direct-operator partition. Fifteen exact KEMAPOWER CB combiner defaults add146 canonical technical values plus qualified mechanical, humidity, protection and per-way conditions. Multi-output currents are not summed; CB93 retains its explicit three outputs and CB101-1 its literal model spelling. DWH tuples remain raw qualified values pending axis confirmation. Q3 prior-consent rights and CHINT/Noark identity/configuration holds prevent acceptance from those tables. NERSA discovery remains rights/identity/power-scope held. See dated0800 reviews, manifests, audit, validation and source queue.
+
+### Research update — 5 November 2026, 09:00 UTC
+
+200 complete Chinese projects gain 400 historical operator/context fields without assigning owners or changing capacity/lifecycle. Seventeen KEMAPOWER ST and SAKO hybrid inverter models add 295 canonical technical values plus qualified grid, EPS, battery, PV, mechanical, environmental and warranty claims. Per-MPPT current/power vectors are not summed; maximum PV power is not rated Pdc; VA is not active W. SP-D revision conflicts, ST PV maximum/RS485 discrepancies, SAKO unlabelled axes and Isc scope remain held. Riello is rights-held; Catalunya/DGEG full inventories are not downloaded again. See dated0900 review/audit/coverage/report and resumable queue.
+
+### Research update — 5 November 2026, 10:00 UTC
+
+200 complete Chinese project identities gain 400 historical operator/evidence fields. Ten exact inverters (six Morningstar industrial SureSine and four SAKO) plus six Weidmüller fireman combiners add 202 canonical technical values and qualified conditions. No new projects, modules or trackers. Battery DC is not PV input; DC rated voltage is not maximum; per-MPPT/string currents are not summed. Conditional power, warranty, dimension, model-code and selector-output discrepancies remain held. See dated1000 reviews, audit, coverage and resumable source queue; no new adapter or untested feed integration claimed.
+
+### Research update — 5 November 2026, 11:55 UTC
+
+Imagine Instruments maximum total output current is distinct from per-input current
+and installed breaker rating. Fuse-holder component voltage is not system maximum;
+NEMA/UL enclosure claims do not establish an IP rating or assembly certification.
+Native dimensions remain qualified tuples until axes are established. MaStR unit
+staging preserves Bruttoleistung/Nettonennleistung separately in documented kW;
+allocated inverter power remains native, with no plant AC scalar or aggregation.

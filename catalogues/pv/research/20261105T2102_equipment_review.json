@@ -1,0 +1,1692 @@
+{
+  "reviewed": 13,
+  "accepted_new": 13,
+  "typed_values": 284,
+  "records": [
+    {
+      "model": "SE 5KTL-D3/G2",
+      "source_id": "senergy_small_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 5000,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 8.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 16.8,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "cooling_method": "Natural cooling",
+        "strings_per_mppt": 1
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column1: SE 5KTL-D3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 5500,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*8.4A",
+        "maximum_input_current_per_MPPT_A": [
+          15,
+          15
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20,
+          20
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          1,
+          1
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          260,
+          510
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 180,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 6KTL-D3/G2",
+      "source_id": "senergy_small_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 6000,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 10.1,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 16.8,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "cooling_method": "Natural cooling",
+        "strings_per_mppt": 1
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column2: SE 6KTL-D3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 6600,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*10.1A",
+        "maximum_input_current_per_MPPT_A": [
+          15,
+          15
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20,
+          20
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          1,
+          1
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          260,
+          510
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 180,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 8KTL-D3/G2",
+      "source_id": "senergy_small_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 8000,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 13.4,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 16.8,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "cooling_method": "Natural cooling",
+        "strings_per_mppt": 1
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column3: SE 8KTL-D3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 8800,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*13.4A",
+        "maximum_input_current_per_MPPT_A": [
+          15,
+          15
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20,
+          20
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          1,
+          1
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          260,
+          510
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 180,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 10KTL-D3/G2",
+      "source_id": "senergy_small_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 10000,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 17,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 16.8,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "cooling_method": "Natural cooling",
+        "strings_per_mppt": 1
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column4: SE 10KTL-D3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 11200,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*17A",
+        "maximum_input_current_per_MPPT_A": [
+          15,
+          15
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20,
+          20
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          1,
+          1
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          260,
+          510
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 180,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 12KTL-D3/G2",
+      "source_id": "senergy_small_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 12000,
+        "efficiency_max_pct": 98.3,
+        "efficiency_euro_pct": 97.8,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 20.2,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 18.7,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "cooling_method": "Natural cooling"
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column5: SE 12KTL-D3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 13200,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*20.2A",
+        "maximum_input_current_per_MPPT_A": [
+          15,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20,
+          40
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          1,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          260,
+          510
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 180,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 15KTL-D3/G2",
+      "source_id": "senergy_small_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 15000,
+        "efficiency_max_pct": 98.3,
+        "efficiency_euro_pct": 97.8,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "output_current_max_a": 25.3,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 18.7,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type III / AC Type III; Type II optional",
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "cooling_method": "Natural cooling"
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column6: SE 15KTL-D3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 16700,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*25.3A",
+        "maximum_input_current_per_MPPT_A": [
+          15,
+          30
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          20,
+          40
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          1,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          260,
+          510
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 180,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "AS4777.2"
+        ]
+      }
+    },
+    {
+      "model": "SE 30KTL-T3/G2",
+      "source_id": "senergy_mid_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 30000,
+        "efficiency_max_pct": 98.5,
+        "efficiency_euro_pct": 98,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 180,
+        "mppt_max_v": 1000,
+        "mppt_count": 3,
+        "output_current_max_a": 51,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 36,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type II / AC Type II",
+        "width_m": 0.635,
+        "height_m": 0.53,
+        "depth_m": 0.224,
+        "cooling_method": "Natural cooling",
+        "strings_per_mppt": 2
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column1: SE 30KTL-T3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 33400,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*51A",
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          45,
+          45,
+          50
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          2,
+          2,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          320,
+          520
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 200,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "PV_string_monitoring": "Optional; coverstringdetection is not standard scalar",
+        "consumption_monitoring": "Optional",
+        "PID_recovery": "Optional cover",
+        "night_SVG": "Optional cover",
+        "IV_detection": "Optional cover",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "CQC"
+        ]
+      }
+    },
+    {
+      "model": "SE 40KTL-T3/G2",
+      "source_id": "senergy_mid_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 40000,
+        "efficiency_max_pct": 98.5,
+        "efficiency_euro_pct": 98,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 180,
+        "mppt_max_v": 1000,
+        "mppt_count": 3,
+        "output_current_max_a": 67.5,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 40,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type II / AC Type II",
+        "width_m": 0.635,
+        "height_m": 0.53,
+        "depth_m": 0.224,
+        "cooling_method": "Smart cooling",
+        "strings_per_mppt": 2
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column2: SE 40KTL-T3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 44500,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*67.5A",
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          45,
+          45,
+          50
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          2,
+          2,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          320,
+          520
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 200,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "PV_string_monitoring": "Optional; coverstringdetection is not standard scalar",
+        "consumption_monitoring": "Optional",
+        "PID_recovery": "Optional cover",
+        "night_SVG": "Optional cover",
+        "IV_detection": "Optional cover",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "CQC"
+        ]
+      }
+    },
+    {
+      "model": "SE 50KTL-Q3/G2",
+      "source_id": "senergy_mid_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 50000,
+        "efficiency_max_pct": 98.5,
+        "efficiency_euro_pct": 97.9,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 180,
+        "mppt_max_v": 1000,
+        "mppt_count": 4,
+        "output_current_max_a": 84.3,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 42,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type II / AC Type II",
+        "width_m": 0.635,
+        "height_m": 0.53,
+        "depth_m": 0.224,
+        "cooling_method": "Smart cooling",
+        "strings_per_mppt": 2
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column3: SE 50KTL-Q3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 55600,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*84.3A",
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          32,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          45,
+          45,
+          45,
+          50
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          320,
+          520
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 200,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "PV_string_monitoring": "Optional; coverstringdetection is not standard scalar",
+        "consumption_monitoring": "Optional",
+        "PID_recovery": "Optional cover",
+        "night_SVG": "Optional cover",
+        "IV_detection": "Optional cover",
+        "grid_codes_OEM_claim": [
+          "VDE-AR-N4105",
+          "EN50549-1",
+          "CEI0-21",
+          "UNE206006/206007-1",
+          "RD1699/661&413",
+          "IEC61727/62116",
+          "CQC"
+        ]
+      }
+    },
+    {
+      "model": "SE 60KTL-Q3/G2",
+      "source_id": "senergy_mid_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 60000,
+        "efficiency_max_pct": 98.6,
+        "efficiency_euro_pct": 98,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 180,
+        "mppt_max_v": 1000,
+        "mppt_count": 4,
+        "output_current_max_a": 92,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 42,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type II / AC Type II",
+        "width_m": 0.635,
+        "height_m": 0.53,
+        "depth_m": 0.233,
+        "cooling_method": "Smart cooling",
+        "strings_per_mppt": 2
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column4: SE 60KTL-Q3/G2; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 66700,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*92A",
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          32,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          45,
+          45,
+          45,
+          50
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          320,
+          520
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 200,
+        "minimum_operating_voltage_V": null,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<1W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "PV_string_monitoring": "Optional; coverstringdetection is not standard scalar",
+        "consumption_monitoring": "Optional",
+        "PID_recovery": "Optional cover",
+        "night_SVG": "Optional cover",
+        "IV_detection": "Optional cover",
+        "grid_codes_OEM_claim": [
+          "IEC61727/62116",
+          "IEC61683",
+          "CQC"
+        ]
+      }
+    },
+    {
+      "model": "SE 100KTL-M3",
+      "source_id": "senergy_large_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 100000,
+        "efficiency_max_pct": 98.5,
+        "efficiency_euro_pct": 98,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 200,
+        "mppt_max_v": 1000,
+        "mppt_count": 8,
+        "output_current_max_a": 168.8,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 91.5,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type II / AC Type II",
+        "width_m": 0.936,
+        "height_m": 0.678,
+        "depth_m": 0.365,
+        "cooling_method": "Smart cooling",
+        "strings_per_mppt": 2
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column1: SE 100KTL-M3; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 111000,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*168.8A",
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          32,
+          32,
+          32,
+          40,
+          40,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          45,
+          45,
+          45,
+          45,
+          45,
+          50,
+          50,
+          50
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          320,
+          520
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 250,
+        "minimum_operating_voltage_V": 200,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<10W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "PV_string_monitoring": "Yes",
+        "consumption_monitoring": "Optional",
+        "PID_recovery": "Optional",
+        "cover_MPPT_claim": "9MPPT family maximum; exact100kW model table has8, accepted8",
+        "grid_codes_OEM_claim": [
+          "EN50549-1/-2",
+          "IEC61727/62116",
+          "VDE-AR-N4105",
+          "CEI0-21/16",
+          "UNE206006/206007-1",
+          "UNE217001"
+        ]
+      }
+    },
+    {
+      "model": "SE 110KTL-M3",
+      "source_id": "senergy_large_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 110000,
+        "efficiency_max_pct": 98.6,
+        "efficiency_euro_pct": 98.2,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 200,
+        "mppt_max_v": 1000,
+        "mppt_count": 9,
+        "output_current_max_a": 178,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 92,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type II / AC Type II",
+        "width_m": 0.936,
+        "height_m": 0.678,
+        "depth_m": 0.365,
+        "cooling_method": "Smart cooling",
+        "strings_per_mppt": 2
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column2: SE 110KTL-M3; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 123000,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*178A",
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          40,
+          40,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          45,
+          45,
+          45,
+          45,
+          45,
+          45,
+          50,
+          50,
+          50
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          320,
+          520
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 250,
+        "minimum_operating_voltage_V": 200,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<10W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "PV_string_monitoring": "Yes",
+        "consumption_monitoring": "Optional",
+        "PID_recovery": "Optional",
+        "cover_MPPT_claim": "9MPPT family maximum; exact100kW model table has8, accepted8",
+        "grid_codes_OEM_claim": [
+          "EN50549-1/-2",
+          "IEC61727/62116",
+          "VDE-AR-N4105",
+          "CEI0-21/16",
+          "UNE206006/206007-1",
+          "UNE217001"
+        ]
+      }
+    },
+    {
+      "model": "SE 125KTL-M3",
+      "source_id": "senergy_large_20261105T2102",
+      "typed_fields": {
+        "pac_rated_w": 125000,
+        "efficiency_max_pct": 98.8,
+        "efficiency_euro_pct": 98.2,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 200,
+        "mppt_max_v": 1000,
+        "mppt_count": 9,
+        "output_current_max_a": 181,
+        "dc_switch": true,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "weight_kg": 92,
+        "product_warranty_years": 5,
+        "communication_protocols": [
+          "RS485"
+        ],
+        "surge_protection": "DC Type II / AC Type II",
+        "width_m": 0.936,
+        "height_m": 0.678,
+        "depth_m": 0.365,
+        "cooling_method": "Smart cooling",
+        "strings_per_mppt": 2
+      },
+      "qualified_specs": {
+        "locator": "PDF page2 literal model column3: SE 125KTL-M3; named technical rows and shared-cell spans visually reviewed",
+        "identity_scope": "Exact literal model, not configurable voltage variant. G2 differs from G2P; T3/Q3/M3 differ from D3 and UL/LV CEC codes. No automatic fuzzy merge.",
+        "maximum_apparent_output_VA": 125000,
+        "current_scope": "Typed output current is per AC phase; native3* notation, never summed",
+        "maximum_AC_current_native": "3*181A",
+        "maximum_input_current_per_MPPT_A": [
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          40,
+          40,
+          40
+        ],
+        "maximum_short_circuit_current_per_MPPT_A": [
+          45,
+          45,
+          45,
+          45,
+          45,
+          45,
+          50,
+          50,
+          50
+        ],
+        "maximum_PV_strings_per_MPPT": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "current_scope_PV": "PerMPPT arrays, not aggregate",
+        "nominal_AC_voltage_alternatives_V": [
+          380,
+          400
+        ],
+        "grid_wiring": "3W+N+PE",
+        "AC_voltage_range_V": [
+          320,
+          520
+        ],
+        "voltage_frequency_scope": "Adjustable; source says ranges depend on grid code",
+        "nominal_grid_frequency_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "maximum_PV_configuration_STC_pct": 150,
+        "PV_power_scope": "Ratio only, no inferred rated DC power",
+        "start_input_voltage_V": 250,
+        "minimum_operating_voltage_V": 200,
+        "THDI_native": "<3% at rated power",
+        "DC_current_injection_native": "<0.5% at rated current",
+        "power_factor_native": ">0.99 at rated power; adjustable0.8LD–0.8LG",
+        "topology": "Transformerless",
+        "night_self_consumption_native": "<10W standard",
+        "relative_humidity_pct": [
+          0,
+          100
+        ],
+        "maximum_altitude_m": 4000,
+        "dimensions_scope": "OEMW*H*D; mm→m only",
+        "display": "Wireless &APP +LED; LCD optional",
+        "communications_optional": [
+          "WiFi",
+          "GPRS",
+          "LAN"
+        ],
+        "warranty_scope": "5years standard;10years optional, never default",
+        "safety_standards_OEM_claim": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "certification_scope": "OEM claims, not independently verified certificate or universal market approval",
+        "protection": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short circuit",
+          "DC reverse",
+          "insulation detection",
+          "leakage current"
+        ],
+        "body_date": null,
+        "publication_scope": "Upload path and HTTP Last-Modified are not publication dates",
+        "optional_AFCI": "AFCI2.0; source family/table qualifier only",
+        "PV_string_monitoring": "Yes",
+        "consumption_monitoring": "Optional",
+        "PID_recovery": "Optional",
+        "cover_MPPT_claim": "9MPPT family maximum; exact100kW model table has8, accepted8",
+        "grid_codes_OEM_claim": [
+          "EN50549-1/-2",
+          "IEC61727/62116",
+          "VDE-AR-N4105",
+          "CEI0-21/16",
+          "UNE206006/206007-1",
+          "UNE217001"
+        ]
+      }
+    }
+  ],
+  "scope": "Three visually reviewed OEM tables; existing manufacturer. No generic families expanded or artificial voltage variants. Rights assessment/source captures retained; bounded facts only."
+}
