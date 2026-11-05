@@ -1,0 +1,93 @@
+{
+  "checked_at": "2026-11-05T19:00:06.711687+00:00",
+  "ranking_basis": "Next useful independent evidence, reuse clarity and effort; held and exhausted sources separated from actionable discovery",
+  "entries": [
+    {
+      "priority_rank": 1,
+      "url": "https://www.kplc.co.ke/annual-reports",
+      "country_or_entity": "Kenya Power / Kenya",
+      "version_or_date": "2025 annual report index",
+      "checked_at": "2026-11-05T19:00:06.711687+00:00",
+      "access_and_licence": "Original report and rights not yet reviewed; no acceptance",
+      "estimated_useful_yield": "Unknown until battery-specific inventory review",
+      "offered_fields": "Operating assets, ownership, lifecycle",
+      "attempt_result": "Discovered as independent alternative; not extracted",
+      "processed_partition_or_cursor": "Index discovery only",
+      "retry_condition": "Original report accessible and reuse assessment complete",
+      "next_action": "Review original report battery-specific asset tables; do not substitute PV MW for battery MW or copy restricted REREC tables"
+    },
+    {
+      "priority_rank": 2,
+      "url": "https://rerec.co.ke/solar-mini-grids/",
+      "country_or_entity": "REREC / Kenya",
+      "version_or_date": "Undated page with June 2021 aggregate; not current operating evidence",
+      "checked_at": "2026-11-05T19:00:06.711687+00:00",
+      "access_and_licence": "https://rerec.co.ke/terms-and-conditions/ effective 2026-06-18: publication requires written permission",
+      "estimated_useful_yield": "36 named candidates; useful accepted yield unresolved",
+      "offered_fields": "Named sites, county, solar versus BESS capacity, historical status",
+      "attempt_result": "Source held before canonical identity acceptance; 27 GoK, 2 Southampton, 7 KEMP candidates screened",
+      "processed_partition_or_cursor": "Both tables and introductory technology classification reviewed; no import",
+      "retry_condition": "Compatible written reuse permission or independent evidence, not a copied mirror",
+      "next_action": "Reconcile spelling aliases, shared Wasini/Mkwiro identity and current lifecycle; do not infer BESS power from solar ratings"
+    },
+    {
+      "priority_rank": 3,
+      "url": "https://www.exidegroup.com/uk/sites/default/files/2023-04/230404_Sonnenschein_A600_technicaldata.pdf",
+      "country_or_entity": "Exide / Sonnenschein",
+      "version_or_date": "2023-04 filename",
+      "checked_at": "2026-11-05T19:00:06.711687+00:00",
+      "access_and_licence": "https://www.exidegroup.com/en/legal-notice October 2022; private informational use only; publication restricted",
+      "estimated_useful_yield": "Potential multi-model table; exact useful yield not reviewed",
+      "offered_fields": "Exact stationary cell specifications",
+      "attempt_result": "Rights hold; first local download script failed before network request; not retried after terms review",
+      "processed_partition_or_cursor": "Discovery and terms only; no candidate rows accepted",
+      "retry_condition": "Compatible permission or independent OEM source with compatible terms",
+      "next_action": "Do not use distributor mirrors to evade OEM restrictions"
+    },
+    {
+      "priority_rank": 4,
+      "url": "https://www.ritarpower.com/uploads/file/20251219/rida-lead-acid-battery-catalog-2025.pdf",
+      "country_or_entity": "Ritar / Rida catalogue",
+      "version_or_date": "2025 catalogue filename",
+      "checked_at": "2026-11-05T19:00:06.711687+00:00",
+      "access_and_licence": "https://www.ritarpower.com/terms-and-conditions-legal-information.html requires permission for duplication/distribution/derivatives",
+      "estimated_useful_yield": "Potential multi-model table; exact useful yield not reviewed",
+      "offered_fields": "Stationary battery model tables",
+      "attempt_result": "Original downloaded; technical extraction stopped at reuse gate; no accepted model rows",
+      "processed_partition_or_cursor": "Source sample and terms; no canonical partition",
+      "retry_condition": "Compatible permission or independently authored compatible source",
+      "next_action": "Resolve Rida/Ritar entity naming and review exact-model table only after rights cleared"
+    },
+    {
+      "priority_rank": 5,
+      "url": "https://www.scatec.com/en/project/south-africa/",
+      "country_or_entity": "Scatec / South Africa",
+      "version_or_date": "Undated live owner portfolio",
+      "checked_at": "2026-11-05T19:00:06.711687+00:00",
+      "access_and_licence": "Copyright retained; bounded comparison only",
+      "estimated_useful_yield": "0 incremental facts found among 3 BESS entries",
+      "offered_fields": "Capacity, stage, owner roles",
+      "attempt_result": "Kenhardt, Mogobe and Haru already covered, including newer Mogobe delay evidence; no timestamp updates",
+      "processed_partition_or_cursor": "All 3 BESS projects; solar-only rows excluded",
+      "retry_condition": "Substantively newer primary evidence",
+      "next_action": "Review lifecycle changes only; retain hybrid versus battery ratings"
+    },
+    {
+      "priority_rank": 6,
+      "url": "https://www.victronenergy.com/upload/documents/Victron-Energy-Limited-Warranty-Policy-2025-(P).pdf",
+      "country_or_entity": "Victron Energy",
+      "version_or_date": "2025-(P) filename, no printed issue date",
+      "checked_at": "2026-11-05T19:00:06.711687+00:00",
+      "access_and_licence": "Copyright retained; bounded factual policy observations; no full document republication",
+      "estimated_useful_yield": "40 existing exact configurations enriched",
+      "offered_fields": "Warranty duration, invoice cap, claim chain, optional extension and repair term",
+      "attempt_result": "40 accepted enrichments, 0 new; general policy scope explicit",
+      "processed_partition_or_cursor": "All 40 existing MultiPlus/MultiPlus-II configurations; batteries excluded",
+      "retry_condition": "Changed original policy or serial-specific purchase terms",
+      "next_action": "No replay of same policy as new enrichment; seek missing model-specific technical evidence elsewhere"
+    }
+  ],
+  "prior_backlog": "2026-11-05_topzs_tonga_backlog.json",
+  "retained_backoffs": "Prior queue and source-specific backoffs unchanged; no gated source retried",
+  "next_highest_value": "Kenya Power original annual report battery-specific asset inventory, subject to rights and technology review; TPL after saved 6 November backoff"
+}

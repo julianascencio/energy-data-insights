@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **2,134 project and plant records across
-47 countries**, supported by **393 registered sources**. It combines curated
+The BESS section contains **2,149 project and plant records across
+48 countries**, supported by **409 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -284,3 +284,13 @@ The IESO-derived LT1, E-LT1 and LT2 procurement facts retain this attribution:
 Copyright © 2004-2022 Independent Electricity System Operator, all rights reserved.
 This information is subject to the Terms of Use set out in the IESO’s website
 (www.ieso.ca). Procurement selection does not establish current operation.
+
+Latest iteration: [TAB exact cells/blocks and Slovenian project reconciliation](research/2026-11-05_tab_slovenia.md).
+
+Latest iteration: [Latvian owner portfolio and TAB OPzV research](research/2026-11-05_opzv_latvia.md): eight separately named sites, with portfolio capacity and financing kept separate from site ratings.
+
+Latest iteration: [25 TAB OGi exact models and South African lender evidence](research/2026-11-05_ogi_south_africa.md). Includes one independently reconciled project and seven procurement enrichments; model capacity conflicts and source-access holds remain explicit.
+
+Latest continuation: [40 Victron warranty enrichments and African inventory screening](research/2026-11-05_victron_warranty.md). No new project/model rows; reuse holds and candidate counts remain explicit.
+
+Latest continuation: [Kenyan battery replacements and nine exact installation enrichments](research/2026-11-05_kenya_installation.md).
