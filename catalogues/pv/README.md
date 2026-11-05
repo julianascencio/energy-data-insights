@@ -387,6 +387,19 @@ it does not write the catalogue. An AEMO site with multiple survey rows
 requires separate review. GA points retain their native GDA2020 reference;
 GA's unspecified generation rating is never used as AC or DC capacity.
 
+`australia.stage_aemo_exact_enrichment` also stages reviewed null-field fills
+from a complete Generation Information worksheet. Each explicit decision pins
+the existing record, DUID, survey ID, physical row and approved fields. It
+requires a unique existing DUID (or one exact native phase DUID), a single
+source unit at the site and an unambiguous canonical identity. Names alone,
+multi-unit sites and mixed-technology sites do not qualify. Only explicit
+aggregate nameplate AC/DC and financial-owner columns fill nulls; dispatch
+capacity and forecast commercial-use dates remain separate observations.
+Existing values and contexts are preserved, and disagreements are returned in
+the review ledger. The [October workbook review](research/20261105T1327_aemo_review.json)
+contains the accepted decisions and retained ownership differences. This is a
+reviewed enrichment path, not an automatic unit-to-project discovery feed.
+
 ### Catalonia named PV review staging
 
 The Catalonia adapter handles dataset `ggx8-jkp4` (named ground-mounted PV

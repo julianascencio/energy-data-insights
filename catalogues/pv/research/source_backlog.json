@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T13:09:16.559004+00:00",
-  "ranking_file": "20261105T1255_top10_gaps.json",
-  "selection_note": "200 existing project and10 existing combiner enrichments;420 fields. France31 and utility12 reviewed without accepted changes. No new equipment variants/records/adapter claimed.",
-  "next_highest_value_source": "GEM corporate operators after L100000827925,1015 predicate-eligible before review. MissingAC priority remains MaStR exact unit-to-existing-project crosswalk; no unit-as-project ingestion.",
+  "updated_at": "2026-11-05T13:46:12.994152+00:00",
+  "ranking_file": "20261105T1327_top10_gaps.json",
+  "selection_note": "200China +27Australia existingprojects enriched;12Deye exactinverters added. AEMO ordinaryaccess recovered, reusable exactDUID null-field path with20tests;62candidatecrosswalks remain held. No private owner details or unit-as-project imports.",
+  "next_highest_value_source": "AEMO62held candidate plant/phase crosswalks for missingAC; GEM afterL100000828967 with815predicateeligible before review. Skip unchanged ODRELoire and monthlyworkbooks.",
   "sources": [
     {
       "id": "uk_repd",
@@ -17624,6 +17624,281 @@
       "retry_condition": "Fresh revision or independent evidence resolving saved identity/scope/rights; source backoff respected.",
       "next_due_check": "2026-12-01T06:00:00Z",
       "next_action": "Skip unchanged partition; independently reconcile named EIC/phase holds or inspect newly released monthly snapshot."
+    },
+    {
+      "id": "gem_operator_20261105T1327",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CC BY4.0; entire TZ/WKSL locations excluded",
+      "access_assessment": "Ordinary public GET, no login/contact/access-control bypass. Raw documents outsideGit.",
+      "last_release": "February2026",
+      "publication_cadence": "Release-based; cached partitions advanced, no hourly full download",
+      "last_attempt": "2026-11-05T13:46:12.994152+00:00",
+      "last_retrieval": "2026-11-05T13:30:15.103705+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+          "retrieved_at": "2026-11-05T13:30:15.103705+00:00",
+          "status": 200,
+          "sha256": "33b4d3358e08101893872cc71cc70b31d030d63f89bb9128eabf9cb7e844b1a1",
+          "bytes": 134149,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 13:06:15 GMT",
+          "final_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker",
+          "raw_name": "gem.html"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+          "retrieved_at": "2026-11-05T11:57:14.680485+00:00",
+          "status": 200,
+          "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+          "bytes": 16516689,
+          "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+          "last_modified": null,
+          "final_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+          "raw_name": "cached art1155/raw/gem.xlsx",
+          "cache_reused": true
+        }
+      ],
+      "mapping": "Exact physical row/model and field mapping in1327_aemo_review,1327_equipment_review or1327_project_review; ordinary canonical upsert. Candidate identities and source observations are distinct from accepted fields.",
+      "processed_cursor": {
+        "after": "L100000827925",
+        "next": "L100000828967",
+        "remaining_predicate_eligible": 815,
+        "manual_review_required": true
+      },
+      "fields_offered": [
+        "historical corporate operators",
+        "completephase context"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 200,
+        "accepted": 200,
+        "unprocessed_verified_yield": null
+      },
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "result": "200 reviewed→200 enriched,400 operator/evidence fields. Corporate labels manually checked, native/source completephase and operator equality required. Cached pinned workbook reused; fresh landing stillFebruary2026.",
+      "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
+      "next_due_check": "2026-11-12T13:27:00Z",
+      "next_action": "Resume afterL100000828967; recompute815eligible before corporate/nativephase review."
+    },
+    {
+      "id": "aemo_oct_exact_20261105T1327",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "endpoint": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "format": "XLSX",
+      "licence_assessment": "AEMO general permission with accurate attribution; workbook invokes permission; confidential/third-party commissioned documents excluded",
+      "access_assessment": "Ordinary public GET, no login/contact/access-control bypass. Raw documents outsideGit.",
+      "last_release": "2026-10-30",
+      "publication_cadence": "Monthly Generation Information release; metadata/ETag before repeating workbook",
+      "last_attempt": "2026-11-05T13:46:12.994152+00:00",
+      "last_retrieval": "2026-11-05T13:30:54.586689+00:00",
+      "captures": [
+        {
+          "url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+          "retrieved_at": "2026-11-05T13:30:14.845760+00:00",
+          "status": 200,
+          "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+          "bytes": 950741,
+          "etag": "0bff23fd31cd4e39be18d6b2aac81276",
+          "last_modified": "Fri, 30 Oct 2026 06:24:27 GMT",
+          "final_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+          "raw_name": "aemo-oct.xlsx"
+        },
+        {
+          "url": "https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions",
+          "retrieved_at": "2026-11-05T13:30:54.586689+00:00",
+          "status": 200,
+          "sha256": "6af250548e123ccb6d8ada14e2da337644ad27d3160e85731fa207d52a87a92c",
+          "bytes": 163710,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions",
+          "raw_name": "aemo-rights.html"
+        }
+      ],
+      "mapping": "Exact physical row/model and field mapping in1327_aemo_review,1327_equipment_review or1327_project_review; ordinary canonical upsert. Candidate identities and source observations are distinct from accepted fields.",
+      "processed_cursor": {
+        "workbook_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+        "sheet": "Generator Information",
+        "physical_rows_through": 1797,
+        "explicit_PV_screen_complete": true,
+        "reviewed_exact_DUIDs": 34,
+        "remaining_identity_candidates": 62,
+        "review_file": "20261105T1327_aemo_review.json"
+      },
+      "fields_offered": [
+        "aggregate nameplate AC/DC",
+        "financial owner",
+        "native unit/site/status/date observations"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 366,
+        "accepted": 27,
+        "unprocessed_verified_yield": null
+      },
+      "reviewed": 366,
+      "accepted": 27,
+      "rejected": 0,
+      "result": "Normal October workbook access recovered;366 explicitPV rows/356sites screened;96 exact-ID/name candidates;34 exactDUID/singleunit decisions reviewed→27enriched/58fields,7unchanged.12 AC and12 DC nameplates,24 owner nulls,10 contexts. Ten ownerlabel/scope differences retained;62 other candidatecrosswalks held. 270 unmatched PVrows not imported. New tested null-field function; not automaticprojectdiscovery.",
+      "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
+      "next_due_check": "2026-11-30T06:00:00Z",
+      "next_action": "Prioritize independent plant/phase crosswalks for62held candidates; use existing Geoscience Australia identity workflow and owner/connection permits. Do not accept exactnames alone or MaxSiteCapacity as PVnameplate. Skip identical workbook."
+    },
+    {
+      "id": "deye_sg05lp3_sm2_20261105T1327",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/download/product-2/",
+      "endpoint": "https://www.deyeinverter.com/download/product-2/",
+      "format": "PDF technical tables",
+      "licence_assessment": "OEM copyright retained, bounded factual model extraction; no open bulk/document licence asserted",
+      "access_assessment": "Ordinary public GET, no login/contact/access-control bypass. Raw documents outsideGit.",
+      "last_release": "OEMlisting2026-09-14; filetoken20260911",
+      "publication_cadence": "OEM revision-based; refresh index before unchanged PDFs",
+      "last_attempt": "2026-11-05T13:46:12.994152+00:00",
+      "last_retrieval": "2026-11-05T13:30:54.591346+00:00",
+      "captures": [
+        {
+          "url": "https://www.deyeinverter.com/download/product-2/",
+          "retrieved_at": "2026-11-05T13:29:08.838465+00:00",
+          "status": 200,
+          "sha256": "f64f0a71899205d15768bdd48110a6c1f7237794407f5c5c001fb72a176d84d4",
+          "bytes": 406902,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.deyeinverter.com/download/product-2/",
+          "raw_name": "deye-downloads.html"
+        },
+        {
+          "url": "https://www.deyeinverter.com/privacy-policy/",
+          "retrieved_at": "2026-11-05T13:30:54.591346+00:00",
+          "status": 200,
+          "sha256": "3c5ea659094f9778426969e4cb6ac245071c319ab37d49285b319c1ce6e76443",
+          "bytes": 70976,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.deyeinverter.com/privacy-policy/deye-inverter-data-privacy-policy.html",
+          "raw_name": "deye-privacy.html"
+        },
+        {
+          "url": "https://hqcdn.hqsmartcloud.com/deyeinverter/2026/09/14/BDatasheetSUN-14-20K-SG05LP3-EU-SM220260911en.pdf",
+          "retrieved_at": "2026-11-05T13:30:14.861558+00:00",
+          "status": 200,
+          "sha256": "49a2d95e6d4e838c773e51c3b7003fc0616192c009e536be9116b96ef9e57c05",
+          "bytes": 311054,
+          "etag": "\"FiJTOrvMSMLM0ch8EtysKgdp8459\"",
+          "last_modified": "Mon, 14 Sep 2026 05:52:42 GMT",
+          "final_url": "https://hqcdn.hqsmartcloud.com/deyeinverter/2026/09/14/BDatasheetSUN-14-20K-SG05LP3-EU-SM220260911en.pdf",
+          "raw_name": "deye14-20.pdf"
+        },
+        {
+          "url": "https://hqcdn.hqsmartcloud.com/deyeinverter/2026/09/14/BDatasheetSUN-3-12K-SG05LP3-EU-SM220260911en.pdf",
+          "retrieved_at": "2026-11-05T13:30:14.845766+00:00",
+          "status": 200,
+          "sha256": "aadde4f68ead76ffa413e97ef7e86261ba4a1b8bdeab272a9b9364c0f065f514",
+          "bytes": 295403,
+          "etag": "\"FiirHZaNN2jzwHZqk4MHv0RXHjfc\"",
+          "last_modified": "Mon, 14 Sep 2026 05:18:38 GMT",
+          "final_url": "https://hqcdn.hqsmartcloud.com/deyeinverter/2026/09/14/BDatasheetSUN-3-12K-SG05LP3-EU-SM220260911en.pdf",
+          "raw_name": "deye3-12.pdf"
+        }
+      ],
+      "mapping": "Exact physical row/model and field mapping in1327_aemo_review,1327_equipment_review or1327_project_review; ordinary canonical upsert. Candidate identities and source observations are distinct from accepted fields.",
+      "processed_cursor": {
+        "completed_models": [
+          "SUN-3K-SG05LP3-EU-SM2",
+          "SUN-4K-SG05LP3-EU-SM2",
+          "SUN-5K-SG05LP3-EU-SM2",
+          "SUN-6K-SG05LP3-EU-SM2",
+          "SUN-8K-SG05LP3-EU-SM2",
+          "SUN-10K-SG05LP3-EU-SM2",
+          "SUN-12K-SG05LP3-EU-SM2",
+          "SUN-14K-SG05LP3-EU-SM2",
+          "SUN-15K-SG05LP3-EU-SM2",
+          "SUN-16K-SG05LP3-EU-SM2",
+          "SUN-18K-SG05LP3-EU-SM2",
+          "SUN-20K-SG05LP3-EU-SM2"
+        ],
+        "table_pages": [
+          2,
+          2
+        ]
+      },
+      "fields_offered": [
+        "active AC rating",
+        "perMPPT PV current/strings",
+        "PVvoltage",
+        "efficiency",
+        "mechanical/environmental",
+        "battery/control observations"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 12,
+        "unprocessed_verified_yield": null
+      },
+      "reviewed": 12,
+      "accepted": 12,
+      "rejected": 0,
+      "result": "12 exact EU-SM2 hybrid models added;276typed specifications plus battery/PV current, derating, conditional warranty/AC observations. Existing canonicalmanufacturer reused; no AU/SM3-Pconfig expansion. No universal warranty, pairedACcurrent or maximumPV→ratedDC scalar inference.",
+      "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
+      "next_due_check": "2026-12-05T13:27:00Z",
+      "next_action": "Selected tables exhausted; prioritize independent tracker/combiner OEM depth or missing existing specifications, not regional or MPPT-only variants."
+    },
+    {
+      "id": "circutor_rights_20261105T1327",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://circutor.com/en/legal-notice/",
+      "endpoint": "https://circutor.com/en/legal-notice/",
+      "format": "HTML legal notice",
+      "licence_assessment": "Explicit prohibition on unapproved downloading/storage/reproduction/transformation of website content; no licence inferred",
+      "access_assessment": "Ordinary public GET, no login/contact/access-control bypass. Raw documents outsideGit.",
+      "last_release": "Undated current legal notice",
+      "publication_cadence": "Recheck only if applicable rights change",
+      "last_attempt": "2026-11-05T13:46:12.994152+00:00",
+      "last_retrieval": "2026-11-05T13:29:10.322941+00:00",
+      "captures": [
+        {
+          "url": "https://www.circutor.com/en/legal-notice/",
+          "retrieved_at": "2026-11-05T13:29:10.322941+00:00",
+          "status": 200,
+          "sha256": "676e90826f1929ec3fad82f58d92800e085d009e87f3e8aafb35b47c6e740dae",
+          "bytes": 65324,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 13:29:23 GMT",
+          "final_url": "https://circutor.com/en/legal-notice/",
+          "raw_name": "circutor-legal.html"
+        }
+      ],
+      "mapping": "Exact physical row/model and field mapping in1327_aemo_review,1327_equipment_review or1327_project_review; ordinary canonical upsert. Candidate identities and source observations are distinct from accepted fields.",
+      "processed_cursor": {
+        "technical_models_reviewed": 0,
+        "rights_hold": true
+      },
+      "fields_offered": [
+        "potential string/combiner specifications; not extracted"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "unprocessed_verified_yield": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "Rights assessment only; no technical documents or model rows extracted/accepted.",
+      "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
+      "next_due_check": "2026-12-05T13:27:00Z",
+      "next_action": "Wait for suitable rights basis or choose independent OEM; no contact/form submitted."
     }
   ],
   "source_refresh_queue": [
