@@ -555,3 +555,67 @@ reviewed native names, owner/operator and administrative context. It preserves
 site rows and monthly observations as qualified extensions, without changing
 canonical capacity, lifecycle, coordinates, phase IDs or equipment links. The
 214ha Tainan land-area field uses separately licensed city-government evidence.
+
+Taiwan private solar inventory candidates retain `company_native`,
+`plant_name_native`, `locality_native`, `installed_kw_native`,
+`commercial_year_roc_native` and `cell_origin_rows` outside canonical records.
+The source's merged company/name/year cells are expanded with physical origins;
+repeated blocks are never summed or merged automatically. Native solar labels do
+not prove every row's PV technology, and no company-role, AC/DC, exact-date or
+current-status mapping is automatic. Physical staging cursors do not count accepted plants; dated manual reviews distinguish candidates, phase associations and accepted whole projects.
+
+SWELECT Nexora exact-model records use base STC rows only. Rear-gain scenarios
+are contextual, not extra models or STC efficiency. NOCT, bifaciality and weight
+tolerances, absolute-watt power binning and measurement uncertainty remain in
+`extensions_json`. Generic 35A fuse ratings do not populate a maximum-fuse scalar.
+Exact applicable Rev04 warranty scope and commencement conditions accompany
+12/30-year durations and 1% first-year / 0.4% subsequent annual degradation terms.
+
+The 5 November Daliao depot record uses explicit primary photovoltaic/licence
+evidence and one regulator plant row. Its ROC103/104 commercial-year disagreement
+remains qualified context; neither commissioning date nor current status is inferred.
+Registry company associations do not automatically populate owners/operators.
+
+TBB RiiO Sun II and Hoymiles MIT fields retain PV versus battery input, per-tracker
+versus aggregate current, inverter versus charger efficiency and apparent VA versus
+active W. Explicit maximum W is not promoted to continuous rated active power.
+Unlabelled dimension axes, bounds, optional communications and source-specific
+transfer times remain in extensions. Published standards are OEM claims.
+
+LIVOLTEK hybrid records keep per-tracker vectors, EPS peak duration, nominal
+voltage alternatives and battery limits in qualified extensions. HP2 combined
+W/VA nominal rows do not establish an unambiguous active-power scalar. Conflicting
+MPPT upper bounds, battery currents and Hyper dimension axes remain null; a
+merged KL2 current cell spanning unequal power models is held for clarification.
+
+DEGER tracker extensions retain maximum module-dependent Wp, module surface/load,
+partial assembly mass and planning-tool wind conditions. These do not populate
+exact array power/area, complete tracker mass or universal wind-design scalars.
+Dual-axis drive/control IP ratings remain component-specific. The single-axis
+model has explicit -50/+50 degree rotation limits. The material-defect contract
+retains two-year claims and ten-year inside-out steel rust-through conditions;
+these do not establish unrestricted product/structural warranty scalars.
+
+Afore full-power MPPT windows and battery/backup conditions are distinguished
+from the general MPPT window and grid active power. kVA remains apparent power;
+conflicting IP, PV maxima, cooling, mass and duration assertions are withheld.
+Noark input strings are upper bounds; per-output disconnector ratings are not
+summed into plant current. ADME authorized injection MW stays in a dated context,
+separate from installed AC/DC capacity and party roles. Uruguay module/area
+values from environmental consultation describe proposed design, not operation.
+
+### Research update — 5 November 2026, 04:00 UTC
+
+200 existing Chinese projects gain directly reported historical sole corporate owners, operators and complete-phase evidence (600 substantive fields). Seventeen SAJ (existing canonical Guangzhou Sanjing manufacturer) and eleven EPEVER (new manufacturer) exact inverter models add469 canonical technical values plus qualified conditions. SAJ regional suffixes and duplicated PDF pages are excluded. EPEVER continuous AC watts, timed overload watts, battery-side charge currents and temperature-qualified PV open-circuit limits stay distinct. Native H×W×L dimensions map L to length, not assumed depth; generic warranty claims remain qualified context. No grid-export capability or current availability is inferred. See dated0400 review, source captures, coverage, validation and report; rights/access-limited Canadian and Solinteg candidates remain unaccepted.
+
+### Research update — 5 November 2026, 05:00 UTC
+
+Three historical Steca inverter-chargers and three distinct Antaisolar trackers are added. Twelve existing INHENERGY models gain60typed dimension/topology/string fields with nativeL/W/H axes preserved.211projects gain611historical party/reference fields. ARENA2018integerAC/mounting references remain historical contexts; scalar capacities, lifecycle and installed mounting are unchanged. Steca VA and efficiency bounds are not activeW/exact efficiencies. Tracker maxima/options remain project-dependent and component warranties stay separate. See dated0500review/audit/report and persistent source queue.
+
+### Research update — 5 November 2026, 06:00 UTC
+
+200 complete Chinese projects gain historical corporate owners, operators and phase-linked evidence (600 fields). Eleven exact Felicitysolar hybrid models add 155 canonical technical values plus qualified battery, PV, grid, backup, mechanical and environmental conditions. Backup watts do not establish grid rated active watts; per-tracker and battery currents remain separate. Unlabelled axes, warranty applicability, ambiguous string layouts and inconsistent full-load voltage limits stay qualified or held. Cáseda huerta rows remain separate from nearby Viscofan; the exact BON resolution endpoint returns 503. See the dated 06:00 source, project, equipment, identity, audit and validation ledgers.
+
+### Research update — 5 November 2026, 07:00 UTC
+
+Ten exact SRNE models add140 canonical technical values and qualified PV/battery/grid/load conditions. ASP link bytes are manualVer1.9 dated21August2026 despite the old filename. Battery-only efficiency, apparent peaks, typical transfer time, unlabelled axes and the HESP DC surge-class disagreement remain qualified or held.200projects gain600 historical corporate-party/context fields. Two battery busbars are excluded from PV combiners. NERSA's September2026 workbook is newly accessible through its public Registered entities category; reuse/identity/power scope remains unresolved and zero plants are accepted. See dated0700review, source captures, audit, coverage and report.

@@ -1,0 +1,102 @@
+{
+  "accepted_new_projects": 2,
+  "records": [
+    {
+      "record_id": "4d98ea9a-2912-5396-ba2a-b05e3d467f0e",
+      "name": "Taipei MRT Beitou Depot rooftop solar plant",
+      "fields": [
+        "record_id",
+        "entity_type",
+        "sources",
+        "quality_status",
+        "name",
+        "aliases",
+        "country_code",
+        "region",
+        "locality",
+        "location_accuracy",
+        "technology",
+        "mounting_type",
+        "capacity_unspecified_mw",
+        "capacity_basis",
+        "commissioning_year",
+        "developers",
+        "extensions_json",
+        "field_sources_json"
+      ],
+      "evidence": {
+        "reviewed_project_evidence": {
+          "ceremony_not_exact_COD": true,
+          "commercial_operation_ceremony_date_as_reported": "2019-08-30",
+          "company_column_not_automatically_owner_operator": true,
+          "developer_role": "Primary press explicitly says Yuding planned and built; legal company identity reviewed against registry. EPC/owner/operator roles not inferred.",
+          "expected_annual_generation_as_reported": "Nearly4millionkWh; approximate, not an exact scalar",
+          "inventory_row": 17,
+          "inventory_source": "taiwan_private_pair_20261105T0130",
+          "module_area_approximate_m2": 20000,
+          "module_count_lower_bound_exclusive": 10000,
+          "native_commercial_year_ROC": "108",
+          "native_installed_kw": "3797.28",
+          "no_present_status_or_coordinates_inferred": true,
+          "primary_capacity_kw_approximate": 3797,
+          "primary_source": "taipei_beitou_20190830_20261105T0130",
+          "roof_host_not_plant_owner": true,
+          "source_company_native": "昱鼎電業股份有限公司",
+          "whole_plant_identity": "Exact native depot/water-treatment site, public primary photovoltaic evidence, regulator plant name/locality and matching installed-power magnitude; individual roofs not separate projects"
+        }
+      }
+    },
+    {
+      "record_id": "3536d8dc-aec1-5dba-88cd-2482db12c024",
+      "name": "Taipei Changxing Water Purification Plant rooftop solar plant",
+      "fields": [
+        "record_id",
+        "entity_type",
+        "sources",
+        "quality_status",
+        "name",
+        "aliases",
+        "country_code",
+        "region",
+        "locality",
+        "location_accuracy",
+        "technology",
+        "mounting_type",
+        "capacity_unspecified_mw",
+        "capacity_basis",
+        "operators",
+        "module_count",
+        "expected_annual_generation_mwh",
+        "extensions_json",
+        "field_sources_json"
+      ],
+      "evidence": {
+        "reviewed_project_evidence": {
+          "commissioning_year_not_populated": "2019planned inauguration is not proof of actualCOD; registry2020commercial-year may have a licensing scope. Retain both events pending licence/COD reconciliation, not a silent date choice.",
+          "company_column_not_automatically_owner_operator": true,
+          "generation_native_expected_kwh": 2130000,
+          "generation_scope": "Published annual forecast asof2019, not measured annual yield",
+          "inventory_row": 18,
+          "inventory_source": "taiwan_private_pair_20261105T0130",
+          "native_commercial_year_ROC": "109",
+          "native_installed_kw": "2136.96",
+          "no_present_status_or_coordinates_inferred": true,
+          "operator_scope": "Historical contracted responsibility for construction, operation and maintenance; not present ownership/operation verification",
+          "planned_inauguration_date": "2019-06-25",
+          "primary_capacity_mw_approximate": 2.13,
+          "primary_issue_date": "2019-06-10",
+          "primary_source": "taipei_changxing_20190610_20261105T0130",
+          "reported_module_count_asof": "2019-06-10",
+          "roof_area_approximate_m2": 20300,
+          "roof_host_not_plant_owner": true,
+          "roof_lease_scope": "Host roof lease, not PPA duration or asset lifetime",
+          "roof_lease_term_upper_bound_years": 20,
+          "source_company_native": "昱鼎電業股份有限公司",
+          "whole_plant_identity": "Exact native depot/water-treatment site, public primary photovoltaic evidence, regulator plant name/locality and matching installed-power magnitude; individual roofs not separate projects"
+        }
+      }
+    }
+  ],
+  "identity_review": "All63existingTWNrecords/names/aliases/nativephases reviewed,includingall1.9–4.4MWcandidates;no matching canonical plant. Two incoming plants occupy distinct named sites and districts; no phase aggregation/double count.",
+  "date_scope_hold": "Changxing2019planned inauguration versusregistryROC109commercialyear remainsunresolved; no exact commissioningyear/date populated. Beitou2019year agrees across primary operational announcement andregistryROC108."
+}

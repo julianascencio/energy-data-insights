@@ -1,0 +1,138 @@
+{
+  "new_backlog_entries": [
+    {
+      "id": "taiwan_energy_private_solar_20261104T2155",
+      "country": "TWN",
+      "entity": "project_candidates",
+      "source_url": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "endpoint": "https://www.moeaea.gov.tw/ECW/populace/content/Content.aspx?menu_id=1001&sub_menu_id=5648",
+      "format": "HTMLcaptionedtable,rowspan-expandingofflinecandidate reader",
+      "licence_assessment": "ExplicitOGDLTaiwanv1.0 source-specific declaration,sourceattributionretained",
+      "terms_url": "https://www.moeaea.gov.tw/ECW/populace/content/ContentFoot.aspx?menu_id=2900",
+      "terms_sha256": "99f997810966478358b8b642a5dc03aae91478ae4d4156092ee0e2bf1a6715a5",
+      "publication_cadence": "Not stated;contentdated2026-01-26,statistics2025-12-31;globalfooter115-11-04isnotdatasetrelease",
+      "last_release": "2026-01-26",
+      "last_retrieval": "2026-11-04T21:57:16.851567+00:00",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
+      "sha256": "edae11f5c3806bd785b6e79eb7d9eb6873055996c7453dbbaefa3c010986c126",
+      "etag": null,
+      "fields_offered": [
+        "nativecorporation",
+        "nativeplantlabel",
+        "administrativelocality",
+        "installedkWunknownACDC",
+        "nativeROCcommercialyear"
+      ],
+      "mapping": "pv_catalogue.taiwan_private.read_taiwan_private_pv;fivepubliccolumns;noautoupsert",
+      "processed_cursor": {
+        "last_staged_physical_data_row": 100,
+        "source_data_rows": 787,
+        "remaining_unstaged_rows": 687,
+        "accepted_plants": 0,
+        "first_company_group_to_reconcile": "rows1-12森勁",
+        "cursor_scope": "Snapshotrowonly,notplantregistryID"
+      },
+      "reviewed": 100,
+      "accepted": 0,
+      "rejected": 0,
+      "held_candidates": 100,
+      "estimated_useful_yield": {
+        "source_rows": 787,
+        "bounded_candidates_staged": 100,
+        "verified_future_accepted_yield": null
+      },
+      "result": "Readercomplete,14newguardtests;first100stagedandexactnative-labelscreened,0accepted. Rowspans,repeatedphaseblocks,PVpositiveclassification andcompanyrolesrequiremanualreview.",
+      "retry_condition": "Recheckconditionalmetadata/checksum before resuming;reviewfirstcompletecompanygroupbeforeadvancingacceptance",
+      "next_action": "Reconcilefirst12rows森勁 againstnativephases/aliases andindependentprimaryPV/ownershipevidence. Thenrows13-22昱鼎. Stagingcursor100doesnotmean100plantsprocessed.",
+      "next_due_check": "2026-12-04T21:55:00Z"
+    },
+    {
+      "id": "swelect_nexora_20261104T2155",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.swelectes.com/knowledgehub/downloads.php",
+      "endpoint": "https://www.swelectes.com/knowledgehub/downloads.php",
+      "format": "Threeimage-onlyOEMPDFtables,manuallyvisuallyverified;Rev04warrantytext+renderreview",
+      "licence_assessment": "OEMcopyrightretained;factualspecificationsonly,noopen-contentlicenceorPDF/fullmanualredistribution",
+      "terms_url": "https://www.swelectes.com/privacy-policy.php",
+      "last_release": "DatasheetsVER02.02.2026;warrantySHPV/D&D-Warranty/145-Rev04,issuedateunprinted",
+      "last_retrieval": "2026-11-04T21:58:18.500229+00:00",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
+      "sha256": "b3ab5427a77483aaa9f3a32a495833f39dfc2ea0a456bdda9924864830d1fdb3",
+      "etag": null,
+      "publication_cadence": "OEMrevision-based",
+      "fields_offered": [
+        "STCIV/power/efficiency",
+        "halfcellcount/layout",
+        "weight/dimensions/glass",
+        "thermal/environment",
+        "exactmodelwarranty/degradationconditions"
+      ],
+      "mapping": "Manual18exactmodelrows through existingupsertAPI;threephysicallydistinctcellcount/sizefamilies,notbifacialgain/cableoptionrows",
+      "processed_cursor": {
+        "selected_tables_exhausted": 3,
+        "accepted_models": 18,
+        "canonical_technical_values": 468,
+        "warranty_applicability_exact": true
+      },
+      "reviewed": 18,
+      "accepted": 18,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "accepted_modules": 18,
+        "new_manufacturers": 1,
+        "canonical_technical_values": 468
+      },
+      "result": "18moduleswith26canonicaltechnicalvalues/model,qualified35Afuselabel(notmax),80±5bifaciality,45±2NOCT,±5weight,0/+4.99Wbin,STCmeasurementuncertainty,12/30yearwarrantyand1%/.4%degradationterms",
+      "retry_condition": "ChangedOEMrevisionornewphysicallydistinctproducttable;avoidoptionsiblings",
+      "next_action": "Distinctunderrepresentedtracker/combinerOEMtablewithanexactmodelidentity;selectedNexora3tablesexhausted",
+      "next_due_check": "2026-12-04T21:55:00Z"
+    },
+    {
+      "id": "mibet_tracker_screen_20261104T2155",
+      "country": "CHN",
+      "entity": "trackers",
+      "source_url": "https://www.mbtenergy.com/mounting-systems/single-axis-tracker",
+      "endpoint": "https://www.mbtenergy.com/mounting-systems/single-axis-tracker",
+      "format": "OEMHTMLgenericfamilyoverview",
+      "licence_assessment": "Allrightsreservedfooter;noexactmodeltechnicalPDFlinkedontheinspectedpage",
+      "last_attempt": "2026-11-04T22:07:59.756955+00:00",
+      "last_release": null,
+      "last_retrieval": "2026-11-04T21:56:54.179555+00:00",
+      "sha256": "49693f27a0a79c124208202ac820c6e6e4a27cd561d6f7557346f601823f94f0",
+      "etag": null,
+      "publication_cadence": "Unstated",
+      "fields_offered": [
+        "genericdrive/backtracking/SCADA/stow/terrain/warrantyclaims"
+      ],
+      "mapping": "Discoveryonly;noexactmodelaccepted",
+      "processed_cursor": {
+        "generic_families_screened": 1,
+        "exact_models_accepted": 0
+      },
+      "estimated_useful_yield": {
+        "accepted": 0,
+        "verified_future_yield": null
+      },
+      "result": "Singleaxisoverviewdoesnotestablishexactmodel/configurationorsourceversion;marketingenergygainnotparameter. Noform/contactsubmitted.",
+      "retry_condition": "FindpublicexactMRacmodeltechnicaldatasheetandversion/terms",
+      "next_action": "SeekOEMexactMRacPDF,otherwiseanothertrackerpublisher;do notcreateathinconfigurablefamilyrow.",
+      "next_due_check": "2026-12-04T21:55:00Z"
+    }
+  ],
+  "source_register_total": 481,
+  "new_source_entries": 10,
+  "new_tested_readers": 1,
+  "new_reader_accepted_records": 0,
+  "primary_batches_processed": {
+    "GEM_complete_location_partition": 1,
+    "SWELECT_model_tables": 3,
+    "SWELECT_applicable_warranty": 1,
+    "Taipower_site_partition": 1,
+    "Taipower_station_month_partition": 1,
+    "independent_government_identity_sources": 2,
+    "Taiwan_private_solar_inventory": 1,
+    "Mibet_generic_overview": 1
+  },
+  "seed_queues_schedule_backoff_preserved": true
+}

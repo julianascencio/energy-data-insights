@@ -504,3 +504,54 @@ No coordinates or present operation are inferred. Tainan's214ha area and dated
 20MW/20MWh storage use separately licensed government evidence; earlier proposed
 15MW storage and incompatible forecast/rating scopes stay qualified. See
 `research/20261104T2030_taiwan_review.json` and the updated attribution notice.
+
+The offline `pv_catalogue.taiwan_private.read_taiwan_private_pv` reader validates
+Taiwan Energy Administration's checksum-pinned private solar inventory. It checks
+the exact caption and five public columns, preserves merged-cell origin rows,
+native kW and ROC-year text, and stages bounded physical-row partitions. The
+26 January 2026 content reports statistics through 31 December 2025: 787 solar
+rows, with the first400 staged. Manual primary-source reviews associate rows1–10
+with an existing Sungen phase aggregate and accept **one Daliao depot plant**
+from row13. No plants are accepted from newly staged rows101–400. Daliao
+commissioning-year evidence conflicts and remains unpopulated.
+Repeated rows/phases, positive PV technology, company roles and AC/DC basis need
+manual review. Row cursors are not native facility IDs. See the
+[Taiwan inventory attribution](licenses/TAIWAN_ENERGY_PRIVATE_OGDL_NOTICE.md).
+
+LIVOLTEK Hyper, HP3 D2/KL2 and HP2 L1P exact models retain region, battery,
+PV, EPS and grid conditions separately. The 5 November review leaves disputed
+Hyper width/height axes, HP2 MPPT upper bounds and battery currents, and a
+suspicious shared KL2 output-current value unpopulated. See the dated
+`research/20261105T0058_equipment_review.json` for both source observations.
+
+Five exact DEGER trackers retain component IP ratings, module-load and module-area
+bounds, conditional wind limits and source-specific drive/control conditions.
+Contractual defect-liability periods are qualified separately from unrestricted
+product or structural warranties. Beitou and Changxing rooftop plant identities
+use independent primary city evidence; Changxing planned-opening and regulatory
+commercial-year scopes remain distinct. See the dated 5 November 01:30 reviews.
+
+The 5 November 03:00 review adds reconciled Afore SL/THP specifications, a
+DEGER D18H tracker and two distinct Noark combiner architectures. Conflicting
+PDF/live-table assertions stay in the dated equipment review. Uruguay ADME
+Table10 contributes authorized UTE-grid injection limits and generating-agent
+contexts to eight existing plants; these are not installed AC/DC ratings or
+owner/operator assignments. Lucía's November environmental consultation adds
+proposed modules/area while preserving its earlier DC rating. See
+`research/20261105T0300_report.md` and the explicit additive-context resolutions.
+
+### Research update — 5 November 2026, 04:00 UTC
+
+200 existing Chinese projects gain directly reported historical sole corporate owners, operators and complete-phase evidence (600 substantive fields). Seventeen SAJ (existing canonical Guangzhou Sanjing manufacturer) and eleven EPEVER (new manufacturer) exact inverter models add469 canonical technical values plus qualified conditions. SAJ regional suffixes and duplicated PDF pages are excluded. EPEVER continuous AC watts, timed overload watts, battery-side charge currents and temperature-qualified PV open-circuit limits stay distinct. Native H×W×L dimensions map L to length, not assumed depth; generic warranty claims remain qualified context. No grid-export capability or current availability is inferred. See dated0400 review, source captures, coverage, validation and report; rights/access-limited Canadian and Solinteg candidates remain unaccepted.
+
+### Research update — 5 November 2026, 05:00 UTC
+
+Three historical Steca inverter-chargers and three distinct Antaisolar trackers are added. Twelve existing INHENERGY models gain60typed dimension/topology/string fields with nativeL/W/H axes preserved.211projects gain611historical party/reference fields. ARENA2018integerAC/mounting references remain historical contexts; scalar capacities, lifecycle and installed mounting are unchanged. Steca VA and efficiency bounds are not activeW/exact efficiencies. Tracker maxima/options remain project-dependent and component warranties stay separate. See dated0500review/audit/report and persistent source queue.
+
+### Research update — 5 November 2026, 06:00 UTC
+
+200 complete Chinese projects gain historical corporate owners, operators and phase-linked evidence (600 fields). Eleven exact Felicitysolar hybrid models add 155 canonical technical values plus qualified battery, PV, grid, backup, mechanical and environmental conditions. Backup watts do not establish grid rated active watts; per-tracker and battery currents remain separate. Unlabelled axes, warranty applicability, ambiguous string layouts and inconsistent full-load voltage limits stay qualified or held. Cáseda huerta rows remain separate from nearby Viscofan; the exact BON resolution endpoint returns 503. See the dated 06:00 source, project, equipment, identity, audit and validation ledgers.
+
+### Research update — 5 November 2026, 07:00 UTC
+
+Ten exact SRNE models add140 canonical technical values and qualified PV/battery/grid/load conditions. ASP link bytes are manualVer1.9 dated21August2026 despite the old filename. Battery-only efficiency, apparent peaks, typical transfer time, unlabelled axes and the HESP DC surge-class disagreement remain qualified or held.200projects gain600 historical corporate-party/context fields. Two battery busbars are excluded from PV combiners. NERSA's September2026 workbook is newly accessible through its public Registered entities category; reuse/identity/power scope remains unresolved and zero plants are accepted. See dated0700review, source captures, audit, coverage and report.
