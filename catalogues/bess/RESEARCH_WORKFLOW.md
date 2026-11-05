@@ -16,7 +16,11 @@ or a live availability feed. Do not interpret record counts as installed capacit
    local languages when useful. Check recent status updates as well as technical
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
-4. For TAB OGi PDF page 6, `scripts/stage_bess_tab_ogi.py` stages the
+4. For TAB UPS PDF pages 8–9, `scripts/stage_bess_tab_ups.py` stages
+   the 15-model table. C10 Ah belongs to the cell/monobloc; timed W/cell
+   observations are not continuous unit power. Preserve rate-specific final voltage
+   and reference temperature, dry/wet mass, and the printed compensation-unit hold.
+   For TAB OGi PDF page 6, `scripts/stage_bess_tab_ogi.py` stages the
    reviewed 25-model partition. Preserve kA fault current, 2 V cell versus
    6/12 V monobloc Ah, and PDF dry/wet versus website wet/dry mass order.
    Page 7 supplies operating conditions; do not normalize its questionable
