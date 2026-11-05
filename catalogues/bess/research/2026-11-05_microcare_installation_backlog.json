@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-05T12:55:18.909875+00:00",
+  "previous_backlog": "2026-11-05_microcare_mauritius_backlog.json",
+  "source_decisions": [
+    {
+      "url": "https://www.tcil.net.in/tender/pdf/25H221_2.pdf",
+      "entity_country": "CEB / Mauritius",
+      "version": "CPB/22/2025, issued 2025-08-11",
+      "access_license": "Original public tender PDF; copyright retained, bounded factual review only",
+      "yield": 2,
+      "fields": [
+        "site scope",
+        "capacity",
+        "chemistry",
+        "grid voltage",
+        "applications",
+        "tender identifiers",
+        "completion conditions"
+      ],
+      "attempt_result": "Two sites accepted; existing Pointe Monnier plant explicitly separate. PSIP aggregate mapping remains unassigned.",
+      "processed_partition": "Sections 1.0, 2.4.1 and 2.4.2(h); both sites",
+      "retry_condition": "New tender amendment, award or commissioning evidence",
+      "next_action": "Check procurement award and final scope; do not infer delivery from elapsed forecast",
+      "priority": 1
+    },
+    {
+      "url": "https://microcare.co.za/solar-monitoring/",
+      "entity_country": "Microcare / South Africa",
+      "version": "Undated public product page",
+      "access_license": "Public page copyright retained; no bulk reuse licence asserted",
+      "yield": "Four candidate control/monitoring products",
+      "fields": [
+        "control functions",
+        "interfaces",
+        "voltage ranges"
+      ],
+      "attempt_result": "Discovery only; exact model/configuration and manual applicability unresolved, no rows accepted",
+      "processed_partition": "Battery Monitor, Web Logger, Battery Monitor Sensor, 4 Channel Relay",
+      "retry_condition": "Obtain exact product datasheets and model identity",
+      "next_action": "Review linked PDFs and distinguish accessories from standalone EMS",
+      "priority": 2
+    },
+    {
+      "url": "https://microcare.co.za/bi-directional-inverters/",
+      "entity_country": "Microcare / South Africa",
+      "version": "Registered 2018/2021 manuals",
+      "access_license": "Bounded factual manual review; original bytes outside Git",
+      "yield": 17,
+      "fields": [
+        "ambient operating temperature",
+        "installation environment",
+        "clearances",
+        "parallel restrictions"
+      ],
+      "attempt_result": "17 enriched; 1–5 kW original fresh checksum matches; 5–8 kW refresh returned 503, retained earlier same-day verified original; 10–15 kW original downloaded successfully",
+      "processed_partition": "Safety and installation sections of all three manuals",
+      "retry_condition": "Manufacturer manual revision changes",
+      "next_action": "Do not repeat this completed partition; preserve 200/300 mm distinction",
+      "priority": 3
+    }
+  ],
+  "inherited_holds": "Earlier backlog remains applicable, including Tamarind Falls and CEA backoff until 2026-11-06T07:59:49Z."
+}
