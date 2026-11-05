@@ -21,7 +21,14 @@ or a live availability feed. Do not interpret record counts as installed capacit
    6/12 V monobloc Ah, and PDF dry/wet versus website wet/dry mass order.
    Page 7 supplies operating conditions; do not normalize its questionable
    temperature-compensation unit or choose between conflicting web/PDF capacities.
-   Website-only models require a separate review.
+   Website-only models were separately reviewed on 5 November.
+   `scripts/stage_bess_tab_ogi_web.py --cells cells.json --output staged.json`
+   accepts a local JSON array of `td/th` text in DOM order, retaining empty cells.
+   The malformed live HTML must not be grouped by `tr`. Check all 41 identities,
+   rate/end-voltage headers and wet/dry mass order; 25 previously imported models
+   are reconciliation-only, not new rows. Fourteen extra rows omit the shortest
+   rate capacity and nominal voltage; the live page states no capacity temperature.
+   Do not transfer brochure-only conditions to these website-only models.
    For TAB stationary OPzS PDF tables, `scripts/stage_bess_tab_opzs.py`
    stages the 22-cell or six-block partition (`--partition blocks`). It rejects
    changed units/mass order, duplicates and partial tables. Cell Ah and block Ah,
