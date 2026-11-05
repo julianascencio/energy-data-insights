@@ -7627,5 +7627,57 @@
     "locator": "Physical page1, Technical Specifications/600V and /1000V; exact named model columns and row labels",
     "access_assessment": "Public OEM product page and its explicitly linked downloadable PDF, no gate or form. Product page exposes no specific reuse terms link; no affirmative open licence asserted. Retain raw bytes outside Git and publish factual model records only.",
     "limitations": "Product page repeats both tables. Exact catalogue defaults, not arbitrary customised configurations. CB93 explicitly has3outputs despite generic1/2way marketing line. CB101-1 retained literally. Multi-output per-way currents stay in extensions; no aggregate current calculation. DWH-labelled dimension tuples retained verbatim in extensions; canonical axes held pending confirmation. No SPD type, fuse amp rating, certification or warranty inferred."
+  },
+  "gem_operators_complete_20261105T0900": {
+    "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+    "publisher": "Global Energy Monitor",
+    "title": "GEM February2026:200 complete historical corporate operator locations",
+    "license": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+    "retrieved_at": "2026-11-05T08:06:43.631938+00:00",
+    "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+    "release": "February 2026",
+    "methodology_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+    "verified_at": "2026-11-05T09:04:35.205569+00:00",
+    "locator": "Utility-Scale (1 MW+) sheet; exact physical rows/phase IDs in 0900_project_review",
+    "limitations": "Operator-only historical enrichment; no owner inferred. Complete source/native phase-set and exact operator-value equality; entire TZ/WKSL locations excluded. Existing cached pinned workbook SHA256 verified; no redownload."
+  },
+  "kemapower_st_20261105T0900": {
+    "url": "https://download.s21i.co99.net/27866245/0/0/ABUIABA9GAAgv4PqyQYo4q7vpAI.pdf?f=ST%205-30K%203P%20on%20grid%20202409.pdf&v=1765441983",
+    "publisher": "KEMAPOWER Electronics Co., Ltd.",
+    "title": "ST 5–30KW Three Phase On Grid Inverter",
+    "retrieved_at": "2026-11-05T09:01:56.342070+00:00",
+    "sha256": "a170c5b82d6c701b9ee579b6fe6699668439cb5c8e3dea8dc740d4eb835a5cf4",
+    "release": "Undated document; filename contains202409, not asserted publication/revision date",
+    "license": "OEM copyright retained; bounded independently reviewed factual specifications only. No PDF/image/expressive table redistribution or open bulk licence claimed.",
+    "landing_url": "https://www.kemapower.com/on-grid-solar-inverter/5-30kw.html",
+    "landing_sha256": "75a3eb033d2c41e538d377d6bb8844d26fc32058f33d217f2fea6fe0657b6cce",
+    "locator": "Physical page1, Technical Specifications, exact model column and named row labels",
+    "limitations": "PDF/HTML discrepancies held in0900 equipment review. Currents stay per-MPPT vectors or per-output native values; no sums. AC apparent VA never converted toW. Region-specific voltage/frequency limits and optional interfaces retained. No certification/warranty inferred."
+  },
+  "kemapower_st40_20261105T0900": {
+    "url": "https://download.s21i.co99.net/27866245/0/0/ABUIABA9GAAg4-TpyQYouJLvrgI.pdf?f=ST%2040-60K%203P%20ON%20Grid%20202409.pdf&v=1765440099",
+    "publisher": "KEMAPOWER Electronics Co., Ltd.",
+    "title": "ST 40–60KW Three Phase On Grid Inverter",
+    "retrieved_at": "2026-11-05T09:01:56.345968+00:00",
+    "sha256": "405f41c69b232d2b1917f614f26a35dbfb7c1127c8491ae315172c253789ec7a",
+    "release": "Undated document; filename contains202409, not asserted publication/revision date",
+    "license": "OEM copyright retained; bounded independently reviewed factual specifications only. No PDF/image/expressive table redistribution or open bulk licence claimed.",
+    "landing_url": "https://www.kemapower.com/on-grid-solar-inverter/40-60kw.html",
+    "landing_sha256": "8ad937258abe6d74d4f53b8522fe38500c7de812c8eb912513ebb8a91caa7a07",
+    "locator": "Physical page1, Technical Specifications, exact model column and named row labels",
+    "limitations": "PDF/HTML discrepancies held in0900 equipment review. Currents stay per-MPPT vectors or per-output native values; no sums. AC apparent VA never converted toW. Region-specific voltage/frequency limits and optional interfaces retained. No certification/warranty inferred."
+  },
+  "sako_latam_202609_20261105T0900": {
+    "url": "https://sakopower.com/wp-content/uploads/2026/09/202609-SAKO-E-catalogue-of-solar-products-110Vac.pdf",
+    "publisher": "Shenzhen Sako Solar Co., Ltd. (SAKO)",
+    "title": "SAKO 110Vac solar products catalogue, September2026 linked edition",
+    "retrieved_at": "2026-11-05T09:10:34.943563+00:00",
+    "sha256": "fd55dcd9e8030fa0c286434b2d86c93dc7b109f9660fddab9a9a0251aee78915",
+    "license": "OEM copyright retained; bounded manually reviewed factual specifications only. No document/image/expressive table redistribution or open bulk licence claimed.",
+    "landing_url": "https://sakopower.com/download/",
+    "release": "Filename202609; PDF title2026.8.26; metadata modified2026-09-01. These are separately reported, not inferred certification dates.",
+    "locator": "Physical page4 / printed01–02 SUNSEE-AMERY; physical page8 / printed09–10 SUNIN-KM3-US",
+    "access_assessment": "Public OEM download page links exact PDF; no gate/contact/form. No specific restrictive reuse terms link exposed on retrieved product/download pages. Quantitative facts only; raw bytes outsideGit.",
+    "limitations": "LATAM120/240Vac and208Vac conditions kept; voltage options not separate rows. ActiveW, apparentVA and battery/PV current scopes kept distinct. SUNIN headlineIP66 versus tableNEMA4X retained as separate native claims; no inferred equivalence. UL1547 literal source wording held as unverified certification context, not corrected. SUNSEE unlabelled dimension axes remain null. Warranty durations are table claims, conditions/commencement not established."
   }
 }

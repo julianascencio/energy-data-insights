@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T08:20:56.386842+00:00",
+  "updated_at": "2026-11-05T09:20:06.278042+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "Exhaust final214 strict complete corporate-party locations; extract entire15model KEMAPOWER CB table; independently screen Q3/CHINT/CNC/Kehua and NERSA rights.",
-  "next_highest_value_source": "Strict Chinese sole-owner/direct-operator queue is exhausted atL100001062171. Resume broader GEM operator partition after savedL100000802626 only after a fresh eligibility/remaining-count calculation; prioritize missingAC through MaStR reviewed-unit-to-project crosswalk. For independent equipment, KEMAPOWER inverter catalogue needs a separate model/rights/activeW-versusVA review; CB tables exhausted. NERSA remains rights/identity/power-scope held.",
+  "selection_note": "Resume broader operator cursor after strict owner/operator partition exhausted;200complete Chinese locations enriched;17 exact inverter models across KEMAPOWER and newly reviewed SAKO. Independent Riello rights block retained; Catalunya/DGEG metadata checks avoid repeated full inventories.",
+  "next_highest_value_source": "GEM broader operator queue afterL100000803871;1615predicate-eligible locations remain before manual review. IndependentOEM:SAKO catalogue physical pages5–7/9, beginning phase-specific SUNSEE10/12KW and exact SUNIN codes. For missingAC use saved MaStR reviewed-unit/project crosswalk; no capacity conversion. DGEG34held suggestions require independent permit/site evidence, not new bulk scrape.",
   "sources": [
     {
       "id": "uk_repd",
@@ -16220,6 +16220,294 @@
       "accepted": 0,
       "rejected": 0,
       "held": 0
+    },
+    {
+      "id": "gem_broader_operator_20261105T0900",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February2026",
+      "format": "XLSX",
+      "licence_assessment": "CCBY4.0; source-specific entireTZ/WKSL exclusions retained",
+      "access_assessment": "Ordinary public GET only; capture metadata/checksums in20261105T0900_source_captures.json. No login/contact/bypass.",
+      "fields_offered": [
+        "historical operator",
+        "qualified complete-phase context"
+      ],
+      "last_attempt": "2026-11-05T09:20:06.278042+00:00",
+      "last_retrieval": "2026-11-05T09:20:06.278042+00:00",
+      "publication_cadence": "Release-based/irregular unless documented; metadata before unchanged full download",
+      "next_due_check": "2026-11-12T09:00:00Z",
+      "estimated_useful_yield": {
+        "reviewed_selected": 200,
+        "accepted": 200,
+        "remaining_verified_yield": "Unknown; see explicit cursor, not an acceptance promise"
+      },
+      "result": "200reviewed→200enriched;400substantive fields. No owner assigned. Fresh landing stillFebruary2026; cached exact pinned workbook reused. EntireTZ/WKSLlocations excluded; exact native/source phase sets andoperator values agree.",
+      "processed_cursor": {
+        "after": "L100000802626",
+        "next": "L100000803871",
+        "eligible_before_selected_manual_review": 1815,
+        "remaining_predicate_eligible": 1615,
+        "remaining_requires_manual_corporate_review": true,
+        "review_file": "20261105T0900_project_review.json"
+      },
+      "next_action": "Fresh source/PRchecks, then next bounded complete corporate cohort afterL100000803871; no stale remaining-count reuse.",
+      "retry_condition": "Fresh source revision or new evidence resolving held identity/scope/rights",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0
+    },
+    {
+      "id": "kemapower_st_20261105T0900",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.kemapower.com/on-grid-solar-inverter/5-30kw.html",
+      "version_or_date": "Current snapshot",
+      "format": "HTML/PDF",
+      "licence_assessment": "OEMcopyright retained; factual specifications only; no PDF/image/expressive table redistribution/open bulk licence asserted",
+      "access_assessment": "Ordinary public GET only; capture metadata/checksums in20261105T0900_source_captures.json. No login/contact/bypass.",
+      "fields_offered": [
+        "activeW",
+        "MPPT",
+        "mechanical",
+        "efficiency",
+        "environment",
+        "native current vectors"
+      ],
+      "last_attempt": "2026-11-05T09:20:06.278042+00:00",
+      "last_retrieval": "2026-11-05T09:20:06.278042+00:00",
+      "publication_cadence": "Release-based/irregular unless documented; metadata before unchanged full download",
+      "next_due_check": "2026-11-12T09:00:00Z",
+      "estimated_useful_yield": {
+        "reviewed_selected": 11,
+        "accepted": 11,
+        "remaining_verified_yield": "Unknown; see explicit cursor, not an acceptance promise"
+      },
+      "result": "11 exact STmodels accepted across two complete technical tables;209canonical technical values.5000TL+ PVmaximum5500W PDF versus5000WHTMLheld. RS485yes versusoptionalheld across11models;RS232captured. MaxPVpower stays qualified maximum, not ratedPdc. VA remains apparent.",
+      "processed_cursor": {
+        "ST5_30KW_models": 8,
+        "ST40_60KW_models": 3,
+        "selected_tables_exhausted": true,
+        "review": "20261105T0900_equipment_review.json"
+      },
+      "next_action": "STtables exhausted. Six SP-Dmodel candidates held until revision/applicability reconciled; do not use linkedPDF alone.",
+      "retry_condition": "Fresh source revision or new evidence resolving held identity/scope/rights",
+      "sha256": null,
+      "reviewed": 11,
+      "accepted": 11,
+      "rejected": 0
+    },
+    {
+      "id": "kemapower_spd_hold_20261105T0900",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.kemapower.com/on-grid-solar-inverter/3-5kw.html",
+      "version_or_date": "Current snapshot",
+      "format": "HTML/PDF",
+      "licence_assessment": "OEM copyright; no accepted factual record from disputed table",
+      "access_assessment": "Ordinary public GET only; capture metadata/checksums in20261105T0900_source_captures.json. No login/contact/bypass.",
+      "fields_offered": [
+        "model-specific electrical/mechanical"
+      ],
+      "last_attempt": "2026-11-05T09:20:06.278042+00:00",
+      "last_retrieval": "2026-11-05T09:20:06.278042+00:00",
+      "publication_cadence": "Release-based/irregular unless documented; metadata before unchanged full download",
+      "next_due_check": "2026-11-12T09:00:00Z",
+      "estimated_useful_yield": {
+        "reviewed_selected": 6,
+        "accepted": 0,
+        "remaining_verified_yield": "Unknown; see explicit cursor, not an acceptance promise"
+      },
+      "result": "SixPDFmodel columns versus three liveHTMLcolumns; exact overlapping values disagree.0accepted, six candidate models held, no sparse canonical rows.",
+      "processed_cursor": {
+        "PDF_models": [
+          "3000TL",
+          "4000TL",
+          "5000TL",
+          "6000TL",
+          "7000TL",
+          "8000TL"
+        ],
+        "HTML_models": [
+          "3000TL",
+          "4000TL",
+          "5000TL"
+        ],
+        "accepted": 0
+      },
+      "next_action": "Resolve source revisions and model applicability before acceptance.",
+      "retry_condition": "Fresh source revision or new evidence resolving held identity/scope/rights",
+      "sha256": null,
+      "reviewed": 6,
+      "accepted": 0,
+      "rejected": 0
+    },
+    {
+      "id": "sako_latam_20261105T0900",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://sakopower.com/download/",
+      "version_or_date": "Filename202609; title2026.8.26; modified2026-09-01",
+      "format": "HTML/PDF",
+      "licence_assessment": "OEMcopyright retained; bounded factual model extraction only. No specific restrictive terms link exposed on retrieved product/download pages; no open licence claimed.",
+      "access_assessment": "Ordinary public GET only; capture metadata/checksums in20261105T0900_source_captures.json. No login/contact/bypass.",
+      "fields_offered": [
+        "hybrid activeW",
+        "PV/battery limits",
+        "mechanical",
+        "environment",
+        "communications",
+        "model warranty claims"
+      ],
+      "last_attempt": "2026-11-05T09:20:06.278042+00:00",
+      "last_retrieval": "2026-11-05T09:20:06.278042+00:00",
+      "publication_cadence": "Release-based/irregular unless documented; metadata before unchanged full download",
+      "next_due_check": "2026-11-12T09:00:00Z",
+      "estimated_useful_yield": {
+        "reviewed_selected": 6,
+        "accepted": 6,
+        "remaining_verified_yield": "Unknown; see explicit cursor, not an acceptance promise"
+      },
+      "result": "Six exact selected models accepted;86canonicaltechnicalvalues plus qualified battery/PV/grid/EPS/environment/protection facts. NewcanonicalShenzhenSakoSolarCoLtd from cataloguecover. No LCD-S, gridvoltage or configurable regional clones. SUNSEEbattery-only efficiency not mapped to overall inverter efficiency;SUNIN39AIscscope andIP66/NEMA4X/certification claims retained qualified.",
+      "processed_cursor": {
+        "catalogue": "202609-SAKO-E-catalogue-of-solar-products-110Vac.pdf",
+        "title_date": "2026.8.26",
+        "metadata_modified": "2026-09-01",
+        "physical_pages_accepted": [
+          4,
+          8
+        ],
+        "printed_pages": [
+          "01–02",
+          "09–10"
+        ],
+        "selected_models_accepted": 6,
+        "otherSUNSEE3_6KW_columns_unprocessed": 2,
+        "next_physical_pages": [
+          5,
+          6,
+          7,
+          9
+        ],
+        "review": "20261105T0900_sako_review.json"
+      },
+      "next_action": "Review physical5–7/9 exactcodes and phase-specific activeW/VA/grid/EPS scope. Reuse current8.1MBcapture after metadata freshness check.",
+      "retry_condition": "Fresh source revision or new evidence resolving held identity/scope/rights",
+      "sha256": "fd55dcd9e8030fa0c286434b2d86c93dc7b109f9660fddab9a9a0251aee78915",
+      "reviewed": 6,
+      "accepted": 6,
+      "rejected": 0
+    },
+    {
+      "id": "riello_rights_20261105T0900",
+      "country": "ITA",
+      "entity": "inverters/combiner_boxes",
+      "source_url": "https://www.riello-solartech.com/download",
+      "version_or_date": "Current snapshot",
+      "format": "HTML/PDF",
+      "licence_assessment": "Explicit personal/noncommercial and broad prior-permission restrictions; not suitable for this public database.",
+      "access_assessment": "Ordinary public GET only; capture metadata/checksums in20261105T0900_source_captures.json. No login/contact/bypass.",
+      "fields_offered": [
+        "multi-model inverter catalogue",
+        "string box technical document"
+      ],
+      "last_attempt": "2026-11-05T09:20:06.278042+00:00",
+      "last_retrieval": "2026-11-05T09:20:06.278042+00:00",
+      "publication_cadence": "Release-based/irregular unless documented; metadata before unchanged full download",
+      "next_due_check": "2026-11-12T09:00:00Z",
+      "estimated_useful_yield": {
+        "reviewed_selected": 0,
+        "accepted": 0,
+        "remaining_verified_yield": "Unknown; see explicit cursor, not an acceptance promise"
+      },
+      "result": "New independentOEMdiscovered. Current catalogue andstringbox links retrieved before terms review; terms prohibit reuse/storage/distribution absentexpress exception and limitpersonalnoncommercialuse. Stoptechnicalextraction;0modelcandidates accepted. No contact or permission requested.",
+      "processed_cursor": {
+        "terms_url": "https://www.riello-solartech.com/terms-of-use",
+        "catalogue_filename": "catgenx0y26gsen.pdf",
+        "technical_extraction_stopped": true,
+        "adapter": false
+      },
+      "next_action": "Hold until applicable licence/permission changes; SAKOindependentfallback processed.",
+      "retry_condition": "Fresh source revision or new evidence resolving held identity/scope/rights",
+      "sha256": null,
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    {
+      "id": "catalunya_freshness_20261105T0900",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://analisi.transparenciacatalunya.cat/api/views/ggx8-jkp4.json",
+      "version_or_date": "Current snapshot",
+      "format": "Socrata JSON",
+      "licence_assessment": "Existing Catalunya open-information licence and anonymity restrictions retained",
+      "access_assessment": "Ordinary public GET only; capture metadata/checksums in20261105T0900_source_captures.json. No login/contact/bypass.",
+      "fields_offered": [
+        "registry revision",
+        "saved held-identities"
+      ],
+      "last_attempt": "2026-11-05T09:20:06.278042+00:00",
+      "last_retrieval": "2026-11-05T09:20:06.278042+00:00",
+      "publication_cadence": "Release-based/irregular unless documented; metadata before unchanged full download",
+      "next_due_check": "2026-11-12T09:00:00Z",
+      "estimated_useful_yield": {
+        "reviewed_selected": 0,
+        "accepted": 0,
+        "remaining_verified_yield": "Unknown; see explicit cursor, not an acceptance promise"
+      },
+      "result": "Metadata rowsUpdatedAt1790585291=28Sep2026 unchanged; small3row public sample inspected but no full monthly export redownload. Prior319reviewed groups/175holds retained;0newacceptance.",
+      "processed_cursor": {
+        "rowsUpdatedAt": 1790585291,
+        "remaining_first_pass": 0,
+        "prior_held_groups": 175,
+        "full_download": false
+      },
+      "next_action": "Resume exact held permit/site crosswalks only; do not repeat completed firstpass.",
+      "retry_condition": "Fresh source revision or new evidence resolving held identity/scope/rights",
+      "sha256": null,
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0
+    },
+    {
+      "id": "dgeg_metadata_20261105T0900",
+      "country": "PRT",
+      "entity": "projects",
+      "source_url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer",
+      "version_or_date": "Current snapshot",
+      "format": "ArcGIS metadata JSON",
+      "licence_assessment": "IteminfoCCBY confirmed; prior WFSCCBY4.0 assessment retained",
+      "access_assessment": "Ordinary public GET only; capture metadata/checksums in20261105T0900_source_captures.json. No login/contact/bypass.",
+      "fields_offered": [
+        "service metadata",
+        "usage rights",
+        "positivePVdescription"
+      ],
+      "last_attempt": "2026-11-05T09:20:06.278042+00:00",
+      "last_retrieval": "2026-11-05T09:20:06.278042+00:00",
+      "publication_cadence": "Release-based/irregular unless documented; metadata before unchanged full download",
+      "next_due_check": "2026-11-12T09:00:00Z",
+      "estimated_useful_yield": {
+        "reviewed_selected": 0,
+        "accepted": 0,
+        "remaining_verified_yield": "Unknown; see explicit cursor, not an acceptance promise"
+      },
+      "result": "Currentservice explicitly describes PVpanels anditeminfoCCBY. Existing750polygoninventory/34heldname suggestions already processed; no featurequery/fullredownload or newplantacceptance. Due18:00metadata policy retained; polygons notplants.",
+      "processed_cursor": {
+        "service_item_id": "5eea0981879640c292add22e0534beae",
+        "feature_download": false,
+        "accepted": 0,
+        "prior_due": "2026-11-05T18:00:00Z"
+      },
+      "next_action": "Resolve34heldmatches with independent licence/site evidence; check source freshness atdue18:00, no genericSolar or kVA→AC inference.",
+      "retry_condition": "Fresh source revision or new evidence resolving held identity/scope/rights",
+      "sha256": null,
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0
     }
   ],
   "source_refresh_queue": [
