@@ -198,3 +198,29 @@ uv run python scripts/enrich_hydro_ons.py
 Next: remaining 80 sorted ONS hydro CEGs after the saved partition cursor,
 followed by the outstanding alias/identity cases. Total coverage stays at
 7,156 historical plant records in 128 countries, now with 523 enriched identities.
+
+
+## Completed ONS partition review
+
+The remaining 80 sorted CEGs add **53 existing Brazilian plant enrichments and
+289 unit observations**. Twenty-four name discrepancies and three missing
+historical identities remain held. Across the complete 180-CEG ONS hydro
+inventory, 131 identities are enriched with 578 unit observations and 49
+identities remain held (40 name discrepancies and nine missing identities).
+The catalogue now contains 576 enriched identities; plant/country counts and
+capacity aggregation rules are unchanged.
+
+The refreshed CSV checksum differs, but all 819 hydro unit facts match the
+previous download when row locators are excluded. The prior partition's
+observations and timestamps are preserved; the new source registry entry
+pins the new bytes and row locators. The drift comparison is retained in
+`research/ons-20261105-source-drift.json`.
+
+```bash
+uv run python scripts/enrich_hydro_ons.py --batch catalogues/hydro/research/ons-20261105-0101-0180.json
+```
+
+Next regional partition: the Indian CEA September 2026 station list. Its
+official archive metadata is reviewed; original-file acquisition, reuse
+assessment, identity reconciliation and phase/pumped-storage scope review
+remain outstanding. No Indian candidates have been accepted in this run.

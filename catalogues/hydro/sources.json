@@ -158,5 +158,20 @@
     "locator": "lines 124-125 extract CEG numeric component; line 187 pw.make_id(SAVE_CODE, plant_id)",
     "access_assessment": "Original upstream importer downloaded; checksum pins reviewed content",
     "original_availability": "Original source downloaded; checksum pinned; selected facts and row locators retained"
+  },
+  "ons-hydro-20261105-0101-0180": {
+    "url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/capacidade-geracao/CAPACIDADE_GERACAO.csv",
+    "publisher": "Operador Nacional do Sistema El\u00e9trico (ONS)",
+    "title": "Capacidade Instalada de Gera\u00e7\u00e3o \u2014 remaining 80 sorted hydro CEGs",
+    "license": "CC-BY per publisher; ONS attribution; normalized whitespace, grouped hydro units, exact registry crosswalk",
+    "license_url": "https://dados.ons.org.br/dataset/capacidade-geracao",
+    "retrieved_at": "2026-11-05T15:37:53Z",
+    "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
+    "published_at": null,
+    "revision": "Downloaded 2026-11-05; publisher metadata last updated 2026-11-04T15:01Z; source observation date not independently established",
+    "dictionary_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/capacidade-geracao/DicionarioDados_Capacidade_Instalada_Geracao.json",
+    "dictionary_sha256": "68e823cd62cc06aeb2ccdcc261a53904edc36c9a08b97c75ed1c3e3d21faea17",
+    "access_assessment": "Original files downloaded; CSV lacks optional id_ons dictionary field. No synthetic column added.",
+    "original_availability": "Original official CSV/dictionary downloaded; retained reviewed evidence with exact row locators"
   }
 }

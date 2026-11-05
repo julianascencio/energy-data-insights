@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T14:43:28Z",
+  "reviewed_at": "2026-11-05T15:37:53Z",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -67,6 +67,19 @@
       "new": 0,
       "held": 22,
       "cursor": "First 100 sorted CEGs complete; next 80 CEGs; holds retained"
+    },
+    {
+      "source": "ons-hydro-20261105-0101-0180",
+      "partition": {
+        "first_index": 100,
+        "last_index_exclusive": 180,
+        "last_ceg": "UHE.PH.TO.028567-6.01",
+        "next_ceg": null
+      },
+      "accepted_enriched": 53,
+      "new": 0,
+      "held": 27,
+      "cursor": "ONS 180 sorted hydro CEGs complete; 49 cumulative holds retained; do not rediscover unchanged inventory"
     }
   ],
   "next_sources": [
@@ -103,8 +116,15 @@
       "priority": 1,
       "url": "https://dadosabertos.aneel.gov.br/",
       "country": "BRA",
-      "status": "78 historical identities enriched; 22 held among first 100 ONS CEGs",
-      "next_action": "Review remaining 80 ONS CEGs after UHE.PH.PA.030354-2.01; retain aliases/ID holds without fuzzy merges"
+      "status": "All 180 ONS hydro CEGs reviewed: 131 enrichments, 49 holds",
+      "next_action": "Review 40 exact-name discrepancies and 9 missing historical identities with primary alias/scope evidence; no fuzzy merges"
+    },
+    {
+      "priority": 1,
+      "country": "IND",
+      "url": "https://cea.nic.in/reports/dashboardView?headingId=107&lang=en&subHeadingId=1003&subSubHeadingId=10037&title=List+of+Hydro+Electric+Stations+in+the+Country",
+      "status": "Official archive metadata reviewed on 2026-11-05; September 2026 is latest listed; no plant data accepted",
+      "next_action": "Acquire September 2026 original station list, review reuse policy and scope, reconcile first 100 station identities; track pumped storage separately"
     }
   ],
   "market_ranking": {
