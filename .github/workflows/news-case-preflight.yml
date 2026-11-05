@@ -1,0 +1,41 @@
+name: News case preflight
+
+on:
+  push:
+    branches:
+      - feature/news-india-storage-vgf-20261105
+
+permissions:
+  contents: read
+
+jobs:
+  full-quality:
+    uses: ./.github/workflows/ci.yml
+
+  full-docs:
+    name: Documentation and executable gallery preflight
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      MPLBACKEND: Agg
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+        with:
+          version: "0.13.4"
+          python-version: "3.13"
+          enable-cache: true
+      - name: Install locked docs dependencies
+        run: uv sync --locked --all-packages --group imagery --group docs --python 3.13
+      - name: Run browser tests
+        run: node --test tests/js/test_database_viewer.mjs
+      - name: Execute gallery and build docs with warnings as errors
+        run: uv run --no-sync sphinx-build -W --keep-going -b html docs docs/_build/html
+      - name: Validate generated docs links
+        run: uv run --no-sync python scripts/check_docs_links.py docs/_build/html
