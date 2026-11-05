@@ -595,3 +595,11 @@ Dual-axis drive/control IP ratings remain component-specific. The single-axis
 model has explicit -50/+50 degree rotation limits. The material-defect contract
 retains two-year claims and ten-year inside-out steel rust-through conditions;
 these do not establish unrestricted product/structural warranty scalars.
+
+Afore full-power MPPT windows and battery/backup conditions are distinguished
+from the general MPPT window and grid active power. kVA remains apparent power;
+conflicting IP, PV maxima, cooling, mass and duration assertions are withheld.
+Noark input strings are upper bounds; per-output disconnector ratings are not
+summed into plant current. ADME authorized injection MW stays in a dated context,
+separate from installed AC/DC capacity and party roles. Uruguay module/area
+values from environmental consultation describe proposed design, not operation.

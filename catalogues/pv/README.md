@@ -530,3 +530,12 @@ Contractual defect-liability periods are qualified separately from unrestricted
 product or structural warranties. Beitou and Changxing rooftop plant identities
 use independent primary city evidence; Changxing planned-opening and regulatory
 commercial-year scopes remain distinct. See the dated 5 November 01:30 reviews.
+
+The 5 November 03:00 review adds reconciled Afore SL/THP specifications, a
+DEGER D18H tracker and two distinct Noark combiner architectures. Conflicting
+PDF/live-table assertions stay in the dated equipment review. Uruguay ADME
+Table10 contributes authorized UTE-grid injection limits and generating-agent
+contexts to eight existing plants; these are not installed AC/DC ratings or
+owner/operator assignments. Lucía's November environmental consultation adds
+proposed modules/area while preserving its earlier DC rating. See
+`research/20261105T0300_report.md` and the explicit additive-context resolutions.

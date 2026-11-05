@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T02:01:05.662945+00:00",
+  "updated_at": "2026-11-05T03:18:23.623553+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "01:30iteration: secondaryAsia priority. Next150 complete Chinese corporate-owner/operator locations, five distinct DEGER tracker hardware models, two Taipei rooftop plants and next100Taiwan staging rows. Seven independent OEM publishers assessed; no rights/access-held feed is called integrated.",
-  "next_highest_value_source": "GEM corporate queue afterL100000809365,1214structurallyeligible; Taiwanrows19–22 andNorthDepotrow16site/phase evidence; DEGERD18Hnextdistinct publicsheet after rights/versioncheck. Preserve operator-only cursorL100000802626.",
+  "selection_note": "03:00iteration: secondaryLatinAmericapriority with Uruguay ADMEPVtable andgovernmentprimaryrecords; non-USGEM200completecorporatelocations;15Aforeinverters,1DEGERtracker,2Noarkcombiners. Explicitfactualconflictsheld;selectedtablesexhausted.",
+  "next_highest_value_source": "GEMstrictcorporatequeueafterL100000810050,1014remainingbeforemanualreview; ADME12heldstationidentitiesand3futureincorporations requireindependentnames/phasecrosswalk. No hourlyfullPDFredownload; currentMay2026reporthashsaved.",
   "sources": [
     {
       "id": "uk_repd",
@@ -13348,6 +13348,566 @@
       "retry_condition": "New partition/release or access, rights, identity and scope clarification as specified",
       "next_due_check": "2026-11-06T02:00:00Z",
       "next_action": "Respect renewed24hbackoff; independent DEGER source used"
+    },
+    {
+      "id": "gem_corporate_20261105T0300",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": [
+        "https://globalenergymonitor.org/projects/global-solar-power-tracker/"
+      ],
+      "format": "PublicprimaryHTML/PDF;existingXLSXreaderforGEM",
+      "version_or_date": "February2026;freshlandingstilllatest",
+      "licence_assessment": "CCBY4.0;wholelocationTZ/WKSLexclusions;corporateonly",
+      "publication_cadence": "Release-based/unstated;metadata/checksumfirst;not hourlyfull-filedownloads",
+      "last_release": "February2026;freshlandingstilllatest",
+      "last_retrieval": "2026-11-05T03:02:29.975687+00:00",
+      "last_attempt": "2026-11-05T03:18:23.623553+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+          "retrieved_at": "2026-11-05T03:02:29.975687+00:00",
+          "sha256": "d79f73825af51f3be1648ade34685cd902870c968600688459b9f55f3777aa9d",
+          "bytes": 134149,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "result": "200locationsenriched600fields;156owner/187operator labelsmanuallyreviewed;prior3nativepartyconflictsstillheld",
+      "processed_cursor": {
+        "after": "L100000809365",
+        "next": "L100000810050",
+        "remaining_corporate_filtered": 1014,
+        "operator_only_cursor": "L100000802626",
+        "operator_only_remaining": 2894,
+        "workbook_sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959"
+      },
+      "fields_offered": [
+        "historicalowner",
+        "operator",
+        "completephaseevidence"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API plus four explicit reviewed additiveJSONresolutions; detailed locators in dated review/source entries",
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T03:00:00Z",
+      "retry_condition": "Resume next strictpartition;preserve wideroperatorqueue",
+      "next_action": "Resume next strictpartition;preserve wideroperatorqueue"
+    },
+    {
+      "id": "afore_exact_20261105T0300",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.aforenergy.com/product/three-phase-hybrid-inverter-plus-series/",
+      "endpoint": [
+        "https://www.aforenergy.com/product/three-phase-hybrid-inverter-plus-series/",
+        "https://www.aforenergy.com/wp-content/uploads/2024/11/1-2409121540314551.pdf",
+        "https://www.aforenergy.com/product/single-phase-hybrid-inverter-1-3-6kw/",
+        "https://www.aforenergy.com/wp-content/uploads/2024/11/1-24091215260K941.pdf",
+        "https://www.aforenergy.com/privacy-policy/"
+      ],
+      "format": "PublicprimaryHTML/PDF;existingXLSXreaderforGEM",
+      "version_or_date": "UndatedcurrentlinkedPDF/liveHTML;transportdirectorynotpublicationdate",
+      "licence_assessment": "Copyrightretained; bounded factualmetadata;policyguess404;separatecloudtermsnotusedaswebsitegrant",
+      "publication_cadence": "Release-based/unstated;metadata/checksumfirst;not hourlyfull-filedownloads",
+      "last_release": "UndatedcurrentlinkedPDF/liveHTML;transportdirectorynotpublicationdate",
+      "last_retrieval": "2026-11-05T03:03:16.230003+00:00",
+      "last_attempt": "2026-11-05T03:18:23.623553+00:00",
+      "captures": [
+        {
+          "url": "https://www.aforenergy.com/product/three-phase-hybrid-inverter-plus-series/",
+          "retrieved_at": "2026-11-05T03:02:37.716139+00:00",
+          "sha256": "d7627672cdf55c0b4db1323df71d17c241f6311a538a64f46ea4ed2c3251447c",
+          "bytes": 475857,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.aforenergy.com/wp-content/uploads/2024/11/1-2409121540314551.pdf",
+          "retrieved_at": "2026-11-05T03:03:14.520539+00:00",
+          "sha256": "c4da5db11360b46711db8007d76ddcc5b71270c0c14a904a2d72ad2c087ef760",
+          "bytes": 2141023,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.aforenergy.com/product/single-phase-hybrid-inverter-1-3-6kw/",
+          "retrieved_at": "2026-11-05T03:02:37.835877+00:00",
+          "sha256": "43daa07166f19d4b255d97f3fa537e5ff423e359d5f9b9c68c27e5b9f83f642c",
+          "bytes": 480169,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.aforenergy.com/wp-content/uploads/2024/11/1-24091215260K941.pdf",
+          "retrieved_at": "2026-11-05T03:03:16.230003+00:00",
+          "sha256": "d948610bb1602997008d52e1f03f8d4d17e0f4bd02cd60ff793cda3380fa632b",
+          "bytes": 3852872,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.aforenergy.com/privacy-policy/",
+          "retrieved_at": "2026-11-05T03:02:39.268109+00:00",
+          "sha256": null,
+          "bytes": null,
+          "etag": null,
+          "status": null,
+          "error": "HTTP Error 404: Not Found"
+        }
+      ],
+      "reviewed": 15,
+      "accepted": 15,
+      "rejected": 0,
+      "result": "15exactmodelsacceptedonlyreconciledvalues;8conflictgroupssaved;noVAtoW,noinferredwarranty",
+      "processed_cursor": {
+        "models": 15,
+        "tables_exhausted": true,
+        "conflicts_file": "20261105T0300_equipment_conflicts.json"
+      },
+      "fields_offered": [
+        "electrical",
+        "mechanical",
+        "efficiency",
+        "batteryconditions",
+        "interfaces",
+        "fullpowerMPPT"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API plus four explicit reviewed additiveJSONresolutions; detailed locators in dated review/source entries",
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T03:00:00Z",
+      "retry_condition": "Resolve editions/units before withheld fields; investigate distinctfamily with its own table",
+      "next_action": "Resolve editions/units before withheld fields; investigate distinctfamily with its own table"
+    },
+    {
+      "id": "deger_d18h_20261105T0300",
+      "country": "DEU",
+      "entity": "trackers",
+      "source_url": "https://www.degerenergie.de/deger-d18h/",
+      "endpoint": [
+        "https://www.degerenergie.de/deger-d18h/",
+        "https://www.degerenergie.de/wp-content/uploads/2018/04/DEGER_D18H_EN_2026.pdf"
+      ],
+      "format": "PublicprimaryHTML/PDF;existingXLSXreaderforGEM",
+      "version_or_date": "PrintedVersion11/2026;monthprecision",
+      "licence_assessment": "OEMcopyrightretained; bounded factualmodelmetadata;noopenbulklicence",
+      "publication_cadence": "Release-based/unstated;metadata/checksumfirst;not hourlyfull-filedownloads",
+      "last_release": "PrintedVersion11/2026;monthprecision",
+      "last_retrieval": "2026-11-05T03:03:00.406017+00:00",
+      "last_attempt": "2026-11-05T03:18:23.623553+00:00",
+      "captures": [
+        {
+          "url": "https://www.degerenergie.de/deger-d18h/",
+          "retrieved_at": "2026-11-05T03:02:02.745236+00:00",
+          "sha256": "f4f94a3c8b09a82c76d4680825b945b425c822b3744977c95da37263dffc4c25",
+          "bytes": 68378,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.degerenergie.de/wp-content/uploads/2018/04/DEGER_D18H_EN_2026.pdf",
+          "retrieved_at": "2026-11-05T03:03:00.406017+00:00",
+          "sha256": "c8ad4023a2d40c5658f9e2ac99042339b98b6150d2c22fc940c02e534c8af292",
+          "bytes": 23834965,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "result": "1distincttrackeraccepted;maxima/componentIP/mass/windconditionsqualified; existingGTCunchanged",
+      "processed_cursor": {
+        "model": "D18H",
+        "spec_page": 6,
+        "table_exhausted": true
+      },
+      "fields_offered": [
+        "thermal",
+        "drive/control",
+        "moduledependentbounds",
+        "liabilityconditions"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API plus four explicit reviewed additiveJSONresolutions; detailed locators in dated review/source entries",
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T03:00:00Z",
+      "retry_condition": "Selected currentD-seriesqueueexhausted;nextdistinct tracker manufacturer",
+      "next_action": "Selected currentD-seriesqueueexhausted;nextdistinct tracker manufacturer"
+    },
+    {
+      "id": "noark_combiners_20261105T0300",
+      "country": "AUS",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.noark.au/support/downloads",
+      "endpoint": [
+        "https://www.noark.au/support/downloads",
+        "https://www.noark.au/shop/attachment/64",
+        "https://www.noark.au/privacy-policy"
+      ],
+      "format": "PublicprimaryHTML/PDF;existingXLSXreaderforGEM",
+      "version_or_date": "2024V2.0 currentdownload",
+      "licence_assessment": "OEMcopyrightretained;bounded factualmetadata;privacyguidancenotopencontentgrant;myNOARKsoftwaremanualtermsnotsubstituted",
+      "publication_cadence": "Release-based/unstated;metadata/checksumfirst;not hourlyfull-filedownloads",
+      "last_release": "2024V2.0 currentdownload",
+      "last_retrieval": "2026-11-05T03:05:26.814766+00:00",
+      "last_attempt": "2026-11-05T03:18:23.623553+00:00",
+      "captures": [
+        {
+          "url": "https://www.noark.au/support/downloads",
+          "retrieved_at": "2026-11-05T03:02:41.206131+00:00",
+          "sha256": "715cdfa190add7a0c7d86ceda71d131d68cca08e18d82d1f6a5213ebed7c0db6",
+          "bytes": 261175,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.noark.au/shop/attachment/64",
+          "retrieved_at": "2026-11-05T03:05:26.814766+00:00",
+          "sha256": "a85df087be4869cede80864063a86ba231b58493e361d075c382347ea4fb6376",
+          "bytes": 45623763,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.noark.au/privacy-policy",
+          "retrieved_at": "2026-11-05T03:03:16.382732+00:00",
+          "sha256": "f9e3a1b5911e7f4c2ce589b603d449764faadd9417c24f061beeac38dcf92e08",
+          "bytes": 37393,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 12,
+      "accepted": 2,
+      "rejected": 0,
+      "result": "2distinctsingle/dualoutputmodelsaccepted;6monitoredorderidentityrowsheld;4othermaterial/stringcohortsunprocessed",
+      "processed_cursor": {
+        "accepted_orders": [
+          "9710101",
+          "9710202"
+        ],
+        "catalogue_rows": 12,
+        "held_monitored_rows": 6,
+        "unprocessed_other_rows": 4,
+        "technical_pages": [
+          4,
+          6
+        ]
+      },
+      "fields_offered": [
+        "DCvoltage",
+        "outputs",
+        "componentcounts",
+        "switch/SPD",
+        "enclosure",
+        "thermal",
+        "corrosion"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API plus four explicit reviewed additiveJSONresolutions; detailed locators in dated review/source entries",
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T03:00:00Z",
+      "retry_condition": "Resolve monitoredZprefix andstainless/EGtypos;donotcloneallmaterialoptions",
+      "next_action": "Resolve monitoredZprefix andstainless/EGtypos;donotcloneallmaterialoptions"
+    },
+    {
+      "id": "uruguay_government_20261105T0300",
+      "country": "URY",
+      "entity": "projects",
+      "source_url": "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/olesker-participo-inauguracion-planta-solar-fotovoltaica-tres-cruces",
+      "endpoint": [
+        "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/olesker-participo-inauguracion-planta-solar-fotovoltaica-tres-cruces",
+        "https://www.gub.uy/ministerio-ambiente/comunicacion/calendario-actividades/proyecto-planta-solar-fotovoltaica-lucia",
+        "https://www.gub.uy/terminos-condiciones-uso"
+      ],
+      "format": "PublicprimaryHTML/PDF;existingXLSXreaderforGEM",
+      "version_or_date": "MIEM2026-06-11;MAconsultation2026-11-03–30",
+      "licence_assessment": "GUB.UYpublicinformationterms; bounded attributedfacts;noimage/logo/privatecontactsorbulklicenceassumed",
+      "publication_cadence": "Release-based/unstated;metadata/checksumfirst;not hourlyfull-filedownloads",
+      "last_release": "MIEM2026-06-11;MAconsultation2026-11-03–30",
+      "last_retrieval": "2026-11-05T03:10:44.399136+00:00",
+      "last_attempt": "2026-11-05T03:18:23.623553+00:00",
+      "captures": [
+        {
+          "url": "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/olesker-participo-inauguracion-planta-solar-fotovoltaica-tres-cruces",
+          "retrieved_at": "2026-11-05T03:10:44.089257+00:00",
+          "sha256": "09893224061741e392a0d782e2e69be51b1811e63282961e62fa4e653494de23",
+          "bytes": 47061,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.gub.uy/ministerio-ambiente/comunicacion/calendario-actividades/proyecto-planta-solar-fotovoltaica-lucia",
+          "retrieved_at": "2026-11-05T03:10:44.399136+00:00",
+          "sha256": "4b9df77850035e051fe315aa9f54e14b143cf13a03089fce68dc11ebc5e055cf",
+          "bytes": 43244,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.gub.uy/terminos-condiciones-uso",
+          "retrieved_at": "2026-11-05T03:10:44.282650+00:00",
+          "sha256": "c9d19a16a66a124ed5639dcb39a8611d6f8708476b737f064ea8438f7ad02d54",
+          "bytes": 39135,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 2,
+      "accepted": 2,
+      "rejected": 0,
+      "result": "1newplant;1existingLucíaprojectenriched3fields;876MWnominalAC/DCassignmentheld;prior1162MWpDCpreserved",
+      "processed_cursor": {
+        "new": 1,
+        "enriched": 1,
+        "existingcountryrecordsreviewed": 21
+      },
+      "fields_offered": [
+        "modules",
+        "plannedlandarea",
+        "investmentUSD/year/basis",
+        "capacityunspecified",
+        "environmentalprocess"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API plus four explicit reviewed additiveJSONresolutions; detailed locators in dated review/source entries",
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T03:00:00Z",
+      "retry_condition": "Lucía876MWbasisrequiresprojectdocumentreview; preservepanelcount/plannedareabasis",
+      "next_action": "Lucía876MWbasisrequiresprojectdocumentreview; preservepanelcount/plannedareabasis"
+    },
+    {
+      "id": "uruguay_adme_20261105T0300",
+      "country": "URY",
+      "entity": "projects",
+      "source_url": "https://www.adme.com.uy/informes/progest.php",
+      "endpoint": [
+        "https://www.adme.com.uy/informes/progest.php",
+        "https://www.adme.com.uy/db-docs/Docs_secciones/nid_1681/PES_mayo26.pdf",
+        "https://www.adme.com.uy/datosabiertos.html",
+        "https://adme.com.uy/mme_admin/participantes/generadores.php",
+        "https://www.gub.uy/ministerio-industria-energia-mineria/datos-y-estadisticas/datos-abiertos"
+      ],
+      "format": "PublicprimaryHTML/PDF;existingXLSXreaderforGEM",
+      "version_or_date": "PESMayo2026Preliminarv5;printedC202605281249R202606112201",
+      "licence_assessment": "PublicADMEreport/open-dataguidanceread;bounded individually reviewedfacts;noformalopenbulklicenceassertion",
+      "publication_cadence": "Release-based/unstated;metadata/checksumfirst;not hourlyfull-filedownloads",
+      "last_release": "PESMayo2026Preliminarv5;printedC202605281249R202606112201",
+      "last_retrieval": "2026-11-05T03:11:56.699927+00:00",
+      "last_attempt": "2026-11-05T03:18:23.623553+00:00",
+      "captures": [
+        {
+          "url": "https://www.adme.com.uy/informes/progest.php",
+          "retrieved_at": "2026-11-05T03:10:42.559074+00:00",
+          "sha256": "ab937a63d0d6c55d30916925971bf0e3f965534af4f2f5881a1a6ed012531dc2",
+          "bytes": 72141,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.adme.com.uy/db-docs/Docs_secciones/nid_1681/PES_mayo26.pdf",
+          "retrieved_at": "2026-11-05T03:11:41.776178+00:00",
+          "sha256": "da747718620f0c33c37d80f6943e613240207c02ffd31996959b068d0a2e0901",
+          "bytes": 3882141,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.adme.com.uy/datosabiertos.html",
+          "retrieved_at": "2026-11-05T03:11:56.699927+00:00",
+          "sha256": "b6429660a74c8c920dacfe427ab74b31cb782c42e16f81ba5f57ecdf9da81a69",
+          "bytes": 40229,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://adme.com.uy/mme_admin/participantes/generadores.php",
+          "retrieved_at": "2026-11-05T03:10:18.419652+00:00",
+          "sha256": "961788d579beca9c71b3fffe0d2b9f1981b4e988dcb1547f033cde752b1849e1",
+          "bytes": 25775,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.gub.uy/ministerio-industria-energia-mineria/datos-y-estadisticas/datos-abiertos",
+          "retrieved_at": "2026-11-05T03:10:19.888104+00:00",
+          "sha256": "776012dcfad5146afbdf8401179df6e87e1760caa45efd04c96b8f47739230b2",
+          "bytes": 56217,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 23,
+      "accepted": 8,
+      "rejected": 0,
+      "result": "20Table10stationsreviewed:8existingplantsenriched;12identityholds;3Table11futureincorporationsheld.4contextcollisionsresolvedexplicitlywithoutoverwritingfacts;noautomatedfeedadapterclaimed",
+      "processed_cursor": {
+        "table10_processed_rows": 20,
+        "accepted_enriched": 8,
+        "held_table10": 12,
+        "held_table11": 3,
+        "spec_page": 25
+      },
+      "fields_offered": [
+        "generatingmarketagent",
+        "authorizedUTEgridinjectionMW",
+        "historicaltablecontext"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API plus four explicit reviewed additiveJSONresolutions; detailed locators in dated review/source entries",
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T03:00:00Z",
+      "retry_condition": "Reviewheldstationaliases/nativephaseboundaries againstindependentprimarycrosswalk;authorizedexportisnotACnameplate",
+      "next_action": "Reviewheldstationaliases/nativephaseboundaries againstindependentprimarycrosswalk;authorizedexportisnotACnameplate"
+    },
+    {
+      "id": "taiwan_identity_followup_20261105T0300",
+      "country": "TWN",
+      "entity": "projects",
+      "source_url": "https://www.tycg.gov.tw/NewsPage_Content.aspx?n=10&s=641247",
+      "endpoint": [
+        "https://www.tycg.gov.tw/NewsPage_Content.aspx?n=10&s=641247",
+        "https://www.ecove.com/e-newsletter/?cat=innovation&l=CH&no=011",
+        "https://www.ecove.com/e-newsletter/?l=CH&no=011&cat=innovation&article=01",
+        "https://www.ecove.com/?C=1202&L=CH"
+      ],
+      "format": "PublicprimaryHTML/PDF;existingXLSXreaderforGEM",
+      "version_or_date": "EApriorstatistics2025-12-31preserved;ECOVENo11Aug–Oct2020",
+      "licence_assessment": "ECOVEexplicitpersonal/noncommercialrestriction;noingestion;publisheraccessfailurehonoured",
+      "publication_cadence": "Release-based/unstated;metadata/checksumfirst;not hourlyfull-filedownloads",
+      "last_release": "EApriorstatistics2025-12-31preserved;ECOVENo11Aug–Oct2020",
+      "last_retrieval": "2026-11-05T03:08:59.075990+00:00",
+      "last_attempt": "2026-11-05T03:18:23.623553+00:00",
+      "captures": [
+        {
+          "url": "https://www.tycg.gov.tw/NewsPage_Content.aspx?n=10&s=641247",
+          "retrieved_at": "2026-11-05T03:04:26.167918+00:00",
+          "sha256": null,
+          "bytes": null,
+          "etag": null,
+          "status": null,
+          "error": "HTTP Error 308: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error message was:\nPermanent Redirect"
+        },
+        {
+          "url": "https://www.ecove.com/e-newsletter/?cat=innovation&l=CH&no=011",
+          "retrieved_at": "2026-11-05T03:04:05.727890+00:00",
+          "sha256": "ce749a533f8e74f6d43e66fc3a8586356688dc1b030cb77f709b21f7d6d9a8db",
+          "bytes": 16030,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.ecove.com/e-newsletter/?l=CH&no=011&cat=innovation&article=01",
+          "retrieved_at": "2026-11-05T03:07:22.155352+00:00",
+          "sha256": "0619fbb9e57d06a386ff98f4761a32209b9c74f1cc199ccce4254e4f7e3c579f",
+          "bytes": 23546,
+          "etag": null,
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.ecove.com/?C=1202&L=CH",
+          "retrieved_at": "2026-11-05T03:08:59.075990+00:00",
+          "sha256": "e4afec53c6a5232e1d0bebd6f016a0165be87997e3c05013080bcf604d4699a3",
+          "bytes": 22327,
+          "etag": null,
+          "status": 200,
+          "error": null
+        }
+      ],
+      "reviewed": 2,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "QingpuprimaryGETredirectloop/web428;Xinyingownerarticlefoundbuttermslimitnoncommercialpersonaluse.0accepted;noexistingconflicterased",
+      "processed_cursor": {
+        "previous_EA_staged_through": 400,
+        "remaining_unstaged": 387,
+        "held_rows": [
+          19,
+          20,
+          21,
+          22
+        ]
+      },
+      "fields_offered": [
+        "Discoveryonly;phase/date/ratingcrosswalkpending"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API plus four explicit reviewed additiveJSONresolutions; detailed locators in dated review/source entries",
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T03:00:00Z",
+      "retry_condition": "Use independentpermittedmunicipalprimaryphaseevidence;noECOVEreusewithoutgrant",
+      "next_action": "Use independentpermittedmunicipalprimaryphaseevidence;noECOVEreusewithoutgrant"
+    },
+    {
+      "id": "india_cea_discovery_20261105T0300",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://www.cea.nic.in/reports/dashboardView?headingId=107&lang=en&subHeadingId=1002&subSubHeadingId=10024",
+      "endpoint": [
+        "https://www.cea.nic.in/api/dashboardReports/view-pdf/en/558bd59a-3da7-4f7f-837d-1cd88ab0fc4a",
+        "https://www.cea.nic.in/api/dashboardReports/view-pdf/en/e7e40acb-e620-42f1-a1b9-aacaa50ef3c7"
+      ],
+      "format": "PublicprimaryHTML/PDF;existingXLSXreaderforGEM",
+      "version_or_date": "FreshsearchdiscoversJune2026SolarParkreportandunderconstructionreports",
+      "licence_assessment": "Prior explicitpermissionholdretained;no newlicencegrantassumed",
+      "publication_cadence": "Release-based/unstated;metadata/checksumfirst;not hourlyfull-filedownloads",
+      "last_release": "FreshsearchdiscoversJune2026SolarParkreportandunderconstructionreports",
+      "last_retrieval": "2026-11-05T03:18:23.623553+00:00",
+      "last_attempt": "2026-11-05T03:18:23.623553+00:00",
+      "captures": [],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "NewdocumentUUIDsdiscoveredbutnotdownloaded:existingCEApermissionrequirementand09:00backoffretained.0candidatefacilitiesreviewed/accepted",
+      "processed_cursor": {
+        "discovery_only_urls": [
+          "https://www.cea.nic.in/api/dashboardReports/view-pdf/en/558bd59a-3da7-4f7f-837d-1cd88ab0fc4a",
+          "https://www.cea.nic.in/api/dashboardReports/view-pdf/en/e7e40acb-e620-42f1-a1b9-aacaa50ef3c7"
+        ]
+      },
+      "fields_offered": [
+        "PotentialprojectMW/developer/status;notintegrated"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API plus four explicit reviewed additiveJSONresolutions; detailed locators in dated review/source entries",
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T03:00:00Z",
+      "retry_condition": "Resolveapplicablereuserights/accessbeforeextracting;genericSolarinsufficientPVproof",
+      "next_action": "Resolveapplicablereuserights/accessbeforeextracting;genericSolarinsufficientPVproof"
     }
   ],
   "source_refresh_queue": [

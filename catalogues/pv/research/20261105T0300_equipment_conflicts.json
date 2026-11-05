@@ -1,0 +1,98 @@
+{
+  "disposition": "No winner chosen; affected canonical/extension assertions withheld. Exact source URLs/hashes/locators in immutable source entries. Undated editions cannot be ordered by upload directory.",
+  "groups": [
+    {
+      "scope": "All15AFmodels",
+      "field": "maximumPVinputkW",
+      "pdf_THP": [
+        5,
+        6,
+        7.5,
+        9,
+        12,
+        15,
+        18
+      ],
+      "html_THP": [
+        6,
+        8,
+        10,
+        12,
+        16,
+        20,
+        24
+      ],
+      "pdf_SL": [
+        1.5,
+        2.3,
+        3,
+        3.8,
+        4.5,
+        5.4,
+        4.5,
+        5.4
+      ],
+      "html_SL": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7.2,
+        6,
+        7.2
+      ]
+    },
+    {
+      "scope": "All15AFmodels",
+      "field": "IP",
+      "pdf": "IP65; SL alsoNEMA4X",
+      "html": "IP66; SL alsoNEMA4X"
+    },
+    {
+      "scope": "THPfirst4",
+      "field": "cooling",
+      "pdf": "IntelligentFan",
+      "html": "NaturalConvection"
+    },
+    {
+      "scope": "SLall8",
+      "field": "cooling/weight",
+      "pdf": "IntelligentFan;18.5kg",
+      "html": "NaturalConvection;17kg"
+    },
+    {
+      "scope": "SLfirst4",
+      "field": "minTemp/altitude",
+      "pdf": "-25C;<4000m",
+      "html": "25C;<40m"
+    },
+    {
+      "scope": "SLall8",
+      "field": "backupPeakDuration/transfer/AFCI",
+      "pdf": "10min;Seamless;PVArcYes",
+      "html": "10s;<10ms;PVArcOptional"
+    },
+    {
+      "scope": "THP10/12K",
+      "field": "batteryNominalV",
+      "pdf": [
+        250,
+        300
+      ],
+      "html": "Malformed split columns, no accepted scalar"
+    },
+    {
+      "scope": "THP8/10K",
+      "field": "backupPeakApparentPower",
+      "pdf": "8800VA/11000VA60s",
+      "html": "8.8VA/11VA60s (unit conflict)"
+    }
+  ],
+  "sources": [
+    "afore_thp_pdf_20261105T0300",
+    "afore_thp_html_20261105T0300",
+    "afore_sl_pdf_20261105T0300",
+    "afore_sl_html_20261105T0300"
+  ]
+}
