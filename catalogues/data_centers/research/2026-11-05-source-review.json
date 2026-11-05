@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T20:24:00Z",
+  "retrieved_at": "2026-11-05T21:23:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -216,6 +216,14 @@
       "enriched_records": 0,
       "reuse": "Public U.S. Department of Energy certification data were used for factual extraction only. DOE identifies the values as manufacturer representations and states that listing is not a compliance determination. No source page is redistributed and no reuse prohibition was found.",
       "originals": "The accessible public reader exposed all 50 selected rows. A direct original-byte request returned HTTP 403, so sources.json claims no source bytes or checksum. This is an access/content limitation, not a reuse restriction."
+    },
+    {
+      "inventory": "U.S. DOE CCMS uninterruptible-power-supply displayed rows 1-50",
+      "processed_offset": 50,
+      "accepted_records": 39,
+      "enriched_records": 11,
+      "reuse": "Public U.S. Department of Energy certification data were used for factual extraction only. DOE identifies the values as manufacturer representations and states that listing is not a compliance determination. No source page is redistributed and no reuse prohibition was found.",
+      "originals": "The accessible public reader exposed all 50 selected rows. Direct requests to the public MCP endpoint returned HTTP 403, so sources.json claims no source bytes or checksum. This is an access/content limitation, not a reuse restriction."
     }
   ],
   "deferred": [
@@ -242,6 +250,10 @@
     {
       "inventory": "DOE CCMS computer-room air-conditioner rows 51-100",
       "reason": "Rows 1-50 are complete. Continue only after a stable public page, filter or download boundary exposes a verified non-overlapping inventory; do not infer page contents or recount the first page."
+    },
+    {
+      "inventory": "DOE CCMS uninterruptible-power-supply rows 51-100",
+      "reason": "Rows 1-50 are complete. The public page exposed no stable next-page boundary and the public MCP endpoint returned HTTP 403 in this environment. Continue only after verifying a non-overlapping page, filter or download boundary."
     }
   ],
   "quarantined": [
@@ -259,6 +271,11 @@
       "record": "36 AboveAir DOE CCMS CRAC basic-model rows",
       "field": "cooling_capacity_kw",
       "reason": "Every displayed net sensible cooling value exceeds the same row's displayed net total cooling value under the page's printed Btu/h headings. Both issuer observations are preserved, but normalized scalar cooling capacity remains null pending corrected issuer data or an explicit unit clarification."
+    },
+    {
+      "record": "APC BN1500M2-CA and BN1500M2 exact configurations",
+      "field": "efficiency_pct",
+      "reason": "The current DOE CCMS rows report 98.9% average load-adjusted efficiency while the exact existing ENERGY STAR records report 99.0%. Both dated issuer observations are retained and the normalized scalar remains null."
     }
   ],
   "normalization_notes": [
@@ -317,6 +334,10 @@
     "Volvo Penta prime electrical kW/kVA, standby electrical kW/kVA and engine mechanical kWm remain distinct; fuel/emissions labels are OEM observations and no alternator, voltage, complete genset BOM, issuer certification or deployment is inferred.",
     "All 50 displayed DOE CCMS computer-room air-conditioner rows are processed for the public page updated 2026-10-23: 36 AboveAir and 14 AIRSYS basic-model configurations.",
     "AIRSYS net-total Btu/h is converted to cooling_capacity_kw and all SCFM ratings are converted to airflow_m3_h using fixed physical conversion factors; the printed originals remain observations.",
-    "AboveAir cooling_capacity_kw remains null on all 36 rows because the issuer's displayed net sensible values exceed its displayed net totals. NSenCOP remains a ratio observation and listing is not a DOE compliance determination or deployment."
+    "AboveAir cooling_capacity_kw remains null on all 36 rows because the issuer's displayed net sensible values exceed its displayed net totals. NSenCOP remains a ratio observation and listing is not a DOE compliance determination or deployment.",
+    "All 50 displayed DOE CCMS UPS rows are processed for the public page updated 2026-10-23: four ABB rows and 46 APC rows.",
+    "Exact individual-model deduplication enriched 11 existing ENERGY STAR APC configurations and added 39 new configurations; no duplicate configuration identity was created.",
+    "DOE active W, apparent VA and average load-adjusted efficiency remain separate and retain the reported lowest supported input dependency mode. Battery energy, runtime, frequency, dimensions, accessories and deployment are not inferred.",
+    "DOE listing is not treated as a compliance determination. The BN1500M2 and BN1500M2-CA efficiency disagreement remains explicitly quarantined rather than replacing either issuer observation."
   ]
 }

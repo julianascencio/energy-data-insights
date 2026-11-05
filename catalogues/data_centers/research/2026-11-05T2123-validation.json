@@ -1,0 +1,61 @@
+{
+  "run_id": "doe-ccms-ups-20261105T212300Z",
+  "validated_at": "2026-11-05T21:23:00Z",
+  "base_main_sha": "600db672269079ab8a92224ad5de3cf80e8206bf",
+  "branch": "research/data-center-database-20261105T2024Z",
+  "catalogue": {
+    "canonical_records": 3286,
+    "projects": 520,
+    "project_scopes": {"facility": 403, "phase": 3, "campus": 114},
+    "equipment": 2766,
+    "countries": 36,
+    "operators": 13,
+    "oems": 74,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 39,
+    "enriched_equipment": 11
+  },
+  "inventory": {
+    "source_ids": ["doe-ccms-ups-page1-20261023"],
+    "displayed_rows_processed": 50,
+    "records_added": 39,
+    "records_enriched": 11,
+    "abb_configurations": 4,
+    "apc_rows": 46,
+    "quarantined_efficiency_fields": 2,
+    "original_bytes_available": false,
+    "original_access_result": "HTTP 403 from direct MCP request; accessible public reader exposed all selected rows",
+    "reuse_prohibited": false,
+    "new_reuse_holds": []
+  },
+  "local_checks": [
+    {"command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger", "result": "passed"},
+    {"command": "uv run python -m energy_data_retrieval.data_center_catalogue validate", "result": "passed; 3286 records"},
+    {"command": "build_data_center_doe_ups_batch.py replay twice from pristine base plus cmp against canonical JSONL", "result": "passed; 39 additions and 11 enrichments reproduced byte-identically"},
+    {"command": "focused Data Center pytest suites", "result": "passed; 108 tests"},
+    {"command": "node --test tests/js/test_database_viewer.mjs", "result": "passed; 30 tests"},
+    {"command": "uv run ruff format --check . and ruff check .", "result": "passed; 1140 files formatted"},
+    {"command": "uv run ty check", "result": "passed repository-wide"},
+    {"command": "uv run python scripts/check_repository.py", "result": "passed; 5687 candidate files"},
+    {"command": "uv run python scripts/check_citations.py", "result": "passed"},
+    {"command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py", "result": "passed with DOE CCMS UPS comparison and conflict output"},
+    {"command": "two independent data_center_catalogue build commands plus diff", "result": "passed; byte-identical typed Zstandard snapshots"},
+    {"command": "uv run --group dev pytest -q", "result": "3038 passed, 5 optional skips and 1 unrelated environment failure in a PV degradation subprocess; psutil.NoSuchProcess occurred before Data Center code loaded"},
+    {"command": "uv run --group docs sphinx-build -W --keep-going -b html", "result": "blocked locally by the Python 3.13-only optional Orbital PV imagery gallery dependency"},
+    {"command": "git diff --check", "result": "passed"}
+  ],
+  "snapshot_sha256": {
+    "input": "39b29a93942ab9d71a244a659fda77022e852e9fbf909addab2d6447ee66e0f3",
+    "projects": "08365446210a654e49b3d38256b7158dc126efa6eb84cd77f90228050f545aee",
+    "equipment": "a653dd43f4a4139d037153a515702bc4ebcedf19ec0550a99547bdf18e830421",
+    "manifest": "cc2820ba6989f67a99fcfcced6c3e89278b96952814f5944d3b859c49c140a46",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "5c30178e01593a15ac165f56cfcff0af0da82d6ddc50c69be09cce18e7c96b5b"
+  },
+  "remote_ci": {
+    "prior_head": "616142447699f02c329a4a503fff264fb51dd4c4",
+    "prior_head_status": "Documentation run 42106890810 and Python quality/tests run 42106890877 completed successfully",
+    "status_at_validation": "not_started_for_new_head"
+  }
+}

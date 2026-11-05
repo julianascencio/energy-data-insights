@@ -55,7 +55,7 @@ issuer updates or independent planning, utility and lifecycle evidence.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,727 exact models/configurations from NVIDIA, AMD, AIRSYS, AboveAir, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,766 exact models/configurations from NVIDIA, AMD, ABB, AIRSYS, AboveAir, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
@@ -71,6 +71,15 @@ Btu/h and SCFM values remain observations. AboveAir's displayed sensible values
 exceed its displayed totals, so all 36 normalized cooling capacities remain null
 with explicit conflicts. NSenCOP remains a ratio observation, and registry
 listing is not treated as a DOE compliance determination or a deployment.
+The DOE CCMS UPS continuation processes all 50 rows displayed on the first
+public page: four ABB and 46 APC individual-model configurations. Exact
+individual-model matching enriches 11 existing ENERGY STAR APC records and adds
+39 new configurations without duplicating identities. Active W, apparent VA and
+average load-adjusted efficiency remain separate and retain the lowest supported
+input dependency mode. BN1500M2 and BN1500M2-CA keep normalized efficiency null
+because ENERGY STAR reports 99.0% while current DOE CCMS reports 98.9%; both
+dated issuer observations are preserved. Battery energy, runtime, frequency,
+accessory combinations and deployment remain unknown.
 The Schneider Galaxy
 VS batch preserves exact commercial references, stated kW and kVA, battery-string
 arrangements, full-load efficiency conditions and dimensions without calculating

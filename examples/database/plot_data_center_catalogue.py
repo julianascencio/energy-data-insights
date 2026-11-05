@@ -219,6 +219,23 @@ print(
     .sort_values(["manufacturer", "cooling_capacity_kw", "model"], na_position="last")
     .to_string(index=False)
 )
+print("DOE CCMS UPS rows preserve W/kW, VA/kVA, mode and issuer conflicts:")
+print(
+    equipment.loc[
+        equipment.sources.map(lambda values: "doe-ccms-ups-page1-20261023" in values),
+        [
+            "manufacturer",
+            "model",
+            "output_power_kw",
+            "apparent_power_kva",
+            "efficiency_pct",
+            "efficiency_conditions",
+            "quality_status",
+        ],
+    ]
+    .sort_values(["manufacturer", "apparent_power_kva", "model"])
+    .to_string(index=False)
+)
 print("CDU comparison preserves approach temperatures, loop boundaries and quarantines:")
 print(
     equipment.loc[

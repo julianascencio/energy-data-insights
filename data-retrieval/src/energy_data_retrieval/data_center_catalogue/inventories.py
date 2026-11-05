@@ -932,6 +932,96 @@ def parse_doe_crac_certification_matrix(
     }
 
 
+def parse_doe_ups_certification_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact public DOE UPS basic/individual-model rows.
+
+    Watts and volt-amperes remain distinct. Average load-adjusted efficiency is
+    retained with its supported input-dependency-mode boundary, and a public
+    CCMS listing is not treated as a DOE compliance determination.
+    """
+    parsed_url = urlsplit(source_url)
+    if parsed_url.hostname != "www.regulations.doe.gov" or parsed_url.path != (
+        "/certification-data/CCMS-4-Uninterruptible_Power_Supplies.html"
+    ):
+        raise ValueError("Unsupported official DOE UPS certification source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "brand",
+        "basic_model",
+        "individual_model",
+        "input_voltage_v",
+        "output_voltage_v",
+        "lowest_mode",
+        "lowest_active_w",
+        "lowest_apparent_va",
+        "highest_mode",
+        "highest_active_w",
+        "highest_apparent_va",
+        "lowest_efficiency_pct",
+        "third_mode",
+        "highest_efficiency_pct",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing DOE UPS certification columns")
+    optional = {
+        "highest_mode",
+        "highest_active_w",
+        "highest_apparent_va",
+        "third_mode",
+        "highest_efficiency_pct",
+    }
+    numeric = {
+        "input_voltage_v",
+        "output_voltage_v",
+        "lowest_active_w",
+        "lowest_apparent_va",
+        "lowest_efficiency_pct",
+    }
+    optional_numeric = {
+        "highest_active_w",
+        "highest_apparent_va",
+        "highest_efficiency_pct",
+    }
+    candidates: dict[tuple[str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate: dict[str, Any] = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate[key] for key in required if key not in optional):
+            raise ValueError(f"Incomplete DOE UPS row {line}")
+        try:
+            for field in numeric:
+                candidate[field] = float(candidate[field])
+            for field in optional_numeric:
+                candidate[field] = float(candidate[field]) if candidate[field] else None
+        except ValueError as exc:
+            raise ValueError(f"Invalid DOE UPS numeric value on row {line}") from exc
+        if any(float(candidate[field]) <= 0 for field in numeric):
+            raise ValueError(f"Invalid DOE UPS rating on row {line}")
+        if any(
+            candidate[field] is not None and float(candidate[field]) <= 0
+            for field in optional_numeric
+        ):
+            raise ValueError(f"Invalid optional DOE UPS rating on row {line}")
+        for field in optional - optional_numeric:
+            candidate[field] = candidate[field] or None
+        identity = (str(candidate["brand"]), str(candidate["individual_model"]))
+        if identity in candidates:
+            raise ValueError(f"Duplicate DOE UPS row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed DOE UPS matrix shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_ups_rating_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:
