@@ -1,0 +1,20 @@
+{
+  "publisher": "Bundesnetzagentur / Marktstammdatenregister",
+  "definition_revision": "26.2,1October2026",
+  "section": "5.5.2",
+  "xsd_sha256": "252a308fb10d6f282d1c2c642a28879ec6afe74b9e639b499d317a7220e3fcac",
+  "source_zip_capture": "20261105T1155_source_captures.json",
+  "reader": "data-retrieval/src/energy_data_retrieval/pv_catalogue/mastr.py",
+  "synthetic_tests": 13,
+  "live_units_parsed": 0,
+  "canonical_projects_accepted": 0,
+  "interpretation_holds": [
+    "Unit ID, locationID andEEGinstallationID do notestablishwholeproject",
+    "Net/grosskW are nativeunit observations, noAC/DCassignment",
+    "Allocatedinverterpowerdefinition lacks explicitunit; retainnative",
+    "Reviewstatuscodes notinterpreted withoutsystemcatalogue mapping",
+    "Physicaloffset resumes only againstidentical checksum; crosspartition duplicates require reconciliation"
+  ],
+  "privacy": "No names,operatorIDs,addresses or personaldetails emitted",
+  "adapter_status": "Bounded unit-review reader completed/tested; productionarchive-to-project importer notcompleted/integrated."
+}
