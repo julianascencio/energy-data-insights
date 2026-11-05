@@ -78,10 +78,16 @@ def test_offline_pipeline_exports_verified_rasters(tmp_path):
             "ghi_wm2": 100.0,
         }
     )
-    path = folder / "weather/28.25_-16.50.csv.gz"
+    path = folder / "weather/28.25_-16.50.csv"
     hourly.to_csv(path, index=False)
     (folder / "weather/28.25_-16.50.json").write_text(
-        json.dumps({"file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+        json.dumps(
+            {
+                "files": [
+                    {"file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+                ]
+            }
+        )
     )
     stations = pd.DataFrame(
         {"station_id": ["C001", "C002"], "latitude": [28.25, 28.25], "longitude": [-16.5, -16.5]}
@@ -106,7 +112,12 @@ def test_offline_pipeline_exports_verified_rasters(tmp_path):
     (folder / "aemet_provenance.json").write_text(
         json.dumps(
             {
-                "daily_sha256": hashlib.sha256((folder / "daily.csv").read_bytes()).hexdigest(),
+                "daily_files": [
+                    {
+                        "file": "daily.csv",
+                        "sha256": hashlib.sha256((folder / "daily.csv").read_bytes()).hexdigest(),
+                    }
+                ],
                 "station_sha256": hashlib.sha256(
                     (folder / "stations.csv").read_bytes()
                 ).hexdigest(),

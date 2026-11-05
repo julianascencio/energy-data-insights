@@ -36,10 +36,13 @@ def weather_node(latitude: float, longitude: float) -> str:
 def read_weather(folder: Path, slug: str) -> pd.DataFrame:
     """Read captured, checksum-verified aligned hourly weather."""
     meta = json.loads((folder / "weather" / f"{slug}.json").read_text())
-    path = folder / "weather" / meta["file"]
-    if hashlib.sha256(path.read_bytes()).hexdigest() != meta["sha256"]:
-        raise ValueError("ERA5 weather checksum mismatch")
-    frame = pd.read_csv(path, parse_dates=["timestamp"]).set_index("timestamp")
+    frames = []
+    for item in meta["files"]:
+        path = folder / "weather" / item["file"]
+        if hashlib.sha256(path.read_bytes()).hexdigest() != item["sha256"]:
+            raise ValueError("ERA5 weather checksum mismatch")
+        frames.append(pd.read_csv(path, parse_dates=["timestamp"]))
+    frame = pd.concat(frames, ignore_index=True).set_index("timestamp")
     frame.index = pd.to_datetime(frame.index, utc=True)
     expected = pd.date_range("2022-01-01", "2024-01-01", inclusive="left", freq="h", tz="UTC")
     if not frame.index.equals(expected):
@@ -179,11 +182,17 @@ def rate_scenario(
 def run_study(folder: Path, parameter_path: Path) -> dict:
     """Fit station biases, test temporal/spatial transfer, and calculate raster cells."""
     provenance = json.loads((folder / "aemet_provenance.json").read_text())
-    for filename, key in (("daily.csv", "daily_sha256"), ("stations.csv", "station_sha256")):
-        if hashlib.sha256((folder / filename).read_bytes()).hexdigest() != provenance[key]:
-            raise ValueError(f"AEMET {filename} checksum mismatch")
-    stations = pd.read_csv(folder / "stations.csv")
-    observations = pd.read_csv(folder / "daily.csv", dtype=str)
+    station_path = folder / "stations.csv"
+    if hashlib.sha256(station_path.read_bytes()).hexdigest() != provenance["station_sha256"]:
+        raise ValueError("Station checksum mismatch")
+    stations = pd.read_csv(station_path)
+    frames = []
+    for item in provenance["daily_files"]:
+        path = folder / item["file"]
+        if hashlib.sha256(path.read_bytes()).hexdigest() != item["sha256"]:
+            raise ValueError("AEMET daily partition checksum mismatch")
+        frames.append(pd.read_csv(path, dtype=str))
+    observations = pd.concat(frames, ignore_index=True)
     grid = pd.read_csv(folder / "grid.csv")
     sx, sy = transform("EPSG:4326", "EPSG:32628", stations.longitude, stations.latitude)
     stations["easting"], stations["northing"] = sx, sy

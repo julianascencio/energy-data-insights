@@ -38,10 +38,17 @@ def acquire_aemet() -> None:
     complete = OUT / "aemet_provenance.json"
     if complete.exists():
         manifest = json.loads(complete.read_text())
-        for name, key in (("daily.csv", "daily_sha256"), ("stations.csv", "station_sha256")):
-            if hashlib.sha256((OUT / name).read_bytes()).hexdigest() != manifest[key]:
-                raise ValueError("Captured AEMET input checksum mismatch")
-        print("Reusing checksum-verified AEMET 2022-2023 snapshot", flush=True)
+        if "daily_files" in manifest:
+            for item in manifest["daily_files"]:
+                if hashlib.sha256((OUT / item["file"]).read_bytes()).hexdigest() != item["sha256"]:
+                    raise ValueError("Captured AEMET partition checksum mismatch")
+            print("Reusing checksum-verified AEMET 2022-2023 snapshot", flush=True)
+            return
+        # Migrate the first capture into bounded, plain-text station partitions.
+        if hashlib.sha256((OUT / "daily.csv").read_bytes()).hexdigest() != manifest["daily_sha256"]:
+            raise ValueError("AEMET source checksum mismatch")
+        split_daily(pd.read_csv(OUT / "daily.csv", dtype=str), manifest)
+        (OUT / "daily.csv").unlink()
         return
     records = []
     with HTTPClient(
@@ -114,7 +121,39 @@ def acquire_aemet() -> None:
             "station_sha256": hashlib.sha256((OUT / "stations.csv").read_bytes()).hexdigest(),
         },
     )
+    split_daily(frame, json.loads((OUT / "aemet_provenance.json").read_text()))
+    (OUT / "daily.csv").unlink()
     print(f"AEMET complete: {len(frame)} observations", flush=True)
+
+
+def split_daily(frame: pd.DataFrame, manifest: dict) -> None:
+    """Preserve source strings in one small CSV per station, with per-file hashes."""
+    (OUT / "daily").mkdir(exist_ok=True)
+    records = []
+    for station, rows in frame.groupby("indicativo"):
+        path = OUT / "daily" / f"{station}.csv"
+        rows.to_csv(path, index=False)
+        records.append(
+            {
+                "file": str(path.relative_to(OUT)),
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                "rows": len(rows),
+            }
+        )
+    manifest["daily_files"] = records
+    manifest["daily_sha256_before_partitioning"] = manifest.pop("daily_sha256", None)
+    save_json(OUT / "aemet_provenance.json", manifest)
+
+
+def save_weather_partitions(frame: pd.DataFrame, slug: str) -> list[dict]:
+    """One plain-text CSV per native node and year; no large binary Git inputs."""
+    records = []
+    for year in (2022, 2023):
+        path = OUT / "weather" / f"{slug}_{year}.csv"
+        rows = frame.loc[pd.to_datetime(frame.timestamp, utc=True).dt.year == year]
+        rows.to_csv(path, index=False)
+        records.append({"file": path.name, "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+    return records
 
 
 def prepare_grid() -> pd.DataFrame:
@@ -172,7 +211,17 @@ def acquire_era5() -> None:
             slug = f"{latitude:.2f}_{longitude:.2f}"
             meta_path = OUT / "weather" / f"{slug}.json"
             if meta_path.exists():
-                manifest.append(json.loads(meta_path.read_text()))
+                record = json.loads(meta_path.read_text())
+                if "files" not in record:
+                    old = OUT / "weather" / record["file"]
+                    if hashlib.sha256(old.read_bytes()).hexdigest() != record["sha256"]:
+                        raise ValueError("Legacy ERA5 input checksum mismatch")
+                    record["files"] = save_weather_partitions(pd.read_csv(old), slug)
+                    record["legacy_sha256"] = record.pop("sha256")
+                    record.pop("file")
+                    save_json(meta_path, record)
+                    old.unlink()
+                manifest.append(record)
                 continue
             frames = []
             requests = []
@@ -187,16 +236,14 @@ def acquire_era5() -> None:
             if selected[0] != selected[1]:
                 raise ValueError("Provider changed cell across years")
             frame = pd.concat(frames, ignore_index=True)
-            path = OUT / "weather" / f"{slug}.csv.gz"
-            frame.to_csv(path, index=False, compression={"method": "gzip", "mtime": 0})
+            files = save_weather_partitions(frame, slug)
             record = {
-                "file": path.name,
+                "files": files,
                 "requested_latitude": latitude,
                 "requested_longitude": longitude,
                 "cell_latitude": selected[0][0],
                 "cell_longitude": selected[0][1],
                 "requests": requests,
-                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
             }
             save_json(meta_path, record)
             manifest.append(record)

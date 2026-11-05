@@ -98,9 +98,10 @@ uv run --no-sync python plot_aemet_era5_canary.py
 ```
 
 The acquisition workflow stores AEMET source snapshots as an Actions artifact,
-and commits the Canary subset, station/field metadata and compressed hourly
+and commits the Canary subset, station/field metadata and node/year-partitioned hourly
 weather to the study branch. `aemet_provenance.json` and `era5_provenance.json`
-record source requests and hashes. Raw daily metadata is retained to audit
+record source requests and per-partition hashes. Daily inputs are split by station;
+hourly inputs by native node and year, to keep source files bounded and readable. Raw daily metadata is retained to audit
 variable definitions. The offline pipeline writes `calibration_parameters.csv`,
 `validation.csv`, `rates.csv`, `summary.json` and three four-band GeoTIFFs.
 The gallery recalculates rates from saved annual stresses before plotting them.
