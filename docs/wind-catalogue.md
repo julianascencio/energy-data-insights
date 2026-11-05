@@ -820,3 +820,10 @@ Jasna gains a dated mixed-fleet observation: 22 V126 turbines reported at
 3.45 MW and 17 at 3.3 MW. The arithmetic check is separate from reported
 132 MW, and no exact OEM revision or individual turbine identity is inferred.
 March 2021 commissioning-in-progress remains distinct from the prior launch label.
+
+The complete final-2025 Operable 62000–63999 partitions review 146 plants and
+161 generator rows: 36 existing projects enriched and 110 identities held.
+Karcino gains the operator's dated history: turbine installation began in 2009
+and commissioning occurred in 2010. The historical WRI conflict remains visible.
+The operator's 120 GWh/year statement has no named observation year or method;
+it is not used to calculate capacity factor or presented as measured output.
