@@ -341,3 +341,23 @@ export function windCertificationSummary(rows) {
   }
   return result;
 }
+
+// Daily ONS unit snapshots can contain turbine groups; do not sum them as farms.
+export function windOnsSummary(rows) {
+  const result = {projects:0,snapshots:0,units:0,unknownNominal:0,zeroNominal:0,withoutEvidence:0};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const snapshots = Array.isArray(ext?.ons_wind_unit_snapshots) ? ext.ons_wind_unit_snapshots : [];
+    const valid = snapshots.filter(s => s?.source_id && s.source_sha256 && s.retrieved_at &&
+      Array.isArray(s.units) && Array.isArray(row.sources) && row.sources.includes(s.source_id));
+    if (!valid.length) { result.withoutEvidence++; continue; }
+    result.projects++; result.snapshots += valid.length;
+    for (const snapshot of valid) for (const unit of snapshot.units) {
+      result.units++;
+      if (unit.reported_nominal_mw == null) result.unknownNominal++;
+      if (unit.reported_nominal_mw === 0) result.zeroNominal++;
+    }
+  }
+  return result;
+}

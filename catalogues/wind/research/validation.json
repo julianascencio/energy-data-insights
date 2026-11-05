@@ -1,26 +1,26 @@
 {
-  "batch": "2026-11-05-1435",
-  "iteration_parent": "0603bb98155ce3fe61fcefa4d2125b8d31633a3b",
+  "batch": "2026-11-05-1510",
+  "iteration_parent": "7f80ea4758ee45869e5b250020d685443832ada0",
   "local": {
-    "python": "289 focused Wind/Hydropower tests passed",
-    "viewer": "28 Node tests passed",
-    "quality": "Ruff, format1066files, targeted ty, repository hygiene, citations and diff checks passed",
-    "catalogue": "Validated; all22381prior records and388sources unchanged;23equipment1project8plannedturbines added",
-    "snapshots": "Two seven-file builds byte-identical; every Parquet column ZSTD",
-    "docs": "Strict Sphinx with Wind-only executable gallery passed;658HTML pages passed local links/assets checks"
+    "python": "301 focused Wind/Hydropower tests passed",
+    "viewer": "29 Node tests passed",
+    "quality": "Ruff, format1068files, targeted ty, repository hygiene, citations and diff checks passed",
+    "catalogue": "22413records validated;66project enrichments;22347other records unchanged; all390prior source entries unchanged;394sources total; all6capacity summaries unchanged",
+    "snapshots": "Two final seven-file builds byte-identical; every Parquet column ZSTD",
+    "docs": "Strict Sphinx with Wind-only executable gallery passed;660HTML pages passed local links/assets checks"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "ce63ced6ab496fe9eb00a5d9f562995689ba9da34e6479f9bc97d9f0c2f75fbe",
-    "projects.parquet": "5d3d64e88c91bb17de085a0057d49a5168dcc904b6e2c1ed205c985d1c7ed947",
+    "manifest.json": "175aa9c17567c4e4a09c108359183f2ade15f5481ed1770f56485e220a348130",
+    "projects.parquet": "673c17c09ae7633f9de4556000455e19587a66ac9956d30494f6c8e218261e52",
     "turbines.parquet": "e3ec34b7a764223f002671d92e38fed08e63a643529cf2173c28db69ec56145d",
-    "sources.json": "66356d51a3eecc6e53cc3f6f07eb4309a57f3836f230c5b4f416b2f56fc81490",
+    "sources.json": "17fcc01671694581acd744b33bc088ce90fb3c72af09c382384cedf934e49897",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "21e673cb64f9d8abd9ec84acbca7360f03447a5b033dbb6af6e14d32b7371675"
   },
   "remote_ci": {
-    "previous_head": "0603bb98155ce3fe61fcefa4d2125b8d31633a3b",
-    "previous_head_result": "Python3.12,Python3.13,Documentation passed; Pages skipped",
+    "previous_head": "7f80ea4758ee45869e5b250020d685443832ada0",
+    "previous_head_result": "Python3.12/3.13 and Documentation passed; Pages skipped",
     "current_update": "Not yet published when report written"
   },
   "not_executed": [
@@ -30,9 +30,7 @@
     "Package builds this iteration"
   ],
   "resolved_attempts": [
-    "Hub options changed to schema object structure before successful validation",
-    "Evidence normalized unit kW retained separately from original MW",
-    "Turbine external IDs qualified by procedure; shared parent procedure removed from individual ID namespace",
-    "Ruff import ordering fixed"
+    "Capacity preservation helper corrected to compare all6explicit fields",
+    "Citation exports regenerated after final source/reference additions"
   ]
 }

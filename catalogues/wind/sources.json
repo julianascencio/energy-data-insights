@@ -5022,5 +5022,80 @@
     "license": "Public official notice; factual extraction with attribution",
     "scope": "Proposed wind module and its eight planned turbine identifiers; not installed hybrid plant capacity",
     "original_availability": "Original HTML bytes available; checksum recorded; source bytes outside Git"
+  },
+  "ons-wind-20261105": {
+    "url": "https://dados.ons.org.br/dataset/capacidade-geracao",
+    "download_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/capacidade-geracao/CAPACIDADE_GERACAO.csv",
+    "publisher": "Operador Nacional do Sistema Elétrico",
+    "title": "Daily generating-unit nominal capacity: first100sorted wind CEGs",
+    "license": "CC BY; ONS CKAN metadata license_id cc-by; attribution retained",
+    "retrieved_at": "2026-11-05T15:13:00Z",
+    "published_at": null,
+    "metadata_modified_at": "2026-11-05T15:01:08.259043",
+    "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
+    "original_availability": "Original CSV, dictionary JSON and CKAN metadata bytes acquired; checksums of original bytes; raw files not redistributed",
+    "dictionary_url": "https://ons-aws-prod-opendata.s3.amazonaws.com/dataset/capacidade-geracao/DicionarioDados_Capacidade_Instalada_Geracao.json",
+    "dictionary_sha256": "68e823cd62cc06aeb2ccdcc261a53904edc36c9a08b97c75ed1c3e3d21faea17",
+    "metadata_sha256": "76535cf4401ed898b8476d67139fa905326c98beb2404d159464d4a64252fd25",
+    "locator": "First100fullCEGs sorted lexically; individual CSV line locators embedded",
+    "scope": "ONS dispatched units TypeI/II-A/II-B/II-C. Daily current file lacks history. Generating units may group turbines. Not a whole-farm census; no scalar lifecycle/capacity promotion",
+    "revision": "Retrieved daily snapshot; publication date unspecified; metadata modification is not observation date"
+  },
+  "wri-brazil-ceg-identity": {
+    "url": "https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_BRA.py",
+    "publisher": "World Resources Institute",
+    "title": "Brazil importer CEG numeric identity and make_id",
+    "license": "Upstream WRI repository; identity mapping facts/code attribution; original files not redistributed",
+    "retrieved_at": "2026-11-05T15:21:00Z",
+    "published_at": null,
+    "sha256": "1b4a16cf9d1729b58c997ea5860d3e20b0cd726201c83b041e3e43496cb0424d",
+    "original_availability": "Original Python source bytes obtained; pinned importer bytes identical to downloaded master; make_id original source also obtained",
+    "helper_url": "https://github.com/wri/global-power-plant-database/blob/master/powerplant_database.py",
+    "helper_sha256": "89547a4e63fe596d0cbf28ede1d28908e4289beb59a8c17da2d659a4ea35d544",
+    "locator": "build_database_BRA.py lines124–125,187; powerplant_database.py make_id lines774–791",
+    "scope": "BRA followed by seven-digit integer from six-digit CEG numeric component; exact name agreement additionally required; competing CEG versions held"
+  },
+  "unison-original-type-certificates-20261105": {
+    "url": "https://unison.co.kr/unison/certification",
+    "publisher": "Unison / UL Renewables",
+    "title": "U136 TC-190502Rev0 pages1–2 and U151 TC-200103Rev0 page1",
+    "retrieved_at": "2026-11-05T15:30:00Z",
+    "published_at": null,
+    "license": "OEM-hosted certification documents; factual metadata extracted; original images not redistributed",
+    "sha256": "0612d987b0bd56f2ea1a173480e2fd190b35aa8b546b155dad2de1f8519408ad",
+    "original_availability": "Original HTML API index and all3linked JPEG bytes acquired; each image SHA256 retained",
+    "index_url": "https://unison.co.kr/api/get_data_list/2",
+    "files": [
+      {
+        "file": "u136-land-1.jpg",
+        "url": "https://unison.co.kr/data/board/2/102/육상_U136-형식인증서_01.jpg",
+        "sha256": "499fe51575fb83785e0549a35f260b8b8bbe71f69f88e3083c1b1a249bf6c15d"
+      },
+      {
+        "file": "u136-land-2.jpg",
+        "url": "https://unison.co.kr/data/board/2/102/육상_U136-형식인증서_02.jpg",
+        "sha256": "d4ae46d8aa4401a01478322e365345c20f4c19f52d898585d0d3bec43fd269f8"
+      },
+      {
+        "file": "u151.jpg",
+        "url": "https://unison.co.kr/data/board/2/101/U151-형식인증서_01.jpg",
+        "sha256": "8f3a289844e412670d6bd8704cf6caecf8499ed619e9c8fe8465d531c050748c"
+      }
+    ],
+    "locator": "U136 onshore entry102 twoimages; U151 entry101 oneimage",
+    "scope": "Historical original certificates only; exactKS crosswalk and full design annexes unresolved"
+  },
+  "ksnara-six-conflict-followups-20261105": {
+    "url": "https://ksnara.or.kr/web_basic/certified_vendor/products/list.asp",
+    "publisher": "KS Certification Bodies Council",
+    "title": "Four indexed exact KS wind-certificate details in six-ID conflict review",
+    "retrieved_at": "2026-11-05T15:30:00Z",
+    "published_at": null,
+    "license": "Public registry factual identifiers; no full-page redistribution",
+    "sha256": null,
+    "original_availability": "Indexed primary-page text only; direct bytes are an HTTP200 error-body, not original certificate content, so original content checksum unavailable",
+    "locator": "CID907392,CID907390,CID907397,CID907396",
+    "scope": "Search-index observations; no present validity or technical configuration inferred",
+    "error_body_sha256": "f8c7f269bd7e685b2c8fd88d7c0801043318e3eceb49e5fe92f50c0cfaab5e1a"
   }
 }

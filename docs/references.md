@@ -7423,3 +7423,35 @@ World Resources Institute (n.d.). **Global Power Plant Database v1.3.0, complete
 **Role:** data. Historical WRI baseline, CC BY 4.0. Full source checksum and per-field evidence in catalogues/hydro. Current status and pumped-storage classification are not inferred.
 
 **Used by:** `catalogues/hydro/sources.json`, `examples/database/plot_hydro_catalogue.py`.
+
+### ons_wind_units
+
+Operador Nacional do Sistema Elétrico (n.d.). **ONS installed generation capacity: nominal generating-unit dictionary**. [Source](https://dados.ons.org.br/dataset/capacidade-geracao)
+
+**Role:** data_source. Original byte checksums and exact row/function locators retained in Wind source registry; no inferred farm totals or lifecycle.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/ons.py`, `docs/wind-catalogue.md`.
+
+### wri_brazil_identity
+
+World Resources Institute (n.d.). **WRI Brazil CEG importer and make_id identity mapping**. [Source](https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_BRA.py)
+
+**Role:** data_source. Original byte checksums and exact row/function locators retained in Wind source registry; no inferred farm totals or lifecycle.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/ons.py`, `docs/wind-catalogue.md`.
+
+### unison-original-type-certificates-20261105
+
+Unison / UL Renewables (n.d.). **U136 TC-190502Rev0 pages1–2 and U151 TC-200103Rev0 page1**. [Source](https://unison.co.kr/unison/certification)
+
+**Role:** data_source. Historical original certificates only; exactKS crosswalk and full design annexes unresolved
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### ksnara-six-conflict-followups-20261105
+
+KS Certification Bodies Council (n.d.). **Four indexed exact KS wind-certificate details in six-ID conflict review**. [Source](https://ksnara.or.kr/web_basic/certified_vendor/products/list.asp)
+
+**Role:** data_source. Search-index observations; no present validity or technical configuration inferred
+
+**Used by:** `catalogues/wind/sources.json`.

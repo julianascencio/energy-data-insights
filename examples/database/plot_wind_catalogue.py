@@ -597,3 +597,23 @@ for component in rows:
                 link["source_id"],
                 link["locator"],
             )
+
+# ONS rows may represent turbine groups. Count evidence, never infer farm totals.
+ons_snapshots = [
+    snapshot
+    for row in rows
+    if row["entity_type"] == "projects"
+    for snapshot in json.loads(row.get("extensions_json") or "{}").get(
+        "ons_wind_unit_snapshots", []
+    )
+]
+ons_units = [unit for snapshot in ons_snapshots for unit in snapshot["units"]]
+print(
+    "ONS daily evidence; unit rows are not individual turbines or farm capacity totals",
+    {
+        "snapshots": len(ons_snapshots),
+        "unit_observations": len(ons_units),
+        "unknown_nominal_mw": sum(u["reported_nominal_mw"] is None for u in ons_units),
+        "reported_zero_nominal_mw": sum(u["reported_nominal_mw"] == 0 for u in ons_units),
+    },
+)

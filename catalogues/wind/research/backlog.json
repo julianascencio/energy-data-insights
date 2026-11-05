@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T14:43:44Z",
+  "updated_at": "2026-11-05T15:21:00Z",
   "branch": "research/wind-20261105-1235",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-1235.lock; acquire before any branch write",
   "queue": [
@@ -285,7 +285,41 @@
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
       "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-      "next_task": "ANEEL daily/monthly paths stillblocked. IBAMA licensing FeatureServermetadata acquired but countquery HTTP200 withArcGIS500; it is not ANEELSIGA. Next official ANEEL spatialservice metadata; preserveCEGrootidentity. No unchanged retries."
+      "next_task": "Continue pinned ONS snapshot sorted wind CEGs100:200; preserve34missing-WRI identity holds from1510ledger. Do not rescan first100. ANEEL spatial metadata remains independent queued follow-up; previous HTTP503 not authentication/reuse restriction.",
+      "independent_source": {
+        "source": "ONS daily capacity generator CSV",
+        "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
+        "total_cegs": 1082,
+        "completed_offsets": [
+          0,
+          100
+        ],
+        "next_offset": 100,
+        "next_limit": 100,
+        "next_cegs": [
+          "EOL.CV.BA.031744-6.01",
+          "EOL.CV.BA.031752-7.01",
+          "EOL.CV.BA.031754-3.01",
+          "EOL.CV.BA.031755-1.01",
+          "EOL.CV.BA.031756-0.01",
+          "EOL.CV.BA.031796-9.01",
+          "EOL.CV.BA.031832-9.01",
+          "EOL.CV.BA.032081-1.01",
+          "EOL.CV.BA.032082-0.01",
+          "EOL.CV.BA.032083-8.01",
+          "EOL.CV.BA.032090-0.01",
+          "EOL.CV.BA.032091-9.01",
+          "EOL.CV.BA.032093-5.01",
+          "EOL.CV.BA.032098-6.01",
+          "EOL.CV.BA.032101-0.01",
+          "EOL.CV.BA.032102-8.01",
+          "EOL.CV.BA.032104-4.01",
+          "EOL.CV.BA.032106-0.01",
+          "EOL.CV.BA.032108-7.01",
+          "EOL.CV.BA.032111-7.01"
+        ],
+        "ledger": "2026-11-05-1510-ons-review.json"
+      }
     },
     {
       "rank": 5,
@@ -346,7 +380,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "All57KNREC rows reviewed across1335/1435; do not rediscover. 23new certificate configurations thisrun,32remaining-row holds plus priorHTq38 hold. Next original certificates WT-MLWS-2-0021, WT-MLWS-3-0028, WT-1902-00-170356, WT-2201-00-190356, WT-2601-01-200856 and WT-2602-01-221439 for six explicit semantic/unit conflicts; then32held revision crosswalks. Unison U136 page3-22m/s versus platform3/25m/s unresolved; no threshold fill. Seven FGW HTq rows still need original DNV Mode0 crosswalk.",
+      "next_task": "Six conflict IDs followed up1510; do not repeat sameindexqueries. Obtain U136 STC-180901 Rev0 design annex and explicit KS WT-1902-00-170356 to UL TC-190502 crosswalk; U151 TC-200103 page2/STC-200109 and KS WT-2201-00-190356 crosswalk. Resolve E138 certificate WT-2602-01-221439 E2(KSNARA)/E3(KNREC) identity before geometry. SWT3.2/GW109 originals and V162gearbox remain held. Then32prior configuration/revision holds; sevenFGWHTq originalDNV Mode0 crosswalks.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -358,7 +392,8 @@
       },
       "vestas_old_review": "2026-11-05-1135-fgw-review.json",
       "vestas_new_review": "2026-11-05-1235-fgw-review.json",
-      "knrec_review": "2026-11-05-1435-knrec-review.json"
+      "knrec_review": "2026-11-05-1435-knrec-review.json",
+      "original_certificate_followup": "2026-11-05-1510-oem-review.json"
     },
     {
       "rank": 6,

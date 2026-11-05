@@ -12687,6 +12687,50 @@
       ],
       "url": "https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/output_database/global_power_plant_database.csv",
       "notes": "Role: data. Historical WRI baseline, CC BY 4.0. Full source checksum and per-field evidence in catalogues/hydro. Current status and pumped-storage classification are not inferred."
+    },
+    {
+      "type": "dataset",
+      "title": "ONS installed generation capacity: nominal generating-unit dictionary",
+      "authors": [
+        {
+          "name": "Operador Nacional do Sistema Elétrico"
+        }
+      ],
+      "url": "https://dados.ons.org.br/dataset/capacidade-geracao",
+      "notes": "Role: data_source. Original byte checksums and exact row/function locators retained in Wind source registry; no inferred farm totals or lifecycle."
+    },
+    {
+      "type": "software",
+      "title": "WRI Brazil CEG importer and make_id identity mapping",
+      "authors": [
+        {
+          "name": "World Resources Institute"
+        }
+      ],
+      "url": "https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_BRA.py",
+      "notes": "Role: data_source. Original byte checksums and exact row/function locators retained in Wind source registry; no inferred farm totals or lifecycle."
+    },
+    {
+      "type": "web",
+      "title": "U136 TC-190502Rev0 pages1–2 and U151 TC-200103Rev0 page1",
+      "authors": [
+        {
+          "name": "Unison / UL Renewables"
+        }
+      ],
+      "url": "https://unison.co.kr/unison/certification",
+      "notes": "Role: data_source. Historical original certificates only; exactKS crosswalk and full design annexes unresolved"
+    },
+    {
+      "type": "web",
+      "title": "Four indexed exact KS wind-certificate details in six-ID conflict review",
+      "authors": [
+        {
+          "name": "KS Certification Bodies Council"
+        }
+      ],
+      "url": "https://ksnara.or.kr/web_basic/certified_vendor/products/list.asp",
+      "notes": "Role: data_source. Search-index observations; no present validity or technical configuration inferred"
     }
   ]
 }

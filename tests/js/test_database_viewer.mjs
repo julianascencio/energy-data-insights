@@ -329,3 +329,12 @@ test("certificate observations separate expiry from unknown and deduplicate same
     {models:1,observations:2,expired:1,cancelled:0,unspecified:1,withoutEvidence:2});
   assert.deepEqual(windCertificationSummary([]), {models:0,observations:0,expired:0,cancelled:0,unspecified:0,withoutEvidence:0});
 });
+
+test("ONS daily evidence counts unknown and zero without aggregating units into turbines or MW", async () => {
+  const {windOnsSummary} = await import("../../docs/_static/database-core.mjs");
+  const row={entity_type:"projects",sources:["ons"],extensions_json:JSON.stringify({ons_wind_unit_snapshots:[
+    {source_id:"ons",source_sha256:"hash",retrieved_at:"2026-11-05T15:13:00Z",units:[
+      {reported_nominal_mw:0},{reported_nominal_mw:null},{reported_nominal_mw:21}]}]})};
+  assert.deepEqual(windOnsSummary([row,{...row,extensions_json:"null"},{...row,sources:[]},{entity_type:"equipment"}]),
+    {projects:1,snapshots:1,units:3,unknownNominal:1,zeroNominal:1,withoutEvidence:2});
+});

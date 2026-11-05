@@ -938,3 +938,29 @@ identity holds, with no claim that original permit contents have been reviewed.
 No capacity aggregation exclusion is lifted. All earlier records and creation
 timestamps remain unchanged. See the dated KNREC, BOE and REPD decision ledgers
 in `catalogues/wind/research`; the continuation cursors are in `backlog.json`.
+
+### Brazil: dated ONS unit evidence
+
+The first 100 lexically sorted wind CEGs in the ONS daily file retrieved on
+2026-11-05 contain 66 exact historical WRI identifier/name matches and 34 identity
+holds. The WRI Brazil importer explicitly encodes the six-digit numeric CEG
+component as `BRA` plus seven digits. The adapter additionally requires one
+historical identity, exact name agreement after case/whitespace normalization,
+and no competing CEG version anywhere in the file. Missing identities stay held.
+
+The source dictionary calls `val_potenciaefetiva` **nominal generating-unit MW**.
+Unit rows may represent turbine groups. Nested observations retain the original
+values, owner/operator, state, subsystem, operation modality, release-for-test,
+release-for-commercial-operation and deactivation dates. Missing dates remain
+null; retrieval and metadata modification dates are not observation dates.
+No unit count becomes a turbine count, release date becomes farm commissioning,
+or unit MW becomes whole-farm installed capacity. All 66 historical aggregation
+and lifecycle exclusions remain. The shared viewer and offline gallery count
+unit evidence and distinguish missing nominal ratings from reported zeros.
+
+This is an ONS-dispatched-unit partition (modalities I/II-A/II-B/II-C), not a
+current operating census of Brazilian wind farms. Original CSV/dictionary hashes,
+per-row locators, candidate decisions and the next exact CEGs are in the source
+registry and `research/2026-11-05-1510-ons-review.json`. The daily source has no
+historical archive guarantee; continuation must use the pinned bytes or explicitly
+record a replacement snapshot and reassess partition boundaries.
