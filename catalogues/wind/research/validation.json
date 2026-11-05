@@ -4,12 +4,13 @@
   "local": {
     "python": "357focused Wind/Hydropower/reference tests passed, including25newEPE tests",
     "viewer": "31Node tests passed",
-    "quality": "Ruff check,format1071,targetedty,repositoryhygiene,citations,diff passed",
+    "quality": "Ruff check/format1071, full repository ty with explicit .venv Python, hygiene, citations and diff passed",
     "catalogue": "68projects and2equipment enriched;3projects4equipment16plannedturbines added;22346prior records unchanged;398prior sources unchanged,6sources added. Prior scalar fields and creation timestamps preserved.",
     "aggregation": "All6eligible MW summaries and unknown counts unchanged; excluded project counts increase3.",
     "snapshots": "Two7file builds byte-identical; allParquetcolumns ZSTD",
     "docs": "Strict Wind-gallery Sphinx passed after citation-role fix; Documentation check passed: 662 HTML pages; local links and assets resolve.",
-    "visual": "New dated SIGA completeness chart rendered and inspected"
+    "visual": "New dated SIGA completeness chart rendered and inspected",
+    "followup": "25EPE tests rerun after explicitly typed fixture helper; passed"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
@@ -48,7 +49,10 @@
   "remote_ci": {
     "previous_head": "cb71b9a9fde68995e5a7983ab4049c9fde1c4b66",
     "previous_result": "Python3.12/3.13 and Documentation passed",
-    "current_result": "Pending publication; final result reported on PR"
+    "current_result": "Corrected commit pending publication; final result reported on PR",
+    "initial_published_commit": "1524156e1e8482de56777daba9e544077920c746",
+    "initial_python_run": 42085979235,
+    "initial_result": "Fulltype check failed in test helper; corrected in followup"
   },
   "resolved_attempts": [
     "New equipment required capacity_scope; added before successful catalogue validation",
@@ -56,7 +60,8 @@
     "Unknown fleet completeness omitted instead of invalid enum",
     "Preservation comparison separates increased exclusion counts from unchanged eligible MW",
     "Unsupported MyST cite role replaced by source links; strict rebuild passed",
-    "Ruff long literals and list expansion fixed before final test run"
+    "Ruff long literals and list expansion fixed before final test run",
+    "Initial published commit1524156 failed remote fullty on heterogeneous test-helper kwargs. Explicit typed helper arguments now pass fullty with .venv interpreter and25affected tests. An initial local fullty command selected the unrelated system environment; explicit --python .venv/bin/python resolved that environment mismatch. No catalogue/adapter/snapshot changes."
   ],
   "not_executed": [
     "Full localPython suite",

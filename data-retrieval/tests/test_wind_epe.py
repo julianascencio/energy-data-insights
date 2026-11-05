@@ -13,17 +13,24 @@ FIXTURE = Path(__file__).parent / "fixtures/wind_epe/bahia_one.json"
 NOW = "2026-11-05T18:12:00Z"
 
 
-def parse(doc=None, **options):
+def parse(
+    doc=None,
+    *,
+    sha256: list[str] | None = None,
+    expected_ids: list[int] | None = None,
+    confirmed_ids: list[int] | None = None,
+    state: str = "BA",
+    retrieved_at: str = NOW,
+):
     data = FIXTURE.read_bytes() if doc is None else json.dumps(doc).encode()
-    args = dict(
-        sha256=[hashlib.sha256(data).hexdigest()],
-        expected_ids=[68],
-        confirmed_ids=[68],
-        state="BA",
-        retrieved_at=NOW,
+    return parse_partition(
+        [data],
+        sha256=[hashlib.sha256(data).hexdigest()] if sha256 is None else sha256,
+        expected_ids=[68] if expected_ids is None else expected_ids,
+        confirmed_ids=[68] if confirmed_ids is None else confirmed_ids,
+        state=state,
+        retrieved_at=retrieved_at,
     )
-    args.update(options)
-    return parse_partition([data], **args)
 
 
 def existing():
