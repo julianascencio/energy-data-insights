@@ -1,30 +1,28 @@
 {
-  "batch": "2026-11-05-2135",
-  "iteration_parent": "d612ab10c31b6a8234dfada1af988734a78c79a4",
+  "batch": "2026-11-05-2235",
+  "base": "4ef42de474f69b5cdca5824410c06db0d851b434",
   "local": {
-    "python": "418 focused Wind/Hydropower/reference tests passed, including15 OEM table boundary tests",
-    "viewer": "34 Node viewer/Hydro tests passed",
-    "quality": "Ruff check; format1138files; full repository ty with workspace interpreter; hygiene; citations; diff check passed",
-    "catalogue": "67projects enriched;35exact OEM models added.22406prior records and409prior sources unchanged;1source added. All prior IDs,creationtimestamps andscalarfields preserved; all non-Wind catalogue paths unchanged.",
-    "aggregation": "All6 capacity summaries including eligibleMW,unknown andexcluded counts unchanged",
-    "replay": "EPE67identical records on replay; OEM35existing identities held on replay, no duplicates",
-    "snapshots": "Two7file builds byte-identical; allParquetcolumns ZSTD",
-    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 692 HTML pages; local links and assets resolve.",
-    "visual": "OriginalPDFpages9,10,11 visually reviewed;67column hub-option figure rendered and inspected"
+    "python": "425focusedWind/Hydro/reference tests passed",
+    "viewer": "34Node tests passed",
+    "quality": "Ruff lint/format1165files,ty,hygiene,citations,diffcheck passed",
+    "docs": "Strict Wind-gallerySphinx passed;707HTML pages/links/assets checked",
+    "replay": "36unchanged observations/126decisions verified; corruptdecisionledger rejected",
+    "preservation": "22508prior records retained;22472unchanged;36enriched;410prior sources preserved;all six capacity summaries unchanged;nonWindcatalogues unchanged",
+    "snapshots": "Two7file builds byte-identical;allParquetcolumnsZSTD"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "88ebee6acc15f3735b6272109dc43e3bc7a5a8e18aea39af31e7ecfa69428a7f",
-    "projects.parquet": "d897996318f29d5d4d290ec851eb58170a12247b7980e3e6bdf2c6e7d226e1e0",
+    "manifest.json": "c90089a50237776f97155520b60a8393fa434d8a8e2880372c8c8244fd5f355d",
+    "projects.parquet": "e7bc49bc9f71245c0bfce7f16810aba97bb80a002cdf9c515e6973ae9f38ae78",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "b4bda341db602c217e92b0baf0394da0c1b0edb0410084a4d94fed89c1405c3a",
+    "sources.json": "e803747b80300d1b1ecfef77ed63a5359f84b281be7e7122e9b6e6e3282dc867",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
   },
   "main_comparison": {
     "main": {
       "curves": 2,
-      "equipment": 486,
+      "equipment": 555,
       "projects": 8294,
       "turbines": 13657
     },
@@ -34,24 +32,18 @@
       "equipment": 555,
       "curves": 2
     },
-    "added": {
-      "equipment": 69
-    },
+    "added": {},
     "enriched": {
-      "projects": 227
+      "projects": 36
     },
-    "main_manufacturers": 63,
+    "main_manufacturers": 64,
     "branch_manufacturers": 64
   },
-  "remote_ci": {
-    "previous_head": "d612ab10c31b6a8234dfada1af988734a78c79a4",
-    "previous_result": "Python3.12/3.13 and Documentation passed",
-    "current_result": "Pending publication; final result reported on PR"
-  },
+  "remote_ci": "Pending publication; final result reported separately on PR",
   "not_executed": [
-    "Full localPython suite",
-    "Full localgallery",
-    "Browser interaction",
-    "Package builds"
+    "full localpytest",
+    "full localgallery",
+    "package builds",
+    "browser interaction"
   ]
 }

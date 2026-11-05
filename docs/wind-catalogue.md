@@ -1136,3 +1136,23 @@ ones, rejects malformed hub ranges, and explicitly separates component quantitie
 from turbine ratings. The gallery dynamically displays the reviewed model count.
 The next complete EPE partition is **PI**; the next OEM/project work is the
 AfDB Aysha I original ESIA and exact phase crosswalk recorded in the backlog.
+
+### Piauí registry continuation
+
+The November 5 22:35 batch reviews the complete 126-entry EPE Piauí wind
+partition, with stable before/after object IDs and original response checksums.
+Thirty-six existing identities receive dated registry observations; ninety
+remain held. No current operating status, new farm or capacity eligibility is
+inferred. The existing state-coverage gallery and viewer now include Piauí.
+
+Replay the reviewed ledger without changing the catalogue:
+
+```bash
+uv run python scripts/replay_wind_epe.py catalogues/wind/research/2026-11-05-2235-epe-review.json
+```
+
+The command rejects changed observations or changed identity decisions. Next is
+the complete Pernambuco (PE) partition. Independent Aysha I follow-up located
+IFC project 49251 and obtained the operator-hosted ESIA original; detailed phase
+and equipment reconciliation remains pending. No equipment is added from model
+names or marketing claims, and no completed Windey table is rescanned.

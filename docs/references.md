@@ -7567,3 +7567,11 @@ Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). 
 **Role:** data_source. Rio Grande do Sul full wind partition80IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_piaui_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Piauí: complete126-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Piauí full wind partition126IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
