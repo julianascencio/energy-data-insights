@@ -38,7 +38,7 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,997 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,120 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
@@ -258,6 +258,16 @@ model text remains identity and tested-population evidence rather than a
 replacement for the issuer's platform socket attribute. Alletra, Apollo, Cray,
 Edgeline, ProLiant, Superdome and Synergy certifications remain issuer test
 entries, not deployments or evidence of rated server/rack input.
+The Dell continuation processes all 123 Dell Inc. issuer entries across 44
+exact model names: 92 rack-mount, 16 multi-node, nine tower/pedestal and six
+half-chassis blade certifications. One hundred twenty entries retain low-end,
+typical/single and high-end SERT configurations; E127S and the two E128S
+certifications retain only their reported typical/single configuration. Exact
+`-1P` configuration labels remain distinct from the issuer's two-socket platform
+capacity, so neither platform sockets nor tested processor population is
+inferred from model text. DELL and DELL EMC brands remain source observations;
+certification entries are not deployments, installed-memory evidence or rated
+server/rack input.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -427,4 +437,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T0020-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T0120-validation.json).
