@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "evidence_class": "published_industry_assumption",
+  "source": {
+    "publisher": "Japan Wind Power Association (JWPA), via METI's 111th Procurement Price Calculation Committee",
+    "published_date": "2026-01-08",
+    "primary_url": "https://www.meti.go.jp/shingikai/santeii/111.html",
+    "secondary_transcription_url": "https://www.gridwatch.jp/policy/offshore-wind-industrial-base-cost-roadmap-january-2026",
+    "access_checked_utc_date": "2026-11-05",
+    "copyright_and_license": "Government meeting page is public, but full JWPA presentation reuse license has not been verified. This fixture retypes three attributed factual figures only; no source text, graphics or bulk dataset are redistributed.",
+    "verification": "Numerical inputs transcribed from a dated secondary synthesis of the JWPA presentation listed on METI; the original PDF could not be independently retrieved in this run. Verify original tables before investment use."
+  },
+  "inputs": {
+    "capex_jpy_per_kw": 900000,
+    "opex_jpy_per_kw_year": 12300,
+    "net_capacity_factor": 0.366
+  },
+  "scope": "Japan fixed-bottom offshore wind planning-cost benchmark, not Kashima Bay costs or measured annual generation",
+  "comment": "Assumptions for lifetime, discount rate, degradation and tariff are illustrative in the example and are not sourced from this fixture. No claim is made that the simplified model reproduces JWPA's published LCOE."
+}
