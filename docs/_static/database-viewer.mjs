@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isHydro = root.dataset.database === "hydro";
@@ -167,6 +167,8 @@ function render() {
     const epds = windEpdSummary(filtered);
     const updates = windOemUpdateSummary(filtered);
     const history = windOemHistorySummary(filtered);
+    const reference = windReferenceYieldSummary(filtered);
+    summary.push([number(reference.observations), "Modeled five-year reference yields", `${reference.models} models · ${reference.withoutReference} without evidence · ${reference.withdrawn} withdrawn observations retained. ${Object.entries(reference.bySite).map(([site, count]) => `${site}: ${count}`).join("; ")}. ${reference.unknownConditions} lack density or mode. Hub options and reference sites are not additive or a performance comparison.`]);
     summary.push([number(history.observations), "Dated OEM history", `${history.models} models · ${history.withoutHistory} without history · ${history.datedDiscontinuations} dated discontinuation statements. Prototype and historical design facts are separate from selected configurations; discontinuation is not fleet retirement.`]);
     summary.push([number(updates.updates), "Dated OEM updates", `${updates.models} turbine models · ${updates.withoutUpdates} without update evidence. Inspect extensions for modes, tower options and approval dates; announced options do not establish installed configurations or validated performance.`]);
     summary.push([number(epds.scenarios), "Modeled LCA scenarios", `${epds.records} turbine models · ${epds.withoutScenarios} without scenarios. Lifetime net-to-grid flows remain separate by location and exposure; not measured output or project counts.`]);

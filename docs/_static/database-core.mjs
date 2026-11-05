@@ -288,3 +288,29 @@ export function hydroCapacity(rows, field) {
   }
   return result;
 }
+
+// Count published reference observations; never sum yields across hubs or sites.
+export function windReferenceYieldSummary(rows) {
+  const result = {models: 0, observations: 0, withdrawn: 0, withoutReference: 0, unknownConditions: 0, bySite: {}};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const sets = Array.isArray(ext?.reference_yield_observations) ? ext.reference_yield_observations : [];
+    let count = 0;
+    for (const observation of sets) {
+      if (!observation?.source_id || !row.sources?.includes(observation.source_id) ||
+          !row.sources?.includes(observation.period_source_id) || observation.period_years !== 5 ||
+          observation.quantity_kind !== "modeled reference energy" || !observation.reference_site ||
+          !Array.isArray(observation.rows)) continue;
+      for (const entry of observation.rows) {
+        if (!entry?.locator || !entry.note || !Number.isFinite(entry.reference_yield_kwh) || entry.reference_yield_kwh <= 0) continue;
+        count++; result.observations++;
+        result.bySite[observation.reference_site] = (result.bySite[observation.reference_site] || 0) + 1;
+        if (entry.withdrawn === true) result.withdrawn++;
+        if (entry.operating_mode == null || observation.reference_conditions?.air_density_kg_m3 == null) result.unknownConditions++;
+      }
+    }
+    if (count) result.models++; else result.withoutReference++;
+  }
+  return result;
+}

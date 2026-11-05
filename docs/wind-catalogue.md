@@ -874,3 +874,35 @@ reversal and N169 printed-unit conflict remain deferred after reviewing independ
 dated OEM articles. A lone AW77/1300 narrative mention is held for original
 specification evidence. No new numerical curves or installed model variants are
 inferred from this history.
+
+## Published reference yields and saved EIA holds (5 November, 09:45 batch)
+
+Exactly 110 saved EIA holds from plant codes 62000–63999 were reviewed: 52 new
+registry sites and 58 remaining identity holds. The 36 previously enriched sites
+were not counted again. All new farm capacities and lifecycle states remain
+unknown and excluded from totals. Oregon PUC's UM1401 report confirms one shared
+LGIA involving Orchard Windfarm I, 2, 3 and 4; it does not supply the EIA crosswalk
+or resolve their physical boundaries, so those four candidates remain held.
+
+FGW's current index supplies complete Nordex tables for the old and new reference
+sites: 110 and 70 rows respectively. They add 16 explicitly printed types/revisions
+and enrich 24 existing equipment records. Hubs and power settings stay nested,
+including 173 accepted row observations; seven N27 rows remain in the conflict
+ledger. Five withdrawn N149 yields are retained alongside replacements with the
+publisher's withdrawal and replacement dates. Three missing rotor cells stay null.
+Existing scalar specifications are unchanged when reference-table geometry differs.
+
+The offline `wind_catalogue.reference_yield.stage_reference_yields` adapter checks
+original-byte hashes, complete row inventories, explicit record-ID crosswalks,
+positive finite quantities and restriction notes. Identical replay preserves
+creation and update timestamps; changed observations under the same source ID
+are rejected. Original decimal-comma/thousands-dot strings remain reviewable.
+
+FGW defines these quantities as calculated five-year energy in kWh. They describe
+hypothetical reference sites, not measured plant generation. Old-site logarithmic
+and new-site Hellmann profiles are kept separate; density, operating mode and
+gross/net boundary remain unknown. No annual generation, capacity factor or
+numerical power/Ct curve is inferred. The shared viewer and deterministic gallery
+show counts by reference site, withdrawn observations and missing evidence without
+summing yields or presenting an unsupported performance comparison. Paid reference
+certificates are separate from the freely readable published tables.

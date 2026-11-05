@@ -589,3 +589,20 @@ N169 printed unit remain held, as does a lone AW77/1300 narrative mention.
 Specifications remain OEM statements; no independent performance validation is
 claimed. `oem_historical_observations` keeps dates, boundaries and field provenance
 without replacing supported scalar specifications.
+
+Batch `2026-11-05-0945` resumes PR #158 at `1786ce89`. It adds 52 US registry
+sites from 110 saved EIA holds; 58 remain. Four Orchard candidates remain held
+after primary Oregon PUC shared-interconnection evidence because their registry
+and physical boundaries still need reconciliation. All six capacity totals stay
+unchanged. Current main's Hydropower addition was incorporated and both sectors'
+shared-viewer functions preserved.
+
+FGW's current-index Nordex tables (110 old-site rows, 70 new-site rows) add
+16 exact printed types/revisions and enrich 24 existing equipment records.
+The 173 accepted observations retain five-year modeled kWh, hub and power settings,
+reference-site conditions, original strings and restriction notes. Five withdrawn
+values remain alongside replacements. Seven N27 rows are held for the prior
+OEM rating conflict; three missing rotor cells remain null. No inferred installed
+compatibility, synthetic variants, capacity factors or numerical curves are added.
+See the batch transcription and decision ledgers in `research/` and the current
+counts and executed checks in `latest.json` and `validation.json`.

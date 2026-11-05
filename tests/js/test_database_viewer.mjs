@@ -295,3 +295,16 @@ test("OEM history needs dated registered evidence and never classifies a turbine
   assert.deepEqual(windOemHistorySummary([]), {models: 0, observations: 0, withoutHistory: 0, datedDiscontinuations: 0});
   assert.equal(row.status, undefined);
 });
+
+test("reference yields separate sites, withdrawals and missing evidence without summing energy", async () => {
+  const {windReferenceYieldSummary} = await import("../../docs/_static/database-core.mjs");
+  const entry = {locator:"synthetic row", note:"synthetic restriction", reference_yield_kwh:1000, operating_mode:null};
+  const observation = {source_id:"table", period_source_id:"method", period_years:5,
+    quantity_kind:"modeled reference energy", reference_site:"old", reference_conditions:{air_density_kg_m3:null},
+    rows:[entry,{...entry,withdrawn:true},{...entry,reference_yield_kwh:0}]};
+  const row = {entity_type:"equipment", equipment_category:"wind_turbine", sources:["table","method"],
+    extensions_json:JSON.stringify({reference_yield_observations:[observation,{...observation,reference_site:"new",rows:[entry]}]})};
+  assert.deepEqual(windReferenceYieldSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"projects"}]),
+    {models:1,observations:3,withdrawn:1,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
+  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,withoutReference:0,unknownConditions:0,bySite:{}});
+});
