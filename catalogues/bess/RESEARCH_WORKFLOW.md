@@ -16,7 +16,13 @@ or a live availability feed. Do not interpret record counts as installed capacit
    local languages when useful. Check recent status updates as well as technical
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
-4. For TAB UPS PDF pages 8–9, `scripts/stage_bess_tab_ups.py` stages
+4. For TAB TOPzS PDF pages 10–11, `scripts/stage_bess_tab_topzs.py` stages
+   eight exact cell models. Preserve the printed `6 TOPzS750` identity and reviewed
+   web spacing alias; C10 uses 20°C, C100 uses 25°C, and C20 temperature is unstated.
+   Fault current is in A, not kA or operating current. Live-table wet/dry mass
+   order is reversed from the PDF. Two additional OPzS live-only cells were
+   reviewed separately; do not copy brochure life/voltage/temperature onto them.
+   For TAB UPS PDF pages 8–9, `scripts/stage_bess_tab_ups.py` stages
    the 15-model table. C10 Ah belongs to the cell/monobloc; timed W/cell
    observations are not continuous unit power. Preserve rate-specific final voltage
    and reference temperature, dry/wet mass, and the printed compensation-unit hold.
