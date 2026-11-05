@@ -104,6 +104,19 @@
       "new": 0,
       "held": 28,
       "cursor": "Complete; EIA resumes at 3001 after India IHA regional rotation; held inventory retained"
+    },
+    {
+      "source": "iha-india-2019-0001-0100",
+      "partition": {
+        "offset": 0,
+        "limit": 100,
+        "last_id": 169,
+        "next_id": 170
+      },
+      "accepted_enriched": 12,
+      "new": 0,
+      "held": 88,
+      "cursor": "First 100 matched stations reviewed; remaining ten plus 88 identity/scope holds"
     }
   ],
   "next_sources": [
@@ -147,8 +160,8 @@
       "priority": 1,
       "country": "IND",
       "url": "https://energydata.info/en/dataset/india-hydropower-database",
-      "status": "CEA September PDF acquired; copyright policy requires prior permission, so no reproduction/import. IHA CC BY 4.0 alternative acquired: 182 rows, 110 matched hydro stations; zero accepted.",
-      "next_action": "First 100 of 110 matched IHA stations sorted numeric ID; review explicit identities, station/dam coordinates, historical scope and units. See india-source-review-20261105.json; never import seven Not hydro rows."
+      "status": "12 existing plants enriched from historical IHA evidence; 88 held; 10 matched stations remaining; CEA reuse hold unchanged",
+      "next_action": "Remaining ten IHA matched stations starting ID 170; then Africa rotation"
     }
   ],
   "market_ranking": {

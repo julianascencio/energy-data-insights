@@ -271,3 +271,28 @@ Next regional partition: the first 100 matched-station IHA rows sorted by
 numeric source ID, with explicit identity, phase and coordinate review.
 `research/india-source-review-20261105.json` records acquisition, reuse and
 scope findings. EIA resumes at plant codes 3001–3500 afterward.
+
+
+## IHA India historical identity review
+
+The first 100 matched-station candidates (numeric source-ID order) yield 12
+explicitly reviewed enrichments and 88 identity/phase/location holds. Exact
+names, historical capacity and station coordinates within 0.001 degree per
+axis support the accepted crosswalks; dam coordinates are never substituted.
+The complete 182-row original also includes 72 rows in other asset classes,
+including seven non-hydro rows. No new plants are created.
+
+Added IHA IDs, river metadata and immutable historical raw observations with
+CSV row locators and source references. Owner, lifecycle, generating capacity,
+coordinates and aggregation roles remain unchanged. Reservoir volume is not
+converted to storage energy. IHA 2019 labels do not establish current operation.
+CC BY 4.0 attribution: International Hydropower Association, India Hydropower
+Database, 2019 release; crosswalk review and normalization are our changes.
+
+```bash
+uv run python scripts/enrich_hydro_iha.py
+```
+
+Coverage remains 7,156 records / 128 countries, with 710 enriched identities.
+Next: the ten remaining matched-station rows, then Africa rotation; 88 held
+identities retain complete evidence for later review.
