@@ -18931,6 +18931,239 @@
       "sha256": "b4cf596c416489fae8deb50c9a9ce46f06f8a0c0fb8ba1d3555ad433105de767",
       "etag": null,
       "retrieval_url": "https://www.mustups.com/product/pv1800-vhm-series-5-5-5kw/"
+    },
+    {
+      "id": "gem_diverse_1800",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "last_release": "February2026",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "CCBY4; entire TZ/WKSL locations excluded",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:04:11.293449+00:00",
+      "sha256": "83376a7b769670274799d269e16d06edbac7fb1968cc2c38145ac350e2aa9630",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 18:00:25 GMT",
+      "access_result": 200,
+      "reviewed": 209,
+      "accepted": 110,
+      "rejected": 0,
+      "processed_cursor": {
+        "countries": {
+          "BRA": 22,
+          "DEU": 11,
+          "ESP": 43,
+          "FRA": 7,
+          "IND": 7,
+          "JPN": 10,
+          "ZAF": 10
+        },
+        "owners_added": 70,
+        "label_holds": 99,
+        "ownership_holds": 9
+      },
+      "fields_offered": [
+        "110historical operators",
+        "70historical owners",
+        "110complete-phase evidence contexts"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 209,
+        "accepted": 110,
+        "additional_verified": null
+      },
+      "result": "Selected eight-country complete-phase corporate-operator/null-context partition exhausted; retain99 label and9 ownership holds. Move to another registry/partition.",
+      "next_action": "Selected eight-country complete-phase corporate-operator/null-context partition exhausted; retain99 label and9 ownership holds. Move to another registry/partition.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-12T18:00:00Z"
+    },
+    {
+      "id": "nsw_aliases_1800",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "endpoint": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "format": "HTML",
+      "last_release": "6August2026",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "Department CC BY4, excludes third-party reports/submissions",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:04:20.099898+00:00",
+      "sha256": "510e9ec32890927d7e259abf031885d500357af19d35e3184a5677b449f66f37",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 06:42:51 GMT",
+      "access_result": 200,
+      "reviewed": 53,
+      "accepted": 15,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted_across_runs": 55,
+        "remaining_cards": 38
+      },
+      "fields_offered": [
+        "planning identity/geography/context"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 53,
+        "accepted": 15,
+        "additional_verified": null
+      },
+      "result": "15 reviewed tracker contexts and6 geography fields; 38 cards held. Separate Darlington permit metadata accepted without copying wrong tracker geography.",
+      "next_action": "Review38 remaining cards using explicit permit aliases; retain Darlington location, Nyngan/Bogan and phase ambiguities.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-12T18:00:00Z"
+    },
+    {
+      "id": "smarten_pcu_1800",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://www.smartenpowersystems.com/more/catalogue/",
+      "endpoint": "https://www.smartenpowersystems.com/more/catalogue/",
+      "format": "ThreePDFs",
+      "last_release": "Undated; September2026 upload metadata",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "OEM copyright retained; bounded facts only, no open document/bulk licence asserted",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:01:46.686633+00:00",
+      "sha256": "a17e936c2ce732ab916849035060079d2b81915967cb0660c5b440761fe08b9a",
+      "etag": null,
+      "last_modified": null,
+      "access_result": 200,
+      "reviewed": 14,
+      "accepted": 14,
+      "rejected": 0,
+      "processed_cursor": {
+        "tables_complete": 3,
+        "typed_values": 85
+      },
+      "fields_offered": [
+        "PV input, output, charging, protection/control and mechanical conditions"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 14,
+        "accepted": 14,
+        "additional_verified": null
+      },
+      "result": "Three selected PCU tables exhausted. Preserve topology/current/DOD/dimension/tolerance qualifications.",
+      "next_action": "Three selected PCU tables exhausted. Preserve topology/current/DOD/dimension/tolerance qualifications.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-12T18:00:00Z"
+    },
+    {
+      "id": "smarten_modules_1800",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.smartenpowersystems.com/wp-content/uploads/2026/09/Solar_Panel_DCR_Non-DCR_Bifacial_TOPCon_Monocrystalline.pdf",
+      "endpoint": "https://www.smartenpowersystems.com/wp-content/uploads/2026/09/Solar_Panel_DCR_Non-DCR_Bifacial_TOPCon_Monocrystalline.pdf",
+      "format": "PDF",
+      "last_release": "Undated",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "OEMcopyright retained, review only",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:01:57.399085+00:00",
+      "sha256": "db50ae4132187f19e58198f7348892df0b4d15cbafcb762843293392dd218b32",
+      "etag": "\"22f5be48e044dd1:0\"",
+      "last_modified": "Tue, 15 Sep 2026 07:03:17 GMT",
+      "access_result": 200,
+      "reviewed": 5,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "power_columns": 5,
+        "held": 5
+      },
+      "fields_offered": [
+        "discovery or identity review only"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 5,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "result": "Require exact manufacturer model identifiers before accepting640–660W columns; no synthetic model IDs.",
+      "next_action": "Require exact manufacturer model identifiers before accepting640–660W columns; no synthetic model IDs.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-12T18:00:00Z"
+    },
+    {
+      "id": "industry_broadsound_1800",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.industry.gov.au/major-projects-and-procurement/australian-industry-participation/broadsound-solar-farm-1",
+      "endpoint": "https://www.industry.gov.au/major-projects-and-procurement/australian-industry-participation/broadsound-solar-farm-1",
+      "format": "HTML/PDFdiscovery",
+      "last_release": "2026 index search result; bytes unavailable",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "Reuse terms unavailable: page and copyright503",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:15:06.410932+00:00",
+      "sha256": null,
+      "etag": null,
+      "last_modified": null,
+      "access_result": "HTTP Error 503: Service Unavailable",
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "discovery or identity review only"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "result": "Retry federal AIPP page and copyright after503 backoff; no accepted facts or integrated feed.",
+      "next_action": "Retry federal AIPP page and copyright after503 backoff; no accepted facts or integrated feed.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-06T18:15:00Z"
+    },
+    {
+      "id": "portal_darlington_1800",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/darlington-point-solar-farm",
+      "endpoint": "https://www.planningportal.nsw.gov.au/major-projects/projects/darlington-point-solar-farm",
+      "format": "HTML",
+      "last_release": "Live page; no release assumed",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "Departmental CC BY4 confirmed from observed footer link to planning.nsw.gov.au/copyright-and-disclaimer; third-party submissions/documents excluded",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:15:15.560578+00:00",
+      "sha256": "5746a52d6860c4bb34efaca2d01f064cbcbc708677002e7cc9ac488243f3f376",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 15:08:51 GMT",
+      "access_result": 200,
+      "reviewed": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "processed_cursor": {
+        "application_id": "SSD-8392",
+        "accepted_existing": 1
+      },
+      "fields_offered": [
+        "discovery or identity review only"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "result": "Accepted permit ID/locality/additive evidence namespace. Existing GEM namespace and identifier retained; no nameplate/lifecycle change.",
+      "next_action": "Darlington tracker geography remains unresolved; use source-specific permit scope for further cases.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-06T18:15:00Z"
     }
   ],
   "source_refresh_queue": [
