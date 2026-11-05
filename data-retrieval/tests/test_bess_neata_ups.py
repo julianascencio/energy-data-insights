@@ -221,3 +221,59 @@ def test_middle_mutations_fail(a, b):
 
     with pytest.raises(ValueError):
         parse_mid_voltage_cabinets(middle_sample().replace(a, b, 1))
+
+
+def upper_sample():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import UPPER_CABINET_MODELS
+
+    row = (
+        "<tr>"
+        + "".join(
+            "<td>" + v + "</td>"
+            for v in [
+                "MODEL",
+                "480V30Ah",
+                "480",
+                "27",
+                "max.44.8KW",
+                "510~517.5(540)",
+                "15",
+                "27",
+                "41.6KW/10min",
+                "800",
+                "600",
+                "1165",
+                "257",
+            ]
+        )
+        + "</tr>"
+    )
+    return middle_sample().replace(
+        b"</table>",
+        ("".join(row.replace("MODEL", m) for m in UPPER_CABINET_MODELS) + "</table>").encode(),
+    )
+
+
+def test_upper_native_conflict_retained():
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_upper_voltage_cabinets
+
+    rows = parse_upper_voltage_cabinets(upper_sample())
+    assert len(rows) == 13
+    assert rows[0]["battery_type_label"] == "480V30Ah"
+    assert rows[0]["pack_ah"] == "27"
+
+
+@pytest.mark.parametrize(
+    "a,b",
+    [
+        (b"NC30Y</td>", b"TC60Y</td>"),
+        (b"max.44.8KW", b"max.44.8KVA"),
+        (b"41.6KW/10min", b"41.6KW/10h"),
+        (b"480</td>", b"768</td>"),
+    ],
+)
+def test_upper_mutations_fail(a, b):
+    from energy_data_retrieval.bess_oem_catalogue.neata_ups import parse_upper_voltage_cabinets
+
+    with pytest.raises(ValueError):
+        parse_upper_voltage_cabinets(upper_sample().replace(a, b, 1))

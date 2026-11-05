@@ -252,3 +252,9 @@ power ratings are separate observations; neither defines stored energy.
 The TC48Y/TC48 labels give 30 Ah but capacity columns give 27 Ah; preserve both
 in conflicts and withhold a resolved pack-capacity scalar. Timed discharge
 ratings do not establish stored energy or indefinite continuous power.
+
+`neata_ups.parse_upper_voltage_cabinets` stages thirteen unique NC/TC models at
+480/512 V. Full-table repeated codes TC100Y and NC40 remain excluded. TC60Y/TC60
+have conflicting 30 Ah type labels and 27 Ah capacity columns; keep both native
+observations and withhold resolved capacity. Maximum power and timed discharge
+ratings remain separate, with no inferred stored energy or continuous power.

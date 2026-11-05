@@ -166,3 +166,42 @@ def parse_mid_voltage_cabinets(content: bytes) -> list[dict[str, str]]:
         if not re.fullmatch(r"\d+(?:\.\d+)?~\d+(?:\.\d+)?\(\d+(?:\.\d+)?\)", r[5]):
             raise ValueError("Changed middle-voltage charging notation")
     return [dict(zip(FIELDS, r, strict=True)) for r in rows]
+
+
+UPPER_CABINET_MODELS = [
+    "NC30Y",
+    "TC60Y",
+    "NC40Y",
+    "TC200Y",
+    "NC70Y",
+    "NC100Y",
+    "NC30",
+    "TC60",
+    "TC100",
+    "TC100E",
+    "TC200",
+    "NC70",
+    "NC100",
+]
+
+
+def parse_upper_voltage_cabinets(content: bytes) -> list[dict[str, str]]:
+    """Stage unique480/512V models; repeated TC100Y/NC40 identities are excluded."""
+    parse_mid_voltage_cabinets(content)
+    p = _Tables()
+    p.feed(content.decode("utf-8-sig"))
+    rows = [r for r in p.tables[0][2:] if r and r[0] in UPPER_CABINET_MODELS]
+    if [r[0] for r in rows] != UPPER_CABINET_MODELS:
+        raise ValueError("Missing or repeated upper-voltage cabinet identity")
+    for r in rows:
+        if len(r) != 13 or not all(r) or r[2] not in ["480", "512"]:
+            raise ValueError("Incomplete or unexpected upper-voltage row")
+        if any(not re.fullmatch(r"\d+(?:\.\d+)?", r[i]) for i in [2, 3, 6, 7, 9, 10, 11, 12]):
+            raise ValueError("Changed upper-voltage numeric units")
+        if not re.fullmatch(r"max\.\s*\d+(?:\.\d+)?KW", r[4]):
+            raise ValueError("Changed upper-voltage maximum power units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?KW/\d+min", r[8]):
+            raise ValueError("Changed upper-voltage timing units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?~\d+(?:\.\d+)?\(\d+(?:\.\d+)?\)", r[5]):
+            raise ValueError("Changed upper-voltage charging notation")
+    return [dict(zip(FIELDS, r, strict=True)) for r in rows]
