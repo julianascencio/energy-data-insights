@@ -316,3 +316,8 @@ identities but disagree on DC150-12 capacity/reserves and DC85-12 height. Preser
 removable-post qualifiers. Undated web/PDF physical differences remain holds; do
 not infer energy, cell count or a newest revision. Mobility-only PowerVault packs
 are excluded without stationary evidence.
+
+Fullriver individual-sheet electrical tables use `fullriver.parse_datasheet` on
+local layout text. Keep per-battery Ah separate from cell Ah; retain the explicit
+SoC, temperature and per-cell endpoint. Raster sheets require visual review.
+Undated sheet/brochure conflicts remain observations, not silently chosen ratings.

@@ -106,3 +106,33 @@ def parse_cards(content: bytes, *, expected_models: list[str]) -> list[Card]:
             panels[unit] = row
         result.append({"model": model, "panels": panels})
     return result
+
+
+def parse_datasheet(text: str, *, model: str) -> dict[str, object]:
+    """Stage rate-specific battery-unit capacity from reviewed PDF layout text.
+
+    Requires an exact first heading and the explicit test-condition footnote.
+    Does not interpret charts, infer cell counts, or select a preferred revision.
+    """
+    if text.strip().splitlines()[0].strip() != model:
+        raise ValueError("Exact model heading mismatch")
+    if not all(token in text for token in ("100% SoC", "25°C", "1.75VPC")):
+        raise ValueError("Unreviewed capacity test conditions")
+    values = {}
+    for rate in (100, 20, 10, 5):
+        matches = re.findall(rf"^\s*C{rate}\s+(\d+(?:\.\d+)?)\s*AH\b", text, re.M)
+        if len(matches) != 1:
+            raise ValueError(f"Missing or ambiguous C{rate} capacity")
+        values[str(rate)] = float(matches[0])
+    resistance = re.findall(r"Internal Resistance\s+(\d+(?:\.\d+)?)\s*m\s*[ΩΩ]", text)
+    if len(resistance) != 1:
+        raise ValueError("Missing or ambiguous milliohm resistance")
+    return {
+        "capacity_ah_by_discharge_hours": values,
+        "capacity_boundary": "Complete battery unit, not cell capacity or stored energy",
+        "reference_soc_pct": 100,
+        "reference_temperature_c": 25,
+        "end_voltage_v_per_cell": 1.75,
+        "internal_resistance_milliohm": float(resistance[0]),
+        "qualification": "OEM estimation ratings; application-dependent, design subject to change",
+    }
