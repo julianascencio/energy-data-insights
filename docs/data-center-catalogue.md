@@ -38,13 +38,13 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 1,831 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
-Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, Huawei Digital Power, Kehua Tech, KSTAR,
-Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
-nVent HOFFMAN, Schneider Electric, Siemens,
+has 2,317 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
+Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
+nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
 Ingram Micro / V7, N1 Critical Technologies, Neuropower, Power Logic / KOSS,
-Right Power Technology and Upsonic Power Systems. Current categories are GPU accelerators,
+Right Power Technology, Upsonic Power Systems, xFusion and ZTE. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -230,6 +230,85 @@ internally consistent with their model labels. PSU nameplates, idle watts,
 benchmark scores and maximum supported memory remain bounded observations rather
 than rated server/rack input or installed memory; certifications are not treated
 as deployments.
+The xFusion continuation processes every one of the 31 xFusion Digital
+Technologies entries in the same issuer snapshot. The exact 1158H, 1258H,
+1288/1288H, 2158H, 2258/2258H, 2288/2288H, 2488H, 5298, 5885H and G-series
+certification identities remain distinct even where model names repeat. Platform
+socket count remains separate from the one-, two- or four-processor population
+reported in each SERT configuration; `-1P` and `-2P` suffixes are not used to
+overwrite the issuer socket attribute. Certification records remain issuer test
+entries rather than deployments, and their PSU, idle-power, benchmark and
+maximum-memory observations do not become server/rack input or installed memory.
+The Nutanix and Hitachi Vantara continuation processes all 19 and 16 issuer
+entries respectively. Eighteen Nutanix entries retain low-end, typical/single
+and high-end SERT configurations; one Nutanix entry retains only its reported
+typical/single configuration. Fifteen Hitachi entries report only a
+typical/single configuration and HA835 G3 1P reports low-end plus typical/single.
+Missing configuration tiers remain absent rather than being synthesized. Hitachi
+`1P`/`2P`/`4P` model labels remain distinct from platform socket capacity and
+tested installed-processor counts. PSU nameplates, idle watts, benchmark scores
+and maximum supported memory remain observations rather than rated input,
+installed memory or deployments.
+The HPE continuation processes all 100 Hewlett Packard Enterprise issuer
+entries across 89 model names, 71 rack servers, 21 blade entries and eight
+tower/pedestal entries. Ninety-nine certifications retain low-end,
+typical/single and high-end SERT configurations; the HPE ProLiant Compute DL110
+Gen12 retains only its reported typical/single configuration. `1P`/`2P`/`4P`
+model text remains identity and tested-population evidence rather than a
+replacement for the issuer's platform socket attribute. Alletra, Apollo, Cray,
+Edgeline, ProLiant, Superdome and Synergy certifications remain issuer test
+entries, not deployments or evidence of rated server/rack input.
+The Dell continuation processes all 123 Dell Inc. issuer entries across 44
+exact model names: 92 rack-mount, 16 multi-node, nine tower/pedestal and six
+half-chassis blade certifications. One hundred twenty entries retain low-end,
+typical/single and high-end SERT configurations; E127S and the two E128S
+certifications retain only their reported typical/single configuration. Exact
+`-1P` configuration labels remain distinct from the issuer's two-socket platform
+capacity, so neither platform sockets nor tested processor population is
+inferred from model text. DELL and DELL EMC brands remain source observations;
+certification entries are not deployments, installed-memory evidence or rated
+server/rack input.
+The Super Micro continuation processes all 49 Super Micro Computer, Inc. issuer
+entries: 39 rack-mount and ten multi-node certifications across 48 model-name
+strings. All entries retain low-end, typical/single and high-end SERT observations.
+Only 14 print tier-specific configuration IDs; the other 35 retain those IDs as
+unknown while preserving the reported CPU, memory, storage, PSU and benchmark
+values. Two `Greater than 4` socket attributes remain exact observations with no
+invented scalar socket count. Supermicro and Super Micro Computer, Inc. brand
+labels remain source observations under the existing Supermicro OEM identity.
+The Lenovo server-certification continuation processes all 45 Lenovo Group
+Limited issuer entries: 35 rack-mount, five tower/pedestal and five half-chassis
+blade certifications across 29 model names. All retain low-end, typical/single
+and high-end SERT observations. Forty print all three tier-specific configuration
+IDs; two print only low-end, one prints typical and high-end, and two print none.
+Absent identifiers remain unknown while the reported tier-qualified CPU, memory,
+storage, PSU and benchmark observations remain intact. The one-, two- and
+four-socket platform attributes remain separate from tested processor population.
+The residual server-certification continuation exhausts the remaining 30 entries
+in the same 476-row issuer snapshot: nine IBM, eight Aivres Systems entries sold
+under the KAYTUS brand, six ZTE, three Altos, three Oracle and one Ace Computers.
+IBM, ZTE and Oracle retain their reported three-tier SERT observations except
+IBM Power S1014, which reports only low-end and typical/single. KAYTUS, Altos and
+Ace retain only the reported typical/single tier. Empty tiers and identifiers are
+not synthesized. ZTE certification 4654814 is labeled R5300 G5 but prints R5300
+G6 for the high-end configuration ID; both issuer observations are preserved and
+configuration-identity inference remains quarantined. PSU nameplates, benchmark
+scores, maximum supported memory and certification status remain bounded evidence,
+not rated server/rack input, installed memory or deployment claims.
+The DOE CCMS continuation adds every one of the first 50 displayed current
+low-voltage dry-type transformer basic-model rows: 27 three-phase 15 kVA EATON
+models, 15 three-phase 112.5 kVA models and eight single-phase 100 kVA models.
+Exact basic-model identity, phase count, apparent kVA and represented efficiency
+remain issuer-registry evidence. The displayed page omits the efficiency load/test
+condition, so no generic efficiency scalar is normalized; kVA is not converted to
+active kW and listing is not treated as a DOE compliance determination.
+The independent medium-voltage dry-type continuation adds all 50 rows displayed
+on its current DOE page: two Hitachi, two Hitran Corporation, four Howard
+Industries, 23 JEI and 19 MGM basic models. Exact apparent kVA, phase count,
+represented efficiency and BIL group rating remain bounded observations. BIL is
+not treated as winding voltage, represented efficiency remains unnormalized
+without a load/test condition, and no listing is promoted to a deployment or DOE
+compliance determination.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -398,5 +477,5 @@ exact nVent HOFFMAN SKUs. Optional voltages were not expanded into invented prod
 Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
-See the [continuation report](../catalogues/data_centers/research/2026-11-04-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-04T2027-validation.json).
+See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
+and [executed validation](../catalogues/data_centers/research/2026-11-05T0720-validation.json).

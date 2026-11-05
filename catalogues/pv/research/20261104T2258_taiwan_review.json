@@ -1,0 +1,107 @@
+{
+  "source_id": "taiwan_private_sungen_reconciliation_20261104T2258",
+  "fresh_html_sha256": "b3064c52f7512b2058de09b8c703a113c42d93b021c7f6ef113545103209b012",
+  "first100_semantically_equal_to_prior_snapshot": true,
+  "table_rows": 787,
+  "company_group_reviewed_rows": 12,
+  "associated_rows": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "enriched_existing_projects": 1,
+  "accepted_new_plants": 0,
+  "canonical_record_id": "d9dc5b78-7c5f-552a-9e1c-9766a04ca254",
+  "separate_facility_holds": [
+    {
+      "source_row": 11,
+      "company_native": "森勁電力股份有限公司",
+      "plant_name_native": "森勁六期(澎湖監獄)",
+      "locality_native": "澎湖縣湖西鄉",
+      "installed_kw_native": "1,393.26",
+      "commercial_year_roc_native": "108",
+      "cell_origin_rows": [
+        1,
+        11,
+        11,
+        11,
+        11
+      ],
+      "review_flags": [
+        "Company role, whole-plant and phase identity require review",
+        "Native installed kW has no established AC/DC basis",
+        "Historical ROC year is not current status or exact commissioning",
+        "Solar inventory alone does not establish PV technology for every row"
+      ]
+    },
+    {
+      "source_row": 12,
+      "company_native": "森勁電力股份有限公司",
+      "plant_name_native": "森勁七期(中正預校太陽光電發電廠)",
+      "locality_native": "高雄市鳳山區",
+      "installed_kw_native": "7,015.14",
+      "commercial_year_roc_native": "108",
+      "cell_origin_rows": [
+        1,
+        12,
+        12,
+        12,
+        12
+      ],
+      "review_flags": [
+        "Company role, whole-plant and phase identity require review",
+        "Native installed kW has no established AC/DC basis",
+        "Historical ROC year is not current status or exact commissioning",
+        "Solar inventory alone does not establish PV technology for every row"
+      ]
+    }
+  ],
+  "next_company_group": "Physical rows13–22 昱鼎電業; reconcile with existing native IDs and explicit primary PV evidence before acceptance",
+  "staging_cursor_remains": 100,
+  "identity_reconciliation_cursor": 12,
+  "no_AC_DC_current_status_commissioning_ownership_inference": true,
+  "next_group_screened_rows": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "accepted_from_next_group": 0,
+  "candidate_conflicts": [
+    {
+      "source_row": 13,
+      "plant_name": "高捷大寮機廠",
+      "current_inventory_commercial_year_ROC": "104",
+      "annual_table57_commercial_year_ROC": "103",
+      "capacity_kw_in_both": 2106.07,
+      "annual_source_url": "https://www.moeaea.gov.tw/ECW_WEBPAGE/FlipBook/106AnnualReport/files/basic-html/page58.html",
+      "annual_sha256": "b67a44620eb4b744eef076710e01589ef80ee6175cf0d830fc49fca4baa10436",
+      "result": "Unresolved publisher commercial-year conflict; no exact commissioning date or current operation accepted. Not a quarantined canonical record."
+    }
+  ],
+  "annual_crosscheck": {
+    "source_url": "https://www.moeaea.gov.tw/ECW_WEBPAGE/FlipBook/106AnnualReport/files/basic-html/page58.html",
+    "sha256": "b67a44620eb4b744eef076710e01589ef80ee6175cf0d830fc49fca4baa10436",
+    "locator": "HTMLpage58 / printedpage50,Table5-7; statisticsendROC106",
+    "publication_date": null,
+    "assessment": "Government annual table corroborates phaseI–V grouping and two water-pool sites; publicpage title2018 versusbody2017 is retained as dating limitation. No exact publication date inferred. Whole source not committed."
+  },
+  "staged_total_rows": 100,
+  "associated_rows_count": 10,
+  "reviewed_rows_held": 12,
+  "unreviewed_staged_rows": 78,
+  "cumulative_staged_rows_unaccepted": 90
+}

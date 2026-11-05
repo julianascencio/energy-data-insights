@@ -1,0 +1,87 @@
+{
+  "run_id": "energy-star-nutanix-hitachi-servers-20261104T231800Z",
+  "retrieved_at": "2026-11-04T23:18:00Z",
+  "branch": "research/data-center-database-20261104T2220Z",
+  "base_head": "9f36b0f35a0090a4908741704af883be376466b6",
+  "prepublication_remote_head": "63ef90c6fada52f56ddb50c986991036d132f2ce",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 1897,
+    "total": 2080,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 48,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 35,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1831,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 66,
+    "latest_inventories": [
+      "EPA ENERGY STAR certified Nutanix enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hitachi Vantara enterprise-server partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 852189,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {"check": "deterministic Nutanix and Hitachi builder replay", "result": "passed", "detail": "All eight new JSONL shards reproduced byte-for-byte from the registered complete 476-row source"},
+    {"check": "backward-compatible Cisco, Fujitsu and xFusion builder replay", "result": "passed", "detail": "All 15 previously published server shards reproduced byte-for-byte after adding sparse-tier support and two partner selections"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,080 canonical Data Center records"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed"},
+    {"check": "full Python test suite", "result": "environment blocked", "detail": "The run reached 95% before the shared filesystem exhausted all free space. Pytest could not write its cache and multiple unrelated artifact-producing tests failed with ENOSPC. Focused Data Center tests are green and remote CI is authoritative."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "Ruff format and lint", "result": "passed", "detail": "Changed Data Center code is formatted and passes lint"},
+    {"check": "repository-wide ty", "result": "passed", "detail": "All type checks passed"},
+    {"check": "repository, citation and diff checks", "result": "passed", "detail": "Repository policy passed across 4,453 candidate files; citation registry and whitespace checks passed"},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed with the expanded catalogue"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"},
+    {"check": "strict local Sphinx and link validation", "result": "not run", "detail": "The shared filesystem had zero free space after full-suite execution; remote Documentation CI is authoritative"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "50b72bd4292f5046222216b6b4e8b917694e136825054f04f94189fea045a9b0",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "1aa938a5e1d4408cd3d654f0b0171eca7a7484aec0a9cfcd5350b4ceb05ad423",
+    "manifest_sha256": "2674259ef67c17f28fc1b7ad747ed1e9a3506593e54fb1c773a0fd557b557a71",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "b5bf3d4d4cdf6f0ebc556fb6d58ce4ac87ac59451909d3b4f3ca4a98523721dd"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "Remaining ENERGY STAR Enterprise Server partner partitions remain bounded future batches"
+  ],
+  "quarantined_fields": [
+    "No new Nutanix or Hitachi quarantine; the three existing Cisco processor_socket_count conflicts remain"
+  ],
+  "notes": [
+    "All 19 Nutanix and all 16 Hitachi Vantara LLC entries in the 2026-11-04 ENERGY STAR Enterprise Servers dataset update are processed",
+    "Missing low-end or high-end SERT configurations remain absent rather than synthesized",
+    "Hitachi 1P/2P/4P model labels remain separate from platform socket capacity and tested installed-processor population",
+    "PSU nameplates and SERT power scores are not normalized as rated server input or rack input",
+    "Maximum supported memory is not treated as installed memory",
+    "Certification entries are not deployments",
+    "Campus aggregates remain excluded from project capacity totals under all viewer filters"
+  ]
+}

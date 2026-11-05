@@ -199,3 +199,62 @@ prerequisites for canonical ingestion. This is a different cohort from 2025.
 `python scripts/stage_bess_innovation_fund.py INPUT.html --output candidates.json` stages grant inventory rows without treating grant status as plant lifecycle. Review technology and physical site identity before using the existing upsert API. Shared factsheet URLs are flagged for manual identity review. The 49 reviewed candidate decisions are in `research/2026-11-04_eu_studer_review.json`.
 
 `python scripts/stage_bess_studer.py INPUT.html --series xts --output candidates.json` accepts xtm/xth/xts original public product HTML. It requires exact model headings, consistent mobile/desktop tables, units and footnotes. VA stays apparent power; optional ecf 01 operating points stay within the original model. No network access or canonical writes occur in either adapter.
+
+For Studer AJ product pages, `scripts/stage_bess_studer_aj.py --series 275-400`
+(and `500-700`, `1000-1300`, `2100-2400`) stages local original HTML. It checks
+exact models, responsive tables, units and conditional footnotes. These are
+unidirectional stationary battery inverters, not bidirectional PCS. VA stays
+apparent power, maximum inverter efficiency stays separate from RTE, and optional
+solar-regulator standby conditions do not define extra model records. Review
+source terms and lifecycle before upsert; the six smaller models are discontinued.
+
+For BOE open-data daily indices, `scripts/stage_bess_boe.py --date YYYYMMDD`
+selects all battery-title mentions across the day's issues and sections. Original
+XML needs an `Accept: application/xml` request header. The offline adapter checks
+response/date, identifiers and URLs; `inspect_notice` checks original SHA-256 and
+returns numbered paragraphs for review. A title can denote non-stationary cells,
+a multi-site procurement or an amendment to an existing hybrid: never auto-import.
+One notice can cover distinct named projects, so retain project-qualified external
+identities and the shared notice in evidence. Administrative permits do not imply
+physical construction. Preserve gross/usable and container-arithmetic conflicts.
+
+`scripts/stage_bess_neata.py --series lfp48` (or `ess`) stages exact original
+Neata HTML tables. Model/header/units changes fail closed. Pack Ah is not cell Ah;
+current is not inferred watts, unnamed dimension-axis order stays native, and
+system efficiency is not automatically round-trip efficiency. Cycle and warranty
+claims without conditions remain qualified observations. Retain external
+communications separately from interfaces and reserved fire equipment from
+installed equipment. No project/model assignment follows from common branding.
+
+The offline `bess_oem_catalogue.neata_ups.parse_sc_partitions` stages the complete
+SC48/SC51/SC76 voltage partitions from original Neata UPS HTML. Changed exact
+model lists, units or 60-second peak notation fail closed. Pack capacity and
+battery-type labels can disagree: retain both, without deriving energy. Approximate
+mass is not exact mass, parenthesized charge voltages have an unspecified meaning,
+and generic NC/TC chemistry or lifecycle claims do not establish SC specifications.
+Higher-voltage partitions reuse some model codes and need independent identity review.
+
+`bess_oem_catalogue.neata_ups.parse_high_sc` stages the remaining thirteen
+SC102/192/204/240 models and checks the shared prior partition. Preserve the
+SC102 type-label/voltage-column discrepancy and 27/30Ah discrepancies; do not
+infer energy. Plain kW maximum-discharge observations have no stated continuous
+duration. Repeated NC/TC codes are outside this adapter's reviewed identity scope.
+
+`neata_ups.parse_low_voltage_cabinets` stages twelve reviewed unique NC/TC models
+at 204.8/240/256 V. It rejects repeated selected codes anywhere in the table,
+changed units and unknown timing syntax. NC40/TC100Y remain outside scope because
+codes repeat at other configurations. NC35's exact printed `60mi` is preserved
+as ambiguous text, never silently corrected to minutes. Maximum and timed
+power ratings are separate observations; neither defines stored energy.
+
+`neata_ups.parse_mid_voltage_cabinets` stages fourteen unique NC/TC models at
+384/409.6 V. NC56 remains excluded because its code repeats at two configurations.
+The TC48Y/TC48 labels give 30 Ah but capacity columns give 27 Ah; preserve both
+in conflicts and withhold a resolved pack-capacity scalar. Timed discharge
+ratings do not establish stored energy or indefinite continuous power.
+
+`neata_ups.parse_upper_voltage_cabinets` stages thirteen unique NC/TC models at
+480/512 V. Full-table repeated codes TC100Y and NC40 remain excluded. TC60Y/TC60
+have conflicting 30 Ah type labels and 27 Ah capacity columns; keep both native
+observations and withhold resolved capacity. Maximum power and timed discharge
+ratings remain separate, with no inferred stored energy or continuous power.

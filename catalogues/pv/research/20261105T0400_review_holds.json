@@ -1,0 +1,58 @@
+{
+  "new_record_update_quarantines": 0,
+  "permanent_rejections": 0,
+  "regional_columns_not_accepted": [
+    "H2-10K-T2-B",
+    "H2-25K-T3-BE",
+    "H2-30K-T3-DE"
+  ],
+  "iaac_88788": {
+    "url": "https://iaac-aeic.gc.ca/050/evaluations/proj/88788",
+    "accepted": false,
+    "reason": [
+      "reuse restrictions",
+      "module-count disagreement",
+      "assessment chronology disagreement"
+    ],
+    "module_assertions": [
+      {
+        "count": 37296,
+        "precision": "exact as reported"
+      },
+      {
+        "count": 20000,
+        "precision": "approximately as reported"
+      }
+    ],
+    "assessment_dates_as_reported": [
+      "latest update2025-04-02",
+      "determination2025-11-12",
+      "noticeofintent2026-05-06"
+    ],
+    "private_contact_details_omitted": true
+  },
+  "source_holds": [
+    "Solinteg explicit reuse restriction",
+    "AESO reuse restriction+HTTP503",
+    "OEB HTTP503; XML not tested"
+  ],
+  "prior_GEM_party_conflicts_not_recounted": 3,
+  "equipment_conflict_groups": [
+    {
+      "model": "UP1000-M3212",
+      "field": "220V output tolerance",
+      "source_id": "epever_upower_20261105T0400",
+      "assertions": [
+        {
+          "locator": "physicalPDFpage3 technicaltable",
+          "value": "\u00b15%"
+        },
+        {
+          "locator": "physicalPDFpage2 footnote2,12V battery",
+          "value": "\u22126%to+5%"
+        }
+      ],
+      "decision": "Withheld; no source winner"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "started_at": "2026-11-04T20:50:13+00:00",
+  "validation_checkpoint_at": "2026-11-04T21:09:42.426267+00:00",
+  "elapsed_minutes_through_validation": 19.49,
+  "timezone_display": "Atlantic/Canary equals UTC on this date",
+  "publication": "Follows this measured checkpoint; no invented final duration",
+  "checks": {
+    "python_suite": {
+      "passed": 2485,
+      "skipped": 5,
+      "failed": 1,
+      "execution": "Split into data-retrieval (1837 passed, 4 skipped) and methods/analysis/root (648 passed, 1 skipped, 1 failed)",
+      "failure": "methods/tests/test_degradation_mapping.py::test_cli_netcdf_geojson_manifest_and_kgpv; psutil.NoSuchProcess while Dask detects subprocess CPU affinity",
+      "baseline": "Same failure reproduced on untouched main 7c31c06a with the same locked Python 3.13 environment; BESS does not change these files",
+      "initial_attempts": "Old Python 3.12 environment lacked pvdeg; locked environment collection encountered PID lookup, then monolithic process was killed with exit137. Split runs completed; no third-party patch or environment shim."
+    },
+    "new_parser_tests": 18,
+    "catalogues": "2117 projects and 947 equipment records pass identity/reference/source validation",
+    "preservation": "2102 prior projects and all 937 prior equipment unchanged; 2 project enrichments additive with all prior facts/conflicts/created_at preserved",
+    "parquet": "Both typed Zstandard snapshots repeated byte-identically; manifests and coverage committed, binaries outside Git",
+    "ruff_check": "passed",
+    "ruff_format_check": "958 files passed",
+    "ty": "passed with explicit locked .venv Python",
+    "repository": "passed",
+    "citations": "passed; new references queued inside BESS research",
+    "git_diff_check": "passed",
+    "viewer_tests": 16,
+    "offline_examples": "Both project and OEM examples passed",
+    "docs": "Strict Sphinx -W --keep-going -D plot_gallery=0 passed",
+    "docs_links": "601 HTML pages passed local links/assets; initial premature link check superseded after build completion",
+    "package_build": "3 wheels and 3 sdists passed",
+    "installed_wheels": "All 3 packages and public CLI smoke checks passed",
+    "twine": "All 6 artifacts passed strict checks"
+  },
+  "not_run": [
+    "Full executable Sphinx gallery",
+    "Optional live provider integrations",
+    "New-head remote CI, not yet published"
+  ],
+  "candidate_counts": {
+    "project_notices": 16,
+    "new_projects": 13,
+    "enriched_projects": 2,
+    "excluded_notices": 2,
+    "new_projects_with_energy_field_quarantines": 3,
+    "whole_project_holds": 0,
+    "exact_equipment_reviewed": 10,
+    "new_equipment": 10,
+    "enriched_equipment": 0,
+    "equipment_rejected": 0,
+    "discovery_only_rights_hold": "Hoppecke advertised 26-model table; not counted as fully extracted candidates"
+  },
+  "yield_explanation": "The selected 12 BOE daily indices and both Neata tables are exhausted; model objective met. Project yield below 50–200 because 16 selected notices include 2 exclusions and 2 existing sites. BDNS documentation returned only an Angular shell; Hoppecke terms blocked table reuse. Next partition: BOE October1–17 after freshness/identity review. No idle padding."
+}

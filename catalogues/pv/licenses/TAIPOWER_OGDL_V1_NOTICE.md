@@ -51,3 +51,28 @@ reuse and adaptation with source attribution. No photos, logos or personal
 contacts are reproduced. No publisher endorsement is claimed. Two conflicting
 historical station-period pairs remain held in full; no preferred value, month
 repair, annual sum, AC/DC basis or current operating state is inferred.
+
+## 4 November 2026, 21:55 review update
+
+Two further wholeplants are manually accepted: Yongan Salt Flats (PV station14,
+site29) and Taipower Tainan Qigu (PV station12, sites24/25 grouped as phases I/II).
+Six Q3 2026 station-month observations retain their native scope; September
+installed kW becomes unspecified-basis MW, without summing rounded site values.
+Conditional HEAD requests returned304 for both cached CSVs. Current operation,
+AC/DC ratings, coordinates and verified OEM equipment assignments remain unknown.
+
+Independent identity evidence has its own source-specific government licence:
+
+- Office of the President, 2 June 2013, named Taipower Yongan station:
+  <https://english.president.gov.tw/NEWS/4173>.
+  Reuse declaration: <https://english.president.gov.tw/Page/18>.
+- MOEA, 28 July 2023 transmittal, Qigu reference-case phase arrangement on physical
+  PDF page5 (printed page3):
+  <https://www.moea.gov.tw/Mns/CNC/content/wHandMenuFile.ashx?file_id=34487>.
+  Reuse declaration:
+  <https://www.moea.gov.tw/MNS/populace/content/ContentFoot.aspx?menu_id=13863>.
+
+Both declarations provide OGDL Taiwan v1.0 reuse with attribution. Only factual
+plant identity/phase context is represented; personal contacts, third-party maps,
+photographs and full documents are excluded. Historical visit/construction
+observations are not commissioning dates or current lifecycle claims.

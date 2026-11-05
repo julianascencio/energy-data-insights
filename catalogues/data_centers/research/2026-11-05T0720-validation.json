@@ -1,0 +1,83 @@
+{
+  "run_id": "doe-ccms-medium-voltage-transformers-20261105T072000Z",
+  "retrieved_at": "2026-11-05T07:20:00Z",
+  "branch": "research/data-center-database-20261104T2220Z",
+  "base_head": "9f36b0f35a0090a4908741704af883be376466b6",
+  "prepublication_remote_head": "10467fe45e0ba5d888fbb570d7aaac1433eec440",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 2367,
+    "total": 2550,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 62,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 50,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1831,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 536,
+    "latest_inventory": "US DOE CCMS medium-voltage dry-type transformer public basic-model table, displayed rows 1-50"
+  },
+  "source_capture": {
+    "accepted_originals": 0,
+    "accepted_original_bytes": 0,
+    "checksummed_originals": 0,
+    "unavailable_originals": 1,
+    "source_sha256": null,
+    "access_result": "The official public page was readable through the web index, while direct MCP access returned HTTP 403 in this environment; this is an access/content limitation, not a reuse prohibition"
+  },
+  "executed_checks": [
+    {"check": "deterministic DOE medium-voltage transformer builder replay", "result": "passed", "detail": "All 50 records reproduced byte-for-byte and matched the staged canonical JSONL"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,550 canonical Data Center records"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed, including the new BIL-versus-winding-voltage boundary test"},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "targeted Ruff format and lint", "result": "passed", "detail": "The new builder and changed inventory tests passed Ruff format --check and Ruff check"},
+    {"check": "targeted ty", "result": "passed", "detail": "The new builder passed type checking against the isolated catalogue package"},
+    {"check": "repository hygiene", "result": "passed", "detail": "4,505 candidate files checked; no flagged secrets or data"},
+    {"check": "citation registry", "result": "unrelated local worktree failure", "detail": "The checker reports stale CITATION.cff, references.bib and docs/references.md exports in the unrelated dirty worktree; remote CI is authoritative"},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical examples executed against the expanded catalogue; campus exclusions remained intact"},
+    {"check": "full Python test suite", "result": "not repeated locally", "detail": "The previous local attempt was blocked by unrelated dirty-worktree module drift; fresh remote Python CI is authoritative"},
+    {"check": "strict Sphinx and generated-site link validation", "result": "not run locally", "detail": "The local Python 3.12 environment cannot install the unrelated Python 3.13-only Orbital PV gallery dependency; remote Documentation CI is authoritative"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "24f90cd9c9cf488299591b1e6e31003f0e22ca9b12ac589639f64061ea15ab1a",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "b9b5357925a2758c8872db0d91ea4133a9f565aa83242af5da52294c74d4bb99",
+    "manifest_sha256": "0a5a670b6fe6b28982558d1a74d2ad44d104c3bc07872e5551559877730e9f74",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "ae916462a74863bac0c26d9dd93a454edbdad3b26b77b658a5727a5f4c952704"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello, Kohler/Rehlko and Delta UPS holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "DOE CCMS rows after the displayed 1-50 boundary, requiring a stable non-overlapping page or filter boundary",
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence"
+  ],
+  "quarantined_fields": [
+    "represented efficiency remains an exact observation while normalized efficiency_pct is null because the public table omits the load/test condition",
+    "BIL group rating remains an exact observation and is not normalized as winding voltage or nominal input voltage",
+    "prior Cisco processor socket and ZTE configuration-identity conflicts remain unchanged"
+  ],
+  "notes": [
+    "The batch adds all 50 displayed medium-voltage dry-type rows: Hitachi 2, Hitran 2, Howard Industries 4, JEI 23 and MGM 19",
+    "Apparent kVA is not active kW; current, dimensions, weight and deployment remain uninferred",
+    "DOE listing is not treated as an agency compliance determination",
+    "Campus aggregates remain excluded from capacity sums under all viewer filters"
+  ]
+}
