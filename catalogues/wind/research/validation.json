@@ -1,53 +1,35 @@
 {
-  "batch": "2026-11-05-1235",
-  "iteration_parent": "c8d0758b38ec94465b030c4e3a99b2ce9c4733eb",
+  "batch": "2026-11-05-1335",
+  "iteration_parent": "8aeee2ac0136c4943d3aaa25aff5931674456e62",
   "local": {
-    "tests": "277 focused Wind/Hydropower tests passed again on reconciled main (55.61s); 23 adapter tests also passed before transfer",
-    "viewer": "27 Node tests passed again on reconciled main; both JS syntax checks passed before transfer",
-    "quality": "Ruff, format 1063 files, targeted ty, citations and repository hygiene passed",
-    "catalogue": "5 new equipment,16 enriched; 387 sources; existing scalar facts, IDs, creation times and six capacity totals preserved",
-    "replay": "114-row original-byte transcription replay reproduced all21 accepted equipment records; subsequent replay idempotent",
-    "repd": "200 saved candidates reviewed:200 identity holds,160 permit references,33 replacement references; SHA pinned; no canonical project changes",
-    "snapshots": "Two final seven-file builds byte-identical; every Parquet column ZSTD",
-    "packages": "All three packages built wheel and sdist",
-    "docs": "Strict incremental Sphinx passed again after main reconciliation; Wind-only executable gallery selection",
-    "docs_links": "656 HTML pages: local links and assets passed after main reconciliation"
+    "python": "279 focused Wind/Hydropower tests passed",
+    "viewer": "27 Node tests passed",
+    "quality": "Ruff, format1065files, targeted ty, repository hygiene, citations and diff checks passed",
+    "catalogue": "Validated; all prior canonical records unchanged; one certificate-scoped equipment addition",
+    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
+    "docs": "Strict Sphinx build with Wind-only executable gallery passed; 658 HTML pages passed local links/assets checks"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "9a865e8217749d3699e4f259560f5db9db4dd8232d27b9257474f617ac4022a3",
+    "manifest.json": "8f82ac6fc3dba743c1d673168f58e82cd873866fa7b4d9a143af8949828905ff",
     "projects.parquet": "20bdeae1734b3ae8a69a5a62c2b1f7db2e13372e15f5a09d377f5ad9dccce858",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "sources.json": "e0bfc0f6d3c9f65152c92fa70c7129aeab06bc82625100c835a599cfb318ad8a",
+    "sources.json": "c079324c99008d96c120dd6758000ed2d9670a25f4e34fbff72298293b1d7b8f",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "91bbd49900ca800662fd91540b255d489f3254a8986154acf214f8717c49d9da"
+    "equipment.parquet": "aea3881709341c32128eda9467b7e1458a7610e06e0c6dbdff516f2b18f8853b"
   },
   "remote_ci": {
-    "previous_head": "c8d0758b38ec94465b030c4e3a99b2ce9c4733eb",
-    "previous_head_result": "Python3.12,Python3.13,Documentation passed",
-    "current_update": "Python3.12,Python3.13 and Documentation running at publication checkpoint; inspect final PR head checks",
-    "data_commit": "0c85696209a9e43c7fc4b9f3172954287b27d78a"
+    "previous_head": "8aeee2ac0136c4943d3aaa25aff5931674456e62",
+    "previous_head_result": "Python3.12,Python3.13,Documentation passed; Pages skipped",
+    "current_update": "Not yet published when report written"
   },
   "not_executed": [
     "Full local Python suite",
     "Full local executable gallery",
-    "Browser interaction"
+    "Browser interaction",
+    "Package builds this iteration"
   ],
   "resolved_attempts": [
-    "Final original-byte replay identified stale evidence text after scalar wording correction; regenerated five new records and repeated snapshot builds"
-  ],
-  "reviewed_open_prs": [
-    170,
-    169,
-    168,
-    167,
-    166,
-    161,
-    157,
-    47,
-    48,
-    49
-  ],
-  "publication_main": "76179409be2ce1166d60714145f1711776182b16",
-  "publication_reconciliation": "PR166 merged externally; cherry-picked validated batch onto new main; all unrelated sector paths identical to current main"
+    "Initial catalogue/tests/docs rejected missing original_availability; field added and tests rerun successfully"
+  ]
 }

@@ -629,3 +629,5 @@ ledger order without importing farms. Offsets 200–399 retain all 200 identity
 holds, including 160 permit references and 33 explicit replacement references.
 Primary permit contents still need review; application status never becomes
 farm status through this staging step. Next structural partition: 400–599.
+
+The 2026-11-05-1335 review adds one Korean certificate-scoped V126 HTq configuration. Its two reported power modes remain nested; current certificate validity and FGW equivalence are unknown. A second HTq entry has inconsistent class labels and remains held. REPD saved offsets400–599 were structurally reviewed; all200 remain identity holds, with no farm capacity or lifecycle assignments.

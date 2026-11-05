@@ -1,0 +1,44 @@
+{
+  "batch": "2026-11-05-1335",
+  "source_sha256": "5b73d3fd7118ca7ca189d2d81138202eb335536f36d5450452b6d607dd77d5e0",
+  "parsed_registry_rows": 57,
+  "reviewed_partition": "Complete two-row HTq subset; remaining55rows unreviewed",
+  "added": [
+    "WT-1802-00-171146"
+  ],
+  "deferred": [
+    {
+      "certificate_id": "WT-1904-02-171147",
+      "raw_cells": [
+        "38",
+        "WT-1904-02-171147",
+        "2019.10.01",
+        "베스타스코리아",
+        "V126-3.45/3.6MW HTq IEC 2A",
+        "3.45/3.6 MW",
+        "스페인/덴마크/중국",
+        "유",
+        "육상용",
+        "10.6, 10.8 m/s",
+        "126 m",
+        "117 m",
+        "IA (IEC 61400-3 Ed.2)",
+        ""
+      ],
+      "reason": "Model label IEC2A conflicts with IA IEC61400-3 Ed2 class cell; no automatic correction"
+    }
+  ],
+  "fgw_seven_rows": "Remain held: no original DNV revision/Mode0 mapping",
+  "source_failures": [
+    {
+      "url": "https://www.maine.gov/dep/ftp/projects/weaver-wind/archive/applications/section_27_public_safety.pdf",
+      "http": 403
+    },
+    {
+      "url": "https://www.somme.gouv.fr/content/download/28623/181777/file/80-SECEB_SCS_Bougainville2_Fichier%20n%C2%B04_Etude_De_Danger.pdf",
+      "http": 502
+    }
+  ],
+  "independent_source_review": "Danish148874-2014-AQ-DEN-DANAK is a service-company scope list, not a turbine type certificate; not imported",
+  "no_authentication_or_reuse_restriction_inferred": true
+}
