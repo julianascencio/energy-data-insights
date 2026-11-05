@@ -71,6 +71,18 @@ PARTNER_BATCHES = {
         "expected_count": 45,
         "retrieved_at": "2026-11-05T03:20:00Z",
     },
+    "asus_energy_star": {
+        "partner": "ASUSTeK Computer Inc.",
+        "manufacturer": "ASUS",
+        "expected_count": 14,
+        "retrieved_at": "2026-11-05T04:20:00Z",
+    },
+    "h3c_energy_star": {
+        "partner": "New H3C Technology Co., Ltd.",
+        "manufacturer": "H3C",
+        "expected_count": 9,
+        "retrieved_at": "2026-11-05T04:20:00Z",
+    },
 }
 
 CONFIGURATION_LABELS = (

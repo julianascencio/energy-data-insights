@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T03:20:00Z",
+  "retrieved_at": "2026-11-05T04:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -32,6 +32,22 @@
       "enriched_records": 0,
       "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No Lenovo OEM-page facts or deployment claims are imported.",
       "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the 45 Lenovo Group Limited certification entries in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified ASUSTeK Computer Inc. enterprise-server partner inventory",
+      "processed_offset": 14,
+      "accepted_records": 14,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No ASUS OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the 14 ASUSTeK Computer Inc. certification entries in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified New H3C Technology Co., Ltd. enterprise-server partner inventory",
+      "processed_offset": 9,
+      "accepted_records": 9,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No H3C OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the nine New H3C Technology Co., Ltd. certification entries in the 2026-11-04 dataset update."
     }
   ],
   "deferred": [
@@ -45,14 +61,14 @@
     },
     {
       "inventory": "Remaining ENERGY STAR Enterprise Server partner partitions",
-      "reason": "ASUS, H3C and other complete partner partitions remain separately bounded future batches; Dell, Super Micro and Lenovo are complete at offsets 123, 49 and 45."
+      "reason": "IBM (9), Aivres (8), ZTE (6), Altos (3), Oracle (3) and Ace Computers (1) remain as separately bounded residual partner partitions; ASUSTeK and New H3C are complete at offsets 14 and 9."
     }
   ],
   "quarantined": [
     {
       "record": "Cisco UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S ENERGY STAR entries",
       "field": "processor_socket_count",
-      "reason": "Previously recorded model-label versus source-attribute contradictions remain unresolved; the HPE batch adds no new quarantine."
+      "reason": "Previously recorded model-label versus source-attribute contradictions remain unresolved; the ASUSTeK/H3C batch adds no new quarantine."
     }
   ],
   "normalization_notes": [
@@ -70,6 +86,9 @@
     "Supermicro and Super Micro Computer, Inc. brand labels remain source observations under the canonical Supermicro manufacturer identity.",
     "All 45 Lenovo entries retain low-end, typical/single and high-end SERT observations; missing tier-specific configuration IDs remain absent rather than being synthesized.",
     "Lenovo platform socket attributes remain exact source observations and are not replaced by tested installed-processor counts.",
+    "All 14 ASUSTeK entries retain three SERT tiers, all three configuration IDs and exact one- or two-socket platform attributes.",
+    "All nine H3C entries retain three SERT tiers; four G7 rows omit the low-end configuration ID and no identifier is inferred.",
+    "ASUSTeK SERT 2.0.7/2.0.8 and H3C SERT 2.0.6/2.0.8 revisions remain exact issuer observations.",
     "Campus aggregates remain excluded from capacity sums under all viewer filters.",
     "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko reuse holds remain in force; no held facts or bytes were imported."
   ]

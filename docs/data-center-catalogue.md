@@ -38,8 +38,8 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,214 exact models/configurations from NVIDIA, AMD, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
-Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, Kehua Tech, KSTAR,
+has 2,237 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
+Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
@@ -453,4 +453,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T0320-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T0420-validation.json).
