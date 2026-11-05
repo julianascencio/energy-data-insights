@@ -76,7 +76,9 @@ for path in sorted(Path(".").glob("pvdeg_canary_*.tif")):
 stations = pd.read_csv(folder / "stations.csv")
 coefficients = pd.read_csv(folder / "calibration_parameters.csv")
 used = stations.loc[stations.station_id.isin(coefficients.station_id)]
-sx, sy = transform("EPSG:4326", "EPSG:32628", used.longitude, used.latitude)
+sx, sy = transform(
+    "EPSG:4326", "EPSG:32628", used.longitude.to_numpy(), used.latitude.to_numpy()
+)
 affine = from_origin(160000, 3290000, 5000, 5000)
 
 
