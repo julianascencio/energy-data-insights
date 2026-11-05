@@ -615,3 +615,17 @@ rows await revision mapping, and the V66 reduced-power contact notice supplies
 no numerical data. These five-year modeled reference yields are neither measured
 production nor numerical power curves. The newer reference-site table remains
 a separate queued partition. See `research/2026-11-05-1135-fgw-review.json`.
+
+The subsequent new-reference-site Vestas table has 114 numerical rows: 109
+accepted observations across five new configurations and sixteen enriched
+records, with five HTq revision mappings deferred. Four withdrawn observations
+retain their 8 July 2026 decision date alongside replacements; three corrected
+observations retain 14 September 2026. These dates describe reference-result
+revisions, not equipment commissioning. Density and blank rotor cells stay
+unknown. The shared viewer and deterministic example count dated corrections.
+
+The checksum-pinned REPD review adapter stages saved unlinked candidates in
+ledger order without importing farms. Offsets 200–399 retain all 200 identity
+holds, including 160 permit references and 33 explicit replacement references.
+Primary permit contents still need review; application status never becomes
+farm status through this staging step. Next structural partition: 400–599.

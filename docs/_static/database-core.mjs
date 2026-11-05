@@ -291,7 +291,7 @@ export function hydroCapacity(rows, field) {
 
 // Count published reference observations; never sum yields across hubs or sites.
 export function windReferenceYieldSummary(rows) {
-  const result = {models: 0, observations: 0, withdrawn: 0, unknownRotor: 0, withoutReference: 0, unknownConditions: 0, bySite: {}};
+  const result = {models: 0, observations: 0, withdrawn: 0, corrected: 0, unknownRotor: 0, withoutReference: 0, unknownConditions: 0, bySite: {}};
   for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
     let ext;
     try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
@@ -307,6 +307,7 @@ export function windReferenceYieldSummary(rows) {
         count++; result.observations++;
         result.bySite[observation.reference_site] = (result.bySite[observation.reference_site] || 0) + 1;
         if (entry.withdrawn === true) result.withdrawn++;
+        if (typeof entry.corrected_at === "string" && /^\d{4}-\d{2}-\d{2}$/.test(entry.corrected_at)) result.corrected++;
         if (entry.rotor_diameter_m == null) result.unknownRotor++;
         if (entry.operating_mode == null || observation.reference_conditions?.air_density_kg_m3 == null) result.unknownConditions++;
       }

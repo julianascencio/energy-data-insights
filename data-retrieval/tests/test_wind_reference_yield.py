@@ -132,3 +132,24 @@ def test_new_identity_cannot_replace_printed_rating_with_an_invented_mode():
     doc["rows"][0]["identity"]["rated_power_kw"] = 200
     with pytest.raises(ValueError, match="New identity"):
         stage_reference_yields(doc, data, [], now=NOW)
+
+
+@pytest.mark.parametrize("value", ["2026-02-30", "20261101", "2027-01-01", 20261101])
+def test_revision_dates_reject_invalid_or_future_values(value):
+    doc, data = fixture()
+    doc["rows"][0]["corrected_at"] = value
+    with pytest.raises(ValueError, match="revision date"):
+        stage_reference_yields(doc, data, [], now=NOW)
+
+
+def test_withdrawal_and_correction_dates_remain_separate():
+    doc, data = fixture()
+    doc["rows"][0]["corrected_at"] = "2026-09-14"
+    doc["rows"][1]["withdrawn_at"] = "2026-07-08"
+    out, _ = stage_reference_yields(doc, data, [], now=NOW)
+    rows = json.loads(out[0]["extensions_json"])["reference_yield_observations"][0]["rows"]
+    assert rows[0]["corrected_at"] == "2026-09-14"
+    assert rows[1]["withdrawn_at"] == "2026-07-08"
+    doc["rows"][1]["withdrawn"] = False
+    with pytest.raises(ValueError, match="requires withdrawn"):
+        stage_reference_yields(doc, data, [], now=NOW)

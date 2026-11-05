@@ -1,29 +1,29 @@
 {
-  "batch": "2026-11-05-1135",
-  "iteration_parent": "c44b15a0dfd4d8086fe4b86c4260e2cecf77dba7",
+  "batch": "2026-11-05-1235",
+  "iteration_parent": "c8d0758b38ec94465b030c4e3a99b2ce9c4733eb",
   "local": {
-    "tests": "266 Wind/Hydropower Python tests passed",
-    "viewer": "26 Node tests and both JS syntax checks passed",
-    "quality": "Ruff,format1053files,ty,citations,repository hygiene passed",
-    "catalogue": "29new equipment,1enriched; scalar facts,IDs,creation times,six capacity totals and385prior source entries preserved",
-    "replay": "103-row original-byte replay and checksum rejection passed",
-    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
+    "tests": "277 focused Wind/Hydropower tests passed again on reconciled main (55.61s); 23 adapter tests also passed before transfer",
+    "viewer": "27 Node tests passed again on reconciled main; both JS syntax checks passed before transfer",
+    "quality": "Ruff, format 1063 files, targeted ty, citations and repository hygiene passed",
+    "catalogue": "5 new equipment,16 enriched; 387 sources; existing scalar facts, IDs, creation times and six capacity totals preserved",
+    "replay": "114-row original-byte transcription replay reproduced all21 accepted equipment records; subsequent replay idempotent",
+    "repd": "200 saved candidates reviewed:200 identity holds,160 permit references,33 replacement references; SHA pinned; no canonical project changes",
+    "snapshots": "Two final seven-file builds byte-identical; every Parquet column ZSTD",
     "packages": "All three packages built wheel and sdist",
-    "example": "Offline Wind example passed",
-    "docs": "Strict Sphinx build passed with Wind-only gallery selection; full gallery not executed",
-    "docs_links": "650 HTML pages: local links and assets passed"
+    "docs": "Strict incremental Sphinx build passed with Wind-only gallery selection; full executable gallery not run",
+    "docs_links": "652 HTML pages: local links and assets passed"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "30a6324adf188f9f480e6bee20aa9f8803960b4feeabcdb6d936c0221ef2af08",
+    "manifest.json": "9a865e8217749d3699e4f259560f5db9db4dd8232d27b9257474f617ac4022a3",
     "projects.parquet": "20bdeae1734b3ae8a69a5a62c2b1f7db2e13372e15f5a09d377f5ad9dccce858",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "sources.json": "ff38bee972add4e4364637f55424d1f8221f2fab76a4f82889db8819c60814f8",
+    "sources.json": "e0bfc0f6d3c9f65152c92fa70c7129aeab06bc82625100c835a599cfb318ad8a",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "494c757a8e98523ce9fa65dafc75141473a0014ebdafe74352f23778e82e12c3"
+    "equipment.parquet": "91bbd49900ca800662fd91540b255d489f3254a8986154acf214f8717c49d9da"
   },
   "remote_ci": {
-    "previous_head": "404f70098e575356180e6683fe13d66ceebf765a",
+    "previous_head": "c8d0758b38ec94465b030c4e3a99b2ce9c4733eb",
     "previous_head_result": "Python3.12,Python3.13,Documentation passed",
     "current_update": "Not yet published when report written; inspect new PR checks"
   },
@@ -33,14 +33,20 @@
     "Browser interaction"
   ],
   "resolved_attempts": [
-    "Initial ty missing optional pvdeg dependency resolved with locked docs dependency group",
-    "Premature links check before dataset export completed; rerun after build"
+    "Final original-byte replay identified stale evidence text after scalar wording correction; regenerated five new records and repeated snapshot builds"
   ],
   "reviewed_open_prs": [
-    157,
+    170,
+    169,
+    168,
+    167,
+    166,
     161,
+    157,
     47,
     48,
     49
-  ]
+  ],
+  "publication_main": "76179409be2ce1166d60714145f1711776182b16",
+  "publication_reconciliation": "PR166 merged externally; cherry-picked validated batch onto new main; all unrelated sector paths identical to current main"
 }

@@ -305,6 +305,18 @@ test("reference yields separate sites, withdrawals and missing evidence without 
   const row = {entity_type:"equipment", equipment_category:"wind_turbine", sources:["table","method"],
     extensions_json:JSON.stringify({reference_yield_observations:[observation,{...observation,reference_site:"new",rows:[entry]}]})};
   assert.deepEqual(windReferenceYieldSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"projects"}]),
-    {models:1,observations:3,withdrawn:1,unknownRotor:3,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
-  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,unknownRotor:0,withoutReference:0,unknownConditions:0,bySite:{}});
+    {models:1,observations:3,withdrawn:1,corrected:0,unknownRotor:3,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
+  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,corrected:0,unknownRotor:0,withoutReference:0,unknownConditions:0,bySite:{}});
+});
+
+
+test("reference correction dates count observations, never commissioning", async () => {
+  const {windReferenceYieldSummary} = await import("../../docs/_static/database-core.mjs");
+  const row = {entity_type:"equipment",equipment_category:"wind_turbine",sources:["s","p"],
+    extensions_json:JSON.stringify({reference_yield_observations:[{source_id:"s",period_source_id:"p",period_years:5,
+      quantity_kind:"modeled reference energy",reference_site:"new",rows:[
+        {locator:"synthetic",note:"corrected",reference_yield_kwh:10,corrected_at:"2026-09-14"},
+        {locator:"synthetic",note:"unknown date",reference_yield_kwh:20,corrected_at:null}]}]})};
+  assert.equal(windReferenceYieldSummary([row]).corrected,1);
+  assert.equal(windReferenceYieldSummary([row]).observations,2);
 });
