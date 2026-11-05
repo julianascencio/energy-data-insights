@@ -1,0 +1,89 @@
+name: AEMET connection test
+
+on:
+  push:
+    branches: [test/aemet-connection]
+    paths: [.github/workflows/aemet-connection.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  connection:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check key and retrieve station inventory and daily observations
+        env:
+          AEMET_API_KEY: ${{ secrets.AEMET_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          import time
+          from urllib.parse import urlsplit
+          from urllib.request import Request, build_opener, HTTPRedirectHandler
+
+          class NoRedirect(HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  return None
+
+          key = os.environ.get("AEMET_API_KEY", "").strip()
+          if not key:
+              sys.exit("AEMET_API_KEY is missing or unavailable to this job.")
+          print("AEMET_API_KEY is configured (value not displayed).")
+          opener = build_opener(NoRedirect())
+          base = "https://opendata.aemet.es/opendata/api/"
+
+          def read_json(url, authenticated=False):
+              parts = urlsplit(url)
+              if (
+                  parts.scheme != "https"
+                  or parts.netloc != "opendata.aemet.es"
+                  or parts.query
+                  or parts.fragment
+              ):
+                  sys.exit("Unexpected AEMET response URL; request stopped.")
+              headers = {"api_key": key} if authenticated else {}
+              try:
+                  with opener.open(Request(url, headers=headers), timeout=45) as response:
+                      raw = response.read(10_000_001)
+                  if len(raw) > 10_000_000:
+                      sys.exit("Response exceeded size limit.")
+                  return json.loads(raw)
+              except Exception as error:
+                  code = getattr(error, "code", None)
+                  sys.exit(f"AEMET request failed: {type(error).__name__}; HTTP {code}. No response or credential logged.")
+
+          def retrieve(endpoint):
+              envelope = read_json(base + endpoint, authenticated=True)
+              if not isinstance(envelope, dict) or envelope.get("estado") != 200:
+                  status = envelope.get("estado") if isinstance(envelope, dict) else None
+                  sys.exit(f"AEMET API returned unsuccessful status: {status}")
+              data = read_json(envelope["datos"])
+              if not isinstance(data, list) or not data:
+                  sys.exit("AEMET returned no observation records.")
+              return data
+
+          inventory = retrieve("valores/climatologicos/inventarioestaciones/todasestaciones")
+          canary = [s for s in inventory if str(s.get("indicativo", "")).startswith("C")]
+          print(f"Inventory downloaded: {len(inventory)} stations; {len(canary)} Canary station codes.")
+          time.sleep(2)
+          daily = retrieve(
+              "valores/climatologicos/diarios/datos/fechaini/2023-01-01T00:00:00UTC/"
+              "fechafin/2023-01-07T23:59:59UTC/estacion/C447A"
+          )
+          if any(row.get("indicativo") != "C447A" for row in daily):
+              sys.exit("Unexpected station in daily response.")
+          print(f"Tenerife Norte C447A: {len(daily)} daily records retrieved for 1-7 January 2023.")
+          counts = {field: sum(row.get(field) not in (None, "") for row in daily)
+                    for field in ("tmed", "tmin", "tmax", "prec", "velmedia", "hrMedia")}
+          print("Nonempty field counts: " + json.dumps(counts))
+          print("PASS: authenticated inventory and historical daily data retrieval.")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              summary.write("AEMET connection successful.\n\n")
+              summary.write(f"Inventory: {len(inventory)} stations, {len(canary)} Canary codes.\n\n")
+              summary.write(f"C447A: {len(daily)} daily records (1–7 January 2023).\n")
+          PY
