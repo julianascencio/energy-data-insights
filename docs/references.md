@@ -814,7 +814,7 @@ Natural Earth contributors (n.d.). **Natural Earth: Admin 0 - Countries**. [Sour
 
 **Role:** data. Public-domain country polygons at 1:10, 1:50 and 1:110 million map scales; default de facto boundaries. Country membership follows the source administrative units. The checked-in country example preserves unsimplified Austria/Slovenia contours from version 5.1.1, with the archive and subset checksums recorded. The worldwide connector coverage fixture retains 176 unchanged 1:110 million country geometries from the same version; Antarctica is explicitly excluded because its original unsplit world-spanning ring fails the country-map antimeridian contract. Its provenance records the source archive, derived GeoJSON checksum and exclusion. Country shapes supply geographic context rather than electrical service territories or evidence of observation availability. Map scale is not metre accuracy; no scientific climate resolution is inferred from boundary detail.
 
-**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `docs/country-mapping.md`, `docs/kgpv-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_country_risk.py`, `examples/analysis/plot_kgpv_chile.py`, `examples/connectors/data/candelaria_site.json`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/data/generation_coverage_provenance.json`, `examples/connectors/data/generation_coverage_world.geojson`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/plot_generation_coverage.py`, `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `scripts/prepare_candelaria_imagery.py`, `scripts/prepare_connector_coverage.py`, `scripts/prepare_weather_risk_example.py`.
+**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `data-retrieval/src/energy_data_retrieval/sources/natural_earth`, `docs/country-mapping.md`, `docs/kgpv-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_country_risk.py`, `examples/analysis/plot_kgpv_chile.py`, `examples/connectors/data/candelaria_site.json`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/data/generation_coverage_provenance.json`, `examples/connectors/data/generation_coverage_world.geojson`, `examples/connectors/plot_candelaria_solar_farm.py`, `examples/connectors/plot_generation_coverage.py`, `methods/src/energy_methods/country_boundaries.py`, `methods/src/energy_methods/country_mapping.py`, `scripts/prepare_candelaria_imagery.py`, `scripts/prepare_connector_coverage.py`, `scripts/prepare_weather_risk_example.py`, `analysis/src/energy_analysis/pvdeg_chile.py`, `scripts/prepare_pvdeg_chile.py`, `examples/analysis/plot_pvdeg_chile.py`, `docs/pvdeg-chile.md`.
 
 ### shapely_documentation
 
@@ -1166,7 +1166,7 @@ Karger, D. N.; Conrad, O.; Böhner, J.; Kawohl, T.; Kreft, H.; Soria-Auza, R. W.
 
 **Role:** data. CC0 v2.1 climatologies, 1981–2010 monthly temperature and precipitation, 30 arcseconds. Regional windows retain source pixels, CF units, scale/offset and masks. Strong source ETags and crop-pixel SHA-256 pins are recorded; ETags are not SHA-256 hashes. Current files are served from the provider’s chelsa02 container on os.unil.cloud.switch.ch.
 
-**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `data-retrieval/src/energy_data_retrieval/sources/chelsa`, `docs/kgpv-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_kgpv_chile.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/plot_generation_coverage.py`.
+**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `data-retrieval/src/energy_data_retrieval/sources/chelsa`, `docs/kgpv-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_kgpv_chile.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/plot_generation_coverage.py`, `analysis/src/energy_analysis/pvdeg_chile.py`, `scripts/prepare_pvdeg_chile.py`, `examples/analysis/plot_pvdeg_chile.py`, `docs/pvdeg-chile.md`.
 
 ### karger_2017_chelsa
 
@@ -1174,7 +1174,7 @@ Karger, D. N.; Conrad, O.; Böhner, J.; Kawohl, T.; Kreft, H.; Soria-Auza, R. W.
 
 **Role:** data. Scientific description of CHELSA; use the versioned dataset record for the exact v2.1 baseline, storage encoding and release. Does not independently validate the derived Chile KGPV classifications.
 
-**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `data-retrieval/src/energy_data_retrieval/sources/chelsa`, `docs/kgpv-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_kgpv_chile.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/plot_generation_coverage.py`.
+**Used by:** `analysis/src/energy_analysis/chile_kgpv/pipeline.py`, `data-retrieval/src/energy_data_retrieval/sources/chelsa`, `docs/kgpv-chile.md`, `docs/worldwide-generation.md`, `examples/analysis/plot_kgpv_chile.py`, `examples/connectors/data/generation_coverage_catalogue.json`, `examples/connectors/plot_generation_coverage.py`, `analysis/src/energy_analysis/pvdeg_chile.py`, `scripts/prepare_pvdeg_chile.py`, `examples/analysis/plot_pvdeg_chile.py`, `docs/pvdeg-chile.md`.
 
 ### global_solar_atlas_chile_2019
 
@@ -7158,7 +7158,7 @@ Springer, Martin; Ovaitt, Silvana; Daxini, Rajiv; Ford, Timothy; Brown, Matthew;
 
 **Role:** method. Integration pins pvdeg 0.7.4; DOI is upstream concept DOI. Relative thermal screening, not calibrated degradation or lifetime.
 
-**Used by:** `analysis/src/energy_analysis/pvdeg_canary.py`, `docs/pvdeg-canary.md`, `examples/analysis/plot_pvdeg_canary.py`, `methods/src/energy_methods/pvdeg.py`.
+**Used by:** `analysis/src/energy_analysis/pvdeg_canary.py`, `docs/pvdeg-canary.md`, `examples/analysis/plot_pvdeg_canary.py`, `methods/src/energy_methods/pvdeg.py`, `analysis/src/energy_analysis/pvdeg_chile.py`, `scripts/prepare_pvdeg_chile.py`, `examples/analysis/plot_pvdeg_chile.py`, `docs/pvdeg-chile.md`.
 
 ### aemo_nem_oct2026_bess
 
