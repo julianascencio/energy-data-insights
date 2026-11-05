@@ -8194,5 +8194,63 @@
     "license_url": "https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions",
     "access_assessment": "Ordinary official publicGET recovered, no bypass. Copyrightpermission freshly checked; rawmetadata and disclaimer outsideGit.",
     "limitations": "NEM only, not allAustralia. SinglePVunit/site and exactexistingDUID only. NameplateAC/DC distinct from MaxSiteCapacitydispatch; no invertercount, lifecycle or forecastdate mapping. Originalsurvey data as-is, not independentmeasurement; ownershipdifferences held."
+  },
+  "gem_operators_complete_20261105T1503": {
+    "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+    "publisher": "Global Energy Monitor",
+    "title": "GEM February2026: next200 complete corporate operator locations",
+    "license": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+    "retrieved_at": "2026-11-05T11:57:14.680485+00:00",
+    "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+    "release": "February 2026",
+    "methodology_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+    "verified_at": "2026-11-05T15:13:14.027738+00:00",
+    "locator": "Exact Utility-Scale workbook rows and phaseIDs in20261105T1503_project_review.json",
+    "limitations": "Cached pinned bytes reused without full redownload; fresh landing-page release check. Historical operators only; entireTZ/WKSL locations excluded, exact complete phase/native operator equality. No owner/capacity/lifecycle changes.",
+    "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\""
+  },
+  "aemo_crosswalk_20261105T1503": {
+    "url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+    "retrieved_at": "2026-11-05T13:30:14.845760+00:00",
+    "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+    "etag": "0bff23fd31cd4e39be18d6b2aac81276",
+    "last_modified": "Fri, 30 Oct 2026 06:24:27 GMT",
+    "publisher": "Australian Energy Market Operator Limited",
+    "title": "AEMO October2026: twelve reviewed GA/canonical/AEMO crosswalks",
+    "release": "2026-10-30",
+    "locator": "Generator Information rows in1503_australia_review; GA names/state/points and canonical singlephase checked. Cached original workbook retained with actual retrieval.",
+    "license": "AEMO general permission for any purpose with accurate attribution to AEMO and this publication; confidential and third-party commissioned reports excluded. Workbook copyright explicitly points to permission.",
+    "license_url": "https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions",
+    "access_assessment": "Ordinary official publicGET recovered, no bypass. Copyrightpermission freshly checked; rawmetadata and disclaimer outsideGit.",
+    "limitations": "NEM only, not allAustralia. SinglePVunit/site and exactexistingDUID only. NameplateAC/DC distinct from MaxSiteCapacitydispatch; no invertercount, lifecycle or forecastdate mapping. Originalsurvey data as-is, not independentmeasurement; ownershipdifferences held.",
+    "verified_at": "2026-11-05T15:13:14.027738+00:00"
+  },
+  "ga_20261105T1503": {
+    "url": "https://services.ga.gov.au/gis/rest/services/Electricity_Infrastructure/MapServer/1/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=objectid&f=json",
+    "publisher": "Geoscience Australia",
+    "title": "Electricity Infrastructure — Major Power Stations",
+    "source_date": "2026-06-19",
+    "retrieved_at": "2026-11-05T15:04:00.699006+00:00",
+    "sha256": "bbd193751c283e5957ae73f76120cde7d3871267d10ccaf08d53ac2837e5f35f",
+    "locator": "ExactobjectID/globalID, names/state/GDA2020point in1503_australia_review; native unspecifiedMW not used asAC/DC.",
+    "license": "CC BY 4.0; © Commonwealth of Australia (Geoscience Australia) 2026. Selected and normalized.",
+    "terms_url": "https://ecat.ga.gov.au/geonetwork/srv/api/records/0e7d80c8-a1b8-4600-b89c-61d7410138c9?language=eng",
+    "limitations": "GA 5 MW+ inventory. Coordinates are native GDA2020. Attribute capacity basis unspecified; never promoted to canonical AC/DC. Attribute provenance can include AEMO; spatial evidence is distinct from the later AEMO survey.",
+    "verified_at": "2026-11-05T15:13:14.027738+00:00",
+    "etag": "\"edaae34a\""
+  },
+  "livoltek_gt3_live_20261105T1503": {
+    "url": "https://www.livoltek.com/product/grid-tied-inverter-threephase-gt3-4-25kw/",
+    "retrieved_at": "2026-11-05T15:06:21.685912+00:00",
+    "sha256": "99480ae0c59ee30b3cc49640f976b54d874f2a9cfd5be6a92412fc46d757feec",
+    "etag": null,
+    "last_modified": null,
+    "publisher": "LIVOLTEK / Hangzhou Livoltek Power Co., Ltd",
+    "title": "GT3-4–25KD1 live exactmodel technical cards",
+    "release": "Undated liveHTML; retrieved2026-11-05",
+    "locator": "Exactmodelheading/tableDOMIDs in1503_equipment_review; namedrows",
+    "license": "OEMcopyright retained. Bounded factual null-field enrichment only, no open bulk/document licence asserted. No rawHTML/PDF/artwork redistribution.",
+    "access_assessment": "Public ungated primary product page and privacy/footer inspected; no explicit public factual reproduction ban found. Copyright not waived. Old indexedPDF404, no bypass or guessed alternatehost.",
+    "limitations": "No currentPDFversion recovered. Livecard values only; optional controls, asymmetric perMPPT vectors and maxPVWp retained inreview, not convertedto scalar or ratedDC. No universalwarranty/environment/certification claim from card."
   }
 }

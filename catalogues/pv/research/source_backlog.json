@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T13:46:12.994152+00:00",
-  "ranking_file": "20261105T1327_top10_gaps.json",
-  "selection_note": "200China +27Australia existingprojects enriched;12Deye exactinverters added. AEMO ordinaryaccess recovered, reusable exactDUID null-field path with20tests;62candidatecrosswalks remain held. No private owner details or unit-as-project imports.",
-  "next_highest_value_source": "AEMO62held candidate plant/phase crosswalks for missingAC; GEM afterL100000828967 with815predicateeligible before review. Skip unchanged ODRELoire and monthlyworkbooks.",
+  "updated_at": "2026-11-05T15:15:28.403890+00:00",
+  "ranking_file": "20261105T1503_top10_gaps.json",
+  "selection_note": "212projects +11existingLivoltekmodels enriched,509substantivefields including12reviewedIDJSON additions. Zero newrecords/countries/manufacturers, no newadapter. Fouracceptedtechnicalbatches (GEM,GA,AEMO,Livoltek), Solplanetrights-held.",
+  "next_highest_value_source": "AEMO50remainingcrosswalks, especiallyMetz/Wollar localityscope; GEMafterL100001016833 with615predicateeligible beforemanualreview.",
   "sources": [
     {
       "id": "uk_repd",
@@ -17899,6 +17899,155 @@
       "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
       "next_due_check": "2026-12-05T13:27:00Z",
       "next_action": "Wait for suitable rights basis or choose independent OEM; no contact/form submitted."
+    },
+    {
+      "id": "gem_operator_20261105T1503",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CCBY4; entireTZ/WKSLlocation exclusions",
+      "access_assessment": "Ordinary publicGET only, no login/contact/bypass. Exactcaptures/checksums/ETags in1503_source_captures.",
+      "last_release": "February2026",
+      "publication_cadence": "Release-based; cached unprocessedpartitions",
+      "last_attempt": "2026-11-05T15:15:28.403890+00:00",
+      "last_retrieval": "2026-11-05T15:15:28.403890+00:00",
+      "retrieval_note": "Actual per-document times/checksums in source_captures; cacheddocuments retain originalretrieval, not now.",
+      "processed_cursor": {
+        "after": "L100000828967",
+        "next": "L100001016833",
+        "remaining": 615
+      },
+      "fields_offered": [
+        "reviewedidentity",
+        "missingtechnical/ownership/power/evidence fields"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 200,
+        "accepted": 200,
+        "unreviewed_verified_yield": null
+      },
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "result": "200reviewed→200enriched/400operator-evidencefields. Exact completephase/nativeoperator agreement, corporate labels manually reviewed; rawcached pinned bytes reused.",
+      "mapping": "Exactmodel DOMtableIDs or reviewed GAobjectID/globalID/AEMOsurveyrow/DUID in datedreviews. Existing upsert plus explicitly reviewed additiveIDedits, originalIDkeyvalues retained.",
+      "next_due_check": "2026-11-12T15:03:00Z",
+      "retry_condition": "Newrevision or evidence resolving savedscope/identity/rights; skipunchangedbytes.",
+      "next_action": "Resume afterL100001016833; recompute615eligible before manualreview."
+    },
+    {
+      "id": "australia_crosswalk_20261105T1503",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://services.ga.gov.au/gis/rest/services/Electricity_Infrastructure/MapServer/1/query",
+      "endpoint": "https://services.ga.gov.au/gis/rest/services/Electricity_Infrastructure/MapServer/1/query",
+      "format": "ArcGIS JSON +cachedXLSX",
+      "licence_assessment": "GA CCBY4 /AEMOgeneralattributedpermission; freshGApolicy checked",
+      "access_assessment": "GA ordinaryGET succeeded and bytes match prior snapshot. AEMOconditionalHEAD returned403; remote freshness unverified, cached checksum-pinned October2026 workbook only. No currentoperation assertion or fullbodyretry/bypass.",
+      "last_release": "GA19Jun2026 snapshot unchanged; AEMO30Oct2026",
+      "publication_cadence": "GA revision-based; AEMOmonthly, reusecache/HEAD",
+      "last_attempt": "2026-11-05T15:15:28.403890+00:00",
+      "last_retrieval": "2026-11-05T15:15:28.403890+00:00",
+      "retrieval_note": "Actual per-document times/checksums in source_captures; cacheddocuments retain originalretrieval, not now.",
+      "processed_cursor": {
+        "previous_candidates": 62,
+        "accepted_crosswalks": 12,
+        "remaining": 50,
+        "review_file": "20261105T1503_australia_review.json"
+      },
+      "fields_offered": [
+        "reviewedidentity",
+        "missingtechnical/ownership/power/evidence fields"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 14,
+        "accepted": 12,
+        "unreviewed_verified_yield": null
+      },
+      "reviewed": 14,
+      "accepted": 12,
+      "rejected": 0,
+      "result": "14three-source suggestions manuallyreviewed→12identity/parameter enrichments;2genuine localitydifferences held. Nativecase-onlylocality variants retainedoldcase.9AC,4DC,9owner,8context,12additive IDfields and1locality;13existingAC/DC/ownerassertiondifferences held withoutoverwrite. No newprojects, no GAunspecifiedMW→AC/DC.",
+      "mapping": "Exactmodel DOMtableIDs or reviewed GAobjectID/globalID/AEMOsurveyrow/DUID in datedreviews. Existing upsert plus explicitly reviewed additiveIDedits, originalIDkeyvalues retained.",
+      "next_due_check": "2026-11-06T15:12:00Z",
+      "retry_condition": "Newrevision or evidence resolving savedscope/identity/rights; skipunchangedbytes.",
+      "next_action": "Resolve Metz/Armidale andWollar/Mudgee scope usingpermits; independentcrosswalks forremaining50candidates. Do not accept names/proximityalone."
+    },
+    {
+      "id": "livoltek_gt3_live_20261105T1503",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.livoltek.com/product/grid-tied-inverter-threephase-gt3-4-25kw/",
+      "endpoint": "https://www.livoltek.com/product/grid-tied-inverter-threephase-gt3-4-25kw/",
+      "format": "HTMLmodeltables",
+      "licence_assessment": "OEMcopyrightretained; boundedfacts only; noopenbulklicence",
+      "access_assessment": "Ordinary publicGET only, no login/contact/bypass. Exactcaptures/checksums/ETags in1503_source_captures.",
+      "last_release": "UndatedliveHTML retrieved5Nov2026",
+      "publication_cadence": "Revision-based; indexbeforeunchangedcards",
+      "last_attempt": "2026-11-05T15:15:28.403890+00:00",
+      "last_retrieval": "2026-11-05T15:15:28.403890+00:00",
+      "retrieval_note": "Actual per-document times/checksums in source_captures; cacheddocuments retain originalretrieval, not now.",
+      "processed_cursor": {
+        "accepted_existing_models": 11,
+        "identical_duplicate_cards": 1,
+        "DL1_models_deferred": 2,
+        "PDF_attempt": "404"
+      },
+      "fields_offered": [
+        "reviewedidentity",
+        "missingtechnical/ownership/power/evidence fields"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 14,
+        "accepted": 11,
+        "unreviewed_verified_yield": null
+      },
+      "reviewed": 14,
+      "accepted": 11,
+      "rejected": 0,
+      "result": "11existingexactmodels enriched/66typedfields; no newmodels/manufacturer. 1100V maximumPVinput, dimensions, communication, symmetricstrings andmissingefficiency. No perMPPTvector→aggregate or maximumarrayWp→ratedDC inference. No environment/warrantyclaims invented fromsparsecard.",
+      "mapping": "Exactmodel DOMtableIDs or reviewed GAobjectID/globalID/AEMOsurveyrow/DUID in datedreviews. Existing upsert plus explicitly reviewed additiveIDedits, originalIDkeyvalues retained.",
+      "next_due_check": "2026-12-05T15:03:00Z",
+      "retry_condition": "Newrevision or evidence resolving savedscope/identity/rights; skipunchangedbytes.",
+      "next_action": "Selectedcards exhausted; seek current downloadablemanual forqualified environment/warranty rather than regionalvariants. OldindexedPDF404 not bypassed."
+    },
+    {
+      "id": "solplanet_rights_20261105T1503",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/gb/solplanet-legal-disclaimer",
+      "endpoint": "https://solplanet.net/gb/solplanet-legal-disclaimer",
+      "format": "HTMLterms/PDFbrochure",
+      "licence_assessment": "Personal-information-only; expresspermission forcopy/process/change/paidforwarding; no suitable reusegrantasserted",
+      "access_assessment": "Ordinary publicGET only, no login/contact/bypass. Exactcaptures/checksums/ETags in1503_source_captures.",
+      "last_release": "November2024brochure; currenttermsundated",
+      "publication_cadence": "Onlyifrightschange",
+      "last_attempt": "2026-11-05T15:15:28.403890+00:00",
+      "last_retrieval": "2026-11-05T15:15:28.403890+00:00",
+      "retrieval_note": "Actual per-document times/checksums in source_captures; cacheddocuments retain originalretrieval, not now.",
+      "processed_cursor": {
+        "accepted_models": 0,
+        "rights_hold": true
+      },
+      "fields_offered": [
+        "reviewedidentity",
+        "missingtechnical/ownership/power/evidence fields"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "unreviewed_verified_yield": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "Promisingmultimodelcatalogueaccessed, butno factualrecords accepted due source-specific reuse restrictions. IndependentLivoltekfallback used.",
+      "mapping": "Exactmodel DOMtableIDs or reviewed GAobjectID/globalID/AEMOsurveyrow/DUID in datedreviews. Existing upsert plus explicitly reviewed additiveIDedits, originalIDkeyvalues retained.",
+      "next_due_check": "2026-12-05T15:03:00Z",
+      "retry_condition": "Newrevision or evidence resolving savedscope/identity/rights; skipunchangedbytes.",
+      "next_action": "Waitforapplicablereusebasis; no contact/forms submitted."
     }
   ],
   "source_refresh_queue": [
