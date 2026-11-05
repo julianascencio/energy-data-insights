@@ -10,6 +10,7 @@ ranking of installed national capacity. 110 Norwegian records have reviewed
 NVE lifecycle and technical enrichment; 534 US records carry dated 2025 EIA inventory.
 131 Brazilian records now retain ONS registry/unit evidence.
 13 Indian records retain reviewed historical IHA station evidence.
+26 African records retain reviewed AHA river/basin evidence.
 Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
 """
@@ -41,6 +42,9 @@ print(
 print(
     "IHA India enriched records:",
     sum(any(s.startswith("iha-india-") for s in r["sources"]) for r in rows),
+)
+print(
+    "AHA Africa enriched records:", sum("aha-v2.3-technical-20261105" in r["sources"] for r in rows)
 )
 print("Input fingerprint:", manifest["input_sha256"])
 print("Reviewed installed generating MW:", capacity_summary(rows, "installed_capacity_mw"))

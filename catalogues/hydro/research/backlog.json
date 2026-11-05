@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T18:44:58Z",
+  "reviewed_at": "2026-11-05T19:42:24Z",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -131,15 +131,28 @@
       "new": 0,
       "held": 14,
       "cursor": "Codes 3001\u20133500 complete; next 3501\u20134000 after Africa rotation"
+    },
+    {
+      "source": "aha-v2.3-technical-20261105",
+      "partition": {
+        "sheet": "1 - Spatial and technical data",
+        "first_row": 4,
+        "last_row": 673,
+        "next_row": null
+      },
+      "accepted_enriched": 26,
+      "new": 0,
+      "held": 644,
+      "cursor": "All 670 technical rows screened; 26 explicit crosswalks accepted, 644 candidates held. Do not reimport unchanged source."
     }
   ],
   "next_sources": [
     {
       "priority": 1,
       "region": "Africa",
-      "url": "https://www.hydroshare.org/resource/87bf4534220343b79aeacce11d3631a7/",
-      "status": "RePP licence discrepancy held; AHA v2.1 original acquired under CC BY 4.0, v2.2 successor identified",
-      "next_action": "Compare AHA v2.2 successor with acquired v2.1 spreadsheet, verify version and units, then review first 100 spatial/technical rows; separate modeled generation"
+      "url": "https://www.hydroshare.org/resource/197eab83ae424be3804ee154ed98aea8/",
+      "status": "AHA v2.1/v2.2/v2.3 compared; v2.3 selected under CC BY 4.0; 26 enriched, 644 held",
+      "next_action": "Resolve first 100 held Existing rows in Excel row order beginning row 4 with primary alias/phase/location evidence; include COD/COG Moukoukoulou duplicate and Imboulou country conflict; never fuzzy-merge"
     },
     {
       "priority": 1,
@@ -183,6 +196,12 @@
       "url": "https://energydata.info/en/dataset/india-hydropower-database",
       "status": "All 110 matched stations reviewed: 13 enriched, 97 held",
       "next_action": "Resolve explicit alias/phase/location evidence for held cases; do not reimport completed partition"
+    },
+    {
+      "priority": 2,
+      "region": "Oceania",
+      "status": "Discovery pending after EIA 3501\u20134000",
+      "next_action": "Review official Australian and New Zealand generating-station inventories and reuse terms; crosswalk existing 73 AUS and 24 NZL records"
     }
   ],
   "market_ranking": {

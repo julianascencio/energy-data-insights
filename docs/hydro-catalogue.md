@@ -331,3 +331,41 @@ CC BY 4.0 resource terms. Its Overview label says v1.0 despite its filename;
 a v2.2 successor is linked by the repository. Compare these releases before
 reviewing the first 100 spatial/technical rows. No African plant data is
 accepted in this batch.
+
+
+## African Hydropower Atlas v2.3 historical enrichment
+
+Compared v2.1, v2.2 and the latest linked v2.3 successor (file modified
+2024-02-14). The full 670-row spatial/technical sheet yields 26 explicitly
+reviewed existing identities across 18 African countries; 644 candidates
+remain held for identity, scope or source review. No new plants are created.
+Names, country, historical capacity and coordinates within 0.01 degree per
+axis support the crosswalks; shared-plant flags exclude automatic acceptance.
+Moukoukoulou's duplicate COD/COG identities and Imboulou's country discrepancy
+remain held. Matching rules never establish aggregate/phase independence.
+
+River and basin metadata and immutable historical observations are added.
+Capacity, coordinates, lifecycle and aggregation roles remain unchanged.
+Model outputs (including energy per unit volume and storage available) are
+excluded. Retained raw flow, filling time and availability values may be
+modeled and are not promoted to canonical measurements. Reservoir volume
+is never converted into energy. Model channel/reservoir IDs are not official
+plant registry IDs. Unknown canonical measurements remain null.
+
+Attribution: Sebastian Sterl and Charles J. Chawanda, African Hydropower Atlas
+v2.3, CC BY 4.0. Crosswalk review and normalization are our changes. The source
+registry pins the resource URL, retrieval time, release date and checksum;
+`research/aha-v23-reviewed.json` preserves row locators and original source
+columns, while `aha-version-review.json` records version comparisons.
+The workbook Overview label is stale; the resource and checksum identify the
+release. Historical status labels do not establish present-day operation.
+
+```bash
+uv run python scripts/enrich_hydro_aha.py
+```
+
+Coverage remains 7,156 historical records / 128 countries, now with 814
+enriched identities. The gallery reports the AHA count separately. All plant
+aggregation scopes remain unresolved, so these records do not contribute to
+a verified worldwide generating-MW total. Next: EIA final-2025 plant codes
+3501–4000; targeted African alias/scope review and Oceania discovery follow.
