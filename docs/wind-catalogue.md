@@ -761,8 +761,16 @@ comparison or capacity factor is inferred. Sources: final-2025 EIA-860 and the
 pinned WRI U.S. importer/identity helper (`eia860_2025`, `wri_usa_identity`).
 
 The EIA adapter also accepts an inclusive `operable_range=(low, high)` plant-code
-partition. The complete 1–51999 range is reviewed; 52000–52999 is next. Operating,
+partition. The complete 1–55999 range is reviewed; 56000–56999 is next. Operating,
 out-of-service and standby generator observations remain distinct in the shared
 viewer and existing deterministic example. None establishes whole-farm current
 operation, reconciles repowering, or promotes predominant model labels to exact
 OEM equipment. The original final-2025 workbook bytes are reused and rechecked.
+
+The 52000–55999 continuation reviewed all 61 plants / 67 generator rows in four
+complete numerical partitions, including the empty 53000–53999 partition. It
+adds dated evidence to 53 existing projects and holds eight unresolved identities.
+The adapter rejects identical unit observations imported through overlapping
+source aliases. Distinct tabs and revised observations remain separate. Viewer
+cards separate reporting years; `windEiaSummary(rows, year)` can select one year
+without treating absent observations as zero generating capacity.

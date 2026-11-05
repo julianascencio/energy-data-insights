@@ -246,3 +246,14 @@ test("operable EIA statuses stay distinct", async () => {
   const result=windEiaSummary([{entity_type:"projects",extensions_json:JSON.stringify({eia_annual_wind_partitions:[{year:2025,source_id:"eia",units}]})}]);
   assert.equal(result.operating,1); assert.equal(result.outOfService,1); assert.equal(result.standby,1);
 });
+
+
+test("EIA year selection prevents mixing annual observations", async () => {
+  const {windEiaSummary} = await import("../../docs/_static/database-core.mjs");
+  const part = (year, status) => ({year, source_id:"annual"+year, units:[{generator_id:"1", locator:"row3", status_code:status, status_as_of:year+"-12-31"}]});
+  const rows = [{entity_type:"projects", extensions_json:JSON.stringify({eia_annual_wind_partitions:[part(2024,"OP"),part(2025,"RE")]})}];
+  assert.equal(windEiaSummary(rows,2025).operating,0);
+  assert.equal(windEiaSummary(rows,2025).retired,1);
+  assert.equal(windEiaSummary(rows,2026).withoutObservations,1);
+  assert.equal(windEiaSummary(rows).operating,1);
+});

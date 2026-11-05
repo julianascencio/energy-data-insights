@@ -122,6 +122,14 @@ function render() {
   if (isWind) summary.push([number(filtered.filter(r => r.quality_status === "needs_review").length), "Records needing review", "Inspect field conflicts; quarantined values remain unknown, not zero"]);
   if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
+    const eiaYears = [...new Set(filtered.flatMap(row => {
+      try { return (JSON.parse(row.extensions_json || "{}").eia_annual_wind_partitions || []).filter(p => p?.source_id && Number.isInteger(p.year)).map(p => p.year); }
+      catch { return []; }
+    }))].sort((a,b) => a-b);
+    for (const year of eiaYears) {
+      const yearly = windEiaSummary(filtered, year);
+      summary.push([number(yearly.projects), `EIA ${year} evidence`, `${yearly.operating} operating · ${yearly.outOfService} out of service · ${yearly.standby} standby · ${yearly.retired} retired · ${yearly.canceled} canceled · ${yearly.postponed} postponed generator observations as of ${year}-12-31. These are dated units, not whole-farm statuses.`]);
+    }
     const eia = windEiaSummary(filtered);
     summary.push([number(eia.projects), "EIA unit evidence", `${eia.operating} operating · ${eia.outOfService} out of service · ${eia.standby} standby · ${eia.retired} retired · ${eia.canceled} canceled · ${eia.postponed} postponed dated unit observations; ${eia.withoutObservations} projects without this evidence. Unit status does not establish whole-farm status or current capacity.`]);
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);

@@ -82,6 +82,17 @@ for row in rows:
             row["aggregation_role"],
         )
 print("Predominant models and representative heights are partial inventories, not exact fleets.")
+# Compare observation counts within reporting years, never sum MW across years.
+eia_years = {}
+for row in rows:
+    for partition in json.loads(row.get("extensions_json") or "{}").get(
+        "eia_annual_wind_partitions", []
+    ):
+        counts = eia_years.setdefault(partition["year"], {})
+        for unit in partition["units"]:
+            state = unit["status_code"]
+            counts[state] = counts.get(state, 0) + 1
+print("Dated EIA generator observations by reporting year:", dict(sorted(eia_years.items())))
 
 # Environmental declarations use modeled sites, not independently observed farms.
 print("EPD lifetime scenarios: separate model, location, exposure and net-to-grid boundary")

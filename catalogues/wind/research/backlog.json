@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T23:33:56Z",
+  "updated_at": "2026-11-05T00:42:05Z",
   "branch": "research/wind-20261104-2335",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind-20261104-2335.lock for research/wind-20261104-2335; inspect active work and remote head; publish using an expected-head fast-forward, never overwrite another writer.",
   "queue": [
@@ -17,7 +17,7 @@
       ],
       "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "EIA2025 Operable codes1–51999 completed; next complete52000–52999 fromcached originals. Five earlier identity discrepancies still held; inspect originalCEC2023/EPA name-code references before changing names or locations.",
+      "next_task": "EIA final2025 Operable codes1–55999 complete; next56000–56999, then57000–57999 if bounded yield is low. Reuse pinned original bytes. CEC258092p41 names/IDs corroborate50535/50536 but aliases/repowering/coordinates remain unresolved; next historical EPA original crosswalk. All eight current identity holds retained.",
       "latest_attempt_review": "2026-11-04-1235-source-review.json",
       "independent_source_completed": {
         "source": "EIA2025final",
@@ -28,8 +28,9 @@
       },
       "operable_completed": [
         1,
-        51999
-      ]
+        55999
+      ],
+      "operable_decision_ledger": "2026-11-05-0035-eia-review.json"
     },
     {
       "rank": 2,

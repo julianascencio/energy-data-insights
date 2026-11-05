@@ -208,7 +208,7 @@ export function windEpdSummary(rows) {
 }
 
 // Count dated unit observations, never infer whole-farm retirement or capacity.
-export function windEiaSummary(rows) {
+export function windEiaSummary(rows, year = null) {
   const result = {projects: 0, withoutObservations: 0, retired: 0, canceled: 0, postponed: 0, operating: 0, outOfService: 0, standby: 0};
   const keys = {RE: "retired", CN: "canceled", IP: "postponed", OP: "operating", OS: "outOfService", OA: "standby"};
   for (const row of rows.filter(r => r.entity_type === "projects")) {
@@ -217,7 +217,7 @@ export function windEiaSummary(rows) {
     const partitions = Array.isArray(ext?.eia_annual_wind_partitions) ? ext.eia_annual_wind_partitions : [];
     let count = 0;
     for (const part of partitions) {
-      if (!part?.source_id || !Number.isInteger(part.year)) continue;
+      if (!part?.source_id || !Number.isInteger(part.year) || (year !== null && part.year !== year)) continue;
       for (const unit of Array.isArray(part.units) ? part.units : []) {
         const key = Object.hasOwn(keys, unit?.status_code) ? keys[unit.status_code] : null;
         if (!key || !unit.generator_id || !unit.locator || unit.status_as_of !== `${part.year}-12-31`) continue;

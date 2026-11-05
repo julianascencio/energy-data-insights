@@ -319,6 +319,15 @@ def enrich_retired_partition(
                 raise ValueError("Immutable EIA observation changed")
             result.append(row)
             continue
+        # Source aliases or overlapping bounds must not duplicate an observation.
+        # Different dated/revised observations remain independently reviewable.
+        if any(
+            old.get("year") == item["year"]
+            and old.get("plant_code") == code
+            and any(unit in old.get("units", []) for unit in item["units"])
+            for old in history
+        ):
+            raise ValueError("Overlapping EIA unit observation from another source")
         history.append(observation)
         ids["eia_plant_code"] = str(code)
         fs = json.loads(row["field_sources_json"])

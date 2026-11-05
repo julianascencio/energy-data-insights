@@ -227,3 +227,32 @@ def test_operable_range_keeps_unit_state_and_bounds():
     assert parse_retired_partition(wind, plant, **kw, operable_range=(124, 130)) == []
     with pytest.raises(ValueError, match="range"):
         parse_retired_partition(wind, plant, **kw, operable_range=(130, 124))
+
+
+def test_overlapping_source_alias_rejected_but_disjoint_tab_accepted():
+    wind, plant, kw = fixture()
+    retired = parse_retired_partition(wind, plant, **kw)
+    old = apply(retired, existing())[0]
+    with pytest.raises(ValueError, match="Overlapping"):
+        enrich_retired_partition(
+            retired,
+            [old],
+            {123: "test"},
+            source_id="different_alias",
+            identity_source_id="wri",
+            now="2026-11-05T00:00:00Z",
+        )
+    operable = parse_retired_partition(wind, plant, **kw, operable_range=(123, 123))
+    new = enrich_retired_partition(
+        operable,
+        [old],
+        {123: "test"},
+        source_id="operable",
+        identity_source_id="wri",
+        now="2026-11-05T00:00:00Z",
+    )[0]
+    history = json.loads(new["extensions_json"])["eia_annual_wind_partitions"]
+    assert len(history) == 2
+    assert [x["units"][0]["generator_id"] for x in history] == ["OLD", "NEW"]
+    assert new["status"] == "unknown"
+    assert new["historical_capacity_mw"] == 30
