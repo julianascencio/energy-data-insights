@@ -49,3 +49,33 @@ status, technology, hydraulic metadata or scope. Preserve creation dates and
 use the existing conflict-quarantining upsert API. Reuse the open hydro PR; refresh
 remote refs before writing and never overwrite concurrent PV/BESS/Wind work.
 See the published snapshot schema for every field and unit.
+
+## Norway official registry staging (5 November 2026)
+
+The NVE all-assets API was processed completely: 2,010 source rows yielded
+1,977 generating candidates and 33 pump-only exclusions, with no parsing
+quarantines. **None of these candidates have entered canonical plant counts.**
+The existing 291 Norwegian WRI identities require an explicit registry crosswalk;
+name equality is not proof of identity. Candidate facts and decisions persist in
+`catalogues/hydro/research/nve-20261105/`, alongside the original-response checksum.
+Attribution: Norwegian Water Resources and Energy Directorate (NVE), NLOD;
+[NVE source and field documentation](https://api.nve.no/doc/vannkraftdatabase/).
+
+```bash
+uv run python scripts/stage_hydro_nve.py nve-response.json /tmp/nve-stage --retrieved-at 2026-11-05T08:45:58Z
+```
+
+The importer stages generating MW, owner/operator, basin, lifecycle, gross head
+(at NVE's 67% filling reference), maximum turbine flow and normal-period
+1991–2020 annual generation. The latter is modeled normal production, not a
+measured annual observation. Price area is not a physical grid connection.
+Commissioning strings remain raw metadata until date precision is reviewed.
+Pumped capability does not establish pure/mixed subtype or pumping input MW.
+Coordinates, reservoir energy and precise dates are not inferred.
+
+`research/market-ranking-202603.json` records GEM's March 2026 top-ten operating
+hydropower capacity ranking and a separate pumped-storage ranking. The named
+metric is operating generating nameplate MW for facilities of at least 30 MW;
+it is not an all-size national inventory. Pumped capacity is a subset, never an
+addition to the hydropower ranking. Source sheet URLs and row locators accompany
+the factual summary. GEM bulk-file access and reuse review remain outstanding.

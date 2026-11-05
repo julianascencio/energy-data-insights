@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T08:18:58Z",
+  "reviewed_at": "2026-11-05T08:45:58Z",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -29,8 +29,8 @@
       "priority": 2,
       "url": "https://www.nve.no/energi/energisystem/vannkraft/",
       "country": "NOR",
-      "status": "candidate; official registry not yet fetched",
-      "next_action": "Inspect NVE plant registry and reusable API/export; reconcile WRI IDs and Norwegian names"
+      "status": "Full API processed: 1977 generating candidates, 33 pump-only exclusions; 0 accepted",
+      "next_action": "Review exact NVE ID crosswalk against 291 WRI NOR records; accept only resolved identities; no name-based automatic merges"
     },
     {
       "priority": 3,
@@ -48,10 +48,9 @@
     }
   ],
   "market_ranking": {
-    "status": "unresolved; no current top-ten ranking claimed",
-    "metric": "operating installed generating MW, with pumped storage separately ranked",
-    "source": "https://globalenergymonitor.org/projects/global-hydropower-tracker/",
-    "next_action": "Retrieve March 2026 country capacity and pumped-storage summary tables. Do not substitute WRI historical coverage counts for market ranking."
+    "status": "March 2026 GEM top-ten recorded in market-ranking-202603.json",
+    "metric": "Operating generating nameplate MW for GEM facilities >=30 MW; includes pumped storage; separate pumped ranking",
+    "next_action": "Reconcile national coverage against scope-limited market ranking; do not interpret as complete national census"
   },
   "regional_rotation": [
     "Asia",
