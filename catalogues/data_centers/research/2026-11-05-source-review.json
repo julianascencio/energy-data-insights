@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T04:20:00Z",
+  "retrieved_at": "2026-11-05T05:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -48,6 +48,54 @@
       "enriched_records": 0,
       "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No H3C OEM-page facts or deployment claims are imported.",
       "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the nine New H3C Technology Co., Ltd. certification entries in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified IBM Corporation enterprise-server partner inventory",
+      "processed_offset": 9,
+      "accepted_records": 9,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No IBM OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the nine IBM Corporation certification entries in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified Aivres Systems Inc enterprise-server partner inventory",
+      "processed_offset": 8,
+      "accepted_records": 8,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. KAYTUS remains the source brand and no Aivres/KAYTUS OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the eight Aivres Systems Inc certification entries in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified ZTE Corporation enterprise-server partner inventory",
+      "processed_offset": 6,
+      "accepted_records": 6,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No ZTE OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the six ZTE Corporation certification entries in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified Altos Computing Incorporated enterprise-server partner inventory",
+      "processed_offset": 3,
+      "accepted_records": 3,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No Altos OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the three Altos Computing Incorporated certification entries in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified Oracle Corporation enterprise-server partner inventory",
+      "processed_offset": 3,
+      "accepted_records": 3,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No Oracle OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the three Oracle Corporation certification entries in the 2026-11-04 dataset update."
+    },
+    {
+      "inventory": "EPA ENERGY STAR certified J.C. Technology dba Ace Computers enterprise-server partner inventory",
+      "processed_offset": 1,
+      "accepted_records": 1,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No Ace Computers OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains the only J.C. Technology dba Ace Computers certification entry in the 2026-11-04 dataset update."
     }
   ],
   "deferred": [
@@ -60,15 +108,20 @@
       "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence."
     },
     {
-      "inventory": "Remaining ENERGY STAR Enterprise Server partner partitions",
-      "reason": "IBM (9), Aivres (8), ZTE (6), Altos (3), Oracle (3) and Ace Computers (1) remain as separately bounded residual partner partitions; ASUSTeK and New H3C are complete at offsets 14 and 9."
+      "inventory": "Independent current electrical or liquid-cooling supplier table",
+      "reason": "The selected EPA ENERGY STAR Enterprise Servers snapshot is exhausted at 476/476 rows across all 17 partners. Continue a distinct official supplier table or wait for a dated issuer-dataset revision rather than recounting completed rows."
     }
   ],
   "quarantined": [
     {
       "record": "Cisco UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S ENERGY STAR entries",
       "field": "processor_socket_count",
-      "reason": "Previously recorded model-label versus source-attribute contradictions remain unresolved; the ASUSTeK/H3C batch adds no new quarantine."
+      "reason": "Previously recorded model-label versus source-attribute contradictions remain unresolved."
+    },
+    {
+      "record": "ZTE R5300 G5 ENERGY STAR certification 4654814",
+      "field": "configuration_identity",
+      "reason": "The issuer row labels the certified model R5300 G5 but prints R5300 G6 for the high-end configuration identifier. Both observations remain exact and no cross-model configuration identity is inferred."
     }
   ],
   "normalization_notes": [
@@ -89,6 +142,11 @@
     "All 14 ASUSTeK entries retain three SERT tiers, all three configuration IDs and exact one- or two-socket platform attributes.",
     "All nine H3C entries retain three SERT tiers; four G7 rows omit the low-end configuration ID and no identifier is inferred.",
     "ASUSTeK SERT 2.0.7/2.0.8 and H3C SERT 2.0.6/2.0.8 revisions remain exact issuer observations.",
+    "All nine IBM entries retain exact issuer SERT observations; Power S1014 has no reported high-end tier, and the printed combined 2.0.4; 2.0.6 version value remains exact.",
+    "All eight Aivres partner entries retain KAYTUS as the source brand and only the reported typical/single tier; Aivres partner identity is not discarded or promoted to a deployment.",
+    "All three Altos and the one Ace Computers entry retain only typical/single SERT observations; absent low-end/high-end tiers and configuration IDs remain absent.",
+    "All six ZTE and three Oracle entries retain their reported three-tier observations. ZTE certification 4654814 does not resolve its R5300 G5/R5300 G6 configuration-label mismatch.",
+    "All 476 rows across all 17 ENERGY STAR Enterprise Servers partner partitions in the 2026-11-04 dataset snapshot are now processed.",
     "Campus aggregates remain excluded from capacity sums under all viewer filters.",
     "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko reuse holds remain in force; no held facts or bytes were imported."
   ]

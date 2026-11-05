@@ -7,7 +7,7 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **183 project records in 36 countries**:
 **66 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **2,237 exact equipment records from 51 OEMs**.
+from 13 operators. It has **2,267 exact equipment records from 57 OEMs**.
 Merged `main` at `9f36b0f3` contains **183 projects and 1,831 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -77,6 +77,12 @@ uv run python scripts/build_data_center_energy_star_server_batch.py captured-ene
 uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-lenovo-energy-star-servers.jsonl --partner-batch lenovo_energy_star --shard-size 5
 uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-asus-energy-star-servers.jsonl --partner-batch asus_energy_star --shard-size 5
 uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-h3c-energy-star-servers.jsonl --partner-batch h3c_energy_star --shard-size 5
+uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-ibm-energy-star-servers.jsonl --partner-batch ibm_energy_star --shard-size 5
+uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-aivres-energy-star-servers.jsonl --partner-batch aivres_energy_star --shard-size 5
+uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-zte-energy-star-servers.jsonl --partner-batch zte_energy_star --shard-size 5
+uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-altos-energy-star-servers.jsonl --partner-batch altos_energy_star --shard-size 5
+uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-oracle-energy-star-servers.jsonl --partner-batch oracle_energy_star --shard-size 5
+uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-ace-energy-star-servers.jsonl --partner-batch ace_energy_star --shard-size 5
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -94,7 +100,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-05-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-05-decisions.jsonl),
-[executed validation](research/2026-11-05T0420-validation.json), and
+[executed validation](research/2026-11-05T0520-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

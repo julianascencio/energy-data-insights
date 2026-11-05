@@ -38,13 +38,13 @@ Certificates require issuer, scope and validity evidence, not marketing badges.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,237 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, ADI, Appleton Group / SolaHD, Baudouin, Borri,
-Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, Kehua Tech, KSTAR,
+has 2,267 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
-nVent HOFFMAN, Schneider Electric, Siemens,
+nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
 STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
 Ingram Micro / V7, N1 Critical Technologies, Neuropower, Power Logic / KOSS,
-Right Power Technology, Upsonic Power Systems and xFusion. Current categories are GPU accelerators,
+Right Power Technology, Upsonic Power Systems, xFusion and ZTE. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
 and CRAC/CRAH precision air-conditioning equipment, transformers and switchgear.
 The Schneider Galaxy
@@ -284,6 +284,17 @@ IDs; two print only low-end, one prints typical and high-end, and two print none
 Absent identifiers remain unknown while the reported tier-qualified CPU, memory,
 storage, PSU and benchmark observations remain intact. The one-, two- and
 four-socket platform attributes remain separate from tested processor population.
+The residual server-certification continuation exhausts the remaining 30 entries
+in the same 476-row issuer snapshot: nine IBM, eight Aivres Systems entries sold
+under the KAYTUS brand, six ZTE, three Altos, three Oracle and one Ace Computers.
+IBM, ZTE and Oracle retain their reported three-tier SERT observations except
+IBM Power S1014, which reports only low-end and typical/single. KAYTUS, Altos and
+Ace retain only the reported typical/single tier. Empty tiers and identifiers are
+not synthesized. ZTE certification 4654814 is labeled R5300 G5 but prints R5300
+G6 for the high-end configuration ID; both issuer observations are preserved and
+configuration-identity inference remains quarantined. PSU nameplates, benchmark
+scores, maximum supported memory and certification status remain bounded evidence,
+not rated server/rack input, installed memory or deployment claims.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -453,4 +464,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T0420-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T0520-validation.json).

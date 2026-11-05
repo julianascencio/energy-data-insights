@@ -1,0 +1,101 @@
+{
+  "run_id": "energy-star-residual-servers-20261105T052000Z",
+  "retrieved_at": "2026-11-05T05:20:00Z",
+  "branch": "research/data-center-database-20261104T2220Z",
+  "base_head": "9f36b0f35a0090a4908741704af883be376466b6",
+  "prepublication_remote_head": "8fd3ef3e7d8a00078ce3ee6979ffb958507944e7",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 2267,
+    "total": 2450,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 57,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 30,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1831,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 436,
+    "inventories": [
+      "EPA ENERGY STAR certified xFusion enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Nutanix enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hitachi Vantara enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Dell Inc. enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Super Micro Computer, Inc. enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Lenovo Group Limited enterprise-server partner inventory",
+      "EPA ENERGY STAR certified ASUSTeK Computer Inc. enterprise-server partner inventory",
+      "EPA ENERGY STAR certified New H3C Technology Co., Ltd. enterprise-server partner inventory",
+      "EPA ENERGY STAR certified IBM Corporation enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Aivres Systems Inc enterprise-server partner inventory",
+      "EPA ENERGY STAR certified ZTE Corporation enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Altos Computing Incorporated enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Oracle Corporation enterprise-server partner inventory",
+      "EPA ENERGY STAR certified J.C. Technology dba Ace Computers enterprise-server partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 852189,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {"check": "deterministic ENERGY STAR server builder replay", "result": "passed", "detail": "All 101 JSONL shards for all 17 partner partitions and all 476 source rows reproduced byte-for-byte from the registered complete source"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,450 canonical Data Center records from an isolated catalogue root containing the 30 proposed residual-partner records"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed"},
+    {"check": "full Python test suite", "result": "unrelated local collection failure", "detail": "Collection stopped before tests because the disk-full local worktree lacks unrelated PV modules energy_methods.pvdeg and energy_analysis.pvdeg_canary. The focused Data Center suite is green and no unrelated files were changed."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "targeted Ruff format and lint", "result": "passed", "detail": "The changed server builder, Data Center catalogue package and focused tests passed format and lint checks with the cache redirected to memory"},
+    {"check": "targeted ty", "result": "passed", "detail": "The changed server builder, Data Center catalogue package and focused tests passed type checking against the validated project interpreter"},
+    {"check": "repository hygiene", "result": "passed", "detail": "4,505 candidate files checked; no flagged secrets or data"},
+    {"check": "citation registry", "result": "unrelated local worktree failure", "detail": "The checker reports stale CITATION.cff, references.bib and docs/references.md exports in the disk-full unrelated worktree. Those unrelated files were not modified; fresh remote CI is authoritative."},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed against the isolated expanded catalogue"},
+    {"check": "strict Sphinx and generated-site link validation", "result": "not run locally", "detail": "The local validation interpreter is Python 3.12 while the locked Orbital PV imagery dependency used by the unrelated Candelaria gallery is Python 3.13-only; remote Documentation CI is authoritative"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds from the isolated expanded catalogue produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "c271eb0a295bebdfe8d187549c53c1d87156b7f08baedade7c731890789ac860",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "4e4aa8c0ac150fdf1f0e35adbe9251d82e388420d5f6d9cffbee6e08303650d3",
+    "manifest_sha256": "0a5c7c6b99064a4854547c1d4132efad75964fc0cfcd5f9ae98f6b63322e623e",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "b5bf3d4d4cdf6f0ebc556fb6d58ce4ac87ac59451909d3b4f3ca4a98523721dd"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "An independent current electrical or liquid-cooling supplier inventory; the selected ENERGY STAR Enterprise Servers snapshot is exhausted"
+  ],
+  "quarantined_fields": [
+    "processor_socket_count on UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S remains from the earlier Cisco batch",
+    "configuration identity inference for ZTE certification 4654814 remains quarantined because the issuer row labels R5300 G5 but prints R5300 G6 for the high-end configuration ID"
+  ],
+  "notes": [
+    "All 476 entries across all 17 partner partitions in the 2026-11-04 ENERGY STAR Enterprise Servers dataset update are processed",
+    "The bounded run adds all nine IBM, eight Aivres/KAYTUS, six ZTE, three Altos, three Oracle and one Ace Computers certifications",
+    "IBM Power S1014 and every KAYTUS, Altos and Ace Computers row retain only the SERT tiers actually reported",
+    "PSU nameplates and SERT power scores are not normalized as rated server input or rack input",
+    "Maximum supported memory is not treated as installed memory",
+    "Certification entries are not deployments",
+    "Campus aggregates remain excluded from capacity sums under all viewer filters"
+  ]
+}

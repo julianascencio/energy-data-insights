@@ -83,6 +83,42 @@ PARTNER_BATCHES = {
         "expected_count": 9,
         "retrieved_at": "2026-11-05T04:20:00Z",
     },
+    "ibm_energy_star": {
+        "partner": "IBM Corporation",
+        "manufacturer": "IBM",
+        "expected_count": 9,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "aivres_energy_star": {
+        "partner": "Aivres Systems Inc",
+        "manufacturer": "KAYTUS",
+        "expected_count": 8,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "zte_energy_star": {
+        "partner": "ZTE Corporation",
+        "manufacturer": "ZTE",
+        "expected_count": 6,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "altos_energy_star": {
+        "partner": "Altos Computing Incorporated",
+        "manufacturer": "Altos",
+        "expected_count": 3,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "oracle_energy_star": {
+        "partner": "Oracle Corporation",
+        "manufacturer": "Oracle",
+        "expected_count": 3,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "ace_energy_star": {
+        "partner": "J.C. Technology dba Ace Computers",
+        "manufacturer": "Ace Computers",
+        "expected_count": 1,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
 }
 
 CONFIGURATION_LABELS = (
@@ -281,9 +317,12 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
             )
         )
 
-    conflict = socket_conflicts(row, retrieved_at=retrieved_at)
+    conflicts = socket_conflicts(row, retrieved_at=retrieved_at) or {}
     socket_attribute = row["Product Processor Socket Count"]
-    socket_count = int(socket_attribute) if not conflict and socket_attribute.isdigit() else None
+    socket_conflict = "processor_socket_count" in conflicts
+    socket_count = (
+        int(socket_attribute) if not socket_conflict and socket_attribute.isdigit() else None
+    )
     fields = [
         "capacity_scope",
         "certifications_json",
@@ -302,9 +341,9 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
         "record_scope",
         "variant",
     ]
-    if conflict:
+    if conflicts:
         fields.append("conflicts_json")
-    elif socket_count is not None:
+    if socket_count is not None:
         fields.append("processor_socket_count")
     evidence = {
         field: {
@@ -360,7 +399,7 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
             "listed in the current ENERGY STAR certified enterprise-server dataset snapshot "
             "updated 2026-11-04"
         ),
-        "quality_status": "needs_review" if conflict else "source_backed",
+        "quality_status": "needs_review" if conflicts else "source_backed",
         "record_id": stable_id("equipment", manufacturer, "ENERGY STAR enterprise server", uid),
         "record_scope": "configuration",
         "source_urls": [SOURCE_URL],
@@ -368,8 +407,8 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
         "updated_at": retrieved_at,
         "variant": f"ENERGY STAR {uid}; {model_number}",
     }
-    if conflict:
-        record["conflicts_json"] = compact(conflict)
+    if conflicts:
+        record["conflicts_json"] = compact(conflicts)
     return record
 
 
