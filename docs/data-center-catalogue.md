@@ -503,5 +503,21 @@ The official Block I/O CSV is 65,084 bytes with SHA-256
 the File I/O CSV is 31,584 bytes with SHA-256
 `fc55a7b3b62e2fe40d5e7d0f1cbaff6b7e727b76c7a5280ef401383dc27ff267`.
 
+## Certified large network equipment
+
+The complete EPA ENERGY STAR Large Network Equipment export contributes 96
+exact issuer certifications: 91 switches and five routers from Extreme
+Networks, Dell, Cisco and Huawei. Each certification retains its fixed/modular
+classification, management characteristics, firmware, topology, compatible
+chassis/modules, port and PoE facts and separate minimum, typical and maximum
+test configurations.
+
+Measured full-load, 30-percent-load and very-low-utilization watts retain the
+printed port topology, throughput, utilization, voltage and frequency. They are
+not generic rated device input or rack input. PSU outputs remain nameplates;
+port, module, power-supply and PoE quantities are certification test facts, not
+deployed inventory. The official 96-row, 223-column v3 CSV is 72,103 bytes with
+SHA-256 `e769eedcef814b652ad6594b6cadb43b239e57e9250071a90cc133b07907e533`.
+
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T0920-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T1020-validation.json).

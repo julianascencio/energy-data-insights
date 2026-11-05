@@ -301,6 +301,76 @@ def parse_energy_star_enterprise_servers_inventory(
     }
 
 
+def parse_energy_star_large_network_equipment_inventory(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage the complete ENERGY STAR large-network-equipment inventory.
+
+    Each issuer ID remains one certified product entry.  Minimum, typical and
+    maximum test configurations stay attached to that identity and are never
+    promoted into a generic device-input or rack-input power rating.
+    """
+    parsed = urlsplit(source_url)
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname != "data.energystar.gov"
+        or "n8cx-m62r" not in parsed.path
+    ):
+        raise ValueError("Unsupported ENERGY STAR large-network-equipment source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "ENERGY STAR Unique ID",
+        "ENERGY STAR Partner",
+        "Brand Name",
+        "Model Name",
+        "Model Number",
+        "Product Type",
+        "Product Classification",
+        "Product Characteristics",
+        "Min Power Config Full-port Full Load Power Measured (watts)",
+        "Max Power Config Full-port Full Load Power Measured (watts)",
+        "Typ Power Config Full-port Full Load Power Measured (watts)",
+        "Date Available on Market",
+        "Date Certified",
+        "Markets",
+        "CB Model Identifier",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing ENERGY STAR large-network-equipment inventory columns")
+    candidates: dict[str, dict[str, str]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (value or "").strip() for key, value in row.items()}
+        unique_id = candidate["ENERGY STAR Unique ID"].replace(",", "")
+        if (
+            not unique_id
+            or not candidate["ENERGY STAR Partner"]
+            or not candidate["Model Name"]
+            or not candidate["Model Number"]
+            or candidate["Product Type"] not in {"Router", "Switch"}
+            or candidate["Product Classification"] not in {"Fixed", "Modular"}
+            or not candidate["Date Certified"]
+            or not candidate["CB Model Identifier"]
+        ):
+            raise ValueError(f"Incomplete ENERGY STAR large-network-equipment row {line}")
+        if unique_id in candidates:
+            raise ValueError(f"Duplicate ENERGY STAR large-network-equipment unique ID {unique_id}")
+        candidate["ENERGY STAR Unique ID"] = unique_id
+        candidates[unique_id] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            "Changed ENERGY STAR large-network-equipment inventory shape: "
+            f"{len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates, key=int)],
+    }
+
+
 def parse_energy_star_data_center_storage_inventory(
     content: bytes, *, source_url: str, dataset_kind: str, expected_count: int
 ) -> dict[str, Any]:
