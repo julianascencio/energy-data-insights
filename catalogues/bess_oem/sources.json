@@ -5908,9 +5908,9 @@
     "sha256": "104965c369138e3b5010f02d47cb06d85ceb88ef4dbc89a8121dc1c5ddf2139b",
     "status": 200,
     "publisher": "TAB d.d.",
-    "title": "TAB Stationary Batteries (English; undated)",
-    "locator": "PDF pages 2–3 OPzS technology/construction; page 4 OPzS BLOCKS and page 5 OPzS CELLS, exact model rows; page 5 explicitly shared cell/block operating conditions",
-    "document_revision": "Undated; retrieval is not a revision date",
+    "title": "TAB Stationary Batteries (English; printed revision mark V15-03-01-2022)",
+    "locator": "PDF pages 2–5 OPzS; page 12 OPzV and brochure print mark",
+    "document_revision": "V15-03-01-2022 (atelje jk®); brochure print mark on page 12, date format not interpreted",
     "license": "TAB copyright, all rights reserved. Bounded reviewed factual specifications/identity, no open bulk-reuse licence claimed and no document redistribution. Original bytes outside Git.",
     "field_locators": {
       "manufacturer_model_variant_product_family_capacity_scope": "PDF p4 OPzS BLOCKS/p5 OPzS CELLS, exact printed model row; p2 rated-voltage explanation",
@@ -5921,7 +5921,8 @@
       "operating_temperatures_charging_life": "PDF p5 shared cells (block)* operating text; parenthesized 18 years/1200 cycles apply to blocks",
       "ingress_protection": "PDF p4 KIND OF PROTECTION (blocks); not extended to cells",
       "form_factor": "PDF p3 CONSTRUCTION, transparent SAN containers"
-    }
+    },
+    "last_verified_at": "2026-11-05T14:38:39.661800+00:00"
   },
   "tab_identity_20261105": {
     "url": "https://www.tab.si/id-card/",
@@ -5934,5 +5935,16 @@
     "locator": "ID CARD: company, short name, location, primary activities",
     "document_revision": "Undated; retrieval is not a revision date",
     "license": "TAB copyright, all rights reserved. Bounded reviewed factual specifications/identity, no open bulk-reuse licence claimed and no document redistribution. Original bytes outside Git."
+  },
+  "tab_opzv_web_20261105": {
+    "url": "https://www.tab.si/products/opzv/",
+    "retrieved_at": "2026-11-05T14:35:22.659119+00:00",
+    "status": 200,
+    "sha256": "8c4bb3f4fd2c0b915e4c5cb47ca5c7c2b57c68115d015bc1881064573d943329",
+    "publisher": "TAB d.d.",
+    "title": "TAB OPzV batteries — live model table",
+    "locator": "Exact model row and column under Capacity (Ah) at 20°C",
+    "document_revision": "Undated live page",
+    "license": "Copyright retained. Bounded reviewed factual observations, no open bulk-reuse licence asserted. No full document redistribution."
   }
 }

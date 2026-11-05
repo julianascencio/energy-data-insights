@@ -279,3 +279,7 @@ manual/datasheet current and standby disagreements and10/15kW AC-current
 disagreements. Grid-assisted200% throughput is not battery inverter rated power;
 peak efficiency is not RTE, L in LxWxD is not automatically height, and warranty
 eligibility depends on manufacture date. Never create unlisted voltage variants.
+
+### TAB OPzV partition
+
+`scripts/stage_bess_tab_opzv.py --text LOCAL_LAYOUT_TEXT --output NEW_JSON` stages the 14-model brochure page 12 partition offline. Obtain text with `pdftotext -layout` after reviewing source terms and checksum. It rejects changed revision marks, units, heights, rate basis and identities. Staging is not acceptance: compare the live OEM table before the existing upsert API. The 5 November review found differing measured Ah, fault current, masses and resistance; keep both observations in quarantine. Nominal Ah is not measured C10 Ah, H2 includes terminals, and neither fault current nor charge-rate formulas establish active power. See [review ledger](research/2026-11-05_opzv_latvia_review.json).

@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **2,138 project and plant records across
-48 countries**, supported by **398 registered sources**. It combines curated
+The BESS section contains **2,146 project and plant records across
+48 countries**, supported by **402 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -286,3 +286,5 @@ This information is subject to the Terms of Use set out in the IESO’s website
 (www.ieso.ca). Procurement selection does not establish current operation.
 
 Latest iteration: [TAB exact cells/blocks and Slovenian project reconciliation](research/2026-11-05_tab_slovenia.md).
+
+Latest iteration: [Latvian owner portfolio and TAB OPzV research](research/2026-11-05_opzv_latvia.md): eight separately named sites, with portfolio capacity and financing kept separate from site ratings.
