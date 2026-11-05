@@ -13,6 +13,7 @@ Evaluate climate-driven degradation rates and uncertainty in estimated degradati
       ../examples/analysis/plot_pv_operation_50_years.py
       ../examples/analysis/plot_pv_repowering.py
       ../examples/analysis/plot_pvdeg_canary.py
+      ../examples/analysis/plot_pvdeg_canary_mechanisms.py
 
 .. toctree::
    :hidden:
@@ -24,3 +25,4 @@ Evaluate climate-driven degradation rates and uncertainty in estimated degradati
    plot_pv_operation_50_years
    plot_pv_repowering
    plot_pvdeg_canary
+   plot_pvdeg_canary_mechanisms

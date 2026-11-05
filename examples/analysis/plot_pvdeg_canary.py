@@ -2,6 +2,9 @@
 Canary Islands: PVDeg thermal screening at 100 m
 ================================================
 
+For moisture, damp heat, light-assisted stress and solder fatigue, open the
+:doc:`nine-map degradation-mechanism atlas <plot_pvdeg_canary_mechanisms>`.
+
 Real CHELSACanaryClim monthly temperature normals (1979-2013) drive the imported
 ``pvdeg`` Python library. A 100 m projected grid covers all eight main islands,
 including La Graciosa. The color is relative Arrhenius thermal exposure, **not
