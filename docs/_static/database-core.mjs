@@ -393,7 +393,7 @@ export function windOnsGeography(rows) {
 
 // Keep registry categories and dates visible; never sum physical guarantee as capacity.
 export function windSigaSummary(rows) {
-  const result = {projects:0, snapshots:0, withoutEvidence:0, dates:[], states:[],
+  const result = {projects:0, snapshots:0, withoutEvidence:0, unresolvedScopes:0, unknownLifecycles:0, dates:[], states:[],
     categories:{authorized_mw:{known:0,unknown:0,zero:0},inspected_mw:{known:0,unknown:0,zero:0},physical_guarantee_mw:{known:0,unknown:0,zero:0}}};
   const dates=new Set(), states=new Set(), partitions=new Map();
   for (const row of rows.filter(r=>r.entity_type === "projects")) {
@@ -404,6 +404,8 @@ export function windSigaSummary(rows) {
       Array.isArray(row.sources) && row.sources.includes(s.source_id));
     if (!valid.length) {result.withoutEvidence++; continue;}
     result.projects++;
+    if (!row.aggregation_role || row.aggregation_role === "unresolved") result.unresolvedScopes++;
+    if (!row.status || row.status === "unknown") result.unknownLifecycles++;
     const seen=new Set();
     for (const s of valid) {
       const key=JSON.stringify([s.source_id,s.source_sha256,s.object_id]);

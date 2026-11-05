@@ -9,6 +9,7 @@ import math
 import re
 from collections import defaultdict
 from datetime import date
+from pathlib import Path
 from typing import Any
 
 from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
@@ -30,6 +31,40 @@ DATE_FIELDS = (
     "datiniciovigencia",
     "datfimvigencia",
 )
+
+
+def verify_capture(batch: dict[str, Any], directory: Path) -> None:
+    """Reparse checksum-pinned original pages and both ID queries without writes.
+
+    The reviewed ledger remains the acceptance boundary. This check additionally
+    proves its candidate transcription agrees with the retained original bytes.
+    It does not establish the accuracy of the registry or reconcile farm scope.
+    """
+    originals = {}
+    for name, digest in batch["checksums"].items():
+        if Path(name).name != name:
+            raise ValueError("Capture filenames must be basenames")
+        data = (directory / name).read_bytes()
+        if hashlib.sha256(data).hexdigest() != digest:
+            raise ValueError(f"Capture checksum mismatch: {name}")
+        originals[name] = data
+    page_names = [entry["name"] + ".json" for entry in batch["downloads"]]
+    id_names = [name for name in originals if name.endswith("-ids.json")]
+    if len(id_names) != 1 or not page_names:
+        raise ValueError("Capture requires pages and one before/after ID pair")
+    first = id_names[0]
+    second = first.removesuffix("-ids.json") + "-ids-after.json"
+    candidates = batch["all_reviewed_candidates"]
+    parsed = parse_partition(
+        [originals[name] for name in page_names],
+        sha256=[batch["checksums"][name] for name in page_names],
+        expected_ids=json.loads(originals[first])["objectIds"],
+        confirmed_ids=json.loads(originals[second])["objectIds"],
+        state=candidates[0]["original"]["sigufprincipal"],
+        retrieved_at=batch["retrieved_at"],
+    )
+    if parsed != candidates or len(parsed) != batch["reviewed"]:
+        raise ValueError("Reviewed candidates differ from original capture")
 
 
 def ceg_key(value: str) -> tuple[str, int, int]:

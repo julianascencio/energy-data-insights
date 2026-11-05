@@ -356,7 +356,7 @@ test("SIGA preserves dated categories, unknowns and zeros without summing capaci
     original:{sigufprincipal:"BA"},normalized_power:{authorized_mw:0,inspected_mw:null,physical_guarantee_mw:13.4}};
   const row={entity_type:"projects",sources:["epe"],extensions_json:JSON.stringify({epe_siga_snapshots:[observation,observation]})};
   assert.deepEqual(windSigaSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
-    {projects:1,snapshots:1,withoutEvidence:2,dates:["2026-01-13"],states:["BA"],partitions:[{state:"BA",date:"2026-01-13",projects:1,observations:1}],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
+    {projects:1,snapshots:1,withoutEvidence:2,unresolvedScopes:1,unknownLifecycles:1,dates:["2026-01-13"],states:["BA"],partitions:[{state:"BA",date:"2026-01-13",projects:1,observations:1}],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
 });
 
 test("SIGA separates dated state coverage and deduplicates project counts", async () => {
@@ -391,4 +391,16 @@ test("OEM component ratings retain separate boundaries and reject malformed rang
   assert.equal(summary.componentRatings, 1);
   assert.equal(summary.unknownComponentRatings, 2);
   assert.equal(summary.unknownConditions, 3);
+});
+
+
+test("SIGA evidence never resolves scope or lifecycle implicitly", async () => {
+  const {windSigaSummary}=await import("../../docs/_static/database-core.mjs");
+  const ext=JSON.stringify({epe_siga_snapshots:[{source_id:"registry",source_sha256:"hash",object_id:1,
+    observation_date:"2026-01-13",normalized_power:{inspected_mw:100}}]});
+  const row={entity_type:"projects",sources:["registry"],extensions_json:ext};
+  const r=windSigaSummary([row,{...row,status:"operating",aggregation_role:"unresolved"},
+    {...row,status:"unknown",aggregation_role:"independent"},{...row,status:"operating",aggregation_role:"child"}]);
+  assert.equal(r.unresolvedScopes,2); assert.equal(r.unknownLifecycles,2);
+  assert.equal(r.projects,4);
 });

@@ -1156,3 +1156,40 @@ the complete Pernambuco (PE) partition. Independent Aysha I follow-up located
 IFC project 49251 and obtained the operator-hosted ESIA original; detailed phase
 and equipment reconciliation remains pending. No equipment is added from model
 names or marketing claims, and no completed Windey table is rescanned.
+
+### Pernambuco, Paraíba and Santa Catarina continuation
+
+The November 5 23:35 iteration reviews three complete EPE-hosted SIGA wind
+partitions dated January 13, 2026: Pernambuco 46 entries (31 linked, 15 held),
+Paraíba 42 (12 linked, 30 held), and Santa Catarina 18 (10 linked, eight held).
+It enriches 53 existing projects with separately qualified registry observations.
+No project, turbine, equipment or curve is added. All capacity summaries and
+historical baseline exclusions remain unchanged. The 50-project objective is
+met; the 20-equipment objective is not met.
+
+The shared viewer now counts unresolved scope and unknown lifecycle among
+projects with SIGA evidence. The deterministic gallery compares linked versus
+held identities for complete selected state partitions. Neither chart represents
+a current national operating inventory. Completed states are not rescanned.
+
+Original response verification is optional and read-only:
+
+```bash
+uv run python scripts/replay_wind_epe.py catalogues/wind/research/2026-11-05-2335-epe-review.json --originals /path/to/original-responses
+```
+
+This verifies SHA-256 for every retained response, reparses both ID queries and
+all pages, and compares the complete candidate transcription before replaying
+accepted records and decisions. Missing files, changed bytes, drifting IDs and
+changed transcriptions fail. Original bytes stay outside Git; URLs, hashes and
+review decisions are committed.
+
+Independent Aysha I research found unresolved dated capacity observations:
+IFC's August ESRS reports 300 MW; its October investment disclosure reports
+300.3 MW; MIGA's portfolio identifies 306 MW. MIGA portfolio Phase II is not the
+Aysha II wind farm. IFC describes a May ESIA but lists a June attachment; that
+original attachment remains unavailable for revision comparison. These are
+research holds, not canonical capacity replacements or exact equipment links.
+IFC HTML HTTP 403 and missing attachment links are access limitations, not
+assertions of authentication or reuse restrictions. Next: Maranhão's complete
+EPE partition and the exact IFC June ESIA attachment/phase crosswalk.

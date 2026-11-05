@@ -1,21 +1,22 @@
 {
-  "batch": "2026-11-05-2235",
-  "base": "4ef42de474f69b5cdca5824410c06db0d851b434",
+  "batch": "2026-11-05-2335",
+  "base": "9909341090d3912caf44ec5174ae851ec13691c0",
+  "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
   "local": {
-    "python": "425focusedWind/Hydro/reference tests passed",
-    "viewer": "34Node tests passed",
+    "python": "426 focused Wind/Hydro/reference tests passed",
+    "viewer": "35 Node viewer/Hydro tests passed",
     "quality": "Ruff lint/format1165files,ty,hygiene,citations,diffcheck passed",
-    "docs": "Strict Wind-gallerySphinx passed;707HTML pages/links/assets checked",
-    "replay": "36unchanged observations/126decisions verified; corruptdecisionledger rejected",
-    "preservation": "22508prior records retained;22472unchanged;36enriched;410prior sources preserved;all six capacity summaries unchanged;nonWindcatalogues unchanged",
-    "snapshots": "Two7file builds byte-identical;allParquetcolumnsZSTD"
+    "docs": "Strict Wind-gallery Sphinx passed;707 HTML pages/links/assets checked; new review-outcome figure visually inspected",
+    "replay": "Original checksums, both ID inventories and full candidate reparsing verified for PE46/PB42/SC18; accepted31/12/10 unchanged. Tests reject byte tampering, ID drift and candidate changes.",
+    "preservation": "22508 prior records retained;22455 unchanged;53 enriched;411 prior sources preserved;all six capacity summaries unchanged;non-Wind catalogues unchanged",
+    "snapshots": "Two seven-file builds byte-identical;all Parquet columns ZSTD"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "c90089a50237776f97155520b60a8393fa434d8a8e2880372c8c8244fd5f355d",
-    "projects.parquet": "e7bc49bc9f71245c0bfce7f16810aba97bb80a002cdf9c515e6973ae9f38ae78",
+    "manifest.json": "f032130e413d67ea404db6a9c53d0cae601d46d663488c4a83768b4852cb7ff0",
+    "projects.parquet": "9bd5ae56f9969e096f5ca9986a0bc664b0aff34f66a6e3248123d55de4d76839",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "e803747b80300d1b1ecfef77ed63a5359f84b281be7e7122e9b6e6e3282dc867",
+    "sources.json": "bc366ab3b3014e09b129ddfdc4a79866c97f48d33083b738cdd79891e9242ac2",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
   },
@@ -34,15 +35,15 @@
     },
     "added": {},
     "enriched": {
-      "projects": 36
+      "projects": 89
     },
     "main_manufacturers": 64,
     "branch_manufacturers": 64
   },
   "remote_ci": "Pending publication; final result reported separately on PR",
   "not_executed": [
-    "full localpytest",
-    "full localgallery",
+    "full local pytest",
+    "full local gallery",
     "package builds",
     "browser interaction"
   ]

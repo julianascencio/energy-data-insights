@@ -4,6 +4,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+from typing import Any
 
 import pytest
 
@@ -247,3 +248,37 @@ def test_rn_actual_fixture_retains_suspicious_date_without_promoting_lifecycle()
     assert enriched[0]["installed_capacity_mw"] is None
     assert enriched[0].get("commissioning_date") is None
     assert enriched[0]["aggregation_role"] == "unresolved"
+
+
+def test_original_capture_replay_rejects_tampering_and_drift(tmp_path):
+    from energy_data_retrieval.wind_catalogue.epe import verify_capture
+
+    # Synthetic capture wrapper around the attributed one-row offline fixture.
+    originals = {
+        "epe-ba-0.json": FIXTURE.read_bytes(),
+        "epe-ba-ids.json": b'{"objectIds":[68]}',
+        "epe-ba-ids-after.json": b'{"objectIds":[68]}',
+    }
+    for name, data in originals.items():
+        (tmp_path / name).write_bytes(data)
+    batch: dict[str, Any] = dict(
+        checksums={name: hashlib.sha256(data).hexdigest() for name, data in originals.items()},
+        downloads=[dict(name="epe-ba-0")],
+        all_reviewed_candidates=parse(),
+        retrieved_at=NOW,
+        reviewed=1,
+    )
+    verify_capture(batch, tmp_path)
+    changed = copy.deepcopy(batch)
+    changed["all_reviewed_candidates"][0]["normalized_power"]["authorized_mw"] = 0
+    with pytest.raises(ValueError, match="Reviewed candidates"):
+        verify_capture(changed, tmp_path)
+    (tmp_path / "epe-ba-ids-after.json").write_bytes(b'{"objectIds":[69]}')
+    with pytest.raises(ValueError, match="checksum mismatch"):
+        verify_capture(batch, tmp_path)
+    changed = copy.deepcopy(batch)
+    changed["checksums"]["epe-ba-ids-after.json"] = hashlib.sha256(
+        (tmp_path / "epe-ba-ids-after.json").read_bytes()
+    ).hexdigest()
+    with pytest.raises(ValueError, match="drifting"):
+        verify_capture(changed, tmp_path)

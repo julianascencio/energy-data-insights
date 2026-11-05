@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 from energy_data_retrieval.wind_catalogue import load_records
-from energy_data_retrieval.wind_catalogue.epe import reconcile
+from energy_data_retrieval.wind_catalogue.epe import reconcile, verify_capture
 
 
 def main() -> None:
@@ -15,8 +15,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("batch", type=Path)
     parser.add_argument("--root", type=Path, default=Path("catalogues/wind"))
+    parser.add_argument(
+        "--originals", type=Path, help="Verify retained original response bytes too"
+    )
     args = parser.parse_args()
     batch = json.loads(args.batch.read_text())
+    if args.originals is not None:
+        verify_capture(batch, args.originals)
     rows = load_records(args.root)
     accepted, decisions = reconcile(
         batch["all_reviewed_candidates"],
