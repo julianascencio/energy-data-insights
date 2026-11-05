@@ -305,6 +305,6 @@ test("reference yields separate sites, withdrawals and missing evidence without 
   const row = {entity_type:"equipment", equipment_category:"wind_turbine", sources:["table","method"],
     extensions_json:JSON.stringify({reference_yield_observations:[observation,{...observation,reference_site:"new",rows:[entry]}]})};
   assert.deepEqual(windReferenceYieldSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"projects"}]),
-    {models:1,observations:3,withdrawn:1,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
-  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,withoutReference:0,unknownConditions:0,bySite:{}});
+    {models:1,observations:3,withdrawn:1,unknownRotor:3,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
+  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,unknownRotor:0,withoutReference:0,unknownConditions:0,bySite:{}});
 });

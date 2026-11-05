@@ -606,3 +606,12 @@ OEM rating conflict; three missing rotor cells remain null. No inferred installe
 compatibility, synthetic variants, capacity factors or numerical curves are added.
 See the batch transcription and decision ledgers in `research/` and the current
 counts and executed checks in `latest.json` and `validation.json`.
+
+The 2026-11-05 Vestas FGW old-reference-site batch reviews all 103 numerical
+rows across four pages. It adds 29 explicitly printed configurations and enriches
+V47-660/200 kW. Hub-height choices stay nested; missing rotor diameters remain
+unknown, including in the viewer's observation completeness count. Two HTq
+rows await revision mapping, and the V66 reduced-power contact notice supplies
+no numerical data. These five-year modeled reference yields are neither measured
+production nor numerical power curves. The newer reference-site table remains
+a separate queued partition. See `research/2026-11-05-1135-fgw-review.json`.
