@@ -301,6 +301,90 @@ def parse_energy_star_enterprise_servers_inventory(
     }
 
 
+def parse_energy_star_data_center_storage_inventory(
+    content: bytes, *, source_url: str, dataset_kind: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage one complete ENERGY STAR data-center-storage dataset.
+
+    Block-I/O and File-I/O certifications use different immutable identifiers,
+    tested-configuration prefixes and workload metrics.  This reader preserves
+    the complete issuer row and never merges a storage family across datasets,
+    converts PSU nameplates into equipment input, or treats tested cache/device
+    quantities as deployed capacity.
+    """
+    dataset_ids = {"block_io": "3uec-2gqf", "file_io": "put7-uu67"}
+    if dataset_kind not in dataset_ids:
+        raise ValueError("Unsupported ENERGY STAR data-center-storage dataset kind")
+    parsed = urlsplit(source_url)
+    expected_dataset_id = dataset_ids[dataset_kind]
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname != "data.energystar.gov"
+        or expected_dataset_id not in parsed.path
+    ):
+        raise ValueError("Unsupported ENERGY STAR data-center-storage source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    id_field = "ENERGY STAR Unique ID" if dataset_kind == "block_io" else "PD_ID"
+    type_field = "Product Type" if dataset_kind == "block_io" else "SNIA Online Taxonomy Category"
+    controller_field = (
+        "Storage Controller Configuration"
+        if dataset_kind == "block_io"
+        else "Storage Controller Implementation"
+    )
+    model_identifier_field = (
+        "CB Model Identifier" if dataset_kind == "block_io" else "ENERGY STAR Model Identifier"
+    )
+    required = {
+        id_field,
+        "ENERGY STAR Partner",
+        "Brand Name",
+        "Model Name",
+        "Model Number",
+        type_field,
+        controller_field,
+        "Storage Controller Manufacturer Name",
+        "Storage Controller Model Name",
+        "Storage Controller Model Number",
+        "Date Available On Market",
+        "Date Qualified",
+        "Markets",
+        model_identifier_field,
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing ENERGY STAR data-center-storage inventory columns")
+    candidates: dict[str, dict[str, str]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (value or "").strip() for key, value in row.items()}
+        unique_id = candidate[id_field].replace(",", "")
+        if (
+            not unique_id.isdigit()
+            or not candidate["ENERGY STAR Partner"]
+            or not candidate["Model Name"]
+            or not candidate["Model Number"]
+            or not candidate[type_field]
+            or not candidate["Date Qualified"]
+        ):
+            raise ValueError(f"Incomplete ENERGY STAR data-center-storage row {line}")
+        candidate[id_field] = unique_id
+        if unique_id in candidates:
+            raise ValueError(f"Duplicate ENERGY STAR data-center-storage unique ID {unique_id}")
+        candidates[unique_id] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            "Changed ENERGY STAR data-center-storage inventory shape: "
+            f"{len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "dataset_kind": dataset_kind,
+        "candidates": [candidates[key] for key in sorted(candidates, key=int)],
+    }
+
+
 def parse_cdu_spec_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:

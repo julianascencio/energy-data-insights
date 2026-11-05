@@ -1,0 +1,134 @@
+{
+  "run_id": "energy-star-data-center-storage-20261105T092000Z",
+  "validated_at": "2026-11-05T09:20:00Z",
+  "base_main_sha": "d92d1b823496c9229610a62755de879bfc5294aa",
+  "branch": "research/data-center-database-20261105T0920Z",
+  "catalogue": {
+    "canonical_records": 2720,
+    "projects": 183,
+    "project_scopes": {
+      "facility": 66,
+      "phase": 3,
+      "campus": 114
+    },
+    "equipment": 2537,
+    "countries": 36,
+    "operators": 13,
+    "oems": 69,
+    "added_equipment": 120,
+    "added_projects": 0,
+    "enriched_projects": 0
+  },
+  "inventory": {
+    "block_io": {
+      "source_id": "epa-energy-star-data-center-storage-block-20261104",
+      "dataset_id": "3uec-2gqf",
+      "records_processed": 84,
+      "source_total_rows": 84,
+      "source_bytes": 65084,
+      "sha256": "2d1daab000dff286c0034b9144fa48a291acd58f4ace50a9514e1e9c3a659bc6"
+    },
+    "file_io": {
+      "source_id": "epa-energy-star-data-center-storage-file-20261104",
+      "dataset_id": "put7-uu67",
+      "records_processed": 36,
+      "source_total_rows": 36,
+      "source_bytes": 31584,
+      "sha256": "fc55a7b3b62e2fe40d5e7d0f1cbaff6b7e727b76c7a5280ef401383dc27ff267"
+    },
+    "manufacturer_counts": {
+      "Dell": 33,
+      "NetApp": 21,
+      "Hewlett Packard Enterprise": 14,
+      "Huawei": 12,
+      "Pure Storage": 11,
+      "IBM": 9,
+      "Hitachi Vantara": 6,
+      "Lenovo": 6,
+      "Seagate": 4,
+      "EMC Corporation": 3,
+      "Viking Enterprise Solutions": 1
+    },
+    "cross_dataset_model_name_overlaps": 5,
+    "original_bytes_available": true,
+    "reuse_prohibited": false,
+    "license": "EPA Data License"
+  },
+  "local_checks": [
+    {
+      "command": "jq parsing for sources, backlog, source review, decisions and all new JSONL records",
+      "result": "passed"
+    },
+    {
+      "command": "uv run --no-sync python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 2720 records"
+    },
+    {
+      "command": "uv run --no-sync python scripts/build_data_center_energy_star_storage_batch.py /tmp/3uec-2gqf.csv /tmp/put7-uu67.csv /tmp/dc-storage-replay plus cmp",
+      "result": "passed; byte-identical 120-record replay across six shards"
+    },
+    {
+      "command": "uv run --no-sync pytest -q data-retrieval/tests/test_data_center_inventories.py data-retrieval/tests/test_data_center_catalogue.py",
+      "result": "passed; 83 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed; 22 tests"
+    },
+    {
+      "command": "uv run --no-sync ruff format --check .",
+      "result": "passed; 1012 files"
+    },
+    {
+      "command": "uv run --no-sync ruff check .",
+      "result": "passed"
+    },
+    {
+      "command": "uv run --no-sync ty check scripts/build_data_center_energy_star_storage_batch.py data-retrieval/src/energy_data_retrieval/data_center_catalogue/inventories.py data-retrieval/tests/test_data_center_inventories.py",
+      "result": "passed"
+    },
+    {
+      "command": "uv run --no-sync ty check",
+      "result": "one unrelated unresolved optional pvdeg import on current main; changed Data Center files passed targeted type checking"
+    },
+    {
+      "command": "uv run --no-sync python scripts/check_repository.py",
+      "result": "passed; 4869 candidate files"
+    },
+    {
+      "command": "uv run --no-sync python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg uv run --no-sync python examples/database/plot_data_center_catalogue.py",
+      "result": "passed"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus diff -qr",
+      "result": "passed; byte-identical snapshots"
+    },
+    {
+      "command": "uv run --no-sync pytest -q",
+      "result": "2677 passed, 5 optional skips, 3 unrelated failures caused by the missing optional pvdeg dependency"
+    },
+    {
+      "command": "uv run --no-sync sphinx-build -W --keep-going -b html docs docs/_build/html",
+      "result": "not executable locally because sphinx-build is absent from the current Python 3.12 environment; remote Python 3.13 documentation CI is authoritative"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "25f21fc7f75fe9ada52e969b06ff7b1fbfba68a04a64e2655ad776aca358f74e",
+    "projects": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment": "577d8daf14e3cb93043c8daea1b8afbf8e970cb009a5501c154ae9bf352cb840",
+    "manifest": "24f0fc0eed0bafffc039d91635f61a7970aeea8b55b62d9d000ba612744b3cf2",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "213b44ec7d124dff507ba53f1b37470d0c7d1b5fdd934ede026d3077414e2261"
+  },
+  "remote_ci": {
+    "status_at_validation": "not_started"
+  }
+}

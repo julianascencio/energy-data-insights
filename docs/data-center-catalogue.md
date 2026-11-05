@@ -486,5 +486,22 @@ exact nVent HOFFMAN SKUs. Optional voltages were not expanded into invented prod
 Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
+## Certified data-center storage configurations
+
+The complete current EPA ENERGY STAR Data Center Storage exports contribute 120
+exact issuer-certified configurations: 84 Block I/O and 36 File I/O entries.
+Certification IDs, product/controller attributes, availability dates and each
+reported test-configuration group remain reviewable observations. PSU nameplates
+are not normalized as equipment or rack input; cache and device quantities are
+test configurations rather than deployments; and workload-specific IOPS/W,
+MiB/s/W and GB/W values are not collapsed into a generic efficiency percentage.
+Five model names appear in both exports, but the records remain separate because
+their Block I/O and File I/O certification identities and boundaries differ.
+
+The official Block I/O CSV is 65,084 bytes with SHA-256
+`2d1daab000dff286c0034b9144fa48a291acd58f4ace50a9514e1e9c3a659bc6`;
+the File I/O CSV is 31,584 bytes with SHA-256
+`fc55a7b3b62e2fe40d5e7d0f1cbaff6b7e727b76c7a5280ef401383dc27ff267`.
+
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T0820-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T0920-validation.json).
