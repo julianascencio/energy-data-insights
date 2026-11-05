@@ -1,0 +1,94 @@
+{
+  "run_id": "energy-star-asus-h3c-servers-20261105T042000Z",
+  "retrieved_at": "2026-11-05T04:20:00Z",
+  "branch": "research/data-center-database-20261104T2220Z",
+  "base_head": "9f36b0f35a0090a4908741704af883be376466b6",
+  "prepublication_remote_head": "ea635d4e7c0c83a8a2fc93175cf14aae80298254",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 2237,
+    "total": 2420,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 51,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 23,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1831,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 406,
+    "inventories": [
+      "EPA ENERGY STAR certified xFusion enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Nutanix enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hitachi Vantara enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Dell Inc. enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Super Micro Computer, Inc. enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Lenovo Group Limited enterprise-server partner inventory",
+      "EPA ENERGY STAR certified ASUSTeK Computer Inc. enterprise-server partner inventory",
+      "EPA ENERGY STAR certified New H3C Technology Co., Ltd. enterprise-server partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 852189,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {"check": "deterministic ENERGY STAR server builder replay", "result": "passed", "detail": "All 92 Cisco, Fujitsu, xFusion, Nutanix, Hitachi Vantara, HPE, Dell, Super Micro, Lenovo, ASUSTeK and H3C five-record JSONL shards reproduced byte-for-byte from the registered complete 476-row source"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,420 canonical Data Center records from an isolated catalogue root containing the proposed ASUSTeK and H3C shards"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed"},
+    {"check": "full Python test suite", "result": "unrelated environment collection failure", "detail": "Collection stopped before tests because dask imported psutil and psutil could not resolve the current transient process PID in this container. The focused Data Center suite is green and no unrelated files were changed."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "targeted Ruff format and lint", "result": "passed", "detail": "The changed server builder, Data Center catalogue package and focused tests passed format and lint checks"},
+    {"check": "targeted ty", "result": "passed", "detail": "The changed server builder, Data Center catalogue package and focused tests passed type checking"},
+    {"check": "repository hygiene", "result": "passed", "detail": "4,505 candidate files checked; no flagged secrets or data"},
+    {"check": "citation registry", "result": "passed", "detail": "Citation catalogue and all exports are consistent"},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed against the isolated expanded catalogue"},
+    {"check": "strict Sphinx and generated-site link validation", "result": "not run locally", "detail": "The local validation interpreter is Python 3.12 while the locked Orbital PV imagery dependency used by the unrelated Candelaria gallery is Python 3.13-only; remote Documentation CI is authoritative"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds from the isolated expanded catalogue produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "97d2733a2056fbd7cb47ea6ba4b0fabaf3e22432591063e3e9695c01e5738106",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "0fd73ce56bfa2c07bfcc4a4faf9b3df44d55c232cd8ea30d722e0482b09d205e",
+    "manifest_sha256": "ae55e9c5ee93ee1aadfa7c0e11e55528f6a8036710821282db9d185ec29cd656",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "b5bf3d4d4cdf6f0ebc556fb6d58ce4ac87ac59451909d3b4f3ca4a98523721dd"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "IBM, Aivres, ZTE, Altos, Oracle and Ace Computers ENERGY STAR Enterprise Server partitions remain as a 30-record bounded residual batch"
+  ],
+  "quarantined_fields": [
+    "processor_socket_count on UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S remains from the earlier Cisco batch; no ASUSTeK or H3C field was newly quarantined"
+  ],
+  "notes": [
+    "All 14 ASUSTeK Computer Inc. and all nine New H3C Technology Co., Ltd. certification entries in the 2026-11-04 ENERGY STAR Enterprise Servers dataset update are processed",
+    "All 23 entries report low-end, typical/single and high-end SERT observations",
+    "All ASUSTeK entries print three configuration IDs; four H3C G7 entries omit only the low-end configuration ID, which remains absent",
+    "PSU nameplates and SERT power scores are not normalized as rated server input or rack input",
+    "Maximum supported memory is not treated as installed memory",
+    "Certification entries are not deployments",
+    "Campus aggregates remain excluded from capacity sums under all viewer filters"
+  ]
+}

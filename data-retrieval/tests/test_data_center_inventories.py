@@ -6,6 +6,7 @@ import pytest
 
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
+    parse_doe_transformer_certification_matrix,
     parse_energy_star_enterprise_servers_inventory,
     parse_energy_star_ups_inventory,
     parse_generator_dcp_matrix,
@@ -252,6 +253,73 @@ def test_ups_matrix_preserves_kva_kw_and_market_boundaries():
     assert result["candidates"][1]["output_power_kw"] is None
     assert result["review_required"]
     assert len(result["sha256"]) == 64
+
+
+def test_doe_transformer_matrix_preserves_kva_phase_and_efficiency_boundary():
+    content = (
+        b"brand,basic_model,phase_count,apparent_power_kva,"
+        b"represented_efficiency_pct,locator\n"
+        b"EATON,V15DA068,3,15,97.9,public results table row 1\n"
+        b"EATON,T99E801,1,100,98.6,public results table row 43\n"
+    )
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Distribution_Transformers_-_Low-Voltage__Dry-Type_"
+        "Based_on_Basic_Model.html"
+    )
+    result = parse_doe_transformer_certification_matrix(content, source_url=url, expected_count=2)
+    assert [row["basic_model"] for row in result["candidates"]] == [
+        "T99E801",
+        "V15DA068",
+    ]
+    assert result["candidates"][0]["phase_count"] == 1
+    assert result["candidates"][0]["apparent_power_kva"] == 100
+    assert result["candidates"][1]["represented_efficiency_pct"] == 97.9
+    assert result["review_required"]
+
+
+def test_doe_medium_voltage_matrix_keeps_bil_outside_winding_voltage():
+    content = (
+        b"brand,basic_model,phase_count,apparent_power_kva,"
+        b"represented_efficiency_pct,locator,bil_group_kv\n"
+        b"Hitachi,SCLB-2500/13.8-S,3,2500,99.38,public results table row 1,110\n"
+        b"Hitran Corporation,WC050K-01,1,50,98.76,public results table row 4,20\n"
+    )
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Distribution_Transformers_-_Medium-Voltage__Dry-Type_"
+        "Based_on_Basic_Model.html"
+    )
+    result = parse_doe_transformer_certification_matrix(content, source_url=url, expected_count=2)
+    assert [row["basic_model"] for row in result["candidates"]] == [
+        "SCLB-2500/13.8-S",
+        "WC050K-01",
+    ]
+    assert result["candidates"][0]["apparent_power_kva"] == 2500
+    assert "bil_group_kv" not in result["candidates"][0]
+    assert "voltage_kv" not in result["candidates"][0]
+
+
+def test_doe_transformer_matrix_rejects_drift_duplicates_and_unofficial_sources():
+    content = (
+        b"brand,basic_model,phase_count,apparent_power_kva,"
+        b"represented_efficiency_pct,locator\n"
+        b"EATON,V15DA068,3,15,97.9,public results table row 1\n"
+    )
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Distribution_Transformers_-_Low-Voltage__Dry-Type_"
+        "Based_on_Basic_Model.html"
+    )
+    with pytest.raises(ValueError, match="Changed DOE transformer matrix shape"):
+        parse_doe_transformer_certification_matrix(content, source_url=url, expected_count=2)
+    duplicate = content + content.splitlines(keepends=True)[1]
+    with pytest.raises(ValueError, match="Duplicate DOE transformer row"):
+        parse_doe_transformer_certification_matrix(duplicate, source_url=url, expected_count=2)
+    with pytest.raises(ValueError, match="Unsupported official DOE"):
+        parse_doe_transformer_certification_matrix(
+            content, source_url="https://example.com/table.csv", expected_count=1
+        )
 
 
 def test_ups_matrix_drift_duplicates_and_invalid_sources_fail():

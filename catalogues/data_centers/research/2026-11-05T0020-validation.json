@@ -1,0 +1,91 @@
+{
+  "run_id": "energy-star-hpe-servers-20261105T002000Z",
+  "retrieved_at": "2026-11-05T00:20:00Z",
+  "branch": "research/data-center-database-20261104T2220Z",
+  "base_head": "9f36b0f35a0090a4908741704af883be376466b6",
+  "prepublication_remote_head": "7618463985d9b8068facc853445b06ce3a9105bf",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 1997,
+    "total": 2180,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 49,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 100,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1831,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 166,
+    "inventories": [
+      "EPA ENERGY STAR certified xFusion enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Nutanix enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hitachi Vantara enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 852189,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {"check": "deterministic ENERGY STAR server builder replay", "result": "passed", "detail": "All 43 Cisco, Fujitsu, xFusion, Nutanix, Hitachi Vantara and HPE five-record JSONL shards reproduced byte-for-byte from the registered complete 476-row source"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,180 canonical Data Center records"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed"},
+    {"check": "full Python test suite", "result": "one unrelated environment failure", "detail": "2,567 passed and five optional-dependency tests skipped; one PV degradation subprocess test failed because psutil could not resolve its transient process PID in this container. The focused Data Center suite is green and no unrelated PV files were changed."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "Ruff format and lint", "result": "passed", "detail": "966 files already formatted; all lint checks passed"},
+    {"check": "repository-wide ty", "result": "passed", "detail": "All type checks passed after installing the locked pvdeg optional extra in the shared validation environment"},
+    {"check": "repository hygiene", "result": "passed", "detail": "4,478 candidate files checked; no flagged secrets or data"},
+    {"check": "citation registry", "result": "unrelated base-state blocker", "detail": "The checker reports pre-existing stale Wind/PV citation exports on the current base. Its proposed unrelated removals were not retained; no Data Center source key or registry entry changed in this batch."},
+    {"check": "diff whitespace", "result": "passed", "detail": "git diff --check passed"},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed with the expanded catalogue"},
+    {"check": "strict Sphinx and generated-site link validation", "result": "not run locally", "detail": "The local validation interpreter is Python 3.12 while the locked Orbital PV imagery dependency used by the unrelated Candelaria gallery is Python 3.13-only; remote Documentation CI is authoritative"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "bcbdf8504e16e307a8afe2826f9085956efcd9274be051378a4c4333fb4425e1",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "f986068c6e65e3d8933c6af6445f5cbecd4de97acbc3e3f36dae9aa884ef5240",
+    "manifest_sha256": "9ff3683fac150a66a8525fed5ea84b31fae4296dcd986f7bc9a8fc408212c2b2",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "b5bf3d4d4cdf6f0ebc556fb6d58ce4ac87ac59451909d3b4f3ca4a98523721dd"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "Remaining ENERGY STAR Enterprise Server partner partitions remain bounded future batches"
+  ],
+  "quarantined_fields": [
+    "processor_socket_count on UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S remains from the earlier Cisco batch; no HPE field was newly quarantined"
+  ],
+  "notes": [
+    "All 100 Hewlett Packard Enterprise certification entries in the 2026-11-04 ENERGY STAR Enterprise Servers dataset update are processed",
+    "The complete source contains 476 rows; only the complete HPE partner partition is accepted in this bounded batch",
+    "Ninety-nine HPE entries report low-end, typical/single and high-end SERT configurations; HPE ProLiant Compute DL110 Gen12 reports only typical/single",
+    "HPE 1P/2P/4P model text remains separate from platform socket capacity and tested installed-processor observations",
+    "PSU nameplates and SERT power scores are not normalized as rated server input or rack input",
+    "Maximum supported memory is not treated as installed memory",
+    "Certification entries are not deployments",
+    "Campus aggregates remain excluded from capacity sums under all viewer filters"
+  ]
+}

@@ -29,6 +29,96 @@ PARTNER_BATCHES = {
         "expected_count": 20,
         "retrieved_at": "2026-11-04T21:18:40Z",
     },
+    "xfusion": {
+        "partner": "xFusion Digital Technologies Co., Ltd.",
+        "manufacturer": "xFusion",
+        "expected_count": 31,
+        "retrieved_at": "2026-11-04T22:15:46Z",
+    },
+    "hitachi": {
+        "partner": "Hitachi Vantara LLC",
+        "manufacturer": "Hitachi Vantara",
+        "expected_count": 16,
+        "retrieved_at": "2026-11-04T23:18:00Z",
+    },
+    "nutanix": {
+        "partner": "Nutanix",
+        "manufacturer": "Nutanix",
+        "expected_count": 19,
+        "retrieved_at": "2026-11-04T23:18:00Z",
+    },
+    "hpe": {
+        "partner": "Hewlett Packard Enterprise",
+        "manufacturer": "Hewlett Packard Enterprise",
+        "expected_count": 100,
+        "retrieved_at": "2026-11-05T00:20:00Z",
+    },
+    "dell": {
+        "partner": "Dell Inc.",
+        "manufacturer": "Dell",
+        "expected_count": 123,
+        "retrieved_at": "2026-11-05T01:20:00Z",
+    },
+    "supermicro_energy_star": {
+        "partner": "Super Micro Computer, Inc.",
+        "manufacturer": "Supermicro",
+        "expected_count": 49,
+        "retrieved_at": "2026-11-05T02:20:00Z",
+    },
+    "lenovo_energy_star": {
+        "partner": "Lenovo Group Limited",
+        "manufacturer": "Lenovo",
+        "expected_count": 45,
+        "retrieved_at": "2026-11-05T03:20:00Z",
+    },
+    "asus_energy_star": {
+        "partner": "ASUSTeK Computer Inc.",
+        "manufacturer": "ASUS",
+        "expected_count": 14,
+        "retrieved_at": "2026-11-05T04:20:00Z",
+    },
+    "h3c_energy_star": {
+        "partner": "New H3C Technology Co., Ltd.",
+        "manufacturer": "H3C",
+        "expected_count": 9,
+        "retrieved_at": "2026-11-05T04:20:00Z",
+    },
+    "ibm_energy_star": {
+        "partner": "IBM Corporation",
+        "manufacturer": "IBM",
+        "expected_count": 9,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "aivres_energy_star": {
+        "partner": "Aivres Systems Inc",
+        "manufacturer": "KAYTUS",
+        "expected_count": 8,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "zte_energy_star": {
+        "partner": "ZTE Corporation",
+        "manufacturer": "ZTE",
+        "expected_count": 6,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "altos_energy_star": {
+        "partner": "Altos Computing Incorporated",
+        "manufacturer": "Altos",
+        "expected_count": 3,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "oracle_energy_star": {
+        "partner": "Oracle Corporation",
+        "manufacturer": "Oracle",
+        "expected_count": 3,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
+    "ace_energy_star": {
+        "partner": "J.C. Technology dba Ace Computers",
+        "manufacturer": "Ace Computers",
+        "expected_count": 1,
+        "retrieved_at": "2026-11-05T05:20:00Z",
+    },
 }
 
 CONFIGURATION_LABELS = (
@@ -91,8 +181,6 @@ def tested_configuration(row: dict[str, str], label: str) -> dict[str, str]:
         if not key or key in values:
             raise ValueError(f"Ambiguous {label} field {header!r}")
         values[key] = value.strip()
-    if not values:
-        raise ValueError(f"Missing {label} fields")
     return values
 
 
@@ -133,9 +221,23 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
     model = row["Model Name"]
     model_number = row["Model Number"]
     certified = iso_date(row["Date Certified"])
+    configured = [
+        (label, values)
+        for label in CONFIGURATION_LABELS
+        if (values := tested_configuration(row, label))
+    ]
+    if not configured:
+        raise ValueError(f"Missing every SERT configuration for ENERGY STAR ID {uid}")
+    if len(configured) == len(CONFIGURATION_LABELS):
+        configuration_scope = "low-end, typical/single and high-end"
+    else:
+        configuration_scope = ", ".join(
+            label.replace(" Performance Configuration", "").replace(" Configuration", "").lower()
+            for label, _ in configured
+        )
     boundary = (
-        f"ENERGY STAR enterprise-server certification {uid} for {model}; low-end, "
-        "typical/single and high-end SERT configurations remain separately bounded"
+        f"ENERGY STAR enterprise-server certification {uid} for {model}; "
+        f"{configuration_scope} SERT configurations remain separately bounded"
     )
     form_factor = f"{row['Form Factor']} enterprise server"
     sert_version = source_value(row, "SERT Version")
@@ -200,8 +302,7 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
             "certified server-family entry; shipment and end-user-enablement states retained",
         ),
     ]
-    for label in CONFIGURATION_LABELS:
-        configuration = tested_configuration(row, label)
+    for label, configuration in configured:
         observations.append(
             observation(
                 row,
@@ -216,9 +317,12 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
             )
         )
 
-    conflict = socket_conflicts(row, retrieved_at=retrieved_at)
+    conflicts = socket_conflicts(row, retrieved_at=retrieved_at) or {}
     socket_attribute = row["Product Processor Socket Count"]
-    socket_count = int(socket_attribute) if not conflict and socket_attribute.isdigit() else None
+    socket_conflict = "processor_socket_count" in conflicts
+    socket_count = (
+        int(socket_attribute) if not socket_conflict and socket_attribute.isdigit() else None
+    )
     fields = [
         "capacity_scope",
         "certifications_json",
@@ -237,9 +341,9 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
         "record_scope",
         "variant",
     ]
-    if conflict:
+    if conflicts:
         fields.append("conflicts_json")
-    elif socket_count is not None:
+    if socket_count is not None:
         fields.append("processor_socket_count")
     evidence = {
         field: {
@@ -278,7 +382,7 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
         "name": f"{manufacturer} {model} ENERGY STAR enterprise-server certification {uid}",
         "notes": (
             "This record represents one issuer-certified server-family entry, not an installed "
-            "deployment. Low-end, typical/single and high-end CPU, memory, storage, PSU and SERT "
+            f"deployment. {configuration_scope.capitalize()} CPU, memory, storage, PSU and SERT "
             "test values remain separately bounded observations. PSU nameplates and SERT power "
             "scores are not summed or normalized as server input or rack power. Maximum supported "
             "memory is not substituted for installed memory."
@@ -286,7 +390,7 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
         "observations_json": compact(observations),
         "official_url": SOURCE_URL,
         "power_conditions": (
-            f"SERT {sert_version} test observations by low-end, typical/single and high-end "
+            f"SERT {sert_version} test observations by {configuration_scope} "
             "configuration; rated server input and rack input are undisclosed"
         ),
         "power_rating_kind": "SERT benchmark observations; no normalized rated input power",
@@ -295,7 +399,7 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
             "listed in the current ENERGY STAR certified enterprise-server dataset snapshot "
             "updated 2026-11-04"
         ),
-        "quality_status": "needs_review" if conflict else "source_backed",
+        "quality_status": "needs_review" if conflicts else "source_backed",
         "record_id": stable_id("equipment", manufacturer, "ENERGY STAR enterprise server", uid),
         "record_scope": "configuration",
         "source_urls": [SOURCE_URL],
@@ -303,8 +407,8 @@ def build_record(row: dict[str, str], *, manufacturer: str, retrieved_at: str) -
         "updated_at": retrieved_at,
         "variant": f"ENERGY STAR {uid}; {model_number}",
     }
-    if conflict:
-        record["conflicts_json"] = compact(conflict)
+    if conflicts:
+        record["conflicts_json"] = compact(conflicts)
     return record
 
 

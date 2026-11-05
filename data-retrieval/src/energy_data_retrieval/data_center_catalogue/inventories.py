@@ -523,6 +523,68 @@ def parse_power_equipment_matrix(
     }
 
 
+def parse_doe_transformer_certification_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact public DOE transformer basic-model certification rows.
+
+    The represented efficiency remains a source-qualified observation because
+    the public results table does not print the load/test condition. Apparent
+    kVA is never converted to active kW, and the public listing is not treated
+    as a DOE determination that a model complies with a conservation standard.
+    """
+    parsed_url = urlsplit(source_url)
+    if parsed_url.hostname != "www.regulations.doe.gov" or not parsed_url.path.startswith(
+        "/certification-data/"
+    ):
+        raise ValueError("Unsupported official DOE certification source URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "brand",
+        "basic_model",
+        "phase_count",
+        "apparent_power_kva",
+        "represented_efficiency_pct",
+        "locator",
+    }
+    if reader.fieldnames is None or not required <= set(reader.fieldnames):
+        raise ValueError("Missing DOE transformer certification columns")
+    candidates: dict[tuple[str, str], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        candidate = {key: (row.get(key) or "").strip() for key in required}
+        if not all(candidate.values()):
+            raise ValueError(f"Incomplete DOE transformer row {line}")
+        try:
+            phase_count = int(candidate["phase_count"])
+            apparent_power_kva = float(candidate["apparent_power_kva"])
+            efficiency_pct = float(candidate["represented_efficiency_pct"])
+        except ValueError as exc:
+            raise ValueError(f"Invalid DOE transformer numeric value on row {line}") from exc
+        if phase_count not in {1, 3}:
+            raise ValueError(f"Invalid DOE transformer phase count on row {line}")
+        if apparent_power_kva <= 0 or not 0 < efficiency_pct <= 100:
+            raise ValueError(f"Invalid DOE transformer rating on row {line}")
+        candidate["phase_count"] = phase_count
+        candidate["apparent_power_kva"] = apparent_power_kva
+        candidate["represented_efficiency_pct"] = efficiency_pct
+        identity = (str(candidate["brand"]), str(candidate["basic_model"]))
+        if identity in candidates:
+            raise ValueError(f"Duplicate DOE transformer row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(
+            f"Changed DOE transformer matrix shape: {len(candidates)} != {expected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_ups_rating_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:

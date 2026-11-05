@@ -1,0 +1,93 @@
+{
+  "run_id": "energy-star-supermicro-servers-20261105T022000Z",
+  "retrieved_at": "2026-11-05T02:20:00Z",
+  "branch": "research/data-center-database-20261104T2220Z",
+  "base_head": "9f36b0f35a0090a4908741704af883be376466b6",
+  "prepublication_remote_head": "bb6eb5f7b35a3d94ed3f418ce357ad73eb1362bf",
+  "canonical_records": {
+    "projects": 183,
+    "project_scopes": {"facility": 66, "phase": 3, "campus_aggregate": 114},
+    "equipment": 2169,
+    "total": 2352,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 49,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 49,
+    "enriched_equipment": 0
+  },
+  "merged_main_records": {
+    "projects": 183,
+    "equipment": 1831,
+    "countries": 36,
+    "operators": 13,
+    "equipment_manufacturers": 45
+  },
+  "pull_request_delta": {
+    "projects": 0,
+    "enriched_projects": 0,
+    "equipment": 338,
+    "inventories": [
+      "EPA ENERGY STAR certified xFusion enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Nutanix enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hitachi Vantara enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Dell Inc. enterprise-server partner inventory",
+      "EPA ENERGY STAR certified Super Micro Computer, Inc. enterprise-server partner inventory"
+    ]
+  },
+  "source_capture": {
+    "accepted_originals": 1,
+    "accepted_original_bytes": 852189,
+    "checksummed_originals": 1,
+    "unavailable_originals": 0,
+    "source_sha256": "0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781",
+    "reused_registered_snapshot": true
+  },
+  "executed_checks": [
+    {"check": "deterministic ENERGY STAR server builder replay", "result": "passed", "detail": "All 78 Cisco, Fujitsu, xFusion, Nutanix, Hitachi Vantara, HPE, Dell and Super Micro five-record JSONL shards reproduced byte-for-byte from the registered complete 476-row source"},
+    {"check": "catalogue schema, identity, unit, source and evidence validation", "result": "passed", "detail": "Validated 2,352 canonical Data Center records from an isolated catalogue root containing the proposed Super Micro shards"},
+    {"check": "focused Data Center tests", "result": "passed", "detail": "80 passed"},
+    {"check": "full Python test suite", "result": "unrelated environment collection failure", "detail": "Collection stopped before tests because dask imported psutil and psutil could not resolve the current transient process PID in this container. The focused Data Center suite is green and no unrelated files were changed."},
+    {"check": "database viewer Node tests", "result": "passed", "detail": "16 passed"},
+    {"check": "Ruff format and lint", "result": "passed", "detail": "966 files already formatted; all lint checks passed"},
+    {"check": "repository-wide ty", "result": "passed", "detail": "All type checks passed"},
+    {"check": "repository hygiene", "result": "passed", "detail": "4,505 candidate files checked; no flagged secrets or data"},
+    {"check": "citation registry", "result": "passed", "detail": "Citation catalogue and all exports are consistent"},
+    {"check": "diff whitespace", "result": "passed", "detail": "All proposed text content passed whitespace validation"},
+    {"check": "offline Data Center catalogue example", "result": "passed", "detail": "Geographic, completeness, cooling, compute, UPS and electrical-equipment examples executed against the isolated expanded catalogue"},
+    {"check": "strict Sphinx and generated-site link validation", "result": "not run locally", "detail": "The local validation interpreter is Python 3.12 while the locked Orbital PV imagery dependency used by the unrelated Candelaria gallery is Python 3.13-only; remote Documentation CI is authoritative"},
+    {"check": "deterministic typed Parquet and coverage rebuild", "result": "passed", "detail": "Two independent Zstandard Parquet builds from the isolated expanded catalogue produced byte-identical projects, equipment, schema, sources and manifest outputs"}
+  ],
+  "snapshot_hashes": {
+    "input_sha256": "799313376b1b169e06a9665ef2095e91351e11db18093d61b36968954620f2de",
+    "projects_sha256": "f2be4525c945f9836d8059c9bdc59fae95bce5710e4f0fe00cdec8139daf0b75",
+    "equipment_sha256": "2f6b2f63f7c0ca35be364422b1a1604365e7947e4e624e430d4c3a8c7c8c7902",
+    "manifest_sha256": "1b522eaa577265b539772dbb5252925d46675f9046227645712bd8137734ea7b",
+    "schema_sha256": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources_sha256": "b5bf3d4d4cdf6f0ebc556fb6d58ce4ac87ac59451909d3b4f3ca4a98523721dd"
+  },
+  "holds_added": [],
+  "screened_existing_holds": [
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko holds remain in force; no held facts or bytes were imported"
+  ],
+  "deferred": [
+    "FIN04A Phase 2 identity pending an official cross-reference",
+    "SWE04 commissioning target pending reconciliation of H1 2028 and autumn 2028 evidence",
+    "Remaining ENERGY STAR Enterprise Server partner partitions remain bounded future batches"
+  ],
+  "quarantined_fields": [
+    "processor_socket_count on UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S remains from the earlier Cisco batch; no Super Micro field was newly quarantined"
+  ],
+  "notes": [
+    "All 49 Super Micro Computer, Inc. certification entries in the 2026-11-04 ENERGY STAR Enterprise Servers dataset update are processed",
+    "The complete source contains 476 rows; only the complete Super Micro partner partition is accepted in this bounded batch",
+    "All 49 entries report low-end, typical/single and high-end SERT observations; only 14 print tier-specific configuration IDs and the other 35 IDs remain absent",
+    "Two Greater than 4 socket attributes remain exact observations with normalized processor_socket_count null",
+    "PSU nameplates and SERT power scores are not normalized as rated server input or rack input",
+    "Maximum supported memory is not treated as installed memory",
+    "Certification entries are not deployments",
+    "Campus aggregates remain excluded from capacity sums under all viewer filters"
+  ]
+}
