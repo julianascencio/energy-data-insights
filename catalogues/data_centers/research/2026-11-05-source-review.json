@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T07:20:00Z",
+  "retrieved_at": "2026-11-05T08:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -112,6 +112,14 @@
       "enriched_records": 0,
       "reuse": "Public U.S. Department of Energy certification database; exact manufacturer-represented brand, basic model, phase count, kVA, BIL group rating and represented-efficiency facts normalized without redistributing the source page. Listing is not treated as a DOE compliance determination.",
       "originals": "The official page reader exposed every selected displayed row from the public 2026-10-23 snapshot. A direct request to the public MCP endpoint returned HTTP 403 in this execution environment, so no source checksum is claimed; this is an access limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "U.S. DOE CCMS liquid-immersed transformer basic-model displayed rows 1-50",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. Department of Energy certification database; exact manufacturer-represented brand, basic model, phase count, kVA and represented-efficiency facts normalized without redistributing the source page. Model suffixes are not decoded and listing is not treated as a DOE compliance determination.",
+      "originals": "The official indexed page reader exposed every selected displayed row from the public 2026-10-23 snapshot. Direct original-byte requests returned HTTP 403 in this execution environment, so no source checksum is claimed; this is an access limitation, not a reuse prohibition."
     }
   ],
   "deferred": [
@@ -125,7 +133,7 @@
     },
     {
       "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current electrical/liquid-cooling table",
-      "reason": "The first 50 displayed low-voltage and medium-voltage dry-type basic-model rows are complete. Continue only through a stable non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount either displayed page."
+      "reason": "The first 50 displayed low-voltage dry-type, medium-voltage dry-type and liquid-immersed basic-model rows are complete. Medium-voltage rows 51-100 remain inaccessible through a stable pagination boundary in this environment. Continue only through a verified non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount completed pages."
     }
   ],
   "quarantined": [
@@ -164,6 +172,8 @@
     "All six ZTE and three Oracle entries retain their reported three-tier observations. ZTE certification 4654814 does not resolve its R5300 G5/R5300 G6 configuration-label mismatch.",
     "All 476 rows across all 17 ENERGY STAR Enterprise Servers partner partitions in the 2026-11-04 dataset snapshot are now processed.",
     "All 50 displayed DOE CCMS low-voltage dry-type transformer basic-model rows are processed for the public page updated 2026-10-23.",
+    "All 50 displayed DOE CCMS medium-voltage dry-type and all 50 displayed liquid-immersed transformer basic-model rows are processed for the public pages updated 2026-10-23.",
+    "Liquid-transformer model suffixes remain identity text; winding voltage, dielectric fluid, temperature rise and ordered options are not inferred.",
     "DOE represented efficiency stays an observation because the displayed table omits the load/test condition; phase count and apparent kVA remain exact, active kW is not inferred and listing is not treated as a DOE compliance determination.",
     "The saved Delta UPS reuse hold was screened and enforced; no Delta UPS facts, records or source bytes were committed.",
     "Campus aggregates remain excluded from capacity sums under all viewer filters.",
