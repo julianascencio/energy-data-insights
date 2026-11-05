@@ -321,3 +321,12 @@ Fullriver individual-sheet electrical tables use `fullriver.parse_datasheet` on
 local layout text. Keep per-battery Ah separate from cell Ah; retain the explicit
 SoC, temperature and per-cell endpoint. Raster sheets require visual review.
 Undated sheet/brochure conflicts remain observations, not silently chosen ratings.
+
+For ADB TCS220320-2, `scripts/stage_bess_adb_pacific.py` stages only Table3.3's
+four Cook Islands rows from local layout text. It rejects changed identities,
+units, report date and missing chemistry/SoC qualifications. Year of installation
+and completion differ; old and new energy observations remain quarantined.
+`scripts/stage_bess_fullriver_conditions.py --model EXACT` stages native temperature
+classes and bank charging columns. `--include-small-unit` adds reviewed small-battery
+rate/mechanical tables. Unknown C3/C2/C1 stays absent; anomalous printed values
+require review. Preserve case/terminal height and undated web/PDF discrepancies.
