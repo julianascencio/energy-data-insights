@@ -28,7 +28,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from energy_data_retrieval.sources.jwpa_cost import load_offshore_cost_snapshot
+from energy_data_retrieval.cost_inputs import load_offshore_cost_snapshot
 from energy_methods.offshore_wind_economics import (
     OffshoreWindScenario,
     evaluate_offshore_wind,
