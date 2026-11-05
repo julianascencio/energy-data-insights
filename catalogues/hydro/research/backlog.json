@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T12:41:10Z",
+  "reviewed_at": "2026-11-05T13:39:26Z",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -30,6 +30,30 @@
       "new": 0,
       "held": 31,
       "cursor": "Complete; next 1001-1500; decisions retained in eia-2025-0501-1000.json"
+    },
+    {
+      "source": "eia860-2025-hydro-1001-1500",
+      "partition": {
+        "first": 1001,
+        "last": 1500,
+        "next_first": 1501
+      },
+      "accepted_enriched": 22,
+      "new": 0,
+      "held": 2,
+      "cursor": "Complete; resume EIA from 2001 after Brazil rotation"
+    },
+    {
+      "source": "eia860-2025-hydro-1501-2000",
+      "partition": {
+        "first": 1501,
+        "last": 2000,
+        "next_first": 2001
+      },
+      "accepted_enriched": 62,
+      "new": 0,
+      "held": 11,
+      "cursor": "Complete; resume EIA from 2001 after Brazil rotation"
     }
   ],
   "next_sources": [
@@ -59,15 +83,15 @@
       "priority": 3,
       "url": "https://www.eia.gov/electricity/data/eia860/",
       "country": "USA",
-      "status": "251 existing US identities enriched; 74 cumulative holds",
-      "next_action": "Process final 2025 plant codes 1001-1500 with unchanged strict identity rules; then rotate to Brazil SIGA"
+      "status": "335 existing US identities enriched; 87 cumulative holds",
+      "next_action": "Resume EIA final 2025 plant codes 2001-2500 after Brazil rotation"
     },
     {
-      "priority": 4,
+      "priority": 1,
       "url": "https://dadosabertos.aneel.gov.br/",
       "country": "BRA",
-      "status": "candidate",
-      "next_action": "Review SIGA hydro UHE/PCH/CGH export and reuse terms"
+      "status": "ONS original CSV/dictionary downloaded: 819 hydro unit rows / 180 CEG identifiers, zero accepted plants; SIGA CSV/API both HTTP 503",
+      "next_action": "Review first 100 sorted ONS hydro CEG identifiers from brazil-source-review-20261105.json; resolve unit/plant scope and id_ons schema discrepancy before acceptance"
     }
   ],
   "market_ranking": {

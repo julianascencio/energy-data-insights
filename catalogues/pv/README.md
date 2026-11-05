@@ -567,3 +567,24 @@ Ten exact SRNE models add140 canonical technical values and qualified PV/battery
 ### Research update — 5 November 2026, 10:00 UTC
 
 200 complete Chinese project identities gain 400 historical operator/evidence fields. Ten exact inverters (six Morningstar industrial SureSine and four SAKO) plus six Weidmüller fireman combiners add 202 canonical technical values and qualified conditions. No new projects, modules or trackers. Battery DC is not PV input; DC rated voltage is not maximum; per-MPPT/string currents are not summed. Conditional power, warranty, dimension, model-code and selector-output discrepancies remain held. See dated1000 reviews, audit, coverage and resumable source queue; no new adapter or untested feed integration claimed.
+
+### MaStR solar-unit review staging
+
+`energy_data_retrieval.pv_catalogue.mastr.read_mastr_solar_units` reads a bounded
+physical-row partition from an extracted, checksum-pinned `EinheitenSolar.xml`.
+It returns native unit/location/EEG IDs, network-review codes and separate native
+power observations. Names, operator identifiers and addresses are omitted. Resume
+`start_row` only against the same source checksum; reconcile duplicates across
+partitions before any catalogue import. It performs no download, project upsert,
+unit aggregation, AC/DC assignment or reviewed-status inference. The allocated
+inverter-power definition lacks an explicit unit in the inspected row and remains
+native. Tests use synthetic fixtures; no live export partition is integrated.
+
+### Research update — 5 November 2026, 11:55 UTC
+
+200 complete Chinese identities gain historical corporate operators and phase-linked
+evidence. Ten exact Imagine Instruments combiner models cover four fused/breaker
+families; arbitrary fuse variants are not expanded. Current, fuse inclusion,
+temperature-unit and unlabelled-axis conflicts remain held. OEM warranty is a generic
+three-year limited sale-term claim from purchase, not a measured lifetime. See dated
+1155 reviews, preservation, source captures, snapshots and the resumable backlog.

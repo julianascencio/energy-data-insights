@@ -7,6 +7,7 @@ import pytest
 from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_cdu_spec_matrix,
     parse_doe_transformer_certification_matrix,
+    parse_energy_star_certified_data_centers,
     parse_energy_star_data_center_storage_inventory,
     parse_energy_star_enterprise_servers_inventory,
     parse_energy_star_large_network_equipment_inventory,
@@ -67,6 +68,55 @@ ENERGY_STAR_STORAGE_FILE = (
 ENERGY_STAR_NETWORK = (
     Path(__file__).parent / "fixtures/data_centers/energy-star-large-network.csv"
 ).read_bytes()
+ENERGY_STAR_DATA_CENTERS = (
+    Path(__file__).parent / "fixtures/data_centers/energy-star-certified-data-centers.html"
+).read_bytes()
+
+
+def test_energy_star_data_centers_keep_state_only_and_unqualified_area():
+    result = parse_energy_star_certified_data_centers(
+        ENERGY_STAR_DATA_CENTERS,
+        source_url="https://www.energystar.gov/buildings/certified-data-centers",
+        certification_year=2026,
+        expected_total_count=3,
+        expected_selected_count=2,
+    )
+    by_name = {row["facility_name"]: row for row in result["candidates"]}
+    assert set(by_name) == {"Alpha DC (ABC1)", "Beta Facility"}
+    assert by_name["Alpha DC (ABC1)"]["state"] == "Virginia"
+    assert by_name["Alpha DC (ABC1)"]["reported_floor_space"] == 100000
+    assert by_name["Alpha DC (ABC1)"]["reported_floor_space_unit"] is None
+    assert by_name["Alpha DC (ABC1)"]["label_years"] == [2025, 2026]
+    assert by_name["Beta Facility"]["property_manager"] == "Example Manager"
+    assert result["inventory_count"] == 3
+    assert len(result["sha256"]) == 64
+
+
+def test_energy_star_data_centers_reject_source_and_shape_drift():
+    with pytest.raises(ValueError, match="Unsupported ENERGY STAR"):
+        parse_energy_star_certified_data_centers(
+            ENERGY_STAR_DATA_CENTERS,
+            source_url="https://example.com/data-centers",
+            certification_year=2026,
+            expected_total_count=3,
+            expected_selected_count=2,
+        )
+    with pytest.raises(ValueError, match="inventory shape"):
+        parse_energy_star_certified_data_centers(
+            ENERGY_STAR_DATA_CENTERS,
+            source_url="https://www.energystar.gov/buildings/certified-data-centers",
+            certification_year=2026,
+            expected_total_count=4,
+            expected_selected_count=2,
+        )
+    with pytest.raises(ValueError, match="certification-year partition"):
+        parse_energy_star_certified_data_centers(
+            ENERGY_STAR_DATA_CENTERS,
+            source_url="https://www.energystar.gov/buildings/certified-data-centers",
+            certification_year=2026,
+            expected_total_count=3,
+            expected_selected_count=3,
+        )
 
 
 def test_energy_star_large_network_keeps_test_power_boundaries():

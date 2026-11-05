@@ -143,3 +143,27 @@ uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-
 
 Next partition: EIA plant codes 1001–1500, then rotate to Brazil ANEEL SIGA.
 The source backlog retains Norway, other regions and all unresolved identities.
+
+
+## EIA continuation and Brazil source rotation
+
+The 5 November 2026 continuation covers plant codes 1001–1500 and 1501–2000:
+**84 existing plants enriched**, 370 generator observations, and 2,397.6 MW
+at year-end 2025. Thirteen plants remain held (nine mixed technology/state
+and four missing existing identities); none are automatically created. Combined
+EIA coverage is 335 identities and 918 generators, with 87 holds. UUIDs,
+creation dates and historical observations remain unchanged; all capacity scopes
+remain unresolved and excluded from global totals.
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-1001-1500.json
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-1501-2000.json
+```
+
+Next regional work is Brazil: SIGA metadata is accessible under ODbL but its
+CSV and official datastore API returned HTTP 503. The independent ONS
+[capacity inventory](https://dados.ons.org.br/dataset/capacidade-geracao)
+reports generating-unit nominal MW for ONS-dispatched operation classes, not
+a census of every small plant. Its publisher identifies CC-BY reuse with
+attribution. Identity, unit/plant aggregation and date interpretation must be
+reviewed before acceptance. EIA resumes at codes 2001–2500 afterward.

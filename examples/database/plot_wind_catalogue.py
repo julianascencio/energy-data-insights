@@ -101,15 +101,18 @@ for row in rows:
 
 # Reference yields are hypothetical five-year energy, never farm generation.
 reference_counts = {}
+reference_unknown_rotor = 0
 for row in rows:
     for observation in json.loads(row.get("extensions_json") or "{}").get(
         "reference_yield_observations", []
     ):
         for entry in observation["rows"]:
-            key = (observation["reference_site"], entry["withdrawn"])
+            reference_unknown_rotor += entry.get("rotor_diameter_m") is None
+            key = (observation["reference_site"], entry.get("withdrawn", False))
             reference_counts[key] = reference_counts.get(key, 0) + 1
 print("FGW observation counts by reference site and withdrawn status:")
 print(dict(sorted(reference_counts.items())))
+print("Reference observations with unknown rotor diameter:", reference_unknown_rotor)
 print("Reference yields retain five-year kWh, hub/power settings and source notes.")
 print(
     "Density, operating mode and gross/net boundary are unknown; no CF or performance comparison."

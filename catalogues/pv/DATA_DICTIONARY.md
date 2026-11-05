@@ -631,3 +631,12 @@ Ten exact SRNE models add140 canonical technical values and qualified PV/battery
 ### Research update — 5 November 2026, 10:00 UTC
 
 200 complete Chinese project identities gain 400 historical operator/evidence fields. Ten exact inverters (six Morningstar industrial SureSine and four SAKO) plus six Weidmüller fireman combiners add 202 canonical technical values and qualified conditions. No new projects, modules or trackers. Battery DC is not PV input; DC rated voltage is not maximum; per-MPPT/string currents are not summed. Conditional power, warranty, dimension, model-code and selector-output discrepancies remain held. See dated1000 reviews, audit, coverage and resumable source queue; no new adapter or untested feed integration claimed.
+
+### Research update — 5 November 2026, 11:55 UTC
+
+Imagine Instruments maximum total output current is distinct from per-input current
+and installed breaker rating. Fuse-holder component voltage is not system maximum;
+NEMA/UL enclosure claims do not establish an IP rating or assembly certification.
+Native dimensions remain qualified tuples until axes are established. MaStR unit
+staging preserves Bruttoleistung/Nettonennleistung separately in documented kW;
+allocated inverter power remains native, with no plant AC scalar or aggregation.
