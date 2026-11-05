@@ -1,0 +1,44 @@
+{
+  "retrieved_at": "2026-11-05T00:20:00Z",
+  "accepted": [
+    {
+      "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
+      "processed_offset": 100,
+      "accepted_records": 100,
+      "enriched_records": 0,
+      "reuse": "Public EPA dataset under the EPA data license; exact issuer certification and SERT configuration facts normalized without redistributing the source CSV. No HPE OEM-page facts or deployment claims are imported.",
+      "originals": "The already registered complete official 476-row, 852,189-byte CSV has SHA-256 0247836d0bb2980ca83ed4673f49c0109283b44f9740feefaaa47ace7d6d1781. The bounded partner inventory contains every one of the 100 Hewlett Packard Enterprise certification entries in the 2026-11-04 dataset update."
+    }
+  ],
+  "deferred": [
+    {
+      "inventory": "FIN04A Phase 2 identity",
+      "reason": "An official cross-reference is still required to bind the environmental case to the existing July 2026 YIT phase without creating a duplicate phase."
+    },
+    {
+      "inventory": "SWE04 commissioning milestone",
+      "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence."
+    },
+    {
+      "inventory": "Remaining ENERGY STAR Enterprise Server partner partitions",
+      "reason": "Lenovo, Supermicro, Dell, ASUS, H3C and other complete partner partitions remain separately bounded future batches."
+    }
+  ],
+  "quarantined": [
+    {
+      "record": "Cisco UCS-X410C-M7, UCSC-C220-M8 2S and UCSC-C240-M8 2S ENERGY STAR entries",
+      "field": "processor_socket_count",
+      "reason": "Previously recorded model-label versus source-attribute contradictions remain unresolved; the HPE batch adds no new quarantine."
+    }
+  ],
+  "normalization_notes": [
+    "ENERGY STAR Enterprise Server certification IDs are immutable issuer identities, not installed deployments.",
+    "All 100 HPE entries retain exact issuer models and platform socket attributes; repeated model names remain separate by certification ID.",
+    "Ninety-nine HPE entries retain low-end, typical/single and high-end SERT configurations; HPE ProLiant Compute DL110 Gen12 retains only typical/single and no absent tier is synthesized.",
+    "HPE 1P/2P/4P model text is not substituted for platform socket capacity or tested installed-processor population.",
+    "PSU nameplates, SERT idle watts, workload efficiency scores and total-server power scores are not normalized as rated server or rack input.",
+    "Maximum supported memory is not treated as installed memory.",
+    "Campus aggregates remain excluded from capacity sums under all viewer filters.",
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko reuse holds remain in force; no held facts or bytes were imported."
+  ]
+}

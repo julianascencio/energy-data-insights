@@ -47,6 +47,12 @@ PARTNER_BATCHES = {
         "expected_count": 19,
         "retrieved_at": "2026-11-04T23:18:00Z",
     },
+    "hpe": {
+        "partner": "Hewlett Packard Enterprise",
+        "manufacturer": "Hewlett Packard Enterprise",
+        "expected_count": 100,
+        "retrieved_at": "2026-11-05T00:20:00Z",
+    },
 }
 
 CONFIGURATION_LABELS = (

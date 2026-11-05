@@ -7,7 +7,7 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **183 project records in 36 countries**:
 **66 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **1,897 exact equipment records from 48 OEMs**.
+from 13 operators. It has **1,997 exact equipment records from 49 OEMs**.
 Merged `main` at `9f36b0f3` contains **183 projects and 1,831 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -71,6 +71,7 @@ uv run python scripts/build_data_center_energy_star_server_batch.py captured-ene
 uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-xfusion-energy-star-servers.jsonl --partner-batch xfusion --shard-size 5
 uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-nutanix-energy-star-servers.jsonl --partner-batch nutanix --shard-size 5
 uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-hitachi-energy-star-servers.jsonl --partner-batch hitachi --shard-size 5
+uv run python scripts/build_data_center_energy_star_server_batch.py captured-energy-star-servers.csv staged-hpe-energy-star-servers.jsonl --partner-batch hpe --shard-size 5
 ```
 
 IT MW, grid MW, facility MW, backup MW, battery MW/MWh, kW and kVA remain separate.
@@ -85,10 +86,10 @@ Exact equipment links require a disclosed deployment; none are asserted in this
 batch. Existing stationary battery and BESS equipment records are referenced by
 validated BESS IDs, not copied into a competing battery catalogue.
 
-Read [the latest research report](research/2026-11-04-report.md),
+Read [the latest research report](research/2026-11-05-report.md),
 [ranked continuation backlog](research/backlog.json),
-[latest decision ledger](research/2026-11-04-decisions.jsonl),
-[executed validation](research/2026-11-04T2318-validation.json), and
+[latest decision ledger](research/2026-11-05-decisions.jsonl),
+[executed validation](research/2026-11-05T0020-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
