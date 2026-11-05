@@ -1,0 +1,32 @@
+{
+  "reviewed_at": "2026-11-05T23:43:09Z",
+  "sources": [
+    "nz-genesis-fy24-tuai",
+    "nz-meridian-benmore",
+    "nz-ea-fleet-20260702"
+  ],
+  "accepted_identity": "Tuai; EA CSV row 140; historical 60 MW agreement; no scalar promotion",
+  "tuai_locator": "Genesis FY2024 report printed page 41, Waikaremoana section and footnote 1",
+  "tuai_rating_uncertainty": "Potential 6 MW benefit only achievable below maximum station output of 60 MW; never infer 66 MW",
+  "held": [
+    {
+      "name": "Benmore",
+      "ea_csv_rows": [
+        16,
+        17,
+        18
+      ],
+      "owner_source_id": "nz-meridian-benmore",
+      "owner_observation": {
+        "generating_units": 6,
+        "unit_rating_mw": 93,
+        "maximum_output_mw": 552
+      },
+      "decision": "capacity_basis_and_dispatch_interval_review",
+      "reason": "Unit ratings, maximum station output, historical dispatch rating 540 and split connection 270 MW are different boundaries; no scalar reconciliation or sum",
+      "accepted": false
+    }
+  ],
+  "reuse": "EA CC BY 4.0 with attribution; Genesis/Meridian limited factual corroboration; report/page text and imagery not redistributed",
+  "next_action": "Continue explicit review of NZ 39 names /65 observations; do not count the three accepted observations again"
+}

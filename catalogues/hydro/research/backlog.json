@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T22:41:46Z",
+  "reviewed_at": "2026-11-05T23:42:47Z",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -220,6 +220,30 @@
       "remaining_held_rows": 66,
       "remaining_held_names": 40,
       "cursor": "Aratiatia and Aviemore explicit crosswalks complete; do not replay as new plants"
+    },
+    {
+      "source": "eia860-2025-hydro-10001-15000",
+      "partition": {
+        "first": 10001,
+        "last": 15000,
+        "next_first": 15001
+      },
+      "accepted_enriched": 99,
+      "held": 15,
+      "new": 0,
+      "generator_observations": 212,
+      "cursor": "Complete; resume 15001\u201320000 after Europe rotation"
+    },
+    {
+      "source": "nz-ea-fleet-20260702 + nz-genesis-fy24-tuai",
+      "accepted_enriched": 1,
+      "new": 0,
+      "accepted_rows": [
+        140
+      ],
+      "remaining_held_rows": 65,
+      "remaining_held_names": 39,
+      "cursor": "Tuai explicit crosswalk complete; previous Aratiatia/Aviemore decisions retained"
     }
   ],
   "next_sources": [
@@ -246,18 +270,18 @@
       ]
     },
     {
-      "priority": 2,
+      "priority": 1,
       "url": "https://www.nve.no/energi/energisystem/vannkraft/",
       "country": "NOR",
       "status": "110 WRI identities enriched; 1867 NVE candidates remain unaccepted",
-      "next_action": "NVE IDs and WRI UUIDs in nve-crosswalk-20261105.json; replay is idempotent; review 181 remaining WRI Norwegian identities with aliases/offsets; do not relax automatic identity rules"
+      "next_action": "Next regional batch: first 50 remaining WRI Norwegian identities sorted by WRI ID; corroborate aliases and offsets using NVE registry/map and owner evidence; no fuzzy merges"
     },
     {
       "priority": 3,
       "url": "https://www.eia.gov/electricity/data/eia860/",
       "country": "USA",
-      "status": "828 enriched; 198 held",
-      "next_action": "EIA codes 10001\u201315000"
+      "status": "927 enriched; 213 held",
+      "next_action": "EIA codes 15001\u201320000 after Europe rotation"
     },
     {
       "priority": 1,
@@ -276,8 +300,8 @@
     {
       "priority": 1,
       "region": "Oceania",
-      "status": "2 identities enriched; 66 observations / 40 names remain held",
-      "next_action": "NZ remaining 40 names / 66 dispatch observations: owner-backed identity and interval/connection review; EIA next 10001\u201315000",
+      "status": "3 identities enriched; 65 observations / 39 names held",
+      "next_action": "Resolve Benmore dispatch intervals and distinct nameplate/output bases; remaining owner-backed identity reviews",
       "url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-fleet/existing/"
     }
   ],

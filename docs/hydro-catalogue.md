@@ -452,3 +452,38 @@ operation. Coverage is 7,156 records / 128 countries / 1,110 enriched identities
 EIA totals: 828 identities / 2305 generator observations / 198 holds.
 No generating-MW total is promoted while aggregation scopes remain unresolved.
 Next: remaining NZ identity/interval review; EIA resumes at 10001–15000.
+
+
+## EIA 10001–15000 and Tuai owner review
+
+EIA final-2025 codes 10001–15000 enrich **99 existing US identities** with
+**212 generator observations**. Fifteen candidates remain held: {'missing_existing_id': 4, 'mixed_technology_or_state': 10, 'coordinate_review': 1}.
+Namespaced IDs, operators, generating/seasonal MW and unit dates retain original
+workbook row locators. Reused source bytes were checksum-verified and reparsed.
+No new plants, inferred pumping ratings or current-operation claims are added.
+EIA cumulative coverage is 927 identities / 2517 generators / 213 holds.
+
+Tuai is explicitly linked to EA CSV row 140 using Genesis's FY2024 integrated
+report, printed page 41. It reports 60 MW, consistent with the historical WRI
+record and EA dispatch observation. The potential 6 MW efficiency benefit is
+qualified by footnote 1: available only below the station's 60 MW maximum.
+It must not become an inferred 66 MW rating. Only the dispatch identity and
+immutable observation are accepted. The downloaded report checksum, title,
+version, locator and limited-factual-reuse assessment are retained; report text
+and images are not redistributed. NZ now has three enriched identities; 65
+observations covering 39 other names remain held. Benmore's six 93 MW units,
+552 MW maximum output and historical 540/270 MW dispatch rows have different
+bases and remain unresolved; no sum or scalar capacity promotion is made.
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-10001-15000.json
+uv run python scripts/enrich_hydro_nz.py --batch catalogues/hydro/research/nz-tuai-20261105.json
+```
+
+Both replay commands now reject duplicate/missing reviewed identities and
+validate every transformation before writing any shard. Conflicts preserve
+all files; successful replay remains idempotent. This is not an I/O transaction.
+Coverage: 7,156 historical records / 128 countries / 1,210 enriched identities.
+All unresolved scopes remain excluded from generating-MW totals. Next regional
+batch: first 50 remaining Norwegian WRI identities sorted by WRI ID, with
+explicit NVE/owner corroboration; EIA resumes at 15001–20000.
