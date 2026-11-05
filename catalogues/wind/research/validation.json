@@ -1,34 +1,30 @@
 {
-  "batch": "2026-11-05-0735",
-  "iteration_parent": "b8f26c43be4c9c1376a89597e49a1254632995e7",
+  "batch": "2026-11-05-0835",
+  "iteration_parent": "aa842b959bebe8b4279a449f91176be26f0ad6a5",
   "local": {
-    "tests": "18 EIA adapter tests passed",
-    "viewer": "22 Node viewer tests and syntax passed; shared viewer unchanged",
-    "catalogue": "22181 valid;22144 unchanged;37 enriched projects; all scalar/ID/creation fields and six capacity summaries preserved",
-    "source_registry": "371 prior entries unchanged; two entries added",
-    "replay": "Original workbook hashes and same-source replay passed",
-    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
-    "quality": "Ruff, format971files, ty and citations passed",
-    "example": "Offline Wind example passed against expanded isolated catalogue"
+    "tests": "206 Wind tests passed after correcting new coordinate-precision metadata; initial run failed2,passed204",
+    "viewer": "23 Node tests and viewer syntax passed",
+    "catalogue": "22189 valid;22180 unchanged;8new/1enriched;all prior scalar/ID/creation fields and six capacity totals preserved",
+    "source_registry": "373 prior entries preserved;3added",
+    "snapshots": "Two seven-file builds byte-identical;all Parquet columns ZSTD",
+    "quality": "Ruff,format1009files,repository hygiene,citations passed",
+    "type_check": "Blocked: optional pvdeg module not installed;1 unrelated unresolved-import diagnostic"
   },
   "snapshot_sha256": {
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
-    "manifest.json": "a48c66d6b2873f306b4478fcd543025c0bf603f62ef3565a50d7cc493902e8ef",
-    "projects.parquet": "fdd71364546a38925f71a126acd15501c0cd57ca98de89859f7f2de8b07fdca8",
+    "manifest.json": "1688ece32d502fa24436655b251ba4089fbd8c04076845419d6477fccb5239bd",
+    "projects.parquet": "ce7e65c26fb336e24f633cef6c1ff4d8aaef87cca95e306310842577926187dd",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "sources.json": "65caa33805a867b42650298f01c570ff13ce527cb92ac9b8c85b6a2d6515e595",
+    "sources.json": "622351d2ebff24199b077ab3e7bcdca5b361b8312d1ab1faf78202bd9671e9b9",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
   "remote_ci": {
-    "prior_head": "b8f26c43be4c9c1376a89597e49a1254632995e7",
-    "prior_result": "Python and Documentation passed",
     "new_head": "Not yet published"
   },
   "not_executed": [
-    "Full local Python suite",
-    "Strict local docs/full gallery",
-    "Browser",
-    "Package rebuild; no package code changed"
+    "Full Python suite",
+    "Strict docs/full gallery",
+    "Browser"
   ]
 }

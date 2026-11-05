@@ -544,3 +544,13 @@ new equipment models, turbines or curves. The equipment target was not met;
 unnamed components and predominant registry labels were not converted into
 invented configurations. See `research/2026-11-04-2535-eia-decisions.json` for
 all 129 decisions and `research/latest.json` for exact continuation partitions.
+
+Batch `2026-11-05-0835` starts from merged main `aa842b95` (PR #153 was
+merged externally). The first checkpoint adds eight EIA registry sites and
+substantively enriches historical Krzęcin 6 MW with owner and regulator evidence:
+8,182 projects versus 8,174 on that main; equipment/turbine/curve totals unchanged.
+All 150 plants / 158 generator rows in Operable codes 64000–69999 were reviewed;
+142 identities remain deferred. Generator ratings remain nested observations,
+not farm capacity totals. The viewer and offline example distinguish unknown
+installed MW from zero and unresolved aggregation scopes. See the latest
+checkpoint for subsequent equipment research and validation results.

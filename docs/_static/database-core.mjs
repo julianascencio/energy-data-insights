@@ -245,3 +245,15 @@ export function windOemUpdateSummary(rows) {
   }
   return result;
 }
+
+// Registry evidence completeness is independent of farm capacity and overlap scope.
+export function windEiaScopeSummary(rows) {
+  const result = {projects: 0, withoutEvidence: 0, unresolvedScopes: 0, unknownInstalledCapacity: 0};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    if (!windEiaSummary([row]).projects) { result.withoutEvidence++; continue; }
+    result.projects++;
+    if (row.aggregation_role === "unresolved") result.unresolvedScopes++;
+    if (row.installed_capacity_mw == null) result.unknownInstalledCapacity++;
+  }
+  return result;
+}

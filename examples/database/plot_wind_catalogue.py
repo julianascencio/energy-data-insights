@@ -41,6 +41,23 @@ for row in rows:
     ext = json.loads(row.get("extensions_json") or "{}")
     if "capacity_by_aemo_status" in ext:
         print(row["name"], ext["capacity_by_aemo_status"], row["aggregation_role"])
+# Registry unit evidence does not resolve farm boundaries or missing farm MW.
+eia_projects = [
+    row
+    for row in rows
+    if row["entity_type"] == "projects"
+    and json.loads(row.get("extensions_json") or "{}").get("eia_annual_wind_partitions")
+]
+print(
+    "EIA evidence: project counts, not capacity totals",
+    {
+        "projects": len(eia_projects),
+        "unresolved_scope": sum(row["aggregation_role"] == "unresolved" for row in eia_projects),
+        "unknown_installed_mw": sum(
+            row.get("installed_capacity_mw") is None for row in eia_projects
+        ),
+    },
+)
 print("Published turbine power ratings require their measurement conditions")
 print(
     equipment.loc[

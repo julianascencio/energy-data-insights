@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windOemUpdateSummary} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isWind = root.dataset.database === "wind";
@@ -131,6 +131,8 @@ function render() {
       summary.push([number(yearly.projects), `EIA ${year} evidence`, `${yearly.operating} operating · ${yearly.outOfService} out of service · ${yearly.standby} standby · ${yearly.retired} retired · ${yearly.canceled} canceled · ${yearly.postponed} postponed generator observations as of ${year}-12-31. These are dated units, not whole-farm statuses.`]);
     }
     const eia = windEiaSummary(filtered);
+    const eiaScope = windEiaScopeSummary(filtered);
+    summary.push([number(eiaScope.projects), "EIA project boundaries", `${eiaScope.unresolvedScopes} unresolved aggregation scopes · ${eiaScope.unknownInstalledCapacity} unknown installed farm MW · ${eiaScope.withoutEvidence} projects without EIA unit evidence. Missing capacity is not zero; generator ratings do not substitute for farm totals.`]);
     summary.push([number(eia.projects), "EIA unit evidence", `${eia.operating} operating · ${eia.outOfService} out of service · ${eia.standby} standby · ${eia.retired} retired · ${eia.canceled} canceled · ${eia.postponed} postponed dated unit observations; ${eia.withoutObservations} projects without this evidence. Unit status does not establish whole-farm status or current capacity.`]);
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
     summary.push([number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Catalogue coverage"],

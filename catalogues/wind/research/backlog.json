@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-05T07:38:14Z",
-  "branch": "research/wind-20261104-2335",
-  "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind-20261104-2335.lock for research/wind-20261104-2335; inspect active work and remote head; publish using an expected-head fast-forward, never overwrite another writer.",
+  "updated_at": "2026-11-05T08:47:26Z",
+  "branch": "research/wind-20261105-0835",
+  "run_lock": "Acquire flock -n /tmp/energy-data-insights-wind-20261105-0835.lock; inspect active work and remote head; never overwrite another writer",
   "queue": [
     {
       "rank": 1,
@@ -17,7 +17,7 @@
       ],
       "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "EIA final2025 Operable64000–64999 next;1–63999 complete. Reuse pinned originals. Resolve existing identity holds from dated ledgers without name-only merges; no retry of unchanged EPA403.",
+      "next_task": "EIA final2025 Operable70000–70999 next;1–69999 complete. Reuse pinned originals; reconcile142held identities from0835 ledger before adding related sites. Do not repeat completed partitions.",
       "latest_attempt_review": "2026-11-04-1235-source-review.json",
       "independent_source_completed": {
         "source": "EIA2025final",
@@ -28,9 +28,9 @@
       },
       "operable_completed": [
         1,
-        63999
+        69999
       ],
-      "operable_decision_ledger": "2026-11-05-0735-eia-review.json"
+      "operable_decision_ledger": "2026-11-05-0835-eia-review.json"
     },
     {
       "rank": 2,
@@ -226,7 +226,7 @@
       "sha256": "b1aa9e03a9a67586bdb8d3f56818f4836172616e5ee28d82bd1509c939b68c8c",
       "partition": "Complete Spanish wind rows, then complete Polish wind rows; exclude PV",
       "next_offset": 7,
-      "next_task": "Karcino Energa2020 history reviewed:2009 installation versus2010 commissioning; WRI conflict retained. Next Krzęcin02/2012permit/WRI6MW relationship; no repeated Jasna/Karcino pages.",
+      "next_task": "Krzęcin6MW Polenergia/URE2018 reviewed and distinct from PNE19.2MW. Next official Krzęcin II02/2012 environmental consent maps/plot crosswalk; no parent/phase relationship inferred.",
       "followup_ledger": "2026-11-05-0735-source-review.json"
     },
     {

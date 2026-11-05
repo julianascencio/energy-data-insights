@@ -271,3 +271,14 @@ test("OEM update coverage requires dated linked evidence, not a selected mode or
   assert.deepEqual(windOemUpdateSummary([]), {models:0,updates:0,withoutUpdates:0});
   assert.equal(JSON.stringify(rows), before);
 });
+
+test("EIA farm completeness keeps unknown capacity distinct from a reported zero", async () => {
+  const {windEiaScopeSummary} = await import("../../docs/_static/database-core.mjs");
+  const evidence = JSON.stringify({eia_annual_wind_partitions:[{source_id:"eia",year:2025,units:[{generator_id:"1",locator:"row 3",status_as_of:"2025-12-31",status_code:"OP"}]}]});
+  assert.deepEqual(windEiaScopeSummary([
+    {entity_type:"projects",aggregation_role:"unresolved",extensions_json:evidence},
+    {entity_type:"projects",aggregation_role:"unresolved",installed_capacity_mw:0,extensions_json:evidence},
+    {entity_type:"projects",extensions_json:"invalid"},
+    {entity_type:"equipment",extensions_json:evidence}
+  ]), {projects:2,withoutEvidence:1,unresolvedScopes:2,unknownInstalledCapacity:1});
+});
