@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windOemUpdateSummary} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isHydro = root.dataset.database === "hydro";
@@ -141,6 +141,8 @@ function render() {
       summary.push([number(yearly.projects), `EIA ${year} evidence`, `${yearly.operating} operating · ${yearly.outOfService} out of service · ${yearly.standby} standby · ${yearly.retired} retired · ${yearly.canceled} canceled · ${yearly.postponed} postponed generator observations as of ${year}-12-31. These are dated units, not whole-farm statuses.`]);
     }
     const eia = windEiaSummary(filtered);
+    const eiaScope = windEiaScopeSummary(filtered);
+    summary.push([number(eiaScope.projects), "EIA project boundaries", `${eiaScope.unresolvedScopes} unresolved aggregation scopes · ${eiaScope.unknownInstalledCapacity} unknown installed farm MW · ${eiaScope.withoutEvidence} projects without EIA unit evidence. Missing capacity is not zero; generator ratings do not substitute for farm totals.`]);
     summary.push([number(eia.projects), "EIA unit evidence", `${eia.operating} operating · ${eia.outOfService} out of service · ${eia.standby} standby · ${eia.retired} retired · ${eia.canceled} canceled · ${eia.postponed} postponed dated unit observations; ${eia.withoutObservations} projects without this evidence. Unit status does not establish whole-farm status or current capacity.`]);
     const eligible = filtered.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
     summary.push([number(new Set(filtered.map(r => r.country_code).filter(Boolean)).size), "Countries", "Catalogue coverage"],
@@ -164,6 +166,10 @@ function render() {
     const hubs = windHubHeightSummary(filtered);
     const epds = windEpdSummary(filtered);
     const updates = windOemUpdateSummary(filtered);
+    const history = windOemHistorySummary(filtered);
+    const reference = windReferenceYieldSummary(filtered);
+    summary.push([number(reference.observations), "Modeled five-year reference yields", `${reference.models} models · ${reference.withoutReference} without evidence · ${reference.withdrawn} withdrawn observations retained. ${Object.entries(reference.bySite).map(([site, count]) => `${site}: ${count}`).join("; ")}. ${reference.unknownConditions} lack density or mode. Hub options and reference sites are not additive or a performance comparison.`]);
+    summary.push([number(history.observations), "Dated OEM history", `${history.models} models · ${history.withoutHistory} without history · ${history.datedDiscontinuations} dated discontinuation statements. Prototype and historical design facts are separate from selected configurations; discontinuation is not fleet retirement.`]);
     summary.push([number(updates.updates), "Dated OEM updates", `${updates.models} turbine models · ${updates.withoutUpdates} without update evidence. Inspect extensions for modes, tower options and approval dates; announced options do not establish installed configurations or validated performance.`]);
     summary.push([number(epds.scenarios), "Modeled LCA scenarios", `${epds.records} turbine models · ${epds.withoutScenarios} without scenarios. Lifetime net-to-grid flows remain separate by location and exposure; not measured output or project counts.`]);
     summary.push([number(hubs.optionsOnly), "Hub-height options only", `${hubs.reported} scalar heights · ${hubs.unknown} unknown; turbine models only. Options are not selected installations.`]);

@@ -271,3 +271,40 @@ test("OEM update coverage requires dated linked evidence, not a selected mode or
   assert.deepEqual(windOemUpdateSummary([]), {models:0,updates:0,withoutUpdates:0});
   assert.equal(JSON.stringify(rows), before);
 });
+
+test("EIA farm completeness keeps unknown capacity distinct from a reported zero", async () => {
+  const {windEiaScopeSummary} = await import("../../docs/_static/database-core.mjs");
+  const evidence = JSON.stringify({eia_annual_wind_partitions:[{source_id:"eia",year:2025,units:[{generator_id:"1",locator:"row 3",status_as_of:"2025-12-31",status_code:"OP"}]}]});
+  assert.deepEqual(windEiaScopeSummary([
+    {entity_type:"projects",aggregation_role:"unresolved",extensions_json:evidence},
+    {entity_type:"projects",aggregation_role:"unresolved",installed_capacity_mw:0,extensions_json:evidence},
+    {entity_type:"projects",extensions_json:"invalid"},
+    {entity_type:"equipment",extensions_json:evidence}
+  ]), {projects:2,withoutEvidence:1,unresolvedScopes:2,unknownInstalledCapacity:1});
+});
+
+test("OEM history needs dated registered evidence and never classifies a turbine fleet", async () => {
+  const {windOemHistorySummary} = await import("../../docs/_static/database-core.mjs");
+  const observation = {source_id: "oem", locator: "section", boundary: "prototype only", published_at: "2025-06-12",
+    facts: {production_status_observation: "discontinued", status_as_of: "2025-06-12"}};
+  const row = {entity_type: "equipment", equipment_category: "wind_turbine", sources: ["oem"],
+    extensions_json: JSON.stringify({oem_historical_observations: [observation]})};
+  assert.deepEqual(windOemHistorySummary([row, {...row, entity_type: "turbines"}, {...row, sources: []},
+    {...row, extensions_json: "bad"}, {...row, extensions_json: JSON.stringify({oem_historical_observations: [{...observation, boundary: ""}]})}]),
+    {models: 1, observations: 1, withoutHistory: 3, datedDiscontinuations: 1});
+  assert.deepEqual(windOemHistorySummary([]), {models: 0, observations: 0, withoutHistory: 0, datedDiscontinuations: 0});
+  assert.equal(row.status, undefined);
+});
+
+test("reference yields separate sites, withdrawals and missing evidence without summing energy", async () => {
+  const {windReferenceYieldSummary} = await import("../../docs/_static/database-core.mjs");
+  const entry = {locator:"synthetic row", note:"synthetic restriction", reference_yield_kwh:1000, operating_mode:null};
+  const observation = {source_id:"table", period_source_id:"method", period_years:5,
+    quantity_kind:"modeled reference energy", reference_site:"old", reference_conditions:{air_density_kg_m3:null},
+    rows:[entry,{...entry,withdrawn:true},{...entry,reference_yield_kwh:0}]};
+  const row = {entity_type:"equipment", equipment_category:"wind_turbine", sources:["table","method"],
+    extensions_json:JSON.stringify({reference_yield_observations:[observation,{...observation,reference_site:"new",rows:[entry]}]})};
+  assert.deepEqual(windReferenceYieldSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"projects"}]),
+    {models:1,observations:3,withdrawn:1,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
+  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,withoutReference:0,unknownConditions:0,bySite:{}});
+});

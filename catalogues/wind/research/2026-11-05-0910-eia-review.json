@@ -1,0 +1,4004 @@
+{
+  "batch": "2026-11-05-0910",
+  "reviewed_at": "2026-11-05T09:21:39Z",
+  "prior_ledger": "2026-11-05-0835-eia-review.json",
+  "candidate_scope": "Exactly142 previously deferred identities; prior8 additions not recounted",
+  "reviewed_candidates": 142,
+  "new_projects": 56,
+  "deferred_projects": 86,
+  "method": "Distinctive names/aliases ratio>=0.8, explicit EIA and WRI-encoded IDs, geodesic10km whole-plant points, cohort neighbours and phase names. Manual review, no automatic proof; unresolved farm scope remains excluded.",
+  "decisions": [
+    {
+      "plant_code": 64003,
+      "name": "Iron Star Wind Project",
+      "screen": {
+        "plant_code": 64003,
+        "name": "Iron Star Wind Project",
+        "distinctive_name": "iron star",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "446692e5-8651-5588-aa3c-f653073ffdac"
+    },
+    {
+      "plant_code": 64047,
+      "name": "Caddo Wind",
+      "screen": {
+        "plant_code": 64047,
+        "name": "Caddo Wind",
+        "distinctive_name": "caddo",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "2a199a33-0362-5fed-b3f8-3edc008854c8"
+    },
+    {
+      "plant_code": 64051,
+      "name": "Orchard Windfarm 2, LLC",
+      "screen": {
+        "plant_code": 64051,
+        "name": "Orchard Windfarm 2, LLC",
+        "distinctive_name": "orchard 2",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64052,
+            "similar_name": true,
+            "nearby": true
+          },
+          {
+            "plant_code": 64053,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64052,
+      "name": "Orchard Windfarm 3, LLC",
+      "screen": {
+        "plant_code": 64052,
+        "name": "Orchard Windfarm 3, LLC",
+        "distinctive_name": "orchard 3",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64051,
+            "similar_name": true,
+            "nearby": true
+          },
+          {
+            "plant_code": 64053,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64053,
+      "name": "Orchard Windfarm 4, LLC",
+      "screen": {
+        "plant_code": 64053,
+        "name": "Orchard Windfarm 4, LLC",
+        "distinctive_name": "orchard 4",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64051,
+            "similar_name": true,
+            "nearby": true
+          },
+          {
+            "plant_code": 64052,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64054,
+      "name": "Clines Corners Wind Farm LLC",
+      "screen": {
+        "plant_code": 64054,
+        "name": "Clines Corners Wind Farm LLC",
+        "distinctive_name": "clines corners",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "d969554f-c469-5576-95d9-29b1584a38fe",
+            "distance_km": 6.3421
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 64065,
+            "similar_name": false,
+            "nearby": true
+          },
+          {
+            "plant_code": 64066,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64057,
+      "name": "Wheatridge 1",
+      "screen": {
+        "plant_code": 64057,
+        "name": "Wheatridge 1",
+        "distinctive_name": "wheatridge 1",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 66560,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64066,
+      "name": "Tecolote Wind LLC",
+      "screen": {
+        "plant_code": 64066,
+        "name": "Tecolote Wind LLC",
+        "distinctive_name": "tecolote",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "d969554f-c469-5576-95d9-29b1584a38fe",
+            "distance_km": 5.8756
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 64054,
+            "similar_name": false,
+            "nearby": true
+          },
+          {
+            "plant_code": 64065,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64074,
+      "name": "Cimarron Bend III",
+      "screen": {
+        "plant_code": 64074,
+        "name": "Cimarron Bend III",
+        "distinctive_name": "cimarron bend iii",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "588f7c08-7297-578c-900f-753a346868d3",
+            "matched_name": "Cimarron Bend Wind Project II  LLC",
+            "ratio": 0.9697
+          },
+          {
+            "record_id": "ff79473a-cf78-574e-8108-218263e56bf4",
+            "matched_name": "Cimarron Bend Wind Project I  LLC",
+            "ratio": 0.9375
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "588f7c08-7297-578c-900f-753a346868d3",
+            "distance_km": 1.7988
+          },
+          {
+            "record_id": "ff79473a-cf78-574e-8108-218263e56bf4",
+            "distance_km": 1.7988
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64088,
+      "name": "Alta Farms II Wind Project, LLC",
+      "screen": {
+        "plant_code": 64088,
+        "name": "Alta Farms II Wind Project, LLC",
+        "distinctive_name": "alta ii",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "7d6633f1-deeb-5750-b4b8-fac8ab6fc512",
+            "matched_name": "Alta Wind Energy Center II",
+            "ratio": 1.0
+          },
+          {
+            "record_id": "8a3fe900-e198-5935-9bce-5970b1ad9615",
+            "matched_name": "Alta Wind Energy Center I",
+            "ratio": 0.9231
+          },
+          {
+            "record_id": "9d4c238c-e63f-5c33-8f42-6f37138f0b94",
+            "matched_name": "Alta Wind VIII",
+            "ratio": 0.875
+          },
+          {
+            "record_id": "af2046a0-ffd2-53af-83f7-c11270d0fb9f",
+            "matched_name": "Alta Wind XI",
+            "ratio": 0.8571
+          },
+          {
+            "record_id": "c33d611d-0779-51d1-aa9c-f40ce429eaee",
+            "matched_name": "Alta Wind Energy Center IV",
+            "ratio": 0.8571
+          },
+          {
+            "record_id": "df28e192-48dd-535d-9991-9ffbf0e876e0",
+            "matched_name": "Alta Wind Energy Center III",
+            "ratio": 0.9333
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64130,
+      "name": "REG Juhl Glenville Wind, LLC",
+      "screen": {
+        "plant_code": 64130,
+        "name": "REG Juhl Glenville Wind, LLC",
+        "distinctive_name": "reg juhl glenville",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "53c677e8-6b11-5d44-8e2c-42873ca9aee9"
+    },
+    {
+      "plant_code": 64138,
+      "name": "Irish Creek Wind",
+      "screen": {
+        "plant_code": 64138,
+        "name": "Irish Creek Wind",
+        "distinctive_name": "irish creek",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "767b23df-192f-55e0-83e6-cb5c2cc6e78b",
+            "matched_name": "Rush Creek Wind",
+            "ratio": 0.8571
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "a8956f70-20f1-511c-83cb-dc4490c63dfa",
+            "distance_km": 5.5078
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64139,
+      "name": "Haystack Wind Project, LLC",
+      "screen": {
+        "plant_code": 64139,
+        "name": "Haystack Wind Project, LLC",
+        "distinctive_name": "haystack",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "bb495aa2-1e6c-5a83-86fb-84d54e88b5b4"
+    },
+    {
+      "plant_code": 64149,
+      "name": "Western Trail Wind, LLC",
+      "screen": {
+        "plant_code": 64149,
+        "name": "Western Trail Wind, LLC",
+        "distinctive_name": "western trail",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "97a17f3d-ff50-5e7c-a8b9-78df2374da5e"
+    },
+    {
+      "plant_code": 64164,
+      "name": "Azure Sky Wind Project, LLC Hybrid",
+      "screen": {
+        "plant_code": 64164,
+        "name": "Azure Sky Wind Project, LLC Hybrid",
+        "distinctive_name": "azure sky hybrid",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64165,
+      "name": "Priddy Wind Project",
+      "screen": {
+        "plant_code": 64165,
+        "name": "Priddy Wind Project",
+        "distinctive_name": "priddy",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "d2a7fd80-024d-5e63-ba92-de72e7a92c5f"
+    },
+    {
+      "plant_code": 64172,
+      "name": "Rockhaven Wind Project, LLC",
+      "screen": {
+        "plant_code": 64172,
+        "name": "Rockhaven Wind Project, LLC",
+        "distinctive_name": "rockhaven",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "d8089ce9-5d87-50ac-a872-583fef9dfecf",
+            "distance_km": 3.2863
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64177,
+      "name": "CED Manchester Wind",
+      "screen": {
+        "plant_code": 64177,
+        "name": "CED Manchester Wind",
+        "distinctive_name": "ced manchester",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64183,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64183,
+      "name": "Independence Wind Farm",
+      "screen": {
+        "plant_code": 64183,
+        "name": "Independence Wind Farm",
+        "distinctive_name": "independence",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64177,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64230,
+      "name": "Indiana Crossroads Wind Farm LLC",
+      "screen": {
+        "plant_code": 64230,
+        "name": "Indiana Crossroads Wind Farm LLC",
+        "distinctive_name": "indiana crossroads",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "50af4b95-3923-5e92-9764-7214eb8bf1a6",
+            "distance_km": 6.7977
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 66861,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64309,
+      "name": "Soldier Creek Wind",
+      "screen": {
+        "plant_code": 64309,
+        "name": "Soldier Creek Wind",
+        "distinctive_name": "soldier creek",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "cc473697-c39b-5147-a3ba-f1908058dabc"
+    },
+    {
+      "plant_code": 64323,
+      "name": "Coachella Hills Wind",
+      "screen": {
+        "plant_code": 64323,
+        "name": "Coachella Hills Wind",
+        "distinctive_name": "coachella hills",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "0bd927ed-504a-5c42-95e7-b57a6a8c4732",
+            "distance_km": 2.4109
+          },
+          {
+            "record_id": "0bf7000d-85ce-5b82-8298-9d23a84df82c",
+            "distance_km": 3.8466
+          },
+          {
+            "record_id": "4672ae4c-6165-5fe7-a160-f67b79397769",
+            "distance_km": 0.3715
+          },
+          {
+            "record_id": "51256c34-5f9d-5a85-933c-fb44199f5ef7",
+            "distance_km": 8.4152
+          },
+          {
+            "record_id": "5b7036e1-7aee-5e32-a002-b4f12ac80162",
+            "distance_km": 2.3365
+          },
+          {
+            "record_id": "5ceed30b-4a1d-5f76-923a-38df09d4b3cf",
+            "distance_km": 2.9282
+          },
+          {
+            "record_id": "6aa74a36-ba79-5e70-8df5-377b39ce2e0d",
+            "distance_km": 1.1675
+          },
+          {
+            "record_id": "6cc69927-de0a-5879-bdca-b700710fd49b",
+            "distance_km": 1.2931
+          },
+          {
+            "record_id": "76cb596b-8575-583a-8850-d1175fddde4d",
+            "distance_km": 9.9327
+          },
+          {
+            "record_id": "7882a5bb-bc8e-517e-b272-89d6d6bf25e3",
+            "distance_km": 4.0076
+          },
+          {
+            "record_id": "79bcccbe-77e3-58ca-a626-acb5ff2b8619",
+            "distance_km": 2.2585
+          },
+          {
+            "record_id": "846d491a-a600-54eb-8472-847f51e6d0e6",
+            "distance_km": 1.3046
+          },
+          {
+            "record_id": "991adc48-0972-5580-80f4-25d1597dbf39",
+            "distance_km": 4.3073
+          },
+          {
+            "record_id": "aa79f0ab-3ae7-596a-950e-a90ce7eab995",
+            "distance_km": 1.6454
+          },
+          {
+            "record_id": "aad6e42e-1d53-5861-9b31-0c6e90594445",
+            "distance_km": 2.2281
+          },
+          {
+            "record_id": "d25e4ee2-bacd-5adb-817a-a91ea4356358",
+            "distance_km": 1.9052
+          },
+          {
+            "record_id": "d79a3fb6-0b66-5d12-828f-99cbe0e9f623",
+            "distance_km": 2.2615
+          },
+          {
+            "record_id": "e83d9752-9d2e-537a-99fe-e49d69f4cb57",
+            "distance_km": 3.8253
+          },
+          {
+            "record_id": "eaed58a1-ad37-5e9a-93f1-1f20931ec394",
+            "distance_km": 2.0654
+          },
+          {
+            "record_id": "f6e43727-2e10-5ffd-a4fe-289008f378d6",
+            "distance_km": 3.99
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 66167,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64326,
+      "name": "Summit Winds",
+      "screen": {
+        "plant_code": 64326,
+        "name": "Summit Winds",
+        "distinctive_name": "summit winds",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "05facfae-1d70-51a8-b974-7d51dbd700f7",
+            "distance_km": 6.7106
+          },
+          {
+            "record_id": "43cc1908-be0f-54ed-b115-ab8f074f3fba",
+            "distance_km": 5.3903
+          },
+          {
+            "record_id": "64ca5683-ec3e-5f66-8e89-ec224fb5e339",
+            "distance_km": 6.9175
+          },
+          {
+            "record_id": "8899cc21-57a0-523e-ab02-46a582609d1f",
+            "distance_km": 5.2941
+          },
+          {
+            "record_id": "a5fac02a-07ce-5f85-a4ec-941d36955a48",
+            "distance_km": 4.0842
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64336,
+      "name": "Little Blue Wind Project, LLC",
+      "screen": {
+        "plant_code": 64336,
+        "name": "Little Blue Wind Project, LLC",
+        "distinctive_name": "little blue",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "dedded78-1273-530b-8753-273a2ce0adfc",
+            "distance_km": 4.919
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64339,
+      "name": "Horizon Hill Wind Project",
+      "screen": {
+        "plant_code": 64339,
+        "name": "Horizon Hill Wind Project",
+        "distinctive_name": "horizon hill",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "7b54a0dc-59a1-5e1b-bf89-da01cbf74099"
+    },
+    {
+      "plant_code": 64340,
+      "name": "White Rock West Wind Project",
+      "screen": {
+        "plant_code": 64340,
+        "name": "White Rock West Wind Project",
+        "distinctive_name": "white rock west",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64341,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64341,
+      "name": "White Rock East Wind Project",
+      "screen": {
+        "plant_code": 64341,
+        "name": "White Rock East Wind Project",
+        "distinctive_name": "white rock east",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64340,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64377,
+      "name": "Milligan 1 Wind Farm",
+      "screen": {
+        "plant_code": 64377,
+        "name": "Milligan 1 Wind Farm",
+        "distinctive_name": "milligan 1",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "c56ef882-f900-5a9b-9ca7-cafecb743ad4",
+            "matched_name": "Michigan Wind 1",
+            "ratio": 0.8
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64381,
+      "name": "Glacier Sands Wind Power, LLC",
+      "screen": {
+        "plant_code": 64381,
+        "name": "Glacier Sands Wind Power, LLC",
+        "distinctive_name": "glacier sands",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "782d7074-b72e-5882-aab5-48f52dcc393c"
+    },
+    {
+      "plant_code": 64407,
+      "name": "Flat Ridge 3",
+      "screen": {
+        "plant_code": 64407,
+        "name": "Flat Ridge 3",
+        "distinctive_name": "flat ridge 3",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "2dfd32f0-e296-557d-a450-e1eed8c3e8d4",
+            "matched_name": "Flat Ridge Wind Farm",
+            "ratio": 0.9091
+          },
+          {
+            "record_id": "7a95480b-8563-5cda-a3b7-22ba705f138d",
+            "matched_name": "Flat Ridge Wind Energy LLC",
+            "ratio": 0.9091
+          },
+          {
+            "record_id": "baa39456-ac2a-5c66-b0d9-d35d1dd87246",
+            "matched_name": "Flat Ridge 2 Wind Energy LLC",
+            "ratio": 0.9167
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "7a95480b-8563-5cda-a3b7-22ba705f138d",
+            "distance_km": 9.3746
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 68222,
+            "similar_name": true,
+            "nearby": false
+          },
+          {
+            "plant_code": 68590,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64433,
+      "name": "Black Rock Wind",
+      "screen": {
+        "plant_code": 64433,
+        "name": "Black Rock Wind",
+        "distinctive_name": "black rock",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "af479a82-6faa-5319-ba37-11019a882498",
+            "matched_name": "Black Oak Wind Farm",
+            "ratio": 0.8421
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64544,
+      "name": "Ranchland Wind Project II",
+      "screen": {
+        "plant_code": 64544,
+        "name": "Ranchland Wind Project II",
+        "distinctive_name": "ranchland ii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64551,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64551,
+      "name": "Ranchland Wind Project I",
+      "screen": {
+        "plant_code": 64551,
+        "name": "Ranchland Wind Project I",
+        "distinctive_name": "ranchland i",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64544,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64591,
+      "name": "El Algodon Alto Wind Farm, LLC",
+      "screen": {
+        "plant_code": 64591,
+        "name": "El Algodon Alto Wind Farm, LLC",
+        "distinctive_name": "el algodon alto",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "bf358c23-8508-586d-8bb7-78076127e127"
+    },
+    {
+      "plant_code": 64623,
+      "name": "Freeborn Wind Farm",
+      "screen": {
+        "plant_code": 64623,
+        "name": "Freeborn Wind Farm",
+        "distinctive_name": "freeborn",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "791c9a14-a03f-5aa3-8ded-f08268a4aae1"
+    },
+    {
+      "plant_code": 64638,
+      "name": "Borderlands Wind, LLC",
+      "screen": {
+        "plant_code": 64638,
+        "name": "Borderlands Wind, LLC",
+        "distinctive_name": "borderlands",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "d0a54ec1-5ee8-5186-90ef-fc8756fb5726"
+    },
+    {
+      "plant_code": 64639,
+      "name": "TG East",
+      "screen": {
+        "plant_code": 64639,
+        "name": "TG East",
+        "distinctive_name": "tg east",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64661,
+      "name": "Heartland Divide II",
+      "screen": {
+        "plant_code": 64661,
+        "name": "Heartland Divide II",
+        "distinctive_name": "heartland divide ii",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "70a87d30-7223-5cfc-9fbf-6516fb1f1117",
+            "matched_name": "Heartland Divide Wind Project  LLC",
+            "ratio": 0.9143
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64662,
+      "name": "Sac County Wind, LLC",
+      "screen": {
+        "plant_code": 64662,
+        "name": "Sac County Wind, LLC",
+        "distinctive_name": "sac county",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "ffb9c153-f26a-55f6-8e1d-cd815221b4ae",
+            "matched_name": "Day County Wind LLC",
+            "ratio": 0.8
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64665,
+      "name": "Great Prairie Wind",
+      "screen": {
+        "plant_code": 64665,
+        "name": "Great Prairie Wind",
+        "distinctive_name": "great prairie",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "ec51df74-b311-55fb-8222-78c6e7d87667",
+            "matched_name": "Grande Prairie Wind Farm",
+            "ratio": 0.8148
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 64688,
+      "name": "Plymouth Wind",
+      "screen": {
+        "plant_code": 64688,
+        "name": "Plymouth Wind",
+        "distinctive_name": "plymouth",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "080093c8-1e5c-5893-9d60-5d84d91e5bcd"
+    },
+    {
+      "plant_code": 64710,
+      "name": "White Mesa Wind",
+      "screen": {
+        "plant_code": 64710,
+        "name": "White Mesa Wind",
+        "distinctive_name": "white mesa",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "eeb290e6-1454-5ecc-9f3e-afb2f3d432c6"
+    },
+    {
+      "plant_code": 64750,
+      "name": "Glass Sands Wind Facility",
+      "screen": {
+        "plant_code": 64750,
+        "name": "Glass Sands Wind Facility",
+        "distinctive_name": "glass sands",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "1be8cf9d-faa6-5ecb-99c2-d63d7dcf58c9"
+    },
+    {
+      "plant_code": 64872,
+      "name": "Panorama Wind, LLC",
+      "screen": {
+        "plant_code": 64872,
+        "name": "Panorama Wind, LLC",
+        "distinctive_name": "panorama",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "d1b484ca-357d-5b7a-8a72-9540f6a6d9c7"
+    },
+    {
+      "plant_code": 65019,
+      "name": "Beaver Creek Wind Facility",
+      "screen": {
+        "plant_code": 65019,
+        "name": "Beaver Creek Wind Facility",
+        "distinctive_name": "beaver creek",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "aba3b6c7-eae9-5496-a2b8-04cb458192eb",
+            "matched_name": "Beaver Creek Wind",
+            "ratio": 1.0
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65059,
+      "name": "Niyol Wind, LLC",
+      "screen": {
+        "plant_code": 65059,
+        "name": "Niyol Wind, LLC",
+        "distinctive_name": "niyol",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "1a70526c-397a-5efa-95bb-8c61138e2e75"
+    },
+    {
+      "plant_code": 65129,
+      "name": "Jayhawk Wind Energy Center",
+      "screen": {
+        "plant_code": 65129,
+        "name": "Jayhawk Wind Energy Center",
+        "distinctive_name": "jayhawk",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "d537611c-6b82-5ed9-ab4b-c7c433f30812"
+    },
+    {
+      "plant_code": 65143,
+      "name": "Big Turtle Wind Farm 2",
+      "screen": {
+        "plant_code": 65143,
+        "name": "Big Turtle Wind Farm 2",
+        "distinctive_name": "big turtle 2",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "b53e18b2-0a92-506d-ae3a-548eba6a5898",
+            "matched_name": "Big Turtle Wind Farm  LLC",
+            "ratio": 0.9091
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "5f4f90d8-6322-5e52-af5b-c618e90f00cd",
+            "distance_km": 7.6946
+          },
+          {
+            "record_id": "98e3588d-ee1d-596e-ac0f-7d5d651eea4e",
+            "distance_km": 8.7119
+          },
+          {
+            "record_id": "b53e18b2-0a92-506d-ae3a-548eba6a5898",
+            "distance_km": 7.7051
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 65742,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65162,
+      "name": "Lacy Creek Wind Energy Center",
+      "screen": {
+        "plant_code": 65162,
+        "name": "Lacy Creek Wind Energy Center",
+        "distinctive_name": "lacy creek",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "7ed57cc5-d0b8-55a0-b31a-054bd81da0b2"
+    },
+    {
+      "plant_code": 65282,
+      "name": "Red Barn Energy",
+      "screen": {
+        "plant_code": 65282,
+        "name": "Red Barn Energy",
+        "distinctive_name": "red barn",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "a1743fe7-2237-58c9-bf6e-2651a83b5f07",
+            "distance_km": 4.5631
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65306,
+      "name": "Limestone Wind Project",
+      "screen": {
+        "plant_code": 65306,
+        "name": "Limestone Wind Project",
+        "distinctive_name": "limestone",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "430b3658-486f-5faa-9b6a-ee38fb378f92"
+    },
+    {
+      "plant_code": 65311,
+      "name": "Cedar Creek Wind, LLC",
+      "screen": {
+        "plant_code": 65311,
+        "name": "Cedar Creek Wind, LLC",
+        "distinctive_name": "cedar creek",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "233d7771-9912-5457-b6ef-2262c473ff37",
+            "matched_name": "Cedar Creek Wind",
+            "ratio": 1.0
+          },
+          {
+            "record_id": "3755e5b5-13e9-50ed-ab28-9c4d18ead585",
+            "matched_name": "Cedar Creek II",
+            "ratio": 0.88
+          },
+          {
+            "record_id": "ed2c91f9-8377-5dfb-bea0-2c13b745ff16",
+            "matched_name": "Eva Creek Wind",
+            "ratio": 0.8
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65316,
+      "name": "Sapphire Sky Wind Energy LLC",
+      "screen": {
+        "plant_code": 65316,
+        "name": "Sapphire Sky Wind Energy LLC",
+        "distinctive_name": "sapphire sky",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "882216b4-ceac-5844-a672-f61ee93bf35c"
+    },
+    {
+      "plant_code": 65328,
+      "name": "Meridian Wind Park",
+      "screen": {
+        "plant_code": 65328,
+        "name": "Meridian Wind Park",
+        "distinctive_name": "meridian park",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "03e81f5f-8ca8-5e17-bcea-d43cc8e07a41"
+    },
+    {
+      "plant_code": 65350,
+      "name": "Ford County Wind Farm LLC",
+      "screen": {
+        "plant_code": 65350,
+        "name": "Ford County Wind Farm LLC",
+        "distinctive_name": "ford county",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "09199022-7414-5423-88fc-7e0a07282262"
+    },
+    {
+      "plant_code": 65390,
+      "name": "Ledyard Windpower, LLC",
+      "screen": {
+        "plant_code": 65390,
+        "name": "Ledyard Windpower, LLC",
+        "distinctive_name": "ledyard",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "5176e671-e849-5e6b-801f-0379b19f4121",
+            "distance_km": 6.0909
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65403,
+      "name": "Boswell Wind",
+      "screen": {
+        "plant_code": 65403,
+        "name": "Boswell Wind",
+        "distinctive_name": "boswell",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "0a734ed9-7818-54d1-9107-3069db5084c6"
+    },
+    {
+      "plant_code": 65478,
+      "name": "Green Providence Wind I, LLC",
+      "screen": {
+        "plant_code": 65478,
+        "name": "Green Providence Wind I, LLC",
+        "distinctive_name": "green providence i",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "051f9547-fd6e-5e6f-b320-f683d25b4feb",
+            "distance_km": 0.6309
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 65479,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65479,
+      "name": "Green Providence Wind II, LLC",
+      "screen": {
+        "plant_code": 65479,
+        "name": "Green Providence Wind II, LLC",
+        "distinctive_name": "green providence ii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "051f9547-fd6e-5e6f-b320-f683d25b4feb",
+            "distance_km": 0.9456
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 65478,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65484,
+      "name": "Western Plains Wind",
+      "screen": {
+        "plant_code": 65484,
+        "name": "Western Plains Wind",
+        "distinctive_name": "western plains",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "46883789-1d81-5361-ba58-03ef843acd37",
+            "matched_name": "Western Plains Wind Farm",
+            "ratio": 1.0
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65495,
+      "name": "Ball Hill Wind Energy, LLC",
+      "screen": {
+        "plant_code": 65495,
+        "name": "Ball Hill Wind Energy, LLC",
+        "distinctive_name": "ball hill",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "b4f76738-7a50-5242-9381-a4754608b3e1",
+            "matched_name": "Bull Hill Wind Project",
+            "ratio": 0.8889
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65496,
+      "name": "Bluestone Wind, LLC",
+      "screen": {
+        "plant_code": 65496,
+        "name": "Bluestone Wind, LLC",
+        "distinctive_name": "bluestone",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "016e9726-e8dd-505f-ad6a-9da55da94a24",
+            "matched_name": "Bluestem",
+            "ratio": 0.8235
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65522,
+      "name": "Number Three Wind Project",
+      "screen": {
+        "plant_code": 65522,
+        "name": "Number Three Wind Project",
+        "distinctive_name": "number three",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "f41e084a-9c29-5cd4-9f67-12c9f5be1613",
+            "distance_km": 6.0534
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65546,
+      "name": "Inertia Wind Project",
+      "screen": {
+        "plant_code": 65546,
+        "name": "Inertia Wind Project",
+        "distinctive_name": "inertia",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "5757253e-a94e-5761-adac-88e1d6fb880a"
+    },
+    {
+      "plant_code": 65561,
+      "name": "South Fork Wind",
+      "screen": {
+        "plant_code": 65561,
+        "name": "South Fork Wind",
+        "distinctive_name": "south fork",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "b479f896-48a4-58ef-83c9-0693f4ccfd13",
+            "matched_name": "South Fork Wind Farm",
+            "ratio": 1.0
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65577,
+      "name": "Clearwater Wind I",
+      "screen": {
+        "plant_code": 65577,
+        "name": "Clearwater Wind I",
+        "distinctive_name": "clearwater i",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 66183,
+            "similar_name": true,
+            "nearby": false
+          },
+          {
+            "plant_code": 66184,
+            "similar_name": true,
+            "nearby": false
+          },
+          {
+            "plant_code": 66811,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65713,
+      "name": "Rock Aetna Power Partners",
+      "screen": {
+        "plant_code": 65713,
+        "name": "Rock Aetna Power Partners",
+        "distinctive_name": "rock aetna partners",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "00592b8d-a321-524e-824b-213dacef199a",
+            "distance_km": 2.1273
+          },
+          {
+            "record_id": "01d924ac-88d3-57b8-a55d-364cf834c78e",
+            "distance_km": 2.282
+          },
+          {
+            "record_id": "2b0615df-66e1-5c7b-871f-f43c37f0b270",
+            "distance_km": 5.2862
+          },
+          {
+            "record_id": "39b64562-fcf3-527d-a1e1-be7780d52e01",
+            "distance_km": 1.1213
+          },
+          {
+            "record_id": "4b3b581a-5e45-57ff-86ff-ea340c7b571a",
+            "distance_km": 1.4422
+          },
+          {
+            "record_id": "515ce20c-8413-54c5-a9e0-a2270802ddf2",
+            "distance_km": 5.0235
+          },
+          {
+            "record_id": "87e36743-e82d-5343-93f5-4038a0e11a03",
+            "distance_km": 4.6122
+          },
+          {
+            "record_id": "a476adfe-338a-5ad3-bf1d-e83288b3aecb",
+            "distance_km": 4.9602
+          },
+          {
+            "record_id": "bea693f8-4eea-5909-8414-fa23d2c15124",
+            "distance_km": 4.4644
+          },
+          {
+            "record_id": "d6850fcc-a442-59f8-a049-8cafe268cd1d",
+            "distance_km": 5.4336
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 65714,
+            "similar_name": false,
+            "nearby": true
+          },
+          {
+            "plant_code": 69003,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65714,
+      "name": "Northern Wind",
+      "screen": {
+        "plant_code": 65714,
+        "name": "Northern Wind",
+        "distinctive_name": "northern",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "00592b8d-a321-524e-824b-213dacef199a",
+            "distance_km": 3.0799
+          },
+          {
+            "record_id": "01d924ac-88d3-57b8-a55d-364cf834c78e",
+            "distance_km": 3.6542
+          },
+          {
+            "record_id": "2b0615df-66e1-5c7b-871f-f43c37f0b270",
+            "distance_km": 5.9724
+          },
+          {
+            "record_id": "39b64562-fcf3-527d-a1e1-be7780d52e01",
+            "distance_km": 1.874
+          },
+          {
+            "record_id": "4b3b581a-5e45-57ff-86ff-ea340c7b571a",
+            "distance_km": 0.0
+          },
+          {
+            "record_id": "515ce20c-8413-54c5-a9e0-a2270802ddf2",
+            "distance_km": 6.4406
+          },
+          {
+            "record_id": "87e36743-e82d-5343-93f5-4038a0e11a03",
+            "distance_km": 3.9049
+          },
+          {
+            "record_id": "a476adfe-338a-5ad3-bf1d-e83288b3aecb",
+            "distance_km": 5.431
+          },
+          {
+            "record_id": "bea693f8-4eea-5909-8414-fa23d2c15124",
+            "distance_km": 5.8279
+          },
+          {
+            "record_id": "d6850fcc-a442-59f8-a049-8cafe268cd1d",
+            "distance_km": 4.0292
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 65713,
+            "similar_name": false,
+            "nearby": true
+          },
+          {
+            "plant_code": 69003,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65725,
+      "name": "Kossuth County Wind",
+      "screen": {
+        "plant_code": 65725,
+        "name": "Kossuth County Wind",
+        "distinctive_name": "kossuth county",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "31de2ce9-1d79-5b66-b760-87d74ee939a5",
+            "distance_km": 5.3712
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65737,
+      "name": "Schumann Wind Farm",
+      "screen": {
+        "plant_code": 65737,
+        "name": "Schumann Wind Farm",
+        "distinctive_name": "schumann",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "1c641298-2608-506d-9d62-f4d773f0987d",
+            "distance_km": 8.2924
+          },
+          {
+            "record_id": "284301e4-0b49-5000-9898-d137aa21638c",
+            "distance_km": 8.2924
+          },
+          {
+            "record_id": "c5a13ab0-0f50-57c9-b4d3-65eabc6324e6",
+            "distance_km": 3.9721
+          },
+          {
+            "record_id": "d58586d9-261a-598c-83d8-368c8e40441d",
+            "distance_km": 7.3296
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65738,
+      "name": "Sunflower Energy Center, LLC",
+      "screen": {
+        "plant_code": 65738,
+        "name": "Sunflower Energy Center, LLC",
+        "distinctive_name": "sunflower",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "1a52a1c1-fb02-5a63-91fd-54d8b2b1e1bc",
+            "matched_name": "Sunflower Wind Project",
+            "ratio": 1.0
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65741,
+      "name": "Sandy Ridge Wind 2, LLC",
+      "screen": {
+        "plant_code": 65741,
+        "name": "Sandy Ridge Wind 2, LLC",
+        "distinctive_name": "sandy ridge 2",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "c94a8a07-e5c0-5a12-b2e2-84f44528a24b",
+            "matched_name": "Sandy Ridge Wind Farm",
+            "ratio": 0.9167
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "c94a8a07-e5c0-5a12-b2e2-84f44528a24b",
+            "distance_km": 5.7705
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65742,
+      "name": "Deerfield Wind Energy 2",
+      "screen": {
+        "plant_code": 65742,
+        "name": "Deerfield Wind Energy 2",
+        "distinctive_name": "deerfield 2",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "98e3588d-ee1d-596e-ac0f-7d5d651eea4e",
+            "matched_name": "Deerfield Wind Energy  LLC",
+            "ratio": 0.9
+          },
+          {
+            "record_id": "e4a0fb29-e83b-56c6-9539-49db56525cec",
+            "matched_name": "Deerfield Wind LLC",
+            "ratio": 0.9
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "98e3588d-ee1d-596e-ac0f-7d5d651eea4e",
+            "distance_km": 2.4968
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 65143,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65760,
+      "name": "El Sauz Ranch Wind, LLC",
+      "screen": {
+        "plant_code": 65760,
+        "name": "El Sauz Ranch Wind, LLC",
+        "distinctive_name": "el sauz ranch",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "c5aaef59-92bd-5cb8-827e-8b09ea9d4bd0",
+            "distance_km": 9.4596
+          },
+          {
+            "record_id": "f9448272-230a-5fcc-9b1b-d90dbe709672",
+            "distance_km": 9.5912
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65761,
+      "name": "Buffalo Ridge Wind",
+      "screen": {
+        "plant_code": 65761,
+        "name": "Buffalo Ridge Wind",
+        "distinctive_name": "buffalo ridge",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "3465dac5-07b9-5196-99c5-c6c63fd7a958",
+            "matched_name": "Buffalo Ridge I LLC",
+            "ratio": 0.9286
+          },
+          {
+            "record_id": "78609890-f664-5bd3-ba4d-bfa63b713b03",
+            "matched_name": "Buffalo Ridge II LLC",
+            "ratio": 0.8966
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65763,
+      "name": "Young Wind",
+      "screen": {
+        "plant_code": 65763,
+        "name": "Young Wind",
+        "distinctive_name": "young",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "e6924a26-3e4e-5017-ad31-7fc5201cd231"
+    },
+    {
+      "plant_code": 65764,
+      "name": "Walleye Wind",
+      "screen": {
+        "plant_code": 65764,
+        "name": "Walleye Wind",
+        "distinctive_name": "walleye",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "abcd64fc-2fae-52aa-af22-a42ad7a52e72",
+            "distance_km": 0.1115
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 65790,
+      "name": "Castle Gap Wind",
+      "screen": {
+        "plant_code": 65790,
+        "name": "Castle Gap Wind",
+        "distinctive_name": "castle gap",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "ac4dfe16-6921-52d9-9ad0-8a5fbbca9abf"
+    },
+    {
+      "plant_code": 65971,
+      "name": "Seven Cowboy Wind Project, LLC",
+      "screen": {
+        "plant_code": 65971,
+        "name": "Seven Cowboy Wind Project, LLC",
+        "distinctive_name": "seven cowboy",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "618e5b10-f805-5943-8960-b6e370169b9a"
+    },
+    {
+      "plant_code": 66000,
+      "name": "Delta Wind Farm (MS)",
+      "screen": {
+        "plant_code": 66000,
+        "name": "Delta Wind Farm (MS)",
+        "distinctive_name": "delta ms",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66001,
+      "name": "Chevelon Butte Wind Farm",
+      "screen": {
+        "plant_code": 66001,
+        "name": "Chevelon Butte Wind Farm",
+        "distinctive_name": "chevelon butte",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 67176,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66014,
+      "name": "Bronco Plains Wind II, LLC",
+      "screen": {
+        "plant_code": 66014,
+        "name": "Bronco Plains Wind II, LLC",
+        "distinctive_name": "bronco plains ii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66052,
+      "name": "Eight Point Wind",
+      "screen": {
+        "plant_code": 66052,
+        "name": "Eight Point Wind",
+        "distinctive_name": "eight point",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "6e5949e1-2eb1-5b37-9f7e-ed730d40b11f"
+    },
+    {
+      "plant_code": 66093,
+      "name": "Moraine Sands Wind Power",
+      "screen": {
+        "plant_code": 66093,
+        "name": "Moraine Sands Wind Power",
+        "distinctive_name": "moraine sands",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "3e8859c3-a42d-503e-b202-aa494fd169b1"
+    },
+    {
+      "plant_code": 66110,
+      "name": "Babbitt Ranch Energy Center",
+      "screen": {
+        "plant_code": 66110,
+        "name": "Babbitt Ranch Energy Center",
+        "distinctive_name": "babbitt ranch",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "bc97e4ac-e68c-5bb8-be46-2ad45dc4ead0"
+    },
+    {
+      "plant_code": 66123,
+      "name": "Prairie Switch Wind LLC",
+      "screen": {
+        "plant_code": 66123,
+        "name": "Prairie Switch Wind LLC",
+        "distinctive_name": "prairie switch",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "e5127236-4dc7-5c26-9ab3-374b0d6fed13"
+    },
+    {
+      "plant_code": 66155,
+      "name": "Ponderosa Wind II",
+      "screen": {
+        "plant_code": 66155,
+        "name": "Ponderosa Wind II",
+        "distinctive_name": "ponderosa ii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "902d987e-f522-50c7-91fb-1c9cffc1cdc4",
+            "distance_km": 8.833
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66156,
+      "name": "High Banks Wind",
+      "screen": {
+        "plant_code": 66156,
+        "name": "High Banks Wind",
+        "distinctive_name": "high banks",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "906eec0f-fc89-530f-a60b-4388f53192bd"
+    },
+    {
+      "plant_code": 66167,
+      "name": "AM Wind Repower",
+      "screen": {
+        "plant_code": 66167,
+        "name": "AM Wind Repower",
+        "distinctive_name": "am repower",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "0bf7000d-85ce-5b82-8298-9d23a84df82c",
+            "distance_km": 4.7177
+          },
+          {
+            "record_id": "4672ae4c-6165-5fe7-a160-f67b79397769",
+            "distance_km": 8.4505
+          },
+          {
+            "record_id": "51256c34-5f9d-5a85-933c-fb44199f5ef7",
+            "distance_km": 0.1992
+          },
+          {
+            "record_id": "5ceed30b-4a1d-5f76-923a-38df09d4b3cf",
+            "distance_km": 7.7703
+          },
+          {
+            "record_id": "6aa74a36-ba79-5e70-8df5-377b39ce2e0d",
+            "distance_km": 9.5841
+          },
+          {
+            "record_id": "6cc69927-de0a-5879-bdca-b700710fd49b",
+            "distance_km": 7.2595
+          },
+          {
+            "record_id": "76cb596b-8575-583a-8850-d1175fddde4d",
+            "distance_km": 1.4439
+          },
+          {
+            "record_id": "7882a5bb-bc8e-517e-b272-89d6d6bf25e3",
+            "distance_km": 4.5389
+          },
+          {
+            "record_id": "79bcccbe-77e3-58ca-a626-acb5ff2b8619",
+            "distance_km": 9.4783
+          },
+          {
+            "record_id": "7ddbcc7b-4d67-566a-8369-bbb788534948",
+            "distance_km": 6.9355
+          },
+          {
+            "record_id": "846d491a-a600-54eb-8472-847f51e6d0e6",
+            "distance_km": 8.5597
+          },
+          {
+            "record_id": "aa79f0ab-3ae7-596a-950e-a90ce7eab995",
+            "distance_km": 9.6975
+          },
+          {
+            "record_id": "bd89c308-650d-5734-a315-5e769e186993",
+            "distance_km": 7.3949
+          },
+          {
+            "record_id": "d79a3fb6-0b66-5d12-828f-99cbe0e9f623",
+            "distance_km": 9.9168
+          },
+          {
+            "record_id": "eaed58a1-ad37-5e9a-93f1-1f20931ec394",
+            "distance_km": 9.3237
+          },
+          {
+            "record_id": "f2631e84-d998-5ee0-909f-24cf30bce3ea",
+            "distance_km": 8.7321
+          },
+          {
+            "record_id": "f4be246d-f39c-5c4e-b168-3f9a731c523a",
+            "distance_km": 5.5208
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 64323,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66183,
+      "name": "Clearwater Wind East",
+      "screen": {
+        "plant_code": 66183,
+        "name": "Clearwater Wind East",
+        "distinctive_name": "clearwater east",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 65577,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66184,
+      "name": "Clearwater Wind II",
+      "screen": {
+        "plant_code": 66184,
+        "name": "Clearwater Wind II",
+        "distinctive_name": "clearwater ii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 65577,
+            "similar_name": true,
+            "nearby": false
+          },
+          {
+            "plant_code": 66811,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66192,
+      "name": "Heartland Farms",
+      "screen": {
+        "plant_code": 66192,
+        "name": "Heartland Farms",
+        "distinctive_name": "heartland",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "8487a893-47f5-561a-9232-42730d4ad373"
+    },
+    {
+      "plant_code": 66195,
+      "name": "SPPW1, LLC",
+      "screen": {
+        "plant_code": 66195,
+        "name": "SPPW1, LLC",
+        "distinctive_name": "sppw1",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66261,
+      "name": "Martin Marietta Wind Project",
+      "screen": {
+        "plant_code": 66261,
+        "name": "Martin Marietta Wind Project",
+        "distinctive_name": "martin marietta",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "ea32f2b1-0b19-50e6-b57a-d62eae657243"
+    },
+    {
+      "plant_code": 66283,
+      "name": "Silver Maple",
+      "screen": {
+        "plant_code": 66283,
+        "name": "Silver Maple",
+        "distinctive_name": "silver maple",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "e49bcf5f-4c69-5d0c-ab35-25663387f47e",
+            "distance_km": 0.5939
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66321,
+      "name": "King Creek Wind Farm 1, LLC",
+      "screen": {
+        "plant_code": 66321,
+        "name": "King Creek Wind Farm 1, LLC",
+        "distinctive_name": "king creek 1",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 66323,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66323,
+      "name": "King Creek Wind Farm 2, LLC",
+      "screen": {
+        "plant_code": 66323,
+        "name": "King Creek Wind Farm 2, LLC",
+        "distinctive_name": "king creek 2",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 66321,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66496,
+      "name": "Sweetland Wind Farm, LLC",
+      "screen": {
+        "plant_code": 66496,
+        "name": "Sweetland Wind Farm, LLC",
+        "distinctive_name": "sweetland",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "4b7c96e8-1d51-5f4e-b479-803b3baad6a8"
+    },
+    {
+      "plant_code": 66531,
+      "name": "Pioneer Hutt Wind Energy",
+      "screen": {
+        "plant_code": 66531,
+        "name": "Pioneer Hutt Wind Energy",
+        "distinctive_name": "pioneer hutt",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "0b4e6698-6137-5a53-9a99-c2656ecaea0b"
+    },
+    {
+      "plant_code": 66540,
+      "name": "Shamrock Wind",
+      "screen": {
+        "plant_code": 66540,
+        "name": "Shamrock Wind",
+        "distinctive_name": "shamrock",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "46460fde-70b6-54f2-91ea-7bf1b597e0ee"
+    },
+    {
+      "plant_code": 66560,
+      "name": "Wheatridge East Wind",
+      "screen": {
+        "plant_code": 66560,
+        "name": "Wheatridge East Wind",
+        "distinctive_name": "wheatridge east",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64057,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66568,
+      "name": "Shady Oaks Wind 2",
+      "screen": {
+        "plant_code": 66568,
+        "name": "Shady Oaks Wind 2",
+        "distinctive_name": "shady oaks 2",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "d77149f6-2149-54bb-aeac-eee5d48ce173",
+            "matched_name": "Shady Oaks Wind Farm",
+            "ratio": 0.9091
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "9a24648b-1d99-590c-a491-fd750425f9c0",
+            "distance_km": 5.9452
+          },
+          {
+            "record_id": "d77149f6-2149-54bb-aeac-eee5d48ce173",
+            "distance_km": 0.0428
+          },
+          {
+            "record_id": "ec6c9660-6c67-5cd6-b6bb-62fe45a2593f",
+            "distance_km": 9.7517
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66668,
+      "name": "Chickasaw Wind Farm",
+      "screen": {
+        "plant_code": 66668,
+        "name": "Chickasaw Wind Farm",
+        "distinctive_name": "chickasaw",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "bfb9c895-5631-50fc-bbd5-8c394b962c5d"
+    },
+    {
+      "plant_code": 66811,
+      "name": "Clearwater Wind III",
+      "screen": {
+        "plant_code": 66811,
+        "name": "Clearwater Wind III",
+        "distinctive_name": "clearwater iii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 65577,
+            "similar_name": true,
+            "nearby": false
+          },
+          {
+            "plant_code": 66184,
+            "similar_name": true,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66861,
+      "name": "Indiana Crossroads Wind Farm II",
+      "screen": {
+        "plant_code": 66861,
+        "name": "Indiana Crossroads Wind Farm II",
+        "distinctive_name": "indiana crossroads ii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "1da97908-821c-584f-9ff6-6fd27e7afa3f",
+            "distance_km": 7.2531
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 64230,
+            "similar_name": true,
+            "nearby": false
+          },
+          {
+            "plant_code": 69079,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66902,
+      "name": "Roadrunner Wind Farm",
+      "screen": {
+        "plant_code": 66902,
+        "name": "Roadrunner Wind Farm",
+        "distinctive_name": "roadrunner",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 67425,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 66919,
+      "name": "La Casa Wind",
+      "screen": {
+        "plant_code": 66919,
+        "name": "La Casa Wind",
+        "distinctive_name": "la casa",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "6a13edcc-f8ca-512f-a79f-650f09e0f3f2"
+    },
+    {
+      "plant_code": 66952,
+      "name": "Prescott Wind Farm",
+      "screen": {
+        "plant_code": 66952,
+        "name": "Prescott Wind Farm",
+        "distinctive_name": "prescott",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "6721f858-aef7-55a9-bfbf-a78fedd2d392"
+    },
+    {
+      "plant_code": 67002,
+      "name": "North Bend Wind Project, LLC",
+      "screen": {
+        "plant_code": 67002,
+        "name": "North Bend Wind Project, LLC",
+        "distinctive_name": "north bend",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67026,
+      "name": "Roundhouse Renewable Energy II",
+      "screen": {
+        "plant_code": 67026,
+        "name": "Roundhouse Renewable Energy II",
+        "distinctive_name": "roundhouse ii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "22f19675-07c3-5092-ba82-11e6084262cf",
+            "distance_km": 9.4546
+          },
+          {
+            "record_id": "77af0ad8-0288-58ce-ae58-9de375eb963c",
+            "distance_km": 8.6785
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67095,
+      "name": "Montgomery Ranch Wind Farm, LLC",
+      "screen": {
+        "plant_code": 67095,
+        "name": "Montgomery Ranch Wind Farm, LLC",
+        "distinctive_name": "montgomery ranch",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "57c80fdb-0154-5472-8909-3c00b5230cf1"
+    },
+    {
+      "plant_code": 67160,
+      "name": "Springfield Wind",
+      "screen": {
+        "plant_code": 67160,
+        "name": "Springfield Wind",
+        "distinctive_name": "springfield",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "714088e8-b686-5640-9c1f-a92a4d6e3962"
+    },
+    {
+      "plant_code": 67176,
+      "name": "Chevelon Butte Phase 2",
+      "screen": {
+        "plant_code": 67176,
+        "name": "Chevelon Butte Phase 2",
+        "distinctive_name": "chevelon butte phase 2",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 66001,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67193,
+      "name": "Anticline Wind",
+      "screen": {
+        "plant_code": 67193,
+        "name": "Anticline Wind",
+        "distinctive_name": "anticline",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "768d13af-ccf2-58db-8f6d-ebbcd4aa6aee"
+    },
+    {
+      "plant_code": 67289,
+      "name": "Cedar Springs Wind IV",
+      "screen": {
+        "plant_code": 67289,
+        "name": "Cedar Springs Wind IV",
+        "distinctive_name": "cedar springs iv",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67425,
+      "name": "Century Oak Wind Project, LLC",
+      "screen": {
+        "plant_code": 67425,
+        "name": "Century Oak Wind Project, LLC",
+        "distinctive_name": "century oak",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 66902,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67443,
+      "name": "Lane City Wind",
+      "screen": {
+        "plant_code": 67443,
+        "name": "Lane City Wind",
+        "distinctive_name": "lane city",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "33f6d2cb-3694-5179-a290-ee34aa9016a5"
+    },
+    {
+      "plant_code": 67502,
+      "name": "Oliver Wind IV",
+      "screen": {
+        "plant_code": 67502,
+        "name": "Oliver Wind IV",
+        "distinctive_name": "oliver iv",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "c6b73a11-b775-50fb-b4cc-e26aba1cbfea",
+            "matched_name": "Oliver Wind III  LLC",
+            "ratio": 0.8421
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67601,
+      "name": "Diversion Wind Energy LLC",
+      "screen": {
+        "plant_code": 67601,
+        "name": "Diversion Wind Energy LLC",
+        "distinctive_name": "diversion",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "ba43bea6-7420-5168-b391-00b4a061012d"
+    },
+    {
+      "plant_code": 67700,
+      "name": "Peyton Creek Wind Farm II",
+      "screen": {
+        "plant_code": 67700,
+        "name": "Peyton Creek Wind Farm II",
+        "distinctive_name": "peyton creek ii",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67722,
+      "name": "WPWP",
+      "screen": {
+        "plant_code": 67722,
+        "name": "WPWP",
+        "distinctive_name": "wpwp",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67763,
+      "name": "Hart Wind",
+      "screen": {
+        "plant_code": 67763,
+        "name": "Hart Wind",
+        "distinctive_name": "hart",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "743d524a-d0eb-595b-9e72-1d46b78bdcca"
+    },
+    {
+      "plant_code": 67769,
+      "name": "Rock Creek Wind",
+      "screen": {
+        "plant_code": 67769,
+        "name": "Rock Creek Wind",
+        "distinctive_name": "rock creek",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "eb47ceae-2133-5277-a446-9844413ab2a1",
+            "matched_name": "Rock Creek Wind Project",
+            "ratio": 1.0
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67847,
+      "name": "Moscow",
+      "screen": {
+        "plant_code": 67847,
+        "name": "Moscow",
+        "distinctive_name": "moscow",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "02f1f607-2f73-5157-b25c-ba946fefb037",
+            "distance_km": 9.6253
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67875,
+      "name": "Monte Cristo 1",
+      "screen": {
+        "plant_code": 67875,
+        "name": "Monte Cristo 1",
+        "distinctive_name": "monte cristo 1",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67910,
+      "name": "Timbermill Wind, LLC",
+      "screen": {
+        "plant_code": 67910,
+        "name": "Timbermill Wind, LLC",
+        "distinctive_name": "timbermill",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "a8739e30-9b8b-5105-bb13-557557f2fe45"
+    },
+    {
+      "plant_code": 67916,
+      "name": "Foote Creek Rim",
+      "screen": {
+        "plant_code": 67916,
+        "name": "Foote Creek Rim",
+        "distinctive_name": "foote creek rim",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "59467b93-61a6-553e-b489-8f77fa151d88",
+            "matched_name": "Foote Creek III",
+            "ratio": 0.8667
+          },
+          {
+            "record_id": "a71286d3-82bf-5f4c-8dda-f3d4d7422231",
+            "matched_name": "Foote Creek IV",
+            "ratio": 0.8966
+          },
+          {
+            "record_id": "a81bd899-0a4e-5b65-82bb-8c952e8a687e",
+            "matched_name": "Foote Creek II",
+            "ratio": 0.8966
+          },
+          {
+            "record_id": "d93a8ef6-2020-5f90-9ce4-13df314367fc",
+            "matched_name": "Foote Creek I",
+            "ratio": 0.9286
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "59467b93-61a6-553e-b489-8f77fa151d88",
+            "distance_km": 4.5033
+          },
+          {
+            "record_id": "a71286d3-82bf-5f4c-8dda-f3d4d7422231",
+            "distance_km": 5.4096
+          },
+          {
+            "record_id": "a81bd899-0a4e-5b65-82bb-8c952e8a687e",
+            "distance_km": 3.399
+          },
+          {
+            "record_id": "d93a8ef6-2020-5f90-9ce4-13df314367fc",
+            "distance_km": 0.0
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67959,
+      "name": "Crossover Wind",
+      "screen": {
+        "plant_code": 67959,
+        "name": "Crossover Wind",
+        "distinctive_name": "crossover",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "8b62d05e-f4a2-5931-8599-d9a9de0c207a"
+    },
+    {
+      "plant_code": 67960,
+      "name": "Willow Creek Wind (OK)",
+      "screen": {
+        "plant_code": 67960,
+        "name": "Willow Creek Wind (OK)",
+        "distinctive_name": "willow creek ok",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "8c2784bf-b8b6-5766-971d-7d4ba98e7109",
+            "matched_name": "Willow Creek Energy Center",
+            "ratio": 0.8889
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 67962,
+      "name": "Dans Mountain",
+      "screen": {
+        "plant_code": 67962,
+        "name": "Dans Mountain",
+        "distinctive_name": "dans mountain",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "b017cec9-d85c-5027-a90a-984cffb3582c"
+    },
+    {
+      "plant_code": 68182,
+      "name": "Bowman Wind",
+      "screen": {
+        "plant_code": 68182,
+        "name": "Bowman Wind",
+        "distinctive_name": "bowman",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "9223c782-b70d-50d2-a2f5-01ae41e0c274"
+    },
+    {
+      "plant_code": 68185,
+      "name": "Downeast Wind",
+      "screen": {
+        "plant_code": 68185,
+        "name": "Downeast Wind",
+        "distinctive_name": "downeast",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "83da6c8e-d225-5479-9e51-36a759d75807"
+    },
+    {
+      "plant_code": 68193,
+      "name": "Prosperity Wind",
+      "screen": {
+        "plant_code": 68193,
+        "name": "Prosperity Wind",
+        "distinctive_name": "prosperity",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "c99f8334-3c1b-558d-b102-d32211373d6f"
+    },
+    {
+      "plant_code": 68222,
+      "name": "Flat Ridge 4",
+      "screen": {
+        "plant_code": 68222,
+        "name": "Flat Ridge 4",
+        "distinctive_name": "flat ridge 4",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "2dfd32f0-e296-557d-a450-e1eed8c3e8d4",
+            "matched_name": "Flat Ridge Wind Farm",
+            "ratio": 0.9091
+          },
+          {
+            "record_id": "7a95480b-8563-5cda-a3b7-22ba705f138d",
+            "matched_name": "Flat Ridge Wind Energy LLC",
+            "ratio": 0.9091
+          },
+          {
+            "record_id": "baa39456-ac2a-5c66-b0d9-d35d1dd87246",
+            "matched_name": "Flat Ridge 2 Wind Energy LLC",
+            "ratio": 0.9167
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64407,
+            "similar_name": true,
+            "nearby": false
+          },
+          {
+            "plant_code": 68590,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 68590,
+      "name": "Flat Ridge 5",
+      "screen": {
+        "plant_code": 68590,
+        "name": "Flat Ridge 5",
+        "distinctive_name": "flat ridge 5",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "2dfd32f0-e296-557d-a450-e1eed8c3e8d4",
+            "matched_name": "Flat Ridge Wind Farm",
+            "ratio": 0.9091
+          },
+          {
+            "record_id": "7a95480b-8563-5cda-a3b7-22ba705f138d",
+            "matched_name": "Flat Ridge Wind Energy LLC",
+            "ratio": 0.9091
+          },
+          {
+            "record_id": "baa39456-ac2a-5c66-b0d9-d35d1dd87246",
+            "matched_name": "Flat Ridge 2 Wind Energy LLC",
+            "ratio": 0.9167
+          }
+        ],
+        "nearby_projects": [],
+        "cohort_peers": [
+          {
+            "plant_code": 64407,
+            "similar_name": true,
+            "nearby": false
+          },
+          {
+            "plant_code": 68222,
+            "similar_name": true,
+            "nearby": false
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": true,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 68844,
+      "name": "CalPortland Company Mojave Wind",
+      "screen": {
+        "plant_code": 68844,
+        "name": "CalPortland Company Mojave Wind",
+        "distinctive_name": "calportland mojave",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "0ea6f4db-255f-5e5d-a57f-bf24c8a05f50",
+            "distance_km": 6.9742
+          },
+          {
+            "record_id": "16e4dd17-3a94-523d-870b-1c77a5235497",
+            "distance_km": 5.056
+          },
+          {
+            "record_id": "1a934450-2897-585b-80ce-7308a285bdc4",
+            "distance_km": 2.4856
+          },
+          {
+            "record_id": "276c536c-4124-5bb9-8368-63784a7c11a6",
+            "distance_km": 7.2445
+          },
+          {
+            "record_id": "2f1a9d3c-3fc5-50d0-b666-94dd9736ac98",
+            "distance_km": 5.6438
+          },
+          {
+            "record_id": "3bb6cada-d5a6-5c85-893c-35ab977fd3cb",
+            "distance_km": 9.413
+          },
+          {
+            "record_id": "437aeb8a-34d8-5415-9bba-eafa18d51053",
+            "distance_km": 9.5852
+          },
+          {
+            "record_id": "44fe5c41-79ee-5f72-b342-5321e497012a",
+            "distance_km": 8.0446
+          },
+          {
+            "record_id": "45ed3876-859b-5379-9eb4-19bda6287475",
+            "distance_km": 9.4494
+          },
+          {
+            "record_id": "53ce8220-6eed-594f-bd79-29cec547698f",
+            "distance_km": 7.7173
+          },
+          {
+            "record_id": "555b7195-0366-504b-b9ac-dbf9f291a514",
+            "distance_km": 7.39
+          },
+          {
+            "record_id": "5d7932cb-aef4-5a90-b6a1-e0db614bb424",
+            "distance_km": 5.8576
+          },
+          {
+            "record_id": "5da082a4-2917-5896-a667-4aaaea8db3db",
+            "distance_km": 5.3373
+          },
+          {
+            "record_id": "67cd883f-3903-5eb4-a98d-56ed415c345b",
+            "distance_km": 5.2867
+          },
+          {
+            "record_id": "773378f5-8e0b-55b0-8618-4a748bd4c2fe",
+            "distance_km": 9.2193
+          },
+          {
+            "record_id": "7d6633f1-deeb-5750-b4b8-fac8ab6fc512",
+            "distance_km": 4.2872
+          },
+          {
+            "record_id": "7e86531b-4a76-5a2d-afa2-56a140c623e1",
+            "distance_km": 3.8063
+          },
+          {
+            "record_id": "810487cc-d6ab-5aaa-b84a-1876c4806927",
+            "distance_km": 5.3551
+          },
+          {
+            "record_id": "82d6fb8c-eeb0-59b7-a4af-0b670cb19122",
+            "distance_km": 4.7879
+          },
+          {
+            "record_id": "841cd8f2-8dfc-5c13-a761-91482caf285e",
+            "distance_km": 2.4415
+          },
+          {
+            "record_id": "88cb5876-24be-5773-93ab-22e090691a04",
+            "distance_km": 9.4928
+          },
+          {
+            "record_id": "8a3fe900-e198-5935-9bce-5970b1ad9615",
+            "distance_km": 1.2453
+          },
+          {
+            "record_id": "8e22e8e4-2e89-5a45-82b3-18e27e2696c5",
+            "distance_km": 4.8655
+          },
+          {
+            "record_id": "90747aa8-acd6-5b15-bd02-4c6a5d61b2ec",
+            "distance_km": 4.2995
+          },
+          {
+            "record_id": "91b1f919-a492-5da5-94a4-473e928acb9f",
+            "distance_km": 5.7931
+          },
+          {
+            "record_id": "9d4c238c-e63f-5c33-8f42-6f37138f0b94",
+            "distance_km": 9.6351
+          },
+          {
+            "record_id": "9efbadce-4e33-5fe9-be95-db6e0a6b82ba",
+            "distance_km": 4.3074
+          },
+          {
+            "record_id": "a1c14733-3ed2-5a59-a1de-b1dd4969ebad",
+            "distance_km": 7.2445
+          },
+          {
+            "record_id": "a1dc2005-dc8e-53ac-a83d-58bf4ca757ef",
+            "distance_km": 7.6982
+          },
+          {
+            "record_id": "a3b5afc7-628b-5954-bbda-52bbacd743ca",
+            "distance_km": 5.915
+          },
+          {
+            "record_id": "abdd45dd-7779-5279-85fa-75856a6ebce1",
+            "distance_km": 9.4273
+          },
+          {
+            "record_id": "af2046a0-ffd2-53af-83f7-c11270d0fb9f",
+            "distance_km": 5.5779
+          },
+          {
+            "record_id": "b91234ae-0664-5647-ab0f-cfc5fd2ecd8f",
+            "distance_km": 8.2193
+          },
+          {
+            "record_id": "ba33cef2-6308-5c97-a268-861ee853edf3",
+            "distance_km": 4.3406
+          },
+          {
+            "record_id": "badb4fb2-9536-5335-a51f-91328391a257",
+            "distance_km": 7.8061
+          },
+          {
+            "record_id": "bede92b0-e9ff-5859-adf9-f2c6a66a77f3",
+            "distance_km": 2.4267
+          },
+          {
+            "record_id": "c1c093de-bd62-59a3-a89e-6b933b790d3c",
+            "distance_km": 5.9598
+          },
+          {
+            "record_id": "c33d611d-0779-51d1-aa9c-f40ce429eaee",
+            "distance_km": 9.413
+          },
+          {
+            "record_id": "c5981363-371e-551b-a4bf-2494ba6585ae",
+            "distance_km": 3.3709
+          },
+          {
+            "record_id": "c9d35150-3c5a-5d4e-8249-73a6aa27d14a",
+            "distance_km": 5.1437
+          },
+          {
+            "record_id": "df28e192-48dd-535d-9991-9ffbf0e876e0",
+            "distance_km": 4.2872
+          },
+          {
+            "record_id": "f2f6116f-24a7-5847-aec7-9c5df7e08b58",
+            "distance_km": 7.712
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 68872,
+      "name": "Shenandoah Hills Wind Farm",
+      "screen": {
+        "plant_code": 68872,
+        "name": "Shenandoah Hills Wind Farm",
+        "distinctive_name": "shenandoah hills",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "f4cc6435-24ec-5cb0-82f6-9cc4806831e8"
+    },
+    {
+      "plant_code": 69003,
+      "name": "Windshare LLC",
+      "screen": {
+        "plant_code": 69003,
+        "name": "Windshare LLC",
+        "distinctive_name": "windshare",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "2c1c9181-d542-5b4f-b1d9-388c228fb5b1",
+            "distance_km": 5.3406
+          },
+          {
+            "record_id": "39b64562-fcf3-527d-a1e1-be7780d52e01",
+            "distance_km": 9.4468
+          },
+          {
+            "record_id": "4b3b581a-5e45-57ff-86ff-ea340c7b571a",
+            "distance_km": 7.6542
+          },
+          {
+            "record_id": "5ff677d3-a58f-5ffc-8e80-54aea9007e0c",
+            "distance_km": 7.1659
+          },
+          {
+            "record_id": "6aa5c7c4-a7fb-547b-b120-00819f0ae334",
+            "distance_km": 7.2894
+          },
+          {
+            "record_id": "87e36743-e82d-5343-93f5-4038a0e11a03",
+            "distance_km": 8.4281
+          },
+          {
+            "record_id": "d5040eaa-3f75-591f-a167-055af644b7bd",
+            "distance_km": 4.8605
+          },
+          {
+            "record_id": "d6850fcc-a442-59f8-a049-8cafe268cd1d",
+            "distance_km": 3.6332
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 65713,
+            "similar_name": false,
+            "nearby": true
+          },
+          {
+            "plant_code": 65714,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 69079,
+      "name": "Carpenter Wind Farm LLC",
+      "screen": {
+        "plant_code": 69079,
+        "name": "Carpenter Wind Farm LLC",
+        "distinctive_name": "carpenter",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [
+          {
+            "record_id": "22a0b94b-d3bd-54ed-813d-c98650bc8814",
+            "distance_km": 8.4503
+          }
+        ],
+        "cohort_peers": [
+          {
+            "plant_code": 66861,
+            "similar_name": false,
+            "nearby": true
+          }
+        ],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    },
+    {
+      "plant_code": 69224,
+      "name": "Wagon Wheel Wind",
+      "screen": {
+        "plant_code": 69224,
+        "name": "Wagon Wheel Wind",
+        "distinctive_name": "wagon wheel",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "b6091f30-d282-51ea-ae67-1a60e551b582"
+    },
+    {
+      "plant_code": 69225,
+      "name": "Top Hat Wind",
+      "screen": {
+        "plant_code": 69225,
+        "name": "Top Hat Wind",
+        "distinctive_name": "top hat",
+        "existing_registry_ids": [],
+        "name_matches": [],
+        "nearby_projects": [],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "addition",
+      "reason": "Reviewed distinct EIA registry identity; no registry/name/alias/10km/cohort signal. Farm extent and lifecycle remain unresolved; no capacity totals.",
+      "record_id": "a0931c14-26c7-54db-8e05-b9307d261bbc"
+    },
+    {
+      "plant_code": 69327,
+      "name": "Salt Creek Wind",
+      "screen": {
+        "plant_code": 69327,
+        "name": "Salt Creek Wind",
+        "distinctive_name": "salt creek",
+        "existing_registry_ids": [],
+        "name_matches": [
+          {
+            "record_id": "31b215e5-dadf-5bd2-83f9-84f8b2e018d6",
+            "matched_name": "Lost Creek Wind Energy Facility",
+            "ratio": 0.8
+          },
+          {
+            "record_id": "cb06714b-f709-560a-867b-cdfbc876622d",
+            "matched_name": "Slate Creek Wind Project LLC",
+            "ratio": 0.8571
+          }
+        ],
+        "nearby_projects": [
+          {
+            "record_id": "945033ff-1dab-55ac-b678-65f694995ee9",
+            "distance_km": 5.684
+          }
+        ],
+        "cohort_peers": [],
+        "missing_coordinate": false,
+        "phase_or_direction_flag": false,
+        "empty_distinctive_name": false,
+        "decision": "manual_review_required"
+      },
+      "decision": "deferred_identity",
+      "reason": "Identity, phase, abbreviation or nearby scope still unresolved; screening is not proof of duplication."
+    }
+  ],
+  "residual_scan": {
+    "sheet": "Operable",
+    "source_id": "eia860_2025",
+    "sha256": "12e86fd1c89abd1b787862e9c65121d31795ff175c4347c98a2c339f2b52826d",
+    "all_rows": 1573,
+    "minimum_code": 1,
+    "maximum_code": 69327,
+    "codes_ge_70000": 0,
+    "complete_scan": "Previously processed1–69999 plus complete residual>=70000 now exhausted; no repeated empty partitions"
+  }
+}

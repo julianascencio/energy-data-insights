@@ -41,6 +41,23 @@ for row in rows:
     ext = json.loads(row.get("extensions_json") or "{}")
     if "capacity_by_aemo_status" in ext:
         print(row["name"], ext["capacity_by_aemo_status"], row["aggregation_role"])
+# Registry unit evidence does not resolve farm boundaries or missing farm MW.
+eia_projects = [
+    row
+    for row in rows
+    if row["entity_type"] == "projects"
+    and json.loads(row.get("extensions_json") or "{}").get("eia_annual_wind_partitions")
+]
+print(
+    "EIA evidence: project counts, not capacity totals",
+    {
+        "projects": len(eia_projects),
+        "unresolved_scope": sum(row["aggregation_role"] == "unresolved" for row in eia_projects),
+        "unknown_installed_mw": sum(
+            row.get("installed_capacity_mw") is None for row in eia_projects
+        ),
+    },
+)
 print("Published turbine power ratings require their measurement conditions")
 print(
     equipment.loc[
@@ -72,6 +89,31 @@ for row in rows:
     for update in json.loads(row.get("extensions_json") or "{}").get("oem_product_updates", []):
         print(row["name"], update["published_at"], update["operating_modes"])
         print(update["tower_configurations"], update["conditions"])
+
+# Retrospective prototype and production facts retain dates and exact model links.
+print("OEM historical observations: not current configuration or fleet retirement")
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "oem_historical_observations", []
+    ):
+        print(row["model"], observation["published_at"], observation["boundary"])
+        print(observation["facts"])
+
+# Reference yields are hypothetical five-year energy, never farm generation.
+reference_counts = {}
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "reference_yield_observations", []
+    ):
+        for entry in observation["rows"]:
+            key = (observation["reference_site"], entry["withdrawn"])
+            reference_counts[key] = reference_counts.get(key, 0) + 1
+print("FGW observation counts by reference site and withdrawn status:")
+print(dict(sorted(reference_counts.items())))
+print("Reference yields retain five-year kWh, hub/power settings and source notes.")
+print(
+    "Density, operating mode and gross/net boundary are unknown; no CF or performance comparison."
+)
 
 # Annual EIA unit states do not reconcile whole-farm repowering or hybrid scope.
 print("EIA 2025 dated unit evidence: farm status/capacity exclusions remain unchanged")

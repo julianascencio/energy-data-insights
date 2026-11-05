@@ -246,6 +246,36 @@ export function windOemUpdateSummary(rows) {
   return result;
 }
 
+// Registry evidence completeness is independent of farm capacity and overlap scope.
+export function windEiaScopeSummary(rows) {
+  const result = {projects: 0, withoutEvidence: 0, unresolvedScopes: 0, unknownInstalledCapacity: 0};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    if (!windEiaSummary([row]).projects) { result.withoutEvidence++; continue; }
+    result.projects++;
+    if (row.aggregation_role === "unresolved") result.unresolvedScopes++;
+    if (row.installed_capacity_mw == null) result.unknownInstalledCapacity++;
+  }
+  return result;
+}
+
+// History is a dated observation, not the currently selected product configuration.
+export function windOemHistorySummary(rows) {
+  const result = {models: 0, observations: 0, withoutHistory: 0, datedDiscontinuations: 0};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const history = Array.isArray(ext?.oem_historical_observations) ? ext.oem_historical_observations : [];
+    const valid = history.filter(o => o?.source_id && o.locator && o.boundary &&
+      /^\d{4}-\d{2}-\d{2}$/.test(o.published_at || "") &&
+      Array.isArray(row.sources) && row.sources.includes(o.source_id));
+    if (valid.length) { result.models++; result.observations += valid.length; }
+    else result.withoutHistory++;
+    result.datedDiscontinuations += valid.filter(o => o.facts?.production_status_observation === "discontinued" &&
+      /^\d{4}-\d{2}-\d{2}$/.test(o.facts.status_as_of || "")).length;
+  }
+  return result;
+}
+
 export function hydroCapacity(rows, field) {
   if (!["installed_capacity_mw", "operational_capacity_mw", "planned_capacity_mw", "pumping_capacity_mw", "historical_capacity_mw"].includes(field)) throw new Error("Choose an explicit hydro capacity");
   const selected = rows.filter(r => ["independent", "child"].includes(r.aggregation_role) && !r.overlap_group);
@@ -255,6 +285,32 @@ export function hydroCapacity(rows, field) {
     const key = `${row.status}/${row.technology}${field === "historical_capacity_mw" ? `@${row.capacity_reference_year}` : ""}`;
     const item = result.byStatus[key] ||= {reported_mw: 0, records: 0};
     item.reported_mw += row[field]; item.records += 1;
+  }
+  return result;
+}
+
+// Count published reference observations; never sum yields across hubs or sites.
+export function windReferenceYieldSummary(rows) {
+  const result = {models: 0, observations: 0, withdrawn: 0, withoutReference: 0, unknownConditions: 0, bySite: {}};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const sets = Array.isArray(ext?.reference_yield_observations) ? ext.reference_yield_observations : [];
+    let count = 0;
+    for (const observation of sets) {
+      if (!observation?.source_id || !row.sources?.includes(observation.source_id) ||
+          !row.sources?.includes(observation.period_source_id) || observation.period_years !== 5 ||
+          observation.quantity_kind !== "modeled reference energy" || !observation.reference_site ||
+          !Array.isArray(observation.rows)) continue;
+      for (const entry of observation.rows) {
+        if (!entry?.locator || !entry.note || !Number.isFinite(entry.reference_yield_kwh) || entry.reference_yield_kwh <= 0) continue;
+        count++; result.observations++;
+        result.bySite[observation.reference_site] = (result.bySite[observation.reference_site] || 0) + 1;
+        if (entry.withdrawn === true) result.withdrawn++;
+        if (entry.operating_mode == null || observation.reference_conditions?.air_density_kg_m3 == null) result.unknownConditions++;
+      }
+    }
+    if (count) result.models++; else result.withoutReference++;
   }
   return result;
 }

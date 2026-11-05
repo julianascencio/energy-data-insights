@@ -1,34 +1,60 @@
 {
-  "batch": "2026-11-05-0735",
-  "iteration_parent": "b8f26c43be4c9c1376a89597e49a1254632995e7",
+  "batch": "2026-11-05-0945",
+  "iteration_parent": "1786ce8915247ffdc0fcd2eaff65b2a830fdc2c9",
+  "reconciled_main": "861ba7389ff14cae376056a9b37b7ce3d19452cf",
   "local": {
-    "tests": "18 EIA adapter tests passed",
-    "viewer": "22 Node viewer tests and syntax passed; shared viewer unchanged",
-    "catalogue": "22181 valid;22144 unchanged;37 enriched projects; all scalar/ID/creation fields and six capacity summaries preserved",
-    "source_registry": "371 prior entries unchanged; two entries added",
-    "replay": "Original workbook hashes and same-source replay passed",
-    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD",
-    "quality": "Ruff, format971files, ty and citations passed",
-    "example": "Offline Wind example passed against expanded isolated catalogue"
+    "tests": "257 Wind/Hydropower tests passed on Python3.13;12 new reference-yield boundary tests also passed separately",
+    "viewer": "26Node shared-viewer/Hydropower tests passed;both shared-viewer JS syntax checks passed",
+    "catalogue": "22346 valid records;22254 of22278 preceding records unchanged;52new projects16new equipment24enriched equipment;all prior scalar facts,IDs,creation times,six capacity totals and380source entries preserved",
+    "snapshots": "Two final fresh seven-file snapshots byte-identical;all columns typed andZSTD;project checkpoint also built twice",
+    "quality": "Repository-wide Ruff,format1033files,ty with explicit Python3.13,citations and repository hygiene passed",
+    "source_registry": "385sources;four new FGW originals and one OregonPUC PDF checksummed;EIA original workbook hashes reverified",
+    "replay": "146saved EIA candidates match original workbook parser;52canonical project rows replay exactly;both complete FGW transcriptions replay without changes or timestamp churn",
+    "packages": "All3packages built wheel andsdist after final adapter guard",
+    "docs": "Strict Sphinx -W --keep-going passed with Wind-only gallery selection;1of1selected example executed;incremental rebuild also passed",
+    "docs_links": "639HTML pages;local links andassets resolve",
+    "main_reconciliation": "Hydropower main incorporated; both Wind andHydro shared-viewer functions retained;unrelated catalogues match main"
   },
   "snapshot_sha256": {
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
-    "manifest.json": "a48c66d6b2873f306b4478fcd543025c0bf603f62ef3565a50d7cc493902e8ef",
-    "projects.parquet": "fdd71364546a38925f71a126acd15501c0cd57ca98de89859f7f2de8b07fdca8",
+    "equipment.parquet": "982fa60f64ab28e5d7ca8fbfca6e77c7757018e8e50aea1cfef666e3aab8536c",
+    "manifest.json": "5d8f683038a022c9c0ad3997427c0d6d573cdb778f7e9fa2b1cce80f602e4db3",
+    "projects.parquet": "20bdeae1734b3ae8a69a5a62c2b1f7db2e13372e15f5a09d377f5ad9dccce858",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "sources.json": "65caa33805a867b42650298f01c570ff13ce527cb92ac9b8c85b6a2d6515e595",
+    "sources.json": "73b682764c31bf6f8570e69cf8e3abc8a1bfb345750048398a040fce74e835de",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
   "remote_ci": {
-    "prior_head": "b8f26c43be4c9c1376a89597e49a1254632995e7",
-    "prior_result": "Python and Documentation passed",
-    "new_head": "Not yet published"
+    "previous_head": "1786ce8915247ffdc0fcd2eaff65b2a830fdc2c9",
+    "previous_head_result": "Python3.12,Python3.13 andDocumentation passed",
+    "project_checkpoint": "50f1acd5349abff2cc315ddb5a1896b5e43df35c",
+    "project_checkpoint_result": "Python3.12,Python3.13 andDocumentation passed",
+    "current_update": "Equipment continuation not yet published when report built; query live PR158 head"
   },
   "not_executed": [
     "Full local Python suite",
-    "Strict local docs/full gallery",
-    "Browser",
-    "Package rebuild; no package code changed"
+    "Full local executable gallery",
+    "Browser interaction"
+  ],
+  "reviewed_open_prs": [
+    154,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164
+  ],
+  "publication_preflight": {
+    "main": "861ba7389ff14cae376056a9b37b7ce3d19452cf",
+    "expected_branch_head": "50f1acd5349abff2cc315ddb5a1896b5e43df35c",
+    "changes": "PR154merged;PR159advanced andnewPR164reviewed;no overlapping Wind catalogue writes"
+  },
+  "resolved_attempts": [
+    "Five long string lines failed first Ruff check;split without changing values,then all checks passed",
+    "Two shared-viewer merge conflicts resolved by preserving Wind functions andHydro capacity function;viewer tests passed",
+    "Single-branch fetch did not update remote-tracking ref;explicit refspec fetch and tree verification used before synchronizing local head"
   ]
 }
