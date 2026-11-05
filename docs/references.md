@@ -7543,3 +7543,19 @@ Windey Energy Technology Group (2026). **Windey first turbine start-up in Saudi 
 **Role:** data_source. Exact named OEM model and explicit rating only; detailed geometry/configuration unknown; no independent performance validation.
 
 **Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### epe_siga_ceara_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Ceará: complete103-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Ceará full wind partition103IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### windey_english_brochure_202206
+
+Zhejiang Windey Co., Ltd. (2022). **2022-6 English Windey product brochure: exact technical model tables**. [Source](https://windeyenergy.com/upload/file/20220922/246e06f0a47f697de96d2acd9536bee3.pdf)
+
+**Role:** data_source. Visually reviewed32exact columns onPDFpages7,8,12; brochure metadataJune2022, precise publication date unknown; not independently validated performance.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/oem_tables.py`, `docs/wind-catalogue.md`.

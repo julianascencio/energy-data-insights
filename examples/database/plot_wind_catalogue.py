@@ -732,3 +732,36 @@ if siga_observations:
         fontsize=9,
     )
     fig.tight_layout()
+
+# Exact table columns, with ranges plotted as options rather than installations.
+oem_columns = [
+    observation
+    for row in rows
+    if row["entity_type"] == "equipment"
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "oem_table_observations", []
+    )
+    if observation["source_id"] in row["sources"]
+]
+if oem_columns:
+    fig, ax = plt.subplots(figsize=(9, 4))
+    for observation in oem_columns:
+        values = observation["values"]
+        diameter = values["rotor_diameter_m"]
+        low, high = values["hub_height_range_m"]
+        ax.plot([diameter, diameter], [low, high], color="#3d718e", alpha=0.5)
+        ax.scatter([diameter, diameter], [low, high], s=12, color="#3d718e")
+    ax.set(
+        title="Windey 2022 selected exact-model tables: published hub options",
+        xlabel="Explicit rotor diameter (m)",
+        ylabel="Published hub-height option range (m)",
+    )
+    ax.text(
+        0,
+        -0.3,
+        "Selected 32 model columns; overlapping options are not installations. "
+        "Density and operating mode unknown; no performance comparison.",
+        transform=ax.transAxes,
+        fontsize=8,
+    )
+    fig.tight_layout()

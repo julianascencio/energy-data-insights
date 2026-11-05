@@ -17298,5 +17298,42 @@
     ],
     "note": "Exact named OEM model and explicit rating only; detailed geometry/configuration unknown; no independent performance validation.",
     "verified_at": "2026-11-05"
+  },
+  {
+    "id": "epe_siga_ceara_20260113",
+    "title": "EPE-hosted SIGA EOL Ceará: complete103-entry layer partition dated2026-01-13",
+    "authors": [
+      "Empresa de Pesquisa Energética",
+      "Agência Nacional de Energia Elétrica"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0",
+    "kind": "dataset",
+    "role": "data_source",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py",
+      "docs/wind-catalogue.md"
+    ],
+    "note": "Ceará full wind partition103IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.",
+    "verified_at": "2026-11-05"
+  },
+  {
+    "id": "windey_english_brochure_202206",
+    "title": "2022-6 English Windey product brochure: exact technical model tables",
+    "authors": [
+      "Zhejiang Windey Co., Ltd."
+    ],
+    "year": 2022,
+    "doi": null,
+    "url": "https://windeyenergy.com/upload/file/20220922/246e06f0a47f697de96d2acd9536bee3.pdf",
+    "kind": "report",
+    "role": "data_source",
+    "used_by": [
+      "data-retrieval/src/energy_data_retrieval/wind_catalogue/oem_tables.py",
+      "docs/wind-catalogue.md"
+    ],
+    "note": "Visually reviewed32exact columns onPDFpages7,8,12; brochure metadataJune2022, precise publication date unknown; not independently validated performance.",
+    "verified_at": "2026-11-05"
   }
 ]

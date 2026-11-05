@@ -427,3 +427,26 @@ export function windSigaSummary(rows) {
     .sort((a,b)=>JSON.stringify([a.state,a.date]).localeCompare(JSON.stringify([b.state,b.date])));
   return result;
 }
+
+// Historical table options remain observations, never installed configurations.
+export function windOemTableSummary(rows) {
+  const result = {models: 0, observations: 0, optionRanges: 0, withoutTables: 0, unknownConditions: 0};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext; try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const seen = new Set();
+    const observations = (Array.isArray(ext?.oem_table_observations) ? ext.oem_table_observations : []).filter(o => {
+      if (!o?.revision || !o.locator || !row.sources?.includes(o.source_id)) return false;
+      const key = `${o.source_id}:${o.locator}`;
+      if (seen.has(key)) return false;
+      seen.add(key); return true;
+    });
+    if (!observations.length) { result.withoutTables++; continue; }
+    result.models++;
+    for (const o of observations) {
+      result.observations++;
+      if (Array.isArray(o.values?.hub_height_range_m)) result.optionRanges++;
+      if (o.air_density_kg_m3 == null || o.operating_mode == null) result.unknownConditions++;
+    }
+  }
+  return result;
+}

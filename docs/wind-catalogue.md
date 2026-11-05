@@ -1090,3 +1090,17 @@ Sources: [EPE SIGA layer](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hos
 [Windey Saudi announcement](https://windeyenergy.com/en/news_show?id=210).
 Decisions and original-byte checksums are in
 `2026-11-05-1935-epe-review.json` and `2026-11-05-1935-oem-review.json`.
+
+The November 5 20:35 continuation reviews all 103 Ceará EPE wind entries,
+linking 53 existing identities and holding 50 for a historical/phase crosswalk.
+The dated categories do not change capacity eligibility. BA and RN partitions
+are already complete; the next complete EPE partition is RS.
+
+The Windey June 2022 English brochure contributes 31 exact models and one
+historical observation for the existing WD225-9000. PDF pages 7, 8 and 12
+(printed 09/10, 11/12 and 19/20) contain 32 explicit columns; pages 9–11 remain
+queued. The checksum-pinned `oem_tables` adapter consumes visually reviewed
+columns and rejects missing, reordered or duplicate identities. Generator RPM
+and converter kVA stay separate from rotor RPM and turbine kW. Temperature,
+cut-out and hub-height ranges remain options; the viewer and gallery expose
+these without claiming installed configurations or validated performance.

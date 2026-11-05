@@ -373,3 +373,12 @@ test("SIGA separates dated state coverage and deduplicates project counts", asyn
   assert.equal(result.categories.authorized_mw.zero,4);
   assert.equal(result.categories.inspected_mw.unknown,4);
 });
+
+import {windOemTableSummary} from "../../docs/_static/database-core.mjs";
+test("OEM tables retain option and unknown-condition counts without multiplying models", () => {
+  const observation = {source_id: "oem", revision: "2022", locator: "page7 col1", values: {hub_height_range_m: [65, 160]}};
+  const equipment = {entity_type: "equipment", equipment_category: "wind_turbine", sources: ["oem"], extensions_json: JSON.stringify({oem_table_observations: [observation, observation]})};
+  assert.deepEqual(windOemTableSummary([equipment, {...equipment, extensions_json: "{}"}, {...equipment, sources: []}]), {models: 1, observations: 1, optionRanges: 1, withoutTables: 2, unknownConditions: 1});
+  assert.equal(windOemTableSummary([{...equipment, entity_type: "projects"}]).observations, 0);
+  assert.equal(windOemTableSummary([{...equipment, extensions_json: "null"}]).withoutTables, 1);
+});

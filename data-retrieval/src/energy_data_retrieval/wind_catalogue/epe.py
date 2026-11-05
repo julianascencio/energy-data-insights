@@ -15,6 +15,7 @@ from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
 
 REFERENCE_IDS = (
     "epe_siga_bahia_20260113",
+    "epe_siga_ceara_20260113",
     "epe_siga_rio_grande_do_norte_20260113",
     "wri_brazil_identity",
 )

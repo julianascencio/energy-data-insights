@@ -1,24 +1,24 @@
 {
-  "batch": "2026-11-05-1935",
-  "iteration_parent": "600db672269079ab8a92224ad5de3cf80e8206bf",
+  "batch": "2026-11-05-2035",
+  "iteration_parent": "3bbb62098a615cc3458ebf1f5d4779a86fa6c9db",
   "local": {
-    "python": "403 focused Wind/Hydropower/reference tests passed after incorporating new main, including29 EPE tests",
-    "viewer": "32 Node viewer/Hydro tests passed",
-    "quality": "Ruff check; format1136 files; full repository ty with workspace interpreter; repository hygiene5682 files; citations; diff check passed",
-    "catalogue": "107projects enriched;3exact OEM models added with partial configurations;22332prior records unchanged;404prior sources unchanged,3added. Prior IDs,scalarfields andcreationtimestamps preserved; PV/BESS/DataCenter/Hydro catalogue paths unchanged.",
-    "aggregation": "All6capacity summaries,including eligibleMW,unknown andexcluded counts unchanged",
-    "snapshots": "Two fresh7file builds after new main are byte-identical and match earlier validated snapshots; allParquetcolumns ZSTD",
-    "docs": "Strict Wind-gallery Sphinx passed after incorporating new main; Documentation check passed: 690 HTML pages; local links and assets resolve.",
-    "visual": "Dated-state coverage chart rendered and inspected"
+    "python": "412 focused Wind/Hydropower/reference tests passed, including9 OEM table boundary tests",
+    "viewer": "33 Node viewer/Hydro tests passed",
+    "quality": "Ruff check; format1138files; full repository ty with workspace interpreter; hygiene; citations; diff check passed",
+    "catalogue": "53projects and1equipment enriched;31exact OEM models added.22388prior records and407prior sources unchanged;2sources added. All prior IDs,creationtimestamps andscalarfields preserved; PV/BESS/DataCenter/Hydro catalogue paths unchanged.",
+    "aggregation": "All6 capacity summaries including eligibleMW,unknown andexcluded counts unchanged",
+    "snapshots": "Two7file builds byte-identical; allParquetcolumns ZSTD",
+    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 692 HTML pages; local links and assets resolve.",
+    "visual": "OriginalPDFpages7,8,12 visually reviewed; new hub-option figure rendered and inspected"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "0d3e410eb9b9414b7bac1cd306c2d4ff9a6db467343b5141536c4903a3535c0a",
-    "projects.parquet": "68bb651bcb2f045b8f65dee1d4de9cfab8bd21c1f34226f0f02a0dadca86883b",
+    "manifest.json": "1bc30395e6add37054b27c53c995797a9eafe39287ccb75ab96b1ca47d97f7c8",
+    "projects.parquet": "ff9d478966f578db157c0a9eded85c18ae34ced1f39107603d633e09678acd8a",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "2e98901372bb5e74d40698cd54420b7fe15b1631be37e174e4087d5930c2a0f8",
+    "sources.json": "840f1f7a10f9d80320ec061ab5976d42aa92abaaf6ecb2e0dcc4849571f2a4ff",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "975c7dbf33c21cbd320739d6857c58a0bbe094dcdc9953fda3823ec3385f4d4d"
+    "equipment.parquet": "ede60db8da7a3168d62651da4bf99c03fe7ee29829c50a0a5cd6f147d98ea7d1"
   },
   "main_comparison": {
     "main": {
@@ -30,34 +30,32 @@
     "branch": {
       "projects": 8294,
       "turbines": 13657,
-      "equipment": 489,
+      "equipment": 520,
       "curves": 2
     },
     "added": {
-      "equipment": 3
+      "equipment": 34
     },
     "enriched": {
-      "projects": 107
+      "projects": 160
     },
     "main_manufacturers": 63,
     "branch_manufacturers": 64
   },
   "remote_ci": {
-    "previous_head": "c5f176b411a774a2d64da12221b6704ed5c49398",
+    "previous_head": "3bbb62098a615cc3458ebf1f5d4779a86fa6c9db",
     "previous_result": "Python3.12/3.13 and Documentation passed",
-    "current_result": "New PR pending after external merge; final result reported on PR"
+    "current_result": "Pending publication; final result reported on PR"
   },
   "resolved_attempts": [
-    "Ruff long chart annotation split before successful checks",
-    "Large original Windey image3 transfers timed out; completed via query-string download with checksum",
-    "HTML extraction attempted with unavailable system bs4; used standard-library HTMLParser",
-    "Immutable snapshot writer rejected reused output directory; fresh post-main directories built successfully"
+    "Initial scratch script path corrected before acquisition",
+    "OriginalPDF outlined text required visual review; complete7751200byte original obtained",
+    "Four overlength strings split before successful Ruff check"
   ],
   "not_executed": [
     "Full localPython suite",
     "Full localgallery",
     "Browser interaction",
     "Package builds"
-  ],
-  "publication_transition": "PR171 merged externally; changed batch cherry-picked onto current main without conflicts"
+  ]
 }
