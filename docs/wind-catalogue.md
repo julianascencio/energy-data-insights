@@ -971,3 +971,28 @@ The first600CEGs are now reviewed; no source release or lifecycle is silently
 advanced. Adjacent-partition tests ensure complete multi-unit CEG groups are
 neither split nor duplicated. The gallery also reports source-state coverage
 as snapshot counts, never as installed capacity.
+
+The final 482 CEGs (offsets 600–1081) add 175 project enrichments and retain 307
+identity holds. The pinned scan is now complete: 1,082 CEGs reviewed, 340 matched
+historical projects and 742 unresolved identities. Completion describes this
+source partition only. The resume auditor rejects gaps, overlaps, incomplete
+terminal groups and changes of source hash or retrieval version. The viewer and
+gallery count each project once per reported state across its observations;
+unknown geography remains visible and no current fleet distribution is implied.
+
+### Goldwind Americas 2.5 MW tables
+
+The complete English three-model and Spanish two-model tables support three
+explicit models: GW 100/2500, GW 109/2500 and GW 121/2500. Shared table cells are
+applied only to their printed columns. Spanish edition details remain nested,
+with their own provenance and units, because option/revision equivalence is not
+established. Hub choices are not expanded into additional models.
+
+Original reported swept areas and diameter-based checks are retained separately;
+uncertain area scalars remain null. GW 109/2500 also retains the English static
+10.5 m/s and Spanish unqualified 10.2 m/s observations with a null canonical rated
+wind speed. Neither brochure resolves the Korean certificate's 107.5 m rotor
+crosswalk. The five plotted power curves are graph-only, with density stated but
+mode unresolved; no numerical curve, compatibility claim or independently
+validated performance is inferred. See the 1735 OEM decision ledger and source
+registry for checksums, exact page/column locators and continuation tasks.

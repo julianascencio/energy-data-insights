@@ -629,3 +629,33 @@ print(
     "ONS state coverage: snapshot counts, not installed MW",
     dict(sorted(ons_state_evidence.items())),
 )
+
+# Deduplicate project/state pairs across unit rows and daily snapshots.
+ons_project_states = set()
+for row in rows:
+    if row["entity_type"] != "projects":
+        continue
+    for snapshot in json.loads(row.get("extensions_json") or "{}").get(
+        "ons_wind_unit_snapshots", []
+    ):
+        for unit in snapshot["units"]:
+            ons_project_states.add(
+                (row["record_id"], unit["original"].get("id_estado") or "Unknown")
+            )
+if ons_project_states:
+    state_counts = pd.Series([state for _, state in sorted(ons_project_states)]).value_counts()
+    fig, ax = plt.subplots(figsize=(8, 4))
+    state_counts.sort_index().plot.bar(ax=ax, color="#3d718e")
+    ax.set(
+        title="ONS project evidence by reported state",
+        ylabel="Projects with evidence",
+        xlabel="Reported state",
+    )
+    ax.text(
+        0,
+        -0.28,
+        "One project/state pair; no current fleet or capacity total inferred.",
+        transform=ax.transAxes,
+        fontsize=9,
+    )
+    fig.tight_layout()

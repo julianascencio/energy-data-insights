@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:35:00Z",
+  "updated_at": "2026-11-05T17:35:00Z",
   "branch": "research/wind-20261105-1235",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-1235.lock; acquire before any branch write",
   "queue": [
@@ -285,40 +285,24 @@
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
       "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-      "next_task": "Continue pinned ONS sorted CEG offsets600:700. First600 complete:165enriched435held across1510/1635ledgers. Do not rescan completed partitions or treat generating units as individual turbines.",
+      "next_task": "Pinned ONS1082CEGs complete340enriched742held. First20 held CEGs and original ledger links in1735 continuation; obtain explicit ANEEL/permit-to-WRI crosswalk. No same-release rescan or generating-unit-to-turbine inference.",
       "independent_source": {
         "source": "ONS daily capacity generator CSV",
         "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
         "total_cegs": 1082,
         "completed_offsets": [
           0,
-          600
+          1082
         ],
-        "next_offset": 600,
-        "next_limit": 100,
-        "next_cegs": [
-          "EOL.CV.PI.032368-3.01",
-          "EOL.CV.PI.032863-4.01",
-          "EOL.CV.PI.033005-1.01",
-          "EOL.CV.PI.033006-0.01",
-          "EOL.CV.PI.033007-8.01",
-          "EOL.CV.PI.033008-6.01",
-          "EOL.CV.PI.033009-4.01",
-          "EOL.CV.PI.033010-8.01",
-          "EOL.CV.PI.033011-6.01",
-          "EOL.CV.PI.033012-4.01",
-          "EOL.CV.PI.033013-2.01",
-          "EOL.CV.PI.033014-0.01",
-          "EOL.CV.PI.033015-9.01",
-          "EOL.CV.PI.033016-7.01",
-          "EOL.CV.PI.033017-5.01",
-          "EOL.CV.PI.033018-3.01",
-          "EOL.CV.PI.033019-1.01",
-          "EOL.CV.PI.033020-5.01",
-          "EOL.CV.PI.033021-3.01",
-          "EOL.CV.PI.033022-1.01"
-        ],
-        "ledger": "2026-11-05-1635-ons-review.json"
+        "next_offset": null,
+        "next_limit": null,
+        "next_cegs": [],
+        "ledger": "2026-11-05-1735-ons-review.json",
+        "status": "complete_pinned_wind_ceg_scan",
+        "cumulative_reviewed": 1082,
+        "cumulative_enriched": 340,
+        "cumulative_deferred": 742,
+        "continuation": "2026-11-05-1735-ons-continuation.json"
       }
     },
     {
@@ -380,7 +364,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "Six conflict IDs followed up1510; do not repeat sameindexqueries. Obtain U136 STC-180901 Rev0 design annex and explicit KS WT-1902-00-170356 to UL TC-190502 crosswalk; U151 TC-200103 page2/STC-200109 and KS WT-2201-00-190356 crosswalk. Resolve E138 certificate WT-2602-01-221439 E2(KSNARA)/E3(KNREC) identity before geometry. SWT3.2/GW109 originals and V162gearbox remain held. Then32prior configuration/revision holds; sevenFGWHTq originalDNV Mode0 crosswalks.",
+      "next_task": "Six conflict IDs followed up1510; do not repeat sameindexqueries. Obtain U136 STC-180901 Rev0 design annex and explicit KS WT-1902-00-170356 to UL TC-190502 crosswalk; U151 TC-200103 page2/STC-200109 and KS WT-2201-00-190356 crosswalk. Resolve E138 certificate WT-2602-01-221439 E2(KSNARA)/E3(KNREC) identity before geometry. SWT3.2/GW109 originals and V162gearbox remain held. Then32prior configuration/revision holds; sevenFGWHTq originalDNV Mode0 crosswalks. Goldwind Americas2.5MW English3columns and Spanish2columns now complete: do not rescan. Next corrected area-definition table and GW10910.5static/10.2unspecified mode/revision crosswalk; KS107.5m remains held.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -393,7 +377,8 @@
       "vestas_old_review": "2026-11-05-1135-fgw-review.json",
       "vestas_new_review": "2026-11-05-1235-fgw-review.json",
       "knrec_review": "2026-11-05-1435-knrec-review.json",
-      "original_certificate_followup": "2026-11-05-1510-oem-review.json"
+      "original_certificate_followup": "2026-11-05-1510-oem-review.json",
+      "latest_oem_review": "2026-11-05-1735-oem-review.json"
     },
     {
       "rank": 6,

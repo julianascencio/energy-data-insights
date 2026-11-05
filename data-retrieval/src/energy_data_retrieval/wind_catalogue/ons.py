@@ -125,12 +125,60 @@ def parse_partition(
             )
         )
     return dict(
+        source_sha256=sha256,
+        retrieved_at=retrieved_at,
         total_wind_rows=sum(map(len, groups.values())),
         total_cegs=len(groups),
         offset=offset,
         limit=limit,
         candidates=selected,
         next_cegs=sorted(groups)[offset + limit : offset + limit + 20],
+    )
+
+
+def audit_partitions(partitions: list[dict[str, Any]]) -> dict[str, Any]:
+    """Verify a contiguous prefix of one pinned release before resuming its scan.
+
+    Report structural coverage only. Reviewed or accepted identities and complete
+    turbine inventories cannot be inferred from a successfully parsed partition.
+    Input order is immaterial; gaps, overlaps and daily-source drift are errors.
+    """
+    if not partitions:
+        raise ValueError("Require at least one ONS partition")
+    ordered = sorted(partitions, key=lambda p: p["offset"])
+    first = ordered[0]
+    version_keys = ("source_sha256", "retrieved_at", "total_cegs", "total_wind_rows")
+    end = 0
+    seen: set[str] = set()
+    units = 0
+    for part in ordered:
+        if any(part[k] != first[k] for k in version_keys):
+            raise ValueError("ONS partition source drift")
+        if part["offset"] != end or part["limit"] < 1 or end >= first["total_cegs"]:
+            raise ValueError("ONS partition gap, overlap or redundant tail")
+        candidates = part["candidates"]
+        expected = min(part["limit"], first["total_cegs"] - end)
+        if len(candidates) != expected:
+            raise ValueError("Incomplete ONS partition")
+        ids = [c["ceg"] for c in candidates]
+        if ids != sorted(set(ids)) or seen.intersection(ids):
+            raise ValueError("Duplicate or unsorted ONS partition identity")
+        if seen and ids and max(seen) >= ids[0]:
+            raise ValueError("Out-of-order ONS partition identity")
+        if any(c["source_sha256"] != first["source_sha256"] for c in candidates):
+            raise ValueError("ONS candidate source drift")
+        seen.update(ids)
+        units += sum(len(c["units"]) for c in candidates)
+        end += expected
+    complete = end == first["total_cegs"]
+    if complete and units != first["total_wind_rows"]:
+        raise ValueError("ONS complete scan has missing unit rows")
+    return dict(
+        source_sha256=first["source_sha256"],
+        parsed_cegs=end,
+        parsed_unit_rows=units,
+        scan_complete=complete,
+        next_offset=None if complete else end,
     )
 
 

@@ -338,3 +338,14 @@ test("ONS daily evidence counts unknown and zero without aggregating units into 
   assert.deepEqual(windOnsSummary([row,{...row,extensions_json:"null"},{...row,sources:[]},{entity_type:"equipment"}]),
     {projects:1,snapshots:1,units:3,unknownNominal:1,zeroNominal:1,withoutEvidence:2});
 });
+
+test("ONS geography counts each project once per reported state across snapshots", async () => {
+  const {windOnsGeography} = await import("../../docs/_static/database-core.mjs");
+  const snapshot = {source_id:"ons",source_sha256:"hash",retrieved_at:"2026-11-05T15:13:00Z",units:[
+    {original:{id_estado:"RN"}},{original:{id_estado:"RN"}},{original:{id_estado:"RS"}},
+    {original:{id_estado:null}},{original:{id_estado:"0"}}]};
+  const row={entity_type:"projects",sources:["ons"],extensions_json:JSON.stringify({ons_wind_unit_snapshots:[snapshot,snapshot]})};
+  assert.deepEqual(windOnsGeography([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
+    {projects:1,stateProjects:{RN:1,RS:1},unknownStateProjects:1});
+  assert.deepEqual(windOnsGeography([]),{projects:0,stateProjects:{},unknownStateProjects:0});
+});

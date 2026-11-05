@@ -361,3 +361,32 @@ export function windOnsSummary(rows) {
   }
   return result;
 }
+
+// Geographic evidence counts, never a current fleet or capacity distribution.
+export function windOnsGeography(rows) {
+  const stateProjects = new Map();
+  let projects = 0, unknownStateProjects = 0;
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const snapshots = Array.isArray(ext?.ons_wind_unit_snapshots) ? ext.ons_wind_unit_snapshots : [];
+    const states = new Set();
+    let valid = false, unknown = false;
+    for (const s of snapshots) {
+      if (!s?.source_id || !s.source_sha256 || !s.retrieved_at || !Array.isArray(s.units) ||
+          !Array.isArray(row.sources) || !row.sources.includes(s.source_id)) continue;
+      valid = true;
+      for (const unit of s.units) {
+        const state = unit?.original?.id_estado;
+        if (typeof state === "string" && /^[A-Z]{2}$/.test(state)) states.add(state);
+        else unknown = true;
+      }
+      if (!s.units.length) unknown = true;
+    }
+    if (!valid) continue;
+    projects++;
+    if (unknown) unknownStateProjects++;
+    for (const state of states) stateProjects.set(state, (stateProjects.get(state) || 0) + 1);
+  }
+  return {projects, stateProjects: Object.fromEntries([...stateProjects].sort(([a],[b]) => a.localeCompare(b))), unknownStateProjects};
+}

@@ -1,30 +1,30 @@
 {
-  "batch": "2026-11-05-1635",
-  "iteration_parent": "0f5edd2028df3d89a98565c5133f9b98c715ebf2",
+  "batch": "2026-11-05-1735",
+  "iteration_parent": "c5eb0ae2cc8321333ebe4f14701740dbf489caf2",
   "local": {
-    "python": "331focused Wind/Hydropower/reference tests passed",
-    "viewer": "29Node tests passed",
+    "python": "332focused Wind/Hydropower/reference tests passed",
+    "viewer": "30Node tests passed",
     "quality": "Ruff,format1068,targetedty,hygiene,citations,diff passed",
-    "catalogue": "99project enrichments;22314other records unchanged;394prior source entries preserved,1partition source added;all6capacity summaries unchanged",
-    "snapshots": "Two final7file builds byte-identical;allParquetcolumnsZSTD",
+    "catalogue": "175project enrichments,3new equipment;22238other records unchanged;395prior source entries preserved,3sources added;all6capacity summaries unchanged",
+    "snapshots": "Two7file builds byte-identical;allParquetcolumnsZSTD",
     "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 660 HTML pages; local links and assets resolve."
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "5aa746dd4b996b4a36a7cc65f960f7060b8f73e8660227b5b919809006dd28bb",
-    "projects.parquet": "96ccc48467f1eb1410cdf6aa6ce68fa0bf5ec1667b7b3ec7c4acdc6776493721",
+    "manifest.json": "433f3216282a03c35fd63156806856421e552f4b77c4ddfddcf13c15e4ee9ab2",
+    "projects.parquet": "331dfd6e5429976948eb9fc801787a7072645100b0d8fdfa231c38a343df1fb3",
     "turbines.parquet": "e3ec34b7a764223f002671d92e38fed08e63a643529cf2173c28db69ec56145d",
-    "sources.json": "f118a4e8552d6527e7c2183445d978f2aa8804be0e1b3566d31571a6fa5b7a59",
+    "sources.json": "ba2aa527c2cadb98acec50d29cd40466888bed6ea893c0ebd9a3fe31561d96fc",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "equipment.parquet": "21e673cb64f9d8abd9ec84acbca7360f03447a5b033dbb6af6e14d32b7371675"
+    "equipment.parquet": "49b7b388bb824fac3f9b7e654cb0233006dbe5f33863f7cf2e9e1b450f6175aa"
   },
   "remote_ci": {
-    "previous_head": "0f5edd2028df3d89a98565c5133f9b98c715ebf2",
+    "previous_head": "c5eb0ae2cc8321333ebe4f14701740dbf489caf2",
     "previous_result": "Python3.12/3.13 andDocumentation passed",
     "current_result": "Pending publication"
   },
   "resolved_attempts": [
-    "Partition source ID regenerated through adapter after nested provenance mismatch; finalvalidation passed"
+    "Changed-path allowlist initially omitted generated CITATION.cff/references.bib exports; corrected read-only check passed"
   ],
   "not_executed": [
     "Full localPython suite",

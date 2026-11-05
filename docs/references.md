@@ -7455,3 +7455,19 @@ KS Certification Bodies Council (n.d.). **Four indexed exact KS wind-certificate
 **Role:** data_source. Search-index observations; no present validity or technical configuration inferred
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### goldwind_americas_25mw_en
+
+Goldwind Americas (n.d.). **Goldwind 2.5MW PMDD series: English original brochure**. [Source](https://www.goldwindamericas.com/sites/default/files/Goldwind-Brochure-2.5-Web.pdf)
+
+**Role:** data_source. Exact original OEM model tables; no independently validated performance or present certification inferred. Printed revision/publication date unspecified.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### goldwind_americas_25mw_es
+
+Goldwind Americas (n.d.). **Goldwind 2.5MW PMDD series: Spanish original brochure**. [Source](https://www.goldwindamericas.com/sites/default/files/2.5%20MW%20PMDD%20Turbine%20-%20Spanish.pdf)
+
+**Role:** data_source. Exact original OEM model tables; no independently validated performance or present certification inferred. Printed revision/publication date unspecified.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.

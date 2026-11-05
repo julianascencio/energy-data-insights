@@ -1,0 +1,102 @@
+{
+  "batch": "2026-11-05-1735",
+  "reviewed_model_columns": 5,
+  "new_equipment": 3,
+  "enriched_equipment": 0,
+  "english_columns": 3,
+  "spanish_columns": 2,
+  "spanish_columns_decision": "Supplemental edition observations on same exact models; no extra variants",
+  "accepted": [
+    {
+      "record_id": "e90aaefd-a610-5e25-9d6f-0d99f421c233",
+      "model": "GW 100/2500"
+    },
+    {
+      "record_id": "f0edf0e9-25b7-5424-b9b6-bf755246ccdf",
+      "model": "GW 109/2500"
+    },
+    {
+      "record_id": "e6e35278-d813-50eb-b874-6c5d745ba91f",
+      "model": "GW 121/2500"
+    }
+  ],
+  "conflicts": [
+    {
+      "model": "GW109/2500",
+      "fields": [
+        "swept_area_m2",
+        "rated_wind_speed_m_s"
+      ],
+      "decision": "Canonical scalar null; dated conflicting observations retained"
+    }
+  ],
+  "quarantines": [
+    {
+      "model": "GW 100/2500",
+      "field": "swept_area_m2",
+      "reason": "Reported area/diameter boundary unclear; original quantity and derived check retained"
+    },
+    {
+      "model": "GW 109/2500",
+      "field": "swept_area_m2",
+      "reason": "Reported area/diameter boundary unclear; original quantity and derived check retained"
+    },
+    {
+      "model": "GW 121/2500",
+      "field": "swept_area_m2",
+      "reason": "Reported area/diameter boundary unclear; original quantity and derived check retained"
+    }
+  ],
+  "deferrals": [
+    {
+      "source": "Goldwind English pp4–5 and Spanish p3",
+      "curves": 5,
+      "decision": "Graph-only; density supplied but mode unresolved; no numerical/digitized curve imported"
+    },
+    {
+      "certificate": "WT-MLWS-3-0028",
+      "decision": "GW109/2500 OEM109m does not resolve KS107.5m configuration; no certificate link"
+    },
+    {
+      "certificate": "WT-MLWS-2-0021",
+      "decision": "OEM2017 announcement reports113m SWT3.2 rotor; KS57m and exact certificate still unresolved"
+    },
+    {
+      "certificate": "WT-2601-01-200856",
+      "decision": "Current OEM V1626.2 table states two planetary stages; Korean combined6.0/6.2 certificate gearbox conflict remains; existing OEM record not counted enriched"
+    }
+  ],
+  "exclusions": [],
+  "access": "All five original downloads returnedHTTP200; no authentication requirement or explicit reuse restriction encountered in these documents",
+  "original_files": [
+    {
+      "source_id": "goldwind-americas-25mw-en",
+      "sha256": "9c9131684b8e4cd48afbb5d8768fa18cdab0043dd230d242119621fe024e04e7"
+    },
+    {
+      "source_id": "goldwind-americas-25mw-es",
+      "sha256": "66fdc765adaab722152599da714030b4071428c06bca855db6e6bce87b2ed6e9"
+    }
+  ],
+  "followup_sources": [
+    {
+      "url": "https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/enventus-platform/v162-6-2-mw",
+      "sha256": "2ed88e7dd66898bc31feabfc87095be1e5c1510be2866588c383fb45dd0235cb",
+      "locator": "Technical specifications / Gearbox",
+      "decision": "Existing model/source; exact KS crosswalk unresolved"
+    },
+    {
+      "url": "https://www.siemensgamesa.com/global/en/home/press-releases/siemens-gamesa-delivers-wind-turbines-for-four-onshore-projects-in-germany.html",
+      "sha256": "15336591661ae9f578252a104214116d63cc2db8a113673d707322671aaebc59",
+      "published_at": "2017-05-24",
+      "locator": "Geestpark Almdorf paragraph",
+      "decision": "Historical planned delivery; certificate and registry project identity not inferred"
+    },
+    {
+      "url": "https://www.goldwindamericas.com/25-mw-pmdd",
+      "sha256": "11a664e3654a7765decc10fd907a390f8c73594b438cca856f868a9dc7dffac1",
+      "decision": "Navigation only; technical import uses original PDF tables"
+    }
+  ],
+  "next_task": "Original GW100/109/121 area-definition or corrected table and GW109 static10.5 versus Spanish10.2 mode/revision crosswalk; no new table scan"
+}

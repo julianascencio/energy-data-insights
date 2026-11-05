@@ -159,3 +159,29 @@ def test_adjacent_partitions_preserve_complete_groups_without_overlap():
     assert first["candidates"] + second["candidates"] == whole["candidates"]
     assert len(first["candidates"][0]["units"]) == 2
     assert not parse(rows, offset=2, limit=1)["candidates"]
+
+
+def test_audit_detects_daily_drift_gaps_overlap_and_incomplete_tail():
+    from energy_data_retrieval.wind_catalogue.ons import audit_partitions
+
+    rows = [native(), native(ceg="EOL.CV.CE.030284-1.01")]
+    first = parse(rows, limit=1)
+    tail = parse(rows, offset=1, limit=100)
+    result = audit_partitions([tail, first])
+    assert result["scan_complete"] and result["next_offset"] is None
+    assert result["parsed_cegs"] == 2 and result["parsed_unit_rows"] == 2
+    assert audit_partitions([first])["next_offset"] == 1
+    with pytest.raises(ValueError, match="source drift"):
+        audit_partitions([first, {**tail, "source_sha256": "changed-daily-file"}])
+    with pytest.raises(ValueError, match="gap, overlap"):
+        audit_partitions([tail])
+    with pytest.raises(ValueError, match="gap, overlap"):
+        audit_partitions([first, first])
+    with pytest.raises(ValueError, match="Incomplete"):
+        audit_partitions([first, {**tail, "candidates": []}])
+    with pytest.raises(ValueError, match="missing unit rows"):
+        audit_partitions([{**parse(rows), "total_wind_rows": 3}])
+    duplicate = copy.deepcopy(tail)
+    duplicate["candidates"][0]["ceg"] = first["candidates"][0]["ceg"]
+    with pytest.raises(ValueError, match="Duplicate"):
+        audit_partitions([first, duplicate])

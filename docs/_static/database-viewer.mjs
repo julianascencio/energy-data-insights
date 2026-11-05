@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary, windCertificationSummary, windOnsSummary} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary, windCertificationSummary, windOnsSummary, windOnsGeography} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isHydro = root.dataset.database === "hydro";
@@ -133,6 +133,8 @@ function render() {
   } else if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
     const ons = windOnsSummary(filtered);
+    const onsGeo = windOnsGeography(filtered);
+    summary.push([number(onsGeo.projects), "ONS geographic evidence", `${Object.entries(onsGeo.stateProjects).map(([state,count]) => `${state}: ${count}`).join(" · ") || "No reported state"} · ${onsGeo.unknownStateProjects} projects with unknown state observations. Each project counts once per reported state across snapshots; this is evidence coverage, not a current fleet distribution.`]);
     summary.push([number(ons.projects), "ONS daily unit evidence", `${ons.snapshots} dated snapshots · ${ons.units} unit observations · ${ons.unknownNominal} unknown nominal ratings · ${ons.zeroNominal} reported zeros · ${ons.withoutEvidence} projects without evidence. Units may group turbines; snapshots are not summed, and no farm capacity or lifecycle is inferred.`]);
     const eiaYears = [...new Set(filtered.flatMap(row => {
       try { return (JSON.parse(row.extensions_json || "{}").eia_annual_wind_partitions || []).filter(p => p?.source_id && Number.isInteger(p.year)).map(p => p.year); }
