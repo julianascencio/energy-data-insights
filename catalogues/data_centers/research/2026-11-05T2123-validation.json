@@ -1,7 +1,7 @@
 {
   "run_id": "doe-ccms-ups-20261105T212300Z",
   "validated_at": "2026-11-05T21:23:00Z",
-  "base_main_sha": "600db672269079ab8a92224ad5de3cf80e8206bf",
+  "base_main_sha": "eb03f8f4903f826be36014fc8c403fb1a5c3d6ff",
   "branch": "research/data-center-database-20261105T2024Z",
   "catalogue": {
     "canonical_records": 3286,
@@ -52,6 +52,20 @@
     "manifest": "cc2820ba6989f67a99fcfcced6c3e89278b96952814f5944d3b859c49c140a46",
     "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
     "sources": "5c30178e01593a15ac165f56cfcff0af0da82d6ddc50c69be09cce18e7c96b5b"
+  },
+  "post_merge_validation": {
+    "integrated_main_sha": "eb03f8f4903f826be36014fc8c403fb1a5c3d6ff",
+    "concurrent_scopes_preserved": ["PV", "BESS", "Hydro"],
+    "catalogue": "passed; 3286 records",
+    "focused_python": "passed; 108 tests",
+    "viewer": "passed; 30 tests",
+    "ruff": "passed; 1146 files formatted and lint clean",
+    "ty": "passed repository-wide",
+    "repository": "passed; 5723 candidate files",
+    "citations": "passed",
+    "offline_example": "passed",
+    "snapshots": "passed; two fresh typed Zstandard builds were byte-identical",
+    "diff_check": "passed"
   },
   "remote_ci": {
     "prior_head": "616142447699f02c329a4a503fff264fb51dd4c4",

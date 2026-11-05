@@ -306,3 +306,13 @@ eligibility depends on manufacture date. Never create unlisted voltage variants.
 ### TAB OPzV partition
 
 `scripts/stage_bess_tab_opzv.py --text LOCAL_LAYOUT_TEXT --output NEW_JSON` stages the 14-model brochure page 12 partition offline. Obtain text with `pdftotext -layout` after reviewing source terms and checksum. It rejects changed revision marks, units, heights, rate basis and identities. Staging is not acceptance: compare the live OEM table before the existing upsert API. The 5 November review found differing measured Ah, fault current, masses and resistance; keep both observations in quarantine. Nominal Ah is not measured C10 Ah, H2 includes terminals, and neither fault current nor charge-rate formulas establish active power. See [review ledger](research/2026-11-05_opzv_latvia_review.json).
+
+For Fullriver DC Series, `scripts/stage_bess_fullriver.py` stages exact selected
+HTML cards, requiring one metric and one imperial panel. Pass reviewed model
+headings with `--models`; suffix variants are not equivalent. The brochure tables
+on PDF pages 2 and 3 are raster and require visual transcription; they repeat
+identities but disagree on DC150-12 capacity/reserves and DC85-12 height. Preserve
+56A versus75A reserve conditions, Ah per battery unit, cranking temperatures and
+removable-post qualifiers. Undated web/PDF physical differences remain holds; do
+not infer energy, cell count or a newest revision. Mobility-only PowerVault packs
+are excluded without stationary evidence.

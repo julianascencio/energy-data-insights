@@ -9,10 +9,13 @@ from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
 
 
 def main() -> None:
-    root = Path("catalogues/hydro")
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--batch", type=Path, default=root / "research/eia-2025-0001-0500.json")
-    batch = json.loads(parser.parse_args().batch.read_text())
+    parser.add_argument("--root", type=Path, default=Path("catalogues/hydro"))
+    parser.add_argument("--batch", type=Path)
+    args = parser.parse_args()
+    root = args.root
+    batch_path = args.batch or root / "research/eia-2025-0001-0500.json"
+    batch = json.loads(batch_path.read_text())
     accepted = {r["record_id"]: r for r in batch["accepted"]}
     for path in sorted((root / "records").rglob("*.jsonl")):
         rows = [json.loads(line) for line in path.read_text().splitlines()]
