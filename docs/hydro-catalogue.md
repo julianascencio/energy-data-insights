@@ -224,3 +224,50 @@ Next regional partition: the Indian CEA September 2026 station list. Its
 official archive metadata is reviewed; original-file acquisition, reuse
 assessment, identity reconciliation and phase/pumped-storage scope review
 remain outstanding. No Indian candidates have been accepted in this run.
+
+
+## EIA 2001–3000 continuation and India reuse review
+
+The next two EIA code partitions enrich **122 existing US plants with 330
+generator observations**, dated 31 December 2025. The 34 holds comprise
+29 mixed technology/state cases, four missing historical identities and one
+name discrepancy. Full held plant/unit evidence is retained for review; it
+is not accepted catalogue data. EIA now covers 457 identities and 1,248
+generator observations, with 121 cumulative holds. Worldwide coverage stays
+at 7,156 records in 128 countries, with 698 cumulatively enriched identities.
+All capacity aggregation scopes remain unresolved.
+
+The offline preparation utility validates the archive against a registered
+SHA-256 and writes accepted/held decisions without changing canonical records.
+It refuses different existing review files and duplicate registry identities;
+existing capacity conflicts are held. Download the official EIA archive
+separately, register its checksum/retrieval timestamp, then prepare a bounded
+review with explicit `--year`, `--first`, `--last`, `--reviewed-at`, `--sha256`,
+`--archive` and `--output` arguments to `scripts/prepare_hydro_eia.py`.
+After reviewing decisions, reproduce the committed enrichments with:
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-2001-2500.json
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-2501-3000.json
+```
+
+The Indian CEA September 2026 original PDF was acquired, but its published
+[copyright policy](https://cea.nic.in/api/websitepolicy/pdf/view/en/2) requires
+prior permission. No CEA plant data is imported or redistributed. The review
+ledger pins the report and policy checksums. The data.gov.in generation
+catalogue returned no original resource and displayed a testing notice.
+
+An independent alternative, IHA's [India Hydropower Database](https://energydata.info/en/dataset/india-hydropower-database),
+was acquired under its published CC BY 4.0 terms. Its 182 historical rows
+include 110 matched stations, 40 cascade assets, 20 unmatched rows, seven
+non-hydro rows and five construction/stalled rows. These are **unaccepted
+candidates**, not 182 additional plants. Attribution: International Hydropower
+Association, 2019 release; published temporal coverage 1917–2015. Do not infer
+current status from those historical labels or turn reservoir volume into
+storage energy. The CSV requires Windows-1252 decoding and distinguishes
+station coordinates from dam/reservoir coordinates.
+
+Next regional partition: the first 100 matched-station IHA rows sorted by
+numeric source ID, with explicit identity, phase and coordinate review.
+`research/india-source-review-20261105.json` records acquisition, reuse and
+scope findings. EIA resumes at plant codes 3001–3500 afterward.

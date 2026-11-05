@@ -12,6 +12,7 @@ from energy_data_retrieval.hydro_catalogue.eia import (
     eligibility,
     enrich,
     parse_partition,
+    review_partition,
 )
 from energy_data_retrieval.hydro_catalogue.gppd import parse_gppd
 
@@ -195,3 +196,31 @@ def test_second_partition_includes_boundaries_and_rejects_orphan_hydro():
     assert [r["plant_code"] for r in rows] == [501, 1000]
     with pytest.raises(ValueError, match="absent from Plant sheet"):
         parse_partition(plants, units, year=2025, first=500, last=1000)
+
+
+def test_review_preserves_conflicts_and_pumped_evidence_without_mutation():
+    old, item = sample()
+    old["installed_capacity_mw"] = 20
+    before = json.dumps(old, sort_keys=True)
+    kw = dict(source_id="eia", identity_source_id="mapping", now="2026-11-05T00:00:00Z")
+    result = review_partition([old], [item], **kw)
+    assert not result["accepted"]
+    assert result["decisions"][0]["decision"] == "existing_value_conflict"
+    assert result["decisions"][0]["inventory"] == item
+    assert json.dumps(old, sort_keys=True) == before
+    item["units"][0]["Prime Mover"] = "PS"
+    result = review_partition([old], [item], **kw)
+    assert result["decisions"][0]["decision"] == "mixed_technology_or_state"
+    assert result["decisions"][0]["inventory"]["units"][0]["Prime Mover"] == "PS"
+
+
+def test_review_refuses_ambiguous_registry_and_partition_duplicates():
+    old, item = sample()
+    kw = dict(source_id="eia", identity_source_id="mapping", now="2026-11-05T00:00:00Z")
+    with pytest.raises(ValueError, match="existing WRI"):
+        review_partition([old, old], [item], **kw)
+    with pytest.raises(ValueError, match="inventory plant"):
+        review_partition([old], [item, item], **kw)
+    assert review_partition([old], [item], **kw)["accepted"] == [
+        {"record_id": old["record_id"], "inventory": item}
+    ]

@@ -208,3 +208,53 @@ def enrich(
         "Aggregation unresolved; excludes pumping power and energy-storage inference.",
     )
     return row
+
+
+def review_partition(
+    existing: list[dict[str, Any]],
+    items: list[dict[str, Any]],
+    *,
+    source_id: str,
+    identity_source_id: str,
+    now: str,
+) -> dict[str, Any]:
+    """Prepare reviewable decisions without mutating canonical records.
+
+    Preserve full evidence for held identities, including mixed/pumped units.
+    Existing-value conflicts are held rather than aborting a whole partition;
+    duplicate registry identities abort because selecting either would be unsafe.
+    """
+    lookup: dict[str, dict[str, Any]] = {}
+    for row in existing:
+        key = json.loads(row["external_ids_json"]).get("wri_gppd")
+        if not key:
+            continue
+        if key in lookup:
+            raise ValueError("Duplicate existing WRI identity")
+        lookup[key] = row
+    accepted, decisions = [], []
+    seen: set[int] = set()
+    for item in sorted(items, key=lambda item: item["plant_code"]):
+        code = item["plant_code"]
+        if code in seen:
+            raise ValueError("Duplicate inventory plant code")
+        seen.add(code)
+        row = lookup.get(f"USA{code:07d}")
+        decision = eligibility(row, item)
+        detail = None
+        if decision == "accepted_enrichment" and row is not None:
+            try:
+                enrich(
+                    row, item, source_id=source_id, identity_source_id=identity_source_id, now=now
+                )
+            except ValueError as error:
+                decision, detail = "existing_value_conflict", str(error)
+            else:
+                accepted.append({"record_id": row["record_id"], "inventory": item})
+        entry = {"plant_code": code, "name": item["plant"]["Plant Name"], "decision": decision}
+        if decision != "accepted_enrichment":
+            entry["inventory"] = item
+        if detail:
+            entry["detail"] = detail
+        decisions.append(entry)
+    return {"accepted": accepted, "decisions": decisions}
