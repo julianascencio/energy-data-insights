@@ -59,6 +59,12 @@ PARTNER_BATCHES = {
         "expected_count": 123,
         "retrieved_at": "2026-11-05T01:20:00Z",
     },
+    "supermicro_energy_star": {
+        "partner": "Super Micro Computer, Inc.",
+        "manufacturer": "Supermicro",
+        "expected_count": 49,
+        "retrieved_at": "2026-11-05T02:20:00Z",
+    },
 }
 
 CONFIGURATION_LABELS = (
