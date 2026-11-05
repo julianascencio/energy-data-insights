@@ -167,3 +167,34 @@ reports generating-unit nominal MW for ONS-dispatched operation classes, not
 a census of every small plant. Its publisher identifies CC-BY reuse with
 attribution. Identity, unit/plant aggregation and date interpretation must be
 reviewed before acceptance. EIA resumes at codes 2001–2500 afterward.
+
+
+## Brazil ONS exact registry enrichment
+
+On 5 November 2026, the first 100 sorted ONS hydro CEG identifiers yielded
+**78 existing plant enrichments and 289 generating-unit observations**. Sixteen
+name discrepancies and six missing historical identities remain held. WRI's
+Brazil importer explicitly derives its numeric plant ID from the CEG code;
+acceptance additionally requires exact names allowing only case/whitespace
+normalization. No fuzzy matching or new plant creation is performed.
+
+CEG IDs, reported owners/operators, unit equipment IDs, nominal MW and raw
+test/operation/deactivation dates are retained with CSV row locators. The ONS
+dictionary defines `val_potenciaefetiva` as nominal unit MW. These unit facts
+do not establish complete plant installed capacity or current lifecycle:
+plant status, coordinates, historical capacity and aggregation roles remain
+unchanged. Historical owner evidence is retained before updating owner names.
+Pumping power, storage energy and hydraulic subtype are not inferred.
+
+Attribution: Operador Nacional do Sistema Elétrico (ONS), CC-BY per publisher;
+normalization/grouping and the WRI identity crosswalk are our transformations.
+Original CSV, dictionary and WRI importer checksums are in the source registry.
+The CSV lacks the optional `id_ons` dictionary field; no value is invented.
+
+```bash
+uv run python scripts/enrich_hydro_ons.py
+```
+
+Next: remaining 80 sorted ONS hydro CEGs after the saved partition cursor,
+followed by the outstanding alias/identity cases. Total coverage stays at
+7,156 historical plant records in 128 countries, now with 523 enriched identities.
