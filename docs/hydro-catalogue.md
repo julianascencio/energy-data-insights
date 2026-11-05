@@ -424,3 +424,31 @@ plants / 1917 unit observations / 154 holds. Aggregation scopes remain
 unresolved and excluded from totals. Next: explicit NZ identity/interval
 review; EIA resumes at 4501–5000. Source, candidate and validation ledgers
 retain resumable decisions and deterministic snapshot hashes.
+
+
+## Reviewed NZ identities and EIA continuation
+
+Explicit owner/WRI/EA identity reviews accept Aratiatia and Aviemore, retaining
+CSV rows 14 and 15 and their dispatch connection identifiers. Mercury's station
+page corroborates Aratiatia's 78 MW; Meridian's station page corroborates
+Aviemore's 220 MW. Each has a single EA row and matching historical WRI rating.
+Owner pages are used only for limited factual corroboration, with no page
+text or imagery redistributed; EA observations retain CC BY 4.0 attribution.
+Scalar lifecycle, capacity, coordinates and aggregation roles remain unchanged.
+Dispatch UnitCode is not treated as a physical generator ID. The 1899/9999
+sentinels remain raw. Sixty-six observations for 40 other names remain held;
+Clyde's differing rating bases and Benmore's split connections need review.
+
+```bash
+uv run python scripts/enrich_hydro_nz.py
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-5501-10000.json
+```
+
+EIA ranges 4501–5000 and 5001–5500 have no hydro-bearing operable plants.
+The next populated range, 5501–10000, yields 158 existing identities enriched,
+388 generator observations and 44 held plants. Empty ranges are persisted as
+completed cursors. All observations remain dated to year-end 2025, not live
+operation. Coverage is 7,156 records / 128 countries / 1,110 enriched identities.
+EIA totals: 828 identities / 2305 generator observations / 198 holds.
+No generating-MW total is promoted while aggregation scopes remain unresolved.
+Next: remaining NZ identity/interval review; EIA resumes at 10001–15000.

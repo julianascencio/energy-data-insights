@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T21:45:03Z",
+  "reviewed_at": "2026-11-05T22:41:46Z",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -176,6 +176,50 @@
       "new": 0,
       "held_observations": 68,
       "cursor": "Original acquired and staged; do not rediscover; review identities and dated connection scopes"
+    },
+    {
+      "source": "eia860-2025-hydro-4501-5000",
+      "partition": {
+        "first": 4501,
+        "last": 5000,
+        "next_first": 5001
+      },
+      "accepted_enriched": 0,
+      "held": 0,
+      "cursor": "Complete, including empty hydro partitions; resume at 10001"
+    },
+    {
+      "source": "eia860-2025-hydro-5001-5500",
+      "partition": {
+        "first": 5001,
+        "last": 5500,
+        "next_first": 5501
+      },
+      "accepted_enriched": 0,
+      "held": 0,
+      "cursor": "Complete, including empty hydro partitions; resume at 10001"
+    },
+    {
+      "source": "eia860-2025-hydro-5501-10000",
+      "partition": {
+        "first": 5501,
+        "last": 10000,
+        "next_first": 10001
+      },
+      "accepted_enriched": 158,
+      "held": 44,
+      "cursor": "Complete, including empty hydro partitions; resume at 10001"
+    },
+    {
+      "source": "nz-ea-fleet-20260702 + owner corroboration",
+      "accepted_enriched": 2,
+      "accepted_rows": [
+        14,
+        15
+      ],
+      "remaining_held_rows": 66,
+      "remaining_held_names": 40,
+      "cursor": "Aratiatia and Aviemore explicit crosswalks complete; do not replay as new plants"
     }
   ],
   "next_sources": [
@@ -212,8 +256,8 @@
       "priority": 3,
       "url": "https://www.eia.gov/electricity/data/eia860/",
       "country": "USA",
-      "status": "670 enriched; 154 held",
-      "next_action": "EIA codes 4501\u20135000"
+      "status": "828 enriched; 198 held",
+      "next_action": "EIA codes 10001\u201315000"
     },
     {
       "priority": 1,
@@ -232,8 +276,8 @@
     {
       "priority": 1,
       "region": "Oceania",
-      "status": "NZ original CSV acquired under CC BY 4.0; 68 hydro observations / 42 names held",
-      "next_action": "NZ 42 hydro names: explicit WRI/owner identity and effective-interval/connection review; EIA resumes 4501\u20135000",
+      "status": "2 identities enriched; 66 observations / 40 names remain held",
+      "next_action": "NZ remaining 40 names / 66 dispatch observations: owner-backed identity and interval/connection review; EIA next 10001\u201315000",
       "url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-fleet/existing/"
     }
   ],

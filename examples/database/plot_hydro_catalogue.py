@@ -7,10 +7,11 @@ Parquet and map its reported coordinates. CC BY 4.0 attribution: World Resources
 Institute, GPPD v1.3.0 repository snapshot. WRI stopped maintenance in early 2022.
 This is historical discovery coverage, not a current operating census or a
 ranking of installed national capacity. 110 Norwegian records have reviewed
-NVE lifecycle and technical enrichment; 670 US records carry dated 2025 EIA inventory.
+NVE lifecycle and technical enrichment; 828 US records carry dated 2025 EIA inventory.
 131 Brazilian records now retain ONS registry/unit evidence.
 13 Indian records retain reviewed historical IHA station evidence.
 26 African records retain reviewed AHA river/basin evidence.
+Two New Zealand records retain reviewed dispatch connection evidence.
 Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
 """
@@ -46,6 +47,7 @@ print(
 print(
     "AHA Africa enriched records:", sum("aha-v2.3-technical-20261105" in r["sources"] for r in rows)
 )
+print("NZ reviewed dispatch identities:", sum("nz-ea-fleet-20260702" in r["sources"] for r in rows))
 print("Input fingerprint:", manifest["input_sha256"])
 print("Reviewed installed generating MW:", capacity_summary(rows, "installed_capacity_mw"))
 print("Pumping input MW (separate from generation):", capacity_summary(rows, "pumping_capacity_mw"))
