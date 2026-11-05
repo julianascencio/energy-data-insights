@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T10:10:43Z",
+  "updated_at": "2026-11-05T11:40:18Z",
   "branch": "research/wind-20261105-0835",
   "run_lock": "Acquire flock -n /tmp/energy-data-insights-wind-20261105-0835.lock; inspect active work and remote head; never overwrite another writer",
   "queue": [
@@ -345,7 +345,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "FGW Nordex current-index tables complete; do not repeat older91/3row search copies. Next independent public FGW Vestas tables: old https://shop.wind-fgw.de/wp-content/uploads/2023/02/alte_Ref_Vestas-1.pdf and new https://shop.wind-fgw.de/wp-content/uploads/2026/09/neuer_Ref_Vestas.pdf; acquire original bytes, review full row counts and restrictions before bounded exact-type mapping. Separately retain N27/150,N27/250 OEM reversal, AW77/1300 original type-sheet and N169 printed-unit erratum follow-ups; do not reprocess completed OEM narratives.",
+      "next_task": "FGW Vestas old table complete (103 numeric rows). Next complete new-site table https://shop.wind-fgw.de/wp-content/uploads/2026/09/neuer_Ref_Vestas.pdf; keep withdrawn V136 and corrected V162 observations dated. Resolve2old HTq rows against generic V126-3.45 revision; V66 reduced-power contact notice lacks data. Do not repeat completed old table or Nordex tables.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -354,7 +354,8 @@
         "deferred_rows": 7,
         "new_equipment": 16,
         "enriched_equipment": 24
-      }
+      },
+      "vestas_old_review": "2026-11-05-1135-fgw-review.json"
     },
     {
       "rank": 6,
