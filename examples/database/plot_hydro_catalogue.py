@@ -1,6 +1,6 @@
 """
 Hydropower: worldwide historical coverage and evidence gaps
-=========================================================
+===========================================================
 
 Rebuild the WRI Global Power Plant Database hydro partition offline as typed
 Parquet and map its reported coordinates. CC BY 4.0 attribution: World Resources
