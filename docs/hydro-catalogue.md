@@ -396,3 +396,31 @@ Next regional partition is New Zealand's official dispatched-generation
 fleet. The old EMI/new EA portals show differing CSV dates, and the listing
 includes formerly dispatched plants. Verify the original and reuse terms
 before accepting any records. EIA resumes at codes 4001–4500 afterward.
+
+
+## New Zealand dispatch review and EIA 4001–4500
+
+Acquired Electricity Authority's 2 July 2026 dispatched-generation CSV under
+CC BY 4.0 (attribution: Electricity Authority, New Zealand; extraction is our
+change). The listing prose has a stale filename. All 157 rows were read;
+68 hydro observations for 42 names remain **held**, with no NZ canonical
+additions. Historical effective intervals and multiple connection points
+must not become duplicate plants or summed generating MW. Benmore's 540 MW
+historical and split 270 MW entries illustrate this risk. Sentinel dates
+1899/9999 are retained raw, never interpreted as commissioning/retirement.
+The parser rejects duplicate intervals, malformed rows and invalid ratings.
+
+```bash
+uv run python scripts/stage_hydro_nz.py /path/to/20260702_DispatchedGenerationPlant.csv --output /tmp/nz-candidates.json
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-4001-4500.json
+```
+
+EIA codes 4001–4500 add 44 existing US identities and 129 generator
+observations; two candidates remain held. Fresh ZIP checksum matches the
+reviewed final-2025 release. Dates, operators, generating/seasonal ratings
+and registry IDs remain dated observations, not live operation. Coverage is
+7,156 records / 128 countries / 950 enriched identities. EIA totals: 670
+plants / 1917 unit observations / 154 holds. Aggregation scopes remain
+unresolved and excluded from totals. Next: explicit NZ identity/interval
+review; EIA resumes at 4501–5000. Source, candidate and validation ledgers
+retain resumable decisions and deterministic snapshot hashes.
