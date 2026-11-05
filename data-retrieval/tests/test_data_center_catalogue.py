@@ -22,6 +22,9 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_airtrunk_locations,
     parse_carrier_19dv_table,
     parse_cummins_generator_table,
+    parse_digital_realty_nbo2_release,
+    parse_icolo_facility_page,
+    parse_icolo_home_portfolio,
     parse_meta_locations,
     parse_portfolio,
     parse_raxio_facility_page,
@@ -284,6 +287,48 @@ def test_raxio_parser_keeps_public_design_metrics_without_contact_details():
         )
     with pytest.raises(ValueError, match="official Raxio"):
         parse_raxio_facility_page(content, source_url="https://example.com/")
+
+
+def test_icolo_parsers_keep_exact_current_metrics_and_capacity_boundaries():
+    facility = parse_icolo_facility_page(
+        (FIXTURES / "icolo-facility.html").read_bytes(),
+        source_url="https://www.icolo.io/location/mba2/",
+        expected_code="MBA2",
+    )["candidate"]
+    assert facility == {
+        "external_id": "MBA2",
+        "rack_capacity": 600,
+        "customer_space_m2": 1200.0,
+        "campus_area_m2": 4000.0,
+        "lifecycle_marker": "launched in 2022",
+        "locator": "MBA2 current facility page / public facility metrics",
+    }
+    home = parse_icolo_home_portfolio(
+        (FIXTURES / "icolo-home.html").read_bytes(), source_url="https://www.icolo.io/"
+    )["candidates"]
+    assert [(row["external_id"], row["it_power_mw"]) for row in home] == [
+        ("MPM1", 0.2),
+        ("MBA1", 0.9),
+        ("MBA2", 1.75),
+    ]
+    nbo2 = parse_digital_realty_nbo2_release(
+        (FIXTURES / "digital-realty-nbo2.html").read_bytes(),
+        source_url=(
+            "https://investor.digitalrealty.com/news-releases/news-release-details/"
+            "digital-realty-strengthens-nairobi-east-africa-digital-gateway"
+        ),
+    )["candidate"]
+    assert nbo2["reported_capacity_mw"] == 6.4
+    assert nbo2["opening_date"] == "2026-09-07"
+    assert "DO NOT EXTRACT" not in json.dumps([facility, home, nbo2])
+    with pytest.raises(ValueError, match="facility identity"):
+        parse_icolo_facility_page(
+            (FIXTURES / "icolo-facility.html").read_bytes(),
+            source_url="https://www.icolo.io/location/mba2/",
+            expected_code="NBO1",
+        )
+    with pytest.raises(ValueError, match="official iColo"):
+        parse_icolo_home_portfolio(b"", source_url="https://example.com/")
 
 
 def test_vertiv_powerups_parser_keeps_only_explicit_topology_ratings():

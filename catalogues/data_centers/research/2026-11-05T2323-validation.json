@@ -1,0 +1,147 @@
+{
+  "run_id": "icolo-east-africa-20261105T232300Z",
+  "validated_at": "2026-11-05T23:23:00Z",
+  "base_main_sha": "4ef42de474f69b5cdca5824410c06db0d851b434",
+  "branch": "research/data-center-database-20261105T2217Z",
+  "catalogue": {
+    "canonical_records": 3300,
+    "projects": 526,
+    "project_scopes": {
+      "facility": 408,
+      "phase": 3,
+      "campus": 115
+    },
+    "equipment": 2774,
+    "countries": 36,
+    "operators": 14,
+    "oems": 74,
+    "added_projects": 6,
+    "enriched_projects": 0,
+    "added_equipment": 0,
+    "enriched_equipment": 0
+  },
+  "inventory": {
+    "source_ids": [
+      "icolo-home-current-20261105",
+      "icolo-mpm1-current-20261105",
+      "icolo-mpm1-spec-current-20261105",
+      "icolo-mpm1-opening-20230207",
+      "icolo-mba1-current-20261105",
+      "icolo-mba1-spec-current-20261105",
+      "icolo-mba2-current-20261105",
+      "icolo-mba2-spec-current-20261105",
+      "icolo-nbo1-current-20261105",
+      "icolo-nbo1-spec-current-20261105",
+      "icolo-kenya-solar-current-20261105",
+      "digital-realty-nbo2-opening-20260907"
+    ],
+    "facility_identities_processed": 5,
+    "campus_aggregates_processed": 1,
+    "records_added": 6,
+    "records_enriched": 0,
+    "quarantined_fields": 3,
+    "originals_available": 12,
+    "original_bytes": 2532603,
+    "reuse_prohibited": false,
+    "new_reuse_holds": [
+      "Wingu Africa portfolio"
+    ]
+  },
+  "local_checks": [
+    {
+      "command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 3300 records"
+    },
+    {
+      "command": "build_data_center_icolo_batch.py replay twice from checksum-verified official captures plus cmp against canonical JSONL",
+      "result": "passed; six records reproduced byte-identically"
+    },
+    {
+      "command": "focused Data Center pytest suites",
+      "result": "passed; 110 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed; 33 tests"
+    },
+    {
+      "command": "uv run ruff format --check . and ruff check .",
+      "result": "passed; 1166 files formatted"
+    },
+    {
+      "command": "targeted and repository-wide uv run ty check",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python scripts/check_repository.py",
+      "result": "passed; 5789 candidate files"
+    },
+    {
+      "command": "uv run python scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; project scopes 408 facility, 115 campus and 3 phase"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus cmp",
+      "result": "passed; byte-identical typed Zstandard snapshots"
+    },
+    {
+      "command": "uv run --group dev pytest -q",
+      "result": "3106 passed, 5 optional skips and 1 unrelated environment failure in a PV degradation subprocess; psutil.NoSuchProcess occurred before Data Center code loaded and repeated on isolated rerun"
+    },
+    {
+      "command": "uv run --group docs sphinx-build -W --keep-going -b html",
+      "result": "blocked locally by the Python 3.13-only optional Orbital PV imagery gallery dependency"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "7a6657613a617c58d994523d4e64b38a4f2c2cbf49e16b62269a7b23c715cca1",
+    "projects": "60a82f9b5286775a027fe0a5ae57f6530fdee1ccae44507d585633143702cebe",
+    "equipment": "661c1ade3e6095557e8924691747d85b1078ac13ec18dbbb36a66667940ee05b",
+    "manifest": "f15cc0d65c4277ab6e29ee519c5e89debf60d9abb0df4ad295090d13e64988b8",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "357201cade0ce549985140f4199cd03fdd5c7fcaa2d34d39e46bb0712fd0913d"
+  },
+  "capacity_summaries": {
+    "it_capacity_mw": {
+      "excluded": 115,
+      "unknown": 370,
+      "by_basis": {
+        "ultimate_planned": {
+          "reported_mw": 697.1,
+          "records": 12
+        },
+        "design_maximum": {
+          "reported_mw": 537.775,
+          "records": 24
+        },
+        "operational": {
+          "reported_mw": 146.0,
+          "records": 5
+        }
+      }
+    },
+    "grid_capacity_mw": {
+      "excluded": 115,
+      "unknown": 408
+    },
+    "facility_capacity_mw": {
+      "excluded": 115,
+      "unknown": 410
+    }
+  },
+  "remote_ci": {
+    "status_at_validation": "not_started_for_new_head"
+  }
+}

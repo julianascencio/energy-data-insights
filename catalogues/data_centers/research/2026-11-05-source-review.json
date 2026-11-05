@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T22:22:01Z",
+  "retrieved_at": "2026-11-05T23:23:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -232,6 +232,14 @@
       "enriched_records": 0,
       "reuse": "The public OEM page was used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved Cummins reuse hold applies.",
       "originals": "The official 216,857-byte HTML original was captured successfully with SHA-256 d6507bb53731f8491de0db48d46706e57397ef9708ab04af0fbd4437fb2e6fcb. All eight exact model/frequency identities with populated Data Center Continuous ratings were processed."
+    },
+    {
+      "inventory": "iColo / Digital Realty current East Africa facilities and Nairobi campus",
+      "processed_offset": 6,
+      "accepted_records": 6,
+      "enriched_records": 0,
+      "reuse": "Public operator and issuer pages were used for factual extraction only. No source HTML or PDF is redistributed, no open licence is asserted, and footer/privacy review found no explicit factual-reuse prohibition.",
+      "originals": "Twelve official HTML/PDF originals were captured successfully and individually checksummed in sources.json. Exact addresses, coordinates, security controls, access procedures and connectivity-sensitive details from technical sheets are excluded."
     }
   ],
   "deferred": [
@@ -262,6 +270,10 @@
     {
       "inventory": "DOE CCMS uninterruptible-power-supply rows 51-100",
       "reason": "Rows 1-50 are complete. The public page exposed no stable next-page boundary and the public MCP endpoint returned HTTP 403 in this environment. Continue only after verifying a non-overlapping page, filter or download boundary."
+    },
+    {
+      "inventory": "Wingu Africa facility portfolio",
+      "reason": "Official terms prohibit reproduction, republication, distribution and use of website content for other purposes without prior written permission. No Wingu facts or bytes were imported."
     }
   ],
   "quarantined": [
@@ -284,6 +296,11 @@
       "record": "APC BN1500M2-CA and BN1500M2 exact configurations",
       "field": "efficiency_pct",
       "reason": "The current DOE CCMS rows report 98.9% average load-adjusted efficiency while the exact existing ENERGY STAR records report 99.0%. Both dated issuer observations are retained and the normalized scalar remains null."
+    },
+    {
+      "record": "Digital Realty NBO2 Nairobi Two and Nairobi campus aggregate",
+      "field": "it_capacity_mw, facility_capacity_mw and grid_capacity_mw",
+      "reason": "The dated opening release reports 6.4 MW of capacity but does not identify its electrical boundary. The exact claim is retained as an observation and all three normalized capacity fields remain null."
     }
   ],
   "normalization_notes": [
@@ -348,6 +365,10 @@
     "DOE active W, apparent VA and average load-adjusted efficiency remain separate and retain the reported lowest supported input dependency mode. Battery energy, runtime, frequency, dimensions, accessories and deployment are not inferred.",
     "DOE listing is not treated as a compliance determination. The BN1500M2 and BN1500M2-CA efficiency disagreement remains explicitly quarantined rather than replacing either issuer observation.",
     "All eight Cummins QSK50 model/frequency identities with populated Data Center Continuous ratings are processed. Five full rating rows retain prime, standby, continuous and engine observations; three DCC-only identities do not inherit missing family-level facts.",
-    "Cummins DCC kW and kVA remain separate exact OEM outputs, not facility capacity or deployment. Duplicate live-page rows are reconciled only when DCC values agree; no voltage, alternator, enclosure or installation option is synthesized."
+    "Cummins DCC kW and kVA remain separate exact OEM outputs, not facility capacity or deployment. Duplicate live-page rows are reconciled only when DCC values agree; no voltage, alternator, enclosure or installation option is synthesized.",
+    "Five current iColo/Digital Realty East Africa facility identities and one explicit Nairobi campus aggregate are processed; the campus aggregate is permanently excluded from capacity sums and both Nairobi facilities are child records.",
+    "MPM1, MBA1, MBA2 and NBO1 normalize only exact operator customer/IT capability statements as design maxima. NBO2's 6.4 MW claim remains observation-only because its IT, facility and grid boundary is unstated.",
+    "MPM1 9,500 m2 campus versus 5,000 m2 home-card total area, MBA1 current 0.9 MW versus earlier 675 kW capability and MBA2 4,000 m2 versus 4,460 m2 total-area statements remain dated observations rather than silently replacing one another.",
+    "Technical-sheet generator, UPS and PUE facts remain facility-design observations and do not create exact deployed equipment configurations. Exact addresses, coordinates, security controls and access procedures are excluded."
   ]
 }

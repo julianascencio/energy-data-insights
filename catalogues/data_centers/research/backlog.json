@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T21:23:00Z",
+  "updated_at": "2026-11-05T23:23:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -128,7 +128,9 @@
     "volvo_penta_current_powergen_configurations": 22,
     "volvo_penta_stage_iiia_powergen_configurations": 22,
     "doe_ccms_crac_displayed_rows": 50,
-    "doe_ccms_ups_displayed_rows": 50
+    "doe_ccms_ups_displayed_rows": 50,
+    "icolo_current_east_africa_facilities": 5,
+    "digital_realty_nairobi_campus_aggregates": 1
   },
   "next_batches": [
     {
@@ -324,6 +326,22 @@
         "Do not combine memory, power and form-factor options across variants",
         "Keep workload precision and sparsity conditions with any performance observation"
       ]
+    },
+    {
+      "rank": 11,
+      "source": "Digital Realty East Africa building and power-boundary continuation",
+      "urls": [
+        "https://www.icolo.io/locations/",
+        "https://investor.digitalrealty.com/news-events/news-releases"
+      ],
+      "offset": 6,
+      "scope": "Five current named facilities and one explicit Nairobi campus aggregate are complete. MPM1, MBA1, MBA2 and NBO1 normalize only exact customer/IT capability statements; NBO2 remains observation-only because its 6.4 MW opening claim does not state an IT, facility or grid boundary. Continue only with exact building/phase evidence and a boundary-qualified NBO2 rating.",
+      "questions": [
+        "Reconcile MPM1 9,500 m2 campus versus 5,000 m2 current home-card total area without replacing either dated observation",
+        "Reconcile MBA1 0.9 MW current IT Power with the earlier 675 kW customer-power capability and MBA2 4,000 m2 current campus area with the 4,460 m2 technical sheet total",
+        "Seek exact NBO2 customer-space, rack and IT/grid/facility capacity evidence; do not infer from the unclassified 6.4 MW opening claim",
+        "Do not promote exact addresses, coordinates, security controls or access procedures from technical sheets"
+      ]
     }
   ],
   "holds": [
@@ -452,16 +470,21 @@
       "source": "Doosan Portable Power generator tables",
       "url": "https://doosanportablepower.com/dpp-la/la/en/legal/terms-of-use",
       "reason": "Current official terms restrict stored, reproduced, republished or distributed website content to narrow personal-use exceptions. Candidate generator tables were screened only; no facts or bytes were imported."
+    },
+    {
+      "source": "Wingu Africa portfolio",
+      "url": "https://www.wingu.africa/legal/terms-of-use",
+      "reason": "Official terms prohibit reproduction, republication, distribution and use of website content for other purposes without prior written permission. Candidate facility pages were screened only; no Wingu facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "volvo-penta-stage-iiia-powergen-20261105T192000Z",
+    "run_id": "icolo-east-africa-20261105T232300Z",
     "report": "2026-11-05-report.md",
-    "validation": "2026-11-05T1920-validation.json",
-    "added_projects": 0,
+    "validation": "2026-11-05T2323-validation.json",
+    "added_projects": 6,
     "enriched_projects": 0,
-    "added_equipment": 22,
-    "branch": "research/data-center-database-20261105T1320Z"
+    "added_equipment": 0,
+    "branch": "research/data-center-database-20261105T2217Z"
   }
 }

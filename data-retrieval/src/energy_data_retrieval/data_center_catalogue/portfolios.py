@@ -799,6 +799,126 @@ def parse_raxio_facility_page(
     }
 
 
+def parse_icolo_facility_page(
+    content: bytes, *, source_url: str, expected_code: str | None = None
+) -> dict[str, Any]:
+    """Stage public iColo/Digital Realty facility identity and current metrics."""
+    if urlsplit(source_url).hostname not in {"icolo.io", "www.icolo.io"}:
+        raise ValueError("Expected official iColo URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+
+    codes = list(dict.fromkeys(re.findall(r"\b(MPM1|MBA1|MBA2|NBO1)\b", text)))
+    if len(codes) != 1:
+        raise ValueError("Changed iColo facility identity shape")
+    code = codes[0]
+    if expected_code is not None and code != expected_code:
+        raise ValueError("Changed iColo facility identity")
+
+    def optional_number(pattern: str, label: str) -> float | None:
+        matches = list(dict.fromkeys(re.findall(pattern, text, re.IGNORECASE)))
+        if len(matches) > 1:
+            raise ValueError(f"Changed iColo {label} shape")
+        return float(matches[0].replace(",", "")) if matches else None
+
+    rack_count = optional_number(r"(\d+(?:,\d+)?)\s+(?:Rack Capacity|Racks?)\b", "rack")
+    customer_space = optional_number(
+        r"(\d+(?:,\d+)?)\s*(?:sqm|m\s*2)\s+(?:IT Space|Total Customer Space)",
+        "customer-space",
+    )
+    campus_area = optional_number(
+        r"(\d+(?:,\d+)?)\s*(?:sqm|m\s*2)\s+(?:Campus Size|Total Campus Area)",
+        "campus-area",
+    )
+    lifecycle = next(
+        (
+            marker
+            for marker in (
+                "operational since 2017",
+                "launched in 2022",
+                "launched in September 2019",
+            )
+            if marker.casefold() in text.casefold()
+        ),
+        None,
+    )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": code,
+            "rack_capacity": int(rack_count) if rack_count is not None else None,
+            "customer_space_m2": customer_space,
+            "campus_area_m2": campus_area,
+            "lifecycle_marker": lifecycle,
+            "locator": f"{code} current facility page / public facility metrics",
+        },
+        "review_required": True,
+    }
+
+
+def parse_icolo_home_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the three exact power/area cards currently printed on iColo's home page."""
+    if urlsplit(source_url).hostname not in {"icolo.io", "www.icolo.io"}:
+        raise ValueError("Expected official iColo URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    patterns = {
+        "MPM1": r"MAPUTO ONE[^0-9]+IT Power:\s*(\d+(?:\.\d+)?)\s*MW\s+Total Area:\s*(\d+(?:,\d+)?)",
+        "MBA1": (
+            r"MOMBASA ONE[^0-9]+IT Power:\s*(\d+(?:\.\d+)?)\s*MW\s+"
+            r"Total Area:\s*(\d+(?:,\d+)?)"
+        ),
+        "MBA2": r"MOMBASA TWO[^0-9]+IT Load:\s*(\d+(?:\.\d+)?)\s*MW\s+Total Area:\s*(\d+(?:,\d+)?)",
+    }
+    candidates = []
+    for code, pattern in patterns.items():
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match is None:
+            raise ValueError("Changed iColo home portfolio shape")
+        candidates.append(
+            {
+                "external_id": code,
+                "it_power_mw": float(match.group(1)),
+                "total_area_m2": float(match.group(2).replace(",", "")),
+                "locator": f"home page campus card / {code}",
+            }
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_digital_realty_nbo2_release(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the opening and unclassified capacity claim for NBO2."""
+    if urlsplit(source_url).hostname != "investor.digitalrealty.com":
+        raise ValueError("Expected official Digital Realty investor URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    if "opening of the 6.4-megawatt (MW) Nairobi Two Data Center (NBO2)" not in text:
+        raise ValueError("Changed NBO2 opening-release shape")
+    if re.search(r"Built alongside Nairobi One \(\s*NBO1\s*\)", text) is None:
+        raise ValueError("Missing NBO1/NBO2 campus relationship")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": "NBO2",
+            "reported_capacity_mw": 6.4,
+            "opening_date": "2026-09-07",
+            "campus_external_id": "Nairobi campus",
+            "locator": "opening paragraph and Built alongside Nairobi One paragraph",
+        },
+        "review_required": True,
+    }
+
+
 def parse_vertiv_powerups6000_table(
     content: bytes, *, source_url: str, expected_count: int | None = None
 ) -> dict[str, Any]:
