@@ -48,8 +48,8 @@ Explore attributed project and equipment records, coverage and completeness. Cho
    :maxdepth: 1
 
    topic_solar_pv
-   topic_wind
    topic_hydro
+   topic_wind
    topic_battery_storage
    topic_data_centres
    topic_quality_coverage
