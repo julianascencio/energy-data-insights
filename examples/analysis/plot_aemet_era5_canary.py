@@ -1,6 +1,6 @@
 """
 Canary Islands: AEMET-adjusted ERA5 degradation-rate rasters
-===========================================================
+============================================================
 
 Continuous land surfaces replace isolated colored points. Monthly temperature,
 relative-humidity and wind biases are fitted with AEMET observations in **2022**;
