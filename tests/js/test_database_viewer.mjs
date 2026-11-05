@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import {windHubHeightSummary, windEpdSummary} from "../../docs/_static/database-core.mjs";
 import {filterRows, sortRows, statistics, groupRows, toCsv, hasLocation, projectSummary, bessProjectSummary, clusterLocations, dataCenterScopes} from "../../docs/_static/database-core.mjs";
 
 const rows = [
@@ -199,4 +200,74 @@ test("wind component navigation follows explicit evidence in both directions", a
   assert.equal(windComponentApplications(component, rows)[0].conditions, "Tower A only");
   assert.deepEqual(windComponentApplications(unrelated, rows), []);
   assert.deepEqual(windComponentApplications(component, [component]), []);
+});
+
+// Synthetic option lists distinguish missingness, malformed JSON and known zero.
+test("wind hub options never become scalar heights or model variants", () => {
+  const summary = windHubHeightSummary([
+    {equipment_category: "wind_turbine", hub_height_m: 0, hub_height_options_json: '{"heights_m":[110]}'},
+    {equipment_category: "wind_turbine", hub_height_options_json: '{"heights_m":[95,110,140]}'},
+    {equipment_category: "wind_turbine", hub_height_options_json: '{"heights_m":[null,0,"110"]}'},
+    {equipment_category: "wind_turbine", hub_height_options_json: "invalid"},
+    {equipment_category: "wind_turbine", hub_height_options_json: "null"},
+    {equipment_category: "converter", hub_height_m: 50},
+  ]);
+  assert.deepEqual(summary, {reported: 1, optionsOnly: 1, unknown: 3});
+});
+
+test("EPD scenarios preserve zero and lifetime boundaries without creating farms or sums", () => {
+  const scenario = {kind: "modeled", unit: "MWh", boundary: "one turbine; net electricity delivered to grid", value: 0, reference_service_life_years: 20};
+  const row = scenarios => ({equipment_category: "wind_turbine", extensions_json: JSON.stringify({environmental_product_declarations: [{scenarios}]})});
+  assert.deepEqual(windEpdSummary([
+    row([scenario, {...scenario, value: 500, reference_service_life_years: 25}]),
+    row([{...scenario, kind: "measured"}]), row([{...scenario, boundary: "farm; gross"}]),
+    row([{...scenario, reference_service_life_years: null}]), row([{...scenario, value: null}]),
+    {equipment_category: "wind_turbine", extensions_json: "invalid"},
+    {...row([scenario]), equipment_category: "generator"},
+  ]), {records: 1, scenarios: 2, withoutScenarios: 5});
+});
+
+test("EIA unit states remain dated observations and distinguish absence", async () => {
+  const {windEiaSummary} = await import("../../docs/_static/database-core.mjs");
+  const unit = {generator_id: "G1", locator: "row3", status_code: "RE", status_as_of: "2025-12-31"};
+  const row = units => ({entity_type: "projects", extensions_json: JSON.stringify({eia_annual_wind_partitions: [{source_id: "eia", year: 2025, units}]})});
+  assert.deepEqual(windEiaSummary([
+    row([unit, {...unit,status_code:"CN"}, {...unit,status_code:"IP"}]),
+    row([{...unit,status_as_of:"2026-12-31"}]), row([{...unit,status_code:"UNKNOWN"}]),
+    {entity_type:"projects",extensions_json:"invalid"},
+    {entity_type:"projects",extensions_json:"null"},
+    {...row([unit]),entity_type:"equipment"},
+  ]), {projects:1,withoutObservations:4,retired:1,canceled:1,postponed:1,operating:0,outOfService:0,standby:0});
+});
+
+test("operable EIA statuses stay distinct", async () => {
+  const {windEiaSummary} = await import("../../docs/_static/database-core.mjs");
+  const units = ["OP","OS","OA"].map(status_code=>({status_code,generator_id:status_code,locator:"row",status_as_of:"2025-12-31"}));
+  const result=windEiaSummary([{entity_type:"projects",extensions_json:JSON.stringify({eia_annual_wind_partitions:[{year:2025,source_id:"eia",units}]})}]);
+  assert.equal(result.operating,1); assert.equal(result.outOfService,1); assert.equal(result.standby,1);
+});
+
+
+test("EIA year selection prevents mixing annual observations", async () => {
+  const {windEiaSummary} = await import("../../docs/_static/database-core.mjs");
+  const part = (year, status) => ({year, source_id:"annual"+year, units:[{generator_id:"1", locator:"row3", status_code:status, status_as_of:year+"-12-31"}]});
+  const rows = [{entity_type:"projects", extensions_json:JSON.stringify({eia_annual_wind_partitions:[part(2024,"OP"),part(2025,"RE")]})}];
+  assert.equal(windEiaSummary(rows,2025).operating,0);
+  assert.equal(windEiaSummary(rows,2025).retired,1);
+  assert.equal(windEiaSummary(rows,2026).withoutObservations,1);
+  assert.equal(windEiaSummary(rows).operating,1);
+});
+
+test("OEM update coverage requires dated linked evidence, not a selected mode or tower", async () => {
+  const {windOemUpdateSummary} = await import("../../docs/_static/database-core.mjs");
+  const update = {source_id:"oem", published_at:"2026-04-22", locator:"announcement", conditions:"dated options only"};
+  const row = updates => ({equipment_category:"wind_turbine", sources:["oem"], extensions_json:JSON.stringify({oem_product_updates:updates})});
+  const rows = [row([update, {...update,published_at:"2026-05-01"}]),
+    row([{...update,source_id:"unregistered"}]), row([{...update,published_at:null}]),
+    row([{...update,conditions:null}]), {...row([]),extensions_json:"null"},
+    {...row([]),extensions_json:"invalid"}, {...row([update]),equipment_category:"tower"}];
+  const before = JSON.stringify(rows);
+  assert.deepEqual(windOemUpdateSummary(rows), {models:1,updates:2,withoutUpdates:5});
+  assert.deepEqual(windOemUpdateSummary([]), {models:0,updates:0,withoutUpdates:0});
+  assert.equal(JSON.stringify(rows), before);
 });

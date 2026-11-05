@@ -1,11 +1,11 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-04-2235`, the proposed continuation contains
-**8,136 projects, 357 equipment records, 13,633 linked turbines and two original
-numerical curves**, across **59 countries and 54 manufacturer labels**. Labels
-are not a reconciled corporate-entity count. Merged main at `7c31c06a` contains
-7,948 projects, 337 equipment records, 13,633 turbines and two curves.
+numerical curves. At batch `2026-11-04-2435`, the proposed continuation contains
+**8,174 projects, 372 equipment records, 13,633 linked turbines and two original
+numerical curves**, across **59 countries and 55 manufacturer labels**. Labels
+are not a reconciled corporate-entity count. Merged main at `9f36b0f3` contains
+8,136 projects, 357 equipment records, 13,633 turbines and two curves.
 These are catalogue counts, not a current operating census. Subsequent totals
 are recorded in `catalogues/wind/research/latest.json`.
 
@@ -690,3 +690,140 @@ Batch `2026-11-04-2235` reviews all 111 survey sites in this half-open partition
 Five exact equipment models are added:SD3,SD3EX,SD6+,SD12 and the Powersync25 inverter. Existing Excel15 and SD6 identities gain geometry and qualified technical observations without replacing PNNL power at11m/s. SD3EX3/2.5kW observations conflict, so its scalar is null. SD6+ power depends on unspecified inverter settings. Powersync25 factory20kW,table23kW and field-adjusted25kW limits are separate. Nominal and11m/s ratings are excluded from a common nameplate-density comparison. No graph is silently digitized.
 
 Kodair pages were acquired but excluded under explicit republication terms. Eocycle page/PDF returned403; this is a download failure, not an authentication or reuse finding. Complete source decisions, count quarantine IDs, checksums and exact continuation partitions are in the batch research files. The20-equipment target was not met; no variants were invented.
+
+
+## Final NEM partition, local BOE reconciliation and Goldwind tables
+
+Batch `2026-11-04-2335` adds32projects and15exact equipment models, and enriches one historical project and two existing equipment records. Branch totals are8,168projects (8,167non-group),372equipment,13,633turbines and two numerical curves across59countries. The full AEMO October2026 wind selection is exhausted:269sites/309units,198accepted identities and71deferred. This final33-site partition adds25sites, holds eight overlapping identities, and quarantines twelve count placeholders; all accepted survey scopes remain excluded from capacity totals. BullawahStage2 shares the existing Stage1 family identifier.
+
+The complete September21–23 BOEA/B daily partition yields Ferromolín PEol-1023:27planned MW, six proposed turbine positions, five separate reserve locations and a qualified material-execution budget. A separate2024BOE local inventory within10km of Martelilla yields six additions and one CortijoI historical-record reconciliation. The eight-entry list totals214.07MW arithmetically versus the reported214.04MW; the regional total is not imported. Castella expansion remains held. CortijoI40.8MW and its1.2MW expansion are distinct excluded scopes; PNE42MW and14turbines are not assigned to either. None is presented as a current operating census.
+
+Goldwind2025Q3 provides15explicit turbine columns, including table-reported165.8m and183.5m rotor diameters. Generator/converter voltages,50/60Hz choices, hub options, design life, operating/survival temperatures and environmental declaration claims retain their separate meanings. No unnamed component models or numerical curves are invented. SD3EX now retains three incompatible ratings3.2/3/2.5kW with a null scalar. Powersync25 gains exactPS25-240-1B identity, trip thresholds, enclosure and installation limits; conflicting inrush/fuse statements remain qualified. The viewer distinguishes offered hub options from scalar heights and unknowns.
+
+The50-project and20-equipment objectives were not met:33projects and17equipment were substantively changed. Completed source partitions, field holds and original-byte hashes are in the research ledgers. No repeated source imports or synthetic variants pad those counts.
+
+## Polish project reconciliation and original environmental declarations
+
+Batch `2026-11-04-2435` adds six Polish projects and enriches the historical
+Karcino record. All seven queued Polish references have now received detail-page
+review. Legnica's 2026 sale is separate from its planned 2030 commissioning.
+Kuślin and Krzęcin II retain 2020 project-company, auction, permit and electrical
+scopes alongside later launch observations. Proposed layout IDs are not installed
+turbine records. Karcino's 2009 historical year and 2010 developer launch remain
+separate; the owner confirms Karcino and Karścino are different acquired assets.
+All six additions and the enriched historical scope remain excluded from totals.
+
+Original EPDITALY0508 and EPDITALY0852 declarations enrich seven existing Goldwind
+models. The recurring adapter pins original bytes, requires the complete explicit
+model set and preserves all earlier evidence and creation timestamps. Four swept
+areas and one design-life scalar are null pending revision reconciliation. Blade
+labels without explicit model allocation and unnamed components remain nested.
+No compatibility is inferred from a list's order or similar model codes.
+
+Ten modeled lifetime-generation scenarios retain their individual turbine,
+net-to-grid boundary, location and 20/25-year exposure. Egypt and Tanzania are
+exemplary LCA sites, not new operating projects. The viewer and offline example
+show these scenarios without summing them, deriving capacity factors or calling
+EPD verification independently validated turbine performance. No new curves.
+
+All September 17–19 BOE A/B indexes were reviewed: zero wind notices. Hargraves'
+primary developer page was acquired, but its three AEMO identities remain held
+without an explicit registry crosswalk. Next: September 14–16 BOE issues, the
+Wimmera stage boundary, Jasna's exact installed fleet, and original Goldwind
+revision/type-certificate evidence. See the dated research ledgers for hashes,
+field locators and unresolved observations.
+
+## Dated EIA generator observations
+
+The complete final-2025 EIA wind **Retired and Canceled** tab contains 172 rows
+across 129 plant codes. It is not a complete historical retirement census.
+58 existing U.S. project identities receive 82 dated generator observations;
+71 identities remain deferred, including five code matches with name/location
+discrepancies. Whole-farm status, historical capacity, repowering boundaries and
+aggregation exclusions remain unchanged. The canonical extension retains row
+locators, original quantities, month/year dates, net seasonal versus nameplate
+MW, representative heights and predominant model labels. Those labels do not
+create exact OEM equipment or individual turbine records.
+
+`wind_catalogue.eia.parse_retired_partition` verifies original workbook hashes,
+reporting year, headers, wind prime movers, statuses and unique identities.
+`enrich_retired_partition` requires an explicit reviewed crosswalk plus matching
+WRI-encoded EIA code, normalized name and coordinates. Replaying a source
+revision is idempotent; changing it under the same source ID is rejected.
+The shared project viewer reports unit observations independently of farm
+lifecycle and current capacity. The deterministic gallery prints their reporting
+year and unchanged scope exclusions.
+
+EIA's workbook calls its speed field “Design Wind Speed”; its instructions ask
+for representative annual average speed. Both descriptions are retained, with
+measurement method, dates and height unknown. No measured/design performance
+comparison or capacity factor is inferred. Sources: final-2025 EIA-860 and the
+pinned WRI U.S. importer/identity helper (`eia860_2025`, `wri_usa_identity`).
+
+The EIA adapter also accepts an inclusive `operable_range=(low, high)` plant-code
+partition. The complete 1–60999 range is reviewed; 61000–61999 is next. Operating,
+out-of-service and standby generator observations remain distinct in the shared
+viewer and existing deterministic example. None establishes whole-farm current
+operation, reconciles repowering, or promotes predominant model labels to exact
+OEM equipment. The original final-2025 workbook bytes are reused and rechecked.
+
+The 52000–55999 continuation reviewed all 61 plants / 67 generator rows in four
+complete numerical partitions, including the empty 53000–53999 partition. It
+adds dated evidence to 53 existing projects and holds eight unresolved identities.
+The adapter rejects identical unit observations imported through overlapping
+source aliases. Distinct tabs and revised observations remain separate. Viewer
+cards separate reporting years; `windEiaSummary(rows, year)` can select one year
+without treating absent observations as zero generating capacity.
+
+The complete 56000–56999 partition adds evidence to 298 existing projects from
+307 reviewed plants / 363 generator rows; nine identities remain held. Revised
+source observations can retain changed and unchanged units together without
+overwriting prior observations. Identical whole-plant partitions remain rejected
+when submitted under a second source alias.
+
+The complete final-2025 Operable 57000–57999 partition reviews 266 plants and
+290 generator rows: 258 existing project identities enriched and eight deferred.
+Reported generator observations do not change farm capacity or lifecycle totals.
+
+
+The complete final-2025 Operable 58000–58999 partition reviews 143 plants and
+173 generator rows: 132 existing projects enriched and 11 unresolved identities
+held. Original generator nameplates, seasonal net capacities, predominant model
+labels, representative hub heights and grid context retain their source rows and
+units. No whole-farm status, scalar capacity or aggregation eligibility changes.
+
+A dated Nordex announcement adds the N175/6.X 7.3 MW mode and German tower
+observations to the existing equipment identity (`nordex_n175_update_20260422`).
+The 162.5 m hybrid tower was under development on 22 April 2026, with approval
+scheduled for Q2; this is not evidence that approval or delivery occurred.
+The same announcement reports Max Bögl's 179 m tower approval on 21 April.
+These options remain in `extensions_json.oem_product_updates`; prior scalar
+specifications and provenance are preserved. The shared viewer counts dated
+updates and models without this evidence. The offline example prints the modes,
+tower conditions and dates without creating model variants or assuming installed
+compatibility. No common-condition numerical curve or independently validated
+performance is established by the announcement.
+
+The complete final-2025 Operable 59000–59999 partition reviews 105 plants and
+114 generator rows: 95 existing projects enriched and ten identities deferred.
+All prior scalar facts, source observations and capacity exclusions remain unchanged.
+
+The complete final-2025 Operable 60000–60999 partition reviews 75 plants and
+85 generator rows: 70 existing projects enriched and five identities held.
+The queued V82 archive power/Ct table remains deferred: its metadata labels it
+theoretical, provides no reference links and omits air density and operating mode.
+No conditions are reverse-engineered from Cp and no OEM curve is added.
+
+The complete final-2025 Operable 61000–61999 partition reviews 85 plants and
+100 generator rows: 67 existing projects enriched and 18 identities held.
+Jasna gains a dated mixed-fleet observation: 22 V126 turbines reported at
+3.45 MW and 17 at 3.3 MW. The arithmetic check is separate from reported
+132 MW, and no exact OEM revision or individual turbine identity is inferred.
+March 2021 commissioning-in-progress remains distinct from the prior launch label.
+
+The complete final-2025 Operable 62000–63999 partitions review 146 plants and
+161 generator rows: 36 existing projects enriched and 110 identities held.
+Karcino gains the operator's dated history: turbine installation began in 2009
+and commissioning occurred in 2010. The historical WRI conflict remains visible.
+The operator's 120 GWh/year statement has no named observation year or method;
+it is not used to calculate capacity factor or presented as measured output.

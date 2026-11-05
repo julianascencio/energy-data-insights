@@ -1,0 +1,321 @@
+{
+  "source_id": "goldwind_epditaly0852",
+  "sha256": "ec2c3da5f682815c94d917caa253165340f077e0e39afd765ef0d2e3d4988941",
+  "manufacturer": "Goldwind",
+  "expected_models": [
+    "GWH170-7.2MW",
+    "GWH175-7.8MW",
+    "GWH182-8.0MW"
+  ],
+  "published_at": "2025-02-10",
+  "declaration": "EPDITALY0852",
+  "models": [
+    {
+      "model": "GWH170-7.2MW",
+      "locator": "pp1–7 declaration,Table1 and LCA scope",
+      "technical": {
+        "generator": {
+          "manufacturer": "Goldwind Science & Technology Co., Ltd.",
+          "type": "permanent magnet",
+          "rated_power_kw": 7500,
+          "rated_voltage_v": 1380,
+          "frequency_range_hz": [
+            55,
+            102
+          ],
+          "protection": "IP54",
+          "model": null
+        },
+        "converter": {
+          "type": "full-power liquid-cooled",
+          "phases": 3,
+          "model": null
+        },
+        "tower": {
+          "type": "tapered steel with ladders and fall protection",
+          "corrosion_classes": {
+            "internal": "C3",
+            "external": "C4"
+          },
+          "model": null
+        },
+        "control": {
+          "type": "PLC",
+          "architecture": "distributed",
+          "main_switch_cabinet_manufacturer": "Beijing Etechwin Electric Co.,Ltd",
+          "model": null
+        },
+        "site_altitude_range_m_inclusive": [
+          0,
+          2000
+        ],
+        "blade_material": "glass fibre reinforced resin",
+        "design_life_as_printed": ">=20years,rated25",
+        "verification": "ISO14025 environmental declaration externally verified by ICMQ; not independent operational/performance validation",
+        "type_certificate": null,
+        "unallocated_blade_labels": [
+          "GW83.3",
+          "GW86",
+          "Sinoma90.2"
+        ],
+        "unallocated_swept_areas_m2": [
+          22698,
+          24053,
+          26016
+        ],
+        "mapping_hold": "Comma-separated rows do not explicitly label individual model mapping; do not infer compatibility by column order",
+        "declaration_date_discrepancy": {
+          "original_issue": "2025-02-10",
+          "original_valid_to": "2030-02-10",
+          "portfolio_issue_observation": "2025-10-02",
+          "portfolio_valid_to_observation": "2030-10-02",
+          "resolution": "Preserve both dated source observations; original EU-formatted declaration governs this EPD observation; do not claim current validity"
+        }
+      },
+      "scalar_observations": {},
+      "scenarios": [
+        {
+          "kind": "modeled",
+          "boundary": "one turbine; net electricity delivered to grid",
+          "unit": "MWh",
+          "value": 774216.96,
+          "reference_service_life_years": 20,
+          "reference_period": "20-year modeled lifetime; no calendar generation period",
+          "mean_wind_speed_m_s": 10.9,
+          "location": "Exemplary Miombo,Tanzania scenario",
+          "locator": "p7 functional unit and reference flows",
+          "functional_unit": "1kWh delivered to grid",
+          "model_wind_farm_capacity_mw": 100,
+          "production_data_period": "2023-01/2024-12",
+          "capacity_factor": null,
+          "air_density_kg_m3": null,
+          "exposure_note": "Reported modeled reference flow only; no observed commissioning/capacity-time exposure or derived capacity factor"
+        },
+        {
+          "kind": "modeled",
+          "boundary": "one turbine; net electricity delivered to grid",
+          "unit": "MWh",
+          "value": 967771.2,
+          "reference_service_life_years": 25,
+          "reference_period": "25-year modeled lifetime; no calendar generation period",
+          "mean_wind_speed_m_s": 10.9,
+          "location": "Exemplary Miombo,Tanzania scenario",
+          "locator": "p7 functional unit and reference flows",
+          "functional_unit": "1kWh delivered to grid",
+          "model_wind_farm_capacity_mw": 100,
+          "production_data_period": "2023-01/2024-12",
+          "capacity_factor": null,
+          "air_density_kg_m3": null,
+          "exposure_note": "Reported modeled reference flow only; no observed commissioning/capacity-time exposure or derived capacity factor"
+        }
+      ]
+    },
+    {
+      "model": "GWH175-7.8MW",
+      "locator": "pp1–7 declaration,Table1 and LCA scope",
+      "technical": {
+        "generator": {
+          "manufacturer": "Goldwind Science & Technology Co., Ltd.",
+          "type": "permanent magnet",
+          "rated_power_kw": 8100,
+          "rated_voltage_v": 1380,
+          "frequency_range_hz": [
+            55,
+            104
+          ],
+          "protection": "IP54",
+          "model": null
+        },
+        "converter": {
+          "type": "full-power liquid-cooled",
+          "phases": 3,
+          "model": null
+        },
+        "tower": {
+          "type": "tapered steel with ladders and fall protection",
+          "corrosion_classes": {
+            "internal": "C3",
+            "external": "C4"
+          },
+          "model": null
+        },
+        "control": {
+          "type": "PLC",
+          "architecture": "distributed",
+          "main_switch_cabinet_manufacturer": "Beijing Etechwin Electric Co.,Ltd",
+          "model": null
+        },
+        "site_altitude_range_m_inclusive": [
+          0,
+          2000
+        ],
+        "blade_material": "glass fibre reinforced resin",
+        "design_life_as_printed": ">=20years,rated25",
+        "verification": "ISO14025 environmental declaration externally verified by ICMQ; not independent operational/performance validation",
+        "type_certificate": null,
+        "unallocated_blade_labels": [
+          "GW83.3",
+          "GW86",
+          "Sinoma90.2"
+        ],
+        "unallocated_swept_areas_m2": [
+          22698,
+          24053,
+          26016
+        ],
+        "mapping_hold": "Comma-separated rows do not explicitly label individual model mapping; do not infer compatibility by column order",
+        "declaration_date_discrepancy": {
+          "original_issue": "2025-02-10",
+          "original_valid_to": "2030-02-10",
+          "portfolio_issue_observation": "2025-10-02",
+          "portfolio_valid_to_observation": "2030-10-02",
+          "resolution": "Preserve both dated source observations; original EU-formatted declaration governs this EPD observation; do not claim current validity"
+        }
+      },
+      "scalar_observations": {
+        "design_life_years": {
+          "value": 25,
+          "unit": "years",
+          "locator": "p4 Table1 rated design life; distinct from20yearLCA RSL",
+          "conditions": ">=20, rated25years"
+        }
+      },
+      "scenarios": [
+        {
+          "kind": "modeled",
+          "boundary": "one turbine; net electricity delivered to grid",
+          "unit": "MWh",
+          "value": 820705.92,
+          "reference_service_life_years": 20,
+          "reference_period": "20-year modeled lifetime; no calendar generation period",
+          "mean_wind_speed_m_s": 10.9,
+          "location": "Exemplary Miombo,Tanzania scenario",
+          "locator": "p7 functional unit and reference flows",
+          "functional_unit": "1kWh delivered to grid",
+          "model_wind_farm_capacity_mw": 100,
+          "production_data_period": "2023-01/2024-12",
+          "capacity_factor": null,
+          "air_density_kg_m3": null,
+          "exposure_note": "Reported modeled reference flow only; no observed commissioning/capacity-time exposure or derived capacity factor"
+        },
+        {
+          "kind": "modeled",
+          "boundary": "one turbine; net electricity delivered to grid",
+          "unit": "MWh",
+          "value": 1025882.4,
+          "reference_service_life_years": 25,
+          "reference_period": "25-year modeled lifetime; no calendar generation period",
+          "mean_wind_speed_m_s": 10.9,
+          "location": "Exemplary Miombo,Tanzania scenario",
+          "locator": "p7 functional unit and reference flows",
+          "functional_unit": "1kWh delivered to grid",
+          "model_wind_farm_capacity_mw": 100,
+          "production_data_period": "2023-01/2024-12",
+          "capacity_factor": null,
+          "air_density_kg_m3": null,
+          "exposure_note": "Reported modeled reference flow only; no observed commissioning/capacity-time exposure or derived capacity factor"
+        }
+      ]
+    },
+    {
+      "model": "GWH182-8.0MW",
+      "locator": "pp1–7 declaration,Table1 and LCA scope",
+      "technical": {
+        "generator": {
+          "manufacturer": "Goldwind Science & Technology Co., Ltd.",
+          "type": "permanent magnet",
+          "rated_power_kw": 8300,
+          "rated_voltage_v": 1380,
+          "frequency_range_hz": [
+            55,
+            106
+          ],
+          "protection": "IP54",
+          "model": null
+        },
+        "converter": {
+          "type": "full-power liquid-cooled",
+          "phases": 3,
+          "model": null
+        },
+        "tower": {
+          "type": "tapered steel with ladders and fall protection",
+          "corrosion_classes": {
+            "internal": "C3",
+            "external": "C4"
+          },
+          "model": null
+        },
+        "control": {
+          "type": "PLC",
+          "architecture": "distributed",
+          "main_switch_cabinet_manufacturer": "Beijing Etechwin Electric Co.,Ltd",
+          "model": null
+        },
+        "site_altitude_range_m_inclusive": [
+          0,
+          2000
+        ],
+        "blade_material": "glass fibre reinforced resin",
+        "design_life_as_printed": ">=20years,rated25",
+        "verification": "ISO14025 environmental declaration externally verified by ICMQ; not independent operational/performance validation",
+        "type_certificate": null,
+        "unallocated_blade_labels": [
+          "GW83.3",
+          "GW86",
+          "Sinoma90.2"
+        ],
+        "unallocated_swept_areas_m2": [
+          22698,
+          24053,
+          26016
+        ],
+        "mapping_hold": "Comma-separated rows do not explicitly label individual model mapping; do not infer compatibility by column order",
+        "declaration_date_discrepancy": {
+          "original_issue": "2025-02-10",
+          "original_valid_to": "2030-02-10",
+          "portfolio_issue_observation": "2025-10-02",
+          "portfolio_valid_to_observation": "2030-10-02",
+          "resolution": "Preserve both dated source observations; original EU-formatted declaration governs this EPD observation; do not claim current validity"
+        }
+      },
+      "scalar_observations": {},
+      "scenarios": [
+        {
+          "kind": "modeled",
+          "boundary": "one turbine; net electricity delivered to grid",
+          "unit": "MWh",
+          "value": 820874.88,
+          "reference_service_life_years": 20,
+          "reference_period": "20-year modeled lifetime; no calendar generation period",
+          "mean_wind_speed_m_s": 10.9,
+          "location": "Exemplary Miombo,Tanzania scenario",
+          "locator": "p7 functional unit and reference flows",
+          "functional_unit": "1kWh delivered to grid",
+          "model_wind_farm_capacity_mw": 100,
+          "production_data_period": "2023-01/2024-12",
+          "capacity_factor": null,
+          "air_density_kg_m3": null,
+          "exposure_note": "Reported modeled reference flow only; no observed commissioning/capacity-time exposure or derived capacity factor"
+        },
+        {
+          "kind": "modeled",
+          "boundary": "one turbine; net electricity delivered to grid",
+          "unit": "MWh",
+          "value": 1026093.6,
+          "reference_service_life_years": 25,
+          "reference_period": "25-year modeled lifetime; no calendar generation period",
+          "mean_wind_speed_m_s": 10.9,
+          "location": "Exemplary Miombo,Tanzania scenario",
+          "locator": "p7 functional unit and reference flows",
+          "functional_unit": "1kWh delivered to grid",
+          "model_wind_farm_capacity_mw": 100,
+          "production_data_period": "2023-01/2024-12",
+          "capacity_factor": null,
+          "air_density_kg_m3": null,
+          "exposure_note": "Reported modeled reference flow only; no observed commissioning/capacity-time exposure or derived capacity factor"
+        }
+      ]
+    }
+  ]
+}

@@ -1,20 +1,20 @@
 {
-  "batch": "2026-11-04-2235",
-  "updated_at": "2026-11-04T21:44:39Z",
-  "baseline_main": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
-  "branch": "research/wind-20261104-1535",
+  "batch": "2026-11-05-0735",
+  "updated_at": "2026-11-05T07:38:14Z",
+  "baseline_main": "9f36b0f35a0090a4908741704af883be376466b6",
+  "branch": "research/wind-20261104-2335",
   "merged_wind_counts_at_baseline": {
-    "projects": 7948,
-    "equipment": 337,
+    "projects": 8136,
+    "equipment": 357,
     "turbines": 13633,
     "curves": 2
   },
   "branch_totals": {
-    "projects": 8136,
+    "projects": 8174,
     "turbines": 13633,
-    "equipment": 357,
+    "equipment": 372,
     "curves": 2,
-    "non_group_projects": 8135,
+    "non_group_projects": 8173,
     "countries": 59,
     "manufacturers": [
       "ABB",
@@ -34,6 +34,7 @@
       "Eveready Diversified Products (Pty) Ltd.",
       "Flender",
       "GE Vernova",
+      "Goldwind",
       "HI-VAWT Technology Corporation / Colite Technologies",
       "Hitachi",
       "Hunan Xiangtan Electric Power",
@@ -74,10 +75,10 @@
     ]
   },
   "changes_against_main": {
-    "new_projects": 188,
-    "substantively_enriched_projects": 0,
-    "new_equipment": 20,
-    "substantively_enriched_equipment": 5,
+    "new_projects": 38,
+    "substantively_enriched_projects": 1068,
+    "new_equipment": 15,
+    "substantively_enriched_equipment": 3,
     "new_turbines": 0,
     "new_curves": 0
   },
@@ -86,20 +87,20 @@
     "accepted": 5344,
     "excluded": 0,
     "deferred_records": 0,
-    "current_status_unresolved": 4700
+    "current_status_unresolved": 4698
   },
-  "primary_evidence_project_records": 3553,
+  "primary_evidence_project_records": 4659,
   "technology_counts": {
-    "fixed_bottom_offshore": 18,
-    "onshore": 3382,
-    "unknown": 4700,
+    "fixed_bottom_offshore": 19,
+    "onshore": 3421,
+    "unknown": 4698,
     "offshore_unspecified": 32,
     "floating_offshore": 4
   },
   "identity_candidate_groups": 13,
   "identity_candidate_records": 26,
   "important_deferrals": [
-    "4700 historical lifecycles unknown; 2216 REPD applications still deferred; scope exclusions unchanged",
+    "4698 historical lifecycles unknown; 2216 REPD applications still deferred; scope exclusions unchanged",
     "Existing 13 duplicate-name candidate groups remain unresolved",
     "Lake Turkana installed MW; V136-4.2 scalar; GE acoustic operating boundaries; SG 3.2-129 reported power-density discrepancy",
     "USWTDB release ZIP HTTP403; ANEEL daily CSV HTTP503, no asserted authentication/reuse restriction",
@@ -128,19 +129,27 @@
     "ODRE2020–2021:220holds; first20priorEICcrosswalks remain unresolved. Vayona/SGcontinuity held; expired/conditional ALMMcertificate entries do not establish current eligibility.",
     "ODRE2016–2019:555held;43genericcomponent rows lack exact models; IBAMA countqueryHTTP200/ArcGIS500; PNE commissioning/sale ambiguity requires reconciliation.",
     "AEMO59 survey identities require explicit WRI/phase crosswalk; all66 new survey scopes excluded from capacity totals. ICC-SWCC excluded for explicit reuse terms; PNNL exact table independently acquired.",
-    "Four AEMO2000–2999 candidates held;21 unit counts across20sites quarantined. Kodair terms explicit reuse exclusion; Eocycle page/PDF403. SD3EX3/2.5kW conflict; SD6+rating mode unresolved. Graph-only curves not imported."
+    "Four AEMO2000–2999 candidates held;21 unit counts across20sites quarantined. Kodair terms explicit reuse exclusion; Eocycle page/PDF403. SD3EX3/2.5kW conflict; SD6+rating mode unresolved. Graph-only curves not imported.",
+    "71AEMO nationalidentityholds; 12count units quarantined thispartition. Castella/ Castellana phase identity and local214.04/214.07MW total discrepancy held. Cortijo PNE42MW fleet not allocated. SD3EX third3.2kW rating does not resolve conflict. Goldwind no exact component identities or numerical curves.",
+    "Five Goldwindscalarconflicts null;EPD0852blade/area mappings unresolved;Karcino2009/2010 milestone andJasna exactfleetheld;Hargraves3registryidentities stillheld afterprimarydeveloperreview.",
+    "EIA71plantidentities deferred;5existingcodematches need name/location crosswalk; all58acceptedfarm scopes still excluded. Predominant models not exact OEM configurations; windspeedheader/instruction semantics unresolved.",
+    "EIA Operable52000–55999:8 identities held; CEC258092 p41 name/code lookup corroborates50535/50536 but does not reconcile historical alias/scope. No new equipment; original Goldwind type certificates unresolved.",
+    "Nine EIA56000–56999 identities held; EPA403; Mendi Goldwind GW-26CP.0004A original explicitly reuse-restricted. No new equipment.",
+    "Eight EIA57000–57999 identity holds; Delijia original specifications unavailable after official-page timeout. No new equipment.",
+    "58000–58999:11 EIA identities held; LM Wind Power original website tables excluded by explicit republication restriction; Nordex162.5m approval/delivery remains a dated plan, no certificate number published for179m.",
+    "EIA59000–59999:10 identities held; OEM certificate followup unresolved; no new exclusions or quarantines."
   ],
-  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations; Hessen1807units/627groups:38parks170units; Halland176areas691units:101projects385units; ACU R04_0 pp19–23 complete34ACU210/410 configurations; Thüringen1232units/379groups:8parks43units; VästraGötaland836areas2729units:610projects1987turbines;23exactLCVS/non-AL LCVT types; Sachsen1207units/498groups:16parks92units; Värmland98areas1278units:54projects544turbines;13ALchokes and15EMCfiltertypes; Saarland286units126groups:12parks49units;Örebro85areas405units:60projects239turbines;ACUR04_0pp62–65:12filterenrichments11resistortypes; Bremen99Hamburg78Berlin10units:2projects9turbines;Västmanland/Dalarna98areas1488units:51projects628turbines;VEC501R0complete11type enrichment; Gävleborg88areas2124units:56projects928turbines;EEZ1813units48namegroups screened;ENERCON E82E2 08/2019 table enriched; Västernorrland97areas2177units:55projects847turbines; Jämtland138areas1729units:69projects784turbines; ABB2020RevC pp13–14,24–25:15converter enrichments and1NETA-21 control; Västerbotten130areas2316units:67projects916turbines; NETA21RevQ pp225–226; Norrbotten68areas2566units:37projects822turbines; ABBRevQ pp21–24 layout1new1enriched; French national EOLIE2458rows screened; 2022+>=1MW cohort:34new installations, zero capacity-total changes; Swedish residual10land-layerqueries zero; GE4.2MW-117m entire table1new; Complete ODRE2020–2021>=1MWcohort238:18new220held; first20priorEICs reviewed and remain held. Complete MNRE20August2026 ALMM30entries:27new1enriched1held1nestedtoweroption.; ODRE2016–2019two cohorts complete607selected52new555held. Nine complete MNREcomponent disclosures and full ALMM-WTC3entries:25newcomponents9turbine enrichments.; Remaining French dated>=1MWcohorts through2015complete; six remaining DMCqueue entries9–14 reviewed.; BOE October1–3,5–10,13–14 complete A/B indexes including October2 extra issue;3new farms2explicit Mudarra configurations.; AEMO October2026 complete surveyID<2000 wind partition125sites:66new59held; PNNL July2026 complete9model certification table; BOE September24–26 all A/B issues1new.; AEMO2000–2999 complete111sites:107new4held,20count field quarantines. SD Wind five current model tables plus SDMK106; Bergey Rev3.1 p5/12–14:5new2enriched equipment.",
+  "completed_sources": "Prior completed sources retained in initial checkpoint; complete REPD Wind/crosswalk reconciliation, Siemens Gamesa 15-model navigation/portfolio plus APAC/B81, GE Vernova complete current five-model 3MW/6MW tables; all 55 changed-name REPD candidates reviewed, all held: 27 replacement links and 28 semantic/capacity mismatches; complete single-row ABB77CC rating table; first 200 otherwise unlinked REPD applications structurally reviewed and deferred; missing procedural history added to linked identities; complete 327-group NRCan inventory corroboration:117 enriched,210 deferred; Swedish complete OMRID<0500 layers2,3,5-12:72newprojects321turbines; all seven current VENSYS sheets:7exactconfigurations; complete Östergötland partition192projects559turbines; all three linked ENERCON sheets4exactconfigurations; complete Schleswig-Holstein MaStR partition4788units/1739namegroups:22parks105units; ENERCON three-slide E82E2/E103EP2 optional modes:2exactmodels; complete Niedersachsen MaStR9034units/3046groups:73parks366units; complete Winergy historical two-column HybridDrive table:2models; complete Nordrhein-Westfalen6753units/2732groups:67parks314units; NGC full SYW/SPT tables14types; Brandenburg5334units/1493groups:22parks183units; complete Jönköping151areas902turbines:109projects608units; Bonfiglioli R05_2 p14 complete13application rows/9models; Sachsen-Anhalt3506units/887groups:9parks54units; Kronoberg99areas705units:55projects379units; ABB2018RevA p10 complete15types; Bayern1889units/858groups:35parks166units; Kalmar204areas1330units:133projects752units; ABBp8conditions15enrichments; Baden-Württemberg1310units/549groups:35parks143units; Gotland76areas357units:48projects226units; ACU401sizes1–5full18columns; Mecklenburg-Vorpommern2741units/741groups:19parks102units; Blekinge58areas158units:33projects86units; ACU201sizes1–4full12columns and ACU401sizes6–7full8columns; Rheinland-Pfalz2464units/889groups:27parks130units; Skåne787areas1962units:268projects696units; ACU R04_0 pp24–25 complete24ACUx10frame7/8 configurations; Hessen1807units/627groups:38parks170units; Halland176areas691units:101projects385units; ACU R04_0 pp19–23 complete34ACU210/410 configurations; Thüringen1232units/379groups:8parks43units; VästraGötaland836areas2729units:610projects1987turbines;23exactLCVS/non-AL LCVT types; Sachsen1207units/498groups:16parks92units; Värmland98areas1278units:54projects544turbines;13ALchokes and15EMCfiltertypes; Saarland286units126groups:12parks49units;Örebro85areas405units:60projects239turbines;ACUR04_0pp62–65:12filterenrichments11resistortypes; Bremen99Hamburg78Berlin10units:2projects9turbines;Västmanland/Dalarna98areas1488units:51projects628turbines;VEC501R0complete11type enrichment; Gävleborg88areas2124units:56projects928turbines;EEZ1813units48namegroups screened;ENERCON E82E2 08/2019 table enriched; Västernorrland97areas2177units:55projects847turbines; Jämtland138areas1729units:69projects784turbines; ABB2020RevC pp13–14,24–25:15converter enrichments and1NETA-21 control; Västerbotten130areas2316units:67projects916turbines; NETA21RevQ pp225–226; Norrbotten68areas2566units:37projects822turbines; ABBRevQ pp21–24 layout1new1enriched; French national EOLIE2458rows screened; 2022+>=1MW cohort:34new installations, zero capacity-total changes; Swedish residual10land-layerqueries zero; GE4.2MW-117m entire table1new; Complete ODRE2020–2021>=1MWcohort238:18new220held; first20priorEICs reviewed and remain held. Complete MNRE20August2026 ALMM30entries:27new1enriched1held1nestedtoweroption.; ODRE2016–2019two cohorts complete607selected52new555held. Nine complete MNREcomponent disclosures and full ALMM-WTC3entries:25newcomponents9turbine enrichments.; Remaining French dated>=1MWcohorts through2015complete; six remaining DMCqueue entries9–14 reviewed.; BOE October1–3,5–10,13–14 complete A/B indexes including October2 extra issue;3new farms2explicit Mudarra configurations.; AEMO October2026 complete surveyID<2000 wind partition125sites:66new59held; PNNL July2026 complete9model certification table; BOE September24–26 all A/B issues1new.; AEMO2000–2999 complete111sites:107new4held,20count field quarantines. SD Wind five current model tables plus SDMK106; Bergey Rev3.1 p5/12–14:5new2enriched equipment.; Final AEMO3000–3999 all33sites:25new8held;269site nationalwind scan exhausted. BOESeptember21–23A/B1new; Cortijo follow-up completeMartelilla10km inventory8entries:6new1enriched1held. Goldwind2025Q3 all15exactcolumns;SD3EXRev1 andPowersync25pp14–21:2enriched.; SevenPNEPolishdetail followupscomplete6new1enriched;BOESeptember17–19completezero;EPDITALY0508/0852technical/scenariosections7enriched.; EIA2025complete129plant/172rowRetiredandCanceledWindtab:58existingprojects enriched82unitobservations;71identitydeferrals.; EIA2025 Operable codes1–51999 complete33plants62units20enriched13deferred.; EIA final2025 Operable52000–55999: four complete partitions,61plants67rows53enriched8deferred, including empty53000–53999.; EIA final2025 Operable56000–56999 complete307plants363rows298enriched9deferred.; EIA final2025 Operable57000–57999 complete266plants290rows258enriched8deferred.; EIA final2025 Operable58000–58999 complete143plants173rows132enriched11held; Nordex2026-04-22 complete mode/tower announcement1modelenriched.; EIA final2025 Operable59000–59999 complete105plants114rows95enriched10held.; EIA final2025 Operable60000–60999 complete75plants85rows70enriched5held.; EIA final2025 Operable61000–61999 complete85plants100rows67enriched18held.; EIA final2025 Operable62000–63999 complete146plants161rows36enriched110held.",
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
-  "publication_base_main": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
-  "iteration_base_head": "c5a47cc6c00731d81c9ae809141eb12a894e680b",
+  "publication_base_main": "9f36b0f35a0090a4908741704af883be376466b6",
+  "iteration_base_head": "b8f26c43be4c9c1376a89597e49a1254632995e7",
   "changes_this_run": {
-    "new_projects": 107,
-    "substantively_enriched_projects": 0,
-    "new_equipment": 5,
-    "substantively_enriched_equipment": 2,
+    "new_projects": 0,
+    "enriched_projects": 37,
+    "new_equipment": 0,
+    "enriched_equipment": 0,
     "new_turbines": 0,
     "new_curves": 0
   },
@@ -151,230 +160,156 @@
     "capacity_scope_exclusions_preserved": 642,
     "source_sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035"
   },
-  "new_geography": "Australian NEM regions; no new country",
-  "new_technology_coverage": "Onshore and source-classified fixed-bottom offshore survey proposals; small wind and ATEX offshore model; exact grid inverter",
+  "new_geography": "United States existing identities in 10 states plus Poland; no new countries",
+  "new_technology_coverage": "Dated EIA unit observations; no new technology or exact equipment",
   "reviewed_this_run": {
-    "batch": "2026-11-04-2235",
-    "aemo": {
-      "partition": "2000 <= AEMO survey ID < 3000",
-      "reviewed_sites": 111,
-      "wind_unit_rows": 117,
-      "additions": 107,
-      "deferred": 4,
-      "field_quarantined_sites": 20,
-      "quarantined_count_unit_ids": [
-        202301,
-        202401,
-        202501,
-        202601,
-        202901,
-        206001,
-        222901,
-        223101,
-        223201,
-        228701,
-        228702,
-        233701,
-        237001,
-        240301,
-        248601,
-        249201,
-        254201,
-        276201,
-        277901,
-        282601,
-        298301
-      ],
-      "source_id": "aemo_nem_oct2026_wind",
-      "original_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
-      "acquisition": "Reuse checksum-pinned original acquired in preceding batch; no duplicate national download",
-      "all_scopes_excluded": true,
-      "next_partition": "3000 <= AEMO survey ID < 4000"
-    },
-    "oem": {
-      "complete_tables": [
-        "SD3",
-        "SD3EX",
-        "SD12",
-        "SD6",
-        "SD6+",
-        "SD6 leaflet SDMK106 p2",
-        "Bergey Rev3.1 p5 turbine and pp12–14 inverter"
-      ],
-      "new_equipment": 5,
-      "enriched_equipment": 2,
-      "curves": 0,
-      "field_conflicts": [
-        "SD3EX rated_power_kw:3kW table versus2.5kW navigation;scalar null"
-      ],
-      "qualified_observations": [
-        "SD6+6kW at11m/s versus9kW high-wind inverter-dependent output;scalar unset",
-        "Powersync25 default20kW,output table23kW and adjusted25kW kept separate",
-        "Bergey start-up6m/s distinct from cut-in2.5m/s; no zero cut-out threshold",
-        "PNNL11m/s power remains unchanged; no nameplate-density comparison"
-      ]
-    },
-    "access_results": [
-      {
-        "source": "Kodair KW20/KW30",
-        "decision": "excluded",
-        "http_status": 200,
-        "reason": "Explicit website terms restrict copying/republication; no specification fields imported",
-        "terms_url": "https://www.kodairwind.com/terms/",
-        "terms_sha256": "9bd2e32d11acb1a42115ac7482c5d10432ce66d76d6c745cd0bdb19734501998",
-        "original_page_sha256": {
-          "kw20": "d80213f12be6b2d67b0e25bc91aaf215eae524364e487bad772432c55ec914bf",
-          "kw30": "c7d102ba4f177d76f69d6adcac5739343d9ef76c2e1ff6b31801d88558440166"
-        }
-      },
-      {
-        "source": "Eocycle S-series page and R5 spec sheet",
-        "decision": "deferred_download",
-        "http_status": 403,
-        "reason": "HTTP failure; no authentication or reuse restriction inferred",
-        "urls": [
-          "https://eocycle.com/s-series/",
-          "https://eocycle.com/wp-content/uploads/2021/05/15064-EocycleMerger-SpecSheet-S16-R5.pdf"
-        ],
-        "response_body_sha256": {
-          "eocycle.html": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
-          "s16.pdf": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864"
-        },
-        "original_availability": "Only HTTP403 error bodies acquired; original source bytes unavailable"
-      }
+    "batch": "2026-11-05-0735",
+    "reviewed_at": "2026-11-05T07:38:14Z",
+    "partition": [
+      62000,
+      63999
     ],
-    "targets": {
-      "projects_met": true,
-      "equipment_met": false,
-      "reason": "Five new exact records and two enrichments supported; options and unsupported variants not padded"
+    "completed_subpartitions": [
+      [
+        62000,
+        62999
+      ],
+      [
+        63000,
+        63999
+      ]
+    ],
+    "candidate_plants": 146,
+    "generator_rows": 161,
+    "enriched_projects": 36,
+    "new_projects": 0,
+    "new_equipment": 0,
+    "enriched_equipment": 0,
+    "status_counts": {
+      "OP": 161
+    },
+    "next_partition": [
+      64000,
+      64999
+    ],
+    "accepted_generator_observations": 40,
+    "states": [
+      "CO",
+      "IA",
+      "KS",
+      "MA",
+      "MN",
+      "ND",
+      "NE",
+      "RI",
+      "TX",
+      "WI"
+    ],
+    "notes": [
+      "Current farm status and capacities not inferred; all prior scalar facts unchanged",
+      "Predominant manufacturer/model labels retained as partial inventory; no inferred equipment links",
+      "All identity holds remain unmerged; no name-only matching"
+    ],
+    "snapshot_sha256": {
+      "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
+      "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
+      "manifest.json": "a48c66d6b2873f306b4478fcd543025c0bf603f62ef3565a50d7cc493902e8ef",
+      "projects.parquet": "fdd71364546a38925f71a126acd15501c0cd57ca98de89859f7f2de8b07fdca8",
+      "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
+      "sources.json": "65caa33805a867b42650298f01c570ff13ce527cb92ac9b8c85b6a2d6515e595",
+      "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
     }
   },
-  "latest_research_discovery": {
-    "date": "2026-11-03",
-    "focus": "top ten cumulative wind markets",
-    "accepted_record_changes": 0,
-    "canadian_project_groups_screened": 327,
-    "unmatched_name_groups_not_confirmed_new": 182,
-    "candidate_ledger": "2026-11-03-top10-canada-candidates.jsonl",
-    "source_review": "2026-11-03-top10-source-review.json",
-    "guide": "2026-11-03-top10-markets.md"
-  },
-  "source_review": "2026-11-04-2235-source-review.json",
-  "decision_ledger": "2026-11-04-2235-aemo-decisions.json",
+  "latest_research_discovery": "Karcino operator distinguishes2009 installation and2010 commissioning; prior conflict preserved. Array30kV/substation30/110kV/export110kV recorded; annual generation unspecified period and method, no capacity factor.",
+  "source_review": "2026-11-05-0735-source-review.json",
+  "decision_ledger": "2026-11-05-0735-eia-review.json",
   "sweden_decision_ledger": "2026-11-04-0635-sweden-decisions.jsonl",
   "merged_main_totals": {
-    "projects": 7948,
-    "equipment": 337,
+    "projects": 8136,
+    "equipment": 357,
     "turbines": 13633,
     "curves": 2,
-    "main_commit": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
+    "main_commit": "9f36b0f35a0090a4908741704af883be376466b6",
     "countries": 59,
-    "manufacturer_labels": 44
+    "manufacturer_labels": 54
   },
   "iteration": {
-    "batch": "2026-11-04-2235",
-    "aemo": {
-      "partition": "2000 <= AEMO survey ID < 3000",
-      "reviewed_sites": 111,
-      "wind_unit_rows": 117,
-      "additions": 107,
-      "deferred": 4,
-      "field_quarantined_sites": 20,
-      "quarantined_count_unit_ids": [
-        202301,
-        202401,
-        202501,
-        202601,
-        202901,
-        206001,
-        222901,
-        223101,
-        223201,
-        228701,
-        228702,
-        233701,
-        237001,
-        240301,
-        248601,
-        249201,
-        254201,
-        276201,
-        277901,
-        282601,
-        298301
-      ],
-      "source_id": "aemo_nem_oct2026_wind",
-      "original_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
-      "acquisition": "Reuse checksum-pinned original acquired in preceding batch; no duplicate national download",
-      "all_scopes_excluded": true,
-      "next_partition": "3000 <= AEMO survey ID < 4000"
-    },
-    "oem": {
-      "complete_tables": [
-        "SD3",
-        "SD3EX",
-        "SD12",
-        "SD6",
-        "SD6+",
-        "SD6 leaflet SDMK106 p2",
-        "Bergey Rev3.1 p5 turbine and pp12–14 inverter"
-      ],
-      "new_equipment": 5,
-      "enriched_equipment": 2,
-      "curves": 0,
-      "field_conflicts": [
-        "SD3EX rated_power_kw:3kW table versus2.5kW navigation;scalar null"
-      ],
-      "qualified_observations": [
-        "SD6+6kW at11m/s versus9kW high-wind inverter-dependent output;scalar unset",
-        "Powersync25 default20kW,output table23kW and adjusted25kW kept separate",
-        "Bergey start-up6m/s distinct from cut-in2.5m/s; no zero cut-out threshold",
-        "PNNL11m/s power remains unchanged; no nameplate-density comparison"
-      ]
-    },
-    "access_results": [
-      {
-        "source": "Kodair KW20/KW30",
-        "decision": "excluded",
-        "http_status": 200,
-        "reason": "Explicit website terms restrict copying/republication; no specification fields imported",
-        "terms_url": "https://www.kodairwind.com/terms/",
-        "terms_sha256": "9bd2e32d11acb1a42115ac7482c5d10432ce66d76d6c745cd0bdb19734501998",
-        "original_page_sha256": {
-          "kw20": "d80213f12be6b2d67b0e25bc91aaf215eae524364e487bad772432c55ec914bf",
-          "kw30": "c7d102ba4f177d76f69d6adcac5739343d9ef76c2e1ff6b31801d88558440166"
-        }
-      },
-      {
-        "source": "Eocycle S-series page and R5 spec sheet",
-        "decision": "deferred_download",
-        "http_status": 403,
-        "reason": "HTTP failure; no authentication or reuse restriction inferred",
-        "urls": [
-          "https://eocycle.com/s-series/",
-          "https://eocycle.com/wp-content/uploads/2021/05/15064-EocycleMerger-SpecSheet-S16-R5.pdf"
-        ],
-        "response_body_sha256": {
-          "eocycle.html": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
-          "s16.pdf": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864"
-        },
-        "original_availability": "Only HTTP403 error bodies acquired; original source bytes unavailable"
-      }
+    "batch": "2026-11-05-0735",
+    "reviewed_at": "2026-11-05T07:38:14Z",
+    "partition": [
+      62000,
+      63999
     ],
-    "targets": {
-      "projects_met": true,
-      "equipment_met": false,
-      "reason": "Five new exact records and two enrichments supported; options and unsupported variants not padded"
+    "completed_subpartitions": [
+      [
+        62000,
+        62999
+      ],
+      [
+        63000,
+        63999
+      ]
+    ],
+    "candidate_plants": 146,
+    "generator_rows": 161,
+    "enriched_projects": 36,
+    "new_projects": 0,
+    "new_equipment": 0,
+    "enriched_equipment": 0,
+    "status_counts": {
+      "OP": 161
+    },
+    "next_partition": [
+      64000,
+      64999
+    ],
+    "accepted_generator_observations": 40,
+    "states": [
+      "CO",
+      "IA",
+      "KS",
+      "MA",
+      "MN",
+      "ND",
+      "NE",
+      "RI",
+      "TX",
+      "WI"
+    ],
+    "notes": [
+      "Current farm status and capacities not inferred; all prior scalar facts unchanged",
+      "Predominant manufacturer/model labels retained as partial inventory; no inferred equipment links",
+      "All identity holds remain unmerged; no name-only matching"
+    ],
+    "snapshot_sha256": {
+      "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
+      "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
+      "manifest.json": "a48c66d6b2873f306b4478fcd543025c0bf603f62ef3565a50d7cc493902e8ef",
+      "projects.parquet": "fdd71364546a38925f71a126acd15501c0cd57ca98de89859f7f2de8b07fdca8",
+      "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
+      "sources.json": "65caa33805a867b42650298f01c570ff13ce527cb92ac9b8c85b6a2d6515e595",
+      "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
     }
   },
   "geographic_changes_this_run": {
     "new_project_countries": [],
     "new_manufacturers": 0
   },
-  "snapshot_builds": "Two independent builds of seven files were byte-identical; typed Zstandard Parquet",
+  "snapshot_builds": {
+    "reproduced_twice": true,
+    "files": {
+      "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
+      "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
+      "manifest.json": "a48c66d6b2873f306b4478fcd543025c0bf603f62ef3565a50d7cc493902e8ef",
+      "projects.parquet": "fdd71364546a38925f71a126acd15501c0cd57ca98de89859f7f2de8b07fdca8",
+      "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
+      "sources.json": "65caa33805a867b42650298f01c570ff13ce527cb92ac9b8c85b6a2d6515e595",
+      "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
+    }
+  },
   "decision_ledgers": [
-    "2026-11-04-2235-aemo-decisions.json",
-    "2026-11-04-2235-equipment-decisions.json"
+    "2026-11-05-0735-eia-review.json",
+    "2026-11-05-0735-source-review.json"
   ],
   "previous_publication_reconciliation": {
     "previous_pr": 137,
@@ -382,10 +317,23 @@
     "new_branch_from": "b8dc106f7a854fb57c76146afd10fe080765006b"
   },
   "publication_reconciliation": {
-    "pr": 146,
-    "state": "Open; reused compatible continuation branch",
-    "expected_head": "c5a47cc6c00731d81c9ae809141eb12a894e680b",
-    "main_rechecked": "7c31c06aaef6addf49acfdef18e497bbd7a250a9",
-    "publication_method": "Expected-head fast-forward; remote tree must equal validated local tree"
+    "pr": 153,
+    "state": "Open; compatible branch reused",
+    "expected_head": "b8f26c43be4c9c1376a89597e49a1254632995e7",
+    "main_rechecked": "9f36b0f35a0090a4908741704af883be376466b6",
+    "publication_method": "Expected-head fast-forward; remote tree must match validated local tree"
+  },
+  "publication_transition": {
+    "previous_pr89_state": "merged2026-11-03",
+    "active_open_pr": 153,
+    "first_checkpoint": "7c563c3a76decaf99f83f1d18a2ffa2c2bd764ab"
+  },
+  "per_run_changes": {
+    "new_projects": 0,
+    "enriched_projects": 37,
+    "new_equipment": 0,
+    "enriched_equipment": 0,
+    "new_turbines": 0,
+    "new_curves": 0
   }
 }
