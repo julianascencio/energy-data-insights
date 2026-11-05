@@ -16,7 +16,12 @@ or a live availability feed. Do not interpret record counts as installed capacit
    local languages when useful. Check recent status updates as well as technical
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
-4. Stage national inventory candidates with `scripts/stage_bess_inventory.py`.
+4. For TAB stationary OPzS PDF tables, `scripts/stage_bess_tab_opzs.py`
+   stages the 22-cell or six-block partition (`--partition blocks`). It rejects
+   changed units/mass order, duplicates and partial tables. Cell Ah and block Ah,
+   short-circuit versus operating current, and cell/block design-life footnotes
+   must remain distinct; no MWh is inferred. Website-only models need separate review.
+   Stage national inventory candidates with `scripts/stage_bess_inventory.py`.
    For the seven-column BSLBATT S205/S314 station sheets,
    `scripts/stage_bess_bslbatt.py` stages local `pdftotext -layout` output and
    checks model order, units, merged-cell scope and voltage envelopes. The row
