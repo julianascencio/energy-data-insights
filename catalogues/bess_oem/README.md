@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
 The 5 November 2026 expanded research snapshot contains **1,172 records from 55 product
-suppliers, backed by 483 registered sources**: 1,159 documented configurations and 13
+suppliers, backed by 484 registered sources**: 1,159 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -292,3 +292,5 @@ Latest iteration: [14 TAB OPzV models and 28 OPzS enrichments](../bess/research/
 Latest iteration: [25 TAB OGi exact models and South African lender evidence](../bess/research/2026-11-05_ogi_south_africa.md). Includes one independently reconciled project and seven procurement enrichments; model capacity conflicts and source-access holds remain explicit.
 
 Latest continuation: [40 Victron warranty enrichments and African inventory screening](../bess/research/2026-11-05_victron_warranty.md). No new project/model rows; reuse holds and candidate counts remain explicit.
+
+Latest continuation: [Kenyan battery replacements and nine exact installation enrichments](../bess/research/2026-11-05_kenya_installation.md).
