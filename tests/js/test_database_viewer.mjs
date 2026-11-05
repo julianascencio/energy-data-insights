@@ -257,3 +257,17 @@ test("EIA year selection prevents mixing annual observations", async () => {
   assert.equal(windEiaSummary(rows,2026).withoutObservations,1);
   assert.equal(windEiaSummary(rows).operating,1);
 });
+
+test("OEM update coverage requires dated linked evidence, not a selected mode or tower", async () => {
+  const {windOemUpdateSummary} = await import("../../docs/_static/database-core.mjs");
+  const update = {source_id:"oem", published_at:"2026-04-22", locator:"announcement", conditions:"dated options only"};
+  const row = updates => ({equipment_category:"wind_turbine", sources:["oem"], extensions_json:JSON.stringify({oem_product_updates:updates})});
+  const rows = [row([update, {...update,published_at:"2026-05-01"}]),
+    row([{...update,source_id:"unregistered"}]), row([{...update,published_at:null}]),
+    row([{...update,conditions:null}]), {...row([]),extensions_json:"null"},
+    {...row([]),extensions_json:"invalid"}, {...row([update]),equipment_category:"tower"}];
+  const before = JSON.stringify(rows);
+  assert.deepEqual(windOemUpdateSummary(rows), {models:1,updates:2,withoutUpdates:5});
+  assert.deepEqual(windOemUpdateSummary([]), {models:0,updates:0,withoutUpdates:0});
+  assert.equal(JSON.stringify(rows), before);
+});

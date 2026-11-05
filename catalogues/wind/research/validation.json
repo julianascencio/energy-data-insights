@@ -1,33 +1,34 @@
 {
-  "batch": "2026-11-05-0235",
-  "iteration_parent": "05ab14f6b1d4305f0bb18ff2fabbad4672eb1b40",
+  "batch": "2026-11-05-0335",
+  "iteration_parent": "71dc29945247e23c9de5d223aaeb9f63deb504a7",
   "local": {
-    "tests": "234 focused Python tests passed with isolated TMPDIR after initial no-usable-temp-directory failure;21Node viewer tests and syntax passed",
-    "catalogue": "22181 valid;21923 unchanged;258 enrichments preserve prior scalar facts,IDs,creation timestamps and all6capacity summaries",
-    "source_registry": "All 363 prior source entries unchanged; one new bounded alias",
-    "replay": "Replay/idempotence and registered original workbook hashes passed",
-    "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD",
-    "example": "Wind example executed against isolated expanded catalogue and passed",
-    "quality": "Ruff/format971files,citations passed;ty passed with explicit repository Python after initial environment-resolution error;working-repository hygiene4466files passed;isolated JSONL/schema/provenance checked separately",
-    "docs": "Not run: disk exhaustion; prior published-head Documentation CI passed",
-    "isolation": "Expanded catalogue and generated outputs in /dev/shm/wind2935;working catalogue untouched; local Git tree assembled with isolated index/object storage"
+    "tests": "234 focused Python tests passed on sequential retry; initial concurrent attempt failed during resource exhaustion",
+    "viewer": "22 Node viewer tests and JavaScript syntax check passed on updated isolated viewer",
+    "catalogue": "22181 valid records;22048 unchanged;132 projects and1 equipment enriched;all prior scalar facts,IDs,creation timestamps and all6capacity summaries preserved",
+    "source_registry": "All 364 prior source entries unchanged; two new sources",
+    "replay": "EIA same-source replay/idempotence and original workbook checksums passed",
+    "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD; first combined attempt killed before second build; sequential clean builds passed",
+    "example": "Updated offline Wind example executed against isolated expanded catalogue",
+    "quality": "Ruff check,format972files,explicit-Python ty,citations passed;working-repository hygiene4466files passed;isolated JSONL/schema/provenance validated separately",
+    "docs": "Strict local docs not executed due main-filesystem exhaustion",
+    "isolation": "Expanded catalogue, viewer, example, tests and docs assembled in memory-backed storage; main working checkout remains at05ab14f6"
   },
   "snapshot_sha256": {
-    "manifest.json": "bb393c0de0981f67d9ef32f46951c30f343b47a9fb29cb07a8bb5748baf1a524",
-    "sources.json": "5bef8bffe86b41a27d39d0328fb86f8b160c2047c74c63d21ff9ecddfa5a6068",
-    "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "equipment.parquet": "e8e95a3d7946a2da8152c46a88a75fb6eb6c494d291f1d259895ec801cc5166d",
-    "projects.parquet": "96290b6c0307b3bc6c54524993db9f651f9ecb3c44fb74ffcc464edc0bdcad16"
+    "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
+    "manifest.json": "6cde8068b8da2a1538fb915fbfe86c33260d411218790659f484acbd4fbc92eb",
+    "projects.parquet": "13584b54007e232f99409a23e08a4ccb215e0d5e4ac4953b88941d52edafd324",
+    "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
+    "sources.json": "cb15e7ea499767c94a0cdc377faf3f27908f0b3244e9e04eb316f990937f2de2",
+    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
   "remote_ci": {
-    "prior_head": "05ab14f6b1d4305f0bb18ff2fabbad4672eb1b40",
+    "prior_head": "71dc29945247e23c9de5d223aaeb9f63deb504a7",
     "prior_result": "Python and Documentation passed",
-    "new_head": "Pending publication"
+    "new_head": "Pending publication; not yet observed"
   },
   "not_executed": [
-    "Full local test suite",
+    "Full local Python suite",
     "Strict local docs",
     "Full gallery",
     "Interactive browser",

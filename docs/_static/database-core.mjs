@@ -229,3 +229,19 @@ export function windEiaSummary(rows, year = null) {
   }
   return result;
 }
+
+// Dated OEM updates retain options and approval timing, never selected installations.
+export function windOemUpdateSummary(rows) {
+  const result = {models: 0, updates: 0, withoutUpdates: 0};
+  for (const row of rows.filter(r => r.equipment_category === "wind_turbine")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const updates = Array.isArray(ext?.oem_product_updates) ? ext.oem_product_updates : [];
+    const valid = updates.filter(u => u?.source_id && u.locator && u.conditions &&
+      /^\d{4}-\d{2}-\d{2}$/.test(u.published_at || "") &&
+      Array.isArray(row.sources) && row.sources.includes(u.source_id));
+    if (valid.length) { result.models++; result.updates += valid.length; }
+    else result.withoutUpdates++;
+  }
+  return result;
+}

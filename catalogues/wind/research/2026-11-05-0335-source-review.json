@@ -1,0 +1,62 @@
+{
+  "batch": "2026-11-05-0335",
+  "reviewed_at": "2026-11-05T03:42:06Z",
+  "accepted": [
+    {
+      "source_id": "eia860_2025_operable_58000_58999",
+      "partition": "complete143plants173generatorrows",
+      "new_projects": 0,
+      "enriched_projects": 132,
+      "accepted_generator_observations": 162,
+      "deferred_identities": 11
+    },
+    {
+      "source_id": "nordex_n175_update_20260422",
+      "record_id": "b91437da-f29a-55ac-aca6-1e8f6d00a3df",
+      "decision": "enrichment",
+      "scope": "Complete 22 April2026 mode/tower announcement; scalar fields preserved",
+      "original_http_status": 200,
+      "original_bytes": 142700,
+      "sha256": "357e96e2d1b9c016c36da5f4dbb1aba82048503ba2ad8a9d75646382d05ca276"
+    }
+  ],
+  "exclusions": [
+    {
+      "source": "LM Wind Power product website",
+      "url": "https://www.lmwindpower.com/en/disclaimer",
+      "locator": "Copyright paragraph",
+      "decision": "excluded_explicit_republication_restriction",
+      "reason": "Site permits personal/noncommercial download but requires written permission for public reproduction/republication; no specifications imported",
+      "original_availability": "Reader text available; original response bytes not acquired; checksum unavailable",
+      "sha256": null,
+      "affected_urls": [
+        "https://www.lmwindpower.com/en/products/blade-types/1mw-to-2mw",
+        "https://www.lmwindpower.com/en/products/blade-types/2-comma-5-to-3-comma-3-mw",
+        "https://www.lmwindpower.com/en/products/blade-types/5mw-to-6mw"
+      ]
+    }
+  ],
+  "download_observations": [
+    {
+      "url": "https://www.lmwindpower.com/en/products/blade-types/2-comma-5-to-3-comma-3-mw",
+      "http_status": 403,
+      "authentication_established": false,
+      "sha256": null,
+      "original_availability": "HTTP failure; no original bytes"
+    },
+    {
+      "url": "https://www.lmwindpower.com/en/products/blade-types/5mw-to-6mw",
+      "http_status": 403,
+      "authentication_established": false,
+      "sha256": null,
+      "original_availability": "HTTP failure; no original bytes"
+    }
+  ],
+  "deferred": [
+    "Nordex162.5m plannedapproval/delivery not established by22Aprilannouncement",
+    "179m tower certificate ID not disclosed; no independent certificate verification",
+    "No numerical OEM curve with compatible density/mode conditions acquired"
+  ],
+  "new_quarantines": 0,
+  "new_duplicate_groups": 0
+}

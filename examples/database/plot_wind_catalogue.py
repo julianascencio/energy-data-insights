@@ -66,6 +66,13 @@ print(
 )
 print("Hub options do not create model variants; no common-condition power curves inferred.")
 
+# Announced modes and tower approvals remain dated options on the existing model.
+print("Dated OEM product updates: modes and approval timing, not installed variants")
+for row in rows:
+    for update in json.loads(row.get("extensions_json") or "{}").get("oem_product_updates", []):
+        print(row["name"], update["published_at"], update["operating_modes"])
+        print(update["tower_configurations"], update["conditions"])
+
 # Annual EIA unit states do not reconcile whole-farm repowering or hybrid scope.
 print("EIA 2025 dated unit evidence: farm status/capacity exclusions remain unchanged")
 for row in rows:

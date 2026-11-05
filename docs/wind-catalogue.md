@@ -761,7 +761,7 @@ comparison or capacity factor is inferred. Sources: final-2025 EIA-860 and the
 pinned WRI U.S. importer/identity helper (`eia860_2025`, `wri_usa_identity`).
 
 The EIA adapter also accepts an inclusive `operable_range=(low, high)` plant-code
-partition. The complete 1–57999 range is reviewed; 58000–58999 is next. Operating,
+partition. The complete 1–58999 range is reviewed; 59000–59999 is next. Operating,
 out-of-service and standby generator observations remain distinct in the shared
 viewer and existing deterministic example. None establishes whole-farm current
 operation, reconciles repowering, or promotes predominant model labels to exact
@@ -784,3 +784,22 @@ when submitted under a second source alias.
 The complete final-2025 Operable 57000–57999 partition reviews 266 plants and
 290 generator rows: 258 existing project identities enriched and eight deferred.
 Reported generator observations do not change farm capacity or lifecycle totals.
+
+
+The complete final-2025 Operable 58000–58999 partition reviews 143 plants and
+173 generator rows: 132 existing projects enriched and 11 unresolved identities
+held. Original generator nameplates, seasonal net capacities, predominant model
+labels, representative hub heights and grid context retain their source rows and
+units. No whole-farm status, scalar capacity or aggregation eligibility changes.
+
+A dated Nordex announcement adds the N175/6.X 7.3 MW mode and German tower
+observations to the existing equipment identity (`nordex_n175_update_20260422`).
+The 162.5 m hybrid tower was under development on 22 April 2026, with approval
+scheduled for Q2; this is not evidence that approval or delivery occurred.
+The same announcement reports Max Bögl's 179 m tower approval on 21 April.
+These options remain in `extensions_json.oem_product_updates`; prior scalar
+specifications and provenance are preserved. The shared viewer counts dated
+updates and models without this evidence. The offline example prints the modes,
+tower conditions and dates without creating model variants or assuming installed
+compatibility. No common-condition numerical curve or independently validated
+performance is established by the announcement.

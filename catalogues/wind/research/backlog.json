@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T02:31:44Z",
+  "updated_at": "2026-11-05T03:42:06Z",
   "branch": "research/wind-20261104-2335",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind-20261104-2335.lock for research/wind-20261104-2335; inspect active work and remote head; publish using an expected-head fast-forward, never overwrite another writer.",
   "queue": [
@@ -17,7 +17,7 @@
       ],
       "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "EIA final2025 Operable58000–58999 next;1–57999 complete. Reuse pinned originals. Existing identities held; no retry of unchanged EPA403.",
+      "next_task": "EIA final2025 Operable59000–59999 next;1–58999 complete. Reuse pinned originals. Resolve existing identity holds from dated ledgers without name-only merges; no retry of unchanged EPA403.",
       "latest_attempt_review": "2026-11-04-1235-source-review.json",
       "independent_source_completed": {
         "source": "EIA2025final",
@@ -28,9 +28,9 @@
       },
       "operable_completed": [
         1,
-        57999
+        58999
       ],
-      "operable_decision_ledger": "2026-11-05-0235-eia-review.json"
+      "operable_decision_ledger": "2026-11-05-0335-eia-review.json"
     },
     {
       "rank": 2,
@@ -187,7 +187,8 @@
         "Goldwind2025Q3 complete15exactcolumns andEPD observations exhausted; next original type/EPD certificates for GWH182 family before project links. SDMK103EXRev1 adds third3.2kW observation, not a rating resolution; certificate ID still missing. Powersync25pp14–21 complete, retain inrush/fuse/input-envelope discrepancies; next OEM correction or later manualrevision. No site-height variants or unnamed subcomponents.",
         "EPDITALY0508/0852 complete technical tables and scoped lifetimeflows reviewed:7equipmentenriched,5scalarconflictsnull. Next original typecertificates/EPD revision resolving183.5m/26446m2 versus26016m2 andGWH17520/25year life; explicit blade-to-modelmapping, no assumedSinoma90.2/SI90.2 equivalence. Environmentalimpacttables not transcribed; originalsourcechecksums retained.",
         "Mendi GW-26CP.0004VersionA original acquired but explicit reproduction restriction: excluded; do not retry as HTTP failure. Seek unrestricted original geometry/design-life certificate.",
-        "Delijia official homepage/contact timeout2026-11-05: seek exact WE4500S-01/WE7000G originals only after access recovery; do not import reseller/register snippets or repeat processed MNRE disclosures."
+        "Delijia official homepage/contact timeout2026-11-05: seek exact WE4500S-01/WE7000G originals only after access recovery; do not import reseller/register snippets or repeat processed MNRE disclosures.",
+        "LM Wind Power website disclaimer explicitly excludes republication; product tables1.5–2MW and linked2.5–3.3/5–6MW held, no repeat. Nordex2026-04-22 N175 mode/tower announcement complete. Next official162.5m type-approval certificate or dated delivery evidence;179m certificate ID and scope remain absent. Do not repeat completed N175base technical table."
       ]
     },
     {
