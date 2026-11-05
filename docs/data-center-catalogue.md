@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 183 project records across 36 countries:
-66 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
+The current continuation branch has 316 project records across 36 countries:
+199 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -35,10 +35,21 @@ workload and test conditions. `renewable_supply_json` explicitly separates
 physical generation, contractual procurement and environmental claims.
 Certificates require issuer, scope and validity evidence, not marketing badges.
 
+The current U.S. facility continuation adds all 133 entries whose most recent
+label year is 2026 in EPA's complete 337-entry ENERGY STAR Certified Data
+Centers registry. Each remains an issuer-verified facility identity. EPA
+intentionally exposes only the state for security, so locality, address and
+coordinates remain null even when address-like text appears inside the exact
+public facility name. The source's unlabeled floor-space value and year-only
+construction value remain bounded observations; neither is converted to square
+metres or promoted to an event date. Owner and the three printed property-manager
+relationships are retained, while operator, capacity, PUE and equipment remain
+unknown.
+
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,317 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,633 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Oracle, Schneider Electric, Siemens,

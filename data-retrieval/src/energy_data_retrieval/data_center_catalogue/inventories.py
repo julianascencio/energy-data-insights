@@ -125,6 +125,126 @@ def parse_named_inventory(
     }
 
 
+def parse_energy_star_certified_data_centers(
+    content: bytes,
+    *,
+    source_url: str,
+    certification_year: int,
+    expected_total_count: int,
+    expected_selected_count: int,
+) -> dict[str, Any]:
+    """Stage one exact certification-year partition of EPA's data-center registry.
+
+    EPA deliberately reports only the state for these facilities. Facility names are
+    therefore retained verbatim, but address-like text is never promoted to an address,
+    locality or coordinate. Floor-space values retain their source text because the
+    public table does not label a unit.
+    """
+    parsed = urlsplit(source_url)
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname != "www.energystar.gov"
+        or parsed.path != "/buildings/certified-data-centers"
+    ):
+        raise ValueError("Unsupported ENERGY STAR certified-data-center source URL")
+    if certification_year < 2000 or min(expected_total_count, expected_selected_count) < 1:
+        raise ValueError("Invalid certified-data-center partition bounds")
+
+    parser = _TableRows()
+    parser.feed(content.decode("utf-8-sig"))
+    header = [
+        "Facility Name",
+        "State",
+        "Owner",
+        "Property Manager",
+        "Label Years",
+        "Total Floor Space",
+        "Year Constructed",
+        "Number of Certifications (Most Recent Year)",
+    ]
+    try:
+        header_index = parser.rows.index(header)
+    except ValueError as exc:
+        raise ValueError("Missing ENERGY STAR certified-data-center table") from exc
+    table_rows: list[list[str]] = []
+    for row in parser.rows[header_index + 1 :]:
+        if len(row) != len(header):
+            if table_rows:
+                break
+            continue
+        table_rows.append(row)
+    if len(table_rows) != expected_total_count:
+        raise ValueError(
+            "Changed ENERGY STAR certified-data-center inventory shape: "
+            f"{len(table_rows)} != {expected_total_count}"
+        )
+
+    certification_re = re.compile(
+        r"^(?:ENERGYSTAR NextGen:\s*(\d+)\s*\((\d{4})\)\s*)?"
+        r"ENERGYSTAR:\s*(\d+)\s*\((\d{4})\)$"
+    )
+    candidates: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for line, row in enumerate(table_rows, start=1):
+        values = dict(zip(header, row, strict=True))
+        match = certification_re.fullmatch(values[header[-1]])
+        if not match:
+            raise ValueError(f"Invalid certification summary on registry row {line}")
+        nextgen_count = int(match[1]) if match[1] else 0
+        nextgen_year = int(match[2]) if match[2] else None
+        standard_count = int(match[3])
+        standard_year = int(match[4])
+        count = nextgen_count + standard_count
+        most_recent_year = max(year for year in (nextgen_year, standard_year) if year is not None)
+        try:
+            label_years = [int(value.strip()) for value in values["Label Years"].split(",")]
+            floor_space = int(values["Total Floor Space"])
+            constructed_year = int(values["Year Constructed"])
+        except ValueError as exc:
+            raise ValueError(f"Invalid numeric registry field on row {line}") from exc
+        if (
+            not values["Facility Name"]
+            or not values["State"]
+            or not values["Owner"]
+            or floor_space <= 0
+            or constructed_year < 1800
+            or constructed_year > certification_year
+            or count != len(label_years)
+            or most_recent_year != max(label_years)
+        ):
+            raise ValueError(f"Inconsistent ENERGY STAR registry row {line}")
+        if most_recent_year != certification_year:
+            continue
+        identity = (values["Facility Name"], values["State"], values["Owner"])
+        if identity in candidates:
+            raise ValueError(f"Duplicate ENERGY STAR facility identity {identity}")
+        candidates[identity] = {
+            "facility_name": values["Facility Name"],
+            "state": values["State"],
+            "owner": values["Owner"],
+            "property_manager": values["Property Manager"] or None,
+            "label_years": label_years,
+            "reported_floor_space": floor_space,
+            "reported_floor_space_unit": None,
+            "constructed_year": constructed_year,
+            "certification_count": count,
+            "most_recent_certification_year": most_recent_year,
+            "locator": f"certified data centers table / {values['Facility Name']}",
+        }
+    if len(candidates) != expected_selected_count:
+        raise ValueError(
+            "Changed ENERGY STAR certification-year partition: "
+            f"{len(candidates)} != {expected_selected_count}"
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "certification_year": certification_year,
+        "inventory_count": len(table_rows),
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_project_permit_matrix(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:
