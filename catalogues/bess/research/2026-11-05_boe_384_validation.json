@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-11-05T01:02:34.697179+00:00",
+  "elapsed_minutes_to_publication_preparation": 13.11,
+  "accepted": {
+    "projects_new": 0,
+    "projects_enriched": 1,
+    "equipment_new": 14,
+    "equipment_enriched": 0
+  },
+  "python": {
+    "retrieval_passed": 1967,
+    "remaining_passed": 648,
+    "total_unique_passed": 2615,
+    "skipped_optional": 5,
+    "failed": 1,
+    "failure": "methods/tests/test_degradation_mapping.py::test_cli_netcdf_geojson_manifest_and_kgpv; Dask psutil.NoSuchProcess",
+    "baseline": "Same failure reproduced on unchanged main9f36b0f; no full-suite green claim",
+    "final_focused_passed": 50,
+    "parser_passed": 22
+  },
+  "viewer_tests_passed": 16,
+  "checks_passed": [
+    "both catalogue/schema/source/reference validators",
+    "incoming/canonical natural identity review",
+    "15-input substantive replay/idempotence",
+    "all prior facts and creation timestamps preserved",
+    "two independent typed Zstd snapshot pairs byte-identical",
+    "both offline BESS examples; project example repeated after enrichment",
+    "Ruff lint and format",
+    "ty with lockedPython3.13",
+    "citation consistency using current checkout PYTHONPATH",
+    "repository hygiene",
+    "git diff --check",
+    "strict Sphinx warnings-as-errors with gallery disabled",
+    "613-page documentation links/assets audit",
+    "three wheels and three sdists",
+    "six strict Twine checks",
+    "three installed-wheel/CLI checks"
+  ],
+  "not_run": [
+    "full executable documentation gallery",
+    "optional live integrations"
+  ],
+  "source_blockers": [
+    "CEA original503; one attempt",
+    "AfDB no newer IPR; terms not open bulk reuse",
+    "NC56 repeated configurations",
+    "TC48Y/TC48 packAh conflicts"
+  ],
+  "publication": "Expected-head fast-forward to existing PR150; leave open, no merge",
+  "binary_and_raw_artifacts": "Outside Git in established scratch/build-artifact workflow"
+}

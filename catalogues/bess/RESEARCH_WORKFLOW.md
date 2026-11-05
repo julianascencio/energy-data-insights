@@ -246,3 +246,9 @@ changed units and unknown timing syntax. NC40/TC100Y remain outside scope becaus
 codes repeat at other configurations. NC35's exact printed `60mi` is preserved
 as ambiguous text, never silently corrected to minutes. Maximum and timed
 power ratings are separate observations; neither defines stored energy.
+
+`neata_ups.parse_mid_voltage_cabinets` stages fourteen unique NC/TC models at
+384/409.6 V. NC56 remains excluded because its code repeats at two configurations.
+The TC48Y/TC48 labels give 30 Ah but capacity columns give 27 Ah; preserve both
+in conflicts and withhold a resolved pack-capacity scalar. Timed discharge
+ratings do not establish stored energy or indefinite continuous power.

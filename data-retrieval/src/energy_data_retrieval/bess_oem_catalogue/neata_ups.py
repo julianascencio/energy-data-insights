@@ -126,3 +126,43 @@ def parse_low_voltage_cabinets(content: bytes) -> list[dict[str, str]]:
         if not re.fullmatch(r"\d+(?:\.\d+)?~\d+(?:\.\d+)?\(\d+(?:\.\d+)?\)", r[5]):
             raise ValueError("Changed cabinet charging voltage")
     return [dict(zip(FIELDS, r, strict=True)) for r in rows]
+
+
+MID_CABINET_MODELS = [
+    "NC24Y",
+    "TC48Y",
+    "TC80Y",
+    "NC32Y",
+    "TC160Y",
+    "NC56Y",
+    "NC80Y",
+    "NC24",
+    "TC48",
+    "TC80",
+    "NC32",
+    "TC80E",
+    "TC160",
+    "NC80",
+]
+
+
+def parse_mid_voltage_cabinets(content: bytes) -> list[dict[str, str]]:
+    """Stage unique384/409.6V models; repeated NC56 identity is excluded."""
+    parse_low_voltage_cabinets(content)
+    p = _Tables()
+    p.feed(content.decode("utf-8-sig"))
+    rows = [r for r in p.tables[0][2:] if r and r[0] in MID_CABINET_MODELS]
+    if [r[0] for r in rows] != MID_CABINET_MODELS:
+        raise ValueError("Missing or repeated middle-voltage cabinet identity")
+    for r in rows:
+        if len(r) != 13 or not all(r) or r[2] not in ["384", "409.6"]:
+            raise ValueError("Incomplete or unexpected middle-voltage row")
+        if any(not re.fullmatch(r"\d+(?:\.\d+)?", r[i]) for i in [2, 3, 6, 7, 9, 10, 11, 12]):
+            raise ValueError("Changed middle-voltage numeric units")
+        if not re.fullmatch(r"max\.\s*\d+(?:\.\d+)?KW", r[4]):
+            raise ValueError("Changed middle-voltage maximum power units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?KW/\d+min", r[8]):
+            raise ValueError("Changed middle-voltage timing units")
+        if not re.fullmatch(r"\d+(?:\.\d+)?~\d+(?:\.\d+)?\(\d+(?:\.\d+)?\)", r[5]):
+            raise ValueError("Changed middle-voltage charging notation")
+    return [dict(zip(FIELDS, r, strict=True)) for r in rows]
