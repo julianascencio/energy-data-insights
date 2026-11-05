@@ -39,6 +39,13 @@ source has 981 non-anonymised ground/water PV decisions; the first 100 remain
 candidates, with zero accepted RVO plants. See the
 [RVO reuse and attribution notice](licenses/RVO_REUSE_NOTICE.md).
 
+The offline `pv_catalogue.nsw.read_nsw_project_page` reader stages checksum-pinned
+departmental Planning Portal Project Details, retaining application IDs, decision
+dates, local government areas and modification scope. It excludes submissions and
+contacts, fails closed on ambiguous/schema-drifted identity fields, and never treats
+a solar category or approval as positive PV or current operation. Canonical identity
+review remains mandatory; modifications are not additional plants.
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;
@@ -387,6 +394,19 @@ it does not write the catalogue. An AEMO site with multiple survey rows
 requires separate review. GA points retain their native GDA2020 reference;
 GA's unspecified generation rating is never used as AC or DC capacity.
 
+`australia.stage_aemo_exact_enrichment` also stages reviewed null-field fills
+from a complete Generation Information worksheet. Each explicit decision pins
+the existing record, DUID, survey ID, physical row and approved fields. It
+requires a unique existing DUID (or one exact native phase DUID), a single
+source unit at the site and an unambiguous canonical identity. Names alone,
+multi-unit sites and mixed-technology sites do not qualify. Only explicit
+aggregate nameplate AC/DC and financial-owner columns fill nulls; dispatch
+capacity and forecast commercial-use dates remain separate observations.
+Existing values and contexts are preserved, and disagreements are returned in
+the review ledger. The [October workbook review](research/20261105T1327_aemo_review.json)
+contains the accepted decisions and retained ownership differences. This is a
+reviewed enrichment path, not an automatic unit-to-project discovery feed.
+
 ### Catalonia named PV review staging
 
 The Catalonia adapter handles dataset `ggx8-jkp4` (named ground-mounted PV
@@ -588,3 +608,16 @@ families; arbitrary fuse variants are not expanded. Current, fuse inclusion,
 temperature-unit and unlabelled-axis conflicts remain held. OEM warranty is a generic
 three-year limited sale-term claim from purchase, not a measured lifetime. See dated
 1155 reviews, preservation, source captures, snapshots and the resumable backlog.
+
+### NSW planning tracker review
+
+The offline `pv_catalogue.nsw.read_nsw_renewable_tracker` reader checks pinned HTML,
+its explicit table as-of date, the complete summary/detail inventory, card headers
+and Australian-format approval dates. Duplicate names remain separate candidates.
+The 6 August 2026 tracker contains 93 Solar Farm cards, including 16 under assessment;
+that publisher category alone does not prove PV. The 5 November 16:09 review enriches
+23 existing positively identified PV projects after manual identity review. Native
+planning capacities, storage, statuses and regional location labels remain qualified
+historical context, with no nameplate, operating-status or coordinate inference.
+Existing non-null contexts are held rather than overwritten. Source attribution is
+in `licenses/NSW_DPHI_CC_BY4_NOTICE.md`; third-party reports/submissions are excluded.

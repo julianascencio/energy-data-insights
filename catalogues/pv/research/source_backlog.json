@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T12:08:25.252713+00:00",
-  "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "200operator enrichments;10Imagine exactcombiners; boundedMaStR unit-review reader tested on syntheticfixtures, no liveplantimport. JuneMorningstar revision conflict retained inreview.",
-  "next_highest_value_source": "GEM corporate operators afterL100000826896,1215predicateeligible requiring fresh manualreview; MaStR stagedunit-to-existingproject crosswalk after scope review",
+  "updated_at": "2026-11-05T17:15:04.312101+00:00",
+  "ranking_file": "20261105T1702_top10_gaps.json",
+  "selection_note": "17newSmarteninverters/306typedvalues;230existingprojects/451substantivefields (434nullfills+17explicitadditivecontextJSONs). Fouracceptedtechnicalbatches: GEM,NSW,Smarten single/threephase. No newadapter, no automaticfeedintegration. Rights/configuration holds notacceptedrecords.",
+  "next_highest_value_source": "NSW53remainingcards and7singlephaseAEMOidentities (46broaderrows), respecting6Nov15:12freshnessbackoff. StrictGEMoperatorqueue exhausted afterL100001080875. NextOEMSmarten2026moduletechnicalsheet.",
   "sources": [
     {
       "id": "uk_repd",
@@ -17144,6 +17144,2598 @@
       "retry_condition": "Fresh revision or evidence resolving saved scope/identity/conflicts; respect source limits",
       "next_due_check": "2026-11-12T11:55:00Z",
       "next_action": "Await revisedexactSKU applicability; do not silentlyoverwrite dated existingfacts or choose1250power."
+    },
+    {
+      "id": "gem_operator_20261105T1255",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CC BY4; entire TZ/WKSL locations excluded",
+      "access_assessment": "Ordinary public ungated GET only. No login/contact/form/bypass. Raw bytes outside Git, captures/checksums retained.",
+      "publication_cadence": "Release-based; metadata before unchanged full files. Generated OEM PDF date is not a current stock/status date.",
+      "last_release": "February2026",
+      "last_attempt": "2026-11-05T13:09:16.559004+00:00",
+      "last_retrieval": "2026-11-05T12:57:22.081119+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+          "retrieved_at": "2026-11-05T12:57:22.081119+00:00",
+          "status": 200,
+          "sha256": "26f780b802dfa21d5b30484de1265d0a71fc59a64fed5f82ef0a8f62568621c8",
+          "bytes": 134149,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 12:44:56 GMT",
+          "final_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker",
+          "raw_name": "gem.html"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+          "retrieved_at": "2026-11-05T11:57:14.680485+00:00",
+          "status": 200,
+          "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+          "bytes": 16516689,
+          "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+          "last_modified": null,
+          "final_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+          "raw_name": "cached art1155/raw/gem.xlsx",
+          "cache_reused": true
+        }
+      ],
+      "mapping": "Existing upsert API; explicit per-field source IDs. Exact order/model/page/named row in equipment review; complete location/native phase/operator and physical workbook rows in project review.",
+      "processed_cursor": {
+        "after": "L100000826896",
+        "next": "L100000827925",
+        "remaining_predicate_eligible": 1015,
+        "manual_review_required": true
+      },
+      "fields_offered": [
+        "historical corporate operators",
+        "complete phase evidence"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 200,
+        "accepted": 200,
+        "remaining_verified_yield": null
+      },
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "result": "200 reviewed→200 existing project operator/context enrichments;400 fields. All corporate labels reviewed. Cached pinned bytes reused; fresh landing still February2026. No owners, capacity, lifecycle, coordinates or identity changed.",
+      "retry_condition": "Fresh revision or independent evidence resolving saved identity/scope/rights; source backoff respected.",
+      "next_due_check": "2026-11-12T12:55:00Z",
+      "next_action": "Resume after L100000827925; recompute1015 eligible and manually review corporate identity, no guaranteed yield."
+    },
+    {
+      "id": "weidmuller_null_fields_20261105T1255",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://datasheet.weidmueller.com/pdf/en/2890570000/scope/2/",
+      "endpoint": "https://datasheet.weidmueller.com/pdf/en/2890570000/scope/2/",
+      "format": "Order-specific PDF",
+      "licence_assessment": "OEM copyright retained; bounded factual enrichment only, no open bulk/document licence asserted",
+      "access_assessment": "Ordinary public ungated GET only. No login/contact/form/bypass. Raw bytes outside Git, captures/checksums retained.",
+      "publication_cadence": "Release-based; metadata before unchanged full files. Generated OEM PDF date is not a current stock/status date.",
+      "last_release": "February2026 exact generation dates in review",
+      "last_attempt": "2026-11-05T13:09:16.559004+00:00",
+      "last_retrieval": "2026-11-05T12:59:29.104616+00:00",
+      "captures": [
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/2683330000/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:29.095447+00:00",
+          "status": 200,
+          "sha256": "eee7d02b4adbba6de50453b107f983086dcea73d21cb45702d178830239a20b6",
+          "bytes": 1093205,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/2683330000/scope/2/",
+          "raw_name": "w2683330000.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/2737600000/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:28.927952+00:00",
+          "status": 200,
+          "sha256": "840f64a39ee2ac37cecc4a91b696bc3bbcdda55a7d3657f1ad4a0d5e0d53db34",
+          "bytes": 1158628,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/2737600000/scope/2/",
+          "raw_name": "w2737600000.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/2778850000/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:28.931149+00:00",
+          "status": 200,
+          "sha256": "64070f8d66f786080bafa0c72a3590ca48100d029204eebc302a33d923b9a1af",
+          "bytes": 947495,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/2778850000/scope/2/",
+          "raw_name": "w2778850000.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/2791920000/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:28.906852+00:00",
+          "status": 200,
+          "sha256": "c75a8cb3c0f44e3200a9093e5ab6b8b075df55f8b776d792293315d4c07787f2",
+          "bytes": 1151428,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/2791920000/scope/2/",
+          "raw_name": "w2791920000.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/2890370000/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:29.099284+00:00",
+          "status": 200,
+          "sha256": "6f096bb07968f317030816b2141101d80dfffddc2c7a53b8a54274fdb8262392",
+          "bytes": 1010218,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/2890370000/scope/2/",
+          "raw_name": "w2890370000.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/2890570000/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:28.914084+00:00",
+          "status": 200,
+          "sha256": "8f35ed27ff6129b89cfb567886d2e843e17ba567c116ecf927c16153adb51e04",
+          "bytes": 859647,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/2890570000/scope/2/",
+          "raw_name": "w2890570000.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/2975540000/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:29.089132+00:00",
+          "status": 200,
+          "sha256": "9ad62018fbc5dfe3b3d21319c2893c6ddd52d199112b82e23639922308160ae4",
+          "bytes": 1037090,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/2975540000/scope/2/",
+          "raw_name": "w2975540000.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000115472/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:29.089512+00:00",
+          "status": 200,
+          "sha256": "25ccc27e18dd60e9bc6d1a1ffd39ab03a0083152f115ac2172eb96d61bb498c2",
+          "bytes": 780345,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000115472/scope/2/",
+          "raw_name": "w8000115472.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000115473/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:29.080519+00:00",
+          "status": 200,
+          "sha256": "bb74447c7c6536fde21ff13d9ebb8ccdca7a15f1b854c4e597a32fb9565d323b",
+          "bytes": 988103,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000115473/scope/2/",
+          "raw_name": "w8000115473.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000130052/scope/2/",
+          "retrieved_at": "2026-11-05T12:59:29.104616+00:00",
+          "status": 200,
+          "sha256": "cd0a5b93c014141b86894ffc097b845fd29298b9b9078044374920b37302f6b0",
+          "bytes": 851917,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000130052/scope/2/",
+          "raw_name": "w8000130052.pdf"
+        },
+        {
+          "url": "https://www.weidmueller.com/int/other/imprint.jsp",
+          "retrieved_at": "2026-11-05T12:57:20.562012+00:00",
+          "status": 200,
+          "sha256": "6800f37ee6fdf50f9c270e260bf09b50e64292c5a381185ea1a2ad13de0a248e",
+          "bytes": 73029,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.weidmueller.com/int/other/imprint.jsp",
+          "raw_name": "weid-imprint.html"
+        }
+      ],
+      "mapping": "Existing upsert API; explicit per-field source IDs. Exact order/model/page/named row in equipment review; complete location/native phase/operator and physical workbook rows in project review.",
+      "processed_cursor": {
+        "completed_orders": [
+          "2890570000",
+          "2791920000",
+          "2737600000",
+          "2975540000",
+          "2890370000",
+          "8000115472",
+          "8000115473",
+          "2778850000",
+          "2683330000",
+          "8000130052"
+        ],
+        "review": "20261105T1255_equipment_review.json"
+      },
+      "fields_offered": [
+        "rated DC voltage",
+        "per-string maximum current",
+        "enclosure insulating materials"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 10,
+        "accepted": 10,
+        "remaining_verified_yield": null
+      },
+      "reviewed": 10,
+      "accepted": 10,
+      "rejected": 0,
+      "result": "10 existing exact models enriched;20 typed values:6 ratedDC,5 explicit string maxima,9 enclosure materials. No new configurable variants. Existing extensions and prior values preserved.",
+      "retry_condition": "Fresh revision or independent evidence resolving saved identity/scope/rights; source backoff respected.",
+      "next_due_check": "2026-12-05T12:55:00Z",
+      "next_action": "Remaining existing PVNext null fields first; inspect source-specific rows, never fill output current from MPP/short-term withstand or switch duty."
+    },
+    {
+      "id": "weidmuller_utility_fields_20261105T1255",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://datasheet.weidmueller.com/pdf/en/8000101212/scope/2/",
+      "endpoint": "https://datasheet.weidmueller.com/pdf/en/8000101212/scope/2/",
+      "format": "Order-specific PDF",
+      "licence_assessment": "OEM copyright retained; factual review only",
+      "access_assessment": "Ordinary public ungated GET only. No login/contact/form/bypass. Raw bytes outside Git, captures/checksums retained.",
+      "publication_cadence": "Release-based; metadata before unchanged full files. Generated OEM PDF date is not a current stock/status date.",
+      "last_release": "February2026 exact generation dates",
+      "last_attempt": "2026-11-05T13:09:16.559004+00:00",
+      "last_retrieval": "2026-11-05T12:57:19.121398+00:00",
+      "captures": [
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000057081/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:19.081458+00:00",
+          "status": 200,
+          "sha256": "3f50fd864d4e8aa0a351b643b0b842db661899acaafa6d15ab59eab00c56f765",
+          "bytes": 426672,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000057081/scope/2/",
+          "raw_name": "w8000057081.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000057088/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:19.093301+00:00",
+          "status": 200,
+          "sha256": "1a42bcfdd19cc7b08657fe89e1e46daad56b29744c17e3f839ddb0dbc137837d",
+          "bytes": 426620,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000057088/scope/2/",
+          "raw_name": "w8000057088.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000060710/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:19.115836+00:00",
+          "status": 200,
+          "sha256": "744f8ea38e9e8d9a1f7c732e2df23016a7b4dc5842f6e43f1f5cedf251f6488f",
+          "bytes": 532838,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000060710/scope/2/",
+          "raw_name": "w8000060710.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000068263/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:18.929102+00:00",
+          "status": 200,
+          "sha256": "038b47ec8a3d63e5bc203df08bad385a6714cfc22317609b3034d5e5687825c5",
+          "bytes": 744151,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000068263/scope/2/",
+          "raw_name": "w8000068263.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000078883/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:19.071250+00:00",
+          "status": 200,
+          "sha256": "fc32ff3c2044e52b953f37ccce4930a01b1d79e824ec56ea766bd48a9bc1c77d",
+          "bytes": 532700,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000078883/scope/2/",
+          "raw_name": "w8000078883.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000101211/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:19.029467+00:00",
+          "status": 200,
+          "sha256": "589c661d8c1217a52e6c67811582d67855a186abecdebb9399f0a67624892979",
+          "bytes": 574159,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000101211/scope/2/",
+          "raw_name": "w8000101211.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000101212/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:18.915072+00:00",
+          "status": 200,
+          "sha256": "66e53fefbe66f257e29f85683dfabeced3b9223f496e7c91fbbc5b0a1b03eca9",
+          "bytes": 574193,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000101212/scope/2/",
+          "raw_name": "w8000101212.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000101213/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:19.096556+00:00",
+          "status": 200,
+          "sha256": "c66234e5811467daf6a26a9314110b1be70a49f86274e30460d1371fac4fc3de",
+          "bytes": 495333,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000101213/scope/2/",
+          "raw_name": "w8000101213.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000101214/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:19.058621+00:00",
+          "status": 200,
+          "sha256": "fc27ea0392649e1df707f148dd14f5a8bfc4808d15deff37c89b043b0ed716b2",
+          "bytes": 488785,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000101214/scope/2/",
+          "raw_name": "w8000101214.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000112693/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:19.121398+00:00",
+          "status": 200,
+          "sha256": "fb995b516d4a8e5abf01d34553ab740a6b75f87bb21b8af8579cd53611d6c526",
+          "bytes": 532720,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000112693/scope/2/",
+          "raw_name": "w8000112693.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000119548/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:18.886888+00:00",
+          "status": 200,
+          "sha256": "6c0ba9efbb3b7293e8e6e715eb887910804bfd2a9fc02d132c800a0ccce34571",
+          "bytes": 644673,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000119548/scope/2/",
+          "raw_name": "w8000119548.pdf"
+        },
+        {
+          "url": "https://datasheet.weidmueller.com/pdf/en/8000124311/scope/2/",
+          "retrieved_at": "2026-11-05T12:57:18.922006+00:00",
+          "status": 200,
+          "sha256": "77dd4428a457cabf4f0f1cce15a77cc832528db02548f008f9ada2782085ab38",
+          "bytes": 532842,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://datasheet.weidmueller.com/pdf/en/8000124311/scope/2/",
+          "raw_name": "w8000124311.pdf"
+        }
+      ],
+      "mapping": "Existing upsert API; explicit per-field source IDs. Exact order/model/page/named row in equipment review; complete location/native phase/operator and physical workbook rows in project review.",
+      "processed_cursor": {
+        "completed_orders": [
+          "8000101212",
+          "8000057088",
+          "8000119548",
+          "8000057081",
+          "8000112693",
+          "8000068263",
+          "8000101211",
+          "8000078883",
+          "8000124311",
+          "8000060710",
+          "8000101213",
+          "8000101214"
+        ]
+      },
+      "fields_offered": [
+        "explicit missing string current or material if source revised"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 0,
+        "remaining_verified_yield": null
+      },
+      "reviewed": 12,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "12 existing utility models reviewed;0 safe new fields. Source does not state sought per-string continuous current/material. 400A DC21B is switching capacity, fuse ranges are options; not mapped to output or string maxima.",
+      "retry_condition": "Fresh revision or independent evidence resolving saved identity/scope/rights; source backoff respected.",
+      "next_due_check": "2026-12-05T12:55:00Z",
+      "next_action": "Skip identical PDFs; require revised explicit per-string/material rows before enrichment."
+    },
+    {
+      "id": "odre_loire_grid_service_20261105T1255",
+      "country": "FRA",
+      "entity": "projects",
+      "source_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Pays+de+la+Loire%27&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+      "endpoint": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Pays+de+la+Loire%27&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+      "format": "Explore API JSON",
+      "licence_assessment": "Etalab Licence Ouverte v2.0; confidential identities excluded",
+      "access_assessment": "Ordinary public ungated GET only. No login/contact/form/bypass. Raw bytes outside Git, captures/checksums retained.",
+      "publication_cadence": "Release-based; metadata before unchanged full files. Generated OEM PDF date is not a current stock/status date.",
+      "last_release": "2026-08-31; metadata modified2026-10-13",
+      "last_attempt": "2026-11-05T13:09:16.559004+00:00",
+      "last_retrieval": "2026-11-05T12:58:03.673815+00:00",
+      "captures": [
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Pays+de+la+Loire%27&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+          "retrieved_at": "2026-11-05T12:58:03.673815+00:00",
+          "status": 200,
+          "sha256": "2e4ee22b8120d31adfc7f183f3cf6155ff2588b879e0b22ee6a1e2ecf20e64af",
+          "bytes": 13536,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege/records?where=codetechnologie%3D%27PHOTV%27+AND+puismaxinstallee%3E%3D5000+AND+puismaxinstallee%3C20000+AND+region%3D%27Pays+de+la+Loire%27&order_by=codeeicresourceobject&limit=100&offset=0&select=codeeicresourceobject%2Cnominstallation%2Ccodeinseecommuneimplantation%2Ccodeinseecommune%2Cpuismaxinstallee%2Ccodetechnologie%2Cnbinstallations%2Cregime%2Cdatemiseenservice%2Cgestionnaire%2Cregion%2Ccommune%2Ctensionraccordement%2Cpostesource",
+          "raw_name": "odre-loire0.json"
+        },
+        {
+          "url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+          "retrieved_at": "2026-11-05T12:56:41.309958+00:00",
+          "status": 200,
+          "sha256": "59ea3981d23f586f0ad2faf0944d0100ebedf359cea52da9f3ccbf81d471ef07",
+          "bytes": 56139,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://odre.opendatasoft.com/api/explore/v2.1/catalog/datasets/registre-national-installation-production-stockage-electricite-agrege",
+          "raw_name": "odre-meta.json"
+        }
+      ],
+      "mapping": "Existing upsert API; explicit per-field source IDs. Exact order/model/page/named row in equipment review; complete location/native phase/operator and physical workbook rows in project review.",
+      "processed_cursor": {
+        "region": "Pays de la Loire",
+        "technology": "PHOTV",
+        "installed_kw": [
+          5000,
+          20000
+        ],
+        "offset": 0,
+        "total": 31,
+        "complete": true
+      },
+      "fields_offered": [
+        "grid operator",
+        "substation",
+        "commissioning date",
+        "installed capacity (not AC)"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 31,
+        "accepted": 0,
+        "remaining_verified_yield": null
+      },
+      "reviewed": 31,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "31 reviewed→0 accepted;4 exact matches unchanged;11 confidential rows excluded and 16 unresolved EIC/phase identities held. No inferred plant identity or AC/DC conversion.",
+      "retry_condition": "Fresh revision or independent evidence resolving saved identity/scope/rights; source backoff respected.",
+      "next_due_check": "2026-12-01T06:00:00Z",
+      "next_action": "Skip unchanged partition; independently reconcile named EIC/phase holds or inspect newly released monthly snapshot."
+    },
+    {
+      "id": "gem_operator_20261105T1327",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CC BY4.0; entire TZ/WKSL locations excluded",
+      "access_assessment": "Ordinary public GET, no login/contact/access-control bypass. Raw documents outsideGit.",
+      "last_release": "February2026",
+      "publication_cadence": "Release-based; cached partitions advanced, no hourly full download",
+      "last_attempt": "2026-11-05T13:46:12.994152+00:00",
+      "last_retrieval": "2026-11-05T13:30:15.103705+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+          "retrieved_at": "2026-11-05T13:30:15.103705+00:00",
+          "status": 200,
+          "sha256": "33b4d3358e08101893872cc71cc70b31d030d63f89bb9128eabf9cb7e844b1a1",
+          "bytes": 134149,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 13:06:15 GMT",
+          "final_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker",
+          "raw_name": "gem.html"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+          "retrieved_at": "2026-11-05T11:57:14.680485+00:00",
+          "status": 200,
+          "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+          "bytes": 16516689,
+          "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+          "last_modified": null,
+          "final_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+          "raw_name": "cached art1155/raw/gem.xlsx",
+          "cache_reused": true
+        }
+      ],
+      "mapping": "Exact physical row/model and field mapping in1327_aemo_review,1327_equipment_review or1327_project_review; ordinary canonical upsert. Candidate identities and source observations are distinct from accepted fields.",
+      "processed_cursor": {
+        "after": "L100000827925",
+        "next": "L100000828967",
+        "remaining_predicate_eligible": 815,
+        "manual_review_required": true
+      },
+      "fields_offered": [
+        "historical corporate operators",
+        "completephase context"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 200,
+        "accepted": 200,
+        "unprocessed_verified_yield": null
+      },
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "result": "200 reviewed→200 enriched,400 operator/evidence fields. Corporate labels manually checked, native/source completephase and operator equality required. Cached pinned workbook reused; fresh landing stillFebruary2026.",
+      "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
+      "next_due_check": "2026-11-12T13:27:00Z",
+      "next_action": "Resume afterL100000828967; recompute815eligible before corporate/nativephase review."
+    },
+    {
+      "id": "aemo_oct_exact_20261105T1327",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "endpoint": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+      "format": "XLSX",
+      "licence_assessment": "AEMO general permission with accurate attribution; workbook invokes permission; confidential/third-party commissioned documents excluded",
+      "access_assessment": "Ordinary public GET, no login/contact/access-control bypass. Raw documents outsideGit.",
+      "last_release": "2026-10-30",
+      "publication_cadence": "Monthly Generation Information release; metadata/ETag before repeating workbook",
+      "last_attempt": "2026-11-05T13:46:12.994152+00:00",
+      "last_retrieval": "2026-11-05T13:30:54.586689+00:00",
+      "captures": [
+        {
+          "url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+          "retrieved_at": "2026-11-05T13:30:14.845760+00:00",
+          "status": 200,
+          "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+          "bytes": 950741,
+          "etag": "0bff23fd31cd4e39be18d6b2aac81276",
+          "last_modified": "Fri, 30 Oct 2026 06:24:27 GMT",
+          "final_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en",
+          "raw_name": "aemo-oct.xlsx"
+        },
+        {
+          "url": "https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions",
+          "retrieved_at": "2026-11-05T13:30:54.586689+00:00",
+          "status": 200,
+          "sha256": "6af250548e123ccb6d8ada14e2da337644ad27d3160e85731fa207d52a87a92c",
+          "bytes": 163710,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.aemo.com.au/privacy-and-legal-notices/copyright-permissions",
+          "raw_name": "aemo-rights.html"
+        }
+      ],
+      "mapping": "Exact physical row/model and field mapping in1327_aemo_review,1327_equipment_review or1327_project_review; ordinary canonical upsert. Candidate identities and source observations are distinct from accepted fields.",
+      "processed_cursor": {
+        "workbook_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+        "sheet": "Generator Information",
+        "physical_rows_through": 1797,
+        "explicit_PV_screen_complete": true,
+        "reviewed_exact_DUIDs": 34,
+        "remaining_identity_candidates": 62,
+        "review_file": "20261105T1327_aemo_review.json"
+      },
+      "fields_offered": [
+        "aggregate nameplate AC/DC",
+        "financial owner",
+        "native unit/site/status/date observations"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 366,
+        "accepted": 27,
+        "unprocessed_verified_yield": null
+      },
+      "reviewed": 366,
+      "accepted": 27,
+      "rejected": 0,
+      "result": "Normal October workbook access recovered;366 explicitPV rows/356sites screened;96 exact-ID/name candidates;34 exactDUID/singleunit decisions reviewed→27enriched/58fields,7unchanged.12 AC and12 DC nameplates,24 owner nulls,10 contexts. Ten ownerlabel/scope differences retained;62 other candidatecrosswalks held. 270 unmatched PVrows not imported. New tested null-field function; not automaticprojectdiscovery.",
+      "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
+      "next_due_check": "2026-11-30T06:00:00Z",
+      "next_action": "Prioritize independent plant/phase crosswalks for62held candidates; use existing Geoscience Australia identity workflow and owner/connection permits. Do not accept exactnames alone or MaxSiteCapacity as PVnameplate. Skip identical workbook."
+    },
+    {
+      "id": "deye_sg05lp3_sm2_20261105T1327",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.deyeinverter.com/download/product-2/",
+      "endpoint": "https://www.deyeinverter.com/download/product-2/",
+      "format": "PDF technical tables",
+      "licence_assessment": "OEM copyright retained, bounded factual model extraction; no open bulk/document licence asserted",
+      "access_assessment": "Ordinary public GET, no login/contact/access-control bypass. Raw documents outsideGit.",
+      "last_release": "OEMlisting2026-09-14; filetoken20260911",
+      "publication_cadence": "OEM revision-based; refresh index before unchanged PDFs",
+      "last_attempt": "2026-11-05T13:46:12.994152+00:00",
+      "last_retrieval": "2026-11-05T13:30:54.591346+00:00",
+      "captures": [
+        {
+          "url": "https://www.deyeinverter.com/download/product-2/",
+          "retrieved_at": "2026-11-05T13:29:08.838465+00:00",
+          "status": 200,
+          "sha256": "f64f0a71899205d15768bdd48110a6c1f7237794407f5c5c001fb72a176d84d4",
+          "bytes": 406902,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.deyeinverter.com/download/product-2/",
+          "raw_name": "deye-downloads.html"
+        },
+        {
+          "url": "https://www.deyeinverter.com/privacy-policy/",
+          "retrieved_at": "2026-11-05T13:30:54.591346+00:00",
+          "status": 200,
+          "sha256": "3c5ea659094f9778426969e4cb6ac245071c319ab37d49285b319c1ce6e76443",
+          "bytes": 70976,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.deyeinverter.com/privacy-policy/deye-inverter-data-privacy-policy.html",
+          "raw_name": "deye-privacy.html"
+        },
+        {
+          "url": "https://hqcdn.hqsmartcloud.com/deyeinverter/2026/09/14/BDatasheetSUN-14-20K-SG05LP3-EU-SM220260911en.pdf",
+          "retrieved_at": "2026-11-05T13:30:14.861558+00:00",
+          "status": 200,
+          "sha256": "49a2d95e6d4e838c773e51c3b7003fc0616192c009e536be9116b96ef9e57c05",
+          "bytes": 311054,
+          "etag": "\"FiJTOrvMSMLM0ch8EtysKgdp8459\"",
+          "last_modified": "Mon, 14 Sep 2026 05:52:42 GMT",
+          "final_url": "https://hqcdn.hqsmartcloud.com/deyeinverter/2026/09/14/BDatasheetSUN-14-20K-SG05LP3-EU-SM220260911en.pdf",
+          "raw_name": "deye14-20.pdf"
+        },
+        {
+          "url": "https://hqcdn.hqsmartcloud.com/deyeinverter/2026/09/14/BDatasheetSUN-3-12K-SG05LP3-EU-SM220260911en.pdf",
+          "retrieved_at": "2026-11-05T13:30:14.845766+00:00",
+          "status": 200,
+          "sha256": "aadde4f68ead76ffa413e97ef7e86261ba4a1b8bdeab272a9b9364c0f065f514",
+          "bytes": 295403,
+          "etag": "\"FiirHZaNN2jzwHZqk4MHv0RXHjfc\"",
+          "last_modified": "Mon, 14 Sep 2026 05:18:38 GMT",
+          "final_url": "https://hqcdn.hqsmartcloud.com/deyeinverter/2026/09/14/BDatasheetSUN-3-12K-SG05LP3-EU-SM220260911en.pdf",
+          "raw_name": "deye3-12.pdf"
+        }
+      ],
+      "mapping": "Exact physical row/model and field mapping in1327_aemo_review,1327_equipment_review or1327_project_review; ordinary canonical upsert. Candidate identities and source observations are distinct from accepted fields.",
+      "processed_cursor": {
+        "completed_models": [
+          "SUN-3K-SG05LP3-EU-SM2",
+          "SUN-4K-SG05LP3-EU-SM2",
+          "SUN-5K-SG05LP3-EU-SM2",
+          "SUN-6K-SG05LP3-EU-SM2",
+          "SUN-8K-SG05LP3-EU-SM2",
+          "SUN-10K-SG05LP3-EU-SM2",
+          "SUN-12K-SG05LP3-EU-SM2",
+          "SUN-14K-SG05LP3-EU-SM2",
+          "SUN-15K-SG05LP3-EU-SM2",
+          "SUN-16K-SG05LP3-EU-SM2",
+          "SUN-18K-SG05LP3-EU-SM2",
+          "SUN-20K-SG05LP3-EU-SM2"
+        ],
+        "table_pages": [
+          2,
+          2
+        ]
+      },
+      "fields_offered": [
+        "active AC rating",
+        "perMPPT PV current/strings",
+        "PVvoltage",
+        "efficiency",
+        "mechanical/environmental",
+        "battery/control observations"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 12,
+        "unprocessed_verified_yield": null
+      },
+      "reviewed": 12,
+      "accepted": 12,
+      "rejected": 0,
+      "result": "12 exact EU-SM2 hybrid models added;276typed specifications plus battery/PV current, derating, conditional warranty/AC observations. Existing canonicalmanufacturer reused; no AU/SM3-Pconfig expansion. No universal warranty, pairedACcurrent or maximumPV→ratedDC scalar inference.",
+      "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
+      "next_due_check": "2026-12-05T13:27:00Z",
+      "next_action": "Selected tables exhausted; prioritize independent tracker/combiner OEM depth or missing existing specifications, not regional or MPPT-only variants."
+    },
+    {
+      "id": "circutor_rights_20261105T1327",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://circutor.com/en/legal-notice/",
+      "endpoint": "https://circutor.com/en/legal-notice/",
+      "format": "HTML legal notice",
+      "licence_assessment": "Explicit prohibition on unapproved downloading/storage/reproduction/transformation of website content; no licence inferred",
+      "access_assessment": "Ordinary public GET, no login/contact/access-control bypass. Raw documents outsideGit.",
+      "last_release": "Undated current legal notice",
+      "publication_cadence": "Recheck only if applicable rights change",
+      "last_attempt": "2026-11-05T13:46:12.994152+00:00",
+      "last_retrieval": "2026-11-05T13:29:10.322941+00:00",
+      "captures": [
+        {
+          "url": "https://www.circutor.com/en/legal-notice/",
+          "retrieved_at": "2026-11-05T13:29:10.322941+00:00",
+          "status": 200,
+          "sha256": "676e90826f1929ec3fad82f58d92800e085d009e87f3e8aafb35b47c6e740dae",
+          "bytes": 65324,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 13:29:23 GMT",
+          "final_url": "https://circutor.com/en/legal-notice/",
+          "raw_name": "circutor-legal.html"
+        }
+      ],
+      "mapping": "Exact physical row/model and field mapping in1327_aemo_review,1327_equipment_review or1327_project_review; ordinary canonical upsert. Candidate identities and source observations are distinct from accepted fields.",
+      "processed_cursor": {
+        "technical_models_reviewed": 0,
+        "rights_hold": true
+      },
+      "fields_offered": [
+        "potential string/combiner specifications; not extracted"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "unprocessed_verified_yield": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "Rights assessment only; no technical documents or model rows extracted/accepted.",
+      "retry_condition": "New release or independent identity/rights/field evidence; respect source cadence and saved holds.",
+      "next_due_check": "2026-12-05T13:27:00Z",
+      "next_action": "Wait for suitable rights basis or choose independent OEM; no contact/form submitted."
+    },
+    {
+      "id": "gem_operator_20261105T1503",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CCBY4; entireTZ/WKSLlocation exclusions",
+      "access_assessment": "Ordinary publicGET only, no login/contact/bypass. Exactcaptures/checksums/ETags in1503_source_captures.",
+      "last_release": "February2026",
+      "publication_cadence": "Release-based; cached unprocessedpartitions",
+      "last_attempt": "2026-11-05T15:15:28.403890+00:00",
+      "last_retrieval": "2026-11-05T15:15:28.403890+00:00",
+      "retrieval_note": "Actual per-document times/checksums in source_captures; cacheddocuments retain originalretrieval, not now.",
+      "processed_cursor": {
+        "after": "L100000828967",
+        "next": "L100001016833",
+        "remaining": 615
+      },
+      "fields_offered": [
+        "reviewedidentity",
+        "missingtechnical/ownership/power/evidence fields"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 200,
+        "accepted": 200,
+        "unreviewed_verified_yield": null
+      },
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "result": "200reviewed→200enriched/400operator-evidencefields. Exact completephase/nativeoperator agreement, corporate labels manually reviewed; rawcached pinned bytes reused.",
+      "mapping": "Exactmodel DOMtableIDs or reviewed GAobjectID/globalID/AEMOsurveyrow/DUID in datedreviews. Existing upsert plus explicitly reviewed additiveIDedits, originalIDkeyvalues retained.",
+      "next_due_check": "2026-11-12T15:03:00Z",
+      "retry_condition": "Newrevision or evidence resolving savedscope/identity/rights; skipunchangedbytes.",
+      "next_action": "Resume afterL100001016833; recompute615eligible before manualreview."
+    },
+    {
+      "id": "australia_crosswalk_20261105T1503",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://services.ga.gov.au/gis/rest/services/Electricity_Infrastructure/MapServer/1/query",
+      "endpoint": "https://services.ga.gov.au/gis/rest/services/Electricity_Infrastructure/MapServer/1/query",
+      "format": "ArcGIS JSON +cachedXLSX",
+      "licence_assessment": "GA CCBY4 /AEMOgeneralattributedpermission; freshGApolicy checked",
+      "access_assessment": "GA ordinaryGET succeeded and bytes match prior snapshot. AEMOconditionalHEAD returned403; remote freshness unverified, cached checksum-pinned October2026 workbook only. No currentoperation assertion or fullbodyretry/bypass.",
+      "last_release": "GA19Jun2026 snapshot unchanged; AEMO30Oct2026",
+      "publication_cadence": "GA revision-based; AEMOmonthly, reusecache/HEAD",
+      "last_attempt": "2026-11-05T15:15:28.403890+00:00",
+      "last_retrieval": "2026-11-05T15:15:28.403890+00:00",
+      "retrieval_note": "Actual per-document times/checksums in source_captures; cacheddocuments retain originalretrieval, not now.",
+      "processed_cursor": {
+        "previous_candidates": 62,
+        "accepted_crosswalks": 12,
+        "remaining": 50,
+        "review_file": "20261105T1503_australia_review.json"
+      },
+      "fields_offered": [
+        "reviewedidentity",
+        "missingtechnical/ownership/power/evidence fields"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 14,
+        "accepted": 12,
+        "unreviewed_verified_yield": null
+      },
+      "reviewed": 14,
+      "accepted": 12,
+      "rejected": 0,
+      "result": "14three-source suggestions manuallyreviewed→12identity/parameter enrichments;2genuine localitydifferences held. Nativecase-onlylocality variants retainedoldcase.9AC,4DC,9owner,8context,12additive IDfields and1locality;13existingAC/DC/ownerassertiondifferences held withoutoverwrite. No newprojects, no GAunspecifiedMW→AC/DC.",
+      "mapping": "Exactmodel DOMtableIDs or reviewed GAobjectID/globalID/AEMOsurveyrow/DUID in datedreviews. Existing upsert plus explicitly reviewed additiveIDedits, originalIDkeyvalues retained.",
+      "next_due_check": "2026-11-06T15:12:00Z",
+      "retry_condition": "Newrevision or evidence resolving savedscope/identity/rights; skipunchangedbytes.",
+      "next_action": "Resolve Metz/Armidale andWollar/Mudgee scope usingpermits; independentcrosswalks forremaining50candidates. Do not accept names/proximityalone."
+    },
+    {
+      "id": "livoltek_gt3_live_20261105T1503",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.livoltek.com/product/grid-tied-inverter-threephase-gt3-4-25kw/",
+      "endpoint": "https://www.livoltek.com/product/grid-tied-inverter-threephase-gt3-4-25kw/",
+      "format": "HTMLmodeltables",
+      "licence_assessment": "OEMcopyrightretained; boundedfacts only; noopenbulklicence",
+      "access_assessment": "Ordinary publicGET only, no login/contact/bypass. Exactcaptures/checksums/ETags in1503_source_captures.",
+      "last_release": "UndatedliveHTML retrieved5Nov2026",
+      "publication_cadence": "Revision-based; indexbeforeunchangedcards",
+      "last_attempt": "2026-11-05T15:15:28.403890+00:00",
+      "last_retrieval": "2026-11-05T15:15:28.403890+00:00",
+      "retrieval_note": "Actual per-document times/checksums in source_captures; cacheddocuments retain originalretrieval, not now.",
+      "processed_cursor": {
+        "accepted_existing_models": 11,
+        "identical_duplicate_cards": 1,
+        "DL1_models_deferred": 2,
+        "PDF_attempt": "404"
+      },
+      "fields_offered": [
+        "reviewedidentity",
+        "missingtechnical/ownership/power/evidence fields"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 14,
+        "accepted": 11,
+        "unreviewed_verified_yield": null
+      },
+      "reviewed": 14,
+      "accepted": 11,
+      "rejected": 0,
+      "result": "11existingexactmodels enriched/66typedfields; no newmodels/manufacturer. 1100V maximumPVinput, dimensions, communication, symmetricstrings andmissingefficiency. No perMPPTvector→aggregate or maximumarrayWp→ratedDC inference. No environment/warrantyclaims invented fromsparsecard.",
+      "mapping": "Exactmodel DOMtableIDs or reviewed GAobjectID/globalID/AEMOsurveyrow/DUID in datedreviews. Existing upsert plus explicitly reviewed additiveIDedits, originalIDkeyvalues retained.",
+      "next_due_check": "2026-12-05T15:03:00Z",
+      "retry_condition": "Newrevision or evidence resolving savedscope/identity/rights; skipunchangedbytes.",
+      "next_action": "Selectedcards exhausted; seek current downloadablemanual forqualified environment/warranty rather than regionalvariants. OldindexedPDF404 not bypassed."
+    },
+    {
+      "id": "solplanet_rights_20261105T1503",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://solplanet.net/gb/solplanet-legal-disclaimer",
+      "endpoint": "https://solplanet.net/gb/solplanet-legal-disclaimer",
+      "format": "HTMLterms/PDFbrochure",
+      "licence_assessment": "Personal-information-only; expresspermission forcopy/process/change/paidforwarding; no suitable reusegrantasserted",
+      "access_assessment": "Ordinary publicGET only, no login/contact/bypass. Exactcaptures/checksums/ETags in1503_source_captures.",
+      "last_release": "November2024brochure; currenttermsundated",
+      "publication_cadence": "Onlyifrightschange",
+      "last_attempt": "2026-11-05T15:15:28.403890+00:00",
+      "last_retrieval": "2026-11-05T15:15:28.403890+00:00",
+      "retrieval_note": "Actual per-document times/checksums in source_captures; cacheddocuments retain originalretrieval, not now.",
+      "processed_cursor": {
+        "accepted_models": 0,
+        "rights_hold": true
+      },
+      "fields_offered": [
+        "reviewedidentity",
+        "missingtechnical/ownership/power/evidence fields"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "unreviewed_verified_yield": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "result": "Promisingmultimodelcatalogueaccessed, butno factualrecords accepted due source-specific reuse restrictions. IndependentLivoltekfallback used.",
+      "mapping": "Exactmodel DOMtableIDs or reviewed GAobjectID/globalID/AEMOsurveyrow/DUID in datedreviews. Existing upsert plus explicitly reviewed additiveIDedits, originalIDkeyvalues retained.",
+      "next_due_check": "2026-12-05T15:03:00Z",
+      "retry_condition": "Newrevision or evidence resolving savedscope/identity/rights; skipunchangedbytes.",
+      "next_action": "Waitforapplicablereusebasis; no contact/forms submitted."
+    },
+    {
+      "id": "gem_operators_20261105T1535",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CC BY4; wholeTZ/WKSLlocation exclusions",
+      "last_release": "February2026",
+      "publication_cadence": "Release based; advance cachedpartition",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "after": "L100001016833",
+        "next": "L100001018717",
+        "remaining_after_cursor": 414,
+        "label_hold": [
+          {
+            "record_id": "72f42ca8-5c9b-5a67-8b64-8f32be00c25e",
+            "location_id": "L100001018180",
+            "operator_as_reported": "Chengde County Gagu Clean Energy has a page company",
+            "reason": "Malformed source label; no correction invented"
+          }
+        ]
+      },
+      "reviewed": 201,
+      "accepted": 200,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 201,
+        "accepted": 200,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "201selected→200operator/context enrichments,1malformed label held. Complete native/source PVphase equality and unanimous exactoperator required.",
+      "next_action": "Resume afterL100001018717; manually review remaining414eligible locations; malformedlabel needs independent evidence.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T15:35:00Z"
+    },
+    {
+      "id": "australia_scope_20261105T1535",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "endpoint": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "format": "CachedXLSX+GAJSON+HTML",
+      "licence_assessment": "GA CC BY4; AEMO attributed-use permission; NSWdepartment CC BY4; Wollar boundedfactualcopyright retained",
+      "last_release": "AEMO30October2026; GA19June2026 snapshot",
+      "publication_cadence": "Monthly; no refetch within403backoff",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "remaining_crosswalk_candidates": 48,
+        "resolved": [
+          "METZSF1",
+          "WOLARSF1"
+        ],
+        "review": "20261105T1535_australia_review.json"
+      },
+      "reviewed": 2,
+      "accepted": 2,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 2,
+        "accepted": 2,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "2manual geographic-scope crosswalks; 1AC,1DC,2owners,2contexts and2additiveIDJSONfields. Metz existing141DC versusAEMO135DC held. Native singlephase/completeoneunit scope checked; oldlocality/coordinates retained.",
+      "next_action": "Review remaining48AEMOcrosswalks for missingAC; next ordinaryfreshness no earlier than6Nov15:12UTC. No fullmonthlyredownload.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-11-06T15:12:00Z"
+    },
+    {
+      "id": "weidmuller_exact_20261105T1535",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://datasheet.weidmueller.com/pdf/en/2925850000/scope/2/",
+      "endpoint": "https://datasheet.weidmueller.com/pdf/en/2925850000/scope/2/",
+      "format": "Seven exactOEMPDFs",
+      "licence_assessment": "Copyrightretained; boundedfactualnullfills only, no openbulk/document licence",
+      "last_release": "17February–1March2026 generatedsheet dates",
+      "publication_cadence": "Revision based",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "processed_orders": [
+          "2925850000",
+          "2683120000",
+          "2925860000",
+          "8000130055",
+          "2683230000",
+          "2778870000",
+          "2737620000"
+        ]
+      },
+      "reviewed": 7,
+      "accepted": 7,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 7,
+        "accepted": 7,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "7existingmodels enriched:5explicit1000VratedDC values,2enclosurematerials. Page1identity/page2namedrow, downloadedSHA and condition retained.",
+      "next_action": "Selectedmissingfield cohort exhausted; nextcatalogue must add substantive depth, not duplicate configurations.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T15:35:00Z"
+    },
+    {
+      "id": "deger_depth_20261105T1535",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.degerenergie.de/wp-content/uploads/2020/04/DEGER_D100-D80_EN_2026.pdf",
+      "endpoint": "https://www.degerenergie.de/wp-content/uploads/2020/04/DEGER_D100-D80_EN_2026.pdf",
+      "format": "TwoOEMPDFcatalogues",
+      "licence_assessment": "Copyrightretained; qualifiedfactualreview only",
+      "last_release": "2026 catalogue filenames",
+      "publication_cadence": "Revision based",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "models": [
+          "D25H",
+          "D60H",
+          "D80",
+          "D100"
+        ]
+      },
+      "reviewed": 4,
+      "accepted": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 0,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "Existingrecords already capture scoped technical parameters. Conditional2yrdefect/10yrsteel-rust provisions not a universal productwarranty. No timestampchurn.",
+      "next_action": "Skipunchangedcatalogues; seek changedmodel-specific environmental/warranty evidence.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T15:35:00Z"
+    },
+    {
+      "id": "soltigua_catalogue_20261105T1535",
+      "country": "GLOBAL",
+      "entity": "trackers",
+      "source_url": "https://www.soltigua.com/download/",
+      "endpoint": "https://www.soltigua.com/download/",
+      "format": "HTML+public12pagecorporatePDF",
+      "licence_assessment": "Copyrightretained; brochure not an exactconfigurationtechnicaltable",
+      "last_release": "Undated currentbrochure; publishedpublicdownloadbutton used",
+      "publication_cadence": "Revision based",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "models_reviewed": [
+          "iTrackerM",
+          "iTrackerOCT",
+          "iTrackerXL",
+          "iTrackerDuetto"
+        ],
+        "new_models_accepted": 0
+      },
+      "reviewed": 4,
+      "accepted": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 0,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "M/OCTarchitecture and familyoptions examined; M/MA1/MA2heightvariants not expanded. ExistingXL/Duetto unchanged. Standard/optional slope/current/windclaims not invented as exactratings.",
+      "next_action": "Need exactmodelconfiguration tables; no forms/contact, no acceptedfeed claimed.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T15:35:00Z"
+    },
+    {
+      "id": "solartech_rights_20261105T1535",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.solartech.cn/product/solar-combiner-box_16.html",
+      "endpoint": "https://www.solartech.cn/product/solar-combiner-box_16.html",
+      "format": "HTML+twoPDFtables",
+      "licence_assessment": "Publisher Policy section3 forbids storing content in informationretrievalsystems withoutpriorwrittenpermission; no ingestion",
+      "last_release": "PublicPDFs lastmodified29April2021",
+      "publication_cadence": "Only if applicable rights change",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "candidate_models": 8,
+        "accepted": 0,
+        "policy_url": "https://www.solartech.cn/others/Policy.html"
+      },
+      "reviewed": 8,
+      "accepted": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 8,
+        "accepted": 0,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "Promising6modelPE-H and2modelPE-HE catalogue found; explicitreuseblock. No newmanufacturer/model accepted. HTML/PDFalias/current differences not reconciled for acceptance.",
+      "next_action": "Rights hold; use another permittedOEM, no permissionrequest/contact submitted.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T15:35:00Z"
+    },
+    {
+      "id": "gave_recheck_20261105T1535",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://pim.gave.com/Productos/catalogos/CA029/099CA01550.04EN.pdf",
+      "endpoint": "https://pim.gave.com/Productos/catalogos/CA029/099CA01550.04EN.pdf",
+      "format": "PDF/HTML",
+      "licence_assessment": "Existingpriorwrittenpermission hold retained; no ingestion",
+      "last_release": "2024cataloguefilemodified5June2024",
+      "publication_cadence": "Only if rights change",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "Discoveredcurrentsearchcatalogue; existingbacklogpermission hold found, no extracted/acceptedtechnicalrecords. Duplicate sourcework avoided afterrightscheck.",
+      "next_action": "Do not reprocess unchanged catalogue until permissionbasis established.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T15:35:00Z"
+    },
+    {
+      "id": "nsw_identity_20261105T1535",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/metz-solar-farm",
+      "endpoint": "https://www.planningportal.nsw.gov.au/major-projects/projects/metz-solar-farm",
+      "format": "DepartmentHTMLprojectmetadata",
+      "licence_assessment": "CC BY4departmentmaterial only; thirdpartyreports/submissions excluded",
+      "last_release": "Live5November2026",
+      "publication_cadence": "Project updates",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "Metz": "accepted identitysupport",
+        "Wollar": "departmentpageexamined but submissions not used"
+      },
+      "reviewed": 2,
+      "accepted": 1,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 2,
+        "accepted": 1,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "Official multi-project portal attempted; two projectheaders reviewed. Metz officialname/application/LGA supports regionalidentity. No proposalcapacity→AC/DC or approval→operation inference.",
+      "next_action": "For remaining48crosswalks prefer departmentalmetadata or permittedoperatorstation inventories; keep thirdpartyIP exclusions.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T15:35:00Z"
+    },
+    {
+      "id": "metz_owner_rights_20261105T1535",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://metzsolarfarm.com/",
+      "endpoint": "https://metzsolarfarm.com/",
+      "format": "HTML+2017TermsPDF",
+      "licence_assessment": "Linked terms requirepermission for nonpersonaluse; scope namedotherFRVsites but no reusablebasis asserted",
+      "last_release": "Terms12October2017; staleownerpage",
+      "publication_cadence": "Only if rights change",
+      "last_attempt": "2026-11-05T15:52:21.769804+00:00",
+      "last_retrieval_note": "Actualretrieval/SHA/ETag in1535_source_captures; cachedsources retainoriginalretrieval. No newAEMOfreshnessclaim withinbackoff.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/payment/bypass.",
+      "processed_cursor": {
+        "accepted_ownerpage_facts": 0
+      },
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "further_verified_yield": null
+      },
+      "fields_offered": [
+        "Missingoperator/evidence",
+        "ExplicitnameplateAC/DC/siteowner",
+        "ExactmodelDCvoltage/enclosurematerial",
+        "Reviewedregistryidentity"
+      ],
+      "mapping": "Exactworkbookrows/phaseIDs, physicalOEMpage1identity/page2namedrows, GAobjectID/globalID+AEMOrow/DUID and departmentalprojectheader; see1535datedreviews.",
+      "result": "Ownerpage examined but NOT used in acceptedfieldmapping or IDdecision; officialNSW departmentalmetadata instead. Historicaldevelopment/115MWac assertion not currentoperation.",
+      "next_action": "Keep restrictedownerpage out of accepteddata; no contact/forms.",
+      "retry_condition": "Newrevision/rights or independent evidence resolving savedidentity/fieldhold; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T15:35:00Z"
+    },
+    {
+      "id": "gem_operator_partition_20261105T1609",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CC BY4, wholeTZ/WKSLlocation exclusions",
+      "last_release": "February2026",
+      "publication_cadence": "Release based; reusecachedpartitions",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "after": "L100001018717",
+        "next": "L100001020271",
+        "remaining_after_cursor": 213,
+        "label_hold": [
+          {
+            "record_id": "6216b389-b3c1-5803-ac07-5854572f7797",
+            "location_id": "L100001019672",
+            "operator_as_reported": "Zhirun New Energy Taizhou Hailing Chengdong Street Fishing and Solar Photovoltaic Project",
+            "reason": "Project-like operator label is not clearly a corporate organisation; independent verification required"
+          }
+        ]
+      },
+      "reviewed": 201,
+      "accepted": 200,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 201,
+        "accepted": 200,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "201reviewed→200operator/context enrichments;1project-like operatorlabel held, no inventedcorrection. Lastlandingcheck5Nov15:35, pinnedsourcebytesreused; no currentoperation or newrelease claim.",
+      "next_action": "Resume afterL100001020271;213eligibleaftercursor plusone heldlabel.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T16:09:00Z",
+      "last_retrieval": "2026-11-05T15:36:23.528233+00:00",
+      "sha256": "b873a4853582582fb4f26f1f436d82d1210e6e891649a6030eeb7311ab74e63b",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 15:36:33 GMT",
+      "retrieval_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/"
+    },
+    {
+      "id": "nsw_tracker_20261105T1609",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "endpoint": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "format": "HTMLsummary/detailtables",
+      "licence_assessment": "NSWdepartment CC BY4, thirdpartyreports/submissions excluded",
+      "last_release": "6August2026table;28August2026pagefooter",
+      "publication_cadence": "Unspecified updatecadence, revision-based",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "complete_inventory": 193,
+        "solar_cards": 93,
+        "accepted_existing": 23,
+        "other_holds": 70,
+        "duplicate_name": "RiverinaSolarFarm",
+        "review": "20261105T1609_nsw_review.json"
+      },
+      "reviewed": 93,
+      "accepted": 23,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 93,
+        "accepted": 23,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "Reusablechecksum/asof/schema/inventory/datevalidated reader+12tests;93reviewcandidates staged,23existingpositivePVprojects enriched/40fields (23qualifiedcontexts,15localitylabels,2regions). Zero newNSWplants; sourcecontains16underassessment despiteintroapprovedwording. OneTamworth/Somerton locality difference retainedwithoutoverwrite.",
+      "next_action": "Review70othercards for explicit identity/aliases and additiveexistingcontext resolution; no fuzzymerge/automaticacceptance.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T16:09:00Z",
+      "last_retrieval": "2026-11-05T16:13:37.300353+00:00",
+      "sha256": "510e9ec32890927d7e259abf031885d500357af19d35e3184a5677b449f66f37",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 06:42:51 GMT",
+      "retrieval_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy"
+    },
+    {
+      "id": "aemo_singlephase_20261105T1609",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "endpoint": "https://www.aemo.com.au/energy-systems/electricity/national-electricity-market-nem/nem-forecasting-and-planning/forecasting-and-planning-data/generation-information",
+      "format": "CachedXLSX+NSWHTML",
+      "licence_assessment": "AEMO attributed-use permission; NSWCCBY4",
+      "last_release": "30October2026survey",
+      "publication_cadence": "Monthly;403backoffretained",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "remaining_crosswalk_candidates": 46,
+        "accepted_duids": [
+          "MULWASF1",
+          "WELNSF1"
+        ],
+        "next_singlephase_duids": [
+          "BRDDSF01",
+          "CRWASF1",
+          "GIRGSF",
+          "KINGASF1",
+          "LANCSF1",
+          "LILYSF1",
+          "WUNUSF1"
+        ]
+      },
+      "reviewed": 2,
+      "accepted": 2,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 2,
+        "accepted": 2,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "2singlephase reviews→2additiveIDJSONs,1AC,1DC,2siteowners; theseprojects overlapNSW23, not2additionalprojectcounts. Mulwala31/31.16AC andWellington425/426.4DC held. Aldoga/Barcaldine/Bomen have multiplecanonicalphases, no wholeprojectmapping accepted.",
+      "next_action": "Review remaining7singlephase identities with permittedprimaryevidence first. Preserve broader46candidatequeue/phaseholds. Ordinaryfreshness noearlier6Nov15:12UTC.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-11-06T15:12:00Z",
+      "last_retrieval": "2026-11-05T13:30:14.845760+00:00",
+      "sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb",
+      "etag": "0bff23fd31cd4e39be18d6b2aac81276",
+      "last_modified": "Fri, 30 Oct 2026 06:24:27 GMT",
+      "retrieval_url": "https://www.aemo.com.au/-/media/files/electricity/nem/planning_and_forecasting/generation_information/2026/nem-generation-information-oct-2026.xlsx?rev=e4625386b864409786cd79986dd0ac04&sc_lang=en"
+    },
+    {
+      "id": "sieben_tables_20261105T1609",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.siebengroup.com/en_products/PV-Combiner-Box-143.html",
+      "endpoint": "https://www.siebengroup.com/en_products/PV-Combiner-Box-143.html",
+      "format": "TwoOEMHTMLtechnicaltables",
+      "licence_assessment": "OEMcopyrightretained, boundedfacts; noopenbulk/documentlicence asserted",
+      "last_release": "UndatedliveS-PV/SH-PVtables",
+      "publication_cadence": "Revision based",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "models": [
+          "S-PV2",
+          "S-PV3",
+          "S-PV4",
+          "S-PV6",
+          "S-PV8",
+          "S-PV10",
+          "S-PV16",
+          "SH-PV-1/1",
+          "SH-PV-2/1",
+          "SH-PV-4/1",
+          "SH-PV-4/2",
+          "SH-PV-6/1"
+        ],
+        "SH_endpoint": "https://www.siebengroup.com/en_products/en-147.html"
+      },
+      "reviewed": 12,
+      "accepted": 12,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 12,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "12newliteralmodels,110typedtechnicalvalues, newSiebenGroupmanufacturer. Truepublishedcircuittopology/modeltables, no crossproduct ofvoltage/current/optionalconfigurations. Fivequalifiedconflictgroups retained: fusecells,outputsuffix,SPDunit,humidity and voltage/currentpairs.",
+      "next_action": "Selectedtwo tables exhausted; sourcecurrentlynoadditionalexacttracker/combinermodelcatalogue accepted. Skipunchangedobservations.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T16:09:00Z",
+      "last_retrieval": "2026-11-05T16:10:51.808966+00:00",
+      "sha256": "1aa5b1d5a4613eff494e0be04f67715c57909e892532a416376e40661f9cc81a",
+      "etag": null,
+      "last_modified": null,
+      "retrieval_url": "https://www.siebengroup.com/en_products/PV-Combiner-Box-143.html"
+    },
+    {
+      "id": "veichi_rights_20261105T1609",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.veichienergy.com/download/",
+      "endpoint": "https://www.veichienergy.com/download/",
+      "format": "HTMLlisting/Terms",
+      "licence_assessment": "Terms prohibit copying/storing ininformationretrievalsystems withoutpriorpermission",
+      "last_release": "Listing22October2026datasheets; termsmodified31August2026",
+      "publication_cadence": "Onlyifrightschange",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "rights_url": "https://www.veichienergy.com/legal.html",
+        "potential_models_from_listing": 9,
+        "downloadedtechnicalPDFs": 0
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "PromisingVHT/VLS/VLT multirecordcatalogues found; explicitreuseblock discovered beforePDFdownloads.0technicalmodelsreviewed/accepted, no feedintegrated.",
+      "next_action": "Rights hold; use anotherpermittedOEM, no contact/forms or alternatehostbypass.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T16:09:00Z",
+      "last_retrieval": "2026-11-05T16:13:37.251163+00:00",
+      "sha256": "bf450c46175c1359b74617d2c6a6d333493b79f924079a8ffb8fc14a5afb0a29",
+      "etag": null,
+      "last_modified": "Wed, 04 Nov 2026 09:02:20 GMT",
+      "retrieval_url": "https://www.veichienergy.com/download/"
+    },
+    {
+      "id": "aldoga_acciona_20261105T1609",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.acciona.com/projects/aldoga-solar-farm",
+      "endpoint": "https://www.acciona.com/projects/aldoga-solar-farm",
+      "format": "HTML+terms",
+      "licence_assessment": "ACCIONA LegalNoteexpressprohibition on extraction/reuse/retrievalstorage withoutpermission; no ingestion",
+      "last_release": "Undatedliveprojectpage; currentlegalnote",
+      "publication_cadence": "Onlyifrightschange",
+      "last_attempt": "2026-11-05T16:31:26.829044+00:00",
+      "last_retrieval_note": "Exacttimes/SHA/ETag/LastModified in1609_source_captures; cacheddocuments retainoriginalretrieval.",
+      "access_assessment": "OrdinarypublicGET only; no authentication/contact/forms/bypass. Unknownrightsnotassumedopen.",
+      "processed_cursor": {
+        "legal_url": "https://www.acciona.com/legal-note",
+        "NZEAgov": "503, no retry"
+      },
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "fields_offered": [
+        "reviewedplanning/geography/approvalcontext",
+        "explicitnameplateAC/DC/siteowners",
+        "OEMelectrical/environmental/mechanical/controlspecifications"
+      ],
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "unreviewed_verified_yield": null
+      },
+      "mapping": "Exactsourcecardnumbers/rows, physicalAEMOrow/DUID, literalOEMmodelheading/namedrows/spanboundaries indatedreviews; source-specificofflineNSWreader requiresmanualPV/identityreview.",
+      "result": "Ownerfacts notaccepted; Aldoga additionallyhas2canonicalphases. ARENA Barcaldine andNSWBomen primarypages examined, butbothmultiphasecontexts held. IndependentNSWtracker/Siebenfallbacks used.",
+      "next_action": "Keep phase/rights holds; independentpermittedphase-specific evidence needed.",
+      "retry_condition": "Newrevision/rights or independentidentity/field-scope evidence; skipunchangedbytes.",
+      "next_due_check": "2026-12-05T16:09:00Z",
+      "last_retrieval": "2026-11-05T16:10:51.202804+00:00",
+      "sha256": "98c0b550a19a2723249884461f71d0abb4a21cb4bc9ac6d3e3ce9413f23ed267",
+      "etag": null,
+      "last_modified": null,
+      "retrieval_url": "https://www.acciona.com/projects/aldoga-solar-farm"
+    },
+    {
+      "id": "gem_final_20261105T1702",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CCBY4, entireTZ/WKSLlocations excluded",
+      "last_release": "February2026",
+      "publication_cadence": "Release-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 213,
+      "accepted": 213,
+      "rejected": 0,
+      "processed_cursor": {
+        "after": "L100001020271",
+        "next": "L100001080875",
+        "remaining_strict_eligible": 0
+      },
+      "result": "Complete strictoperatorpartition exhausted,213operator/context enrichments. Exactcompletephase/nativeoperator equality, corporate labels reviewed. Historicalsource, lastlandingcheck15:35, pinnedcachedbytes reused.",
+      "fields_offered": [
+        "operator",
+        "extensions_json.complete_phase_operator_context"
+      ],
+      "mapping": "Exact complete GEM phase IDs and native workbook rows; unanimous operator, explicit PV and licence exclusions.",
+      "estimated_useful_yield": {
+        "reviewed": 213,
+        "accepted": 213,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Move to anothercountry/sourcepartition; separatelyheld malformed/project-like labels need independentverification.",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "retrieval_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx"
+    },
+    {
+      "id": "nsw_context_partition_20261105T1702",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "endpoint": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "format": "CachedHTML",
+      "licence_assessment": "NSWdepartmentCCBY4, excludes submissions/thirdpartyreports",
+      "last_release": "6August2026",
+      "publication_cadence": "Revision-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 17,
+      "accepted": 17,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted_total_across_runs": 40,
+        "remaining_cards": 53,
+        "reader_candidates": 93
+      },
+      "result": "17explicitreviewedadditivecontext namespaces plus8missinglocalitylabels. Alloldnamespace/keyvalues and source mappings retained. Parentplanningcontext only, no capacity/status/phase/coordinates changes. Namesunique, existingnativePV positive.",
+      "fields_offered": [
+        "locality",
+        "extensions_json.nsw_planning_tracker"
+      ],
+      "mapping": "Exact reviewed unique existing PV identity to departmental planning card; explicit old/new namespace objects and locality null fills.",
+      "estimated_useful_yield": {
+        "reviewed": 17,
+        "accepted": 17,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Review remaining53cards for aliases/phase scope; never fuzzymerge oroverwrite evidence.",
+      "last_retrieval": "2026-11-05T16:13:37.300353+00:00",
+      "sha256": "510e9ec32890927d7e259abf031885d500357af19d35e3184a5677b449f66f37",
+      "etag": null,
+      "retrieval_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy"
+    },
+    {
+      "id": "smarten_star_20261105T1702",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://www.smartenpowersystems.com/more/catalogue/",
+      "endpoint": "https://www.smartenpowersystems.com/more/catalogue/",
+      "format": "TwoOEMPDFs",
+      "licence_assessment": "OEMcopyrightretained, boundedfactualtables; no openbulk/document licenceasserted",
+      "last_release": "UndatedPDFs, lastmodified14September2026",
+      "publication_cadence": "Revision-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 17,
+      "accepted": 17,
+      "rejected": 0,
+      "processed_cursor": {
+        "single_models": 8,
+        "threephase_models": 9,
+        "technical_values": 306
+      },
+      "result": "17newexactmodels,306typedvalues andqualifiednativeconditions. Renderedtables reviewed; S2.2nominalpowerconflict,threephaseIP65/IP66 andoptionalfeatureclaimsheld. No VA→W or maximumPVpower→ratedDC conversion.",
+      "fields_offered": [
+        "nominal AC power",
+        "DC voltage",
+        "MPPT",
+        "efficiency",
+        "ambient temperature",
+        "weight",
+        "dimensions",
+        "cooling",
+        "isolation"
+      ],
+      "mapping": "Physical page 2, exact model columns in two STAR datasheets; qualifiers and conflicting cells retained in review.",
+      "estimated_useful_yield": {
+        "reviewed": 17,
+        "accepted": 17,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Selected2tables exhausted. NextSmarten2026moduletechnicalsheet; check exactmodels/STC/rights beforeacceptance.",
+      "last_retrieval": "2026-11-05T17:04:59.006420+00:00",
+      "sha256": "8d1cd1e0b995d0f713c16b4b8b67fad43a0826d87dc93587f6df0b8fda224561",
+      "etag": null,
+      "retrieval_url": "https://www.smartenpowersystems.com/more/catalogue/"
+    },
+    {
+      "id": "singi_config_20261105T1702",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.singielectric.com/products/pvcombinerbox",
+      "endpoint": "https://www.singielectric.com/products/pvcombinerbox",
+      "format": "HTML/downloadindex",
+      "licence_assessment": "Copyrightretained, factualreview only",
+      "last_release": "UndatedliveHTML",
+      "publication_cadence": "Revision-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 4,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "FourSWHXfamilies offer inputchannelranges and multiplecurrents, not exactreviewed configurations. No synthetic combinations or thinmodelrows accepted. Downloadindexinspected.",
+      "fields_offered": [
+        "channel ranges",
+        "optional output current"
+      ],
+      "mapping": "SWHX family tables only; no exact current/configuration assignment accepted.",
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 0,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Require exactconfiguration/current assignment beforeacceptance; no forms/contact.",
+      "last_retrieval": "2026-11-05T17:03:32.203958+00:00",
+      "sha256": "476ae48a496452e9ea814e478f802c592f4de0366602cb7ffe8f3980b979d474",
+      "etag": null,
+      "retrieval_url": "https://www.singielectric.com/products/pvcombinerbox"
+    },
+    {
+      "id": "powerlink_rights_20261105T1702",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.powerlink.com.au/terms-and-conditions",
+      "endpoint": "https://www.powerlink.com.au/terms-and-conditions",
+      "format": "HTMLterms/news",
+      "licence_assessment": "Commercialreuse requires expressconsent; rightsheld",
+      "last_release": "Currentterms, historical8December2025news",
+      "publication_cadence": "Onlyifrightschange",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "AEMO_remaining": 46,
+        "singlephase_remaining": 7
+      },
+      "result": "BroadsoundprimaryTSOnews found, butno grid/identity/nameplatefacts accepted because source-specificcommercialreuse restriction. No bypass/contact.",
+      "fields_offered": [
+        "connection identity",
+        "connection context"
+      ],
+      "mapping": "Terms and historical Broadsound notice reviewed; no factual acceptance under commercial-reuse restriction.",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Use independentpermitteddepartmental/regulator identityevidence for7AEMOcandidates.",
+      "last_retrieval": "2026-11-05T17:04:33.502825+00:00",
+      "sha256": "c4d7eae646aef648afa64d6666b9c60ded8e3b7c71c66d2a02a611d3ddc67d9a",
+      "etag": null,
+      "retrieval_url": "https://www.powerlink.com.au/terms-and-conditions"
+    },
+    {
+      "id": "must_discovery_20261105T1702",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.mustups.com/product/pv1800-vhm-series-5-5-5kw/",
+      "endpoint": "https://www.mustups.com/product/pv1800-vhm-series-5-5-5kw/",
+      "format": "HTML",
+      "licence_assessment": "Copyrightretained; noopenbulklicenceasserted",
+      "last_release": "Undatedliveproducttable",
+      "publication_cadence": "Revision-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 2,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Twoexact VHMmodels found; header/body powerranges disagree. Notacceptedpendingfullrevision/identity review; independent17modelSmartenfallback completed.",
+      "fields_offered": [
+        "exact model",
+        "power",
+        "electrical table"
+      ],
+      "mapping": "VHM two-model product table; revision and conflicting marketing power ranges remain unaccepted.",
+      "estimated_useful_yield": {
+        "reviewed": 2,
+        "accepted": 0,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Prioritise richer permittedmulti-modelcatalogues; do not infer modelpower frommarketingheader.",
+      "last_retrieval": "2026-11-05T17:04:58.933158+00:00",
+      "sha256": "b4cf596c416489fae8deb50c9a9ce46f06f8a0c0fb8ba1d3555ad433105de767",
+      "etag": null,
+      "retrieval_url": "https://www.mustups.com/product/pv1800-vhm-series-5-5-5kw/"
+    },
+    {
+      "id": "gem_diverse_1800",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "last_release": "February2026",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "CCBY4; entire TZ/WKSL locations excluded",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:04:11.293449+00:00",
+      "sha256": "83376a7b769670274799d269e16d06edbac7fb1968cc2c38145ac350e2aa9630",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 18:00:25 GMT",
+      "access_result": 200,
+      "reviewed": 209,
+      "accepted": 110,
+      "rejected": 0,
+      "processed_cursor": {
+        "countries": {
+          "BRA": 22,
+          "DEU": 11,
+          "ESP": 43,
+          "FRA": 7,
+          "IND": 7,
+          "JPN": 10,
+          "ZAF": 10
+        },
+        "owners_added": 70,
+        "label_holds": 99,
+        "ownership_holds": 9
+      },
+      "fields_offered": [
+        "110historical operators",
+        "70historical owners",
+        "110complete-phase evidence contexts"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 209,
+        "accepted": 110,
+        "additional_verified": null
+      },
+      "result": "Selected eight-country complete-phase corporate-operator/null-context partition exhausted; retain99 label and9 ownership holds. Move to another registry/partition.",
+      "next_action": "Selected eight-country complete-phase corporate-operator/null-context partition exhausted; retain99 label and9 ownership holds. Move to another registry/partition.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-12T18:00:00Z"
+    },
+    {
+      "id": "nsw_aliases_1800",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "endpoint": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "format": "HTML",
+      "last_release": "6August2026",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "Department CC BY4, excludes third-party reports/submissions",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:04:20.099898+00:00",
+      "sha256": "510e9ec32890927d7e259abf031885d500357af19d35e3184a5677b449f66f37",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 06:42:51 GMT",
+      "access_result": 200,
+      "reviewed": 53,
+      "accepted": 15,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted_across_runs": 55,
+        "remaining_cards": 38
+      },
+      "fields_offered": [
+        "planning identity/geography/context"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 53,
+        "accepted": 15,
+        "additional_verified": null
+      },
+      "result": "15 reviewed tracker contexts and6 geography fields; 38 cards held. Separate Darlington permit metadata accepted without copying wrong tracker geography.",
+      "next_action": "Review38 remaining cards using explicit permit aliases; retain Darlington location, Nyngan/Bogan and phase ambiguities.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-12T18:00:00Z"
+    },
+    {
+      "id": "smarten_pcu_1800",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://www.smartenpowersystems.com/more/catalogue/",
+      "endpoint": "https://www.smartenpowersystems.com/more/catalogue/",
+      "format": "ThreePDFs",
+      "last_release": "Undated; September2026 upload metadata",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "OEM copyright retained; bounded facts only, no open document/bulk licence asserted",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:01:46.686633+00:00",
+      "sha256": "a17e936c2ce732ab916849035060079d2b81915967cb0660c5b440761fe08b9a",
+      "etag": null,
+      "last_modified": null,
+      "access_result": 200,
+      "reviewed": 14,
+      "accepted": 14,
+      "rejected": 0,
+      "processed_cursor": {
+        "tables_complete": 3,
+        "typed_values": 85
+      },
+      "fields_offered": [
+        "PV input, output, charging, protection/control and mechanical conditions"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 14,
+        "accepted": 14,
+        "additional_verified": null
+      },
+      "result": "Three selected PCU tables exhausted. Preserve topology/current/DOD/dimension/tolerance qualifications.",
+      "next_action": "Three selected PCU tables exhausted. Preserve topology/current/DOD/dimension/tolerance qualifications.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-12T18:00:00Z"
+    },
+    {
+      "id": "smarten_modules_1800",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.smartenpowersystems.com/wp-content/uploads/2026/09/Solar_Panel_DCR_Non-DCR_Bifacial_TOPCon_Monocrystalline.pdf",
+      "endpoint": "https://www.smartenpowersystems.com/wp-content/uploads/2026/09/Solar_Panel_DCR_Non-DCR_Bifacial_TOPCon_Monocrystalline.pdf",
+      "format": "PDF",
+      "last_release": "Undated",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "OEMcopyright retained, review only",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:01:57.399085+00:00",
+      "sha256": "db50ae4132187f19e58198f7348892df0b4d15cbafcb762843293392dd218b32",
+      "etag": "\"22f5be48e044dd1:0\"",
+      "last_modified": "Tue, 15 Sep 2026 07:03:17 GMT",
+      "access_result": 200,
+      "reviewed": 5,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "power_columns": 5,
+        "held": 5
+      },
+      "fields_offered": [
+        "discovery or identity review only"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 5,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "result": "Require exact manufacturer model identifiers before accepting640–660W columns; no synthetic model IDs.",
+      "next_action": "Require exact manufacturer model identifiers before accepting640–660W columns; no synthetic model IDs.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-12T18:00:00Z"
+    },
+    {
+      "id": "industry_broadsound_1800",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.industry.gov.au/major-projects-and-procurement/australian-industry-participation/broadsound-solar-farm-1",
+      "endpoint": "https://www.industry.gov.au/major-projects-and-procurement/australian-industry-participation/broadsound-solar-farm-1",
+      "format": "HTML/PDFdiscovery",
+      "last_release": "2026 index search result; bytes unavailable",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "Reuse terms unavailable: page and copyright503",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:15:06.410932+00:00",
+      "sha256": null,
+      "etag": null,
+      "last_modified": null,
+      "access_result": "HTTP Error 503: Service Unavailable",
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "fields_offered": [
+        "discovery or identity review only"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "result": "Retry federal AIPP page and copyright after503 backoff; no accepted facts or integrated feed.",
+      "next_action": "Retry federal AIPP page and copyright after503 backoff; no accepted facts or integrated feed.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-06T18:15:00Z"
+    },
+    {
+      "id": "portal_darlington_1800",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/darlington-point-solar-farm",
+      "endpoint": "https://www.planningportal.nsw.gov.au/major-projects/projects/darlington-point-solar-farm",
+      "format": "HTML",
+      "last_release": "Live page; no release assumed",
+      "publication_cadence": "Revision-based; skip unchanged source bytes",
+      "licence_assessment": "Departmental CC BY4 confirmed from observed footer link to planning.nsw.gov.au/copyright-and-disclaimer; third-party submissions/documents excluded",
+      "last_attempt": "2026-11-05T18:16:22.794778+00:00",
+      "last_retrieval": "2026-11-05T18:15:15.560578+00:00",
+      "sha256": "5746a52d6860c4bb34efaca2d01f064cbcbc708677002e7cc9ac488243f3f376",
+      "etag": null,
+      "last_modified": "Thu, 05 Nov 2026 15:08:51 GMT",
+      "access_result": 200,
+      "reviewed": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "processed_cursor": {
+        "application_id": "SSD-8392",
+        "accepted_existing": 1
+      },
+      "fields_offered": [
+        "discovery or identity review only"
+      ],
+      "mapping": "Exact phase IDs/workbook rows, explicit reviewed old/new namespaces, or exact model/page2 named/merged cells in dated review files",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "result": "Accepted permit ID/locality/additive evidence namespace. Existing GEM namespace and identifier retained; no nameplate/lifecycle change.",
+      "next_action": "Darlington tracker geography remains unresolved; use source-specific permit scope for further cases.",
+      "retry_condition": "New revision or explicit identity/rights evidence; no repeat full download of unchanged files",
+      "next_due_check": "2026-11-06T18:15:00Z"
+    },
+    {
+      "id": "gem_owner_partition_1855",
+      "country": "GLOBAL",
+      "entity": "projects",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "Pinned February2026 XLSX",
+      "licence_assessment": "CCBY4, entire TZ/WKSL locations excluded; exact native/source phase sets and owner values agree",
+      "reviewed": 200,
+      "accepted": 199,
+      "fields_offered": [
+        "199 historical owners",
+        "11 explicit source operators",
+        "199 complete-phase owner evidence contexts"
+      ],
+      "next_action": "Continue DEU after selected18 complete-phase owner-null/context-null locations, then ITA/BRA; refresh release/rights metadata before resuming; never redo accepted IDs.",
+      "next_due_check": "2026-11-12T18:55:00Z",
+      "source_metadata": {
+        "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+        "retrieved_at": "2026-11-05T11:57:14.680485+00:00",
+        "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+        "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+        "release": "February 2026"
+      },
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "last_attempt": "2026-11-05T19:14:07.430271+00:00",
+      "publication_cadence": "Revision-based; skip unchanged files",
+      "last_release": "February2026",
+      "last_retrieval_note": "Original retrieval/SHA/ETag retained in source_metadata and dated captures",
+      "mapping": "Complete phaseIDs/workbook rows, exact model/named HTML rows, or bounded departmental Project Details and explicit old/new ID/namespace objects",
+      "processed_cursor": {
+        "countries": {
+          "ZAF": 30,
+          "EGY": 11,
+          "MAR": 14,
+          "NAM": 8,
+          "KEN": 8,
+          "ZMB": 12,
+          "GHA": 10,
+          "NGA": 8,
+          "IND": 40,
+          "JPN": 40,
+          "DEU": 18
+        },
+        "selected_record_ids": [
+          "5a192ba7-cb07-5b36-9a9a-3c1835499a7c",
+          "e3dbe246-ca80-5fcc-a309-254c0734fa41",
+          "c88f0dc4-0f80-5080-85de-76665f947427",
+          "82d69ce1-a7fa-5ac1-9d6b-9fc556876add",
+          "457dc828-08f2-52c8-b4d1-3a9a4e2754af",
+          "d6aea3ad-94d8-5fab-8593-15c35c9ff6a3",
+          "a2c04d0b-8d80-551f-82af-72ae76ecdb5c",
+          "f2a664ba-9ebd-5a3a-9aa1-fdbde268ac0c",
+          "f0ce4b85-a7e1-5957-bee8-b6feede5454b",
+          "403be647-5e90-5aa6-afb1-bbffc50ae817",
+          "6419a1d2-21cc-505a-8eb4-fe50f55fa104",
+          "fdf0bb95-ecc8-5a03-baeb-80928102882b",
+          "d2feb974-aa01-5582-84a7-071478ee1354",
+          "5528ef9b-8862-5359-b883-fc6b4c996159",
+          "fa3d4823-c23e-559c-b98e-4f40ff55e031",
+          "8036b368-c6de-52b1-9a63-3a9076f2dee3",
+          "a81f7471-cf1d-5d27-b1dc-667d6e437ef5",
+          "34d0e5db-5a7b-5fdc-b22f-c283eafdf5b9",
+          "1e434bb1-b989-5a0d-820d-a0d7393c0fae",
+          "75cd1b83-e225-5fd2-ac41-bc8ce0a7f784",
+          "7eea380f-fb39-5996-b336-611f797b2c7f",
+          "cd746477-a772-59e7-9363-c2c38c25435f",
+          "825e6954-834b-55ef-8b31-afe2b47fe7a7",
+          "c54f5862-1fee-5752-9d6b-ab3b94bed4e5",
+          "6eb12941-bdb6-50c4-9010-4ebc26413236",
+          "ee8e478a-fe27-5236-b5f0-cf6d22210eb3",
+          "385201fd-4e15-5251-b16f-941d951fd53d",
+          "c117924e-8b03-5a63-8aed-fabadf56ba25",
+          "a89befec-0f26-52c5-8d9a-ee39df913f05",
+          "6994ae20-6d41-542c-b2de-c0cc95d6180c",
+          "57df3b6a-535c-59ca-ae21-e783f4f4ba3b",
+          "de09a847-6fd1-5377-9f0d-1c6d33cca68a",
+          "3745dc13-c258-5f7a-8bc5-76386283deb4",
+          "1c52f69c-d317-5a47-9c2b-b9c5ab4772c3",
+          "253f6dfe-9c79-5bed-b4a0-04d8f401875f",
+          "3d316c22-3c18-51a6-b334-cd901e54d252",
+          "f9e340b8-9fa4-5193-972c-d489c76b899f",
+          "75278f3d-81f5-547c-ada3-68492c06c7f5",
+          "8dc4c569-c160-5c91-a46e-715fa2c68b0f",
+          "cf5b2761-6688-5bc6-a1de-09f1f6ba26b1",
+          "482d30a3-824d-5380-a217-ac6f3f6c701d",
+          "ae1181bb-0291-50f5-8019-dbdfc28deec8",
+          "e305a368-59b6-5747-9ba9-1032e6de1d47",
+          "7f19729f-dc41-5c9d-9a14-1077df5fb0d0",
+          "13b50ba4-324e-5de9-8234-d5e3ce7748db",
+          "c0e5715c-fa16-5533-ada5-052d2b255e5d",
+          "c7fed08a-bd8d-5a7b-8755-35438865fb35",
+          "8cac20ea-9436-5b95-8162-e1b32ea3000e",
+          "7856e9de-1ccd-5f6d-8a93-95c1c8201029",
+          "b2ffe3dc-cff6-5ce0-ac47-369b7f02f44c",
+          "826565e5-c424-51af-bef7-925bce7cc197",
+          "a5e837da-a6f1-5c54-a97b-90a3248e2a44",
+          "afa863f4-063e-5a5a-9986-a32373f9c0f3",
+          "c8128238-956c-5c96-acb6-6831f61f093c",
+          "82c7ddbe-19c8-51e5-8e5d-923652af8745",
+          "19d9f0ef-de19-5305-83dd-98d1fdd01fc6",
+          "5f4ba753-0520-528d-8807-40d361ca3642",
+          "660e9746-2124-54bc-8e5f-ae00f972c59f",
+          "8d5a16a9-e0e8-5f83-acea-38d691bfa547",
+          "0ff0174a-8c9a-5254-a11f-ff7198f68b18",
+          "ccdae684-fc03-526e-a7fc-d3392287acf1",
+          "bd4d154b-7053-57fe-b8c7-10771725a15e",
+          "f8ac91f2-2286-582d-b4c9-9c9dd1fd712f",
+          "eafaa979-2e80-572a-bee3-7bfdd2121bed",
+          "841cc938-2db1-5747-bd2c-271bf4c16247",
+          "a0c79b6d-33a4-554e-8223-9ee3b9e643ee",
+          "c190456d-bb65-50ba-9a42-96c559d453a2",
+          "6c1c6463-abd9-5675-9918-fa9404e8886f",
+          "62126d85-1faf-588e-a250-fdc185a1b92d",
+          "12f640de-d1bc-57d2-a195-6eef8f197eef",
+          "d82ab4fd-dd12-5690-9cb2-8f76398ebfdf",
+          "e3f618b7-df2b-570b-a991-f919cc451b88",
+          "79a697f9-8264-5dc0-8824-695faf75829c",
+          "26688fd3-406d-5fa2-bed3-81118814ba2a",
+          "2a2960fc-023a-59be-bb93-23df67b15ca5",
+          "12cab30e-b4f7-5ef3-85db-9e2e86b991aa",
+          "aff1b40c-4e7a-583b-94e2-ad824b361b89",
+          "b95f91fb-89c9-519a-9242-dda514571f97",
+          "0fb59792-6c23-5e35-ae95-08e0acabe169",
+          "944d27a6-7924-538a-8e1b-bfd1618dedd7",
+          "eced0c37-5fa4-57b1-a4d9-fdb0bbe00963",
+          "4bda4649-bb32-5dc3-94d0-5e37bd7f6532",
+          "726dde71-0621-59a3-b5c8-8d306d46a227",
+          "5d9c565a-3d9f-506a-af1b-9afa4946443c",
+          "58804780-b9d0-5b33-8d4b-2a6963f8182b",
+          "f0be4c45-9830-5062-beae-5b470415f5c7",
+          "cc27b093-798b-5a15-83c4-95a12094af5f",
+          "ed86ba23-226d-50f8-98d4-a162fccdd2af",
+          "e23fe60d-ab18-519c-bc29-65b3beb1a36f",
+          "ed98edfa-5074-5497-8dc2-0b3f3dd270ce",
+          "361d7fd1-ad16-56f3-bc31-27ba2ddb1697",
+          "79b74f67-52eb-5ad8-9bbd-975921eb3fb7",
+          "b39c4444-040c-5446-b536-97d650a0865f",
+          "d5fbd4ce-5039-541b-88a2-c8b30bf1b7e3",
+          "0b6b7e67-944c-557b-b72e-d86601646ef3",
+          "946ea8af-7a88-5c90-a116-206807d6ac4f",
+          "c303894a-8dfb-5f5e-a531-4e8873009412",
+          "bb1aa6f5-f230-5d20-a1cd-a1c2db1e08a7",
+          "5542637f-bc52-558f-8c82-603d06e08f10",
+          "7c4bdd1a-cdbd-5f1d-a161-9e83f2004bb8",
+          "ff672bcb-b13f-5a36-aa22-b73a30ad4361",
+          "79016982-2cd7-57b9-9b97-d8b4b063bea9",
+          "cd20bb6c-6729-5e22-bf58-58796d979d3b",
+          "09944a95-8c89-53fa-9dc0-d3e7301454f0",
+          "addb902c-5db5-56d8-94eb-328ba9478259",
+          "e1eca1b2-b33f-5043-8827-39f916c03e84",
+          "d916c284-fcc4-595d-a7c0-870369e9bd50",
+          "7ecb8f61-9272-56ab-ac5f-58ba2d469597",
+          "5fde5202-b069-55dd-a679-9627093a9275",
+          "57a4674c-b0e0-518c-b460-411a156ddb03",
+          "d6f5ed58-e25d-5623-93e7-66b632fc8e99",
+          "94b5e080-a002-5af2-8831-9d3d1e3ce6fc",
+          "b9eccf84-b3f8-5351-baff-181c882f0138",
+          "0006ccbf-8cf5-59ec-8572-59a580e279a6",
+          "8e32cbc8-36d5-5aa6-8aa2-316d1aae4a4a",
+          "e6c61416-a1d4-53b6-8683-da051bbf6b93",
+          "3c70e8dc-de1d-5600-a8a2-63231373df40",
+          "22adeddc-8089-51d5-8c29-71e95f9c6cb9",
+          "f1879699-b296-5e05-8d92-daa35646bade",
+          "6ae22f8e-66df-590f-b83b-7fca05e689c8",
+          "48335023-e562-5476-be35-c10aa2b72e47",
+          "b095341c-32d4-57fb-9e40-ad8156197169",
+          "2f9f224b-d9e3-53e1-a862-215509cf7099",
+          "b7a5b8bd-64ed-5c2c-8d85-e4c17d5b598c",
+          "33e38d4e-8bb1-582d-8395-b6efc576073b",
+          "200dfe67-6729-59e5-9b85-3cc4419a56e9",
+          "c763b5be-e605-52ae-b165-445d56998805",
+          "79b2f47b-2a38-5ace-9e9b-ab9987f45774",
+          "b0a436c8-a27e-52cc-ba5f-f30c76ad686b",
+          "d9668fa8-2e09-55c3-a426-601dcf03d886",
+          "ea9edbfc-3759-5735-b053-e8b7a47ab64d",
+          "c4945909-ee0e-5d2c-98fe-0e0c1b327576",
+          "06442ba2-c2df-5a39-97f3-46560e8a1cc5",
+          "c17868eb-8b91-5f43-9664-5024ace2f05e",
+          "7e889226-d575-5061-a110-9b53ee1d6b97",
+          "51b157c6-c584-5853-a624-fe95808af9bc",
+          "63ce8cee-451e-57a1-807c-aef1dc8b95b6",
+          "e478e0cf-8691-5062-8bf0-d138ead75b36",
+          "b9b7e87a-5e69-5490-8971-7df97497750d",
+          "5a477d0d-3d86-5848-ae32-c88ea724730e",
+          "b9e79c3a-aaec-50fb-a885-93b7f0b2c14d",
+          "cb6b169c-99fe-571e-aae7-4ab98becd17e",
+          "9f1e1778-5cd9-5bfc-96b7-a7bf0717fb13",
+          "d7bb002e-a388-5565-9a27-ebd6d60a6359",
+          "3749e0ff-617a-573a-8c62-348e832ef476",
+          "c43607f0-fd5e-569b-80f3-c97db928bfba",
+          "3cc05afd-0b15-533c-88f3-7d3dab6463be",
+          "727eaf46-0c00-5406-a810-79d4c6276546",
+          "7fe38569-3f82-5f03-97ff-a9d207302a78",
+          "fda574a3-4463-5eea-9abd-0c4cf41e8b6e",
+          "99271d21-5b47-5f41-ac45-1b21a62c04d4",
+          "3d8a10af-4edf-5bfa-bf33-40445130b093",
+          "e67b4211-491d-5bac-ad51-20beae16f13b",
+          "359eff02-37a1-5c75-98df-7b47730fb8d6",
+          "6f49ab95-f0f9-5655-9de2-766365f89f33",
+          "24537859-080c-5d1e-929f-90769ea8847a",
+          "3bcac5f2-9287-5455-997a-a475b32370cd",
+          "5c3782c9-3dc9-5f4b-9601-302c2809ab97",
+          "345afec5-a2d2-571d-92d2-485b822a4a17",
+          "586b3478-9fc7-5fd9-8574-15e12280a6d5",
+          "dba220fc-ce9f-583c-b63e-c1490d11fea9",
+          "fff4b977-2e56-5358-bb9e-89b4bc4e9026",
+          "441deff1-c209-5402-9d5f-0d4668ddb13b",
+          "ded33d13-24c7-5810-b94c-8a6df4a7f3cf",
+          "a31b5f59-ac27-5ad0-b673-00ee65dbb607",
+          "21e6d36c-f321-56a5-a228-a95b6f88ecfe",
+          "d70a5201-20f8-5183-97d3-7eaee5a02c7b",
+          "e55be917-2a24-5565-9274-417d6614f2b9",
+          "d5062ca9-0ba7-5edf-abbd-3e3cf0450aa2",
+          "5e56ff81-394e-5d12-a0ce-a94cafcf6b89",
+          "b8566391-5749-59a9-9b36-515f767f65f7",
+          "af5c39a2-806f-548e-b4fb-957595fe1355",
+          "b95a9818-c642-57fc-b0e7-6408b25eb341",
+          "b0d26578-4a5c-5d1f-88c0-36e0d40818ae",
+          "6984c4b3-2c80-5325-ad70-b9a240eadee7",
+          "291f2fdb-56bd-5e89-87b6-7ed7c03987b4",
+          "a45e0447-1898-5505-ba26-fe25fd445415",
+          "bf3d86b7-7407-5d43-8716-f71e42ce9f9d",
+          "f94c0607-dc2e-5787-b810-422178bfcca6",
+          "6f6fad4f-15e7-57ee-a753-bca55d934674",
+          "71d96567-d9c9-53dd-a820-9cb579ae3d2d",
+          "db520a6e-8c33-528d-83e3-c954b716d0b1",
+          "d3b3696d-4658-57d0-9100-9c08188ef496",
+          "8d4ea191-f949-5b71-8bd9-d3d5a88f08fd",
+          "e2dbfc44-b249-53a6-bc81-328a4e1f6754",
+          "48eb2e42-b184-54d1-baa6-d53a080a6fda",
+          "e9105b3c-5737-5e5f-a1fd-95d13badbf8a",
+          "ed7310e2-1ef2-59b7-b22c-a488bed44854",
+          "8934ede3-00de-5573-8e70-b6decb78b8b3",
+          "61c840f6-215d-54cc-b1a2-14de029cfa28",
+          "b29ec3c5-b18b-5cbf-8350-b6ddb26d345b",
+          "af64a105-7c1d-54f4-b686-5ba3e735cc33",
+          "829ad5fd-3474-5146-97ba-842f392370b8",
+          "27049201-3728-51fb-9372-8a194a1b25fd",
+          "b8cc1387-1dd5-59da-ac4d-983ff99bb326",
+          "08a91337-6b20-5d20-9394-538074a1553c",
+          "7de7c3d9-6470-5c8b-8576-65273629eb6a",
+          "76c18f62-86f7-5e55-a71a-ff083eb69d91",
+          "a8c5636b-c440-5e2f-9746-c734eb7f2e6a"
+        ],
+        "held_joint_owner_count": 1,
+        "country_after_location_id": {
+          "ZMB": "L100001063299",
+          "NGA": "L100000827708",
+          "NAM": "L100001063921",
+          "IND": "L100000800726",
+          "JPN": "L100000830658",
+          "DEU": "L100000806563",
+          "KEN": "L100001064110",
+          "MAR": "L100000827686",
+          "EGY": "L100001063345",
+          "GHA": "L100001063326",
+          "ZAF": "L100001050054"
+        },
+        "operators_added": 11
+      },
+      "rejected": 0,
+      "retry_condition": "New revision, permitted access or independently reviewed identity/qualification evidence; preserve backoff",
+      "estimated_useful_yield": {
+        "reviewed": 200,
+        "accepted": 199,
+        "additional_verified": null
+      },
+      "result": "Continue DEU after selected18 complete-phase owner-null/context-null locations, then ITA/BRA; refresh release/rights metadata before resuming; never redo accepted IDs."
+    },
+    {
+      "id": "nsw_permit_reader_1855",
+      "country": "AUS",
+      "entity": "projects",
+      "endpoint": "https://www.planningportal.nsw.gov.au/major-projects/projects",
+      "format": "Departmental HTML Project Details",
+      "licence_assessment": "Departmental CCBY4; exclusions for submissions, third-party documents and personal contacts",
+      "reviewed": 9,
+      "accepted": 5,
+      "fields_offered": [
+        "planning ID",
+        "EPBC referral ID",
+        "historical decisions",
+        "local government area",
+        "related planning evidence",
+        "geography nulls"
+      ],
+      "next_action": "Continue34 held tracker cards with explicit identities. Bogan legacy permit is distinct from Nyngan SSD5355; do not conflate projects. Hub/phase permits and Ironbark/Gunnedah require further primary crosswalk.",
+      "next_due_check": "2026-11-12T18:55:00Z",
+      "source_metadata": [
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/nyngan-solar-farm",
+          "retrieved_at": "2026-11-05T18:57:23.691078+00:00",
+          "status": 200,
+          "sha256": "be5c8d9bb5780e8b3a1ad5bdd4ad6d2ede144afb2a0dadb3a5ee098fd132d202",
+          "bytes": 58474,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 15:12:15 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/nyngan-solar-farm"
+        },
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/bogan-river-solar-farm",
+          "retrieved_at": "2026-11-05T18:59:49.606929+00:00",
+          "status": 200,
+          "sha256": "a67f4b53b917e367517fe0dcef7029af9e04e13185e550f07c7053a7b300d977",
+          "bytes": 43763,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 11:47:06 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/bogan-river-solar-farm"
+        },
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/bendemeer-solar-farm",
+          "retrieved_at": "2026-11-05T18:59:55.924434+00:00",
+          "status": 200,
+          "sha256": "51563d751d7d50ff12a5710bad6afc2b0ec40cd616e40078ff6ef26d8fe18b97",
+          "bytes": 73104,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 15:01:55 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/bendemeer-solar-farm"
+        },
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/dinawan-solar-farm",
+          "retrieved_at": "2026-11-05T19:01:55.957533+00:00",
+          "status": 200,
+          "sha256": "2ae9996fdc881935e4e9a3732e19616c10e828a75be7181c42105087c8857ae8",
+          "bytes": 74768,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 14:58:51 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/dinawan-solar-farm"
+        },
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/wattle-creek-solar-farm",
+          "retrieved_at": "2026-11-05T19:02:02.096699+00:00",
+          "status": 200,
+          "sha256": "f516650249b202273c4acc5133830086d497c809847b569f1ad9ecc43b1af5c3",
+          "bytes": 69579,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 15:02:44 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/wattle-creek-solar-farm"
+        },
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/hillston-solar-farm",
+          "retrieved_at": "2026-11-05T19:02:06.740597+00:00",
+          "status": 200,
+          "sha256": "a2208feac1104a9c4280342f8bf4830f6cb5efd28446ee5bc58aa9e8957e9c0c",
+          "bytes": 62176,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 15:08:48 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/hillston-solar-farm"
+        },
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/gunnedah-solar-farm",
+          "retrieved_at": "2026-11-05T19:02:11.317394+00:00",
+          "status": 200,
+          "sha256": "40f5ce5cf2674f222107831b0935c8fa8dbe23f99b3b425db33da140e1cf8161",
+          "bytes": 87231,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 15:07:50 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/gunnedah-solar-farm"
+        },
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/summerville-solar-farm",
+          "retrieved_at": "2026-11-05T19:02:08.491743+00:00",
+          "status": 200,
+          "sha256": "68a7921805c314142213165ecbbcaa156f25cc53ce60d5235060f195806a168b",
+          "bytes": 101666,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 15:07:07 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/summerville-solar-farm"
+        },
+        {
+          "url": "https://www.planningportal.nsw.gov.au/major-projects/projects/whitehaven-solar-farm",
+          "retrieved_at": "2026-11-05T19:02:13.913915+00:00",
+          "status": 200,
+          "sha256": "6e730a1a6379da4951a8e4842f79a32d8c2b29fa5a942823f9000510f1618566",
+          "bytes": 93888,
+          "etag": null,
+          "last_modified": "Thu, 05 Nov 2026 15:02:49 GMT",
+          "final_url": "https://www.planningportal.nsw.gov.au/major-projects/projects/whitehaven-solar-farm"
+        }
+      ],
+      "source_url": "https://www.planningportal.nsw.gov.au/major-projects/projects",
+      "last_attempt": "2026-11-05T19:14:07.430271+00:00",
+      "publication_cadence": "Revision-based; skip unchanged files",
+      "last_release": "Live/undated public metadata; retrieval is not publication date",
+      "last_retrieval_note": "Original retrieval/SHA/ETag retained in source_metadata and dated captures",
+      "mapping": "Complete phaseIDs/workbook rows, exact model/named HTML rows, or bounded departmental Project Details and explicit old/new ID/namespace objects",
+      "processed_cursor": {
+        "staged_permits": 9,
+        "accepted_existing": 5,
+        "new_plants": 0,
+        "identity_holds": [
+          "MP10_0123",
+          "SSD-50725959",
+          "SSD-63344210",
+          "SSD-8658"
+        ],
+        "tracker_contexts_accepted_total": 59,
+        "remaining_tracker_cards": 34
+      },
+      "rejected": 0,
+      "retry_condition": "New revision, permitted access or independently reviewed identity/qualification evidence; preserve backoff",
+      "estimated_useful_yield": {
+        "reviewed": 9,
+        "accepted": 5,
+        "additional_verified": null
+      },
+      "result": "Continue34 held tracker cards with explicit identities. Bogan legacy permit is distinct from Nyngan SSD5355; do not conflate projects. Hub/phase permits and Ironbark/Gunnedah require further primary crosswalk."
+    },
+    {
+      "id": "projoy_exact_boxes_1855",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "endpoint": "https://www.projoy-electric.com/products_detail/18.html",
+      "format": "Three public OEM HTML technical tables",
+      "licence_assessment": "Copyright retained, bounded facts only; no open document/bulk licence asserted. Public privacy/footer reviewed.",
+      "reviewed": 13,
+      "accepted": 12,
+      "fields_offered": [
+        "PV input/output counts",
+        "DC voltage",
+        "AC voltage",
+        "per-output current",
+        "PC enclosure",
+        "IP qualifiers",
+        "monitoring",
+        "RS485/Modbus",
+        "fuse/breaker bounds",
+        "SPD ratings"
+      ],
+      "next_action": "Selected literal model columns exhausted. Resolve S6 chart/header conflict and intelligent enclosure/current qualifiers before enrichment; do not expand generic8–24string family.",
+      "next_due_check": "2026-11-12T18:55:00Z",
+      "source_metadata": [
+        {
+          "url": "https://www.projoy-electric.com/products_detail/18.html",
+          "retrieved_at": "2026-11-05T18:56:54.668126+00:00",
+          "status": 200,
+          "sha256": "c932020c7de667cb5b314b983ccf2e334a733ad10f8ccc24941c7e12e7f98ba4",
+          "bytes": 185885,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.projoy-electric.com/products_detail/18.html"
+        },
+        {
+          "url": "https://www.projoy-electric.com/products_detail/19.html",
+          "retrieved_at": "2026-11-05T18:57:02.401736+00:00",
+          "status": 200,
+          "sha256": "77c8eb1c83759f6fcfc0ab39139968861f5c2ebcd92b11afaa7e74d004fced80",
+          "bytes": 183619,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.projoy-electric.com/products_detail/19.html"
+        },
+        {
+          "url": "https://www.projoy-electric.com/products-detail/intelligent-pv-combiner-box.html",
+          "retrieved_at": "2026-11-05T18:57:19.479559+00:00",
+          "status": 200,
+          "sha256": "3f47612ef78410425875a924339c49e0e3e0ffc36a32999e0052c8a754bccdbf",
+          "bytes": 185717,
+          "etag": null,
+          "last_modified": null,
+          "final_url": "https://www.projoy-electric.com/products-detail/intelligent-pv-combiner-box.html"
+        }
+      ],
+      "source_url": "https://www.projoy-electric.com/products_detail/18.html",
+      "last_attempt": "2026-11-05T19:14:07.430271+00:00",
+      "publication_cadence": "Revision-based; skip unchanged files",
+      "last_release": "Live/undated public metadata; retrieval is not publication date",
+      "last_retrieval_note": "Original retrieval/SHA/ETag retained in source_metadata and dated captures",
+      "mapping": "Complete phaseIDs/workbook rows, exact model/named HTML rows, or bounded departmental Project Details and explicit old/new ID/namespace objects",
+      "processed_cursor": {
+        "DC": 6,
+        "ACDC": 3,
+        "intelligent": 3,
+        "S6_identity_conflict": 1
+      },
+      "rejected": 0,
+      "retry_condition": "New revision, permitted access or independently reviewed identity/qualification evidence; preserve backoff",
+      "estimated_useful_yield": {
+        "reviewed": 13,
+        "accepted": 12,
+        "additional_verified": null
+      },
+      "result": "Selected literal model columns exhausted. Resolve S6 chart/header conflict and intelligent enclosure/current qualifiers before enrichment; do not expand generic8–24string family."
+    },
+    {
+      "id": "projoy_cdn_access_1855",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "endpoint": "https://omo-oss-file110.thefastfile.com/portal-saas/pg2024092314533024417/cms/file/projoy_electricbox_series_datasheet_en.pdf",
+      "format": "OEM-linked CDN PDFs",
+      "licence_assessment": "PDF403 access-held; HTML technical facts accepted independently, no bypass",
+      "reviewed": 2,
+      "accepted": 0,
+      "fields_offered": [
+        "unverified PDF revisions"
+      ],
+      "next_action": "Retry only after access/backoff changes; no forms, alternate access controls or certificate claims.",
+      "next_due_check": "2026-11-06T18:58:00Z",
+      "source_metadata": [
+        {
+          "url": "https://omo-oss-file110.thefastfile.com/portal-saas/pg2024092314533024417/cms/file/projoy_electricbox_series_datasheet_en.pdf",
+          "retrieved_at": "2026-11-05T18:58:28.001225+00:00",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://omo-oss-file110.thefastfile.com/portal-saas/pg2024092314533024417/cms/file/datasheet_intelligent%20pv%20combiner%20box.pdf",
+          "retrieved_at": "2026-11-05T18:58:33.832353+00:00",
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ],
+      "source_url": "https://omo-oss-file110.thefastfile.com/portal-saas/pg2024092314533024417/cms/file/projoy_electricbox_series_datasheet_en.pdf",
+      "last_attempt": "2026-11-05T19:14:07.430271+00:00",
+      "publication_cadence": "Revision-based; skip unchanged files",
+      "last_release": "Live/undated public metadata; retrieval is not publication date",
+      "last_retrieval_note": "Original retrieval/SHA/ETag retained in source_metadata and dated captures",
+      "mapping": "Complete phaseIDs/workbook rows, exact model/named HTML rows, or bounded departmental Project Details and explicit old/new ID/namespace objects",
+      "processed_cursor": {
+        "PDFs_accessible": 0
+      },
+      "rejected": 0,
+      "retry_condition": "New revision, permitted access or independently reviewed identity/qualification evidence; preserve backoff",
+      "estimated_useful_yield": {
+        "reviewed": 2,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "result": "Retry only after access/backoff changes; no forms, alternate access controls or certificate claims."
+    },
+    {
+      "id": "chint_ac_access_1855",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "endpoint": "https://www.chintpowersystems.com/wp-content/uploads/2020/06/CPS-AC-Combiner-Datasheet-Nov-18-2019.pdf",
+      "format": "OEM PDF/terms",
+      "licence_assessment": "PDF and terms403; no facts accepted",
+      "reviewed": 1,
+      "accepted": 0,
+      "fields_offered": [
+        "unverified AC combiner ratings"
+      ],
+      "next_action": "Retry primary PDF and source-specific terms after403 backoff. No feed or record integration claimed.",
+      "next_due_check": "2026-11-06T18:59:00Z",
+      "source_metadata": [
+        {
+          "url": "https://www.chintpowersystems.com/wp-content/uploads/2020/06/CPS-AC-Combiner-Datasheet-Nov-18-2019.pdf",
+          "retrieved_at": "2026-11-05T18:59:29.034117+00:00",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.chintpowersystems.com/terms-and-conditions/",
+          "retrieved_at": "2026-11-05T18:59:38.932981+00:00",
+          "error": "HTTP Error 403: Forbidden"
+        }
+      ],
+      "source_url": "https://www.chintpowersystems.com/wp-content/uploads/2020/06/CPS-AC-Combiner-Datasheet-Nov-18-2019.pdf",
+      "last_attempt": "2026-11-05T19:14:07.430271+00:00",
+      "publication_cadence": "Revision-based; skip unchanged files",
+      "last_release": "Live/undated public metadata; retrieval is not publication date",
+      "last_retrieval_note": "Original retrieval/SHA/ETag retained in source_metadata and dated captures",
+      "mapping": "Complete phaseIDs/workbook rows, exact model/named HTML rows, or bounded departmental Project Details and explicit old/new ID/namespace objects",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "rejected": 0,
+      "retry_condition": "New revision, permitted access or independently reviewed identity/qualification evidence; preserve backoff",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "result": "Retry primary PDF and source-specific terms after403 backoff. No feed or record integration claimed."
     }
   ],
   "source_refresh_queue": [
