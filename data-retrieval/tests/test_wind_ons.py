@@ -149,3 +149,13 @@ def test_invalid_dates_and_ceg_and_checksum():
         wri_id("EOL.CV.BA.000000-0.01")
     with pytest.raises(ValueError, match="checksum"):
         parse_partition(b"bad", sha256="bad", offset=0, limit=1, retrieved_at="date")
+
+
+def test_adjacent_partitions_preserve_complete_groups_without_overlap():
+    rows = [native(), native(cod_equipamento="UNIT-2"), native(ceg="EOL.CV.CE.030284-1.01")]
+    first = parse(rows, offset=0, limit=1)
+    second = parse(rows, offset=1, limit=1)
+    whole = parse(rows)
+    assert first["candidates"] + second["candidates"] == whole["candidates"]
+    assert len(first["candidates"][0]["units"]) == 2
+    assert not parse(rows, offset=2, limit=1)["candidates"]

@@ -617,3 +617,15 @@ print(
         "reported_zero_nominal_mw": sum(u["reported_nominal_mw"] == 0 for u in ons_units),
     },
 )
+
+# Count reported ONS state labels per snapshot; these are not capacity totals.
+ons_state_evidence = {}
+for snapshot in ons_snapshots:
+    states = {u["original"].get("id_estado") for u in snapshot["units"]}
+    for state in sorted(states, key=lambda v: v or ""):
+        label = state or "Unknown state"
+        ons_state_evidence[label] = ons_state_evidence.get(label, 0) + 1
+print(
+    "ONS state coverage: snapshot counts, not installed MW",
+    dict(sorted(ons_state_evidence.items())),
+)

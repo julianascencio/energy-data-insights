@@ -964,3 +964,10 @@ per-row locators, candidate decisions and the next exact CEGs are in the source
 registry and `research/2026-11-05-1510-ons-review.json`. The daily source has no
 historical archive guarantee; continuation must use the pinned bytes or explicitly
 record a replacement snapshot and reassess partition boundaries.
+
+The next five complete 100-CEG partitions (offsets100–599 of the same pinned
+snapshot) add 99 existing-project enrichments and retain 401 identity holds.
+The first600CEGs are now reviewed; no source release or lifecycle is silently
+advanced. Adjacent-partition tests ensure complete multi-unit CEG groups are
+neither split nor duplicated. The gallery also reports source-state coverage
+as snapshot counts, never as installed capacity.
