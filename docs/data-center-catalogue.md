@@ -100,6 +100,11 @@ The Cummins continuation adds 22 exact KTA50/QSK60 model-frequency rows with
 explicit Data Center Continuous kW and kVA. Prime, standby and general continuous
 ratings remain observations. Four conflicting non-DCC fields on three duplicated
 QSK60 live-page rows are quarantined without discarding their matching DCC data.
+The QSK50 continuation adds all eight exact model/frequency identities with a
+populated Data Center Continuous rating. Five identities also retain the printed
+prime, standby and general-continuous ratings and engine model; the three DCC-only
+identities remain otherwise null. Repeated live-page rows are reconciled only
+where their DCC values agree, and no family range is assigned to a model.
 The mtu continuation adds all 20 Series 4000 model/frequency rows with an explicit
 Data Center Continuous (3F) rating: 12 at 50 Hz and eight at 60 Hz. The brochures
 report apparent kVA for these exact rows, so active kW remains null. Standby,
