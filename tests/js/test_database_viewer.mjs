@@ -282,3 +282,16 @@ test("EIA farm completeness keeps unknown capacity distinct from a reported zero
     {entity_type:"equipment",extensions_json:evidence}
   ]), {projects:2,withoutEvidence:1,unresolvedScopes:2,unknownInstalledCapacity:1});
 });
+
+test("OEM history needs dated registered evidence and never classifies a turbine fleet", async () => {
+  const {windOemHistorySummary} = await import("../../docs/_static/database-core.mjs");
+  const observation = {source_id: "oem", locator: "section", boundary: "prototype only", published_at: "2025-06-12",
+    facts: {production_status_observation: "discontinued", status_as_of: "2025-06-12"}};
+  const row = {entity_type: "equipment", equipment_category: "wind_turbine", sources: ["oem"],
+    extensions_json: JSON.stringify({oem_historical_observations: [observation]})};
+  assert.deepEqual(windOemHistorySummary([row, {...row, entity_type: "turbines"}, {...row, sources: []},
+    {...row, extensions_json: "bad"}, {...row, extensions_json: JSON.stringify({oem_historical_observations: [{...observation, boundary: ""}]})}]),
+    {models: 1, observations: 1, withoutHistory: 3, datedDiscontinuations: 1});
+  assert.deepEqual(windOemHistorySummary([]), {models: 0, observations: 0, withoutHistory: 0, datedDiscontinuations: 0});
+  assert.equal(row.status, undefined);
+});

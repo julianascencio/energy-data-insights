@@ -257,3 +257,21 @@ export function windEiaScopeSummary(rows) {
   }
   return result;
 }
+
+// History is a dated observation, not the currently selected product configuration.
+export function windOemHistorySummary(rows) {
+  const result = {models: 0, observations: 0, withoutHistory: 0, datedDiscontinuations: 0};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const history = Array.isArray(ext?.oem_historical_observations) ? ext.oem_historical_observations : [];
+    const valid = history.filter(o => o?.source_id && o.locator && o.boundary &&
+      /^\d{4}-\d{2}-\d{2}$/.test(o.published_at || "") &&
+      Array.isArray(row.sources) && row.sources.includes(o.source_id));
+    if (valid.length) { result.models++; result.observations += valid.length; }
+    else result.withoutHistory++;
+    result.datedDiscontinuations += valid.filter(o => o.facts?.production_status_observation === "discontinued" &&
+      /^\d{4}-\d{2}-\d{2}$/.test(o.facts.status_as_of || "")).length;
+  }
+  return result;
+}

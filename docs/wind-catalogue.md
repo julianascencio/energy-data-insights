@@ -1,13 +1,15 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-04-2435`, the proposed continuation contains
-**8,174 projects, 372 equipment records, 13,633 linked turbines and two original
-numerical curves**, across **59 countries and 55 manufacturer labels**. Labels
-are not a reconciled corporate-entity count. Merged main at `9f36b0f3` contains
-8,136 projects, 357 equipment records, 13,633 turbines and two curves.
-These are catalogue counts, not a current operating census. Subsequent totals
-are recorded in `catalogues/wind/research/latest.json`.
+numerical curves. At batch `2026-11-05-0910`, the continuation contains
+**8,238 projects, 405 equipment records, 13,633 linked turbines and two original
+numerical curves**, across **59 countries and 57 equipment manufacturer labels**.
+Labels are not a reconciled corporate-entity count. Merged main at `d92d1b82`
+contains 8,174 projects, 372 equipment records, 13,633 turbines and two curves.
+This run adds 56 registry sites and enriches 31 existing equipment records;
+previous batches are not counted again. These are catalogue counts, not a current
+operating census. Live totals and exact continuation queues are recorded in
+`catalogues/wind/research/latest.json`.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.
@@ -845,3 +847,30 @@ EIA registry-site additions require independent identity review before staging.
 All generator observations remain nested with their original annual boundaries;
 missing farm capacity stays null. The shared viewer and offline example show
 unknown installed farm MW and unresolved aggregation scopes separately.
+
+
+## Dated OEM history and identity review (5 November, 09:10 batch)
+
+The 56 new US sites come from exactly 142 saved EIA identity holds, with 86
+remaining deferred. Generic words no longer dominate name screening. Existing
+IDs, aliases, geodesic proximity and candidate-to-candidate proximity are reviewed
+separately. A clear screening result does not establish a physical farm boundary;
+all additions retain unknown farm lifecycle and capacities, with unresolved
+aggregation scope. The final-2025 Operable workbook scan is exhausted: 1,573
+rows, maximum plant code 69,327, no residual code at or above 70,000.
+
+Nordex's dated 12 June 2025 retrospective supplies 31 exact-model enrichments.
+Prototype pitch and generator details apply to those prototypes. Discontinued
+production is a dated OEM claim and says nothing about installed-fleet retirement.
+The shared viewer counts these observations separately from current configuration
+fields, and the deterministic gallery prints their dates and boundaries.
+
+The hash-pinned transcription adapter requires an explicit ID/manufacturer/model/
+rating crosswalk and complete reviewed mapping. Identical replay preserves update
+timestamps; changing the same source observation is rejected. Scalar facts and
+creation timestamps are unchanged. The N175 narrative's 200 m maximum and the
+undated table's 199 m maximum remain separate observations. The N27 type/rating
+reversal and N169 printed-unit conflict remain deferred after reviewing independent
+dated OEM articles. A lone AW77/1300 narrative mention is held for original
+specification evidence. No new numerical curves or installed model variants are
+inferred from this history.

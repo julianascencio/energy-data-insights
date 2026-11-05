@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isWind = root.dataset.database === "wind";
@@ -156,6 +156,8 @@ function render() {
     const hubs = windHubHeightSummary(filtered);
     const epds = windEpdSummary(filtered);
     const updates = windOemUpdateSummary(filtered);
+    const history = windOemHistorySummary(filtered);
+    summary.push([number(history.observations), "Dated OEM history", `${history.models} models · ${history.withoutHistory} without history · ${history.datedDiscontinuations} dated discontinuation statements. Prototype and historical design facts are separate from selected configurations; discontinuation is not fleet retirement.`]);
     summary.push([number(updates.updates), "Dated OEM updates", `${updates.models} turbine models · ${updates.withoutUpdates} without update evidence. Inspect extensions for modes, tower options and approval dates; announced options do not establish installed configurations or validated performance.`]);
     summary.push([number(epds.scenarios), "Modeled LCA scenarios", `${epds.records} turbine models · ${epds.withoutScenarios} without scenarios. Lifetime net-to-grid flows remain separate by location and exposure; not measured output or project counts.`]);
     summary.push([number(hubs.optionsOnly), "Hub-height options only", `${hubs.reported} scalar heights · ${hubs.unknown} unknown; turbine models only. Options are not selected installations.`]);

@@ -8,8 +8,8 @@ At batch `2026-11-05-0910`, the proposed branch contains **8,238 projects**
 registry turbines** and **two original numerical curves**, across **59 countries**
 and **57 manufacturer labels**. Labels are not a reconciled corporate-entity count.
 Merged main at `d92d1b82` contains 8,174 projects, 372 equipment records,
-13,633 turbines and two curves. This run adds 56 projects. The cumulative PR adds 64 projects and 33 exact
-OEM types and enriches two pre-existing projects. These are catalogue counts, not an
+13,633 turbines and two curves. This run adds 56 projects and enriches 31 existing equipment records. The cumulative PR adds 64 projects and 33 exact
+OEM types and enriches two pre-existing projects and four equipment records from main. These are catalogue counts, not an
 operating census. PR #158 remains open for review.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
@@ -578,3 +578,14 @@ inventories, exact predominant-model configuration links and whole-farm
 capacities are not inferred. All previous records and six capacity totals are
 preserved. The equipment manufacturer count is 57 labels; inventory turbine
 labels are now reported separately in `latest.json`.
+
+
+The OEM continuation adds dated history to 31 existing exact types using Nordex's
+12 June 2025 article: early stall/drivetrain controls, Südwind pitch control,
+Gamma/Delta maintenance designs, AW prototype and dated production-status facts,
+and later blade/mode/hub observations. The 18 February 2025 N27 account and
+22 July 2024 N169 announcement were also reviewed. The two N27 table ratings and
+N169 printed unit remain held, as does a lone AW77/1300 narrative mention.
+Specifications remain OEM statements; no independent performance validation is
+claimed. `oem_historical_observations` keeps dates, boundaries and field provenance
+without replacing supported scalar specifications.

@@ -90,6 +90,15 @@ for row in rows:
         print(row["name"], update["published_at"], update["operating_modes"])
         print(update["tower_configurations"], update["conditions"])
 
+# Retrospective prototype and production facts retain dates and exact model links.
+print("OEM historical observations: not current configuration or fleet retirement")
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "oem_historical_observations", []
+    ):
+        print(row["model"], observation["published_at"], observation["boundary"])
+        print(observation["facts"])
+
 # Annual EIA unit states do not reconcile whole-farm repowering or hybrid scope.
 print("EIA 2025 dated unit evidence: farm status/capacity exclusions remain unchanged")
 for row in rows:
