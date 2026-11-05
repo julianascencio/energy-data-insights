@@ -36,8 +36,7 @@ from energy_methods.storage_viability import (
 )
 
 # Published aggregate policy figures: 30 GWh BESS + 60 GWh pumped + 2 GWh other.
-capacities = [INDIA_2026_BESS_GWH, INDIA_2026_PUMPED_STORAGE_GWH,
-              INDIA_2026_OTHER_STORAGE_GWH]
+capacities = [INDIA_2026_BESS_GWH, INDIA_2026_PUMPED_STORAGE_GWH, INDIA_2026_OTHER_STORAGE_GWH]
 
 # ILLUSTRATIVE battery economics: not Indian tender prices or measured output.
 base_case = BatteryLcosAssumptions(
@@ -72,8 +71,9 @@ ax0.set(ylabel="GWh", title="Published scheme mix (Nov 2026)")
 for count in cycles:
     case = replace(base_case, cycles_per_year=count)
     cost = [
-        battery_lcos(case, hypothetical_grant_inr_per_kwh=hypothetical_bess_vgf_inr_per_kwh(share))
-        .lcos_inr_per_kwh
+        battery_lcos(
+            case, hypothetical_grant_inr_per_kwh=hypothetical_bess_vgf_inr_per_kwh(share)
+        ).lcos_inr_per_kwh
         for share in shares
     ]
     ax1.plot([100 * share for share in shares], cost, marker="o", label=f"{count} cycles/year")
