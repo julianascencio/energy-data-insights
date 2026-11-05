@@ -7440,7 +7440,7 @@ World Resources Institute (n.d.). **WRI Brazil CEG importer and make_id identity
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/ons.py`, `docs/wind-catalogue.md`.
 
-### unison-original-type-certificates-20261105
+### unison_original_type_certificates_20261105
 
 Unison / UL Renewables (n.d.). **U136 TC-190502Rev0 pages1–2 and U151 TC-200103Rev0 page1**. [Source](https://unison.co.kr/unison/certification)
 
@@ -7448,7 +7448,7 @@ Unison / UL Renewables (n.d.). **U136 TC-190502Rev0 pages1–2 and U151 TC-20010
 
 **Used by:** `catalogues/wind/sources.json`.
 
-### ksnara-six-conflict-followups-20261105
+### ksnara_six_conflict_followups_20261105
 
 KS Certification Bodies Council (n.d.). **Four indexed exact KS wind-certificate details in six-ID conflict review**. [Source](https://ksnara.or.kr/web_basic/certified_vendor/products/list.asp)
 

@@ -7,7 +7,8 @@
     "quality": "Ruff, format1068files, targeted ty, repository hygiene, citations and diff checks passed",
     "catalogue": "22413records validated;66project enrichments;22347other records unchanged; all390prior source entries unchanged;394sources total; all6capacity summaries unchanged",
     "snapshots": "Two final seven-file builds byte-identical; every Parquet column ZSTD",
-    "docs": "Strict Sphinx with Wind-only executable gallery passed;660HTML pages passed local links/assets checks"
+    "docs": "Strict Sphinx with Wind-only executable gallery passed;660HTML pages passed local links/assets checks",
+    "references": "29 reference tests passed after CI identified two hyphenated bibliography IDs; IDs corrected to underscores; citation exports/Ruff/format/diff checks passed"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
@@ -19,9 +20,10 @@
     "equipment.parquet": "21e673cb64f9d8abd9ec84acbca7360f03447a5b033dbb6af6e14d32b7371675"
   },
   "remote_ci": {
-    "previous_head": "7f80ea4758ee45869e5b250020d685443832ada0",
-    "previous_head_result": "Python3.12/3.13 and Documentation passed; Pages skipped",
-    "current_update": "Not yet published when report written"
+    "first_published_head": "8e0c4f1235262c49c04be6fe9c292c6475263fca",
+    "first_head_documentation": "Passed full gallery and assets; Pages skipped",
+    "first_head_python": "Failed test_references catalogue ID syntax;2835passed onPython3.13; fixed in follow-up",
+    "current_update": "Citation-ID correction awaiting publication and freshCI"
   },
   "not_executed": [
     "Full local Python suite",
@@ -31,6 +33,7 @@
   ],
   "resolved_attempts": [
     "Capacity preservation helper corrected to compare all6explicit fields",
-    "Citation exports regenerated after final source/reference additions"
+    "Citation exports regenerated after final source/reference additions",
+    "Remote PythonCI required underscores in2bibliography IDs; corrected and29localreference tests passed"
   ]
 }
