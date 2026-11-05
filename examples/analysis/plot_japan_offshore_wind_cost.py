@@ -110,7 +110,7 @@ for multiplier in capex_increases:
         ).lcoe_jpy_per_kwh
         for cf in capacity_factors
     ]
-    ax.plot(100 * capacity_factors, prices, label=f"CAPEX ×{multiplier:.1f}")
+    ax.plot(100 * capacity_factors, prices, label=f"CAPEX x{multiplier:.1f}")
 ax.axvline(100 * benchmark.net_capacity_factor, linestyle="--", color="grey")
 ax.set(
     xlabel="Assumed net capacity factor (%)",
