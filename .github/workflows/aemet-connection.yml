@@ -50,9 +50,15 @@ jobs:
               try:
                   with opener.open(Request(url, headers=headers), timeout=45) as response:
                       raw = response.read(10_000_001)
+                      charset = response.headers.get_content_charset()
                   if len(raw) > 10_000_000:
                       sys.exit("Response exceeded size limit.")
-                  return json.loads(raw)
+                  try:
+                      return json.loads(raw)
+                  except UnicodeDecodeError:
+                      if charset and charset.lower() in ("iso-8859-1", "iso-8859-15", "latin-1"):
+                          return json.loads(raw.decode(charset))
+                      raise
               except Exception as error:
                   code = getattr(error, "code", None)
                   sys.exit(f"AEMET request failed: {type(error).__name__}; HTTP {code}. No response or credential logged.")
