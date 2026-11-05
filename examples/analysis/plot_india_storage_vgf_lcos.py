@@ -2,7 +2,7 @@
 India's 2026 storage VGF: battery LCOS under explicit funding scenarios
 =======================================================================
 
-**News trigger (4–5 November 2026):** India's Union Cabinet approved
+**News trigger (4-5 November 2026):** India's Union Cabinet approved
 Rs 14,500 crore of support for **92 GWh across storage technologies**:
 30 GWh batteries, 60 GWh pumped hydro and 2 GWh other technology. The
 announced budget **does not imply** any published BESS-specific subsidy.
