@@ -563,3 +563,7 @@ Ten exact SRNE models add140 canonical technical values and qualified PV/battery
 ### Research update — 5 November 2026, 09:00 UTC
 
 200 complete Chinese projects gain 400 historical operator/context fields without assigning owners or changing capacity/lifecycle. Seventeen KEMAPOWER ST and SAKO hybrid inverter models add 295 canonical technical values plus qualified grid, EPS, battery, PV, mechanical, environmental and warranty claims. Per-MPPT current/power vectors are not summed; maximum PV power is not rated Pdc; VA is not active W. SP-D revision conflicts, ST PV maximum/RS485 discrepancies, SAKO unlabelled axes and Isc scope remain held. Riello is rights-held; Catalunya/DGEG full inventories are not downloaded again. See dated0900 review/audit/coverage/report and resumable queue.
+
+### Research update — 5 November 2026, 10:00 UTC
+
+200 complete Chinese project identities gain 400 historical operator/evidence fields. Ten exact inverters (six Morningstar industrial SureSine and four SAKO) plus six Weidmüller fireman combiners add 202 canonical technical values and qualified conditions. No new projects, modules or trackers. Battery DC is not PV input; DC rated voltage is not maximum; per-MPPT/string currents are not summed. Conditional power, warranty, dimension, model-code and selector-output discrepancies remain held. See dated1000 reviews, audit, coverage and resumable source queue; no new adapter or untested feed integration claimed.
