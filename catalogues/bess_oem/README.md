@@ -288,3 +288,5 @@ optional solar regulators explicitly separate. Use
 Previous iteration: [28 exact TAB OPzS cells/blocks](../bess/research/2026-11-05_tab_slovenia.md). The offline `scripts/stage_bess_tab_opzs.py` adapter accepts the reviewed PDF cell or block partition; rate-dependent Ah, wet/dry mass and fault current remain separate.
 
 Latest iteration: [14 TAB OPzV models and 28 OPzS enrichments](../bess/research/2026-11-05_opzv_latvia.md). The live OPzV table differs from the brochure; conflicting numeric observations remain quarantined with both sources.
+
+Latest iteration: [25 TAB OGi exact models and South African lender evidence](../bess/research/2026-11-05_ogi_south_africa.md). Includes one independently reconciled project and seven procurement enrichments; model capacity conflicts and source-access holds remain explicit.

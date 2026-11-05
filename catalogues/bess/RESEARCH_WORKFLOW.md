@@ -16,7 +16,13 @@ or a live availability feed. Do not interpret record counts as installed capacit
    local languages when useful. Check recent status updates as well as technical
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
-4. For TAB stationary OPzS PDF tables, `scripts/stage_bess_tab_opzs.py`
+4. For TAB OGi PDF page 6, `scripts/stage_bess_tab_ogi.py` stages the
+   reviewed 25-model partition. Preserve kA fault current, 2 V cell versus
+   6/12 V monobloc Ah, and PDF dry/wet versus website wet/dry mass order.
+   Page 7 supplies operating conditions; do not normalize its questionable
+   temperature-compensation unit or choose between conflicting web/PDF capacities.
+   Website-only models require a separate review.
+   For TAB stationary OPzS PDF tables, `scripts/stage_bess_tab_opzs.py`
    stages the 22-cell or six-block partition (`--partition blocks`). It rejects
    changed units/mass order, duplicates and partial tables. Cell Ah and block Ah,
    short-circuit versus operating current, and cell/block design-life footnotes

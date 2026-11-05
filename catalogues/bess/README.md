@@ -288,3 +288,5 @@ This information is subject to the Terms of Use set out in the IESO’s website
 Latest iteration: [TAB exact cells/blocks and Slovenian project reconciliation](research/2026-11-05_tab_slovenia.md).
 
 Latest iteration: [Latvian owner portfolio and TAB OPzV research](research/2026-11-05_opzv_latvia.md): eight separately named sites, with portfolio capacity and financing kept separate from site ratings.
+
+Latest iteration: [25 TAB OGi exact models and South African lender evidence](research/2026-11-05_ogi_south_africa.md). Includes one independently reconciled project and seven procurement enrichments; model capacity conflicts and source-access holds remain explicit.
