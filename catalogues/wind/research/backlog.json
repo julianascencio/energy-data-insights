@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T20:45:37Z",
+  "updated_at": "2026-11-05T21:36:52Z",
   "branch": "research/wind-20261105-2005",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-2005.lock; acquire before any branch write",
   "queue": [
@@ -285,7 +285,7 @@
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
       "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-      "next_task": "Next complete EPE RS partition. BA381/RN317/CE103 complete; held313/210/50 respectively. Saved ONS crosswalk and duplicate-name groups remain unresolved.",
+      "next_task": "Next complete EPE PI partition. BA381/RN317/CE103/RS80 complete; held313/210/50/13 respectively. Saved ONS crosswalk and duplicate-name groups remain unresolved.",
       "independent_source": {
         "source": "ONS daily capacity generator CSV",
         "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
@@ -307,13 +307,13 @@
       "epe_independent_source": {
         "url": "https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0",
         "dataset_date": "2026-01-13",
-        "completed_where": "sigtipogeracao='EOL' AND sigufprincipal='CE'",
-        "reviewed": 103,
-        "enriched": 53,
-        "held": 50,
-        "ledger": "2026-11-05-2035-epe-review.json",
-        "next_where": "sigtipogeracao='EOL' AND sigufprincipal='RS'",
-        "next_task": "Fresh RS stable before/after ID inventory and complete bounded pages. BA/RN/CE completed; no rescan."
+        "completed_where": "sigtipogeracao='EOL' AND sigufprincipal='RS'",
+        "reviewed": 80,
+        "enriched": 67,
+        "held": 13,
+        "ledger": "2026-11-05-2135-epe-review.json",
+        "next_where": "sigtipogeracao='EOL' AND sigufprincipal='PI'",
+        "next_task": "Fresh PI stable before/after ID inventory and complete bounded pages. BA/RN/CE/RS completed; no rescan."
       },
       "identity_review": "2026-11-05-1807-identity-review.json",
       "epe_completed_partitions": [
@@ -337,6 +337,13 @@
           "enriched": 53,
           "held": 50,
           "ledger": "2026-11-05-2035-epe-review.json"
+        },
+        {
+          "state": "RS",
+          "selected": 80,
+          "enriched": 67,
+          "held": 13,
+          "ledger": "2026-11-05-2135-epe-review.json"
         }
       ]
     },
@@ -399,7 +406,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "Resume exact35middle-table Windey columns; do not reprocess32completed columns or synthesize platform variants. AfDBprojectID located, originalESIA and identity crosswalk still pending.",
+      "next_task": "All67Windey2022brochure columns reviewed. Next AfDBAyshaI originalESIA and identity crosswalk; do not reprocess completed tables or synthesize variants.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -413,9 +420,8 @@
       "vestas_new_review": "2026-11-05-1235-fgw-review.json",
       "knrec_review": "2026-11-05-1435-knrec-review.json",
       "original_certificate_followup": "2026-11-05-1510-oem-review.json",
-      "latest_oem_review": "2026-11-05-2035-oem-review.json",
+      "latest_oem_review": "2026-11-05-2135-oem-review.json",
       "next_exact_oem_batches": [
-        "Windey2022 English brochure PDFpages9,10,11 printed13–18:35explicit model columns; use original SHA in latest OEM ledger; pages7,8,12 complete",
         "AyshaI AfDB P-ET-F00-007 originalESIA and legacy/phase crosswalk; planned300MW; Saudi60Hz equivalence prohibited",
         "Xiangshan No.1 PhaseII official project/phase identity; 2022WD225-9000 brochure observation does not establish installed revision",
         "Saudi project official identity and WD200-7700 60Hz exact datasheet",
@@ -681,7 +687,7 @@
   "publication_continuation": {
     "branch": "research/wind-20261105-2005",
     "pr": 176,
-    "expected_head": "3bbb62098a615cc3458ebf1f5d4779a86fa6c9db",
+    "expected_head": "d612ab10c31b6a8234dfada1af988734a78c79a4",
     "main": "600db672269079ab8a92224ad5de3cf80e8206bf",
     "leave_open_unmerged": true
   }

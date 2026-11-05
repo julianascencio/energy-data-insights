@@ -63,3 +63,35 @@ def test_reject_unreviewable_input(case):
         raw["rated_power_kw"] = True
     with pytest.raises(ValueError):
         run(review)
+
+
+def test_middle_tables_preserve_column_specific_frequency_and_blade_values():
+    review = json.loads(
+        (Path(__file__).parent / "fixtures/wind_oem_middle_tables.json").read_text()
+    )
+    rows, _ = run(review)
+    by = {r["model"]: r for r in rows}
+    first = json.loads(by["WD164-3600"]["extensions_json"])["oem_table_observations"][0]
+    second = json.loads(by["WD172-3600"]["extensions_json"])["oem_table_observations"][0]
+    assert first["values"]["converter_frequency_range_hz"] == [47.5, 51.5]
+    assert second["values"]["converter_frequency_range_hz"] == [47.5, 52.5]
+    assert by["WD172-5500"]["blade_length_m"] == 80.5  # Printed, not inferred from rotor.
+    assert by["WD172-5500"]["rated_power_kw"] == 5500
+    assert by["WD172-5500"].get("frequency_hz") is None
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("generator_power_kw", -1),
+        ("generator_rated_speed_rpm", True),
+        ("converter_power_kva_grid_turbine", [695]),
+        ("converter_current_a_grid_turbine", [352, float("nan")]),
+        ("nacelle_dimensions_m", [11.4, 4.5]),
+    ],
+)
+def test_component_quantity_boundary(field, value):
+    review = copy.deepcopy(REVIEW)
+    review["tables"][0]["columns"][0][field] = value
+    with pytest.raises(ValueError, match="OEM component"):
+        run(review)

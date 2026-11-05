@@ -61,6 +61,37 @@ def stage_tables(
                 value = raw[field]
                 if type(value) not in (int, float) or not math.isfinite(value) or value <= 0:
                     raise ValueError("Invalid explicit OEM scalar")
+            # Component ratings have their own units and boundaries. Validate
+            # optional observations without promoting them to turbine scalars.
+            for field in (
+                "generator_power_kw",
+                "generator_voltage_v",
+                "generator_rated_speed_rpm",
+                "single_blade_mass_t",
+                "hub_mass_t",
+                "nacelle_mass_t",
+            ):
+                value = raw.get(field)
+                if value is not None and (
+                    type(value) not in (int, float) or not math.isfinite(value) or value <= 0
+                ):
+                    raise ValueError("Invalid OEM component quantity")
+            for field, size in (
+                ("converter_power_kva_grid_turbine", 2),
+                ("converter_current_a_grid_turbine", 2),
+                ("hub_dimensions_m", 3),
+                ("nacelle_dimensions_m", 3),
+            ):
+                values = raw.get(field)
+                if values is not None and (
+                    not isinstance(values, list)
+                    or len(values) != size
+                    or any(
+                        type(v) not in (int, float) or not math.isfinite(v) or v <= 0
+                        for v in values
+                    )
+                ):
+                    raise ValueError("Invalid OEM component vector")
             for field in (
                 "cut_out_range_m_s",
                 "hub_height_range_m",

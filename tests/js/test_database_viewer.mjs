@@ -378,7 +378,17 @@ import {windOemTableSummary} from "../../docs/_static/database-core.mjs";
 test("OEM tables retain option and unknown-condition counts without multiplying models", () => {
   const observation = {source_id: "oem", revision: "2022", locator: "page7 col1", values: {hub_height_range_m: [65, 160]}};
   const equipment = {entity_type: "equipment", equipment_category: "wind_turbine", sources: ["oem"], extensions_json: JSON.stringify({oem_table_observations: [observation, observation]})};
-  assert.deepEqual(windOemTableSummary([equipment, {...equipment, extensions_json: "{}"}, {...equipment, sources: []}]), {models: 1, observations: 1, optionRanges: 1, withoutTables: 2, unknownConditions: 1});
+  assert.deepEqual(windOemTableSummary([equipment, {...equipment, extensions_json: "{}"}, {...equipment, sources: []}]), {models: 1, observations: 1, optionRanges: 1, withoutTables: 2, unknownConditions: 1, componentRatings: 0, unknownComponentRatings: 1});
   assert.equal(windOemTableSummary([{...equipment, entity_type: "projects"}]).observations, 0);
   assert.equal(windOemTableSummary([{...equipment, extensions_json: "null"}]).withoutTables, 1);
+});
+
+test("OEM component ratings retain separate boundaries and reject malformed ranges", () => {
+  const make = values => ({entity_type: "equipment", equipment_category: "wind_turbine", sources: ["oem"], extensions_json: JSON.stringify({oem_table_observations: [{source_id: "oem", revision: "2022", locator: "PDF9/column1", values}]})});
+  const rows = [make({hub_height_range_m: [95, 160], converter_power_kva_grid_turbine: [695, 1294]}), make({hub_height_range_m: [160, 95], converter_power_kva_grid_turbine: [null, 0]}), make({hub_height_range_m: [95], converter_power_kva_grid_turbine: [695]})];
+  const summary = windOemTableSummary(rows);
+  assert.equal(summary.optionRanges, 1);
+  assert.equal(summary.componentRatings, 1);
+  assert.equal(summary.unknownComponentRatings, 2);
+  assert.equal(summary.unknownConditions, 3);
 });

@@ -1104,3 +1104,35 @@ columns and rejects missing, reordered or duplicate identities. Generator RPM
 and converter kVA stay separate from rotor RPM and turbine kW. Temperature,
 cut-out and hub-height ranges remain options; the viewer and gallery expose
 these without claiming installed configurations or validated performance.
+
+### Complete Rio Grande do Sul partition and remaining Windey columns
+
+The November 5 21:35 continuation reviews all **80** EPE-hosted SIGA wind
+entries for Rio Grande do Sul. Stable before/after OBJECTID queries and the
+complete response agree. **67 existing projects** gain dated native registry
+observations; **13 identities remain held**. No projects, individual turbines,
+capacity eligibility or lifecycle claims are inferred. All six capacity
+summaries, including unknown and excluded counts, remain unchanged.
+
+The remaining Windey brochure tables on PDF pages **9, 10 and 11** (printed
+13/14, 15/16 and 17/18) add **35 exact models**. All **67 printed model columns**
+on PDF pages 7–12 have now been reviewed across two batches. The prior source
+registry and original-byte checksum remain intact; the new review ledger records
+expanded locators and visual transcription. These are historical specifications,
+not independent performance validation or installed project configurations.
+
+Column boundaries matter: WD164-3600 states a converter range of 47.5–51.5 Hz,
+while the other 34 newly reviewed columns state 47.5–52.5 Hz. WD172-5500's
+80.5 m blade length is retained as printed, without replacing it using another
+172 m rotor model. Generator kW/RPM, converter grid-side/turbine-side kVA and A,
+component mass/dimensions, hub-height options and operating conditions remain
+separate observations. Exact component model IDs, density, operating mode,
+warranty, certification identifiers and numerical curves remain unknown.
+
+The offline adapter now rejects malformed component quantities and vectors.
+Small attributed fixtures exercise column-specific values and unit boundaries.
+The shared viewer counts usable converter rating pairs separately from missing
+ones, rejects malformed hub ranges, and explicitly separates component quantities
+from turbine ratings. The gallery dynamically displays the reviewed model count.
+The next complete EPE partition is **PI**; the next OEM/project work is the
+AfDB Aysha I original ESIA and exact phase crosswalk recorded in the backlog.

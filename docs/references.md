@@ -7559,3 +7559,11 @@ Zhejiang Windey Co., Ltd. (2022). **2022-6 English Windey product brochure: exac
 **Role:** data_source. Visually reviewed32exact columns onPDFpages7,8,12; brochure metadataJune2022, precise publication date unknown; not independently validated performance.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/oem_tables.py`, `docs/wind-catalogue.md`.
+
+### epe_siga_rio_grande_do_sul_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Rio Grande do Sul: complete80-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Rio Grande do Sul full wind partition80IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.

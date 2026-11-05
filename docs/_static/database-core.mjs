@@ -430,7 +430,7 @@ export function windSigaSummary(rows) {
 
 // Historical table options remain observations, never installed configurations.
 export function windOemTableSummary(rows) {
-  const result = {models: 0, observations: 0, optionRanges: 0, withoutTables: 0, unknownConditions: 0};
+  const result = {models: 0, observations: 0, optionRanges: 0, withoutTables: 0, unknownConditions: 0, componentRatings: 0, unknownComponentRatings: 0};
   for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
     let ext; try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
     const seen = new Set();
@@ -444,7 +444,11 @@ export function windOemTableSummary(rows) {
     result.models++;
     for (const o of observations) {
       result.observations++;
-      if (Array.isArray(o.values?.hub_height_range_m)) result.optionRanges++;
+      const range = o.values?.hub_height_range_m;
+      if (Array.isArray(range) && range.length === 2 && range.every(v => typeof v === "number" && Number.isFinite(v) && v > 0) && range[0] <= range[1]) result.optionRanges++;
+      const kva = o.values?.converter_power_kva_grid_turbine;
+      if (Array.isArray(kva) && kva.length === 2 && kva.every(v => typeof v === "number" && Number.isFinite(v) && v > 0)) result.componentRatings++;
+      else result.unknownComponentRatings++;
       if (o.air_density_kg_m3 == null || o.operating_mode == null) result.unknownConditions++;
     }
   }

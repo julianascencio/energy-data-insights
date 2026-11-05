@@ -752,14 +752,14 @@ if oem_columns:
         ax.plot([diameter, diameter], [low, high], color="#3d718e", alpha=0.5)
         ax.scatter([diameter, diameter], [low, high], s=12, color="#3d718e")
     ax.set(
-        title="Windey 2022 selected exact-model tables: published hub options",
+        title="Windey 2022 exact-model tables: published hub options",
         xlabel="Explicit rotor diameter (m)",
         ylabel="Published hub-height option range (m)",
     )
     ax.text(
         0,
         -0.3,
-        "Selected 32 model columns; overlapping options are not installations. "
+        f"{len(oem_columns)} reviewed model columns; overlapping options are not installations. "
         "Density and operating mode unknown; no performance comparison.",
         transform=ax.transAxes,
         fontsize=8,
