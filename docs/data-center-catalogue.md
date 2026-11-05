@@ -55,11 +55,11 @@ issuer updates or independent planning, utility and lifecycle evidence.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,633 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,655 exact models/configurations from NVIDIA, AMD, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
-STULZ, Supermicro, Toshiba, Vertiv, Para Systems / Minuteman Power Technologies,
+STULZ, Supermicro, Toshiba, Vertiv, Volvo Penta, Para Systems / Minuteman Power Technologies,
 Ingram Micro / V7, N1 Critical Technologies, Neuropower, Power Logic / KOSS,
 Right Power Technology, Upsonic Power Systems, xFusion and ZTE. Current categories are GPU accelerators,
 servers, UPS, rack PDUs, backup generators, chillers, coolant distribution units
@@ -164,6 +164,12 @@ Power rating card: 19 exact 50 Hz and 15 exact 60 Hz configurations. Engine
 gross mechanical kWm, generator electrical kWe and generator apparent kVA stay
 separate. Speed, aspiration and governor remain row-bound observations; no
 alternator, voltage, emissions package, installation or deployment is inferred.
+The Volvo Penta continuation processes all 22 populated model/frequency columns
+in four current D8, D13 and D16 power-generation tables. Prime electrical kW and
+kVA are normalized separately; standby electrical output and engine mechanical
+kWm remain bounded observations. Blank TAD1640GE cells are excluded, and fuel,
+emissions and cylinder statements do not establish a complete generator-set BOM,
+issuer certification, site installation or deployment.
 The Makelsan continuation processes every exact three-phase model column in the
 reviewed LEVELUPS, LEVELUPS T3 and LEVELUPS T4 tables: 18, 11 and five rows.
 Printed kVA and kW remain separate; the overlapping T3/T4 capacities remain

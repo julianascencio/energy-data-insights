@@ -23,6 +23,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
     parse_server_accelerator_shipping_matrix,
     parse_supermicro_nvidia_systems,
     parse_ups_rating_matrix,
+    parse_volvo_penta_powergen_matrix,
 )
 
 CONTENT = (Path(__file__).parent / "fixtures/data_centers/named-inventory.html").read_bytes()
@@ -44,6 +45,9 @@ GENERATOR_MATRIX = (
 ).read_bytes()
 GENERATOR_DCP_MATRIX = (
     Path(__file__).parent / "fixtures/data_centers/generator-dcp-matrix.csv"
+).read_bytes()
+VOLVO_PENTA_POWERGEN_MATRIX = (
+    Path(__file__).parent / "fixtures/data_centers/volvo-penta-powergen-matrix.csv"
 ).read_bytes()
 LENOVO_COMPARISON = (
     Path(__file__).parent / "fixtures/data_centers/lenovo-gpu-comparison.html"
@@ -938,6 +942,43 @@ def test_dcp_generator_matrix_rejects_unofficial_sources_and_drift(source_url, e
     with pytest.raises(ValueError):
         parse_generator_dcp_matrix(
             GENERATOR_DCP_MATRIX,
+            source_url=source_url,
+            expected_count=expected_count,
+        )
+
+
+def test_volvo_penta_powergen_preserves_prime_standby_and_mechanical_boundaries():
+    result = parse_volvo_penta_powergen_matrix(
+        VOLVO_PENTA_POWERGEN_MATRIX,
+        source_url=(
+            "https://www.volvopenta.com/industrial/power-generation-engines/"
+            "power-generation-engine-range/d16-eu-stage-v/"
+        ),
+        expected_count=2,
+    )
+    by_frequency = {row["frequency_hz"]: row for row in result["candidates"]}
+    assert by_frequency[50.0]["prime_output_kw"] == 528
+    assert by_frequency[50.0]["standby_apparent_kva"] == 726
+    assert by_frequency[60.0]["prime_mechanical_kw"] is None
+    assert by_frequency[60.0]["fuel_type"] == "Diesel/HVO"
+    assert result["review_required"]
+
+
+@pytest.mark.parametrize(
+    ("source_url", "expected_count"),
+    [
+        ("https://example.com/power-generation-engine-range/d16/", 2),
+        (
+            "https://www.volvopenta.com/industrial/power-generation-engines/"
+            "power-generation-engine-range/d16-eu-stage-v/",
+            3,
+        ),
+    ],
+)
+def test_volvo_penta_powergen_rejects_unofficial_sources_and_drift(source_url, expected_count):
+    with pytest.raises(ValueError):
+        parse_volvo_penta_powergen_matrix(
+            VOLVO_PENTA_POWERGEN_MATRIX,
             source_url=source_url,
             expected_count=expected_count,
         )

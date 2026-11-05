@@ -1280,6 +1280,108 @@ def parse_generator_dcp_matrix(
     }
 
 
+def parse_volvo_penta_powergen_matrix(
+    content: bytes, *, source_url: str, expected_count: int
+) -> dict[str, Any]:
+    """Stage exact Volvo Penta engine/frequency power-generation rows."""
+    parsed_url = urlsplit(source_url)
+    if (
+        parsed_url.scheme != "https"
+        or parsed_url.hostname != "www.volvopenta.com"
+        or "/power-generation-engines/power-generation-engine-range/" not in parsed_url.path
+    ):
+        raise ValueError("Unsupported official Volvo Penta power-generation URL")
+    if expected_count < 1:
+        raise ValueError("Positive expected count required")
+    reader = csv.DictReader(io.StringIO(content.decode("utf-8-sig")))
+    required = {
+        "family",
+        "emission_level",
+        "model",
+        "frequency_hz",
+        "prime_mechanical_kw",
+        "prime_output_kw",
+        "prime_apparent_kva",
+        "standby_mechanical_kw",
+        "standby_output_kw",
+        "standby_apparent_kva",
+        "fuel_type",
+        "cylinders",
+        "locator",
+    }
+    if reader.fieldnames is None or set(reader.fieldnames) != required:
+        raise ValueError("Unexpected Volvo Penta power-generation matrix columns")
+
+    def positive_number(
+        raw_value: str | None, field: str, *, line: int, optional: bool = False
+    ) -> float | None:
+        raw = (raw_value or "").strip().replace(",", "")
+        if not raw and optional:
+            return None
+        try:
+            value = float(raw)
+        except ValueError as exc:
+            raise ValueError(f"Invalid {field} on row {line}") from exc
+        if value <= 0:
+            raise ValueError(f"Invalid {field} on row {line}")
+        return value
+
+    candidates: dict[tuple[str, float], dict[str, Any]] = {}
+    for line, row in enumerate(reader, start=2):
+        family = row["family"].strip()
+        emission_level = row["emission_level"].strip()
+        model = row["model"].strip()
+        fuel_type = row["fuel_type"].strip()
+        locator = row["locator"].strip()
+        if not all((family, emission_level, model, fuel_type, locator)):
+            raise ValueError(f"Incomplete Volvo Penta identity on row {line}")
+        frequency = positive_number(row["frequency_hz"], "frequency_hz", line=line)
+        cylinders = positive_number(row["cylinders"], "cylinders", line=line)
+        assert frequency is not None and cylinders is not None
+        candidate = {
+            "family": family,
+            "emission_level": emission_level,
+            "model": model,
+            "frequency_hz": frequency,
+            "prime_mechanical_kw": positive_number(
+                row["prime_mechanical_kw"], "prime_mechanical_kw", line=line, optional=True
+            ),
+            "prime_output_kw": positive_number(
+                row["prime_output_kw"], "prime_output_kw", line=line
+            ),
+            "prime_apparent_kva": positive_number(
+                row["prime_apparent_kva"], "prime_apparent_kva", line=line
+            ),
+            "standby_mechanical_kw": positive_number(
+                row["standby_mechanical_kw"],
+                "standby_mechanical_kw",
+                line=line,
+                optional=True,
+            ),
+            "standby_output_kw": positive_number(
+                row["standby_output_kw"], "standby_output_kw", line=line
+            ),
+            "standby_apparent_kva": positive_number(
+                row["standby_apparent_kva"], "standby_apparent_kva", line=line
+            ),
+            "fuel_type": fuel_type,
+            "cylinders": int(cylinders),
+            "locator": locator,
+        }
+        identity = (model, frequency)
+        if identity in candidates:
+            raise ValueError(f"Duplicate Volvo Penta power-generation row for {identity}")
+        candidates[identity] = candidate
+    if len(candidates) != expected_count:
+        raise ValueError(f"Changed Volvo Penta matrix shape: {len(candidates)} != {expected_count}")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "review_required": True,
+        "candidates": [candidates[key] for key in sorted(candidates)],
+    }
+
+
 def parse_supermicro_nvidia_systems(
     content: bytes, *, source_url: str, expected_count: int
 ) -> dict[str, Any]:

@@ -192,6 +192,14 @@
       "enriched_records": 2,
       "reuse": "Seven public official municipal, operator and contractor pages support 15 bounded observations. Facts are normalized without redistributing originals; no held source was used.",
       "originals": "The browsing interface exposed the official content but not stable original bytes, so no checksums are claimed. This is an access/content-tooling limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "Volvo Penta current D8, D13 and D16 power-generation engine tables",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "enriched_records": 0,
+      "reuse": "Public OEM product tables were used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved reuse hold applies to these pages.",
+      "originals": "All four official HTML originals were captured and checksummed: D8 Stage V 186,212 bytes; D13 Stage V 185,089 bytes; D16 Stage V 186,051 bytes; D16 Stage II/EPA Tier 2 191,073 bytes. The exact SHA-256 values are in sources.json."
     }
   ],
   "deferred": [
@@ -270,6 +278,8 @@
     "FIN04A Phase 2 permit 286-2025-384 and the FIN04A Phase 3, FIN04B modification and FIN04C Phase 2 permit observations remain campus-level evidence until official party and phase cross-references support child identities.",
     "FIN04 permit areas remain source observations and are not normalized as campus or data-hall area.",
     "SWE04 1,200 MW is planned combustion fuel input for backup plant, not electrical output, grid capacity or IT capacity.",
-    "SWE04 130 kV line construction and heat-reuse development agreement are planning observations; no facility commissioning date, delivered heat or contracted heat quantity is inferred."
+    "SWE04 130 kV line construction and heat-reuse development agreement are planning observations; no facility commissioning date, delivered heat or contracted heat quantity is inferred.",
+    "All 22 populated Volvo Penta model/frequency rows across the selected current D8, D13 and D16 tables are processed; blank TAD1640GE cells remain excluded.",
+    "Volvo Penta prime electrical kW/kVA, standby electrical kW/kVA and engine mechanical kWm remain distinct; fuel/emissions labels are OEM observations and no alternator, voltage, complete genset BOM, issuer certification or deployment is inferred."
   ]
 }
