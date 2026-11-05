@@ -305,6 +305,56 @@ test("reference yields separate sites, withdrawals and missing evidence without 
   const row = {entity_type:"equipment", equipment_category:"wind_turbine", sources:["table","method"],
     extensions_json:JSON.stringify({reference_yield_observations:[observation,{...observation,reference_site:"new",rows:[entry]}]})};
   assert.deepEqual(windReferenceYieldSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"projects"}]),
-    {models:1,observations:3,withdrawn:1,unknownRotor:3,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
-  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,unknownRotor:0,withoutReference:0,unknownConditions:0,bySite:{}});
+    {models:1,observations:3,withdrawn:1,corrected:0,unknownRotor:3,withoutReference:2,unknownConditions:3,bySite:{old:2,new:1}});
+  assert.deepEqual(windReferenceYieldSummary([]), {models:0,observations:0,withdrawn:0,corrected:0,unknownRotor:0,withoutReference:0,unknownConditions:0,bySite:{}});
+});
+
+
+test("reference correction dates count observations, never commissioning", async () => {
+  const {windReferenceYieldSummary} = await import("../../docs/_static/database-core.mjs");
+  const row = {entity_type:"equipment",equipment_category:"wind_turbine",sources:["s","p"],
+    extensions_json:JSON.stringify({reference_yield_observations:[{source_id:"s",period_source_id:"p",period_years:5,
+      quantity_kind:"modeled reference energy",reference_site:"new",rows:[
+        {locator:"synthetic",note:"corrected",reference_yield_kwh:10,corrected_at:"2026-09-14"},
+        {locator:"synthetic",note:"unknown date",reference_yield_kwh:20,corrected_at:null}]}]})};
+  assert.equal(windReferenceYieldSummary([row]).corrected,1);
+  assert.equal(windReferenceYieldSummary([row]).observations,2);
+});
+
+test("certificate observations separate expiry from unknown and deduplicate same evidence", async () => {
+  const {windCertificationSummary} = await import("../../docs/_static/database-core.mjs");
+  const o = {certificate_id:"WT-synthetic",listed_date:"2020-01-01",source_id:"issuer",registry_status:"expired"};
+  const row = {entity_type:"equipment",equipment_category:"wind_turbine",sources:["issuer"],extensions_json:JSON.stringify({certification_register_observations:[o,o,{...o,certificate_id:"WT-other",registry_status:""}]})};
+  assert.deepEqual(windCertificationSummary([row,{...row,extensions_json:"null"},{...row,sources:[]},{...row,entity_type:"projects"}]),
+    {models:1,observations:2,expired:1,cancelled:0,unspecified:1,withoutEvidence:2});
+  assert.deepEqual(windCertificationSummary([]), {models:0,observations:0,expired:0,cancelled:0,unspecified:0,withoutEvidence:0});
+});
+
+test("ONS daily evidence counts unknown and zero without aggregating units into turbines or MW", async () => {
+  const {windOnsSummary} = await import("../../docs/_static/database-core.mjs");
+  const row={entity_type:"projects",sources:["ons"],extensions_json:JSON.stringify({ons_wind_unit_snapshots:[
+    {source_id:"ons",source_sha256:"hash",retrieved_at:"2026-11-05T15:13:00Z",units:[
+      {reported_nominal_mw:0},{reported_nominal_mw:null},{reported_nominal_mw:21}]}]})};
+  assert.deepEqual(windOnsSummary([row,{...row,extensions_json:"null"},{...row,sources:[]},{entity_type:"equipment"}]),
+    {projects:1,snapshots:1,units:3,unknownNominal:1,zeroNominal:1,withoutEvidence:2});
+});
+
+test("ONS geography counts each project once per reported state across snapshots", async () => {
+  const {windOnsGeography} = await import("../../docs/_static/database-core.mjs");
+  const snapshot = {source_id:"ons",source_sha256:"hash",retrieved_at:"2026-11-05T15:13:00Z",units:[
+    {original:{id_estado:"RN"}},{original:{id_estado:"RN"}},{original:{id_estado:"RS"}},
+    {original:{id_estado:null}},{original:{id_estado:"0"}}]};
+  const row={entity_type:"projects",sources:["ons"],extensions_json:JSON.stringify({ons_wind_unit_snapshots:[snapshot,snapshot]})};
+  assert.deepEqual(windOnsGeography([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
+    {projects:1,stateProjects:{RN:1,RS:1},unknownStateProjects:1});
+  assert.deepEqual(windOnsGeography([]),{projects:0,stateProjects:{},unknownStateProjects:0});
+});
+
+test("SIGA preserves dated categories, unknowns and zeros without summing capacity", async () => {
+  const {windSigaSummary}=await import("../../docs/_static/database-core.mjs");
+  const observation={source_id:"epe",source_sha256:"hash",object_id:68,observation_date:"2026-01-13",
+    original:{sigufprincipal:"BA"},normalized_power:{authorized_mw:0,inspected_mw:null,physical_guarantee_mw:13.4}};
+  const row={entity_type:"projects",sources:["epe"],extensions_json:JSON.stringify({epe_siga_snapshots:[observation,observation]})};
+  assert.deepEqual(windSigaSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
+    {projects:1,snapshots:1,withoutEvidence:2,dates:["2026-01-13"],states:["BA"],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
 });

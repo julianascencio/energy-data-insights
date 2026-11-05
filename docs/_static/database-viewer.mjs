@@ -1,4 +1,4 @@
-import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary} from "./database-core.mjs";
+import {display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary, windCertificationSummary, windOnsSummary, windOnsGeography, windSigaSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isHydro = root.dataset.database === "hydro";
@@ -132,6 +132,12 @@ function render() {
     }
   } else if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
+    const siga = windSigaSummary(filtered);
+    summary.push([number(siga.projects), "Dated SIGA registry evidence", `${siga.dates.join(" · ") || "No dataset date"} · ${siga.states.join(", ")} · ${siga.snapshots} observations · ${siga.withoutEvidence} projects without evidence. ${Object.entries(siga.categories).map(([key,c])=>`${key}: ${c.known} known, ${c.unknown} unknown, ${c.zero} reported zero`).join(" · ")}. Categories are separate; physical guarantee is not installed capacity. No current census or aggregation eligibility inferred.`]);
+    const ons = windOnsSummary(filtered);
+    const onsGeo = windOnsGeography(filtered);
+    summary.push([number(onsGeo.projects), "ONS geographic evidence", `${Object.entries(onsGeo.stateProjects).map(([state,count]) => `${state}: ${count}`).join(" · ") || "No reported state"} · ${onsGeo.unknownStateProjects} projects with unknown state observations. Each project counts once per reported state across snapshots; this is evidence coverage, not a current fleet distribution.`]);
+    summary.push([number(ons.projects), "ONS daily unit evidence", `${ons.snapshots} dated snapshots · ${ons.units} unit observations · ${ons.unknownNominal} unknown nominal ratings · ${ons.zeroNominal} reported zeros · ${ons.withoutEvidence} projects without evidence. Units may group turbines; snapshots are not summed, and no farm capacity or lifecycle is inferred.`]);
     const eiaYears = [...new Set(filtered.flatMap(row => {
       try { return (JSON.parse(row.extensions_json || "{}").eia_annual_wind_partitions || []).filter(p => p?.source_id && Number.isInteger(p.year)).map(p => p.year); }
       catch { return []; }
@@ -168,7 +174,9 @@ function render() {
     const updates = windOemUpdateSummary(filtered);
     const history = windOemHistorySummary(filtered);
     const reference = windReferenceYieldSummary(filtered);
-    summary.push([number(reference.observations), "Modeled five-year reference yields", `${reference.models} models · ${reference.withoutReference} without evidence · ${reference.withdrawn} withdrawn observations retained · ${reference.unknownRotor} rows have unknown rotor diameter. ${Object.entries(reference.bySite).map(([site, count]) => `${site}: ${count}`).join("; ")}. ${reference.unknownConditions} lack density or mode. Hub options and reference sites are not additive or a performance comparison.`]);
+    const certifications = windCertificationSummary(filtered);
+    summary.push([number(certifications.observations), "Certification registry observations", `${certifications.models} configurations · ${certifications.expired} listed expired · ${certifications.cancelled} listed cancelled · ${certifications.unspecified} status unspecified · ${certifications.withoutEvidence} without registry evidence. Listing dates are not commissioning dates; blank status does not prove current validity. Specifications are not independently validated performance.`]);
+    summary.push([number(reference.observations), "Modeled five-year reference yields", `${reference.models} models · ${reference.withoutReference} without evidence · ${reference.withdrawn} withdrawn observations retained · ${reference.corrected} dated corrections · ${reference.unknownRotor} rows have unknown rotor diameter. ${Object.entries(reference.bySite).map(([site, count]) => `${site}: ${count}`).join("; ")}. ${reference.unknownConditions} lack density or mode. Hub options and reference sites are not additive or a performance comparison.`]);
     summary.push([number(history.observations), "Dated OEM history", `${history.models} models · ${history.withoutHistory} without history · ${history.datedDiscontinuations} dated discontinuation statements. Prototype and historical design facts are separate from selected configurations; discontinuation is not fleet retirement.`]);
     summary.push([number(updates.updates), "Dated OEM updates", `${updates.models} turbine models · ${updates.withoutUpdates} without update evidence. Inspect extensions for modes, tower options and approval dates; announced options do not establish installed configurations or validated performance.`]);
     summary.push([number(epds.scenarios), "Modeled LCA scenarios", `${epds.records} turbine models · ${epds.withoutScenarios} without scenarios. Lifetime net-to-grid flows remain separate by location and exposure; not measured output or project counts.`]);

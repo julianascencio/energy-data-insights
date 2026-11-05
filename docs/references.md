@@ -7423,3 +7423,99 @@ World Resources Institute (n.d.). **Global Power Plant Database v1.3.0, complete
 **Role:** data. Historical WRI baseline, CC BY 4.0. Full source checksum and per-field evidence in catalogues/hydro. Current status and pumped-storage classification are not inferred.
 
 **Used by:** `catalogues/hydro/sources.json`, `examples/database/plot_hydro_catalogue.py`.
+
+### ons_wind_units
+
+Operador Nacional do Sistema Elétrico (n.d.). **ONS installed generation capacity: nominal generating-unit dictionary**. [Source](https://dados.ons.org.br/dataset/capacidade-geracao)
+
+**Role:** data_source. Original byte checksums and exact row/function locators retained in Wind source registry; no inferred farm totals or lifecycle.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/ons.py`, `docs/wind-catalogue.md`.
+
+### wri_brazil_identity
+
+World Resources Institute (n.d.). **WRI Brazil CEG importer and make_id identity mapping**. [Source](https://github.com/wri/global-power-plant-database/blob/7a91cfbb2a4e272597acbc00506d61fc1ec73b3d/build_databases/build_database_BRA.py)
+
+**Role:** data_source. Original byte checksums and exact row/function locators retained in Wind source registry; no inferred farm totals or lifecycle.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/ons.py`, `docs/wind-catalogue.md`.
+
+### unison_original_type_certificates_20261105
+
+Unison / UL Renewables (n.d.). **U136 TC-190502Rev0 pages1–2 and U151 TC-200103Rev0 page1**. [Source](https://unison.co.kr/unison/certification)
+
+**Role:** data_source. Historical original certificates only; exactKS crosswalk and full design annexes unresolved
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### ksnara_six_conflict_followups_20261105
+
+KS Certification Bodies Council (n.d.). **Four indexed exact KS wind-certificate details in six-ID conflict review**. [Source](https://ksnara.or.kr/web_basic/certified_vendor/products/list.asp)
+
+**Role:** data_source. Search-index observations; no present validity or technical configuration inferred
+
+**Used by:** `catalogues/wind/sources.json`.
+
+### goldwind_americas_25mw_en
+
+Goldwind Americas (n.d.). **Goldwind 2.5MW PMDD series: English original brochure**. [Source](https://www.goldwindamericas.com/sites/default/files/Goldwind-Brochure-2.5-Web.pdf)
+
+**Role:** data_source. Exact original OEM model tables; no independently validated performance or present certification inferred. Printed revision/publication date unspecified.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### goldwind_americas_25mw_es
+
+Goldwind Americas (n.d.). **Goldwind 2.5MW PMDD series: Spanish original brochure**. [Source](https://www.goldwindamericas.com/sites/default/files/2.5%20MW%20PMDD%20Turbine%20-%20Spanish.pdf)
+
+**Role:** data_source. Exact original OEM model tables; no independently validated performance or present certification inferred. Printed revision/publication date unspecified.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### epe_siga_bahia_20260113
+
+Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). **EPE-hosted SIGA EOL Bahia: complete381-entry layer partition dated2026-01-13**. [Source](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0)
+
+**Role:** data_source. Bahia full wind partition381IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
+
+**Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### goldwind_americas_15mw_en
+
+Goldwind Americas (n.d.). **Goldwind Americas 1.5MW PMDD English original brochure**. [Source](https://www.goldwindamericas.com/sites/default/files/Goldwind-Brochure-1.5-Web.pdf)
+
+**Role:** data_source. Complete original technical table visually reviewed; edition/revision and environmental conditions retained; graphs not digitized.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### goldwind_americas_25mw_digital_en
+
+Goldwind Americas (n.d.). **Goldwind Americas 2.5MW digital English original brochure**. [Source](https://www.goldwindamericas.com/sites/default/files/GW%202S%20MW-ENG-DIGITAL.pdf)
+
+**Role:** data_source. Complete original technical table visually reviewed; edition/revision and environmental conditions retained; graphs not digitized.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### boe_a_2026_19045
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Alto Cabrera PEol-382: prior-authorization application dismissed**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-19045)
+
+**Role:** data_source. Dated procedure and proposed capacities only; no commissioning or current census inference.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### boe_b_2026_29433
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Public consultation: Hibridación FV-PEol Salinas II, PEol-FV-312**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29433)
+
+**Role:** data_source. Dated procedure and proposed capacities only; no commissioning or current census inference.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.
+
+### boe_b_2026_29434
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Public consultation: Hibridación FV-PEol Salinas I, PEol-FV-311**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29434)
+
+**Role:** data_source. Dated procedure and proposed capacities only; no commissioning or current census inference.
+
+**Used by:** `catalogues/wind/sources.json`, `docs/wind-catalogue.md`.

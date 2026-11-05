@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-05T11:40:18Z",
-  "branch": "research/wind-20261105-0835",
-  "run_lock": "Acquire flock -n /tmp/energy-data-insights-wind-20261105-0835.lock; inspect active work and remote head; never overwrite another writer",
+  "updated_at": "2026-11-05T18:23:25Z",
+  "branch": "research/wind-20261105-1235",
+  "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-1235.lock; acquire before any branch write",
   "queue": [
     {
       "rank": 1,
@@ -235,39 +235,40 @@
       "rank": 3,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
-      "partition": "Unlinked REPD candidates in 0644 decision ledger, filtered by exact no-unique-crosswalk reason; offsets 200:400 next",
-      "next_offset": 200,
+      "partition": "Unlinked REPD saved candidates offsets800:1000 next",
+      "next_offset": 800,
       "status": "crosswalk_partition_completed_remaining_applications_pending",
       "tasks": [
         "Do not rerun 642 completed crosswalk enrichments as new work",
         "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
         "Reconcile scope of 642 enriched records against permits before enabling any capacity totals",
-        "Offsets 0:200 structurally reviewed, not identity-cleared; permit references and replacement chains retained in 0835 ledger. Next offsets 200:400."
+        "Offsets0:800 structurally reviewed; all remain identity holds, permit contents not yet reviewed. Next800:1000 then exact original permit crosswalks."
       ],
       "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
       "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "next_ids": [
-        "2951",
-        "2954",
-        "2957",
-        "2958",
-        "2959",
-        "2960",
-        "2961",
-        "2962",
-        "2963",
-        "2964",
-        "2967",
-        "2970",
-        "2972",
-        "2973",
-        "2974",
-        "2975",
-        "2976",
-        "2978",
-        "2980",
-        "2984"
-      ]
+        "4105",
+        "4106",
+        "4107",
+        "4112",
+        "4115",
+        "4117",
+        "4126",
+        "4127",
+        "4128",
+        "4129",
+        "4131",
+        "4132",
+        "4134",
+        "4135",
+        "4136",
+        "4137",
+        "4144",
+        "4145",
+        "4146",
+        "4147"
+      ],
+      "structural_review": "2026-11-05-1435-repd-review.json"
     },
     {
       "rank": 4,
@@ -284,7 +285,37 @@
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
       "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-      "next_task": "ANEEL daily/monthly paths stillblocked. IBAMA licensing FeatureServermetadata acquired but countquery HTTP200 withArcGIS500; it is not ANEELSIGA. Next official ANEEL spatialservice metadata; preserveCEGrootidentity. No unchanged retries."
+      "next_task": "EPE-hostedSIGA Bahia381complete68enriched313held. NextRNfullIDpartition; source remains2026-01-13dated. SavedONSfirst20heldcrosswalk reviewed,0resolved; historical catalogue/phase maps still needed. No completedONSrescan.",
+      "independent_source": {
+        "source": "ONS daily capacity generator CSV",
+        "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
+        "total_cegs": 1082,
+        "completed_offsets": [
+          0,
+          1082
+        ],
+        "next_offset": null,
+        "next_limit": null,
+        "next_cegs": [],
+        "ledger": "2026-11-05-1735-ons-review.json",
+        "status": "complete_pinned_wind_ceg_scan",
+        "cumulative_reviewed": 1082,
+        "cumulative_enriched": 340,
+        "cumulative_deferred": 742,
+        "continuation": "2026-11-05-1735-ons-continuation.json"
+      },
+      "epe_independent_source": {
+        "url": "https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0",
+        "dataset_date": "2026-01-13",
+        "completed_where": "sigtipogeracao='EOL' AND sigufprincipal='BA'",
+        "reviewed": 381,
+        "enriched": 68,
+        "held": 313,
+        "ledger": "2026-11-05-1807-epe-review.json",
+        "next_where": "sigtipogeracao='EOL' AND sigufprincipal='RN'",
+        "next_task": "Fresh ID inventory then complete bounded RN pages; record source dataset date and require stable before/after IDs. Bahia exhausted; reconcile313heldidentities without rescan."
+      },
+      "identity_review": "2026-11-05-1807-identity-review.json"
     },
     {
       "rank": 5,
@@ -345,7 +376,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "FGW Vestas old table complete (103 numeric rows). Next complete new-site table https://shop.wind-fgw.de/wp-content/uploads/2026/09/neuer_Ref_Vestas.pdf; keep withdrawn V136 and corrected V162 observations dated. Resolve2old HTq rows against generic V126-3.45 revision; V66 reduced-power contact notice lacks data. Do not repeat completed old table or Nordex tables.",
+      "next_task": "Six conflict IDs followed up1510; do not repeat sameindexqueries. Obtain U136 STC-180901 Rev0 design annex and explicit KS WT-1902-00-170356 to UL TC-190502 crosswalk; U151 TC-200103 page2/STC-200109 and KS WT-2201-00-190356 crosswalk. Resolve E138 certificate WT-2602-01-221439 E2(KSNARA)/E3(KNREC) identity before geometry. SWT3.2/GW109 originals and V162gearbox remain held. Then32prior configuration/revision holds; sevenFGWHTq originalDNV Mode0 crosswalks. Goldwind Americas2.5MW English3columns and Spanish2columns now complete: do not rescan. Next corrected area-definition table and GW10910.5static/10.2unspecified mode/revision crosswalk; KS107.5m remains held. Goldwind1.5MW English4columns and2.5MW digital-English2columns complete:4new2enriched; no rescan. Survival temperature semantics explicit in digital English, existing GW109 area/ratedspeed conflicts unresolved.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -355,7 +386,11 @@
         "new_equipment": 16,
         "enriched_equipment": 24
       },
-      "vestas_old_review": "2026-11-05-1135-fgw-review.json"
+      "vestas_old_review": "2026-11-05-1135-fgw-review.json",
+      "vestas_new_review": "2026-11-05-1235-fgw-review.json",
+      "knrec_review": "2026-11-05-1435-knrec-review.json",
+      "original_certificate_followup": "2026-11-05-1510-oem-review.json",
+      "latest_oem_review": "2026-11-05-1807-oem-review.json"
     },
     {
       "rank": 6,
@@ -440,17 +475,23 @@
         "2026-09-23",
         "2026-09-17",
         "2026-09-18",
-        "2026-09-19"
-      ],
-      "next_dates": [
+        "2026-09-19",
         "2026-09-14",
         "2026-09-15",
-        "2026-09-16"
+        "2026-09-16",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12"
+      ],
+      "next_dates": [
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "September14–16 allA/Bissues. September17–19completezero windnotices; do not repeat.",
-      "decision_ledger": "2026-11-04-2435-source-review.json",
+      "next_task": "September7–9 allA/Bissues. September10–12 complete5notices:3projects16plannedturbines,1solar identity hold,1generic exclusion. Original SalinasI/II/III118m configuration and shared-infrastructure scope still held.",
+      "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
         "2026-10-01",
         "2026-10-02",
@@ -492,7 +533,13 @@
         "2026-09-23",
         "2026-09-17",
         "2026-09-18",
-        "2026-09-19"
+        "2026-09-19",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12"
       ]
     },
     {

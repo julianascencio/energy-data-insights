@@ -615,3 +615,27 @@ rows await revision mapping, and the V66 reduced-power contact notice supplies
 no numerical data. These five-year modeled reference yields are neither measured
 production nor numerical power curves. The newer reference-site table remains
 a separate queued partition. See `research/2026-11-05-1135-fgw-review.json`.
+
+The subsequent new-reference-site Vestas table has 114 numerical rows: 109
+accepted observations across five new configurations and sixteen enriched
+records, with five HTq revision mappings deferred. Four withdrawn observations
+retain their 8 July 2026 decision date alongside replacements; three corrected
+observations retain 14 September 2026. These dates describe reference-result
+revisions, not equipment commissioning. Density and blank rotor cells stay
+unknown. The shared viewer and deterministic example count dated corrections.
+
+The checksum-pinned REPD review adapter stages saved unlinked candidates in
+ledger order without importing farms. Offsets 200–399 retain all 200 identity
+holds, including 160 permit references and 33 explicit replacement references.
+Primary permit contents still need review; application status never becomes
+farm status through this staging step. Next structural partition: 400–599.
+
+The 2026-11-05-1335 review adds one Korean certificate-scoped V126 HTq configuration. Its two reported power modes remain nested; current certificate validity and FGW equivalence are unknown. A second HTq entry has inconsistent class labels and remains held. REPD saved offsets400–599 were structurally reviewed; all200 remain identity holds, with no farm capacity or lifecycle assignments.
+
+The 5 November 14:35 batch adds 23 Korean certificate configurations, one Spanish
+wind-module proposal and eight planned turbines. Branch totals: 8,291 projects,
+479 equipment, 13,641 turbines and two curves. KNREC's full 57-row register now
+has review decisions; 32 remaining-row candidates and the earlier HTq conflict
+remain held. REPD's next structural-review cursor is 800; BOE's next dates are
+10–12 September 2026. The shared viewer distinguishes expired/unspecified issuer
+listings without asserting current validity. All capacity exclusions are retained.

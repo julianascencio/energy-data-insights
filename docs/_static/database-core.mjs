@@ -291,7 +291,7 @@ export function hydroCapacity(rows, field) {
 
 // Count published reference observations; never sum yields across hubs or sites.
 export function windReferenceYieldSummary(rows) {
-  const result = {models: 0, observations: 0, withdrawn: 0, unknownRotor: 0, withoutReference: 0, unknownConditions: 0, bySite: {}};
+  const result = {models: 0, observations: 0, withdrawn: 0, corrected: 0, unknownRotor: 0, withoutReference: 0, unknownConditions: 0, bySite: {}};
   for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
     let ext;
     try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
@@ -307,11 +307,116 @@ export function windReferenceYieldSummary(rows) {
         count++; result.observations++;
         result.bySite[observation.reference_site] = (result.bySite[observation.reference_site] || 0) + 1;
         if (entry.withdrawn === true) result.withdrawn++;
+        if (typeof entry.corrected_at === "string" && /^\d{4}-\d{2}-\d{2}$/.test(entry.corrected_at)) result.corrected++;
         if (entry.rotor_diameter_m == null) result.unknownRotor++;
         if (entry.operating_mode == null || observation.reference_conditions?.air_density_kg_m3 == null) result.unknownConditions++;
       }
     }
     if (count) result.models++; else result.withoutReference++;
   }
+  return result;
+}
+
+// Issuer listings are observations; blank status never establishes valid certification.
+export function windCertificationSummary(rows) {
+  const result = {models: 0, observations: 0, expired: 0, cancelled: 0, unspecified: 0, withoutEvidence: 0};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext; try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = null; }
+    const observations = Array.isArray(ext?.certification_register_observations) ? ext.certification_register_observations : [];
+    const seen = new Set();
+    const valid = observations.filter(o => {
+      if (!o?.certificate_id || !o.listed_date || !row.sources?.includes(o.source_id)) return false;
+      const key = `${o.source_id}:${o.certificate_id}:${o.listed_date}`;
+      if (seen.has(key)) return false;
+      seen.add(key); return true;
+    });
+    if (!valid.length) { result.withoutEvidence++; continue; }
+    result.models++;
+    for (const o of valid) {
+      result.observations++;
+      if (o.registry_status === "expired") result.expired++;
+      else if (o.registry_status === "cancelled") result.cancelled++;
+      else result.unspecified++;
+    }
+  }
+  return result;
+}
+
+// Daily ONS unit snapshots can contain turbine groups; do not sum them as farms.
+export function windOnsSummary(rows) {
+  const result = {projects:0,snapshots:0,units:0,unknownNominal:0,zeroNominal:0,withoutEvidence:0};
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const snapshots = Array.isArray(ext?.ons_wind_unit_snapshots) ? ext.ons_wind_unit_snapshots : [];
+    const valid = snapshots.filter(s => s?.source_id && s.source_sha256 && s.retrieved_at &&
+      Array.isArray(s.units) && Array.isArray(row.sources) && row.sources.includes(s.source_id));
+    if (!valid.length) { result.withoutEvidence++; continue; }
+    result.projects++; result.snapshots += valid.length;
+    for (const snapshot of valid) for (const unit of snapshot.units) {
+      result.units++;
+      if (unit.reported_nominal_mw == null) result.unknownNominal++;
+      if (unit.reported_nominal_mw === 0) result.zeroNominal++;
+    }
+  }
+  return result;
+}
+
+// Geographic evidence counts, never a current fleet or capacity distribution.
+export function windOnsGeography(rows) {
+  const stateProjects = new Map();
+  let projects = 0, unknownStateProjects = 0;
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let ext;
+    try { ext = JSON.parse(row.extensions_json || "{}"); } catch { ext = {}; }
+    const snapshots = Array.isArray(ext?.ons_wind_unit_snapshots) ? ext.ons_wind_unit_snapshots : [];
+    const states = new Set();
+    let valid = false, unknown = false;
+    for (const s of snapshots) {
+      if (!s?.source_id || !s.source_sha256 || !s.retrieved_at || !Array.isArray(s.units) ||
+          !Array.isArray(row.sources) || !row.sources.includes(s.source_id)) continue;
+      valid = true;
+      for (const unit of s.units) {
+        const state = unit?.original?.id_estado;
+        if (typeof state === "string" && /^[A-Z]{2}$/.test(state)) states.add(state);
+        else unknown = true;
+      }
+      if (!s.units.length) unknown = true;
+    }
+    if (!valid) continue;
+    projects++;
+    if (unknown) unknownStateProjects++;
+    for (const state of states) stateProjects.set(state, (stateProjects.get(state) || 0) + 1);
+  }
+  return {projects, stateProjects: Object.fromEntries([...stateProjects].sort(([a],[b]) => a.localeCompare(b))), unknownStateProjects};
+}
+
+// Keep registry categories and dates visible; never sum physical guarantee as capacity.
+export function windSigaSummary(rows) {
+  const result = {projects:0, snapshots:0, withoutEvidence:0, dates:[], states:[],
+    categories:{authorized_mw:{known:0,unknown:0,zero:0},inspected_mw:{known:0,unknown:0,zero:0},physical_guarantee_mw:{known:0,unknown:0,zero:0}}};
+  const dates=new Set(), states=new Set();
+  for (const row of rows.filter(r=>r.entity_type === "projects")) {
+    let ext;
+    try {ext=JSON.parse(row.extensions_json || "{}");} catch {ext={};}
+    const valid=(Array.isArray(ext?.epe_siga_snapshots) ? ext.epe_siga_snapshots : []).filter(s=>
+      s?.source_id && s.source_sha256 && s.observation_date && s.normalized_power &&
+      Array.isArray(row.sources) && row.sources.includes(s.source_id));
+    if (!valid.length) {result.withoutEvidence++; continue;}
+    result.projects++;
+    const seen=new Set();
+    for (const s of valid) {
+      const key=JSON.stringify([s.source_id,s.source_sha256,s.object_id]);
+      if (seen.has(key)) continue;
+      seen.add(key); result.snapshots++; dates.add(s.observation_date);
+      if (s.original?.sigufprincipal) states.add(s.original.sigufprincipal);
+      for (const [field,counts] of Object.entries(result.categories)) {
+        const value=s.normalized_power[field];
+        if (typeof value !== "number" || !Number.isFinite(value) || value < 0) counts.unknown++;
+        else {counts.known++; if (value === 0) counts.zero++;}
+      }
+    }
+  }
+  result.dates=[...dates].sort(); result.states=[...states].sort();
   return result;
 }

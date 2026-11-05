@@ -10,6 +10,7 @@ import copy
 import hashlib
 import json
 import math
+from datetime import date
 from typing import Any
 
 from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
@@ -43,6 +44,19 @@ def stage_reference_yields(
     identities: dict[str, dict[str, Any]] = {}
     ledger = []
     for slot in slots:
+        for field in ("withdrawn_at", "corrected_at"):
+            value = slot.get(field)
+            if value is not None:
+                try:
+                    valid = (
+                        isinstance(value, str) and date.fromisoformat(value).isoformat() == value
+                    )
+                except ValueError:
+                    valid = False
+                if not valid or value > now[:10]:
+                    raise ValueError("Invalid or future reference revision date")
+        if slot.get("withdrawn_at") and slot.get("withdrawn") is not True:
+            raise ValueError("Withdrawal date requires withdrawn observation")
         for field in ("rated_power_kw", "hub_height_m", "rotor_area_m2", "reference_yield_kwh"):
             v = slot[field]
             if (
@@ -139,7 +153,8 @@ def stage_reference_yields(
                     name=f"{identity['manufacturer']} {identity['model']} ({identity['variant']})",
                     equipment_category="wind_turbine",
                     rated_power_conditions=(
-                        "FGW printed type nameplate; density and operating mode undisclosed"
+                        "FGW printed type nameplate; density undisclosed; "
+                        "see nested mode-specific rows"
                     ),
                     capacity_scope=(
                         "Exact printed type/revision; hub options are nested reference calculations"
