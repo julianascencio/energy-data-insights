@@ -539,3 +539,7 @@ contexts to eight existing plants; these are not installed AC/DC ratings or
 owner/operator assignments. Lucía's November environmental consultation adds
 proposed modules/area while preserving its earlier DC rating. See
 `research/20261105T0300_report.md` and the explicit additive-context resolutions.
+
+### Research update — 5 November 2026, 04:00 UTC
+
+200 existing Chinese projects gain directly reported historical sole corporate owners, operators and complete-phase evidence (600 substantive fields). Seventeen SAJ and eleven EPEVER exact inverter models add469 canonical technical values plus qualified conditions. SAJ regional suffixes and duplicated PDF pages are excluded. EPEVER continuous AC watts, timed overload watts, battery-side charge currents and temperature-qualified PV open-circuit limits stay distinct. Native H×W×L dimensions map L to length, not assumed depth; generic warranty claims remain qualified context. No grid-export capability or current availability is inferred. See dated0400 review, source captures, coverage, validation and report; rights/access-limited Canadian and Solinteg candidates remain unaccepted.

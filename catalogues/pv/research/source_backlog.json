@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T03:18:23.623553+00:00",
+  "updated_at": "2026-11-05T04:13:24.931382+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "03:00iteration: secondaryLatinAmericapriority with Uruguay ADMEPVtable andgovernmentprimaryrecords; non-USGEM200completecorporatelocations;15Aforeinverters,1DEGERtracker,2Noarkcombiners. Explicitfactualconflictsheld;selectedtablesexhausted.",
-  "next_highest_value_source": "GEMstrictcorporatequeueafterL100000810050,1014remainingbeforemanualreview; ADME12heldstationidentitiesand3futureincorporations requireindependentnames/phasecrosswalk. No hourlyfullPDFredownload; currentMay2026reporthashsaved.",
+  "selection_note": "04:00 iteration: secondary North America priority; AESO/OEB Canadian multi-record sources attempted first, Canada IAAC assessment reviewed and held; 200 complete Chinese corporate-party locations enriched; 28 substantive SAJ/EPEVER inverter hardware models accepted.",
+  "next_highest_value_source": "GEM strict corporate queue after L100000810626 (814 structurally eligible before manual review); preserve wider operator-only L100000802626 queue (2694). For North America, find a permissively reusable Canadian plant-level source; AESO/IAAC rights and OEB access are held.",
   "sources": [
     {
       "id": "uk_repd",
@@ -13908,6 +13908,494 @@
       "next_due_check": "2026-11-06T03:00:00Z",
       "retry_condition": "Resolveapplicablereuserights/accessbeforeextracting;genericSolarinsufficientPVproof",
       "next_action": "Resolveapplicablereuserights/accessbeforeextracting;genericSolarinsufficientPVproof"
+    },
+    {
+      "id": "gem_corporate_20261105T0400",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": [
+        "https://globalenergymonitor.org/projects/global-solar-power-tracker/"
+      ],
+      "format": "Primary public HTML/PDF; pinned XLSX for GEM",
+      "version_or_date": "February2026",
+      "licence_assessment": "CC BY4.0 with existing attribution; whole-location TZ/WKSL exclusions; corporate-only review",
+      "access_assessment": "Ordinary GET; HTTP failures preserved; no retry/bypass/forms",
+      "publication_cadence": "Release-based/unstated; metadata/checksum before resuming; no hourly full downloads",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T04:01:09.887770+00:00",
+      "last_attempt": "2026-11-05T04:13:24.931382+00:00",
+      "captures": [
+        {
+          "url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+          "retrieved_at": "2026-11-05T04:01:09.887770+00:00",
+          "sha256": "c8bcad6fcc2b63bbde5d091cdca571a8a1adc574c1ac8eebfbf55c7b8ecd918b",
+          "bytes": 134149,
+          "status": 200,
+          "etag": null,
+          "local_raw_name": "gem.html",
+          "last_modified": "Thu, 05 Nov 2026 03:51:16 GMT",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "reviewed": 200,
+      "accepted": 200,
+      "rejected": 0,
+      "held": 0,
+      "result": "200 existing complete locations;200owners+200operators+200historical contexts;173owner/197operator labels manually reviewed. Three prior party disagreements still excluded.",
+      "fields_offered": [
+        "owner",
+        "operator",
+        "historical complete-phase evidence"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API; dated source/page/row review; no fuzzy merge",
+      "processed_cursor": {
+        "after": "L100000810050",
+        "next": "L100000810626",
+        "remaining_corporate_filtered": 814,
+        "operator_only_cursor": "L100000802626",
+        "operator_only_remaining": 2694,
+        "workbook_sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959"
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T04:00:00Z",
+      "retry_condition": "Resume next strict partition; preserve broader operator-only queue",
+      "next_action": "Resume next strict partition; preserve broader operator-only queue"
+    },
+    {
+      "id": "saj_h2_20261105T0400",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.saj-electric.com/hubfs/Europe%20Region%204%20document/Datasheet/Residential/H2-(5-10K)-T2-datasheet-EN-BEU.pdf",
+      "endpoint": [
+        "https://www.saj-electric.com/hubfs/Europe%20Region%204%20document/Datasheet/Residential/H2-(5-10K)-T2-datasheet-EN-BEU.pdf",
+        "https://www.saj-electric.com/hubfs/Europe%20Region%204%20document/Datasheet/Residential/H2-(3-6K)-S2-datasheet-EN-BEU.pdf",
+        "https://www.saj-electric.com/hubfs/Europe%20Region%204%20document/Datasheet/Residential/H2-(10-30K)-(T2%2cT3)-datasheet-EN-BEU.pdf",
+        "https://www.saj-electric.com/services-support-download?page=1&product_model=H2_Series&product_type=Hybrid+Inverter&region=Europe&type=Datasheet",
+        "https://www.saj-electric.com/privacy-policy"
+      ],
+      "format": "Primary public HTML/PDF; pinned XLSX for GEM",
+      "version_or_date": "Unversioned public sources; retrieved2026-11-05",
+      "licence_assessment": "Copyright retained; bounded individually reviewed factual specifications, no document/table/image/prose redistribution; no open bulk licence asserted. Privacy policy is not a reuse grant.",
+      "access_assessment": "Ordinary GET; HTTP failures preserved; no retry/bypass/forms",
+      "publication_cadence": "Release-based/unstated; metadata/checksum before resuming; no hourly full downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T04:04:37.695660+00:00",
+      "last_attempt": "2026-11-05T04:13:24.931382+00:00",
+      "captures": [
+        {
+          "url": "https://www.saj-electric.com/hubfs/Europe%20Region%204%20document/Datasheet/Residential/H2-(5-10K)-T2-datasheet-EN-BEU.pdf",
+          "retrieved_at": "2026-11-05T04:04:35.179682+00:00",
+          "sha256": "dc860166b08db861ddcd20bd3ad9447f1cb4780a952067f292e7df56dbda680b",
+          "bytes": 414123,
+          "status": 200,
+          "etag": "\"42671485249ae7fb9e9d3484d76717ee\"",
+          "local_raw_name": "saj0.pdf",
+          "last_modified": "Thu, 17 Jul 2025 08:58:28 GMT",
+          "content_type": "application/pdf"
+        },
+        {
+          "url": "https://www.saj-electric.com/hubfs/Europe%20Region%204%20document/Datasheet/Residential/H2-(3-6K)-S2-datasheet-EN-BEU.pdf",
+          "retrieved_at": "2026-11-05T04:04:37.695660+00:00",
+          "sha256": "cc05ae7cc024eac7afddd805028a728d1211b497e07979cabc0f05954118b4fd",
+          "bytes": 420799,
+          "status": 200,
+          "etag": "\"3bd82319c2ab69212c234f10914d1874\"",
+          "local_raw_name": "saj1.pdf",
+          "last_modified": "Thu, 17 Jul 2025 08:58:28 GMT",
+          "content_type": "application/pdf"
+        },
+        {
+          "url": "https://www.saj-electric.com/hubfs/Europe%20Region%204%20document/Datasheet/Residential/H2-(10-30K)-(T2%2cT3)-datasheet-EN-BEU.pdf",
+          "retrieved_at": "2026-11-05T04:04:35.435626+00:00",
+          "sha256": "0f0e75ad3f318318d1ba3f1d84a0f2c1f4864555b2deb45f4a1d0fd4cfa7acd7",
+          "bytes": 430739,
+          "status": 200,
+          "etag": "\"b0ac79187a4df270dda40219aa9bae74\"",
+          "local_raw_name": "saj2.pdf",
+          "last_modified": "Thu, 17 Jul 2025 08:58:28 GMT",
+          "content_type": "application/pdf"
+        },
+        {
+          "url": "https://www.saj-electric.com/services-support-download?page=1&product_model=H2_Series&product_type=Hybrid+Inverter&region=Europe&type=Datasheet",
+          "retrieved_at": "2026-11-05T04:02:54.387137+00:00",
+          "sha256": "2b59e26e7aba230f75d9add9e53c9bd4bbe4df8506eca6e5d80cbeb30cd6b3c6",
+          "bytes": 169822,
+          "status": 200,
+          "etag": null,
+          "local_raw_name": "saj_download.html",
+          "last_modified": "Wed, 04 Nov 2026 10:14:07 GMT",
+          "content_type": "text/html; charset=UTF-8"
+        },
+        {
+          "url": "https://www.saj-electric.com/privacy-policy",
+          "retrieved_at": "2026-11-05T04:02:41.071863+00:00",
+          "sha256": "56b88192e1ca9308f50cd13fe6b37722b7a3aaa3c68b700cea85bd2b90cea502",
+          "bytes": 131252,
+          "status": 200,
+          "etag": null,
+          "local_raw_name": "saj_terms.html",
+          "last_modified": "Wed, 04 Nov 2026 10:22:28 GMT",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "reviewed": 20,
+      "accepted": 17,
+      "rejected": 0,
+      "held": 3,
+      "result": "Three exact-model tables:17 hardware models accepted;3 region-specific suffix columns held to avoid configuration inflation. Every PDF has2 identical pages, counted once.",
+      "fields_offered": [
+        "AC W/VA separate",
+        "PV/MPPT",
+        "battery",
+        "mechanical",
+        "thermal/derating",
+        "protection",
+        "qualified warranty claim"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API; dated source/page/row review; no fuzzy merge",
+      "processed_cursor": {
+        "completed_tables": [
+          "H2-3-6K-S2",
+          "H2-5-10K-T2",
+          "H2-10-30K-T2/T3"
+        ],
+        "excluded_region_columns": [
+          "H2-10K-T2-B",
+          "H2-25K-T3-BE",
+          "H2-30K-T3-DE"
+        ]
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T04:00:00Z",
+      "retry_condition": "Selected nonregional tables exhausted; next distinct OEM architecture or official revision only",
+      "next_action": "Selected nonregional tables exhausted; next distinct OEM architecture or official revision only"
+    },
+    {
+      "id": "epever_upower_20261105T0400",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.epever.com/upload/file/1811/EPEVER-Datasheet-UPower.pdf",
+      "endpoint": [
+        "https://www.epever.com/upload/file/1811/EPEVER-Datasheet-UPower.pdf",
+        "https://pilot.epever.com/support/documents",
+        "https://www.epever.com/privacy-policy/"
+      ],
+      "format": "Primary public HTML/PDF; pinned XLSX for GEM",
+      "version_or_date": "Unversioned public sources; retrieved2026-11-05",
+      "licence_assessment": "Copyright retained; bounded individually reviewed facts only, no open bulk licence. Terms-of-use anchor is placeholder; Pilot environment terms do not grant global legacy PDF reuse.",
+      "access_assessment": "Ordinary GET; HTTP failures preserved; no retry/bypass/forms",
+      "publication_cadence": "Release-based/unstated; metadata/checksum before resuming; no hourly full downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T04:02:44.522230+00:00",
+      "last_attempt": "2026-11-05T04:13:24.931382+00:00",
+      "captures": [
+        {
+          "url": "https://www.epever.com/upload/file/1811/EPEVER-Datasheet-UPower.pdf",
+          "retrieved_at": "2026-11-05T04:02:10.253957+00:00",
+          "sha256": "345149b518d3fd1ba6fa71b116aab59a2705d671e6a2b7477d854dd3fe684d75",
+          "bytes": 600529,
+          "status": 200,
+          "etag": "\"691596d5-929d1\"",
+          "local_raw_name": "epever.pdf",
+          "last_modified": "Thu, 13 Nov 2025 08:29:09 GMT",
+          "content_type": "application/pdf"
+        },
+        {
+          "url": "https://pilot.epever.com/support/documents",
+          "retrieved_at": "2026-11-05T04:02:44.522230+00:00",
+          "sha256": "1a5c9aab75256c7f3f5e8932035fa6a83ccd27aa6a3451d98a21206d3da7f90d",
+          "bytes": 55482,
+          "status": 200,
+          "etag": null,
+          "local_raw_name": "epever_download.html",
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://www.epever.com/privacy-policy/",
+          "retrieved_at": "2026-11-05T04:02:41.425244+00:00",
+          "sha256": "8ef8a1ce32ef024114693a4869704afbc568bc1bd1936317aefc2c6901d6fe1d",
+          "bytes": 949353,
+          "status": 200,
+          "etag": null,
+          "local_raw_name": "epever_terms.html",
+          "last_modified": "Wed, 04 Nov 2026 23:30:23 GMT",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "reviewed": 11,
+      "accepted": 11,
+      "rejected": 0,
+      "held": 0,
+      "result": "11 distinct inverter/charger hardware models accepted; charge/battery voltages, currents, mass and PV limits distinguish models. Output voltage settings are not separate models. One output-tolerance conflict group withheld:12V model220V table±5% versus footnote−6/+5%; pages2–5 visually checked.",
+      "fields_offered": [
+        "continuous AC W",
+        "time-qualified overload",
+        "PV Voc temperature conditions",
+        "battery-side current",
+        "mechanical/IP/thermal"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API; dated source/page/row review; no fuzzy merge",
+      "processed_cursor": {
+        "completed_pages": [
+          3,
+          4,
+          5
+        ],
+        "models": 11
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T04:00:00Z",
+      "retry_condition": "Selected pages3–5 exhausted; next genuinely different hardware family after fresh rights/revision check",
+      "next_action": "Selected tables exhausted; clarify UP1000-M3212 tolerance on a revised OEM document before accepting that field."
+    },
+    {
+      "id": "solinteg_rights_20261105T0400",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.solinteg.com/legal-statement.html",
+      "endpoint": [
+        "https://www.solinteg.com/legal-statement.html"
+      ],
+      "format": "Primary public HTML/PDF; pinned XLSX for GEM",
+      "version_or_date": "Unversioned public sources; retrieved2026-11-05",
+      "licence_assessment": "Prior written permission explicitly required for copying/distribution/storage/retrieval; held",
+      "access_assessment": "Ordinary GET; HTTP failures preserved; no retry/bypass/forms",
+      "publication_cadence": "Release-based/unstated; metadata/checksum before resuming; no hourly full downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T04:01:54.546408+00:00",
+      "last_attempt": "2026-11-05T04:13:24.931382+00:00",
+      "captures": [
+        {
+          "url": "https://www.solinteg.com/legal-statement.html",
+          "retrieved_at": "2026-11-05T04:01:54.546408+00:00",
+          "sha256": "277416ec8a04cea457a596796f1041731f6bde789711bcab046a30b9e449d478",
+          "bytes": 114519,
+          "status": 200,
+          "etag": null,
+          "local_raw_name": "solinteg_terms.html",
+          "last_modified": null,
+          "content_type": "text/html;charset=UTF-8"
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 0,
+      "result": "Multi-model MHT family discovered; no technical extraction or accepted model.",
+      "fields_offered": [
+        "potential multi-model inverter tables"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API; dated source/page/row review; no fuzzy merge",
+      "processed_cursor": null,
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T04:00:00Z",
+      "retry_condition": "Only resume after rights basis changes; otherwise select different OEM",
+      "next_action": "Only resume after rights basis changes; otherwise select different OEM"
+    },
+    {
+      "id": "aeso_canada_20261105T0400",
+      "country": "CAN",
+      "entity": "projects",
+      "source_url": "https://www.aeso.ca/market/market-and-system-reporting/",
+      "endpoint": [
+        "https://www.aeso.ca/market/market-and-system-reporting/",
+        "https://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet",
+        "https://www.aeso.ca/market/market-and-system-reporting/data-requests/",
+        "https://www.aeso.ca/legal/"
+      ],
+      "format": "Primary public HTML/PDF; pinned XLSX for GEM",
+      "version_or_date": "Unversioned public sources; retrieved2026-11-05",
+      "licence_assessment": "Noncommercial/personal/educational unmodified reproduction only; other uses require permission; held",
+      "access_assessment": "Ordinary GET; HTTP failures preserved; no retry/bypass/forms",
+      "publication_cadence": "Release-based/unstated; metadata/checksum before resuming; no hourly full downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T04:02:55.353279+00:00",
+      "last_attempt": "2026-11-05T04:13:24.931382+00:00",
+      "captures": [
+        {
+          "url": "https://www.aeso.ca/market/market-and-system-reporting/",
+          "retrieved_at": "2026-11-05T04:02:09.678153+00:00",
+          "sha256": "674b8ab6ce3f528b4ddcc3577874566ef28875760bdcde17fcd4888e82a9c0e0",
+          "bytes": 74585,
+          "status": 200,
+          "etag": "\"ba10725af92ae67de1fab0b8b30b41a2\"",
+          "local_raw_name": "aeso.html",
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet",
+          "retrieved_at": "2026-11-05T04:02:54.247334+00:00",
+          "error": "HTTP Error 503: Service Unavailable",
+          "local_raw_name": "aeso_csd.html",
+          "etag": null,
+          "last_modified": null,
+          "content_type": null
+        },
+        {
+          "url": "https://www.aeso.ca/market/market-and-system-reporting/data-requests/",
+          "retrieved_at": "2026-11-05T04:02:54.901311+00:00",
+          "sha256": "eb473c679a449a11a2b54c7b1487df5fcb1fa66418359aa1c8ae4b0af6e73165",
+          "bytes": 83817,
+          "status": 200,
+          "etag": "\"5b321e4bb00a8dafbf30d74283af34f9\"",
+          "local_raw_name": "aeso_data.html",
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://www.aeso.ca/legal/",
+          "retrieved_at": "2026-11-05T04:02:55.353279+00:00",
+          "sha256": "72e9d0e053fc1b78a1dd6cc4e337805b7c5e57fbe76c0a51b75dc9fb26d05404",
+          "bytes": 74078,
+          "status": 200,
+          "etag": "\"8136d0c17d1e08ee1d41c1b90c1b750a\"",
+          "local_raw_name": "aeso_terms.html",
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 0,
+      "result": "Multi-record market-report source and data access reviewed; CSD normal GET503; no plant candidates parsed or accepted.",
+      "fields_offered": [
+        "potential plant IDs/AC/operation"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API; dated source/page/row review; no fuzzy merge",
+      "processed_cursor": {
+        "integrated": false,
+        "row_cursor": null
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T04:00:00Z",
+      "retry_condition": "Recheck access after24h and rights before extraction; no API registration or bypass",
+      "next_action": "Recheck access after24h and rights before extraction; no API registration or bypass"
+    },
+    {
+      "id": "oeb_licences_20261105T0400",
+      "country": "CAN",
+      "entity": "projects",
+      "source_url": "https://www.oeb.ca/open-data/licensed-market-participants",
+      "endpoint": [
+        "https://www.oeb.ca/open-data/licensed-market-participants"
+      ],
+      "format": "Primary public HTML/PDF; pinned XLSX for GEM",
+      "version_or_date": "Unversioned public sources; retrieved2026-11-05",
+      "licence_assessment": "Reuse terms unverified because landing503; no ingestion",
+      "access_assessment": "Ordinary GET; HTTP failures preserved; no retry/bypass/forms",
+      "publication_cadence": "Release-based/unstated; metadata/checksum before resuming; no hourly full downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T04:04:40.695374+00:00",
+      "last_attempt": "2026-11-05T04:13:24.931382+00:00",
+      "captures": [
+        {
+          "url": "https://www.oeb.ca/open-data/licensed-market-participants",
+          "retrieved_at": "2026-11-05T04:04:40.695374+00:00",
+          "error": "HTTP Error 503: Service Unavailable",
+          "local_raw_name": "oeb.html",
+          "etag": null,
+          "last_modified": null,
+          "content_type": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 0,
+      "result": "Official open-data licensed-market-participant source discovered; XML not tested. Licence holders are not plant identities.",
+      "fields_offered": [
+        "potential legal entity/licence evidence"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API; dated source/page/row review; no fuzzy merge",
+      "processed_cursor": {
+        "discovered_xml": "https://www.oeb.ca/_html/xml/all_Licences_report_File.xml",
+        "integrated": false
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T04:00:00Z",
+      "retry_condition": "After24h access recovery inspect licence and representative XML; use party enrichment only with exact plant linkage",
+      "next_action": "After24h access recovery inspect licence and representative XML; use party enrichment only with exact plant linkage"
+    },
+    {
+      "id": "iaac_88788_20261105T0400",
+      "country": "CAN",
+      "entity": "projects",
+      "source_url": "https://iaac-aeic.gc.ca/050/evaluations/proj/88788",
+      "endpoint": [
+        "https://iaac-aeic.gc.ca/050/evaluations/proj/88788",
+        "https://www.canada.ca/en/transparency/terms.html"
+      ],
+      "format": "Primary public HTML/PDF; pinned XLSX for GEM",
+      "version_or_date": "Unversioned public sources; retrieved2026-11-05",
+      "licence_assessment": "Canada terms permit noncommercial reproduction but require prior permission for commercial redistribution; no applicable open licence established; held",
+      "access_assessment": "Ordinary GET; HTTP failures preserved; no retry/bypass/forms",
+      "publication_cadence": "Release-based/unstated; metadata/checksum before resuming; no hourly full downloads",
+      "last_release": null,
+      "last_retrieval": "2026-11-05T04:05:55.860132+00:00",
+      "last_attempt": "2026-11-05T04:13:24.931382+00:00",
+      "captures": [
+        {
+          "url": "https://iaac-aeic.gc.ca/050/evaluations/proj/88788",
+          "retrieved_at": "2026-11-05T04:04:36.485291+00:00",
+          "sha256": "e4fa9910e91623c3b6cacb1a0005af80736358de765fe99b780d77737fad9379",
+          "bytes": 163823,
+          "status": 200,
+          "etag": null,
+          "local_raw_name": "canada_88788.html",
+          "last_modified": null,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "url": "https://www.canada.ca/en/transparency/terms.html",
+          "retrieved_at": "2026-11-05T04:05:55.860132+00:00",
+          "sha256": "2ec845b66e69d47c39b4726825d03d5e90361d7ff84da9a581f9ac23c3d315f9",
+          "bytes": 35423,
+          "status": 200,
+          "etag": null,
+          "local_raw_name": "canada_terms.html",
+          "last_modified": "Thu, 05 Nov 2026 00:31:48 GMT",
+          "content_type": "text/html;charset=utf-8"
+        }
+      ],
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 1,
+      "result": "Upper Nicola/Okanagan plannedPV24MWdc/15MWac reviewed. Hold rights plus internally inconsistent module counts37296 versus approximately20000 and assessment chronology. No lifecycle promotion, private contacts or scalar additions.",
+      "fields_offered": [
+        "explicit PV and AC/DC",
+        "proponent",
+        "land",
+        "grid",
+        "planned inverter count"
+      ],
+      "mapping": "Exact native/model identities; existing upsert API; dated source/page/row review; no fuzzy merge",
+      "processed_cursor": {
+        "assessment_id": "88788",
+        "accepted": false
+      },
+      "estimated_useful_yield": {
+        "future_accepted": null
+      },
+      "next_due_check": "2026-11-06T04:00:00Z",
+      "retry_condition": "Only resume on applicable reuse permission and clarified project description; do not accept assessment completion as operation",
+      "next_action": "Only resume on applicable reuse permission and clarified project description; do not accept assessment completion as operation"
     }
   ],
   "source_refresh_queue": [

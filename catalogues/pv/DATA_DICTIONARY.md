@@ -603,3 +603,7 @@ Noark input strings are upper bounds; per-output disconnector ratings are not
 summed into plant current. ADME authorized injection MW stays in a dated context,
 separate from installed AC/DC capacity and party roles. Uruguay module/area
 values from environmental consultation describe proposed design, not operation.
+
+### Research update — 5 November 2026, 04:00 UTC
+
+200 existing Chinese projects gain directly reported historical sole corporate owners, operators and complete-phase evidence (600 substantive fields). Seventeen SAJ and eleven EPEVER exact inverter models add469 canonical technical values plus qualified conditions. SAJ regional suffixes and duplicated PDF pages are excluded. EPEVER continuous AC watts, timed overload watts, battery-side charge currents and temperature-qualified PV open-circuit limits stay distinct. Native H×W×L dimensions map L to length, not assumed depth; generic warranty claims remain qualified context. No grid-export capability or current availability is inferred. See dated0400 review, source captures, coverage, validation and report; rights/access-limited Canadian and Solinteg candidates remain unaccepted.
