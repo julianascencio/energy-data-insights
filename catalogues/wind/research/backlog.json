@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T04:38:40Z",
+  "updated_at": "2026-11-05T05:37:52Z",
   "branch": "research/wind-20261104-2335",
   "run_lock": "Acquire flock -n on /tmp/energy-data-insights-wind-20261104-2335.lock for research/wind-20261104-2335; inspect active work and remote head; publish using an expected-head fast-forward, never overwrite another writer.",
   "queue": [
@@ -17,7 +17,7 @@
       ],
       "last_attempt_url": "https://data.usgs.gov/datacatalog/metadata/USGS.6001e327d34e592d8671fae0.xml",
       "last_http_status": 403,
-      "next_task": "EIA final2025 Operable60000–60999 next;1–59999 complete. Reuse pinned originals. Resolve existing identity holds from dated ledgers without name-only merges; no retry of unchanged EPA403.",
+      "next_task": "EIA final2025 Operable61000–61999 next;1–60999 complete. Reuse pinned originals. Resolve existing identity holds from dated ledgers without name-only merges; no retry of unchanged EPA403.",
       "latest_attempt_review": "2026-11-04-1235-source-review.json",
       "independent_source_completed": {
         "source": "EIA2025final",
@@ -28,9 +28,9 @@
       },
       "operable_completed": [
         1,
-        59999
+        60999
       ],
-      "operable_decision_ledger": "2026-11-05-0435-eia-review.json"
+      "operable_decision_ledger": "2026-11-05-0535-eia-review.json"
     },
     {
       "rank": 2,
@@ -210,11 +210,13 @@
       "url": "https://github.com/NatLabRockies/turbine-models",
       "partition": "V82 first, then offshore exact commercial models with original references",
       "next_offset": 0,
-      "status": "provenance_review",
+      "status": "v82_original_provenance_held",
       "tasks": [
         "Reconcile source document revision, density and curve origin before import",
         "Separate original numerical, digitized and generic reference turbines; add thrust curves only with exact-model support"
-      ]
+      ],
+      "next_task": "V82 current YAML/CSV provenance review complete; hold until original reference, revision, density and mode supplied. Next exact offshore commercial-model metadata, excluding generic reference turbines.",
+      "decision_ledger": "2026-11-05-0535-source-review.json"
     },
     {
       "rank": 8,

@@ -1,33 +1,33 @@
 {
-  "batch": "2026-11-05-0435",
-  "iteration_parent": "8bc81c58863ecafcd17419f05e5707ff82a1ae9d",
+  "batch": "2026-11-05-0535",
+  "iteration_parent": "724fb9097f6396ef3b1ab6eb9233c02842b5dcf6",
   "local": {
-    "tests": "18 EIA adapter tests passed; broad234-test attempt failed during temporary-storage exhaustion, no full-suite pass claimed",
-    "viewer": "22 Node tests and JavaScript syntax passed; existing viewer reused unchanged",
-    "catalogue": "22181 valid;22086 unchanged;95 enriched projects preserve prior scalar facts, IDs, creation timestamps and all6capacity summaries",
-    "source_registry": "All366 preceding source entries unchanged;one bounded EIA alias added",
-    "replay": "Original workbook hashes and EIA same-source idempotence passed",
+    "tests": "18 EIA adapter tests passed; broad suite not rerun under storage exhaustion",
+    "viewer": "22 Node tests and JavaScript syntax passed; shared viewer reused unchanged",
+    "catalogue": "22181 valid;22111 unchanged;70 enriched projects preserve prior scalar facts, IDs, creation timestamps and all6capacity summaries",
+    "source_registry": "All 367 prior source entries unchanged;one bounded EIA alias added",
+    "replay": "Original workbook checksums and same-source idempotence passed",
     "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD",
     "example": "Offline Wind example passed against expanded isolated catalogue",
-    "quality": "Ruff,format972files,ty,citations passed;working-repository hygiene4466files passed;isolated catalogue validated separately",
+    "quality": "Ruff,format972files,ty,citations passed;working-repository hygiene4466files passed;isolated schema/provenance validation separate",
     "docs": "Not executed: full main filesystem"
   },
   "snapshot_sha256": {
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "59867ef23cad25cc4c327e7305be9b4ed156347c86ad4b8258b0ece09bccbb0f",
-    "manifest.json": "c0d5309de57ef904183563a125c8599b6192f0bf3efa74acfaefad2a6ce1c797",
-    "projects.parquet": "17160414612c72e628c9712fde42ad6cfb52d4ad22eec7cf38738dac0b876954",
+    "manifest.json": "925fafee77c9cc129c6800509c0bf44ef0d383c4689ada64159a65b4e43a7a29",
+    "projects.parquet": "f359cb0cb81462335710b7ffa560edad78c4890889aa26c30933540475500a44",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "sources.json": "ceaeac8bdb42df9568ce7a0b6caa210e778472fbb4f82082643bc02cc851f795",
+    "sources.json": "a513772b07f95cde6fd3307a263b343c5cc682a2378fb90de94ba290958cff0f",
     "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135"
   },
   "remote_ci": {
-    "prior_head": "8bc81c58863ecafcd17419f05e5707ff82a1ae9d",
+    "prior_head": "724fb9097f6396ef3b1ab6eb9233c02842b5dcf6",
     "prior_result": "Python and Documentation passed",
     "new_head": "Not yet published"
   },
   "not_executed": [
-    "Full successful local Python suite",
+    "Full local Python suite",
     "Strict local docs/full gallery",
     "Browser",
     "Package rebuild; no package code changed"
