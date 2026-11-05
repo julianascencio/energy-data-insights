@@ -21,6 +21,20 @@ hourly acquisition, bias fitting, validation and raster export are reproduced
 with ``scripts/prepare_aemet_canary_calibration.py`` and
 ``scripts/analyze_aemet_canary_calibration.py``. See the
 :doc:`study guide </_generated/guides/aemet-era5-canary>` for coverage and limits.
+
+Download the reproducible results:
+
+* :download:`Fitted weather parameters <aemet_era5_canary/calibration_parameters.csv>`
+* :download:`Held-out validation <aemet_era5_canary/validation.csv>`
+* :download:`Cell rates and annual stress drivers <aemet_era5_canary/rates.csv>`
+* :download:`Adjusted four-band GeoTIFF <aemet_era5_canary/corrected_rates.tif>`
+* :download:`Original four-band GeoTIFF <aemet_era5_canary/raw_rates.tif>`
+* :download:`Difference four-band GeoTIFF <aemet_era5_canary/delta_rates.tif>`
+
+Spatial holdout temperature RMSE increases slightly (2.60 to 2.66 °C), despite
+improved station-level temporal validation. RH and wind spatial RMSE improve.
+The maps therefore remain provisional scenarios, not demonstrated temperature
+accuracy between stations or measured PV field losses.
 """
 
 import json

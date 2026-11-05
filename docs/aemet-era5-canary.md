@@ -5,6 +5,36 @@ photodegradation, thermomechanical degradation and the model's combined rate.
 Each mechanism has original, adjusted and difference maps. Station points are
 an overlay; they are not the only calculated locations.
 
+## Captured study results
+
+The completed capture contains 54,500 AEMET daily observations from a 77-station
+inventory and two full hourly years at 41 requested ERA5 nodes. Seventy-three
+stations contribute fitted coefficients: 72 for temperature, 69 for RH and 70
+for wind. All 441 land display cells have support for all three variables.
+
+| Modeled mechanism | 2023 range (%/year) |
+| --- | ---: |
+| Hydrolysis | 0.0066–0.0760 |
+| Photodegradation | 0.0205–0.1454 |
+| Thermomechanical | 0.0309–0.2139 |
+| Combined | 0.0837–0.4316 |
+
+These ranges describe the recorded mono-Si scenario, not measured PV losses.
+Spatial and temporal holdout results below average station monthly RMSE:
+
+| Variable | Original ERA5 | AEMET-adjusted |
+| --- | ---: | ---: |
+| Temperature (°C) | 2.602 | 2.661 |
+| Relative humidity (percentage points) | 14.266 | 10.879 |
+| Wind speed (m/s) | 2.231 | 1.279 |
+
+**Temperature transfer did not improve this independent spatial evaluation.**
+The adjustment improves temporal validation at the measured stations, but that
+does not establish accuracy between stations or across mountain/coastal
+transitions. Treat the spatial rate maps as provisional modeled scenarios.
+The full station-level results, including deteriorations, are downloadable
+from the gallery alongside fitted parameters and four-band GeoTIFFs.
+
 ## What is calibrated
 
 AEMET OpenData daily measurements from 2022 fit one correction per station,
