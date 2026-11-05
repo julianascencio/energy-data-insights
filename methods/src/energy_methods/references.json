@@ -16452,10 +16452,10 @@
     "kind": "software",
     "role": "method",
     "used_by": [
-      "methods/src/energy_methods/pvdeg.py",
       "analysis/src/energy_analysis/pvdeg_canary.py",
       "docs/pvdeg-canary.md",
-      "examples/analysis/plot_pvdeg_canary.py"
+      "examples/analysis/plot_pvdeg_canary.py",
+      "methods/src/energy_methods/pvdeg.py"
     ],
     "note": "Integration pins pvdeg 0.7.4; DOI is upstream concept DOI. Relative thermal screening, not calibrated degradation or lifetime.",
     "verified_at": "2026-11-04"
@@ -16612,6 +16612,74 @@
       "catalogues/wind/sources.json"
     ],
     "note": "OEM specification observations, not independently validated performance. Access year where publication date is unavailable.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "bess_elt1_20261104",
+    "title": "Expedited Long-Term RFP Final Results",
+    "authors": [
+      "Independent Electricity System Operator"
+    ],
+    "year": 2023,
+    "doi": null,
+    "url": "https://www.ieso.ca/-/media/Files/IESO/Document-Library/long-term-rfp/ELT1-RFP-Selected-Proponents.pdf",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/bess/sources.json"
+    ],
+    "note": "Dated official procurement evidence; not current operating status.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "bess_classification_20261104",
+    "title": "IESO Resource Adequacy Update",
+    "authors": [
+      "Independent Electricity System Operator"
+    ],
+    "year": 2023,
+    "doi": null,
+    "url": "https://www.ieso.ca/-/media/Files/IESO/Document-Library/resource-adequacy/ieso-resource-adequacy-update-june2023.ashx",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/bess/sources.json"
+    ],
+    "note": "Dated official procurement evidence; not current operating status.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "bess_next3_20261104",
+    "title": "next3 technical data",
+    "authors": [
+      "Studer Innotec"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://studer-innotec.com/next3/",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/bess_oem/sources.json"
+    ],
+    "note": "Original source checksum and exact field locators in catalogue registry. OEM page undated; year is retrieval year.",
+    "verified_at": "2026-11-04"
+  },
+  {
+    "id": "bess_next3rack_20261104",
+    "title": "next3 rack technical data",
+    "authors": [
+      "Studer Innotec"
+    ],
+    "year": 2026,
+    "doi": null,
+    "url": "https://studer-innotec.com/next3-rack/",
+    "kind": "report",
+    "role": "data",
+    "used_by": [
+      "catalogues/bess_oem/sources.json"
+    ],
+    "note": "Original source checksum and exact field locators in catalogue registry. OEM page undated; year is retrieval year.",
     "verified_at": "2026-11-04"
   }
 ]

@@ -1,0 +1,49 @@
+{
+  "started_at": "2026-11-04T21:51:45+00:00",
+  "validation_checkpoint_at": "2026-11-04T22:01:29.820503+00:00",
+  "elapsed_minutes_through_validation": 9.75,
+  "timezone": "Atlantic/Canary equals UTC on this date",
+  "counts": {
+    "projects_new": 9,
+    "projects_enriched": 1,
+    "project_notices_excluded": 5,
+    "project_new_value_conflicts": 0,
+    "equipment_new": 25,
+    "equipment_enriched": 0,
+    "equipment_records_with_field_conflicts": 3
+  },
+  "checks": {
+    "catalogue_validation": "2126 projects/972 equipment; reference/identity validation passed",
+    "preservation": "2116 prior projects and all947 prior models unchanged; Tabernas I additive; all prior facts and created_at preserved",
+    "parquet": "Two independent typed Zstandard builds byte-identical",
+    "focused_tests": 9,
+    "new_parser_tests": 7,
+    "python_split_run": {
+      "initial_passed": 2489,
+      "initial_failed": 4,
+      "skipped": 5,
+      "climate_retry": "All7climate tests pass, resolving3initial psutil failures; same7pass on untouchedmain",
+      "unique_passed_after_retry": 2492,
+      "remaining_failed": 1,
+      "remaining_failure": "PV degradation CLI psutil.NoSuchProcess in Dask CPU detection; same runtime failure reproduced on untouched main in previous pass; affected code unchanged"
+    },
+    "ruff": "passed",
+    "ruff_format": "960files passed",
+    "ty": "passed",
+    "citations": "passed; new references queued locally in research to avoid shared writer",
+    "viewer": "16passed; initial wrongpath invocation corrected",
+    "offline_examples": "Both BESS examples passed",
+    "docs": "Strict Sphinx -W --keep-going -D plot_gallery=0 passed",
+    "docs_links": "603HTML pages; links/assets passed",
+    "packages": "3wheels/3sdists built; all6strictTwine checks passed; all3installed wheels andpublicCLI checks passed",
+    "repository": "passed",
+    "diff": "passed"
+  },
+  "not_run": [
+    "Full executable Sphinx gallery",
+    "Optional live provider tests",
+    "New-head remote CI before publication"
+  ],
+  "yield_explanation": "Selected15BOE indices and21SC48/51/76 rows plus4SESS columns exhausted;25modelobjective met. Only7of12candidate notices are BESS;5excluded. Remaining higher-voltage/merged-config OEM partitions require additional identity/unit review. No idle padding.",
+  "next": "BOE September21–30; SC102 voltage/type conflicts"
+}

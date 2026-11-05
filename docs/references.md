@@ -7158,7 +7158,7 @@ Springer, Martin; Ovaitt, Silvana; Daxini, Rajiv; Ford, Timothy; Brown, Matthew;
 
 **Role:** method. Integration pins pvdeg 0.7.4; DOI is upstream concept DOI. Relative thermal screening, not calibrated degradation or lifetime.
 
-**Used by:** `methods/src/energy_methods/pvdeg.py`, `analysis/src/energy_analysis/pvdeg_canary.py`, `docs/pvdeg-canary.md`, `examples/analysis/plot_pvdeg_canary.py`.
+**Used by:** `analysis/src/energy_analysis/pvdeg_canary.py`, `docs/pvdeg-canary.md`, `examples/analysis/plot_pvdeg_canary.py`, `methods/src/energy_methods/pvdeg.py`.
 
 ### aemo_nem_oct2026_bess
 
@@ -7231,3 +7231,35 @@ Bergey Windpower Company (2025). **BWC EXCEL15 and Powersync25 owner manual**. [
 **Role:** data. OEM specification observations, not independently validated performance. Access year where publication date is unavailable.
 
 **Used by:** `catalogues/wind/sources.json`.
+
+### bess_elt1_20261104
+
+Independent Electricity System Operator (2023). **Expedited Long-Term RFP Final Results**. [Source](https://www.ieso.ca/-/media/Files/IESO/Document-Library/long-term-rfp/ELT1-RFP-Selected-Proponents.pdf)
+
+**Role:** data. Dated official procurement evidence; not current operating status.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bess_classification_20261104
+
+Independent Electricity System Operator (2023). **IESO Resource Adequacy Update**. [Source](https://www.ieso.ca/-/media/Files/IESO/Document-Library/resource-adequacy/ieso-resource-adequacy-update-june2023.ashx)
+
+**Role:** data. Dated official procurement evidence; not current operating status.
+
+**Used by:** `catalogues/bess/sources.json`.
+
+### bess_next3_20261104
+
+Studer Innotec (2026). **next3 technical data**. [Source](https://studer-innotec.com/next3/)
+
+**Role:** data. Original source checksum and exact field locators in catalogue registry. OEM page undated; year is retrieval year.
+
+**Used by:** `catalogues/bess_oem/sources.json`.
+
+### bess_next3rack_20261104
+
+Studer Innotec (2026). **next3 rack technical data**. [Source](https://studer-innotec.com/next3-rack/)
+
+**Role:** data. Original source checksum and exact field locators in catalogue registry. OEM page undated; year is retrieval year.
+
+**Used by:** `catalogues/bess_oem/sources.json`.

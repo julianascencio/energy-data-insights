@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-05T08:01:46.267751+00:00",
+  "elapsed_minutes_to_final_validation": 9.44,
+  "focused_tests_passed": 55,
+  "new_parser_tests": 5,
+  "package_suite": {
+    "passed": 2519,
+    "failed": 22,
+    "errors": 24,
+    "skipped": 4
+  },
+  "root_suite_except_collection_blocked_module": {
+    "passed": 50,
+    "failed": 3,
+    "skipped": 1
+  },
+  "full_suite": "Collection blocked by psutil.NoSuchProcess in Dask CPU detection; reproduced on unchanged main9f36b0f. Repeated full attempt same result. No full-suite-green claim.",
+  "baseline_sample": "Independent climate-source sample passed on main; process-related failures are environment-sensitive. Collection failure independently reproduced on main.",
+  "viewer_tests_passed": 16,
+  "parquet": "both catalogue snapshot pairs byte-identical typed Zstd",
+  "preservation": "all2132project and1011equipment prior rows unchanged;13new upserts replay identically",
+  "checks_passed": [
+    "catalogue schemas/provenance/identities",
+    "ruff",
+    "format",
+    "ty with explicit .venv interpreter",
+    "hygiene",
+    "citations",
+    "whitespace",
+    "two offline examples",
+    "strict gallery-disabled Sphinx",
+    "613 HTML link/asset audit",
+    "three wheels and three sdists",
+    "six strict Twine checks",
+    "three installed-wheel checks"
+  ],
+  "not_run": [
+    "full executable gallery",
+    "optional live provider integrations"
+  ]
+}

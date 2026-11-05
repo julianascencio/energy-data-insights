@@ -1,9 +1,9 @@
 # Global BESS OEM product database
 
-The 4 November 2026 expanded research snapshot contains **924 records from 52 product
-suppliers, backed by 452 registered sources**: 911 documented configurations and 13
+The 5 November 2026 expanded research snapshot contains **1,024 records from 53 product
+suppliers, backed by 465 registered sources**: 1,011 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
-a small residential sample, standalone battery inverter/chargers, EMS controllers, and non-lithium
+a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
 researched starting inventory, not a complete list of suppliers or market-share ranking.
 
@@ -279,3 +279,8 @@ The parser fails on changed identity, nominal rating basis, current units or rev
 Latest continuation: [OPzS exact editions and Scatec portfolio](../bess/research/2026-11-04_opzs_scatec.md).
 
 Latest iteration: [Malaysia, Ingeteam and Omburu](../bess/research/2026-11-04_malaysia_ingeteam.md), with source access decisions, exact converter configurations and preserved rating conflicts.
+
+Latest continuation: [AJ and next1 exact models; next3 environmental conditions](../bess/research/2026-11-04_lt2_aj.md).
+AJ records describe unidirectional stationary battery inverter components, with
+optional solar regulators explicitly separate. Use
+`scripts/stage_bess_studer_aj.py` to stage the reviewed local model-page format.
