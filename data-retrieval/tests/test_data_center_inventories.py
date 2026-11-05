@@ -93,8 +93,12 @@ def test_energy_star_data_centers_keep_state_only_and_unqualified_area():
 
 
 def test_energy_star_data_centers_keep_historical_partition_separate():
+    content = ENERGY_STAR_DATA_CENTERS.replace(
+        b"<td>50000</td><td>2018</td><td>ENERGYSTAR: 1 (2026)</td>",
+        b"<td>50000</td><td>2026</td><td>ENERGYSTAR: 1 (2026)</td>",
+    )
     result = parse_energy_star_certified_data_centers(
-        ENERGY_STAR_DATA_CENTERS,
+        content,
         source_url="https://www.energystar.gov/buildings/certified-data-centers",
         certification_year=2025,
         expected_total_count=3,

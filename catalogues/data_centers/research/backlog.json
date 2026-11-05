@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T13:20:00Z",
+  "updated_at": "2026-11-05T14:20:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -107,7 +107,9 @@
     "energy_star_data_center_storage_file_certifications": 36,
     "energy_star_large_network_equipment_certifications": 96,
     "energy_star_certified_data_centers_2026": 133,
-    "energy_star_certified_data_centers_2025": 50
+    "energy_star_certified_data_centers_2025": 50,
+    "energy_star_certified_data_centers_2024": 23,
+    "energy_star_certified_data_centers_2023": 31
   },
   "next_batches": [
     {
@@ -197,13 +199,13 @@
         "https://airtrunk.com/locations/",
         "https://www.energystar.gov/buildings/certified-data-centers"
       ],
-      "offset": 238,
-      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33 and all 133+50 ENERGY STAR facilities whose most recent label year is 2026 or 2025 complete. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
+      "offset": 292,
+      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33 and all 133+50+23+31 ENERGY STAR facilities whose most recent label year is 2026, 2025, 2024 or 2023 complete. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
       "questions": [
         "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
         "Treat Meta card break-ground years as year-precision observations, not full construction dates or evidence of current lifecycle",
         "The ENERGY STAR 2026 partition is exhausted. Its state-only geography, unlabeled floor-space values and year-only construction observations must not be promoted to coordinates, square metres or full dates",
-        "The 2025 ENERGY STAR partition is exhausted at 50 records with current lifecycle unknown. The remaining 154 registry facilities whose most recent label is 2010-2024 remain deferred pending separate historical lifecycle review",
+        "The 2023-2025 ENERGY STAR partitions are exhausted at 31+23+50 records with current lifecycle unknown. The remaining 100 registry facilities whose most recent label is 2010-2022 remain deferred pending separate historical lifecycle review",
         "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
       ]
     },

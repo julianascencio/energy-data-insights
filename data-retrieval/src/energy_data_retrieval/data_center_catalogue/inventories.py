@@ -207,7 +207,7 @@ def parse_energy_star_certified_data_centers(
             or not values["Owner"]
             or floor_space <= 0
             or constructed_year < 1800
-            or constructed_year > certification_year
+            or constructed_year > most_recent_year
             or count != len(label_years)
             or most_recent_year != max(label_years)
         ):
