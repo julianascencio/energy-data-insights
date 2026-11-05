@@ -1,34 +1,36 @@
 {
-  "batch": "2026-11-05-0135",
-  "iteration_parent": "788dfbd7ff0ca14cc697f4b679dee021994c8275",
+  "batch": "2026-11-05-0235",
+  "iteration_parent": "05ab14f6b1d4305f0bb18ff2fabbad4672eb1b40",
   "local": {
-    "tests": "234 focused Python tests passed after initial ENOSPC failure;21Node viewer tests and syntax passed",
-    "quality": "Ruff lint/format971files,ty,citations and diff passed;repository4466files passed",
-    "catalogue": "22181valid;21883unchanged;298enrichments preserve IDs,creation timestamps,prior scalar facts and all6capacity summaries",
-    "replay": "Replay/idempotence and registered original hashes passed",
-    "snapshots": "Two seven-file typed ZSTD builds byte-identical after ENOSPC recovery",
-    "example": "Offline Wind example passed",
-    "docs": "Not run this iteration: shared filesystem exhausted; prior head documentation CI passed",
-    "packages": "Three wheels and three source distributions passed"
+    "tests": "234 focused Python tests passed with isolated TMPDIR after initial no-usable-temp-directory failure;21Node viewer tests and syntax passed",
+    "catalogue": "22181 valid;21923 unchanged;258 enrichments preserve prior scalar facts,IDs,creation timestamps and all6capacity summaries",
+    "source_registry": "All 363 prior source entries unchanged; one new bounded alias",
+    "replay": "Replay/idempotence and registered original workbook hashes passed",
+    "snapshots": "Two independent seven-file builds byte-identical;all Parquet columns ZSTD",
+    "example": "Wind example executed against isolated expanded catalogue and passed",
+    "quality": "Ruff/format971files,citations passed;ty passed with explicit repository Python after initial environment-resolution error;working-repository hygiene4466files passed;isolated JSONL/schema/provenance checked separately",
+    "docs": "Not run: disk exhaustion; prior published-head Documentation CI passed",
+    "isolation": "Expanded catalogue and generated outputs in /dev/shm/wind2935;working catalogue untouched; local Git tree assembled with isolated index/object storage"
   },
   "snapshot_sha256": {
-    "sources.json": "8544eaed6e18f2fb83874972d04a55e658197258e1e67954d473898286fe23cf",
-    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
-    "manifest.json": "146fe07ccdf0718d1f0fcd47b2665fcc15e474e445b4b494f8ffc2416a73efcb",
-    "equipment.parquet": "e8e95a3d7946a2da8152c46a88a75fb6eb6c494d291f1d259895ec801cc5166d",
+    "manifest.json": "bb393c0de0981f67d9ef32f46951c30f343b47a9fb29cb07a8bb5748baf1a524",
+    "sources.json": "5bef8bffe86b41a27d39d0328fb86f8b160c2047c74c63d21ff9ecddfa5a6068",
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
-    "projects.parquet": "52c5176464472f023c06517bf9e46c030ab9d4a41dd2da40b5e19129f2ee1549"
+    "turbines.parquet": "a0725333ba51af3775eba6f32c38a0071936a710f9a78effaac80225b26d4135",
+    "equipment.parquet": "e8e95a3d7946a2da8152c46a88a75fb6eb6c494d291f1d259895ec801cc5166d",
+    "projects.parquet": "96290b6c0307b3bc6c54524993db9f651f9ecb3c44fb74ffcc464edc0bdcad16"
   },
   "remote_ci": {
-    "prior_head": "788dfbd7ff0ca14cc697f4b679dee021994c8275",
+    "prior_head": "05ab14f6b1d4305f0bb18ff2fabbad4672eb1b40",
     "prior_result": "Python and Documentation passed",
     "new_head": "Pending publication"
   },
   "not_executed": [
-    "Full local suite",
+    "Full local test suite",
+    "Strict local docs",
+    "Full gallery",
     "Interactive browser",
-    "Full executable gallery",
-    "Strict local documentation build"
+    "Package rebuild (no package code changed)"
   ]
 }
