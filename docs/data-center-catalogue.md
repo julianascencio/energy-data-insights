@@ -170,6 +170,11 @@ kVA are normalized separately; standby electrical output and engine mechanical
 kWm remain bounded observations. Blank TAD1640GE cells are excluded, and fuel,
 emissions and cylinder statements do not establish a complete generator-set BOM,
 issuer certification, site installation or deployment.
+The non-overlapping Stage IIIA/Tier 3 continuation adds all 22 populated rows
+from the current D8, D13 and D16 tables (six, ten and six). Explicit 50 Hz-only
+and 60 Hz-only columns remain sparse: printed N/A cells do not become invented
+configurations. The same active/apparent/mechanical and deployment boundaries
+apply.
 The Makelsan continuation processes every exact three-phase model column in the
 reviewed LEVELUPS, LEVELUPS T3 and LEVELUPS T4 tables: 18, 11 and five rows.
 Printed kVA and kW remain separate; the overlapping T3/T4 capacities remain

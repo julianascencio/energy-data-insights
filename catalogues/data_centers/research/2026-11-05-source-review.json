@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T17:20:00Z",
+  "retrieved_at": "2026-11-05T19:20:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -200,6 +200,14 @@
       "enriched_records": 0,
       "reuse": "Public OEM product tables were used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved reuse hold applies to these pages.",
       "originals": "All four official HTML originals were captured and checksummed: D8 Stage V 186,212 bytes; D13 Stage V 185,089 bytes; D16 Stage V 186,051 bytes; D16 Stage II/EPA Tier 2 191,073 bytes. The exact SHA-256 values are in sources.json."
+    },
+    {
+      "inventory": "Volvo Penta current D8, D13 and D16 Stage IIIA/EPA Tier 3 power-generation tables",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "enriched_records": 0,
+      "reuse": "Public OEM product tables were used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved reuse hold applies to these pages.",
+      "originals": "All three official HTML originals were captured and checksummed: D8 Stage IIIA 187,457 bytes; D13 Stage IIIA 191,067 bytes; D16 Stage IIIA 190,260 bytes. The exact SHA-256 values are in sources.json."
     }
   ],
   "deferred": [
@@ -214,6 +222,14 @@
     {
       "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current network/electrical/liquid-cooling table",
       "reason": "The first 50 displayed low-voltage dry-type, medium-voltage dry-type and liquid-immersed basic-model rows and all 96 current ENERGY STAR Large Network Equipment entries are complete. Medium-voltage rows 51-100 remain inaccessible through a stable pagination boundary in this environment. Continue only through a verified non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount completed pages or network certifications."
+    },
+    {
+      "inventory": "Caterpillar Electric Power product tables and ratings guides",
+      "reason": "Current official terms prohibit extraction for database creation and copying, republication or distribution without written consent. No Caterpillar product facts or bytes were imported."
+    },
+    {
+      "inventory": "Doosan Portable Power generator tables",
+      "reason": "Current official terms restrict stored, reproduced, republished or distributed website content to narrow personal-use exceptions. No Doosan product facts or bytes were imported."
     }
   ],
   "quarantined": [
@@ -279,7 +295,8 @@
     "FIN04 permit areas remain source observations and are not normalized as campus or data-hall area.",
     "SWE04 1,200 MW is planned combustion fuel input for backup plant, not electrical output, grid capacity or IT capacity.",
     "SWE04 130 kV line construction and heat-reuse development agreement are planning observations; no facility commissioning date, delivered heat or contracted heat quantity is inferred.",
-    "All 22 populated Volvo Penta model/frequency rows across the selected current D8, D13 and D16 tables are processed; blank TAD1640GE cells remain excluded.",
+    "All 22 populated Volvo Penta model/frequency rows across the selected current D8, D13 and D16 baseline tables are processed; blank TAD1640GE cells remain excluded.",
+    "All 22 populated Volvo Penta Stage IIIA/Tier 3 model/frequency rows are processed: six D8, ten D13 and six D16. D13 60 Hz-only and D16 50 Hz-only columns remain sparse; printed N/A cells are not configurations.",
     "Volvo Penta prime electrical kW/kVA, standby electrical kW/kVA and engine mechanical kWm remain distinct; fuel/emissions labels are OEM observations and no alternator, voltage, complete genset BOM, issuer certification or deployment is inferred."
   ]
 }

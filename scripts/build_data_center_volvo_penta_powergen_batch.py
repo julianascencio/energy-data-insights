@@ -15,6 +15,7 @@ from energy_data_retrieval.data_center_catalogue.inventories import (
 )
 
 RETRIEVED_AT = "2026-11-05T18:20:00Z"
+STAGE_IIIA_RETRIEVED_AT = "2026-11-05T19:20:00Z"
 AS_OF = "2026-11-05"
 
 
@@ -44,6 +45,29 @@ SOURCES = (
         8,
     ),
 )
+STAGE_IIIA_SOURCES = (
+    Source(
+        "volvo-penta-d8-stage-iiia-current-20261105",
+        "d8-eu-stage-iiia-epa-tier-3",
+        "D8",
+        "EU Stage IIIA/EPA Tier 3",
+        6,
+    ),
+    Source(
+        "volvo-penta-d13-stage-iiia-current-20261105",
+        "d13-eu-stage-iiia-epa-tier-3",
+        "D13",
+        "EU Stage IIIA/EPA Tier 3",
+        10,
+    ),
+    Source(
+        "volvo-penta-d16-stage-iiia-current-20261105",
+        "d16-eu-stage-iiia-epa-tier-3",
+        "D16",
+        "EU Stage IIIA/EPA Tier 3",
+        6,
+    ),
+)
 URL_PREFIX = (
     "https://www.volvopenta.com/industrial/power-generation-engines/power-generation-engine-range/"
 )
@@ -61,6 +85,34 @@ class Rating(NamedTuple):
 
 
 RATINGS: dict[str, tuple[Rating, ...]] = {
+    "d8-eu-stage-iiia-epa-tier-3": (
+        Rating("TAD851GE", 50, 220, 202, 253, 242, 223, 278),
+        Rating("TAD851GE", 60, 225, 207, 259, 248, 228, 285),
+        Rating("TAD852GE", 50, 248, 231, 289, 273, 254, 317),
+        Rating("TAD852GE", 60, 247, 230, 287, 272, 253, 316),
+        Rating("TAD853GE", 50, 248, 233, 291, 273, 257, 321),
+        Rating("TAD853GE", 60, 266, 250, 313, 293, 275, 344),
+    ),
+    "d13-eu-stage-iiia-epa-tier-3": (
+        Rating("TAD1350GE", 60, 245, 228, 285, 269, 250, 313),
+        Rating("TAD1351GE", 50, 279, 259, 324, 306, 285, 356),
+        Rating("TAD1351GE", 60, 294, 273, 342, 323, 300, 375),
+        Rating("TAD1352GE", 50, 314, 292, 365, 345, 321, 401),
+        Rating("TAD1352GE", 60, 344, 320, 400, 376, 350, 437),
+        Rating("TAD1353GE", 60, 391, 364, 455, 430, 400, 500),
+        Rating("TAD1354GE", 50, 328, 305, 381, 361, 336, 420),
+        Rating("TAD1354GE", 60, 344, 320, 400, 376, 350, 437),
+        Rating("TAD1355GE", 50, 355, 330, 413, 390, 363, 453),
+        Rating("TAD1355GE", 60, 344, 320, 400, 376, 350, 437),
+    ),
+    "d16-eu-stage-iiia-epa-tier-3": (
+        Rating("TAD1650GE", 50, 393, 369, 462, 433, 407, 509),
+        Rating("TAD1650GE", 60, 439, 413, 516, 483, 454, 568),
+        Rating("TAD1651GE", 50, 430, 404, 505, 473, 445, 556),
+        Rating("TAD1651GE", 60, 494, 464, 580, 546, 513, 642),
+        Rating("TWD1652GE", 50, 505, 480, 600, 557, 529, 661),
+        Rating("TWD1653GE", 50, 547, 520, 650, 603, 573, 716),
+    ),
     "d8-eu-stage-v": (
         Rating("TAD880GE", 50, 129, 120, 150, 142, 132, 165),
         Rating("TAD880GE", 60, 151, 140, 175, 166, 154, 193),
@@ -163,7 +215,9 @@ def observation(
     }
 
 
-def build_record(candidate: dict[str, Any], source: Source) -> dict[str, object]:
+def build_record(
+    candidate: dict[str, Any], source: Source, *, retrieved_at: str = RETRIEVED_AT
+) -> dict[str, object]:
     model = candidate["model"]
     frequency = candidate["frequency_hz"]
     observations = [
@@ -226,14 +280,14 @@ def build_record(candidate: dict[str, Any], source: Source) -> dict[str, object]
             "kW is generator electrical output and kVA is generator apparent output, not engine "
             "mechanical power, standby output or facility backup capacity"
         ),
-        "created_at": RETRIEVED_AT,
+        "created_at": retrieved_at,
         "entity_type": "equipment",
         "equipment_category": "backup_generator",
         "evidence_json": compact(evidence),
         "field_sources_json": compact({field: [source.source_id] for field in fields}),
         "form_factor": "power-generation engine rating configuration",
         "frequency_hz": frequency,
-        "last_verified_at": RETRIEVED_AT,
+        "last_verified_at": retrieved_at,
         "manufacturer": "Volvo Penta",
         "model": model,
         "name": f"Volvo Penta {model} {frequency:g} Hz prime power configuration",
@@ -252,7 +306,7 @@ def build_record(candidate: dict[str, Any], source: Source) -> dict[str, object]
         "record_scope": "configuration",
         "source_urls": [url(source)],
         "sources": [source.source_id],
-        "updated_at": RETRIEVED_AT,
+        "updated_at": retrieved_at,
         "variant": f"{source.emissions}; {frequency:g} Hz; prime",
     }
 
@@ -260,13 +314,24 @@ def build_record(candidate: dict[str, Any], source: Source) -> dict[str, object]
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
+    parser.add_argument(
+        "--inventory",
+        choices=("baseline", "stage-iiia"),
+        default="baseline",
+        help="Select a non-overlapping reviewed table inventory",
+    )
     args = parser.parse_args()
+    sources = SOURCES if args.inventory == "baseline" else STAGE_IIIA_SOURCES
+    retrieved_at = RETRIEVED_AT if args.inventory == "baseline" else STAGE_IIIA_RETRIEVED_AT
     records: list[dict[str, object]] = []
-    for source in SOURCES:
+    for source in sources:
         staged = parse_volvo_penta_powergen_matrix(
             extracted_csv(source), source_url=url(source), expected_count=source.expected
         )
-        records.extend(build_record(candidate, source) for candidate in staged["candidates"])
+        records.extend(
+            build_record(candidate, source, retrieved_at=retrieved_at)
+            for candidate in staged["candidates"]
+        )
     if len(records) != 22 or len({record["record_id"] for record in records}) != 22:
         raise ValueError("Expected 22 unique Volvo Penta power-generation configurations")
     records.sort(key=lambda record: (record["model"], record["frequency_hz"]))

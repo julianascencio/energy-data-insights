@@ -7,7 +7,7 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **520 project records in 36 countries**:
 **403 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **2,655 exact equipment records from 71 OEMs**.
+from 13 operators. It has **2,677 exact equipment records from 71 OEMs**.
 Merged `main` at `76179409` contains **316 projects and 2,633 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -49,6 +49,7 @@ uv run python scripts/build_data_center_kstar_transformer_ups_batch.py staged-ks
 uv run python scripts/build_data_center_borri_ups_batch.py staged-borri-ups.jsonl
 uv run python scripts/build_data_center_baudouin_generator_batch.py staged-baudouin-generators.jsonl
 uv run python scripts/build_data_center_volvo_penta_powergen_batch.py staged-volvo-penta-powergen.jsonl
+uv run python scripts/build_data_center_volvo_penta_powergen_batch.py staged-volvo-penta-stage-iiia-powergen.jsonl --inventory stage-iiia
 uv run python scripts/build_data_center_makelsan_ups_batch.py staged-makelsan-ups.jsonl
 uv run python scripts/build_data_center_siel_ups_batch.py staged-siel-ups.jsonl
 uv run python scripts/build_data_center_tescom_ups_batch.py staged-tescom-ups.jsonl

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T18:20:00Z",
+  "updated_at": "2026-11-05T19:20:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -124,7 +124,8 @@
     "energy_star_certified_data_centers_2011": 4,
     "energy_star_certified_data_centers_2010": 2,
     "atnorth_fin04_swe04_current_official_observations": 15,
-    "volvo_penta_current_powergen_configurations": 22
+    "volvo_penta_current_powergen_configurations": 22,
+    "volvo_penta_stage_iiia_powergen_configurations": 22
   },
   "next_batches": [
     {
@@ -232,8 +233,8 @@
         "https://www.vertiv.com/",
         "https://www.cummins.com/en-na/generators/products/qsk60"
       ],
-      "offset": 1832,
-      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed transformer basic-model rows complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
+      "offset": 1854,
+      "scope": "Prior Vertiv/Eaton/Schneider/STULZ tables, 19 PowerUPS 6000 rows, four Trinergy CE ratings, all 28 Carrier AquaEdge 19DV rows, 22 Cummins KTA50/QSK60 Data Center Continuous configurations, 20 mtu Series 4000 Data Center Continuous model/frequency rows, all 34 Baudouin April 2025 Data Centre Power rows, eight current Motivair CDU models, six nVent RackChiller SKUs, 16 Eaton dry-transformer rows, five Siemens NXAIR variants, all 23 Toshiba, 26 Mitsubishi Electric and 20 Fuji Electric reviewed UPS configurations, all 25 Kehua current model columns, all 23 KSTAR GP800/MASTER/EPI model columns, all 38 KSTAR EPOWER/EPOWER-L/EPOWER-H model columns, all 25 current Borri rating columns, all 34 Makelsan LEVELUPS/LEVELUPS T3/LEVELUPS T4 columns, all 27 SIEL Safepower S/Evo HF/Modular SPM columns, all 22 Tescom DS POWER/SH/MTI250 rows, all 923 rows across the 19 EPA ENERGY STAR UPS partner partitions, all 476 rows across all 17 partner partitions in the EPA ENERGY STAR Enterprise Servers dataset, the first 50 displayed current DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed transformer basic-model rows, and 44 current Volvo Penta model/frequency rows across the baseline and Stage IIIA batches complete; continue the DOE registry with an exact stable pagination/filter boundary or another independent unheld generator/electrical, liquid-cooling or newly revised issuer inventory without recounting completed datasets",
       "questions": [
         "Explicit rating configurations only; no cross-product Cartesian synthesis",
         "Keep kW/kVA, nominal/usable battery energy and runtime loads distinct",
@@ -265,7 +266,8 @@
         "ENERGY STAR Enterprise Servers New H3C Technology offset 9 is complete for dataset update 2026-11-04. All rows report three SERT tiers; four G7 rows omit only the low-end configuration ID, which remains absent while the low-end technical observations are preserved.",
         "The 476-row ENERGY STAR Enterprise Servers dataset update 2026-11-04 is exhausted across all 17 partner partitions. Residual offsets are IBM 9, Aivres/KAYTUS 8, ZTE 6, Altos 3, Oracle 3 and Ace Computers 1. Keep IBM S1014 and all KAYTUS/Altos/Ace missing tiers absent, and do not treat certification rows as deployments.",
         "ZTE certification 4654814 is labeled R5300 G5 but reports R5300 G6 as its high-end configuration identifier. Preserve both issuer observations and quarantine configuration-identity inference until a corrected issuer row or OEM cross-reference resolves the mismatch.",
-        "DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed displayed rows 1-50 are complete for the 2026-10-23 public snapshot. Keep manufacturer-represented efficiency as an observation because the displayed tables omit the load/test condition, never convert kVA to active kW, keep BIL group rating distinct from winding voltage, do not decode liquid-transformer model suffixes into unreported voltage or fluid options and do not treat listing as a DOE compliance determination. Continue only with a stable non-overlapping page, filter or exact basic-model inventory."
+        "DOE CCMS low-voltage dry-type, medium-voltage dry-type and liquid-immersed displayed rows 1-50 are complete for the 2026-10-23 public snapshot. Keep manufacturer-represented efficiency as an observation because the displayed tables omit the load/test condition, never convert kVA to active kW, keep BIL group rating distinct from winding voltage, do not decode liquid-transformer model suffixes into unreported voltage or fluid options and do not treat listing as a DOE compliance determination. Continue only with a stable non-overlapping page, filter or exact basic-model inventory.",
+        "Volvo Penta Stage IIIA/Tier 3 offset 22 is complete at D8 6, D13 10 and D16 6 populated model/frequency rows. Frequency-qualified columns remain sparse, prime electrical kW/kVA and standby electrical kW/kVA remain separate from engine kWm, and no alternator, voltage, complete genset BOM, installation or deployment is inferred."
       ]
     },
     {
@@ -432,13 +434,23 @@
       "source": "Open Access Data Centres portfolio",
       "url": "https://www.openaccessdc.net/terms-and-conditions/",
       "reason": "Official terms prohibit reproduction except as allowed by the copyright notice. The 13-core-site/30-plus-edge portfolio was screened only; no facility facts or bytes were imported."
+    },
+    {
+      "source": "Caterpillar Electric Power product tables and ratings guides",
+      "url": "https://parts.cat.com/en/catcorp/legal/legal-terms",
+      "reason": "Current official terms prohibit extraction for database creation and copying, republication or distribution without written consent. Candidate ratings were screened only; no facts or bytes were imported."
+    },
+    {
+      "source": "Doosan Portable Power generator tables",
+      "url": "https://doosanportablepower.com/dpp-la/la/en/legal/terms-of-use",
+      "reason": "Current official terms restrict stored, reproduced, republished or distributed website content to narrow personal-use exceptions. Candidate generator tables were screened only; no facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "volvo-penta-powergen-20261105T182000Z",
+    "run_id": "volvo-penta-stage-iiia-powergen-20261105T192000Z",
     "report": "2026-11-05-report.md",
-    "validation": "2026-11-05T1820-validation.json",
+    "validation": "2026-11-05T1920-validation.json",
     "added_projects": 0,
     "enriched_projects": 0,
     "added_equipment": 22,
