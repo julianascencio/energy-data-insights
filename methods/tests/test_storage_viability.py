@@ -52,7 +52,9 @@ def test_battery_lcos_one_year_exact(case: BatteryLcosAssumptions) -> None:
 
 
 def test_grant_reduces_lcos(case: BatteryLcosAssumptions) -> None:
-    assert battery_lcos(case, hypothetical_grant_inr_per_kwh=200).lcos_inr_per_kwh == pytest.approx(8)
+    assert battery_lcos(case, hypothetical_grant_inr_per_kwh=200).lcos_inr_per_kwh == pytest.approx(
+        8
+    )
 
 
 def test_discount_and_om(case: BatteryLcosAssumptions) -> None:
@@ -70,7 +72,10 @@ def test_fade_and_efficiency(case: BatteryLcosAssumptions) -> None:
 
 
 def test_more_cycles_lowers_lcos(case: BatteryLcosAssumptions) -> None:
-    assert battery_lcos(replace(case, cycles_per_year=200)).lcos_inr_per_kwh < battery_lcos(case).lcos_inr_per_kwh
+    assert (
+        battery_lcos(replace(case, cycles_per_year=200)).lcos_inr_per_kwh
+        < battery_lcos(case).lcos_inr_per_kwh
+    )
 
 
 @pytest.mark.parametrize("share", [-0.1, 1.1, float("nan"), float("inf")])
