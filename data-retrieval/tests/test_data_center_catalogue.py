@@ -361,6 +361,29 @@ def test_cummins_parser_deduplicates_dcc_and_quarantines_rating_conflicts():
         parse_cummins_generator_table(content, source_url="https://example.com/test")
 
 
+def test_cummins_qsk50_fixture_preserves_complete_dcc_inventory():
+    content = (FIXTURES / "cummins-qsk50.html").read_bytes()
+    data = parse_cummins_generator_table(
+        content,
+        source_url="https://www.cummins.com/en-na/generators/products/qsk50",
+        expected_count=8,
+    )
+    rows = data["candidates"]
+    assert [(row["model"], row["frequency_hz"]) for row in rows] == [
+        ("DQGAN", 50.0),
+        ("DQGAH", 50.0),
+        ("DQGAK", 50.0),
+        ("DQGAE", 60.0),
+        ("DQGAG", 50.0),
+        ("DQGAJ", 50.0),
+        ("DQGAM", 50.0),
+        ("DQGAF", 60.0),
+    ]
+    assert all(not row["conflicts"] for row in rows)
+    assert rows[0]["ratings"]["data_center_continuous"] == [{"kw": 1020.0, "kva": 1275.0}]
+    assert rows[-1]["data_center_continuous_kva"] == 1706.0
+
+
 def test_schneider_model_list_parser_keeps_only_explicit_commercial_references():
     content = (FIXTURES / "schneider-galaxy-vs.txt").read_bytes()
     data = parse_schneider_galaxy_vs_model_list(
