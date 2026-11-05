@@ -1,13 +1,15 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-04-2435`, the proposed continuation contains
-**8,174 projects, 372 equipment records, 13,633 linked turbines and two original
-numerical curves**, across **59 countries and 55 manufacturer labels**. Labels
-are not a reconciled corporate-entity count. Merged main at `9f36b0f3` contains
-8,136 projects, 357 equipment records, 13,633 turbines and two curves.
-These are catalogue counts, not a current operating census. Subsequent totals
-are recorded in `catalogues/wind/research/latest.json`.
+numerical curves. At batch `2026-11-05-0910`, the continuation contains
+**8,238 projects, 405 equipment records, 13,633 linked turbines and two original
+numerical curves**, across **59 countries and 57 equipment manufacturer labels**.
+Labels are not a reconciled corporate-entity count. Merged main at `d92d1b82`
+contains 8,174 projects, 372 equipment records, 13,633 turbines and two curves.
+This run adds 56 registry sites and enriches 31 existing equipment records;
+previous batches are not counted again. These are catalogue counts, not a current
+operating census. Live totals and exact continuation queues are recorded in
+`catalogues/wind/research/latest.json`.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.
@@ -827,3 +829,310 @@ Karcino gains the operator's dated history: turbine installation began in 2009
 and commissioning occurred in 2010. The historical WRI conflict remains visible.
 The operator's 120 GWh/year statement has no named observation year or method;
 it is not used to calculate capacity factor or presented as measured output.
+
+
+### Reviewed OEM history tables
+
+The `wind_catalogue.history.stage_history` adapter accepts a reviewed factual
+transcription plus checksum-matched original bytes and a complete expected row
+inventory. It preserves printed rating ranges, dated remarks and tower options
+inside one type record. Explicit rating versions remain distinct; inferred
+Cartesian variants are rejected by the review workflow. Existing models and
+contradictory type/rating/unit rows remain in the decision ledger for separate
+revision review. An OEM history table does not independently validate performance
+or establish present-day availability. The November 5 Nordex transcription and
+all 46 decisions are retained under `catalogues/wind/research/`.
+
+EIA registry-site additions require independent identity review before staging.
+All generator observations remain nested with their original annual boundaries;
+missing farm capacity stays null. The shared viewer and offline example show
+unknown installed farm MW and unresolved aggregation scopes separately.
+
+
+## Dated OEM history and identity review (5 November, 09:10 batch)
+
+The 56 new US sites come from exactly 142 saved EIA identity holds, with 86
+remaining deferred. Generic words no longer dominate name screening. Existing
+IDs, aliases, geodesic proximity and candidate-to-candidate proximity are reviewed
+separately. A clear screening result does not establish a physical farm boundary;
+all additions retain unknown farm lifecycle and capacities, with unresolved
+aggregation scope. The final-2025 Operable workbook scan is exhausted: 1,573
+rows, maximum plant code 69,327, no residual code at or above 70,000.
+
+Nordex's dated 12 June 2025 retrospective supplies 31 exact-model enrichments.
+Prototype pitch and generator details apply to those prototypes. Discontinued
+production is a dated OEM claim and says nothing about installed-fleet retirement.
+The shared viewer counts these observations separately from current configuration
+fields, and the deterministic gallery prints their dates and boundaries.
+
+The hash-pinned transcription adapter requires an explicit ID/manufacturer/model/
+rating crosswalk and complete reviewed mapping. Identical replay preserves update
+timestamps; changing the same source observation is rejected. Scalar facts and
+creation timestamps are unchanged. The N175 narrative's 200 m maximum and the
+undated table's 199 m maximum remain separate observations. The N27 type/rating
+reversal and N169 printed-unit conflict remain deferred after reviewing independent
+dated OEM articles. A lone AW77/1300 narrative mention is held for original
+specification evidence. No new numerical curves or installed model variants are
+inferred from this history.
+
+## Published reference yields and saved EIA holds (5 November, 09:45 batch)
+
+Exactly 110 saved EIA holds from plant codes 62000–63999 were reviewed: 52 new
+registry sites and 58 remaining identity holds. The 36 previously enriched sites
+were not counted again. All new farm capacities and lifecycle states remain
+unknown and excluded from totals. Oregon PUC's UM1401 report confirms one shared
+LGIA involving Orchard Windfarm I, 2, 3 and 4; it does not supply the EIA crosswalk
+or resolve their physical boundaries, so those four candidates remain held.
+
+FGW's current index supplies complete Nordex tables for the old and new reference
+sites: 110 and 70 rows respectively. They add 16 explicitly printed types/revisions
+and enrich 24 existing equipment records. Hubs and power settings stay nested,
+including 173 accepted row observations; seven N27 rows remain in the conflict
+ledger. Five withdrawn N149 yields are retained alongside replacements with the
+publisher's withdrawal and replacement dates. Three missing rotor cells stay null.
+Existing scalar specifications are unchanged when reference-table geometry differs.
+
+The offline `wind_catalogue.reference_yield.stage_reference_yields` adapter checks
+original-byte hashes, complete row inventories, explicit record-ID crosswalks,
+positive finite quantities and restriction notes. Identical replay preserves
+creation and update timestamps; changed observations under the same source ID
+are rejected. Original decimal-comma/thousands-dot strings remain reviewable.
+
+FGW defines these quantities as calculated five-year energy in kWh. They describe
+hypothetical reference sites, not measured plant generation. Old-site logarithmic
+and new-site Hellmann profiles are kept separate; density, operating mode and
+gross/net boundary remain unknown. No annual generation, capacity factor or
+numerical power/Ct curve is inferred. The shared viewer and deterministic gallery
+show counts by reference site, withdrawn observations and missing evidence without
+summing yields or presenting an unsupported performance comparison. Paid reference
+certificates are separate from the freely readable published tables.
+
+## Korean certificate configurations and Salinas III proposal (5 November, 14:35)
+
+The remaining 55 rows of the checksum-pinned KNREC register are now reviewed:
+23 certificate-scoped equipment configurations are added and 32 rows await
+revision crosswalks or conflict resolution. Together with the prior two HTq rows,
+all 57 registry rows have a recorded disposition. Multiple power and hub values
+remain options within one record, never Cartesian variants. Printed expired
+notes are retained; blank status does not establish current certification validity.
+The shared viewer and offline gallery distinguish these registry observations
+from independent performance validation. Six new OEM labels retain original
+Korean company names without inferring corporate succession.
+
+BOE daily indexes for 14–16 September 2026, including both Series A and B and
+any linked extra issues, yield one new wind-only proposal: Hibridación FV-PEol
+Salinas III (PEol-FV-313). Its reported 36 MW planned capacity, eight explicitly
+identified proposed turbines, 118 m hubs, 163 m rotors, 30 kV underground
+collection and EUR 39,576,856.27 material-execution budget are source-qualified.
+The budget price year is unknown. Existing PV capacity and the proposed hybrid
+total are separate observations. Public consultation establishes neither approval
+nor installation. The eight annex turbine IDs link to the proposed parent, with
+unknown coordinates. The named base V163 model is recorded as a relationship;
+an exact equipment-configuration link remains unset because the planned 118 m
+hub differs from the existing OEM page's published hub options. Private landholder
+names are not copied. Taraguilla's paragraph-number correction was already
+retained and is counted as duplicate evidence, not an enrichment.
+
+REPD offsets 600–800 received structural review only: all 200 applications remain
+identity holds, with no claim that original permit contents have been reviewed.
+No capacity aggregation exclusion is lifted. All earlier records and creation
+timestamps remain unchanged. See the dated KNREC, BOE and REPD decision ledgers
+in `catalogues/wind/research`; the continuation cursors are in `backlog.json`.
+
+### Brazil: dated ONS unit evidence
+
+The first 100 lexically sorted wind CEGs in the ONS daily file retrieved on
+2026-11-05 contain 66 exact historical WRI identifier/name matches and 34 identity
+holds. The WRI Brazil importer explicitly encodes the six-digit numeric CEG
+component as `BRA` plus seven digits. The adapter additionally requires one
+historical identity, exact name agreement after case/whitespace normalization,
+and no competing CEG version anywhere in the file. Missing identities stay held.
+
+The source dictionary calls `val_potenciaefetiva` **nominal generating-unit MW**.
+Unit rows may represent turbine groups. Nested observations retain the original
+values, owner/operator, state, subsystem, operation modality, release-for-test,
+release-for-commercial-operation and deactivation dates. Missing dates remain
+null; retrieval and metadata modification dates are not observation dates.
+No unit count becomes a turbine count, release date becomes farm commissioning,
+or unit MW becomes whole-farm installed capacity. All 66 historical aggregation
+and lifecycle exclusions remain. The shared viewer and offline gallery count
+unit evidence and distinguish missing nominal ratings from reported zeros.
+
+This is an ONS-dispatched-unit partition (modalities I/II-A/II-B/II-C), not a
+current operating census of Brazilian wind farms. Original CSV/dictionary hashes,
+per-row locators, candidate decisions and the next exact CEGs are in the source
+registry and `research/2026-11-05-1510-ons-review.json`. The daily source has no
+historical archive guarantee; continuation must use the pinned bytes or explicitly
+record a replacement snapshot and reassess partition boundaries.
+
+The next five complete 100-CEG partitions (offsets100–599 of the same pinned
+snapshot) add 99 existing-project enrichments and retain 401 identity holds.
+The first600CEGs are now reviewed; no source release or lifecycle is silently
+advanced. Adjacent-partition tests ensure complete multi-unit CEG groups are
+neither split nor duplicated. The gallery also reports source-state coverage
+as snapshot counts, never as installed capacity.
+
+The final 482 CEGs (offsets 600–1081) add 175 project enrichments and retain 307
+identity holds. The pinned scan is now complete: 1,082 CEGs reviewed, 340 matched
+historical projects and 742 unresolved identities. Completion describes this
+source partition only. The resume auditor rejects gaps, overlaps, incomplete
+terminal groups and changes of source hash or retrieval version. The viewer and
+gallery count each project once per reported state across its observations;
+unknown geography remains visible and no current fleet distribution is implied.
+
+### Goldwind Americas 2.5 MW tables
+
+The complete English three-model and Spanish two-model tables support three
+explicit models: GW 100/2500, GW 109/2500 and GW 121/2500. Shared table cells are
+applied only to their printed columns. Spanish edition details remain nested,
+with their own provenance and units, because option/revision equivalence is not
+established. Hub choices are not expanded into additional models.
+
+Original reported swept areas and diameter-based checks are retained separately;
+uncertain area scalars remain null. GW 109/2500 also retains the English static
+10.5 m/s and Spanish unqualified 10.2 m/s observations with a null canonical rated
+wind speed. Neither brochure resolves the Korean certificate's 107.5 m rotor
+crosswalk. The five plotted power curves are graph-only, with density stated but
+mode unresolved; no numerical curve, compatibility claim or independently
+validated performance is inferred. See the 1735 OEM decision ledger and source
+registry for checksums, exact page/column locators and continuation tasks.
+
+### Dated EPE-hosted SIGA and Spanish proposal observations
+
+The 2026-11-05 continuation reviews the complete **381-entry Bahia wind
+partition** of EPE's hosted SIGA layer, whose dataset date is **2026-01-13**.
+Repeated object-ID queries agreed before and after all pages were acquired.
+Sixty-eight entries enrich existing projects through a unique WRI-encoded CEG
+identity plus exact name; 313 identities remain deferred. The original CEG
+spelling is retained, with only numeric suffix padding compared. The layer's
+misleading date-typed `idenucleoceg` field is not used as an identifier.
+
+Authorized kW, inspected kW and physical-guarantee kW are normalized separately
+to MW inside dated observations. Physical guarantee is not installed capacity.
+Original lifecycle text, operating-entry date, permit term, ownership text,
+municipality and registry-point coordinates remain qualified by their source.
+Coordinate decimal precision is not positional accuracy. None of these
+observations changes canonical capacity, lifecycle or aggregation eligibility.
+The shared viewer and deterministic gallery show category completeness,
+including reported zeros and unknown values, without summing incompatible MW.
+This successful public EPE ArcGIS download is independent of the earlier
+ANEEL CSV HTTP 503 failure; neither failure implies authentication or a reuse ban.
+
+BOE Series A/B issues of 10–12 September 2026 yield two proposed Salinas wind
+modules, each 36 MW with eight individually identified planned turbines, and
+the archived 144 MW Alto Cabrera application. Proposed wind MW, existing solar
+MW and combined hybrid MW remain separate. Alto Cabrera's whole-project status
+is unknown: dismissal of application PEol-382 does not establish the fate of
+all possible iterations or appeals. Salinas electrical length/conductor
+inconsistencies and the unresolved 118 m OEM hub configuration are retained.
+The solar-only environmental notice remains an identity hold, and the generic
+cadastral notice is excluded. Private landholder names are not imported.
+
+Four exact Goldwind 1.5 MW brochure models are added, and two existing 2.5 MW
+models receive separate digital-English edition observations. The latter
+explicitly distinguishes survival from operating temperature. Printed rotor
+areas and earlier rated-speed disagreements remain qualified observations;
+unresolved scalars stay null. Six graph-only curves are deferred, with no
+numerical points or synthetic variants created. These are manufacturer
+specifications, not independently validated performance.
+
+Sources: [EPE SIGA layer](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0),
+[Goldwind 1.5 MW original](https://www.goldwindamericas.com/sites/default/files/Goldwind-Brochure-1.5-Web.pdf),
+[Goldwind 2.5 MW digital original](https://www.goldwindamericas.com/sites/default/files/GW%202S%20MW-ENG-DIGITAL.pdf),
+[Alto Cabrera notice](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-19045),
+[Salinas II notice](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29433) and
+[Salinas I notice](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29434).
+Full bibliographic metadata and stable source identifiers are in the reference catalogue.
+
+### Rio Grande do Norte continuation and bounded OEM review
+
+The complete **317-entry Rio Grande do Norte** EPE wind partition is now reviewed.
+The before/after ID inventories agree, and both response pages are complete.
+**107 existing projects** gain dated observations; **210 identities remain held**
+(200 missing or nonunique historical matches and 10 ID/name disagreements).
+The dataset date remains **2026-01-13**, distinct from retrieval on 2026-11-05.
+Authorized capacity, inspected capacity and physical guarantee remain separate
+observations. All six eligible capacity summaries are unchanged. Suspicious
+source operation dates, including Macau's 1900 date, stay in the original
+observations and are not promoted to commissioning milestones.
+
+The adapter now rejects a CEG revision change against prior EPE evidence even
+when the project has no scalar ANEEL identifier. A real two-row RN fixture tests
+separate capacity categories, reported zero and the suspicious date boundary.
+The shared viewer and deterministic gallery show distinct linked projects by
+state and dataset date, with unresolved identities and aggregation exclusions
+visible. This is selected evidence coverage, not a current operating census.
+
+Three exact Windey model records are added: **WD200-7700 (Saudi 60 Hz)**,
+**WD220-10000**, and **WD225-9000**. Their explicitly reported unit ratings are
+7.7 MW, 10 MW and 9,000 kW respectively. Detailed configurations are partial;
+rotor diameters are not inferred from model names. Twelve OEM case cards and
+two further announcements remain queued for project, revision or certificate
+crosswalks. The Saudi configuration is not assigned to the Ethiopian proposal.
+No numerical curves or independently validated performance are added.
+
+Bachmann's component tables and case study are excluded under its explicit
+prior-consent reuse terms. Delta's proposed PDF redirects to a terms-verification
+page with an internal-use restriction; the original PDF was not acquired.
+Ingeteam's two historical document links redirect to homepage HTML. These are
+recorded separately from authentication or HTTP download failures. Windey's
+large-image timeouts were resolved, with all four original image checksums saved
+in the review ledger. The equipment target was not met by inventing variants.
+
+This run adds **0 projects, 3 equipment records, 0 individual turbines and
+0 curves**, and enriches **107 projects**. Branch totals are **8,294 projects,
+489 equipment records, 13,657 turbines and 2 curves** across 59 countries and
+64 equipment-manufacturer labels. The next registry batch is the complete
+EPE **CE** partition; previously completed BA/RN and ONS partitions stay closed.
+
+Sources: [EPE SIGA layer](https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0),
+[Windey product cases](https://windeyenergy.com/en/product_show?id=19),
+[Windey Saudi announcement](https://windeyenergy.com/en/news_show?id=210).
+Decisions and original-byte checksums are in
+`2026-11-05-1935-epe-review.json` and `2026-11-05-1935-oem-review.json`.
+
+The November 5 20:35 continuation reviews all 103 Ceará EPE wind entries,
+linking 53 existing identities and holding 50 for a historical/phase crosswalk.
+The dated categories do not change capacity eligibility. BA and RN partitions
+are already complete; the next complete EPE partition is RS.
+
+The Windey June 2022 English brochure contributes 31 exact models and one
+historical observation for the existing WD225-9000. PDF pages 7, 8 and 12
+(printed 09/10, 11/12 and 19/20) contain 32 explicit columns; pages 9–11 remain
+queued. The checksum-pinned `oem_tables` adapter consumes visually reviewed
+columns and rejects missing, reordered or duplicate identities. Generator RPM
+and converter kVA stay separate from rotor RPM and turbine kW. Temperature,
+cut-out and hub-height ranges remain options; the viewer and gallery expose
+these without claiming installed configurations or validated performance.
+
+### Complete Rio Grande do Sul partition and remaining Windey columns
+
+The November 5 21:35 continuation reviews all **80** EPE-hosted SIGA wind
+entries for Rio Grande do Sul. Stable before/after OBJECTID queries and the
+complete response agree. **67 existing projects** gain dated native registry
+observations; **13 identities remain held**. No projects, individual turbines,
+capacity eligibility or lifecycle claims are inferred. All six capacity
+summaries, including unknown and excluded counts, remain unchanged.
+
+The remaining Windey brochure tables on PDF pages **9, 10 and 11** (printed
+13/14, 15/16 and 17/18) add **35 exact models**. All **67 printed model columns**
+on PDF pages 7–12 have now been reviewed across two batches. The prior source
+registry and original-byte checksum remain intact; the new review ledger records
+expanded locators and visual transcription. These are historical specifications,
+not independent performance validation or installed project configurations.
+
+Column boundaries matter: WD164-3600 states a converter range of 47.5–51.5 Hz,
+while the other 34 newly reviewed columns state 47.5–52.5 Hz. WD172-5500's
+80.5 m blade length is retained as printed, without replacing it using another
+172 m rotor model. Generator kW/RPM, converter grid-side/turbine-side kVA and A,
+component mass/dimensions, hub-height options and operating conditions remain
+separate observations. Exact component model IDs, density, operating mode,
+warranty, certification identifiers and numerical curves remain unknown.
+
+The offline adapter now rejects malformed component quantities and vectors.
+Small attributed fixtures exercise column-specific values and unit boundaries.
+The shared viewer counts usable converter rating pairs separately from missing
+ones, rejects malformed hub ranges, and explicitly separates component quantities
+from turbine ratings. The gallery dynamically displays the reviewed model count.
+The next complete EPE partition is **PI**; the next OEM/project work is the
+AfDB Aysha I original ESIA and exact phase crosswalk recorded in the backlog.

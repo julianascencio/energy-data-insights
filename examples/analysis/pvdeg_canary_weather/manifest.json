@@ -1,0 +1,1111 @@
+{
+  "evidence": "PVGIS modeled TMY; 2005-2023 selection window; not measured degradation",
+  "calendar": "2023 UTC, retaining original month/day/hour; not a historical 2023 series",
+  "processing": "Provider precision retained; negative wind in [-0.5,0) clipped to zero with per-site counts; no interpolation, downscaling or gap filling",
+  "reference_ids": [
+    "pvgis_5_api",
+    "pvdeg_software"
+  ],
+  "sites": [
+    {
+      "name": "El Hierro",
+      "file": "el_hierro.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.14
+      },
+      "sha256": "b461423428f23feecb37d9d8a86b51fa111d58cc68c91b3eea06c4842de2821b",
+      "source_sha256": "f94dd556ddb032c9cab8170919baa82de2ab43f6190ade289c267bf948250a5b",
+      "inputs": {
+        "location": {
+          "latitude": 27.75,
+          "longitude": -17.98,
+          "elevation": 1292.0,
+          "irradiance_time_offset": 0.1514
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2010
+        },
+        {
+          "month": 2,
+          "year": 2013
+        },
+        {
+          "month": 3,
+          "year": 2009
+        },
+        {
+          "month": 4,
+          "year": 2017
+        },
+        {
+          "month": 5,
+          "year": 2009
+        },
+        {
+          "month": 6,
+          "year": 2009
+        },
+        {
+          "month": 7,
+          "year": 2019
+        },
+        {
+          "month": 8,
+          "year": 2010
+        },
+        {
+          "month": 9,
+          "year": 2010
+        },
+        {
+          "month": 10,
+          "year": 2022
+        },
+        {
+          "month": 11,
+          "year": 2013
+        },
+        {
+          "month": 12,
+          "year": 2018
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "27.75",
+            "query:lon": "-17.98",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:00:56.513902+00:00",
+          "sha256": "f94dd556ddb032c9cab8170919baa82de2ab43f6190ade289c267bf948250a5b",
+          "size_bytes": 1264095,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "La Palma",
+      "file": "la_palma.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.0
+      },
+      "sha256": "e93e22cb2b762b13027abddc7354484788c96b671be35420b7974a5e95271acd",
+      "source_sha256": "45235072b4d9a00393fb3f8e09a194158b4ecc8211350d459abbcf77a5e3f3ea",
+      "inputs": {
+        "location": {
+          "latitude": 28.68,
+          "longitude": -17.85,
+          "elevation": 1135.0,
+          "irradiance_time_offset": 0.1529
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2015
+        },
+        {
+          "month": 2,
+          "year": 2021
+        },
+        {
+          "month": 3,
+          "year": 2012
+        },
+        {
+          "month": 4,
+          "year": 2021
+        },
+        {
+          "month": 5,
+          "year": 2008
+        },
+        {
+          "month": 6,
+          "year": 2018
+        },
+        {
+          "month": 7,
+          "year": 2012
+        },
+        {
+          "month": 8,
+          "year": 2011
+        },
+        {
+          "month": 9,
+          "year": 2017
+        },
+        {
+          "month": 10,
+          "year": 2016
+        },
+        {
+          "month": 11,
+          "year": 2015
+        },
+        {
+          "month": 12,
+          "year": 2020
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "28.68",
+            "query:lon": "-17.85",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:00:58.785399+00:00",
+          "sha256": "45235072b4d9a00393fb3f8e09a194158b4ecc8211350d459abbcf77a5e3f3ea",
+          "size_bytes": 1264668,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "La Gomera",
+      "file": "la_gomera.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.0
+      },
+      "sha256": "f7a7424e5860dc837c9a45dc49751af76df3c3efe0f029ea96288fb4cc98e35d",
+      "source_sha256": "0811b506d5667450516dfef47309c04ca15aa340dad45ec22c1e0d42a2d3a809",
+      "inputs": {
+        "location": {
+          "latitude": 28.11,
+          "longitude": -17.24,
+          "elevation": 1315.0,
+          "irradiance_time_offset": 0.152
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2014
+        },
+        {
+          "month": 2,
+          "year": 2020
+        },
+        {
+          "month": 3,
+          "year": 2006
+        },
+        {
+          "month": 4,
+          "year": 2006
+        },
+        {
+          "month": 5,
+          "year": 2008
+        },
+        {
+          "month": 6,
+          "year": 2012
+        },
+        {
+          "month": 7,
+          "year": 2012
+        },
+        {
+          "month": 8,
+          "year": 2021
+        },
+        {
+          "month": 9,
+          "year": 2015
+        },
+        {
+          "month": 10,
+          "year": 2013
+        },
+        {
+          "month": 11,
+          "year": 2015
+        },
+        {
+          "month": 12,
+          "year": 2008
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "28.11",
+            "query:lon": "-17.24",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:01:00.805179+00:00",
+          "sha256": "0811b506d5667450516dfef47309c04ca15aa340dad45ec22c1e0d42a2d3a809",
+          "size_bytes": 1263696,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "Tenerife south",
+      "file": "tenerife_south.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.0
+      },
+      "sha256": "ccc2de9c8c03b2cd0aa5f938df9c7d3e68b82956bc46ede87388d59174bb1f81",
+      "source_sha256": "84068c2151fcdafe55102fed03586d7be22b3ded26fe70dc266088f4bbe50164",
+      "inputs": {
+        "location": {
+          "latitude": 28.08,
+          "longitude": -16.59,
+          "elevation": 317.0,
+          "irradiance_time_offset": 0.152
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2019
+        },
+        {
+          "month": 2,
+          "year": 2005
+        },
+        {
+          "month": 3,
+          "year": 2019
+        },
+        {
+          "month": 4,
+          "year": 2012
+        },
+        {
+          "month": 5,
+          "year": 2018
+        },
+        {
+          "month": 6,
+          "year": 2009
+        },
+        {
+          "month": 7,
+          "year": 2006
+        },
+        {
+          "month": 8,
+          "year": 2015
+        },
+        {
+          "month": 9,
+          "year": 2018
+        },
+        {
+          "month": 10,
+          "year": 2014
+        },
+        {
+          "month": 11,
+          "year": 2009
+        },
+        {
+          "month": 12,
+          "year": 2015
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "28.08",
+            "query:lon": "-16.59",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:01:02.486569+00:00",
+          "sha256": "84068c2151fcdafe55102fed03586d7be22b3ded26fe70dc266088f4bbe50164",
+          "size_bytes": 1263624,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "Tenerife north",
+      "file": "tenerife_north.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.07
+      },
+      "sha256": "2c62db94831688d744a8a373ab6337800430b1560076afa211992ba37bb19553",
+      "source_sha256": "c9d8042ef9588024615705cfcbc242da14cbfe0878e048e21fe85c1eff5d6faa",
+      "inputs": {
+        "location": {
+          "latitude": 28.39,
+          "longitude": -16.52,
+          "elevation": 406.0,
+          "irradiance_time_offset": 0.1525
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2021
+        },
+        {
+          "month": 2,
+          "year": 2015
+        },
+        {
+          "month": 3,
+          "year": 2008
+        },
+        {
+          "month": 4,
+          "year": 2015
+        },
+        {
+          "month": 5,
+          "year": 2009
+        },
+        {
+          "month": 6,
+          "year": 2017
+        },
+        {
+          "month": 7,
+          "year": 2008
+        },
+        {
+          "month": 8,
+          "year": 2015
+        },
+        {
+          "month": 9,
+          "year": 2018
+        },
+        {
+          "month": 10,
+          "year": 2017
+        },
+        {
+          "month": 11,
+          "year": 2013
+        },
+        {
+          "month": 12,
+          "year": 2005
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "28.39",
+            "query:lon": "-16.52",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:01:07.761807+00:00",
+          "sha256": "c9d8042ef9588024615705cfcbc242da14cbfe0878e048e21fe85c1eff5d6faa",
+          "size_bytes": 1261824,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "Teide",
+      "file": "teide.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.0
+      },
+      "sha256": "3c7f5c9b78ff51ea809786a39ecf690c71223cf8fd47a5a465b5dd4bf8dcb785",
+      "source_sha256": "183990dc3e171f96932ef804acca63a9f91580be118cea428eeaf6d497a49d20",
+      "inputs": {
+        "location": {
+          "latitude": 28.2724,
+          "longitude": -16.6438,
+          "elevation": 3596.0,
+          "irradiance_time_offset": 0.1523
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2021
+        },
+        {
+          "month": 2,
+          "year": 2009
+        },
+        {
+          "month": 3,
+          "year": 2018
+        },
+        {
+          "month": 4,
+          "year": 2009
+        },
+        {
+          "month": 5,
+          "year": 2008
+        },
+        {
+          "month": 6,
+          "year": 2012
+        },
+        {
+          "month": 7,
+          "year": 2013
+        },
+        {
+          "month": 8,
+          "year": 2015
+        },
+        {
+          "month": 9,
+          "year": 2020
+        },
+        {
+          "month": 10,
+          "year": 2005
+        },
+        {
+          "month": 11,
+          "year": 2009
+        },
+        {
+          "month": 12,
+          "year": 2020
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "28.2724",
+            "query:lon": "-16.6438",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:01:10.288961+00:00",
+          "sha256": "183990dc3e171f96932ef804acca63a9f91580be118cea428eeaf6d497a49d20",
+          "size_bytes": 1260627,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "Anaga",
+      "file": "anaga.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.0
+      },
+      "sha256": "97dda76aea7cd405658e77adf4542129793023c001f7db61d9d1f0054d5189f4",
+      "source_sha256": "31120ea3a03ca8a76281a6dd745d0123d2f1424665970d8eb96e43cecd8fba10",
+      "inputs": {
+        "location": {
+          "latitude": 28.55,
+          "longitude": -16.23,
+          "elevation": 636.0,
+          "irradiance_time_offset": 0.1527
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2015
+        },
+        {
+          "month": 2,
+          "year": 2009
+        },
+        {
+          "month": 3,
+          "year": 2021
+        },
+        {
+          "month": 4,
+          "year": 2012
+        },
+        {
+          "month": 5,
+          "year": 2016
+        },
+        {
+          "month": 6,
+          "year": 2020
+        },
+        {
+          "month": 7,
+          "year": 2009
+        },
+        {
+          "month": 8,
+          "year": 2020
+        },
+        {
+          "month": 9,
+          "year": 2012
+        },
+        {
+          "month": 10,
+          "year": 2013
+        },
+        {
+          "month": 11,
+          "year": 2021
+        },
+        {
+          "month": 12,
+          "year": 2008
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "28.55",
+            "query:lon": "-16.23",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:01:14.972091+00:00",
+          "sha256": "31120ea3a03ca8a76281a6dd745d0123d2f1424665970d8eb96e43cecd8fba10",
+          "size_bytes": 1259491,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "Gran Canaria",
+      "file": "gran_canaria.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 1,
+        "minimum_provider_wind_m_s": -0.16
+      },
+      "sha256": "ed2c7464ed5544ec07c74badb8f6adbfccc6d87114fbf54f6db7fe9a7b5b967f",
+      "source_sha256": "164668d8aa467c06de395eb4ba99165d20603fb533d1374f599e8f35ebba93b8",
+      "inputs": {
+        "location": {
+          "latitude": 28.0,
+          "longitude": -15.6,
+          "elevation": 1489.0,
+          "irradiance_time_offset": 0.1519
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2021
+        },
+        {
+          "month": 2,
+          "year": 2010
+        },
+        {
+          "month": 3,
+          "year": 2013
+        },
+        {
+          "month": 4,
+          "year": 2010
+        },
+        {
+          "month": 5,
+          "year": 2006
+        },
+        {
+          "month": 6,
+          "year": 2008
+        },
+        {
+          "month": 7,
+          "year": 2012
+        },
+        {
+          "month": 8,
+          "year": 2019
+        },
+        {
+          "month": 9,
+          "year": 2017
+        },
+        {
+          "month": 10,
+          "year": 2007
+        },
+        {
+          "month": 11,
+          "year": 2017
+        },
+        {
+          "month": 12,
+          "year": 2018
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "28.0",
+            "query:lon": "-15.6",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:01:17.358623+00:00",
+          "sha256": "164668d8aa467c06de395eb4ba99165d20603fb533d1374f599e8f35ebba93b8",
+          "size_bytes": 1262921,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "Fuerteventura",
+      "file": "fuerteventura.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.0
+      },
+      "sha256": "bdf84cf44e5077796a39154c6da4eaeae8089902a368e9b07d388c18086acbdf",
+      "source_sha256": "45cedee081416074c9a8f2d8bf255a9118554081de3f8adcbcbe3c00dc038d6a",
+      "inputs": {
+        "location": {
+          "latitude": 28.43,
+          "longitude": -14.01,
+          "elevation": 296.0,
+          "irradiance_time_offset": 0.1527
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2022
+        },
+        {
+          "month": 2,
+          "year": 2022
+        },
+        {
+          "month": 3,
+          "year": 2005
+        },
+        {
+          "month": 4,
+          "year": 2005
+        },
+        {
+          "month": 5,
+          "year": 2012
+        },
+        {
+          "month": 6,
+          "year": 2010
+        },
+        {
+          "month": 7,
+          "year": 2011
+        },
+        {
+          "month": 8,
+          "year": 2006
+        },
+        {
+          "month": 9,
+          "year": 2022
+        },
+        {
+          "month": 10,
+          "year": 2015
+        },
+        {
+          "month": 11,
+          "year": 2020
+        },
+        {
+          "month": 12,
+          "year": 2022
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "28.43",
+            "query:lon": "-14.01",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:03:26.974155+00:00",
+          "sha256": "45cedee081416074c9a8f2d8bf255a9118554081de3f8adcbcbe3c00dc038d6a",
+          "size_bytes": 1265222,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "Lanzarote",
+      "file": "lanzarote.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.07
+      },
+      "sha256": "907c2ef92b2060908008bbdc9bfab72edfcb3524b7039a2e38aace5afed71d42",
+      "source_sha256": "ef075872c43c091d30edcb155d4b7121a83cd9c3a3a30838bf85b3418ec77dcc",
+      "inputs": {
+        "location": {
+          "latitude": 29.04,
+          "longitude": -13.6,
+          "elevation": 198.0,
+          "irradiance_time_offset": 0.1537
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2015
+        },
+        {
+          "month": 2,
+          "year": 2006
+        },
+        {
+          "month": 3,
+          "year": 2006
+        },
+        {
+          "month": 4,
+          "year": 2012
+        },
+        {
+          "month": 5,
+          "year": 2010
+        },
+        {
+          "month": 6,
+          "year": 2018
+        },
+        {
+          "month": 7,
+          "year": 2006
+        },
+        {
+          "month": 8,
+          "year": 2012
+        },
+        {
+          "month": 9,
+          "year": 2022
+        },
+        {
+          "month": 10,
+          "year": 2022
+        },
+        {
+          "month": 11,
+          "year": 2012
+        },
+        {
+          "month": 12,
+          "year": 2012
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "29.04",
+            "query:lon": "-13.6",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:03:29.459920+00:00",
+          "sha256": "ef075872c43c091d30edcb155d4b7121a83cd9c3a3a30838bf85b3418ec77dcc",
+          "size_bytes": 1270373,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    },
+    {
+      "name": "La Graciosa",
+      "file": "la_graciosa.csv",
+      "quality": {
+        "negative_wind_hours_clipped_to_zero": 0,
+        "minimum_provider_wind_m_s": 0.0
+      },
+      "sha256": "ef50395a159cb2834749c5efaa74752f6c586795953b02a5053db51885e05699",
+      "source_sha256": "c84c2c2a1e5c5a7d30090cc747dd21b15146e73a423156cb6fd247572e605b78",
+      "inputs": {
+        "location": {
+          "latitude": 29.25,
+          "longitude": -13.51,
+          "elevation": 69.0,
+          "irradiance_time_offset": 0.154
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2005,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": "DEM-calculated"
+        }
+      },
+      "months_selected": [
+        {
+          "month": 1,
+          "year": 2005
+        },
+        {
+          "month": 2,
+          "year": 2006
+        },
+        {
+          "month": 3,
+          "year": 2018
+        },
+        {
+          "month": 4,
+          "year": 2006
+        },
+        {
+          "month": 5,
+          "year": 2012
+        },
+        {
+          "month": 6,
+          "year": 2019
+        },
+        {
+          "month": 7,
+          "year": 2012
+        },
+        {
+          "month": 8,
+          "year": 2011
+        },
+        {
+          "month": 9,
+          "year": 2016
+        },
+        {
+          "month": 10,
+          "year": 2022
+        },
+        {
+          "month": 11,
+          "year": 2018
+        },
+        {
+          "month": 12,
+          "year": 2010
+        }
+      ],
+      "request_provenance": {
+        "version": "5.3",
+        "content_type": "application/json",
+        "request_id": null,
+        "request": {
+          "endpoint": "https://re.jrc.ec.europa.eu/api/v5_3/tmy",
+          "parameters": {
+            "method": "GET",
+            "query:lat": "29.25",
+            "query:lon": "-13.51",
+            "query:startyear": "2005",
+            "query:endyear": "2023",
+            "query:outputformat": "json"
+          },
+          "retrieved_at_utc": "2026-11-05T09:03:34.684250+00:00",
+          "sha256": "c84c2c2a1e5c5a7d30090cc747dd21b15146e73a423156cb6fd247572e605b78",
+          "size_bytes": 1273133,
+          "cache_hit": false
+        },
+        "reference_ids": [
+          "pvgis_5_api",
+          "pvgis_6_api"
+        ]
+      }
+    }
+  ]
+}

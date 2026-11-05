@@ -22,6 +22,8 @@ Data access and scientific methods
    bess-oem-database-viewer
    wind-database-viewer
    _generated/guides/wind-catalogue
+   _generated/guides/hydro-catalogue
+   hydro-database-viewer
    data-center-database-viewer
    _generated/guides/data-center-catalogue
    _generated/guides/bess-catalogue
@@ -39,6 +41,7 @@ Data access and scientific methods
    _generated/guides/timestral
    _generated/guides/forecast-benchmark
    _generated/guides/kazakhstan-hybrid-dispatch
+   _generated/guides/india-storage-peak-shift
    _generated/guides/thermal-counterfactual
    _generated/guides/timestral-solar-case
    _generated/guides/worldwide-generation
@@ -55,6 +58,7 @@ Data access and scientific methods
    _generated/guides/degradation-gallery
    _generated/guides/degradation-uncertainty
    _generated/guides/pv-lifetime
+   _generated/guides/aemet-era5-canary
    _generated/guides/pvdeg-canary
    _generated/guides/pvdeg-chile
 

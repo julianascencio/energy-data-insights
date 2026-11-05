@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-05T07:20:00Z",
+  "retrieved_at": "2026-11-05T21:23:00Z",
   "accepted": [
     {
       "inventory": "EPA ENERGY STAR certified Hewlett Packard Enterprise enterprise-server partner inventory",
@@ -112,20 +112,148 @@
       "enriched_records": 0,
       "reuse": "Public U.S. Department of Energy certification database; exact manufacturer-represented brand, basic model, phase count, kVA, BIL group rating and represented-efficiency facts normalized without redistributing the source page. Listing is not treated as a DOE compliance determination.",
       "originals": "The official page reader exposed every selected displayed row from the public 2026-10-23 snapshot. A direct request to the public MCP endpoint returned HTTP 403 in this execution environment, so no source checksum is claimed; this is an access limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "U.S. DOE CCMS liquid-immersed transformer basic-model displayed rows 1-50",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. Department of Energy certification database; exact manufacturer-represented brand, basic model, phase count, kVA and represented-efficiency facts normalized without redistributing the source page. Model suffixes are not decoded and listing is not treated as a DOE compliance determination.",
+      "originals": "The official indexed page reader exposed every selected displayed row from the public 2026-10-23 snapshot. Direct original-byte requests returned HTTP 403 in this execution environment, so no source checksum is claimed; this is an access limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Center Storage Block I/O complete dataset",
+      "processed_offset": 84,
+      "accepted_records": 84,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA certification dataset under the EPA Data License; exact issuer identity, controller, configuration, lifecycle and workload facts normalized without redistributing the source CSV. No deployment claim is imported.",
+      "originals": "The complete official 84-row, 65,084-byte CSV was captured successfully with SHA-256 2d1daab000dff286c0034b9144fa48a291acd58f4ace50a9514e1e9c3a659bc6."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Center Storage File I/O complete dataset",
+      "processed_offset": 36,
+      "accepted_records": 36,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA certification dataset under the EPA Data License; exact issuer identity, controller, configuration, lifecycle and workload facts normalized without redistributing the source CSV. No deployment claim is imported.",
+      "originals": "The complete official 36-row, 31,584-byte CSV was captured successfully with SHA-256 fc55a7b3b62e2fe40d5e7d0f1cbaff6b7e727b76c7a5280ef401383dc27ff267."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Large Network Equipment complete dataset",
+      "processed_offset": 96,
+      "accepted_records": 96,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA certification dataset under the EPA Data License; exact issuer identity, router/switch classification, port, PoE, modular, power-supply, lifecycle and test facts normalized without redistributing the source CSV. No deployment claim is imported.",
+      "originals": "The complete official 96-row, 223-column, 72,103-byte v3 CSV was captured successfully with SHA-256 e769eedcef814b652ad6594b6cadb43b239e57e9250071a90cc133b07907e533."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2026 most-recent-label partition",
+      "processed_offset": 133,
+      "accepted_records": 133,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. No hidden location, capacity, PUE, operator or deployment claim is imported.",
+      "originals": "The complete official 337-entry, 651,382-byte HTML registry was captured successfully with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2026 most-recent-certification partition contains 133 exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2025 most-recent-label partition",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last label is historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2025 most-recent-certification partition contains 50 exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2023 and 2024 most-recent-label partitions",
+      "processed_offset": 54,
+      "accepted_records": 54,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2023 and 2024 most-recent-certification partitions contain 31 and 23 exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2019 through 2022 most-recent-label partitions",
+      "processed_offset": 54,
+      "accepted_records": 54,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The bounded 2019, 2020, 2021 and 2022 most-recent-certification partitions contain 16, nine, 20 and nine exact facility identities."
+    },
+    {
+      "inventory": "EPA ENERGY STAR Certified Data Centers 2010 through 2018 complete tail",
+      "processed_offset": 46,
+      "accepted_records": 46,
+      "enriched_records": 0,
+      "reuse": "Public U.S. EPA building-registry data under the EPA Data License; exact facility name, state, owner, optional property manager, certification years and source-reported building observations are normalized without redistributing the source HTML. Current lifecycle remains unknown because the last labels are historical.",
+      "originals": "The same complete official 337-entry, 651,382-byte HTML registry was reused with SHA-256 47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5. The 2010-2018 tail contains 46 exact facility identities and exhausts the captured inventory."
+    },
+    {
+      "inventory": "atNorth FIN04 current Kouvola permits and SWE04 consultation, grid-line and heat-reuse planning evidence",
+      "processed_offset": 15,
+      "accepted_records": 0,
+      "enriched_records": 2,
+      "reuse": "Seven public official municipal, operator and contractor pages support 15 bounded observations. Facts are normalized without redistributing originals; no held source was used.",
+      "originals": "The browsing interface exposed the official content but not stable original bytes, so no checksums are claimed. This is an access/content-tooling limitation, not a reuse prohibition."
+    },
+    {
+      "inventory": "Volvo Penta current D8, D13 and D16 power-generation engine tables",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "enriched_records": 0,
+      "reuse": "Public OEM product tables were used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved reuse hold applies to these pages.",
+      "originals": "All four official HTML originals were captured and checksummed: D8 Stage V 186,212 bytes; D13 Stage V 185,089 bytes; D16 Stage V 186,051 bytes; D16 Stage II/EPA Tier 2 191,073 bytes. The exact SHA-256 values are in sources.json."
+    },
+    {
+      "inventory": "Volvo Penta current D8, D13 and D16 Stage IIIA/EPA Tier 3 power-generation tables",
+      "processed_offset": 22,
+      "accepted_records": 22,
+      "enriched_records": 0,
+      "reuse": "Public OEM product tables were used for factual extraction only. No source HTML is redistributed, no open licence is asserted and no saved reuse hold applies to these pages.",
+      "originals": "All three official HTML originals were captured and checksummed: D8 Stage IIIA 187,457 bytes; D13 Stage IIIA 191,067 bytes; D16 Stage IIIA 190,260 bytes. The exact SHA-256 values are in sources.json."
+    },
+    {
+      "inventory": "U.S. DOE CCMS computer-room air-conditioner displayed rows 1-50",
+      "processed_offset": 50,
+      "accepted_records": 50,
+      "enriched_records": 0,
+      "reuse": "Public U.S. Department of Energy certification data were used for factual extraction only. DOE identifies the values as manufacturer representations and states that listing is not a compliance determination. No source page is redistributed and no reuse prohibition was found.",
+      "originals": "The accessible public reader exposed all 50 selected rows. A direct original-byte request returned HTTP 403, so sources.json claims no source bytes or checksum. This is an access/content limitation, not a reuse restriction."
+    },
+    {
+      "inventory": "U.S. DOE CCMS uninterruptible-power-supply displayed rows 1-50",
+      "processed_offset": 50,
+      "accepted_records": 39,
+      "enriched_records": 11,
+      "reuse": "Public U.S. Department of Energy certification data were used for factual extraction only. DOE identifies the values as manufacturer representations and states that listing is not a compliance determination. No source page is redistributed and no reuse prohibition was found.",
+      "originals": "The accessible public reader exposed all 50 selected rows. Direct requests to the public MCP endpoint returned HTTP 403, so sources.json claims no source bytes or checksum. This is an access/content limitation, not a reuse restriction."
     }
   ],
   "deferred": [
     {
-      "inventory": "FIN04A Phase 2 identity",
-      "reason": "An official cross-reference is still required to bind the environmental case to the existing July 2026 YIT phase without creating a duplicate phase."
+      "inventory": "FIN04 generic YIT contract-to-permit phase mapping",
+      "reason": "FIN04A Phase 2 is now bound to permit 286-2025-384, but official evidence does not map the generic July/August 2026 YIT contract scopes to FIN04A Phase 2, FIN04A Phase 3, FIN04B or FIN04C Phase 2. No duplicate child record is added."
     },
     {
       "inventory": "SWE04 commissioning milestone",
-      "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence."
+      "reason": "H1 2028 and autumn 2028 remain contradictory dated targets pending later operator or permit evidence. The March 2029 line-project completion target is not facility commissioning."
     },
     {
-      "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current electrical/liquid-cooling table",
-      "reason": "The first 50 displayed low-voltage and medium-voltage dry-type basic-model rows are complete. Continue only through a stable non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount either displayed page."
+      "inventory": "Next non-overlapping DOE CCMS transformer page/filter or independent current network/electrical/liquid-cooling table",
+      "reason": "The first 50 displayed low-voltage dry-type, medium-voltage dry-type and liquid-immersed basic-model rows and all 96 current ENERGY STAR Large Network Equipment entries are complete. Medium-voltage rows 51-100 remain inaccessible through a stable pagination boundary in this environment. Continue only through a verified non-overlapping pagination or filter boundary, or select another unheld official inventory; do not recount completed pages or network certifications."
+    },
+    {
+      "inventory": "Caterpillar Electric Power product tables and ratings guides",
+      "reason": "Current official terms prohibit extraction for database creation and copying, republication or distribution without written consent. No Caterpillar product facts or bytes were imported."
+    },
+    {
+      "inventory": "Doosan Portable Power generator tables",
+      "reason": "Current official terms restrict stored, reproduced, republished or distributed website content to narrow personal-use exceptions. No Doosan product facts or bytes were imported."
+    },
+    {
+      "inventory": "DOE CCMS computer-room air-conditioner rows 51-100",
+      "reason": "Rows 1-50 are complete. Continue only after a stable public page, filter or download boundary exposes a verified non-overlapping inventory; do not infer page contents or recount the first page."
+    },
+    {
+      "inventory": "DOE CCMS uninterruptible-power-supply rows 51-100",
+      "reason": "Rows 1-50 are complete. The public page exposed no stable next-page boundary and the public MCP endpoint returned HTTP 403 in this environment. Continue only after verifying a non-overlapping page, filter or download boundary."
     }
   ],
   "quarantined": [
@@ -138,6 +266,16 @@
       "record": "ZTE R5300 G5 ENERGY STAR certification 4654814",
       "field": "configuration_identity",
       "reason": "The issuer row labels the certified model R5300 G5 but prints R5300 G6 for the high-end configuration identifier. Both observations remain exact and no cross-model configuration identity is inferred."
+    },
+    {
+      "record": "36 AboveAir DOE CCMS CRAC basic-model rows",
+      "field": "cooling_capacity_kw",
+      "reason": "Every displayed net sensible cooling value exceeds the same row's displayed net total cooling value under the page's printed Btu/h headings. Both issuer observations are preserved, but normalized scalar cooling capacity remains null pending corrected issuer data or an explicit unit clarification."
+    },
+    {
+      "record": "APC BN1500M2-CA and BN1500M2 exact configurations",
+      "field": "efficiency_pct",
+      "reason": "The current DOE CCMS rows report 98.9% average load-adjusted efficiency while the exact existing ENERGY STAR records report 99.0%. Both dated issuer observations are retained and the normalized scalar remains null."
     }
   ],
   "normalization_notes": [
@@ -164,9 +302,42 @@
     "All six ZTE and three Oracle entries retain their reported three-tier observations. ZTE certification 4654814 does not resolve its R5300 G5/R5300 G6 configuration-label mismatch.",
     "All 476 rows across all 17 ENERGY STAR Enterprise Servers partner partitions in the 2026-11-04 dataset snapshot are now processed.",
     "All 50 displayed DOE CCMS low-voltage dry-type transformer basic-model rows are processed for the public page updated 2026-10-23.",
+    "All 50 displayed DOE CCMS medium-voltage dry-type and all 50 displayed liquid-immersed transformer basic-model rows are processed for the public pages updated 2026-10-23.",
+    "Liquid-transformer model suffixes remain identity text; winding voltage, dielectric fluid, temperature rise and ordered options are not inferred.",
     "DOE represented efficiency stays an observation because the displayed table omits the load/test condition; phase count and apparent kVA remain exact, active kW is not inferred and listing is not treated as a DOE compliance determination.",
     "The saved Delta UPS reuse hold was screened and enforced; no Delta UPS facts, records or source bytes were committed.",
     "Campus aggregates remain excluded from capacity sums under all viewer filters.",
-    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko reuse holds remain in force; no held facts or bytes were imported."
+    "NTT, PeeringDB, PDG, Socomec, Airedale, Riello and Kohler/Rehlko reuse holds remain in force; no held facts or bytes were imported.",
+    "All 84 Block I/O and all 36 File I/O certifications in the 2026-11-04 ENERGY STAR Data Center Storage exports are processed; the current bounded inventories are exhausted.",
+    "Block I/O and File I/O certification IDs remain distinct immutable identities even when model names overlap across datasets.",
+    "Storage PSU nameplates, cache/device quantities and workload metrics remain exact test-configuration observations; they are not normalized as equipment input, installed inventory, generic efficiency or deployment.",
+    "All 96 rows in the 2026-10-27 ENERGY STAR Large Network Equipment export are processed; the current bounded inventory is exhausted.",
+    "Network minimum, typical and maximum configurations remain separate observations; measured watts retain topology, throughput, utilization, voltage and frequency boundaries; PSU output remains a nameplate; no rated device/rack input, option combination or deployment is inferred.",
+    "All 133 facilities whose most recent label year is 2026 in the complete 337-entry ENERGY STAR Certified Data Centers registry are processed; the 2026 partition is exhausted.",
+    "EPA intentionally reports only state geography for certified data centers. No locality, address or coordinate is inferred from facility-name text, and address-like names remain unparsed identifiers.",
+    "The registry's total-floor-space column has no printed unit, so values remain observations and are not normalized to building_area_m2. Year constructed remains a year-only observation rather than a construction or commissioning date.",
+    "The 2026 issuer label supports operational status in the certification year but does not disclose exact certification date, commissioning date, operator, capacity, PUE, energy use or equipment deployment.",
+    "All 50 facilities whose most recent label year is 2025 are processed with current lifecycle status unknown; the certification supports operation only in its printed label year.",
+    "The NTT reuse hold applies to the NTT portfolio source. Two 2025 rows and four 2023-2024 rows naming NTT as owner use only independent EPA issuer-registry evidence; no NTT source facts or bytes are imported.",
+    "All 23 facilities whose most recent label year is 2024 and all 31 whose most recent label year is 2023 are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
+    "The certified-data-center parser validates construction year against each row's own most-recent certification year, so selecting an older partition does not incorrectly reject newer rows elsewhere in the complete registry.",
+    "All 16 facilities whose most recent label year is 2019, nine from 2020, 20 from 2021 and nine from 2022 are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
+    "The NTT reuse hold applies to the NTT portfolio source. The one 2019-2022 row naming NTT as owner uses only independent EPA issuer-registry evidence; no NTT source facts or bytes are imported.",
+    "All 46 facilities in the 2010-2018 tail are processed with current lifecycle status unknown; each certification supports operation only in its printed label year.",
+    "All 337 entries in the captured ENERGY STAR Certified Data Centers registry are processed across exact annual partitions from 2010 through 2026; the captured inventory is exhausted and must not be recounted.",
+    "FIN04A Phase 2 permit 286-2025-384 and the FIN04A Phase 3, FIN04B modification and FIN04C Phase 2 permit observations remain campus-level evidence until official party and phase cross-references support child identities.",
+    "FIN04 permit areas remain source observations and are not normalized as campus or data-hall area.",
+    "SWE04 1,200 MW is planned combustion fuel input for backup plant, not electrical output, grid capacity or IT capacity.",
+    "SWE04 130 kV line construction and heat-reuse development agreement are planning observations; no facility commissioning date, delivered heat or contracted heat quantity is inferred.",
+    "All 22 populated Volvo Penta model/frequency rows across the selected current D8, D13 and D16 baseline tables are processed; blank TAD1640GE cells remain excluded.",
+    "All 22 populated Volvo Penta Stage IIIA/Tier 3 model/frequency rows are processed: six D8, ten D13 and six D16. D13 60 Hz-only and D16 50 Hz-only columns remain sparse; printed N/A cells are not configurations.",
+    "Volvo Penta prime electrical kW/kVA, standby electrical kW/kVA and engine mechanical kWm remain distinct; fuel/emissions labels are OEM observations and no alternator, voltage, complete genset BOM, issuer certification or deployment is inferred.",
+    "All 50 displayed DOE CCMS computer-room air-conditioner rows are processed for the public page updated 2026-10-23: 36 AboveAir and 14 AIRSYS basic-model configurations.",
+    "AIRSYS net-total Btu/h is converted to cooling_capacity_kw and all SCFM ratings are converted to airflow_m3_h using fixed physical conversion factors; the printed originals remain observations.",
+    "AboveAir cooling_capacity_kw remains null on all 36 rows because the issuer's displayed net sensible values exceed its displayed net totals. NSenCOP remains a ratio observation and listing is not a DOE compliance determination or deployment.",
+    "All 50 displayed DOE CCMS UPS rows are processed for the public page updated 2026-10-23: four ABB rows and 46 APC rows.",
+    "Exact individual-model deduplication enriched 11 existing ENERGY STAR APC configurations and added 39 new configurations; no duplicate configuration identity was created.",
+    "DOE active W, apparent VA and average load-adjusted efficiency remain separate and retain the reported lowest supported input dependency mode. Battery energy, runtime, frequency, dimensions, accessories and deployment are not inferred.",
+    "DOE listing is not treated as a compliance determination. The BN1500M2 and BN1500M2-CA efficiency disagreement remains explicitly quarantined rather than replacing either issuer observation."
   ]
 }

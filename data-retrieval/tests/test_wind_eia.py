@@ -281,3 +281,24 @@ def test_revised_source_keeps_conflicts_and_unchanged_units():
     assert history[0]["units"][1] == history[1]["units"][1]
     assert result["historical_capacity_mw"] == 30
     assert result["status"] == "unknown"
+
+
+def test_reviewed_site_keeps_farm_capacity_unknown():
+    from energy_data_retrieval.wind_catalogue.eia import stage_reviewed_site
+
+    item = {
+        "plant_code": 99999,
+        "name": "Synthetic reviewed site",
+        "year": 2025,
+        "plant_context": {"Latitude": 40.0, "Longitude": -100.0, "State": "NE"},
+        "plant_locator": "synthetic fixture",
+        "units": [{"original": {"Technology": "Onshore Wind Turbine"}, "status_code": "OP"}],
+    }
+    row = stage_reviewed_site(item, source_id="synthetic", now="2026-11-05T00:00:00Z")
+    assert row["aggregation_role"] == "unresolved"
+    assert row["status"] == "unknown"
+    assert row.get("installed_capacity_mw") is None
+    assert row == stage_reviewed_site(item, source_id="synthetic", now="2026-11-05T00:00:00Z")
+    item["plant_context"]["Latitude"] = float("nan")
+    with pytest.raises(ValueError, match="coordinates"):
+        stage_reviewed_site(item, source_id="synthetic", now="2026-11-05T00:00:00Z")

@@ -1,0 +1,94 @@
+{
+  "reviewed": 2,
+  "accepted_identity_enriched": 2,
+  "accepted_parameter_enriched": 2,
+  "remaining_candidates": 48,
+  "decisions": [
+    {
+      "record_id": "dbcb19e4-bb35-5ab1-b89e-3a83bf574cf8",
+      "name": "Metz solar farm",
+      "duid": "METZSF1",
+      "survey_row": 985,
+      "ga_objectid": 418,
+      "ga_globalid": "{1A376928-3DE7-4897-9A4D-2D7DF52653FC}",
+      "distance_km": 0.5590295355679877,
+      "old_locality": "Armidale",
+      "GA_locality": "METZ",
+      "manual_scope_review": "NSW departmental project page: Metz Solar Farm, SSD7931, Armidale Regional LGA; canonical CityArmidale and GA station localityMETZ are different geographic levels. Preserve originalArmidale. FRVownerpage NOT used for accepted facts: nonpersonal-use rights restriction.",
+      "automatic_stage_result": "Prior conservative locality guard held these; manual geographic-scope resolution is explicit. Guard unchanged. No names/proximity-only automatic merge.",
+      "one_canonical_phase": true,
+      "one_AEMO_site_unit": true
+    },
+    {
+      "record_id": "dbd9d9bd-2ac3-5b87-a644-1cadc3ed8de8",
+      "name": "Wollar solar farm",
+      "duid": "WOLARSF1",
+      "survey_row": 1746,
+      "ga_objectid": 5,
+      "ga_globalid": "{EEC41AEF-AC9A-484C-8C6A-18B20C9B199F}",
+      "distance_km": 1.164108691836749,
+      "old_locality": "Mudgee",
+      "GA_locality": "WOLLAR",
+      "manual_scope_review": "Canonical native location explicitly says Wollar Village while City=Mudgee; owner project page locates farm7km southWollar/around50kmMudgee. Preserve originalMudgee, no false exacttown equivalence.",
+      "automatic_stage_result": "Prior conservative locality guard held these; manual geographic-scope resolution is explicit. Guard unchanged. No names/proximity-only automatic merge.",
+      "one_canonical_phase": true,
+      "one_AEMO_site_unit": true
+    }
+  ],
+  "field_review": [
+    {
+      "as_of": "2026-10-30",
+      "sheet_row": 985,
+      "survey_id": 1628,
+      "unit_id": 162801,
+      "duid": "METZSF1",
+      "site_name": "Metz Solar Farm",
+      "technology": "Solar PV",
+      "technology_detail": "Single Axis Tracking",
+      "nameplate_ac_mw": 115.02,
+      "nameplate_dc_mw": 135,
+      "max_site_dispatch_ac_mw": 115,
+      "commitment_status": "In Service",
+      "full_commercial_use_date": null,
+      "scope": "Single survey unit at site; exact existing DUID, no name/proximity merge",
+      "record_id": "dbcb19e4-bb35-5ab1-b89e-3a83bf574cf8",
+      "fields_added": [
+        "capacity_ac_mw",
+        "extensions_json",
+        "owners"
+      ],
+      "conflicts": {
+        "capacity_dc_mw": {
+          "existing": 141,
+          "aemo_observation": 135
+        }
+      }
+    },
+    {
+      "as_of": "2026-10-30",
+      "sheet_row": 1746,
+      "survey_id": 1716,
+      "unit_id": 171601,
+      "duid": "WOLARSF1",
+      "site_name": "Wollar Solar Farm",
+      "technology": "Solar PV",
+      "technology_detail": "Single Axis Tracking",
+      "nameplate_ac_mw": 280,
+      "nameplate_dc_mw": 280,
+      "max_site_dispatch_ac_mw": 280,
+      "commitment_status": "In Service",
+      "full_commercial_use_date": "2025-11-21 00:00:00",
+      "scope": "Single survey unit at site; exact existing DUID, no name/proximity merge",
+      "record_id": "dbd9d9bd-2ac3-5b87-a644-1cadc3ed8de8",
+      "fields_added": [
+        "capacity_dc_mw",
+        "extensions_json",
+        "owners"
+      ],
+      "conflicts": {}
+    }
+  ],
+  "scope": "HistoricalOctober2026 AEMOnameplate capacities/siteowners only. No operatingstatus/commissioningdate/GA unspecifiedMW inference. Cachedworkbook not refetched withinbackoff; actualretrieval retained. Department CC BY4 metadata only, no public submissions or copyrighted consultant reports.",
+  "GA_sha256": "bbd193751c283e5957ae73f76120cde7d3871267d10ccaf08d53ac2837e5f35f",
+  "AEMO_sha256": "ee0cb96a0f405f32bcdf75389fa9aa57472a8ede2e47f99e466f632765de86bb"
+}

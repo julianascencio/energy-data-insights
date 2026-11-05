@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-11-05T12:15:38.957948+00:00",
+  "catalogue_validation": "Both passed, all references and natural identities valid",
+  "focused_tests": "437 passed (all BESS tests including7new parser tests);35catalogue/parser tests repeated after final data changes, passed",
+  "viewer": "25passed",
+  "parquet": "Both catalogues rebuilt twice byte-identically; typed Zstandard; latest snapshot_e/snapshot_f outsideGit; coverage/manifests regenerated",
+  "offline_oem_example": "passed",
+  "ruff": "Repository-wide check and format passed",
+  "ty": "Passed with explicit .venv/bin/python; initial implicit environment selected systemPython and failed one pre-existing unresolved import",
+  "repository_hygiene": "passed",
+  "citations": "passed; new bibliographic records queued to avoid concurrentPR157sharedfile edits",
+  "package_build": "All3packages wheels andsdists built successfully",
+  "docs": "Final strict gallery-disabled Sphinx passed; 652 HTML pages passed local links/assets checks.",
+  "full_suite": "Stopped at collection onpsutil.NoSuchProcess in test_kgpv_worldwide_example; same failure reproduced on unchanged mainc44b15a",
+  "remaining_suite": "With that file explicitly excluded:2723passed,5skipped,31failed,24errors; all55failure/error traceback endpoints are psutil.NoSuchProcess, PID5. Not a full-suite pass. No tests or runtime code disabled/changed.",
+  "baseline_remaining": "Unchanged main c44b15a: 2716 passed, 5 skipped, 31 failed, 24 errors in 176.82 seconds. Same failing/error test identities as branch; every endpoint is psutil.NoSuchProcess. Branch has exactly seven additional passing parser tests.",
+  "remote_ci": "Not yet created; do not infer success"
+}

@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "file": "29.50_-13.50_2022.csv",
+      "sha256": "97cbb8ae70514e64390763104b2bd95acf175ae399bb6b9ce3c6c27df10e9d8c"
+    },
+    {
+      "file": "29.50_-13.50_2023.csv",
+      "sha256": "34a4ee835fff2a874977574e6d0d1393dbb5ee0ca6478e5106659a2520ea382c"
+    }
+  ],
+  "requested_latitude": 29.5,
+  "requested_longitude": -13.5,
+  "cell_latitude": 29.5,
+  "cell_longitude": -13.5,
+  "requests": [
+    {
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "parameters": {
+        "latitude": "29.5",
+        "longitude": "-13.5",
+        "start_date": "2022-01-01",
+        "end_date": "2023-01-01",
+        "hourly": "shortwave_radiation,temperature_2m,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,terrestrial_radiation",
+        "models": "era5",
+        "timezone": "UTC",
+        "timeformat": "unixtime",
+        "wind_speed_unit": "ms",
+        "temperature_unit": "celsius",
+        "cell_selection": "nearest",
+        "elevation": "nan"
+      },
+      "retrieved_at_utc": "2026-11-05T14:32:39.290229+00:00",
+      "sha256": "2f2774cbc7352f78ac959a7ff148705218956015a473cc726e96b2b98809f604",
+      "size_bytes": 338544,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "parameters": {
+        "latitude": "29.5",
+        "longitude": "-13.5",
+        "start_date": "2023-01-01",
+        "end_date": "2024-01-01",
+        "hourly": "shortwave_radiation,temperature_2m,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,terrestrial_radiation",
+        "models": "era5",
+        "timezone": "UTC",
+        "timeformat": "unixtime",
+        "wind_speed_unit": "ms",
+        "temperature_unit": "celsius",
+        "cell_selection": "nearest",
+        "elevation": "nan"
+      },
+      "retrieved_at_utc": "2026-11-05T14:32:47.227248+00:00",
+      "sha256": "bfc89e0665312abb7d42e890ea6eab7fd8cc497592190be0e40657df13b33c7b",
+      "size_bytes": 338122,
+      "cache_hit": false
+    }
+  ]
+}

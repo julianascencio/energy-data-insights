@@ -1,0 +1,81 @@
+{
+  "batch": "2026-11-05-1807",
+  "new_equipment": 4,
+  "enriched_equipment": 2,
+  "complete_model_columns_reviewed": 6,
+  "added": [
+    {
+      "record_id": "9e866a8e-2fab-53a9-8b94-a5ec20fc1d88",
+      "model": "GW 70/1500"
+    },
+    {
+      "record_id": "d69e199b-a403-520e-be91-cd26b378d2b3",
+      "model": "GW 77/1500"
+    },
+    {
+      "record_id": "3b592c8b-9b85-5da4-8f32-19a38c84ff96",
+      "model": "GW 82/1500"
+    },
+    {
+      "record_id": "3459e8cc-3ca2-5c7f-8eb3-3419c9f90828",
+      "model": "GW 87/1500"
+    }
+  ],
+  "enriched": [
+    "e6e35278-d813-50eb-b874-6c5d745ba91f",
+    "f0edf0e9-25b7-5424-b9b6-bf755246ccdf"
+  ],
+  "exclusions": [],
+  "conflicts_preserved": [
+    "GW109/2500 older English static10.5m/s versus digital-English/Spanish unqualified10.2m/s",
+    "GW109/2500 reported9516 versus9076/9413m2; option boundary unresolved"
+  ],
+  "quarantines": [
+    {
+      "model": "GW 70/1500",
+      "field": "swept_area_m2",
+      "decision": "Original printed value and geometric check retained; scalar null until geometry boundary resolved"
+    },
+    {
+      "model": "GW 77/1500",
+      "field": "swept_area_m2",
+      "decision": "Original printed value and geometric check retained; scalar null until geometry boundary resolved"
+    },
+    {
+      "model": "GW 82/1500",
+      "field": "swept_area_m2",
+      "decision": "Original printed value and geometric check retained; scalar null until geometry boundary resolved"
+    },
+    {
+      "model": "GW 87/1500",
+      "field": "swept_area_m2",
+      "decision": "Original printed value and geometric check retained; scalar null until geometry boundary resolved"
+    }
+  ],
+  "deferrals": [
+    {
+      "source_id": "goldwind-americas-15mw-en",
+      "graph_only_curves": 4,
+      "reason": "No original numerical points; mode unknown; not digitized"
+    },
+    {
+      "source_id": "goldwind-americas-25mw-digital-en",
+      "graph_only_curves": 2,
+      "reason": "No original numerical points; mode unknown; not digitized"
+    }
+  ],
+  "originals": [
+    {
+      "source_id": "goldwind-americas-15mw-en",
+      "sha256": "eec47e4886ebf6cc33b1c1f0a9cfbc24a58d8ccb12832854758ab4304b691503",
+      "locator": "PDF page6 complete4-model table; pages4–5 graphs"
+    },
+    {
+      "source_id": "goldwind-americas-25mw-digital-en",
+      "sha256": "f53617c8620fbfe76f52777f08f9d79bb8c16bacc2682ad614e05971a2e04459",
+      "locator": "PDF page3 complete2-model table and graphs"
+    }
+  ],
+  "next_task": "No rescan of completed1.5MW four columns or2.5MW two columns. Obtain original corrected area/revision and rated-speed-mode crosswalk; GW109 certificate rotor107.5m remains unresolved.",
+  "access": "Original PDFs acquired successfully; no authentication or explicit reuse restriction encountered"
+}

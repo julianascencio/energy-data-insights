@@ -1,0 +1,66 @@
+{
+  "run_id": "energy-star-certified-data-centers-2010-2018-20261105T162000Z",
+  "validated_at": "2026-11-05T16:20:00Z",
+  "base_main_sha": "76179409be2ce1166d60714145f1711776182b16",
+  "branch": "research/data-center-database-20261105T1320Z",
+  "catalogue": {
+    "canonical_records": 3153,
+    "projects": 520,
+    "project_scopes": {"facility": 403, "phase": 3, "campus": 114},
+    "equipment": 2633,
+    "countries": 36,
+    "operators": 13,
+    "oems": 70,
+    "added_projects": 46,
+    "enriched_projects": 0,
+    "added_equipment": 0
+  },
+  "inventory": {
+    "source_id": "epa-energy-star-certified-data-centers-20261105",
+    "records_processed": 46,
+    "source_total_rows": 337,
+    "source_bytes": 651382,
+    "sha256": "47f09260ab89ac527721155c32665d55de90f987f7c67984cf8789ad215e66e5",
+    "most_recent_certification_years": {"2010": 2, "2011": 4, "2012": 3, "2013": 7, "2014": 1, "2015": 1, "2016": 4, "2017": 10, "2018": 14},
+    "states": 20,
+    "owner_labels": 34,
+    "property_manager_relations": 17,
+    "deferred_historical_rows": 0,
+    "captured_inventory_exhausted": true,
+    "original_bytes_available": true,
+    "reuse_prohibited": false,
+    "license": "EPA Data License"
+  },
+  "local_checks": [
+    {"command": "jq parsing for sources, backlog, source review, coverage, validation and all new JSONL records", "result": "passed"},
+    {"command": "uv run python -m energy_data_retrieval.data_center_catalogue validate", "result": "passed; 3153 records"},
+    {"command": "uv run python scripts/build_data_center_energy_star_certified_facilities_batch.py for every year 2010 through 2026 plus cmp", "result": "passed; all 17 annual partitions and 337 records replayed byte-identically"},
+    {"command": "uv run --group dev pytest -q data-retrieval/tests/test_data_center_inventories.py data-retrieval/tests/test_data_center_catalogue.py", "result": "passed; 88 tests"},
+    {"command": "node --test tests/js/test_database_viewer.mjs", "result": "passed; 25 tests"},
+    {"command": "uv run ruff format --check .", "result": "passed; 1061 files"},
+    {"command": "uv run ruff check .", "result": "passed"},
+    {"command": "uv run ty check", "result": "passed repository-wide"},
+    {"command": "uv run python scripts/check_repository.py", "result": "passed; 5158 candidate files"},
+    {"command": "uv run python scripts/check_citations.py", "result": "passed"},
+    {"command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py", "result": "passed; explicit project scopes are 403 facility, 3 phase and 114 campus records"},
+    {"command": "two independent data_center_catalogue build commands plus cmp", "result": "passed; byte-identical snapshots"},
+    {"command": "git diff --check", "result": "passed"}
+  ],
+  "not_repeated": [
+    "Full repository Python suite; the immediately preceding run recorded 2796 passed, 5 optional skips and one unrelated transient PV subprocess failure, and the prior published head passed remote Python CI.",
+    "Local strict Sphinx; remote Documentation CI is authoritative because the local Orbital PV gallery requires Python 3.13+."
+  ],
+  "snapshot_sha256": {
+    "input": "6998000f487fa3b9c6f15c03b5425b83b33b61ac7603f5b679a860b1482a924f",
+    "projects": "f4aa6b5f339a7251a51c24d415498d5e155cc556af04f882b1d1d0ab861ef4da",
+    "equipment": "cc2edecd7ad954d50785584d26afe4e4c9d3a642579ee87c5d274ee57b774f61",
+    "manifest": "93d34ee3ee11992a3a0843780db5b0bab47d50488f861a10d66ee5774ddbab15",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "ee71ddb161e66d78fcc4dd7844743f1ca8a06ab673c533f9383bccebb7668aee"
+  },
+  "remote_ci": {
+    "prior_head": "fa92630099a1b6aad973bc1c2ad42096b630738e",
+    "prior_head_status": "Python quality and tests and Documentation completed successfully",
+    "status_at_validation": "not_started_for_new_head"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "batch": "2026-11-05-1510",
+  "scope": "Six exact KNREC conflict certificates, independent KSNARA lookup and two original Unison type-certificate publications",
+  "equipment_added": 0,
+  "equipment_enriched": 0,
+  "decisions": [
+    {
+      "certificate": "WT-MLWS-2-0021",
+      "decision": "deferred",
+      "reason": "Exact KSNARA search returned no result; original SWT-3.2-113-DD certificate not obtained; rotor57m conflict unresolved"
+    },
+    {
+      "certificate": "WT-MLWS-3-0028",
+      "decision": "deferred",
+      "reason": "Exact KSNARA search returned no result; original GW109/2500 certificate not obtained; rotor107.5m conflict unresolved"
+    },
+    {
+      "certificate": "WT-1902-00-170356",
+      "decision": "deferred",
+      "model": "U136",
+      "ksnara_id": "CID907392",
+      "indexed_standard": "KSC8572 onshore design requirements",
+      "indexed_first_certified": "2019-08-19",
+      "original_oem_certificate": "TC-190502 Rev.0",
+      "original_issued": "2019-05-23",
+      "original_valid_until": "2024-05-22",
+      "original_class": "IA",
+      "original_standard": "IEC61400-1:2005+AMD1:2010",
+      "reason": "Original OEM certificate differs in ID/date from KS listing; onshore standard corroborated but KS-to-UL exact configuration crosswalk unresolved; full design-characteristics annex STC-180901 not acquired",
+      "references": [
+        {
+          "document": "STC-180901 Rev.0",
+          "date": "2018-10-08",
+          "role": "design evaluation"
+        },
+        {
+          "document": "STC-190508 Rev.1",
+          "date": "2019-05-23",
+          "role": "type test"
+        },
+        {
+          "document": "STC-190202 Rev.0",
+          "date": "2019-03-26",
+          "role": "manufacturing"
+        },
+        {
+          "document": "R11737522-12a Rev.0",
+          "date": "2019-05-23",
+          "role": "final evaluation"
+        }
+      ]
+    },
+    {
+      "certificate": "WT-2201-00-190356",
+      "decision": "deferred",
+      "model": "U151 onshore",
+      "ksnara_id": "CID907390",
+      "indexed_standard": "KSC8572 onshore design requirements",
+      "indexed_first_certified": "2022-08-08",
+      "original_oem_certificate": "TC-200103 Rev.0",
+      "original_issued": "2020-04-23",
+      "original_valid_until": "2025-04-22",
+      "original_class": "S",
+      "original_standard": "IEC61400-1:2005+AMD1:2010",
+      "reason": "Original OEM certificate page1 has no rotor; referenced page2/design annex STC-200109 not acquired. KS95m versus OEM151m conflict and certificate crosswalk remain unresolved",
+      "references": [
+        {
+          "document": "STC-200109",
+          "date": "2020-01-31",
+          "role": "design evaluation"
+        }
+      ]
+    },
+    {
+      "certificate": "WT-2601-01-200856",
+      "decision": "deferred",
+      "ksnara_id": "CID907397",
+      "indexed_model": "V162-6.0/6.2MW(육상용)",
+      "indexed_first_certified": "2026-01-08",
+      "reason": "Indexed registry confirms model designation but supplies no gearbox evidence; prior absent-gearbox conflict unresolved"
+    },
+    {
+      "certificate": "WT-2602-01-221439",
+      "decision": "conflict",
+      "ksnara_id": "CID907396",
+      "indexed_model": "E-138 EP3 E2",
+      "indexed_first_certified": "2026-02-26",
+      "knrec_model": "E138 EP3 E3",
+      "reason": "Same certificate number, conflicting E2/E3 identity across primary registry listings. Unitless138.59rotor retained unresolved; no model match or geometry fill"
+    }
+  ],
+  "original_images": [
+    {
+      "file": "u136-land-1.jpg",
+      "url": "https://unison.co.kr/data/board/2/102/육상_U136-형식인증서_01.jpg",
+      "sha256": "499fe51575fb83785e0549a35f260b8b8bbe71f69f88e3083c1b1a249bf6c15d"
+    },
+    {
+      "file": "u136-land-2.jpg",
+      "url": "https://unison.co.kr/data/board/2/102/육상_U136-형식인증서_02.jpg",
+      "sha256": "d4ae46d8aa4401a01478322e365345c20f4c19f52d898585d0d3bec43fd269f8"
+    },
+    {
+      "file": "u151.jpg",
+      "url": "https://unison.co.kr/data/board/2/101/U151-형식인증서_01.jpg",
+      "sha256": "8f3a289844e412670d6bd8704cf6caecf8499ed619e9c8fe8465d531c050748c"
+    }
+  ],
+  "availability": {
+    "unison": "HTTP200 original JPEG bytes obtained via observed OEM API entries and page viewer paths; visually inspected all3images",
+    "ksnara": "Indexed primary-source text available for4IDs. Direct URLs returned HTTP200 with a340-byte HTML 404/notfound-or-access-denied body; web open failed. This is not evidence of required authentication or reuse restriction.",
+    "unison_unknown_path": "technology/data returned HTTP200 homepage fallback; not treated as certificate evidence"
+  },
+  "limitations": [
+    "Indexed valid labels do not establish independently verified present certificate validity",
+    "Both original UL certificates have elapsed printed validity dates; maintenance/renewal unknown",
+    "No technical values transferred across onshore/offshore or KS/UL configuration boundaries",
+    "U136 3–22m/s detail page vs3/25m/s platform conflict remains; no numerical curves acquired"
+  ]
+}

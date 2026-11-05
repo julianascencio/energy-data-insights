@@ -1,0 +1,61 @@
+{
+  "requested_latitude": 28.5,
+  "requested_longitude": -18.0,
+  "cell_latitude": 28.5,
+  "cell_longitude": -18.0,
+  "requests": [
+    {
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "parameters": {
+        "latitude": "28.5",
+        "longitude": "-18.0",
+        "start_date": "2022-01-01",
+        "end_date": "2023-01-01",
+        "hourly": "shortwave_radiation,temperature_2m,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,terrestrial_radiation",
+        "models": "era5",
+        "timezone": "UTC",
+        "timeformat": "unixtime",
+        "wind_speed_unit": "ms",
+        "temperature_unit": "celsius",
+        "cell_selection": "nearest",
+        "elevation": "nan"
+      },
+      "retrieved_at_utc": "2026-11-05T14:02:26.117382+00:00",
+      "sha256": "8751bf6fd2c0ea1c0b4d0698ad1f1183a4d355a7cf84a50f4e729aaffe12abf3",
+      "size_bytes": 341441,
+      "cache_hit": false
+    },
+    {
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+      "parameters": {
+        "latitude": "28.5",
+        "longitude": "-18.0",
+        "start_date": "2023-01-01",
+        "end_date": "2024-01-01",
+        "hourly": "shortwave_radiation,temperature_2m,wind_speed_10m,wind_gusts_10m,relative_humidity_2m,terrestrial_radiation",
+        "models": "era5",
+        "timezone": "UTC",
+        "timeformat": "unixtime",
+        "wind_speed_unit": "ms",
+        "temperature_unit": "celsius",
+        "cell_selection": "nearest",
+        "elevation": "nan"
+      },
+      "retrieved_at_utc": "2026-11-05T14:04:35.551590+00:00",
+      "sha256": "ea75e764fd34d19f8631e0d1f0926880da5f8053d5a3fc156d88deef576394ad",
+      "size_bytes": 340517,
+      "cache_hit": false
+    }
+  ],
+  "files": [
+    {
+      "file": "28.50_-18.00_2022.csv",
+      "sha256": "464cfe6f402186d9fd92119b1c95b7e663a7cbabf92344dac0d4b4b4ff344cff"
+    },
+    {
+      "file": "28.50_-18.00_2023.csv",
+      "sha256": "28ec6e4ba1b49d99b528554b2df8ece8e99ecf76629cbd2790f5fecf0ebb183a"
+    }
+  ],
+  "legacy_sha256": "75cf0421041b39ee7f6a4617fbf13e05f4cd911c0b7f32864cdd34490347865d"
+}

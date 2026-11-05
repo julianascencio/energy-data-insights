@@ -209,6 +209,131 @@ def stage_australian_stations(
     return result
 
 
+def stage_aemo_exact_enrichment(
+    survey_rows: list[tuple[Any, ...]],
+    decisions: list[dict[str, Any]],
+    existing: list[dict[str, Any]],
+    *,
+    source_id: str,
+    survey_date: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Fill reviewed nulls for unique existing DUIDs and single-unit PV sites.
+
+    Names alone never establish identity. Max Site Capacity can include other
+    technologies or dispatch constraints and is never used as PV nameplate AC.
+    Existing values and contexts are retained; disagreements are returned for
+    review. Full Commercial Use Date stays a native observation, not a forecast
+    silently promoted to a commissioning date.
+    """
+    date.fromisoformat(survey_date)
+    required = _HEADERS | {
+        3: "Site Owner",
+        6: "Max Site Capacity (AC)",
+        7: "Gen Info Unit ID",
+        10: "Technology Detail",
+    }
+    if any(survey_rows[3][i] != label for i, label in required.items()):
+        raise ValueError("Unexpected AEMO survey layout")
+    entries = [(i, row) for i, row in enumerate(survey_rows[4:], 5) if row[0]]
+    counts = Counter(row[0] for _, row in entries)
+    unit_counts = Counter(row[7] for _, row in entries)
+    by_duid: dict[str, list[tuple[int, tuple[Any, ...]]]] = {}
+    for number, row in entries:
+        if row[12]:
+            by_duid.setdefault(str(row[12]).strip(), []).append((number, row))
+    records = {r["record_id"]: r for r in existing}
+    seen: set[str] = set()
+    staged, review = [], []
+    allowed = {"capacity_ac_mw": 18, "capacity_dc_mw": 17, "owners": 3}
+    for decision in decisions:
+        record = records[decision["record_id"]]
+        duid = decision["duid"]
+        matches = by_duid.get(duid, [])
+        if len(matches) != 1 or record["record_id"] in seen:
+            raise ValueError("Duplicate or absent DUID/canonical decision")
+        number, row = matches[0]
+        if any(type(row[i]) is float and not math.isfinite(row[i]) for i in (6, 17, 18)):
+            raise ValueError("Nonfinite AEMO power observation")
+        native = json.loads(record.get("phases_json") or "[]")
+        ids = json.loads(record.get("external_ids_json") or "{}")
+        phase_match = len(native) == 1 and native[0].get("Phase Name") == duid
+        if (
+            record.get("country_code") != "AUS"
+            or record.get("entity_type") != "projects"
+            or (ids.get("aemo_duid") != duid and not phase_match)
+            or len(native) > 1
+            or row[9] != "Solar PV"
+            or counts[row[0]] != 1
+            or row[7] is None
+            or unit_counts[row[7]] != 1
+            or number != decision["survey_row"]
+            or row[0] != decision["survey_id"]
+            or ids.get("aemo_survey_id", row[0]) != row[0]
+        ):
+            raise ValueError("Unresolved AEMO unit/site/canonical scope")
+        linked = [
+            r["record_id"]
+            for r in existing
+            if duid == json.loads(r.get("external_ids_json") or "{}").get("aemo_duid")
+            or any(p.get("Phase Name") == duid for p in json.loads(r.get("phases_json") or "[]"))
+        ]
+        if set(linked) != {record["record_id"]}:
+            raise ValueError("DUID has multiple canonical identities")
+        seen.add(record["record_id"])
+        approved = decision["fields"]
+        if not set(approved) <= allowed.keys():
+            raise ValueError("Unsupported field approval")
+        item: dict[str, Any] = {"record_id": record["record_id"], "entity_type": "projects"}
+        conflicts = {}
+        for field in approved:
+            value = row[allowed[field]]
+            if field == "owners":
+                if not isinstance(value, str) or not value.strip():
+                    continue
+                value = [value.strip()]
+            elif not _positive(value):
+                continue
+            current = record.get(field)
+            if current is None:
+                item[field] = value
+            elif current != value:
+                conflicts[field] = {"existing": current, "aemo_observation": value}
+        observation = {
+            "as_of": survey_date,
+            "sheet_row": number,
+            "survey_id": row[0],
+            "unit_id": row[7],
+            "duid": duid,
+            "site_name": row[1],
+            "technology": row[9],
+            "technology_detail": row[10],
+            "nameplate_ac_mw": row[18],
+            "nameplate_dc_mw": row[17],
+            "max_site_dispatch_ac_mw": row[6],
+            "commitment_status": row[20],
+            "full_commercial_use_date": str(row[21]) if row[21] else None,
+            "scope": "Single survey unit at site; exact existing DUID, no name/proximity merge",
+        }
+        if record.get("extensions_json") is None:
+            item["extensions_json"] = canonical_json({"aemo_generation_information": observation})
+        fields = set(item) - {"record_id", "entity_type"}
+        review.append(
+            dict(
+                observation,
+                record_id=record["record_id"],
+                fields_added=sorted(fields),
+                conflicts=conflicts,
+            )
+        )
+        if fields:
+            item.update(
+                sources=[source_id],
+                field_sources_json=canonical_json({f: source_id for f in fields}),
+            )
+            staged.append(item)
+    return staged, review
+
+
 def main() -> None:
     """Write staged JSONL for the catalogue's ordinary upsert command."""
     from openpyxl import load_workbook

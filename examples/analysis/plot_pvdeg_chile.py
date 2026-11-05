@@ -1,6 +1,6 @@
 """
 Chile: native-resolution PVDeg thermal-stress map
-================================================
+====================================================================================================
 
 Run PVDeg on real CHELSA v2.1 monthly temperature climatology (1981-2010).
 The native **30-arcsecond grid** is about 927 m north-south, with east-west

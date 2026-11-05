@@ -1,0 +1,253 @@
+{
+  "reviewed_at": "2026-11-05T21:45:03Z",
+  "completed": [
+    {
+      "source": "wri-gppd-1.3.0",
+      "partition": "primary_fuel=Hydro",
+      "accepted": 7156,
+      "deferred": 0,
+      "cursor": "complete; do not reimport unchanged source"
+    },
+    {
+      "source": "nve-hydro-20261105 + nve-gis-20261105",
+      "partition": "110 explicitly reviewed exact-name/spatial WRI identity crosswalks",
+      "accepted": 110,
+      "new": 0,
+      "cursor": "NVE IDs and WRI UUIDs in nve-crosswalk-20261105.json; replay is idempotent"
+    },
+    {
+      "source": "eia860-2025-hydro-1-500",
+      "partition": "EIA plant codes 1-500",
+      "accepted_enriched": 173,
+      "new": 0,
+      "held": 43,
+      "cursor": "All hydro-containing operable plants in 1-500 processed; next 501-1000; held IDs retained in eia-2025-0001-0500.json"
+    },
+    {
+      "source": "eia860-2025-hydro-501-1000",
+      "partition": "EIA plant codes 501-1000",
+      "accepted_enriched": 78,
+      "new": 0,
+      "held": 31,
+      "cursor": "Complete; next 1001-1500; decisions retained in eia-2025-0501-1000.json"
+    },
+    {
+      "source": "eia860-2025-hydro-1001-1500",
+      "partition": {
+        "first": 1001,
+        "last": 1500,
+        "next_first": 1501
+      },
+      "accepted_enriched": 22,
+      "new": 0,
+      "held": 2,
+      "cursor": "Complete; resume EIA from 2001 after Brazil rotation"
+    },
+    {
+      "source": "eia860-2025-hydro-1501-2000",
+      "partition": {
+        "first": 1501,
+        "last": 2000,
+        "next_first": 2001
+      },
+      "accepted_enriched": 62,
+      "new": 0,
+      "held": 11,
+      "cursor": "Complete; resume EIA from 2001 after Brazil rotation"
+    },
+    {
+      "source": "ons-hydro-20261105-0001-0100",
+      "partition": {
+        "first_index": 0,
+        "last_index_exclusive": 100,
+        "last_ceg": "UHE.PH.PA.030354-2.01",
+        "next_ceg": "UHE.PH.PA.030557-0.01"
+      },
+      "accepted_enriched": 78,
+      "new": 0,
+      "held": 22,
+      "cursor": "First 100 sorted CEGs complete; next 80 CEGs; holds retained"
+    },
+    {
+      "source": "ons-hydro-20261105-0101-0180",
+      "partition": {
+        "first_index": 100,
+        "last_index_exclusive": 180,
+        "last_ceg": "UHE.PH.TO.028567-6.01",
+        "next_ceg": null
+      },
+      "accepted_enriched": 53,
+      "new": 0,
+      "held": 27,
+      "cursor": "ONS 180 sorted hydro CEGs complete; 49 cumulative holds retained; do not rediscover unchanged inventory"
+    },
+    {
+      "source": "eia860-2025-hydro-2001-2500",
+      "partition": {
+        "first": 2001,
+        "last": 2500,
+        "next_first": 2501
+      },
+      "accepted_enriched": 38,
+      "new": 0,
+      "held": 6,
+      "cursor": "Complete; EIA resumes at 3001 after India IHA regional rotation; held inventory retained"
+    },
+    {
+      "source": "eia860-2025-hydro-2501-3000",
+      "partition": {
+        "first": 2501,
+        "last": 3000,
+        "next_first": 3001
+      },
+      "accepted_enriched": 84,
+      "new": 0,
+      "held": 28,
+      "cursor": "Complete; EIA resumes at 3001 after India IHA regional rotation; held inventory retained"
+    },
+    {
+      "source": "iha-india-2019-0001-0100",
+      "partition": {
+        "offset": 0,
+        "limit": 100,
+        "last_id": 169,
+        "next_id": 170
+      },
+      "accepted_enriched": 12,
+      "new": 0,
+      "held": 88,
+      "cursor": "First 100 matched stations reviewed; remaining ten plus 88 identity/scope holds"
+    },
+    {
+      "source": "iha-india-2019-0101-0110",
+      "accepted_enriched": 1,
+      "new": 0,
+      "held": 9,
+      "cursor": "All 110 matched IHA stations reviewed: 13 enriched, 97 held; nonstation classes excluded"
+    },
+    {
+      "source": "eia860-2025-hydro-3001-3500",
+      "accepted_enriched": 77,
+      "new": 0,
+      "held": 14,
+      "cursor": "Codes 3001\u20133500 complete; next 3501\u20134000 after Africa rotation"
+    },
+    {
+      "source": "aha-v2.3-technical-20261105",
+      "partition": {
+        "sheet": "1 - Spatial and technical data",
+        "first_row": 4,
+        "last_row": 673,
+        "next_row": null
+      },
+      "accepted_enriched": 26,
+      "new": 0,
+      "held": 644,
+      "cursor": "All 670 technical rows screened; 26 explicit crosswalks accepted, 644 candidates held. Do not reimport unchanged source."
+    },
+    {
+      "source": "eia860-2025-hydro-3501-4000",
+      "partition": {
+        "first": 3501,
+        "last": 4000,
+        "next_first": 4001
+      },
+      "accepted_enriched": 92,
+      "new": 0,
+      "held": 17,
+      "cursor": "All 109 hydro-bearing plant codes in 3501\u20134000 reviewed; resume 4001\u20134500 after Oceania rotation"
+    },
+    {
+      "source": "eia860-2025-hydro-4001-4500",
+      "partition": {
+        "first": 4001,
+        "last": 4500,
+        "next_first": 4501
+      },
+      "accepted_enriched": 44,
+      "new": 0,
+      "held": 2,
+      "cursor": "4001\u20134500 complete; next 4501\u20135000"
+    },
+    {
+      "source": "nz-ea-fleet-20260702",
+      "partition": "Complete CSV: 157 rows; 68 hydro observations / 42 names",
+      "accepted_enriched": 0,
+      "new": 0,
+      "held_observations": 68,
+      "cursor": "Original acquired and staged; do not rediscover; review identities and dated connection scopes"
+    }
+  ],
+  "next_sources": [
+    {
+      "priority": 1,
+      "region": "Africa",
+      "url": "https://www.hydroshare.org/resource/197eab83ae424be3804ee154ed98aea8/",
+      "status": "AHA v2.1/v2.2/v2.3 compared; v2.3 selected under CC BY 4.0; 26 enriched, 644 held",
+      "next_action": "Resolve first 100 held Existing rows in Excel row order beginning row 4 with primary alias/phase/location evidence; include COD/COG Moukoukoulou duplicate and Imboulou country conflict; never fuzzy-merge"
+    },
+    {
+      "priority": 1,
+      "url": "https://globalenergymonitor.org/projects/global-hydropower-tracker/",
+      "release": "March 2026 per publisher page",
+      "status": "metadata reviewed; bulk file and reuse terms not yet reviewed",
+      "next_action": "Obtain openly available release and verify licence, then crosswalk IDs before importing; no automatic name merges",
+      "fields": [
+        "technology",
+        "status",
+        "complex",
+        "capacity",
+        "turbines",
+        "owner"
+      ]
+    },
+    {
+      "priority": 2,
+      "url": "https://www.nve.no/energi/energisystem/vannkraft/",
+      "country": "NOR",
+      "status": "110 WRI identities enriched; 1867 NVE candidates remain unaccepted",
+      "next_action": "NVE IDs and WRI UUIDs in nve-crosswalk-20261105.json; replay is idempotent; review 181 remaining WRI Norwegian identities with aliases/offsets; do not relax automatic identity rules"
+    },
+    {
+      "priority": 3,
+      "url": "https://www.eia.gov/electricity/data/eia860/",
+      "country": "USA",
+      "status": "670 enriched; 154 held",
+      "next_action": "EIA codes 4501\u20135000"
+    },
+    {
+      "priority": 1,
+      "url": "https://dadosabertos.aneel.gov.br/",
+      "country": "BRA",
+      "status": "All 180 ONS hydro CEGs reviewed: 131 enrichments, 49 holds",
+      "next_action": "Review 40 exact-name discrepancies and 9 missing historical identities with primary alias/scope evidence; no fuzzy merges"
+    },
+    {
+      "priority": 1,
+      "country": "IND",
+      "url": "https://energydata.info/en/dataset/india-hydropower-database",
+      "status": "All 110 matched stations reviewed: 13 enriched, 97 held",
+      "next_action": "Resolve explicit alias/phase/location evidence for held cases; do not reimport completed partition"
+    },
+    {
+      "priority": 1,
+      "region": "Oceania",
+      "status": "NZ original CSV acquired under CC BY 4.0; 68 hydro observations / 42 names held",
+      "next_action": "NZ 42 hydro names: explicit WRI/owner identity and effective-interval/connection review; EIA resumes 4501\u20135000",
+      "url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-fleet/existing/"
+    }
+  ],
+  "market_ranking": {
+    "status": "March 2026 GEM top-ten recorded in market-ranking-202603.json",
+    "metric": "Operating generating nameplate MW for GEM facilities >=30 MW; includes pumped storage; separate pumped ranking",
+    "next_action": "Reconcile national coverage against scope-limited market ranking; do not interpret as complete national census"
+  },
+  "regional_rotation": [
+    "Asia",
+    "Latin America/Caribbean",
+    "North America",
+    "Europe",
+    "Africa",
+    "Oceania"
+  ]
+}

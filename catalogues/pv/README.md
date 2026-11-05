@@ -39,6 +39,13 @@ source has 981 non-anonymised ground/water PV decisions; the first 100 remain
 candidates, with zero accepted RVO plants. See the
 [RVO reuse and attribution notice](licenses/RVO_REUSE_NOTICE.md).
 
+The offline `pv_catalogue.nsw.read_nsw_project_page` reader stages checksum-pinned
+departmental Planning Portal Project Details, retaining application IDs, decision
+dates, local government areas and modification scope. It excludes submissions and
+contacts, fails closed on ambiguous/schema-drifted identity fields, and never treats
+a solar category or approval as positive PV or current operation. Canonical identity
+review remains mandatory; modifications are not additional plants.
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;
@@ -387,6 +394,19 @@ it does not write the catalogue. An AEMO site with multiple survey rows
 requires separate review. GA points retain their native GDA2020 reference;
 GA's unspecified generation rating is never used as AC or DC capacity.
 
+`australia.stage_aemo_exact_enrichment` also stages reviewed null-field fills
+from a complete Generation Information worksheet. Each explicit decision pins
+the existing record, DUID, survey ID, physical row and approved fields. It
+requires a unique existing DUID (or one exact native phase DUID), a single
+source unit at the site and an unambiguous canonical identity. Names alone,
+multi-unit sites and mixed-technology sites do not qualify. Only explicit
+aggregate nameplate AC/DC and financial-owner columns fill nulls; dispatch
+capacity and forecast commercial-use dates remain separate observations.
+Existing values and contexts are preserved, and disagreements are returned in
+the review ledger. The [October workbook review](research/20261105T1327_aemo_review.json)
+contains the accepted decisions and retained ownership differences. This is a
+reviewed enrichment path, not an automatic unit-to-project discovery feed.
+
 ### Catalonia named PV review staging
 
 The Catalonia adapter handles dataset `ggx8-jkp4` (named ground-mounted PV
@@ -555,3 +575,49 @@ Three historical Steca inverter-chargers and three distinct Antaisolar trackers 
 ### Research update — 5 November 2026, 07:00 UTC
 
 Ten exact SRNE models add140 canonical technical values and qualified PV/battery/grid/load conditions. ASP link bytes are manualVer1.9 dated21August2026 despite the old filename. Battery-only efficiency, apparent peaks, typical transfer time, unlabelled axes and the HESP DC surge-class disagreement remain qualified or held.200projects gain600 historical corporate-party/context fields. Two battery busbars are excluded from PV combiners. NERSA's September2026 workbook is newly accessible through its public Registered entities category; reuse/identity/power scope remains unresolved and zero plants are accepted. See dated0700review, source captures, audit, coverage and report.
+
+### Research update — 5 November 2026, 08:00 UTC
+
+214 complete Chinese PV projects gain642 historical corporate owner/operator/context fields, exhausting the strict sole-owner/direct-operator partition. Fifteen exact KEMAPOWER CB combiner defaults add146 canonical technical values plus qualified mechanical, humidity, protection and per-way conditions. Multi-output currents are not summed; CB93 retains its explicit three outputs and CB101-1 its literal model spelling. DWH tuples remain raw qualified values pending axis confirmation. Q3 prior-consent rights and CHINT/Noark identity/configuration holds prevent acceptance from those tables. NERSA discovery remains rights/identity/power-scope held. See dated0800 reviews, manifests, audit, validation and source queue.
+
+### Research update — 5 November 2026, 09:00 UTC
+
+200 complete Chinese projects gain 400 historical operator/context fields without assigning owners or changing capacity/lifecycle. Seventeen KEMAPOWER ST and SAKO hybrid inverter models add 295 canonical technical values plus qualified grid, EPS, battery, PV, mechanical, environmental and warranty claims. Per-MPPT current/power vectors are not summed; maximum PV power is not rated Pdc; VA is not active W. SP-D revision conflicts, ST PV maximum/RS485 discrepancies, SAKO unlabelled axes and Isc scope remain held. Riello is rights-held; Catalunya/DGEG full inventories are not downloaded again. See dated0900 review/audit/coverage/report and resumable queue.
+
+### Research update — 5 November 2026, 10:00 UTC
+
+200 complete Chinese project identities gain 400 historical operator/evidence fields. Ten exact inverters (six Morningstar industrial SureSine and four SAKO) plus six Weidmüller fireman combiners add 202 canonical technical values and qualified conditions. No new projects, modules or trackers. Battery DC is not PV input; DC rated voltage is not maximum; per-MPPT/string currents are not summed. Conditional power, warranty, dimension, model-code and selector-output discrepancies remain held. See dated1000 reviews, audit, coverage and resumable source queue; no new adapter or untested feed integration claimed.
+
+### MaStR solar-unit review staging
+
+`energy_data_retrieval.pv_catalogue.mastr.read_mastr_solar_units` reads a bounded
+physical-row partition from an extracted, checksum-pinned `EinheitenSolar.xml`.
+It returns native unit/location/EEG IDs, network-review codes and separate native
+power observations. Names, operator identifiers and addresses are omitted. Resume
+`start_row` only against the same source checksum; reconcile duplicates across
+partitions before any catalogue import. It performs no download, project upsert,
+unit aggregation, AC/DC assignment or reviewed-status inference. The allocated
+inverter-power definition lacks an explicit unit in the inspected row and remains
+native. Tests use synthetic fixtures; no live export partition is integrated.
+
+### Research update — 5 November 2026, 11:55 UTC
+
+200 complete Chinese identities gain historical corporate operators and phase-linked
+evidence. Ten exact Imagine Instruments combiner models cover four fused/breaker
+families; arbitrary fuse variants are not expanded. Current, fuse inclusion,
+temperature-unit and unlabelled-axis conflicts remain held. OEM warranty is a generic
+three-year limited sale-term claim from purchase, not a measured lifetime. See dated
+1155 reviews, preservation, source captures, snapshots and the resumable backlog.
+
+### NSW planning tracker review
+
+The offline `pv_catalogue.nsw.read_nsw_renewable_tracker` reader checks pinned HTML,
+its explicit table as-of date, the complete summary/detail inventory, card headers
+and Australian-format approval dates. Duplicate names remain separate candidates.
+The 6 August 2026 tracker contains 93 Solar Farm cards, including 16 under assessment;
+that publisher category alone does not prove PV. The 5 November 16:09 review enriches
+23 existing positively identified PV projects after manual identity review. Native
+planning capacities, storage, statuses and regional location labels remain qualified
+historical context, with no nameplate, operating-status or coordinate inference.
+Existing non-null contexts are held rather than overwritten. Source attribution is
+in `licenses/NSW_DPHI_CC_BY4_NOTICE.md`; third-party reports/submissions are excluded.

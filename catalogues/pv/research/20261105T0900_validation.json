@@ -1,0 +1,104 @@
+{
+  "started_at": "2026-11-05T08:59:06+00:00",
+  "checkpoint_at": "2026-11-05T09:23:50.010367+00:00",
+  "elapsed_minutes_at_checkpoint": 24.73,
+  "baseline_main": "d92d1b823496c9229610a62755de879bfc5294aa",
+  "launch37_merged": true,
+  "previous156_merged_externally_at": "2026-11-05T08:54:11Z",
+  "initial_open_PR_paths": {
+    "158": 17,
+    "157": 24,
+    "154": 129,
+    "49": 1,
+    "48": 1,
+    "47": 3
+  },
+  "later_new_or_changed_PR_paths": {
+    "160": 21,
+    "159": 18,
+    "158": 24
+  },
+  "other_PV_overlap": 0,
+  "focused_python_tests": 369,
+  "viewer_tests": 22,
+  "checks": {
+    "focused_python": {
+      "exit_code": 0,
+      "tail": [
+        "........................................................................ [ 97%]",
+        ".........                                                                [100%]",
+        "369 passed in 9.38s"
+      ]
+    },
+    "catalogue": {
+      "exit_code": 0,
+      "tail": [
+        "Validated 90234 unique records; schema and field evidence present"
+      ]
+    },
+    "offline_example": {
+      "exit_code": 0,
+      "tail": [
+        "                             Caracoles solar project          CHL             2.7             NaN  -35.6929   -71.4890 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+        "                           Aurora solar farm (Chile)          CHL           187.0             NaN  -20.7981   -69.4502 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+        "                             Dona Igna solar project          CHL             2.2             NaN  -33.5897   -71.2133 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]"
+      ]
+    },
+    "hygiene": {
+      "exit_code": 0,
+      "tail": [
+        "Repository check passed: 4868 candidate files; no flagged secrets or data."
+      ]
+    },
+    "citations": {
+      "exit_code": 0,
+      "tail": [
+        "Citation catalogue and all exports are consistent."
+      ]
+    },
+    "ruff": {
+      "exit_code": 0,
+      "tail": [
+        "All checks passed!"
+      ]
+    },
+    "format": {
+      "exit_code": 0,
+      "tail": [
+        "1011 files already formatted"
+      ]
+    },
+    "ty": {
+      "exit_code": 0,
+      "tail": [
+        "All checks passed!"
+      ]
+    },
+    "viewer": {
+      "exit_code": 0,
+      "tail": [
+        "\u2139 skipped 0",
+        "\u2139 todo 0",
+        "\u2139 duration_ms 200.998643"
+      ]
+    }
+  },
+  "catalogue_records": 90234,
+  "preservation": {
+    "prior_created_at": 90217,
+    "immutable_sources": 539,
+    "prior_unchanged_records": 90017,
+    "exact_replay_inputs": 217,
+    "idempotent": true
+  },
+  "snapshots": {
+    "typed_ZSTD_tables": 5,
+    "columns_each": 148,
+    "viewer_export": true,
+    "all_hashes_verified": true
+  },
+  "local_full_docs": "Normal Python3.13/all-group Sphinx gallery attempted. Local process introspection fails in Dask/psutil NoSuchProcess(pid5). No dependency/repository bypass or suppressed tests; standard final-commit GitHub documentation/gallery/assets/links workflow is verified in PRmetadata.",
+  "new_code": false,
+  "new_schema": false,
+  "new_adapter": false
+}

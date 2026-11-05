@@ -1,0 +1,112 @@
+{
+  "reviewed_at": "2026-11-05T18:44:58Z",
+  "accepted_african_records": 0,
+  "repp": {
+    "url": "https://api.figshare.com/v2/articles/20122733",
+    "download_url": "https://ndownloader.figshare.com/files/38797833",
+    "title": "RePP Africa",
+    "version": 1,
+    "publisher": "Peters, Berlekamp, Tockner and Zarfl",
+    "sha256": "fc0017a31a272f3d96e221adfe132b657b003b3568ab1c51e10a97cbd85b178d",
+    "metadata_sha256": "a250b5be1936f8ff137b668b0360d4ac5c012210f4ec923fc1c81e2967e06d52",
+    "rows": 1074,
+    "countries": 45,
+    "infrastructure_status_counts": {
+      "E": 355,
+      "U": 46,
+      "P": 673
+    },
+    "generation_status_counts": {
+      "O": 326,
+      "U": 46,
+      "P": 672,
+      "NO": 29,
+      "p": 1
+    },
+    "metadata_license": "CC0",
+    "embedded_license": "CC BY-SA 4.0",
+    "license_locator": "Info!A5:B5",
+    "decision": "reuse_review_hold: hosting and embedded licences differ; no plant records redistributed or accepted",
+    "source_revision": "2022-11-16 per Info!B6",
+    "scope_notes": [
+      "Phase IDs and alternate capacities require explicit overlap review.",
+      "Plant infrastructure and generation status are separate.",
+      "Historical existing is not current operation.",
+      "Workbook inflated dimensions: bound S3 reads to 44 actual columns."
+    ]
+  },
+  "alternatives": [
+    {
+      "url": "https://www.irena.org/Energy-Transition/Planning/Model-ready-datasets-for-renewables",
+      "access": "Web retrieval HTTP403"
+    },
+    {
+      "url": "https://zenodo.org/api/records/7931050",
+      "license": "CC BY 4.0",
+      "access": "Metadata retrieved; archive is 6492485839 bytes; targeted original atlas preferred"
+    },
+    {
+      "url": "https://www.hydroshare.org/resource/7def95046b9b480c89605e12233059e9/",
+      "status": "AHA v2.1 successor identified from original v2.0 repository; inspect spreadsheet and units before accepting records"
+    }
+  ],
+  "next_action": "Compare AHA v2.2 successor with acquired v2.1 spreadsheet, verify version and units, then review first 100 spatial/technical rows; separate modeled generation",
+  "aha_download": {
+    "url": "https://www.hydroshare.org/resource/7def95046b9b480c89605e12233059e9/data/contents/African_Hydropower_Atlas_v2-1.xlsx",
+    "sha256": "77aafb6d4bc8eb8a4489ad59a2b34e3da075f1e4adaea980dc314520fddc19bb",
+    "bytes": 7286949,
+    "sheet_dimensions": {
+      "Overview": [
+        53,
+        29
+      ],
+      "1 - Spatial and technical data": [
+        675,
+        36
+      ],
+      "2 - Hydrofleet2020": [
+        270,
+        38
+      ],
+      "3 - Hydrofleet2030": [
+        518,
+        38
+      ],
+      "4a - HydrofleetAll": [
+        671,
+        38
+      ],
+      "4b - HydrofleetAll SSP1-RCP26": [
+        671,
+        38
+      ],
+      "4c - HydrofleetAll SSP4-RCP60": [
+        671,
+        38
+      ],
+      "4d - HydrofleetAll SSP5-RCP85": [
+        671,
+        38
+      ],
+      "5 - Sources": [
+        25,
+        15
+      ],
+      "6 - Inputs code and GIS": [
+        1047588,
+        19
+      ],
+      "calcs": [
+        723,
+        34
+      ]
+    },
+    "accepted": 0,
+    "status": "Original spreadsheet acquired; source-unit/identity review pending; source file modification 2022-12-15 per file API, do not mistake repository metadata update for current plant status",
+    "license": "CC BY 4.0 per v2.1 resource page",
+    "license_url": "https://www.hydroshare.org/resource/7def95046b9b480c89605e12233059e9/",
+    "retrieved_at": "2026-11-05T18:46:27Z",
+    "version_caveat": "Overview cell B2 says AHA v1.0 although filename is v2-1; source has newer v2.2 successor, compare original bytes before choosing release",
+    "successor_url": "https://www.hydroshare.org/resource/87bf4534220343b79aeacce11d3631a7/"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "reviewed_at": "2026-11-05T21:45:03Z",
+  "landing_url": "https://www.emi.ea.govt.nz/Wholesale/Datasets/Generation/GenerationFleet/Existing",
+  "source_id": "nz-ea-fleet-20260702",
+  "accepted": 0,
+  "held_observations": 68,
+  "distinct_hydro_names": 42,
+  "total_csv_rows": 157,
+  "units": {
+    "NameplateMegawatts": "MW generating rating per dispatch observation; not additive across periods/connections"
+  },
+  "findings": [
+    "Listing text refers to 20230917; actual newest file is 20260702, modified 2 July 2026.",
+    "Official download redirects to Azure; search fetch failed, direct original download succeeded.",
+    "CC BY 4.0 general licence; no specific CSV exception observed; retain attribution.",
+    "Includes formerly dispatched plants and effective-dated attributes, not current operating census.",
+    "Benmore has 540 MW historical and 270 MW split connection entries; no row summation.",
+    "1899 and 9999 effective-date sentinels retained raw, never commissioning/retirement dates.",
+    "No coordinates in CSV; names alone cannot settle aliases, phases or WRI crosswalks."
+  ],
+  "next_action": "NZ 42 hydro names: explicit WRI/owner identity and effective-interval/connection review; EIA resumes 4501\u20135000"
+}
