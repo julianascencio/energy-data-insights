@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T16:31:26.829044+00:00",
-  "ranking_file": "20261105T1609_top10_gaps.json",
-  "selection_note": "12newSiebencombiners/110typedvalues;223uniqueprojects enriched/446substantivefields. TestedNSWreader stages93candidates,23acceptedexistingPV enrichments;0newNSWplants, no automatedfeedintegration claimed. Fiveacceptedtechnicalbatches/fourpublishers. One newmanufacturer, no newcountry.",
-  "next_highest_value_source": "AEMO7remaining singlephaseidentity opportunities (BRDDSF01,CRWASF1,GIRGSF,KINGASF1,LANCSF1,LILYSF1,WUNUSF1), then46broaderphase/crosswalkcandidates. GEMafterL100001020271;213predicateeligibleaftercursor plusoneheldlabel. NSW70reviewcards pendingidentity/contextreconciliation.",
+  "updated_at": "2026-11-05T17:15:04.312101+00:00",
+  "ranking_file": "20261105T1702_top10_gaps.json",
+  "selection_note": "17newSmarteninverters/306typedvalues;230existingprojects/451substantivefields (434nullfills+17explicitadditivecontextJSONs). Fouracceptedtechnicalbatches: GEM,NSW,Smarten single/threephase. No newadapter, no automaticfeedintegration. Rights/configuration holds notacceptedrecords.",
+  "next_highest_value_source": "NSW53remainingcards and7singlephaseAEMOidentities (46broaderrows), respecting6Nov15:12freshnessbackoff. StrictGEMoperatorqueue exhausted afterL100001080875. NextOEMSmarten2026moduletechnicalsheet.",
   "sources": [
     {
       "id": "uk_repd",
@@ -18694,6 +18694,243 @@
       "etag": null,
       "last_modified": null,
       "retrieval_url": "https://www.acciona.com/projects/aldoga-solar-farm"
+    },
+    {
+      "id": "gem_final_20261105T1702",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "format": "XLSX",
+      "licence_assessment": "CCBY4, entireTZ/WKSLlocations excluded",
+      "last_release": "February2026",
+      "publication_cadence": "Release-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 213,
+      "accepted": 213,
+      "rejected": 0,
+      "processed_cursor": {
+        "after": "L100001020271",
+        "next": "L100001080875",
+        "remaining_strict_eligible": 0
+      },
+      "result": "Complete strictoperatorpartition exhausted,213operator/context enrichments. Exactcompletephase/nativeoperator equality, corporate labels reviewed. Historicalsource, lastlandingcheck15:35, pinnedcachedbytes reused.",
+      "fields_offered": [
+        "operator",
+        "extensions_json.complete_phase_operator_context"
+      ],
+      "mapping": "Exact complete GEM phase IDs and native workbook rows; unanimous operator, explicit PV and licence exclusions.",
+      "estimated_useful_yield": {
+        "reviewed": 213,
+        "accepted": 213,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Move to anothercountry/sourcepartition; separatelyheld malformed/project-like labels need independentverification.",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "retrieval_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx"
+    },
+    {
+      "id": "nsw_context_partition_20261105T1702",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "endpoint": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy",
+      "format": "CachedHTML",
+      "licence_assessment": "NSWdepartmentCCBY4, excludes submissions/thirdpartyreports",
+      "last_release": "6August2026",
+      "publication_cadence": "Revision-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 17,
+      "accepted": 17,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted_total_across_runs": 40,
+        "remaining_cards": 53,
+        "reader_candidates": 93
+      },
+      "result": "17explicitreviewedadditivecontext namespaces plus8missinglocalitylabels. Alloldnamespace/keyvalues and source mappings retained. Parentplanningcontext only, no capacity/status/phase/coordinates changes. Namesunique, existingnativePV positive.",
+      "fields_offered": [
+        "locality",
+        "extensions_json.nsw_planning_tracker"
+      ],
+      "mapping": "Exact reviewed unique existing PV identity to departmental planning card; explicit old/new namespace objects and locality null fills.",
+      "estimated_useful_yield": {
+        "reviewed": 17,
+        "accepted": 17,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Review remaining53cards for aliases/phase scope; never fuzzymerge oroverwrite evidence.",
+      "last_retrieval": "2026-11-05T16:13:37.300353+00:00",
+      "sha256": "510e9ec32890927d7e259abf031885d500357af19d35e3184a5677b449f66f37",
+      "etag": null,
+      "retrieval_url": "https://www.planning.nsw.gov.au/the-planning-system/renewable-energy"
+    },
+    {
+      "id": "smarten_star_20261105T1702",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://www.smartenpowersystems.com/more/catalogue/",
+      "endpoint": "https://www.smartenpowersystems.com/more/catalogue/",
+      "format": "TwoOEMPDFs",
+      "licence_assessment": "OEMcopyrightretained, boundedfactualtables; no openbulk/document licenceasserted",
+      "last_release": "UndatedPDFs, lastmodified14September2026",
+      "publication_cadence": "Revision-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 17,
+      "accepted": 17,
+      "rejected": 0,
+      "processed_cursor": {
+        "single_models": 8,
+        "threephase_models": 9,
+        "technical_values": 306
+      },
+      "result": "17newexactmodels,306typedvalues andqualifiednativeconditions. Renderedtables reviewed; S2.2nominalpowerconflict,threephaseIP65/IP66 andoptionalfeatureclaimsheld. No VA→W or maximumPVpower→ratedDC conversion.",
+      "fields_offered": [
+        "nominal AC power",
+        "DC voltage",
+        "MPPT",
+        "efficiency",
+        "ambient temperature",
+        "weight",
+        "dimensions",
+        "cooling",
+        "isolation"
+      ],
+      "mapping": "Physical page 2, exact model columns in two STAR datasheets; qualifiers and conflicting cells retained in review.",
+      "estimated_useful_yield": {
+        "reviewed": 17,
+        "accepted": 17,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Selected2tables exhausted. NextSmarten2026moduletechnicalsheet; check exactmodels/STC/rights beforeacceptance.",
+      "last_retrieval": "2026-11-05T17:04:59.006420+00:00",
+      "sha256": "8d1cd1e0b995d0f713c16b4b8b67fad43a0826d87dc93587f6df0b8fda224561",
+      "etag": null,
+      "retrieval_url": "https://www.smartenpowersystems.com/more/catalogue/"
+    },
+    {
+      "id": "singi_config_20261105T1702",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.singielectric.com/products/pvcombinerbox",
+      "endpoint": "https://www.singielectric.com/products/pvcombinerbox",
+      "format": "HTML/downloadindex",
+      "licence_assessment": "Copyrightretained, factualreview only",
+      "last_release": "UndatedliveHTML",
+      "publication_cadence": "Revision-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 4,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "FourSWHXfamilies offer inputchannelranges and multiplecurrents, not exactreviewed configurations. No synthetic combinations or thinmodelrows accepted. Downloadindexinspected.",
+      "fields_offered": [
+        "channel ranges",
+        "optional output current"
+      ],
+      "mapping": "SWHX family tables only; no exact current/configuration assignment accepted.",
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 0,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Require exactconfiguration/current assignment beforeacceptance; no forms/contact.",
+      "last_retrieval": "2026-11-05T17:03:32.203958+00:00",
+      "sha256": "476ae48a496452e9ea814e478f802c592f4de0366602cb7ffe8f3980b979d474",
+      "etag": null,
+      "retrieval_url": "https://www.singielectric.com/products/pvcombinerbox"
+    },
+    {
+      "id": "powerlink_rights_20261105T1702",
+      "country": "AUS",
+      "entity": "projects",
+      "source_url": "https://www.powerlink.com.au/terms-and-conditions",
+      "endpoint": "https://www.powerlink.com.au/terms-and-conditions",
+      "format": "HTMLterms/news",
+      "licence_assessment": "Commercialreuse requires expressconsent; rightsheld",
+      "last_release": "Currentterms, historical8December2025news",
+      "publication_cadence": "Onlyifrightschange",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "AEMO_remaining": 46,
+        "singlephase_remaining": 7
+      },
+      "result": "BroadsoundprimaryTSOnews found, butno grid/identity/nameplatefacts accepted because source-specificcommercialreuse restriction. No bypass/contact.",
+      "fields_offered": [
+        "connection identity",
+        "connection context"
+      ],
+      "mapping": "Terms and historical Broadsound notice reviewed; no factual acceptance under commercial-reuse restriction.",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Use independentpermitteddepartmental/regulator identityevidence for7AEMOcandidates.",
+      "last_retrieval": "2026-11-05T17:04:33.502825+00:00",
+      "sha256": "c4d7eae646aef648afa64d6666b9c60ded8e3b7c71c66d2a02a611d3ddc67d9a",
+      "etag": null,
+      "retrieval_url": "https://www.powerlink.com.au/terms-and-conditions"
+    },
+    {
+      "id": "must_discovery_20261105T1702",
+      "country": "GLOBAL",
+      "entity": "inverters",
+      "source_url": "https://www.mustups.com/product/pv1800-vhm-series-5-5-5kw/",
+      "endpoint": "https://www.mustups.com/product/pv1800-vhm-series-5-5-5kw/",
+      "format": "HTML",
+      "licence_assessment": "Copyrightretained; noopenbulklicenceasserted",
+      "last_release": "Undatedliveproducttable",
+      "publication_cadence": "Revision-based",
+      "last_attempt": "2026-11-05T17:15:04.312101+00:00",
+      "last_retrieval_note": "Exactretrieval/SHA/ETag in1702_source_captures; cachedfiles retain originalretrieval, noAEMOretry within403backoff.",
+      "reviewed": 2,
+      "accepted": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Twoexact VHMmodels found; header/body powerranges disagree. Notacceptedpendingfullrevision/identity review; independent17modelSmartenfallback completed.",
+      "fields_offered": [
+        "exact model",
+        "power",
+        "electrical table"
+      ],
+      "mapping": "VHM two-model product table; revision and conflicting marketing power ranges remain unaccepted.",
+      "estimated_useful_yield": {
+        "reviewed": 2,
+        "accepted": 0,
+        "further_verified": null
+      },
+      "retry_condition": "Newrevision or rights/identity/scope resolution; skipunchangedbytes.",
+      "next_due_check": "2026-11-12T17:02:00Z",
+      "next_action": "Prioritise richer permittedmulti-modelcatalogues; do not infer modelpower frommarketingheader.",
+      "last_retrieval": "2026-11-05T17:04:58.933158+00:00",
+      "sha256": "b4cf596c416489fae8deb50c9a9ce46f06f8a0c0fb8ba1d3555ad433105de767",
+      "etag": null,
+      "retrieval_url": "https://www.mustups.com/product/pv1800-vhm-series-5-5-5kw/"
     }
   ],
   "source_refresh_queue": [
