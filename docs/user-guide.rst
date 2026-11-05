@@ -61,6 +61,7 @@ Data access and scientific methods
    _generated/guides/pv-lifetime
    _generated/guides/aemet-era5-canary
    _generated/guides/pvdeg-canary
+   _generated/guides/pvdeg-chile
 
 Applied studies
 ---------------
