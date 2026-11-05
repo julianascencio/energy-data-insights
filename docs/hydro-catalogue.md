@@ -369,3 +369,30 @@ enriched identities. The gallery reports the AHA count separately. All plant
 aggregation scopes remain unresolved, so these records do not contribute to
 a verified worldwide generating-MW total. Next: EIA final-2025 plant codes
 3501–4000; targeted African alias/scope review and Oceania discovery follow.
+
+
+## EIA final-2025 codes 3501–4000
+
+Reacquired the official ZIP on 2026-11-05T20:40:13Z; its checksum matches the
+previously reviewed final-2025 release. Reviewed 109 hydro-bearing plant IDs:
+**92 existing identities enriched, 17 held, no new plants**. Retained 280
+generator observations with official IDs, operators, nameplate/seasonal MW,
+reported commissioning dates and year-end-2025 status. Holds: {'mixed_technology_or_state': 15, 'coordinate_review': 1, 'missing_existing_id': 1}.
+Pumped/mixed and non-OP units remain unaccepted by this conventional-hydro
+partition. Historical status is not promoted to current operation; capacity
+aggregation remains unresolved and excluded from worldwide totals.
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-3501-4000.json
+```
+
+The replay command also accepts `--root` for isolated catalogue copies.
+Coverage: 7,156 records / 128 countries / 906 enriched identities; EIA totals
+626 plants / 1788 units / 152 holds. Created timestamps and prior
+observations are preserved. Snapshot checksums and completeness are recorded
+in `research/eia-2025-3501-4000-validation.json`.
+
+Next regional partition is New Zealand's official dispatched-generation
+fleet. The old EMI/new EA portals show differing CSV dates, and the listing
+includes formerly dispatched plants. Verify the original and reuse terms
+before accepting any records. EIA resumes at codes 4001–4500 afterward.
