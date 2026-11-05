@@ -12,7 +12,7 @@ from typing import Any
 from uuid import NAMESPACE_URL, uuid5
 
 from energy_data_retrieval.catalogue_common import validate_common, write_snapshot
-from energy_data_retrieval.data_center_catalogue.catalogue import upsert_records
+from energy_data_retrieval.data_center_catalogue.catalogue import upsert_records as _upsert_records
 from energy_data_retrieval.pv_catalogue.catalogue import canonical_json, load_records
 
 SCHEMA: dict[str, Any] = json.loads(files(__package__).joinpath("schema.json").read_text())
@@ -134,6 +134,13 @@ def build_parquet(root: Path, output: Path) -> dict[str, Any]:
     return write_snapshot(
         output, rows, sources, SCHEMA, "hydro", {k: capacity_summary(rows, k) for k in CAPACITIES}
     )
+
+
+def upsert_records(
+    existing: list[dict[str, Any]], incoming: list[dict[str, Any]], *, now: str
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Preserve creation dates and quarantine conflicts using the shared upsert."""
+    return _upsert_records(existing, incoming, now=now)
 
 
 __all__ = [
