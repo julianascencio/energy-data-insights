@@ -86,6 +86,13 @@ def parse_partition(
                 "units": sorted(selected, key=lambda u: str(u["Generator ID"])),
             }
         )
+    orphaned = [
+        code
+        for code, selected in grouped.items()
+        if code not in plant_ids and any(u["Prime Mover"] in {"HY", "PS"} for u in selected)
+    ]
+    if orphaned:
+        raise ValueError(f"Hydro generator plants absent from Plant sheet: {sorted(orphaned)}")
     return sorted(results, key=lambda r: r["plant_code"])
 
 

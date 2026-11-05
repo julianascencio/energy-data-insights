@@ -179,3 +179,19 @@ def test_annual_inventory_cannot_overwrite_newer_lifecycle_evidence():
     old, item = sample()
     old.update(status="decommissioned", status_as_of="2026-06-30")
     assert eligibility(old, item) == "newer_status_review"
+
+
+def test_second_partition_includes_boundaries_and_rejects_orphan_hydro():
+    plants = workbook("Plant", PLANT_FIELDS, [{"Plant Code": 501}, {"Plant Code": 1000}])
+    units = workbook(
+        "Operable",
+        ("Plant Code", *UNIT_FIELDS),
+        [
+            {"Plant Code": code, "Generator ID": "01", "Prime Mover": "HY"}
+            for code in (500, 501, 1000, 1001)
+        ],
+    )
+    rows = parse_partition(plants, units, year=2025, first=501, last=1000)
+    assert [r["plant_code"] for r in rows] == [501, 1000]
+    with pytest.raises(ValueError, match="absent from Plant sheet"):
+        parse_partition(plants, units, year=2025, first=500, last=1000)

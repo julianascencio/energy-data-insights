@@ -128,4 +128,18 @@ retrieved 5 November 2026. Public-domain reuse policy and original ZIP/workbook
 checksums are in the source registry. The importer is
 `energy_data_retrieval.hydro_catalogue.eia.parse_partition`; replay the committed
 bounded evidence using `uv run python scripts/enrich_hydro_eia.py`.
-Next partition: EIA plant codes 501–1000, without repeating accepted 1–500 IDs.
+The next reviewed partition, plant codes 501–1000, adds **78 enrichments and
+179 generator observations**, with 3,462.0 MW of year-end 2025 nameplate capacity.
+Its 31 holds comprise 14 coordinate discrepancies, 11 mixed technology/state
+cases, four name discrepancies and two missing historical identities. These
+holds remain outside accepted records. Combined EIA coverage is 251 identities
+and 548 generators; catalogue coverage remains 7,156 records / 128 countries.
+
+Replay the second partition with:
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-0501-1000.json
+```
+
+Next partition: EIA plant codes 1001–1500, then rotate to Brazil ANEEL SIGA.
+The source backlog retains Norway, other regions and all unresolved identities.

@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T11:45:59Z",
+  "reviewed_at": "2026-11-05T12:41:10Z",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -22,6 +22,14 @@
       "new": 0,
       "held": 43,
       "cursor": "All hydro-containing operable plants in 1-500 processed; next 501-1000; held IDs retained in eia-2025-0001-0500.json"
+    },
+    {
+      "source": "eia860-2025-hydro-501-1000",
+      "partition": "EIA plant codes 501-1000",
+      "accepted_enriched": 78,
+      "new": 0,
+      "held": 31,
+      "cursor": "Complete; next 1001-1500; decisions retained in eia-2025-0501-1000.json"
     }
   ],
   "next_sources": [
@@ -51,8 +59,8 @@
       "priority": 3,
       "url": "https://www.eia.gov/electricity/data/eia860/",
       "country": "USA",
-      "status": "173 existing US identities enriched; 43 holds",
-      "next_action": "Process EIA final 2025 plant-code partition 501-1000 using HY/OP-only eligibility and exact registry/name/coordinate checks"
+      "status": "251 existing US identities enriched; 74 cumulative holds",
+      "next_action": "Process final 2025 plant codes 1001-1500 with unchanged strict identity rules; then rotate to Brazil SIGA"
     },
     {
       "priority": 4,
