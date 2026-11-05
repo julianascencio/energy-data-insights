@@ -3,13 +3,14 @@
 Canonical JSONL lives in `records/`; projects, exact equipment configurations,
 individual turbines and numerical curves share stable linked identities.
 
-At batch `2026-11-04-2435`, the proposed branch contains **8,174 projects**
-(8,173 non-group records), **372 equipment configurations**, **13,633 linked
+At batch `2026-11-05-0835`, the proposed branch contains **8,182 projects**
+(8,181 non-group records), **405 equipment configurations**, **13,633 linked
 registry turbines** and **two original numerical curves**, across **59 countries**
-and **55 manufacturer labels**. Labels are not a reconciled corporate-entity count.
-Merged main at `9f36b0f3` contains 8,136 projects, 357 equipment records,
-13,633 turbines and two curves. These are catalogue counts, not an operating census.
-Use the batch checkpoint below for subsequent totals.
+and **57 manufacturer labels**. Labels are not a reconciled corporate-entity count.
+Merged main at `d92d1b82` contains 8,174 projects, 372 equipment records,
+13,633 turbines and two curves. This iteration adds eight projects and 33 exact
+OEM types and enriches two existing projects. These are catalogue counts, not an
+operating census. PR #158 remains open for review.
 
 The initial 5,344-row WRI import is historical. REPD lifecycle enrichment does
 not resolve capacity scope; 2,216 other applications remain deferred. Swedish
@@ -554,3 +555,12 @@ All 150 plants / 158 generator rows in Operable codes 64000–69999 were reviewe
 not farm capacity totals. The viewer and offline example distinguish unknown
 installed MW from zero and unresolved aggregation scopes. See the latest
 checkpoint for subsequent equipment research and validation results.
+
+The second checkpoint processes every row of the six-page Nordex OEM history
+table: 46 rows yield 33 new exact types, nine existing-model revision holds and
+three conflicting-rating/unit holds. The repeated AW77/1500 tower observation
+stays nested; S46 and N155 rating ranges do not generate synthetic variants.
+N27/150 and N27/250 contradictory printed ratings are not silently corrected.
+Krzęcin 6 MW and Krzęcin II 19.2 MW now have supported type/rating links to S77
+and N117 respectively; installed revisions and options remain unknown. The
+undated table's production headings do not establish current availability.

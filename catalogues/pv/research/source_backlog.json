@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T07:05:44.605109+00:00",
+  "updated_at": "2026-11-05T08:20:56.386842+00:00",
   "ranking_file": "20261104T1100_top10_coverage.json",
-  "selection_note": "Advance200complete historical corporate locations and three SRNE tables/10models; follow Africa official registration source without converting aggregates to plants.",
-  "next_highest_value_source": "GEM afterL100000828064,214strict candidates before manual review; NERSA September2026 workbook now accessible through published Registered entities category, but bulk reuse basis/plant identity/power definitions must be established before ingestion.",
+  "selection_note": "Exhaust final214 strict complete corporate-party locations; extract entire15model KEMAPOWER CB table; independently screen Q3/CHINT/CNC/Kehua and NERSA rights.",
+  "next_highest_value_source": "Strict Chinese sole-owner/direct-operator queue is exhausted atL100001062171. Resume broader GEM operator partition after savedL100000802626 only after a fresh eligibility/remaining-count calculation; prioritize missingAC through MaStR reviewed-unit-to-project crosswalk. For independent equipment, KEMAPOWER inverter catalogue needs a separate model/rights/activeW-versusVA review; CB tables exhausted. NERSA remains rights/identity/power-scope held.",
   "sources": [
     {
       "id": "uk_repd",
@@ -15963,6 +15963,263 @@
       "next_due_check": "2026-11-06T07:00:00Z",
       "retry_condition": "Establish applicable reuse basis first; then bounded2026partition with explicitSolarPV, corporate privacy, plant/phase reconciliation and MW basis review. Registration is not operation; no personal names/contacts in staged output.",
       "next_action": "Establish applicable reuse basis first; then bounded2026partition with explicitSolarPV, corporate privacy, plant/phase reconciliation and MW basis review. Registration is not operation; no personal names/contacts in staged output."
+    },
+    {
+      "id": "gem_20261105T0800",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "version_or_date": "February2026",
+      "licence_assessment": "Existing CC BY4.0 attribution; entire TZ/WKSL locations excluded",
+      "access_assessment": "Fresh landing and pinned bytes recovered after maintenance removed raw cache; SHA256 exactly matches prior immutable release. This is cache recovery, not an hourly full refresh.",
+      "estimated_useful_yield": {
+        "reviewed": 214,
+        "accepted": 214,
+        "held": 0
+      },
+      "fields_offered": [
+        "owners",
+        "operators",
+        "complete phase-linked historical context"
+      ],
+      "last_attempt": "2026-11-05T08:20:56.386842+00:00",
+      "result": "214/214 complete locations enriched; native/source phase sets and party values agree; all unique corporate labels manually reviewed.",
+      "retry_condition": "New source revision or evidence resolving hold",
+      "next_action": "Recompute broader eligibility before resuming afterL100000802626; no stale remaining count carried forward.",
+      "processed_cursor": {
+        "after": "L100000828064",
+        "next": "L100001062171",
+        "strict_remaining": 0,
+        "broader_saved_operator_cursor": "L100000802626",
+        "workbook_sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959"
+      },
+      "format": "XLSX",
+      "publication_cadence": "Biannual GEM release; skip unchanged partitions",
+      "next_due_check": "2026-11-12T08:00:00Z",
+      "reviewed": 214,
+      "accepted": 214,
+      "rejected": 0,
+      "held": 0
+    },
+    {
+      "id": "kemapower_cb_20261105T0800",
+      "country": "CHN",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.kemapower.com/cable-and-pv-accessory/pv-combiner-box.html",
+      "version_or_date": "Undated CB Series catalogue",
+      "licence_assessment": "OEM copyright retained; factual specifications only, no document/image/expressive table reproduction or open-content licence claimed. No specific restrictive terms link exposed by OEM product page.",
+      "access_assessment": "Public OEM page directly links PDF on its publishing CDN; both exact-model tables match HTML. SHA256 3c43b21ec7e89f2e1200d933d40825b84895e89fecde8556ba5ea93961be8fc8",
+      "estimated_useful_yield": {
+        "reviewed": 15,
+        "accepted": 15,
+        "held": 0
+      },
+      "fields_offered": [
+        "voltage",
+        "per-string current",
+        "input/output count",
+        "single-output current",
+        "mass",
+        "environmental",
+        "qualified dimensions and per-way current"
+      ],
+      "last_attempt": "2026-11-05T08:20:56.386842+00:00",
+      "result": "All15 exact model columns accepted;146canonical technicalvalues plus qualified facts. CB93=3outputs despite generic1/2way bullet; CB101-1 kept literal. No arbitrary configurable variants.",
+      "retry_condition": "New source revision or evidence resolving hold",
+      "next_action": "CB tables exhausted. For equipment depth inspect independent KEMAPOWER inverter family; confirm activeW/VA, battery/PV boundaries and terms before extraction.",
+      "processed_cursor": {
+        "complete_600V_models": 9,
+        "complete_1000V_models": 6,
+        "accepted_models": 15,
+        "page": 1,
+        "sha256": "3c43b21ec7e89f2e1200d933d40825b84895e89fecde8556ba5ea93961be8fc8",
+        "etag": "\"ABUIABA9GAAgm9jvyQYojL_MqAM\"",
+        "mapping": "Exact column labels; merged row cells visually checked; per-way current never summed; dimension tuples retained verbatim"
+      },
+      "format": "HTML/PDF",
+      "publication_cadence": "Irregular; metadata first, no hourly full download",
+      "next_due_check": "2026-11-12T08:00:00Z",
+      "reviewed": 15,
+      "accepted": 15,
+      "rejected": 0,
+      "held": 0
+    },
+    {
+      "id": "q3_rights_20261105T0800",
+      "country": "DEU",
+      "entity": "combiner_boxes",
+      "source_url": "https://q3-energie.de/en/downloads/technical-documents-smart-dc-combiner/",
+      "version_or_date": "Current undated SuperMultiBox datasheet",
+      "licence_assessment": "Legal notice explicitly requires prior written consent for any use, even in part. No permission sought.",
+      "access_assessment": "Public direct PDF retrieved; legal notice https://q3-energie.de/en/company/legal-notice/ reviewed.",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "held": 1
+      },
+      "fields_offered": [
+        "combiner",
+        "fault isolation",
+        "environmental",
+        "communication"
+      ],
+      "last_attempt": "2026-11-05T08:20:56.386842+00:00",
+      "result": "0 accepted. One configurable family scoped, not3/15manufactured configurations counted. No technical facts copied into canonical records.",
+      "retry_condition": "New source revision or evidence resolving hold",
+      "next_action": "Hold until applicable licence/permission changes; use independent publisher.",
+      "processed_cursor": {
+        "family_screened": "Super Multi Box",
+        "accepted": 0,
+        "rights_hold": true,
+        "sha256": "8ef2758329f13b22c6d7e53ad6b85bd2e7cbb6e58e72cf55f2d6f60ac2d09a96"
+      },
+      "format": "HTML/PDF",
+      "publication_cadence": "Irregular; metadata first, no hourly full download",
+      "next_due_check": "2026-11-12T08:00:00Z",
+      "reviewed": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 1
+    },
+    {
+      "id": "chint_noark_identity_20261105T0800",
+      "country": "GLOBAL",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.chintglobal.com/global/en/products/low-voltage-switchgear-and-software/final-distribution-box/pvbx-combiner-box.html",
+      "version_or_date": "Brochure2023 V1.1; siteposted2025-04-14",
+      "licence_assessment": "Do not add under a second manufacturer before Noark identity/order-code/terms reconciliation",
+      "access_assessment": "Public PDF retrieved; Noark branding/components and existing PVBx101-EG/PVBx202-EG identities overlap.",
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 0,
+        "held": 10
+      },
+      "fields_offered": [
+        "exact order code",
+        "architecture",
+        "electrical",
+        "enclosure",
+        "monitoring"
+      ],
+      "last_attempt": "2026-11-05T08:20:56.386842+00:00",
+      "result": "12 selection-table codes reviewed:2 existing exactNoark model matches and10 remaining codes held for canonical brand/configuration and source-conflict review. Zero accepted or enriched; no clone records.",
+      "retry_condition": "New source revision or evidence resolving hold",
+      "next_action": "Compare Noark exact primary brochure and ordercode, including monitored-model priorholds; choose canonical brand only with evidence.",
+      "processed_cursor": {
+        "selection_rows": 12,
+        "existing_exact_model_matches": 2,
+        "remaining_codes": 10,
+        "sha256": "5fa03b0c0a05f4bbc3e0054916674ec5a1a2cb8b2dbb1438e8cbc7d3458eb09c"
+      },
+      "format": "HTML/PDF",
+      "publication_cadence": "Irregular; metadata first, no hourly full download",
+      "next_due_check": "2026-11-12T08:00:00Z",
+      "reviewed": 12,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 10
+    },
+    {
+      "id": "cnc_access_20261105T0800",
+      "country": "CHN",
+      "entity": "equipment",
+      "source_url": "https://www.energy-cnc.com/downloads/",
+      "version_or_date": "Current download landing",
+      "licence_assessment": "Not assessed; access blocked",
+      "access_assessment": "One ordinaryGET403; no bypass or registration.",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "held": 0
+      },
+      "fields_offered": [
+        "multi-model catalogue"
+      ],
+      "last_attempt": "2026-11-05T08:20:56.386842+00:00",
+      "result": "No model candidates extracted; another publisher selected.",
+      "retry_condition": "New source revision or evidence resolving hold",
+      "next_action": "Retry metadata after access recovery; no repeated burst.",
+      "processed_cursor": {
+        "http_status": 403,
+        "adapter": false
+      },
+      "format": "HTML/PDF",
+      "publication_cadence": "Irregular; metadata first, no hourly full download",
+      "next_due_check": "2026-11-06T08:00:00Z",
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 0
+    },
+    {
+      "id": "kehua_access_20261105T0800",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://digitalenergy.kehua.com/download",
+      "version_or_date": "Current public centre",
+      "licence_assessment": "No applicable technical-document reuse basis established in this pass",
+      "access_assessment": "Download centre and SPI8–12KBX2 public page accessible; model links route back to dynamic category centre; recovered document objects were marketing papers, not relevant model tables.",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "held": 0
+      },
+      "fields_offered": [
+        "SPI8–12KBX2",
+        "SPI100–125KB family"
+      ],
+      "last_attempt": "2026-11-05T08:20:56.386842+00:00",
+      "result": "No model columns extracted/accepted. Did not treat marketing PDFs as datasheets; independentOEMselected.",
+      "retry_condition": "New source revision or evidence resolving hold",
+      "next_action": "Use public exact technical PDF when exposed; no guessed authenticated endpoint or gated contact.",
+      "processed_cursor": {
+        "adapter": false,
+        "accepted": 0,
+        "category_id": 202
+      },
+      "format": "HTML/PDF",
+      "publication_cadence": "Irregular; metadata first, no hourly full download",
+      "next_due_check": "2026-11-12T08:00:00Z",
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 0
+    },
+    {
+      "id": "nersa_rights_followup_20261105T0800",
+      "country": "ZAF",
+      "entity": "projects",
+      "source_url": "https://www.nersa.org.za/electricity/registration",
+      "version_or_date": "September2026 workbook; publication6Oct2026",
+      "licence_assessment": "Privacy policy not a content reuse grant; separate terms route404. Bulk reuse basis unresolved.",
+      "access_assessment": "Privacy policy retrieved; /terms-and-conditions ordinaryGET404. Previously downloaded workbook not redownloaded.",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "held": 0
+      },
+      "fields_offered": [
+        "explicitPV",
+        "registration",
+        "province",
+        "capacityMW"
+      ],
+      "last_attempt": "2026-11-05T08:20:56.386842+00:00",
+      "result": "Discovery followup only:0 new rows staged/reviewed/accepted. No adapter or current operation claimed.",
+      "retry_condition": "New source revision or evidence resolving hold",
+      "next_action": "Establish a source-specific reuse grant, facility identity and MWAC/DC definition before any bulk extraction.",
+      "processed_cursor": {
+        "previous_workbook_sha256": "17b129f58bca8e843fbb59bc52169e4dfcd0e1ed956cd8a59a897253238ffac9",
+        "accepted": 0,
+        "adapter": false
+      },
+      "format": "XLSX/HTML",
+      "publication_cadence": "Observedperiodic publication; exactcadence unconfirmed",
+      "next_due_check": "2026-11-12T08:00:00Z",
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "held": 0
     }
   ],
   "source_refresh_queue": [

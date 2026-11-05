@@ -309,6 +309,15 @@ represented efficiency and BIL group rating remain bounded observations. BIL is
 not treated as winding voltage, represented efficiency remains unnormalized
 without a load/test condition, and no listing is promoted to a deployment or DOE
 compliance determination.
+The liquid-immersed transformer continuation adds all 50 rows displayed on the
+current DOE basic-model page: 26 three-phase CMI configurations from 45 to
+2,500 kVA and 24 single-phase configurations from 37.5 to 833 kVA. Exact model
+strings are immutable identities; their numeric suffixes are not decoded into
+winding voltage, dielectric fluid, temperature rise or ordered options. The
+displayed table again omits efficiency load/test conditions, so represented
+efficiency remains an observation and apparent kVA is never converted to active
+kW. Direct source-byte access returned HTTP 403 and is recorded as an access
+limitation rather than a reuse prohibition.
 The Finnish permit continuation enriches four existing atNorth records from six
 bounded municipal observations without adding duplicate phases. FIN02 now carries
 decision 468/2026 and its public Sinimäentie 6a address. FIN04 retains the exact
@@ -478,4 +487,4 @@ Older Motivair MCDU-30/MCDU-60 and nVent legacy CDU800 configurations remain
 lifecycle candidates because they are absent from the selected current tables.
 
 See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T0720-validation.json).
+and [executed validation](../catalogues/data_centers/research/2026-11-05T0820-validation.json).

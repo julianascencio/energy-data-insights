@@ -300,6 +300,28 @@ def test_doe_medium_voltage_matrix_keeps_bil_outside_winding_voltage():
     assert "voltage_kv" not in result["candidates"][0]
 
 
+def test_doe_liquid_transformer_matrix_keeps_fluid_and_voltage_unknown():
+    content = (
+        b"brand,basic_model,phase_count,apparent_power_kva,"
+        b"represented_efficiency_pct,locator\n"
+        b"CMI,1632500125,3,2500,99.53,public results table row 1\n"
+        b"CMI,1610037125,1,37.5,99.05,public results table row 50\n"
+    )
+    url = (
+        "https://www.regulations.doe.gov/certification-data/"
+        "CCMS-4-Distribution_Transformers_-_Liquid-Immersed_"
+        "Based_on_Basic_Model.html"
+    )
+    result = parse_doe_transformer_certification_matrix(content, source_url=url, expected_count=2)
+    assert [row["basic_model"] for row in result["candidates"]] == [
+        "1610037125",
+        "1632500125",
+    ]
+    assert result["candidates"][0]["apparent_power_kva"] == 37.5
+    assert "dielectric_fluid" not in result["candidates"][0]
+    assert "voltage_kv" not in result["candidates"][0]
+
+
 def test_doe_transformer_matrix_rejects_drift_duplicates_and_unofficial_sources():
     content = (
         b"brand,basic_model,phase_count,apparent_power_kva,"

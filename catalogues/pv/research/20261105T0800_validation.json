@@ -1,0 +1,109 @@
+{
+  "started_at": "2026-11-05T08:04:00Z",
+  "start_precision": "minute",
+  "checkpoint_at": "2026-11-05T08:32:11.563398+00:00",
+  "elapsed_minutes_at_checkpoint_approx": 28.19,
+  "initial_head": "e4d8e19e4d4f259e4275b49e1e4b051fc0a079a7",
+  "final_base_main": "aa842b959bebe8b4279a449f91176be26f0ad6a5",
+  "launch37_merged": true,
+  "prior_PR152_merged_externally_at": "2026-11-05T08:09:34Z",
+  "initial_fully_paginated_PR_paths": {
+    "153": 110,
+    "152": 516,
+    "151": 122,
+    "150": 122,
+    "49": 1,
+    "48": 1,
+    "47": 3
+  },
+  "remaining_open_PR_paths": {
+    "49": [
+      ".github/workflows/docs.yml"
+    ],
+    "48": [
+      ".github/workflows/docs.yml"
+    ],
+    "47": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/docs.yml",
+      ".github/workflows/publish-pypi.yml"
+    ]
+  },
+  "other_PV_overlap": 0,
+  "PV_base_records_sources_identical_after_external_merges": true,
+  "focused_python_tests": 369,
+  "viewer_tests": 22,
+  "final_local_checks": {
+    "focused_python": {
+      "exit_code": 0,
+      "tail": [
+        "........................................................................ [ 97%]",
+        ".........                                                                [100%]",
+        "369 passed in 7.25s"
+      ]
+    },
+    "catalogue": {
+      "exit_code": 0,
+      "tail": [
+        "Validated 90217 unique records; schema and field evidence present"
+      ]
+    },
+    "offline_example": {
+      "exit_code": 0,
+      "tail": [
+        "                             Caracoles solar project          CHL             2.7             NaN  -35.6929   -71.4890 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+        "                           Aurora solar farm (Chile)          CHL           187.0             NaN  -20.7981   -69.4502 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+        "                             Dona Igna solar project          CHL             2.2             NaN  -33.5897   -71.2133 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]"
+      ]
+    },
+    "hygiene": {
+      "exit_code": 0,
+      "tail": [
+        "Repository check passed: 4855 candidate files; no flagged secrets or data."
+      ]
+    },
+    "citations": {
+      "exit_code": 0,
+      "tail": [
+        "Citation catalogue and all exports are consistent."
+      ]
+    },
+    "ruff": {
+      "exit_code": 0,
+      "tail": [
+        "All checks passed!"
+      ]
+    },
+    "format": {
+      "exit_code": 0,
+      "tail": [
+        "1009 files already formatted"
+      ]
+    },
+    "ty": {
+      "exit_code": 0,
+      "tail": [
+        "All checks passed!"
+      ]
+    },
+    "viewer": {
+      "exit_code": 0,
+      "tail": [
+        "\u2139 skipped 0",
+        "\u2139 todo 0",
+        "\u2139 duration_ms 135.98437"
+      ]
+    }
+  },
+  "exact_replay_inputs": 229,
+  "prior_creation_timestamps_preserved": 90202,
+  "immutable_sources_preserved": 537,
+  "catalogue_records": 90217,
+  "typed_ZSTD_tables": 5,
+  "typed_column_instances": 740,
+  "local_full_docs": "Attempted standard full gallery. Python3.12 lacked imagery support; fresh locked Python3.13 environment then failed in Dask/psutil CPU affinity discovery: NoSuchProcess(pid=5), matching restricted local process introspection. No repository/dependency bypass applied; final-commit normal GitHub docs/gallery/assets/links workflow must be checked in PRmetadata.",
+  "new_adapter": false,
+  "new_schema": false,
+  "new_code": false,
+  "raw_cache_recovery": "Prior caches/checkouts were pruned by workspace maintenance; one GEM release recovery download exactly reproduced prior SHA256. No unchanged daily/monthly/quarterly registry re-downloads."
+}

@@ -7,8 +7,8 @@ No network request occurs during validation, export or documentation builds.
 
 The current continuation branch contains **183 project records in 36 countries**:
 **66 facilities, three phases and 114 explicitly labelled campus aggregates**,
-from 13 operators. It has **2,367 exact equipment records from 62 OEMs**.
-Merged `main` at `9f36b0f3` contains **183 projects and 1,831 equipment records**.
+from 13 operators. It has **2,417 exact equipment records from 63 OEMs**.
+Merged `main` at `aa842b95` contains **183 projects and 2,367 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
 
@@ -33,6 +33,7 @@ uv run python scripts/stage_data_center_cdu.py extracted.csv --source-url https:
 uv run python scripts/stage_data_center_power_equipment.py extracted.csv --source-url https://www.eaton.com/dk/da-dk/catalog/medium-voltage-power-distribution-control-systems/dry-type-transformer.html --expected-count 16
 uv run python scripts/build_data_center_doe_transformer_batch.py staged-doe-transformers.jsonl
 uv run python scripts/build_data_center_doe_mv_transformer_batch.py staged-doe-mv-transformers.jsonl
+uv run python scripts/build_data_center_doe_liquid_transformer_batch.py staged-doe-liquid-transformers.jsonl
 uv run python scripts/stage_data_center_server_matrix.py extracted.csv --source-url https://www.delltechnologies.com/asset/en-us/products/servers/briefs-summaries/poweredge-server-gpu-matrix.pdf --expected-count 33
 uv run python scripts/stage_data_center_lenovo_gpu.py captured.html --source-url https://lenovopress.lenovo.com/lp2265-thinksystem-gpu-comparison --expected-count 20
 uv run python scripts/stage_data_center_supermicro.py captured.html staged.json --expected-count 13
@@ -102,7 +103,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-05-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-05-decisions.jsonl),
-[executed validation](research/2026-11-05T0720-validation.json), and
+[executed validation](research/2026-11-05T0820-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

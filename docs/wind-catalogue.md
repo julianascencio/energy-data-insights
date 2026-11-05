@@ -827,3 +827,21 @@ Karcino gains the operator's dated history: turbine installation began in 2009
 and commissioning occurred in 2010. The historical WRI conflict remains visible.
 The operator's 120 GWh/year statement has no named observation year or method;
 it is not used to calculate capacity factor or presented as measured output.
+
+
+### Reviewed OEM history tables
+
+The `wind_catalogue.history.stage_history` adapter accepts a reviewed factual
+transcription plus checksum-matched original bytes and a complete expected row
+inventory. It preserves printed rating ranges, dated remarks and tower options
+inside one type record. Explicit rating versions remain distinct; inferred
+Cartesian variants are rejected by the review workflow. Existing models and
+contradictory type/rating/unit rows remain in the decision ledger for separate
+revision review. An OEM history table does not independently validate performance
+or establish present-day availability. The November 5 Nordex transcription and
+all 46 decisions are retained under `catalogues/wind/research/`.
+
+EIA registry-site additions require independent identity review before staging.
+All generator observations remain nested with their original annual boundaries;
+missing farm capacity stays null. The shared viewer and offline example show
+unknown installed farm MW and unresolved aggregation scopes separately.
