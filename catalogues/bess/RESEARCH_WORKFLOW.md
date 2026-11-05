@@ -264,3 +264,13 @@ ratings remain separate, with no inferred stored energy or continuous power.
 retain conflicting 30 Ah labels and 27 Ah columns. NC42/TC84 omit the power-unit
 suffix under a generic W header: retain native text without resolving a power
 scalar. Do not infer energy or repair unusual timed ratings.
+
+For Microcare manuals INV-1-5kW-LION-2018-4-V10R5/6 and the reviewed
+2021-1-V21R1 editions, `scripts/stage_bess_microcare.py` stages local
+`pdftotext -layout` text. Exact model columns, revision, units and voltage
+envelopes must match. The three manuals yield18 observations but17 identities:
+5kW48V appears twice and must be reconciled before upsert. Preserve8kW
+manual/datasheet current and standby disagreements and10/15kW AC-current
+disagreements. Grid-assisted200% throughput is not battery inverter rated power;
+peak efficiency is not RTE, L in LxWxD is not automatically height, and warranty
+eligibility depends on manufacture date. Never create unlisted voltage variants.
