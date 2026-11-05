@@ -1,0 +1,73 @@
+{
+  "run_id": "cummins-qsk50-dcc-20261105T222201Z",
+  "validated_at": "2026-11-05T22:22:01Z",
+  "base_main_sha": "4ef42de474f69b5cdca5824410c06db0d851b434",
+  "branch": "research/data-center-database-20261105T2217Z",
+  "catalogue": {
+    "canonical_records": 3294,
+    "projects": 520,
+    "project_scopes": {"facility": 403, "phase": 3, "campus": 114},
+    "equipment": 2774,
+    "countries": 36,
+    "operators": 13,
+    "oems": 74,
+    "added_projects": 0,
+    "enriched_projects": 0,
+    "added_equipment": 8,
+    "enriched_equipment": 0
+  },
+  "inventory": {
+    "source_ids": ["cummins-qsk50-dcc-current-20261105"],
+    "model_frequency_identities_processed": 8,
+    "records_added": 8,
+    "records_enriched": 0,
+    "full_rating_rows": 5,
+    "dcc_only_rows": 3,
+    "quarantined_fields": 0,
+    "original_bytes_available": true,
+    "original_bytes": 216857,
+    "original_sha256": "d6507bb53731f8491de0db48d46706e57397ef9708ab04af0fbd4437fb2e6fcb",
+    "reuse_prohibited": false,
+    "new_reuse_holds": []
+  },
+  "local_checks": [
+    {"command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger", "result": "passed"},
+    {"command": "uv run python -m energy_data_retrieval.data_center_catalogue validate", "result": "passed; 3294 records"},
+    {"command": "build_data_center_cummins_qsk50_batch.py replay twice from the checksum-verified official HTML plus cmp against canonical JSONL", "result": "passed; eight records reproduced byte-identically"},
+    {"command": "focused Data Center pytest suites", "result": "passed; 109 tests"},
+    {"command": "node --test tests/js/test_database_viewer.mjs", "result": "passed; 33 tests"},
+    {"command": "uv run ruff format --check . and ruff check .", "result": "passed; 1165 files formatted after current-main integration"},
+    {"command": "targeted and repository-wide uv run ty check", "result": "passed"},
+    {"command": "uv run python scripts/check_repository.py", "result": "passed; 5784 candidate files after current-main integration"},
+    {"command": "uv run python scripts/check_citations.py", "result": "passed"},
+    {"command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py", "result": "passed with exact generator kW/kVA comparison output"},
+    {"command": "two independent data_center_catalogue build commands plus diff", "result": "passed; byte-identical typed Zstandard snapshots"},
+    {"command": "uv run --group dev pytest -q", "result": "3105 passed, 5 optional skips and 1 unrelated environment failure in a PV degradation subprocess after current-main integration; psutil.NoSuchProcess occurred before Data Center code loaded"},
+    {"command": "uv run --group docs sphinx-build -W --keep-going -b html", "result": "blocked locally by the Python 3.13-only optional Orbital PV imagery gallery dependency"},
+    {"command": "git diff --check", "result": "passed"}
+  ],
+  "snapshot_sha256": {
+    "input": "1184fd52a13b651e901f4ab5e262dcb7b4893479e45dfa2bff353abb3a1427a0",
+    "projects": "08365446210a654e49b3d38256b7158dc126efa6eb84cd77f90228050f545aee",
+    "equipment": "661c1ade3e6095557e8924691747d85b1078ac13ec18dbbb36a66667940ee05b",
+    "manifest": "4bf958a8fea152a31202217d5b7f1cf96e64ece01fdab3f91b1ccf20dc8f9b27",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "828512e0556e96d88d8f439952c29decc3fb62e6efbb5df0da91274606c5c19f"
+  },
+  "post_merge_validation": {
+    "integrated_main_sha": "4ef42de474f69b5cdca5824410c06db0d851b434",
+    "concurrent_scopes_preserved": ["PV", "Wind", "BESS", "Hydro"],
+    "catalogue": "passed; 3294 records",
+    "focused_python": "passed; 109 tests",
+    "viewer": "passed; 33 tests",
+    "ruff": "passed; 1165 files formatted and lint clean",
+    "ty": "passed repository-wide",
+    "repository": "passed; 5784 candidate files",
+    "citations": "passed",
+    "snapshots": "passed; fresh post-merge build remained byte-identical",
+    "diff_check": "passed"
+  },
+  "remote_ci": {
+    "status_at_validation": "not_started_for_new_head"
+  }
+}
