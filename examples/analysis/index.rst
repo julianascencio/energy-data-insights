@@ -43,6 +43,12 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
       Compare normal forecasting with counterfactual HVAC scheduling.
 
+   .. grid-item-card:: Offshore wind economics
+      :link: topic_offshore_wind
+      :link-type: doc
+
+      Stress-test investment costs, financing and capacity-factor assumptions.
+
    .. grid-item-card:: Hybrid renewable dispatch
       :link: topic_hybrid_dispatch
       :link-type: doc
