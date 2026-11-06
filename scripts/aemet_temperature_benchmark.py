@@ -6,6 +6,7 @@ lightgbm xgboost
 Foundation-model adapters are deliberately not faked: add verified inference
 separately rather than presenting persistence as a foundation-model result.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -23,11 +24,15 @@ def load_aemet(path: Path, station: str) -> pd.Series:
         raise ValueError(f"AEMET CSV must contain {sorted(required)}")
     frame = frame.loc[frame["indicativo"] == station].copy()
     frame["fecha"] = pd.to_datetime(frame["fecha"], errors="coerce")
-    frame["tmed"] = pd.to_numeric(\n        frame["tmed"].str.replace(",", ".", regex=False), errors="coerce"\n    )
+    frame["tmed"] = pd.to_numeric(
+        frame["tmed"].str.replace(",", ".", regex=False), errors="coerce"
+    )
     series = frame.dropna(subset=["fecha"]).set_index("fecha")["tmed"].sort_index()
     if series.index.has_duplicates:
         raise ValueError("Duplicate dates for station")
-    if series.empty:\n        raise ValueError(f"No observations for AEMET station {station}")\n    return series.asfreq("D")
+    if series.empty:
+        raise ValueError(f"No observations for AEMET station {station}")
+    return series.asfreq("D")
 
 
 def features(dates: pd.DatetimeIndex, history: pd.Series) -> pd.DataFrame:
@@ -40,17 +45,28 @@ def features(dates: pd.DatetimeIndex, history: pd.Series) -> pd.DataFrame:
 
 
 def forecast(name: str, train: pd.Series, future: pd.DatetimeIndex) -> np.ndarray:
-    if name == "timestral":\n        from energy_methods.timestral import TimestralConnector\n\n        result = TimestralConnector(model_id="mistralai/Timestral-5M", device="cpu").forecast(\n            train.to_numpy(dtype=float), prediction_length=len(future), clip_nonnegative=False\n        )\n        return np.asarray(result.median).reshape(-1)\n    if name == "last_value":
+    if name == "timestral":
+        from energy_methods.timestral import TimestralConnector
+
+        result = TimestralConnector(model_id="mistralai/Timestral-5M", device="cpu").forecast(
+            train.to_numpy(dtype=float), prediction_length=len(future), clip_nonnegative=False
+        )
+        return np.asarray(result.median).reshape(-1)
+    if name == "last_value":
         return np.repeat(train.iloc[-1], len(future))
     if name == "seasonal_7":
         return np.array([train.iloc[-7 + (i % 7)] for i in range(len(future))])
     if name in {"lightgbm", "xgboost"}:
         if name == "lightgbm":
             from lightgbm import LGBMRegressor
-            model = LGBMRegressor(\n                n_estimators=150, learning_rate=0.05, verbosity=-1, random_state=42\n            )
+            model = LGBMRegressor(
+                n_estimators=150, learning_rate=0.05, verbosity=-1, random_state=42
+            )
         else:
             from xgboost import XGBRegressor
-            model = XGBRegressor(\n                n_estimators=150, max_depth=3, learning_rate=0.05, random_state=42\n            )
+            model = XGBRegressor(
+                n_estimators=150, max_depth=3, learning_rate=0.05, random_state=42
+            )
         model.fit(features(train.index, train), train.to_numpy())
         return np.asarray(model.predict(features(future, train)))
     if name == "arima":
@@ -71,7 +87,11 @@ def benchmark(series: pd.Series, models: list[str], horizons: list[int], origins
     """Expanding-window, non-overlapping origins; no test-label imputation."""
     rows = []
     for horizon in horizons:
-        available = [\n            i\n            for i in range(365, len(series) - horizon + 1, horizon)\n            if series.iloc[:i].notna().all() and series.iloc[i : i + horizon].notna().all()\n        ]
+        available = [
+            i
+            for i in range(365, len(series) - horizon + 1, horizon)
+            if series.iloc[:i].notna().all() and series.iloc[i : i + horizon].notna().all()
+        ]
         for i in available[-origins:]:
             train = series.iloc[:i]
             actual = series.iloc[i : i + horizon].to_numpy()
