@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-11-06T05:53:51.173529+00:00",
+  "baseline_head": "8703c75b59207cb935fad8164b1a443b2666f2c9",
+  "focused_bess_tests": 627,
+  "new_parser_tests": 20,
+  "viewer_dom_tests": 35,
+  "ruff": "passed",
+  "format": "1227 files passed",
+  "ty": "passed",
+  "hygiene": "6098 candidate files passed",
+  "citations": "passed",
+  "offline_examples": [
+    "examples/database/plot_bess_projects.py passed",
+    "examples/database/plot_bess_oem_catalogue.py passed"
+  ],
+  "original_parser_partitions": [
+    "HPS5columns",
+    "PCS5columns",
+    "EnerStack314ninecodes"
+  ],
+  "catalogues": "both validate; exact identities, field evidence and module reference checks passed",
+  "preservation": "all baseline facts/created_at/source entries/namespaces preserved; one additive existing project enrichment",
+  "upsert": "ordinary API additions; one nested collision explicitly reviewed; no-op updated_at stable",
+  "snapshots": "both typedZSTD rebuilt twice byte-identically after rights-finalisation; outside Git",
+  "full_local_suite": "not claimed; previously observed host PID collection issue",
+  "strict_local_docs": "not claimed; final hosted CI authoritative",
+  "final_checked_at": "2026-11-06T05:55:18.350810+00:00"
+}
