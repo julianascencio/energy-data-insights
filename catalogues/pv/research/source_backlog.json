@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-06T11:22:55.511864+00:00",
-  "ranking_file": "20261106T1100_top10_gaps.json",
+  "updated_at": "2026-11-06T12:20:10.386954+00:00",
+  "ranking_file": "20261106T1200_top10_gaps.json",
   "selection_note": "197projects/401fieldscontexts,13newFoxESSinverters/247typedvalues.2acceptedbatches;3ownerholds. Nepal/BPDBnewdiscovery only;Taipowerunchanged/alreadyprocessed,no adaptercompletion.",
-  "next_highest_value_source": "Greece139 strict ownership candidates after saved cursor; Rayzon31 differing fields held; Torino normal access/licence/explicitPV review next due7Nov; Noark current route identified but old identity gate retained.",
+  "next_highest_value_source": "Ghana Ministry PPA API4published PV summaries: exact plant/phase, applicable reuse and underlying clause/unit review before acceptance. Izmir missing-panel row remains held; Greek strict139 completed.",
   "sources": [
     {
       "id": "uk_repd",
@@ -28924,6 +28924,257 @@
       "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
       "next_action": "Resolve operator role and independent permitted project evidence; do not circumvent publisher restrictions or convert inauguration to COD or generic installed MW to AC/DC.",
       "next_due_check": "2026-11-13T11:00:00Z"
+    },
+    {
+      "id": "gem_GRC_final139_1200",
+      "country": "GRC",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "February2026 pinned XLSX exact phase-set/Owner review",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "publication_cadence": "Release based; official release remainsFebruary2026",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "reviewed": 139,
+      "accepted": 139,
+      "held": 0,
+      "rejected": 0,
+      "mapping": "139owners plus139complete-phase contexts; original labels and native assertions retained. Historical only.",
+      "processed_cursor": {
+        "GRC": "L100001061213"
+      },
+      "result": "Strict139 Greek partition exhausted; prior held cases preserved. Not a claim all missing Greek owners are now resolved.",
+      "next_action": "Ghana ministry PPA4 exact identity and reuse review; retain prior Greek holds",
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "izmir_municipal_csv_1200",
+      "country": "TUR",
+      "entity": "projects",
+      "source_url": "https://acikveri.bizizmir.com/api/3/action/package_show?id=lisanssiz-gunes-enerji-santralleri-listesi",
+      "endpoint": [
+        "https://acikveri.bizizmir.com/api/3/action/package_show?id=lisanssiz-gunes-enerji-santralleri-listesi",
+        "https://acikveri.bizizmir.com/dataset/82e1aa7d-19a3-4d8e-a657-3ecbef536b83/resource/7b32c697-d973-425d-8613-d675bafc99e7/download/lisanssz-ges-santralleri2025.csv",
+        "https://acikveri.bizizmir.com/dataset/82e1aa7d-19a3-4d8e-a657-3ecbef536b83/resource/b7db1a8b-5731-460d-839d-92febd157b15/download/lisanssz-gunes-enerji-santralleri-listesi.xls",
+        "https://acikveri.bizizmir.com/tr/license"
+      ],
+      "format": "CKAN package metadata; UTF-8 semicolon CSV; malformed newer OOXML theme download",
+      "licence_assessment": "Dataset-specific municipal licence resolves to CC BY4, commercial adaptation/redistribution with attribution permitted. Notice committed; no private applicant/contact fields.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:02:23.022250+00:00",
+      "sha256": "7c2154818910c26d43b337435c17d3e4c2196c45417d34ad27eac922ed7392a7",
+      "etag": null,
+      "reviewed": 26,
+      "accepted": 25,
+      "held": 1,
+      "rejected": 0,
+      "result": "New official municipal inventory:26CSV rows,25accepted named panel-evidenced PV facilities,1missing-panel-evidence hold. Reader+8tests complete.75numeric fields plus25contexts in new projects. No AC/DC/status/COD/owner/coordinate inference. CSVmodified21Jan2026; metadata9Sep2026 does not reviseCSV. Newer XLSX has onlytheme parts,no worksheets.",
+      "next_action": "Fresh metadata/checksum before resuming; resolve one missing-panel row using explicit PV source and request no contact. Recheck workbook only on new resource revision.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "CSV_resource_id": "7b32c697-d973-425d-8613-d675bafc99e7",
+        "CSV_last_modified": "2026-01-21T09:52:39.728249",
+        "package_modified": "2026-09-09T07:58:35.918716",
+        "processed_csv_records": 26,
+        "accepted": 25,
+        "held": 1,
+        "adapter": "izmir.read_izmir_csv"
+      },
+      "next_due_check": "2026-12-01T06:00:00Z"
+    },
+    {
+      "id": "kosmo_family_identity_1200",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://kosmosolar.eu/products",
+      "endpoint": [
+        "https://kosmosolar.eu/products",
+        "https://kosmosolar.eu/storage/datasheets/1739786316-Kosmo%20Solar%20datasheet%20KS(590-620W)-144MBB%20(2).pdf",
+        "https://kosmosolar.eu/storage/datasheets/1739786261-Kosmo%20Solar%20Datasheet%20KS(580-600W)-144MBB%20(1).pdf",
+        "https://kosmosolar.eu/storage/datasheets/1739786305-Kosmo%20Solar%20datasheet%20KS(430-450W)-108MSG%20(2).pdf",
+        "https://kosmosolar.eu/"
+      ],
+      "format": "Current OEM index and three2page technical PDFs; page2 rendered/reviewed",
+      "licence_assessment": "Copyright reserved; no open bulk grant. Only bounded research evidence; no full datasheet/table artwork or prose in Git.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:03:33.423879+00:00",
+      "sha256": "b3745274203ed81fc87d8ec2d38a2786f1e8afe53db493e0fe7c682857a76ef4",
+      "etag": null,
+      "reviewed": 3,
+      "accepted": 0,
+      "held": 3,
+      "rejected": 0,
+      "result": "Three families/15STC rating columns reviewed, not15accepted exact models. Only ranged family names identify columns; no literal individual model codes. Mechanical heading/drawing and front/back mass/warranty-template inconsistencies plus bifacial scenario alignment/values prevent safe exact-model acceptance. No chosen winner or invented model code.",
+      "next_action": "Seek an independently published unambiguous exact-model schedule/revision; preserve these family holds and do not clone ratings/options into fictitious variants.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "families": 3,
+        "front_STC_columns_reviewed": 15,
+        "exact_models_accepted": 0,
+        "per_family_STC_columns": 5
+      },
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "TSEC_rights_1200",
+      "country": "TWN",
+      "entity": "modules",
+      "source_url": "https://www.tsecpv.com/privacy/",
+      "endpoint": [
+        "https://www.tsecpv.com/privacy/"
+      ],
+      "format": "Official privacy/IP statement; technical PDFs not downloaded",
+      "licence_assessment": "Prior written permission required to reproduce/use website information; no grant inferred from public access. No contact/form.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:08:57.053733+00:00",
+      "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+      "etag": null,
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "result": "Promising multi-model OEM source stopped at explicit rights gate. No technical assertions or PDF accepted.",
+      "next_action": "Use independently permitted OEM; resume only on applicable documented rights change.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "technical_downloads": 0,
+        "accepted_models": 0
+      },
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "ghana_energy_database68_1200",
+      "country": "GHA",
+      "entity": "projects",
+      "source_url": "https://gheatoolkit.energycom.gov.gh/Dataset/GetDatasetDetail?datasetid=68",
+      "endpoint": [
+        "https://gheatoolkit.energycom.gov.gh/Dataset/GetDatasetDetail?datasetid=68",
+        "https://gheatoolkit.energycom.gov.gh/Home/TermsOfUse",
+        "https://gheatoolkit.energycom.gov.gh/Home/DisclaimerMsg"
+      ],
+      "format": "Official dataset68metadata and terms; no feature export",
+      "licence_assessment": "Terms3.1/3.2 require written approval for propagation and restrict personal/noncommercial use. Not an open-data grant. Technical index cache discarded; access hashes retained.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:08:56.291503+00:00",
+      "sha256": "b88e6dbcc205f91593c1928ad8272ae4589eb76c787ac64de568564de3bb1715",
+      "etag": null,
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "result": "New national solar-facilities dataset metadata discovered; licence gate stops extraction. Do not substitute generic Ghana open-data terms or draft policy.",
+      "next_action": "Resume only with applicable reuse evidence. Independent Ministry PPA portal is separately assessed, not used to bypass this dataset.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "datasetid": 68,
+        "feature_rows": 0
+      },
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "ghana_ministry_PPA_PV_1200",
+      "country": "GHA",
+      "entity": "projects",
+      "source_url": "https://ppaportal.energymin.gov.gh/contracts",
+      "endpoint": [
+        "https://ppaportal.energymin.gov.gh/contracts",
+        "https://ppaportal.energymin.gov.gh/api/v1/ppas?technology=solar_pv&per_page=25",
+        "https://ppaportal.energymin.gov.gh/about",
+        "https://ppaportal.energymin.gov.gh/api-docs"
+      ],
+      "format": "Official published read-only JSON API; technology=solar_pv, per_page25",
+      "licence_assessment": "Intended for public research/analysis, but no explicit dataset redistribution licence established. Portal summaries are not legal agreements. Separate Ministry publisher; Energy Commission toolkit terms not automatically transferred. Full contracts not downloaded.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:08:58.411781+00:00",
+      "sha256": "258314d4e3b6d9a2608bbb72f1fd2f07b2eed34a2a361c5125df6d9837f3f1cf",
+      "etag": null,
+      "reviewed": 4,
+      "accepted": 0,
+      "held": 4,
+      "rejected": 0,
+      "result": "New multi-record source:4published PV PPA summaries,1page,total4. API documents60requests/min/IP. Lastupdated30Oct2026,versionv1.0; active PPA is not operating-plant proof. No rows/adapter accepted; clause, tariff unit/basis, current applicability and exact plant/phase crosswalk remain to review.",
+      "next_action": "Highest-value next: review4PPA identities and summary-to-contract clauses plus reuse; fill qualified PPA/offtaker context only after gates. No legal enforceability or AC/DC inference; never treat commercial capacity as plant rating.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "reference_codes": [
+          "GH-PPA-03",
+          "GH-PPA-07",
+          "GH-PPA-09",
+          "GH-PPA-11"
+        ],
+        "current_page": 1,
+        "last_page": 1,
+        "total": 4,
+        "accepted": 0
+      },
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "solvis_current_global_1200",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://solvis.hr/en/documents/datasheet/",
+      "endpoint": [
+        "https://solvis.hr/wp-content/uploads/2026/07/SOLVIS-DS-EN-SV96_E_F_GG22_HCG12R_Global_P_30_1762x1134x30_450-460-20260603.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/07/SOLVIS-DS-EN-SV108_E_F_GG22_HCG12R_Global_P_30_1961x1134x35_510-520-20260603.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/07/SOLVIS-DS-EN-SV132_E_GG22_HCG12R_Global_S_15_2382x1134x35_625-635-20260603.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV144_E_GBS_HCM10_Global_S_15_2278x1134x35_575-585-20250725.pdf"
+      ],
+      "format": "Four2page OEM PDFs; exact STC model tables plus renderedmechanical/thermal/operating and warranty sections",
+      "licence_assessment": "OEMcopyright retained; bounded manually reviewed factual values/conditions only. No openbulk/document licence inferred. Home/currentindex/footer and PDFcopyright inspected; privacy anchor points to a legacyfragment, not an open grant. No PDF/prose/artwork in Git.",
+      "last_attempt": "2026-11-06T12:20:10.386954+00:00",
+      "last_retrieval": "2026-11-06T12:15:09.659385+00:00",
+      "last_release": "GG22G12R June3,2026; GBSM10 July25,2025 printedfooter revisions",
+      "publication_cadence": "OEMrevision based; current-index metadata beforefullfiles",
+      "sha256": {
+        "96": "953d084f35148fc61babd6b19e43b328da29324564c909945732434047049a84",
+        "108": "72fe8cd34f8cbb7a72a1000987e2f6915100ba6469759a79480aee4fd0eaf98e",
+        "132": "258e79a7fd924e9f89294cd043d0aa49cd623f7a7b7e64e3a5ce1b09d3fb07bf",
+        "144": "965a0c061faff4fc571a59eca9a01249bdb9b331aa723f7a8ca1d765b626fb1a"
+      },
+      "etag": {
+        "96": null,
+        "108": null,
+        "132": null,
+        "144": null
+      },
+      "reviewed": 12,
+      "accepted": 12,
+      "held": 0,
+      "rejected": 0,
+      "field_questions_held": 3,
+      "fields_offered": [
+        "STC P/V/I/efficiency",
+        "cells/dimensions/mass",
+        "thermal coefficients",
+        "maximumsystemvoltage/fuse",
+        "operatingbounds",
+        "warrantyclaims"
+      ],
+      "mapping": "ExistingupsertAPI,12exactmodels/261typedvalues; componentIP,NMOT/BNPI and tolerances arequalifiedcontext. No scenario variants or derivedannualdegradation.",
+      "processed_cursor": {
+        "completed_sheets": [
+          "SV96 E F GG22 HCG12R",
+          "SV108 E F GG22 HCG12R",
+          "SV132 E GG22 HCG12R",
+          "SV144 E HCM10"
+        ],
+        "accepted_models": 12,
+        "remaining_current_index_sheets_unprocessed": 8
+      },
+      "result": "Old indexedPDFURLs404; ordinary currentOEMnavigation led to revisionedpublicdirectPDFs.12literalmodelsaccepted, existingcanonicalSOLVISdoo retained, no newmanufacturer. Three132cell heights held:mechanicaltable2382mm vs drawing2278mm. Currentindex familylabel includesF whereas132table/header literalcodes omitF; no Fvariant inferred or created.",
+      "retry_condition": "Freshsource/head check; exactmodeltable and rightsreview required for unprocessed sheets",
+      "next_action": "Next equipment: two current monofacial G12R96/108 sheets (6model columns) after exact identity review; preserve132height and Kosmo/TSEC holds.",
+      "next_due_check": "2026-11-13T12:00:00Z"
     }
   ],
   "source_refresh_queue": [
