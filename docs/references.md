@@ -7775,3 +7775,27 @@ IFC / AMEA Power Aysha Wind One PLC (2026). **Aysha I supplementary lenders info
 **Role:** data_source. Revision history; Table2-2 printed pp4–5, PDFpp42–43; bounded design/procedure observations, not operating performance.
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_17170
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Pasama wind authorization application withdrawal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-17170)
+
+**Role:** data_source. Hechos Primero–Séptimo; final Resuelve Único; procedure/award evidence, not installed fleet or independently validated performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_17175
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Aquarii wind wind authorization application withdrawal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-17175)
+
+**Role:** data_source. Hechos Primero–Séptimo; final Resuelve Único; procedure/award evidence, not installed fleet or independently validated performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### windey_aysha_award_20260819
+
+Windey Energy Technology Group Co., Ltd. (2026). **Windey and AMEA Power Aysha I turbine supply award announcement**. [Source](https://www.windeyenergy.com/en/news_show?id=224)
+
+**Role:** data_source. Award announcement opening paragraphs; WD200-7700 model paragraph; projected generation paragraph; procedure/award evidence, not installed fleet or independently validated performance.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

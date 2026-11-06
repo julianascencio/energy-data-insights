@@ -1300,3 +1300,20 @@ notice imposes removals; the revised design needs separate review. Maira Delta
 and Gamma retain their original proposals, explicit removal lists and labelled
 arithmetic checks, with final capacity/count null. Final environmental curtailment
 conditions are project constraints, not OEM cut-in speed specifications.
+
+The November 6 07:35 batch completes BOE August 6–8 discovery across all
+available daily issues. Pasama and Aquarii are withdrawn wind applications;
+Taraguilla is an unchanged previously recorded project. The three solar-hybrid
+refusals remain wind-identity review candidates, without cancelling their wind
+plants or transferring solar MW. Pasama’s former joint procedure with Cerro de
+Magaña does not establish a parent/phase relationship.
+
+Aysha I now retains Windey’s August 19 supply-award announcement alongside the
+June lender design envelopes. The WD200-7700 mention does not select the Saudi
+60 Hz equipment configuration already in the catalogue. The shared viewer and
+executable gallery display dated awards separately from installed fleets.
+The OEM’s prospective 1,189 GWh/year is a modeled project observation with
+unspecified gross/net boundary and calendar period; no capacity factor is
+computed. Exact configuration, turbine count and conflicting project MW remain
+unresolved. Specifications and announcements are not independently validated
+performance.

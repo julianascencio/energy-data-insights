@@ -814,3 +814,13 @@ for row in rows:
         )
         print("Scalar rotor/hub remain:", row.get("rotor_diameter_m"), row.get("hub_height_m"))
         print(envelope["conditions"])
+
+
+# %%
+# Dated OEM supply awards do not select regional equipment configurations.
+print("OEM supply announcements; not installed fleet distributions:")
+for row in projects.to_dict("records"):
+    for award in json.loads(row.get("extensions_json") or "{}").get("supply_awards", []):
+        print(row["name"], award["published_at"], award["manufacturer"], award["model_mentioned"])
+        print(award["identity_basis"], award["configuration_status"])
+        print("Installed turbine count remains:", row.get("turbine_count"))

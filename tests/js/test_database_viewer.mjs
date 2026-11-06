@@ -433,3 +433,21 @@ test("wind design envelopes preserve unknown scalars and require source/revision
   assert.equal(windDesignSummary([{...row,extensions_json:"{"}]).withoutEnvelope,1);
   assert.equal(windDesignSummary([{...row,entity_type:"equipment"}]).projects,0);
 });
+
+
+test("supply awards require identity/provenance and never mutate installed fields", async () => {
+  const {windSupplyAwardSummary} = await import("../../docs/_static/database-core.mjs");
+  const award = {event:"turbine_supply_award", configuration_status:"unresolved", manufacturer:"OEM", locator:"Award paragraph", identity_basis:"Project crosswalk", source_id:"award", published_at:"2026-08-19", model_mentioned:"M200"};
+  const row = {entity_type:"projects", sources:["award"], turbine_count:null, extensions_json:JSON.stringify({supply_awards:[award,award]})};
+  const before = JSON.stringify(row);
+  assert.deepEqual(windSupplyAwardSummary([row]), {projects:1,awards:1,modelMentions:1,unknownModels:0,withoutAward:0});
+  assert.equal(JSON.stringify(row),before);
+  for (const change of [{source_id:"missing"},{identity_basis:null},{locator:null},{configuration_status:"installed"},{published_at:"2026-02-30"}]) {
+    const bad = {...row, extensions_json:JSON.stringify({supply_awards:[{...award,...change}]})};
+    assert.equal(windSupplyAwardSummary([bad]).awards,0);
+  }
+  const unknown = {...row, extensions_json:JSON.stringify({supply_awards:[{...award,model_mentioned:null}]})};
+  assert.equal(windSupplyAwardSummary([unknown]).unknownModels,1);
+  assert.equal(windSupplyAwardSummary([{...row,extensions_json:"{"}]).withoutAward,1);
+  assert.equal(windSupplyAwardSummary([{...row,entity_type:"equipment"}]).awards,0);
+});

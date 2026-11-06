@@ -1,52 +1,54 @@
 {
-  "batch": "2026-11-06-0635",
-  "base": "b6e96b89880a958315627a194098d77d46a389c7",
+  "batch": "2026-11-06-0735",
+  "base": "3070d97a33c32516f10da822436b2033a760ad7a",
   "main": "036429f93354749517d91ac62b18390ec7bccddc",
   "local": {
-    "python": "457focused tests passed; initial overlapping pre-final reference check had2failures, regenerated exports and fresh full focused run passed",
-    "viewer": "37Node tests passed including design-envelope provenance/range/unknown/zero regression",
-    "quality": "Ruff lint/format1219files and explicit-interpreter ty passed; hygiene6070files and citations passed",
-    "docs": "Final strict Wind-gallery Sphinx and721-page local link/asset checks passed; final gallery fingerprint matches corrected canonical snapshot",
-    "replay": "Exact original-byte four BOE records replayed; complete discovered A/B indexes reviewed; two PDF tables visually checked",
-    "preservation": "22513prior records and426prior sources unchanged; all six capacity summaries unchanged",
-    "snapshots": "Two final seven-file builds byte-identical; all Parquet columnsZSTD"
+    "python": "471focused Wind/Hydro/reference tests passed; final54BOE/award adapter tests passed after2additional unknown-lifecycle regressions",
+    "viewer": "38Node tests passed; award provenance/date/unknown-model/deduplication/no-mutation regression included",
+    "quality": "Ruff lint/format1221files and explicit-interpreter ty passed; hygiene6075candidate files and citations passed",
+    "docs": "Strict Wind-gallery Sphinx passed after fixing DataFrame iteration in new section; final723-page link/asset check passed after dataset generation; rendered fingerprint matches final snapshot",
+    "replay": "TwoBOE records and1Ayshaaward replay exactly from acquired original bytes;6notices fully accounted for across3daily partitions",
+    "preservation": "22518prior IDs/creation timestamps and433prior sources preserved;22517prior records identical; only Aysha evidence/timestamps enriched; all prior capacity scalars and6capacity summaries unchanged; unrelated catalogues untouched",
+    "snapshots": "Two seven-file snapshots byte-identical; all Parquet columnsZSTD"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "f99f617419022e2a36cbce5f66b46f22fab07459d7ada97afd5f9708f0b58242",
-    "projects.parquet": "4d948ca89b1578c316da57f00e2e7e99e2543ab6dd36fc6ca2568705f65a9f4d",
+    "manifest.json": "3cf969a80dc963ce93ebc62393e02c871fca7d1a0059fa1f260a6c1c572ce822",
+    "projects.parquet": "16c7719f6f482a5d75245a5350963f267da4d74bfd5718deb8f914949308a860",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "2ff5957ddf42e0296698a7be3bae396a336c0446f7e755d57809ca4d89b57d6f",
+    "sources.json": "e656c409a29c04684156f50c428b79e28eca6d4e42a36c4b519a46ba475689b9",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
   },
   "main_comparison": {
     "main": {
       "projects": 8298,
-      "equipment": 555,
       "turbines": 13657,
+      "equipment": 555,
       "curves": 2
     },
     "branch": {
-      "projects": 8304,
+      "projects": 8306,
       "equipment": 555,
       "turbines": 13657,
       "curves": 2
     },
     "cumulative_pr_added": {
-      "projects": 6
+      "projects": 8
     },
     "this_run_added": {
-      "projects": 5
+      "projects": 2,
+      "equipment": 0
     },
     "this_run_enriched": {
-      "projects": 0
+      "projects": 1,
+      "equipment": 0
     },
     "countries": 59,
     "manufacturer_labels": 64
   },
-  "remote_ci": "Pending final publication; reported separately on PR191",
-  "previous_head_remote_ci": "b6e96b8 Python42170209862 and Documentation42170209887 both success",
+  "remote_ci": "Final-head results pending publication; inspect PR191. Prior-head success is not final-head validation.",
+  "previous_head_remote_ci": "3070d97 Python42178092433 and Documentation42178092438 both success",
   "not_executed": [
     "full local pytest",
     "full local gallery",
@@ -56,7 +58,7 @@
   "concurrency": {
     "branch": "research/wind-20261106-0535",
     "nonblocking_lock_acquired": true,
-    "expected_head": "b6e96b89880a958315627a194098d77d46a389c7",
+    "expected_head": "3070d97a33c32516f10da822436b2033a760ad7a",
     "reviewed_open_prs": [
       188,
       189,
@@ -65,5 +67,6 @@
       192
     ],
     "overlapping_wind_paths": []
-  }
+  },
+  "local_recovery": "Disk exhaustion while saving scratch preservation checkpoint; reproducible prior docs outputs removed and checkpoint rerun before data edits. Initial gallery error fixed; link checks executed before build completion were discarded and rerun after successful build."
 }
