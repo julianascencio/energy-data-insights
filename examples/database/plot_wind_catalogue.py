@@ -868,3 +868,22 @@ for row in rows:
             "capacity role",
             row["aggregation_role"],
         )
+
+# Operator MW boundaries and date precision stay separate from installed capacity.
+print("Dated operator observations: contracted/gross MW, not additive installed capacity")
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "operator_portfolio_observations", []
+    ):
+        facts = observation["facts"]
+        print(
+            row["name"],
+            observation["as_of"],
+            facts["capacity_basis"],
+            facts["capacity_mw"],
+            facts["cod"],
+            facts["cod_precision"],
+            facts["count_times_rating_check"],
+            row["aggregation_role"],
+        )
+print("Unknown exact models remain unknown; dated ownership does not overwrite earlier shares.")

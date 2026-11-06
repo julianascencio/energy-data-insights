@@ -523,3 +523,30 @@ export function windNumericTableSummary(rows) {
   }
   return result;
 }
+
+// Operator snapshots describe dated evidence, never an additive current fleet.
+export function windOperatorPortfolioSummary(rows) {
+  const result = {projects: 0, observations: 0, withoutEvidence: 0, excludedProjects: 0, unknownModels: 0, averageRatings: 0, dates: [], capacity: {contracted: {known: 0, unknown: 0, zero: 0}, gross_reported: {known: 0, unknown: 0, zero: 0}}};
+  const dates = new Set();
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let observations;
+    try { observations = JSON.parse(row.extensions_json || "{}").operator_portfolio_observations || []; } catch { observations = []; }
+    const seen = new Set();
+    for (const o of Array.isArray(observations) ? observations : []) {
+      if (!o?.locator || !row.sources?.includes(o.source_id) || !/^\d{4}-\d{2}-\d{2}$/.test(o.as_of || "") || !o.facts || seen.has(`${o.source_id}:${o.as_of}`)) continue;
+      seen.add(`${o.source_id}:${o.as_of}`); dates.add(o.as_of); result.observations++;
+      if (!o.facts.exact_model) result.unknownModels++;
+      if (o.facts.rating_basis === "reported_fleet_average") result.averageRatings++;
+      const category = result.capacity[o.facts.capacity_basis];
+      if (category) {
+        if (typeof o.facts.capacity_mw === "number" && Number.isFinite(o.facts.capacity_mw) && o.facts.capacity_mw >= 0) {
+          category.known++; if (o.facts.capacity_mw === 0) category.zero++;
+        } else category.unknown++;
+      }
+    }
+    if (seen.size) { result.projects++; if (row.aggregation_role === "unresolved" || row.aggregation_role === "aggregate") result.excludedProjects++; }
+    else result.withoutEvidence++;
+  }
+  result.dates = [...dates].sort();
+  return result;
+}

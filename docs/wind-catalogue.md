@@ -1,12 +1,12 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-06-0935`, the continuation contains
-**8,309 projects, 566 equipment records, 13,657 linked turbines and two original
-numerical curves**, across **59 countries and 66 equipment manufacturer labels**.
+numerical curves. At batch `2026-11-06-1135`, the continuation contains
+**8,319 projects, 566 equipment records, 13,657 linked turbines and two original
+numerical curves**, across **63 countries and 66 equipment manufacturer labels**.
 Labels are not a reconciled corporate-entity count. Merged main at `64dcf522`
 contains 8,306 projects, 555 equipment records, 13,657 turbines and two curves.
-This run adds two projects and eleven equipment records; it does not count
+This run adds ten projects and enriches three; it adds no equipment records; it does not count
 previous batches again. These are catalogue counts, not a current operating
 census. Exact continuation queues are in `catalogues/wind/research/latest.json`.
 
@@ -1379,3 +1379,35 @@ SI-16840 regional configuration crosswalk remain unresolved. No projects,
 equipment, turbine instances or numerical curves were added in this continuation.
 See `catalogues/wind/research/2026-11-06-1035-review.json` for source identifiers,
 checksums and next partitions.
+
+
+## Operator portfolio and BOE continuation (6 November, 11:35 UTC)
+
+The complete 20-row operational wind subset in Masdar’s 15 July 2024 offering
+circular was reviewed against the catalogue: nine new projects, three historical
+observation enrichments, and eight identity holds. The portfolio date is
+31 March 2024. It is not a current operating census. Contracted MW (pp154–155)
+and gross reported MW (p166) remain separate nested quantities; neither becomes
+installed capacity. Turbine count × rating is a labeled arithmetic check. The
+source’s fleet-average footnote is preserved and does not identify an exact model.
+No equipment configurations were inferred from OEM names or ratings.
+
+Dumat’s 2022-07-01 commercial operation date and March 2024 ownership are retained
+alongside its original 2019 award observations. London Array’s final-turbine
+installation and Hywind’s first-export milestones are not relabeled full COD.
+Month-only African CODs retain month precision. Existing scalar facts, IDs,
+creation dates and capacity exclusions are unchanged. The shared viewer shows
+dated portfolio coverage, missing exact models and capacity boundaries.
+
+BOE July 23–25 contains one accepted wind application: Revilla-Vallejera Hib,
+40.5 MW proposed, linked by procedure PFot-ALM-044-EOL. Its operational PV/BESS
+host and shared grid capacity are excluded. Two source reference coordinates
+remain in ETRS89 UTM zone 30N with metre precision; neither is a farm centroid or
+an individual turbine inventory. FV Monclues is a solar-only authorization and
+remains excluded from new wind projects. REPD offsets1400:1600 received structural
+review only: all200 identities still need original permits.
+
+Continuation: BOE July20–22; REPD1600:1800; eight named Masdar registry crosswalks
+in the review ledger. The same circular’s Zarafshan/Baltic Eagle construction rows
+are a separate unprocessed partition. Full original documents are not redistributed;
+SHA-256 and page locators are recorded in the source registry and review ledger.

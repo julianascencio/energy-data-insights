@@ -459,3 +459,20 @@ test("OEM inconsistent cells are counted without treating unknown as zero or gra
   assert.deepEqual(windNumericTableSummary([row, {...row, entity_type: "projects"}, {...row, sources: []}, {...row, extensions_json: "bad"}]), {models: 1, unavailableOriginals: 1, areaHeld: 1, cutOutHeld: 0, unknownRevision: 1});
   assert.equal(windNumericTableSummary([{...row, swept_area_m2: 0}]).areaHeld, 0);
 });
+
+import {windOperatorPortfolioSummary} from "../../docs/_static/database-core.mjs";
+test("operator evidence retains unknown/zero, dates and capacity boundaries without totals", () => {
+  const observation = {source_id: "owner", as_of: "2024-03-31", locator: "p148", facts: {capacity_basis: "contracted", capacity_mw: 0, exact_model: null, rating_basis: "reported_fleet_average"}};
+  const row = {entity_type: "projects", sources: ["owner"], aggregation_role: "unresolved", extensions_json: JSON.stringify({operator_portfolio_observations: [observation, observation]})};
+  const missing = {...row, aggregation_role: "independent", extensions_json: JSON.stringify({operator_portfolio_observations: [{...observation, facts: {...observation.facts, capacity_basis: "gross_reported", capacity_mw: null}}]})};
+  const result = windOperatorPortfolioSummary([row, missing, {...row, sources: []}, {...row, extensions_json: "broken"}]);
+  assert.equal(result.projects, 2);
+  assert.equal(result.observations, 2);
+  assert.equal(result.excludedProjects, 1);
+  assert.equal(result.withoutEvidence, 2);
+  assert.equal(result.unknownModels, 2);
+  assert.deepEqual(result.dates, ["2024-03-31"]);
+  assert.deepEqual(result.capacity.contracted, {known: 1, unknown: 0, zero: 1});
+  assert.deepEqual(result.capacity.gross_reported, {known: 0, unknown: 1, zero: 0});
+  assert.equal(result.total_mw, undefined);
+});

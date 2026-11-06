@@ -1,22 +1,22 @@
 {
-  "batch": "2026-11-06-1035",
-  "base": "d38ee314052d0f6385b8f1055f6aacfb0799725a",
+  "batch": "2026-11-06-1135",
+  "base": "3f9c0a6db436880f1f5913526fd4efc6005ce28b",
   "main": "64dcf52278bb942591d16571252e4090963f67a1",
   "local": {
-    "python": "372 focused Wind and site3D tests passed",
-    "viewer": "38 Node viewer tests passed",
-    "quality": "Ruff lint/format1238files; ty with explicit .venv Python; hygiene6184files; citations and diff passed",
-    "docs": "Strict focused Wind/Rengo Sphinx build passed; Documentation check passed: 729 HTML pages; local links and assets resolve.",
-    "replay": "Three checksummed BOE daily index replays; pinned REPD1200:1400 structural review; SANY original excluded for explicit terms",
-    "preservation": "22534 prior records and450sources byte unchanged; all capacity summaries and unrelated catalogues unchanged",
-    "snapshots": "Two seven-file snapshots byte-identical; every Parquet column ZSTD"
+    "python": "372 focused Wind tests passed;10 new adapter tests also rerun after final provenance edit",
+    "viewer": "39 Node viewer tests passed",
+    "quality": "Repository Ruff lint/format1240files;ty with explicit.venv Python;hygiene6190files;citations anddiff checks passed",
+    "docs": "Strict focused Wind Sphinx build passed;731 HTML pages checked, all local links and assets resolve",
+    "replay": "Original Masdar PDF replay matched12 canonical rows and20 decisions;BOE3dates2notices;REPD1400:1600 structural200holds",
+    "preservation": "22531 prior records unchanged;3 enriched only with dated observations and provenance;all prior scalars/IDs/creation times and450sources preserved;capacity totals andunrelated catalogues unchanged",
+    "snapshots": "Two final seven-file snapshots byte-identical;all Parquet columns ZSTD"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "260b4d35bed01c065d534a8c86b4848ff6495fabd2ca92ff7d4d1b54ab17151d",
-    "projects.parquet": "fa19adccca19dfa0d1897002e83b491b679e920a7fca4303f00536394be422fd",
+    "manifest.json": "c825613c6957ac81ff9c390e6caba1a88b02ca6e3ccc73aebcf3324fcd88a12f",
+    "projects.parquet": "a250fc040cc84870c826edc7a18dde50d090a856c36d2c0fd72b54edc0ba825c",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "bcfb63d5eb231ccfe21c90280fb0339db278ccbb8ac1172bb8d12a4a8365500c",
+    "sources.json": "53298a97713aad30b87c8ebb5fc0aba7748d8cd13fc640d61ce8922bb4ba7309",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "1ee8fa2f8e744e91d412abf6578c1b1c64f5ddebe7264f73b7836f08ed5cd071"
   },
@@ -29,24 +29,24 @@
       "sources": 436
     },
     "branch": {
-      "projects": 8309,
+      "projects": 8319,
       "equipment": 566,
       "turbines": 13657,
       "curves": 2,
-      "sources": 450
+      "sources": 452
     },
     "this_run_added": {
-      "projects": 0,
+      "projects": 10,
       "equipment": 0
     },
     "this_run_enriched": {
-      "projects": 0,
+      "projects": 3,
       "equipment": 0
     },
-    "countries": 59,
+    "countries": 63,
     "manufacturer_labels": 66
   },
-  "remote_ci": "New head not yet published. Prior d38ee314 Python passed; docs failed Rengo collection autoscaling. This batch fixes bounds and adds a rendered-scene regression test.",
+  "remote_ci": "New head not yet published;results will be reported separately on PR198. Prior3f9c0a6 passed Python andDocumentation.",
   "not_executed": [
     "full local pytest",
     "full local gallery",
@@ -57,7 +57,7 @@
     "branch": "research/wind-20261106-0835",
     "pr": 198,
     "nonblocking_lock_acquired": true,
-    "expected_head": "d38ee314052d0f6385b8f1055f6aacfb0799725a",
+    "expected_head": "3f9c0a6db436880f1f5913526fd4efc6005ce28b",
     "reviewed_open_prs": [
       192,
       193,
@@ -67,13 +67,18 @@
       197,
       198,
       200,
-      201
+      201,
+      202
     ],
-    "other_pr_shared_paths": "Hydro PR192 bibliography edits remain on that PR; no competing Wind/shared viewer writer observed"
+    "prepublication_updates_reviewed": [
+      192,
+      195,
+      196
+    ],
+    "other_pr_shared_paths": "Latest Hydro/PV/DC updates inspected;no competing Wind/shared viewer writes. Bibliography changes onotherPRs remain unmerged."
   },
   "resolved_local_failures": [
-    "ty needed explicit workspace Python; default interpreter failed unrelated import resolution",
-    "Initial link check ran before Sphinx completed asset export; final check will follow build completion"
-  ],
-  "local_storage": "Removed reproducible prior build/checkpoint copies to resolve disk exhaustion; original source captures retained"
+    "Three adapter lint issues corrected;final repository lint passes",
+    "Final snapshot attempt reused immutable output directory and was rejected;rebuilt twice into new final-a/final-b directories"
+  ]
 }

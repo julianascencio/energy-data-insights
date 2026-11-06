@@ -7919,3 +7919,19 @@ SANY Group Co., Ltd. (2025). **SANY Product Family, April 2025**. [Source](https
 **Role:** data_source. Reviewed only for intake eligibility; page1 publisher notice explicitly restricts copying. Specifications excluded from this batch.
 
 **Used by:** `docs/wind-catalogue.md`.
+
+### masdar_offering_circular_20240715
+
+Abu Dhabi Future Energy Company PJSC (Masdar) (2024). **Base Offering Circular15July2024: operational wind portfolio**. [Source](https://masdar.ae/-/media/corporate-revamp/downloads/investors/project-jade---base-offering-circular.pdf)
+
+**Role:** data_source. Printed pp148–149,154–155,160–166; PDF pages166–167,172–173,178–184
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_b_2026_24967
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Revilla-Vallejera Hib wind module public consultation**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-24967)
+
+**Role:** data_source. Printed pp40115–40118; application chronology and Características generales
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
