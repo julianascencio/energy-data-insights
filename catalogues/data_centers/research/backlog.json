@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-06T07:23:39Z",
+  "updated_at": "2026-11-06T08:15:44Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -138,7 +138,8 @@
     "bulk_infrastructure_current_data_centers": 3,
     "maincubes_current_directory": 8,
     "datacenter_united_current_facilities": 14,
-    "rack_centre_lagos_current_identities": 3
+    "rack_centre_lagos_current_identities": 3,
+    "jrc_code_of_conduct_digital_realty_2024_facilities": 10
   },
   "next_batches": [
     {
@@ -538,14 +539,19 @@
       "source": "STACK Infrastructure public facility pages",
       "url": "https://www.stackinfra.com/terms-of-use/",
       "reason": "Official terms restrict copying, reproduction and commercial reuse of site content without permission. Candidate facility pages were screened only; no STACK facts or bytes were imported."
+    },
+    {
+      "source": "PAIX Data Centres public facility pages and fact sheets",
+      "url": "https://policies.termageddon.com/api/policy/T0hCeVVub3dhemc1ZWpGSk1IYzlQUT09",
+      "reason": "Current terms prohibit both automated and manual monitoring or copying of website material and reserve all content rights. ACC-1 and NBO-1 were screened only; no PAIX facts, fact-sheet bytes or records were imported. Require permission or independent reusable public evidence."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "rack-centre-lagos-20261106T072339Z",
+    "run_id": "jrc-digital-realty-participants-20261106T081544Z",
     "report": "2026-11-06-report.md",
-    "validation": "2026-11-06T0723-validation.json",
-    "added_projects": 3,
+    "validation": "2026-11-06T0815-validation.json",
+    "added_projects": 10,
     "enriched_projects": 0,
     "added_equipment": 0,
     "branch": "research/data-center-database-20261106T0527Z"
