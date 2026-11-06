@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 5 November 2026 expanded research snapshot contains **1,202 records from 56 product
-suppliers, backed by 515 registered sources**: 1,189 documented configurations and 13
+The 5 November 2026 expanded research snapshot contains **1,216 records from 56 product
+suppliers, backed by 530 registered sources**: 1,203 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -300,3 +300,5 @@ Latest continuation: [Fullriver exact models and South African bid identities](.
 Individual-sheet capacity/test-condition enrichment: [5 November review](../bess/research/2026-11-05_fullriver_sheets.md).
 
 Latest continuation: [Pacific project reconciliation and exact Fullriver conditions](../bess/research/2026-11-05_pacific_conditions.md).
+
+Latest continuation: [Fullriver and Rarotonga review](../bess/research/2026-11-05_fullriver_rarotonga.md).
