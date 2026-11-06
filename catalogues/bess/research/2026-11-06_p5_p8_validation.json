@@ -1,0 +1,42 @@
+{
+  "bess": {
+    "total": 2393,
+    "new": 23,
+    "enriched": 1,
+    "sources": 468,
+    "created_at_preserved": true,
+    "prior_scalars_sources_preserved": true,
+    "replay_idempotent": true,
+    "parquet_rebuild_identical": true,
+    "countries": 51
+  },
+  "bess_oem": {
+    "total": 1365,
+    "new": 2,
+    "enriched": 4,
+    "sources": 595,
+    "created_at_preserved": true,
+    "prior_scalars_sources_preserved": true,
+    "replay_idempotent": true,
+    "parquet_rebuild_identical": true,
+    "suppliers": 60
+  },
+  "local_checks": {
+    "focused_bess_pytest": {
+      "passed": 652
+    },
+    "viewer_node_tests": {
+      "passed": 37
+    },
+    "offline_examples": [
+      "bess_catalogue",
+      "bess_oem_catalogue"
+    ],
+    "ruff_lint": "passed",
+    "ruff_format": "1246 files already formatted",
+    "ty": "passed with workspace venv",
+    "repository_hygiene": "passed",
+    "citation_consistency": "passed",
+    "hosted_full_suite": "pending publication; see PR for final-head results"
+  }
+}

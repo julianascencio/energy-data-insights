@@ -1,0 +1,788 @@
+{
+  "as_of": "2026-11-06T09:17:24.761248+00:00",
+  "ranking_basis": "Expected verified yield, metadata depth, rights clarity and extraction effort; completed batches ranked after next actionable registries.",
+  "sources": [
+    {
+      "rank": 1,
+      "source_key": "mastrindex",
+      "url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "entity": "Bundesnetzagentur MaStR",
+      "country": "DEU",
+      "source_version_or_date": "2026-11-06 /26.2",
+      "retrieval": {
+        "url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+        "retrieved_at": "2026-11-06T09:11:29.070725+00:00",
+        "http_status": 200,
+        "sha256": "b7c1fd8d446809e2bcc082c64ec82ab8342bae9504664b5f86ccce5b217638db"
+      },
+      "access_license_assessment": "Index explicitly labels XML DL-DE/BY-2.0; BNetzA rights page says XML/CSV/web service; limited concurrent downloads. HTML sample treated as bounded attributed facts.",
+      "estimated_useful_yield": "50–200 reviewed utility/C&I battery sites after unit/site reconciliation; estimate, not accepted count",
+      "offered_fields": [
+        "registry IDs",
+        "battery type",
+        "power",
+        "usable energy",
+        "coordinates",
+        "operator",
+        "first commissioning"
+      ],
+      "attempt_result": "Current production index and one exact public Lehe record reviewed. Live index now lists6Nov2026 export, superseding search-cache5Nov.3,200,066KB full archive not downloaded in this bounded pass. No test/preview environment used.",
+      "processed_partition_or_cursor": "One named public battery unit; no bulk cursor",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Acquire current production export once; inspect storage XML and unit/location joins; stage named battery sites, exclude confidential/unnamed/duplicate units; resolve known project IDs first."
+    },
+    {
+      "rank": 2,
+      "source_key": "ea",
+      "url": "https://www.ea.govt.nz/data-and-insights/charts-and-dashboards/generation-investment-pipeline/",
+      "entity": "New Zealand Electricity Authority generation pipeline",
+      "country": "NZL",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://www.ea.govt.nz/data-and-insights/charts-and-dashboards/generation-investment-pipeline/",
+        "retrieved_at": "2026-11-06T08:56:15.654487+00:00",
+        "http_status": 200,
+        "sha256": "e4fac0b8c4fd90691cd0fd3055c1caebe9873abfbc112aef5f97b7deb955f0d0"
+      },
+      "access_license_assessment": "EA-owned website material CC BY4.0; third-party dashboard scope requires confirmation.",
+      "estimated_useful_yield": "Unknown until official downloadable battery partition is accessible",
+      "offered_fields": [
+        "identity",
+        "capacity",
+        "status",
+        "developer"
+      ],
+      "attempt_result": "Current landing page accessible; Sigma embed found, no direct downloadable inventory link. No undocumented endpoint probing.",
+      "processed_partition_or_cursor": "Landing page and published links reviewed",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Find official export/documented download and confirm attribution/third-party rights."
+    },
+    {
+      "rank": 3,
+      "source_key": "refs",
+      "url": "https://intilion.com/referenzen",
+      "entity": "INTILION reference portfolio",
+      "country": "DEU/CHE",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/referenzen",
+        "retrieved_at": "2026-11-06T08:57:51.780181+00:00",
+        "http_status": 200,
+        "sha256": "a9169827ec7a0d842916c63bb3a6505b0c59b0bf99c98c7e6356f31cc42f4302"
+      },
+      "access_license_assessment": "No open bulk licence found; bounded independently written facts only, no proprietary prose/images/documents.",
+      "estimated_useful_yield": "Selected11 cards exhausted; ten accepted projects from nine cards",
+      "offered_fields": [
+        "power",
+        "energy",
+        "services",
+        "integration",
+        "site",
+        "customer"
+      ],
+      "attempt_result": "All11 cards reviewed, all10 linked case pages plus dated Mainz/Wiesbaden release retrieved; owner/regulator reconciliation followed.",
+      "processed_partition_or_cursor": "Full current11-card portfolio",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Seek site ratings and dates for PASM Hannover/Bamberg/Münster; identify eight Mando sites. Do not allocate portfolio totals."
+    },
+    {
+      "rank": 4,
+      "source_key": "nz",
+      "url": "https://www.transpower.co.nz/connections/whats-latest-grid-connections",
+      "entity": "Transpower connection pipeline",
+      "country": "NZL",
+      "source_version_or_date": "Current-linked version JHMNKanjd2hDkfgy_g4v0VWmL3QlsLw7",
+      "retrieval": {
+        "url": "https://www.transpower.co.nz/connections/whats-latest-grid-connections",
+        "retrieved_at": "2026-11-06T08:56:15.365968+00:00",
+        "http_status": 200,
+        "sha256": "62a546f5306d08c9cdb83b4ec910447f5e6bae1dd7751a31e34231b01ce5fb5e"
+      },
+      "access_license_assessment": "Prior written consent required for reproduction except as allowed by law; not treated as open data.",
+      "estimated_useful_yield": "Historical ledger41 rows; no new candidate count in this run",
+      "offered_fields": [
+        "connection ID",
+        "project",
+        "status",
+        "capacity"
+      ],
+      "attempt_result": "Fresh index/workbook link and terms checked. Rights restriction persists; workbook not downloaded or reimported.",
+      "processed_partition_or_cursor": "No workbook partition processed this run",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Use rights-cleared regulator alternative or await explicit reuse permission."
+    },
+    {
+      "rank": 5,
+      "source_key": "eaperformance",
+      "url": "https://www.ea.govt.nz/news/eye-on-electricity/eye-on-electricity-battery-performance-in-new-zealand/",
+      "entity": "EA five named operating batteries",
+      "country": "NZL",
+      "source_version_or_date": "2026-05-19",
+      "retrieval": {
+        "url": "https://www.ea.govt.nz/news/eye-on-electricity/eye-on-electricity-battery-performance-in-new-zealand/",
+        "retrieved_at": "2026-11-06T08:56:21.045999+00:00",
+        "http_status": 200,
+        "sha256": "95e18047eb1bcffa736cb953d654bc878b81dbc5c145ee66053da0d7d9c8248f"
+      },
+      "access_license_assessment": "CC BY4.0 for EA-owned material.",
+      "estimated_useful_yield": 0,
+      "offered_fields": [
+        "dispatch services",
+        "capacity",
+        "status"
+      ],
+      "attempt_result": "Five named identities reconciled to existing catalogue; observations already present. No timestamp-only writes.",
+      "processed_partition_or_cursor": "Rotohiko,Ruakaka,Glenbrook1,Huntly1,Glenbrook2",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Next fresh regulator/owner technical observation, not replay."
+    },
+    {
+      "rank": 6,
+      "source_key": "i4",
+      "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/INTILION%20scalecube/Produktbrosch%C3%BCre%20INTILION%20scalecube%20i4.pdf?hsLang=de",
+      "entity": "INTILION i4",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/INTILION%20scalecube/Produktbrosch%C3%BCre%20INTILION%20scalecube%20i4.pdf?hsLang=de",
+        "retrieved_at": "2026-11-06T08:56:09.844172+00:00",
+        "http_status": 200,
+        "sha256": "86d67280e437e3693b009bb65120eece0b7dec7e4f5ddbb98c89df08d34e0275"
+      },
+      "access_license_assessment": "Copyright retained; bounded attributed factual table observations. No whole PDF redistribution.",
+      "estimated_useful_yield": "One exact BESU accepted",
+      "offered_fields": [
+        "configuration",
+        "electrical limits",
+        "controls",
+        "component ratings",
+        "conditions"
+      ],
+      "attempt_result": "Current original PDF, SHA256 and table images reviewed; i4 and IAU conflicts retained. Fresh scalepac bytes match registered source.",
+      "processed_partition_or_cursor": "i4 PDF5–6; IAU PDF2–4; scalepac PDF6",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Request no contact; recheck public corrected edition for footnotes/scaling; no extra variants from examples."
+    },
+    {
+      "rank": 6,
+      "source_key": "iau",
+      "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/Steuerung/INTILION%20Prospekt%20IAU.pdf?hsLang=de",
+      "entity": "INTILION iau",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/Steuerung/INTILION%20Prospekt%20IAU.pdf?hsLang=de",
+        "retrieved_at": "2026-11-06T08:56:09.764613+00:00",
+        "http_status": 200,
+        "sha256": "419ac08610f3aca5639347b7ee0a7778fbb1860aca4231231b3e138ff38fbb28"
+      },
+      "access_license_assessment": "Copyright retained; bounded attributed factual table observations. No whole PDF redistribution.",
+      "estimated_useful_yield": "One named controller accepted",
+      "offered_fields": [
+        "configuration",
+        "electrical limits",
+        "controls",
+        "component ratings",
+        "conditions"
+      ],
+      "attempt_result": "Current original PDF, SHA256 and table images reviewed; i4 and IAU conflicts retained. Fresh scalepac bytes match registered source.",
+      "processed_partition_or_cursor": "i4 PDF5–6; IAU PDF2–4; scalepac PDF6",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Request no contact; recheck public corrected edition for footnotes/scaling; no extra variants from examples."
+    },
+    {
+      "rank": 6,
+      "source_key": "scalepac",
+      "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/INTILION%20scalepac/Produktbrosch%C3%BCre%20INTILION%20scalepac.pdf?hsLang=de",
+      "entity": "INTILION scalepac",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/INTILION%20scalepac/Produktbrosch%C3%BCre%20INTILION%20scalepac.pdf?hsLang=de",
+        "retrieved_at": "2026-11-06T08:56:50.749274+00:00",
+        "http_status": 200,
+        "sha256": "03f7af5cbbccd3c4d86bd03604fce7ea1e24f9412702301720ed1e9cccfc75c0"
+      },
+      "access_license_assessment": "Copyright retained; bounded attributed factual table observations. No whole PDF redistribution.",
+      "estimated_useful_yield": "Six existing exact configurations enriched",
+      "offered_fields": [
+        "configuration",
+        "electrical limits",
+        "controls",
+        "component ratings",
+        "conditions"
+      ],
+      "attempt_result": "Current original PDF, SHA256 and table images reviewed; i4 and IAU conflicts retained. Fresh scalepac bytes match registered source.",
+      "processed_partition_or_cursor": "i4 PDF5–6; IAU PDF2–4; scalepac PDF6",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Request no contact; recheck public corrected edition for footnotes/scaling; no extra variants from examples."
+    },
+    {
+      "rank": 7,
+      "source_key": "ref1",
+      "url": "https://intilion.com/grossbatterie-fur-die-schweiz-wir-errichten-einen-65-mwh-netzspeicher/?hsLang=de",
+      "entity": "INTILION named reference 1",
+      "country": "CHE",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/grossbatterie-fur-die-schweiz-wir-errichten-einen-65-mwh-netzspeicher/?hsLang=de",
+        "retrieved_at": "2026-11-06T09:00:43.235724+00:00",
+        "http_status": 200,
+        "sha256": "e23419d1746fa1f343a87877602758ee6c407e143f2023905db7eb71946f3cb6"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Accepted one site; owner/registry reconciliation and boundary review recorded.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Recheck dated owner update; preserve current scope and unresolved fields."
+    },
+    {
+      "rank": 7,
+      "source_key": "ref2",
+      "url": "https://intilion.com/grune-rechenzentren-grossspeicher-fur-die-deutsche-telekom?hsLang=de",
+      "entity": "INTILION named reference 2",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/grune-rechenzentren-grossspeicher-fur-die-deutsche-telekom?hsLang=de",
+        "retrieved_at": "2026-11-06T09:00:43.370136+00:00",
+        "http_status": 200,
+        "sha256": "b03e8e83c572af58be546e45ca0a3b4b4dc1b9cc2d9b2d63f09617d1d7bfd2ff"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 0,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Held: three named PASM sites share58MWh/9MW aggregate, no site rating allocation.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Seek site-specific primary evidence"
+    },
+    {
+      "rank": 7,
+      "source_key": "ref3",
+      "url": "https://intilion.com/30-mwh-fuer-primaerregelleistung-zur-netzstabilisierung/?hsLang=de",
+      "entity": "INTILION named reference 3",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/30-mwh-fuer-primaerregelleistung-zur-netzstabilisierung/?hsLang=de",
+        "retrieved_at": "2026-11-06T09:00:48.375233+00:00",
+        "http_status": 200,
+        "sha256": "1f97d1b4b68efa73757c2f5c8b67d8a79a6725cbf84e65f247b15355d24287ad"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 0,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Held: eight-system Mando aggregate lacks complete site identities; Körbelitz example not assigned aggregate capacity.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Seek site-specific primary evidence"
+    },
+    {
+      "rank": 7,
+      "source_key": "ref4",
+      "url": "https://intilion.com/batteriegro%C3%9Fspeicher-feuchtwangen-20-mwh-f%C3%BCr-kommunale-energiewende?hsLang=de",
+      "entity": "INTILION named reference 4",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/batteriegro%C3%9Fspeicher-feuchtwangen-20-mwh-f%C3%BCr-kommunale-energiewende?hsLang=de",
+        "retrieved_at": "2026-11-06T09:00:48.345130+00:00",
+        "http_status": 200,
+        "sha256": "7a0f3792687d8f9a5c5b475ec89c5a7317744325fa79dc3a1586626d96fa3a8a"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Accepted one site; owner/registry reconciliation and boundary review recorded.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Recheck dated owner update; preserve current scope and unresolved fields."
+    },
+    {
+      "rank": 7,
+      "source_key": "ref5",
+      "url": "https://intilion.com/epc-projekt-20-mwh-batteriespeicher-in-halle-cce-holding?hsLang=de",
+      "entity": "INTILION named reference 5",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/epc-projekt-20-mwh-batteriespeicher-in-halle-cce-holding?hsLang=de",
+        "retrieved_at": "2026-11-06T09:00:54.104144+00:00",
+        "http_status": 200,
+        "sha256": "bdf6d0755246d8e14bcab5ae65d7377656cf20062c3623b94ba9d24586519b5b"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Accepted one site; owner/registry reconciliation and boundary review recorded.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Recheck dated owner update; preserve current scope and unresolved fields."
+    },
+    {
+      "rank": 7,
+      "source_key": "ref6",
+      "url": "https://intilion.com/batteriespeicher-st%C3%A4rkt-die-daseinsvorsorge-in-dinslaken?hsLang=de",
+      "entity": "INTILION named reference 6",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/batteriespeicher-st%C3%A4rkt-die-daseinsvorsorge-in-dinslaken?hsLang=de",
+        "retrieved_at": "2026-11-06T09:00:54.243322+00:00",
+        "http_status": 200,
+        "sha256": "acdecba401beb3444588354ad6d113031b10d685c910936e007453858e55d835"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Accepted one site; owner/registry reconciliation and boundary review recorded.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Recheck dated owner update; preserve current scope and unresolved fields."
+    },
+    {
+      "rank": 7,
+      "source_key": "ref7",
+      "url": "https://intilion.com/regelenergie-und-intradayhandel-fur-mehr-stabilitat-im-stromnetz?hsLang=de",
+      "entity": "INTILION named reference 7",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/regelenergie-und-intradayhandel-fur-mehr-stabilitat-im-stromnetz?hsLang=de",
+        "retrieved_at": "2026-11-06T09:00:58.373811+00:00",
+        "http_status": 200,
+        "sha256": "bb395d75dec5a0a9744cdca9b3dcd1f360729676f3d3e7984c08f942fdcda9f7"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Accepted one site; owner/registry reconciliation and boundary review recorded.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Recheck dated owner update; preserve current scope and unresolved fields."
+    },
+    {
+      "rank": 7,
+      "source_key": "ref8",
+      "url": "https://intilion.com/mit-wind-und-weitblick-speichern-erhoehung-des-selbstversorgungsgrads-der-stadt-haren?hsLang=de",
+      "entity": "INTILION named reference 8",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/mit-wind-und-weitblick-speichern-erhoehung-des-selbstversorgungsgrads-der-stadt-haren?hsLang=de",
+        "retrieved_at": "2026-11-06T09:00:58.606737+00:00",
+        "http_status": 200,
+        "sha256": "f7dcc1b592a7c4bef6a6c31441aea857690ff0bd3d885817e05d7767f52566f6"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Accepted one site; owner/registry reconciliation and boundary review recorded.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Recheck dated owner update; preserve current scope and unresolved fields."
+    },
+    {
+      "rank": 7,
+      "source_key": "ref9",
+      "url": "https://intilion.com/regionale-energiewende-grossspeicher-fuer-energiegenossenschaft-in-schleswig-holstein?hsLang=de",
+      "entity": "INTILION named reference 9",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/regionale-energiewende-grossspeicher-fuer-energiegenossenschaft-in-schleswig-holstein?hsLang=de",
+        "retrieved_at": "2026-11-06T09:01:03.207160+00:00",
+        "http_status": 200,
+        "sha256": "1a04db2f7637186e8a7a5e46e0629502738a3e1f93814c18eb480860c92fabf2"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Accepted one site; owner/registry reconciliation and boundary review recorded.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Recheck dated owner update; preserve current scope and unresolved fields."
+    },
+    {
+      "rank": 7,
+      "source_key": "ref10",
+      "url": "https://intilion.com/multi-use-im-all-electric-society-park-von-phoenix-contact?hsLang=de",
+      "entity": "INTILION named reference 10",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/multi-use-im-all-electric-society-park-von-phoenix-contact?hsLang=de",
+        "retrieved_at": "2026-11-06T09:01:03.159408+00:00",
+        "http_status": 200,
+        "sha256": "15919b92a63cd4e7ebc87e6411225f0e119a2b48afe0dce1d6e5613cd7b58331"
+      },
+      "access_license_assessment": "No open bulk licence asserted; bounded factual observations, prose/images excluded.",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "site",
+        "ratings",
+        "status",
+        "roles",
+        "services"
+      ],
+      "attempt_result": "Accepted one site; owner/registry reconciliation and boundary review recorded.",
+      "processed_partition_or_cursor": "One reference page",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Recheck dated owner update; preserve current scope and unresolved fields."
+    },
+    {
+      "rank": 8,
+      "source_key": "mainz",
+      "url": "https://intilion.com/pressemitteilungen/intilion-realisiert-zwei-batteriegrossspeicherprojekte-in-mainz-und-wiesbaden/",
+      "entity": "mainz primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/pressemitteilungen/intilion-realisiert-zwei-batteriegrossspeicherprojekte-in-mainz-und-wiesbaden/",
+        "retrieved_at": "2026-11-06T08:57:51.982902+00:00",
+        "http_status": 200,
+        "sha256": "aa1b499ea9a9b6a0664bf2200541106101a6b01f4c12ee1f05c2f174dfdc0057"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Two sites",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "primeo",
+      "url": "https://www.primeo-energie.ch/en/ueber-uns/news/BESS-Kappel-erste-Betriebsmonate-erfolgreich.html",
+      "entity": "primeo primary cross-check",
+      "country": "CHE",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://www.primeo-energie.ch/en/ueber-uns/news/BESS-Kappel-erste-Betriebsmonate-erfolgreich.html",
+        "retrieved_at": "2026-11-06T09:08:41.113322+00:00",
+        "http_status": 200,
+        "sha256": "e653c9ac0322e766b8d78e3e3e486055cdb5e60229b65398251b1891b791aa97"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "primeotech",
+      "url": "https://www.primeo-energie.ch/en/ueber-uns/batteriespeicher-kappel.html",
+      "entity": "primeotech primary cross-check",
+      "country": "CHE",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://www.primeo-energie.ch/en/ueber-uns/batteriespeicher-kappel.html",
+        "retrieved_at": "2026-11-06T09:08:41.437295+00:00",
+        "http_status": 200,
+        "sha256": "f78df61e6bef1fdcad1b972ae1b149e0d2f9bff1e88444a4152777769dc4d7ed"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "halle",
+      "url": "https://intilion.com/pressemitteilungen/halle-20-mwh-batteriespeicher-st%C3%A4rkt-versorgungssicherheit",
+      "entity": "halle primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://intilion.com/pressemitteilungen/halle-20-mwh-batteriespeicher-st%C3%A4rkt-versorgungssicherheit",
+        "retrieved_at": "2026-11-06T09:08:45.662755+00:00",
+        "http_status": 200,
+        "sha256": "098ea2cd452cc57d9e13e475a647092490f5f62da1d8bf19682c9f938f50e617"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "meit",
+      "url": "https://bayernwerk-ag.mynewsdesk.com/pressreleases/neue-grossbatterie-in-meitingen-bei-augsburg-am-netz-3265657",
+      "entity": "meit primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://bayernwerk-ag.mynewsdesk.com/pressreleases/neue-grossbatterie-in-meitingen-bei-augsburg-am-netz-3265657",
+        "retrieved_at": "2026-11-06T09:08:53.843106+00:00",
+        "http_status": 200,
+        "sha256": "f8690817b8f65755c2248ba562ece15cd4bf7ab4cb17573c6c1484b7c9d275da"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "phoenix",
+      "url": "https://www.phoenixcontact.com/de-de/unternehmen/all-electric-society/all-electric-society-park-sektorenkopplung",
+      "entity": "phoenix primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://www.phoenixcontact.com/de-de/unternehmen/all-electric-society/all-electric-society-park-sektorenkopplung",
+        "retrieved_at": "2026-11-06T09:08:56.524604+00:00",
+        "http_status": 200,
+        "sha256": "4fb283b7d94254bd8e26b660c0553b75a1eb33a3a9d2e82f2ef8fdd7310132f7"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "lehe",
+      "url": "https://www.maxsolar.com/news/detail/solarpark-mit-batteriespeicher-in-lehe",
+      "entity": "lehe primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://www.maxsolar.com/news/detail/solarpark-mit-batteriespeicher-in-lehe",
+        "retrieved_at": "2026-11-06T09:09:00.290911+00:00",
+        "http_status": 200,
+        "sha256": "65ccd01c07cb3840212decc11b9b243f435f9e7c1b1f1bf8968adb7f6fa14c66"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "lehereg",
+      "url": "https://www.marktstammdatenregister.de/MaStR/Einheit/Detail/EinheitDetailDrucken/4571596",
+      "entity": "lehereg primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://www.marktstammdatenregister.de/MaStR/Einheit/Detail/EinheitDetailDrucken/4571596",
+        "retrieved_at": "2026-11-06T09:09:02.169004+00:00",
+        "http_status": 200,
+        "sha256": "c80395c07e8c3a329d78f0954bef8e5361341cbf8b5be073d21e1b67fc5c43c8"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "cec",
+      "url": "https://cec-haren.de/",
+      "entity": "cec primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://cec-haren.de/",
+        "retrieved_at": "2026-11-06T09:09:07.382627+00:00",
+        "http_status": 200,
+        "sha256": "22fc0dbb30b5d1318f50e931af9ef829ff383ecb5a057f99caa3963249a0a756"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Selected original factual observations accepted; no duplicate project generated.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "dins",
+      "url": "https://www.stadtwerke-dinslaken.de/ueber-uns/innovation/",
+      "entity": "dins primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://www.stadtwerke-dinslaken.de/ueber-uns/innovation/",
+        "retrieved_at": "2026-11-06T09:08:52.551959+00:00",
+        "http_status": 200,
+        "sha256": "59b43e1c8fa89ddb5b95df058942eb9f42b103e04fceb02202dab02ce11ef49c"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Restricted owner observation withheld; energy scalar held pending reusable corroboration.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    },
+    {
+      "rank": 8,
+      "source_key": "feucht",
+      "url": "https://www.feuchtwangen.de/aktuelles/grosser-tag-fuer-die-energiewende-in-feuchtwangen/",
+      "entity": "feucht primary cross-check",
+      "country": "DEU",
+      "source_version_or_date": "Undated current page",
+      "retrieval": {
+        "url": "https://www.feuchtwangen.de/aktuelles/grosser-tag-fuer-die-energiewende-in-feuchtwangen/",
+        "retrieved_at": "2026-11-06T09:08:47.746687+00:00",
+        "http_status": 200,
+        "sha256": "f6e0ea0af883d1d155c842e256e47930aabf04420ae2355450bd00db574a72f8"
+      },
+      "access_license_assessment": "Publisher terms reviewed; Dinslaken information/data require permission and Feuchtwangen copying limited; others bounded factual use without open licence assertion. Registry XML/CSV rights do not automatically license HTML.",
+      "estimated_useful_yield": "Existing candidate reconciliation only",
+      "offered_fields": [
+        "site scope",
+        "operation",
+        "grid",
+        "equipment",
+        "rating basis"
+      ],
+      "attempt_result": "Municipal publication private/non-commercial copying restriction; date not imported. Existing integrator evidence retained.",
+      "processed_partition_or_cursor": "Named project paragraphs/table",
+      "retry_condition": "Recheck source date/checksum before continuation",
+      "next_action": "Independent source for conflicts; fresh edition for status."
+    }
+  ]
+}

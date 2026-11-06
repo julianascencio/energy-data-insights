@@ -1,0 +1,419 @@
+{
+  "as_of": "2026-11-06T10:12:06.407913+00:00",
+  "new_models": [
+    {
+      "record_id": "0376c9a5-cb24-5993-84fc-cdc506f032b6",
+      "manufacturer": "Renon Power",
+      "model": "R-CC01C00800",
+      "source_ids": [
+        "renon261pdf_20261106",
+        "renon_company_20261106"
+      ],
+      "locator": "PDF page12, printed page10, Communication Cabinet Parameters",
+      "decision": "accepted",
+      "conflicts": {}
+    },
+    {
+      "record_id": "30a0a196-095e-5835-9a06-bed24d03bc82",
+      "manufacturer": "Renon Power",
+      "model": "R-SM3344LCB01-US",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonmatrixpdf_20261106"
+      ],
+      "locator": "PDF page9, printed page07; 3344kWh column",
+      "decision": "accepted",
+      "conflicts": {}
+    },
+    {
+      "record_id": "3734ea17-2ec6-5860-b3d4-e979027584d7",
+      "manufacturer": "Renon Power",
+      "model": "R-SM5016LCB01-US",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonmatrixpdf_20261106"
+      ],
+      "locator": "PDF page9, printed page07; 5016kWh column",
+      "decision": "accepted",
+      "conflicts": {}
+    },
+    {
+      "record_id": "37460127-06fe-5133-8d9d-37d6eed9286c",
+      "manufacturer": "Renon Power",
+      "model": "R-MP233125A0-US",
+      "source_ids": [
+        "renon233pdf_20261106",
+        "renon_company_20261106"
+      ],
+      "locator": "PDF page4, Product Parameter; page2 packaging dimensions",
+      "decision": "accepted_with_field_hold",
+      "conflicts": {
+        "dimensions": {
+          "observations": [
+            {
+              "inches_wdh": [
+                43,
+                57.3,
+                93.4
+              ],
+              "locator": "PDF page2 product packaging"
+            },
+            {
+              "inches_wdh": [
+                43.3,
+                57.3,
+                92.1
+              ],
+              "locator": "PDF page4 specification"
+            }
+          ],
+          "resolution": "Dimension scalars withheld; no winner selected.",
+          "sources": [
+            "renon233pdf_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "37a8cd9c-9691-50bc-b3b7-56f6f6fe9deb",
+      "manufacturer": "Renon Power",
+      "model": "R-MP261135A1-US",
+      "source_ids": [
+        "renon261pdf_20261106",
+        "renon_company_20261106"
+      ],
+      "locator": "PDF page8, printed page06, model-specific parameter table",
+      "decision": "accepted",
+      "conflicts": {}
+    },
+    {
+      "record_id": "4c87a538-9d62-56d6-bd3f-868fc2eb6791",
+      "manufacturer": "Renon Power",
+      "model": "R-EC060030A1-US",
+      "source_ids": [
+        "renon60pdf_20261106",
+        "renon_company_20261106"
+      ],
+      "locator": "PDF page6, printed page08, exact application table",
+      "decision": "accepted",
+      "conflicts": {}
+    },
+    {
+      "record_id": "6ee5e005-fb2d-5661-bef1-f3993d962341",
+      "manufacturer": "Renon Power",
+      "model": "R-SM1672LCB01-US",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonmatrixpdf_20261106"
+      ],
+      "locator": "PDF page9, printed page07; 1672kWh column",
+      "decision": "accepted",
+      "conflicts": {}
+    },
+    {
+      "record_id": "88a94c82-ef2b-57d0-b9c1-389de68f67e4",
+      "manufacturer": "Renon Power",
+      "model": "R-SM50162580A1-US",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonmatrixpdf_20261106"
+      ],
+      "locator": "PDF page8, printed page06; 5016kWh column",
+      "decision": "accepted_with_field_hold",
+      "conflicts": {
+        "active_apparent_rating_boundary": {
+          "observations": [
+            {
+              "locator": "PDF page1 cover",
+              "per_unit_active_power_kw": 836
+            },
+            {
+              "locator": "PDF page8 parameter table",
+              "rated_power_unit": "kVA",
+              "values": [
+                836,
+                1670,
+                2500
+              ]
+            }
+          ],
+          "resolution": "Retain model-specific apparent ratings; active scalar withheld pending clarification. Do not scale cover kW to multi-container configurations.",
+          "sources": [
+            "renonmatrixpdf_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "8e08a964-bb66-5eca-8684-96eabc60a7b1",
+      "manufacturer": "Renon Power",
+      "model": "R-EB0300161-IND1",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonebrick_20261106"
+      ],
+      "locator": "PDF page2, exact model column2",
+      "decision": "accepted_with_field_hold",
+      "conflicts": {
+        "nominal_capacity_scope": {
+          "reported_ah": 300,
+          "reported_nominal_kwh": 30.72,
+          "reported_voltage_v": 51.2,
+          "resolution": "Ah/energy/module-count relationship does not reconcile under a single nominal battery boundary. Ah retained only as flagged native observation; no arithmetic repair or cell-capacity assignment.",
+          "sources": [
+            "renonebrick_20261106"
+          ]
+        },
+        "parallel_scope": {
+          "observations": [
+            {
+              "last_unit_label": "31",
+              "locator": "PDF page1 layout"
+            },
+            {
+              "locator": "PDF page2 table",
+              "parallel_capacity_maximum": 8
+            },
+            {
+              "locator": "PDF page1 cover",
+              "maximum_cabinets_in_stack": 4
+            }
+          ],
+          "resolution": "Stack count, table parallel limit and illustration count retained separately; no combined usable-system or inverter limit inferred.",
+          "sources": [
+            "renonebrick_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "8e5bd731-76ea-511e-beea-a334a67e08da",
+      "manufacturer": "Renon Power",
+      "model": "R-EB060161-IND1",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonebrick_20261106"
+      ],
+      "locator": "PDF page2, exact model column4",
+      "decision": "accepted_with_field_hold",
+      "conflicts": {
+        "nominal_capacity_scope": {
+          "reported_ah": 500,
+          "reported_nominal_kwh": 61.44,
+          "reported_voltage_v": 51.2,
+          "resolution": "Ah/energy/module-count relationship does not reconcile under a single nominal battery boundary. Ah retained only as flagged native observation; no arithmetic repair or cell-capacity assignment.",
+          "sources": [
+            "renonebrick_20261106"
+          ]
+        },
+        "parallel_scope": {
+          "observations": [
+            {
+              "last_unit_label": "31",
+              "locator": "PDF page1 layout"
+            },
+            {
+              "locator": "PDF page2 table",
+              "parallel_capacity_maximum": 8
+            },
+            {
+              "locator": "PDF page1 cover",
+              "maximum_cabinets_in_stack": 4
+            }
+          ],
+          "resolution": "Stack count, table parallel limit and illustration count retained separately; no combined usable-system or inverter limit inferred.",
+          "sources": [
+            "renonebrick_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "9f005f3d-d272-506e-ac05-0ee22ad76eb6",
+      "manufacturer": "Renon Power",
+      "model": "R-EB015161-IND1",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonebrick_20261106"
+      ],
+      "locator": "PDF page2, exact model column1",
+      "decision": "accepted_with_field_hold",
+      "conflicts": {
+        "parallel_scope": {
+          "observations": [
+            {
+              "last_unit_label": "31",
+              "locator": "PDF page1 layout"
+            },
+            {
+              "locator": "PDF page2 table",
+              "parallel_capacity_maximum": 8
+            },
+            {
+              "locator": "PDF page1 cover",
+              "maximum_cabinets_in_stack": 4
+            }
+          ],
+          "resolution": "Stack count, table parallel limit and illustration count retained separately; no combined usable-system or inverter limit inferred.",
+          "sources": [
+            "renonebrick_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "a2d5f3e0-ee8c-52d5-9d95-c9af1ad3677c",
+      "manufacturer": "Renon Power",
+      "model": "R-MP261240D1-US",
+      "source_ids": [
+        "renon261pdf_20261106",
+        "renon_company_20261106"
+      ],
+      "locator": "PDF page9, printed page07, model-specific parameter table",
+      "decision": "accepted",
+      "conflicts": {}
+    },
+    {
+      "record_id": "b108cd72-9a91-53fc-a41a-1e4a9b36a925",
+      "manufacturer": "Renon Power",
+      "model": "R-EB045161-IND1",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonebrick_20261106"
+      ],
+      "locator": "PDF page2, exact model column3",
+      "decision": "accepted_with_field_hold",
+      "conflicts": {
+        "nominal_capacity_scope": {
+          "reported_ah": 400,
+          "reported_nominal_kwh": 46.08,
+          "reported_voltage_v": 51.2,
+          "resolution": "Ah/energy/module-count relationship does not reconcile under a single nominal battery boundary. Ah retained only as flagged native observation; no arithmetic repair or cell-capacity assignment.",
+          "sources": [
+            "renonebrick_20261106"
+          ]
+        },
+        "parallel_scope": {
+          "observations": [
+            {
+              "last_unit_label": "31",
+              "locator": "PDF page1 layout"
+            },
+            {
+              "locator": "PDF page2 table",
+              "parallel_capacity_maximum": 8
+            },
+            {
+              "locator": "PDF page1 cover",
+              "maximum_cabinets_in_stack": 4
+            }
+          ],
+          "resolution": "Stack count, table parallel limit and illustration count retained separately; no combined usable-system or inverter limit inferred.",
+          "sources": [
+            "renonebrick_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "b2c5a9c0-5da6-5571-beb6-9c15eae546ff",
+      "manufacturer": "Renon Power",
+      "model": "R-EC060060A1-US",
+      "source_ids": [
+        "renon60pdf_20261106",
+        "renon_company_20261106"
+      ],
+      "locator": "PDF page5, printed page07, exact application table",
+      "decision": "accepted",
+      "conflicts": {}
+    },
+    {
+      "record_id": "bccc92aa-b29e-5aef-8f7f-927cfb2c21ee",
+      "manufacturer": "Renon Power",
+      "model": "R-SM1672860A1-US",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonmatrixpdf_20261106"
+      ],
+      "locator": "PDF page8, printed page06; 1672kWh column",
+      "decision": "accepted_with_field_hold",
+      "conflicts": {
+        "active_apparent_rating_boundary": {
+          "observations": [
+            {
+              "locator": "PDF page1 cover",
+              "per_unit_active_power_kw": 836
+            },
+            {
+              "locator": "PDF page8 parameter table",
+              "rated_power_unit": "kVA",
+              "values": [
+                836,
+                1670,
+                2500
+              ]
+            }
+          ],
+          "resolution": "Retain model-specific apparent ratings; active scalar withheld pending clarification. Do not scale cover kW to multi-container configurations.",
+          "sources": [
+            "renonmatrixpdf_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "f8fc714e-7f23-5bbc-a66a-3f5a874fb57c",
+      "manufacturer": "Renon Power",
+      "model": "R-SM33441720A1-US",
+      "source_ids": [
+        "renon_company_20261106",
+        "renonmatrixpdf_20261106"
+      ],
+      "locator": "PDF page8, printed page06; 3344kWh column",
+      "decision": "accepted_with_field_hold",
+      "conflicts": {
+        "active_apparent_rating_boundary": {
+          "observations": [
+            {
+              "locator": "PDF page1 cover",
+              "per_unit_active_power_kw": 836
+            },
+            {
+              "locator": "PDF page8 parameter table",
+              "rated_power_unit": "kVA",
+              "values": [
+                836,
+                1670,
+                2500
+              ]
+            }
+          ],
+          "resolution": "Retain model-specific apparent ratings; active scalar withheld pending clarification. Do not scale cover kW to multi-container configurations.",
+          "sources": [
+            "renonmatrixpdf_20261106"
+          ]
+        }
+      }
+    }
+  ],
+  "enriched_model_ids": [
+    "017c514f-2c09-5f73-b64f-ea3156c19346",
+    "5afdc1f6-365e-517e-89ba-0fefbe7618ee",
+    "5e635aca-75b9-5fe7-a9ac-85431062eac8",
+    "70b94a3c-1ff0-5bc4-8195-5216838482c5",
+    "87a975a8-145d-54ea-aa6f-0c97b0d46587",
+    "8d5a241c-27ba-572e-ba4d-8d22cc8eacdb",
+    "94e1a6e1-16fd-5913-9c8e-f1ae0e269591",
+    "aa568fd5-59b4-542c-807d-559cd05116ea",
+    "ba0c4c3e-a828-55d7-ba86-ce3e43a6ca7e",
+    "dc0654b0-eda7-5dd9-9ce5-1a4154c7d7b3",
+    "dcac6b6b-6e66-53eb-a334-470db21c6dde",
+    "ea756983-aad6-539a-876b-6a9b9d852bf3",
+    "eeb36299-73d5-5b5c-8fe8-b46f5c1e8084"
+  ],
+  "source_level_gates_not_counted_as_model_rejections": [
+    "WSTECH media registration",
+    "historical REFU manual returned HTML",
+    "Master Battery possible rebrands"
+  ]
+}

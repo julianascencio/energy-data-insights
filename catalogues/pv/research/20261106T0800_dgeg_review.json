@@ -1,0 +1,238 @@
+{
+  "selected_processes": 4,
+  "source_features": 5,
+  "positive_PV_features": 4,
+  "excluded_features": [
+    {
+      "objectid": 10974,
+      "reason": "not_explicit_photovoltaic"
+    }
+  ],
+  "accepted_existing_project_contexts": 4,
+  "new_plants": 0,
+  "new_power_status_coordinates": 0,
+  "prior_identity_holds_resolved": 4,
+  "remaining_prior_suggestions_held": 22,
+  "district_assertion_holds": 1,
+  "records": [
+    {
+      "record_id": "9f43b397-9156-54f8-afad-68396d9f7fb2",
+      "name": "Alcaide solar farm",
+      "source_process": 1447,
+      "context": {
+        "licensing_process": 1447,
+        "features": [
+          {
+            "concelho": "Vila Viçosa e Elvas",
+            "distrito": "Portalegre",
+            "inspireid": "IDDGEG_CS_154",
+            "lic_exploracao": null,
+            "lic_producao": "LicProducao",
+            "nome": "ALCAIDE",
+            "objectid": 10080,
+            "potencia_geradorkw": null,
+            "potencia_instaladakva": 25009.6,
+            "potencia_ligacaokva": null,
+            "processo": 1447,
+            "subparque": null,
+            "subtipo_instalacao": "Solar fotovoltaico",
+            "tipo_central": "CS"
+          }
+        ],
+        "selected_process_object_ids": [
+          10080
+        ],
+        "selected_query_object_ids": [
+          10080,
+          10192,
+          10207,
+          10367,
+          10974
+        ],
+        "selected_query_coverage_complete": true,
+        "selection_scope": "Only fourexplicit processes, not national inventory or wholeplant extent completeness",
+        "retrieved_at": "2026-11-06T08:13:08.503149+00:00",
+        "sha256": "f66c1df564485cf600f7f78911c290895d7d86f4a1ed9a64561b6c3f64334d28",
+        "native_phase_id": "G100000827152",
+        "identity_basis": "Individually reviewed exactname/nativealias and unique one-phase existing PV record. Native City explicitly belongs to source multi-municipality list: reviewed VilaVicosa/VilaViçosa and Agueda/Águeda accent transliterations; MarcoCanaveses andParedes literal. No fuzzymerge, newcanonicalplant or licence-to-phase capacity assignment.",
+        "municipality_comparison": {
+          "source": "Vila Viçosa e Elvas",
+          "canonical_city": "Vila Vicosa"
+        },
+        "source_power_scope": "Native generator kW/installed kVA/connection kVA preserved independently without summation, conversion or AC/DC assignment. No scalar capacity added.",
+        "lifecycle_scope": "Licence states are source observations, not current plant operation. Existing shelved-inferred statuses and dates remain unchanged; no licence-to-operation inference.",
+        "storage_exclusion": {
+          "objectid": 10974,
+          "reason": "tipo_central Armazenamento, even though subtype saysSolar fotovoltaico; not a PVgeneratingpolygon"
+        },
+        "geography_scope": "No coordinates/geometry or municipal-centre point inferred; associated licensing observation only",
+        "district_conflict_held": {
+          "source": "Portalegre",
+          "canonical": "Évora",
+          "action": "Retain native assertions and multi-municipality scope in review; no top-level district/locality overwrite or presumed resolution"
+        }
+      }
+    },
+    {
+      "record_id": "086f7352-9b40-5ed5-bd17-893adf2f0f3c",
+      "name": "Marco de Canaveses solar farm",
+      "source_process": 2029,
+      "context": {
+        "licensing_process": 2029,
+        "features": [
+          {
+            "concelho": "Marco de Canaveses, Penafiel",
+            "distrito": "Porto",
+            "inspireid": "IDDGEG_CS_441",
+            "lic_exploracao": "LicExploracao",
+            "lic_producao": "LicProducao",
+            "nome": "MARCO DE CANAVESES",
+            "objectid": 10367,
+            "potencia_geradorkw": 23739.0,
+            "potencia_instaladakva": 22770.0,
+            "potencia_ligacaokva": 19400.0,
+            "processo": 2029,
+            "subparque": null,
+            "subtipo_instalacao": "Solar fotovoltaico",
+            "tipo_central": "CS"
+          }
+        ],
+        "selected_process_object_ids": [
+          10367
+        ],
+        "selected_query_object_ids": [
+          10080,
+          10192,
+          10207,
+          10367,
+          10974
+        ],
+        "selected_query_coverage_complete": true,
+        "selection_scope": "Only fourexplicit processes, not national inventory or wholeplant extent completeness",
+        "retrieved_at": "2026-11-06T08:13:08.503149+00:00",
+        "sha256": "f66c1df564485cf600f7f78911c290895d7d86f4a1ed9a64561b6c3f64334d28",
+        "native_phase_id": "G100000827258",
+        "identity_basis": "Individually reviewed exactname/nativealias and unique one-phase existing PV record. Native City explicitly belongs to source multi-municipality list: reviewed VilaVicosa/VilaViçosa and Agueda/Águeda accent transliterations; MarcoCanaveses andParedes literal. No fuzzymerge, newcanonicalplant or licence-to-phase capacity assignment.",
+        "municipality_comparison": {
+          "source": "Marco de Canaveses, Penafiel",
+          "canonical_city": "Marco de Canaveses"
+        },
+        "source_power_scope": "Native generator kW/installed kVA/connection kVA preserved independently without summation, conversion or AC/DC assignment. No scalar capacity added.",
+        "lifecycle_scope": "Licence states are source observations, not current plant operation. Existing shelved-inferred statuses and dates remain unchanged; no licence-to-operation inference.",
+        "storage_exclusion": {
+          "objectid": 10974,
+          "reason": "tipo_central Armazenamento, even though subtype saysSolar fotovoltaico; not a PVgeneratingpolygon"
+        },
+        "geography_scope": "No coordinates/geometry or municipal-centre point inferred; associated licensing observation only"
+      }
+    },
+    {
+      "record_id": "39a8ad4e-f0c7-50f7-8603-1d3aa9886f26",
+      "name": "Paredes solar farm",
+      "source_process": 2062,
+      "context": {
+        "licensing_process": 2062,
+        "features": [
+          {
+            "concelho": "Paredes, Paços de Ferreira",
+            "distrito": "Porto",
+            "inspireid": "IDDGEG_CS_266",
+            "lic_exploracao": "LicExploracao",
+            "lic_producao": "LicProducao",
+            "nome": "PAREDES",
+            "objectid": 10192,
+            "potencia_geradorkw": 34980.0,
+            "potencia_instaladakva": 28300.0,
+            "potencia_ligacaokva": 28300.0,
+            "processo": 2062,
+            "subparque": null,
+            "subtipo_instalacao": "Solar fotovoltaico",
+            "tipo_central": "CS"
+          }
+        ],
+        "selected_process_object_ids": [
+          10192
+        ],
+        "selected_query_object_ids": [
+          10080,
+          10192,
+          10207,
+          10367,
+          10974
+        ],
+        "selected_query_coverage_complete": true,
+        "selection_scope": "Only fourexplicit processes, not national inventory or wholeplant extent completeness",
+        "retrieved_at": "2026-11-06T08:13:08.503149+00:00",
+        "sha256": "f66c1df564485cf600f7f78911c290895d7d86f4a1ed9a64561b6c3f64334d28",
+        "native_phase_id": "G100000827288",
+        "identity_basis": "Individually reviewed exactname/nativealias and unique one-phase existing PV record. Native City explicitly belongs to source multi-municipality list: reviewed VilaVicosa/VilaViçosa and Agueda/Águeda accent transliterations; MarcoCanaveses andParedes literal. No fuzzymerge, newcanonicalplant or licence-to-phase capacity assignment.",
+        "municipality_comparison": {
+          "source": "Paredes, Paços de Ferreira",
+          "canonical_city": "Paredes"
+        },
+        "source_power_scope": "Native generator kW/installed kVA/connection kVA preserved independently without summation, conversion or AC/DC assignment. No scalar capacity added.",
+        "lifecycle_scope": "Licence states are source observations, not current plant operation. Existing shelved-inferred statuses and dates remain unchanged; no licence-to-operation inference.",
+        "storage_exclusion": {
+          "objectid": 10974,
+          "reason": "tipo_central Armazenamento, even though subtype saysSolar fotovoltaico; not a PVgeneratingpolygon"
+        },
+        "geography_scope": "No coordinates/geometry or municipal-centre point inferred; associated licensing observation only"
+      }
+    },
+    {
+      "record_id": "dd5f9f92-1d30-501f-bd65-2f7df9a84d19",
+      "name": "Cabeço Santo solar farm",
+      "source_process": 2072,
+      "context": {
+        "licensing_process": 2072,
+        "features": [
+          {
+            "concelho": "Anadia, Águeda, Mortágua",
+            "distrito": "Aveiro",
+            "inspireid": "IDDGEG_CS_281",
+            "lic_exploracao": null,
+            "lic_producao": "LicProducao",
+            "nome": "CABEÇO SANTO",
+            "objectid": 10207,
+            "potencia_geradorkw": null,
+            "potencia_instaladakva": 47072.0,
+            "potencia_ligacaokva": null,
+            "processo": 2072,
+            "subparque": null,
+            "subtipo_instalacao": "Solar fotovoltaico",
+            "tipo_central": "CS"
+          }
+        ],
+        "selected_process_object_ids": [
+          10207
+        ],
+        "selected_query_object_ids": [
+          10080,
+          10192,
+          10207,
+          10367,
+          10974
+        ],
+        "selected_query_coverage_complete": true,
+        "selection_scope": "Only fourexplicit processes, not national inventory or wholeplant extent completeness",
+        "retrieved_at": "2026-11-06T08:13:08.503149+00:00",
+        "sha256": "f66c1df564485cf600f7f78911c290895d7d86f4a1ed9a64561b6c3f64334d28",
+        "native_phase_id": "G100000827185",
+        "identity_basis": "Individually reviewed exactname/nativealias and unique one-phase existing PV record. Native City explicitly belongs to source multi-municipality list: reviewed VilaVicosa/VilaViçosa and Agueda/Águeda accent transliterations; MarcoCanaveses andParedes literal. No fuzzymerge, newcanonicalplant or licence-to-phase capacity assignment.",
+        "municipality_comparison": {
+          "source": "Anadia, Águeda, Mortágua",
+          "canonical_city": "Agueda"
+        },
+        "source_power_scope": "Native generator kW/installed kVA/connection kVA preserved independently without summation, conversion or AC/DC assignment. No scalar capacity added.",
+        "lifecycle_scope": "Licence states are source observations, not current plant operation. Existing shelved-inferred statuses and dates remain unchanged; no licence-to-operation inference.",
+        "storage_exclusion": {
+          "objectid": 10974,
+          "reason": "tipo_central Armazenamento, even though subtype saysSolar fotovoltaico; not a PVgeneratingpolygon"
+        },
+        "geography_scope": "No coordinates/geometry or municipal-centre point inferred; associated licensing observation only"
+      }
+    }
+  ],
+  "freshness": "Service and rights bytes unchanged; full750feature export skipped. Only new selectedprocess partition and independent selectedIDinventory requested.",
+  "adapter": "Existing tested checksum reader/grouping and upsert API; no newadapter/feed"
+}

@@ -1,0 +1,690 @@
+{
+  "as_of": "2026-11-06T11:53:58.239003+00:00",
+  "units_scanned": 100000,
+  "previous_units_rescanned": 200000,
+  "threshold_kw": 1000,
+  "threshold_candidates": 50,
+  "accepted": 28,
+  "ledger": [
+    {
+      "unit_id": "SEE930732971197",
+      "storage_id": "SSE969665939882",
+      "location_id": null,
+      "name": "Speicher Test",
+      "locality": "Nürnberg",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 221,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "missing_location_identity"
+      ]
+    },
+    {
+      "unit_id": "SEE989733403879",
+      "storage_id": "SSE912793054910",
+      "location_id": "SEL965644470469",
+      "name": "KW Silz - Maschine 1",
+      "locality": "Silz",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 327,
+      "technology_label": "Pumpspeicher",
+      "decision": "rejected_non_battery",
+      "reasons": [
+        "not_battery",
+        "not_germany",
+        "commissioning_date_requires_review"
+      ]
+    },
+    {
+      "unit_id": "SEE965029367872",
+      "storage_id": "SSE951037719635",
+      "location_id": "SEL955844398977",
+      "name": "KW Silz - Maschine 2",
+      "locality": "Silz",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 3434,
+      "technology_label": "Pumpspeicher",
+      "decision": "rejected_non_battery",
+      "reasons": [
+        "not_battery",
+        "not_germany",
+        "commissioning_date_requires_review"
+      ]
+    },
+    {
+      "unit_id": "SEE956127306573",
+      "storage_id": "SSE993397579313",
+      "location_id": "SEL986588659079",
+      "name": "KW Kühtai - Maschine 1",
+      "locality": "Kühtai",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 3438,
+      "technology_label": "Pumpspeicher",
+      "decision": "rejected_non_battery",
+      "reasons": [
+        "not_battery",
+        "not_germany",
+        "commissioning_date_requires_review"
+      ]
+    },
+    {
+      "unit_id": "SEE901980882672",
+      "storage_id": "SSE900156670112",
+      "location_id": "SEL979416737384",
+      "name": "KW Kühtai - Maschine 2",
+      "locality": "Kühtai",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 3440,
+      "technology_label": "Pumpspeicher",
+      "decision": "rejected_non_battery",
+      "reasons": [
+        "not_battery",
+        "not_germany",
+        "commissioning_date_requires_review"
+      ]
+    },
+    {
+      "unit_id": "SEE948856159582",
+      "storage_id": "SSE954237231822",
+      "location_id": "SEL934116947105",
+      "name": "Solarpark Lärz-Rechlin (Speicher)",
+      "locality": "Rechlin",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 4380,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "067358d5-8487-57e5-a54a-e24ea8646914"
+    },
+    {
+      "unit_id": "SEE929646974516",
+      "storage_id": "SSE965929128412",
+      "location_id": "SEL951261658267",
+      "name": "Theilheim, Speicher 1",
+      "locality": "Theilheim",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 4703,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "52e44ebc-2bfa-560f-8a44-3de6d0a80295"
+    },
+    {
+      "unit_id": "SEE959638838588",
+      "storage_id": "SSE929237426363",
+      "location_id": "SEL968634113247",
+      "name": "Batteriespeicher",
+      "locality": "Augsburg",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 5677,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "d9208821-1a1c-58c7-96ce-9983e14f61a4"
+    },
+    {
+      "unit_id": "SEE948862206942",
+      "storage_id": "SSE995162725024",
+      "location_id": "SEL974838534795",
+      "name": "Batteriespeicher Ammerland",
+      "locality": "Wiefelstede",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 6088,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "7978f744-b5d6-5900-b4b7-744bb2952235"
+    },
+    {
+      "unit_id": "SEE971850267908",
+      "storage_id": "SSE941069749786",
+      "location_id": "SEL900975319919",
+      "name": "Speicher Letschin 04/21",
+      "locality": "Letschin",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 6534,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "16e240b7-e3ad-57cd-88f8-ef53e518659d"
+    },
+    {
+      "unit_id": "SEE943803920109",
+      "storage_id": "SSE997649194842",
+      "location_id": "SEL956920720651",
+      "name": "Speicher Göhlsdorf 04/21",
+      "locality": "Kloster Lehnin",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 6573,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "6a27cafc-a0ae-509a-b108-ccbed470ad91"
+    },
+    {
+      "unit_id": "SEE910282718817",
+      "storage_id": "SSE983822324496",
+      "location_id": "SEL952448582085",
+      "name": "Speicher Gammertingen 04/21",
+      "locality": "Gammertingen",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 6599,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "7d3eb3eb-b764-564f-ae55-c01ade6365b3"
+    },
+    {
+      "unit_id": "SEE948786499895",
+      "storage_id": "SSE970372973038",
+      "location_id": "SEL971316811157",
+      "name": "Speicher Schnaittenbach II",
+      "locality": "Schnaittenbach",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 6631,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "22ced44e-4498-5d5f-ab5a-0960299e81c6"
+    },
+    {
+      "unit_id": "SEE991022436932",
+      "storage_id": "SSE984660965889",
+      "location_id": null,
+      "name": "PV Speicher",
+      "locality": "Otzing",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 6677,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "missing_location_identity"
+      ]
+    },
+    {
+      "unit_id": "SEE938734688372",
+      "storage_id": "SSE939289139234",
+      "location_id": null,
+      "name": "Speicher Krücklham",
+      "locality": "Mittergars",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 7300,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "missing_location_identity"
+      ]
+    },
+    {
+      "unit_id": "SEE906551585525",
+      "storage_id": "SSE911985020436",
+      "location_id": "SEL960584195434",
+      "name": "Speicher PVA_G9",
+      "locality": "Stralsund",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 7831,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "fe845f87-e22d-5bbe-9859-f6174354eb62"
+    },
+    {
+      "unit_id": "SEE944822244566",
+      "storage_id": "SSE925529894964",
+      "location_id": "SEL970867403033",
+      "name": "Batteriespeicher",
+      "locality": "Beratzhausen",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 8116,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "50921dc8-a144-54ce-9932-5c9305f7c2ca"
+    },
+    {
+      "unit_id": "SEE971990158586",
+      "storage_id": "SSE954119788314",
+      "location_id": "SEL950932921426",
+      "name": "Speicher PV1",
+      "locality": "Heiligenberg",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 8213,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "5b74741d-dd34-5978-b979-ca2838dcfd85"
+    },
+    {
+      "unit_id": "SEE970162171323",
+      "storage_id": "SSE971213414062",
+      "location_id": "SEL993845687218",
+      "name": "ABO Wind Batterie Leutershausen",
+      "locality": "Hohenroth",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 8348,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "8d8da0c3-3cc9-521a-a3f5-936bde1e55e5"
+    },
+    {
+      "unit_id": "SEE977231455070",
+      "storage_id": "SSE945133606258",
+      "location_id": "SEL921533888746",
+      "name": "Batteriespeicher Inden",
+      "locality": "Inden",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 8386,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "ca784d85-93d5-5cf1-a4fd-34a3a1f0bdab"
+    },
+    {
+      "unit_id": "SEE988222104112",
+      "storage_id": "SSE904765305502",
+      "location_id": "SEL992718014014",
+      "name": "Speicher Forsthof",
+      "locality": "Luhe-Wildenau",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 9074,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "974f77ba-5ae6-50f5-97d9-58465fc59067"
+    },
+    {
+      "unit_id": "SEE931076843966",
+      "storage_id": "SSE901133020630",
+      "location_id": "SEL923542730726",
+      "name": "Speicher Ottmarsfeld Nord",
+      "locality": "Höttingen",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 9101,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "b0bea715-4c34-5f8a-926b-388f9b2b5bf2"
+    },
+    {
+      "unit_id": "SEE983724235456",
+      "storage_id": "SSE983216502417",
+      "location_id": "SEL995022673137",
+      "name": "Speicher Buch",
+      "locality": "Untermerzbach",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 9120,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "bcfc9786-3a1b-5aae-a1fc-58de2b4c029f"
+    },
+    {
+      "unit_id": "SEE934542973051",
+      "storage_id": "SSE915100761723",
+      "location_id": "SEL975804372694",
+      "name": "Speicher Übermatzhofen II BA 1",
+      "locality": "Pappenheim",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 9130,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "714d84fc-8e59-5334-94c8-dfd096bccf11"
+    },
+    {
+      "unit_id": "SEE923635756794",
+      "storage_id": "SSE957623578976",
+      "location_id": null,
+      "name": "Speicher Inno22-1",
+      "locality": "Bernhardswald",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 9152,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "missing_location_identity"
+      ]
+    },
+    {
+      "unit_id": "SEE935505546220",
+      "storage_id": "SSE926997228312",
+      "location_id": null,
+      "name": "Speicher Gebot 3 - Inno22",
+      "locality": "Maßbach",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 9155,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "missing_location_identity"
+      ]
+    },
+    {
+      "unit_id": "SEE974949152857",
+      "storage_id": "SSE919294581464",
+      "location_id": "SEL983749060927",
+      "name": "Batteriespeicher",
+      "locality": null,
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 12479,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "Locality absent; generic identity requires review"
+      ]
+    },
+    {
+      "unit_id": "SEE961083745526",
+      "storage_id": "SSE925930084442",
+      "location_id": "SEL946807245537",
+      "name": "SWM HKW Freimann BSP1",
+      "locality": "München",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 18496,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "shared_battery_location_in_supplied_partitions"
+      ]
+    },
+    {
+      "unit_id": "SEE924821338909",
+      "storage_id": "SSE996712873981",
+      "location_id": "SEL946807245537",
+      "name": "SWM HKW Freimann BSP2",
+      "locality": "München",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 19128,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "shared_battery_location_in_supplied_partitions"
+      ]
+    },
+    {
+      "unit_id": "SEE903095708120",
+      "storage_id": "SSE974598503741",
+      "location_id": "SEL946807245537",
+      "name": "SWM HKW Freimann BSP3",
+      "locality": "München",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 19138,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "shared_battery_location_in_supplied_partitions"
+      ]
+    },
+    {
+      "unit_id": "SEE981161419538",
+      "storage_id": "SSE969717173707",
+      "location_id": "SEL946807245537",
+      "name": "SWM HKW Freimann BSP4",
+      "locality": "München",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 19142,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "shared_battery_location_in_supplied_partitions"
+      ]
+    },
+    {
+      "unit_id": "SEE904769505083",
+      "storage_id": "SSE922195305060",
+      "location_id": "SEL966664610378",
+      "name": "Groß-Batteriespeicher Schwerin-Lankow Erweiterung",
+      "locality": "Schwerin",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 33872,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "Existing site or expansion boundary requires reconciliation; do not create a duplicate project"
+      ]
+    },
+    {
+      "unit_id": "SEE930312080578",
+      "storage_id": "SSE956115906051",
+      "location_id": "SEL923971977174",
+      "name": "Speicher Lübars",
+      "locality": "Lübars",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 49022,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "3df9fb66-f5fc-55a7-9ba5-dc182a3348dd"
+    },
+    {
+      "unit_id": "SEE945342909836",
+      "storage_id": "SSE957268026795",
+      "location_id": "SEL974761836652",
+      "name": "Rote Jahne - Speicher 2 MW",
+      "locality": "Doberschütz",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 50735,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "f5790d6e-2711-512b-a218-d533d46d780c"
+    },
+    {
+      "unit_id": "SEE978524946848",
+      "storage_id": "SSE900409568111",
+      "location_id": "SEL993931657774",
+      "name": "PV Speicher Lehe",
+      "locality": "Lehe",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 50813,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "Existing site or expansion boundary requires reconciliation; do not create a duplicate project"
+      ]
+    },
+    {
+      "unit_id": "SEE913404448371",
+      "storage_id": "SSE964042720701",
+      "location_id": null,
+      "name": "Speicher 3,3 MW Ottenbüttel",
+      "locality": "Ottenbüttel",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 50960,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "missing_location_identity"
+      ]
+    },
+    {
+      "unit_id": "SEE954745323422",
+      "storage_id": "SSE939564866411",
+      "location_id": "SEL943699128146",
+      "name": "Solarpark Bruchsal-Untergrombach Speicher",
+      "locality": "Bruchsal",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 53503,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "fb2e91ad-4b8b-5ac6-8675-1c4d9ac79bcf"
+    },
+    {
+      "unit_id": "SEE979298824578",
+      "storage_id": "SSE911914299285",
+      "location_id": "SEL925801399262",
+      "name": "ABO Wind Batterie Euskirchen",
+      "locality": "Euskirchen",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 54219,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "312ae8e0-57d1-539c-92b9-84281675cc06"
+    },
+    {
+      "unit_id": "SEE954677148513",
+      "storage_id": "SSE911236983657",
+      "location_id": "SEL993330353215",
+      "name": "ABO Wind Batterie Weichenried",
+      "locality": "Hohenwart",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 54249,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "0d5fbdd6-ac9b-5488-9de2-6fa02fd1b5ec"
+    },
+    {
+      "unit_id": "SEE995933662862",
+      "storage_id": "SSE903312292722",
+      "location_id": "SEL979051133251",
+      "name": "Speicher Handenberg-West",
+      "locality": "Nonnweiler",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 54545,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "0a6d2cec-5fdc-5938-a28f-b91254f2f215"
+    },
+    {
+      "unit_id": "SEE912014586152",
+      "storage_id": "SSE942941026773",
+      "location_id": "SEL963845961328",
+      "name": "20363 SP Kreuzbergfeld Speicher",
+      "locality": "Kottgeisering",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 55449,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "6696917b-9648-5572-a559-85d94f3599f7"
+    },
+    {
+      "unit_id": "SEE981601805600",
+      "storage_id": "SSE934810291207",
+      "location_id": null,
+      "name": "Balder A09 - BSK",
+      "locality": "Tützpatz",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 55960,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "missing_location_identity"
+      ]
+    },
+    {
+      "unit_id": "SEE911454349471",
+      "storage_id": "SSE984281257615",
+      "location_id": "SEL931250328449",
+      "name": "Batteriespeicher Garzweiler",
+      "locality": "Bedburg",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 56047,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "1edb11b9-e26c-560c-9ff6-fecda96ddeca"
+    },
+    {
+      "unit_id": "SEE934842271741",
+      "storage_id": "SSE928726456218",
+      "location_id": "SEL964700814339",
+      "name": "Batteriespeicher Jackerath",
+      "locality": "Bedburg",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 56066,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "da4e7cbc-63c6-5f70-888d-ec82f38234b0"
+    },
+    {
+      "unit_id": "SEE978638789621",
+      "storage_id": "SSE990644549112",
+      "location_id": "SEL977871009794",
+      "name": "BER_EUREF_BSP1",
+      "locality": "Berlin",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 63901,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "Existing site or expansion boundary requires reconciliation; do not create a duplicate project"
+      ]
+    },
+    {
+      "unit_id": "SEE905843309764",
+      "storage_id": "SSE975030047267",
+      "location_id": "SEL931153592695",
+      "name": "Batteriespeicher Emsland",
+      "locality": "Lingen",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 79686,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "Existing site or expansion boundary requires reconciliation; do not create a duplicate project"
+      ]
+    },
+    {
+      "unit_id": "SEE971932533266",
+      "storage_id": "SSE949518558477",
+      "location_id": "SEL949080963662",
+      "name": "Batteriespeicher Werne",
+      "locality": null,
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 79753,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "Existing site or expansion boundary requires reconciliation; do not create a duplicate project"
+      ]
+    },
+    {
+      "unit_id": "SEE935147494255",
+      "storage_id": "SSE967078786536",
+      "location_id": "SEL993164660978",
+      "name": "Batteriespeicher Herdecke 2",
+      "locality": "Herdecke",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 87753,
+      "technology_label": "Batterie",
+      "decision": "held",
+      "reasons": [
+        "shared_battery_location_in_supplied_partitions"
+      ]
+    },
+    {
+      "unit_id": "SEE991010009728",
+      "storage_id": "SSE939544387431",
+      "location_id": "SEL907544571945",
+      "name": "2MWh Speicher Gewerbegebiet Haßfurt",
+      "locality": "Haßfurt",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 94074,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "f22ee0c5-9562-5188-9936-24fc726b0c52"
+    },
+    {
+      "unit_id": "SEE977720016904",
+      "storage_id": "SSE937542481601",
+      "location_id": "SEL960477032198",
+      "name": "Batterie Breitenworbis",
+      "locality": "Breitenworbis",
+      "source_member": "EinheitenStromSpeicher_3.xml",
+      "source_row": 99808,
+      "technology_label": "Batterie",
+      "decision": "accepted_new",
+      "reasons": [],
+      "record_id": "9e243a9c-abee-5e9e-935a-0e6bd30cbf24"
+    }
+  ]
+}

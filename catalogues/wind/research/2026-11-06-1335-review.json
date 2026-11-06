@@ -1,0 +1,102 @@
+{
+  "batch": "2026-11-06-1335",
+  "retrieved_at": "2026-11-06T13:39:52.822339+00:00",
+  "indices": [
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/07/16/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/07/16/",
+          "sha256": "70c6db83a94711f0610d084e5ac0dfa7d9838cfe8816aa1d55ecee393f9b6f45"
+        }
+      ],
+      "notices": [
+        {
+          "notice_id": "BOE-B-2026-24346",
+          "title": "Anuncio de la Dependencia de Industria y Energía de la Subdelegación del Gobierno en Albacete, por el que se somete al trámite de Información Pública la Solicitud de Modificación de Autorización Administrativa Previa, la Solicitud de Autorización Administrativa de Construcción y la Solicitud de Declaración de Utilidad Pública de la instalación solar fotovoltaica La Herrada Solar, de 44,09 MW de potencia instalada, para su hibridación con el parque eólico La Herrada, de 52 MW, conformando una instalación híbrida de 70 MW de potencia instalada, y para su infraestructura de evacuación, en los términos municipales de Corral-Rubio y Montealegre del Castillo, en la provincia de Albacete. PEol-FV-031-AAC-DUP-Mod.AAP."
+        }
+      ]
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/07/17/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/07/17/",
+          "sha256": "ccb045880732d923e100e64e5c0649cbe0d6c1f8b875dd72660f22888e823e5e"
+        }
+      ],
+      "notices": [
+        {
+          "notice_id": "BOE-B-2026-24461",
+          "title": "Anuncio del Área de Industria y Energía de la Subdelegación del Gobierno en Valladolid, por el que se somete a información pública la solicitud de procedimiento simplificado de autorización administrativa previa y de autorización administrativa de construcción de la instalación fotovoltaica Torozos C, de 38 MW de potencia instalada, en los términos municipales de Berceruelo, Torrelobatón y Villasexmir, para su hibridación con el parque eólico Torozos C, de 39,6 MW; de la instalación fotovoltaica Torozos B, de 30,9 MW de potencia instalada, en el término municipal de Torrelobatón y Berceruelo, en la provincia de Valladolid, para su hibridación con el parque eólico Torozos B, de 33 MW; así como de parte de sus infraestructuras de evacuación, constituidas por circuitos subterráneos de 30 kV y la modificación de la subestación Torozos 30/220 kV, sitas en los términos municipales de Berceruelo y Torrelobatón, en la provincia de Valladolid."
+        }
+      ]
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/07/18/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/07/18/",
+          "sha256": "e167472aff24b64a33389a420eee2c54160ee2c97536f44143a9071fba00b63d"
+        }
+      ],
+      "notices": []
+    }
+  ],
+  "decisions": [
+    {
+      "notice_id": "BOE-B-2026-24346",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-24346",
+      "sha256": "ccbac507c3206b8b483aa097c11c794b2dd4198b9e7282ff48fafce737f08642",
+      "locator": "Opening history, purpose and project description; private parcel-holder annex not extracted",
+      "wind_names": [
+        "La Herrada"
+      ],
+      "decision": "deferred_wind_identity",
+      "reason": "Solar modification application; dated wind51/52MW and hybrid55/70MW boundaries require original wind permit crosswalk; no farm scalar promoted"
+    },
+    {
+      "notice_id": "BOE-B-2026-24461",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-24461",
+      "sha256": "26a74e2873705bc4fa3f47e1ad47305883f64b6d4adb5e6484e6013b11d0cb84",
+      "locator": "Opening history, purpose and project description; private parcel-holder annex not extracted",
+      "wind_names": [
+        "Torozos B",
+        "Torozos C"
+      ],
+      "decision": "deferred_wind_identity",
+      "reason": "Solar applications reference existing wind farms; solar38/30.9MW not wind39.6/33MW. Primary wind permits and identity crosswalk required"
+    }
+  ],
+  "accepted_projects": 0,
+  "enriched_projects": 0,
+  "new_equipment": 0,
+  "new_canonical_quarantines": 0,
+  "independent_followups": [
+    {
+      "url": "https://www.iberdrola.com/documents/20125/4642587/241016-iberdrola-masdar-complete-wind-turbine-installation-baltic-eagle-offshore-wind-farm.pdf/fb245fd5-2d12-0ee3-c221-8357fcd024a3?t=1729062445037",
+      "status": 200,
+      "bytes": 209099,
+      "sha256": "896b0f7b534d10a98c2a30cde7e925d496792ab94832a8a6d3d94c5c9a73e5e5",
+      "content_type": "application/pdf",
+      "locator": "PDF page1",
+      "document_date": "2024-09-25",
+      "url_filename_date": "2024-10-16",
+      "facts": {
+        "installed_turbines": 50,
+        "reported_unit_rating_mw": 9.53,
+        "reported_project_mw": 476,
+        "grid_connected": true,
+        "full_operation_not_established": true
+      },
+      "decision": "Original acquired; date/revision and9.5/9.53MW crosswalk unresolved. Preserve existing2024circular observations. Exact model not stated"
+    },
+    {
+      "url": "https://masdar.ae/en/news/newsroom/president-of-uzbekistan-inaugurates-500mw-zarafshan-wind-farm",
+      "decision": "Indexed primary inauguration evidence reconfirmed; no formal COD established; prior original retained, not a new acquisition"
+    }
+  ]
+}

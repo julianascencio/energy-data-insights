@@ -49,6 +49,12 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
       Stress-test investment costs, financing and capacity-factor assumptions.
 
+   .. grid-item-card:: Electricity mix and imports
+      :link: topic_portugal_mix
+      :link-type: doc
+
+      Reconcile REN's reported solar, wind and import shares with explicit precision.
+
    .. grid-item-card:: Grid resilience and critical loads
       :link: topic_grid_resilience
       :link-type: doc
@@ -73,5 +79,6 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
    topic_thermal_control
    topic_offshore_wind
+   topic_portugal_mix
    topic_grid_resilience
    topic_hybrid_dispatch

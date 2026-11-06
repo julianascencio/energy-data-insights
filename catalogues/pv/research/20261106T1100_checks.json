@@ -1,0 +1,145 @@
+{
+  "pytest": {
+    "exit": 0,
+    "tail": [
+      "........................................................................ [ 80%]",
+      "........................................................................ [ 96%]",
+      ".................                                                        [100%]",
+      "449 passed in 17.38s"
+    ]
+  },
+  "ruff": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "format": {
+    "exit": 0,
+    "tail": [
+      "1239 files already formatted"
+    ]
+  },
+  "ty": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "catalogue": {
+    "exit": 0,
+    "tail": [
+      "Validated 90492 unique records; schema and field evidence present"
+    ]
+  },
+  "hygiene": {
+    "exit": 0,
+    "tail": [
+      "Repository check passed: 6209 candidate files; no flagged secrets or data."
+    ]
+  },
+  "citations": {
+    "exit": 0,
+    "tail": [
+      "Citation catalogue and all exports are consistent."
+    ]
+  },
+  "example": {
+    "exit": 0,
+    "tail": [
+      "                               Rosario solar project          CHL             5.5             NaN  -34.3593   -70.8903 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                             Caracoles solar project          CHL             2.7             NaN  -35.6929   -71.4890 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                           Aurora solar farm (Chile)          CHL           187.0             NaN  -20.7981   -69.4502 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                             Dona Igna solar project          CHL             2.2             NaN  -33.5897   -71.2133 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]"
+    ]
+  },
+  "viewer": {
+    "exit": 0,
+    "tail": [
+      "\u2139 cancelled 0",
+      "\u2139 skipped 0",
+      "\u2139 todo 0",
+      "\u2139 duration_ms 244.243996"
+    ]
+  },
+  "audit": {
+    "baseline": "a2e4061d55a38ea2fd675b8562e8e097fa591300",
+    "new_by_entity": {
+      "modules": 6,
+      "inverters": 0,
+      "trackers": 0,
+      "combiner_boxes": 0,
+      "projects": 0
+    },
+    "enriched": {
+      "projects": 198,
+      "modules": 7
+    },
+    "newly_populated_fields": {
+      "extensions_json": 205,
+      "owners": 198,
+      "annual_degradation_warranty_pct": 7,
+      "bifaciality_pct": 7,
+      "cell_count": 7,
+      "datasheet_url": 7,
+      "depth_m": 7,
+      "efficiency_stc_pct": 7,
+      "first_year_degradation_warranty_pct": 7,
+      "fuse_rating_max_a": 7,
+      "height_m": 7,
+      "operating_temperature_max_c": 7,
+      "operating_temperature_min_c": 7,
+      "performance_warranty_years": 7,
+      "product_warranty_years": 7,
+      "system_voltage_max_v": 7,
+      "weight_kg": 7,
+      "width_m": 7
+    },
+    "substantive_project_fields_contexts": 396,
+    "equipment_typed_values": 261,
+    "dgeg_namespaces_added": 0,
+    "identifier_objects_enriched": 0,
+    "identifiers_added": 0,
+    "geography_fields": 0,
+    "records": 90492,
+    "totals": {
+      "projects": 65308,
+      "modules": 21679,
+      "inverters": 3278,
+      "trackers": 30,
+      "combiner_boxes": 197
+    },
+    "sources": 685,
+    "immutable_sources_preserved": 680,
+    "created_at_preserved": 90486,
+    "unchanged_prior_records": 90281,
+    "replay_operations": 211,
+    "reviewed_additive_namespace_operations": 0,
+    "idempotent": true,
+    "new_manufacturers": [],
+    "new_countries": [],
+    "quarantines": 0,
+    "permanent_record_rejections": 0,
+    "owner_identity_holds": 2,
+    "prior_hold_repeated": 0,
+    "new_owner_holds": 2,
+    "nonPV_source_features_excluded": 0,
+    "existing_module_technical_fields_added": 105,
+    "existing_module_contexts_added": 7,
+    "existing_module_datasheet_links_added": 7,
+    "substantive_existing_module_fields_contexts_links": 119,
+    "cross_unit_coefficient_holds": 14,
+    "differing_populated_equipment_fields": 31,
+    "replay_comparison": "Schema-null normalized; populated values/evidence exact"
+  },
+  "snapshot": {
+    "typed_tables": 5,
+    "columns": 148,
+    "ZSTD": true,
+    "types_rows_checksums_verified": true,
+    "viewer_projection_verified": true,
+    "input_sha256": "1ca40f02c38556e62d6d1464b198bd04f00f73a9fb691be6ca7eaa81df93b1ee",
+    "binaries_outside_git": true
+  },
+  "final_head_ci": "Pending publication; exact-head outcomes and elapsed publication time recorded in PR description."
+}

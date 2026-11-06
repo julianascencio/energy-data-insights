@@ -1,15 +1,14 @@
 # Global Wind Database
 
 The Wind catalogue connects projects, exact equipment configurations, turbines and
-numerical curves. At batch `2026-11-05-0910`, the continuation contains
-**8,238 projects, 405 equipment records, 13,633 linked turbines and two original
-numerical curves**, across **59 countries and 57 equipment manufacturer labels**.
-Labels are not a reconciled corporate-entity count. Merged main at `d92d1b82`
-contains 8,174 projects, 372 equipment records, 13,633 turbines and two curves.
-This run adds 56 registry sites and enriches 31 existing equipment records;
-previous batches are not counted again. These are catalogue counts, not a current
-operating census. Live totals and exact continuation queues are recorded in
-`catalogues/wind/research/latest.json`.
+numerical curves. At batch `2026-11-06-1235`, the continuation contains
+**8,323 projects, 566 equipment records, 13,657 linked turbines and two original
+numerical curves**, across **64 countries and 66 equipment manufacturer labels**.
+Labels are not a reconciled corporate-entity count. Merged main at `64dcf522`
+contains 8,306 projects, 555 equipment records, 13,657 turbines and two curves.
+This run adds four projects, with no enrichments or equipment additions; it does not count
+previous batches again. These are catalogue counts, not a current operating
+census. Exact continuation queues are in `catalogues/wind/research/latest.json`.
 
 The complete 5,344-row Wind partition of WRI Global Power Plant Database v1.3.0
 provides a historical discovery baseline. WRI stopped maintenance in early 2022.
@@ -1317,3 +1316,133 @@ unspecified gross/net boundary and calendar period; no capacity factor is
 computed. Exact configuration, turbine count and conflicting project MW remain
 unresolved. Specifications and announcements are not independently validated
 performance.
+
+The November 6 08:35 batch completes BOE August 3–5 and adds Cerro de Magaña
+under PEol-898. Its former joint administrative procedure with Pasama does not
+establish a parent, a phase or additive capacity. The 50.1 MW withdrawn proposal
+stays excluded from capacity totals. Body and title locality differences remain
+explicit; no coordinates or OEM equipment are inferred.
+
+The pinned REPD Q2 2026 candidate partition 800–999 has been structurally reviewed.
+All 200 identities remain held pending original permit and physical-site
+crosswalks. These are application observations, not 200 additional farms.
+
+
+## Floating prototype and OEM numeric tables (6 November, 09:35 UTC)
+
+The complete discovered BOE July 30–31/August 1 A/B partition yields WHEEL's
+preliminary authorization and San Jorge's refused wind application. Neither is
+installed capacity. Two solar decisions remain held for wind identity crosswalks.
+WHEEL is linked to its exact PLOCAN pilot substructure configuration, supported
+by the original 2025 environmental decision and 2026 authorization. Floater
+seabed elevation (−90 m, Port of Las Palmas datum), approximate 100 m anchor
+depth and 70 m minimum selection criterion remain different quantities.
+Construction authorization is expressly conditional; port fabrication is not
+proof of installed offshore operation. The shared PLOCAN 15 MW grid access is
+not added to the prototype's 6 MW design. ELICAN is a shared terminal, not an
+inferred parent or phase. No exact turbine model was supplied in these notices.
+
+All eleven exact types in SANY's global English navigation were reviewed.
+Ten models are added; SI-16840 is held against the existing India configuration
+pending a revision and legal-entity crosswalk. The numerical table adapter
+requires a complete explicit model list, units, source and locator, and preserves
+missing cells. Three inconsistent cells remain null: SI-16850 cut-out speed,
+and SI-18572/SI-19580 swept area. Circular-area arithmetic is a labelled check,
+never a replacement specification. Generator voltage is not grid voltage;
+operating and survival temperatures are separate. IEC claims are not verified
+certificates; specifications are not independently validated performance.
+
+The OEM's original endpoints returned HTTP 508 with empty bodies. Public indexed
+OEM tables supplied the evidence; original-byte checksums, publication dates and
+revisions remain unavailable. No authentication or reuse restriction is inferred
+from the failure. Unnamed blade and generator platform ranges are held. The
+independent South African IPP inventory returned HTTP 404 after a login redirect;
+no login was attempted and no inventory was imported. REPD saved candidates
+1000:1200 were structurally reviewed: all 200 remain held for original permits.
+
+The shared viewer exposes OEM table completeness and withheld fields. The offline
+gallery distinguishes floating design depth boundaries and prints the retained
+OEM conflicts. Next: BOE July 27–29, REPD 1200:1400, and exact SANY corrections.
+
+### 6 November continuation: empty discovery partitions and restricted originals
+
+The July 27–29 BOE Series A/B title partitions are complete with no wind-title
+candidates. This does not establish that no wind projects existed on those dates.
+REPD saved candidates 1200–1399 were structurally reviewed against the pinned
+release; all 200 remain application-to-farm identity holds.
+
+The original SANY *Product Family, April 2025* brochure was acquired and
+checksummed, but its explicit copying restriction excludes its specifications
+from this intake. This is an explicit reuse exclusion, not an HTTP or
+authentication failure. The three existing SANY scalar conflicts and the
+SI-16840 regional configuration crosswalk remain unresolved. No projects,
+equipment, turbine instances or numerical curves were added in this continuation.
+See `catalogues/wind/research/2026-11-06-1035-review.json` for source identifiers,
+checksums and next partitions.
+
+
+## Operator portfolio and BOE continuation (6 November, 11:35 UTC)
+
+The complete 20-row operational wind subset in Masdar’s 15 July 2024 offering
+circular was reviewed against the catalogue: nine new projects, three historical
+observation enrichments, and eight identity holds. The portfolio date is
+31 March 2024. It is not a current operating census. Contracted MW (pp154–155)
+and gross reported MW (p166) remain separate nested quantities; neither becomes
+installed capacity. Turbine count × rating is a labeled arithmetic check. The
+source’s fleet-average footnote is preserved and does not identify an exact model.
+No equipment configurations were inferred from OEM names or ratings.
+
+Dumat’s 2022-07-01 commercial operation date and March 2024 ownership are retained
+alongside its original 2019 award observations. London Array’s final-turbine
+installation and Hywind’s first-export milestones are not relabeled full COD.
+Month-only African CODs retain month precision. Existing scalar facts, IDs,
+creation dates and capacity exclusions are unchanged. The shared viewer shows
+dated portfolio coverage, missing exact models and capacity boundaries.
+
+BOE July 23–25 contains one accepted wind application: Revilla-Vallejera Hib,
+40.5 MW proposed, linked by procedure PFot-ALM-044-EOL. Its operational PV/BESS
+host and shared grid capacity are excluded. Two source reference coordinates
+remain in ETRS89 UTM zone 30N with metre precision; neither is a farm centroid or
+an individual turbine inventory. FV Monclues is a solar-only authorization and
+remains excluded from new wind projects. REPD offsets1400:1600 received structural
+review only: all200 identities still need original permits.
+
+Continuation: BOE July20–22; REPD1600:1800; eight named Masdar registry crosswalks
+in the review ledger. The same circular’s Zarafshan/Baltic Eagle construction rows
+are a separate unprocessed partition. Full original documents are not redistributed;
+SHA-256 and page locators are recorded in the source registry and review ledger.
+
+
+## Construction and environmental decisions (6 November,12:35 UTC)
+
+Masdar’s two construction-table wind rows from its July2024 circular are now
+represented: Zarafshan and Baltic Eagle. They describe March2024 construction,
+not present operation. Zarafshan’s2025 table forecast conflicts with its2026
+narrative forecast; both remain dated observations and no COD scalar is assigned.
+Baltic Eagle’s minority-stake financing is not total project investment.
+
+BOE July20–22 yields one negative environmental decision for two wind proposals,
+Escuderos I andIV. Their21.6/28.8MW and V172 geometry are original proposed designs.
+The negative DIA is neither construction permission nor an inferred final
+administrative cancellation. PV hosts and shared grid infrastructure are excluded.
+All four records remain excluded from additive capacity totals. No equipment
+variant is manufactured from project ratings or optional hub configurations.
+
+The operator adapter now requires a reported lifecycle before staging a row.
+A regression fixture checks that construction and conflicting forecasts cannot
+become operation or commissioning. REPD1600:1800 was structurally reviewed only;
+all200 original-permit identity holds remain. Next: BOE July16–18, REPD1800:2000,
+and later Zarafshan/Baltic Eagle milestone and rating-revision reconciliation.
+
+### July 16–18 notice and REPD continuation
+
+The 6 November 2026 13:35 review completed all discovered BOE issues for
+16–18 July. Notices BOE-B-2026-24346 and BOE-B-2026-24461 concern solar
+hybrid applications; La Herrada and Torozos B/C remain wind identity holds.
+Solar, wind and hybrid capacities are not interchangeable. REPD saved
+candidate offsets 1800:2000 were structurally reviewed, with all 200 held
+pending original permits. The offline parser now rejects extra or missing
+CSV cells before recording a reviewed partition, including malformed rows
+outside the selected slice. No project, equipment or capacity total changed.
+The dated review ledger records the original Baltic Eagle installation
+release and its unresolved date/rating revision crosswalk.

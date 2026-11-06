@@ -1,0 +1,122 @@
+{
+  "pytest": {
+    "exit": 0,
+    "tail": [
+      "........................................................................ [ 80%]",
+      "........................................................................ [ 96%]",
+      ".................                                                        [100%]",
+      "449 passed in 15.75s"
+    ]
+  },
+  "ruff": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "format": {
+    "exit": 0,
+    "tail": [
+      "1237 files already formatted"
+    ]
+  },
+  "ty": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "catalogue": {
+    "exit": 0,
+    "tail": [
+      "Validated 90474 unique records; schema and field evidence present"
+    ]
+  },
+  "hygiene": {
+    "exit": 0,
+    "tail": [
+      "Repository check passed: 6191 candidate files; no flagged secrets or data."
+    ]
+  },
+  "citations": {
+    "exit": 0,
+    "tail": [
+      "Citation catalogue and all exports are consistent."
+    ]
+  },
+  "example": {
+    "exit": 0,
+    "tail": [
+      "                               Rosario solar project          CHL             5.5             NaN  -34.3593   -70.8903 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                             Caracoles solar project          CHL             2.7             NaN  -35.6929   -71.4890 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                           Aurora solar farm (Chile)          CHL           187.0             NaN  -20.7981   -69.4502 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                             Dona Igna solar project          CHL             2.2             NaN  -33.5897   -71.2133 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]"
+    ]
+  },
+  "viewer": {
+    "exit": 0,
+    "tail": [
+      "\u2139 cancelled 0",
+      "\u2139 skipped 0",
+      "\u2139 todo 0",
+      "\u2139 duration_ms 286.347664"
+    ]
+  },
+  "audit": {
+    "baseline": "e9594887faf7efd4d567076eb44ebfc69f855482",
+    "new_by_entity": {
+      "modules": 0,
+      "inverters": 13,
+      "trackers": 0,
+      "combiner_boxes": 0,
+      "projects": 0
+    },
+    "enriched": {
+      "projects": 192
+    },
+    "newly_populated_fields": {
+      "extensions_json": 192,
+      "owners": 192
+    },
+    "substantive_project_fields_contexts": 384,
+    "equipment_typed_values": 264,
+    "dgeg_namespaces_added": 0,
+    "identifier_objects_enriched": 0,
+    "identifiers_added": 0,
+    "geography_fields": 0,
+    "records": 90474,
+    "totals": {
+      "projects": 65308,
+      "modules": 21661,
+      "inverters": 3278,
+      "trackers": 30,
+      "combiner_boxes": 197
+    },
+    "sources": 676,
+    "immutable_sources_preserved": 672,
+    "created_at_preserved": 90461,
+    "unchanged_prior_records": 90269,
+    "replay_operations": 205,
+    "reviewed_additive_namespace_operations": 0,
+    "idempotent": true,
+    "new_manufacturers": [],
+    "new_countries": [],
+    "quarantines": 0,
+    "permanent_record_rejections": 0,
+    "owner_identity_holds": 8,
+    "prior_hold_repeated": 0,
+    "new_owner_holds": 8,
+    "nonPV_source_features_excluded": 0
+  },
+  "snapshot": {
+    "typed_tables": 5,
+    "columns": 148,
+    "ZSTD": true,
+    "types_rows_checksums_verified": true,
+    "viewer_projection_verified": true,
+    "input_sha256": "fc6a408e5b7a76c9d528935d23eda1450fd8383d2c0922d6f42d347e98a5015e",
+    "binaries_outside_git": true
+  },
+  "checked_at": "2026-11-06T09:18:00Z",
+  "final_head_ci": "Pending publication; exact-head results will be recorded in PR description."
+}

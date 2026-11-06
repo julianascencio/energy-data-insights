@@ -1,0 +1,2276 @@
+{
+  "new_inverters": 21,
+  "new_combiners": 0,
+  "typed_values": 460,
+  "field_holds": [
+    {
+      "model": "PSIT-40K-SM6",
+      "field": "default RS485 inclusion",
+      "claims": [
+        "Cover mentions monitoring interfaces",
+        "Page2 explicitly Optional for all listed interfaces"
+      ],
+      "action": "No standard interface assumed; optional qualifier retained"
+    },
+    {
+      "model": "PSIT-50K-SM8",
+      "field": "default RS485 inclusion",
+      "claims": [
+        "Cover mentions monitoring interfaces",
+        "Page2 explicitly Optional for all listed interfaces"
+      ],
+      "action": "No standard interface assumed; optional qualifier retained"
+    },
+    {
+      "model": "PSIT-60K-SM8",
+      "field": "default RS485 inclusion",
+      "claims": [
+        "Cover mentions monitoring interfaces",
+        "Page2 explicitly Optional for all listed interfaces"
+      ],
+      "action": "No standard interface assumed; optional qualifier retained"
+    },
+    {
+      "model": "PSIT-75K-SM14",
+      "field": "default RS485 inclusion",
+      "claims": [
+        "Cover mentions monitoring interfaces",
+        "Page2 explicitly Optional for all listed interfaces"
+      ],
+      "action": "No standard interface assumed; optional qualifier retained"
+    },
+    {
+      "model": "PSIT-100K-SM16",
+      "field": "default RS485 inclusion",
+      "claims": [
+        "Cover listsmonitoring",
+        "TechnicalrowallinterfacesOptional"
+      ],
+      "action": "No defaultinterface assumed"
+    },
+    {
+      "model": "PSIT-110K-SM18",
+      "field": "default RS485 inclusion",
+      "claims": [
+        "Cover listsmonitoring",
+        "TechnicalrowallinterfacesOptional"
+      ],
+      "action": "No defaultinterface assumed"
+    },
+    {
+      "model": "PSIT-125K-SM18",
+      "field": "default RS485 inclusion",
+      "claims": [
+        "Cover listsmonitoring",
+        "TechnicalrowallinterfacesOptional"
+      ],
+      "action": "No defaultinterface assumed"
+    },
+    {
+      "model": "PSIT-350K-KH-UT",
+      "field": "pac_rated_w",
+      "claims": {
+        "Rating_kW": 350,
+        "Nominal_Output_Power_kW": 352
+      },
+      "action": "Scalar withheld; no arbitrary choice or kVAconversion"
+    },
+    {
+      "model": "PSIT-350K-K-UT",
+      "field": "pac_rated_w",
+      "claims": {
+        "Rating_kW": 350,
+        "Nominal_Output_Power_kW": 352
+      },
+      "action": "Scalar withheld; no arbitrary choice or kVAconversion"
+    }
+  ],
+  "new_manufacturers": [
+    "Polycab India Limited"
+  ],
+  "records": [
+    {
+      "model": "PSIS-1K0",
+      "source_id": "polycab_small_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 1000,
+        "vdc_max_v": 550,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 40,
+        "mppt_max_v": 540,
+        "mppt_count": 1,
+        "efficiency_max_pct": 96.5,
+        "efficiency_euro_pct": 93,
+        "width_m": 0.271,
+        "height_m": 0.256,
+        "depth_m": 0.135,
+        "weight_kg": 4.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 1,
+        "output_current_max_a": 5,
+        "idc_max_a": 20,
+        "isc_a": 30
+      },
+      "qualified_context": {
+        "source_id": "polycab_small_20261106T0800",
+        "locator": "Physical page2 PSIS-1K0 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 1100,
+        "max_active_W_at_PF1": 1100,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "20A",
+        "DC_short_circuit_current_native": "30A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          1
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "50V",
+        "grid_voltage_options_V": [
+          220,
+          230,
+          240
+        ],
+        "grid_connection": "L+N+PE",
+        "grid_voltage_range_V": [
+          160,
+          300
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "30dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi inbuilt; LAN/4G optional; COM1 USB",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date"
+      }
+    },
+    {
+      "model": "PSIS-2K0",
+      "source_id": "polycab_small_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 2000,
+        "vdc_max_v": 550,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 40,
+        "mppt_max_v": 540,
+        "mppt_count": 1,
+        "efficiency_max_pct": 97.1,
+        "efficiency_euro_pct": 95.2,
+        "width_m": 0.271,
+        "height_m": 0.256,
+        "depth_m": 0.135,
+        "weight_kg": 4.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 1,
+        "output_current_max_a": 10,
+        "idc_max_a": 20,
+        "isc_a": 30
+      },
+      "qualified_context": {
+        "source_id": "polycab_small_20261106T0800",
+        "locator": "Physical page2 PSIS-2K0 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 2200,
+        "max_active_W_at_PF1": 2200,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "20A",
+        "DC_short_circuit_current_native": "30A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          1
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "50V",
+        "grid_voltage_options_V": [
+          220,
+          230,
+          240
+        ],
+        "grid_connection": "L+N+PE",
+        "grid_voltage_range_V": [
+          160,
+          300
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "30dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi inbuilt; LAN/4G optional; COM1 USB",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "efficiency_scope": "Merged97.1% cell visually spans these3columns"
+      }
+    },
+    {
+      "model": "PSIS-3K0",
+      "source_id": "polycab_small_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 3000,
+        "vdc_max_v": 550,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 40,
+        "mppt_max_v": 540,
+        "mppt_count": 1,
+        "efficiency_max_pct": 97.1,
+        "efficiency_euro_pct": 95.9,
+        "width_m": 0.271,
+        "height_m": 0.256,
+        "depth_m": 0.135,
+        "weight_kg": 4.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 1,
+        "output_current_max_a": 15,
+        "idc_max_a": 20,
+        "isc_a": 30
+      },
+      "qualified_context": {
+        "source_id": "polycab_small_20261106T0800",
+        "locator": "Physical page2 PSIS-3K0 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 3300,
+        "max_active_W_at_PF1": 3300,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "20A",
+        "DC_short_circuit_current_native": "30A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          1
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "50V",
+        "grid_voltage_options_V": [
+          220,
+          230,
+          240
+        ],
+        "grid_connection": "L+N+PE",
+        "grid_voltage_range_V": [
+          160,
+          300
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "30dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi inbuilt; LAN/4G optional; COM1 USB",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "efficiency_scope": "Merged97.1% cell visually spans these3columns"
+      }
+    },
+    {
+      "model": "PSIS-3K6",
+      "source_id": "polycab_small_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 3600.0,
+        "vdc_max_v": 550,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 40,
+        "mppt_max_v": 540,
+        "mppt_count": 1,
+        "efficiency_max_pct": 97.1,
+        "efficiency_euro_pct": 96.1,
+        "width_m": 0.271,
+        "height_m": 0.256,
+        "depth_m": 0.135,
+        "weight_kg": 4.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 1,
+        "output_current_max_a": 18,
+        "idc_max_a": 20,
+        "isc_a": 30
+      },
+      "qualified_context": {
+        "source_id": "polycab_small_20261106T0800",
+        "locator": "Physical page2 PSIS-3K6 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 3960.0,
+        "max_active_W_at_PF1": 3960.0,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "20A",
+        "DC_short_circuit_current_native": "30A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          1
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "50V",
+        "grid_voltage_options_V": [
+          220,
+          230,
+          240
+        ],
+        "grid_connection": "L+N+PE",
+        "grid_voltage_range_V": [
+          160,
+          300
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "30dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi inbuilt; LAN/4G optional; COM1 USB",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "efficiency_scope": "Merged97.1% cell visually spans these3columns"
+      }
+    },
+    {
+      "model": "PSIS-4K0",
+      "source_id": "polycab_small_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 4000,
+        "vdc_max_v": 550,
+        "vdc_rated_v": 360,
+        "mppt_min_v": 40,
+        "mppt_max_v": 540,
+        "mppt_count": 1,
+        "efficiency_max_pct": 97.2,
+        "efficiency_euro_pct": 96.2,
+        "width_m": 0.271,
+        "height_m": 0.256,
+        "depth_m": 0.135,
+        "weight_kg": 4.4,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 1,
+        "output_current_max_a": 20,
+        "idc_max_a": 20,
+        "isc_a": 30
+      },
+      "qualified_context": {
+        "source_id": "polycab_small_20261106T0800",
+        "locator": "Physical page2 PSIS-4K0 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 4400,
+        "max_active_W_at_PF1": 4400,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "20A",
+        "DC_short_circuit_current_native": "30A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          1
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "50V",
+        "grid_voltage_options_V": [
+          220,
+          230,
+          240
+        ],
+        "grid_connection": "L+N+PE",
+        "grid_voltage_range_V": [
+          160,
+          300
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "30dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi inbuilt; LAN/4G optional; COM1 USB",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date"
+      }
+    },
+    {
+      "model": "PSIT-12K-SM3",
+      "source_id": "polycab_mid_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 12000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "efficiency_max_pct": 98.3,
+        "efficiency_euro_pct": 97.8,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 18.7,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type III / AC Type III",
+        "product_warranty_years": 8
+      },
+      "qualified_context": {
+        "source_id": "polycab_mid_20261106T0800",
+        "locator": "Physical page2 PSIT-12K-SM3 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 13200,
+        "max_active_W_at_PF1": 13200,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "15A+30A",
+        "DC_short_circuit_current_native": "20A+40A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          1,
+          2
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "180V",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3W+N+PE",
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "<30dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "RS485; WiFi/4G/LAN optional",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "AC_current_native": "3*20.2A",
+        "AC_current_scope": "Native3*vector retained; per-phase versus aggregate not flattened into scalar",
+        "surge_scope": "Native table explicitly TypeIII DC/AC, not silently normalized to II"
+      }
+    },
+    {
+      "model": "PSIT-15K-SM3",
+      "source_id": "polycab_mid_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 15000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "efficiency_max_pct": 98.3,
+        "efficiency_euro_pct": 97.8,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 20.1,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Natural cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type III / AC Type III",
+        "product_warranty_years": 8
+      },
+      "qualified_context": {
+        "source_id": "polycab_mid_20261106T0800",
+        "locator": "Physical page2 PSIT-15K-SM3 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 16700,
+        "max_active_W_at_PF1": 16700,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "15A+30A",
+        "DC_short_circuit_current_native": "20A+40A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          1,
+          2
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "180V",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3W+N+PE",
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "<30dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "RS485; WiFi/4G/LAN optional",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "AC_current_native": "3*25.3A",
+        "AC_current_scope": "Native3*vector retained; per-phase versus aggregate not flattened into scalar",
+        "surge_scope": "Native table explicitly TypeIII DC/AC, not silently normalized to II"
+      }
+    },
+    {
+      "model": "PSIT-20K-SM4",
+      "source_id": "polycab_mid_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 20000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "efficiency_max_pct": 98.4,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 20.3,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type III / AC Type III",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 2
+      },
+      "qualified_context": {
+        "source_id": "polycab_mid_20261106T0800",
+        "locator": "Physical page2 PSIT-20K-SM4 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 22000,
+        "max_active_W_at_PF1": 22000,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "30A+30A",
+        "DC_short_circuit_current_native": "40A+40A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          2,
+          2
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "180V",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3W+N+PE",
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "<45dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "RS485; WiFi/4G/LAN optional",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "AC_current_native": "3*33.7A",
+        "AC_current_scope": "Native3*vector retained; per-phase versus aggregate not flattened into scalar",
+        "surge_scope": "Native table explicitly TypeIII DC/AC, not silently normalized to II"
+      }
+    },
+    {
+      "model": "PSIT-25K-SM4",
+      "source_id": "polycab_mid_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 25000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "efficiency_max_pct": 98.4,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 21.5,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type III / AC Type III",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 2
+      },
+      "qualified_context": {
+        "source_id": "polycab_mid_20261106T0800",
+        "locator": "Physical page2 PSIT-25K-SM4 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 27500,
+        "max_active_W_at_PF1": 27500,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "30A+30A",
+        "DC_short_circuit_current_native": "40A+40A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          2,
+          2
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "180V",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3W+N+PE",
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "<45dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "RS485; WiFi/4G/LAN optional",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "AC_current_native": "3*39.8A",
+        "AC_current_scope": "Native3*vector retained; per-phase versus aggregate not flattened into scalar",
+        "surge_scope": "Native table explicitly TypeIII DC/AC, not silently normalized to II"
+      }
+    },
+    {
+      "model": "PSIT-30K-SM4",
+      "source_id": "polycab_mid_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 30000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 160,
+        "mppt_max_v": 1000,
+        "mppt_count": 2,
+        "efficiency_max_pct": 98.4,
+        "efficiency_euro_pct": 98.0,
+        "width_m": 0.398,
+        "height_m": 0.46,
+        "depth_m": 0.19,
+        "weight_kg": 21.5,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type III / AC Type III",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 2
+      },
+      "qualified_context": {
+        "source_id": "polycab_mid_20261106T0800",
+        "locator": "Physical page2 PSIT-30K-SM4 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 33000,
+        "max_active_W_at_PF1": 33000,
+        "PV_array_configuration": "150% STC, subject to PV module rating",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "40A+30A",
+        "DC_short_circuit_current_native": "50A+37.5A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          2,
+          2
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "180V",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3W+N+PE",
+        "grid_voltage_range_V": [
+          260,
+          510
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "<45dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "RS485; WiFi/4G/LAN optional",
+        "DC_switch_scope": "Support only; installed presence not assumed from this wording",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says support",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "AC_current_native": "3*50.2A",
+        "AC_current_scope": "Native3*vector retained; per-phase versus aggregate not flattened into scalar",
+        "surge_scope": "Native table explicitly TypeIII DC/AC, not silently normalized to II",
+        "efficiency_scope": "Merged 98.4% cell covers20/25/30K; no transfer of12/15K value"
+      }
+    },
+    {
+      "model": "PSIT-40K-SM6",
+      "source_id": "polycab_large_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 40000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 180,
+        "mppt_max_v": 1000,
+        "mppt_count": 3,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "width_m": 0.635,
+        "height_m": 0.53,
+        "depth_m": 0.224,
+        "weight_kg": 41.5,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 2,
+        "output_current_max_a": 67.5,
+        "dc_switch": true
+      },
+      "qualified_context": {
+        "source_id": "polycab_large_20261106T0800",
+        "locator": "Physical page2 PSIT-40K-SM6 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 44500,
+        "max_active_W_at_PF1": 44500,
+        "PV_array_configuration": "150%, module-rating conditions apply",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "40A+2*32A",
+        "DC_short_circuit_current_native": "50A+2*45A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          2,
+          2,
+          2
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "200V (combined Start Input Voltage/Min Operating Voltage row)",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3L+N+PE",
+        "grid_voltage_range_V": [
+          322,
+          520
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "<45dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi/GPRS/RS485/LAN/4G optional",
+        "DC_switch_scope": "Inbuilt",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says inbuilt; includes PV string monitoring",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "communications_hold": "Cover lists RS485 monitoring; technical page2 explicitly lists all interfaces as optional. Default RS485 inclusion held; use page2 optional qualifier."
+      }
+    },
+    {
+      "model": "PSIT-50K-SM8",
+      "source_id": "polycab_large_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 50000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 180,
+        "mppt_max_v": 1000,
+        "mppt_count": 4,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "width_m": 0.635,
+        "height_m": 0.53,
+        "depth_m": 0.224,
+        "weight_kg": 42,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 2,
+        "output_current_max_a": 84.3,
+        "dc_switch": true
+      },
+      "qualified_context": {
+        "source_id": "polycab_large_20261106T0800",
+        "locator": "Physical page2 PSIT-50K-SM8 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 55600,
+        "max_active_W_at_PF1": 55600,
+        "PV_array_configuration": "150%, module-rating conditions apply",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "40A+3*32A",
+        "DC_short_circuit_current_native": "50A+3*45A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "200V (combined Start Input Voltage/Min Operating Voltage row)",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3L+N+PE",
+        "grid_voltage_range_V": [
+          322,
+          520
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "<45dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi/GPRS/RS485/LAN/4G optional",
+        "DC_switch_scope": "Inbuilt",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says inbuilt; includes PV string monitoring",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "communications_hold": "Cover lists RS485 monitoring; technical page2 explicitly lists all interfaces as optional. Default RS485 inclusion held; use page2 optional qualifier."
+      }
+    },
+    {
+      "model": "PSIT-60K-SM8",
+      "source_id": "polycab_large_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 60000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 180,
+        "mppt_max_v": 1000,
+        "mppt_count": 4,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "width_m": 0.635,
+        "height_m": 0.53,
+        "depth_m": 0.233,
+        "weight_kg": 42,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "strings_per_mppt": 2,
+        "output_current_max_a": 92,
+        "dc_switch": true
+      },
+      "qualified_context": {
+        "source_id": "polycab_large_20261106T0800",
+        "locator": "Physical page2 PSIT-60K-SM8 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 66700,
+        "max_active_W_at_PF1": 66700,
+        "PV_array_configuration": "150%, module-rating conditions apply",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "40A+3*32A",
+        "DC_short_circuit_current_native": "50A+3*45A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "200V (combined Start Input Voltage/Min Operating Voltage row)",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3L+N+PE",
+        "grid_voltage_range_V": [
+          322,
+          520
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "<55dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi/GPRS/RS485/LAN/4G optional",
+        "DC_switch_scope": "Inbuilt",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says inbuilt; includes PV string monitoring",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "communications_hold": "Cover lists RS485 monitoring; technical page2 explicitly lists all interfaces as optional. Default RS485 inclusion held; use page2 optional qualifier."
+      }
+    },
+    {
+      "model": "PSIT-75K-SM14",
+      "source_id": "polycab_large_20261106T0800",
+      "typed_fields": {
+        "pac_rated_w": 75000,
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 620,
+        "mppt_min_v": 180,
+        "mppt_max_v": 1000,
+        "mppt_count": 4,
+        "efficiency_max_pct": 98.3,
+        "efficiency_euro_pct": 97.9,
+        "width_m": 0.635,
+        "height_m": 0.53,
+        "depth_m": 0.233,
+        "weight_kg": 43.3,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "output_current_max_a": 125,
+        "dc_switch": true
+      },
+      "qualified_context": {
+        "source_id": "polycab_large_20261106T0800",
+        "locator": "Physical page2 PSIT-75K-SM14 exact column and merged cells/footnotes",
+        "rated_active_power_basis": "Explicit Rated AC Active Power in W, not model-name or apparent-power conversion",
+        "max_apparent_VA": 82500,
+        "max_active_W_at_PF1": 82500,
+        "PV_array_configuration": "200%, module-rating conditions apply",
+        "array_scope": "Published allowed PV configuration percentage; not rated DC conversion power",
+        "DC_input_current_native": "2*64A+2*48A",
+        "DC_short_circuit_current_native": "2*72A+2*54A",
+        "DC_current_scope": "Native MPPT vectors retained, not summed into aggregate/string current. Single-MPPT PSIS scalar is explicit max PV input, not module Isc.",
+        "strings_per_MPPT_native": [
+          4,
+          4,
+          3,
+          3
+        ],
+        "string_count_scope": "Native explicit vector; no flattening asymmetric strings or input_count derivation",
+        "startup_minimum_voltage_native": "250V/180V (startup/minimum operating)",
+        "grid_voltage_options_V": [
+          380,
+          400,
+          415
+        ],
+        "grid_connection": "3L+N+PE",
+        "grid_voltage_range_V": [
+          322,
+          520
+        ],
+        "grid_voltage_range_scope": "Adjustable; depends on applicable grid code/government regulations",
+        "grid_frequency_options_Hz": [
+          50,
+          60
+        ],
+        "grid_frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "THDi": "<3% at rated power",
+        "DC_injection": "<0.5% In",
+        "power_factor": ">0.99 at rated power; adjustable0.8leading to0.8lagging",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Non-condensing qualifier not printed on inverter sheets, not inferred",
+        "maximum_altitude_m": 4000,
+        "noise": "55dB typical",
+        "night_self_consumption": "<1W; large sheet says standard",
+        "display_native": "Wireless & APP+LED, LCD",
+        "communications": "Wi-Fi/GPRS/RS485/LAN/4G optional",
+        "DC_switch_scope": "Inbuilt",
+        "protection_claims": [
+          "anti-islanding",
+          "AC overcurrent",
+          "AC short-circuit",
+          "DC reverse connection",
+          "insulation detection",
+          "leakage current"
+        ],
+        "protection_claim_scope": "Sheet says inbuilt; includes PV string monitoring",
+        "safety_standards_OEM": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "EMC_native": "IEC61000 (unsuffixed as printed)",
+        "grid_code_OEM": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "certification_scope": "OEM listed claims, no independent certificate or regional approval validation",
+        "warranty_scope": "8-year public sheet assertion; independent terms/start event/coverage not established",
+        "regional_scope": "Indian grid-tie rooftop/C&I product listing, not worldwide approval or manufacturing-country evidence",
+        "source_date_scope": "PDF body undated; filename revision retained, HTTP date not product effective date",
+        "communications_hold": "Cover lists RS485 monitoring; technical page2 explicitly lists all interfaces as optional. Default RS485 inclusion held; use page2 optional qualifier."
+      }
+    },
+    {
+      "model": "PSIT-100K-SM16",
+      "source_id": "polycab_utility_20261106T0800",
+      "typed_fields": {
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 600,
+        "mppt_min_v": 200,
+        "mppt_max_v": 1000,
+        "mppt_count": 8,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "width_m": 0.936,
+        "height_m": 0.678,
+        "depth_m": 0.365,
+        "weight_kg": 91.5,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "dc_switch": true,
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "vac_rated_v": 400,
+        "pac_rated_w": 100000
+      },
+      "qualified_context": {
+        "source_id": "polycab_utility_20261106T0800",
+        "locator": "Physical page2 exact PSIT-100K-SM16 column and merged cells/footnotes, rendered and visually checked",
+        "source_listing": "https://polycab.com/product-brochures/solar-brochures",
+        "scope": "Explicit OEM hardware model; KH and K labels distinguish12/15MPPT and40/30A perMPPT, not fictional cross-products",
+        "rated_power_basis": "Explicit Rated AC Active Power inW",
+        "array_scope": "No arraypower inferred as rated DC conversion capacity",
+        "maximum_PV_configuration": "150% STC, subject to PV module rating",
+        "input_current_native": "3*40A+5*32A",
+        "short_circuit_current_native": "3*50A+5*45A",
+        "current_scope": "Vectors/perMPPT not summed into aggregate current or divided to infer perstring. Utility AC3* wording not flattened.",
+        "startup_minimum_voltage": "250Vstartup/200Vminimumoperating",
+        "max_active_W": 110000,
+        "max_apparent_VA": 111000,
+        "apparent_power_temperature_curve": null,
+        "temperature_scope": "Curve is apparent kVA, not converted to activeW; no scalar active thermal derating inferred",
+        "AC_current_native": "3*168.8A",
+        "AC_voltage_range_V": [
+          322,
+          520
+        ],
+        "AC_connection": "3W+N+PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "grid_range_scope": "Gridvoltage/frequencymayvary by applicable regulation; utilityrangeadjustable",
+        "power_factor": ">0.99ratedpower; adjustable0.8LD to0.8LG",
+        "THDi": "<3%atratedpower",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Noncondensing qualifier not printed, not inferred",
+        "maximum_altitude_m": 4000,
+        "altitude_derating": null,
+        "night_self_consumption": "<10W standard",
+        "noise": "65dB typical",
+        "user_interface": "Wireless&APP+LED,LCD",
+        "communication": "Wi-Fi/LAN/GPRS/RS485 optional; COM1DB9,COM4plug-and-playconnector",
+        "protection_scope": "InbuiltDCswitch/antiisland/ACovercurrent/shortcircuit/DCreverse/insulation/leakage/PVstringmonitoring",
+        "warranty_scope": "Eightyearsheetclaim; independentterms/start/coverageunverified",
+        "regional_scope": "Indianutility/C&Ilisting, not worldwideapproval or manufacturingcountry",
+        "certification_claim_scope": "No independent certificate verification; only explicit statements from this exact PDF",
+        "date_scope": "Bodyundated,filenameV3retained; HTTPmodificationnotpublication",
+        "OEM_safety_claims": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "OEM_EMC_claim": "IEC61000",
+        "OEM_grid_claims": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "DC_injection": "<0.5%In"
+      }
+    },
+    {
+      "model": "PSIT-110K-SM18",
+      "source_id": "polycab_utility_20261106T0800",
+      "typed_fields": {
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 600,
+        "mppt_min_v": 200,
+        "mppt_max_v": 1000,
+        "mppt_count": 9,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 97.8,
+        "width_m": 0.936,
+        "height_m": 0.678,
+        "depth_m": 0.365,
+        "weight_kg": 92,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "dc_switch": true,
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "vac_rated_v": 400,
+        "pac_rated_w": 110000
+      },
+      "qualified_context": {
+        "source_id": "polycab_utility_20261106T0800",
+        "locator": "Physical page2 exact PSIT-110K-SM18 column and merged cells/footnotes, rendered and visually checked",
+        "source_listing": "https://polycab.com/product-brochures/solar-brochures",
+        "scope": "Explicit OEM hardware model; KH and K labels distinguish12/15MPPT and40/30A perMPPT, not fictional cross-products",
+        "rated_power_basis": "Explicit Rated AC Active Power inW",
+        "array_scope": "No arraypower inferred as rated DC conversion capacity",
+        "maximum_PV_configuration": "150% STC, subject to PV module rating",
+        "input_current_native": "3*40A+6*32A",
+        "short_circuit_current_native": "3*50A+6*45A",
+        "current_scope": "Vectors/perMPPT not summed into aggregate current or divided to infer perstring. Utility AC3* wording not flattened.",
+        "startup_minimum_voltage": "250Vstartup/200Vminimumoperating",
+        "max_active_W": 121000,
+        "max_apparent_VA": 123000,
+        "apparent_power_temperature_curve": null,
+        "temperature_scope": "Curve is apparent kVA, not converted to activeW; no scalar active thermal derating inferred",
+        "AC_current_native": "3*187A",
+        "AC_voltage_range_V": [
+          322,
+          520
+        ],
+        "AC_connection": "3W+N+PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "grid_range_scope": "Gridvoltage/frequencymayvary by applicable regulation; utilityrangeadjustable",
+        "power_factor": ">0.99ratedpower; adjustable0.8LD to0.8LG",
+        "THDi": "<3%atratedpower",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Noncondensing qualifier not printed, not inferred",
+        "maximum_altitude_m": 4000,
+        "altitude_derating": null,
+        "night_self_consumption": "<10W standard",
+        "noise": "65dB typical",
+        "user_interface": "Wireless&APP+LED,LCD",
+        "communication": "Wi-Fi/LAN/GPRS/RS485 optional; COM1DB9,COM4plug-and-playconnector",
+        "protection_scope": "InbuiltDCswitch/antiisland/ACovercurrent/shortcircuit/DCreverse/insulation/leakage/PVstringmonitoring",
+        "warranty_scope": "Eightyearsheetclaim; independentterms/start/coverageunverified",
+        "regional_scope": "Indianutility/C&Ilisting, not worldwideapproval or manufacturingcountry",
+        "certification_claim_scope": "No independent certificate verification; only explicit statements from this exact PDF",
+        "date_scope": "Bodyundated,filenameV3retained; HTTPmodificationnotpublication",
+        "OEM_safety_claims": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "OEM_EMC_claim": "IEC61000",
+        "OEM_grid_claims": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "DC_injection": "<0.5%In"
+      }
+    },
+    {
+      "model": "PSIT-125K-SM18",
+      "source_id": "polycab_utility_20261106T0800",
+      "typed_fields": {
+        "vdc_max_v": 1100,
+        "vdc_rated_v": 600,
+        "mppt_min_v": 200,
+        "mppt_max_v": 1000,
+        "mppt_count": 9,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 98.2,
+        "efficiency_euro_pct": 98,
+        "width_m": 0.936,
+        "height_m": 0.678,
+        "depth_m": 0.365,
+        "weight_kg": 92,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -25,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Fan cooling",
+        "insulation_method": "transformerless",
+        "dc_switch": true,
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 8,
+        "vac_rated_v": 400,
+        "pac_rated_w": 125000
+      },
+      "qualified_context": {
+        "source_id": "polycab_utility_20261106T0800",
+        "locator": "Physical page2 exact PSIT-125K-SM18 column and merged cells/footnotes, rendered and visually checked",
+        "source_listing": "https://polycab.com/product-brochures/solar-brochures",
+        "scope": "Explicit OEM hardware model; KH and K labels distinguish12/15MPPT and40/30A perMPPT, not fictional cross-products",
+        "rated_power_basis": "Explicit Rated AC Active Power inW",
+        "array_scope": "No arraypower inferred as rated DC conversion capacity",
+        "maximum_PV_configuration": "150% STC, subject to PV module rating",
+        "input_current_native": "3*40A+6*32A",
+        "short_circuit_current_native": "3*50A+6*45A",
+        "current_scope": "Vectors/perMPPT not summed into aggregate current or divided to infer perstring. Utility AC3* wording not flattened.",
+        "startup_minimum_voltage": "250Vstartup/200Vminimumoperating",
+        "max_active_W": 125000,
+        "max_apparent_VA": 125000,
+        "apparent_power_temperature_curve": null,
+        "temperature_scope": "Curve is apparent kVA, not converted to activeW; no scalar active thermal derating inferred",
+        "AC_current_native": "3*181A",
+        "AC_voltage_range_V": [
+          322,
+          520
+        ],
+        "AC_connection": "3W+N+PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "grid_range_scope": "Gridvoltage/frequencymayvary by applicable regulation; utilityrangeadjustable",
+        "power_factor": ">0.99ratedpower; adjustable0.8LD to0.8LG",
+        "THDi": "<3%atratedpower",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Noncondensing qualifier not printed, not inferred",
+        "maximum_altitude_m": 4000,
+        "altitude_derating": null,
+        "night_self_consumption": "<10W standard",
+        "noise": "65dB typical",
+        "user_interface": "Wireless&APP+LED,LCD",
+        "communication": "Wi-Fi/LAN/GPRS/RS485 optional; COM1DB9,COM4plug-and-playconnector",
+        "protection_scope": "InbuiltDCswitch/antiisland/ACovercurrent/shortcircuit/DCreverse/insulation/leakage/PVstringmonitoring",
+        "warranty_scope": "Eightyearsheetclaim; independentterms/start/coverageunverified",
+        "regional_scope": "Indianutility/C&Ilisting, not worldwideapproval or manufacturingcountry",
+        "certification_claim_scope": "No independent certificate verification; only explicit statements from this exact PDF",
+        "date_scope": "Bodyundated,filenameV3retained; HTTPmodificationnotpublication",
+        "OEM_safety_claims": [
+          "IEC62109-1",
+          "IEC62109-2"
+        ],
+        "OEM_EMC_claim": "IEC61000",
+        "OEM_grid_claims": [
+          "IEC61727",
+          "IEC62116",
+          "IEC60068",
+          "IEC61683"
+        ],
+        "DC_injection": "<0.5%In"
+      }
+    },
+    {
+      "model": "PSIT-350K-KH-UT",
+      "source_id": "polycab_high_20261106T0800",
+      "typed_fields": {
+        "vdc_max_v": 1500,
+        "vdc_rated_v": 1160,
+        "mppt_min_v": 480,
+        "mppt_max_v": 1500,
+        "mppt_count": 12,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 99.01,
+        "efficiency_euro_pct": 98.8,
+        "width_m": 1.12,
+        "height_m": 0.81,
+        "depth_m": 0.368,
+        "weight_kg": 124,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -35,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Smart fan cooling",
+        "insulation_method": "Non-isolated",
+        "dc_switch": true,
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 5,
+        "vac_rated_v": 800,
+        "output_current_max_a": 254,
+        "connector_type": "MC4 DC,4–6mm2 standard /10mm2 optional; OT/DT AC,max400mm2"
+      },
+      "qualified_context": {
+        "source_id": "polycab_high_20261106T0800",
+        "locator": "Physical page2 exact PSIT-350K-KH-UT column and merged cells/footnotes, rendered and visually checked",
+        "source_listing": "https://polycab.com/product-brochures/solar-brochures",
+        "scope": "Explicit OEM hardware model; KH and K labels distinguish12/15MPPT and40/30A perMPPT, not fictional cross-products",
+        "rated_power_basis": "350kW Rating and352kW nominal active cells conflict, scalar withheld",
+        "array_scope": "No arraypower inferred as rated DC conversion capacity",
+        "maximum_PV_configuration": null,
+        "input_current_native": "40AperMPPT",
+        "short_circuit_current_native": "60AperMPPT",
+        "current_scope": "Vectors/perMPPT not summed into aggregate current or divided to infer perstring. Utility AC3* wording not flattened.",
+        "startup_minimum_voltage": "500Vstartup",
+        "max_active_W": 352000,
+        "max_apparent_VA": 352000,
+        "apparent_power_temperature_curve": "352kVAat40C/320kVAat45C/300kVAat50C",
+        "temperature_scope": "Curve is apparent kVA, not converted to activeW; no scalar active thermal derating inferred",
+        "AC_current_native": "254Amaximum",
+        "AC_voltage_range_V": [
+          640,
+          920
+        ],
+        "AC_connection": "3L/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "grid_range_scope": "Gridvoltage/frequencymayvary by applicable regulation; utilityrangeadjustable",
+        "power_factor": "approximately1; adjustable0.8leading to0.8lagging",
+        "THDi": "<3%",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Noncondensing qualifier not printed, not inferred",
+        "maximum_altitude_m": 5000,
+        "altitude_derating": "above4000m",
+        "night_self_consumption": "<3W",
+        "noise": "Not stated",
+        "user_interface": "LED,optionalLCD,WLAN+APP",
+        "communication": "RS485 or HPLC; ModbusRTU",
+        "protection_scope": "IntegratedPVstring/current/humidity/insulation/residualcurrent monitoring; reversepolarity/antiisland/ACovercurrent/shortcircuit/overvoltage; PIDrecovery,antiPID,Qatnight,nightpowersupplyintegrated; IVcurvescanoptional",
+        "warranty_scope": "Fiveyearsstandard, paidextensiontototaltenyears, not tenyearstandard; independentterms/start/coverageunverified",
+        "regional_scope": "Indianutility/C&Ilisting, not worldwideapproval or manufacturingcountry",
+        "certification_claim_scope": "No independent certificate verification; only explicit statements from this exact PDF",
+        "date_scope": "Bodyundated,filenameV3retained; HTTPmodificationnotpublication",
+        "optional_C5": "Cover says optional, not standard corrosion qualification",
+        "standard_claims": "No certification row in this technical table; no sibling standards transferred"
+      }
+    },
+    {
+      "model": "PSIT-350K-K-UT",
+      "source_id": "polycab_high_20261106T0800",
+      "typed_fields": {
+        "vdc_max_v": 1500,
+        "vdc_rated_v": 1160,
+        "mppt_min_v": 480,
+        "mppt_max_v": 1500,
+        "mppt_count": 15,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 99.01,
+        "efficiency_euro_pct": 98.8,
+        "width_m": 1.12,
+        "height_m": 0.81,
+        "depth_m": 0.368,
+        "weight_kg": 124,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -35,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Smart fan cooling",
+        "insulation_method": "Non-isolated",
+        "dc_switch": true,
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 5,
+        "vac_rated_v": 800,
+        "output_current_max_a": 254,
+        "connector_type": "MC4 DC,4–6mm2 standard /10mm2 optional; OT/DT AC,max400mm2"
+      },
+      "qualified_context": {
+        "source_id": "polycab_high_20261106T0800",
+        "locator": "Physical page2 exact PSIT-350K-K-UT column and merged cells/footnotes, rendered and visually checked",
+        "source_listing": "https://polycab.com/product-brochures/solar-brochures",
+        "scope": "Explicit OEM hardware model; KH and K labels distinguish12/15MPPT and40/30A perMPPT, not fictional cross-products",
+        "rated_power_basis": "350kW Rating and352kW nominal active cells conflict, scalar withheld",
+        "array_scope": "No arraypower inferred as rated DC conversion capacity",
+        "maximum_PV_configuration": null,
+        "input_current_native": "30AperMPPT",
+        "short_circuit_current_native": "50AperMPPT",
+        "current_scope": "Vectors/perMPPT not summed into aggregate current or divided to infer perstring. Utility AC3* wording not flattened.",
+        "startup_minimum_voltage": "500Vstartup",
+        "max_active_W": 352000,
+        "max_apparent_VA": 352000,
+        "apparent_power_temperature_curve": "352kVAat40C/320kVAat45C/300kVAat50C",
+        "temperature_scope": "Curve is apparent kVA, not converted to activeW; no scalar active thermal derating inferred",
+        "AC_current_native": "254Amaximum",
+        "AC_voltage_range_V": [
+          640,
+          920
+        ],
+        "AC_connection": "3L/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "grid_range_scope": "Gridvoltage/frequencymayvary by applicable regulation; utilityrangeadjustable",
+        "power_factor": "approximately1; adjustable0.8leading to0.8lagging",
+        "THDi": "<3%",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Noncondensing qualifier not printed, not inferred",
+        "maximum_altitude_m": 5000,
+        "altitude_derating": "above4000m",
+        "night_self_consumption": "<3W",
+        "noise": "Not stated",
+        "user_interface": "LED,optionalLCD,WLAN+APP",
+        "communication": "RS485 or HPLC; ModbusRTU",
+        "protection_scope": "IntegratedPVstring/current/humidity/insulation/residualcurrent monitoring; reversepolarity/antiisland/ACovercurrent/shortcircuit/overvoltage; PIDrecovery,antiPID,Qatnight,nightpowersupplyintegrated; IVcurvescanoptional",
+        "warranty_scope": "Fiveyearsstandard, paidextensiontototaltenyears, not tenyearstandard; independentterms/start/coverageunverified",
+        "regional_scope": "Indianutility/C&Ilisting, not worldwideapproval or manufacturingcountry",
+        "certification_claim_scope": "No independent certificate verification; only explicit statements from this exact PDF",
+        "date_scope": "Bodyundated,filenameV3retained; HTTPmodificationnotpublication",
+        "optional_C5": "Cover says optional, not standard corrosion qualification",
+        "standard_claims": "No certification row in this technical table; no sibling standards transferred"
+      }
+    },
+    {
+      "model": "PSIT-320K-KH-UT",
+      "source_id": "polycab_high_20261106T0800",
+      "typed_fields": {
+        "vdc_max_v": 1500,
+        "vdc_rated_v": 1160,
+        "mppt_min_v": 480,
+        "mppt_max_v": 1500,
+        "mppt_count": 12,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 99.01,
+        "efficiency_euro_pct": 98.8,
+        "width_m": 1.12,
+        "height_m": 0.81,
+        "depth_m": 0.368,
+        "weight_kg": 124,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -35,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Smart fan cooling",
+        "insulation_method": "Non-isolated",
+        "dc_switch": true,
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 5,
+        "vac_rated_v": 800,
+        "pac_rated_w": 320000,
+        "output_current_max_a": 254,
+        "connector_type": "MC4 DC,4–6mm2 standard /10mm2 optional; OT/DT AC,max400mm2"
+      },
+      "qualified_context": {
+        "source_id": "polycab_high_20261106T0800",
+        "locator": "Physical page2 exact PSIT-320K-KH-UT column and merged cells/footnotes, rendered and visually checked",
+        "source_listing": "https://polycab.com/product-brochures/solar-brochures",
+        "scope": "Explicit OEM hardware model; KH and K labels distinguish12/15MPPT and40/30A perMPPT, not fictional cross-products",
+        "rated_power_basis": "Explicit nominal active320kW agrees Rating320kW; maximum active352kW kept separate",
+        "array_scope": "No arraypower inferred as rated DC conversion capacity",
+        "maximum_PV_configuration": null,
+        "input_current_native": "40AperMPPT",
+        "short_circuit_current_native": "60AperMPPT",
+        "current_scope": "Vectors/perMPPT not summed into aggregate current or divided to infer perstring. Utility AC3* wording not flattened.",
+        "startup_minimum_voltage": "500Vstartup",
+        "max_active_W": 352000,
+        "max_apparent_VA": 352000,
+        "apparent_power_temperature_curve": "320kVAat45C/300kVAat50C",
+        "temperature_scope": "Curve is apparent kVA, not converted to activeW; no scalar active thermal derating inferred",
+        "AC_current_native": "254Amaximum",
+        "AC_voltage_range_V": [
+          640,
+          920
+        ],
+        "AC_connection": "3L/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "grid_range_scope": "Gridvoltage/frequencymayvary by applicable regulation; utilityrangeadjustable",
+        "power_factor": "approximately1; adjustable0.8leading to0.8lagging",
+        "THDi": "<3%",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Noncondensing qualifier not printed, not inferred",
+        "maximum_altitude_m": 5000,
+        "altitude_derating": "above4000m",
+        "night_self_consumption": "<3W",
+        "noise": "Not stated",
+        "user_interface": "LED,optionalLCD,WLAN+APP",
+        "communication": "RS485 or HPLC; ModbusRTU",
+        "protection_scope": "IntegratedPVstring/current/humidity/insulation/residualcurrent monitoring; reversepolarity/antiisland/ACovercurrent/shortcircuit/overvoltage; PIDrecovery,antiPID,Qatnight,nightpowersupplyintegrated; IVcurvescanoptional",
+        "warranty_scope": "Fiveyearsstandard, paidextensiontototaltenyears, not tenyearstandard; independentterms/start/coverageunverified",
+        "regional_scope": "Indianutility/C&Ilisting, not worldwideapproval or manufacturingcountry",
+        "certification_claim_scope": "No independent certificate verification; only explicit statements from this exact PDF",
+        "date_scope": "Bodyundated,filenameV3retained; HTTPmodificationnotpublication",
+        "optional_C5": "Cover says optional, not standard corrosion qualification",
+        "standard_claims": "No certification row in this technical table; no sibling standards transferred"
+      }
+    },
+    {
+      "model": "PSIT-320K-K-UT",
+      "source_id": "polycab_high_20261106T0800",
+      "typed_fields": {
+        "vdc_max_v": 1500,
+        "vdc_rated_v": 1160,
+        "mppt_min_v": 480,
+        "mppt_max_v": 1500,
+        "mppt_count": 15,
+        "strings_per_mppt": 2,
+        "efficiency_max_pct": 99.01,
+        "efficiency_euro_pct": 98.8,
+        "width_m": 1.12,
+        "height_m": 0.81,
+        "depth_m": 0.368,
+        "weight_kg": 124,
+        "ip_rating": "IP66",
+        "operating_temperature_min_c": -35,
+        "operating_temperature_max_c": 60,
+        "cooling_method": "Smart fan cooling",
+        "insulation_method": "Non-isolated",
+        "dc_switch": true,
+        "surge_protection": "DC Type II / AC Type II",
+        "product_warranty_years": 5,
+        "vac_rated_v": 800,
+        "pac_rated_w": 320000,
+        "output_current_max_a": 254,
+        "connector_type": "MC4 DC,4–6mm2 standard /10mm2 optional; OT/DT AC,max400mm2"
+      },
+      "qualified_context": {
+        "source_id": "polycab_high_20261106T0800",
+        "locator": "Physical page2 exact PSIT-320K-K-UT column and merged cells/footnotes, rendered and visually checked",
+        "source_listing": "https://polycab.com/product-brochures/solar-brochures",
+        "scope": "Explicit OEM hardware model; KH and K labels distinguish12/15MPPT and40/30A perMPPT, not fictional cross-products",
+        "rated_power_basis": "Explicit nominal active320kW agrees Rating320kW; maximum active352kW kept separate",
+        "array_scope": "No arraypower inferred as rated DC conversion capacity",
+        "maximum_PV_configuration": null,
+        "input_current_native": "30AperMPPT",
+        "short_circuit_current_native": "50AperMPPT",
+        "current_scope": "Vectors/perMPPT not summed into aggregate current or divided to infer perstring. Utility AC3* wording not flattened.",
+        "startup_minimum_voltage": "500Vstartup",
+        "max_active_W": 352000,
+        "max_apparent_VA": 352000,
+        "apparent_power_temperature_curve": "320kVAat45C/300kVAat50C",
+        "temperature_scope": "Curve is apparent kVA, not converted to activeW; no scalar active thermal derating inferred",
+        "AC_current_native": "254Amaximum",
+        "AC_voltage_range_V": [
+          640,
+          920
+        ],
+        "AC_connection": "3L/PE",
+        "frequency_options_Hz": [
+          50,
+          60
+        ],
+        "frequency_ranges_Hz": [
+          [
+            45,
+            55
+          ],
+          [
+            55,
+            65
+          ]
+        ],
+        "grid_range_scope": "Gridvoltage/frequencymayvary by applicable regulation; utilityrangeadjustable",
+        "power_factor": "approximately1; adjustable0.8leading to0.8lagging",
+        "THDi": "<3%",
+        "humidity_percent": [
+          0,
+          100
+        ],
+        "humidity_scope": "Noncondensing qualifier not printed, not inferred",
+        "maximum_altitude_m": 5000,
+        "altitude_derating": "above4000m",
+        "night_self_consumption": "<3W",
+        "noise": "Not stated",
+        "user_interface": "LED,optionalLCD,WLAN+APP",
+        "communication": "RS485 or HPLC; ModbusRTU",
+        "protection_scope": "IntegratedPVstring/current/humidity/insulation/residualcurrent monitoring; reversepolarity/antiisland/ACovercurrent/shortcircuit/overvoltage; PIDrecovery,antiPID,Qatnight,nightpowersupplyintegrated; IVcurvescanoptional",
+        "warranty_scope": "Fiveyearsstandard, paidextensiontototaltenyears, not tenyearstandard; independentterms/start/coverageunverified",
+        "regional_scope": "Indianutility/C&Ilisting, not worldwideapproval or manufacturingcountry",
+        "certification_claim_scope": "No independent certificate verification; only explicit statements from this exact PDF",
+        "date_scope": "Bodyundated,filenameV3retained; HTTPmodificationnotpublication",
+        "optional_C5": "Cover says optional, not standard corrosion qualification",
+        "standard_claims": "No certification row in this technical table; no sibling standards transferred"
+      }
+    }
+  ],
+  "identity_review": "All normalized exact model names across all manufacturers and source-ID JSON screened; none existing. Literal model cells used, not abbreviated family header. No rebranding/OEM equivalence inferred.",
+  "exclusions": "EightDCDBs oneinput/oneoutput excluded from combiners; fourACDBs also outside PVcombining scope. No shipping/configuration clones."
+}

@@ -505,3 +505,50 @@ export function windSupplyAwardSummary(rows) {
   }
   return result;
 }
+
+// Printed OEM cells remain visible even when consistency checks withhold scalars.
+export function windNumericTableSummary(rows) {
+  const result = {models: 0, unavailableOriginals: 0, areaHeld: 0, cutOutHeld: 0, unknownRevision: 0};
+  for (const row of rows.filter(r => r.entity_type === "equipment" && r.equipment_category === "wind_turbine")) {
+    let ext, conflicts;
+    try { ext = JSON.parse(row.extensions_json || "{}"); conflicts = JSON.parse(row.conflicts_json || "{}"); } catch { continue; }
+    const table = ext?.oem_numeric_table;
+    if (!table?.locator || !row.sources?.includes(table.source_id)) continue;
+    result.models++;
+    if (table.original_bytes_available === false) result.unavailableOriginals++;
+    if (table.revision == null) result.unknownRevision++;
+    for (const [field, key] of [["swept_area_m2", "areaHeld"], ["cut_out_m_s", "cutOutHeld"]]) {
+      if (row[field] == null && Array.isArray(conflicts?.[field]) && conflicts[field].some(o => o?.sources?.includes(table.source_id))) result[key]++;
+    }
+  }
+  return result;
+}
+
+// Operator snapshots describe dated evidence, never an additive current fleet.
+export function windOperatorPortfolioSummary(rows) {
+  const result = {projects: 0, observations: 0, withoutEvidence: 0, excludedProjects: 0, unknownModels: 0, averageRatings: 0, dates: [], statuses: {}, capacity: {contracted: {known: 0, unknown: 0, zero: 0}, gross_reported: {known: 0, unknown: 0, zero: 0}}};
+  const dates = new Set();
+  for (const row of rows.filter(r => r.entity_type === "projects")) {
+    let observations;
+    try { observations = JSON.parse(row.extensions_json || "{}").operator_portfolio_observations || []; } catch { observations = []; }
+    const seen = new Set();
+    for (const o of Array.isArray(observations) ? observations : []) {
+      if (!o?.locator || !row.sources?.includes(o.source_id) || !/^\d{4}-\d{2}-\d{2}$/.test(o.as_of || "") || !o.facts || seen.has(`${o.source_id}:${o.as_of}`)) continue;
+      seen.add(`${o.source_id}:${o.as_of}`); dates.add(o.as_of); result.observations++;
+      const lifecycle = o.facts.status || "unknown";
+      result.statuses[lifecycle] = (result.statuses[lifecycle] || 0) + 1;
+      if (!o.facts.exact_model) result.unknownModels++;
+      if (o.facts.rating_basis === "reported_fleet_average") result.averageRatings++;
+      const category = result.capacity[o.facts.capacity_basis];
+      if (category) {
+        if (typeof o.facts.capacity_mw === "number" && Number.isFinite(o.facts.capacity_mw) && o.facts.capacity_mw >= 0) {
+          category.known++; if (o.facts.capacity_mw === 0) category.zero++;
+        } else category.unknown++;
+      }
+    }
+    if (seen.size) { result.projects++; if (row.aggregation_role === "unresolved" || row.aggregation_role === "aggregate") result.excludedProjects++; }
+    else result.withoutEvidence++;
+  }
+  result.dates = [...dates].sort();
+  return result;
+}

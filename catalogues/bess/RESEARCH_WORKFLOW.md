@@ -16,7 +16,28 @@ or a live availability feed. Do not interpret record counts as installed capacit
    local languages when useful. Check recent status updates as well as technical
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
-4. For TAB TOPzS PDF pages 10–11, `scripts/stage_bess_tab_topzs.py` stages
+4. For MaStR revision 26.2, `scripts/stage_bess_mastr.py` accepts downloaded
+   storage-unit and storage-installation XML partitions plus `Katalogwerte.xml`.
+   Require a reciprocal exclusive SEE/SSE join before using usable energy.
+   Net unit power, gross power and assigned inverter power remain separate.
+   Shared SEL identities, including sub-threshold siblings, are review flags;
+   different SEL IDs do not prove separate commercial projects. Review nearby
+   coordinates and names manually. The 6 November partitions 1 and 2 are already
+   processed: 79 accepted units, 30 battery holds and 97 non-battery exclusions.
+   Partitions 3–4 subsequently accepted 55 units, held 31 battery candidates and
+   excluded four non-battery units. Their review ledgers include all 90 threshold
+   candidates. Partitions 5–8 subsequently yielded 23 accepted and 22 held battery candidates;
+   consult their full 45-row ledger. Recheck the live release before partition 9. Retain suspended
+   status and first-commissioning dates without converting them into commercial COD.
+   Downloaded archive members must match central-directory size/CRC and have
+   individual SHA256 checksums; never label a partial download as a whole-ZIP hash.
+   For the reviewed ATESS BC55NPB and VoltStack battery sheets,
+   `scripts/stage_bess_atess_battery.py` stages only explicit rack columns from
+   local layout text. Keep module and rack boundaries separate. The nine-module
+   VoltStack energy/nominal-voltage inconsistency requires review; the adapter
+   preserves observations and never substitutes arithmetic estimates. Compare
+   exact configurations and module identities before upsert.
+   For TAB TOPzS PDF pages 10–11, `scripts/stage_bess_tab_topzs.py` stages
    eight exact cell models. Preserve the printed `6 TOPzS750` identity and reviewed
    web spacing alias; C10 uses 20°C, C100 uses 25°C, and C20 temperature is unstated.
    Fault current is in A, not kA or operating current. Live-table wet/dry mass
@@ -429,3 +450,5 @@ energy/voltage formulas. It does not infer active power or round-trip efficiency
 Both adapters stage only and refuse output overwrite. Shared cells, diagrams,
 certification scope and equipment relationships require manual review before
 existing-API upsert. Module specifications do not inherit complete-cluster limits.
+
+6 November 13:54 continuation: MaStR partition 9 returned HTTP 503 twice; cursor remains 9. Renon Xtreme LV A14 pages 34–35 are exhausted (14 base configurations). Preserve the printed R-XL037071/R-XL046081 names and R-XL035071 energy discrepancy; do not multiply optional -H suffixes. Philippine IEMOP reuse requires permission; do not bulk import its participant list. See research/2026-11-06_xtreme_lv.md.
