@@ -73,3 +73,8 @@ reported operating date, not an inferred commercial COD. `applicant` records onl
 the grant-recipient role. `grant_amount` and `grant_symbol` retain the grant, with
 no capex or unstated currency/year inference. Row locators and publication dates
 remain inside the extension. Do not also count the same constituent batteries.
+
+`doe_202412_site_roles` records the historical DOE site address fragment, operator,
+combined owner/IPPA column, registry unit count and native contract code. These
+are dated observations, not current legal ownership or physical operation. Unit
+counts do not establish a battery-module/container count.

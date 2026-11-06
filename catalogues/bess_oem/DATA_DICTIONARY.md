@@ -82,3 +82,10 @@ The `fullriver_terminal_case` extension retains exact-sheet terminal wording,
 case material and a qualified flame-resistance claim. UL94-HB is a manufacturer
 material-rating claim, not proof of product certification. Generic torque tables
 are excluded unless applicable model-specific values are visually verified.
+
+The `pylontech_force`, `pylontech_module` and `pylontech_unit` extensions retain
+model-specific current classes and time limits, nominal/usable energy, charge and
+discharge temperature ranges, strict altitude bounds and qualified life claims.
+`module_record_id` links a stack to its exact module; named controllers do not
+imply separately accepted controller records. Native dimension order is retained
+when table axes are not explicit. Short-circuit A/ms is never operating current.

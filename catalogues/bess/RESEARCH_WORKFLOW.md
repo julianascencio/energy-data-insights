@@ -349,3 +349,12 @@ as the manufacturer's material-rating claim, not independently verified product
 certification. The generic torque table uses highlighted applicable values and is
 not parsed as a model-specific torque. A suffix in an index URL does not establish
 an exact model when the printed sheet uses a base name or a raster heading.
+
+For Pylontech Force-L1 v2.3 / Force-L2 v2.2 manuals,
+`scripts/stage_bess_pylontech_force.py` stages the exact six/three system columns
+from local `pdftotext -layout` output. It checks printed revision, module and
+controller identity, column counts, module order and voltage bounds. Preserve
+standard/normal/peak current classes and the unstated L1 discharge-peak duration.
+The L2 filename says v2.3 but its cover says v2.2. System kWh is printed/rounded,
+not a multiplication of module kWh. Separate module records must not inherit
+system IP/current/efficiency. Review the mechanical and module tables separately.
