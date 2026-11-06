@@ -1,0 +1,4197 @@
+{
+  "reviewed_at": "2026-11-06T01:43:00Z",
+  "accepted": 0,
+  "held": 50,
+  "partition": {
+    "offset": 0,
+    "after_wri_id": "WRI1003149",
+    "limit": 50,
+    "last_wri_id": "WRI1003313",
+    "next_offset": null,
+    "next_after_wri_id": "WRI1003313"
+  },
+  "source_sha256": {
+    "nve-0039.json": "35f4514e6250d21c5fad49d490feadd848d46b2283ce3cab799055fa99642b6c",
+    "nve-gis-0039.json": "384774bcf6623a9ab63188e82e6a3e2f34c7d73bbbbe1baae8e3c3c2e9d39a56"
+  },
+  "decisions": [
+    {
+      "record_id": "d795948a-38d9-5797-90f7-4a8ef138420f",
+      "wri_id": "WRI1003150",
+      "name": "Funna",
+      "historical_capacity_mw": 22.0,
+      "wri_coordinates": [
+        11.7341,
+        63.4369
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 101,
+          "Navn": "Funna",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "NTE ENERGI AS",
+          "HovedEier_OrgNr": "988340715",
+          "Fylke": "Tr\u00f8ndelag",
+          "FylkesNr": "50",
+          "Kommune": "Mer\u00e5ker",
+          "KommuneNr": "34",
+          "ForsteUtnyttelseAvFalletDato": 1938,
+          "DatoForEldsteKraftproduserendeDel": 2007,
+          "MaksYtelse": 20.6,
+          "MidProd_91_20": 78.027,
+          "BruttoFallhoyde_M": 336.2,
+          "Slukeevne": 6.5,
+          "EnEkv": 0.88,
+          "ElspotomraadeNummer": "3",
+          "RegineNr": "124.C6A",
+          "ErIDrift": true,
+          "IDriftDato": "2007-12-14T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 42662,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "NTE ENERGI AS",
+              "OrgNr": 988340715,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 572,
+              "Tittel": "Regulering og utbygging av Fjergen m.v., hjemfall, N-Tr.lag"
+            },
+            {
+              "KdbID": 931,
+              "Tittel": "Erverv og regulering av Funnavassdraget"
+            },
+            {
+              "KdbID": 3027,
+              "Tittel": "Rehabilitering av Funna kraftverk"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Stj\u00f8rdalsvassdraget",
+          "SPPunkt": "31",
+          "SPSone": "504",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 9,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 9"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746179,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 101,
+            "vannkraftverknavn": "Funna",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 2007,
+            "kdbnr": 572,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 616377600000,
+            "spid": "50431",
+            "maksytelse_mw": 20.6,
+            "bruttofallhoyde_m": 336.2,
+            "energiekvivalent_kwh_m3": 0.88,
+            "vannkraftverkeier": "NTE ENERGI AS",
+            "kommunenummer": "5034",
+            "kommunenavn": "Mer\u00e5ker",
+            "fylke": "Tr\u00f8ndelag",
+            "vassdragsnr": "124.C6A2",
+            "elvenavnhierarki": "Funna/Stj\u00f8rdalsvassdraget",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "101",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 11.742539356185016,
+            "y": 63.440244138446396
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "04d3b3b5-fc3e-586e-82a7-a9b0c641a5eb",
+      "wri_id": "WRI1003158",
+      "name": "Giskemo",
+      "historical_capacity_mw": 5.0,
+      "wri_coordinates": [
+        6.8586,
+        62.4772
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "5038580b-1e14-5617-91fa-ea4e2c4e11bc",
+      "wri_id": "WRI1003159",
+      "name": "Gjerdsvik",
+      "historical_capacity_mw": 6.0,
+      "wri_coordinates": [
+        5.5839,
+        62.256
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "5b608104-0c8b-5879-9165-d214f8751e53",
+      "wri_id": "WRI1003162",
+      "name": "Glomfjord",
+      "historical_capacity_mw": 32.0,
+      "wri_coordinates": [
+        13.966,
+        66.8138
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 112,
+          "Navn": "Glomfjord",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Nordland",
+          "FylkesNr": "18",
+          "Kommune": "Mel\u00f8y",
+          "KommuneNr": "37",
+          "ForsteUtnyttelseAvFalletDato": 1920,
+          "DatoForEldsteKraftproduserendeDel": 1920,
+          "MaksYtelse": 20.0,
+          "MidProd_91_20": 88.648,
+          "BruttoFallhoyde_M": 463.5,
+          "Slukeevne": 6.0,
+          "EnEkv": 0.926,
+          "ElspotomraadeNummer": "4",
+          "RegineNr": "160.A1",
+          "ErIDrift": true,
+          "IDriftDato": "1920-06-30T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 605,
+              "Tittel": "Saltfjellet/Svartisen - Stor-Glomfjord - Utbygging, regulering m.v."
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Fykan\u00e5ga",
+          "SPPunkt": "01",
+          "SPSone": "673",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 10,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 10"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746412,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 112,
+            "vannkraftverknavn": "Glomfjord",
+            "vannkraftverktype": "K",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 1920,
+            "kdbnr": 605,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 554083200000,
+            "spid": "67301",
+            "maksytelse_mw": 20.0,
+            "bruttofallhoyde_m": 463.5,
+            "energiekvivalent_kwh_m3": 0.926,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "1837",
+            "kommunenavn": "Mel\u00f8y",
+            "fylke": "Nordland",
+            "vassdragsnr": "160.A1",
+            "elvenavnhierarki": "Fykan\u00e5ga",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "112",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 14.000938527146,
+            "y": 66.7968752208675
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "45887e04-1ff3-5228-8a8b-8e515647a88e",
+      "wri_id": "WRI1003163",
+      "name": "Grana",
+      "historical_capacity_mw": 90.0,
+      "wri_coordinates": [
+        9.675,
+        63.1163
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 113,
+          "Navn": "Grana",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "KRAFTVERKENE I ORKLA DA",
+          "HovedEier_OrgNr": "947576283",
+          "Fylke": "Tr\u00f8ndelag",
+          "FylkesNr": "50",
+          "Kommune": "Rennebu",
+          "KommuneNr": "22",
+          "ForsteUtnyttelseAvFalletDato": 1982,
+          "DatoForEldsteKraftproduserendeDel": 1982,
+          "MaksYtelse": 75.0,
+          "MidProd_91_20": 270.984,
+          "BruttoFallhoyde_M": 455.0,
+          "Slukeevne": 19.01,
+          "EnEkv": 1.095,
+          "ElspotomraadeNummer": "3",
+          "RegineNr": "121.BA0",
+          "ErIDrift": true,
+          "IDriftDato": "1982-04-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10242,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "HAFSLUND KRAFT AS",
+              "OrgNr": 976894677,
+              "ProsentAndel": 12.0,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 10505,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "KRAFTVERKENE I ORKLA DA",
+              "OrgNr": 947576283,
+              "ProsentAndel": null,
+              "ProsentAndelDrift": 100.0
+            },
+            {
+              "AdressatID": 27503,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "TR\u00d8NDERENERGI KRAFT AS",
+              "OrgNr": 878631072,
+              "ProsentAndel": 35.0,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 40542,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "NORD \u00d8STERDAL KRAFTLAG ANDELSVERK AS",
+              "OrgNr": 981309103,
+              "ProsentAndel": 4.4,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 41005,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 48.6,
+              "ProsentAndelDrift": null
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 447,
+              "Tittel": "Orkla-Grana utbyggingen - Erverv og regulering av Orkla og Grana"
+            },
+            {
+              "KdbID": 760,
+              "Tittel": "Orkla-Grana utbyggingen - Grana Kraftverk, Planendring"
+            },
+            {
+              "KdbID": 770,
+              "Tittel": "Orkla-Grana utbyggingen - Ekspropriasjon for bygging av kraftverk"
+            },
+            {
+              "KdbID": 9480,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Grana\u00a0kraftverk\u00a0-\u00a0KRAFTVERKENE I ORKLA DA - Fravik fra minstevannf\u00f8ring;  - 01.10.2024 til 20.10.2024- Referansenr:DNZYAE"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Orkla",
+          "SPPunkt": "03",
+          "SPSone": "493",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 8,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 8"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746128,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 113,
+            "vannkraftverknavn": "Grana",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1982,
+            "kdbnr": 760,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 284947200000,
+            "spid": "49303",
+            "maksytelse_mw": 75.0,
+            "bruttofallhoyde_m": 455.0,
+            "energiekvivalent_kwh_m3": 1.095,
+            "vannkraftverkeier": "KRAFTVERKENE I ORKLA DA",
+            "kommunenummer": "5022",
+            "kommunenavn": "Rennebu",
+            "fylke": "Tr\u00f8ndelag",
+            "vassdragsnr": "121.BA0",
+            "elvenavnhierarki": "Grana/Orkla",
+            "nedstromvannkraftverknr": 422,
+            "nedstromvannkraftverknr_liste": "113,422",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 9.68016747266866,
+            "y": 62.91599452494583
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "dcfef399-7119-5a3b-b5c2-c8804b7250da",
+      "wri_id": "WRI1003167",
+      "name": "Gravfoss",
+      "historical_capacity_mw": 24.0,
+      "wri_coordinates": [
+        9.9465,
+        59.9294
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "2ddffde9-db12-524b-844f-aa765143bdd5",
+      "wri_id": "WRI1003168",
+      "name": "Gresslifoss",
+      "historical_capacity_mw": 26.0,
+      "wri_coordinates": [
+        11.4394,
+        63.0577
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 115,
+          "Navn": "Gresslifoss",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Tr\u00f8ndelag",
+          "FylkesNr": "50",
+          "Kommune": "Tydal",
+          "KommuneNr": "33",
+          "ForsteUtnyttelseAvFalletDato": 1966,
+          "DatoForEldsteKraftproduserendeDel": 1966,
+          "MaksYtelse": 25.0,
+          "MidProd_91_20": 80.338,
+          "BruttoFallhoyde_M": 33.0,
+          "Slukeevne": 100.63,
+          "EnEkv": 0.068,
+          "ElspotomraadeNummer": "3",
+          "RegineNr": "123.D81",
+          "ErIDrift": true,
+          "IDriftDato": "1966-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 334,
+              "Tittel": "Ekspropriasjon for utbygging av Gresslifoss kraftverk"
+            },
+            {
+              "KdbID": 1023,
+              "Tittel": "Ekspropr. m.v. for utb. av Gresslifoss kraftverk - Planendring"
+            },
+            {
+              "KdbID": 9116,
+              "Tittel": "Revisjon av konsesjonsvilk\u00e5r for Neavassdraget"
+            },
+            {
+              "KdbID": 9448,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Gresslifoss\u00a0kraftverk\u00a0-\u00a0STATKRAFT ENERGI AS - Tapping under LRV ;  - 24.07.2024 til 01.10.2024- Referansenr:EYLLZR"
+            },
+            {
+              "KdbID": 9525,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Gresslifoss\u00a0kraftverk\u00a0-\u00a0STATKRAFT ENERGI AS - Tapping under LRV ;  - 24.07.2024 til 20.12.2024- Referansenr:HWBILI"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Nidelvvassdraget",
+          "SPPunkt": "22",
+          "SPSone": "499",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 9,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 9"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746155,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 115,
+            "vannkraftverknavn": "Gresslifoss",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1966,
+            "kdbnr": 1023,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": -45446400000,
+            "spid": "49922",
+            "maksytelse_mw": 25.0,
+            "bruttofallhoyde_m": 33.0,
+            "energiekvivalent_kwh_m3": 0.068,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "5033",
+            "kommunenavn": "Tydal",
+            "fylke": "Tr\u00f8ndelag",
+            "vassdragsnr": "123.D821",
+            "elvenavnhierarki": "Nidelvvassdraget",
+            "nedstromvannkraftverknr": 551,
+            "nedstromvannkraftverknr_liste": "115,551,38",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 11.489542406921096,
+            "y": 63.05301842113429
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "08a5e8fb-8d5b-5320-a154-19cfd26192da",
+      "wri_id": "WRI1003170",
+      "name": "Grodemfoss",
+      "historical_capacity_mw": 4.0,
+      "wri_coordinates": [
+        5.8595,
+        60.4397
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "21515f31-c895-5c2e-b52d-c57ad9bc2438",
+      "wri_id": "WRI1003172",
+      "name": "Gronvollfoss",
+      "historical_capacity_mw": 40.0,
+      "wri_coordinates": [
+        9.2079,
+        59.6577
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "162c8786-62be-5984-891e-178adb353137",
+      "wri_id": "WRI1003178",
+      "name": "Grytten",
+      "historical_capacity_mw": 6.0,
+      "wri_coordinates": [
+        7.7718,
+        62.5024
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 116,
+          "Navn": "Grytten",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "M\u00f8re og Romsdal",
+          "FylkesNr": "15",
+          "Kommune": "Rauma",
+          "KommuneNr": "39",
+          "ForsteUtnyttelseAvFalletDato": 1975,
+          "DatoForEldsteKraftproduserendeDel": 1975,
+          "MaksYtelse": 143.5,
+          "MidProd_91_20": 518.117,
+          "BruttoFallhoyde_M": 953.4,
+          "Slukeevne": 17.7,
+          "EnEkv": 2.252,
+          "ElspotomraadeNummer": "3",
+          "RegineNr": "103.A20",
+          "ErIDrift": true,
+          "IDriftDato": "1975-03-13T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 25766,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "TAFJORD KRAFTPRODUKSJON AS",
+              "OrgNr": 977461898,
+              "ProsentAndel": 12.0,
+              "ProsentAndelDrift": 12.0
+            },
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 88.0,
+              "ProsentAndelDrift": 88.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 380,
+              "Tittel": "Grytten kraftanlegg - Planendring, endring av reg.grenser m.m."
+            },
+            {
+              "KdbID": 886,
+              "Tittel": "Statsreg. for utbygging av Grytten kraftanlegg m.v., Mard\u00f8la"
+            },
+            {
+              "KdbID": 8678,
+              "Tittel": "Grytten kraftanlegg - revisjon av konsesjonsvilk\u00e5r"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Rauma",
+          "SPPunkt": "11",
+          "SPSone": "432",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 8,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 8"
+        },
+        {
+          "VannKraftverkID": 907,
+          "Navn": "Grytten",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "GRYTTEN ARILD",
+          "HovedEier_OrgNr": "969834278",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Askvoll",
+          "KommuneNr": "45",
+          "ForsteUtnyttelseAvFalletDato": 2000,
+          "DatoForEldsteKraftproduserendeDel": 2000,
+          "MaksYtelse": 0.07,
+          "MidProd_91_20": 0.078,
+          "BruttoFallhoyde_M": null,
+          "Slukeevne": null,
+          "EnEkv": null,
+          "ElspotomraadeNummer": "3",
+          "RegineNr": "084.4",
+          "ErIDrift": true,
+          "IDriftDato": "2000-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 24259,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "GRYTTEN ARILD",
+              "OrgNr": 969834278,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 2060,
+              "Tittel": "Mikrokraftverk i V\u00e5gane"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "KYSTFELT",
+          "SPPunkt": null,
+          "SPSone": "999",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 13,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 13"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746226,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 116,
+            "vannkraftverknavn": "Grytten",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1975,
+            "kdbnr": 380,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 112579200000,
+            "spid": "43211",
+            "maksytelse_mw": 143.5,
+            "bruttofallhoyde_m": 953.4,
+            "energiekvivalent_kwh_m3": 2.252,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "1539",
+            "kommunenavn": "Rauma",
+            "fylke": "M\u00f8re og Romsdal",
+            "vassdragsnr": "103.A20",
+            "elvenavnhierarki": "Rauma",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "116",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 7.776138834062358,
+            "y": 62.50067147666344
+          }
+        },
+        {
+          "attributes": {
+            "objectid": 1746652,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 907,
+            "vannkraftverknavn": "Grytten",
+            "vannkraftverktype": "Mikro",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 2000,
+            "kdbnr": 2060,
+            "konsesjonstatus": 13,
+            "konsesjonstatusdato": 813283200000,
+            "spid": null,
+            "maksytelse_mw": 0.07,
+            "bruttofallhoyde_m": null,
+            "energiekvivalent_kwh_m3": null,
+            "vannkraftverkeier": "GRYTTEN ARILD",
+            "kommunenummer": "4645",
+            "kommunenavn": "Askvoll",
+            "fylke": "Vestland",
+            "vassdragsnr": "084.4",
+            "elvenavnhierarki": "J\u00f8lstra/F\u00f8rdefjorden",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "907",
+            "kraftverksymbol": "MM"
+          },
+          "geometry": {
+            "x": 5.218679471716046,
+            "y": 61.45410227018632
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "b5f4deac-f9ba-5185-b7e4-5f3f6bd57f99",
+      "wri_id": "WRI1003179",
+      "name": "Grytten Kraftver",
+      "historical_capacity_mw": 160.0,
+      "wri_coordinates": [
+        7.7718,
+        62.5024
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "e19625f5-223e-5f96-9a07-bf22af17efb5",
+      "wri_id": "WRI1003190",
+      "name": "Hardeland",
+      "historical_capacity_mw": 42.0,
+      "wri_coordinates": [
+        6.0967,
+        59.6576
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "4766442f-bead-53d0-801e-c6a615b0f105",
+      "wri_id": "WRI1003199",
+      "name": "Haverstad",
+      "historical_capacity_mw": 62.0,
+      "wri_coordinates": [
+        7.4195,
+        58.5066
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "8e821ae0-5fe9-5906-9774-83fb6d3d4090",
+      "wri_id": "WRI1003207",
+      "name": "Hensfoss",
+      "historical_capacity_mw": 20.0,
+      "wri_coordinates": [
+        10.2367,
+        60.2113
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 143,
+          "Navn": "Hensfoss",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "\u00c5 ENERGI VANNKRAFT AS",
+          "HovedEier_OrgNr": "882973972",
+          "Fylke": "Buskerud",
+          "FylkesNr": "33",
+          "Kommune": "Ringerike",
+          "KommuneNr": "05",
+          "ForsteUtnyttelseAvFalletDato": 1946,
+          "DatoForEldsteKraftproduserendeDel": 1946,
+          "MaksYtelse": 18.3,
+          "MidProd_91_20": 120.965,
+          "BruttoFallhoyde_M": 24.4,
+          "Slukeevne": 92.0,
+          "EnEkv": 0.055,
+          "ElspotomraadeNummer": "1",
+          "RegineNr": "012.F24",
+          "ErIDrift": true,
+          "IDriftDato": "1946-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 40121,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "\u00c5 ENERGI VANNKRAFT AS",
+              "OrgNr": 882973972,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 8306,
+              "Tittel": "Hensfoss kraftverk - Konsesjonspliktvurdering"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Drammensvassdraget",
+          "SPPunkt": "28",
+          "SPSone": "043",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 1,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 1"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747679,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 143,
+            "vannkraftverknavn": "Hensfoss",
+            "vannkraftverktype": "K",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 1946,
+            "kdbnr": 8306,
+            "konsesjonstatus": 13,
+            "konsesjonstatusdato": 1619481600000,
+            "spid": "04328",
+            "maksytelse_mw": 18.3,
+            "bruttofallhoyde_m": 24.4,
+            "energiekvivalent_kwh_m3": 0.055,
+            "vannkraftverkeier": "\u00c5 ENERGI VANNKRAFT AS",
+            "kommunenummer": "3305",
+            "kommunenavn": "Ringerike",
+            "fylke": "Buskerud",
+            "vassdragsnr": "012.F24",
+            "elvenavnhierarki": "Drammensvassdraget",
+            "nedstromvannkraftverknr": 18,
+            "nedstromvannkraftverknr_liste": "143,18,151,171,108,756,76,67,159",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 10.23920856511718,
+            "y": 60.208209533818064
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "4b617e7e-b95e-5dbe-87ed-a4f713f3d344",
+      "wri_id": "WRI1003212",
+      "name": "Hjartdola",
+      "historical_capacity_mw": 150.0,
+      "wri_coordinates": [
+        8.712,
+        59.6042
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "2d209595-b4d6-5f7a-a455-2e29cd05457f",
+      "wri_id": "WRI1003214",
+      "name": "Hjorteland",
+      "historical_capacity_mw": 9.0,
+      "wri_coordinates": [
+        6.4495,
+        59.3748
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 149,
+          "Navn": "Hjorteland",
+          "VannKVType": "Pumpe",
+          "VannKVTypeID": "P",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Rogaland",
+          "FylkesNr": "11",
+          "Kommune": "Suldal",
+          "KommuneNr": "34",
+          "ForsteUtnyttelseAvFalletDato": 1986,
+          "DatoForEldsteKraftproduserendeDel": 1986,
+          "MaksYtelse": -6.6,
+          "MidProd_91_20": -19.114,
+          "BruttoFallhoyde_M": 0.0,
+          "Slukeevne": 5.98,
+          "EnEkv": -0.305,
+          "ElspotomraadeNummer": "2",
+          "RegineNr": "035.A2",
+          "ErIDrift": true,
+          "IDriftDato": "1986-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10394,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "OTRA KRAFT DA",
+              "OrgNr": 955007514,
+              "ProsentAndel": 7.3,
+              "ProsentAndelDrift": 7.3
+            },
+            {
+              "AdressatID": 10437,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "SUNNHORDLAND KRAFTLAG AS",
+              "OrgNr": 916435711,
+              "ProsentAndel": 2.5,
+              "ProsentAndelDrift": 2.5
+            },
+            {
+              "AdressatID": 40121,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "\u00c5 ENERGI VANNKRAFT AS",
+              "OrgNr": 882973972,
+              "ProsentAndel": 0.2,
+              "ProsentAndelDrift": 0.2
+            },
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 72.0,
+              "ProsentAndelDrift": 72.0
+            },
+            {
+              "AdressatID": 60547,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "LYSE KRAFT DA",
+              "OrgNr": 925749419,
+              "ProsentAndel": 18.0,
+              "ProsentAndelDrift": 18.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 479,
+              "Tittel": "Statsreg. for utb. av Ulla-F\u00f8rrevassdragene - Reguleringsbest. m.v."
+            },
+            {
+              "KdbID": 698,
+              "Tittel": "Ulla-F\u00f8rrevassdragene , Statsregulering , Planendring"
+            },
+            {
+              "KdbID": 1010,
+              "Tittel": "Ulla-F\u00f8rre - Nytt man\u00f8vreringsreglement for Suldalsl\u00e5gen"
+            },
+            {
+              "KdbID": 4227,
+              "Tittel": "Ulla-F\u00f8rre. Man\u00f8vreringsreglement for Suldalsl\u00e5gen"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Ulla",
+          "SPPunkt": "13",
+          "SPSone": "166",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 3,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 3"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747619,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 149,
+            "vannkraftverknavn": "Hjorteland",
+            "vannkraftverktype": "P",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1986,
+            "kdbnr": 479,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 148262400000,
+            "spid": "16613",
+            "maksytelse_mw": -6.6,
+            "bruttofallhoyde_m": 0.0,
+            "energiekvivalent_kwh_m3": -0.305,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "1134",
+            "kommunenavn": "Suldal",
+            "fylke": "Rogaland",
+            "vassdragsnr": "035.A6AAA",
+            "elvenavnhierarki": "bekk fra Hellebrekk/bekk fra S\u00e5ta/Hjortelands\u00e5na/Ulla",
+            "nedstromvannkraftverknr": 222,
+            "nedstromvannkraftverknr_liste": "149,222,167",
+            "kraftverksymbol": "P"
+          },
+          "geometry": {
+            "x": 6.448861176957025,
+            "y": 59.390712941416474
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "9a74359b-284c-5bb1-a269-9c4365b79969",
+      "wri_id": "WRI1003216",
+      "name": "Hofsfoss",
+      "historical_capacity_mw": 32.0,
+      "wri_coordinates": [
+        10.2411,
+        60.1851
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 151,
+          "Navn": "Hofsfoss",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "\u00c5 ENERGI VANNKRAFT AS",
+          "HovedEier_OrgNr": "882973972",
+          "Fylke": "Buskerud",
+          "FylkesNr": "33",
+          "Kommune": "Ringerike",
+          "KommuneNr": "05",
+          "ForsteUtnyttelseAvFalletDato": 1978,
+          "DatoForEldsteKraftproduserendeDel": 1978,
+          "MaksYtelse": 27.0,
+          "MidProd_91_20": 155.086,
+          "BruttoFallhoyde_M": 26.79,
+          "Slukeevne": 120.97,
+          "EnEkv": 0.061,
+          "ElspotomraadeNummer": "1",
+          "RegineNr": "012.F22",
+          "ErIDrift": true,
+          "IDriftDato": "1978-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 40121,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "\u00c5 ENERGI VANNKRAFT AS",
+              "OrgNr": 882973972,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 3034,
+              "Tittel": "Ervervskonsesjon for fallrettigheter ved Hofsfoss kraftverk"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Drammensvassdraget",
+          "SPPunkt": "26",
+          "SPSone": "043",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 1,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 1"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747632,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 151,
+            "vannkraftverknavn": "Hofsfoss",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1978,
+            "kdbnr": 3034,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 1014940800000,
+            "spid": "04326",
+            "maksytelse_mw": 27.0,
+            "bruttofallhoyde_m": 26.79,
+            "energiekvivalent_kwh_m3": 0.061,
+            "vannkraftverkeier": "\u00c5 ENERGI VANNKRAFT AS",
+            "kommunenummer": "3305",
+            "kommunenavn": "Ringerike",
+            "fylke": "Buskerud",
+            "vassdragsnr": "012.F13",
+            "elvenavnhierarki": "Drammensvassdraget",
+            "nedstromvannkraftverknr": 171,
+            "nedstromvannkraftverknr_liste": "151,171,108,756,76,67,159",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 10.238226709940742,
+            "y": 60.18847275142955
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "009533ad-07e9-5a02-9df6-561fd901921d",
+      "wri_id": "WRI1003220",
+      "name": "Hogstad",
+      "historical_capacity_mw": 11.0,
+      "wri_coordinates": [
+        9.657,
+        59.3213
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 153,
+          "Navn": "Hogstad",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "SKAGERAK KRAFT AS",
+          "HovedEier_OrgNr": "979563531",
+          "Fylke": "Telemark ",
+          "FylkesNr": "40",
+          "Kommune": "Siljan",
+          "KommuneNr": "10",
+          "ForsteUtnyttelseAvFalletDato": 1913,
+          "DatoForEldsteKraftproduserendeDel": 1913,
+          "MaksYtelse": 9.6,
+          "MidProd_91_20": 37.026,
+          "BruttoFallhoyde_M": 135.5,
+          "Slukeevne": 8.5,
+          "EnEkv": 0.313,
+          "ElspotomraadeNummer": "2",
+          "RegineNr": "015.4E2",
+          "ErIDrift": true,
+          "IDriftDato": "1913-08-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 40113,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "SKAGERAK KRAFT AS",
+              "OrgNr": 979563531,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 2357,
+              "Tittel": "Hogstad kraftverk, anleggskonsesjon"
+            },
+            {
+              "KdbID": 3980,
+              "Tittel": "Hogstad minikraftverk"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Siljanvassdraget",
+          "SPPunkt": "03",
+          "SPSone": "074",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 3,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 3"
+        },
+        {
+          "VannKraftverkID": 1124,
+          "Navn": "Hogstad",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "SKAGERAK KRAFT AS",
+          "HovedEier_OrgNr": "979563531",
+          "Fylke": "Telemark ",
+          "FylkesNr": "40",
+          "Kommune": "Siljan",
+          "KommuneNr": "10",
+          "ForsteUtnyttelseAvFalletDato": 2004,
+          "DatoForEldsteKraftproduserendeDel": 2004,
+          "MaksYtelse": 0.59,
+          "MidProd_91_20": null,
+          "BruttoFallhoyde_M": null,
+          "Slukeevne": null,
+          "EnEkv": null,
+          "ElspotomraadeNummer": "",
+          "RegineNr": "015.4E2",
+          "ErIDrift": false,
+          "IDriftDato": "2004-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 40113,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "SKAGERAK KRAFT AS",
+              "OrgNr": 979563531,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [],
+          "Kraftverkstatus": "Ute av drift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Siljanvassdraget",
+          "SPPunkt": null,
+          "SPSone": "074",
+          "UnderBygging": false,
+          "UteAvDrift": 2009,
+          "VassdragsOmraadeID": null,
+          "VassdragsOmraadeNavn": null
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1745980,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 153,
+            "vannkraftverknavn": "Hogstad",
+            "vannkraftverktype": "KS",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 1913,
+            "kdbnr": 3980,
+            "konsesjonstatus": 13,
+            "konsesjonstatusdato": 1078185600000,
+            "spid": "07403",
+            "maksytelse_mw": 9.6,
+            "bruttofallhoyde_m": 135.5,
+            "energiekvivalent_kwh_m3": 0.313,
+            "vannkraftverkeier": "SKAGERAK KRAFT AS",
+            "kommunenummer": "4010",
+            "kommunenavn": "Siljan",
+            "fylke": "Telemark",
+            "vassdragsnr": "015.4E2",
+            "elvenavnhierarki": "Siljanvassdraget",
+            "nedstromvannkraftverknr": 1123,
+            "nedstromvannkraftverknr_liste": "153,1123,199,98",
+            "kraftverksymbol": "SK"
+          },
+          "geometry": {
+            "x": 9.657248880891,
+            "y": 59.321348451495766
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "4eb1eebb-8b7c-51cf-a3e1-516bb9232c10",
+      "wri_id": "WRI1003221",
+      "name": "Hol 3",
+      "historical_capacity_mw": 348.0,
+      "wri_coordinates": [
+        8.411,
+        60.5744
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 157,
+          "Navn": "Hol 3",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "HAFSLUND KRAFT AS",
+          "HovedEier_OrgNr": "976894677",
+          "Fylke": "Buskerud",
+          "FylkesNr": "33",
+          "Kommune": "Hol",
+          "KommuneNr": "30",
+          "ForsteUtnyttelseAvFalletDato": 1958,
+          "DatoForEldsteKraftproduserendeDel": 1958,
+          "MaksYtelse": 60.0,
+          "MidProd_91_20": 248.213,
+          "BruttoFallhoyde_M": 98.0,
+          "Slukeevne": 73.41,
+          "EnEkv": 0.226,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "012.CF5",
+          "ErIDrift": true,
+          "IDriftDato": "1958-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10242,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "HAFSLUND KRAFT AS",
+              "OrgNr": 976894677,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 233,
+              "Tittel": "Regulering av Holselva og V\u00e5tna, overf. av V\u00e5tna m.m. (Stadfesting)"
+            },
+            {
+              "KdbID": 2646,
+              "Tittel": "Erverv av fallrettigheter i Holselva og Hallingdalselva"
+            },
+            {
+              "KdbID": 7837,
+              "Tittel": "Omgj\u00f8ring av konsesjon - Hovsfjorden og Holsfjorden"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Drammensvassdraget",
+          "SPPunkt": "74",
+          "SPSone": "043",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 2,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 2"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746057,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 157,
+            "vannkraftverknavn": "Hol 3",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1958,
+            "kdbnr": 233,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": -680918400000,
+            "spid": "04374",
+            "maksytelse_mw": 60.0,
+            "bruttofallhoyde_m": 98.0,
+            "energiekvivalent_kwh_m3": 0.226,
+            "vannkraftverkeier": "HAFSLUND KRAFT AS",
+            "kommunenummer": "3330",
+            "kommunenavn": "Hol",
+            "fylke": "Buskerud",
+            "vassdragsnr": "012.CF5",
+            "elvenavnhierarki": "Hallingdalsvassdraget/Drammensvassdraget",
+            "nedstromvannkraftverknr": 303,
+            "nedstromvannkraftverknr_liste": "157,303,329,192,76,67,159",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 8.404554469119502,
+            "y": 60.58292989133292
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "ae96c33d-6bc5-5b62-ae95-bcff522fe1f0",
+      "wri_id": "WRI1003222",
+      "name": "Holen",
+      "historical_capacity_mw": 460.0,
+      "wri_coordinates": [
+        7.2493,
+        59.346
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 1979,
+          "Navn": "Holen",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "LUSTER SM\u00c5KRAFT AS",
+          "HovedEier_OrgNr": "988913480",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Luster",
+          "KommuneNr": "44",
+          "ForsteUtnyttelseAvFalletDato": 2019,
+          "DatoForEldsteKraftproduserendeDel": 2019,
+          "MaksYtelse": 8.2,
+          "MidProd_91_20": 22.149,
+          "BruttoFallhoyde_M": 234.35,
+          "Slukeevne": 4.06,
+          "EnEkv": 0.561,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "077.C2Z",
+          "ErIDrift": true,
+          "IDriftDato": "2019-12-12T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41659,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "LUSTER SM\u00c5KRAFT AS",
+              "OrgNr": 988913480,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 4272,
+              "Tittel": "Holen kraftverk"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "\u00c5r\u00f8yvassdraget",
+          "SPPunkt": "04",
+          "SPSone": "312",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 7,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 7"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747417,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 1979,
+            "vannkraftverknavn": "Holen",
+            "vannkraftverktype": "KS",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 2019,
+            "kdbnr": 4272,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 1318377600000,
+            "spid": "31204",
+            "maksytelse_mw": 8.2,
+            "bruttofallhoyde_m": 234.35,
+            "energiekvivalent_kwh_m3": 0.561,
+            "vannkraftverkeier": "LUSTER SM\u00c5KRAFT AS",
+            "kommunenummer": "4644",
+            "kommunenavn": "Luster",
+            "fylke": "Vestland",
+            "vassdragsnr": "077.C21",
+            "elvenavnhierarki": "\u00c5r\u00f8yvassdraget",
+            "nedstromvannkraftverknr": 530,
+            "nedstromvannkraftverknr_liste": "1979,530",
+            "kraftverksymbol": "SK"
+          },
+          "geometry": {
+            "x": 7.086449151841491,
+            "y": 61.3555923212298
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "0f7e266e-7811-54f2-87ed-febe255e3076",
+      "wri_id": "WRI1003232",
+      "name": "Horga",
+      "historical_capacity_mw": 7.0,
+      "wri_coordinates": [
+        9.5393,
+        60.0561
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 545,
+          "Navn": "Horga",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "SIGDAL ENERGI",
+          "HovedEier_OrgNr": "971030631",
+          "Fylke": "Buskerud",
+          "FylkesNr": "33",
+          "Kommune": "Sigdal",
+          "KommuneNr": "32",
+          "ForsteUtnyttelseAvFalletDato": 1990,
+          "DatoForEldsteKraftproduserendeDel": 1990,
+          "MaksYtelse": 7.2,
+          "MidProd_91_20": 28.095,
+          "BruttoFallhoyde_M": 204.0,
+          "Slukeevne": 4.4,
+          "EnEkv": 0.467,
+          "ElspotomraadeNummer": "1",
+          "RegineNr": "012.BB42",
+          "ErIDrift": true,
+          "IDriftDato": "1990-11-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 40532,
+              "Driftselskap": true,
+              "Hovedeier": false,
+              "Navn": "KRAFTIA TJENESTER AS",
+              "OrgNr": 980341232,
+              "ProsentAndel": null,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 40556,
+              "Driftselskap": false,
+              "Hovedeier": true,
+              "Navn": "SIGDAL ENERGI",
+              "OrgNr": 971030631,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Drammensvassdraget",
+          "SPPunkt": "96",
+          "SPSone": "043",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 1,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 1"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1745989,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 545,
+            "vannkraftverknavn": "Horga",
+            "vannkraftverktype": "KS",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1990,
+            "kdbnr": null,
+            "konsesjonstatus": null,
+            "konsesjonstatusdato": null,
+            "spid": "04396",
+            "maksytelse_mw": 7.2,
+            "bruttofallhoyde_m": 204.0,
+            "energiekvivalent_kwh_m3": 0.467,
+            "vannkraftverkeier": "SIGDAL ENERGI",
+            "kommunenummer": "3332",
+            "kommunenavn": "Sigdal",
+            "fylke": "Buskerud",
+            "vassdragsnr": "012.BB42",
+            "elvenavnhierarki": "Simoa/Drammensvassdraget",
+            "nedstromvannkraftverknr": 133,
+            "nedstromvannkraftverknr_liste": "545,133,812,67,159",
+            "kraftverksymbol": "SK"
+          },
+          "geometry": {
+            "x": 9.54560980430845,
+            "y": 60.053334206083754
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "67fc848e-11f8-565d-bacc-2ef6281dabef",
+      "wri_id": "WRI1003234",
+      "name": "Hove",
+      "historical_capacity_mw": 73.0,
+      "wri_coordinates": [
+        6.5948,
+        61.0698
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 163,
+          "Navn": "Hove",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Vik",
+          "KommuneNr": "39",
+          "ForsteUtnyttelseAvFalletDato": 1969,
+          "DatoForEldsteKraftproduserendeDel": 1969,
+          "MaksYtelse": 60.0,
+          "MidProd_91_20": 347.674,
+          "BruttoFallhoyde_M": 318.2,
+          "Slukeevne": 21.98,
+          "EnEkv": 0.758,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "070.6A",
+          "ErIDrift": true,
+          "IDriftDato": "1969-12-09T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10455,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "SOGNEKRAFT PRODUKSJON AS",
+              "OrgNr": 916069634,
+              "ProsentAndel": 12.0,
+              "ProsentAndelDrift": 12.0
+            },
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 88.0,
+              "ProsentAndelDrift": 88.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 186,
+              "Tittel": "Erv. av fallrett. i Vikja. Ytt. reg. mv i Arnafjordvassdraget"
+            },
+            {
+              "KdbID": 187,
+              "Tittel": "Ytt. reg. og overf\u00f8ringer i Arnafjordvassdraget"
+            },
+            {
+              "KdbID": 956,
+              "Tittel": "Statsregulering i Arnafjordvassdraget m.v."
+            },
+            {
+              "KdbID": 7530,
+              "Tittel": "Vilk\u00e5rsrevisjon for Arnafjord- og Vikvassdraga"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Hopra",
+          "SPPunkt": "01",
+          "SPSone": "285",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 7,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 7"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746036,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 163,
+            "vannkraftverknavn": "Hove",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1969,
+            "kdbnr": 187,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": -139017600000,
+            "spid": "28501",
+            "maksytelse_mw": 60.0,
+            "bruttofallhoyde_m": 318.2,
+            "energiekvivalent_kwh_m3": 0.758,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "4639",
+            "kommunenavn": "Vik",
+            "fylke": "Vestland",
+            "vassdragsnr": "070.A0",
+            "elvenavnhierarki": "Viksvassdraget",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "163",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 6.589224005171356,
+            "y": 61.0665138607079
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "e3782d5d-6225-511a-a162-7d854b99ba26",
+      "wri_id": "WRI1003238",
+      "name": "Hunderfossen",
+      "historical_capacity_mw": 124.0,
+      "wri_coordinates": [
+        10.4394,
+        61.2171
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 164,
+          "Navn": "Hunderfossen",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "HAFSLUND KRAFT AS",
+          "HovedEier_OrgNr": "976894677",
+          "Fylke": "Innlandet",
+          "FylkesNr": "34",
+          "Kommune": "Lillehammer",
+          "KommuneNr": "05",
+          "ForsteUtnyttelseAvFalletDato": 1963,
+          "DatoForEldsteKraftproduserendeDel": 1963,
+          "MaksYtelse": 112.0,
+          "MidProd_91_20": 596.581,
+          "BruttoFallhoyde_M": 46.4,
+          "Slukeevne": 299.14,
+          "EnEkv": 0.104,
+          "ElspotomraadeNummer": "1",
+          "RegineNr": "002.DE4",
+          "ErIDrift": true,
+          "IDriftDato": "1963-11-29T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10242,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "HAFSLUND KRAFT AS",
+              "OrgNr": 976894677,
+              "ProsentAndel": 25.0,
+              "ProsentAndelDrift": 100.0
+            },
+            {
+              "AdressatID": 10300,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "OPPLANDSKRAFT DA",
+              "OrgNr": 944237631,
+              "ProsentAndel": null,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 41020,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "HAFSLUND KRAFT INNLANDET AS",
+              "OrgNr": 887396752,
+              "ProsentAndel": 50.0,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 50181,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "L\u00c5GEN OG \u00d8VRE GLOMMA KRAFTPRODUKSJON AS",
+              "OrgNr": 987287527,
+              "ProsentAndel": 25.0,
+              "ProsentAndelDrift": null
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 192,
+              "Tittel": "Ombygging av Hunderfossen - Ensbyfallene"
+            },
+            {
+              "KdbID": 2069,
+              "Tittel": "Hunderfossen Ensbyfallene, endr. av man\u00f8vreringsregl."
+            },
+            {
+              "KdbID": 2544,
+              "Tittel": "Endring av man\u00f8vreringsregl. Hunderfossen kraftverk"
+            },
+            {
+              "KdbID": 9050,
+              "Tittel": "Midlertidig fravik fra man\u00f8vreringsreglementet - Hunderfossen\u00a0kraftverk\u00a0-\u00a0HAFSLUND ECO VANNKRAFT AS - Tapping under LRV ;  - 03.05.2023 til 04.05.2023- Referansenr:ACLZYP"
+            },
+            {
+              "KdbID": 9731,
+              "Tittel": "Midlertidig fravik fra man\u00f8vreringsreglementet -  Hunderfossen kraftverk -  08.09.2025 til 20.10.2025"
+            },
+            {
+              "KdbID": 9772,
+              "Tittel": "Midlertidig fravik fra man\u00f8vreringsreglementet - Hunderfossen\u00a0kraftverk\u00a0- 20.10.2025 til 15.11.2025"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Glommavassdraget",
+          "SPPunkt": "15",
+          "SPSone": "005",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 1,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 1"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746082,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 164,
+            "vannkraftverknavn": "Hunderfossen",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1963,
+            "kdbnr": 2544,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 205113600000,
+            "spid": "00515",
+            "maksytelse_mw": 112.0,
+            "bruttofallhoyde_m": 46.4,
+            "energiekvivalent_kwh_m3": 0.104,
+            "vannkraftverkeier": "HAFSLUND KRAFT AS",
+            "kommunenummer": "3405",
+            "kommunenavn": "Lillehammer",
+            "fylke": "Innlandet",
+            "vassdragsnr": "002.DE4",
+            "elvenavnhierarki": "Vorma-L\u00e5gen/Glommavassdraget",
+            "nedstromvannkraftverknr": 349,
+            "nedstromvannkraftverknr_liste": "164,349,22,776,228,488,357",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 10.439034119521496,
+            "y": 61.2196833879521
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "5c286dc7-cde7-52a2-b6e9-72b401e8c597",
+      "wri_id": "WRI1003243",
+      "name": "Hylen",
+      "historical_capacity_mw": 190.0,
+      "wri_coordinates": [
+        6.544,
+        58.4653
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 167,
+          "Navn": "Hylen",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Rogaland",
+          "FylkesNr": "11",
+          "Kommune": "Suldal",
+          "KommuneNr": "34",
+          "ForsteUtnyttelseAvFalletDato": 1980,
+          "DatoForEldsteKraftproduserendeDel": 1980,
+          "MaksYtelse": 160.0,
+          "MidProd_91_20": 623.826,
+          "BruttoFallhoyde_M": 68.0,
+          "Slukeevne": 269.35,
+          "EnEkv": 0.165,
+          "ElspotomraadeNummer": "2",
+          "RegineNr": "036.B23",
+          "ErIDrift": true,
+          "IDriftDato": "1980-08-04T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10394,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "OTRA KRAFT DA",
+              "OrgNr": 955007514,
+              "ProsentAndel": 7.3,
+              "ProsentAndelDrift": 7.3
+            },
+            {
+              "AdressatID": 10437,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "SUNNHORDLAND KRAFTLAG AS",
+              "OrgNr": 916435711,
+              "ProsentAndel": 2.5,
+              "ProsentAndelDrift": 2.5
+            },
+            {
+              "AdressatID": 40121,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "\u00c5 ENERGI VANNKRAFT AS",
+              "OrgNr": 882973972,
+              "ProsentAndel": 0.2,
+              "ProsentAndelDrift": 0.2
+            },
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 72.0,
+              "ProsentAndelDrift": 72.0
+            },
+            {
+              "AdressatID": 60547,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "LYSE KRAFT DA",
+              "OrgNr": 925749419,
+              "ProsentAndel": 18.0,
+              "ProsentAndelDrift": 18.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 479,
+              "Tittel": "Statsreg. for utb. av Ulla-F\u00f8rrevassdragene - Reguleringsbest. m.v."
+            },
+            {
+              "KdbID": 698,
+              "Tittel": "Ulla-F\u00f8rrevassdragene , Statsregulering , Planendring"
+            },
+            {
+              "KdbID": 1010,
+              "Tittel": "Ulla-F\u00f8rre - Nytt man\u00f8vreringsreglement for Suldalsl\u00e5gen"
+            },
+            {
+              "KdbID": 1032,
+              "Tittel": "Ulla-F\u00f8rrevassdr. - Midlertidig endr. man.regl. / Hylen kraftverk"
+            },
+            {
+              "KdbID": 4227,
+              "Tittel": "Ulla-F\u00f8rre. Man\u00f8vreringsreglement for Suldalsl\u00e5gen"
+            },
+            {
+              "KdbID": 9657,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Hylen\u00a0kraftverk\u00a0-\u00a0STATKRAFT ENERGI AS - Fravik fra minstevannf\u00f8ring;Annet;  - 17.07.2025 til 30.10.2025- Referansenr:DUCIYK"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Suldalsvassdraget",
+          "SPPunkt": "11",
+          "SPSone": "166",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 3,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 3"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747617,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 167,
+            "vannkraftverknavn": "Hylen",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1980,
+            "kdbnr": 479,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 148262400000,
+            "spid": "16611",
+            "maksytelse_mw": 160.0,
+            "bruttofallhoyde_m": 68.0,
+            "energiekvivalent_kwh_m3": 0.165,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "1134",
+            "kommunenavn": "Suldal",
+            "fylke": "Rogaland",
+            "vassdragsnr": "036.21",
+            "elvenavnhierarki": "Suldalsvassdraget/Sandsfjorden s\u00f8r og Hylsfjorden",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "167",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 6.602343846528432,
+            "y": 59.55785516035413
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "59c68888-fee8-559b-8711-d3184b20b79c",
+      "wri_id": "WRI1003246",
+      "name": "Innset",
+      "historical_capacity_mw": 105.0,
+      "wri_coordinates": [
+        18.82,
+        68.6576
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 184,
+          "Navn": "Innset",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Troms",
+          "FylkesNr": "55",
+          "Kommune": "Bardu",
+          "KommuneNr": "20",
+          "ForsteUtnyttelseAvFalletDato": 1960,
+          "DatoForEldsteKraftproduserendeDel": 1960,
+          "MaksYtelse": 90.0,
+          "MidProd_91_20": 445.343,
+          "BruttoFallhoyde_M": 185.0,
+          "Slukeevne": 60.0,
+          "EnEkv": 0.417,
+          "ElspotomraadeNummer": "4",
+          "RegineNr": "196.AC8",
+          "ErIDrift": true,
+          "IDriftDato": "1960-02-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 743,
+              "Tittel": "Overdragelse av reguleringstillatelser m.v. - Troms kraftforsyning"
+            },
+            {
+              "KdbID": 870,
+              "Tittel": "Regulering av Altevatn"
+            },
+            {
+              "KdbID": 871,
+              "Tittel": "Statsreg. av Altevatn og overf. av Salvasskarelv til Altevatn"
+            },
+            {
+              "KdbID": 872,
+              "Tittel": "Overf. av Mouldajokka og Irggasjaurie til Altevatn"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "M\u00e5lselvvassdraget",
+          "SPPunkt": "04",
+          "SPSone": "791",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 11,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 11"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746350,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 184,
+            "vannkraftverknavn": "Innset",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1960,
+            "kdbnr": 872,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": -284860800000,
+            "spid": "79104",
+            "maksytelse_mw": 90.0,
+            "bruttofallhoyde_m": 185.0,
+            "energiekvivalent_kwh_m3": 0.417,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "5520",
+            "kommunenavn": "Bardu",
+            "fylke": "Troms",
+            "vassdragsnr": "196.AC8",
+            "elvenavnhierarki": "Barduelva/M\u00e5lselvvassdraget",
+            "nedstromvannkraftverknr": 404,
+            "nedstromvannkraftverknr_liste": "184,404,16",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 18.82475273214812,
+            "y": 68.65957589090887
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "2b8936ac-9f1c-529f-9aab-2dfad98aa931",
+      "wri_id": "WRI1003247",
+      "name": "Innvik",
+      "historical_capacity_mw": 17.0,
+      "wri_coordinates": [
+        6.6285,
+        61.8428
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 1335,
+          "Navn": "Innvik",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "INNVIK KRAFTVERK AS",
+          "HovedEier_OrgNr": "988300306",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Stryn",
+          "KommuneNr": "51",
+          "ForsteUtnyttelseAvFalletDato": 2007,
+          "DatoForEldsteKraftproduserendeDel": 2007,
+          "MaksYtelse": 15.5,
+          "MidProd_91_20": 42.749,
+          "BruttoFallhoyde_M": 512.0,
+          "Slukeevne": 3.5,
+          "EnEkv": 1.23,
+          "ElspotomraadeNummer": "3",
+          "RegineNr": "087.5Z",
+          "ErIDrift": true,
+          "IDriftDato": "2007-04-15T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41223,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "INNVIK KRAFTVERK AS",
+              "OrgNr": 988300306,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 2888,
+              "Tittel": "Innvik kraftverk"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Storelva",
+          "SPPunkt": "01",
+          "SPSone": "370",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 13,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 13"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746495,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 1335,
+            "vannkraftverknavn": "Innvik",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 2007,
+            "kdbnr": 2888,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 1091750400000,
+            "spid": "37001",
+            "maksytelse_mw": 15.5,
+            "bruttofallhoyde_m": 512.0,
+            "energiekvivalent_kwh_m3": 1.23,
+            "vannkraftverkeier": "INNVIK KRAFTVERK AS",
+            "kommunenummer": "4651",
+            "kommunenavn": "Stryn",
+            "fylke": "Vestland",
+            "vassdragsnr": "087.5A0",
+            "elvenavnhierarki": "Storelva",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "1335",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 6.638779573704166,
+            "y": 61.840737574916055
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "3b5d351a-576e-5fc3-a4ed-feb8645abdeb",
+      "wri_id": "WRI1003249",
+      "name": "Iveland",
+      "historical_capacity_mw": 53.0,
+      "wri_coordinates": [
+        7.8944,
+        58.3904
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 186,
+          "Navn": "Iveland",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "\u00c5 ENERGI VANNKRAFT AS",
+          "HovedEier_OrgNr": "882973972",
+          "Fylke": "Agder",
+          "FylkesNr": "42",
+          "Kommune": "Iveland",
+          "KommuneNr": "18",
+          "ForsteUtnyttelseAvFalletDato": 1949,
+          "DatoForEldsteKraftproduserendeDel": 1949,
+          "MaksYtelse": 87.0,
+          "MidProd_91_20": 446.886,
+          "BruttoFallhoyde_M": 50.5,
+          "Slukeevne": 216.0,
+          "EnEkv": 0.112,
+          "ElspotomraadeNummer": "2",
+          "RegineNr": "021.B1",
+          "ErIDrift": true,
+          "IDriftDato": "1949-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 40121,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "\u00c5 ENERGI VANNKRAFT AS",
+              "OrgNr": 882973972,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 1865,
+              "Tittel": "Erverv av Grunn og rettigheter for utb. av Ivelandsfossen"
+            },
+            {
+              "KdbID": 4391,
+              "Tittel": "Utvidelse av Iveland kraftverk"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Otra",
+          "SPPunkt": "05",
+          "SPSone": "115",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 4,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 4"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1745918,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 186,
+            "vannkraftverknavn": "Iveland",
+            "vannkraftverktype": "K",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 1949,
+            "kdbnr": 4391,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 1299196800000,
+            "spid": "11505",
+            "maksytelse_mw": 87.0,
+            "bruttofallhoyde_m": 50.5,
+            "energiekvivalent_kwh_m3": 0.112,
+            "vannkraftverkeier": "\u00c5 ENERGI VANNKRAFT AS",
+            "kommunenummer": "4218",
+            "kommunenavn": "Iveland",
+            "fylke": "Agder",
+            "vassdragsnr": "021.A9",
+            "elvenavnhierarki": "Otra",
+            "nedstromvannkraftverknr": 307,
+            "nedstromvannkraftverknr_liste": "186,307,399,166,501",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 7.894691706635081,
+            "y": 58.39037722398061
+          }
+        },
+        {
+          "attributes": {
+            "objectid": 1747212,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 186,
+            "vannkraftverknavn": "Iveland",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1949,
+            "kdbnr": 4391,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 1299196800000,
+            "spid": "11505",
+            "maksytelse_mw": 87.0,
+            "bruttofallhoyde_m": 50.5,
+            "energiekvivalent_kwh_m3": 0.112,
+            "vannkraftverkeier": "\u00c5 ENERGI VANNKRAFT AS",
+            "kommunenummer": "4218",
+            "kommunenavn": "Iveland",
+            "fylke": "Agder",
+            "vassdragsnr": "021.A9",
+            "elvenavnhierarki": "Otra",
+            "nedstromvannkraftverknr": 307,
+            "nedstromvannkraftverknr_liste": "186,307,399,166,501",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 7.894412529653538,
+            "y": 58.39175807611767
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "6e0b8643-ae61-5b56-a9f7-980b97635d64",
+      "wri_id": "WRI1003254",
+      "name": "Jorundland",
+      "historical_capacity_mw": 65.0,
+      "wri_coordinates": [
+        8.2598,
+        58.8976
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "8f3fe824-85d6-5ea5-980e-ba372d330f69",
+      "wri_id": "WRI1003255",
+      "name": "Jossang krv.",
+      "historical_capacity_mw": 38.0,
+      "wri_coordinates": [
+        6.075,
+        59.0003
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "3a9e60c3-d0a1-5da2-95e4-b53f3c3d58ed",
+      "wri_id": "WRI1003256",
+      "name": "Jossingfjord",
+      "historical_capacity_mw": 7.0,
+      "wri_coordinates": [
+        6.3517,
+        58.3258
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "a3716e60-4325-5261-978e-2c0992eb99dd",
+      "wri_id": "WRI1003257",
+      "name": "Jostedal",
+      "historical_capacity_mw": 320.0,
+      "wri_coordinates": [
+        7.2879,
+        61.5266
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 547,
+          "Navn": "Jostedal",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Luster",
+          "KommuneNr": "44",
+          "ForsteUtnyttelseAvFalletDato": 1989,
+          "DatoForEldsteKraftproduserendeDel": 1989,
+          "MaksYtelse": 288.0,
+          "MidProd_91_20": 932.114,
+          "BruttoFallhoyde_M": 1163.0,
+          "Slukeevne": 29.0,
+          "EnEkv": 2.759,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "076.D10",
+          "ErIDrift": true,
+          "IDriftDato": "1989-12-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 660,
+              "Tittel": "Jostedalsvassdraget, Ekspropriasjon av fallrettigheter"
+            },
+            {
+              "KdbID": 702,
+              "Tittel": "Statsregulering for utbygging av Jostedalsvassdraget"
+            },
+            {
+              "KdbID": 9197,
+              "Tittel": "Revisjon av konsesjonsvilk\u00e5r for Jostedalsvassdraget"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Josted\u00f8la",
+          "SPPunkt": "01",
+          "SPSone": "311",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 7,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 7"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746050,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 547,
+            "vannkraftverknavn": "Jostedal",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1989,
+            "kdbnr": 702,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 457315200000,
+            "spid": "31101",
+            "maksytelse_mw": 288.0,
+            "bruttofallhoyde_m": 1163.0,
+            "energiekvivalent_kwh_m3": 2.759,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "4644",
+            "kommunenavn": "Luster",
+            "fylke": "Vestland",
+            "vassdragsnr": "076.CA0",
+            "elvenavnhierarki": "Vigd\u00f8la/Josted\u00f8la",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "547",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 7.308741758581357,
+            "y": 61.52081749682357
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "a68b15bb-b9ef-55cd-9282-566fb437c352",
+      "wri_id": "WRI1003258",
+      "name": "Jukla",
+      "historical_capacity_mw": 44.0,
+      "wri_coordinates": [
+        6.3831,
+        60.1891
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 187,
+          "Navn": "Jukla",
+          "VannKVType": "Pumpekraftverk",
+          "VannKVTypeID": "PK",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Kvinnherad",
+          "KommuneNr": "17",
+          "ForsteUtnyttelseAvFalletDato": 1974,
+          "DatoForEldsteKraftproduserendeDel": 1974,
+          "MaksYtelse": 35.0,
+          "MidProd_91_20": 74.778,
+          "BruttoFallhoyde_M": 200.0,
+          "Slukeevne": 27.01,
+          "EnEkv": 0.36,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "046.4BA",
+          "ErIDrift": true,
+          "IDriftDato": "1974-06-16T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 40113,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "SKAGERAK KRAFT AS",
+              "OrgNr": 979563531,
+              "ProsentAndel": 14.94,
+              "ProsentAndelDrift": 14.94
+            },
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 85.06,
+              "ProsentAndelDrift": 85.06
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 713,
+              "Tittel": "Statsregulering av Maurangervassdraget - Endring av man\u00f8vr.regl."
+            },
+            {
+              "KdbID": 868,
+              "Tittel": "Statsregulering av Maurangervassdragene m.v."
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "\u00d8yreselva",
+          "SPPunkt": "11",
+          "SPSone": "204",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 6,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 6"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747692,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 187,
+            "vannkraftverknavn": "Jukla",
+            "vannkraftverktype": "PK",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1974,
+            "kdbnr": 868,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": -14428800000,
+            "spid": "20411",
+            "maksytelse_mw": 35.0,
+            "bruttofallhoyde_m": 200.0,
+            "energiekvivalent_kwh_m3": 0.36,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "4617",
+            "kommunenavn": "Kvinnherad",
+            "fylke": "Vestland",
+            "vassdragsnr": "046.4BA2C",
+            "elvenavnhierarki": "elv fra Botnatj\u00f8rna/elv i Fagerdalen/\u00d8yreselva",
+            "nedstromvannkraftverknr": 266,
+            "nedstromvannkraftverknr_liste": "187,266",
+            "kraftverksymbol": "PK"
+          },
+          "geometry": {
+            "x": 6.3892724696239585,
+            "y": 60.19155432653466
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "c1ff8d95-6673-5595-9634-8ca890a53fc7",
+      "wri_id": "WRI1003261",
+      "name": "Kaggefoss",
+      "historical_capacity_mw": 101.0,
+      "wri_coordinates": [
+        9.9476,
+        59.9314
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 192,
+          "Navn": "Kaggefoss",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "\u00c5 ENERGI VANNKRAFT AS",
+          "HovedEier_OrgNr": "882973972",
+          "Fylke": "Buskerud",
+          "FylkesNr": "33",
+          "Kommune": "Modum",
+          "KommuneNr": "16",
+          "ForsteUtnyttelseAvFalletDato": 1951,
+          "DatoForEldsteKraftproduserendeDel": 1951,
+          "MaksYtelse": 85.5,
+          "MidProd_91_20": 582.162,
+          "BruttoFallhoyde_M": 70.0,
+          "Slukeevne": 143.0,
+          "EnEkv": 0.165,
+          "ElspotomraadeNummer": "1",
+          "RegineNr": "012.CA4",
+          "ErIDrift": true,
+          "IDriftDato": "1951-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 40121,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "\u00c5 ENERGI VANNKRAFT AS",
+              "OrgNr": 882973972,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 337,
+              "Tittel": "Regulering av Kr\u00f8deren - Endring av man\u00f8vreringsreglementet"
+            },
+            {
+              "KdbID": 8672,
+              "Tittel": "Ekspropriasjon til utbygging av Kaggefoss og Kistefoss i Snarumselva"
+            },
+            {
+              "KdbID": 8673,
+              "Tittel": "Utbygging av Kaggefoss og Kistefoss i Snarumselva"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Drammensvassdraget",
+          "SPPunkt": "57",
+          "SPSone": "043",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 1,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 1"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746255,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 192,
+            "vannkraftverknavn": "Kaggefoss",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1951,
+            "kdbnr": 337,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 128131200000,
+            "spid": "04357",
+            "maksytelse_mw": 85.5,
+            "bruttofallhoyde_m": 70.0,
+            "energiekvivalent_kwh_m3": 0.165,
+            "vannkraftverkeier": "\u00c5 ENERGI VANNKRAFT AS",
+            "kommunenummer": "3316",
+            "kommunenavn": "Modum",
+            "fylke": "Buskerud",
+            "vassdragsnr": "012.CA2",
+            "elvenavnhierarki": "Hallingdalsvassdraget/Drammensvassdraget",
+            "nedstromvannkraftverknr": 76,
+            "nedstromvannkraftverknr_liste": "192,76,67,159",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 9.93456365055054,
+            "y": 59.94754360476582
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "a6e2b409-a0ed-5680-af32-ed956e1a4966",
+      "wri_id": "WRI1003263",
+      "name": "Kaldestad",
+      "historical_capacity_mw": 30.0,
+      "wri_coordinates": [
+        6.0227,
+        60.5545
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 193,
+          "Navn": "Kaldestad",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "KVAM KRAFTVERK AS",
+          "HovedEier_OrgNr": "979599684",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Kvam",
+          "KommuneNr": "22",
+          "ForsteUtnyttelseAvFalletDato": 1936,
+          "DatoForEldsteKraftproduserendeDel": 1936,
+          "MaksYtelse": 6.3,
+          "MidProd_91_20": 29.644,
+          "BruttoFallhoyde_M": 596.0,
+          "Slukeevne": 1.2,
+          "EnEkv": 1.457,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "052.72Z",
+          "ErIDrift": true,
+          "IDriftDato": "1936-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 29094,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "KVAM KRAFTVERK AS",
+              "OrgNr": 979599684,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 141,
+              "Tittel": "Regulering av Kaldestadvassdraget i Hardanger"
+            },
+            {
+              "KdbID": 578,
+              "Tittel": "Overf\u00f8ring av Lysenelva, regulering av Finnhellervatn, Hordaland"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Kaldestadelvi",
+          "SPPunkt": "01",
+          "SPSone": "237",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 6,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 6"
+        },
+        {
+          "VannKraftverkID": 194,
+          "Navn": "Kaldestad",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "EVINY FORNYBAR AS",
+          "HovedEier_OrgNr": "876944642",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Vaksdal",
+          "KommuneNr": "28",
+          "ForsteUtnyttelseAvFalletDato": 1964,
+          "DatoForEldsteKraftproduserendeDel": 1964,
+          "MaksYtelse": 24.0,
+          "MidProd_91_20": 87.506,
+          "BruttoFallhoyde_M": 80.26,
+          "Slukeevne": 37.9,
+          "EnEkv": 0.176,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "061.C",
+          "ErIDrift": true,
+          "IDriftDato": "1964-11-05T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 25445,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "EVINY FORNYBAR AS",
+              "OrgNr": 876944642,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 313,
+              "Tittel": "Endr. man\u00f8vreringsregl. for Bergsdalsvassdraget - minstevannf."
+            },
+            {
+              "KdbID": 8029,
+              "Tittel": "Revisjon av konsesjonsvilk\u00e5r for Bergsdalsvassdraget og Torfinno"
+            },
+            {
+              "KdbID": 9066,
+              "Tittel": "Midlertidig fravik fra man\u00f8vreringsreglementet - Kaldestad\u00a0kraftverk\u00a0-\u00a0EVINY FORNYBAR AS - Annet;  - 06.05.2023 til 12.05.2023- Referansenr:PNFFKO"
+            },
+            {
+              "KdbID": 9864,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Kaldestad\u00a0kraftverk\u00a0-\u00a0EVINY FORNYBAR AS - Annet;  - 15.04.2026 til 01.09.2026- Referansenr:OFDCOY"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Bergsdalsvassdraget",
+          "SPPunkt": "03",
+          "SPSone": "253",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 6,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 6"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1745952,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 193,
+            "vannkraftverknavn": "Kaldestad",
+            "vannkraftverktype": "KS",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 1936,
+            "kdbnr": 141,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": -1493164800000,
+            "spid": "23701",
+            "maksytelse_mw": 6.3,
+            "bruttofallhoyde_m": 596.0,
+            "energiekvivalent_kwh_m3": 1.457,
+            "vannkraftverkeier": "KVAM KRAFTVERK AS",
+            "kommunenummer": "4622",
+            "kommunenavn": "Kvam",
+            "fylke": "Vestland",
+            "vassdragsnr": "052.72A",
+            "elvenavnhierarki": "Kaldestadelvi",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "193",
+            "kraftverksymbol": "SK"
+          },
+          "geometry": {
+            "x": 6.1502543041007405,
+            "y": 60.3642468563142
+          }
+        },
+        {
+          "attributes": {
+            "objectid": 1747671,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 194,
+            "vannkraftverknavn": "Kaldestad",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1964,
+            "kdbnr": 313,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 676857600000,
+            "spid": "25303",
+            "maksytelse_mw": 24.0,
+            "bruttofallhoyde_m": 80.26,
+            "energiekvivalent_kwh_m3": 0.176,
+            "vannkraftverkeier": "EVINY FORNYBAR AS",
+            "kommunenummer": "4628",
+            "kommunenavn": "Vaksdal",
+            "fylke": "Vestland",
+            "vassdragsnr": "061.BA",
+            "elvenavnhierarki": "Kald\u00e5ni/Bergsdalsvassdraget",
+            "nedstromvannkraftverknr": 96,
+            "nedstromvannkraftverknr_liste": "194,96,56",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 6.026380877078342,
+            "y": 60.55525520634724
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "ee3c8357-b101-58ac-88c8-cf0e072384de",
+      "wri_id": "WRI1003265",
+      "name": "Kangsliaga",
+      "historical_capacity_mw": 3.0,
+      "wri_coordinates": [
+        8.7586,
+        61.2567
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "853c6e77-bdb2-5849-9cb7-090785689d39",
+      "wri_id": "WRI1003267",
+      "name": "Kanstadbotn",
+      "historical_capacity_mw": 6.0,
+      "wri_coordinates": [
+        8.157,
+        62.676
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "c1cd4c4d-ef32-5177-bde5-90941430cb46",
+      "wri_id": "WRI1003270",
+      "name": "Kaupanger",
+      "historical_capacity_mw": 6.0,
+      "wri_coordinates": [
+        7.2349,
+        61.1832
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 1187,
+          "Navn": "Kaupanger",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "KAUPANGER ENERGI AS",
+          "HovedEier_OrgNr": "990784779",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Sogndal",
+          "KommuneNr": "40",
+          "ForsteUtnyttelseAvFalletDato": 1996,
+          "DatoForEldsteKraftproduserendeDel": 1996,
+          "MaksYtelse": 0.055,
+          "MidProd_91_20": 0.03,
+          "BruttoFallhoyde_M": null,
+          "Slukeevne": null,
+          "EnEkv": null,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "077.1A",
+          "ErIDrift": true,
+          "IDriftDato": "1996-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 42721,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "KAUPANGER ENERGI AS",
+              "OrgNr": 990784779,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Kaupangerelvi",
+          "SPPunkt": null,
+          "SPSone": "314",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 7,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 7"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746926,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 1187,
+            "vannkraftverknavn": "Kaupanger",
+            "vannkraftverktype": "Mikro",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 1996,
+            "kdbnr": null,
+            "konsesjonstatus": null,
+            "konsesjonstatusdato": null,
+            "spid": null,
+            "maksytelse_mw": 0.06,
+            "bruttofallhoyde_m": null,
+            "energiekvivalent_kwh_m3": null,
+            "vannkraftverkeier": "KAUPANGER ENERGI AS",
+            "kommunenummer": "4640",
+            "kommunenavn": "Sogndal",
+            "fylke": "Vestland",
+            "vassdragsnr": "077.1A",
+            "elvenavnhierarki": "Kaupangerelvi",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "1187",
+            "kraftverksymbol": "MM"
+          },
+          "geometry": {
+            "x": 7.234274683487074,
+            "y": 61.18362201054253
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "230d846f-30c0-5180-9e08-8c1445eee666",
+      "wri_id": "WRI1003276",
+      "name": "Kistefoss",
+      "historical_capacity_mw": 7.0,
+      "wri_coordinates": [
+        10.3687,
+        60.2221
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "87d18c68-29bb-5827-9389-eba27c0d7d88",
+      "wri_id": "WRI1003277",
+      "name": "Kjela",
+      "historical_capacity_mw": 72.0,
+      "wri_coordinates": [
+        7.4255,
+        59.7308
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 203,
+          "Navn": "Kjela",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Telemark ",
+          "FylkesNr": "40",
+          "Kommune": "Vinje",
+          "KommuneNr": "36",
+          "ForsteUtnyttelseAvFalletDato": 1979,
+          "DatoForEldsteKraftproduserendeDel": 1979,
+          "MaksYtelse": 62.0,
+          "MidProd_91_20": 236.595,
+          "BruttoFallhoyde_M": 174.0,
+          "Slukeevne": 41.0,
+          "EnEkv": 0.419,
+          "ElspotomraadeNummer": "2",
+          "RegineNr": "016.BEE2",
+          "ErIDrift": true,
+          "IDriftDato": "1979-06-30T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 669,
+              "Tittel": "Tokke-Vinje vassdraget - Endring av man.regl. for Kjela kraftverk"
+            },
+            {
+              "KdbID": 909,
+              "Tittel": "Statsreg. m.v. av Tokke-Vinjevassdraget"
+            },
+            {
+              "KdbID": 913,
+              "Tittel": "Ytt. statsreg. av Tokke-Vinjevassdraget"
+            },
+            {
+              "KdbID": 1129,
+              "Tittel": "Statsreg. av Tokke-Vinjevassdraget - Disp. vilk\u00e5r"
+            },
+            {
+              "KdbID": 1145,
+              "Tittel": "Statsreg. Tokke-Vinjevassdraget - Man\u00f8vreringsregl. ytt. reg."
+            },
+            {
+              "KdbID": 1774,
+              "Tittel": "Kjela kraftverk - Fastsettelse av nytt man.regl."
+            },
+            {
+              "KdbID": 9534,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Kjela\u00a0kraftverk\u00a0-\u00a0STATKRAFT ENERGI AS - Fravik fra minstevannf\u00f8ring;Annet;  - 24.02.2025 til 28.04.2025- Referansenr:DFNACK"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Skiensvassdraget",
+          "SPPunkt": "82",
+          "SPSone": "078",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 3,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 3"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746416,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 203,
+            "vannkraftverknavn": "Kjela",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1979,
+            "kdbnr": 669,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 355536000000,
+            "spid": "07882",
+            "maksytelse_mw": 62.0,
+            "bruttofallhoyde_m": 174.0,
+            "energiekvivalent_kwh_m3": 0.419,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "4036",
+            "kommunenavn": "Vinje",
+            "fylke": "Telemark",
+            "vassdragsnr": "016.BEE20",
+            "elvenavnhierarki": "Vinje\u00e5i/Vest-vassdraget/Skiensvassdraget",
+            "nedstromvannkraftverknr": 503,
+            "nedstromvannkraftverknr_liste": "203,503,446,152,507,72,473,387,205",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 7.434554986112559,
+            "y": 59.73673107552324
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "56790321-a835-5ac7-8c8e-2d297359dfb6",
+      "wri_id": "WRI1003281",
+      "name": "Kjosnesfjorden",
+      "historical_capacity_mw": 97.0,
+      "wri_coordinates": [
+        6.6154,
+        61.5177
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "e1c5ad16-9609-5f42-8ce5-1b1151d5a6f5",
+      "wri_id": "WRI1003288",
+      "name": "Kobbelv",
+      "historical_capacity_mw": 352.0,
+      "wri_coordinates": [
+        15.9902,
+        67.6232
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 206,
+          "Navn": "Kobbelv",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Nordland",
+          "FylkesNr": "18",
+          "Kommune": "S\u00f8rfold",
+          "KommuneNr": "45",
+          "ForsteUtnyttelseAvFalletDato": 1987,
+          "DatoForEldsteKraftproduserendeDel": 1987,
+          "MaksYtelse": 300.0,
+          "MidProd_91_20": 765.643,
+          "BruttoFallhoyde_M": 590.0,
+          "Slukeevne": 57.99,
+          "EnEkv": 1.437,
+          "ElspotomraadeNummer": "4",
+          "RegineNr": "167.B0",
+          "ErIDrift": true,
+          "IDriftDato": "1987-03-05T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 82.5,
+              "ProsentAndelDrift": 82.5
+            },
+            {
+              "AdressatID": 42851,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "NORDKRAFT MAGASIN AS",
+              "OrgNr": 928657213,
+              "ProsentAndel": 17.5,
+              "ProsentAndelDrift": 17.5
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 688,
+              "Tittel": "Statsregulering og utbygging av Kobbelvvassdraget m.v."
+            },
+            {
+              "KdbID": 942,
+              "Tittel": "Kobbelvutbyggingen - Tilleggsoverf\u00f8ring"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Kobbelvvassdraget",
+          "SPPunkt": "01",
+          "SPSone": "713",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 10,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 10"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746317,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 206,
+            "vannkraftverknavn": "Kobbelv",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1987,
+            "kdbnr": 688,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 363571200000,
+            "spid": "71301",
+            "maksytelse_mw": 300.0,
+            "bruttofallhoyde_m": 590.0,
+            "energiekvivalent_kwh_m3": 1.437,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "1845",
+            "kommunenavn": "S\u00f8rfold",
+            "fylke": "Nordland",
+            "vassdragsnr": "167.B0",
+            "elvenavnhierarki": "Kobbelvvassdraget",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "206",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 16.00707577182084,
+            "y": 67.6216207455143
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "88dc05fc-e4db-5009-b34e-ac655f6e7b0a",
+      "wri_id": "WRI1003289",
+      "name": "Kolsvik",
+      "historical_capacity_mw": 163.0,
+      "wri_coordinates": [
+        12.7936,
+        65.204
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 209,
+          "Navn": "Kolsvik",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "HELGELAND KRAFT VANNKRAFT AS",
+          "HovedEier_OrgNr": "917424896",
+          "Fylke": "Nordland",
+          "FylkesNr": "18",
+          "Kommune": "Bindal",
+          "KommuneNr": "11",
+          "ForsteUtnyttelseAvFalletDato": 1979,
+          "DatoForEldsteKraftproduserendeDel": 1979,
+          "MaksYtelse": 128.0,
+          "MidProd_91_20": 641.089,
+          "BruttoFallhoyde_M": 519.0,
+          "Slukeevne": 30.6,
+          "EnEkv": 1.162,
+          "ElspotomraadeNummer": "4",
+          "RegineNr": "144.61AB0",
+          "ErIDrift": true,
+          "IDriftDato": "1979-09-25T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 42662,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "NTE ENERGI AS",
+              "OrgNr": 988340715,
+              "ProsentAndel": 50.0,
+              "ProsentAndelDrift": 50.0
+            },
+            {
+              "AdressatID": 51392,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "HELGELAND KRAFT VANNKRAFT AS",
+              "OrgNr": 917424896,
+              "ProsentAndel": 50.0,
+              "ProsentAndelDrift": 50.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 403,
+              "Tittel": "Erverv og regulering av \u00c5bj\u00f8ravassdraget m.v."
+            },
+            {
+              "KdbID": 2677,
+              "Tittel": "Kolsvik kraftverk - overf\u00f8ring av Kalklavdalsvatn og 2 bekker til"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Bogelva",
+          "SPPunkt": "02",
+          "SPSone": "608",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 10,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 10"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746287,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 209,
+            "vannkraftverknavn": "Kolsvik",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1979,
+            "kdbnr": 2677,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 976838400000,
+            "spid": "60802",
+            "maksytelse_mw": 128.0,
+            "bruttofallhoyde_m": 519.0,
+            "energiekvivalent_kwh_m3": 1.162,
+            "vannkraftverkeier": "HELGELAND KRAFT VANNKRAFT AS",
+            "kommunenummer": "1811",
+            "kommunenavn": "Bindal",
+            "fylke": "Nordland",
+            "vassdragsnr": "144.61A0",
+            "elvenavnhierarki": "Bogelva",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "209",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 12.796868368542324,
+            "y": 65.20919606199963
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "266efe4d-b68a-5054-ab4d-de8b1fa4d721",
+      "wri_id": "WRI1003297",
+      "name": "Kvanangen",
+      "historical_capacity_mw": 64.0,
+      "wri_coordinates": [
+        22.1694,
+        69.7142
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "814e072f-a5f4-5333-8c14-80aa58a3188a",
+      "wri_id": "WRI1003302",
+      "name": "Kvilldal",
+      "historical_capacity_mw": 1444.0,
+      "wri_coordinates": [
+        6.5846,
+        59.5118
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 222,
+          "Navn": "Kvilldal",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Rogaland",
+          "FylkesNr": "11",
+          "Kommune": "Suldal",
+          "KommuneNr": "34",
+          "ForsteUtnyttelseAvFalletDato": 1981,
+          "DatoForEldsteKraftproduserendeDel": 1981,
+          "MaksYtelse": 1240.0,
+          "MidProd_91_20": 3230.895,
+          "BruttoFallhoyde_M": 536.5,
+          "Slukeevne": 263.33,
+          "EnEkv": 1.307,
+          "ElspotomraadeNummer": "2",
+          "RegineNr": "036.B121",
+          "ErIDrift": true,
+          "IDriftDato": "1981-12-11T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10394,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "OTRA KRAFT DA",
+              "OrgNr": 955007514,
+              "ProsentAndel": 7.3,
+              "ProsentAndelDrift": 7.3
+            },
+            {
+              "AdressatID": 10437,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "SUNNHORDLAND KRAFTLAG AS",
+              "OrgNr": 916435711,
+              "ProsentAndel": 2.5,
+              "ProsentAndelDrift": 2.5
+            },
+            {
+              "AdressatID": 40121,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "\u00c5 ENERGI VANNKRAFT AS",
+              "OrgNr": 882973972,
+              "ProsentAndel": 0.2,
+              "ProsentAndelDrift": 0.2
+            },
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 72.0,
+              "ProsentAndelDrift": 72.0
+            },
+            {
+              "AdressatID": 60547,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "LYSE KRAFT DA",
+              "OrgNr": 925749419,
+              "ProsentAndel": 18.0,
+              "ProsentAndelDrift": 18.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 479,
+              "Tittel": "Statsreg. for utb. av Ulla-F\u00f8rrevassdragene - Reguleringsbest. m.v."
+            },
+            {
+              "KdbID": 698,
+              "Tittel": "Ulla-F\u00f8rrevassdragene , Statsregulering , Planendring"
+            },
+            {
+              "KdbID": 1010,
+              "Tittel": "Ulla-F\u00f8rre - Nytt man\u00f8vreringsreglement for Suldalsl\u00e5gen"
+            },
+            {
+              "KdbID": 4227,
+              "Tittel": "Ulla-F\u00f8rre. Man\u00f8vreringsreglement for Suldalsl\u00e5gen"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Suldalsvassdraget",
+          "SPPunkt": "12",
+          "SPSone": "166",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 3,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 3"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747616,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 222,
+            "vannkraftverknavn": "Kvilldal",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1981,
+            "kdbnr": 479,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 148262400000,
+            "spid": "16612",
+            "maksytelse_mw": 1240.0,
+            "bruttofallhoyde_m": 536.5,
+            "energiekvivalent_kwh_m3": 1.307,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "1134",
+            "kommunenavn": "Suldal",
+            "fylke": "Rogaland",
+            "vassdragsnr": "036.B121",
+            "elvenavnhierarki": "Suldalsvassdraget",
+            "nedstromvannkraftverknr": 167,
+            "nedstromvannkraftverknr_liste": "222,167",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 6.662767626170009,
+            "y": 59.52561294187649
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "5a4a26bc-37a3-56be-8746-5fb4a5c49e9e",
+      "wri_id": "WRI1003303",
+      "name": "Kvinen",
+      "historical_capacity_mw": 90.0,
+      "wri_coordinates": [
+        7.0838,
+        58.9281
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 223,
+          "Navn": "Kvinen",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "SIRA KVINA KRAFTSELSKAP",
+          "HovedEier_OrgNr": "954090493",
+          "Fylke": "Agder",
+          "FylkesNr": "42",
+          "Kommune": "Sirdal",
+          "KommuneNr": "28",
+          "ForsteUtnyttelseAvFalletDato": 1981,
+          "DatoForEldsteKraftproduserendeDel": 1981,
+          "MaksYtelse": 80.0,
+          "MidProd_91_20": 235.836,
+          "BruttoFallhoyde_M": 120.0,
+          "Slukeevne": 76.88,
+          "EnEkv": 0.289,
+          "ElspotomraadeNummer": "2",
+          "RegineNr": "026.H3B",
+          "ErIDrift": true,
+          "IDriftDato": "1981-11-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10392,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "SIRA KVINA KRAFTSELSKAP",
+              "OrgNr": 954090493,
+              "ProsentAndel": null,
+              "ProsentAndelDrift": 100.0
+            },
+            {
+              "AdressatID": 40113,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "SKAGERAK KRAFT AS",
+              "OrgNr": 979563531,
+              "ProsentAndel": 14.6,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 40121,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "\u00c5 ENERGI VANNKRAFT AS",
+              "OrgNr": 882973972,
+              "ProsentAndel": 12.2,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 41005,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 32.1,
+              "ProsentAndelDrift": null
+            },
+            {
+              "AdressatID": 60547,
+              "Driftselskap": false,
+              "Hovedeier": false,
+              "Navn": "LYSE KRAFT DA",
+              "OrgNr": 925749419,
+              "ProsentAndel": 41.1,
+              "ProsentAndelDrift": null
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 92,
+              "Tittel": "Sira-Kvina - Erverv og reg. av \u00d8vre Kvina, Kvinen kraftverk"
+            },
+            {
+              "KdbID": 918,
+              "Tittel": "Reguleringer og overf\u00f8ringer i Sira-Kvinavassdragene"
+            },
+            {
+              "KdbID": 2056,
+              "Tittel": "Erv. av 3,3 av statens prosentand. i Sira-Kvina krv."
+            },
+            {
+              "KdbID": 9006,
+              "Tittel": "Midlertidig fravik fra man\u00f8vreringsreglementet - Ognhellervatn 03.09.23-25.09.23"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Sira",
+          "SPPunkt": "24",
+          "SPSone": "132",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 4,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 4"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1745910,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 223,
+            "vannkraftverknavn": "Kvinen",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1981,
+            "kdbnr": 92,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 266803200000,
+            "spid": "13224",
+            "maksytelse_mw": 80.0,
+            "bruttofallhoyde_m": 120.0,
+            "energiekvivalent_kwh_m3": 0.289,
+            "vannkraftverkeier": "SIRA KVINA KRAFTSELSKAP",
+            "kommunenummer": "4228",
+            "kommunenavn": "Sirdal",
+            "fylke": "Agder",
+            "vassdragsnr": "026.H3B2A",
+            "elvenavnhierarki": "elv fra Falketj\u00f8rnene/H\u00f8na/Sira",
+            "nedstromvannkraftverknr": 396,
+            "nedstromvannkraftverknr_liste": "223,396,448,528",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 7.088093668216051,
+            "y": 58.9356184007093
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "d36c4ec8-c008-5a99-aa75-93d889accd70",
+      "wri_id": "WRI1003306",
+      "name": "Kvittingen",
+      "historical_capacity_mw": 56.0,
+      "wri_coordinates": [
+        5.9085,
+        60.4647
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 225,
+          "Navn": "Kvittingen",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "EVINY FORNYBAR AS",
+          "HovedEier_OrgNr": "876944642",
+          "Fylke": "Vestland",
+          "FylkesNr": "46",
+          "Kommune": "Samnanger",
+          "KommuneNr": "23",
+          "ForsteUtnyttelseAvFalletDato": 1984,
+          "DatoForEldsteKraftproduserendeDel": 1984,
+          "MaksYtelse": 48.0,
+          "MidProd_91_20": 155.313,
+          "BruttoFallhoyde_M": 251.0,
+          "Slukeevne": 20.67,
+          "EnEkv": 0.626,
+          "ElspotomraadeNummer": "5",
+          "RegineNr": "055.D2A",
+          "ErIDrift": true,
+          "IDriftDato": "1984-11-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 25445,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "EVINY FORNYBAR AS",
+              "OrgNr": 876944642,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 677,
+              "Tittel": "Reg. og utb. av Kvittingen kraftverk, Samnangervassdr."
+            },
+            {
+              "KdbID": 1206,
+              "Tittel": "Ny konsesjon for Samnangervassdraget"
+            },
+            {
+              "KdbID": 7764,
+              "Tittel": "Samnangervassdraget - Fastsettelse av minstevannf\u00f8ring"
+            },
+            {
+              "KdbID": 9519,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Kvittingen\u00a0kraftverk\u00a0-\u00a0EVINY FORNYBAR AS - Tapping under LRV ;  - 16.06.2025 til 30.09.2026- Referansenr:OXHWGR"
+            },
+            {
+              "KdbID": 9908,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Kvittingen\u00a0kraftverk\u00a0-\u00a0EVINY FORNYBAR AS - Tapping under LRV ;  - 01.06.2026 til 15.06.2026- Referansenr:ZQOBRY"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Samnangervassdraget",
+          "SPPunkt": "13",
+          "SPSone": "246",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 6,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 6"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747745,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 225,
+            "vannkraftverknavn": "Kvittingen",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1984,
+            "kdbnr": 1206,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 990144000000,
+            "spid": "24613",
+            "maksytelse_mw": 48.0,
+            "bruttofallhoyde_m": 251.0,
+            "energiekvivalent_kwh_m3": 0.626,
+            "vannkraftverkeier": "EVINY FORNYBAR AS",
+            "kommunenummer": "4623",
+            "kommunenavn": "Samnanger",
+            "fylke": "Vestland",
+            "vassdragsnr": "055.D2A1",
+            "elvenavnhierarki": "elv i Dukebotnen/Samnangervassdraget",
+            "nedstromvannkraftverknr": 120,
+            "nedstromvannkraftverknr_liste": "225,120,603,99,976",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 5.914748736169869,
+            "y": 60.464683350072406
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "0ee9d158-41e9-5a42-bd5f-1107e30ddcc4",
+      "wri_id": "WRI1003308",
+      "name": "Lakshola",
+      "historical_capacity_mw": 34.0,
+      "wri_coordinates": [
+        15.7505,
+        67.4482
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 768,
+          "Navn": "Lakshola",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "SISO ENERGI AS",
+          "HovedEier_OrgNr": "986530673",
+          "Fylke": "Nordland",
+          "FylkesNr": "18",
+          "Kommune": "S\u00f8rfold",
+          "KommuneNr": "45",
+          "ForsteUtnyttelseAvFalletDato": 1999,
+          "DatoForEldsteKraftproduserendeDel": 1999,
+          "MaksYtelse": 30.0,
+          "MidProd_91_20": 115.582,
+          "BruttoFallhoyde_M": 314.0,
+          "Slukeevne": 10.8,
+          "EnEkv": 0.772,
+          "ElspotomraadeNummer": "4",
+          "RegineNr": "166.5A0",
+          "ErIDrift": true,
+          "IDriftDato": "1999-12-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41108,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "SISO ENERGI AS",
+              "OrgNr": 986530673,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 591,
+              "Tittel": "Erverv og regulering av Faulvatnet i S\u00f8rfold (Laks\u00e5gavassdraget)"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Laks\u00e5ga",
+          "SPPunkt": "01",
+          "SPSone": "711",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 10,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 10"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1747557,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 768,
+            "vannkraftverknavn": "Lakshola",
+            "vannkraftverktype": "K",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1999,
+            "kdbnr": 591,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": 840153600000,
+            "spid": "71101",
+            "maksytelse_mw": 30.0,
+            "bruttofallhoyde_m": 314.0,
+            "energiekvivalent_kwh_m3": 0.772,
+            "vannkraftverkeier": "SISO ENERGI AS",
+            "kommunenummer": "1845",
+            "kommunenavn": "S\u00f8rfold",
+            "fylke": "Nordland",
+            "vassdragsnr": "166.5A0",
+            "elvenavnhierarki": "Laks\u00e5ga",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "768",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 15.742977862378462,
+            "y": 67.450831211765
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "f2a2851b-3892-59f0-9be0-1cdd02f0aa32",
+      "wri_id": "WRI1003309",
+      "name": "Lang Sima",
+      "historical_capacity_mw": 580.0,
+      "wri_coordinates": [
+        7.1447,
+        60.4986
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "50d4e052-9b84-57ec-ab31-0860dfa1d2a7",
+      "wri_id": "WRI1003312",
+      "name": "Langvatn",
+      "historical_capacity_mw": 115.0,
+      "wri_coordinates": [
+        14.1667,
+        66.337
+      ],
+      "api_exact_name_candidates": [
+        {
+          "VannKraftverkID": 235,
+          "Navn": "Langvatn",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "SKS PRODUKSJON AS",
+          "HovedEier_OrgNr": "915637353",
+          "Fylke": "Nordland",
+          "FylkesNr": "18",
+          "Kommune": "Gildesk\u00e5l",
+          "KommuneNr": "38",
+          "ForsteUtnyttelseAvFalletDato": 1978,
+          "DatoForEldsteKraftproduserendeDel": 1978,
+          "MaksYtelse": 5.4,
+          "MidProd_91_20": 18.94,
+          "BruttoFallhoyde_M": 60.59,
+          "Slukeevne": 10.78,
+          "EnEkv": 0.138,
+          "ElspotomraadeNummer": "4",
+          "RegineNr": "161.1B2B",
+          "ErIDrift": true,
+          "IDriftDato": "1978-01-01T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 10544,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "SKS PRODUKSJON AS",
+              "OrgNr": 915637353,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 203,
+              "Tittel": "Erverv av bruksrett til fall i Sundsfjordelv i Gildesk\u00e5l"
+            },
+            {
+              "KdbID": 513,
+              "Tittel": "Erverv og reg. av Fors\u00e5ga og reg. og overf. av Sundsfjordelv"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Sundfjordelva",
+          "SPPunkt": "02",
+          "SPSone": "682",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 10,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 10"
+        },
+        {
+          "VannKraftverkID": 236,
+          "Navn": "Langvatn",
+          "VannKVType": "Kraftverk",
+          "VannKVTypeID": "K",
+          "HovedEier": "STATKRAFT ENERGI AS",
+          "HovedEier_OrgNr": "987059729",
+          "Fylke": "Nordland",
+          "FylkesNr": "18",
+          "Kommune": "Rana",
+          "KommuneNr": "33",
+          "ForsteUtnyttelseAvFalletDato": 1964,
+          "DatoForEldsteKraftproduserendeDel": 1964,
+          "MaksYtelse": 90.0,
+          "MidProd_91_20": 335.945,
+          "BruttoFallhoyde_M": 43.0,
+          "Slukeevne": 284.0,
+          "EnEkv": 0.088,
+          "ElspotomraadeNummer": "4",
+          "RegineNr": "156.A0",
+          "ErIDrift": true,
+          "IDriftDato": "1964-08-19T00:00:00",
+          "Eiere": [
+            {
+              "AdressatID": 41005,
+              "Driftselskap": true,
+              "Hovedeier": true,
+              "Navn": "STATKRAFT ENERGI AS",
+              "OrgNr": 987059729,
+              "ProsentAndel": 100.0,
+              "ProsentAndelDrift": 100.0
+            }
+          ],
+          "Konsesjoner": [
+            {
+              "KdbID": 883,
+              "Tittel": "Statsreg. av Langvatn og overf\u00f8ring av Ranaelv til Langvatn"
+            },
+            {
+              "KdbID": 1961,
+              "Tittel": "Ekspropr. av grunn og rettigheter for utb. av Langvatn kraftanlegg"
+            },
+            {
+              "KdbID": 9722,
+              "Tittel": "S\u00f8knad - Midlertidig fravik fra man\u00f8vreringsreglementet - Langvatn\u00a0kraftverk\u00a0-\u00a0(ukjent) - Tapping under LRV ;  - 04.08.2025 til 30.09.2025- Referansenr:DVMJYQ"
+            }
+          ],
+          "Kraftverkstatus": "Idrift",
+          "NVEOmraadeID": null,
+          "NVEOmraadeNavn": null,
+          "Nedborsfeltnavn": "Ranavassdraget",
+          "SPPunkt": "11",
+          "SPSone": "655",
+          "UnderBygging": false,
+          "UteAvDrift": null,
+          "VassdragsOmraadeID": 10,
+          "VassdragsOmraadeNavn": "NVE - omr\u00e5de: 10"
+        }
+      ],
+      "gis_exact_name_candidates": [
+        {
+          "attributes": {
+            "objectid": 1746294,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 236,
+            "vannkraftverknavn": "Langvatn",
+            "vannkraftverktype": "K",
+            "medium": "T",
+            "status": "D",
+            "idriftsattaar": 1964,
+            "kdbnr": 1961,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": -238204800000,
+            "spid": "65511",
+            "maksytelse_mw": 90.0,
+            "bruttofallhoyde_m": 43.0,
+            "energiekvivalent_kwh_m3": 0.088,
+            "vannkraftverkeier": "STATKRAFT ENERGI AS",
+            "kommunenummer": "1833",
+            "kommunenavn": "Rana",
+            "fylke": "Nordland",
+            "vassdragsnr": "156.411",
+            "elvenavnhierarki": "Ranavassdraget/Ranafjorden nord",
+            "nedstromvannkraftverknr": null,
+            "nedstromvannkraftverknr_liste": "236",
+            "kraftverksymbol": "K"
+          },
+          "geometry": {
+            "x": 14.166999206088656,
+            "y": 66.33684196949756
+          }
+        },
+        {
+          "attributes": {
+            "objectid": 1746302,
+            "objekttype": "Vannkraftverk",
+            "vannkraftverknr": 235,
+            "vannkraftverknavn": "Langvatn",
+            "vannkraftverktype": "KS",
+            "medium": "U",
+            "status": "D",
+            "idriftsattaar": 1978,
+            "kdbnr": 513,
+            "konsesjonstatus": 5,
+            "konsesjonstatusdato": -362793600000,
+            "spid": "68202",
+            "maksytelse_mw": 5.4,
+            "bruttofallhoyde_m": 60.59,
+            "energiekvivalent_kwh_m3": 0.138,
+            "vannkraftverkeier": "SKS PRODUKSJON AS",
+            "kommunenummer": "1838",
+            "kommunenavn": "Gildesk\u00e5l",
+            "fylke": "Nordland",
+            "vassdragsnr": "161.1B2B",
+            "elvenavnhierarki": "Langvass\u00e5ga/Sundfjordelva",
+            "nedstromvannkraftverknr": 411,
+            "nedstromvannkraftverknr_liste": "235,411",
+            "kraftverksymbol": "SK"
+          },
+          "geometry": {
+            "x": 14.153085385671663,
+            "y": 66.88729551866923
+          }
+        }
+      ],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    },
+    {
+      "record_id": "3e7c0842-e776-5be8-841e-a8c09fa6ef12",
+      "wri_id": "WRI1003313",
+      "name": "Lassajavrre",
+      "historical_capacity_mw": 9.0,
+      "wri_coordinates": [
+        22.22,
+        69.6606
+      ],
+      "api_exact_name_candidates": [],
+      "gis_exact_name_candidates": [],
+      "decision": "held_identity_and_scope_review",
+      "reason": "Name equality is insufficient; aliases, location offsets and physical scope require explicit corroboration. No automatic fuzzy or nearest-neighbour merge."
+    }
+  ],
+  "source_ids": [
+    "nve-hydro-20261106",
+    "nve-gis-20261106"
+  ],
+  "reuse": "NVE NLOD; reused checksum-verified 6 November API/map responses; no new retrieval claimed",
+  "owner_review": [
+    {
+      "name": "Grytten",
+      "url": "https://www.statkraft.no/kraftproduksjon/kraftverk/grytten-vannkraftverk/",
+      "publisher": "Statkraft",
+      "title": "Grytten kraftverk",
+      "published_at": null,
+      "retrieved_at": "2026-11-06T01:44:43.885038+00:00",
+      "locator": "Kraftverkstall, Installert effekt",
+      "unit": "MW",
+      "installed_mw": 144,
+      "historical_wri_mw": [
+        6,
+        160
+      ],
+      "decision": "held",
+      "reason": "Two historical names Grytten/Grytten Kraftver require explicit alias and scope review; do not merge or sum.",
+      "licence": "Copyright owner; limited factual review only; no text/images redistributed",
+      "sha256": null
+    },
+    {
+      "name": "Kvilldal",
+      "url": "https://www.statkraft.no/kraftproduksjon/kraftverk/kvilldal-vannkraftverk/",
+      "publisher": "Statkraft",
+      "title": "Kvilldal kraftverk",
+      "published_at": null,
+      "retrieved_at": "2026-11-06T01:44:43.885038+00:00",
+      "locator": "Kraftverkstall, Installert effekt",
+      "unit": "MW",
+      "installed_mw": 1240,
+      "historical_wri_mw": [
+        1444
+      ],
+      "decision": "held",
+      "reason": "Historical and owner station ratings differ; preserve separate bases pending identity/scope review.",
+      "licence": "Copyright owner; limited factual review only; no text/images redistributed",
+      "sha256": null
+    }
+  ]
+}

@@ -58,3 +58,68 @@ def parse_inventory(data: bytes) -> list[dict[str, Any]]:
             raise ValueError("Invalid generating MW")
         result.append({"row": index, "raw": row})
     return result
+
+
+def enrich_reviewed(
+    existing: dict[str, Any],
+    item: dict[str, Any],
+    *,
+    reviewed_record_id: str,
+    owner_source_id: str,
+    now: str,
+) -> dict[str, Any]:
+    """Attach one manually corroborated dispatch row; never sum or infer operation."""
+    import copy
+    import json
+
+    from energy_data_retrieval.pv_catalogue.catalogue import canonical_json
+
+    raw = item["raw"]
+    if (
+        existing["record_id"] != reviewed_record_id
+        or existing["country_code"] != "NZL"
+        or existing["name"] != raw["PlantName"]
+        or not owner_source_id
+    ):
+        raise ValueError("Explicit owner-backed identity review required")
+    if raw["TechnologyCode"] != "HYD" or raw["FuelCode"] != "HYD":
+        raise ValueError("Not conventional hydro evidence")
+    mw = float(raw["NameplateMegawatts"])
+    if not math.isfinite(mw) or mw != existing.get("historical_capacity_mw"):
+        raise ValueError("Historical capacity scope requires review")
+    row = copy.deepcopy(existing)
+    source_id = "nz-ea-fleet-20260702"
+    ext = json.loads(row["extensions_json"])
+    obs = {**item, "source_id": source_id, "identity_source_id": owner_source_id}
+    history = ext.setdefault("nz_dispatch_observations", [])
+    if history:
+        if history != [obs]:
+            raise ValueError("Existing dispatch history requires interval/scope review")
+        return row
+    history.append(obs)
+    ids = json.loads(row["external_ids_json"])
+    key = raw["PointOfConnectionCode"] + ":" + raw["UnitCode"]
+    if ids.get("nz_ea_dispatch_connection", key) != key:
+        raise ValueError("Conflicting dispatch identity")
+    ids["nz_ea_dispatch_connection"] = key
+    fs, ev = json.loads(row["field_sources_json"]), json.loads(row["evidence_json"])
+    for field, value in {
+        "external_ids_json": canonical_json(ids),
+        "extensions_json": canonical_json(ext),
+    }.items():
+        row[field] = value
+        fs[field] = sorted(set([*fs.get(field, []), source_id, owner_source_id]))
+        ev[field] = {
+            "locator": f"CSV record {item['row']}; owner station identity/rating section",
+            "confidence": "high",
+            "original_value": value,
+            "normalization": "Owner/WRI/EA review; historical dispatch observation only",
+        }
+    row.update(
+        field_sources_json=canonical_json(fs),
+        evidence_json=canonical_json(ev),
+        sources=sorted(set(row["sources"] + [source_id, owner_source_id])),
+        updated_at=now,
+        last_verified_at=now,
+    )
+    return row

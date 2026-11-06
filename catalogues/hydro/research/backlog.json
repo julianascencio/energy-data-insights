@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T21:45:03Z",
+  "reviewed_at": "2026-11-06T04:41:54.244888+00:00",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -176,6 +176,219 @@
       "new": 0,
       "held_observations": 68,
       "cursor": "Original acquired and staged; do not rediscover; review identities and dated connection scopes"
+    },
+    {
+      "source": "eia860-2025-hydro-4501-5000",
+      "partition": {
+        "first": 4501,
+        "last": 5000,
+        "next_first": 5001
+      },
+      "accepted_enriched": 0,
+      "held": 0,
+      "cursor": "Complete, including empty hydro partitions; resume at 10001"
+    },
+    {
+      "source": "eia860-2025-hydro-5001-5500",
+      "partition": {
+        "first": 5001,
+        "last": 5500,
+        "next_first": 5501
+      },
+      "accepted_enriched": 0,
+      "held": 0,
+      "cursor": "Complete, including empty hydro partitions; resume at 10001"
+    },
+    {
+      "source": "eia860-2025-hydro-5501-10000",
+      "partition": {
+        "first": 5501,
+        "last": 10000,
+        "next_first": 10001
+      },
+      "accepted_enriched": 158,
+      "held": 44,
+      "cursor": "Complete, including empty hydro partitions; resume at 10001"
+    },
+    {
+      "source": "nz-ea-fleet-20260702 + owner corroboration",
+      "accepted_enriched": 2,
+      "accepted_rows": [
+        14,
+        15
+      ],
+      "remaining_held_rows": 66,
+      "remaining_held_names": 40,
+      "cursor": "Aratiatia and Aviemore explicit crosswalks complete; do not replay as new plants"
+    },
+    {
+      "source": "eia860-2025-hydro-10001-15000",
+      "partition": {
+        "first": 10001,
+        "last": 15000,
+        "next_first": 15001
+      },
+      "accepted_enriched": 99,
+      "held": 15,
+      "new": 0,
+      "generator_observations": 212,
+      "cursor": "Complete; resume 15001\u201320000 after Europe rotation"
+    },
+    {
+      "source": "nz-ea-fleet-20260702 + nz-genesis-fy24-tuai",
+      "accepted_enriched": 1,
+      "new": 0,
+      "accepted_rows": [
+        140
+      ],
+      "remaining_held_rows": 65,
+      "remaining_held_names": 39,
+      "cursor": "Tuai explicit crosswalk complete; previous Aratiatia/Aviemore decisions retained"
+    },
+    {
+      "source": "eia860-2025-hydro-15001-20000",
+      "partition": {
+        "first": 15001,
+        "last": 20000,
+        "next_first": 20001
+      },
+      "accepted_enriched": 0,
+      "held": 0,
+      "cursor": "Complete; EIA resumes 55001\u201360000"
+    },
+    {
+      "source": "eia860-2025-hydro-20001-50000",
+      "partition": {
+        "first": 20001,
+        "last": 50000,
+        "next_first": 50001
+      },
+      "accepted_enriched": 0,
+      "held": 0,
+      "cursor": "Complete; EIA resumes 55001\u201360000"
+    },
+    {
+      "source": "eia860-2025-hydro-50001-55000",
+      "partition": {
+        "first": 50001,
+        "last": 55000,
+        "next_first": 55001
+      },
+      "accepted_enriched": 171,
+      "held": 41,
+      "cursor": "Complete; EIA resumes 55001\u201360000"
+    },
+    {
+      "source": "nve-hydro-20261106 + nve-gis-20261106",
+      "partition": "First 50 remaining WRI NOR identities sorted by WRI ID, WRI1002991\u2013WRI1003149",
+      "accepted_enriched": 0,
+      "held": 50,
+      "cursor": "Screened, not resolved; next offset 50; retained raw exact-name candidates and two owner checks"
+    },
+    {
+      "source": "eia860-2025-hydro-55001-60000",
+      "partition": {
+        "first": 55001,
+        "last": 60000,
+        "next_first": 60001
+      },
+      "accepted_enriched": 61,
+      "held": 11,
+      "new": 0,
+      "cursor": "Complete; next EIA 60001\u201365000"
+    },
+    {
+      "source": "nve-hydro-20261106 + nve-gis-20261106",
+      "partition": {
+        "offset": 0,
+        "after_wri_id": "WRI1003149",
+        "limit": 50,
+        "last_wri_id": "WRI1003313",
+        "next_offset": null,
+        "next_after_wri_id": "WRI1003313"
+      },
+      "accepted_enriched": 0,
+      "held": 50,
+      "cursor": "Screened only; cumulative 100 held; next after WRI1003313; do not use shifting offsets"
+    },
+    {
+      "source": "eia860-2025-hydro-60001-65000",
+      "partition": {
+        "first": 60001,
+        "last": 65000,
+        "next_first": 65001
+      },
+      "accepted_enriched": 16,
+      "held": 7,
+      "new": 0,
+      "cursor": "Reviewed through 99999; revisit held official IDs and pumped/mixed units"
+    },
+    {
+      "source": "eia860-2025-hydro-65001-99999",
+      "partition": {
+        "first": 65001,
+        "last": 99999,
+        "next_first": 100000
+      },
+      "accepted_enriched": 0,
+      "held": 10,
+      "new": 0,
+      "cursor": "Reviewed through 99999; revisit held official IDs and pumped/mixed units"
+    },
+    {
+      "source": "nve-hydro-20261106 + nve-gis-20261106",
+      "partition": {
+        "offset": 0,
+        "after_wri_id": "WRI1003313",
+        "limit": 50,
+        "last_wri_id": "WRI1003515",
+        "next_offset": null,
+        "next_after_wri_id": "WRI1003515"
+      },
+      "accepted_enriched": 0,
+      "held": 50,
+      "cursor": "Screened only; cumulative 150 held; next after WRI1003515"
+    },
+    {
+      "source": "ONS retained unit evidence / fresh 2026-11-06 check",
+      "accepted_enriched": 131,
+      "new": 0,
+      "cursor": "All 180 CEGs already scanned; 49 held; dispatch metadata enriched for 131 accepted identities"
+    },
+    {
+      "source": "nve-hydro-20261106 + nve-gis-20261106",
+      "partition": {
+        "offset": 0,
+        "after_wri_id": "WRI1003515",
+        "limit": 50,
+        "last_wri_id": "WRI1003631",
+        "next_offset": null,
+        "next_after_wri_id": "WRI1003631"
+      },
+      "accepted_enriched": 0,
+      "held": 50,
+      "cursor": "Next after WRI1003631; 200 screened identities remain held"
+    },
+    {
+      "source": "ONS explicit registry-alias review",
+      "accepted_enriched": 35,
+      "held": 14,
+      "new": 0,
+      "cursor": "35 prior holds resolved; 14 remain; original hold ledgers preserved"
+    },
+    {
+      "source": "NVE registered API/map captures",
+      "partition": {
+        "offset": 0,
+        "after_wri_id": "WRI1003631",
+        "limit": 50,
+        "last_wri_id": null,
+        "next_offset": null,
+        "next_after_wri_id": "WRI1003631"
+      },
+      "held": 0,
+      "accepted_enriched": 0,
+      "cursor": "No rows after WRI1003631; remaining-identity scan exhausted; 200 screened holds still unresolved"
     }
   ],
   "next_sources": [
@@ -202,25 +415,25 @@
       ]
     },
     {
-      "priority": 2,
+      "priority": 1,
       "url": "https://www.nve.no/energi/energisystem/vannkraft/",
       "country": "NOR",
       "status": "110 WRI identities enriched; 1867 NVE candidates remain unaccepted",
-      "next_action": "NVE IDs and WRI UUIDs in nve-crosswalk-20261105.json; replay is idempotent; review 181 remaining WRI Norwegian identities with aliases/offsets; do not relax automatic identity rules"
+      "next_action": "Scan exhausted after WRI1003631; resolve 200 retained identity/scope holds"
     },
     {
       "priority": 3,
       "url": "https://www.eia.gov/electricity/data/eia860/",
       "country": "USA",
-      "status": "670 enriched; 154 held",
-      "next_action": "EIA codes 4501\u20135000"
+      "status": "1175 enriched; 282 held",
+      "next_action": "EIA code scan through 99999 complete; review held official IDs and pumped/mixed units before claiming inventory completeness"
     },
     {
       "priority": 1,
       "url": "https://dadosabertos.aneel.gov.br/",
       "country": "BRA",
       "status": "All 180 ONS hydro CEGs reviewed: 131 enrichments, 49 holds",
-      "next_action": "Review 40 exact-name discrepancies and 9 missing historical identities with primary alias/scope evidence; no fuzzy merges"
+      "next_action": "14 ONS holds: 5 multi-powerhouse groups and 9 missing identities; explicit scope review required"
     },
     {
       "priority": 1,
@@ -232,8 +445,8 @@
     {
       "priority": 1,
       "region": "Oceania",
-      "status": "NZ original CSV acquired under CC BY 4.0; 68 hydro observations / 42 names held",
-      "next_action": "NZ 42 hydro names: explicit WRI/owner identity and effective-interval/connection review; EIA resumes 4501\u20135000",
+      "status": "3 identities enriched; 65 observations / 39 names held",
+      "next_action": "Resolve Benmore dispatch intervals and distinct nameplate/output bases; remaining owner-backed identity reviews",
       "url": "https://www.ea.govt.nz/data-and-insights/datasets/wholesale/generation/generation-fleet/existing/"
     }
   ],

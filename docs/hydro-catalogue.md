@@ -424,3 +424,218 @@ plants / 1917 unit observations / 154 holds. Aggregation scopes remain
 unresolved and excluded from totals. Next: explicit NZ identity/interval
 review; EIA resumes at 4501–5000. Source, candidate and validation ledgers
 retain resumable decisions and deterministic snapshot hashes.
+
+
+## Reviewed NZ identities and EIA continuation
+
+Explicit owner/WRI/EA identity reviews accept Aratiatia and Aviemore, retaining
+CSV rows 14 and 15 and their dispatch connection identifiers. Mercury's station
+page corroborates Aratiatia's 78 MW; Meridian's station page corroborates
+Aviemore's 220 MW. Each has a single EA row and matching historical WRI rating.
+Owner pages are used only for limited factual corroboration, with no page
+text or imagery redistributed; EA observations retain CC BY 4.0 attribution.
+Scalar lifecycle, capacity, coordinates and aggregation roles remain unchanged.
+Dispatch UnitCode is not treated as a physical generator ID. The 1899/9999
+sentinels remain raw. Sixty-six observations for 40 other names remain held;
+Clyde's differing rating bases and Benmore's split connections need review.
+
+```bash
+uv run python scripts/enrich_hydro_nz.py
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-5501-10000.json
+```
+
+EIA ranges 4501–5000 and 5001–5500 have no hydro-bearing operable plants.
+The next populated range, 5501–10000, yields 158 existing identities enriched,
+388 generator observations and 44 held plants. Empty ranges are persisted as
+completed cursors. All observations remain dated to year-end 2025, not live
+operation. Coverage is 7,156 records / 128 countries / 1,110 enriched identities.
+EIA totals: 828 identities / 2305 generator observations / 198 holds.
+No generating-MW total is promoted while aggregation scopes remain unresolved.
+Next: remaining NZ identity/interval review; EIA resumes at 10001–15000.
+
+
+## EIA 10001–15000 and Tuai owner review
+
+EIA final-2025 codes 10001–15000 enrich **99 existing US identities** with
+**212 generator observations**. Fifteen candidates remain held: {'missing_existing_id': 4, 'mixed_technology_or_state': 10, 'coordinate_review': 1}.
+Namespaced IDs, operators, generating/seasonal MW and unit dates retain original
+workbook row locators. Reused source bytes were checksum-verified and reparsed.
+No new plants, inferred pumping ratings or current-operation claims are added.
+EIA cumulative coverage is 927 identities / 2517 generators / 213 holds.
+
+Tuai is explicitly linked to EA CSV row 140 using Genesis's FY2024 integrated
+report, printed page 41. It reports 60 MW, consistent with the historical WRI
+record and EA dispatch observation. The potential 6 MW efficiency benefit is
+qualified by footnote 1: available only below the station's 60 MW maximum.
+It must not become an inferred 66 MW rating. Only the dispatch identity and
+immutable observation are accepted. The downloaded report checksum, title,
+version, locator and limited-factual-reuse assessment are retained; report text
+and images are not redistributed. NZ now has three enriched identities; 65
+observations covering 39 other names remain held. Benmore's six 93 MW units,
+552 MW maximum output and historical 540/270 MW dispatch rows have different
+bases and remain unresolved; no sum or scalar capacity promotion is made.
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-10001-15000.json
+uv run python scripts/enrich_hydro_nz.py --batch catalogues/hydro/research/nz-tuai-20261105.json
+```
+
+Both replay commands now reject duplicate/missing reviewed identities and
+validate every transformation before writing any shard. Conflicts preserve
+all files; successful replay remains idempotent. This is not an I/O transaction.
+Coverage: 7,156 historical records / 128 countries / 1,210 enriched identities.
+All unresolved scopes remain excluded from generating-MW totals. Next regional
+batch: first 50 remaining Norwegian WRI identities sorted by WRI ID, with
+explicit NVE/owner corroboration; EIA resumes at 15001–20000.
+
+
+## Norwegian review and EIA 50001–55000 (6 November 2026)
+
+The first 50 unresolved Norwegian WRI identities (WRI1002991–WRI1003149,
+sorted by WRI ID) remain held. Fresh NVE registry and map responses retain
+checksums, exact-name candidate rows and geometry. Names are not identity proof:
+duplicated names, spatial offsets and different station/development ratings
+need explicit corroboration. Statkraft's Norwegian Adamselv and Aura pages
+confirm ratings of 50 and 290 MW, respectively; WRI reports historical 60 and
+352 MW. These comparisons do not resolve physical scope or justify overwriting
+coordinates. No Norwegian canonical facts were accepted in this partition.
+NVE data retain NLOD attribution; owner checks use limited facts only.
+
+The new `scripts/screen_hydro_nve.py` stages bounded review partitions and
+rejects truncated map responses and replacement of differing review files.
+It never accepts or fuzzy-merges candidates. Resume with `--offset 50 --limit 50`
+and original `--api`, `--gis`, `--reviewed-at` and `--output` arguments.
+
+EIA codes 15001–20000 and 20001–50000 contain no hydro-bearing operable plants;
+these empty partitions are complete. Codes 50001–55000 enrich **171 existing
+US plants** with **396 generator observations**; 41 candidates remain held.
+Evidence includes official IDs, operators, generating and seasonal MW, unit
+dates and year-end 2025 status. This is not live operation. Original archive
+checksum and parsed workbook rows were verified. Replay with:
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-50001-55000.json
+```
+
+Coverage is 7,156 historical records / 128 countries / 1,381 enriched identities.
+EIA totals: 1,098 identities / 2913 units / 254 holds. Aggregation scopes
+remain unresolved and excluded from capacity totals. Next: Norwegian rows
+51–100 for explicit review; EIA resumes at 55001–60000.
+
+
+## Stable Norwegian review cursor and EIA 55001–60000
+
+Norwegian identities 51–100, WRI1003150–WRI1003313, were screened against the
+checksum-verified 6 November NVE API/map captures. All 50 remain held; the first
+100 screened identities are not accepted enrichments. Statkraft's Norwegian
+pages report Grytten at 144 MW and Kvilldal at 1,240 MW. Historical WRI ratings
+and Grytten's two potentially related names require explicit alias/scope review.
+Owner facts remain review evidence only, with URLs, titles, retrieval dates,
+locators and limited-factual-reuse assessment; no copied text or imagery.
+
+The screener now supports an exclusive stable `--after-wri-id` cursor. An
+accepted earlier identity can disappear from the unresolved list without
+shifting the continuation boundary. Offsets remain supported but cannot be
+combined with a stable cursor. Regression tests verify this case.
+
+```bash
+uv run python scripts/screen_hydro_nve.py --api /path/to/nve.json --gis /path/to/map.json --after-wri-id WRI1003313 --limit 50 --reviewed-at YOUR_UTC_TIMESTAMP --output /tmp/next-nve-review.json
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-55001-60000.json
+```
+
+EIA codes 55001–60000 enrich 61 existing US identities with 119 generator
+observations; 11 plants remain held. Added IDs, operators, generating/seasonal
+MW and unit dates retain year-end 2025 status, not live operation. The original
+archive checksum and source rows were verified; no new archive retrieval is
+claimed. Coverage: 7,156 historical records / 128 countries / 1,442 enriched
+identities. EIA totals: 1,159 identities / 3032 generators / 265 holds.
+No unresolved capacity enters global totals. Next: Norwegian identities after
+WRI1003313 (101–150), followed by EIA 60001–65000.
+
+
+## EIA tail and Norwegian pumping-power review — 6 November 2026
+
+EIA codes 60001–65000 enrich 16 existing US identities with 27 generator
+observations. Seven plants remain held; codes 65001–99999 contain ten further
+held plants and no accepted matches. The code scan now reaches 99999, which is
+not a claim of complete US plant coverage. Unmatched official IDs and mixed or
+pumped facilities still need explicit identity and scope review. Registry IDs,
+operators, generating/seasonal MW and unit dates retain year-end 2025 semantics.
+Coverage is 7,156 historical records / 128 countries / 1,458 enriched identities;
+EIA contributes 1,175 identities, 3059 units and 282 held plants.
+
+Norwegian candidates 101–150 (after WRI1003313 through WRI1003515) remain held.
+The first 150 screened candidates are separate from the 110 previously accepted
+NVE enrichments. Statkraft reports Saurdal at 640 MW generating capacity with
+four units, two reversible. Its 14 March 2025 filing reports 320 MW existing
+pumping capacity and proposes 640 MW. The proposal does not establish present
+operation. Mauranger's owner rating is 250 MW, compared with 307 MW in the
+historical record. Dated owner facts, source locators and reuse assessments are
+retained in the review ledger; canonical values are unchanged.
+
+The NVE screener optionally accepts `--api-source-id` and `--gis-source-id`
+together. It verifies both captures against registered SHA-256 hashes before
+screening and records the source IDs. Existing invocations remain supported;
+registry verification is recommended for published research. Tests cover
+changed API and GIS captures and ensure rejection leaves no output ledger.
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-60001-65000.json
+uv run python scripts/screen_hydro_nve.py --api /path/to/nve.json --gis /path/to/map.json --api-source-id nve-hydro-20261106 --gis-source-id nve-gis-20261106 --after-wri-id WRI1003515 --limit 50 --reviewed-at YOUR_UTC_TIMESTAMP --output /tmp/next-nve-review.json
+```
+
+Next: Norwegian candidates after WRI1003515 and remaining Brazilian ONS
+inventory; retain EIA holds for explicit identity/pumped-storage review.
+
+
+## ONS state and dispatch metadata — 6 November 2026
+
+All 180 ONS hydro CEGs had already been screened. A fresh CSV download confirms
+no changed unit facts for the 131 accepted plants (row positions are not facts).
+The retained evidence now supplies structured `extensions_json.ons_dispatch_metadata`
+for state code/name, electrical subsystem code/name and dispatch modality.
+Each value retains source ID and CSV row; multiple values remain explicit sets.
+Unknown fields are empty sets. A subsystem is not an exact grid connection.
+Original unit observations, lifecycle, capacities and aggregation roles are unchanged.
+This enriches 131 existing records in Brazil; it adds no newly enriched identities:
+coverage remains 7,156 historical records / 128 countries / 1,458 enriched identities.
+The ONS source page describes nominal generating-unit MW and CC-BY reuse;
+`val_potenciaefetiva` must be interpreted using that dictionary, not its name alone.
+
+```bash
+uv run python scripts/enrich_hydro_ons_dispatch.py --batch catalogues/hydro/research/ons-dispatch-20261106.json
+```
+
+The next 50 Norwegian candidates were screened with registered source hashes;
+all remain held. Continuation is after `WRI1003631` (201–250). The Brazilian backlog
+is corrected: 49 retained holds require explicit identity/scope review; there is
+no unprocessed partition in this 180-CEG capacity inventory.
+
+
+## Explicit Brazilian registry-alias review — 6 November 2026
+
+Thirty-five prior ONS holds are resolved through recorded, individually reviewed
+CEG/WRI registry crosswalks and single-name historical, abbreviated or state-qualified
+aliases. The importer still rejects name differences by default. An explicit review
+must match record UUID, original name, CEG and every source unit name; no fuzzy
+matching is used. The canonical name remains unchanged and the ONS name becomes
+an alias. Original hold ledgers remain immutable; the new resolution ledger
+supersedes only these 35 decisions. Five multi-powerhouse groups and nine missing
+identities remain held. Copel's 18 November 2024 primary-source description also
+corroborates Foz do Areia, Segredo and Salto Caxias aliases; proposed expansions
+are not accepted as current operating capacity.
+
+The batch adds 150 dated unit observations, CEG IDs, owners/operators, aliases and
+state/subsystem/dispatch metadata. Plant capacity, lifecycle and aggregation scope
+are not inferred. Coverage is 7,156 records / 128 countries / 1,493 enriched identities;
+ONS contributes 166 identities and 728 unit observations. Source reuse and row
+locators remain those of the original checksum-pinned ONS captures.
+
+```bash
+uv run python scripts/enrich_hydro_ons_aliases.py --batch catalogues/hydro/research/ons-aliases-20261106.json
+```
+
+The Norwegian continuation after `WRI1003631` returns zero rows: the remaining-identity
+scan is exhausted. The 200 screened holds remain unresolved, separate from 110
+accepted NVE identities. Next: five ONS multi-powerhouse groups, then nine missing
+identities; do not repeat the exhausted scan.
