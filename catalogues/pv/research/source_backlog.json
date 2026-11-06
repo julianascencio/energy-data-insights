@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-06T12:20:10.386954+00:00",
-  "ranking_file": "20261106T1200_top10_gaps.json",
+  "updated_at": "2026-11-06T13:18:45.513898+00:00",
+  "ranking_file": "20261106T1300_top10_gaps.json",
   "selection_note": "197projects/401fieldscontexts,13newFoxESSinverters/247typedvalues.2acceptedbatches;3ownerholds. Nepal/BPDBnewdiscovery only;Taipowerunchanged/alreadyprocessed,no adaptercompletion.",
-  "next_highest_value_source": "Ghana Ministry PPA API4published PV summaries: exact plant/phase, applicable reuse and underlying clause/unit review before acceptance. Izmir missing-panel row remains held; Greek strict139 completed.",
+  "next_highest_value_source": "Chile BCN MinEner2026 layer716features: source-specific licence/revision and positiveFV nativeID/phase crosswalk first. Solvis current12tables completed; skip unchangedfiles, preserve power/height questions.",
   "sources": [
     {
       "id": "uk_repd",
@@ -29175,6 +29175,244 @@
       "retry_condition": "Freshsource/head check; exactmodeltable and rightsreview required for unprocessed sheets",
       "next_action": "Next equipment: two current monofacial G12R96/108 sheets (6model columns) after exact identity review; preserve132height and Kosmo/TSEC holds.",
       "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "gem_11country_owners_1300",
+      "country": [
+        "ALB",
+        "AZE",
+        "BIH",
+        "CRI",
+        "ECU",
+        "ISR",
+        "KAZ",
+        "LTU",
+        "MNE",
+        "SLV",
+        "SWE"
+      ],
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "Pinned February2026 XLSX; exact full native/source phase and Owner cells",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "last_release": "February2026; official currentmetadata verified6Nov",
+      "publication_cadence": "Releasebased; no hourly workbook download",
+      "reviewed": 83,
+      "accepted": 79,
+      "held": 4,
+      "rejected": 0,
+      "fields_offered": [
+        "historicalowners",
+        "complete-phase provenance"
+      ],
+      "mapping": "79owners+79phasecontexts; exact identity and unanimous native values, no currentownership or operation inference",
+      "processed_cursor": {
+        "ALB": "L100001049805",
+        "AZE": "L100001061744",
+        "BIH": "L100001047380",
+        "CRI": "L100001045877",
+        "ECU": "L100001045766",
+        "ISR": "L100001018507",
+        "KAZ": "L100001061670",
+        "LTU": "L100001063589",
+        "MNE": "L100001049878",
+        "SLV": "L100001080735",
+        "SWE": "L100001041233"
+      },
+      "result": "11country strict partition83complete after previousholdIDs excluded. Fournew ID-specific ownership holds; no previous heldID repeated per recursive research hold audit.",
+      "next_action": "Advance remaining lowcoverage countries on fresh release/head checks; resolve heldIDs only with independent identity evidence.",
+      "next_due_check": "2026-11-13T13:00:00Z"
+    },
+    {
+      "id": "solvis_remaining8_1300",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://solvis.hr/en/documents/datasheet/",
+      "endpoint": [
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV108_E_F_GG22_HCM10_Global_P_30_1722x1134x30_430-440_20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV120_E_F_GG22_HCM10_Global_P_30_1909x1134x35_480-490-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV144_E_GG22_HCM10_Global_P_30_2278x1134x35_575-585-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV96_E_F_GBS_HCG12R_Global_S_15_1762x1134x30_450-460-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV108_E_F_GBS_HCG12R_Global_S_15_1961x1134x35_510-520-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV132_E_GBS_HCG12R_Global_S_15_2382x1134x35_625-635-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV108_E_F_GBS_HCM10_Global_S_15_1722x1134x30_430-440-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV120_E_F_GBS_HCM10_Global_S_15_1909x1134x35_480-490-20250725.pdf"
+      ],
+      "format": "Eight2page OEM PDFs, literal model STC columns and rendered warranty/mechanical/thermal tables",
+      "licence_assessment": "OEM copyright retained; bounded manually reviewed facts/conditions only; no open bulk/document grant inferred. No PDF/prose/artwork in Git; source-specific footer/currentindex review retained.",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-06T13:00:41.334516+00:00",
+      "sha256": {
+        "3": "f12c366f0d9a37a310c83c43985f8aa2063e6ce2b2ef6fccdbcf91766f8a740c",
+        "4": "7b28db18f404247a8b1077ecaa917de4d43b62b678f8e966066b82967cf30af6",
+        "5": "321cbd73e1d188a9b0bf9d3720c1c1856ea19e6dd1e1bbb76f136681eb650cc6",
+        "6": "ea45b7fb5c325578ced1ad4d4d3c53031523afc707f3ffc3798268c75d9a2237",
+        "7": "01473e999adcdefbba6815ac147671e6a6edace9dbd8b6c3968241f427f9ba6a",
+        "8": "21027b606b4c0b1d3b5fb820f75f549a5a1c8520cad17d8c1ab3fffd23b17a0a",
+        "9": "5c324bb0ff601f745be8574332efcb1b58b49abaecbdb4c699df340a2aa52d0d",
+        "10": "71bd40fff8ce499b9a9344494e34c9adc48c81daff9d12764d7826079e15b662"
+      },
+      "etag": {
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null,
+        "8": null,
+        "9": null,
+        "10": null
+      },
+      "last_release": "July25,2025 printedfooter revisions; June2026 upload date is not product effective date",
+      "publication_cadence": "OEMrevision based; currentindex before technical downloads",
+      "reviewed": 24,
+      "accepted": 24,
+      "held": 0,
+      "rejected": 0,
+      "field_questions_held": 1,
+      "fields_offered": [
+        "frontSTC electrical",
+        "cells/dimensions/mass",
+        "relative thermal coefficients",
+        "voltage/fuse/operatingbounds",
+        "warrantyclaims"
+      ],
+      "mapping": "24literalmodels/527typedvalues; one Pmax held, separate NMOT/BNPI and componentIP/conditionalmechanical context. Existing SOLVISdoo, no newmanufacturer.",
+      "processed_cursor": {
+        "completed_index_positions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "previous_completed_positions": [
+          0,
+          1,
+          2,
+          11
+        ],
+        "current_index_tables_remaining": 0,
+        "exact_models_this_batch": 24
+      },
+      "result": "All8selected tables exhausted. SV96-455 E F HCG12R power field remains null: STCprints445; modelcode455 is not a replacement rating, and P=IV is not used to choose. No optionalframe/mesh/irradiance clones. Drawingsupplywidth where mechanical HxD omits width.",
+      "next_action": "Skip unchangedcurrent12-table index; preserve onepower/threepriorheight questions. Seek independent permitted exactcombiner/tracker catalogue; GEESYSscope/rights held.",
+      "next_due_check": "2026-12-06T06:00:00Z"
+    },
+    {
+      "id": "chile_BCN_MinEner2026_1300",
+      "country": "CHL",
+      "entity": "projects",
+      "source_url": "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer/0?f=pjson",
+      "endpoint": [
+        "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer/0?f=pjson",
+        "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer?f=pjson",
+        "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+        "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
+        "https://geoportal.cl/geoportal/catalog/34949/centrales-solares"
+      ],
+      "format": "Official BCN ArcGIS layermetadata/count and5-row no-geometry sample; original geoportal503",
+      "licence_assessment": "Layer copyright/description blank; service copyright describes an unrelated Esri basemap and cannot licence these plant records. OriginalMinEner/CNE metadata/reuse unresolved; generic IDE attribution statement not substituted.",
+      "publication_cadence": "Unestablished/revisionbased; metadata first, no hourly fullfile",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-06T13:04:26.808842+00:00",
+      "sha256": "4458ea910ec97011acfbde3ef5ebe509e0f3d2ee3e0155ee9f2184eb0cd0518d",
+      "etag": "\"7cd203da-gunzip-gzip\"",
+      "reviewed": 5,
+      "accepted": 0,
+      "held": 5,
+      "rejected": 0,
+      "mapping": "Discovery/review only; zero canonical field mapping accepted",
+      "result": "New official scalable discovery:716layerfeatures, not716verifiedPVprojects. Five sample rows explicitly tipoFV. NativeID_GE_SOLAR, ownership, grid, MW, RCA, lifecycle/date, datum/zone fields offered. MWAC/DC/grossnet unknown; zero units is not confirmed module/inverter count. Name2026 is not release date; sample lastupdate31Dec2025 is not presentoperation proof. No newadapter/feed/plant/field accepted.",
+      "next_action": "Highestvalue: recover source-specific MinEner licence/revision and nativeID/plant-phase mapping before bounded FV crosswalk; inspect CRS/date definitions and privacy, no automatic fuzzy merges.",
+      "retry_condition": "Applicable source rights/revision/access or exactidentity evidence resolves gates",
+      "processed_cursor": {
+        "layer_id": 0,
+        "layer_features_count": 716,
+        "sample_rows": 5,
+        "sample_positive_FV": 5,
+        "canonical_accepted": 0,
+        "next_partition": "bounded explicitlyFV sample after reuse/version/identity gates"
+      },
+      "next_due_check": "2026-11-13T13:00:00Z"
+    },
+    {
+      "id": "ghana_PPA_identity_review_1300",
+      "country": "GHA",
+      "entity": "projects",
+      "source_url": "https://ppaportal.energymin.gov.gh/about",
+      "endpoint": [
+        "https://ppaportal.energymin.gov.gh/about",
+        "https://ppaportal.energymin.gov.gh/faqs"
+      ],
+      "format": "Fresh public publisher policy pages plus cached4-row PV API metadata",
+      "licence_assessment": "Intended publicresearch/analysis is not an explicit dataset redistribution grant. Source-specific permission unresolved; no national-open-data or separate toolkit licence substituted.",
+      "publication_cadence": "Unestablished/revisionbased; metadata first, no hourly fullfile",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-06T12:59:55.360747+00:00",
+      "sha256": "12e4c71562e214a723f31edc1e0c2660c2b6ec6ccc3cf2939a9ee0c769a11139",
+      "etag": null,
+      "reviewed": 4,
+      "accepted": 0,
+      "held": 4,
+      "rejected": 0,
+      "mapping": "Discovery/review only; zero canonical field mapping accepted",
+      "result": "Cachedpublished4PPA summaries reviewed against15canonicalGhana projects; no unambiguous nativeplant/phase crosswalk. Company-name or municipality match alone is insufficient. No newAPIfulldownload or contractPDF; no commercial terms accepted. PortalactivePPA is not operatingplant proof.",
+      "next_action": "Keep4PPAholds; require applicable reuse and independent exactsite/phase or permit crosswalk and underlying clause/unit review before enrichment.",
+      "retry_condition": "Applicable source rights/revision/access or exactidentity evidence resolves gates",
+      "processed_cursor": {
+        "reference_codes": [
+          "GH-PPA-03",
+          "GH-PPA-07",
+          "GH-PPA-09",
+          "GH-PPA-11"
+        ],
+        "canonical_GHA_reviewed": 15,
+        "accepted": 0,
+        "prior_API_version": "v1.0/30Oct2026",
+        "new_API_download": false
+      },
+      "next_due_check": "2026-11-13T13:00:00Z"
+    },
+    {
+      "id": "GEESYS_combiner_scope_rights_1300",
+      "country": "IND",
+      "entity": "combiner_boxes",
+      "source_url": "https://geesysindia.com/solar-combiner-boxes.php",
+      "endpoint": [
+        "https://geesysindia.com/solar-combiner-boxes.php",
+        "https://geesysindia.com/downloads.php",
+        "https://geesysindia.com/Terms-of-use.php"
+      ],
+      "format": "Current OEM family/download HTML and explicit terms; no technicalPDFretrieval",
+      "licence_assessment": "Terms restrict modification/use withoutpriorwrittenconsent; documentpermission informational/personal and unmodified only. No publicopen technicalreuse grant; no contact/form.",
+      "publication_cadence": "Unestablished/revisionbased; metadata first, no hourly fullfile",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-06T13:14:08.094946+00:00",
+      "sha256": "a412c8c70b13c648a40428277279097139189416dae8dc0ade8f194def1cd69e",
+      "etag": null,
+      "reviewed": 2,
+      "accepted": 0,
+      "held": 2,
+      "rejected": 0,
+      "mapping": "Discovery/review only; zero canonical field mapping accepted",
+      "result": "Two configurable family labels reviewed, not2acceptedexactmodels. Generic/variantmodelprefixes differ across index/table, ratings/options do not establish a released fixedconfiguration. No fictional optioncrossproducts or technicaldata copiedtoGit/canonical; technicalHTMLcache discarded afterrightsreview.",
+      "next_action": "Resume only on applicable documented rights and literal configuration schedule; otherwise select independent publisher, do not contact or bypass.",
+      "retry_condition": "Applicable source rights/revision/access or exactidentity evidence resolves gates",
+      "processed_cursor": {
+        "families_reviewed": 2,
+        "exact_models_accepted": 0,
+        "technical_PDF_downloads": 0,
+        "rights_and_configuration_hold": true
+      },
+      "next_due_check": "2026-11-13T13:00:00Z"
     }
   ],
   "source_refresh_queue": [
