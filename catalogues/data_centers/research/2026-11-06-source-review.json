@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T05:27:14Z",
+  "retrieved_at": "2026-11-06T06:20:00Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -42,6 +42,14 @@
       "originals": "Six factual official HTML originals total 255,824 bytes and have individual SHA-256 checksums in sources.json. A separate 37,277-byte privacy-policy capture supported rights review but is not a factual source."
     },
     {
+      "inventory": "Datacenter United complete current displayed facility directory",
+      "processed_offset": 14,
+      "accepted_records": 14,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, coordinates, contacts, security and access details are excluded.",
+      "originals": "Twelve factual official HTML originals total 2,277,615 bytes and have individual SHA-256 checksums in sources.json. A separate 176,805-byte privacy-policy capture supported rights review but is not a factual source."
+    },
+    {
       "inventory": "maincubes complete current data center directory",
       "processed_offset": 8,
       "accepted_records": 8,
@@ -82,6 +90,14 @@
     {
       "candidate": "maincubes BER02 exact buildings and FRA03 phase allocation",
       "reason": "BER02 is a design-dependent multi-building campus and current pages do not assign capacity or technical area to exact buildings. FRA03 is operational while its page retains separate phase milestones, but no exact phase rating allocation is provided."
+    },
+    {
+      "candidate": "Colt Data Centre Services public facility portfolio",
+      "reason": "Official terms restrict site content to personal, non-commercial use and prohibit copying or redistribution without permission. No Colt facts, captures or source-registry entries were published."
+    },
+    {
+      "candidate": "STACK Infrastructure public facility portfolio",
+      "reason": "Official terms restrict copying, reproduction and commercial reuse without permission. No STACK facts, captures or source-registry entries were published."
     }
   ],
   "quarantined": [
@@ -156,6 +172,15 @@
         "technical_area_m2"
       ],
       "reason": "The current page reports 144-186 MW IT capacity and 12,000-41,184 m2 IT area depending on selected design/cooling. Both whole-campus ranges remain observations; no scalar upper bound or building allocation is selected."
+    },
+    {
+      "candidate": "Datacenter United facility capacity boundaries",
+      "fields": [
+        "it_capacity_mw",
+        "grid_capacity_mw",
+        "facility_capacity_mw"
+      ],
+      "reason": "The current directory and linked pages do not establish facility-level IT, grid or total demand MW. All normalized capacity scalars remain null for all 14 records."
     }
   ],
   "normalization_notes": [
@@ -190,6 +215,11 @@
     "Five facilities are currently labelled in operation, FRA04 is announced/in planning, BER02 is under construction and FRA05 remains an announced pipeline identity.",
     "Six exact site-page IT capacities are normalized: AMS01 5 MW, FRA01 6 MW, FRA02 8 MW, BER01 9 MW and FRA03 16 MW as design maximums, and FRA04 40 MW as ultimate planned. These are not measured load, grid capacity or operational demand.",
     "Exact site-page IT area for the same six identities is technical area. FRA05's unclassified 75 MW and BER02's design-dependent capacity and area ranges remain observations; the campus aggregate stays excluded from every capacity sum.",
-    "Operator certification, renewable-energy, availability, redundancy and rack-density language does not create issuer-registry certifications or deployments. No new reuse hold was introduced."
+    "Operator certification, renewable-energy, availability, redundancy and rack-density language does not create issuer-registry certifications or deployments. No new reuse hold was introduced.",
+    "Datacenter United's complete displayed current directory is processed at offset 14: 12 operational facilities and two under construction.",
+    "Antwerp 1/2 and Evere 1/2 remain separate exact directory facility identities sharing grouped pages. Antwerp 3 links to DC Flanders, retained as an alias. No sibling capacity allocation or city-level campus aggregate is synthesized.",
+    "Ghent 2 is explicitly under construction/coming and Mouscron is currently under development. No target is treated as actual commissioning evidence.",
+    "All Datacenter United IT, grid and facility-capacity scalars remain null. Operator Tier, ISO, availability, sustainability, connectivity and security claims do not create issuer-registry certifications, deployments or sensitive normalized details.",
+    "Colt and STACK screenings are reuse holds, not access failures. No candidate facts, captures or source-registry entries were published; all prior holds and quarantines remain in force."
   ]
 }

@@ -1815,6 +1815,110 @@ def parse_maincubes_site_page(
     }
 
 
+class _DatacenterUnitedCards(HTMLParser):
+    """Collect only explicit directory-card attributes, never map/contact data."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.cards: list[dict[str, str]] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        if values.get("data-name"):
+            self.cards.append(
+                {
+                    "name": values["data-name"] or "",
+                    "description": values.get("data-description") or "",
+                    "path": values.get("data-url") or "",
+                }
+            )
+
+
+def parse_datacenter_united_directory(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact 14 facility identities displayed in the current directory."""
+    if urlsplit(source_url).hostname not in {
+        "datacenterunited.com",
+        "www.datacenterunited.com",
+    }:
+        raise ValueError("Expected official Datacenter United URL")
+    parser = _DatacenterUnitedCards()
+    parser.feed(content.decode("utf-8-sig"))
+    expected = [
+        "DC Antwerp 1",
+        "DC Antwerp 2",
+        "DC Antwerp 3",
+        "DC Burcht",
+        "DC Mechelen",
+        "DC Evere 1",
+        "DC Evere 2",
+        "DC Brussels",
+        "DC Machelen",
+        "DC Ghent",
+        "DC Ghent 2",
+        "DC Hasselt 1",
+        "DC Oostkamp",
+        "DC Mouscron",
+    ]
+    cards = [card for card in parser.cards if card["name"] in expected]
+    if [card["name"] for card in cards] != expected:
+        raise ValueError("Changed Datacenter United directory identity set")
+    if cards[10]["description"].strip().lower() != "under construction":
+        raise ValueError("Changed Datacenter United Ghent 2 lifecycle")
+    for card in cards:
+        card.update(
+            {
+                "external_id": card.pop("name"),
+                "status_label": (
+                    "under_construction"
+                    if card["description"].strip().lower() == "under construction"
+                    else "operational"
+                ),
+                "locator": f"current directory card / {card.get('external_id', '')}",
+            }
+        )
+        card["locator"] = f"current directory card / {card['external_id']}"
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": cards,
+        "review_required": True,
+    }
+
+
+def parse_datacenter_united_site_page(
+    content: bytes, *, source_url: str, expected_group: str
+) -> dict[str, Any]:
+    """Fail closed on grouped facility identity and construction markers."""
+    if urlsplit(source_url).hostname not in {
+        "datacenterunited.com",
+        "www.datacenterunited.com",
+    }:
+        raise ValueError("Expected official Datacenter United URL")
+    markers = {
+        "antwerp": ("DC Antwerp", "ANTW1 and ANTW2"),
+        "flanders": ("DC Flanders",),
+        "evere": ("DC Evere",),
+        "ghent": ("DC Ghent", "Coming : Ghent 2"),
+        "mouscron": ("DC Mouscron", "currently under development"),
+    }
+    if expected_group not in markers:
+        raise ValueError("Unexpected Datacenter United site group")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split()).replace("&", "and")
+    if not all(marker in text for marker in markers[expected_group]):
+        raise ValueError("Changed Datacenter United site identity or lifecycle")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "group": expected_group,
+            "locator": f"current {expected_group} facility page",
+        },
+        "review_required": True,
+    }
+
+
 def parse_vertiv_powerups6000_table(
     content: bytes, *, source_url: str, expected_count: int | None = None
 ) -> dict[str, Any]:

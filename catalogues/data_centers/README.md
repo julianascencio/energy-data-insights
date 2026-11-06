@@ -5,9 +5,9 @@ canonical JSONL under `records/projects` and `records/equipment`, a source regis
 field-level evidence, stable UUIDs and deterministic typed Parquet snapshots.
 No network request occurs during validation, export or documentation builds.
 
-The current continuation branch contains **564 project records in 39 countries**:
-**434 facilities, three phases and 127 explicitly labelled campus aggregates**,
-from 20 operators. It has **2,774 exact equipment records from 74 OEMs**.
+The current continuation branch contains **578 project records in 39 countries**:
+**448 facilities, three phases and 127 explicitly labelled campus aggregates**,
+from 21 operators. It has **2,774 exact equipment records from 74 OEMs**.
 Merged `main` at `036429f9` contains **556 projects and 2,774 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -34,6 +34,7 @@ uv run python scripts/build_data_center_ecodatacenter_batch.py captured-ecodatac
 uv run python scripts/build_data_center_penta_infra_batch.py captured-penta-infra-directory staged-penta-infra-projects.jsonl
 uv run python scripts/build_data_center_bulk_infrastructure_batch.py captured-bulk-infrastructure-directory staged-bulk-infrastructure-projects.jsonl
 uv run python scripts/build_data_center_maincubes_batch.py captured-maincubes-directory staged-maincubes-projects.jsonl
+uv run python scripts/build_data_center_datacenter_united_batch.py captured-datacenter-united-directory staged-datacenter-united-projects.jsonl
 uv run python scripts/stage_data_center_inventory.py captured.html --source-url https://www.atnorth.com/nordic-data-centers/ --expected-count 13
 uv run python scripts/build_data_center_atnorth_finland_permit_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
 uv run python scripts/build_data_center_atnorth_reconciliation_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
@@ -127,7 +128,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-06-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-06-decisions.jsonl),
-[executed validation](research/2026-11-06T0527-validation.json), and
+[executed validation](research/2026-11-06T0620-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)

@@ -1,0 +1,148 @@
+{
+  "run_id": "datacenter-united-directory-20261106T062000Z",
+  "validated_at": "2026-11-06T06:20:00Z",
+  "base_main_sha": "036429f93354749517d91ac62b18390ec7bccddc",
+  "branch": "research/data-center-database-20261106T0527Z",
+  "catalogue": {
+    "canonical_records": 3352,
+    "projects": 578,
+    "project_scopes": {
+      "facility": 448,
+      "phase": 3,
+      "campus": 127
+    },
+    "equipment": 2774,
+    "countries": 39,
+    "operators": 21,
+    "oems": 74,
+    "added_projects": 14,
+    "enriched_projects": 0,
+    "added_equipment": 0,
+    "enriched_equipment": 0
+  },
+  "inventory": {
+    "source_ids": [
+      "datacenter-united-directory-current-20261106",
+      "datacenter-united-antwerp-current-20261106",
+      "datacenter-united-brussels-current-20261106",
+      "datacenter-united-burcht-current-20261106",
+      "datacenter-united-evere-current-20261106",
+      "datacenter-united-flanders-current-20261106",
+      "datacenter-united-ghent-current-20261106",
+      "datacenter-united-hasselt-1-current-20261106",
+      "datacenter-united-machelen-current-20261106",
+      "datacenter-united-mechelen-current-20261106",
+      "datacenter-united-mouscron-current-20261106",
+      "datacenter-united-oostkamp-current-20261106"
+    ],
+    "site_identities_processed": 14,
+    "facility_records_added": 14,
+    "campus_aggregates_added": 0,
+    "records_added": 14,
+    "records_enriched": 0,
+    "normalized_capacity_records": 0,
+    "quarantined_field_groups": 1,
+    "quarantined_records": 14,
+    "originals_available": 12,
+    "original_bytes": 2277615,
+    "rights_review_bytes": 176805,
+    "reuse_prohibited": false,
+    "new_reuse_holds": [
+      "Colt Data Centre Services public facility pages",
+      "STACK Infrastructure public facility pages"
+    ]
+  },
+  "local_checks": [
+    {
+      "command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python -m energy_data_retrieval.data_center_catalogue validate",
+      "result": "passed; 3352 records"
+    },
+    {
+      "command": "build_data_center_datacenter_united_batch.py replay twice from checksum-verified official captures plus cmp against canonical JSONL",
+      "result": "passed; 14 records reproduced byte-identically"
+    },
+    {
+      "command": "focused Data Center pytest suites",
+      "result": "passed; 117 tests"
+    },
+    {
+      "command": "node --test tests/js/test_database_viewer.mjs",
+      "result": "passed; 35 tests"
+    },
+    {
+      "command": "uv run ruff format --check . and ruff check .",
+      "result": "passed; 1221 files formatted"
+    },
+    {
+      "command": "repository-wide uv run ty check",
+      "result": "passed"
+    },
+    {
+      "command": "uv run python scripts/check_repository.py and scripts/check_citations.py",
+      "result": "passed"
+    },
+    {
+      "command": "MPLBACKEND=Agg uv run python examples/database/plot_data_center_catalogue.py",
+      "result": "passed; project scopes 448 facility, 127 campus and 3 phase"
+    },
+    {
+      "command": "two independent data_center_catalogue build commands plus cmp",
+      "result": "passed; byte-identical typed Zstandard snapshots"
+    },
+    {
+      "command": "uv run --group dev pytest -q",
+      "result": "3234 passed, 5 optional skips, 1 unrelated environment-specific PV subprocess failure caused by psutil.NoSuchProcess in methods/tests/test_degradation_mapping.py"
+    },
+    {
+      "command": "uv run sphinx-build -W --keep-going -b html docs ...",
+      "result": "blocked locally by the documented Python 3.13-only Orbital PV imagery gallery dependency; remote Python 3.13 documentation CI required"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "snapshot_sha256": {
+    "input": "d867baf6c3cc7f083171dd98e2a9656e08f36aa39ea91165cfc3cc74a0fc44ba",
+    "projects": "174e72868a7db0c64774ded0789e3757c2d8febea2c5987408f2d373b30f6ab7",
+    "equipment": "661c1ade3e6095557e8924691747d85b1078ac13ec18dbbb36a66667940ee05b",
+    "manifest": "46f664e7ed5baeffda09f77c697478882cf2957e0d383fb387d96128a6b949cc",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "7c0d3718a5313817fe32e4abb9ad31b7fe3bcb4734ce37eb258dd5d678f3ff9d",
+    "datacenter_united_canonical_jsonl": "5e7111068128a25e1973b822dc5902c096d9c4f5853723c5f25ba467171e43b3"
+  },
+  "capacity_summaries": {
+    "it_capacity_mw": {
+      "excluded": 127,
+      "unknown": 391,
+      "by_basis": {
+        "ultimate_planned": {"reported_mw": 752.1, "records": 14},
+        "design_maximum": {"reported_mw": 637.675, "records": 41},
+        "operational": {"reported_mw": 146.0, "records": 5}
+      }
+    },
+    "grid_capacity_mw": {
+      "excluded": 127,
+      "unknown": 448,
+      "by_basis": {
+        "design_maximum": {"reported_mw": 207.5, "records": 3}
+      }
+    },
+    "facility_capacity_mw": {
+      "excluded": 127,
+      "unknown": 450,
+      "by_basis": {
+        "ultimate_planned": {"reported_mw": 75.0, "records": 1}
+      }
+    }
+  },
+  "remote_ci": {
+    "validated_data_head": null,
+    "python_quality_and_tests": {"run_id": null, "status": "pending", "conclusion": null},
+    "documentation": {"run_id": null, "status": "pending", "conclusion": null}
+  }
+}

@@ -26,6 +26,8 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_bulk_infrastructure_site_page,
     parse_carrier_19dv_table,
     parse_cummins_generator_table,
+    parse_datacenter_united_directory,
+    parse_datacenter_united_site_page,
     parse_digital_realty_nbo2_release,
     parse_ecodatacenter_portfolio,
     parse_ecodatacenter_site_page,
@@ -580,6 +582,43 @@ def test_maincubes_parsers_preserve_directory_and_design_ranges():
             b"",
             source_url="https://www.maincubes.com/en/data-centers/unknown/",
             expected_code="FRA99",
+        )
+
+
+def test_datacenter_united_parsers_preserve_exact_facility_boundaries():
+    directory = parse_datacenter_united_directory(
+        (FIXTURES / "datacenter-united-directory.html").read_bytes(),
+        source_url="https://datacenterunited.com/en/our-datacenters/",
+    )
+    assert [row["external_id"] for row in directory["candidates"]] == [
+        "DC Antwerp 1",
+        "DC Antwerp 2",
+        "DC Antwerp 3",
+        "DC Burcht",
+        "DC Mechelen",
+        "DC Evere 1",
+        "DC Evere 2",
+        "DC Brussels",
+        "DC Machelen",
+        "DC Ghent",
+        "DC Ghent 2",
+        "DC Hasselt 1",
+        "DC Oostkamp",
+        "DC Mouscron",
+    ]
+    assert directory["candidates"][10]["status_label"] == "under_construction"
+    for group in ("antwerp", "flanders", "evere", "ghent", "mouscron"):
+        parsed = parse_datacenter_united_site_page(
+            (FIXTURES / f"datacenter-united-{group}.html").read_bytes(),
+            source_url=f"https://datacenterunited.com/en/{group}/",
+            expected_group=group,
+        )
+        assert parsed["candidate"]["group"] == group
+    with pytest.raises(ValueError, match="identity or lifecycle"):
+        parse_datacenter_united_site_page(
+            b"<h1>DC Ghent</h1>",
+            source_url="https://datacenterunited.com/en/our-datacenters/dc-ghent/",
+            expected_group="ghent",
         )
 
 
