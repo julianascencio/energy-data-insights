@@ -198,3 +198,10 @@ voltage and site/operating environment discrepancies remain in conflicts. The
 public warranty names A0-US; its retention/throughput terms are not applied to
 these A1-US models. The agreement is an unsigned OEM template, not an executed
 customer contract or independent certification.
+
+`renon_residential` retains exact module/unit page provenance, overcurrent
+protection thresholds and delays separately from operating-current ratings,
+Fahrenheit thermal/storage limits, approximate mass and unconditioned cycle
+claims. `component_catalogue_links` resolves an explicitly named module code
+to its canonical record; it does not propagate module ratings to the parent
+stack or resolve pre-existing stack capacity/parallel conflicts.

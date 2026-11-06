@@ -145,3 +145,7 @@ shared-site units must be reconciled before adding commercial-project totals.
 `mastr_partition3_reconciliation` retains a held sibling or expansion observation,
 its exact registry member/row and the unresolved site boundary. It does not add
 that candidate capacity to the canonical record or assert a confirmed phase link.
+
+`mastr_p5_p8_reconciliation` retains an unresolved same-SEL sibling observation
+for Hybridspeicher AU. Existing exclusive-unit ratings remain unchanged and
+the candidate is excluded from new-project and summed-capacity counts.

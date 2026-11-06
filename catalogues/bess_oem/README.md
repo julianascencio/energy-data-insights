@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 6 November 2026 expanded research snapshot contains **1,363 records from 60 product
-suppliers, backed by 593 registered sources**: 1,350 documented configurations and 13
+The 6 November 2026 expanded research snapshot contains **1,365 records from 60 product
+suppliers, backed by 595 registered sources**: 1,352 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -318,3 +318,5 @@ Latest continuation: [Eight Danish/Baltic projects, four exact Hubble Cube confi
 Latest continuation: [Finnish/Polish/Danish projects and24 exact ATESS configurations](../bess/research/2026-11-06_merus_atess.md), with offline converter/cluster staging and model-specific voltage conflicts.
 
 Latest continuation: [ECube agreement and warranty applicability](../bess/research/2026-11-06_p3_ecube.md), enriching two existing exact A1-US configurations without extrapolating the A0-series warranty.
+
+Latest continuation: [Exact Renon residential modules and component links](../bess/research/2026-11-06_p5_p8.md).
