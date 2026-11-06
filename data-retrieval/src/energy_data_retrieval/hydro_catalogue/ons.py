@@ -144,3 +144,65 @@ def enrich(
         last_verified_at=now,
     )
     return row
+
+
+def enrich_dispatch_metadata(existing: dict[str, Any], *, now: str) -> dict[str, Any]:
+    """Expose source-reported state/subsystem/mode without inferring a grid connection.
+
+    Multiple values remain explicit sets. Existing unit observations are immutable;
+    the derived metadata retains their original source IDs and row locators.
+    """
+    row = copy.deepcopy(existing)
+    ext = json.loads(row["extensions_json"])
+    history = ext.get("ons_hydro_unit_inventory", [])
+    if not history or row["country_code"] != "BRA":
+        raise ValueError("Requires reviewed Brazilian ONS evidence")
+    fields = (
+        "id_estado",
+        "nom_estado",
+        "id_subsistema",
+        "nom_subsistema",
+        "nom_modalidadeoperacao",
+    )
+    metadata = {}
+    for field in fields:
+        observations = [
+            {"value": unit[field], "source_id": obs["source_id"], "row": unit["_row"]}
+            for obs in history
+            for unit in obs["units"]
+            if unit.get(field)
+        ]
+        metadata[field] = {
+            "values": sorted({o["value"] for o in observations}),
+            "evidence": observations,
+        }
+    if not any(value["values"] for value in metadata.values()):
+        raise ValueError("No dispatch metadata in reviewed evidence")
+    key = "ons_dispatch_metadata"
+    if key in ext:
+        if ext[key] != metadata:
+            raise ValueError("Existing dispatch metadata requires conflict review")
+        return row
+    ext[key] = metadata
+    row["extensions_json"] = canonical_json(ext)
+    fs, ev = json.loads(row["field_sources_json"]), json.loads(row["evidence_json"])
+    fs["extensions_json"] = sorted(
+        set(fs.get("extensions_json", []) + [o["source_id"] for o in history])
+    )
+    ev["extensions_json"] = {
+        "locator": "ONS unit rows retained in ons_dispatch_metadata.*.evidence",
+        "confidence": "high",
+        "unit": None,
+        "normalization": (
+            "Distinct reported state, subsystem and dispatch mode values; "
+            "no inferred connection point or lifecycle"
+        ),
+        "original_value": row["extensions_json"],
+    }
+    row.update(
+        field_sources_json=canonical_json(fs),
+        evidence_json=canonical_json(ev),
+        updated_at=now,
+        last_verified_at=now,
+    )
+    return row

@@ -64,3 +64,13 @@ Schema version 1.0.0. Unknown values are null or omitted. All populated factual 
 | cost_observations_json | json |  | Costs with currency, year and basis |
 | environmental_constraints | string |  | Publicly documented constraints |
 | cross_catalogue_links_json | json |  | Reviewed links to other catalogue identities |
+
+### ONS state and dispatch metadata
+
+`extensions_json.ons_dispatch_metadata` exposes `id_estado`, `nom_estado`,
+`id_subsistema`, `nom_subsistema` and `nom_modalidadeoperacao` from reviewed unit
+observations. Each contains distinct `values` and `evidence` entries with
+`value`, `source_id` and original CSV `row`. Empty values mean unreported;
+multiple values are preserved, not silently collapsed. These describe the
+reported state, electrical subsystem and dispatch modality at the source
+observation, not an exact connection point or present operating status.

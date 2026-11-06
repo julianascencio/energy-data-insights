@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-06T02:49:05.938891+00:00",
+  "reviewed_at": "2026-11-06T03:46:54.038946+00:00",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -348,6 +348,26 @@
       "accepted_enriched": 0,
       "held": 50,
       "cursor": "Screened only; cumulative 150 held; next after WRI1003515"
+    },
+    {
+      "source": "ONS retained unit evidence / fresh 2026-11-06 check",
+      "accepted_enriched": 131,
+      "new": 0,
+      "cursor": "All 180 CEGs already scanned; 49 held; dispatch metadata enriched for 131 accepted identities"
+    },
+    {
+      "source": "nve-hydro-20261106 + nve-gis-20261106",
+      "partition": {
+        "offset": 0,
+        "after_wri_id": "WRI1003515",
+        "limit": 50,
+        "last_wri_id": "WRI1003631",
+        "next_offset": null,
+        "next_after_wri_id": "WRI1003631"
+      },
+      "accepted_enriched": 0,
+      "held": 50,
+      "cursor": "Next after WRI1003631; 200 screened identities remain held"
     }
   ],
   "next_sources": [
@@ -378,7 +398,7 @@
       "url": "https://www.nve.no/energi/energisystem/vannkraft/",
       "country": "NOR",
       "status": "110 WRI identities enriched; 1867 NVE candidates remain unaccepted",
-      "next_action": "Screen after WRI1003515 (151\u2013200); resolve Saurdal physical scope and cross-catalogue identity"
+      "next_action": "Continue after WRI1003631 (201\u2013250); explicit identity/scope review"
     },
     {
       "priority": 3,
@@ -392,7 +412,7 @@
       "url": "https://dadosabertos.aneel.gov.br/",
       "country": "BRA",
       "status": "All 180 ONS hydro CEGs reviewed: 131 enrichments, 49 holds",
-      "next_action": "Review 40 exact-name discrepancies and 9 missing historical identities with primary alias/scope evidence; no fuzzy merges"
+      "next_action": "Resolve 49 retained ONS holds; no unprocessed capacity-inventory partition remains"
     },
     {
       "priority": 1,

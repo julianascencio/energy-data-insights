@@ -586,3 +586,27 @@ uv run python scripts/screen_hydro_nve.py --api /path/to/nve.json --gis /path/to
 
 Next: Norwegian candidates after WRI1003515 and remaining Brazilian ONS
 inventory; retain EIA holds for explicit identity/pumped-storage review.
+
+
+## ONS state and dispatch metadata — 6 November 2026
+
+All 180 ONS hydro CEGs had already been screened. A fresh CSV download confirms
+no changed unit facts for the 131 accepted plants (row positions are not facts).
+The retained evidence now supplies structured `extensions_json.ons_dispatch_metadata`
+for state code/name, electrical subsystem code/name and dispatch modality.
+Each value retains source ID and CSV row; multiple values remain explicit sets.
+Unknown fields are empty sets. A subsystem is not an exact grid connection.
+Original unit observations, lifecycle, capacities and aggregation roles are unchanged.
+This enriches 131 existing records in Brazil; it adds no newly enriched identities:
+coverage remains 7,156 historical records / 128 countries / 1,458 enriched identities.
+The ONS source page describes nominal generating-unit MW and CC-BY reuse;
+`val_potenciaefetiva` must be interpreted using that dictionary, not its name alone.
+
+```bash
+uv run python scripts/enrich_hydro_ons_dispatch.py --batch catalogues/hydro/research/ons-dispatch-20261106.json
+```
+
+The next 50 Norwegian candidates were screened with registered source hashes;
+all remain held. Continuation is after `WRI1003631` (201–250). The Brazilian backlog
+is corrected: 49 retained holds require explicit identity/scope review; there is
+no unprocessed partition in this 180-CEG capacity inventory.
