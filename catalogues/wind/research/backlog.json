@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T01:38:06Z",
+  "updated_at": "2026-11-06T02:38:46.103974+00:00",
   "branch": "research/wind-20261105-2235",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-2235.lock",
   "queue": [
@@ -567,6 +567,9 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
         "2026-09-04",
         "2026-09-05",
         "2026-09-07",
@@ -621,15 +624,19 @@
         "2026-11-04"
       ],
       "next_dates": [
-        "2026-09-01",
-        "2026-09-02",
-        "2026-09-03"
+        "2026-08-27",
+        "2026-08-28",
+        "2026-08-29",
+        "2026-08-31"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "September1–3 allA/Bissues; September6HTTP404 held, not empty. Reconcile Boyal predecessor generations and exact installed revisions.",
+      "next_task": "August27–29 and31 all discovered issues. September6HTTP404 remains unavailable, not empty.",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03",
         "2026-09-04",
         "2026-09-05",
         "2026-09-07",
@@ -683,7 +690,7 @@
         "2026-11-03",
         "2026-11-04"
       ],
-      "latest_review": "2026-11-06-0135-boe-review.json",
+      "latest_review": "2026-11-06-0235-review.json",
       "unavailable_dates": [
         {
           "date": "2026-09-06",
@@ -699,7 +706,7 @@
       "status": "complete_national_wind_partition_scan",
       "completed_partition": "All269wind survey sites/309unit rows:198additions71identityholds; source version exhausted",
       "next_partition": null,
-      "next_task": "Hargraves3051/3112/3118 allremainheld afterdeveloperpre-feasibility600MWsource; require registry/planning ID crosswalk. Next Wimmera2355/3089/3262 primaryStage1/2permit boundary, thenLakeVictoria2764/3330,CattleCreek2752/3340. No workbookrescan.",
+      "next_task": "Wimmera2355/3089/3262: acquire PA2000877-2 amended permit19May2026 and map AEMO survey IDs explicitly. Current owner110MW differs from government draft182.4/114MW stages; no allocation. ThenLakeVictoria2764/3330.",
       "decision_ledger": "2026-11-04-2335-aemo-decisions.json",
       "next_ids": [
         3051,
@@ -796,11 +803,11 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "0035 original EPE/BOE responses, snapshot builds and validation logs in research0035 scratch; source URLs/hashes/candidates committed for reacquisition.",
+  "validation_storage": "0235 original index/owner/permit HTML and logs in research0235; URLs and hashes committed.",
   "publication_continuation": {
     "branch": "research/wind-20261105-2235",
     "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-    "expected_head": "423f24dd015919cde3b26be3e9bd105fb27607ba",
+    "expected_head": "22e7204a7561176bbaa0315f42173b4d1f7dd5b8",
     "pr": 184,
     "leave_open_unmerged": true
   }

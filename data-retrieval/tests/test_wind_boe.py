@@ -244,3 +244,24 @@ def test_repowering_authorization_never_promotes_replacement_operation():
     rows, _ = stage(review(effect="repowering_authorization", status="permitted"))
     assert rows[0]["aggregation_role"] == "unresolved"
     assert rows[0].get("installed_capacity_mw") is None
+
+
+def test_daily_scan_requires_empty_extra_issue_and_deduplicates_aliases():
+    from energy_data_retrieval.wind_catalogue.boe import review_daily_indexes
+
+    url = "https://www.boe.es/boe/dias/2026/09/02/"
+    empty = b'<html>sumario<li class="dispo"><p>Other</p></li></html>'
+    default = empty + b'<a href="index.php?d=216">Ordinary issue</a>'
+    with pytest.raises(ValueError, match="issue URLs"):
+        review_daily_indexes(url, {url: default})
+    result = review_daily_indexes(url, {url: default, url + "index.php?d=216": empty})
+    assert result["notices"] == []
+    assert len(result["captures"]) == 2
+    wind = FIXTURE.read_bytes()
+    result = review_daily_indexes(url, {url: wind + default, url + "index.php?d=216": wind})
+    assert len(result["notices"]) == 4
+    with pytest.raises(ValueError, match="Conflicting notice"):
+        review_daily_indexes(
+            url,
+            {url: wind + default, url + "index.php?d=216": wind.replace(b"72,6", b"73,6")},
+        )

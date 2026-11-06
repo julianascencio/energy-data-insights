@@ -1,15 +1,16 @@
 {
-  "batch": "2026-11-06-0135",
-  "base": "423f24dd015919cde3b26be3e9bd105fb27607ba",
+  "batch": "2026-11-06-0235",
+  "base": "22e7204a7561176bbaa0315f42173b4d1f7dd5b8",
   "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
   "local": {
-    "python": "429 focused Wind/Hydro/reference tests passed",
-    "viewer": "36 Node viewer/Hydro tests passed",
-    "quality": "Ruff lint and format (1166 files), ty, repository hygiene (5799 candidate files), citations and git diff --check passed",
-    "docs": "Strict Wind-gallery Sphinx build passed; all local links and assets resolve across 707 HTML pages",
-    "replay": "Three BOE records and review decisions reproduced identically from original bytes against the prior catalogue",
-    "preservation": "All 22508 prior records and 420 prior sources unchanged; three project additions; capacity by-status totals unchanged; excluded-project count increases by three; unrelated catalogues unchanged",
-    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD"
+    "python": "430 focused Wind/Hydro/reference tests passed",
+    "viewer": "36 Node tests passed",
+    "quality": "Ruff lint/format1166files, ty with explicit repository interpreter, hygiene5800files, citations and diff check passed",
+    "type_check_initial_attempt": "Default interpreter unresolved BESS import; explicit --python .venv/bin/python passed",
+    "docs": "Strict Wind-gallery Sphinx passed; local links/assets resolve across707HTMLpages",
+    "replay": "Three daily BOE scans replayed from all five original URL captures; no candidates; regression covers omitted extra issue, duplicate and conflicting titles",
+    "preservation": "All22511records and423sources identical; all capacity totals and unrelated catalogues unchanged",
+    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD; hashes equal prior published snapshot"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
@@ -51,7 +52,7 @@
   ],
   "concurrency": {
     "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-    "wind_expected_head": "423f24dd015919cde3b26be3e9bd105fb27607ba",
+    "wind_expected_head": "22e7204a7561176bbaa0315f42173b4d1f7dd5b8",
     "reviewed_open_prs": [
       183,
       184,
@@ -59,7 +60,8 @@
       186,
       187
     ],
-    "bess_head_rechecked": "008f3c2b5d87f869724ee986dfa8c9b324bc7ba1",
+    "bess_head_rechecked": "67c5290d1999bea5ea154844d7d33e9452511999",
     "overlapping_paths": []
-  }
+  },
+  "previous_head_remote_ci": "22e7204 Python and Documentation completed successfully"
 }

@@ -1245,3 +1245,13 @@ identity is silently corrected. September 6 returned HTTP 404 and is not a
 completed empty issue. Next daily partition: September 1–3. The saved Delta 3
 crosswalk remains held after the original ANEEL notice returned HTTP 403;
 this is not evidence of authentication or a reuse restriction.
+
+### Complete daily issue replay
+
+`review_daily_indexes` verifies all discovered ordinary and extraordinary issue
+URLs before returning Series A/B wind-title candidates. Missing issues fail even
+when the default page has no candidates; identical notice aliases are deduplicated
+and conflicting titles are rejected. This is title-scan completeness, not a wind
+project census. The September 1–3, 2026 scan includes both September 2 issues and
+returns no candidates. See `2026-11-06-0235-review.json` for source hashes and the
+separate, unresolved Wimmera survey/permit phase review.

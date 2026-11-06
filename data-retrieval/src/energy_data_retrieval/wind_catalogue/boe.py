@@ -148,6 +148,40 @@ def issue_urls(html: str, daily_url: str) -> list[str]:
     return sorted(found)
 
 
+def review_daily_indexes(daily_url: str, originals: dict[str, bytes]) -> dict[str, Any]:
+    """Replay all discovered issues before declaring a daily title scan complete.
+
+    Missing extra issues fail closed, including when the default issue contains
+    no wind titles. Aliased issues may repeat a notice; conflicting titles fail.
+    This is title-discovery completeness, not an inventory of every wind project.
+    """
+    if daily_url not in originals:
+        raise ValueError("Missing default daily index")
+    expected = set(issue_urls(originals[daily_url].decode("utf-8"), daily_url))
+    for raw in originals.values():
+        expected.update(issue_urls(raw.decode("utf-8"), daily_url))
+    if set(originals) != expected:
+        raise ValueError("Missing or unexpected daily issue URLs")
+    notices: dict[str, dict[str, str]] = {}
+    captures = []
+    for url in sorted(originals):
+        raw = originals[url]
+        text = raw.decode("utf-8")
+        for series in ("A", "B"):
+            for notice in select_wind_notices(text, series=series):
+                ident = notice["notice_id"]
+                if ident in notices and notices[ident] != notice:
+                    raise ValueError("Conflicting notice titles across issues")
+                notices[ident] = notice
+        captures.append({"url": url, "sha256": hashlib.sha256(raw).hexdigest()})
+    return {
+        "daily_url": daily_url,
+        "scope": "Complete discovered Series A/B wind-title scan",
+        "captures": captures,
+        "notices": [notices[key] for key in sorted(notices)],
+    }
+
+
 def stage_boe_notices(
     reviews: list[dict[str, Any]],
     originals: dict[str, bytes],

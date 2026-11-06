@@ -1,0 +1,92 @@
+{
+  "batch": "2026-11-06-0235",
+  "retrieved_at": "2026-11-06T02:38:46.103974+00:00",
+  "boe": [
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/09/01/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/09/01/",
+          "sha256": "49e200eac4c86887a2e4462cab8dd7fe77d1772479041161e05796db94079f4e"
+        }
+      ],
+      "notices": []
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/09/02/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/09/02/",
+          "sha256": "10f6a19ee0ef7231b210550281a2e5838883e7f0586f16d79e059f903a68620c"
+        },
+        {
+          "url": "https://www.boe.es/boe/dias/2026/09/02/index.php?d=216",
+          "sha256": "e4739ec188a3c586799f6a8c7022ec8072c39ab4c7a3018aca357b2c5d22f421"
+        },
+        {
+          "url": "https://www.boe.es/boe/dias/2026/09/02/index.php?d=217",
+          "sha256": "10f6a19ee0ef7231b210550281a2e5838883e7f0586f16d79e059f903a68620c"
+        }
+      ],
+      "notices": []
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/09/03/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/09/03/",
+          "sha256": "55d53efa97c262a4a150c7f94e295268cbe944045f76f1582e64f956b3197afa"
+        }
+      ],
+      "notices": []
+    }
+  ],
+  "new_projects": 0,
+  "enriched_projects": 0,
+  "new_equipment": 0,
+  "captures": [
+    {
+      "url": "https://www.baywa-re.com.au/en/landingpages/wimmera-plains-energy-facility/project-information",
+      "status": 200,
+      "sha256": "c404968eb17b5fdad4088c27c6f47a8246b8077df9207bd00680be5136f5a1ce",
+      "bytes": 145381
+    },
+    {
+      "url": "https://www.industry.gov.au/sites/default/files/aip/2026-03/wimmera-plains-energy-facility-draft-aip-plan-executive-summary.pdf",
+      "status": 503,
+      "bytes": 85,
+      "error_response_sha256": "e482a48fef03d183029fa2edf995fc8e9ce023f18649fd1d9149958e977068a1",
+      "sha256": null,
+      "checksum_status": "Original unavailable; error-response hash separate. Web reader supplied PDF text."
+    },
+    {
+      "url": "https://www.planning.vic.gov.au/planning-approvals/ministerial-permits-register/ministerial-permits/85e878ed-072e-ef11-840a-002248969b00?SQ_DESIGN_NAME=nodesign&SQ_PAINT_LAYOUT_NAME=drawer",
+      "status": 200,
+      "sha256": "316cc90a9e5b675a7ac9cdea5cc24cb1b727497a20b8d9955419244abf908bd0",
+      "bytes": 26586
+    }
+  ],
+  "held": [
+    {
+      "candidate": "AEMO Wimmera2355/3089/3262",
+      "decision": "deferred_identity_and_phase_scope",
+      "observations": [
+        "Owner overview: up to110MW wind;50MW/200MWh BESS separately; publication date unstated.",
+        "Government draft QSALTL79 printed2026-03-11: conceptual182.4MW/114MW stages, up to52WTGs;100MW/400MWh BESS separately. Draft milestones not operation.",
+        "PA2000877-1: permit decision2024-12-06; rotor maximum180m and minimum tip clearance44m are permit envelopes, not installed model specifications."
+      ],
+      "reason": "No exact survey-ID-to-permit/phase mapping; retain conflicting scopes rather than infer allocation.",
+      "next": "Original PA2000877-2 amended permit dated19May2026 and AEMO survey-ID phase mapping"
+    }
+  ],
+  "oem_followup": {
+    "candidate": "WD230-11500",
+    "decision": "original_certificate_unlocated",
+    "result": "Search again located the already-reviewed OEM announcement; no original UL/IECRE certificate retrieved, no renewed evidence or enrichment claimed."
+  },
+  "new_exclusions": 0,
+  "new_quarantines": 0
+}
