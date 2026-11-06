@@ -73,5 +73,5 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
    topic_thermal_control
    topic_offshore_wind
-   topic_hybrid_dispatch
    topic_portugal_mix
+   topic_hybrid_dispatch
