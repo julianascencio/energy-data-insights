@@ -132,3 +132,22 @@ def test_exports_have_valid_obj_indices_georeference_and_offline_viewer(tmp_path
     assert "Vertical display x5" in viewer
     with pytest.raises(FileExistsError):
         export_site_scene(scene, destination)
+
+
+def test_static_scene_renders_with_finite_explicit_metric_bounds(study):
+    import matplotlib.pyplot as plt
+
+    from energy_analysis.site_3d.reports import plot_site_scene
+
+    scene = study["scene"]
+    fig = plot_site_scene(scene)
+    try:
+        fig.canvas.draw()
+        ax = fig.axes[0]
+        xyz = np.vstack([scene.terrain.vertices_m, scene.module_mesh.vertices_m])
+        for dim, limits in enumerate((ax.get_xlim(), ax.get_ylim(), ax.get_zlim())):
+            assert np.isfinite(limits).all()
+            assert limits[0] <= xyz[:, dim].min()
+            assert limits[1] >= xyz[:, dim].max()
+    finally:
+        plt.close(fig)

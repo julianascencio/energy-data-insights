@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T09:46:16.094250+00:00",
+  "updated_at": "2026-11-06T10:43:17.585235+00:00",
   "branch": "research/wind-20261106-0835",
   "run_lock": {
     "path": "/tmp/energy-data-insights-wind-20261106-0835.lock",
@@ -239,40 +239,40 @@
       "rank": 3,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
-      "partition": "Unlinked saved candidates offsets1200:1400 next",
-      "next_offset": 1200,
+      "partition": "Unlinked saved candidates offsets1400:1600 next",
+      "next_offset": 1400,
       "status": "crosswalk_partition_completed_remaining_applications_pending",
       "tasks": [
         "Do not rerun 642 completed crosswalk enrichments as new work",
         "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
         "Reconcile scope of 642 enriched records against permits before enabling any capacity totals",
-        "Offsets0:1200 structurally reviewed; all identities held pending original permits. Next1200:1400."
+        "Offsets0:1400 structurally reviewed; all identities held pending original permits. Next1400:1600."
       ],
       "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
       "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "next_ids": [
-        "5123",
-        "5151",
-        "5153",
-        "5166",
-        "5172",
-        "5174",
-        "5181",
-        "5187",
-        "5188",
-        "5195",
-        "5198",
-        "5211",
-        "5219",
-        "5221",
-        "5222",
-        "5227",
-        "5248",
-        "5294",
-        "5306",
-        "5318"
+        "7271",
+        "7273",
+        "7289",
+        "7300",
+        "7304",
+        "7312",
+        "7329",
+        "7337",
+        "7340",
+        "7345",
+        "7346",
+        "7354",
+        "7367",
+        "7370",
+        "7376",
+        "7387",
+        "7392",
+        "7394",
+        "7398",
+        "7402"
       ],
-      "structural_review": "2026-11-06-0935-repd-review.json"
+      "structural_review": "2026-11-06-1035-repd-review.json"
     },
     {
       "rank": 4,
@@ -530,7 +530,21 @@
       "independent_sany_partition": {
         "status": "All eleven global English turbine tables reviewed; ten added, SI-16840 held",
         "review": "2026-11-06-0935-oem-review.json",
-        "next_task": "Official original SI-16850 cut-out correction and SI-18572/SI-19580 area/diameter reconciliation; global/India SI-16840 exact revision crosswalk. No repeat index; unnamed blade/generator platforms not models."
+        "next_task": "Seek unrestricted original correction for SI-16850 cut-out and SI-18572/SI-19580 areas; SI-16840 global/India revision crosswalk. Do not repeat April2025 product-family PDF: explicit reuse exclusion.",
+        "followup_review": "2026-11-06-1035-review.json",
+        "excluded_original": {
+          "url": "https://sanyglobal-img.sany.com.cn/brands/sany-product-family.pdf",
+          "sha256": "4b5bdadce4544f5f0e94e8609db50f431dd382d4c4550637cc55b77dccde9245",
+          "http_status": 200,
+          "bytes": 23707952,
+          "title": "SANY Product Family April 2025",
+          "locator": "PDF page1, lower-right publisher notice",
+          "decision": "excluded_explicit_reuse_restriction",
+          "reason": "Publisher prohibits copying any content for any purpose without written permission; no specifications transcribed into catalogue",
+          "original_available": true,
+          "download_failure": false,
+          "authentication_required": false
+        }
       }
     },
     {
@@ -576,6 +590,9 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-07-27",
+        "2026-07-28",
+        "2026-07-29",
         "2026-07-30",
         "2026-07-31",
         "2026-08-01",
@@ -661,15 +678,18 @@
         "2026-11-04"
       ],
       "next_dates": [
-        "2026-07-27",
-        "2026-07-28",
-        "2026-07-29"
+        "2026-07-23",
+        "2026-07-24",
+        "2026-07-25"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "July27–29 all A/B issues. WHEEL single pilot accepted; original environmental design linked. Alijar II/WRI Alijar and Cristo Bailones wind permits remain held.",
+      "next_task": "July23–25 all A/B issues. July27–29 had zero wind-title candidates. Prior permit identity holds unchanged.",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-07-27",
+        "2026-07-28",
+        "2026-07-29",
         "2026-07-30",
         "2026-07-31",
         "2026-08-01",
@@ -754,7 +774,7 @@
         "2026-11-03",
         "2026-11-04"
       ],
-      "latest_review": "2026-11-06-0935-review.json",
+      "latest_review": "2026-11-06-1035-review.json",
       "unavailable_dates": [
         {
           "date": "2026-09-06",
@@ -867,11 +887,11 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "0935 original BOE captures, indexed OEM extracts, snapshots and logs outside Git; no original SANY checksum available",
+  "validation_storage": "1035 BOE originals and excluded SANY original retained outside Git; checksums in review ledger",
   "publication_continuation": {
     "branch": "research/wind-20261106-0835",
     "main": "64dcf52278bb942591d16571252e4090963f67a1",
-    "expected_head": "73b96b356d683e5fa9f67be22252befa7f7ec694",
+    "expected_head": "d38ee314052d0f6385b8f1055f6aacfb0799725a",
     "pr": 198,
     "leave_open_unmerged": true
   }

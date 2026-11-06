@@ -7911,3 +7911,11 @@ SANY Renewable Energy Co., Ltd. (2026). **SI-230100 global technical specificati
 **Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### sany_product_family_april_2025_reuse_review
+
+SANY Group Co., Ltd. (2025). **SANY Product Family, April 2025**. [Source](https://sanyglobal-img.sany.com.cn/brands/sany-product-family.pdf)
+
+**Role:** data_source. Reviewed only for intake eligibility; page1 publisher notice explicitly restricts copying. Specifications excluded from this batch.
+
+**Used by:** `docs/wind-catalogue.md`.

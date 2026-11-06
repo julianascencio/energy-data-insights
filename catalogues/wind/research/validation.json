@@ -1,14 +1,14 @@
 {
-  "batch": "2026-11-06-0935",
-  "base": "73b96b356d683e5fa9f67be22252befa7f7ec694",
+  "batch": "2026-11-06-1035",
+  "base": "d38ee314052d0f6385b8f1055f6aacfb0799725a",
   "main": "64dcf52278bb942591d16571252e4090963f67a1",
   "local": {
-    "python": "488 focused Wind/Hydro/reference tests passed",
-    "viewer": "39 Node tests passed",
-    "quality": "Ruff lint/format1238files, ty, hygiene6182files, citations and diff checks passed",
-    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 729 HTML pages; local links and assets resolve. Final gallery fingerprint matches snapshot.",
-    "replay": "Original BOE replay, exact WHEEL platform link and all eleven reviewed OEM numeric tables checked",
-    "preservation": "22521 prior records and437sources unchanged; all6capacity summaries unchanged; unrelated catalogues unchanged",
+    "python": "372 focused Wind and site3D tests passed",
+    "viewer": "38 Node viewer tests passed",
+    "quality": "Ruff lint/format1238files; ty with explicit .venv Python; hygiene6184files; citations and diff passed",
+    "docs": "Strict focused Wind/Rengo Sphinx build passed; Documentation check passed: 729 HTML pages; local links and assets resolve.",
+    "replay": "Three checksummed BOE daily index replays; pinned REPD1200:1400 structural review; SANY original excluded for explicit terms",
+    "preservation": "22534 prior records and450sources byte unchanged; all capacity summaries and unrelated catalogues unchanged",
     "snapshots": "Two seven-file snapshots byte-identical; every Parquet column ZSTD"
   },
   "snapshot_sha256": {
@@ -36,8 +36,8 @@
       "sources": 450
     },
     "this_run_added": {
-      "projects": 2,
-      "equipment": 11
+      "projects": 0,
+      "equipment": 0
     },
     "this_run_enriched": {
       "projects": 0,
@@ -46,7 +46,7 @@
     "countries": 59,
     "manufacturer_labels": 66
   },
-  "remote_ci": "New head pending publication; prior head73b96b3 Python and Documentation success verified separately",
+  "remote_ci": "New head not yet published. Prior d38ee314 Python passed; docs failed Rengo collection autoscaling. This batch fixes bounds and adds a rendered-scene regression test.",
   "not_executed": [
     "full local pytest",
     "full local gallery",
@@ -57,7 +57,7 @@
     "branch": "research/wind-20261106-0835",
     "pr": 198,
     "nonblocking_lock_acquired": true,
-    "expected_head": "73b96b356d683e5fa9f67be22252befa7f7ec694",
+    "expected_head": "d38ee314052d0f6385b8f1055f6aacfb0799725a",
     "reviewed_open_prs": [
       192,
       193,
@@ -65,14 +65,15 @@
       195,
       196,
       197,
-      198
+      198,
+      200,
+      201
     ],
     "other_pr_shared_paths": "Hydro PR192 bibliography edits remain on that PR; no competing Wind/shared viewer writer observed"
   },
   "resolved_local_failures": [
-    "Citation exports regenerated after data application",
-    "Long adapter message wrapped for Ruff",
-    "Gallery now selects only environmental designs with an explicit floater-depth field"
+    "ty needed explicit workspace Python; default interpreter failed unrelated import resolution",
+    "Initial link check ran before Sphinx completed asset export; final check will follow build completion"
   ],
   "local_storage": "Removed reproducible prior build/checkpoint copies to resolve disk exhaustion; original source captures retained"
 }

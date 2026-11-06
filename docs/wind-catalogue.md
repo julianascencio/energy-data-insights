@@ -1363,3 +1363,19 @@ no login was attempted and no inventory was imported. REPD saved candidates
 The shared viewer exposes OEM table completeness and withheld fields. The offline
 gallery distinguishes floating design depth boundaries and prints the retained
 OEM conflicts. Next: BOE July 27–29, REPD 1200:1400, and exact SANY corrections.
+
+### 6 November continuation: empty discovery partitions and restricted originals
+
+The July 27–29 BOE Series A/B title partitions are complete with no wind-title
+candidates. This does not establish that no wind projects existed on those dates.
+REPD saved candidates 1200–1399 were structurally reviewed against the pinned
+release; all 200 remain application-to-farm identity holds.
+
+The original SANY *Product Family, April 2025* brochure was acquired and
+checksummed, but its explicit copying restriction excludes its specifications
+from this intake. This is an explicit reuse exclusion, not an HTTP or
+authentication failure. The three existing SANY scalar conflicts and the
+SI-16840 regional configuration crosswalk remain unresolved. No projects,
+equipment, turbine instances or numerical curves were added in this continuation.
+See `catalogues/wind/research/2026-11-06-1035-review.json` for source identifiers,
+checksums and next partitions.
