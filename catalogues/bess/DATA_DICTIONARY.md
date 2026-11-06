@@ -130,3 +130,14 @@ Kappel's final 80 MWh/30 MW expansion is a target, not operating scalar capacity
 Lehe's 3.1104 MWh is explicitly usable; earlier unspecified 3.5/3.6 MWh observations
 remain unresolved. Phoenix's separate charging-park booster is outside the
 central-system record. Source-reported WGS84 coordinates are not centroids.
+
+### MaStR storage units and installations
+
+`extensions_json.mastr_262` preserves exact SEE unit, SSE storage and SEL location
+identities, member/row locators, original-file hashes, first commissioning and
+network-check dates, source chemistry/category labels and gross/inverter ratings.
+The canonical power is the unit's net rating in MW; usable MWh comes only from an
+exclusive reciprocal storage-installation join. Coordinates retain source precision
+without an asserted datum or accuracy. Registry status is a dated declaration,
+not live availability. Location identities may span phases; held neighboring or
+shared-site units must be reconciled before adding commercial-project totals.

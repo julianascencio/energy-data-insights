@@ -16,7 +16,19 @@ or a live availability feed. Do not interpret record counts as installed capacit
    local languages when useful. Check recent status updates as well as technical
    sources. Register exact URLs, access method, retrieval/publication dates,
    source terms and downloaded inventory checksums. Raw downloads stay outside Git.
-4. For the reviewed ATESS BC55NPB and VoltStack battery sheets,
+4. For MaStR revision 26.2, `scripts/stage_bess_mastr.py` accepts downloaded
+   storage-unit and storage-installation XML partitions plus `Katalogwerte.xml`.
+   Require a reciprocal exclusive SEE/SSE join before using usable energy.
+   Net unit power, gross power and assigned inverter power remain separate.
+   Shared SEL identities, including sub-threshold siblings, are review flags;
+   different SEL IDs do not prove separate commercial projects. Review nearby
+   coordinates and names manually. The 6 November partitions 1 and 2 are already
+   processed: 79 accepted units, 30 battery holds and 97 non-battery exclusions.
+   Recheck the live release before processing partition 3. Retain suspended
+   status and first-commissioning dates without converting them into commercial COD.
+   Downloaded archive members must match central-directory size/CRC and have
+   individual SHA256 checksums; never label a partial download as a whole-ZIP hash.
+   For the reviewed ATESS BC55NPB and VoltStack battery sheets,
    `scripts/stage_bess_atess_battery.py` stages only explicit rack columns from
    local layout text. Keep module and rack boundaries separate. The nine-module
    VoltStack energy/nominal-voltage inconsistency requires review; the adapter

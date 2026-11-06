@@ -171,3 +171,20 @@ conflicts; planned 24-ICU expansion is not current functionality.
 `intilion_scalepac_grid` retains per-power-unit AC currents, not a sum across
 a cabinet configuration. The 110%/minimum-ten-minute overload observation is
 not a continuous active-power rating. No anonymous components become models.
+
+### Renon configurations and ATESS impedance
+
+`renon_specification` retains exact model column/page, module/string counts,
+charge/discharge limits, EPS versus grid ratings, separate DC ports, approximate
+mass/dimensions, thermal derating and explicit warranty limitations. CEC inverter
+and peak DCDC conversion efficiency are not system RTE. Smart Matrix table kVA
+and cover kW claims remain quarantined; no multi-container active power is inferred.
+EBrick-IND's ambiguous cell-voltage labels, Ah/energy relationship and parallel
+illustration/table counts remain native observations with conflict evidence.
+R-CC01C00800 is an EMS communication cabinet; its 600 W air-conditioner rating is
+not total auxiliary draw. Product relationships do not assign equipment to projects.
+
+`atess_impedance_bms` adds model-column AC internal-resistance upper bounds in
+milliohms, explicitly without test frequency/temperature, and the stated BMS
+levels, BC55NPB LCD observations and protection functions. AC resistance is not
+silently relabelled DC resistance; previous voltage/energy conflicts remain intact.
