@@ -880,3 +880,13 @@ Large monthly exports may require an explicit `maximum_rows` increase; the
 June 2024 benchmark capture uses a two-million-row bound and Parquet filtering.
 Native resource fields remain unconverted; the wind dictionary's inconsistent
 speed unit is documented in the [forecast benchmark](../docs/forecast-benchmark.md).
+
+## License
+
+Copyright (c) 2026 **ASVA Consulting TFE SL**. The original software is
+source-available under the [ASVA Noncommercial Software License 1.0](LICENSE).
+**Commercial use is prohibited**, including internal business use, paid client
+work, commercial products, and paid hosted services. Noncommercial use,
+modification, and sharing are allowed subject to the license.
+
+Third-party materials retain their own terms. See [licensing scope](LICENSING.md).

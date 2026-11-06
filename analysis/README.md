@@ -302,3 +302,13 @@ fits trees/physics locally and replays verified actual Timestral inference.
 The [guide](../docs/forecast-benchmark.md) explains weather persistence, input
 quality, fair scoring and differences from the cited Ascencio-Vásquez et al.
 (2020) PV-modelling paper. No future observed weather enters model features.
+
+## License
+
+Copyright (c) 2026 **ASVA Consulting TFE SL**. The original software is
+source-available under the [ASVA Noncommercial Software License 1.0](LICENSE).
+**Commercial use is prohibited**, including internal business use, paid client
+work, commercial products, and paid hosted services. Noncommercial use,
+modification, and sharing are allowed subject to the license.
+
+Third-party materials retain their own terms. See [licensing scope](LICENSING.md).

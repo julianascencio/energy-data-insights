@@ -101,3 +101,12 @@ author names are retained in citations and attribution.
 Related project: `OrbitalPV <https://julianascencio.github.io/orbital-pv/>`_.
 This documentation uses Sphinx and the PyData theme, following the organization
 of `pvlib python <https://pvlib-python.readthedocs.io/en/stable/>`_.
+
+License
+-------
+
+Copyright (c) 2026 ASVA Consulting TFE SL. Original software is source-available
+for noncommercial use only. Internal business use, paid services, and commercial
+products require separate written permission. Third-party materials keep their
+own terms. Read the `full license <https://github.com/julianascencio/energy-data-insights/blob/main/LICENSE>`_
+and `licensing scope <https://github.com/julianascencio/energy-data-insights/blob/main/LICENSING.md>`_.
