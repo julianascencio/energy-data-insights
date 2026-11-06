@@ -487,3 +487,37 @@ Coverage: 7,156 historical records / 128 countries / 1,210 enriched identities.
 All unresolved scopes remain excluded from generating-MW totals. Next regional
 batch: first 50 remaining Norwegian WRI identities sorted by WRI ID, with
 explicit NVE/owner corroboration; EIA resumes at 15001–20000.
+
+
+## Norwegian review and EIA 50001–55000 (6 November 2026)
+
+The first 50 unresolved Norwegian WRI identities (WRI1002991–WRI1003149,
+sorted by WRI ID) remain held. Fresh NVE registry and map responses retain
+checksums, exact-name candidate rows and geometry. Names are not identity proof:
+duplicated names, spatial offsets and different station/development ratings
+need explicit corroboration. Statkraft's Norwegian Adamselv and Aura pages
+confirm ratings of 50 and 290 MW, respectively; WRI reports historical 60 and
+352 MW. These comparisons do not resolve physical scope or justify overwriting
+coordinates. No Norwegian canonical facts were accepted in this partition.
+NVE data retain NLOD attribution; owner checks use limited facts only.
+
+The new `scripts/screen_hydro_nve.py` stages bounded review partitions and
+rejects truncated map responses and replacement of differing review files.
+It never accepts or fuzzy-merges candidates. Resume with `--offset 50 --limit 50`
+and original `--api`, `--gis`, `--reviewed-at` and `--output` arguments.
+
+EIA codes 15001–20000 and 20001–50000 contain no hydro-bearing operable plants;
+these empty partitions are complete. Codes 50001–55000 enrich **171 existing
+US plants** with **396 generator observations**; 41 candidates remain held.
+Evidence includes official IDs, operators, generating and seasonal MW, unit
+dates and year-end 2025 status. This is not live operation. Original archive
+checksum and parsed workbook rows were verified. Replay with:
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-50001-55000.json
+```
+
+Coverage is 7,156 historical records / 128 countries / 1,381 enriched identities.
+EIA totals: 1,098 identities / 2913 units / 254 holds. Aggregation scopes
+remain unresolved and excluded from capacity totals. Next: Norwegian rows
+51–100 for explicit review; EIA resumes at 55001–60000.

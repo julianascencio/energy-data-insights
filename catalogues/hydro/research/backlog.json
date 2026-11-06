@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-05T23:42:47Z",
+  "reviewed_at": "2026-11-06T00:43:29.733254+00:00",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -244,6 +244,46 @@
       "remaining_held_rows": 65,
       "remaining_held_names": 39,
       "cursor": "Tuai explicit crosswalk complete; previous Aratiatia/Aviemore decisions retained"
+    },
+    {
+      "source": "eia860-2025-hydro-15001-20000",
+      "partition": {
+        "first": 15001,
+        "last": 20000,
+        "next_first": 20001
+      },
+      "accepted_enriched": 0,
+      "held": 0,
+      "cursor": "Complete; EIA resumes 55001\u201360000"
+    },
+    {
+      "source": "eia860-2025-hydro-20001-50000",
+      "partition": {
+        "first": 20001,
+        "last": 50000,
+        "next_first": 50001
+      },
+      "accepted_enriched": 0,
+      "held": 0,
+      "cursor": "Complete; EIA resumes 55001\u201360000"
+    },
+    {
+      "source": "eia860-2025-hydro-50001-55000",
+      "partition": {
+        "first": 50001,
+        "last": 55000,
+        "next_first": 55001
+      },
+      "accepted_enriched": 171,
+      "held": 41,
+      "cursor": "Complete; EIA resumes 55001\u201360000"
+    },
+    {
+      "source": "nve-hydro-20261106 + nve-gis-20261106",
+      "partition": "First 50 remaining WRI NOR identities sorted by WRI ID, WRI1002991\u2013WRI1003149",
+      "accepted_enriched": 0,
+      "held": 50,
+      "cursor": "Screened, not resolved; next offset 50; retained raw exact-name candidates and two owner checks"
     }
   ],
   "next_sources": [
@@ -274,14 +314,14 @@
       "url": "https://www.nve.no/energi/energisystem/vannkraft/",
       "country": "NOR",
       "status": "110 WRI identities enriched; 1867 NVE candidates remain unaccepted",
-      "next_action": "Next regional batch: first 50 remaining WRI Norwegian identities sorted by WRI ID; corroborate aliases and offsets using NVE registry/map and owner evidence; no fuzzy merges"
+      "next_action": "Norway remaining WRI identities 51\u2013100 sorted by WRI ID; retain first 50 holds; EIA resumes 55001\u201360000"
     },
     {
       "priority": 3,
       "url": "https://www.eia.gov/electricity/data/eia860/",
       "country": "USA",
-      "status": "927 enriched; 213 held",
-      "next_action": "EIA codes 15001\u201320000 after Europe rotation"
+      "status": "1098 enriched; 254 held",
+      "next_action": "EIA 55001\u201360000"
     },
     {
       "priority": 1,

@@ -7,7 +7,7 @@ Parquet and map its reported coordinates. CC BY 4.0 attribution: World Resources
 Institute, GPPD v1.3.0 repository snapshot. WRI stopped maintenance in early 2022.
 This is historical discovery coverage, not a current operating census or a
 ranking of installed national capacity. 110 Norwegian records have reviewed
-NVE lifecycle and technical enrichment; 927 US records carry dated 2025 EIA inventory.
+NVE lifecycle and technical enrichment; 1098 US records carry dated 2025 EIA inventory.
 131 Brazilian records now retain ONS registry/unit evidence.
 13 Indian records retain reviewed historical IHA station evidence.
 26 African records retain reviewed AHA river/basin evidence.
