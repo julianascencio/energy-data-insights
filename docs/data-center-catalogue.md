@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 581 project records across 39 countries:
-450 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
+The current continuation branch has 702 project records across 46 countries:
+571 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -51,6 +51,68 @@ the sources do not identify them as IT, grid or total facility demand. Land,
 renewable-electricity, PUE, permit and construction statements remain dated
 observations; the announced Smedjebacken campus is not treated as permitted.
 
+The European Commission JRC continuation adds the complete bounded 2024 Digital
+Realty Spain and Sweden participant partition: ESP1--ESP4 and STO1--STO6. The
+registry establishes exact data-centre identities and Code of Conduct adhesion,
+but not current lifecycle, ownership, operation, capacity, locality or
+certification. All ten records therefore remain lifecycle-unknown and
+aggregation-unresolved, and are excluded from capacity totals under every
+filter. The Commission page was available through the public indexed reader
+while direct original retrieval was rejected; this is recorded as an access
+failure, not a reuse restriction. The Commission CC BY 4.0 reuse notice is
+captured and checksummed separately.
+
+The next JRC partition processes all 35 displayed Equinix EMEA corporate rows
+as 34 unique facility identities across 11 countries. The registry repeats
+`The Netherlands: AM7, Amsterdam` verbatim; it is normalized once and the source
+anomaly remains reviewable rather than becoming a duplicate facility. Bulgaria,
+Italy, Poland, Switzerland and Türkiye are new country coverage. The registry
+supports each site code, city and 2013 adhesion year, but it does not establish
+current lifecycle, ownership, operation, physical aggregation, capacity or
+certification. All 34 records therefore remain lifecycle-unknown and
+aggregation-unresolved and are excluded from every capacity total.
+
+The 2018 JRC continuation adds the complete displayed DxC Technology and
+`Digital Reality` participant partitions: 11 UK identities and eight German,
+Dutch and UK identities, respectively. The latter spelling is preserved exactly
+as printed by the registry and is not silently normalized to a different owner
+or operator. Apparent source spellings such as `Doxfrod Park` and `Winyard` also
+remain reviewable rather than being corrected by inference. Adhesion year is an
+observation, not commissioning, certification or deployment evidence. All 19
+records remain lifecycle-unknown and aggregation-unresolved, with ownership,
+operation and capacity quarantined; they are excluded from every capacity total.
+
+The next JRC continuation adds 17 exact facility labels from nine participant
+sets spanning 2015--2018. Each accepted participant count, label set and adhesion
+year is stable across the reviewed indexed official-language copies. The
+conflicting `INTEL` row and pagination-only identities remain deferred rather
+than being reconciled by guesswork. Company addresses are not promoted to site
+locations; only cities printed in exact facility labels are normalized. All 17
+records remain lifecycle-unknown and aggregation-unresolved, and are excluded
+from every capacity total.
+
+The latest JRC continuation adds the six remaining cross-language-stable 2024
+participant rows that do not overlap the completed Digital Realty partition:
+D3 Geneva, Roazhon, G-Cloud Moschato, DCWTC Genova, Les Ulis and Castel
+Sanpietro Terme (BO). Their participant names, counts, exact facility labels and
+adhesion year agree across reviewed Spanish, Romanian, Gaelic and German
+official-language indexes. The registry does not establish lifecycle, ownership,
+operation, physical aggregation, capacity or certification; all six records
+remain lifecycle-unknown and aggregation-unresolved and are excluded from every
+capacity total. Greece is new country coverage. Direct official-page requests
+were rejected, which remains an access/content failure rather than a reuse hold.
+
+The complete 2023 JRC cohort adds 35 unique facility identities from 36 displayed
+rows across 13 participant sets. `Frankfurt FRA08` is repeated verbatim by the
+registry, so it is emitted once with two source-row occurrences rather than
+becoming a duplicate facility. Source spellings including `Detuschland`,
+`Tecchnology`, `Servvice`, `Varsaw`, `Biliancourt`, `Touluse` and `Mamoudzo` are
+preserved exactly and are not corrected by inference. The 2023 adhesion year is
+not a commissioning date, participant registry inclusion is not deployment or
+certification evidence, and company addresses are not site locations. Lifecycle,
+ownership, operation, physical aggregation and every capacity boundary remain
+unresolved; all 35 records are excluded from capacity totals under every filter.
+
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and
 all 54 from 2019 through 2022 and all 46 from 2010 through 2018 in EPA's
@@ -71,7 +133,7 @@ issuer updates or independent planning, utility and lifecycle evidence.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,766 exact models/configurations from NVIDIA, AMD, ABB, AIRSYS, AboveAir, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,774 exact models/configurations from NVIDIA, AMD, ABB, AIRSYS, AboveAir, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
@@ -594,5 +656,5 @@ port, module, power-supply and PoE quantities are certification test facts, not
 deployed inventory. The official 96-row, 223-column v3 CSV is 72,103 bytes with
 SHA-256 `e769eedcef814b652ad6594b6cadb43b239e57e9250071a90cc133b07907e533`.
 
-See the [continuation report](../catalogues/data_centers/research/2026-11-05-report.md)
-and [executed validation](../catalogues/data_centers/research/2026-11-05T1720-validation.json).
+See the [continuation report](../catalogues/data_centers/research/2026-11-06-report.md)
+and [executed validation](../catalogues/data_centers/research/2026-11-06T0958-validation.json).

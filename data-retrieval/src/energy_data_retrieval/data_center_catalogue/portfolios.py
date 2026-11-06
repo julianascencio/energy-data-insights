@@ -1919,6 +1919,572 @@ def parse_datacenter_united_site_page(
     }
 
 
+def parse_jrc_code_of_conduct_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact 2024 Digital Realty Spain and Sweden participant rows.
+
+    The JRC registry establishes only the participant name, the named data-centre
+    identities, the country-level participant geography and the adhesion year.
+    It does not establish current facility lifecycle, ownership, capacity,
+    locality or certification, so callers must leave those fields unfilled.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected = {
+        "Digital Realty Spain": {
+            "country_code": "ESP",
+            "adhesion_year": 2024,
+            "facilities": [f"Digital Realty Spain ESP{i}" for i in range(1, 5)],
+        },
+        "Digital Realty Sweden": {
+            "country_code": "SWE",
+            "adhesion_year": 2024,
+            "facilities": [f"Digital Realty Sweden STO{i}" for i in range(1, 7)],
+        },
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        partner = row[0]
+        if partner not in expected:
+            continue
+        spec = expected[partner]
+        facilities = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC participant count or adhesion year") from exc
+        expected_facilities = spec["facilities"]
+        expected_year = spec["adhesion_year"]
+        if not isinstance(expected_facilities, list) or not isinstance(expected_year, int):
+            raise TypeError("Invalid static JRC participant specification")
+        if count != len(expected_facilities) or year != expected_year:
+            raise ValueError("Changed JRC participant count or adhesion year")
+        if facilities != expected_facilities:
+            raise ValueError("Changed JRC Digital Realty facility identity set")
+        found.add(partner)
+        for facility in facilities:
+            candidates.append(
+                {
+                    "adhesion_year": year,
+                    "country_code": spec["country_code"],
+                    "external_id": facility.rsplit(" ", 1)[-1],
+                    "name": facility,
+                    "participant": partner,
+                    "locator": f"Participants table / {partner} / {facility}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 10:
+        raise ValueError("Changed JRC Digital Realty participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_jrc_equinix_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete JRC Equinix EMEA corporate participant partition.
+
+    The registry displays 35 rows but repeats ``The Netherlands: AM7,
+    Amsterdam`` verbatim. The parser preserves that source anomaly separately
+    and returns 34 unique facility identities. Participant status is not
+    ownership, operation, certification or evidence of current lifecycle.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected_rows = [
+        ("BGR", "Bulgaria", "SO1", "Sofia"),
+        *(("FRA", "France", f"PA{i}", "Paris") for i in range(3, 8)),
+        ("DEU", "Germany", "FR4", "Frankfurt"),
+        ("DEU", "Germany", "FR7", "Frankfurt"),
+        *(("IRL", "Ireland", f"DB{i}", "Dublin") for i in range(1, 5)),
+        *(("ITA", "Italy", f"ML{i}", "Milan") for i in range(1, 4)),
+        ("NLD", "The Netherlands", "AM3", "Amsterdam"),
+        ("NLD", "The Netherlands", "AM5", "Amsterdam"),
+        ("NLD", "The Netherlands", "AM6", "Amsterdam"),
+        ("NLD", "The Netherlands", "AM7", "Amsterdam"),
+        ("NLD", "The Netherlands", "AM7", "Amsterdam"),
+        *(("SWE", "Sweden", f"SK{i}", "Stockholm") for i in range(1, 4)),
+        ("CHE", "Switzerland", "ZH4", "Zurich"),
+        ("TUR", "Turkey", "IS1", "Istanbul"),
+        ("POL", "Poland", "WA1", "Warsaw"),
+        ("POL", "Poland", "WA2", "Warsaw"),
+        ("GBR", "United Kingdom", "LD4", "Slough"),
+        ("GBR", "United Kingdom", "LD5", "London"),
+        ("GBR", "United Kingdom", "LD9", "London"),
+        ("GBR", "United Kingdom", "LD8", "London"),
+        *(("GBR", "United Kingdom", f"MA{i}", "Manchester") for i in range(1, 5)),
+    ]
+    expected_labels = [
+        f"{country}: {code}, {locality}" for _, country, code, locality in expected_rows
+    ]
+    candidates: list[dict[str, Any]] = []
+    duplicate_rows: list[dict[str, Any]] = []
+    found = False
+    for row in rows:
+        if row[0] != "Equinix, EMEA (Corporate Level)":
+            continue
+        try:
+            displayed_count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC Equinix count or adhesion year") from exc
+        labels = [part.strip() for part in row[2].split("|") if part.strip()]
+        if displayed_count != 35 or adhesion_year != 2013 or labels != expected_labels:
+            raise ValueError("Changed JRC Equinix facility identity set")
+        found = True
+        seen: set[str] = set()
+        for (country_code, country, code, locality), label in zip(
+            expected_rows, labels, strict=True
+        ):
+            if label in seen:
+                duplicate_rows.append(
+                    {
+                        "label": label,
+                        "occurrences": 2,
+                        "reason": "verbatim duplicate registry row; normalized once",
+                    }
+                )
+                continue
+            seen.add(label)
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "country_label": country,
+                    "external_id": code,
+                    "locality": locality,
+                    "name": f"Equinix EMEA {code}",
+                    "participant": row[0],
+                    "registry_label": label,
+                    "locator": f"Participants table / {row[0]} / {label}",
+                }
+            )
+    if not found or len(candidates) != 34 or len(duplicate_rows) != 1:
+        raise ValueError("Changed JRC Equinix participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "displayed_rows": 35,
+        "candidates": candidates,
+        "duplicate_rows": duplicate_rows,
+        "review_required": True,
+    }
+
+
+def parse_jrc_2018_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete JRC DxC and ``Digital Reality`` 2018 partitions.
+
+    ``Digital Reality`` is the participant spelling printed by the registry. It
+    is retained verbatim and is not silently normalized to an owner or operator.
+    The registry establishes participant identities and adhesion year only; it
+    does not establish current lifecycle, ownership, operation or capacity.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, dict[str, Any]] = {
+        "DxC Technology": {
+            "adhesion_year": 2018,
+            "country_codes": ["GBR"] * 11,
+            "facilities": [
+                "Aylesford",
+                "Maidstone",
+                "Royal Tunbridge Wells",
+                "Northern Data Centre",
+                "Sevenoaks Data Centre",
+                "Doxfrod Park",
+                "Mitcheldean",
+                "Swindon",
+                "Winyard",
+                "Watford",
+                "Norwich",
+            ],
+            "localities": [None] * 11,
+        },
+        "Digital Reality": {
+            "adhesion_year": 2018,
+            "country_codes": ["DEU", "NLD", "NLD", "GBR", "GBR", "GBR", "GBR", "GBR"],
+            "facilities": [
+                "Germany: FRA11, Frankfurt",
+                "The Netherlands: AMS17, Amsterdam",
+                "The Netherlands: AMS18, Amsterdam",
+                "United Kingdom: LHR17, London",
+                "United Kingdom: LHR18, London",
+                "United Kingdom: LHR19, London",
+                "United Kingdom: LHR20, London",
+                "United Kingdom: LHR21, London",
+            ],
+            "localities": [
+                "Frankfurt",
+                "Amsterdam",
+                "Amsterdam",
+                "London",
+                "London",
+                "London",
+                "London",
+                "London",
+            ],
+        },
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        spec = expected[participant]
+        facilities = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC 2018 participant count or adhesion year") from exc
+        expected_facilities = spec["facilities"]
+        country_codes = spec["country_codes"]
+        localities = spec["localities"]
+        if (
+            count != len(expected_facilities)
+            or adhesion_year != spec["adhesion_year"]
+            or facilities != expected_facilities
+        ):
+            raise ValueError("Changed JRC 2018 facility identity set")
+        found.add(participant)
+        for label, country_code, locality in zip(
+            facilities, country_codes, localities, strict=True
+        ):
+            code = label.split(": ", 1)[-1].split(",", 1)[0]
+            name = (
+                f"{participant} {code}"
+                if participant == "Digital Reality"
+                else f"{participant} {label}"
+            )
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "external_id": code,
+                    "locality": locality,
+                    "name": name,
+                    "participant": participant,
+                    "registry_label": label,
+                    "locator": f"Participants table / {participant} / {label}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 19:
+        raise ValueError("Changed JRC 2018 participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_jrc_2015_2018_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the cross-language-stable JRC 2015--2018 participant rows.
+
+    Only participant/facility sets that agree across the reviewed official
+    language indexes are accepted. Conflicting ``INTEL`` and pagination-only
+    rows are intentionally outside this partition.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, tuple[int, str, list[str], list[str | None]]] = {
+        "AIMES Grid Services": (2015, "GBR", ["kilby house"], [None]),
+        "CGI IT UK limited": (
+            2015,
+            "GBR",
+            ["Bridgend-Waterton", "Bridgend Science Park"],
+            ["Bridgend", "Bridgend"],
+        ),
+        "DataCentred Limited": (
+            2015,
+            "GBR",
+            ["Unit 4&5, Salford"],
+            ["Salford"],
+        ),
+        "EUMETSAT": (2016, "DEU", ["Darmstadt"], ["Darmstadt"]),
+        "Euroclear Bank SA/NV": (
+            2016,
+            "FRA",
+            ["DC1: Bry sur Marne (France", "DC2: ZAC de BUSSY SUD (France)"],
+            ["Bry sur Marne", None],
+        ),
+        "FCO Services": (
+            2016,
+            "GBR",
+            ["FCO CDC - Milton Keynes", "FCO Services DC 25 - Milton Keynes"],
+            ["Milton Keynes", "Milton Keynes"],
+        ),
+        "Interxion Carrier Hotel, Ltd.": (
+            2017,
+            "GBR",
+            ["LON1", "LON2", "LON3"],
+            [None, None, None],
+        ),
+        "University of Strasbourg": (
+            2018,
+            "FRA",
+            ["ESPE meinau", "Campus Esplanade"],
+            [None, None],
+        ),
+        "Atos IT services": (
+            2018,
+            "GBR",
+            [
+                "Andover DC, Hants, England",
+                "Birmingham Business Park",
+                "Longbridge Data Centre",
+            ],
+            ["Andover", "Birmingham", "Longbridge"],
+        ),
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        expected_year, country_code, expected_facilities, localities = expected[participant]
+        facilities = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC participant count or adhesion year") from exc
+        if (
+            count != len(expected_facilities)
+            or adhesion_year != expected_year
+            or facilities != expected_facilities
+        ):
+            raise ValueError("Changed JRC cross-language facility identity set")
+        found.add(participant)
+        for label, locality in zip(facilities, localities, strict=True):
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "external_id": label,
+                    "locality": locality,
+                    "name": f"{participant} {label}",
+                    "participant": participant,
+                    "registry_label": label,
+                    "locator": f"Participants table / {participant} / {label}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 17:
+        raise ValueError("Changed JRC cross-language participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_jrc_2024_new_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage six non-overlapping, cross-language-stable JRC 2024 rows.
+
+    Digital Realty Spain and Sweden belong to an earlier completed partition.
+    Only the remaining 2024 participant/facility pairs that agree across the
+    reviewed official-language indexes are accepted here.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, tuple[str, str, str | None]] = {
+        "Infomaniak Group SA": ("CHE", "D3 Geneva", "Geneva"),
+        "Nation Data Center": ("FRA", "Roazhon", None),
+        (
+            "General Secretariat of Information Systems and Digital Governance "
+            "Hellenic Ministry of Digital Governance"
+        ): ("GRC", "G-Cloud Moschato", "Moschato"),
+        "Liguria Digitale S.p.a": ("ITA", "DCWTC Genova", "Genova"),
+        "Colt Data Services France": ("FRA", "Les Ulis", "Les Ulis"),
+        "EYE IT Srl SB": ("ITA", "Castel Sanpietro Terme (BO)", None),
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        country_code, expected_facility, locality = expected[participant]
+        facilities = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC 2024 participant count or adhesion year") from exc
+        if count != 1 or adhesion_year != 2024 or facilities != [expected_facility]:
+            raise ValueError("Changed JRC 2024 facility identity set")
+        if participant in found:
+            raise ValueError("Duplicate JRC 2024 participant row")
+        found.add(participant)
+        candidates.append(
+            {
+                "adhesion_year": adhesion_year,
+                "country_code": country_code,
+                "external_id": expected_facility,
+                "locality": locality,
+                "name": f"{participant} {expected_facility}",
+                "participant": participant,
+                "registry_label": expected_facility,
+                "locator": f"Participants table / {participant} / {expected_facility}",
+            }
+        )
+    if found != set(expected) or len(candidates) != 6:
+        raise ValueError("Changed JRC 2024 new-participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_jrc_2023_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete cross-language-stable 2023 JRC cohort.
+
+    The registry displays 36 facility rows across 13 participant sets. The
+    ``Interxion Detuschland GmbH`` row repeats ``Frankfurt FRA08`` verbatim, so
+    the duplicate is retained as source multiplicity and normalized once.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, list[tuple[str, str, str | None]]] = {
+        "A1 Telekom Austria AG": [
+            ("AUT", "Wien 1", "Wien"),
+            ("AUT", "Wien 2", "Wien"),
+        ],
+        "OVH Groupe": [
+            ("FRA", "Gravelines", "Gravelines"),
+            ("FRA", "Roubaix", "Roubaix"),
+            ("FRA", "Strasbourg", "Strasbourg"),
+            ("GBR", "Erith", "Erith"),
+            ("POL", "Varsaw", None),
+            ("DEU", "Limburg An Der Lahn", "Limburg An Der Lahn"),
+            ("CAN", "Beauharnois", "Beauharnois"),
+            ("USA", "Vint Hill (Virginia)", "Vint Hill"),
+            ("USA", "Hillsboro (Oregon)", "Hillsboro"),
+        ],
+        "Interxion Detuschland GmbH": [
+            ("DEU", "Frankfurt FRA08", "Frankfurt"),
+            ("DEU", "Frankfurt FRA08", "Frankfurt"),
+            ("DEU", "Frankfurt FRA10", "Frankfurt"),
+            ("DEU", "Frankfurt FRA11", "Frankfurt"),
+            ("DEU", "Frankfurt FRA12", "Frankfurt"),
+            ("DEU", "Frankfurt FRA13", "Frankfurt"),
+            ("DEU", "Frankfurt FRA15", "Frankfurt"),
+        ],
+        "Irideos S.p.A.": [("ITA", "Settimo Milanese (Avalon 2)", "Settimo Milanese")],
+        "Cegedim Group": [
+            ("FRA", "ET1 Labege", "Labege"),
+            ("FRA", "EB4 Boulogne Biliancourt", None),
+        ],
+        "BBBELL S.p.a": [("ITA", "Torino", "Torino")],
+        "Information Tecchnology hosting SAS": [("FRA", "Mamoudzo", None)],
+        "KDCR (Ireland) Limited": [
+            ("IRL", "DUB 1", None),
+            ("IRL", "DUB 2", None),
+        ],
+        "BNP Paribas": [
+            ("FRA", "Marne Est 1 MAE 1", None),
+            ("FRA", "Marne Nord MN", None),
+            ("FRA", "Marne Sud MS", None),
+        ],
+        "Thales Servvice Numerique": [
+            ("FRA", "Elancourt", "Elancourt"),
+            ("FRA", "Touluse", None),
+        ],
+        "Aruba S.p.a": [
+            ("ITA", "IT3.DC-A", None),
+            ("ITA", "IT3.DC-B", None),
+            ("ITA", "IT3.DC-C", None),
+            ("ITA", "IT1", None),
+        ],
+        "Opiquad Srl": [("ITA", "Merate", "Merate")],
+        "Stellium datacenters Ltd": [("GBR", "Cobalt Park Way, Wallsend", "Wallsend")],
+    }
+    candidates: list[dict[str, Any]] = []
+    duplicate_rows: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        if participant in found:
+            raise ValueError("Duplicate JRC 2023 participant row")
+        expected_rows = expected[participant]
+        labels = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC 2023 participant count or adhesion year") from exc
+        if count != len(expected_rows) or adhesion_year != 2023:
+            raise ValueError("Changed JRC 2023 participant count or adhesion year")
+        if labels != [label for _, label, _ in expected_rows]:
+            raise ValueError("Changed JRC 2023 facility identity set")
+        found.add(participant)
+        seen: set[str] = set()
+        for (country_code, label, locality), actual_label in zip(
+            expected_rows, labels, strict=True
+        ):
+            if actual_label in seen:
+                duplicate_rows.append(
+                    {
+                        "participant": participant,
+                        "label": actual_label,
+                        "occurrences": 2,
+                        "reason": "verbatim duplicate registry row; normalized once",
+                    }
+                )
+                continue
+            seen.add(actual_label)
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "external_id": label,
+                    "locality": locality,
+                    "name": f"{participant} {label}",
+                    "participant": participant,
+                    "registry_label": label,
+                    "locator": f"Participants table / {participant} / {label}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 35 or len(duplicate_rows) != 1:
+        raise ValueError("Changed JRC 2023 participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "displayed_rows": 36,
+        "candidates": candidates,
+        "duplicate_rows": duplicate_rows,
+        "review_required": True,
+    }
+
+
 def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
     """Stage Rack Centre's explicit two-building Lagos campus boundary.
 
