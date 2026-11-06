@@ -9529,5 +9529,61 @@
     "coverage_inventory_url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=processo+IN+%281447%2C2029%2C2062%2C2072%29&returnGeometry=false&f=json&returnIdsOnly=true",
     "coverage_inventory_sha256": "cebb6f218e9ddd7e7453fa44c0da8b163a4f81aebdc6c89af918f1735d0afae3",
     "limitations": "Context associations only, not newplant identities/power/status/coordinates. Explicit multiple-municipality lists encompass existing native municipality; no automatic fuzzymerge. One storage component excluded despite Solar fotovoltaico subtype. Alcaide source districtPortalegre versus canonicalÉvora retained as unresolved assertion; no geography overwritten."
+  },
+  "gem_owners_20261106T0900": {
+    "url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+    "publisher": "Global Energy Monitor",
+    "title": "GEM February2026 China historical owners next200 partition09:00",
+    "license": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+    "retrieved_at": "2026-11-05T11:57:14.680485+00:00",
+    "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+    "release": "February 2026",
+    "methodology_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+    "verified_at": "2026-11-06T09:03:44.420142+00:00",
+    "locator": "20261106T0900_owner_review exact workbook/native phase IDsets andOwnercells",
+    "limitations": "192historicalowners/completephasecontexts;8spelling/legalidentityholds; no currentownership oroperation/capacity/date inference",
+    "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\""
+  },
+  "polycab_hybrid1_20261106T0900": {
+    "url": "https://cms.polycab.com/media/cw2gzhh1/hybrid-inverters_-1-phase-1-mppt_v4.pdf",
+    "publisher": "Polycab India Limited",
+    "title": "Polycab 1phase hybrid exact technical tables",
+    "version": "Current filenamehybrid-inverters_-1-phase-1-mppt_v4.pdf; bodyundated",
+    "retrieved_at": "2026-11-06T08:59:48.387849+00:00",
+    "verified_at": "2026-11-06T09:03:44.420142+00:00",
+    "sha256": "4c46d600ac9b634f6dc1deb1a1229179829c992941305100bbc04f349ed43595",
+    "etag": "\"1dd181d21ad9a72\"",
+    "last_modified": "Mon, 20 Jul 2026 07:55:29 GMT",
+    "license": "Publisher copyright retained. Current public brochure index, privacy notice, linked PDF footnotes and site footer reviewed; no open bulk/document reuse grant established. Individually reviewed factual engineering specifications only, with attribution. No document/prose/images/table layout redistributed. Guessed terms-and-conditions path404 is not permission.",
+    "locator": "Physicalpages2–4 exact model columns, mergedcells and footnotes, rendered and visually checked",
+    "limitations": "PV/battery/grid/generator/backup separate; no kVAtoW/currentaggregation; conditional battery-package warranty not flattened. PHITnightkWunit and ACvoltagebasis unresolved."
+  },
+  "polycab_hybrid3_20261106T0900": {
+    "url": "https://cms.polycab.com/media/olbne2ns/polycab-hybrid-inverters_3-phase_v1.pdf",
+    "publisher": "Polycab India Limited",
+    "title": "Polycab 3phase hybrid exact technical tables",
+    "version": "Current filenamepolycab-hybrid-inverters_3-phase_v1.pdf; bodyundated",
+    "retrieved_at": "2026-11-06T08:59:48.466451+00:00",
+    "verified_at": "2026-11-06T09:03:44.420142+00:00",
+    "sha256": "4f2eedb1534dc365a31c258fbce79a7dbd5004647ca97e854749a1b905d60858",
+    "etag": "\"1dd105759630dae\"",
+    "last_modified": "Fri, 10 Jul 2026 10:32:04 GMT",
+    "license": "Publisher copyright retained. Current public brochure index, privacy notice, linked PDF footnotes and site footer reviewed; no open bulk/document reuse grant established. Individually reviewed factual engineering specifications only, with attribution. No document/prose/images/table layout redistributed. Guessed terms-and-conditions path404 is not permission.",
+    "locator": "Physicalpages2–4 exact model columns, mergedcells and footnotes, rendered and visually checked",
+    "limitations": "PV/battery/grid/generator/backup separate; no kVAtoW/currentaggregation; conditional battery-package warranty not flattened. PHITnightkWunit and ACvoltagebasis unresolved."
+  },
+  "polycab_griddual_20261106T0900": {
+    "url": "https://cms.polycab.com/media/exqddovi/polycab_inverter_3ph_5kw-10kw_2mppt_v3.pdf",
+    "publisher": "Polycab India Limited",
+    "title": "Polycab PSIT5/6/8/10K-SM2 dualMPPT exacttechnicalsheet",
+    "version": "CurrentfilenameV3; bodyundated",
+    "retrieved_at": "2026-11-06T09:08:02.129269+00:00",
+    "verified_at": "2026-11-06T09:09:44.244152+00:00",
+    "sha256": "f94871a8db939cf2bd3eba9e8337513e43e91414e27837efb4868b9cea529a23",
+    "etag": "\"1dd105cc16e6460\"",
+    "last_modified": "Fri, 10 Jul 2026 11:10:46 GMT",
+    "license": "Publisher copyright retained. Current public brochure index, privacy notice, linked PDF footnotes and site footer reviewed; no open bulk/document reuse grant established. Individually reviewed factual engineering specifications only, with attribution. No document/prose/images/table layout redistributed. Guessed terms-and-conditions path404 is not permission.",
+    "locator": "Physicalpage2 exactnamedcolumns/mergedcells/footnotes, rendered and visually reviewed",
+    "limitations": "OEM declares specs subject to change and grid-code variation. No kVA-to-active-power, current-vector aggregation, module-array-configuration-to-rated-DC or optional-feature inclusion inference. OEM standard/warranty assertions not independent certification or contract validation."
   }
 }
