@@ -76,9 +76,12 @@ def test_renewables_alone_need_no_battery() -> None:
 def test_inverter_power_infeasible() -> None:
     with pytest.raises(ValueError, match="No feasible capacity"):
         minimum_islanded_capacity(
-            [0.0], [0.0], [1.0], inverter_mw=0.5,
-        max_capacity_mwh=100,
-    )
+            [0.0],
+            [0.0],
+            [1.0],
+            inverter_mw=0.5,
+            max_capacity_mwh=100,
+        )
 
 
 @pytest.mark.parametrize(
