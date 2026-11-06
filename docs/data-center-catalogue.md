@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 661 project records across 45 countries:
-530 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
+The current continuation branch has 667 project records across 46 countries:
+536 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -90,6 +90,17 @@ than being reconciled by guesswork. Company addresses are not promoted to site
 locations; only cities printed in exact facility labels are normalized. All 17
 records remain lifecycle-unknown and aggregation-unresolved, and are excluded
 from every capacity total.
+
+The latest JRC continuation adds the six remaining cross-language-stable 2024
+participant rows that do not overlap the completed Digital Realty partition:
+D3 Geneva, Roazhon, G-Cloud Moschato, DCWTC Genova, Les Ulis and Castel
+Sanpietro Terme (BO). Their participant names, counts, exact facility labels and
+adhesion year agree across reviewed Spanish, Romanian, Gaelic and German
+official-language indexes. The registry does not establish lifecycle, ownership,
+operation, physical aggregation, capacity or certification; all six records
+remain lifecycle-unknown and aggregation-unresolved and are excluded from every
+capacity total. Greece is new country coverage. Direct official-page requests
+were rejected, which remains an access/content failure rather than a reuse hold.
 
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and

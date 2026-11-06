@@ -2296,6 +2296,69 @@ def parse_jrc_2015_2018_participants(content: bytes, *, source_url: str) -> dict
     }
 
 
+def parse_jrc_2024_new_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage six non-overlapping, cross-language-stable JRC 2024 rows.
+
+    Digital Realty Spain and Sweden belong to an earlier completed partition.
+    Only the remaining 2024 participant/facility pairs that agree across the
+    reviewed official-language indexes are accepted here.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, tuple[str, str, str | None]] = {
+        "Infomaniak Group SA": ("CHE", "D3 Geneva", "Geneva"),
+        "Nation Data Center": ("FRA", "Roazhon", None),
+        (
+            "General Secretariat of Information Systems and Digital Governance "
+            "Hellenic Ministry of Digital Governance"
+        ): ("GRC", "G-Cloud Moschato", "Moschato"),
+        "Liguria Digitale S.p.a": ("ITA", "DCWTC Genova", "Genova"),
+        "Colt Data Services France": ("FRA", "Les Ulis", "Les Ulis"),
+        "EYE IT Srl SB": ("ITA", "Castel Sanpietro Terme (BO)", None),
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        country_code, expected_facility, locality = expected[participant]
+        facilities = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC 2024 participant count or adhesion year") from exc
+        if count != 1 or adhesion_year != 2024 or facilities != [expected_facility]:
+            raise ValueError("Changed JRC 2024 facility identity set")
+        if participant in found:
+            raise ValueError("Duplicate JRC 2024 participant row")
+        found.add(participant)
+        candidates.append(
+            {
+                "adhesion_year": adhesion_year,
+                "country_code": country_code,
+                "external_id": expected_facility,
+                "locality": locality,
+                "name": f"{participant} {expected_facility}",
+                "participant": participant,
+                "registry_label": expected_facility,
+                "locator": f"Participants table / {participant} / {expected_facility}",
+            }
+        )
+    if found != set(expected) or len(candidates) != 6:
+        raise ValueError("Changed JRC 2024 new-participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
 def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
     """Stage Rack Centre's explicit two-building Lagos campus boundary.
 
