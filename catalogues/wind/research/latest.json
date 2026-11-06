@@ -1,20 +1,20 @@
 {
-  "batch": "2026-11-06-0435",
-  "updated_at": "2026-11-06T04:34:30.724971+00:00",
-  "baseline_main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-  "branch": "research/wind-20261105-2235",
+  "batch": "2026-11-06-0535",
+  "updated_at": "2026-11-06T05:40:10.076192+00:00",
+  "baseline_main": "036429f93354749517d91ac62b18390ec7bccddc",
+  "branch": "research/wind-20261106-0535",
   "merged_wind_counts_at_baseline": {
-    "projects": 8294,
+    "projects": 8298,
     "turbines": 13657,
     "equipment": 555,
     "curves": 2
   },
   "branch_totals": {
-    "projects": 8298,
+    "projects": 8299,
     "turbines": 13657,
     "equipment": 555,
     "curves": 2,
-    "non_group_projects": 8297,
+    "non_group_projects": 8298,
     "countries": 59,
     "manufacturers": [
       "ABB",
@@ -86,8 +86,8 @@
     "turbine_inventory_manufacturer_labels": 54
   },
   "changes_against_main": {
-    "new_projects": 4,
-    "enriched_projects": 92,
+    "new_projects": 1,
+    "enriched_projects": 0,
     "new_equipment": 0,
     "enriched_equipment": 0,
     "new_turbines": 0,
@@ -102,12 +102,12 @@
     "deferred_records": 0,
     "current_status_unresolved": 4698
   },
-  "primary_evidence_project_records": 5174,
+  "primary_evidence_project_records": 5175,
   "technology_counts": {
     "fixed_bottom_offshore": 19,
     "floating_offshore": 4,
     "offshore_unspecified": 32,
-    "onshore": 3545,
+    "onshore": 3546,
     "unknown": 4698
   },
   "identity_candidate_groups": 13,
@@ -179,8 +179,8 @@
   "validation_report": "validation.json",
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
-  "publication_base_main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-  "iteration_base_head": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
+  "publication_base_main": "036429f93354749517d91ac62b18390ec7bccddc",
+  "iteration_base_head": "036429f93354749517d91ac62b18390ec7bccddc",
   "changes_this_run": {
     "new_projects": 1,
     "enriched_projects": 0,
@@ -202,25 +202,20 @@
   "new_technology_coverage": "None",
   "reviewed_this_run": {
     "boe_dates": 3,
-    "issue_captures": 5,
-    "notices": 2,
+    "notices": 3,
     "new_projects": 1,
-    "hybrid_identity_holds": 2,
-    "lake_victoria_ids_held": [
-      2764,
-      3330
-    ]
+    "solar_notice_holds": 2
   },
-  "latest_research_discovery": "Somaloma-Las Quemadas authorized proposal added; LakeVictoria registry identity and Nordex revision held.",
-  "source_review": "2026-11-06-0435-review.json",
-  "decision_ledger": "2026-11-06-0435-review.json",
+  "latest_research_discovery": "Penaflor wind-only consultation; two Casa del Aire solar notices held; LakeVictoria proponent corroboration does not resolve IDs.",
+  "source_review": "2026-11-06-0535-review.json",
+  "decision_ledger": "2026-11-06-0535-review.json",
   "sweden_decision_ledger": "2026-11-04-0635-sweden-decisions.jsonl",
   "merged_main_totals": {
-    "projects": 8294,
+    "projects": 8298,
     "turbines": 13657,
     "equipment": 555,
     "curves": 2,
-    "main_commit": "4ef42de474f69b5cdca5824410c06db0d851b434",
+    "main_commit": "036429f93354749517d91ac62b18390ec7bccddc",
     "countries": 59,
     "manufacturer_labels": 64
   },
@@ -242,21 +237,22 @@
     "new_manufacturers": 0
   },
   "decision_ledgers": [
-    "2026-11-06-0435-review.json"
+    "2026-11-06-0535-review.json"
   ],
   "previous_publication_reconciliation": {
     "previous_pr": 184,
-    "state": "Open, reused"
+    "state": "Merged externally; new branch from main"
   },
   "publication_reconciliation": {
-    "branch": "research/wind-20261105-2235",
-    "expected_head": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
-    "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-    "pr": 184
+    "branch": "research/wind-20261106-0535",
+    "expected_head": "036429f93354749517d91ac62b18390ec7bccddc",
+    "main": "036429f93354749517d91ac62b18390ec7bccddc",
+    "pr": null
   },
   "publication_transition": {
-    "reused_pr": 184,
-    "current_branch": "research/wind-20261105-2235"
+    "previous_pr": 184,
+    "previous_state": "Merged externally",
+    "current_branch": "research/wind-20261106-0535"
   },
   "per_run_changes": {
     "new_projects": 1,
@@ -342,24 +338,24 @@
       "remote_ci": "Python and Documentation passed previously"
     }
   ],
-  "merged_main_head": "4ef42de474f69b5cdca5824410c06db0d851b434",
+  "merged_main_head": "036429f93354749517d91ac62b18390ec7bccddc",
   "publication_checkpoint": {
     "previous_pr": 184,
-    "previous_state": "Open, reused",
-    "this_batch": "Validated publication candidate; final commit and CI reported on PR"
+    "previous_state": "Merged externally",
+    "this_batch": "Final commit and CI reported on new PR"
   },
-  "source_registry_entries": 425,
-  "research_started_from": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
+  "source_registry_entries": 426,
+  "research_started_from": "036429f93354749517d91ac62b18390ec7bccddc",
   "snapshot_builds": {
     "count": 2,
     "byte_identical": true,
-    "input_hash": "762e6e94898395fe1bde9fcfb76515cc6b914f77444fac5de62634c2cdcf1150",
+    "input_hash": "e119a84890930d1d45c3a1fda8c9006c53314f073d7988ed39ac606b2197e168",
     "sha256": {
       "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-      "manifest.json": "803c06424f961b9ea6ac7447f6b72c7c23ad417058715aa2db36e157b4412a7c",
-      "projects.parquet": "bd81f158f426e7adb0975a8c6396333b967346f3eef353aaa0b8efd3161c1417",
+      "manifest.json": "260388de67179728f6574b4a4ddeb62d107a45d48560bd97fba7e6403bfab331",
+      "projects.parquet": "ce58b1911f40e8a2bcea7242d84b026dd78d2af03e40193602de71157968421c",
       "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-      "sources.json": "90c15b5d97351b663aa961ba2f58bae911a215918e79d84c5e0fc988bf713d70",
+      "sources.json": "48600e08f369642c743d3436f988a93c1c3c5149b8a4d4d21631fe1a79a0216d",
       "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
       "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
     }

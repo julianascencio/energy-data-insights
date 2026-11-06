@@ -1,0 +1,164 @@
+{
+  "batch": "2026-11-06-0535",
+  "retrieved_at": "2026-11-06T05:40:10.076192+00:00",
+  "indices": [
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/20/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/20/",
+          "sha256": "653854ed3faa6dd2a0137541d53618302c492739d81a5ea31f6b93879efb3d61"
+        }
+      ],
+      "notices": [
+        {
+          "notice_id": "BOE-B-2026-27431",
+          "title": "Anuncio del Área de Industria y Energía de la Subdelegación del Gobierno en Zaragoza por el que se somete a información pública la solicitud de Declaración de Impacto Ambiental y Autorización Administrativa Previa del parque eólico PEÑAFLOR, de 49,5 MW de potencia instalada, y su infraestructura de evacuación, para su hibridación con el parque fotovoltaico PEÑAFLOR de 113,42 MWins, en tramitación, en los términos municipales de Villamayor de Gállego, La Puebla de Alfindén y Alfajarín, en la provincia de Zaragoza."
+        }
+      ]
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/21/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/21/",
+          "sha256": "ee0d7389a8bdf69b282dea92d28544d8bf398a93cff129005d2894cb36dee8c0"
+        }
+      ],
+      "notices": []
+    },
+    {
+      "daily_url": "https://www.boe.es/boe/dias/2026/08/22/",
+      "scope": "Complete discovered Series A/B wind-title scan",
+      "captures": [
+        {
+          "url": "https://www.boe.es/boe/dias/2026/08/22/",
+          "sha256": "184b61dbe186d84d8df583cf33b309a482d76b65c6bf6c1a16363bf65e47cc22"
+        }
+      ],
+      "notices": [
+        {
+          "notice_id": "BOE-A-2026-18030",
+          "title": "Resolución de 3 de junio de 2025, de la Dirección General de Política Energética y Minas, por la que se otorga a Naturgy Vento, SAU, autorización administrativa previa para el parque solar fotovoltaico Hibridación Casa del Aire l, de 49,35 MW de potencia instalada, para su hibridación con el parque eólico Casa del Aire I, de 50,4 MW, y para su infraestructura de evacuación, en El Bonillo (Albacete)."
+        },
+        {
+          "notice_id": "BOE-A-2026-18031",
+          "title": "Resolución de 3 de junio de 2025, de la Dirección General de Política Energética y Minas, por la que se otorga a Naturgy Vento, SAU, autorización administrativa previa para el parque solar fotovoltaico Hibridación Casa del Aire II, de 54,6 MW de potencia instalada, para su hibridación con el parque eólico Casa del Aire II, de 51 MW, y para su infraestructura de evacuación, en El Bonillo (Albacete)."
+        }
+      ]
+    }
+  ],
+  "accepted": [
+    {
+      "notice_id": "BOE-B-2026-27431",
+      "sha256": "d9940ecffab2407c98c67eb34f1329c27fe42a8086b8bb3dc51d3816442428b5",
+      "identity": "MITECO:PFot-147-Eol:wind",
+      "decision_target": "wind",
+      "decision_effect": "public_consultation",
+      "published_at": "2026-08-20",
+      "locator": "Description of installations; budget; hybrid grid access",
+      "values": {
+        "name": "Peñaflor wind hybrid",
+        "country_code": "ESP",
+        "region": "Aragón / Zaragoza",
+        "locality": "Villamayor de Gállego; La Puebla de Alfindén; Alfajarín",
+        "technology": "onshore",
+        "status": "announced",
+        "status_as_of": "2026-08-03",
+        "status_date_basis": "Public consultation notice; no permission or operation inferred",
+        "planned_capacity_mw": 49.5,
+        "turbine_count": 11,
+        "rotor_diameter_m": 163.0,
+        "hub_height_m": 118.0,
+        "developer_names": [
+          "Iberdrola Renovables Aragón, S.A.U."
+        ],
+        "external_ids_json": "{\"boe_notice\":\"BOE-B-2026-27431\",\"miteco_expediente\":\"PFot-147-Eol\"}",
+        "capacity_scope": "Wind-only49.5MW proposal;113.42MWsolar and hybrid grid permission separate; excluded pending boundary reconciliation",
+        "official_url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27431",
+        "quality_status": "needs_review",
+        "extensions_json": "{\"arithmetic_check\":{\"calculated_mw\":49.5,\"count\":11,\"label\":\"Count times rating check; not substitute reported MW\",\"rating_mw\":4.5,\"reported_proposed_mw\":49.5},\"electrical\":{\"collection_kv\":30,\"collection_type\":\"underground\",\"endpoint\":\"SET Alfajarin400/30kV\",\"excluded_from_procedure\":[\"SET Alfajarin400/30kV\",\"400kV Alfajarin to Villamayor Renovables\",\"SET Villamayor Renovables400/30kV\",\"400kV Villamayor Renovables to Penaflor REE\"]},\"equipment_configuration_crosswalk\":null,\"grid_access\":{\"boundary\":\"Hybrid installation\",\"capacity_mw\":null,\"endpoint\":\"SET Penaflor400kV REE\",\"updated_date\":\"2026-02-26\"},\"hybrid_boundary\":{\"other_project_record_id\":null,\"other_proposed_capacity_mw\":113.42,\"other_technology\":\"solar PV\",\"wind_only_capacity_mw\":49.5},\"investment\":{\"basis\":\"Presupuesto de ejecucion material; proposed works estimate\",\"currency\":\"EUR\",\"price_year\":null,\"value\":61594410.41},\"procedure\":{\"effect\":\"Public consultation; no permission established\",\"id\":\"PFot-147-Eol\",\"notice_date\":\"2026-08-03\"},\"proposed_model_observation\":{\"count\":11,\"manufacturer\":null,\"model\":\"V163\",\"rating_mw\":4.5,\"reason\":\"Notice does not name manufacturer; no typed fleet promotion\",\"source_id\":\"BOE-B-2026-27431\"}}",
+        "notes": "No coordinates, individual turbine identities or OEM revision inferred. Budget price year unknown."
+      },
+      "locators": {
+        "name": "Description of installations; public consultation scope",
+        "country_code": "Description of installations; public consultation scope",
+        "region": "Description of installations; public consultation scope",
+        "locality": "Description of installations; public consultation scope",
+        "technology": "Description of installations; public consultation scope",
+        "status": "Description of installations; public consultation scope",
+        "status_as_of": "Description of installations; public consultation scope",
+        "status_date_basis": "Description of installations; public consultation scope",
+        "planned_capacity_mw": "Description of installations; public consultation scope",
+        "turbine_count": "Description of installations; public consultation scope",
+        "rotor_diameter_m": "Description of installations; public consultation scope",
+        "hub_height_m": "Description of installations; public consultation scope",
+        "developer_names": "Description of installations; public consultation scope",
+        "external_ids_json": "Description of installations; public consultation scope",
+        "capacity_scope": "Description of installations; public consultation scope",
+        "official_url": "Description of installations; public consultation scope",
+        "quality_status": "Description of installations; public consultation scope",
+        "extensions_json": "Description of installations; public consultation scope",
+        "notes": "Description of installations; public consultation scope"
+      }
+    }
+  ],
+  "held": [
+    {
+      "notice_id": "BOE-A-2026-18030",
+      "sha256": "f52db60aa2e17240d68a3275a93f744fc2234c25e00bc938d9815be66a0ab26b",
+      "decision": "solar_authorization_wind_identity_held",
+      "reason": "Casa del Aire I/II solar permits; historical wind scope not reconciled; wind MW not imported"
+    },
+    {
+      "notice_id": "BOE-A-2026-18031",
+      "sha256": "e001d09b1ba9373bfedfb92334da58070c346ef2bf3d38fc0e4162e5c2cedc5d",
+      "decision": "solar_authorization_wind_identity_held",
+      "reason": "Casa del Aire I/II solar permits; historical wind scope not reconciled; wind MW not imported"
+    }
+  ],
+  "independent_captures": [
+    {
+      "url": "https://www.nsw.gov.au/departments-and-agencies/investment-nsw/ida/projects-by-ida",
+      "status": 200,
+      "sha256": "7db065e46cacb0c5e8e21f84dc381c775f03391cf13aa1da3f3b42aa0369a3b9",
+      "response_sha256": "7db065e46cacb0c5e8e21f84dc381c775f03391cf13aa1da3f3b42aa0369a3b9",
+      "retrieved_at": "2026-11-06T05:40:10.076192+00:00"
+    },
+    {
+      "url": "https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/4-mw-platform/V163-4-5-MW",
+      "status": 200,
+      "sha256": "03b1127380bf9d39b82712a48672b17ccd8c8b025caa40b088ebd7b3072752c3",
+      "response_sha256": "03b1127380bf9d39b82712a48672b17ccd8c8b025caa40b088ebd7b3072752c3",
+      "retrieved_at": "2026-11-06T05:40:10.076192+00:00"
+    }
+  ],
+  "followups": [
+    {
+      "topic": "LakeVictoria2764/3330",
+      "decision": "held",
+      "finding": "NSW IDA table names Lake Victoria Wind Farm Pty Ltd (WestWind Energy), wind and BESS, Wentworth Shire. No explicit KCI2764/3330 scope crosswalk. Secondary NEMStats names matching trust but is not primary identity proof.",
+      "next": "Original AEMO survey project/proponent metadata and site boundary; retain both candidate IDs"
+    },
+    {
+      "topic": "V1634.5MW118m",
+      "decision": "exact_revision_held",
+      "finding": "OEM web table lists98/113/126m hubs, not118m proposal; no synthetic variant. Previously excluded brochure not reimported. Notice model observation retained without inferred manufacturer."
+    }
+  ],
+  "changes": {
+    "new_projects": 1,
+    "enriched_projects": 0,
+    "new_equipment": 0,
+    "new_turbines": 0,
+    "new_curves": 0
+  },
+  "new_canonical_quarantines": 0,
+  "next_dates": [
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19"
+  ]
+}

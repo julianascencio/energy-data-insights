@@ -282,3 +282,11 @@ def test_construction_authorization_does_not_prove_operation(status):
     row = stage(review(effect="construction_authorization", status="permitted"))[0][0]
     assert row["aggregation_role"] == "unresolved"
     assert row.get("installed_capacity_mw") is None
+
+
+def test_unknown_status_cannot_bypass_consultation_capacity_boundary():
+    r = review(effect="public_consultation", status="unknown")
+    r["values"]["installed_capacity_mw"] = 33
+    r["locators"]["installed_capacity_mw"] = "Synthetic proposal wording"
+    with pytest.raises(ValueError, match="not installed capacity"):
+        stage(r)

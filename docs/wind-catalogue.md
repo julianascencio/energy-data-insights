@@ -1278,3 +1278,9 @@ inferred solely from construction authorization. The proposed fleet is complete
 as a model/count observation, not an individual-turbine or as-built inventory.
 Permit rotor diameter and OEM product geometry remain separately scoped pending
 an exact revision crosswalk; no synthetic hub-height configurations are created.
+
+
+The Peñaflor consultation records only the wind proposal's 49.5 MW. Its solar
+partner's 113.42 MW and shared grid permission are separate observations; the
+works estimate has an unknown price year. Unknown lifecycle status cannot bypass
+the adapter's prohibition on treating consultation MW as installed capacity.

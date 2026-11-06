@@ -7711,3 +7711,11 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Somaloma-Las Quemadas prio
 **Role:** data_source. Authorized proposal, not commissioned capacity; grid access separate.
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_b_2026_27431
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Peñaflor wind hybrid public consultation**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27431)
+
+**Role:** data_source. Consultation proposal, not permission or commissioning; PV and grid scope separate.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

@@ -269,7 +269,10 @@ def stage_boe_notices(
             raise ValueError("Environmental decision alone is not construction authorization")
         if (
             target == "wind"
-            and values["status"] in {"announced", "permitted", "cancelled"}
+            and (
+                values["status"] in {"announced", "permitted", "cancelled"}
+                or effect == "public_consultation"
+            )
             and values.get("installed_capacity_mw") is not None
         ):
             raise ValueError("Proposed authorization MW is not installed capacity")
