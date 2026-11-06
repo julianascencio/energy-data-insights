@@ -7,7 +7,7 @@ Schema version **1.1.0**; 60 typed nullable columns. Unknown is null.
 | `record_id` | string | — | Stable UUID chosen from original country, locality and name; never changed by a rename or capacity update. |
 | `entity_type` | string | — | Catalogue entity; projects only in version 1. Allowed: `projects`. |
 | `name` | string | — | Named battery project, not the entire solar or wind facility. |
-| `country_code` | string | — | ISO 3166-1 alpha-3 country code. |
+| `country_code` | string | — | ISO 3166-1 alpha-3 country code, with explicitly documented user-assigned `XKX` for Kosovo. |
 | `region` | string | — | Source-reported administrative region. |
 | `locality` | string | — | Source-reported locality; not a geocoded coordinate. |
 | `location_accuracy` | string | — | Accuracy and basis of source-reported coordinates. |
@@ -83,3 +83,11 @@ counts do not establish a battery-module/container count.
 procurement forecasts and FY27 commissioning expectations from the signed ministerial
 reply. These observations do not erase earlier ratings or turn a tender into an award,
 construction completion or operation. Komati's battery scope excludes co-located PV.
+
+`kosovo_compact_site` keeps site-specific procurement, planned ownership/operator,
+programme implementation and hearing observations. `XKX` is user-assigned, not
+an official ISO assignment. The two named sites are counted separately; the
+340 MWh programme total is not a third project. Programme financing is not site capex.
+
+`besipppp_required_services` describes procurement requirements, not actual service
+delivery. Reserve applications do not promote a preferred bidder to operation.

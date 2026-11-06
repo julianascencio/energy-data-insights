@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **2,208 project and plant records across
-48 countries**, supported by **414 registered sources**. It combines curated
+The BESS section contains **2,210 project and plant records across
+49 countries and territories**, supported by **419 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -306,3 +306,5 @@ Latest continuation: [Community batteries and Fullriver review](research/2026-11
 Latest continuation: [15 Philippine project enrichments and19 exact Pylontech configurations](research/2026-11-06_philippines_pylontech.md), with historical site/operator/owner-IPPA observations, source-access decisions and preserved phase/hybrid holds.
 
 Latest continuation: [South African project milestones and15 exact Pylontech/Solar MD models](research/2026-11-06_south_africa_pylontech_hv.md), including Komati tender scope, three construction-progress observations, exact modules and Logger V2.
+
+Latest continuation: [Two Kosovo sites, five South African service enrichments and20 exact Solar MD configurations](research/2026-11-06_solarmd_kosovo.md), with exact warranty limits, component relationships and qualified efficiency/PCS boundaries.

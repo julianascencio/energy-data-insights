@@ -103,3 +103,10 @@ manufacturer and records current/voltage limits, exact controller supply/contact
 ratings, cycle conditions and charging-only efficiency. Logger supply/relay ratings
 are never battery capacity. SS4083's power/C-rate inconsistency is quarantined in
 `conflicts_json`; normalized power is null, other verified fields remain usable.
+
+`solarmd_specification` also records exact SS70xx-05 module/rack relationships and
+model-specific throughput-limited warranties. Unsuffixed historical models stay
+separate. Charging efficiency, battery-only RTE and PCS conversion efficiency
+have separate boundaries. Outdoor bundle cabinet weights are fully-loaded
+observations, not exact configured-unit weights. Controller relay ratings are
+not dielectric withstand ratings; BMU fuse/current limits are not PCS power.

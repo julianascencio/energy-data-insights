@@ -375,3 +375,12 @@ voltage bounds and numeric scope. It does not expand optional parallel arrangeme
 fetch URLs, assign project components or mutate canonical records. Mechanical and
 module tables, chemistry/compliance claims and printed revision still need visual
 review. Use the existing upsert API after reviewed natural-identity reconciliation.
+
+For Solar MD SS70xx-05 July2025 URL edition, `scripts/stage_bess_solarmd.py`
+reads the ten-row JSON table extracted from PDF page4. It requires all13exact
+model columns, units, module counts and DC voltage bounds. Review page images
+and source rights first; staging never imports. Match warranty rows by the
+complete model suffix, retain earlier-of-time-or-throughput conditions and
+separate controller supply limits, battery ratings and PCS conversion ratings.
+Outdoor bundles are explicit table configurations; optional ranges do not
+authorize Cartesian variants or source-independent PCS model assignments.
