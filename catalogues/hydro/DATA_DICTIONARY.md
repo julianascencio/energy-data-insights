@@ -74,3 +74,86 @@ observations. Each contains distinct `values` and `evidence` entries with
 multiple values are preserved, not silently collapsed. These describe the
 reported state, electrical subsystem and dispatch modality at the source
 observation, not an exact connection point or present operating status.
+
+
+### Reviewed ONS components
+
+`extensions_json.ons_components` links stable UUIDv5 `component_id` values to
+`parent_record_id`, reported powerhouse `name`, `generating_unit_ids` (ONS
+equipment IDs), and `source_ids`. The relationship is `powerhouse_of`; the role
+`excluded_component_evidence` prevents interpreting components as additional
+plants or capacity totals. Scope rationale and reported technical context live
+in `ons_component_review`, with a primary `scope_source_id` and locator.
+
+
+### New ONS identities
+
+`extensions_json.ons_new_identity_review` records the full CEG, source name,
+explicit acceptance rationale and collision screen. UUIDv5 uses the immutable
+`ANEEL-CEG` namespace and complete CEG; historical WRI identifiers are never
+fabricated. Nested source retrieval timestamps differ from acceptance time.
+Reviewed plant facts use their own source IDs and locators in field evidence.
+`deferred_capacity_review`, when present, retains differing reported plant and
+unit ratings outside canonical capacity totals until their bases are reconciled.
+
+### AHA field provenance
+
+`extensions_json.aha_field_provenance` contains one observation per populated
+reviewed technical column: `column`, `value`, `unit`, `basis`, `source_id`,
+`excel_row`, `upstream_reference`, `fallback_reference`,
+`upstream_independently_verified` and `uncertainty`. Zero values are retained;
+missing references are null. Dataset model references are not official registry
+IDs. These observations never automatically populate current capacity, storage
+energy, operating flow or commissioning fields.
+
+KenGen report observations retain `installed_capacity_mw`,
+`effective_capacity_mw`, `annual_generation_gwh` and `sold_energy_gwh` as distinct
+nested fields. `period` names the fiscal year ending June 30, not a calendar
+year. Values are owner-reported, with original tokens and unquantified source
+uncertainty. A dash maps to null; zero remains zero. These dated observations do
+not fill current operational capacity or status and are not added to map KPIs.
+
+Owner-reviewed accessions use the `reviewed-accession` UUID namespace. The frozen
+accession is retained in `extensions_json`; `external_ids_json` stays empty until
+an official registry identifier is verified. A later rename or capacity change
+must preserve this accession. Name normalization only detects insertion conflicts.
+
+`extensions_json.kengen_technical_assertions` holds keyed owner assertions with
+value, unit, basis, locator and uncertainty. Equipment dictionaries identify
+original/replacement groups and explicitly labelled `each_mva` versus `each_mw`.
+Linked upstream/downstream stations use canonical record IDs; they are flow
+relationships, not parent/child capacities. These source assertions are not
+current canonical ratings or resolved historical dates.
+
+### Uganda ERA annual capacity evidence
+
+`observations_json` entries from `uganda-era-capacity-202609` use
+`field=installed_capacity_mw`, `unit=MW`, explicit year/September-2026 periods,
+and Excel cell plus station locators. Null source cells are retained, distinct
+from explicit zero. These are dated reported statistics, not canonical current
+installed/operational MW or pumping input. `extensions_json.era_inventory`
+retains the source station label and grid/mini-hydro section;
+`era_identity_review` holds the frozen catalogue accession, reviewed aliases and
+Annex 3 identity locator. Accessions are not national licence identifiers.
+`aggregation_role=unresolved` excludes these records from additive capacity KPIs.
+
+`extensions_json.era_2023_assertions.facts` preserves the ERA Annex 3 commissioning,
+capacity, grid and lifecycle columns with per-column locators and a 2023 basis.
+A decade remains a decade, missing commissioning remains null, and the combined
+construction/licensed group remains combined. Canonical current fields are not
+inferred from this historical table.
+
+ERA construction/licensed records use `observations_json` for historical
+`planned_capacity_mw` (2023) and, when corroborated, `planned_capacity_kw`
+(UECCC procurement, 2020-09-29). Original units and periods are retained, not
+summed. `extensions_json.era_planned_inventory` preserves the joint lifecycle
+group, unknown commissioning and report grid designation. `era_planned_review`
+retains the frozen catalogue accession and explicit identity decision.
+
+Nepal `observations_json.licensed_capacity_mw` is the official licence rating,
+with retrieval date as period because measurement vintage is unspecified.
+`extensions_json.doed_inventory` preserves source issue/validity strings,
+four bounding coordinates and district labels. No calendar conversion or
+bounding-box midpoint is inferred. The source promoter populates developer names
+with that explicit role qualification; it is not verified ownership. The full
+licence string defines identity; duplicate names are held for review.

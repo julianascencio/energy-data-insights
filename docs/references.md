@@ -7800,146 +7800,122 @@ Windey Energy Technology Group Co., Ltd. (2026). **Windey and AMEA Power Aysha I
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
 
-### boe_a_2026_17066
+### hydro_br_areado_20261106
 
-Agencia Estatal Boletín Oficial del Estado (2026). **Cerro de Magaña wind authorization application withdrawal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-17066)
+Atiaia Renováveis (2024). **Atiaia passa a ter 7 usinas que atendem aos 17 ODS da ONU**. [Source](https://atiaiarenovaveis.com.br/atiaia-passa-a-ter-7-usinas-que-atendem-aos-17-ods-da-onu/)
 
-**Role:** data_source. Hechos Primero–Séptimo; Resuelve Único; withdrawn proposal, not operating capacity
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### boe_a_2025_14439
+### hydro_br_saomanoel_20261106
 
-Agencia Estatal Boletín Oficial del Estado (2025). **WHEEL PLOCAN prototype environmental impact decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-14439)
+EDP São Manoel (2026). **A Usina**. [Source](https://www.saomanoelenergia.com.br/pt-br/usina)
 
-**Role:** data_source. a. Características del proyecto; b. Ubicación del proyecto
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### boe_a_2026_16634
+### hydro_br_baixo_20261106
 
-Agencia Estatal Boletín Oficial del Estado (2026). **San Jorge (Mudéjar wind hybrid module) administrative decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16634)
+ENERGO-PRO Brasil (2026). **UHE Baixo Iguaçu**. [Source](https://energoprobrasil.com.br/nossos-ativos/uhe-baixo-iguacu)
 
-**Role:** data_source. Antecedents and Resuelve, wind-only decision and principal characteristics
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### boe_a_2026_16637
+### hydro_br_sinop_20261106
 
-Agencia Estatal Boletín Oficial del Estado (2026). **WHEEL PLOCAN prototype administrative decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-16637)
+EDF power solutions (2026). **Energia hídrica**. [Source](https://brazil.edf-powersolutions.com/nossos-projetos/energia-hidrica/)
 
-**Role:** data_source. Antecedents and Resuelve, wind-only decision and principal characteristics
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### sany_global_si_16050_20261106
+### hydro_br_saoroque_20261106
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-16050 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en//Product/SmartWindTurbine/3x4x/SI16050/index.html)
+Nova Participações (2026). **Organização**. [Source](https://www.novaparticipacoes.com/organizacao/)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### sany_global_si_16850_20261106
+### hydro_br_colider_20261106
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-16850 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en//Product/SmartWindTurbine/3x4x/SI16850/index.html)
+AXIA Energia (2026). **Atualizações sobre a Usina Colíder**. [Source](https://axia.com.br/colider)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### sany_global_si_172625_20261106
+### hydro_br_juruena_20261106
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-172625 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/3x4x/SI172625/index.html)
+Ministério de Minas e Energia (2026). **Portaria_n_600/GM/MME/2022**. [Source](https://www.gov.br/mme/pt-br/acesso-a-informacao/legislacao/portarias/2022/portaria-n-600-gm-mme-2022.pdf/view)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### sany_global_si_18342_20261106
+### hydro_br_jesuita_pae_20261106
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-18342 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/4x6x/SI18342/index.html)
+Bom Futuro / Campos de Júlio Energia S.A. (2024). **Plano de Ação de Emergências — PCH Cidezal**. [Source](https://bomfuturo.com.br/site/assets/pdf/CID-BA-PAE-001-01-24-PAE_PCH_Cidezal.pdf)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### sany_global_si_18572_20261106
+### congo_moukoukoulou_concession_2023
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-18572 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/7XMW8XmW/SI18572/index.html)
+Gouvernement de la République du Congo (2023). **Energie : Signature de la convention de concession de la centrale hydroélectrique de Moukoukoulou**. [Source](https://gouvernement.cg/energie-signature-de-la-convention-de-concession-de-la-centrale-hydroelectrique-de-moukoukoulou/)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Historical concession and national context only; does not resolve catalogue identity or present operating status.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `docs/hydro-catalogue.md`.
 
-### sany_global_si_19342_20261106
+### kengen_annual_report_2025
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-19342 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en//Product/SmartWindTurbine/4x6x/SI19342/index.html)
+Kenya Electricity Generating Company PLC (2025). **Integrated Annual Report & Financial Statements 2025**. [Source](https://www.kengen.co.ke/download/kengen-integrated-annual-report-financial-statement-2025/)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Primary owner statistics, printed pages 246 and 249; financial year ended 30 June 2025. Installed/effective MW and generated/sales GWh remain separate dated observations. Original PDF checksum in hydro source registry. Limited factual extraction; no bulk redistribution licence asserted.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/README.md`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/kengen.py`.
 
-### sany_global_si_19350_20261106
+### kengen_hydro_portfolio_2026
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-19350 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/3x4x/SI19350/index.html)
+Kenya Electricity Generating Company PLC (2026). **Hydro: KenGen station portfolio**. [Source](https://www.kengen.co.ke/our-business/energy-generation/hydro/)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Undated owner page, year denotes retrieval. Turkwel description repeats Gogo narrative; rejected for canonical facts. Page checksum and review retained in KenGen research ledger. Named station sections also corroborate five explicitly reviewed new identities; no national licence IDs inferred.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/research/kengen-2025-20261106.json`, `catalogues/hydro/research/kengen-new-20261106.json`, `catalogues/hydro/research/kengen-technical-20261106.json`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/owner_technical.py`.
 
-### sany_global_si_19580_20261106
+### uganda_era_capacity_2026
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-19580 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en//Product/SmartWindTurbine/7XMW8XmW/SI19580/index.html)
+Electricity Regulatory Authority (Uganda) (2026). **Installed Generation Capacity as at September 2026**. [Source](https://www.era.go.ug/media/2026/09/Installed-Generation-Capacity-as-at-September-2026.xlsx)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. September 2026 workbook; annual columns 2000–2026. Public access; ERA site reserves rights. No open bulk-reuse licence identified. Limited factual station names and numeric observations transcribed with attribution; original workbook/PDF, prose and images are not redistributed.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/era.py`.
 
-### sany_global_si_20480_20261106
+### uganda_era_environment_2023
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-20480 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/7XMW8XmW/SI20480/index.html)
+Electricity Regulatory Authority (Uganda) (2023). **The Electricity Supply Industry State of the Environment Report 2023**. [Source](https://www.era.go.ug/wp-content/uploads/2025/07/ESISOER-2023_Optimized.pdf)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Report year 2023; URL upload directory July 2025; exact publication date unverified. Public access; ERA site reserves rights. No open bulk-reuse licence identified. Limited factual station names and numeric observations transcribed with attribution; original workbook/PDF, prose and images are not redistributed.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/era.py`.
 
-### sany_global_si_230100_20261106
+### ueccc_orio_tender_2020
 
-SANY Renewable Energy Co., Ltd. (2026). **SI-230100 global technical specifications**. [Source](https://en.sanyre.com.cn/html/en/Product/SmartWindTurbine/8X11X/SI230100/index.html)
+Uganda Energy Credit Capitalisation Company (2020). **Pre-Qualification of Bidders for Construction of Civil & Hydro-Mechanical Works of Nine Mini-Hydropower Plants**. [Source](https://www.ueccc.or.ug/pre-qualification-of-bidders-for-construction-of-civil-hydro-mechanical-works-of-nine-9-mini-hydropower-plants-under-plant-and-design-buildfidic-yellow-book/)
 
-**Role:** data_source. Technical Specifications / Basic Parameters, Rotor System, Generator, Converter, Brake System, Yaw System and Lightning Protection and Tower Type; undated OEM tables use retrieval year, not a claimed publication year
+**Role:** data_source. Published 29 September 2020; procurement-stage plant ratings are not installed/current capacities. Limited factual transcription; no open licence assumed.
 
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`.
 
-### sany_product_family_april_2025_reuse_review
+### nepal_doed_construction_hydro_2026
 
-SANY Group Co., Ltd. (2025). **SANY Product Family, April 2025**. [Source](https://sanyglobal-img.sany.com.cn/brands/sany-product-family.pdf)
+Department of Electricity Development, Government of Nepal (2026). **Construction License :: Hydro (More than 1MW)**. [Source](https://doed.gov.np/pages/clhydromorethan1/)
 
-**Role:** data_source. Reviewed only for intake eligibility; page1 publisher notice explicitly restricts copying. Specifications excluded from this batch.
+**Role:** data_source. Public official factual licence inventory; no explicit open bulk-reuse licence identified. Selected factual rows with attribution; original HTML, layout and prose not redistributed. Retrieval year, not asserted publication year.
 
-**Used by:** `docs/wind-catalogue.md`.
-
-### masdar_offering_circular_20240715
-
-Abu Dhabi Future Energy Company PJSC (Masdar) (2024). **Base Offering Circular15July2024: operational wind portfolio**. [Source](https://masdar.ae/-/media/corporate-revamp/downloads/investors/project-jade---base-offering-circular.pdf)
-
-**Role:** data_source. Printed pp148–149,154–155,160–166; PDF pages166–167,172–173,178–184
-
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
-
-### boe_b_2026_24967
-
-Agencia Estatal Boletín Oficial del Estado (2026). **Revilla-Vallejera Hib wind module public consultation**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-24967)
-
-**Role:** data_source. Printed pp40115–40118; application chronology and Características generales
-
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
-
-### boe_a_2026_15830
-
-Agencia Estatal Boletín Oficial del Estado (2026). **Escuderos I/IV unfavourable environmental declaration**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-15830)
-
-**Role:** data_source. Sections1 project description and final unfavourable environmental declaration,3July2026
-
-**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+**Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`.
