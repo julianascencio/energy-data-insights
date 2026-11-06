@@ -7712,7 +7712,7 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Somaloma-Las Quemadas prio
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
 
-### hydro-br-areado-20261106
+### hydro_br_areado_20261106
 
 Atiaia Renováveis (2024). **Atiaia passa a ter 7 usinas que atendem aos 17 ODS da ONU**. [Source](https://atiaiarenovaveis.com.br/atiaia-passa-a-ter-7-usinas-que-atendem-aos-17-ods-da-onu/)
 
@@ -7720,7 +7720,7 @@ Atiaia Renováveis (2024). **Atiaia passa a ter 7 usinas que atendem aos 17 ODS 
 
 **Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### hydro-br-saomanoel-20261106
+### hydro_br_saomanoel_20261106
 
 EDP São Manoel (2026). **A Usina**. [Source](https://www.saomanoelenergia.com.br/pt-br/usina)
 
@@ -7728,7 +7728,7 @@ EDP São Manoel (2026). **A Usina**. [Source](https://www.saomanoelenergia.com.b
 
 **Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### hydro-br-baixo-20261106
+### hydro_br_baixo_20261106
 
 ENERGO-PRO Brasil (2026). **UHE Baixo Iguaçu**. [Source](https://energoprobrasil.com.br/nossos-ativos/uhe-baixo-iguacu)
 
@@ -7736,7 +7736,7 @@ ENERGO-PRO Brasil (2026). **UHE Baixo Iguaçu**. [Source](https://energoprobrasi
 
 **Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### hydro-br-sinop-20261106
+### hydro_br_sinop_20261106
 
 EDF power solutions (2026). **Energia hídrica**. [Source](https://brazil.edf-powersolutions.com/nossos-projetos/energia-hidrica/)
 
@@ -7744,7 +7744,7 @@ EDF power solutions (2026). **Energia hídrica**. [Source](https://brazil.edf-po
 
 **Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### hydro-br-saoroque-20261106
+### hydro_br_saoroque_20261106
 
 Nova Participações (2026). **Organização**. [Source](https://www.novaparticipacoes.com/organizacao/)
 
@@ -7752,7 +7752,7 @@ Nova Participações (2026). **Organização**. [Source](https://www.novapartici
 
 **Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### hydro-br-colider-20261106
+### hydro_br_colider_20261106
 
 AXIA Energia (2026). **Atualizações sobre a Usina Colíder**. [Source](https://axia.com.br/colider)
 
@@ -7760,7 +7760,7 @@ AXIA Energia (2026). **Atualizações sobre a Usina Colíder**. [Source](https:/
 
 **Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### hydro-br-juruena-20261106
+### hydro_br_juruena_20261106
 
 Ministério de Minas e Energia (2026). **Portaria_n_600/GM/MME/2022**. [Source](https://www.gov.br/mme/pt-br/acesso-a-informacao/legislacao/portarias/2022/portaria-n-600-gm-mme-2022.pdf/view)
 
@@ -7768,7 +7768,7 @@ Ministério de Minas e Energia (2026). **Portaria_n_600/GM/MME/2022**. [Source](
 
 **Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
 
-### hydro-br-jesuita-pae-20261106
+### hydro_br_jesuita_pae_20261106
 
 Bom Futuro / Campos de Júlio Energia S.A. (2024). **Plano de Ação de Emergências — PCH Cidezal**. [Source](https://bomfuturo.com.br/site/assets/pdf/CID-BA-PAE-001-01-24-PAE_PCH_Cidezal.pdf)
 
