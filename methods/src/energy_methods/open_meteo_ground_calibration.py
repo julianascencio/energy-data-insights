@@ -3,12 +3,11 @@
 Works on aligned station/day pairs; never interprets gridded weather as observations.
 For fitting, reuse energy_methods.weather_calibration.fit_monthly_bias.
 """
+
 from __future__ import annotations
 
 import numpy as np
 import pandas as pd
-
-from energy_methods.weather_calibration import fit_monthly_bias
 
 OPERATIONS = {
     "temperature_c": "add",
@@ -67,21 +66,35 @@ def evaluate_station_holdout(
             adjusted = raw + correction if operation == "add" else raw * correction
             if variable == "relative_humidity_percent":
                 adjusted = np.clip(adjusted, 0, 100)
-            records.append({
-                "variable": variable,
-                "month": int(month),
-                "paired_days": int(valid.sum()),
-                "validation_year": validation_year,
-                "raw_rmse": float(np.sqrt(np.mean((raw - observed) ** 2))),
-                "corrected_rmse": float(np.sqrt(np.mean((adjusted - observed) ** 2))),
-                "raw_bias": float(np.mean(raw - observed)),
-                "corrected_bias": float(np.mean(adjusted - observed)),
-                "improved": bool(np.mean((adjusted - observed) ** 2) < np.mean((raw - observed) ** 2)),
-            })
-    return pd.DataFrame(records, columns=[
-        "variable", "month", "paired_days", "validation_year",
-        "raw_rmse", "corrected_rmse", "raw_bias", "corrected_bias", "improved",
-    ])
+            records.append(
+                {
+                    "variable": variable,
+                    "month": int(sample["month"].iloc[0]),
+                    "paired_days": int(valid.sum()),
+                    "validation_year": validation_year,
+                    "raw_rmse": float(np.sqrt(np.mean((raw - observed) ** 2))),
+                    "corrected_rmse": float(np.sqrt(np.mean((adjusted - observed) ** 2))),
+                    "raw_bias": float(np.mean(raw - observed)),
+                    "corrected_bias": float(np.mean(adjusted - observed)),
+                    "improved": bool(
+                        np.mean((adjusted - observed) ** 2) < np.mean((raw - observed) ** 2)
+                    ),
+                }
+            )
+    return pd.DataFrame(
+        records,
+        columns=[
+            "variable",
+            "month",
+            "paired_days",
+            "validation_year",
+            "raw_rmse",
+            "corrected_rmse",
+            "raw_bias",
+            "corrected_bias",
+            "improved",
+        ],
+    )
 
 
-__all__ = ["fit_monthly_bias", "evaluate_station_holdout"]
+__all__ = ["evaluate_station_holdout"]
