@@ -1,6 +1,6 @@
 """
 Portugal's October 2026 wind/solar shortfall: audit rounded import statistics
-============================================================================
+============================================================================================
 
 **News trigger:** Portugal's TSO REN reported on **3 November 2026** that
 renewables supplied 62% of January-October consumption, while net imports
