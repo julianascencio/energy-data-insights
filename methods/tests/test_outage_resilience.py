@@ -28,9 +28,13 @@ def test_no_generation_matches_hand_balance() -> None:
     )
     assert result == pytest.approx(2.5, abs=1e-6)
     check = simulate_hybrid(
-        [0.0] * intervals, [0.0] * intervals, [0.5] * intervals,
-        battery_mwh=result + 1e-6, battery_mw=0.65,
-        initial_soc_mwh=(result + 1e-6) * 0.8, efficiency=0.95**2,
+        [0.0] * intervals,
+        [0.0] * intervals,
+        [0.5] * intervals,
+        battery_mwh=result + 1e-6,
+        battery_mw=0.65,
+        initial_soc_mwh=(result + 1e-6) * 0.8,
+        efficiency=0.95**2,
         timestep_hours=0.05,
     )
     assert check.unserved_mwh <= 1e-6
@@ -38,21 +42,35 @@ def test_no_generation_matches_hand_balance() -> None:
 
 def test_renewables_reduce_required_energy() -> None:
     windy = minimum_islanded_capacity(
-        [0.1] * 10, [0.0] * 10, [0.5] * 10,
-        inverter_mw=0.5, timestep_hours=0.5, roundtrip_efficiency=1,
+        [0.1] * 10,
+        [0.0] * 10,
+        [0.5] * 10,
+        inverter_mw=0.5,
+        timestep_hours=0.5,
+        roundtrip_efficiency=1,
     )
     still = minimum_islanded_capacity(
-        [0.0] * 10, [0.0] * 10, [0.5] * 10,
-        inverter_mw=0.5, timestep_hours=0.5, roundtrip_efficiency=1,
+        [0.0] * 10,
+        [0.0] * 10,
+        [0.5] * 10,
+        inverter_mw=0.5,
+        timestep_hours=0.5,
+        roundtrip_efficiency=1,
     )
     assert windy == pytest.approx(2.5)
     assert still == pytest.approx(3.125)
 
 
 def test_renewables_alone_need_no_battery() -> None:
-    assert minimum_islanded_capacity(
-        [0.5], [0.0], [0.5], inverter_mw=0.0,
-    ) == 0.0
+    assert (
+        minimum_islanded_capacity(
+            [0.5],
+            [0.0],
+            [0.5],
+            inverter_mw=0.0,
+        )
+        == 0.0
+    )
 
 
 def test_inverter_power_infeasible() -> None:
@@ -76,9 +94,13 @@ def test_inverter_power_infeasible() -> None:
 def test_invalid_settings(keyword: str, value: float) -> None:
     options = {keyword: value}
     with pytest.raises(ValueError):
-        minimum_islanded_capacity([0.0], [0.0], [1.0], inverter_mw=1.0,
-                                  **{key: val for key, val in options.items()
-                                     if key != "inverter_mw"})
+        minimum_islanded_capacity(
+            [0.0],
+            [0.0],
+            [1.0],
+            inverter_mw=1.0,
+            **{key: val for key, val in options.items() if key != "inverter_mw"},
+        )
 
 
 def test_nan_inverter_rejected() -> None:
