@@ -33,3 +33,8 @@ For longer studies with configurable inputs and reports, see the
 The PVDeg Canary Islands example imports the upstream Python library to map
 relative thermal exposure on a 100 m grid, with Tenerife detail and parameter
 sensitivity. It uses real climatology and does not claim calibrated degradation.
+
+The offshore export-cable example contrasts hypothetically constrained
+transfer with a no-outage baseline, while clearly separating the reported
+Norderney construction incidents from synthetic future operating scenarios.
+See the :doc:`cable exposure guide </_generated/guides/offshore-cable-exposure>`.
