@@ -1,0 +1,216 @@
+{
+  "source_PV_rows_reviewed": 10,
+  "new_projects": 2,
+  "enriched_existing_projects": 1,
+  "existing_project_fields_contexts": 3,
+  "phase_CODs_preserved": 3,
+  "held_source_rows": 5,
+  "held_scope": "FourQASP100MW-IPPs requirewholepark/IPPboundaryreview; Atlas/Zhenfa100MWLayyah versus existing1200MWproposaldifferentstatus/scope, notfuzzymerged ornewrowyet",
+  "share_claims_held": 3,
+  "records": [
+    {
+      "action": "newproject",
+      "record_id": "12a669c0-d680-5f03-9d1b-cc6953bad5ae",
+      "name": "AJ Power (Pvt.) Limited",
+      "sources": [
+        "ppib_20261106T0700",
+        "ppib_aj_20261106T0700"
+      ],
+      "context": {
+        "status_as_of": "2026-06-30",
+        "status_scope": "PPIB listcommissioned/operational asofdate; no present-dayoperationassertion",
+        "project_company_as_reported": "AJ Power (Pvt.) Limited",
+        "project_company_scope": "Not automatically owner/operator",
+        "gross_capacity_MW": 12,
+        "capacity_scope": "Gross/installed MW, AC/DC notstated; noACorDCratinginferred",
+        "published_project_price": {
+          "value_million": 15.62,
+          "currency": "USD",
+          "price_basis": "Total Project Price (USD) asreported, not independently verified outturn capex",
+          "cost_year": null,
+          "source_asof": null,
+          "source_date_note": "Undateddetailpage, notliststatusdate orcostyear"
+        },
+        "project_term_years": 25,
+        "term_scope": "TermofProject label, not inferredPPAorcontractterm",
+        "tariff_claims": {
+          "unit": "UScent/kWh",
+          "levelized": 11.4215,
+          "years1to10": 14.0838,
+          "years11to25": 5.8431,
+          "basis": "Publishedprojecttable; no indexation/currency-year/financial-return inference"
+        },
+        "commissioning_date_native": "2017-12-13",
+        "date_scope": "ExplicitbottomCODrow, not tariffdetermination/CODadjustmenteventdate",
+        "source_rows": [
+          "CommissionedIPPtable row49 SolarPV",
+          "LinkeddetailSalientFeatures and ImportantEvents/COD"
+        ],
+        "identity_review": "Full37canonicalPakistanrecords andnestedaliases screened; AJisKhushab12MW, AB SolarParkisAttock20MW, not auto-merged. HarappaSahiwal absent. No city-centrecoordinates.",
+        "private_details": "Individual sponsor names/shares/contact details omitted"
+      },
+      "populated_fields": [
+        "capacity_basis",
+        "capacity_unspecified_mw",
+        "capex",
+        "commissioning_date",
+        "commissioning_year",
+        "country_code",
+        "currency",
+        "entity_type",
+        "epc_contractors",
+        "extensions_json",
+        "external_ids_json",
+        "field_sources_json",
+        "locality",
+        "name",
+        "offtakers",
+        "quality_status",
+        "record_id",
+        "region",
+        "source_release",
+        "sources",
+        "status",
+        "technology"
+      ]
+    },
+    {
+      "action": "newproject",
+      "record_id": "9271420d-cd6b-5cee-8410-bfb9efab4588",
+      "name": "Harappa Solar (Pvt.) Limited",
+      "sources": [
+        "ppib_20261106T0700",
+        "ppib_harappa_20261106T0700"
+      ],
+      "context": {
+        "status_as_of": "2026-06-30",
+        "status_scope": "PPIB listcommissioned/operational asofdate; no present-dayoperationassertion",
+        "project_company_as_reported": "Harappa Solar (Pvt.) Limited",
+        "project_company_scope": "Not automatically owner/operator",
+        "gross_capacity_MW": 18,
+        "capacity_scope": "Gross/installed MW, AC/DC notstated; noACorDCratinginferred",
+        "published_project_price": {
+          "value_million": 23.43,
+          "currency": "USD",
+          "price_basis": "Total Project Price (USD) asreported, not independently verified outturn capex",
+          "cost_year": null,
+          "source_asof": null,
+          "source_date_note": "Undateddetailpage, notliststatusdate orcostyear"
+        },
+        "project_term_years": 25,
+        "term_scope": "TermofProject label, not inferredPPAorcontractterm",
+        "tariff_claims": {
+          "unit": "UScent/kWh",
+          "levelized": 11.6972,
+          "years1to10": 14.3961,
+          "years11to25": 6.0422,
+          "basis": "Publishedprojecttable; no indexation/currency-year/financial-return inference"
+        },
+        "commissioning_date_native": "2017-10-14",
+        "date_scope": "ExplicitbottomCODrow, not tariffdetermination/CODadjustmenteventdate",
+        "source_rows": [
+          "CommissionedIPPtable row50 SolarPV",
+          "LinkeddetailSalientFeatures and ImportantEvents/COD"
+        ],
+        "identity_review": "Full37canonicalPakistanrecords andnestedaliases screened; AJisKhushab12MW, AB SolarParkisAttock20MW, not auto-merged. HarappaSahiwal absent. No city-centrecoordinates.",
+        "private_details": "Individual sponsor names/shares/contact details omitted"
+      },
+      "populated_fields": [
+        "capacity_basis",
+        "capacity_unspecified_mw",
+        "commissioning_date",
+        "commissioning_year",
+        "country_code",
+        "currency",
+        "entity_type",
+        "epc_contractors",
+        "extensions_json",
+        "external_ids_json",
+        "field_sources_json",
+        "locality",
+        "name",
+        "offtakers",
+        "quality_status",
+        "record_id",
+        "region",
+        "source_release",
+        "sources",
+        "status",
+        "technology"
+      ]
+    },
+    {
+      "action": "enrichment",
+      "record_id": "1f0161d7-d4b8-5b39-979c-9af8d75d4ab2",
+      "new_typed_fields": [
+        "epc_contractors",
+        "offtakers"
+      ],
+      "new_evidence_namespaces": [
+        "ppib_phase_evidence"
+      ],
+      "phase_crosswalks": [
+        {
+          "gem_phase_id": "G100000801639",
+          "phase_as_reported": "1 - Meridian",
+          "company_detail_page": "https://www.ppib.gov.pk/Solar_Meridian.htm",
+          "COD": "2024-01-19",
+          "gross_capacity_MW": 50,
+          "gross_basis": "AC/DCunspecified; notconvertedtoexistingDC50",
+          "published_project_price_million_USD": 30.342,
+          "cost_year": null,
+          "price_scope": "Perlegalproject reportedprice; not summed toaggregate capex",
+          "EPC": "SCATEC Solar ASA",
+          "power_purchaser": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-GL)",
+          "project_term_years": 25,
+          "term_scope": "Termofproject, not inferredPPAterm",
+          "levelized_tariff_UScent_kWh": 3.6683,
+          "years1to10_tariff_UScent_kWh": 4.448,
+          "source_asof": "2026-06-30",
+          "sponsor_review": "PPIB Scatec Sukhur BV75%/Nizamcorporate share and GEMScatecASA51%/H1Holdings49% differ in entity/sharebasis; do notoverwrite orconsolidate. Individualdetails omitted."
+        },
+        {
+          "gem_phase_id": "G100000801638",
+          "phase_as_reported": "2 - HNDS",
+          "company_detail_page": "https://www.ppib.gov.pk/Solar_HNDS.htm",
+          "COD": "2024-01-10",
+          "gross_capacity_MW": 50,
+          "gross_basis": "AC/DCunspecified; notconvertedtoexistingDC50",
+          "published_project_price_million_USD": 30.342,
+          "cost_year": null,
+          "price_scope": "Perlegalproject reportedprice; not summed toaggregate capex",
+          "EPC": "SCATEC Solar ASA",
+          "power_purchaser": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-GL)",
+          "project_term_years": 25,
+          "term_scope": "Termofproject, not inferredPPAterm",
+          "levelized_tariff_UScent_kWh": 3.6683,
+          "years1to10_tariff_UScent_kWh": 4.448,
+          "source_asof": "2026-06-30",
+          "sponsor_review": "PPIB Scatec Sukhur BV75%/Nizamcorporate share and GEMScatecASA51%/H1Holdings49% differ in entity/sharebasis; do notoverwrite orconsolidate. Individualdetails omitted."
+        },
+        {
+          "gem_phase_id": "G100000801637",
+          "phase_as_reported": "3 - Helios",
+          "company_detail_page": "https://www.ppib.gov.pk/Solar_Helious.htm",
+          "COD": "2024-02-01",
+          "gross_capacity_MW": 50,
+          "gross_basis": "AC/DCunspecified; notconvertedtoexistingDC50",
+          "published_project_price_million_USD": 30.342,
+          "cost_year": null,
+          "price_scope": "Perlegalproject reportedprice; not summed toaggregate capex",
+          "EPC": "SCATEC Solar ASA",
+          "power_purchaser": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-GL)",
+          "project_term_years": 25,
+          "term_scope": "Termofproject, not inferredPPAterm",
+          "levelized_tariff_UScent_kWh": 3.6683,
+          "years1to10_tariff_UScent_kWh": 4.448,
+          "source_asof": "2026-06-30",
+          "sponsor_review": "PPIB Scatec Sukhur BV75%/Nizamcorporate share and GEMScatecASA51%/H1Holdings49% differ in entity/sharebasis; do notoverwrite orconsolidate. Individualdetails omitted."
+        }
+      ]
+    }
+  ],
+  "reuse_assessment": "Boundedattributedfacts only; no open bulk/documentlicence located. No primarytable/page/prose or private sponsor details reproduced.",
+  "cost_conflicts_held": 1,
+  "independent_OMS_role_and_cost_review": "20261106T0700_cost_review.json"
+}
