@@ -19,8 +19,7 @@ SPEC.loader.exec_module(benchmark_module)
 def test_load_station_decimal_comma_and_missing_dates(tmp_path: Path) -> None:
     path = tmp_path / "aemet.csv"
     path.write_text(
-        "fecha,indicativo,tmed\n"
-        "2023-01-01,C001,12,5\n".replace("12,5", '"12,5"')
+        "fecha,indicativo,tmed\n2023-01-01,C001,12,5\n".replace("12,5", '"12,5"')
         + "2023-01-03,C001,13\n"
         + "2023-01-02,C002,25\n"
     )
@@ -36,9 +35,7 @@ def test_baselines_are_causal_and_keep_negative_temperatures() -> None:
     dates = pd.date_range("2022-01-01", periods=400)
     series = pd.Series(np.linspace(-12.0, -2.0, 400), index=dates)
     future = pd.date_range(dates[-1] + pd.Timedelta(days=1), periods=10)
-    np.testing.assert_allclose(
-        benchmark_module.forecast("last_value", series, future), -2.0
-    )
+    np.testing.assert_allclose(benchmark_module.forecast("last_value", series, future), -2.0)
     weekly = benchmark_module.forecast("seasonal_7", series, future)
     assert len(weekly) == 10
     assert (weekly < 0).all()
