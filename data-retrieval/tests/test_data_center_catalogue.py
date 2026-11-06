@@ -41,6 +41,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_icolo_home_portfolio,
     parse_jrc_2015_2018_participants,
     parse_jrc_2018_participants,
+    parse_jrc_2023_participants,
     parse_jrc_2024_new_participants,
     parse_jrc_code_of_conduct_participants,
     parse_jrc_equinix_participants,
@@ -834,6 +835,43 @@ def test_jrc_2024_new_participants_parser_is_fail_closed_and_non_overlapping():
     with pytest.raises(ValueError, match="facility identity set"):
         parse_jrc_2024_new_participants(
             fixture.replace(b"G-Cloud Moschato", b"G Cloud Moschato"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_2023_parser_preserves_exact_spellings_and_duplicate_row():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/es/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=3&partner_search=&sort=asc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-2023.html").read_bytes()
+    parsed = parse_jrc_2023_participants(fixture, source_url=source_url)
+    assert parsed["displayed_rows"] == 36
+    assert len(parsed["candidates"]) == 35
+    assert len({row["name"] for row in parsed["candidates"]}) == 35
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2023}
+    assert parsed["duplicate_rows"] == [
+        {
+            "participant": "Interxion Detuschland GmbH",
+            "label": "Frankfurt FRA08",
+            "occurrences": 2,
+            "reason": "verbatim duplicate registry row; normalized once",
+        }
+    ]
+    assert {row["country_code"] for row in parsed["candidates"]} == {
+        "AUT",
+        "CAN",
+        "DEU",
+        "FRA",
+        "GBR",
+        "IRL",
+        "ITA",
+        "POL",
+        "USA",
+    }
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_2023_participants(
+            fixture.replace(b"Frankfurt FRA15", b"Frankfurt FRA16"),
             source_url=source_url,
         )
 

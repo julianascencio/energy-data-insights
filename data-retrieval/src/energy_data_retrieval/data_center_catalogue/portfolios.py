@@ -2359,6 +2359,132 @@ def parse_jrc_2024_new_participants(content: bytes, *, source_url: str) -> dict[
     }
 
 
+def parse_jrc_2023_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete cross-language-stable 2023 JRC cohort.
+
+    The registry displays 36 facility rows across 13 participant sets. The
+    ``Interxion Detuschland GmbH`` row repeats ``Frankfurt FRA08`` verbatim, so
+    the duplicate is retained as source multiplicity and normalized once.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, list[tuple[str, str, str | None]]] = {
+        "A1 Telekom Austria AG": [
+            ("AUT", "Wien 1", "Wien"),
+            ("AUT", "Wien 2", "Wien"),
+        ],
+        "OVH Groupe": [
+            ("FRA", "Gravelines", "Gravelines"),
+            ("FRA", "Roubaix", "Roubaix"),
+            ("FRA", "Strasbourg", "Strasbourg"),
+            ("GBR", "Erith", "Erith"),
+            ("POL", "Varsaw", None),
+            ("DEU", "Limburg An Der Lahn", "Limburg An Der Lahn"),
+            ("CAN", "Beauharnois", "Beauharnois"),
+            ("USA", "Vint Hill (Virginia)", "Vint Hill"),
+            ("USA", "Hillsboro (Oregon)", "Hillsboro"),
+        ],
+        "Interxion Detuschland GmbH": [
+            ("DEU", "Frankfurt FRA08", "Frankfurt"),
+            ("DEU", "Frankfurt FRA08", "Frankfurt"),
+            ("DEU", "Frankfurt FRA10", "Frankfurt"),
+            ("DEU", "Frankfurt FRA11", "Frankfurt"),
+            ("DEU", "Frankfurt FRA12", "Frankfurt"),
+            ("DEU", "Frankfurt FRA13", "Frankfurt"),
+            ("DEU", "Frankfurt FRA15", "Frankfurt"),
+        ],
+        "Irideos S.p.A.": [("ITA", "Settimo Milanese (Avalon 2)", "Settimo Milanese")],
+        "Cegedim Group": [
+            ("FRA", "ET1 Labege", "Labege"),
+            ("FRA", "EB4 Boulogne Biliancourt", None),
+        ],
+        "BBBELL S.p.a": [("ITA", "Torino", "Torino")],
+        "Information Tecchnology hosting SAS": [("FRA", "Mamoudzo", None)],
+        "KDCR (Ireland) Limited": [
+            ("IRL", "DUB 1", None),
+            ("IRL", "DUB 2", None),
+        ],
+        "BNP Paribas": [
+            ("FRA", "Marne Est 1 MAE 1", None),
+            ("FRA", "Marne Nord MN", None),
+            ("FRA", "Marne Sud MS", None),
+        ],
+        "Thales Servvice Numerique": [
+            ("FRA", "Elancourt", "Elancourt"),
+            ("FRA", "Touluse", None),
+        ],
+        "Aruba S.p.a": [
+            ("ITA", "IT3.DC-A", None),
+            ("ITA", "IT3.DC-B", None),
+            ("ITA", "IT3.DC-C", None),
+            ("ITA", "IT1", None),
+        ],
+        "Opiquad Srl": [("ITA", "Merate", "Merate")],
+        "Stellium datacenters Ltd": [("GBR", "Cobalt Park Way, Wallsend", "Wallsend")],
+    }
+    candidates: list[dict[str, Any]] = []
+    duplicate_rows: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        if participant in found:
+            raise ValueError("Duplicate JRC 2023 participant row")
+        expected_rows = expected[participant]
+        labels = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC 2023 participant count or adhesion year") from exc
+        if count != len(expected_rows) or adhesion_year != 2023:
+            raise ValueError("Changed JRC 2023 participant count or adhesion year")
+        if labels != [label for _, label, _ in expected_rows]:
+            raise ValueError("Changed JRC 2023 facility identity set")
+        found.add(participant)
+        seen: set[str] = set()
+        for (country_code, label, locality), actual_label in zip(
+            expected_rows, labels, strict=True
+        ):
+            if actual_label in seen:
+                duplicate_rows.append(
+                    {
+                        "participant": participant,
+                        "label": actual_label,
+                        "occurrences": 2,
+                        "reason": "verbatim duplicate registry row; normalized once",
+                    }
+                )
+                continue
+            seen.add(actual_label)
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "external_id": label,
+                    "locality": locality,
+                    "name": f"{participant} {label}",
+                    "participant": participant,
+                    "registry_label": label,
+                    "locator": f"Participants table / {participant} / {label}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 35 or len(duplicate_rows) != 1:
+        raise ValueError("Changed JRC 2023 participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "displayed_rows": 36,
+        "candidates": candidates,
+        "duplicate_rows": duplicate_rows,
+        "review_required": True,
+    }
+
+
 def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
     """Stage Rack Centre's explicit two-building Lagos campus boundary.
 
