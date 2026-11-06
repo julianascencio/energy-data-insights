@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-06T06:20:00Z",
+  "updated_at": "2026-11-06T07:23:39Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -137,7 +137,8 @@
     "penta_infra_displayed_current_directory": 12,
     "bulk_infrastructure_current_data_centers": 3,
     "maincubes_current_directory": 8,
-    "datacenter_united_current_facilities": 14
+    "datacenter_united_current_facilities": 14,
+    "rack_centre_lagos_current_identities": 3
   },
   "next_batches": [
     {
@@ -210,7 +211,7 @@
         "https://www.africadatacentres.com/"
       ],
       "offset": 15,
-      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; Uruguay/Paraguay batch complete at offset 2; Raxio complete displayed seven-country portfolio at offset 7; Penta Infra's exact displayed 12-facility directory is complete at offset 12; Bulk Infrastructure's complete current three-site portfolio is complete at offset 3; maincubes' complete current eight-identity directory is complete at offset 8; Datacenter United's complete displayed 14-facility directory is complete at offset 14. Continue issuer registries, JHB1 phase reconciliation, Raxio dated lifecycle/permit evidence, Accra post-announcement evidence, Penta's portfolio reconciliation, exact Bulk N01 child-facility identities, maincubes phase/building evidence, Datacenter United municipal/utility capacity evidence, and additional underrepresented-country primary inventories",
+      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; Uruguay/Paraguay batch complete at offset 2; Raxio complete displayed seven-country portfolio at offset 7; Penta Infra's exact displayed 12-facility directory is complete at offset 12; Bulk Infrastructure's complete current three-site portfolio is complete at offset 3; maincubes' complete current eight-identity directory is complete at offset 8; Datacenter United's complete displayed 14-facility directory is complete at offset 14; Rack Centre LGS1/LGS2 and the explicit Lagos campus aggregate are complete at offset 3. Continue issuer registries, JHB1 phase reconciliation, Raxio dated lifecycle/permit evidence, Accra post-announcement evidence, Penta's portfolio reconciliation, exact Bulk N01 child-facility identities, maincubes phase/building evidence, Datacenter United municipal/utility capacity evidence, and additional underrepresented-country primary inventories",
       "questions": [
         "Issuer-verify facility certifications rather than normalizing operator badges",
         "Resolve JHB1 14.5 MW facility-sheet versus 20 MW expansion boundary and date",
@@ -221,6 +222,7 @@
         "Resolve exact identities and current lifecycle for N01's unnamed 12 MW and 42 MW facilities from official current or permit evidence; do not turn campus power potential into IT capacity",
         "Do not recount maincubes' eight current identities. FRA05's 75 MW directory card remains unclassified; BER02's 144-186 MW and 12,000-41,184 m2 ranges remain design-dependent campus observations pending exact building allocations",
         "Do not recount Datacenter United's 14 displayed facilities. Antwerp 1/2 and Evere 1/2 remain separate directory identities sharing grouped pages; resolve exact facility-level municipal/utility capacity evidence without allocating group claims"
+        ,"Do not recount Rack Centre LGS1, LGS2 or the Lagos campus aggregate. LGS2 technical area remains null because current official pages report 7,200 m2 versus 3,240 m2; the 25 MVA utility statement is apparent power and must not become grid MW"
       ]
     },
     {
@@ -540,10 +542,10 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "datacenter-united-directory-20261106T062000Z",
+    "run_id": "rack-centre-lagos-20261106T072339Z",
     "report": "2026-11-06-report.md",
-    "validation": "2026-11-06T0620-validation.json",
-    "added_projects": 14,
+    "validation": "2026-11-06T0723-validation.json",
+    "added_projects": 3,
     "enriched_projects": 0,
     "added_equipment": 0,
     "branch": "research/data-center-database-20261106T0527Z"

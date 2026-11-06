@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T06:20:00Z",
+  "retrieved_at": "2026-11-06T07:23:39Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -56,6 +56,14 @@
       "enriched_records": 0,
       "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and addresses, security and access details are excluded.",
       "originals": "Eight factual official HTML originals total 5,192,862 bytes and have individual SHA-256 checksums in sources.json. Separate imprint and privacy captures total 1,120,130 bytes and supported rights review but are not factual sources."
+    },
+    {
+      "inventory": "Rack Centre complete explicit current Lagos boundary",
+      "processed_offset": 3,
+      "accepted_records": 3,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator and issuer pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, contacts, security and access details are excluded.",
+      "originals": "Five factual official HTML originals total 941,065 bytes and have individual SHA-256 checksums in sources.json. A separate 177,649-byte privacy-policy capture supported rights review but is not a factual source."
     }
   ],
   "deferred": [
@@ -98,6 +106,10 @@
     {
       "candidate": "STACK Infrastructure public facility portfolio",
       "reason": "Official terms restrict copying, reproduction and commercial reuse without permission. No STACK facts, captures or source-registry entries were published."
+    },
+    {
+      "candidate": "Open Access Data Centres public facility portfolio",
+      "reason": "Official terms prohibit reproduction except under the copyright notice. This is a reuse hold, not an access failure; no OADC facts, captures or source-registry entries were published."
     }
   ],
   "quarantined": [
@@ -181,6 +193,13 @@
         "facility_capacity_mw"
       ],
       "reason": "The current directory and linked pages do not establish facility-level IT, grid or total demand MW. All normalized capacity scalars remain null for all 14 records."
+    },
+    {
+      "candidate": "Rack Centre LGS2 white-space conflict",
+      "fields": [
+        "technical_area_m2"
+      ],
+      "reason": "Current official pages report 7,200 m2 and 3,240 m2 of LGS2 white space. Both values remain conflict observations and technical_area_m2 remains null."
     }
   ],
   "normalization_notes": [
@@ -220,6 +239,11 @@
     "Antwerp 1/2 and Evere 1/2 remain separate exact directory facility identities sharing grouped pages. Antwerp 3 links to DC Flanders, retained as an alias. No sibling capacity allocation or city-level campus aggregate is synthesized.",
     "Ghent 2 is explicitly under construction/coming and Mouscron is currently under development. No target is treated as actual commissioning evidence.",
     "All Datacenter United IT, grid and facility-capacity scalars remain null. Operator Tier, ISO, availability, sustainability, connectivity and security claims do not create issuer-registry certifications, deployments or sensitive normalized details.",
-    "Colt and STACK screenings are reuse holds, not access failures. No candidate facts, captures or source-registry entries were published; all prior holds and quarantines remain in force."
+    "Colt and STACK screenings are reuse holds, not access failures. No candidate facts, captures or source-registry entries were published; all prior holds and quarantines remain in force.",
+    "Rack Centre's complete explicit Lagos boundary is processed at offset three: LGS1 and LGS2 are exact operational facilities and the Lagos Campus aggregate is excluded from every capacity sum.",
+    "LGS1's exact 1.5 MW IT load and 1,094 m2 white space are normalized. LGS2's exact 12 MW IT load and 2025-04-10 commissioning date are normalized; the separately stated 13.5 MW campus total remains only on the excluded aggregate.",
+    "LGS2's conflicting 7,200 m2 and 3,240 m2 white-space claims remain observations. Its 25 MVA utility commitment is not converted to grid MW; LGS1 PUE 1.5 lacks a measurement period and LGS2 PUE 1.35 is a design value.",
+    "Uptime Institute month-precision Tier III awards for the original Lagos facility remain issuer-verified observations on LGS1 rather than certifications_json entries. No LGS2 certification is inferred.",
+    "The OADC screening preserves an existing reuse hold and imports no facts or bytes. All prior holds and quarantines remain in force."
   ]
 }

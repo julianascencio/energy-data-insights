@@ -1919,6 +1919,171 @@ def parse_datacenter_united_site_page(
     }
 
 
+def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage Rack Centre's explicit two-building Lagos campus boundary.
+
+    Campus totals are returned separately from the two named facilities. Callers
+    must keep the campus aggregate excluded from capacity totals and must not use
+    the published total to fill either building.
+    """
+    if urlsplit(source_url).hostname not in {"rack-centre.com", "www.rack-centre.com"}:
+        raise ValueError("Expected official Rack Centre URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    markers = (
+        "Two facilities. One connected campus.",
+        "Rack Centre LGS 1",
+        "Rack Centre LGS 2",
+        "13.5 MW total IT power",
+        "7,200 sqm net lettable space",
+        "6 data halls",
+        "White space 3,240 sqm",
+    )
+    if not all(marker in text for marker in markers):
+        raise ValueError("Changed Rack Centre campus identity or capacity shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": "Lagos Campus",
+            "facility_codes": ["LGS1", "LGS2"],
+            "it_capacity_mw": 13.5,
+            "technical_area_m2": 7200.0,
+            "lgs2_white_space_m2": 3240.0,
+            "locator": "current Lagos campus page / campus buildings and specifications",
+        },
+        "review_required": True,
+    }
+
+
+def parse_rack_centre_facility_page(
+    content: bytes, *, source_url: str, expected_code: str
+) -> dict[str, Any]:
+    """Stage exact Rack Centre LGS1/LGS2 IT ratings without merging areas."""
+    if urlsplit(source_url).hostname not in {"rack-centre.com", "www.rack-centre.com"}:
+        raise ValueError("Expected official Rack Centre URL")
+    if expected_code not in {"LGS1", "LGS2"}:
+        raise ValueError("Unexpected Rack Centre facility code")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    if f"Rack Centre {expected_code[:3]} {expected_code[3:]}" not in text:
+        raise ValueError("Changed Rack Centre facility identity")
+    if expected_code == "LGS1":
+        markers = (
+            "1.5MW I.T Load",
+            "Tier III TCCF Constructed facility certified",
+            "WHITE SPACE 1,094 SQM",
+            "100% Uptime Since 2013",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed Rack Centre LGS1 specification shape")
+        candidate = {
+            "external_id": expected_code,
+            "it_capacity_mw": 1.5,
+            "technical_area_m2": 1094.0,
+            "status_year": 2013,
+            "locator": "current LGS1 page / data center specifications",
+        }
+    else:
+        markers = (
+            "IT POWER CAPACITY 12 MW",
+            "Utility Power Supply Capacity of 25mva",
+            "WHITE SPACE 7200 Sqm.",
+            "6 Data Halls each of 2 MW IT Load",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed Rack Centre LGS2 specification shape")
+        candidate = {
+            "external_id": expected_code,
+            "it_capacity_mw": 12.0,
+            "reported_white_space_m2": 7200.0,
+            "utility_apparent_power_mva": 25.0,
+            "data_hall_count": 6,
+            "locator": "current LGS2 page / data center specifications",
+        }
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_rack_centre_lgs2_commissioning(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact dated LGS2 commissioning event and reported IT load."""
+    if urlsplit(source_url).hostname not in {"rack-centre.com", "www.rack-centre.com"}:
+        raise ValueError("Expected official Rack Centre URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split()).replace("\N{RIGHT SINGLE QUOTATION MARK}", "'")
+    markers = (
+        "Rack Centre's LGS2 12MW Data Centre Commissioned",
+        "commissioning of the data centre held",
+        "Thursday, April 10, 2025",
+        "12MW IT load LGS2",
+    )
+    if not all(marker in text for marker in markers):
+        raise ValueError("Changed Rack Centre LGS2 commissioning evidence")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": "LGS2",
+            "commissioning_date": "2025-04-10",
+            "it_capacity_mw": 12.0,
+            "locator": "commissioning article / event date and 12 MW IT load",
+        },
+        "review_required": True,
+    }
+
+
+def parse_uptime_rack_centre_story(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage issuer evidence for the original Rack Centre Lagos facility.
+
+    The issuer story predates LGS2 and identifies the original facility's launch
+    and award months. It does not establish any certification for LGS2.
+    """
+    if urlsplit(source_url).hostname not in {"uptimeinstitute.com", "www.uptimeinstitute.com"}:
+        raise ValueError("Expected official Uptime Institute URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    markers = (
+        "Client Story: Rack Centre Tier III Certification of Constructed Facility",
+        "Tier Certification of Design Documents in May, 2014",
+        "Tier Certification of Constructed Facility in April, 2017",
+        "launch of the company in October, 2013",
+    )
+    if not all(marker in text for marker in markers):
+        raise ValueError("Changed Uptime Rack Centre issuer evidence")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "issuer": "Uptime Institute",
+            "issuer_identity": "Rack Centre Lagos Data Centre",
+            "tier": "Tier III",
+            "awards": [
+                {
+                    "award": "Tier Certification of Design Documents",
+                    "date_precision": "month",
+                    "date": "2014-05",
+                },
+                {
+                    "award": "Tier Certification of Constructed Facility",
+                    "date_precision": "month",
+                    "date": "2017-04",
+                },
+            ],
+            "launch_period": "2013-10",
+            "locator": "issuer client story / certification and launch chronology",
+        },
+        "review_required": True,
+    }
+
+
 def parse_vertiv_powerups6000_table(
     content: bytes, *, source_url: str, expected_count: int | None = None
 ) -> dict[str, Any]:

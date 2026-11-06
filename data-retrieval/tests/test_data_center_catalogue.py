@@ -45,11 +45,15 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_penta_infra_directory,
     parse_penta_infra_site_page,
     parse_portfolio,
+    parse_rack_centre_campus,
+    parse_rack_centre_facility_page,
+    parse_rack_centre_lgs2_commissioning,
     parse_raxio_facility_page,
     parse_schneider_galaxy_vs_model_list,
     parse_stulz_cyberair_3pro_dx_modulating_table,
     parse_stulz_cyberair_3pro_dx_r134a_table,
     parse_stulz_cyberair_3pro_dx_table,
+    parse_uptime_rack_centre_story,
     parse_vertiv_powerups6000_table,
 )
 
@@ -619,6 +623,52 @@ def test_datacenter_united_parsers_preserve_exact_facility_boundaries():
             b"<h1>DC Ghent</h1>",
             source_url="https://datacenterunited.com/en/our-datacenters/dc-ghent/",
             expected_group="ghent",
+        )
+
+
+def test_rack_centre_parsers_keep_facilities_and_campus_separate():
+    campus = parse_rack_centre_campus(
+        (FIXTURES / "rack-centre-campus.html").read_bytes(),
+        source_url="https://rack-centre.com/lagos-data-centre-campus-expansion/",
+    )["candidate"]
+    assert campus["facility_codes"] == ["LGS1", "LGS2"]
+    assert campus["it_capacity_mw"] == 13.5
+    assert campus["lgs2_white_space_m2"] == 3240
+    lgs1 = parse_rack_centre_facility_page(
+        (FIXTURES / "rack-centre-lgs1.html").read_bytes(),
+        source_url=(
+            "https://rack-centre.com/lagos-data-centre-campus-expansion/data-centre-campus-lgs-1/"
+        ),
+        expected_code="LGS1",
+    )["candidate"]
+    assert lgs1["it_capacity_mw"] == 1.5
+    assert lgs1["technical_area_m2"] == 1094
+    lgs2 = parse_rack_centre_facility_page(
+        (FIXTURES / "rack-centre-lgs2.html").read_bytes(),
+        source_url=(
+            "https://rack-centre.com/lagos-data-centre-campus-expansion/"
+            "data-centre-campus-lgs-2-expansion/"
+        ),
+        expected_code="LGS2",
+    )["candidate"]
+    assert lgs2["it_capacity_mw"] == 12
+    assert lgs2["reported_white_space_m2"] == 7200
+    event = parse_rack_centre_lgs2_commissioning(
+        (FIXTURES / "rack-centre-lgs2-commissioning.html").read_bytes(),
+        source_url="https://rack-centre.com/rack-centres-lgs2-12mw-data-centre-commissioned/",
+    )["candidate"]
+    assert event["commissioning_date"] == "2025-04-10"
+    issuer = parse_uptime_rack_centre_story(
+        (FIXTURES / "rack-centre-uptime-story.html").read_bytes(),
+        source_url=(
+            "https://uptimeinstitute.com/clients/"
+            "rack-centre-tier-iii-certification-of-constructed-facility"
+        ),
+    )["candidate"]
+    assert issuer["awards"][1]["date"] == "2017-04"
+    with pytest.raises(ValueError, match="facility code"):
+        parse_rack_centre_facility_page(
+            b"", source_url="https://rack-centre.com/", expected_code="LGS3"
         )
 
 
