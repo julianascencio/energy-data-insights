@@ -610,3 +610,32 @@ The next 50 Norwegian candidates were screened with registered source hashes;
 all remain held. Continuation is after `WRI1003631` (201–250). The Brazilian backlog
 is corrected: 49 retained holds require explicit identity/scope review; there is
 no unprocessed partition in this 180-CEG capacity inventory.
+
+
+## Explicit Brazilian registry-alias review — 6 November 2026
+
+Thirty-five prior ONS holds are resolved through recorded, individually reviewed
+CEG/WRI registry crosswalks and single-name historical, abbreviated or state-qualified
+aliases. The importer still rejects name differences by default. An explicit review
+must match record UUID, original name, CEG and every source unit name; no fuzzy
+matching is used. The canonical name remains unchanged and the ONS name becomes
+an alias. Original hold ledgers remain immutable; the new resolution ledger
+supersedes only these 35 decisions. Five multi-powerhouse groups and nine missing
+identities remain held. Copel's 18 November 2024 primary-source description also
+corroborates Foz do Areia, Segredo and Salto Caxias aliases; proposed expansions
+are not accepted as current operating capacity.
+
+The batch adds 150 dated unit observations, CEG IDs, owners/operators, aliases and
+state/subsystem/dispatch metadata. Plant capacity, lifecycle and aggregation scope
+are not inferred. Coverage is 7,156 records / 128 countries / 1,493 enriched identities;
+ONS contributes 166 identities and 728 unit observations. Source reuse and row
+locators remain those of the original checksum-pinned ONS captures.
+
+```bash
+uv run python scripts/enrich_hydro_ons_aliases.py --batch catalogues/hydro/research/ons-aliases-20261106.json
+```
+
+The Norwegian continuation after `WRI1003631` returns zero rows: the remaining-identity
+scan is exhausted. The 200 screened holds remain unresolved, separate from 110
+accepted NVE identities. Next: five ONS multi-powerhouse groups, then nine missing
+identities; do not repeat the exhausted scan.
