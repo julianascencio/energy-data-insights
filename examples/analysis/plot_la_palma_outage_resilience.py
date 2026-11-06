@@ -38,10 +38,7 @@ no_generation = [0.0] * intervals
 
 # Illustrative *conditional* island-capable renewables: no historical data.
 wind_scenario_mw = [0.04] * intervals
-pv_scenario_mw = [
-    0.12 * min(1.0, max(0.0, ((i * 3) - 60) / 160))
-    for i in range(intervals)
-]
+pv_scenario_mw = [0.12 * min(1.0, max(0.0, ((i * 3) - 60) / 160)) for i in range(intervals)]
 rated_power_mw = 0.65
 start_soc = 0.80
 roundtrip_efficiency = 0.95**2
@@ -56,16 +53,26 @@ capacities_mwh = [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0]
 fig, ax = plt.subplots()
 for label, (wind_mw, solar_mw) in cases.items():
     required = minimum_islanded_capacity(
-        wind_mw, solar_mw, load_mw, inverter_mw=rated_power_mw,
-        initial_soc_fraction=start_soc, roundtrip_efficiency=roundtrip_efficiency,
+        wind_mw,
+        solar_mw,
+        load_mw,
+        inverter_mw=rated_power_mw,
+        initial_soc_fraction=start_soc,
+        roundtrip_efficiency=roundtrip_efficiency,
         timestep_hours=timestep_hours,
     )
     coverage = [
         simulate_hybrid(
-            wind_mw, solar_mw, load_mw, battery_mwh=capacity,
-            battery_mw=rated_power_mw, initial_soc_mwh=capacity * start_soc,
-            efficiency=roundtrip_efficiency, timestep_hours=timestep_hours,
-        ).coverage * 100
+            wind_mw,
+            solar_mw,
+            load_mw,
+            battery_mwh=capacity,
+            battery_mw=rated_power_mw,
+            initial_soc_mwh=capacity * start_soc,
+            efficiency=roundtrip_efficiency,
+            timestep_hours=timestep_hours,
+        ).coverage
+        * 100
         for capacity in capacities_mwh
     ]
     print(f"{label}: {required:.3f} usable MWh required")
