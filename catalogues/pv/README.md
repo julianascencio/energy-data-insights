@@ -46,6 +46,16 @@ contacts, fails closed on ambiguous/schema-drifted identity fields, and never tr
 a solar category or approval as positive PV or current operation. Canonical identity
 review remains mandatory; modifications are not additional plants.
 
+The offline `pv_catalogue.izmir.read_izmir_csv` reader stages the checksum-pinned
+İzmir municipal portfolio CSV. It rejects changed headers, duplicate site names,
+malformed widths and invalid numbers. Candidate staging never accepts identities
+or infers AC/DC, owners, coordinates, current operation or precise COD. The
+January 2026 CSV contains 26 named rows: 25 panel-evidenced PV sites were reviewed
+and accepted; one row without panel evidence remains held. Expected kWh is kept
+separate from measured generation, and generic total kW remains unspecified AC/DC.
+The September workbook download contains theme parts but no worksheets and is
+held independently. See [İzmir attribution](licenses/IZMIR_CC_BY4_NOTICE.md).
+
 The source of truth is sorted, hash-sharded JSONL in `records/`. Five typed Parquet
 snapshots are generated for efficient Python, Arrow, DuckDB and other analytical
 workflows. Binary datasets are not committed to Git. Source records are sparse;
@@ -632,3 +642,8 @@ classification, cost types and inference/privacy limits. Generic `Solar` does
 not prove PV; proponents are not owners, historical status is not current
 operation, and approximate native CAD-million estimates are not verified capex.
 Hidden vendor sheets, geometry and coordinates are excluded from staged output.
+
+
+### Research update — 6 November 2026, 08:00 UTC
+
+The dated [08:00 review](research/20261106T0800_report.md) adds21 exact Polycab inverter models /460 typed engineering specifications and enriches198 existing projects /392 fields and evidence contexts.194 Chinese historical owner assertions retain complete phase provenance; four Portuguese licensing associations retain native kW/kVA and multi-municipality scope without power, lifecycle or coordinate changes. Two350K rated-active-power conflicts and optional-interface claims remain qualified/held. Five exact OEM tables are accepted; one-input/one-output distribution boxes, component parts and provincial capacity aggregates are excluded from plant/combiner counts. PLN report discovery is access-blocked, not an integrated feed. No new adapter. See the dated audit, source captures, top-ten gaps, snapshot verification and resumable queue.
