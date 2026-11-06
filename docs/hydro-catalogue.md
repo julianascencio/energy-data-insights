@@ -720,3 +720,31 @@ uv run python examples/database/plot_hydro_catalogue.py
 
 Replay is idempotent. The next regional partition is the first 100 retained AHA
 Existing holds, beginning Excel row 4, using primary alias/phase/location evidence.
+
+## African evidence bases — 6 November 2026
+
+Twenty-six previously accepted AHA identities now expose structured per-column
+provenance under `extensions_json.aha_field_provenance`: original value, unit,
+Excel row, source ID, upstream citation, fallback reference and uncertainty.
+These are provenance enrichments, not newly accepted plants or measurements.
+Reservoir size is expressed in million m³, not MWh. Mean annual river discharge
+is separate from design discharge; neither is a measured operating flow.
+`First Year` is the earliest expected entry year, not verified commissioning.
+Availability selects a model profile, not current plant availability or status.
+Upstream references remain explicitly unverified; missing citations remain null.
+
+The first 100 retained AHA `Existing` holds (Excel rows 4–242) have reproducible
+name-candidate evidence in `research/aha-provenance-20261106.json`. None is accepted
+by name matching. Congo country/duplicate and phase boundaries remain held.
+E2C's Imboulou page was suspended and its Moukoukoulou page returned 403 during
+review. The Republic of Congo government's 2 July 2023 concession article
+corroborates national context but does not resolve duplicate catalogue records
+or present operation. Original hold ledgers and source checksum remain intact.
+
+```bash
+uv run python scripts/enrich_hydro_aha_provenance.py --batch catalogues/hydro/research/aha-provenance-20261106.json
+```
+
+Global coverage remains 7,164 records / 128 countries / 1,496 enriched historical
+identities plus eight new registry identities. Resolve the retained 100 holds;
+the next unscreened `Existing` partition starts after Excel row 242.

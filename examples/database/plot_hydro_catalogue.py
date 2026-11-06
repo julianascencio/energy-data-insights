@@ -10,7 +10,7 @@ ranking of installed national capacity. 110 Norwegian records have reviewed
 NVE lifecycle and technical enrichment; 1175 US records carry dated 2025 EIA inventory.
 177 Brazilian records retain ONS registry/unit evidence and structured state/subsystem metadata.
 13 Indian records retain reviewed historical IHA station evidence.
-26 African records retain reviewed AHA river/basin evidence.
+26 African records retain AHA river/basin evidence and explicit historical/model field bases.
 Three New Zealand records retain reviewed dispatch connection evidence.
 Eight Brazilian records are new CEG identities, including two small hydro plants.
 Their coordinates and current lifecycle remain unknown.
@@ -51,6 +51,10 @@ print(
     "AHA Africa enriched records:", sum("aha-v2.3-technical-20261105" in r["sources"] for r in rows)
 )
 print("NZ reviewed dispatch identities:", sum("nz-ea-fleet-20260702" in r["sources"] for r in rows))
+print(
+    "AHA records with explicit field bases:",
+    sum("aha_field_provenance" in json.loads(r["extensions_json"]) for r in rows),
+)
 print("Input fingerprint:", manifest["input_sha256"])
 print("Reviewed installed generating MW:", capacity_summary(rows, "installed_capacity_mw"))
 print("Pumping input MW (separate from generation):", capacity_summary(rows, "pumping_capacity_mw"))

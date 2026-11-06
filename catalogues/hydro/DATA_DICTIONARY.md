@@ -95,3 +95,13 @@ fabricated. Nested source retrieval timestamps differ from acceptance time.
 Reviewed plant facts use their own source IDs and locators in field evidence.
 `deferred_capacity_review`, when present, retains differing reported plant and
 unit ratings outside canonical capacity totals until their bases are reconciled.
+
+### AHA field provenance
+
+`extensions_json.aha_field_provenance` contains one observation per populated
+reviewed technical column: `column`, `value`, `unit`, `basis`, `source_id`,
+`excel_row`, `upstream_reference`, `fallback_reference`,
+`upstream_independently_verified` and `uncertainty`. Zero values are retained;
+missing references are null. Dataset model references are not official registry
+IDs. These observations never automatically populate current capacity, storage
+energy, operating flow or commissioning fields.

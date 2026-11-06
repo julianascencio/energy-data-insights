@@ -7775,3 +7775,11 @@ Bom Futuro / Campos de Júlio Energia S.A. (2024). **Plano de Ação de Emergên
 **Role:** data_source. Primary hydropower factual evidence; source date/precision, locator and reuse assessment in source registry. Undated pages use retrieval year, not an asserted publication year.
 
 **Used by:** `catalogues/hydro/sources.json`, `docs/hydro-catalogue.md`.
+
+### congo_moukoukoulou_concession_2023
+
+Gouvernement de la République du Congo (2023). **Energie : Signature de la convention de concession de la centrale hydroélectrique de Moukoukoulou**. [Source](https://gouvernement.cg/energie-signature-de-la-convention-de-concession-de-la-centrale-hydroelectrique-de-moukoukoulou/)
+
+**Role:** data_source. Historical concession and national context only; does not resolve catalogue identity or present operating status.
+
+**Used by:** `docs/hydro-catalogue.md`.
