@@ -748,3 +748,10 @@ uv run python scripts/enrich_hydro_aha_provenance.py --batch catalogues/hydro/re
 Global coverage remains 7,164 records / 128 countries / 1,496 enriched historical
 identities plus eight new registry identities. Resolve the retained 100 holds;
 the next unscreened `Existing` partition starts after Excel row 242.
+
+KenGen's 2025 owner statistics add 160 dated capacity and energy observations to
+eight existing Kenyan plants. Installed versus effective MW and generated
+versus sold GWh remain separate, with fiscal periods and cell-level provenance.
+Five additional named stations await registry identity review. The catalogue
+contains 7,164 records in 128 countries; these observations do not establish
+current operation or change additive capacity KPIs.

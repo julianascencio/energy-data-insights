@@ -58,3 +58,25 @@ MW, three have turbine descriptors, and one has total reservoir volume.
 These values remain excluded from additive totals while physical overlaps are
 unresolved. The eight new records have no invented WRI IDs or map coordinates.
 See `research/ons-new-20261106.json` for acceptance and held decisions.
+
+The KenGen 2025 owner-report batch enriches all eight existing Kenyan identities
+with **160 dated observations**: installed/effective MW and generated/sold GWh
+for fiscal years ended June 2021–2025. These remain separate in
+`observations_json`, with per-cell page, station, year, column and unit locators.
+The primary report is registered as `kengen_annual_report_2025` in the formal
+bibliography. Effective capacity is not substituted for operational or installed
+capacity; sold energy is not generation. No current status is inferred.
+Five additional named stations remain candidates for EPRA identity review.
+Small Hydros and Hydro Total are excluded as overlapping aggregates, and Sosiani
+has no numerical generation observation. The existing 7,164 records / 128
+countries are unchanged; 1,503 historical identities now have enrichment.
+
+```bash
+pdftotext -layout /path/to/KenGen-2025.pdf /tmp/kengen-2025.txt
+uv run python scripts/enrich_hydro_kengen.py --batch catalogues/hydro/research/kengen-2025-20261106.json --text /tmp/kengen-2025.txt
+```
+
+The optional text input rechecks the complete parsed table before any writes.
+Changed table shape, year order, duplicate rows or changed accepted evidence
+fail for review. Original PDF SHA-256 and access/reuse assessment are retained
+in `sources.json`; downloaded source bytes stay outside Git.

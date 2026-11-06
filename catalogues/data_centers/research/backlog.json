@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-06T03:30:00Z",
+  "updated_at": "2026-11-06T07:23:39Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -134,7 +134,11 @@
     "green_mountain_current_sites": 7,
     "glesys_current_owned_locations": 5,
     "ecodatacenter_current_sites": 3,
-    "penta_infra_displayed_current_directory": 12
+    "penta_infra_displayed_current_directory": 12,
+    "bulk_infrastructure_current_data_centers": 3,
+    "maincubes_current_directory": 8,
+    "datacenter_united_current_facilities": 14,
+    "rack_centre_lagos_current_identities": 3
   },
   "next_batches": [
     {
@@ -207,7 +211,7 @@
         "https://www.africadatacentres.com/"
       ],
       "offset": 15,
-      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; Uruguay/Paraguay batch complete at offset 2; Raxio complete displayed seven-country portfolio at offset 7; Penta Infra's exact displayed 12-facility directory is complete at offset 12; Bulk Infrastructure's complete current three-site portfolio is complete at offset 3. Continue issuer registries, JHB1 phase reconciliation, Raxio dated lifecycle/permit evidence, Accra post-announcement evidence, Penta's portfolio reconciliation, exact Bulk N01 child-facility identities, and additional underrepresented-country primary inventories",
+      "scope": "Africa Data Centres current five-facility footprint and Accra announcement complete at offsets 5+1; Uruguay/Paraguay batch complete at offset 2; Raxio complete displayed seven-country portfolio at offset 7; Penta Infra's exact displayed 12-facility directory is complete at offset 12; Bulk Infrastructure's complete current three-site portfolio is complete at offset 3; maincubes' complete current eight-identity directory is complete at offset 8; Datacenter United's complete displayed 14-facility directory is complete at offset 14; Rack Centre LGS1/LGS2 and the explicit Lagos campus aggregate are complete at offset 3. Continue issuer registries, JHB1 phase reconciliation, Raxio dated lifecycle/permit evidence, Accra post-announcement evidence, Penta's portfolio reconciliation, exact Bulk N01 child-facility identities, maincubes phase/building evidence, Datacenter United municipal/utility capacity evidence, and additional underrepresented-country primary inventories",
       "questions": [
         "Issuer-verify facility certifications rather than normalizing operator badges",
         "Resolve JHB1 14.5 MW facility-sheet versus 20 MW expansion boundary and date",
@@ -215,7 +219,10 @@
         "Find dated issuer award records for Antel Massera and Tigo Paraguay before normalizing certifications",
         "Reconcile Penta Infra's 12 displayed directory facilities against its January 2026 claim of a 15-facility portfolio; Munich and two other identities remain outside the accepted directory batch",
         "Obtain actual AMS01 ready-for-service evidence and exact lifecycle/rating evidence for DUS02, LEJ02, CPH02 and CPH03 before adding child facilities",
-        "Resolve exact identities and current lifecycle for N01's unnamed 12 MW and 42 MW facilities from official current or permit evidence; do not turn campus power potential into IT capacity"
+        "Resolve exact identities and current lifecycle for N01's unnamed 12 MW and 42 MW facilities from official current or permit evidence; do not turn campus power potential into IT capacity",
+        "Do not recount maincubes' eight current identities. FRA05's 75 MW directory card remains unclassified; BER02's 144-186 MW and 12,000-41,184 m2 ranges remain design-dependent campus observations pending exact building allocations",
+        "Do not recount Datacenter United's 14 displayed facilities. Antwerp 1/2 and Evere 1/2 remain separate directory identities sharing grouped pages; resolve exact facility-level municipal/utility capacity evidence without allocating group claims"
+        ,"Do not recount Rack Centre LGS1, LGS2 or the Lagos campus aggregate. LGS2 technical area remains null because current official pages report 7,200 m2 versus 3,240 m2; the 25 MVA utility statement is apparent power and must not become grid MW"
       ]
     },
     {
@@ -521,16 +528,26 @@
       "source": "DATA4 public campus pages",
       "url": "https://www.data4group.com/en/terms-and-conditions/",
       "reason": "Current official general terms state that site contents are DATA4's exclusive property and prohibit partial or total representation or reproduction without prior written permission. Candidate campus pages were screened only; no DATA4 facts or bytes were imported."
+    },
+    {
+      "source": "Colt Data Centre Services public facility pages",
+      "url": "https://www.coltdatacentres.net/terms-of-use/",
+      "reason": "Official terms restrict site content to personal, non-commercial use and prohibit copying or redistribution without permission. Candidate facility pages were screened only; no Colt facts or bytes were imported."
+    },
+    {
+      "source": "STACK Infrastructure public facility pages",
+      "url": "https://www.stackinfra.com/terms-of-use/",
+      "reason": "Official terms restrict copying, reproduction and commercial reuse of site content without permission. Candidate facility pages were screened only; no STACK facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "ecodatacenter-sites-20261106T023000Z",
+    "run_id": "rack-centre-lagos-20261106T072339Z",
     "report": "2026-11-06-report.md",
-    "validation": "2026-11-06T0230-validation.json",
+    "validation": "2026-11-06T0723-validation.json",
     "added_projects": 3,
     "enriched_projects": 0,
     "added_equipment": 0,
-    "branch": "research/data-center-database-20261105T2217Z"
+    "branch": "research/data-center-database-20261106T0527Z"
   }
 }

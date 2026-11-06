@@ -392,3 +392,40 @@ units, eight-to-seventeen SS6143 modules and valid voltage envelopes. It never
 computes stack power from volts/amps or module power. Current classification is
 unspecified. Match warranties by exact unsuffixed model AND nominal energy;
 never transfer -05 terms or module-only life/efficiency to a complete stack.
+
+## Hubble warranty offline staging
+
+After checking the original PDF's heading, revision, access terms and exact model
+applicability, run `pdftotext -layout` outside Git, then:
+
+```bash
+uv run python scripts/stage_bess_hubble_warranty.py warranty.txt --scope 'HV-SERIES (100Ah)' --output staged.json
+```
+
+The adapter requires a reviewed exact heading and separates cell, electronics,
+cycle-limit, temperature and monitoring-fallback observations. It fails on missing
+or ambiguous terms and preserves competing fallback values. It never fetches,
+assigns warranties to models, overwrites output or writes canonical rows. Manually
+review remaining conditions and cross-reference exact cell-size/model identities
+before using the existing upsert API. Ten years of cell cover does not mean ten
+years for electronics; warranty cycle limits are not tested cycle life.
+
+## ATESS local table staging
+
+Review the exact public English document, revision, rights and page2 image first.
+Keep PDF bytes and `pdftotext -layout` output outside Git, then run:
+
+```bash
+uv run python scripts/stage_bess_atess.py table.txt --family HPS --output staged.json
+uv run python scripts/stage_bess_atess.py table.txt --family PCS --output staged.json
+uv run python scripts/stage_bess_atess.py table.txt --family EnerStack314 --output staged.json
+```
+
+The converter adapter requires the reviewed five-column order and explicit units.
+It separates AC rated/apparent power, DC limits and rectifier limits; PCS1000
+charge/discharge currents remain asymmetric. The cluster adapter accepts only
+the nine printed energy codes and evaluates the document's explicit per-module
+energy/voltage formulas. It does not infer active power or round-trip efficiency.
+Both adapters stage only and refuse output overwrite. Shared cells, diagrams,
+certification scope and equipment relationships require manual review before
+existing-API upsert. Module specifications do not inherit complete-cluster limits.

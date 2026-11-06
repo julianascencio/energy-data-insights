@@ -115,3 +115,31 @@ not dielectric withstand ratings; BMU fuse/current limits are not PCS power.
 SS6143 module relationships, unspecified-class current rating, module-only usable
 energy at0.3C, and exact-model warranty limits. Printed Rev1.0 is dated26April2024;
 the April2025 URL path is not the revision. Charging efficiency is not RTE.
+
+## Hubble exact warranties and Cube configurations
+
+`extensions_json.hubble_warranty_20261106` separates the cell warranty's earlier-of
+years/cycles limit from electronics coverage, strict battery-temperature conditions,
+monitoring/registration requirements and remedy exclusions. These are public terms,
+not a determination that a purchased unit qualifies. Conflicting three/five-year
+HV100Ah monitoring fallback clauses remain in `conflicts_json`. Warranty cycles
+do not overwrite design/test cycle life or imply retained capacity.
+
+`extensions_json.hubble_cube` retains charge/discharge and AC/DC classes, exact
+module/cell configuration, optional PV configurations and qualified mechanical,
+efficiency and compliance observations. Unlabelled dimension axes and unresolved
+IP54/IP55 or kW/kVA claims are not assigned normalized scalars. Marketing ten-year
+battery claims do not establish applicability of the separate Cube V2 warranty.
+
+### ATESS reviewed extensions
+
+`extensions_json.atess` preserves product level, source section/column, distinct
+AC/DC/rectifier ratings, current limits, conditional overloads, PV constraints,
+conversion-efficiency boundary and OEM assertions with their qualifiers.
+`native_formula_observations` records exact energy code/module count and explicit
+source formula calculations; `module_record_id` links only the specifically named
+component. Cluster cycle claims without test conditions remain qualified extension
+observations, not warranty or normalized tested cycle life. Optional features do
+not create models. IP66 battery-compartment protection does not replace system
+IP55. IC418-800's printed AC range excludes its nominal voltage and remains a
+conflict. Module/cluster mechanical and environmental boundaries remain separate.

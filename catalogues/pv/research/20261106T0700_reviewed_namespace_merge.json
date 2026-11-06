@@ -1,0 +1,78 @@
+{
+  "record_id": "1f0161d7-d4b8-5b39-979c-9af8d75d4ab2",
+  "namespace": "ppib_phase_evidence",
+  "value": {
+    "identity_basis": "ExistingnativealiasnamesHNDS/Meridian/Helios,50MWp/DCeach,Sukkur locality match officialdetailcompanies; HND/HNDS spelling preserved through explicit native phase2HNDS alias",
+    "phase_crosswalks": [
+      {
+        "COD": "2024-01-19",
+        "EPC": "SCATEC Solar ASA",
+        "company_detail_page": "https://www.ppib.gov.pk/Solar_Meridian.htm",
+        "cost_year": null,
+        "gem_phase_id": "G100000801639",
+        "gross_basis": "AC/DCunspecified; notconvertedtoexistingDC50",
+        "gross_capacity_MW": 50,
+        "levelized_tariff_UScent_kWh": 3.6683,
+        "phase_as_reported": "1 - Meridian",
+        "power_purchaser": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-GL)",
+        "price_scope": "Perlegalproject reportedprice; not summed toaggregate capex",
+        "project_term_years": 25,
+        "published_project_price_million_USD": 30.342,
+        "source_asof": "2026-06-30",
+        "sponsor_review": "PPIB Scatec Sukhur BV75%/Nizamcorporate share and GEMScatecASA51%/H1Holdings49% differ in entity/sharebasis; do notoverwrite orconsolidate. Individualdetails omitted.",
+        "term_scope": "Termofproject, not inferredPPAterm",
+        "years1to10_tariff_UScent_kWh": 4.448
+      },
+      {
+        "COD": "2024-01-10",
+        "EPC": "SCATEC Solar ASA",
+        "company_detail_page": "https://www.ppib.gov.pk/Solar_HNDS.htm",
+        "cost_year": null,
+        "gem_phase_id": "G100000801638",
+        "gross_basis": "AC/DCunspecified; notconvertedtoexistingDC50",
+        "gross_capacity_MW": 50,
+        "levelized_tariff_UScent_kWh": 3.6683,
+        "phase_as_reported": "2 - HNDS",
+        "power_purchaser": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-GL)",
+        "price_scope": "Perlegalproject reportedprice; not summed toaggregate capex",
+        "project_term_years": 25,
+        "published_project_price_million_USD": 30.342,
+        "source_asof": "2026-06-30",
+        "sponsor_review": "PPIB Scatec Sukhur BV75%/Nizamcorporate share and GEMScatecASA51%/H1Holdings49% differ in entity/sharebasis; do notoverwrite orconsolidate. Individualdetails omitted.",
+        "term_scope": "Termofproject, not inferredPPAterm",
+        "years1to10_tariff_UScent_kWh": 4.448
+      },
+      {
+        "COD": "2024-02-01",
+        "EPC": "SCATEC Solar ASA",
+        "company_detail_page": "https://www.ppib.gov.pk/Solar_Helious.htm",
+        "cost_year": null,
+        "gem_phase_id": "G100000801637",
+        "gross_basis": "AC/DCunspecified; notconvertedtoexistingDC50",
+        "gross_capacity_MW": 50,
+        "levelized_tariff_UScent_kWh": 3.6683,
+        "phase_as_reported": "3 - Helios",
+        "power_purchaser": "Central Power Purchasing Agency (Guarantee) Limited (CPPA-GL)",
+        "price_scope": "Perlegalproject reportedprice; not summed toaggregate capex",
+        "project_term_years": 25,
+        "published_project_price_million_USD": 30.342,
+        "source_asof": "2026-06-30",
+        "sponsor_review": "PPIB Scatec Sukhur BV75%/Nizamcorporate share and GEMScatecASA51%/H1Holdings49% differ in entity/sharebasis; do notoverwrite orconsolidate. Individualdetails omitted.",
+        "term_scope": "Termofproject, not inferredPPAterm",
+        "years1to10_tariff_UScent_kWh": 4.448
+      }
+    ],
+    "scope": "OneexistingSukkurthree-phasegroup. DifferentphaseCODs retained; no singlewholeplant commissioningdate, no newphaseplants, no gross-to-AC conversion, no sumofprojectprice",
+    "share_conflict_review": "Separate directlegalproject versus parent-level shareholderclaims held; no ownersfieldchanged",
+    "status_asof": "2026-06-30"
+  },
+  "field_sources": [
+    "gem_202602_recovery_20261102",
+    "ppib_20261106T0700",
+    "ppib_hnds_20261106T0700",
+    "ppib_meridian_20261106T0700",
+    "ppib_helios_20261106T0700"
+  ],
+  "now": "2026-11-06T07:20:59.290445+00:00",
+  "review": "Explicit add-only namespace resolution after API refused whole-JSON collision. Original gem_operator_evidence remains byte-equivalent as parsed; no existing values selected/overwritten."
+}

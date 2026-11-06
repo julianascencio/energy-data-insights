@@ -105,3 +105,10 @@ reviewed technical column: `column`, `value`, `unit`, `basis`, `source_id`,
 missing references are null. Dataset model references are not official registry
 IDs. These observations never automatically populate current capacity, storage
 energy, operating flow or commissioning fields.
+
+KenGen report observations retain `installed_capacity_mw`,
+`effective_capacity_mw`, `annual_generation_gwh` and `sold_energy_gwh` as distinct
+nested fields. `period` names the fiscal year ending June 30, not a calendar
+year. Values are owner-reported, with original tokens and unquantified source
+uncertainty. A dash maps to null; zero remains zero. These dated observations do
+not fill current operational capacity or status and are not added to map KPIs.

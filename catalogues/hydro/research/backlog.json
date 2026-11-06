@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-06T07:40:38.317389+00:00",
+  "reviewed_at": "2026-11-06T08:51:22.294627+00:00",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -130,7 +130,7 @@
       "accepted_enriched": 77,
       "new": 0,
       "held": 14,
-      "cursor": "Codes 3001\u20133500 complete; next 3501\u20134000 after Africa rotation"
+      "cursor": "Codes 3001–3500 complete; next 3501–4000 after Africa rotation"
     },
     {
       "source": "aha-v2.3-technical-20261105",
@@ -155,7 +155,7 @@
       "accepted_enriched": 92,
       "new": 0,
       "held": 17,
-      "cursor": "All 109 hydro-bearing plant codes in 3501\u20134000 reviewed; resume 4001\u20134500 after Oceania rotation"
+      "cursor": "All 109 hydro-bearing plant codes in 3501–4000 reviewed; resume 4001–4500 after Oceania rotation"
     },
     {
       "source": "eia860-2025-hydro-4001-4500",
@@ -167,7 +167,7 @@
       "accepted_enriched": 44,
       "new": 0,
       "held": 2,
-      "cursor": "4001\u20134500 complete; next 4501\u20135000"
+      "cursor": "4001–4500 complete; next 4501–5000"
     },
     {
       "source": "nz-ea-fleet-20260702",
@@ -232,7 +232,7 @@
       "held": 15,
       "new": 0,
       "generator_observations": 212,
-      "cursor": "Complete; resume 15001\u201320000 after Europe rotation"
+      "cursor": "Complete; resume 15001–20000 after Europe rotation"
     },
     {
       "source": "nz-ea-fleet-20260702 + nz-genesis-fy24-tuai",
@@ -254,7 +254,7 @@
       },
       "accepted_enriched": 0,
       "held": 0,
-      "cursor": "Complete; EIA resumes 55001\u201360000"
+      "cursor": "Complete; EIA resumes 55001–60000"
     },
     {
       "source": "eia860-2025-hydro-20001-50000",
@@ -265,7 +265,7 @@
       },
       "accepted_enriched": 0,
       "held": 0,
-      "cursor": "Complete; EIA resumes 55001\u201360000"
+      "cursor": "Complete; EIA resumes 55001–60000"
     },
     {
       "source": "eia860-2025-hydro-50001-55000",
@@ -276,11 +276,11 @@
       },
       "accepted_enriched": 171,
       "held": 41,
-      "cursor": "Complete; EIA resumes 55001\u201360000"
+      "cursor": "Complete; EIA resumes 55001–60000"
     },
     {
       "source": "nve-hydro-20261106 + nve-gis-20261106",
-      "partition": "First 50 remaining WRI NOR identities sorted by WRI ID, WRI1002991\u2013WRI1003149",
+      "partition": "First 50 remaining WRI NOR identities sorted by WRI ID, WRI1002991–WRI1003149",
       "accepted_enriched": 0,
       "held": 50,
       "cursor": "Screened, not resolved; next offset 50; retained raw exact-name candidates and two owner checks"
@@ -295,7 +295,7 @@
       "accepted_enriched": 61,
       "held": 11,
       "new": 0,
-      "cursor": "Complete; next EIA 60001\u201365000"
+      "cursor": "Complete; next EIA 60001–65000"
     },
     {
       "source": "nve-hydro-20261106 + nve-gis-20261106",
@@ -397,7 +397,7 @@
       "components": 6,
       "units": 42,
       "held": 11,
-      "cursor": "ONS nine missing identities, starting S\u00e3o Manoel and Baixo Igua\u00e7u; retain Simpl\u00edcio/Anta and Itaipu national-share scope holds"
+      "cursor": "ONS nine missing identities, starting São Manoel and Baixo Iguaçu; retain Simplício/Anta and Itaipu national-share scope holds"
     },
     {
       "source": "ONS nine missing identities + eight plant-level primary sources",
@@ -414,6 +414,14 @@
       "screened_existing": 100,
       "held": 100,
       "next_after_excel_row": 242
+    },
+    {
+      "source": "kengen-annual-2025-20261106",
+      "partition": "2021–2025 hydro statistics pp. 246/249",
+      "accepted_enriched": 8,
+      "new": 0,
+      "held": 5,
+      "cursor": "Complete table parsed; five new identity holds in kengen-2025-20261106.json"
     }
   ],
   "next_sources": [
@@ -422,7 +430,7 @@
       "region": "Africa",
       "url": "https://www.hydroshare.org/resource/197eab83ae424be3804ee154ed98aea8/",
       "status": "AHA v2.1/v2.2/v2.3 compared; v2.3 selected under CC BY 4.0; 26 enriched, 644 held",
-      "next_action": "Resolve retained AHA Existing rows 4\u2013242 with primary identity/phase evidence; next unscreened Existing row after 242"
+      "next_action": "Resolve retained AHA Existing rows 4–242 with primary identity/phase evidence; next unscreened Existing row after 242"
     },
     {
       "priority": 1,
@@ -458,7 +466,7 @@
       "url": "https://dadosabertos.aneel.gov.br/",
       "country": "BRA",
       "status": "180 ONS CEGs reviewed: 169 existing identities enriched, 8 new identities, 3 held",
-      "next_action": "Bandeirante exact name collision; Simpl\u00edcio/Anta plant/complex and Itaipu national-share scope reviews; Jesuita capacity discrepancy; no repeat import"
+      "next_action": "Bandeirante exact name collision; Simplício/Anta plant/complex and Itaipu national-share scope reviews; Jesuita capacity discrepancy; no repeat import"
     },
     {
       "priority": 1,
@@ -487,5 +495,6 @@
     "Europe",
     "Africa",
     "Oceania"
-  ]
+  ],
+  "kengen_next_partition": "EPRA licensed hydro identifiers for Sang’oro, Sagana, Mesco, Wanjii and Gogo; retain Congo duplicate-country holds"
 }
