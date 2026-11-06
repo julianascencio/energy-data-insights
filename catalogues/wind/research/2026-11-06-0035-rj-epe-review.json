@@ -1,0 +1,104 @@
+{
+  "batch": "2026-11-06-0035",
+  "source_id": "epe-siga-rio-de-janeiro-20260113",
+  "complete_selected_partition": true,
+  "reviewed": 1,
+  "enriched": 1,
+  "deferred": 0,
+  "new_projects": 0,
+  "new_turbines": 0,
+  "observation_date": "2026-01-13",
+  "retrieved_at": "2026-11-06T00:36:11Z",
+  "decisions": [
+    {
+      "ceg": "EOL.CV.RJ.028730-0.1",
+      "wri_gppd": "BRA0028730",
+      "object_id": 22,
+      "name": "Gargaú",
+      "decision": "enriched",
+      "reason": null,
+      "record_id": "ad2c3848-c28a-5152-b789-6e5dad481515"
+    }
+  ],
+  "all_reviewed_candidates": [
+    {
+      "ceg": "EOL.CV.RJ.028730-0.1",
+      "wri_gppd": "BRA0028730",
+      "name": "Gargaú",
+      "object_id": 22,
+      "original": {
+        "datentradaoperacao": "2010-10-28",
+        "numcoordeempreendimento": -41.07310692,
+        "dscmuninicpios": "São Francisco de Itabapoana - RJ",
+        "mdagarantiafisicakw": 7290,
+        "dscorigemcombustivel": "Eólica",
+        "sigufprincipal": "RJ",
+        "idenucleoceg": -2208976350000,
+        "datfimvigencia": "2032-10-02",
+        "dscfaseusina": "Operação",
+        "atualizacao_epe": null,
+        "nomempreendimento": "Gargaú",
+        "sigtipogeracao": "EOL",
+        "nomfontecombustivel": "Cinética do vento",
+        "idcgeracaoqualificada": "Não",
+        "dscsubbacia": null,
+        "numcoordnempreendimento": -21.56572196,
+        "datgeracaoconjuntodados": "2026-01-13",
+        "dscfontecombustivel": "Cinética do vento",
+        "datiniciovigencia": "2002-10-02",
+        "dsctipooutorga": "Autorização",
+        "mdapotenciaoutorgadakw": 28050,
+        "mdapotenciafiscalizadakw": 28050,
+        "codceg": "EOL.CV.RJ.028730-0.1",
+        "objectid": 22,
+        "dscpropriregimepariticipacao": "100% para SERENA GERACAO S.A (PIE)"
+      },
+      "normalized_power": {
+        "authorized_mw": 28.05,
+        "inspected_mw": 28.05,
+        "physical_guarantee_mw": 7.29
+      },
+      "normalization": "Original kW / 1000 to MW; separate reported categories; gross/net unspecified",
+      "geometry": {
+        "x": -41.07310691999993,
+        "y": -21.565721959354306
+      },
+      "coordinate_reference": "EPSG:4326 returned by service; native layer EPSG:4674",
+      "positional_accuracy_m": null,
+      "coordinate_semantics": "Registry point, not boundary or turbine location; decimal precision is not accuracy",
+      "observation_date": "2026-01-13",
+      "retrieved_at": "2026-11-06T00:36:11Z",
+      "source_sha256": "0464a191f98a573b9608410ed21579ab47a035038887b453cd2d879836bd2bb3",
+      "locator": "Layer0 objectid=22; codceg=EOL.CV.RJ.028730-0.1; original field names retained",
+      "scope": "Dated SIGA registry observation; no current operating-census, turbine completeness or aggregation eligibility inference"
+    }
+  ],
+  "downloads": [
+    {
+      "name": "epe-rj-0",
+      "url": "https://gisepeprd2.epe.gov.br/arcgis/rest/services/Hosted/SIGA_Eolica_Solar/FeatureServer/0/query?objectIds=22&outFields=%2A&returnGeometry=true&outSR=4326&f=json",
+      "ids": [
+        22
+      ]
+    }
+  ],
+  "checksums": {
+    "epe-rj-0.json": "0464a191f98a573b9608410ed21579ab47a035038887b453cd2d879836bd2bb3",
+    "epe-meta.json": "10422c9d9f33335889ee0bb7af9ac011151068841b589579365dc3f341741e5b",
+    "epe-rj-ids.json": "272c47ed4949ca1900bbbcdd50399ecab0ff9fda907953232b8d839a61b811af",
+    "epe-rj-ids-after.json": "272c47ed4949ca1900bbbcdd50399ecab0ff9fda907953232b8d839a61b811af"
+  },
+  "id_queries_agree": true,
+  "normalization": "Full native CEG preserved; .1/.01 suffix numeric comparison only, no checkdigit or nucleus rewriting; idenucleoceg ArcGIS date-typed field not treated as ID",
+  "exclusions": [],
+  "conflicts": [],
+  "quarantines": [],
+  "next_partition": null,
+  "access": "All original requests HTTP200; public ArcGIS EPE host is independent of previously HTTP503 ANEEL CSV; no authentication inferred",
+  "limitations": [
+    "No whole-farm lifecycle reconciliation; all six capacity summaries unchanged",
+    "Unmatched identities need historical WRI/phase crosswalk before additions",
+    "All 1 source EPE update fields null; use 2026-01-13 dataset date, not retrieval date"
+  ],
+  "continuation": "Captured all-state roster audit: 2026-11-06-0035-epe-coverage.json"
+}

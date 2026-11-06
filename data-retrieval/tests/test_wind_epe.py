@@ -282,3 +282,56 @@ def test_original_capture_replay_rejects_tampering_and_drift(tmp_path):
     ).hexdigest()
     with pytest.raises(ValueError, match="drifting"):
         verify_capture(changed, tmp_path)
+
+
+def test_complete_coverage_distinguishes_empty_missing_and_overlapping_states():
+    from energy_data_retrieval.wind_catalogue.epe import BRAZIL_STATES, audit_coverage
+
+    # Synthetic roster tests the coverage contract, not real project identities.
+    partitions = {state: [] for state in BRAZIL_STATES}
+    partitions.update(BA=[1, 2], RN=[3])
+
+    def audit(parts=partitions, **kw):
+        args = dict(expected_ids=[1, 2, 3], confirmed_ids=[3, 2, 1], unknown_state_ids=[])
+        args.update(kw)
+        return audit_coverage(parts, **args)
+
+    result = audit()
+    assert result["reviewed_ids"] == 3
+    assert result["populated_states"] == ["BA", "RN"]
+    assert len(result["empty_states"]) == 25
+    for state in BRAZIL_STATES:
+        with pytest.raises(ValueError, match="27 explicit"):
+            audit({k: v for k, v in partitions.items() if k != state})
+    with pytest.raises(ValueError, match="Overlapping"):
+        audit({**partitions, "MA": [1]})
+    with pytest.raises(ValueError, match="differ from current roster"):
+        audit({**partitions, "BA": [1]})
+    with pytest.raises(ValueError, match="roster drift"):
+        audit(confirmed_ids=[1, 2])
+    with pytest.raises(ValueError, match="Unassigned"):
+        audit(unknown_state_ids=[4])
+    for invalid in [None, [True], [1, 1], [-1], ["1"]]:
+        with pytest.raises(ValueError, match="missing is not empty"):
+            audit({**partitions, "MA": invalid})
+
+
+def test_empty_id_fixture_is_zero_but_failed_or_missing_response_is_unknown():
+    from energy_data_retrieval.wind_catalogue.epe import parse_id_response
+
+    data = FIXTURE.with_name("empty_ids.json").read_bytes()
+    digest = hashlib.sha256(data).hexdigest()
+    assert parse_id_response(data, digest) == []
+    with pytest.raises(ValueError, match="checksum mismatch"):
+        parse_id_response(data + b" ", digest)
+    for update in [
+        {"objectIds": None},
+        {"error": {"code": 503}},
+        {"exceededTransferLimit": True},
+        {"objectIdFieldName": "another"},
+        {"objectIds": [True]},
+        {"objectIds": [1, 1]},
+    ]:
+        changed = json.dumps({**json.loads(data), **update}).encode()
+        with pytest.raises(ValueError, match="unknown is not zero"):
+            parse_id_response(changed, hashlib.sha256(changed).hexdigest())

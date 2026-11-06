@@ -393,7 +393,7 @@ export function windOnsGeography(rows) {
 
 // Keep registry categories and dates visible; never sum physical guarantee as capacity.
 export function windSigaSummary(rows) {
-  const result = {projects:0, snapshots:0, withoutEvidence:0, unresolvedScopes:0, unknownLifecycles:0, dates:[], states:[],
+  const result = {projects:0, snapshots:0, locatedObservations:0, unknownLocationObservations:0, withoutEvidence:0, unresolvedScopes:0, unknownLifecycles:0, dates:[], states:[],
     categories:{authorized_mw:{known:0,unknown:0,zero:0},inspected_mw:{known:0,unknown:0,zero:0},physical_guarantee_mw:{known:0,unknown:0,zero:0}}};
   const dates=new Set(), states=new Set(), partitions=new Map();
   for (const row of rows.filter(r=>r.entity_type === "projects")) {
@@ -411,6 +411,10 @@ export function windSigaSummary(rows) {
       const key=JSON.stringify([s.source_id,s.source_sha256,s.object_id]);
       if (seen.has(key)) continue;
       seen.add(key); result.snapshots++; dates.add(s.observation_date);
+      const point=s.geometry;
+      if (point && typeof point.x === "number" && Number.isFinite(point.x) && Math.abs(point.x)<=180 &&
+          typeof point.y === "number" && Number.isFinite(point.y) && Math.abs(point.y)<=90) result.locatedObservations++;
+      else result.unknownLocationObservations++;
       if (s.original?.sigufprincipal) states.add(s.original.sigufprincipal);
       const partitionKey=JSON.stringify([s.original?.sigufprincipal || null,s.observation_date]);
       if (!partitions.has(partitionKey)) partitions.set(partitionKey, {

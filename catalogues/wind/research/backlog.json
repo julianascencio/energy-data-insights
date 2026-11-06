@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T23:37:30Z",
+  "updated_at": "2026-11-06T00:39:56Z",
   "branch": "research/wind-20261105-2235",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-2235.lock",
   "queue": [
@@ -285,7 +285,7 @@
       "release_url": "https://dadosabertos.aneel.gov.br/dataset/6d90b77c-c5f5-4d81-bdec-7bc619494bb9/resource/2f65a1b0-19b8-4360-8238-b34ab4693d55/download/siga-empreendimentos-geracao-diario.csv",
       "last_http_status": 503,
       "last_attempt_url": "https://dadosabertos.aneel.gov.br/api/3/action/resource_show?id=11ec447d-698d-4ab8-977f-b424d5deee6a",
-      "next_task": "Fresh complete MA partition, then remaining states in alphabetical order after excluding BA/RN/CE/RS/PI/PE/PB/SC. No rescan of completed sources.",
+      "next_task": "Captured EPE EOL roster exhausted. Do not repeat state queries. Reconcile saved MA Delta3 CEGs033673,033675,033680,033682,033683 against operator group/phase identities and existing ONS/WRI holdings before adding projects.",
       "independent_source": {
         "source": "ONS daily capacity generator CSV",
         "sha256": "3369cbf1e17e4523bf6194eab6334f9574b9114a6da2176af07913b66c92fd1a",
@@ -312,8 +312,12 @@
         "enriched": 10,
         "held": 8,
         "ledger": "2026-11-05-2335-sc-epe-review.json",
-        "next_where": "sigtipogeracao='EOL' AND sigufprincipal='MA'",
-        "next_task": "Fresh complete MA partition, then remaining states in alphabetical order after excluding BA/RN/CE/RS/PI/PE/PB/SC. No rescan of completed sources."
+        "next_where": null,
+        "next_task": "Captured EPE EOL roster exhausted. Do not repeat state queries. Reconcile saved MA Delta3 CEGs033673,033675,033680,033682,033683 against operator group/phase identities and existing ONS/WRI holdings before adding projects.",
+        "complete_captured_id_roster": true,
+        "reviewed_total": 1134,
+        "linked_total": 386,
+        "held_total": 748
       },
       "identity_review": "2026-11-05-1807-identity-review.json",
       "epe_completed_partitions": [
@@ -372,7 +376,65 @@
           "enriched": 10,
           "held": 8,
           "ledger": "2026-11-05-2335-sc-epe-review.json"
+        },
+        {
+          "state": "MA",
+          "selected": 16,
+          "enriched": 0,
+          "held": 16,
+          "ledger": "2026-11-06-0035-epe-review.json"
+        },
+        {
+          "state": "MG",
+          "selected": 1,
+          "enriched": 0,
+          "held": 1,
+          "ledger": "2026-11-06-0035-mg-epe-review.json"
+        },
+        {
+          "state": "PR",
+          "selected": 1,
+          "enriched": 0,
+          "held": 1,
+          "ledger": "2026-11-06-0035-pr-epe-review.json"
+        },
+        {
+          "state": "RJ",
+          "selected": 1,
+          "enriched": 1,
+          "held": 0,
+          "ledger": "2026-11-06-0035-rj-epe-review.json"
+        },
+        {
+          "state": "SE",
+          "selected": 1,
+          "enriched": 1,
+          "held": 0,
+          "ledger": "2026-11-06-0035-se-epe-review.json"
+        },
+        {
+          "state": "SP",
+          "selected": 1,
+          "enriched": 0,
+          "held": 1,
+          "ledger": "2026-11-06-0035-sp-epe-review.json"
         }
+      ],
+      "epe_coverage_audit": "2026-11-06-0035-epe-coverage.json",
+      "epe_empty_partitions": [
+        "AC",
+        "AL",
+        "AM",
+        "AP",
+        "DF",
+        "ES",
+        "GO",
+        "MS",
+        "MT",
+        "PA",
+        "RO",
+        "RR",
+        "TO"
       ]
     },
     {
@@ -434,7 +496,7 @@
       ],
       "history_decision_ledger": "2026-11-05-0835-nordex-decisions.json",
       "history_followup_ledger": "2026-11-05-0910-nordex-review.json",
-      "next_task": "Acquire actual IFC attachment ESIA - Aysha Wind Power Project-June 2026.pdf; reconcile May narrative/June filename/February operator V5 and300/300.3/306MW; explicit AyshaI/AyshaII boundary and original OEM configuration. WD230-11500 original certificate still pending.",
+      "next_task": "Obtain IFC attachment URL for June2026ESIA and original UL/IECRE WD230-11500 certificate before resolving revisions/configuration.",
       "fgw_completed": {
         "review": "2026-11-05-0945-fgw-review.json",
         "old_site_rows": 110,
@@ -448,7 +510,7 @@
       "vestas_new_review": "2026-11-05-1235-fgw-review.json",
       "knrec_review": "2026-11-05-1435-knrec-review.json",
       "original_certificate_followup": "2026-11-05-1510-oem-review.json",
-      "latest_oem_review": "2026-11-05-2335-followup.json",
+      "latest_oem_review": "2026-11-06-0035-followup.json",
       "next_exact_oem_batches": [
         "AyshaI AfDB P-ET-F00-007 originalESIA and legacy/phase crosswalk; planned300MW; Saudi60Hz equivalence prohibited",
         "Xiangshan No.1 PhaseII official project/phase identity; 2022WD225-9000 brochure observation does not establish installed revision",
@@ -499,6 +561,27 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-19",
+        "2026-09-21",
+        "2026-09-22",
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-26",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30",
         "2026-10-01",
         "2026-10-02",
         "2026-10-03",
@@ -527,36 +610,39 @@
         "2026-10-31",
         "2026-11-02",
         "2026-11-03",
-        "2026-11-04",
-        "2026-09-28",
-        "2026-09-29",
-        "2026-09-30",
-        "2026-09-24",
-        "2026-09-25",
-        "2026-09-26",
-        "2026-09-21",
-        "2026-09-22",
-        "2026-09-23",
-        "2026-09-17",
-        "2026-09-18",
-        "2026-09-19",
-        "2026-09-14",
-        "2026-09-15",
-        "2026-09-16",
-        "2026-09-10",
-        "2026-09-11",
-        "2026-09-12"
+        "2026-11-04"
       ],
       "next_dates": [
-        "2026-09-07",
-        "2026-09-08",
-        "2026-09-09"
+        "2026-09-04",
+        "2026-09-05",
+        "2026-09-06"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "September7–9 allA/Bissues. September10–12 complete5notices:3projects16plannedturbines,1solar identity hold,1generic exclusion. Original SalinasI/II/III118m configuration and shared-infrastructure scope still held.",
+      "next_task": "Review all A/B issues for September4–6, then original PE-227-DUP/AUTO/2024/10013 full approval for Viento de Sellia; no turbine inventory inferred from corrected parcel.",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-09-07",
+        "2026-09-08",
+        "2026-09-09",
+        "2026-09-10",
+        "2026-09-11",
+        "2026-09-12",
+        "2026-09-14",
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17",
+        "2026-09-18",
+        "2026-09-19",
+        "2026-09-21",
+        "2026-09-22",
+        "2026-09-23",
+        "2026-09-24",
+        "2026-09-25",
+        "2026-09-26",
+        "2026-09-28",
+        "2026-09-29",
+        "2026-09-30",
         "2026-10-01",
         "2026-10-02",
         "2026-10-03",
@@ -585,26 +671,9 @@
         "2026-10-31",
         "2026-11-02",
         "2026-11-03",
-        "2026-11-04",
-        "2026-09-28",
-        "2026-09-29",
-        "2026-09-30",
-        "2026-09-24",
-        "2026-09-25",
-        "2026-09-26",
-        "2026-09-21",
-        "2026-09-22",
-        "2026-09-23",
-        "2026-09-17",
-        "2026-09-18",
-        "2026-09-19",
-        "2026-09-14",
-        "2026-09-15",
-        "2026-09-16",
-        "2026-09-10",
-        "2026-09-11",
-        "2026-09-12"
-      ]
+        "2026-11-04"
+      ],
+      "latest_review": "2026-11-06-0035-followup.json"
     },
     {
       "rank": 10,
@@ -711,11 +780,11 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "2335 original EPE responses, snapshot builds and validation logs retained in research2335 scratch; source URLs/hashes and accepted candidates committed for reproducible reacquisition.",
+  "validation_storage": "0035 original EPE/BOE responses, snapshot builds and validation logs in research0035 scratch; source URLs/hashes/candidates committed for reacquisition.",
   "publication_continuation": {
     "branch": "research/wind-20261105-2235",
     "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-    "expected_head": "9909341090d3912caf44ec5174ae851ec13691c0",
+    "expected_head": "3abdd9719eb8fe28b26e10c300093760b815fab7",
     "pr": 184,
     "leave_open_unmerged": true
   }

@@ -1,22 +1,22 @@
 {
-  "batch": "2026-11-05-2335",
-  "base": "9909341090d3912caf44ec5174ae851ec13691c0",
+  "batch": "2026-11-06-0035",
+  "base": "3abdd9719eb8fe28b26e10c300093760b815fab7",
   "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
   "local": {
-    "python": "426 focused Wind/Hydro/reference tests passed",
-    "viewer": "35 Node viewer/Hydro tests passed",
-    "quality": "Ruff lint/format1165files,ty,hygiene,citations,diffcheck passed",
-    "docs": "Strict Wind-gallery Sphinx passed;707 HTML pages/links/assets checked; new review-outcome figure visually inspected",
-    "replay": "Original checksums, both ID inventories and full candidate reparsing verified for PE46/PB42/SC18; accepted31/12/10 unchanged. Tests reject byte tampering, ID drift and candidate changes.",
-    "preservation": "22508 prior records retained;22455 unchanged;53 enriched;411 prior sources preserved;all six capacity summaries unchanged;non-Wind catalogues unchanged",
-    "snapshots": "Two seven-file builds byte-identical;all Parquet columns ZSTD"
+    "python": "428 focused Wind/Hydro/reference tests passed",
+    "viewer": "36 Node viewer/Hydro tests passed",
+    "quality": "Ruff lint/format1166files,ty,hygiene,citations,diffcheck passed",
+    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 707 HTML pages; local links and assets resolve.; review-outcome figure visually inspected",
+    "replay": "All6new EPE partitions21entries replayed with original checksums and ID pairs;2accepted records unchanged. Full27state1134ID coverage verified against original national/empty queries.",
+    "preservation": "22508priorrecords retained;22506unchanged;2enriched;414prior sources preserved;all6capacity summaries unchanged;non-Wind catalogues unchanged",
+    "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "f032130e413d67ea404db6a9c53d0cae601d46d663488c4a83768b4852cb7ff0",
-    "projects.parquet": "9bd5ae56f9969e096f5ca9986a0bc664b0aff34f66a6e3248123d55de4d76839",
+    "manifest.json": "2793e958bcfbb0629accbc7e08ae164b495c4b016fbc8045713960477df1d88c",
+    "projects.parquet": "2d1cf05a1616cc0b822ab99f6c0c6822e3dadbff485c5ee1b0b4c470aaf21556",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "bc366ab3b3014e09b129ddfdc4a79866c97f48d33083b738cdd79891e9242ac2",
+    "sources.json": "d7a72bf33e4d6d329485121c044cc936be52739cf498e41560e37472b43aa3bb",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
   },
@@ -35,7 +35,7 @@
     },
     "added": {},
     "enriched": {
-      "projects": 89
+      "projects": 91
     },
     "main_manufacturers": 64,
     "branch_manufacturers": 64

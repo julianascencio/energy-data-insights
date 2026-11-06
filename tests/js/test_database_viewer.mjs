@@ -356,7 +356,7 @@ test("SIGA preserves dated categories, unknowns and zeros without summing capaci
     original:{sigufprincipal:"BA"},normalized_power:{authorized_mw:0,inspected_mw:null,physical_guarantee_mw:13.4}};
   const row={entity_type:"projects",sources:["epe"],extensions_json:JSON.stringify({epe_siga_snapshots:[observation,observation]})};
   assert.deepEqual(windSigaSummary([row,{...row,sources:[]},{...row,extensions_json:"null"},{...row,entity_type:"equipment"}]),
-    {projects:1,snapshots:1,withoutEvidence:2,unresolvedScopes:1,unknownLifecycles:1,dates:["2026-01-13"],states:["BA"],partitions:[{state:"BA",date:"2026-01-13",projects:1,observations:1}],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
+    {projects:1,snapshots:1,locatedObservations:0,unknownLocationObservations:1,withoutEvidence:2,unresolvedScopes:1,unknownLifecycles:1,dates:["2026-01-13"],states:["BA"],partitions:[{state:"BA",date:"2026-01-13",projects:1,observations:1}],categories:{authorized_mw:{known:1,unknown:0,zero:1},inspected_mw:{known:0,unknown:1,zero:0},physical_guarantee_mw:{known:1,unknown:0,zero:0}}});
 });
 
 test("SIGA separates dated state coverage and deduplicates project counts", async () => {
@@ -403,4 +403,17 @@ test("SIGA evidence never resolves scope or lifecycle implicitly", async () => {
     {...row,status:"unknown",aggregation_role:"independent"},{...row,status:"operating",aggregation_role:"child"}]);
   assert.equal(r.unresolvedScopes,2); assert.equal(r.unknownLifecycles,2);
   assert.equal(r.projects,4);
+});
+
+
+test("SIGA source coordinates distinguish zero from missing and invalid points", async () => {
+  const {windSigaSummary}=await import("../../docs/_static/database-core.mjs");
+  const make=(geometry,id)=>({entity_type:"projects",record_id:id,sources:["epe"],
+    latitude:1,longitude:1,extensions_json:JSON.stringify({epe_siga_snapshots:[
+      {source_id:"epe",source_sha256:"hash",object_id:id,observation_date:"2026-01-13",
+       normalized_power:{},geometry}]})});
+  const r=windSigaSummary([{x:0,y:0},null,{x:181,y:0},{x:0,y:91},{x:"0",y:0},{}].map(make));
+  assert.equal(r.locatedObservations,1);
+  assert.equal(r.unknownLocationObservations,5);
+  assert.equal(r.snapshots,6);
 });

@@ -1,0 +1,88 @@
+{
+  "batch": "2026-11-06-0035",
+  "retrieved_at": "2026-11-06T00:39:56Z",
+  "boe": {
+    "indices": [
+      {
+        "url": "https://www.boe.es/boe/dias/2026/09/07/",
+        "sha256": "8bab60035872fb9bda1bf6a40923cae60740f34c650480c099a7fa7d38d4092d",
+        "notices": []
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/09/08/",
+        "sha256": "2f32007962ea79ba496814b80a39ec05812e3e2d9ba55a3fe77e8ac6588d4273",
+        "notices": [
+          {
+            "notice_id": "BOE-B-2026-29194",
+            "title": "Resolución de fecha 18 de agosto de 2026, del Dirección General de Energía y Minería de la Consejería de Ciencia, Industria y Empleo, de rectificación de error material en los datos correspondientes a las afecciones de la parcela identificada con el número de orden 28 en la Resolución de 23 de marzo de 2026 de declaración de la utilidad pública de las instalaciones del Parque Eólico \"Viento de Sellía\". Expte. PE-227-DUP/AUTO/2024/10013."
+          }
+        ]
+      },
+      {
+        "url": "https://www.boe.es/boe/dias/2026/09/09/",
+        "sha256": "dc4b565aadb6509ec68a0863d5686994b3d7334b352d105fdfd7e0a62d21d58c",
+        "notices": [
+          {
+            "notice_id": "BOE-A-2026-18893",
+            "title": "Resolución de 28 de agosto de 2026, de la Dirección General de Calidad y Evaluación Ambiental, por la que se formula declaración de impacto ambiental del proyecto «Parques solares fotovoltaicos Colladillo y Cabeza de Mesá, de 22,05 y 27,3 MW, para hibridación con los parques eólicos Colladillo y Cabeza de Mesá, de 30,6 y 29,6 MW, ubicados en la provincia de Ávila»."
+          }
+        ]
+      }
+    ],
+    "all_discovered_issues_reviewed": true,
+    "series": [
+      "A",
+      "B"
+    ],
+    "decisions": [
+      {
+        "notice_id": "BOE-B-2026-29194",
+        "decision": "deferred",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29194",
+        "sha256": "a431458bb5bf74f4bc251fc4b580db2ca8ef89dbb49603a3ced08f9c3d7d9793",
+        "reason": "Parcel correction under PE-227-DUP/AUTO/2024/10013 (also printed AUT2024/10013): affected row28 changes WTG2 to WTG3. No complete turbine inventory, location or existing project ID crosswalk; private landholder information omitted.",
+        "published_at": "2026-09-08",
+        "locator": "Antecedentes; Resuelvo; parcel row28",
+        "original_available": true
+      },
+      {
+        "notice_id": "BOE-A-2026-18893",
+        "decision": "deferred",
+        "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18893",
+        "sha256": "f21a6eccf5a2a8d29a87179b0b56b05dfcf71d79ebdd93a4f46a514dae1f8baa",
+        "reason": "Solar hybridization environmental decision; wind Colladillo30.6MW and Cabeza de Mesa29.6MW are background quantities, not new wind authorizations. No unique catalogue name/registry crosswalk; do not assign solar electrical infrastructure or coordinates to wind farms.",
+        "published_at": "2026-09-09",
+        "locator": "Title; section1 project description and location",
+        "original_available": true
+      }
+    ],
+    "new_projects": 0,
+    "new_turbines": 0,
+    "next_dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06"
+    ]
+  },
+  "oem": {
+    "queries": [
+      "site.ul.com \"WD230\"",
+      "site.iecre.org \"WD230\"",
+      "\"ESIA - Aysha Wind Power Project-June 2026.pdf\""
+    ],
+    "result": "No original type certificate or exact IFC June attachment located. Search results returned previously reviewed OEM announcement and IFC landing page; not counted as new sources or independent certification. Irrelevant WD230 washer results rejected.",
+    "sha256": null,
+    "checksum_status": "No original target bytes acquired; unavailable",
+    "access": "Search discovery failure; not authentication or explicit reuse restriction",
+    "next_task": "Obtain IFC attachment URL for June2026ESIA and original UL/IECRE WD230-11500 certificate before resolving revisions/configuration."
+  },
+  "new_equipment": 0,
+  "exclusions": [],
+  "quarantines": [],
+  "conflicts_preserved": [
+    "AyshaI dated300/300.3/306MW observations and May/JuneESIA revision mismatch remain held"
+  ],
+  "limitations": [
+    "Targets of50projects/20equipment not met; no unsupported additions to fill quotas"
+  ]
+}

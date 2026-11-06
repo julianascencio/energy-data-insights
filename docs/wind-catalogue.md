@@ -1193,3 +1193,36 @@ research holds, not canonical capacity replacements or exact equipment links.
 IFC HTML HTTP 403 and missing attachment links are access limitations, not
 assertions of authentication or reuse restrictions. Next: Maranhão's complete
 EPE partition and the exact IFC June ESIA attachment/phase crosswalk.
+
+### Completing the captured EPE roster
+
+The November 6 00:35 batch reviews MA (16 entries) and MG, PR, RJ, SE and SP
+(one each). Two existing projects gain dated registry evidence (RJ and SE);
+19 identities remain held. Thirteen remaining states return explicit empty ID
+lists. A separate null/unknown-state query is empty. Two national ID queries
+agree on 1,134 entries, exactly matching the disjoint union of all 27 reviewed
+state partitions. Across this captured layer, 386 entries are linked and 748
+are held. This establishes source membership coverage, not a current Brazilian
+operating census or completeness of all Brazilian wind assets. No capacity
+eligibility changes; the 50-project and 20-equipment objectives are not met.
+
+```bash
+uv run python scripts/replay_wind_epe_coverage.py catalogues/wind/research/2026-11-06-0035-epe-coverage.json --originals /path/to/original-responses
+```
+
+The coverage check verifies reviewed candidate IDs, original query checksums,
+explicit empty states, disjoint partitions and matching national rosters.
+Missing/null/error/truncated responses are unknown, never zero. The offline
+fixture preserves an actual empty AC response. The gallery lists these empty
+partitions separately; the viewer distinguishes valid source registry points
+from absent coordinates, without borrowing historical WRI points or treating
+coordinate precision as positional accuracy.
+
+BOE September 7–9, all discovered Series A/B issues, yields two held notices:
+[Viento de Sellía parcel correction](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-29194)
+and [Colladillo/Cabeza de Mesá solar hybridization](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18893).
+Neither supplies an accepted wind identity crosswalk or complete turbine inventory.
+Original notice and index checksums are retained. Exact IFC June ESIA and
+WD230-11500 certificate searches did not locate the requested originals; prior
+announcements are not counted again. Next: BOE September 4–6 and the saved MA
+Delta 3 identity/phase crosswalks. Completed EPE partitions stay closed.

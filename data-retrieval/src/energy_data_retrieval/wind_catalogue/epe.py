@@ -286,3 +286,95 @@ def reconcile(
         )
         enriched.append(row)
     return sorted(enriched, key=lambda r: r["record_id"]), ledger
+
+
+BRAZIL_STATES = frozenset(
+    [
+        "AC",
+        "AL",
+        "AM",
+        "AP",
+        "BA",
+        "CE",
+        "DF",
+        "ES",
+        "GO",
+        "MA",
+        "MG",
+        "MS",
+        "MT",
+        "PA",
+        "PB",
+        "PE",
+        "PI",
+        "PR",
+        "RJ",
+        "RN",
+        "RO",
+        "RR",
+        "RS",
+        "SC",
+        "SE",
+        "SP",
+        "TO",
+    ]
+)
+
+
+def audit_coverage(
+    partitions: dict[str, list[int]],
+    *,
+    expected_ids: list[int],
+    confirmed_ids: list[int],
+    unknown_state_ids: list[int],
+) -> dict[str, Any]:
+    """Check saved partition identities against a fresh complete service roster.
+
+    An empty partition is an explicit empty ID list, never an absent query or
+    null response. This proves ID coverage at capture time only, not accuracy,
+    project acceptance, lifecycle completeness, or a current operating census.
+    """
+    if set(partitions) != BRAZIL_STATES:
+        raise ValueError("Coverage requires all 27 explicit state partitions")
+    lists = [*partitions.values(), expected_ids, confirmed_ids, unknown_state_ids]
+    if any(
+        not isinstance(ids, list)
+        or any(type(i) is not int or i < 0 for i in ids)
+        or len(ids) != len(set(ids))
+        for ids in lists
+    ):
+        raise ValueError("Invalid coverage IDs; missing is not empty")
+    if set(expected_ids) != set(confirmed_ids):
+        raise ValueError("National EPE roster drift")
+    if unknown_state_ids:
+        raise ValueError("Unassigned state identities require separate review")
+    combined = [i for ids in partitions.values() for i in ids]
+    if len(combined) != len(set(combined)):
+        raise ValueError("Overlapping EPE state partitions")
+    if set(combined) != set(expected_ids):
+        raise ValueError("Saved EPE partitions differ from current roster")
+    return dict(
+        reviewed_ids=len(combined),
+        populated_states=sorted(s for s, ids in partitions.items() if ids),
+        empty_states=sorted(s for s, ids in partitions.items() if not ids),
+        unassigned_ids=0,
+        scope="EPE-hosted SIGA EOL roster at capture; not a current operating census",
+    )
+
+
+def parse_id_response(data: bytes, sha256: str) -> list[int]:
+    """Read a checksum-pinned ArcGIS ID response; errors/null are not zero."""
+    if hashlib.sha256(data).hexdigest() != sha256:
+        raise ValueError("EPE ID response checksum mismatch")
+    doc = json.loads(data)
+    ids = doc.get("objectIds")
+    if (
+        "error" in doc
+        or doc.get("objectIdFieldName") != "objectid"
+        or doc.get("exceededTransferLimit") is True
+        or not isinstance(ids, list)
+        or any(type(i) is not int or i < 0 for i in ids)
+        or len(set(ids)) != len(ids)
+    ):
+        raise ValueError("Invalid EPE ID response; unknown is not zero")
+    return sorted(ids)
