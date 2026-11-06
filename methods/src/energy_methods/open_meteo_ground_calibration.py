@@ -9,8 +9,6 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from energy_methods.weather_calibration import fit_monthly_bias
-
 OPERATIONS = {
     "temperature_c": "add",
     "relative_humidity_percent": "add",
