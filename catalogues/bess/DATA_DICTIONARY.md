@@ -116,3 +116,17 @@ COD. Source disagreement can leave canonical energy null while preserving other
 verified fields. Project product-family mentions do not assign an exact equipment
 configuration. Existing ownership, site locality and rating conflicts survive
 additive enrichment.
+
+### INTILION reference and owner reconciliation
+
+`intilion_contract` records site-specific contracted ratings, forecast months,
+service/availability conditions and unallocated two-site container totals. A
+project-start month is not physical construction or COD. `intilion_reference`
+preserves customer roles, unconverted MVA, equipment-family mentions and site
+boundaries. Customers and equal investment shares do not establish ownership.
+`owner_registry_reconciliation` retains component models, grid versus battery
+ratings, commissioning versus commercial operation and registry identifiers.
+Kappel's final 80 MWh/30 MW expansion is a target, not operating scalar capacity.
+Lehe's 3.1104 MWh is explicitly usable; earlier unspecified 3.5/3.6 MWh observations
+remain unresolved. Phoenix's separate charging-park booster is outside the
+central-system record. Source-reported WGS84 coordinates are not centroids.

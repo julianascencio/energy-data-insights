@@ -156,3 +156,18 @@ energy at 90% DoD, apparent-power upper bounds, approximate/strict mass qualifie
 and time-versus-throughput warranty limits. The scalepac5 throughput `>` qualifier
 is retained verbatim. Supplier role is system integrator, not cell manufacturer.
 System-level RTE is not transferred to each tabulated enclosure configuration.
+
+### INTILION i4, IAU and scalepac boundaries
+
+`intilion_i4` represents the named two-container/one-PCS BESU. Example usable
+AC energy at BOL remains customer-specific; internal container kWh is not
+a complete-system energy scalar. PCS enclosure, inverter electrical limits,
+peak conversion efficiency, transformer losses and switchgear fault ratings
+retain component boundaries. MVA is never inferred MW. Optional IAU protocols
+are not included hardware. Noise/design-life footnote ambiguity stays held.
+`intilion_iau` represents the named supervisory controller, with no battery
+energy/power assigned. Eight-BESU versus 64-BESU scaling claims remain in
+conflicts; planned 24-ICU expansion is not current functionality.
+`intilion_scalepac_grid` retains per-power-unit AC currents, not a sum across
+a cabinet configuration. The 110%/minimum-ten-minute overload observation is
+not a continuous active-power rating. No anonymous components become models.
