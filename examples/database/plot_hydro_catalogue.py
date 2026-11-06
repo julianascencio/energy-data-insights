@@ -129,3 +129,8 @@ print(
     "ERA historical project identities:",
     sum("era_planned_inventory" in json.loads(r["extensions_json"]) for r in rows),
 )
+
+print(
+    "Nepal DoED reviewed licence identities:",
+    sum("doed_inventory" in json.loads(r["extensions_json"]) for r in rows),
+)

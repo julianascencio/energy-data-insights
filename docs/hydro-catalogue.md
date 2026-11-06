@@ -803,3 +803,14 @@ the identities, while unresolved physical capacities remain excluded from KPIs.
 The source `ueccc_orio_tender_2020` is listed in the formal references. Replay with
 `scripts/accept_hydro_era_planned.py`; optional `--text` verifies the full parsed
 Annex partition. Six older identity matches, Swam, Rushobe and Kisonko remain held.
+
+Nepal DoED construction licences now contribute 82 new reviewed identities and
+82 licensed-MW observations, bringing coverage to 7,304 records in 128 countries.
+Rows 1–100 were reviewed; 18 remain held. All 262 source rows were parsed for
+identity collisions, but later rows are not accepted yet. Full licence IDs,
+rivers, promoters, districts, source date strings and four coordinate bounds
+are retained. No current operation, installed MW, Gregorian date conversion or
+point coordinates are inferred. The shared viewer counts these records but
+excludes unresolved capacities and unmapped locations. See
+`nepal_doed_construction_hydro_2026` in the formal references and replay with
+`scripts/accept_hydro_doed.py` (optional `--html` source verification).

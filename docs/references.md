@@ -7911,3 +7911,11 @@ Uganda Energy Credit Capitalisation Company (2020). **Pre-Qualification of Bidde
 **Role:** data_source. Published 29 September 2020; procurement-stage plant ratings are not installed/current capacities. Limited factual transcription; no open licence assumed.
 
 **Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`.
+
+### nepal_doed_construction_hydro_2026
+
+Department of Electricity Development, Government of Nepal (2026). **Construction License :: Hydro (More than 1MW)**. [Source](https://doed.gov.np/pages/clhydromorethan1/)
+
+**Role:** data_source. Public official factual licence inventory; no explicit open bulk-reuse licence identified. Selected factual rows with attribution; original HTML, layout and prose not redistributed. Retrieval year, not asserted publication year.
+
+**Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`.

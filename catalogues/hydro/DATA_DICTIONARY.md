@@ -149,3 +149,11 @@ ERA construction/licensed records use `observations_json` for historical
 summed. `extensions_json.era_planned_inventory` preserves the joint lifecycle
 group, unknown commissioning and report grid designation. `era_planned_review`
 retains the frozen catalogue accession and explicit identity decision.
+
+Nepal `observations_json.licensed_capacity_mw` is the official licence rating,
+with retrieval date as period because measurement vintage is unspecified.
+`extensions_json.doed_inventory` preserves source issue/validity strings,
+four bounding coordinates and district labels. No calendar conversion or
+bounding-box midpoint is inferred. The source promoter populates developer names
+with that explicit role qualification; it is not verified ownership. The full
+licence string defines identity; duplicate names are held for review.

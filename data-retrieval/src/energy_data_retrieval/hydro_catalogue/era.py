@@ -153,7 +153,7 @@ def accept_new(
             continue
         names = {name_key(n) for n in [row["name"], *row["aliases"]]}
         for prior in existing + new:
-            if prior["country_code"] == "UGA" and names & {
+            if prior["country_code"] == row["country_code"] and names & {
                 name_key(n) for n in [prior["name"], *(prior.get("aliases") or [])]
             }:
                 raise ValueError("Name collision requires identity review")

@@ -152,3 +152,20 @@ aliases of Warugo/Nyahuka. Six older ERA identity matches and Swam remain held.
 Replay: `scripts/accept_hydro_era_planned.py --text /path/to/report-layout.txt`.
 Omit `--text` for offline reviewed-evidence replay. See the new acceptance and
 validation ledgers. Next research partition rotates to Asian national inventories.
+
+The Nepal DoED >1 MW construction-licence batch reviews source rows 1–100:
+**82 new identities**, 18 held for duplicate names or potential historical
+phase/scope overlap. Coverage becomes **7,304 records / 128 countries**, including
+94 Nepal records. The complete 262-row source was parsed for duplicate IDs and
+names; acceptance review stops at row 100. Next partition is rows 101–200.
+
+Records retain full licence numbers (including leading zeros), licensed MW,
+rivers, source promoters, districts, raw issue/validity dates and four coordinate
+bounds. Licence membership does not establish current construction or operation.
+Source calendar dates are not converted; bounding boxes never become plant points.
+Unknown current status and physical aggregation remain unresolved, so these
+ratings stay excluded from additive capacity KPIs. Promoters are not asserted
+owners/operators. The contact/address column is omitted. Source attribution:
+`nepal_doed_construction_hydro_2026`; no open bulk-reuse licence is assumed.
+Replay: `scripts/accept_hydro_doed.py --html /path/to/doed-table.html`;
+omit `--html` for offline reviewed-evidence replay.
