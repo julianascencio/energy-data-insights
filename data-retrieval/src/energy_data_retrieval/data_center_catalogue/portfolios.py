@@ -919,6 +919,198 @@ def parse_digital_realty_nbo2_release(content: bytes, *, source_url: str) -> dic
     }
 
 
+def parse_green_mountain_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete current Green Mountain site list and lifecycle split."""
+    if urlsplit(source_url).hostname not in {"greenmountain.no", "www.greenmountain.no"}:
+        raise ValueError("Expected official Green Mountain URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    expected = {
+        "SVG-Rennesøy": "operational",
+        "TEL-Rjukan": "operational",
+        "OSL-Enebakk": "operational",
+        "OSL-Hamar": "operational",
+        "LON-East": "operational",
+        "FRA-Mainz": "under_construction",
+        "SVG-Undheim": "under_construction",
+    }
+    required = (
+        "currently operates four different data center sites in Norway and one the UK",
+        "data center under construction in Undheim, Norway and one in Mainz, Germany",
+    )
+    if not all(marker.casefold() in text.casefold() for marker in required):
+        raise ValueError("Changed Green Mountain portfolio lifecycle shape")
+    for code in expected:
+        if code not in text:
+            raise ValueError("Changed Green Mountain portfolio identity shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [
+            {
+                "external_id": code,
+                "status": status,
+                "locator": f"current data-centers portfolio / {code}",
+            }
+            for code, status in expected.items()
+        ],
+        "review_required": True,
+    }
+
+
+def parse_green_mountain_facility_page(
+    content: bytes, *, source_url: str, expected_code: str | None = None
+) -> dict[str, Any]:
+    """Stage bounded public design facts from one Green Mountain site page."""
+    if urlsplit(source_url).hostname not in {"greenmountain.no", "www.greenmountain.no"}:
+        raise ValueError("Expected official Green Mountain URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    codes = [
+        code
+        for code in (
+            "SVG-Rennesøy",
+            "TEL-Rjukan",
+            "OSL-Enebakk",
+            "OSL-Hamar",
+            "LON-East",
+            "FRA-Mainz",
+            "SVG-Undheim",
+        )
+        if re.search(rf"Data Centers\s+{re.escape(code)}\b", text)
+    ]
+    if len(codes) != 1:
+        raise ValueError("Changed Green Mountain site identity shape")
+    code = codes[0]
+    if expected_code is not None and code != expected_code:
+        raise ValueError("Changed Green Mountain site identity")
+
+    def number(pattern: str, label: str) -> float | None:
+        values: list[float] = []
+        for match in re.findall(pattern, text, re.IGNORECASE):
+            token = match.replace(" ", "").replace(",", "")
+            if re.fullmatch(r"\d{1,3}(?:\.\d{3})+", token):
+                token = token.replace(".", "")
+            value = float(token)
+            if value not in values:
+                values.append(value)
+        if len(values) > 1:
+            raise ValueError(f"Changed Green Mountain {label} shape")
+        return values[0] if values else None
+
+    candidate: dict[str, Any] = {
+        "external_id": code,
+        "campus_area_m2": number(
+            r"(\d(?:[\d .]*\d)?)\s*m2\s+Total Campus Footprint", "campus-area"
+        ),
+        "total_it_capacity_mw": number(r"([\d.]+)\s*MW\s+Total IT Capacity", "total-IT-capacity"),
+        "potential_site_capacity_mw": number(
+            r"([\d.]+)\s*MW\s+Potential Site Capacity", "potential-site-capacity"
+        ),
+        "total_site_capacity_mw": number(
+            r"([\d.]+)\s*MW\s+Total Site Capacity", "total-site-capacity"
+        ),
+        "secured_power_capacity_mw": number(
+            r"([\d.]+)\s*MW\s+Secured Power Capacity", "secured-power"
+        ),
+        "power_capacity_mw": number(r"([\d.]+)\s*MW\s+Power Capacity", "power-capacity"),
+        "average_pue": number(r"([\d.]+)\s+Average PUE", "average-PUE"),
+        "grid_supplies": number(r"([\d.]+)\s+Grid [Ss]upplies", "grid-supplies"),
+        "building_count": number(r"([\d.]+)\s+Buildings\s+Campus Size", "buildings"),
+        "it_space_m2": number(r"Power Capacity\s+(\d(?:[\d .]*\d)?)\s*m2\s+IT Space", "IT-space"),
+        "existing_it_space_m2": number(
+            r"(\d(?:[\d .]*\d)?)\s*m2\s+of IT space in existing buildings",
+            "existing-IT-space",
+        ),
+        "planned_it_space_m2": number(
+            r"(\d(?:[\d .]*\d)?)\s+IT space in planned buildings", "planned-IT-space"
+        ),
+        "locator": f"current {code} site page / public metric cards and narrative",
+    }
+    if code == "TEL-Rjukan":
+        if "1 .08\u2013 1.20 Average PUE" not in text or "site consists of 4 buildings" not in text:
+            raise ValueError("Changed TEL-Rjukan PUE/building shape")
+        candidate.update(
+            {
+                "average_pue": None,
+                "average_pue_min": 1.08,
+                "average_pue_max": 1.20,
+                "building_count": 4,
+            }
+        )
+    elif code == "OSL-Enebakk":
+        markers = (
+            "line-of-sight capacity of 94 MW",
+            "first 4 MW building was completed in October 2020",
+            "new 14,5 MW colocation building was completed",
+            "In 2024, another 10 MW building was completed",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed OSL-Enebakk building narrative")
+        candidate["building_count"] = 3
+    elif code == "OSL-Hamar":
+        markers = (
+            "initial three buildings are now fully complete and in operation",
+            "entire 90 MW capacity",
+            "option to expand their capacity to 150 MW",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed OSL-Hamar phase narrative")
+        candidate.update({"building_count": 5, "operational_it_capacity_mw": 90.0})
+    elif code == "LON-East":
+        if (
+            "30 MW of new capacity secured" not in text
+            or "Maximum cooling capacity: 40 MW" not in text
+        ):
+            raise ValueError("Changed LON-East capacity narrative")
+        candidate.update(
+            {
+                "existing_space_m2": number(
+                    r"(\d(?:[\d .]*\d)?)\s*m2\s+Space in existing building",
+                    "existing-space",
+                ),
+                "construction_space_m2": number(
+                    r"(\d(?:[\d .]*\d)?)\s*m2\s+Space currently in construction",
+                    "construction-space",
+                ),
+                "new_secured_capacity_mw": 30.0,
+                "maximum_cooling_capacity_mw": 40.0,
+            }
+        )
+    elif code == "FRA-Mainz":
+        markers = (
+            "new 54 MW data center site in Mainz",
+            "three planned data center buildings",
+            "Ready for service: Q4 2026",
+            "Power Capacity: 54 MW (80 MW in 2026)",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed FRA-Mainz construction/capacity narrative")
+        candidate.update({"future_power_capacity_mw": 80.0, "building_count": 3})
+    elif code == "SVG-Undheim":
+        markers = (
+            "two interconnected data center buildings",
+            "total IT capacity of 80 MW",
+            "Construction is currently underway",
+            "full completion scheduled for 2028",
+        )
+        if not all(marker in text for marker in markers):
+            raise ValueError("Changed SVG-Undheim construction/capacity narrative")
+        candidate.update({"total_it_capacity_mw": 80.0, "building_count": 2})
+    elif code == "SVG-Rennesøy":
+        if "Build Year: 2013" not in text or "6 mountain halls" not in text:
+            raise ValueError("Changed SVG-Rennesøy facility narrative")
+        candidate["building_count"] = 6
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
 def parse_vertiv_powerups6000_table(
     content: bytes, *, source_url: str, expected_count: int | None = None
 ) -> dict[str, Any]:

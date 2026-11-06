@@ -23,6 +23,8 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_carrier_19dv_table,
     parse_cummins_generator_table,
     parse_digital_realty_nbo2_release,
+    parse_green_mountain_facility_page,
+    parse_green_mountain_portfolio,
     parse_icolo_facility_page,
     parse_icolo_home_portfolio,
     parse_meta_locations,
@@ -329,6 +331,40 @@ def test_icolo_parsers_keep_exact_current_metrics_and_capacity_boundaries():
         )
     with pytest.raises(ValueError, match="official iColo"):
         parse_icolo_home_portfolio(b"", source_url="https://example.com/")
+
+
+def test_green_mountain_parsers_preserve_site_and_capacity_boundaries():
+    portfolio = parse_green_mountain_portfolio(
+        (FIXTURES / "green-mountain-portfolio.html").read_bytes(),
+        source_url="https://greenmountain.no/data-centers/",
+    )
+    assert [(row["external_id"], row["status"]) for row in portfolio["candidates"]] == [
+        ("SVG-Rennesøy", "operational"),
+        ("TEL-Rjukan", "operational"),
+        ("OSL-Enebakk", "operational"),
+        ("OSL-Hamar", "operational"),
+        ("LON-East", "operational"),
+        ("FRA-Mainz", "under_construction"),
+        ("SVG-Undheim", "under_construction"),
+    ]
+    facility = parse_green_mountain_facility_page(
+        (FIXTURES / "green-mountain-facility.html").read_bytes(),
+        source_url="https://greenmountain.no/data-center/osl-enebakk/",
+        expected_code="OSL-Enebakk",
+    )["candidate"]
+    assert facility["campus_area_m2"] == 72200
+    assert facility["total_it_capacity_mw"] == 75
+    assert facility["average_pue"] == 1.2
+    assert facility["grid_supplies"] == 2
+    assert facility["building_count"] == 3
+    with pytest.raises(ValueError, match="site identity"):
+        parse_green_mountain_facility_page(
+            (FIXTURES / "green-mountain-facility.html").read_bytes(),
+            source_url="https://greenmountain.no/data-center/osl-enebakk/",
+            expected_code="OSL-Hamar",
+        )
+    with pytest.raises(ValueError, match="official Green Mountain"):
+        parse_green_mountain_portfolio(b"", source_url="https://example.com/")
 
 
 def test_vertiv_powerups_parser_keeps_only_explicit_topology_ratings():
