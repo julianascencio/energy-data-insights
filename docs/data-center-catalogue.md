@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 533 project records across 38 countries:
-409 facilities, three phases and 121 explicitly scoped campus aggregates, from 15 operators.
+The current continuation branch has 538 project records across 38 countries:
+413 facilities, three phases and 122 explicitly scoped campus aggregates, from 16 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 

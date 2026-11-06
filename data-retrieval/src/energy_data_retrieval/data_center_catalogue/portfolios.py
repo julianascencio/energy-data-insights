@@ -959,6 +959,176 @@ def parse_green_mountain_portfolio(content: bytes, *, source_url: str) -> dict[s
     }
 
 
+def parse_glesys_owned_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete current GleSYS owned-location directory."""
+    if urlsplit(source_url).hostname not in {"glesys.com", "www.glesys.com"}:
+        raise ValueError("Expected official GleSYS URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    if "Most of our services run from our own data centers" not in text:
+        raise ValueError("Changed GleSYS owned-portfolio shape")
+    expected = (
+        ("falkenberg", "Falkenberg", "facility"),
+        ("oulu", "Oulu", "campus"),
+        ("pori", "Pori", "facility"),
+        ("stockholm", "Stockholm", "facility"),
+        ("tampere", "Tampere", "facility"),
+    )
+    for _, name, _ in expected:
+        if text.count(name) < 2:
+            raise ValueError("Changed GleSYS owned-portfolio identity shape")
+    if "three enterprise data centers and Campus Oulu" not in text:
+        raise ValueError("Changed GleSYS Oulu aggregate shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [
+            {
+                "external_id": slug,
+                "name": name,
+                "record_scope": scope,
+                "status": "operational",
+                "locator": f"current owned data-center directory / {name}",
+            }
+            for slug, name, scope in expected
+        ],
+        "review_required": True,
+    }
+
+
+def parse_glesys_site_page(
+    content: bytes, *, source_url: str, expected_site: str | None = None
+) -> dict[str, Any]:
+    """Stage bounded public metrics from one current GleSYS owned-site page."""
+    if urlsplit(source_url).hostname not in {"glesys.com", "www.glesys.com"}:
+        raise ValueError("Expected official GleSYS URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    sites = [
+        site
+        for site in ("Falkenberg", "Oulu", "Pori", "Stockholm", "Tampere")
+        if f"{site} data center" in text
+    ]
+    if len(sites) != 1:
+        raise ValueError("Changed GleSYS site identity shape")
+    site = sites[0]
+    if expected_site is not None and site != expected_site:
+        raise ValueError("Changed GleSYS site identity")
+    metric_start = text.find(
+        "Figures that reflect our Oulu operations"
+        if site == "Oulu"
+        else f"Metrics of our {site} facility"
+    )
+    if metric_start < 0:
+        metric_start = text.find(f"Key metrics of our {site} facility")
+    metric_end = text.find("Built for performance", metric_start)
+    if site == "Oulu":
+        metric_end = text.find("Room to scale AI in Europe", metric_start)
+    if metric_start < 0 or metric_end < 0:
+        raise ValueError("Changed GleSYS metric-card shape")
+    metrics = text[metric_start:metric_end]
+
+    def one(pattern: str, label: str) -> float | None:
+        values = list(dict.fromkeys(float(value) for value in re.findall(pattern, metrics)))
+        if len(values) > 1:
+            raise ValueError(f"Changed GleSYS {label} shape")
+        return values[0] if values else None
+
+    candidate: dict[str, Any] = {
+        "external_id": site.casefold(),
+        "pue": one(r"(\d+(?:\.\d+)?)\s+PUE\b", "PUE"),
+        "renewable_electricity_pct": one(
+            r"(\d+(?:\.\d+)?)\s+%\s+Powered entirely by renewable electricity",
+            "renewable-electricity",
+        ),
+        "rack_density_kw": one(r"(\d+(?:\.\d+)?)\s+(?:max )?kW/rack", "rack-density"),
+        "reported_power_mw": one(r"(\d+(?:\.\d+)?)\s+MW\b", "power-capacity"),
+        "data_center_count": one(r"(\d+(?:\.\d+)?)\s+data centers\b", "site-count"),
+        "locator": f"current {site} page / public metric cards and narrative",
+    }
+    if site == "Falkenberg":
+        required = (
+            "With up to 43 kW per rack aircooled",
+            "achieving a PUE of 1.2",
+            "With a total capacity of 5 MW",
+        )
+        if not all(marker in text for marker in required):
+            raise ValueError("Changed GleSYS Falkenberg conflict shape")
+        candidate.update(
+            {
+                "conflicting_pue": 1.2,
+                "conflicting_rack_density_kw": 43.0,
+                "conflicting_reported_power_mw": 5.0,
+            }
+        )
+    elif site == "Oulu":
+        required = (
+            "Our three data centers at Elektroniikkatie 5, Elektroniikkatie 15 "
+            "and Yrttipellontie 1",
+            "Campus Oulu adds room to scale AI and HPC workloads with up to "
+            "300 MW of planned capacity",
+            "Four interconnected data centers",
+            "Across the three sites, up to 22 kW per rack",
+            "With PUE values as low as 1.3",
+            "has capacity available now, and is being built out in phases toward "
+            "300 MW of planned capacity",
+        )
+        if not all(marker in text for marker in required):
+            raise ValueError("Changed GleSYS Oulu campus shape")
+        candidate.update(
+            {
+                "established_site_count": 3,
+                "established_rack_density_kw": 22.0,
+                "established_pue_lower_bound": 1.3,
+                "campus_oulu_planned_capacity_mw": 300.0,
+            }
+        )
+    elif site == "Stockholm":
+        area = re.search(r"providing\s+(\d+)\s+m² of premium colocation space", text)
+        if area is None:
+            raise ValueError("Changed GleSYS Stockholm area shape")
+        candidate["reported_colocation_space_m2"] = float(area.group(1))
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_glesys_finland_integration(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the completed ownership transition for Pori and Tampere."""
+    if urlsplit(source_url).hostname not in {"glesys.com", "www.glesys.com"}:
+        raise ValueError("Expected official GleSYS URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    required = (
+        "completed the integration of private cloud services and two Finnish data "
+        "centers previously operated under Verne",
+        "production environments now operating in Helsinki, Pori, and Tampere",
+        "transition was completed without any service disruption",
+    )
+    if not all(marker in text for marker in required):
+        raise ValueError("Changed GleSYS Finland integration shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [
+            {
+                "external_id": site.casefold(),
+                "status": "operational",
+                "former_operator": "Verne",
+                "locator": "2026 completed-integration announcement",
+            }
+            for site in ("Pori", "Tampere")
+        ],
+        "review_required": True,
+    }
+
+
 def parse_green_mountain_facility_page(
     content: bytes, *, source_url: str, expected_code: str | None = None
 ) -> dict[str, Any]:

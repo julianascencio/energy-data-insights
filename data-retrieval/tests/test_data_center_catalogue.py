@@ -23,6 +23,9 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_carrier_19dv_table,
     parse_cummins_generator_table,
     parse_digital_realty_nbo2_release,
+    parse_glesys_finland_integration,
+    parse_glesys_owned_portfolio,
+    parse_glesys_site_page,
     parse_green_mountain_facility_page,
     parse_green_mountain_portfolio,
     parse_icolo_facility_page,
@@ -365,6 +368,45 @@ def test_green_mountain_parsers_preserve_site_and_capacity_boundaries():
         )
     with pytest.raises(ValueError, match="official Green Mountain"):
         parse_green_mountain_portfolio(b"", source_url="https://example.com/")
+
+
+def test_glesys_parsers_preserve_owned_sites_and_conflicts():
+    portfolio = parse_glesys_owned_portfolio(
+        (FIXTURES / "glesys-portfolio.html").read_bytes(),
+        source_url="https://glesys.com/locations/our-data-centers/",
+    )
+    assert [(row["external_id"], row["record_scope"]) for row in portfolio["candidates"]] == [
+        ("falkenberg", "facility"),
+        ("oulu", "campus"),
+        ("pori", "facility"),
+        ("stockholm", "facility"),
+        ("tampere", "facility"),
+    ]
+    falkenberg = parse_glesys_site_page(
+        (FIXTURES / "glesys-falkenberg.html").read_bytes(),
+        source_url="https://glesys.com/locations/our-data-centers/falkenberg/",
+        expected_site="Falkenberg",
+    )["candidate"]
+    assert falkenberg["reported_power_mw"] == 10
+    assert falkenberg["conflicting_reported_power_mw"] == 5
+    assert falkenberg["pue"] == 1.1
+    assert falkenberg["conflicting_pue"] == 1.2
+    integration = parse_glesys_finland_integration(
+        (FIXTURES / "glesys-integration.html").read_bytes(),
+        source_url=(
+            "https://glesys.com/blog/glesys-strengthens-its-nordic-footprint-through-full-"
+            "integration-of-private-cloud-operations-in-finland/"
+        ),
+    )
+    assert [row["external_id"] for row in integration["candidates"]] == ["pori", "tampere"]
+    with pytest.raises(ValueError, match="site identity"):
+        parse_glesys_site_page(
+            (FIXTURES / "glesys-falkenberg.html").read_bytes(),
+            source_url="https://glesys.com/locations/our-data-centers/falkenberg/",
+            expected_site="Stockholm",
+        )
+    with pytest.raises(ValueError, match="official GleSYS"):
+        parse_glesys_owned_portfolio(b"", source_url="https://example.com/")
 
 
 def test_vertiv_powerups_parser_keeps_only_explicit_topology_ratings():

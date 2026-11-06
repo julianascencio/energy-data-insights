@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-06T00:24:00Z",
+  "updated_at": "2026-11-06T00:52:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -131,7 +131,8 @@
     "doe_ccms_ups_displayed_rows": 50,
     "icolo_current_east_africa_facilities": 5,
     "digital_realty_nairobi_campus_aggregates": 1,
-    "green_mountain_current_sites": 7
+    "green_mountain_current_sites": 7,
+    "glesys_current_owned_locations": 5
   },
   "next_batches": [
     {
@@ -360,6 +361,23 @@
         "Obtain dated commissioning evidence for OSL-Hamar buildings and exact building identity for the 90 MW operating portion",
         "Resolve FRA-Mainz 54 MW current versus parenthetical 80 MW in 2026 power statements without treating either as IT capacity"
       ]
+    },
+    {
+      "rank": 13,
+      "source": "Glesys exact Oulu child sites and capacity-boundary continuation",
+      "urls": [
+        "https://glesys.com/locations/our-data-centers/",
+        "https://glesys.com/locations/our-data-centers/oulu/",
+        "https://glesys.com/campus-oulu/"
+      ],
+      "offset": 5,
+      "scope": "The complete current five-entry owned-location directory is processed: four independent facilities and one Oulu four-site campus aggregate. Continue only with exact current child-site identities, lifecycle evidence and boundary-qualified IT/grid/facility ratings.",
+      "questions": [
+        "Do not recount the five owned-location directory entries or invent Oulu child records from street-address mentions alone",
+        "Resolve Falkenberg 10 MW versus 5 MW, 1.1 versus 1.2 PUE and 44 versus 43 kW/rack conflicts before scalar normalization",
+        "Keep Oulu's three established sites separate from Campus Oulu's phased 300 MW planned capacity and 250 kW/rack claim",
+        "Treat Pori, Stockholm and Tampere power cards as unclassified observations until IT, grid or facility boundaries are stated"
+      ]
     }
   ],
   "holds": [
@@ -497,10 +515,10 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "green-mountain-portfolio-20261106T002400Z",
+    "run_id": "glesys-owned-sites-20261106T005200Z",
     "report": "2026-11-06-report.md",
-    "validation": "2026-11-06T0024-validation.json",
-    "added_projects": 7,
+    "validation": "2026-11-06T0052-validation.json",
+    "added_projects": 5,
     "enriched_projects": 0,
     "added_equipment": 0,
     "branch": "research/data-center-database-20261105T2217Z"
