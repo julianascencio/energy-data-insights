@@ -1,0 +1,539 @@
+{
+  "reviewed_at": "2026-11-06T09:40:21.310178+00:00",
+  "accepted": [
+    {
+      "record_id": "962b6a33-95c1-5838-9531-4b224b711f8f",
+      "name": "Masinga",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "commissioning_year_reported",
+          "value": 1981,
+          "unit": "year",
+          "basis": "Owner year; historical WRI date differs",
+          "locator": "Masinga station section; commissioning_year_reported",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "reservoir_total_volume",
+          "value": 1560000000,
+          "unit": "m3",
+          "basis": "1.56 billion cubic metres; total not usable",
+          "locator": "Masinga station section; reservoir_total_volume",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "generators",
+          "value": {
+            "count": 2,
+            "each_mw": 20
+          },
+          "unit": null,
+          "basis": "Owner station description; no current effective rating",
+          "locator": "Masinga station section; generators",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "d45a1439-dfbc-5328-99cb-7c18478fea73",
+      "name": "Kamburu",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "turbine_type",
+          "value": "Francis",
+          "unit": null,
+          "basis": "Owner runner description",
+          "locator": "Kamburu station section; turbine_type",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "generators",
+          "value": {
+            "count": 3,
+            "voltage_kv": 11,
+            "cooling": "water"
+          },
+          "unit": null,
+          "basis": "Owner generator group",
+          "locator": "Kamburu station section; generators",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "rivers",
+          "value": [
+            "Thiba",
+            "Tana"
+          ],
+          "unit": null,
+          "basis": "Source watercourses",
+          "locator": "Kamburu station section; rivers",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "tailrace_length",
+          "value": 2.9,
+          "unit": "km",
+          "basis": "Tailrace to Gitaru",
+          "locator": "Kamburu station section; tailrace_length",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "circuits": 2,
+            "voltage_kv": 220,
+            "destination": "Nairobi"
+          },
+          "unit": null,
+          "basis": "Owner transmission description",
+          "locator": "Kamburu station section; transmission",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "edac4f21-6841-572b-ac1d-257fdfad1829",
+      "name": "Gitaru",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "original_generators",
+          "value": {
+            "count": 2,
+            "each_mva": 85,
+            "net_head_m": 135,
+            "turbine": "vertical Francis"
+          },
+          "unit": null,
+          "basis": "Apparent MVA not active MW; head applies described two units",
+          "locator": "Gitaru station section; original_generators",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "additional_unit",
+          "value": {
+            "year": 1999,
+            "mw": 80,
+            "generator_kv": 15,
+            "grid_kv": 220
+          },
+          "unit": null,
+          "basis": "Separate third unit; no MVA/MW sum",
+          "locator": "Gitaru station section; additional_unit",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "tailrace_length",
+          "value": 4.7,
+          "unit": "km",
+          "basis": "Tailrace to Kindaruma",
+          "locator": "Gitaru station section; tailrace_length",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "2cc666f4-7da9-53a4-afff-ce18de45a64e",
+      "name": "Kindaruma",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "commissioning_year_reported",
+          "value": 1968,
+          "unit": "year",
+          "basis": "Owner commissioning assertion",
+          "locator": "Kindaruma station section; commissioning_year_reported",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "original_generators",
+          "value": {
+            "count": 2,
+            "each_mw": 20
+          },
+          "unit": null,
+          "basis": "Original group; superseded rating",
+          "locator": "Kindaruma station section; original_generators",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "upgraded_rating_reported",
+          "value": 72,
+          "unit": "MW",
+          "basis": "Undated owner production rating; not current verified operation",
+          "locator": "Kindaruma station section; upgraded_rating_reported",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "grid_voltage",
+          "value": 132,
+          "unit": "kV",
+          "basis": "Nairobi or Kamburu transmission",
+          "locator": "Kindaruma station section; grid_voltage",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "b171f9d2-4c2f-5948-bd47-63ab81f78765",
+      "name": "Kiambere",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "commissioning_year_reported",
+          "value": 1989,
+          "unit": "year",
+          "basis": "Owner assertion; differing historical date not overwritten",
+          "locator": "Kiambere station section; commissioning_year_reported",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "original_generators",
+          "value": {
+            "count": 2,
+            "each_mw": 72
+          },
+          "unit": null,
+          "basis": "Original group; not additive to upgrades",
+          "locator": "Kiambere station section; original_generators",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "upgraded_generators",
+          "value": {
+            "count": 2,
+            "each_mw": 84,
+            "upgrade_years": "2008/2009"
+          },
+          "unit": null,
+          "basis": "Replacement rating, not additional capacity",
+          "locator": "Kiambere station section; upgraded_generators",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "reservoir_total_volume",
+          "value": 585000000,
+          "unit": "m3",
+          "basis": "Total reservoir volume; usable fraction unknown",
+          "locator": "Kiambere station section; reservoir_total_volume",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "transmission",
+          "value": {
+            "circuits": 3,
+            "voltage_kv": 220,
+            "destinations": [
+              "Kamburu",
+              "Rabai",
+              "Embakasi"
+            ]
+          },
+          "unit": null,
+          "basis": "Owner grid description",
+          "locator": "Kiambere station section; transmission",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "3ed67515-34a1-5ad5-b3a5-ab1ca41e51e8",
+      "name": "Gogo",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "technology_reported",
+          "value": "run-of-river",
+          "unit": null,
+          "basis": "Gogo section only; copied Turkwel section rejected",
+          "locator": "Gogo station section; technology_reported",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "river_names",
+          "value": [
+            "Kuja",
+            "Gucha"
+          ],
+          "unit": null,
+          "basis": "Source identifies alternate river name",
+          "locator": "Gogo station section; river_names",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "head_unspecified",
+          "value": 19.8,
+          "unit": "m",
+          "basis": "Gross versus net not specified; not promoted to either",
+          "locator": "Gogo station section; head_unspecified",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "grid_voltage",
+          "value": 33,
+          "unit": "kV",
+          "basis": "Gogo-Awendo distribution line",
+          "locator": "Gogo station section; grid_voltage",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "ccfe30f2-2e9a-56a3-83fe-1104095487d6",
+      "name": "Sondu Miru",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "technology_reported",
+          "value": "run-of-river",
+          "unit": null,
+          "basis": "Owner Sondu Miriu section; explicit retained spelling crosswalk",
+          "locator": "Sondu Miriu station section; technology_reported",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "river",
+          "value": "Sondu",
+          "unit": null,
+          "basis": "Owner source river",
+          "locator": "Sondu Miriu station section; river",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "c545c896-38fd-5a7c-b370-a08d174c5808",
+      "name": "Sang’oro",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "upstream_station",
+          "value": {
+            "name": "Sondu Miru",
+            "record_id": "ccfe30f2-2e9a-56a3-83fe-1104095487d6"
+          },
+          "unit": null,
+          "basis": "Distinct downstream station uses regulated upstream discharge",
+          "locator": "Sang’oro station section; upstream_station",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "06669368-af2b-5b19-8f3e-2b36f234f293",
+      "name": "Tana",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "county",
+          "value": "Muranga",
+          "unit": null,
+          "basis": "No coordinates inferred from county or Nairobi distance",
+          "locator": "Tana station section; county",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "original_units",
+          "value": [
+            {
+              "count": 2,
+              "each_mw": 2,
+              "year": 1933
+            },
+            {
+              "count": 1,
+              "each_mw": 2.4,
+              "year": 1953
+            },
+            {
+              "count": 2,
+              "each_mw": 4,
+              "year": 1955
+            }
+          ],
+          "unit": null,
+          "basis": "Historical equipment groups; excluded from replacement sum",
+          "locator": "Tana station section; original_units",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "replacement_units",
+          "value": [
+            {
+              "count": 2,
+              "each_mw": 5.5
+            },
+            {
+              "count": 2,
+              "each_mw": 4.5
+            }
+          ],
+          "unit": null,
+          "basis": "New equipment group; commissioning reported 2011",
+          "locator": "Tana station section; replacement_units",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "replacement_commissioning_year",
+          "value": 2011,
+          "unit": "year",
+          "basis": "Applies replacement plant, not original station",
+          "locator": "Tana station section; replacement_commissioning_year",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "ba25f3e8-4889-5bd9-a202-2c7a7ff9d664",
+      "name": "Wanjii",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "county",
+          "value": "Muranga",
+          "unit": null,
+          "basis": "No location coordinates inferred",
+          "locator": "Wanjii station section; county",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "original_units",
+          "value": [
+            {
+              "units": [
+                1,
+                2
+              ],
+              "each_mw": 2.7,
+              "year": 1952
+            },
+            {
+              "units": [
+                3,
+                4
+              ],
+              "each_mw": 1,
+              "year": 1954
+            }
+          ],
+          "unit": null,
+          "basis": "Historical equipment, not additional to replacements",
+          "locator": "Wanjii station section; original_units",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "replacement_units",
+          "value": [
+            {
+              "units": [
+                3,
+                4
+              ],
+              "each_mw": 1.19,
+              "year": 2021
+            },
+            {
+              "units": [
+                1,
+                2
+              ],
+              "each_mw": 2.89,
+              "year": 2022
+            }
+          ],
+          "unit": null,
+          "basis": "Replacement generations retained separately",
+          "locator": "Wanjii station section; replacement_units",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "8be8e289-ade9-5cb3-8c08-592368f28979",
+      "name": "Sagana",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "county",
+          "value": "Nyeri",
+          "unit": null,
+          "basis": "Owner county only",
+          "locator": "Sagana station section; county",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "units",
+          "value": {
+            "count": 3,
+            "each_mw": 0.5
+          },
+          "unit": null,
+          "basis": "Reported unit ratings; no inferred operational plant total",
+          "locator": "Sagana station section; units",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    },
+    {
+      "record_id": "e0b6210d-4e62-5e5d-9473-e166f80bc1e0",
+      "name": "Mesco",
+      "decision": "reviewed_owner_assertions",
+      "facts": [
+        {
+          "key": "county",
+          "value": "Muranga",
+          "unit": null,
+          "basis": "Owner county only",
+          "locator": "Mesco station section; county",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "downstream_station",
+          "value": {
+            "name": "Wanjii",
+            "record_id": "ba25f3e8-4889-5bd9-a202-2c7a7ff9d664"
+          },
+          "unit": null,
+          "basis": "Mesco described upstream of Wanjii",
+          "locator": "Mesco station section; downstream_station",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "original_machine",
+          "value": {
+            "mw": 0.38,
+            "year": 1930
+          },
+          "unit": null,
+          "basis": "Historical original machine",
+          "locator": "Mesco station section; original_machine",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        },
+        {
+          "key": "replacement_machine",
+          "value": {
+            "mw": 0.43,
+            "year": 2013
+          },
+          "unit": null,
+          "basis": "New machine; not summed with original",
+          "locator": "Mesco station section; replacement_machine",
+          "uncertainty": "Not quantified by owner; undated page unless year stated"
+        }
+      ]
+    }
+  ],
+  "new": 0,
+  "enriched": 12,
+  "assertions": 40,
+  "quarantined_records": 0,
+  "rejected_claim_groups": 1,
+  "rejected": "Turkwel section duplicates Gogo narrative; no facts accepted",
+  "blocked_sources": [
+    "EPRA February 2022 register HTTP503",
+    "Kenya Law gazette original verification wall"
+  ],
+  "next_partition": "Resume African Hydropower Atlas Existing candidate screening after Excel row 242; EPRA registry remains blocked"
+}
