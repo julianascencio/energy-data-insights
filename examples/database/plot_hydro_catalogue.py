@@ -8,7 +8,7 @@ Institute, GPPD v1.3.0 repository snapshot. WRI stopped maintenance in early 202
 This is historical discovery coverage, not a current operating census or a
 ranking of installed national capacity. 110 Norwegian records have reviewed
 NVE lifecycle and technical enrichment; 1175 US records carry dated 2025 EIA inventory.
-166 Brazilian records retain ONS registry/unit evidence and structured state/subsystem metadata.
+169 Brazilian records retain ONS registry/unit evidence and structured state/subsystem metadata.
 13 Indian records retain reviewed historical IHA station evidence.
 26 African records retain reviewed AHA river/basin evidence.
 Three New Zealand records retain reviewed dispatch connection evidence.
@@ -16,6 +16,7 @@ Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
 """
 
+import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -51,6 +52,11 @@ print("NZ reviewed dispatch identities:", sum("nz-ea-fleet-20260702" in r["sourc
 print("Input fingerprint:", manifest["input_sha256"])
 print("Reviewed installed generating MW:", capacity_summary(rows, "installed_capacity_mw"))
 print("Pumping input MW (separate from generation):", capacity_summary(rows, "pumping_capacity_mw"))
+
+print(
+    "Reviewed powerhouse components:",
+    sum(len(json.loads(r["extensions_json"]).get("ons_components", [])) for r in rows),
+)
 
 fig, axes = plt.subplots(1, 2, figsize=(13, 5), layout="constrained")
 located = plants.dropna(subset=["latitude", "longitude"])

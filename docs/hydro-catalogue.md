@@ -639,3 +639,38 @@ The Norwegian continuation after `WRI1003631` returns zero rows: the remaining-i
 scan is exhausted. The 200 screened holds remain unresolved, separate from 110
 accepted NVE identities. Next: five ONS multi-powerhouse groups, then nine missing
 identities; do not repeat the exhausted scan.
+
+
+## Reviewed powerhouse relationships — 6 November 2026
+
+Belo Monte/Pimental, Henry Borden and Itiquira now retain six stable nested
+powerhouse identities linked to three existing plant UUIDs and 42 ONS generating
+unit IDs. These are evidence components, not additional catalogue plants or
+additive capacities. Component names are not plant aliases. The explicit review
+must cover every source name and exact registry identity; duplicate equipment
+and changed immutable observations are rejected before any shard is written.
+
+MME's 5 April 2016 report (updated 12 April) establishes Belo Monte's principal
+and complementary powerhouses; its commissioning projections are not current
+operation. EMAE identifies Henry Borden's external/underground powerhouses and
+reports Pelton turbines, head/flow and a pumping constraint. Unqualified head is
+retained as reported technical context, not promoted to gross/net head. ONS's
+historical Itiquira report identifies two sequential powerhouses and Francis units.
+Source dates, URLs, publishers, locators, access/reuse assessments and original
+ONS CSV checksums/rows are retained. Missing publication dates stay unknown.
+
+Simplício/Anta remains held: the 305.7 MW historical row differs in scope from
+AXIA's 333.7 MW complex including two 14 MW Anta units. Itaipu's 20-unit binational
+group is not assigned to the historical 7,000 MW Brazilian-share record; frequency
+is not an ownership allocation. Nine missing identities also remain held.
+
+Coverage: 7,156 historical records / 128 countries / 1,496 enriched identities.
+ONS contributes 169 identities / 770 unit observations; 11 groups remain held.
+All unresolved capacity scopes stay excluded from totals.
+
+```bash
+uv run python scripts/enrich_hydro_components.py --batch catalogues/hydro/research/ons-components-20261106.json
+```
+
+Next: nine missing ONS identities, starting São Manoel and Baixo Iguaçu, with
+explicit duplicate/registry review; retain the two scope conflicts above.

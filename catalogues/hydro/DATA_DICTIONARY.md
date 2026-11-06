@@ -74,3 +74,13 @@ observations. Each contains distinct `values` and `evidence` entries with
 multiple values are preserved, not silently collapsed. These describe the
 reported state, electrical subsystem and dispatch modality at the source
 observation, not an exact connection point or present operating status.
+
+
+### Reviewed ONS components
+
+`extensions_json.ons_components` links stable UUIDv5 `component_id` values to
+`parent_record_id`, reported powerhouse `name`, `generating_unit_ids` (ONS
+equipment IDs), and `source_ids`. The relationship is `powerhouse_of`; the role
+`excluded_component_evidence` prevents interpreting components as additional
+plants or capacity totals. Scope rationale and reported technical context live
+in `ons_component_review`, with a primary `scope_source_id` and locator.
