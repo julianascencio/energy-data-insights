@@ -1,7 +1,7 @@
 # Worldwide BESS projects database
 
-The battery energy storage section contains **1,710 records in 34 countries**
-and **204 primary sources**. It complements the PV catalogue with its own 60-field
+The battery energy storage section contains **2,208 records in 48 countries**
+and **414 registered sources**. It complements the PV catalogue with its own 60-field
 schema and typed Parquet export. It combines commercial projects and registry-defined plants, not a census
 or a ranking of current installed capacity.
 
@@ -9,7 +9,7 @@ Open the [BESS project viewer](https://julianascencio.github.io/energy-data-insi
 [Database gallery](https://julianascencio.github.io/energy-data-insights/auto_examples/database/index.html),
 [catalogue/update guide](../catalogues/bess/README.md),
 [data dictionary](../catalogues/bess/DATA_DICTIONARY.md), or
-[latest research and reconciliation](../catalogues/bess/research/2026-11-01_expansion.md).
+[latest research and reconciliation](../catalogues/bess/research/2026-11-06_south_africa_pylontech_hv.md).
 
 ## Published snapshot
 

@@ -116,3 +116,11 @@ Research, extraction, reconciliation and overlapping validation used approximate
 20minutes through02:17 Atlantic/Canary. Publication and wider CI follow. Actual final
 elapsed effort and exact-head hosted results are recorded in the PR final verification.
 The separate validation ledger distinguishes local passes from pending hosted checks.
+
+Publication checkpoint: data/code commit `17e7abccb9289c466ba972d8374cfc6afd9fe8f4`
+was published at02:21 Atlantic/Canary, approximately24minutes after this run began.
+All26blob hashes and full tree `5e4e5b1241a67e9cbb106051664ca53cc197f4a5`
+matched the reviewed local index. A follow-up updates stale documentation landing
+counts/navigation; historical launch reports remain unchanged. Final hosted CI and
+actual final elapsed effort are reported in PR187; this checkpoint does not claim
+pending CI has passed.
