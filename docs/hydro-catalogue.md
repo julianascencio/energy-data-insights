@@ -639,3 +639,178 @@ The Norwegian continuation after `WRI1003631` returns zero rows: the remaining-i
 scan is exhausted. The 200 screened holds remain unresolved, separate from 110
 accepted NVE identities. Next: five ONS multi-powerhouse groups, then nine missing
 identities; do not repeat the exhausted scan.
+
+
+## Reviewed powerhouse relationships — 6 November 2026
+
+Belo Monte/Pimental, Henry Borden and Itiquira now retain six stable nested
+powerhouse identities linked to three existing plant UUIDs and 42 ONS generating
+unit IDs. These are evidence components, not additional catalogue plants or
+additive capacities. Component names are not plant aliases. The explicit review
+must cover every source name and exact registry identity; duplicate equipment
+and changed immutable observations are rejected before any shard is written.
+
+MME's 5 April 2016 report (updated 12 April) establishes Belo Monte's principal
+and complementary powerhouses; its commissioning projections are not current
+operation. EMAE identifies Henry Borden's external/underground powerhouses and
+reports Pelton turbines, head/flow and a pumping constraint. Unqualified head is
+retained as reported technical context, not promoted to gross/net head. ONS's
+historical Itiquira report identifies two sequential powerhouses and Francis units.
+Source dates, URLs, publishers, locators, access/reuse assessments and original
+ONS CSV checksums/rows are retained. Missing publication dates stay unknown.
+
+Simplício/Anta remains held: the 305.7 MW historical row differs in scope from
+AXIA's 333.7 MW complex including two 14 MW Anta units. Itaipu's 20-unit binational
+group is not assigned to the historical 7,000 MW Brazilian-share record; frequency
+is not an ownership allocation. Nine missing identities also remain held.
+
+Coverage: 7,156 historical records / 128 countries / 1,496 enriched identities.
+ONS contributes 169 identities / 770 unit observations; 11 groups remain held.
+All unresolved capacity scopes stay excluded from totals.
+
+```bash
+uv run python scripts/enrich_hydro_components.py --batch catalogues/hydro/research/ons-components-20261106.json
+```
+
+Next: nine missing ONS identities, starting São Manoel and Baixo Iguaçu, with
+explicit duplicate/registry review; retain the two scope conflicts above.
+
+
+## New Brazilian registry identities — 6 November 2026
+
+Eight reviewed CEG identities absent from the historical baseline are now
+accepted: Areado, Jesuíta, Colíder, Sinop, Juruena, São Manoel, Baixo Iguaçu and
+São Roque. The first two are PCH small-hydro facilities. Canonical UUIDs use the
+full ANEEL CEG, never an invented WRI ID. The importer checks every Brazilian
+name/alias and all external IDs before writing, rejects collisions and changed
+replays, and leaves existing records unchanged. Bandeirante remains held because
+its normalized name collides with a different historical registry identity.
+Simplício/Anta and Itaipu retain the earlier scope holds.
+
+All eight have ONS owner/operator, unit power/date and dispatch observations,
+retaining original CSV checksums and row locators. Eight primary plant sources
+add supported facts: EDP São Manoel, ENERGO-PRO Baixo Iguaçu, EDF Sinop, Nova
+Participações São Roque, Atiaia Areado, AXIA Colíder, MME Juruena and the Bom
+Futuro PCH Cidezal PAE's Jesuíta section. The original 2024 PAE was downloaded
+after web extraction failed; its SHA256 and page locator are retained. Only
+bounded facts are redistributed from owner pages; no bulk licence is assumed.
+
+Five records carry reported installed generating MW, not operating MW. Areado's
+rating is explicitly dated December 2024; undated portfolio ratings retain their
+retrieval basis. São Manoel supplies run-of-river type, four Kaplan turbines,
+May 2018 operation start and 577.22 hm³ total reservoir volume, converted to
+577,220,000 m³; usable water volume and storage MWh remain unknown. Baixo Iguaçu
+and Jesuíta also have turbine descriptors. Rivers and Sinop's 2019 start year
+retain source provenance. AXIA's Colíder safety classification is attributed to
+the owner and is not a lifecycle determination. Jesuíta's differing plant/unit
+ratings remain an explicit unresolved capacity review; Juruena's old permit is
+used for geography only. No generating MW are summed from ONS unit ratings.
+
+Coverage is **7,164 records / 128 countries**, comprising 7,156 historical WRI
+records (1,496 enriched existing identities) and eight new CEG records. Brazil
+has 709 records; ONS evidence covers 177 identities and 791 units. All eight new
+records retain unknown current status, absent coordinates and unresolved
+aggregation scope. Existing map and KPI components consume the same typed
+snapshot and exclude these unresolved ratings from capacity totals.
+
+```bash
+uv run python scripts/accept_hydro_ons_new.py --batch catalogues/hydro/research/ons-new-20261106.json --output catalogues/hydro/records/projects/ons-new-20261106.jsonl
+uv run python examples/database/plot_hydro_catalogue.py
+```
+
+Replay is idempotent. The next regional partition is the first 100 retained AHA
+Existing holds, beginning Excel row 4, using primary alias/phase/location evidence.
+
+## African evidence bases — 6 November 2026
+
+Twenty-six previously accepted AHA identities now expose structured per-column
+provenance under `extensions_json.aha_field_provenance`: original value, unit,
+Excel row, source ID, upstream citation, fallback reference and uncertainty.
+These are provenance enrichments, not newly accepted plants or measurements.
+Reservoir size is expressed in million m³, not MWh. Mean annual river discharge
+is separate from design discharge; neither is a measured operating flow.
+`First Year` is the earliest expected entry year, not verified commissioning.
+Availability selects a model profile, not current plant availability or status.
+Upstream references remain explicitly unverified; missing citations remain null.
+
+The first 100 retained AHA `Existing` holds (Excel rows 4–242) have reproducible
+name-candidate evidence in `research/aha-provenance-20261106.json`. None is accepted
+by name matching. Congo country/duplicate and phase boundaries remain held.
+E2C's Imboulou page was suspended and its Moukoukoulou page returned 403 during
+review. The Republic of Congo government's 2 July 2023 concession article
+corroborates national context but does not resolve duplicate catalogue records
+or present operation. Original hold ledgers and source checksum remain intact.
+
+```bash
+uv run python scripts/enrich_hydro_aha_provenance.py --batch catalogues/hydro/research/aha-provenance-20261106.json
+```
+
+Global coverage remains 7,164 records / 128 countries / 1,496 enriched historical
+identities plus eight new registry identities. Resolve the retained 100 holds;
+the next unscreened `Existing` partition starts after Excel row 242.
+
+KenGen's 2025 owner statistics add 160 dated capacity and energy observations to
+eight existing Kenyan plants. Installed versus effective MW and generated
+versus sold GWh remain separate, with fiscal periods and cell-level provenance.
+Five additional named stations await registry identity review. The catalogue
+contains 7,164 records in 128 countries; these observations do not establish
+current operation or change additive capacity KPIs.
+
+The five retained KenGen identity candidates are now accepted from owner-report
+and portfolio corroboration. Total coverage is 7,169 records in 128 countries.
+Their 60 dated entries include two missing Wanjii 2021 energy cells; missing is
+not zero. EPRA licence IDs remain unknown following a blocked download.
+
+Owner technical evidence now covers twelve Kenyan stations, with replacement
+unit groups, generator/turbine descriptions, grid connections, watercourses,
+reservoir volumes and dated commissioning assertions. Conflicting dates and
+unspecified head remain qualified; neither MVA nor reservoir volume is converted
+to generating MW or stored energy. The copied Turkwel description is excluded.
+
+The Uganda ERA batch adds 32 station/phase identities, including three
+hospital/community schemes, bringing the catalogue to 7,201 records across 128
+countries (38 in Uganda). The 39-row hydro workbook partition is fully reviewed:
+six possible matches to existing records and Swam remain held. Accepted records
+contain 265 reported MW values and 599 missing annual cells across 2000–2026;
+2026 means September. Current status, physical aggregation scope and map
+coordinates remain unknown. The shared viewer includes these records in country
+and plant counts, while unresolved capacity stays excluded from MW KPIs.
+
+The primary sources are ERA's *Installed Generation Capacity as at September
+2026* (`uganda_era_capacity_2026`) and *Electricity Supply Industry State of the
+Environment Report 2023*, Annex 3 (`uganda_era_environment_2023`). See the formal
+[references](references.md). Run `scripts/accept_hydro_era.py` for idempotent
+replay; add `--workbook PATH` to verify the downloaded workbook against every
+retained source cell before acceptance. The offline gallery
+`examples/database/plot_hydro_catalogue.py` rebuilds the typed Zstandard snapshot,
+shows reported locations and country counts, and reports the Uganda partition.
+
+ERA Annex 3 enrichment retains 128 historical entries for 32 Ugandan stations
+in `extensions_json.era_2023_assertions`: commissioning precision, capacity MW,
+grid connection and lifecycle group. The report's partial commissioning caveat
+is retained, and two construction/licensed records have unknown commissioning.
+Historical assertions never promote current operating MW or lifecycle. Kuluva's
+intra-report commissioning discrepancy remains unresolved. The report is already
+registered as `uganda_era_environment_2023`; replay uses
+`scripts/enrich_hydro_era_report.py`. Twenty-seven other Annex rows remain held.
+
+The ERA construction/licensed acceptance batch adds 21 historical project
+identities, for 7,222 records across 128 countries (59 in Uganda). Its 21 project
+MW observations and seven dated UECCC procurement kW observations remain distinct
+from installed/operational MW. The joint lifecycle group is not split or promoted
+to current status. Unknown locations are omitted from the map; counts include
+the identities, while unresolved physical capacities remain excluded from KPIs.
+The source `ueccc_orio_tender_2020` is listed in the formal references. Replay with
+`scripts/accept_hydro_era_planned.py`; optional `--text` verifies the full parsed
+Annex partition. Six older identity matches, Swam, Rushobe and Kisonko remain held.
+
+Nepal DoED construction licences now contribute 82 new reviewed identities and
+82 licensed-MW observations, bringing coverage to 7,304 records in 128 countries.
+Rows 1–100 were reviewed; 18 remain held. All 262 source rows were parsed for
+identity collisions, but later rows are not accepted yet. Full licence IDs,
+rivers, promoters, districts, source date strings and four coordinate bounds
+are retained. No current operation, installed MW, Gregorian date conversion or
+point coordinates are inferred. The shared viewer counts these records but
+excludes unresolved capacities and unmapped locations. See
+`nepal_doed_construction_hydro_2026` in the formal references and replay with
+`scripts/accept_hydro_doed.py` (optional `--html` source verification).

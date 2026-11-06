@@ -49,3 +49,123 @@ status, technology, hydraulic metadata or scope. Preserve creation dates and
 use the existing conflict-quarantining upsert API. Reuse the open hydro PR; refresh
 remote refs before writing and never overwrite concurrent PV/BESS/Wind work.
 See `DATA_DICTIONARY.md` for all typed fields.
+
+
+The 6 November new-identity review adds **eight CEG-keyed Brazilian plants** to
+that historical baseline: 7,164 total records in 128 countries. They carry 21
+ONS generating-unit observations; five have independently reported installed
+MW, three have turbine descriptors, and one has total reservoir volume.
+These values remain excluded from additive totals while physical overlaps are
+unresolved. The eight new records have no invented WRI IDs or map coordinates.
+See `research/ons-new-20261106.json` for acceptance and held decisions.
+
+The KenGen 2025 owner-report batch enriches all eight existing Kenyan identities
+with **160 dated observations**: installed/effective MW and generated/sold GWh
+for fiscal years ended June 2021–2025. These remain separate in
+`observations_json`, with per-cell page, station, year, column and unit locators.
+The primary report is registered as `kengen_annual_report_2025` in the formal
+bibliography. Effective capacity is not substituted for operational or installed
+capacity; sold energy is not generation. No current status is inferred.
+Five additional named stations remain candidates for EPRA identity review.
+Small Hydros and Hydro Total are excluded as overlapping aggregates, and Sosiani
+has no numerical generation observation. The existing 7,164 records / 128
+countries are unchanged; 1,503 historical identities now have enrichment.
+
+```bash
+pdftotext -layout /path/to/KenGen-2025.pdf /tmp/kengen-2025.txt
+uv run python scripts/enrich_hydro_kengen.py --batch catalogues/hydro/research/kengen-2025-20261106.json --text /tmp/kengen-2025.txt
+```
+
+The optional text input rechecks the complete parsed table before any writes.
+Changed table shape, year order, duplicate rows or changed accepted evidence
+fail for review. Original PDF SHA-256 and access/reuse assessment are retained
+in `sources.json`; downloaded source bytes stay outside Git.
+
+Five KenGen owner-identified stations are now accepted: Sang’oro, Sagana, Mesco,
+Wanjii and Gogo. They add 60 fiscal statistical entries (58 numeric, two missing),
+bringing coverage to 7,169 records / 128 countries, including 13 Kenyan records.
+Frozen catalogue accessions identify these records; they are not national licence
+IDs. EPRA's PDF returned HTTP 503. The owner report and named portfolio sections
+support identity independently of that unavailable registry. Current status,
+coordinates and additive capacity remain unresolved. No old/replacement unit
+ratings are summed. Replay with `scripts/accept_hydro_kengen_new.py`.
+
+Twelve Kenyan records now retain owner technical assertions with per-field
+locators, units, equipment boundaries and uncertainty. Original/replacement
+unit groups are distinct; Gitaru's 85 MVA generators are not converted to MW.
+Gogo's unqualified head is not promoted to gross/net head, and reservoir total
+volumes are not usable volumes or energy storage. Owner commissioning statements
+remain unresolved where historical dates differ. Turkwel's copied Gogo narrative
+is rejected. These assertions do not change additive capacity KPIs or record
+counts. Replay: `scripts/enrich_hydro_owner_technical.py`.
+
+The Uganda ERA September 2026 inventory adds **32 reviewed station/phase
+identities**, including Kisiizi Hospital, Kuluva Hospital and Bwindi. Coverage is
+now **7,201 records in 128 countries**, with 38 Ugandan records. The complete
+39-row hydro partition was reviewed: six potential existing-identity matches and
+Swam remain held. Annex 3 of ERA's *Electricity Supply Industry State of the
+Environment Report 2023* corroborates the accepted names. These sources are
+registered as `uganda_era_capacity_2026` and `uganda_era_environment_2023`.
+
+The accepted records retain **864 annual cells (265 numeric, 599 missing)** for
+2000–2026. Reported zero remains zero; missing remains null. The 2026 column is
+explicitly September, not year-end. Annual MW observations do not establish
+current operation or additive physical scope. No coordinates, licence IDs,
+pumping ratings or storage energy are inferred. Frozen catalogue accessions
+remain stable across name corrections. Different numbered stations are separate
+identities, with shared-infrastructure capacity unresolved.
+
+```bash
+uv run python scripts/accept_hydro_era.py --workbook /path/to/Installed-Generation-Capacity-as-at-September-2026.xlsx
+```
+
+Omit `--workbook` for offline replay of reviewed evidence. A supplied workbook
+must reproduce the full parsed partition before writes. Checksummed original
+files remain outside Git; only selected factual evidence is retained. No open
+bulk-reuse licence was identified, so neither the workbook nor report is
+redistributed. See `research/era-202609-reviewed.json` for decisions and
+`research/era-202609-validation.json` for snapshot hashes and completeness.
+
+ERA Annex 3 now enriches those 32 Ugandan identities with 128 dated entries:
+commissioning (including the literal decade `1950s` and two unknowns), capacity,
+grid connection and lifecycle group. The joint construction/licensed category
+is not split into an invented status. All entries describe the 2023 report,
+not current operation. Karuma's 400 MW report value and subsequent 600 MW remain
+separate vintages. Kuluva's 1995 main-text and 2023 Annex commissioning statements
+remain unresolved; no canonical commissioning date is overwritten. Replay with
+`scripts/enrich_hydro_era_report.py`. The parser covers 59 rows on printed
+pages 287–289; 27 other rows remain candidates, including 21 construction/licensed
+identities. The refreshed original PDF checksum is unchanged.
+
+The remaining 21 named projects in ERA Annex 3's 2023 construction/licensed
+partition are now accepted as stable identities, bringing coverage to **7,222
+records / 128 countries**, including 59 Ugandan records. Twenty-one reported
+project MW observations remain dated 2023; seven corroborating UECCC procurement
+ratings retain original kW and 29 September 2020 dates. Neither is current
+installed capacity. The combined lifecycle group remains unresolved, as do
+physical overlaps. No coordinates, official licence IDs or commissioning dates
+are invented. The ORIO programme aggregate is excluded.
+
+Source `ueccc_orio_tender_2020` corroborates seven names; differing ratings are
+retained separately. Rushobe/Kisonko are additional candidates, not automatic
+aliases of Warugo/Nyahuka. Six older ERA identity matches and Swam remain held.
+Replay: `scripts/accept_hydro_era_planned.py --text /path/to/report-layout.txt`.
+Omit `--text` for offline reviewed-evidence replay. See the new acceptance and
+validation ledgers. Next research partition rotates to Asian national inventories.
+
+The Nepal DoED >1 MW construction-licence batch reviews source rows 1–100:
+**82 new identities**, 18 held for duplicate names or potential historical
+phase/scope overlap. Coverage becomes **7,304 records / 128 countries**, including
+94 Nepal records. The complete 262-row source was parsed for duplicate IDs and
+names; acceptance review stops at row 100. Next partition is rows 101–200.
+
+Records retain full licence numbers (including leading zeros), licensed MW,
+rivers, source promoters, districts, raw issue/validity dates and four coordinate
+bounds. Licence membership does not establish current construction or operation.
+Source calendar dates are not converted; bounding boxes never become plant points.
+Unknown current status and physical aggregation remain unresolved, so these
+ratings stay excluded from additive capacity KPIs. Promoters are not asserted
+owners/operators. The contact/address column is omitted. Source attribution:
+`nepal_doed_construction_hydro_2026`; no open bulk-reuse licence is assumed.
+Replay: `scripts/accept_hydro_doed.py --html /path/to/doed-table.html`;
+omit `--html` for offline reviewed-evidence replay.

@@ -8,14 +8,21 @@ Institute, GPPD v1.3.0 repository snapshot. WRI stopped maintenance in early 202
 This is historical discovery coverage, not a current operating census or a
 ranking of installed national capacity. 110 Norwegian records have reviewed
 NVE lifecycle and technical enrichment; 1175 US records carry dated 2025 EIA inventory.
-166 Brazilian records retain ONS registry/unit evidence and structured state/subsystem metadata.
+177 Brazilian records retain ONS registry/unit evidence and structured state/subsystem metadata.
 13 Indian records retain reviewed historical IHA station evidence.
-26 African records retain reviewed AHA river/basin evidence.
+26 African records retain AHA river/basin evidence and explicit historical/model field bases.
 Three New Zealand records retain reviewed dispatch connection evidence.
+Eight Brazilian records are new CEG identities, including two small hydro plants.
+Their coordinates and current lifecycle remain unknown.
+Thirteen Kenyan identities carry owner-reported fiscal 2021-2025 statistics.
+Effective MW and sold GWh are separate from installed MW and generation.
+Thirty-two new Ugandan identities retain ERA annual MW statistics through September 2026.
+Missing cells and explicit zeros remain distinct; unknown locations are not mapped.
 Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
 """
 
+import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -37,7 +44,7 @@ print(
     sum(any(s.startswith("eia860-2025-hydro-") for s in r["sources"]) for r in rows),
 )
 print(
-    "ONS Brazil enriched records:",
+    "ONS Brazil records (existing enriched + new registry identities):",
     sum(any(s.startswith("ons-hydro-") for s in r["sources"]) for r in rows),
 )
 print(
@@ -48,9 +55,22 @@ print(
     "AHA Africa enriched records:", sum("aha-v2.3-technical-20261105" in r["sources"] for r in rows)
 )
 print("NZ reviewed dispatch identities:", sum("nz-ea-fleet-20260702" in r["sources"] for r in rows))
+print(
+    "AHA records with explicit field bases:",
+    sum("aha_field_provenance" in json.loads(r["extensions_json"]) for r in rows),
+)
+print(
+    "ERA Uganda reviewed identities:",
+    sum("uganda-era-capacity-202609" in r["sources"] for r in rows),
+)
 print("Input fingerprint:", manifest["input_sha256"])
 print("Reviewed installed generating MW:", capacity_summary(rows, "installed_capacity_mw"))
 print("Pumping input MW (separate from generation):", capacity_summary(rows, "pumping_capacity_mw"))
+
+print(
+    "Reviewed powerhouse components:",
+    sum(len(json.loads(r["extensions_json"]).get("ons_components", [])) for r in rows),
+)
 
 fig, axes = plt.subplots(1, 2, figsize=(13, 5), layout="constrained")
 located = plants.dropna(subset=["latitude", "longitude"])
@@ -71,3 +91,46 @@ axes[1].set(
 )
 fig.suptitle("Global hydro coverage · dated NVE/EIA updates · capacity scope unresolved")
 plt.show()
+
+# %%
+# Dated owner observations, without substituting sales for generation.
+kengen = [
+    {"name": r["name"], **o}
+    for r in rows
+    for o in json.loads(r.get("observations_json") or "[]")
+    if o["source_id"] == "kengen-annual-2025-20261106" and o["field"] == "annual_generation_gwh"
+]
+energy = pd.DataFrame(kengen)
+print("KenGen dated generation observations:", len(energy))
+fig, ax = plt.subplots(figsize=(9, 5), layout="constrained")
+for name, group in energy.groupby("name"):
+    group = group.sort_values("period")
+    ax.plot(group.period.str.slice(9, 13), group.value, marker="o", label=name)
+ax.set(
+    xlabel="Fiscal year ended June 30",
+    ylabel="Reported generated energy [GWh]",
+    title="KenGen thirteen reviewed stations · historical owner statistics",
+)
+ax.legend(ncol=2, fontsize=8)
+ax.grid(alpha=0.2)
+plt.show()
+
+print(
+    "Owner technical evidence records:",
+    sum("kengen_technical_assertions" in json.loads(r["extensions_json"]) for r in rows),
+)
+
+print(
+    "ERA 2023 assertion records:",
+    sum("era_2023_assertions" in json.loads(r["extensions_json"]) for r in rows),
+)
+
+print(
+    "ERA historical project identities:",
+    sum("era_planned_inventory" in json.loads(r["extensions_json"]) for r in rows),
+)
+
+print(
+    "Nepal DoED reviewed licence identities:",
+    sum("doed_inventory" in json.loads(r["extensions_json"]) for r in rows),
+)
