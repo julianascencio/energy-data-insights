@@ -640,3 +640,8 @@ NEMA/UL enclosure claims do not establish an IP rating or assembly certification
 Native dimensions remain qualified tuples until axes are established. MaStR unit
 staging preserves Bruttoleistung/Nettonennleistung separately in documented kW;
 allocated inverter power remains native, with no plant AC scalar or aggregation.
+
+
+### Research update — 6 November 2026, 08:00 UTC
+
+Polycab maximum apparent VA and active W at PF1 remain separate; MPPT current/string vectors are not summed or flattened. The350K models have conflicting350kW Rating and352kW Nominal Output Power cells: rated active scalars are withheld. The320K models retain explicit320kW nominal active output distinct from352kW maximum. UT five-year standard warranty is separate from a paid ten-year total extension; other selected tables state eight years. TypeIII protection is preserved literally where printed. DGEG licensing processes, native generator kW, installed/connection kVA and licence states remain contextual observations; a storage feature with a PV subtype is excluded, and no AC/DC conversion or operating-status inference is made.

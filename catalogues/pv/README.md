@@ -632,3 +632,8 @@ classification, cost types and inference/privacy limits. Generic `Solar` does
 not prove PV; proponents are not owners, historical status is not current
 operation, and approximate native CAD-million estimates are not verified capex.
 Hidden vendor sheets, geometry and coordinates are excluded from staged output.
+
+
+### Research update — 6 November 2026, 08:00 UTC
+
+The dated [08:00 review](research/20261106T0800_report.md) adds21 exact Polycab inverter models /460 typed engineering specifications and enriches198 existing projects /392 fields and evidence contexts.194 Chinese historical owner assertions retain complete phase provenance; four Portuguese licensing associations retain native kW/kVA and multi-municipality scope without power, lifecycle or coordinate changes. Two350K rated-active-power conflicts and optional-interface claims remain qualified/held. Five exact OEM tables are accepted; one-input/one-output distribution boxes, component parts and provincial capacity aggregates are excluded from plant/combiner counts. PLN report discovery is access-blocked, not an integrated feed. No new adapter. See the dated audit, source captures, top-ten gaps, snapshot verification and resumable queue.
