@@ -255,11 +255,16 @@ def stage_boe_notices(
             raise ValueError("Application refusal cannot establish operation or retirement")
         if effect == "public_consultation" and values["status"] not in {"announced", "unknown"}:
             raise ValueError("Public consultation does not establish permission or operation")
-        if effect == "repowering_authorization" and values["status"] not in {
+        if effect in {"repowering_authorization", "construction_authorization"} and values[
+            "status"
+        ] not in {
             "permitted",
             "unknown",
         }:
-            raise ValueError("Repowering authorization does not establish replacement operation")
+            raise ValueError(
+                "Repowering authorization or construction authorization "
+                "does not establish replacement operation"
+            )
         if effect == "environmental_conditions" and values["status"] == "permitted":
             raise ValueError("Environmental decision alone is not construction authorization")
         if (

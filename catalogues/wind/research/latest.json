@@ -1,6 +1,6 @@
 {
-  "batch": "2026-11-06-0335",
-  "updated_at": "2026-11-06T03:38:25.330342+00:00",
+  "batch": "2026-11-06-0435",
+  "updated_at": "2026-11-06T04:34:30.724971+00:00",
   "baseline_main": "4ef42de474f69b5cdca5824410c06db0d851b434",
   "branch": "research/wind-20261105-2235",
   "merged_wind_counts_at_baseline": {
@@ -10,11 +10,11 @@
     "curves": 2
   },
   "branch_totals": {
-    "projects": 8297,
+    "projects": 8298,
     "turbines": 13657,
     "equipment": 555,
     "curves": 2,
-    "non_group_projects": 8296,
+    "non_group_projects": 8297,
     "countries": 59,
     "manufacturers": [
       "ABB",
@@ -86,7 +86,7 @@
     "turbine_inventory_manufacturer_labels": 54
   },
   "changes_against_main": {
-    "new_projects": 3,
+    "new_projects": 4,
     "enriched_projects": 92,
     "new_equipment": 0,
     "enriched_equipment": 0,
@@ -102,12 +102,12 @@
     "deferred_records": 0,
     "current_status_unresolved": 4698
   },
-  "primary_evidence_project_records": 5173,
+  "primary_evidence_project_records": 5174,
   "technology_counts": {
     "fixed_bottom_offshore": 19,
     "floating_offshore": 4,
     "offshore_unspecified": 32,
-    "onshore": 3544,
+    "onshore": 3545,
     "unknown": 4698
   },
   "identity_candidate_groups": 13,
@@ -180,10 +180,10 @@
   "coverage_manifest": "coverage-manifest.json",
   "backlog": "backlog.json",
   "publication_base_main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-  "iteration_base_head": "1dcbdd8a81d506b6b531810563f1c7083620e420",
+  "iteration_base_head": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
   "changes_this_run": {
-    "new_projects": 0,
-    "enriched_projects": 1,
+    "new_projects": 1,
+    "enriched_projects": 0,
     "new_equipment": 0,
     "enriched_equipment": 0,
     "new_turbines": 0,
@@ -201,20 +201,19 @@
   "new_geography": "None",
   "new_technology_coverage": "None",
   "reviewed_this_run": {
-    "boe_dates": 4,
-    "notices": 3,
-    "enriched_projects": 1,
-    "wind_identity_holds": 1,
-    "non_wind_exclusions": 1,
-    "wimmera_survey_ids_held": [
-      2355,
-      3089,
-      3262
+    "boe_dates": 3,
+    "issue_captures": 5,
+    "notices": 2,
+    "new_projects": 1,
+    "hybrid_identity_holds": 2,
+    "lake_victoria_ids_held": [
+      2764,
+      3330
     ]
   },
-  "latest_research_discovery": "BOE August27–29/31:three notices; one original-procedure enrichment, one wind-identity hold, one non-wind exclusion. Wimmera exact amended permit acquired; phase crosswalk held.",
-  "source_review": "2026-11-06-0335-review.json",
-  "decision_ledger": "2026-11-06-0335-review.json",
+  "latest_research_discovery": "Somaloma-Las Quemadas authorized proposal added; LakeVictoria registry identity and Nordex revision held.",
+  "source_review": "2026-11-06-0435-review.json",
+  "decision_ledger": "2026-11-06-0435-review.json",
   "sweden_decision_ledger": "2026-11-04-0635-sweden-decisions.jsonl",
   "merged_main_totals": {
     "projects": 8294,
@@ -226,8 +225,8 @@
     "manufacturer_labels": 64
   },
   "iteration": {
-    "new_projects": 0,
-    "enriched_projects": 1,
+    "new_projects": 1,
+    "enriched_projects": 0,
     "new_equipment": 0,
     "enriched_equipment": 0,
     "new_turbines": 0,
@@ -236,14 +235,14 @@
     "enriched_curves": 0
   },
   "geographic_changes_this_run": {
-    "new_project_countries": [],
-    "enriched_project_countries": [
+    "new_project_countries": [
       "ESP"
     ],
+    "enriched_project_countries": [],
     "new_manufacturers": 0
   },
   "decision_ledgers": [
-    "2026-11-06-0335-review.json"
+    "2026-11-06-0435-review.json"
   ],
   "previous_publication_reconciliation": {
     "previous_pr": 184,
@@ -251,7 +250,7 @@
   },
   "publication_reconciliation": {
     "branch": "research/wind-20261105-2235",
-    "expected_head": "1dcbdd8a81d506b6b531810563f1c7083620e420",
+    "expected_head": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
     "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
     "pr": 184
   },
@@ -260,8 +259,8 @@
     "current_branch": "research/wind-20261105-2235"
   },
   "per_run_changes": {
-    "new_projects": 0,
-    "enriched_projects": 1,
+    "new_projects": 1,
+    "enriched_projects": 0,
     "new_equipment": 0,
     "enriched_equipment": 0,
     "new_turbines": 0,
@@ -349,18 +348,18 @@
     "previous_state": "Open, reused",
     "this_batch": "Validated publication candidate; final commit and CI reported on PR"
   },
-  "source_registry_entries": 424,
-  "research_started_from": "1dcbdd8a81d506b6b531810563f1c7083620e420",
+  "source_registry_entries": 425,
+  "research_started_from": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
   "snapshot_builds": {
     "count": 2,
     "byte_identical": true,
-    "input_hash": "b0531be82b66fdc318f70e10ab5efbd8626f47ff6331706fbbe0217b63c4630f",
+    "input_hash": "762e6e94898395fe1bde9fcfb76515cc6b914f77444fac5de62634c2cdcf1150",
     "sha256": {
       "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-      "manifest.json": "f2efa7a2e2e5ce65452820930c8ae31cd19b75fe39d5a21d0d387006306c45f1",
-      "projects.parquet": "ac70d20282c00edefc01dd572c638426628c4878aa097ad9af010ade24d7878a",
+      "manifest.json": "803c06424f961b9ea6ac7447f6b72c7c23ad417058715aa2db36e157b4412a7c",
+      "projects.parquet": "bd81f158f426e7adb0975a8c6396333b967346f3eef353aaa0b8efd3161c1417",
       "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-      "sources.json": "301733468c1234f53a6b7507ebf3017a7c1f955d344a44797a4902c0a3dff8f7",
+      "sources.json": "90c15b5d97351b663aa961ba2f58bae911a215918e79d84c5e0fc988bf713d70",
       "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
       "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
     }

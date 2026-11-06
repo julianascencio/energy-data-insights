@@ -1267,3 +1267,14 @@ The Valdepero solar and Frontones battery notices are not new wind capacity.
 Wimmera's acquired PA2000877-2 permit provides upper/lower dimensional limits,
 not exact turbine configurations or AEMO phase allocations. Its amendment date
 is May 14, 2026; May 19 is the attachment filename date. See the 0335 review ledger.
+
+
+### Construction authorization and proposed equipment
+
+The 6 November continuation adds Somaloma–Las Quemadas from
+BOE-B-2026-27717: authorized capacity remains planned capacity, separately from
+grid access and commissioning. The offline adapter rejects operating status
+inferred solely from construction authorization. The proposed fleet is complete
+as a model/count observation, not an individual-turbine or as-built inventory.
+Permit rotor diameter and OEM product geometry remain separately scoped pending
+an exact revision crosswalk; no synthetic hub-height configurations are created.

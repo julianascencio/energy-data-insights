@@ -273,3 +273,12 @@ def test_application_refusal_is_not_operation_or_retirement():
             stage(review(effect="application_refusal", status=status))
     rows, _ = stage(review(effect="application_refusal", status="cancelled"))
     assert rows[0]["aggregation_role"] == "unresolved"
+
+
+@pytest.mark.parametrize("status", ["operational", "retired", "cancelled", "announced"])
+def test_construction_authorization_does_not_prove_operation(status):
+    with pytest.raises(ValueError, match="does not establish"):
+        stage(review(effect="construction_authorization", status=status))
+    row = stage(review(effect="construction_authorization", status="permitted"))[0][0]
+    assert row["aggregation_role"] == "unresolved"
+    assert row.get("installed_capacity_mw") is None

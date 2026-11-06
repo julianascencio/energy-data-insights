@@ -567,6 +567,9 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-08-24",
+        "2026-08-25",
+        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
@@ -628,15 +631,18 @@
         "2026-11-04"
       ],
       "next_dates": [
-        "2026-08-24",
-        "2026-08-25",
-        "2026-08-26"
+        "2026-08-20",
+        "2026-08-21",
+        "2026-08-22"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "August24–26 all discovered A/B issues; Valdepero historical farm scope crosswalk remains held.",
+      "next_task": "August20–22 all A/B issues; Corralnuevo/Navillas and Valdepero historical identity crosswalks held.",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-08-24",
+        "2026-08-25",
+        "2026-08-26",
         "2026-08-27",
         "2026-08-28",
         "2026-08-29",
@@ -697,7 +703,7 @@
         "2026-11-03",
         "2026-11-04"
       ],
-      "latest_review": "2026-11-06-0335-review.json",
+      "latest_review": "2026-11-06-0435-review.json",
       "unavailable_dates": [
         {
           "date": "2026-09-06",
@@ -713,7 +719,7 @@
       "status": "complete_national_wind_partition_scan",
       "completed_partition": "All269wind survey sites/309unit rows:198additions71identityholds; source version exhausted",
       "next_partition": null,
-      "next_task": "Wimmera PA2000877-2 acquired (actual amendment14May2026;filename19May). Three survey-ID stage links unresolved. Next LakeVictoria2764/3330 explicit permit/revision crosswalk; do not repeat permit acquisition.",
+      "next_task": "LakeVictoria2764 KCI energy park versus3330/WestWind explicit proponent/site crosswalk; NSW147/EPBC203 revision observations retained in0435ledger, not merged. Wimmera remains held.",
       "decision_ledger": "2026-11-04-2335-aemo-decisions.json",
       "next_ids": [
         3051,
@@ -810,11 +816,11 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "0335 original BOE and Wimmera permit captures, snapshots and logs retained outside Git; hashes/locators committed.",
+  "validation_storage": "0435 original BOE and independent captures, snapshots and logs retained outside Git; hashes committed.",
   "publication_continuation": {
     "branch": "research/wind-20261105-2235",
     "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-    "expected_head": "1dcbdd8a81d506b6b531810563f1c7083620e420",
+    "expected_head": "2641e3fabeb59c8e3fd50c2616c0198c623d3572",
     "pr": 184,
     "leave_open_unmerged": true
   }

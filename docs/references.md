@@ -7703,3 +7703,11 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Satrebares original applic
 **Role:** data_source. Rejected proposal history; later correction retained; no commissioned capacity.
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_b_2026_27717
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Somaloma-Las Quemadas prior and construction authorization**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-27717)
+
+**Role:** data_source. Authorized proposal, not commissioned capacity; grid access separate.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
