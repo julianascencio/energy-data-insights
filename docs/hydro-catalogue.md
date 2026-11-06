@@ -551,3 +551,38 @@ claimed. Coverage: 7,156 historical records / 128 countries / 1,442 enriched
 identities. EIA totals: 1,159 identities / 3032 generators / 265 holds.
 No unresolved capacity enters global totals. Next: Norwegian identities after
 WRI1003313 (101–150), followed by EIA 60001–65000.
+
+
+## EIA tail and Norwegian pumping-power review — 6 November 2026
+
+EIA codes 60001–65000 enrich 16 existing US identities with 27 generator
+observations. Seven plants remain held; codes 65001–99999 contain ten further
+held plants and no accepted matches. The code scan now reaches 99999, which is
+not a claim of complete US plant coverage. Unmatched official IDs and mixed or
+pumped facilities still need explicit identity and scope review. Registry IDs,
+operators, generating/seasonal MW and unit dates retain year-end 2025 semantics.
+Coverage is 7,156 historical records / 128 countries / 1,458 enriched identities;
+EIA contributes 1,175 identities, 3059 units and 282 held plants.
+
+Norwegian candidates 101–150 (after WRI1003313 through WRI1003515) remain held.
+The first 150 screened candidates are separate from the 110 previously accepted
+NVE enrichments. Statkraft reports Saurdal at 640 MW generating capacity with
+four units, two reversible. Its 14 March 2025 filing reports 320 MW existing
+pumping capacity and proposes 640 MW. The proposal does not establish present
+operation. Mauranger's owner rating is 250 MW, compared with 307 MW in the
+historical record. Dated owner facts, source locators and reuse assessments are
+retained in the review ledger; canonical values are unchanged.
+
+The NVE screener optionally accepts `--api-source-id` and `--gis-source-id`
+together. It verifies both captures against registered SHA-256 hashes before
+screening and records the source IDs. Existing invocations remain supported;
+registry verification is recommended for published research. Tests cover
+changed API and GIS captures and ensure rejection leaves no output ledger.
+
+```bash
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-60001-65000.json
+uv run python scripts/screen_hydro_nve.py --api /path/to/nve.json --gis /path/to/map.json --api-source-id nve-hydro-20261106 --gis-source-id nve-gis-20261106 --after-wri-id WRI1003515 --limit 50 --reviewed-at YOUR_UTC_TIMESTAMP --output /tmp/next-nve-review.json
+```
+
+Next: Norwegian candidates after WRI1003515 and remaining Brazilian ONS
+inventory; retain EIA holds for explicit identity/pumped-storage review.

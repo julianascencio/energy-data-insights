@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-06T01:44:43.885038+00:00",
+  "reviewed_at": "2026-11-06T02:49:05.938891+00:00",
   "completed": [
     {
       "source": "wri-gppd-1.3.0",
@@ -310,6 +310,44 @@
       "accepted_enriched": 0,
       "held": 50,
       "cursor": "Screened only; cumulative 100 held; next after WRI1003313; do not use shifting offsets"
+    },
+    {
+      "source": "eia860-2025-hydro-60001-65000",
+      "partition": {
+        "first": 60001,
+        "last": 65000,
+        "next_first": 65001
+      },
+      "accepted_enriched": 16,
+      "held": 7,
+      "new": 0,
+      "cursor": "Reviewed through 99999; revisit held official IDs and pumped/mixed units"
+    },
+    {
+      "source": "eia860-2025-hydro-65001-99999",
+      "partition": {
+        "first": 65001,
+        "last": 99999,
+        "next_first": 100000
+      },
+      "accepted_enriched": 0,
+      "held": 10,
+      "new": 0,
+      "cursor": "Reviewed through 99999; revisit held official IDs and pumped/mixed units"
+    },
+    {
+      "source": "nve-hydro-20261106 + nve-gis-20261106",
+      "partition": {
+        "offset": 0,
+        "after_wri_id": "WRI1003313",
+        "limit": 50,
+        "last_wri_id": "WRI1003515",
+        "next_offset": null,
+        "next_after_wri_id": "WRI1003515"
+      },
+      "accepted_enriched": 0,
+      "held": 50,
+      "cursor": "Screened only; cumulative 150 held; next after WRI1003515"
     }
   ],
   "next_sources": [
@@ -340,14 +378,14 @@
       "url": "https://www.nve.no/energi/energisystem/vannkraft/",
       "country": "NOR",
       "status": "110 WRI identities enriched; 1867 NVE candidates remain unaccepted",
-      "next_action": "Norway remaining identities after WRI1003313 (101\u2013150); EIA 60001\u201365000"
+      "next_action": "Screen after WRI1003515 (151\u2013200); resolve Saurdal physical scope and cross-catalogue identity"
     },
     {
       "priority": 3,
       "url": "https://www.eia.gov/electricity/data/eia860/",
       "country": "USA",
-      "status": "1159 enriched; 265 held",
-      "next_action": "EIA 60001\u201365000"
+      "status": "1175 enriched; 282 held",
+      "next_action": "EIA code scan through 99999 complete; review held official IDs and pumped/mixed units before claiming inventory completeness"
     },
     {
       "priority": 1,

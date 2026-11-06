@@ -1,5 +1,6 @@
 """Synthetic exact names remain candidates, even when source matches are unique."""
 
+import hashlib
 import json
 import runpy
 import sys
@@ -32,6 +33,14 @@ def test_screen_never_accepts_name_matches(tmp_path, monkeypatch, truncated):
             )
         )
     )
+    (folder.parents[1] / "sources.json").write_text(
+        json.dumps(
+            {
+                name: {"sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+                for name, path in (("api", api), ("gis", gis))
+            }
+        )
+    )
     monkeypatch.chdir(tmp_path)
     monkeypatch.setattr(
         sys,
@@ -46,6 +55,10 @@ def test_screen_never_accepts_name_matches(tmp_path, monkeypatch, truncated):
             str(output),
             "--reviewed-at",
             "2026-11-06T00:44:00Z",
+            "--api-source-id",
+            "api",
+            "--gis-source-id",
+            "gis",
         ],
     )
     if truncated:
@@ -108,3 +121,42 @@ def test_stable_cursor_survives_earlier_identity_acceptance(tmp_path, monkeypatc
     with pytest.raises(SystemExit):
         runpy.run_path(str(SCRIPT), run_name="__main__")
     assert output.read_bytes() == original
+
+
+@pytest.mark.parametrize("tamper", ["api", "gis"])
+def test_registered_source_checksum_rejects_changed_capture(tmp_path, monkeypatch, tamper):
+    folder = tmp_path / "catalogues/hydro"
+    folder.mkdir(parents=True)
+    api, gis, output = (tmp_path / n for n in ("api.json", "gis.json", "out.json"))
+    api.write_text("[]")
+    gis.write_text('{"features": []}')
+    sources = {
+        name: {"sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+        for name, path in (("api", api), ("gis", gis))
+    }
+    (folder / "sources.json").write_text(json.dumps(sources))
+    changed = api if tamper == "api" else gis
+    changed.write_text(changed.read_text() + " ")
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            str(SCRIPT),
+            "--api",
+            str(api),
+            "--gis",
+            str(gis),
+            "--output",
+            str(output),
+            "--reviewed-at",
+            "2026-11-06T02:44:00Z",
+            "--api-source-id",
+            "api",
+            "--gis-source-id",
+            "gis",
+        ],
+    )
+    with pytest.raises(ValueError, match=f"checksum mismatch: {tamper}"):
+        runpy.run_path(str(SCRIPT), run_name="__main__")
+    assert not output.exists()

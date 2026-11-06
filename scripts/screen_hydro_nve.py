@@ -13,6 +13,8 @@ def main() -> None:
     parser.add_argument("--gis", type=Path, required=True)
     parser.add_argument("--api", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--api-source-id")
+    parser.add_argument("--gis-source-id")
     parser.add_argument("--reviewed-at", required=True)
     parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--limit", type=int, default=50)
@@ -25,6 +27,15 @@ def main() -> None:
     if args.after_wri_id and args.offset:
         parser.error("Use a stable cursor or an offset, not both")
     root = Path("catalogues/hydro")
+    if bool(args.api_source_id) != bool(args.gis_source_id):
+        parser.error("Provide both API and GIS source IDs")
+    source_ids = [args.api_source_id, args.gis_source_id]
+    if args.api_source_id:
+        sources = json.loads((root / "sources.json").read_text())
+        for path, source_id in zip((args.api, args.gis), source_ids, strict=True):
+            actual = hashlib.sha256(path.read_bytes()).hexdigest()
+            if sources[source_id]["sha256"] != actual:
+                raise ValueError(f"Registered source checksum mismatch: {source_id}")
     remaining = sorted(
         [
             r
@@ -82,6 +93,8 @@ def main() -> None:
         },
         decisions=decisions,
     )
+    if args.api_source_id:
+        result["source_ids"] = source_ids
     text = json.dumps(result, indent=2) + "\n"
     if args.output.exists() and args.output.read_text() != text:
         raise ValueError("Refusing to replace a different review ledger")
