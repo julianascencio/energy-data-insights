@@ -62,3 +62,15 @@ def test_cursor_past_end_is_not_a_verified_empty_partition():
     data, ledger, sha = fixture()
     with pytest.raises(ValueError, match="exceeds saved candidates"):
         review_unlinked_applications(data, ledger, sha256=sha, offset=4, limit=200)
+
+
+@pytest.mark.parametrize("suffix", [",unexpected", "missing"])
+def test_ragged_source_rows_are_not_silently_normalized(suffix):
+    data, ledger, _ = fixture()
+    lines = data.decode("cp1252").splitlines()
+    lines[1] = lines[1] + suffix if suffix != "missing" else "1,Synthetic 1"
+    broken = ("\n".join(lines) + "\n").encode("cp1252")
+    with pytest.raises(ValueError, match="Malformed REPD CSV record"):
+        review_unlinked_applications(
+            broken, ledger, sha256=hashlib.sha256(broken).hexdigest(), offset=0, limit=3
+        )

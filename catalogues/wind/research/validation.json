@@ -1,15 +1,15 @@
 {
-  "batch": "2026-11-06-1235",
-  "base": "15b4ce5778d8c89f5d36a3e0a99dee902801f536",
+  "batch": "2026-11-06-1335",
+  "base": "2dffff960992037d83a01e34313df6be939fd135",
   "main": "64dcf52278bb942591d16571252e4090963f67a1",
   "local": {
-    "python": "373 focused Wind tests passed",
+    "python": "58 BOE/REPD tests passed, including two malformed CSV regressions",
     "viewer": "40 Node viewer tests passed",
-    "quality": "Ruff lint/format1240files;ty;hygiene6194files;citations/diff passed",
-    "docs": "Strict Sphinx build passed with focused Wind gallery execution; 731 HTML pages passed local link/asset checks",
-    "replay": "Four accepted records and source decisions exactly replayed from checksummed original PDF/HTML",
-    "preservation": "22544 prior records and452sources unchanged;capacity totals and unrelated catalogues preserved",
-    "snapshots": "Two final seven-file snapshots byte-identical;all Parquet columns ZSTD"
+    "quality": "Changed-file Ruff lint/format; repository ty; citations and git diff checks passed",
+    "hygiene": "Passed:6196 candidate files",
+    "snapshots": "Two seven-file snapshots byte-identical, ZSTD; hashes unchanged from prior published batch",
+    "preservation": "git diff confirms all canonical Wind records/sources and unrelated sector catalogues byte-unchanged",
+    "docs": "Source documentation updated; no local Sphinx build this run"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
@@ -36,7 +36,7 @@
       "sources": 453
     },
     "this_run_added": {
-      "projects": 4,
+      "projects": 0,
       "equipment": 0
     },
     "this_run_enriched": {
@@ -46,10 +46,10 @@
     "countries": 64,
     "manufacturer_labels": 66
   },
-  "remote_ci": "New head not published;prior15b4ce5passed both workflows. Exact-head results on PR198.",
+  "remote_ci": "Pending publication",
   "not_executed": [
     "full local pytest",
-    "full local gallery",
+    "local Sphinx/gallery build",
     "package builds",
     "browser interaction"
   ],
@@ -57,7 +57,7 @@
     "branch": "research/wind-20261106-0835",
     "pr": 198,
     "nonblocking_lock_acquired": true,
-    "expected_head": "15b4ce5778d8c89f5d36a3e0a99dee902801f536",
+    "expected_head": "2dffff960992037d83a01e34313df6be939fd135",
     "reviewed_open_prs": [
       192,
       193,
@@ -71,15 +71,12 @@
       202
     ],
     "prepublication_updates_reviewed": [
+      192,
       193,
       195,
       196
     ],
     "other_pr_shared_paths": "Latest Hydro/PV/DC updates inspected;no competing Wind/shared viewer writes. Bibliography changes onotherPRs remain unmerged."
   },
-  "resolved_local_failures": [
-    "Shared BOE notice cannot be a unique external ID for two farms; removed external-ID assignment, retained source provenance",
-    "Initial snapshots overlapped source staging; discarded and final snapshots rebuilt twice after all canonical edits",
-    "Removed only reproducible prior documentation/snapshot outputs to free disk; originals retained"
-  ]
+  "resolved_local_failures": []
 }

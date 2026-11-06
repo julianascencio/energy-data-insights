@@ -1433,3 +1433,16 @@ A regression fixture checks that construction and conflicting forecasts cannot
 become operation or commissioning. REPD1600:1800 was structurally reviewed only;
 all200 original-permit identity holds remain. Next: BOE July16–18, REPD1800:2000,
 and later Zarafshan/Baltic Eagle milestone and rating-revision reconciliation.
+
+### July 16–18 notice and REPD continuation
+
+The 6 November 2026 13:35 review completed all discovered BOE issues for
+16–18 July. Notices BOE-B-2026-24346 and BOE-B-2026-24461 concern solar
+hybrid applications; La Herrada and Torozos B/C remain wind identity holds.
+Solar, wind and hybrid capacities are not interchangeable. REPD saved
+candidate offsets 1800:2000 were structurally reviewed, with all 200 held
+pending original permits. The offline parser now rejects extra or missing
+CSV cells before recording a reviewed partition, including malformed rows
+outside the selected slice. No project, equipment or capacity total changed.
+The dated review ledger records the original Baltic Eagle installation
+release and its unresolved date/rating revision crosswalk.
