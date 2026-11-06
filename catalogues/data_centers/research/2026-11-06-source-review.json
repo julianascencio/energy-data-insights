@@ -1,0 +1,40 @@
+{
+  "retrieved_at": "2026-11-06T00:24:00Z",
+  "accepted": [
+    {
+      "inventory": "Green Mountain complete current site portfolio",
+      "processed_offset": 7,
+      "accepted_records": 7,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and sensitive location/access details are excluded.",
+      "originals": "Eight factual official HTML originals total 1,066,336 bytes and have individual SHA-256 checksums in sources.json. A separate 121,672-byte privacy-policy capture supported rights review but is not a factual source."
+    }
+  ],
+  "deferred": [
+    {
+      "candidate": "Green Mountain exact building and phase identities",
+      "reason": "Current pages disclose building counts and aggregate campus facts but not enough exact building identities and parent-child bindings to create reviewable child records. Continue only from official building/phase or permit evidence."
+    }
+  ],
+  "quarantined": [
+    {
+      "candidate": "FRA-Mainz power capacity",
+      "fields": [
+        "it_capacity_mw",
+        "grid_capacity_mw",
+        "facility_capacity_mw"
+      ],
+      "reason": "The current page reports a 54 MW power card and a parenthetical 80 MW-in-2026 statement without identifying either as IT, grid or total facility demand. Both remain dated observations and normalized scalars remain null."
+    }
+  ],
+  "normalization_notes": [
+    "The complete current Green Mountain portfolio is processed at offset seven: five operational sites and two under construction.",
+    "SVG-Rennesøy is an independent facility. TEL-Rjukan, OSL-Enebakk, OSL-Hamar, LON-East, FRA-Mainz and SVG-Undheim are multi-building campus aggregates and remain excluded from capacity totals under every filter.",
+    "Only explicit IT statements are normalized: SVG-Rennesøy 25 MW design maximum and the four campus aggregates TEL-Rjukan 50 MW, OSL-Enebakk 75 MW, OSL-Hamar 150 MW and SVG-Undheim 80 MW. Campus values remain excluded from totals.",
+    "LON-East secured power, new capacity and maximum cooling capacity remain separate observations. FRA-Mainz current/future power statements remain observation-only. SVG-Undheim total-site capacity is not substituted for IT capacity.",
+    "OSL-Hamar's 90 MW completed operating portion remains an observation distinct from its 150 MW campus total. TEL-Rjukan retains its 1.08–1.20 PUE range rather than a scalar.",
+    "Campus footprint, IT space, existing space and construction space retain their exact source boundaries. No area is used to infer capacity.",
+    "Operator Tier and ISO claims remain observations and are not normalized as issuer-registry certifications. No building child, deployment or commissioning date is inferred.",
+    "All prior reuse holds and quarantines remain in force; this run introduced no new reuse restriction."
+  ]
+}

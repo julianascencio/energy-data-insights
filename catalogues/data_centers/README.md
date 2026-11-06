@@ -5,9 +5,9 @@ canonical JSONL under `records/projects` and `records/equipment`, a source regis
 field-level evidence, stable UUIDs and deterministic typed Parquet snapshots.
 No network request occurs during validation, export or documentation builds.
 
-The current continuation branch contains **526 project records in 36 countries**:
-**408 facilities, three phases and 115 explicitly labelled campus aggregates**,
-from 14 operators. It has **2,774 exact equipment records from 74 OEMs**.
+The current continuation branch contains **533 project records in 38 countries**:
+**409 facilities, three phases and 121 explicitly labelled campus aggregates**,
+from 15 operators. It has **2,774 exact equipment records from 74 OEMs**.
 Merged `main` at `4ef42de4` contains **520 projects and 2,766 equipment records**.
 These are catalogue counts, not a worldwide census or a count of operating buildings.
 The research report and coverage manifest describe missing fields and scope.
@@ -28,6 +28,7 @@ uv run python scripts/stage_data_center_raxio.py captured.html --source-url http
 uv run python scripts/stage_data_center_cummins.py captured.html --source-url https://www.cummins.com/en-na/generators/products/qsk60 --expected-count 17
 uv run python scripts/build_data_center_cummins_qsk50_batch.py captured-qsk50.html staged-cummins-qsk50.jsonl
 uv run python scripts/build_data_center_icolo_batch.py captured-icolo-directory staged-icolo-projects.jsonl
+uv run python scripts/build_data_center_green_mountain_batch.py captured-green-mountain-directory staged-green-mountain-projects.jsonl
 uv run python scripts/stage_data_center_inventory.py captured.html --source-url https://www.atnorth.com/nordic-data-centers/ --expected-count 13
 uv run python scripts/build_data_center_atnorth_finland_permit_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl
 uv run python scripts/build_data_center_atnorth_reconciliation_batch.py catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl catalogues/data_centers/records/projects/2026-11-03-atnorth.jsonl

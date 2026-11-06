@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 520 project records across 36 countries:
-403 facilities, three phases and 114 explicitly scoped campus aggregates, from 13 operators.
+The current continuation branch has 533 project records across 38 countries:
+409 facilities, three phases and 121 explicitly scoped campus aggregates, from 15 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -34,6 +34,14 @@ reference year and scope; performance observations must preserve precision,
 workload and test conditions. `renewable_supply_json` explicitly separates
 physical generation, contractual procurement and environmental claims.
 Certificates require issuer, scope and validity evidence, not marketing badges.
+
+The Green Mountain continuation processes the operator's complete current
+seven-site portfolio. SVG-Rennesøy is an independent facility; TEL-Rjukan,
+OSL-Enebakk, OSL-Hamar, LON-East, FRA-Mainz and SVG-Undheim are explicit
+multi-building campus aggregates and remain excluded from capacity totals under
+every filter. Only source-labelled IT capacity is normalized. Site power,
+secured power, future power and cooling capacity remain separate observations,
+and unnamed building counts do not create inferred child records.
 
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and

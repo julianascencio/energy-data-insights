@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05T23:23:00Z",
+  "updated_at": "2026-11-06T00:24:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -130,7 +130,8 @@
     "doe_ccms_crac_displayed_rows": 50,
     "doe_ccms_ups_displayed_rows": 50,
     "icolo_current_east_africa_facilities": 5,
-    "digital_realty_nairobi_campus_aggregates": 1
+    "digital_realty_nairobi_campus_aggregates": 1,
+    "green_mountain_current_sites": 7
   },
   "next_batches": [
     {
@@ -342,6 +343,23 @@
         "Seek exact NBO2 customer-space, rack and IT/grid/facility capacity evidence; do not infer from the unclassified 6.4 MW opening claim",
         "Do not promote exact addresses, coordinates, security controls or access procedures from technical sheets"
       ]
+    },
+    {
+      "rank": 12,
+      "source": "Green Mountain exact building and phase continuation",
+      "urls": [
+        "https://greenmountain.no/data-centers/",
+        "https://greenmountain.no/data-center/osl-hamar/",
+        "https://greenmountain.no/data-center/fra-mainz/"
+      ],
+      "offset": 7,
+      "scope": "The complete current seven-site portfolio is processed at offset seven: one independent facility and six explicit multi-building campus aggregates. Continue only with official exact building/phase identities, dated commissioning or construction evidence and boundary-qualified facility ratings.",
+      "questions": [
+        "Do not recount the seven current portfolio identities or create child records from unnamed building counts",
+        "Keep Green Mountain IT, site, secured-power, future-power and cooling statements in their explicit source boundaries",
+        "Obtain dated commissioning evidence for OSL-Hamar buildings and exact building identity for the 90 MW operating portion",
+        "Resolve FRA-Mainz 54 MW current versus parenthetical 80 MW in 2026 power statements without treating either as IT capacity"
+      ]
     }
   ],
   "holds": [
@@ -479,10 +497,10 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "icolo-east-africa-20261105T232300Z",
-    "report": "2026-11-05-report.md",
-    "validation": "2026-11-05T2323-validation.json",
-    "added_projects": 6,
+    "run_id": "green-mountain-portfolio-20261106T002400Z",
+    "report": "2026-11-06-report.md",
+    "validation": "2026-11-06T0024-validation.json",
+    "added_projects": 7,
     "enriched_projects": 0,
     "added_equipment": 0,
     "branch": "research/data-center-database-20261105T2217Z"
