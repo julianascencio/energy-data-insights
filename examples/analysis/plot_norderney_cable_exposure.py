@@ -108,7 +108,9 @@ for remaining_fraction in (0.0, 0.5):
         for start in starts_days
     ]
     ax.plot(
-        starts_days, exposures_gwh, marker="o",
+        starts_days,
+        exposures_gwh,
+        marker="o",
         label=f"Remaining export {remaining_fraction:.0%}",
     )
 ax.set(
@@ -136,7 +138,9 @@ for remaining_fraction in (0.0, 0.5):
         / 1e3
         for duration in days
     ]
-    ax.plot(days, values_gwh, marker="o", label=f"Remaining export {remaining_fraction:.0%}")
+    ax.plot(
+        days, values_gwh, marker="o", label=f"Remaining export {remaining_fraction:.0%}"
+    )
 ax.set(
     xlabel="Hypothetical outage duration (days)",
     ylabel="Additional undelivered wind energy (GWh)",
