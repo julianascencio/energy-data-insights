@@ -34,6 +34,8 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_icolo_facility_page,
     parse_icolo_home_portfolio,
     parse_meta_locations,
+    parse_penta_infra_directory,
+    parse_penta_infra_site_page,
     parse_portfolio,
     parse_raxio_facility_page,
     parse_schneider_galaxy_vs_model_list,
@@ -452,6 +454,42 @@ def test_ecodatacenter_parsers_preserve_site_and_capacity_boundaries():
         )
     with pytest.raises(ValueError, match="official EcoDataCenter"):
         parse_ecodatacenter_portfolio(b"", source_url="https://example.com/")
+
+
+def test_penta_infra_parsers_preserve_exact_facility_boundaries():
+    directory = parse_penta_infra_directory(
+        (FIXTURES / "penta-infra-directory.html").read_bytes(),
+        source_url="https://penta-infra.com/data-centers/",
+    )
+    assert len(directory["candidates"]) == 12
+    assert directory["candidates"][0] == {
+        "external_id": "amsterdam",
+        "name": "Amsterdam",
+        "status": "under_construction",
+        "status_label": "RFS H1 2026",
+        "it_capacity_mw": 8.0,
+        "technical_area_m2": 4000.0,
+        "url": "https://penta-infra.com/data-centers/amsterdam/",
+        "locator": "current directory card / Amsterdam",
+    }
+    assert directory["candidates"][-1]["name"] == "Copenhagen"
+    duesseldorf = parse_penta_infra_site_page(
+        (FIXTURES / "penta-infra-duesseldorf.html").read_bytes(),
+        source_url="https://penta-infra.com/data-centers/duesseldorf/",
+        expected_code="DUS01",
+    )["candidate"]
+    assert duesseldorf["it_capacity_mw"] == 2.4
+    assert duesseldorf["technical_area_m2"] == 1942.0
+    assert duesseldorf["future_scope_markers"] == [
+        "up to 9,5 planned MW of IT capacity",
+        "Düsseldorf data center campus",
+    ]
+    with pytest.raises(ValueError, match="facility code"):
+        parse_penta_infra_site_page(
+            (FIXTURES / "penta-infra-duesseldorf.html").read_bytes(),
+            source_url="https://penta-infra.com/data-centers/duesseldorf/",
+            expected_code="DUS01-DUS02",
+        )
 
 
 def test_vertiv_powerups_parser_keeps_only_explicit_topology_ratings():

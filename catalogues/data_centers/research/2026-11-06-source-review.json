@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T02:30:00Z",
+  "retrieved_at": "2026-11-06T03:30:00Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -24,6 +24,14 @@
       "enriched_records": 0,
       "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, security and access details are excluded.",
       "originals": "Four factual official HTML originals total 171,146 bytes and have individual SHA-256 checksums in sources.json. Separate cookie/privacy captures total 82,353 bytes and supported rights review but are not factual sources."
+    },
+    {
+      "inventory": "Penta Infra exact displayed facility directory",
+      "processed_offset": 12,
+      "accepted_records": 12,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and addresses, security and access details are excluded.",
+      "originals": "Thirteen factual official HTML originals total 2,807,973 bytes and have individual SHA-256 checksums in sources.json. Separate disclaimer and privacy captures total 181,123 bytes and supported rights review but are not factual sources."
     }
   ],
   "deferred": [
@@ -42,6 +50,14 @@
     {
       "candidate": "DATA4 public campus pages",
       "reason": "Current official terms prohibit partial or total representation or reproduction without prior written permission. No DATA4 facts or bytes were imported; permission or independent public planning records are required."
+    },
+    {
+      "candidate": "Penta Infra Munich and unreconciled 15-facility portfolio tail",
+      "reason": "The January 2026 announcement says the portfolio has 15 facilities and adds Munich, but the current directory displays 12 and two identities remain unresolved. Add only after exact current identity and lifecycle evidence."
+    },
+    {
+      "candidate": "Penta Infra DUS02, LEJ02, CPH02 and CPH03 child facilities",
+      "reason": "Current pages describe future campus expansion but do not establish exact current child lifecycle and rating evidence."
     }
   ],
   "quarantined": [
@@ -110,6 +126,11 @@
     "Operator Tier and ISO language remains observation-only; no issuer-registry certification, deployment, exact address or sensitive access/security fact is normalized.",
     "EcoDataCenter's three evidenced Swedish establishments are complete at offset three: Falun is independent; Borlänge and Smedjebacken are campus aggregates excluded from every capacity sum.",
     "No EcoDataCenter MW claim is normalized. The Borlänge first-phase target and Smedjebacken early-2027 construction target are not actual commissioning dates.",
-    "The DATA4 screening is a reuse hold, not an access failure. Candidate pages and temporary captures were excluded from the catalogue and source registry."
+    "The DATA4 screening is a reuse hold, not an access failure. Candidate pages and temporary captures were excluded from the catalogue and source registry.",
+    "Penta Infra's exact displayed current directory is complete at offset 12: 11 operational facilities and AMS01 under construction.",
+    "AMS01 remains under construction because the current page still describes development; the stale H1 2026 target is not treated as actual commissioning evidence.",
+    "Exact IT capacity is normalized independently from exact IT space, which is stored as technical area. Design-maximum and ultimate-planned capacity bases remain distinct.",
+    "DUS01 and CPH01 current facility ratings remain separate from future campus totals; LEJ02 and the unbound Copenhagen child facilities are not synthesized. PAR01's exact 15 MW planned card remains separate from its 15+ MW potential narrative.",
+    "Munich and the unreconciled 15-facility portfolio tail remain deferred. This run introduced no new reuse hold and preserves every prior hold and quarantine."
   ]
 }

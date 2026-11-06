@@ -1271,6 +1271,131 @@ def parse_ecodatacenter_smedjebacken_announcement(
     }
 
 
+def parse_penta_infra_directory(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the exact 12 facilities displayed in Penta Infra's current directory."""
+    if urlsplit(source_url).hostname not in {"penta-infra.com", "www.penta-infra.com"}:
+        raise ValueError("Expected official Penta Infra URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    expected = (
+        ("amsterdam", "Amsterdam", "under_construction", "RFS H1 2026", 8.0, 4000.0),
+        ("geleen", "Geleen", "operational", "In operation", 0.75, 320.0),
+        ("leeuwarden-01", "Leeuwarden 01", "operational", "In operation", 0.45, 400.0),
+        ("leeuwarden-02", "Leeuwarden 02", "operational", "In operation", 0.4, 400.0),
+        ("berlin", "Berlin", "operational", "In operation", 2.7, 1800.0),
+        ("cologne", "Cologne", "operational", "In operation", 0.2, 500.0),
+        ("duesseldorf", "Düsseldorf", "operational", "In operation", 2.4, 1942.0),
+        ("hamburg", "Hamburg", "operational", "In operation", 4.4, 2500.0),
+        ("leipzig", "Leipzig", "operational", "In operation", 2.8, 1500.0),
+        ("brussels", "Brussels", "operational", "In operation", 7.2, 3500.0),
+        ("paris", "Paris", "operational", "In operation", 15.0, 4200.0),
+        ("copenhagen", "Copenhagen", "operational", "In operation", 1.6, 1000.0),
+    )
+    positions: list[int] = []
+    candidates: list[dict[str, Any]] = []
+    for slug, name, status, label, capacity_mw, area_m2 in expected:
+        capacity_label = (
+            f"{int(capacity_mw * 1000)} kW"
+            if capacity_mw < 1
+            else f"{str(capacity_mw).replace('.', ',').removesuffix(',0')} MW"
+        )
+        area_label = f"{int(area_m2):,}".replace(",", ".") + " m²"
+        marker = f"{name} {label}"
+        position = text.find(marker)
+        if position < 0:
+            raise ValueError(f"Changed Penta Infra directory card for {name}")
+        card_end = text.find("View more", position)
+        if card_end < 0:
+            raise ValueError(f"Changed Penta Infra directory boundary for {name}")
+        card = text[position:card_end]
+        if capacity_label not in card or area_label not in card:
+            raise ValueError(f"Changed Penta Infra directory metrics for {name}")
+        positions.append(position)
+        candidates.append(
+            {
+                "external_id": slug,
+                "name": name,
+                "status": status,
+                "status_label": label,
+                "it_capacity_mw": capacity_mw,
+                "technical_area_m2": area_m2,
+                "url": urljoin(source_url, f"{slug}/"),
+                "locator": f"current directory card / {name}",
+            }
+        )
+    if positions != sorted(positions) or len(set(positions)) != len(expected):
+        raise ValueError("Changed Penta Infra directory order or duplicate identity")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_penta_infra_site_page(
+    content: bytes, *, source_url: str, expected_code: str
+) -> dict[str, Any]:
+    """Stage exact IT-capacity and IT-space cards from one Penta Infra site page."""
+    if urlsplit(source_url).hostname not in {"penta-infra.com", "www.penta-infra.com"}:
+        raise ValueError("Expected official Penta Infra URL")
+    if not re.fullmatch(r"[A-Z]{3}\d{2}", expected_code):
+        raise ValueError("Expected an exact Penta Infra facility code")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    start = text.find(f"Penta Infra {expected_code}")
+    end = text.find("About the region", start)
+    if start < 0 or end < 0:
+        raise ValueError("Changed Penta Infra facility identity or metric boundary")
+    metric_section = text[start:end]
+    capacity = re.search(
+        r"(\d+(?:[.,]\d+)?)\s*(MW|kW)\s+(planned\s+)?IT capacity\b",
+        metric_section,
+    )
+    area = re.search(r"(\d+(?:[.,]\d+)?)\s*m²\s+IT space\b", metric_section)
+    if capacity is None or area is None:
+        raise ValueError("Changed Penta Infra facility metric-card shape")
+
+    def decimal(value: str) -> float:
+        return float(value.replace(".", "").replace(",", "."))
+
+    capacity_value = decimal(capacity.group(1))
+    if capacity.group(2) == "kW":
+        capacity_value /= 1000
+    candidate: dict[str, Any] = {
+        "external_id": expected_code,
+        "it_capacity_mw": capacity_value,
+        "it_capacity_is_planned": bool(capacity.group(3)),
+        "technical_area_m2": decimal(area.group(1)),
+        "locator": f"current {expected_code} page / IT capacity and IT space cards",
+    }
+    future_markers = {
+        "AMS01": ("currently being developed", "Ready for service planned in H1-2026"),
+        "CPH01": (
+            "planned IT capacity of 7,6 MW",
+            "expansion will lead into CPH02 and eventually CPH03",
+        ),
+        "DUS01": (
+            "up to 9,5 planned MW of IT capacity",
+            "Düsseldorf data center campus",
+        ),
+        "LEJ01": ("expanded into a data center campus together with Penta Infra LEJ02",),
+        "PAR01": ("IT capacity potential of 15+ MW",),
+    }
+    if expected_code in future_markers:
+        if not all(marker in text for marker in future_markers[expected_code]):
+            raise ValueError(f"Changed Penta Infra {expected_code} future-scope shape")
+        candidate["future_scope_markers"] = list(future_markers[expected_code])
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
 def parse_green_mountain_facility_page(
     content: bytes, *, source_url: str, expected_code: str | None = None
 ) -> dict[str, Any]:
