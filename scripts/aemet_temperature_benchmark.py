@@ -68,20 +68,20 @@ def forecast(name: str, train: pd.Series, future: pd.DatetimeIndex) -> np.ndarra
             from xgboost import XGBRegressor
 
             model = XGBRegressor(n_estimators=150, max_depth=3, learning_rate=0.05, random_state=42)
-        model.fit(features(train.index, train), train.to_numpy())
+        model.fit(features(pd.DatetimeIndex(train.index), train), train.to_numpy())
         return np.asarray(model.predict(features(future, train)))
     if name == "arima":
-        from statsmodels.tsa.arima.model import ARIMA
+        from statsmodels.tsa.arima.model import ARIMA  # ty: ignore[unresolved-import]
 
         return np.asarray(ARIMA(train, order=(2, 0, 2)).fit().forecast(len(future)))
     if name == "ets":
-        from statsmodels.tsa.holtwinters import ExponentialSmoothing
+        from statsmodels.tsa.holtwinters import ExponentialSmoothing  # ty: ignore[unresolved-import]
 
         return np.asarray(
             ExponentialSmoothing(train, trend="add", seasonal=None).fit().forecast(len(future))
         )
     if name == "prophet":
-        from prophet import Prophet
+        from prophet import Prophet  # ty: ignore[unresolved-import]
 
         model = Prophet(yearly_seasonality=True, weekly_seasonality=True, daily_seasonality=False)
         model.fit(pd.DataFrame({"ds": train.index, "y": train.to_numpy()}))
@@ -104,7 +104,7 @@ def benchmark(
             train = series.iloc[:i]
             actual = series.iloc[i : i + horizon].to_numpy()
             for name in models:
-                prediction = forecast(name, train, series.index[i : i + horizon])
+                prediction = forecast(name, train, pd.DatetimeIndex(series.index[i : i + horizon]))
                 if len(prediction) != horizon or not np.isfinite(prediction).all():
                     raise ValueError(f"Incomplete forecast: {name}, origin={series.index[i]}")
                 errors = prediction - actual
