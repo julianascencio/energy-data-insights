@@ -7,7 +7,7 @@ Schema version **1.1.0**; 60 typed nullable columns. Unknown is null.
 | `record_id` | string | — | Stable UUID chosen from original country, locality and name; never changed by a rename or capacity update. |
 | `entity_type` | string | — | Catalogue entity; projects only in version 1. Allowed: `projects`. |
 | `name` | string | — | Named battery project, not the entire solar or wind facility. |
-| `country_code` | string | — | ISO 3166-1 alpha-3 country code. |
+| `country_code` | string | — | ISO 3166-1 alpha-3 country code, with explicitly documented user-assigned `XKX` for Kosovo. |
 | `region` | string | — | Source-reported administrative region. |
 | `locality` | string | — | Source-reported locality; not a geocoded coordinate. |
 | `location_accuracy` | string | — | Accuracy and basis of source-reported coordinates. |
@@ -64,3 +64,35 @@ Schema version **1.1.0**; 60 typed nullable columns. Unknown is null.
 | `created_at` | timestamp | — | UTC date/time this record was first added. |
 | `updated_at` | timestamp | — | UTC date/time of the latest substantive edit. |
 | `last_verified_at` | timestamp | — | UTC source-access time; not proof of current operational availability. |
+
+The `dcceew_community_location` extension describes one reviewed government
+programme applicant/location, potentially aggregating multiple batteries. Its
+`capacity_kwh` is the source observation corresponding to `energy_capacity_mwh`;
+gross/usable and AC/DC basis remain unspecified. `operational_from` is the table's
+reported operating date, not an inferred commercial COD. `applicant` records only
+the grant-recipient role. `grant_amount` and `grant_symbol` retain the grant, with
+no capex or unstated currency/year inference. Row locators and publication dates
+remain inside the extension. Do not also count the same constituent batteries.
+
+`doe_202412_site_roles` records the historical DOE site address fragment, operator,
+combined owner/IPPA column, registry unit count and native contract code. These
+are dated observations, not current legal ownership or physical operation. Unit
+counts do not establish a battery-module/container count.
+
+`extensions_json.sa_minister_20260919` records dated project-completion percentages,
+procurement forecasts and FY27 commissioning expectations from the signed ministerial
+reply. These observations do not erase earlier ratings or turn a tender into an award,
+construction completion or operation. Komati's battery scope excludes co-located PV.
+
+`kosovo_compact_site` keeps site-specific procurement, planned ownership/operator,
+programme implementation and hearing observations. `XKX` is user-assigned, not
+an official ISO assignment. The two named sites are counted separately; the
+340 MWh programme total is not a third project. Programme financing is not site capex.
+
+`besipppp_required_services` describes procurement requirements, not actual service
+delivery. Reserve applications do not promote a preferred bidder to operation.
+
+`extensions_json.kosovo_land_entity_observation` stores dated land transfers,
+land hectares, village and planned-operator corporate facts. Corporate formation,
+land transfer and a historical completion target do not establish project permits,
+construction, commissioning or operation. Compact funding is not site capex.

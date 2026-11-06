@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-11-06T03:12:27.874666+00:00",
+  "local_passed": {
+    "focused_bess_tests": 588,
+    "new_synthetic_parser_cases": 13,
+    "viewer_tests": 34,
+    "ruff_check": "passed",
+    "ruff_format": "1190files passed",
+    "ty": "passed",
+    "hygiene": "passed",
+    "citations": "passed",
+    "offline_examples": [
+      "BESS projects",
+      "BESS OEM"
+    ],
+    "catalogue_validation": [
+      "BESS",
+      "BESS OEM"
+    ],
+    "typed_zstd_snapshots": "twice independently byte-identical per catalogue, outside Git",
+    "preservation": "all existing facts/conflicts/created_at and source entries retained",
+    "upsert": "5 additive namespace collisions reviewed; no-op replay preserved updated_at",
+    "source_original_sha256": 12,
+    "source_parser_replay": 13,
+    "system_module_relationships": 16,
+    "controller_compatibility_relationships": 1,
+    "new_equipment_field_source_mappings": 613
+  },
+  "local_full_suite": "Attempted; collection stopped in tests/test_kgpv_worldwide_example.py because psutil raised NoSuchProcess(pid=5), host environment limitation. No full local pass claimed.",
+  "hosted_full_python_packages_docs": {
+    "verified_at": "2026-11-06T03:22:52.742276+00:00",
+    "data_code_head": "22ecdd2f2fb87134a3d3f360289cd176e778dd88",
+    "python_workflow": "https://github.com/julianascencio/energy-data-insights/actions/runs/42155450097",
+    "python_313": {
+      "passed": 3182,
+      "skipped": 0
+    },
+    "python_312": {
+      "passed": 3178,
+      "skipped": 4
+    },
+    "package_checks": "Distributions, strict metadata, installed wheels and synthetic/applied examples passed",
+    "docs_workflow": "https://github.com/julianascencio/energy-data-insights/actions/runs/42155450173",
+    "docs": "Strict full-gallery build, database/viewer assets and717HTML-page link validation passed; PR Pages deployment correctly skipped"
+  },
+  "local_full_gallery_docs": "Not attempted this increment: limited shared disk; hosted strict full-gallery build requested by normal PR CI"
+}

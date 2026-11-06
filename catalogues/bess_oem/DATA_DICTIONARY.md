@@ -77,3 +77,41 @@ Schema **1.0.0**. All 73 columns exist in Parquet; missing values are null.
 | `created_at` | timestamp | — | UTC date of database record creation, not product launch. |
 | `updated_at` | timestamp | — | UTC date of last substantive record change. |
 | `last_verified_at` | timestamp | — | UTC source-check date; not physical validation or proof of availability. |
+
+The `fullriver_terminal_case` extension retains exact-sheet terminal wording,
+case material and a qualified flame-resistance claim. UL94-HB is a manufacturer
+material-rating claim, not proof of product certification. Generic torque tables
+are excluded unless applicable model-specific values are visually verified.
+
+The `pylontech_force`, `pylontech_module` and `pylontech_unit` extensions retain
+model-specific current classes and time limits, nominal/usable energy, charge and
+discharge temperature ranges, strict altitude bounds and qualified life claims.
+`module_record_id` links a stack to its exact module; named controllers do not
+imply separately accepted controller records. Native dimension order is retained
+when table axes are not explicit. Short-circuit A/ms is never operating current.
+
+## November6 high-voltage and regional OEM observations
+
+`extensions_json.pylontech_hv` retains the exact single-string/rack boundary,
+module record ID/count, native energy rounding, charge/discharge current classes
+and time limits, voltage bounds and qualified lifetime/efficiency claims.
+PowerCube current rows lack an explicit unit; they remain native observations,
+not normalized amperes or active power. Module-only facts do not inherit system IP.
+
+`extensions_json.solarmd_specification` distinguishes cell supplier from module
+manufacturer and records current/voltage limits, exact controller supply/contact
+ratings, cycle conditions and charging-only efficiency. Logger supply/relay ratings
+are never battery capacity. SS4083's power/C-rate inconsistency is quarantined in
+`conflicts_json`; normalized power is null, other verified fields remain usable.
+
+`solarmd_specification` also records exact SS70xx-05 module/rack relationships and
+model-specific throughput-limited warranties. Unsuffixed historical models stay
+separate. Charging efficiency, battery-only RTE and PCS conversion efficiency
+have separate boundaries. Outdoor bundle cabinet weights are fully-loaded
+observations, not exact configured-unit weights. Controller relay ratings are
+not dielectric withstand ratings; BMU fuse/current limits are not PCS power.
+
+`extensions_json.solarmd_legacy` preserves the unsuffixed SS7000 generation's
+SS6143 module relationships, unspecified-class current rating, module-only usable
+energy at0.3C, and exact-model warranty limits. Printed Rev1.0 is dated26April2024;
+the April2025 URL path is not the revision. Charging efficiency is not RTE.

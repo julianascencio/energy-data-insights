@@ -1,7 +1,7 @@
 # Worldwide BESS projects
 
-The BESS section contains **2,149 project and plant records across
-48 countries**, supported by **410 registered sources**. It combines curated
+The BESS section contains **2,210 project and plant records across
+49 countries and territories**, supported by **422 registered sources**. It combines curated
 commercial projects with reviewed U.S., UK, Australian, Chilean and French inventory subsets, not an
 exhaustive global inventory. It includes electrochemical
 batteries (including vanadium flow), not pumped hydro, compressed air or thermal
@@ -272,7 +272,7 @@ Latest research: [Philippines service and project reconciliation; EFFEKTA and Py
 
 Latest evidence review: [EFFEKTA charging conditions and physical-edition reconciliation](research/2026-11-04_effekta_charge.md).
 
-Latest continuation: [Scatec portfolio and exact OPzS editions](research/2026-11-04_opzs_scatec.md).
+Previous continuation: [Scatec portfolio and exact OPzS editions](research/2026-11-04_opzs_scatec.md).
 
 Latest iteration: [Malaysia, Ingeteam and Omburu](research/2026-11-04_malaysia_ingeteam.md), with named project/SPV identities, source holds and exact converter configurations.
 
@@ -296,3 +296,17 @@ Latest continuation: [40 Victron warranty enrichments and African inventory scre
 Latest continuation: [Kenyan battery replacements and nine exact installation enrichments](research/2026-11-05_kenya_installation.md).
 
 Latest continuation: [Fullriver exact models and South African bid identities](research/2026-11-05_fullriver_bw3.md).
+
+Latest continuation: [Pacific project reconciliation and exact Fullriver conditions](research/2026-11-05_pacific_conditions.md).
+
+Latest continuation: [Fullriver and Rarotonga review](research/2026-11-05_fullriver_rarotonga.md).
+
+Latest continuation: [Community batteries and Fullriver review](research/2026-11-06_community_fullriver.md).
+
+Latest continuation: [15 Philippine project enrichments and19 exact Pylontech configurations](research/2026-11-06_philippines_pylontech.md), with historical site/operator/owner-IPPA observations, source-access decisions and preserved phase/hybrid holds.
+
+Latest continuation: [South African project milestones and15 exact Pylontech/Solar MD models](research/2026-11-06_south_africa_pylontech_hv.md), including Komati tender scope, three construction-progress observations, exact modules and Logger V2.
+
+Latest continuation: [Two Kosovo sites, five South African service enrichments and20 exact Solar MD configurations](research/2026-11-06_solarmd_kosovo.md), with exact warranty limits, component relationships and qualified efficiency/PCS boundaries.
+
+Latest continuation: [11 legacy Solar MD configurations and two Kosovo enrichments](research/2026-11-06_solarmd_legacy.md). Exact generations, warranty limits and historical project design remain distinct.

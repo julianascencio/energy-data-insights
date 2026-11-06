@@ -1,7 +1,7 @@
 # Global BESS OEM product database
 
-The 5 November 2026 expanded research snapshot contains **1,192 records from 56 product
-suppliers, backed by 504 registered sources**: 1,179 documented configurations and 13
+The 6 November 2026 expanded research snapshot contains **1,285 records from 57 product
+suppliers, backed by 555 registered sources**: 1,272 documented configurations and 13
 explicitly configurable families. It covers utility-scale systems, C&I cabinets,
 a small residential sample, standalone battery inverters and inverter/chargers, EMS controllers, and non-lithium
 storage technologies. This is a
@@ -276,7 +276,7 @@ uv run python scripts/stage_bess_leoch.py --text /outside-git/4OPzV200.txt --mod
 
 The parser fails on changed identity, nominal rating basis, current units or reviewed conditions. It stages only; exact revision, source rights, table anomalies and identity must be reviewed before the existing upsert API. C-rate and short-circuit current never become amperes or peak operating power.
 
-Latest continuation: [OPzS exact editions and Scatec portfolio](../bess/research/2026-11-04_opzs_scatec.md).
+Previous continuation: [OPzS exact editions and Scatec portfolio](../bess/research/2026-11-04_opzs_scatec.md).
 
 Latest iteration: [Malaysia, Ingeteam and Omburu](../bess/research/2026-11-04_malaysia_ingeteam.md), with source access decisions, exact converter configurations and preserved rating conflicts.
 
@@ -298,3 +298,17 @@ Latest continuation: [Kenyan battery replacements and nine exact installation en
 Latest continuation: [Fullriver exact models and South African bid identities](../bess/research/2026-11-05_fullriver_bw3.md).
 
 Individual-sheet capacity/test-condition enrichment: [5 November review](../bess/research/2026-11-05_fullriver_sheets.md).
+
+Latest continuation: [Pacific project reconciliation and exact Fullriver conditions](../bess/research/2026-11-05_pacific_conditions.md).
+
+Latest continuation: [Fullriver and Rarotonga review](../bess/research/2026-11-05_fullriver_rarotonga.md).
+
+Latest continuation: [Community batteries and Fullriver review](../bess/research/2026-11-06_community_fullriver.md).
+
+Latest continuation: [Philippine site/role enrichment and19 exact Pylontech configurations](../bess/research/2026-11-06_philippines_pylontech.md). Printed manual revisions, nominal/usable energy, timed current limits and stack/module scope remain explicit.
+
+Latest continuation: [15 exact Pylontech and Solar MD records](../bess/research/2026-11-06_south_africa_pylontech_hv.md). Eight system/module relationships, qualified current/efficiency boundaries and an SS4083 power-condition quarantine are explicit.
+
+Latest continuation: [20 exact Solar MD stacks, modules, controllers and outdoor bundles](../bess/research/2026-11-06_solarmd_kosovo.md), with exact warranty limits, component relationships and qualified efficiency/PCS boundaries.
+
+Latest continuation: [11 legacy Solar MD configurations and two Kosovo enrichments](../bess/research/2026-11-06_solarmd_legacy.md). Exact generations, warranty limits and historical project design remain distinct.

@@ -1,0 +1,84 @@
+{
+  "reviewed_at": "2026-11-05T23:07:47.777404+00:00",
+  "ranking_basis": "Verified yield, useful metadata, rights clarity, effort",
+  "sources": [
+    {
+      "rank": 1,
+      "url": "https://www.adb.org/sites/default/files/publication/815361/hybrid-battery-energy-storage-systems.pdf",
+      "country_entity": "Cook Islands / Rarotonga and Aitutaki",
+      "estimated_useful_yield": "2\u20134 exact site/phase reconciliations",
+      "version_date": "2022-08",
+      "access_licence_assessment": "CC BY3.0 IGO applies to ADB author tables; third-party photographs excluded",
+      "offered_fields": [
+        "island",
+        "programme",
+        "battery kW/kWh",
+        "solar kW",
+        "chemistry",
+        "commissioning year",
+        "funders",
+        "design/performance context"
+      ],
+      "processed_partition": "Tables3.1\u20133.3, all26 components screened; Haapai and four outer Cook Islands accepted",
+      "retry_condition": "Fresh source/version and exact physical phase evidence before next import",
+      "attempt_result": "1new project,4enriched,15existing unchanged,4held,2excluded",
+      "next_action": "Resolve AirportSouth/West identity against utility as-built portfolio; resolve grid-stability overload versus continuous capacity. Do not import4MWh Aitutaki row without phase evidence."
+    },
+    {
+      "rank": 2,
+      "url": "https://fullriverbattery.com/support-spec-sheets/",
+      "country_entity": "Fullriver Battery exact DC models",
+      "version_date": "Undated; refreshed 2026-11-05T23:07:47.777404+00:00",
+      "access_licence_assessment": "Copyright reserved; bounded factual extraction, no open bulk licence asserted; no documents/artwork republished",
+      "estimated_useful_yield": "Up to24 other unique live headings after current28 exact model coverage; must assess identities individually",
+      "offered_fields": [
+        "battery Ah rate tables",
+        "voltage",
+        "resistance",
+        "mechanical",
+        "charging",
+        "temperature"
+      ],
+      "attempt_result": "30identities reviewed:10new,17enriched,3held. Four new rows have field-level holds. All28 PDF byte captures retained outsideGit.",
+      "processed_partition": "Existing20:17chargingaccepted,DC105rasterheld,DC210/DC260noexactlinks; ten additional smallmodels fullyprocessed",
+      "retry_condition": "Fresh index and bytes before remaining models; manually transcribe DC105p2 only from visible source",
+      "next_action": "Review unprocessed exact DC model sheets, keeping DC200-6/6A identity difference and suffixes explicit."
+    },
+    {
+      "rank": 3,
+      "url": "https://data.adb.org/dataset/adb-projects-pacific",
+      "country_entity": "Pacific / ADB sovereign inventory",
+      "version_date": "Landingpage inaccessible on 2026-11-05T23:07:47.777404+00:00",
+      "access_licence_assessment": "403; licence not inspected, no rows imported",
+      "estimated_useful_yield": "Unknown battery subset; loan IDs are not physical projects",
+      "offered_fields": [
+        "project IDs",
+        "countries",
+        "loan dates",
+        "funding"
+      ],
+      "attempt_result": "Blocked before extraction; alternate licensed26-case report used",
+      "processed_partition": "None",
+      "retry_condition": "Public access restored; no retry before2026-11-06T23:00Z",
+      "next_action": "Inspect original dataset terms and sample technology labels before downloading."
+    },
+    {
+      "rank": 4,
+      "url": "https://www.adb.org/projects/58247-003/main",
+      "country_entity": "Samoa / Sun Pacific Energy",
+      "version_date": "Search discovery September2026 document; primarypageblocked",
+      "access_licence_assessment": "403 on primarypage; no technical facts accepted from snippet",
+      "estimated_useful_yield": "1project if physical site and battery portion verified",
+      "offered_fields": [
+        "borrower",
+        "finance",
+        "projectdocuments"
+      ],
+      "attempt_result": "Held source; no acceptedcandidate",
+      "processed_partition": "None",
+      "retry_condition": "Public original page/doc access restored",
+      "next_action": "Read environmental action plan and reconcile existing Samoa projects before import."
+    }
+  ],
+  "prior_backlogs_preserved": true
+}

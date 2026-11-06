@@ -1,0 +1,254 @@
+{
+  "checked_at": "2026-11-06T02:17:00.392505+00:00",
+  "rank_basis": "Expected verified yield, metadata usefulness, licence clarity and effort",
+  "sources": [
+    {
+      "rank": 1,
+      "url": "https://pmg.org.za/files/RNW4150-2026-09-21.docx",
+      "country_entity": "South Africa / Ministry Electricity and Energy via PMG",
+      "version_date": "Signed2026-09-19; posted2026-09-21",
+      "access_licence": "PMG CC BY3.0ZA, original DOCX and page checked; attribution notice committed",
+      "estimated_useful_yield": 4,
+      "offered_fields": [
+        "battery MW",
+        "procurement",
+        "completion percentage",
+        "delivery dates"
+      ],
+      "attempt_result": "1new and3enriched;2PV entries excluded",
+      "processed_partition": "All6 named Eskom Green/Phase1 entries in replypart1",
+      "retry_condition": "New reply/tender result",
+      "next_action": "Fresh licensed parliamentary committee evidence for phase1 construction and Komati award/status"
+    },
+    {
+      "rank": 9,
+      "url": "https://www.eskom.co.za/wp-content/uploads/2026/09/Eskom-integrated-report-August-2026.pdf",
+      "country_entity": "South Africa / Eskom owner portfolio",
+      "version_date": "2026 annual report",
+      "access_licence": "Eskom terms2.1/2.2non-private reuse requires permission;2.10automated collection prohibited",
+      "estimated_useful_yield": 0,
+      "offered_fields": [
+        "project inventory",
+        "milestones"
+      ],
+      "attempt_result": "8sites reviewed; zero accepted from this source; original bytes discarded",
+      "processed_partition": "Annual BESS inventory screened; reuse gate failed",
+      "retry_condition": "Explicit reusable release or independently licensed evidence",
+      "next_action": "Use PMG/ministry/financier evidence, not an alternate mirror of restricted report"
+    },
+    {
+      "rank": 9,
+      "url": "https://www.eskom.co.za/wp-content/uploads/2026/09/Eskom-performance-report-2026.pdf",
+      "country_entity": "South Africa / Eskom performance report",
+      "version_date": "2026",
+      "access_licence": "Same Eskom restrictions",
+      "estimated_useful_yield": 0,
+      "offered_fields": [
+        "milestones",
+        "contracts"
+      ],
+      "attempt_result": "Not ingested; bytes discarded",
+      "processed_partition": "BESS section sampled only",
+      "retry_condition": "Explicit reusable source",
+      "next_action": "Independently verify unresolved contract lifecycle"
+    },
+    {
+      "rank": 2,
+      "url": "https://www.worldbank.org/en/news/factsheet/2023/06/05/factsheet-eskom-just-energy-transition-project-in-afe-south-africa",
+      "country_entity": "South Africa / World Bank",
+      "version_date": "2023-06-05",
+      "access_licence": "Public official factsheet; bulk-reuse scope not resolved this pass",
+      "estimated_useful_yield": "1potential enrichment",
+      "offered_fields": [
+        "150MW BESS",
+        "programme financing"
+      ],
+      "attempt_result": "Read as historical corroboration only; no canonical claims imported",
+      "processed_partition": "Factsheet; historical PV/wind proposal differs from2026reply",
+      "retry_condition": "Fresh project restructuring document and licence reviewed",
+      "next_action": "Review project restructuring P177398; distinguish full transition financing from battery capex"
+    },
+    {
+      "rank": 4,
+      "url": "https://pylonwebs3.s3.amazonaws.com/upload/2024/09/25/RESS-Installation%20Manual--Force-H1-V2%20%28EU%29%205PMPA08-00135-V1.1_20240925122209A030.pdf",
+      "country_entity": "Pylontech / China",
+      "version_date": "22P1FH1018 /5PMPA08-00135",
+      "access_licence": "OEM copyright retained; bounded factual review, no full documents or open bulk licence assertion",
+      "estimated_useful_yield": 7,
+      "offered_fields": [
+        "energy",
+        "voltage/current",
+        "dimensions/mass",
+        "module relationships"
+      ],
+      "attempt_result": "Accepted exact configurations/components; controller records deferred",
+      "processed_partition": "Force-H1-V2 six single strings andFH48074",
+      "retry_condition": "New OEM revision or controller specification",
+      "next_action": "Compare revisions without duplicate records; controller modelsFC0500-40S-V2/SC1000-100 require substantive electrical data"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/pylontech_powercube_h1_h2_operation_manual__v2_3__19pihv0703_sv.pdf",
+      "country_entity": "Pylontech / China",
+      "version_date": "2.3 /19PIHV0703",
+      "access_licence": "OEM copyright retained; bounded factual review, no full documents or open bulk licence assertion",
+      "estimated_useful_yield": 4,
+      "offered_fields": [
+        "energy",
+        "voltage/current",
+        "dimensions/mass",
+        "module relationships"
+      ],
+      "attempt_result": "Accepted exact configurations/components; controller records deferred",
+      "processed_partition": "PowerCube-H1/H2 exact racks andH48050/H48074",
+      "retry_condition": "New OEM revision or controller specification",
+      "next_action": "Compare revisions without duplicate records; controller modelsFC0500-40S-V2/SC1000-100 require substantive electrical data"
+    },
+    {
+      "rank": 3,
+      "url": "https://d.otto.de/files/d48bf28c-65d4-5dcb-bebb-607094bb29b0.pdf",
+      "country_entity": "Pylontech / US2000C",
+      "version_date": "20CPSV1102 /PM0MUS3C0009 plus unversioned appended brochure",
+      "access_licence": "Public OEM-authored document on Otto; no bulk licence asserted; no ingestion",
+      "estimated_useful_yield": 0,
+      "offered_fields": [
+        "energy",
+        "mass",
+        "voltage/current",
+        "operating conditions"
+      ],
+      "attempt_result": "Entire candidate quarantined: manualp10 andbrochurep42 conflict",
+      "processed_partition": "Both exact US2000C columns reviewed",
+      "retry_condition": "Independent exact OEM revision resolves conflicts",
+      "next_action": "Find current OEM-hosted single-revision US2000C/D manual; do not pick one page silently"
+    },
+    {
+      "rank": 9,
+      "url": "https://static.getpylon.com/manuals/storage/PylontechManual_Force-H1.pdf",
+      "country_entity": "Pylontech / oldForce-H1; getpylonhost",
+      "version_date": "2.3",
+      "access_licence": "getpylon software terms automated access prohibition; scope uncertain, conservative hold",
+      "estimated_useful_yield": 0,
+      "offered_fields": [
+        "system table"
+      ],
+      "attempt_result": "Not ingested; bytes discarded afterhost terms review",
+      "processed_partition": "OldForce-H1 table only",
+      "retry_condition": "Independent OEM source with clear scope",
+      "next_action": "Use OEM-hosted V2 for this batch; oldgeneration separate untilrights/revision clear"
+    },
+    {
+      "rank": 8,
+      "url": "https://www.bornay.com/es/productos/baterias/pylontech-force-h1.pdf",
+      "country_entity": "Pylontech / Bornay host",
+      "version_date": "Unversioned2page brochure",
+      "access_licence": "Public distributor material, discovery only",
+      "estimated_useful_yield": 0,
+      "offered_fields": [
+        "distributor summary"
+      ],
+      "attempt_result": "Indexed manual route returned distributor brochure; excluded",
+      "processed_partition": "Two pages, noOEMmanual accepted",
+      "retry_condition": "Original OEMmanual accessible",
+      "next_action": "Do not import distributor technical summary"
+    },
+    {
+      "rank": 2,
+      "url": "https://www.solarmd.co.za/storage/2025/01/Solar-MD-SS214-Low-Voltage-Cabinets-Datasheet-Oct-2024.pdf",
+      "country_entity": "Solar MD / South Africa",
+      "version_date": "October2024 URL edition",
+      "access_licence": "OEM copyright retained; sales termssection11reviewed, bounded numerical facts only, notbulkopenlicence",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "exact model",
+        "electrical limits",
+        "dimensions",
+        "communications",
+        "cell supplier",
+        "qualified efficiency/warranty"
+      ],
+      "attempt_result": "Accepted exact model",
+      "processed_partition": "Exact SS214 table; optionalCB rack ranges andunnamedBMS/BMU not separate records",
+      "retry_condition": "New revision orexact configuration table",
+      "next_action": "Review SS216,SS6160 andSS70xx next; reconcileSS4083 power condition"
+    },
+    {
+      "rank": 2,
+      "url": "https://www.solarmd.co.za/storage/2025/06/solar-md-ss4160-datasheet-june-2025-digitalpdf.pdf",
+      "country_entity": "Solar MD / South Africa",
+      "version_date": "June2025 URL edition",
+      "access_licence": "OEM copyright retained; sales termssection11reviewed, bounded numerical facts only, notbulkopenlicence",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "exact model",
+        "electrical limits",
+        "dimensions",
+        "communications",
+        "cell supplier",
+        "qualified efficiency/warranty"
+      ],
+      "attempt_result": "Accepted exact model",
+      "processed_partition": "Exact SS4160 table; optionalCB rack ranges andunnamedBMS/BMU not separate records",
+      "retry_condition": "New revision orexact configuration table",
+      "next_action": "Review SS216,SS6160 andSS70xx next; reconcileSS4083 power condition"
+    },
+    {
+      "rank": 2,
+      "url": "https://www.solarmd.co.za/storage/2025/01/Solar-MD-SS4083-Low-Voltage-Datasheet-Oct-2024.pdf",
+      "country_entity": "Solar MD / South Africa",
+      "version_date": "October2024 URL edition",
+      "access_licence": "OEM copyright retained; sales termssection11reviewed, bounded numerical facts only, notbulkopenlicence",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "exact model",
+        "electrical limits",
+        "dimensions",
+        "communications",
+        "cell supplier",
+        "qualified efficiency/warranty"
+      ],
+      "attempt_result": "Accepted; SS4083 normalized power withheld for C-rate inconsistency",
+      "processed_partition": "Exact SS4083 table; optionalCB rack ranges andunnamedBMS/BMU not separate records",
+      "retry_condition": "New revision orexact configuration table",
+      "next_action": "Review SS216,SS6160 andSS70xx next; reconcileSS4083 power condition"
+    },
+    {
+      "rank": 2,
+      "url": "https://www.solarmd.com/storage/2025/01/Solar-MD-Monitoring-Control-Datasheet-Oct-2024.pdf",
+      "country_entity": "Solar MD / South Africa",
+      "version_date": "October2024 URL edition",
+      "access_licence": "OEM copyright retained; sales termssection11reviewed, bounded numerical facts only, notbulkopenlicence",
+      "estimated_useful_yield": 1,
+      "offered_fields": [
+        "exact model",
+        "electrical limits",
+        "dimensions",
+        "communications",
+        "cell supplier",
+        "qualified efficiency/warranty"
+      ],
+      "attempt_result": "Accepted exact model",
+      "processed_partition": "Exact Logger V2 table; optionalCB rack ranges andunnamedBMS/BMU not separate records",
+      "retry_condition": "New revision orexact configuration table",
+      "next_action": "Review SS216,SS6160 andSS70xx next; reconcileSS4083 power condition"
+    },
+    {
+      "rank": 1,
+      "url": "https://www.solarmd.com/resources/",
+      "country_entity": "Solar MD / South Africa",
+      "version_date": "UpdatedSeptember2026",
+      "access_licence": "PublicOEMindex, copyrightreserved; individualdatasheetsreviewrequired",
+      "estimated_useful_yield": "Potential5–15exact configurations",
+      "offered_fields": [
+        "highvoltage racks",
+        "containers",
+        "PCS integration",
+        "BMS/EMS"
+      ],
+      "attempt_result": "Index reviewed; selected4producttables exhausted",
+      "processed_partition": "SS214,SS4160,SS4083,LoggerV2 complete; nextSS216/SS6160/SS70xx",
+      "retry_condition": "Fresh index/version before next partition",
+      "next_action": "Review highvoltage exact tables, optionalranges notCartesianvariants"
+    }
+  ]
+}

@@ -1,0 +1,2585 @@
+{
+  "equipment": {
+    "candidates": 30,
+    "new": 10,
+    "enriched": 17,
+    "whole_record_quarantines": 0,
+    "held": 3,
+    "field_conflicted_records": 4,
+    "decisions": [
+      {
+        "model": "DC215-12",
+        "record_id": "0c6dd74f-2bb0-5eb7-85dc-dcb6afb30d93",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc215_12_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "absorption": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "float": {
+              "12": 13.6,
+              "24": 27.2,
+              "36": 40.8,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc215_12_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:58:12.757009+00:00",
+          "sha256": "0fadfdcc742b91a88b45ab09ef28751b51b678b41f4c7e57fdc6c529ab57ccba"
+        }
+      },
+      {
+        "model": "DC180-8",
+        "record_id": "19daa619-53e6-5b20-ae1c-6430a86fdf9a",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc180_8_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "8": 9.8,
+              "24": 29.4,
+              "32": 39.2,
+              "48": 58.8
+            },
+            "absorption": {
+              "8": 9.8,
+              "24": 29.4,
+              "32": 39.2,
+              "48": 58.8
+            },
+            "float": {
+              "8": 9.1,
+              "24": 27.3,
+              "32": 36.4,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc180_8_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:23.166350+00:00",
+          "sha256": "2ca5241cba07783ee319ca3877297a3c05218644aabd69ece297b351bf6cfde9"
+        }
+      },
+      {
+        "model": "DC210-12",
+        "decision": "held",
+        "reason": "No exact PDF link in freshly retrieved index"
+      },
+      {
+        "model": "DC105-12",
+        "decision": "held",
+        "reason": "Exact model heading mismatch; raster charging table needs independent transcription"
+      },
+      {
+        "model": "DC260-12",
+        "decision": "held",
+        "reason": "No exact PDF link in freshly retrieved index"
+      },
+      {
+        "model": "DC335-6",
+        "record_id": "4af17e50-97fa-5291-b53f-84fb348082f2",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc335_6_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "absorption": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "float": {
+              "6": 6.8,
+              "12": 13.6,
+              "24": 27.2,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc335_6_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:13.193160+00:00",
+          "sha256": "d8f994f70278fbdb6ba8ffca74add4e7227275e07ea72b6795b6c468552ee137"
+        }
+      },
+      {
+        "model": "DC220-6",
+        "record_id": "5944a131-00ec-524a-95c6-46b488edaeff",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc220_6_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "absorption": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "float": {
+              "6": 6.8,
+              "12": 13.6,
+              "24": 27.2,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc220_6_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:56:52.793530+00:00",
+          "sha256": "5773b42be3d9afa4c4abb25c01c4ae57f305ab7f839b673ce4c3440ddfbd6ed7"
+        }
+      },
+      {
+        "model": "DC245-6",
+        "record_id": "59e1ab5d-4704-555f-90b3-c1b3f27c67e1",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc245_6_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "absorption": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "float": {
+              "6": 6.8,
+              "12": 13.6,
+              "24": 27.2,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc245_6_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:02.923602+00:00",
+          "sha256": "e6c0b2efae135d2aa9e34ca41595035fb2a779cd516916689412aae9b88cc442"
+        }
+      },
+      {
+        "model": "DC160-12",
+        "record_id": "63ff5196-cbe0-5514-bcf0-7a5d8a1e1a5e",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc160_12_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "absorption": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "float": {
+              "12": 13.6,
+              "24": 27.2,
+              "36": 40.8,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc160_12_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:58:07.667217+00:00",
+          "sha256": "201787f4047b38cac039d5f00a7d425bc078fddd8c5efff4f751afd0acbb1384"
+        }
+      },
+      {
+        "model": "DC1150-2",
+        "record_id": "6f83c859-1c25-59e9-8bea-f84227ef42e2",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc1150_2_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "2": 2.45,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "absorption": {
+              "2": 2.45,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "float": {
+              "2": 2.275,
+              "12": 13.6,
+              "24": 27.2,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc1150_2_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:56:47.349897+00:00",
+          "sha256": "e8dc32599c4ae799baf2adbfc67233f681ac36e30ce2bcc7dca155c992215393"
+        }
+      },
+      {
+        "model": "DC400-6",
+        "record_id": "8523335c-f28c-554c-ba94-df39e1120abe",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc400_6_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "absorption": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "float": {
+              "6": 6.8,
+              "12": 13.6,
+              "24": 27.2,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc400_6_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:17.882151+00:00",
+          "sha256": "817ec3ec4ee83c84065b9d2ab671c9661a33609abb5e185c569063a60bd47ec1"
+        }
+      },
+      {
+        "model": "DC115-12",
+        "record_id": "8b58c2c1-1d81-5ecd-baf2-e6a487e3f79b",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc115_12_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "absorption": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "float": {
+              "12": 13.6,
+              "24": 27.2,
+              "36": 40.8,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc115_12_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:51.427078+00:00",
+          "sha256": "e38752fa82fed12b9fec484930e3b93bf141cd409f7db77415dade1195028e96"
+        }
+      },
+      {
+        "model": "DC85-12",
+        "record_id": "c990b557-34a1-5837-930d-81e10a254107",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc85_12_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "absorption": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "float": {
+              "12": 13.6,
+              "24": 27.2,
+              "36": 40.8,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc85_12_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:42.707913+00:00",
+          "sha256": "6a9a918e238e8a1c96db0ecfabb05cd591193d34b333d0c57578baa6bc57ca8b"
+        }
+      },
+      {
+        "model": "DC250-6",
+        "record_id": "cb295ba1-458b-59a0-9828-a0fa7347dbe1",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc250_6_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "absorption": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "float": {
+              "6": 6.8,
+              "12": 13.6,
+              "24": 27.2,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc250_6_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:08.347191+00:00",
+          "sha256": "0b38b2d42fa851b407421d64c5d8c8e69957ce93fa7ca4a9b07acd29de60fba4"
+        }
+      },
+      {
+        "model": "DC35-12",
+        "record_id": "cc113493-9a47-5abe-ba5e-c452b6e9292f",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc35_12_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "absorption": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "float": {
+              "12": 13.6,
+              "24": 27.2,
+              "36": 40.8,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc35_12_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:33.392010+00:00",
+          "sha256": "cb4fcc47e5968946b928d2902035bdb13ca9cff196d5e9ef93523c9ce90aea52"
+        }
+      },
+      {
+        "model": "DC200-8",
+        "record_id": "d3d07674-7e23-5e85-8503-f32744aa8212",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc200_8_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "8": 9.8,
+              "24": 29.4,
+              "32": 39.2,
+              "48": 58.8
+            },
+            "absorption": {
+              "8": 9.8,
+              "24": 29.4,
+              "32": 39.2,
+              "48": 58.8
+            },
+            "float": {
+              "8": 9.1,
+              "24": 27.3,
+              "32": 36.4,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc200_8_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:27.867198+00:00",
+          "sha256": "ddfdea0cabf78c78e667991313008c96ba52901af0fb755cd23ef2a1e7ec906e"
+        }
+      },
+      {
+        "model": "DC224-6",
+        "record_id": "dc3f26e9-b738-5d5e-b374-648ae58e76d5",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc224_6_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "absorption": {
+              "6": 7.35,
+              "12": 14.7,
+              "24": 29.4,
+              "48": 58.8
+            },
+            "float": {
+              "6": 6.8,
+              "12": 13.6,
+              "24": 27.2,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc224_6_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:56:57.816387+00:00",
+          "sha256": "3451616fda2cbf0333f5b6818a98dd2fe95d8ebf5777bcbdbdc8279ecddc3d44"
+        }
+      },
+      {
+        "model": "DC55-12",
+        "record_id": "e410619d-288f-5584-acd4-87bd97a9a88f",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc55_12_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "absorption": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "float": {
+              "12": 13.6,
+              "24": 27.2,
+              "36": 40.8,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc55_12_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:38.067138+00:00",
+          "sha256": "60878d5822a38450ac05424fc5813516005dbc9cdd9ba341e01865a110fc2365"
+        }
+      },
+      {
+        "model": "DC140-12",
+        "record_id": "f34de82c-2b03-59ec-927a-baee3c6bd43e",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc140_12_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "absorption": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "float": {
+              "12": 13.6,
+              "24": 27.2,
+              "36": 40.8,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc140_12_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:57:56.859154+00:00",
+          "sha256": "b3d445bc1de8cd4878099ba9b1052d1920a7b7b35b6d87f4e2159597f1642487"
+        }
+      },
+      {
+        "model": "DC150-12",
+        "record_id": "f3ce03a9-0557-5ed8-8047-5f52b9c51f29",
+        "decision": "enriched",
+        "source_id": "fullriver_sheet_dc150_12_20261105",
+        "observations": {
+          "temperature_ranges": {
+            "Storage": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Operation": {
+              "recommended_f": {
+                "min": 5,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge with TC": {
+              "recommended_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": -40,
+                "max": 160,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -40,
+                "max": 71,
+                "unit": "C"
+              }
+            },
+            "Charge w/o TC": {
+              "recommended_f": {
+                "min": 32,
+                "max": 104,
+                "unit": "F"
+              },
+              "maximum_f": {
+                "min": 5,
+                "max": 122,
+                "unit": "F"
+              },
+              "recommended_c": {
+                "min": 0,
+                "max": 40,
+                "unit": "C"
+              },
+              "maximum_c": {
+                "min": -15,
+                "max": 50,
+                "unit": "C"
+              }
+            }
+          },
+          "tc_definition": "Temperature Compensation",
+          "charge_voltages_v_by_bank_voltage_v": {
+            "bulk": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "absorption": {
+              "12": 14.7,
+              "24": 29.4,
+              "36": 44.1,
+              "48": 58.8
+            },
+            "float": {
+              "12": 13.6,
+              "24": 27.2,
+              "36": 40.8,
+              "48": 54.6
+            }
+          },
+          "temperature_compensation_mv_per_cell_per_degree": {
+            "F": -2,
+            "C": -4
+          },
+          "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+          "qualification": "Native rounded units retained; no inferred reference temperature or charge current",
+          "source_id": "fullriver_sheet_dc150_12_20261105",
+          "locator": "PDF p2 Temperature Range Specifications and Charge Voltages tables",
+          "retrieved_at": "2026-11-05T22:58:02.013791+00:00",
+          "sha256": "234dae686d2c02c9509820fef11e61e7ce2a1a1d9d2e11defc960ec90daa643b"
+        }
+      },
+      {
+        "model": "DC7-12",
+        "record_id": "26134ce8-2b91-5fab-98df-a98803354fb1",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc7_12_20261105",
+        "field_conflicts": {}
+      },
+      {
+        "model": "DC10-12",
+        "record_id": "a70bc790-198c-5271-aa86-a684d6748bd9",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc10_12_20261105",
+        "field_conflicts": {}
+      },
+      {
+        "model": "DC12-12",
+        "record_id": "fb8fc5f3-27e5-563a-a1c4-71a0b645f283",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc12_12_20261105",
+        "field_conflicts": {
+          "one_hour_capacity_anomaly": {
+            "reported_ah": 15.0,
+            "source_id": "fullriver_sheet_dc12_12_20261105",
+            "locator": "PDF p1 C1 row, visually confirmed",
+            "disposition": "Exceeds printed C100/C20 capacity; withheld from accepted rate table, not repaired or inferred from discharge chart."
+          }
+        }
+      },
+      {
+        "model": "DC17-12",
+        "record_id": "d02dbf52-3ad1-543f-8adc-16de93717507",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc17_12_20261105",
+        "field_conflicts": {}
+      },
+      {
+        "model": "DC20-12",
+        "record_id": "07d0569c-ef8c-5d2c-9f84-ee35aaa3f6bd",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc20_12_20261105",
+        "field_conflicts": {}
+      },
+      {
+        "model": "DC24-12",
+        "record_id": "251b2aed-510f-5ecb-b9e7-52a2a488b645",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc24_12_20261105",
+        "field_conflicts": {}
+      },
+      {
+        "model": "DC26-12A",
+        "record_id": "13475f5f-64fa-5e01-90c7-044beaf2968b",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc26_12a_20261105",
+        "field_conflicts": {
+          "undated_physical_disagreement": {
+            "observations": {
+              "weight_kg": {
+                "pdf": 10.3,
+                "web_metric": 10.1
+              }
+            },
+            "source_ids": [
+              "fullriver_sheet_dc26_12a_20261105",
+              "fullriver_dc_cards_20261105_2301"
+            ],
+            "disposition": "No preferred revision; affected physical scalar unset."
+          }
+        }
+      },
+      {
+        "model": "DC26-12B",
+        "record_id": "d0294162-427c-5dd7-95b6-b39a77c99e8d",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc26_12b_20261105",
+        "field_conflicts": {
+          "undated_physical_disagreement": {
+            "observations": {
+              "length_mm": {
+                "pdf": 165.0,
+                "web_metric": 166.0
+              },
+              "width_mm": {
+                "pdf": 176.0,
+                "web_metric": 126.0
+              },
+              "terminal_height_mm": {
+                "pdf": 125.0,
+                "web_metric": 174.0
+              },
+              "weight_kg": {
+                "pdf": 9.6,
+                "web_metric": 10.3
+              }
+            },
+            "source_ids": [
+              "fullriver_sheet_dc26_12b_20261105",
+              "fullriver_dc_cards_20261105_2301"
+            ],
+            "disposition": "No preferred revision; affected physical scalar unset."
+          }
+        }
+      },
+      {
+        "model": "DC38-12",
+        "record_id": "4b7ce16e-1271-5c08-bec7-b4a883e7946a",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc38_12_20261105",
+        "field_conflicts": {
+          "height_native_units": {
+            "pdf_metric_mm": 171,
+            "web_metric_mm": 171,
+            "web_imperial_in": 6.69,
+            "source_ids": [
+              "fullriver_sheet_dc38_12_20261105",
+              "fullriver_dc_cards_20261105_2301"
+            ],
+            "disposition": "Native height observations disagree beyond simple two-decimal rounding; height scalar withheld."
+          }
+        }
+      },
+      {
+        "model": "DC40-12",
+        "record_id": "825dfaf4-3f54-52d3-bcbe-c940afcc3119",
+        "decision": "new",
+        "source_id": "fullriver_sheet_dc40_12_20261105",
+        "field_conflicts": {}
+      }
+    ],
+    "additive_upsert_collisions_reviewed": 17
+  },
+  "projects": {
+    "candidates": 26,
+    "new": 1,
+    "enriched": 4,
+    "whole_record_quarantines": 0,
+    "held": 4,
+    "field_conflicted_records": 4,
+    "decisions": [
+      {
+        "record_id": "3134822c-22eb-5121-a1f4-b6a0b43642c1",
+        "name": "Mitiaro CIRESP BESS",
+        "decision": "enriched",
+        "field_conflicts_retained": true,
+        "observations": {
+          "island": "Mitiaro",
+          "solar_power_kw": 159,
+          "battery_power_kw": 72,
+          "battery_energy_kwh": 972,
+          "energy_basis": "unspecified",
+          "chemistry": "sealed lead-acid",
+          "minimum_soc_pct_approximate": 50,
+          "reported_completion_year": 2019,
+          "locator": "PDF page 39 / printed page 23, Table 3.3 subproject 3 and footnote a",
+          "source_id": "adb_pacific_hybrid_202208",
+          "retrieved_at": "2026-11-05T22:56:35.451432+00:00",
+          "sha256": "5614a02761b3f0b0bd64a8c34e651b66c1439607237b97957e9ddf5efdc1efc5",
+          "minimum_soc_basis": "Report footnote approximate operating minimum; no derived usable MWh",
+          "scope": "Historical CIRESP observation; no current status assertion"
+        }
+      },
+      {
+        "record_id": "d1d10f18-c0e9-59dd-97ef-dfa9774c4c5c",
+        "name": "Mauke CIRESP BESS",
+        "decision": "enriched",
+        "field_conflicts_retained": true,
+        "observations": {
+          "island": "Mauke",
+          "solar_power_kw": 229,
+          "battery_power_kw": 90,
+          "battery_energy_kwh": 1214,
+          "energy_basis": "unspecified",
+          "chemistry": "sealed lead-acid",
+          "minimum_soc_pct_approximate": 50,
+          "reported_completion_year": 2019,
+          "locator": "PDF page 39 / printed page 23, Table 3.3 subproject 3 and footnote a",
+          "source_id": "adb_pacific_hybrid_202208",
+          "retrieved_at": "2026-11-05T22:56:35.451432+00:00",
+          "sha256": "5614a02761b3f0b0bd64a8c34e651b66c1439607237b97957e9ddf5efdc1efc5",
+          "minimum_soc_basis": "Report footnote approximate operating minimum; no derived usable MWh",
+          "scope": "Historical CIRESP observation; no current status assertion"
+        }
+      },
+      {
+        "record_id": "b1d66b35-82c0-5271-8d8e-9061c4f8f260",
+        "name": "Atiu CIRESP BESS",
+        "decision": "enriched",
+        "field_conflicts_retained": true,
+        "observations": {
+          "island": "Atiu",
+          "solar_power_kw": 413,
+          "battery_power_kw": 162,
+          "battery_energy_kwh": 2186,
+          "energy_basis": "unspecified",
+          "chemistry": "sealed lead-acid",
+          "minimum_soc_pct_approximate": 50,
+          "reported_completion_year": 2019,
+          "locator": "PDF page 39 / printed page 23, Table 3.3 subproject 3 and footnote a",
+          "source_id": "adb_pacific_hybrid_202208",
+          "retrieved_at": "2026-11-05T22:56:35.451432+00:00",
+          "sha256": "5614a02761b3f0b0bd64a8c34e651b66c1439607237b97957e9ddf5efdc1efc5",
+          "minimum_soc_basis": "Report footnote approximate operating minimum; no derived usable MWh",
+          "scope": "Historical CIRESP observation; no current status assertion"
+        }
+      },
+      {
+        "record_id": "c864d983-9851-57c8-81dd-802d9cdb349b",
+        "name": "Mangaia CIRESP BESS",
+        "decision": "enriched",
+        "field_conflicts_retained": true,
+        "observations": {
+          "island": "Mangaia",
+          "solar_power_kw": 477,
+          "battery_power_kw": 216,
+          "battery_energy_kwh": 2915,
+          "energy_basis": "unspecified",
+          "chemistry": "sealed lead-acid",
+          "minimum_soc_pct_approximate": 50,
+          "reported_completion_year": 2019,
+          "locator": "PDF page 39 / printed page 23, Table 3.3 subproject 3 and footnote a",
+          "source_id": "adb_pacific_hybrid_202208",
+          "retrieved_at": "2026-11-05T22:56:35.451432+00:00",
+          "sha256": "5614a02761b3f0b0bd64a8c34e651b66c1439607237b97957e9ddf5efdc1efc5",
+          "minimum_soc_basis": "Report footnote approximate operating minimum; no derived usable MWh",
+          "scope": "Historical CIRESP observation; no current status assertion"
+        }
+      },
+      {
+        "name": "Haapai OIREP BESS",
+        "record_id": "8b196a21-fbed-5dba-a5f4-971ef42468ce",
+        "decision": "new",
+        "identity_review": "One OIREP Haapai installation; no matching canonical TON name/locality/alias or 0.66 MWh row; other Haapai-group island TREP/OIREP projects remain distinct",
+        "observations": {
+          "programme": "Outer Islands Renewable Energy Project (OIREP), subproject 1",
+          "reported_commissioning_year": 2017,
+          "date_precision": "year; status_as_of is year-end convention for reported 2017 commissioning, not exact COD",
+          "no_current_status_inference": true,
+          "source_id": "adb_pacific_hybrid_202208",
+          "locator": "PDF pages 29–30 / printed pages 13–14, Table 3.1 subproject1",
+          "budget_observation": {
+            "amount_usd": 17000000,
+            "approximate": true,
+            "scope": "Whole financed subproject including solar PV, BESS and controller; not battery-only capex",
+            "price_year": null
+          },
+          "funders": [
+            "Asian Development Bank",
+            "Australian Department of Foreign Affairs and Trade",
+            "Global Environment Facility",
+            "Government of Tonga"
+          ],
+          "grid_context": "Existing 11 kV / 400 V distribution network; not a separately verified battery interconnection voltage",
+          "identity_review": "One OIREP Haapai installation; no matching canonical TON name/locality/alias or 0.66 MWh row; other Haapai-group island TREP/OIREP projects remain distinct",
+          "capacity_boundary": "500 kW/660 kWh BESS, AC/DC and gross/usable unstated. Solar 550 kW separate. No derived duration."
+        }
+      },
+      {
+        "name": "Niuatoputapu OIREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Uiha OIREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Nomuka OIREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Haano OIREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Haafeva OIREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Popua grid-stability",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Matatoa load-shifting",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Vavau TREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Eua TREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Niuafoou TREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Kotu TREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Tungua TREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Oua TREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Moungaone TREP",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Aitutaki grid-stability",
+        "decision": "unchanged",
+        "reason": "Existing named installation; older rounded/design or repeated observations do not replace later evidence. Tonga p19 is the same publication as prior SPREP mirror, not independent corroboration."
+      },
+      {
+        "name": "Rarotonga grid-stability",
+        "decision": "held",
+        "reason": "Table6MW/3MWh conflicts with narrative4MW/1MWh overload scope; physical site and later phase identity unresolved."
+      },
+      {
+        "name": "Rarotonga Airport South load-shifting",
+        "decision": "held",
+        "reason": "2MW/8MWh named site reviewed; defer exact phase/owner identity reconciliation with later portfolio before new canonical row."
+      },
+      {
+        "name": "Rarotonga Airport West load-shifting",
+        "decision": "held",
+        "reason": "Possible existing Te Mana o Te Ra MPower1MW/4MWh identity; no automatic merge or duplicate."
+      },
+      {
+        "name": "Aitutaki load-shifting",
+        "decision": "held",
+        "reason": "1MW/4MWh row appears alongside0.5MW/0.5MWh grid-stability installation; standalone physical phase/lifecycle not established."
+      },
+      {
+        "name": "Eua OIREP subproject2",
+        "decision": "excluded",
+        "reason": "Table lists200kW solar and controller; no battery in this OIREP phase; later TREP remains separate."
+      },
+      {
+        "name": "Niuafoou OIREP solar home systems",
+        "decision": "excluded",
+        "reason": "Unquantified storage aggregation;183kW is solar capacity, not BESS. Distinct clinic/TREP records retained."
+      }
+    ],
+    "additive_upsert_collisions_reviewed": 4,
+    "unchanged": 15,
+    "excluded": 2,
+    "candidate_scope": "26 physical or programme components in ADB Tables3.1–3.3; not26 new battery projects"
+  }
+}

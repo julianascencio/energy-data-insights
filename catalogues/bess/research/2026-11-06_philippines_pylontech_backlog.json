@@ -1,0 +1,314 @@
+{
+  "checked_at": "2026-11-06T01:36:23.654847+00:00",
+  "rank_basis": "Verified yield, useful metadata, reuse clarity, effort; inaccessible sources trigger alternatives",
+  "sources": [
+    {
+      "rank": 1,
+      "url": "https://doe.gov.ph/articles/3435676--list-of-existing-power-plants-grid-connected-as-of-march-2026",
+      "country_entity": "Philippines / DOE",
+      "version_date": "March2026 linked by April2026 FOI reply",
+      "access_licence": "Public government route; explicit bulk-reuse licence not established; no bulk ingest",
+      "estimated_useful_yield": "Dozens of new/enriched battery rows if accessible",
+      "offered_fields": [
+        "plant identity",
+        "MW basis",
+        "owner/operator",
+        "COD",
+        "location"
+      ],
+      "attempt_result": "Current route inaccessible; legacy/newCMS alternatives checked, no bypass",
+      "processed_partition": "No current inventory accepted",
+      "retry_condition": "New public working inventory endpoint/version",
+      "next_action": "Follow fresh DOE/EVOSS inventory publication; review newer existing and committed rows against canonical IDs"
+    },
+    {
+      "rank": 2,
+      "url": "https://new.doe.gov.ph/electric-power-industry-projects",
+      "country_entity": "Philippines / DOE committed projects",
+      "version_date": "June2026 index; July30publication",
+      "access_licence": "Government public index; no permission inferred from index alone",
+      "estimated_useful_yield": "Potential multi-record battery pipeline",
+      "offered_fields": [
+        "project",
+        "battery scope",
+        "construction",
+        "target dates"
+      ],
+      "attempt_result": "Public reader502; CMS sampled download403",
+      "processed_partition": "https://prod-cms.doe.gov.ph/documents/d/guest/01-luzon-committed-pdf-1 unsuccessful",
+      "retry_condition": "Fresh accessible public PDF",
+      "next_action": "Review newest Luzon/Visayas/Mindanao battery partitions; avoid hybrid total and duplicate Terra Solar subphases"
+    },
+    {
+      "rank": 3,
+      "url": "https://www.evoss.ph/Home/Download/246659",
+      "country_entity": "Philippines / luzon",
+      "version_date": "2024-12-31",
+      "access_licence": "Government-issued PDF, bounded manual factual review; EVOSS copyright retained, no open bulk licence asserted. Original403; reader available.",
+      "estimated_useful_yield": "7 existing projects enriched",
+      "offered_fields": [
+        "address fragment",
+        "historical operator",
+        "owner/IPPA",
+        "units",
+        "contract code"
+      ],
+      "attempt_result": "7 enriched; 0 historical phase/hybrid holds preserved; ratings already present, not reimported",
+      "processed_partition": "Complete battery section only; existing exact mappings reviewed",
+      "retry_condition": "New revision or unresolved phase/battery-only scope clarified",
+      "next_action": "Prefer newer inventory; do not repeat these dated role/location fields"
+    },
+    {
+      "rank": 3,
+      "url": "https://www.evoss.ph/Home/Download/246660",
+      "country_entity": "Philippines / visayas",
+      "version_date": "2024-12-31",
+      "access_licence": "Government-issued PDF, bounded manual factual review; EVOSS copyright retained, no open bulk licence asserted. Original403; reader available.",
+      "estimated_useful_yield": "4 existing projects enriched",
+      "offered_fields": [
+        "address fragment",
+        "historical operator",
+        "owner/IPPA",
+        "units",
+        "contract code"
+      ],
+      "attempt_result": "4 enriched; 1 historical phase/hybrid holds preserved; ratings already present, not reimported",
+      "processed_partition": "Complete battery section only; existing exact mappings reviewed",
+      "retry_condition": "New revision or unresolved phase/battery-only scope clarified",
+      "next_action": "Prefer newer inventory; do not repeat these dated role/location fields"
+    },
+    {
+      "rank": 3,
+      "url": "https://www.evoss.ph/Home/Download/246661",
+      "country_entity": "Philippines / mindanao",
+      "version_date": "2024-12-31",
+      "access_licence": "Government-issued PDF, bounded manual factual review; EVOSS copyright retained, no open bulk licence asserted. Original403; reader available.",
+      "estimated_useful_yield": "4 existing projects enriched",
+      "offered_fields": [
+        "address fragment",
+        "historical operator",
+        "owner/IPPA",
+        "units",
+        "contract code"
+      ],
+      "attempt_result": "4 enriched; 1 historical phase/hybrid holds preserved; ratings already present, not reimported",
+      "processed_partition": "Complete battery section only; existing exact mappings reviewed",
+      "retry_condition": "New revision or unresolved phase/battery-only scope clarified",
+      "next_action": "Prefer newer inventory; do not repeat these dated role/location fields"
+    },
+    {
+      "rank": 9,
+      "url": "https://www.iemop.ph/the-market/participants/wesm-members/",
+      "country_entity": "Philippines / IEMOP",
+      "version_date": "Fresh public page checked2026-11-06",
+      "access_licence": "Reuse prohibited without written consent; no contact or consent request made",
+      "estimated_useful_yield": "Potential many registration rows; zero accepted",
+      "offered_fields": [
+        "registration",
+        "participant",
+        "facility"
+      ],
+      "attempt_result": "Explicit adoption/modification/reproduction restrictions reconfirmed at /about/legal-and-privacy/; downloaded HTML/text removed; metadata only retained",
+      "processed_partition": "None imported",
+      "retry_condition": "Permission or clearly licensed alternative published",
+      "next_action": "Use DOE/NGCP/owner evidence; do not infer operation from registration"
+    },
+    {
+      "rank": 2,
+      "url": "https://www.pylontech.jp/service/downloads",
+      "country_entity": "Pylontech / Japan official downloads",
+      "version_date": "Undated live index",
+      "access_licence": "Public index, copyright reserved; not bulk licence",
+      "estimated_useful_yield": "Potential US2000C/D and current model manuals",
+      "offered_fields": [
+        "manual",
+        "warranty",
+        "certificates"
+      ],
+      "attempt_result": "Live reader and original listing empty despite indexed search results",
+      "processed_partition": "No technical facts ingested from snippets",
+      "retry_condition": "Working public manual links return",
+      "next_action": "Use current OEM versions to enrich historical units; match exact revisions"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/pylontech_force_l1_operation_manual__v2_3__20p1fl0302_sv__1_.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "2.3 /20P1FL0302",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "Force L1:2\u20137 modules; FL48074; FC0048-100S held",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "Force L1:2\u20137 modules; FL48074; FC0048-100S held; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/pylontech_force_l2_operation_manual__v2_3__20p2fl0301_sv.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "printed2.2 /20P2FL0301, filename2.3",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "FORCE-L2:148/222/296Ah; FL4874M; FC0048M-100S held",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "FORCE-L2:148/222/296Ah; FL4874M; FC0048M-100S held; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/pelio_operation_manual_20230408.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "5PMPA08-00124 /SD22PE51010701",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "Pelio-L-5.12",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "Pelio-L-5.12; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/us5000_user_manual.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "PM0MUS500255 /SD21US501001",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "US5000 / US5000-B",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "US5000 / US5000-B; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/pylontech_up2500_installation___operation_manual_v2_1_20upsv0303_sv__1_.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "2.1 /20UPSV0303",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "UP2500",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "UP2500; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/pylontech_us2000_installation___operation_manual__v2_1__19bpsv0105_sv.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "2.1 /19BPSV0105",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "US2000",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "US2000; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/pylontech_us3000_installation___operation_manual__v2_2___19bqsv1203_sv__1_.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "printed2.1 /19BQSV1203, filename2.2",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "US3000",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "US3000; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/us3000c_pm0mus3c0007__operation_manual_20cqsv1103.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "20CQSV1103 /PM0MUS3C0007",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "US3000C",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "US3000C; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.master-instruments.com.au/files/battery_information/pylontech_phantom_s_installation_manual__v2_0__19pisv0606_sv.pdf",
+      "country_entity": "Pylontech OEM; Master Instruments host",
+      "version_date": "2.0 /19PISV0606",
+      "access_licence": "OEM-authored copyrighted manual; bounded factual extraction only. MI copyright policy reviewed; no full text/images or MI-authored material redistributed; no open bulk licence asserted.",
+      "estimated_useful_yield": "Phantom-S",
+      "offered_fields": [
+        "exact model/configuration",
+        "energy basis",
+        "voltage/current",
+        "dimensions/mass",
+        "operating conditions",
+        "component identities"
+      ],
+      "attempt_result": "Accepted documented units/configurations; two separate controller records held; no active power or warranty inferred",
+      "processed_partition": "Phantom-S; core specification tables complete",
+      "retry_condition": "Changed OEM version or substantive controller electrical table",
+      "next_action": "Reconcile newer versions; review US2000C/D exact manuals before extending family"
+    }
+  ]
+}

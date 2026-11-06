@@ -1,0 +1,181 @@
+{
+  "equipment": {
+    "candidates": 18,
+    "new": 15,
+    "enriched": 0,
+    "held": 3,
+    "quarantined": 1,
+    "rejected": 0,
+    "held_models": [
+      "US2000C",
+      "FC0500-40S-V2",
+      "SC1000-100"
+    ],
+    "held_reason": "US2000C manual p10 conflicts with appended brochure p42 (weight22.5/24kg; width440/442mm; altitude<4000/<2000m; current classes differ). Entire model quarantined until version reconciliation. Two controllers deferred for electrical specifications; named relations retained. Quarantined count is included in held count.",
+    "decisions": [
+      {
+        "record_id": "fefde473-d8b0-5940-ac9a-b4e78ba48c07",
+        "model": "Force-H1-V2",
+        "variant": "2 x FH48074; single string",
+        "source_id": "pylontech_h1v2_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "a26f5c32-2e13-5299-97d7-4660f4a10c68",
+        "model": "Force-H1-V2",
+        "variant": "3 x FH48074; single string",
+        "source_id": "pylontech_h1v2_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "b3ad076b-d7e6-579e-b1d2-25a1ca3b432d",
+        "model": "Force-H1-V2",
+        "variant": "4 x FH48074; single string",
+        "source_id": "pylontech_h1v2_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "ce2c90bf-9d11-5beb-b08d-c92f1e2a6cdf",
+        "model": "Force-H1-V2",
+        "variant": "5 x FH48074; single string",
+        "source_id": "pylontech_h1v2_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "c8d33460-0e6c-5479-bc07-af493c64c85d",
+        "model": "Force-H1-V2",
+        "variant": "6 x FH48074; single string",
+        "source_id": "pylontech_h1v2_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "65c8fee8-049c-5bfc-a2c9-a1fdb5a2d13b",
+        "model": "Force-H1-V2",
+        "variant": "7 x FH48074; single string",
+        "source_id": "pylontech_h1v2_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "170e77f8-7c39-5123-974b-f455d8947f9b",
+        "model": "FH48074",
+        "variant": "One FH48074 module; Force-H1-V2 manual 22P1FH1018",
+        "source_id": "pylontech_h1v2_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "2621f074-1946-58ba-9a5b-24501c82caa8",
+        "model": "POWERCUBE-H1 (720V50AH)",
+        "variant": "15 x H48050; SC1000-100",
+        "source_id": "pylontech_cube_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "a2c52394-c092-5257-91ad-d7bc4ee8b644",
+        "model": "H48050",
+        "variant": "One battery module; PowerCube manual 2.3 / 19PIHV0703",
+        "source_id": "pylontech_cube_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "ce5ef6c7-f525-5ce1-8d46-13f48466da5a",
+        "model": "POWERCUBE-H2 (576V74AH)",
+        "variant": "12 x H48074; SC1000-100",
+        "source_id": "pylontech_cube_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "57d81e4c-0b47-5f37-b3b9-5506444e343a",
+        "model": "H48074",
+        "variant": "One battery module; PowerCube manual 2.3 / 19PIHV0703",
+        "source_id": "pylontech_cube_manual_20261106",
+        "decision": "new"
+      },
+      {
+        "record_id": "e517801f-4a44-5078-bd31-e7dbb94d1098",
+        "model": "SS214",
+        "variant": "One battery module",
+        "source_id": "solarmd_solar214_20261106",
+        "decision": "new",
+        "field_quarantine": null
+      },
+      {
+        "record_id": "e366452d-0472-5c0d-b49d-e1a0953f8226",
+        "model": "SS4160",
+        "variant": "Single unit",
+        "source_id": "solarmd_solar4160_20261106",
+        "decision": "new",
+        "field_quarantine": null
+      },
+      {
+        "record_id": "f6c96ae0-fa6b-587e-8598-4b495ddf3370",
+        "model": "SS4083",
+        "variant": "Single unit",
+        "source_id": "solarmd_solar4083_20261106",
+        "decision": "new",
+        "field_quarantine": "nominal power/C-rate condition"
+      },
+      {
+        "record_id": "a60131f2-8aa2-5031-839c-98b056e09298",
+        "model": "Logger V2",
+        "variant": "Single unit",
+        "source_id": "solarmd_solar_control_20261106",
+        "decision": "new",
+        "field_quarantine": null
+      }
+    ],
+    "field_quarantines": 1
+  },
+  "projects": {
+    "licensed_reply_candidates": 6,
+    "new": 1,
+    "enriched": 3,
+    "rejected": 2,
+    "quarantined": 0,
+    "decisions": [
+      {
+        "record_id": "bed2ba2b-b505-56c9-93c5-0f642aec76d9",
+        "name": "Skaapvlei BESS",
+        "decision": "enriched",
+        "completion_pct": 90,
+        "source_id": "sa_minister_pmg_4150_20260919"
+      },
+      {
+        "record_id": "2cd7b480-43c0-59b5-8378-ca86908e3fc9",
+        "name": "Paleisheuwel BESS",
+        "decision": "enriched",
+        "completion_pct": 40,
+        "source_id": "sa_minister_pmg_4150_20260919"
+      },
+      {
+        "record_id": "df199617-9076-53fb-a350-daeb2c7d8019",
+        "name": "Graafwater BESS",
+        "decision": "enriched",
+        "completion_pct": 70,
+        "source_id": "sa_minister_pmg_4150_20260919"
+      },
+      {
+        "record_id": "4283a2fc-9f1f-5822-b632-fdc3df5eb5d5",
+        "name": "Komati Battery Energy Storage System",
+        "decision": "new",
+        "source_id": "sa_minister_pmg_4150_20260919"
+      },
+      {
+        "name": "Komati Solar PV",
+        "decision": "rejected",
+        "reason": "Non-battery project; contextual co-location only"
+      },
+      {
+        "name": "Lethabo Solar PV",
+        "decision": "rejected",
+        "reason": "Non-battery project"
+      }
+    ],
+    "restricted_inventory": {
+      "reviewed_sites": 8,
+      "accepted_from_restricted_source": 0,
+      "reason": "Eskom terms clauses2.1,2.2,2.10 restrict reuse and automated collection. Original report bytes discarded; metadata retained. Three overlapping sites independently enriched from licensed minister reply; no restricted cancellation facts ingested."
+    },
+    "upsert_collisions_reviewed": 3,
+    "preservation": "Existing scalar facts, conflicts, source entries and creation dates preserved; additive extension observations only"
+  }
+}

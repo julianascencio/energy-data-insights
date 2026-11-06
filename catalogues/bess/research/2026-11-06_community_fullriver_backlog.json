@@ -1,0 +1,99 @@
+{
+  "checked_at": "2026-11-06T01:01:23.160187+00:00",
+  "rank_basis": "Expected verified yield, useful metadata, clear reuse terms, extraction effort",
+  "sources": [
+    {
+      "rank": 1,
+      "url": "https://www.dcceew.gov.au/energy/renewable/community-batteries",
+      "country_entity": "Australia / community battery grant locations",
+      "version_date": "2026-10-12",
+      "access_licence": "CC BY4.0 government table; direct original503, public reader accessible; no original checksum asserted",
+      "estimated_useful_yield": "57 accepted; future status enrichment for12 in-progress locations and one narrative/table discrepancy",
+      "offered_fields": [
+        "location",
+        "state",
+        "grant applicant",
+        "grant amount",
+        "kWh",
+        "operational From date",
+        "status"
+      ],
+      "attempt_result": "All57 displayed rows accepted; 45operational12unknown. Narrative58locations is not silently repaired. Applicant never assigned as owner.",
+      "processed_partition": "Business Grants Hub streams1&2 complete, seven state tables; ARENA recipient lists excluded because no site identity",
+      "retry_condition": "New dated table or named-location omission clarified; refresh publication date before staging",
+      "next_action": "Reconcile missing58th location and12in-progress rows against new primary owner evidence; do not reimport57identities"
+    },
+    {
+      "rank": 2,
+      "url": "https://fullriverbattery.com/support-spec-sheets/",
+      "country_entity": "Fullriver Battery / exact DC battery units",
+      "version_date": "Undated; refreshed 2026-11-06T01:01:23.160187+00:00",
+      "access_licence": "Copyright reserved; bounded exact-model factual extraction; no open bulk licence or document redistribution asserted",
+      "estimated_useful_yield": "Four suffix headings need identity reconciliation; final selected eight-heading partition exhausted",
+      "offered_fields": [
+        "Ah and conditions",
+        "voltage",
+        "dimensions",
+        "weight",
+        "terminal type",
+        "case material",
+        "charge/temperature tables"
+      ],
+      "attempt_result": "4new models,14existing enriched with terminal/case claims;4suffix identities held",
+      "processed_partition": "DC200-6/6B,DC220-12,DC240-12 accepted. DC210-12LT/APW andDC260-12LT/APW held. Prior14sheet hashes unchanged; previously unprocessed terminal/case fields added.",
+      "retry_condition": "Visually verify exact suffix configuration or obtain OEM revision that establishes distinct identity; do not manufacture variants from URLs",
+      "next_action": "Resolve DC210/DC260 base-name versus terminal-option identities; preserve earlier DC50/DC105 holds"
+    },
+    {
+      "rank": 3,
+      "url": "https://www.mpower.com.au/capability",
+      "country_entity": "Australian/Cook Islands integrator portfolio",
+      "version_date": "Undated, refreshed 2026-11-06T01:01:23.160187+00:00",
+      "access_licence": "Footer copyright reserved and privacy reviewed; bounded facts only",
+      "estimated_useful_yield": "Two historical project candidates after technical/phase reconciliation",
+      "offered_fields": [
+        "customer",
+        "location",
+        "battery integration",
+        "applications"
+      ],
+      "attempt_result": "Eight headings screened:3explicitBESS,5nonbattery headings excluded; Rarotonga alreadyprocessed, UQ andEndeavour held",
+      "processed_partition": "Full eight-heading case portfolio and UQ/Endeavour case pages",
+      "retry_condition": "Independent compatible source and distinguish oldWestDapto system from2025programme aggregation",
+      "next_action": "Review Endeavour2020DAPR permissions/as-built scope; UQviaindependentlicensedsource"
+    },
+    {
+      "rank": 4,
+      "url": "https://solar-energy.uq.edu.au/node/294",
+      "country_entity": "University of Queensland / Gatton",
+      "version_date": "Undated",
+      "access_licence": "https://uq.edu.au/legal/copyright-privacy-disclaimer/ restricts systematic retrieval/storage and nonpersonal reuse; original/text removed",
+      "estimated_useful_yield": "One heldproject",
+      "offered_fields": [
+        "technical owner observations"
+      ],
+      "attempt_result": "Discovery only; no technical facts imported from this source",
+      "processed_partition": "Noacceptedpartition",
+      "retry_condition": "Compatiblepermissionorindependentlicensedsource",
+      "next_action": "Seek allowed primary project report; do not reacquire restricted page"
+    },
+    {
+      "rank": 5,
+      "url": "https://www.adb.org/projects/46453-002/main",
+      "country_entity": "Cook Islands portfolio",
+      "version_date": "Live register; priorattempt5November",
+      "access_licence": "Prior403; cooldown preserved",
+      "estimated_useful_yield": "Up to3phase reconciliations",
+      "offered_fields": [
+        "contracts",
+        "completion",
+        "IDs"
+      ],
+      "attempt_result": "Notretriedthisrun; alternativeMPowerportfolioandDCCEEWused",
+      "processed_partition": "None beyond previous accepted ADBreport",
+      "retry_condition": "Accessrestored; notbefore2026-11-07T00:00Z",
+      "next_action": "Fresh accessible completion report; MFEMreuseholdpreserved"
+    }
+  ],
+  "all_prior_holds_preserved": true
+}

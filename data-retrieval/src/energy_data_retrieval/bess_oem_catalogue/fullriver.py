@@ -5,6 +5,32 @@ from html.parser import HTMLParser
 from typing import TypedDict
 
 
+def parse_terminal_case(text: str, *, model: str) -> dict[str, str]:
+    """Read exact p1 terminal/case claims; do not infer torque or certification."""
+    page = text.split("\f")[0]
+    if not page.strip() or page.strip().splitlines()[0].strip() != model:
+        raise ValueError("Exact model heading mismatch")
+    terminals = re.findall(r"Terminal Type\s+([^\n]+)", page)
+    cases = re.findall(r"Case Type\s+([^\n]+)", page)
+    if len(terminals) != 1 or len(cases) != 1:
+        raise ValueError("Missing or ambiguous terminal/case rows")
+    terminal = " ".join(terminals[0].split())
+    case = " ".join(cases[0].split())
+    if terminal not in {"M6", "M8", "AP", "M6 Button Terminal"}:
+        raise ValueError("Unreviewed terminal type")
+    if case != "ABS Plastic - Flame Res. Rating UL94-HB":
+        raise ValueError("Unreviewed case claim")
+    return {
+        "terminal_type_native": terminal,
+        "case_material": "ABS Plastic",
+        "flame_resistance_claim": "UL94-HB",
+        "claim_basis": (
+            "Manufacturer case-material rating; not independently verified certification"
+        ),
+        "torque": "Not extracted: generic p2 table uses visually highlighted applicable values",
+    }
+
+
 class Card(TypedDict):
     """One exact model with separate native unit panels."""
 
@@ -136,3 +162,110 @@ def parse_datasheet(text: str, *, model: str) -> dict[str, object]:
         "internal_resistance_milliohm": float(resistance[0]),
         "qualification": "OEM estimation ratings; application-dependent, design subject to change",
     }
+
+
+def parse_charging_conditions(text: str, *, model: str) -> dict[str, object]:
+    """Stage exact-sheet temperature categories and bank-voltage charging rows.
+
+    Preserve recommended versus maximum ranges and both native temperature units.
+    Bank voltage columns are not separate models or battery operating limits.
+    No temperature conversion, current inference or curve digitization is performed.
+    """
+    if text.strip().splitlines()[0].strip() != model:
+        raise ValueError("Exact model heading mismatch")
+    if text.count("TEMPERATURE RANGE SPECIFICATIONS") != 1:
+        raise ValueError("Expected one temperature table")
+    part = text.split("TEMPERATURE RANGE SPECIFICATIONS")[1].split("TERMINAL TORQUE")[0]
+    compact = " ".join(part.split())
+    if "Condition Recommended Maximum Recommended Maximum" not in compact:
+        raise ValueError("Unreviewed temperature columns")
+    if "TC= Temperature Compensation" not in compact:
+        raise ValueError("Missing temperature compensation definition")
+    temperatures = {}
+    for label in ("Storage", "Operation", "Charge with TC", "Charge w/o TC"):
+        found = re.findall(rf"^\s*{re.escape(label)}\s+(.+)$", part, re.M)
+        if len(found) != 1:
+            raise ValueError(f"Missing or ambiguous condition: {label}")
+        ranges = re.findall(r"(-?\d+)°([FC]) to (-?\d+)°([FC])", found[0])
+        if len(ranges) != 4 or [a[1] + a[3] for a in ranges] != ["FF", "FF", "CC", "CC"]:
+            raise ValueError("Unreviewed temperature units/order")
+        temperatures[label] = {
+            key: {"min": int(a), "max": int(b), "unit": unit}
+            for key, (a, unit, b, _) in zip(
+                ("recommended_f", "maximum_f", "recommended_c", "maximum_c"),
+                ranges,
+                strict=True,
+            )
+        }
+        if any(int(a) > int(b) for a, _, b, _ in ranges):
+            raise ValueError("Reversed temperature range")
+    headers = re.findall(r"Charge Stage\s+([\dV\s]+)$", part, re.M)
+    if len(headers) != 1:
+        raise ValueError("Missing bank voltage columns")
+    banks = re.findall(r"(\d+)V", headers[0])
+    if len(banks) != 4 or len(set(banks)) != 4:
+        raise ValueError("Expected four distinct bank voltages")
+    charges = {}
+    for stage in ("Bulk", "Absorption", "Float"):
+        values = re.findall(rf"\b{stage}\s+((?:\d+(?:\.\d+)?V\s*){{4}})$", part, re.M)
+        if len(values) != 1:
+            raise ValueError(f"Missing or ambiguous charge stage: {stage}")
+        charges[stage.lower()] = dict(
+            zip(banks, map(float, re.findall(r"(\d+(?:\.\d+)?)V", values[0])), strict=True)
+        )
+    compensation = re.findall(r"TC Factor:\s*\((-?\d+)mV/°F/cell\) or \((-?\d+)mV/°C/cell\)", part)
+    if len(compensation) != 1:
+        raise ValueError("Unreviewed compensation units")
+    return {
+        "temperature_ranges": temperatures,
+        "tc_definition": "Temperature Compensation",
+        "charge_voltages_v_by_bank_voltage_v": charges,
+        "temperature_compensation_mv_per_cell_per_degree": {
+            "F": int(compensation[0][0]),
+            "C": int(compensation[0][1]),
+        },
+        "boundary": "Printed battery-bank charging table; not model operating voltage limits",
+        "qualification": (
+            "Native rounded units retained; no inferred reference temperature or charge current"
+        ),
+    }
+
+
+def parse_small_battery_sheet(text: str, *, model: str) -> dict[str, object]:
+    """Stage reviewed small DC AGM units with rate capacities and dimensions.
+
+    Exact mechanical labels and native units are required. Case and terminal
+    heights stay separate; a terminal is not an alternative model configuration.
+    """
+    row = parse_datasheet(text, model=model)
+    original = row["capacity_ah_by_discharge_hours"]
+    assert isinstance(original, dict)
+    capacities = dict(original)
+    for rate in (3, 2, 1):
+        matches = re.findall(rf"^\s*C{rate}\s+(\d+(?:\.\d+)?)\s*AH\b", text, re.M)
+        if len(matches) > 1:
+            raise ValueError(f"Ambiguous C{rate} capacity")
+        if matches:
+            capacities[str(rate)] = float(matches[0])
+    row["capacity_ah_by_discharge_hours"] = capacities
+    if "DEEP CYCLE AGM" not in text:
+        raise ValueError("Missing explicit AGM classification")
+    mechanical = {}
+    for label, key, unit in (
+        ("Nominal Voltage", "nominal_voltage_v", "Volt"),
+        ("Height (w/ terminal)", "terminal_height_mm", "mm"),
+        ("Height (case only)", "case_height_mm", "mm"),
+        ("Width", "width_mm", "mm"),
+        ("Length", "length_mm", "mm"),
+        ("Weight", "weight_kg", "kg"),
+    ):
+        matches = re.findall(
+            re.escape(label) + r"\s+[^\n]*?\b(\d+(?:\.\d+)?)\s*" + unit + r"\b", text
+        )
+        if len(matches) != 1:
+            raise ValueError(f"Missing or ambiguous mechanical field: {label}")
+        mechanical[key] = float(matches[0])
+    if mechanical["case_height_mm"] > mechanical["terminal_height_mm"]:
+        raise ValueError("Case exceeds terminal height")
+    row["mechanical"] = mechanical
+    return row

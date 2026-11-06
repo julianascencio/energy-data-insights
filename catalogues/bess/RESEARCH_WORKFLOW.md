@@ -321,3 +321,74 @@ Fullriver individual-sheet electrical tables use `fullriver.parse_datasheet` on
 local layout text. Keep per-battery Ah separate from cell Ah; retain the explicit
 SoC, temperature and per-cell endpoint. Raster sheets require visual review.
 Undated sheet/brochure conflicts remain observations, not silently chosen ratings.
+
+For ADB TCS220320-2, `scripts/stage_bess_adb_pacific.py` stages only Table3.3's
+four Cook Islands rows from local layout text. It rejects changed identities,
+units, report date and missing chemistry/SoC qualifications. Year of installation
+and completion differ; old and new energy observations remain quarantined.
+`scripts/stage_bess_fullriver_conditions.py --model EXACT` stages native temperature
+classes and bank charging columns. `--include-small-unit` adds reviewed small-battery
+rate/mechanical tables. Unknown C3/C2/C1 stays absent; anomalous printed values
+require review. Preserve case/terminal height and undated web/PDF discrepancies.
+
+For DCCEEW's 12 October 2026 community-battery table,
+`scripts/stage_bess_dcceew_community.py` accepts a local attributed reader-text
+export, including optional line prefixes. It validates the seven regional tables
+and 57 displayed applicant/location rows. The narrative says 58 locations; do not
+invent the absent row. Direct HTML returned 503 during this pass, so the evidence
+ledger fingerprints the reader export without claiming an original-HTML hash.
+One programme location may aggregate several batteries. Review each natural
+identity against the canonical catalogue before upsert. Grant applicants are not
+automatically owners, grant amounts are not capex, and “In progress” does not
+establish construction. Keep operational-From dates separate from commercial COD.
+Refresh the source date before continuing; the adapter rejects changed partitions.
+
+`scripts/stage_bess_fullriver_conditions.py --include-terminal-case` additionally
+stages exact-sheet terminal types and ABS case material claims. UL94-HB is retained
+as the manufacturer's material-rating claim, not independently verified product
+certification. The generic torque table uses highlighted applicable values and is
+not parsed as a model-specific torque. A suffix in an index URL does not establish
+an exact model when the printed sheet uses a base name or a raster heading.
+
+For Pylontech Force-L1 v2.3 / Force-L2 v2.2 manuals,
+`scripts/stage_bess_pylontech_force.py` stages the exact six/three system columns
+from local `pdftotext -layout` output. It checks printed revision, module and
+controller identity, column counts, module order and voltage bounds. Preserve
+standard/normal/peak current classes and the unstated L1 discharge-peak duration.
+The L2 filename says v2.3 but its cover says v2.2. System kWh is printed/rounded,
+not a multiplication of module kWh. Separate module records must not inherit
+system IP/current/efficiency. Review the mechanical and module tables separately.
+
+## Force-H1-V2 offline table staging
+
+After independently checking source rights, printed identity and revision, export
+PDF pages11–12 using `pdfplumber`: combine `pdf.pages[10].extract_tables()[0]`
+and `pdf.pages[11].extract_tables()[0]` into a two-table JSON array outside Git.
+The optional PDF extraction dependency is not needed by the package parser.
+
+```bash
+uv run python scripts/stage_bess_pylontech_hv.py tables.json --revision '22P1FH1018 / 5PMPA08-00135' --output staged.json
+```
+
+The adapter validates model/component identities, units, single-string column order,
+voltage bounds and numeric scope. It does not expand optional parallel arrangements,
+fetch URLs, assign project components or mutate canonical records. Mechanical and
+module tables, chemistry/compliance claims and printed revision still need visual
+review. Use the existing upsert API after reviewed natural-identity reconciliation.
+
+For Solar MD SS70xx-05 July2025 URL edition, `scripts/stage_bess_solarmd.py`
+reads the ten-row JSON table extracted from PDF page4. It requires all13exact
+model columns, units, module counts and DC voltage bounds. Review page images
+and source rights first; staging never imports. Match warranty rows by the
+complete model suffix, retain earlier-of-time-or-throughput conditions and
+separate controller supply limits, battery ratings and PCS conversion ratings.
+Outdoor bundles are explicit table configurations; optional ranges do not
+authorize Cartesian variants or source-independent PCS model assignments.
+
+For the distinct unsuffixed Solar MD SS7000 generation, use
+`scripts/stage_bess_solarmd_legacy.py table.json --revision '1.0 / 2024-04-26' --output staged.json`
+with the first table from manual PDF page9. The parser requires exact model/order,
+units, eight-to-seventeen SS6143 modules and valid voltage envelopes. It never
+computes stack power from volts/amps or module power. Current classification is
+unspecified. Match warranties by exact unsuffixed model AND nominal energy;
+never transfer -05 terms or module-only life/efficiency to a complete stack.
