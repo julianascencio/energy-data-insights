@@ -16,9 +16,14 @@ def main() -> None:
     parser.add_argument("--reviewed-at", required=True)
     parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--limit", type=int, default=50)
+    parser.add_argument(
+        "--after-wri-id", help="Stable exclusive cursor; do not combine with offset"
+    )
     args = parser.parse_args()
     if args.offset < 0 or args.limit < 1:
         parser.error("Require nonnegative offset and positive limit")
+    if args.after_wri_id and args.offset:
+        parser.error("Use a stable cursor or an offset, not both")
     root = Path("catalogues/hydro")
     remaining = sorted(
         [
@@ -28,6 +33,12 @@ def main() -> None:
         ],
         key=lambda r: json.loads(r["external_ids_json"])["wri_gppd"],
     )
+    if args.after_wri_id:
+        remaining = [
+            r
+            for r in remaining
+            if json.loads(r["external_ids_json"])["wri_gppd"] > args.after_wri_id
+        ]
     api = json.loads(args.api.read_bytes())
     gis = json.loads(args.gis.read_bytes())
     if gis.get("exceededTransferLimit") or "features" not in gis:
@@ -60,6 +71,7 @@ def main() -> None:
         held=len(decisions),
         partition=dict(
             offset=args.offset,
+            after_wri_id=args.after_wri_id,
             limit=args.limit,
             last_wri_id=decisions[-1]["wri_id"] if decisions else None,
             next_offset=args.offset + len(decisions),

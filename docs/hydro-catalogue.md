@@ -521,3 +521,33 @@ Coverage is 7,156 historical records / 128 countries / 1,381 enriched identities
 EIA totals: 1,098 identities / 2913 units / 254 holds. Aggregation scopes
 remain unresolved and excluded from capacity totals. Next: Norwegian rows
 51–100 for explicit review; EIA resumes at 55001–60000.
+
+
+## Stable Norwegian review cursor and EIA 55001–60000
+
+Norwegian identities 51–100, WRI1003150–WRI1003313, were screened against the
+checksum-verified 6 November NVE API/map captures. All 50 remain held; the first
+100 screened identities are not accepted enrichments. Statkraft's Norwegian
+pages report Grytten at 144 MW and Kvilldal at 1,240 MW. Historical WRI ratings
+and Grytten's two potentially related names require explicit alias/scope review.
+Owner facts remain review evidence only, with URLs, titles, retrieval dates,
+locators and limited-factual-reuse assessment; no copied text or imagery.
+
+The screener now supports an exclusive stable `--after-wri-id` cursor. An
+accepted earlier identity can disappear from the unresolved list without
+shifting the continuation boundary. Offsets remain supported but cannot be
+combined with a stable cursor. Regression tests verify this case.
+
+```bash
+uv run python scripts/screen_hydro_nve.py --api /path/to/nve.json --gis /path/to/map.json --after-wri-id WRI1003313 --limit 50 --reviewed-at YOUR_UTC_TIMESTAMP --output /tmp/next-nve-review.json
+uv run python scripts/enrich_hydro_eia.py --batch catalogues/hydro/research/eia-2025-55001-60000.json
+```
+
+EIA codes 55001–60000 enrich 61 existing US identities with 119 generator
+observations; 11 plants remain held. Added IDs, operators, generating/seasonal
+MW and unit dates retain year-end 2025 status, not live operation. The original
+archive checksum and source rows were verified; no new archive retrieval is
+claimed. Coverage: 7,156 historical records / 128 countries / 1,442 enriched
+identities. EIA totals: 1,159 identities / 3032 generators / 265 holds.
+No unresolved capacity enters global totals. Next: Norwegian identities after
+WRI1003313 (101–150), followed by EIA 60001–65000.
