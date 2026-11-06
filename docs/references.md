@@ -7887,3 +7887,19 @@ Kenya Electricity Generating Company PLC (2026). **Hydro: KenGen station portfol
 **Role:** data_source. Undated owner page, year denotes retrieval. Turkwel description repeats Gogo narrative; rejected for canonical facts. Page checksum and review retained in KenGen research ledger. Named station sections also corroborate five explicitly reviewed new identities; no national licence IDs inferred.
 
 **Used by:** `catalogues/hydro/research/kengen-2025-20261106.json`, `catalogues/hydro/research/kengen-new-20261106.json`, `catalogues/hydro/research/kengen-technical-20261106.json`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/owner_technical.py`.
+
+### uganda_era_capacity_2026
+
+Electricity Regulatory Authority (Uganda) (2026). **Installed Generation Capacity as at September 2026**. [Source](https://www.era.go.ug/media/2026/09/Installed-Generation-Capacity-as-at-September-2026.xlsx)
+
+**Role:** data_source. September 2026 workbook; annual columns 2000–2026. Public access; ERA site reserves rights. No open bulk-reuse licence identified. Limited factual station names and numeric observations transcribed with attribution; original workbook/PDF, prose and images are not redistributed.
+
+**Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/era.py`.
+
+### uganda_era_environment_2023
+
+Electricity Regulatory Authority (Uganda) (2023). **The Electricity Supply Industry State of the Environment Report 2023**. [Source](https://www.era.go.ug/wp-content/uploads/2025/07/ESISOER-2023_Optimized.pdf)
+
+**Role:** data_source. Report year 2023; URL upload directory July 2025; exact publication date unverified. Public access; ERA site reserves rights. No open bulk-reuse licence identified. Limited factual station names and numeric observations transcribed with attribution; original workbook/PDF, prose and images are not redistributed.
+
+**Used by:** `catalogues/hydro/README.md`, `docs/hydro-catalogue.md`, `examples/database/plot_hydro_catalogue.py`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/era.py`.

@@ -16,6 +16,8 @@ Eight Brazilian records are new CEG identities, including two small hydro plants
 Their coordinates and current lifecycle remain unknown.
 Thirteen Kenyan identities carry owner-reported fiscal 2021-2025 statistics.
 Effective MW and sold GWh are separate from installed MW and generation.
+Thirty-two new Ugandan identities retain ERA annual MW statistics through September 2026.
+Missing cells and explicit zeros remain distinct; unknown locations are not mapped.
 Pumped storage is not inferred from names.
 See the :doc:`interactive hydro viewer </hydro-database-viewer>` for source evidence.
 """
@@ -56,6 +58,10 @@ print("NZ reviewed dispatch identities:", sum("nz-ea-fleet-20260702" in r["sourc
 print(
     "AHA records with explicit field bases:",
     sum("aha_field_provenance" in json.loads(r["extensions_json"]) for r in rows),
+)
+print(
+    "ERA Uganda reviewed identities:",
+    sum("uganda-era-capacity-202609" in r["sources"] for r in rows),
 )
 print("Input fingerprint:", manifest["input_sha256"])
 print("Reviewed installed generating MW:", capacity_summary(rows, "installed_capacity_mw"))

@@ -98,3 +98,30 @@ volumes are not usable volumes or energy storage. Owner commissioning statements
 remain unresolved where historical dates differ. Turkwel's copied Gogo narrative
 is rejected. These assertions do not change additive capacity KPIs or record
 counts. Replay: `scripts/enrich_hydro_owner_technical.py`.
+
+The Uganda ERA September 2026 inventory adds **32 reviewed station/phase
+identities**, including Kisiizi Hospital, Kuluva Hospital and Bwindi. Coverage is
+now **7,201 records in 128 countries**, with 38 Ugandan records. The complete
+39-row hydro partition was reviewed: six potential existing-identity matches and
+Swam remain held. Annex 3 of ERA's *Electricity Supply Industry State of the
+Environment Report 2023* corroborates the accepted names. These sources are
+registered as `uganda_era_capacity_2026` and `uganda_era_environment_2023`.
+
+The accepted records retain **864 annual cells (265 numeric, 599 missing)** for
+2000–2026. Reported zero remains zero; missing remains null. The 2026 column is
+explicitly September, not year-end. Annual MW observations do not establish
+current operation or additive physical scope. No coordinates, licence IDs,
+pumping ratings or storage energy are inferred. Frozen catalogue accessions
+remain stable across name corrections. Different numbered stations are separate
+identities, with shared-infrastructure capacity unresolved.
+
+```bash
+uv run python scripts/accept_hydro_era.py --workbook /path/to/Installed-Generation-Capacity-as-at-September-2026.xlsx
+```
+
+Omit `--workbook` for offline replay of reviewed evidence. A supplied workbook
+must reproduce the full parsed partition before writes. Checksummed original
+files remain outside Git; only selected factual evidence is retained. No open
+bulk-reuse licence was identified, so neither the workbook nor report is
+redistributed. See `research/era-202609-reviewed.json` for decisions and
+`research/era-202609-validation.json` for snapshot hashes and completeness.

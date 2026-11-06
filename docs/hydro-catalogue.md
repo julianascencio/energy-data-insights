@@ -766,3 +766,21 @@ unit groups, generator/turbine descriptions, grid connections, watercourses,
 reservoir volumes and dated commissioning assertions. Conflicting dates and
 unspecified head remain qualified; neither MVA nor reservoir volume is converted
 to generating MW or stored energy. The copied Turkwel description is excluded.
+
+The Uganda ERA batch adds 32 station/phase identities, including three
+hospital/community schemes, bringing the catalogue to 7,201 records across 128
+countries (38 in Uganda). The 39-row hydro workbook partition is fully reviewed:
+six possible matches to existing records and Swam remain held. Accepted records
+contain 265 reported MW values and 599 missing annual cells across 2000–2026;
+2026 means September. Current status, physical aggregation scope and map
+coordinates remain unknown. The shared viewer includes these records in country
+and plant counts, while unresolved capacity stays excluded from MW KPIs.
+
+The primary sources are ERA's *Installed Generation Capacity as at September
+2026* (`uganda_era_capacity_2026`) and *Electricity Supply Industry State of the
+Environment Report 2023*, Annex 3 (`uganda_era_environment_2023`). See the formal
+[references](references.md). Run `scripts/accept_hydro_era.py` for idempotent
+replay; add `--workbook PATH` to verify the downloaded workbook against every
+retained source cell before acceptance. The offline gallery
+`examples/database/plot_hydro_catalogue.py` rebuilds the typed Zstandard snapshot,
+shows reported locations and country counts, and reports the Uganda partition.

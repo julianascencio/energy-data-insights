@@ -124,3 +124,15 @@ original/replacement groups and explicitly labelled `each_mva` versus `each_mw`.
 Linked upstream/downstream stations use canonical record IDs; they are flow
 relationships, not parent/child capacities. These source assertions are not
 current canonical ratings or resolved historical dates.
+
+### Uganda ERA annual capacity evidence
+
+`observations_json` entries from `uganda-era-capacity-202609` use
+`field=installed_capacity_mw`, `unit=MW`, explicit year/September-2026 periods,
+and Excel cell plus station locators. Null source cells are retained, distinct
+from explicit zero. These are dated reported statistics, not canonical current
+installed/operational MW or pumping input. `extensions_json.era_inventory`
+retains the source station label and grid/mini-hydro section;
+`era_identity_review` holds the frozen catalogue accession, reviewed aliases and
+Annex 3 identity locator. Accessions are not national licence identifiers.
+`aggregation_role=unresolved` excludes these records from additive capacity KPIs.
