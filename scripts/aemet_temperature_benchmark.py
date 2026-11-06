@@ -24,9 +24,7 @@ def load_aemet(path: Path, station: str) -> pd.Series:
         raise ValueError(f"AEMET CSV must contain {sorted(required)}")
     frame = frame.loc[frame["indicativo"] == station].copy()
     frame["fecha"] = pd.to_datetime(frame["fecha"], errors="coerce")
-    frame["tmed"] = pd.to_numeric(
-        frame["tmed"].str.replace(",", ".", regex=False), errors="coerce"
-    )
+    frame["tmed"] = pd.to_numeric(frame["tmed"].str.replace(",", ".", regex=False), errors="coerce")
     series = frame.dropna(subset=["fecha"]).set_index("fecha")["tmed"].sort_index()
     if series.index.has_duplicates:
         raise ValueError("Duplicate dates for station")
@@ -37,11 +35,14 @@ def load_aemet(path: Path, station: str) -> pd.Series:
 
 def features(dates: pd.DatetimeIndex, history: pd.Series) -> pd.DataFrame:
     day = dates.dayofyear.to_numpy()
-    return pd.DataFrame({
-        "sin_year": np.sin(2 * np.pi * day / 365.25),
-        "cos_year": np.cos(2 * np.pi * day / 365.25),
-        "trend": (dates - history.index[0]).days.to_numpy(),
-    }, index=dates)
+    return pd.DataFrame(
+        {
+            "sin_year": np.sin(2 * np.pi * day / 365.25),
+            "cos_year": np.cos(2 * np.pi * day / 365.25),
+            "trend": (dates - history.index[0]).days.to_numpy(),
+        },
+        index=dates,
+    )
 
 
 def forecast(name: str, train: pd.Series, future: pd.DatetimeIndex) -> np.ndarray:
@@ -59,31 +60,38 @@ def forecast(name: str, train: pd.Series, future: pd.DatetimeIndex) -> np.ndarra
     if name in {"lightgbm", "xgboost"}:
         if name == "lightgbm":
             from lightgbm import LGBMRegressor
+
             model = LGBMRegressor(
                 n_estimators=150, learning_rate=0.05, verbosity=-1, random_state=42
             )
         else:
             from xgboost import XGBRegressor
-            model = XGBRegressor(
-                n_estimators=150, max_depth=3, learning_rate=0.05, random_state=42
-            )
+
+            model = XGBRegressor(n_estimators=150, max_depth=3, learning_rate=0.05, random_state=42)
         model.fit(features(train.index, train), train.to_numpy())
         return np.asarray(model.predict(features(future, train)))
     if name == "arima":
         from statsmodels.tsa.arima.model import ARIMA
+
         return np.asarray(ARIMA(train, order=(2, 0, 2)).fit().forecast(len(future)))
     if name == "ets":
         from statsmodels.tsa.holtwinters import ExponentialSmoothing
-        return np.asarray(ExponentialSmoothing(train, trend="add", seasonal=None).fit().forecast(len(future)))
+
+        return np.asarray(
+            ExponentialSmoothing(train, trend="add", seasonal=None).fit().forecast(len(future))
+        )
     if name == "prophet":
         from prophet import Prophet
+
         model = Prophet(yearly_seasonality=True, weekly_seasonality=True, daily_seasonality=False)
         model.fit(pd.DataFrame({"ds": train.index, "y": train.to_numpy()}))
         return model.predict(pd.DataFrame({"ds": future}))["yhat"].to_numpy()
     raise ValueError(f"Unsupported or unverified model: {name}")
 
 
-def benchmark(series: pd.Series, models: list[str], horizons: list[int], origins: int) -> pd.DataFrame:
+def benchmark(
+    series: pd.Series, models: list[str], horizons: list[int], origins: int
+) -> pd.DataFrame:
     """Expanding-window, non-overlapping origins; no test-label imputation."""
     rows = []
     for horizon in horizons:
@@ -100,11 +108,17 @@ def benchmark(series: pd.Series, models: list[str], horizons: list[int], origins
                 if len(prediction) != horizon or not np.isfinite(prediction).all():
                     raise ValueError(f"Incomplete forecast: {name}, origin={series.index[i]}")
                 errors = prediction - actual
-                rows.append({"model": name, "horizon_days": horizon,
-                             "origin": str(series.index[i - 1].date()),
-                             "mae_c": float(np.abs(errors).mean()),
-                             "rmse_c": float(np.sqrt(np.square(errors).mean())),
-                             "bias_c": float(errors.mean()), "n": horizon})
+                rows.append(
+                    {
+                        "model": name,
+                        "horizon_days": horizon,
+                        "origin": str(series.index[i - 1].date()),
+                        "mae_c": float(np.abs(errors).mean()),
+                        "rmse_c": float(np.sqrt(np.square(errors).mean())),
+                        "bias_c": float(errors.mean()),
+                        "n": horizon,
+                    }
+                )
     if not rows:
         raise ValueError("No complete eligible origins; inspect AEMET missing data and coverage")
     return pd.DataFrame(rows)
@@ -126,12 +140,19 @@ def main() -> None:
     scores.to_csv(args.output, index=False)
     summary = scores.groupby(["model", "horizon_days"])[["mae_c", "rmse_c", "bias_c"]].mean()
     print(summary.to_string())
-    args.output.with_suffix(".metadata.json").write_text(json.dumps({
-        "station": args.station, "source_file": str(args.csv),
-        "target": "AEMET daily tmed (C)", "source_type": "observed",
-        "validation": "expanding origin, complete-case, no future covariates",
-        "intervals": "not available; do not infer 80% coverage from point forecasts",
-    }, indent=2))
+    args.output.with_suffix(".metadata.json").write_text(
+        json.dumps(
+            {
+                "station": args.station,
+                "source_file": str(args.csv),
+                "target": "AEMET daily tmed (C)",
+                "source_type": "observed",
+                "validation": "expanding origin, complete-case, no future covariates",
+                "intervals": "not available; do not infer 80% coverage from point forecasts",
+            },
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":
