@@ -1,22 +1,22 @@
 {
-  "batch": "2026-11-06-0035",
-  "base": "3abdd9719eb8fe28b26e10c300093760b815fab7",
+  "batch": "2026-11-06-0135",
+  "base": "423f24dd015919cde3b26be3e9bd105fb27607ba",
   "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
   "local": {
-    "python": "428 focused Wind/Hydro/reference tests passed",
+    "python": "429 focused Wind/Hydro/reference tests passed",
     "viewer": "36 Node viewer/Hydro tests passed",
-    "quality": "Ruff lint/format1166files,ty,hygiene,citations,diffcheck passed",
-    "docs": "Strict Wind-gallery Sphinx passed; Documentation check passed: 707 HTML pages; local links and assets resolve.; review-outcome figure visually inspected",
-    "replay": "All6new EPE partitions21entries replayed with original checksums and ID pairs;2accepted records unchanged. Full27state1134ID coverage verified against original national/empty queries.",
-    "preservation": "22508priorrecords retained;22506unchanged;2enriched;414prior sources preserved;all6capacity summaries unchanged;non-Wind catalogues unchanged",
+    "quality": "Ruff lint and format (1166 files), ty, repository hygiene (5799 candidate files), citations and git diff --check passed",
+    "docs": "Strict Wind-gallery Sphinx build passed; all local links and assets resolve across 707 HTML pages",
+    "replay": "Three BOE records and review decisions reproduced identically from original bytes against the prior catalogue",
+    "preservation": "All 22508 prior records and 420 prior sources unchanged; three project additions; capacity by-status totals unchanged; excluded-project count increases by three; unrelated catalogues unchanged",
     "snapshots": "Two seven-file builds byte-identical; all Parquet columns ZSTD"
   },
   "snapshot_sha256": {
     "schema.json": "72634e7e496e7c5fec890171466e7b9b94008506c47028d4423633b257ace579",
-    "manifest.json": "2793e958bcfbb0629accbc7e08ae164b495c4b016fbc8045713960477df1d88c",
-    "projects.parquet": "2d1cf05a1616cc0b822ab99f6c0c6822e3dadbff485c5ee1b0b4c470aaf21556",
+    "manifest.json": "bca06d8ff48fc8ab64b83500956453fb504bde776df9c369be9fb190b9f54b70",
+    "projects.parquet": "ce53fd4a66d2030e97e9603b01c0f1ad2c8679067b50b6efdf1252aa3d6f894e",
     "turbines.parquet": "8b394a9f05d5d383ef4af844cc949a3285c499f91bc9f2aebf1e30befd7cbd23",
-    "sources.json": "d7a72bf33e4d6d329485121c044cc936be52739cf498e41560e37472b43aa3bb",
+    "sources.json": "ff3c2d93fc02d4ef48c2022e72a2c5dd98c7cb8adf0bbdc5c7fb73d83690aa90",
     "curves.parquet": "e52e110f94ff420eb6b1ee57f93492939aeba64b8b3bbf50af9c18a1b3b6b735",
     "equipment.parquet": "377e735ed4f03671439d1e1b7b30ccc2aca7749e413156d61300bb94db7d97d0"
   },
@@ -28,12 +28,14 @@
       "turbines": 13657
     },
     "branch": {
-      "projects": 8294,
+      "projects": 8297,
       "turbines": 13657,
       "equipment": 555,
       "curves": 2
     },
-    "added": {},
+    "added": {
+      "projects": 3
+    },
     "enriched": {
       "projects": 91
     },
@@ -46,5 +48,18 @@
     "full local gallery",
     "package builds",
     "browser interaction"
-  ]
+  ],
+  "concurrency": {
+    "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
+    "wind_expected_head": "423f24dd015919cde3b26be3e9bd105fb27607ba",
+    "reviewed_open_prs": [
+      183,
+      184,
+      185,
+      186,
+      187
+    ],
+    "bess_head_rechecked": "008f3c2b5d87f869724ee986dfa8c9b324bc7ba1",
+    "overlapping_paths": []
+  }
 }

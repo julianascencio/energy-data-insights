@@ -7671,3 +7671,27 @@ Empresa de Pesquisa Energética; Agência Nacional de Energia Elétrica (2026). 
 **Role:** data_source. Sao Paulo full wind partition1IDs; native dated categories retained; source access is independent of failed ANEEL daily CSV endpoint.
 
 **Used by:** `data-retrieval/src/energy_data_retrieval/wind_catalogue/epe.py`, `docs/wind-catalogue.md`.
+
+### boe_a_2026_18635
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Alcocero de Mola dated environmental/authorization decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18635)
+
+**Role:** data_source. Proposed/authorized capacity, not commissioned MW; repowering generations not additive.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_18694
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Boyal I repowering dated environmental/authorization decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18694)
+
+**Role:** data_source. Proposed/authorized capacity, not commissioned MW; repowering generations not additive.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_18695
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Boyal II repowering dated environmental/authorization decision**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18695)
+
+**Role:** data_source. Proposed/authorized capacity, not commissioned MW; repowering generations not additive.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

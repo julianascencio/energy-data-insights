@@ -216,6 +216,11 @@ def stage_boe_notices(
             raise ValueError("Non-wind decision cannot cancel the wind farm")
         if effect == "public_consultation" and values["status"] not in {"announced", "unknown"}:
             raise ValueError("Public consultation does not establish permission or operation")
+        if effect == "repowering_authorization" and values["status"] not in {
+            "permitted",
+            "unknown",
+        }:
+            raise ValueError("Repowering authorization does not establish replacement operation")
         if effect == "environmental_conditions" and values["status"] == "permitted":
             raise ValueError("Environmental decision alone is not construction authorization")
         if (

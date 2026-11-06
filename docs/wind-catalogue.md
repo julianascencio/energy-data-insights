@@ -1226,3 +1226,22 @@ Original notice and index checksums are retained. Exact IFC June ESIA and
 WD230-11500 certificate searches did not locate the requested originals; prior
 announcements are not counted again. Next: BOE September 4–6 and the saved MA
 Delta 3 identity/phase crosswalks. Completed EPE partitions stay closed.
+
+### September 4–5 BOE modification and repowering decisions
+
+The November 6 01:35 continuation adds Alcocero de Mola's revised 78 MW
+proposal and the separately authorized 5 MW Boyal I and Boyal II replacement
+generations. All three remain excluded from capacity totals. Environmental
+clearance alone does not establish construction permission; repowering
+permission does not establish replacement operation. Boyal's historical 4.5 MW
+units, proposed 5 MW units, 4.5 MW grid access and reported 15 MW transformer
+active-power limit remain distinct. No anonymous turbine children or exact
+installed OEM configurations are inferred.
+
+The original Alcocero notice reports 197.92 m tip height versus 197.5 m from
+hub plus radius, and 1,371 m of line versus 1,370 m of listed segments. Both
+observations are preserved. Boyal II repeats a Boyal I AESA reference; no permit
+identity is silently corrected. September 6 returned HTTP 404 and is not a
+completed empty issue. Next daily partition: September 1–3. The saved Delta 3
+crosswalk remains held after the original ANEEL notice returned HTTP 403;
+this is not evidence of authentication or a reuse restriction.

@@ -235,3 +235,12 @@ def test_registry_guard_also_catches_collisions_within_a_multi_project_notice():
     rows, decisions = stage(r)
     assert len(rows) == 1
     assert decisions[-1]["decision"] == "existing_registry_review"
+
+
+def test_repowering_authorization_never_promotes_replacement_operation():
+    for status in ["operational", "retired", "cancelled"]:
+        with pytest.raises(ValueError, match="Repowering authorization"):
+            stage(review(effect="repowering_authorization", status=status))
+    rows, _ = stage(review(effect="repowering_authorization", status="permitted"))
+    assert rows[0]["aggregation_role"] == "unresolved"
+    assert rows[0].get("installed_capacity_mw") is None

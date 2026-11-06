@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T00:39:56Z",
+  "updated_at": "2026-11-06T01:38:06Z",
   "branch": "research/wind-20261105-2235",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-2235.lock",
   "queue": [
@@ -435,7 +435,13 @@
         "RO",
         "RR",
         "TO"
-      ]
+      ],
+      "latest_identity_attempt": {
+        "url": "https://www2.aneel.gov.br/cedoc/retdsp20171911.pdf",
+        "http_status": 403,
+        "retrieved_at": "2026-11-06T01:38:06Z",
+        "next_task": "Alternative official ANEEL publication or issuer-hosted original; do not transfer group220.8MW to individualCEGs"
+      }
     },
     {
       "rank": 5,
@@ -561,6 +567,8 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-09-04",
+        "2026-09-05",
         "2026-09-07",
         "2026-09-08",
         "2026-09-09",
@@ -613,15 +621,17 @@
         "2026-11-04"
       ],
       "next_dates": [
-        "2026-09-04",
-        "2026-09-05",
-        "2026-09-06"
+        "2026-09-01",
+        "2026-09-02",
+        "2026-09-03"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "Review all A/B issues for September4–6, then original PE-227-DUP/AUTO/2024/10013 full approval for Viento de Sellia; no turbine inventory inferred from corrected parcel.",
+      "next_task": "September1–3 allA/Bissues; September6HTTP404 held, not empty. Reconcile Boyal predecessor generations and exact installed revisions.",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-09-04",
+        "2026-09-05",
         "2026-09-07",
         "2026-09-08",
         "2026-09-09",
@@ -673,7 +683,13 @@
         "2026-11-03",
         "2026-11-04"
       ],
-      "latest_review": "2026-11-06-0035-followup.json"
+      "latest_review": "2026-11-06-0135-boe-review.json",
+      "unavailable_dates": [
+        {
+          "date": "2026-09-06",
+          "status": 404
+        }
+      ]
     },
     {
       "rank": 10,
@@ -784,7 +800,7 @@
   "publication_continuation": {
     "branch": "research/wind-20261105-2235",
     "main": "4ef42de474f69b5cdca5824410c06db0d851b434",
-    "expected_head": "3abdd9719eb8fe28b26e10c300093760b815fab7",
+    "expected_head": "423f24dd015919cde3b26be3e9bd105fb27607ba",
     "pr": 184,
     "leave_open_unmerged": true
   }
