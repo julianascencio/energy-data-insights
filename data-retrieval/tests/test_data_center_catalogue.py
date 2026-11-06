@@ -37,6 +37,8 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_green_mountain_portfolio,
     parse_icolo_facility_page,
     parse_icolo_home_portfolio,
+    parse_maincubes_directory,
+    parse_maincubes_site_page,
     parse_meta_locations,
     parse_penta_infra_directory,
     parse_penta_infra_site_page,
@@ -534,6 +536,50 @@ def test_bulk_infrastructure_parsers_preserve_capacity_boundaries():
             b"",
             source_url="https://bulkinfrastructure.com/data-centers/n01/",
             expected_code="N01-42MW",
+        )
+
+
+def test_maincubes_parsers_preserve_directory_and_design_ranges():
+    directory = parse_maincubes_directory(
+        (FIXTURES / "maincubes-directory.html").read_bytes(),
+        source_url="https://www.maincubes.com/en/data-centers/",
+    )
+    assert [row["external_id"] for row in directory["candidates"]] == [
+        "FRA05",
+        "FRA04",
+        "FRA03",
+        "FRA02",
+        "FRA01",
+        "BER02",
+        "BER01",
+        "AMS01",
+    ]
+    assert directory["candidates"][0]["reported_capacity_min_mw"] == 75
+    assert directory["candidates"][5]["reported_capacity_max_mw"] == 186
+    fra03 = parse_maincubes_site_page(
+        (FIXTURES / "maincubes-fra03.html").read_bytes(),
+        source_url=("https://www.maincubes.com/en/data-centers/carrier-neutral-data-center-fra03/"),
+        expected_code="FRA03",
+    )["candidate"]
+    assert fra03["it_capacity_min_mw"] == fra03["it_capacity_max_mw"] == 16
+    assert fra03["technical_area_min_m2"] == 7680
+    ber02 = parse_maincubes_site_page(
+        (FIXTURES / "maincubes-ber02.html").read_bytes(),
+        source_url=(
+            "https://www.maincubes.com/en/data-centers/berlin-cloud-ai-provider-campus-ber02/"
+        ),
+        expected_code="BER02",
+    )["candidate"]
+    assert (ber02["it_capacity_min_mw"], ber02["it_capacity_max_mw"]) == (144, 186)
+    assert (ber02["technical_area_min_m2"], ber02["technical_area_max_m2"]) == (
+        12000,
+        41184,
+    )
+    with pytest.raises(ValueError, match="site code"):
+        parse_maincubes_site_page(
+            b"",
+            source_url="https://www.maincubes.com/en/data-centers/unknown/",
+            expected_code="FRA99",
         )
 
 

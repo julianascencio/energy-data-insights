@@ -1703,6 +1703,118 @@ def parse_green_mountain_facility_page(
     }
 
 
+def parse_maincubes_directory(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete current maincubes directory identity set.
+
+    Directory capacity cards establish only a reported number or range. They do
+    not establish an IT boundary; exact facility pages are reviewed separately
+    before any scalar is normalized.
+    """
+    if urlsplit(source_url).hostname not in {"maincubes.com", "www.maincubes.com"}:
+        raise ValueError("Expected official maincubes URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    expected = {
+        "FRA05": "Pipeline",
+        "FRA04": "In Planning",
+        "FRA03": "In Operation",
+        "FRA02": "In Operation",
+        "FRA01": "In Operation",
+        "BER02": "Construction",
+        "BER01": "In Operation",
+        "AMS01": "In Operation",
+    }
+    candidates = []
+    for code, status in expected.items():
+        pattern = (
+            rf"\b{code}\s+{re.escape(status)}\s+"
+            rf"(?:Hyperscale & HPC|Government-Leased|Colocation(?:/OCP Ready™)?)\s+"
+            rf"(\d+(?:[\u2013-]\d+)?)\s+MW\s+Capacity(?:\s+\(N\+1\))?"
+        )
+        values = list(dict.fromkeys(re.findall(pattern, text)))
+        if len(values) != 1:
+            raise ValueError(f"Changed maincubes directory row for {code}")
+        bounds = [float(value) for value in re.split(r"[\u2013-]", values[0])]
+        candidates.append(
+            {
+                "external_id": code,
+                "status_label": status,
+                "reported_capacity_min_mw": bounds[0],
+                "reported_capacity_max_mw": bounds[-1],
+                "locator": f"current directory card / {code}",
+            }
+        )
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
+def parse_maincubes_site_page(
+    content: bytes, *, source_url: str, expected_code: str
+) -> dict[str, Any]:
+    """Stage explicit IT-capacity and IT-area facts from one maincubes page."""
+    if urlsplit(source_url).hostname not in {"maincubes.com", "www.maincubes.com"}:
+        raise ValueError("Expected official maincubes URL")
+    if expected_code not in {"AMS01", "FRA01", "FRA02", "BER01", "FRA03", "FRA04", "BER02"}:
+        raise ValueError("Unexpected maincubes site code")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    spaced_code = f"{expected_code[:3]} {expected_code[3:]}"
+    if expected_code not in text and spaced_code not in text:
+        raise ValueError("Changed maincubes site identity")
+    status_labels = {
+        "AMS01": "In Operation",
+        "FRA01": "In Operation",
+        "FRA02": "In Operation",
+        "BER01": "In Operation",
+        "FRA03": "In Operation",
+        "FRA04": "In Planning",
+        "BER02": "Construction",
+    }
+    status = status_labels[expected_code]
+    if status not in text:
+        raise ValueError("Changed maincubes site lifecycle")
+
+    capacity_tokens: list[str] = []
+    for pattern in (
+        r"IT capacity:\s*(\d+(?:[\u2013-]\d+)?)\s*MW",
+        r"(\d+(?:[\u2013-]\d+)?)\s*MW\s+IT [Cc]apacity",
+    ):
+        capacity_tokens.extend(re.findall(pattern, text))
+    capacity_tokens = list(dict.fromkeys(capacity_tokens))
+    if len(capacity_tokens) != 1:
+        raise ValueError("Changed maincubes IT-capacity shape")
+    capacity_bounds = [float(value) for value in re.split(r"[\u2013-]", capacity_tokens[0])]
+
+    area_tokens = list(
+        dict.fromkeys(re.findall(r"IT area:\s*(\d[\d,]*(?:[\u2013-]\d[\d,]*)?)\s*m²", text))
+    )
+    if len(area_tokens) != 1:
+        raise ValueError("Changed maincubes IT-area shape")
+    area_bounds = [
+        float(value.replace(",", "")) for value in re.split(r"[\u2013-]", area_tokens[0])
+    ]
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": expected_code,
+            "status_label": status,
+            "it_capacity_min_mw": capacity_bounds[0],
+            "it_capacity_max_mw": capacity_bounds[-1],
+            "technical_area_min_m2": area_bounds[0],
+            "technical_area_max_m2": area_bounds[-1],
+            "locator": f"current {expected_code} page / IT capacity and IT area",
+        },
+        "review_required": True,
+    }
+
+
 def parse_vertiv_powerups6000_table(
     content: bytes, *, source_url: str, expected_count: int | None = None
 ) -> dict[str, Any]:
