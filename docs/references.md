@@ -7695,3 +7695,11 @@ Agencia Estatal Boletín Oficial del Estado (2026). **Boyal II repowering dated 
 **Role:** data_source. Proposed/authorized capacity, not commissioned MW; repowering generations not additive.
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_18277
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Satrebares original application refusal and procedural history**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-18277)
+
+**Role:** data_source. Rejected proposal history; later correction retained; no commissioned capacity.
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

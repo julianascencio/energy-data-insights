@@ -265,3 +265,11 @@ def test_daily_scan_requires_empty_extra_issue_and_deduplicates_aliases():
             url,
             {url: wind + default, url + "index.php?d=216": wind.replace(b"72,6", b"73,6")},
         )
+
+
+def test_application_refusal_is_not_operation_or_retirement():
+    for status in ["operational", "retired", "permitted"]:
+        with pytest.raises(ValueError, match="Application refusal"):
+            stage(review(effect="application_refusal", status=status))
+    rows, _ = stage(review(effect="application_refusal", status="cancelled"))
+    assert rows[0]["aggregation_role"] == "unresolved"

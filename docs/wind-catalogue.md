@@ -1255,3 +1255,15 @@ and conflicting titles are rejected. This is title-scan completeness, not a wind
 project census. The September 1–3, 2026 scan includes both September 2 issues and
 returns no candidates. See `2026-11-06-0235-review.json` for source hashes and the
 separate, unresolved Wimmera survey/permit phase review.
+
+### Original refusal history and permit envelopes
+
+The August 27–29 and 31, 2026 BOE batch enriches Satrebares from its original
+refusal notice (BOE-A-2026-18277), preserving the later geography correction.
+Application/hearing dates, the received grid-access expiry notice and electrical
+proposal observations do not describe installed assets. The adapter rejects
+operational, permitted or retired status inferred from an application refusal.
+The Valdepero solar and Frontones battery notices are not new wind capacity.
+Wimmera's acquired PA2000877-2 permit provides upper/lower dimensional limits,
+not exact turbine configurations or AEMO phase allocations. Its amendment date
+is May 14, 2026; May 19 is the attachment filename date. See the 0335 review ledger.
