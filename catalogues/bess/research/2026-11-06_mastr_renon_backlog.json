@@ -1,0 +1,209 @@
+{
+  "as_of": "2026-11-06T10:12:06.407913+00:00",
+  "ranking_basis": "Expected verified yield, useful metadata, rights clarity, then extraction/reconciliation effort.",
+  "sources": [
+    {
+      "rank": 1,
+      "url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "country_or_market": "DEU",
+      "entity": "Bundesnetzagentur MaStR",
+      "version_or_date": "2026-11-06 /26.2",
+      "access_license_assessment": "XML explicitly DL-DE/BY2.0 on current index and BNetzA rights page. Bounded sequential HTTP Range requests returned206; CRC32, size and uncompressed SHA256 checked. No full archive copied into Git.",
+      "estimated_useful_yield": "50–200 potentially useful named battery records per next reviewed partition; estimate only",
+      "offered_fields": [
+        "SEE/SSE/SEL identifiers",
+        "net/gross/inverter kW",
+        "usable kWh",
+        "status",
+        "first commissioning",
+        "coordinates",
+        "chemistry category",
+        "operator ID"
+      ],
+      "attempt_result": "200000 storage units scanned in partitions1–2;206 units>=1MW reviewed;97 non-battery exclusions;109 battery candidates =>79 accepted,30 held. All selected battery energies reciprocally join one SSE.",
+      "processed_partition_or_cursor": "EinheitenStromSpeicher_1.xml and _2.xml; AnlagenStromSpeicher_1.xml and _2.xml; Katalogwerte/Katalogkategorien complete. Next unit partition3; never assume matching ordinal storage partition without joining IDs.",
+      "retry_condition": "Recheck production index date and archive metadata; changed daily bytes require fresh hashes and repeat prior-ID reconciliation.",
+      "next_action": "Resolve30 holds with owner/site evidence and later partitions; then partition3. Maintain reviewed natural identities; different SEL IDs alone do not prove distinct facilities.",
+      "capture": {
+        "url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+        "retrieved_at": "2026-11-06T09:53:00.250413+00:00",
+        "http_status": 200,
+        "sha256": "57f3186c1c7bd1a1e07a707afd908a383d27da683cd685a86a471ee076e094fe"
+      }
+    },
+    {
+      "rank": 2,
+      "url": "https://www.renonpower.com/Download-Center/English/",
+      "country_or_market": "US/EU",
+      "entity": "Renon Power",
+      "version_or_date": "MPack261 cover2026-04-22; Smart Matrix cover2026-05-05; other selected sheets undated",
+      "access_license_assessment": "No open bulk licence asserted. Bounded exact factual tables manually transcribed; full documents/prose/artwork remain outside Git.",
+      "estimated_useful_yield": "Selected16 exact models exhausted; next warranties/technical agreement could enrich2ECube models",
+      "offered_fields": [
+        "electrical ratings",
+        "module/string counts",
+        "voltage/current",
+        "thermal/IP",
+        "EMS",
+        "life conditions",
+        "warranty claims"
+      ],
+      "attempt_result": "Five current primary PDFs accepted16 exact models/configurations:3MPack,2ECube,6Smart Matrix,4EBrick-IND and1communication cabinet;8records preserve field conflicts. Historical2024catalogue URL now404; not used for accepted technical facts.",
+      "processed_partition_or_cursor": "Exact model tables only; external transformer, EV charger, unnamed PCS, STS and PV-combiner candidates not imported.",
+      "retry_condition": "Check live download links/revisions and applicability to accepted suffixes before enrichment.",
+      "next_action": "Review public ECube technical agreement and10-year warranty for model-specific retention/throughput; resolve Smart Matrix kW/kVA, MPack233dimensions, EBrick Ah and parallel boundaries.",
+      "capture": {
+        "url": "https://www.renonpower.com/Download-Center/English/",
+        "retrieved_at": "2026-11-06T09:55:18.750030+00:00",
+        "http_status": 200,
+        "sha256": "7f12715ed2aa734606345f4b4146e05f0062b412d3e965d4ce62351ed1f331e0"
+      }
+    },
+    {
+      "rank": 3,
+      "url": "https://www.ea.govt.nz/data-and-insights/charts-and-dashboards/generation-investment-pipeline/",
+      "country_or_market": "NZL",
+      "entity": "New Zealand Electricity Authority",
+      "version_or_date": "Prior6November attempt; not re-retrieved this pass",
+      "access_license_assessment": "EA website material CC BY4.0; third-party Sigma export scope remains unresolved.",
+      "estimated_useful_yield": "Unknown until documented battery export accessible",
+      "offered_fields": [
+        "identity",
+        "power",
+        "developer",
+        "status"
+      ],
+      "attempt_result": "Carried forward as regional alternative from preceding dated backlog; not claimed newly examined.",
+      "processed_partition_or_cursor": "Landing page only; no new partition",
+      "retry_condition": "Published documented export and applicable reuse licence become available",
+      "next_action": "Recheck official export and compare existing reviewed NZ identities; avoid undocumented endpoint probing.",
+      "capture": null
+    },
+    {
+      "rank": 4,
+      "url": "https://www.wstech.com/media/",
+      "country_or_market": "DEU/global",
+      "entity": "WSTECH",
+      "version_or_date": "Undated live media page",
+      "access_license_assessment": "Download buttons require registration/login. No form submitted or gate bypassed.",
+      "estimated_useful_yield": "Potential multiple exact PCS models; no specifications accepted",
+      "offered_fields": [
+        "PCS exact models",
+        "voltage/current",
+        "kVA",
+        "controls"
+      ],
+      "attempt_result": "Media listing and registration requirement reviewed; moved to accessible OEM alternatives.",
+      "processed_partition_or_cursor": "Listing only; zero model records processed",
+      "retry_condition": "Public ungated original sheets or authorized existing access",
+      "next_action": "Use public exact-model data only; general MCS family page is insufficient to extrapolate a full model table.",
+      "capture": {
+        "url": "https://www.wstech.com/media/",
+        "retrieved_at": "2026-11-06T09:51:39.467886+00:00",
+        "http_status": 200,
+        "sha256": "1aadb3a0f09a5774206c8788a5e433964bc0c71e69536530ce33dd94161d998b"
+      }
+    },
+    {
+      "rank": 5,
+      "url": "https://www.masterbattery.es/documentos/Micro-Grid-Series.pdf",
+      "country_or_market": "ESP/US",
+      "entity": "Master Battery / Renon attribution review",
+      "version_or_date": "Undated brochure",
+      "access_license_assessment": "No open bulk licence asserted; mixed Master Battery/Renon branding requires relationship review.",
+      "estimated_useful_yield": "No accepted separate rebrand records",
+      "offered_fields": [
+        "systems",
+        "modules",
+        "cells",
+        "controllers"
+      ],
+      "attempt_result": "Downloaded and inspected; Renon address/material appears in brochure. Followed original Renon source instead of creating duplicate Master Battery manufacturer/model identities.",
+      "processed_partition_or_cursor": "Discovery only; zero accepted Master Battery records",
+      "retry_condition": "Explicit exact OEM/rebrand relationship documentation",
+      "next_action": "Reconcile exact configurations against Renon; do not assume supplier branding establishes cell manufacture.",
+      "capture": {
+        "url": "https://www.masterbattery.es/documentos/Micro-Grid-Series.pdf",
+        "retrieved_at": "2026-11-06T09:51:34.512174+00:00",
+        "http_status": 200,
+        "sha256": "4181d084db8bdadbef551151785a85ef517850397e6438da95e6d9c0fa6f8c64"
+      }
+    },
+    {
+      "rank": 6,
+      "url": "https://pramac-storage-systems.com/wp-content/uploads/2022/12/Manual_REFUstor_50K-100K_2022-07_en.pdf",
+      "country_or_market": "DEU/global",
+      "entity": "Pramac / REFU",
+      "version_or_date": "URL suggests2022-07; original PDF unavailable",
+      "access_license_assessment": "Historical public URL returned HTML instead of PDF. No controls bypassed.",
+      "estimated_useful_yield": "Potential3–4PCS models; zero accepted",
+      "offered_fields": [
+        "DC/AC voltage",
+        "current",
+        "kVA",
+        "cooling",
+        "protection"
+      ],
+      "attempt_result": "Search found historical original manual, but direct fetch did not yield PDF; no acceptance from failed bytes. Continued to Renon live PDFs.",
+      "processed_partition_or_cursor": "One historical manual attempt",
+      "retry_condition": "Current official original PDF found",
+      "next_action": "Locate current official download and distinguish REFUstor article numbers/precharge variants.",
+      "capture": {
+        "url": "https://pramac-storage-systems.com/wp-content/uploads/2022/12/Manual_REFUstor_50K-100K_2022-07_en.pdf",
+        "retrieved_at": "2026-11-06T09:52:31.778600+00:00",
+        "http_status": 200,
+        "sha256": "97bd1fca37a0f8c89b3050592d51dbaffd7bfaa4786c5c1f5f83b18e451258a4"
+      }
+    },
+    {
+      "rank": 7,
+      "url": "https://static.atesspower.com/upload/files/20251217/7c0c17764eba3bd9b8e84ece4feb9539.pdf",
+      "country_or_market": "CHN/global",
+      "entity": "ATESS",
+      "version_or_date": "Undated sheets; same SHA256 as earlier accepted source",
+      "access_license_assessment": "Selected factual model-specific enrichment; no source PDF or artwork redistributed.",
+      "estimated_useful_yield": "Selected13rack/cabinet configurations exhausted",
+      "offered_fields": [
+        "AC internal resistance upper bound",
+        "BMS levels",
+        "LCD readings",
+        "protection functions"
+      ],
+      "attempt_result": "Fresh bytes match registered source hashes.13existing exact configurations enriched additively; prior facts, source entries, created_at and held nine-module VoltStack ratings preserved.",
+      "processed_partition_or_cursor": "BC6rack columns; VoltStack7rack columns",
+      "retry_condition": "New version or further model-specific evidence",
+      "next_action": "Seek operating temperatures and full warranty/test conditions; no cycle-life or contractual warranty scalar inferred from marketing cover.",
+      "capture": {
+        "url": "https://static.atesspower.com/upload/files/20251217/7c0c17764eba3bd9b8e84ece4feb9539.pdf",
+        "retrieved_at": "2026-11-06T09:58:38.403292+00:00",
+        "http_status": 200,
+        "sha256": "42cdea88135a1b5f4aed23707bc24ee2c8212781d0faf6e950491b0d58e6d656"
+      }
+    },
+    {
+      "rank": 7,
+      "url": "https://static.atesspower.com/upload/files/20251217/e6d723421e67acbbe9034d7b9513d950.pdf",
+      "country_or_market": "CHN/global",
+      "entity": "ATESS",
+      "version_or_date": "Undated sheets; same SHA256 as earlier accepted source",
+      "access_license_assessment": "Selected factual model-specific enrichment; no source PDF or artwork redistributed.",
+      "estimated_useful_yield": "Selected13rack/cabinet configurations exhausted",
+      "offered_fields": [
+        "AC internal resistance upper bound",
+        "BMS levels",
+        "LCD readings",
+        "protection functions"
+      ],
+      "attempt_result": "Fresh bytes match registered source hashes.13existing exact configurations enriched additively; prior facts, source entries, created_at and held nine-module VoltStack ratings preserved.",
+      "processed_partition_or_cursor": "BC6rack columns; VoltStack7rack columns",
+      "retry_condition": "New version or further model-specific evidence",
+      "next_action": "Seek operating temperatures and full warranty/test conditions; no cycle-life or contractual warranty scalar inferred from marketing cover.",
+      "capture": {
+        "url": "https://static.atesspower.com/upload/files/20251217/e6d723421e67acbbe9034d7b9513d950.pdf",
+        "retrieved_at": "2026-11-06T09:58:37.847958+00:00",
+        "http_status": 200,
+        "sha256": "4dc33bd8375a21e14e878e060fd72fec8ada53865326ac4a01d7150a269eb79c"
+      }
+    }
+  ]
+}

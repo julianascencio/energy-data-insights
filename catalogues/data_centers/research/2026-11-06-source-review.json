@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T07:23:39Z",
+  "retrieved_at": "2026-11-06T13:30:39Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -64,6 +64,54 @@
       "enriched_records": 0,
       "reuse": "Public copyrighted operator and issuer pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, contacts, security and access details are excluded.",
       "originals": "Five factual official HTML originals total 941,065 bytes and have individual SHA-256 checksums in sources.json. A separate 177,649-byte privacy-policy capture supported rights review but is not a factual source."
+    },
+    {
+      "inventory": "European Commission JRC 2024 Digital Realty Spain and Sweden participant partition",
+      "processed_offset": 10,
+      "accepted_records": 10,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "The official participant page returned a request-rejected response from this environment, while the exact rows remained available through the public indexed reader. No original checksum is claimed. The separate 90,265-byte EU legal notice was captured and checksummed."
+    },
+    {
+      "inventory": "European Commission JRC Equinix EMEA corporate participant partition",
+      "processed_offset": 34,
+      "accepted_records": 34,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "The official participant page returned a request-rejected response from this environment. The complete 35 displayed rows were consistent across multiple indexed official-language copies; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
+    },
+    {
+      "inventory": "European Commission JRC 2018 DxC Technology and Digital Reality participant partitions",
+      "processed_offset": 19,
+      "accepted_records": 19,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "The official participant page returned a request-rejected response from this environment. The complete 11 DxC Technology and eight Digital Reality rows were available through the indexed official page; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
+    },
+    {
+      "inventory": "European Commission JRC cross-language-stable 2015-2018 participant partition",
+      "processed_offset": 17,
+      "accepted_records": 17,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "Direct official-page requests returned request-rejected responses from this environment. Seventeen exact facility identities from nine participant sets were stable across reviewed indexed official-language copies; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
+    },
+    {
+      "inventory": "European Commission JRC non-overlapping cross-language-stable 2024 participant partition",
+      "processed_offset": 6,
+      "accepted_records": 6,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "Direct official-page requests returned request-rejected responses from this environment. Six exact participant/facility rows agreed across indexed Spanish, Romanian, Gaelic and German official-language copies; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
+    },
+    {
+      "inventory": "European Commission JRC complete 2023 participant cohort",
+      "processed_offset": 35,
+      "accepted_records": 35,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "Direct official-page requests returned request-rejected responses from this environment. Thirty-six displayed facility rows across 13 participant sets agreed across indexed Spanish, Romanian and Gaelic official-language copies; Frankfurt FRA08 is repeated verbatim, yielding 35 unique identities. No original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
     }
   ],
   "deferred": [
@@ -110,6 +158,26 @@
     {
       "candidate": "Open Access Data Centres public facility portfolio",
       "reason": "Official terms prohibit reproduction except under the copyright notice. This is a reuse hold, not an access failure; no OADC facts, captures or source-registry entries were published."
+    },
+    {
+      "candidate": "JRC participant-facility lifecycle, ownership, locality and capacity",
+      "reason": "The participant registry establishes exact names and 2024 adhesion only. It does not establish current operation, ownership, physical aggregation, locality, certification or capacity; all ten records remain lifecycle-unknown and aggregation-unresolved."
+    },
+    {
+      "candidate": "JRC Equinix participant-facility lifecycle, ownership, operation and capacity",
+      "reason": "The corporate participant row establishes 34 unique site codes, cities and 2013 adhesion only. It does not establish current operation, ownership, physical aggregation, certification or capacity; all 34 records remain lifecycle-unknown and aggregation-unresolved."
+    },
+    {
+      "candidate": "JRC 2018 DxC Technology and Digital Reality lifecycle, ownership, operation and capacity",
+      "reason": "The registry establishes 19 exact participant-facility labels and 2018 adhesion only. It does not establish current operation, ownership, physical aggregation, certification or capacity; all records remain lifecycle-unknown and aggregation-unresolved."
+    },
+    {
+      "candidate": "JRC cross-language participant identities outside the accepted 17-row partition",
+      "reason": "Reviewed official-language indexes associate INTEL with conflicting facility identities, while other rows appear only through unstable pagination contexts. They remain deferred until an authoritative consistent row or captured original resolves the partition."
+    },
+    {
+      "candidate": "PAIX ACC-1 and NBO-1 public facility pages and fact sheets",
+      "reason": "Current official terms prohibit both automated and manual monitoring or copying of website material. This is a reuse hold, not an access failure; no PAIX facts, original fact-sheet bytes or records were imported."
     }
   ],
   "quarantined": [
@@ -200,6 +268,37 @@
         "technical_area_m2"
       ],
       "reason": "Current official pages report 7,200 m2 and 3,240 m2 of LGS2 white space. Both values remain conflict observations and technical_area_m2 remains null."
+    },
+    {
+      "candidate": "JRC Equinix AM7 registry row multiplicity",
+      "fields": [
+        "source_row_multiplicity"
+      ],
+      "reason": "The official participant table displays The Netherlands: AM7, Amsterdam twice verbatim while reporting 35 rows. The identical duplicate is retained as an observation and normalized once; no second facility is synthesized."
+    },
+    {
+      "candidate": "JRC 2018 printed organization and facility spellings",
+      "fields": [
+        "participant_name",
+        "facility_name"
+      ],
+      "reason": "Digital Reality, Doxfrod Park and Winyard are retained exactly as printed. No owner/operator normalization or spelling correction is inferred without independent evidence."
+    },
+    {
+      "candidate": "JRC INTEL participant-facility identity conflict",
+      "fields": [
+        "facility_name",
+        "locality",
+        "adhesion_year"
+      ],
+      "reason": "Reviewed official-language indexed copies variously align INTEL with Limonest, AMU Luminy, Media CityUK and Leixlip/2016. No INTEL record or reconciled field is synthesized."
+    },
+    {
+      "candidate": "JRC 2023 Frankfurt FRA08 registry row multiplicity",
+      "fields": [
+        "source_row_multiplicity"
+      ],
+      "reason": "The official participant table displays Frankfurt FRA08 twice verbatim while the complete 2023 cohort contains 36 displayed rows. The identical duplicate is retained as a two-occurrence observation and normalized once; no second facility is synthesized."
     }
   ],
   "normalization_notes": [
@@ -244,6 +343,31 @@
     "LGS1's exact 1.5 MW IT load and 1,094 m2 white space are normalized. LGS2's exact 12 MW IT load and 2025-04-10 commissioning date are normalized; the separately stated 13.5 MW campus total remains only on the excluded aggregate.",
     "LGS2's conflicting 7,200 m2 and 3,240 m2 white-space claims remain observations. Its 25 MVA utility commitment is not converted to grid MW; LGS1 PUE 1.5 lacks a measurement period and LGS2 PUE 1.35 is a design value.",
     "Uptime Institute month-precision Tier III awards for the original Lagos facility remain issuer-verified observations on LGS1 rather than certifications_json entries. No LGS2 certification is inferred.",
-    "The OADC screening preserves an existing reuse hold and imports no facts or bytes. All prior holds and quarantines remain in force."
+    "The OADC screening preserves an existing reuse hold and imports no facts or bytes. All prior holds and quarantines remain in force.",
+    "The complete bounded 2024 JRC Digital Realty Spain and Sweden partition is processed at offset ten: ESP1-ESP4 and STO1-STO6.",
+    "JRC participation establishes exact registry identities and adhesion year only. Lifecycle, ownership, operation, locality, certification and every capacity boundary remain unknown.",
+    "All ten JRC records are aggregation-unresolved and therefore excluded from IT, grid and facility-capacity totals under every filter.",
+    "The JRC direct-page rejection is an access/content failure, not a reuse prohibition. The Commission CC BY 4.0 notice was captured and checksummed separately.",
+    "PAIX ACC-1 and NBO-1 remain on reuse hold because current terms prohibit automated and manual copying; no PAIX facts or source bytes were published.",
+    "The complete JRC Equinix EMEA corporate partition is processed as 34 unique identities from 35 displayed rows across 11 countries.",
+    "The duplicated AM7 Amsterdam source row is normalized once and retained as an explicit source-occurrence observation; it does not inflate the facility count.",
+    "JRC Equinix participation supports exact site code, city and 2013 adhesion only. Lifecycle, ownership, operation, certification, physical aggregation and every capacity boundary remain unknown.",
+    "All 34 Equinix records are aggregation-unresolved and excluded from IT, grid and facility-capacity totals under every filter.",
+    "The direct JRC-page rejection remains an access/content failure, not a reuse prohibition. The previously captured Commission CC BY 4.0 notice remains the rights basis; all saved reuse holds remain in force.",
+    "The complete displayed 2018 JRC partitions are processed at offsets 11 DxC Technology and eight Digital Reality identities.",
+    "Digital Reality is retained as the exact registry participant spelling; it is not converted into an owner or operator relationship. Apparent Doxfrod Park and Winyard source spellings are preserved for review.",
+    "The registry supports participant-facility identity and 2018 adhesion only. Adhesion is not commissioning, certification or deployment evidence, and every lifecycle, ownership, operation and capacity field remains unresolved.",
+    "All 19 records are aggregation-unresolved and excluded from IT, grid and facility-capacity totals under every filter. The direct page rejection is an access/content failure, not a reuse prohibition; all saved holds remain in force.",
+    "The cross-language-stable JRC 2015-2018 partition is complete at 17 exact facility identities from nine participant sets. Exact registry spellings and adhesion years are retained.",
+    "Only locality text contained in exact facility labels is normalized; company-address text is never promoted to a site location. Adhesion is not commissioning, certification or deployment evidence.",
+    "All 17 records remain lifecycle-unknown and aggregation-unresolved, with every IT, grid and facility-capacity scalar null and excluded from totals under every filter.",
+    "INTEL remains quarantined because official-language indexed copies conflict on facility identity and year. Pagination-only rows remain deferred. Direct-page rejection is an access/content failure, not a reuse prohibition.",
+    "The non-overlapping 2024 JRC partition is complete at six exact identities: D3 Geneva, Roazhon, G-Cloud Moschato, DCWTC Genova, Les Ulis and Castel Sanpietro Terme (BO). Digital Realty Spain and Sweden are excluded because their 10-row partition was completed previously.",
+    "Participant names, counts, facility labels and 2024 adhesion agree across reviewed Spanish, Romanian, Gaelic and German official-language indexes. Adhesion is not commissioning, certification or deployment evidence.",
+    "All six records remain lifecycle-unknown and aggregation-unresolved, with every capacity scalar null and excluded under every filter. The direct-page rejection remains an access/content failure rather than a reuse hold.",
+    "The complete 2023 JRC cohort is processed as 35 unique identities from 36 displayed rows across 13 participant sets. Frankfurt FRA08 is repeated verbatim and remains one facility with a source-row-occurrence observation of two.",
+    "Exact source spellings including Detuschland, Tecchnology, Servvice, Varsaw, Biliancourt, Touluse and Mamoudzo are preserved and are not corrected by inference.",
+    "The 2023 adhesion year is not commissioning, certification or deployment evidence. Company addresses are not site locations, and participant names do not establish owner or operator roles.",
+    "All 35 records remain lifecycle-unknown and aggregation-unresolved, with every capacity scalar null and excluded under every filter. The direct-page rejection is an access/content failure, not a reuse restriction; all saved holds remain in force."
   ]
 }

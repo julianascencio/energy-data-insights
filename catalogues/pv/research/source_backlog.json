@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-06T07:23:32.905918+00:00",
-  "ranking_file": "20261106T0700_top10_gaps.json",
+  "updated_at": "2026-11-06T13:18:45.513898+00:00",
+  "ranking_file": "20261106T1300_top10_gaps.json",
   "selection_note": "197projects/401fieldscontexts,13newFoxESSinverters/247typedvalues.2acceptedbatches;3ownerholds. Nepal/BPDBnewdiscovery only;Taipowerunchanged/alreadyprocessed,no adaptercompletion.",
-  "next_highest_value_source": "China572strictownershipcandidates; PPIBfourQASP/AtlasprojectboundariesandNEPRAas-builtcapacity; independentLOVATOexactcombiningtableafterrightsreview.",
+  "next_highest_value_source": "Chile BCN MinEner2026 layer716features: source-specific licence/revision and positiveFV nativeID/phase crosswalk first. Solvis current12tables completed; skip unchangedfiles, preserve power/height questions.",
   "sources": [
     {
       "id": "uk_repd",
@@ -26778,6 +26778,2641 @@
       "retry_condition": "Saved unprocessedpartition or newrevision/rights/identity evidence; metadata beforefullfiles",
       "next_action": "Onlynewrevisionorindependentexactmissingfieldresolution; skipunchangedtable.",
       "next_due_check": "2026-12-06T07:00:00Z"
+    },
+    {
+      "id": "gem_CHN_owners_0800",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "Pinned February2026 XLSX; complete exact native/workbook phase sets andOwnercells",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "publication_cadence": "Release-based; webpage metadata first, no hourly workbookdownload",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_metadata_check_note": "Official page opened08:00UTC still February2026; original pinned workbook bytes/retrieval reused, no direct403/fullworkbookretry",
+      "reviewed": 200,
+      "accepted": 194,
+      "held": 6,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "remaining_strict_after_cursor": 372,
+        "not_acceptance_promise": true
+      },
+      "mapping": "194 historical owners +194 complete phase contexts; no operator,capacity,date orcurrentoperation change",
+      "processed_cursor": {
+        "CHN": "L100001025931"
+      },
+      "result": "Six native spelling/legalentity/mixed-script suffix anomalies held without correction. Prior four holds not repeated.",
+      "retry_condition": "Next savedpartition after source/headrefresh; independentproof forheldnames",
+      "next_action": "China372 strict ownership candidates after this saved200-location cursor; Greek367following China; sixholds separate.",
+      "next_due_check": "2026-11-13T08:00:00Z"
+    },
+    {
+      "id": "polycab_exact_portfolio_0800",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://cms.polycab.com/media/y5ea3ogh/polycab_inverter_1ph_1kw-4kw_v4.pdf",
+      "endpoint": [
+        "https://cms.polycab.com/media/y5ea3ogh/polycab_inverter_1ph_1kw-4kw_v4.pdf",
+        "https://cms.polycab.com/media/pxjltjfn/polycab_inverter_3ph_12kw-30kw_v4.pdf",
+        "https://cms.polycab.com/media/mw5gvzsb/polycab_inverter_3ph_40kw-75kw_v3.pdf",
+        "https://cms.polycab.com/media/xhzbyoi1/polycab_inverter_3ph_100kw-125kw_v3.pdf",
+        "https://cms.polycab.com/media/anpib3yn/polycab_inverter_3ph_350-320kw_v3.pdf"
+      ],
+      "format": "Five current-linked OEM PDF exactcolumn tables, physicalpage2 rendered",
+      "licence_assessment": "OEM copyright retained; publicindex/privacy/footer/PDFfootnotes inspected. Bounded individually reviewed factual engineering values only; no openbulk/document grant, full PDF/prose/artwork/tablelayout redistribution or manufacturingcountry inference.",
+      "access_assessment": "Ordinary public GET only; no registration/forms/contact, payment or bypass. Raw bytes outsideGit. Failed retrieval is not a validated source file.",
+      "publication_cadence": "Revision-based unless dated below; metadata before fullfiles, no hourly unchanged download",
+      "last_release": "FilenameV4 small/mid andV3large/utility/UT; bodyundated, HTTPJuly2026notpublication",
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_retrieval": "2026-11-06T08:03:09.489141+00:00",
+      "sha256": "0a924a18f28a549a7ebdc08f7d109c706498e63a8034ec6f52bf69ee679c75e5",
+      "etag": "\"1dd1055c086bf9d\"",
+      "captures": [
+        {
+          "name": "polycab-small.pdf",
+          "url": "https://cms.polycab.com/media/y5ea3ogh/polycab_inverter_1ph_1kw-4kw_v4.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/y5ea3ogh/polycab_inverter_1ph_1kw-4kw_v4.pdf",
+          "retrieved_at": "2026-11-06T08:03:09.489141+00:00",
+          "sha256": "0a924a18f28a549a7ebdc08f7d109c706498e63a8034ec6f52bf69ee679c75e5",
+          "bytes": 1564829,
+          "etag": "\"1dd1055c086bf9d\"",
+          "last_modified": "Fri, 10 Jul 2026 10:20:38 GMT"
+        },
+        {
+          "name": "polycab-mid.pdf",
+          "url": "https://cms.polycab.com/media/pxjltjfn/polycab_inverter_3ph_12kw-30kw_v4.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/pxjltjfn/polycab_inverter_3ph_12kw-30kw_v4.pdf",
+          "retrieved_at": "2026-11-06T08:03:10.073451+00:00",
+          "sha256": "5f4f05d4dd565849a7d14c1128ebb328c1b30be9953e1bfe455fd41d1c7f3a5c",
+          "bytes": 1567780,
+          "etag": "\"1dd105cf1d6b1a4\"",
+          "last_modified": "Fri, 10 Jul 2026 11:12:07 GMT"
+        },
+        {
+          "name": "polycab-large.pdf",
+          "url": "https://cms.polycab.com/media/mw5gvzsb/polycab_inverter_3ph_40kw-75kw_v3.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/mw5gvzsb/polycab_inverter_3ph_40kw-75kw_v3.pdf",
+          "retrieved_at": "2026-11-06T08:03:18.035021+00:00",
+          "sha256": "233a6dc73049fb7a63354c94fb07efd8e62fe3aada92fb1b7b14bcaeb10dbe1d",
+          "bytes": 1505974,
+          "etag": "\"1dd105d1fb058b6\"",
+          "last_modified": "Fri, 10 Jul 2026 11:13:24 GMT"
+        },
+        {
+          "name": "polycab-utility.pdf",
+          "url": "https://cms.polycab.com/media/xhzbyoi1/polycab_inverter_3ph_100kw-125kw_v3.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/xhzbyoi1/polycab_inverter_3ph_100kw-125kw_v3.pdf",
+          "retrieved_at": "2026-11-06T08:09:19.654284+00:00",
+          "sha256": "96fa324e9943f9f7a98cbb901a51627c66eed9d002ab22e8a36b30a32691742e",
+          "bytes": 1648530,
+          "etag": "\"1dd105d48de1512\"",
+          "last_modified": "Fri, 10 Jul 2026 11:14:33 GMT"
+        },
+        {
+          "name": "polycab-high.pdf",
+          "url": "https://cms.polycab.com/media/anpib3yn/polycab_inverter_3ph_350-320kw_v3.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/anpib3yn/polycab_inverter_3ph_350-320kw_v3.pdf",
+          "retrieved_at": "2026-11-06T08:09:19.659756+00:00",
+          "sha256": "4b5a34aff498746fd74db00dbe7967b9af907dad479170ade94fb951a2e983e7",
+          "bytes": 1497144,
+          "etag": "\"1dd105d7dc55d38\"",
+          "last_modified": "Fri, 10 Jul 2026 11:16:02 GMT"
+        }
+      ],
+      "reviewed": 21,
+      "accepted": 21,
+      "rejected": 0,
+      "excluded_source_rows_or_models": 0,
+      "held": 9,
+      "estimated_useful_yield": {
+        "reviewed": 21,
+        "accepted": 21,
+        "additional_verified": null
+      },
+      "mapping": "Exact dated0800 model/phase/process/row reviews; existing checksum reader and upsert API, no fuzzymerge or newadapter",
+      "processed_cursor": {
+        "models": [
+          "PSIS-1K0",
+          "PSIS-2K0",
+          "PSIS-3K0",
+          "PSIS-3K6",
+          "PSIS-4K0",
+          "PSIT-12K-SM3",
+          "PSIT-15K-SM3",
+          "PSIT-20K-SM4",
+          "PSIT-25K-SM4",
+          "PSIT-30K-SM4",
+          "PSIT-40K-SM6",
+          "PSIT-50K-SM8",
+          "PSIT-60K-SM8",
+          "PSIT-75K-SM14",
+          "PSIT-100K-SM16",
+          "PSIT-110K-SM18",
+          "PSIT-125K-SM18",
+          "PSIT-350K-KH-UT",
+          "PSIT-350K-K-UT",
+          "PSIT-320K-KH-UT",
+          "PSIT-320K-K-UT"
+        ],
+        "tables_exhausted": 5,
+        "typed_values": 460
+      },
+      "result": "21new exact models,460typedvalues. Seven defaultRS485 inclusion fields held (cover versus optionaltechnicalrow), two350K ratedactive fields held (350Rating/352Nominal). Native currentvectors, TypeIII midrangeSPD, voltage/thermal conditions and5vs8yearwarranties retained.",
+      "retry_condition": "Next saved unprocessed partition, changed source revision or independent rights/identity/field clarification; preserve prior backoffs",
+      "next_action": "Selected five tables exhausted; next distinct fixed combiner/tracker sheet. Remaining Polycab lowpowerMPPT/hybrid tables are separate future cohorts after exactmodel/version review, not invented configurations.",
+      "next_due_check": "2026-11-13T08:00:00Z"
+    },
+    {
+      "id": "polycab_distribution_scope_0800",
+      "country": "IND",
+      "entity": "combiner_boxes",
+      "source_url": "https://cms.polycab.com/media/wesjyuxq/ac-db-and-dc-db-boxes_v6.pdf",
+      "endpoint": [
+        "https://cms.polycab.com/media/wesjyuxq/ac-db-and-dc-db-boxes_v6.pdf"
+      ],
+      "format": "Fourpage current OEM ACDB/DCDB table",
+      "licence_assessment": "Same boundedfactualassessment; no protecteddocumentredistribution.",
+      "access_assessment": "Ordinary public GET only; no registration/forms/contact, payment or bypass. Raw bytes outsideGit. Failed retrieval is not a validated source file.",
+      "publication_cadence": "Revision-based unless dated below; metadata before fullfiles, no hourly unchanged download",
+      "last_release": "CurrentfilenameV6; no bodyeffective date",
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_retrieval": "2026-11-06T08:03:09.541776+00:00",
+      "sha256": "8684c204e4c3a1c046d3c18a902f4ab7f70fa492d4200ea8a18d7839f5c7cf77",
+      "etag": "\"1dd181c7aff153e\"",
+      "captures": [
+        {
+          "name": "polycab-db.pdf",
+          "url": "https://cms.polycab.com/media/wesjyuxq/ac-db-and-dc-db-boxes_v6.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/wesjyuxq/ac-db-and-dc-db-boxes_v6.pdf",
+          "retrieved_at": "2026-11-06T08:03:09.541776+00:00",
+          "sha256": "8684c204e4c3a1c046d3c18a902f4ab7f70fa492d4200ea8a18d7839f5c7cf77",
+          "bytes": 2705342,
+          "etag": "\"1dd181c7aff153e\"",
+          "last_modified": "Mon, 20 Jul 2026 07:50:49 GMT"
+        }
+      ],
+      "reviewed": 12,
+      "accepted": 0,
+      "rejected": 0,
+      "excluded_source_rows_or_models": 12,
+      "held": 0,
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Exact dated0800 model/phase/process/row reviews; existing checksum reader and upsert API, no fuzzymerge or newadapter",
+      "processed_cursor": {
+        "ACDB": 4,
+        "DCDB": 8,
+        "DC_ports": "1IN1OUT"
+      },
+      "result": "FourACDB/eightDCDB exactmodels reviewed. All DCDB columns explicitly1IN/1OUT; protection/distribution, not stringcombining. Zero combinerrecords.",
+      "retry_condition": "Next saved unprocessed partition, changed source revision or independent rights/identity/field clarification; preserve prior backoffs",
+      "next_action": "Skip unchanged1IN/1OUTmodels; seek explicitly parallelcombining architecture.",
+      "next_due_check": "2026-11-13T08:00:00Z"
+    },
+    {
+      "id": "dgeg_multimunicipality_0800",
+      "country": "PRT",
+      "entity": "projects",
+      "source_url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=processo+IN+%281447%2C2029%2C2062%2C2072%29&outFields=concelho%2Cdistrito%2Cinspireid%2Clic_exploracao%2Clic_producao%2Cnome%2Cobjectid%2Cpotencia_geradorkw%2Cpotencia_instaladakva%2Cpotencia_ligacaokva%2Cprocesso%2Csubparque%2Csubtipo_instalacao%2Ctipo_central&returnGeometry=false&f=json&orderByFields=objectid&resultRecordCount=400",
+      "endpoint": [
+        "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=processo+IN+%281447%2C2029%2C2062%2C2072%29&outFields=concelho%2Cdistrito%2Cinspireid%2Clic_exploracao%2Clic_producao%2Cnome%2Cobjectid%2Cpotencia_geradorkw%2Cpotencia_instaladakva%2Cpotencia_ligacaokva%2Cprocesso%2Csubparque%2Csubtipo_instalacao%2Ctipo_central&returnGeometry=false&f=json&orderByFields=objectid&resultRecordCount=400",
+        "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=processo+IN+%281447%2C2029%2C2062%2C2072%29&returnGeometry=false&f=json&returnIdsOnly=true",
+        "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer?f=pjson",
+        "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/info/iteminfo?f=json"
+      ],
+      "format": "Projected ArcGIS JSON, independent selectedID inventory and checksumreader",
+      "licence_assessment": "Fresh iteminfoCCBY; same-layer priorWFSCCBY4 assessment/notice retained, not applied to separatePDF.",
+      "access_assessment": "Ordinary public GET only; no registration/forms/contact, payment or bypass. Raw bytes outsideGit. Failed retrieval is not a validated source file.",
+      "publication_cadence": "Revision-based unless dated below; metadata before fullfiles, no hourly unchanged download",
+      "last_release": "Bodyundated, metadata/rightsSHA unchanged; no repeated750polygonexport",
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_retrieval": "2026-11-06T08:13:08.503149+00:00",
+      "sha256": "f66c1df564485cf600f7f78911c290895d7d86f4a1ed9a64561b6c3f64334d28",
+      "etag": "\"97b62951\"",
+      "captures": [
+        {
+          "name": "dgeg-four.json",
+          "url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=processo+IN+%281447%2C2029%2C2062%2C2072%29&outFields=concelho%2Cdistrito%2Cinspireid%2Clic_exploracao%2Clic_producao%2Cnome%2Cobjectid%2Cpotencia_geradorkw%2Cpotencia_instaladakva%2Cpotencia_ligacaokva%2Cprocesso%2Csubparque%2Csubtipo_instalacao%2Ctipo_central&returnGeometry=false&f=json&orderByFields=objectid&resultRecordCount=400",
+          "status": 200,
+          "final_url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=processo+IN+%281447%2C2029%2C2062%2C2072%29&outFields=concelho%2Cdistrito%2Cinspireid%2Clic_exploracao%2Clic_producao%2Cnome%2Cobjectid%2Cpotencia_geradorkw%2Cpotencia_instaladakva%2Cpotencia_ligacaokva%2Cprocesso%2Csubparque%2Csubtipo_instalacao%2Ctipo_central&returnGeometry=false&f=json&orderByFields=objectid&resultRecordCount=400",
+          "retrieved_at": "2026-11-06T08:13:08.503149+00:00",
+          "sha256": "f66c1df564485cf600f7f78911c290895d7d86f4a1ed9a64561b6c3f64334d28",
+          "bytes": 3681,
+          "etag": "\"97b62951\"",
+          "last_modified": null
+        },
+        {
+          "name": "dgeg-four-ids.json",
+          "url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=processo+IN+%281447%2C2029%2C2062%2C2072%29&returnGeometry=false&f=json&returnIdsOnly=true",
+          "status": 200,
+          "final_url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/0/query?where=processo+IN+%281447%2C2029%2C2062%2C2072%29&returnGeometry=false&f=json&returnIdsOnly=true",
+          "retrieved_at": "2026-11-06T08:13:12.717461+00:00",
+          "sha256": "cebb6f218e9ddd7e7453fa44c0da8b163a4f81aebdc6c89af918f1735d0afae3",
+          "bytes": 76,
+          "etag": "\"1911ab09\"",
+          "last_modified": null
+        },
+        {
+          "name": "dgeg-service.json",
+          "url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer?f=pjson",
+          "status": 200,
+          "final_url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer?f=pjson",
+          "retrieved_at": "2026-11-06T08:13:08.469949+00:00",
+          "sha256": "c14fd1ed8137ef4a4109c406fe4cab81da0b06d3257189eafbe47ee86c0b5f8f",
+          "bytes": 3667,
+          "etag": "\"19ddef06\"",
+          "last_modified": null
+        },
+        {
+          "name": "dgeg-rights.json",
+          "url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/info/iteminfo?f=json",
+          "status": 200,
+          "final_url": "https://servergeo.dgeg.gov.pt/arcgis/rest/services/Visualizadores/CS/MapServer/info/iteminfo?f=json",
+          "retrieved_at": "2026-11-06T08:13:08.469503+00:00",
+          "sha256": "2978830570a484c2fec34e8dc0aad28cad8aff1e4ddd077ad8a9d64c85870365",
+          "bytes": 960,
+          "etag": "\"6dba624f\"",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "excluded_source_rows_or_models": 1,
+      "held": 1,
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 4,
+        "additional_verified": null
+      },
+      "mapping": "Exact dated0800 model/phase/process/row reviews; existing checksum reader and upsert API, no fuzzymerge or newadapter",
+      "processed_cursor": {
+        "processes": [
+          1447,
+          2029,
+          2062,
+          2072
+        ],
+        "features": 5,
+        "PV_features": 4,
+        "storage_excluded": 1,
+        "remaining_prior_identity_holds": 22
+      },
+      "result": "Four priorheld one-phase namedPVassociations resolved through exactname and individually reviewed multi-municipality membership. Four licensing contexts added, no power/status/coordinates. Storage10974excluded despitePVsubtype. Alcaide district assertionPortalegre/Évora retained inreview.",
+      "retry_condition": "Next saved unprocessed partition, changed source revision or independent rights/identity/field clarification; preserve prior backoffs",
+      "next_action": "22 priorDGEG suggestions remain; resolve exactpermit/site/phase crosswalks with independent evidence. No kVAactivepower inference or wholeplantstatus fromlicence.",
+      "next_due_check": "2026-11-13T08:00:00Z"
+    },
+    {
+      "id": "lovato_brochure_scope_0800",
+      "country": "ITA",
+      "entity": "combiner_boxes",
+      "source_url": "https://catalogue.lovatoelectric.com/cz_cs/Documentation/GetDocument?doc=Depliant%5CFOTOVOLTAICO%5CPD075I06_26.pdf",
+      "endpoint": [
+        "https://catalogue.lovatoelectric.com/cz_cs/Documentation/GetDocument?doc=Depliant%5CFOTOVOLTAICO%5CPD075I06_26.pdf",
+        "https://www.lovatoelectric.com/gl_en/disclaimer/"
+      ],
+      "format": "ItalianJune2026PVcomponentbrochure,18pages",
+      "licence_assessment": "CopyrightAllRightsReserved; disclaimer technicaldata indicative/noncontractual; no openbulkgrant. No technicalrecords accepted.",
+      "access_assessment": "Ordinary public GET only; no registration/forms/contact, payment or bypass. Raw bytes outsideGit. Failed retrieval is not a validated source file.",
+      "publication_cadence": "Revision-based unless dated below; metadata before fullfiles, no hourly unchanged download",
+      "last_release": "PD075I06_26filename",
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_retrieval": "2026-11-06T08:02:12.559838+00:00",
+      "sha256": "fe3f57b430a278916f096db9b9c5d2818eea04f0fbb19489c02b995003fa25f8",
+      "etag": null,
+      "captures": [
+        {
+          "name": "lovato.pdf",
+          "url": "https://catalogue.lovatoelectric.com/cz_cs/Documentation/GetDocument?doc=Depliant%5CFOTOVOLTAICO%5CPD075I06_26.pdf",
+          "status": 200,
+          "final_url": "https://catalogue.lovatoelectric.com/cz_cs/Documentation/GetDocument?doc=Depliant%5CFOTOVOLTAICO%5CPD075I06_26.pdf",
+          "retrieved_at": "2026-11-06T08:02:12.559838+00:00",
+          "sha256": "fe3f57b430a278916f096db9b9c5d2818eea04f0fbb19489c02b995003fa25f8",
+          "bytes": 4811418,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "lovato-terms.html",
+          "url": "https://www.lovatoelectric.com/gl_en/disclaimer/",
+          "status": 200,
+          "final_url": "https://www.lovatoelectric.com/gl_en/disclaimer/",
+          "retrieved_at": "2026-11-06T08:02:08.894687+00:00",
+          "sha256": "c92fd62fb5c29477dc50fb65eba78324442039310762b66caf2705e53684e55a",
+          "bytes": 346095,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 12,
+      "accepted": 0,
+      "rejected": 0,
+      "excluded_source_rows_or_models": 12,
+      "held": 0,
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Exact dated0800 model/phase/process/row reviews; existing checksum reader and upsert API, no fuzzymerge or newadapter",
+      "processed_cursor": {
+        "representative_component_codes": [
+          "FB04D1P",
+          "FBE01D1P",
+          "FBE01D1PL",
+          "FBE01D2P",
+          "FBE01D2PL",
+          "GD025AT2",
+          "GD025AT3",
+          "GD032AT3",
+          "GD032AT4",
+          "GD040AT3",
+          "GD040AT4",
+          "SG2PVT1K10M5"
+        ],
+        "accepted": 0
+      },
+      "result": "Representative12 ordered components (fuseholders,switches,SPD) are component parts; brochure not an exact completecombiner assembly table. Generic productroute frompriorrun was404, contrary to its prose200 claim; rawcapture is authoritative. No retroactive historical edit.",
+      "retry_condition": "Next saved unprocessed partition, changed source revision or independent rights/identity/field clarification; preserve prior backoffs",
+      "next_action": "Seek distinct OEM fullcombiner assemblies; do not count components as boxes or invent configured combinations.",
+      "next_due_check": "2026-11-13T08:00:00Z"
+    },
+    {
+      "id": "megarevo_public_index_0800",
+      "country": "CHN",
+      "entity": "inverters",
+      "source_url": "https://www.megarevopower.com/download/1.html",
+      "endpoint": [
+        "https://www.megarevopower.com/download/1.html"
+      ],
+      "format": "PublicdownloadindexHTMLattempt",
+      "licence_assessment": "No newreusebasis or technicalacceptance; indexnotobtained.",
+      "access_assessment": "Ordinary public GET only; no registration/forms/contact, payment or bypass. Raw bytes outsideGit. Failed retrieval is not a validated source file.",
+      "publication_cadence": "Revision-based unless dated below; metadata before fullfiles, no hourly unchanged download",
+      "last_release": null,
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_retrieval": "2026-11-06T08:02:33.840112+00:00",
+      "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+      "etag": null,
+      "captures": [
+        {
+          "name": "megarevo.html",
+          "url": "https://www.megarevopower.com/download/1.html",
+          "status": 503,
+          "final_url": "https://www.megarevopower.com/download/1.html",
+          "retrieved_at": "2026-11-06T08:02:33.840112+00:00",
+          "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+          "bytes": 91,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "excluded_source_rows_or_models": 0,
+      "held": 0,
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Exact dated0800 model/phase/process/row reviews; existing checksum reader and upsert API, no fuzzymerge or newadapter",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Ordinary publicindexGET503; weblookup timedout. No bypass ortechnicalPDFdownload.",
+      "retry_condition": "Next saved unprocessed partition, changed source revision or independent rights/identity/field clarification; preserve prior backoffs",
+      "next_action": "Wait for publicservice recovery then inspectcurrentcatalogueterms/exactPVhybrids; battery-onlyPCSoutsidePVinverter scope.",
+      "next_due_check": "2026-11-07T08:00:00Z"
+    },
+    {
+      "id": "cea_saved_route_0800",
+      "country": "IND",
+      "entity": "projects",
+      "source_url": "https://cea.nic.in/rpm/plant-wise-details-of-renewable-energy-projects/?lang=en",
+      "endpoint": [
+        "https://cea.nic.in/rpm/plant-wise-details-of-renewable-energy-projects/?lang=en"
+      ],
+      "format": "Officiallegacyplant-wise landingmetadataattempt",
+      "licence_assessment": "Existing CEA priorpermissionrequirement retained; no rights-heldplanttable redownload.",
+      "access_assessment": "Ordinary public GET only; no registration/forms/contact, payment or bypass. Raw bytes outsideGit. Failed retrieval is not a validated source file.",
+      "publication_cadence": "Revision-based unless dated below; metadata before fullfiles, no hourly unchanged download",
+      "last_release": null,
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_retrieval": "2026-11-06T08:02:09.740137+00:00",
+      "sha256": "fbd4c06baef466f3c2b7f719e47103cdd8be43b38e615ebb677a944638e76712",
+      "etag": null,
+      "captures": [
+        {
+          "name": "cea.html",
+          "url": "https://cea.nic.in/rpm/plant-wise-details-of-renewable-energy-projects/?lang=en",
+          "status": 404,
+          "final_url": "https://cea.nic.in/rpm/plant-wise-details-of-renewable-energy-projects/?lang=en",
+          "retrieved_at": "2026-11-06T08:02:09.740137+00:00",
+          "sha256": "fbd4c06baef466f3c2b7f719e47103cdd8be43b38e615ebb677a944638e76712",
+          "bytes": 562,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "excluded_source_rows_or_models": 0,
+      "held": 0,
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Exact dated0800 model/phase/process/row reviews; existing checksum reader and upsert API, no fuzzymerge or newadapter",
+      "processed_cursor": {
+        "new_rows": 0
+      },
+      "result": "Current public oldroute404; priorpermission/scopeholds remain. No candidates staged ornewadapter.",
+      "retry_condition": "Next saved unprocessed partition, changed source revision or independent rights/identity/field clarification; preserve prior backoffs",
+      "next_action": "Onlynewpermitted officialdataset/reusebasis; oldroute404 is not proof ofsourceexhaustion.",
+      "next_due_check": "2026-11-13T08:00:00Z"
+    },
+    {
+      "id": "pln_current_statistics_discovery_0800",
+      "country": "IDN",
+      "entity": "projects",
+      "source_url": "https://www.pln.co.id/investor-relations-en/investor-publications-en/statistical-reports-en",
+      "endpoint": [
+        "https://www.pln.co.id/investor-relations-en/investor-publications-en/statistical-reports-en",
+        "https://www.pln.co.id/webapi/media/file/webkorp/asset/Statistik-2025-2907.pdf"
+      ],
+      "format": "Annual2025reportHTML plus incomplete76.19MBlinkedPDFrequest",
+      "licence_assessment": "Bulkreuse not established. Sourceaccess/plantgrain/PV/identity needreview before ingestion; no nationalpermission inferred frompubliclink.",
+      "access_assessment": "Ordinary public GET only; no registration/forms/contact, payment or bypass. Raw bytes outsideGit. Failed retrieval is not a validated source file.",
+      "publication_cadence": "Revision-based unless dated below; metadata before fullfiles, no hourly unchanged download",
+      "last_release": "2025 report; index current, no currentoperationinference",
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_retrieval": "2026-11-06T08:04:41.770061+00:00",
+      "sha256": "0077016606bdc7ccf9acacd0fbfe658f735da8955de8da67e90274346af1f3e7",
+      "etag": null,
+      "captures": [
+        {
+          "name": "pln-statistics.html",
+          "url": "https://www.pln.co.id/investor-relations-en/investor-publications-en/statistical-reports-en",
+          "status": 200,
+          "final_url": "https://www.pln.co.id/investor-relations-en/investor-publications-en/statistical-reports-en",
+          "retrieved_at": "2026-11-06T08:04:41.770061+00:00",
+          "sha256": "0077016606bdc7ccf9acacd0fbfe658f735da8955de8da67e90274346af1f3e7",
+          "bytes": 147750,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "pln2025.pdf",
+          "url": "https://www.pln.co.id/webapi/media/file/webkorp/asset/Statistik-2025-2907.pdf",
+          "error": "('Connection broken: IncompleteRead(15253578 bytes read, 60938648 more expected)', IncompleteRead(15253578 bytes read, 60938648 more expected))"
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "excluded_source_rows_or_models": 0,
+      "held": 0,
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Exact dated0800 model/phase/process/row reviews; existing checksum reader and upsert API, no fuzzymerge or newadapter",
+      "processed_cursor": {
+        "current_endpoint": "https://www.pln.co.id/webapi/media/file/webkorp/asset/Statistik-2025-2907.pdf",
+        "full_bytes": null,
+        "sha256": null,
+        "accepted": 0
+      },
+      "result": "Currentpublisherindex links Statistik2025-2907.pdf; webreader size limit76,192,226bytes. One ordinaryGET broke after15,253,578bytes, fullbytes notretained orchecksumclaimed. Zero facilityrows reviewed/accepted; no report integration.",
+      "retry_condition": "Next saved unprocessed partition, changed source revision or independent rights/identity/field clarification; preserve prior backoffs",
+      "next_action": "Checkmetadata/rights and publicservice recovery; obtaincompletechecksum-pinnedfile once, inspectplantversusregional grain before parser. No retryburst or oldreportascurrent substitute.",
+      "next_due_check": "2026-11-07T08:00:00Z"
+    },
+    {
+      "id": "banten_plts_aggregate_0800",
+      "country": "IDN",
+      "entity": "projects",
+      "source_url": "https://data.bantenprov.go.id/dataset/741872b0-afb1-4102-9080-2e0ba2734092/resource/66f2de42-9c9d-4a58-a53d-793852927c73/download/kapasitas-terpasang-pembangkit-listrik-tenaga-sury.csv",
+      "endpoint": [
+        "https://data.bantenprov.go.id/dataset/741872b0-afb1-4102-9080-2e0ba2734092/resource/66f2de42-9c9d-4a58-a53d-793852927c73/download/kapasitas-terpasang-pembangkit-listrik-tenaga-sury.csv",
+        "https://data.bantenprov.go.id/dataset/kapasitas-terpasang-pembangkit-listrik-tenaga-sury"
+      ],
+      "format": "GovernmentCKAN CSV, two annualprovinceaggregate rows",
+      "licence_assessment": "CKANlicenseOtherOpen, exactterms notestablished; grainexcludes individualplant ingestion regardless.",
+      "access_assessment": "Ordinary public GET only; no registration/forms/contact, payment or bypass. Raw bytes outsideGit. Failed retrieval is not a validated source file.",
+      "publication_cadence": "Revision-based unless dated below; metadata before fullfiles, no hourly unchanged download",
+      "last_release": "v1.0,updated22September2026",
+      "last_attempt": "2026-11-06T08:18:10.980475+00:00",
+      "last_retrieval": "2026-11-06T08:06:36.749968+00:00",
+      "sha256": "7e9d38e08aa411eba7e4d522526130912318495c00c59dbfa55b53ec49abfc18",
+      "etag": "\"1790066792.189369-234-2046104130\"",
+      "captures": [
+        {
+          "name": "banten.csv",
+          "url": "https://data.bantenprov.go.id/dataset/741872b0-afb1-4102-9080-2e0ba2734092/resource/66f2de42-9c9d-4a58-a53d-793852927c73/download/kapasitas-terpasang-pembangkit-listrik-tenaga-sury.csv",
+          "status": 200,
+          "final_url": "https://data.bantenprov.go.id/dataset/741872b0-afb1-4102-9080-2e0ba2734092/resource/66f2de42-9c9d-4a58-a53d-793852927c73/download/kapasitas-terpasang-pembangkit-listrik-tenaga-sury.csv",
+          "retrieved_at": "2026-11-06T08:06:36.749968+00:00",
+          "sha256": "7e9d38e08aa411eba7e4d522526130912318495c00c59dbfa55b53ec49abfc18",
+          "bytes": 234,
+          "etag": "\"1790066792.189369-234-2046104130\"",
+          "last_modified": "Tue, 22 Sep 2026 08:46:32 GMT"
+        },
+        {
+          "name": "banten.html",
+          "url": "https://data.bantenprov.go.id/dataset/kapasitas-terpasang-pembangkit-listrik-tenaga-sury",
+          "status": 200,
+          "final_url": "https://data.bantenprov.go.id/dataset/kapasitas-terpasang-pembangkit-listrik-tenaga-sury",
+          "retrieved_at": "2026-11-06T08:04:40.615771+00:00",
+          "sha256": "a448b9cc1589cbc33ca4471233f5c378fedeffd8f426588f21e252c2259b5b31",
+          "bytes": 21883,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 2,
+      "accepted": 0,
+      "rejected": 0,
+      "excluded_source_rows_or_models": 2,
+      "held": 0,
+      "estimated_useful_yield": {
+        "reviewed": 2,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Exact dated0800 model/phase/process/row reviews; existing checksum reader and upsert API, no fuzzymerge or newadapter",
+      "processed_cursor": {
+        "rows": 2,
+        "plant_candidates": 0
+      },
+      "result": "Two observations Baseline2024=95.77MW /2025=122.27MW are provincewide capacitytotals, notnamedPVfacilities. Zero canonicalplants/ratings accepted.",
+      "retry_condition": "Next saved unprocessed partition, changed source revision or independent rights/identity/field clarification; preserve prior backoffs",
+      "next_action": "Exclude this aggregate from projectrows; find a namedfacility/permit inventory with applicable reuse and identity definitions.",
+      "next_due_check": "2026-12-01T08:00:00Z"
+    },
+    {
+      "id": "gem_CHN_owners_0900",
+      "country": "CHN",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "PinnedFebruary2026XLSX exactcompletephaseIDs/Ownercells",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "publication_cadence": "Releasebased; metadatafirst, nohourlyXLSXdownload",
+      "last_release": "February2026",
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "metadata_freshness": "Officialpageopened08:59UTC stillFebruary2026; originalretrieval/checksumretained",
+      "reviewed": 200,
+      "accepted": 192,
+      "held": 8,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "remaining_strict_after_cursor": 172
+      },
+      "mapping": "192owners+192completephasecontexts; no currentownership/operation orcapacitydate inference",
+      "processed_cursor": {
+        "CHN": "L100001057496"
+      },
+      "result": "8nativeorthographic/legalentityanomaliesheld; prior6notrepeated",
+      "retry_condition": "Nextsavedpartition aftersource/headrefresh",
+      "next_action": "China172strictcandidates afterthis200locationcursor, thenGreece367; heldnamesseparate",
+      "next_due_check": "2026-11-13T09:00:00Z"
+    },
+    {
+      "id": "polycab_hybrid_0900",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://cms.polycab.com/media/cw2gzhh1/hybrid-inverters_-1-phase-1-mppt_v4.pdf",
+      "endpoint": [
+        "https://cms.polycab.com/media/cw2gzhh1/hybrid-inverters_-1-phase-1-mppt_v4.pdf",
+        "https://cms.polycab.com/media/olbne2ns/polycab-hybrid-inverters_3-phase_v1.pdf"
+      ],
+      "format": "TwoOEMfourpagePDFs, physicalpages2–4 exactcolumns/rendered",
+      "licence_assessment": "PriorPolycabboundedfacts/copyrightassessment retained; noopenbulk/documentgrant/fullPDFproseartworkredistribution. Currentindexfreshlyopened; newunprocessedtables.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": "CurrentfilenamesV4singlephase/V1threephase; bodyundated",
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T08:59:48.387849+00:00",
+      "sha256": "4c46d600ac9b634f6dc1deb1a1229179829c992941305100bbc04f349ed43595",
+      "etag": "\"1dd181d21ad9a72\"",
+      "captures": [
+        {
+          "name": "hybrid1.pdf",
+          "url": "https://cms.polycab.com/media/cw2gzhh1/hybrid-inverters_-1-phase-1-mppt_v4.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/cw2gzhh1/hybrid-inverters_-1-phase-1-mppt_v4.pdf",
+          "retrieved_at": "2026-11-06T08:59:48.387849+00:00",
+          "sha256": "4c46d600ac9b634f6dc1deb1a1229179829c992941305100bbc04f349ed43595",
+          "bytes": 1537266,
+          "etag": "\"1dd181d21ad9a72\"",
+          "last_modified": "Mon, 20 Jul 2026 07:55:29 GMT"
+        },
+        {
+          "name": "hybrid3.pdf",
+          "url": "https://cms.polycab.com/media/olbne2ns/polycab-hybrid-inverters_3-phase_v1.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/olbne2ns/polycab-hybrid-inverters_3-phase_v1.pdf",
+          "retrieved_at": "2026-11-06T08:59:48.466451+00:00",
+          "sha256": "4f2eedb1534dc365a31c258fbce79a7dbd5004647ca97e854749a1b905d60858",
+          "bytes": 1550254,
+          "etag": "\"1dd105759630dae\"",
+          "last_modified": "Fri, 10 Jul 2026 10:32:04 GMT"
+        }
+      ],
+      "reviewed": 9,
+      "accepted": 9,
+      "held": 10,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 9,
+        "accepted": 9,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "models": 9,
+        "typed_values": 184,
+        "complete": true
+      },
+      "result": "9newexactPHIS/PHITmodels,184typedvalues. Battery/PV/grid/backup/generatorseparate.9packagewarranties contextual;5PHITmodels have10unit/voltagebasis questions held.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "Selected9columns exhausted; resolvePHITnightkWunit/voltagebasis withnewconsistentOEMsource, notguessedcorrection.",
+      "next_due_check": "2026-11-13T09:00:00Z"
+    },
+    {
+      "id": "polycab_griddual_0900",
+      "country": "IND",
+      "entity": "inverters",
+      "source_url": "https://cms.polycab.com/media/exqddovi/polycab_inverter_3ph_5kw-10kw_2mppt_v3.pdf",
+      "endpoint": [
+        "https://cms.polycab.com/media/exqddovi/polycab_inverter_3ph_5kw-10kw_2mppt_v3.pdf"
+      ],
+      "format": "OEMtwo-pagePDF,physicalpage2exactcolumns/rendered",
+      "licence_assessment": "Sameboundedindividualfactualassessment; noopenbulk/documentgrant.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": "CurrentfilenameV3; bodyundated",
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T09:08:02.129269+00:00",
+      "sha256": "f94871a8db939cf2bd3eba9e8337513e43e91414e27837efb4868b9cea529a23",
+      "etag": "\"1dd105cc16e6460\"",
+      "captures": [
+        {
+          "name": "griddual.pdf",
+          "url": "https://cms.polycab.com/media/exqddovi/polycab_inverter_3ph_5kw-10kw_2mppt_v3.pdf",
+          "status": 200,
+          "final_url": "https://cms.polycab.com/media/exqddovi/polycab_inverter_3ph_5kw-10kw_2mppt_v3.pdf",
+          "retrieved_at": "2026-11-06T09:08:02.129269+00:00",
+          "sha256": "f94871a8db939cf2bd3eba9e8337513e43e91414e27837efb4868b9cea529a23",
+          "bytes": 1563488,
+          "etag": "\"1dd105cc16e6460\"",
+          "last_modified": "Fri, 10 Jul 2026 11:10:46 GMT"
+        }
+      ],
+      "reviewed": 4,
+      "accepted": 4,
+      "held": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 4,
+        "accepted": 4,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "models": 4,
+        "typed_values": 80,
+        "complete": true
+      },
+      "result": "4newPSIT5/6/8/10K-SM2 fixedgridtie models,80typedvalues. Distinctfromhybridarchitecture, notinventedvariants.10K11200VAand11000Wkeptseparate; native3*currentvectors notflattened; Supportswitchnotassumedinstalled.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "Selected4columnscomplete; avoidcount-onlyMPPTsiblings unless substantiveindependentmetadata gap.",
+      "next_due_check": "2026-11-13T09:00:00Z"
+    },
+    {
+      "id": "malaysia_ST_licenses_0900",
+      "country": "MYS",
+      "entity": "projects",
+      "source_url": "https://myenergystats.st.gov.my/documents/d/guest/licensee-renewable-energy",
+      "endpoint": [
+        "https://myenergystats.st.gov.my/documents/d/guest/licensee-renewable-energy",
+        "https://myenergystats.st.gov.my/dashboard",
+        "https://myenergystats.st.gov.my/disclaimer"
+      ],
+      "format": "54-pageRenewableEnergy2026licenseePDF; samplefirst31rows/pages1–2",
+      "licence_assessment": "CopyrightAllRightsReserved; disclaimer/privacyprovidesnogrant; bulklicenceunestablished. Sourceclassification/identityalso held; no copiedtable/address/persondetails inGit.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": "Title2026,HTTP11May2026notcurrentoperatingverification",
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T09:01:29.636944+00:00",
+      "sha256": "e40663b7bb11f9fddd657d0bd3a0ea7ef8687c5402724fe7644ee55451295887",
+      "etag": null,
+      "captures": [
+        {
+          "name": "licensees.pdf",
+          "url": "https://myenergystats.st.gov.my/documents/d/guest/licensee-renewable-energy",
+          "status": 200,
+          "final_url": "https://myenergystats.st.gov.my/documents/d/guest/licensee-renewable-energy",
+          "retrieved_at": "2026-11-06T09:01:29.636944+00:00",
+          "sha256": "e40663b7bb11f9fddd657d0bd3a0ea7ef8687c5402724fe7644ee55451295887",
+          "bytes": 1108487,
+          "etag": null,
+          "last_modified": "Mon, 11 May 2026 03:23:40 GMT"
+        },
+        {
+          "name": "malaysia.html",
+          "url": "https://myenergystats.st.gov.my/dashboard",
+          "status": 200,
+          "final_url": "https://myenergystats.st.gov.my/dashboard",
+          "retrieved_at": "2026-11-06T09:00:06.470102+00:00",
+          "sha256": "f640744e658a841ff72e6a3de995b0355d45de851a7b1310217d7964738593e9",
+          "bytes": 208187,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "my-terms.html",
+          "url": "https://myenergystats.st.gov.my/disclaimer",
+          "status": 200,
+          "final_url": "https://myenergystats.st.gov.my/disclaimer",
+          "retrieved_at": "2026-11-06T09:03:02.817066+00:00",
+          "sha256": "383d8beb009441e87be589f004ae61d94e0363e70a80282cf8f407644d34c99e",
+          "bytes": 97784,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 31,
+      "accepted": 0,
+      "held": 31,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 31,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "last_sample_row": 31,
+        "pages": [
+          1,
+          2
+        ],
+        "canonical_MYS_screened": 39,
+        "accepted": 0
+      },
+      "result": "31companylicensingobservationsreviewed against39canonicalMalaysiaprojects. GenericSolar isnotpositivePV; duplicatedsame-site rows26–28 andmixedhydro-namedlicensee row31 requiretechnology/site/licencereconciliation. Issue/expiry dates notCOD. Zeroacceptedfacilities/ratings.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "FindexplicitPV/licencenumberandsitecrosswalk withreuseterms before a bounded parser. Continueafter31 onlyafterrights/classification/privacy review; no newadapter/feed.",
+      "next_due_check": "2026-11-13T09:00:00Z"
+    },
+    {
+      "id": "malaysia_ST_LSS_infographic_0900",
+      "country": "MYS",
+      "entity": "projects",
+      "source_url": "https://www.st.gov.my/sites/default/files/2026-02/LSS-Panel_24July2025.pdf",
+      "endpoint": [
+        "https://www.st.gov.my/sites/default/files/2026-02/LSS-Panel_24July2025.pdf",
+        "https://www.st.gov.my/sourcing/large-scale-solar-photovoltaic",
+        "https://www.st.gov.my/disclaimer-0",
+        "https://www.st.gov.my/contents/files/download/97/web%20-%20LSS%20%28updated%2015%20May%202024%29.pdf"
+      ],
+      "format": "Currentlinkedimage-onlyonepagePDF,rendered",
+      "licence_assessment": "Noopenbulkgrantfound; zero canonical extraction. LegacyURL404 notpublicsourceexhaustion.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": "NativeasofJuly2025, notlinklabeldate",
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T09:01:36.977015+00:00",
+      "sha256": "6a799522cbe63a57ca1ee4fc051cba4c3d9f9656d74c2a07c54de36e21dff48d",
+      "etag": "\"4c8ac2-64e5388466da8\"",
+      "captures": [
+        {
+          "name": "lss-current.pdf",
+          "url": "https://www.st.gov.my/sites/default/files/2026-02/LSS-Panel_24July2025.pdf",
+          "status": 200,
+          "final_url": "https://www.st.gov.my/sites/default/files/2026-02/LSS-Panel_24July2025.pdf",
+          "retrieved_at": "2026-11-06T09:01:36.977015+00:00",
+          "sha256": "6a799522cbe63a57ca1ee4fc051cba4c3d9f9656d74c2a07c54de36e21dff48d",
+          "bytes": 5016258,
+          "etag": "\"4c8ac2-64e5388466da8\"",
+          "last_modified": "Tue, 31 Mar 2026 15:22:15 GMT"
+        },
+        {
+          "name": "st-lss.html",
+          "url": "https://www.st.gov.my/sourcing/large-scale-solar-photovoltaic",
+          "status": 200,
+          "final_url": "https://www.st.gov.my/sourcing/large-scale-solar-photovoltaic",
+          "retrieved_at": "2026-11-06T09:00:06.891591+00:00",
+          "sha256": "abb27de706729b241ea9b04d9fcf226ae4033e8035818892e0da84ea43ee2210",
+          "bytes": 74533,
+          "etag": "\"1793931383\"",
+          "last_modified": "Fri, 06 Nov 2026 02:16:23 GMT"
+        },
+        {
+          "name": "st-disclaimer.html",
+          "url": "https://www.st.gov.my/disclaimer-0",
+          "status": 200,
+          "final_url": "https://www.st.gov.my/disclaimer-0",
+          "retrieved_at": "2026-11-06T09:01:27.254785+00:00",
+          "sha256": "036846db2b86518742132bb88d5bc4fe418a4ce5f010bb8da41f64e963728289",
+          "bytes": 62988,
+          "etag": "\"1793931177\"",
+          "last_modified": "Fri, 06 Nov 2026 02:12:57 GMT"
+        },
+        {
+          "name": "malaysia-lss.pdf",
+          "url": "https://www.st.gov.my/contents/files/download/97/web%20-%20LSS%20%28updated%2015%20May%202024%29.pdf",
+          "status": 404,
+          "final_url": "https://www.st.gov.my/contents/files/download/97/web%20-%20LSS%20%28updated%2015%20May%202024%29.pdf",
+          "retrieved_at": "2026-11-06T09:00:06.785204+00:00",
+          "sha256": "79024f36f850385b2daaf88449dd81c1a60ebaed46e02df64d7fc20ed0857688",
+          "bytes": 13362,
+          "etag": "\"1793955606\"",
+          "last_modified": "Fri, 06 Nov 2026 09:00:06 GMT"
+        }
+      ],
+      "reviewed": 1,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "image_pages_reviewed": 1,
+        "plant_candidates": 0
+      },
+      "result": "Currentresourceslinklabel15May2024pointsfilename24July2025; imageexplicitdataasofJuly2025. Onlycohort/programmecapacity totals, no namedfacilityrows; zeroplantsaccepted.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "UsecurrentnamedLSSaward/permitappendixwithlicense/siteidentity, notaggregateprogrammecounts.",
+      "next_due_check": "2026-11-13T09:00:00Z"
+    },
+    {
+      "id": "mgats_registration_discovery_0900",
+      "country": "MYS",
+      "entity": "projects",
+      "source_url": "https://www.mgats.com.my/re-plants",
+      "endpoint": [
+        "https://www.mgats.com.my/re-plants"
+      ],
+      "format": "TNBXpublicregisteredREplantHTMLtable",
+      "licence_assessment": "CopyrightTNBXAllRightsReserved; noopenbulkgrantfound. Independentrights/classification/identity review needed; no tablecopied.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": "Undatedtable",
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T09:03:01.865537+00:00",
+      "sha256": "7cde3f349b170acdc1f4cc433d3311b919a21e001214e3a49c32cf66184dc3bb",
+      "etag": "W/\"0f38624762df111ef39b7636daa11329\"",
+      "captures": [
+        {
+          "name": "mgats.html",
+          "url": "https://www.mgats.com.my/re-plants",
+          "status": 200,
+          "final_url": "https://www.mgats.com.my/re-plants",
+          "retrieved_at": "2026-11-06T09:03:01.865537+00:00",
+          "sha256": "7cde3f349b170acdc1f4cc433d3311b919a21e001214e3a49c32cf66184dc3bb",
+          "bytes": 680078,
+          "etag": "W/\"0f38624762df111ef39b7636daa11329\"",
+          "last_modified": null
+        }
+      ],
+      "reviewed": 12,
+      "accepted": 0,
+      "held": 12,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 12,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "rows_reviewed": 12,
+        "accepted": 0
+      },
+      "result": "12genericSolarregistrationrows inspected. TBSS2namedcompanysuggestsoneexistingrecord, notnewplant; capacitybasisnotexplicitAC/DC. No currentoperationinferred fromregistration/COD.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "ReviewTNBX-specifictermsandindependentpositivePV/company-phasecrosswalk. AvoidimportingunrelatedTNBprohibitedcontentthroughanotherpublisher.",
+      "next_due_check": "2026-11-13T09:00:00Z"
+    },
+    {
+      "id": "TNB_TBSS2_rights_0900",
+      "country": "MYS",
+      "entity": "projects",
+      "source_url": "https://www.tnb.com.my/terms-policy",
+      "endpoint": [
+        "https://www.tnb.com.my/terms-policy",
+        "https://www.tnb.com.my/sustainability/tnb-solar-panel-battery-management-strategies",
+        "https://www.tnb.com.my/"
+      ],
+      "format": "OwnerpublicHTML/explicitterms",
+      "licence_assessment": "Terms-policyexplicitlyprohibitsreproduction/adaptation/download/permanentstoragewithoutwrittenconsent. No permissionrequested, noTNBtechnicalfactsaccepted/copiedtoGit.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": null,
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T09:09:58.546731+00:00",
+      "sha256": "3e92d03443879401ee11a962b6f0b750f289b061f3bb5e43772eb84ab3f90fb1",
+      "etag": null,
+      "captures": [
+        {
+          "name": "tnb-terms.html",
+          "url": "https://www.tnb.com.my/terms-policy",
+          "status": 200,
+          "final_url": "https://www.tnb.com.my/terms-policy",
+          "retrieved_at": "2026-11-06T09:09:58.546731+00:00",
+          "sha256": "3e92d03443879401ee11a962b6f0b750f289b061f3bb5e43772eb84ab3f90fb1",
+          "bytes": 77387,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 09:07:06 GMT"
+        },
+        {
+          "name": "tnb.html",
+          "url": "https://www.tnb.com.my/sustainability/tnb-solar-panel-battery-management-strategies",
+          "status": 200,
+          "final_url": "https://www.tnb.com.my/sustainability/tnb-solar-panel-battery-management-strategies",
+          "retrieved_at": "2026-11-06T09:08:47.727915+00:00",
+          "sha256": "56c1dabf5a44ebb7dfe019a462bcb4317f98beac5077fc34e0ebea518520c5ad",
+          "bytes": 52209,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 09:05:55 GMT"
+        },
+        {
+          "name": "tnb-home.html",
+          "url": "https://www.tnb.com.my/",
+          "status": 200,
+          "final_url": "https://www.tnb.com.my/",
+          "retrieved_at": "2026-11-06T09:08:41.941884+00:00",
+          "sha256": "a34797601d57d9afd0114b0e2d892618f19cd16c7c96c218688408f609a128f4",
+          "bytes": 42476,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 09:04:12 GMT"
+        }
+      ],
+      "reviewed": 1,
+      "accepted": 0,
+      "held": 1,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "canonical_record": "5dc4ceb4-646b-51b3-bff3-8e07179ced5a",
+        "accepted_fields": 0
+      },
+      "result": "PromisingexactexistingTBSS2ownerpage screened, butexpressrights gatepreventsAC/date/PPA/modulemetadata acceptance. Existingcanonicalrecord5dc4ceb4-646b-51b3-bff3-8e07179ced5a unchanged; no newsource registryentry.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "Onlyresume ondocumentedapplicablereusebasis orindependentlypermittedsource, notcircumvention. Nocontactforms/messages.",
+      "next_due_check": "2026-11-13T09:00:00Z"
+    },
+    {
+      "id": "cabur_0900",
+      "country": "ITA",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.cabur.it/en/product-category/energy-transition/photovoltaic-stringboxes/",
+      "endpoint": [
+        "https://www.cabur.it/en/product-category/energy-transition/photovoltaic-stringboxes/",
+        "https://www.cabur.it/en/prodotto/isb0201ca06/",
+        "https://www.cabur.it/en/general-terms-of-sale/",
+        "https://www.cabur.it/en/extended-privacy-notice/"
+      ],
+      "format": "OEMstringboxindex/product/termsnormalGETattempts",
+      "licence_assessment": "Rightsnotassessedbecause403; indexedlegacydistributordocnotacceptedassubstitute.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": null,
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T09:04:05.099831+00:00",
+      "sha256": "7271dd5c11fb9a1052a5e91a09afbe7d148fd3388dc51c338df62a0a16f06739",
+      "etag": null,
+      "captures": [
+        {
+          "name": "cabur-index.html",
+          "url": "https://www.cabur.it/en/product-category/energy-transition/photovoltaic-stringboxes/",
+          "status": 403,
+          "final_url": "https://www.cabur.it/en/product-category/energy-transition/photovoltaic-stringboxes/",
+          "retrieved_at": "2026-11-06T09:04:05.099831+00:00",
+          "sha256": "7271dd5c11fb9a1052a5e91a09afbe7d148fd3388dc51c338df62a0a16f06739",
+          "bytes": 1242,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "cabur2.html",
+          "url": "https://www.cabur.it/en/prodotto/isb0201ca06/",
+          "status": 403,
+          "final_url": "https://www.cabur.it/en/prodotto/isb0201ca06/",
+          "retrieved_at": "2026-11-06T09:04:05.150192+00:00",
+          "sha256": "7271dd5c11fb9a1052a5e91a09afbe7d148fd3388dc51c338df62a0a16f06739",
+          "bytes": 1242,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "cabur-terms.html",
+          "url": "https://www.cabur.it/en/general-terms-of-sale/",
+          "status": 403,
+          "final_url": "https://www.cabur.it/en/general-terms-of-sale/",
+          "retrieved_at": "2026-11-06T09:04:05.111822+00:00",
+          "sha256": "7271dd5c11fb9a1052a5e91a09afbe7d148fd3388dc51c338df62a0a16f06739",
+          "bytes": 1242,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "cabur-privacy.html",
+          "url": "https://www.cabur.it/en/extended-privacy-notice/",
+          "status": 403,
+          "final_url": "https://www.cabur.it/en/extended-privacy-notice/",
+          "retrieved_at": "2026-11-06T09:04:15.319105+00:00",
+          "sha256": "7271dd5c11fb9a1052a5e91a09afbe7d148fd3388dc51c338df62a0a16f06739",
+          "bytes": 1242,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "AllfourordinaryGET403; zeromodelrowsaccepted. Switchedtoindependentpublisherchecks, no bypass/retryburst.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "Waitfornormalpublicaccess; thenreviewcurrent2025catalogue/exactfixedassemblies, not1IN1OUTprotection.",
+      "next_due_check": "2026-11-07T09:00:00Z"
+    },
+    {
+      "id": "electroinvent_duplicate_check_0900",
+      "country": "BGR",
+      "entity": "combiner_boxes",
+      "source_url": "https://electroinvent.com/wp-content/uploads/2025/02/Technical-Datasheet_SCB-12-1000-STRING-BOX_Rev.03_EN.pdf",
+      "endpoint": [
+        "https://electroinvent.com/wp-content/uploads/2025/02/Technical-Datasheet_SCB-12-1000-STRING-BOX_Rev.03_EN.pdf",
+        "https://electroinvent.com/",
+        "https://electroinvent.com/privacy-policy/"
+      ],
+      "format": "ExistingSCB12OEMPDF/HTML",
+      "licence_assessment": "Priorboundedfactsassessmentunchanged; no newfactsaccepted.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": "R03/02.2025",
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T09:05:49.369727+00:00",
+      "sha256": "dfb00530ccfcc2c0ee2c5ec6208738cef95340f980d79cdea66fa6b94fcf4d94",
+      "etag": "\"ed00903-2cb57-62f06ba2bb600\"",
+      "captures": [
+        {
+          "name": "ei12.pdf",
+          "url": "https://electroinvent.com/wp-content/uploads/2025/02/Technical-Datasheet_SCB-12-1000-STRING-BOX_Rev.03_EN.pdf",
+          "status": 200,
+          "final_url": "https://electroinvent.com/wp-content/uploads/2025/02/Technical-Datasheet_SCB-12-1000-STRING-BOX_Rev.03_EN.pdf",
+          "retrieved_at": "2026-11-06T09:05:49.369727+00:00",
+          "sha256": "dfb00530ccfcc2c0ee2c5ec6208738cef95340f980d79cdea66fa6b94fcf4d94",
+          "bytes": 183127,
+          "etag": "\"ed00903-2cb57-62f06ba2bb600\"",
+          "last_modified": "Wed, 26 Feb 2025 07:43:20 GMT"
+        },
+        {
+          "name": "ei.html",
+          "url": "https://electroinvent.com/",
+          "status": 200,
+          "final_url": "https://electroinvent.com/",
+          "retrieved_at": "2026-11-06T09:05:51.074142+00:00",
+          "sha256": "a475368d2296ba00156f6016f6a83d1d6449700123c20e2d57461c1200821af0",
+          "bytes": 110276,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "ei-privacy.html",
+          "url": "https://electroinvent.com/privacy-policy/",
+          "status": 200,
+          "final_url": "https://electroinvent.com/privacy-policy/",
+          "retrieved_at": "2026-11-06T09:05:50.934888+00:00",
+          "sha256": "3337a36a105e1778b33faaf5d0004f3fe73ef2a038a3019fc055800dd34ca1a9",
+          "bytes": 67299,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 1,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "unchanged": true,
+        "accepted": 0
+      },
+      "result": "RequestmatchedexistingimmutableSCB12SHA dfb00530ccfcc2c0ee2c5ec6208738cef95340f980d79cdea66fa6b94fcf4d94. Thiswasredundantdiscovery, notprogress; no record/source/timestampchurn.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "Checkfullpublisher/domain/URL/modelbacklogbeforefuturetechnicalrequest; skipthisunchangedrevision.",
+      "next_due_check": "2026-12-06T09:00:00Z"
+    },
+    {
+      "id": "solarbox_access_0900",
+      "country": "ITA",
+      "entity": "combiner_boxes",
+      "source_url": "https://www.solarbox.it/",
+      "endpoint": [
+        "https://www.solarbox.it/",
+        "https://www.solarbox.it/data_sheets/ITSCB_Manual_eng.pdf"
+      ],
+      "format": "PublicOEMindex/manualnormalGET",
+      "licence_assessment": "Prioraccessholdretained; nodocumentbytesparsed/reusegrantassumed.",
+      "access_assessment": "OrdinarypublicGET; no login/form/contact/payment/bypass",
+      "publication_cadence": "Revision-based unless stated; metadatafirst, skipunchangedfiles",
+      "last_release": null,
+      "last_attempt": "2026-11-06T09:13:16.253908+00:00",
+      "last_retrieval": "2026-11-06T09:06:41.892829+00:00",
+      "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+      "etag": null,
+      "captures": [
+        {
+          "name": "solarbox.html",
+          "url": "https://www.solarbox.it/",
+          "status": 503,
+          "final_url": "https://www.solarbox.it/",
+          "retrieved_at": "2026-11-06T09:06:41.892829+00:00",
+          "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+          "bytes": 98,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "solarbox.pdf",
+          "url": "https://www.solarbox.it/data_sheets/ITSCB_Manual_eng.pdf",
+          "status": 503,
+          "final_url": "https://www.solarbox.it/data_sheets/ITSCB_Manual_eng.pdf",
+          "retrieved_at": "2026-11-06T09:06:41.888707+00:00",
+          "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+          "bytes": 98,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "mapping": "Dated0900 exactmodel/phase/rowreview, existingupsert API; no fuzzymerge ornewfeed",
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "ExistingSolarboxfamilyrecheckstill503; no completePDF/modelparameters accepted.",
+      "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
+      "next_action": "Backoffuntilnormalserviceaccess; inspectexactrevision/rights andactualfixedconfigurationthen.",
+      "next_due_check": "2026-11-07T09:00:00Z"
+    },
+    {
+      "id": "gem_CHN_GRC_owners_1000",
+      "country": [
+        "CHN",
+        "GRC"
+      ],
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "PinnedFebruary2026XLSX exact complete phase/owner cells",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "publication_cadence": "Release based; official metadata stillFebruary2026 checked6November; no workbook redownload",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "reviewed": 200,
+      "accepted": 194,
+      "held": 6,
+      "rejected": 0,
+      "mapping": "194historical owners +194phase contexts;167China/27Greece",
+      "estimated_useful_yield": {
+        "remaining_strict_GRC": 339,
+        "remaining_strict_CHN": 0
+      },
+      "processed_cursor": {
+        "CHN": "L100001081782",
+        "GRC": "L100000806158"
+      },
+      "result": "Selected172China/28Greece identities complete. Six location-name holds; one earlier anomalous owner spelling recurs on a distinct new location, not a repeat of an accepted/held record.",
+      "retry_condition": "Refresh metadata/head before next partition; prior held names remain separate",
+      "next_action": "Greece339 after saved cursor; China strict partition exhausted, no national ownership completeness claim",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "ganesh_G12R_1000",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.ganeshgreen.com/public/products/topcon-g12r-132",
+      "endpoint": [
+        "https://www.ganeshgreen.com/public/products/topcon-g12r-132",
+        "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+        "https://www.ganeshgreen.com/"
+      ],
+      "format": "Public HTML exact seven-column STC table plus16-page linked OEM brochure; physicalpage6 reviewed",
+      "licence_assessment": "OEM copyright retained; bounded individually reviewed factual entries only, no open bulk/document grant or document/prose/artwork redistribution. Terms/Privacy footer links are # placeholders, not licence evidence.",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:05:22.235609+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "df4917628634327847f343c4c3be923ada855bb265eac656f4a8a3b7ef4acfe7",
+      "etag": null,
+      "captures": [
+        {
+          "name": "ganesh.html",
+          "url": "https://www.ganeshgreen.com/public/products/topcon-g12r-132",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/public/products/topcon-g12r-132",
+          "retrieved_at": "2026-11-06T10:05:22.235609+00:00",
+          "sha256": "df4917628634327847f343c4c3be923ada855bb265eac656f4a8a3b7ef4acfe7",
+          "bytes": 69996,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "ganesh-brochure.pdf",
+          "url": "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+          "retrieved_at": "2026-11-06T10:06:07.569525+00:00",
+          "sha256": "41bf456bc037f07ec5b7338db49f0ab301517d097043c0ebb11f8ccfa5c6e0f9",
+          "bytes": 4705539,
+          "etag": "\"47cd03-6a3b714b-c219d6a277adb5c6;;;\"",
+          "last_modified": "Wed, 24 Jun 2026 05:55:23 GMT"
+        },
+        {
+          "name": "ganesh-home.html",
+          "url": "https://www.ganeshgreen.com/",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/",
+          "retrieved_at": "2026-11-06T10:05:22.423863+00:00",
+          "sha256": "176f850d7876a0728f97e21c0ae761c0eda53050bf0f6750eb7dfaccfa409215",
+          "bytes": 138496,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 7,
+        "accepted": 7,
+        "remaining_verified": null
+      },
+      "reviewed": 7,
+      "accepted": 7,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "models": 7,
+        "brochure_physical_page": 6
+      },
+      "result": "7exact power-graded GG620–650 G12R132 models,98 typed values. Four native voltage/current units unstated, alphaIsc typography and brochure/live dimension discrepancy held. Junction IP68 not module ingress.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Selected7 columns exhausted. Resolve explicit V/A units, coefficient typography and2382/2384mm first dimension before scalar enrichment.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "ganesh_144_1000",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.ganeshgreen.com/public/products/topcon-144",
+      "endpoint": [
+        "https://www.ganeshgreen.com/public/products/topcon-144",
+        "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf"
+      ],
+      "format": "Public HTML exact STC table; physicalpage7 TOPCon section visually reviewed",
+      "licence_assessment": "OEM copyright retained; bounded individually reviewed factual entries only, no open bulk/document grant or document/prose/artwork redistribution. Terms/Privacy footer links are # placeholders, not licence evidence.",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:11:20.647981+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "9c36667fdde878d5edfca4c53a2f66b49d3422aeaa5c8b8d57296253271a55be",
+      "etag": null,
+      "captures": [
+        {
+          "name": "ganesh144.html",
+          "url": "https://www.ganeshgreen.com/public/products/topcon-144",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/public/products/topcon-144",
+          "retrieved_at": "2026-11-06T10:11:20.647981+00:00",
+          "sha256": "9c36667fdde878d5edfca4c53a2f66b49d3422aeaa5c8b8d57296253271a55be",
+          "bytes": 70391,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "ganesh-brochure.pdf",
+          "url": "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+          "retrieved_at": "2026-11-06T10:06:07.569525+00:00",
+          "sha256": "41bf456bc037f07ec5b7338db49f0ab301517d097043c0ebb11f8ccfa5c6e0f9",
+          "bytes": 4705539,
+          "etag": "\"47cd03-6a3b714b-c219d6a277adb5c6;;;\"",
+          "last_modified": "Wed, 24 Jun 2026 05:55:23 GMT"
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 7,
+        "accepted": 5,
+        "remaining_verified": null
+      },
+      "reviewed": 7,
+      "accepted": 5,
+      "held": 2,
+      "rejected": 0,
+      "processed_cursor": {
+        "reviewed": 7,
+        "accepted": 5,
+        "held": [
+          "GG-605",
+          "GG-610"
+        ],
+        "brochure_physical_page": 7
+      },
+      "result": "5GG580–600 144-cell TOPCon models add75typed values. GG605/610 columns exceed page power/efficiency header and brochure page7 maximum; whole models held. Unstated electrical units and unlabeled axes contextual.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Selected7 columns exhausted. Resolve605/610 scope with consistent OEM revision; no new hypothetical bins or other family clones.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "kalyon_access_1000",
+      "country": "TUR",
+      "entity": "modules",
+      "source_url": "https://cdn.kalyonpv.com/images/products/products_datasheets/02-TOPCon-Series/05-G12-Series/G12R-132-TOPCON-GG-2025-04_EN.pdf",
+      "endpoint": [
+        "https://cdn.kalyonpv.com/images/products/products_datasheets/02-TOPCon-Series/05-G12-Series/G12R-132-TOPCON-GG-2025-04_EN.pdf",
+        "https://kalyonpv.com/indirme-merkezi",
+        "https://kalyonpv.com/"
+      ],
+      "format": "Public index and attempted OEM PDF",
+      "licence_assessment": "Copyright reserved; technical document inaccessible, no extraction/reuse basis established",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:03:43.869547+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+      "etag": null,
+      "captures": [
+        {
+          "name": "kalyon.pdf",
+          "url": "https://cdn.kalyonpv.com/images/products/products_datasheets/02-TOPCon-Series/05-G12-Series/G12R-132-TOPCON-GG-2025-04_EN.pdf",
+          "status": 503,
+          "final_url": "https://cdn.kalyonpv.com/images/products/products_datasheets/02-TOPCon-Series/05-G12-Series/G12R-132-TOPCON-GG-2025-04_EN.pdf",
+          "retrieved_at": "2026-11-06T10:03:43.869547+00:00",
+          "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+          "bytes": 98,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "kalyon-index.html",
+          "url": "https://kalyonpv.com/indirme-merkezi",
+          "status": 200,
+          "final_url": "https://kalyonpv.com/indirme-merkezi",
+          "retrieved_at": "2026-11-06T10:06:03.979128+00:00",
+          "sha256": "01224b8e21e85e04eba724170cd565cd602f63a7c5eb82fa8aeb88d464a1c0a1",
+          "bytes": 475190,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "kalyon-home.html",
+          "url": "https://kalyonpv.com/",
+          "status": 200,
+          "final_url": "https://kalyonpv.com/",
+          "retrieved_at": "2026-11-06T10:05:22.011702+00:00",
+          "sha256": "d5c3ac5749852d035b56742872a5223be6d6723eef9c7ab88f7da9094ee5205e",
+          "bytes": 478386,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "remaining_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "New promising11-column G12R OEM sheet discovered; directPDF503 and web open timeout. Home/downloadindex accessible, guessed/en URL404; no PDF facts/checksum claimed from error bytes.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Use current official index/revision when normal PDF access recovers; inspect source-specific reuse then. No retry burst or third-party replacement.",
+      "next_due_check": "2026-11-07T10:00:00Z"
+    },
+    {
+      "id": "waaree_oldlink_1000",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://waaree.com/wp-content/uploads/2024/02/ELITE-SERIES-BiN-02-615-650-WEL-EPD-615-650-120-BiN-HC-07-31.08.2024.pdf",
+      "endpoint": [
+        "https://waaree.com/wp-content/uploads/2024/02/ELITE-SERIES-BiN-02-615-650-WEL-EPD-615-650-120-BiN-HC-07-31.08.2024.pdf",
+        "https://waaree.com/"
+      ],
+      "format": "HTTP redirects / HTML, not PDF",
+      "licence_assessment": "No relevant same-publisher document/reuse assessment established; zero data extraction",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:04:43.842513+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "8a1625a5509cf9bf5a73514c374923b988411f11cb8b08cbdc5bd5da34e5a119",
+      "etag": null,
+      "captures": [
+        {
+          "name": "waaree.pdf",
+          "url": "https://waaree.com/wp-content/uploads/2024/02/ELITE-SERIES-BiN-02-615-650-WEL-EPD-615-650-120-BiN-HC-07-31.08.2024.pdf",
+          "status": 200,
+          "final_url": "https://www.waaree.com:443/",
+          "retrieved_at": "2026-11-06T10:04:43.842513+00:00",
+          "sha256": "8a1625a5509cf9bf5a73514c374923b988411f11cb8b08cbdc5bd5da34e5a119",
+          "bytes": 1592651,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "waaree.html",
+          "url": "https://waaree.com/",
+          "status": 200,
+          "final_url": "https://www.waaree.com:443/",
+          "retrieved_at": "2026-11-06T10:04:30.802464+00:00",
+          "sha256": "8a1625a5509cf9bf5a73514c374923b988411f11cb8b08cbdc5bd5da34e5a119",
+          "bytes": 1592651,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "remaining_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Verified old exactPDF URL redirects to homepage HTML; its bytes are not a datasheet despiteHTTP200. No models parsed/accepted. Unrelated Vaaree homewares and WaareeRTL entity terms are not substituted.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Find current official same-entity download link and inspect its rights/revision before acceptance.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "pixon_gate_1000",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://pixonenergy.com/resources/downloads/technical-datasheets/",
+      "endpoint": [
+        "https://pixonenergy.com/resources/downloads/technical-datasheets/",
+        "https://pixonenergy.com/legal-statement/",
+        "https://www.pixonenergy.com/pdf/technical_datasheet/PIX-MBHTB-132-665.pdf"
+      ],
+      "format": "Current technical index/legalHTML and oldPDF404",
+      "licence_assessment": "Current legal statement reserves IP/unauthorized reuse; no document grant. Access gate respected.",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:04:15.900558+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "cdea294589a1a6da8c1aa0027e73493cb7efb57df87cad4136c00b7930f540c1",
+      "etag": null,
+      "captures": [
+        {
+          "name": "pixon.html",
+          "url": "https://pixonenergy.com/resources/downloads/technical-datasheets/",
+          "status": 200,
+          "final_url": "https://pixonenergy.com/resources/downloads/technical-datasheets/",
+          "retrieved_at": "2026-11-06T10:04:15.900558+00:00",
+          "sha256": "cdea294589a1a6da8c1aa0027e73493cb7efb57df87cad4136c00b7930f540c1",
+          "bytes": 125128,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "pixon-legal.html",
+          "url": "https://pixonenergy.com/legal-statement/",
+          "status": 200,
+          "final_url": "https://pixonenergy.com/legal-statement/",
+          "retrieved_at": "2026-11-06T10:04:51.009418+00:00",
+          "sha256": "f32ed773019f5736a3c172638feec22a61d451803c99f515041cf1e9aa65d178",
+          "bytes": 86734,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "pixon-old.pdf",
+          "url": "https://www.pixonenergy.com/pdf/technical_datasheet/PIX-MBHTB-132-665.pdf",
+          "status": 404,
+          "final_url": "https://pixonenergy.com/pdf/technical_datasheet/PIX-MBHTB-132-665.pdf",
+          "retrieved_at": "2026-11-06T10:04:57.844210+00:00",
+          "sha256": "50bf50d93d72b2fb392f01fe27cf67cd734cdb8cca9c3573c06b21c8c5f85238",
+          "bytes": 88693,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "remaining_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Current datasheet buttons open name/email form. No form submitted or hidden document URL reverse-engineered. Independently indexed oldPDF ordinaryGET404. Legal statement reserves content rights; no models accepted.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Use normally published ungated source with exact revision and permitted factual scope; no contact/registration.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "spain_REPRO_discovery_1000",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://energia.serviciosmin.gob.es/reprov2/RegistroPublico.aspx",
+      "endpoint": [
+        "https://energia.serviciosmin.gob.es/reprov2/RegistroPublico.aspx",
+        "https://energia.serviciosmin.gob.es/reprov2/",
+        "https://www.miteco.gob.es/es/energia/energia-electrica/electricidad/regimen-ordinario/registro-instalaciones.html",
+        "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+        "https://www.miteco.gob.es/es/energia/servicios/registros.html"
+      ],
+      "format": "Public HTML landing/registry/notice; no bulk export or form submission",
+      "licence_assessment": "General MITECO notice supports attributed portal information reuse; source-specific registry scope/conditions and personal-data limits still require review. No dataset ingested.",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:06:05.797660+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "b8d24c2d423f655acc39afa93547941431860d353fa626681f9cd8607d28308e",
+      "etag": null,
+      "captures": [
+        {
+          "name": "spain-public.html",
+          "url": "https://energia.serviciosmin.gob.es/reprov2/RegistroPublico.aspx",
+          "status": 200,
+          "final_url": "https://energia.serviciosmin.gob.es/reprov2/RegistroPublico.aspx",
+          "retrieved_at": "2026-11-06T10:06:05.797660+00:00",
+          "sha256": "b8d24c2d423f655acc39afa93547941431860d353fa626681f9cd8607d28308e",
+          "bytes": 26142,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "spain-registry.html",
+          "url": "https://energia.serviciosmin.gob.es/reprov2/",
+          "status": 200,
+          "final_url": "https://energia.serviciosmin.gob.es/reprov2/",
+          "retrieved_at": "2026-11-06T10:05:05.192983+00:00",
+          "sha256": "4773f4c4f5b33bfb8974175157922161122f31153486c2df3a10992bbe7d3cb7",
+          "bytes": 14539,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "spain.html",
+          "url": "https://www.miteco.gob.es/es/energia/energia-electrica/electricidad/regimen-ordinario/registro-instalaciones.html",
+          "status": 200,
+          "final_url": "https://www.miteco.gob.es/es/energia/energia-electrica/electricidad/regimen-ordinario/registro-instalaciones.html",
+          "retrieved_at": "2026-11-06T10:03:43.691464+00:00",
+          "sha256": "dfe2d850115828fad2b6d679c7853cdbe311c8cd43fd64ed18c186597d837076",
+          "bytes": 53936,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "spain-terms.html",
+          "url": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+          "status": 200,
+          "final_url": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+          "retrieved_at": "2026-11-06T10:04:23.580728+00:00",
+          "sha256": "cc5c2eb6271175510677d69a25a62bed5b3c1f34d6a83bc83c4bc85d98f0056e",
+          "bytes": 64522,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "spain-registers.html",
+          "url": "https://www.miteco.gob.es/es/energia/servicios/registros.html",
+          "status": 200,
+          "final_url": "https://www.miteco.gob.es/es/energia/servicios/registros.html",
+          "retrieved_at": "2026-11-06T10:15:06.902053+00:00",
+          "sha256": "cc0577fe9662a37fa8c03d216d9e4ddc072ce22d30ced2cfdd671503fae6ab67",
+          "bytes": 165966,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "remaining_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "plant_rows_reviewed": 0,
+        "CAPTCHA": true
+      },
+      "result": "MITECO ordinary-regime REPRO public route requires CAPTCHA; no query/data extraction or bypass. General portal notice permits attributed information reuse excluding third-party rights, preserving update metadata/nonendorsement; not a blanket licence for restricted registry content. This is distinct from Electra prior75Canarias rows and not a new PV feed.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Do not repeat Electra75 rows or treat REPRO as a whole-PV inventory. Seek a normally downloadable official PV/phase dataset and explicit AC/DC definitions; prior Electra/Navarra identity/power holds unchanged.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "gem_GRC_owners_1100",
+      "country": "GRC",
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "PinnedFebruary2026XLSX complete phase IDs and Owner cells",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "publication_cadence": "Release based, official metadata stillFebruary2026; no hourly workbook download",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "reviewed": 200,
+      "accepted": 198,
+      "held": 2,
+      "rejected": 0,
+      "estimated_useful_yield": {
+        "remaining_strict_Greece": 139
+      },
+      "mapping": "198historical owners +198complete-phase contexts; no currentownership/operation or power/date inference",
+      "processed_cursor": {
+        "GRC": "L100000822452"
+      },
+      "result": "Two native spelling/mixed-script identity holds. Geographic words in corporate labels preserved literally, not treated as errors or renamed entities. One separate operator-role prospect remains held.",
+      "retry_condition": "Refresh source/head before next saved partition",
+      "next_action": "Greece139 after this200-location cursor; keep prior held IDs separate",
+      "next_due_check": "2026-11-13T11:00:00Z"
+    },
+    {
+      "id": "rayzon_three_tables_1100",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-580-600-Export.pdf",
+      "endpoint": [
+        "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-580-600-Export.pdf",
+        "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-210R-Export.pdf",
+        "https://rayzonsolar.com/img/datasheet/export/BLACK-TOPCON-2025-425-440-(108)-Export.pdf",
+        "https://rayzonsolar.com/img/product-datasheet/RAYZON-SOLAR-%20Warranty-certificate.pdf",
+        "https://rayzonsolar.com/download",
+        "https://rayzonsolar.com/"
+      ],
+      "format": "Three two-page OEM Export2025 sheets plus current linked warranty certificate effective1February2025",
+      "licence_assessment": "OEM copyright retained; bounded individually reviewed facts only. Public home/download/footer and sheet disclaimers inspected; no open bulk/document grant asserted, protected documents/prose/artwork redistributed or Emmvee veto bypassed.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:07:15.724660+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "60bbfc9d73ee559b9eebfb3051a55b8114a1e9c2233354f9e62ac951a07788ea",
+      "etag": "\"2caff6-64b180165cf16\"",
+      "captures": [
+        {
+          "name": "rayzon144.pdf",
+          "url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-580-600-Export.pdf",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-580-600-Export.pdf",
+          "retrieved_at": "2026-11-06T11:07:15.724660+00:00",
+          "sha256": "60bbfc9d73ee559b9eebfb3051a55b8114a1e9c2233354f9e62ac951a07788ea",
+          "bytes": 2928630,
+          "etag": "\"2caff6-64b180165cf16\"",
+          "last_modified": "Wed, 18 Feb 2026 12:05:35 GMT"
+        },
+        {
+          "name": "rayzon132.pdf",
+          "url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-210R-Export.pdf",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/img/datasheet/export/TOPCON-2025-210R-Export.pdf",
+          "retrieved_at": "2026-11-06T11:07:16.227271+00:00",
+          "sha256": "3c8a9e8f98c0f2fb187a68993ada353a5b99692933d682a281d150d348cb64f6",
+          "bytes": 2715897,
+          "etag": "\"2970f9-64b18015eca34\"",
+          "last_modified": "Wed, 18 Feb 2026 12:05:34 GMT"
+        },
+        {
+          "name": "rayzon108.pdf",
+          "url": "https://rayzonsolar.com/img/datasheet/export/BLACK-TOPCON-2025-425-440-(108)-Export.pdf",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/img/datasheet/export/BLACK-TOPCON-2025-425-440-(108)-Export.pdf",
+          "retrieved_at": "2026-11-06T11:07:15.622856+00:00",
+          "sha256": "697f02ccdae27b80fc6287831adde613bcb5a628636f7abf4d7852b366113b15",
+          "bytes": 2404587,
+          "etag": "\"24b0eb-64b1801705e39\"",
+          "last_modified": "Wed, 18 Feb 2026 12:05:35 GMT"
+        },
+        {
+          "name": "rayzon-warranty.pdf",
+          "url": "https://rayzonsolar.com/img/product-datasheet/RAYZON-SOLAR-%20Warranty-certificate.pdf",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/img/product-datasheet/RAYZON-SOLAR-%20Warranty-certificate.pdf",
+          "retrieved_at": "2026-11-06T11:07:28.543460+00:00",
+          "sha256": "5f2965857f2b95a8b1bfb94ad45bd380423111a3b9eeddace3d5d50f3cbf4864",
+          "bytes": 202539,
+          "etag": "\"3172b-64c57f8c2771a\"",
+          "last_modified": "Fri, 06 Mar 2026 09:49:39 GMT"
+        },
+        {
+          "name": "rayzon-download.html",
+          "url": "https://rayzonsolar.com/download",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/download",
+          "retrieved_at": "2026-11-06T11:06:17.255297+00:00",
+          "sha256": "1f4e0a664c5ff8a31754e20e50f8ee1c39ba6304ef966af8a484e226af2b1110",
+          "bytes": 51347,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "rayzon.html",
+          "url": "https://rayzonsolar.com/",
+          "status": 200,
+          "final_url": "https://rayzonsolar.com/",
+          "retrieved_at": "2026-11-06T11:05:55.509913+00:00",
+          "sha256": "cc563f31dae41c54b1037f159b7bd30ccbfa40a78fb04652f9d6eef78ff0d0f9",
+          "bytes": 88236,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 13,
+        "accepted": 13,
+        "additional_verified": null
+      },
+      "reviewed": 13,
+      "accepted": 13,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "new": 6,
+        "enriched": 7,
+        "typed_values_accepted": 261,
+        "differing_populated_fields": 31,
+        "complete": true,
+        "cross_unit_coefficient_holds": 14
+      },
+      "result": "6new exact modules +7existing CEC/SAM models enriched.261 accepted typed values:156new-record and105nullable existing-model values;338OEM typed assertions reviewed,31different populated fields plus14relative/absolute coefficient basis questions retained in review,32same values not recounted. One manufacturer label reused, no new OEM. 13contexts,7new canonical datasheet links.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "Selected13columns complete. Resolve31differences without preferring undated OEM sheet to CEC2026.7.3. Keep cell architectures, NOCT/front-STC and backside scenarios distinct.",
+      "next_due_check": "2026-11-13T11:00:00Z"
+    },
+    {
+      "id": "emmvee_rights_1100",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://emmvee.com/terms-conditions/",
+      "endpoint": [
+        "https://emmvee.com/terms-conditions/",
+        "https://emmvee.com/",
+        "https://emmvee.com/downloads/"
+      ],
+      "format": "Public official website terms/index",
+      "licence_assessment": "Terms grant viewing only and expressly prohibit data mining/harvesting/extraction and publishing material. No technical PDF download or model extraction; technical index cache discarded, access metadata retained.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:04:45.625191+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "2323d5b8aa566a1dbd039823f54ef8c0626c081d0d4f3ab44e5122bfb2461e53",
+      "etag": null,
+      "captures": [
+        {
+          "name": "emmvee-terms.html",
+          "url": "https://emmvee.com/terms-conditions/",
+          "status": 200,
+          "final_url": "https://emmvee.com/terms-conditions/",
+          "retrieved_at": "2026-11-06T11:04:45.625191+00:00",
+          "sha256": "2323d5b8aa566a1dbd039823f54ef8c0626c081d0d4f3ab44e5122bfb2461e53",
+          "bytes": 120289,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "emmvee.html",
+          "url": "https://emmvee.com/",
+          "status": 200,
+          "final_url": "https://emmvee.com/",
+          "retrieved_at": "2026-11-06T11:04:04.748275+00:00",
+          "sha256": "661fafa94ad91404398ac8784b0e57c9cdcbd6541b902539f348f7a8e500fd9f",
+          "bytes": 189506,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "emmvee-downloads.html",
+          "url": "https://emmvee.com/downloads/",
+          "status": 200,
+          "final_url": "https://emmvee.com/downloads/",
+          "retrieved_at": "2026-11-06T11:04:45.313600+00:00",
+          "sha256": "b79bb1cf19d86aee334d8bba24cc66475d31cc596d382d66999e063130509a7c",
+          "bytes": 141783,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Promising multi-model public download index discovered, but explicit extraction prohibition stops ingestion. No alternate host or contact route used. Switched to independent Rayzon.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "Only resume on documented applicable rights; do not infer public viewing permits extraction.",
+      "next_due_check": "2026-11-13T11:00:00Z"
+    },
+    {
+      "id": "torino_renewable_permits_1100",
+      "country": "ITA",
+      "entity": "projects",
+      "source_url": "https://geodati.gov.it/geoportale/visualizzazione-metadati/scheda-metadati?metadataid=cmto%3A403766ce-7b5c-4347-ba70-2235e37d2447",
+      "endpoint": [
+        "https://geodati.gov.it/geoportale/visualizzazione-metadati/scheda-metadati?metadataid=cmto%3A403766ce-7b5c-4347-ba70-2235e37d2447",
+        "https://eds.cittametropolitana.torino.it/geoportale/SHP_INT_ENER.php"
+      ],
+      "format": "Official RNDT metadata and linked ESRI Shapefile endpoint",
+      "licence_assessment": "RNDT other access/use constraints are blank/unspecified: no dataset reuse grant established. General open-data or another municipality licence not substituted.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:04:50.172752+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "a40176c2248d9b7fcdb13bc6b85a0adf7f8a95933e296ebce0726bfa606455aa",
+      "etag": null,
+      "captures": [
+        {
+          "name": "torino-metadata.html",
+          "url": "https://geodati.gov.it/geoportale/visualizzazione-metadati/scheda-metadati?metadataid=cmto%3A403766ce-7b5c-4347-ba70-2235e37d2447",
+          "status": 200,
+          "final_url": "https://geodati.gov.it/geoportale/visualizzazione-metadati/scheda-metadati?metadataid=cmto%3A403766ce-7b5c-4347-ba70-2235e37d2447",
+          "retrieved_at": "2026-11-06T11:04:50.172752+00:00",
+          "sha256": "a40176c2248d9b7fcdb13bc6b85a0adf7f8a95933e296ebce0726bfa606455aa",
+          "bytes": 43043,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 11:04:49 GMT"
+        },
+        {
+          "name": "torino-download.html",
+          "url": "https://eds.cittametropolitana.torino.it/geoportale/SHP_INT_ENER.php",
+          "status": 503,
+          "final_url": "https://eds.cittametropolitana.torino.it/geoportale/SHP_INT_ENER.php",
+          "retrieved_at": "2026-11-06T11:06:00.179476+00:00",
+          "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+          "bytes": 91,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "feature_rows_reviewed": 0,
+        "current_ITA_projects": 1179,
+        "access_status": 503
+      },
+      "result": "New official multi-record inventory: Citta metropolitana di Torino renewable permits underD.Lgs387/2003. Metadata dated24September2025, dataset revision2May2024, creation2005 and temporal extent ending2008 all retained as distinct metadata, not operating proof. WGS84/UTM32N, scale1:10000 and10m positional claim. Download endpoint503; no feature schema, positivePV, privacy, whole-plant/phase or AC/DC review possible. Zero plants/adapter accepted.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "On normal download recovery, inspect reuse/feature schema and bounded explicitPV sample; reconcile permit IDs/locations against existing1179Italian project records, retaining historical authorization rather than current operation.",
+      "next_due_check": "2026-11-07T11:00:00Z"
+    },
+    {
+      "id": "noark_current_download_route_1100",
+      "country": "AUS",
+      "entity": "combiner_boxes",
+      "source_url": "https://noark.au/support/downloads",
+      "endpoint": [
+        "https://noark.au/support/downloads",
+        "https://noark.au/index.php/products/equipment?id=2",
+        "https://noark.au/privacy-policy"
+      ],
+      "format": "Current official download index; legacy product URL404",
+      "licence_assessment": "Prior source-specific bounded facts/identity holds retained; current privacy notice is not a technical reuse grant. No new manual download/extraction.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:04:44.336481+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "803528ac046d0ef50e421fa5e2b61fbc1a456a6d6098f58fc8ccf853e75ab72c",
+      "etag": null,
+      "captures": [
+        {
+          "name": "noark-downloads.html",
+          "url": "https://noark.au/support/downloads",
+          "status": 200,
+          "final_url": "https://noark.au/support/downloads",
+          "retrieved_at": "2026-11-06T11:04:44.336481+00:00",
+          "sha256": "803528ac046d0ef50e421fa5e2b61fbc1a456a6d6098f58fc8ccf853e75ab72c",
+          "bytes": 261175,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "noark.html",
+          "url": "https://noark.au/index.php/products/equipment?id=2",
+          "status": 404,
+          "final_url": "https://noark.au/index.php/products/equipment?id=2",
+          "retrieved_at": "2026-11-06T11:04:05.723695+00:00",
+          "sha256": "e39104feae35c54e2ba72bb010734e064f9899253f409d2d8d083e5d2d534897",
+          "bytes": 24919,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "noark-privacy.html",
+          "url": "https://noark.au/privacy-policy",
+          "status": 200,
+          "final_url": "https://noark.au/privacy-policy",
+          "retrieved_at": "2026-11-06T11:05:54.687487+00:00",
+          "sha256": "5a5cf2be4674532d4144631688821e1dad37f5838f74b5fa80a49da2e6ba7fe9",
+          "bytes": 37393,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "current_index_verified": true,
+        "technical_rows_accepted": 0
+      },
+      "result": "Legacy requested product route still404, but current /support/downloads is200 and publicly links String Combiner Box BrochureV2.0 via /shop/attachment/64/preview (43.51MB label). This resolves current index discovery, not PDF revision/adapter acceptance. Prior two canonical models and Chint/Noark exact-identity/field holds are not repeated or silently resolved.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "Use current normal public route after saved identity/reuse gate review, compare registered revision/checksum before any full43MB retrieval. No hourly manual download.",
+      "next_due_check": "2026-11-12T08:00:00Z"
+    },
+    {
+      "id": "kozani_rights_role_review_1100",
+      "country": "GRC",
+      "entity": "projects",
+      "source_url": "https://www.juwi.com/imprint",
+      "endpoint": [
+        "https://www.juwi.com/imprint",
+        "https://www.helleniqenergy.com/en/terms-use",
+        "https://www.juwi.gr/services/operation-maintenance",
+        "https://www.helleniqenergy.com/en/media/press-releases/landmark-energy-transformation"
+      ],
+      "format": "Public O&M/owner press pages and express publisher terms",
+      "licence_assessment": "JUWI requires approval for reproduction/distribution even extracts; HELLENiQ restricts reuse/download to consent/personal use. No restricted technical values copied to Git or source registry; technical caches discarded, no contacts.",
+      "access_assessment": "Ordinary public GET/search; no login, contact/form submission, payment or bypass",
+      "publication_cadence": "Revision based or unstated; metadata first, skip unchanged full files",
+      "last_release": "Content dates explicitly qualified below; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T11:19:18.346894+00:00",
+      "last_attempt": "2026-11-06T11:22:55.511864+00:00",
+      "sha256": "db4244eb62a7abf5167b6f16f4d817ca3b77b022f56916d2c7b2bedcd8221e5f",
+      "etag": "W/\"d175749b381a689da20ee3e47db367c5\"",
+      "captures": [
+        {
+          "name": "juwi-imprint.html",
+          "url": "https://www.juwi.com/imprint",
+          "status": 200,
+          "final_url": "https://www.juwi.com/imprint",
+          "retrieved_at": "2026-11-06T11:19:18.346894+00:00",
+          "sha256": "db4244eb62a7abf5167b6f16f4d817ca3b77b022f56916d2c7b2bedcd8221e5f",
+          "bytes": 36923,
+          "etag": "W/\"d175749b381a689da20ee3e47db367c5\"",
+          "last_modified": null
+        },
+        {
+          "name": "helleniq-terms.html",
+          "url": "https://www.helleniqenergy.com/en/terms-use",
+          "status": 200,
+          "final_url": "https://www.helleniqenergy.com/en/terms-use",
+          "retrieved_at": "2026-11-06T11:19:16.187423+00:00",
+          "sha256": "bf853a1f66b9f0fbde9ab5e6eb8dfed5cf4cecb86954f6443c43b4cfb4067229",
+          "bytes": 95383,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 11:04:33 GMT"
+        },
+        {
+          "name": "juwi-om.html",
+          "url": "https://www.juwi.gr/services/operation-maintenance",
+          "status": 200,
+          "final_url": "https://www.juwi.gr/services/operation-maintenance",
+          "retrieved_at": "2026-11-06T11:17:57.187514+00:00",
+          "sha256": "99bd23d37358752068a847075b605c55c72447f4bb2e49d860086c37336e1c23",
+          "bytes": 56219,
+          "etag": "W/\"fbf5e507ea51b9b4016875f0881470ab\"",
+          "last_modified": null
+        },
+        {
+          "name": "helleniq-kozani.html",
+          "url": "https://www.helleniqenergy.com/en/media/press-releases/landmark-energy-transformation",
+          "status": 200,
+          "final_url": "https://www.helleniqenergy.com/en/media/press-releases/landmark-energy-transformation",
+          "retrieved_at": "2026-11-06T11:17:56.239722+00:00",
+          "sha256": "153100908e54eb7a526037f16cf22c0abb82f15c1315449026692fb8b804e9f4",
+          "bytes": 77650,
+          "etag": null,
+          "last_modified": "Fri, 06 Nov 2026 11:17:46 GMT"
+        }
+      ],
+      "mapping": "Dated1100 exact model/phase/role/rights reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 1,
+        "accepted": 0,
+        "additional_verified": null
+      },
+      "reviewed": 1,
+      "accepted": 0,
+      "held": 1,
+      "rejected": 0,
+      "processed_cursor": {
+        "canonical_record": "517133de-de6a-5d66-9811-17aec64a6e08",
+        "accepted_additional_fields": 0
+      },
+      "result": "One native GEM operator prospect independently investigated for technical-O&M versus legal-operator/whole-project role. Additional project enrichment remains rights-held; no operator, counts, power, lifecycle, cost or generation fields accepted from these publishers. Existing GEM-derived owner/context remain separately permitted.",
+      "retry_condition": "Changed normal access/rights/revision or independent identity/field evidence; no repeated unchanged downloads",
+      "next_action": "Resolve operator role and independent permitted project evidence; do not circumvent publisher restrictions or convert inauguration to COD or generic installed MW to AC/DC.",
+      "next_due_check": "2026-11-13T11:00:00Z"
+    },
+    {
+      "id": "gem_GRC_final139_1200",
+      "country": "GRC",
+      "entity": "projects",
+      "source_url": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "February2026 pinned XLSX exact phase-set/Owner review",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "publication_cadence": "Release based; official release remainsFebruary2026",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "reviewed": 139,
+      "accepted": 139,
+      "held": 0,
+      "rejected": 0,
+      "mapping": "139owners plus139complete-phase contexts; original labels and native assertions retained. Historical only.",
+      "processed_cursor": {
+        "GRC": "L100001061213"
+      },
+      "result": "Strict139 Greek partition exhausted; prior held cases preserved. Not a claim all missing Greek owners are now resolved.",
+      "next_action": "Ghana ministry PPA4 exact identity and reuse review; retain prior Greek holds",
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "izmir_municipal_csv_1200",
+      "country": "TUR",
+      "entity": "projects",
+      "source_url": "https://acikveri.bizizmir.com/api/3/action/package_show?id=lisanssiz-gunes-enerji-santralleri-listesi",
+      "endpoint": [
+        "https://acikveri.bizizmir.com/api/3/action/package_show?id=lisanssiz-gunes-enerji-santralleri-listesi",
+        "https://acikveri.bizizmir.com/dataset/82e1aa7d-19a3-4d8e-a657-3ecbef536b83/resource/7b32c697-d973-425d-8613-d675bafc99e7/download/lisanssz-ges-santralleri2025.csv",
+        "https://acikveri.bizizmir.com/dataset/82e1aa7d-19a3-4d8e-a657-3ecbef536b83/resource/b7db1a8b-5731-460d-839d-92febd157b15/download/lisanssz-gunes-enerji-santralleri-listesi.xls",
+        "https://acikveri.bizizmir.com/tr/license"
+      ],
+      "format": "CKAN package metadata; UTF-8 semicolon CSV; malformed newer OOXML theme download",
+      "licence_assessment": "Dataset-specific municipal licence resolves to CC BY4, commercial adaptation/redistribution with attribution permitted. Notice committed; no private applicant/contact fields.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:02:23.022250+00:00",
+      "sha256": "7c2154818910c26d43b337435c17d3e4c2196c45417d34ad27eac922ed7392a7",
+      "etag": null,
+      "reviewed": 26,
+      "accepted": 25,
+      "held": 1,
+      "rejected": 0,
+      "result": "New official municipal inventory:26CSV rows,25accepted named panel-evidenced PV facilities,1missing-panel-evidence hold. Reader+8tests complete.75numeric fields plus25contexts in new projects. No AC/DC/status/COD/owner/coordinate inference. CSVmodified21Jan2026; metadata9Sep2026 does not reviseCSV. Newer XLSX has onlytheme parts,no worksheets.",
+      "next_action": "Fresh metadata/checksum before resuming; resolve one missing-panel row using explicit PV source and request no contact. Recheck workbook only on new resource revision.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "CSV_resource_id": "7b32c697-d973-425d-8613-d675bafc99e7",
+        "CSV_last_modified": "2026-01-21T09:52:39.728249",
+        "package_modified": "2026-09-09T07:58:35.918716",
+        "processed_csv_records": 26,
+        "accepted": 25,
+        "held": 1,
+        "adapter": "izmir.read_izmir_csv"
+      },
+      "next_due_check": "2026-12-01T06:00:00Z"
+    },
+    {
+      "id": "kosmo_family_identity_1200",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://kosmosolar.eu/products",
+      "endpoint": [
+        "https://kosmosolar.eu/products",
+        "https://kosmosolar.eu/storage/datasheets/1739786316-Kosmo%20Solar%20datasheet%20KS(590-620W)-144MBB%20(2).pdf",
+        "https://kosmosolar.eu/storage/datasheets/1739786261-Kosmo%20Solar%20Datasheet%20KS(580-600W)-144MBB%20(1).pdf",
+        "https://kosmosolar.eu/storage/datasheets/1739786305-Kosmo%20Solar%20datasheet%20KS(430-450W)-108MSG%20(2).pdf",
+        "https://kosmosolar.eu/"
+      ],
+      "format": "Current OEM index and three2page technical PDFs; page2 rendered/reviewed",
+      "licence_assessment": "Copyright reserved; no open bulk grant. Only bounded research evidence; no full datasheet/table artwork or prose in Git.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:03:33.423879+00:00",
+      "sha256": "b3745274203ed81fc87d8ec2d38a2786f1e8afe53db493e0fe7c682857a76ef4",
+      "etag": null,
+      "reviewed": 3,
+      "accepted": 0,
+      "held": 3,
+      "rejected": 0,
+      "result": "Three families/15STC rating columns reviewed, not15accepted exact models. Only ranged family names identify columns; no literal individual model codes. Mechanical heading/drawing and front/back mass/warranty-template inconsistencies plus bifacial scenario alignment/values prevent safe exact-model acceptance. No chosen winner or invented model code.",
+      "next_action": "Seek an independently published unambiguous exact-model schedule/revision; preserve these family holds and do not clone ratings/options into fictitious variants.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "families": 3,
+        "front_STC_columns_reviewed": 15,
+        "exact_models_accepted": 0,
+        "per_family_STC_columns": 5
+      },
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "TSEC_rights_1200",
+      "country": "TWN",
+      "entity": "modules",
+      "source_url": "https://www.tsecpv.com/privacy/",
+      "endpoint": [
+        "https://www.tsecpv.com/privacy/"
+      ],
+      "format": "Official privacy/IP statement; technical PDFs not downloaded",
+      "licence_assessment": "Prior written permission required to reproduce/use website information; no grant inferred from public access. No contact/form.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:08:57.053733+00:00",
+      "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+      "etag": null,
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "result": "Promising multi-model OEM source stopped at explicit rights gate. No technical assertions or PDF accepted.",
+      "next_action": "Use independently permitted OEM; resume only on applicable documented rights change.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "technical_downloads": 0,
+        "accepted_models": 0
+      },
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "ghana_energy_database68_1200",
+      "country": "GHA",
+      "entity": "projects",
+      "source_url": "https://gheatoolkit.energycom.gov.gh/Dataset/GetDatasetDetail?datasetid=68",
+      "endpoint": [
+        "https://gheatoolkit.energycom.gov.gh/Dataset/GetDatasetDetail?datasetid=68",
+        "https://gheatoolkit.energycom.gov.gh/Home/TermsOfUse",
+        "https://gheatoolkit.energycom.gov.gh/Home/DisclaimerMsg"
+      ],
+      "format": "Official dataset68metadata and terms; no feature export",
+      "licence_assessment": "Terms3.1/3.2 require written approval for propagation and restrict personal/noncommercial use. Not an open-data grant. Technical index cache discarded; access hashes retained.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:08:56.291503+00:00",
+      "sha256": "b88e6dbcc205f91593c1928ad8272ae4589eb76c787ac64de568564de3bb1715",
+      "etag": null,
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "result": "New national solar-facilities dataset metadata discovered; licence gate stops extraction. Do not substitute generic Ghana open-data terms or draft policy.",
+      "next_action": "Resume only with applicable reuse evidence. Independent Ministry PPA portal is separately assessed, not used to bypass this dataset.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "datasetid": 68,
+        "feature_rows": 0
+      },
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "ghana_ministry_PPA_PV_1200",
+      "country": "GHA",
+      "entity": "projects",
+      "source_url": "https://ppaportal.energymin.gov.gh/contracts",
+      "endpoint": [
+        "https://ppaportal.energymin.gov.gh/contracts",
+        "https://ppaportal.energymin.gov.gh/api/v1/ppas?technology=solar_pv&per_page=25",
+        "https://ppaportal.energymin.gov.gh/about",
+        "https://ppaportal.energymin.gov.gh/api-docs"
+      ],
+      "format": "Official published read-only JSON API; technology=solar_pv, per_page25",
+      "licence_assessment": "Intended for public research/analysis, but no explicit dataset redistribution licence established. Portal summaries are not legal agreements. Separate Ministry publisher; Energy Commission toolkit terms not automatically transferred. Full contracts not downloaded.",
+      "publication_cadence": "Irregular/version based; metadata first, no hourly full file downloads",
+      "last_attempt": "2026-11-06T12:13:08.471777+00:00",
+      "last_retrieval": "2026-11-06T12:08:58.411781+00:00",
+      "sha256": "258314d4e3b6d9a2608bbb72f1fd2f07b2eed34a2a361c5125df6d9837f3f1cf",
+      "etag": null,
+      "reviewed": 4,
+      "accepted": 0,
+      "held": 4,
+      "rejected": 0,
+      "result": "New multi-record source:4published PV PPA summaries,1page,total4. API documents60requests/min/IP. Lastupdated30Oct2026,versionv1.0; active PPA is not operating-plant proof. No rows/adapter accepted; clause, tariff unit/basis, current applicability and exact plant/phase crosswalk remain to review.",
+      "next_action": "Highest-value next: review4PPA identities and summary-to-contract clauses plus reuse; fill qualified PPA/offtaker context only after gates. No legal enforceability or AC/DC inference; never treat commercial capacity as plant rating.",
+      "retry_condition": "Relevant source revision, ordinary access or documented rights/identity resolution",
+      "processed_cursor": {
+        "reference_codes": [
+          "GH-PPA-03",
+          "GH-PPA-07",
+          "GH-PPA-09",
+          "GH-PPA-11"
+        ],
+        "current_page": 1,
+        "last_page": 1,
+        "total": 4,
+        "accepted": 0
+      },
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "solvis_current_global_1200",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://solvis.hr/en/documents/datasheet/",
+      "endpoint": [
+        "https://solvis.hr/wp-content/uploads/2026/07/SOLVIS-DS-EN-SV96_E_F_GG22_HCG12R_Global_P_30_1762x1134x30_450-460-20260603.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/07/SOLVIS-DS-EN-SV108_E_F_GG22_HCG12R_Global_P_30_1961x1134x35_510-520-20260603.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/07/SOLVIS-DS-EN-SV132_E_GG22_HCG12R_Global_S_15_2382x1134x35_625-635-20260603.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV144_E_GBS_HCM10_Global_S_15_2278x1134x35_575-585-20250725.pdf"
+      ],
+      "format": "Four2page OEM PDFs; exact STC model tables plus renderedmechanical/thermal/operating and warranty sections",
+      "licence_assessment": "OEMcopyright retained; bounded manually reviewed factual values/conditions only. No openbulk/document licence inferred. Home/currentindex/footer and PDFcopyright inspected; privacy anchor points to a legacyfragment, not an open grant. No PDF/prose/artwork in Git.",
+      "last_attempt": "2026-11-06T12:20:10.386954+00:00",
+      "last_retrieval": "2026-11-06T12:15:09.659385+00:00",
+      "last_release": "GG22G12R June3,2026; GBSM10 July25,2025 printedfooter revisions",
+      "publication_cadence": "OEMrevision based; current-index metadata beforefullfiles",
+      "sha256": {
+        "96": "953d084f35148fc61babd6b19e43b328da29324564c909945732434047049a84",
+        "108": "72fe8cd34f8cbb7a72a1000987e2f6915100ba6469759a79480aee4fd0eaf98e",
+        "132": "258e79a7fd924e9f89294cd043d0aa49cd623f7a7b7e64e3a5ce1b09d3fb07bf",
+        "144": "965a0c061faff4fc571a59eca9a01249bdb9b331aa723f7a8ca1d765b626fb1a"
+      },
+      "etag": {
+        "96": null,
+        "108": null,
+        "132": null,
+        "144": null
+      },
+      "reviewed": 12,
+      "accepted": 12,
+      "held": 0,
+      "rejected": 0,
+      "field_questions_held": 3,
+      "fields_offered": [
+        "STC P/V/I/efficiency",
+        "cells/dimensions/mass",
+        "thermal coefficients",
+        "maximumsystemvoltage/fuse",
+        "operatingbounds",
+        "warrantyclaims"
+      ],
+      "mapping": "ExistingupsertAPI,12exactmodels/261typedvalues; componentIP,NMOT/BNPI and tolerances arequalifiedcontext. No scenario variants or derivedannualdegradation.",
+      "processed_cursor": {
+        "completed_sheets": [
+          "SV96 E F GG22 HCG12R",
+          "SV108 E F GG22 HCG12R",
+          "SV132 E GG22 HCG12R",
+          "SV144 E HCM10"
+        ],
+        "accepted_models": 12,
+        "remaining_current_index_sheets_unprocessed": 8
+      },
+      "result": "Old indexedPDFURLs404; ordinary currentOEMnavigation led to revisionedpublicdirectPDFs.12literalmodelsaccepted, existingcanonicalSOLVISdoo retained, no newmanufacturer. Three132cell heights held:mechanicaltable2382mm vs drawing2278mm. Currentindex familylabel includesF whereas132table/header literalcodes omitF; no Fvariant inferred or created.",
+      "retry_condition": "Freshsource/head check; exactmodeltable and rightsreview required for unprocessed sheets",
+      "next_action": "Next equipment: two current monofacial G12R96/108 sheets (6model columns) after exact identity review; preserve132height and Kosmo/TSEC holds.",
+      "next_due_check": "2026-11-13T12:00:00Z"
+    },
+    {
+      "id": "gem_11country_owners_1300",
+      "country": [
+        "ALB",
+        "AZE",
+        "BIH",
+        "CRI",
+        "ECU",
+        "ISR",
+        "KAZ",
+        "LTU",
+        "MNE",
+        "SLV",
+        "SWE"
+      ],
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "Pinned February2026 XLSX; exact full native/source phase and Owner cells",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "last_release": "February2026; official currentmetadata verified6Nov",
+      "publication_cadence": "Releasebased; no hourly workbook download",
+      "reviewed": 83,
+      "accepted": 79,
+      "held": 4,
+      "rejected": 0,
+      "fields_offered": [
+        "historicalowners",
+        "complete-phase provenance"
+      ],
+      "mapping": "79owners+79phasecontexts; exact identity and unanimous native values, no currentownership or operation inference",
+      "processed_cursor": {
+        "ALB": "L100001049805",
+        "AZE": "L100001061744",
+        "BIH": "L100001047380",
+        "CRI": "L100001045877",
+        "ECU": "L100001045766",
+        "ISR": "L100001018507",
+        "KAZ": "L100001061670",
+        "LTU": "L100001063589",
+        "MNE": "L100001049878",
+        "SLV": "L100001080735",
+        "SWE": "L100001041233"
+      },
+      "result": "11country strict partition83complete after previousholdIDs excluded. Fournew ID-specific ownership holds; no previous heldID repeated per recursive research hold audit.",
+      "next_action": "Advance remaining lowcoverage countries on fresh release/head checks; resolve heldIDs only with independent identity evidence.",
+      "next_due_check": "2026-11-13T13:00:00Z"
+    },
+    {
+      "id": "solvis_remaining8_1300",
+      "country": "GLOBAL",
+      "entity": "modules",
+      "source_url": "https://solvis.hr/en/documents/datasheet/",
+      "endpoint": [
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV108_E_F_GG22_HCM10_Global_P_30_1722x1134x30_430-440_20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV120_E_F_GG22_HCM10_Global_P_30_1909x1134x35_480-490-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV144_E_GG22_HCM10_Global_P_30_2278x1134x35_575-585-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV96_E_F_GBS_HCG12R_Global_S_15_1762x1134x30_450-460-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV108_E_F_GBS_HCG12R_Global_S_15_1961x1134x35_510-520-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV132_E_GBS_HCG12R_Global_S_15_2382x1134x35_625-635-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV108_E_F_GBS_HCM10_Global_S_15_1722x1134x30_430-440-20250725.pdf",
+        "https://solvis.hr/wp-content/uploads/2026/06/SOLVIS-DS-EN-SV120_E_F_GBS_HCM10_Global_S_15_1909x1134x35_480-490-20250725.pdf"
+      ],
+      "format": "Eight2page OEM PDFs, literal model STC columns and rendered warranty/mechanical/thermal tables",
+      "licence_assessment": "OEM copyright retained; bounded manually reviewed facts/conditions only; no open bulk/document grant inferred. No PDF/prose/artwork in Git; source-specific footer/currentindex review retained.",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-06T13:00:41.334516+00:00",
+      "sha256": {
+        "3": "f12c366f0d9a37a310c83c43985f8aa2063e6ce2b2ef6fccdbcf91766f8a740c",
+        "4": "7b28db18f404247a8b1077ecaa917de4d43b62b678f8e966066b82967cf30af6",
+        "5": "321cbd73e1d188a9b0bf9d3720c1c1856ea19e6dd1e1bbb76f136681eb650cc6",
+        "6": "ea45b7fb5c325578ced1ad4d4d3c53031523afc707f3ffc3798268c75d9a2237",
+        "7": "01473e999adcdefbba6815ac147671e6a6edace9dbd8b6c3968241f427f9ba6a",
+        "8": "21027b606b4c0b1d3b5fb820f75f549a5a1c8520cad17d8c1ab3fffd23b17a0a",
+        "9": "5c324bb0ff601f745be8574332efcb1b58b49abaecbdb4c699df340a2aa52d0d",
+        "10": "71bd40fff8ce499b9a9344494e34c9adc48c81daff9d12764d7826079e15b662"
+      },
+      "etag": {
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null,
+        "8": null,
+        "9": null,
+        "10": null
+      },
+      "last_release": "July25,2025 printedfooter revisions; June2026 upload date is not product effective date",
+      "publication_cadence": "OEMrevision based; currentindex before technical downloads",
+      "reviewed": 24,
+      "accepted": 24,
+      "held": 0,
+      "rejected": 0,
+      "field_questions_held": 1,
+      "fields_offered": [
+        "frontSTC electrical",
+        "cells/dimensions/mass",
+        "relative thermal coefficients",
+        "voltage/fuse/operatingbounds",
+        "warrantyclaims"
+      ],
+      "mapping": "24literalmodels/527typedvalues; one Pmax held, separate NMOT/BNPI and componentIP/conditionalmechanical context. Existing SOLVISdoo, no newmanufacturer.",
+      "processed_cursor": {
+        "completed_index_positions": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "previous_completed_positions": [
+          0,
+          1,
+          2,
+          11
+        ],
+        "current_index_tables_remaining": 0,
+        "exact_models_this_batch": 24
+      },
+      "result": "All8selected tables exhausted. SV96-455 E F HCG12R power field remains null: STCprints445; modelcode455 is not a replacement rating, and P=IV is not used to choose. No optionalframe/mesh/irradiance clones. Drawingsupplywidth where mechanical HxD omits width.",
+      "next_action": "Skip unchangedcurrent12-table index; preserve onepower/threepriorheight questions. Seek independent permitted exactcombiner/tracker catalogue; GEESYSscope/rights held.",
+      "next_due_check": "2026-12-06T06:00:00Z"
+    },
+    {
+      "id": "chile_BCN_MinEner2026_1300",
+      "country": "CHL",
+      "entity": "projects",
+      "source_url": "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer/0?f=pjson",
+      "endpoint": [
+        "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer/0?f=pjson",
+        "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer?f=pjson",
+        "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&resultRecordCount=5&f=json",
+        "https://arcgiswebad.bcn.cl/arcgis/rest/services/ERNC_MIL1/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
+        "https://geoportal.cl/geoportal/catalog/34949/centrales-solares"
+      ],
+      "format": "Official BCN ArcGIS layermetadata/count and5-row no-geometry sample; original geoportal503",
+      "licence_assessment": "Layer copyright/description blank; service copyright describes an unrelated Esri basemap and cannot licence these plant records. OriginalMinEner/CNE metadata/reuse unresolved; generic IDE attribution statement not substituted.",
+      "publication_cadence": "Unestablished/revisionbased; metadata first, no hourly fullfile",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-06T13:04:26.808842+00:00",
+      "sha256": "4458ea910ec97011acfbde3ef5ebe509e0f3d2ee3e0155ee9f2184eb0cd0518d",
+      "etag": "\"7cd203da-gunzip-gzip\"",
+      "reviewed": 5,
+      "accepted": 0,
+      "held": 5,
+      "rejected": 0,
+      "mapping": "Discovery/review only; zero canonical field mapping accepted",
+      "result": "New official scalable discovery:716layerfeatures, not716verifiedPVprojects. Five sample rows explicitly tipoFV. NativeID_GE_SOLAR, ownership, grid, MW, RCA, lifecycle/date, datum/zone fields offered. MWAC/DC/grossnet unknown; zero units is not confirmed module/inverter count. Name2026 is not release date; sample lastupdate31Dec2025 is not presentoperation proof. No newadapter/feed/plant/field accepted.",
+      "next_action": "Highestvalue: recover source-specific MinEner licence/revision and nativeID/plant-phase mapping before bounded FV crosswalk; inspect CRS/date definitions and privacy, no automatic fuzzy merges.",
+      "retry_condition": "Applicable source rights/revision/access or exactidentity evidence resolves gates",
+      "processed_cursor": {
+        "layer_id": 0,
+        "layer_features_count": 716,
+        "sample_rows": 5,
+        "sample_positive_FV": 5,
+        "canonical_accepted": 0,
+        "next_partition": "bounded explicitlyFV sample after reuse/version/identity gates"
+      },
+      "next_due_check": "2026-11-13T13:00:00Z"
+    },
+    {
+      "id": "ghana_PPA_identity_review_1300",
+      "country": "GHA",
+      "entity": "projects",
+      "source_url": "https://ppaportal.energymin.gov.gh/about",
+      "endpoint": [
+        "https://ppaportal.energymin.gov.gh/about",
+        "https://ppaportal.energymin.gov.gh/faqs"
+      ],
+      "format": "Fresh public publisher policy pages plus cached4-row PV API metadata",
+      "licence_assessment": "Intended publicresearch/analysis is not an explicit dataset redistribution grant. Source-specific permission unresolved; no national-open-data or separate toolkit licence substituted.",
+      "publication_cadence": "Unestablished/revisionbased; metadata first, no hourly fullfile",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-06T12:59:55.360747+00:00",
+      "sha256": "12e4c71562e214a723f31edc1e0c2660c2b6ec6ccc3cf2939a9ee0c769a11139",
+      "etag": null,
+      "reviewed": 4,
+      "accepted": 0,
+      "held": 4,
+      "rejected": 0,
+      "mapping": "Discovery/review only; zero canonical field mapping accepted",
+      "result": "Cachedpublished4PPA summaries reviewed against15canonicalGhana projects; no unambiguous nativeplant/phase crosswalk. Company-name or municipality match alone is insufficient. No newAPIfulldownload or contractPDF; no commercial terms accepted. PortalactivePPA is not operatingplant proof.",
+      "next_action": "Keep4PPAholds; require applicable reuse and independent exactsite/phase or permit crosswalk and underlying clause/unit review before enrichment.",
+      "retry_condition": "Applicable source rights/revision/access or exactidentity evidence resolves gates",
+      "processed_cursor": {
+        "reference_codes": [
+          "GH-PPA-03",
+          "GH-PPA-07",
+          "GH-PPA-09",
+          "GH-PPA-11"
+        ],
+        "canonical_GHA_reviewed": 15,
+        "accepted": 0,
+        "prior_API_version": "v1.0/30Oct2026",
+        "new_API_download": false
+      },
+      "next_due_check": "2026-11-13T13:00:00Z"
+    },
+    {
+      "id": "GEESYS_combiner_scope_rights_1300",
+      "country": "IND",
+      "entity": "combiner_boxes",
+      "source_url": "https://geesysindia.com/solar-combiner-boxes.php",
+      "endpoint": [
+        "https://geesysindia.com/solar-combiner-boxes.php",
+        "https://geesysindia.com/downloads.php",
+        "https://geesysindia.com/Terms-of-use.php"
+      ],
+      "format": "Current OEM family/download HTML and explicit terms; no technicalPDFretrieval",
+      "licence_assessment": "Terms restrict modification/use withoutpriorwrittenconsent; documentpermission informational/personal and unmodified only. No publicopen technicalreuse grant; no contact/form.",
+      "publication_cadence": "Unestablished/revisionbased; metadata first, no hourly fullfile",
+      "last_attempt": "2026-11-06T13:18:45.513898+00:00",
+      "last_retrieval": "2026-11-06T13:14:08.094946+00:00",
+      "sha256": "a412c8c70b13c648a40428277279097139189416dae8dc0ade8f194def1cd69e",
+      "etag": null,
+      "reviewed": 2,
+      "accepted": 0,
+      "held": 2,
+      "rejected": 0,
+      "mapping": "Discovery/review only; zero canonical field mapping accepted",
+      "result": "Two configurable family labels reviewed, not2acceptedexactmodels. Generic/variantmodelprefixes differ across index/table, ratings/options do not establish a released fixedconfiguration. No fictional optioncrossproducts or technicaldata copiedtoGit/canonical; technicalHTMLcache discarded afterrightsreview.",
+      "next_action": "Resume only on applicable documented rights and literal configuration schedule; otherwise select independent publisher, do not contact or bypass.",
+      "retry_condition": "Applicable source rights/revision/access or exactidentity evidence resolves gates",
+      "processed_cursor": {
+        "families_reviewed": 2,
+        "exact_models_accepted": 0,
+        "technical_PDF_downloads": 0,
+        "rights_and_configuration_hold": true
+      },
+      "next_due_check": "2026-11-13T13:00:00Z"
     }
   ],
   "source_refresh_queue": [

@@ -265,9 +265,11 @@ def stage_boe_notices(
             )
         if effect == "public_consultation" and values["status"] not in {"announced", "unknown"}:
             raise ValueError("Public consultation does not establish permission or operation")
-        if effect in {"repowering_authorization", "construction_authorization"} and values[
-            "status"
-        ] not in {
+        if effect in {
+            "repowering_authorization",
+            "construction_authorization",
+            "preliminary_authorization",
+        } and values["status"] not in {
             "permitted",
             "unknown",
         }:
@@ -287,6 +289,7 @@ def stage_boe_notices(
                     "application_refusal",
                     "public_consultation",
                     "construction_authorization",
+                    "preliminary_authorization",
                     "repowering_authorization",
                     "environmental_conditions",
                 }

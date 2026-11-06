@@ -90,7 +90,9 @@ def plot_site_scene(
         linewidths=widths,
         antialiased=False,
     )
-    ax.add_collection3d(collection)
+    # Mixed triangles/quads can contain padded non-finite vertices internally.
+    # Bounds below come from the actual scene vertices, not collection padding.
+    ax.add_collection3d(collection, autolim=False)
     low, high = _extents(scene)
     span = np.maximum(high - low, 0.1)
     ax.set(

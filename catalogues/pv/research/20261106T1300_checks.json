@@ -1,0 +1,116 @@
+{
+  "pytest": {
+    "exit": 0,
+    "tail": [
+      "........................................................................ [ 78%]",
+      "........................................................................ [ 94%]",
+      ".........................                                                [100%]",
+      "457 passed in 19.08s"
+    ]
+  },
+  "ruff": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "format": {
+    "exit": 0,
+    "tail": [
+      "1244 files already formatted"
+    ]
+  },
+  "ty": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "catalogue": {
+    "exit": 0,
+    "tail": [
+      "Validated 90553 unique records; schema and field evidence present"
+    ]
+  },
+  "hygiene": {
+    "exit": 0,
+    "tail": [
+      "Repository check passed: 6241 candidate files; no flagged secrets or data."
+    ]
+  },
+  "citations": {
+    "exit": 0,
+    "tail": [
+      "Citation catalogue and all exports are consistent."
+    ]
+  },
+  "example": {
+    "exit": 0,
+    "tail": [
+      "                               Rosario solar project          CHL             5.5             NaN  -34.3593   -70.8903 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                             Caracoles solar project          CHL             2.7             NaN  -35.6929   -71.4890 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                           Aurora solar farm (Chile)          CHL           187.0             NaN  -20.7981   -69.4502 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                             Dona Igna solar project          CHL             2.2             NaN  -33.5897   -71.2133 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]"
+    ]
+  },
+  "viewer": {
+    "exit": 0,
+    "tail": [
+      "\u2139 cancelled 0",
+      "\u2139 skipped 0",
+      "\u2139 todo 0",
+      "\u2139 duration_ms 314.398707"
+    ]
+  },
+  "audit": {
+    "baseline": "9c0bf6c39f84229d35898aa31e84ec00923e1f52",
+    "new_by_entity": {
+      "modules": 24,
+      "inverters": 0,
+      "trackers": 0,
+      "combiner_boxes": 0,
+      "projects": 0
+    },
+    "enriched": {
+      "projects": 79
+    },
+    "newly_populated_fields": {
+      "extensions_json": 79,
+      "owners": 79
+    },
+    "substantive_enriched_project_fields_contexts": 158,
+    "equipment_typed_values": 527,
+    "records": 90553,
+    "totals": {
+      "projects": 65333,
+      "modules": 21715,
+      "inverters": 3278,
+      "trackers": 30,
+      "combiner_boxes": 197
+    },
+    "sources": 700,
+    "immutable_sources_preserved": 691,
+    "created_at_preserved": 90529,
+    "unchanged_prior_records": 90450,
+    "replay_operations": 103,
+    "exact_replay": true,
+    "idempotent": true,
+    "new_manufacturers": [],
+    "new_countries": [],
+    "canonical_quarantines": 0,
+    "permanent_record_rejections": 0,
+    "owner_identity_holds": 4,
+    "equipment_field_holds": 1,
+    "new_adapter": false
+  },
+  "snapshot": {
+    "typed_tables": 5,
+    "columns": 148,
+    "ZSTD": true,
+    "types_rows_checksums_verified": true,
+    "viewer_projection_verified": true,
+    "input_sha256": "e8b68769872de30a105543bdb0d7e9f0464e9a33c1a038a63e901c2032a29f0d",
+    "binaries_outside_git": true
+  },
+  "final_head_ci": "Recorded in PR195 on published final SHA; no passing remote claim before completion."
+}

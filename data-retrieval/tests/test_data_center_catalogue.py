@@ -39,6 +39,12 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_green_mountain_portfolio,
     parse_icolo_facility_page,
     parse_icolo_home_portfolio,
+    parse_jrc_2015_2018_participants,
+    parse_jrc_2018_participants,
+    parse_jrc_2023_participants,
+    parse_jrc_2024_new_participants,
+    parse_jrc_code_of_conduct_participants,
+    parse_jrc_equinix_participants,
     parse_maincubes_directory,
     parse_maincubes_site_page,
     parse_meta_locations,
@@ -669,6 +675,204 @@ def test_rack_centre_parsers_keep_facilities_and_campus_separate():
     with pytest.raises(ValueError, match="facility code"):
         parse_rack_centre_facility_page(
             b"", source_url="https://rack-centre.com/", expected_code="LGS3"
+        )
+
+
+def test_jrc_participant_parser_preserves_registry_boundaries():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/en/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=3&sort=asc"
+    )
+    parsed = parse_jrc_code_of_conduct_participants(
+        (FIXTURES / "jrc-code-of-conduct-digital-realty.html").read_bytes(),
+        source_url=source_url,
+    )
+    assert len(parsed["candidates"]) == 10
+    assert [row["external_id"] for row in parsed["candidates"][:4]] == [
+        "ESP1",
+        "ESP2",
+        "ESP3",
+        "ESP4",
+    ]
+    assert parsed["candidates"][-1]["external_id"] == "STO6"
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2024}
+    assert {row["country_code"] for row in parsed["candidates"]} == {"ESP", "SWE"}
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_code_of_conduct_participants(
+            (FIXTURES / "jrc-code-of-conduct-digital-realty.html")
+            .read_bytes()
+            .replace(b"STO6", b"STO7"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_equinix_parser_deduplicates_verbatim_am7_row():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/en/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=2&sort=desc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-equinix.html").read_bytes()
+    parsed = parse_jrc_equinix_participants(fixture, source_url=source_url)
+    assert parsed["displayed_rows"] == 35
+    assert len(parsed["candidates"]) == 34
+    assert parsed["duplicate_rows"] == [
+        {
+            "label": "The Netherlands: AM7, Amsterdam",
+            "occurrences": 2,
+            "reason": "verbatim duplicate registry row; normalized once",
+        }
+    ]
+    assert len({row["external_id"] for row in parsed["candidates"]}) == 34
+    assert {row["country_code"] for row in parsed["candidates"]} == {
+        "BGR",
+        "CHE",
+        "DEU",
+        "FRA",
+        "GBR",
+        "IRL",
+        "ITA",
+        "NLD",
+        "POL",
+        "SWE",
+        "TUR",
+    }
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2013}
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_equinix_participants(
+            fixture.replace(b"MA4, Manchester", b"MA5, Manchester"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_2018_parser_preserves_registry_spelling_and_boundaries():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/fr/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=2&sort=asc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-2018.html").read_bytes()
+    parsed = parse_jrc_2018_participants(fixture, source_url=source_url)
+    assert len(parsed["candidates"]) == 19
+    assert [row["external_id"] for row in parsed["candidates"][:3]] == [
+        "Aylesford",
+        "Maidstone",
+        "Royal Tunbridge Wells",
+    ]
+    assert [row["external_id"] for row in parsed["candidates"][-8:]] == [
+        "FRA11",
+        "AMS17",
+        "AMS18",
+        "LHR17",
+        "LHR18",
+        "LHR19",
+        "LHR20",
+        "LHR21",
+    ]
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2018}
+    assert {row["participant"] for row in parsed["candidates"]} == {
+        "DxC Technology",
+        "Digital Reality",
+    }
+    assert parsed["candidates"][-1]["locality"] == "London"
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_2018_participants(
+            fixture.replace(b"Doxfrod Park", b"Doxford Park"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_2015_2018_parser_requires_cross_language_stable_rows():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/fr/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=2&partner_search=&sort=asc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-2015-2018.html").read_bytes()
+    parsed = parse_jrc_2015_2018_participants(fixture, source_url=source_url)
+    assert len(parsed["candidates"]) == 17
+    assert {row["participant"] for row in parsed["candidates"]} == {
+        "AIMES Grid Services",
+        "Atos IT services",
+        "CGI IT UK limited",
+        "DataCentred Limited",
+        "EUMETSAT",
+        "Euroclear Bank SA/NV",
+        "FCO Services",
+        "Interxion Carrier Hotel, Ltd.",
+        "University of Strasbourg",
+    }
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {
+        2015,
+        2016,
+        2017,
+        2018,
+    }
+    assert parsed["candidates"][0]["registry_label"] == "kilby house"
+    assert parsed["candidates"][-1]["locality"] == "Longbridge"
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_2015_2018_participants(
+            fixture.replace(b"kilby house", b"Kilby House"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_2024_new_participants_parser_is_fail_closed_and_non_overlapping():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/es/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=3&partner_search=&sort=asc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-2024-new.html").read_bytes()
+    parsed = parse_jrc_2024_new_participants(fixture, source_url=source_url)
+    assert len(parsed["candidates"]) == 6
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2024}
+    assert {row["registry_label"] for row in parsed["candidates"]} == {
+        "D3 Geneva",
+        "Roazhon",
+        "G-Cloud Moschato",
+        "DCWTC Genova",
+        "Les Ulis",
+        "Castel Sanpietro Terme (BO)",
+    }
+    assert all("Digital Realty" not in row["participant"] for row in parsed["candidates"])
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_2024_new_participants(
+            fixture.replace(b"G-Cloud Moschato", b"G Cloud Moschato"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_2023_parser_preserves_exact_spellings_and_duplicate_row():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/es/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=3&partner_search=&sort=asc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-2023.html").read_bytes()
+    parsed = parse_jrc_2023_participants(fixture, source_url=source_url)
+    assert parsed["displayed_rows"] == 36
+    assert len(parsed["candidates"]) == 35
+    assert len({row["name"] for row in parsed["candidates"]}) == 35
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {2023}
+    assert parsed["duplicate_rows"] == [
+        {
+            "participant": "Interxion Detuschland GmbH",
+            "label": "Frankfurt FRA08",
+            "occurrences": 2,
+            "reason": "verbatim duplicate registry row; normalized once",
+        }
+    ]
+    assert {row["country_code"] for row in parsed["candidates"]} == {
+        "AUT",
+        "CAN",
+        "DEU",
+        "FRA",
+        "GBR",
+        "IRL",
+        "ITA",
+        "POL",
+        "USA",
+    }
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_2023_participants(
+            fixture.replace(b"Frankfurt FRA15", b"Frankfurt FRA16"),
+            source_url=source_url,
         )
 
 

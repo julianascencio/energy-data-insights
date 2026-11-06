@@ -1,0 +1,129 @@
+{
+  "pytest": {
+    "exit": 0,
+    "tail": [
+      "........................................................................ [ 80%]",
+      "........................................................................ [ 96%]",
+      ".................                                                        [100%]",
+      "449 passed in 23.25s"
+    ]
+  },
+  "ruff": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "format": {
+    "exit": 0,
+    "tail": [
+      "1237 files already formatted"
+    ]
+  },
+  "ty": {
+    "exit": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "catalogue": {
+    "exit": 0,
+    "tail": [
+      "Validated 90461 unique records; schema and field evidence present"
+    ]
+  },
+  "hygiene": {
+    "exit": 0,
+    "tail": [
+      "Repository check passed: 6184 candidate files; no flagged secrets or data."
+    ]
+  },
+  "citations": {
+    "exit": 0,
+    "tail": [
+      "Citation catalogue and all exports are consistent."
+    ]
+  },
+  "example": {
+    "exit": 0,
+    "tail": [
+      "                               Rosario solar project          CHL             5.5             NaN  -34.3593   -70.8903 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                             Caracoles solar project          CHL             2.7             NaN  -35.6929   -71.4890 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                           Aurora solar farm (Chile)          CHL           187.0             NaN  -20.7981   -69.4502 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]",
+      "                             Dona Igna solar project          CHL             2.2             NaN  -33.5897   -71.2133 [https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx]"
+    ]
+  },
+  "viewer": {
+    "exit": 0,
+    "tail": [
+      "\u2139 cancelled 0",
+      "\u2139 skipped 0",
+      "\u2139 todo 0",
+      "\u2139 duration_ms 243.079311"
+    ]
+  },
+  "preservation_replay": {
+    "baseline": "64dcf52278bb942591d16571252e4090963f67a1",
+    "new_by_entity": {
+      "modules": 0,
+      "inverters": 21,
+      "trackers": 0,
+      "combiner_boxes": 0,
+      "projects": 0
+    },
+    "enriched": {
+      "projects": 198
+    },
+    "newly_populated_fields": {
+      "extensions_json": 198,
+      "owners": 194
+    },
+    "substantive_project_fields_contexts": 392,
+    "equipment_typed_values": 460,
+    "dgeg_namespaces_added": 4,
+    "identifier_objects_enriched": 0,
+    "identifiers_added": 0,
+    "geography_fields": 0,
+    "records": 90461,
+    "totals": {
+      "projects": 65308,
+      "modules": 21661,
+      "inverters": 3265,
+      "trackers": 30,
+      "combiner_boxes": 197
+    },
+    "sources": 672,
+    "immutable_sources_preserved": 665,
+    "created_at_preserved": 90440,
+    "unchanged_prior_records": 90242,
+    "replay_operations": 219,
+    "reviewed_additive_namespace_operations": 0,
+    "idempotent": true,
+    "new_manufacturers": [
+      "Polycab India Limited"
+    ],
+    "new_countries": [],
+    "quarantines": 0,
+    "permanent_record_rejections": 0,
+    "owner_identity_holds": 6,
+    "prior_hold_repeated": 0,
+    "new_owner_holds": 6,
+    "nonPV_source_features_excluded": 1,
+    "reconciliation_proof": {
+      "previous_validated_main": "27f6765c7567f76bed6cde4fe74a270ba72aef70",
+      "final_branch_base": "64dcf52278bb942591d16571252e4090963f67a1",
+      "PV_baseline_trees_identical": true,
+      "preservation_replay_and_snapshot_input_unchanged": true
+    }
+  },
+  "snapshot": {
+    "typed_tables": 5,
+    "columns": 148,
+    "ZSTD": true,
+    "types_rows_checksums_verified": true,
+    "viewer_projection_verified": true,
+    "input_sha256": "aa2395978916348e5ebd94876bac25d24d72ebdb46adf54d3961954892df04f1",
+    "binaries_outside_git": true
+  },
+  "reconciled_main": "64dcf52278bb942591d16571252e4090963f67a1"
+}

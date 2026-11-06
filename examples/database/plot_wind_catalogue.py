@@ -824,3 +824,67 @@ for row in projects.to_dict("records"):
         print(row["name"], award["published_at"], award["manufacturer"], award["model_mentioned"])
         print(award["identity_basis"], award["configuration_status"])
         print("Installed turbine count remains:", row.get("turbine_count"))
+
+# %%
+# A common administrative procedure does not establish a common physical farm.
+print("Former joint administrative procedures; capacity additivity not established:")
+for row in rows:
+    relation = json.loads(row.get("extensions_json") or "{}").get("relationships", {})
+    if relation.get("relationship_type") == "former_joint_administrative_procedure":
+        print(row["name"], relation["related_project_name"], relation["former_procedure"])
+        print("Separated:", relation["separated_date"], "aggregation:", row["aggregation_role"])
+
+
+# Numeric consistency is a review screen, not independent performance validation.
+print("OEM exact tables: reported cells, withheld scalars and unknown revisions")
+for row in rows:
+    table = json.loads(row.get("extensions_json") or "{}").get("oem_numeric_table")
+    if table:
+        print(
+            row["model"],
+            "revision",
+            table["revision"],
+            "original bytes",
+            table["original_bytes_available"],
+            "area m2",
+            row.get("swept_area_m2"),
+            "cut-out m/s",
+            row.get("cut_out_m_s"),
+            "held",
+            sorted(json.loads(row.get("conflicts_json") or "{}")),
+        )
+print("Floating prototype depth: floater and anchors are different boundaries")
+for row in rows:
+    design = json.loads(row.get("extensions_json") or "{}").get("environmental_design")
+    if design and "floater_seabed_elevation_m" in design:
+        print(
+            row["name"],
+            "floater seabed elevation m",
+            design["floater_seabed_elevation_m"],
+            "datum",
+            design["vertical_reference"],
+            "anchor approximate depth m",
+            design["anchor_approx_depth_m"],
+            "capacity role",
+            row["aggregation_role"],
+        )
+
+# Operator MW boundaries and date precision stay separate from installed capacity.
+print("Dated operator observations: contracted/gross MW, not additive installed capacity")
+for row in rows:
+    for observation in json.loads(row.get("extensions_json") or "{}").get(
+        "operator_portfolio_observations", []
+    ):
+        facts = observation["facts"]
+        print(
+            row["name"],
+            observation["as_of"],
+            facts.get("status", "unknown"),
+            facts["capacity_basis"],
+            facts["capacity_mw"],
+            facts["cod"],
+            facts["cod_precision"],
+            facts["count_times_rating_check"],
+            row["aggregation_role"],
+        )
+print("Unknown exact models remain unknown; dated ownership does not overwrite earlier shares.")

@@ -1,0 +1,69 @@
+{
+  "run_id": "jrc-2024-new-participants-20261106T122737Z",
+  "validated_at": "2026-11-06T12:27:37Z",
+  "base_main_sha": "64dcf52278bb942591d16571252e4090963f67a1",
+  "branch": "research/data-center-database-20261106T0836Z",
+  "catalogue": {
+    "canonical_records": 3441,
+    "projects": 667,
+    "project_scopes": {"facility": 536, "phase": 3, "campus": 128},
+    "equipment": 2774,
+    "countries": 46,
+    "operators": 22,
+    "oems": 74,
+    "added_projects": 6,
+    "enriched_projects": 0,
+    "added_equipment": 0,
+    "enriched_equipment": 0
+  },
+  "inventory": {
+    "source_ids": [
+      "jrc-data-centre-code-of-conduct-2024-new-participants-20261106",
+      "eu-general-legal-notice-20261106"
+    ],
+    "participant_sets_processed": 6,
+    "facility_records_added": 6,
+    "records_added": 6,
+    "records_enriched": 0,
+    "normalized_capacity_records": 0,
+    "aggregation_unresolved_records": 6,
+    "excluded_previously_completed_records": 10,
+    "factual_originals_available": 0,
+    "rights_review_originals_available": 1,
+    "rights_review_bytes": 90265,
+    "reuse_prohibited": false,
+    "source_access_failure": true,
+    "new_reuse_holds": []
+  },
+  "local_checks": [
+    {"command": "JSON parsing for sources, backlog, source review, coverage, validation and decision ledger", "result": "passed"},
+    {"command": "python -m energy_data_retrieval.data_center_catalogue validate", "result": "passed; 3441 records"},
+    {"command": "build_data_center_jrc_2024_new_batch.py replay twice plus cmp against canonical JSONL", "result": "passed; 6 records reproduced byte-identically"},
+    {"command": "focused Data Center pytest suites", "result": "passed; 123 tests"},
+    {"command": "node --test tests/js/test_database_viewer.mjs", "result": "passed; 37 tests"},
+    {"command": "ruff format --check . and ruff check .", "result": "passed"},
+    {"command": "targeted ty check on changed production Python", "result": "passed"},
+    {"command": "python scripts/check_repository.py and scripts/check_citations.py", "result": "passed"},
+    {"command": "MPLBACKEND=Agg python examples/database/plot_data_center_catalogue.py", "result": "passed; project scopes 536 facility, 128 campus and 3 phase"},
+    {"command": "two independent data_center_catalogue build commands plus cmp", "result": "passed; byte-identical typed Zstandard snapshots"},
+    {"command": "python -m pytest -q", "result": "blocked at collection by stripped environment missing unrelated optional HTTP, weather, imagery and geospatial dependencies; focused catalogue suites passed"},
+    {"command": "strict Sphinx documentation build", "result": "not rerun locally because the stripped environment lacks the documented Python 3.13-only Orbital PV gallery dependency; remote CI is authoritative"},
+    {"command": "git diff --check", "result": "passed"}
+  ],
+  "snapshot_sha256": {
+    "input": "6fc5f2491c1a1bce7c33761610c9862a83289c2e07b1ce87af313d6acc06cfca",
+    "projects": "a381dadee04e53a0ad0fed85b10c63beae8600f3521f09320fc171dcb88f6283",
+    "equipment": "661c1ade3e6095557e8924691747d85b1078ac13ec18dbbb36a66667940ee05b",
+    "manifest": "f367b7e35820be363dec97ff4b9a3b269f79a49efd447fa79d8a803960c3e7d7",
+    "schema": "560593771c719e11e0a4cb0577f6a17330e22cfca840e627734b58be4fa9566b",
+    "sources": "b6e8d40032ed1bd41a793b94830e4c0a7f33ae980e13fd4d5d7ee8267d247866",
+    "jrc_2024_fixture": "e705ece51683958fdf56fe3a3b708895613133fae069e2c90d9bff5f60c8a146",
+    "jrc_2024_canonical_jsonl": "f619015a9117124d95a0cc02489f7655667f918ff69b820ba60ce3ee6d1aa65b"
+  },
+  "capacity_summaries": {
+    "it_capacity_mw": {"excluded": 214, "unknown": 391, "by_basis": {"ultimate_planned": {"reported_mw": 752.1, "records": 14}, "design_maximum": {"reported_mw": 637.675, "records": 41}, "operational": {"reported_mw": 159.5, "records": 7}}},
+    "grid_capacity_mw": {"excluded": 214, "unknown": 450, "by_basis": {"design_maximum": {"reported_mw": 207.5, "records": 3}}},
+    "facility_capacity_mw": {"excluded": 214, "unknown": 452, "by_basis": {"ultimate_planned": {"reported_mw": 75.0, "records": 1}}}
+  },
+  "remote_ci": {"status": "pending publication"}
+}

@@ -288,6 +288,7 @@ def test_construction_authorization_does_not_prove_operation(status):
     "effect",
     [
         "public_consultation",
+        "preliminary_authorization",
         "construction_authorization",
         "repowering_authorization",
         "environmental_conditions",
@@ -338,3 +339,9 @@ def test_failed_application_cannot_fill_installed_mw_even_with_unknown_lifecycle
     r["locators"]["installed_capacity_mw"] = "Application description"
     with pytest.raises(ValueError, match="not installed"):
         stage(r)
+
+
+@pytest.mark.parametrize("status", ["operational", "under_construction", "commissioning"])
+def test_preliminary_authorization_is_not_construction_or_operation(status):
+    with pytest.raises(ValueError, match="does not establish"):
+        stage(review(effect="preliminary_authorization", status=status))

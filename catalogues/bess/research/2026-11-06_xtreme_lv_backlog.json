@@ -1,0 +1,88 @@
+{
+  "as_of": "2026-11-06T13:58:23.970133+00:00",
+  "ranking_basis": "Verified yield, metadata, reuse clarity, effort",
+  "sources": [
+    {
+      "rank": 1,
+      "url": "https://www.marktstammdatenregister.de/MaStR/Datendownload",
+      "country_or_entity": "Germany / Bundesnetzagentur",
+      "version_or_date": "2026-11-06 revision 26.2",
+      "access_license_assessment": "Live index confirms XML DL-DE/BY 2.0",
+      "estimated_useful_yield": "Unknown until partition 9 accessible",
+      "offered_fields": [
+        "SEE/SSE/SEL",
+        "MW",
+        "usable MWh",
+        "location",
+        "lifecycle"
+      ],
+      "attempt_result": "Two spaced Range requests returned HTTP 503; no new rows downloaded or staged",
+      "processed_partition_or_cursor": "1\u20138 previously complete; next 9",
+      "retry_condition": "Service recovers; refresh index first",
+      "next_action": "Retry partition 9 and reciprocal joins; retain all earlier holds"
+    },
+    {
+      "rank": 2,
+      "url": "https://doe.gov.ph/articles/3435676--list-of-existing-power-plants-grid-connected-as-of-march-2026",
+      "country_or_entity": "Philippines / DOE",
+      "version_or_date": "March 2026 landing page discovered through official FOI response",
+      "access_license_assessment": "Original export/reuse not yet inspected; no ingestion",
+      "estimated_useful_yield": "Potential multi-record battery inventory; no verified candidate count",
+      "offered_fields": [
+        "plant names",
+        "installed/dependable MW",
+        "technology"
+      ],
+      "attempt_result": "Web retrieval inaccessible; direct HTTP 200 returned a site shell with Page Not Found and no PDF/download links. Footer public-domain notice observed; actual inventory not obtained.",
+      "processed_partition_or_cursor": "No partition processed",
+      "retry_condition": "Accessible original official document and reuse assessment",
+      "next_action": "Retrieve regional original DOE inventories; separate battery/hybrid/pumped hydro",
+      "capture": {
+        "url": "https://doe.gov.ph/articles/3435676--list-of-existing-power-plants-grid-connected-as-of-march-2026",
+        "sha256": "f58c34dd3a233ff1a4c214cf5adbc3e62af608f91e5ebe6321501574f51fcfeb",
+        "retrieved_at": "2026-11-06T13:58:38.795234+00:00"
+      }
+    },
+    {
+      "rank": 3,
+      "url": "https://www.iemop.ph/the-market/participants/wesm-members/",
+      "country_or_entity": "Philippines / IEMOP",
+      "version_or_date": "Live list checked 2026-11-06",
+      "access_license_assessment": "Legal notice https://www.iemop.ph/about/legal-and-privacy/ restricts adopting/modifying/reproducing information without prior written consent",
+      "estimated_useful_yield": "Potential multiple battery registration observations; no acceptance count",
+      "offered_fields": [
+        "resource name",
+        "participant",
+        "registration date",
+        "status"
+      ],
+      "attempt_result": "Representative battery entries visible; stopped before bulk extraction after reviewing terms",
+      "processed_partition_or_cursor": "No accepted partition",
+      "retry_condition": "Express applicable permission or independent reusable evidence",
+      "next_action": "Use DOE/owner evidence; registration date is not COD"
+    },
+    {
+      "rank": 4,
+      "url": "https://www.renonpower.com/uploadfile/2025/1106/Xtreme-LV-1.0-User-Manual.pdf",
+      "country_or_entity": "Renon Power",
+      "version_or_date": "A14; publication date not established",
+      "access_license_assessment": "All rights reserved; bounded factual transcription only, no document redistribution",
+      "estimated_useful_yield": 14,
+      "offered_fields": [
+        "exact models",
+        "energy",
+        "voltage",
+        "current",
+        "module quantities",
+        "dimensions",
+        "temperature",
+        "interfaces"
+      ],
+      "attempt_result": "14/14 exact base model columns accepted; one energy discrepancy retained",
+      "processed_partition_or_cursor": "Pages 34\u201335 complete; page 36 derating reviewed",
+      "retry_condition": "New revision or corrected rating table",
+      "next_action": "Resolve 35.85 kWh discrepancy; seek separately specified components, without reimporting base models"
+    }
+  ],
+  "prior_backlog": "2026-11-06_p5_p8_backlog.json; prior holds unchanged"
+}

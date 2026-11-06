@@ -143,3 +143,67 @@ observations, not warranty or normalized tested cycle life. Optional features do
 not create models. IP66 battery-compartment protection does not replace system
 IP55. IC418-800's printed AC range excludes its nominal voltage and remains a
 conflict. Module/cluster mechanical and environmental boundaries remain separate.
+
+`atess_battery` retains product level, explicit module/BPU counts, C-rates,
+module/rack Ah, BMS and exact table locator. `module_record_id` connects only
+VoltStack assemblies to their named module. BC55NPB has an unnamed, physically
+different module; no link is inferred. Rack limits and protection are not module
+limits. Published rounded ratings remain unchanged; arithmetic checks in
+`conflicts_json` never become replacement specifications.
+
+`intilion_scalepac` preserves exact enclosure counts, separately published usable
+energy at 90% DoD, apparent-power upper bounds, approximate/strict mass qualifiers,
+and time-versus-throughput warranty limits. The scalepac5 throughput `>` qualifier
+is retained verbatim. Supplier role is system integrator, not cell manufacturer.
+System-level RTE is not transferred to each tabulated enclosure configuration.
+
+### INTILION i4, IAU and scalepac boundaries
+
+`intilion_i4` represents the named two-container/one-PCS BESU. Example usable
+AC energy at BOL remains customer-specific; internal container kWh is not
+a complete-system energy scalar. PCS enclosure, inverter electrical limits,
+peak conversion efficiency, transformer losses and switchgear fault ratings
+retain component boundaries. MVA is never inferred MW. Optional IAU protocols
+are not included hardware. Noise/design-life footnote ambiguity stays held.
+`intilion_iau` represents the named supervisory controller, with no battery
+energy/power assigned. Eight-BESU versus 64-BESU scaling claims remain in
+conflicts; planned 24-ICU expansion is not current functionality.
+`intilion_scalepac_grid` retains per-power-unit AC currents, not a sum across
+a cabinet configuration. The 110%/minimum-ten-minute overload observation is
+not a continuous active-power rating. No anonymous components become models.
+
+### Renon configurations and ATESS impedance
+
+`renon_specification` retains exact model column/page, module/string counts,
+charge/discharge limits, EPS versus grid ratings, separate DC ports, approximate
+mass/dimensions, thermal derating and explicit warranty limitations. CEC inverter
+and peak DCDC conversion efficiency are not system RTE. Smart Matrix table kVA
+and cover kW claims remain quarantined; no multi-container active power is inferred.
+EBrick-IND's ambiguous cell-voltage labels, Ah/energy relationship and parallel
+illustration/table counts remain native observations with conflict evidence.
+R-CC01C00800 is an EMS communication cabinet; its 600 W air-conditioner rating is
+not total auxiliary draw. Product relationships do not assign equipment to projects.
+
+`atess_impedance_bms` adds model-column AC internal-resistance upper bounds in
+milliohms, explicitly without test frequency/temperature, and the stated BMS
+levels, BC55NPB LCD observations and protection functions. AC resistance is not
+silently relabelled DC resistance; previous voltage/energy conflicts remain intact.
+
+`renon_agreement_a04` records exact ECube A1-US charge/discharge and PV/PCS
+limits, cell-temperature control windows, storage/self-discharge conditions,
+auxiliary supply requirements and EMS interfaces with page/section provenance.
+The 97.5% peak conversion efficiency is not system round-trip efficiency, and
+the recommended 5 kVA external supply is not auxiliary consumption. IP, DC
+voltage and site/operating environment discrepancies remain in conflicts. The
+public warranty names A0-US; its retention/throughput terms are not applied to
+these A1-US models. The agreement is an unsigned OEM template, not an executed
+customer contract or independent certification.
+
+`renon_residential` retains exact module/unit page provenance, overcurrent
+protection thresholds and delays separately from operating-current ratings,
+Fahrenheit thermal/storage limits, approximate mass and unconditioned cycle
+claims. `component_catalogue_links` resolves an explicitly named module code
+to its canonical record; it does not propagate module ratings to the parent
+stack or resolve pre-existing stack capacity/parallel conflicts.
+
+`renon_xtreme_lv` retains A14 page/column provenance, system Ah, exact component codes, module quantities, maximum charge/discharge current, control voltage thresholds, temperature bounds, approximate mass, parallel limits and nonnumeric charging derating. Base models exclude the optional -H heating configuration. Model codes are not decoded into ratings.
