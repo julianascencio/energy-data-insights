@@ -155,3 +155,27 @@ Reviewable ledgers:
 [cumulative counts](2026-11-06_solarmd_kosovo_cumulative.json),
 [validation](2026-11-06_solarmd_kosovo_validation.json) and
 [concurrency](2026-11-06_solarmd_kosovo_concurrency.json).
+
+
+## Publication and hosted verification
+
+Data/code commit `22ecdd2f2fb87134a3d3f360289cd176e778dd88` was published at
+03:15 Atlantic/Canary. All28published blob hashes and tree
+`665e9acedbaea1929530cf80e6f5a0efe65cf1bf` match the reviewed index; the fetched
+checkout is clean. Main and PR heads were unchanged at the expected-head non-force
+update. The PR remains open and unmerged.
+
+At03:22, [Python CI](https://github.com/julianascencio/energy-data-insights/actions/runs/42155450097)
+passes **3,182tests on Python3.13** and **3,178passed /4skipped on Python3.12**, plus
+lint/types/format, distribution metadata, installed wheels and examples.
+[Documentation CI](https://github.com/julianascencio/energy-data-insights/actions/runs/42155450173)
+passes strict full-gallery execution, database/viewer assets and **717HTML-page**
+internal-link validation. PR Pages deployment is correctly skipped.
+
+Actual elapsed effort to the verified data/code result: **approximately33minutes**,
+comprising about25minutes of research, extraction, reconciliation and overlapping
+local validation, followed by publication and hosted validation. The selected source
+partitions are exhausted. This follow-up records validation evidence and adds no
+canonical data or timestamp-only record changes. Final documentation-head status
+is reported in the PR verification without attributing these data-head results to
+another commit.
