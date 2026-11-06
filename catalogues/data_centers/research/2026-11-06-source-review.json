@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T07:23:39Z",
+  "retrieved_at": "2026-11-06T08:15:44Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -64,6 +64,14 @@
       "enriched_records": 0,
       "reuse": "Public copyrighted operator and issuer pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, contacts, security and access details are excluded.",
       "originals": "Five factual official HTML originals total 941,065 bytes and have individual SHA-256 checksums in sources.json. A separate 177,649-byte privacy-policy capture supported rights review but is not a factual source."
+    },
+    {
+      "inventory": "European Commission JRC 2024 Digital Realty Spain and Sweden participant partition",
+      "processed_offset": 10,
+      "accepted_records": 10,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "The official participant page returned a request-rejected response from this environment, while the exact rows remained available through the public indexed reader. No original checksum is claimed. The separate 90,265-byte EU legal notice was captured and checksummed."
     }
   ],
   "deferred": [
@@ -110,6 +118,14 @@
     {
       "candidate": "Open Access Data Centres public facility portfolio",
       "reason": "Official terms prohibit reproduction except under the copyright notice. This is a reuse hold, not an access failure; no OADC facts, captures or source-registry entries were published."
+    },
+    {
+      "candidate": "JRC participant-facility lifecycle, ownership, locality and capacity",
+      "reason": "The participant registry establishes exact names and 2024 adhesion only. It does not establish current operation, ownership, physical aggregation, locality, certification or capacity; all ten records remain lifecycle-unknown and aggregation-unresolved."
+    },
+    {
+      "candidate": "PAIX ACC-1 and NBO-1 public facility pages and fact sheets",
+      "reason": "Current official terms prohibit both automated and manual monitoring or copying of website material. This is a reuse hold, not an access failure; no PAIX facts, original fact-sheet bytes or records were imported."
     }
   ],
   "quarantined": [
@@ -244,6 +260,11 @@
     "LGS1's exact 1.5 MW IT load and 1,094 m2 white space are normalized. LGS2's exact 12 MW IT load and 2025-04-10 commissioning date are normalized; the separately stated 13.5 MW campus total remains only on the excluded aggregate.",
     "LGS2's conflicting 7,200 m2 and 3,240 m2 white-space claims remain observations. Its 25 MVA utility commitment is not converted to grid MW; LGS1 PUE 1.5 lacks a measurement period and LGS2 PUE 1.35 is a design value.",
     "Uptime Institute month-precision Tier III awards for the original Lagos facility remain issuer-verified observations on LGS1 rather than certifications_json entries. No LGS2 certification is inferred.",
-    "The OADC screening preserves an existing reuse hold and imports no facts or bytes. All prior holds and quarantines remain in force."
+    "The OADC screening preserves an existing reuse hold and imports no facts or bytes. All prior holds and quarantines remain in force.",
+    "The complete bounded 2024 JRC Digital Realty Spain and Sweden partition is processed at offset ten: ESP1-ESP4 and STO1-STO6.",
+    "JRC participation establishes exact registry identities and adhesion year only. Lifecycle, ownership, operation, locality, certification and every capacity boundary remain unknown.",
+    "All ten JRC records are aggregation-unresolved and therefore excluded from IT, grid and facility-capacity totals under every filter.",
+    "The JRC direct-page rejection is an access/content failure, not a reuse prohibition. The Commission CC BY 4.0 notice was captured and checksummed separately.",
+    "PAIX ACC-1 and NBO-1 remain on reuse hold because current terms prohibit automated and manual copying; no PAIX facts or source bytes were published."
   ]
 }
