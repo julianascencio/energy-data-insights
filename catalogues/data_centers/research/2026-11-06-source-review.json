@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T09:25:46Z",
+  "retrieved_at": "2026-11-06T09:58:36Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -80,6 +80,14 @@
       "enriched_records": 0,
       "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
       "originals": "The official participant page returned a request-rejected response from this environment. The complete 35 displayed rows were consistent across multiple indexed official-language copies; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
+    },
+    {
+      "inventory": "European Commission JRC 2018 DxC Technology and Digital Reality participant partitions",
+      "processed_offset": 19,
+      "accepted_records": 19,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "The official participant page returned a request-rejected response from this environment. The complete 11 DxC Technology and eight Digital Reality rows were available through the indexed official page; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
     }
   ],
   "deferred": [
@@ -134,6 +142,10 @@
     {
       "candidate": "JRC Equinix participant-facility lifecycle, ownership, operation and capacity",
       "reason": "The corporate participant row establishes 34 unique site codes, cities and 2013 adhesion only. It does not establish current operation, ownership, physical aggregation, certification or capacity; all 34 records remain lifecycle-unknown and aggregation-unresolved."
+    },
+    {
+      "candidate": "JRC 2018 DxC Technology and Digital Reality lifecycle, ownership, operation and capacity",
+      "reason": "The registry establishes 19 exact participant-facility labels and 2018 adhesion only. It does not establish current operation, ownership, physical aggregation, certification or capacity; all records remain lifecycle-unknown and aggregation-unresolved."
     },
     {
       "candidate": "PAIX ACC-1 and NBO-1 public facility pages and fact sheets",
@@ -235,6 +247,14 @@
         "source_row_multiplicity"
       ],
       "reason": "The official participant table displays The Netherlands: AM7, Amsterdam twice verbatim while reporting 35 rows. The identical duplicate is retained as an observation and normalized once; no second facility is synthesized."
+    },
+    {
+      "candidate": "JRC 2018 printed organization and facility spellings",
+      "fields": [
+        "participant_name",
+        "facility_name"
+      ],
+      "reason": "Digital Reality, Doxfrod Park and Winyard are retained exactly as printed. No owner/operator normalization or spelling correction is inferred without independent evidence."
     }
   ],
   "normalization_notes": [
@@ -289,6 +309,10 @@
     "The duplicated AM7 Amsterdam source row is normalized once and retained as an explicit source-occurrence observation; it does not inflate the facility count.",
     "JRC Equinix participation supports exact site code, city and 2013 adhesion only. Lifecycle, ownership, operation, certification, physical aggregation and every capacity boundary remain unknown.",
     "All 34 Equinix records are aggregation-unresolved and excluded from IT, grid and facility-capacity totals under every filter.",
-    "The direct JRC-page rejection remains an access/content failure, not a reuse prohibition. The previously captured Commission CC BY 4.0 notice remains the rights basis; all saved reuse holds remain in force."
+    "The direct JRC-page rejection remains an access/content failure, not a reuse prohibition. The previously captured Commission CC BY 4.0 notice remains the rights basis; all saved reuse holds remain in force.",
+    "The complete displayed 2018 JRC partitions are processed at offsets 11 DxC Technology and eight Digital Reality identities.",
+    "Digital Reality is retained as the exact registry participant spelling; it is not converted into an owner or operator relationship. Apparent Doxfrod Park and Winyard source spellings are preserved for review.",
+    "The registry supports participant-facility identity and 2018 adhesion only. Adhesion is not commissioning, certification or deployment evidence, and every lifecycle, ownership, operation and capacity field remains unresolved.",
+    "All 19 records are aggregation-unresolved and excluded from IT, grid and facility-capacity totals under every filter. The direct page rejection is an access/content failure, not a reuse prohibition; all saved holds remain in force."
   ]
 }
