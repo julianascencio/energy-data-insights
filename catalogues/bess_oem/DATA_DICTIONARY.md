@@ -188,3 +188,13 @@ not total auxiliary draw. Product relationships do not assign equipment to proje
 milliohms, explicitly without test frequency/temperature, and the stated BMS
 levels, BC55NPB LCD observations and protection functions. AC resistance is not
 silently relabelled DC resistance; previous voltage/energy conflicts remain intact.
+
+`renon_agreement_a04` records exact ECube A1-US charge/discharge and PV/PCS
+limits, cell-temperature control windows, storage/self-discharge conditions,
+auxiliary supply requirements and EMS interfaces with page/section provenance.
+The 97.5% peak conversion efficiency is not system round-trip efficiency, and
+the recommended 5 kVA external supply is not auxiliary consumption. IP, DC
+voltage and site/operating environment discrepancies remain in conflicts. The
+public warranty names A0-US; its retention/throughput terms are not applied to
+these A1-US models. The agreement is an unsigned OEM template, not an executed
+customer contract or independent certification.

@@ -141,3 +141,7 @@ exclusive reciprocal storage-installation join. Coordinates retain source precis
 without an asserted datum or accuracy. Registry status is a dated declaration,
 not live availability. Location identities may span phases; held neighboring or
 shared-site units must be reconciled before adding commercial-project totals.
+
+`mastr_partition3_reconciliation` retains a held sibling or expansion observation,
+its exact registry member/row and the unresolved site boundary. It does not add
+that candidate capacity to the canonical record or assert a confirmed phase link.

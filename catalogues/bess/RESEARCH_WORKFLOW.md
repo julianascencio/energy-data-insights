@@ -24,7 +24,9 @@ or a live availability feed. Do not interpret record counts as installed capacit
    different SEL IDs do not prove separate commercial projects. Review nearby
    coordinates and names manually. The 6 November partitions 1 and 2 are already
    processed: 79 accepted units, 30 battery holds and 97 non-battery exclusions.
-   Recheck the live release before processing partition 3. Retain suspended
+   Partitions 3–4 subsequently accepted 55 units, held 31 battery candidates and
+   excluded four non-battery units. Their review ledgers include all 90 threshold
+   candidates. Recheck the live release before processing partition 5. Retain suspended
    status and first-commissioning dates without converting them into commercial COD.
    Downloaded archive members must match central-directory size/CRC and have
    individual SHA256 checksums; never label a partial download as a whole-ZIP hash.
