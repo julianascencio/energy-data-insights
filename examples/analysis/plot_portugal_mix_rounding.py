@@ -97,9 +97,7 @@ axes[0].set(
     ylabel="October share of consumption (%)",
     title="Implied monthly shares: rounding envelopes",
 )
-axes[0].text(
-    0.02, 0.02, "Black x = REN published October share", transform=axes[0].transAxes
-)
+axes[0].text(0.02, 0.02, "Black x = REN published October share", transform=axes[0].transAxes)
 axes[1].bar(list(productivity), list(productivity.values()))
 axes[1].axhline(1.0, linestyle="--", color="black", label="Historical reference")
 axes[1].set(
