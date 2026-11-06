@@ -1,7 +1,11 @@
 {
-  "updated_at": "2026-11-06T07:45:02.416955+00:00",
-  "branch": "research/wind-20261106-0535",
-  "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-2235.lock",
+  "updated_at": "2026-11-06T13:39:52.822339+00:00",
+  "branch": "research/wind-20261106-0835",
+  "run_lock": {
+    "path": "/tmp/energy-data-insights-wind-20261106-0835.lock",
+    "nonblocking": true,
+    "branch": "research/wind-20261106-0835"
+  },
   "queue": [
     {
       "rank": 1,
@@ -235,40 +239,40 @@
       "rank": 3,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
-      "partition": "Unlinked REPD saved candidates offsets800:1000 next",
-      "next_offset": 800,
+      "partition": "Unlinked saved candidates offsets2000:2200 next",
+      "next_offset": 2000,
       "status": "crosswalk_partition_completed_remaining_applications_pending",
       "tasks": [
         "Do not rerun 642 completed crosswalk enrichments as new work",
         "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
         "Reconcile scope of 642 enriched records against permits before enabling any capacity totals",
-        "Offsets0:800 structurally reviewed; all remain identity holds, permit contents not yet reviewed. Next800:1000 then exact original permit crosswalks."
+        "Offsets0:2000 structurally reviewed, all held pending permits; next2000:2200."
       ],
       "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
       "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "next_ids": [
-        "4105",
-        "4106",
-        "4107",
-        "4112",
-        "4115",
-        "4117",
-        "4126",
-        "4127",
-        "4128",
-        "4129",
-        "4131",
-        "4132",
-        "4134",
-        "4135",
-        "4136",
-        "4137",
-        "4144",
-        "4145",
-        "4146",
-        "4147"
+        "17841",
+        "17944",
+        "17980",
+        "18043",
+        "18071",
+        "18076",
+        "18147",
+        "18149",
+        "18321",
+        "18325",
+        "18368",
+        "18379",
+        "18380",
+        "18394",
+        "18442",
+        "18443",
+        "18444",
+        "18445",
+        "18456",
+        "18494"
       ],
-      "structural_review": "2026-11-05-1435-repd-review.json"
+      "structural_review": "2026-11-06-1335-repd-review.json"
     },
     {
       "rank": 4,
@@ -522,7 +526,26 @@
         "Xiangshan No.1 PhaseII official project/phase identity; 2022WD225-9000 brochure observation does not establish installed revision",
         "Saudi project official identity and WD200-7700 60Hz exact datasheet",
         "WD230-11500 original certificate/model table with explicit rating and geometry"
-      ]
+      ],
+      "independent_sany_partition": {
+        "status": "All eleven global English turbine tables reviewed; ten added, SI-16840 held",
+        "review": "2026-11-06-0935-oem-review.json",
+        "next_task": "Seek unrestricted original correction for SI-16850 cut-out and SI-18572/SI-19580 areas; SI-16840 global/India revision crosswalk. Do not repeat April2025 product-family PDF: explicit reuse exclusion.",
+        "followup_review": "2026-11-06-1035-review.json",
+        "excluded_original": {
+          "url": "https://sanyglobal-img.sany.com.cn/brands/sany-product-family.pdf",
+          "sha256": "4b5bdadce4544f5f0e94e8609db50f431dd382d4c4550637cc55b77dccde9245",
+          "http_status": 200,
+          "bytes": 23707952,
+          "title": "SANY Product Family April 2025",
+          "locator": "PDF page1, lower-right publisher notice",
+          "decision": "excluded_explicit_reuse_restriction",
+          "reason": "Publisher prohibits copying any content for any purpose without written permission; no specifications transcribed into catalogue",
+          "original_available": true,
+          "download_failure": false,
+          "authentication_required": false
+        }
+      }
     },
     {
       "rank": 6,
@@ -535,7 +558,29 @@
         "Verify Lake Turkana installed MW using dated 2024 report; clear field deferral only after scope reconciliation",
         "Update Dumat current status from official operator/regulator",
         "Add Africa and Middle East registries, Asian licensing lists and official floating inventories; retain full selected batches"
-      ]
+      ],
+      "masdar_operational_partition": {
+        "status": "Complete20-row March2024operational subset reviewed:9new3enriched8identityholds",
+        "review": "2026-11-06-1135-operator-review.json",
+        "next_task": "Exact8held source rows require original registry crosswalk; Dumat latestpost-March2024status remainsunresolved. Do not re-extract completed operational table.",
+        "next_names": [
+          "Rocksprings Wind",
+          "Sterling Wind",
+          "Coyote Wind",
+          "Las Majadas Wind",
+          "Dudgeon Offshore Wind",
+          "Noupoort Wind",
+          "Loeriesfontein 2 Wind",
+          "Khobab Wind"
+        ],
+        "construction_followup": [],
+        "construction_source_locator": "SameJuly2024circular pp148 and166; historical construction only, no2026operation inferred",
+        "construction_completed": {
+          "review": "2026-11-06-1235-operator-review.json",
+          "new_projects": 2,
+          "next_task": "Zarafshan14Dec2024 operational inauguration versus formalCOD; Baltic Eagle later commissioning and9.5/9.53MW revision. Do not repeat2024tables. Eight operational identity holds unchanged."
+        }
+      }
     },
     {
       "rank": 7,
@@ -567,6 +612,24 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-07-16",
+        "2026-07-17",
+        "2026-07-18",
+        "2026-07-20",
+        "2026-07-21",
+        "2026-07-22",
+        "2026-07-23",
+        "2026-07-24",
+        "2026-07-25",
+        "2026-07-27",
+        "2026-07-28",
+        "2026-07-29",
+        "2026-07-30",
+        "2026-07-31",
+        "2026-08-01",
+        "2026-08-03",
+        "2026-08-04",
+        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-08",
@@ -646,15 +709,33 @@
         "2026-11-04"
       ],
       "next_dates": [
-        "2026-08-03",
-        "2026-08-04",
-        "2026-08-05"
+        "2026-07-13",
+        "2026-07-14",
+        "2026-07-15"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "August3–5 all A/B issues; exact primary wind permit/phase crosswalks for Tarayuela/HontalbillaII/RadonaII. Pasama joint procedure does not cancel CerrodeMagaña automatically; Maira final execution design remains held.",
+      "next_task": "July13–15 all A/B issues; La Herrada and Torozos wind permit identities held, solar capacities excluded",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-07-16",
+        "2026-07-17",
+        "2026-07-18",
+        "2026-07-20",
+        "2026-07-21",
+        "2026-07-22",
+        "2026-07-23",
+        "2026-07-24",
+        "2026-07-25",
+        "2026-07-27",
+        "2026-07-28",
+        "2026-07-29",
+        "2026-07-30",
+        "2026-07-31",
+        "2026-08-01",
+        "2026-08-03",
+        "2026-08-04",
+        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-08",
@@ -733,7 +814,7 @@
         "2026-11-03",
         "2026-11-04"
       ],
-      "latest_review": "2026-11-06-0735-review.json",
+      "latest_review": "2026-11-06-1335-review.json",
       "unavailable_dates": [
         {
           "date": "2026-09-06",
@@ -846,12 +927,12 @@
       "offshore_followup": "Bundesland1416 Ausschließliche Wirtschaftszone:1813 units; separate offshore identity adapter and primary fixed/floating evidence needed; do not apply onshore acceptance mapping."
     }
   },
-  "validation_storage": "0735 original BOE/Windey captures, snapshots and logs outside Git; hashes committed.",
+  "validation_storage": "1135 originalBOEHTML andMasdarPDF checksummed outsideGit",
   "publication_continuation": {
-    "branch": "research/wind-20261106-0535",
-    "main": "036429f93354749517d91ac62b18390ec7bccddc",
-    "expected_head": "3070d97a33c32516f10da822436b2033a760ad7a",
-    "pr": 191,
+    "branch": "research/wind-20261106-0835",
+    "main": "64dcf52278bb942591d16571252e4090963f67a1",
+    "expected_head": "2dffff960992037d83a01e34313df6be939fd135",
+    "pr": 198,
     "leave_open_unmerged": true
   }
 }

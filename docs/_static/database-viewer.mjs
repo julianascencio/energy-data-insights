@@ -1,4 +1,4 @@
-import {windSupplyAwardSummary, windDesignSummary, display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary, windCertificationSummary, windOnsSummary, windOnsGeography, windSigaSummary, windOemTableSummary} from "./database-core.mjs";
+import {windOperatorPortfolioSummary, windNumericTableSummary, windSupplyAwardSummary, windDesignSummary, display, filterRows, sortRows, statistics, groupRows, toCsv, projectSummary, bessProjectSummary, hasLocation, dataCenterCapacity, dataCenterScopes, windCapacity, hydroCapacity, windEvidence, windTurbineSummary, windComponentApplications, windHubHeightSummary, windEpdSummary, windEiaSummary, windEiaScopeSummary, windOemUpdateSummary, windOemHistorySummary, windReferenceYieldSummary, windCertificationSummary, windOnsSummary, windOnsGeography, windSigaSummary, windOemTableSummary} from "./database-core.mjs";
 
 const root = document.querySelector("[data-database]") || document.getElementById("pv-database");
 const isHydro = root.dataset.database === "hydro";
@@ -132,6 +132,8 @@ function render() {
     }
   } else if (isWind && tableName === "projects") {
     const evidence = windEvidence(filtered);
+    const operator = windOperatorPortfolioSummary(filtered);
+    summary.push([number(operator.projects), "Dated operator portfolios", `${operator.dates.join(" · ") || "No observations"} · ${operator.observations} observations (${Object.entries(operator.statuses).map(([s,n])=>`${n} ${s}`).join("; ")}) · ${operator.withoutEvidence} projects without evidence · ${operator.excludedProjects} unresolved/aggregate exclusions · ${operator.unknownModels} unknown exact models · ${operator.averageRatings} fleet-average ratings. ${Object.entries(operator.capacity).map(([basis,c]) => `${basis}: ${c.known} known, ${c.unknown} unknown, ${c.zero} reported zero`).join(" · ")}. Contracted and gross MW remain distinct; count × rating is only a check. Historical ownership and milestones are not current status or installed capacity.`]);
     const siga = windSigaSummary(filtered);
     summary.push([number(siga.projects), "Dated SIGA registry evidence", `${siga.dates.join(" · ") || "No dataset date"} · ${siga.states.join(", ")} · ${siga.snapshots} observations (${siga.partitions.map(p=>`${p.state || "Unknown state"} ${p.date}: ${p.projects} linked projects`).join("; ")}) · ${siga.withoutEvidence} projects without evidence; among linked projects, ${siga.unresolvedScopes} unresolved scopes and ${siga.unknownLifecycles} unknown lifecycles. ${Object.entries(siga.categories).map(([key,c])=>`${key}: ${c.known} known, ${c.unknown} unknown, ${c.zero} reported zero`).join(" · ")}. ${siga.locatedObservations} registry-point observations and ${siga.unknownLocationObservations} without valid source coordinates; point precision is not accuracy or a farm boundary. Categories are separate; physical guarantee is not installed capacity. No current census or aggregation eligibility inferred.`]);
     const ons = windOnsSummary(filtered);
@@ -173,6 +175,8 @@ function render() {
       [number(inventory.located), "Mapped turbine records", "Includes planned, erected and historical rows"],
       [number(inventory.lifecycleUnknown), "Lifecycle unknown", "Erected alone does not establish operation"]);
   } else if (isWind && tableName === "equipment") {
+    const numeric = windNumericTableSummary(filtered);
+    if (numeric.models) summary.push([number(numeric.models), "Reviewed OEM numeric tables", `${numeric.unavailableOriginals} without original bytes · ${numeric.unknownRevision} unknown revisions · ${numeric.areaHeld} area and ${numeric.cutOutHeld} cut-out cells held. Printed observations remain in evidence; arithmetic checks do not supply replacement specifications.`]);
     const hubs = windHubHeightSummary(filtered);
     const epds = windEpdSummary(filtered);
     const updates = windOemUpdateSummary(filtered);

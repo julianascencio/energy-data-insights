@@ -41,6 +41,8 @@ def review_unlinked_applications(
     if type(offset) is not int or type(limit) is not int or offset < 0 or limit <= 0:
         raise ValueError("Invalid partition bounds")
     candidates = [d for d in decisions if d.get("reason") == REASON]
+    if offset > len(candidates):
+        raise ValueError("Partition offset exceeds saved candidates")
     ids = [d["repd_id"] for d in candidates]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate saved candidate ID")
@@ -49,6 +51,8 @@ def review_unlinked_applications(
         raise ValueError("Missing REPD review headers")
     rows: dict[str, tuple[int, dict[str, str]]] = {}
     for line, raw in enumerate(reader, 2):
+        if None in raw or any(value is None for value in raw.values()):
+            raise ValueError(f"Malformed REPD CSV record {line}")
         ref = raw["Ref ID"]
         if ref in rows:
             raise ValueError("Duplicate release ID")
