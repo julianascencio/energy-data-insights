@@ -205,3 +205,5 @@ Fahrenheit thermal/storage limits, approximate mass and unconditioned cycle
 claims. `component_catalogue_links` resolves an explicitly named module code
 to its canonical record; it does not propagate module ratings to the parent
 stack or resolve pre-existing stack capacity/parallel conflicts.
+
+`renon_xtreme_lv` retains A14 page/column provenance, system Ah, exact component codes, module quantities, maximum charge/discharge current, control voltage thresholds, temperature bounds, approximate mass, parallel limits and nonnumeric charging derating. Base models exclude the optional -H heating configuration. Model codes are not decoded into ratings.

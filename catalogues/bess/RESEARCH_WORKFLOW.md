@@ -450,3 +450,5 @@ energy/voltage formulas. It does not infer active power or round-trip efficiency
 Both adapters stage only and refuse output overwrite. Shared cells, diagrams,
 certification scope and equipment relationships require manual review before
 existing-API upsert. Module specifications do not inherit complete-cluster limits.
+
+6 November 13:54 continuation: MaStR partition 9 returned HTTP 503 twice; cursor remains 9. Renon Xtreme LV A14 pages 34–35 are exhausted (14 base configurations). Preserve the printed R-XL037071/R-XL046081 names and R-XL035071 energy discrepancy; do not multiply optional -H suffixes. Philippine IEMOP reuse requires permission; do not bulk import its participant list. See research/2026-11-06_xtreme_lv.md.
