@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-06T08:15:44Z",
+  "updated_at": "2026-11-06T09:25:46Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -139,7 +139,8 @@
     "maincubes_current_directory": 8,
     "datacenter_united_current_facilities": 14,
     "rack_centre_lagos_current_identities": 3,
-    "jrc_code_of_conduct_digital_realty_2024_facilities": 10
+    "jrc_code_of_conduct_digital_realty_2024_facilities": 10,
+    "jrc_code_of_conduct_equinix_emea_facilities": 34
   },
   "next_batches": [
     {
@@ -236,12 +237,13 @@
         "https://www.energystar.gov/buildings/certified-data-centers"
       ],
       "offset": 392,
-      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33 and all 337 ENERGY STAR Certified Data Centers entries complete across every 2010-2026 most-recent-label partition. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
+      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33, all 337 ENERGY STAR Certified Data Centers entries complete across every 2010-2026 most-recent-label partition, and two bounded JRC partitions complete at 10 Digital Realty Spain/Sweden identities plus 34 unique Equinix EMEA identities. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
       "questions": [
         "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
         "Treat Meta card break-ground years as year-precision observations, not full construction dates or evidence of current lifecycle",
         "The ENERGY STAR 2026 partition is exhausted. Its state-only geography, unlabeled floor-space values and year-only construction observations must not be promoted to coordinates, square metres or full dates",
         "The complete 337-entry ENERGY STAR registry is exhausted: 133 current-year 2026 facilities and 204 historical 2010-2025 facilities with current lifecycle unknown. Do not recount this capture; await a later issuer update or independent lifecycle evidence",
+        "Do not recount the 34 unique Equinix EMEA JRC identities. The source displays 35 rows because AM7 Amsterdam is duplicated verbatim; keep one facility record and preserve the duplicate-row observation",
         "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
       ]
     },
@@ -548,12 +550,12 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "jrc-digital-realty-participants-20261106T081544Z",
+    "run_id": "jrc-equinix-participants-20261106T092546Z",
     "report": "2026-11-06-report.md",
-    "validation": "2026-11-06T0815-validation.json",
-    "added_projects": 10,
+    "validation": "2026-11-06T0925-validation.json",
+    "added_projects": 34,
     "enriched_projects": 0,
     "added_equipment": 0,
-    "branch": "research/data-center-database-20261106T0527Z"
+    "branch": "research/data-center-database-20261106T0836Z"
   }
 }

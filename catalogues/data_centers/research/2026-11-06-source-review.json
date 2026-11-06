@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T08:15:44Z",
+  "retrieved_at": "2026-11-06T09:25:46Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -72,6 +72,14 @@
       "enriched_records": 0,
       "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
       "originals": "The official participant page returned a request-rejected response from this environment, while the exact rows remained available through the public indexed reader. No original checksum is claimed. The separate 90,265-byte EU legal notice was captured and checksummed."
+    },
+    {
+      "inventory": "European Commission JRC Equinix EMEA corporate participant partition",
+      "processed_offset": 34,
+      "accepted_records": 34,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "The official participant page returned a request-rejected response from this environment. The complete 35 displayed rows were consistent across multiple indexed official-language copies; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
     }
   ],
   "deferred": [
@@ -122,6 +130,10 @@
     {
       "candidate": "JRC participant-facility lifecycle, ownership, locality and capacity",
       "reason": "The participant registry establishes exact names and 2024 adhesion only. It does not establish current operation, ownership, physical aggregation, locality, certification or capacity; all ten records remain lifecycle-unknown and aggregation-unresolved."
+    },
+    {
+      "candidate": "JRC Equinix participant-facility lifecycle, ownership, operation and capacity",
+      "reason": "The corporate participant row establishes 34 unique site codes, cities and 2013 adhesion only. It does not establish current operation, ownership, physical aggregation, certification or capacity; all 34 records remain lifecycle-unknown and aggregation-unresolved."
     },
     {
       "candidate": "PAIX ACC-1 and NBO-1 public facility pages and fact sheets",
@@ -216,6 +228,13 @@
         "technical_area_m2"
       ],
       "reason": "Current official pages report 7,200 m2 and 3,240 m2 of LGS2 white space. Both values remain conflict observations and technical_area_m2 remains null."
+    },
+    {
+      "candidate": "JRC Equinix AM7 registry row multiplicity",
+      "fields": [
+        "source_row_multiplicity"
+      ],
+      "reason": "The official participant table displays The Netherlands: AM7, Amsterdam twice verbatim while reporting 35 rows. The identical duplicate is retained as an observation and normalized once; no second facility is synthesized."
     }
   ],
   "normalization_notes": [
@@ -265,6 +284,11 @@
     "JRC participation establishes exact registry identities and adhesion year only. Lifecycle, ownership, operation, locality, certification and every capacity boundary remain unknown.",
     "All ten JRC records are aggregation-unresolved and therefore excluded from IT, grid and facility-capacity totals under every filter.",
     "The JRC direct-page rejection is an access/content failure, not a reuse prohibition. The Commission CC BY 4.0 notice was captured and checksummed separately.",
-    "PAIX ACC-1 and NBO-1 remain on reuse hold because current terms prohibit automated and manual copying; no PAIX facts or source bytes were published."
+    "PAIX ACC-1 and NBO-1 remain on reuse hold because current terms prohibit automated and manual copying; no PAIX facts or source bytes were published.",
+    "The complete JRC Equinix EMEA corporate partition is processed as 34 unique identities from 35 displayed rows across 11 countries.",
+    "The duplicated AM7 Amsterdam source row is normalized once and retained as an explicit source-occurrence observation; it does not inflate the facility count.",
+    "JRC Equinix participation supports exact site code, city and 2013 adhesion only. Lifecycle, ownership, operation, certification, physical aggregation and every capacity boundary remain unknown.",
+    "All 34 Equinix records are aggregation-unresolved and excluded from IT, grid and facility-capacity totals under every filter.",
+    "The direct JRC-page rejection remains an access/content failure, not a reuse prohibition. The previously captured Commission CC BY 4.0 notice remains the rights basis; all saved reuse holds remain in force."
   ]
 }

@@ -151,7 +151,7 @@ def build() -> list[dict[str, object]]:
     rows = [build_record(*facility) for facility in FACILITIES]
     if len(rows) != 34 or len({row["record_id"] for row in rows}) != 34:
         raise ValueError("Expected 34 unique JRC Equinix participant-facility records")
-    if [row["aliases"][0] for row in rows].count("AM7") != 1:  # type: ignore[index,union-attr]
+    if sum(code == "AM7" for _, code, _, _ in FACILITIES) != 1:
         raise ValueError("Expected duplicated AM7 source row to normalize once")
     return sorted(rows, key=lambda row: str(row["record_id"]))
 
