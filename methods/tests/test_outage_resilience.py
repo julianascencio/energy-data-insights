@@ -69,7 +69,6 @@ def test_inverter_power_infeasible() -> None:
         ("initial_soc_fraction", -0.1),
         ("initial_soc_fraction", 1.1),
         ("roundtrip_efficiency", 0.0),
-        ("inverter_mw", float("nan")),
         ("max_capacity_mwh", 0),
         ("timestep_hours", 0),
     ],
@@ -80,3 +79,8 @@ def test_invalid_settings(keyword: str, value: float) -> None:
         minimum_islanded_capacity([0.0], [0.0], [1.0], inverter_mw=1.0,
                                   **{key: val for key, val in options.items()
                                      if key != "inverter_mw"})
+
+
+def test_nan_inverter_rejected() -> None:
+    with pytest.raises(ValueError):
+        minimum_islanded_capacity([0.0], [0.0], [1.0], inverter_mw=float("nan"))
