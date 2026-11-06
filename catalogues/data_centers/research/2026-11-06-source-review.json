@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T09:58:36Z",
+  "retrieved_at": "2026-11-06T11:16:48Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -88,6 +88,14 @@
       "enriched_records": 0,
       "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
       "originals": "The official participant page returned a request-rejected response from this environment. The complete 11 DxC Technology and eight Digital Reality rows were available through the indexed official page; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
+    },
+    {
+      "inventory": "European Commission JRC cross-language-stable 2015-2018 participant partition",
+      "processed_offset": 17,
+      "accepted_records": 17,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "Direct official-page requests returned request-rejected responses from this environment. Seventeen exact facility identities from nine participant sets were stable across reviewed indexed official-language copies; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
     }
   ],
   "deferred": [
@@ -146,6 +154,10 @@
     {
       "candidate": "JRC 2018 DxC Technology and Digital Reality lifecycle, ownership, operation and capacity",
       "reason": "The registry establishes 19 exact participant-facility labels and 2018 adhesion only. It does not establish current operation, ownership, physical aggregation, certification or capacity; all records remain lifecycle-unknown and aggregation-unresolved."
+    },
+    {
+      "candidate": "JRC cross-language participant identities outside the accepted 17-row partition",
+      "reason": "Reviewed official-language indexes associate INTEL with conflicting facility identities, while other rows appear only through unstable pagination contexts. They remain deferred until an authoritative consistent row or captured original resolves the partition."
     },
     {
       "candidate": "PAIX ACC-1 and NBO-1 public facility pages and fact sheets",
@@ -255,6 +267,15 @@
         "facility_name"
       ],
       "reason": "Digital Reality, Doxfrod Park and Winyard are retained exactly as printed. No owner/operator normalization or spelling correction is inferred without independent evidence."
+    },
+    {
+      "candidate": "JRC INTEL participant-facility identity conflict",
+      "fields": [
+        "facility_name",
+        "locality",
+        "adhesion_year"
+      ],
+      "reason": "Reviewed official-language indexed copies variously align INTEL with Limonest, AMU Luminy, Media CityUK and Leixlip/2016. No INTEL record or reconciled field is synthesized."
     }
   ],
   "normalization_notes": [
@@ -313,6 +334,10 @@
     "The complete displayed 2018 JRC partitions are processed at offsets 11 DxC Technology and eight Digital Reality identities.",
     "Digital Reality is retained as the exact registry participant spelling; it is not converted into an owner or operator relationship. Apparent Doxfrod Park and Winyard source spellings are preserved for review.",
     "The registry supports participant-facility identity and 2018 adhesion only. Adhesion is not commissioning, certification or deployment evidence, and every lifecycle, ownership, operation and capacity field remains unresolved.",
-    "All 19 records are aggregation-unresolved and excluded from IT, grid and facility-capacity totals under every filter. The direct page rejection is an access/content failure, not a reuse prohibition; all saved holds remain in force."
+    "All 19 records are aggregation-unresolved and excluded from IT, grid and facility-capacity totals under every filter. The direct page rejection is an access/content failure, not a reuse prohibition; all saved holds remain in force.",
+    "The cross-language-stable JRC 2015-2018 partition is complete at 17 exact facility identities from nine participant sets. Exact registry spellings and adhesion years are retained.",
+    "Only locality text contained in exact facility labels is normalized; company-address text is never promoted to a site location. Adhesion is not commissioning, certification or deployment evidence.",
+    "All 17 records remain lifecycle-unknown and aggregation-unresolved, with every IT, grid and facility-capacity scalar null and excluded from totals under every filter.",
+    "INTEL remains quarantined because official-language indexed copies conflict on facility identity and year. Pagination-only rows remain deferred. Direct-page rejection is an access/content failure, not a reuse prohibition."
   ]
 }

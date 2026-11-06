@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-06T09:58:36Z",
+  "updated_at": "2026-11-06T11:16:48Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -142,7 +142,8 @@
     "jrc_code_of_conduct_digital_realty_2024_facilities": 10,
     "jrc_code_of_conduct_equinix_emea_facilities": 34,
     "jrc_code_of_conduct_dxc_2018_facilities": 11,
-    "jrc_code_of_conduct_digital_reality_2018_facilities": 8
+    "jrc_code_of_conduct_digital_reality_2018_facilities": 8,
+    "jrc_code_of_conduct_cross_language_stable_2015_2018_facilities": 17
   },
   "next_batches": [
     {
@@ -238,8 +239,8 @@
         "https://airtrunk.com/locations/",
         "https://www.energystar.gov/buildings/certified-data-centers"
       ],
-      "offset": 392,
-      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33, all 337 ENERGY STAR Certified Data Centers entries complete across every 2010-2026 most-recent-label partition, and three bounded JRC partitions complete at 10 Digital Realty Spain/Sweden identities, 34 unique Equinix EMEA identities, and all 19 displayed 2018 DxC Technology plus Digital Reality identities. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
+      "offset": 409,
+      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33, all 337 ENERGY STAR Certified Data Centers entries complete across every 2010-2026 most-recent-label partition, and four bounded JRC partitions complete at 10 Digital Realty Spain/Sweden identities, 34 unique Equinix EMEA identities, all 19 displayed 2018 DxC Technology plus Digital Reality identities, and 17 cross-language-stable 2015-2018 identities. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
       "questions": [
         "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
         "Treat Meta card break-ground years as year-precision observations, not full construction dates or evidence of current lifecycle",
@@ -247,6 +248,7 @@
         "The complete 337-entry ENERGY STAR registry is exhausted: 133 current-year 2026 facilities and 204 historical 2010-2025 facilities with current lifecycle unknown. Do not recount this capture; await a later issuer update or independent lifecycle evidence",
         "Do not recount the 34 unique Equinix EMEA JRC identities. The source displays 35 rows because AM7 Amsterdam is duplicated verbatim; keep one facility record and preserve the duplicate-row observation",
         "Do not recount the complete 2018 JRC partitions: 11 DxC Technology and eight exact Digital Reality registry identities. Preserve the printed Digital Reality organization spelling and apparent Doxfrod Park and Winyard source spellings unless independent evidence resolves them",
+        "Do not recount the 17 cross-language-stable JRC identities from nine 2015-2018 participant sets. INTEL remains deferred because reviewed official-language indexes conflict on its facility identity; pagination-only rows remain outside the completed partition",
         "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
       ]
     },
@@ -553,10 +555,10 @@
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "jrc-2018-participants-20261106T095836Z",
+    "run_id": "jrc-cross-language-participants-20261106T111648Z",
     "report": "2026-11-06-report.md",
-    "validation": "2026-11-06T0958-validation.json",
-    "added_projects": 19,
+    "validation": "2026-11-06T1116-validation.json",
+    "added_projects": 17,
     "enriched_projects": 0,
     "added_equipment": 0,
     "branch": "research/data-center-database-20261106T0836Z"
