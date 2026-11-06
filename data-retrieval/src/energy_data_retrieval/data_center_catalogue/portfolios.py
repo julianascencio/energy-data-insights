@@ -2191,6 +2191,111 @@ def parse_jrc_2018_participants(content: bytes, *, source_url: str) -> dict[str,
     }
 
 
+def parse_jrc_2015_2018_participants(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the cross-language-stable JRC 2015--2018 participant rows.
+
+    Only participant/facility sets that agree across the reviewed official
+    language indexes are accepted. Conflicting ``INTEL`` and pagination-only
+    rows are intentionally outside this partition.
+    """
+    if urlsplit(source_url).hostname != "e3p.jrc.ec.europa.eu":
+        raise ValueError("Expected official European Commission JRC URL")
+    parser = _HtmlTables()
+    parser.feed(content.decode("utf-8-sig"))
+    rows = [row for table in parser.tables for row in table if len(row) >= 5]
+    expected: dict[str, tuple[int, str, list[str], list[str | None]]] = {
+        "AIMES Grid Services": (2015, "GBR", ["kilby house"], [None]),
+        "CGI IT UK limited": (
+            2015,
+            "GBR",
+            ["Bridgend-Waterton", "Bridgend Science Park"],
+            ["Bridgend", "Bridgend"],
+        ),
+        "DataCentred Limited": (
+            2015,
+            "GBR",
+            ["Unit 4&5, Salford"],
+            ["Salford"],
+        ),
+        "EUMETSAT": (2016, "DEU", ["Darmstadt"], ["Darmstadt"]),
+        "Euroclear Bank SA/NV": (
+            2016,
+            "FRA",
+            ["DC1: Bry sur Marne (France", "DC2: ZAC de BUSSY SUD (France)"],
+            ["Bry sur Marne", None],
+        ),
+        "FCO Services": (
+            2016,
+            "GBR",
+            ["FCO CDC - Milton Keynes", "FCO Services DC 25 - Milton Keynes"],
+            ["Milton Keynes", "Milton Keynes"],
+        ),
+        "Interxion Carrier Hotel, Ltd.": (
+            2017,
+            "GBR",
+            ["LON1", "LON2", "LON3"],
+            [None, None, None],
+        ),
+        "University of Strasbourg": (
+            2018,
+            "FRA",
+            ["ESPE meinau", "Campus Esplanade"],
+            [None, None],
+        ),
+        "Atos IT services": (
+            2018,
+            "GBR",
+            [
+                "Andover DC, Hants, England",
+                "Birmingham Business Park",
+                "Longbridge Data Centre",
+            ],
+            ["Andover", "Birmingham", "Longbridge"],
+        ),
+    }
+    candidates: list[dict[str, Any]] = []
+    found: set[str] = set()
+    for row in rows:
+        participant = row[0]
+        if participant not in expected:
+            continue
+        expected_year, country_code, expected_facilities, localities = expected[participant]
+        facilities = [part.strip() for part in row[2].split("|") if part.strip()]
+        try:
+            count = int(row[1])
+            adhesion_year = int(row[3])
+        except ValueError as exc:
+            raise ValueError("Changed JRC participant count or adhesion year") from exc
+        if (
+            count != len(expected_facilities)
+            or adhesion_year != expected_year
+            or facilities != expected_facilities
+        ):
+            raise ValueError("Changed JRC cross-language facility identity set")
+        found.add(participant)
+        for label, locality in zip(facilities, localities, strict=True):
+            candidates.append(
+                {
+                    "adhesion_year": adhesion_year,
+                    "country_code": country_code,
+                    "external_id": label,
+                    "locality": locality,
+                    "name": f"{participant} {label}",
+                    "participant": participant,
+                    "registry_label": label,
+                    "locator": f"Participants table / {participant} / {label}",
+                }
+            )
+    if found != set(expected) or len(candidates) != 17:
+        raise ValueError("Changed JRC cross-language participant partition")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": candidates,
+        "review_required": True,
+    }
+
+
 def parse_rack_centre_campus(content: bytes, *, source_url: str) -> dict[str, Any]:
     """Stage Rack Centre's explicit two-building Lagos campus boundary.
 

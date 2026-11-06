@@ -39,6 +39,7 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_green_mountain_portfolio,
     parse_icolo_facility_page,
     parse_icolo_home_portfolio,
+    parse_jrc_2015_2018_participants,
     parse_jrc_2018_participants,
     parse_jrc_code_of_conduct_participants,
     parse_jrc_equinix_participants,
@@ -773,6 +774,40 @@ def test_jrc_2018_parser_preserves_registry_spelling_and_boundaries():
     with pytest.raises(ValueError, match="facility identity set"):
         parse_jrc_2018_participants(
             fixture.replace(b"Doxfrod Park", b"Doxford Park"),
+            source_url=source_url,
+        )
+
+
+def test_jrc_2015_2018_parser_requires_cross_language_stable_rows():
+    source_url = (
+        "https://e3p.jrc.ec.europa.eu/fr/groups/data-centres-code-conduct/"
+        "participants?order=field_adhesion_date&page=2&partner_search=&sort=asc"
+    )
+    fixture = (FIXTURES / "jrc-code-of-conduct-2015-2018.html").read_bytes()
+    parsed = parse_jrc_2015_2018_participants(fixture, source_url=source_url)
+    assert len(parsed["candidates"]) == 17
+    assert {row["participant"] for row in parsed["candidates"]} == {
+        "AIMES Grid Services",
+        "Atos IT services",
+        "CGI IT UK limited",
+        "DataCentred Limited",
+        "EUMETSAT",
+        "Euroclear Bank SA/NV",
+        "FCO Services",
+        "Interxion Carrier Hotel, Ltd.",
+        "University of Strasbourg",
+    }
+    assert {row["adhesion_year"] for row in parsed["candidates"]} == {
+        2015,
+        2016,
+        2017,
+        2018,
+    }
+    assert parsed["candidates"][0]["registry_label"] == "kilby house"
+    assert parsed["candidates"][-1]["locality"] == "Longbridge"
+    with pytest.raises(ValueError, match="facility identity set"):
+        parse_jrc_2015_2018_participants(
+            fixture.replace(b"kilby house", b"Kilby House"),
             source_url=source_url,
         )
 
