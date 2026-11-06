@@ -1,0 +1,131 @@
+{
+  "as_of": "2026-11-06T13:04:23.399783+00:00",
+  "new_models": [
+    {
+      "record_id": "7eb93dd4-481d-5067-a162-c5edb89af07c",
+      "manufacturer": "Renon Power",
+      "model": "R-EB005161",
+      "decision": "accepted_exact_model",
+      "source_ids": [
+        "renon_ebrick_residential_20261106"
+      ],
+      "locator": "PDF page 2 exact model table",
+      "notes": "Bounded factual transcription; output power is unspecified duty, overcurrent thresholds are protection settings, warranty is qualified brochure claim."
+    },
+    {
+      "record_id": "3bda43a5-e791-5175-bafd-15d0258c5a48",
+      "manufacturer": "Renon Power",
+      "model": "R-XC016161-US",
+      "decision": "accepted_exact_model",
+      "source_ids": [
+        "renon_xcellent_residential_20261106"
+      ],
+      "locator": "PDF page 2 exact model table",
+      "notes": "Bounded factual transcription; output power is unspecified duty, overcurrent thresholds are protection settings, warranty is qualified brochure claim."
+    }
+  ],
+  "enriched_models": [
+    {
+      "record_id": "8e08a964-bb66-5eca-8684-96eabc60a7b1",
+      "model": "R-EB0300161-IND1",
+      "decision": "add_reviewed_component_link_only",
+      "component": {
+        "battery_module": {
+          "exact_model": "R-EB005161",
+          "locator": "EBrick-IND PDF page2 module model/count; EBrick Residential PDF page2 exact model",
+          "manufacturer": "Renon Power",
+          "quantity": 6,
+          "record_id": "7eb93dd4-481d-5067-a162-c5edb89af07c",
+          "relationship": "Exact model-code reference only; module sheet conditions are not propagated to the stack. Existing stack rating/parallel conflicts remain unresolved.",
+          "source_ids": [
+            "renonebrick_20261106",
+            "renon_ebrick_residential_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "8e5bd731-76ea-511e-beea-a334a67e08da",
+      "model": "R-EB060161-IND1",
+      "decision": "add_reviewed_component_link_only",
+      "component": {
+        "battery_module": {
+          "exact_model": "R-EB005161",
+          "locator": "EBrick-IND PDF page2 module model/count; EBrick Residential PDF page2 exact model",
+          "manufacturer": "Renon Power",
+          "quantity": 12,
+          "record_id": "7eb93dd4-481d-5067-a162-c5edb89af07c",
+          "relationship": "Exact model-code reference only; module sheet conditions are not propagated to the stack. Existing stack rating/parallel conflicts remain unresolved.",
+          "source_ids": [
+            "renonebrick_20261106",
+            "renon_ebrick_residential_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "9f005f3d-d272-506e-ac05-0ee22ad76eb6",
+      "model": "R-EB015161-IND1",
+      "decision": "add_reviewed_component_link_only",
+      "component": {
+        "battery_module": {
+          "exact_model": "R-EB005161",
+          "locator": "EBrick-IND PDF page2 module model/count; EBrick Residential PDF page2 exact model",
+          "manufacturer": "Renon Power",
+          "quantity": 3,
+          "record_id": "7eb93dd4-481d-5067-a162-c5edb89af07c",
+          "relationship": "Exact model-code reference only; module sheet conditions are not propagated to the stack. Existing stack rating/parallel conflicts remain unresolved.",
+          "source_ids": [
+            "renonebrick_20261106",
+            "renon_ebrick_residential_20261106"
+          ]
+        }
+      }
+    },
+    {
+      "record_id": "b108cd72-9a91-53fc-a41a-1e4a9b36a925",
+      "model": "R-EB045161-IND1",
+      "decision": "add_reviewed_component_link_only",
+      "component": {
+        "battery_module": {
+          "exact_model": "R-EB005161",
+          "locator": "EBrick-IND PDF page2 module model/count; EBrick Residential PDF page2 exact model",
+          "manufacturer": "Renon Power",
+          "quantity": 9,
+          "record_id": "7eb93dd4-481d-5067-a162-c5edb89af07c",
+          "relationship": "Exact model-code reference only; module sheet conditions are not propagated to the stack. Existing stack rating/parallel conflicts remain unresolved.",
+          "source_ids": [
+            "renonebrick_20261106",
+            "renon_ebrick_residential_20261106"
+          ]
+        }
+      }
+    }
+  ],
+  "deferred": [
+    {
+      "product_family": "Xtreme HV 1.0",
+      "configuration_module_count": 2,
+      "url": "https://www.renonpower.com/Products/Residential-Batteries/Xtreme-HV-1.0.html",
+      "decision": "deferred_not_rejected",
+      "reason": "Web column lacks exact model code and adequately bounded operating specifications; await original exact-model datasheet. Ambiguous 96kW heading not accepted."
+    },
+    {
+      "product_family": "Xtreme HV 1.0",
+      "configuration_module_count": 3,
+      "url": "https://www.renonpower.com/Products/Residential-Batteries/Xtreme-HV-1.0.html",
+      "decision": "deferred_not_rejected",
+      "reason": "Web column lacks exact model code and adequately bounded operating specifications; await original exact-model datasheet. Ambiguous 96kW heading not accepted."
+    },
+    {
+      "product_family": "Xtreme HV 1.0",
+      "configuration_module_count": 4,
+      "url": "https://www.renonpower.com/Products/Residential-Batteries/Xtreme-HV-1.0.html",
+      "decision": "deferred_not_rejected",
+      "reason": "Web column lacks exact model code and adequately bounded operating specifications; await original exact-model datasheet. Ambiguous 96kW heading not accepted."
+    }
+  ],
+  "new_oems": 0,
+  "whole_record_quarantines": 0,
+  "rejected_models": 0
+}

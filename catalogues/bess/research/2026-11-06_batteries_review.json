@@ -1,0 +1,475 @@
+{
+  "started_at": "2026-11-06T07:48:43+00:00",
+  "checkpoint_at": "2026-11-06T08:15:33.290856+00:00",
+  "baseline_head": "02abe346176aff86a416f687a63f488bdce08d74",
+  "target_pr": 188,
+  "projects": {
+    "identities_reviewed": 10,
+    "new": 0,
+    "enriched": 3,
+    "unchanged": 1,
+    "held_candidates": 6,
+    "permanent_rejections": 0,
+    "accepted_records_with_field_conflicts": 1
+  },
+  "equipment": {
+    "exact_candidates_reviewed": 23,
+    "new": 20,
+    "enriched": 0,
+    "held_candidates": 3,
+    "permanent_rejections": 0,
+    "accepted_records_with_field_conflicts": 1
+  },
+  "whole_record_quarantines": 0,
+  "source_queue": [
+    {
+      "priority": 1,
+      "url": "https://intilion.com/downloadbereich/",
+      "country_or_entity": "INTILION / Germany",
+      "version_or_date": "Current index checked 2026-11-06",
+      "access_licence_assessment": "Public originals accessible. Copyright retained; bounded technical facts only; not a bulk licence.",
+      "estimated_useful_yield": {
+        "equipment": "1–2 useful unit/controller records after scope review"
+      },
+      "offered_fields": [
+        "BESU boundaries",
+        "component ratings",
+        "control protocols",
+        "thermal and grid interfaces"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Current scalepac six-column table exhausted; scalecube i4 and IAU originals downloaded for subsequent boundary review. Older scalebloc paths404.",
+      "processed_partition_or_cursor": "scalepac: all6 columns; i4/IAU: preliminary source review, no accepted records",
+      "retry_condition": "Recheck index and original hashes before continuing",
+      "next_action": "Review i4 two-container/one-PCS BESU, example usable AC energy, mismatched footnotes; keep IAU controller separate from battery capacities."
+    },
+    {
+      "priority": 1,
+      "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/INTILION%20scalecube/Produktbrosch%C3%BCre%20INTILION%20scalecube%20i4.pdf?hsLang=de",
+      "country_or_entity": "INTILION",
+      "version_or_date": null,
+      "access_licence_assessment": "Public OEM PDF; copyright retained; selected facts only",
+      "estimated_useful_yield": {
+        "equipment": 1
+      },
+      "offered_fields": [
+        "BESU components"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Downloaded, deferred after scalepac batch; not ingested",
+      "processed_partition_or_cursor": "i4 pages5–6 / IAU pages2–4 pending full reconciliation",
+      "retry_condition": "Recheck revision/hash",
+      "next_action": "Extract exact unit/controller boundary; do not create anonymous component models",
+      "capture": {
+        "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/INTILION%20scalecube/Produktbrosch%C3%BCre%20INTILION%20scalecube%20i4.pdf?hsLang=de",
+        "retrieved_at": "2026-11-06T08:08:13.939935+00:00",
+        "http_status": 200,
+        "sha256": "86d67280e437e3693b009bb65120eece0b7dec7e4f5ddbb98c89df08d34e0275"
+      }
+    },
+    {
+      "priority": 1,
+      "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/Steuerung/INTILION%20Prospekt%20IAU.pdf?hsLang=de",
+      "country_or_entity": "INTILION",
+      "version_or_date": null,
+      "access_licence_assessment": "Public OEM PDF; copyright retained; selected facts only",
+      "estimated_useful_yield": {
+        "equipment": 1
+      },
+      "offered_fields": [
+        "EMS/control architecture"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Downloaded, deferred after scalepac batch; not ingested",
+      "processed_partition_or_cursor": "i4 pages5–6 / IAU pages2–4 pending full reconciliation",
+      "retry_condition": "Recheck revision/hash",
+      "next_action": "Extract exact unit/controller boundary; do not create anonymous component models",
+      "capture": {
+        "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/Steuerung/INTILION%20Prospekt%20IAU.pdf?hsLang=de",
+        "retrieved_at": "2026-11-06T08:08:19.239887+00:00",
+        "http_status": 200,
+        "sha256": "419ac08610f3aca5639347b7ee0a7778fbb1860aca4231231b3e138ff38fbb28"
+      }
+    },
+    {
+      "priority": 2,
+      "url": "https://www.cea.nic.in/reports/dashboardView?headingId=107&lang=en&source=archive&subHeadingId=1003&subSubHeadingId=10046&title=Status+of+BESS+Projects",
+      "country_or_entity": "India / CEA",
+      "version_or_date": "September30 2026 inventory listing",
+      "access_licence_assessment": "502; no inventory bytes or dataset reuse terms obtained",
+      "estimated_useful_yield": {
+        "projects": "Potential50–100, unverified estimate"
+      },
+      "offered_fields": [
+        "project names",
+        "MW/MWh",
+        "state",
+        "status"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Fresh retry of previously blocked source failed; alternate index https://cea.nic.in/bess/status-bess-projects/?lang=en returns404. No rows extracted.",
+      "processed_partition_or_cursor": "No partition processed",
+      "retry_condition": "Original inventory endpoint restored and reuse terms established",
+      "next_action": "Use named row inventory only after representative classification and natural-identity review."
+    },
+    {
+      "priority": 3,
+      "url": "https://www.seci.co.in/own-projects",
+      "country_or_entity": "India / SECI",
+      "version_or_date": "Undated owner page; companion portfolio status28October2026",
+      "access_licence_assessment": "Original200; https://www.seci.co.in/website-policy requires prior permission for reproduction. No bulk import.",
+      "estimated_useful_yield": {
+        "projects": "3 possible new identities,3 existing identities"
+      },
+      "offered_fields": [
+        "battery ratings",
+        "hybrid boundary",
+        "owner",
+        "lifecycle"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Six battery identities screened; Taru, Aurangabad and Ramagiri remain source/identity holds. Nandyal unchanged. Independent PIB enrichments accepted separately. Solar-only rows and Agatti battery inference excluded.",
+      "processed_partition_or_cursor": "Battery sections plus companion upcoming/construction table exhausted",
+      "retry_condition": "Independent permissible primary evidence or explicit source permission; no contact initiated",
+      "next_action": "Resolve Taru/Phyang identity and nameplate/dispatchable basis; keep70MW solar Ramagiri distinct from300MW solar-only project.",
+      "capture": {
+        "url": "https://www.seci.co.in/own-projects",
+        "retrieved_at": "2026-11-06T07:50:38.479480+00:00",
+        "http_status": 200,
+        "sha256": "da3e45c6423e96a82d4da4b68a9dfe03bdc1ae0e914d190fb00aca69b26fabb9"
+      }
+    },
+    {
+      "priority": 3,
+      "url": "https://www.seci.co.in/empowering-sustainable-growth-with-renewable-energy",
+      "country_or_entity": "India / SECI",
+      "version_or_date": "Status28October2026",
+      "access_licence_assessment": "Same restrictive SECI policy",
+      "estimated_useful_yield": {
+        "projects": 3
+      },
+      "offered_fields": [
+        "named upcoming battery projects",
+        "construction status"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Discovery/reconciliation only; no source facts imported",
+      "processed_partition_or_cursor": "Construction and upcoming tables",
+      "retry_condition": "Independent reusable primary source",
+      "next_action": "Seek project-specific government/owner evidence for held identities",
+      "capture": {
+        "url": "https://www.seci.co.in/empowering-sustainable-growth-with-renewable-energy",
+        "retrieved_at": "2026-11-06T07:50:38.711166+00:00",
+        "http_status": 200,
+        "sha256": "447116910a8ff55f6c6e7482cd5a79350c2f41aee0e26a0d21878954fdeda455"
+      }
+    },
+    {
+      "priority": 4,
+      "url": "https://sansad.in/getFile/loksabhaquestions/annex/185/AU1857_RlMZsW.pdf?source=pqals",
+      "country_or_entity": "India / Ladakh",
+      "version_or_date": "Lok Sabha1857,31July2025",
+      "access_licence_assessment": "Original200; https://sansad.in/ls/privacyPolicy requires permission for reproduction. No table import.",
+      "estimated_useful_yield": {
+        "projects": 4
+      },
+      "offered_fields": [
+        "Taru",
+        "Stakna",
+        "Nubra",
+        "Zanskar",
+        "battery energy",
+        "solar pairing",
+        "development status"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Four candidates reviewed; Taru overlaps SECI candidate;3 further identities held. No presumed operating status.",
+      "processed_partition_or_cursor": "PDFpage2(d),3bullets/4projects",
+      "retry_condition": "Independent permissible primary source or explicit permission",
+      "next_action": "Resolve Stakna tender revisions and Taru rating boundary before acceptance",
+      "capture": {
+        "url": "https://sansad.in/getFile/loksabhaquestions/annex/185/AU1857_RlMZsW.pdf?source=pqals",
+        "retrieved_at": "2026-11-06T07:54:52.258306+00:00",
+        "http_status": 200,
+        "sha256": "017ee550a2b94499ac835867ce05c31e68492b6fa628eda65e68b9a0c9abc302"
+      }
+    },
+    {
+      "priority": 4,
+      "url": "https://ladakh.gov.in/pdd-signs-ppa-with-seci-for-50-mwdc-solar-project-in-leh/",
+      "country_or_entity": "India / Taru",
+      "version_or_date": "10December2021",
+      "access_licence_assessment": "Original200; website policies require permission. No canonical import.",
+      "estimated_useful_yield": {
+        "project_enrichment": 1
+      },
+      "offered_fields": [
+        "PPA",
+        "offtaker",
+        "solarDC boundary"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Historical identity corroboration only; not an accepted new project",
+      "processed_partition_or_cursor": "Entire named project paragraph",
+      "retry_condition": "Independent reusable corroboration",
+      "next_action": "Retain unresolved Taru/Phyang link; no fuzzy merge",
+      "capture": {
+        "url": "https://ladakh.gov.in/pdd-signs-ppa-with-seci-for-50-mwdc-solar-project-in-leh/",
+        "retrieved_at": "2026-11-06T07:55:00.362406+00:00",
+        "http_status": 200,
+        "sha256": "c7cd7f121c6b71b57c18835efa64627fe463ed18e0d81b8ecc9455bfea09ea3b"
+      }
+    },
+    {
+      "priority": 5,
+      "url": "https://static.atesspower.com/upload/files/20251217/7c0c17764eba3bd9b8e84ece4feb9539.pdf",
+      "country_or_entity": "ATESS BC55NPB",
+      "version_or_date": null,
+      "access_licence_assessment": "Public originals; copyright retained; bounded attributed facts, not open bulk licence",
+      "estimated_useful_yield": {
+        "remaining_selected_columns": 0
+      },
+      "offered_fields": [
+        "energy",
+        "voltage",
+        "dimensions",
+        "mass",
+        "cooling",
+        "enclosure",
+        "configuration",
+        "operating limits"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Accepted6 /8 /6 respectively; VoltStack9-module energy and voltage quarantined at field level",
+      "processed_partition_or_cursor": "All selected exact columns exhausted",
+      "retry_condition": "New OEM revision or corrected nine-module ratings",
+      "next_action": "Recheck hashes; no duplicate variants or power derivation",
+      "capture": {
+        "url": "https://static.atesspower.com/upload/files/20251217/7c0c17764eba3bd9b8e84ece4feb9539.pdf",
+        "retrieved_at": "2026-11-06T07:50:31.473083+00:00",
+        "http_status": 200,
+        "sha256": "42cdea88135a1b5f4aed23707bc24ee2c8212781d0faf6e950491b0d58e6d656"
+      }
+    },
+    {
+      "priority": 5,
+      "url": "https://static.atesspower.com/upload/files/20251217/e6d723421e67acbbe9034d7b9513d950.pdf",
+      "country_or_entity": "ATESS VoltStack",
+      "version_or_date": null,
+      "access_licence_assessment": "Public originals; copyright retained; bounded attributed facts, not open bulk licence",
+      "estimated_useful_yield": {
+        "remaining_selected_columns": 0
+      },
+      "offered_fields": [
+        "energy",
+        "voltage",
+        "dimensions",
+        "mass",
+        "cooling",
+        "enclosure",
+        "configuration",
+        "operating limits"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Accepted6 /8 /6 respectively; VoltStack9-module energy and voltage quarantined at field level",
+      "processed_partition_or_cursor": "All selected exact columns exhausted",
+      "retry_condition": "New OEM revision or corrected nine-module ratings",
+      "next_action": "Recheck hashes; no duplicate variants or power derivation",
+      "capture": {
+        "url": "https://static.atesspower.com/upload/files/20251217/e6d723421e67acbbe9034d7b9513d950.pdf",
+        "retrieved_at": "2026-11-06T07:50:31.561142+00:00",
+        "http_status": 200,
+        "sha256": "4dc33bd8375a21e14e878e060fd72fec8ada53865326ac4a01d7150a269eb79c"
+      }
+    },
+    {
+      "priority": 5,
+      "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/INTILION%20scalepac/Produktbrosch%C3%BCre%20INTILION%20scalepac.pdf?hsLang=de",
+      "country_or_entity": "INTILION scalepac",
+      "version_or_date": null,
+      "access_licence_assessment": "Public originals; copyright retained; bounded attributed facts, not open bulk licence",
+      "estimated_useful_yield": {
+        "remaining_selected_columns": 0
+      },
+      "offered_fields": [
+        "energy",
+        "voltage",
+        "dimensions",
+        "mass",
+        "cooling",
+        "enclosure",
+        "configuration",
+        "operating limits"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Accepted6 /8 /6 respectively; VoltStack9-module energy and voltage quarantined at field level",
+      "processed_partition_or_cursor": "All selected exact columns exhausted",
+      "retry_condition": "New OEM revision or corrected nine-module ratings",
+      "next_action": "Recheck hashes; no duplicate variants or power derivation",
+      "capture": {
+        "url": "https://intilion.com/hubfs/Website/PDFs%20und%20Dokumente/Produkte/INTILION%20scalepac/Produktbrosch%C3%BCre%20INTILION%20scalepac.pdf?hsLang=de",
+        "retrieved_at": "2026-11-06T08:08:14.904859+00:00",
+        "http_status": 200,
+        "sha256": "03f7af5cbbccd3c4d86bd03604fce7ea1e24f9412702301720ed1e9cccfc75c0"
+      }
+    },
+    {
+      "priority": 4,
+      "url": "https://intilion.com/documents/general/downloads/Produktblatt_scalebloc.pdf",
+      "country_or_entity": "INTILION scalebloc",
+      "version_or_date": "IndexedV05.04; original404",
+      "access_licence_assessment": "Indexed historical table exists but live original404; no accepted facts",
+      "estimated_useful_yield": {
+        "equipment": 3
+      },
+      "offered_fields": [
+        "energy/power/power boost exact variants"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "Three candidates held; switched to current download centre and successfully processed scalepac",
+      "processed_partition_or_cursor": "No accepted scalebloc partition",
+      "retry_condition": "Accessible authoritative current or archived original",
+      "next_action": "Do not import reseller ratings or silently reuse stale table",
+      "capture": {
+        "url": "https://intilion.com/documents/general/downloads/Produktblatt_scalebloc.pdf",
+        "retrieved_at": "2026-11-06T08:06:40.520390+00:00",
+        "http_status": 404,
+        "sha256": "f25a1d4a01c930b25087d39fc997d8d42039db924c3b1f89d8440446c06c8445"
+      }
+    },
+    {
+      "priority": 5,
+      "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1783446",
+      "country_or_entity": "Rajnandgaon contractor award",
+      "version_or_date": "2021-12-20",
+      "access_licence_assessment": "PIB attribution reuse permitted; Scatec bounded regulatory-release facts with copyright retained",
+      "estimated_useful_yield": {
+        "remaining_selected_records": 0
+      },
+      "offered_fields": [
+        "EPC",
+        "grant support",
+        "dated batteryCOD evidence"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "One existing project enriched per source; no new project",
+      "processed_partition_or_cursor": "opening2021contractparagraph",
+      "retry_condition": "Substantive new evidence",
+      "next_action": "No timestamp-only refresh",
+      "capture": {
+        "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1783446",
+        "retrieved_at": "2026-11-06T07:54:53.454704+00:00",
+        "http_status": 200,
+        "sha256": "0a5cbb9e018c05d0cb0f41dce2239a9a639e9a241a36c3f2c4b345b33ce351b9"
+      }
+    },
+    {
+      "priority": 5,
+      "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1845090",
+      "country_or_entity": "Kavaratti grant",
+      "version_or_date": "2022-07-26",
+      "access_licence_assessment": "PIB attribution reuse permitted; Scatec bounded regulatory-release facts with copyright retained",
+      "estimated_useful_yield": {
+        "remaining_selected_records": 0
+      },
+      "offered_fields": [
+        "EPC",
+        "grant support",
+        "dated batteryCOD evidence"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "One existing project enriched per source; no new project",
+      "processed_partition_or_cursor": "numbereditem1",
+      "retry_condition": "Substantive new evidence",
+      "next_action": "No timestamp-only refresh",
+      "capture": {
+        "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1845090",
+        "retrieved_at": "2026-11-06T07:59:28.051299+00:00",
+        "http_status": 200,
+        "sha256": "d4e02098593aa9c5aad3f4ba60d28a78eb077a0e3e3cc81cb5e45b574341b7f5"
+      }
+    },
+    {
+      "priority": 5,
+      "url": "https://www.scatec.com/en/cod-reached-for-first-phase-of-the-obelisk-project-in-egypt/",
+      "country_or_entity": "Obelisk battery phase",
+      "version_or_date": "2026-02-23",
+      "access_licence_assessment": "PIB attribution reuse permitted; Scatec bounded regulatory-release facts with copyright retained",
+      "estimated_useful_yield": {
+        "remaining_selected_records": 0
+      },
+      "offered_fields": [
+        "EPC",
+        "grant support",
+        "dated batteryCOD evidence"
+      ],
+      "attempted_at": "2026-11-06T08:15:33.290856+00:00",
+      "result": "One existing project enriched per source; no new project",
+      "processed_partition_or_cursor": "opening2026CODandphaseparagraphs",
+      "retry_condition": "Substantive new evidence",
+      "next_action": "No timestamp-only refresh",
+      "capture": {
+        "url": "https://www.scatec.com/en/cod-reached-for-first-phase-of-the-obelisk-project-in-egypt/",
+        "retrieved_at": "2026-11-06T07:59:27.503127+00:00",
+        "http_status": 200,
+        "sha256": "c4d9d03fe1330cd7ae58138efbf96dc277b260596791444bd5a6808fea1b308a"
+      }
+    }
+  ],
+  "held_project_names": [
+    "Taru/Phyang identity",
+    "Aurangabad",
+    "Ramagiri solar+BESS",
+    "Stakna",
+    "Nubra",
+    "Zanskar"
+  ],
+  "new_supplier": "INTILION; system integrator/product supplier, not asserted cell OEM",
+  "new_countries": [],
+  "coverage": {
+    "projects": 2226,
+    "countries_and_territories": 50,
+    "project_sources": 445,
+    "equipment": 1345,
+    "supplier_labels": 59,
+    "equipment_sources": 583,
+    "exact_configurations": 1332,
+    "families": 13
+  },
+  "selected_market_comparison": {
+    "freshly_checked_at": "2026-11-06T08:15:33.290856+00:00",
+    "file": "2026-11-06_merus_atess_markets.json",
+    "metric": "IEA2025 utility-scale battery power additions(GW), selected quantified countries",
+    "ranking": [
+      {
+        "country": "China",
+        "gw": 55,
+        "qualifier": "around"
+      },
+      {
+        "country": "United States",
+        "gw": 16,
+        "qualifier": "over"
+      },
+      {
+        "country": "Australia",
+        "gw": 4.2,
+        "qualifier": "around"
+      }
+    ],
+    "excluded_regional_aggregate": "Europe4.6GW",
+    "operational_stationary_energy_stock_gwh": "Unavailable as a comparable country ranking in inspected source; not inferred",
+    "selection": "Indian official inventory then owner/ministry alternatives; Egyptian lifecycle enrichment; exact Chinese/German product configurations. All six regions retained."
+  },
+  "publication_reconciliation": {
+    "prior_pr": 188,
+    "prior_pr_merged_externally_at": "2026-11-06T08:21:56Z",
+    "base_main": "27f6765c7567f76bed6cde4fe74a270ba72aef70",
+    "branch": "research/bess-database-20261106T0823",
+    "new_projects": 0,
+    "enriched_projects": 3,
+    "new_equipment": 20,
+    "enriched_equipment": 0,
+    "overlapping_main_changes": false
+  }
+}
