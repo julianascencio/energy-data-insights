@@ -55,6 +55,12 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
 
       Reconcile REN's reported solar, wind and import shares with explicit precision.
 
+   .. grid-item-card:: Grid resilience and critical loads
+      :link: topic_grid_resilience
+      :link-type: doc
+
+      Screen battery energy adequacy for islanded critical loads during outages.
+
    .. grid-item-card:: Hybrid renewable dispatch
       :link: topic_hybrid_dispatch
       :link-type: doc
@@ -74,4 +80,5 @@ Combine inputs and methods into maps, forecasts, inspections and uncertainty stu
    topic_thermal_control
    topic_offshore_wind
    topic_portugal_mix
+   topic_grid_resilience
    topic_hybrid_dispatch
