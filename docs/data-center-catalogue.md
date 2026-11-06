@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 581 project records across 39 countries:
-450 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
+The current continuation branch has 591 project records across 40 countries:
+460 facilities, three phases and 128 explicitly scoped campus aggregates, from 22 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -51,6 +51,17 @@ the sources do not identify them as IT, grid or total facility demand. Land,
 renewable-electricity, PUE, permit and construction statements remain dated
 observations; the announced Smedjebacken campus is not treated as permitted.
 
+The European Commission JRC continuation adds the complete bounded 2024 Digital
+Realty Spain and Sweden participant partition: ESP1--ESP4 and STO1--STO6. The
+registry establishes exact data-centre identities and Code of Conduct adhesion,
+but not current lifecycle, ownership, operation, capacity, locality or
+certification. All ten records therefore remain lifecycle-unknown and
+aggregation-unresolved, and are excluded from capacity totals under every
+filter. The Commission page was available through the public indexed reader
+while direct original retrieval was rejected; this is recorded as an access
+failure, not a reuse restriction. The Commission CC BY 4.0 reuse notice is
+captured and checksummed separately.
+
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and
 all 54 from 2019 through 2022 and all 46 from 2010 through 2018 in EPA's
@@ -71,7 +82,7 @@ issuer updates or independent planning, utility and lifecycle evidence.
 ## Data Center Equipment
 
 The [equipment table](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
-has 2,766 exact models/configurations from NVIDIA, AMD, ABB, AIRSYS, AboveAir, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
+has 2,774 exact models/configurations from NVIDIA, AMD, ABB, AIRSYS, AboveAir, ASUS, Ablerex Electronics, Ace Computers, ADI, Altos, Appleton Group / SolaHD, Baudouin, Borri,
 Carrier, Cisco, CoolIT Systems, Cummins, CyberPower Systems, Daikin, Dell, Delta Electronics, Eaton, Envicool, Fujitsu, H3C, Hewlett Packard Enterprise, Hitachi Vantara, Huawei Digital Power, IBM, KAYTUS, Kehua Tech, KSTAR,
 Legrand AV, Lenovo, Motivair by Schneider Electric, Makelsan, Nutanix, Panduit, SIEL, Tescom, Mitsubishi Electric, Fuji Electric, mtu,
 nVent HOFFMAN, Oracle, Schneider Electric, Siemens,
