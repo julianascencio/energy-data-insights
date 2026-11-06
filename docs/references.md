@@ -7799,3 +7799,11 @@ Windey Energy Technology Group Co., Ltd. (2026). **Windey and AMEA Power Aysha I
 **Role:** data_source. Award announcement opening paragraphs; WD200-7700 model paragraph; projected generation paragraph; procedure/award evidence, not installed fleet or independently validated performance.
 
 **Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.
+
+### boe_a_2026_17066
+
+Agencia Estatal Boletín Oficial del Estado (2026). **Cerro de Magaña wind authorization application withdrawal**. [Source](https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-17066)
+
+**Role:** data_source. Hechos Primero–Séptimo; Resuelve Único; withdrawn proposal, not operating capacity
+
+**Used by:** `docs/wind-catalogue.md`, `catalogues/wind/sources.json`.

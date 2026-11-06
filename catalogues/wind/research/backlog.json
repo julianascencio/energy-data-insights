@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-06T07:45:02.416955+00:00",
-  "branch": "research/wind-20261106-0535",
+  "updated_at": "2026-11-06T08:33:14.341190+00:00",
+  "branch": "research/wind-20261106-0835",
   "run_lock": "flock -n /tmp/energy-data-insights-wind-20261105-2235.lock",
   "queue": [
     {
@@ -235,40 +235,40 @@
       "rank": 3,
       "source": "UK Renewable Energy Planning Database",
       "url": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
-      "partition": "Unlinked REPD saved candidates offsets800:1000 next",
-      "next_offset": 800,
+      "partition": "Unlinked REPD saved candidates offsets1000:1200 next",
+      "next_offset": 1000,
       "status": "crosswalk_partition_completed_remaining_applications_pending",
       "tasks": [
         "Do not rerun 642 completed crosswalk enrichments as new work",
         "Resolve explicit replacement application links and primary permit scopes; match WRI renamed identities before new additions",
         "Reconcile scope of 642 enriched records against permits before enabling any capacity totals",
-        "Offsets0:800 structurally reviewed; all remain identity holds, permit contents not yet reviewed. Next800:1000 then exact original permit crosswalks."
+        "Offsets0:1000 structurally reviewed; identities remain held pending original permits. Next1000:1200."
       ],
       "release_url": "https://assets.publishing.service.gov.uk/media/6a6cbdc00c36759b5ccaa305/REPD_Publication_Q2_2026.csv",
       "sha256": "84c1b5f958a934d8b4b86ec88f50bdcf43830ded7ff2efc27bffca0c98695035",
       "next_ids": [
-        "4105",
-        "4106",
-        "4107",
-        "4112",
-        "4115",
-        "4117",
-        "4126",
-        "4127",
-        "4128",
-        "4129",
-        "4131",
-        "4132",
-        "4134",
-        "4135",
-        "4136",
-        "4137",
-        "4144",
-        "4145",
-        "4146",
-        "4147"
+        "4439",
+        "4440",
+        "4441",
+        "4442",
+        "4443",
+        "4446",
+        "4447",
+        "4448",
+        "4449",
+        "4451",
+        "4452",
+        "4453",
+        "4454",
+        "4455",
+        "4457",
+        "4458",
+        "4459",
+        "4461",
+        "4464",
+        "4466"
       ],
-      "structural_review": "2026-11-05-1435-repd-review.json"
+      "structural_review": "2026-11-06-0835-repd-review.json"
     },
     {
       "rank": 4,
@@ -567,6 +567,9 @@
       "source": "BOE complete daily Series A wind-mentioned decisions",
       "status": "bounded_daily_partitions_complete",
       "completed_dates": [
+        "2026-08-03",
+        "2026-08-04",
+        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-08",
@@ -646,15 +649,18 @@
         "2026-11-04"
       ],
       "next_dates": [
-        "2026-08-03",
-        "2026-08-04",
-        "2026-08-05"
+        "2026-07-30",
+        "2026-07-31",
+        "2026-08-01"
       ],
       "adapter": "energy_data_retrieval.wind_catalogue.boe",
       "next_offset": 0,
-      "next_task": "August3–5 all A/B issues; exact primary wind permit/phase crosswalks for Tarayuela/HontalbillaII/RadonaII. Pasama joint procedure does not cancel CerrodeMagaña automatically; Maira final execution design remains held.",
+      "next_task": "July30–31 andAugust1 all A/B issues. CerrodeMagaña PEol-898 now separate from Pasama PEol-897; no parent or additive capacity inferred. Retain solar wind-identity holds.",
       "decision_ledger": "2026-11-05-1807-boe-review.json",
       "series_b_completed_dates": [
+        "2026-08-03",
+        "2026-08-04",
+        "2026-08-05",
         "2026-08-06",
         "2026-08-07",
         "2026-08-08",
@@ -733,7 +739,7 @@
         "2026-11-03",
         "2026-11-04"
       ],
-      "latest_review": "2026-11-06-0735-review.json",
+      "latest_review": "2026-11-06-0835-review.json",
       "unavailable_dates": [
         {
           "date": "2026-09-06",
@@ -848,10 +854,10 @@
   },
   "validation_storage": "0735 original BOE/Windey captures, snapshots and logs outside Git; hashes committed.",
   "publication_continuation": {
-    "branch": "research/wind-20261106-0535",
-    "main": "036429f93354749517d91ac62b18390ec7bccddc",
-    "expected_head": "3070d97a33c32516f10da822436b2033a760ad7a",
-    "pr": 191,
+    "branch": "research/wind-20261106-0835",
+    "main": "64dcf52278bb942591d16571252e4090963f67a1",
+    "expected_head": "64dcf52278bb942591d16571252e4090963f67a1",
+    "pr": null,
     "leave_open_unmerged": true
   }
 }

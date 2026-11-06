@@ -824,3 +824,12 @@ for row in projects.to_dict("records"):
         print(row["name"], award["published_at"], award["manufacturer"], award["model_mentioned"])
         print(award["identity_basis"], award["configuration_status"])
         print("Installed turbine count remains:", row.get("turbine_count"))
+
+# %%
+# A common administrative procedure does not establish a common physical farm.
+print("Former joint administrative procedures; capacity additivity not established:")
+for row in rows:
+    relation = json.loads(row.get("extensions_json") or "{}").get("relationships", {})
+    if relation.get("relationship_type") == "former_joint_administrative_procedure":
+        print(row["name"], relation["related_project_name"], relation["former_procedure"])
+        print("Separated:", relation["separated_date"], "aggregation:", row["aggregation_role"])

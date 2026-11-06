@@ -1317,3 +1317,13 @@ unspecified gross/net boundary and calendar period; no capacity factor is
 computed. Exact configuration, turbine count and conflicting project MW remain
 unresolved. Specifications and announcements are not independently validated
 performance.
+
+The November 6 08:35 batch completes BOE August 3–5 and adds Cerro de Magaña
+under PEol-898. Its former joint administrative procedure with Pasama does not
+establish a parent, a phase or additive capacity. The 50.1 MW withdrawn proposal
+stays excluded from capacity totals. Body and title locality differences remain
+explicit; no coordinates or OEM equipment are inferred.
+
+The pinned REPD Q2 2026 candidate partition 800–999 has been structurally reviewed.
+All 200 identities remain held pending original permit and physical-site
+crosswalks. These are application observations, not 200 additional farms.

@@ -41,6 +41,8 @@ def review_unlinked_applications(
     if type(offset) is not int or type(limit) is not int or offset < 0 or limit <= 0:
         raise ValueError("Invalid partition bounds")
     candidates = [d for d in decisions if d.get("reason") == REASON]
+    if offset > len(candidates):
+        raise ValueError("Partition offset exceeds saved candidates")
     ids = [d["repd_id"] for d in candidates]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate saved candidate ID")

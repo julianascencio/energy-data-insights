@@ -56,3 +56,9 @@ def test_mismatched_release_or_partition_rejected(fault):
         ledger[0]["name"] = "Different"
     with pytest.raises(ValueError):
         review_unlinked_applications(data, ledger, sha256=sha, offset=offset, limit=2)
+
+
+def test_cursor_past_end_is_not_a_verified_empty_partition():
+    data, ledger, sha = fixture()
+    with pytest.raises(ValueError, match="exceeds saved candidates"):
+        review_unlinked_applications(data, ledger, sha256=sha, offset=4, limit=200)
