@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T12:27:37Z",
+  "retrieved_at": "2026-11-06T13:30:39Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -104,6 +104,14 @@
       "enriched_records": 0,
       "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
       "originals": "Direct official-page requests returned request-rejected responses from this environment. Six exact participant/facility rows agreed across indexed Spanish, Romanian, Gaelic and German official-language copies; no original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
+    },
+    {
+      "inventory": "European Commission JRC complete 2023 participant cohort",
+      "processed_offset": 35,
+      "accepted_records": 35,
+      "enriched_records": 0,
+      "reuse": "European Commission content is reusable under CC BY 4.0 unless otherwise indicated. European Union attribution, source URLs and transformation boundaries are retained.",
+      "originals": "Direct official-page requests returned request-rejected responses from this environment. Thirty-six displayed facility rows across 13 participant sets agreed across indexed Spanish, Romanian and Gaelic official-language copies; Frankfurt FRA08 is repeated verbatim, yielding 35 unique identities. No original checksum is claimed. The previously checksummed 90,265-byte EU legal notice remains the rights basis."
     }
   ],
   "deferred": [
@@ -284,6 +292,13 @@
         "adhesion_year"
       ],
       "reason": "Reviewed official-language indexed copies variously align INTEL with Limonest, AMU Luminy, Media CityUK and Leixlip/2016. No INTEL record or reconciled field is synthesized."
+    },
+    {
+      "candidate": "JRC 2023 Frankfurt FRA08 registry row multiplicity",
+      "fields": [
+        "source_row_multiplicity"
+      ],
+      "reason": "The official participant table displays Frankfurt FRA08 twice verbatim while the complete 2023 cohort contains 36 displayed rows. The identical duplicate is retained as a two-occurrence observation and normalized once; no second facility is synthesized."
     }
   ],
   "normalization_notes": [
@@ -349,6 +364,10 @@
     "INTEL remains quarantined because official-language indexed copies conflict on facility identity and year. Pagination-only rows remain deferred. Direct-page rejection is an access/content failure, not a reuse prohibition.",
     "The non-overlapping 2024 JRC partition is complete at six exact identities: D3 Geneva, Roazhon, G-Cloud Moschato, DCWTC Genova, Les Ulis and Castel Sanpietro Terme (BO). Digital Realty Spain and Sweden are excluded because their 10-row partition was completed previously.",
     "Participant names, counts, facility labels and 2024 adhesion agree across reviewed Spanish, Romanian, Gaelic and German official-language indexes. Adhesion is not commissioning, certification or deployment evidence.",
-    "All six records remain lifecycle-unknown and aggregation-unresolved, with every capacity scalar null and excluded under every filter. The direct-page rejection remains an access/content failure rather than a reuse hold."
+    "All six records remain lifecycle-unknown and aggregation-unresolved, with every capacity scalar null and excluded under every filter. The direct-page rejection remains an access/content failure rather than a reuse hold.",
+    "The complete 2023 JRC cohort is processed as 35 unique identities from 36 displayed rows across 13 participant sets. Frankfurt FRA08 is repeated verbatim and remains one facility with a source-row-occurrence observation of two.",
+    "Exact source spellings including Detuschland, Tecchnology, Servvice, Varsaw, Biliancourt, Touluse and Mamoudzo are preserved and are not corrected by inference.",
+    "The 2023 adhesion year is not commissioning, certification or deployment evidence. Company addresses are not site locations, and participant names do not establish owner or operator roles.",
+    "All 35 records remain lifecycle-unknown and aggregation-unresolved, with every capacity scalar null and excluded under every filter. The direct-page rejection is an access/content failure, not a reuse restriction; all saved holds remain in force."
   ]
 }

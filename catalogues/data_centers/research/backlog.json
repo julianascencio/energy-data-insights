@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-06T11:16:48Z",
+  "updated_at": "2026-11-06T13:30:39Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -143,7 +143,9 @@
     "jrc_code_of_conduct_equinix_emea_facilities": 34,
     "jrc_code_of_conduct_dxc_2018_facilities": 11,
     "jrc_code_of_conduct_digital_reality_2018_facilities": 8,
-    "jrc_code_of_conduct_cross_language_stable_2015_2018_facilities": 17
+    "jrc_code_of_conduct_cross_language_stable_2015_2018_facilities": 17,
+    "jrc_code_of_conduct_2024_new_participant_facilities": 6,
+    "jrc_code_of_conduct_2023_unique_facilities": 35
   },
   "next_batches": [
     {
@@ -239,8 +241,8 @@
         "https://airtrunk.com/locations/",
         "https://www.energystar.gov/buildings/certified-data-centers"
       ],
-      "offset": 415,
-      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33, all 337 ENERGY STAR Certified Data Centers entries complete across every 2010-2026 most-recent-label partition, and five bounded JRC partitions complete at 10 Digital Realty Spain/Sweden identities, 34 unique Equinix EMEA identities, all 19 displayed 2018 DxC Technology plus Digital Reality identities, 17 cross-language-stable 2015-2018 identities, and six non-overlapping cross-language-stable 2024 identities. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
+      "offset": 450,
+      "scope": "AirTrunk location inventory complete at offset 22, Meta global fleet cards complete at offset 33, all 337 ENERGY STAR Certified Data Centers entries complete across every 2010-2026 most-recent-label partition, and six bounded JRC partitions complete at 10 Digital Realty Spain/Sweden identities, 34 unique Equinix EMEA identities, all 19 displayed 2018 DxC Technology plus Digital Reality identities, 17 cross-language-stable 2015-2018 identities, six non-overlapping cross-language-stable 2024 identities, and the complete 2023 cohort of 35 unique identities from 36 displayed rows. Continue planning/environmental records for non-overlapping building phases, dated lifecycle and utility boundaries. Review Digital Realty site portfolio licence and facility-vs-campus IDs before a separate operator batch",
       "questions": [
         "Do not use SEC market totals as facilities or normalize AirTrunk total-capacity MW without an electrical boundary",
         "Treat Meta card break-ground years as year-precision observations, not full construction dates or evidence of current lifecycle",
@@ -250,6 +252,7 @@
         "Do not recount the complete 2018 JRC partitions: 11 DxC Technology and eight exact Digital Reality registry identities. Preserve the printed Digital Reality organization spelling and apparent Doxfrod Park and Winyard source spellings unless independent evidence resolves them",
         "Do not recount the 17 cross-language-stable JRC identities from nine 2015-2018 participant sets. INTEL remains deferred because reviewed official-language indexes conflict on its facility identity; pagination-only rows remain outside the completed partition",
         "Do not recount the six non-overlapping 2024 JRC identities: D3 Geneva, Roazhon, G-Cloud Moschato, DCWTC Genova, Les Ulis and Castel Sanpietro Terme (BO). Digital Realty Spain and Sweden remain in their earlier completed partition",
+        "Do not recount the complete 2023 JRC cohort: 35 unique identities from 36 displayed rows across 13 participant sets. Frankfurt FRA08 is repeated verbatim and remains one facility with a two-row source-occurrence observation",
         "Do not copy NTT or PeeringDB restricted bulk datasets without permission"
       ]
     },

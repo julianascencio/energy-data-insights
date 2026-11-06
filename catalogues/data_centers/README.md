@@ -135,7 +135,7 @@ validated BESS IDs, not copied into a competing battery catalogue.
 Read [the latest research report](research/2026-11-06-report.md),
 [ranked continuation backlog](research/backlog.json),
 [latest decision ledger](research/2026-11-06-decisions.jsonl),
-[executed validation](research/2026-11-06T1227-validation.json), and
+[executed validation](research/2026-11-06T1330-validation.json), and
 [usage and simulator guide](../../docs/data-center-catalogue.md).
 The [project viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=projects)
 and [equipment viewer](https://julianascencio.github.io/energy-data-insights/data-center-database-viewer.html?table=equipment)
