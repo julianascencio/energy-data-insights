@@ -1,5 +1,5 @@
 {
-  "retrieved_at": "2026-11-06T00:52:00Z",
+  "retrieved_at": "2026-11-06T02:30:00Z",
   "accepted": [
     {
       "inventory": "Green Mountain complete current site portfolio",
@@ -16,6 +16,14 @@
       "enriched_records": 0,
       "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, security and access details are excluded.",
       "originals": "Seven factual official HTML originals total 1,859,236 bytes and have individual SHA-256 checksums in sources.json. Separate legal and service-terms captures total 538,459 bytes and supported rights review but are not factual sources."
+    },
+    {
+      "inventory": "EcoDataCenter complete evidenced Swedish portfolio",
+      "processed_offset": 3,
+      "accepted_records": 3,
+      "enriched_records": 0,
+      "reuse": "Public copyrighted operator pages; bounded factual extraction only. No open licence is asserted, source HTML is not redistributed and exact addresses, security and access details are excluded.",
+      "originals": "Four factual official HTML originals total 171,146 bytes and have individual SHA-256 checksums in sources.json. Separate cookie/privacy captures total 82,353 bytes and supported rights review but are not factual sources."
     }
   ],
   "deferred": [
@@ -26,6 +34,14 @@
     {
       "candidate": "Glesys Oulu exact child facilities and Campus Oulu phase identities",
       "reason": "The current Oulu page identifies four sites and names street locations, but does not provide stable facility names or boundary-qualified ratings for the three established sites. The aggregate is accepted; child records await exact official identities and phase evidence."
+    },
+    {
+      "candidate": "EcoDataCenter exact Borlänge phases and Smedjebacken permits",
+      "reason": "The current Borlänge page names a first phase but no stable phase identity or exact rating. Smedjebacken construction remains conditional on building and environmental permits. Continue only from official phase, permit or utility evidence."
+    },
+    {
+      "candidate": "DATA4 public campus pages",
+      "reason": "Current official terms prohibit partial or total representation or reproduction without prior written permission. No DATA4 facts or bytes were imported; permission or independent public planning records are required."
     }
   ],
   "quarantined": [
@@ -56,6 +72,24 @@
         "facility_capacity_mw"
       ],
       "reason": "Pori 11 MW, Stockholm 1 MW and Tampere 0.5 MW are labelled only as power/available power. The source does not identify IT, grid or total facility demand, so normalized capacity remains null."
+    },
+    {
+      "candidate": "EcoDataCenter power statements",
+      "fields": [
+        "it_capacity_mw",
+        "grid_capacity_mw",
+        "facility_capacity_mw"
+      ],
+      "reason": "Falun 80 MW, Borlänge up-to 600 MW and Smedjebacken immediate 150 MW do not identify IT, grid or total facility demand. All remain observations and every normalized capacity scalar is null."
+    },
+    {
+      "candidate": "EcoDataCenter Falun PUE and site areas",
+      "fields": [
+        "pue",
+        "data_hall_area_m2",
+        "campus_area_m2"
+      ],
+      "reason": "Falun's 1.2 PUE omits a measurement period; Borlänge's 200,000 m2 is plot/available land and Smedjebacken's 52 hectares is a land-purchase area. These remain observations without scalar normalization."
     }
   ],
   "normalization_notes": [
@@ -73,6 +107,9 @@
     "No Glesys MW statement is normalized because source labels do not establish IT, grid or facility demand. Campus Oulu's 300 MW is explicitly phased planned capacity with an unstated electrical boundary.",
     "Oulu's 1.2 lowest PUE and 250 kW/rack values are kept separate from the three established sites' 1.3 and 22 kW/rack values. No cross-site scalar is synthesized.",
     "Stockholm's 1,200 m2 premium colocation space remains an observation and is not assumed to equal net data-hall area.",
-    "Operator Tier and ISO language remains observation-only; no issuer-registry certification, deployment, exact address or sensitive access/security fact is normalized."
+    "Operator Tier and ISO language remains observation-only; no issuer-registry certification, deployment, exact address or sensitive access/security fact is normalized.",
+    "EcoDataCenter's three evidenced Swedish establishments are complete at offset three: Falun is independent; Borlänge and Smedjebacken are campus aggregates excluded from every capacity sum.",
+    "No EcoDataCenter MW claim is normalized. The Borlänge first-phase target and Smedjebacken early-2027 construction target are not actual commissioning dates.",
+    "The DATA4 screening is a reuse hold, not an access failure. Candidate pages and temporary captures were excluded from the catalogue and source registry."
   ]
 }

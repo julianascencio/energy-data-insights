@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-06T00:52:00Z",
+  "updated_at": "2026-11-06T02:30:00Z",
   "completed_offsets": {
     "nextdc_dc_rows": 28,
     "odata_map_entries": 12,
@@ -132,7 +132,8 @@
     "icolo_current_east_africa_facilities": 5,
     "digital_realty_nairobi_campus_aggregates": 1,
     "green_mountain_current_sites": 7,
-    "glesys_current_owned_locations": 5
+    "glesys_current_owned_locations": 5,
+    "ecodatacenter_current_sites": 3
   },
   "next_batches": [
     {
@@ -511,14 +512,19 @@
       "source": "Wingu Africa portfolio",
       "url": "https://www.wingu.africa/legal/terms-of-use",
       "reason": "Official terms prohibit reproduction, republication, distribution and use of website content for other purposes without prior written permission. Candidate facility pages were screened only; no Wingu facts or bytes were imported."
+    },
+    {
+      "source": "DATA4 public campus pages",
+      "url": "https://www.data4group.com/en/terms-and-conditions/",
+      "reason": "Current official general terms state that site contents are DATA4's exclusive property and prohibit partial or total representation or reproduction without prior written permission. Candidate campus pages were screened only; no DATA4 facts or bytes were imported."
     }
   ],
   "run_policy": "Inspect current main, compatible open PRs and ledgers first; target 50 projects and 20 exact models when evidence permits; alternate major and underrepresented markets/OEMs; never pad; publish validated incremental commits and leave PR open.",
   "latest_run": {
-    "run_id": "glesys-owned-sites-20261106T005200Z",
+    "run_id": "ecodatacenter-sites-20261106T023000Z",
     "report": "2026-11-06-report.md",
-    "validation": "2026-11-06T0052-validation.json",
-    "added_projects": 5,
+    "validation": "2026-11-06T0230-validation.json",
+    "added_projects": 3,
     "enriched_projects": 0,
     "added_equipment": 0,
     "branch": "research/data-center-database-20261105T2217Z"

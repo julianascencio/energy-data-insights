@@ -23,6 +23,9 @@ from energy_data_retrieval.data_center_catalogue.portfolios import (
     parse_carrier_19dv_table,
     parse_cummins_generator_table,
     parse_digital_realty_nbo2_release,
+    parse_ecodatacenter_portfolio,
+    parse_ecodatacenter_site_page,
+    parse_ecodatacenter_smedjebacken_announcement,
     parse_glesys_finland_integration,
     parse_glesys_owned_portfolio,
     parse_glesys_site_page,
@@ -407,6 +410,48 @@ def test_glesys_parsers_preserve_owned_sites_and_conflicts():
         )
     with pytest.raises(ValueError, match="official GleSYS"):
         parse_glesys_owned_portfolio(b"", source_url="https://example.com/")
+
+
+def test_ecodatacenter_parsers_preserve_site_and_capacity_boundaries():
+    portfolio = parse_ecodatacenter_portfolio(
+        (FIXTURES / "ecodatacenter-portfolio.html").read_bytes(),
+        source_url="https://ecodatacenter.tech/data-center",
+    )
+    assert [(row["external_id"], row["record_scope"]) for row in portfolio["candidates"]] == [
+        ("ecodatacenter-1", "facility"),
+        ("ecodatacenter-2", "campus"),
+    ]
+    falun = parse_ecodatacenter_site_page(
+        (FIXTURES / "ecodatacenter-falun.html").read_bytes(),
+        source_url="https://ecodatacenter.tech/data-center/sweden-falun",
+        expected_site="EcoDataCenter 1",
+    )["candidate"]
+    assert falun["reported_power_mw"] == 80
+    assert falun["reported_pue"] == 1.2
+    borlange = parse_ecodatacenter_site_page(
+        (FIXTURES / "ecodatacenter-borlange.html").read_bytes(),
+        source_url="https://ecodatacenter.tech/data-center/ecodatacenter2",
+        expected_site="EcoDataCenter 2",
+    )["candidate"]
+    assert borlange["reported_power_upper_bound_mw"] == 600
+    assert borlange["reported_land_area_m2"] == 200000
+    smedjebacken = parse_ecodatacenter_smedjebacken_announcement(
+        (FIXTURES / "ecodatacenter-smedjebacken.html").read_bytes(),
+        source_url=(
+            "https://ecodatacenter.tech/press/"
+            "ecodatacenter-to-establish-third-datacenter-campus-in-sweden-3462219"
+        ),
+    )["candidate"]
+    assert smedjebacken["reported_unclassified_power_mw"] == 150
+    assert smedjebacken["publication_date"] == "2026-08-25"
+    with pytest.raises(ValueError, match="site identity"):
+        parse_ecodatacenter_site_page(
+            (FIXTURES / "ecodatacenter-falun.html").read_bytes(),
+            source_url="https://ecodatacenter.tech/data-center/sweden-falun",
+            expected_site="EcoDataCenter 2",
+        )
+    with pytest.raises(ValueError, match="official EcoDataCenter"):
+        parse_ecodatacenter_portfolio(b"", source_url="https://example.com/")
 
 
 def test_vertiv_powerups_parser_keeps_only_explicit_topology_ratings():

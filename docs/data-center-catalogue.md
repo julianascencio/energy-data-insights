@@ -2,8 +2,8 @@
 
 ## Data Center Projects
 
-The current continuation branch has 538 project records across 38 countries:
-413 facilities, three phases and 122 explicitly scoped campus aggregates, from 16 operators.
+The current continuation branch has 541 project records across 38 countries:
+414 facilities, three phases and 124 explicitly scoped campus aggregates, from 17 operators.
 Coverage spans North America, Latin America, Europe, Africa, the Middle East and
 Asia-Pacific. This is a research catalogue, not an operating-capacity census.
 
@@ -42,6 +42,14 @@ multi-building campus aggregates and remain excluded from capacity totals under
 every filter. Only source-labelled IT capacity is normalized. Site power,
 secured power, future power and cooling capacity remain separate observations,
 and unnamed building counts do not create inferred child records.
+
+The EcoDataCenter continuation adds the operator's three evidenced Swedish
+establishments: Falun as an independent facility, and Borlänge and Smedjebacken
+as campus aggregates excluded from every capacity total. Reported 80 MW, up-to
+600 MW and immediate 150 MW statements retain their printed boundaries because
+the sources do not identify them as IT, grid or total facility demand. Land,
+renewable-electricity, PUE, permit and construction statements remain dated
+observations; the announced Smedjebacken campus is not treated as permitted.
 
 The current U.S. facility continuation includes all 133 entries whose most recent
 label year is 2026, all 50 from 2025, all 23 from 2024, all 31 from 2023, and

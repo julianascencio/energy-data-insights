@@ -1129,6 +1129,148 @@ def parse_glesys_finland_integration(content: bytes, *, source_url: str) -> dict
     }
 
 
+def parse_ecodatacenter_portfolio(content: bytes, *, source_url: str) -> dict[str, Any]:
+    """Stage the complete current EcoDataCenter site directory."""
+    if urlsplit(source_url).hostname not in {"ecodatacenter.tech", "www.ecodatacenter.tech"}:
+        raise ValueError("Expected official EcoDataCenter URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    required = (
+        "Sites 2",
+        "EcoDataCenter 1 - Falun",
+        "EcoDataCenter 2 - Borlänge",
+        "Our biggest project yet, under construction",
+    )
+    if not all(marker in text for marker in required):
+        raise ValueError("Changed EcoDataCenter portfolio shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidates": [
+            {
+                "external_id": "ecodatacenter-1",
+                "name": "EcoDataCenter 1",
+                "locality": "Falun",
+                "record_scope": "facility",
+                "status": "operational",
+                "locator": "current data-center directory / Falun",
+            },
+            {
+                "external_id": "ecodatacenter-2",
+                "name": "EcoDataCenter 2",
+                "locality": "Borlänge",
+                "record_scope": "campus",
+                "status": "under_construction",
+                "locator": "current data-center directory / Borlänge",
+            },
+        ],
+        "review_required": True,
+    }
+
+
+def parse_ecodatacenter_site_page(
+    content: bytes, *, source_url: str, expected_site: str | None = None
+) -> dict[str, Any]:
+    """Stage bounded metrics from the Falun or Borlänge current site page."""
+    if urlsplit(source_url).hostname not in {"ecodatacenter.tech", "www.ecodatacenter.tech"}:
+        raise ValueError("Expected official EcoDataCenter URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    sites = [site for site in ("EcoDataCenter 1", "EcoDataCenter 2") if site in text]
+    if expected_site not in {"EcoDataCenter 1", "EcoDataCenter 2"}:
+        raise ValueError("Expected an exact EcoDataCenter site identity")
+    if expected_site not in sites:
+        raise ValueError("Changed EcoDataCenter site identity")
+    if expected_site == "EcoDataCenter 1":
+        required = (
+            "A large-scale data center site for HPC, AI in Falun, Sweden",
+            "Renewable electricity on-site 100 %",
+            "75% comes from hydropower and 25% from wind power",
+            "Total available power 80 MW",
+            "PUE 1.2 Achieved according to ISO standards",
+        )
+        if not all(marker in text for marker in required):
+            raise ValueError("Changed EcoDataCenter 1 metric shape")
+        candidate = {
+            "external_id": "ecodatacenter-1",
+            "locality": "Falun",
+            "reported_power_mw": 80.0,
+            "renewable_electricity_pct": 100.0,
+            "hydropower_pct": 75.0,
+            "wind_power_pct": 25.0,
+            "reported_pue": 1.2,
+            "locator": "current Falun page / metric cards and narrative",
+        }
+    else:
+        required = (
+            "Renewable electricity on-site 100 %",
+            "Total available power up to 600 MW",
+            "Total available land 200 k m2",
+            "Construction start 2025",
+            "All environmental permits have been approved",
+            "Construction began in September 2025",
+            "first phase of the site set to be completed by mid-2027",
+        )
+        if not all(marker in text for marker in required):
+            raise ValueError("Changed EcoDataCenter 2 metric shape")
+        candidate = {
+            "external_id": "ecodatacenter-2",
+            "locality": "Borlänge",
+            "reported_power_upper_bound_mw": 600.0,
+            "renewable_electricity_pct": 100.0,
+            "reported_land_area_m2": 200000.0,
+            "construction_start": "2025-09",
+            "first_phase_target": "2027-mid-year",
+            "environmental_permits": "approved",
+            "locator": "current Borlänge page / metric cards and construction narrative",
+        }
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": candidate,
+        "review_required": True,
+    }
+
+
+def parse_ecodatacenter_smedjebacken_announcement(
+    content: bytes, *, source_url: str
+) -> dict[str, Any]:
+    """Stage the announced third EcoDataCenter campus without inferring permits."""
+    if urlsplit(source_url).hostname not in {"ecodatacenter.tech", "www.ecodatacenter.tech"}:
+        raise ValueError("Expected official EcoDataCenter URL")
+    parser = _VisibleText()
+    parser.feed(content.decode("utf-8-sig"))
+    text = " ".join(" ".join(parser.parts).split())
+    required = (
+        "EcoDataCenter to Establish Third Datacenter Campus in Sweden",
+        "25.08.2026",
+        "signed an agreement with Smedjebacken Municipality for the purchase of land",
+        "purchase covers 52 hectares of land",
+        "building and environmental permits are finalized",
+        "anticipated in early 2027",
+        "green light of an immediate 150MW with credible opportunity to expand further",
+    )
+    if not all(marker in text for marker in required):
+        raise ValueError("Changed EcoDataCenter Smedjebacken announcement shape")
+    return {
+        "source_url": source_url,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "candidate": {
+            "external_id": "ecodatacenter-3",
+            "locality": "Smedjebacken",
+            "reported_land_area_hectares": 52.0,
+            "reported_unclassified_power_mw": 150.0,
+            "construction_target": "2027-early",
+            "publication_date": "2026-08-25",
+            "status": "announced",
+            "locator": "dated land-purchase and third-campus announcement",
+        },
+        "review_required": True,
+    }
+
+
 def parse_green_mountain_facility_page(
     content: bytes, *, source_url: str, expected_code: str | None = None
 ) -> dict[str, Any]:
