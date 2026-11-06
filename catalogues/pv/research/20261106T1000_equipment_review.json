@@ -1,0 +1,834 @@
+{
+  "new_modules": 12,
+  "typed_values": 173,
+  "records": [
+    {
+      "model": "GG-620",
+      "typed_fields": {
+        "pmax_stc_w": 620.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 22.95,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 33.5,
+        "cell_count": 132,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%+/°C",
+        "alpha_action": "Extra plus sign retained, scalar withheld",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Conflicting first dimension and unlabeled axes: all scalar dimensions withheld; no preferred revision inferred",
+          "brochure_page6_native_mm": "2382 x1134 x30",
+          "live_native_mm": "2384 x1134 x30"
+        },
+        "family": "G12R132 half-cut, 6x22",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-620",
+        "module_design": "Brochure page6 explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "15.19",
+          "Open Circuit Voltage (Voc)": "49.22",
+          "Short Circuit Current (Isc)": "15.98",
+          "Voltage at Pmax (Vmp)": "40.82"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 640,
+          "pieces_per_pallet": 32
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_g12r_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-625",
+      "typed_fields": {
+        "pmax_stc_w": 625.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 23.14,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 33.5,
+        "cell_count": 132,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%+/°C",
+        "alpha_action": "Extra plus sign retained, scalar withheld",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Conflicting first dimension and unlabeled axes: all scalar dimensions withheld; no preferred revision inferred",
+          "brochure_page6_native_mm": "2382 x1134 x30",
+          "live_native_mm": "2384 x1134 x30"
+        },
+        "family": "G12R132 half-cut, 6x22",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-625",
+        "module_design": "Brochure page6 explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "15.27",
+          "Open Circuit Voltage (Voc)": "49.34",
+          "Short Circuit Current (Isc)": "16.05",
+          "Voltage at Pmax (Vmp)": "40.95"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 640,
+          "pieces_per_pallet": 32
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_g12r_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-630",
+      "typed_fields": {
+        "pmax_stc_w": 630.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 23.32,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 33.5,
+        "cell_count": 132,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%+/°C",
+        "alpha_action": "Extra plus sign retained, scalar withheld",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Conflicting first dimension and unlabeled axes: all scalar dimensions withheld; no preferred revision inferred",
+          "brochure_page6_native_mm": "2382 x1134 x30",
+          "live_native_mm": "2384 x1134 x30"
+        },
+        "family": "G12R132 half-cut, 6x22",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-630",
+        "module_design": "Brochure page6 explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "15.35",
+          "Open Circuit Voltage (Voc)": "49.49",
+          "Short Circuit Current (Isc)": "16.11",
+          "Voltage at Pmax (Vmp)": "41.05"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 640,
+          "pieces_per_pallet": 32
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_g12r_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-635",
+      "typed_fields": {
+        "pmax_stc_w": 635.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 23.51,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 33.5,
+        "cell_count": 132,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%+/°C",
+        "alpha_action": "Extra plus sign retained, scalar withheld",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Conflicting first dimension and unlabeled axes: all scalar dimensions withheld; no preferred revision inferred",
+          "brochure_page6_native_mm": "2382 x1134 x30",
+          "live_native_mm": "2384 x1134 x30"
+        },
+        "family": "G12R132 half-cut, 6x22",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-635",
+        "module_design": "Brochure page6 explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "15.42",
+          "Open Circuit Voltage (Voc)": "49.62",
+          "Short Circuit Current (Isc)": "16.17",
+          "Voltage at Pmax (Vmp)": "41.18"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 640,
+          "pieces_per_pallet": 32
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_g12r_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-640",
+      "typed_fields": {
+        "pmax_stc_w": 640.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 23.69,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 33.5,
+        "cell_count": 132,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%+/°C",
+        "alpha_action": "Extra plus sign retained, scalar withheld",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Conflicting first dimension and unlabeled axes: all scalar dimensions withheld; no preferred revision inferred",
+          "brochure_page6_native_mm": "2382 x1134 x30",
+          "live_native_mm": "2384 x1134 x30"
+        },
+        "family": "G12R132 half-cut, 6x22",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-640",
+        "module_design": "Brochure page6 explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "15.5",
+          "Open Circuit Voltage (Voc)": "49.77",
+          "Short Circuit Current (Isc)": "16.22",
+          "Voltage at Pmax (Vmp)": "41.31"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 640,
+          "pieces_per_pallet": 32
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_g12r_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-645",
+      "typed_fields": {
+        "pmax_stc_w": 645.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 23.88,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 33.5,
+        "cell_count": 132,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%+/°C",
+        "alpha_action": "Extra plus sign retained, scalar withheld",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Conflicting first dimension and unlabeled axes: all scalar dimensions withheld; no preferred revision inferred",
+          "brochure_page6_native_mm": "2382 x1134 x30",
+          "live_native_mm": "2384 x1134 x30"
+        },
+        "family": "G12R132 half-cut, 6x22",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-645",
+        "module_design": "Brochure page6 explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "15.58",
+          "Open Circuit Voltage (Voc)": "49.9",
+          "Short Circuit Current (Isc)": "16.25",
+          "Voltage at Pmax (Vmp)": "41.41"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 640,
+          "pieces_per_pallet": 32
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_g12r_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-650",
+      "typed_fields": {
+        "pmax_stc_w": 650.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 24.06,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 33.5,
+        "cell_count": 132,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%+/°C",
+        "alpha_action": "Extra plus sign retained, scalar withheld",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Conflicting first dimension and unlabeled axes: all scalar dimensions withheld; no preferred revision inferred",
+          "brochure_page6_native_mm": "2382 x1134 x30",
+          "live_native_mm": "2384 x1134 x30"
+        },
+        "family": "G12R132 half-cut, 6x22",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-650",
+        "module_design": "Brochure page6 explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "15.64",
+          "Open Circuit Voltage (Voc)": "50.08",
+          "Short Circuit Current (Isc)": "16.3",
+          "Voltage at Pmax (Vmp)": "41.57"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 640,
+          "pieces_per_pallet": 32
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_g12r_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-580",
+      "typed_fields": {
+        "pmax_stc_w": 580.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 22.45,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 32.5,
+        "cell_count": 144,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30,
+        "alpha_isc_pct_per_c": 0.05
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%/°C",
+        "alpha_action": "Unambiguous relative coefficient",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Unlabeled axes remain a native tuple; no dimension conflict for this family",
+          "live_and_brochure_page7_native_mm": "2278 x1134 x30"
+        },
+        "family": "144 half-cut, 6x24",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-580",
+        "module_design": "Brochure physicalpage7/printed06 TOPCon section explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "13.60",
+          "Open Circuit Voltage (Voc)": "51.25",
+          "Short Circuit Current (Isc)": "14.35",
+          "Voltage at Pmax (Vmp)": "42.70"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 680,
+          "pieces_per_pallet": 34
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_144_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-585",
+      "typed_fields": {
+        "pmax_stc_w": 585.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 22.65,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 32.5,
+        "cell_count": 144,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30,
+        "alpha_isc_pct_per_c": 0.05
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%/°C",
+        "alpha_action": "Unambiguous relative coefficient",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Unlabeled axes remain a native tuple; no dimension conflict for this family",
+          "live_and_brochure_page7_native_mm": "2278 x1134 x30"
+        },
+        "family": "144 half-cut, 6x24",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-585",
+        "module_design": "Brochure physicalpage7/printed06 TOPCon section explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "13.70",
+          "Open Circuit Voltage (Voc)": "51.35",
+          "Short Circuit Current (Isc)": "14.45",
+          "Voltage at Pmax (Vmp)": "42.75"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 680,
+          "pieces_per_pallet": 34
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_144_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-590",
+      "typed_fields": {
+        "pmax_stc_w": 590.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 22.84,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 32.5,
+        "cell_count": 144,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30,
+        "alpha_isc_pct_per_c": 0.05
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%/°C",
+        "alpha_action": "Unambiguous relative coefficient",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Unlabeled axes remain a native tuple; no dimension conflict for this family",
+          "live_and_brochure_page7_native_mm": "2278 x1134 x30"
+        },
+        "family": "144 half-cut, 6x24",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-590",
+        "module_design": "Brochure physicalpage7/printed06 TOPCon section explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "13.80",
+          "Open Circuit Voltage (Voc)": "51.4",
+          "Short Circuit Current (Isc)": "14.50",
+          "Voltage at Pmax (Vmp)": "42.80"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 680,
+          "pieces_per_pallet": 34
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_144_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-595",
+      "typed_fields": {
+        "pmax_stc_w": 595.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 23.03,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 32.5,
+        "cell_count": 144,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30,
+        "alpha_isc_pct_per_c": 0.05
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%/°C",
+        "alpha_action": "Unambiguous relative coefficient",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Unlabeled axes remain a native tuple; no dimension conflict for this family",
+          "live_and_brochure_page7_native_mm": "2278 x1134 x30"
+        },
+        "family": "144 half-cut, 6x24",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-595",
+        "module_design": "Brochure physicalpage7/printed06 TOPCon section explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "13.85",
+          "Open Circuit Voltage (Voc)": "51.45",
+          "Short Circuit Current (Isc)": "14.55",
+          "Voltage at Pmax (Vmp)": "43"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 680,
+          "pieces_per_pallet": 34
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_144_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    },
+    {
+      "model": "GG-600",
+      "typed_fields": {
+        "pmax_stc_w": 600.0,
+        "fuse_rating_max_a": 30,
+        "efficiency_stc_pct": 23.23,
+        "system_voltage_max_v": 1500,
+        "operating_temperature_min_c": -40,
+        "operating_temperature_max_c": 85,
+        "weight_kg": 32.5,
+        "cell_count": 144,
+        "technology": "N-type TOPCon",
+        "bifacial": true,
+        "gamma_pmax_pct_per_c": -0.3,
+        "beta_voc_pct_per_c": -0.26,
+        "noct_c": 45,
+        "performance_warranty_years": 30,
+        "alpha_isc_pct_per_c": 0.05
+      },
+      "context": {
+        "NOCT_conditions": "NOCT label as printed; detailed test conditions not stated",
+        "NOCT_tolerance_C": 2,
+        "alpha_Isc_native": "+0.05%/°C",
+        "alpha_action": "Unambiguous relative coefficient",
+        "conditions": {
+          "cell_temperature_C": 25,
+          "irradiance_W_m2": 1000,
+          "spectrum": "AM1.5"
+        },
+        "dimensions_review": {
+          "action": "Unlabeled axes remain a native tuple; no dimension conflict for this family",
+          "live_and_brochure_page7_native_mm": "2278 x1134 x30"
+        },
+        "family": "144 half-cut, 6x24",
+        "front_glass_native": "3.2mm tempered anti-reflective; no back thickness inferred",
+        "junction_box": "IP68 split JB; not module ingress rating",
+        "mechanical_claims_Pa": {
+          "basis": "OEM withstand claim, not design load/safety-factor conversion or independent certification",
+          "snow": 5400,
+          "wind": 2400
+        },
+        "model_column": "GG-600",
+        "module_design": "Brochure physicalpage7/printed06 TOPCon section explicitly glass-to-glass bifacial",
+        "native_electrical_unit_questions": {
+          "Current at Pmax (Imp)": "13.90",
+          "Open Circuit Voltage (Voc)": "51.5",
+          "Short Circuit Current (Isc)": "14.60",
+          "Voltage at Pmax (Vmp)": "43.20"
+        },
+        "packaging": {
+          "pallets_per_40ft_container": 20,
+          "pieces_per_container": 680,
+          "pieces_per_pallet": 34
+        },
+        "power_tolerance_W": [
+          0,
+          5
+        ],
+        "source_ids": [
+          "ganesh_144_20261106T1000",
+          "ganesh_brochure_20261106T1000"
+        ],
+        "unit_action": "Voltage/current quantities are named but explicit V/A units absent from live table. Native values retained, typed voc/vmp/isc/imp withheld pending OEM unit confirmation. No inference from conventional magnitudes.",
+        "warranty": "30-year linear power output; page claims87.6% endpoint without detailed terms. No annual degradation derived; no universal product warranty copied from homepage.",
+        "weight_tolerance_percent": 3
+      }
+    }
+  ],
+  "identity_review": "Twelve literal models across G12R132 and144-cell TOPCon architectures; all normalized model and source-ID identities screened against entire catalogue/incoming batch. Ganesh Green is a new manufacturer. No invented bins, configured variants or fuzzy rebrand merge.",
+  "field_holds_per_model": [
+    "electrical_units_four_fields",
+    "dimensions_conflict_and_axes",
+    "alpha_Isc_typography"
+  ],
+  "canonical_quarantines": 0,
+  "whole_model_holds": [
+    {
+      "model": "GG-605",
+      "reason": "GG605 and GG610 table columns exceed page580–600W range/max23.23% efficiency and brochure page7 UPTO600W/23.23%. No silently preferred assertion."
+    },
+    {
+      "model": "GG-610",
+      "reason": "GG605 and GG610 table columns exceed page580–600W range/max23.23% efficiency and brochure page7 UPTO600W/23.23%. No silently preferred assertion."
+    }
+  ],
+  "field_holds_summary": {
+    "unlabelled_electrical_unit_fields": 48,
+    "G12R_alpha_typography_models": 7,
+    "shared_G12R_dimension_discrepancy": 1,
+    "all_unlabelled_dimension_axes": "12models native tuple only",
+    "whole_models_held": 2
+  }
+}

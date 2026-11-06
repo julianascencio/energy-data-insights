@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-06T09:13:16.253908+00:00",
-  "ranking_file": "20261106T0900_top10_gaps.json",
+  "updated_at": "2026-11-06T10:16:56.629950+00:00",
+  "ranking_file": "20261106T1000_top10_gaps.json",
   "selection_note": "197projects/401fieldscontexts,13newFoxESSinverters/247typedvalues.2acceptedbatches;3ownerholds. Nepal/BPDBnewdiscovery only;Taipowerunchanged/alreadyprocessed,no adaptercompletion.",
-  "next_highest_value_source": "China172strictownershipcandidatesaftercursor, thenGreece367; MalaysiaSTlicencePV/rights/sitecrosswalkheld; Cabur2025exactcombineraccessnextdue7Nov.",
+  "next_highest_value_source": "Greece339strictownershipcandidatesaftercursor; Ganesh exact units/dimension/model-scope questions; Kalyon normal PDF access nextdue7Nov; SpainREPRO CAPTCHA distinct from existing Electra75 hold.",
   "sources": [
     {
       "id": "uk_repd",
@@ -28014,6 +28014,481 @@
       "retry_condition": "Newunprocessedpartition or changedrevision/access/rights/independentidentity evidence; no retrybursts",
       "next_action": "Backoffuntilnormalserviceaccess; inspectexactrevision/rights andactualfixedconfigurationthen.",
       "next_due_check": "2026-11-07T09:00:00Z"
+    },
+    {
+      "id": "gem_CHN_GRC_owners_1000",
+      "country": [
+        "CHN",
+        "GRC"
+      ],
+      "entity": "projects",
+      "source_url": "https://globalenergymonitor.org/projects/global-solar-power-tracker/",
+      "endpoint": "https://raw.githubusercontent.com/GlobalEnergyMonitor/gipt-dashboard/06587e9b6c4e332e646347f6e62af54b10df5ef3/Global-Solar-Power-Tracker-February-2026.xlsx",
+      "format": "PinnedFebruary2026XLSX exact complete phase/owner cells",
+      "licence_assessment": "CC BY 4.0; exclude entire locations containing TransitionZero (TZ) or Wiki-Solar (WKSL) identifiers",
+      "publication_cadence": "Release based; official metadata stillFebruary2026 checked6November; no workbook redownload",
+      "last_release": "February2026",
+      "last_retrieval": "2026-11-05T11:57:14.680485+00:00",
+      "sha256": "99f44fd162faff436cbc7c1edf7a8a486c4e32746a9786778362ca4688d39959",
+      "etag": "\"55284d2ad4671fedab2be1fc9091f87166ae68b925a377da180a8a95c2ce8acc\"",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "reviewed": 200,
+      "accepted": 194,
+      "held": 6,
+      "rejected": 0,
+      "mapping": "194historical owners +194phase contexts;167China/27Greece",
+      "estimated_useful_yield": {
+        "remaining_strict_GRC": 339,
+        "remaining_strict_CHN": 0
+      },
+      "processed_cursor": {
+        "CHN": "L100001081782",
+        "GRC": "L100000806158"
+      },
+      "result": "Selected172China/28Greece identities complete. Six location-name holds; one earlier anomalous owner spelling recurs on a distinct new location, not a repeat of an accepted/held record.",
+      "retry_condition": "Refresh metadata/head before next partition; prior held names remain separate",
+      "next_action": "Greece339 after saved cursor; China strict partition exhausted, no national ownership completeness claim",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "ganesh_G12R_1000",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.ganeshgreen.com/public/products/topcon-g12r-132",
+      "endpoint": [
+        "https://www.ganeshgreen.com/public/products/topcon-g12r-132",
+        "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+        "https://www.ganeshgreen.com/"
+      ],
+      "format": "Public HTML exact seven-column STC table plus16-page linked OEM brochure; physicalpage6 reviewed",
+      "licence_assessment": "OEM copyright retained; bounded individually reviewed factual entries only, no open bulk/document grant or document/prose/artwork redistribution. Terms/Privacy footer links are # placeholders, not licence evidence.",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:05:22.235609+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "df4917628634327847f343c4c3be923ada855bb265eac656f4a8a3b7ef4acfe7",
+      "etag": null,
+      "captures": [
+        {
+          "name": "ganesh.html",
+          "url": "https://www.ganeshgreen.com/public/products/topcon-g12r-132",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/public/products/topcon-g12r-132",
+          "retrieved_at": "2026-11-06T10:05:22.235609+00:00",
+          "sha256": "df4917628634327847f343c4c3be923ada855bb265eac656f4a8a3b7ef4acfe7",
+          "bytes": 69996,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "ganesh-brochure.pdf",
+          "url": "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+          "retrieved_at": "2026-11-06T10:06:07.569525+00:00",
+          "sha256": "41bf456bc037f07ec5b7338db49f0ab301517d097043c0ebb11f8ccfa5c6e0f9",
+          "bytes": 4705539,
+          "etag": "\"47cd03-6a3b714b-c219d6a277adb5c6;;;\"",
+          "last_modified": "Wed, 24 Jun 2026 05:55:23 GMT"
+        },
+        {
+          "name": "ganesh-home.html",
+          "url": "https://www.ganeshgreen.com/",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/",
+          "retrieved_at": "2026-11-06T10:05:22.423863+00:00",
+          "sha256": "176f850d7876a0728f97e21c0ae761c0eda53050bf0f6750eb7dfaccfa409215",
+          "bytes": 138496,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 7,
+        "accepted": 7,
+        "remaining_verified": null
+      },
+      "reviewed": 7,
+      "accepted": 7,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "models": 7,
+        "brochure_physical_page": 6
+      },
+      "result": "7exact power-graded GG620–650 G12R132 models,98 typed values. Four native voltage/current units unstated, alphaIsc typography and brochure/live dimension discrepancy held. Junction IP68 not module ingress.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Selected7 columns exhausted. Resolve explicit V/A units, coefficient typography and2382/2384mm first dimension before scalar enrichment.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "ganesh_144_1000",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://www.ganeshgreen.com/public/products/topcon-144",
+      "endpoint": [
+        "https://www.ganeshgreen.com/public/products/topcon-144",
+        "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf"
+      ],
+      "format": "Public HTML exact STC table; physicalpage7 TOPCon section visually reviewed",
+      "licence_assessment": "OEM copyright retained; bounded individually reviewed factual entries only, no open bulk/document grant or document/prose/artwork redistribution. Terms/Privacy footer links are # placeholders, not licence evidence.",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:11:20.647981+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "9c36667fdde878d5edfca4c53a2f66b49d3422aeaa5c8b8d57296253271a55be",
+      "etag": null,
+      "captures": [
+        {
+          "name": "ganesh144.html",
+          "url": "https://www.ganeshgreen.com/public/products/topcon-144",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/public/products/topcon-144",
+          "retrieved_at": "2026-11-06T10:11:20.647981+00:00",
+          "sha256": "9c36667fdde878d5edfca4c53a2f66b49d3422aeaa5c8b8d57296253271a55be",
+          "bytes": 70391,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "ganesh-brochure.pdf",
+          "url": "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+          "status": 200,
+          "final_url": "https://www.ganeshgreen.com/public/storage/products/brochures/SjH78mwdRgfaBOTtOE7D3Q2JyIZtZHs7EVic5cGN.pdf",
+          "retrieved_at": "2026-11-06T10:06:07.569525+00:00",
+          "sha256": "41bf456bc037f07ec5b7338db49f0ab301517d097043c0ebb11f8ccfa5c6e0f9",
+          "bytes": 4705539,
+          "etag": "\"47cd03-6a3b714b-c219d6a277adb5c6;;;\"",
+          "last_modified": "Wed, 24 Jun 2026 05:55:23 GMT"
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 7,
+        "accepted": 5,
+        "remaining_verified": null
+      },
+      "reviewed": 7,
+      "accepted": 5,
+      "held": 2,
+      "rejected": 0,
+      "processed_cursor": {
+        "reviewed": 7,
+        "accepted": 5,
+        "held": [
+          "GG-605",
+          "GG-610"
+        ],
+        "brochure_physical_page": 7
+      },
+      "result": "5GG580–600 144-cell TOPCon models add75typed values. GG605/610 columns exceed page power/efficiency header and brochure page7 maximum; whole models held. Unstated electrical units and unlabeled axes contextual.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Selected7 columns exhausted. Resolve605/610 scope with consistent OEM revision; no new hypothetical bins or other family clones.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "kalyon_access_1000",
+      "country": "TUR",
+      "entity": "modules",
+      "source_url": "https://cdn.kalyonpv.com/images/products/products_datasheets/02-TOPCon-Series/05-G12-Series/G12R-132-TOPCON-GG-2025-04_EN.pdf",
+      "endpoint": [
+        "https://cdn.kalyonpv.com/images/products/products_datasheets/02-TOPCon-Series/05-G12-Series/G12R-132-TOPCON-GG-2025-04_EN.pdf",
+        "https://kalyonpv.com/indirme-merkezi",
+        "https://kalyonpv.com/"
+      ],
+      "format": "Public index and attempted OEM PDF",
+      "licence_assessment": "Copyright reserved; technical document inaccessible, no extraction/reuse basis established",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:03:43.869547+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+      "etag": null,
+      "captures": [
+        {
+          "name": "kalyon.pdf",
+          "url": "https://cdn.kalyonpv.com/images/products/products_datasheets/02-TOPCon-Series/05-G12-Series/G12R-132-TOPCON-GG-2025-04_EN.pdf",
+          "status": 503,
+          "final_url": "https://cdn.kalyonpv.com/images/products/products_datasheets/02-TOPCon-Series/05-G12-Series/G12R-132-TOPCON-GG-2025-04_EN.pdf",
+          "retrieved_at": "2026-11-06T10:03:43.869547+00:00",
+          "sha256": "33fbc61ad080ef68dd7a6479f8c53f1bf864dba2930567dbbc4ceb47490a1909",
+          "bytes": 98,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "kalyon-index.html",
+          "url": "https://kalyonpv.com/indirme-merkezi",
+          "status": 200,
+          "final_url": "https://kalyonpv.com/indirme-merkezi",
+          "retrieved_at": "2026-11-06T10:06:03.979128+00:00",
+          "sha256": "01224b8e21e85e04eba724170cd565cd602f63a7c5eb82fa8aeb88d464a1c0a1",
+          "bytes": 475190,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "kalyon-home.html",
+          "url": "https://kalyonpv.com/",
+          "status": 200,
+          "final_url": "https://kalyonpv.com/",
+          "retrieved_at": "2026-11-06T10:05:22.011702+00:00",
+          "sha256": "d5c3ac5749852d035b56742872a5223be6d6723eef9c7ab88f7da9094ee5205e",
+          "bytes": 478386,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "remaining_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "New promising11-column G12R OEM sheet discovered; directPDF503 and web open timeout. Home/downloadindex accessible, guessed/en URL404; no PDF facts/checksum claimed from error bytes.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Use current official index/revision when normal PDF access recovers; inspect source-specific reuse then. No retry burst or third-party replacement.",
+      "next_due_check": "2026-11-07T10:00:00Z"
+    },
+    {
+      "id": "waaree_oldlink_1000",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://waaree.com/wp-content/uploads/2024/02/ELITE-SERIES-BiN-02-615-650-WEL-EPD-615-650-120-BiN-HC-07-31.08.2024.pdf",
+      "endpoint": [
+        "https://waaree.com/wp-content/uploads/2024/02/ELITE-SERIES-BiN-02-615-650-WEL-EPD-615-650-120-BiN-HC-07-31.08.2024.pdf",
+        "https://waaree.com/"
+      ],
+      "format": "HTTP redirects / HTML, not PDF",
+      "licence_assessment": "No relevant same-publisher document/reuse assessment established; zero data extraction",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:04:43.842513+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "8a1625a5509cf9bf5a73514c374923b988411f11cb8b08cbdc5bd5da34e5a119",
+      "etag": null,
+      "captures": [
+        {
+          "name": "waaree.pdf",
+          "url": "https://waaree.com/wp-content/uploads/2024/02/ELITE-SERIES-BiN-02-615-650-WEL-EPD-615-650-120-BiN-HC-07-31.08.2024.pdf",
+          "status": 200,
+          "final_url": "https://www.waaree.com:443/",
+          "retrieved_at": "2026-11-06T10:04:43.842513+00:00",
+          "sha256": "8a1625a5509cf9bf5a73514c374923b988411f11cb8b08cbdc5bd5da34e5a119",
+          "bytes": 1592651,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "waaree.html",
+          "url": "https://waaree.com/",
+          "status": 200,
+          "final_url": "https://www.waaree.com:443/",
+          "retrieved_at": "2026-11-06T10:04:30.802464+00:00",
+          "sha256": "8a1625a5509cf9bf5a73514c374923b988411f11cb8b08cbdc5bd5da34e5a119",
+          "bytes": 1592651,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "remaining_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Verified old exactPDF URL redirects to homepage HTML; its bytes are not a datasheet despiteHTTP200. No models parsed/accepted. Unrelated Vaaree homewares and WaareeRTL entity terms are not substituted.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Find current official same-entity download link and inspect its rights/revision before acceptance.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "pixon_gate_1000",
+      "country": "IND",
+      "entity": "modules",
+      "source_url": "https://pixonenergy.com/resources/downloads/technical-datasheets/",
+      "endpoint": [
+        "https://pixonenergy.com/resources/downloads/technical-datasheets/",
+        "https://pixonenergy.com/legal-statement/",
+        "https://www.pixonenergy.com/pdf/technical_datasheet/PIX-MBHTB-132-665.pdf"
+      ],
+      "format": "Current technical index/legalHTML and oldPDF404",
+      "licence_assessment": "Current legal statement reserves IP/unauthorized reuse; no document grant. Access gate respected.",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:04:15.900558+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "cdea294589a1a6da8c1aa0027e73493cb7efb57df87cad4136c00b7930f540c1",
+      "etag": null,
+      "captures": [
+        {
+          "name": "pixon.html",
+          "url": "https://pixonenergy.com/resources/downloads/technical-datasheets/",
+          "status": 200,
+          "final_url": "https://pixonenergy.com/resources/downloads/technical-datasheets/",
+          "retrieved_at": "2026-11-06T10:04:15.900558+00:00",
+          "sha256": "cdea294589a1a6da8c1aa0027e73493cb7efb57df87cad4136c00b7930f540c1",
+          "bytes": 125128,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "pixon-legal.html",
+          "url": "https://pixonenergy.com/legal-statement/",
+          "status": 200,
+          "final_url": "https://pixonenergy.com/legal-statement/",
+          "retrieved_at": "2026-11-06T10:04:51.009418+00:00",
+          "sha256": "f32ed773019f5736a3c172638feec22a61d451803c99f515041cf1e9aa65d178",
+          "bytes": 86734,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "pixon-old.pdf",
+          "url": "https://www.pixonenergy.com/pdf/technical_datasheet/PIX-MBHTB-132-665.pdf",
+          "status": 404,
+          "final_url": "https://pixonenergy.com/pdf/technical_datasheet/PIX-MBHTB-132-665.pdf",
+          "retrieved_at": "2026-11-06T10:04:57.844210+00:00",
+          "sha256": "50bf50d93d72b2fb392f01fe27cf67cd734cdb8cca9c3573c06b21c8c5f85238",
+          "bytes": 88693,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "remaining_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "accepted": 0
+      },
+      "result": "Current datasheet buttons open name/email form. No form submitted or hidden document URL reverse-engineered. Independently indexed oldPDF ordinaryGET404. Legal statement reserves content rights; no models accepted.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Use normally published ungated source with exact revision and permitted factual scope; no contact/registration.",
+      "next_due_check": "2026-11-13T10:00:00Z"
+    },
+    {
+      "id": "spain_REPRO_discovery_1000",
+      "country": "ESP",
+      "entity": "projects",
+      "source_url": "https://energia.serviciosmin.gob.es/reprov2/RegistroPublico.aspx",
+      "endpoint": [
+        "https://energia.serviciosmin.gob.es/reprov2/RegistroPublico.aspx",
+        "https://energia.serviciosmin.gob.es/reprov2/",
+        "https://www.miteco.gob.es/es/energia/energia-electrica/electricidad/regimen-ordinario/registro-instalaciones.html",
+        "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+        "https://www.miteco.gob.es/es/energia/servicios/registros.html"
+      ],
+      "format": "Public HTML landing/registry/notice; no bulk export or form submission",
+      "licence_assessment": "General MITECO notice supports attributed portal information reuse; source-specific registry scope/conditions and personal-data limits still require review. No dataset ingested.",
+      "access_assessment": "Ordinary public GET only, no contacts/forms/login/CAPTCHA bypass",
+      "publication_cadence": "Revision based or unestablished; metadata first and skip unchanged files",
+      "last_release": "Content undated unless otherwise noted; HTTP/PDF metadata not product effective date",
+      "last_retrieval": "2026-11-06T10:06:05.797660+00:00",
+      "last_attempt": "2026-11-06T10:16:56.629950+00:00",
+      "sha256": "b8d24c2d423f655acc39afa93547941431860d353fa626681f9cd8607d28308e",
+      "etag": null,
+      "captures": [
+        {
+          "name": "spain-public.html",
+          "url": "https://energia.serviciosmin.gob.es/reprov2/RegistroPublico.aspx",
+          "status": 200,
+          "final_url": "https://energia.serviciosmin.gob.es/reprov2/RegistroPublico.aspx",
+          "retrieved_at": "2026-11-06T10:06:05.797660+00:00",
+          "sha256": "b8d24c2d423f655acc39afa93547941431860d353fa626681f9cd8607d28308e",
+          "bytes": 26142,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "spain-registry.html",
+          "url": "https://energia.serviciosmin.gob.es/reprov2/",
+          "status": 200,
+          "final_url": "https://energia.serviciosmin.gob.es/reprov2/",
+          "retrieved_at": "2026-11-06T10:05:05.192983+00:00",
+          "sha256": "4773f4c4f5b33bfb8974175157922161122f31153486c2df3a10992bbe7d3cb7",
+          "bytes": 14539,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "spain.html",
+          "url": "https://www.miteco.gob.es/es/energia/energia-electrica/electricidad/regimen-ordinario/registro-instalaciones.html",
+          "status": 200,
+          "final_url": "https://www.miteco.gob.es/es/energia/energia-electrica/electricidad/regimen-ordinario/registro-instalaciones.html",
+          "retrieved_at": "2026-11-06T10:03:43.691464+00:00",
+          "sha256": "dfe2d850115828fad2b6d679c7853cdbe311c8cd43fd64ed18c186597d837076",
+          "bytes": 53936,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "spain-terms.html",
+          "url": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+          "status": 200,
+          "final_url": "https://www.miteco.gob.es/es/atencion-al-ciudadano/aviso-legal.html",
+          "retrieved_at": "2026-11-06T10:04:23.580728+00:00",
+          "sha256": "cc5c2eb6271175510677d69a25a62bed5b3c1f34d6a83bc83c4bc85d98f0056e",
+          "bytes": 64522,
+          "etag": null,
+          "last_modified": null
+        },
+        {
+          "name": "spain-registers.html",
+          "url": "https://www.miteco.gob.es/es/energia/servicios/registros.html",
+          "status": 200,
+          "final_url": "https://www.miteco.gob.es/es/energia/servicios/registros.html",
+          "retrieved_at": "2026-11-06T10:15:06.902053+00:00",
+          "sha256": "cc0577fe9662a37fa8c03d216d9e4ddc072ce22d30ced2cfdd671503fae6ab67",
+          "bytes": 165966,
+          "etag": null,
+          "last_modified": null
+        }
+      ],
+      "mapping": "20261106T1000 exact model/phase and discovery reviews; no new adapter or feed",
+      "estimated_useful_yield": {
+        "reviewed": 0,
+        "accepted": 0,
+        "remaining_verified": null
+      },
+      "reviewed": 0,
+      "accepted": 0,
+      "held": 0,
+      "rejected": 0,
+      "processed_cursor": {
+        "plant_rows_reviewed": 0,
+        "CAPTCHA": true
+      },
+      "result": "MITECO ordinary-regime REPRO public route requires CAPTCHA; no query/data extraction or bypass. General portal notice permits attributed information reuse excluding third-party rights, preserving update metadata/nonendorsement; not a blanket licence for restricted registry content. This is distinct from Electra prior75Canarias rows and not a new PV feed.",
+      "retry_condition": "Changed access/revision or independent rights/identity/specification evidence; no retry bursts",
+      "next_action": "Do not repeat Electra75 rows or treat REPRO as a whole-PV inventory. Seek a normally downloadable official PV/phase dataset and explicit AC/DC definitions; prior Electra/Navarra identity/power holds unchanged.",
+      "next_due_check": "2026-11-13T10:00:00Z"
     }
   ],
   "source_refresh_queue": [
