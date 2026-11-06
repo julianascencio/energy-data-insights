@@ -760,3 +760,9 @@ The five retained KenGen identity candidates are now accepted from owner-report
 and portfolio corroboration. Total coverage is 7,169 records in 128 countries.
 Their 60 dated entries include two missing Wanjii 2021 energy cells; missing is
 not zero. EPRA licence IDs remain unknown following a blocked download.
+
+Owner technical evidence now covers twelve Kenyan stations, with replacement
+unit groups, generator/turbine descriptions, grid connections, watercourses,
+reservoir volumes and dated commissioning assertions. Conflicting dates and
+unspecified head remain qualified; neither MVA nor reservoir volume is converted
+to generating MW or stored energy. The copied Turkwel description is excluded.

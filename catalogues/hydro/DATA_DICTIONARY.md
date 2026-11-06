@@ -117,3 +117,10 @@ Owner-reviewed accessions use the `reviewed-accession` UUID namespace. The froze
 accession is retained in `extensions_json`; `external_ids_json` stays empty until
 an official registry identifier is verified. A later rename or capacity change
 must preserve this accession. Name normalization only detects insertion conflicts.
+
+`extensions_json.kengen_technical_assertions` holds keyed owner assertions with
+value, unit, basis, locator and uncertainty. Equipment dictionaries identify
+original/replacement groups and explicitly labelled `each_mva` versus `each_mw`.
+Linked upstream/downstream stations use canonical record IDs; they are flow
+relationships, not parent/child capacities. These source assertions are not
+current canonical ratings or resolved historical dates.

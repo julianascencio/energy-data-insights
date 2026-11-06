@@ -7886,4 +7886,4 @@ Kenya Electricity Generating Company PLC (2026). **Hydro: KenGen station portfol
 
 **Role:** data_source. Undated owner page, year denotes retrieval. Turkwel description repeats Gogo narrative; rejected for canonical facts. Page checksum and review retained in KenGen research ledger. Named station sections also corroborate five explicitly reviewed new identities; no national licence IDs inferred.
 
-**Used by:** `catalogues/hydro/research/kengen-2025-20261106.json`, `catalogues/hydro/research/kengen-new-20261106.json`.
+**Used by:** `catalogues/hydro/research/kengen-2025-20261106.json`, `catalogues/hydro/research/kengen-new-20261106.json`, `catalogues/hydro/research/kengen-technical-20261106.json`, `data-retrieval/src/energy_data_retrieval/hydro_catalogue/owner_technical.py`.

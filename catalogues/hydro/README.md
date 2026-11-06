@@ -89,3 +89,12 @@ IDs. EPRA's PDF returned HTTP 503. The owner report and named portfolio sections
 support identity independently of that unavailable registry. Current status,
 coordinates and additive capacity remain unresolved. No old/replacement unit
 ratings are summed. Replay with `scripts/accept_hydro_kengen_new.py`.
+
+Twelve Kenyan records now retain owner technical assertions with per-field
+locators, units, equipment boundaries and uncertainty. Original/replacement
+unit groups are distinct; Gitaru's 85 MVA generators are not converted to MW.
+Gogo's unqualified head is not promoted to gross/net head, and reservoir total
+volumes are not usable volumes or energy storage. Owner commissioning statements
+remain unresolved where historical dates differ. Turkwel's copied Gogo narrative
+is rejected. These assertions do not change additive capacity KPIs or record
+counts. Replay: `scripts/enrich_hydro_owner_technical.py`.

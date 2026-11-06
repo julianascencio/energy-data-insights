@@ -108,3 +108,8 @@ ax.set(
 ax.legend(ncol=2, fontsize=8)
 ax.grid(alpha=0.2)
 plt.show()
+
+print(
+    "Owner technical evidence records:",
+    sum("kengen_technical_assertions" in json.loads(r["extensions_json"]) for r in rows),
+)
