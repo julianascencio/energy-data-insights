@@ -64,3 +64,12 @@ Schema version **1.1.0**; 60 typed nullable columns. Unknown is null.
 | `created_at` | timestamp | — | UTC date/time this record was first added. |
 | `updated_at` | timestamp | — | UTC date/time of the latest substantive edit. |
 | `last_verified_at` | timestamp | — | UTC source-access time; not proof of current operational availability. |
+
+The `dcceew_community_location` extension describes one reviewed government
+programme applicant/location, potentially aggregating multiple batteries. Its
+`capacity_kwh` is the source observation corresponding to `energy_capacity_mwh`;
+gross/usable and AC/DC basis remain unspecified. `operational_from` is the table's
+reported operating date, not an inferred commercial COD. `applicant` records only
+the grant-recipient role. `grant_amount` and `grant_symbol` retain the grant, with
+no capex or unstated currency/year inference. Row locators and publication dates
+remain inside the extension. Do not also count the same constituent batteries.

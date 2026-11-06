@@ -77,3 +77,8 @@ Schema **1.0.0**. All 73 columns exist in Parquet; missing values are null.
 | `created_at` | timestamp | — | UTC date of database record creation, not product launch. |
 | `updated_at` | timestamp | — | UTC date of last substantive record change. |
 | `last_verified_at` | timestamp | — | UTC source-check date; not physical validation or proof of availability. |
+
+The `fullriver_terminal_case` extension retains exact-sheet terminal wording,
+case material and a qualified flame-resistance claim. UL94-HB is a manufacturer
+material-rating claim, not proof of product certification. Generic torque tables
+are excluded unless applicable model-specific values are visually verified.

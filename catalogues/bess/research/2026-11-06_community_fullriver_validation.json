@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-11-06T01:10:02.957047+00:00",
+  "elapsed_minutes_at_commit_preparation": 21.02,
+  "focused_tests": {
+    "command": "pytest -q data-retrieval/tests/test_bess*.py",
+    "result": "555 passed; includes19newsyntheticparsertests"
+  },
+  "viewer_tests": {
+    "command": "node --test tests/js/*.mjs",
+    "result": "34 passed"
+  },
+  "ruff": "Repository-wide check passed",
+  "format": "Repository-wide check passed",
+  "ty": "Repository-wide check passed",
+  "hygiene": "Repository check passed:5822candidatefiles",
+  "citations": "Catalogue and exports consistent",
+  "examples": [
+    "examples/database/plot_bess_projects.py passed",
+    "examples/database/plot_bess_oem_catalogue.py passed"
+  ],
+  "snapshots": "Both catalogues validated, each rebuilt twice byte-identically; typedZSTD, rowcounts, references, alloldfacts/sources/created_at andno-opupsert verified",
+  "docs": {
+    "command": "sphinx-build -W --keep-going -D plot_gallery=0 -b html docs ../evidence-0049/docs",
+    "result": "Passed after disk-space recovery",
+    "links": "Documentation check passed: 711 HTML pages; local links and assets resolve.",
+    "intermediate_failure": "Secondbuild exhausted disk while writing generatedPVassets. Removed older reproducible HTMLbuilds only; retainedsourcebytesandcanonicalrecords; cleanretry passed."
+  },
+  "full_python_and_packages": "Not run locally; published-head hostedCI will be recorded inPRdescription. No claim of current-head success before CI completes.",
+  "schema_changes": false,
+  "new_parser_tests": 19,
+  "new_projects": 57,
+  "project_enrichments": 0,
+  "new_equipment": 4,
+  "equipment_enrichments": 14,
+  "held_projects": 2,
+  "held_equipment": 4,
+  "non_bess_headings_excluded": 5,
+  "new_whole_record_quarantines": 0,
+  "rejected_canonical_records": 0
+}

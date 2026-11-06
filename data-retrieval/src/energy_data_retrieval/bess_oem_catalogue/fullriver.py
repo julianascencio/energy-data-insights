@@ -5,6 +5,32 @@ from html.parser import HTMLParser
 from typing import TypedDict
 
 
+def parse_terminal_case(text: str, *, model: str) -> dict[str, str]:
+    """Read exact p1 terminal/case claims; do not infer torque or certification."""
+    page = text.split("\f")[0]
+    if not page.strip() or page.strip().splitlines()[0].strip() != model:
+        raise ValueError("Exact model heading mismatch")
+    terminals = re.findall(r"Terminal Type\s+([^\n]+)", page)
+    cases = re.findall(r"Case Type\s+([^\n]+)", page)
+    if len(terminals) != 1 or len(cases) != 1:
+        raise ValueError("Missing or ambiguous terminal/case rows")
+    terminal = " ".join(terminals[0].split())
+    case = " ".join(cases[0].split())
+    if terminal not in {"M6", "M8", "AP", "M6 Button Terminal"}:
+        raise ValueError("Unreviewed terminal type")
+    if case != "ABS Plastic - Flame Res. Rating UL94-HB":
+        raise ValueError("Unreviewed case claim")
+    return {
+        "terminal_type_native": terminal,
+        "case_material": "ABS Plastic",
+        "flame_resistance_claim": "UL94-HB",
+        "claim_basis": (
+            "Manufacturer case-material rating; not independently verified certification"
+        ),
+        "torque": "Not extracted: generic p2 table uses visually highlighted applicable values",
+    }
+
+
 class Card(TypedDict):
     """One exact model with separate native unit panels."""
 

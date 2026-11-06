@@ -330,3 +330,22 @@ and completion differ; old and new energy observations remain quarantined.
 classes and bank charging columns. `--include-small-unit` adds reviewed small-battery
 rate/mechanical tables. Unknown C3/C2/C1 stays absent; anomalous printed values
 require review. Preserve case/terminal height and undated web/PDF discrepancies.
+
+For DCCEEW's 12 October 2026 community-battery table,
+`scripts/stage_bess_dcceew_community.py` accepts a local attributed reader-text
+export, including optional line prefixes. It validates the seven regional tables
+and 57 displayed applicant/location rows. The narrative says 58 locations; do not
+invent the absent row. Direct HTML returned 503 during this pass, so the evidence
+ledger fingerprints the reader export without claiming an original-HTML hash.
+One programme location may aggregate several batteries. Review each natural
+identity against the canonical catalogue before upsert. Grant applicants are not
+automatically owners, grant amounts are not capex, and “In progress” does not
+establish construction. Keep operational-From dates separate from commercial COD.
+Refresh the source date before continuing; the adapter rejects changed partitions.
+
+`scripts/stage_bess_fullriver_conditions.py --include-terminal-case` additionally
+stages exact-sheet terminal types and ABS case material claims. UL94-HB is retained
+as the manufacturer's material-rating claim, not independently verified product
+certification. The generic torque table uses highlighted applicable values and is
+not parsed as a model-specific torque. A suffix in an index URL does not establish
+an exact model when the printed sheet uses a base name or a raster heading.
