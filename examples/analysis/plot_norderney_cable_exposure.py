@@ -139,7 +139,10 @@ for remaining_fraction in (0.0, 0.5):
         for duration in days
     ]
     ax.plot(
-        days, values_gwh, marker="o", label=f"Remaining export {remaining_fraction:.0%}"
+        days,
+        values_gwh,
+        marker="o",
+        label=f"Remaining export {remaining_fraction:.0%}",
     )
 ax.set(
     xlabel="Hypothetical outage duration (days)",
